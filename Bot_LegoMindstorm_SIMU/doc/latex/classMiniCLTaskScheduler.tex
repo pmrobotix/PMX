@@ -1,0 +1,66 @@
+\hypertarget{classMiniCLTaskScheduler}{}\section{Mini\+C\+L\+Task\+Scheduler Class Reference}
+\label{classMiniCLTaskScheduler}\index{Mini\+C\+L\+Task\+Scheduler@{Mini\+C\+L\+Task\+Scheduler}}
+
+
+{\ttfamily \#include $<$Mini\+C\+L\+Task\+Scheduler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a3fd2147fd33425ec936e49a898a4f6d0}\label{classMiniCLTaskScheduler_a3fd2147fd33425ec936e49a898a4f6d0}} 
+{\bfseries Mini\+C\+L\+Task\+Scheduler} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}\label{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}} 
+void \hyperlink{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}{initialize} ()
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_accd5680fa809616919d83df8e959cb90}\label{classMiniCLTaskScheduler_accd5680fa809616919d83df8e959cb90}} 
+void {\bfseries issue\+Task} (int first\+Work\+Unit, int last\+Work\+Unit, \hyperlink{structMiniCLKernel}{Mini\+C\+L\+Kernel} $\ast$kernel)
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}\label{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}} 
+void \hyperlink{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}{flush} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a9576eb22445a68bc9cf1ca0501b974f0}\label{classMiniCLTaskScheduler_a9576eb22445a68bc9cf1ca0501b974f0}} 
+class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$ {\bfseries get\+Thread\+Support\+Interface} ()
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_ad93828a3a1474e5ef5673888d58a46bc}\label{classMiniCLTaskScheduler_ad93828a3a1474e5ef5673888d58a46bc}} 
+int {\bfseries find\+Program\+Command\+Id\+By\+Name} (const char $\ast$program\+Name) const
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a341dbc22d09e4e2622080aa653defdf1}\label{classMiniCLTaskScheduler_a341dbc22d09e4e2622080aa653defdf1}} 
+int {\bfseries get\+Max\+Num\+Outstanding\+Tasks} () const
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_aeba8cfc17be247623d84e56f735baf0c}\label{classMiniCLTaskScheduler_aeba8cfc17be247623d84e56f735baf0c}} 
+void {\bfseries register\+Kernel} (\hyperlink{structMiniCLKernel}{Mini\+C\+L\+Kernel} $\ast$kernel)
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a3fd2147fd33425ec936e49a898a4f6d0}\label{classMiniCLTaskScheduler_a3fd2147fd33425ec936e49a898a4f6d0}} 
+{\bfseries Mini\+C\+L\+Task\+Scheduler} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}\label{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}} 
+void \hyperlink{classMiniCLTaskScheduler_ae3dbcee1e36753aac47327d035560f10}{initialize} ()
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_accd5680fa809616919d83df8e959cb90}\label{classMiniCLTaskScheduler_accd5680fa809616919d83df8e959cb90}} 
+void {\bfseries issue\+Task} (int first\+Work\+Unit, int last\+Work\+Unit, \hyperlink{structMiniCLKernel}{Mini\+C\+L\+Kernel} $\ast$kernel)
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}\label{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}} 
+void \hyperlink{classMiniCLTaskScheduler_aaaaefcab8688c6c73792b9786f700873}{flush} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a9576eb22445a68bc9cf1ca0501b974f0}\label{classMiniCLTaskScheduler_a9576eb22445a68bc9cf1ca0501b974f0}} 
+class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$ {\bfseries get\+Thread\+Support\+Interface} ()
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_ad93828a3a1474e5ef5673888d58a46bc}\label{classMiniCLTaskScheduler_ad93828a3a1474e5ef5673888d58a46bc}} 
+int {\bfseries find\+Program\+Command\+Id\+By\+Name} (const char $\ast$program\+Name) const
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_a341dbc22d09e4e2622080aa653defdf1}\label{classMiniCLTaskScheduler_a341dbc22d09e4e2622080aa653defdf1}} 
+int {\bfseries get\+Max\+Num\+Outstanding\+Tasks} () const
+\item 
+\mbox{\Hypertarget{classMiniCLTaskScheduler_aeba8cfc17be247623d84e56f735baf0c}\label{classMiniCLTaskScheduler_aeba8cfc17be247623d84e56f735baf0c}} 
+void {\bfseries register\+Kernel} (\hyperlink{structMiniCLKernel}{Mini\+C\+L\+Kernel} $\ast$kernel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMiniCLTaskScheduler}{Mini\+C\+L\+Task\+Scheduler} handles S\+PU processing of collision pairs. When P\+PU issues a task, it will look for completed task buffers P\+PU will do postprocessing, dependent on workunit output (not likely) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Mini\+C\+L/Mini\+C\+L\+Task\+Scheduler.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Mini\+C\+L/Mini\+C\+L\+Task\+Scheduler.\+cpp\end{DoxyCompactItemize}

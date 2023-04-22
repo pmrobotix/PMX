@@ -1,0 +1,525 @@
+\hypertarget{classAssetsManagerEx}{}\section{Assets\+Manager\+Ex Class Reference}
+\label{classAssetsManagerEx}\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+
+
+This class is used to auto update resources, such as pictures or scripts.  
+
+
+
+
+{\ttfamily \#include $<$Assets\+Manager\+Ex.\+h$>$}
+
+
+
+Inheritance diagram for Assets\+Manager\+Ex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classAssetsManagerEx__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Assets\+Manager\+Ex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classAssetsManagerEx__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}\label{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}} 
+enum \hyperlink{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}{State} \{ \newline
+{\bfseries U\+N\+C\+H\+E\+C\+K\+ED}, 
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+O\+A\+D\+ED}, 
+\newline
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries M\+A\+N\+I\+F\+E\+S\+T\+\_\+\+L\+O\+A\+D\+ED}, 
+{\bfseries N\+E\+E\+D\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+P\+D\+A\+T\+I\+NG}, 
+{\bfseries U\+N\+Z\+I\+P\+P\+I\+NG}, 
+{\bfseries U\+P\+\_\+\+T\+O\+\_\+\+D\+A\+TE}, 
+{\bfseries F\+A\+I\+L\+\_\+\+T\+O\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+N\+C\+H\+E\+C\+K\+ED}, 
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+O\+A\+D\+ED}, 
+\newline
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries M\+A\+N\+I\+F\+E\+S\+T\+\_\+\+L\+O\+A\+D\+ED}, 
+{\bfseries N\+E\+E\+D\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+P\+D\+A\+T\+I\+NG}, 
+{\bfseries U\+N\+Z\+I\+P\+P\+I\+NG}, 
+{\bfseries U\+P\+\_\+\+T\+O\+\_\+\+D\+A\+TE}, 
+{\bfseries F\+A\+I\+L\+\_\+\+T\+O\+\_\+\+U\+P\+D\+A\+TE}
+ \}\begin{DoxyCompactList}\small\item\em Update states. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}\label{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}} 
+enum \hyperlink{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}{State} \{ \newline
+{\bfseries U\+N\+C\+H\+E\+C\+K\+ED}, 
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+O\+A\+D\+ED}, 
+\newline
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries M\+A\+N\+I\+F\+E\+S\+T\+\_\+\+L\+O\+A\+D\+ED}, 
+{\bfseries N\+E\+E\+D\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+P\+D\+A\+T\+I\+NG}, 
+{\bfseries U\+N\+Z\+I\+P\+P\+I\+NG}, 
+{\bfseries U\+P\+\_\+\+T\+O\+\_\+\+D\+A\+TE}, 
+{\bfseries F\+A\+I\+L\+\_\+\+T\+O\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+N\+C\+H\+E\+C\+K\+ED}, 
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+{\bfseries V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+O\+A\+D\+ED}, 
+\newline
+{\bfseries P\+R\+E\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries D\+O\+W\+N\+L\+O\+A\+D\+I\+N\+G\+\_\+\+M\+A\+N\+I\+F\+E\+ST}, 
+{\bfseries M\+A\+N\+I\+F\+E\+S\+T\+\_\+\+L\+O\+A\+D\+ED}, 
+{\bfseries N\+E\+E\+D\+\_\+\+U\+P\+D\+A\+TE}, 
+\newline
+{\bfseries U\+P\+D\+A\+T\+I\+NG}, 
+{\bfseries U\+N\+Z\+I\+P\+P\+I\+NG}, 
+{\bfseries U\+P\+\_\+\+T\+O\+\_\+\+D\+A\+TE}, 
+{\bfseries F\+A\+I\+L\+\_\+\+T\+O\+\_\+\+U\+P\+D\+A\+TE}
+ \}\begin{DoxyCompactList}\small\item\em Update states. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}\label{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}} 
+void \hyperlink{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}{check\+Update} ()
+\begin{DoxyCompactList}\small\item\em Check out if there is a new version of manifest. You may use this method before updating, then let user determine whether he wants to update resources. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}\label{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}} 
+void \hyperlink{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}{update} ()
+\begin{DoxyCompactList}\small\item\em Update with the current local manifest. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}\label{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}} 
+void \hyperlink{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}{download\+Failed\+Assets} ()
+\begin{DoxyCompactList}\small\item\em Reupdate all failed assets under the current \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a5fc14a86a1ed5f148beaddefbaf464bf}\label{classAssetsManagerEx_a5fc14a86a1ed5f148beaddefbaf464bf}} 
+\hyperlink{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}{State} \hyperlink{classAssetsManagerEx_a5fc14a86a1ed5f148beaddefbaf464bf}{get\+State} () const
+\begin{DoxyCompactList}\small\item\em Gets the current update state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_af80e1a94a8c5c90958d53d90c573d159}\label{classAssetsManagerEx_af80e1a94a8c5c90958d53d90c573d159}} 
+const std\+::string \& \hyperlink{classAssetsManagerEx_af80e1a94a8c5c90958d53d90c573d159}{get\+Storage\+Path} () const
+\begin{DoxyCompactList}\small\item\em Gets storage path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_afd73c9bbb62eba989ae27c80f9d1731d}\label{classAssetsManagerEx_afd73c9bbb62eba989ae27c80f9d1731d}} 
+const \hyperlink{classManifest}{Manifest} $\ast$ \hyperlink{classAssetsManagerEx_afd73c9bbb62eba989ae27c80f9d1731d}{get\+Local\+Manifest} () const
+\begin{DoxyCompactList}\small\item\em Function for retrieve the local manifest object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a30f06b99728086d1ea5b7a8dac550fcb}\label{classAssetsManagerEx_a30f06b99728086d1ea5b7a8dac550fcb}} 
+const \hyperlink{classManifest}{Manifest} $\ast$ \hyperlink{classAssetsManagerEx_a30f06b99728086d1ea5b7a8dac550fcb}{get\+Remote\+Manifest} () const
+\begin{DoxyCompactList}\small\item\em Function for retrieve the remote manifest object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}\label{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}} 
+void \hyperlink{classAssetsManagerEx_a6f9f8da1b4719cf6a8a0482ef50bfe0f}{check\+Update} ()
+\begin{DoxyCompactList}\small\item\em Check out if there is a new version of manifest. You may use this method before updating, then let user determine whether he wants to update resources. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}\label{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}} 
+void \hyperlink{classAssetsManagerEx_a4e45b523a7f2d546f6f4bfe57401dcbf}{update} ()
+\begin{DoxyCompactList}\small\item\em Update with the current local manifest. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}\label{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}} 
+void \hyperlink{classAssetsManagerEx_a7e88b604c6cb16e3382ee7126339966c}{download\+Failed\+Assets} ()
+\begin{DoxyCompactList}\small\item\em Reupdate all failed assets under the current \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa6514741a6162c3b4978162d3371ac29}\label{classAssetsManagerEx_aa6514741a6162c3b4978162d3371ac29}} 
+\hyperlink{classAssetsManagerEx_a50ac8909632de66eb71eb69fa66229c3}{State} \hyperlink{classAssetsManagerEx_aa6514741a6162c3b4978162d3371ac29}{get\+State} () const
+\begin{DoxyCompactList}\small\item\em Gets the current update state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ab2517a922a4c51ec42db4e8d518c584d}\label{classAssetsManagerEx_ab2517a922a4c51ec42db4e8d518c584d}} 
+const std\+::string \& \hyperlink{classAssetsManagerEx_ab2517a922a4c51ec42db4e8d518c584d}{get\+Storage\+Path} () const
+\begin{DoxyCompactList}\small\item\em Gets storage path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a373a1a9e2db0f78ca60143eb2a37e7d2}\label{classAssetsManagerEx_a373a1a9e2db0f78ca60143eb2a37e7d2}} 
+const \hyperlink{classManifest}{Manifest} $\ast$ \hyperlink{classAssetsManagerEx_a373a1a9e2db0f78ca60143eb2a37e7d2}{get\+Local\+Manifest} () const
+\begin{DoxyCompactList}\small\item\em Function for retrieving the local manifest object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a1818b89b0e9370599ce63ba003e74733}\label{classAssetsManagerEx_a1818b89b0e9370599ce63ba003e74733}} 
+const \hyperlink{classManifest}{Manifest} $\ast$ \hyperlink{classAssetsManagerEx_a1818b89b0e9370599ce63ba003e74733}{get\+Remote\+Manifest} () const
+\begin{DoxyCompactList}\small\item\em Function for retrieving the remote manifest object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a580fa15596bd99f5d3f66bae33ce53d9}\label{classAssetsManagerEx_a580fa15596bd99f5d3f66bae33ce53d9}} 
+const int \hyperlink{classAssetsManagerEx_a580fa15596bd99f5d3f66bae33ce53d9}{get\+Max\+Concurrent\+Task} () const
+\begin{DoxyCompactList}\small\item\em Function for retrieving the max concurrent task count. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a770b3fb7452f6e9d316dbabb7d9274a4}\label{classAssetsManagerEx_a770b3fb7452f6e9d316dbabb7d9274a4}} 
+void \hyperlink{classAssetsManagerEx_a770b3fb7452f6e9d316dbabb7d9274a4}{set\+Max\+Concurrent\+Task} (const int max)
+\begin{DoxyCompactList}\small\item\em Function for setting the max concurrent task count. \end{DoxyCompactList}\item 
+void \hyperlink{classAssetsManagerEx_a31db300c9b7b7c709f8a312646de5168}{set\+Version\+Compare\+Handle} (const std\+::function$<$ int(const std\+::string \&versionA, const std\+::string \&versionB)$>$ \&handle)
+\begin{DoxyCompactList}\small\item\em Set the handle function for comparing manifests versions. \end{DoxyCompactList}\item 
+void \hyperlink{classAssetsManagerEx_af16a300f640be0dba1a1b996918b7046}{set\+Verify\+Callback} (const std\+::function$<$ bool(const std\+::string \&path, \hyperlink{structManifest_1_1Asset}{Manifest\+::\+Asset} asset)$>$ \&callback)
+\begin{DoxyCompactList}\small\item\em Set the verification function for checking whether downloaded asset is correct, e.\+g. using md5 verification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} $\ast$ \hyperlink{classAssetsManagerEx_a12c15aa87bf72150103ec0adf9720d6d}{create} (const std\+::string \&manifest\+Url, const std\+::string \&storage\+Path)
+\begin{DoxyCompactList}\small\item\em Create function for creating a new \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}. \end{DoxyCompactList}\item 
+static \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} $\ast$ \hyperlink{classAssetsManagerEx_a87c4409b1ddaaffbeca620a6333b676f}{create} (const std\+::string \&manifest\+Url, const std\+::string \&storage\+Path)
+\begin{DoxyCompactList}\small\item\em Create function for creating a new \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ad84b2b2550b54909ed70bb5967fbd413}\label{classAssetsManagerEx_ad84b2b2550b54909ed70bb5967fbd413}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}(const std\+::string\& manifest\+Url
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a2bda39d5bfe0bb6532c051558e4e91eb}\label{classAssetsManagerEx_a2bda39d5bfe0bb6532c051558e4e91eb}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} const std\+::string \& {\bfseries storage\+Path}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_af4d065bbf1c1a5dd79f515f904d02bec}\label{classAssetsManagerEx_af4d065bbf1c1a5dd79f515f904d02bec}} 
+static const std\+::string {\bfseries V\+E\+R\+S\+I\+O\+N\+\_\+\+ID} = \char`\"{}@version\char`\"{}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a5070c1706965902b2c40ca54c9a88519}\label{classAssetsManagerEx_a5070c1706965902b2c40ca54c9a88519}} 
+static const std\+::string {\bfseries M\+A\+N\+I\+F\+E\+S\+T\+\_\+\+ID} = \char`\"{}@manifest\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ac8225cdfddff06576a2feee23acee2a0}\label{classAssetsManagerEx_ac8225cdfddff06576a2feee23acee2a0}} 
+std\+::string {\bfseries basename} (const std\+::string \&path) const
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a00963ee3a1b97fe9db6c173195374726}\label{classAssetsManagerEx_a00963ee3a1b97fe9db6c173195374726}} 
+std\+::string {\bfseries get} (const std\+::string \&key) const
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_acbddf0f0953d7edbd02774972bd409d2}\label{classAssetsManagerEx_acbddf0f0953d7edbd02774972bd409d2}} 
+void {\bfseries init\+Manifests} (const std\+::string \&manifest\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa6f0e8cd27fbf4ba6212abd2a2c05c63}\label{classAssetsManagerEx_aa6f0e8cd27fbf4ba6212abd2a2c05c63}} 
+void {\bfseries load\+Local\+Manifest} (const std\+::string \&manifest\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a90058fdf24cf850439262ededaa0a521}\label{classAssetsManagerEx_a90058fdf24cf850439262ededaa0a521}} 
+void {\bfseries prepare\+Local\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a67700d2545ce476e3f3fa2f7e9bd5249}\label{classAssetsManagerEx_a67700d2545ce476e3f3fa2f7e9bd5249}} 
+void {\bfseries set\+Storage\+Path} (const std\+::string \&storage\+Path)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a194bb3bc7dfec8cfada45a01dd3787be}\label{classAssetsManagerEx_a194bb3bc7dfec8cfada45a01dd3787be}} 
+void {\bfseries adjust\+Path} (std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_abbad5dab755a0c53f46bc59bdeddc72a}\label{classAssetsManagerEx_abbad5dab755a0c53f46bc59bdeddc72a}} 
+void {\bfseries dispatch\+Update\+Event} (\hyperlink{classEventAssetsManagerEx_ae48992cd906169f84a146e7ae8851cae}{Event\+Assets\+Manager\+Ex\+::\+Event\+Code} code, const std\+::string \&message=\char`\"{}\char`\"{}, const std\+::string \&asset\+Id=\char`\"{}\char`\"{}, int curle\+\_\+code=0, int curlm\+\_\+code=0)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa692723272d965b05bd60729856279fe}\label{classAssetsManagerEx_aa692723272d965b05bd60729856279fe}} 
+void {\bfseries download\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a8410062b500c6cdaf9d3634523333642}\label{classAssetsManagerEx_a8410062b500c6cdaf9d3634523333642}} 
+void {\bfseries parse\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aec0e59a5165b1d9387620a4beec027ac}\label{classAssetsManagerEx_aec0e59a5165b1d9387620a4beec027ac}} 
+void {\bfseries download\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_addefe7c8c80a4455fb20b8a7436c1f00}\label{classAssetsManagerEx_addefe7c8c80a4455fb20b8a7436c1f00}} 
+void {\bfseries parse\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a9e9ec71020d3f9f3efef411666eff6b4}\label{classAssetsManagerEx_a9e9ec71020d3f9f3efef411666eff6b4}} 
+void {\bfseries start\+Update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a9e1a7f5f3e1b144810515967a396eab8}\label{classAssetsManagerEx_a9e1a7f5f3e1b144810515967a396eab8}} 
+void {\bfseries update\+Succeed} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a7949bee801d7de84b7673f035cc81b91}\label{classAssetsManagerEx_a7949bee801d7de84b7673f035cc81b91}} 
+bool {\bfseries decompress} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a91c8bfdc688c27461b4ff4bf1d9160b8}\label{classAssetsManagerEx_a91c8bfdc688c27461b4ff4bf1d9160b8}} 
+void {\bfseries decompress\+Downloaded\+Zip} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}\label{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}} 
+void \hyperlink{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}{update\+Assets} (const Download\+Units \&assets)
+\begin{DoxyCompactList}\small\item\em Update a \hyperlink{protocollist-p}{list} of assets under the current \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a39a060d2175535e16ec3d59d1d3d82cd}\label{classAssetsManagerEx_a39a060d2175535e16ec3d59d1d3d82cd}} 
+const Download\+Units \& \hyperlink{classAssetsManagerEx_a39a060d2175535e16ec3d59d1d3d82cd}{get\+Failed\+Assets} () const
+\begin{DoxyCompactList}\small\item\em Retrieve all failed assets during the last update. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}\label{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}} 
+void \hyperlink{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}{destroy\+Downloaded\+Version} ()
+\begin{DoxyCompactList}\small\item\em Function for destroying the downloaded version file and manifest file. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAssetsManagerEx_a66fa811543aef93caff6ce15c8a3ea60}{on\+Error} (const network\+::\+Download\+Task \&task, int error\+Code, int error\+Code\+Internal, const std\+::string \&error\+Str)
+\begin{DoxyCompactList}\small\item\em Call back function for error handling, the error will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAssetsManagerEx_ac7bb9bd198851b443ea85735daa9d74a}{on\+Progress} (double total, double downloaded, const std\+::string \&url, const std\+::string \&custom\+Id)
+\begin{DoxyCompactList}\small\item\em Call back function for recording downloading percent of the current asset, the progression will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Progress\+Event\+Listener. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAssetsManagerEx_ade8117f87473f739a6ec7d3ad6e4d598}{on\+Success} (const std\+::string \&src\+Url, const std\+::string \&storage\+Path, const std\+::string \&custom\+Id)
+\begin{DoxyCompactList}\small\item\em Call back function for success of the current asset the success event will then be send to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ac8225cdfddff06576a2feee23acee2a0}\label{classAssetsManagerEx_ac8225cdfddff06576a2feee23acee2a0}} 
+std\+::string {\bfseries basename} (const std\+::string \&path) const
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a00963ee3a1b97fe9db6c173195374726}\label{classAssetsManagerEx_a00963ee3a1b97fe9db6c173195374726}} 
+std\+::string {\bfseries get} (const std\+::string \&key) const
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_acbddf0f0953d7edbd02774972bd409d2}\label{classAssetsManagerEx_acbddf0f0953d7edbd02774972bd409d2}} 
+void {\bfseries init\+Manifests} (const std\+::string \&manifest\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa6f0e8cd27fbf4ba6212abd2a2c05c63}\label{classAssetsManagerEx_aa6f0e8cd27fbf4ba6212abd2a2c05c63}} 
+void {\bfseries load\+Local\+Manifest} (const std\+::string \&manifest\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a90058fdf24cf850439262ededaa0a521}\label{classAssetsManagerEx_a90058fdf24cf850439262ededaa0a521}} 
+void {\bfseries prepare\+Local\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a67700d2545ce476e3f3fa2f7e9bd5249}\label{classAssetsManagerEx_a67700d2545ce476e3f3fa2f7e9bd5249}} 
+void {\bfseries set\+Storage\+Path} (const std\+::string \&storage\+Path)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a194bb3bc7dfec8cfada45a01dd3787be}\label{classAssetsManagerEx_a194bb3bc7dfec8cfada45a01dd3787be}} 
+void {\bfseries adjust\+Path} (std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_abbad5dab755a0c53f46bc59bdeddc72a}\label{classAssetsManagerEx_abbad5dab755a0c53f46bc59bdeddc72a}} 
+void {\bfseries dispatch\+Update\+Event} (\hyperlink{classEventAssetsManagerEx_ae48992cd906169f84a146e7ae8851cae}{Event\+Assets\+Manager\+Ex\+::\+Event\+Code} code, const std\+::string \&message=\char`\"{}\char`\"{}, const std\+::string \&asset\+Id=\char`\"{}\char`\"{}, int curle\+\_\+code=0, int curlm\+\_\+code=0)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa692723272d965b05bd60729856279fe}\label{classAssetsManagerEx_aa692723272d965b05bd60729856279fe}} 
+void {\bfseries download\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a8410062b500c6cdaf9d3634523333642}\label{classAssetsManagerEx_a8410062b500c6cdaf9d3634523333642}} 
+void {\bfseries parse\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aec0e59a5165b1d9387620a4beec027ac}\label{classAssetsManagerEx_aec0e59a5165b1d9387620a4beec027ac}} 
+void {\bfseries download\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_addefe7c8c80a4455fb20b8a7436c1f00}\label{classAssetsManagerEx_addefe7c8c80a4455fb20b8a7436c1f00}} 
+void {\bfseries parse\+Manifest} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a9e9ec71020d3f9f3efef411666eff6b4}\label{classAssetsManagerEx_a9e9ec71020d3f9f3efef411666eff6b4}} 
+void {\bfseries start\+Update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a9e1a7f5f3e1b144810515967a396eab8}\label{classAssetsManagerEx_a9e1a7f5f3e1b144810515967a396eab8}} 
+void {\bfseries update\+Succeed} ()
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a7949bee801d7de84b7673f035cc81b91}\label{classAssetsManagerEx_a7949bee801d7de84b7673f035cc81b91}} 
+bool {\bfseries decompress} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a85ab4d3b1f50b4c84272da0fa7ee7dae}\label{classAssetsManagerEx_a85ab4d3b1f50b4c84272da0fa7ee7dae}} 
+void {\bfseries decompress\+Downloaded\+Zip} (const std\+::string \&custom\+Id, const std\+::string \&storage\+Path)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}\label{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}} 
+void \hyperlink{classAssetsManagerEx_ac1ff9e745a237249951709f764e56c3b}{update\+Assets} (const Download\+Units \&assets)
+\begin{DoxyCompactList}\small\item\em Update a \hyperlink{protocollist-p}{list} of assets under the current \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ae94780fe36d61b10e7be14a849bd89b0}\label{classAssetsManagerEx_ae94780fe36d61b10e7be14a849bd89b0}} 
+const Download\+Units \& \hyperlink{classAssetsManagerEx_ae94780fe36d61b10e7be14a849bd89b0}{get\+Failed\+Assets} () const
+\begin{DoxyCompactList}\small\item\em Retrieve all failed assets during the last update. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}\label{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}} 
+void \hyperlink{classAssetsManagerEx_a3d03f738e7b48ab5183c5c9aa8b36282}{destroy\+Downloaded\+Version} ()
+\begin{DoxyCompactList}\small\item\em Function for destroying the downloaded version file and manifest file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_a7783f55f4ca3153a3ca75af86a8ab2a4}\label{classAssetsManagerEx_a7783f55f4ca3153a3ca75af86a8ab2a4}} 
+void \hyperlink{classAssetsManagerEx_a7783f55f4ca3153a3ca75af86a8ab2a4}{queue\+Dowload} ()
+\begin{DoxyCompactList}\small\item\em Download items in queue with max concurrency setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManagerEx_aa207fb46ec759ace7af6eb16287e6264}\label{classAssetsManagerEx_aa207fb46ec759ace7af6eb16287e6264}} 
+void {\bfseries file\+Error} (const std\+::string \&identifier, const std\+::string \&error\+Str, int error\+Code=0, int error\+Code\+Internal=0)
+\item 
+\mbox{\Hypertarget{classAssetsManagerEx_ac5acab0a62b3fc6d8618684e41da8b43}\label{classAssetsManagerEx_ac5acab0a62b3fc6d8618684e41da8b43}} 
+void {\bfseries file\+Success} (const std\+::string \&custom\+Id, const std\+::string \&storage\+Path)
+\item 
+virtual void \hyperlink{classAssetsManagerEx_a95466efda302ece8afeaea7853699728}{on\+Error} (const network\+::\+Download\+Task \&task, int error\+Code, int error\+Code\+Internal, const std\+::string \&error\+Str)
+\begin{DoxyCompactList}\small\item\em Call back function for error handling, the error will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAssetsManagerEx_a3b5fb48fca79802cd0d6439eb0746e95}{on\+Progress} (double total, double downloaded, const std\+::string \&url, const std\+::string \&custom\+Id)
+\begin{DoxyCompactList}\small\item\em Call back function for recording downloading percent of the current asset, the progression will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Progress\+Event\+Listener. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAssetsManagerEx_a4f3b1952b52e4700f65a38e4d4a66b90}{on\+Success} (const std\+::string \&src\+Url, const std\+::string \&storage\+Path, const std\+::string \&custom\+Id)
+\begin{DoxyCompactList}\small\item\em Call back function for success of the current asset the success event will then be send to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is used to auto update resources, such as pictures or scripts. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAssetsManagerEx_a12c15aa87bf72150103ec0adf9720d6d}\label{classAssetsManagerEx_a12c15aa87bf72150103ec0adf9720d6d}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!create@{create}}
+\index{create@{create}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} $\ast$ Assets\+Manager\+Ex\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{manifest\+Url,  }\item[{const std\+::string \&}]{storage\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create function for creating a new \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manifest\+Url} & The url for the local manifest file \\
+\hline
+{\em storage\+Path} & The storage path for downloaded assets \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The cached manifest in your storage path have higher priority and will be searched first, only if it doesn\textquotesingle{}t exist, \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} will use the given manifest\+Url. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_a87c4409b1ddaaffbeca620a6333b676f}\label{classAssetsManagerEx_a87c4409b1ddaaffbeca620a6333b676f}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!create@{create}}
+\index{create@{create}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}$\ast$ Assets\+Manager\+Ex\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{manifest\+Url,  }\item[{const std\+::string \&}]{storage\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create function for creating a new \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manifest\+Url} & The url for the local manifest file \\
+\hline
+{\em storage\+Path} & The storage path for downloaded assets \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The cached manifest in your storage path have higher priority and will be searched first, only if it doesn\textquotesingle{}t exist, \hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} will use the given manifest\+Url. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_a66fa811543aef93caff6ce15c8a3ea60}\label{classAssetsManagerEx_a66fa811543aef93caff6ce15c8a3ea60}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Error@{on\+Error}}
+\index{on\+Error@{on\+Error}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Error()}{onError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Assets\+Manager\+Ex\+::on\+Error (\begin{DoxyParamCaption}\item[{const network\+::\+Download\+Task \&}]{task,  }\item[{int}]{error\+Code,  }\item[{int}]{error\+Code\+Internal,  }\item[{const std\+::string \&}]{error\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for error handling, the error will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The error object contains Error\+Code, message, asset url, asset key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_a95466efda302ece8afeaea7853699728}\label{classAssetsManagerEx_a95466efda302ece8afeaea7853699728}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Error@{on\+Error}}
+\index{on\+Error@{on\+Error}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Error()}{onError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Assets\+Manager\+Ex\+::on\+Error (\begin{DoxyParamCaption}\item[{const network\+::\+Download\+Task \&}]{task,  }\item[{int}]{error\+Code,  }\item[{int}]{error\+Code\+Internal,  }\item[{const std\+::string \&}]{error\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for error handling, the error will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The error object contains Error\+Code, message, asset url, asset key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_ac7bb9bd198851b443ea85735daa9d74a}\label{classAssetsManagerEx_ac7bb9bd198851b443ea85735daa9d74a}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Progress@{on\+Progress}}
+\index{on\+Progress@{on\+Progress}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Progress()}{onProgress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Assets\+Manager\+Ex\+::on\+Progress (\begin{DoxyParamCaption}\item[{double}]{total,  }\item[{double}]{downloaded,  }\item[{const std\+::string \&}]{url,  }\item[{const std\+::string \&}]{custom\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for recording downloading percent of the current asset, the progression will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Progress\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total} & Total size to download for this asset \\
+\hline
+{\em downloaded} & Total size already downloaded for this asset \\
+\hline
+{\em url} & The url of this asset \\
+\hline
+{\em custom\+Id} & The key of this asset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_a3b5fb48fca79802cd0d6439eb0746e95}\label{classAssetsManagerEx_a3b5fb48fca79802cd0d6439eb0746e95}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Progress@{on\+Progress}}
+\index{on\+Progress@{on\+Progress}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Progress()}{onProgress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Assets\+Manager\+Ex\+::on\+Progress (\begin{DoxyParamCaption}\item[{double}]{total,  }\item[{double}]{downloaded,  }\item[{const std\+::string \&}]{url,  }\item[{const std\+::string \&}]{custom\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for recording downloading percent of the current asset, the progression will then be reported to user\textquotesingle{}s listener registed in add\+Update\+Progress\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total} & Total size to download for this asset \\
+\hline
+{\em downloaded} & Total size already downloaded for this asset \\
+\hline
+{\em url} & The url of this asset \\
+\hline
+{\em custom\+Id} & The key of this asset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_ade8117f87473f739a6ec7d3ad6e4d598}\label{classAssetsManagerEx_ade8117f87473f739a6ec7d3ad6e4d598}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Success@{on\+Success}}
+\index{on\+Success@{on\+Success}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Success()}{onSuccess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Assets\+Manager\+Ex\+::on\+Success (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{src\+Url,  }\item[{const std\+::string \&}]{storage\+Path,  }\item[{const std\+::string \&}]{custom\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for success of the current asset the success event will then be send to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+Url} & The url of this asset \\
+\hline
+{\em custom\+Id} & The key of this asset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_a4f3b1952b52e4700f65a38e4d4a66b90}\label{classAssetsManagerEx_a4f3b1952b52e4700f65a38e4d4a66b90}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!on\+Success@{on\+Success}}
+\index{on\+Success@{on\+Success}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{on\+Success()}{onSuccess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Assets\+Manager\+Ex\+::on\+Success (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{src\+Url,  }\item[{const std\+::string \&}]{storage\+Path,  }\item[{const std\+::string \&}]{custom\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Call back function for success of the current asset the success event will then be send to user\textquotesingle{}s listener registed in add\+Update\+Event\+Listener. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+Url} & The url of this asset \\
+\hline
+{\em custom\+Id} & The key of this asset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classAssetsManagerEx}{Assets\+Manager\+Ex} internal use only  NA  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classAssetsManagerEx_af16a300f640be0dba1a1b996918b7046}\label{classAssetsManagerEx_af16a300f640be0dba1a1b996918b7046}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!set\+Verify\+Callback@{set\+Verify\+Callback}}
+\index{set\+Verify\+Callback@{set\+Verify\+Callback}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{set\+Verify\+Callback()}{setVerifyCallback()}}
+{\footnotesize\ttfamily void Assets\+Manager\+Ex\+::set\+Verify\+Callback (\begin{DoxyParamCaption}\item[{const std\+::function$<$ bool(const std\+::string \&path, \hyperlink{structManifest_1_1Asset}{Manifest\+::\+Asset} asset)$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the verification function for checking whether downloaded asset is correct, e.\+g. using md5 verification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The verify callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAssetsManagerEx_a31db300c9b7b7c709f8a312646de5168}\label{classAssetsManagerEx_a31db300c9b7b7c709f8a312646de5168}} 
+\index{Assets\+Manager\+Ex@{Assets\+Manager\+Ex}!set\+Version\+Compare\+Handle@{set\+Version\+Compare\+Handle}}
+\index{set\+Version\+Compare\+Handle@{set\+Version\+Compare\+Handle}!Assets\+Manager\+Ex@{Assets\+Manager\+Ex}}
+\subsubsection{\texorpdfstring{set\+Version\+Compare\+Handle()}{setVersionCompareHandle()}}
+{\footnotesize\ttfamily void Assets\+Manager\+Ex\+::set\+Version\+Compare\+Handle (\begin{DoxyParamCaption}\item[{const std\+::function$<$ int(const std\+::string \&versionA, const std\+::string \&versionB)$>$ \&}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the handle function for comparing manifests versions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The compare function \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/assets-\/manager/Assets\+Manager\+Ex.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/assets-\/manager/Assets\+Manager\+Ex.\+cpp\end{DoxyCompactItemize}

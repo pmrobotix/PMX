@@ -40,7 +40,6 @@ bool O_push_3() {
     robot.logger().info() << "sleep_for_secs 13." << logs::end;
     utils::sleep_for_secs(13);
 
-
 //    robot.ia().iAbyPath().enable(robot.ia().area_3_start_yellow, 0);
 //    robot.ia().iAbyPath().enable(robot.ia().area_3_start_violet, 0);
 
@@ -80,6 +79,7 @@ bool O_take_distrib_partage() {
         return false;
     }
     robot.svgPrintPosition();
+
 
     //abaisser les bras
 
@@ -128,11 +128,12 @@ void O_State_DecisionMakerIA::IASetupActivitiesZone() {
     robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 250, 1450, 0);
     //robot.ia().iAbyPath().ia_createZone("zone_end", 800, 500, 400, 400, 1100, 800, -90);
     robot.ia().iAbyPath().ia_createZone("zone_push_3", 1100, 700, 300, 600, 1100, 1300, 180);
-//
+
+    /*
     robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1640, 90);
 //    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
 //    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
-
+*/
     //robot.ia().iAbyPath().ia_addAction("push_3", &O_push_3);
     robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
 //    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);
@@ -151,11 +152,11 @@ void O_State_DecisionMakerIA::IASetupActivitiesZoneTableTest() {
     robot.ia().iAbyPath().ia_createZone("zone_start", 0, 1000, 400, 600, 250, 1450, 0);
     //robot.ia().iAbyPath().ia_createZone("zone_end", 800, 500, 400, 400, 1100, 800, -90);
     robot.ia().iAbyPath().ia_createZone("zone_push_3", 900, 700, 100, 100, 1100, 1300, 180);
-//
+/*
     robot.ia().iAbyPath().ia_createZone("zone_distrib_partage", 1200, 1800, 300, 200, 1350, 1640, 90);
 //    robot.ia().iAbyPath().ia_createZone("zone_distrib", 0, 600, 200, 300, 300, 750, 180);
 //    robot.ia().iAbyPath().ia_createZone("zone_depose1", 450, 1900, 800, 100, 1100, 1750, 180);
-
+*/
     //robot.ia().iAbyPath().ia_addAction("push_3", &O_push_3);
     robot.ia().iAbyPath().ia_addAction("take_distrib_partage", &O_take_distrib_partage);
 //    robot.ia().iAbyPath().ia_addAction("take_distrib", &O_take_distrib);

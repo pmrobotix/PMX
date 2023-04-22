@@ -1,0 +1,71 @@
+\hypertarget{classCCPrecompiledShaders}{}\section{C\+C\+Precompiled\+Shaders Class Reference}
+\label{classCCPrecompiledShaders}\index{C\+C\+Precompiled\+Shaders@{C\+C\+Precompiled\+Shaders}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_ad27f44fa8d55ced8b258d2ffdf6cfbd0}\label{classCCPrecompiledShaders_ad27f44fa8d55ced8b258d2ffdf6cfbd0}} 
+void {\bfseries add\+Precompiled\+Program} (const char $\ast$key, const unsigned char $\ast$program, int program\+Length)
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a2716c09259d0e26aa249a93e0ea898cd}\label{classCCPrecompiledShaders_a2716c09259d0e26aa249a93e0ea898cd}} 
+std\+::string {\bfseries add\+Shaders} (const G\+Lchar $\ast$v\+Shader\+Byte\+Array, const G\+Lchar $\ast$f\+Shader\+Byte\+Array)
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_ace055fa3546e68020f7827e07ecc4656}\label{classCCPrecompiledShaders_ace055fa3546e68020f7827e07ecc4656}} 
+bool {\bfseries add\+Program} (G\+Luint program, const std\+::string \&id)
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_af3fa9be4bc5ef19bac089e4463630dd4}\label{classCCPrecompiledShaders_af3fa9be4bc5ef19bac089e4463630dd4}} 
+bool {\bfseries load\+Program} (G\+Luint program, const G\+Lchar $\ast$v\+Shader\+Byte\+Array, const G\+Lchar $\ast$f\+Shader\+Byte\+Array)
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a26e97895c833ca2d9c9db6a0be8ed883}\label{classCCPrecompiledShaders_a26e97895c833ca2d9c9db6a0be8ed883}} 
+void {\bfseries save\+Precompiled\+Shaders} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCCPrecompiledShaders}{C\+C\+Precompiled\+Shaders} $\ast$ \hyperlink{classCCPrecompiledShaders_a58b4d02e74636859e43b15772acad36e}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Get current precompiled shaders instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a93096610788de4acda709febc0b829dc}\label{classCCPrecompiledShaders_a93096610788de4acda709febc0b829dc}} 
+void {\bfseries save\+Precompiled\+Programs} (Windows\+::\+Storage\+::\+Storage\+Folder$^\wedge$ folder)
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_acff5ca8c869011b4e267bfccce2f2683}\label{classCCPrecompiledShaders_acff5ca8c869011b4e267bfccce2f2683}} 
+void {\bfseries load\+Precompiled\+Programs} ()
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a281bae63d68878985dffb3456f58f5ee}\label{classCCPrecompiledShaders_a281bae63d68878985dffb3456f58f5ee}} 
+void {\bfseries Init} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a999fc93e7dae00fc82cd39edc2f4ebed}\label{classCCPrecompiledShaders_a999fc93e7dae00fc82cd39edc2f4ebed}} 
+std\+::map$<$ std\+::string, \hyperlink{struct__CompiledProgram}{Compiled\+Program} $\ast$ $>$ {\bfseries m\+\_\+programs}
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_ac616a49e68a81005cf35406b259b5821}\label{classCCPrecompiledShaders_ac616a49e68a81005cf35406b259b5821}} 
+std\+::map$<$ std\+::string, Precompiled\+Program $\ast$ $>$ {\bfseries m\+\_\+precompiled\+Programs}
+\item 
+\mbox{\Hypertarget{classCCPrecompiledShaders_a73973c5af8b17c1423251feeb7c9a424}\label{classCCPrecompiledShaders_a73973c5af8b17c1423251feeb7c9a424}} 
+bool {\bfseries m\+\_\+is\+Dirty}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCCPrecompiledShaders_a58b4d02e74636859e43b15772acad36e}\label{classCCPrecompiledShaders_a58b4d02e74636859e43b15772acad36e}} 
+\index{C\+C\+Precompiled\+Shaders@{C\+C\+Precompiled\+Shaders}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!C\+C\+Precompiled\+Shaders@{C\+C\+Precompiled\+Shaders}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{classCCPrecompiledShaders}{C\+C\+Precompiled\+Shaders} $\ast$ C\+C\+Precompiled\+Shaders\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get current precompiled shaders instance. 
+
+\begin{DoxyReturn}{Returns}
+Current precompiled shaders instance pointer. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/winrt/C\+C\+Precompiled\+Shaders.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/winrt/C\+C\+Precompiled\+Shaders.\+cpp\end{DoxyCompactItemize}

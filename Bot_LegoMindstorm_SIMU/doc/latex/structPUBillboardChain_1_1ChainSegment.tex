@@ -1,0 +1,36 @@
+\hypertarget{structPUBillboardChain_1_1ChainSegment}{}\section{P\+U\+Billboard\+Chain\+:\+:Chain\+Segment Struct Reference}
+\label{structPUBillboardChain_1_1ChainSegment}\index{P\+U\+Billboard\+Chain\+::\+Chain\+Segment@{P\+U\+Billboard\+Chain\+::\+Chain\+Segment}}
+
+
+{\ttfamily \#include $<$C\+C\+P\+U\+Billboard\+Chain.\+h$>$}
+
+
+
+Collaboration diagram for P\+U\+Billboard\+Chain\+:\+:Chain\+Segment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{structPUBillboardChain_1_1ChainSegment__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPUBillboardChain_1_1ChainSegment_ae66743b993223a22527f9ac18a6abe91}\label{structPUBillboardChain_1_1ChainSegment_ae66743b993223a22527f9ac18a6abe91}} 
+size\+\_\+t \hyperlink{structPUBillboardChain_1_1ChainSegment_ae66743b993223a22527f9ac18a6abe91}{start}
+\begin{DoxyCompactList}\small\item\em The start of this chains subset of the buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPUBillboardChain_1_1ChainSegment_abfeef23833826a7721e7266e0614b214}\label{structPUBillboardChain_1_1ChainSegment_abfeef23833826a7721e7266e0614b214}} 
+size\+\_\+t \hyperlink{structPUBillboardChain_1_1ChainSegment_abfeef23833826a7721e7266e0614b214}{head}
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}head\textquotesingle{} of the chain, relative to start. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPUBillboardChain_1_1ChainSegment_a5115c518ff4ad48f21b0e72d638b2429}\label{structPUBillboardChain_1_1ChainSegment_a5115c518ff4ad48f21b0e72d638b2429}} 
+size\+\_\+t \hyperlink{structPUBillboardChain_1_1ChainSegment_a5115c518ff4ad48f21b0e72d638b2429}{tail}
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}tail\textquotesingle{} of the chain, relative to start. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple struct defining a chain segment by referencing a subset of the preallocated buffer (which will be m\+Max\+Elements\+Per\+Chain $\ast$ m\+Chain\+Count long), by it\textquotesingle{}s chain index, and a head and tail value which describe the current chain. The buffer subset wraps at m\+Max\+Elements\+Per\+Chain so that head and tail can move freely. head and tail are inclusive, when the chain is empty head and tail are filled with high-\/values. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Billboard\+Chain.\+h\end{DoxyCompactItemize}

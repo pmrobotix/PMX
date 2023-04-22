@@ -1,0 +1,214 @@
+\hypertarget{classLabelLetter}{}\section{Label\+Letter Class Reference}
+\label{classLabelLetter}\index{Label\+Letter@{Label\+Letter}}
+
+
+Inheritance diagram for Label\+Letter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classLabelLetter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Label\+Letter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLabelLetter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLabelLetter_a99a6d6553ffcaa0c7ef8d283088049e2}\label{classLabelLetter_a99a6d6553ffcaa0c7ef8d283088049e2}} 
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC} (\hyperlink{classLabelLetter}{Label\+Letter})
+\item 
+virtual void \hyperlink{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}{update\+Transform} () override
+\item 
+\mbox{\Hypertarget{classLabelLetter_a7b888e75a30233c9c86d9cd630cc7af3}\label{classLabelLetter_a7b888e75a30233c9c86d9cd630cc7af3}} 
+virtual void {\bfseries update\+Color} () override
+\item 
+void \hyperlink{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}{set\+Visible} (bool visible) override
+\begin{DoxyCompactList}\small\item\em is\+Visible setter \end{DoxyCompactList}\item 
+void \hyperlink{classLabelLetter_a3e0850000ea292406f5d905a431b03dc}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classLabelLetter_a99a6d6553ffcaa0c7ef8d283088049e2}\label{classLabelLetter_a99a6d6553ffcaa0c7ef8d283088049e2}} 
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC} (\hyperlink{classLabelLetter}{Label\+Letter})
+\item 
+virtual void \hyperlink{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}{update\+Transform} () override
+\item 
+\mbox{\Hypertarget{classLabelLetter_a7b888e75a30233c9c86d9cd630cc7af3}\label{classLabelLetter_a7b888e75a30233c9c86d9cd630cc7af3}} 
+virtual void {\bfseries update\+Color} () override
+\item 
+void \hyperlink{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}{set\+Visible} (bool visible) override
+\begin{DoxyCompactList}\small\item\em is\+Visible setter \end{DoxyCompactList}\item 
+bool \hyperlink{classLabelLetter_a9f7187e6902a7b2a80ac3d2c5fc10523}{is\+Visible} () const override
+\begin{DoxyCompactList}\small\item\em is\+Visible getter \end{DoxyCompactList}\item 
+void \hyperlink{classLabelLetter_a676b176ed411500ac50b45c7cb104ce0}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$, const \hyperlink{classMat4}{Mat4} \&, uint32\+\_\+t) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLabelLetter_abf0960a5c519b2e279fb35cfcb4cac2a}\label{classLabelLetter_abf0960a5c519b2e279fb35cfcb4cac2a}} 
+static \hyperlink{classLabelLetter}{Label\+Letter} $\ast$ {\bfseries create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, const \hyperlink{classRect}{Rect} \&rect, bool rotated=false)
+\item 
+\mbox{\Hypertarget{classLabelLetter_abf0960a5c519b2e279fb35cfcb4cac2a}\label{classLabelLetter_abf0960a5c519b2e279fb35cfcb4cac2a}} 
+static \hyperlink{classLabelLetter}{Label\+Letter} $\ast$ {\bfseries create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, const \hyperlink{classRect}{Rect} \&rect, bool rotated=false)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLabelLetter}{Label\+Letter} used to update the quad in texture atlas without \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLabelLetter_a3e0850000ea292406f5d905a431b03dc}\label{classLabelLetter_a3e0850000ea292406f5d905a431b03dc}} 
+\index{Label\+Letter@{Label\+Letter}!draw@{draw}}
+\index{draw@{draw}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Label\+Letter\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSprite_a033c570c383dbab72ca2bc9ccdffb3b9}{Sprite}.
+
+\mbox{\Hypertarget{classLabelLetter_a676b176ed411500ac50b45c7cb104ce0}\label{classLabelLetter_a676b176ed411500ac50b45c7cb104ce0}} 
+\index{Label\+Letter@{Label\+Letter}!draw@{draw}}
+\index{draw@{draw}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Label\+Letter\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSprite_a033c570c383dbab72ca2bc9ccdffb3b9}{Sprite}.
+
+\mbox{\Hypertarget{classLabelLetter_a9f7187e6902a7b2a80ac3d2c5fc10523}\label{classLabelLetter_a9f7187e6902a7b2a80ac3d2c5fc10523}} 
+\index{Label\+Letter@{Label\+Letter}!is\+Visible@{is\+Visible}}
+\index{is\+Visible@{is\+Visible}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{is\+Visible()}{isVisible()}}
+{\footnotesize\ttfamily bool Label\+Letter\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+is\+Visible getter 
+
+Determines if the node is visible.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}{set\+Visible(bool)}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if the node is visible, false if the node is hidden. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_accff189524c62c6cb446cc19e3a79ab4}{Node}.
+
+\mbox{\Hypertarget{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}\label{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}} 
+\index{Label\+Letter@{Label\+Letter}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Label\+Letter\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+is\+Visible setter 
+
+Sets whether the node is visible.
+
+The default value is true, a node is default to visible.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & true if the node is visible, false if the node is hidden. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSprite_abdaaa50259a13af3d6e8effded4ba42b}{Sprite}.
+
+\mbox{\Hypertarget{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}\label{classLabelLetter_aa46db980ecd91de0f00c7aee1f2f52f9}} 
+\index{Label\+Letter@{Label\+Letter}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Label\+Letter\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+is\+Visible setter 
+
+Sets whether the node is visible.
+
+The default value is true, a node is default to visible.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & true if the node is visible, false if the node is hidden. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSprite_abdaaa50259a13af3d6e8effded4ba42b}{Sprite}.
+
+\mbox{\Hypertarget{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}\label{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}} 
+\index{Label\+Letter@{Label\+Letter}!update\+Transform@{update\+Transform}}
+\index{update\+Transform@{update\+Transform}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{update\+Transform()}{updateTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Label\+Letter\+::update\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updates the quad according the rotation, position, scale values. 
+
+Reimplemented from \hyperlink{classSprite_a6b64d23ba646325021c2a5118dc5163d}{Sprite}.
+
+\mbox{\Hypertarget{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}\label{classLabelLetter_ae52821b1e8fb7782602524f23c23b3ac}} 
+\index{Label\+Letter@{Label\+Letter}!update\+Transform@{update\+Transform}}
+\index{update\+Transform@{update\+Transform}!Label\+Letter@{Label\+Letter}}
+\subsubsection{\texorpdfstring{update\+Transform()}{updateTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Label\+Letter\+::update\+Transform (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updates the quad according the rotation, position, scale values. 
+
+Reimplemented from \hyperlink{classSprite_a6b64d23ba646325021c2a5118dc5163d}{Sprite}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Label.\+cpp\end{DoxyCompactItemize}

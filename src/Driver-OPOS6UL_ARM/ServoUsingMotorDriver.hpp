@@ -6,48 +6,44 @@
 
 using namespace std;
 
-class ServoUsingMotorDriver: public AServoUsingMotorDriver
-{
+class ServoUsingMotorDriver: public AServoUsingMotorDriver {
 private:
 
-	/*!
-	 * \brief Retourne le \ref Logger associé à la classe \ref ServoUsingMotorDriver(OPOS6UL).
-	 */
-	static inline const logs::Logger & logger()
-	{
-		static const logs::Logger & instance = logs::LoggerFactory::logger(
-				"ServoUsingMotorDriver.OPO");
-		return instance;
-	}
+    /*!
+     * \brief Retourne le \ref Logger associé à la classe \ref ServoUsingMotorDriver(OPOS6UL).
+     */
+    static inline const logs::Logger & logger() {
+        static const logs::Logger & instance = logs::LoggerFactory::logger("ServoUsingMotorDriver.OPO");
+        return instance;
+    }
 
-	int connected_;
+    int connected_;
 
 protected:
 
 public:
-	/*!
-	 * \brief Constructor.
-	 */
-	ServoUsingMotorDriver();
+    /*!
+     * \brief Constructor.
+     */
+    ServoUsingMotorDriver();
 
-	/*!
-	 * \brief Destructor.
-	 */
-	inline ~ServoUsingMotorDriver()
-	{
-	}
+    /*!
+     * \brief Destructor.
+     */
+    inline ~ServoUsingMotorDriver() {
+    }
 
-	void setMotorPosition(int pos, int timems, int power);
+    void setMotorPosition(int power, int pos, int timems);
 
-	long getInternalEncoder();
+    long getInternalEncoder();
 
-	void resetEncoder(int pos);
+    void resetEncoder(int pos);
 
-	void stopMotor();
+    void stopMotor();
 
-	int getMotorCurrent();
+    int getMotorCurrent();
 
-	void enableHardRegulation(bool enable);
+    void enableHardRegulation(bool enable);
 
 };
 

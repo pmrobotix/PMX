@@ -1,0 +1,96 @@
+\hypertarget{structMultiBodyInplaceSolverIslandCallback}{}\section{Multi\+Body\+Inplace\+Solver\+Island\+Callback Struct Reference}
+\label{structMultiBodyInplaceSolverIslandCallback}\index{Multi\+Body\+Inplace\+Solver\+Island\+Callback@{Multi\+Body\+Inplace\+Solver\+Island\+Callback}}
+
+
+Inheritance diagram for Multi\+Body\+Inplace\+Solver\+Island\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{structMultiBodyInplaceSolverIslandCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Body\+Inplace\+Solver\+Island\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMultiBodyInplaceSolverIslandCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_afc065e540c1a1d196b4999f28b5f9b00}\label{structMultiBodyInplaceSolverIslandCallback_afc065e540c1a1d196b4999f28b5f9b00}} 
+{\bfseries Multi\+Body\+Inplace\+Solver\+Island\+Callback} (bt\+Multi\+Body\+Constraint\+Solver $\ast$solver, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a67fab240335e82b736d1439c808e0c2f}\label{structMultiBodyInplaceSolverIslandCallback_a67fab240335e82b736d1439c808e0c2f}} 
+\hyperlink{structMultiBodyInplaceSolverIslandCallback}{Multi\+Body\+Inplace\+Solver\+Island\+Callback} \& {\bfseries operator=} (\hyperlink{structMultiBodyInplaceSolverIslandCallback}{Multi\+Body\+Inplace\+Solver\+Island\+Callback} \&other)
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_aadb9f513e26d8b8b257bea2a65668725}\label{structMultiBodyInplaceSolverIslandCallback_aadb9f513e26d8b8b257bea2a65668725}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries setup} (\hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} $\ast$solver\+Info, bt\+Typed\+Constraint $\ast$$\ast$sorted\+Constraints, int num\+Constraints, \hyperlink{classbtMultiBodyConstraint}{bt\+Multi\+Body\+Constraint} $\ast$$\ast$sorted\+Multi\+Body\+Constraints, int num\+Multi\+Body\+Constraints, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+virtual void \hyperlink{structMultiBodyInplaceSolverIslandCallback_a4de885af1dc5369ee882827e010afd4b}{process\+Island} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifolds, int num\+Manifolds, int island\+Id)
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a4c687c04438636edf95ad84ac3774501}\label{structMultiBodyInplaceSolverIslandCallback_a4c687c04438636edf95ad84ac3774501}} 
+void {\bfseries process\+Constraints} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a97088115fb4f0c96a71ccdcdd404176a}\label{structMultiBodyInplaceSolverIslandCallback_a97088115fb4f0c96a71ccdcdd404176a}} 
+\hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} $\ast$ {\bfseries m\+\_\+solver\+Info}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_affca477e35f6360d87bfb02471c33c8b}\label{structMultiBodyInplaceSolverIslandCallback_affca477e35f6360d87bfb02471c33c8b}} 
+bt\+Multi\+Body\+Constraint\+Solver $\ast$ {\bfseries m\+\_\+solver}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_ac0118bc50ed01ddfd2486b8f2029ddb7}\label{structMultiBodyInplaceSolverIslandCallback_ac0118bc50ed01ddfd2486b8f2029ddb7}} 
+\hyperlink{classbtMultiBodyConstraint}{bt\+Multi\+Body\+Constraint} $\ast$$\ast$ {\bfseries m\+\_\+multi\+Body\+Sorted\+Constraints}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_af6a86737e6f7d8aa0b6eecb96debff20}\label{structMultiBodyInplaceSolverIslandCallback_af6a86737e6f7d8aa0b6eecb96debff20}} 
+int {\bfseries m\+\_\+num\+Multi\+Body\+Constraints}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a8faedc7e6997edece13c1d43d8e2c72b}\label{structMultiBodyInplaceSolverIslandCallback_a8faedc7e6997edece13c1d43d8e2c72b}} 
+bt\+Typed\+Constraint $\ast$$\ast$ {\bfseries m\+\_\+sorted\+Constraints}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a9dfeb52eb5c0e0f4b5a42c41df0a359c}\label{structMultiBodyInplaceSolverIslandCallback_a9dfeb52eb5c0e0f4b5a42c41df0a359c}} 
+int {\bfseries m\+\_\+num\+Constraints}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_ad610ed43d22e0d2a7c2c656f056fc6e9}\label{structMultiBodyInplaceSolverIslandCallback_ad610ed43d22e0d2a7c2c656f056fc6e9}} 
+\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$ {\bfseries m\+\_\+debug\+Drawer}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_ac8cfb422a95e2c160925f3737538e7dd}\label{structMultiBodyInplaceSolverIslandCallback_ac8cfb422a95e2c160925f3737538e7dd}} 
+\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries m\+\_\+dispatcher}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_adc3284709ad82e2a864374629454770a}\label{structMultiBodyInplaceSolverIslandCallback_adc3284709ad82e2a864374629454770a}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Collision\+Object $\ast$ $>$ {\bfseries m\+\_\+bodies}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_ac75aa7916f93b3f00228e8279d90b681}\label{structMultiBodyInplaceSolverIslandCallback_ac75aa7916f93b3f00228e8279d90b681}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Persistent\+Manifold $\ast$ $>$ {\bfseries m\+\_\+manifolds}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a263a82f0c95e0d5e770886d8a74d51ce}\label{structMultiBodyInplaceSolverIslandCallback_a263a82f0c95e0d5e770886d8a74d51ce}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Typed\+Constraint $\ast$ $>$ {\bfseries m\+\_\+constraints}
+\item 
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a3d99e0484bb15883837b84d232e22796}\label{structMultiBodyInplaceSolverIslandCallback_a3d99e0484bb15883837b84d232e22796}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtMultiBodyConstraint}{bt\+Multi\+Body\+Constraint} $\ast$ $>$ {\bfseries m\+\_\+multi\+Body\+Constraints}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structMultiBodyInplaceSolverIslandCallback_a4de885af1dc5369ee882827e010afd4b}\label{structMultiBodyInplaceSolverIslandCallback_a4de885af1dc5369ee882827e010afd4b}} 
+\index{Multi\+Body\+Inplace\+Solver\+Island\+Callback@{Multi\+Body\+Inplace\+Solver\+Island\+Callback}!process\+Island@{process\+Island}}
+\index{process\+Island@{process\+Island}!Multi\+Body\+Inplace\+Solver\+Island\+Callback@{Multi\+Body\+Inplace\+Solver\+Island\+Callback}}
+\subsubsection{\texorpdfstring{process\+Island()}{processIsland()}}
+{\footnotesize\ttfamily virtual void Multi\+Body\+Inplace\+Solver\+Island\+Callback\+::process\+Island (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$$\ast$}]{bodies,  }\item[{int}]{num\+Bodies,  }\item[{bt\+Persistent\+Manifold $\ast$$\ast$}]{manifolds,  }\item[{int}]{num\+Manifolds,  }\item[{int}]{island\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+we don\textquotesingle{}t split islands, so all constraints/contact manifolds/bodies are passed into the solver regardless the island id 
+
+Implements \hyperlink{structbtSimulationIslandManager_1_1IslandCallback}{bt\+Simulation\+Island\+Manager\+::\+Island\+Callback}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Featherstone/bt\+Multi\+Body\+Dynamics\+World.\+cpp\end{DoxyCompactItemize}

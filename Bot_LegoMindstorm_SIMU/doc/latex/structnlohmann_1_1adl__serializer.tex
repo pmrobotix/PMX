@@ -1,0 +1,88 @@
+\hypertarget{structnlohmann_1_1adl__serializer}{}\section{nlohmann\+:\+:adl\+\_\+serializer$<$ Value\+Type, typename $>$ Struct Template Reference}
+\label{structnlohmann_1_1adl__serializer}\index{nlohmann\+::adl\+\_\+serializer$<$ Value\+Type, typename $>$@{nlohmann\+::adl\+\_\+serializer$<$ Value\+Type, typename $>$}}
+
+
+default J\+S\+O\+N\+Serializer template argument  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ }\\static auto \hyperlink{structnlohmann_1_1adl__serializer_a8180f52bf21fc610705bc521f22116ae}{from\+\_\+json} (Basic\+Json\+Type \&\&j, Target\+Type \&val) noexcept(noexcept(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$ Basic\+Json\+Type $>$(j), val))) -\/$>$ decltype(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$ Basic\+Json\+Type $>$(j), val), void())
+\begin{DoxyCompactList}\small\item\em convert a J\+S\+ON value to any value type \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ }\\static auto \hyperlink{structnlohmann_1_1adl__serializer_a95eddeff6ff0dd0b6b11c4c7a526716d}{from\+\_\+json} (Basic\+Json\+Type \&\&j) noexcept(noexcept(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$ Basic\+Json\+Type $>$(j), \hyperlink{structnlohmann_1_1detail_1_1identity__tag}{detail\+::identity\+\_\+tag}$<$ Target\+Type $>$ \{\}))) -\/$>$ decltype(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$ Basic\+Json\+Type $>$(j), \hyperlink{structnlohmann_1_1detail_1_1identity__tag}{detail\+::identity\+\_\+tag}$<$ Target\+Type $>$
+\begin{DoxyCompactList}\small\item\em convert a J\+S\+ON value to any value type \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ }\\static auto \hyperlink{structnlohmann_1_1adl__serializer_afdcc8f0204ce8ac7d28a5403f6e1f0e7}{to\+\_\+json} (Basic\+Json\+Type \&j, Target\+Type \&\&val) noexcept(noexcept(\+::nlohmann\+::to\+\_\+json(j, std\+::forward$<$ Target\+Type $>$(val)))) -\/$>$ decltype(\+::nlohmann\+::to\+\_\+json(j, std\+::forward$<$ Target\+Type $>$(val)), void())
+\begin{DoxyCompactList}\small\item\em convert any value type to a J\+S\+ON value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\+Type, typename$>$\newline
+struct nlohmann\+::adl\+\_\+serializer$<$ Value\+Type, typename $>$}
+
+default J\+S\+O\+N\+Serializer template argument 
+
+This serializer ignores the template arguments and uses A\+DL (\href{https://en.cppreference.com/w/cpp/language/adl}{\tt argument-\/dependent lookup}) for serialization.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/adl_serializer/}{\tt https\+://json.\+nlohmann.\+me/api/adl\+\_\+serializer/} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structnlohmann_1_1adl__serializer_a8180f52bf21fc610705bc521f22116ae}\label{structnlohmann_1_1adl__serializer_a8180f52bf21fc610705bc521f22116ae}} 
+\index{nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}!from\+\_\+json@{from\+\_\+json}}
+\index{from\+\_\+json@{from\+\_\+json}!nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}}
+\subsubsection{\texorpdfstring{from\+\_\+json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Value\+Type , typename $>$ \\
+template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ \\
+static auto \hyperlink{structnlohmann_1_1adl__serializer}{nlohmann\+::adl\+\_\+serializer}$<$ Value\+Type, typename $>$\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{Target\+Type \&}]{val }\end{DoxyParamCaption}) -\/$>$ decltype(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$Basic\+Json\+Type$>$(j), val), void())
+    \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+convert a J\+S\+ON value to any value type 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/adl_serializer/from_json/}{\tt https\+://json.\+nlohmann.\+me/api/adl\+\_\+serializer/from\+\_\+json/} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{structnlohmann_1_1adl__serializer_a95eddeff6ff0dd0b6b11c4c7a526716d}\label{structnlohmann_1_1adl__serializer_a95eddeff6ff0dd0b6b11c4c7a526716d}} 
+\index{nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}!from\+\_\+json@{from\+\_\+json}}
+\index{from\+\_\+json@{from\+\_\+json}!nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}}
+\subsubsection{\texorpdfstring{from\+\_\+json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Value\+Type , typename $>$ \\
+template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ \\
+static auto \hyperlink{structnlohmann_1_1adl__serializer}{nlohmann\+::adl\+\_\+serializer}$<$ Value\+Type, typename $>$\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j }\end{DoxyParamCaption}) -\/$>$ decltype(\+::nlohmann\+::from\+\_\+json(std\+::forward$<$Basic\+Json\+Type$>$(j), \hyperlink{structnlohmann_1_1detail_1_1identity__tag}{detail\+::identity\+\_\+tag}$<$Target\+Type$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+convert a J\+S\+ON value to any value type 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/adl_serializer/from_json/}{\tt https\+://json.\+nlohmann.\+me/api/adl\+\_\+serializer/from\+\_\+json/} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{structnlohmann_1_1adl__serializer_afdcc8f0204ce8ac7d28a5403f6e1f0e7}\label{structnlohmann_1_1adl__serializer_afdcc8f0204ce8ac7d28a5403f6e1f0e7}} 
+\index{nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}!to\+\_\+json@{to\+\_\+json}}
+\index{to\+\_\+json@{to\+\_\+json}!nlohmann\+::adl\+\_\+serializer@{nlohmann\+::adl\+\_\+serializer}}
+\subsubsection{\texorpdfstring{to\+\_\+json()}{to\_json()}}
+{\footnotesize\ttfamily template$<$typename Value\+Type , typename $>$ \\
+template$<$typename Basic\+Json\+Type , typename Target\+Type  = Value\+Type$>$ \\
+static auto \hyperlink{structnlohmann_1_1adl__serializer}{nlohmann\+::adl\+\_\+serializer}$<$ Value\+Type, typename $>$\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{Target\+Type \&\&}]{val }\end{DoxyParamCaption}) -\/$>$ decltype(\+::nlohmann\+::to\+\_\+json(j, std\+::forward$<$Target\+Type$>$(val)), void())
+    \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+convert any value type to a J\+S\+ON value 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/adl_serializer/to_json/}{\tt https\+://json.\+nlohmann.\+me/api/adl\+\_\+serializer/to\+\_\+json/} 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/json.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,705 @@
+\hypertarget{classdtCrowd}{}\section{dt\+Crowd Class Reference}
+\label{classdtCrowd}\index{dt\+Crowd@{dt\+Crowd}}
+
+
+{\ttfamily \#include $<$Detour\+Crowd.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}{init} (const int max\+Agents, const float max\+Agent\+Radius, \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$nav)
+\item 
+void \hyperlink{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}{set\+Obstacle\+Avoidance\+Params} (const int idx, const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$params)
+\item 
+const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$ \hyperlink{classdtCrowd_a4da076dabe04b63d801c63c99d2fb5bb}{get\+Obstacle\+Avoidance\+Params} (const int idx) const
+\item 
+const \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ \hyperlink{classdtCrowd_aeef39643256ddad7ae421c78dda0ce06}{get\+Agent} (const int idx)
+\item 
+\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ \hyperlink{classdtCrowd_aa6b571af2a8c628063b904c7b1a5e910}{get\+Editable\+Agent} (const int idx)
+\item 
+\hyperlink{structdtCrowdAgentAnimation}{dt\+Crowd\+Agent\+Animation} $\ast$ \hyperlink{classdtCrowd_aa8cc112f7a11e13a4f8e4584d417eb9d}{get\+Editable\+Agent\+Anim} (const int idx)
+\item 
+int \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count} () const
+\item 
+int \hyperlink{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}{add\+Agent} (const float $\ast$pos, const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$params)
+\item 
+void \hyperlink{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}{update\+Agent\+Parameters} (const int idx, const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$params)
+\item 
+void \hyperlink{classdtCrowd_ae958ada7790a718a2887114264010f62}{remove\+Agent} (const int idx)
+\item 
+bool \hyperlink{classdtCrowd_aa30c34a65535118989ccd86542e96797}{request\+Move\+Target} (const int idx, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos)
+\item 
+bool \hyperlink{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}{request\+Move\+Velocity} (const int idx, const float $\ast$vel)
+\item 
+bool \hyperlink{classdtCrowd_a81405dee71882d0a21a4defd6087a270}{reset\+Move\+Target} (const int idx)
+\item 
+int \hyperlink{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}{get\+Active\+Agents} (\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$$\ast$agents, const int max\+Agents)
+\item 
+void \hyperlink{classdtCrowd_ae3f041e335ca87c323e7340e73113919}{update} (const float dt, \hyperlink{structdtCrowdAgentDebugInfo}{dt\+Crowd\+Agent\+Debug\+Info} $\ast$debug)
+\item 
+const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$ \hyperlink{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}{get\+Filter} (const int i) const
+\item 
+\hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$ \hyperlink{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}{get\+Editable\+Filter} (const int i)
+\item 
+const float $\ast$ \hyperlink{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}{get\+Query\+Extents} () const
+\item 
+int \hyperlink{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}{get\+Velocity\+Sample\+Count} () const
+\item 
+const \hyperlink{classdtProximityGrid}{dt\+Proximity\+Grid} $\ast$ \hyperlink{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}{get\+Grid} () const
+\item 
+const \hyperlink{classdtPathQueue}{dt\+Path\+Queue} $\ast$ \hyperlink{classdtCrowd_a5300bc081c832dde048affb6bd077afb}{get\+Path\+Queue} () const
+\item 
+\mbox{\Hypertarget{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}\label{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}} 
+const \hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} $\ast$ \hyperlink{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}{get\+Nav\+Mesh\+Query} () const
+\begin{DoxyCompactList}\small\item\em Gets the query object used by the crowd. \end{DoxyCompactList}\item 
+bool \hyperlink{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}{init} (const int max\+Agents, const float max\+Agent\+Radius, \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$nav)
+\item 
+void \hyperlink{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}{set\+Obstacle\+Avoidance\+Params} (const int idx, const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$params)
+\item 
+const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$ \hyperlink{classdtCrowd_a4381894f6ac7c255478d64773e4c781c}{get\+Obstacle\+Avoidance\+Params} (const int idx) const
+\item 
+const \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ \hyperlink{classdtCrowd_acd4ec16d485e2572357cd2c3339108cb}{get\+Agent} (const int idx)
+\item 
+\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ \hyperlink{classdtCrowd_af0f5a42f9d7fe60370a7f682cd0089d0}{get\+Editable\+Agent} (const int idx)
+\item 
+\hyperlink{structdtCrowdAgentAnimation}{dt\+Crowd\+Agent\+Animation} $\ast$ \hyperlink{classdtCrowd_a4fc0c4eaff286ae37cb0c2b987174e56}{get\+Editable\+Agent\+Anim} (const int idx)
+\item 
+int \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count} () const
+\item 
+int \hyperlink{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}{add\+Agent} (const float $\ast$pos, const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$params)
+\item 
+void \hyperlink{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}{update\+Agent\+Parameters} (const int idx, const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$params)
+\item 
+void \hyperlink{classdtCrowd_ae958ada7790a718a2887114264010f62}{remove\+Agent} (const int idx)
+\item 
+bool \hyperlink{classdtCrowd_aa30c34a65535118989ccd86542e96797}{request\+Move\+Target} (const int idx, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos)
+\item 
+bool \hyperlink{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}{request\+Move\+Velocity} (const int idx, const float $\ast$vel)
+\item 
+bool \hyperlink{classdtCrowd_a81405dee71882d0a21a4defd6087a270}{reset\+Move\+Target} (const int idx)
+\item 
+int \hyperlink{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}{get\+Active\+Agents} (\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$$\ast$agents, const int max\+Agents)
+\item 
+void \hyperlink{classdtCrowd_ae3f041e335ca87c323e7340e73113919}{update} (const float dt, \hyperlink{structdtCrowdAgentDebugInfo}{dt\+Crowd\+Agent\+Debug\+Info} $\ast$debug)
+\item 
+const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$ \hyperlink{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}{get\+Filter} (const int i) const
+\item 
+\hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$ \hyperlink{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}{get\+Editable\+Filter} (const int i)
+\item 
+const float $\ast$ \hyperlink{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}{get\+Query\+Extents} () const
+\item 
+int \hyperlink{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}{get\+Velocity\+Sample\+Count} () const
+\item 
+const \hyperlink{classdtProximityGrid}{dt\+Proximity\+Grid} $\ast$ \hyperlink{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}{get\+Grid} () const
+\item 
+const \hyperlink{classdtPathQueue}{dt\+Path\+Queue} $\ast$ \hyperlink{classdtCrowd_a5300bc081c832dde048affb6bd077afb}{get\+Path\+Queue} () const
+\item 
+\mbox{\Hypertarget{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}\label{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}} 
+const \hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} $\ast$ \hyperlink{classdtCrowd_ae58e2252287003e9b7226936cf8b4ea7}{get\+Nav\+Mesh\+Query} () const
+\begin{DoxyCompactList}\small\item\em Gets the query object used by the crowd. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides local steering behaviors for a group of agents.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This is the core class of the \hyperlink{group__crowd}{Crowd} module. See the \hyperlink{group__crowd}{Crowd} documentation for a summary of the crowd features.
+
+A common method for setting up the crowd is as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Allocate the crowd using \hyperlink{group__crowd_ga01a53c9d76d1b61678ab1944dfbfac55}{dt\+Alloc\+Crowd}.
+\item Initialize the crowd using \hyperlink{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}{init()}.
+\item Set the avoidance configurations using \hyperlink{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}{set\+Obstacle\+Avoidance\+Params()}.
+\item Add agents using \hyperlink{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}{add\+Agent()} and make an initial movement request using \hyperlink{classdtCrowd_aa30c34a65535118989ccd86542e96797}{request\+Move\+Target()}.
+\end{DoxyEnumerate}
+
+A common process for managing the crowd is as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Call \hyperlink{classdtCrowd_ae3f041e335ca87c323e7340e73113919}{update()} to allow the crowd to manage its agents.
+\item Retrieve agent information using \hyperlink{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}{get\+Active\+Agents()}.
+\item Make movement requests using \hyperlink{classdtCrowd_aa30c34a65535118989ccd86542e96797}{request\+Move\+Target()} when movement goal changes.
+\item \hyperlink{classRepeat}{Repeat} every frame.
+\end{DoxyEnumerate}
+
+Some agent configuration settings can be updated using \hyperlink{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}{update\+Agent\+Parameters()}. But the crowd owns the agent position. So it is not possible to update an active agent\textquotesingle{}s position. If agent position must be fed back into the crowd, the agent must be removed and re-\/added.
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item Path related information is available for newly added agents only after an \hyperlink{classdtCrowd_ae3f041e335ca87c323e7340e73113919}{update()} has been performed.
+\item Agent objects are kept in a pool and re-\/used. So it is important when using agent objects to check the value of \hyperlink{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}{dt\+Crowd\+Agent\+::active} to determine if the agent is actually in use or not.
+\item This class is meant to provide \textquotesingle{}local\textquotesingle{} movement. There is a limit of 256 polygons in the path corridor. So it is not meant to provide automatic pathfinding services over long distances.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__crowd_ga01a53c9d76d1b61678ab1944dfbfac55}{dt\+Alloc\+Crowd()}, \hyperlink{group__crowd_ga9475313642645070e78c359e0fc02b7a}{dt\+Free\+Crowd()}, \hyperlink{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}{init()}, \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}\label{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}} 
+\index{dt\+Crowd@{dt\+Crowd}!add\+Agent@{add\+Agent}}
+\index{add\+Agent@{add\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{add\+Agent()}{addAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::add\+Agent (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Adds a new agent to the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The requested position of the agent. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The configutation of the agent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the agent in the agent pool. Or -\/1 if the agent could not be added.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The agent\textquotesingle{}s position will be constrained to the surface of the navigation mesh. \mbox{\Hypertarget{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}\label{classdtCrowd_ae8c89febfd979a6b963c62d8cdb60653}} 
+\index{dt\+Crowd@{dt\+Crowd}!add\+Agent@{add\+Agent}}
+\index{add\+Agent@{add\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{add\+Agent()}{addAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::add\+Agent (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Adds a new agent to the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The requested position of the agent. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The configutation of the agent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the agent in the agent pool. Or -\/1 if the agent could not be added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}\label{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Active\+Agents@{get\+Active\+Agents}}
+\index{get\+Active\+Agents@{get\+Active\+Agents}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Active\+Agents()}{getActiveAgents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Active\+Agents (\begin{DoxyParamCaption}\item[{\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$$\ast$}]{agents,  }\item[{const int}]{max\+Agents }\end{DoxyParamCaption})}
+
+Gets the active agents int the agent pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em agents} & An array of agent pointers. \mbox{[}(\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$) $\ast$ max\+Agents\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Agents} & The size of the crowd agent array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of agents returned in {\ttfamily agents}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}\label{classdtCrowd_a15a4b9b9fb72a358514489ea8f755405}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Active\+Agents@{get\+Active\+Agents}}
+\index{get\+Active\+Agents@{get\+Active\+Agents}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Active\+Agents()}{getActiveAgents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Active\+Agents (\begin{DoxyParamCaption}\item[{\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$$\ast$}]{agents,  }\item[{const int}]{max\+Agents }\end{DoxyParamCaption})}
+
+Gets the active agents int the agent pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em agents} & An array of agent pointers. \mbox{[}(\hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$) $\ast$ max\+Agents\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Agents} & The size of the crowd agent array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of agents returned in {\ttfamily agents}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_aeef39643256ddad7ae421c78dda0ce06}\label{classdtCrowd_aeef39643256ddad7ae421c78dda0ce06}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Agent@{get\+Agent}}
+\index{get\+Agent@{get\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Agent()}{getAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ dt\+Crowd\+::get\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Agents in the pool may not be in use. Check \hyperlink{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}{dt\+Crowd\+Agent.\+active} before using the returned object. \mbox{\Hypertarget{classdtCrowd_acd4ec16d485e2572357cd2c3339108cb}\label{classdtCrowd_acd4ec16d485e2572357cd2c3339108cb}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Agent@{get\+Agent}}
+\index{get\+Agent@{get\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Agent()}{getAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent}$\ast$ dt\+Crowd\+::get\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a87dc2372038ee12d9043a65737880b78}\label{classdtCrowd_a87dc2372038ee12d9043a65737880b78}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Agent\+Count@{get\+Agent\+Count}}
+\index{get\+Agent\+Count@{get\+Agent\+Count}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Agent\+Count()}{getAgentCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Agent\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The maximum number of agents that can be managed by the object. \begin{DoxyReturn}{Returns}
+The maximum number of agents. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a87dc2372038ee12d9043a65737880b78}\label{classdtCrowd_a87dc2372038ee12d9043a65737880b78}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Agent\+Count@{get\+Agent\+Count}}
+\index{get\+Agent\+Count@{get\+Agent\+Count}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Agent\+Count()}{getAgentCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Agent\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The maximum number of agents that can be managed by the object. \begin{DoxyReturn}{Returns}
+The maximum number of agents. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_aa6b571af2a8c628063b904c7b1a5e910}\label{classdtCrowd_aa6b571af2a8c628063b904c7b1a5e910}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Agent@{get\+Editable\+Agent}}
+\index{get\+Editable\+Agent@{get\+Editable\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Agent()}{getEditableAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} $\ast$ dt\+Crowd\+::get\+Editable\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent.
+\end{DoxyReturn}
+Agents in the pool may not be in use. Check \hyperlink{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}{dt\+Crowd\+Agent.\+active} before using the returned object. \mbox{\Hypertarget{classdtCrowd_af0f5a42f9d7fe60370a7f682cd0089d0}\label{classdtCrowd_af0f5a42f9d7fe60370a7f682cd0089d0}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Agent@{get\+Editable\+Agent}}
+\index{get\+Editable\+Agent@{get\+Editable\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Agent()}{getEditableAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent}$\ast$ dt\+Crowd\+::get\+Editable\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a4fc0c4eaff286ae37cb0c2b987174e56}\label{classdtCrowd_a4fc0c4eaff286ae37cb0c2b987174e56}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Agent\+Anim@{get\+Editable\+Agent\+Anim}}
+\index{get\+Editable\+Agent\+Anim@{get\+Editable\+Agent\+Anim}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Agent\+Anim()}{getEditableAgentAnim()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structdtCrowdAgentAnimation}{dt\+Crowd\+Agent\+Animation}$\ast$ dt\+Crowd\+::get\+Editable\+Agent\+Anim (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent\+Anim from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent\+Anim. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_aa8cc112f7a11e13a4f8e4584d417eb9d}\label{classdtCrowd_aa8cc112f7a11e13a4f8e4584d417eb9d}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Agent\+Anim@{get\+Editable\+Agent\+Anim}}
+\index{get\+Editable\+Agent\+Anim@{get\+Editable\+Agent\+Anim}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Agent\+Anim()}{getEditableAgentAnim()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structdtCrowdAgentAnimation}{dt\+Crowd\+Agent\+Animation} $\ast$ dt\+Crowd\+::get\+Editable\+Agent\+Anim (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Gets the specified agent\+Anim from the pool. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested agent\+Anim. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}\label{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Filter@{get\+Editable\+Filter}}
+\index{get\+Editable\+Filter@{get\+Editable\+Filter}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Filter()}{getEditableFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}$\ast$ dt\+Crowd\+::get\+Editable\+Filter (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the filter used by the crowd. \begin{DoxyReturn}{Returns}
+The filter used by the crowd. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}\label{classdtCrowd_a170a9c4cc9f88a7ee3d560abce9ad552}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Editable\+Filter@{get\+Editable\+Filter}}
+\index{get\+Editable\+Filter@{get\+Editable\+Filter}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Editable\+Filter()}{getEditableFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}$\ast$ dt\+Crowd\+::get\+Editable\+Filter (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the filter used by the crowd. \begin{DoxyReturn}{Returns}
+The filter used by the crowd. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}\label{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Filter@{get\+Filter}}
+\index{get\+Filter@{get\+Filter}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Filter()}{getFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}$\ast$ dt\+Crowd\+::get\+Filter (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the filter used by the crowd. \begin{DoxyReturn}{Returns}
+The filter used by the crowd. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}\label{classdtCrowd_ae712fb6e6e907454ec0a827d11957373}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Filter@{get\+Filter}}
+\index{get\+Filter@{get\+Filter}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Filter()}{getFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}$\ast$ dt\+Crowd\+::get\+Filter (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the filter used by the crowd. \begin{DoxyReturn}{Returns}
+The filter used by the crowd. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}\label{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtProximityGrid}{dt\+Proximity\+Grid}$\ast$ dt\+Crowd\+::get\+Grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the crowd\textquotesingle{}s proximity grid. \begin{DoxyReturn}{Returns}
+The crowd\textquotesingle{}s proximity grid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}\label{classdtCrowd_a1d1534a46f29afd4ab82ac37080c5ad0}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtProximityGrid}{dt\+Proximity\+Grid}$\ast$ dt\+Crowd\+::get\+Grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the crowd\textquotesingle{}s proximity grid. \begin{DoxyReturn}{Returns}
+The crowd\textquotesingle{}s proximity grid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a4da076dabe04b63d801c63c99d2fb5bb}\label{classdtCrowd_a4da076dabe04b63d801c63c99d2fb5bb}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Obstacle\+Avoidance\+Params@{get\+Obstacle\+Avoidance\+Params}}
+\index{get\+Obstacle\+Avoidance\+Params@{get\+Obstacle\+Avoidance\+Params}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Obstacle\+Avoidance\+Params()}{getObstacleAvoidanceParams()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$ dt\+Crowd\+::get\+Obstacle\+Avoidance\+Params (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption}) const}
+
+Gets the shared avoidance configuration for the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The index of the configuration to retreive. \mbox{[}Limits\+: 0 $<$= value $<$ \#\+D\+T\+\_\+\+C\+R\+O\+W\+D\+\_\+\+M\+A\+X\+\_\+\+O\+B\+S\+T\+A\+V\+O\+I\+D\+A\+N\+C\+E\+\_\+\+P\+A\+R\+A\+MS\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested configuration. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a4381894f6ac7c255478d64773e4c781c}\label{classdtCrowd_a4381894f6ac7c255478d64773e4c781c}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Obstacle\+Avoidance\+Params@{get\+Obstacle\+Avoidance\+Params}}
+\index{get\+Obstacle\+Avoidance\+Params@{get\+Obstacle\+Avoidance\+Params}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Obstacle\+Avoidance\+Params()}{getObstacleAvoidanceParams()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params}$\ast$ dt\+Crowd\+::get\+Obstacle\+Avoidance\+Params (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption}) const}
+
+Gets the shared avoidance configuration for the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The index of the configuration to retreive. \mbox{[}Limits\+: 0 $<$= value $<$ \#\+D\+T\+\_\+\+C\+R\+O\+W\+D\+\_\+\+M\+A\+X\+\_\+\+O\+B\+S\+T\+A\+V\+O\+I\+D\+A\+N\+C\+E\+\_\+\+P\+A\+R\+A\+MS\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested configuration. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a5300bc081c832dde048affb6bd077afb}\label{classdtCrowd_a5300bc081c832dde048affb6bd077afb}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Path\+Queue@{get\+Path\+Queue}}
+\index{get\+Path\+Queue@{get\+Path\+Queue}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Path\+Queue()}{getPathQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtPathQueue}{dt\+Path\+Queue}$\ast$ dt\+Crowd\+::get\+Path\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the crowd\textquotesingle{}s path request queue. \begin{DoxyReturn}{Returns}
+The crowd\textquotesingle{}s path request queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a5300bc081c832dde048affb6bd077afb}\label{classdtCrowd_a5300bc081c832dde048affb6bd077afb}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Path\+Queue@{get\+Path\+Queue}}
+\index{get\+Path\+Queue@{get\+Path\+Queue}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Path\+Queue()}{getPathQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtPathQueue}{dt\+Path\+Queue}$\ast$ dt\+Crowd\+::get\+Path\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the crowd\textquotesingle{}s path request queue. \begin{DoxyReturn}{Returns}
+The crowd\textquotesingle{}s path request queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}\label{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Query\+Extents@{get\+Query\+Extents}}
+\index{get\+Query\+Extents@{get\+Query\+Extents}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Query\+Extents()}{getQueryExtents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const float$\ast$ dt\+Crowd\+::get\+Query\+Extents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the search extents \mbox{[}(x, y, z)\mbox{]} used by the crowd for query operations. \begin{DoxyReturn}{Returns}
+The search extents used by the crowd. \mbox{[}(x, y, z)\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}\label{classdtCrowd_a6a37c9f57844d91e46fd4c8ef9de17b0}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Query\+Extents@{get\+Query\+Extents}}
+\index{get\+Query\+Extents@{get\+Query\+Extents}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Query\+Extents()}{getQueryExtents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const float$\ast$ dt\+Crowd\+::get\+Query\+Extents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the search extents \mbox{[}(x, y, z)\mbox{]} used by the crowd for query operations. \begin{DoxyReturn}{Returns}
+The search extents used by the crowd. \mbox{[}(x, y, z)\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}\label{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Velocity\+Sample\+Count@{get\+Velocity\+Sample\+Count}}
+\index{get\+Velocity\+Sample\+Count@{get\+Velocity\+Sample\+Count}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Velocity\+Sample\+Count()}{getVelocitySampleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Velocity\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the velocity sample count. \begin{DoxyReturn}{Returns}
+The velocity sample count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}\label{classdtCrowd_a22ceec36962e3fdaccfbe4e84a8b24b3}} 
+\index{dt\+Crowd@{dt\+Crowd}!get\+Velocity\+Sample\+Count@{get\+Velocity\+Sample\+Count}}
+\index{get\+Velocity\+Sample\+Count@{get\+Velocity\+Sample\+Count}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{get\+Velocity\+Sample\+Count()}{getVelocitySampleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Crowd\+::get\+Velocity\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the velocity sample count. \begin{DoxyReturn}{Returns}
+The velocity sample count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}\label{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}} 
+\index{dt\+Crowd@{dt\+Crowd}!init@{init}}
+\index{init@{init}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::init (\begin{DoxyParamCaption}\item[{const int}]{max\+Agents,  }\item[{const float}]{max\+Agent\+Radius,  }\item[{\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$}]{nav }\end{DoxyParamCaption})}
+
+Initializes the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\+Agents} & The maximum number of agents the crowd can manage. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Agent\+Radius} & The maximum radius of any agent that will be added to the crowd. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em nav} & The navigation mesh to use for planning. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the initialization succeeded. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}\label{classdtCrowd_a2f670cde9e10d07e3ed189ea861f37e4}} 
+\index{dt\+Crowd@{dt\+Crowd}!init@{init}}
+\index{init@{init}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::init (\begin{DoxyParamCaption}\item[{const int}]{max\+Agents,  }\item[{const float}]{max\+Agent\+Radius,  }\item[{\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$}]{nav }\end{DoxyParamCaption})}
+
+Initializes the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\+Agents} & The maximum number of agents the crowd can manage. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Agent\+Radius} & The maximum radius of any agent that will be added to the crowd. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em nav} & The navigation mesh to use for planning. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the initialization succeeded.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+May be called more than once to purge and re-\/initialize the crowd. \mbox{\Hypertarget{classdtCrowd_ae958ada7790a718a2887114264010f62}\label{classdtCrowd_ae958ada7790a718a2887114264010f62}} 
+\index{dt\+Crowd@{dt\+Crowd}!remove\+Agent@{remove\+Agent}}
+\index{remove\+Agent@{remove\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{remove\+Agent()}{removeAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::remove\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Removes the agent from the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_ae958ada7790a718a2887114264010f62}\label{classdtCrowd_ae958ada7790a718a2887114264010f62}} 
+\index{dt\+Crowd@{dt\+Crowd}!remove\+Agent@{remove\+Agent}}
+\index{remove\+Agent@{remove\+Agent}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{remove\+Agent()}{removeAgent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::remove\+Agent (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Removes the agent from the crowd. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The agent is deactivated and will no longer be processed. Its \hyperlink{structdtCrowdAgent}{dt\+Crowd\+Agent} object is not removed from the pool. It is marked as inactive so that it is available for reuse. \mbox{\Hypertarget{classdtCrowd_aa30c34a65535118989ccd86542e96797}\label{classdtCrowd_aa30c34a65535118989ccd86542e96797}} 
+\index{dt\+Crowd@{dt\+Crowd}!request\+Move\+Target@{request\+Move\+Target}}
+\index{request\+Move\+Target@{request\+Move\+Target}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{request\+Move\+Target()}{requestMoveTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::request\+Move\+Target (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos }\end{DoxyParamCaption})}
+
+Submits a new move request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em ref} & The position\textquotesingle{}s polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position within the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully submitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_aa30c34a65535118989ccd86542e96797}\label{classdtCrowd_aa30c34a65535118989ccd86542e96797}} 
+\index{dt\+Crowd@{dt\+Crowd}!request\+Move\+Target@{request\+Move\+Target}}
+\index{request\+Move\+Target@{request\+Move\+Target}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{request\+Move\+Target()}{requestMoveTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::request\+Move\+Target (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos }\end{DoxyParamCaption})}
+
+Submits a new move request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em ref} & The position\textquotesingle{}s polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position within the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully submitted.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method is used when a new target is set.
+
+The position will be constrained to the surface of the navigation mesh.
+
+The request will be processed during the next \hyperlink{classdtCrowd_ae3f041e335ca87c323e7340e73113919}{update()}. \mbox{\Hypertarget{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}\label{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}} 
+\index{dt\+Crowd@{dt\+Crowd}!request\+Move\+Velocity@{request\+Move\+Velocity}}
+\index{request\+Move\+Velocity@{request\+Move\+Velocity}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{request\+Move\+Velocity()}{requestMoveVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::request\+Move\+Velocity (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const float $\ast$}]{vel }\end{DoxyParamCaption})}
+
+Submits a new move request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em vel} & The movement velocity. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully submitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}\label{classdtCrowd_a4fe7e43e63d857e77f9db1f20b904806}} 
+\index{dt\+Crowd@{dt\+Crowd}!request\+Move\+Velocity@{request\+Move\+Velocity}}
+\index{request\+Move\+Velocity@{request\+Move\+Velocity}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{request\+Move\+Velocity()}{requestMoveVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::request\+Move\+Velocity (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const float $\ast$}]{vel }\end{DoxyParamCaption})}
+
+Submits a new move request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em vel} & The movement velocity. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully submitted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a81405dee71882d0a21a4defd6087a270}\label{classdtCrowd_a81405dee71882d0a21a4defd6087a270}} 
+\index{dt\+Crowd@{dt\+Crowd}!reset\+Move\+Target@{reset\+Move\+Target}}
+\index{reset\+Move\+Target@{reset\+Move\+Target}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{reset\+Move\+Target()}{resetMoveTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::reset\+Move\+Target (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Resets any request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully reseted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a81405dee71882d0a21a4defd6087a270}\label{classdtCrowd_a81405dee71882d0a21a4defd6087a270}} 
+\index{dt\+Crowd@{dt\+Crowd}!reset\+Move\+Target@{reset\+Move\+Target}}
+\index{reset\+Move\+Target@{reset\+Move\+Target}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{reset\+Move\+Target()}{resetMoveTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Crowd\+::reset\+Move\+Target (\begin{DoxyParamCaption}\item[{const int}]{idx }\end{DoxyParamCaption})}
+
+Resets any request for the specified agent. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request was successfully reseted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}\label{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}} 
+\index{dt\+Crowd@{dt\+Crowd}!set\+Obstacle\+Avoidance\+Params@{set\+Obstacle\+Avoidance\+Params}}
+\index{set\+Obstacle\+Avoidance\+Params@{set\+Obstacle\+Avoidance\+Params}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{set\+Obstacle\+Avoidance\+Params()}{setObstacleAvoidanceParams()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::set\+Obstacle\+Avoidance\+Params (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Sets the shared avoidance configuration for the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The index. \mbox{[}Limits\+: 0 $<$= value $<$ \#\+D\+T\+\_\+\+C\+R\+O\+W\+D\+\_\+\+M\+A\+X\+\_\+\+O\+B\+S\+T\+A\+V\+O\+I\+D\+A\+N\+C\+E\+\_\+\+P\+A\+R\+A\+MS\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The new configuration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}\label{classdtCrowd_a96338b9a99e8d58a3051a9ce7934e8b1}} 
+\index{dt\+Crowd@{dt\+Crowd}!set\+Obstacle\+Avoidance\+Params@{set\+Obstacle\+Avoidance\+Params}}
+\index{set\+Obstacle\+Avoidance\+Params@{set\+Obstacle\+Avoidance\+Params}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{set\+Obstacle\+Avoidance\+Params()}{setObstacleAvoidanceParams()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::set\+Obstacle\+Avoidance\+Params (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const \hyperlink{structdtObstacleAvoidanceParams}{dt\+Obstacle\+Avoidance\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Sets the shared avoidance configuration for the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The index. \mbox{[}Limits\+: 0 $<$= value $<$ \#\+D\+T\+\_\+\+C\+R\+O\+W\+D\+\_\+\+M\+A\+X\+\_\+\+O\+B\+S\+T\+A\+V\+O\+I\+D\+A\+N\+C\+E\+\_\+\+P\+A\+R\+A\+MS\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The new configuration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_ae3f041e335ca87c323e7340e73113919}\label{classdtCrowd_ae3f041e335ca87c323e7340e73113919}} 
+\index{dt\+Crowd@{dt\+Crowd}!update@{update}}
+\index{update@{update}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::update (\begin{DoxyParamCaption}\item[{const float}]{dt,  }\item[{\hyperlink{structdtCrowdAgentDebugInfo}{dt\+Crowd\+Agent\+Debug\+Info} $\ast$}]{debug }\end{DoxyParamCaption})}
+
+Updates the steering and positions of all agents. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dt} & The time, in seconds, to update the simulation. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em debug} & A debug object to load with debug information. \mbox{[}Opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_ae3f041e335ca87c323e7340e73113919}\label{classdtCrowd_ae3f041e335ca87c323e7340e73113919}} 
+\index{dt\+Crowd@{dt\+Crowd}!update@{update}}
+\index{update@{update}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::update (\begin{DoxyParamCaption}\item[{const float}]{dt,  }\item[{\hyperlink{structdtCrowdAgentDebugInfo}{dt\+Crowd\+Agent\+Debug\+Info} $\ast$}]{debug }\end{DoxyParamCaption})}
+
+Updates the steering and positions of all agents. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dt} & The time, in seconds, to update the simulation. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em debug} & A debug object to load with debug information. \mbox{[}Opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}\label{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}} 
+\index{dt\+Crowd@{dt\+Crowd}!update\+Agent\+Parameters@{update\+Agent\+Parameters}}
+\index{update\+Agent\+Parameters@{update\+Agent\+Parameters}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{update\+Agent\+Parameters()}{updateAgentParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::update\+Agent\+Parameters (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Updates the specified agent\textquotesingle{}s configuration. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The new agent configuration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}\label{classdtCrowd_a6ed4aa0026c21593daa9ea12c71f84c2}} 
+\index{dt\+Crowd@{dt\+Crowd}!update\+Agent\+Parameters@{update\+Agent\+Parameters}}
+\index{update\+Agent\+Parameters@{update\+Agent\+Parameters}!dt\+Crowd@{dt\+Crowd}}
+\subsubsection{\texorpdfstring{update\+Agent\+Parameters()}{updateAgentParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Crowd\+::update\+Agent\+Parameters (\begin{DoxyParamCaption}\item[{const int}]{idx,  }\item[{const \hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Updates the specified agent\textquotesingle{}s configuration. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The agent index. \mbox{[}Limits\+: 0 $<$= value $<$ \hyperlink{classdtCrowd_a87dc2372038ee12d9043a65737880b78}{get\+Agent\+Count()}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em params} & The new agent configuration. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour\+Crowd/Detour\+Crowd.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour\+Crowd/Detour\+Crowd.\+cpp\end{DoxyCompactItemize}

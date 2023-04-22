@@ -1,0 +1,106 @@
+\hypertarget{classDisplayLinkDirector}{}\section{Display\+Link\+Director Class Reference}
+\label{classDisplayLinkDirector}\index{Display\+Link\+Director@{Display\+Link\+Director}}
+
+
+\hyperlink{classDisplayLinkDirector}{Display\+Link\+Director} is a \hyperlink{classDirector}{Director} that synchronizes timers with the refresh rate of the display.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Director.\+h$>$}
+
+
+
+Inheritance diagram for Display\+Link\+Director\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classDisplayLinkDirector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Display\+Link\+Director\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDisplayLinkDirector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDisplayLinkDirector_a17671ddd0843915d470ea32db207b872}\label{classDisplayLinkDirector_a17671ddd0843915d470ea32db207b872}} 
+virtual void {\bfseries main\+Loop} () override
+\item 
+virtual void \hyperlink{classDisplayLinkDirector_ab433b1840297793f0723d673f8efea14}{set\+Animation\+Interval} (float value) override
+\item 
+virtual void \hyperlink{classDisplayLinkDirector_aed0e316ca8afa0b6e155a5257e3f9201}{start\+Animation} () override
+\item 
+virtual void \hyperlink{classDisplayLinkDirector_af3c6a2fbc71e733a9957e653c26c7798}{stop\+Animation} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDisplayLinkDirector_a3f114ebeddbf2ebf275abee05997e974}\label{classDisplayLinkDirector_a3f114ebeddbf2ebf275abee05997e974}} 
+bool {\bfseries \+\_\+invalid}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDisplayLinkDirector}{Display\+Link\+Director} is a \hyperlink{classDirector}{Director} that synchronizes timers with the refresh rate of the display. 
+
+Features and Limitations\+:
+\begin{DoxyItemize}
+\item Scheduled timers \& drawing are synchronizes with the refresh rate of the display
+\item Only supports animation intervals of 1/60 1/30 \& 1/15
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+v0.\+8.\+2 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisplayLinkDirector_ab433b1840297793f0723d673f8efea14}\label{classDisplayLinkDirector_ab433b1840297793f0723d673f8efea14}} 
+\index{Display\+Link\+Director@{Display\+Link\+Director}!set\+Animation\+Interval@{set\+Animation\+Interval}}
+\index{set\+Animation\+Interval@{set\+Animation\+Interval}!Display\+Link\+Director@{Display\+Link\+Director}}
+\subsubsection{\texorpdfstring{set\+Animation\+Interval()}{setAnimationInterval()}}
+{\footnotesize\ttfamily void Display\+Link\+Director\+::set\+Animation\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the F\+PS value. F\+PS = 1/interval. 
+
+Implements \hyperlink{classDirector_a87d84ea16dfb7c991a4fcfd48e8d22ed}{Director}.
+
+\mbox{\Hypertarget{classDisplayLinkDirector_aed0e316ca8afa0b6e155a5257e3f9201}\label{classDisplayLinkDirector_aed0e316ca8afa0b6e155a5257e3f9201}} 
+\index{Display\+Link\+Director@{Display\+Link\+Director}!start\+Animation@{start\+Animation}}
+\index{start\+Animation@{start\+Animation}!Display\+Link\+Director@{Display\+Link\+Director}}
+\subsubsection{\texorpdfstring{start\+Animation()}{startAnimation()}}
+{\footnotesize\ttfamily void Display\+Link\+Director\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+The main loop is triggered again. Call this function only if \mbox{[}stop\+Animation\mbox{]} was called earlier. \begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t call this function to start the main loop. To run the main loop call run\+With\+Scene. 
+\end{DoxyWarning}
+
+
+Implements \hyperlink{classDirector_a122d685c783d0c2b7e2d22ba1ecb0d91}{Director}.
+
+\mbox{\Hypertarget{classDisplayLinkDirector_af3c6a2fbc71e733a9957e653c26c7798}\label{classDisplayLinkDirector_af3c6a2fbc71e733a9957e653c26c7798}} 
+\index{Display\+Link\+Director@{Display\+Link\+Director}!stop\+Animation@{stop\+Animation}}
+\index{stop\+Animation@{stop\+Animation}!Display\+Link\+Director@{Display\+Link\+Director}}
+\subsubsection{\texorpdfstring{stop\+Animation()}{stopAnimation()}}
+{\footnotesize\ttfamily void Display\+Link\+Director\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stops the animation. Nothing will be drawn. The main loop won\textquotesingle{}t be triggered anymore. If you don\textquotesingle{}t want to pause your animation call \mbox{[}pause\mbox{]} instead. 
+
+Implements \hyperlink{classDirector_abe981a5c5d35aaf6c2aaf1b55f023e82}{Director}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Director.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Director.\+cpp\end{DoxyCompactItemize}

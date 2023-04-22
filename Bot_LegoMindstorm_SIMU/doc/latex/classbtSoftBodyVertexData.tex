@@ -1,0 +1,333 @@
+\hypertarget{classbtSoftBodyVertexData}{}\section{bt\+Soft\+Body\+Vertex\+Data Class Reference}
+\label{classbtSoftBodyVertexData}\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+
+
+{\ttfamily \#include $<$bt\+Soft\+Body\+Solver\+Data.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Soft\+Body\+Vertex\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBodyVertexData__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Body\+Vertex\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBodyVertexData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbtSoftBodyVertexData_1_1VertexDescription}{Vertex\+Description}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_aff881f14a4ae961dd8420969e1115090}\label{classbtSoftBodyVertexData_aff881f14a4ae961dd8420969e1115090}} 
+virtual void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a701997d46cf9d90f0cd22abda13d572c}\label{classbtSoftBodyVertexData_a701997d46cf9d90f0cd22abda13d572c}} 
+int {\bfseries get\+Num\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_acfc7cafd9b13f9c442af038ca8e08dfc}\label{classbtSoftBodyVertexData_acfc7cafd9b13f9c442af038ca8e08dfc}} 
+int {\bfseries get\+Cloth\+Identifier} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a3dc301457df55b2da8bd7aea67eea552}\label{classbtSoftBodyVertexData_a3dc301457df55b2da8bd7aea67eea552}} 
+void {\bfseries set\+Vertex\+At} (const \hyperlink{classbtSoftBodyVertexData_1_1VertexDescription}{Vertex\+Description} \&vertex, int vertex\+Index)
+\item 
+void \hyperlink{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}{create\+Vertices} (int num\+Vertices, int cloth\+Identifier, int max\+Vertices=0)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} \& \hyperlink{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}{get\+Position} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a9bc7e8a411d49f5ab968666788dce5cf}\label{classbtSoftBodyVertexData_a9bc7e8a411d49f5ab968666788dce5cf}} 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} {\bfseries get\+Position} (int vertex\+Index) const
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} \& \hyperlink{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}{get\+Previous\+Position} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}{get\+Velocity} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}{get\+Force\+Accumulator} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}{get\+Normal} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a72ca8247eb869e8a5ef81855f297b0d6}\label{classbtSoftBodyVertexData_a72ca8247eb869e8a5ef81855f297b0d6}} 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} {\bfseries get\+Normal} (int vertex\+Index) const
+\item 
+float \& \hyperlink{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}{get\+Inverse\+Mass} (int vertex\+Index)
+\item 
+float \& \hyperlink{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}{get\+Area} (int vertex\+Index)
+\item 
+int \& \hyperlink{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}{get\+Triangle\+Count} (int vertex\+Index)
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}{on\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}{move\+To\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}{move\+From\+Accelerator} (bool b\+Copy=false, bool b\+Copy\+Minimum=true)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_af168e43ddea128f820eaacba02ea4302}\label{classbtSoftBodyVertexData_af168e43ddea128f820eaacba02ea4302}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} $>$ \& {\bfseries get\+Vertex\+Positions} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_aff881f14a4ae961dd8420969e1115090}\label{classbtSoftBodyVertexData_aff881f14a4ae961dd8420969e1115090}} 
+virtual void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a701997d46cf9d90f0cd22abda13d572c}\label{classbtSoftBodyVertexData_a701997d46cf9d90f0cd22abda13d572c}} 
+int {\bfseries get\+Num\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_acfc7cafd9b13f9c442af038ca8e08dfc}\label{classbtSoftBodyVertexData_acfc7cafd9b13f9c442af038ca8e08dfc}} 
+int {\bfseries get\+Cloth\+Identifier} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a3dc301457df55b2da8bd7aea67eea552}\label{classbtSoftBodyVertexData_a3dc301457df55b2da8bd7aea67eea552}} 
+void {\bfseries set\+Vertex\+At} (const \hyperlink{classbtSoftBodyVertexData_1_1VertexDescription}{Vertex\+Description} \&vertex, int vertex\+Index)
+\item 
+void \hyperlink{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}{create\+Vertices} (int num\+Vertices, int cloth\+Identifier, int max\+Vertices=0)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} \& \hyperlink{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}{get\+Position} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a9bc7e8a411d49f5ab968666788dce5cf}\label{classbtSoftBodyVertexData_a9bc7e8a411d49f5ab968666788dce5cf}} 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} {\bfseries get\+Position} (int vertex\+Index) const
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} \& \hyperlink{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}{get\+Previous\+Position} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}{get\+Velocity} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}{get\+Force\+Accumulator} (int vertex\+Index)
+\item 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} \& \hyperlink{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}{get\+Normal} (int vertex\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a72ca8247eb869e8a5ef81855f297b0d6}\label{classbtSoftBodyVertexData_a72ca8247eb869e8a5ef81855f297b0d6}} 
+\hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} {\bfseries get\+Normal} (int vertex\+Index) const
+\item 
+float \& \hyperlink{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}{get\+Inverse\+Mass} (int vertex\+Index)
+\item 
+float \& \hyperlink{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}{get\+Area} (int vertex\+Index)
+\item 
+int \& \hyperlink{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}{get\+Triangle\+Count} (int vertex\+Index)
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}{on\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}{move\+To\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}{move\+From\+Accelerator} (bool b\+Copy=false, bool b\+Copy\+Minimum=true)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_af168e43ddea128f820eaacba02ea4302}\label{classbtSoftBodyVertexData_af168e43ddea128f820eaacba02ea4302}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} $>$ \& {\bfseries get\+Vertex\+Positions} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a82dffaecbdf2212e4271ec67c4721ff5}\label{classbtSoftBodyVertexData_a82dffaecbdf2212e4271ec67c4721ff5}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+cloth\+Identifier}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a58ba4336122fb9c9637a086eb8baa463}\label{classbtSoftBodyVertexData_a58ba4336122fb9c9637a086eb8baa463}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} $>$ {\bfseries m\+\_\+vertex\+Position}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a4dde01d320da9b2a5403acce90e64bd0}\label{classbtSoftBodyVertexData_a4dde01d320da9b2a5403acce90e64bd0}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3} $>$ {\bfseries m\+\_\+vertex\+Previous\+Position}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_ab56e3245c46292bf4621f6316f17e613}\label{classbtSoftBodyVertexData_ab56e3245c46292bf4621f6316f17e613}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} $>$ {\bfseries m\+\_\+vertex\+Velocity}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_af1e647e767e9bc9c33a472db531bf494}\label{classbtSoftBodyVertexData_af1e647e767e9bc9c33a472db531bf494}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} $>$ {\bfseries m\+\_\+vertex\+Force\+Accumulator}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_af9ab6e325ae1068aa14a97167499c6da}\label{classbtSoftBodyVertexData_af9ab6e325ae1068aa14a97167499c6da}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3} $>$ {\bfseries m\+\_\+vertex\+Normal}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a03c80a45362f91cc486ef9e001a9be70}\label{classbtSoftBodyVertexData_a03c80a45362f91cc486ef9e001a9be70}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ float $>$ {\bfseries m\+\_\+vertex\+Inverse\+Mass}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a19c65f58d5cba5cc986c482ca8c32027}\label{classbtSoftBodyVertexData_a19c65f58d5cba5cc986c482ca8c32027}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ float $>$ {\bfseries m\+\_\+vertex\+Area}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a7c41f443c90d6611f0bcc27a86ebc847}\label{classbtSoftBodyVertexData_a7c41f443c90d6611f0bcc27a86ebc847}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+vertex\+Triangle\+Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper for vertex data information. By wrapping it like this we stand a good chance of being able to optimise for storage format easily. It should also help us make sure all the data structures remain consistent. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}\label{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!create\+Vertices@{create\+Vertices}}
+\index{create\+Vertices@{create\+Vertices}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{create\+Vertices()}{createVertices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Vertex\+Data\+::create\+Vertices (\begin{DoxyParamCaption}\item[{int}]{num\+Vertices,  }\item[{int}]{cloth\+Identifier,  }\item[{int}]{max\+Vertices = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create num\+Vertices new vertices for cloth cloth\+Identifier max\+Vertices allows a buffer zone of extra vertices for alignment or tearing reasons. \mbox{\Hypertarget{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}\label{classbtSoftBodyVertexData_ac3ec63020379a29c984904deb4fc92b2}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!create\+Vertices@{create\+Vertices}}
+\index{create\+Vertices@{create\+Vertices}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{create\+Vertices()}{createVertices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Vertex\+Data\+::create\+Vertices (\begin{DoxyParamCaption}\item[{int}]{num\+Vertices,  }\item[{int}]{cloth\+Identifier,  }\item[{int}]{max\+Vertices = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create num\+Vertices new vertices for cloth cloth\+Identifier max\+Vertices allows a buffer zone of extra vertices for alignment or tearing reasons. \mbox{\Hypertarget{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}\label{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Area@{get\+Area}}
+\index{get\+Area@{get\+Area}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Area()}{getArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Area (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get access to the area controlled by this vertex. \mbox{\Hypertarget{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}\label{classbtSoftBodyVertexData_aed372e4aa15c1101feabec4ea7fe80a2}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Area@{get\+Area}}
+\index{get\+Area@{get\+Area}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Area()}{getArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Area (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get access to the area controlled by this vertex. \mbox{\Hypertarget{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}\label{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Force\+Accumulator@{get\+Force\+Accumulator}}
+\index{get\+Force\+Accumulator@{get\+Force\+Accumulator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Force\+Accumulator()}{getForceAccumulator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Force\+Accumulator (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the force accumulator of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}\label{classbtSoftBodyVertexData_a34e1fdb82d6db75a4c22409632c3b369}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Force\+Accumulator@{get\+Force\+Accumulator}}
+\index{get\+Force\+Accumulator@{get\+Force\+Accumulator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Force\+Accumulator()}{getForceAccumulator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Force\+Accumulator (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the force accumulator of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}\label{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Inverse\+Mass@{get\+Inverse\+Mass}}
+\index{get\+Inverse\+Mass@{get\+Inverse\+Mass}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Inverse\+Mass()}{getInverseMass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Inverse\+Mass (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the inverse mass of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}\label{classbtSoftBodyVertexData_af635ef3bb6d2b272f6b95d453bc05761}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Inverse\+Mass@{get\+Inverse\+Mass}}
+\index{get\+Inverse\+Mass@{get\+Inverse\+Mass}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Inverse\+Mass()}{getInverseMass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Inverse\+Mass (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the inverse mass of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}\label{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Normal@{get\+Normal}}
+\index{get\+Normal@{get\+Normal}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Normal()}{getNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Normal (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the normal of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}\label{classbtSoftBodyVertexData_a1404390d4cbbf841e1749dc1779fd104}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Normal@{get\+Normal}}
+\index{get\+Normal@{get\+Normal}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Normal()}{getNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Normal (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the normal of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}\label{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Position (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the position of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}\label{classbtSoftBodyVertexData_ac5d2dd4b383b386080c45a4fcf45f4f4}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Position (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the position of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}\label{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Previous\+Position@{get\+Previous\+Position}}
+\index{get\+Previous\+Position@{get\+Previous\+Position}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Previous\+Position()}{getPreviousPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Previous\+Position (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the previous position of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}\label{classbtSoftBodyVertexData_a123a978bf93f1ea06263b157e433ad97}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Previous\+Position@{get\+Previous\+Position}}
+\index{get\+Previous\+Position@{get\+Previous\+Position}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Previous\+Position()}{getPreviousPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Point3}{Vectormath\+::\+Aos\+::\+Point3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Previous\+Position (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the previous position of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}\label{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Triangle\+Count@{get\+Triangle\+Count}}
+\index{get\+Triangle\+Count@{get\+Triangle\+Count}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Triangle\+Count()}{getTriangleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Triangle\+Count (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get access to the array of how many triangles touch each vertex. \mbox{\Hypertarget{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}\label{classbtSoftBodyVertexData_a8c4f3283367407c593745929aaf7d639}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Triangle\+Count@{get\+Triangle\+Count}}
+\index{get\+Triangle\+Count@{get\+Triangle\+Count}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Triangle\+Count()}{getTriangleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Triangle\+Count (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get access to the array of how many triangles touch each vertex. \mbox{\Hypertarget{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}\label{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Velocity()}{getVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Velocity (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the velocity of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}\label{classbtSoftBodyVertexData_ae2283fd9cc23dcaff3721fbcf26e3bad}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Velocity()}{getVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVectormath_1_1Aos_1_1Vector3}{Vectormath\+::\+Aos\+::\+Vector3}\& bt\+Soft\+Body\+Vertex\+Data\+::get\+Velocity (\begin{DoxyParamCaption}\item[{int}]{vertex\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a reference to the velocity of vertex vertex\+Index as stored on the host. \mbox{\Hypertarget{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}\label{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!move\+From\+Accelerator@{move\+From\+Accelerator}}
+\index{move\+From\+Accelerator@{move\+From\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{move\+From\+Accelerator()}{moveFromAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::move\+From\+Accelerator (\begin{DoxyParamCaption}\item[{bool}]{b\+Copy = {\ttfamily false},  }\item[{bool}]{b\+Copy\+Minimum = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Move data to host memory from the accelerator if b\+Copy is false. If b\+Copy is true, copy data to host memory from the accelerator so that data won\textquotesingle{}t be moved to accelerator when \hyperlink{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}{move\+To\+Accelerator()} is called next time. If b\+Copy\+Minimum is true, only vertex position and normal are copied. b\+Copy\+Minimum will be meaningful only if b\+Copy is true. The C\+PU version will always return that it has moved it. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_a32d4193d6e162e0a7a57975ebbab7a16}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_a16599d413d7fc7c96dfb6a335e43079e}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_a0ea115bf64323883e19e7bde57a998f1}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_a89dc6f649bbf848d0af34697fbf1d67b}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+\mbox{\Hypertarget{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}\label{classbtSoftBodyVertexData_aaa8ab4065ecf47a9c3b946b67b6c9f1b}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!move\+From\+Accelerator@{move\+From\+Accelerator}}
+\index{move\+From\+Accelerator@{move\+From\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{move\+From\+Accelerator()}{moveFromAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::move\+From\+Accelerator (\begin{DoxyParamCaption}\item[{bool}]{b\+Copy = {\ttfamily false},  }\item[{bool}]{b\+Copy\+Minimum = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Move data to host memory from the accelerator if b\+Copy is false. If b\+Copy is true, copy data to host memory from the accelerator so that data won\textquotesingle{}t be moved to accelerator when \hyperlink{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}{move\+To\+Accelerator()} is called next time. If b\+Copy\+Minimum is true, only vertex position and normal are copied. b\+Copy\+Minimum will be meaningful only if b\+Copy is true. The C\+PU version will always return that it has moved it. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_a32d4193d6e162e0a7a57975ebbab7a16}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_a16599d413d7fc7c96dfb6a335e43079e}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_a0ea115bf64323883e19e7bde57a998f1}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_a89dc6f649bbf848d0af34697fbf1d67b}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}\label{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!move\+To\+Accelerator@{move\+To\+Accelerator}}
+\index{move\+To\+Accelerator@{move\+To\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{move\+To\+Accelerator()}{moveToAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::move\+To\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Move data from host memory to the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_ac12f0c144bc116e3a0e4c11fc0e55365}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_aa68255e1508006f34dedf58855e9db4f}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_abd4012054faecf26669f00a04bfd6170}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_ad30e5afe5e81dbf16af8b10cdcd54044}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}\label{classbtSoftBodyVertexData_a2d3f04a5b2461bf95beca6f3fc48e28b}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!move\+To\+Accelerator@{move\+To\+Accelerator}}
+\index{move\+To\+Accelerator@{move\+To\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{move\+To\+Accelerator()}{moveToAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::move\+To\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Move data from host memory to the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_ac12f0c144bc116e3a0e4c11fc0e55365}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_aa68255e1508006f34dedf58855e9db4f}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_abd4012054faecf26669f00a04bfd6170}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_ad30e5afe5e81dbf16af8b10cdcd54044}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}\label{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!on\+Accelerator@{on\+Accelerator}}
+\index{on\+Accelerator@{on\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{on\+Accelerator()}{onAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::on\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return true if data is on the accelerator. The C\+PU version of this class will return true here because the C\+PU is the same as the accelerator. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_a735a87a0a4acc856b2f656bf684852e4}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_a60f9399bc7a7d652a55e7f1f2140f2b3}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_a0277617dbd360ea14ec7848f85b69f4c}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_addc1f56a6841561023f4bd48ab2f6dd9}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+\mbox{\Hypertarget{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}\label{classbtSoftBodyVertexData_a6512d196039f6445489a093ad18f7764}} 
+\index{bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}!on\+Accelerator@{on\+Accelerator}}
+\index{on\+Accelerator@{on\+Accelerator}!bt\+Soft\+Body\+Vertex\+Data@{bt\+Soft\+Body\+Vertex\+Data}}
+\subsubsection{\texorpdfstring{on\+Accelerator()}{onAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Vertex\+Data\+::on\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return true if data is on the accelerator. The C\+PU version of this class will return true here because the C\+PU is the same as the accelerator. 
+
+Reimplemented in \hyperlink{classbtSoftBodyVertexDataDX11_a735a87a0a4acc856b2f656bf684852e4}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataDX11_a60f9399bc7a7d652a55e7f1f2140f2b3}{bt\+Soft\+Body\+Vertex\+Data\+D\+X11}, \hyperlink{classbtSoftBodyVertexDataOpenCL_a0277617dbd360ea14ec7848f85b69f4c}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}, and \hyperlink{classbtSoftBodyVertexDataOpenCL_addc1f56a6841561023f4bd48ab2f6dd9}{bt\+Soft\+Body\+Vertex\+Data\+Open\+CL}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/\+Gpu\+Soft\+Body\+Solvers/\+Shared/bt\+Soft\+Body\+Solver\+Data.\+h\end{DoxyCompactItemize}

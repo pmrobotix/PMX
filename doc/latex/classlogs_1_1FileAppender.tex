@@ -1,0 +1,98 @@
+\hypertarget{classlogs_1_1FileAppender}{}\section{logs\+:\+:File\+Appender Class Reference}
+\label{classlogs_1_1FileAppender}\index{logs\+::\+File\+Appender@{logs\+::\+File\+Appender}}
+
+
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une sortie sur fichier.  
+
+
+
+
+{\ttfamily \#include $<$File\+Appender.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:File\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1FileAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:File\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1FileAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlogs_1_1FileAppender_a450b9bdc315236b7f1b3d45bf2689c91}{File\+Appender} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructeur initialisé de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1FileAppender_adf591d230e1d1fe87ea57c4d9ac978e3}\label{classlogs_1_1FileAppender_adf591d230e1d1fe87ea57c4d9ac978e3}} 
+virtual \hyperlink{classlogs_1_1FileAppender_adf591d230e1d1fe87ea57c4d9ac978e3}{$\sim$\+File\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlogs_1_1FileAppender_ab0dad2dab0f7d659321a574bdfa769c7}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1FileAppender_ae8472809e267e97fd94aa9b1b8724367}\label{classlogs_1_1FileAppender_ae8472809e267e97fd94aa9b1b8724367}} 
+virtual void \hyperlink{classlogs_1_1FileAppender_ae8472809e267e97fd94aa9b1b8724367}{flush} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode affiche tous les messages engistrés sur le flux de sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une sortie sur fichier. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogs_1_1FileAppender_a450b9bdc315236b7f1b3d45bf2689c91}\label{classlogs_1_1FileAppender_a450b9bdc315236b7f1b3d45bf2689c91}} 
+\index{logs\+::\+File\+Appender@{logs\+::\+File\+Appender}!File\+Appender@{File\+Appender}}
+\index{File\+Appender@{File\+Appender}!logs\+::\+File\+Appender@{logs\+::\+File\+Appender}}
+\subsubsection{\texorpdfstring{File\+Appender()}{FileAppender()}}
+{\footnotesize\ttfamily logs\+::\+File\+Appender\+::\+File\+Appender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur initialisé de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Le nom du fichier associé à cet \hyperlink{classlogs_1_1Appender}{Appender}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1FileAppender_ab0dad2dab0f7d659321a574bdfa769c7}\label{classlogs_1_1FileAppender_ab0dad2dab0f7d659321a574bdfa769c7}} 
+\index{logs\+::\+File\+Appender@{logs\+::\+File\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+File\+Appender@{logs\+::\+File\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void logs\+::\+File\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & \hyperlink{classlogs_1_1Logger}{Logger} de référence du message. \\
+\hline
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message à tracer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{FileAppender_8hpp}{File\+Appender.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{FileAppender_8cpp}{File\+Appender.\+cpp}\end{DoxyCompactItemize}

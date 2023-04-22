@@ -1,0 +1,1028 @@
+\hypertarget{classEventDispatcher}{}\section{Event\+Dispatcher Class Reference}
+\label{classEventDispatcher}\index{Event\+Dispatcher@{Event\+Dispatcher}}
+
+
+This class manages event listener subscriptions and event dispatching.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Event\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEventDispatcher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEventDispatcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}{add\+Event\+Listener\+With\+Scene\+Graph\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, \hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}{add\+Event\+Listener\+With\+Fixed\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, int fixed\+Priority)
+\item 
+\hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventDispatcher_a34c423b6f80a3563bb9399f52b0479b5}{add\+Custom\+Event\+Listener} (const std\+::string \&event\+Name, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\item 
+void \hyperlink{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}{remove\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}{remove\+Event\+Listeners\+For\+Type} (\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type} listener\+Type)
+\item 
+void \hyperlink{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}{remove\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}{remove\+Custom\+Event\+Listeners} (const std\+::string \&custom\+Event\+Name)
+\item 
+void \hyperlink{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}{remove\+All\+Event\+Listeners} ()
+\item 
+void \hyperlink{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}{pause\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}{resume\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}{set\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, int fixed\+Priority)
+\item 
+void \hyperlink{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}{set\+Enabled} (bool \hyperlink{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}{is\+Enabled})
+\item 
+bool \hyperlink{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}{is\+Enabled} () const
+\item 
+void \hyperlink{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}{dispatch\+Event} (\hyperlink{classEvent}{Event} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}{dispatch\+Custom\+Event} (const std\+::string \&event\+Name, void $\ast$optional\+User\+Data=nullptr)
+\item 
+\hyperlink{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}{Event\+Dispatcher} ()
+\item 
+\hyperlink{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}{$\sim$\+Event\+Dispatcher} ()
+\item 
+void \hyperlink{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}{add\+Event\+Listener\+With\+Scene\+Graph\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, \hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}{add\+Event\+Listener\+With\+Fixed\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, int fixed\+Priority)
+\item 
+\hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventDispatcher_a7f5fe2c96f5072f1666db7be277aca73}{add\+Custom\+Event\+Listener} (const std\+::string \&event\+Name, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\item 
+void \hyperlink{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}{remove\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}{remove\+Event\+Listeners\+For\+Type} (\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type} listener\+Type)
+\item 
+void \hyperlink{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}{remove\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}{remove\+Custom\+Event\+Listeners} (const std\+::string \&custom\+Event\+Name)
+\item 
+void \hyperlink{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}{remove\+All\+Event\+Listeners} ()
+\item 
+void \hyperlink{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}{pause\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}{resume\+Event\+Listeners\+For\+Target} (\hyperlink{classNode}{Node} $\ast$target, bool recursive=false)
+\item 
+void \hyperlink{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}{set\+Priority} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener, int fixed\+Priority)
+\item 
+void \hyperlink{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}{set\+Enabled} (bool \hyperlink{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}{is\+Enabled})
+\item 
+bool \hyperlink{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}{is\+Enabled} () const
+\item 
+void \hyperlink{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}{dispatch\+Event} (\hyperlink{classEvent}{Event} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}{dispatch\+Custom\+Event} (const std\+::string \&event\+Name, void $\ast$optional\+User\+Data=nullptr)
+\item 
+bool \hyperlink{classEventDispatcher_a22e17868087e7162f7d59559f2122308}{has\+Event\+Listener} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID) const
+\item 
+\hyperlink{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}{Event\+Dispatcher} ()
+\item 
+\hyperlink{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}{$\sim$\+Event\+Dispatcher} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}\label{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}} 
+enum \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} \{ \newline
+{\bfseries N\+O\+NE} = 0, 
+{\bfseries F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 0, 
+{\bfseries S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 1, 
+{\bfseries A\+LL} = F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY $\vert$ S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY, 
+\newline
+{\bfseries N\+O\+NE} = 0, 
+{\bfseries F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 0, 
+{\bfseries S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 1, 
+{\bfseries A\+LL} = F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY $\vert$ S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY
+ \}\begin{DoxyCompactList}\small\item\em Priority dirty flag. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}\label{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}} 
+enum \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} \{ \newline
+{\bfseries N\+O\+NE} = 0, 
+{\bfseries F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 0, 
+{\bfseries S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 1, 
+{\bfseries A\+LL} = F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY $\vert$ S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY, 
+\newline
+{\bfseries N\+O\+NE} = 0, 
+{\bfseries F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 0, 
+{\bfseries S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY} = 1 $<$$<$ 1, 
+{\bfseries A\+LL} = F\+I\+X\+E\+D\+\_\+\+P\+R\+I\+O\+R\+I\+TY $\vert$ S\+C\+E\+N\+E\+\_\+\+G\+R\+A\+P\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY
+ \}\begin{DoxyCompactList}\small\item\em Priority dirty flag. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}{set\+Dirty\+For\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}{add\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}{force\+Add\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$ \hyperlink{classEventDispatcher_abbb502e7918b7d2e0033e2e6206b4e1e}{get\+Listeners} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}{update\+Dirty\+Flag\+For\+Scene\+Graph} ()
+\item 
+void \hyperlink{classEventDispatcher_a456c75992716910637994a70ee65a37e}{remove\+Event\+Listeners\+For\+Listener\+ID} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}{sort\+Event\+Listeners} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID, \hyperlink{classNode}{Node} $\ast$root\+Node)
+\item 
+void \hyperlink{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}{sort\+Event\+Listeners\+Of\+Fixed\+Priority} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}{update\+Listeners} (\hyperlink{classEvent}{Event} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}{dispatch\+Touch\+Event} (\hyperlink{classEventTouch}{Event\+Touch} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}{associate\+Node\+And\+Event\+Listener} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}{dissociate\+Node\+And\+Event\+Listener} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}{dispatch\+Event\+To\+Listeners} (\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$listeners, const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&on\+Event)
+\item 
+void \hyperlink{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}{dispatch\+Touch\+Event\+To\+Listeners} (\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$listeners, const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&on\+Event)
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a7786d95286ac416c06c4783623feda09}\label{classEventDispatcher_a7786d95286ac416c06c4783623feda09}} 
+void {\bfseries release\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}{set\+Dirty} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID, \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} flag)
+\item 
+void \hyperlink{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}{visit\+Target} (\hyperlink{classNode}{Node} $\ast$node, bool is\+Root\+Node)
+\item 
+void \hyperlink{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}{clean\+To\+Removed\+Listeners} ()
+\item 
+void \hyperlink{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}{set\+Dirty\+For\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}{add\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}{force\+Add\+Event\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$ \hyperlink{classEventDispatcher_aa2b7f1d5ebfcef5c2bfedb81b6917906}{get\+Listeners} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID) const
+\item 
+void \hyperlink{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}{update\+Dirty\+Flag\+For\+Scene\+Graph} ()
+\item 
+void \hyperlink{classEventDispatcher_a456c75992716910637994a70ee65a37e}{remove\+Event\+Listeners\+For\+Listener\+ID} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}{sort\+Event\+Listeners} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID, \hyperlink{classNode}{Node} $\ast$root\+Node)
+\item 
+void \hyperlink{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}{sort\+Event\+Listeners\+Of\+Fixed\+Priority} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID)
+\item 
+void \hyperlink{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}{update\+Listeners} (\hyperlink{classEvent}{Event} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}{dispatch\+Touch\+Event} (\hyperlink{classEventTouch}{Event\+Touch} $\ast$event)
+\item 
+void \hyperlink{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}{associate\+Node\+And\+Event\+Listener} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}{dissociate\+Node\+And\+Event\+Listener} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}{dispatch\+Event\+To\+Listeners} (\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$listeners, const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&on\+Event)
+\item 
+void \hyperlink{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}{dispatch\+Touch\+Event\+To\+Listeners} (\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$listeners, const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&on\+Event)
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a7786d95286ac416c06c4783623feda09}\label{classEventDispatcher_a7786d95286ac416c06c4783623feda09}} 
+void {\bfseries release\+Listener} (\hyperlink{classEventListener}{Event\+Listener} $\ast$listener)
+\item 
+void \hyperlink{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}{set\+Dirty} (const Event\+Listener\+::\+Listener\+ID \&listener\+ID, \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} flag)
+\item 
+void \hyperlink{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}{visit\+Target} (\hyperlink{classNode}{Node} $\ast$node, bool is\+Root\+Node)
+\item 
+void \hyperlink{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}{clean\+To\+Removed\+Listeners} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ Event\+Listener\+::\+Listener\+ID, \hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$ $>$ \hyperlink{classEventDispatcher_ac083d564ea5455fa77ae318075b65087}{\+\_\+listener\+Map}
+\item 
+std\+::unordered\+\_\+map$<$ Event\+Listener\+::\+Listener\+ID, \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} $>$ \hyperlink{classEventDispatcher_a8a4528d4e9cafee73b5730315d6863fb}{\+\_\+priority\+Dirty\+Flag\+Map}
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ $\ast$ $>$ \hyperlink{classEventDispatcher_a892c5b82fa7e314d0968222d61688234}{\+\_\+node\+Listeners\+Map}
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, int $>$ \hyperlink{classEventDispatcher_a4dd5c675f1b50ac7de363b37319d8977}{\+\_\+node\+Priority\+Map}
+\item 
+std\+::unordered\+\_\+map$<$ float, std\+::vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ $>$ \hyperlink{classEventDispatcher_a1bc2dcf1e5bbfda6bf505de08131d6b1}{\+\_\+global\+Z\+Order\+Node\+Map}
+\item 
+std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ \hyperlink{classEventDispatcher_ab96e3a366e2ce099f839bb85710d23fb}{\+\_\+to\+Added\+Listeners}
+\item 
+std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ \hyperlink{classEventDispatcher_a08ef695c1122ea1763b37de776eb7806}{\+\_\+to\+Removed\+Listeners}
+\item 
+std\+::set$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \hyperlink{classEventDispatcher_a3a3cae6941714669117610e679effbae}{\+\_\+dirty\+Nodes}
+\item 
+int \hyperlink{classEventDispatcher_aaf59a5e64ade7b04dc3b037e954e5a3b}{\+\_\+in\+Dispatch}
+\item 
+bool \hyperlink{classEventDispatcher_a43f1858aaf2de64b7bab2f86cbfbd41e}{\+\_\+is\+Enabled}
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a2e4e164617ee3c31739cf693f3537786}\label{classEventDispatcher_a2e4e164617ee3c31739cf693f3537786}} 
+int {\bfseries \+\_\+node\+Priority\+Index}
+\item 
+\mbox{\Hypertarget{classEventDispatcher_a57e84cdcff70216698f5ccdf53a6810d}\label{classEventDispatcher_a57e84cdcff70216698f5ccdf53a6810d}} 
+std\+::set$<$ std\+::string $>$ {\bfseries \+\_\+internal\+Custom\+Listener\+I\+Ds}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventDispatcher_aed91756449328e2c454e53e9c5e53936}\label{classEventDispatcher_aed91756449328e2c454e53e9c5e53936}} 
+class {\bfseries Node}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class manages event listener subscriptions and event dispatching. 
+
+The \hyperlink{classEventListener}{Event\+Listener} \hyperlink{protocollist-p}{list} is managed in such a way that event listeners can be added and removed even from within an \hyperlink{classEventListener}{Event\+Listener}, while events are being dispatched.  NA 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}\label{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{Event\+Dispatcher()}{EventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of \hyperlink{classEventDispatcher}{Event\+Dispatcher}. \mbox{\Hypertarget{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}\label{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}}
+\index{````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{$\sim$\+Event\+Dispatcher()}{~EventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::$\sim$\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of \hyperlink{classEventDispatcher}{Event\+Dispatcher}. \mbox{\Hypertarget{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}\label{classEventDispatcher_aec174a9e25796e5727e59f5452817cda}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\index{Event\+Dispatcher@{Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{Event\+Dispatcher()}{EventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of \hyperlink{classEventDispatcher}{Event\+Dispatcher}. \mbox{\Hypertarget{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}\label{classEventDispatcher_abb5f401014e87f03027d6c4450964e55}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}}
+\index{````~Event\+Dispatcher@{$\sim$\+Event\+Dispatcher}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{$\sim$\+Event\+Dispatcher()}{~EventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::$\sim$\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of \hyperlink{classEventDispatcher}{Event\+Dispatcher}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEventDispatcher_a34c423b6f80a3563bb9399f52b0479b5}\label{classEventDispatcher_a34c423b6f80a3563bb9399f52b0479b5}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Custom\+Event\+Listener@{add\+Custom\+Event\+Listener}}
+\index{add\+Custom\+Event\+Listener@{add\+Custom\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Custom\+Event\+Listener()}{addCustomEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ Event\+Dispatcher\+::add\+Custom\+Event\+Listener (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Adds a Custom event listener. It will use a fixed priority of 1. 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & A given name of the event. \\
+\hline
+{\em callback} & A given callback method that associated the event name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated event. Needed in order to remove the event from the dispatcher 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventDispatcher_a7f5fe2c96f5072f1666db7be277aca73}\label{classEventDispatcher_a7f5fe2c96f5072f1666db7be277aca73}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Custom\+Event\+Listener@{add\+Custom\+Event\+Listener}}
+\index{add\+Custom\+Event\+Listener@{add\+Custom\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Custom\+Event\+Listener()}{addCustomEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}$\ast$ Event\+Dispatcher\+::add\+Custom\+Event\+Listener (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Adds a Custom event listener. It will use a fixed priority of 1. 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & A given name of the event. \\
+\hline
+{\em callback} & A given callback method that associated the event name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated event. Needed in order to remove the event from the dispatcher 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}\label{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Adds an event listener with item \begin{DoxyNote}{Note}
+if it is dispatching event, the added operation will be delayed to the end of current dispatch 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}{force\+Add\+Event\+Listener} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}\label{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Adds an event listener with item \begin{DoxyNote}{Note}
+if it is dispatching event, the added operation will be delayed to the end of current dispatch 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}{force\+Add\+Event\+Listener} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}\label{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener\+With\+Fixed\+Priority@{add\+Event\+Listener\+With\+Fixed\+Priority}}
+\index{add\+Event\+Listener\+With\+Fixed\+Priority@{add\+Event\+Listener\+With\+Fixed\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+With\+Fixed\+Priority()}{addEventListenerWithFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener\+With\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})}
+
+Adds a event listener for a specified event with the fixed priority. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener of a specified event. \\
+\hline
+{\em fixed\+Priority} & The fixed priority of the listener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+A lower priority will be called before the ones that have a higher value. 0 priority is forbidden for fixed priority since it\textquotesingle{}s used for scene graph based priority. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}\label{classEventDispatcher_a8a874f85b82c33d52a654289d6146bfb}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener\+With\+Fixed\+Priority@{add\+Event\+Listener\+With\+Fixed\+Priority}}
+\index{add\+Event\+Listener\+With\+Fixed\+Priority@{add\+Event\+Listener\+With\+Fixed\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+With\+Fixed\+Priority()}{addEventListenerWithFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener\+With\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})}
+
+Adds a event listener for a specified event with the fixed priority. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener of a specified event. \\
+\hline
+{\em fixed\+Priority} & The fixed priority of the listener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+A lower priority will be called before the ones that have a higher value. 0 priority is forbidden for fixed priority since it\textquotesingle{}s used for scene graph based priority. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}\label{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener\+With\+Scene\+Graph\+Priority@{add\+Event\+Listener\+With\+Scene\+Graph\+Priority}}
+\index{add\+Event\+Listener\+With\+Scene\+Graph\+Priority@{add\+Event\+Listener\+With\+Scene\+Graph\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+With\+Scene\+Graph\+Priority()}{addEventListenerWithSceneGraphPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener\+With\+Scene\+Graph\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Adds a event listener for a specified event with the priority of scene graph. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener of a specified event. \\
+\hline
+{\em node} & The priority of the listener is based on the draw order of this node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The priority of scene graph will be fixed value 0. So the order of listener item in the vector will be \textquotesingle{} $<$0, scene graph (0 priority), $>$0\textquotesingle{}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}\label{classEventDispatcher_a90b97ea5ad9bff4d684ca5bb6d5618bc}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!add\+Event\+Listener\+With\+Scene\+Graph\+Priority@{add\+Event\+Listener\+With\+Scene\+Graph\+Priority}}
+\index{add\+Event\+Listener\+With\+Scene\+Graph\+Priority@{add\+Event\+Listener\+With\+Scene\+Graph\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+With\+Scene\+Graph\+Priority()}{addEventListenerWithSceneGraphPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::add\+Event\+Listener\+With\+Scene\+Graph\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Adds a event listener for a specified event with the priority of scene graph. 
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener of a specified event. \\
+\hline
+{\em node} & The priority of the listener is based on the draw order of this node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The priority of scene graph will be fixed value 0. So the order of listener item in the vector will be \textquotesingle{} $<$0, scene graph (0 priority), $>$0\textquotesingle{}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}\label{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!associate\+Node\+And\+Event\+Listener@{associate\+Node\+And\+Event\+Listener}}
+\index{associate\+Node\+And\+Event\+Listener@{associate\+Node\+And\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{associate\+Node\+And\+Event\+Listener()}{associateNodeAndEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::associate\+Node\+And\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Associates node with event listener \mbox{\Hypertarget{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}\label{classEventDispatcher_ae82e15825f3fe6d5d2a32aab9214ddc0}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!associate\+Node\+And\+Event\+Listener@{associate\+Node\+And\+Event\+Listener}}
+\index{associate\+Node\+And\+Event\+Listener@{associate\+Node\+And\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{associate\+Node\+And\+Event\+Listener()}{associateNodeAndEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::associate\+Node\+And\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Associates node with event listener \mbox{\Hypertarget{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}\label{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!clean\+To\+Removed\+Listeners@{clean\+To\+Removed\+Listeners}}
+\index{clean\+To\+Removed\+Listeners@{clean\+To\+Removed\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{clean\+To\+Removed\+Listeners()}{cleanToRemovedListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::clean\+To\+Removed\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Remove all listeners in \+\_\+to\+Remove\+Listeners \hyperlink{protocollist-p}{list} and cleanup \mbox{\Hypertarget{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}\label{classEventDispatcher_ac4610bd51dadf12ab82b1793e26340c6}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!clean\+To\+Removed\+Listeners@{clean\+To\+Removed\+Listeners}}
+\index{clean\+To\+Removed\+Listeners@{clean\+To\+Removed\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{clean\+To\+Removed\+Listeners()}{cleanToRemovedListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::clean\+To\+Removed\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Remove all listeners in \+\_\+to\+Remove\+Listeners \hyperlink{protocollist-p}{list} and cleanup \mbox{\Hypertarget{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}\label{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Custom\+Event@{dispatch\+Custom\+Event}}
+\index{dispatch\+Custom\+Event@{dispatch\+Custom\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Custom\+Event()}{dispatchCustomEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Custom\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{void $\ast$}]{optional\+User\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Dispatches a Custom \hyperlink{classEvent}{Event} with a event name an optional user data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & The name of the event which needs to be dispatched. \\
+\hline
+{\em optional\+User\+Data} & The optional user data, it\textquotesingle{}s a void$\ast$, the default value is nullptr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}\label{classEventDispatcher_aca6dac5b1a5363409c51331bc3142bea}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Custom\+Event@{dispatch\+Custom\+Event}}
+\index{dispatch\+Custom\+Event@{dispatch\+Custom\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Custom\+Event()}{dispatchCustomEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Custom\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{void $\ast$}]{optional\+User\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Dispatches a Custom \hyperlink{classEvent}{Event} with a event name an optional user data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & The name of the event which needs to be dispatched. \\
+\hline
+{\em optional\+User\+Data} & The optional user data, it\textquotesingle{}s a void$\ast$, the default value is nullptr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}\label{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Event@{dispatch\+Event}}
+\index{dispatch\+Event@{dispatch\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Event()}{dispatchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Dispatches the event. Also removes all Event\+Listeners marked for deletion from the event dispatcher \hyperlink{protocollist-p}{list}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event needs to be dispatched. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}\label{classEventDispatcher_ac6358a032a83c7b1bc3df9beb8f753fe}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Event@{dispatch\+Event}}
+\index{dispatch\+Event@{dispatch\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Event()}{dispatchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Dispatches the event. Also removes all Event\+Listeners marked for deletion from the event dispatcher \hyperlink{protocollist-p}{list}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event needs to be dispatched. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}\label{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Event\+To\+Listeners@{dispatch\+Event\+To\+Listeners}}
+\index{dispatch\+Event\+To\+Listeners@{dispatch\+Event\+To\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Event\+To\+Listeners()}{dispatchEventToListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Event\+To\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$}]{listeners,  }\item[{const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&}]{on\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dispatches event to listeners with a specified listener type \mbox{\Hypertarget{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}\label{classEventDispatcher_a5809ae1e58312586afdff6d11b821957}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Event\+To\+Listeners@{dispatch\+Event\+To\+Listeners}}
+\index{dispatch\+Event\+To\+Listeners@{dispatch\+Event\+To\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Event\+To\+Listeners()}{dispatchEventToListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Event\+To\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$}]{listeners,  }\item[{const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&}]{on\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dispatches event to listeners with a specified listener type \mbox{\Hypertarget{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}\label{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Touch\+Event@{dispatch\+Touch\+Event}}
+\index{dispatch\+Touch\+Event@{dispatch\+Touch\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Touch\+Event()}{dispatchTouchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Touch\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classEventTouch}{Event\+Touch} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classTouch}{Touch} event needs to be processed different with other events since it needs support A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE and O\+N\+E\+\_\+\+B\+Y\+\_\+\+N\+O\+NE mode. \mbox{\Hypertarget{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}\label{classEventDispatcher_a5dd8af31b358bbe217180ac29909b3aa}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Touch\+Event@{dispatch\+Touch\+Event}}
+\index{dispatch\+Touch\+Event@{dispatch\+Touch\+Event}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Touch\+Event()}{dispatchTouchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Touch\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classEventTouch}{Event\+Touch} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classTouch}{Touch} event needs to be processed different with other events since it needs support A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE and O\+N\+E\+\_\+\+B\+Y\+\_\+\+N\+O\+NE mode. \mbox{\Hypertarget{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}\label{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Touch\+Event\+To\+Listeners@{dispatch\+Touch\+Event\+To\+Listeners}}
+\index{dispatch\+Touch\+Event\+To\+Listeners@{dispatch\+Touch\+Event\+To\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Touch\+Event\+To\+Listeners()}{dispatchTouchEventToListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Touch\+Event\+To\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$}]{listeners,  }\item[{const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&}]{on\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Special version dispatch\+Event\+To\+Listeners for touch/mouse event.
+
+Touch/mouse event process flow different with common event, for scene graph node listeners, touch event process flow should order by viewport/camera first, because the touch location convert to 3D world space is different by different camera. When listener process touch event, can get current camera by \hyperlink{classCamera_a71a044ac0a08723ac89ca69deb460f47}{Camera\+::get\+Visiting\+Camera()}. \mbox{\Hypertarget{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}\label{classEventDispatcher_ad49739c7342d1ccf133914414559ecdd}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dispatch\+Touch\+Event\+To\+Listeners@{dispatch\+Touch\+Event\+To\+Listeners}}
+\index{dispatch\+Touch\+Event\+To\+Listeners@{dispatch\+Touch\+Event\+To\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+Touch\+Event\+To\+Listeners()}{dispatchTouchEventToListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dispatch\+Touch\+Event\+To\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$}]{listeners,  }\item[{const std\+::function$<$ bool(\hyperlink{classEventListener}{Event\+Listener} $\ast$)$>$ \&}]{on\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Special version dispatch\+Event\+To\+Listeners for touch/mouse event.
+
+Touch/mouse event process flow different with common event, for scene graph node listeners, touch event process flow should order by viewport/camera first, because the touch location convert to 3D world space is different by different camera. When listener process touch event, can get current camera by \hyperlink{classCamera_a71a044ac0a08723ac89ca69deb460f47}{Camera\+::get\+Visiting\+Camera()}. \mbox{\Hypertarget{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}\label{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dissociate\+Node\+And\+Event\+Listener@{dissociate\+Node\+And\+Event\+Listener}}
+\index{dissociate\+Node\+And\+Event\+Listener@{dissociate\+Node\+And\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dissociate\+Node\+And\+Event\+Listener()}{dissociateNodeAndEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dissociate\+Node\+And\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dissociates node with event listener \mbox{\Hypertarget{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}\label{classEventDispatcher_a43a5aaec61fcbec266dc62a50de7cbad}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!dissociate\+Node\+And\+Event\+Listener@{dissociate\+Node\+And\+Event\+Listener}}
+\index{dissociate\+Node\+And\+Event\+Listener@{dissociate\+Node\+And\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{dissociate\+Node\+And\+Event\+Listener()}{dissociateNodeAndEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::dissociate\+Node\+And\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dissociates node with event listener \mbox{\Hypertarget{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}\label{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!force\+Add\+Event\+Listener@{force\+Add\+Event\+Listener}}
+\index{force\+Add\+Event\+Listener@{force\+Add\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{force\+Add\+Event\+Listener()}{forceAddEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::force\+Add\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Force adding an event listener \begin{DoxyNote}{Note}
+force add an event listener which will ignore whether it\textquotesingle{}s in dispatching. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}{add\+Event\+Listener} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}\label{classEventDispatcher_aaf736dd2a383a114e59be39e967fb0f3}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!force\+Add\+Event\+Listener@{force\+Add\+Event\+Listener}}
+\index{force\+Add\+Event\+Listener@{force\+Add\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{force\+Add\+Event\+Listener()}{forceAddEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::force\+Add\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Force adding an event listener \begin{DoxyNote}{Note}
+force add an event listener which will ignore whether it\textquotesingle{}s in dispatching. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classEventDispatcher_aacb9cc74f76d66952e749f2cc1519444}{add\+Event\+Listener} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classEventDispatcher_abbb502e7918b7d2e0033e2e6206b4e1e}\label{classEventDispatcher_abbb502e7918b7d2e0033e2e6206b4e1e}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!get\+Listeners@{get\+Listeners}}
+\index{get\+Listeners@{get\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{get\+Listeners()}{getListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Dispatcher\+::\+Event\+Listener\+Vector} $\ast$ Event\+Dispatcher\+::get\+Listeners (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets event the listener \hyperlink{protocollist-p}{list} for the event listener type. \mbox{\Hypertarget{classEventDispatcher_aa2b7f1d5ebfcef5c2bfedb81b6917906}\label{classEventDispatcher_aa2b7f1d5ebfcef5c2bfedb81b6917906}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!get\+Listeners@{get\+Listeners}}
+\index{get\+Listeners@{get\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{get\+Listeners()}{getListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Dispatcher\+::\+Event\+Listener\+Vector} $\ast$ Event\+Dispatcher\+::get\+Listeners (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gets event the listener \hyperlink{protocollist-p}{list} for the event listener type. \mbox{\Hypertarget{classEventDispatcher_a22e17868087e7162f7d59559f2122308}\label{classEventDispatcher_a22e17868087e7162f7d59559f2122308}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!has\+Event\+Listener@{has\+Event\+Listener}}
+\index{has\+Event\+Listener@{has\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{has\+Event\+Listener()}{hasEventListener()}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::has\+Event\+Listener (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption}) const}
+
+Query whether the specified event listener id has been added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener\+ID} & The listener\+ID of the event listener id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if dispatching events is exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}\label{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether dispatching events is enabled.
+
+\begin{DoxyReturn}{Returns}
+True if dispatching events is enabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}\label{classEventDispatcher_a5350c4316fd57701602cb7d9f5fb8535}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether dispatching events is enabled.
+
+\begin{DoxyReturn}{Returns}
+True if dispatching events is enabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}\label{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!pause\+Event\+Listeners\+For\+Target@{pause\+Event\+Listeners\+For\+Target}}
+\index{pause\+Event\+Listeners\+For\+Target@{pause\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{pause\+Event\+Listeners\+For\+Target()}{pauseEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::pause\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Pauses all listeners which are associated the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if pause recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}\label{classEventDispatcher_a33dbf3057a30a92f741fd1465b70363f}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!pause\+Event\+Listeners\+For\+Target@{pause\+Event\+Listeners\+For\+Target}}
+\index{pause\+Event\+Listeners\+For\+Target@{pause\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{pause\+Event\+Listeners\+For\+Target()}{pauseEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::pause\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Pauses all listeners which are associated the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if pause recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}\label{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+All\+Event\+Listeners@{remove\+All\+Event\+Listeners}}
+\index{remove\+All\+Event\+Listeners@{remove\+All\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+All\+Event\+Listeners()}{removeAllEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+All\+Event\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all listeners. \mbox{\Hypertarget{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}\label{classEventDispatcher_aa7bba43c3e78f0957937d985fe13e0fe}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+All\+Event\+Listeners@{remove\+All\+Event\+Listeners}}
+\index{remove\+All\+Event\+Listeners@{remove\+All\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+All\+Event\+Listeners()}{removeAllEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+All\+Event\+Listeners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all listeners. \mbox{\Hypertarget{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}\label{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Custom\+Event\+Listeners@{remove\+Custom\+Event\+Listeners}}
+\index{remove\+Custom\+Event\+Listeners@{remove\+Custom\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Custom\+Event\+Listeners()}{removeCustomEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Custom\+Event\+Listeners (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{custom\+Event\+Name }\end{DoxyParamCaption})}
+
+Removes all custom listeners with the same event name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em custom\+Event\+Name} & A given event listener name which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}\label{classEventDispatcher_a255daae22df2d99e4209a43c3473f409}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Custom\+Event\+Listeners@{remove\+Custom\+Event\+Listeners}}
+\index{remove\+Custom\+Event\+Listeners@{remove\+Custom\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Custom\+Event\+Listeners()}{removeCustomEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Custom\+Event\+Listeners (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{custom\+Event\+Name }\end{DoxyParamCaption})}
+
+Removes all custom listeners with the same event name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em custom\+Event\+Name} & A given event listener name which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}\label{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listener@{remove\+Event\+Listener}}
+\index{remove\+Event\+Listener@{remove\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listener()}{removeEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+Remove a listener.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The specified event listener which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}\label{classEventDispatcher_a482553aa81d004ba84ad2f7fc1a99408}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listener@{remove\+Event\+Listener}}
+\index{remove\+Event\+Listener@{remove\+Event\+Listener}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listener()}{removeEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})}
+
+Remove a listener.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The specified event listener which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a456c75992716910637994a70ee65a37e}\label{classEventDispatcher_a456c75992716910637994a70ee65a37e}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Listener\+ID@{remove\+Event\+Listeners\+For\+Listener\+ID}}
+\index{remove\+Event\+Listeners\+For\+Listener\+ID@{remove\+Event\+Listeners\+For\+Listener\+ID}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Listener\+I\+D()}{removeEventListenersForListenerID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Listener\+ID (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Removes all listeners with the same event listener ID \mbox{\Hypertarget{classEventDispatcher_a456c75992716910637994a70ee65a37e}\label{classEventDispatcher_a456c75992716910637994a70ee65a37e}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Listener\+ID@{remove\+Event\+Listeners\+For\+Listener\+ID}}
+\index{remove\+Event\+Listeners\+For\+Listener\+ID@{remove\+Event\+Listeners\+For\+Listener\+ID}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Listener\+I\+D()}{removeEventListenersForListenerID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Listener\+ID (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Removes all listeners with the same event listener ID \mbox{\Hypertarget{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}\label{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Target@{remove\+Event\+Listeners\+For\+Target}}
+\index{remove\+Event\+Listeners\+For\+Target@{remove\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Target()}{removeEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Removes all listeners which are associated with the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if remove recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}\label{classEventDispatcher_a64446315eca1c938c541d35d35d1a2a4}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Target@{remove\+Event\+Listeners\+For\+Target}}
+\index{remove\+Event\+Listeners\+For\+Target@{remove\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Target()}{removeEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Removes all listeners which are associated with the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if remove recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}\label{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Type@{remove\+Event\+Listeners\+For\+Type}}
+\index{remove\+Event\+Listeners\+For\+Type@{remove\+Event\+Listeners\+For\+Type}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Type()}{removeEventListenersForType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type}}]{listener\+Type }\end{DoxyParamCaption})}
+
+Removes all listeners with the same event listener type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener\+Type} & A given event listener type which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}\label{classEventDispatcher_ad021a18c05461b34ab2a11ad2cdb268d}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!remove\+Event\+Listeners\+For\+Type@{remove\+Event\+Listeners\+For\+Type}}
+\index{remove\+Event\+Listeners\+For\+Type@{remove\+Event\+Listeners\+For\+Type}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{remove\+Event\+Listeners\+For\+Type()}{removeEventListenersForType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Listeners\+For\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type}}]{listener\+Type }\end{DoxyParamCaption})}
+
+Removes all listeners with the same event listener type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener\+Type} & A given event listener type which needs to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}\label{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!resume\+Event\+Listeners\+For\+Target@{resume\+Event\+Listeners\+For\+Target}}
+\index{resume\+Event\+Listeners\+For\+Target@{resume\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{resume\+Event\+Listeners\+For\+Target()}{resumeEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::resume\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Resumes all listeners which are associated the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if resume recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}\label{classEventDispatcher_af38aed6f3a7890dc03f214dbaf49faf6}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!resume\+Event\+Listeners\+For\+Target@{resume\+Event\+Listeners\+For\+Target}}
+\index{resume\+Event\+Listeners\+For\+Target@{resume\+Event\+Listeners\+For\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{resume\+Event\+Listeners\+For\+Target()}{resumeEventListenersForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::resume\+Event\+Listeners\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Resumes all listeners which are associated the specified target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A given target node. \\
+\hline
+{\em recursive} & True if resume recursively, the default value is false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}\label{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Dirty@{set\+Dirty}}
+\index{set\+Dirty@{set\+Dirty}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Dirty()}{setDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Dirty (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID,  }\item[{\hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag}}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sets the dirty flag for a specified listener ID \mbox{\Hypertarget{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}\label{classEventDispatcher_aacdc31196bd0b1881d4e2b807134882f}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Dirty@{set\+Dirty}}
+\index{set\+Dirty@{set\+Dirty}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Dirty()}{setDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Dirty (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID,  }\item[{\hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag}}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sets the dirty flag for a specified listener ID \mbox{\Hypertarget{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}\label{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Dirty\+For\+Node@{set\+Dirty\+For\+Node}}
+\index{set\+Dirty\+For\+Node@{set\+Dirty\+For\+Node}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Dirty\+For\+Node()}{setDirtyForNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Dirty\+For\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sets the dirty flag for a node. \mbox{\Hypertarget{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}\label{classEventDispatcher_ad6b4737e5007cd150b894a49d8f6ea28}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Dirty\+For\+Node@{set\+Dirty\+For\+Node}}
+\index{set\+Dirty\+For\+Node@{set\+Dirty\+For\+Node}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Dirty\+For\+Node()}{setDirtyForNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Dirty\+For\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sets the dirty flag for a node. \mbox{\Hypertarget{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}\label{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{is\+Enabled }\end{DoxyParamCaption})}
+
+Whether to enable dispatching events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Enabled} & True if enable dispatching events. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}\label{classEventDispatcher_a1fc28fe8361af5b2a2fb9b108d89da42}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{is\+Enabled }\end{DoxyParamCaption})}
+
+Whether to enable dispatching events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Enabled} & True if enable dispatching events. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}\label{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Priority@{set\+Priority}}
+\index{set\+Priority@{set\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Priority()}{setPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})}
+
+Sets listener\textquotesingle{}s priority with fixed value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & A given listener. \\
+\hline
+{\em fixed\+Priority} & The fixed priority value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}\label{classEventDispatcher_a8368f3f3945977b5a5c3d0cc75f90cd5}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!set\+Priority@{set\+Priority}}
+\index{set\+Priority@{set\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{set\+Priority()}{setPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::set\+Priority (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener}{Event\+Listener} $\ast$}]{listener,  }\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})}
+
+Sets listener\textquotesingle{}s priority with fixed value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & A given listener. \\
+\hline
+{\em fixed\+Priority} & The fixed priority value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}\label{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners@{sort\+Event\+Listeners}}
+\index{sort\+Event\+Listeners@{sort\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners()}{sortEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sort event listener \mbox{\Hypertarget{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}\label{classEventDispatcher_ab194c90a0a72abc2e53f922abc1fa7e4}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners@{sort\+Event\+Listeners}}
+\index{sort\+Event\+Listeners@{sort\+Event\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners()}{sortEventListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sort event listener \mbox{\Hypertarget{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}\label{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners\+Of\+Fixed\+Priority@{sort\+Event\+Listeners\+Of\+Fixed\+Priority}}
+\index{sort\+Event\+Listeners\+Of\+Fixed\+Priority@{sort\+Event\+Listeners\+Of\+Fixed\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners\+Of\+Fixed\+Priority()}{sortEventListenersOfFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners\+Of\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sorts the listeners of specified type by fixed priority \mbox{\Hypertarget{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}\label{classEventDispatcher_a83e6fcd45dbc28743b3dc015a3061ef2}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners\+Of\+Fixed\+Priority@{sort\+Event\+Listeners\+Of\+Fixed\+Priority}}
+\index{sort\+Event\+Listeners\+Of\+Fixed\+Priority@{sort\+Event\+Listeners\+Of\+Fixed\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners\+Of\+Fixed\+Priority()}{sortEventListenersOfFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners\+Of\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sorts the listeners of specified type by fixed priority \mbox{\Hypertarget{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}\label{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority@{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority}}
+\index{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority@{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority()}{sortEventListenersOfSceneGraphPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sorts the listeners of specified type by scene graph priority \mbox{\Hypertarget{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}\label{classEventDispatcher_a6afb74a0ae37c6653e50f5cddfaa0dd2}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority@{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority}}
+\index{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority@{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority()}{sortEventListenersOfSceneGraphPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::sort\+Event\+Listeners\+Of\+Scene\+Graph\+Priority (\begin{DoxyParamCaption}\item[{const Event\+Listener\+::\+Listener\+ID \&}]{listener\+ID,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sorts the listeners of specified type by scene graph priority \mbox{\Hypertarget{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}\label{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!update\+Dirty\+Flag\+For\+Scene\+Graph@{update\+Dirty\+Flag\+For\+Scene\+Graph}}
+\index{update\+Dirty\+Flag\+For\+Scene\+Graph@{update\+Dirty\+Flag\+For\+Scene\+Graph}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{update\+Dirty\+Flag\+For\+Scene\+Graph()}{updateDirtyFlagForSceneGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::update\+Dirty\+Flag\+For\+Scene\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Update dirty flag \mbox{\Hypertarget{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}\label{classEventDispatcher_a281d3a00951ec4a7b628bc5a08d2b309}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!update\+Dirty\+Flag\+For\+Scene\+Graph@{update\+Dirty\+Flag\+For\+Scene\+Graph}}
+\index{update\+Dirty\+Flag\+For\+Scene\+Graph@{update\+Dirty\+Flag\+For\+Scene\+Graph}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{update\+Dirty\+Flag\+For\+Scene\+Graph()}{updateDirtyFlagForSceneGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::update\+Dirty\+Flag\+For\+Scene\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Update dirty flag \mbox{\Hypertarget{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}\label{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!update\+Listeners@{update\+Listeners}}
+\index{update\+Listeners@{update\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{update\+Listeners()}{updateListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::update\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Updates all listeners 1) Removes all listener items that have been marked as \textquotesingle{}removed\textquotesingle{} when dispatching event. 2) Adds all listener items that have been marked as \textquotesingle{}added\textquotesingle{} when dispatching event. \mbox{\Hypertarget{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}\label{classEventDispatcher_a936a4600edda5168541a8ab42dd27056}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!update\+Listeners@{update\+Listeners}}
+\index{update\+Listeners@{update\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{update\+Listeners()}{updateListeners()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::update\+Listeners (\begin{DoxyParamCaption}\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Updates all listeners 1) Removes all listener items that have been marked as \textquotesingle{}removed\textquotesingle{} when dispatching event. 2) Adds all listener items that have been marked as \textquotesingle{}added\textquotesingle{} when dispatching event. \mbox{\Hypertarget{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}\label{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!visit\+Target@{visit\+Target}}
+\index{visit\+Target@{visit\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{visit\+Target()}{visitTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::visit\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{bool}]{is\+Root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Walks though scene graph to get the draw order for each node, it\textquotesingle{}s called before sorting event listener with scene graph priority \mbox{\Hypertarget{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}\label{classEventDispatcher_a3ff088a3e3479d3ffd661c5918bff912}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!visit\+Target@{visit\+Target}}
+\index{visit\+Target@{visit\+Target}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{visit\+Target()}{visitTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::visit\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{bool}]{is\+Root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Walks though scene graph to get the draw order for each node, it\textquotesingle{}s called before sorting event listener with scene graph priority 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classEventDispatcher_a3a3cae6941714669117610e679effbae}\label{classEventDispatcher_a3a3cae6941714669117610e679effbae}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+dirty\+Nodes@{\+\_\+dirty\+Nodes}}
+\index{\+\_\+dirty\+Nodes@{\+\_\+dirty\+Nodes}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+dirty\+Nodes}{\_dirtyNodes}}
+{\footnotesize\ttfamily std\+::set$<$ \hyperlink{classNode}{Node} $\ast$ $>$ Event\+Dispatcher\+::\+\_\+dirty\+Nodes\hspace{0.3cm}{\ttfamily [protected]}}
+
+The nodes were associated with scene graph based priority listeners \mbox{\Hypertarget{classEventDispatcher_a1bc2dcf1e5bbfda6bf505de08131d6b1}\label{classEventDispatcher_a1bc2dcf1e5bbfda6bf505de08131d6b1}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+global\+Z\+Order\+Node\+Map@{\+\_\+global\+Z\+Order\+Node\+Map}}
+\index{\+\_\+global\+Z\+Order\+Node\+Map@{\+\_\+global\+Z\+Order\+Node\+Map}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+global\+Z\+Order\+Node\+Map}{\_globalZOrderNodeMap}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ float, std\+::vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ $>$ Event\+Dispatcher\+::\+\_\+global\+Z\+Order\+Node\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+key\+: Global Z Order, value\+: Sorted Nodes \mbox{\Hypertarget{classEventDispatcher_aaf59a5e64ade7b04dc3b037e954e5a3b}\label{classEventDispatcher_aaf59a5e64ade7b04dc3b037e954e5a3b}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+in\+Dispatch@{\+\_\+in\+Dispatch}}
+\index{\+\_\+in\+Dispatch@{\+\_\+in\+Dispatch}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+in\+Dispatch}{\_inDispatch}}
+{\footnotesize\ttfamily int Event\+Dispatcher\+::\+\_\+in\+Dispatch\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether the dispatcher is dispatching event \mbox{\Hypertarget{classEventDispatcher_a43f1858aaf2de64b7bab2f86cbfbd41e}\label{classEventDispatcher_a43f1858aaf2de64b7bab2f86cbfbd41e}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+is\+Enabled@{\+\_\+is\+Enabled}}
+\index{\+\_\+is\+Enabled@{\+\_\+is\+Enabled}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+is\+Enabled}{\_isEnabled}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::\+\_\+is\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether to enable dispatching event \mbox{\Hypertarget{classEventDispatcher_ac083d564ea5455fa77ae318075b65087}\label{classEventDispatcher_ac083d564ea5455fa77ae318075b65087}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+listener\+Map@{\+\_\+listener\+Map}}
+\index{\+\_\+listener\+Map@{\+\_\+listener\+Map}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+listener\+Map}{\_listenerMap}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ Event\+Listener\+::\+Listener\+ID, \hyperlink{classEventDispatcher_1_1EventListenerVector}{Event\+Listener\+Vector} $\ast$ $>$ Event\+Dispatcher\+::\+\_\+listener\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+Listeners map \mbox{\Hypertarget{classEventDispatcher_a892c5b82fa7e314d0968222d61688234}\label{classEventDispatcher_a892c5b82fa7e314d0968222d61688234}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+node\+Listeners\+Map@{\+\_\+node\+Listeners\+Map}}
+\index{\+\_\+node\+Listeners\+Map@{\+\_\+node\+Listeners\+Map}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+node\+Listeners\+Map}{\_nodeListenersMap}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ $\ast$ $>$ Event\+Dispatcher\+::\+\_\+node\+Listeners\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+The map of node and event listeners \mbox{\Hypertarget{classEventDispatcher_a4dd5c675f1b50ac7de363b37319d8977}\label{classEventDispatcher_a4dd5c675f1b50ac7de363b37319d8977}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+node\+Priority\+Map@{\+\_\+node\+Priority\+Map}}
+\index{\+\_\+node\+Priority\+Map@{\+\_\+node\+Priority\+Map}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+node\+Priority\+Map}{\_nodePriorityMap}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, int $>$ Event\+Dispatcher\+::\+\_\+node\+Priority\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+The map of node and its event priority \mbox{\Hypertarget{classEventDispatcher_a8a4528d4e9cafee73b5730315d6863fb}\label{classEventDispatcher_a8a4528d4e9cafee73b5730315d6863fb}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+priority\+Dirty\+Flag\+Map@{\+\_\+priority\+Dirty\+Flag\+Map}}
+\index{\+\_\+priority\+Dirty\+Flag\+Map@{\+\_\+priority\+Dirty\+Flag\+Map}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+priority\+Dirty\+Flag\+Map}{\_priorityDirtyFlagMap}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ Event\+Listener\+::\+Listener\+ID, \hyperlink{classEventDispatcher_a05d949544dae4e41a1ba912ab962db33}{Dirty\+Flag} $>$ Event\+Dispatcher\+::\+\_\+priority\+Dirty\+Flag\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+The map of dirty flag \mbox{\Hypertarget{classEventDispatcher_ab96e3a366e2ce099f839bb85710d23fb}\label{classEventDispatcher_ab96e3a366e2ce099f839bb85710d23fb}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+to\+Added\+Listeners@{\+\_\+to\+Added\+Listeners}}
+\index{\+\_\+to\+Added\+Listeners@{\+\_\+to\+Added\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+to\+Added\+Listeners}{\_toAddedListeners}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ Event\+Dispatcher\+::\+\_\+to\+Added\+Listeners\hspace{0.3cm}{\ttfamily [protected]}}
+
+The listeners to be added after dispatching event \mbox{\Hypertarget{classEventDispatcher_a08ef695c1122ea1763b37de776eb7806}\label{classEventDispatcher_a08ef695c1122ea1763b37de776eb7806}} 
+\index{Event\+Dispatcher@{Event\+Dispatcher}!\+\_\+to\+Removed\+Listeners@{\+\_\+to\+Removed\+Listeners}}
+\index{\+\_\+to\+Removed\+Listeners@{\+\_\+to\+Removed\+Listeners}!Event\+Dispatcher@{Event\+Dispatcher}}
+\subsubsection{\texorpdfstring{\+\_\+to\+Removed\+Listeners}{\_toRemovedListeners}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classEventListener}{Event\+Listener} $\ast$ $>$ Event\+Dispatcher\+::\+\_\+to\+Removed\+Listeners\hspace{0.3cm}{\ttfamily [protected]}}
+
+The listeners to be removed after dispatching event 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Dispatcher.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Dispatcher.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{structb2FixtureDef}{}\section{b2\+Fixture\+Def Struct Reference}
+\label{structb2FixtureDef}\index{b2\+Fixture\+Def@{b2\+Fixture\+Def}}
+
+
+{\ttfamily \#include $<$b2\+Fixture.\+h$>$}
+
+
+
+Collaboration diagram for b2\+Fixture\+Def\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{structb2FixtureDef__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}\label{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}} 
+\hyperlink{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}{b2\+Fixture\+Def} ()
+\begin{DoxyCompactList}\small\item\em The constructor sets the default fixture definition values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}\label{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}} 
+\hyperlink{structb2FixtureDef_aa34ba06bcf0d6d981931a83cf124a602}{b2\+Fixture\+Def} ()
+\begin{DoxyCompactList}\small\item\em The constructor sets the default fixture definition values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classb2Shape}{b2\+Shape} $\ast$ \hyperlink{structb2FixtureDef_afd5c15e1a391333566b0e241ed9e9edf}{shape}
+\item 
+\mbox{\Hypertarget{structb2FixtureDef_a5a9a25eb921cc0b54f52a6612df09de9}\label{structb2FixtureDef_a5a9a25eb921cc0b54f52a6612df09de9}} 
+void $\ast$ \hyperlink{structb2FixtureDef_a5a9a25eb921cc0b54f52a6612df09de9}{user\+Data}
+\begin{DoxyCompactList}\small\item\em Use this to store application specific fixture data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2FixtureDef_a66081c8d0e12d4bdb0b341fb97b46eb6}\label{structb2FixtureDef_a66081c8d0e12d4bdb0b341fb97b46eb6}} 
+float32 \hyperlink{structb2FixtureDef_a66081c8d0e12d4bdb0b341fb97b46eb6}{friction}
+\begin{DoxyCompactList}\small\item\em The friction coefficient, usually in the range \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2FixtureDef_ad7ee26656e4749f7b548d2cc0cf9f168}\label{structb2FixtureDef_ad7ee26656e4749f7b548d2cc0cf9f168}} 
+float32 \hyperlink{structb2FixtureDef_ad7ee26656e4749f7b548d2cc0cf9f168}{restitution}
+\begin{DoxyCompactList}\small\item\em The restitution (elasticity) usually in the range \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2FixtureDef_a6e27d733789a35aa689af2b30a1de0ff}\label{structb2FixtureDef_a6e27d733789a35aa689af2b30a1de0ff}} 
+float32 \hyperlink{structb2FixtureDef_a6e27d733789a35aa689af2b30a1de0ff}{density}
+\begin{DoxyCompactList}\small\item\em The density, usually in kg/m$^\wedge$2. \end{DoxyCompactList}\item 
+bool \hyperlink{structb2FixtureDef_ac8cfcc6208663c92861eaab3b3fdc57e}{is\+Sensor}
+\item 
+\mbox{\Hypertarget{structb2FixtureDef_a4c3e493a13d11ab27fcc2eee9f52fd61}\label{structb2FixtureDef_a4c3e493a13d11ab27fcc2eee9f52fd61}} 
+\hyperlink{structb2Filter}{b2\+Filter} \hyperlink{structb2FixtureDef_a4c3e493a13d11ab27fcc2eee9f52fd61}{filter}
+\begin{DoxyCompactList}\small\item\em Contact filtering data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A fixture definition is used to create a fixture. This class defines an abstract fixture definition. You can reuse fixture definitions safely. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structb2FixtureDef_ac8cfcc6208663c92861eaab3b3fdc57e}\label{structb2FixtureDef_ac8cfcc6208663c92861eaab3b3fdc57e}} 
+\index{b2\+Fixture\+Def@{b2\+Fixture\+Def}!is\+Sensor@{is\+Sensor}}
+\index{is\+Sensor@{is\+Sensor}!b2\+Fixture\+Def@{b2\+Fixture\+Def}}
+\subsubsection{\texorpdfstring{is\+Sensor}{isSensor}}
+{\footnotesize\ttfamily bool b2\+Fixture\+Def\+::is\+Sensor}
+
+A sensor shape collects contact information but never generates a collision response. \mbox{\Hypertarget{structb2FixtureDef_afd5c15e1a391333566b0e241ed9e9edf}\label{structb2FixtureDef_afd5c15e1a391333566b0e241ed9e9edf}} 
+\index{b2\+Fixture\+Def@{b2\+Fixture\+Def}!shape@{shape}}
+\index{shape@{shape}!b2\+Fixture\+Def@{b2\+Fixture\+Def}}
+\subsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily const \hyperlink{classb2Shape}{b2\+Shape} $\ast$ b2\+Fixture\+Def\+::shape}
+
+The shape, this must be set. The shape will be cloned, so you can create the shape on the stack. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+Fixture.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,148 @@
+\hypertarget{group__cpShape}{}\section{cp\+Shape}
+\label{group__cpShape}\index{cp\+Shape@{cp\+Shape}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Point query info struct. \end{DoxyCompactList}\item 
+struct \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Segment query info struct. \end{DoxyCompactList}\item 
+struct \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter}
+\begin{DoxyCompactList}\small\item\em Fast collision filtering type that is used to determine if two objects collide before calling collision or query callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}\label{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}} 
+typedef struct \hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info} \hyperlink{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}{cp\+Point\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Point query info struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}\label{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}} 
+typedef struct \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info} \hyperlink{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}{cp\+Segment\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Segment query info struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}\label{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}} 
+typedef struct \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} \hyperlink{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}{cp\+Shape\+Filter}
+\begin{DoxyCompactList}\small\item\em Fast collision filtering type that is used to determine if two objects collide before calling collision or query callbacks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}\label{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}} 
+typedef struct \hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info} \hyperlink{group__cpShape_ga2264ed925aee1f67a414ff773bfe33ff}{cp\+Point\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Point query info struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}\label{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}} 
+typedef struct \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info} \hyperlink{group__cpShape_gadebeb6b5e42d369df368fd220aacd7e8}{cp\+Segment\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Segment query info struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}\label{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}} 
+typedef struct \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} \hyperlink{group__cpShape_gaa85aa81b58edce2acc7e06316d11875c}{cp\+Shape\+Filter}
+\begin{DoxyCompactList}\small\item\em Fast collision filtering type that is used to determine if two objects collide before calling collision or query callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpShape_ga16db3767b479bc1dcd169f362fa80cb5}\label{group__cpShape_ga16db3767b479bc1dcd169f362fa80cb5}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga16db3767b479bc1dcd169f362fa80cb5}{cp\+Shape\+Destroy} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Destroy a shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga02e1c9ffa26da3a0a40d6846a3d1dbe7}\label{group__cpShape_ga02e1c9ffa26da3a0a40d6846a3d1dbe7}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga02e1c9ffa26da3a0a40d6846a3d1dbe7}{cp\+Shape\+Free} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Destroy and Free a shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga899d6f70c74747d4cb52b778447c81e8}\label{group__cpShape_ga899d6f70c74747d4cb52b778447c81e8}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBB}{cp\+BB} \hyperlink{group__cpShape_ga899d6f70c74747d4cb52b778447c81e8}{cp\+Shape\+Cache\+BB} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Update, cache and return the bounding box of a shape based on the body it\textquotesingle{}s attached to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaa3ce1518fb4739b0b4e8964dfb7cd728}\label{group__cpShape_gaa3ce1518fb4739b0b4e8964dfb7cd728}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBB}{cp\+BB} \hyperlink{group__cpShape_gaa3ce1518fb4739b0b4e8964dfb7cd728}{cp\+Shape\+Update} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpTransform}{cp\+Transform} transform)
+\begin{DoxyCompactList}\small\item\em Update, cache and return the bounding box of a shape with an explicit transformation. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_ga5b0f787bc6f0d614d4616c08c807cd6c}{cp\+Shape\+Point\+Query} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} p, \hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info} $\ast$out)
+\item 
+\mbox{\Hypertarget{group__cpShape_gaf25b8d53a1b0185824b1cfdd428c04b7}\label{group__cpShape_gaf25b8d53a1b0185824b1cfdd428c04b7}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpShape_gaf25b8d53a1b0185824b1cfdd428c04b7}{cp\+Shape\+Segment\+Query} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b, cp\+Float radius, \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info} $\ast$info)
+\begin{DoxyCompactList}\small\item\em Perform a segment query against a shape. {\ttfamily info} must be a pointer to a valid \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info} structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga0afd273a80a6cbdf01cc93ca7a9975db}\label{group__cpShape_ga0afd273a80a6cbdf01cc93ca7a9975db}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpContactPointSet}{cp\+Contact\+Point\+Set} \hyperlink{group__cpShape_ga0afd273a80a6cbdf01cc93ca7a9975db}{cp\+Shapes\+Collide} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$a, const \hyperlink{structcpShape}{cp\+Shape} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Return contact information about two shapes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga8028b555d6186cf462211ed1a9e2d0ec}\label{group__cpShape_ga8028b555d6186cf462211ed1a9e2d0ec}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpSpace}{cp\+Space} $\ast$ \hyperlink{group__cpShape_ga8028b555d6186cf462211ed1a9e2d0ec}{cp\+Shape\+Get\+Space} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structcpSpace}{cp\+Space} this body is added to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaa0615b0c5438d7cfec0d73d133e35e8e}\label{group__cpShape_gaa0615b0c5438d7cfec0d73d133e35e8e}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBody}{cp\+Body} $\ast$ \hyperlink{group__cpShape_gaa0615b0c5438d7cfec0d73d133e35e8e}{cp\+Shape\+Get\+Body} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structcpBody}{cp\+Body} this shape is connected to. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga222501265d75e838459285452a92d6f5}{cp\+Shape\+Set\+Body} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpBody}{cp\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{group__cpShape_ga5d7f4b7e91b1e7062ae84acb41aa47ba}\label{group__cpShape_ga5d7f4b7e91b1e7062ae84acb41aa47ba}} 
+cp\+Float \hyperlink{group__cpShape_ga5d7f4b7e91b1e7062ae84acb41aa47ba}{cp\+Shape\+Get\+Mass} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the mass of the shape if you are having Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga82c8046837b24d08b9ea0b3da6c795a4}\label{group__cpShape_ga82c8046837b24d08b9ea0b3da6c795a4}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga82c8046837b24d08b9ea0b3da6c795a4}{cp\+Shape\+Set\+Mass} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float mass)
+\begin{DoxyCompactList}\small\item\em Set the mass of this shape to have Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gae9c80582330ded34941ca4890160575c}\label{group__cpShape_gae9c80582330ded34941ca4890160575c}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_gae9c80582330ded34941ca4890160575c}{cp\+Shape\+Get\+Density} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the density of the shape if you are having Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga6b52b02dd8c60fb33713869ef5bba948}\label{group__cpShape_ga6b52b02dd8c60fb33713869ef5bba948}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga6b52b02dd8c60fb33713869ef5bba948}{cp\+Shape\+Set\+Density} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float density)
+\begin{DoxyCompactList}\small\item\em Set the density of this shape to have Chipmunk calculate mass properties for you. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga5b6d2a25a83812d8d97b40ad7d956c8e}\label{group__cpShape_ga5b6d2a25a83812d8d97b40ad7d956c8e}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_ga5b6d2a25a83812d8d97b40ad7d956c8e}{cp\+Shape\+Get\+Moment} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the calculated moment of inertia for this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gac9d45f5ebc8e18552d75889c3899a9cf}\label{group__cpShape_gac9d45f5ebc8e18552d75889c3899a9cf}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_gac9d45f5ebc8e18552d75889c3899a9cf}{cp\+Shape\+Get\+Area} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the calculated area of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga1d9c68cf011696d081c61897ca6bb07b}\label{group__cpShape_ga1d9c68cf011696d081c61897ca6bb07b}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpVect}{cp\+Vect} \hyperlink{group__cpShape_ga1d9c68cf011696d081c61897ca6bb07b}{cp\+Shape\+Get\+Center\+Of\+Gravity} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the centroid of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga2e90f99cd96ca0b17b8fe9a41d9db96a}\label{group__cpShape_ga2e90f99cd96ca0b17b8fe9a41d9db96a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBB}{cp\+BB} \hyperlink{group__cpShape_ga2e90f99cd96ca0b17b8fe9a41d9db96a}{cp\+Shape\+Get\+BB} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the bounding box that contains the shape given it\textquotesingle{}s current position and angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga02d5d24afa5c5fbe529d3a1ff3bfb85d}\label{group__cpShape_ga02d5d24afa5c5fbe529d3a1ff3bfb85d}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpShape_ga02d5d24afa5c5fbe529d3a1ff3bfb85d}{cp\+Shape\+Get\+Sensor} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get if the shape is set to be a sensor or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gad82e18c0a765300e42108c88caa3bbbb}\label{group__cpShape_gad82e18c0a765300e42108c88caa3bbbb}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_gad82e18c0a765300e42108c88caa3bbbb}{cp\+Shape\+Set\+Sensor} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} sensor)
+\begin{DoxyCompactList}\small\item\em Set if the shape is a sensor or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga2aca093a208084722c943a092f9735cb}\label{group__cpShape_ga2aca093a208084722c943a092f9735cb}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_ga2aca093a208084722c943a092f9735cb}{cp\+Shape\+Get\+Elasticity} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the elasticity of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga746fd50b3e2b1d4deb25f2ecb2654028}\label{group__cpShape_ga746fd50b3e2b1d4deb25f2ecb2654028}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga746fd50b3e2b1d4deb25f2ecb2654028}{cp\+Shape\+Set\+Elasticity} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float elasticity)
+\begin{DoxyCompactList}\small\item\em Set the elasticity of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gae03dcb3f6221e41cf677eeca42aab280}\label{group__cpShape_gae03dcb3f6221e41cf677eeca42aab280}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpShape_gae03dcb3f6221e41cf677eeca42aab280}{cp\+Shape\+Get\+Friction} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the friction of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga2ffe1f94c19a1b248e7784216862add9}\label{group__cpShape_ga2ffe1f94c19a1b248e7784216862add9}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga2ffe1f94c19a1b248e7784216862add9}{cp\+Shape\+Set\+Friction} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float friction)
+\begin{DoxyCompactList}\small\item\em Set the friction of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaa353b1aa872bad9549d45c05bcdb4722}\label{group__cpShape_gaa353b1aa872bad9549d45c05bcdb4722}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpVect}{cp\+Vect} \hyperlink{group__cpShape_gaa353b1aa872bad9549d45c05bcdb4722}{cp\+Shape\+Get\+Surface\+Velocity} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the surface velocity of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga6300af79e7bf2427e8142eb5e15ad394}\label{group__cpShape_ga6300af79e7bf2427e8142eb5e15ad394}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga6300af79e7bf2427e8142eb5e15ad394}{cp\+Shape\+Set\+Surface\+Velocity} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} surface\+Velocity)
+\begin{DoxyCompactList}\small\item\em Set the surface velocity of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gab8e58cc69432190ffb0f00cb0f0dc400}\label{group__cpShape_gab8e58cc69432190ffb0f00cb0f0dc400}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{group__cpShape_gab8e58cc69432190ffb0f00cb0f0dc400}{cp\+Shape\+Get\+User\+Data} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the user definable data pointer of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga1de05153aca70a3c61c454707c89813e}\label{group__cpShape_ga1de05153aca70a3c61c454707c89813e}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga1de05153aca70a3c61c454707c89813e}{cp\+Shape\+Set\+User\+Data} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Set the user definable data pointer of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gae1f59960451b5324c2d1992ba9023c5b}\label{group__cpShape_gae1f59960451b5324c2d1992ba9023c5b}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} \hyperlink{group__cpShape_gae1f59960451b5324c2d1992ba9023c5b}{cp\+Shape\+Get\+Collision\+Type} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Set the collision type of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga9c7e4dbae5ea13116d7ebb85eded14d6}\label{group__cpShape_ga9c7e4dbae5ea13116d7ebb85eded14d6}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_ga9c7e4dbae5ea13116d7ebb85eded14d6}{cp\+Shape\+Set\+Collision\+Type} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} collision\+Type)
+\begin{DoxyCompactList}\small\item\em Get the collision type of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_ga9f6fa02cd5ca57dacaa8400c0585137b}\label{group__cpShape_ga9f6fa02cd5ca57dacaa8400c0585137b}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} \hyperlink{group__cpShape_ga9f6fa02cd5ca57dacaa8400c0585137b}{cp\+Shape\+Get\+Filter} (const \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Get the collision filtering parameters of this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpShape_gaf7e77e7de50960b9aecf627706a5e747}\label{group__cpShape_gaf7e77e7de50960b9aecf627706a5e747}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpShape_gaf7e77e7de50960b9aecf627706a5e747}{cp\+Shape\+Set\+Filter} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter)
+\begin{DoxyCompactList}\small\item\em Set the collision filtering parameters of this shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{structcpShape}{cp\+Shape} struct defines the shape of a rigid body. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__cpShape_ga5b0f787bc6f0d614d4616c08c807cd6c}\label{group__cpShape_ga5b0f787bc6f0d614d4616c08c807cd6c}} 
+\index{cp\+Shape@{cp\+Shape}!cp\+Shape\+Point\+Query@{cp\+Shape\+Point\+Query}}
+\index{cp\+Shape\+Point\+Query@{cp\+Shape\+Point\+Query}!cp\+Shape@{cp\+Shape}}
+\subsubsection{\texorpdfstring{cp\+Shape\+Point\+Query()}{cpShapePointQuery()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Shape\+Point\+Query (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpShape}{cp\+Shape} $\ast$}]{shape,  }\item[{\hyperlink{structcpVect}{cp\+Vect}}]{p,  }\item[{\hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info} $\ast$}]{out }\end{DoxyParamCaption})}
+
+Perform a nearest point query. It finds the closest point on the surface of shape to a specific point. The value returned is the distance between the points. A negative distance means the point is inside the shape. \mbox{\Hypertarget{group__cpShape_ga222501265d75e838459285452a92d6f5}\label{group__cpShape_ga222501265d75e838459285452a92d6f5}} 
+\index{cp\+Shape@{cp\+Shape}!cp\+Shape\+Set\+Body@{cp\+Shape\+Set\+Body}}
+\index{cp\+Shape\+Set\+Body@{cp\+Shape\+Set\+Body}!cp\+Shape@{cp\+Shape}}
+\subsubsection{\texorpdfstring{cp\+Shape\+Set\+Body()}{cpShapeSetBody()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT void cp\+Shape\+Set\+Body (\begin{DoxyParamCaption}\item[{\hyperlink{structcpShape}{cp\+Shape} $\ast$}]{shape,  }\item[{\hyperlink{structcpBody}{cp\+Body} $\ast$}]{body }\end{DoxyParamCaption})}
+
+Set the \hyperlink{structcpBody}{cp\+Body} this shape is connected to. Can only be used if the shape is not currently added to a space. 

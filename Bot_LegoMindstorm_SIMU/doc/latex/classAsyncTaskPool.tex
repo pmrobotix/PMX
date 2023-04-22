@@ -1,0 +1,172 @@
+\hypertarget{classAsyncTaskPool}{}\section{Async\+Task\+Pool Class Reference}
+\label{classAsyncTaskPool}\index{Async\+Task\+Pool@{Async\+Task\+Pool}}
+
+
+This class allows to perform background operations without having to manipulate threads.  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Async\+Task\+Pool.\+h$>$}
+
+
+
+Collaboration diagram for Async\+Task\+Pool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classAsyncTaskPool__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAsyncTaskPool_1_1ThreadTasks}{Thread\+Tasks}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a6534ed22a4d2490911c713d44b194d99}\label{classAsyncTaskPool_a6534ed22a4d2490911c713d44b194d99}} 
+enum {\bfseries Task\+Type} \{ \newline
+{\bfseries T\+A\+S\+K\+\_\+\+IO}, 
+{\bfseries T\+A\+S\+K\+\_\+\+N\+E\+T\+W\+O\+RK}, 
+{\bfseries T\+A\+S\+K\+\_\+\+O\+T\+H\+ER}, 
+{\bfseries T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}, 
+\newline
+{\bfseries T\+A\+S\+K\+\_\+\+IO}, 
+{\bfseries T\+A\+S\+K\+\_\+\+N\+E\+T\+W\+O\+RK}, 
+{\bfseries T\+A\+S\+K\+\_\+\+O\+T\+H\+ER}, 
+{\bfseries T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}
+ \}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a6534ed22a4d2490911c713d44b194d99}\label{classAsyncTaskPool_a6534ed22a4d2490911c713d44b194d99}} 
+enum {\bfseries Task\+Type} \{ \newline
+{\bfseries T\+A\+S\+K\+\_\+\+IO}, 
+{\bfseries T\+A\+S\+K\+\_\+\+N\+E\+T\+W\+O\+RK}, 
+{\bfseries T\+A\+S\+K\+\_\+\+O\+T\+H\+ER}, 
+{\bfseries T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}, 
+\newline
+{\bfseries T\+A\+S\+K\+\_\+\+IO}, 
+{\bfseries T\+A\+S\+K\+\_\+\+N\+E\+T\+W\+O\+RK}, 
+{\bfseries T\+A\+S\+K\+\_\+\+O\+T\+H\+ER}, 
+{\bfseries T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE}
+ \}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a6136bd45583ec63ca47bf43ceb8dbcf8}\label{classAsyncTaskPool_a6136bd45583ec63ca47bf43ceb8dbcf8}} 
+typedef std\+::function$<$ void(void $\ast$)$>$ {\bfseries Task\+Call\+Back}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a6136bd45583ec63ca47bf43ceb8dbcf8}\label{classAsyncTaskPool_a6136bd45583ec63ca47bf43ceb8dbcf8}} 
+typedef std\+::function$<$ void(void $\ast$)$>$ {\bfseries Task\+Call\+Back}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__base_gacb1c072daf35d81ddc62e1f40b61da29}{stop\+Tasks} (Task\+Type type)
+\item 
+{\footnotesize template$<$class F $>$ }\\void \hyperlink{group__base_ga0e3628387bd146dc14d59271760a6fe2}{enqueue} (Task\+Type type, const Task\+Call\+Back \&callback, void $\ast$callback\+Param, F \&\&f)
+\item 
+void \hyperlink{classAsyncTaskPool_acb1c072daf35d81ddc62e1f40b61da29}{stop\+Tasks} (Task\+Type type)
+\item 
+void \hyperlink{group__base_gafba78936b0f70e83213652ec4c0c491c}{enqueue} (Task\+Type type, Task\+Call\+Back callback, void $\ast$callback\+Param, std\+::function$<$ void()$>$ task)
+\item 
+void \hyperlink{group__base_ga6034f6bbde8bda7d6763520a8732618c}{enqueue} (Async\+Task\+Pool\+::\+Task\+Type type, std\+::function$<$ void()$>$ task)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool} $\ast$ \hyperlink{classAsyncTaskPool_ab5fb56f692bc6ad57b53a5ce0dcd7a06}{get\+Instance} ()
+\item 
+static void \hyperlink{classAsyncTaskPool_a3197eae4bc1c9f17fa2869cf70b7bad4}{destroy\+Instance} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}{destory\+Instance} ()
+\item 
+static \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool} $\ast$ \hyperlink{classAsyncTaskPool_a218bb071a3ed7ddf9a609a66e6275b37}{get\+Instance} ()
+\item 
+static void \hyperlink{classAsyncTaskPool_a3b8724f5864c54e50c207496284b6af5}{destroy\+Instance} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}{destory\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a6709bebcfca74cba9f542f062b5d7871}\label{classAsyncTaskPool_a6709bebcfca74cba9f542f062b5d7871}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a8ec31ea8a55c0d52c2ee1836400a332a}\label{classAsyncTaskPool_a8ec31ea8a55c0d52c2ee1836400a332a}} 
+\hyperlink{classAsyncTaskPool_1_1ThreadTasks}{Thread\+Tasks} {\bfseries \+\_\+thread\+Tasks} \mbox{[}int(Task\+Type\+::\+T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+T\+Y\+PE)\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsyncTaskPool_a5ed9d266e2a48eb2e53ffbb487644e9a}\label{classAsyncTaskPool_a5ed9d266e2a48eb2e53ffbb487644e9a}} 
+static \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool} $\ast$ {\bfseries s\+\_\+async\+Task\+Pool} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows to perform background operations without having to manipulate threads.  NA. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}\label{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!destory\+Instance@{destory\+Instance}}
+\index{destory\+Instance@{destory\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{destory\+Instance()}{destoryInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Async\+Task\+Pool\+::destory\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000048}{Deprecated}]Use method \hyperlink{classAsyncTaskPool_a3197eae4bc1c9f17fa2869cf70b7bad4}{destroy\+Instance()} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}\label{classAsyncTaskPool_a9e0a8926935d80cf5ce73ac7d748a4ae}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!destory\+Instance@{destory\+Instance}}
+\index{destory\+Instance@{destory\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{destory\+Instance()}{destoryInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Async\+Task\+Pool\+::destory\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000283}{Deprecated}]Use method \hyperlink{classAsyncTaskPool_a3197eae4bc1c9f17fa2869cf70b7bad4}{destroy\+Instance()} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classAsyncTaskPool_a3197eae4bc1c9f17fa2869cf70b7bad4}\label{classAsyncTaskPool_a3197eae4bc1c9f17fa2869cf70b7bad4}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Async\+Task\+Pool\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroys the async task pool. \mbox{\Hypertarget{classAsyncTaskPool_a3b8724f5864c54e50c207496284b6af5}\label{classAsyncTaskPool_a3b8724f5864c54e50c207496284b6af5}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Async\+Task\+Pool\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroys the async task pool. \mbox{\Hypertarget{classAsyncTaskPool_ab5fb56f692bc6ad57b53a5ce0dcd7a06}\label{classAsyncTaskPool_ab5fb56f692bc6ad57b53a5ce0dcd7a06}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool} $\ast$ Async\+Task\+Pool\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the shared instance of the async task pool. \mbox{\Hypertarget{classAsyncTaskPool_a218bb071a3ed7ddf9a609a66e6275b37}\label{classAsyncTaskPool_a218bb071a3ed7ddf9a609a66e6275b37}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAsyncTaskPool}{Async\+Task\+Pool}$\ast$ Async\+Task\+Pool\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the shared instance of the async task pool. \mbox{\Hypertarget{classAsyncTaskPool_acb1c072daf35d81ddc62e1f40b61da29}\label{classAsyncTaskPool_acb1c072daf35d81ddc62e1f40b61da29}} 
+\index{Async\+Task\+Pool@{Async\+Task\+Pool}!stop\+Tasks@{stop\+Tasks}}
+\index{stop\+Tasks@{stop\+Tasks}!Async\+Task\+Pool@{Async\+Task\+Pool}}
+\subsubsection{\texorpdfstring{stop\+Tasks()}{stopTasks()}}
+{\footnotesize\ttfamily void Async\+Task\+Pool\+::stop\+Tasks (\begin{DoxyParamCaption}\item[{Task\+Type}]{type }\end{DoxyParamCaption})}
+
+Stop tasks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Task type you want to stop. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Async\+Task\+Pool.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Async\+Task\+Pool.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\hypertarget{classGroveColorSensor}{}\section{Grove\+Color\+Sensor Class Reference}
+\label{classGroveColorSensor}\index{Grove\+Color\+Sensor@{Grove\+Color\+Sensor}}
+
+
+Implémentation du détecteur de couleur Grove associée au robot.  
+
+
+
+
+{\ttfamily \#include $<$Grove\+Color\+Sensor.\+hpp$>$}
+
+
+
+Inheritance diagram for Grove\+Color\+Sensor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classGroveColorSensor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Grove\+Color\+Sensor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classGroveColorSensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_a0a57472cf6ba9df600003bf68f7bd557}\label{classGroveColorSensor_a0a57472cf6ba9df600003bf68f7bd557}} 
+\hyperlink{classGroveColorSensor_a0a57472cf6ba9df600003bf68f7bd557}{Grove\+Color\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_a6c3d8395a8ae1b0bd18e8236cd4a8a31}\label{classGroveColorSensor_a6c3d8395a8ae1b0bd18e8236cd4a8a31}} 
+\hyperlink{classGroveColorSensor_a6c3d8395a8ae1b0bd18e8236cd4a8a31}{$\sim$\+Grove\+Color\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_aa32408dcce1a55abd72e351faf4d4f26}\label{classGroveColorSensor_aa32408dcce1a55abd72e351faf4d4f26}} 
+bool {\bfseries is\+Connected} ()
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_aa85f03d535c39540fad1a410ebd8184c}\label{classGroveColorSensor_aa85f03d535c39540fad1a410ebd8184c}} 
+bool {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_acd8fc1fe584b9aa8e51985ba99ad1836}\label{classGroveColorSensor_acd8fc1fe584b9aa8e51985ba99ad1836}} 
+bool {\bfseries read\+R\+GB} ()
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_aa2c72c2e245dc011bc3215aa2bdd84bf}\label{classGroveColorSensor_aa2c72c2e245dc011bc3215aa2bdd84bf}} 
+float {\bfseries get\+TX} ()
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_ab89e79b04f70f11dea991ca4f9d4de7c}\label{classGroveColorSensor_ab89e79b04f70f11dea991ca4f9d4de7c}} 
+float {\bfseries get\+TY} ()
+\item 
+\mbox{\Hypertarget{classGroveColorSensor_a7632f53d6ad2466cf74a39ba08bbd07e}\label{classGroveColorSensor_a7632f53d6ad2466cf74a39ba08bbd07e}} 
+void \hyperlink{classGroveColorSensor_a7632f53d6ad2466cf74a39ba08bbd07e}{T\+C\+S3414\+Setup} (int delay1, int delay2)
+\begin{DoxyCompactList}\small\item\em T\+C\+S3414 Turns on the sensor and sets integration time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_a681f093bf14d2f9d544eff3c325ac533}\label{classGroveColorSensor_a681f093bf14d2f9d544eff3c325ac533}} 
+unsigned char $\ast$ \hyperlink{classGroveColorSensor_a681f093bf14d2f9d544eff3c325ac533}{T\+C\+S3414\+Get\+Color} ()
+\begin{DoxyCompactList}\small\item\em Calculate the color values \mbox{[}Clear,Red,Green,Blue\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_a655f83dcbe1696743637c083f57eaa5e}\label{classGroveColorSensor_a655f83dcbe1696743637c083f57eaa5e}} 
+float $\ast$ \hyperlink{classGroveColorSensor_a655f83dcbe1696743637c083f57eaa5e}{T\+C\+S3414tristimulus} ()
+\begin{DoxyCompactList}\small\item\em Get coordinates \mbox{[}tri X, tri Y, tri Z\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_aeeca525e17589d8cb1bdd7a0cfedc515}\label{classGroveColorSensor_aeeca525e17589d8cb1bdd7a0cfedc515}} 
+float $\ast$ \hyperlink{classGroveColorSensor_aeeca525e17589d8cb1bdd7a0cfedc515}{T\+C\+S3414chromaticity\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em Get chromaticity coordinates // \mbox{[}x, y\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_a40907d4f2a0cca2571660e4744049c40}\label{classGroveColorSensor_a40907d4f2a0cca2571660e4744049c40}} 
+float \hyperlink{classGroveColorSensor_a40907d4f2a0cca2571660e4744049c40}{C\+CT} ()
+\begin{DoxyCompactList}\small\item\em Get the color temperature, using the algorithm in the T\+C\+S3414 datasheet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroveColorSensor_ab13e681b298263726748b5e39f98da2d}\label{classGroveColorSensor_ab13e681b298263726748b5e39f98da2d}} 
+unsigned char $\ast$ \hyperlink{classGroveColorSensor_ab13e681b298263726748b5e39f98da2d}{T\+C\+S3414values} ()
+\begin{DoxyCompactList}\small\item\em Get the colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémentation du détecteur de couleur Grove associée au robot. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+O\+P\+O\+S6\+U\+L\+\_\+\+A\+R\+M/\hyperlink{GroveColorSensor_8hpp}{Grove\+Color\+Sensor.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+O\+P\+O\+S6\+U\+L\+\_\+\+A\+R\+M/\hyperlink{GroveColorSensor_8cpp}{Grove\+Color\+Sensor.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,391 @@
+\hypertarget{classMaterial}{}\section{Material Class Reference}
+\label{classMaterial}\index{Material@{Material}}
+
+
+\hyperlink{classMaterial}{Material}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Material.\+h$>$}
+
+
+
+Inheritance diagram for Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classMaterial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMaterial__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMaterial_a764714e37bbe1499d750b58b4056460b}\label{classMaterial_a764714e37bbe1499d750b58b4056460b}} 
+std\+::string \hyperlink{classMaterial_a764714e37bbe1499d750b58b4056460b}{get\+Name} () const
+\begin{DoxyCompactList}\small\item\em returns the material name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}\label{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}} 
+void \hyperlink{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}{set\+Name} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em sets the material name \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_a45e112d67c0e8a6590cb42b26f4bf7c9}{get\+Technique\+By\+Name} (const std\+::string \&name)
+\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_a8561c6726a6be698bc61153e71cfcedc}{get\+Technique\+By\+Index} (ssize\+\_\+t index)
+\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_af836a89c249c129938b2572bde8780c3}{get\+Technique} () const
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTechnique}{Technique} $\ast$ $>$ \& \hyperlink{classMaterial_aa185c54c143d5a53a793c6653dc8b606}{get\+Techniques} () const
+\item 
+ssize\+\_\+t \hyperlink{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}{get\+Technique\+Count} () const
+\item 
+void \hyperlink{classMaterial_a88f5ba975802241aa0ce984257b8a56a}{add\+Technique} (\hyperlink{classTechnique}{Technique} $\ast$technique)
+\item 
+void \hyperlink{classMaterial_a8f575095237a64a95d08a2a3062acc4f}{set\+Technique} (const std\+::string \&technique\+Name)
+\item 
+virtual \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_a9e04c5c84a42e10e267157125106104f}{clone} () const
+\item 
+\mbox{\Hypertarget{classMaterial_a764714e37bbe1499d750b58b4056460b}\label{classMaterial_a764714e37bbe1499d750b58b4056460b}} 
+std\+::string \hyperlink{classMaterial_a764714e37bbe1499d750b58b4056460b}{get\+Name} () const
+\begin{DoxyCompactList}\small\item\em returns the material name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}\label{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}} 
+void \hyperlink{classMaterial_aeb35f4d95c6de13f6181cd75b7a693cf}{set\+Name} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em sets the material name \end{DoxyCompactList}\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_ae0243fa49b7a0c4ca4c0d240ba487369}{get\+Technique\+By\+Name} (const std\+::string \&name)
+\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_a3f6e7d4e911f32fbbde7b7e9cf286316}{get\+Technique\+By\+Index} (ssize\+\_\+t index)
+\item 
+\hyperlink{classTechnique}{Technique} $\ast$ \hyperlink{classMaterial_ab608fdd95b62c5e489715708c1107591}{get\+Technique} () const
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTechnique}{Technique} $\ast$ $>$ \& \hyperlink{classMaterial_a402a3684251c8ac436b7412ac361c253}{get\+Techniques} () const
+\item 
+ssize\+\_\+t \hyperlink{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}{get\+Technique\+Count} () const
+\item 
+void \hyperlink{classMaterial_a88f5ba975802241aa0ce984257b8a56a}{add\+Technique} (\hyperlink{classTechnique}{Technique} $\ast$technique)
+\item 
+void \hyperlink{classMaterial_a8f575095237a64a95d08a2a3062acc4f}{set\+Technique} (const std\+::string \&technique\+Name)
+\item 
+virtual \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_a68b641cda1fe7dc4ad8dae55a4ec6f93}{clone} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_a1244126a35a456342473cd18ce05c86f}{create\+With\+Filename} (const std\+::string \&path)
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_a624a466fcb166e01fe57a98f209365f4}{create\+With\+G\+L\+State\+Program} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$program\+State)
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_aaeceb55f231edb94919198b18d9ec1ca}{create\+With\+Properties} (\hyperlink{classProperties}{Properties} $\ast$material\+Properties)
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_aeebb1e32ac992f8d8f79c6a7c98a4fb1}{create\+With\+Filename} (const std\+::string \&path)
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_a1a39fdd599b90431a49866a3c27ccfae}{create\+With\+G\+L\+State\+Program} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$program\+State)
+\item 
+static \hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMaterial_acd4f5fcbc5b60661fb07ae21ef7930dc}{create\+With\+Properties} (\hyperlink{classProperties}{Properties} $\ast$material\+Properties)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMaterial_a2cdb607bb32f8a27d55d88c067e8f2a8}\label{classMaterial_a2cdb607bb32f8a27d55d88c067e8f2a8}} 
+bool {\bfseries init\+With\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$state)
+\item 
+\mbox{\Hypertarget{classMaterial_ac800c5d49cbb8ebc101b690a65cfc1b7}\label{classMaterial_ac800c5d49cbb8ebc101b690a65cfc1b7}} 
+bool {\bfseries init\+With\+File} (const std\+::string \&file)
+\item 
+\mbox{\Hypertarget{classMaterial_a34e5a31eb938ea98e542aad8bbd4e891}\label{classMaterial_a34e5a31eb938ea98e542aad8bbd4e891}} 
+bool {\bfseries init\+With\+Properties} (\hyperlink{classProperties}{Properties} $\ast$material\+Properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ac95e0062cfe6878550338818e96e1a8c}\label{classMaterial_ac95e0062cfe6878550338818e96e1a8c}} 
+void {\bfseries set\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+\mbox{\Hypertarget{classMaterial_a4e6aa8011cfd995e0601b4ec6a059d8f}\label{classMaterial_a4e6aa8011cfd995e0601b4ec6a059d8f}} 
+bool {\bfseries parse\+Properties} (\hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_a89d534b505198eeedf69511d134a0dec}\label{classMaterial_a89d534b505198eeedf69511d134a0dec}} 
+bool {\bfseries parse\+Technique} (\hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_aaf062af5584ee89e97aa2ef590650eaa}\label{classMaterial_aaf062af5584ee89e97aa2ef590650eaa}} 
+bool {\bfseries parse\+Pass} (\hyperlink{classTechnique}{Technique} $\ast$technique, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ad880cfddfc8aba2c07ce8f28962d4818}\label{classMaterial_ad880cfddfc8aba2c07ce8f28962d4818}} 
+bool {\bfseries parse\+Shader} (\hyperlink{classPass}{Pass} $\ast$pass, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ad6e8d499129cc4e8ebfa5ab9554caacd}\label{classMaterial_ad6e8d499129cc4e8ebfa5ab9554caacd}} 
+bool {\bfseries parse\+Sampler} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_a247f9daeec0f17debad6b1f3038e9968}\label{classMaterial_a247f9daeec0f17debad6b1f3038e9968}} 
+bool {\bfseries parse\+Uniform} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$program\+State, \hyperlink{classProperties}{Properties} $\ast$properties, const char $\ast$uniform\+Name)
+\item 
+\mbox{\Hypertarget{classMaterial_a47b833e30a164c440f1b9f9e85487f52}\label{classMaterial_a47b833e30a164c440f1b9f9e85487f52}} 
+bool {\bfseries parse\+Render\+State} (\hyperlink{classRenderState}{Render\+State} $\ast$render\+State, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_a2cdb607bb32f8a27d55d88c067e8f2a8}\label{classMaterial_a2cdb607bb32f8a27d55d88c067e8f2a8}} 
+bool {\bfseries init\+With\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$state)
+\item 
+\mbox{\Hypertarget{classMaterial_ac800c5d49cbb8ebc101b690a65cfc1b7}\label{classMaterial_ac800c5d49cbb8ebc101b690a65cfc1b7}} 
+bool {\bfseries init\+With\+File} (const std\+::string \&file)
+\item 
+\mbox{\Hypertarget{classMaterial_a34e5a31eb938ea98e542aad8bbd4e891}\label{classMaterial_a34e5a31eb938ea98e542aad8bbd4e891}} 
+bool {\bfseries init\+With\+Properties} (\hyperlink{classProperties}{Properties} $\ast$material\+Properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ac95e0062cfe6878550338818e96e1a8c}\label{classMaterial_ac95e0062cfe6878550338818e96e1a8c}} 
+void {\bfseries set\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+\mbox{\Hypertarget{classMaterial_a4e6aa8011cfd995e0601b4ec6a059d8f}\label{classMaterial_a4e6aa8011cfd995e0601b4ec6a059d8f}} 
+bool {\bfseries parse\+Properties} (\hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_a89d534b505198eeedf69511d134a0dec}\label{classMaterial_a89d534b505198eeedf69511d134a0dec}} 
+bool {\bfseries parse\+Technique} (\hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_aaf062af5584ee89e97aa2ef590650eaa}\label{classMaterial_aaf062af5584ee89e97aa2ef590650eaa}} 
+bool {\bfseries parse\+Pass} (\hyperlink{classTechnique}{Technique} $\ast$technique, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ad880cfddfc8aba2c07ce8f28962d4818}\label{classMaterial_ad880cfddfc8aba2c07ce8f28962d4818}} 
+bool {\bfseries parse\+Shader} (\hyperlink{classPass}{Pass} $\ast$pass, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_ad6e8d499129cc4e8ebfa5ab9554caacd}\label{classMaterial_ad6e8d499129cc4e8ebfa5ab9554caacd}} 
+bool {\bfseries parse\+Sampler} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State, \hyperlink{classProperties}{Properties} $\ast$properties)
+\item 
+\mbox{\Hypertarget{classMaterial_a247f9daeec0f17debad6b1f3038e9968}\label{classMaterial_a247f9daeec0f17debad6b1f3038e9968}} 
+bool {\bfseries parse\+Uniform} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$program\+State, \hyperlink{classProperties}{Properties} $\ast$properties, const char $\ast$uniform\+Name)
+\item 
+\mbox{\Hypertarget{classMaterial_a47b833e30a164c440f1b9f9e85487f52}\label{classMaterial_a47b833e30a164c440f1b9f9e85487f52}} 
+bool {\bfseries parse\+Render\+State} (\hyperlink{classRenderState}{Render\+State} $\ast$render\+State, \hyperlink{classProperties}{Properties} $\ast$properties)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMaterial_a98a77badbaeb5f34b87d23e406fafd73}\label{classMaterial_a98a77badbaeb5f34b87d23e406fafd73}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\mbox{\Hypertarget{classMaterial_a391bc69f62a77b9849f868dba7c3350b}\label{classMaterial_a391bc69f62a77b9849f868dba7c3350b}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTechnique}{Technique} $\ast$ $>$ {\bfseries \+\_\+techniques}
+\item 
+\mbox{\Hypertarget{classMaterial_afd7e62cb2e07b0d295c73a5126e820c0}\label{classMaterial_afd7e62cb2e07b0d295c73a5126e820c0}} 
+\hyperlink{classTechnique}{Technique} $\ast$ {\bfseries \+\_\+current\+Technique}
+\item 
+\mbox{\Hypertarget{classMaterial_ade6937b0a66583121eb61f49f649f0be}\label{classMaterial_ade6937b0a66583121eb61f49f649f0be}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries \+\_\+target}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMaterial_aed91756449328e2c454e53e9c5e53936}\label{classMaterial_aed91756449328e2c454e53e9c5e53936}} 
+class {\bfseries Node}
+\item 
+\mbox{\Hypertarget{classMaterial_a0a6534d15d196a09d979b9b093c6836d}\label{classMaterial_a0a6534d15d196a09d979b9b093c6836d}} 
+class {\bfseries Technique}
+\item 
+\mbox{\Hypertarget{classMaterial_abe77423eb27f643233ef051559a64882}\label{classMaterial_abe77423eb27f643233ef051559a64882}} 
+class {\bfseries Pass}
+\item 
+\mbox{\Hypertarget{classMaterial_a9f8d65c15f716e15a8acedb603ab047b}\label{classMaterial_a9f8d65c15f716e15a8acedb603ab047b}} 
+class {\bfseries Mesh\+Command}
+\item 
+\mbox{\Hypertarget{classMaterial_a7482e5338f9824f1190a0846d209c666}\label{classMaterial_a7482e5338f9824f1190a0846d209c666}} 
+class {\bfseries Renderer}
+\item 
+\mbox{\Hypertarget{classMaterial_ac9b3996998332cf8a503b4fbcaa6b200}\label{classMaterial_ac9b3996998332cf8a503b4fbcaa6b200}} 
+class {\bfseries Mesh}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMaterial}{Material}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMaterial_a88f5ba975802241aa0ce984257b8a56a}\label{classMaterial_a88f5ba975802241aa0ce984257b8a56a}} 
+\index{Material@{Material}!add\+Technique@{add\+Technique}}
+\index{add\+Technique@{add\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{add\+Technique()}{addTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Material\+::add\+Technique (\begin{DoxyParamCaption}\item[{\hyperlink{classTechnique}{Technique} $\ast$}]{technique }\end{DoxyParamCaption})}
+
+Adds a \hyperlink{classTechnique}{Technique} into the \hyperlink{classMaterial}{Material} \mbox{\Hypertarget{classMaterial_a88f5ba975802241aa0ce984257b8a56a}\label{classMaterial_a88f5ba975802241aa0ce984257b8a56a}} 
+\index{Material@{Material}!add\+Technique@{add\+Technique}}
+\index{add\+Technique@{add\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{add\+Technique()}{addTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Material\+::add\+Technique (\begin{DoxyParamCaption}\item[{\hyperlink{classTechnique}{Technique} $\ast$}]{technique }\end{DoxyParamCaption})}
+
+Adds a \hyperlink{classTechnique}{Technique} into the \hyperlink{classMaterial}{Material} \mbox{\Hypertarget{classMaterial_a9e04c5c84a42e10e267157125106104f}\label{classMaterial_a9e04c5c84a42e10e267157125106104f}} 
+\index{Material@{Material}!clone@{clone}}
+\index{clone@{clone}!Material@{Material}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Material\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+returns a clone (deep-\/copy) of the material 
+
+Reimplemented in \hyperlink{classSprite3DMaterial_a2ce762d8a3abe91eb5abe2df95aa63f4}{Sprite3\+D\+Material}, and \hyperlink{classSprite3DMaterial_ac812fcb53172b407d4401d5242ce8d4e}{Sprite3\+D\+Material}.
+
+\mbox{\Hypertarget{classMaterial_a68b641cda1fe7dc4ad8dae55a4ec6f93}\label{classMaterial_a68b641cda1fe7dc4ad8dae55a4ec6f93}} 
+\index{Material@{Material}!clone@{clone}}
+\index{clone@{clone}!Material@{Material}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classMaterial}{Material}$\ast$ Material\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+returns a clone (deep-\/copy) of the material 
+
+Reimplemented in \hyperlink{classSprite3DMaterial_a2ce762d8a3abe91eb5abe2df95aa63f4}{Sprite3\+D\+Material}, and \hyperlink{classSprite3DMaterial_ac812fcb53172b407d4401d5242ce8d4e}{Sprite3\+D\+Material}.
+
+\mbox{\Hypertarget{classMaterial_a1244126a35a456342473cd18ce05c86f}\label{classMaterial_a1244126a35a456342473cd18ce05c86f}} 
+\index{Material@{Material}!create\+With\+Filename@{create\+With\+Filename}}
+\index{create\+With\+Filename@{create\+With\+Filename}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+Filename()}{createWithFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Material\+::create\+With\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMaterial}{Material} using the data from the \hyperlink{classProperties}{Properties} object defined at the specified U\+RL, where the U\+RL is of the format \char`\"{}$<$file-\/path$>$.$<$extension$>$\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} (and \char`\"{}\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} is optional).
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL pointing to the \hyperlink{classProperties}{Properties} object defining the material.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMaterial}{Material} or N\+U\+LL if there was an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMaterial_aeebb1e32ac992f8d8f79c6a7c98a4fb1}\label{classMaterial_aeebb1e32ac992f8d8f79c6a7c98a4fb1}} 
+\index{Material@{Material}!create\+With\+Filename@{create\+With\+Filename}}
+\index{create\+With\+Filename@{create\+With\+Filename}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+Filename()}{createWithFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMaterial}{Material}$\ast$ Material\+::create\+With\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMaterial}{Material} using the data from the \hyperlink{classProperties}{Properties} object defined at the specified U\+RL, where the U\+RL is of the format \char`\"{}$<$file-\/path$>$.$<$extension$>$\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} (and \char`\"{}\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} is optional).
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL pointing to the \hyperlink{classProperties}{Properties} object defining the material.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMaterial}{Material} or N\+U\+LL if there was an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMaterial_a624a466fcb166e01fe57a98f209365f4}\label{classMaterial_a624a466fcb166e01fe57a98f209365f4}} 
+\index{Material@{Material}!create\+With\+G\+L\+State\+Program@{create\+With\+G\+L\+State\+Program}}
+\index{create\+With\+G\+L\+State\+Program@{create\+With\+G\+L\+State\+Program}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+G\+L\+State\+Program()}{createWithGLStateProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Material\+::create\+With\+G\+L\+State\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMaterial}{Material} with a \hyperlink{classGLProgramState}{G\+L\+Program\+State}. It will only contain one \hyperlink{classTechnique}{Technique} and one \hyperlink{classPass}{Pass}. Added in order to support legacy code. \mbox{\Hypertarget{classMaterial_a1a39fdd599b90431a49866a3c27ccfae}\label{classMaterial_a1a39fdd599b90431a49866a3c27ccfae}} 
+\index{Material@{Material}!create\+With\+G\+L\+State\+Program@{create\+With\+G\+L\+State\+Program}}
+\index{create\+With\+G\+L\+State\+Program@{create\+With\+G\+L\+State\+Program}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+G\+L\+State\+Program()}{createWithGLStateProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMaterial}{Material}$\ast$ Material\+::create\+With\+G\+L\+State\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMaterial}{Material} with a \hyperlink{classGLProgramState}{G\+L\+Program\+State}. It will only contain one \hyperlink{classTechnique}{Technique} and one \hyperlink{classPass}{Pass}. Added in order to support legacy code. \mbox{\Hypertarget{classMaterial_aaeceb55f231edb94919198b18d9ec1ca}\label{classMaterial_aaeceb55f231edb94919198b18d9ec1ca}} 
+\index{Material@{Material}!create\+With\+Properties@{create\+With\+Properties}}
+\index{create\+With\+Properties@{create\+With\+Properties}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+Properties()}{createWithProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Material\+::create\+With\+Properties (\begin{DoxyParamCaption}\item[{\hyperlink{classProperties}{Properties} $\ast$}]{material\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a material from the specified properties object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+Properties} & The properties object defining the material (must have namespace equal to \textquotesingle{}material\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMaterial}{Material}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMaterial_acd4f5fcbc5b60661fb07ae21ef7930dc}\label{classMaterial_acd4f5fcbc5b60661fb07ae21ef7930dc}} 
+\index{Material@{Material}!create\+With\+Properties@{create\+With\+Properties}}
+\index{create\+With\+Properties@{create\+With\+Properties}!Material@{Material}}
+\subsubsection{\texorpdfstring{create\+With\+Properties()}{createWithProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMaterial}{Material}$\ast$ Material\+::create\+With\+Properties (\begin{DoxyParamCaption}\item[{\hyperlink{classProperties}{Properties} $\ast$}]{material\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a material from the specified properties object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+Properties} & The properties object defining the material (must have namespace equal to \textquotesingle{}material\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMaterial}{Material}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMaterial_af836a89c249c129938b2572bde8780c3}\label{classMaterial_af836a89c249c129938b2572bde8780c3}} 
+\index{Material@{Material}!get\+Technique@{get\+Technique}}
+\index{get\+Technique@{get\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique()}{getTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique} $\ast$ Material\+::get\+Technique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classTechnique}{Technique} used by the \hyperlink{classMaterial}{Material} \mbox{\Hypertarget{classMaterial_ab608fdd95b62c5e489715708c1107591}\label{classMaterial_ab608fdd95b62c5e489715708c1107591}} 
+\index{Material@{Material}!get\+Technique@{get\+Technique}}
+\index{get\+Technique@{get\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique()}{getTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique}$\ast$ Material\+::get\+Technique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classTechnique}{Technique} used by the \hyperlink{classMaterial}{Material} \mbox{\Hypertarget{classMaterial_a8561c6726a6be698bc61153e71cfcedc}\label{classMaterial_a8561c6726a6be698bc61153e71cfcedc}} 
+\index{Material@{Material}!get\+Technique\+By\+Index@{get\+Technique\+By\+Index}}
+\index{get\+Technique\+By\+Index@{get\+Technique\+By\+Index}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+By\+Index()}{getTechniqueByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique} $\ast$ Material\+::get\+Technique\+By\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Returns a \hyperlink{classTechnique}{Technique} by index. returns {\ttfamily nullptr} if the index is invalid. \mbox{\Hypertarget{classMaterial_a3f6e7d4e911f32fbbde7b7e9cf286316}\label{classMaterial_a3f6e7d4e911f32fbbde7b7e9cf286316}} 
+\index{Material@{Material}!get\+Technique\+By\+Index@{get\+Technique\+By\+Index}}
+\index{get\+Technique\+By\+Index@{get\+Technique\+By\+Index}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+By\+Index()}{getTechniqueByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique}$\ast$ Material\+::get\+Technique\+By\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Returns a \hyperlink{classTechnique}{Technique} by index. returns {\ttfamily nullptr} if the index is invalid. \mbox{\Hypertarget{classMaterial_a45e112d67c0e8a6590cb42b26f4bf7c9}\label{classMaterial_a45e112d67c0e8a6590cb42b26f4bf7c9}} 
+\index{Material@{Material}!get\+Technique\+By\+Name@{get\+Technique\+By\+Name}}
+\index{get\+Technique\+By\+Name@{get\+Technique\+By\+Name}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+By\+Name()}{getTechniqueByName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique} $\ast$ Material\+::get\+Technique\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Returns a \hyperlink{classTechnique}{Technique} by its name. returns {\ttfamily nullptr} if the \hyperlink{classTechnique}{Technique} can\textquotesingle{}t be found. \mbox{\Hypertarget{classMaterial_ae0243fa49b7a0c4ca4c0d240ba487369}\label{classMaterial_ae0243fa49b7a0c4ca4c0d240ba487369}} 
+\index{Material@{Material}!get\+Technique\+By\+Name@{get\+Technique\+By\+Name}}
+\index{get\+Technique\+By\+Name@{get\+Technique\+By\+Name}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+By\+Name()}{getTechniqueByName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTechnique}{Technique}$\ast$ Material\+::get\+Technique\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Returns a \hyperlink{classTechnique}{Technique} by its name. returns {\ttfamily nullptr} if the \hyperlink{classTechnique}{Technique} can\textquotesingle{}t be found. \mbox{\Hypertarget{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}\label{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}} 
+\index{Material@{Material}!get\+Technique\+Count@{get\+Technique\+Count}}
+\index{get\+Technique\+Count@{get\+Technique\+Count}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+Count()}{getTechniqueCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Material\+::get\+Technique\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of Techniques in the \hyperlink{classMaterial}{Material}. \mbox{\Hypertarget{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}\label{classMaterial_aff04e4a8db76db38e7dcc526f0d88608}} 
+\index{Material@{Material}!get\+Technique\+Count@{get\+Technique\+Count}}
+\index{get\+Technique\+Count@{get\+Technique\+Count}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Technique\+Count()}{getTechniqueCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Material\+::get\+Technique\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of Techniques in the \hyperlink{classMaterial}{Material}. \mbox{\Hypertarget{classMaterial_aa185c54c143d5a53a793c6653dc8b606}\label{classMaterial_aa185c54c143d5a53a793c6653dc8b606}} 
+\index{Material@{Material}!get\+Techniques@{get\+Techniques}}
+\index{get\+Techniques@{get\+Techniques}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Techniques()}{getTechniques()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTechnique}{Technique} $\ast$ $>$ \& Material\+::get\+Techniques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{protocollist-p}{list} of Techniques \mbox{\Hypertarget{classMaterial_a402a3684251c8ac436b7412ac361c253}\label{classMaterial_a402a3684251c8ac436b7412ac361c253}} 
+\index{Material@{Material}!get\+Techniques@{get\+Techniques}}
+\index{get\+Techniques@{get\+Techniques}!Material@{Material}}
+\subsubsection{\texorpdfstring{get\+Techniques()}{getTechniques()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classTechnique}{Technique}$\ast$$>$\& Material\+::get\+Techniques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{protocollist-p}{list} of Techniques \mbox{\Hypertarget{classMaterial_a8f575095237a64a95d08a2a3062acc4f}\label{classMaterial_a8f575095237a64a95d08a2a3062acc4f}} 
+\index{Material@{Material}!set\+Technique@{set\+Technique}}
+\index{set\+Technique@{set\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{set\+Technique()}{setTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Material\+::set\+Technique (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{technique\+Name }\end{DoxyParamCaption})}
+
+Sets the current technique \mbox{\Hypertarget{classMaterial_a8f575095237a64a95d08a2a3062acc4f}\label{classMaterial_a8f575095237a64a95d08a2a3062acc4f}} 
+\index{Material@{Material}!set\+Technique@{set\+Technique}}
+\index{set\+Technique@{set\+Technique}!Material@{Material}}
+\subsubsection{\texorpdfstring{set\+Technique()}{setTechnique()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Material\+::set\+Technique (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{technique\+Name }\end{DoxyParamCaption})}
+
+Sets the current technique 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Material.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Material.\+cpp\end{DoxyCompactItemize}

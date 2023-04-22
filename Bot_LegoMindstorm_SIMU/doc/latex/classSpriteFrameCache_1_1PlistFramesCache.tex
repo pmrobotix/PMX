@@ -1,0 +1,82 @@
+\hypertarget{classSpriteFrameCache_1_1PlistFramesCache}{}\section{Sprite\+Frame\+Cache\+:\+:Plist\+Frames\+Cache Class Reference}
+\label{classSpriteFrameCache_1_1PlistFramesCache}\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+
+
+{\ttfamily \#include $<$C\+C\+Sprite\+Frame\+Cache.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_af16db1d91d952f913928c30b11e162e3}\label{classSpriteFrameCache_1_1PlistFramesCache_af16db1d91d952f913928c30b11e162e3}} 
+void {\bfseries init} ()
+\item 
+void \hyperlink{classSpriteFrameCache_1_1PlistFramesCache_a3b71e2f7372224a7467ac0505d895b57}{insert\+Frame} (const std\+::string \&plist, const std\+::string \&frame, \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$frame\+Obj)
+\item 
+bool \hyperlink{classSpriteFrameCache_1_1PlistFramesCache_a27180d29aad8e03af8fde5b93e967737}{erase\+Frame} (const std\+::string \&frame)
+\item 
+bool \hyperlink{classSpriteFrameCache_1_1PlistFramesCache_aafc3a67e1a20eb0a49f314638f86d0ac}{erase\+Frames} (const std\+::vector$<$ std\+::string $>$ \&frame)
+\item 
+bool \hyperlink{classSpriteFrameCache_1_1PlistFramesCache_a95905a9336483b1475a71237cfc875ff}{erase\+Plist\+Index} (const std\+::string \&frame)
+\item 
+void \hyperlink{classSpriteFrameCache_1_1PlistFramesCache_a57282d76fa3158b1807905d9a7d4d622}{clear} ()
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a22ffb3ee6d836080deb648f319a77a20}\label{classSpriteFrameCache_1_1PlistFramesCache_a22ffb3ee6d836080deb648f319a77a20}} 
+bool {\bfseries has\+Frame} (const std\+::string \&frame) const
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_aa13ce5831036ea0f44e06f7f01ec373c}\label{classSpriteFrameCache_1_1PlistFramesCache_aa13ce5831036ea0f44e06f7f01ec373c}} 
+bool {\bfseries is\+Plist\+Used} (const std\+::string \&plist) const
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a6a09a47f27af9a9b80859fc0a3eb73ec}\label{classSpriteFrameCache_1_1PlistFramesCache_a6a09a47f27af9a9b80859fc0a3eb73ec}} 
+\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$ {\bfseries at} (const std\+::string \&frame)
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a72f805ab20cf555025ed41e0854277ff}\label{classSpriteFrameCache_1_1PlistFramesCache_a72f805ab20cf555025ed41e0854277ff}} 
+\hyperlink{classMap}{Map}$<$ std\+::string, \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$ $>$ \& {\bfseries get\+Sprite\+Frames} ()
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a0ae3da4ba5d7fb7c4fef92de3d13ef8f}\label{classSpriteFrameCache_1_1PlistFramesCache_a0ae3da4ba5d7fb7c4fef92de3d13ef8f}} 
+void {\bfseries mark\+Plist\+Full} (const std\+::string \&plist, bool full)
+\item 
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a4b87604ca9a23b989d582ca45da93bdc}\label{classSpriteFrameCache_1_1PlistFramesCache_a4b87604ca9a23b989d582ca45da93bdc}} 
+bool {\bfseries is\+Plist\+Full} (const std\+::string \&plist) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+used to wrap plist \& frame names \& Sprite\+Frames 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a57282d76fa3158b1807905d9a7d4d622}\label{classSpriteFrameCache_1_1PlistFramesCache_a57282d76fa3158b1807905d9a7d4d622}} 
+\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}!clear@{clear}}
+\index{clear@{clear}!Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clear index and all Sprite\+Frames. \mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a27180d29aad8e03af8fde5b93e967737}\label{classSpriteFrameCache_1_1PlistFramesCache_a27180d29aad8e03af8fde5b93e967737}} 
+\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}!erase\+Frame@{erase\+Frame}}
+\index{erase\+Frame@{erase\+Frame}!Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+\subsubsection{\texorpdfstring{erase\+Frame()}{eraseFrame()}}
+{\footnotesize\ttfamily bool Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache\+::erase\+Frame (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frame }\end{DoxyParamCaption})}
+
+Delete frame from cache, rebuild index \mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_aafc3a67e1a20eb0a49f314638f86d0ac}\label{classSpriteFrameCache_1_1PlistFramesCache_aafc3a67e1a20eb0a49f314638f86d0ac}} 
+\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}!erase\+Frames@{erase\+Frames}}
+\index{erase\+Frames@{erase\+Frames}!Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+\subsubsection{\texorpdfstring{erase\+Frames()}{eraseFrames()}}
+{\footnotesize\ttfamily bool Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache\+::erase\+Frames (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{frame }\end{DoxyParamCaption})}
+
+Delete a \hyperlink{protocollist-p}{list} of frames from cache, rebuild index \mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a95905a9336483b1475a71237cfc875ff}\label{classSpriteFrameCache_1_1PlistFramesCache_a95905a9336483b1475a71237cfc875ff}} 
+\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}!erase\+Plist\+Index@{erase\+Plist\+Index}}
+\index{erase\+Plist\+Index@{erase\+Plist\+Index}!Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+\subsubsection{\texorpdfstring{erase\+Plist\+Index()}{erasePlistIndex()}}
+{\footnotesize\ttfamily bool Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache\+::erase\+Plist\+Index (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{frame }\end{DoxyParamCaption})}
+
+Delete frame from index and \hyperlink{classSpriteFrame}{Sprite\+Frame} is kept. \mbox{\Hypertarget{classSpriteFrameCache_1_1PlistFramesCache_a3b71e2f7372224a7467ac0505d895b57}\label{classSpriteFrameCache_1_1PlistFramesCache_a3b71e2f7372224a7467ac0505d895b57}} 
+\index{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}!insert\+Frame@{insert\+Frame}}
+\index{insert\+Frame@{insert\+Frame}!Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache@{Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache}}
+\subsubsection{\texorpdfstring{insert\+Frame()}{insertFrame()}}
+{\footnotesize\ttfamily void Sprite\+Frame\+Cache\+::\+Plist\+Frames\+Cache\+::insert\+Frame (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{plist,  }\item[{const std\+::string \&}]{frame,  }\item[{\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$}]{frame\+Obj }\end{DoxyParamCaption})}
+
+Record \hyperlink{classSpriteFrame}{Sprite\+Frame} with plist and frame name, add frame name and plist to index 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/2d/C\+C\+Sprite\+Frame\+Cache.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/2d/C\+C\+Sprite\+Frame\+Cache.\+cpp\end{DoxyCompactItemize}

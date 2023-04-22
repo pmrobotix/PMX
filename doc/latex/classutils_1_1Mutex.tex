@@ -1,0 +1,63 @@
+\hypertarget{classutils_1_1Mutex}{}\section{utils\+:\+:Mutex Class Reference}
+\label{classutils_1_1Mutex}\index{utils\+::\+Mutex@{utils\+::\+Mutex}}
+
+
+Implémentation d\textquotesingle{}une gestion de mutex.  
+
+
+
+
+{\ttfamily \#include $<$Mutex.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+:\+:Mutex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1Mutex__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1Mutex_a21d056e3bbc8ae4c55321e18262acb2e}\label{classutils_1_1Mutex_a21d056e3bbc8ae4c55321e18262acb2e}} 
+\hyperlink{classutils_1_1Mutex_a21d056e3bbc8ae4c55321e18262acb2e}{Mutex} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Mutex_acd5acd63bf71c8fd8f4a7ee2d22a4b3a}\label{classutils_1_1Mutex_acd5acd63bf71c8fd8f4a7ee2d22a4b3a}} 
+virtual \hyperlink{classutils_1_1Mutex_acd5acd63bf71c8fd8f4a7ee2d22a4b3a}{$\sim$\+Mutex} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Mutex_aa584b418a5ef484f76b93e361a1d7e32}\label{classutils_1_1Mutex_aa584b418a5ef484f76b93e361a1d7e32}} 
+void \hyperlink{classutils_1_1Mutex_aa584b418a5ef484f76b93e361a1d7e32}{lock} ()
+\begin{DoxyCompactList}\small\item\em Verrouille le mutex. Cette méthode doit être appelée avant d\textquotesingle{}utiliser la ressource associée. Si le mutex est déjà verrouillée, cette méthode attend qu\textquotesingle{}il se libère. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Mutex_a59b2079dc7f803d49f78ac9c04406cd3}\label{classutils_1_1Mutex_a59b2079dc7f803d49f78ac9c04406cd3}} 
+void \hyperlink{classutils_1_1Mutex_a59b2079dc7f803d49f78ac9c04406cd3}{unlock} ()
+\begin{DoxyCompactList}\small\item\em Déverrouille le mutex. Cette méthode doit être appelée après avoir utiliser la ressource associée. \end{DoxyCompactList}\item 
+bool \hyperlink{classutils_1_1Mutex_afc40847f9465a3482885099aba452b68}{try\+Lock} ()
+\begin{DoxyCompactList}\small\item\em Essaie de verrouiller le mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implémentation d\textquotesingle{}une gestion de mutex. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1Mutex_afc40847f9465a3482885099aba452b68}\label{classutils_1_1Mutex_afc40847f9465a3482885099aba452b68}} 
+\index{utils\+::\+Mutex@{utils\+::\+Mutex}!try\+Lock@{try\+Lock}}
+\index{try\+Lock@{try\+Lock}!utils\+::\+Mutex@{utils\+::\+Mutex}}
+\subsubsection{\texorpdfstring{try\+Lock()}{tryLock()}}
+{\footnotesize\ttfamily bool utils\+::\+Mutex\+::try\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Essaie de verrouiller le mutex. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si le lock a pu être posée. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Thread/\hyperlink{Mutex_8hpp}{Mutex.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Thread/Mutex.\+cpp\end{DoxyCompactItemize}

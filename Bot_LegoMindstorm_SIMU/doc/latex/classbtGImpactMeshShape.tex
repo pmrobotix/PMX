@@ -1,0 +1,393 @@
+\hypertarget{classbtGImpactMeshShape}{}\section{bt\+G\+Impact\+Mesh\+Shape Class Reference}
+\label{classbtGImpactMeshShape}\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+
+
+This class manages a mesh supplied by the bt\+Striding\+Mesh\+Interface interface.  
+
+
+
+
+{\ttfamily \#include $<$bt\+G\+Impact\+Shape.\+h$>$}
+
+
+
+Inheritance diagram for bt\+G\+Impact\+Mesh\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classbtGImpactMeshShape__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+G\+Impact\+Mesh\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtGImpactMeshShape__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aa620d8c83b9f235068509f7caff0862f}\label{classbtGImpactMeshShape_aa620d8c83b9f235068509f7caff0862f}} 
+{\bfseries bt\+G\+Impact\+Mesh\+Shape} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ac4f392b95775eaf255efcd9b6a1383c2}\label{classbtGImpactMeshShape_ac4f392b95775eaf255efcd9b6a1383c2}} 
+bt\+Striding\+Mesh\+Interface $\ast$ {\bfseries get\+Mesh\+Interface} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a18b9a9ca4e207a1032673a4f2cd5accb}\label{classbtGImpactMeshShape_a18b9a9ca4e207a1032673a4f2cd5accb}} 
+const bt\+Striding\+Mesh\+Interface $\ast$ {\bfseries get\+Mesh\+Interface} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a193bab01f3cbbf640d2ddf28763b10ba}\label{classbtGImpactMeshShape_a193bab01f3cbbf640d2ddf28763b10ba}} 
+int {\bfseries get\+Mesh\+Part\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_abac8a0def4182767d8556d7ed8b08a7c}\label{classbtGImpactMeshShape_abac8a0def4182767d8556d7ed8b08a7c}} 
+\hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} $\ast$ {\bfseries get\+Mesh\+Part} (int index)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a106d86bb0104c72dd18060985a4e6d70}\label{classbtGImpactMeshShape_a106d86bb0104c72dd18060985a4e6d70}} 
+const \hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} $\ast$ {\bfseries get\+Mesh\+Part} (int index) const
+\item 
+virtual void \hyperlink{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}{set\+Local\+Scaling} (const bt\+Vector3 \&scaling)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aab65bdcfd34867e88a505a6377e4f79b}\label{classbtGImpactMeshShape_aab65bdcfd34867e88a505a6377e4f79b}} 
+virtual void {\bfseries set\+Margin} (bt\+Scalar margin)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}\label{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}} 
+virtual void \hyperlink{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}{post\+Update} ()
+\begin{DoxyCompactList}\small\item\em Tells to this object that is needed to refit all the meshes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a49c6bed561a6a241dbc833192a093174}\label{classbtGImpactMeshShape_a49c6bed561a6a241dbc833192a093174}} 
+virtual void {\bfseries calculate\+Local\+Inertia} (bt\+Scalar mass, bt\+Vector3 \&inertia) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}\label{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}} 
+virtual const \hyperlink{classbtPrimitiveManagerBase}{bt\+Primitive\+Manager\+Base} $\ast$ \hyperlink{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}{get\+Primitive\+Manager} () const
+\begin{DoxyCompactList}\small\item\em Obtains the primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}\label{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}} 
+virtual int \hyperlink{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}{get\+Num\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}\label{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}{children\+Has\+Transform} () const
+\begin{DoxyCompactList}\small\item\em if true, then its children must get transforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}\label{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}{needs\+Retrieve\+Triangles} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}\label{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}{needs\+Retrieve\+Tetrahedrons} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has tetrahedrons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a938b4191a80e64b59568c68cd4afa14f}\label{classbtGImpactMeshShape_a938b4191a80e64b59568c68cd4afa14f}} 
+virtual void {\bfseries get\+Bullet\+Triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a22e730f292d812e680f6bf503231d8d4}\label{classbtGImpactMeshShape_a22e730f292d812e680f6bf503231d8d4}} 
+virtual void {\bfseries get\+Bullet\+Tetrahedron} (int prim\+\_\+index, \hyperlink{classbtTetrahedronShapeEx}{bt\+Tetrahedron\+Shape\+Ex} \&tetrahedron) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}\label{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}} 
+virtual void \hyperlink{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}{lock\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em call when reading child shapes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afd80219b051a71867198e4b15d6e1c1c}\label{classbtGImpactMeshShape_afd80219b051a71867198e4b15d6e1c1c}} 
+virtual void {\bfseries unlock\+Child\+Shapes} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}\label{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}} 
+virtual void \hyperlink{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}{get\+Child\+Aabb} (int child\+\_\+index, const bt\+Transform \&t, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Retrieves the bound from a child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}\label{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}} 
+virtual bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}{get\+Child\+Shape} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}\label{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}} 
+virtual const bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}{get\+Child\+Shape} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}\label{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}} 
+virtual bt\+Transform \hyperlink{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}{get\+Child\+Transform} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children transform. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}{set\+Child\+Transform} (int index, const bt\+Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Sets the children transform. \end{DoxyCompactList}\item 
+virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE \hyperlink{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}{get\+G\+Impact\+Shape\+Type} () const
+\begin{DoxyCompactList}\small\item\em Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afdc1bc83b210d4d6c2fb4306d9c841bf}\label{classbtGImpactMeshShape_afdc1bc83b210d4d6c2fb4306d9c841bf}} 
+virtual const char $\ast$ {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a3f68c08b8d157a46d37088105eb1d5c1}\label{classbtGImpactMeshShape_a3f68c08b8d157a46d37088105eb1d5c1}} 
+virtual void \hyperlink{classbtGImpactMeshShape_a3f68c08b8d157a46d37088105eb1d5c1}{ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{bt\+Collision\+World\+::\+Ray\+Result\+Callback} \&result\+Callback) const
+\begin{DoxyCompactList}\small\item\em virtual method for ray collision \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_aa2963b35e88c0f423b4b7b10540a5f6b}{process\+All\+Triangles} (\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$callback, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Function for retrieve triangles. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_ab7221f209f9d10d2f1eb80cca5aee55d}{process\+All\+Triangles\+Ray} (\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$callback, const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To) const
+\begin{DoxyCompactList}\small\item\em Function for retrieve triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_abc682b21b258b9edf82d1f5a21ec37fd}\label{classbtGImpactMeshShape_abc682b21b258b9edf82d1f5a21ec37fd}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_af7a49e08ffba1adfd6981e224eba9430}\label{classbtGImpactMeshShape_af7a49e08ffba1adfd6981e224eba9430}} 
+virtual const char $\ast$ \hyperlink{classbtGImpactMeshShape_af7a49e08ffba1adfd6981e224eba9430}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aa620d8c83b9f235068509f7caff0862f}\label{classbtGImpactMeshShape_aa620d8c83b9f235068509f7caff0862f}} 
+{\bfseries bt\+G\+Impact\+Mesh\+Shape} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ac4f392b95775eaf255efcd9b6a1383c2}\label{classbtGImpactMeshShape_ac4f392b95775eaf255efcd9b6a1383c2}} 
+bt\+Striding\+Mesh\+Interface $\ast$ {\bfseries get\+Mesh\+Interface} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a18b9a9ca4e207a1032673a4f2cd5accb}\label{classbtGImpactMeshShape_a18b9a9ca4e207a1032673a4f2cd5accb}} 
+const bt\+Striding\+Mesh\+Interface $\ast$ {\bfseries get\+Mesh\+Interface} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a193bab01f3cbbf640d2ddf28763b10ba}\label{classbtGImpactMeshShape_a193bab01f3cbbf640d2ddf28763b10ba}} 
+int {\bfseries get\+Mesh\+Part\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_abac8a0def4182767d8556d7ed8b08a7c}\label{classbtGImpactMeshShape_abac8a0def4182767d8556d7ed8b08a7c}} 
+\hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} $\ast$ {\bfseries get\+Mesh\+Part} (int index)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a106d86bb0104c72dd18060985a4e6d70}\label{classbtGImpactMeshShape_a106d86bb0104c72dd18060985a4e6d70}} 
+const \hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} $\ast$ {\bfseries get\+Mesh\+Part} (int index) const
+\item 
+virtual void \hyperlink{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}{set\+Local\+Scaling} (const bt\+Vector3 \&scaling)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aab65bdcfd34867e88a505a6377e4f79b}\label{classbtGImpactMeshShape_aab65bdcfd34867e88a505a6377e4f79b}} 
+virtual void {\bfseries set\+Margin} (bt\+Scalar margin)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}\label{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}} 
+virtual void \hyperlink{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}{post\+Update} ()
+\begin{DoxyCompactList}\small\item\em Tells to this object that is needed to refit all the meshes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a3096adaec09c6623849a3b0e2e382613}\label{classbtGImpactMeshShape_a3096adaec09c6623849a3b0e2e382613}} 
+virtual void {\bfseries calculate\+Local\+Inertia} (bt\+Scalar mass, bt\+Vector3 \&inertia) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}\label{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}} 
+virtual const \hyperlink{classbtPrimitiveManagerBase}{bt\+Primitive\+Manager\+Base} $\ast$ \hyperlink{classbtGImpactMeshShape_a354238c358d9c87d969888a90059e496}{get\+Primitive\+Manager} () const
+\begin{DoxyCompactList}\small\item\em Obtains the primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}\label{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}} 
+virtual int \hyperlink{classbtGImpactMeshShape_a1f5e974d1fa7af3ac25c6d98e106bf55}{get\+Num\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}\label{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_a0982a5913488f1446c06446c1d8ec645}{children\+Has\+Transform} () const
+\begin{DoxyCompactList}\small\item\em if true, then its children must get transforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}\label{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_afa72eb4e1537ca2853ae731eb87f32d0}{needs\+Retrieve\+Triangles} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}\label{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}} 
+virtual bool \hyperlink{classbtGImpactMeshShape_abe38ef4a56534abcd43dbe2e45e46157}{needs\+Retrieve\+Tetrahedrons} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has tetrahedrons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a938b4191a80e64b59568c68cd4afa14f}\label{classbtGImpactMeshShape_a938b4191a80e64b59568c68cd4afa14f}} 
+virtual void {\bfseries get\+Bullet\+Triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a22e730f292d812e680f6bf503231d8d4}\label{classbtGImpactMeshShape_a22e730f292d812e680f6bf503231d8d4}} 
+virtual void {\bfseries get\+Bullet\+Tetrahedron} (int prim\+\_\+index, \hyperlink{classbtTetrahedronShapeEx}{bt\+Tetrahedron\+Shape\+Ex} \&tetrahedron) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}\label{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}} 
+virtual void \hyperlink{classbtGImpactMeshShape_a89c9a1dba1b1ea3d74b4545fd5f92ae0}{lock\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em call when reading child shapes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afd80219b051a71867198e4b15d6e1c1c}\label{classbtGImpactMeshShape_afd80219b051a71867198e4b15d6e1c1c}} 
+virtual void {\bfseries unlock\+Child\+Shapes} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}\label{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}} 
+virtual void \hyperlink{classbtGImpactMeshShape_a8b38c48b69c6eb790365b0593655975b}{get\+Child\+Aabb} (int child\+\_\+index, const bt\+Transform \&t, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Retrieves the bound from a child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}\label{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}} 
+virtual bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactMeshShape_ae268fb9f2813b1fa4171d87e201c37a7}{get\+Child\+Shape} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}\label{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}} 
+virtual const bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactMeshShape_a7f749f41c8d64e74778d18fda553cfdb}{get\+Child\+Shape} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}\label{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}} 
+virtual bt\+Transform \hyperlink{classbtGImpactMeshShape_a413c40feffbdb494f8c7f9a4810e89e9}{get\+Child\+Transform} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children transform. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}{set\+Child\+Transform} (int index, const bt\+Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Sets the children transform. \end{DoxyCompactList}\item 
+virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE \hyperlink{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}{get\+G\+Impact\+Shape\+Type} () const
+\begin{DoxyCompactList}\small\item\em Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_afdc1bc83b210d4d6c2fb4306d9c841bf}\label{classbtGImpactMeshShape_afdc1bc83b210d4d6c2fb4306d9c841bf}} 
+virtual const char $\ast$ {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ab81808ab81daed3022bcff460c797175}\label{classbtGImpactMeshShape_ab81808ab81daed3022bcff460c797175}} 
+virtual void \hyperlink{classbtGImpactMeshShape_ab81808ab81daed3022bcff460c797175}{ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{bt\+Collision\+World\+::\+Ray\+Result\+Callback} \&result\+Callback) const
+\begin{DoxyCompactList}\small\item\em virtual method for ray collision \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_aee93cb18d43817c183fa662d9e7b32e5}{process\+All\+Triangles} (\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$callback, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Function for retrieve triangles. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactMeshShape_a0c02d97f918e04fdb0e59d310861f119}{process\+All\+Triangles\+Ray} (\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$callback, const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To) const
+\begin{DoxyCompactList}\small\item\em Function for retrieve triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ad1cc7410719e23f4322b387557788af1}\label{classbtGImpactMeshShape_ad1cc7410719e23f4322b387557788af1}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_ace9ad2309fa9302faefe8f3a401e08f3}\label{classbtGImpactMeshShape_ace9ad2309fa9302faefe8f3a401e08f3}} 
+virtual const char $\ast$ \hyperlink{classbtGImpactMeshShape_ace9ad2309fa9302faefe8f3a401e08f3}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a97003b7f7d048c9fd8c8d281f0159311}\label{classbtGImpactMeshShape_a97003b7f7d048c9fd8c8d281f0159311}} 
+void {\bfseries build\+Mesh\+Parts} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}\label{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}} 
+virtual void \hyperlink{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}{calc\+Local\+A\+A\+BB} ()
+\begin{DoxyCompactList}\small\item\em use this function for perfofm refit in bounding boxes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a97003b7f7d048c9fd8c8d281f0159311}\label{classbtGImpactMeshShape_a97003b7f7d048c9fd8c8d281f0159311}} 
+void {\bfseries build\+Mesh\+Parts} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}\label{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}} 
+virtual void \hyperlink{classbtGImpactMeshShape_aa9273d609f4872c7a4c05e9873edbda8}{calc\+Local\+A\+A\+BB} ()
+\begin{DoxyCompactList}\small\item\em use this function for perfofm refit in bounding boxes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShape_a2db5b3f57748b9dc912e13544c807552}\label{classbtGImpactMeshShape_a2db5b3f57748b9dc912e13544c807552}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} $\ast$ $>$ {\bfseries m\+\_\+mesh\+\_\+parts}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class manages a mesh supplied by the bt\+Striding\+Mesh\+Interface interface. 
+
+Set of \hyperlink{classbtGImpactMeshShapePart}{bt\+G\+Impact\+Mesh\+Shape\+Part} parts
+\begin{DoxyItemize}
+\item Simply create this shape by passing the bt\+Striding\+Mesh\+Interface to the constructor \hyperlink{classbtGImpactMeshShape}{bt\+G\+Impact\+Mesh\+Shape}, then you must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} after creating the mesh
+\item You can handle deformable meshes with this shape, by calling \hyperlink{classbtGImpactMeshShape_afbf7ae3408bc0ab975c46ed65820a4b2}{post\+Update()} every time when changing the mesh vertices. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}\label{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}}
+\index{get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{get\+G\+Impact\+Shape\+Type()}{getGImpactShapeType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE bt\+G\+Impact\+Mesh\+Shape\+::get\+G\+Impact\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. 
+
+Subshape member functions 
+
+Implements \hyperlink{classbtGImpactShapeInterface_a25cacbe448997e3f8ec99cb2d4952859}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}\label{classbtGImpactMeshShape_ac48641f3b35339f6de0716197bbbe302}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}}
+\index{get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{get\+G\+Impact\+Shape\+Type()}{getGImpactShapeType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE bt\+G\+Impact\+Mesh\+Shape\+::get\+G\+Impact\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. 
+
+Subshape member functions 
+
+Implements \hyperlink{classbtGImpactShapeInterface_a25cacbe448997e3f8ec99cb2d4952859}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_aa2963b35e88c0f423b4b7b10540a5f6b}\label{classbtGImpactMeshShape_aa2963b35e88c0f423b4b7b10540a5f6b}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!process\+All\+Triangles@{process\+All\+Triangles}}
+\index{process\+All\+Triangles@{process\+All\+Triangles}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{process\+All\+Triangles()}{processAllTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+G\+Impact\+Mesh\+Shape\+::process\+All\+Triangles (\begin{DoxyParamCaption}\item[{\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$}]{callback,  }\item[{const bt\+Vector3 \&}]{aabb\+Min,  }\item[{const bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function for retrieve triangles. 
+
+It gives the triangles in local space 
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_ae1dc14b29f49fc0262be72dbe9d7b75b}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_aee93cb18d43817c183fa662d9e7b32e5}\label{classbtGImpactMeshShape_aee93cb18d43817c183fa662d9e7b32e5}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!process\+All\+Triangles@{process\+All\+Triangles}}
+\index{process\+All\+Triangles@{process\+All\+Triangles}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{process\+All\+Triangles()}{processAllTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::process\+All\+Triangles (\begin{DoxyParamCaption}\item[{\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$}]{callback,  }\item[{const bt\+Vector3 \&}]{aabb\+Min,  }\item[{const bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function for retrieve triangles. 
+
+It gives the triangles in local space 
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_ae1dc14b29f49fc0262be72dbe9d7b75b}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_ab7221f209f9d10d2f1eb80cca5aee55d}\label{classbtGImpactMeshShape_ab7221f209f9d10d2f1eb80cca5aee55d}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!process\+All\+Triangles\+Ray@{process\+All\+Triangles\+Ray}}
+\index{process\+All\+Triangles\+Ray@{process\+All\+Triangles\+Ray}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{process\+All\+Triangles\+Ray()}{processAllTrianglesRay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+G\+Impact\+Mesh\+Shape\+::process\+All\+Triangles\+Ray (\begin{DoxyParamCaption}\item[{\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$}]{,  }\item[{const bt\+Vector3 \&}]{,  }\item[{const bt\+Vector3 \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function for retrieve triangles. 
+
+It gives the triangles in local space 
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_af67273183582c6696169ee4ae5d6cf37}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_a0c02d97f918e04fdb0e59d310861f119}\label{classbtGImpactMeshShape_a0c02d97f918e04fdb0e59d310861f119}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!process\+All\+Triangles\+Ray@{process\+All\+Triangles\+Ray}}
+\index{process\+All\+Triangles\+Ray@{process\+All\+Triangles\+Ray}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{process\+All\+Triangles\+Ray()}{processAllTrianglesRay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::process\+All\+Triangles\+Ray (\begin{DoxyParamCaption}\item[{\hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback} $\ast$}]{,  }\item[{const bt\+Vector3 \&}]{,  }\item[{const bt\+Vector3 \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function for retrieve triangles. 
+
+It gives the triangles in local space 
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_af67273183582c6696169ee4ae5d6cf37}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}\label{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!set\+Child\+Transform@{set\+Child\+Transform}}
+\index{set\+Child\+Transform@{set\+Child\+Transform}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{set\+Child\+Transform()}{setChildTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::set\+Child\+Transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const bt\+Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the children transform. 
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classbtGImpactShapeInterface_a83392f97bd7dfeb71ccdce6913a465b0}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}\label{classbtGImpactMeshShape_a274feed3c9a38a6af5c9f1141ae9ac1a}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!set\+Child\+Transform@{set\+Child\+Transform}}
+\index{set\+Child\+Transform@{set\+Child\+Transform}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{set\+Child\+Transform()}{setChildTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::set\+Child\+Transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const bt\+Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the children transform. 
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classbtGImpactShapeInterface_a83392f97bd7dfeb71ccdce6913a465b0}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}\label{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!set\+Local\+Scaling@{set\+Local\+Scaling}}
+\index{set\+Local\+Scaling@{set\+Local\+Scaling}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{set\+Local\+Scaling()}{setLocalScaling()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::set\+Local\+Scaling (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{scaling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_adec0bd43cd0105b1d0dc172bc7db50d8}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}\label{classbtGImpactMeshShape_aed8d5e4b2e75538109909d44b244bc35}} 
+\index{bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}!set\+Local\+Scaling@{set\+Local\+Scaling}}
+\index{set\+Local\+Scaling@{set\+Local\+Scaling}!bt\+G\+Impact\+Mesh\+Shape@{bt\+G\+Impact\+Mesh\+Shape}}
+\subsubsection{\texorpdfstring{set\+Local\+Scaling()}{setLocalScaling()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Mesh\+Shape\+::set\+Local\+Scaling (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{scaling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classbtGImpactShapeInterface_adec0bd43cd0105b1d0dc172bc7db50d8}{bt\+G\+Impact\+Shape\+Interface}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Shape.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Shape.\+cpp\end{DoxyCompactItemize}

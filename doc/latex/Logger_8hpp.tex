@@ -1,0 +1,78 @@
+\hypertarget{Logger_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/src/\+Log/\+Logger.hpp File Reference}
+\label{Logger_8hpp}\index{/home/pmx/git/\+P\+M\+X/src/\+Log/\+Logger.\+hpp@{/home/pmx/git/\+P\+M\+X/src/\+Log/\+Logger.\+hpp}}
+
+
+Définition de la classe Logger.  
+
+
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Thread/\+Mutex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level.\+hpp\char`\"{}}\newline
+Include dependency graph for Logger.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Logger_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Logger_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlogs_1_1Appender}{logs\+::\+Appender}
+\begin{DoxyCompactList}\small\item\em Classe de gestion des flux de sortie pour les logs. \end{DoxyCompactList}\item 
+class \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger}
+\begin{DoxyCompactList}\small\item\em Classe de gestion des traces de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+class \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{logs\+::\+Logger\+::\+Logger\+Buffer}
+\begin{DoxyCompactList}\small\item\em Classe de délégation pour faciliter la création des traces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs\+::end} (\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{logs\+::\+Logger\+::\+Logger\+Buffer} \&buffer)
+\begin{DoxyCompactList}\small\item\em Cette méthode permet de finir les flux de construction par la notation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8hpp_ab465ba9cc0c8042ca19d9c1aeb008578}\label{Logger_8hpp_ab465ba9cc0c8042ca19d9c1aeb008578}} 
+void {\bfseries logs\+::flush} (\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{logs\+::\+Logger\+::\+Logger\+Buffer} \&buffer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définition de la classe Logger. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Logger_8hpp_file_ac6f325c6cfe6189bc8e243daa184453b}\label{Logger_8hpp_file_ac6f325c6cfe6189bc8e243daa184453b}} 
+\index{Logger.\+hpp@{Logger.\+hpp}!end@{end}}
+\index{end@{end}!Logger.\+hpp@{Logger.\+hpp}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void logs\+::end (\begin{DoxyParamCaption}\item[{\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{logs\+::\+Logger\+::\+Logger\+Buffer} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Cette méthode permet de finir les flux de construction par la notation. 
+
+
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end}; 
+\end{DoxyCode}
+. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Le buffer de référence\\
+\hline
+\end{DoxyParams}
+L\textquotesingle{}utilisation de cette méthode repose sur les concepts avancés de C++ et en particulier le fait que lors de la compilation cette méthode sera effectivement appelé comme si le code était ; 
+\begin{DoxyCode}
+\hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end}(logger.info() << \textcolor{stringliteral}{"mon message"}); 
+\end{DoxyCode}
+
+
+Bien que ce concept puisse paraitre étrange, c\textquotesingle{}est sur cette même fonctionnalité que std\+::endl est basée. 

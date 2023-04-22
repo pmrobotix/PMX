@@ -7,50 +7,46 @@
 #include <iostream>
 #include <string>
 
+#include "MD25.hpp"
 
 using namespace std;
 
-
-AServoUsingMotorDriver * AServoUsingMotorDriver::create()
-{
-	static ServoUsingMotorDriver *instance = new ServoUsingMotorDriver();
-	return instance;
+AServoUsingMotorDriver * AServoUsingMotorDriver::create() {
+//	static ServoUsingMotorDriver *instance = new ServoUsingMotorDriver();
+//	return instance;
+    return new ServoUsingMotorDriver();
 }
 
 ServoUsingMotorDriver::ServoUsingMotorDriver() :
-		connected_(0)
+        connected_(0)
 {
-	logger().debug() << "ServoUsingMotorDriver()" << logs::end;
-
+    logger().debug() << "ServoUsingMotorDriver()" << logs::end;
+    MD25::instance().begin();
 
 }
 
-void ServoUsingMotorDriver::setMotorPosition(int pos, int ramptimems, int power)
-{
+void ServoUsingMotorDriver::setMotorPosition(int power, int pos, int ramptimems) {
+    //MD25::instance().speed1_set(power);
+    MD25::instance().speed2_set(power);
+}
+
+long ServoUsingMotorDriver::getInternalEncoder() {
+    return 0;
+}
+
+void ServoUsingMotorDriver::stopMotor() {
+    MD25::instance().speed1_set(0);
+    MD25::instance().speed2_set(0);
+}
+
+void ServoUsingMotorDriver::resetEncoder(int pos) {
 
 }
 
-long ServoUsingMotorDriver::getInternalEncoder()
-{
-	return 0;
+int ServoUsingMotorDriver::getMotorCurrent() {
+    return 0;
 }
 
-void ServoUsingMotorDriver::stopMotor()
-{
-
-}
-
-void ServoUsingMotorDriver::resetEncoder(int pos)
-{
-
-}
-
-int ServoUsingMotorDriver::getMotorCurrent()
-{
-	return 0;
-}
-
-void ServoUsingMotorDriver::enableHardRegulation(bool enable)
-{
+void ServoUsingMotorDriver::enableHardRegulation(bool enable) {
 
 }

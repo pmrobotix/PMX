@@ -1,0 +1,1076 @@
+\hypertarget{classMenu}{}\section{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+
+
+A \hyperlink{classMenu}{Menu} for touch handling.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{classMenu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMenu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classMenu_a8269685e78203b028d5bd77c339898b2}{State} \{ {\bfseries W\+A\+I\+T\+I\+NG}, 
+{\bfseries T\+R\+A\+C\+K\+I\+N\+G\+\_\+\+T\+O\+U\+CH}, 
+{\bfseries W\+A\+I\+T\+I\+NG}, 
+{\bfseries T\+R\+A\+C\+K\+I\+N\+G\+\_\+\+T\+O\+U\+CH}
+ \}
+\item 
+enum \hyperlink{classMenu_a8269685e78203b028d5bd77c339898b2}{State} \{ {\bfseries W\+A\+I\+T\+I\+NG}, 
+{\bfseries T\+R\+A\+C\+K\+I\+N\+G\+\_\+\+T\+O\+U\+CH}, 
+{\bfseries W\+A\+I\+T\+I\+NG}, 
+{\bfseries T\+R\+A\+C\+K\+I\+N\+G\+\_\+\+T\+O\+U\+CH}
+ \}
+\item 
+\mbox{\Hypertarget{classMenu_ab485291fa7c6197fed5abf188780bc22}\label{classMenu_ab485291fa7c6197fed5abf188780bc22}} 
+typedef \hyperlink{classMenuItem}{Menu\+Item} $\ast$ {\bfseries M}
+\item 
+\mbox{\Hypertarget{classMenu_ab485291fa7c6197fed5abf188780bc22}\label{classMenu_ab485291fa7c6197fed5abf188780bc22}} 
+typedef \hyperlink{classMenuItem}{Menu\+Item} $\ast$ {\bfseries M}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}{align\+Items\+Vertically} ()
+\item 
+void \hyperlink{classMenu_a092a7f04579a919e723587d8cbe1c45d}{align\+Items\+Vertically\+With\+Padding} (float padding)
+\item 
+void \hyperlink{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}{align\+Items\+Horizontally} ()
+\item 
+void \hyperlink{classMenu_afe60c06457d1f0805d17a4db9d2b150b}{align\+Items\+Horizontally\+With\+Padding} (float padding)
+\item 
+void \hyperlink{classMenu_a73728acb4dd4cad8bdd8e895014aa522}{align\+Items\+In\+Columns} (int columns,...) C\+C\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S\+\_\+\+N\+U\+L\+L\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+I\+ON
+\item 
+void \hyperlink{classMenu_a2a568b7bfe853e3c73acba7e3622d220}{align\+Items\+In\+Columns} (int columns, va\+\_\+list args)
+\item 
+void \hyperlink{classMenu_a68484c458c9e99064204078a6ad2e2e8}{align\+Items\+In\+Columns\+With\+Array} (const Value\+Vector \&rows)
+\item 
+void \hyperlink{classMenu_aef711df55d67e0b3606049df72041dec}{align\+Items\+In\+Rows} (int rows,...) C\+C\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S\+\_\+\+N\+U\+L\+L\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+I\+ON
+\item 
+void \hyperlink{classMenu_ac9e28ec85370f45fe4929cd393496a63}{align\+Items\+In\+Rows} (int rows, va\+\_\+list args)
+\item 
+void \hyperlink{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}{align\+Items\+In\+Rows\+With\+Array} (const Value\+Vector \&columns)
+\item 
+virtual bool \hyperlink{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}{is\+Enabled} () const
+\item 
+virtual void \hyperlink{classMenu_a3f1338bc3391dd127892035935b48cdc}{set\+Enabled} (bool value)
+\item 
+virtual bool \hyperlink{classMenu_aea88e7147647b3295a5453990c47f1be}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMenu_a8d9a867ea2dfc4ec2a3309f3df71cc35}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_a19ffec24a2ec30dd290354e0e0e3aa9a}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_ad69115ad80e86bbe904d575253afc781}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_a671c3f506ddcf0532144056289721540}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classMenu_af557403e8b14bdbda70d85b7d12fedfb}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child) override
+\item 
+virtual void \hyperlink{classMenu_a38455f79cd083475d9beacf0cc9caf81}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order) override
+\item 
+virtual void \hyperlink{classMenu_a540593eb7fb7de286fe64d6da9c67618}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classMenu_a9b9b2f71c16b7c420f6db12a68937ce5}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classMenu_ab8c3b9d5d26f512be8f26e5e2f5bda1e}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classMenu_a247a5912b1bc6aacedcdb41324de391c}{on\+Exit} () override
+\item 
+virtual void \hyperlink{classMenu_a7dc62dd40fb8b6cd4addee5fb38cb6b9}{set\+Opacity\+Modify\+R\+GB} (bool b\+Value) override
+\item 
+virtual bool \hyperlink{classMenu_ae173fda432df51ec761c8ef5d96ea59a}{is\+Opacity\+Modify\+R\+GB} (void) const override
+\item 
+virtual std\+::string \hyperlink{classMenu_a2f8bee450bcae21f9d5f27941467ff59}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classMenu_abee4c4ef3c95d8d27c26c4139c468e2e}\label{classMenu_abee4c4ef3c95d8d27c26c4139c468e2e}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+selected\+With\+Camera} (nullptr)
+\item 
+bool \hyperlink{classMenu_a64390e993f1abcf27799a2217a94dd38}{init} () override
+\item 
+bool \hyperlink{classMenu_add7f29cf9f8be81569134a7af40f9635}{init\+With\+Array} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&array\+Of\+Items)
+\item 
+void \hyperlink{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}{align\+Items\+Vertically} ()
+\item 
+void \hyperlink{classMenu_a092a7f04579a919e723587d8cbe1c45d}{align\+Items\+Vertically\+With\+Padding} (float padding)
+\item 
+void \hyperlink{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}{align\+Items\+Horizontally} ()
+\item 
+void \hyperlink{classMenu_afe60c06457d1f0805d17a4db9d2b150b}{align\+Items\+Horizontally\+With\+Padding} (float padding)
+\item 
+void \hyperlink{classMenu_a73728acb4dd4cad8bdd8e895014aa522}{align\+Items\+In\+Columns} (int columns,...) C\+C\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S\+\_\+\+N\+U\+L\+L\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+I\+ON
+\item 
+void \hyperlink{classMenu_a2a568b7bfe853e3c73acba7e3622d220}{align\+Items\+In\+Columns} (int columns, va\+\_\+list args)
+\item 
+void \hyperlink{classMenu_a68484c458c9e99064204078a6ad2e2e8}{align\+Items\+In\+Columns\+With\+Array} (const Value\+Vector \&rows)
+\item 
+void \hyperlink{classMenu_aef711df55d67e0b3606049df72041dec}{align\+Items\+In\+Rows} (int rows,...) C\+C\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+S\+\_\+\+N\+U\+L\+L\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+I\+ON
+\item 
+void \hyperlink{classMenu_ac9e28ec85370f45fe4929cd393496a63}{align\+Items\+In\+Rows} (int rows, va\+\_\+list args)
+\item 
+void \hyperlink{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}{align\+Items\+In\+Rows\+With\+Array} (const Value\+Vector \&columns)
+\item 
+virtual bool \hyperlink{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}{is\+Enabled} () const
+\item 
+virtual void \hyperlink{classMenu_a3f1338bc3391dd127892035935b48cdc}{set\+Enabled} (bool value)
+\item 
+virtual bool \hyperlink{classMenu_a2492a2fef0ccf44baf794ebc7676d986}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMenu_ab8d24a11ed99eead18acd6376a0a3d76}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_acb29e6ae77c5acba03ac48c5f1b6b23a}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_a0d8965a2a3df64d987e2bc91f77a43fd}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classMenu_ab08cab6e153f4d7fabf06cbc941c8c58}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classMenu_af957ef275f6fe75ee78876cbbea924e8}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child) override
+\item 
+virtual void \hyperlink{classMenu_a196fa8d0852b67ab63f7d3937c9b7d1c}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order) override
+\item 
+virtual void \hyperlink{classMenu_aa28d64c32649091ea83bf2da673f8bdf}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classMenu_ae69816c07019fce8984ae387a2c263d2}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classMenu_ac0b9006b091056c9e8c139eb653cc773}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classMenu_ac8aef4d0860df0ef9cb49382430bc72e}{on\+Exit} () override
+\item 
+virtual void \hyperlink{classMenu_ae2979f44049f67f2a2411cb3901842ef}{set\+Opacity\+Modify\+R\+GB} (bool value) override
+\item 
+virtual bool \hyperlink{classMenu_a94211ecf8dd3edeed2e5d54f63ae90b9}{is\+Opacity\+Modify\+R\+GB} (void) const override
+\item 
+virtual std\+::string \hyperlink{classMenu_ac8ea6b6d3296f7c973e1d82051425afe}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classMenu_abee4c4ef3c95d8d27c26c4139c468e2e}\label{classMenu_abee4c4ef3c95d8d27c26c4139c468e2e}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+selected\+With\+Camera} (nullptr)
+\item 
+bool \hyperlink{classMenu_a64390e993f1abcf27799a2217a94dd38}{init} () override
+\item 
+bool \hyperlink{classMenu_add7f29cf9f8be81569134a7af40f9635}{init\+With\+Array} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&array\+Of\+Items)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMenu_a4924b955f2f21b5d725ce73f88a597a6}\label{classMenu_a4924b955f2f21b5d725ce73f88a597a6}} 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_a4924b955f2f21b5d725ce73f88a597a6}{create} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty \hyperlink{classMenu}{Menu}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMenu_a97edcb72ebe24315e0b465279c0f6ee5}\label{classMenu_a97edcb72ebe24315e0b465279c0f6ee5}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a421c34c2d1622966557947cc37e11e75}\label{classMenu_a421c34c2d1622966557947cc37e11e75}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_adb6a256ccb1d925bc520bb9f8896d048}\label{classMenu_adb6a256ccb1d925bc520bb9f8896d048}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a3cf059365eccbd9ef7f45b6b650da0c9}\label{classMenu_a3cf059365eccbd9ef7f45b6b650da0c9}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a0cad749f0f81f8774a82bbce34b2f680}\label{classMenu_a0cad749f0f81f8774a82bbce34b2f680}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a2b5615782fc5cd26bfab6e123d3000a8}\label{classMenu_a2b5615782fc5cd26bfab6e123d3000a8}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_ad4c695a4cff8bd40f6a243d5e90cc3ea}\label{classMenu_ad4c695a4cff8bd40f6a243d5e90cc3ea}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_abf10719e2d7075c0a77630c4cfec9d47}\label{classMenu_abf10719e2d7075c0a77630c4cfec9d47}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a8dbe763ae7c7871e11eb612b2d92b086}\label{classMenu_a8dbe763ae7c7871e11eb612b2d92b086}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, \hyperlink{classMenuItem}{M} m9, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_ac0f4ff6590fdce3bfc2d40f34d286e12}\label{classMenu_ac0f4ff6590fdce3bfc2d40f34d286e12}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, \hyperlink{classMenuItem}{M} m9, \hyperlink{classMenuItem}{M} m10, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a84e392cbe044ff74f9d7c05f5757235f}\label{classMenu_a84e392cbe044ff74f9d7c05f5757235f}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries variadic\+Create} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$item,...)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_a31a4c48de52e869c966c66520e66bd55}{create\+With\+Array} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&array\+Of\+Items)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_ac0ed48fb583a961b23f517ae87226c6e}{create\+With\+Item} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$item)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_adbd50ef904f6614d63b6ef6319af14d0}{create\+With\+Items} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$first\+Item, va\+\_\+list args)
+\item 
+\mbox{\Hypertarget{classMenu_ac42152113cd64239dc16d3e7c1f3baab}\label{classMenu_ac42152113cd64239dc16d3e7c1f3baab}} 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_ac42152113cd64239dc16d3e7c1f3baab}{create} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty \hyperlink{classMenu}{Menu}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMenu_a97edcb72ebe24315e0b465279c0f6ee5}\label{classMenu_a97edcb72ebe24315e0b465279c0f6ee5}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a421c34c2d1622966557947cc37e11e75}\label{classMenu_a421c34c2d1622966557947cc37e11e75}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_adb6a256ccb1d925bc520bb9f8896d048}\label{classMenu_adb6a256ccb1d925bc520bb9f8896d048}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a3cf059365eccbd9ef7f45b6b650da0c9}\label{classMenu_a3cf059365eccbd9ef7f45b6b650da0c9}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a0cad749f0f81f8774a82bbce34b2f680}\label{classMenu_a0cad749f0f81f8774a82bbce34b2f680}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a2b5615782fc5cd26bfab6e123d3000a8}\label{classMenu_a2b5615782fc5cd26bfab6e123d3000a8}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_ad4c695a4cff8bd40f6a243d5e90cc3ea}\label{classMenu_ad4c695a4cff8bd40f6a243d5e90cc3ea}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_abf10719e2d7075c0a77630c4cfec9d47}\label{classMenu_abf10719e2d7075c0a77630c4cfec9d47}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a8dbe763ae7c7871e11eb612b2d92b086}\label{classMenu_a8dbe763ae7c7871e11eb612b2d92b086}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, \hyperlink{classMenuItem}{M} m9, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_ac0f4ff6590fdce3bfc2d40f34d286e12}\label{classMenu_ac0f4ff6590fdce3bfc2d40f34d286e12}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries create} (\hyperlink{classMenuItem}{M} m1, \hyperlink{classMenuItem}{M} m2, \hyperlink{classMenuItem}{M} m3, \hyperlink{classMenuItem}{M} m4, \hyperlink{classMenuItem}{M} m5, \hyperlink{classMenuItem}{M} m6, \hyperlink{classMenuItem}{M} m7, \hyperlink{classMenuItem}{M} m8, \hyperlink{classMenuItem}{M} m9, \hyperlink{classMenuItem}{M} m10, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classMenu_a67247c6ff275c16cd31bf4d641c513a7}\label{classMenu_a67247c6ff275c16cd31bf4d641c513a7}} 
+static \hyperlink{classMenu}{Menu} $\ast$ {\bfseries variadic\+Create} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$item,...)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_a5b2c28ed0707d2524f489e86e5b2e2ca}{create\+With\+Array} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&array\+Of\+Items)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_a17a3f9e990a403c2b63fb13a713becc3}{create\+With\+Item} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$item)
+\item 
+static \hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classMenu_a3d39a9d0460b53140dbfe69db66ef24b}{create\+With\+Items} (\hyperlink{classMenuItem}{Menu\+Item} $\ast$first\+Item, va\+\_\+list args)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMenu_af00b0531806d35c8b381c907c869c504}\label{classMenu_af00b0531806d35c8b381c907c869c504}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classMenu}{Menu}() \+: \+\_\+selected\+Item(nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMenu_a2143949223bf371ec16977821bc06b4d}\label{classMenu_a2143949223bf371ec16977821bc06b4d}} 
+virtual \hyperlink{classMenuItem}{Menu\+Item} $\ast$ {\bfseries get\+Item\+For\+Touch} (\hyperlink{classTouch}{Touch} $\ast$touch, const \hyperlink{classCamera}{Camera} $\ast$camera)
+\item 
+\mbox{\Hypertarget{classMenu_ac4e40becec7d8fa42d8ebf0aef4c502a}\label{classMenu_ac4e40becec7d8fa42d8ebf0aef4c502a}} 
+virtual \hyperlink{classMenuItem}{Menu\+Item} $\ast$ {\bfseries get\+Item\+For\+Touch} (\hyperlink{classTouch}{Touch} $\ast$touch, const \hyperlink{classCamera}{Camera} $\ast$camera)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classMenu_a37190ed4d5d13bb631a0fe23bf307180}{\+\_\+enabled}
+\item 
+\mbox{\Hypertarget{classMenu_a54e798118e41a3b9c61d56474db9797c}\label{classMenu_a54e798118e41a3b9c61d56474db9797c}} 
+\hyperlink{classMenu_a8269685e78203b028d5bd77c339898b2}{State} {\bfseries \+\_\+state}
+\item 
+\mbox{\Hypertarget{classMenu_af0796632f3b33e3fc9d3fc8276af1fde}\label{classMenu_af0796632f3b33e3fc9d3fc8276af1fde}} 
+\hyperlink{classMenuItem}{Menu\+Item} $\ast$ {\bfseries \+\_\+selected\+Item}
+\item 
+\mbox{\Hypertarget{classMenu_a69806e8f8bf6f31523068342405aeda9}\label{classMenu_a69806e8f8bf6f31523068342405aeda9}} 
+const \hyperlink{classCamera}{Camera} $\ast$ {\bfseries \+\_\+selected\+With\+Camera}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classMenu}{Menu} for touch handling. 
+
+Features and Limitation\+:
+\begin{DoxyItemize}
+\item You can add \hyperlink{classMenuItem}{Menu\+Item} objects in runtime using add\+Child.
+\item But the only accepted children are \hyperlink{classMenuItem}{Menu\+Item} objects. 
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMenu_a8269685e78203b028d5bd77c339898b2}\label{classMenu_a8269685e78203b028d5bd77c339898b2}} 
+\index{Menu@{Menu}!State@{State}}
+\index{State@{State}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMenu_a8269685e78203b028d5bd77c339898b2}{Menu\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classMenu}{Menu} state, it\textquotesingle{}s used internally. \mbox{\Hypertarget{classMenu_a8269685e78203b028d5bd77c339898b2}\label{classMenu_a8269685e78203b028d5bd77c339898b2}} 
+\index{Menu@{Menu}!State@{State}}
+\index{State@{State}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMenu_a8269685e78203b028d5bd77c339898b2}{Menu\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classMenu}{Menu} state, it\textquotesingle{}s used internally. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu_af557403e8b14bdbda70d85b7d12fedfb}\label{classMenu_af557403e8b14bdbda70d85b7d12fedfb}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a132699398b350e83b548a5645e69beb0}{Node}.
+
+\mbox{\Hypertarget{classMenu_af957ef275f6fe75ee78876cbbea924e8}\label{classMenu_af957ef275f6fe75ee78876cbbea924e8}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily virtual void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a132699398b350e83b548a5645e69beb0}{Node}.
+
+\mbox{\Hypertarget{classMenu_a38455f79cd083475d9beacf0cc9caf81}\label{classMenu_a38455f79cd083475d9beacf0cc9caf81}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ad0005bbb94623abd997ce7c3116e6212}{Node}.
+
+\mbox{\Hypertarget{classMenu_a540593eb7fb7de286fe64d6da9c67618}\label{classMenu_a540593eb7fb7de286fe64d6da9c67618}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classMenu_a9b9b2f71c16b7c420f6db12a68937ce5}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+\mbox{\Hypertarget{classMenu_a196fa8d0852b67ab63f7d3937c9b7d1c}\label{classMenu_a196fa8d0852b67ab63f7d3937c9b7d1c}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily virtual void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ad0005bbb94623abd997ce7c3116e6212}{Node}.
+
+\mbox{\Hypertarget{classMenu_a9b9b2f71c16b7c420f6db12a68937ce5}\label{classMenu_a9b9b2f71c16b7c420f6db12a68937ce5}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classMenu_aa28d64c32649091ea83bf2da673f8bdf}\label{classMenu_aa28d64c32649091ea83bf2da673f8bdf}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily virtual void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classMenu_a9b9b2f71c16b7c420f6db12a68937ce5}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+\mbox{\Hypertarget{classMenu_ae69816c07019fce8984ae387a2c263d2}\label{classMenu_ae69816c07019fce8984ae387a2c263d2}} 
+\index{Menu@{Menu}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily virtual void Menu\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}\label{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}} 
+\index{Menu@{Menu}!align\+Items\+Horizontally@{align\+Items\+Horizontally}}
+\index{align\+Items\+Horizontally@{align\+Items\+Horizontally}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Horizontally()}{alignItemsHorizontally()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Horizontally (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Align items horizontally. \mbox{\Hypertarget{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}\label{classMenu_a9b5aed1fdee862b7d1bc64193c90c2b0}} 
+\index{Menu@{Menu}!align\+Items\+Horizontally@{align\+Items\+Horizontally}}
+\index{align\+Items\+Horizontally@{align\+Items\+Horizontally}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Horizontally()}{alignItemsHorizontally()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Horizontally (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Align items horizontally. \mbox{\Hypertarget{classMenu_afe60c06457d1f0805d17a4db9d2b150b}\label{classMenu_afe60c06457d1f0805d17a4db9d2b150b}} 
+\index{Menu@{Menu}!align\+Items\+Horizontally\+With\+Padding@{align\+Items\+Horizontally\+With\+Padding}}
+\index{align\+Items\+Horizontally\+With\+Padding@{align\+Items\+Horizontally\+With\+Padding}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Horizontally\+With\+Padding()}{alignItemsHorizontallyWithPadding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Horizontally\+With\+Padding (\begin{DoxyParamCaption}\item[{float}]{padding }\end{DoxyParamCaption})}
+
+Align items horizontally with padding. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classMenu_afe60c06457d1f0805d17a4db9d2b150b}\label{classMenu_afe60c06457d1f0805d17a4db9d2b150b}} 
+\index{Menu@{Menu}!align\+Items\+Horizontally\+With\+Padding@{align\+Items\+Horizontally\+With\+Padding}}
+\index{align\+Items\+Horizontally\+With\+Padding@{align\+Items\+Horizontally\+With\+Padding}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Horizontally\+With\+Padding()}{alignItemsHorizontallyWithPadding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Horizontally\+With\+Padding (\begin{DoxyParamCaption}\item[{float}]{padding }\end{DoxyParamCaption})}
+
+Align items horizontally with padding. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classMenu_a73728acb4dd4cad8bdd8e895014aa522}\label{classMenu_a73728acb4dd4cad8bdd8e895014aa522}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns@{align\+Items\+In\+Columns}}
+\index{align\+Items\+In\+Columns@{align\+Items\+In\+Columns}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns()}{alignItemsInColumns()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns (\begin{DoxyParamCaption}\item[{int}]{columns,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Align items in rows of columns. \mbox{\Hypertarget{classMenu_a73728acb4dd4cad8bdd8e895014aa522}\label{classMenu_a73728acb4dd4cad8bdd8e895014aa522}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns@{align\+Items\+In\+Columns}}
+\index{align\+Items\+In\+Columns@{align\+Items\+In\+Columns}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns()}{alignItemsInColumns()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns (\begin{DoxyParamCaption}\item[{int}]{columns,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Align items in rows of columns. \mbox{\Hypertarget{classMenu_a2a568b7bfe853e3c73acba7e3622d220}\label{classMenu_a2a568b7bfe853e3c73acba7e3622d220}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns@{align\+Items\+In\+Columns}}
+\index{align\+Items\+In\+Columns@{align\+Items\+In\+Columns}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns()}{alignItemsInColumns()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns (\begin{DoxyParamCaption}\item[{int}]{columns,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Align items in rows of columns. \mbox{\Hypertarget{classMenu_a2a568b7bfe853e3c73acba7e3622d220}\label{classMenu_a2a568b7bfe853e3c73acba7e3622d220}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns@{align\+Items\+In\+Columns}}
+\index{align\+Items\+In\+Columns@{align\+Items\+In\+Columns}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns()}{alignItemsInColumns()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns (\begin{DoxyParamCaption}\item[{int}]{columns,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Align items in rows of columns. \mbox{\Hypertarget{classMenu_a68484c458c9e99064204078a6ad2e2e8}\label{classMenu_a68484c458c9e99064204078a6ad2e2e8}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns\+With\+Array@{align\+Items\+In\+Columns\+With\+Array}}
+\index{align\+Items\+In\+Columns\+With\+Array@{align\+Items\+In\+Columns\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns\+With\+Array()}{alignItemsInColumnsWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns\+With\+Array (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{rows }\end{DoxyParamCaption})}
+
+Align items in array of columns.  NA \mbox{\Hypertarget{classMenu_a68484c458c9e99064204078a6ad2e2e8}\label{classMenu_a68484c458c9e99064204078a6ad2e2e8}} 
+\index{Menu@{Menu}!align\+Items\+In\+Columns\+With\+Array@{align\+Items\+In\+Columns\+With\+Array}}
+\index{align\+Items\+In\+Columns\+With\+Array@{align\+Items\+In\+Columns\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Columns\+With\+Array()}{alignItemsInColumnsWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Columns\+With\+Array (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{rows }\end{DoxyParamCaption})}
+
+Align items in array of columns.  NA \mbox{\Hypertarget{classMenu_aef711df55d67e0b3606049df72041dec}\label{classMenu_aef711df55d67e0b3606049df72041dec}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows@{align\+Items\+In\+Rows}}
+\index{align\+Items\+In\+Rows@{align\+Items\+In\+Rows}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows()}{alignItemsInRows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Align items in columns of rows. \mbox{\Hypertarget{classMenu_aef711df55d67e0b3606049df72041dec}\label{classMenu_aef711df55d67e0b3606049df72041dec}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows@{align\+Items\+In\+Rows}}
+\index{align\+Items\+In\+Rows@{align\+Items\+In\+Rows}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows()}{alignItemsInRows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Align items in columns of rows. \mbox{\Hypertarget{classMenu_ac9e28ec85370f45fe4929cd393496a63}\label{classMenu_ac9e28ec85370f45fe4929cd393496a63}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows@{align\+Items\+In\+Rows}}
+\index{align\+Items\+In\+Rows@{align\+Items\+In\+Rows}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows()}{alignItemsInRows()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Align items in columns of rows. \mbox{\Hypertarget{classMenu_ac9e28ec85370f45fe4929cd393496a63}\label{classMenu_ac9e28ec85370f45fe4929cd393496a63}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows@{align\+Items\+In\+Rows}}
+\index{align\+Items\+In\+Rows@{align\+Items\+In\+Rows}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows()}{alignItemsInRows()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+Align items in columns of rows. \mbox{\Hypertarget{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}\label{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows\+With\+Array@{align\+Items\+In\+Rows\+With\+Array}}
+\index{align\+Items\+In\+Rows\+With\+Array@{align\+Items\+In\+Rows\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows\+With\+Array()}{alignItemsInRowsWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows\+With\+Array (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{columns }\end{DoxyParamCaption})}
+
+Align items in array of rows.  NA \mbox{\Hypertarget{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}\label{classMenu_a858eac611f439f9f9432e6ebb1ec8cc0}} 
+\index{Menu@{Menu}!align\+Items\+In\+Rows\+With\+Array@{align\+Items\+In\+Rows\+With\+Array}}
+\index{align\+Items\+In\+Rows\+With\+Array@{align\+Items\+In\+Rows\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+In\+Rows\+With\+Array()}{alignItemsInRowsWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+In\+Rows\+With\+Array (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{columns }\end{DoxyParamCaption})}
+
+Align items in array of rows.  NA \mbox{\Hypertarget{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}\label{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}} 
+\index{Menu@{Menu}!align\+Items\+Vertically@{align\+Items\+Vertically}}
+\index{align\+Items\+Vertically@{align\+Items\+Vertically}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Vertically()}{alignItemsVertically()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Align items vertically. \mbox{\Hypertarget{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}\label{classMenu_a9993bc6d1e63107a1ca661ba64a7ebd4}} 
+\index{Menu@{Menu}!align\+Items\+Vertically@{align\+Items\+Vertically}}
+\index{align\+Items\+Vertically@{align\+Items\+Vertically}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Vertically()}{alignItemsVertically()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Align items vertically. \mbox{\Hypertarget{classMenu_a092a7f04579a919e723587d8cbe1c45d}\label{classMenu_a092a7f04579a919e723587d8cbe1c45d}} 
+\index{Menu@{Menu}!align\+Items\+Vertically\+With\+Padding@{align\+Items\+Vertically\+With\+Padding}}
+\index{align\+Items\+Vertically\+With\+Padding@{align\+Items\+Vertically\+With\+Padding}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Vertically\+With\+Padding()}{alignItemsVerticallyWithPadding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Vertically\+With\+Padding (\begin{DoxyParamCaption}\item[{float}]{padding }\end{DoxyParamCaption})}
+
+Align items vertically with padding. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classMenu_a092a7f04579a919e723587d8cbe1c45d}\label{classMenu_a092a7f04579a919e723587d8cbe1c45d}} 
+\index{Menu@{Menu}!align\+Items\+Vertically\+With\+Padding@{align\+Items\+Vertically\+With\+Padding}}
+\index{align\+Items\+Vertically\+With\+Padding@{align\+Items\+Vertically\+With\+Padding}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{align\+Items\+Vertically\+With\+Padding()}{alignItemsVerticallyWithPadding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+::align\+Items\+Vertically\+With\+Padding (\begin{DoxyParamCaption}\item[{float}]{padding }\end{DoxyParamCaption})}
+
+Align items vertically with padding. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classMenu_a31a4c48de52e869c966c66520e66bd55}\label{classMenu_a31a4c48de52e869c966c66520e66bd55}} 
+\index{Menu@{Menu}!create\+With\+Array@{create\+With\+Array}}
+\index{create\+With\+Array@{create\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Array()}{createWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMenu}{Menu} $\ast$ Menu\+::create\+With\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&}]{array\+Of\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with a Array of \hyperlink{classMenuItem}{Menu\+Item} objects.  NA \mbox{\Hypertarget{classMenu_a5b2c28ed0707d2524f489e86e5b2e2ca}\label{classMenu_a5b2c28ed0707d2524f489e86e5b2e2ca}} 
+\index{Menu@{Menu}!create\+With\+Array@{create\+With\+Array}}
+\index{create\+With\+Array@{create\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Array()}{createWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMenu}{Menu}$\ast$ Menu\+::create\+With\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&}]{array\+Of\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with a Array of \hyperlink{classMenuItem}{Menu\+Item} objects.  NA \mbox{\Hypertarget{classMenu_ac0ed48fb583a961b23f517ae87226c6e}\label{classMenu_ac0ed48fb583a961b23f517ae87226c6e}} 
+\index{Menu@{Menu}!create\+With\+Item@{create\+With\+Item}}
+\index{create\+With\+Item@{create\+With\+Item}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Item()}{createWithItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMenu}{Menu} $\ast$ Menu\+::create\+With\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classMenuItem}{Menu\+Item} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with it\textquotesingle{}s item, then use \hyperlink{classMenu_af557403e8b14bdbda70d85b7d12fedfb}{add\+Child()} to add other items. It is used for script, it can\textquotesingle{}t be initialized with undetermined number of variables.  NA \mbox{\Hypertarget{classMenu_a17a3f9e990a403c2b63fb13a713becc3}\label{classMenu_a17a3f9e990a403c2b63fb13a713becc3}} 
+\index{Menu@{Menu}!create\+With\+Item@{create\+With\+Item}}
+\index{create\+With\+Item@{create\+With\+Item}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Item()}{createWithItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMenu}{Menu}$\ast$ Menu\+::create\+With\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classMenuItem}{Menu\+Item} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with it\textquotesingle{}s item, then use \hyperlink{classMenu_af557403e8b14bdbda70d85b7d12fedfb}{add\+Child()} to add other items. It is used for script, it can\textquotesingle{}t be initialized with undetermined number of variables.  NA \mbox{\Hypertarget{classMenu_adbd50ef904f6614d63b6ef6319af14d0}\label{classMenu_adbd50ef904f6614d63b6ef6319af14d0}} 
+\index{Menu@{Menu}!create\+With\+Items@{create\+With\+Items}}
+\index{create\+With\+Items@{create\+With\+Items}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Items()}{createWithItems()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMenu}{Menu} $\ast$ Menu\+::create\+With\+Items (\begin{DoxyParamCaption}\item[{\hyperlink{classMenuItem}{Menu\+Item} $\ast$}]{first\+Item,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with \hyperlink{classMenuItem}{Menu\+Item} objects.  NA \mbox{\Hypertarget{classMenu_a3d39a9d0460b53140dbfe69db66ef24b}\label{classMenu_a3d39a9d0460b53140dbfe69db66ef24b}} 
+\index{Menu@{Menu}!create\+With\+Items@{create\+With\+Items}}
+\index{create\+With\+Items@{create\+With\+Items}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{create\+With\+Items()}{createWithItems()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMenu}{Menu}$\ast$ Menu\+::create\+With\+Items (\begin{DoxyParamCaption}\item[{\hyperlink{classMenuItem}{Menu\+Item} $\ast$}]{first\+Item,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classMenu}{Menu} with \hyperlink{classMenuItem}{Menu\+Item} objects.  NA \mbox{\Hypertarget{classMenu_a2f8bee450bcae21f9d5f27941467ff59}\label{classMenu_a2f8bee450bcae21f9d5f27941467ff59}} 
+\index{Menu@{Menu}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Menu\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_acadcdf383e0bf892c95213a4f7725672}{Layer}.
+
+\mbox{\Hypertarget{classMenu_ac8ea6b6d3296f7c973e1d82051425afe}\label{classMenu_ac8ea6b6d3296f7c973e1d82051425afe}} 
+\index{Menu@{Menu}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Menu\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_acadcdf383e0bf892c95213a4f7725672}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a64390e993f1abcf27799a2217a94dd38}\label{classMenu_a64390e993f1abcf27799a2217a94dd38}} 
+\index{Menu@{Menu}!init@{init}}
+\index{init@{init}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Menu\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+initializes an empty \hyperlink{classMenu}{Menu} 
+
+Reimplemented from \hyperlink{classLayer}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a64390e993f1abcf27799a2217a94dd38}\label{classMenu_a64390e993f1abcf27799a2217a94dd38}} 
+\index{Menu@{Menu}!init@{init}}
+\index{init@{init}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Menu\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+initializes an empty \hyperlink{classMenu}{Menu} 
+
+Reimplemented from \hyperlink{classLayer}{Layer}.
+
+\mbox{\Hypertarget{classMenu_add7f29cf9f8be81569134a7af40f9635}\label{classMenu_add7f29cf9f8be81569134a7af40f9635}} 
+\index{Menu@{Menu}!init\+With\+Array@{init\+With\+Array}}
+\index{init\+With\+Array@{init\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{init\+With\+Array()}{initWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Menu\+::init\+With\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&}]{array\+Of\+Items }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classMenu}{Menu} with a N\+S\+Array of \hyperlink{classMenuItem}{Menu\+Item} objects \mbox{\Hypertarget{classMenu_add7f29cf9f8be81569134a7af40f9635}\label{classMenu_add7f29cf9f8be81569134a7af40f9635}} 
+\index{Menu@{Menu}!init\+With\+Array@{init\+With\+Array}}
+\index{init\+With\+Array@{init\+With\+Array}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{init\+With\+Array()}{initWithArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Menu\+::init\+With\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMenuItem}{Menu\+Item} $\ast$$>$ \&}]{array\+Of\+Items }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classMenu}{Menu} with a N\+S\+Array of \hyperlink{classMenuItem}{Menu\+Item} objects \mbox{\Hypertarget{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}\label{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}} 
+\index{Menu@{Menu}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Menu\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Determines if the menu is enabled. \begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classMenu_a3f1338bc3391dd127892035935b48cdc}{set\+Enabled(bool)}}. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+whether the menu is enabled or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}\label{classMenu_a8d594f61997bb6ed9f62b083ed7a6001}} 
+\index{Menu@{Menu}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Menu\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Determines if the menu is enabled. \begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classMenu_a3f1338bc3391dd127892035935b48cdc}{set\+Enabled(bool)}}. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+whether the menu is enabled or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_ae173fda432df51ec761c8ef5d96ea59a}\label{classMenu_ae173fda432df51ec761c8ef5d96ea59a}} 
+\index{Menu@{Menu}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Menu\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classMenu_a94211ecf8dd3edeed2e5d54f63ae90b9}\label{classMenu_a94211ecf8dd3edeed2e5d54f63ae90b9}} 
+\index{Menu@{Menu}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Menu\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classMenu_ab8c3b9d5d26f512be8f26e5e2f5bda1e}\label{classMenu_ab8c3b9d5d26f512be8f26e5e2f5bda1e}} 
+\index{Menu@{Menu}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classMenu_ac0b9006b091056c9e8c139eb653cc773}\label{classMenu_ac0b9006b091056c9e8c139eb653cc773}} 
+\index{Menu@{Menu}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classMenu_a247a5912b1bc6aacedcdb41324de391c}\label{classMenu_a247a5912b1bc6aacedcdb41324de391c}} 
+\index{Menu@{Menu}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+\mbox{\Hypertarget{classMenu_ac8aef4d0860df0ef9cb49382430bc72e}\label{classMenu_ac8aef4d0860df0ef9cb49382430bc72e}} 
+\index{Menu@{Menu}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+\mbox{\Hypertarget{classMenu_aea88e7147647b3295a5453990c47f1be}\label{classMenu_aea88e7147647b3295a5453990c47f1be}} 
+\index{Menu@{Menu}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Menu\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a2492a2fef0ccf44baf794ebc7676d986}\label{classMenu_a2492a2fef0ccf44baf794ebc7676d986}} 
+\index{Menu@{Menu}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Menu\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a19ffec24a2ec30dd290354e0e0e3aa9a}\label{classMenu_a19ffec24a2ec30dd290354e0e0e3aa9a}} 
+\index{Menu@{Menu}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+\mbox{\Hypertarget{classMenu_acb29e6ae77c5acba03ac48c5f1b6b23a}\label{classMenu_acb29e6ae77c5acba03ac48c5f1b6b23a}} 
+\index{Menu@{Menu}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a8d9a867ea2dfc4ec2a3309f3df71cc35}\label{classMenu_a8d9a867ea2dfc4ec2a3309f3df71cc35}} 
+\index{Menu@{Menu}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+\mbox{\Hypertarget{classMenu_ab8d24a11ed99eead18acd6376a0a3d76}\label{classMenu_ab8d24a11ed99eead18acd6376a0a3d76}} 
+\index{Menu@{Menu}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+\mbox{\Hypertarget{classMenu_ad69115ad80e86bbe904d575253afc781}\label{classMenu_ad69115ad80e86bbe904d575253afc781}} 
+\index{Menu@{Menu}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a0d8965a2a3df64d987e2bc91f77a43fd}\label{classMenu_a0d8965a2a3df64d987e2bc91f77a43fd}} 
+\index{Menu@{Menu}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+\mbox{\Hypertarget{classMenu_a671c3f506ddcf0532144056289721540}\label{classMenu_a671c3f506ddcf0532144056289721540}} 
+\index{Menu@{Menu}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+\mbox{\Hypertarget{classMenu_ab08cab6e153f4d7fabf06cbc941c8c58}\label{classMenu_ab08cab6e153f4d7fabf06cbc941c8c58}} 
+\index{Menu@{Menu}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+\mbox{\Hypertarget{classMenu_a3f1338bc3391dd127892035935b48cdc}\label{classMenu_a3f1338bc3391dd127892035935b48cdc}} 
+\index{Menu@{Menu}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set whether the menu is visible. If set false, interacting with the menu will have no effect. The default value is true, a menu is default to visible. 
+\begin{DoxyParams}{Parameters}
+{\em value} & true if menu is to be enabled, false if menu is to be disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a3f1338bc3391dd127892035935b48cdc}\label{classMenu_a3f1338bc3391dd127892035935b48cdc}} 
+\index{Menu@{Menu}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set whether the menu is enabled. If set to false, interacting with the menu will have no effect. The default value is true, a menu is enabled by default. 
+\begin{DoxyParams}{Parameters}
+{\em value} & true if menu is to be enabled, false if menu is to be disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a7dc62dd40fb8b6cd4addee5fb38cb6b9}\label{classMenu_a7dc62dd40fb8b6cd4addee5fb38cb6b9}} 
+\index{Menu@{Menu}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classMenu_ae2979f44049f67f2a2411cb3901842ef}\label{classMenu_ae2979f44049f67f2a2411cb3901842ef}} 
+\index{Menu@{Menu}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Menu\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMenu_a37190ed4d5d13bb631a0fe23bf307180}\label{classMenu_a37190ed4d5d13bb631a0fe23bf307180}} 
+\index{Menu@{Menu}!\+\_\+enabled@{\+\_\+enabled}}
+\index{\+\_\+enabled@{\+\_\+enabled}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{\+\_\+enabled}{\_enabled}}
+{\footnotesize\ttfamily bool Menu\+::\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+whether or not the menu will receive events 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Menu.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Menu.\+cpp\end{DoxyCompactItemize}

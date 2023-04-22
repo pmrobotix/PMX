@@ -1,0 +1,166 @@
+\hypertarget{structdtNavMeshCreateParams}{}\section{dt\+Nav\+Mesh\+Create\+Params Struct Reference}
+\label{structdtNavMeshCreateParams}\index{dt\+Nav\+Mesh\+Create\+Params@{dt\+Nav\+Mesh\+Create\+Params}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh\+Builder.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{Indent}\textbf{ Polygon Mesh Attributes}\par
+{\em Used to create the base navigation graph. See \hyperlink{structrcPolyMesh}{rc\+Poly\+Mesh} for details related to these attributes. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a2f50fefd2ed07d72543f4f4d6db73c56}\label{structdtNavMeshCreateParams_a2f50fefd2ed07d72543f4f4d6db73c56}} 
+const unsigned short $\ast$ \hyperlink{structdtNavMeshCreateParams_a2f50fefd2ed07d72543f4f4d6db73c56}{verts}
+\begin{DoxyCompactList}\small\item\em The polygon mesh vertices. \mbox{[}(x, y, z) $\ast$ \hyperlink{structdtNavMeshCreateParams_a5cc3d74f4b38715cb1adf01c7d118c3f}{vert\+Count}\mbox{]} \mbox{[}Unit\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a5cc3d74f4b38715cb1adf01c7d118c3f}\label{structdtNavMeshCreateParams_a5cc3d74f4b38715cb1adf01c7d118c3f}} 
+int \hyperlink{structdtNavMeshCreateParams_a5cc3d74f4b38715cb1adf01c7d118c3f}{vert\+Count}
+\begin{DoxyCompactList}\small\item\em The number vertices in the polygon mesh. \mbox{[}Limit\+: $>$= 3\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_adff63fe6c3a13b9498654eefc1fccb5e}\label{structdtNavMeshCreateParams_adff63fe6c3a13b9498654eefc1fccb5e}} 
+const unsigned short $\ast$ \hyperlink{structdtNavMeshCreateParams_adff63fe6c3a13b9498654eefc1fccb5e}{polys}
+\begin{DoxyCompactList}\small\item\em The polygon data. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}{poly\+Count} $\ast$ 2 $\ast$ \hyperlink{structdtNavMeshCreateParams_aa0cacf292dd206fe7da335461c3af65c}{nvp}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a27e7ff19d77d4b2c9cad3fa85c2b23d2}\label{structdtNavMeshCreateParams_a27e7ff19d77d4b2c9cad3fa85c2b23d2}} 
+const unsigned short $\ast$ \hyperlink{structdtNavMeshCreateParams_a27e7ff19d77d4b2c9cad3fa85c2b23d2}{poly\+Flags}
+\begin{DoxyCompactList}\small\item\em The user defined flags assigned to each polygon. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}{poly\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a683bd022ce69bde61fa686cfc0a6f2f5}\label{structdtNavMeshCreateParams_a683bd022ce69bde61fa686cfc0a6f2f5}} 
+const unsigned char $\ast$ \hyperlink{structdtNavMeshCreateParams_a683bd022ce69bde61fa686cfc0a6f2f5}{poly\+Areas}
+\begin{DoxyCompactList}\small\item\em The user defined area ids assigned to each polygon. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}{poly\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}\label{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}} 
+int \hyperlink{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}{poly\+Count}
+\begin{DoxyCompactList}\small\item\em Number of polygons in the mesh. \mbox{[}Limit\+: $>$= 1\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_aa0cacf292dd206fe7da335461c3af65c}\label{structdtNavMeshCreateParams_aa0cacf292dd206fe7da335461c3af65c}} 
+int \hyperlink{structdtNavMeshCreateParams_aa0cacf292dd206fe7da335461c3af65c}{nvp}
+\begin{DoxyCompactList}\small\item\em Number maximum number of vertices per polygon. \mbox{[}Limit\+: $>$= 3\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Height Detail Attributes (Optional)}\par
+{\em See \hyperlink{structrcPolyMeshDetail}{rc\+Poly\+Mesh\+Detail} for details related to these attributes. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a80fc57ad6c117b7b15edaa75c8b4cfa2}\label{structdtNavMeshCreateParams_a80fc57ad6c117b7b15edaa75c8b4cfa2}} 
+const unsigned int $\ast$ \hyperlink{structdtNavMeshCreateParams_a80fc57ad6c117b7b15edaa75c8b4cfa2}{detail\+Meshes}
+\begin{DoxyCompactList}\small\item\em The height detail sub-\/mesh data. \mbox{[}\hyperlink{classSize}{Size}\+: 4 $\ast$ \hyperlink{structdtNavMeshCreateParams_ade05d506a6505335142d06f18a35cc45}{poly\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a33d048928b41300688a12f1a67b16a8a}\label{structdtNavMeshCreateParams_a33d048928b41300688a12f1a67b16a8a}} 
+const float $\ast$ \hyperlink{structdtNavMeshCreateParams_a33d048928b41300688a12f1a67b16a8a}{detail\+Verts}
+\begin{DoxyCompactList}\small\item\em The detail mesh vertices. \mbox{[}\hyperlink{classSize}{Size}\+: 3 $\ast$ \hyperlink{structdtNavMeshCreateParams_af3b5721cfa7cc46e508c5756116f7e10}{detail\+Verts\+Count}\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_af3b5721cfa7cc46e508c5756116f7e10}\label{structdtNavMeshCreateParams_af3b5721cfa7cc46e508c5756116f7e10}} 
+int \hyperlink{structdtNavMeshCreateParams_af3b5721cfa7cc46e508c5756116f7e10}{detail\+Verts\+Count}
+\begin{DoxyCompactList}\small\item\em The number of vertices in the detail mesh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_afd6f5b4f5fd48ddc8cfdb55930b0e5f5}\label{structdtNavMeshCreateParams_afd6f5b4f5fd48ddc8cfdb55930b0e5f5}} 
+const unsigned char $\ast$ \hyperlink{structdtNavMeshCreateParams_afd6f5b4f5fd48ddc8cfdb55930b0e5f5}{detail\+Tris}
+\begin{DoxyCompactList}\small\item\em The detail mesh triangles. \mbox{[}\hyperlink{classSize}{Size}\+: 4 $\ast$ \hyperlink{structdtNavMeshCreateParams_a2516fa677dad99e0859ed46615d64730}{detail\+Tri\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a2516fa677dad99e0859ed46615d64730}\label{structdtNavMeshCreateParams_a2516fa677dad99e0859ed46615d64730}} 
+int \hyperlink{structdtNavMeshCreateParams_a2516fa677dad99e0859ed46615d64730}{detail\+Tri\+Count}
+\begin{DoxyCompactList}\small\item\em The number of triangles in the detail mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Off-\/\+Mesh Connections Attributes (Optional)}\par
+{\em Used to define a custom point-\/to-\/point edge within the navigation graph, an off-\/mesh connection is a user defined traversable connection made up to two vertices, at least one of which resides within a navigation mesh polygon. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a885b42e01d478c8e6f0aa208d726d8bb}\label{structdtNavMeshCreateParams_a885b42e01d478c8e6f0aa208d726d8bb}} 
+const float $\ast$ \hyperlink{structdtNavMeshCreateParams_a885b42e01d478c8e6f0aa208d726d8bb}{off\+Mesh\+Con\+Verts}
+\begin{DoxyCompactList}\small\item\em Off-\/mesh connection vertices. \mbox{[}(ax, ay, az, bx, by, bz) $\ast$ \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_aff91d0004902176a24c9cb76a5504e17}\label{structdtNavMeshCreateParams_aff91d0004902176a24c9cb76a5504e17}} 
+const float $\ast$ \hyperlink{structdtNavMeshCreateParams_aff91d0004902176a24c9cb76a5504e17}{off\+Mesh\+Con\+Rad}
+\begin{DoxyCompactList}\small\item\em Off-\/mesh connection radii. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_abf0a71ee2d79f033add88835a007398d}\label{structdtNavMeshCreateParams_abf0a71ee2d79f033add88835a007398d}} 
+const unsigned short $\ast$ \hyperlink{structdtNavMeshCreateParams_abf0a71ee2d79f033add88835a007398d}{off\+Mesh\+Con\+Flags}
+\begin{DoxyCompactList}\small\item\em User defined flags assigned to the off-\/mesh connections. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a0cfe09f0deaee11dd9f953613141f0c4}\label{structdtNavMeshCreateParams_a0cfe09f0deaee11dd9f953613141f0c4}} 
+const unsigned char $\ast$ \hyperlink{structdtNavMeshCreateParams_a0cfe09f0deaee11dd9f953613141f0c4}{off\+Mesh\+Con\+Areas}
+\begin{DoxyCompactList}\small\item\em User defined area ids assigned to the off-\/mesh connections. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+const unsigned char $\ast$ \hyperlink{structdtNavMeshCreateParams_a44a34e3c48ec498c7a84d01c2766000f}{off\+Mesh\+Con\+Dir}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_ae947da10382d3bc215b9ad813a0d47e7}\label{structdtNavMeshCreateParams_ae947da10382d3bc215b9ad813a0d47e7}} 
+const unsigned int $\ast$ \hyperlink{structdtNavMeshCreateParams_ae947da10382d3bc215b9ad813a0d47e7}{off\+Mesh\+Con\+User\+ID}
+\begin{DoxyCompactList}\small\item\em The user defined ids of the off-\/mesh connection. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}\label{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}} 
+int \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}
+\begin{DoxyCompactList}\small\item\em The number of off-\/mesh connections. \mbox{[}Limit\+: $>$= 0\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Tile Attributes}\par
+{\em \begin{DoxyNote}{Note}
+The tile grid/layer data can be left at zero if the destination is a single tile mesh. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_aeb8e8fb9fed1e6f47292f5016f9eee0a}\label{structdtNavMeshCreateParams_aeb8e8fb9fed1e6f47292f5016f9eee0a}} 
+unsigned int \hyperlink{structdtNavMeshCreateParams_aeb8e8fb9fed1e6f47292f5016f9eee0a}{user\+Id}
+\begin{DoxyCompactList}\small\item\em The user defined id of the tile. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_ac3cd5e08f533bfd9767f70dd02f1cb33}\label{structdtNavMeshCreateParams_ac3cd5e08f533bfd9767f70dd02f1cb33}} 
+int \hyperlink{structdtNavMeshCreateParams_ac3cd5e08f533bfd9767f70dd02f1cb33}{tileX}
+\begin{DoxyCompactList}\small\item\em The tile\textquotesingle{}s x-\/grid location within the multi-\/tile destination mesh. (Along the x-\/axis.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_afc178088f515787cc8dec214559358e9}\label{structdtNavMeshCreateParams_afc178088f515787cc8dec214559358e9}} 
+int \hyperlink{structdtNavMeshCreateParams_afc178088f515787cc8dec214559358e9}{tileY}
+\begin{DoxyCompactList}\small\item\em The tile\textquotesingle{}s y-\/grid location within the multi-\/tile desitation mesh. (Along the z-\/axis.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a537e0bee7d1ddf992dc540d46fa337de}\label{structdtNavMeshCreateParams_a537e0bee7d1ddf992dc540d46fa337de}} 
+int \hyperlink{structdtNavMeshCreateParams_a537e0bee7d1ddf992dc540d46fa337de}{tile\+Layer}
+\begin{DoxyCompactList}\small\item\em The tile\textquotesingle{}s layer within the layered destination mesh. \href{Along the y-axis.}{\tt Limit\+: $>$= 0} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a4fcb4e512932253e072fa4117d67273d}\label{structdtNavMeshCreateParams_a4fcb4e512932253e072fa4117d67273d}} 
+float \hyperlink{structdtNavMeshCreateParams_a4fcb4e512932253e072fa4117d67273d}{bmin} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The minimum bounds of the tile. \mbox{[}(x, y, z)\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a7611d8a3e3c2b4f176337332e418a9ec}\label{structdtNavMeshCreateParams_a7611d8a3e3c2b4f176337332e418a9ec}} 
+float \hyperlink{structdtNavMeshCreateParams_a7611d8a3e3c2b4f176337332e418a9ec}{bmax} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The maximum bounds of the tile. \mbox{[}(x, y, z)\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ General Configuration Attributes}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a1d7c8d3ae651371b0ce5acbc19f9221e}\label{structdtNavMeshCreateParams_a1d7c8d3ae651371b0ce5acbc19f9221e}} 
+float \hyperlink{structdtNavMeshCreateParams_a1d7c8d3ae651371b0ce5acbc19f9221e}{walkable\+Height}
+\begin{DoxyCompactList}\small\item\em The agent height. \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a5c467f6297663e0ed82c49d768bc3b12}\label{structdtNavMeshCreateParams_a5c467f6297663e0ed82c49d768bc3b12}} 
+float \hyperlink{structdtNavMeshCreateParams_a5c467f6297663e0ed82c49d768bc3b12}{walkable\+Radius}
+\begin{DoxyCompactList}\small\item\em The agent radius. \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a2ccf071ca70fe5566ddd2f214bac7779}\label{structdtNavMeshCreateParams_a2ccf071ca70fe5566ddd2f214bac7779}} 
+float \hyperlink{structdtNavMeshCreateParams_a2ccf071ca70fe5566ddd2f214bac7779}{walkable\+Climb}
+\begin{DoxyCompactList}\small\item\em The agent maximum traversable ledge. (Up/\+Down) \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a2297125898dd39b19c515638d31cacfc}\label{structdtNavMeshCreateParams_a2297125898dd39b19c515638d31cacfc}} 
+float \hyperlink{structdtNavMeshCreateParams_a2297125898dd39b19c515638d31cacfc}{cs}
+\begin{DoxyCompactList}\small\item\em The xz-\/plane cell size of the polygon mesh. \mbox{[}Limit\+: $>$ 0\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtNavMeshCreateParams_aabc87cedcd783bdd16b8b4377fdb8ccf}\label{structdtNavMeshCreateParams_aabc87cedcd783bdd16b8b4377fdb8ccf}} 
+float \hyperlink{structdtNavMeshCreateParams_aabc87cedcd783bdd16b8b4377fdb8ccf}{ch}
+\begin{DoxyCompactList}\small\item\em The y-\/axis cell height of the polygon mesh. \mbox{[}Limit\+: $>$ 0\mbox{]} \mbox{[}Unit\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+bool \hyperlink{structdtNavMeshCreateParams_a3c0dab8176f42294bd87c07a4fcce519}{build\+Bv\+Tree}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Represents the source data used to build an navigation mesh tile.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This structure is used to marshal data between the Recast mesh generation pipeline and Detour navigation components.
+
+See the \hyperlink{structrcPolyMesh}{rc\+Poly\+Mesh} and \hyperlink{structrcPolyMeshDetail}{rc\+Poly\+Mesh\+Detail} documentation for detailed information related to mesh structure.
+
+Units are usually in voxels (vx) or world units (wu). The units for voxels, grid size, and cell size are all based on the values of \hyperlink{structdtNavMeshCreateParams_a2297125898dd39b19c515638d31cacfc}{cs} and \hyperlink{structdtNavMeshCreateParams_aabc87cedcd783bdd16b8b4377fdb8ccf}{ch}.
+
+The standard navigation mesh build process is to create tile data using dt\+Create\+Nav\+Mesh\+Data, then add the tile to a navigation mesh using either the \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} single tile {\ttfamily init()} function or the \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{dt\+Nav\+Mesh\+::add\+Tile()} function.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a3c0dab8176f42294bd87c07a4fcce519}\label{structdtNavMeshCreateParams_a3c0dab8176f42294bd87c07a4fcce519}} 
+\index{dt\+Nav\+Mesh\+Create\+Params@{dt\+Nav\+Mesh\+Create\+Params}!build\+Bv\+Tree@{build\+Bv\+Tree}}
+\index{build\+Bv\+Tree@{build\+Bv\+Tree}!dt\+Nav\+Mesh\+Create\+Params@{dt\+Nav\+Mesh\+Create\+Params}}
+\subsubsection{\texorpdfstring{build\+Bv\+Tree}{buildBvTree}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+Create\+Params\+::build\+Bv\+Tree}
+
+True if a bounding volume tree should be built for the tile. \begin{DoxyNote}{Note}
+The B\+V\+Tree is not normally needed for layered navigation meshes. 
+\end{DoxyNote}
+\mbox{\Hypertarget{structdtNavMeshCreateParams_a44a34e3c48ec498c7a84d01c2766000f}\label{structdtNavMeshCreateParams_a44a34e3c48ec498c7a84d01c2766000f}} 
+\index{dt\+Nav\+Mesh\+Create\+Params@{dt\+Nav\+Mesh\+Create\+Params}!off\+Mesh\+Con\+Dir@{off\+Mesh\+Con\+Dir}}
+\index{off\+Mesh\+Con\+Dir@{off\+Mesh\+Con\+Dir}!dt\+Nav\+Mesh\+Create\+Params@{dt\+Nav\+Mesh\+Create\+Params}}
+\subsubsection{\texorpdfstring{off\+Mesh\+Con\+Dir}{offMeshConDir}}
+{\footnotesize\ttfamily const unsigned char $\ast$ dt\+Nav\+Mesh\+Create\+Params\+::off\+Mesh\+Con\+Dir}
+
+The permitted travel direction of the off-\/mesh connections. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtNavMeshCreateParams_adf244929dceba81df29f80f8869097c0}{off\+Mesh\+Con\+Count}\mbox{]}
+
+0 = Travel only from endpoint A to endpoint B.~\newline
+ \#\+D\+T\+\_\+\+O\+F\+F\+M\+E\+S\+H\+\_\+\+C\+O\+N\+\_\+\+B\+I\+D\+IR = Bidirectional travel. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh\+Builder.\+h\end{DoxyCompactItemize}

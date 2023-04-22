@@ -1,0 +1,82 @@
+\hypertarget{Thread_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/src/\+Thread/\+Thread.hpp File Reference}
+\label{Thread_8hpp}\index{/home/pmx/git/\+P\+M\+X/src/\+Thread/\+Thread.\+hpp@{/home/pmx/git/\+P\+M\+X/src/\+Thread/\+Thread.\+hpp}}
+
+
+Définition de la classe Thread.  
+
+
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}Mutex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for Thread.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{Thread_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Thread_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classutils_1_1Thread}{utils\+::\+Thread}
+\begin{DoxyCompactList}\small\item\em Cette classe encapsule l\textquotesingle{}implémentation des threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Thread_8hpp_a4073afd616cd53cb7c5608976177c53e}\label{Thread_8hpp_a4073afd616cd53cb7c5608976177c53e}} 
+typedef pthread\+\_\+t {\bfseries utils\+::\+Thread\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}\label{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}} 
+enum \hyperlink{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}{utils\+::\+Thread\+State} \{ {\bfseries C\+R\+E\+A\+T\+ED}, 
+{\bfseries S\+T\+A\+R\+T\+I\+NG}, 
+{\bfseries S\+T\+A\+R\+T\+ED}, 
+{\bfseries S\+T\+O\+P\+P\+ED}
+ \}\begin{DoxyCompactList}\small\item\em Enumération des états des threads. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Thread_8hpp_ac714339512d6dc1ee14c5b5a92d535be}{utils\+::set\+\_\+realtime\+\_\+priority} (int p=0, std\+::string name=\char`\"{}\char`\"{}, Thread\+Id this\+\_\+thread=pthread\+\_\+self())
+\begin{DoxyCompactList}\small\item\em met la priorité du thread à 99 (max en S\+C\+H\+E\+D\+\_\+\+F\+I\+FO). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Thread_8hpp_a4f86fc4c334661a6995538cc080a40c9}\label{Thread_8hpp_a4f86fc4c334661a6995538cc080a40c9}} 
+void {\bfseries utils\+::sleep\+\_\+for\+\_\+micros} (int64\+\_\+t usec)
+\item 
+\mbox{\Hypertarget{Thread_8hpp_a1ade70582e50278926921bba958d53b6}\label{Thread_8hpp_a1ade70582e50278926921bba958d53b6}} 
+void {\bfseries utils\+::sleep\+\_\+for\+\_\+millis} (int64\+\_\+t msec)
+\item 
+\mbox{\Hypertarget{Thread_8hpp_a94517b51f04480fb5c8c082d04283fa0}\label{Thread_8hpp_a94517b51f04480fb5c8c082d04283fa0}} 
+void {\bfseries utils\+::sleep\+\_\+for\+\_\+secs} (int64\+\_\+t sec)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définition de la classe Thread. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Thread_8hpp_file_ac714339512d6dc1ee14c5b5a92d535be}\label{Thread_8hpp_file_ac714339512d6dc1ee14c5b5a92d535be}} 
+\index{Thread.\+hpp@{Thread.\+hpp}!set\+\_\+realtime\+\_\+priority@{set\+\_\+realtime\+\_\+priority}}
+\index{set\+\_\+realtime\+\_\+priority@{set\+\_\+realtime\+\_\+priority}!Thread.\+hpp@{Thread.\+hpp}}
+\subsubsection{\texorpdfstring{set\+\_\+realtime\+\_\+priority()}{set\_realtime\_priority()}}
+{\footnotesize\ttfamily int utils\+::set\+\_\+realtime\+\_\+priority (\begin{DoxyParamCaption}\item[{int}]{p = {\ttfamily 0},  }\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{Thread\+Id}]{this\+\_\+thread = {\ttfamily pthread\+\_\+self()} }\end{DoxyParamCaption})}
+
+
+
+met la priorité du thread à 99 (max en S\+C\+H\+E\+D\+\_\+\+F\+I\+FO). 
+
+Cette méthode met la plus haute priorité sur le thread courant. en dehors de la classe pour etre utiliser pour les autres threads (Prog princ et Logs, etc) \href{http://www.yonch.com/tech/82-linux-thread-priority}{\tt http\+://www.\+yonch.\+com/tech/82-\/linux-\/thread-\/priority} 

@@ -1,0 +1,320 @@
+\hypertarget{group__renderer}{}\section{Renderer}
+\label{group__renderer}\index{Renderer@{Renderer}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBatchCommand}{Batch\+Command}
+\item 
+class \hyperlink{classCustomCommand}{Custom\+Command}
+\item 
+struct \hyperlink{structVertexAttrib}{Vertex\+Attrib}
+\item 
+struct \hyperlink{structUniform}{Uniform}
+\item 
+class \hyperlink{classGLProgram}{G\+L\+Program}
+\item 
+class \hyperlink{classGLProgramCache}{G\+L\+Program\+Cache}
+\item 
+class \hyperlink{classUniformValue}{Uniform\+Value}
+\item 
+class \hyperlink{classVertexAttribValue}{Vertex\+Attrib\+Value}
+\item 
+class \hyperlink{classGLProgramState}{G\+L\+Program\+State}
+\item 
+class \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache}
+\item 
+class \hyperlink{classGroupCommandManager}{Group\+Command\+Manager}
+\item 
+class \hyperlink{classGroupCommand}{Group\+Command}
+\item 
+class \hyperlink{classPrimitive}{Primitive}
+\item 
+class \hyperlink{classPrimitiveCommand}{Primitive\+Command}
+\item 
+class \hyperlink{classQuadCommand}{Quad\+Command}
+\item 
+class \hyperlink{classRenderCommand}{Render\+Command}
+\item 
+class \hyperlink{classRenderQueue}{Render\+Queue}
+\item 
+struct \hyperlink{structRenderStackElement}{Render\+Stack\+Element}
+\item 
+class \hyperlink{classRenderer}{Renderer}
+\item 
+class \hyperlink{classTrianglesCommand}{Triangles\+Command}
+\item 
+class \hyperlink{classVertexBuffer}{Vertex\+Buffer}
+\item 
+class \hyperlink{classIndexBuffer}{Index\+Buffer}
+\item 
+struct \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute}
+\item 
+class \hyperlink{classVertexData}{Vertex\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__renderer_ga43f064a41d0e842a9d44cc240d3f02c7}\label{group__renderer_ga43f064a41d0e842a9d44cc240d3f02c7}} 
+typedef void($\ast$ {\bfseries G\+L\+Info\+Function}) (G\+Luint program, G\+Lenum pname, G\+Lint $\ast$params)
+\item 
+\mbox{\Hypertarget{group__renderer_ga4d3309d284a691b970161147abbf4c8f}\label{group__renderer_ga4d3309d284a691b970161147abbf4c8f}} 
+typedef void($\ast$ {\bfseries G\+L\+Log\+Function}) (G\+Luint program, G\+Lsizei bufsize, G\+Lsizei $\ast$length, G\+Lchar $\ast$infolog)
+\item 
+\mbox{\Hypertarget{group__renderer_ga43f064a41d0e842a9d44cc240d3f02c7}\label{group__renderer_ga43f064a41d0e842a9d44cc240d3f02c7}} 
+typedef void($\ast$ {\bfseries G\+L\+Info\+Function}) (G\+Luint program, G\+Lenum pname, G\+Lint $\ast$params)
+\item 
+\mbox{\Hypertarget{group__renderer_ga4d3309d284a691b970161147abbf4c8f}\label{group__renderer_ga4d3309d284a691b970161147abbf4c8f}} 
+typedef void($\ast$ {\bfseries G\+L\+Log\+Function}) (G\+Luint program, G\+Lsizei bufsize, G\+Lsizei $\ast$length, G\+Lchar $\ast$infolog)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+I\+T\+I\+ON} = 1 $<$$<$ 0, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+L\+OR} = 1 $<$$<$ 1, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+T\+E\+X\+\_\+\+C\+O\+O\+RD} = 1 $<$$<$ 2, 
+\newline
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+R\+M\+AL} = 1 $<$$<$ 3, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+B\+L\+E\+N\+D\+\_\+\+W\+E\+I\+G\+HT} = 1 $<$$<$ 4, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+B\+L\+E\+N\+D\+\_\+\+I\+N\+D\+EX} = 1 $<$$<$ 5, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+EX} = (V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+I\+T\+I\+ON $\vert$ V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+L\+OR $\vert$ V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+T\+E\+X\+\_\+\+C\+O\+O\+RD)
+ \}
+\item 
+enum \{ \newline
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+I\+T\+I\+ON} = 1 $<$$<$ 0, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+L\+OR} = 1 $<$$<$ 1, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+T\+E\+X\+\_\+\+C\+O\+O\+RD} = 1 $<$$<$ 2, 
+\newline
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+N\+O\+R\+M\+AL} = 1 $<$$<$ 3, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+B\+L\+E\+N\+D\+\_\+\+W\+E\+I\+G\+HT} = 1 $<$$<$ 4, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+B\+L\+E\+N\+D\+\_\+\+I\+N\+D\+EX} = 1 $<$$<$ 5, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+\_\+\+C\+O\+L\+O\+R\+\_\+\+T\+EX} = (V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+I\+T\+I\+ON $\vert$ V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+L\+OR $\vert$ V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+T\+E\+X\+\_\+\+C\+O\+O\+RD)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__renderer_gacde276633720dd2a8d95ae216caea11a}{G\+L\+::invalidate\+State\+Cache} (void)
+\item 
+void \hyperlink{group__renderer_ga9a278fd0f2e0e04afd32de3995fcf791}{G\+L\+::use\+Program} (G\+Luint program)
+\item 
+void \hyperlink{group__renderer_gaad6e1d3b388bf7c8825b304bf2baf14a}{G\+L\+::delete\+Program} (G\+Luint program)
+\item 
+void \hyperlink{group__renderer_ga9ecd3206eccd7de4f79d000a5ba7cb0c}{G\+L\+::blend\+Func} (G\+Lenum sfactor, G\+Lenum dfactor)
+\item 
+void \hyperlink{group__renderer_gab8d542e76939f243e7da00a8abb9a08c}{G\+L\+::blend\+Reset\+To\+Cache} (void)
+\item 
+void \hyperlink{group__renderer_ga76bea3d67ff1576fa108c8fc32a4e34d}{G\+L\+::set\+Projection\+Matrix\+Dirty} (void)
+\item 
+void \hyperlink{group__renderer_ga84757e12b5ee56e6e57ab3f4785c8c16}{G\+L\+::enable\+Vertex\+Attribs} (uint32\+\_\+t flags)
+\item 
+void \hyperlink{group__renderer_ga9cb186f49883ba35d09424da1797736f}{G\+L\+::bind\+Texture2D} (G\+Luint texture\+Id)
+\item 
+void \hyperlink{group__renderer_gaf0a8334fdbf6291ae3fac1ac005d60b7}{G\+L\+::bind\+Texture2D} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+void \hyperlink{group__renderer_gac77f4d272961392154fad22ab2801797}{G\+L\+::bind\+Texture2\+DN} (G\+Luint texture\+Unit, G\+Luint texture\+Id)
+\item 
+void \hyperlink{group__renderer_gac29040816c18820a701304e30ec5d88b}{G\+L\+::bind\+TextureN} (G\+Luint texture\+Unit, G\+Luint texture\+Id, G\+Luint texture\+Type)
+\item 
+void \hyperlink{group__renderer_gade1503e565e17f126d7b9e134c203fda}{G\+L\+::delete\+Texture} (G\+Luint texture\+Id)
+\item 
+void \hyperlink{group__renderer_ga37672bf0ea82a58b76da9aaf2e1708b8}{G\+L\+::delete\+TextureN} (G\+Luint texture\+Unit, G\+Luint texture\+Id)
+\item 
+void \hyperlink{group__renderer_ga2a75af9e657f32a5d6832a419118d449}{G\+L\+::active\+Texture} (G\+Lenum texture)
+\item 
+void \hyperlink{group__renderer_gafecfbac8accd7b77a5367e8555bbaec4}{G\+L\+::bind\+V\+AO} (G\+Luint vao\+Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__renderer_ga2b58b52face99869a0b7fb5eed3cb8ab}\label{group__renderer_ga2b58b52face99869a0b7fb5eed3cb8ab}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Vertex attrib flags. \mbox{\Hypertarget{group__renderer_ga7c96bf15d75342fb26c98e385011e936}\label{group__renderer_ga7c96bf15d75342fb26c98e385011e936}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Vertex attrib flags. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__renderer_ga2a75af9e657f32a5d6832a419118d449}\label{group__renderer_ga2a75af9e657f32a5d6832a419118d449}} 
+\index{Renderer@{Renderer}!active\+Texture@{active\+Texture}}
+\index{active\+Texture@{active\+Texture}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{active\+Texture()}{activeTexture()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::active\+Texture (\begin{DoxyParamCaption}\item[{G\+Lenum}]{texture }\end{DoxyParamCaption})}
+
+Select active texture unit.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Active\+Texture() directly. \begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga9cb186f49883ba35d09424da1797736f}\label{group__renderer_ga9cb186f49883ba35d09424da1797736f}} 
+\index{Renderer@{Renderer}!bind\+Texture2D@{bind\+Texture2D}}
+\index{bind\+Texture2D@{bind\+Texture2D}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{bind\+Texture2\+D()}{bindTexture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::bind\+Texture2D (\begin{DoxyParamCaption}\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+If the texture is not already bound to texture unit 0, it binds it.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Bind\+Texture() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gaf0a8334fdbf6291ae3fac1ac005d60b7}\label{group__renderer_gaf0a8334fdbf6291ae3fac1ac005d60b7}} 
+\index{Renderer@{Renderer}!bind\+Texture2D@{bind\+Texture2D}}
+\index{bind\+Texture2D@{bind\+Texture2D}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{bind\+Texture2\+D()}{bindTexture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::bind\+Texture2D (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+If the texture is not already bound to texture unit 0, it binds it.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Bind\+Texture() directly.
+
+\begin{DoxyRemark}{Remarks}
+\+: It will bind alpha texture to support E\+T\+C1 alpha channel. 
+\end{DoxyRemark}
+\begin{DoxySince}{Since}
+v3.\+13 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gac77f4d272961392154fad22ab2801797}\label{group__renderer_gac77f4d272961392154fad22ab2801797}} 
+\index{Renderer@{Renderer}!bind\+Texture2\+DN@{bind\+Texture2\+DN}}
+\index{bind\+Texture2\+DN@{bind\+Texture2\+DN}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{bind\+Texture2\+D\+N()}{bindTexture2DN()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::bind\+Texture2\+DN (\begin{DoxyParamCaption}\item[{G\+Luint}]{texture\+Unit,  }\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+If the texture is not already bound to a given unit, it binds it.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Bind\+Texture() directly. \begin{DoxySince}{Since}
+v2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gac29040816c18820a701304e30ec5d88b}\label{group__renderer_gac29040816c18820a701304e30ec5d88b}} 
+\index{Renderer@{Renderer}!bind\+TextureN@{bind\+TextureN}}
+\index{bind\+TextureN@{bind\+TextureN}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{bind\+Texture\+N()}{bindTextureN()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::bind\+TextureN (\begin{DoxyParamCaption}\item[{G\+Luint}]{texture\+Unit,  }\item[{G\+Luint}]{texture\+Id,  }\item[{G\+Luint}]{texture\+Type = {\ttfamily GL\+\_\+TEXTURE\+\_\+2D} }\end{DoxyParamCaption})}
+
+If the texture is not already bound to a given unit, it binds it. If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Bind\+Texture() directly. \begin{DoxySince}{Since}
+v3.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gafecfbac8accd7b77a5367e8555bbaec4}\label{group__renderer_gafecfbac8accd7b77a5367e8555bbaec4}} 
+\index{Renderer@{Renderer}!bind\+V\+AO@{bind\+V\+AO}}
+\index{bind\+V\+AO@{bind\+V\+AO}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{bind\+V\+A\+O()}{bindVAO()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::bind\+V\+AO (\begin{DoxyParamCaption}\item[{G\+Luint}]{vao\+Id }\end{DoxyParamCaption})}
+
+If the vertex array is not already bound, it binds it.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Bind\+Vertex\+Array() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga9ecd3206eccd7de4f79d000a5ba7cb0c}\label{group__renderer_ga9ecd3206eccd7de4f79d000a5ba7cb0c}} 
+\index{Renderer@{Renderer}!blend\+Func@{blend\+Func}}
+\index{blend\+Func@{blend\+Func}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{blend\+Func()}{blendFunc()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::blend\+Func (\begin{DoxyParamCaption}\item[{G\+Lenum}]{sfactor,  }\item[{G\+Lenum}]{dfactor }\end{DoxyParamCaption})}
+
+Uses a blending function in case it not already used.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will the gl\+Blend\+Func() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gab8d542e76939f243e7da00a8abb9a08c}\label{group__renderer_gab8d542e76939f243e7da00a8abb9a08c}} 
+\index{Renderer@{Renderer}!blend\+Reset\+To\+Cache@{blend\+Reset\+To\+Cache}}
+\index{blend\+Reset\+To\+Cache@{blend\+Reset\+To\+Cache}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{blend\+Reset\+To\+Cache()}{blendResetToCache()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::blend\+Reset\+To\+Cache (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Resets the blending mode back to the cached state in case you used gl\+Blend\+Func\+Separate() or gl\+Blend\+Equation().
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will just set the default blending mode using G\+L\+\_\+\+F\+U\+N\+C\+\_\+\+A\+DD. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gaad6e1d3b388bf7c8825b304bf2baf14a}\label{group__renderer_gaad6e1d3b388bf7c8825b304bf2baf14a}} 
+\index{Renderer@{Renderer}!delete\+Program@{delete\+Program}}
+\index{delete\+Program@{delete\+Program}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{delete\+Program()}{deleteProgram()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::delete\+Program (\begin{DoxyParamCaption}\item[{G\+Luint}]{program }\end{DoxyParamCaption})}
+
+Deletes the GL program. If it is the one that is being used, it invalidates it.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will the gl\+Delete\+Program() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gade1503e565e17f126d7b9e134c203fda}\label{group__renderer_gade1503e565e17f126d7b9e134c203fda}} 
+\index{Renderer@{Renderer}!delete\+Texture@{delete\+Texture}}
+\index{delete\+Texture@{delete\+Texture}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{delete\+Texture()}{deleteTexture()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::delete\+Texture (\begin{DoxyParamCaption}\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+It will delete a given texture. If the texture was bound, it will invalidate the cached.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Delete\+Textures() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga37672bf0ea82a58b76da9aaf2e1708b8}\label{group__renderer_ga37672bf0ea82a58b76da9aaf2e1708b8}} 
+\index{Renderer@{Renderer}!delete\+TextureN@{delete\+TextureN}}
+\index{delete\+TextureN@{delete\+TextureN}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{delete\+Texture\+N()}{deleteTextureN()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL G\+L\+::delete\+TextureN (\begin{DoxyParamCaption}\item[{G\+Luint}]{texture\+Unit,  }\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+It will delete a given texture. If the texture was bound, it will invalidate the cached for the given texture unit.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will call gl\+Delete\+Textures() directly. \begin{DoxySince}{Since}
+v2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga84757e12b5ee56e6e57ab3f4785c8c16}\label{group__renderer_ga84757e12b5ee56e6e57ab3f4785c8c16}} 
+\index{Renderer@{Renderer}!enable\+Vertex\+Attribs@{enable\+Vertex\+Attribs}}
+\index{enable\+Vertex\+Attribs@{enable\+Vertex\+Attribs}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{enable\+Vertex\+Attribs()}{enableVertexAttribs()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::enable\+Vertex\+Attribs (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+Will enable the vertex attribs that are passed as flags. Possible flags\+:
+
+
+\begin{DoxyItemize}
+\item V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+S\+I\+T\+I\+ON
+\item V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+L\+OR
+\item V\+E\+R\+T\+E\+X\+\_\+\+A\+T\+T\+R\+I\+B\+\_\+\+F\+L\+A\+G\+\_\+\+T\+E\+X\+\_\+\+C\+O\+O\+R\+DS
+\end{DoxyItemize}
+
+These flags can be O\+Red. The flags that are not present, will be disabled.
+
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_gacde276633720dd2a8d95ae216caea11a}\label{group__renderer_gacde276633720dd2a8d95ae216caea11a}} 
+\index{Renderer@{Renderer}!invalidate\+State\+Cache@{invalidate\+State\+Cache}}
+\index{invalidate\+State\+Cache@{invalidate\+State\+Cache}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{invalidate\+State\+Cache()}{invalidateStateCache()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::invalidate\+State\+Cache (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Invalidates the GL state cache.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE it will reset the GL state cache. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga76bea3d67ff1576fa108c8fc32a4e34d}\label{group__renderer_ga76bea3d67ff1576fa108c8fc32a4e34d}} 
+\index{Renderer@{Renderer}!set\+Projection\+Matrix\+Dirty@{set\+Projection\+Matrix\+Dirty}}
+\index{set\+Projection\+Matrix\+Dirty@{set\+Projection\+Matrix\+Dirty}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{set\+Projection\+Matrix\+Dirty()}{setProjectionMatrixDirty()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::set\+Projection\+Matrix\+Dirty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Sets the projection matrix as dirty. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{group__renderer_ga9a278fd0f2e0e04afd32de3995fcf791}\label{group__renderer_ga9a278fd0f2e0e04afd32de3995fcf791}} 
+\index{Renderer@{Renderer}!use\+Program@{use\+Program}}
+\index{use\+Program@{use\+Program}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{use\+Program()}{useProgram()}}
+{\footnotesize\ttfamily void C\+C\+\_\+\+D\+LL G\+L\+::use\+Program (\begin{DoxyParamCaption}\item[{G\+Luint}]{program }\end{DoxyParamCaption})}
+
+Uses the GL program in case program is different than the current one.
+
+If C\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+A\+C\+HE is disabled, it will the gl\+Use\+Program() directly. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}

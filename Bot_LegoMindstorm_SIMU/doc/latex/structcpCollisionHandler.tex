@@ -1,0 +1,71 @@
+\hypertarget{structcpCollisionHandler}{}\section{cp\+Collision\+Handler Struct Reference}
+\label{structcpCollisionHandler}\index{cp\+Collision\+Handler@{cp\+Collision\+Handler}}
+
+
+{\ttfamily \#include $<$cp\+Space.\+h$>$}
+
+
+
+Collaboration diagram for cp\+Collision\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcpCollisionHandler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} \hyperlink{structcpCollisionHandler_a07bbc9d26af9d41cc87bae6514930d9f}{typeA}
+\item 
+const \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} \hyperlink{structcpCollisionHandler_a7f9def10b179d18de37bec5b3c6d8621}{typeB}
+\item 
+\mbox{\Hypertarget{structcpCollisionHandler_a64f552c94d44dfd3844869ea9dada78f}\label{structcpCollisionHandler_a64f552c94d44dfd3844869ea9dada78f}} 
+\hyperlink{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}{cp\+Collision\+Begin\+Func} \hyperlink{structcpCollisionHandler_a64f552c94d44dfd3844869ea9dada78f}{begin\+Func}
+\begin{DoxyCompactList}\small\item\em This function is called when two shapes with types that match this collision handler begin colliding. \end{DoxyCompactList}\item 
+\hyperlink{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}{cp\+Collision\+Pre\+Solve\+Func} \hyperlink{structcpCollisionHandler_aff35bdeedae80600cbbb1a68682a7431}{pre\+Solve\+Func}
+\item 
+\hyperlink{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}{cp\+Collision\+Post\+Solve\+Func} \hyperlink{structcpCollisionHandler_adc3df1896d48519cc5359c51bd67ac98}{post\+Solve\+Func}
+\item 
+\mbox{\Hypertarget{structcpCollisionHandler_a1823a67807ba11b1bae7f41024cd6ce0}\label{structcpCollisionHandler_a1823a67807ba11b1bae7f41024cd6ce0}} 
+\hyperlink{group__cpSpace_ga01427ab634c483879cfed5bb22610487}{cp\+Collision\+Separate\+Func} \hyperlink{structcpCollisionHandler_a1823a67807ba11b1bae7f41024cd6ce0}{separate\+Func}
+\begin{DoxyCompactList}\small\item\em This function is called when two shapes with types that match this collision handler stop colliding. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpCollisionHandler_af2b874e87431e407a4045cb90d999b8a}\label{structcpCollisionHandler_af2b874e87431e407a4045cb90d999b8a}} 
+\hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{structcpCollisionHandler_af2b874e87431e407a4045cb90d999b8a}{user\+Data}
+\begin{DoxyCompactList}\small\item\em This is a user definable context pointer that is passed to all of the collision handler functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct that holds function callback pointers to configure custom collision handling. Collision handlers have a pair of types; when a collision occurs between two shapes that have these types, the collision handler functions are triggered. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structcpCollisionHandler_adc3df1896d48519cc5359c51bd67ac98}\label{structcpCollisionHandler_adc3df1896d48519cc5359c51bd67ac98}} 
+\index{cp\+Collision\+Handler@{cp\+Collision\+Handler}!post\+Solve\+Func@{post\+Solve\+Func}}
+\index{post\+Solve\+Func@{post\+Solve\+Func}!cp\+Collision\+Handler@{cp\+Collision\+Handler}}
+\subsubsection{\texorpdfstring{post\+Solve\+Func}{postSolveFunc}}
+{\footnotesize\ttfamily \hyperlink{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}{cp\+Collision\+Post\+Solve\+Func} cp\+Collision\+Handler\+::post\+Solve\+Func}
+
+This function is called each step when two shapes with types that match this collision handler are colliding. It\textquotesingle{}s called after the collision solver runs so that you can read back information about the collision to trigger events in your game. \mbox{\Hypertarget{structcpCollisionHandler_aff35bdeedae80600cbbb1a68682a7431}\label{structcpCollisionHandler_aff35bdeedae80600cbbb1a68682a7431}} 
+\index{cp\+Collision\+Handler@{cp\+Collision\+Handler}!pre\+Solve\+Func@{pre\+Solve\+Func}}
+\index{pre\+Solve\+Func@{pre\+Solve\+Func}!cp\+Collision\+Handler@{cp\+Collision\+Handler}}
+\subsubsection{\texorpdfstring{pre\+Solve\+Func}{preSolveFunc}}
+{\footnotesize\ttfamily \hyperlink{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}{cp\+Collision\+Pre\+Solve\+Func} cp\+Collision\+Handler\+::pre\+Solve\+Func}
+
+This function is called each step when two shapes with types that match this collision handler are colliding. It\textquotesingle{}s called before the collision solver runs so that you can affect a collision\textquotesingle{}s outcome. \mbox{\Hypertarget{structcpCollisionHandler_a07bbc9d26af9d41cc87bae6514930d9f}\label{structcpCollisionHandler_a07bbc9d26af9d41cc87bae6514930d9f}} 
+\index{cp\+Collision\+Handler@{cp\+Collision\+Handler}!typeA@{typeA}}
+\index{typeA@{typeA}!cp\+Collision\+Handler@{cp\+Collision\+Handler}}
+\subsubsection{\texorpdfstring{typeA}{typeA}}
+{\footnotesize\ttfamily const \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} cp\+Collision\+Handler\+::typeA}
+
+Collision type identifier of the first shape that this handler recognizes. In the collision handler callback, the shape with this type will be the first argument. Read only. \mbox{\Hypertarget{structcpCollisionHandler_a7f9def10b179d18de37bec5b3c6d8621}\label{structcpCollisionHandler_a7f9def10b179d18de37bec5b3c6d8621}} 
+\index{cp\+Collision\+Handler@{cp\+Collision\+Handler}!typeB@{typeB}}
+\index{typeB@{typeB}!cp\+Collision\+Handler@{cp\+Collision\+Handler}}
+\subsubsection{\texorpdfstring{typeB}{typeB}}
+{\footnotesize\ttfamily const \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} cp\+Collision\+Handler\+::typeB}
+
+Collision type identifier of the second shape that this handler recognizes. In the collision handler callback, the shape with this type will be the second argument. Read only. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/chipmunk/include/chipmunk/cp\+Space.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,927 @@
+\hypertarget{classControl}{}\section{Control Class Reference}
+\label{classControl}\index{Control@{Control}}
+
+
+Inheritance diagram for Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State} \{ \newline
+{\bfseries N\+O\+R\+M\+AL} = 1 $<$$<$ 0, 
+{\bfseries H\+I\+G\+H\+\_\+\+L\+I\+G\+H\+T\+ED} = 1 $<$$<$ 1, 
+{\bfseries D\+I\+S\+A\+B\+L\+ED} = 1 $<$$<$ 2, 
+{\bfseries S\+E\+L\+E\+C\+T\+ED} = 1 $<$$<$ 3, 
+\newline
+{\bfseries N\+O\+R\+M\+AL} = 1 $<$$<$ 0, 
+{\bfseries H\+I\+G\+H\+\_\+\+L\+I\+G\+H\+T\+ED} = 1 $<$$<$ 1, 
+{\bfseries D\+I\+S\+A\+B\+L\+ED} = 1 $<$$<$ 2, 
+{\bfseries S\+E\+L\+E\+C\+T\+ED} = 1 $<$$<$ 3
+ \}
+\item 
+enum \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State} \{ \newline
+{\bfseries N\+O\+R\+M\+AL} = 1 $<$$<$ 0, 
+{\bfseries H\+I\+G\+H\+\_\+\+L\+I\+G\+H\+T\+ED} = 1 $<$$<$ 1, 
+{\bfseries D\+I\+S\+A\+B\+L\+ED} = 1 $<$$<$ 2, 
+{\bfseries S\+E\+L\+E\+C\+T\+ED} = 1 $<$$<$ 3, 
+\newline
+{\bfseries N\+O\+R\+M\+AL} = 1 $<$$<$ 0, 
+{\bfseries H\+I\+G\+H\+\_\+\+L\+I\+G\+H\+T\+ED} = 1 $<$$<$ 1, 
+{\bfseries D\+I\+S\+A\+B\+L\+ED} = 1 $<$$<$ 2, 
+{\bfseries S\+E\+L\+E\+C\+T\+ED} = 1 $<$$<$ 3
+ \}
+\item 
+\mbox{\Hypertarget{classControl_a1ced3b5c18cb6e7fbe0ac07b89459281}\label{classControl_a1ced3b5c18cb6e7fbe0ac07b89459281}} 
+typedef void(Ref\+::$\ast$ {\bfseries Handler}) (\hyperlink{classRef}{Ref} $\ast$, Event\+Type)
+\item 
+\mbox{\Hypertarget{classControl_a1ced3b5c18cb6e7fbe0ac07b89459281}\label{classControl_a1ced3b5c18cb6e7fbe0ac07b89459281}} 
+typedef void(Ref\+::$\ast$ {\bfseries Handler}) (\hyperlink{classRef}{Ref} $\ast$, Event\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classControl_a55339ae920182245d5ec114c33f4b1fd}{set\+Enabled} (bool b\+Enabled)
+\item 
+\mbox{\Hypertarget{classControl_afd13dfa538cb1f633addd674122fbabb}\label{classControl_afd13dfa538cb1f633addd674122fbabb}} 
+virtual bool {\bfseries is\+Enabled} () const
+\item 
+virtual void \hyperlink{classControl_ab35419d8bb194f540e838a3b796258a7}{set\+Selected} (bool b\+Selected)
+\item 
+\mbox{\Hypertarget{classControl_acc4cfd9cbdf08043229968a83c40658d}\label{classControl_acc4cfd9cbdf08043229968a83c40658d}} 
+virtual bool {\bfseries is\+Selected} () const
+\item 
+virtual void \hyperlink{classControl_a8bde57862133c06d64178fb1a0c31e8b}{set\+Highlighted} (bool b\+Highlighted)
+\item 
+\mbox{\Hypertarget{classControl_af9db79603d54c306120f6d14b4311e7a}\label{classControl_af9db79603d54c306120f6d14b4311e7a}} 
+virtual bool {\bfseries is\+Highlighted} () const
+\item 
+\mbox{\Hypertarget{classControl_a9626a1e74663b29a5e7f92d9327d547d}\label{classControl_a9626a1e74663b29a5e7f92d9327d547d}} 
+bool {\bfseries has\+Visible\+Parents} () const
+\item 
+virtual void \hyperlink{classControl_aa3c7bd1c9d2a072c037c6c9232a336a5}{needs\+Layout} ()
+\item 
+virtual void \hyperlink{classControl_a6a4b1643e8d9ea6f264f1f024760993c}{send\+Actions\+For\+Control\+Events} (Event\+Type control\+Events)
+\item 
+virtual void \hyperlink{classControl_a114b797f68cc42e3aaabccd0339d7216}{add\+Target\+With\+Action\+For\+Control\+Events} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Events)
+\item 
+virtual void \hyperlink{classControl_a1f51f2eaea29c66c58f60fbee9c35e10}{remove\+Target\+With\+Action\+For\+Control\+Events} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Events)
+\item 
+virtual \hyperlink{classVec2}{Vec2} \hyperlink{classControl_ab0067c6aeb440e1d42d6ebef4d85cd5c}{get\+Touch\+Location} (\hyperlink{classTouch}{Touch} $\ast$touch)
+\item 
+virtual bool \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classControl_a573efad6a6b492f4a6f4c5d06f0cdb88}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual bool \hyperlink{classControl_a897865e3e4ff50ed827f33966e786c7f}{is\+Touch\+Inside} (\hyperlink{classTouch}{Touch} $\ast$touch)
+\item 
+virtual bool \hyperlink{classControl_af7a191cace0c56d1dae182716c0e8150}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+virtual void \hyperlink{classControl_ad2bebed567807e1e309513666f67ad5e}{set\+Opacity\+Modify\+R\+GB} (bool b\+Opacity\+Modify\+R\+GB) override
+\item 
+virtual \hyperlink{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}{$\sim$\+Control} ()
+\item 
+\mbox{\Hypertarget{classControl_a9c737d37757931b7d397b3e4e005f4f1}\label{classControl_a9c737d37757931b7d397b3e4e005f4f1}} 
+virtual bool {\bfseries init} (void) override
+\item 
+virtual void \hyperlink{classControl_acf90798c4ddf200abae8b909c029c7ab}{set\+Enabled} (bool b\+Enabled)
+\item 
+\mbox{\Hypertarget{classControl_a42eedcd952b8fa860e98054ae72981be}\label{classControl_a42eedcd952b8fa860e98054ae72981be}} 
+virtual bool {\bfseries is\+Enabled} () const
+\item 
+virtual void \hyperlink{classControl_a05f31c82f5ba3bb758d320f59c404555}{set\+Selected} (bool b\+Selected)
+\item 
+\mbox{\Hypertarget{classControl_a481f8fa4063c42a615cedc1f9356d9f5}\label{classControl_a481f8fa4063c42a615cedc1f9356d9f5}} 
+virtual bool {\bfseries is\+Selected} () const
+\item 
+virtual void \hyperlink{classControl_a97602b469ae5f085cd604b9bf50732c3}{set\+Highlighted} (bool b\+Highlighted)
+\item 
+\mbox{\Hypertarget{classControl_a02f19bf2478c4dfa658ec1af96018ee5}\label{classControl_a02f19bf2478c4dfa658ec1af96018ee5}} 
+virtual bool {\bfseries is\+Highlighted} () const
+\item 
+\mbox{\Hypertarget{classControl_a9626a1e74663b29a5e7f92d9327d547d}\label{classControl_a9626a1e74663b29a5e7f92d9327d547d}} 
+bool {\bfseries has\+Visible\+Parents} () const
+\item 
+virtual void \hyperlink{classControl_ac4ef8db3d2c65c2cd9c9c7c79c402b0a}{needs\+Layout} ()
+\item 
+virtual void \hyperlink{classControl_a5b70b945b2bdf48f7f42d9e53a675d90}{send\+Actions\+For\+Control\+Events} (Event\+Type control\+Events)
+\item 
+virtual void \hyperlink{classControl_af4a3ac51c41436945cc755532700f401}{add\+Target\+With\+Action\+For\+Control\+Events} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Events)
+\item 
+virtual void \hyperlink{classControl_ac78a278c747454c5fa2db5039078dd1a}{remove\+Target\+With\+Action\+For\+Control\+Events} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Events)
+\item 
+virtual \hyperlink{classVec2}{Vec2} \hyperlink{classControl_a226571b3103cb3289779243fee7f360b}{get\+Touch\+Location} (\hyperlink{classTouch}{Touch} $\ast$touch)
+\item 
+virtual bool \hyperlink{classControl_acdbc84186be785b6e2970c93f4252b72}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControl_a98c8b1c7d2a15318ca720b5a398fbb14}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classControl_af31a373d40a3181e2a97f0f9dc85c1f8}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classControl_ab7fb8582f430d82180dbefea27c4cff9}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual bool \hyperlink{classControl_af493eab0c7b003e9f18816d88c079952}{is\+Touch\+Inside} (\hyperlink{classTouch}{Touch} $\ast$touch)
+\item 
+virtual bool \hyperlink{classControl_ac49bc0859aade4ad1ab6311941b4207a}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+virtual void \hyperlink{classControl_afc69bf17ee302a8efd9db70d5bb4c5b7}{set\+Opacity\+Modify\+R\+GB} (bool b\+Opacity\+Modify\+R\+GB) override
+\item 
+virtual \hyperlink{classControl_a51dc2be00da24c37b12ac74ef654e478}{$\sim$\+Control} ()
+\item 
+\mbox{\Hypertarget{classControl_a4a1c8bd0e7c04c8d73f1abff3c26eb8e}\label{classControl_a4a1c8bd0e7c04c8d73f1abff3c26eb8e}} 
+virtual bool {\bfseries init} (void) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classControl}{Control} $\ast$ \hyperlink{classControl_adeb76cd686f2524adbc38df9ad345c9f}{create} ()
+\item 
+static \hyperlink{classControl}{Control} $\ast$ \hyperlink{classControl_ae8c17a434d15e570a1a3eb4900ee43e2}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classControl_aa66ac25a8c28e56deba52c35df0c672b}\label{classControl_aa66ac25a8c28e56deba52c35df0c672b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classControl}{Control}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classInvocation}{Invocation} $\ast$ \hyperlink{classControl_ae35212919d503228bb80a704d889f58d}{invocation\+With\+Target\+And\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classInvocation}{Invocation} $\ast$ $>$ \& \hyperlink{classControl_a95705570ef1f7fe00be96c0fe213fb6e}{dispatch\+Listfor\+Control\+Event} (Event\+Type control\+Event)
+\item 
+void \hyperlink{classControl_a4a9e5a69a7797b8bb92e1287418952cc}{add\+Target\+With\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+void \hyperlink{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}{remove\+Target\+With\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+\hyperlink{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY} (\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}, \+\_\+state, \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State})
+\item 
+\hyperlink{classInvocation}{Invocation} $\ast$ \hyperlink{classControl_ae35212919d503228bb80a704d889f58d}{invocation\+With\+Target\+And\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classInvocation}{Invocation} $\ast$ $>$ \& \hyperlink{classControl_af4f74a6a0db957e71a1718aa8513c2ae}{dispatch\+Listfor\+Control\+Event} (Event\+Type control\+Event)
+\item 
+void \hyperlink{classControl_a4a9e5a69a7797b8bb92e1287418952cc}{add\+Target\+With\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+void \hyperlink{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}{remove\+Target\+With\+Action\+For\+Control\+Event} (\hyperlink{classRef}{Ref} $\ast$target, Handler action, Event\+Type control\+Event)
+\item 
+\hyperlink{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY} (\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}, \+\_\+state, \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classControl_a49248afb39cb0f77fb36080d8f84a7f7}\label{classControl_a49248afb39cb0f77fb36080d8f84a7f7}} 
+bool {\bfseries \+\_\+enabled}
+\item 
+\mbox{\Hypertarget{classControl_a82f1272cb7e7864a063af5967ed541fe}\label{classControl_a82f1272cb7e7864a063af5967ed541fe}} 
+bool {\bfseries \+\_\+selected}
+\item 
+\mbox{\Hypertarget{classControl_a51a9353eb4275efc1f5b8a441fc671fc}\label{classControl_a51a9353eb4275efc1f5b8a441fc671fc}} 
+bool {\bfseries \+\_\+highlighted}
+\item 
+bool \hyperlink{classControl_a220d7ad63279b15d0eed92eec97d8020}{\+\_\+has\+Visible\+Parents}
+\item 
+std\+::unordered\+\_\+map$<$ int, \hyperlink{classVector}{Vector}$<$ \hyperlink{classInvocation}{Invocation} $\ast$ $>$ $\ast$ $>$ \hyperlink{classControl_ae60bdd523e1a0ffd80cc2be6d73adc74}{\+\_\+dispatch\+Table}
+\item 
+\mbox{\Hypertarget{classControl_a3692a2c55bccc7b67b4a1e90d61719bb}\label{classControl_a3692a2c55bccc7b67b4a1e90d61719bb}} 
+bool {\bfseries \+\_\+is\+Opacity\+Modify\+R\+GB}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classControl_a89e9598cd785841ac91cff3c4798c469}\label{classControl_a89e9598cd785841ac91cff3c4798c469}} 
+\index{Control@{Control}!State@{State}}
+\index{State@{State}!Control@{Control}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{Control\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The possible state for a control. \mbox{\Hypertarget{classControl_a89e9598cd785841ac91cff3c4798c469}\label{classControl_a89e9598cd785841ac91cff3c4798c469}} 
+\index{Control@{Control}!State@{State}}
+\index{State@{State}!Control@{Control}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{Control\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The possible state for a control. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}\label{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}} 
+\index{Control@{Control}!````~Control@{$\sim$\+Control}}
+\index{````~Control@{$\sim$\+Control}!Control@{Control}}
+\subsubsection{\texorpdfstring{$\sim$\+Control()}{~Control()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+::$\sim$\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classControl_a51dc2be00da24c37b12ac74ef654e478}\label{classControl_a51dc2be00da24c37b12ac74ef654e478}} 
+\index{Control@{Control}!````~Control@{$\sim$\+Control}}
+\index{````~Control@{$\sim$\+Control}!Control@{Control}}
+\subsubsection{\texorpdfstring{$\sim$\+Control()}{~Control()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Control\+::$\sim$\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classControl_a4a9e5a69a7797b8bb92e1287418952cc}\label{classControl_a4a9e5a69a7797b8bb92e1287418952cc}} 
+\index{Control@{Control}!add\+Target\+With\+Action\+For\+Control\+Event@{add\+Target\+With\+Action\+For\+Control\+Event}}
+\index{add\+Target\+With\+Action\+For\+Control\+Event@{add\+Target\+With\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{add\+Target\+With\+Action\+For\+Control\+Event()}{addTargetWithActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::add\+Target\+With\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Adds a target and action for a particular event to an internal dispatch table. The action message may optionally include the sender and the event as parameters, in that order. When you call this method, target is not retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. It cannot be nil. The target is not retained. \\
+\hline
+{\em action} & A selector identifying an action message. It cannot be N\+U\+LL. \\
+\hline
+{\em control\+Event} & A control event for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants.\\
+\hline
+\end{DoxyParams}
+Adds a target and action for a particular event to an internal dispatch table. The action message may optionally include the sender and the event as parameters, in that order. When you call this method, target is not retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. It cannot be nil. The target is not retained. \\
+\hline
+{\em action} & A selector identifying an action message. It cannot be nullptr. \\
+\hline
+{\em control\+Event} & A control event for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a4a9e5a69a7797b8bb92e1287418952cc}\label{classControl_a4a9e5a69a7797b8bb92e1287418952cc}} 
+\index{Control@{Control}!add\+Target\+With\+Action\+For\+Control\+Event@{add\+Target\+With\+Action\+For\+Control\+Event}}
+\index{add\+Target\+With\+Action\+For\+Control\+Event@{add\+Target\+With\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{add\+Target\+With\+Action\+For\+Control\+Event()}{addTargetWithActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+::add\+Target\+With\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Adds a target and action for a particular event to an internal dispatch table. The action message may optionally include the sender and the event as parameters, in that order. When you call this method, target is not retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. It cannot be nil. The target is not retained. \\
+\hline
+{\em action} & A selector identifying an action message. It cannot be N\+U\+LL. \\
+\hline
+{\em control\+Event} & A control event for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a114b797f68cc42e3aaabccd0339d7216}\label{classControl_a114b797f68cc42e3aaabccd0339d7216}} 
+\index{Control@{Control}!add\+Target\+With\+Action\+For\+Control\+Events@{add\+Target\+With\+Action\+For\+Control\+Events}}
+\index{add\+Target\+With\+Action\+For\+Control\+Events@{add\+Target\+With\+Action\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{add\+Target\+With\+Action\+For\+Control\+Events()}{addTargetWithActionForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::add\+Target\+With\+Action\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a target and action for a particular event (or events) to an internal dispatch table. The action message may optionally include the sender and the event as parameters, in that order. When you call this method, target is not retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. It cannot be nil. The target is not retained. \\
+\hline
+{\em action} & A selector identifying an action message. It cannot be N\+U\+LL. \\
+\hline
+{\em control\+Events} & A bitmask specifying the control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_af4a3ac51c41436945cc755532700f401}\label{classControl_af4a3ac51c41436945cc755532700f401}} 
+\index{Control@{Control}!add\+Target\+With\+Action\+For\+Control\+Events@{add\+Target\+With\+Action\+For\+Control\+Events}}
+\index{add\+Target\+With\+Action\+For\+Control\+Events@{add\+Target\+With\+Action\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{add\+Target\+With\+Action\+For\+Control\+Events()}{addTargetWithActionForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::add\+Target\+With\+Action\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a target and action for a particular event (or events) to an internal dispatch table. The action message may optionally include the sender and the event as parameters, in that order. When you call this method, target is not retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. It cannot be nil. The target is not retained. \\
+\hline
+{\em action} & A selector identifying an action message. It cannot be N\+U\+LL. \\
+\hline
+{\em control\+Events} & A bitmask specifying the control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}\label{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}} 
+\index{Control@{Control}!C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY@{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY}}
+\index{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY@{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY}!Control@{Control}}
+\subsubsection{\texorpdfstring{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+L\+Y()}{CC\_SYNTHESIZE\_READONLY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+::\+C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY (\begin{DoxyParamCaption}\item[{\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}}]{,  }\item[{\+\_\+state}]{,  }\item[{\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The current control state constant. \mbox{\Hypertarget{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}\label{classControl_a1a982733d5a0a9c39e3d6e7b64a188f4}} 
+\index{Control@{Control}!C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY@{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY}}
+\index{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY@{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY}!Control@{Control}}
+\subsubsection{\texorpdfstring{C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+L\+Y()}{CC\_SYNTHESIZE\_READONLY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Control\+::\+C\+C\+\_\+\+S\+Y\+N\+T\+H\+E\+S\+I\+Z\+E\+\_\+\+R\+E\+A\+D\+O\+N\+LY (\begin{DoxyParamCaption}\item[{\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}}]{,  }\item[{\+\_\+state}]{,  }\item[{\hyperlink{classControl_a89e9598cd785841ac91cff3c4798c469}{State}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The current control state constant. \mbox{\Hypertarget{classControl_adeb76cd686f2524adbc38df9ad345c9f}\label{classControl_adeb76cd686f2524adbc38df9ad345c9f}} 
+\index{Control@{Control}!create@{create}}
+\index{create@{create}!Control@{Control}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classControl}{Control} $\ast$ Control\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classControl}{Control} object \mbox{\Hypertarget{classControl_ae8c17a434d15e570a1a3eb4900ee43e2}\label{classControl_ae8c17a434d15e570a1a3eb4900ee43e2}} 
+\index{Control@{Control}!create@{create}}
+\index{create@{create}!Control@{Control}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classControl}{Control}$\ast$ Control\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classControl}{Control} object \mbox{\Hypertarget{classControl_a95705570ef1f7fe00be96c0fe213fb6e}\label{classControl_a95705570ef1f7fe00be96c0fe213fb6e}} 
+\index{Control@{Control}!dispatch\+Listfor\+Control\+Event@{dispatch\+Listfor\+Control\+Event}}
+\index{dispatch\+Listfor\+Control\+Event@{dispatch\+Listfor\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{dispatch\+Listfor\+Control\+Event()}{dispatchListforControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classInvocation}{Invocation} $\ast$ $>$ \& Control\+::dispatch\+Listfor\+Control\+Event (\begin{DoxyParamCaption}\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the \hyperlink{classInvocation}{Invocation} \hyperlink{protocollist-p}{list} for the given control event. If the \hyperlink{protocollist-p}{list} does not exist, it\textquotesingle{}ll create an empty array before returning it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Event} & A control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classInvocation}{Invocation} \hyperlink{protocollist-p}{list} for the given control event. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classControl_af4f74a6a0db957e71a1718aa8513c2ae}\label{classControl_af4f74a6a0db957e71a1718aa8513c2ae}} 
+\index{Control@{Control}!dispatch\+Listfor\+Control\+Event@{dispatch\+Listfor\+Control\+Event}}
+\index{dispatch\+Listfor\+Control\+Event@{dispatch\+Listfor\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{dispatch\+Listfor\+Control\+Event()}{dispatchListforControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$\hyperlink{classInvocation}{Invocation}$\ast$$>$\& Control\+::dispatch\+Listfor\+Control\+Event (\begin{DoxyParamCaption}\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the \hyperlink{classInvocation}{Invocation} \hyperlink{protocollist-p}{list} for the given control event. If the \hyperlink{protocollist-p}{list} does not exist, it\textquotesingle{}ll create an empty array before returning it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Event} & A control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classInvocation}{Invocation} \hyperlink{protocollist-p}{list} for the given control event. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classControl_ab0067c6aeb440e1d42d6ebef4d85cd5c}\label{classControl_ab0067c6aeb440e1d42d6ebef4d85cd5c}} 
+\index{Control@{Control}!get\+Touch\+Location@{get\+Touch\+Location}}
+\index{get\+Touch\+Location@{get\+Touch\+Location}!Control@{Control}}
+\subsubsection{\texorpdfstring{get\+Touch\+Location()}{getTouchLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Control\+::get\+Touch\+Location (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a point corresponding to the touch location converted into the control space coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a226571b3103cb3289779243fee7f360b}\label{classControl_a226571b3103cb3289779243fee7f360b}} 
+\index{Control@{Control}!get\+Touch\+Location@{get\+Touch\+Location}}
+\index{get\+Touch\+Location@{get\+Touch\+Location}!Control@{Control}}
+\subsubsection{\texorpdfstring{get\+Touch\+Location()}{getTouchLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classVec2}{Vec2} Control\+::get\+Touch\+Location (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a point corresponding to the touch location converted into the control space coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_ae35212919d503228bb80a704d889f58d}\label{classControl_ae35212919d503228bb80a704d889f58d}} 
+\index{Control@{Control}!invocation\+With\+Target\+And\+Action\+For\+Control\+Event@{invocation\+With\+Target\+And\+Action\+For\+Control\+Event}}
+\index{invocation\+With\+Target\+And\+Action\+For\+Control\+Event@{invocation\+With\+Target\+And\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{invocation\+With\+Target\+And\+Action\+For\+Control\+Event()}{invocationWithTargetAndActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classInvocation}{Invocation}$\ast$ Control\+::invocation\+With\+Target\+And\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns an \hyperlink{classInvocation}{Invocation} object able to construct messages using a given target-\/action pair. (The invocation may optionally include the sender and the event as parameters, in that order)
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object. \\
+\hline
+{\em action} & A selector identifying an action message. \\
+\hline
+{\em control\+Event} & A control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classInvocation}{Invocation} object able to construct messages using a given target-\/action pair. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classControl_ae35212919d503228bb80a704d889f58d}\label{classControl_ae35212919d503228bb80a704d889f58d}} 
+\index{Control@{Control}!invocation\+With\+Target\+And\+Action\+For\+Control\+Event@{invocation\+With\+Target\+And\+Action\+For\+Control\+Event}}
+\index{invocation\+With\+Target\+And\+Action\+For\+Control\+Event@{invocation\+With\+Target\+And\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{invocation\+With\+Target\+And\+Action\+For\+Control\+Event()}{invocationWithTargetAndActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classInvocation}{Invocation}$\ast$ Control\+::invocation\+With\+Target\+And\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns an \hyperlink{classInvocation}{Invocation} object able to construct messages using a given target-\/action pair. (The invocation may optionally include the sender and the event as parameters, in that order)
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object. \\
+\hline
+{\em action} & A selector identifying an action message. \\
+\hline
+{\em control\+Event} & A control events for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classInvocation}{Invocation} object able to construct messages using a given target-\/action pair. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classControl_af7a191cace0c56d1dae182716c0e8150}\label{classControl_af7a191cace0c56d1dae182716c0e8150}} 
+\index{Control@{Control}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Control@{Control}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classControl_ac49bc0859aade4ad1ab6311941b4207a}\label{classControl_ac49bc0859aade4ad1ab6311941b4207a}} 
+\index{Control@{Control}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Control@{Control}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classControl_a897865e3e4ff50ed827f33966e786c7f}\label{classControl_a897865e3e4ff50ed827f33966e786c7f}} 
+\index{Control@{Control}!is\+Touch\+Inside@{is\+Touch\+Inside}}
+\index{is\+Touch\+Inside@{is\+Touch\+Inside}!Control@{Control}}
+\subsubsection{\texorpdfstring{is\+Touch\+Inside()}{isTouchInside()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+::is\+Touch\+Inside (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a boolean value that indicates whether a touch is inside the bounds of the receiver. The given touch must be relative to the world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether a touch is inside the receiver\textquotesingle{}s rect. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classControlSlider_adb6f9deedd5830443e3560db6ab21020}{Control\+Slider}, \hyperlink{classControlSlider_aa2a17ce15e2136612b651ab5c2e4398e}{Control\+Slider}, \hyperlink{classControlPotentiometer_aa2bdcab40a678f249ee083c466064795}{Control\+Potentiometer}, and \hyperlink{classControlPotentiometer_a484e056833311821d4ea2f3ec4bde790}{Control\+Potentiometer}.
+
+\mbox{\Hypertarget{classControl_af493eab0c7b003e9f18816d88c079952}\label{classControl_af493eab0c7b003e9f18816d88c079952}} 
+\index{Control@{Control}!is\+Touch\+Inside@{is\+Touch\+Inside}}
+\index{is\+Touch\+Inside@{is\+Touch\+Inside}!Control@{Control}}
+\subsubsection{\texorpdfstring{is\+Touch\+Inside()}{isTouchInside()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+::is\+Touch\+Inside (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a boolean value that indicates whether a touch is inside the bounds of the receiver. The given touch must be relative to the world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether a touch is inside the receiver\textquotesingle{}s rect. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classControlSlider_adb6f9deedd5830443e3560db6ab21020}{Control\+Slider}, \hyperlink{classControlSlider_aa2a17ce15e2136612b651ab5c2e4398e}{Control\+Slider}, \hyperlink{classControlPotentiometer_aa2bdcab40a678f249ee083c466064795}{Control\+Potentiometer}, and \hyperlink{classControlPotentiometer_a484e056833311821d4ea2f3ec4bde790}{Control\+Potentiometer}.
+
+\mbox{\Hypertarget{classControl_aa3c7bd1c9d2a072c037c6c9232a336a5}\label{classControl_aa3c7bd1c9d2a072c037c6c9232a336a5}} 
+\index{Control@{Control}!needs\+Layout@{needs\+Layout}}
+\index{needs\+Layout@{needs\+Layout}!Control@{Control}}
+\subsubsection{\texorpdfstring{needs\+Layout()}{needsLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::needs\+Layout (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates the control layout using its current internal state. 
+
+Reimplemented in \hyperlink{classControlSlider_a52ab7abbbcefc12704917d04dfea67c9}{Control\+Slider}, \hyperlink{classControlSlider_a2325b1df970fb4aff1ccb29aea4a20ea}{Control\+Slider}, \hyperlink{classControlButton_af0fc9343439e52c30c72a87183807487}{Control\+Button}, and \hyperlink{classControlButton_acdbe1882298d4920b6ba59e7c72d6aaf}{Control\+Button}.
+
+\mbox{\Hypertarget{classControl_ac4ef8db3d2c65c2cd9c9c7c79c402b0a}\label{classControl_ac4ef8db3d2c65c2cd9c9c7c79c402b0a}} 
+\index{Control@{Control}!needs\+Layout@{needs\+Layout}}
+\index{needs\+Layout@{needs\+Layout}!Control@{Control}}
+\subsubsection{\texorpdfstring{needs\+Layout()}{needsLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::needs\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates the control layout using its current internal state. 
+
+Reimplemented in \hyperlink{classControlSlider_a52ab7abbbcefc12704917d04dfea67c9}{Control\+Slider}, \hyperlink{classControlSlider_a2325b1df970fb4aff1ccb29aea4a20ea}{Control\+Slider}, \hyperlink{classControlButton_af0fc9343439e52c30c72a87183807487}{Control\+Button}, and \hyperlink{classControlButton_acdbe1882298d4920b6ba59e7c72d6aaf}{Control\+Button}.
+
+\mbox{\Hypertarget{classControl_a0cf2e20cea5b57b263e965be4a19ab52}\label{classControl_a0cf2e20cea5b57b263e965be4a19ab52}} 
+\index{Control@{Control}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a170cc0df0207fba7bc352acc6173d948}{Control\+Button}, \hyperlink{classControlButton_a1f4736ab73edd357bf9caf9fa0e1dcd6}{Control\+Button}, \hyperlink{classControlSlider_a501e9da8ef3f1dacbfb9f7a12ecb2aed}{Control\+Slider}, \hyperlink{classControlSlider_a8f6fb619bb23b4e1507f1f2bb904f808}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a8660ed765c6c5c0d8856f59aa0ba34b2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_a4de153e53cccd78b56d9dc3e18411777}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_aaba407c9125d0e4cc85fb5ae59ea964c}{Control\+Switch}, \hyperlink{classControlSwitch_a67af886fe24ec32313023514b28991f3}{Control\+Switch}, \hyperlink{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7fbb969bb376da49033a5df63f562905}{Control\+Stepper}, \hyperlink{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}{Control\+Stepper}, \hyperlink{classControlColourPicker_aec95ec2b1f58342568c73ecd208d6a12}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_a83493e9deb3c69dd40be99009a4759d6}{Control\+Colour\+Picker}, \hyperlink{classControlHuePicker_af178753e94f91d15e613bf0c6387af5b}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_ae14f5994e10b93bec6b4de027902b2a1}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_acdbc84186be785b6e2970c93f4252b72}\label{classControl_acdbc84186be785b6e2970c93f4252b72}} 
+\index{Control@{Control}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a170cc0df0207fba7bc352acc6173d948}{Control\+Button}, \hyperlink{classControlButton_a1f4736ab73edd357bf9caf9fa0e1dcd6}{Control\+Button}, \hyperlink{classControlSlider_a501e9da8ef3f1dacbfb9f7a12ecb2aed}{Control\+Slider}, \hyperlink{classControlSlider_a8f6fb619bb23b4e1507f1f2bb904f808}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a8660ed765c6c5c0d8856f59aa0ba34b2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_a4de153e53cccd78b56d9dc3e18411777}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_aaba407c9125d0e4cc85fb5ae59ea964c}{Control\+Switch}, \hyperlink{classControlSwitch_a67af886fe24ec32313023514b28991f3}{Control\+Switch}, \hyperlink{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7fbb969bb376da49033a5df63f562905}{Control\+Stepper}, \hyperlink{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}{Control\+Stepper}, \hyperlink{classControlColourPicker_aec95ec2b1f58342568c73ecd208d6a12}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_a83493e9deb3c69dd40be99009a4759d6}{Control\+Colour\+Picker}, \hyperlink{classControlHuePicker_af178753e94f91d15e613bf0c6387af5b}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_ae14f5994e10b93bec6b4de027902b2a1}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_a573efad6a6b492f4a6f4c5d06f0cdb88}\label{classControl_a573efad6a6b492f4a6f4c5d06f0cdb88}} 
+\index{Control@{Control}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a32a7a37982d52d6660b532adabb8099e}{Control\+Button}, \hyperlink{classControlButton_a95558febae1ea6790245d093766ba20e}{Control\+Button}, \hyperlink{classControlSwitch_a31cc47f044081bb65d8490ac1b8900c0}{Control\+Switch}, and \hyperlink{classControlSwitch_aa4c6a2f3766e9916f0619a0249ddd7d7}{Control\+Switch}.
+
+\mbox{\Hypertarget{classControl_ab7fb8582f430d82180dbefea27c4cff9}\label{classControl_ab7fb8582f430d82180dbefea27c4cff9}} 
+\index{Control@{Control}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a32a7a37982d52d6660b532adabb8099e}{Control\+Button}, \hyperlink{classControlButton_a95558febae1ea6790245d093766ba20e}{Control\+Button}, \hyperlink{classControlSwitch_a31cc47f044081bb65d8490ac1b8900c0}{Control\+Switch}, and \hyperlink{classControlSwitch_aa4c6a2f3766e9916f0619a0249ddd7d7}{Control\+Switch}.
+
+\mbox{\Hypertarget{classControl_a56073e57060169fe80cbb6ce1f4abe28}\label{classControl_a56073e57060169fe80cbb6ce1f4abe28}} 
+\index{Control@{Control}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a7597744c683964152429472a358b3fd2}{Control\+Button}, \hyperlink{classControlButton_a6f562dc0b399591189883ea7788603d7}{Control\+Button}, \hyperlink{classControlSlider_a9ba0559605c93e08dc4548261cbc2773}{Control\+Slider}, \hyperlink{classControlSlider_acdda8fa6365ab06db757c0a525c5108e}{Control\+Slider}, \hyperlink{classControlSwitch_a6976aba81f0846eb827114efc06301d3}{Control\+Switch}, \hyperlink{classControlSwitch_a13db70a616ea0e992710fc8041792f66}{Control\+Switch}, \hyperlink{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7934349dae09881fce7a72d4985d0154}{Control\+Stepper}, and \hyperlink{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}{Control\+Stepper}.
+
+\mbox{\Hypertarget{classControl_af31a373d40a3181e2a97f0f9dc85c1f8}\label{classControl_af31a373d40a3181e2a97f0f9dc85c1f8}} 
+\index{Control@{Control}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a7597744c683964152429472a358b3fd2}{Control\+Button}, \hyperlink{classControlButton_a6f562dc0b399591189883ea7788603d7}{Control\+Button}, \hyperlink{classControlSlider_a9ba0559605c93e08dc4548261cbc2773}{Control\+Slider}, \hyperlink{classControlSlider_acdda8fa6365ab06db757c0a525c5108e}{Control\+Slider}, \hyperlink{classControlSwitch_a6976aba81f0846eb827114efc06301d3}{Control\+Switch}, \hyperlink{classControlSwitch_a13db70a616ea0e992710fc8041792f66}{Control\+Switch}, \hyperlink{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7934349dae09881fce7a72d4985d0154}{Control\+Stepper}, and \hyperlink{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}{Control\+Stepper}.
+
+\mbox{\Hypertarget{classControl_a26d2e6af053319dc605949678f726622}\label{classControl_a26d2e6af053319dc605949678f726622}} 
+\index{Control@{Control}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a8c8a5c24adf67ec671fbc113889f0870}{Control\+Button}, \hyperlink{classControlButton_aacecc916b91af98f4f9a2550d678bd44}{Control\+Button}, \hyperlink{classControlSlider_ad7aab266125d50d61a0a58c00f44f94d}{Control\+Slider}, \hyperlink{classControlSlider_adc06e1f4b54e0f72c9359c111b6913ff}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a1330b4d2fca4a1a312b1594e6ee6b99c}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_aea0bada57d1f6e2bb3f456e77e342979}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_a74c30d86ef910e4ee32a413153e74042}{Control\+Switch}, \hyperlink{classControlSwitch_a74e7f363deee0b399be486f668dad631}{Control\+Switch}, \hyperlink{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}{Control\+Potentiometer}, \hyperlink{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}{Control\+Stepper}, \hyperlink{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}{Control\+Stepper}, \hyperlink{classControlHuePicker_ae287e5f1cd8856c76475825549f098d8}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_a09874584a6a21355d830546ee3b0751d}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_a98c8b1c7d2a15318ca720b5a398fbb14}\label{classControl_a98c8b1c7d2a15318ca720b5a398fbb14}} 
+\index{Control@{Control}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control@{Control}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classControlButton_a8c8a5c24adf67ec671fbc113889f0870}{Control\+Button}, \hyperlink{classControlButton_aacecc916b91af98f4f9a2550d678bd44}{Control\+Button}, \hyperlink{classControlSlider_ad7aab266125d50d61a0a58c00f44f94d}{Control\+Slider}, \hyperlink{classControlSlider_adc06e1f4b54e0f72c9359c111b6913ff}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a1330b4d2fca4a1a312b1594e6ee6b99c}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_aea0bada57d1f6e2bb3f456e77e342979}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_a74c30d86ef910e4ee32a413153e74042}{Control\+Switch}, \hyperlink{classControlSwitch_a74e7f363deee0b399be486f668dad631}{Control\+Switch}, \hyperlink{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}{Control\+Potentiometer}, \hyperlink{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}{Control\+Stepper}, \hyperlink{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}{Control\+Stepper}, \hyperlink{classControlHuePicker_ae287e5f1cd8856c76475825549f098d8}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_a09874584a6a21355d830546ee3b0751d}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}\label{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}} 
+\index{Control@{Control}!remove\+Target\+With\+Action\+For\+Control\+Event@{remove\+Target\+With\+Action\+For\+Control\+Event}}
+\index{remove\+Target\+With\+Action\+For\+Control\+Event@{remove\+Target\+With\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{remove\+Target\+With\+Action\+For\+Control\+Event()}{removeTargetWithActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::remove\+Target\+With\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Removes a target and action for a particular event from an internal dispatch table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. \hyperlink{classPass}{Pass} nil to remove all targets paired with action and the specified control events. \\
+\hline
+{\em action} & A selector identifying an action message. \hyperlink{classPass}{Pass} N\+U\+LL to remove all action messages paired with target. \\
+\hline
+{\em control\+Event} & A control event for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}\label{classControl_a6ec4c2094027c0039a7b6b0f42a2fa7a}} 
+\index{Control@{Control}!remove\+Target\+With\+Action\+For\+Control\+Event@{remove\+Target\+With\+Action\+For\+Control\+Event}}
+\index{remove\+Target\+With\+Action\+For\+Control\+Event@{remove\+Target\+With\+Action\+For\+Control\+Event}!Control@{Control}}
+\subsubsection{\texorpdfstring{remove\+Target\+With\+Action\+For\+Control\+Event()}{removeTargetWithActionForControlEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+::remove\+Target\+With\+Action\+For\+Control\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Removes a target and action for a particular event from an internal dispatch table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. \hyperlink{classPass}{Pass} nil to remove all targets paired with action and the specified control events. \\
+\hline
+{\em action} & A selector identifying an action message. \hyperlink{classPass}{Pass} N\+U\+LL to remove all action messages paired with target. \\
+\hline
+{\em control\+Event} & A control event for which the action message is sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a1f51f2eaea29c66c58f60fbee9c35e10}\label{classControl_a1f51f2eaea29c66c58f60fbee9c35e10}} 
+\index{Control@{Control}!remove\+Target\+With\+Action\+For\+Control\+Events@{remove\+Target\+With\+Action\+For\+Control\+Events}}
+\index{remove\+Target\+With\+Action\+For\+Control\+Events@{remove\+Target\+With\+Action\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{remove\+Target\+With\+Action\+For\+Control\+Events()}{removeTargetWithActionForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::remove\+Target\+With\+Action\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a target and action for a particular event (or events) from an internal dispatch table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. \hyperlink{classPass}{Pass} nil to remove all targets paired with action and the specified control events. \\
+\hline
+{\em action} & A selector identifying an action message. \hyperlink{classPass}{Pass} N\+U\+LL to remove all action messages paired with target. \\
+\hline
+{\em control\+Events} & A bitmask specifying the control events associated with target and action. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_ac78a278c747454c5fa2db5039078dd1a}\label{classControl_ac78a278c747454c5fa2db5039078dd1a}} 
+\index{Control@{Control}!remove\+Target\+With\+Action\+For\+Control\+Events@{remove\+Target\+With\+Action\+For\+Control\+Events}}
+\index{remove\+Target\+With\+Action\+For\+Control\+Events@{remove\+Target\+With\+Action\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{remove\+Target\+With\+Action\+For\+Control\+Events()}{removeTargetWithActionForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::remove\+Target\+With\+Action\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{Handler}]{action,  }\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a target and action for a particular event (or events) from an internal dispatch table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target object that is, the object to which the action message is sent. \hyperlink{classPass}{Pass} nil to remove all targets paired with action and the specified control events. \\
+\hline
+{\em action} & A selector identifying an action message. \hyperlink{classPass}{Pass} N\+U\+LL to remove all action messages paired with target. \\
+\hline
+{\em control\+Events} & A bitmask specifying the control events associated with target and action. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a6a4b1643e8d9ea6f264f1f024760993c}\label{classControl_a6a4b1643e8d9ea6f264f1f024760993c}} 
+\index{Control@{Control}!send\+Actions\+For\+Control\+Events@{send\+Actions\+For\+Control\+Events}}
+\index{send\+Actions\+For\+Control\+Events@{send\+Actions\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{send\+Actions\+For\+Control\+Events()}{sendActionsForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::send\+Actions\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sends action messages for the given control events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Events} & A bitmask whose set flags specify the control events for which action messages are sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a5b70b945b2bdf48f7f42d9e53a675d90}\label{classControl_a5b70b945b2bdf48f7f42d9e53a675d90}} 
+\index{Control@{Control}!send\+Actions\+For\+Control\+Events@{send\+Actions\+For\+Control\+Events}}
+\index{send\+Actions\+For\+Control\+Events@{send\+Actions\+For\+Control\+Events}!Control@{Control}}
+\subsubsection{\texorpdfstring{send\+Actions\+For\+Control\+Events()}{sendActionsForControlEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::send\+Actions\+For\+Control\+Events (\begin{DoxyParamCaption}\item[{Event\+Type}]{control\+Events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sends action messages for the given control events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Events} & A bitmask whose set flags specify the control events for which action messages are sent. See \char`\"{}\+C\+C\+Control\+Event\char`\"{} for bitmask constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a55339ae920182245d5ec114c33f4b1fd}\label{classControl_a55339ae920182245d5ec114c33f4b1fd}} 
+\index{Control@{Control}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{b\+Enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tells whether the control is enabled. 
+
+Reimplemented in \hyperlink{classControlSlider_ad02c5f0f4382a9780f215e3568757c2b}{Control\+Slider}, \hyperlink{classControlSlider_aeb98aed4fbd48f28c55ac6eb7ffd9b30}{Control\+Slider}, \hyperlink{classControlSwitch_a47191d986db5cb5c95a7b2171d483784}{Control\+Switch}, \hyperlink{classControlSwitch_a6e27f98a50b25ba395f2ad7a5c1aa59f}{Control\+Switch}, \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{Control\+Potentiometer}, \hyperlink{classControlSaturationBrightnessPicker_a4b71c4cd73bbe398460360121e88e657}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{Control\+Potentiometer}, \hyperlink{classControlSaturationBrightnessPicker_af272e7bef89c1bcf19354bfaa76ebcb2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlColourPicker_a233d6048e0899b35f23aaa557a839069}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_ac332c171d8aa481120139479c78da22b}{Control\+Colour\+Picker}, \hyperlink{classControlButton_ac3515c2c94586676696d73d48e5ab08f}{Control\+Button}, \hyperlink{classControlHuePicker_a2e6169e815f3ee9fa83f00f9e20f7292}{Control\+Hue\+Picker}, \hyperlink{classControlButton_ab8b40e3ef7dccccc2b2029c5ae113962}{Control\+Button}, and \hyperlink{classControlHuePicker_a45c6330610f27124057f4d69b37abc9b}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_acf90798c4ddf200abae8b909c029c7ab}\label{classControl_acf90798c4ddf200abae8b909c029c7ab}} 
+\index{Control@{Control}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{b\+Enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tells whether the control is enabled. 
+
+Reimplemented in \hyperlink{classControlSlider_ad02c5f0f4382a9780f215e3568757c2b}{Control\+Slider}, \hyperlink{classControlSlider_aeb98aed4fbd48f28c55ac6eb7ffd9b30}{Control\+Slider}, \hyperlink{classControlSwitch_a47191d986db5cb5c95a7b2171d483784}{Control\+Switch}, \hyperlink{classControlSwitch_a6e27f98a50b25ba395f2ad7a5c1aa59f}{Control\+Switch}, \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{Control\+Potentiometer}, \hyperlink{classControlSaturationBrightnessPicker_a4b71c4cd73bbe398460360121e88e657}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{Control\+Potentiometer}, \hyperlink{classControlSaturationBrightnessPicker_af272e7bef89c1bcf19354bfaa76ebcb2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlColourPicker_a233d6048e0899b35f23aaa557a839069}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_ac332c171d8aa481120139479c78da22b}{Control\+Colour\+Picker}, \hyperlink{classControlButton_ac3515c2c94586676696d73d48e5ab08f}{Control\+Button}, \hyperlink{classControlHuePicker_a2e6169e815f3ee9fa83f00f9e20f7292}{Control\+Hue\+Picker}, \hyperlink{classControlButton_ab8b40e3ef7dccccc2b2029c5ae113962}{Control\+Button}, and \hyperlink{classControlHuePicker_a45c6330610f27124057f4d69b37abc9b}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classControl_a8bde57862133c06d64178fb1a0c31e8b}\label{classControl_a8bde57862133c06d64178fb1a0c31e8b}} 
+\index{Control@{Control}!set\+Highlighted@{set\+Highlighted}}
+\index{set\+Highlighted@{set\+Highlighted}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Highlighted()}{setHighlighted()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::set\+Highlighted (\begin{DoxyParamCaption}\item[{bool}]{b\+Highlighted }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+A Boolean value that determines whether the control is highlighted. 
+
+Reimplemented in \hyperlink{classControlButton_a534815c8b3462f04f39cfd1c2ba98645}{Control\+Button}, and \hyperlink{classControlButton_a463166812b3c42d952264855e2aa3b1d}{Control\+Button}.
+
+\mbox{\Hypertarget{classControl_a97602b469ae5f085cd604b9bf50732c3}\label{classControl_a97602b469ae5f085cd604b9bf50732c3}} 
+\index{Control@{Control}!set\+Highlighted@{set\+Highlighted}}
+\index{set\+Highlighted@{set\+Highlighted}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Highlighted()}{setHighlighted()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::set\+Highlighted (\begin{DoxyParamCaption}\item[{bool}]{b\+Highlighted }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+A Boolean value that determines whether the control is highlighted. 
+
+Reimplemented in \hyperlink{classControlButton_a534815c8b3462f04f39cfd1c2ba98645}{Control\+Button}, and \hyperlink{classControlButton_a463166812b3c42d952264855e2aa3b1d}{Control\+Button}.
+
+\mbox{\Hypertarget{classControl_ad2bebed567807e1e309513666f67ad5e}\label{classControl_ad2bebed567807e1e309513666f67ad5e}} 
+\index{Control@{Control}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classControl_afc69bf17ee302a8efd9db70d5bb4c5b7}\label{classControl_afc69bf17ee302a8efd9db70d5bb4c5b7}} 
+\index{Control@{Control}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classControl_ab35419d8bb194f540e838a3b796258a7}\label{classControl_ab35419d8bb194f540e838a3b796258a7}} 
+\index{Control@{Control}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Selected()}{setSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{b\+Selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+A Boolean value that determines the control selected state. 
+
+Reimplemented in \hyperlink{classControlButton_a13c5ecf7e0d2d6ac420dc9d6b6bba24b}{Control\+Button}, and \hyperlink{classControlButton_ae096d582a2e0b072677fa2db84f4ff78}{Control\+Button}.
+
+\mbox{\Hypertarget{classControl_a05f31c82f5ba3bb758d320f59c404555}\label{classControl_a05f31c82f5ba3bb758d320f59c404555}} 
+\index{Control@{Control}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Control@{Control}}
+\subsubsection{\texorpdfstring{set\+Selected()}{setSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{b\+Selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+A Boolean value that determines the control selected state. 
+
+Reimplemented in \hyperlink{classControlButton_a13c5ecf7e0d2d6ac420dc9d6b6bba24b}{Control\+Button}, and \hyperlink{classControlButton_ae096d582a2e0b072677fa2db84f4ff78}{Control\+Button}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classControl_ae60bdd523e1a0ffd80cc2be6d73adc74}\label{classControl_ae60bdd523e1a0ffd80cc2be6d73adc74}} 
+\index{Control@{Control}!\+\_\+dispatch\+Table@{\+\_\+dispatch\+Table}}
+\index{\+\_\+dispatch\+Table@{\+\_\+dispatch\+Table}!Control@{Control}}
+\subsubsection{\texorpdfstring{\+\_\+dispatch\+Table}{\_dispatchTable}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ int, \hyperlink{classVector}{Vector}$<$ \hyperlink{classInvocation}{Invocation} $\ast$ $>$ $\ast$ $>$ Control\+::\+\_\+dispatch\+Table\hspace{0.3cm}{\ttfamily [protected]}}
+
+Table of connection between the Control\+Events and their associated target-\/actions pairs. For each Button\+Events a \hyperlink{protocollist-p}{list} of N\+S\+Invocation (which contains the target-\/action pair) is linked. \mbox{\Hypertarget{classControl_a220d7ad63279b15d0eed92eec97d8020}\label{classControl_a220d7ad63279b15d0eed92eec97d8020}} 
+\index{Control@{Control}!\+\_\+has\+Visible\+Parents@{\+\_\+has\+Visible\+Parents}}
+\index{\+\_\+has\+Visible\+Parents@{\+\_\+has\+Visible\+Parents}!Control@{Control}}
+\subsubsection{\texorpdfstring{\+\_\+has\+Visible\+Parents}{\_hasVisibleParents}}
+{\footnotesize\ttfamily bool Control\+::\+\_\+has\+Visible\+Parents\hspace{0.3cm}{\ttfamily [protected]}}
+
+True if all of the controls parents are visible 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control.\+cpp\end{DoxyCompactItemize}

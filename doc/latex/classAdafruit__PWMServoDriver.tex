@@ -1,0 +1,289 @@
+\hypertarget{classAdafruit__PWMServoDriver}{}\section{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver Class Reference}
+\label{classAdafruit__PWMServoDriver}\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+
+
+Class that stores state and functions for interacting with P\+C\+A9685 P\+WM chip.  
+
+
+
+
+{\ttfamily \#include $<$Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAdafruit__PWMServoDriver_abbbbdc51fe0ffb92f7c4d1b2ab1ec6b6}{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver} (uint i2c\+\_\+bus\+\_\+num, const uint8\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Instantiates a new P\+C\+A9685 P\+WM driver chip with the I2C address on a Two\+Wire interface. \end{DoxyCompactList}\item 
+bool \hyperlink{classAdafruit__PWMServoDriver_af82d0facef94e15e9e91bab62e4835e3}{connect} (float freq=50.\+0, uint8\+\_\+t prescale=0)
+\begin{DoxyCompactList}\small\item\em Instantiates a new P\+C\+A9685 P\+WM driver chip with the I2C address on a Two\+Wire interface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a5f25f9f07525e08b7622c476b4a1f379}\label{classAdafruit__PWMServoDriver_a5f25f9f07525e08b7622c476b4a1f379}} 
+void \hyperlink{classAdafruit__PWMServoDriver_a5f25f9f07525e08b7622c476b4a1f379}{reset} ()
+\begin{DoxyCompactList}\small\item\em Sends a reset command to the P\+C\+A9685 chip over I2C. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_aa892432ed08e4b3892c8eb0478168dd8}\label{classAdafruit__PWMServoDriver_aa892432ed08e4b3892c8eb0478168dd8}} 
+void \hyperlink{classAdafruit__PWMServoDriver_aa892432ed08e4b3892c8eb0478168dd8}{sleep} ()
+\begin{DoxyCompactList}\small\item\em Puts board into sleep mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a34b9ac672853a4a1b7fc202b4c89d8c4}\label{classAdafruit__PWMServoDriver_a34b9ac672853a4a1b7fc202b4c89d8c4}} 
+void \hyperlink{classAdafruit__PWMServoDriver_a34b9ac672853a4a1b7fc202b4c89d8c4}{wakeup} ()
+\begin{DoxyCompactList}\small\item\em Wakes board from sleep. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_a7967e51188cbacf2c3f269c8aec9d292}{set\+Ext\+Clk} (uint8\+\_\+t prescale)
+\begin{DoxyCompactList}\small\item\em Sets E\+X\+T\+C\+LK pin to use the external clock. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_a0ef6f1e3c81aebbd1d1da1bb12f3ed5c}{set\+P\+W\+M\+Freq} (float freq)
+\begin{DoxyCompactList}\small\item\em Sets the P\+WM frequency for the entire chip, up to $\sim$1.6 K\+Hz. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_a8d18d478574c8c686e94faefe11094b9}{set\+Output\+Mode} (bool totempole)
+\begin{DoxyCompactList}\small\item\em Sets the output mode of the P\+C\+A9685 to either open drain or push pull / totempole. Warning\+: L\+E\+Ds with integrated zener diodes should only be driven in open drain mode. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classAdafruit__PWMServoDriver_a7eaeeed5408ea7382731f7e1ea01defb}{get\+P\+WM} (uint8\+\_\+t num, bool on)
+\begin{DoxyCompactList}\small\item\em Gets the P\+WM output of one of the P\+C\+A9685 pins. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_a724a7fc39c6fba34478ecc0eea038bd3}{set\+P\+WM} (uint8\+\_\+t num, uint16\+\_\+t on, uint16\+\_\+t off)
+\begin{DoxyCompactList}\small\item\em Sets the P\+WM output of one of the P\+C\+A9685 pins. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_a1246cd50849fe0f068cc5d474e06ae96}{set\+Pin} (uint8\+\_\+t num, uint16\+\_\+t val, bool invert=false)
+\begin{DoxyCompactList}\small\item\em Helper to set pin P\+WM output. Sets pin without having to deal with on/off tick placement and properly handles a zero value as completely off and 4095 as completely on. Optional invert parameter supports inverting the pulse for sinking to ground. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAdafruit__PWMServoDriver_a52dbe6fa4fa4a98d3082f239d59ad5f1}{read\+Prescale} (void)
+\begin{DoxyCompactList}\small\item\em Reads set Prescale from P\+C\+A9685. \end{DoxyCompactList}\item 
+void \hyperlink{classAdafruit__PWMServoDriver_aa91cf057ec01505292401e4fdceb57ac}{write\+Microseconds} (uint8\+\_\+t num, uint16\+\_\+t Microseconds)
+\begin{DoxyCompactList}\small\item\em Sets the P\+WM output of one of the P\+C\+A9685 pins based on the input microseconds, output is not precise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a0fa586b534db37ebcc5d86f6baebdb10}\label{classAdafruit__PWMServoDriver_a0fa586b534db37ebcc5d86f6baebdb10}} 
+void {\bfseries fast\+Write\+Microseconds} (uint8\+\_\+t num, uint16\+\_\+t microseconds)
+\item 
+void \hyperlink{classAdafruit__PWMServoDriver_ac725dd6b0d24d087586a854e81bcf6b3}{set\+Oscillator\+Frequency} (uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Setter for the internally tracked oscillator used for freq calculations. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classAdafruit__PWMServoDriver_ae4017d3cbbda98a0bb41efcf2c1fcf30}{get\+Oscillator\+Frequency} (void)
+\begin{DoxyCompactList}\small\item\em Getter for the internally tracked oscillator used for freq calculations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a029cc2c5f5260fd02deb95ca15771690}\label{classAdafruit__PWMServoDriver_a029cc2c5f5260fd02deb95ca15771690}} 
+{\bfseries Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver} (unsigned char addr=0x40)
+\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_aef401eaad3c34222ac916eb7bd936bc2}\label{classAdafruit__PWMServoDriver_aef401eaad3c34222ac916eb7bd936bc2}} 
+void {\bfseries begin} (void)
+\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_ac976f52233a75a4bd0eb6f2ce9b82b7f}\label{classAdafruit__PWMServoDriver_ac976f52233a75a4bd0eb6f2ce9b82b7f}} 
+void {\bfseries reset} (void)
+\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a0ef6f1e3c81aebbd1d1da1bb12f3ed5c}\label{classAdafruit__PWMServoDriver_a0ef6f1e3c81aebbd1d1da1bb12f3ed5c}} 
+void {\bfseries set\+P\+W\+M\+Freq} (float freq)
+\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a8d110f943e906fd20eec6c8e6a1fad77}\label{classAdafruit__PWMServoDriver_a8d110f943e906fd20eec6c8e6a1fad77}} 
+void {\bfseries set\+P\+WM} (unsigned char num, unsigned short on, unsigned short off)
+\item 
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a7ed256f8594418bd5bf26658b81f7b6e}\label{classAdafruit__PWMServoDriver_a7ed256f8594418bd5bf26658b81f7b6e}} 
+void {\bfseries set\+Pin} (unsigned char num, unsigned short val, bool invert=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that stores state and functions for interacting with P\+C\+A9685 P\+WM chip. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_abbbbdc51fe0ffb92f7c4d1b2ab1ec6b6}\label{classAdafruit__PWMServoDriver_abbbbdc51fe0ffb92f7c4d1b2ab1ec6b6}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver()}{Adafruit\_PWMServoDriver()}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::\+Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver (\begin{DoxyParamCaption}\item[{uint}]{i2c\+\_\+bus\+\_\+num,  }\item[{const uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Instantiates a new P\+C\+A9685 P\+WM driver chip with the I2C address on a Two\+Wire interface. 
+
+Instantiates a new P\+C\+A9685 P\+WM driver chip with the I2C address on a Two\+Wire interface 
+\begin{DoxyParams}{Parameters}
+{\em addr} & The 7-\/bit I2C address to locate this chip, default is 0x40 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_af82d0facef94e15e9e91bab62e4835e3}\label{classAdafruit__PWMServoDriver_af82d0facef94e15e9e91bab62e4835e3}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!connect@{connect}}
+\index{connect@{connect}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::connect (\begin{DoxyParamCaption}\item[{float}]{freq = {\ttfamily 50.0},  }\item[{uint8\+\_\+t}]{prescale = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Instantiates a new P\+C\+A9685 P\+WM driver chip with the I2C address on a Two\+Wire interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The 7-\/bit I2C address to locate this chip, default is 0x40 \\
+\hline
+{\em i2c} & A reference to a \textquotesingle{}Two\+Wire\textquotesingle{} object that we\textquotesingle{}ll use to communicate with\\
+\hline
+\end{DoxyParams}
+Setups the I2C interface and hardware 
+\begin{DoxyParams}{Parameters}
+{\em frequence} & ( limit is 3052=50\+M\+Hz/(4$\ast$4096)) \\
+\hline
+{\em prescale} & Sets External Clock (Optional) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_ae4017d3cbbda98a0bb41efcf2c1fcf30}\label{classAdafruit__PWMServoDriver_ae4017d3cbbda98a0bb41efcf2c1fcf30}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!get\+Oscillator\+Frequency@{get\+Oscillator\+Frequency}}
+\index{get\+Oscillator\+Frequency@{get\+Oscillator\+Frequency}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{get\+Oscillator\+Frequency()}{getOscillatorFrequency()}}
+{\footnotesize\ttfamily uint32\+\_\+t Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::get\+Oscillator\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the internally tracked oscillator used for freq calculations. 
+
+\begin{DoxyReturn}{Returns}
+The frequency the P\+C\+A9685 thinks it is running at (it cannot introspect) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a7eaeeed5408ea7382731f7e1ea01defb}\label{classAdafruit__PWMServoDriver_a7eaeeed5408ea7382731f7e1ea01defb}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!get\+P\+WM@{get\+P\+WM}}
+\index{get\+P\+WM@{get\+P\+WM}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{get\+P\+W\+M()}{getPWM()}}
+{\footnotesize\ttfamily uint16\+\_\+t Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::get\+P\+WM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{bool}]{on }\end{DoxyParamCaption})}
+
+
+
+Gets the P\+WM output of one of the P\+C\+A9685 pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the P\+WM output pins, from 0 to 15 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+requested P\+WM output value
+\end{DoxyReturn}
+read pulsewidth (bits 0-\/$>$4096) from spec\textquotesingle{}d channel 
+\begin{DoxyParams}{Parameters}
+{\em num} & is the channel number \\
+\hline
+{\em on} & is a switch to say whether we want the \char`\"{}on\char`\"{} P\+WM bits or the \char`\"{}off\char`\"{} bits\\
+\hline
+\end{DoxyParams}
+reference\+: \href{https://thecavepearlproject.org/2017/11/03/configuring-i2c-sensors-with-arduino/}{\tt https\+://thecavepearlproject.\+org/2017/11/03/configuring-\/i2c-\/sensors-\/with-\/arduino/} \mbox{\Hypertarget{classAdafruit__PWMServoDriver_a52dbe6fa4fa4a98d3082f239d59ad5f1}\label{classAdafruit__PWMServoDriver_a52dbe6fa4fa4a98d3082f239d59ad5f1}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!read\+Prescale@{read\+Prescale}}
+\index{read\+Prescale@{read\+Prescale}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{read\+Prescale()}{readPrescale()}}
+{\footnotesize\ttfamily uint8\+\_\+t Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::read\+Prescale (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads set Prescale from P\+C\+A9685. 
+
+\begin{DoxyReturn}{Returns}
+prescale value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a7967e51188cbacf2c3f269c8aec9d292}\label{classAdafruit__PWMServoDriver_a7967e51188cbacf2c3f269c8aec9d292}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+Ext\+Clk@{set\+Ext\+Clk}}
+\index{set\+Ext\+Clk@{set\+Ext\+Clk}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+Ext\+Clk()}{setExtClk()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+Ext\+Clk (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{prescale }\end{DoxyParamCaption})}
+
+
+
+Sets E\+X\+T\+C\+LK pin to use the external clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prescale} & Configures the prescale value to be used by the external clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_ac725dd6b0d24d087586a854e81bcf6b3}\label{classAdafruit__PWMServoDriver_ac725dd6b0d24d087586a854e81bcf6b3}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+Oscillator\+Frequency@{set\+Oscillator\+Frequency}}
+\index{set\+Oscillator\+Frequency@{set\+Oscillator\+Frequency}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+Oscillator\+Frequency()}{setOscillatorFrequency()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+Oscillator\+Frequency (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Setter for the internally tracked oscillator used for freq calculations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & The frequency the P\+C\+A9685 should use for frequency calculations \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a8d18d478574c8c686e94faefe11094b9}\label{classAdafruit__PWMServoDriver_a8d18d478574c8c686e94faefe11094b9}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+Output\+Mode@{set\+Output\+Mode}}
+\index{set\+Output\+Mode@{set\+Output\+Mode}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+Output\+Mode()}{setOutputMode()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+Output\+Mode (\begin{DoxyParamCaption}\item[{bool}]{totempole }\end{DoxyParamCaption})}
+
+
+
+Sets the output mode of the P\+C\+A9685 to either open drain or push pull / totempole. Warning\+: L\+E\+Ds with integrated zener diodes should only be driven in open drain mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em totempole} & Totempole if true, open drain if false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a1246cd50849fe0f068cc5d474e06ae96}\label{classAdafruit__PWMServoDriver_a1246cd50849fe0f068cc5d474e06ae96}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+Pin@{set\+Pin}}
+\index{set\+Pin@{set\+Pin}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+Pin()}{setPin()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{val,  }\item[{bool}]{invert = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Helper to set pin P\+WM output. Sets pin without having to deal with on/off tick placement and properly handles a zero value as completely off and 4095 as completely on. Optional invert parameter supports inverting the pulse for sinking to ground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the P\+WM output pins, from 0 to 15 \\
+\hline
+{\em val} & The number of ticks out of 4096 to be active, should be a value from 0 to 4095 inclusive. \\
+\hline
+{\em invert} & If true, inverts the output, defaults to \textquotesingle{}false\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a724a7fc39c6fba34478ecc0eea038bd3}\label{classAdafruit__PWMServoDriver_a724a7fc39c6fba34478ecc0eea038bd3}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+P\+WM@{set\+P\+WM}}
+\index{set\+P\+WM@{set\+P\+WM}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+P\+W\+M()}{setPWM()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+P\+WM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})}
+
+
+
+Sets the P\+WM output of one of the P\+C\+A9685 pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the P\+WM output pins, from 0 to 15 \\
+\hline
+{\em on} & At what point in the 4096-\/part cycle to turn the P\+WM output ON \\
+\hline
+{\em off} & At what point in the 4096-\/part cycle to turn the P\+WM output O\+FF \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_a0ef6f1e3c81aebbd1d1da1bb12f3ed5c}\label{classAdafruit__PWMServoDriver_a0ef6f1e3c81aebbd1d1da1bb12f3ed5c}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!set\+P\+W\+M\+Freq@{set\+P\+W\+M\+Freq}}
+\index{set\+P\+W\+M\+Freq@{set\+P\+W\+M\+Freq}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{set\+P\+W\+M\+Freq()}{setPWMFreq()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::set\+P\+W\+M\+Freq (\begin{DoxyParamCaption}\item[{float}]{freq }\end{DoxyParamCaption})}
+
+
+
+Sets the P\+WM frequency for the entire chip, up to $\sim$1.6 K\+Hz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Floating point frequency that we will attempt to match \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdafruit__PWMServoDriver_aa91cf057ec01505292401e4fdceb57ac}\label{classAdafruit__PWMServoDriver_aa91cf057ec01505292401e4fdceb57ac}} 
+\index{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}!write\+Microseconds@{write\+Microseconds}}
+\index{write\+Microseconds@{write\+Microseconds}!Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver@{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{write\+Microseconds()}{writeMicroseconds()}}
+{\footnotesize\ttfamily void Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver\+::write\+Microseconds (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{microseconds }\end{DoxyParamCaption})}
+
+
+
+Sets the P\+WM output of one of the P\+C\+A9685 pins based on the input microseconds, output is not precise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the P\+WM output pins, from 0 to 15 \\
+\hline
+{\em Microseconds} & The number of Microseconds to turn the P\+WM output ON \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+O\+P\+O\+S6\+U\+L\+\_\+\+A\+R\+M/\hyperlink{Adafruit__PWMServoDriver_8h}{Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver.\+h}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/Adafruit\+\_\+\+P\+W\+M\+Servo\+Driver.\+cpp\end{DoxyCompactItemize}

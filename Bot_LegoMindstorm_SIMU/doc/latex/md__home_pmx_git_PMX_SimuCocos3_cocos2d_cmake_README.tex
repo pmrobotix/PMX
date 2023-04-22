@@ -1,0 +1,139 @@
+C\+Make is an open-\/source, cross-\/platform family of tools designed to build, test and package software. C\+Make is used to control the software compilation process using simple platform and compiler independent configuration files, and generates native makefiles and workspaces that can be used in the compiler environment of your choice.
+
+\subsection*{Requirement}
+
+
+\begin{DoxyEnumerate}
+\item Open your terminal and execute\+: 
+\begin{DoxyCode}
+cmake --version
+\end{DoxyCode}
+ if the C\+Make version is lower than 3.\+6, please upgrade.
+\item You should use {\bfseries out-\/of-\/source} builds, this means you need to create a different directory than {\bfseries cocos2d-\/x} to execute the {\ttfamily cmake} command.
+\end{DoxyEnumerate}
+
+\subsection*{Step by Step}
+
+\subsubsection*{Linux}
+
+
+\begin{DoxyCode}
+cd cocos2d-x
+mkdir linux-build && cd linux-build
+cmake ..
+make
+\end{DoxyCode}
+
+
+Execute {\ttfamily make help} to see all build targets, {\ttfamily make $<$target$>$} build specified target
+
+\subsubsection*{Generate Visual Studio projects}
+
+
+\begin{DoxyCode}
+cd cocos2d-x
+mkdir win32-build && cd win32-build
+cmake .. -G"Visual Studio 15 2017" -Tv141
+\end{DoxyCode}
+
+
+Execute {\ttfamily cmake -\/-\/build .} to compile, 
+\begin{DoxyCode}
+cmake --build . --config Debug
+cmake --build . --config Release
+\end{DoxyCode}
+ or open {\bfseries Cocos2d-\/x.\+sln} in Explorer to use the generated project.
+
+If can\textquotesingle{}t found {\ttfamily M\+S\+V\+C\+R110.\+dll} issue occurs to you, please install this \href{https://www.microsoft.com/en-us/download/details.aspx?id=30679}{\tt Visual C++ Runtime Libraries}, when runing the cpp-\/tests project
+
+\subsubsection*{Generate mac\+OS Project}
+
+
+\begin{DoxyCode}
+cd cocos2d-x
+mkdir mac-build && cd mac-build
+cmake .. -GXcode
+open Cocos2d-x.xcodeproj
+\end{DoxyCode}
+
+
+\subsubsection*{Generate i\+OS Project}
+
+
+\begin{DoxyCode}
+cd cocos2d-x
+mkdir ios-build && cd ios-build
+cmake .. -GXcode -DCMAKE\_TOOLCHAIN\_FILE=../cmake/ios.toolchain.cmake
+open Cocos2d-x.xcodeproj
+\end{DoxyCode}
+
+
+The default build is for running on i\+OS device, if you want to run in the simulator, please add {\ttfamily -\/\+D\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM=S\+I\+M\+U\+L\+A\+T\+OR} for architecture i386 or {\ttfamily -\/\+D\+I\+O\+S\+\_\+\+P\+L\+A\+T\+F\+O\+RM=S\+I\+M\+U\+L\+A\+T\+O\+R64} for x86\+\_\+64, but remember you can\textquotesingle{}t run metal-\/support app in simulator because Apple limitation.
+
+if you want to sign i\+OS app in C\+Make, you will need to fill development team ID into {\ttfamily set\+\_\+xcode\+\_\+property(\$\{A\+P\+P\+\_\+\+N\+A\+ME\} D\+E\+V\+E\+L\+O\+P\+M\+E\+N\+T\+\_\+\+T\+E\+AM \char`\"{}\char`\"{})}, or select to sign in Xcode after project files generated.
+
+\subsubsection*{Android Studio}
+
+We use the Gradle for Android applications, and Gradle use cmake to build the native code, see \href{https://github.com/cocos2d/cocos2d-x/blob/84be684e3858393a6f3efc50e3f95d4e0ac92a20/tests/cpp-empty-test/proj.android/gradle.properties#L38}{\tt gradle.\+properties}\+: {\ttfamily P\+R\+O\+P\+\_\+\+N\+D\+K\+\_\+\+M\+O\+DE}, it controls how native builds work.
+
+
+\begin{DoxyCode}
+# android native code build type
+# none, native code will never be compiled.
+# cmake, native code will be compiled by CMakeLists.txt
+# ndk-build, native code will be compiled by Android.mk
+PROP\_BUILD\_TYPE=cmake
+\end{DoxyCode}
+
+
+If you want to add cmake build arguments, please add it at \href{https://github.com/cocos2d/cocos2d-x/blob/84be684e3858393a6f3efc50e3f95d4e0ac92a20/tests/cpp-empty-test/proj.android/app/build.gradle#L25}{\tt external Native Build} block of {\bfseries app/build.\+gradle} file.
+
+\subsection*{Build Options}
+
+\subsubsection*{C\+Make Common Build Options}
+
+
+\begin{DoxyEnumerate}
+\item \+\_\+\+\_\+{\ttfamily -\/G}\+\_\+\+\_\+, generate native build project you specified, for example
+\begin{DoxyItemize}
+\item {\ttfamily -\/\+G\+Xcode} generate Xcode project files.
+\item {\ttfamily -\/\+G\+Visual Studio 15 2017} generate Visual Studio 2017 project, the default toolset is v141, add {\ttfamily -\/T} option to specify toolset, like this {\ttfamily -\/\+Tv140}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item \+\_\+\+\_\+{\ttfamily C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE}\+\_\+\+\_\+, specify the build mode, Debug or Release
+\begin{DoxyItemize}
+\item {\ttfamily -\/\+D\+C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE=Release} to generate the Release mode project, the default build mode is Debug
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item \+\_\+\+\_\+{\ttfamily -\/H -\/B}\+\_\+\+\_\+, {\ttfamily -\/H} specify the C\+Make project Home directory, {\ttfamily -\/B} specify C\+Make-\/generated project binary directory. for example
+\begin{DoxyItemize}
+\item {\ttfamily -\/H..\textbackslash{}cocos2d-\/x -\/\+Bmsvc\+\_\+build} the generated native project\textquotesingle{}s location will be {\ttfamily msvc\+\_\+build} directory.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item \+\_\+\+\_\+{\ttfamily -\/-\/build $<$dir$>$}\+\_\+\+\_\+, build a C\+Make-\/generated project binary tree, for example
+\begin{DoxyItemize}
+\item {\ttfamily cmake -\/-\/build ./msvc\+\_\+build}, cmake will sellect corresponding build tools.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\subsection*{Tips}
+
+
+\begin{DoxyEnumerate}
+\item Use {\ttfamily cmake ..} to refersh resources and code files, after you modify {\ttfamily Resources} or {\ttfamily C\+Make\+Lists.\+txt}.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Don\textquotesingle{}t need {\ttfamily C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE} options when {\ttfamily -\/G} Xcode or Visual Studio, C\+Make scripts will generate both configurations, so you can switch {\ttfamily Debug} and {\ttfamily Release} in I\+DE.
+\end{DoxyEnumerate}
+
+\subsection*{Useful Links}
+
+
+\begin{DoxyItemize}
+\item C\+Make Official website\+: \href{https://cmake.org/}{\tt cmake.\+org}
+\item C\+Make Documentation\+: \href{https://cmake.org/documentation/}{\tt cmake.\+org/documentation}
+\item C\+Make F\+AQ\+: \href{https://cmake.org/Wiki/CMake_FAQ}{\tt Wiki/\+C\+Make\+\_\+\+F\+AQ} 
+\end{DoxyItemize}

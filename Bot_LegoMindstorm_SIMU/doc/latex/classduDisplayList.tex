@@ -1,0 +1,178 @@
+\hypertarget{classduDisplayList}{}\section{du\+Display\+List Class Reference}
+\label{classduDisplayList}\index{du\+Display\+List@{du\+Display\+List}}
+
+
+Inheritance diagram for du\+Display\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classduDisplayList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for du\+Display\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classduDisplayList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classduDisplayList_a841869a8b7db7c4c67470578e3f2e050}\label{classduDisplayList_a841869a8b7db7c4c67470578e3f2e050}} 
+{\bfseries du\+Display\+List} (int cap=512)
+\item 
+\mbox{\Hypertarget{classduDisplayList_a2bd9a4e455216c4427557a230acfee31}\label{classduDisplayList_a2bd9a4e455216c4427557a230acfee31}} 
+virtual void {\bfseries depth\+Mask} (bool state)
+\item 
+virtual void \hyperlink{classduDisplayList_a9b22850cbe77c3e59f00ceda818563ea}{begin} (du\+Debug\+Draw\+Primitives prim, float size=1.\+0f)
+\item 
+virtual void \hyperlink{classduDisplayList_af724f7566b2c1c2c09453dc064c6eecf}{vertex} (const float x, const float y, const float z, unsigned int color)
+\item 
+virtual void \hyperlink{classduDisplayList_ab4aa562f713485769b68d1989c6e1ec4}{vertex} (const float $\ast$pos, unsigned int color)
+\item 
+\mbox{\Hypertarget{classduDisplayList_ad8283f5518c514d0635d8ad0c359e11a}\label{classduDisplayList_ad8283f5518c514d0635d8ad0c359e11a}} 
+virtual void \hyperlink{classduDisplayList_ad8283f5518c514d0635d8ad0c359e11a}{end} ()
+\begin{DoxyCompactList}\small\item\em End drawing primitives. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classduDisplayList_a5a6da38566e95882f4b63c0d765b2cc3}\label{classduDisplayList_a5a6da38566e95882f4b63c0d765b2cc3}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classduDisplayList_a53556c9d2afcd9eb625bc4f4cf9cf648}\label{classduDisplayList_a53556c9d2afcd9eb625bc4f4cf9cf648}} 
+void {\bfseries draw} (struct \hyperlink{structduDebugDraw}{du\+Debug\+Draw} $\ast$dd)
+\item 
+\mbox{\Hypertarget{classduDisplayList_a841869a8b7db7c4c67470578e3f2e050}\label{classduDisplayList_a841869a8b7db7c4c67470578e3f2e050}} 
+{\bfseries du\+Display\+List} (int cap=512)
+\item 
+\mbox{\Hypertarget{classduDisplayList_aa09c82a1a552e592f65d8f6562e91ec0}\label{classduDisplayList_aa09c82a1a552e592f65d8f6562e91ec0}} 
+virtual void {\bfseries depth\+Mask} (bool state)
+\item 
+virtual void \hyperlink{classduDisplayList_af71c472060ddabb596471dce5eb3e95f}{begin} (du\+Debug\+Draw\+Primitives prim, float size=1.\+0f)
+\item 
+virtual void \hyperlink{classduDisplayList_aa98c1a7225f0af78674db24c75afe6f3}{vertex} (const float x, const float y, const float z, unsigned int color)
+\item 
+virtual void \hyperlink{classduDisplayList_a5560d17b5190f75733154af2610ed83f}{vertex} (const float $\ast$pos, unsigned int color)
+\item 
+\mbox{\Hypertarget{classduDisplayList_a9db7bedb413358d47a3b6ca9d958f5a0}\label{classduDisplayList_a9db7bedb413358d47a3b6ca9d958f5a0}} 
+virtual void \hyperlink{classduDisplayList_a9db7bedb413358d47a3b6ca9d958f5a0}{end} ()
+\begin{DoxyCompactList}\small\item\em End drawing primitives. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classduDisplayList_a5a6da38566e95882f4b63c0d765b2cc3}\label{classduDisplayList_a5a6da38566e95882f4b63c0d765b2cc3}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classduDisplayList_a53556c9d2afcd9eb625bc4f4cf9cf648}\label{classduDisplayList_a53556c9d2afcd9eb625bc4f4cf9cf648}} 
+void {\bfseries draw} (struct \hyperlink{structduDebugDraw}{du\+Debug\+Draw} $\ast$dd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classduDisplayList_a9b22850cbe77c3e59f00ceda818563ea}\label{classduDisplayList_a9b22850cbe77c3e59f00ceda818563ea}} 
+\index{du\+Display\+List@{du\+Display\+List}!begin@{begin}}
+\index{begin@{begin}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void du\+Display\+List\+::begin (\begin{DoxyParamCaption}\item[{du\+Debug\+Draw\+Primitives}]{prim,  }\item[{float}]{size = {\ttfamily 1.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Begin drawing primitives. 
+\begin{DoxyParams}{Parameters}
+{\em prim} & \mbox{[}in\mbox{]} primitive type to draw, one of rc\+Debug\+Draw\+Primitives. \\
+\hline
+{\em size} & \mbox{[}in\mbox{]} size of a primitive, applies to point size and line width only. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a6403932173f27503e05cd258f5837d17}{du\+Debug\+Draw}.
+
+\mbox{\Hypertarget{classduDisplayList_af71c472060ddabb596471dce5eb3e95f}\label{classduDisplayList_af71c472060ddabb596471dce5eb3e95f}} 
+\index{du\+Display\+List@{du\+Display\+List}!begin@{begin}}
+\index{begin@{begin}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void du\+Display\+List\+::begin (\begin{DoxyParamCaption}\item[{du\+Debug\+Draw\+Primitives}]{prim,  }\item[{float}]{size = {\ttfamily 1.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Begin drawing primitives. 
+\begin{DoxyParams}{Parameters}
+{\em prim} & \mbox{[}in\mbox{]} primitive type to draw, one of rc\+Debug\+Draw\+Primitives. \\
+\hline
+{\em size} & \mbox{[}in\mbox{]} size of a primitive, applies to point size and line width only. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a6403932173f27503e05cd258f5837d17}{du\+Debug\+Draw}.
+
+\mbox{\Hypertarget{classduDisplayList_af724f7566b2c1c2c09453dc064c6eecf}\label{classduDisplayList_af724f7566b2c1c2c09453dc064c6eecf}} 
+\index{du\+Display\+List@{du\+Display\+List}!vertex@{vertex}}
+\index{vertex@{vertex}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{vertex()}{vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void du\+Display\+List\+::vertex (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y,  }\item[{const float}]{z,  }\item[{unsigned int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Submit a vertex 
+\begin{DoxyParams}{Parameters}
+{\em x,y,z} & \mbox{[}in\mbox{]} position of the verts. \\
+\hline
+{\em color} & \mbox{[}in\mbox{]} color of the verts. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a2af291d6e63081ce1d3f34e1851ae5e0}{du\+Debug\+Draw}.
+
+\mbox{\Hypertarget{classduDisplayList_aa98c1a7225f0af78674db24c75afe6f3}\label{classduDisplayList_aa98c1a7225f0af78674db24c75afe6f3}} 
+\index{du\+Display\+List@{du\+Display\+List}!vertex@{vertex}}
+\index{vertex@{vertex}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{vertex()}{vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void du\+Display\+List\+::vertex (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y,  }\item[{const float}]{z,  }\item[{unsigned int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Submit a vertex 
+\begin{DoxyParams}{Parameters}
+{\em x,y,z} & \mbox{[}in\mbox{]} position of the verts. \\
+\hline
+{\em color} & \mbox{[}in\mbox{]} color of the verts. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a2af291d6e63081ce1d3f34e1851ae5e0}{du\+Debug\+Draw}.
+
+\mbox{\Hypertarget{classduDisplayList_ab4aa562f713485769b68d1989c6e1ec4}\label{classduDisplayList_ab4aa562f713485769b68d1989c6e1ec4}} 
+\index{du\+Display\+List@{du\+Display\+List}!vertex@{vertex}}
+\index{vertex@{vertex}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{vertex()}{vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void du\+Display\+List\+::vertex (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{unsigned int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Submit a vertex 
+\begin{DoxyParams}{Parameters}
+{\em pos} & \mbox{[}in\mbox{]} position of the verts. \\
+\hline
+{\em color} & \mbox{[}in\mbox{]} color of the verts. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a8fac1072846b60be4ce4810c68140ee8}{du\+Debug\+Draw}.
+
+\mbox{\Hypertarget{classduDisplayList_a5560d17b5190f75733154af2610ed83f}\label{classduDisplayList_a5560d17b5190f75733154af2610ed83f}} 
+\index{du\+Display\+List@{du\+Display\+List}!vertex@{vertex}}
+\index{vertex@{vertex}!du\+Display\+List@{du\+Display\+List}}
+\subsubsection{\texorpdfstring{vertex()}{vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void du\+Display\+List\+::vertex (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{unsigned int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Submit a vertex 
+\begin{DoxyParams}{Parameters}
+{\em pos} & \mbox{[}in\mbox{]} position of the verts. \\
+\hline
+{\em color} & \mbox{[}in\mbox{]} color of the verts. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structduDebugDraw_a8fac1072846b60be4ce4810c68140ee8}{du\+Debug\+Draw}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Debug\+Utils/Debug\+Draw.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Debug\+Utils/Debug\+Draw.\+cpp\end{DoxyCompactItemize}

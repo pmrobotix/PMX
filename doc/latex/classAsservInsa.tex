@@ -1,0 +1,499 @@
+\hypertarget{classAsservInsa}{}\section{Asserv\+Insa Class Reference}
+\label{classAsservInsa}\index{Asserv\+Insa@{Asserv\+Insa}}
+
+
+Inheritance diagram for Asserv\+Insa\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classAsservInsa__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Asserv\+Insa\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classAsservInsa__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsservInsa_a373bbd394cf10d26734006ccfc9f795e}\label{classAsservInsa_a373bbd394cf10d26734006ccfc9f795e}} 
+{\bfseries Asserv\+Insa} (\hyperlink{classRobot}{Robot} $\ast$robot)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a72e39b2d5575c185d3058a1efb6ab950}\label{classAsservInsa_a72e39b2d5575c185d3058a1efb6ab950}} 
+void {\bfseries motion\+\_\+\+Init} (int freq)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a799de6d34a2a87fb8e4c90c78aeaf96d}\label{classAsservInsa_a799de6d34a2a87fb8e4c90c78aeaf96d}} 
+void {\bfseries motion\+\_\+\+Set\+Sampling\+Frequency} (uint frequency)
+\item 
+void \hyperlink{classAsservInsa_a81c2ebb47e4d076df72b46dda9798828}{path\+\_\+\+Cancel\+Trajectory} (void)
+\item 
+void \hyperlink{classAsservInsa_aef3d84dbdf3cf625978f25554202369e}{path\+\_\+\+Interrupt\+Trajectory} (void)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a0e45f168261924d9ad7d4afc4e6819d1}\label{classAsservInsa_a0e45f168261924d9ad7d4afc4e6819d1}} 
+void {\bfseries path\+\_\+\+Collision\+On\+Trajectory} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_af8a744352b442f246e689e2864caf23a}\label{classAsservInsa_af8a744352b442f246e689e2864caf23a}} 
+void {\bfseries path\+\_\+\+Collision\+Rear\+On\+Trajectory} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_afdaf455f758b81ee14f68af7a26fdf38}\label{classAsservInsa_afdaf455f758b81ee14f68af7a26fdf38}} 
+void {\bfseries motion\+\_\+set\+Goal\+Position} (float x\+\_\+mm, float y\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a0a0e525f7c85b70e4643fd48a847da1e}\label{classAsservInsa_a0a0e525f7c85b70e4643fd48a847da1e}} 
+void \hyperlink{classAsservInsa_a0a0e525f7c85b70e4643fd48a847da1e}{odo\+\_\+\+Set\+Position} (float x, float y, float theta)
+\begin{DoxyCompactList}\small\item\em Set robot position used by odometry. \end{DoxyCompactList}\item 
+\hyperlink{structRobotPosition}{Robot\+Position} \hyperlink{classAsservInsa_ad3ba1c750cbefac429d6901b579a61a8}{odo\+\_\+\+Get\+Position} (void)
+\begin{DoxyCompactList}\small\item\em Get current odometry robot position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_aa96150acd88849a6e9ea13ffc8c82e84}\label{classAsservInsa_aa96150acd88849a6e9ea13ffc8c82e84}} 
+float {\bfseries pos\+\_\+get\+X\+\_\+mm} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a1e5654c6f89316f14d7db4692cff2da2}\label{classAsservInsa_a1e5654c6f89316f14d7db4692cff2da2}} 
+float {\bfseries pos\+\_\+get\+Y\+\_\+mm} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_afb73a7359545c8cdfa0afb9cfe53dfe0}\label{classAsservInsa_afb73a7359545c8cdfa0afb9cfe53dfe0}} 
+float {\bfseries pos\+\_\+get\+Theta} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a863e4a6151d230c89e79e06b88453b36}\label{classAsservInsa_a863e4a6151d230c89e79e06b88453b36}} 
+float {\bfseries pos\+\_\+get\+Theta\+In\+Degree} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a6486768490a0cb085b013d01e7b06a36}\label{classAsservInsa_a6486768490a0cb085b013d01e7b06a36}} 
+void {\bfseries motion\+\_\+set\+Max\+Pwm\+Value} (int max\+Pwm\+Value)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a185762af29296314354ebbeedf7d9f79}\label{classAsservInsa_a185762af29296314354ebbeedf7d9f79}} 
+void \hyperlink{classAsservInsa_a185762af29296314354ebbeedf7d9f79}{motion\+\_\+configure\+Alpha\+P\+ID} (float p, float i, float d)
+\begin{DoxyCompactList}\small\item\em Load motion control module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_ada6a49a5fe715c48617b041ded1a6b91}\label{classAsservInsa_ada6a49a5fe715c48617b041ded1a6b91}} 
+void {\bfseries motion\+\_\+configure\+Delta\+P\+ID} (float p, float i, float d)
+\item 
+\mbox{\Hypertarget{classAsservInsa_afef7565672f92522549f48c1c09b87e9}\label{classAsservInsa_afef7565672f92522549f48c1c09b87e9}} 
+void {\bfseries motion\+\_\+configure\+Left\+P\+ID} (float p, float i, float d)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a37063a5002723bd08cee4f77bd2d9a6b}\label{classAsservInsa_a37063a5002723bd08cee4f77bd2d9a6b}} 
+void {\bfseries motion\+\_\+configure\+Right\+P\+ID} (float p, float i, float d)
+\item 
+\mbox{\Hypertarget{classAsservInsa_abfd039891e955c93bcfaf905d92ff03e}\label{classAsservInsa_abfd039891e955c93bcfaf905d92ff03e}} 
+void \hyperlink{classAsservInsa_abfd039891e955c93bcfaf905d92ff03e}{motion\+\_\+\+Free\+Motion} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control for a moment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_aa419b5594a43c9133b81b64ceac4e40f}\label{classAsservInsa_aa419b5594a43c9133b81b64ceac4e40f}} 
+void \hyperlink{classAsservInsa_aa419b5594a43c9133b81b64ceac4e40f}{motion\+\_\+\+Set\+Current\+Command} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Set a robot command and execute it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_aaa40cb7703fd06105886f7d606edc719}\label{classAsservInsa_aaa40cb7703fd06105886f7d606edc719}} 
+void \hyperlink{classAsservInsa_aaa40cb7703fd06105886f7d606edc719}{motion\+\_\+\+Disable\+P\+ID} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control and disable P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_a847f01f6565d04782ac49a64a8952e7d}\label{classAsservInsa_a847f01f6565d04782ac49a64a8952e7d}} 
+void \hyperlink{classAsservInsa_a847f01f6565d04782ac49a64a8952e7d}{motion\+\_\+\+Assisted\+Handling} (void)
+\begin{DoxyCompactList}\small\item\em Assisted movement mode =) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_ac80c0e514cddf1dc5f3eade9fa5dd329}\label{classAsservInsa_ac80c0e514cddf1dc5f3eade9fa5dd329}} 
+void \hyperlink{classAsservInsa_ac80c0e514cddf1dc5f3eade9fa5dd329}{motion\+\_\+\+Stop\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control timer, used to shutdown motion control. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_a4d839cdd298a4e24f57b5a298e6f463e}\label{classAsservInsa_a4d839cdd298a4e24f57b5a298e6f463e}} 
+void \hyperlink{classAsservInsa_a4d839cdd298a4e24f57b5a298e6f463e}{set\+P\+WM} (int16 pwm\+Left, int16 pwm\+Right)
+\begin{DoxyCompactList}\small\item\em Directly set the pwm for the motor (used both internally and for test) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_a6bb59a9796d2339d58c36c53302cf22d}\label{classAsservInsa_a6bb59a9796d2339d58c36c53302cf22d}} 
+uint32 {\bfseries encoder\+\_\+\+Get\+Left\+Resolution} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a1bdbdafa3f9edcf8632c13dffb57262a}\label{classAsservInsa_a1bdbdafa3f9edcf8632c13dffb57262a}} 
+uint32 {\bfseries encoder\+\_\+\+Get\+Right\+Resolution} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_aa20ca7b484f54748a7fefda97b969a9f}\label{classAsservInsa_aa20ca7b484f54748a7fefda97b969a9f}} 
+void \hyperlink{classAsservInsa_aa20ca7b484f54748a7fefda97b969a9f}{encoder\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialisation. \end{DoxyCompactList}\item 
+void \hyperlink{classAsservInsa_aca28ee0011e081ee43edc944d9dc67a3}{encoder\+\_\+\+Set\+Dist} (float dist)
+\item 
+void \hyperlink{classAsservInsa_a4b5dca46085bb5f955a71f5edc8374f2}{encoder\+\_\+\+Set\+Resolution} (uint32 left\+Ticks\+PerM, uint32 right\+Ticks\+PerM, float entraxe\+\_\+mm)
+\item 
+void \hyperlink{classAsservInsa_a76cc56c8240ee5f95dd15f4d3097f9a7}{encoder\+\_\+\+Read\+Sensor} (int32 $\ast$d\+Left, int32 $\ast$d\+Right, int32 $\ast$d\+Alpha, int32 $\ast$d\+Delta, int32 $\ast$left, int32 $\ast$right)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a6119d026aea3bd10b93a7e5443a8c764}\label{classAsservInsa_a6119d026aea3bd10b93a7e5443a8c764}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+find\+Pid\+AD} (float angle\+\_\+rad, float meters, int sec)
+\item 
+\mbox{\Hypertarget{classAsservInsa_aa5cfee544774789548c1033627e2081e}\label{classAsservInsa_aa5cfee544774789548c1033627e2081e}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+find\+Pid\+LR} (float posl, float posr, int sec)
+\item 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_a3cb6f1cf5557851312a8398b79514905}{motion\+\_\+\+Do\+Line} (float dist)
+\item 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_ab45e49759207b2ba9abcb17b1d567abf}{motion\+\_\+\+Do\+Rotate} (float angle)
+\item 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_aa254f5473381b147ddaa536a1187fd5c}{motion\+\_\+\+Do\+Arc\+Rotate} (float angle, float radius)
+\item 
+void \hyperlink{classAsservInsa_af139b79d3547a044dbf921e5984bc3cd}{compute\+Alpha\+Delta} (float x1, float y1, float theta1, float x2, float y2, float $\ast$out\+\_\+angle, float $\ast$out\+\_\+dist)
+\item 
+\mbox{\Hypertarget{classAsservInsa_ad92a1afe85121d55bce7551cfab80bf5}\label{classAsservInsa_ad92a1afe85121d55bce7551cfab80bf5}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_ad92a1afe85121d55bce7551cfab80bf5}{motion\+\_\+\+Go\+To\+T\+S\+L\+From} (float x1, float y1, float theta1, float x2, float y2)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x2,y2) from (x1,y1,theta1) using Turn-\/\+Stop-\/\+Line motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_a878ef9649b7358b14adda88f336b9aab}\label{classAsservInsa_a878ef9649b7358b14adda88f336b9aab}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_a878ef9649b7358b14adda88f336b9aab}{motion\+\_\+\+Go\+To\+T\+SL} (float x, float y)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x,y) using Turn-\/\+Stop-\/\+Line motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_aade6e14a6fab69dd1f42391f5ca212ae}\label{classAsservInsa_aade6e14a6fab69dd1f42391f5ca212ae}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_aade6e14a6fab69dd1f42391f5ca212ae}{motion\+\_\+\+Go\+To\+Speed} (float x, float y)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x,y) using speed motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_a2c7ff3570217f3bd521b780ac6e3b530}\label{classAsservInsa_a2c7ff3570217f3bd521b780ac6e3b530}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_a2c7ff3570217f3bd521b780ac6e3b530}{motion\+\_\+\+Go\+To\+Speed\+Path} (const \hyperlink{structPosition}{Position} $\ast$pos, int nb)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} a list of (x,y) position using speed motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsservInsa_aea5aa879c72353a31b186a11a11ef08c}\label{classAsservInsa_aea5aa879c72353a31b186a11a11ef08c}} 
+T\+R\+A\+J\+\_\+\+S\+T\+A\+TE \hyperlink{classAsservInsa_aea5aa879c72353a31b186a11a11ef08c}{motion\+\_\+\+Orient\+To} (float angle)
+\begin{DoxyCompactList}\small\item\em Orient toward the given angle. \end{DoxyCompactList}\item 
+void \hyperlink{classAsservInsa_ab0fe0ad459e394938598a8b031118edb}{motion\+\_\+\+Line} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist)
+\item 
+void \hyperlink{classAsservInsa_af0aa05c12a2d8eb278f84e1b7472ca83}{motion\+\_\+\+Line\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist, float V\+Max)
+\item 
+void \hyperlink{classAsservInsa_af749fa1a3cefdb6593451a2ff4114bd8}{motion\+\_\+\+Line\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{classAsservInsa_ae7c7edab12c43ce352a694e95994c972}{motion\+\_\+\+Rotate} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle)
+\item 
+void \hyperlink{classAsservInsa_a1c9e34ba184f7d4c651955185d022605}{motion\+\_\+\+Rotate\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float V\+Max)
+\item 
+void \hyperlink{classAsservInsa_ada416b12d072bc0a4bf6ecfebc0dcbc5}{motion\+\_\+\+Rotate\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{classAsservInsa_ad243e9562a5191e34aed076e52e8fab8}{motion\+\_\+\+Arc\+Rotate} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a592cd9219768e4cf06541589f106a6b5}\label{classAsservInsa_a592cd9219768e4cf06541589f106a6b5}} 
+void {\bfseries motion\+\_\+\+Arc\+Rotate\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius, float V\+Max)
+\item 
+\mbox{\Hypertarget{classAsservInsa_ab151cfa4d4b3db98a4fb2a6c8bdccd3f}\label{classAsservInsa_ab151cfa4d4b3db98a4fb2a6c8bdccd3f}} 
+void {\bfseries motion\+\_\+\+Arc\+Rotate\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{classAsservInsa_ae70a0eb3fe9dab42d6fa1537ddcb6b8b}{motion\+\_\+\+Speed\+Control\+LR} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Left, float dist\+Left, float acc\+Left, float sp\+Right, float dist\+Right, float acc\+Right)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a194081c0feee2875b046f2258beebe09}\label{classAsservInsa_a194081c0feee2875b046f2258beebe09}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+Decel} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Left, float dist\+Left, float acc\+Left, float dec\+Left, float sp\+Right, float dist\+Right, float acc\+Right, float dec\+Right)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a49676f6697d55466ab9c4219c1c1ac61}\label{classAsservInsa_a49676f6697d55466ab9c4219c1c1ac61}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+V0} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float V0\+Left, float sp\+Left, float dist\+Left, float acc\+Left, float V0\+Right, float sp\+Right, float dist\+Right, float acc\+Right)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a6e82f45a33d07b91fbeba56a69b96c2d}\label{classAsservInsa_a6e82f45a33d07b91fbeba56a69b96c2d}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+Time} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float V0\+Left, float T\+Left, float acc\+Left, float V0\+Right, float T\+Right, float acc\+Right)
+\item 
+void \hyperlink{classAsservInsa_adeb7a8d4a160f8be0cfecbf721ca2c44}{motion\+\_\+\+Speed\+Control\+AD} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Alpha, float dist\+Alpha, float acc\+Alpha, float sp\+Delta, float dist\+Delta, float acc\+Delta)
+\item 
+void \hyperlink{classAsservInsa_a949a94fc133abfb6ff87671372a510a8}{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Alpha, float acc\+Alpha, float sp\+Delta, float acc\+Delta, int during\+Ms)
+\item 
+void \hyperlink{classAsservInsa_a8237e3dcb0d9c8852f692c466da10f32}{motion\+\_\+\+Step\+Order\+LR} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, int32 pos\+Left, int32 pos\+Right, int seconds)
+\item 
+void \hyperlink{classAsservInsa_ab9a32335b1fe9484243f5849680fe510}{motion\+\_\+\+Step\+Order\+AD} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, int32 pos\+Alpha, int32 pos\+Delta, int seconds)
+\item 
+\mbox{\Hypertarget{classAsservInsa_a3893eb1ab4224de2931c5aed04461dc7}\label{classAsservInsa_a3893eb1ab4224de2931c5aed04461dc7}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Vmax} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a31dce934fba8861409b304244d6775d8}\label{classAsservInsa_a31dce934fba8861409b304244d6775d8}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Accel} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a94274dbc29c6d140396c43436d091db6}\label{classAsservInsa_a94274dbc29c6d140396c43436d091db6}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Decel} ()
+\item 
+\mbox{\Hypertarget{classAsservInsa_a96cf5d8d69183980eedd48d26a2a057d}\label{classAsservInsa_a96cf5d8d69183980eedd48d26a2a057d}} 
+void {\bfseries motion\+\_\+\+Set\+Default\+Vmax} (float speed\+\_\+m\+\_\+sec)
+\item 
+\mbox{\Hypertarget{classAsservInsa_af42a782d8283d3c137108dd511591481}\label{classAsservInsa_af42a782d8283d3c137108dd511591481}} 
+void {\bfseries motion\+\_\+\+Set\+Default\+Accel} (float accel)
+\item 
+\mbox{\Hypertarget{classAsservInsa_af61d348814e3696b2463586db43848ea}\label{classAsservInsa_af61d348814e3696b2463586db43848ea}} 
+void {\bfseries motion\+\_\+\+Set\+Default\+Decel} (float decel)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsservInsa_a67295285fc3a26cb25c99a1f9a88db2c}\label{classAsservInsa_a67295285fc3a26cb25c99a1f9a88db2c}} 
+virtual void \hyperlink{classAsservInsa_a67295285fc3a26cb25c99a1f9a88db2c}{execute} ()
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}implementation de cette méthode détaille le traitement réalisé par ce thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAsservInsa_af139b79d3547a044dbf921e5984bc3cd}\label{classAsservInsa_af139b79d3547a044dbf921e5984bc3cd}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!compute\+Alpha\+Delta@{compute\+Alpha\+Delta}}
+\index{compute\+Alpha\+Delta@{compute\+Alpha\+Delta}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{compute\+Alpha\+Delta()}{computeAlphaDelta()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::compute\+Alpha\+Delta (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{theta1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float $\ast$}]{out\+\_\+angle,  }\item[{float $\ast$}]{out\+\_\+dist }\end{DoxyParamCaption})}
+
+Compute the displacement needed on alpha and delta to reach the point x2, y2 from the point x1, y1 starting with the orientation theta1 \mbox{\Hypertarget{classAsservInsa_a76cc56c8240ee5f95dd15f4d3097f9a7}\label{classAsservInsa_a76cc56c8240ee5f95dd15f4d3097f9a7}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!encoder\+\_\+\+Read\+Sensor@{encoder\+\_\+\+Read\+Sensor}}
+\index{encoder\+\_\+\+Read\+Sensor@{encoder\+\_\+\+Read\+Sensor}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Read\+Sensor()}{encoder\_ReadSensor()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::encoder\+\_\+\+Read\+Sensor (\begin{DoxyParamCaption}\item[{int32 $\ast$}]{d\+Left,  }\item[{int32 $\ast$}]{d\+Right,  }\item[{int32 $\ast$}]{d\+Alpha,  }\item[{int32 $\ast$}]{d\+Delta,  }\item[{int32 $\ast$}]{left,  }\item[{int32 $\ast$}]{right }\end{DoxyParamCaption})}
+
+Get new encoders values
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Left} & left motor motion \\
+\hline
+{\em d\+Right} & right motor motion \\
+\hline
+{\em d\+Alpha} & alpha motor motion \\
+\hline
+{\em d\+Delta} & delta motor motion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_aca28ee0011e081ee43edc944d9dc67a3}\label{classAsservInsa_aca28ee0011e081ee43edc944d9dc67a3}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!encoder\+\_\+\+Set\+Dist@{encoder\+\_\+\+Set\+Dist}}
+\index{encoder\+\_\+\+Set\+Dist@{encoder\+\_\+\+Set\+Dist}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Set\+Dist()}{encoder\_SetDist()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::encoder\+\_\+\+Set\+Dist (\begin{DoxyParamCaption}\item[{float}]{dist }\end{DoxyParamCaption})}
+
+Set distance between encoder 
+\begin{DoxyParams}{Parameters}
+{\em dist} & Encoder distance in meters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_a4b5dca46085bb5f955a71f5edc8374f2}\label{classAsservInsa_a4b5dca46085bb5f955a71f5edc8374f2}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!encoder\+\_\+\+Set\+Resolution@{encoder\+\_\+\+Set\+Resolution}}
+\index{encoder\+\_\+\+Set\+Resolution@{encoder\+\_\+\+Set\+Resolution}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Set\+Resolution()}{encoder\_SetResolution()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::encoder\+\_\+\+Set\+Resolution (\begin{DoxyParamCaption}\item[{uint32}]{left\+Ticks\+PerM,  }\item[{uint32}]{right\+Ticks\+PerM,  }\item[{float}]{entraxe\+\_\+mm }\end{DoxyParamCaption})}
+
+Set encoder resolution and recompute value of v\+Tops etc... 
+\begin{DoxyParams}{Parameters}
+{\em left\+Ticks\+PerM} & left encoder resolution in ticks per meter \\
+\hline
+{\em right\+Ticks\+PerM} & right encoder resolution in ticks per meter \\
+\hline
+{\em entraxe} & dist Encoder distance in millimeters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ad243e9562a5191e34aed076e52e8fab8}\label{classAsservInsa_ad243e9562a5191e34aed076e52e8fab8}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Arc\+Rotate@{motion\+\_\+\+Arc\+Rotate}}
+\index{motion\+\_\+\+Arc\+Rotate@{motion\+\_\+\+Arc\+Rotate}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Arc\+Rotate()}{motion\_ArcRotate()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Arc\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Order a arc-\/circle curve movement of the specified angle and radius 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle of the arc-\/circle curve in radian (2$\ast$\+Pi make a complete circle) \\
+\hline
+{\em radius} & Radius of the arc-\/circle in meter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_aa254f5473381b147ddaa536a1187fd5c}\label{classAsservInsa_aa254f5473381b147ddaa536a1187fd5c}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Do\+Arc\+Rotate@{motion\+\_\+\+Do\+Arc\+Rotate}}
+\index{motion\+\_\+\+Do\+Arc\+Rotate@{motion\+\_\+\+Do\+Arc\+Rotate}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Arc\+Rotate()}{motion\_DoArcRotate()}}
+{\footnotesize\ttfamily T\+R\+A\+J\+\_\+\+S\+T\+A\+TE Asserv\+Insa\+::motion\+\_\+\+Do\+Arc\+Rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{classAsservInsa_ad243e9562a5191e34aed076e52e8fab8}{motion\+\_\+\+Arc\+Rotate} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classAsservInsa_a3cb6f1cf5557851312a8398b79514905}\label{classAsservInsa_a3cb6f1cf5557851312a8398b79514905}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Do\+Line@{motion\+\_\+\+Do\+Line}}
+\index{motion\+\_\+\+Do\+Line@{motion\+\_\+\+Do\+Line}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Line()}{motion\_DoLine()}}
+{\footnotesize\ttfamily T\+R\+A\+J\+\_\+\+S\+T\+A\+TE Asserv\+Insa\+::motion\+\_\+\+Do\+Line (\begin{DoxyParamCaption}\item[{float}]{dist }\end{DoxyParamCaption})}
+
+This module provide higher level control on the motion control module AI and strategy software can use this primitives directly Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{classAsservInsa_ab0fe0ad459e394938598a8b031118edb}{motion\+\_\+\+Line} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classAsservInsa_ab45e49759207b2ba9abcb17b1d567abf}\label{classAsservInsa_ab45e49759207b2ba9abcb17b1d567abf}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Do\+Rotate@{motion\+\_\+\+Do\+Rotate}}
+\index{motion\+\_\+\+Do\+Rotate@{motion\+\_\+\+Do\+Rotate}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Rotate()}{motion\_DoRotate()}}
+{\footnotesize\ttfamily T\+R\+A\+J\+\_\+\+S\+T\+A\+TE Asserv\+Insa\+::motion\+\_\+\+Do\+Rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{classAsservInsa_ae7c7edab12c43ce352a694e95994c972}{motion\+\_\+\+Rotate} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classAsservInsa_ab0fe0ad459e394938598a8b031118edb}\label{classAsservInsa_ab0fe0ad459e394938598a8b031118edb}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Line@{motion\+\_\+\+Line}}
+\index{motion\+\_\+\+Line@{motion\+\_\+\+Line}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line()}{motion\_Line()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_af0aa05c12a2d8eb278f84e1b7472ca83}\label{classAsservInsa_af0aa05c12a2d8eb278f84e1b7472ca83}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Line\+Speed@{motion\+\_\+\+Line\+Speed}}
+\index{motion\+\_\+\+Line\+Speed@{motion\+\_\+\+Line\+Speed}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line\+Speed()}{motion\_LineSpeed()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Line\+Speed (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist,  }\item[{float}]{V\+Max }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance with a specific speed 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_af749fa1a3cefdb6593451a2ff4114bd8}\label{classAsservInsa_af749fa1a3cefdb6593451a2ff4114bd8}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Line\+Speed\+Acc@{motion\+\_\+\+Line\+Speed\+Acc}}
+\index{motion\+\_\+\+Line\+Speed\+Acc@{motion\+\_\+\+Line\+Speed\+Acc}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line\+Speed\+Acc()}{motion\_LineSpeedAcc()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Line\+Speed\+Acc (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist,  }\item[{float}]{V\+Max,  }\item[{float}]{Accel,  }\item[{float}]{Decel }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance with a specific speed and acceleration 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+{\em Accel} & Acceleration used to attain the V\+Max speed in m/s/s \\
+\hline
+{\em Decel} & Deceleration used to stop the movement in m/s/s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ae7c7edab12c43ce352a694e95994c972}\label{classAsservInsa_ae7c7edab12c43ce352a694e95994c972}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Rotate@{motion\+\_\+\+Rotate}}
+\index{motion\+\_\+\+Rotate@{motion\+\_\+\+Rotate}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate()}{motion\_Rotate()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_a1c9e34ba184f7d4c651955185d022605}\label{classAsservInsa_a1c9e34ba184f7d4c651955185d022605}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Rotate\+Speed@{motion\+\_\+\+Rotate\+Speed}}
+\index{motion\+\_\+\+Rotate\+Speed@{motion\+\_\+\+Rotate\+Speed}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate\+Speed()}{motion\_RotateSpeed()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Rotate\+Speed (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{V\+Max }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle with a specific speed 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ada416b12d072bc0a4bf6ecfebc0dcbc5}\label{classAsservInsa_ada416b12d072bc0a4bf6ecfebc0dcbc5}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Rotate\+Speed\+Acc@{motion\+\_\+\+Rotate\+Speed\+Acc}}
+\index{motion\+\_\+\+Rotate\+Speed\+Acc@{motion\+\_\+\+Rotate\+Speed\+Acc}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate\+Speed\+Acc()}{motion\_RotateSpeedAcc()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Rotate\+Speed\+Acc (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{V\+Max,  }\item[{float}]{Accel,  }\item[{float}]{Decel }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle with a specific speed and acceleration 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+{\em Accel} & Acceleration used to attain the V\+Max speed in m/s/s \\
+\hline
+{\em Decel} & Deceleration used to stop the movement in m/s/s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_adeb7a8d4a160f8be0cfecbf721ca2c44}\label{classAsservInsa_adeb7a8d4a160f8be0cfecbf721ca2c44}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Speed\+Control\+AD@{motion\+\_\+\+Speed\+Control\+AD}}
+\index{motion\+\_\+\+Speed\+Control\+AD@{motion\+\_\+\+Speed\+Control\+AD}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+A\+D()}{motion\_SpeedControlAD()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Speed\+Control\+AD (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Alpha,  }\item[{float}]{dist\+Alpha,  }\item[{float}]{acc\+Alpha,  }\item[{float}]{sp\+Delta,  }\item[{float}]{dist\+Delta,  }\item[{float}]{acc\+Delta }\end{DoxyParamCaption})}
+
+Control the speed of alpha-\/delta virtual motors 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_a949a94fc133abfb6ff87671372a510a8}\label{classAsservInsa_a949a94fc133abfb6ff87671372a510a8}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time@{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time}}
+\index{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time@{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time()}{motion\_SpeedControlADMaxTime()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Alpha,  }\item[{float}]{acc\+Alpha,  }\item[{float}]{sp\+Delta,  }\item[{float}]{acc\+Delta,  }\item[{int}]{during\+Ms }\end{DoxyParamCaption})}
+
+Control the speed of alpha-\/delta virtual motors during a few ms 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ae70a0eb3fe9dab42d6fa1537ddcb6b8b}\label{classAsservInsa_ae70a0eb3fe9dab42d6fa1537ddcb6b8b}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Speed\+Control\+LR@{motion\+\_\+\+Speed\+Control\+LR}}
+\index{motion\+\_\+\+Speed\+Control\+LR@{motion\+\_\+\+Speed\+Control\+LR}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+L\+R()}{motion\_SpeedControlLR()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Speed\+Control\+LR (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Left,  }\item[{float}]{dist\+Left,  }\item[{float}]{acc\+Left,  }\item[{float}]{sp\+Right,  }\item[{float}]{dist\+Right,  }\item[{float}]{acc\+Right }\end{DoxyParamCaption})}
+
+Control the speed of both motors 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ab9a32335b1fe9484243f5849680fe510}\label{classAsservInsa_ab9a32335b1fe9484243f5849680fe510}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Step\+Order\+AD@{motion\+\_\+\+Step\+Order\+AD}}
+\index{motion\+\_\+\+Step\+Order\+AD@{motion\+\_\+\+Step\+Order\+AD}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Step\+Order\+A\+D()}{motion\_StepOrderAD()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Step\+Order\+AD (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{int32}]{pos\+Alpha,  }\item[{int32}]{pos\+Delta,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+Test P\+ID system with step order response 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_a8237e3dcb0d9c8852f692c466da10f32}\label{classAsservInsa_a8237e3dcb0d9c8852f692c466da10f32}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!motion\+\_\+\+Step\+Order\+LR@{motion\+\_\+\+Step\+Order\+LR}}
+\index{motion\+\_\+\+Step\+Order\+LR@{motion\+\_\+\+Step\+Order\+LR}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Step\+Order\+L\+R()}{motion\_StepOrderLR()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::motion\+\_\+\+Step\+Order\+LR (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{int32}]{pos\+Left,  }\item[{int32}]{pos\+Right,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+Test P\+ID system with step order response 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAsservInsa_ad3ba1c750cbefac429d6901b579a61a8}\label{classAsservInsa_ad3ba1c750cbefac429d6901b579a61a8}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!odo\+\_\+\+Get\+Position@{odo\+\_\+\+Get\+Position}}
+\index{odo\+\_\+\+Get\+Position@{odo\+\_\+\+Get\+Position}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{odo\+\_\+\+Get\+Position()}{odo\_GetPosition()}}
+{\footnotesize\ttfamily \hyperlink{structRobotPosition}{Robot\+Position} Asserv\+Insa\+::odo\+\_\+\+Get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get current odometry robot position. 
+
+Get current odometry robot position
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRobot}{Robot} position in meters and angle in radian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAsservInsa_a81c2ebb47e4d076df72b46dda9798828}\label{classAsservInsa_a81c2ebb47e4d076df72b46dda9798828}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!path\+\_\+\+Cancel\+Trajectory@{path\+\_\+\+Cancel\+Trajectory}}
+\index{path\+\_\+\+Cancel\+Trajectory@{path\+\_\+\+Cancel\+Trajectory}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Cancel\+Trajectory()}{path\_CancelTrajectory()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::path\+\_\+\+Cancel\+Trajectory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Mostly needed for remote control, use collision function when a collision is detected. \mbox{\Hypertarget{classAsservInsa_aef3d84dbdf3cf625978f25554202369e}\label{classAsservInsa_aef3d84dbdf3cf625978f25554202369e}} 
+\index{Asserv\+Insa@{Asserv\+Insa}!path\+\_\+\+Interrupt\+Trajectory@{path\+\_\+\+Interrupt\+Trajectory}}
+\index{path\+\_\+\+Interrupt\+Trajectory@{path\+\_\+\+Interrupt\+Trajectory}!Asserv\+Insa@{Asserv\+Insa}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Interrupt\+Trajectory()}{path\_InterruptTrajectory()}}
+{\footnotesize\ttfamily void Asserv\+Insa\+::path\+\_\+\+Interrupt\+Trajectory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Interrupt current trajectory and stop robot
+
+Used to stop on a particular event (for instance actuator event) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/Asserv\+Insa.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/clothoid.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/encoder.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motion.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motion\+\_\+calibration.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motor.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motor\+\_\+\+P\+I\+D.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motor\+\_\+position\+Command.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motor\+\_\+speed\+Command.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/motor\+\_\+step\+Command.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/path\+\_\+manager.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/robot\+\_\+odometry.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/robot\+\_\+slippage.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/robot\+\_\+traj\+\_\+wrappers.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/robot\+\_\+trajectory.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Insa/robot\+\_\+unit\+Conversion.\+cpp\end{DoxyCompactItemize}

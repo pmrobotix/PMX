@@ -1,0 +1,82 @@
+\hypertarget{classbtPoolAllocator}{}\section{bt\+Pool\+Allocator Class Reference}
+\label{classbtPoolAllocator}\index{bt\+Pool\+Allocator@{bt\+Pool\+Allocator}}
+
+
+The \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} class allows to efficiently allocate a large pool of objects, instead of dynamically allocating them separately.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Pool\+Allocator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a00877988f8da0e869dadbed143bd7ee7}\label{classbtPoolAllocator_a00877988f8da0e869dadbed143bd7ee7}} 
+{\bfseries bt\+Pool\+Allocator} (int elem\+Size, int max\+Elements)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a81c9f44a991e1a1871ff9ba41308e85d}\label{classbtPoolAllocator_a81c9f44a991e1a1871ff9ba41308e85d}} 
+int {\bfseries get\+Free\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_add80f1642da714033fd0416fa0e9d27c}\label{classbtPoolAllocator_add80f1642da714033fd0416fa0e9d27c}} 
+int {\bfseries get\+Used\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a94af9be67306f3880ded5f1ad9420945}\label{classbtPoolAllocator_a94af9be67306f3880ded5f1ad9420945}} 
+int {\bfseries get\+Max\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_ae2d7e02c7ba5f6d713d9e8aa740095ca}\label{classbtPoolAllocator_ae2d7e02c7ba5f6d713d9e8aa740095ca}} 
+void $\ast$ {\bfseries allocate} (int size)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a56dc7a155cfd52bffc5efe933261b6c6}\label{classbtPoolAllocator_a56dc7a155cfd52bffc5efe933261b6c6}} 
+bool {\bfseries valid\+Ptr} (void $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a26bf2c983bc378c3da96ee218861b65f}\label{classbtPoolAllocator_a26bf2c983bc378c3da96ee218861b65f}} 
+void {\bfseries free\+Memory} (void $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a458d373ede5ee4bded615bf7995fcc4d}\label{classbtPoolAllocator_a458d373ede5ee4bded615bf7995fcc4d}} 
+int {\bfseries get\+Element\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a80d1a161e54fd676d7a4da5f98bd3686}\label{classbtPoolAllocator_a80d1a161e54fd676d7a4da5f98bd3686}} 
+unsigned char $\ast$ {\bfseries get\+Pool\+Address} ()
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_ab9df25899c0b922c4bb2c8ae82fc317d}\label{classbtPoolAllocator_ab9df25899c0b922c4bb2c8ae82fc317d}} 
+const unsigned char $\ast$ {\bfseries get\+Pool\+Address} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a00877988f8da0e869dadbed143bd7ee7}\label{classbtPoolAllocator_a00877988f8da0e869dadbed143bd7ee7}} 
+{\bfseries bt\+Pool\+Allocator} (int elem\+Size, int max\+Elements)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a81c9f44a991e1a1871ff9ba41308e85d}\label{classbtPoolAllocator_a81c9f44a991e1a1871ff9ba41308e85d}} 
+int {\bfseries get\+Free\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_add80f1642da714033fd0416fa0e9d27c}\label{classbtPoolAllocator_add80f1642da714033fd0416fa0e9d27c}} 
+int {\bfseries get\+Used\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a94af9be67306f3880ded5f1ad9420945}\label{classbtPoolAllocator_a94af9be67306f3880ded5f1ad9420945}} 
+int {\bfseries get\+Max\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_ae2d7e02c7ba5f6d713d9e8aa740095ca}\label{classbtPoolAllocator_ae2d7e02c7ba5f6d713d9e8aa740095ca}} 
+void $\ast$ {\bfseries allocate} (int size)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a56dc7a155cfd52bffc5efe933261b6c6}\label{classbtPoolAllocator_a56dc7a155cfd52bffc5efe933261b6c6}} 
+bool {\bfseries valid\+Ptr} (void $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a26bf2c983bc378c3da96ee218861b65f}\label{classbtPoolAllocator_a26bf2c983bc378c3da96ee218861b65f}} 
+void {\bfseries free\+Memory} (void $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a458d373ede5ee4bded615bf7995fcc4d}\label{classbtPoolAllocator_a458d373ede5ee4bded615bf7995fcc4d}} 
+int {\bfseries get\+Element\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_a80d1a161e54fd676d7a4da5f98bd3686}\label{classbtPoolAllocator_a80d1a161e54fd676d7a4da5f98bd3686}} 
+unsigned char $\ast$ {\bfseries get\+Pool\+Address} ()
+\item 
+\mbox{\Hypertarget{classbtPoolAllocator_ab9df25899c0b922c4bb2c8ae82fc317d}\label{classbtPoolAllocator_ab9df25899c0b922c4bb2c8ae82fc317d}} 
+const unsigned char $\ast$ {\bfseries get\+Pool\+Address} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} class allows to efficiently allocate a large pool of objects, instead of dynamically allocating them separately. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+Pool\+Allocator.\+h\end{DoxyCompactItemize}

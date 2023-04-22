@@ -1,0 +1,155 @@
+\hypertarget{motor__PID_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+\+P\+ID.h File Reference}
+\label{motor__PID_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+\+P\+I\+D.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+\+P\+I\+D.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for motor\+\_\+\+P\+I\+D.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{motor__PID_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motor__PID_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpidConfig}{pid\+Config}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__PID_8h_a442e782f6635a55eb6cebe1de814d756}\label{motor__PID_8h_a442e782f6635a55eb6cebe1de814d756}} 
+typedef uint8 {\bfseries P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__PID_8h_afc779e0bbf897fb6dc5f9c152a0b0083}\label{motor__PID_8h_afc779e0bbf897fb6dc5f9c152a0b0083}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_afc779e0bbf897fb6dc5f9c152a0b0083}{pid\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialisation of the P\+ID system. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM \hyperlink{motor__PID_8h_ad711a79d9266a2f6b7334a614e775807}{pid\+\_\+\+Create} (void)
+\begin{DoxyCompactList}\small\item\em Create a new P\+ID system. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_a5c421e27545cd4de3d0e4ab2b4c6eaa9}{pid\+\_\+\+Configure} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, \hyperlink{structpidConfig}{pid\+Config} config)
+\begin{DoxyCompactList}\small\item\em Configure the P\+ID system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__PID_8h_adf1d916bf65520642a9aff592555c389}\label{motor__PID_8h_adf1d916bf65520642a9aff592555c389}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_adf1d916bf65520642a9aff592555c389}{pid\+\_\+\+Config\+KP} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, uint32 kp)
+\begin{DoxyCompactList}\small\item\em Configure kP value of the P\+ID system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__PID_8h_aca743fe79825c43915fa119f9d47a270}\label{motor__PID_8h_aca743fe79825c43915fa119f9d47a270}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_aca743fe79825c43915fa119f9d47a270}{pid\+\_\+\+Config\+KI} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, uint32 ki)
+\begin{DoxyCompactList}\small\item\em Configure kI value of the P\+ID system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__PID_8h_add64ebcf61281b3ad5f6b74440f5ee84}\label{motor__PID_8h_add64ebcf61281b3ad5f6b74440f5ee84}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_add64ebcf61281b3ad5f6b74440f5ee84}{pid\+\_\+\+Config\+KD} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, uint32 kd)
+\begin{DoxyCompactList}\small\item\em Configure kD value of the P\+ID system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__PID_8h_a3f50a70db714f0ed9a1228cba7aaa084}\label{motor__PID_8h_a3f50a70db714f0ed9a1228cba7aaa084}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_a3f50a70db714f0ed9a1228cba7aaa084}{pid\+\_\+\+Config\+D\+Period} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, uint8 dperiod)
+\begin{DoxyCompactList}\small\item\em Configure d\+Period value of the P\+ID system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__PID_8h_a6566b27e806f0f5c8f8e0dec2d355708}\label{motor__PID_8h_a6566b27e806f0f5c8f8e0dec2d355708}} 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_a6566b27e806f0f5c8f8e0dec2d355708}{pid\+\_\+\+Config\+I\+Max} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, int32 imax)
+\begin{DoxyCompactList}\small\item\em Configure i\+Max value of the P\+ID system. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON \hyperlink{structpidConfig}{pid\+Config} \hyperlink{motor__PID_8h_aecc8c4b217d5f75a83478b85a0cd0352}{pid\+\_\+\+Get\+Config} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system)
+\begin{DoxyCompactList}\small\item\em Get the current configuration of the P\+ID system. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON int32 \hyperlink{motor__PID_8h_aa503d210de0f411d756a592f3c88c16c}{pid\+\_\+\+Compute} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system, int32 error)
+\begin{DoxyCompactList}\small\item\em Compute the P\+ID sum of a system. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__PID_8h_a97d4d49a43f76cb1cee476e5c485e023}{pid\+\_\+\+Reset\+Error} (P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM system)
+\begin{DoxyCompactList}\small\item\em Reset the integral error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motor__PID_8h_aa503d210de0f411d756a592f3c88c16c}\label{motor__PID_8h_aa503d210de0f411d756a592f3c88c16c}} 
+\index{motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}!pid\+\_\+\+Compute@{pid\+\_\+\+Compute}}
+\index{pid\+\_\+\+Compute@{pid\+\_\+\+Compute}!motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+\+Compute()}{pid\_Compute()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON int32 pid\+\_\+\+Compute (\begin{DoxyParamCaption}\item[{P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM}]{system,  }\item[{int32}]{error }\end{DoxyParamCaption})}
+
+
+
+Compute the P\+ID sum of a system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & The system on which we compute the P\+ID \\
+\hline
+{\em error} & The difference between measured and reference values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new command to apply on the system (pwm) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motor__PID_8h_a5c421e27545cd4de3d0e4ab2b4c6eaa9}\label{motor__PID_8h_a5c421e27545cd4de3d0e4ab2b4c6eaa9}} 
+\index{motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}!pid\+\_\+\+Configure@{pid\+\_\+\+Configure}}
+\index{pid\+\_\+\+Configure@{pid\+\_\+\+Configure}!motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+\+Configure()}{pid\_Configure()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void pid\+\_\+\+Configure (\begin{DoxyParamCaption}\item[{P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM}]{system,  }\item[{\hyperlink{structpidConfig}{pid\+Config}}]{config }\end{DoxyParamCaption})}
+
+
+
+Configure the P\+ID system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & The system that is configured \\
+\hline
+{\em config} & The new configuration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__PID_8h_ad711a79d9266a2f6b7334a614e775807}\label{motor__PID_8h_ad711a79d9266a2f6b7334a614e775807}} 
+\index{motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}!pid\+\_\+\+Create@{pid\+\_\+\+Create}}
+\index{pid\+\_\+\+Create@{pid\+\_\+\+Create}!motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+\+Create()}{pid\_Create()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM pid\+\_\+\+Create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create a new P\+ID system. 
+
+\begin{DoxyReturn}{Returns}
+The new system ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motor__PID_8h_aecc8c4b217d5f75a83478b85a0cd0352}\label{motor__PID_8h_aecc8c4b217d5f75a83478b85a0cd0352}} 
+\index{motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}!pid\+\_\+\+Get\+Config@{pid\+\_\+\+Get\+Config}}
+\index{pid\+\_\+\+Get\+Config@{pid\+\_\+\+Get\+Config}!motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+\+Get\+Config()}{pid\_GetConfig()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON \hyperlink{structpidConfig}{pid\+Config} pid\+\_\+\+Get\+Config (\begin{DoxyParamCaption}\item[{P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM}]{system }\end{DoxyParamCaption})}
+
+
+
+Get the current configuration of the P\+ID system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & The system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current configuration of the system 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motor__PID_8h_a97d4d49a43f76cb1cee476e5c485e023}\label{motor__PID_8h_a97d4d49a43f76cb1cee476e5c485e023}} 
+\index{motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}!pid\+\_\+\+Reset\+Error@{pid\+\_\+\+Reset\+Error}}
+\index{pid\+\_\+\+Reset\+Error@{pid\+\_\+\+Reset\+Error}!motor\+\_\+\+P\+I\+D.\+h@{motor\+\_\+\+P\+I\+D.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+\+Reset\+Error()}{pid\_ResetError()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void pid\+\_\+\+Reset\+Error (\begin{DoxyParamCaption}\item[{P\+I\+D\+\_\+\+S\+Y\+S\+T\+EM}]{system }\end{DoxyParamCaption})}
+
+
+
+Reset the integral error. 
+
+When for example the power supply of the motors is shut down, the pid accumulate error (integral term), if the power is set up again after a while, the motor will try to correct abruptly this error. To avoid this problem, we provide the following function to reset the integral of the error and all previous error for differential. 
+\begin{DoxyParams}{Parameters}
+{\em system} & The system that will be reseted \\
+\hline
+\end{DoxyParams}

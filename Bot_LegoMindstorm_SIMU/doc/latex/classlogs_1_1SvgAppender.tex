@@ -1,0 +1,94 @@
+\hypertarget{classlogs_1_1SvgAppender}{}\section{logs\+:\+:Svg\+Appender Class Reference}
+\label{classlogs_1_1SvgAppender}\index{logs\+::\+Svg\+Appender@{logs\+::\+Svg\+Appender}}
+
+
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} créant un fichier S\+VG.  
+
+
+
+
+{\ttfamily \#include $<$Svg\+Appender.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Svg\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1SvgAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:Svg\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1SvgAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1SvgAppender_a98b279145533d5f20bb95bbeb9420218}\label{classlogs_1_1SvgAppender_a98b279145533d5f20bb95bbeb9420218}} 
+\hyperlink{classlogs_1_1SvgAppender_a98b279145533d5f20bb95bbeb9420218}{Svg\+Appender} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1SvgAppender_a9ff14acb675c6e171f5dd3cc922d2911}\label{classlogs_1_1SvgAppender_a9ff14acb675c6e171f5dd3cc922d2911}} 
+virtual \hyperlink{classlogs_1_1SvgAppender_a9ff14acb675c6e171f5dd3cc922d2911}{$\sim$ Svg\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlogs_1_1SvgAppender_a9ec86931329330e976a213510d4d82e6}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlogs_1_1SvgAppender_a2ad23bf7a9d95d09684c0f352e3cea1a}{flush} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode clos le fichier de référence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} créant un fichier S\+VG. 
+
+Les messages envoyés à cet appender sont considérés comme des éléments S\+VG. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1SvgAppender_a2ad23bf7a9d95d09684c0f352e3cea1a}\label{classlogs_1_1SvgAppender_a2ad23bf7a9d95d09684c0f352e3cea1a}} 
+\index{logs\+::\+Svg\+Appender@{logs\+::\+Svg\+Appender}!flush@{flush}}
+\index{flush@{flush}!logs\+::\+Svg\+Appender@{logs\+::\+Svg\+Appender}}
+\subsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void logs\+::\+Svg\+Appender\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cette méthode clos le fichier de référence. 
+
+Cette méthode est appelée automatiquement par le destructeur de la classe mais peut être exploitée avant.
+
+Une fois cette méthode appelée aucun nouveau message ne doit être envoyé a cet \hyperlink{classlogs_1_1Appender}{Appender}. 
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a90fd2058402bceaff5e896ceee438df4}{logs\+::\+Memory\+Appender}.
+
+\mbox{\Hypertarget{classlogs_1_1SvgAppender_a9ec86931329330e976a213510d4d82e6}\label{classlogs_1_1SvgAppender_a9ec86931329330e976a213510d4d82e6}} 
+\index{logs\+::\+Svg\+Appender@{logs\+::\+Svg\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+Svg\+Appender@{logs\+::\+Svg\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void logs\+::\+Svg\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message à tracer. Considéré comme un élément S\+VG valide. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{SvgAppender_8hpp}{Svg\+Appender.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{SvgAppender_8cpp}{Svg\+Appender.\+cpp}\end{DoxyCompactItemize}

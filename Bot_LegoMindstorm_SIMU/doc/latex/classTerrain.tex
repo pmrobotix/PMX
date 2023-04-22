@@ -1,0 +1,920 @@
+\hypertarget{classTerrain}{}\section{Terrain Class Reference}
+\label{classTerrain}\index{Terrain@{Terrain}}
+
+
+{\ttfamily \#include $<$C\+C\+Terrain.\+h$>$}
+
+
+
+Inheritance diagram for Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classTerrain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTerrain__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structTerrain_1_1DetailMap}{Detail\+Map}
+\item 
+struct \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data}
+\item 
+struct \hyperlink{structTerrain_1_1Triangle}{Triangle}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} \{ {\bfseries S\+K\+I\+RT}, 
+{\bfseries I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER}, 
+{\bfseries S\+K\+I\+RT}, 
+{\bfseries I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER}
+ \}
+\item 
+enum \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} \{ {\bfseries S\+K\+I\+RT}, 
+{\bfseries I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER}, 
+{\bfseries S\+K\+I\+RT}, 
+{\bfseries I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTerrain_a296f207c5fae616a75099156ef8cd0ac}{set\+Light\+Map} (const std\+::string \&file\+Name)
+\item 
+void \hyperlink{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}{set\+Light\+Dir} (const \hyperlink{classVec3}{Vec3} \&light\+Dir)
+\item 
+bool \hyperlink{classTerrain_ac568863efe254e443ea7dfdf7be4113b}{init\+Properties} ()
+\item 
+bool \hyperlink{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}{init\+Height\+Map} (const std\+::string \&height\+Map)
+\item 
+bool \hyperlink{classTerrain_af88878ee2f37979ede7656062e19190f}{init\+Textures} ()
+\item 
+float \hyperlink{classTerrain_ace35b0aef83e27883476dfb44bf473aa}{get\+Height} (float x, float z, \hyperlink{classVec3}{Vec3} $\ast$normal=nullptr) const
+\item 
+float \hyperlink{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}{get\+Height} (const \hyperlink{classVec2}{Vec2} \&pos, \hyperlink{classVec3}{Vec3} $\ast$normal=nullptr) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classTerrain_aa10abc4834b767de95d47cb67ac5dd23}{get\+Normal} (int pixelX, int pixelY) const
+\item 
+float \hyperlink{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}{get\+Image\+Height} (int pixelX, int pixelY) const
+\item 
+void \hyperlink{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}{set\+Draw\+Wire} (bool bool\+Value)
+\item 
+void \hyperlink{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}{set\+L\+O\+D\+Distance} (float lod1, float lod2, float lod3)
+\item 
+void \hyperlink{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}{set\+Is\+Enable\+Frustum\+Cull} (bool bool\+Value)
+\item 
+void \hyperlink{classTerrain_a10a40e89dd343591a43ab2a1069cef54}{set\+Alpha\+Map} (cocos2d\+::\+Texture2D $\ast$new\+Alpha\+Map\+Texture)
+\item 
+void \hyperlink{classTerrain_a13ab12df5850aab66f6f45e396c4f169}{set\+Detail\+Map} (unsigned int index, \hyperlink{structTerrain_1_1DetailMap}{Detail\+Map} detail\+Map)
+\item 
+\mbox{\Hypertarget{classTerrain_a2d604fe7aa05986c5a0f92a61242003b}\label{classTerrain_a2d604fe7aa05986c5a0f92a61242003b}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classTerrain_ac958f761c3a0ffd913b6d201337fecc7}{get\+Intersection\+Point} (const \hyperlink{classRay}{Ray} \&ray) const
+\item 
+bool \hyperlink{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}{get\+Intersection\+Point} (const \hyperlink{classRay}{Ray} \&ray, \hyperlink{classVec3}{Vec3} \&intersection\+Point) const
+\item 
+void \hyperlink{classTerrain_a8298eeb97583ef78a369151f0830c010}{set\+Max\+Detail\+Map\+Amount} (int max\+Value)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classTerrain_a04ad6684b37690325940bf7e44d2a817}{convert\+To\+Terrain\+Space} (const \hyperlink{classVec2}{Vec2} \&world\+Space) const
+\item 
+void \hyperlink{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}{reset\+Height\+Map} (const std\+::string \&height\+Map)
+\item 
+float \hyperlink{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}{get\+Min\+Height} ()
+\item 
+float \hyperlink{classTerrain_a8a6f2132b654da2719044dc083297c0a}{get\+Max\+Height} ()
+\item 
+\hyperlink{classAABB}{A\+A\+BB} \hyperlink{classTerrain_a3bd1ac6219e1bfe32e7da26e9ab58646}{get\+A\+A\+BB} ()
+\item 
+void \hyperlink{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}{set\+Skirt\+Height\+Ratio} (float ratio)
+\item 
+Quad\+Tree $\ast$ \hyperlink{classTerrain_af1d3cb372d1d3d555e7a820eac377605}{get\+Quad\+Tree} ()
+\item 
+\mbox{\Hypertarget{classTerrain_ac7c6f714deaf475d98a32f6225a8943d}\label{classTerrain_ac7c6f714deaf475d98a32f6225a8943d}} 
+void {\bfseries reload} ()
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}{get\+Terrain\+Size} () const
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classTerrain_ab8bbb0e74cb1271d052c91e40b8e2ebb}{get\+Height\+Data} () const
+\item 
+\mbox{\Hypertarget{classTerrain_a66fd207f84be86a6203fd42ffb88579f}\label{classTerrain_a66fd207f84be86a6203fd42ffb88579f}} 
+bool {\bfseries init\+With\+Terrain\+Data} (\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&parameter, \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} fixed\+Type)
+\item 
+void \hyperlink{classTerrain_a296f207c5fae616a75099156ef8cd0ac}{set\+Light\+Map} (const std\+::string \&file\+Name)
+\item 
+void \hyperlink{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}{set\+Light\+Dir} (const \hyperlink{classVec3}{Vec3} \&light\+Dir)
+\item 
+bool \hyperlink{classTerrain_ac568863efe254e443ea7dfdf7be4113b}{init\+Properties} ()
+\item 
+bool \hyperlink{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}{init\+Height\+Map} (const std\+::string \&height\+Map)
+\item 
+bool \hyperlink{classTerrain_af88878ee2f37979ede7656062e19190f}{init\+Textures} ()
+\item 
+float \hyperlink{classTerrain_ace35b0aef83e27883476dfb44bf473aa}{get\+Height} (float x, float z, \hyperlink{classVec3}{Vec3} $\ast$normal=nullptr) const
+\item 
+float \hyperlink{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}{get\+Height} (const \hyperlink{classVec2}{Vec2} \&pos, \hyperlink{classVec3}{Vec3} $\ast$normal=nullptr) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classTerrain_a02f6d646b6171329077453c7a67eb4bd}{get\+Normal} (int pixelX, int pixelY) const
+\item 
+float \hyperlink{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}{get\+Image\+Height} (int pixelX, int pixelY) const
+\item 
+void \hyperlink{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}{set\+Draw\+Wire} (bool bool\+Value)
+\item 
+void \hyperlink{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}{set\+L\+O\+D\+Distance} (float lod1, float lod2, float lod3)
+\item 
+void \hyperlink{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}{set\+Is\+Enable\+Frustum\+Cull} (bool bool\+Value)
+\item 
+void \hyperlink{classTerrain_a10a40e89dd343591a43ab2a1069cef54}{set\+Alpha\+Map} (cocos2d\+::\+Texture2D $\ast$new\+Alpha\+Map\+Texture)
+\item 
+void \hyperlink{classTerrain_a13ab12df5850aab66f6f45e396c4f169}{set\+Detail\+Map} (unsigned int index, \hyperlink{structTerrain_1_1DetailMap}{Detail\+Map} detail\+Map)
+\item 
+\mbox{\Hypertarget{classTerrain_a04ebfe6e5e978d0ee9bf2622f691e345}\label{classTerrain_a04ebfe6e5e978d0ee9bf2622f691e345}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classTerrain_ae2473c9297ec8ef1e14d227094d760bd}{get\+Intersection\+Point} (const \hyperlink{classRay}{Ray} \&ray) const
+\item 
+bool \hyperlink{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}{get\+Intersection\+Point} (const \hyperlink{classRay}{Ray} \&ray, \hyperlink{classVec3}{Vec3} \&intersection\+Point) const
+\item 
+void \hyperlink{classTerrain_a8298eeb97583ef78a369151f0830c010}{set\+Max\+Detail\+Map\+Amount} (int max\+Value)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classTerrain_a03a69dd84d9889e9c5644cf23a63ad6f}{convert\+To\+Terrain\+Space} (const \hyperlink{classVec2}{Vec2} \&world\+Space) const
+\item 
+void \hyperlink{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}{reset\+Height\+Map} (const std\+::string \&height\+Map)
+\item 
+float \hyperlink{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}{get\+Min\+Height} ()
+\item 
+float \hyperlink{classTerrain_a8a6f2132b654da2719044dc083297c0a}{get\+Max\+Height} ()
+\item 
+\hyperlink{classAABB}{A\+A\+BB} \hyperlink{classTerrain_a395a7b07be9d78fae2920bf9d2e51ace}{get\+A\+A\+BB} ()
+\item 
+void \hyperlink{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}{set\+Skirt\+Height\+Ratio} (float ratio)
+\item 
+Quad\+Tree $\ast$ \hyperlink{classTerrain_a02299bde517f65a24e4604e4da08c436}{get\+Quad\+Tree} ()
+\item 
+\mbox{\Hypertarget{classTerrain_ac7c6f714deaf475d98a32f6225a8943d}\label{classTerrain_ac7c6f714deaf475d98a32f6225a8943d}} 
+void {\bfseries reload} ()
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}{get\+Terrain\+Size} () const
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classTerrain_aa00c8051d3fbc53ea1656702fb90ee6e}{get\+Height\+Data} () const
+\item 
+\mbox{\Hypertarget{classTerrain_a66fd207f84be86a6203fd42ffb88579f}\label{classTerrain_a66fd207f84be86a6203fd42ffb88579f}} 
+bool {\bfseries init\+With\+Terrain\+Data} (\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&parameter, \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} fixed\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTerrain}{Terrain} $\ast$ \hyperlink{classTerrain_a5e5cf615b8942d8d26f2d09de7f6ce04}{create} (\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&parameter, \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} fixed\+Type=Crack\+Fixed\+Type\+::\+I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER)
+\item 
+static \hyperlink{classTerrain}{Terrain} $\ast$ \hyperlink{classTerrain_ab4ba510e2bcb3566177f62471870cdc1}{create} (\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&parameter, \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} fixed\+Type=Crack\+Fixed\+Type\+::\+I\+N\+C\+R\+E\+A\+S\+E\+\_\+\+L\+O\+W\+ER)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTerrain_a66cbe83e4bc0fa804097943e0a0ccfd1}\label{classTerrain_a66cbe83e4bc0fa804097943e0a0ccfd1}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classTerrain}{Terrain}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTerrain_a83eddb26eec75d0698944f2518031280}\label{classTerrain_a83eddb26eec75d0698944f2518031280}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+void \hyperlink{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}{set\+Chunks\+L\+OD} (const \hyperlink{classVec3}{Vec3} \&camera\+Pos)
+\item 
+void \hyperlink{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}{load\+Vertices} ()
+\item 
+void \hyperlink{classTerrain_a04237c044acd2918422e7654e18cd89b}{calculate\+Normal} ()
+\item 
+virtual void \hyperlink{classTerrain_a464acea156d7aca981b7b459708f7d16}{on\+Enter} () override
+\item 
+void \hyperlink{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}{cache\+Uniform\+Attrib\+Location} ()
+\item 
+\mbox{\Hypertarget{classTerrain_ab42f6c37968eb9616cafb778efeca546}\label{classTerrain_ab42f6c37968eb9616cafb778efeca546}} 
+Chunk\+Indices {\bfseries look\+For\+Indices\+L\+O\+D\+Skrit} (int self\+Lod, bool $\ast$result)
+\item 
+\mbox{\Hypertarget{classTerrain_a36b72386241d5900c6689610ad341fb4}\label{classTerrain_a36b72386241d5900c6689610ad341fb4}} 
+Chunk\+Indices {\bfseries look\+For\+Indices\+L\+OD} (int neighbor\+Lod\mbox{[}4\mbox{]}, int self\+Lod, bool $\ast$result)
+\item 
+\mbox{\Hypertarget{classTerrain_a5a76e8050b7b8639bb84561ebe3b50dd}\label{classTerrain_a5a76e8050b7b8639bb84561ebe3b50dd}} 
+Chunk\+Indices {\bfseries insert\+Indices\+L\+OD} (int neighbor\+Lod\mbox{[}4\mbox{]}, int self\+Lod, G\+Lushort $\ast$indices, int size)
+\item 
+\mbox{\Hypertarget{classTerrain_a050032ef0be9842b54f4a02ce44e552d}\label{classTerrain_a050032ef0be9842b54f4a02ce44e552d}} 
+Chunk\+Indices {\bfseries insert\+Indices\+L\+O\+D\+Skirt} (int self\+Lod, G\+Lushort $\ast$indices, int size)
+\item 
+\mbox{\Hypertarget{classTerrain_af56e2c22f82e449f2ca02b748b19b075}\label{classTerrain_af56e2c22f82e449f2ca02b748b19b075}} 
+Chunk $\ast$ {\bfseries get\+Chunk\+By\+Index} (int x, int y) const
+\item 
+\mbox{\Hypertarget{classTerrain_a83eddb26eec75d0698944f2518031280}\label{classTerrain_a83eddb26eec75d0698944f2518031280}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+void \hyperlink{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}{set\+Chunks\+L\+OD} (const \hyperlink{classVec3}{Vec3} \&camera\+Pos)
+\item 
+void \hyperlink{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}{load\+Vertices} ()
+\item 
+void \hyperlink{classTerrain_a04237c044acd2918422e7654e18cd89b}{calculate\+Normal} ()
+\item 
+virtual void \hyperlink{classTerrain_a1d3c0deb9503e340a9818c8cf8c61923}{on\+Enter} () override
+\item 
+void \hyperlink{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}{cache\+Uniform\+Attrib\+Location} ()
+\item 
+\mbox{\Hypertarget{classTerrain_a09a299a65c2a88a69ed5ed7a85932c1b}\label{classTerrain_a09a299a65c2a88a69ed5ed7a85932c1b}} 
+Chunk\+Indices {\bfseries look\+For\+Indices\+L\+O\+D\+Skrit} (int self\+Lod, bool $\ast$result)
+\item 
+\mbox{\Hypertarget{classTerrain_a35b6b43de1b816fd32cc307913a5c5b1}\label{classTerrain_a35b6b43de1b816fd32cc307913a5c5b1}} 
+Chunk\+Indices {\bfseries look\+For\+Indices\+L\+OD} (int neighbor\+Lod\mbox{[}4\mbox{]}, int self\+Lod, bool $\ast$result)
+\item 
+\mbox{\Hypertarget{classTerrain_abc87777efb8458de0f9d691f2a67d72a}\label{classTerrain_abc87777efb8458de0f9d691f2a67d72a}} 
+Chunk\+Indices {\bfseries insert\+Indices\+L\+OD} (int neighbor\+Lod\mbox{[}4\mbox{]}, int self\+Lod, G\+Lushort $\ast$indices, int size)
+\item 
+\mbox{\Hypertarget{classTerrain_a29a555ab33b78185afb4e62c0e78a615}\label{classTerrain_a29a555ab33b78185afb4e62c0e78a615}} 
+Chunk\+Indices {\bfseries insert\+Indices\+L\+O\+D\+Skirt} (int self\+Lod, G\+Lushort $\ast$indices, int size)
+\item 
+\mbox{\Hypertarget{classTerrain_ad31ac69db26be642fd3d53e12e221282}\label{classTerrain_ad31ac69db26be642fd3d53e12e221282}} 
+Chunk $\ast$ {\bfseries get\+Chunk\+By\+Index} (int x, int y) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTerrain_a30e497283a0cced80cb187c0a895749f}\label{classTerrain_a30e497283a0cced80cb187c0a895749f}} 
+std\+::vector$<$ Chunk\+L\+O\+D\+Indices $>$ {\bfseries \+\_\+chunk\+Lod\+Indices\+Set}
+\item 
+\mbox{\Hypertarget{classTerrain_adddeffebdf8da6854ea6ec465babcd7a}\label{classTerrain_adddeffebdf8da6854ea6ec465babcd7a}} 
+std\+::vector$<$ Chunk\+L\+O\+D\+Indices\+Skirt $>$ {\bfseries \+\_\+chunk\+Lod\+Indices\+Skirt\+Set}
+\item 
+\mbox{\Hypertarget{classTerrain_a975aaf5b247568f07a287d4b0a16435d}\label{classTerrain_a975aaf5b247568f07a287d4b0a16435d}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+\+Camera\+Matrix}
+\item 
+\mbox{\Hypertarget{classTerrain_a649a6aa2f90930e0e12211a144c05901}\label{classTerrain_a649a6aa2f90930e0e12211a144c05901}} 
+bool {\bfseries \+\_\+is\+Camera\+View\+Changed}
+\item 
+\mbox{\Hypertarget{classTerrain_accd2781e4562d473c5bfb8abb9644f45}\label{classTerrain_accd2781e4562d473c5bfb8abb9644f45}} 
+\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} {\bfseries \+\_\+terrain\+Data}
+\item 
+\mbox{\Hypertarget{classTerrain_abc95e8a7cd54a37ff817588b72e54634}\label{classTerrain_abc95e8a7cd54a37ff817588b72e54634}} 
+bool {\bfseries \+\_\+is\+Draw\+Wire}
+\item 
+\mbox{\Hypertarget{classTerrain_aaae08cc05f491f02e1cf45b8f8de6494}\label{classTerrain_aaae08cc05f491f02e1cf45b8f8de6494}} 
+unsigned char $\ast$ {\bfseries \+\_\+data}
+\item 
+\mbox{\Hypertarget{classTerrain_ab0920d49c7a37561b8ae541d596ed596}\label{classTerrain_ab0920d49c7a37561b8ae541d596ed596}} 
+float {\bfseries \+\_\+lod\+Distance} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_afffe5e6d23d1daac75ac2ae9966b17b7}\label{classTerrain_afffe5e6d23d1daac75ac2ae9966b17b7}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+detail\+Map\+Textures} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_a1805b5941bddd0a643a15e97c61b3d7e}\label{classTerrain_a1805b5941bddd0a643a15e97c61b3d7e}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+alpha\+Map}
+\item 
+\mbox{\Hypertarget{classTerrain_a9663ece0089390ece205e7da2a14cc39}\label{classTerrain_a9663ece0089390ece205e7da2a14cc39}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+light\+Map}
+\item 
+\mbox{\Hypertarget{classTerrain_a06d8e076d689580fbc9fc45c4d3d7ec2}\label{classTerrain_a06d8e076d689580fbc9fc45c4d3d7ec2}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+light\+Dir}
+\item 
+\mbox{\Hypertarget{classTerrain_a13ba94ae28c413abeff7545c5601126a}\label{classTerrain_a13ba94ae28c413abeff7545c5601126a}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command}
+\item 
+\mbox{\Hypertarget{classTerrain_abc796e9f0fcab109f380b79fe04dcda2}\label{classTerrain_abc796e9f0fcab109f380b79fe04dcda2}} 
+Quad\+Tree $\ast$ {\bfseries \+\_\+quad\+Root}
+\item 
+\mbox{\Hypertarget{classTerrain_a188035680fe634f697c54d6d27f6da15}\label{classTerrain_a188035680fe634f697c54d6d27f6da15}} 
+Chunk $\ast$ {\bfseries \+\_\+chunkes\+Array} \mbox{[}\hyperlink{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}\mbox{]}\mbox{[}\hyperlink{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_a2f3e3bbc9b1e274c8b083427a171e650}\label{classTerrain_a2f3e3bbc9b1e274c8b083427a171e650}} 
+std\+::vector$<$ Terrain\+Vertex\+Data $>$ {\bfseries \+\_\+vertices}
+\item 
+\mbox{\Hypertarget{classTerrain_a9f2105caefa905cb5bd2b7f4ee029021}\label{classTerrain_a9f2105caefa905cb5bd2b7f4ee029021}} 
+std\+::vector$<$ unsigned int $>$ {\bfseries \+\_\+indices}
+\item 
+\mbox{\Hypertarget{classTerrain_afe2a4f034f926d90bd95b52be628a5bb}\label{classTerrain_afe2a4f034f926d90bd95b52be628a5bb}} 
+int {\bfseries \+\_\+image\+Width}
+\item 
+\mbox{\Hypertarget{classTerrain_a0c21e654fea59ade3456261eacb08d1f}\label{classTerrain_a0c21e654fea59ade3456261eacb08d1f}} 
+int {\bfseries \+\_\+image\+Height}
+\item 
+\mbox{\Hypertarget{classTerrain_a106914f06b461e7b1cc4a482cfd3c55f}\label{classTerrain_a106914f06b461e7b1cc4a482cfd3c55f}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+chunk\+Size}
+\item 
+\mbox{\Hypertarget{classTerrain_a3225243da2886e6e700d09d696db5fa8}\label{classTerrain_a3225243da2886e6e700d09d696db5fa8}} 
+bool {\bfseries \+\_\+is\+Enable\+Frustum\+Cull}
+\item 
+\mbox{\Hypertarget{classTerrain_a2cebf89de08e8aaad6057e5aac1cf755}\label{classTerrain_a2cebf89de08e8aaad6057e5aac1cf755}} 
+int {\bfseries \+\_\+max\+Detail\+Map\+Value}
+\item 
+\mbox{\Hypertarget{classTerrain_a3239bc224fe19d9fadfc8e0715d6c604}\label{classTerrain_a3239bc224fe19d9fadfc8e0715d6c604}} 
+cocos2d\+::\+Image $\ast$ {\bfseries \+\_\+height\+Map\+Image}
+\item 
+\mbox{\Hypertarget{classTerrain_a3cea02eb526b26db784e6009bbd9f1de}\label{classTerrain_a3cea02eb526b26db784e6009bbd9f1de}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+old\+Camera\+Model\+Matrix}
+\item 
+\mbox{\Hypertarget{classTerrain_a784e438cc5bd2d86dc7a994d1e26078b}\label{classTerrain_a784e438cc5bd2d86dc7a994d1e26078b}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+terrain\+Model\+Matrix}
+\item 
+\mbox{\Hypertarget{classTerrain_ade7adfd872539dafa3ce68e5749bdb96}\label{classTerrain_ade7adfd872539dafa3ce68e5749bdb96}} 
+G\+Luint {\bfseries \+\_\+normal\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_afb1104a820ca98fd6af31a2189fa7886}\label{classTerrain_afb1104a820ca98fd6af31a2189fa7886}} 
+G\+Luint {\bfseries \+\_\+position\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_a783f25795dbcafdc589b3f264cfbfbd0}\label{classTerrain_a783f25795dbcafdc589b3f264cfbfbd0}} 
+G\+Luint {\bfseries \+\_\+texcord\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_aa126dea886f1c6d2f631c3547cfdf6ed}\label{classTerrain_aa126dea886f1c6d2f631c3547cfdf6ed}} 
+float {\bfseries \+\_\+max\+Height}
+\item 
+\mbox{\Hypertarget{classTerrain_a9593c8246a16c5a5520aa25a8359f075}\label{classTerrain_a9593c8246a16c5a5520aa25a8359f075}} 
+float {\bfseries \+\_\+min\+Height}
+\item 
+\mbox{\Hypertarget{classTerrain_a0045ff37b5219f0232fae1e1724b16bc}\label{classTerrain_a0045ff37b5219f0232fae1e1724b16bc}} 
+\hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type} {\bfseries \+\_\+crack\+Fixed\+Type}
+\item 
+\mbox{\Hypertarget{classTerrain_a3d23f22c1050ea83b93bf9b0ba50fda9}\label{classTerrain_a3d23f22c1050ea83b93bf9b0ba50fda9}} 
+float {\bfseries \+\_\+skirt\+Ratio}
+\item 
+\mbox{\Hypertarget{classTerrain_a1d5c7bc3a0fa0224d75673fc864547b3}\label{classTerrain_a1d5c7bc3a0fa0224d75673fc864547b3}} 
+int {\bfseries \+\_\+skirt\+Vertices\+Offset} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_a549b9200c6088e4b953c8b569af22f43}\label{classTerrain_a549b9200c6088e4b953c8b569af22f43}} 
+G\+Lint {\bfseries \+\_\+detail\+Map\+Location} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_afee14a66d8b947e52fe902fc2f150c3c}\label{classTerrain_afee14a66d8b947e52fe902fc2f150c3c}} 
+G\+Lint {\bfseries \+\_\+alpha\+Map\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_ab60973b54d2658395bed2899279557bd}\label{classTerrain_ab60973b54d2658395bed2899279557bd}} 
+G\+Lint {\bfseries \+\_\+alpha\+Is\+Has\+Alpha\+Map\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_a2c3cc6eddeff2cdc9a1a52b125ed67e4}\label{classTerrain_a2c3cc6eddeff2cdc9a1a52b125ed67e4}} 
+G\+Lint {\bfseries \+\_\+light\+Map\+Check\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_a081acfa2a2a28d675dd7e85c075ab40e}\label{classTerrain_a081acfa2a2a28d675dd7e85c075ab40e}} 
+G\+Lint {\bfseries \+\_\+light\+Map\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_afcde7c519ba21ceeb4163722132ae748}\label{classTerrain_afcde7c519ba21ceeb4163722132ae748}} 
+G\+Lint {\bfseries \+\_\+detail\+Map\+Size\+Location} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classTerrain_ac66c3a52d59d5ed39da78b4abd9e4211}\label{classTerrain_ac66c3a52d59d5ed39da78b4abd9e4211}} 
+G\+Lint {\bfseries \+\_\+light\+Dir\+Location}
+\item 
+\mbox{\Hypertarget{classTerrain_a5a19de1ae8a88bdc511b1962ae7f108f}\label{classTerrain_a5a19de1ae8a88bdc511b1962ae7f108f}} 
+\hyperlink{classRenderState_1_1StateBlock}{Render\+State\+::\+State\+Block} $\ast$ {\bfseries \+\_\+state\+Block}
+\item 
+\mbox{\Hypertarget{classTerrain_a17b15a725d1ca26ba2fbae93a19d32e0}\label{classTerrain_a17b15a725d1ca26ba2fbae93a19d32e0}} 
+\hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ {\bfseries \+\_\+back\+To\+Foreground\+Listener}
+\item 
+\mbox{\Hypertarget{classTerrain_ac21a7d8d34713e6a9b79b34cf9fce75a}\label{classTerrain_ac21a7d8d34713e6a9b79b34cf9fce75a}} 
+G\+Luint {\bfseries \+\_\+texcoord\+Location}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTerrain}{Terrain} Defines a \hyperlink{classTerrain}{Terrain} that is capable of rendering large landscapes from 2D heightmap images. Terrains can be constructed from several different internal formats heightmap sources\+:
+\begin{DoxyEnumerate}
+\item R\+G\+B888
+\item R\+G\+B\+A8888
+\item Luminance(gray-\/scale)8
+\end{DoxyEnumerate}
+
+\hyperlink{classTerrain}{Terrain} use \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} struct to initialize.\+the \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} struct warp all parameters that \hyperlink{classTerrain}{Terrain} initialization need. \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} provide several handy constructor for users
+
+Surface detail is provided via texture splatting, where multiple Detail texture layers can be added along with alpha map to define how different Detail texture blend with each other. These Detail\+Texture can be defined in \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data}. The number of supported Detail texture is Four. although typically 2-\/3 levels is sufficient. For simple usage ,surface detail also is provided via simple Texture.
+
+Internally, \hyperlink{classTerrain}{Terrain} is divide into smaller, more manageable chunks, which can be culled separately for more efficient rendering. The size of the terrain chunks can be controlled via the chunk\+Size property in \hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data}.
+
+Chunks are managed under the Quad\+Tree.\+As DE F\+A\+C\+TO terminal \hyperlink{classNode}{Node} of the Quad\+Tree; let us cull chunks efficiently to reduce draw\+Call amount And reduce the V\+B\+Os\textquotesingle{}\hyperlink{classSize}{Size} that pass to the G\+PU.
+
+Level of detail (L\+OD) is supported using a technique that is similar to texture mipmapping -- called Geo\+Mapping. A distance-\/to-\/camera based test used to decide the appropriate L\+OD for a terrain chunk. The number of L\+OD levels is 0 by default (which means only the base level is used),the maximum number of L\+OD levels is 4. Of course ,you can hack the value individually.
+
+Finally, when L\+OD is enabled, cracks can begin to appear between terrain Chunks of different L\+OD levels. An acceptable solution might be to simply reduce the lower L\+O\+D(high detail,smooth) chunks border, And let the higher L\+O\+D(rough) chunks to seamlessly connect it.
+
+We can use ray-\/terrain intersection to pick a point of the terrain; Also we can get an arbitrary point of the terrain\textquotesingle{}s height and normal vector for convenience . 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}\label{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}} 
+\index{Terrain@{Terrain}!Crack\+Fixed\+Type@{Crack\+Fixed\+Type}}
+\index{Crack\+Fixed\+Type@{Crack\+Fixed\+Type}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{Crack\+Fixed\+Type}{CrackFixedType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Terrain\+::\+Crack\+Fixed\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+the crack fix type. use to fix the gaps between different L\+OD chunks \mbox{\Hypertarget{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}\label{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}} 
+\index{Terrain@{Terrain}!Crack\+Fixed\+Type@{Crack\+Fixed\+Type}}
+\index{Crack\+Fixed\+Type@{Crack\+Fixed\+Type}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{Crack\+Fixed\+Type}{CrackFixedType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Terrain\+::\+Crack\+Fixed\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+the crack fix type. use to fix the gaps between different L\+OD chunks 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}\label{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}} 
+\index{Terrain@{Terrain}!cache\+Uniform\+Attrib\+Location@{cache\+Uniform\+Attrib\+Location}}
+\index{cache\+Uniform\+Attrib\+Location@{cache\+Uniform\+Attrib\+Location}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{cache\+Uniform\+Attrib\+Location()}{cacheUniformAttribLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::cache\+Uniform\+Attrib\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+cache all uniform locations in G\+L\+SL. \mbox{\Hypertarget{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}\label{classTerrain_a33ce1e6fa0fff42e42f510d29553e015}} 
+\index{Terrain@{Terrain}!cache\+Uniform\+Attrib\+Location@{cache\+Uniform\+Attrib\+Location}}
+\index{cache\+Uniform\+Attrib\+Location@{cache\+Uniform\+Attrib\+Location}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{cache\+Uniform\+Attrib\+Location()}{cacheUniformAttribLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::cache\+Uniform\+Attrib\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+cache all uniform locations in G\+L\+SL. \mbox{\Hypertarget{classTerrain_a04237c044acd2918422e7654e18cd89b}\label{classTerrain_a04237c044acd2918422e7654e18cd89b}} 
+\index{Terrain@{Terrain}!calculate\+Normal@{calculate\+Normal}}
+\index{calculate\+Normal@{calculate\+Normal}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{calculate\+Normal()}{calculateNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::calculate\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculate Normal Line for each Vertex \mbox{\Hypertarget{classTerrain_a04237c044acd2918422e7654e18cd89b}\label{classTerrain_a04237c044acd2918422e7654e18cd89b}} 
+\index{Terrain@{Terrain}!calculate\+Normal@{calculate\+Normal}}
+\index{calculate\+Normal@{calculate\+Normal}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{calculate\+Normal()}{calculateNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::calculate\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculate Normal Line for each Vertex \mbox{\Hypertarget{classTerrain_a04ad6684b37690325940bf7e44d2a817}\label{classTerrain_a04ad6684b37690325940bf7e44d2a817}} 
+\index{Terrain@{Terrain}!convert\+To\+Terrain\+Space@{convert\+To\+Terrain\+Space}}
+\index{convert\+To\+Terrain\+Space@{convert\+To\+Terrain\+Space}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{convert\+To\+Terrain\+Space()}{convertToTerrainSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Vec2 Terrain\+::convert\+To\+Terrain\+Space (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{world\+Space }\end{DoxyParamCaption}) const}
+
+Convert a world Space position (X,Z) to terrain space position (X,Z) \mbox{\Hypertarget{classTerrain_a03a69dd84d9889e9c5644cf23a63ad6f}\label{classTerrain_a03a69dd84d9889e9c5644cf23a63ad6f}} 
+\index{Terrain@{Terrain}!convert\+To\+Terrain\+Space@{convert\+To\+Terrain\+Space}}
+\index{convert\+To\+Terrain\+Space@{convert\+To\+Terrain\+Space}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{convert\+To\+Terrain\+Space()}{convertToTerrainSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Terrain\+::convert\+To\+Terrain\+Space (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{world\+Space }\end{DoxyParamCaption}) const}
+
+Convert a world Space position (X,Z) to terrain space position (X,Z) \mbox{\Hypertarget{classTerrain_a5e5cf615b8942d8d26f2d09de7f6ce04}\label{classTerrain_a5e5cf615b8942d8d26f2d09de7f6ce04}} 
+\index{Terrain@{Terrain}!create@{create}}
+\index{create@{create}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTerrain}{Terrain} $\ast$ Terrain\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&}]{parameter,  }\item[{\hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type}}]{fixed\+Type = {\ttfamily CrackFixedType\+:\+:INCREASE\+\_\+LOWER} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create entry \mbox{\Hypertarget{classTerrain_ab4ba510e2bcb3566177f62471870cdc1}\label{classTerrain_ab4ba510e2bcb3566177f62471870cdc1}} 
+\index{Terrain@{Terrain}!create@{create}}
+\index{create@{create}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTerrain}{Terrain}$\ast$ Terrain\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{structTerrain_1_1TerrainData}{Terrain\+Data} \&}]{parameter,  }\item[{\hyperlink{classTerrain_af3dc2d6c44474fdbd9552d69e553ef93}{Crack\+Fixed\+Type}}]{fixed\+Type = {\ttfamily CrackFixedType\+:\+:INCREASE\+\_\+LOWER} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create entry \mbox{\Hypertarget{classTerrain_a3bd1ac6219e1bfe32e7da26e9ab58646}\label{classTerrain_a3bd1ac6219e1bfe32e7da26e9ab58646}} 
+\index{Terrain@{Terrain}!get\+A\+A\+BB@{get\+A\+A\+BB}}
+\index{get\+A\+A\+BB@{get\+A\+A\+BB}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+A\+A\+B\+B()}{getAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+A\+A\+BB Terrain\+::get\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s \hyperlink{classAABB}{A\+A\+B\+B(in world space)} \mbox{\Hypertarget{classTerrain_a395a7b07be9d78fae2920bf9d2e51ace}\label{classTerrain_a395a7b07be9d78fae2920bf9d2e51ace}} 
+\index{Terrain@{Terrain}!get\+A\+A\+BB@{get\+A\+A\+BB}}
+\index{get\+A\+A\+BB@{get\+A\+A\+BB}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+A\+A\+B\+B()}{getAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classAABB}{A\+A\+BB} Terrain\+::get\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s \hyperlink{classAABB}{A\+A\+B\+B(in world space)} \mbox{\Hypertarget{classTerrain_ace35b0aef83e27883476dfb44bf473aa}\label{classTerrain_ace35b0aef83e27883476dfb44bf473aa}} 
+\index{Terrain@{Terrain}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Height (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{z,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{normal = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+get specified position\textquotesingle{}s height mapping to the terrain,use bi-\/linear interpolation method 
+\begin{DoxyParams}{Parameters}
+{\em x} & the X position \\
+\hline
+{\em z} & the Z position \\
+\hline
+{\em normal} & the specified position\textquotesingle{}s normal vector in terrain . if this argument is N\+U\+LL or nullptr,Normal calculation shall be skip. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}\label{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}} 
+\index{Terrain@{Terrain}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Height (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{normal = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+get specified position\textquotesingle{}s height mapping to the terrain,use bi-\/linear interpolation method 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position (X,Z) \\
+\hline
+{\em normal} & the specified position\textquotesingle{}s normal vector in terrain . if this argument is N\+U\+LL or nullptr,Normal calculation shall be skip. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_ace35b0aef83e27883476dfb44bf473aa}\label{classTerrain_ace35b0aef83e27883476dfb44bf473aa}} 
+\index{Terrain@{Terrain}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Height (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{z,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{normal = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+get specified position\textquotesingle{}s height mapping to the terrain,use bi-\/linear interpolation method 
+\begin{DoxyParams}{Parameters}
+{\em x} & the X position \\
+\hline
+{\em z} & the Z position \\
+\hline
+{\em normal} & the specified position\textquotesingle{}s normal vector in terrain . if this argument is N\+U\+LL or nullptr,Normal calculation shall be skip. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}\label{classTerrain_ada6082bfb0b0dabc5f6c2e37b984a77e}} 
+\index{Terrain@{Terrain}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Height (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{normal = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+get specified position\textquotesingle{}s height mapping to the terrain,use bi-\/linear interpolation method 
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position (X,Z) \\
+\hline
+{\em normal} & the specified position\textquotesingle{}s normal vector in terrain . if this argument is N\+U\+LL or nullptr,Normal calculation shall be skip. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_ab8bbb0e74cb1271d052c91e40b8e2ebb}\label{classTerrain_ab8bbb0e74cb1271d052c91e40b8e2ebb}} 
+\index{Terrain@{Terrain}!get\+Height\+Data@{get\+Height\+Data}}
+\index{get\+Height\+Data@{get\+Height\+Data}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height\+Data()}{getHeightData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Terrain\+::get\+Height\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get the terrain\textquotesingle{}s height data \mbox{\Hypertarget{classTerrain_aa00c8051d3fbc53ea1656702fb90ee6e}\label{classTerrain_aa00c8051d3fbc53ea1656702fb90ee6e}} 
+\index{Terrain@{Terrain}!get\+Height\+Data@{get\+Height\+Data}}
+\index{get\+Height\+Data@{get\+Height\+Data}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Height\+Data()}{getHeightData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ Terrain\+::get\+Height\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get the terrain\textquotesingle{}s height data \mbox{\Hypertarget{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}\label{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}} 
+\index{Terrain@{Terrain}!get\+Image\+Height@{get\+Image\+Height}}
+\index{get\+Image\+Height@{get\+Image\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Image\+Height()}{getImageHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Image\+Height (\begin{DoxyParamCaption}\item[{int}]{pixelX,  }\item[{int}]{pixelY }\end{DoxyParamCaption}) const}
+
+get height from the raw height filed \mbox{\Hypertarget{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}\label{classTerrain_adbe691cc944f4d85745e2ab1f1f4f8ff}} 
+\index{Terrain@{Terrain}!get\+Image\+Height@{get\+Image\+Height}}
+\index{get\+Image\+Height@{get\+Image\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Image\+Height()}{getImageHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Image\+Height (\begin{DoxyParamCaption}\item[{int}]{pixelX,  }\item[{int}]{pixelY }\end{DoxyParamCaption}) const}
+
+get height from the raw height filed \mbox{\Hypertarget{classTerrain_ac958f761c3a0ffd913b6d201337fecc7}\label{classTerrain_ac958f761c3a0ffd913b6d201337fecc7}} 
+\index{Terrain@{Terrain}!get\+Intersection\+Point@{get\+Intersection\+Point}}
+\index{get\+Intersection\+Point@{get\+Intersection\+Point}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Point()}{getIntersectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily cocos2d\+::\+Vec3 Terrain\+::get\+Intersection\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray }\end{DoxyParamCaption}) const}
+
+Ray-\/\+Terrain intersection. \begin{DoxyReturn}{Returns}
+the intersection point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}\label{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}} 
+\index{Terrain@{Terrain}!get\+Intersection\+Point@{get\+Intersection\+Point}}
+\index{get\+Intersection\+Point@{get\+Intersection\+Point}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Point()}{getIntersectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Terrain\+::get\+Intersection\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray,  }\item[{\hyperlink{classVec3}{Vec3} \&}]{intersection\+Point }\end{DoxyParamCaption}) const}
+
+Ray-\/\+Terrain intersection. 
+\begin{DoxyParams}{Parameters}
+{\em ray} & to hit the terrain \\
+\hline
+{\em intersection\+Point} & hit point if hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if hit, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_ae2473c9297ec8ef1e14d227094d760bd}\label{classTerrain_ae2473c9297ec8ef1e14d227094d760bd}} 
+\index{Terrain@{Terrain}!get\+Intersection\+Point@{get\+Intersection\+Point}}
+\index{get\+Intersection\+Point@{get\+Intersection\+Point}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Point()}{getIntersectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Terrain\+::get\+Intersection\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray }\end{DoxyParamCaption}) const}
+
+Ray-\/\+Terrain intersection. \begin{DoxyReturn}{Returns}
+the intersection point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}\label{classTerrain_a1455fb66bddeae92b522ce4523ed42f7}} 
+\index{Terrain@{Terrain}!get\+Intersection\+Point@{get\+Intersection\+Point}}
+\index{get\+Intersection\+Point@{get\+Intersection\+Point}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Point()}{getIntersectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Terrain\+::get\+Intersection\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray,  }\item[{\hyperlink{classVec3}{Vec3} \&}]{intersection\+Point }\end{DoxyParamCaption}) const}
+
+Ray-\/\+Terrain intersection. 
+\begin{DoxyParams}{Parameters}
+{\em ray} & to hit the terrain \\
+\hline
+{\em intersection\+Point} & hit point if hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if hit, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTerrain_a8a6f2132b654da2719044dc083297c0a}\label{classTerrain_a8a6f2132b654da2719044dc083297c0a}} 
+\index{Terrain@{Terrain}!get\+Max\+Height@{get\+Max\+Height}}
+\index{get\+Max\+Height@{get\+Max\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Max\+Height()}{getMaxHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Max\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s maximal height. \mbox{\Hypertarget{classTerrain_a8a6f2132b654da2719044dc083297c0a}\label{classTerrain_a8a6f2132b654da2719044dc083297c0a}} 
+\index{Terrain@{Terrain}!get\+Max\+Height@{get\+Max\+Height}}
+\index{get\+Max\+Height@{get\+Max\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Max\+Height()}{getMaxHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Max\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s maximal height. \mbox{\Hypertarget{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}\label{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}} 
+\index{Terrain@{Terrain}!get\+Min\+Height@{get\+Min\+Height}}
+\index{get\+Min\+Height@{get\+Min\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Min\+Height()}{getMinHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Min\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s minimal height. \mbox{\Hypertarget{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}\label{classTerrain_af16a50d3b4818314a3c2ba8e7be6e0a1}} 
+\index{Terrain@{Terrain}!get\+Min\+Height@{get\+Min\+Height}}
+\index{get\+Min\+Height@{get\+Min\+Height}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Min\+Height()}{getMinHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Terrain\+::get\+Min\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s minimal height. \mbox{\Hypertarget{classTerrain_aa10abc4834b767de95d47cb67ac5dd23}\label{classTerrain_aa10abc4834b767de95d47cb67ac5dd23}} 
+\index{Terrain@{Terrain}!get\+Normal@{get\+Normal}}
+\index{get\+Normal@{get\+Normal}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Normal()}{getNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Vec3 Terrain\+::get\+Normal (\begin{DoxyParamCaption}\item[{int}]{pixelX,  }\item[{int}]{pixelY }\end{DoxyParamCaption}) const}
+
+get the normal of the specified position in terrain \begin{DoxyReturn}{Returns}
+the normal vector of the specified position of the terrain. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the fast normal calculation may not get precise normal vector. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classTerrain_a02f6d646b6171329077453c7a67eb4bd}\label{classTerrain_a02f6d646b6171329077453c7a67eb4bd}} 
+\index{Terrain@{Terrain}!get\+Normal@{get\+Normal}}
+\index{get\+Normal@{get\+Normal}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Normal()}{getNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Terrain\+::get\+Normal (\begin{DoxyParamCaption}\item[{int}]{pixelX,  }\item[{int}]{pixelY }\end{DoxyParamCaption}) const}
+
+get the normal of the specified position in terrain \begin{DoxyReturn}{Returns}
+the normal vector of the specified position of the terrain. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the fast normal calculation may not get precise normal vector. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classTerrain_af1d3cb372d1d3d555e7a820eac377605}\label{classTerrain_af1d3cb372d1d3d555e7a820eac377605}} 
+\index{Terrain@{Terrain}!get\+Quad\+Tree@{get\+Quad\+Tree}}
+\index{get\+Quad\+Tree@{get\+Quad\+Tree}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Quad\+Tree()}{getQuadTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Terrain\+::\+Quad\+Tree $\ast$ Terrain\+::get\+Quad\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s quad tree which is also the root node. \mbox{\Hypertarget{classTerrain_a02299bde517f65a24e4604e4da08c436}\label{classTerrain_a02299bde517f65a24e4604e4da08c436}} 
+\index{Terrain@{Terrain}!get\+Quad\+Tree@{get\+Quad\+Tree}}
+\index{get\+Quad\+Tree@{get\+Quad\+Tree}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Quad\+Tree()}{getQuadTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Quad\+Tree$\ast$ Terrain\+::get\+Quad\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get the terrain\textquotesingle{}s quad tree which is also the root node. \mbox{\Hypertarget{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}\label{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}} 
+\index{Terrain@{Terrain}!get\+Terrain\+Size@{get\+Terrain\+Size}}
+\index{get\+Terrain\+Size@{get\+Terrain\+Size}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Terrain\+Size()}{getTerrainSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Terrain\+::get\+Terrain\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the terrain\textquotesingle{}s size \mbox{\Hypertarget{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}\label{classTerrain_ae1fb00c2c35c35fd5e0274e037c624a2}} 
+\index{Terrain@{Terrain}!get\+Terrain\+Size@{get\+Terrain\+Size}}
+\index{get\+Terrain\+Size@{get\+Terrain\+Size}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{get\+Terrain\+Size()}{getTerrainSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Terrain\+::get\+Terrain\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the terrain\textquotesingle{}s size \mbox{\Hypertarget{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}\label{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}} 
+\index{Terrain@{Terrain}!init\+Height\+Map@{init\+Height\+Map}}
+\index{init\+Height\+Map@{init\+Height\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Height\+Map()}{initHeightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Height\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{height\+Map }\end{DoxyParamCaption})}
+
+initialize height\+Map data \mbox{\Hypertarget{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}\label{classTerrain_a4217303ce95e5a1d0d591dd2ce178623}} 
+\index{Terrain@{Terrain}!init\+Height\+Map@{init\+Height\+Map}}
+\index{init\+Height\+Map@{init\+Height\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Height\+Map()}{initHeightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Height\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{height\+Map }\end{DoxyParamCaption})}
+
+initialize height\+Map data \mbox{\Hypertarget{classTerrain_ac568863efe254e443ea7dfdf7be4113b}\label{classTerrain_ac568863efe254e443ea7dfdf7be4113b}} 
+\index{Terrain@{Terrain}!init\+Properties@{init\+Properties}}
+\index{init\+Properties@{init\+Properties}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Properties()}{initProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+initialize all \hyperlink{classProperties}{Properties} which terrain need \mbox{\Hypertarget{classTerrain_ac568863efe254e443ea7dfdf7be4113b}\label{classTerrain_ac568863efe254e443ea7dfdf7be4113b}} 
+\index{Terrain@{Terrain}!init\+Properties@{init\+Properties}}
+\index{init\+Properties@{init\+Properties}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Properties()}{initProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+initialize all \hyperlink{classProperties}{Properties} which terrain need \mbox{\Hypertarget{classTerrain_af88878ee2f37979ede7656062e19190f}\label{classTerrain_af88878ee2f37979ede7656062e19190f}} 
+\index{Terrain@{Terrain}!init\+Textures@{init\+Textures}}
+\index{init\+Textures@{init\+Textures}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Textures()}{initTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+initialize alpha\+Map ,detail\+Maps textures \mbox{\Hypertarget{classTerrain_af88878ee2f37979ede7656062e19190f}\label{classTerrain_af88878ee2f37979ede7656062e19190f}} 
+\index{Terrain@{Terrain}!init\+Textures@{init\+Textures}}
+\index{init\+Textures@{init\+Textures}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{init\+Textures()}{initTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Terrain\+::init\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+initialize alpha\+Map ,detail\+Maps textures \mbox{\Hypertarget{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}\label{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}} 
+\index{Terrain@{Terrain}!load\+Vertices@{load\+Vertices}}
+\index{load\+Vertices@{load\+Vertices}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{load\+Vertices()}{loadVertices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::load\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load Vertices from height filed for the whole terrain. \mbox{\Hypertarget{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}\label{classTerrain_aac8d9ca975f6b0050c49f7cb3c2f37ad}} 
+\index{Terrain@{Terrain}!load\+Vertices@{load\+Vertices}}
+\index{load\+Vertices@{load\+Vertices}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{load\+Vertices()}{loadVertices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::load\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load Vertices from height filed for the whole terrain. \mbox{\Hypertarget{classTerrain_a464acea156d7aca981b7b459708f7d16}\label{classTerrain_a464acea156d7aca981b7b459708f7d16}} 
+\index{Terrain@{Terrain}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classTerrain_a1d3c0deb9503e340a9818c8cf8c61923}\label{classTerrain_a1d3c0deb9503e340a9818c8cf8c61923}} 
+\index{Terrain@{Terrain}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Terrain\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}\label{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}} 
+\index{Terrain@{Terrain}!reset\+Height\+Map@{reset\+Height\+Map}}
+\index{reset\+Height\+Map@{reset\+Height\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{reset\+Height\+Map()}{resetHeightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::reset\+Height\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{height\+Map }\end{DoxyParamCaption})}
+
+reset the heightmap data. \mbox{\Hypertarget{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}\label{classTerrain_a9fdf4b0a5b92fc5ac98c69dc41f7efab}} 
+\index{Terrain@{Terrain}!reset\+Height\+Map@{reset\+Height\+Map}}
+\index{reset\+Height\+Map@{reset\+Height\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{reset\+Height\+Map()}{resetHeightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::reset\+Height\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{height\+Map }\end{DoxyParamCaption})}
+
+reset the heightmap data. \mbox{\Hypertarget{classTerrain_a10a40e89dd343591a43ab2a1069cef54}\label{classTerrain_a10a40e89dd343591a43ab2a1069cef54}} 
+\index{Terrain@{Terrain}!set\+Alpha\+Map@{set\+Alpha\+Map}}
+\index{set\+Alpha\+Map@{set\+Alpha\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Alpha\+Map()}{setAlphaMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Alpha\+Map (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Texture2D $\ast$}]{new\+Alpha\+Map\+Texture }\end{DoxyParamCaption})}
+
+set the alpha map \mbox{\Hypertarget{classTerrain_a10a40e89dd343591a43ab2a1069cef54}\label{classTerrain_a10a40e89dd343591a43ab2a1069cef54}} 
+\index{Terrain@{Terrain}!set\+Alpha\+Map@{set\+Alpha\+Map}}
+\index{set\+Alpha\+Map@{set\+Alpha\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Alpha\+Map()}{setAlphaMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Alpha\+Map (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Texture2D $\ast$}]{new\+Alpha\+Map\+Texture }\end{DoxyParamCaption})}
+
+set the alpha map \mbox{\Hypertarget{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}\label{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}} 
+\index{Terrain@{Terrain}!set\+Chunks\+L\+OD@{set\+Chunks\+L\+OD}}
+\index{set\+Chunks\+L\+OD@{set\+Chunks\+L\+OD}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Chunks\+L\+O\+D()}{setChunksLOD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Chunks\+L\+OD (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+recursively set each chunk\textquotesingle{}s L\+OD 
+\begin{DoxyParams}{Parameters}
+{\em camera\+Pos} & the camera position in world space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}\label{classTerrain_ab2a8b176050b693a801f5a73f1d3b6e0}} 
+\index{Terrain@{Terrain}!set\+Chunks\+L\+OD@{set\+Chunks\+L\+OD}}
+\index{set\+Chunks\+L\+OD@{set\+Chunks\+L\+OD}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Chunks\+L\+O\+D()}{setChunksLOD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Chunks\+L\+OD (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+recursively set each chunk\textquotesingle{}s L\+OD 
+\begin{DoxyParams}{Parameters}
+{\em camera\+Pos} & the camera position in world space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTerrain_a13ab12df5850aab66f6f45e396c4f169}\label{classTerrain_a13ab12df5850aab66f6f45e396c4f169}} 
+\index{Terrain@{Terrain}!set\+Detail\+Map@{set\+Detail\+Map}}
+\index{set\+Detail\+Map@{set\+Detail\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Detail\+Map()}{setDetailMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Detail\+Map (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{\hyperlink{structTerrain_1_1DetailMap}{Detail\+Map}}]{detail\+Map }\end{DoxyParamCaption})}
+
+set the Detail \hyperlink{classMap}{Map} \mbox{\Hypertarget{classTerrain_a13ab12df5850aab66f6f45e396c4f169}\label{classTerrain_a13ab12df5850aab66f6f45e396c4f169}} 
+\index{Terrain@{Terrain}!set\+Detail\+Map@{set\+Detail\+Map}}
+\index{set\+Detail\+Map@{set\+Detail\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Detail\+Map()}{setDetailMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Detail\+Map (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{\hyperlink{structTerrain_1_1DetailMap}{Detail\+Map}}]{detail\+Map }\end{DoxyParamCaption})}
+
+set the Detail \hyperlink{classMap}{Map} \mbox{\Hypertarget{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}\label{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}} 
+\index{Terrain@{Terrain}!set\+Draw\+Wire@{set\+Draw\+Wire}}
+\index{set\+Draw\+Wire@{set\+Draw\+Wire}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Draw\+Wire()}{setDrawWire()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Draw\+Wire (\begin{DoxyParamCaption}\item[{bool}]{bool\+Value }\end{DoxyParamCaption})}
+
+show the wireline instead of the surface,Debug Use only.  only support desktop platform \mbox{\Hypertarget{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}\label{classTerrain_ae29ad24c1f6056a45dd8fafb480bdff8}} 
+\index{Terrain@{Terrain}!set\+Draw\+Wire@{set\+Draw\+Wire}}
+\index{set\+Draw\+Wire@{set\+Draw\+Wire}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Draw\+Wire()}{setDrawWire()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Draw\+Wire (\begin{DoxyParamCaption}\item[{bool}]{bool\+Value }\end{DoxyParamCaption})}
+
+show the wireline instead of the surface,Debug Use only.  only support desktop platform \mbox{\Hypertarget{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}\label{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}} 
+\index{Terrain@{Terrain}!set\+Is\+Enable\+Frustum\+Cull@{set\+Is\+Enable\+Frustum\+Cull}}
+\index{set\+Is\+Enable\+Frustum\+Cull@{set\+Is\+Enable\+Frustum\+Cull}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Is\+Enable\+Frustum\+Cull()}{setIsEnableFrustumCull()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Is\+Enable\+Frustum\+Cull (\begin{DoxyParamCaption}\item[{bool}]{bool\+Value }\end{DoxyParamCaption})}
+
+Switch frustum Culling Flag  frustum culling will remarkable improve your terrain rendering performance. \mbox{\Hypertarget{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}\label{classTerrain_a27509ae8fd97c911b44f3f21d37761e1}} 
+\index{Terrain@{Terrain}!set\+Is\+Enable\+Frustum\+Cull@{set\+Is\+Enable\+Frustum\+Cull}}
+\index{set\+Is\+Enable\+Frustum\+Cull@{set\+Is\+Enable\+Frustum\+Cull}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Is\+Enable\+Frustum\+Cull()}{setIsEnableFrustumCull()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Is\+Enable\+Frustum\+Cull (\begin{DoxyParamCaption}\item[{bool}]{bool\+Value }\end{DoxyParamCaption})}
+
+Switch frustum Culling Flag  frustum culling will remarkable improve your terrain rendering performance. \mbox{\Hypertarget{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}\label{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}} 
+\index{Terrain@{Terrain}!set\+Light\+Dir@{set\+Light\+Dir}}
+\index{set\+Light\+Dir@{set\+Light\+Dir}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Light\+Dir()}{setLightDir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Light\+Dir (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{light\+Dir }\end{DoxyParamCaption})}
+
+set directional light for the terrain 
+\begin{DoxyParams}{Parameters}
+{\em light\+Dir} & The direction of directional light, Note that light\+Dir is in the terrain\textquotesingle{}s local space. Most of the time terrain is placed at (0,0,0) and without rotation, so light\+Dir is also in the world space. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}\label{classTerrain_a4fb4d880c5033dcbf89f69ceddf5f8b0}} 
+\index{Terrain@{Terrain}!set\+Light\+Dir@{set\+Light\+Dir}}
+\index{set\+Light\+Dir@{set\+Light\+Dir}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Light\+Dir()}{setLightDir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Light\+Dir (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{light\+Dir }\end{DoxyParamCaption})}
+
+set directional light for the terrain 
+\begin{DoxyParams}{Parameters}
+{\em light\+Dir} & The direction of directional light, Note that light\+Dir is in the terrain\textquotesingle{}s local space. Most of the time terrain is placed at (0,0,0) and without rotation, so light\+Dir is also in the world space. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTerrain_a296f207c5fae616a75099156ef8cd0ac}\label{classTerrain_a296f207c5fae616a75099156ef8cd0ac}} 
+\index{Terrain@{Terrain}!set\+Light\+Map@{set\+Light\+Map}}
+\index{set\+Light\+Map@{set\+Light\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Light\+Map()}{setLightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Light\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+set light map texture \mbox{\Hypertarget{classTerrain_a296f207c5fae616a75099156ef8cd0ac}\label{classTerrain_a296f207c5fae616a75099156ef8cd0ac}} 
+\index{Terrain@{Terrain}!set\+Light\+Map@{set\+Light\+Map}}
+\index{set\+Light\+Map@{set\+Light\+Map}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Light\+Map()}{setLightMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Light\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+set light map texture \mbox{\Hypertarget{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}\label{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}} 
+\index{Terrain@{Terrain}!set\+L\+O\+D\+Distance@{set\+L\+O\+D\+Distance}}
+\index{set\+L\+O\+D\+Distance@{set\+L\+O\+D\+Distance}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+L\+O\+D\+Distance()}{setLODDistance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+L\+O\+D\+Distance (\begin{DoxyParamCaption}\item[{float}]{lod1,  }\item[{float}]{lod2,  }\item[{float}]{lod3 }\end{DoxyParamCaption})}
+
+Set threshold distance of each L\+OD level,must equal or greater than the chunk size  when invoke init\+Height\+Map, the L\+OD distance will be automatic calculated. \mbox{\Hypertarget{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}\label{classTerrain_acffb1ca57d78d5aa643281d34bf0bf1b}} 
+\index{Terrain@{Terrain}!set\+L\+O\+D\+Distance@{set\+L\+O\+D\+Distance}}
+\index{set\+L\+O\+D\+Distance@{set\+L\+O\+D\+Distance}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+L\+O\+D\+Distance()}{setLODDistance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+L\+O\+D\+Distance (\begin{DoxyParamCaption}\item[{float}]{lod1,  }\item[{float}]{lod2,  }\item[{float}]{lod3 }\end{DoxyParamCaption})}
+
+Set threshold distance of each L\+OD level,must equal or greater than the chunk size  when invoke init\+Height\+Map, the L\+OD distance will be automatic calculated. \mbox{\Hypertarget{classTerrain_a8298eeb97583ef78a369151f0830c010}\label{classTerrain_a8298eeb97583ef78a369151f0830c010}} 
+\index{Terrain@{Terrain}!set\+Max\+Detail\+Map\+Amount@{set\+Max\+Detail\+Map\+Amount}}
+\index{set\+Max\+Detail\+Map\+Amount@{set\+Max\+Detail\+Map\+Amount}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Max\+Detail\+Map\+Amount()}{setMaxDetailMapAmount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Max\+Detail\+Map\+Amount (\begin{DoxyParamCaption}\item[{int}]{max\+Value }\end{DoxyParamCaption})}
+
+set the Max\+Detail\+Amount. \mbox{\Hypertarget{classTerrain_a8298eeb97583ef78a369151f0830c010}\label{classTerrain_a8298eeb97583ef78a369151f0830c010}} 
+\index{Terrain@{Terrain}!set\+Max\+Detail\+Map\+Amount@{set\+Max\+Detail\+Map\+Amount}}
+\index{set\+Max\+Detail\+Map\+Amount@{set\+Max\+Detail\+Map\+Amount}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Max\+Detail\+Map\+Amount()}{setMaxDetailMapAmount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Max\+Detail\+Map\+Amount (\begin{DoxyParamCaption}\item[{int}]{max\+Value }\end{DoxyParamCaption})}
+
+set the Max\+Detail\+Amount. \mbox{\Hypertarget{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}\label{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}} 
+\index{Terrain@{Terrain}!set\+Skirt\+Height\+Ratio@{set\+Skirt\+Height\+Ratio}}
+\index{set\+Skirt\+Height\+Ratio@{set\+Skirt\+Height\+Ratio}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Skirt\+Height\+Ratio()}{setSkirtHeightRatio()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Skirt\+Height\+Ratio (\begin{DoxyParamCaption}\item[{float}]{ratio }\end{DoxyParamCaption})}
+
+set the skirt height ratio \mbox{\Hypertarget{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}\label{classTerrain_a5a53caf1917be26897f35e35ae5b4f06}} 
+\index{Terrain@{Terrain}!set\+Skirt\+Height\+Ratio@{set\+Skirt\+Height\+Ratio}}
+\index{set\+Skirt\+Height\+Ratio@{set\+Skirt\+Height\+Ratio}!Terrain@{Terrain}}
+\subsubsection{\texorpdfstring{set\+Skirt\+Height\+Ratio()}{setSkirtHeightRatio()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Terrain\+::set\+Skirt\+Height\+Ratio (\begin{DoxyParamCaption}\item[{float}]{ratio }\end{DoxyParamCaption})}
+
+set the skirt height ratio 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Terrain.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Terrain.\+cpp\end{DoxyCompactItemize}

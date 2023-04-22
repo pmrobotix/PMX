@@ -1,0 +1,1352 @@
+\hypertarget{classProperties}{}\section{Properties Class Reference}
+\label{classProperties}\index{Properties@{Properties}}
+
+
+{\ttfamily \#include $<$C\+C\+Properties.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Type} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries S\+T\+R\+I\+NG}, 
+{\bfseries N\+U\+M\+B\+ER}, 
+{\bfseries V\+E\+C\+T\+O\+R2}, 
+\newline
+{\bfseries V\+E\+C\+T\+O\+R3}, 
+{\bfseries V\+E\+C\+T\+O\+R4}, 
+{\bfseries M\+A\+T\+R\+IX}, 
+{\bfseries N\+O\+NE}, 
+\newline
+{\bfseries S\+T\+R\+I\+NG}, 
+{\bfseries N\+U\+M\+B\+ER}, 
+{\bfseries V\+E\+C\+T\+O\+R2}, 
+{\bfseries V\+E\+C\+T\+O\+R3}, 
+\newline
+{\bfseries V\+E\+C\+T\+O\+R4}, 
+{\bfseries M\+A\+T\+R\+IX}
+ \}
+\item 
+enum \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Type} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries S\+T\+R\+I\+NG}, 
+{\bfseries N\+U\+M\+B\+ER}, 
+{\bfseries V\+E\+C\+T\+O\+R2}, 
+\newline
+{\bfseries V\+E\+C\+T\+O\+R3}, 
+{\bfseries V\+E\+C\+T\+O\+R4}, 
+{\bfseries M\+A\+T\+R\+IX}, 
+{\bfseries N\+O\+NE}, 
+\newline
+{\bfseries S\+T\+R\+I\+NG}, 
+{\bfseries N\+U\+M\+B\+ER}, 
+{\bfseries V\+E\+C\+T\+O\+R2}, 
+{\bfseries V\+E\+C\+T\+O\+R3}, 
+\newline
+{\bfseries V\+E\+C\+T\+O\+R4}, 
+{\bfseries M\+A\+T\+R\+IX}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProperties_a9a4367c64d90a962fc260128587670dd}{$\sim$\+Properties} ()
+\item 
+const char $\ast$ \hyperlink{classProperties_a396aad2d114059ca157db26c511da196}{get\+Next\+Property} ()
+\item 
+\hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_af3933a1797582540f81ef13a981801d3}{get\+Next\+Namespace} ()
+\item 
+void \hyperlink{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}{rewind} ()
+\item 
+\hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_a477722d07bc4b16275f05f82e443b67e}{get\+Namespace} (const char $\ast$id, bool search\+Names=false, bool recurse=true) const
+\item 
+const char $\ast$ \hyperlink{classProperties_a19fa7257f837ff8faa66c0b4992b8046}{get\+Namespace} () const
+\item 
+const char $\ast$ \hyperlink{classProperties_a088abb64299002eb5ad7654306db346f}{get\+Id} () const
+\item 
+bool \hyperlink{classProperties_a4afbc191b79c5994705e85af94045f6a}{exists} (const char $\ast$name) const
+\item 
+\hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Type} \hyperlink{classProperties_ab851dd2dc6b93048a988ecba9b5adc73}{get\+Type} (const char $\ast$name=N\+U\+LL) const
+\item 
+const char $\ast$ \hyperlink{classProperties_adaf74082354288405dba508c7d0fe342}{get\+String} (const char $\ast$name=N\+U\+LL, const char $\ast$default\+Value=N\+U\+LL) const
+\item 
+bool \hyperlink{classProperties_a12c91d3c681f9ace304ac5e48e804cad}{set\+String} (const char $\ast$name, const char $\ast$value)
+\item 
+bool \hyperlink{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}{get\+Bool} (const char $\ast$name=N\+U\+LL, bool default\+Value=false) const
+\item 
+int \hyperlink{classProperties_abbea452c3b133805fa955a6e1f91d1db}{get\+Int} (const char $\ast$name=N\+U\+LL) const
+\item 
+float \hyperlink{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}{get\+Float} (const char $\ast$name=N\+U\+LL) const
+\item 
+long \hyperlink{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}{get\+Long} (const char $\ast$name=N\+U\+LL) const
+\item 
+bool \hyperlink{classProperties_adf89d5ec337d5cd247b79b6083c820d8}{get\+Mat4} (const char $\ast$name, \hyperlink{classMat4}{Mat4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_ad1eacd687cc1f90c31dba67e071aac62}{get\+Vec2} (const char $\ast$name, \hyperlink{classVec2}{Vec2} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}{get\+Vec3} (const char $\ast$name, \hyperlink{classVec3}{Vec3} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a10f930a0553b781cb2de09c6b738f15e}{get\+Vec4} (const char $\ast$name, \hyperlink{classVec4}{Vec4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a609e433cb5798c88b2f87ef036ed3a73}{get\+Quaternion\+From\+Axis\+Angle} (const char $\ast$name, \hyperlink{classQuaternion}{Quaternion} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_aef61d49b456e4efbf6668a079b14780d}{get\+Color} (const char $\ast$name, \hyperlink{classVec3}{Vec3} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}{get\+Color} (const char $\ast$name, \hyperlink{classVec4}{Vec4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a721bf4ef8c0669161a29068ab79fda90}{get\+Path} (const char $\ast$name, std\+::string $\ast$path) const
+\item 
+const char $\ast$ \hyperlink{classProperties_add5e270ee2eb7795384e7712e21c3846}{get\+Variable} (const char $\ast$name, const char $\ast$default\+Value=N\+U\+LL) const
+\item 
+void \hyperlink{classProperties_aea588dde95d1d4767d981a2530a202b0}{set\+Variable} (const char $\ast$name, const char $\ast$value)
+\item 
+\hyperlink{classProperties_a9a4367c64d90a962fc260128587670dd}{$\sim$\+Properties} ()
+\item 
+const char $\ast$ \hyperlink{classProperties_a30173ee790d8dc35635723647883e1a0}{get\+Next\+Property} ()
+\item 
+\hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_aa5db87165b6b56f6ad0a2d4e8b95a6f9}{get\+Next\+Namespace} ()
+\item 
+void \hyperlink{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}{rewind} ()
+\item 
+\hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_ac9bec07cd39f1345076967bad9e87b14}{get\+Namespace} (const char $\ast$id, bool search\+Names=false, bool recurse=true) const
+\item 
+const char $\ast$ \hyperlink{classProperties_a6bf448bb7a53660f3227cda242d30f24}{get\+Namespace} () const
+\item 
+const char $\ast$ \hyperlink{classProperties_a96950ddf7fbe91c9e061a2e9f89ec42b}{get\+Id} () const
+\item 
+bool \hyperlink{classProperties_a4afbc191b79c5994705e85af94045f6a}{exists} (const char $\ast$name) const
+\item 
+\hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Type} \hyperlink{classProperties_ab8fd2fa0856600cb5c3894a6a2d2b3bc}{get\+Type} (const char $\ast$name=N\+U\+LL) const
+\item 
+const char $\ast$ \hyperlink{classProperties_a33e7fe8393290a0165a7ddb77ead10ea}{get\+String} (const char $\ast$name=N\+U\+LL, const char $\ast$default\+Value=N\+U\+LL) const
+\item 
+bool \hyperlink{classProperties_a12c91d3c681f9ace304ac5e48e804cad}{set\+String} (const char $\ast$name, const char $\ast$value)
+\item 
+bool \hyperlink{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}{get\+Bool} (const char $\ast$name=N\+U\+LL, bool default\+Value=false) const
+\item 
+int \hyperlink{classProperties_abbea452c3b133805fa955a6e1f91d1db}{get\+Int} (const char $\ast$name=N\+U\+LL) const
+\item 
+float \hyperlink{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}{get\+Float} (const char $\ast$name=N\+U\+LL) const
+\item 
+long \hyperlink{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}{get\+Long} (const char $\ast$name=N\+U\+LL) const
+\item 
+bool \hyperlink{classProperties_adf89d5ec337d5cd247b79b6083c820d8}{get\+Mat4} (const char $\ast$name, \hyperlink{classMat4}{Mat4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_ad1eacd687cc1f90c31dba67e071aac62}{get\+Vec2} (const char $\ast$name, \hyperlink{classVec2}{Vec2} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}{get\+Vec3} (const char $\ast$name, \hyperlink{classVec3}{Vec3} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a10f930a0553b781cb2de09c6b738f15e}{get\+Vec4} (const char $\ast$name, \hyperlink{classVec4}{Vec4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a609e433cb5798c88b2f87ef036ed3a73}{get\+Quaternion\+From\+Axis\+Angle} (const char $\ast$name, \hyperlink{classQuaternion}{Quaternion} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_aef61d49b456e4efbf6668a079b14780d}{get\+Color} (const char $\ast$name, \hyperlink{classVec3}{Vec3} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}{get\+Color} (const char $\ast$name, \hyperlink{classVec4}{Vec4} $\ast$out) const
+\item 
+bool \hyperlink{classProperties_a721bf4ef8c0669161a29068ab79fda90}{get\+Path} (const char $\ast$name, std\+::string $\ast$path) const
+\item 
+const char $\ast$ \hyperlink{classProperties_a8fca7902048c6e6af24c0f6697fcd2dd}{get\+Variable} (const char $\ast$name, const char $\ast$default\+Value=N\+U\+LL) const
+\item 
+void \hyperlink{classProperties_aea588dde95d1d4767d981a2530a202b0}{set\+Variable} (const char $\ast$name, const char $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_a582e172b9f288408b79f768fddc2e77f}{create\+Non\+Ref\+Counted} (const std\+::string \&url)
+\item 
+static bool \hyperlink{classProperties_a9576885844b44630f266dec2e1046c50}{parse\+Vec2} (const char $\ast$str, \hyperlink{classVec2}{Vec2} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_ac1f33c033fe980374b5fa220022312dd}{parse\+Vec3} (const char $\ast$str, \hyperlink{classVec3}{Vec3} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a4cd5e291bfdbbcc0d04c318ce069b571}{parse\+Vec4} (const char $\ast$str, \hyperlink{classVec4}{Vec4} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_afd79153b542873012bc0cfc633937c68}{parse\+Axis\+Angle} (const char $\ast$str, \hyperlink{classQuaternion}{Quaternion} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a1624834d48cae395789b70fe444043ac}{parse\+Color} (const char $\ast$str, \hyperlink{classVec3}{Vec3} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_af897fb4588ee9cbcf13af96c3043b380}{parse\+Color} (const char $\ast$str, \hyperlink{classVec4}{Vec4} $\ast$out)
+\item 
+static \hyperlink{classProperties}{Properties} $\ast$ \hyperlink{classProperties_ab9301685c24feb40541f48c1f9da6b56}{create\+Non\+Ref\+Counted} (const std\+::string \&url)
+\item 
+static bool \hyperlink{classProperties_ae6061fa183ad471f12164697110ace6d}{parse\+Vec2} (const char $\ast$str, \hyperlink{classVec2}{Vec2} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a064bfcc81174a7b25db3cae56c80294c}{parse\+Vec3} (const char $\ast$str, \hyperlink{classVec3}{Vec3} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a16375ad02554059ecabc57c5652cfe45}{parse\+Vec4} (const char $\ast$str, \hyperlink{classVec4}{Vec4} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a5dacddae83ef40b695fb23f297cdc277}{parse\+Axis\+Angle} (const char $\ast$str, \hyperlink{classQuaternion}{Quaternion} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a8ce9d838784b1b95087f98a27eba3500}{parse\+Color} (const char $\ast$str, \hyperlink{classVec3}{Vec3} $\ast$out)
+\item 
+static bool \hyperlink{classProperties_a703e785854ee11acf85f95632f6fff08}{parse\+Color} (const char $\ast$str, \hyperlink{classVec4}{Vec4} $\ast$out)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a properties file for loading text files.
+
+A properties file has very simple syntax and can contain only namespaces and name/value pairs (the properties of a namespace). The file can have any file extension a user specifies.
+
+Here\textquotesingle{}s an example of a simple file that uses all the available features of the markup language\+:
+
+\begin{DoxyVerb}   // This is a comment.
+
+   // This property is in the default namespace:
+   integerProperty = 5
+
+   // This line defines a namespace of type "mynamespace" without an ID:
+   mynamespace
+   {
+       // This namespace can be retrieved by searching for its ID, "spriteTexture",
+       // or by its name "texture":
+       texture spriteTexture 
+       {
+           fileName = sprite.png
+           width = 64
+           height = 64
+       }
+
+       // This property is in the "space" namespace:
+       booleanProperty = true
+
+       // It's legal to have a name without a value if you leave out the '=' character:
+       foo
+
+       // In fact, the '=' character is optional if you'd rather write:
+       bar 23
+
+       // But don't write this or you'll get an error:
+       // illegalProperty =
+
+       // Or this:
+       // = 15
+
+       // Properties objects let you retrieve values as various types.
+       floatProperty = 3.333
+       stringProperty = This is a string.
+       vector3Property = 1.0, 5.0, 3.55
+       colorProperty = 1.0, 0.4, 0.0, 1.0
+   }
+\end{DoxyVerb}
+
+
+Retrieving information out of a file like this could be done in two ways. If the available namespaces and name/value pairs are known in advance they can be queried by ID or name. For example, if the namespace \char`\"{}sprite\+Texture\char`\"{} and its properties are required then they can be retrieved with a call to \hyperlink{classProperties_a477722d07bc4b16275f05f82e443b67e}{get\+Namespace()} followed by calls to \hyperlink{classProperties_adaf74082354288405dba508c7d0fe342}{get\+String()} and \hyperlink{classProperties_abbea452c3b133805fa955a6e1f91d1db}{get\+Int()}. A namespace is stored and retrieved as a \hyperlink{classProperties}{Properties} object. Reading the sprite\+Texture properties out of the file above in this way could be done with the following code\+:
+
+\begin{DoxyVerb}   // Create the top-level Properties object.
+   Properties* properties = Properties::createNonRefCounted("example.properties");
+   // Retrieve the "spriteTexture" namespace.
+   Properties* spriteTexture = properties->getNamespace("spriteTexture");
+
+   // Get the values of known texture properties out of the namespace.
+   const char* fileName = spriteTexture->getString("fileName");
+   int width = spriteTexture->getInt("width");
+   int height = spriteTexture->getInt("height");
+
+   // Deleting the top-level Properties object will clean up all nested namespaces.
+   SAFE_DELETE(properties);
+\end{DoxyVerb}
+
+
+On the other hand, if the structure of the file is not known in advance its namespaces and name/value pairs can be retrieved one by one using the \hyperlink{classProperties_af3933a1797582540f81ef13a981801d3}{get\+Next\+Namespace()} and \hyperlink{classProperties_a396aad2d114059ca157db26c511da196}{get\+Next\+Property()} methods. The following method prints the contents of any properties file to the console\+:
+
+\begin{DoxyVerb}   void printProperties(Properties* properties)
+   {
+       // Print the name and ID of the current namespace.
+       const char* spacename = properties->getNamespace();
+       const char* id = properties->getId();
+       GP_WARN("Namespace: %s  ID: %s\n{", spacename, id);
+
+       // Print all properties in this namespace.
+       const char* name = properties->getNextProperty();
+       const char* value = NULL;
+       while (name != NULL)
+       {
+           value = properties->getString(name);
+           GP_WARN("%s = %s", name, value);
+           name = properties->getNextProperty();
+       }
+       GP_WARN("}\n");
+
+       // Print the properties of every namespace within this one.
+       Properties* space = properties->getNextNamespace();
+       while (space != NULL)
+       {
+           printProperties(space);
+           space = properties->getNextNamespace();
+       }
+   }
+\end{DoxyVerb}
+
+
+Note that this method does not keep track of the namespace hierarchy, but could be modified to do so. Also note that nothing in a properties file indicates the type of a property. If the type is unknown, its string can be retrieved and interpreted as necessary. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classProperties_a2d14cc7f8d9f987905632969cc4070e9}\label{classProperties_a2d14cc7f8d9f987905632969cc4070e9}} 
+\index{Properties@{Properties}!Type@{Type}}
+\index{Type@{Type}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Properties\+::\+Type}}
+
+\hyperlink{classData}{Data} types supported by the properties class. \mbox{\Hypertarget{classProperties_a2d14cc7f8d9f987905632969cc4070e9}\label{classProperties_a2d14cc7f8d9f987905632969cc4070e9}} 
+\index{Properties@{Properties}!Type@{Type}}
+\index{Type@{Type}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Properties\+::\+Type}}
+
+\hyperlink{classData}{Data} types supported by the properties class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProperties_a9a4367c64d90a962fc260128587670dd}\label{classProperties_a9a4367c64d90a962fc260128587670dd}} 
+\index{Properties@{Properties}!````~Properties@{$\sim$\+Properties}}
+\index{````~Properties@{$\sim$\+Properties}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{$\sim$\+Properties()}{~Properties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Properties\+::$\sim$\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. \mbox{\Hypertarget{classProperties_a9a4367c64d90a962fc260128587670dd}\label{classProperties_a9a4367c64d90a962fc260128587670dd}} 
+\index{Properties@{Properties}!````~Properties@{$\sim$\+Properties}}
+\index{````~Properties@{$\sim$\+Properties}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{$\sim$\+Properties()}{~Properties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Properties\+::$\sim$\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProperties_a582e172b9f288408b79f768fddc2e77f}\label{classProperties_a582e172b9f288408b79f768fddc2e77f}} 
+\index{Properties@{Properties}!create\+Non\+Ref\+Counted@{create\+Non\+Ref\+Counted}}
+\index{create\+Non\+Ref\+Counted@{create\+Non\+Ref\+Counted}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{create\+Non\+Ref\+Counted()}{createNonRefCounted()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProperties}{Properties} $\ast$ Properties\+::create\+Non\+Ref\+Counted (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classProperties}{Properties} runtime settings from the specified U\+RL, where the U\+RL is of the format \char`\"{}$<$file-\/path$>$.$<$extension$>$\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} (and \char`\"{}\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} is optional).
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL to create the properties from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \hyperlink{classProperties}{Properties} or N\+U\+LL if there was an error. \{create\} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ab9301685c24feb40541f48c1f9da6b56}\label{classProperties_ab9301685c24feb40541f48c1f9da6b56}} 
+\index{Properties@{Properties}!create\+Non\+Ref\+Counted@{create\+Non\+Ref\+Counted}}
+\index{create\+Non\+Ref\+Counted@{create\+Non\+Ref\+Counted}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{create\+Non\+Ref\+Counted()}{createNonRefCounted()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classProperties}{Properties}$\ast$ Properties\+::create\+Non\+Ref\+Counted (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classProperties}{Properties} runtime settings from the specified U\+RL, where the U\+RL is of the format \char`\"{}$<$file-\/path$>$.$<$extension$>$\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} (and \char`\"{}\#$<$namespace-\/id$>$/$<$namespace-\/id$>$/.../$<$namespace-\/id$>$\char`\"{} is optional).
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL to create the properties from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \hyperlink{classProperties}{Properties} or N\+U\+LL if there was an error. \{create\} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a4afbc191b79c5994705e85af94045f6a}\label{classProperties_a4afbc191b79c5994705e85af94045f6a}} 
+\index{Properties@{Properties}!exists@{exists}}
+\index{exists@{exists}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{exists()}{exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::exists (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+Check if a property with the given name is specified in this \hyperlink{classProperties}{Properties} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property exists, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a4afbc191b79c5994705e85af94045f6a}\label{classProperties_a4afbc191b79c5994705e85af94045f6a}} 
+\index{Properties@{Properties}!exists@{exists}}
+\index{exists@{exists}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{exists()}{exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::exists (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+Check if a property with the given name is specified in this \hyperlink{classProperties}{Properties} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property exists, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}\label{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}} 
+\index{Properties@{Properties}!get\+Bool@{get\+Bool}}
+\index{get\+Bool@{get\+Bool}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Bool()}{getBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Bool (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL},  }\item[{bool}]{default\+Value = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a boolean.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em default\+Value} & the default value to return if the specified property does not exist within the properties file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the property exists and its value is \char`\"{}true\char`\"{}, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}\label{classProperties_a71277d94b2486dd4f6f8ca5bde7cfcc8}} 
+\index{Properties@{Properties}!get\+Bool@{get\+Bool}}
+\index{get\+Bool@{get\+Bool}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Bool()}{getBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Bool (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL},  }\item[{bool}]{default\+Value = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a boolean.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em default\+Value} & the default value to return if the specified property does not exist within the properties file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the property exists and its value is \char`\"{}true\char`\"{}, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_aef61d49b456e4efbf6668a079b14780d}\label{classProperties_aef61d49b456e4efbf6668a079b14780d}} 
+\index{Properties@{Properties}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an R\+GB color in hex and write this color to a Vector3. E.\+g. 0xff0000 represents red and sets the vector to (1, 0, 0). If the property does not exist, out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_aef61d49b456e4efbf6668a079b14780d}\label{classProperties_aef61d49b456e4efbf6668a079b14780d}} 
+\index{Properties@{Properties}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an R\+GB color in hex and write this color to a Vector3. E.\+g. 0xff0000 represents red and sets the vector to (1, 0, 0). If the property does not exist, out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}\label{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}} 
+\index{Properties@{Properties}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an \hyperlink{structRGBA}{R\+G\+BA} color in hex and write this color to a Vector4. E.\+g. 0xff0000ff represents opaque red and sets the vector to (1, 0, 0, 1). If the property does not exist, out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}\label{classProperties_a8fd1e181c6cb58cda989db6eca09ef4d}} 
+\index{Properties@{Properties}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an \hyperlink{structRGBA}{R\+G\+BA} color in hex and write this color to a Vector4. E.\+g. 0xff0000ff represents opaque red and sets the vector to (1, 0, 0, 1). If the property does not exist, out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}\label{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}} 
+\index{Properties@{Properties}!get\+Float@{get\+Float}}
+\index{get\+Float@{get\+Float}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Float()}{getFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Properties\+::get\+Float (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a floating-\/point number. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as a float. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}\label{classProperties_a4ed868ff9fe81bee289e2e9f5670dbc1}} 
+\index{Properties@{Properties}!get\+Float@{get\+Float}}
+\index{get\+Float@{get\+Float}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Float()}{getFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Properties\+::get\+Float (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a floating-\/point number. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as a float. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a088abb64299002eb5ad7654306db346f}\label{classProperties_a088abb64299002eb5ad7654306db346f}} 
+\index{Properties@{Properties}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Properties\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the ID of this Property\textquotesingle{}s namespace. The ID should be a unique identifier, but its uniqueness is not enforced.
+
+\begin{DoxyReturn}{Returns}
+The ID of this Property\textquotesingle{}s namespace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a96950ddf7fbe91c9e061a2e9f89ec42b}\label{classProperties_a96950ddf7fbe91c9e061a2e9f89ec42b}} 
+\index{Properties@{Properties}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ Properties\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the ID of this Property\textquotesingle{}s namespace. The ID should be a unique identifier, but its uniqueness is not enforced.
+
+\begin{DoxyReturn}{Returns}
+The ID of this Property\textquotesingle{}s namespace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_abbea452c3b133805fa955a6e1f91d1db}\label{classProperties_abbea452c3b133805fa955a6e1f91d1db}} 
+\index{Properties@{Properties}!get\+Int@{get\+Int}}
+\index{get\+Int@{get\+Int}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Int()}{getInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Properties\+::get\+Int (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an integer. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as an integer. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_abbea452c3b133805fa955a6e1f91d1db}\label{classProperties_abbea452c3b133805fa955a6e1f91d1db}} 
+\index{Properties@{Properties}!get\+Int@{get\+Int}}
+\index{get\+Int@{get\+Int}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Int()}{getInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Properties\+::get\+Int (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as an integer. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as an integer. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}\label{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}} 
+\index{Properties@{Properties}!get\+Long@{get\+Long}}
+\index{get\+Long@{get\+Long}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Long()}{getLong()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long Properties\+::get\+Long (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a long integer. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as a long. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}\label{classProperties_af288a30f0ad39ebf37a8415f0716ddd7}} 
+\index{Properties@{Properties}!get\+Long@{get\+Long}}
+\index{get\+Long@{get\+Long}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Long()}{getLong()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long Properties\+::get\+Long (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a long integer. If the property does not exist, zero will be returned. If the property exists but could not be scanned, an error will be logged and zero will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property interpreted as a long. Zero if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_adf89d5ec337d5cd247b79b6083c820d8}\label{classProperties_adf89d5ec337d5cd247b79b6083c820d8}} 
+\index{Properties@{Properties}!get\+Mat4@{get\+Mat4}}
+\index{get\+Mat4@{get\+Mat4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Mat4()}{getMat4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Mat4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Matrix. If the property does not exist, out will be set to the identity matrix. If the property exists but could not be scanned, an error will be logged and out will be set to the identity matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The matrix to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_adf89d5ec337d5cd247b79b6083c820d8}\label{classProperties_adf89d5ec337d5cd247b79b6083c820d8}} 
+\index{Properties@{Properties}!get\+Mat4@{get\+Mat4}}
+\index{get\+Mat4@{get\+Mat4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Mat4()}{getMat4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Mat4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Matrix. If the property does not exist, out will be set to the identity matrix. If the property exists but could not be scanned, an error will be logged and out will be set to the identity matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The matrix to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a477722d07bc4b16275f05f82e443b67e}\label{classProperties_a477722d07bc4b16275f05f82e443b67e}} 
+\index{Properties@{Properties}!get\+Namespace@{get\+Namespace}}
+\index{get\+Namespace@{get\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Namespace()}{getNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classProperties}{Properties} $\ast$ Properties\+::get\+Namespace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{bool}]{search\+Names = {\ttfamily false},  }\item[{bool}]{recurse = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+Get a specific namespace by ID or name. This method will optionally perform a depth-\/first search on all namespaces and inner namespaces within this Property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID or name of the namespace to find. \\
+\hline
+{\em search\+Names} & If true, namespace names are used in the search, instead of namespace I\+Ds. By default this parameter is false and namespace I\+Ds are searched. \\
+\hline
+{\em recurse} & If true, perform a depth-\/first search, otherwise search only the immediate child namespaces.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A properties object with the given ID or name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ac9bec07cd39f1345076967bad9e87b14}\label{classProperties_ac9bec07cd39f1345076967bad9e87b14}} 
+\index{Properties@{Properties}!get\+Namespace@{get\+Namespace}}
+\index{get\+Namespace@{get\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Namespace()}{getNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classProperties}{Properties}$\ast$ Properties\+::get\+Namespace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{bool}]{search\+Names = {\ttfamily false},  }\item[{bool}]{recurse = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+Get a specific namespace by ID or name. This method will optionally perform a depth-\/first search on all namespaces and inner namespaces within this Property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID or name of the namespace to find. \\
+\hline
+{\em search\+Names} & If true, namespace names are used in the search, instead of namespace I\+Ds. By default this parameter is false and namespace I\+Ds are searched. \\
+\hline
+{\em recurse} & If true, perform a depth-\/first search, otherwise search only the immediate child namespaces.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A properties object with the given ID or name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a19fa7257f837ff8faa66c0b4992b8046}\label{classProperties_a19fa7257f837ff8faa66c0b4992b8046}} 
+\index{Properties@{Properties}!get\+Namespace@{get\+Namespace}}
+\index{get\+Namespace@{get\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Namespace()}{getNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily const char $\ast$ Properties\+::get\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the name of this Property\textquotesingle{}s namespace.
+
+\begin{DoxyReturn}{Returns}
+The name of this Property\textquotesingle{}s namespace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a6bf448bb7a53660f3227cda242d30f24}\label{classProperties_a6bf448bb7a53660f3227cda242d30f24}} 
+\index{Properties@{Properties}!get\+Namespace@{get\+Namespace}}
+\index{get\+Namespace@{get\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Namespace()}{getNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const char$\ast$ Properties\+::get\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the name of this Property\textquotesingle{}s namespace.
+
+\begin{DoxyReturn}{Returns}
+The name of this Property\textquotesingle{}s namespace. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_af3933a1797582540f81ef13a981801d3}\label{classProperties_af3933a1797582540f81ef13a981801d3}} 
+\index{Properties@{Properties}!get\+Next\+Namespace@{get\+Next\+Namespace}}
+\index{get\+Next\+Namespace@{get\+Next\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Next\+Namespace()}{getNextNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProperties}{Properties} $\ast$ Properties\+::get\+Next\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the next namespace. \mbox{\Hypertarget{classProperties_aa5db87165b6b56f6ad0a2d4e8b95a6f9}\label{classProperties_aa5db87165b6b56f6ad0a2d4e8b95a6f9}} 
+\index{Properties@{Properties}!get\+Next\+Namespace@{get\+Next\+Namespace}}
+\index{get\+Next\+Namespace@{get\+Next\+Namespace}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Next\+Namespace()}{getNextNamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classProperties}{Properties}$\ast$ Properties\+::get\+Next\+Namespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the next namespace. \mbox{\Hypertarget{classProperties_a396aad2d114059ca157db26c511da196}\label{classProperties_a396aad2d114059ca157db26c511da196}} 
+\index{Properties@{Properties}!get\+Next\+Property@{get\+Next\+Property}}
+\index{get\+Next\+Property@{get\+Next\+Property}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Next\+Property()}{getNextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Properties\+::get\+Next\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the name of the next property.
+
+If a valid next property is returned, the value of the property can be retrieved using any of the get methods in this class, passing N\+U\+LL for the property name. \begin{DoxyVerb}   @return The name of the next property, or NULL if there are no properties remaining.\end{DoxyVerb}
+ \mbox{\Hypertarget{classProperties_a30173ee790d8dc35635723647883e1a0}\label{classProperties_a30173ee790d8dc35635723647883e1a0}} 
+\index{Properties@{Properties}!get\+Next\+Property@{get\+Next\+Property}}
+\index{get\+Next\+Property@{get\+Next\+Property}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Next\+Property()}{getNextProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ Properties\+::get\+Next\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the name of the next property.
+
+If a valid next property is returned, the value of the property can be retrieved using any of the get methods in this class, passing N\+U\+LL for the property name. \begin{DoxyVerb}   @return The name of the next property, or NULL if there are no properties remaining.\end{DoxyVerb}
+ \mbox{\Hypertarget{classProperties_a721bf4ef8c0669161a29068ab79fda90}\label{classProperties_a721bf4ef8c0669161a29068ab79fda90}} 
+\index{Properties@{Properties}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Path (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::string $\ast$}]{path }\end{DoxyParamCaption}) const}
+
+Gets the file path for the given property if the file exists.
+
+This method will first search for the file relative to the working directory. If the file is not found then it will search relative to the directory the bundle file is in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property. \\
+\hline
+{\em path} & The string to copy the path to if the file exists.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property exists and the file exists, false otherwise.
+\end{DoxyReturn}
+\{ignore\} \mbox{\Hypertarget{classProperties_a721bf4ef8c0669161a29068ab79fda90}\label{classProperties_a721bf4ef8c0669161a29068ab79fda90}} 
+\index{Properties@{Properties}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Path (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::string $\ast$}]{path }\end{DoxyParamCaption}) const}
+
+Gets the file path for the given property if the file exists.
+
+This method will first search for the file relative to the working directory. If the file is not found then it will search relative to the directory the bundle file is in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property. \\
+\hline
+{\em path} & The string to copy the path to if the file exists.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property exists and the file exists, false otherwise.
+\end{DoxyReturn}
+\{ignore\} \mbox{\Hypertarget{classProperties_a609e433cb5798c88b2f87ef036ed3a73}\label{classProperties_a609e433cb5798c88b2f87ef036ed3a73}} 
+\index{Properties@{Properties}!get\+Quaternion\+From\+Axis\+Angle@{get\+Quaternion\+From\+Axis\+Angle}}
+\index{get\+Quaternion\+From\+Axis\+Angle@{get\+Quaternion\+From\+Axis\+Angle}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Quaternion\+From\+Axis\+Angle()}{getQuaternionFromAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Quaternion\+From\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a \hyperlink{classQuaternion}{Quaternion} specified as an axis angle. If the property does not exist, out will be set to \hyperlink{classQuaternion}{Quaternion()}. If the property exists but could not be scanned, an error will be logged and out will be set to \hyperlink{classQuaternion}{Quaternion()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The quaternion to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a609e433cb5798c88b2f87ef036ed3a73}\label{classProperties_a609e433cb5798c88b2f87ef036ed3a73}} 
+\index{Properties@{Properties}!get\+Quaternion\+From\+Axis\+Angle@{get\+Quaternion\+From\+Axis\+Angle}}
+\index{get\+Quaternion\+From\+Axis\+Angle@{get\+Quaternion\+From\+Axis\+Angle}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Quaternion\+From\+Axis\+Angle()}{getQuaternionFromAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Quaternion\+From\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a \hyperlink{classQuaternion}{Quaternion} specified as an axis angle. If the property does not exist, out will be set to \hyperlink{classQuaternion}{Quaternion()}. If the property exists but could not be scanned, an error will be logged and out will be set to \hyperlink{classQuaternion}{Quaternion()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The quaternion to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_adaf74082354288405dba508c7d0fe342}\label{classProperties_adaf74082354288405dba508c7d0fe342}} 
+\index{Properties@{Properties}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Properties\+::get\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL},  }\item[{const char $\ast$}]{default\+Value = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Get the value of the given property as a string. This can always be retrieved, whatever the intended type of the property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em default\+Value} & The default value to return if the specified property does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property as a string, or the empty string if no property with that name exists. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a33e7fe8393290a0165a7ddb77ead10ea}\label{classProperties_a33e7fe8393290a0165a7ddb77ead10ea}} 
+\index{Properties@{Properties}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ Properties\+::get\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL},  }\item[{const char $\ast$}]{default\+Value = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Get the value of the given property as a string. This can always be retrieved, whatever the intended type of the property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em default\+Value} & The default value to return if the specified property does not exist.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the given property as a string, or the empty string if no property with that name exists. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ab851dd2dc6b93048a988ecba9b5adc73}\label{classProperties_ab851dd2dc6b93048a988ecba9b5adc73}} 
+\index{Properties@{Properties}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Properties\+::\+Type} Properties\+::get\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Returns the type of a property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of the property. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ab8fd2fa0856600cb5c3894a6a2d2b3bc}\label{classProperties_ab8fd2fa0856600cb5c3894a6a2d2b3bc}} 
+\index{Properties@{Properties}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classProperties_a2d14cc7f8d9f987905632969cc4070e9}{Type} Properties\+::get\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Returns the type of a property.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of the property. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_add5e270ee2eb7795384e7712e21c3846}\label{classProperties_add5e270ee2eb7795384e7712e21c3846}} 
+\index{Properties@{Properties}!get\+Variable@{get\+Variable}}
+\index{get\+Variable@{get\+Variable}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Variable()}{getVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Properties\+::get\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{default\+Value = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Returns the value of a variable that is set in this \hyperlink{classProperties}{Properties} object.
+
+Variables take on the format \$\{name\} and are inherited from parent Property objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the variable to get. \\
+\hline
+{\em default\+Value} & \hyperlink{classValue}{Value} to return if the variable is not found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the specified variable, or default\+Value if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a8fca7902048c6e6af24c0f6697fcd2dd}\label{classProperties_a8fca7902048c6e6af24c0f6697fcd2dd}} 
+\index{Properties@{Properties}!get\+Variable@{get\+Variable}}
+\index{get\+Variable@{get\+Variable}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Variable()}{getVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ Properties\+::get\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{default\+Value = {\ttfamily NULL} }\end{DoxyParamCaption}) const}
+
+Returns the value of a variable that is set in this \hyperlink{classProperties}{Properties} object.
+
+Variables take on the format \$\{name\} and are inherited from parent Property objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the variable to get. \\
+\hline
+{\em default\+Value} & \hyperlink{classValue}{Value} to return if the variable is not found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the specified variable, or default\+Value if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ad1eacd687cc1f90c31dba67e071aac62}\label{classProperties_ad1eacd687cc1f90c31dba67e071aac62}} 
+\index{Properties@{Properties}!get\+Vec2@{get\+Vec2}}
+\index{get\+Vec2@{get\+Vec2}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec2()}{getVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec2 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector2. If the property does not exist, out will be set to Vector2(0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector2(0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ad1eacd687cc1f90c31dba67e071aac62}\label{classProperties_ad1eacd687cc1f90c31dba67e071aac62}} 
+\index{Properties@{Properties}!get\+Vec2@{get\+Vec2}}
+\index{get\+Vec2@{get\+Vec2}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec2()}{getVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec2 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector2. If the property does not exist, out will be set to Vector2(0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector2(0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}\label{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}} 
+\index{Properties@{Properties}!get\+Vec3@{get\+Vec3}}
+\index{get\+Vec3@{get\+Vec3}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec3()}{getVec3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec3 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector3. If the property does not exist, out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}\label{classProperties_a5ea69d8939c4f73a4f271c5ebc1ff718}} 
+\index{Properties@{Properties}!get\+Vec3@{get\+Vec3}}
+\index{get\+Vec3@{get\+Vec3}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec3()}{getVec3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec3 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector3. If the property does not exist, out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector3(0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a10f930a0553b781cb2de09c6b738f15e}\label{classProperties_a10f930a0553b781cb2de09c6b738f15e}} 
+\index{Properties@{Properties}!get\+Vec4@{get\+Vec4}}
+\index{get\+Vec4@{get\+Vec4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec4()}{getVec4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector4. If the property does not exist, out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a10f930a0553b781cb2de09c6b738f15e}\label{classProperties_a10f930a0553b781cb2de09c6b738f15e}} 
+\index{Properties@{Properties}!get\+Vec4@{get\+Vec4}}
+\index{get\+Vec4@{get\+Vec4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{get\+Vec4()}{getVec4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::get\+Vec4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpret the value of the given property as a Vector4. If the property does not exist, out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f). If the property exists but could not be scanned, an error will be logged and out will be set to Vector4(0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to interpret, or N\+U\+LL to return the current property\textquotesingle{}s value. \\
+\hline
+{\em out} & The vector to set to this property\textquotesingle{}s interpreted value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if the property does not exist or could not be scanned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_afd79153b542873012bc0cfc633937c68}\label{classProperties_afd79153b542873012bc0cfc633937c68}} 
+\index{Properties@{Properties}!parse\+Axis\+Angle@{parse\+Axis\+Angle}}
+\index{parse\+Axis\+Angle@{parse\+Axis\+Angle}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Axis\+Angle()}{parseAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an axis-\/angle value.
+
+The specified string is expected to contain four comma-\/separated values, where the first three values represents the axis and the fourth value represents the angle, in degrees.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & A \hyperlink{classQuaternion}{Quaternion} populated with the orientation of the axis-\/angle, if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid axis-\/angle was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a5dacddae83ef40b695fb23f297cdc277}\label{classProperties_a5dacddae83ef40b695fb23f297cdc277}} 
+\index{Properties@{Properties}!parse\+Axis\+Angle@{parse\+Axis\+Angle}}
+\index{parse\+Axis\+Angle@{parse\+Axis\+Angle}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Axis\+Angle()}{parseAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an axis-\/angle value.
+
+The specified string is expected to contain four comma-\/separated values, where the first three values represents the axis and the fourth value represents the angle, in degrees.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & A \hyperlink{classQuaternion}{Quaternion} populated with the orientation of the axis-\/angle, if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid axis-\/angle was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a1624834d48cae395789b70fe444043ac}\label{classProperties_a1624834d48cae395789b70fe444043ac}} 
+\index{Properties@{Properties}!parse\+Color@{parse\+Color}}
+\index{parse\+Color@{parse\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Color()}{parseColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an R\+GB color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid R\+GB color was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a8ce9d838784b1b95087f98a27eba3500}\label{classProperties_a8ce9d838784b1b95087f98a27eba3500}} 
+\index{Properties@{Properties}!parse\+Color@{parse\+Color}}
+\index{parse\+Color@{parse\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Color()}{parseColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an R\+GB color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid R\+GB color was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_af897fb4588ee9cbcf13af96c3043b380}\label{classProperties_af897fb4588ee9cbcf13af96c3043b380}} 
+\index{Properties@{Properties}!parse\+Color@{parse\+Color}}
+\index{parse\+Color@{parse\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Color()}{parseColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an \hyperlink{structRGBA}{R\+G\+BA} color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid \hyperlink{structRGBA}{R\+G\+BA} color was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a703e785854ee11acf85f95632f6fff08}\label{classProperties_a703e785854ee11acf85f95632f6fff08}} 
+\index{Properties@{Properties}!parse\+Color@{parse\+Color}}
+\index{parse\+Color@{parse\+Color}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Color()}{parseColor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Color (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as an \hyperlink{structRGBA}{R\+G\+BA} color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid \hyperlink{structRGBA}{R\+G\+BA} color was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a9576885844b44630f266dec2e1046c50}\label{classProperties_a9576885844b44630f266dec2e1046c50}} 
+\index{Properties@{Properties}!parse\+Vec2@{parse\+Vec2}}
+\index{parse\+Vec2@{parse\+Vec2}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec2()}{parseVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Vec2 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector2 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector2 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ae6061fa183ad471f12164697110ace6d}\label{classProperties_ae6061fa183ad471f12164697110ace6d}} 
+\index{Properties@{Properties}!parse\+Vec2@{parse\+Vec2}}
+\index{parse\+Vec2@{parse\+Vec2}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec2()}{parseVec2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Vec2 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector2 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector2 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_ac1f33c033fe980374b5fa220022312dd}\label{classProperties_ac1f33c033fe980374b5fa220022312dd}} 
+\index{Properties@{Properties}!parse\+Vec3@{parse\+Vec3}}
+\index{parse\+Vec3@{parse\+Vec3}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec3()}{parseVec3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Vec3 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector3 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector3 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a064bfcc81174a7b25db3cae56c80294c}\label{classProperties_a064bfcc81174a7b25db3cae56c80294c}} 
+\index{Properties@{Properties}!parse\+Vec3@{parse\+Vec3}}
+\index{parse\+Vec3@{parse\+Vec3}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec3()}{parseVec3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Vec3 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector3 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector3 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a4cd5e291bfdbbcc0d04c318ce069b571}\label{classProperties_a4cd5e291bfdbbcc0d04c318ce069b571}} 
+\index{Properties@{Properties}!parse\+Vec4@{parse\+Vec4}}
+\index{parse\+Vec4@{parse\+Vec4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec4()}{parseVec4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::parse\+Vec4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector4 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector4 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a16375ad02554059ecabc57c5652cfe45}\label{classProperties_a16375ad02554059ecabc57c5652cfe45}} 
+\index{Properties@{Properties}!parse\+Vec4@{parse\+Vec4}}
+\index{parse\+Vec4@{parse\+Vec4}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{parse\+Vec4()}{parseVec4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Properties\+::parse\+Vec4 (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Attempts to parse the specified string as a Vector4 value.
+
+On error, false is returned and the output is set to all zero values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to parse. \\
+\hline
+{\em out} & The value to populate if successful.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid Vector4 was parsed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}\label{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}} 
+\index{Properties@{Properties}!rewind@{rewind}}
+\index{rewind@{rewind}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{rewind()}{rewind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Properties\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Rewind the \hyperlink{classProperties_a396aad2d114059ca157db26c511da196}{get\+Next\+Property()} and \hyperlink{classProperties_af3933a1797582540f81ef13a981801d3}{get\+Next\+Namespace()} iterators to the beginning of the file. \mbox{\Hypertarget{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}\label{classProperties_a5a6eab78915d41d3be2f5b65ee03539d}} 
+\index{Properties@{Properties}!rewind@{rewind}}
+\index{rewind@{rewind}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{rewind()}{rewind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Properties\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Rewind the \hyperlink{classProperties_a396aad2d114059ca157db26c511da196}{get\+Next\+Property()} and \hyperlink{classProperties_af3933a1797582540f81ef13a981801d3}{get\+Next\+Namespace()} iterators to the beginning of the file. \mbox{\Hypertarget{classProperties_a12c91d3c681f9ace304ac5e48e804cad}\label{classProperties_a12c91d3c681f9ace304ac5e48e804cad}} 
+\index{Properties@{Properties}!set\+String@{set\+String}}
+\index{set\+String@{set\+String}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{set\+String()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Properties\+::set\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Sets the value of the property with the specified name.
+
+If there is no property in this namespace with the current name, one is added. Otherwise, the value of the first property with the specified name is updated.
+
+If name is N\+U\+LL, the value current property (see get\+Next\+Property) is set, unless there is no current property, in which case false is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to set. \\
+\hline
+{\em value} & The property value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property was set, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_a12c91d3c681f9ace304ac5e48e804cad}\label{classProperties_a12c91d3c681f9ace304ac5e48e804cad}} 
+\index{Properties@{Properties}!set\+String@{set\+String}}
+\index{set\+String@{set\+String}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{set\+String()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Properties\+::set\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Sets the value of the property with the specified name.
+
+If there is no property in this namespace with the current name, one is added. Otherwise, the value of the first property with the specified name is updated.
+
+If name is N\+U\+LL, the value current property (see get\+Next\+Property) is set, unless there is no current property, in which case false is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to set. \\
+\hline
+{\em value} & The property value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the property was set, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProperties_aea588dde95d1d4767d981a2530a202b0}\label{classProperties_aea588dde95d1d4767d981a2530a202b0}} 
+\index{Properties@{Properties}!set\+Variable@{set\+Variable}}
+\index{set\+Variable@{set\+Variable}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{set\+Variable()}{setVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Properties\+::set\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Sets the value of the specified variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the variable to set. \\
+\hline
+{\em value} & The value to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProperties_aea588dde95d1d4767d981a2530a202b0}\label{classProperties_aea588dde95d1d4767d981a2530a202b0}} 
+\index{Properties@{Properties}!set\+Variable@{set\+Variable}}
+\index{set\+Variable@{set\+Variable}!Properties@{Properties}}
+\subsubsection{\texorpdfstring{set\+Variable()}{setVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Properties\+::set\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Sets the value of the specified variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the variable to set. \\
+\hline
+{\em value} & The value to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Properties.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Properties.\+cpp\end{DoxyCompactItemize}

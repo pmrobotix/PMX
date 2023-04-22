@@ -1,0 +1,532 @@
+\hypertarget{classBoneNode}{}\section{Bone\+Node Class Reference}
+\label{classBoneNode}\index{Bone\+Node@{Bone\+Node}}
+
+
+Inheritance diagram for Bone\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classBoneNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bone\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classBoneNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoneNode_a2ca40225a6a290c8949742299a39ccde}\label{classBoneNode_a2ca40225a6a290c8949742299a39ccde}} 
+virtual void {\bfseries add\+Child} (cocos2d\+::\+Node $\ast$child, int local\+Z\+Order, const std\+::string \&name) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a703f0e5fbbe21672ee6c34e04ac851b4}\label{classBoneNode_a703f0e5fbbe21672ee6c34e04ac851b4}} 
+virtual void {\bfseries add\+Child} (cocos2d\+::\+Node $\ast$child, int local\+Z\+Order, int tag) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a46fac15a0c8eb2dccaaca9e298bf2754}\label{classBoneNode_a46fac15a0c8eb2dccaaca9e298bf2754}} 
+virtual void {\bfseries remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool cleanup) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a0d53e7d33a683180aed73948cd75e47c}\label{classBoneNode_a0d53e7d33a683180aed73948cd75e47c}} 
+virtual const cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \& {\bfseries get\+Child\+Bones} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a4fa4dd0d6b8a20e8c2f0ccbebaf62927}\label{classBoneNode_a4fa4dd0d6b8a20e8c2f0ccbebaf62927}} 
+virtual cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \& {\bfseries get\+Child\+Bones} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_afcb865d38ffd962924c416f1f7d6d017}\label{classBoneNode_afcb865d38ffd962924c416f1f7d6d017}} 
+virtual \hyperlink{classSkeletonNode}{Skeleton\+Node} $\ast$ {\bfseries get\+Root\+Skeleton\+Node} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a012985939baa44717868d00c7cba108f}\label{classBoneNode_a012985939baa44717868d00c7cba108f}} 
+cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \hyperlink{classBoneNode_a012985939baa44717868d00c7cba108f}{get\+All\+Sub\+Bones} () const
+\begin{DoxyCompactList}\small\item\em \+: get all bones in this bone tree \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a82a5e5dcbc6749a7cf9ce54d0f121605}{add\+Skin} (Skin\+Node $\ast$skin, bool display)
+\begin{DoxyCompactList}\small\item\em \+: add a skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a2e4e12608df751791f7239dcc3f0dd36}{add\+Skin} (Skin\+Node $\ast$skin, bool display, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: add a skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a7de62b37d7028948f09435c839ab3d9b}{display\+Skin} (Skin\+Node $\ast$skin, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: display skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a809d5e743bf5003db0421bdeaeeb1925}{display\+Skin} (const std\+::string \&skin\+Name, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: display all skins named skin\+Name, if hide display only one skin, prefer to use display(Skin\+Node$\ast$ skin, bool hide\+Others = false) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoneNode_af7bf03b01031edeb991e062d5f1b8f39}\label{classBoneNode_af7bf03b01031edeb991e062d5f1b8f39}} 
+virtual cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ {\bfseries get\+Visible\+Skins} () const
+\item 
+virtual const cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \& \hyperlink{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}{get\+Skins} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a47d9df0dd30de267b857e7e630298d4a}\label{classBoneNode_a47d9df0dd30de267b857e7e630298d4a}} 
+virtual cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \& {\bfseries get\+Skins} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_aad6cfe85d9bce00f728a8a5780f213e3}\label{classBoneNode_aad6cfe85d9bce00f728a8a5780f213e3}} 
+cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \hyperlink{classBoneNode_aad6cfe85d9bce00f728a8a5780f213e3}{get\+All\+Sub\+Skins} () const
+\begin{DoxyCompactList}\small\item\em \+: get all skins in this bone tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoneNode_aa7959d4567721b643939e02f1215ab7b}\label{classBoneNode_aa7959d4567721b643939e02f1215ab7b}} 
+virtual void {\bfseries set\+Blend\+Func} (const cocos2d\+::\+Blend\+Func \&blend\+Func) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ac473ec193799b1dc545eaf2157b94089}\label{classBoneNode_ac473ec193799b1dc545eaf2157b94089}} 
+virtual const cocos2d\+::\+Blend\+Func \& {\bfseries get\+Blend\+Func} () const override
+\item 
+\mbox{\Hypertarget{classBoneNode_a3fe85e3903480726b2198bd3065f45d0}\label{classBoneNode_a3fe85e3903480726b2198bd3065f45d0}} 
+virtual void {\bfseries set\+Debug\+Draw\+Enabled} (bool is\+Debug\+Draw)
+\item 
+\mbox{\Hypertarget{classBoneNode_a604f22582dbd1d52f218023522812025}\label{classBoneNode_a604f22582dbd1d52f218023522812025}} 
+virtual bool {\bfseries is\+Debug\+Draw\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a3ab1cc0ddda50d2b36f654c4ef77d62e}\label{classBoneNode_a3ab1cc0ddda50d2b36f654c4ef77d62e}} 
+virtual void {\bfseries set\+Debug\+Draw\+Length} (float length)
+\item 
+\mbox{\Hypertarget{classBoneNode_a55015c7384cdf96dbedd4d8fe1d329a8}\label{classBoneNode_a55015c7384cdf96dbedd4d8fe1d329a8}} 
+virtual float {\bfseries get\+Debug\+Draw\+Length} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a72932b9cab6dc6d82652a969a19dc9d9}\label{classBoneNode_a72932b9cab6dc6d82652a969a19dc9d9}} 
+virtual void {\bfseries set\+Debug\+Draw\+Width} (float width)
+\item 
+\mbox{\Hypertarget{classBoneNode_abf53e86c3cd79e8e8fa0276e939adfd5}\label{classBoneNode_abf53e86c3cd79e8e8fa0276e939adfd5}} 
+virtual float {\bfseries get\+Debug\+Draw\+Width} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a451cd75039951bb8c36339452c0b33f3}\label{classBoneNode_a451cd75039951bb8c36339452c0b33f3}} 
+virtual void {\bfseries set\+Debug\+Draw\+Color} (const cocos2d\+::\+Color4F \&color)
+\item 
+\mbox{\Hypertarget{classBoneNode_a413a53b0540e9f74f83a4dfac2ebfb00}\label{classBoneNode_a413a53b0540e9f74f83a4dfac2ebfb00}} 
+virtual cocos2d\+::\+Color4F {\bfseries get\+Debug\+Draw\+Color} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_ad928c8e12a7c7cdbb965498d50d1d3ca}\label{classBoneNode_ad928c8e12a7c7cdbb965498d50d1d3ca}} 
+cocos2d\+::\+Rect {\bfseries get\+Bounding\+Box} () const override
+\item 
+virtual cocos2d\+::\+Rect \hyperlink{classBoneNode_a9307c4303a4e01793ecc2af93d856aa7}{get\+Visible\+Skins\+Rect} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a7d6e411674122f10b8cf1f6f2fbdf098}\label{classBoneNode_a7d6e411674122f10b8cf1f6f2fbdf098}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a819e868fcac95e8a2b6e5a02931081ca}\label{classBoneNode_a819e868fcac95e8a2b6e5a02931081ca}} 
+virtual void {\bfseries set\+Local\+Z\+Order} (int local\+Z\+Order) override
+\item 
+\mbox{\Hypertarget{classBoneNode_afbc94c14402dd65a785b324f1adb4252}\label{classBoneNode_afbc94c14402dd65a785b324f1adb4252}} 
+virtual void {\bfseries set\+Name} (const std\+::string \&name) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a76d0526ce987d4b53bd7b4464dede749}\label{classBoneNode_a76d0526ce987d4b53bd7b4464dede749}} 
+virtual void {\bfseries set\+Visible} (bool visible) override
+\item 
+\mbox{\Hypertarget{classBoneNode_aaec9d1dd5214ac3846ee17095428ffd1}\label{classBoneNode_aaec9d1dd5214ac3846ee17095428ffd1}} 
+virtual void {\bfseries set\+Content\+Size} (const cocos2d\+::\+Size \&content\+Size) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ae97c683b164a950fad70c7e7f7fc116e}\label{classBoneNode_ae97c683b164a950fad70c7e7f7fc116e}} 
+virtual void {\bfseries set\+Anchor\+Point} (const cocos2d\+::\+Vec2 \&anchor\+Point) override
+\item 
+\mbox{\Hypertarget{classBoneNode_af6d915b1c9dea732433b32061655a099}\label{classBoneNode_af6d915b1c9dea732433b32061655a099}} 
+virtual bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_a92a76a53e7f2d9d9ee15fa80f0a5ccaa}\label{classBoneNode_a92a76a53e7f2d9d9ee15fa80f0a5ccaa}} 
+virtual void {\bfseries add\+Child} (cocos2d\+::\+Node $\ast$child, int local\+Z\+Order, const std\+::string \&name) override
+\item 
+\mbox{\Hypertarget{classBoneNode_abb12f10f6313197143bf431f0a51000e}\label{classBoneNode_abb12f10f6313197143bf431f0a51000e}} 
+virtual void {\bfseries add\+Child} (cocos2d\+::\+Node $\ast$child, int local\+Z\+Order, int tag) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a1bc7e58f6eba513956bc70fe41370aa6}\label{classBoneNode_a1bc7e58f6eba513956bc70fe41370aa6}} 
+virtual void {\bfseries remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool cleanup) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a0d53e7d33a683180aed73948cd75e47c}\label{classBoneNode_a0d53e7d33a683180aed73948cd75e47c}} 
+virtual const cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \& {\bfseries get\+Child\+Bones} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a4fa4dd0d6b8a20e8c2f0ccbebaf62927}\label{classBoneNode_a4fa4dd0d6b8a20e8c2f0ccbebaf62927}} 
+virtual cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \& {\bfseries get\+Child\+Bones} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a9a16f20b0bf6e33b86281e2d8d382d63}\label{classBoneNode_a9a16f20b0bf6e33b86281e2d8d382d63}} 
+virtual \hyperlink{classSkeletonNode}{Skeleton\+Node} $\ast$ {\bfseries get\+Root\+Skeleton\+Node} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a55406b42f4188024603c29abe594d1f5}\label{classBoneNode_a55406b42f4188024603c29abe594d1f5}} 
+cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ \hyperlink{classBoneNode_a55406b42f4188024603c29abe594d1f5}{get\+All\+Sub\+Bones} () const
+\begin{DoxyCompactList}\small\item\em \+: get all bones in this bone tree \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a19aef4f970ed1e9043bbd0b9e2809189}{add\+Skin} (Skin\+Node $\ast$skin, bool display)
+\begin{DoxyCompactList}\small\item\em \+: add a skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_aff3f3c37ed61f70254c8cca84042fc95}{add\+Skin} (Skin\+Node $\ast$skin, bool display, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: add a skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_a730ebd5ea4691c060ab642fc7f0c7f1b}{display\+Skin} (Skin\+Node $\ast$skin, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: display skin \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBoneNode_aecbb23abc82a6ff62e2db36b9f24bc5b}{display\+Skin} (const std\+::string \&skin\+Name, bool hide\+Others)
+\begin{DoxyCompactList}\small\item\em \+: display all skins named skin\+Name, if hide display only one skin, prefer to use display(Skin\+Node$\ast$ skin, bool hide\+Others = false) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoneNode_a2bccd304f9de95ec33714bd485520422}\label{classBoneNode_a2bccd304f9de95ec33714bd485520422}} 
+virtual cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ {\bfseries get\+Visible\+Skins} () const
+\item 
+virtual const cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \& \hyperlink{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}{get\+Skins} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a47d9df0dd30de267b857e7e630298d4a}\label{classBoneNode_a47d9df0dd30de267b857e7e630298d4a}} 
+virtual cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \& {\bfseries get\+Skins} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a50331bcab0915d00cf43f50c5faf72cd}\label{classBoneNode_a50331bcab0915d00cf43f50c5faf72cd}} 
+cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ \hyperlink{classBoneNode_a50331bcab0915d00cf43f50c5faf72cd}{get\+All\+Sub\+Skins} () const
+\begin{DoxyCompactList}\small\item\em \+: get all skins in this bone tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoneNode_a7efcc6ec2c7a08a16953292c90d4bb5b}\label{classBoneNode_a7efcc6ec2c7a08a16953292c90d4bb5b}} 
+virtual void {\bfseries set\+Blend\+Func} (const cocos2d\+::\+Blend\+Func \&blend\+Func) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ac473ec193799b1dc545eaf2157b94089}\label{classBoneNode_ac473ec193799b1dc545eaf2157b94089}} 
+virtual const cocos2d\+::\+Blend\+Func \& {\bfseries get\+Blend\+Func} () const override
+\item 
+\mbox{\Hypertarget{classBoneNode_affe873d7e6beab348289e99cbc8a8d45}\label{classBoneNode_affe873d7e6beab348289e99cbc8a8d45}} 
+virtual void {\bfseries set\+Debug\+Draw\+Enabled} (bool is\+Debug\+Draw)
+\item 
+\mbox{\Hypertarget{classBoneNode_a604f22582dbd1d52f218023522812025}\label{classBoneNode_a604f22582dbd1d52f218023522812025}} 
+virtual bool {\bfseries is\+Debug\+Draw\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_aec01f1c34542b07ceaa8164f8e316951}\label{classBoneNode_aec01f1c34542b07ceaa8164f8e316951}} 
+virtual void {\bfseries set\+Debug\+Draw\+Length} (float length)
+\item 
+\mbox{\Hypertarget{classBoneNode_a55015c7384cdf96dbedd4d8fe1d329a8}\label{classBoneNode_a55015c7384cdf96dbedd4d8fe1d329a8}} 
+virtual float {\bfseries get\+Debug\+Draw\+Length} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a68e695ac08c0149506ac537469b664eb}\label{classBoneNode_a68e695ac08c0149506ac537469b664eb}} 
+virtual void {\bfseries set\+Debug\+Draw\+Width} (float width)
+\item 
+\mbox{\Hypertarget{classBoneNode_abf53e86c3cd79e8e8fa0276e939adfd5}\label{classBoneNode_abf53e86c3cd79e8e8fa0276e939adfd5}} 
+virtual float {\bfseries get\+Debug\+Draw\+Width} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a50624b44ed0c903823058f9ac43c4946}\label{classBoneNode_a50624b44ed0c903823058f9ac43c4946}} 
+virtual void {\bfseries set\+Debug\+Draw\+Color} (const cocos2d\+::\+Color4F \&color)
+\item 
+\mbox{\Hypertarget{classBoneNode_a413a53b0540e9f74f83a4dfac2ebfb00}\label{classBoneNode_a413a53b0540e9f74f83a4dfac2ebfb00}} 
+virtual cocos2d\+::\+Color4F {\bfseries get\+Debug\+Draw\+Color} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_ad928c8e12a7c7cdbb965498d50d1d3ca}\label{classBoneNode_ad928c8e12a7c7cdbb965498d50d1d3ca}} 
+cocos2d\+::\+Rect {\bfseries get\+Bounding\+Box} () const override
+\item 
+virtual cocos2d\+::\+Rect \hyperlink{classBoneNode_aba6034b071dcce0ee5d2afdb440bf5e5}{get\+Visible\+Skins\+Rect} () const
+\item 
+\mbox{\Hypertarget{classBoneNode_a91a631e11f37bb27c3b15e9c3c487ab7}\label{classBoneNode_a91a631e11f37bb27c3b15e9c3c487ab7}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a3b878806322d39a1af103463deacbf3d}\label{classBoneNode_a3b878806322d39a1af103463deacbf3d}} 
+virtual void {\bfseries set\+Local\+Z\+Order} (int local\+Z\+Order) override
+\item 
+\mbox{\Hypertarget{classBoneNode_aff3e4f4589ed53932216378a57e580e0}\label{classBoneNode_aff3e4f4589ed53932216378a57e580e0}} 
+virtual void {\bfseries set\+Name} (const std\+::string \&name) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ab3a97aa82f830a437d1c7923d467d7d7}\label{classBoneNode_ab3a97aa82f830a437d1c7923d467d7d7}} 
+virtual void {\bfseries set\+Visible} (bool visible) override
+\item 
+\mbox{\Hypertarget{classBoneNode_adfb7320fb7911ef14c887e114c957611}\label{classBoneNode_adfb7320fb7911ef14c887e114c957611}} 
+virtual void {\bfseries set\+Content\+Size} (const cocos2d\+::\+Size \&content\+Size) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a9c2ae347667f5384525bd46cb6df176f}\label{classBoneNode_a9c2ae347667f5384525bd46cb6df176f}} 
+virtual void {\bfseries set\+Anchor\+Point} (const cocos2d\+::\+Vec2 \&anchor\+Point) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ac30de68ae48f47a788be511c56b9f0df}\label{classBoneNode_ac30de68ae48f47a788be511c56b9f0df}} 
+virtual bool {\bfseries init} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoneNode_ac56044de9d3b1009c13d6e7cb1f7e109}\label{classBoneNode_ac56044de9d3b1009c13d6e7cb1f7e109}} 
+static \hyperlink{classBoneNode}{Bone\+Node} $\ast$ {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a89148f9bf33bc55a1a5ab2e9b6580efc}\label{classBoneNode_a89148f9bf33bc55a1a5ab2e9b6580efc}} 
+static \hyperlink{classBoneNode}{Bone\+Node} $\ast$ {\bfseries create} (int length)
+\item 
+\mbox{\Hypertarget{classBoneNode_a9936a6b5f56d850ca9e9635bc4bcab01}\label{classBoneNode_a9936a6b5f56d850ca9e9635bc4bcab01}} 
+static \hyperlink{classBoneNode}{Bone\+Node} $\ast$ {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a23c832a6ce978e7eba6d19b2e9de65ef}\label{classBoneNode_a23c832a6ce978e7eba6d19b2e9de65ef}} 
+static \hyperlink{classBoneNode}{Bone\+Node} $\ast$ {\bfseries create} (int length)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoneNode_a4f9e8f0614a605bbb54f3934a4047a33}\label{classBoneNode_a4f9e8f0614a605bbb54f3934a4047a33}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classBoneNode}{Bone\+Node}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoneNode_aeecc3a545baf072c97c922d321d40e34}\label{classBoneNode_aeecc3a545baf072c97c922d321d40e34}} 
+virtual void {\bfseries add\+To\+Children\+List\+Helper} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+\mbox{\Hypertarget{classBoneNode_a6b3cbd3f38a687c4d24f01fbf6d96f74}\label{classBoneNode_a6b3cbd3f38a687c4d24f01fbf6d96f74}} 
+virtual void {\bfseries remove\+From\+Children\+List\+Helper} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+\mbox{\Hypertarget{classBoneNode_af64871c89929df3c968026f20be84903}\label{classBoneNode_af64871c89929df3c968026f20be84903}} 
+virtual void {\bfseries add\+To\+Bone\+List} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone)
+\item 
+\mbox{\Hypertarget{classBoneNode_ad03e440346786f31176b59e7bf8c20cb}\label{classBoneNode_ad03e440346786f31176b59e7bf8c20cb}} 
+virtual void {\bfseries remove\+From\+Bone\+List} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone)
+\item 
+\mbox{\Hypertarget{classBoneNode_a01b3936124e3d7fa37571834685f24d8}\label{classBoneNode_a01b3936124e3d7fa37571834685f24d8}} 
+virtual void {\bfseries add\+To\+Skin\+List} (Skin\+Node $\ast$skin)
+\item 
+\mbox{\Hypertarget{classBoneNode_ac9e2e4d0309e8eadbf8547bd0057d441}\label{classBoneNode_ac9e2e4d0309e8eadbf8547bd0057d441}} 
+virtual void {\bfseries remove\+From\+Skin\+List} (Skin\+Node $\ast$skin)
+\item 
+\mbox{\Hypertarget{classBoneNode_a6faed38f8b2493261a280b91df1686e0}\label{classBoneNode_a6faed38f8b2493261a280b91df1686e0}} 
+virtual void {\bfseries sort\+All\+Children} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_aa24592cc9ff8008a4e0d2fcd52fc6bb3}\label{classBoneNode_aa24592cc9ff8008a4e0d2fcd52fc6bb3}} 
+virtual void {\bfseries update\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a0f1b6630385571f4b99595ea0a6f5d57}\label{classBoneNode_a0f1b6630385571f4b99595ea0a6f5d57}} 
+virtual void {\bfseries update\+Color} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_a8161702220472c2f33844e2f06546191}\label{classBoneNode_a8161702220472c2f33844e2f06546191}} 
+virtual void {\bfseries update\+Displayed\+Color} (const cocos2d\+::\+Color3B \&parent\+Color) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a96677a159fda46b9a4944bcaa22c4bb6}\label{classBoneNode_a96677a159fda46b9a4944bcaa22c4bb6}} 
+virtual void {\bfseries update\+Displayed\+Opacity} (G\+Lubyte parent\+Opacity) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a53915a74c0aaada6187c812c4c83f215}\label{classBoneNode_a53915a74c0aaada6187c812c4c83f215}} 
+virtual void {\bfseries disable\+Cascade\+Opacity} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_a89c1e1958baa0c0f857acfdc4133b506}\label{classBoneNode_a89c1e1958baa0c0f857acfdc4133b506}} 
+virtual void {\bfseries disable\+Cascade\+Color} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_af9e2165a7a0be18ccf576d16680e2145}\label{classBoneNode_af9e2165a7a0be18ccf576d16680e2145}} 
+virtual void {\bfseries on\+Draw} (const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classBoneNode_a0d15e446eef80d6fdd5da497275ccc26}\label{classBoneNode_a0d15e446eef80d6fdd5da497275ccc26}} 
+virtual void {\bfseries visit} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classBoneNode_ac4ee968894e0eef4f1ebfb1133042def}\label{classBoneNode_ac4ee968894e0eef4f1ebfb1133042def}} 
+virtual void {\bfseries batch\+Bone\+Draw\+To\+Skeleton} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone) const
+\item 
+\mbox{\Hypertarget{classBoneNode_a661cc425cdbe0955f1be14f7b6d118ea}\label{classBoneNode_a661cc425cdbe0955f1be14f7b6d118ea}} 
+virtual void {\bfseries visit\+Skins} (cocos2d\+::\+Renderer $\ast$renderer, \hyperlink{classBoneNode}{Bone\+Node} $\ast$bone) const
+\item 
+\mbox{\Hypertarget{classBoneNode_aaba98257bace256f845607bbf9d0e329}\label{classBoneNode_aaba98257bace256f845607bbf9d0e329}} 
+void {\bfseries set\+Root\+Skeleton} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone, \hyperlink{classSkeletonNode}{Skeleton\+Node} $\ast$skeleton) const
+\item 
+\mbox{\Hypertarget{classBoneNode_ab1aeebe147fdc25054e5adc207e6aa14}\label{classBoneNode_ab1aeebe147fdc25054e5adc207e6aa14}} 
+virtual void {\bfseries add\+To\+Children\+List\+Helper} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+\mbox{\Hypertarget{classBoneNode_a134d040644bcdb4a98314cfdb22d3a42}\label{classBoneNode_a134d040644bcdb4a98314cfdb22d3a42}} 
+virtual void {\bfseries remove\+From\+Children\+List\+Helper} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+\mbox{\Hypertarget{classBoneNode_acaaeb2a189d3d961447e9b45f75f1e5f}\label{classBoneNode_acaaeb2a189d3d961447e9b45f75f1e5f}} 
+virtual void {\bfseries add\+To\+Bone\+List} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone)
+\item 
+\mbox{\Hypertarget{classBoneNode_aa563f4d7fe6013473f934874331f7ef0}\label{classBoneNode_aa563f4d7fe6013473f934874331f7ef0}} 
+virtual void {\bfseries remove\+From\+Bone\+List} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone)
+\item 
+\mbox{\Hypertarget{classBoneNode_a93159e3ca42b34d35aa69d790cd25e85}\label{classBoneNode_a93159e3ca42b34d35aa69d790cd25e85}} 
+virtual void {\bfseries add\+To\+Skin\+List} (Skin\+Node $\ast$skin)
+\item 
+\mbox{\Hypertarget{classBoneNode_a53704d9e7fdfcf14302143010b9caa21}\label{classBoneNode_a53704d9e7fdfcf14302143010b9caa21}} 
+virtual void {\bfseries remove\+From\+Skin\+List} (Skin\+Node $\ast$skin)
+\item 
+\mbox{\Hypertarget{classBoneNode_a4ba22d8a6101bf0cd3e7a76ac2f1d31e}\label{classBoneNode_a4ba22d8a6101bf0cd3e7a76ac2f1d31e}} 
+virtual void {\bfseries sort\+All\+Children} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_a50aa995128fedbd5bf97f3f1a0dab24e}\label{classBoneNode_a50aa995128fedbd5bf97f3f1a0dab24e}} 
+virtual void {\bfseries update\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classBoneNode_a245a7bb8aeca7952d7f398b91c1a7465}\label{classBoneNode_a245a7bb8aeca7952d7f398b91c1a7465}} 
+virtual void {\bfseries update\+Color} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_ab867330d767b96db98344f3241475f36}\label{classBoneNode_ab867330d767b96db98344f3241475f36}} 
+virtual void {\bfseries update\+Displayed\+Color} (const cocos2d\+::\+Color3B \&parent\+Color) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a0e0fbc956636564ca7988fce505def1f}\label{classBoneNode_a0e0fbc956636564ca7988fce505def1f}} 
+virtual void {\bfseries update\+Displayed\+Opacity} (G\+Lubyte parent\+Opacity) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a001bc686051fe69413abee8f006abd00}\label{classBoneNode_a001bc686051fe69413abee8f006abd00}} 
+virtual void {\bfseries disable\+Cascade\+Opacity} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_af5fc818728f65ad394f8640f63aa3534}\label{classBoneNode_af5fc818728f65ad394f8640f63aa3534}} 
+virtual void {\bfseries disable\+Cascade\+Color} () override
+\item 
+\mbox{\Hypertarget{classBoneNode_af05b2a7a486927bba7ca22d90947f370}\label{classBoneNode_af05b2a7a486927bba7ca22d90947f370}} 
+virtual void {\bfseries on\+Draw} (const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classBoneNode_a72766a5f659139c68604abdfa1b527c8}\label{classBoneNode_a72766a5f659139c68604abdfa1b527c8}} 
+virtual void {\bfseries visit} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classBoneNode_a7b9f48a08d7c6bbf80dbaef2c8deeda4}\label{classBoneNode_a7b9f48a08d7c6bbf80dbaef2c8deeda4}} 
+virtual void {\bfseries batch\+Bone\+Draw\+To\+Skeleton} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone) const
+\item 
+\mbox{\Hypertarget{classBoneNode_ae4b2f8b9edcb1168a5710e484c00d4b7}\label{classBoneNode_ae4b2f8b9edcb1168a5710e484c00d4b7}} 
+virtual void {\bfseries visit\+Skins} (cocos2d\+::\+Renderer $\ast$renderer, \hyperlink{classBoneNode}{Bone\+Node} $\ast$bone) const
+\item 
+\mbox{\Hypertarget{classBoneNode_aaba98257bace256f845607bbf9d0e329}\label{classBoneNode_aaba98257bace256f845607bbf9d0e329}} 
+void {\bfseries set\+Root\+Skeleton} (\hyperlink{classBoneNode}{Bone\+Node} $\ast$bone, \hyperlink{classSkeletonNode}{Skeleton\+Node} $\ast$skeleton) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoneNode_a0c99a80b4be531eaa029fcd0cfdaae72}\label{classBoneNode_a0c99a80b4be531eaa029fcd0cfdaae72}} 
+cocos2d\+::\+Custom\+Command {\bfseries \+\_\+custom\+Command}
+\item 
+\mbox{\Hypertarget{classBoneNode_a293ac4ff7361707206c46f0c48cc6bb8}\label{classBoneNode_a293ac4ff7361707206c46f0c48cc6bb8}} 
+cocos2d\+::\+Blend\+Func {\bfseries \+\_\+blend\+Func}
+\item 
+\mbox{\Hypertarget{classBoneNode_a10844080d7138f941381c90d985a680c}\label{classBoneNode_a10844080d7138f941381c90d985a680c}} 
+bool {\bfseries \+\_\+is\+Rack\+Show}
+\item 
+\mbox{\Hypertarget{classBoneNode_a31b946e5d5ea0c1f3899302b6d35057e}\label{classBoneNode_a31b946e5d5ea0c1f3899302b6d35057e}} 
+cocos2d\+::\+Color4F {\bfseries \+\_\+rack\+Color}
+\item 
+\mbox{\Hypertarget{classBoneNode_a1a5e14ac8958fecf5e6d264a27abd4f0}\label{classBoneNode_a1a5e14ac8958fecf5e6d264a27abd4f0}} 
+int {\bfseries \+\_\+rack\+Length}
+\item 
+\mbox{\Hypertarget{classBoneNode_a0605b79a9cac522982a49c0c791d7e6d}\label{classBoneNode_a0605b79a9cac522982a49c0c791d7e6d}} 
+int {\bfseries \+\_\+rack\+Width}
+\item 
+\mbox{\Hypertarget{classBoneNode_a14ceefdcc20798bddf531a2366a5064e}\label{classBoneNode_a14ceefdcc20798bddf531a2366a5064e}} 
+cocos2d\+::\+Vector$<$ \hyperlink{classBoneNode}{Bone\+Node} $\ast$ $>$ {\bfseries \+\_\+child\+Bones}
+\item 
+\mbox{\Hypertarget{classBoneNode_ad68ab6383c408c70c43ca7c93e4e9866}\label{classBoneNode_ad68ab6383c408c70c43ca7c93e4e9866}} 
+cocos2d\+::\+Vector$<$ Skin\+Node $\ast$ $>$ {\bfseries \+\_\+bone\+Skins}
+\item 
+\mbox{\Hypertarget{classBoneNode_a1549512fb4adfe78322c9bdd743e48c6}\label{classBoneNode_a1549512fb4adfe78322c9bdd743e48c6}} 
+\hyperlink{classSkeletonNode}{Skeleton\+Node} $\ast$ {\bfseries \+\_\+root\+Skeleton}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoneNode_a82a5e5dcbc6749a7cf9ce54d0f121605}\label{classBoneNode_a82a5e5dcbc6749a7cf9ce54d0f121605}} 
+\index{Bone\+Node@{Bone\+Node}!add\+Skin@{add\+Skin}}
+\index{add\+Skin@{add\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{add\+Skin()}{addSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Bone\+Node\+::add\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{display }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: add a skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_a19aef4f970ed1e9043bbd0b9e2809189}\label{classBoneNode_a19aef4f970ed1e9043bbd0b9e2809189}} 
+\index{Bone\+Node@{Bone\+Node}!add\+Skin@{add\+Skin}}
+\index{add\+Skin@{add\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{add\+Skin()}{addSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void Bone\+Node\+::add\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{display }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: add a skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_a2e4e12608df751791f7239dcc3f0dd36}\label{classBoneNode_a2e4e12608df751791f7239dcc3f0dd36}} 
+\index{Bone\+Node@{Bone\+Node}!add\+Skin@{add\+Skin}}
+\index{add\+Skin@{add\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{add\+Skin()}{addSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Bone\+Node\+::add\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{display,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: add a skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_aff3f3c37ed61f70254c8cca84042fc95}\label{classBoneNode_aff3f3c37ed61f70254c8cca84042fc95}} 
+\index{Bone\+Node@{Bone\+Node}!add\+Skin@{add\+Skin}}
+\index{add\+Skin@{add\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{add\+Skin()}{addSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Bone\+Node\+::add\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{display,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: add a skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_a7de62b37d7028948f09435c839ab3d9b}\label{classBoneNode_a7de62b37d7028948f09435c839ab3d9b}} 
+\index{Bone\+Node@{Bone\+Node}!display\+Skin@{display\+Skin}}
+\index{display\+Skin@{display\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{display\+Skin()}{displaySkin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Bone\+Node\+::display\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: display skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_a730ebd5ea4691c060ab642fc7f0c7f1b}\label{classBoneNode_a730ebd5ea4691c060ab642fc7f0c7f1b}} 
+\index{Bone\+Node@{Bone\+Node}!display\+Skin@{display\+Skin}}
+\index{display\+Skin@{display\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{display\+Skin()}{displaySkin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void Bone\+Node\+::display\+Skin (\begin{DoxyParamCaption}\item[{Skin\+Node $\ast$}]{skin,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: display skin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_a809d5e743bf5003db0421bdeaeeb1925}\label{classBoneNode_a809d5e743bf5003db0421bdeaeeb1925}} 
+\index{Bone\+Node@{Bone\+Node}!display\+Skin@{display\+Skin}}
+\index{display\+Skin@{display\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{display\+Skin()}{displaySkin()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Bone\+Node\+::display\+Skin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{skin\+Name,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: display all skins named skin\+Name, if hide display only one skin, prefer to use display(Skin\+Node$\ast$ skin, bool hide\+Others = false) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_aecbb23abc82a6ff62e2db36b9f24bc5b}\label{classBoneNode_aecbb23abc82a6ff62e2db36b9f24bc5b}} 
+\index{Bone\+Node@{Bone\+Node}!display\+Skin@{display\+Skin}}
+\index{display\+Skin@{display\+Skin}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{display\+Skin()}{displaySkin()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Bone\+Node\+::display\+Skin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{skin\+Name,  }\item[{bool}]{hide\+Others }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\+: display all skins named skin\+Name, if hide display only one skin, prefer to use display(Skin\+Node$\ast$ skin, bool hide\+Others = false) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}\label{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}} 
+\index{Bone\+Node@{Bone\+Node}!get\+Skins@{get\+Skins}}
+\index{get\+Skins@{get\+Skins}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{get\+Skins()}{getSkins()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const cocos2d\+::\+Vector$<$Skin\+Node$\ast$$>$\& Bone\+Node\+::get\+Skins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get skins in this bone\textquotesingle{}s children \mbox{\Hypertarget{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}\label{classBoneNode_ad1e49b0e034dc298bcc8cf349c820584}} 
+\index{Bone\+Node@{Bone\+Node}!get\+Skins@{get\+Skins}}
+\index{get\+Skins@{get\+Skins}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{get\+Skins()}{getSkins()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const cocos2d\+::\+Vector$<$Skin\+Node$\ast$$>$\& Bone\+Node\+::get\+Skins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get skins in this bone\textquotesingle{}s children \mbox{\Hypertarget{classBoneNode_a9307c4303a4e01793ecc2af93d856aa7}\label{classBoneNode_a9307c4303a4e01793ecc2af93d856aa7}} 
+\index{Bone\+Node@{Bone\+Node}!get\+Visible\+Skins\+Rect@{get\+Visible\+Skins\+Rect}}
+\index{get\+Visible\+Skins\+Rect@{get\+Visible\+Skins\+Rect}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{get\+Visible\+Skins\+Rect()}{getVisibleSkinsRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Rect Bone\+Node\+::get\+Visible\+Skins\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get displayings rect in self transform \mbox{\Hypertarget{classBoneNode_aba6034b071dcce0ee5d2afdb440bf5e5}\label{classBoneNode_aba6034b071dcce0ee5d2afdb440bf5e5}} 
+\index{Bone\+Node@{Bone\+Node}!get\+Visible\+Skins\+Rect@{get\+Visible\+Skins\+Rect}}
+\index{get\+Visible\+Skins\+Rect@{get\+Visible\+Skins\+Rect}!Bone\+Node@{Bone\+Node}}
+\subsubsection{\texorpdfstring{get\+Visible\+Skins\+Rect()}{getVisibleSkinsRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual cocos2d\+::\+Rect Bone\+Node\+::get\+Visible\+Skins\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get displayings rect in self transform 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/\+Action\+Timeline/C\+C\+Bone\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/\+Action\+Timeline/C\+C\+Bone\+Node.\+cpp\end{DoxyCompactItemize}

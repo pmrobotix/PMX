@@ -1,0 +1,51 @@
+\hypertarget{classbtSpuCollisionPairCallback}{}\section{bt\+Spu\+Collision\+Pair\+Callback Class Reference}
+\label{classbtSpuCollisionPairCallback}\index{bt\+Spu\+Collision\+Pair\+Callback@{bt\+Spu\+Collision\+Pair\+Callback}}
+
+
+Inheritance diagram for bt\+Spu\+Collision\+Pair\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classbtSpuCollisionPairCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Spu\+Collision\+Pair\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classbtSpuCollisionPairCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSpuCollisionPairCallback_a548a2b6d1f3ca76458f6343c69b9fae9}\label{classbtSpuCollisionPairCallback_a548a2b6d1f3ca76458f6343c69b9fae9}} 
+{\bfseries bt\+Spu\+Collision\+Pair\+Callback} (const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classSpuGatheringCollisionDispatcher}{Spu\+Gathering\+Collision\+Dispatcher} $\ast$dispatcher)
+\item 
+virtual bool \hyperlink{classbtSpuCollisionPairCallback_ae832c301c592c9fa65bc17e10cc3e3c2}{process\+Overlap} (bt\+Broadphase\+Pair \&collision\+Pair)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+interface for iterating all overlapping collision pairs, no matter how those pairs are stored (array, set, map etc) this is useful for the collision dispatcher. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSpuCollisionPairCallback_ae832c301c592c9fa65bc17e10cc3e3c2}\label{classbtSpuCollisionPairCallback_ae832c301c592c9fa65bc17e10cc3e3c2}} 
+\index{bt\+Spu\+Collision\+Pair\+Callback@{bt\+Spu\+Collision\+Pair\+Callback}!process\+Overlap@{process\+Overlap}}
+\index{process\+Overlap@{process\+Overlap}!bt\+Spu\+Collision\+Pair\+Callback@{bt\+Spu\+Collision\+Pair\+Callback}}
+\subsubsection{\texorpdfstring{process\+Overlap()}{processOverlap()}}
+{\footnotesize\ttfamily virtual bool bt\+Spu\+Collision\+Pair\+Callback\+::process\+Overlap (\begin{DoxyParamCaption}\item[{bt\+Broadphase\+Pair \&}]{collision\+Pair }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+user\+Info is used to determine if the S\+PU has to handle this case or not (skip P\+PU tasks) 
+
+Implements \hyperlink{structbtOverlapCallback}{bt\+Overlap\+Callback}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Gathering\+Collision\+Dispatcher.\+cpp\end{DoxyCompactItemize}

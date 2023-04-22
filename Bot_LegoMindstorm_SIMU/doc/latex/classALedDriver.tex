@@ -1,0 +1,104 @@
+\hypertarget{classALedDriver}{}\section{A\+Led\+Driver Class Reference}
+\label{classALedDriver}\index{A\+Led\+Driver@{A\+Led\+Driver}}
+
+
+Inheritance diagram for A\+Led\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classALedDriver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classALedDriver_acbc8507c36f0f4fa3afb845d81e56eb2}{set\+Bit} (int index, Led\+Color color)=0
+\begin{DoxyCompactList}\small\item\em Set led value. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classALedDriver_a3a219f7546870d4bce0ae36cad3b0518}{set\+Bytes} (uint hex, Led\+Color color)=0
+\begin{DoxyCompactList}\small\item\em Set color where hex=1. Set 0 where hex=0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classALedDriver_ad5b6e2342c40194df04be1f34149f0ec}\label{classALedDriver_ad5b6e2342c40194df04be1f34149f0ec}} 
+virtual \hyperlink{classALedDriver_ad5b6e2342c40194df04be1f34149f0ec}{$\sim$\+A\+Led\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classALedDriver}{A\+Led\+Driver} $\ast$ \hyperlink{classALedDriver_a5ae5ce81a20d5d143ff1194ef2929302}{create} (std\+::string bot\+Name, int nb)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLedDriver}{Led\+Driver} instance creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classALedDriver_ae7d91068831803e70771b780087dc57b}\label{classALedDriver_ae7d91068831803e70771b780087dc57b}} 
+\hyperlink{classALedDriver_ae7d91068831803e70771b780087dc57b}{A\+Led\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classALedDriver_a5ae5ce81a20d5d143ff1194ef2929302}\label{classALedDriver_a5ae5ce81a20d5d143ff1194ef2929302}} 
+\index{A\+Led\+Driver@{A\+Led\+Driver}!create@{create}}
+\index{create@{create}!A\+Led\+Driver@{A\+Led\+Driver}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{classALedDriver}{A\+Led\+Driver} $\ast$ A\+Led\+Driver\+::create (\begin{DoxyParamCaption}\item[{std\+::string}]{bot\+Name,  }\item[{int}]{nb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{classLedDriver}{Led\+Driver} instance creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bot\+Name} & Name of the robot (for simulator). \\
+\hline
+{\em nb} & number of Leds in the \hyperlink{classLedBar}{Led\+Bar}.\\
+\hline
+\end{DoxyParams}
+drivers...A\+RM
+
+drivers...O\+PO \mbox{\Hypertarget{classALedDriver_acbc8507c36f0f4fa3afb845d81e56eb2}\label{classALedDriver_acbc8507c36f0f4fa3afb845d81e56eb2}} 
+\index{A\+Led\+Driver@{A\+Led\+Driver}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!A\+Led\+Driver@{A\+Led\+Driver}}
+\subsubsection{\texorpdfstring{set\+Bit()}{setBit()}}
+{\footnotesize\ttfamily virtual void A\+Led\+Driver\+::set\+Bit (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{Led\+Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set led value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The position of the led in the led\+Bar (between 0 to nb). \\
+\hline
+{\em color} & The color of the led. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classLedDriver_a1856fb030d88bcacdc37dfce7f0f8136}{Led\+Driver}, \hyperlink{classLedDriver_af5ec63943cb92b14a887fdd2a5491e93}{Led\+Driver}, \hyperlink{classLedDriver_a1856fb030d88bcacdc37dfce7f0f8136}{Led\+Driver}, \hyperlink{classLedDriver_a1856fb030d88bcacdc37dfce7f0f8136}{Led\+Driver}, \hyperlink{classLedDriver_af5ec63943cb92b14a887fdd2a5491e93}{Led\+Driver}, and \hyperlink{classLedDriver_af5ec63943cb92b14a887fdd2a5491e93}{Led\+Driver}.
+
+\mbox{\Hypertarget{classALedDriver_a3a219f7546870d4bce0ae36cad3b0518}\label{classALedDriver_a3a219f7546870d4bce0ae36cad3b0518}} 
+\index{A\+Led\+Driver@{A\+Led\+Driver}!set\+Bytes@{set\+Bytes}}
+\index{set\+Bytes@{set\+Bytes}!A\+Led\+Driver@{A\+Led\+Driver}}
+\subsubsection{\texorpdfstring{set\+Bytes()}{setBytes()}}
+{\footnotesize\ttfamily virtual void A\+Led\+Driver\+::set\+Bytes (\begin{DoxyParamCaption}\item[{uint}]{hex,  }\item[{Led\+Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set color where hex=1. Set 0 where hex=0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+Position} & The values of the whole ledbar. \\
+\hline
+{\em color} & The color of the led setted to 1 in hex. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classLedDriver_a765b8b642e13715ccaff1cbcff01dc97}{Led\+Driver}, \hyperlink{classLedDriver_a66512dd673a81681d3597e301af13759}{Led\+Driver}, \hyperlink{classLedDriver_a765b8b642e13715ccaff1cbcff01dc97}{Led\+Driver}, \hyperlink{classLedDriver_a765b8b642e13715ccaff1cbcff01dc97}{Led\+Driver}, \hyperlink{classLedDriver_a66512dd673a81681d3597e301af13759}{Led\+Driver}, and \hyperlink{classLedDriver_a66512dd673a81681d3597e301af13759}{Led\+Driver}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action.\+Driver/A\+Led\+Driver.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver.\+S\+I\+M\+U\+C\+O\+C\+O\+S/Led\+Driver.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/test/\+Common-\/\+Test.\+Main/Driver.\+cpp\end{DoxyCompactItemize}

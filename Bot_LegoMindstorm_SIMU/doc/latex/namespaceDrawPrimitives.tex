@@ -1,0 +1,418 @@
+\hypertarget{namespaceDrawPrimitives}{}\section{Draw\+Primitives Namespace Reference}
+\label{namespaceDrawPrimitives}\index{Draw\+Primitives@{Draw\+Primitives}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceDrawPrimitives_ae042e1546ce595f9b01f92bcac0be48a}{init} ()
+\item 
+void \hyperlink{namespaceDrawPrimitives_a1a20eab15f5a2560e8ebaa1fddde8216}{free} ()
+\item 
+void \hyperlink{namespaceDrawPrimitives_a8245dd1018a768473478a9e65c7be6d5}{draw\+Point} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a69ac036b04c0dd7b20643a777bfdde14}{draw\+Points} (const \hyperlink{classVec2}{Vec2} $\ast$points, unsigned int number\+Of\+Points)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a872bfe0f92313b81a93eb7e6ae67b94a}{draw\+Line} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination)
+\item 
+void \hyperlink{namespaceDrawPrimitives_af083f4157bcb6c95fa9755c275c851d4}{draw\+Rect} (\hyperlink{classVec2}{Vec2} origin, \hyperlink{classVec2}{Vec2} destination)
+\item 
+void \hyperlink{namespaceDrawPrimitives_ae71825a1fd3fafd9d83ddaf78bc4b84f}{draw\+Solid\+Rect} (\hyperlink{classVec2}{Vec2} origin, \hyperlink{classVec2}{Vec2} destination, \hyperlink{structColor4F}{Color4F} color)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a71a680302a9b336b8ddb39bf5b18348c}{draw\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, bool close\+Polygon)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a236c83afa9808359e7f445778973fdd1}{draw\+Solid\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, \hyperlink{structColor4F}{Color4F} color)
+\item 
+void \hyperlink{namespaceDrawPrimitives_ab3372bf8fe32fedeffc8867ce741f5c0}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center, float scaleX, float scaleY)
+\item 
+void \hyperlink{namespaceDrawPrimitives_ae27b581bbeb1c73a0b01d3e1afb4c13e}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a323e0910a04cf0fdc75563e61a5dea15}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, float scaleX, float scaleY)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a11ae341f043974e35ac301f9e3feef45}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a350f5890844862176a8be86cdadfd291}{draw\+Quad\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a133274f7f2a33cd32644d665e963ccd8}{draw\+Catmull\+Rom} (\hyperlink{classPointArray}{Point\+Array} $\ast$points, unsigned int segments)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a82b0da83c69f4bbba9a26b4f1f90b1e1}{draw\+Cardinal\+Spline} (\hyperlink{classPointArray}{Point\+Array} $\ast$config, float tension, unsigned int segments)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a430724952603bf1461fa0ee1106d154a}{draw\+Cubic\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control1, const \hyperlink{classVec2}{Vec2} \&control2, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a7407c702800e22e9a94a4d4ee551adbe}{set\+Draw\+Color4F} (G\+Lfloat r, G\+Lfloat g, G\+Lfloat b, G\+Lfloat a)
+\item 
+void \hyperlink{namespaceDrawPrimitives_a28cc32247764c0f33adf3f070bdaf989}{set\+Point\+Size} (G\+Lfloat point\+Size)
+\item 
+void \hyperlink{namespaceDrawPrimitives_aa174af76c4a9f5ae94fda0f5696a4d70}{set\+Draw\+Color4B} (G\+Lubyte r, G\+Lubyte g, G\+Lubyte b, G\+Lubyte a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+cc.\+Drawing\+Primitive\+Canvas/cc.Drawing\+Primitive\+Web\+GL 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a82b0da83c69f4bbba9a26b4f1f90b1e1}\label{namespaceDrawPrimitives_a82b0da83c69f4bbba9a26b4f1f90b1e1}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}}
+\index{draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Cardinal\+Spline()}{drawCardinalSpline()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Cardinal\+Spline (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{config,  }\item[{float}]{tension,  }\item[{unsigned int}]{segments }\end{DoxyParamCaption})}
+
+Draws a Cardinal Spline path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A array point. \\
+\hline
+{\em tension} & The tension of the spline. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function could be pretty slow. Use it only for debugging purposes. 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a133274f7f2a33cd32644d665e963ccd8}\label{namespaceDrawPrimitives_a133274f7f2a33cd32644d665e963ccd8}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Catmull\+Rom@{draw\+Catmull\+Rom}}
+\index{draw\+Catmull\+Rom@{draw\+Catmull\+Rom}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Catmull\+Rom()}{drawCatmullRom()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Catmull\+Rom (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{array\+Of\+Control\+Points,  }\item[{unsigned int}]{segments }\end{DoxyParamCaption})}
+
+Draws a Catmull Rom path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Of\+Control\+Points} & A point array of control point. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function could be pretty slow. Use it only for debugging purposes. 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_ab3372bf8fe32fedeffc8867ce741f5c0}\label{namespaceDrawPrimitives_ab3372bf8fe32fedeffc8867ce741f5c0}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_ae27b581bbeb1c73a0b01d3e1afb4c13e}\label{namespaceDrawPrimitives_ae27b581bbeb1c73a0b01d3e1afb4c13e}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a430724952603bf1461fa0ee1106d154a}\label{namespaceDrawPrimitives_a430724952603bf1461fa0ee1106d154a}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}}
+\index{draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Cubic\+Bezier()}{drawCubicBezier()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments }\end{DoxyParamCaption})}
+
+Draws a cubic bezier path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control1} & The first control of the bezier path. \\
+\hline
+{\em control2} & The second control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function could be pretty slow. Use it only for debugging purposes. 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a872bfe0f92313b81a93eb7e6ae67b94a}\label{namespaceDrawPrimitives_a872bfe0f92313b81a93eb7e6ae67b94a}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination }\end{DoxyParamCaption})}
+
+Draws a line given the origin and destination point measured in points
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & A \hyperlink{classVec2}{Vec2} Type point used to the line origin. \\
+\hline
+{\em destination} & A \hyperlink{classVec2}{Vec2} Type point used to the line destination. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a8245dd1018a768473478a9e65c7be6d5}\label{namespaceDrawPrimitives_a8245dd1018a768473478a9e65c7be6d5}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Point@{draw\+Point}}
+\index{draw\+Point@{draw\+Point}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Point()}{drawPoint()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Draws a point given x and y coordinate measured in points
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & A \hyperlink{classVec2}{Vec2} with a point given x and y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a69ac036b04c0dd7b20643a777bfdde14}\label{namespaceDrawPrimitives_a69ac036b04c0dd7b20643a777bfdde14}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Points()}{drawPoints()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{points,  }\item[{unsigned int}]{number\+Of\+Points }\end{DoxyParamCaption})}
+
+Draws an array of points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & A point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a71a680302a9b336b8ddb39bf5b18348c}\label{namespaceDrawPrimitives_a71a680302a9b336b8ddb39bf5b18348c}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Poly@{draw\+Poly}}
+\index{draw\+Poly@{draw\+Poly}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Poly()}{drawPoly()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{vertices,  }\item[{unsigned int}]{num\+Of\+Vertices,  }\item[{bool}]{close\+Polygon }\end{DoxyParamCaption})}
+
+Draws a polygon given a pointer to point coordinates and the number of vertices measured in points. The polygon can be closed or open.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & A pointer to point coordinates. \\
+\hline
+{\em num\+Of\+Vertices} & The number of vertices measured in points. \\
+\hline
+{\em close\+Polygon} & The polygon can be closed or open. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a350f5890844862176a8be86cdadfd291}\label{namespaceDrawPrimitives_a350f5890844862176a8be86cdadfd291}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Quad\+Bezier@{draw\+Quad\+Bezier}}
+\index{draw\+Quad\+Bezier@{draw\+Quad\+Bezier}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Quad\+Bezier()}{drawQuadBezier()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Quad\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments }\end{DoxyParamCaption})}
+
+Draws a quad bezier path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control} & The control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function could be pretty slow. Use it only for debugging purposes. 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_af083f4157bcb6c95fa9755c275c851d4}\label{namespaceDrawPrimitives_af083f4157bcb6c95fa9755c275c851d4}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Rect()}{drawRect()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Rect (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{origin,  }\item[{\hyperlink{classVec2}{Vec2}}]{destination }\end{DoxyParamCaption})}
+
+Draws a rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a323e0910a04cf0fdc75563e61a5dea15}\label{namespaceDrawPrimitives_a323e0910a04cf0fdc75563e61a5dea15}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a11ae341f043974e35ac301f9e3feef45}\label{namespaceDrawPrimitives_a11ae341f043974e35ac301f9e3feef45}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a236c83afa9808359e7f445778973fdd1}\label{namespaceDrawPrimitives_a236c83afa9808359e7f445778973fdd1}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Solid\+Poly@{draw\+Solid\+Poly}}
+\index{draw\+Solid\+Poly@{draw\+Solid\+Poly}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Poly()}{drawSolidPoly()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Solid\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{poli,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{\hyperlink{structColor4F}{Color4F}}]{color }\end{DoxyParamCaption})}
+
+Draws a solid polygon given a pointer to C\+G\+Point coordinates, the number of vertices measured in points, and a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em poli} & A solid polygon given a pointer to C\+G\+Point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of vertices measured in points. \\
+\hline
+{\em color} & The solid polygon color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDrawPrimitives_ae71825a1fd3fafd9d83ddaf78bc4b84f}\label{namespaceDrawPrimitives_ae71825a1fd3fafd9d83ddaf78bc4b84f}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!draw\+Solid\+Rect@{draw\+Solid\+Rect}}
+\index{draw\+Solid\+Rect@{draw\+Solid\+Rect}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Rect()}{drawSolidRect()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::draw\+Solid\+Rect (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{origin,  }\item[{\hyperlink{classVec2}{Vec2}}]{destination,  }\item[{\hyperlink{structColor4F}{Color4F}}]{color }\end{DoxyParamCaption})}
+
+Draws a solid rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a1a20eab15f5a2560e8ebaa1fddde8216}\label{namespaceDrawPrimitives_a1a20eab15f5a2560e8ebaa1fddde8216}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!free@{free}}
+\index{free@{free}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Frees allocated resources by the drawing primitives.  NA \mbox{\Hypertarget{namespaceDrawPrimitives_ae042e1546ce595f9b01f92bcac0be48a}\label{namespaceDrawPrimitives_ae042e1546ce595f9b01f92bcac0be48a}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!init@{init}}
+\index{init@{init}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes the drawing primitives.  NA \mbox{\Hypertarget{namespaceDrawPrimitives_aa174af76c4a9f5ae94fda0f5696a4d70}\label{namespaceDrawPrimitives_aa174af76c4a9f5ae94fda0f5696a4d70}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!set\+Draw\+Color4B@{set\+Draw\+Color4B}}
+\index{set\+Draw\+Color4B@{set\+Draw\+Color4B}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{set\+Draw\+Color4\+B()}{setDrawColor4B()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::set\+Draw\+Color4B (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{r,  }\item[{G\+Lubyte}]{g,  }\item[{G\+Lubyte}]{b,  }\item[{G\+Lubyte}]{a }\end{DoxyParamCaption})}
+
+Set the drawing color with 4 unsigned bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red color with a unsigned bytes. \\
+\hline
+{\em g} & The green color with a unsigned bytes. \\
+\hline
+{\em b} & The blue color with a unsigned bytes. \\
+\hline
+{\em a} & Alpha with a unsigned bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0  set\+Draw\+Color 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a7407c702800e22e9a94a4d4ee551adbe}\label{namespaceDrawPrimitives_a7407c702800e22e9a94a4d4ee551adbe}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!set\+Draw\+Color4F@{set\+Draw\+Color4F}}
+\index{set\+Draw\+Color4F@{set\+Draw\+Color4F}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{set\+Draw\+Color4\+F()}{setDrawColor4F()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::set\+Draw\+Color4F (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{r,  }\item[{G\+Lfloat}]{g,  }\item[{G\+Lfloat}]{b,  }\item[{G\+Lfloat}]{a }\end{DoxyParamCaption})}
+
+Set the drawing color with 4 floats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red color with an floats. \\
+\hline
+{\em g} & The green color with an floats. \\
+\hline
+{\em b} & The blue color with an floats. \\
+\hline
+{\em a} & Alpha with an floats. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0  set\+Draw\+Color 
+\end{DoxySince}
+\mbox{\Hypertarget{namespaceDrawPrimitives_a28cc32247764c0f33adf3f070bdaf989}\label{namespaceDrawPrimitives_a28cc32247764c0f33adf3f070bdaf989}} 
+\index{Draw\+Primitives@{Draw\+Primitives}!set\+Point\+Size@{set\+Point\+Size}}
+\index{set\+Point\+Size@{set\+Point\+Size}!Draw\+Primitives@{Draw\+Primitives}}
+\subsubsection{\texorpdfstring{set\+Point\+Size()}{setPointSize()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void C\+C\+\_\+\+D\+LL Draw\+Primitives\+::set\+Point\+Size (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{point\+Size }\end{DoxyParamCaption})}
+
+Set the point size in points. Default 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+Size} & The point size with an float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}

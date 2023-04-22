@@ -1,0 +1,1133 @@
+\hypertarget{interfaceFlurry}{}\section{Flurry Class Reference}
+\label{interfaceFlurry}\index{Flurry@{Flurry}}
+
+
+Inheritance diagram for Flurry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{interfaceFlurry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flurry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{interfaceFlurry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}
+\begin{DoxyCompactList}\small\item\em Start a \hyperlink{interfaceFlurry}{Flurry} session for the project denoted by {\ttfamily api\+Key}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a31b4253cab9e640a2c8815930211ff9f}{start\+Session\+:with\+Options\+:}
+\begin{DoxyCompactList}\small\item\em Start a \hyperlink{interfaceFlurry}{Flurry} session for the project denoted by {\ttfamily api\+Key}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}{pause\+Background\+Session}
+\begin{DoxyCompactList}\small\item\em Pauses a \hyperlink{interfaceFlurry}{Flurry} session left running in background. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a8868284f7deee30fdf767fa9cae4f66d}{add\+Origin\+:with\+Version\+:}
+\begin{DoxyCompactList}\small\item\em Adds an S\+DK origin specified by {\ttfamily origin\+Name} and {\ttfamily origin\+Version}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a7c107ebf08e647b5fbe70920e3b31c57}{add\+Origin\+:with\+Version\+:with\+Parameters\+:}
+\begin{DoxyCompactList}\small\item\em Adds a custom parameterized origin specified by {\ttfamily origin\+Name} with {\ttfamily origin\+Version} and {\ttfamily parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Pre-\/\+Session Calls}\par
+{\em Optional sdk settings that should be called before start session. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_a4ccd9b24965b9f514f525a9eb15d071d}{set\+App\+Version\+:}
+\begin{DoxyCompactList}\small\item\em Explicitly specifies the App Version that \hyperlink{interfaceFlurry}{Flurry} will use to group Analytics data. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) + \hyperlink{interfaceFlurry_a7bb5278edece8dd7d97ebd5ccedb68cf}{get\+Flurry\+Agent\+Version}
+\begin{DoxyCompactList}\small\item\em Retrieves the \hyperlink{interfaceFlurry}{Flurry} Agent Build Version. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a642b4d19fc67250c24dafe66bb40ea71}{set\+Show\+Error\+In\+Log\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Displays an exception in the debug log if thrown during a Session. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a68104a89eff2e63d71b413d3212c5178}{set\+Debug\+Log\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Generates debug logs to console. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_ab717465e705b23c80253dddae321f5bc}{set\+Log\+Level\+:}
+\begin{DoxyCompactList}\small\item\em Generates debug logs to console. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}{set\+Session\+Continue\+Seconds\+:}
+\begin{DoxyCompactList}\small\item\em Set the timeout for expiring a \hyperlink{interfaceFlurry}{Flurry} session. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a085d6860e85344caa6c7ee201f2bc953}{set\+Secure\+Transport\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Send data over a secure transport. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a20dbc3ff9cc3c114aad7e7713547dfe1}{set\+Crash\+Reporting\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Enable automatic collection of crash reports. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Event and Error Logging}\par
+{\em Methods for reporting custom events and errors during the session. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:}
+\begin{DoxyCompactList}\small\item\em Records a custom event specified by {\ttfamily event\+Name}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a655ffe3bf02112f3af25414397ded072}{log\+Event\+:with\+Parameters\+:}
+\begin{DoxyCompactList}\small\item\em Records a custom parameterized event specified by {\ttfamily event\+Name} with {\ttfamily parameters}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_aab0b2c1426b3a120e54613fd47e6719e}{log\+Error\+:message\+:exception\+:}
+\begin{DoxyCompactList}\small\item\em Records an app exception. Commonly used to catch unhandled exceptions. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a54e3619abb7f17c9b2a8f01c33cdfd81}{log\+Error\+:message\+:error\+:}
+\begin{DoxyCompactList}\small\item\em Records an app error. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_ad1beb2e7875ce565f74b35d973f9fe42}{log\+Event\+:timed\+:}
+\begin{DoxyCompactList}\small\item\em Records a timed event specified by {\ttfamily event\+Name}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{log\+Event\+:with\+Parameters\+:timed\+:}
+\begin{DoxyCompactList}\small\item\em Records a custom parameterized timed event specified by {\ttfamily event\+Name} with {\ttfamily parameters}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{end\+Timed\+Event\+:with\+Parameters\+:}
+\begin{DoxyCompactList}\small\item\em Ends a timed event specified by {\ttfamily event\+Name} and optionally updates parameters with {\ttfamily parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Page View Methods}\par
+{\em Count page views. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_a6289ab504ab08ed9249fe5ef56eef646}{log\+All\+Page\+Views\+:}
+\begin{DoxyCompactList}\small\item\em see +(void)\hyperlink{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}{log\+All\+Page\+Views\+For\+Target\+:}target; for details \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}{log\+All\+Page\+Views\+For\+Target\+:}
+\begin{DoxyCompactList}\small\item\em Automatically track page views on a {\ttfamily U\+I\+Navigation\+Controller} or {\ttfamily U\+I\+Tab\+Bar\+Controller}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a732b380542c75c2f12d6ec90b9959aeb}{stop\+Log\+Page\+Views\+For\+Target\+:}
+\begin{DoxyCompactList}\small\item\em Stops logging page views on previously observed with log\+All\+Page\+Views\+For\+Target\+: {\ttfamily U\+I\+Navigation\+Controller} or {\ttfamily U\+I\+Tab\+Bar\+Controller}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a612da8f1557fa0e29d50640400d896ec}{log\+Page\+View}
+\begin{DoxyCompactList}\small\item\em Explicitly track a page view during a session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User Info}\par
+{\em Methods to set user information. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_a7f1e93aa12021d864af31e327ea368e0}{set\+User\+I\+D\+:}
+\begin{DoxyCompactList}\small\item\em Assign a unique id for a user in your app. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a55692f576c987dc0ed73a2ba4aa31710}{set\+Age\+:}
+\begin{DoxyCompactList}\small\item\em Set your user\textquotesingle{}s age in years. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a40c368f4ef3784467f9ba170c37c174f}{set\+Gender\+:}
+\begin{DoxyCompactList}\small\item\em Set your user\textquotesingle{}s gender. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Location Reporting}\par
+{\em Methods for setting location information. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_a2cbbad5344ba6f6c8d43daede566e0cc}{set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:}
+\begin{DoxyCompactList}\small\item\em Set the location of the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Session Reporting Calls}\par
+{\em Optional methods that can be called at any point to control session reporting. }\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurry_ad2d1040528d4b57f0d879b2f66162dfe}{set\+Session\+Reports\+On\+Close\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Set session to report when app closes. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a9deea9dd729686c86645ba919fe0776f}{set\+Session\+Reports\+On\+Pause\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Set session to report when app is sent to the background. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a936cba06051ba7a149b988a434d2a05c}{set\+Background\+Session\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Set session to support background execution. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurry_a75fc84e73c7e2d703311991508379407}{set\+Event\+Logging\+Enabled\+:}
+\begin{DoxyCompactList}\small\item\em Enable custom event logging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceFlurry_a8868284f7deee30fdf767fa9cae4f66d}\label{interfaceFlurry_a8868284f7deee30fdf767fa9cae4f66d}} 
+\index{Flurry@{Flurry}!add\+Origin\+:with\+Version\+:@{add\+Origin\+:with\+Version\+:}}
+\index{add\+Origin\+:with\+Version\+:@{add\+Origin\+:with\+Version\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{add\+Origin\+:with\+Version\+:()}{addOrigin:withVersion:()}}
+{\footnotesize\ttfamily + (void) add\+Origin\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{origin\+Name }\item[{withVersion:(N\+S\+String $\ast$)}]{origin\+Version }\end{DoxyParamCaption}}
+
+
+
+Adds an S\+DK origin specified by {\ttfamily origin\+Name} and {\ttfamily origin\+Version}. 
+
+\begin{DoxySince}{Since}
+5.\+0.\+0
+\end{DoxySince}
+This method allows you to specify origin within your \hyperlink{interfaceFlurry}{Flurry} S\+DK wrapper. As a general rule you should capture all the origin info related to your wrapper for \hyperlink{interfaceFlurry}{Flurry} S\+DK after every session start.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a7c107ebf08e647b5fbe70920e3b31c57}{+ add\+Origin\+:with\+Version\+:with\+Parameters\+:} for details on reporting origin info with parameters. ~\newline
+ 
+\begin{DoxyCode}
+   - (void)interestingSDKWrapperLibraryfunction
+\{
+    \textcolor{comment}{// ... after calling startSession}
+    [\hyperlink{interfaceFlurry}{Flurry} addOrigin:\textcolor{stringliteral}{@"Interesting\_Wrapper"} withVersion:\textcolor{stringliteral}{@"1.0.0"}];
+    \textcolor{comment}{// more code ...}
+\}
+\end{DoxyCode}
+
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+Name} & Name of the origin. \\
+\hline
+{\em origin\+Version} & Version string of the origin wrapper \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a7c107ebf08e647b5fbe70920e3b31c57}\label{interfaceFlurry_a7c107ebf08e647b5fbe70920e3b31c57}} 
+\index{Flurry@{Flurry}!add\+Origin\+:with\+Version\+:with\+Parameters\+:@{add\+Origin\+:with\+Version\+:with\+Parameters\+:}}
+\index{add\+Origin\+:with\+Version\+:with\+Parameters\+:@{add\+Origin\+:with\+Version\+:with\+Parameters\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{add\+Origin\+:with\+Version\+:with\+Parameters\+:()}{addOrigin:withVersion:withParameters:()}}
+{\footnotesize\ttfamily + (void) add\+Origin\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{origin\+Name }\item[{withVersion:(N\+S\+String $\ast$)}]{origin\+Version }\item[{withParameters:(N\+S\+Dictionary $\ast$)}]{parameters }\end{DoxyParamCaption}}
+
+
+
+Adds a custom parameterized origin specified by {\ttfamily origin\+Name} with {\ttfamily origin\+Version} and {\ttfamily parameters}. 
+
+\begin{DoxySince}{Since}
+5.\+0.\+0
+\end{DoxySince}
+This method overrides \#add\+Origin to allow you to associate parameters with an origin attribute. Parameters are valuable as they allow you to store characteristics of an origin.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your origin info in a custom origin. ~\newline
+ A maximum of 9 parameter names may be associated with any origin. Sending over 10 parameter names with a single origin will result in no parameters being logged for that origin.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+   - (void)userPurchasedSomethingCool
+\{
+NSDictionary *params =
+   [NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"Origin Info Item"}, \textcolor{comment}{// Parameter Value}
+       \textcolor{stringliteral}{@"Origin Info Item Key"}, \textcolor{comment}{// Parameter Name}
+       nil];
+   \textcolor{comment}{// ... after calling startSession}
+   [\hyperlink{interfaceFlurry}{Flurry} addOrigin:\textcolor{stringliteral}{@"Interesting\_Wrapper"} withVersion:\textcolor{stringliteral}{@"1.0.0"}];
+   \textcolor{comment}{// more code ...}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+Name} & Name of the origin. \\
+\hline
+{\em origin\+Version} & Version string of the origin wrapper \\
+\hline
+{\em parameters} & An immutable copy of map containing Name-\/\+Value pairs of parameters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}\label{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}} 
+\index{Flurry@{Flurry}!end\+Timed\+Event\+:with\+Parameters\+:@{end\+Timed\+Event\+:with\+Parameters\+:}}
+\index{end\+Timed\+Event\+:with\+Parameters\+:@{end\+Timed\+Event\+:with\+Parameters\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{end\+Timed\+Event\+:with\+Parameters\+:()}{endTimedEvent:withParameters:()}}
+{\footnotesize\ttfamily + (void) end\+Timed\+Event\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{event\+Name }\item[{withParameters:(N\+S\+Dictionary $\ast$)}]{parameters }\end{DoxyParamCaption}}
+
+
+
+Ends a timed event specified by {\ttfamily event\+Name} and optionally updates parameters with {\ttfamily parameters}. 
+
+\begin{DoxySince}{Since}
+2.\+8.\+4
+\end{DoxySince}
+This method ends an existing timed event. If parameters are provided, this will overwrite existing parameters with the same name or create new parameters if the name does not exist in the parameter map set by \hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{log\+Event\+:with\+Parameters\+:timed\+:}.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your users in a custom event. ~\newline
+ If the app is backgrounded prior to ending a timed event, the \hyperlink{interfaceFlurry}{Flurry} S\+DK will automatically end the timer on the event. ~\newline
+ \hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{end\+Timed\+Event\+:with\+Parameters\+:} is ignored if called on a previously terminated event.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{+ log\+Event\+:with\+Parameters\+:timed\+:} for details on starting a timed \hyperlink{group__event}{libevent helpers} with parameters.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)startLevel 
+\{
+NSDictionary *params =
+[NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"100"}, \textcolor{comment}{// Parameter Value}
+\textcolor{stringliteral}{@"Current Points"}, \textcolor{comment}{// Parameter Name}
+nil];
+
+[\hyperlink{interfaceFlurry}{Flurry} logEvent:\textcolor{stringliteral}{@"Level Played"} withParameters:params timed:YES];
+\textcolor{comment}{// Start user on level}
+\}
+
+- (void)endLevel 
+\{
+\textcolor{comment}{// User gained additional 100 points in Level}
+NSDictionary *params =
+[NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"200"}, \textcolor{comment}{// Parameter Value}
+\textcolor{stringliteral}{@"Current Points"}, \textcolor{comment}{// Parameter Name}
+nil];
+[\hyperlink{interfaceFlurry}{Flurry} endTimedEvent:\textcolor{stringliteral}{@"Level Played"} withParameters:params];
+\textcolor{comment}{// User done with level}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & Name of the event. For maximum effectiveness, we recommend using a naming scheme that can be easily understood by non-\/technical people in your business domain. \\
+\hline
+{\em parameters} & An immutable copy of map containing Name-\/\+Value pairs of parameters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a7bb5278edece8dd7d97ebd5ccedb68cf}\label{interfaceFlurry_a7bb5278edece8dd7d97ebd5ccedb68cf}} 
+\index{Flurry@{Flurry}!get\+Flurry\+Agent\+Version@{get\+Flurry\+Agent\+Version}}
+\index{get\+Flurry\+Agent\+Version@{get\+Flurry\+Agent\+Version}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{get\+Flurry\+Agent\+Version()}{getFlurryAgentVersion()}}
+{\footnotesize\ttfamily + (N\+S\+String $\ast$) get\+Flurry\+Agent\+Version \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Retrieves the \hyperlink{interfaceFlurry}{Flurry} Agent Build Version. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This is an optional method that retrieves the \hyperlink{interfaceFlurry}{Flurry} Agent Version the app is running under. It is most often used if reporting an unexpected behavior of the S\+DK to \href{mailto:iphonesupport@flurry.com}{\tt Flurry Support}
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}. ~\newline
+F\+AQ for the i\+Phone S\+DK is located at \href{http://wiki.flurry.com/index.php?title=IPhone_FAQ}{\tt Support Center -\/ i\+Phone F\+AQ}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_ab717465e705b23c80253dddae321f5bc}{+ set\+Log\+Level\+:} for information on how to view debugging information on your console.
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The agent version of the \hyperlink{interfaceFlurry}{Flurry} S\+DK. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceFlurry_a6289ab504ab08ed9249fe5ef56eef646}\label{interfaceFlurry_a6289ab504ab08ed9249fe5ef56eef646}} 
+\index{Flurry@{Flurry}!log\+All\+Page\+Views\+:@{log\+All\+Page\+Views\+:}}
+\index{log\+All\+Page\+Views\+:@{log\+All\+Page\+Views\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+All\+Page\+Views\+:()}{logAllPageViews:()}}
+{\footnotesize\ttfamily + (void) log\+All\+Page\+Views\+: \begin{DoxyParamCaption}\item[{((deprecated))}]{\+\_\+\+\_\+attribute\+\_\+\+\_\+ }\end{DoxyParamCaption}}
+
+
+
+see +(void)\hyperlink{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}{log\+All\+Page\+Views\+For\+Target\+:}target; for details 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000226}{Deprecated}]\end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+2.\+7 This method does the same as +(void)\hyperlink{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}{log\+All\+Page\+Views\+For\+Target\+:}target method and is left for backward compatibility 
+\end{DoxySince}
+\mbox{\Hypertarget{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}\label{interfaceFlurry_ad8222c3e2257fb8aa22e9c93aa465ca6}} 
+\index{Flurry@{Flurry}!log\+All\+Page\+Views\+For\+Target\+:@{log\+All\+Page\+Views\+For\+Target\+:}}
+\index{log\+All\+Page\+Views\+For\+Target\+:@{log\+All\+Page\+Views\+For\+Target\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+All\+Page\+Views\+For\+Target\+:()}{logAllPageViewsForTarget:()}}
+{\footnotesize\ttfamily + (void) log\+All\+Page\+Views\+For\+Target\+: \begin{DoxyParamCaption}\item[{(id)}]{target }\end{DoxyParamCaption}}
+
+
+
+Automatically track page views on a {\ttfamily U\+I\+Navigation\+Controller} or {\ttfamily U\+I\+Tab\+Bar\+Controller}. 
+
+\begin{DoxySince}{Since}
+4.\+3
+\end{DoxySince}
+This method increments the page view count for a session based on traversing a U\+I\+Navigation\+Controller or U\+I\+Tab\+Bar\+Controller. The page view count is only a counter for the number of transitions in your app. It does not associate a name with the page count. To associate a name with a count of occurences see \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:}.
+
+\begin{DoxyNote}{Note}
+If you need to release passed target, you should call counterpart method + (void)\hyperlink{interfaceFlurry_a732b380542c75c2f12d6ec90b9959aeb}{stop\+Log\+Page\+Views\+For\+Target\+:}target before;
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a612da8f1557fa0e29d50640400d896ec}{+ log\+Page\+View} for details on explictly incrementing page view count.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+  -(void) trackViewsFromTabBar:(UITabBarController*) tabBar 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} logAllPageViewsForTarget:tabBar];
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The navigation or tab bar controller. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a54e3619abb7f17c9b2a8f01c33cdfd81}\label{interfaceFlurry_a54e3619abb7f17c9b2a8f01c33cdfd81}} 
+\index{Flurry@{Flurry}!log\+Error\+:message\+:error\+:@{log\+Error\+:message\+:error\+:}}
+\index{log\+Error\+:message\+:error\+:@{log\+Error\+:message\+:error\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Error\+:message\+:error\+:()}{logError:message:error:()}}
+{\footnotesize\ttfamily + (void) log\+Error\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{error\+ID }\item[{message:(N\+S\+String $\ast$)}]{message }\item[{error:(N\+S\+Error $\ast$)}]{error }\end{DoxyParamCaption}}
+
+
+
+Records an app error. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This method captures an error for reporting to \hyperlink{interfaceFlurry}{Flurry}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_aab0b2c1426b3a120e54613fd47e6719e}{+ log\+Error\+:message\+:exception\+:} for details on capturing exceptions.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} logError:\textcolor{stringliteral}{@"WebView No Load"} message:[\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{error} localizedDescription] 
+      \hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{error}:\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{error}];
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+ID} & Name of the error. \\
+\hline
+{\em message} & The message to associate with the error. \\
+\hline
+{\em error} & The error object to report. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_aab0b2c1426b3a120e54613fd47e6719e}\label{interfaceFlurry_aab0b2c1426b3a120e54613fd47e6719e}} 
+\index{Flurry@{Flurry}!log\+Error\+:message\+:exception\+:@{log\+Error\+:message\+:exception\+:}}
+\index{log\+Error\+:message\+:exception\+:@{log\+Error\+:message\+:exception\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Error\+:message\+:exception\+:()}{logError:message:exception:()}}
+{\footnotesize\ttfamily + (void) log\+Error\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{error\+ID }\item[{message:(N\+S\+String $\ast$)}]{message }\item[{exception:(N\+S\+Exception $\ast$)}]{exception }\end{DoxyParamCaption}}
+
+
+
+Records an app exception. Commonly used to catch unhandled exceptions. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This method captures an exception for reporting to \hyperlink{interfaceFlurry}{Flurry}. We recommend adding an uncaught exception listener to capture any exceptions that occur during usage that is not anticipated by your app.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a54e3619abb7f17c9b2a8f01c33cdfd81}{+ log\+Error\+:message\+:error\+:} for details on capturing \hyperlink{group__errors}{Error codes}.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void) uncaughtExceptionHandler(NSException *exception) 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} logError:\textcolor{stringliteral}{@"Uncaught"} message:\textcolor{stringliteral}{@"Crash!"} exception:exception];
+\}
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+[\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+\textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+ID} & Name of the error. \\
+\hline
+{\em message} & The message to associate with the error. \\
+\hline
+{\em exception} & The exception object to report. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}\label{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}} 
+\index{Flurry@{Flurry}!log\+Event\+:@{log\+Event\+:}}
+\index{log\+Event\+:@{log\+Event\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Event\+:()}{logEvent:()}}
+{\footnotesize\ttfamily + (void) log\+Event\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{event\+Name }\end{DoxyParamCaption}}
+
+
+
+Records a custom event specified by {\ttfamily event\+Name}. 
+
+\begin{DoxySince}{Since}
+2.\+8.\+4
+\end{DoxySince}
+This method allows you to specify custom events within your app. As a general rule you should capture events related to user navigation within your app, any action around monetization, and other events as they are applicable to tracking progress towards your business goals.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your users in a custom event. ~\newline
+ Where applicable, you should make a concerted effort to use timed events with parameters (\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{log\+Event\+:with\+Parameters\+:timed\+:}) or events with parameters (\hyperlink{interfaceFlurry_a655ffe3bf02112f3af25414397ded072}{log\+Event\+:with\+Parameters\+:}). This provides valuable information around the time the user spends within an action (e.\+g. -\/ time spent on a level or viewing a page) or characteristics of an action (e.\+g. -\/ Buy \hyperlink{classEvent}{Event} that has a \hyperlink{structParameter}{Parameter} of Widget with \hyperlink{classValue}{Value} Golden Sword).
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a655ffe3bf02112f3af25414397ded072}{+ log\+Event\+:with\+Parameters\+:} for details on storing events with parameters. ~\newline
+ \hyperlink{interfaceFlurry_ad1beb2e7875ce565f74b35d973f9fe42}{+ log\+Event\+:timed\+:} for details on storing timed events. ~\newline
+ \hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{+ log\+Event\+:with\+Parameters\+:timed\+:} for details on storing timed events with parameters. ~\newline
+ \hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{+ end\+Timed\+Event\+:with\+Parameters\+:} for details on stopping a timed \hyperlink{group__event}{libevent helpers} and (optionally) updating parameters.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)interestingAppAction 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} logEvent:\textcolor{stringliteral}{@"Interesting\_Action"}];
+\textcolor{comment}{// Perform interesting action}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & Name of the event. For maximum effectiveness, we recommend using a naming scheme that can be easily understood by non-\/technical people in your business domain. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_ad1beb2e7875ce565f74b35d973f9fe42}\label{interfaceFlurry_ad1beb2e7875ce565f74b35d973f9fe42}} 
+\index{Flurry@{Flurry}!log\+Event\+:timed\+:@{log\+Event\+:timed\+:}}
+\index{log\+Event\+:timed\+:@{log\+Event\+:timed\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Event\+:timed\+:()}{logEvent:timed:()}}
+{\footnotesize\ttfamily + (void) \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:} \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{event\+Name }\item[{timed:(B\+O\+OL)}]{timed }\end{DoxyParamCaption}}
+
+
+
+Records a timed event specified by {\ttfamily event\+Name}. 
+
+\begin{DoxySince}{Since}
+2.\+8.\+4
+\end{DoxySince}
+This method overrides \#log\+Event to allow you to capture the length of an event. This can be extremely valuable to understand the level of engagement with a particular action. For example, you can capture how long a user spends on a level or reading an article.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your users in a custom event. ~\newline
+ Where applicable, you should make a concerted effort to use parameters with your timed events (\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{log\+Event\+:with\+Parameters\+:timed\+:}). This provides valuable information around the characteristics of an action (e.\+g. -\/ Buy \hyperlink{classEvent}{Event} that has a \hyperlink{structParameter}{Parameter} of Widget with \hyperlink{classValue}{Value} Golden Sword).
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{+ log\+Event\+:with\+Parameters\+:timed\+:} for details on storing timed events with parameters. ~\newline
+ \hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{+ end\+Timed\+Event\+:with\+Parameters\+:} for details on stopping a timed \hyperlink{group__event}{libevent helpers} and (optionally) updating parameters.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)startLevel 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} logEvent:\textcolor{stringliteral}{@"Level Played"} timed:YES];
+\textcolor{comment}{// Start user on level}
+\}
+
+- (void)endLevel 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} endTimedEvent:\textcolor{stringliteral}{@"Level Played"} withParameters:nil];
+\textcolor{comment}{// User done with level}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & Name of the event. For maximum effectiveness, we recommend using a naming scheme that can be easily understood by non-\/technical people in your business domain. \\
+\hline
+{\em timed} & Specifies the event will be timed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a655ffe3bf02112f3af25414397ded072}\label{interfaceFlurry_a655ffe3bf02112f3af25414397ded072}} 
+\index{Flurry@{Flurry}!log\+Event\+:with\+Parameters\+:@{log\+Event\+:with\+Parameters\+:}}
+\index{log\+Event\+:with\+Parameters\+:@{log\+Event\+:with\+Parameters\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Event\+:with\+Parameters\+:()}{logEvent:withParameters:()}}
+{\footnotesize\ttfamily + (void) \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:} \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{event\+Name }\item[{withParameters:(N\+S\+Dictionary $\ast$)}]{parameters }\end{DoxyParamCaption}}
+
+
+
+Records a custom parameterized event specified by {\ttfamily event\+Name} with {\ttfamily parameters}. 
+
+\begin{DoxySince}{Since}
+2.\+8.\+4
+\end{DoxySince}
+This method overrides \#log\+Event to allow you to associate parameters with an event. Parameters are extremely valuable as they allow you to store characteristics of an action. For example, if a user purchased an item it may be helpful to know what level that user was on. By setting this parameter you will be able to view a distribution of levels for the purcahsed event on the \href{http://dev.flurry.com}{\tt Flurrly Dev Portal}.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your users in a custom event. ~\newline
+ A maximum of 10 parameter names may be associated with any event. Sending over 10 parameter names with a single event will result in no parameters being logged for that event. You may specify an infinite number of \hyperlink{structParameter}{Parameter} values. For example, a Search \hyperlink{classBox}{Box} would have 1 parameter name (e.\+g. -\/ Search \hyperlink{classBox}{Box}) and many values, which would allow you to see what values users look for the most in your app. ~\newline
+ Where applicable, you should make a concerted effort to use timed events with parameters (\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{log\+Event\+:with\+Parameters\+:timed\+:}). This provides valuable information around the time the user spends within an action (e.\+g. -\/ time spent on a level or viewing a page).
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}{+ log\+Event\+:with\+Parameters\+:timed\+:} for details on storing timed events with parameters. ~\newline
+ \hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{+ end\+Timed\+Event\+:with\+Parameters\+:} for details on stopping a timed \hyperlink{group__event}{libevent helpers} and (optionally) updating parameters.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)userPurchasedSomethingCool 
+\{
+NSDictionary *params =
+[NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"Cool Item"}, \textcolor{comment}{// Parameter Value}
+\textcolor{stringliteral}{@"Item Purchased"}, \textcolor{comment}{// Parameter Name}
+nil];
+[\hyperlink{interfaceFlurry}{Flurry} logEvent:\textcolor{stringliteral}{@"Something Cool Purchased"} withParameters:params];
+\textcolor{comment}{// Give user cool item}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & Name of the event. For maximum effectiveness, we recommend using a naming scheme that can be easily understood by non-\/technical people in your business domain. \\
+\hline
+{\em parameters} & An immutable copy of map containing Name-\/\+Value pairs of parameters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}\label{interfaceFlurry_a66eeaeb9725692dc354fdd350c691cfc}} 
+\index{Flurry@{Flurry}!log\+Event\+:with\+Parameters\+:timed\+:@{log\+Event\+:with\+Parameters\+:timed\+:}}
+\index{log\+Event\+:with\+Parameters\+:timed\+:@{log\+Event\+:with\+Parameters\+:timed\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Event\+:with\+Parameters\+:timed\+:()}{logEvent:withParameters:timed:()}}
+{\footnotesize\ttfamily + (void) \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:} \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{event\+Name }\item[{withParameters:(N\+S\+Dictionary $\ast$)}]{parameters }\item[{timed:(B\+O\+OL)}]{timed }\end{DoxyParamCaption}}
+
+
+
+Records a custom parameterized timed event specified by {\ttfamily event\+Name} with {\ttfamily parameters}. 
+
+\begin{DoxySince}{Since}
+2.\+8.\+4
+\end{DoxySince}
+This method overrides \#log\+Event to allow you to capture the length of an event with parameters. This can be extremely valuable to understand the level of engagement with a particular action and the characteristics associated with that action. For example, you can capture how long a user spends on a level or reading an article. Parameters can be used to capture, for example, the author of an article or if something was purchased while on the level.
+
+\begin{DoxyNote}{Note}
+You should not pass private or confidential information about your users in a custom event.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a9540add7440d1b716bfb8fb8efa85801}{+ end\+Timed\+Event\+:with\+Parameters\+:} for details on stopping a timed \hyperlink{group__event}{libevent helpers} and (optionally) updating parameters.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)startLevel 
+\{
+NSDictionary *params =
+[NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"100"}, \textcolor{comment}{// Parameter Value}
+\textcolor{stringliteral}{@"Current Points"}, \textcolor{comment}{// Parameter Name}
+nil];
+
+[\hyperlink{interfaceFlurry}{Flurry} logEvent:\textcolor{stringliteral}{@"Level Played"} withParameters:params timed:YES];
+\textcolor{comment}{// Start user on level}
+\}
+
+- (void)endLevel 
+\{
+\textcolor{comment}{// User gained additional 100 points in Level}
+NSDictionary *params =
+[NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"200"}, \textcolor{comment}{// Parameter Value}
+\textcolor{stringliteral}{@"Current Points"}, \textcolor{comment}{// Parameter Name}
+nil];
+[\hyperlink{interfaceFlurry}{Flurry} endTimedEvent:\textcolor{stringliteral}{@"Level Played"} withParameters:params];
+\textcolor{comment}{// User done with level}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & Name of the event. For maximum effectiveness, we recommend using a naming scheme that can be easily understood by non-\/technical people in your business domain. \\
+\hline
+{\em parameters} & An immutable copy of map containing Name-\/\+Value pairs of parameters. \\
+\hline
+{\em timed} & Specifies the event will be timed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a612da8f1557fa0e29d50640400d896ec}\label{interfaceFlurry_a612da8f1557fa0e29d50640400d896ec}} 
+\index{Flurry@{Flurry}!log\+Page\+View@{log\+Page\+View}}
+\index{log\+Page\+View@{log\+Page\+View}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{log\+Page\+View()}{logPageView()}}
+{\footnotesize\ttfamily + (void) log\+Page\+View \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Explicitly track a page view during a session. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This method increments the page view count for a session when invoked. It does not associate a name with the page count. To associate a name with a count of occurences see \hyperlink{interfaceFlurry_a5433aaf247d3e14120ba05877d034a61}{log\+Event\+:}.
+
+\begin{DoxySeeAlso}{See also}
+\#log\+All\+Page\+Views for details on automatically incrementing page view count based on user traversing navigation or tab bar controller.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   -(void) trackView 
+\{
+[\hyperlink{interfaceFlurry}{Flurry} \hyperlink{interfaceFlurry_a612da8f1557fa0e29d50640400d896ec}{logPageView}];
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}\label{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}} 
+\index{Flurry@{Flurry}!pause\+Background\+Session@{pause\+Background\+Session}}
+\index{pause\+Background\+Session@{pause\+Background\+Session}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{pause\+Background\+Session()}{pauseBackgroundSession()}}
+{\footnotesize\ttfamily + (void) pause\+Background\+Session \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Pauses a \hyperlink{interfaceFlurry}{Flurry} session left running in background. 
+
+\begin{DoxySince}{Since}
+4.\+2.\+2
+\end{DoxySince}
+This method should be used in case of \hyperlink{interfaceFlurry_a936cba06051ba7a149b988a434d2a05c}{set\+Background\+Session\+Enabled\+:} set to Y\+ES. It can be called when application finished all background tasks (such as playing music) to pause session.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a936cba06051ba7a149b988a434d2a05c}{+ set\+Background\+Session\+Enabled\+:} for details on setting a custom behaviour on resigning activity.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)allBackgroundTasksFinished
+\{
+\textcolor{comment}{// ....}
+[\hyperlink{interfaceFlurry}{Flurry} \hyperlink{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}{pauseBackgroundSession}];
+\textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{interfaceFlurry_a55692f576c987dc0ed73a2ba4aa31710}\label{interfaceFlurry_a55692f576c987dc0ed73a2ba4aa31710}} 
+\index{Flurry@{Flurry}!set\+Age\+:@{set\+Age\+:}}
+\index{set\+Age\+:@{set\+Age\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Age\+:()}{setAge:()}}
+{\footnotesize\ttfamily + (void) set\+Age\+: \begin{DoxyParamCaption}\item[{(int)}]{age }\end{DoxyParamCaption}}
+
+
+
+Set your user\textquotesingle{}s age in years. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use this method to capture the age of your user. Only use this method if you collect this information explictly from your user (i.\+e. -\/ there is no need to set a default value).
+
+\begin{DoxyNote}{Note}
+The age is aggregated across all users of your app and not available on a per user basis.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em age} & Reported age of user. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a4ccd9b24965b9f514f525a9eb15d071d}\label{interfaceFlurry_a4ccd9b24965b9f514f525a9eb15d071d}} 
+\index{Flurry@{Flurry}!set\+App\+Version\+:@{set\+App\+Version\+:}}
+\index{set\+App\+Version\+:@{set\+App\+Version\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+App\+Version\+:()}{setAppVersion:()}}
+{\footnotesize\ttfamily + (void) set\+App\+Version\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{version }\end{DoxyParamCaption}}
+
+
+
+Explicitly specifies the App Version that \hyperlink{interfaceFlurry}{Flurry} will use to group Analytics data. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This is an optional method that overrides the App Version \hyperlink{interfaceFlurry}{Flurry} uses for reporting. \hyperlink{interfaceFlurry}{Flurry} will use the C\+F\+Bundle\+Version in your info.\+plist file when this method is not invoked.
+
+\begin{DoxyNote}{Note}
+There is a maximum of 605 versions allowed for a single app. ~\newline
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em version} & The custom version name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a936cba06051ba7a149b988a434d2a05c}\label{interfaceFlurry_a936cba06051ba7a149b988a434d2a05c}} 
+\index{Flurry@{Flurry}!set\+Background\+Session\+Enabled\+:@{set\+Background\+Session\+Enabled\+:}}
+\index{set\+Background\+Session\+Enabled\+:@{set\+Background\+Session\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Background\+Session\+Enabled\+:()}{setBackgroundSessionEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Background\+Session\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{set\+Background\+Session\+Enabled }\end{DoxyParamCaption}}
+
+
+
+Set session to support background execution. 
+
+\begin{DoxySince}{Since}
+4.\+2.\+2
+\end{DoxySince}
+Use this method to enable reporting of errors and events when application is running in backgorund (such applications have U\+I\+Background\+Modes in Info.\+plist). You should call \hyperlink{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}{pause\+Background\+Session} when appropriate in background mode to pause the session (for example when played song completed in background)
+
+Default value is {\ttfamily NO} 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a57e18dc7c992272e3dc89e7f3bc853f4}{+ pause\+Background\+Session} for details
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Background\+Session\+Enabled} & Y\+ES to enbale background support and continue log events and errors for running session. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a20dbc3ff9cc3c114aad7e7713547dfe1}\label{interfaceFlurry_a20dbc3ff9cc3c114aad7e7713547dfe1}} 
+\index{Flurry@{Flurry}!set\+Crash\+Reporting\+Enabled\+:@{set\+Crash\+Reporting\+Enabled\+:}}
+\index{set\+Crash\+Reporting\+Enabled\+:@{set\+Crash\+Reporting\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Crash\+Reporting\+Enabled\+:()}{setCrashReportingEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Crash\+Reporting\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{value }\end{DoxyParamCaption}}
+
+
+
+Enable automatic collection of crash reports. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This is an optional method that collects crash reports when enabled. The default value is {\ttfamily NO}.
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\ttfamily Y\+ES} to enable collection of crash reports. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a68104a89eff2e63d71b413d3212c5178}\label{interfaceFlurry_a68104a89eff2e63d71b413d3212c5178}} 
+\index{Flurry@{Flurry}!set\+Debug\+Log\+Enabled\+:@{set\+Debug\+Log\+Enabled\+:}}
+\index{set\+Debug\+Log\+Enabled\+:@{set\+Debug\+Log\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Debug\+Log\+Enabled\+:()}{setDebugLogEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Debug\+Log\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{value }\end{DoxyParamCaption}}
+
+
+
+Generates debug logs to console. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This is an optional method that displays debug information related to the \hyperlink{interfaceFlurry}{Flurry} S\+DK. display information to the console. The default setting for this method is {\ttfamily NO} which sets the log level to {\ttfamily Flurry\+Log\+Level\+Critical\+Only}. When set to {\ttfamily Y\+ES} the debug log level is set to {\ttfamily Flurry\+Log\+Level\+Debug} 
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}. If the method, set\+Log\+Level is called later in the code, debug logging will be automatically enabled.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\ttfamily Y\+ES} to show debug logs, {\ttfamily NO} to omit debug logs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a75fc84e73c7e2d703311991508379407}\label{interfaceFlurry_a75fc84e73c7e2d703311991508379407}} 
+\index{Flurry@{Flurry}!set\+Event\+Logging\+Enabled\+:@{set\+Event\+Logging\+Enabled\+:}}
+\index{set\+Event\+Logging\+Enabled\+:@{set\+Event\+Logging\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Event\+Logging\+Enabled\+:()}{setEventLoggingEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Event\+Logging\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{value }\end{DoxyParamCaption}}
+
+
+
+Enable custom event logging. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use this method to allow the capture of custom events. The default value is {\ttfamily Y\+ES}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Y\+ES to enable event logging, NO to stop custom logging. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a40c368f4ef3784467f9ba170c37c174f}\label{interfaceFlurry_a40c368f4ef3784467f9ba170c37c174f}} 
+\index{Flurry@{Flurry}!set\+Gender\+:@{set\+Gender\+:}}
+\index{set\+Gender\+:@{set\+Gender\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Gender\+:()}{setGender:()}}
+{\footnotesize\ttfamily + (void) set\+Gender\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{gender }\end{DoxyParamCaption}}
+
+
+
+Set your user\textquotesingle{}s gender. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use this method to capture the gender of your user. Only use this method if you collect this information explictly from your user (i.\+e. -\/ there is no need to set a default value). Allowable values are {\ttfamily "m\char`\"{} or @c @\char`\"{}f"} 
+
+\begin{DoxyNote}{Note}
+The gender is aggregated across all users of your app and not available on a per user basis.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em gender} & Reported gender of user. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a2cbbad5344ba6f6c8d43daede566e0cc}\label{interfaceFlurry_a2cbbad5344ba6f6c8d43daede566e0cc}} 
+\index{Flurry@{Flurry}!set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:@{set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:}}
+\index{set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:@{set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Latitude\+:longitude\+:horizontal\+Accuracy\+:vertical\+Accuracy\+:()}{setLatitude:longitude:horizontalAccuracy:verticalAccuracy:()}}
+{\footnotesize\ttfamily + (void) set\+Latitude\+: \begin{DoxyParamCaption}\item[{(double)}]{latitude }\item[{longitude:(double)}]{longitude }\item[{horizontalAccuracy:(float)}]{horizontal\+Accuracy }\item[{verticalAccuracy:(float)}]{vertical\+Accuracy }\end{DoxyParamCaption}}
+
+
+
+Set the location of the session. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use information from the C\+L\+Location\+Manager to specify the location of the session. \hyperlink{interfaceFlurry}{Flurry} does not automatically track this information or include the C\+L\+Location framework.
+
+\begin{DoxyNote}{Note}
+Only the last location entered is captured per session. ~\newline
+ Regardless of accuracy specified, the \hyperlink{interfaceFlurry}{Flurry} S\+DK will only report location at city level or higher. ~\newline
+ Location is aggregated across all users of your app and not available on a per user basis. ~\newline
+ This information should only be captured if it is germaine to the use of your app.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+CLLocationManager *locationManager = [[CLLocationManager alloc] \hyperlink{namespaceDrawPrimitives_ae042e1546ce595f9b01f92bcac0be48a}{init}];
+[locationManager startUpdatingLocation];
+\end{DoxyCode}
+
+
+After starting the location manager, you can set the location with \hyperlink{interfaceFlurry}{Flurry}. You can implement C\+L\+Location\+Manager\+Delegate to be aware of when the location is updated. Below is an example of how to use this method, after you have recieved a location update from the location\+Manager.
+
+
+\begin{DoxyCode}
+CLLocation *location = locationManager.location;
+[\hyperlink{interfaceFlurry}{Flurry}  setLatitude:location.coordinate.latitude
+           longitude:location.coordinate.longitude
+  horizontalAccuracy:location.horizontalAccuracy
+    verticalAccuracy:location.verticalAccuracy];
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em latitude} & The latitude. \\
+\hline
+{\em longitude} & The longitude. \\
+\hline
+{\em horizontal\+Accuracy} & The radius of uncertainty for the location in meters. \\
+\hline
+{\em vertical\+Accuracy} & The accuracy of the altitude value in meters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_ab717465e705b23c80253dddae321f5bc}\label{interfaceFlurry_ab717465e705b23c80253dddae321f5bc}} 
+\index{Flurry@{Flurry}!set\+Log\+Level\+:@{set\+Log\+Level\+:}}
+\index{set\+Log\+Level\+:@{set\+Log\+Level\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Log\+Level\+:()}{setLogLevel:()}}
+{\footnotesize\ttfamily + (void) set\+Log\+Level\+: \begin{DoxyParamCaption}\item[{(Flurry\+Log\+Level)}]{value }\end{DoxyParamCaption}}
+
+
+
+Generates debug logs to console. 
+
+\begin{DoxySince}{Since}
+4.\+2.\+2
+\end{DoxySince}
+This is an optional method that displays debug information related to the \hyperlink{interfaceFlurry}{Flurry} S\+DK. display information to the console. The default setting for this method is {\ttfamily Flurry\+Log\+Level\+Critycal\+Only}.
+
+\begin{DoxyNote}{Note}
+Its good practice to call this method prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}. If debug logging is disabled earlier, this method will enable it.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Log level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a085d6860e85344caa6c7ee201f2bc953}\label{interfaceFlurry_a085d6860e85344caa6c7ee201f2bc953}} 
+\index{Flurry@{Flurry}!set\+Secure\+Transport\+Enabled\+:@{set\+Secure\+Transport\+Enabled\+:}}
+\index{set\+Secure\+Transport\+Enabled\+:@{set\+Secure\+Transport\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Secure\+Transport\+Enabled\+:()}{setSecureTransportEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Secure\+Transport\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{value }\end{DoxyParamCaption}}
+
+
+
+Send data over a secure transport. 
+
+\begin{DoxySince}{Since}
+3.\+0
+\end{DoxySince}
+This is an optional method that sends data over an S\+SL connection when enabled. The default value is {\ttfamily NO}.
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\ttfamily Y\+ES} to send data over secure connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}\label{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}} 
+\index{Flurry@{Flurry}!set\+Session\+Continue\+Seconds\+:@{set\+Session\+Continue\+Seconds\+:}}
+\index{set\+Session\+Continue\+Seconds\+:@{set\+Session\+Continue\+Seconds\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Session\+Continue\+Seconds\+:()}{setSessionContinueSeconds:()}}
+{\footnotesize\ttfamily + (void) set\+Session\+Continue\+Seconds\+: \begin{DoxyParamCaption}\item[{(int)}]{seconds }\end{DoxyParamCaption}}
+
+
+
+Set the timeout for expiring a \hyperlink{interfaceFlurry}{Flurry} session. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This is an optional method that sets the time the app may be in the background before starting a new session upon resume. The default value for the session timeout is 10 seconds in the background.
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & The time in seconds to set the session timeout to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_ad2d1040528d4b57f0d879b2f66162dfe}\label{interfaceFlurry_ad2d1040528d4b57f0d879b2f66162dfe}} 
+\index{Flurry@{Flurry}!set\+Session\+Reports\+On\+Close\+Enabled\+:@{set\+Session\+Reports\+On\+Close\+Enabled\+:}}
+\index{set\+Session\+Reports\+On\+Close\+Enabled\+:@{set\+Session\+Reports\+On\+Close\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Session\+Reports\+On\+Close\+Enabled\+:()}{setSessionReportsOnCloseEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Session\+Reports\+On\+Close\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{send\+Session\+Reports\+On\+Close }\end{DoxyParamCaption}}
+
+
+
+Set session to report when app closes. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use this method report session data when the app is closed. The default value is {\ttfamily Y\+ES}.
+
+\begin{DoxyNote}{Note}
+This method is rarely invoked in i\+OS $>$= 3.\+2 due to the updated i\+OS lifecycle.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a9deea9dd729686c86645ba919fe0776f}{+ set\+Session\+Reports\+On\+Pause\+Enabled\+:}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em send\+Session\+Reports\+On\+Close} & Y\+ES to send on close, NO to omit reporting on close. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a9deea9dd729686c86645ba919fe0776f}\label{interfaceFlurry_a9deea9dd729686c86645ba919fe0776f}} 
+\index{Flurry@{Flurry}!set\+Session\+Reports\+On\+Pause\+Enabled\+:@{set\+Session\+Reports\+On\+Pause\+Enabled\+:}}
+\index{set\+Session\+Reports\+On\+Pause\+Enabled\+:@{set\+Session\+Reports\+On\+Pause\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Session\+Reports\+On\+Pause\+Enabled\+:()}{setSessionReportsOnPauseEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Session\+Reports\+On\+Pause\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{set\+Session\+Reports\+On\+Pause\+Enabled }\end{DoxyParamCaption}}
+
+
+
+Set session to report when app is sent to the background. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+Use this method report session data when the app is paused. The default value is {\ttfamily Y\+ES}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Session\+Reports\+On\+Pause\+Enabled} & Y\+ES to send on pause, NO to omit reporting on pause. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a642b4d19fc67250c24dafe66bb40ea71}\label{interfaceFlurry_a642b4d19fc67250c24dafe66bb40ea71}} 
+\index{Flurry@{Flurry}!set\+Show\+Error\+In\+Log\+Enabled\+:@{set\+Show\+Error\+In\+Log\+Enabled\+:}}
+\index{set\+Show\+Error\+In\+Log\+Enabled\+:@{set\+Show\+Error\+In\+Log\+Enabled\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+Show\+Error\+In\+Log\+Enabled\+:()}{setShowErrorInLogEnabled:()}}
+{\footnotesize\ttfamily + (void) set\+Show\+Error\+In\+Log\+Enabled\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{value }\end{DoxyParamCaption}}
+
+
+
+Displays an exception in the debug log if thrown during a Session. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+This is an optional method that augments the debug logs with exceptions that occur during the session. You must both capture exceptions to \hyperlink{interfaceFlurry}{Flurry} and set debug logging to enabled for this method to display information to the console. The default setting for this method is {\ttfamily NO}.
+
+\begin{DoxyNote}{Note}
+This method must be called prior to invoking \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_ab717465e705b23c80253dddae321f5bc}{+ set\+Log\+Level\+:} for information on how to view debugging information on your console. ~\newline
+\hyperlink{interfaceFlurry_aab0b2c1426b3a120e54613fd47e6719e}{+ log\+Error\+:message\+:exception\+:} for details on logging exceptions. ~\newline
+\hyperlink{interfaceFlurry_a54e3619abb7f17c9b2a8f01c33cdfd81}{+ log\+Error\+:message\+:error\+:} for details on logging \hyperlink{group__errors}{Error codes}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\ttfamily Y\+ES} to show errors in debug logs, {\ttfamily NO} to omit errors in debug logs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a7f1e93aa12021d864af31e327ea368e0}\label{interfaceFlurry_a7f1e93aa12021d864af31e327ea368e0}} 
+\index{Flurry@{Flurry}!set\+User\+I\+D\+:@{set\+User\+I\+D\+:}}
+\index{set\+User\+I\+D\+:@{set\+User\+I\+D\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{set\+User\+I\+D\+:()}{setUserID:()}}
+{\footnotesize\ttfamily + (void) set\+User\+I\+D\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{user\+ID }\end{DoxyParamCaption}}
+
+
+
+Assign a unique id for a user in your app. 
+
+\begin{DoxySince}{Since}
+2.\+7
+\end{DoxySince}
+\begin{DoxyNote}{Note}
+Please be sure not to use this method to pass any private or confidential information about the user.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em user\+ID} & The app id for a user. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}\label{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}} 
+\index{Flurry@{Flurry}!start\+Session\+:@{start\+Session\+:}}
+\index{start\+Session\+:@{start\+Session\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{start\+Session\+:()}{startSession:()}}
+{\footnotesize\ttfamily + (void) start\+Session\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{api\+Key }\end{DoxyParamCaption}}
+
+
+
+Start a \hyperlink{interfaceFlurry}{Flurry} session for the project denoted by {\ttfamily api\+Key}. 
+
+\begin{DoxySince}{Since}
+2.\+6
+\end{DoxySince}
+This method serves as the entry point to \hyperlink{interfaceFlurry}{Flurry} Analytics collection. It must be called in the scope of {\ttfamily application\+Did\+Finish\+Launching}. The session will continue for the period the app is in the foreground until your app is backgrounded for the time specified in \hyperlink{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}{set\+Session\+Continue\+Seconds\+:}. If the app is resumed in that period the session will continue, otherwise a new session will begin.
+
+Crash reporting will not be enabled. See \hyperlink{interfaceFlurry_a20dbc3ff9cc3c114aad7e7713547dfe1}{set\+Crash\+Reporting\+Enabled\+:} for more information.
+
+\begin{DoxyNote}{Note}
+If testing on a simulator, please be sure to send App to background via home button. \hyperlink{interfaceFlurry}{Flurry} depends on the i\+OS lifecycle to be complete for full reporting.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}{+ set\+Session\+Continue\+Seconds\+:} for details on setting a custom session \hyperlink{group__timeout}{Connection timeouts}.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+\textcolor{comment}{// Optional Flurry startup methods}
+[\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+\textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em api\+Key} & The A\+PI key for this project. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a31b4253cab9e640a2c8815930211ff9f}\label{interfaceFlurry_a31b4253cab9e640a2c8815930211ff9f}} 
+\index{Flurry@{Flurry}!start\+Session\+:with\+Options\+:@{start\+Session\+:with\+Options\+:}}
+\index{start\+Session\+:with\+Options\+:@{start\+Session\+:with\+Options\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{start\+Session\+:with\+Options\+:()}{startSession:withOptions:()}}
+{\footnotesize\ttfamily + (void) \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+:} \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{api\+Key }\item[{withOptions:(id)}]{options }\end{DoxyParamCaption}}
+
+
+
+Start a \hyperlink{interfaceFlurry}{Flurry} session for the project denoted by {\ttfamily api\+Key}. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+8
+\end{DoxySince}
+This method serves as the entry point to \hyperlink{interfaceFlurry}{Flurry} Analytics collection. It must be called in the scope of {\ttfamily application\+Did\+Finish\+Launching} passing in the launch\+Options param. The session will continue for the period the app is in the foreground until your app is backgrounded for the time specified in \hyperlink{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}{set\+Session\+Continue\+Seconds\+:}. If the app is resumed in that period the session will continue, otherwise a new session will begin.
+
+\begin{DoxyNote}{Note}
+If testing on a simulator, please be sure to send App to background via home button. \hyperlink{interfaceFlurry}{Flurry} depends on the i\+OS lifecycle to be complete for full reporting.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurry_a1b79d4d804074f4b66f3434d9318ceee}{+ set\+Session\+Continue\+Seconds\+:} for details on setting a custom session \hyperlink{group__timeout}{Connection timeouts}.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)
+      launchOptions
+\{
+\textcolor{comment}{// Optional Flurry startup methods}
+[\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"} withOptions:launchOptions];
+\textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em api\+Key} & The A\+PI key for this project. \\
+\hline
+{\em options} & passed launch\+Options from the applicatin\textquotesingle{}s did\+Finish\+Launching\+With\+Options\+:(\+N\+S\+Dictionary $\ast$)launch\+Options \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurry_a732b380542c75c2f12d6ec90b9959aeb}\label{interfaceFlurry_a732b380542c75c2f12d6ec90b9959aeb}} 
+\index{Flurry@{Flurry}!stop\+Log\+Page\+Views\+For\+Target\+:@{stop\+Log\+Page\+Views\+For\+Target\+:}}
+\index{stop\+Log\+Page\+Views\+For\+Target\+:@{stop\+Log\+Page\+Views\+For\+Target\+:}!Flurry@{Flurry}}
+\subsubsection{\texorpdfstring{stop\+Log\+Page\+Views\+For\+Target\+:()}{stopLogPageViewsForTarget:()}}
+{\footnotesize\ttfamily + (void) stop\+Log\+Page\+Views\+For\+Target\+: \begin{DoxyParamCaption}\item[{(id)}]{target }\end{DoxyParamCaption}}
+
+
+
+Stops logging page views on previously observed with log\+All\+Page\+Views\+For\+Target\+: {\ttfamily U\+I\+Navigation\+Controller} or {\ttfamily U\+I\+Tab\+Bar\+Controller}. 
+
+\begin{DoxySince}{Since}
+4.\+3
+\end{DoxySince}
+Call this method before instance of {\ttfamily U\+I\+Navigation\+Controller} or {\ttfamily U\+I\+Tab\+Bar\+Controller} observed with log\+All\+Page\+Views\+For\+Target\+: is released.
+
+
+\begin{DoxyCode}
+  -(void) dealloc
+\{
+[\hyperlink{interfaceFlurry}{Flurry} stopLogPageViewsForTarget:\_tabBarController];
+[\_tabBarController release];
+[super dealloc];
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The navigation or tab bar controller. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/flurry/proj.\+ios/Flurry.\+h\end{DoxyCompactItemize}

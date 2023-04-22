@@ -1,0 +1,557 @@
+\hypertarget{structsqlite3__api__routines}{}\section{sqlite3\+\_\+api\+\_\+routines Struct Reference}
+\label{structsqlite3__api__routines}\index{sqlite3\+\_\+api\+\_\+routines@{sqlite3\+\_\+api\+\_\+routines}}
+
+
+Collaboration diagram for sqlite3\+\_\+api\+\_\+routines\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structsqlite3__api__routines__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a16fafb5f2460657f528338aee5f65d25}\label{structsqlite3__api__routines_a16fafb5f2460657f528338aee5f65d25}} 
+void $\ast$($\ast$ {\bfseries aggregate\+\_\+context} )(sqlite3\+\_\+context $\ast$, int n\+Bytes)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8373f7a5dd2d6f1c86bbf024b1796156}\label{structsqlite3__api__routines_a8373f7a5dd2d6f1c86bbf024b1796156}} 
+int($\ast$ {\bfseries aggregate\+\_\+count} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afeb41d70ab5a221fec488560934c825b}\label{structsqlite3__api__routines_afeb41d70ab5a221fec488560934c825b}} 
+int($\ast$ {\bfseries bind\+\_\+blob} )(sqlite3\+\_\+stmt $\ast$, int, const void $\ast$, int n, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aca43a229ce28397ba8c18a4d6e03e40c}\label{structsqlite3__api__routines_aca43a229ce28397ba8c18a4d6e03e40c}} 
+int($\ast$ {\bfseries bind\+\_\+double} )(sqlite3\+\_\+stmt $\ast$, int, double)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6fef49e6c9c1fa573c55cc6668a8448f}\label{structsqlite3__api__routines_a6fef49e6c9c1fa573c55cc6668a8448f}} 
+int($\ast$ {\bfseries bind\+\_\+int} )(sqlite3\+\_\+stmt $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a489304cada65abca390da9b751da8800}\label{structsqlite3__api__routines_a489304cada65abca390da9b751da8800}} 
+int($\ast$ {\bfseries bind\+\_\+int64} )(sqlite3\+\_\+stmt $\ast$, int, sqlite\+\_\+int64)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a74d16d0bb57db37d654e95fb7e72c93c}\label{structsqlite3__api__routines_a74d16d0bb57db37d654e95fb7e72c93c}} 
+int($\ast$ {\bfseries bind\+\_\+null} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab27285b7fb132f697d5ef22f21469dd6}\label{structsqlite3__api__routines_ab27285b7fb132f697d5ef22f21469dd6}} 
+int($\ast$ {\bfseries bind\+\_\+parameter\+\_\+count} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1985681b1e13047a8aae17676debb39d}\label{structsqlite3__api__routines_a1985681b1e13047a8aae17676debb39d}} 
+int($\ast$ {\bfseries bind\+\_\+parameter\+\_\+index} )(sqlite3\+\_\+stmt $\ast$, const char $\ast$z\+Name)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aff41be2d08dbacf60407b53567d6bead}\label{structsqlite3__api__routines_aff41be2d08dbacf60407b53567d6bead}} 
+const char $\ast$($\ast$ {\bfseries bind\+\_\+parameter\+\_\+name} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4e64c1e01f7317ce0924683bf26b165a}\label{structsqlite3__api__routines_a4e64c1e01f7317ce0924683bf26b165a}} 
+int($\ast$ {\bfseries bind\+\_\+text} )(sqlite3\+\_\+stmt $\ast$, int, const char $\ast$, int n, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4613c5fa0a1fac009914ddd0f4415cfd}\label{structsqlite3__api__routines_a4613c5fa0a1fac009914ddd0f4415cfd}} 
+int($\ast$ {\bfseries bind\+\_\+text16} )(sqlite3\+\_\+stmt $\ast$, int, const void $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aca47715615cc037cd2f850e8c87cd68d}\label{structsqlite3__api__routines_aca47715615cc037cd2f850e8c87cd68d}} 
+int($\ast$ {\bfseries bind\+\_\+value} )(sqlite3\+\_\+stmt $\ast$, int, const sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4dd578712242bb36acf8568f1c0da278}\label{structsqlite3__api__routines_a4dd578712242bb36acf8568f1c0da278}} 
+int($\ast$ {\bfseries busy\+\_\+handler} )(sqlite3 $\ast$, int($\ast$)(void $\ast$, int), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a403a82d983e3a60444761e4f78d6269c}\label{structsqlite3__api__routines_a403a82d983e3a60444761e4f78d6269c}} 
+int($\ast$ {\bfseries busy\+\_\+timeout} )(sqlite3 $\ast$, int ms)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1379bef0cb6e5e352dc26a34e2d02477}\label{structsqlite3__api__routines_a1379bef0cb6e5e352dc26a34e2d02477}} 
+int($\ast$ {\bfseries changes} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a26f93f921a5f6709be46902616ca8bcf}\label{structsqlite3__api__routines_a26f93f921a5f6709be46902616ca8bcf}} 
+int($\ast$ {\bfseries close} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa26fb10907a304b5afd943061dd08ab7}\label{structsqlite3__api__routines_aa26fb10907a304b5afd943061dd08ab7}} 
+int($\ast$ {\bfseries collation\+\_\+needed} )(sqlite3 $\ast$, void $\ast$, void($\ast$)(void $\ast$, sqlite3 $\ast$, int e\+Text\+Rep, const char $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a35eb5a4b4df8b310e5e9ffbaa735d38f}\label{structsqlite3__api__routines_a35eb5a4b4df8b310e5e9ffbaa735d38f}} 
+int($\ast$ {\bfseries collation\+\_\+needed16} )(sqlite3 $\ast$, void $\ast$, void($\ast$)(void $\ast$, sqlite3 $\ast$, int e\+Text\+Rep, const void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a66f2cefdf5bef54891cbef548f91c781}\label{structsqlite3__api__routines_a66f2cefdf5bef54891cbef548f91c781}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+blob} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a79150244afb5f778840bc9df72d55342}\label{structsqlite3__api__routines_a79150244afb5f778840bc9df72d55342}} 
+int($\ast$ {\bfseries column\+\_\+bytes} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac1daf0a08de4a33c8db27a29f13a26ad}\label{structsqlite3__api__routines_ac1daf0a08de4a33c8db27a29f13a26ad}} 
+int($\ast$ {\bfseries column\+\_\+bytes16} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_af750a4727dc59edb4ad2933e28bfa358}\label{structsqlite3__api__routines_af750a4727dc59edb4ad2933e28bfa358}} 
+int($\ast$ {\bfseries column\+\_\+count} )(sqlite3\+\_\+stmt $\ast$p\+Stmt)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a7b8e1de81b22244eab04e90ebed49bf5}\label{structsqlite3__api__routines_a7b8e1de81b22244eab04e90ebed49bf5}} 
+const char $\ast$($\ast$ {\bfseries column\+\_\+database\+\_\+name} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_af8e642aae1dd0f81828eaa7759791fe9}\label{structsqlite3__api__routines_af8e642aae1dd0f81828eaa7759791fe9}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+database\+\_\+name16} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aad9e3c9907f96de1d4db36839e98ec01}\label{structsqlite3__api__routines_aad9e3c9907f96de1d4db36839e98ec01}} 
+const char $\ast$($\ast$ {\bfseries column\+\_\+decltype} )(sqlite3\+\_\+stmt $\ast$, int i)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa0c2e3c8ba3face8a9ca7825fa2abac1}\label{structsqlite3__api__routines_aa0c2e3c8ba3face8a9ca7825fa2abac1}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+decltype16} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afd21003df28cb46354c00599b90e6de5}\label{structsqlite3__api__routines_afd21003df28cb46354c00599b90e6de5}} 
+double($\ast$ {\bfseries column\+\_\+double} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6211d95cf114f26cb48eed02d3b5eb70}\label{structsqlite3__api__routines_a6211d95cf114f26cb48eed02d3b5eb70}} 
+int($\ast$ {\bfseries column\+\_\+int} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a523a8d125fe83c9ea45eb4057a4d2458}\label{structsqlite3__api__routines_a523a8d125fe83c9ea45eb4057a4d2458}} 
+sqlite\+\_\+int64($\ast$ {\bfseries column\+\_\+int64} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab01499e4ca8ec6db92f34f8274041ae5}\label{structsqlite3__api__routines_ab01499e4ca8ec6db92f34f8274041ae5}} 
+const char $\ast$($\ast$ {\bfseries column\+\_\+name} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4ca83aec1d4cfe474f1afa0bcdde0e20}\label{structsqlite3__api__routines_a4ca83aec1d4cfe474f1afa0bcdde0e20}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+name16} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a18cb726aaf966e6d4a6954cb3c716991}\label{structsqlite3__api__routines_a18cb726aaf966e6d4a6954cb3c716991}} 
+const char $\ast$($\ast$ {\bfseries column\+\_\+origin\+\_\+name} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae5022cdbd16222eaf08d5fdba9292142}\label{structsqlite3__api__routines_ae5022cdbd16222eaf08d5fdba9292142}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+origin\+\_\+name16} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a66cc9e4b3cb918a699f3386df76ed1bc}\label{structsqlite3__api__routines_a66cc9e4b3cb918a699f3386df76ed1bc}} 
+const char $\ast$($\ast$ {\bfseries column\+\_\+table\+\_\+name} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9b19d2cacecce0a09c5bdcffc6e44197}\label{structsqlite3__api__routines_a9b19d2cacecce0a09c5bdcffc6e44197}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+table\+\_\+name16} )(sqlite3\+\_\+stmt $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0857bdde632d86319b569c64668bed69}\label{structsqlite3__api__routines_a0857bdde632d86319b569c64668bed69}} 
+const unsigned char $\ast$($\ast$ {\bfseries column\+\_\+text} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a893fc55c1762d1bb927d4821a1340dd9}\label{structsqlite3__api__routines_a893fc55c1762d1bb927d4821a1340dd9}} 
+const void $\ast$($\ast$ {\bfseries column\+\_\+text16} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1bfa18703e814caf9b940bd89247fde5}\label{structsqlite3__api__routines_a1bfa18703e814caf9b940bd89247fde5}} 
+int($\ast$ {\bfseries column\+\_\+type} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a051de47b5f1331319af6b6c9062e8b32}\label{structsqlite3__api__routines_a051de47b5f1331319af6b6c9062e8b32}} 
+sqlite3\+\_\+value $\ast$($\ast$ {\bfseries column\+\_\+value} )(sqlite3\+\_\+stmt $\ast$, int i\+Col)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a7a0ba7cc6db07bf2d0db7e0d5234095f}\label{structsqlite3__api__routines_a7a0ba7cc6db07bf2d0db7e0d5234095f}} 
+void $\ast$($\ast$ {\bfseries commit\+\_\+hook} )(sqlite3 $\ast$, int($\ast$)(void $\ast$), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4bd1a90b2a40c58ecc1c2ceb67be48f5}\label{structsqlite3__api__routines_a4bd1a90b2a40c58ecc1c2ceb67be48f5}} 
+int($\ast$ {\bfseries complete} )(const char $\ast$sql)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae3e27f61b6c43cf549360f1bb8b3b591}\label{structsqlite3__api__routines_ae3e27f61b6c43cf549360f1bb8b3b591}} 
+int($\ast$ {\bfseries complete16} )(const void $\ast$sql)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aed840be5b7cc7add4f21ba88f1981f58}\label{structsqlite3__api__routines_aed840be5b7cc7add4f21ba88f1981f58}} 
+int($\ast$ {\bfseries create\+\_\+collation} )(sqlite3 $\ast$, const char $\ast$, int, void $\ast$, int($\ast$)(void $\ast$, int, const void $\ast$, int, const void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a2f05772713bb942bff670352a96ee1e6}\label{structsqlite3__api__routines_a2f05772713bb942bff670352a96ee1e6}} 
+int($\ast$ {\bfseries create\+\_\+collation16} )(sqlite3 $\ast$, const void $\ast$, int, void $\ast$, int($\ast$)(void $\ast$, int, const void $\ast$, int, const void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aaf30781efad4fb70111f391e6fe20a9c}\label{structsqlite3__api__routines_aaf30781efad4fb70111f391e6fe20a9c}} 
+int($\ast$ {\bfseries create\+\_\+function} )(sqlite3 $\ast$, const char $\ast$, int, int, void $\ast$, void($\ast$x\+Func)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Step)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Final)(sqlite3\+\_\+context $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0c3f05b118b89293ff5d35774504b44d}\label{structsqlite3__api__routines_a0c3f05b118b89293ff5d35774504b44d}} 
+int($\ast$ {\bfseries create\+\_\+function16} )(sqlite3 $\ast$, const void $\ast$, int, int, void $\ast$, void($\ast$x\+Func)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Step)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Final)(sqlite3\+\_\+context $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a25834b37191417562ecd2ee67b85617b}\label{structsqlite3__api__routines_a25834b37191417562ecd2ee67b85617b}} 
+int($\ast$ {\bfseries create\+\_\+module} )(sqlite3 $\ast$, const char $\ast$, const \hyperlink{structsqlite3__module}{sqlite3\+\_\+module} $\ast$, void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aea0a7b7483770202ef9eae88b4eb70cd}\label{structsqlite3__api__routines_aea0a7b7483770202ef9eae88b4eb70cd}} 
+int($\ast$ {\bfseries data\+\_\+count} )(sqlite3\+\_\+stmt $\ast$p\+Stmt)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab0133d05f54efba67f6172538ca25ae0}\label{structsqlite3__api__routines_ab0133d05f54efba67f6172538ca25ae0}} 
+sqlite3 $\ast$($\ast$ {\bfseries db\+\_\+handle} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6b6035b36ea9d0800181e69e20059b32}\label{structsqlite3__api__routines_a6b6035b36ea9d0800181e69e20059b32}} 
+int($\ast$ {\bfseries declare\+\_\+vtab} )(sqlite3 $\ast$, const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a3e6b7bbdd68cde43ef4afffd73e957ea}\label{structsqlite3__api__routines_a3e6b7bbdd68cde43ef4afffd73e957ea}} 
+int($\ast$ {\bfseries enable\+\_\+shared\+\_\+cache} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0f1cf42108e6d872d03b78eaf27dfc45}\label{structsqlite3__api__routines_a0f1cf42108e6d872d03b78eaf27dfc45}} 
+int($\ast$ {\bfseries errcode} )(sqlite3 $\ast$db)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a953d37f24ded9d93449f1d0eb64b8894}\label{structsqlite3__api__routines_a953d37f24ded9d93449f1d0eb64b8894}} 
+const char $\ast$($\ast$ {\bfseries errmsg} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a06f862750a8e1e1b21a942cc483c4f71}\label{structsqlite3__api__routines_a06f862750a8e1e1b21a942cc483c4f71}} 
+const void $\ast$($\ast$ {\bfseries errmsg16} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a16e1fe4f9dccfe8da742d7087822d379}\label{structsqlite3__api__routines_a16e1fe4f9dccfe8da742d7087822d379}} 
+int($\ast$ {\bfseries exec} )(sqlite3 $\ast$, const char $\ast$, sqlite3\+\_\+callback, void $\ast$, char $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a574080049ce24e639e7487bcfc74e06a}\label{structsqlite3__api__routines_a574080049ce24e639e7487bcfc74e06a}} 
+int($\ast$ {\bfseries expired} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ad7cee4127bfd0583ccfea40943858de2}\label{structsqlite3__api__routines_ad7cee4127bfd0583ccfea40943858de2}} 
+int($\ast$ {\bfseries finalize} )(sqlite3\+\_\+stmt $\ast$p\+Stmt)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a5778783c18a96cff28a516168db77ae9}\label{structsqlite3__api__routines_a5778783c18a96cff28a516168db77ae9}} 
+void($\ast$ {\bfseries free} )(void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a16d39862f10f54f34e2d52b4da51fdac}\label{structsqlite3__api__routines_a16d39862f10f54f34e2d52b4da51fdac}} 
+void($\ast$ {\bfseries free\+\_\+table} )(char $\ast$$\ast$result)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8724984acc7ccfefaa17f04a739fc396}\label{structsqlite3__api__routines_a8724984acc7ccfefaa17f04a739fc396}} 
+int($\ast$ {\bfseries get\+\_\+autocommit} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1eb728229d0ff6e3bc3c5f25a4058060}\label{structsqlite3__api__routines_a1eb728229d0ff6e3bc3c5f25a4058060}} 
+void $\ast$($\ast$ {\bfseries get\+\_\+auxdata} )(sqlite3\+\_\+context $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a49be6136a17441b04e3feec330d9dd52}\label{structsqlite3__api__routines_a49be6136a17441b04e3feec330d9dd52}} 
+int($\ast$ {\bfseries get\+\_\+table} )(sqlite3 $\ast$, const char $\ast$, char $\ast$$\ast$$\ast$, int $\ast$, int $\ast$, char $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9b90b5ea9b2fae5a60b9ddc86c72e1a8}\label{structsqlite3__api__routines_a9b90b5ea9b2fae5a60b9ddc86c72e1a8}} 
+int($\ast$ {\bfseries global\+\_\+recover} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a3cfec591003c4e8b1f1bdb82a80b8e19}\label{structsqlite3__api__routines_a3cfec591003c4e8b1f1bdb82a80b8e19}} 
+void($\ast$ {\bfseries interruptx} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aeeda8d84c8060c99e24d97ae60bf6046}\label{structsqlite3__api__routines_aeeda8d84c8060c99e24d97ae60bf6046}} 
+sqlite\+\_\+int64($\ast$ {\bfseries last\+\_\+insert\+\_\+rowid} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a126a447b5724f50142603d94d9470336}\label{structsqlite3__api__routines_a126a447b5724f50142603d94d9470336}} 
+const char $\ast$($\ast$ {\bfseries libversion} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a70d0b04a52493c15f26815990a50afa7}\label{structsqlite3__api__routines_a70d0b04a52493c15f26815990a50afa7}} 
+int($\ast$ {\bfseries libversion\+\_\+number} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a37193f93e0626dae6e302d0bd47de4cf}\label{structsqlite3__api__routines_a37193f93e0626dae6e302d0bd47de4cf}} 
+void $\ast$($\ast$ {\bfseries malloc} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a82cc01d97e2552bad02554ed50e4d2b8}\label{structsqlite3__api__routines_a82cc01d97e2552bad02554ed50e4d2b8}} 
+char $\ast$($\ast$ {\bfseries mprintf} )(const char $\ast$,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1d0126d7384e1e4e0975d3084007af89}\label{structsqlite3__api__routines_a1d0126d7384e1e4e0975d3084007af89}} 
+int($\ast$ {\bfseries open} )(const char $\ast$, sqlite3 $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8394f1e962c0c3172ef7a0b6243303ca}\label{structsqlite3__api__routines_a8394f1e962c0c3172ef7a0b6243303ca}} 
+int($\ast$ {\bfseries open16} )(const void $\ast$, sqlite3 $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6d5170ffef9564b7f9b157a14df4fd4d}\label{structsqlite3__api__routines_a6d5170ffef9564b7f9b157a14df4fd4d}} 
+int($\ast$ {\bfseries prepare} )(sqlite3 $\ast$, const char $\ast$, int, sqlite3\+\_\+stmt $\ast$$\ast$, const char $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a3877cfcfebeb05e357317ab50a47e52e}\label{structsqlite3__api__routines_a3877cfcfebeb05e357317ab50a47e52e}} 
+int($\ast$ {\bfseries prepare16} )(sqlite3 $\ast$, const void $\ast$, int, sqlite3\+\_\+stmt $\ast$$\ast$, const void $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a2f4fef66c120fa8480e60e60099052e3}\label{structsqlite3__api__routines_a2f4fef66c120fa8480e60e60099052e3}} 
+void $\ast$($\ast$ {\bfseries profile} )(sqlite3 $\ast$, void($\ast$)(void $\ast$, const char $\ast$, sqlite\+\_\+uint64), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a2888055619addf1d754e25d159d85718}\label{structsqlite3__api__routines_a2888055619addf1d754e25d159d85718}} 
+void($\ast$ {\bfseries progress\+\_\+handler} )(sqlite3 $\ast$, int, int($\ast$)(void $\ast$), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afd935ceb7b7519dfc04ad9e05254a2c9}\label{structsqlite3__api__routines_afd935ceb7b7519dfc04ad9e05254a2c9}} 
+void $\ast$($\ast$ {\bfseries realloc} )(void $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0ac99b0282f1843dbd0170c22be99957}\label{structsqlite3__api__routines_a0ac99b0282f1843dbd0170c22be99957}} 
+int($\ast$ {\bfseries reset} )(sqlite3\+\_\+stmt $\ast$p\+Stmt)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aab44964ab19917a95c1513890c5cdca2}\label{structsqlite3__api__routines_aab44964ab19917a95c1513890c5cdca2}} 
+void($\ast$ {\bfseries result\+\_\+blob} )(sqlite3\+\_\+context $\ast$, const void $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a2a30d668aa648384ab1058cf77924c33}\label{structsqlite3__api__routines_a2a30d668aa648384ab1058cf77924c33}} 
+void($\ast$ {\bfseries result\+\_\+double} )(sqlite3\+\_\+context $\ast$, double)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa056e7b903ab75742336977a511ef14c}\label{structsqlite3__api__routines_aa056e7b903ab75742336977a511ef14c}} 
+void($\ast$ {\bfseries result\+\_\+error} )(sqlite3\+\_\+context $\ast$, const char $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a70665eda481c4fcafdfd1462700be04e}\label{structsqlite3__api__routines_a70665eda481c4fcafdfd1462700be04e}} 
+void($\ast$ {\bfseries result\+\_\+error16} )(sqlite3\+\_\+context $\ast$, const void $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aca3c3c95e95664898bf88da2e509e5af}\label{structsqlite3__api__routines_aca3c3c95e95664898bf88da2e509e5af}} 
+void($\ast$ {\bfseries result\+\_\+int} )(sqlite3\+\_\+context $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a92556e67d3485c59031e3d3acf401501}\label{structsqlite3__api__routines_a92556e67d3485c59031e3d3acf401501}} 
+void($\ast$ {\bfseries result\+\_\+int64} )(sqlite3\+\_\+context $\ast$, sqlite\+\_\+int64)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a00666e8dbc927015e5885d8397fe87b5}\label{structsqlite3__api__routines_a00666e8dbc927015e5885d8397fe87b5}} 
+void($\ast$ {\bfseries result\+\_\+null} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aab7d23eb300244a843b8b88f07253b17}\label{structsqlite3__api__routines_aab7d23eb300244a843b8b88f07253b17}} 
+void($\ast$ {\bfseries result\+\_\+text} )(sqlite3\+\_\+context $\ast$, const char $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a65aabe03e23304ceb885829bf2393aa5}\label{structsqlite3__api__routines_a65aabe03e23304ceb885829bf2393aa5}} 
+void($\ast$ {\bfseries result\+\_\+text16} )(sqlite3\+\_\+context $\ast$, const void $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a328415dd9961d9e0d6b15a76fe134b9d}\label{structsqlite3__api__routines_a328415dd9961d9e0d6b15a76fe134b9d}} 
+void($\ast$ {\bfseries result\+\_\+text16be} )(sqlite3\+\_\+context $\ast$, const void $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac8f4c207ad255db5b0f8e0974fdcba16}\label{structsqlite3__api__routines_ac8f4c207ad255db5b0f8e0974fdcba16}} 
+void($\ast$ {\bfseries result\+\_\+text16le} )(sqlite3\+\_\+context $\ast$, const void $\ast$, int, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae1ff210b0883098bb16c807e0dae6a80}\label{structsqlite3__api__routines_ae1ff210b0883098bb16c807e0dae6a80}} 
+void($\ast$ {\bfseries result\+\_\+value} )(sqlite3\+\_\+context $\ast$, sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aad7da0801b4d34761606cbcd827069c9}\label{structsqlite3__api__routines_aad7da0801b4d34761606cbcd827069c9}} 
+void $\ast$($\ast$ {\bfseries rollback\+\_\+hook} )(sqlite3 $\ast$, void($\ast$)(void $\ast$), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ad271da3c9d522555a4be69114f57de13}\label{structsqlite3__api__routines_ad271da3c9d522555a4be69114f57de13}} 
+int($\ast$ {\bfseries set\+\_\+authorizer} )(sqlite3 $\ast$, int($\ast$)(void $\ast$, int, const char $\ast$, const char $\ast$, const char $\ast$, const char $\ast$), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a71c6f4befd8497adcf3bd78b720d4c6d}\label{structsqlite3__api__routines_a71c6f4befd8497adcf3bd78b720d4c6d}} 
+void($\ast$ {\bfseries set\+\_\+auxdata} )(sqlite3\+\_\+context $\ast$, int, void $\ast$, void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a62361d39ccea7e307358bbf1c10a10ec}\label{structsqlite3__api__routines_a62361d39ccea7e307358bbf1c10a10ec}} 
+char $\ast$($\ast$ {\bfseries snprintf} )(int, char $\ast$, const char $\ast$,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a40f899787bbfd866efa43f5337addbdc}\label{structsqlite3__api__routines_a40f899787bbfd866efa43f5337addbdc}} 
+int($\ast$ {\bfseries step} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8fdf517f6c889edf0e0206fd8846eba5}\label{structsqlite3__api__routines_a8fdf517f6c889edf0e0206fd8846eba5}} 
+int($\ast$ {\bfseries table\+\_\+column\+\_\+metadata} )(sqlite3 $\ast$, const char $\ast$, const char $\ast$, const char $\ast$, char const $\ast$$\ast$, char const $\ast$$\ast$, int $\ast$, int $\ast$, int $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aafef606568e3b1706477c795e343da66}\label{structsqlite3__api__routines_aafef606568e3b1706477c795e343da66}} 
+void($\ast$ {\bfseries thread\+\_\+cleanup} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a5bf72c6b416c8a29ed60940947ce5737}\label{structsqlite3__api__routines_a5bf72c6b416c8a29ed60940947ce5737}} 
+int($\ast$ {\bfseries total\+\_\+changes} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a66cca536b125f02ca60dc5dd156bf44a}\label{structsqlite3__api__routines_a66cca536b125f02ca60dc5dd156bf44a}} 
+void $\ast$($\ast$ {\bfseries trace} )(sqlite3 $\ast$, void($\ast$x\+Trace)(void $\ast$, const char $\ast$), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a76b183a79f69910802d39aa9898cef4e}\label{structsqlite3__api__routines_a76b183a79f69910802d39aa9898cef4e}} 
+int($\ast$ {\bfseries transfer\+\_\+bindings} )(sqlite3\+\_\+stmt $\ast$, sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abc3892a79dac4ec7f1e12d0bc6554695}\label{structsqlite3__api__routines_abc3892a79dac4ec7f1e12d0bc6554695}} 
+void $\ast$($\ast$ {\bfseries update\+\_\+hook} )(sqlite3 $\ast$, void($\ast$)(void $\ast$, int, char const $\ast$, char const $\ast$, sqlite\+\_\+int64), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8efc9fccb8b3e3c0daa87bbeeff2a1e1}\label{structsqlite3__api__routines_a8efc9fccb8b3e3c0daa87bbeeff2a1e1}} 
+void $\ast$($\ast$ {\bfseries user\+\_\+data} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac5d0d316a65f3b6af5f4fea9cfaa9265}\label{structsqlite3__api__routines_ac5d0d316a65f3b6af5f4fea9cfaa9265}} 
+const void $\ast$($\ast$ {\bfseries value\+\_\+blob} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a36456594eab68bf7907db9582a53ea0a}\label{structsqlite3__api__routines_a36456594eab68bf7907db9582a53ea0a}} 
+int($\ast$ {\bfseries value\+\_\+bytes} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a5bbfaab79c286e78fe420d96d65d7167}\label{structsqlite3__api__routines_a5bbfaab79c286e78fe420d96d65d7167}} 
+int($\ast$ {\bfseries value\+\_\+bytes16} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa023ab267b40e50bec5ccacd32486eb8}\label{structsqlite3__api__routines_aa023ab267b40e50bec5ccacd32486eb8}} 
+double($\ast$ {\bfseries value\+\_\+double} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a31b7443c4d35480567266930a3d4e64f}\label{structsqlite3__api__routines_a31b7443c4d35480567266930a3d4e64f}} 
+int($\ast$ {\bfseries value\+\_\+int} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae2eb08ff1ad717cf6737d657fd8a11b5}\label{structsqlite3__api__routines_ae2eb08ff1ad717cf6737d657fd8a11b5}} 
+sqlite\+\_\+int64($\ast$ {\bfseries value\+\_\+int64} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9032977e99c01fc28d3c3f054192f7cd}\label{structsqlite3__api__routines_a9032977e99c01fc28d3c3f054192f7cd}} 
+int($\ast$ {\bfseries value\+\_\+numeric\+\_\+type} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ad2c45a84a69d75d4825cf9366745d851}\label{structsqlite3__api__routines_ad2c45a84a69d75d4825cf9366745d851}} 
+const unsigned char $\ast$($\ast$ {\bfseries value\+\_\+text} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afa0733fdea9bf31eb0262640f05e197e}\label{structsqlite3__api__routines_afa0733fdea9bf31eb0262640f05e197e}} 
+const void $\ast$($\ast$ {\bfseries value\+\_\+text16} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aff98dceb24b5226c1b81b04506db7f3a}\label{structsqlite3__api__routines_aff98dceb24b5226c1b81b04506db7f3a}} 
+const void $\ast$($\ast$ {\bfseries value\+\_\+text16be} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a80c9dbe09291dea5e2aacc158b8d88f1}\label{structsqlite3__api__routines_a80c9dbe09291dea5e2aacc158b8d88f1}} 
+const void $\ast$($\ast$ {\bfseries value\+\_\+text16le} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a682549a9b9c8d95f9dcee8428cd25377}\label{structsqlite3__api__routines_a682549a9b9c8d95f9dcee8428cd25377}} 
+int($\ast$ {\bfseries value\+\_\+type} )(sqlite3\+\_\+value $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_adc97011a4bf13413e1a9a0e1ab5e1d97}\label{structsqlite3__api__routines_adc97011a4bf13413e1a9a0e1ab5e1d97}} 
+char $\ast$($\ast$ {\bfseries vmprintf} )(const char $\ast$, va\+\_\+list)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aae9b181f076ae18804590924aa791101}\label{structsqlite3__api__routines_aae9b181f076ae18804590924aa791101}} 
+int($\ast$ {\bfseries overload\+\_\+function} )(sqlite3 $\ast$, const char $\ast$z\+Func\+Name, int n\+Arg)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_adf1956e4240b4573ec5d1c0e079a0dc2}\label{structsqlite3__api__routines_adf1956e4240b4573ec5d1c0e079a0dc2}} 
+int($\ast$ {\bfseries prepare\+\_\+v2} )(sqlite3 $\ast$, const char $\ast$, int, sqlite3\+\_\+stmt $\ast$$\ast$, const char $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa2ac35f69a60c329e4129dd67f7c5662}\label{structsqlite3__api__routines_aa2ac35f69a60c329e4129dd67f7c5662}} 
+int($\ast$ {\bfseries prepare16\+\_\+v2} )(sqlite3 $\ast$, const void $\ast$, int, sqlite3\+\_\+stmt $\ast$$\ast$, const void $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6154fab4f9101c9ababb806dac91d01f}\label{structsqlite3__api__routines_a6154fab4f9101c9ababb806dac91d01f}} 
+int($\ast$ {\bfseries clear\+\_\+bindings} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ad95940b07bd59f087160cf3a3428c8fa}\label{structsqlite3__api__routines_ad95940b07bd59f087160cf3a3428c8fa}} 
+int($\ast$ {\bfseries create\+\_\+module\+\_\+v2} )(sqlite3 $\ast$, const char $\ast$, const \hyperlink{structsqlite3__module}{sqlite3\+\_\+module} $\ast$, void $\ast$, void($\ast$x\+Destroy)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1a1257f2722e96c06e8db5aa22aebddb}\label{structsqlite3__api__routines_a1a1257f2722e96c06e8db5aa22aebddb}} 
+int($\ast$ {\bfseries bind\+\_\+zeroblob} )(sqlite3\+\_\+stmt $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a435b470368220faf25063c1a673952ea}\label{structsqlite3__api__routines_a435b470368220faf25063c1a673952ea}} 
+int($\ast$ {\bfseries blob\+\_\+bytes} )(sqlite3\+\_\+blob $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a7b7749cb4e412443b7903205c0ebacf2}\label{structsqlite3__api__routines_a7b7749cb4e412443b7903205c0ebacf2}} 
+int($\ast$ {\bfseries blob\+\_\+close} )(sqlite3\+\_\+blob $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abec3f9100c800aaac49c7eb881f24d4c}\label{structsqlite3__api__routines_abec3f9100c800aaac49c7eb881f24d4c}} 
+int($\ast$ {\bfseries blob\+\_\+open} )(sqlite3 $\ast$, const char $\ast$, const char $\ast$, const char $\ast$, sqlite3\+\_\+int64, int, sqlite3\+\_\+blob $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a916f53dfaedab13e9fcf33c80b10c341}\label{structsqlite3__api__routines_a916f53dfaedab13e9fcf33c80b10c341}} 
+int($\ast$ {\bfseries blob\+\_\+read} )(sqlite3\+\_\+blob $\ast$, void $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a49a8e111c2b4f033b93820e0199a653e}\label{structsqlite3__api__routines_a49a8e111c2b4f033b93820e0199a653e}} 
+int($\ast$ {\bfseries blob\+\_\+write} )(sqlite3\+\_\+blob $\ast$, const void $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afeaa51f6fd046328ba845ebcacdeb335}\label{structsqlite3__api__routines_afeaa51f6fd046328ba845ebcacdeb335}} 
+int($\ast$ {\bfseries create\+\_\+collation\+\_\+v2} )(sqlite3 $\ast$, const char $\ast$, int, void $\ast$, int($\ast$)(void $\ast$, int, const void $\ast$, int, const void $\ast$), void($\ast$)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_afe67e4e8a6dd2e44cc24e99e0555b807}\label{structsqlite3__api__routines_afe67e4e8a6dd2e44cc24e99e0555b807}} 
+int($\ast$ {\bfseries file\+\_\+control} )(sqlite3 $\ast$, const char $\ast$, int, void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a56ce6c9b67e916c6c1aeda3aafbaa5da}\label{structsqlite3__api__routines_a56ce6c9b67e916c6c1aeda3aafbaa5da}} 
+sqlite3\+\_\+int64($\ast$ {\bfseries memory\+\_\+highwater} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6e43dd2050d1ee2f2a178b698bed2aeb}\label{structsqlite3__api__routines_a6e43dd2050d1ee2f2a178b698bed2aeb}} 
+sqlite3\+\_\+int64($\ast$ {\bfseries memory\+\_\+used} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa488c7c4df22d6a412635a7b15ace4a4}\label{structsqlite3__api__routines_aa488c7c4df22d6a412635a7b15ace4a4}} 
+sqlite3\+\_\+mutex $\ast$($\ast$ {\bfseries mutex\+\_\+alloc} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8da853b8ddd55bdb71e3cb82bf6fa77a}\label{structsqlite3__api__routines_a8da853b8ddd55bdb71e3cb82bf6fa77a}} 
+void($\ast$ {\bfseries mutex\+\_\+enter} )(sqlite3\+\_\+mutex $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a055c0e268a30b76af04f7cfac6ad2b6d}\label{structsqlite3__api__routines_a055c0e268a30b76af04f7cfac6ad2b6d}} 
+void($\ast$ {\bfseries mutex\+\_\+free} )(sqlite3\+\_\+mutex $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae599184431cf669551ae88f4ca7373c0}\label{structsqlite3__api__routines_ae599184431cf669551ae88f4ca7373c0}} 
+void($\ast$ {\bfseries mutex\+\_\+leave} )(sqlite3\+\_\+mutex $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a04b95233a9977a34ff0f2d9fab44e507}\label{structsqlite3__api__routines_a04b95233a9977a34ff0f2d9fab44e507}} 
+int($\ast$ {\bfseries mutex\+\_\+try} )(sqlite3\+\_\+mutex $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac6da992cdbb490e1d1e856a4864851bf}\label{structsqlite3__api__routines_ac6da992cdbb490e1d1e856a4864851bf}} 
+int($\ast$ {\bfseries open\+\_\+v2} )(const char $\ast$, sqlite3 $\ast$$\ast$, int, const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a2dbb78dde331812425108d9eaeba7bf1}\label{structsqlite3__api__routines_a2dbb78dde331812425108d9eaeba7bf1}} 
+int($\ast$ {\bfseries release\+\_\+memory} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abaccd85342d77c068d05de2b9cd9c7e0}\label{structsqlite3__api__routines_abaccd85342d77c068d05de2b9cd9c7e0}} 
+void($\ast$ {\bfseries result\+\_\+error\+\_\+nomem} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_acc888c07a82710c1f0c791ba3058c44c}\label{structsqlite3__api__routines_acc888c07a82710c1f0c791ba3058c44c}} 
+void($\ast$ {\bfseries result\+\_\+error\+\_\+toobig} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae7d2a4258889ab0de44cfce3a9f4b02b}\label{structsqlite3__api__routines_ae7d2a4258889ab0de44cfce3a9f4b02b}} 
+int($\ast$ {\bfseries sleep} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a217004dbd021cb40d5ad24f963c68451}\label{structsqlite3__api__routines_a217004dbd021cb40d5ad24f963c68451}} 
+void($\ast$ {\bfseries soft\+\_\+heap\+\_\+limit} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_af5a58d375949a32ad547ee170a3e8b6d}\label{structsqlite3__api__routines_af5a58d375949a32ad547ee170a3e8b6d}} 
+\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$($\ast$ {\bfseries vfs\+\_\+find} )(const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0bc5bcc67851f8ceab8114b89f59328d}\label{structsqlite3__api__routines_a0bc5bcc67851f8ceab8114b89f59328d}} 
+int($\ast$ {\bfseries vfs\+\_\+register} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ad501d3d8cf518597e863660dfe6922e8}\label{structsqlite3__api__routines_ad501d3d8cf518597e863660dfe6922e8}} 
+int($\ast$ {\bfseries vfs\+\_\+unregister} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab3607e01452a88c8bd0251cf732ff796}\label{structsqlite3__api__routines_ab3607e01452a88c8bd0251cf732ff796}} 
+int($\ast$ {\bfseries xthreadsafe} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a5d27abfb3889e2fffdb6bd0b087ce390}\label{structsqlite3__api__routines_a5d27abfb3889e2fffdb6bd0b087ce390}} 
+void($\ast$ {\bfseries result\+\_\+zeroblob} )(sqlite3\+\_\+context $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9c1248e6ec11a77ea298a0d3b9f3bbe6}\label{structsqlite3__api__routines_a9c1248e6ec11a77ea298a0d3b9f3bbe6}} 
+void($\ast$ {\bfseries result\+\_\+error\+\_\+code} )(sqlite3\+\_\+context $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a5b1a547de99292de4aa0b474ffe3462e}\label{structsqlite3__api__routines_a5b1a547de99292de4aa0b474ffe3462e}} 
+int($\ast$ {\bfseries test\+\_\+control} )(int,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a4135547c03dfacc513274bb007386d05}\label{structsqlite3__api__routines_a4135547c03dfacc513274bb007386d05}} 
+void($\ast$ {\bfseries randomness} )(int, void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac60a2df5a7b414a746a64817f51d5df5}\label{structsqlite3__api__routines_ac60a2df5a7b414a746a64817f51d5df5}} 
+sqlite3 $\ast$($\ast$ {\bfseries context\+\_\+db\+\_\+handle} )(sqlite3\+\_\+context $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab1f8f2e2de939f53365bf6b6f439e379}\label{structsqlite3__api__routines_ab1f8f2e2de939f53365bf6b6f439e379}} 
+int($\ast$ {\bfseries extended\+\_\+result\+\_\+codes} )(sqlite3 $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa48e99fcfae600229799f773c3edfef6}\label{structsqlite3__api__routines_aa48e99fcfae600229799f773c3edfef6}} 
+int($\ast$ {\bfseries limit} )(sqlite3 $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abbfb972997adb1d2ba633757c4be0188}\label{structsqlite3__api__routines_abbfb972997adb1d2ba633757c4be0188}} 
+sqlite3\+\_\+stmt $\ast$($\ast$ {\bfseries next\+\_\+stmt} )(sqlite3 $\ast$, sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae49256600a9579f1d41c345757cb8c76}\label{structsqlite3__api__routines_ae49256600a9579f1d41c345757cb8c76}} 
+const char $\ast$($\ast$ {\bfseries sql} )(sqlite3\+\_\+stmt $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a0021bed44509b5085f5187db3aa43eb8}\label{structsqlite3__api__routines_a0021bed44509b5085f5187db3aa43eb8}} 
+int($\ast$ {\bfseries status} )(int, int $\ast$, int $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abb9900ba9f5faed0031817665594eeec}\label{structsqlite3__api__routines_abb9900ba9f5faed0031817665594eeec}} 
+int($\ast$ {\bfseries backup\+\_\+finish} )(sqlite3\+\_\+backup $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a10dc9a4cb44da0b75596eb0d93eeb1ba}\label{structsqlite3__api__routines_a10dc9a4cb44da0b75596eb0d93eeb1ba}} 
+sqlite3\+\_\+backup $\ast$($\ast$ {\bfseries backup\+\_\+init} )(sqlite3 $\ast$, const char $\ast$, sqlite3 $\ast$, const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac796f94cb46e331a880131b5dc67e635}\label{structsqlite3__api__routines_ac796f94cb46e331a880131b5dc67e635}} 
+int($\ast$ {\bfseries backup\+\_\+pagecount} )(sqlite3\+\_\+backup $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae376d7dfa771f1c72272b32e2203c6f1}\label{structsqlite3__api__routines_ae376d7dfa771f1c72272b32e2203c6f1}} 
+int($\ast$ {\bfseries backup\+\_\+remaining} )(sqlite3\+\_\+backup $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a3a8f0bc14589950ee606d5354ff364ed}\label{structsqlite3__api__routines_a3a8f0bc14589950ee606d5354ff364ed}} 
+int($\ast$ {\bfseries backup\+\_\+step} )(sqlite3\+\_\+backup $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a86cf193c1eaf4f6766a3854cb25e2a83}\label{structsqlite3__api__routines_a86cf193c1eaf4f6766a3854cb25e2a83}} 
+const char $\ast$($\ast$ {\bfseries compileoption\+\_\+get} )(int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a788dd672feeff349c417beff9a7eb26c}\label{structsqlite3__api__routines_a788dd672feeff349c417beff9a7eb26c}} 
+int($\ast$ {\bfseries compileoption\+\_\+used} )(const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae2cd022f6c2bb188773ef656d79d26f1}\label{structsqlite3__api__routines_ae2cd022f6c2bb188773ef656d79d26f1}} 
+int($\ast$ {\bfseries create\+\_\+function\+\_\+v2} )(sqlite3 $\ast$, const char $\ast$, int, int, void $\ast$, void($\ast$x\+Func)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Step)(sqlite3\+\_\+context $\ast$, int, sqlite3\+\_\+value $\ast$$\ast$), void($\ast$x\+Final)(sqlite3\+\_\+context $\ast$), void($\ast$x\+Destroy)(void $\ast$))
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a60ceed179513c5ac09b0ed39c725dbf6}\label{structsqlite3__api__routines_a60ceed179513c5ac09b0ed39c725dbf6}} 
+int($\ast$ {\bfseries db\+\_\+config} )(sqlite3 $\ast$, int,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9396b9f7fddc605df220ffd34dea261c}\label{structsqlite3__api__routines_a9396b9f7fddc605df220ffd34dea261c}} 
+sqlite3\+\_\+mutex $\ast$($\ast$ {\bfseries db\+\_\+mutex} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ac3ea73ff30ee0c21446f94a643581280}\label{structsqlite3__api__routines_ac3ea73ff30ee0c21446f94a643581280}} 
+int($\ast$ {\bfseries db\+\_\+status} )(sqlite3 $\ast$, int, int $\ast$, int $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_abc8b842c381e74bd6880f49df71ec395}\label{structsqlite3__api__routines_abc8b842c381e74bd6880f49df71ec395}} 
+int($\ast$ {\bfseries extended\+\_\+errcode} )(sqlite3 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ab7e50803433fe04a73e581b0c293f417}\label{structsqlite3__api__routines_ab7e50803433fe04a73e581b0c293f417}} 
+void($\ast$ {\bfseries log} )(int, const char $\ast$,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a823e82c8ced7470846ff94857b67c1f0}\label{structsqlite3__api__routines_a823e82c8ced7470846ff94857b67c1f0}} 
+sqlite3\+\_\+int64($\ast$ {\bfseries soft\+\_\+heap\+\_\+limit64} )(sqlite3\+\_\+int64)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_acb53479251c2ae94a2262b852b48171e}\label{structsqlite3__api__routines_acb53479251c2ae94a2262b852b48171e}} 
+const char $\ast$($\ast$ {\bfseries sourceid} )(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a965fb4dd8b649c8192bcdb436ea8ee4c}\label{structsqlite3__api__routines_a965fb4dd8b649c8192bcdb436ea8ee4c}} 
+int($\ast$ {\bfseries stmt\+\_\+status} )(sqlite3\+\_\+stmt $\ast$, int, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a1ca0d03d2340d21b5f1d2d6b60651e5c}\label{structsqlite3__api__routines_a1ca0d03d2340d21b5f1d2d6b60651e5c}} 
+int($\ast$ {\bfseries strnicmp} )(const char $\ast$, const char $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aad63fcc63d8102991ba13bcb23d3d42c}\label{structsqlite3__api__routines_aad63fcc63d8102991ba13bcb23d3d42c}} 
+int($\ast$ {\bfseries unlock\+\_\+notify} )(sqlite3 $\ast$, void($\ast$)(void $\ast$$\ast$, int), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a6f9743cc31d029be8a765529bc693552}\label{structsqlite3__api__routines_a6f9743cc31d029be8a765529bc693552}} 
+int($\ast$ {\bfseries wal\+\_\+autocheckpoint} )(sqlite3 $\ast$, int)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a8161479d3298a910a21e9d6dd92e1083}\label{structsqlite3__api__routines_a8161479d3298a910a21e9d6dd92e1083}} 
+int($\ast$ {\bfseries wal\+\_\+checkpoint} )(sqlite3 $\ast$, const char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a967b53588e948815d36d870de8da8c60}\label{structsqlite3__api__routines_a967b53588e948815d36d870de8da8c60}} 
+void $\ast$($\ast$ {\bfseries wal\+\_\+hook} )(sqlite3 $\ast$, int($\ast$)(void $\ast$, sqlite3 $\ast$, const char $\ast$, int), void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_aa908e25dd18c6a891a767eec620484e5}\label{structsqlite3__api__routines_aa908e25dd18c6a891a767eec620484e5}} 
+int($\ast$ {\bfseries blob\+\_\+reopen} )(sqlite3\+\_\+blob $\ast$, sqlite3\+\_\+int64)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_a9670fe7124c3bd00b32354933c15313f}\label{structsqlite3__api__routines_a9670fe7124c3bd00b32354933c15313f}} 
+int($\ast$ {\bfseries vtab\+\_\+config} )(sqlite3 $\ast$, int op,...)
+\item 
+\mbox{\Hypertarget{structsqlite3__api__routines_ae153b85e12e894c0bfb433c13c2690d7}\label{structsqlite3__api__routines_ae153b85e12e894c0bfb433c13c2690d7}} 
+int($\ast$ {\bfseries vtab\+\_\+on\+\_\+conflict} )(sqlite3 $\ast$)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/sqlite3/include/sqlite3ext.\+h\end{DoxyCompactItemize}

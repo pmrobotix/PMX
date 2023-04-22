@@ -62,7 +62,7 @@ void IAbyPath::toSVG() {
 
         svg::Document doc("ia", lay);
 
-        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,2200) scale(1,-1)") << svg::emptyElemEnd(false);
+        doc << svg::elemStart("g") << svg::attribute("transform", "translate(200,3200) scale(1,-1)") << svg::emptyElemEnd(false);
 
         // Red image border.
         svg::Polygon border(svg::Fill(svg::Color::White), svg::Stroke(5, svg::Color::Red));

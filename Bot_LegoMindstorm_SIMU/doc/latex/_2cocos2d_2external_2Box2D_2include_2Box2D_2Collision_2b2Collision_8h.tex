@@ -1,0 +1,151 @@
+\hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h}{}\section{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.h File Reference}
+\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h}\index{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}
+{\ttfamily \#include \char`\"{}Box2\+D/\+Common/b2\+Math.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+Include dependency graph for b2\+Collision.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structb2ContactFeature}{b2\+Contact\+Feature}
+\item 
+union \hyperlink{unionb2ContactID}{b2\+Contact\+ID}
+\begin{DoxyCompactList}\small\item\em Contact ids to facilitate warm starting. \end{DoxyCompactList}\item 
+struct \hyperlink{structb2ManifoldPoint}{b2\+Manifold\+Point}
+\item 
+struct \hyperlink{structb2Manifold}{b2\+Manifold}
+\item 
+struct \hyperlink{structb2WorldManifold}{b2\+World\+Manifold}
+\begin{DoxyCompactList}\small\item\em This is used to compute the current state of a contact manifold. \end{DoxyCompactList}\item 
+struct \hyperlink{structb2ClipVertex}{b2\+Clip\+Vertex}
+\begin{DoxyCompactList}\small\item\em Used for computing contact manifolds. \end{DoxyCompactList}\item 
+struct \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input}
+\begin{DoxyCompactList}\small\item\em Ray-\/cast input data. The ray extends from p1 to p1 + max\+Fraction $\ast$ (p2 -\/ p1). \end{DoxyCompactList}\item 
+struct \hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output}
+\item 
+struct \hyperlink{structb2AABB}{b2\+A\+A\+BB}
+\begin{DoxyCompactList}\small\item\em An axis aligned bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State} \{ \newline
+\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}{b2\+\_\+null\+State}, 
+\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}{b2\+\_\+add\+State}, 
+\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}{b2\+\_\+persist\+State}, 
+\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}{b2\+\_\+remove\+State}, 
+\newline
+\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}{b2\+\_\+null\+State}, 
+\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}{b2\+\_\+add\+State}, 
+\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}{b2\+\_\+persist\+State}, 
+\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}{b2\+\_\+remove\+State}
+ \}\begin{DoxyCompactList}\small\item\em This is used for determining the state of contact points. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a401e2747d276e9fbfd131989e02ff568}{b2\+Get\+Point\+States} (\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State} state1\mbox{[}\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Common_2b2Settings_8h_aa5f44cc9edf711433dea2b2ec94f3c42}{b2\+\_\+max\+Manifold\+Points}\mbox{]}, \hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State} state2\mbox{[}\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Common_2b2Settings_8h_aa5f44cc9edf711433dea2b2ec94f3c42}{b2\+\_\+max\+Manifold\+Points}\mbox{]}, const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold1, const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold2)
+\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ab8a1bf2c6a9453307466f4870c1fa333}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ab8a1bf2c6a9453307466f4870c1fa333}} 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ab8a1bf2c6a9453307466f4870c1fa333}{b2\+Collide\+Circles} (\hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{classb2CircleShape}{b2\+Circle\+Shape} $\ast$circleA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{classb2CircleShape}{b2\+Circle\+Shape} $\ast$circleB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Compute the collision manifold between two circles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a30da13c857596fbefa40b47c3e1e78d0}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a30da13c857596fbefa40b47c3e1e78d0}} 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a30da13c857596fbefa40b47c3e1e78d0}{b2\+Collide\+Polygon\+And\+Circle} (\hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{classb2PolygonShape}{b2\+Polygon\+Shape} $\ast$polygonA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{classb2CircleShape}{b2\+Circle\+Shape} $\ast$circleB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Compute the collision manifold between a polygon and a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a2f7b9859479384c0e2cceb9e7744afcb}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a2f7b9859479384c0e2cceb9e7744afcb}} 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a2f7b9859479384c0e2cceb9e7744afcb}{b2\+Collide\+Polygons} (\hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{classb2PolygonShape}{b2\+Polygon\+Shape} $\ast$polygonA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{classb2PolygonShape}{b2\+Polygon\+Shape} $\ast$polygonB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Compute the collision manifold between two polygons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_aee6f752fdf8c89152e824da12e944733}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_aee6f752fdf8c89152e824da12e944733}} 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_aee6f752fdf8c89152e824da12e944733}{b2\+Collide\+Edge\+And\+Circle} (\hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{classb2EdgeShape}{b2\+Edge\+Shape} $\ast$polygonA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{classb2CircleShape}{b2\+Circle\+Shape} $\ast$circleB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Compute the collision manifold between an edge and a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a5d0c5fab412d5ca886b1965666b16d99}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a5d0c5fab412d5ca886b1965666b16d99}} 
+void \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a5d0c5fab412d5ca886b1965666b16d99}{b2\+Collide\+Edge\+And\+Polygon} (\hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{classb2EdgeShape}{b2\+Edge\+Shape} $\ast$edgeA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{classb2PolygonShape}{b2\+Polygon\+Shape} $\ast$circleB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Compute the collision manifold between an edge and a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a8b36e651798f55f2533f9837462ded41}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a8b36e651798f55f2533f9837462ded41}} 
+int32 \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a8b36e651798f55f2533f9837462ded41}{b2\+Clip\+Segment\+To\+Line} (\hyperlink{structb2ClipVertex}{b2\+Clip\+Vertex} v\+Out\mbox{[}2\mbox{]}, const \hyperlink{structb2ClipVertex}{b2\+Clip\+Vertex} v\+In\mbox{[}2\mbox{]}, const \hyperlink{structb2Vec2}{b2\+Vec2} \&normal, float32 offset, int32 vertex\+IndexA)
+\begin{DoxyCompactList}\small\item\em Clipping for contact manifolds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ae7601420d0b42c1ee494e879dd2009a5}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ae7601420d0b42c1ee494e879dd2009a5}} 
+bool \hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_ae7601420d0b42c1ee494e879dd2009a5}{b2\+Test\+Overlap} (const \hyperlink{classb2Shape}{b2\+Shape} $\ast$shapeA, int32 indexA, const \hyperlink{classb2Shape}{b2\+Shape} $\ast$shapeB, int32 indexB, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB)
+\begin{DoxyCompactList}\small\item\em Determine if two generic shapes overlap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a3dea7a8a1115626c450a697f6c6bf97e}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a3dea7a8a1115626c450a697f6c6bf97e}} 
+bool {\bfseries b2\+Test\+Overlap} (const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&a, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&b)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a910fdc8a802b3cac220f2ee873109818}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a910fdc8a802b3cac220f2ee873109818}} 
+const uint8 {\bfseries b2\+\_\+null\+Feature} = U\+C\+H\+A\+R\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structures and functions used for computing contact points, distance queries, and T\+OI queries. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}} 
+\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+Point\+State@{b2\+Point\+State}}
+\index{b2\+Point\+State@{b2\+Point\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}
+\subsubsection{\texorpdfstring{b2\+Point\+State}{b2PointState}}
+{\footnotesize\ttfamily enum \hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State}}
+
+
+
+This is used for determining the state of contact points. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+null\+State@{b2\+\_\+null\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+null\+State@{b2\+\_\+null\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}} 
+b2\+\_\+null\+State&point does not exist \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+add\+State@{b2\+\_\+add\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+add\+State@{b2\+\_\+add\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}} 
+b2\+\_\+add\+State&point was added in the update \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+persist\+State@{b2\+\_\+persist\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+persist\+State@{b2\+\_\+persist\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}} 
+b2\+\_\+persist\+State&point persisted across the update \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+remove\+State@{b2\+\_\+remove\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+remove\+State@{b2\+\_\+remove\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}} 
+b2\+\_\+remove\+State&point was removed in the update \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+null\+State@{b2\+\_\+null\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+null\+State@{b2\+\_\+null\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da7ce77ce1a592f49d92939997976c217b}} 
+b2\+\_\+null\+State&point does not exist \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+add\+State@{b2\+\_\+add\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+add\+State@{b2\+\_\+add\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dac60dc479bee2089a695b37948179b3d4}} 
+b2\+\_\+add\+State&point was added in the update \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+persist\+State@{b2\+\_\+persist\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+persist\+State@{b2\+\_\+persist\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663dafb032f2175741fa95361e55d1c069e0a}} 
+b2\+\_\+persist\+State&point persisted across the update \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{b2\+\_\+remove\+State@{b2\+\_\+remove\+State}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+\_\+remove\+State@{b2\+\_\+remove\+State}}}\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663da42ca6d7de57b948c8c895cd6f51ee8be}} 
+b2\+\_\+remove\+State&point was removed in the update \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a401e2747d276e9fbfd131989e02ff568}\label{_2cocos2d_2external_2Box2D_2include_2Box2D_2Collision_2b2Collision_8h_a401e2747d276e9fbfd131989e02ff568}} 
+\index{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}!b2\+Get\+Point\+States@{b2\+Get\+Point\+States}}
+\index{b2\+Get\+Point\+States@{b2\+Get\+Point\+States}!/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h@{/cocos2d/external/\+Box2\+D/include/\+Box2\+D/\+Collision/b2\+Collision.\+h}}
+\subsubsection{\texorpdfstring{b2\+Get\+Point\+States()}{b2GetPointStates()}}
+{\footnotesize\ttfamily void b2\+Get\+Point\+States (\begin{DoxyParamCaption}\item[{\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State}}]{state1\mbox{[}b2\+\_\+max\+Manifold\+Points\mbox{]},  }\item[{\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h_a0a894e3715ce8c61b7958dd6e083663d}{b2\+Point\+State}}]{state2\mbox{[}b2\+\_\+max\+Manifold\+Points\mbox{]},  }\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{manifold1,  }\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{manifold2 }\end{DoxyParamCaption})}
+
+Compute the point states given two manifolds. The states pertain to the transition from manifold1 to manifold2. So state1 is either persist or remove while state2 is either add or persist. 

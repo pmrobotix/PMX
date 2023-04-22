@@ -1,0 +1,324 @@
+\hypertarget{classnetwork_1_1SIOClientImpl}{}\section{network\+:\+:S\+I\+O\+Client\+Impl Class Reference}
+\label{classnetwork_1_1SIOClientImpl}\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+
+
+The implementation of the socket.\+io connection Clients/endpoints may share the same impl to accomplish multiplexing on the same websocket.  
+
+
+
+
+Inheritance diagram for network\+:\+:S\+I\+O\+Client\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classnetwork_1_1SIOClientImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for network\+:\+:S\+I\+O\+Client\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classnetwork_1_1SIOClientImpl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ace498c9fc318bd93a6c347788953f62c}\label{classnetwork_1_1SIOClientImpl_ace498c9fc318bd93a6c347788953f62c}} 
+{\bfseries S\+I\+O\+Client\+Impl} (const std\+::string \&host, int port)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_a2ee5b0255879e53fde247ee9dad7ac71}{on\+Open} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_a73369054407916b5a13c9e4c0501d547}{on\+Message} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws, const \hyperlink{structnetwork_1_1WebSocket_1_1Data}{Web\+Socket\+::\+Data} \&data)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_aa46a4a3264dfecd4b1393f71ce3ef8fa}{on\+Close} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_a903007575dfa680fc980fe11ac88b61e}{on\+Error} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws, const \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} \&error)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ace3b7641a3b6b2861efa61a81f02344f}\label{classnetwork_1_1SIOClientImpl_ace3b7641a3b6b2861efa61a81f02344f}} 
+void {\bfseries connect} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a131d6f0f75fff86f7dc84069c14ea956}\label{classnetwork_1_1SIOClientImpl_a131d6f0f75fff86f7dc84069c14ea956}} 
+void {\bfseries disconnect} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a9ae985d3d67c8461f26713a943102f25}\label{classnetwork_1_1SIOClientImpl_a9ae985d3d67c8461f26713a943102f25}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a61f2f5737c3b218a5d10778edf0a528d}\label{classnetwork_1_1SIOClientImpl_a61f2f5737c3b218a5d10778edf0a528d}} 
+void {\bfseries handshake} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a66a5d40f431df264d658b24f5ce200b6}\label{classnetwork_1_1SIOClientImpl_a66a5d40f431df264d658b24f5ce200b6}} 
+void {\bfseries handshake\+Response} (\hyperlink{classnetwork_1_1HttpClient}{Http\+Client} $\ast$sender, \hyperlink{classnetwork_1_1HttpResponse}{Http\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a47fefbb644764f194b796f4c23fed7be}\label{classnetwork_1_1SIOClientImpl_a47fefbb644764f194b796f4c23fed7be}} 
+void {\bfseries open\+Socket} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_af5bf5027b80e040648b8db221c7ae739}\label{classnetwork_1_1SIOClientImpl_af5bf5027b80e040648b8db221c7ae739}} 
+void {\bfseries heartbeat} (float dt)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ada6175cdc2e1885d5e8e7d3722aecc62}\label{classnetwork_1_1SIOClientImpl_ada6175cdc2e1885d5e8e7d3722aecc62}} 
+\hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ {\bfseries get\+Client} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a50ea877f490dece3f0a31e1ec47025b2}\label{classnetwork_1_1SIOClientImpl_a50ea877f490dece3f0a31e1ec47025b2}} 
+void {\bfseries add\+Client} (const std\+::string \&endpoint, \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$client)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_af11714fef5c093b3adbfcf12f88d6ea0}\label{classnetwork_1_1SIOClientImpl_af11714fef5c093b3adbfcf12f88d6ea0}} 
+void {\bfseries connect\+To\+Endpoint} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ab03d285b0ff9ccc84da731832fadb0b3}\label{classnetwork_1_1SIOClientImpl_ab03d285b0ff9ccc84da731832fadb0b3}} 
+void {\bfseries disconnect\+From\+Endpoint} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_aa86efa7432a42df79cd6c9664349875c}\label{classnetwork_1_1SIOClientImpl_aa86efa7432a42df79cd6c9664349875c}} 
+void {\bfseries send} (const std\+::string \&endpoint, const std\+::string \&s)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a7b89123266553af721b63e1e1515e95c}\label{classnetwork_1_1SIOClientImpl_a7b89123266553af721b63e1e1515e95c}} 
+void {\bfseries send} (\hyperlink{classnetwork_1_1SocketIOPacket}{Socket\+I\+O\+Packet} $\ast$packet)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a6c99989b74064a444178db0f05674eae}\label{classnetwork_1_1SIOClientImpl_a6c99989b74064a444178db0f05674eae}} 
+void {\bfseries emit} (const std\+::string \&endpoint, const std\+::string \&eventname, const std\+::string \&args)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a6a23fab2426a40227bd7c94df654f34f}\label{classnetwork_1_1SIOClientImpl_a6a23fab2426a40227bd7c94df654f34f}} 
+{\bfseries S\+I\+O\+Client\+Impl} (const \hyperlink{classnetwork_1_1Uri}{Uri} \&uri, const std\+::string \&ca\+File\+Path)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_acd4c397959610482be0a8b83cf6ccc22}{on\+Open} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_a7355f331dda0c87bd3d0eb9e3b0784c6}{on\+Message} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws, const \hyperlink{structnetwork_1_1WebSocket_1_1Data}{Web\+Socket\+::\+Data} \&data)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_aa22b75ee2e487208cca15bb2b5192397}{on\+Close} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws)
+\item 
+virtual void \hyperlink{classnetwork_1_1SIOClientImpl_a850038d23057d9882f5d689bc7051008}{on\+Error} (\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$ws, const \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} \&error)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ace3b7641a3b6b2861efa61a81f02344f}\label{classnetwork_1_1SIOClientImpl_ace3b7641a3b6b2861efa61a81f02344f}} 
+void {\bfseries connect} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a131d6f0f75fff86f7dc84069c14ea956}\label{classnetwork_1_1SIOClientImpl_a131d6f0f75fff86f7dc84069c14ea956}} 
+void {\bfseries disconnect} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a9ae985d3d67c8461f26713a943102f25}\label{classnetwork_1_1SIOClientImpl_a9ae985d3d67c8461f26713a943102f25}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a61f2f5737c3b218a5d10778edf0a528d}\label{classnetwork_1_1SIOClientImpl_a61f2f5737c3b218a5d10778edf0a528d}} 
+void {\bfseries handshake} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a66a5d40f431df264d658b24f5ce200b6}\label{classnetwork_1_1SIOClientImpl_a66a5d40f431df264d658b24f5ce200b6}} 
+void {\bfseries handshake\+Response} (\hyperlink{classnetwork_1_1HttpClient}{Http\+Client} $\ast$sender, \hyperlink{classnetwork_1_1HttpResponse}{Http\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a47fefbb644764f194b796f4c23fed7be}\label{classnetwork_1_1SIOClientImpl_a47fefbb644764f194b796f4c23fed7be}} 
+void {\bfseries open\+Socket} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_af5bf5027b80e040648b8db221c7ae739}\label{classnetwork_1_1SIOClientImpl_af5bf5027b80e040648b8db221c7ae739}} 
+void {\bfseries heartbeat} (float dt)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a5a02193ec10c1e14e576cc205e96f859}\label{classnetwork_1_1SIOClientImpl_a5a02193ec10c1e14e576cc205e96f859}} 
+\hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ {\bfseries get\+Client} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a50ea877f490dece3f0a31e1ec47025b2}\label{classnetwork_1_1SIOClientImpl_a50ea877f490dece3f0a31e1ec47025b2}} 
+void {\bfseries add\+Client} (const std\+::string \&endpoint, \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$client)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_af11714fef5c093b3adbfcf12f88d6ea0}\label{classnetwork_1_1SIOClientImpl_af11714fef5c093b3adbfcf12f88d6ea0}} 
+void {\bfseries connect\+To\+Endpoint} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_ab03d285b0ff9ccc84da731832fadb0b3}\label{classnetwork_1_1SIOClientImpl_ab03d285b0ff9ccc84da731832fadb0b3}} 
+void {\bfseries disconnect\+From\+Endpoint} (const std\+::string \&endpoint)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_aa86efa7432a42df79cd6c9664349875c}\label{classnetwork_1_1SIOClientImpl_aa86efa7432a42df79cd6c9664349875c}} 
+void {\bfseries send} (const std\+::string \&endpoint, const std\+::string \&s)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a8cd9064464e70cabd69a81795eb2c24d}\label{classnetwork_1_1SIOClientImpl_a8cd9064464e70cabd69a81795eb2c24d}} 
+void {\bfseries send} (const std\+::string \&endpoint, const std\+::vector$<$ std\+::string $>$ \&s)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a7b89123266553af721b63e1e1515e95c}\label{classnetwork_1_1SIOClientImpl_a7b89123266553af721b63e1e1515e95c}} 
+void {\bfseries send} (\hyperlink{classnetwork_1_1SocketIOPacket}{Socket\+I\+O\+Packet} $\ast$packet)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a6c99989b74064a444178db0f05674eae}\label{classnetwork_1_1SIOClientImpl_a6c99989b74064a444178db0f05674eae}} 
+void {\bfseries emit} (const std\+::string \&endpoint, const std\+::string \&eventname, const std\+::string \&args)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_aff97e1ef160d2e403846161793daf062}\label{classnetwork_1_1SIOClientImpl_aff97e1ef160d2e403846161793daf062}} 
+void {\bfseries emit} (const std\+::string \&endpoint, const std\+::string \&eventname, const std\+::vector$<$ std\+::string $>$ \&args)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a1ca80160a7bdac5d2c382d61bf21ba47}\label{classnetwork_1_1SIOClientImpl_a1ca80160a7bdac5d2c382d61bf21ba47}} 
+static \hyperlink{classnetwork_1_1SIOClientImpl}{S\+I\+O\+Client\+Impl} $\ast$ {\bfseries create} (const std\+::string \&host, int port)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a24cf89a2cb8b56e1e2a08ea73d2f0bf2}\label{classnetwork_1_1SIOClientImpl_a24cf89a2cb8b56e1e2a08ea73d2f0bf2}} 
+static \hyperlink{classnetwork_1_1SIOClientImpl}{S\+I\+O\+Client\+Impl} $\ast$ {\bfseries create} (const \hyperlink{classnetwork_1_1Uri}{Uri} \&uri, const std\+::string \&ca\+File\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a8dd8e0c3b9d21c219011e159d502fec9}\label{classnetwork_1_1SIOClientImpl_a8dd8e0c3b9d21c219011e159d502fec9}} 
+class {\bfseries S\+I\+O\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The implementation of the socket.\+io connection Clients/endpoints may share the same impl to accomplish multiplexing on the same websocket. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_aa46a4a3264dfecd4b1393f71ce3ef8fa}\label{classnetwork_1_1SIOClientImpl_aa46a4a3264dfecd4b1393f71ce3ef8fa}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Close@{on\+Close}}
+\index{on\+Close@{on\+Close}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Close()}{onClose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Close (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+When the \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected wants to close or the protocol won\textquotesingle{}t get used at all and current \+\_\+ready\+State is State\+::\+C\+L\+O\+S\+I\+NG,this function is to be called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a67305bda05963c9b54339bd784be7bc4}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_aa22b75ee2e487208cca15bb2b5192397}\label{classnetwork_1_1SIOClientImpl_aa22b75ee2e487208cca15bb2b5192397}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Close@{on\+Close}}
+\index{on\+Close@{on\+Close}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Close()}{onClose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Close (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+When the \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected wants to close or the protocol won\textquotesingle{}t get used at all and current \+\_\+ready\+State is State\+::\+C\+L\+O\+S\+I\+NG,this function is to be called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a67305bda05963c9b54339bd784be7bc4}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a903007575dfa680fc980fe11ac88b61e}\label{classnetwork_1_1SIOClientImpl_a903007575dfa680fc980fe11ac88b61e}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Error@{on\+Error}}
+\index{on\+Error@{on\+Error}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Error()}{onError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Error (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws,  }\item[{const \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is to be called in the following cases\+:
+\begin{DoxyEnumerate}
+\item client connection is failed.
+\item the request client connection has been unable to complete a handshake with the remote server.
+\item the protocol won\textquotesingle{}t get used at all after this callback and current \+\_\+ready\+State is State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG.
+\item when a socket descriptor needs to be removed from an external polling array. in is again the struct libwebsocket\+\_\+pollargs containing the fd member to be removed. If you are using the internal polling loop, you can just ignore it and current \+\_\+ready\+State is State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+{\em error} & \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} enum,would be Error\+Code\+::\+T\+I\+M\+E\+\_\+\+O\+UT or Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a0ed2d5dde9abc2901f387b7274221dc4}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a850038d23057d9882f5d689bc7051008}\label{classnetwork_1_1SIOClientImpl_a850038d23057d9882f5d689bc7051008}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Error@{on\+Error}}
+\index{on\+Error@{on\+Error}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Error()}{onError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Error (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws,  }\item[{const \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is to be called in the following cases\+:
+\begin{DoxyEnumerate}
+\item client connection is failed.
+\item the request client connection has been unable to complete a handshake with the remote server.
+\item the protocol won\textquotesingle{}t get used at all after this callback and current \+\_\+ready\+State is State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG.
+\item when a socket descriptor needs to be removed from an external polling array. in is again the struct libwebsocket\+\_\+pollargs containing the fd member to be removed. If you are using the internal polling loop, you can just ignore it and current \+\_\+ready\+State is State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+{\em error} & \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Web\+Socket\+::\+Error\+Code} enum,would be Error\+Code\+::\+T\+I\+M\+E\+\_\+\+O\+UT or Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a0ed2d5dde9abc2901f387b7274221dc4}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a73369054407916b5a13c9e4c0501d547}\label{classnetwork_1_1SIOClientImpl_a73369054407916b5a13c9e4c0501d547}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Message@{on\+Message}}
+\index{on\+Message@{on\+Message}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Message()}{onMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws,  }\item[{const \hyperlink{structnetwork_1_1WebSocket_1_1Data}{Web\+Socket\+::\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function to be called when data has appeared from the server for the client connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+{\em data} & \hyperlink{classData}{Data} object for message. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a879c2f96e39ce8d68e4fbc2827ea4377}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a7355f331dda0c87bd3d0eb9e3b0784c6}\label{classnetwork_1_1SIOClientImpl_a7355f331dda0c87bd3d0eb9e3b0784c6}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Message@{on\+Message}}
+\index{on\+Message@{on\+Message}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Message()}{onMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws,  }\item[{const \hyperlink{structnetwork_1_1WebSocket_1_1Data}{Web\+Socket\+::\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function to be called when data has appeared from the server for the client connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected. \\
+\hline
+{\em data} & \hyperlink{classData}{Data} object for message. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a879c2f96e39ce8d68e4fbc2827ea4377}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_a2ee5b0255879e53fde247ee9dad7ac71}\label{classnetwork_1_1SIOClientImpl_a2ee5b0255879e53fde247ee9dad7ac71}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Open@{on\+Open}}
+\index{on\+Open@{on\+Open}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Open()}{onOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Open (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function to be called after the client connection complete a handshake with the remote server. This means that the \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} connection is ready to send and receive data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a46664a075b60ee8f6ed1a33a2f2ec77d}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+\mbox{\Hypertarget{classnetwork_1_1SIOClientImpl_acd4c397959610482be0a8b83cf6ccc22}\label{classnetwork_1_1SIOClientImpl_acd4c397959610482be0a8b83cf6ccc22}} 
+\index{network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}!on\+Open@{on\+Open}}
+\index{on\+Open@{on\+Open}!network\+::\+S\+I\+O\+Client\+Impl@{network\+::\+S\+I\+O\+Client\+Impl}}
+\subsubsection{\texorpdfstring{on\+Open()}{onOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void network\+::\+S\+I\+O\+Client\+Impl\+::on\+Open (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} $\ast$}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function to be called after the client connection complete a handshake with the remote server. This means that the \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} connection is ready to send and receive data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & The \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} object connected \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classnetwork_1_1WebSocket_1_1Delegate_a46664a075b60ee8f6ed1a33a2f2ec77d}{network\+::\+Web\+Socket\+::\+Delegate}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Socket\+I\+O.\+cpp\end{DoxyCompactItemize}

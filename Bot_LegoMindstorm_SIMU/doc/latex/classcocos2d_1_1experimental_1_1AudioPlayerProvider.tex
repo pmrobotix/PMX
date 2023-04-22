@@ -1,0 +1,62 @@
+\hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider}{}\section{cocos2d\+:\+:experimental\+:\+:Audio\+Player\+Provider Class Reference}
+\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider}\index{cocos2d\+::experimental\+::\+Audio\+Player\+Provider@{cocos2d\+::experimental\+::\+Audio\+Player\+Provider}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_acad01da540ebee7c2e87169761469cb0}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_acad01da540ebee7c2e87169761469cb0}} 
+typedef std\+::function$<$ void(bool, \hyperlink{structcocos2d_1_1experimental_1_1PcmData}{Pcm\+Data})$>$ {\bfseries Preload\+Callback}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_acad01da540ebee7c2e87169761469cb0}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_acad01da540ebee7c2e87169761469cb0}} 
+typedef std\+::function$<$ void(bool, \hyperlink{structcocos2d_1_1experimental_1_1PcmData}{Pcm\+Data})$>$ {\bfseries Preload\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a4e7bb5a8f1aa8ea2cb5d5e882e28590b}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a4e7bb5a8f1aa8ea2cb5d5e882e28590b}} 
+{\bfseries Audio\+Player\+Provider} (S\+L\+Engine\+Itf engine\+Itf, S\+L\+Object\+Itf output\+Mix\+Object, int device\+Sample\+Rate, int buffer\+Size\+In\+Frames, const Fd\+Getter\+Callback \&fd\+Getter\+Callback, \hyperlink{classcocos2d_1_1experimental_1_1ICallerThreadUtils}{I\+Caller\+Thread\+Utils} $\ast$caller\+Thread\+Utils)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a87797364c252493f86df3ffbdbfbf326}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a87797364c252493f86df3ffbdbfbf326}} 
+\hyperlink{classcocos2d_1_1experimental_1_1IAudioPlayer}{I\+Audio\+Player} $\ast$ {\bfseries get\+Audio\+Player} (const std\+::string \&audio\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a0c2aaa4e310ba9dba72e83fcf62916a6}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a0c2aaa4e310ba9dba72e83fcf62916a6}} 
+void {\bfseries preload\+Effect} (const std\+::string \&audio\+File\+Path, const Preload\+Callback \&cb)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_abfe61ba6c43fb326c4b8243c54ce2a7d}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_abfe61ba6c43fb326c4b8243c54ce2a7d}} 
+void {\bfseries clear\+Pcm\+Cache} (const std\+::string \&audio\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a1656059eaa22a224db8f0c2e5fe00808}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a1656059eaa22a224db8f0c2e5fe00808}} 
+void {\bfseries clear\+All\+Pcm\+Caches} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a3e06f4560156f3d76490a6a4de971b49}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a3e06f4560156f3d76490a6a4de971b49}} 
+void {\bfseries pause} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8b33890fc2268f40662dfa544fcb43ad}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8b33890fc2268f40662dfa544fcb43ad}} 
+void {\bfseries resume} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a4e7bb5a8f1aa8ea2cb5d5e882e28590b}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a4e7bb5a8f1aa8ea2cb5d5e882e28590b}} 
+{\bfseries Audio\+Player\+Provider} (S\+L\+Engine\+Itf engine\+Itf, S\+L\+Object\+Itf output\+Mix\+Object, int device\+Sample\+Rate, int buffer\+Size\+In\+Frames, const Fd\+Getter\+Callback \&fd\+Getter\+Callback, \hyperlink{classcocos2d_1_1experimental_1_1ICallerThreadUtils}{I\+Caller\+Thread\+Utils} $\ast$caller\+Thread\+Utils)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8e8a77f94d7c8ba7c903d43cd027c247}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8e8a77f94d7c8ba7c903d43cd027c247}} 
+\hyperlink{classcocos2d_1_1experimental_1_1IAudioPlayer}{I\+Audio\+Player} $\ast$ {\bfseries get\+Audio\+Player} (const std\+::string \&audio\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a0c2aaa4e310ba9dba72e83fcf62916a6}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a0c2aaa4e310ba9dba72e83fcf62916a6}} 
+void {\bfseries preload\+Effect} (const std\+::string \&audio\+File\+Path, const Preload\+Callback \&cb)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_abfe61ba6c43fb326c4b8243c54ce2a7d}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_abfe61ba6c43fb326c4b8243c54ce2a7d}} 
+void {\bfseries clear\+Pcm\+Cache} (const std\+::string \&audio\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a1656059eaa22a224db8f0c2e5fe00808}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a1656059eaa22a224db8f0c2e5fe00808}} 
+void {\bfseries clear\+All\+Pcm\+Caches} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a3e06f4560156f3d76490a6a4de971b49}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a3e06f4560156f3d76490a6a4de971b49}} 
+void {\bfseries pause} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8b33890fc2268f40662dfa544fcb43ad}\label{classcocos2d_1_1experimental_1_1AudioPlayerProvider_a8b33890fc2268f40662dfa544fcb43ad}} 
+void {\bfseries resume} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Player\+Provider.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Player\+Provider.\+cpp\end{DoxyCompactItemize}

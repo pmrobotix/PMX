@@ -1,0 +1,455 @@
+\hypertarget{classbtMultiBody}{}\section{bt\+Multi\+Body Class Reference}
+\label{classbtMultiBody}\index{bt\+Multi\+Body@{bt\+Multi\+Body}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a607c1ece0fdf16a6d32ac8eafd91976e}\label{classbtMultiBody_a607c1ece0fdf16a6d32ac8eafd91976e}} 
+{\bfseries B\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+L\+L\+O\+C\+A\+T\+OR} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab221797839166ac108b3878c3a823768}\label{classbtMultiBody_ab221797839166ac108b3878c3a823768}} 
+{\bfseries bt\+Multi\+Body} (int n\+\_\+links, bt\+Scalar mass, const bt\+Vector3 \&inertia, bool fixed\+\_\+base\+\_\+, bool can\+\_\+sleep\+\_\+)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ad9921754c20a1de7fbc4dfe82e3ccba2}\label{classbtMultiBody_ad9921754c20a1de7fbc4dfe82e3ccba2}} 
+void {\bfseries setup\+Prismatic} (int i, bt\+Scalar mass, const bt\+Vector3 \&inertia, int parent, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&rot\+\_\+parent\+\_\+to\+\_\+this, const bt\+Vector3 \&joint\+\_\+axis, const bt\+Vector3 \&r\+\_\+vector\+\_\+when\+\_\+q\+\_\+zero, bool disable\+Parent\+Collision=false)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a90726123e71ab232653365aa4ef3d18b}\label{classbtMultiBody_a90726123e71ab232653365aa4ef3d18b}} 
+void {\bfseries setup\+Revolute} (int i, bt\+Scalar mass, const bt\+Vector3 \&inertia, int parent, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&zero\+\_\+rot\+\_\+parent\+\_\+to\+\_\+this, const bt\+Vector3 \&joint\+\_\+axis, const bt\+Vector3 \&parent\+\_\+axis\+\_\+position, const bt\+Vector3 \&my\+\_\+axis\+\_\+position, bool disable\+Parent\+Collision=false)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9527f50e23482689fb658d48b54e8c9c}\label{classbtMultiBody_a9527f50e23482689fb658d48b54e8c9c}} 
+const \hyperlink{structbtMultibodyLink}{bt\+Multibody\+Link} \& {\bfseries get\+Link} (int index) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a780d83915c460c1a17f098d47b2c8df2}\label{classbtMultiBody_a780d83915c460c1a17f098d47b2c8df2}} 
+\hyperlink{structbtMultibodyLink}{bt\+Multibody\+Link} \& {\bfseries get\+Link} (int index)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_afe617a7ba5ab8538212ed9019721ee34}\label{classbtMultiBody_afe617a7ba5ab8538212ed9019721ee34}} 
+void {\bfseries set\+Base\+Collider} (\hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$collider)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ac4572e67ecbf703363dc6f0216255799}\label{classbtMultiBody_ac4572e67ecbf703363dc6f0216255799}} 
+const \hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$ {\bfseries get\+Base\+Collider} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a8553158acf5059cba677db783dc03ecd}\label{classbtMultiBody_a8553158acf5059cba677db783dc03ecd}} 
+\hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$ {\bfseries get\+Base\+Collider} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a898364731e99c7c24b9be8c92806f775}\label{classbtMultiBody_a898364731e99c7c24b9be8c92806f775}} 
+int {\bfseries get\+Parent} (int link\+\_\+num) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a5d1e7ab2bfb03be026ab42d8ad53ec8f}\label{classbtMultiBody_a5d1e7ab2bfb03be026ab42d8ad53ec8f}} 
+int {\bfseries get\+Num\+Links} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acc628f4906d360d7b09caa0a5d6e4ee9}\label{classbtMultiBody_acc628f4906d360d7b09caa0a5d6e4ee9}} 
+bt\+Scalar {\bfseries get\+Base\+Mass} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab4977e6b92d827181e692f40b5b369b4}\label{classbtMultiBody_ab4977e6b92d827181e692f40b5b369b4}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Inertia} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a78329f2e10efd268859ee7678399371a}\label{classbtMultiBody_a78329f2e10efd268859ee7678399371a}} 
+bt\+Scalar {\bfseries get\+Link\+Mass} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a3c3dfec0a4426f3ba0c92f5017621361}\label{classbtMultiBody_a3c3dfec0a4426f3ba0c92f5017621361}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Inertia} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a39b17484fc121b0ec1f859e0f50e7552}\label{classbtMultiBody_a39b17484fc121b0ec1f859e0f50e7552}} 
+void {\bfseries set\+Base\+Mass} (bt\+Scalar mass)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a4043d6629d0585f67c8a82d0274ff17c}\label{classbtMultiBody_a4043d6629d0585f67c8a82d0274ff17c}} 
+void {\bfseries set\+Base\+Inertia} (const bt\+Vector3 \&inertia)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6ab72a604e9b46014ffe25ff382fccb8}\label{classbtMultiBody_a6ab72a604e9b46014ffe25ff382fccb8}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Pos} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af47f09548d54af89ff1ae56e8559114e}\label{classbtMultiBody_af47f09548d54af89ff1ae56e8559114e}} 
+const bt\+Vector3 {\bfseries get\+Base\+Vel} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a621aef7b0eea3c88b2a915152f568df8}\label{classbtMultiBody_a621aef7b0eea3c88b2a915152f568df8}} 
+const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+World\+To\+Base\+Rot} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6ba0afb89acd01b4842959c2d53f7d81}\label{classbtMultiBody_a6ba0afb89acd01b4842959c2d53f7d81}} 
+bt\+Vector3 {\bfseries get\+Base\+Omega} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7860a23d986ca40ca24112fc4870e9db}\label{classbtMultiBody_a7860a23d986ca40ca24112fc4870e9db}} 
+void {\bfseries set\+Base\+Pos} (const bt\+Vector3 \&pos)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a559187909a25d3fb42140abf079d84cd}\label{classbtMultiBody_a559187909a25d3fb42140abf079d84cd}} 
+void {\bfseries set\+Base\+Vel} (const bt\+Vector3 \&vel)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aea1adaa2e8f6bf164abe19275427dcea}\label{classbtMultiBody_aea1adaa2e8f6bf164abe19275427dcea}} 
+void {\bfseries set\+World\+To\+Base\+Rot} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&rot)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a56c0cf6a7bfccf1d3512933955d5127f}\label{classbtMultiBody_a56c0cf6a7bfccf1d3512933955d5127f}} 
+void {\bfseries set\+Base\+Omega} (const bt\+Vector3 \&omega)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a3aeea8cbd49121e61ee785aad78e3665}\label{classbtMultiBody_a3aeea8cbd49121e61ee785aad78e3665}} 
+bt\+Scalar {\bfseries get\+Joint\+Pos} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aebc99e02b1e126ecc8085b7b4965c489}\label{classbtMultiBody_aebc99e02b1e126ecc8085b7b4965c489}} 
+bt\+Scalar {\bfseries get\+Joint\+Vel} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aad8bd57ac6615edfc1a50502d9cb78c2}\label{classbtMultiBody_aad8bd57ac6615edfc1a50502d9cb78c2}} 
+void {\bfseries set\+Joint\+Pos} (int i, bt\+Scalar q)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a8c16a6fdd585bfb3759757f4fe80f16a}\label{classbtMultiBody_a8c16a6fdd585bfb3759757f4fe80f16a}} 
+void {\bfseries set\+Joint\+Vel} (int i, bt\+Scalar qdot)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abc072b33c2616cb5b61345a4f0cf0b44}\label{classbtMultiBody_abc072b33c2616cb5b61345a4f0cf0b44}} 
+const bt\+Scalar $\ast$ {\bfseries get\+Velocity\+Vector} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a687b2bf25263cd47c2a2f4326ed959b1}\label{classbtMultiBody_a687b2bf25263cd47c2a2f4326ed959b1}} 
+const bt\+Vector3 \& {\bfseries get\+R\+Vector} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ae42e5e37f50d1b9a9bf0e14e61efa9b5}\label{classbtMultiBody_ae42e5e37f50d1b9a9bf0e14e61efa9b5}} 
+const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+Parent\+To\+Local\+Rot} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a3679bf96983455fe706670d6c57b013a}\label{classbtMultiBody_a3679bf96983455fe706670d6c57b013a}} 
+bt\+Vector3 {\bfseries local\+Pos\+To\+World} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abac00bae508109a169beb605de462012}\label{classbtMultiBody_abac00bae508109a169beb605de462012}} 
+bt\+Vector3 {\bfseries local\+Dir\+To\+World} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af3ea3389096463994058688eebfdd596}\label{classbtMultiBody_af3ea3389096463994058688eebfdd596}} 
+bt\+Vector3 {\bfseries world\+Pos\+To\+Local} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6c922a1a02409d8790f00c58019b1f41}\label{classbtMultiBody_a6c922a1a02409d8790f00c58019b1f41}} 
+bt\+Vector3 {\bfseries world\+Dir\+To\+Local} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a42a042eba0b18e4f0d8b868d6dc23e8b}\label{classbtMultiBody_a42a042eba0b18e4f0d8b868d6dc23e8b}} 
+bt\+Scalar {\bfseries get\+Kinetic\+Energy} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acff3d6a623c306ce91cdd007fff0ed23}\label{classbtMultiBody_acff3d6a623c306ce91cdd007fff0ed23}} 
+bt\+Vector3 {\bfseries get\+Angular\+Momentum} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aff9f8aa773319219146b7f1aa5849e8e}\label{classbtMultiBody_aff9f8aa773319219146b7f1aa5849e8e}} 
+void {\bfseries clear\+Forces\+And\+Torques} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a504c9eb4bba7d799b76b3a5c2e59a2c1}\label{classbtMultiBody_a504c9eb4bba7d799b76b3a5c2e59a2c1}} 
+void {\bfseries clear\+Velocities} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af485aabee052a04aafab737ed6d45c09}\label{classbtMultiBody_af485aabee052a04aafab737ed6d45c09}} 
+void {\bfseries add\+Base\+Force} (const bt\+Vector3 \&f)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a57545c47299f1a3ec305461e6ec6b5c4}\label{classbtMultiBody_a57545c47299f1a3ec305461e6ec6b5c4}} 
+void {\bfseries add\+Base\+Torque} (const bt\+Vector3 \&t)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7c3897d0dc78fae74b1f665349596713}\label{classbtMultiBody_a7c3897d0dc78fae74b1f665349596713}} 
+void {\bfseries add\+Link\+Force} (int i, const bt\+Vector3 \&f)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6fca672a0de1e44a828e2ed2b2bfca3b}\label{classbtMultiBody_a6fca672a0de1e44a828e2ed2b2bfca3b}} 
+void {\bfseries add\+Link\+Torque} (int i, const bt\+Vector3 \&t)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7c55a0935f2bcc58863c9d6724f3976a}\label{classbtMultiBody_a7c55a0935f2bcc58863c9d6724f3976a}} 
+void {\bfseries add\+Joint\+Torque} (int i, bt\+Scalar Q)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9f18e807db3bd459bbbb5cf120302653}\label{classbtMultiBody_a9f18e807db3bd459bbbb5cf120302653}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Force} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_accd9836cb0693648aedb407dc4c824ff}\label{classbtMultiBody_accd9836cb0693648aedb407dc4c824ff}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Torque} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a8695151e15f6d44326c794a6d9094d76}\label{classbtMultiBody_a8695151e15f6d44326c794a6d9094d76}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Force} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a135102c597640149746f8b0fafac34ad}\label{classbtMultiBody_a135102c597640149746f8b0fafac34ad}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Torque} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9593430d6a1286f79cc7394c4aad98bf}\label{classbtMultiBody_a9593430d6a1286f79cc7394c4aad98bf}} 
+bt\+Scalar {\bfseries get\+Joint\+Torque} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a19f334bbde8909b282cd55bc28d75b4b}\label{classbtMultiBody_a19f334bbde8909b282cd55bc28d75b4b}} 
+void {\bfseries step\+Velocities} (bt\+Scalar dt, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Matrix3x3 $>$ \&scratch\+\_\+m)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acdd6b296f59bcd747c614a58c616bdf0}\label{classbtMultiBody_acdd6b296f59bcd747c614a58c616bdf0}} 
+void {\bfseries calc\+Acceleration\+Deltas} (const bt\+Scalar $\ast$force, bt\+Scalar $\ast$output, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ad233408cb61f257b1c3977bf3b7bcd8e}\label{classbtMultiBody_ad233408cb61f257b1c3977bf3b7bcd8e}} 
+void {\bfseries apply\+Delta\+Vee} (const bt\+Scalar $\ast$delta\+\_\+vee)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aac7bf81725ac6ca493b03d264d06e663}\label{classbtMultiBody_aac7bf81725ac6ca493b03d264d06e663}} 
+void {\bfseries apply\+Delta\+Vee} (const bt\+Scalar $\ast$delta\+\_\+vee, bt\+Scalar multiplier)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a81d5daf2fe75d4f21149f2607002fe23}\label{classbtMultiBody_a81d5daf2fe75d4f21149f2607002fe23}} 
+void {\bfseries step\+Positions} (bt\+Scalar dt)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aab4d830259cb82acba18ef5f46c7ea81}\label{classbtMultiBody_aab4d830259cb82acba18ef5f46c7ea81}} 
+void {\bfseries fill\+Contact\+Jacobian} (int link, const bt\+Vector3 \&contact\+\_\+point, const bt\+Vector3 \&normal, bt\+Scalar $\ast$jac, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Matrix3x3 $>$ \&scratch\+\_\+m) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2659acc78021df7907f0ac75e4e9ea61}\label{classbtMultiBody_a2659acc78021df7907f0ac75e4e9ea61}} 
+void {\bfseries set\+Can\+Sleep} (bool can\+Sleep)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a15433657756131aef4055dcd7618ea1e}\label{classbtMultiBody_a15433657756131aef4055dcd7618ea1e}} 
+bool {\bfseries is\+Awake} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2cf38777cf487eafb13cdd5b56a0f530}\label{classbtMultiBody_a2cf38777cf487eafb13cdd5b56a0f530}} 
+void {\bfseries wake\+Up} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_adc438609bb0c384950cfba1ee720200b}\label{classbtMultiBody_adc438609bb0c384950cfba1ee720200b}} 
+void {\bfseries go\+To\+Sleep} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6fda2785db8302ce2e487cf55aff23d5}\label{classbtMultiBody_a6fda2785db8302ce2e487cf55aff23d5}} 
+void {\bfseries check\+Motion\+And\+Sleep\+If\+Required} (bt\+Scalar timestep)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9bb5d0e983f409d92cbe18238621a50a}\label{classbtMultiBody_a9bb5d0e983f409d92cbe18238621a50a}} 
+bool {\bfseries has\+Fixed\+Base} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2c614edf28ebaa080560f1e8061d3b79}\label{classbtMultiBody_a2c614edf28ebaa080560f1e8061d3b79}} 
+int {\bfseries get\+Companion\+Id} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aec0ff1d617e7d31344ad4f4c83e808e7}\label{classbtMultiBody_aec0ff1d617e7d31344ad4f4c83e808e7}} 
+void {\bfseries set\+Companion\+Id} (int id)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab2b5bc6f3953c9768bb6caa0aba43e63}\label{classbtMultiBody_ab2b5bc6f3953c9768bb6caa0aba43e63}} 
+void {\bfseries set\+Num\+Links} (int num\+Links)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abde7f2e9e334ba27c207e9341e2ea064}\label{classbtMultiBody_abde7f2e9e334ba27c207e9341e2ea064}} 
+bt\+Scalar {\bfseries get\+Linear\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a51e85f96027e3b2d6a7c87d60b3c7660}\label{classbtMultiBody_a51e85f96027e3b2d6a7c87d60b3c7660}} 
+void {\bfseries set\+Linear\+Damping} (bt\+Scalar damp)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2ccb51f59b0ffdc6b28cfcae2adb938b}\label{classbtMultiBody_a2ccb51f59b0ffdc6b28cfcae2adb938b}} 
+bt\+Scalar {\bfseries get\+Angular\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a21cb8e09cc1a6b060fc39b6335fc0a2c}\label{classbtMultiBody_a21cb8e09cc1a6b060fc39b6335fc0a2c}} 
+bool {\bfseries get\+Use\+Gyro\+Term} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2bcc1281a4e5d88d68c1caf6baa691c7}\label{classbtMultiBody_a2bcc1281a4e5d88d68c1caf6baa691c7}} 
+void {\bfseries set\+Use\+Gyro\+Term} (bool use\+Gyro)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aa3573138f236844e4e141039740da588}\label{classbtMultiBody_aa3573138f236844e4e141039740da588}} 
+bt\+Scalar {\bfseries get\+Max\+Applied\+Impulse} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a0d79a9b5c5371b661b7692ee3d4a9e75}\label{classbtMultiBody_a0d79a9b5c5371b661b7692ee3d4a9e75}} 
+void {\bfseries set\+Max\+Applied\+Impulse} (bt\+Scalar max\+Imp)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a4c7bc3057da41bae8fa8873ea9dbb191}\label{classbtMultiBody_a4c7bc3057da41bae8fa8873ea9dbb191}} 
+void {\bfseries set\+Has\+Self\+Collision} (bool has\+Self\+Collision)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a53daf4eedb691d0b4dc280147a932aa3}\label{classbtMultiBody_a53daf4eedb691d0b4dc280147a932aa3}} 
+bool {\bfseries has\+Self\+Collision} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a607c1ece0fdf16a6d32ac8eafd91976e}\label{classbtMultiBody_a607c1ece0fdf16a6d32ac8eafd91976e}} 
+{\bfseries B\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+L\+L\+O\+C\+A\+T\+OR} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab221797839166ac108b3878c3a823768}\label{classbtMultiBody_ab221797839166ac108b3878c3a823768}} 
+{\bfseries bt\+Multi\+Body} (int n\+\_\+links, bt\+Scalar mass, const bt\+Vector3 \&inertia, bool fixed\+\_\+base\+\_\+, bool can\+\_\+sleep\+\_\+)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ad9921754c20a1de7fbc4dfe82e3ccba2}\label{classbtMultiBody_ad9921754c20a1de7fbc4dfe82e3ccba2}} 
+void {\bfseries setup\+Prismatic} (int i, bt\+Scalar mass, const bt\+Vector3 \&inertia, int parent, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&rot\+\_\+parent\+\_\+to\+\_\+this, const bt\+Vector3 \&joint\+\_\+axis, const bt\+Vector3 \&r\+\_\+vector\+\_\+when\+\_\+q\+\_\+zero, bool disable\+Parent\+Collision=false)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a90726123e71ab232653365aa4ef3d18b}\label{classbtMultiBody_a90726123e71ab232653365aa4ef3d18b}} 
+void {\bfseries setup\+Revolute} (int i, bt\+Scalar mass, const bt\+Vector3 \&inertia, int parent, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&zero\+\_\+rot\+\_\+parent\+\_\+to\+\_\+this, const bt\+Vector3 \&joint\+\_\+axis, const bt\+Vector3 \&parent\+\_\+axis\+\_\+position, const bt\+Vector3 \&my\+\_\+axis\+\_\+position, bool disable\+Parent\+Collision=false)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9527f50e23482689fb658d48b54e8c9c}\label{classbtMultiBody_a9527f50e23482689fb658d48b54e8c9c}} 
+const \hyperlink{structbtMultibodyLink}{bt\+Multibody\+Link} \& {\bfseries get\+Link} (int index) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a780d83915c460c1a17f098d47b2c8df2}\label{classbtMultiBody_a780d83915c460c1a17f098d47b2c8df2}} 
+\hyperlink{structbtMultibodyLink}{bt\+Multibody\+Link} \& {\bfseries get\+Link} (int index)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_afe617a7ba5ab8538212ed9019721ee34}\label{classbtMultiBody_afe617a7ba5ab8538212ed9019721ee34}} 
+void {\bfseries set\+Base\+Collider} (\hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$collider)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ac4572e67ecbf703363dc6f0216255799}\label{classbtMultiBody_ac4572e67ecbf703363dc6f0216255799}} 
+const \hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$ {\bfseries get\+Base\+Collider} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a8553158acf5059cba677db783dc03ecd}\label{classbtMultiBody_a8553158acf5059cba677db783dc03ecd}} 
+\hyperlink{classbtMultiBodyLinkCollider}{bt\+Multi\+Body\+Link\+Collider} $\ast$ {\bfseries get\+Base\+Collider} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a898364731e99c7c24b9be8c92806f775}\label{classbtMultiBody_a898364731e99c7c24b9be8c92806f775}} 
+int {\bfseries get\+Parent} (int link\+\_\+num) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a5d1e7ab2bfb03be026ab42d8ad53ec8f}\label{classbtMultiBody_a5d1e7ab2bfb03be026ab42d8ad53ec8f}} 
+int {\bfseries get\+Num\+Links} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acc628f4906d360d7b09caa0a5d6e4ee9}\label{classbtMultiBody_acc628f4906d360d7b09caa0a5d6e4ee9}} 
+bt\+Scalar {\bfseries get\+Base\+Mass} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab4977e6b92d827181e692f40b5b369b4}\label{classbtMultiBody_ab4977e6b92d827181e692f40b5b369b4}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Inertia} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a78329f2e10efd268859ee7678399371a}\label{classbtMultiBody_a78329f2e10efd268859ee7678399371a}} 
+bt\+Scalar {\bfseries get\+Link\+Mass} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a453c9cda7ebfab34c55b32f474c653a5}\label{classbtMultiBody_a453c9cda7ebfab34c55b32f474c653a5}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Inertia} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a39b17484fc121b0ec1f859e0f50e7552}\label{classbtMultiBody_a39b17484fc121b0ec1f859e0f50e7552}} 
+void {\bfseries set\+Base\+Mass} (bt\+Scalar mass)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a4043d6629d0585f67c8a82d0274ff17c}\label{classbtMultiBody_a4043d6629d0585f67c8a82d0274ff17c}} 
+void {\bfseries set\+Base\+Inertia} (const bt\+Vector3 \&inertia)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6ab72a604e9b46014ffe25ff382fccb8}\label{classbtMultiBody_a6ab72a604e9b46014ffe25ff382fccb8}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Pos} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af47f09548d54af89ff1ae56e8559114e}\label{classbtMultiBody_af47f09548d54af89ff1ae56e8559114e}} 
+const bt\+Vector3 {\bfseries get\+Base\+Vel} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a621aef7b0eea3c88b2a915152f568df8}\label{classbtMultiBody_a621aef7b0eea3c88b2a915152f568df8}} 
+const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+World\+To\+Base\+Rot} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6ba0afb89acd01b4842959c2d53f7d81}\label{classbtMultiBody_a6ba0afb89acd01b4842959c2d53f7d81}} 
+bt\+Vector3 {\bfseries get\+Base\+Omega} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7860a23d986ca40ca24112fc4870e9db}\label{classbtMultiBody_a7860a23d986ca40ca24112fc4870e9db}} 
+void {\bfseries set\+Base\+Pos} (const bt\+Vector3 \&pos)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a559187909a25d3fb42140abf079d84cd}\label{classbtMultiBody_a559187909a25d3fb42140abf079d84cd}} 
+void {\bfseries set\+Base\+Vel} (const bt\+Vector3 \&vel)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aea1adaa2e8f6bf164abe19275427dcea}\label{classbtMultiBody_aea1adaa2e8f6bf164abe19275427dcea}} 
+void {\bfseries set\+World\+To\+Base\+Rot} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&rot)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a56c0cf6a7bfccf1d3512933955d5127f}\label{classbtMultiBody_a56c0cf6a7bfccf1d3512933955d5127f}} 
+void {\bfseries set\+Base\+Omega} (const bt\+Vector3 \&omega)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a3aeea8cbd49121e61ee785aad78e3665}\label{classbtMultiBody_a3aeea8cbd49121e61ee785aad78e3665}} 
+bt\+Scalar {\bfseries get\+Joint\+Pos} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aebc99e02b1e126ecc8085b7b4965c489}\label{classbtMultiBody_aebc99e02b1e126ecc8085b7b4965c489}} 
+bt\+Scalar {\bfseries get\+Joint\+Vel} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aad8bd57ac6615edfc1a50502d9cb78c2}\label{classbtMultiBody_aad8bd57ac6615edfc1a50502d9cb78c2}} 
+void {\bfseries set\+Joint\+Pos} (int i, bt\+Scalar q)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a8c16a6fdd585bfb3759757f4fe80f16a}\label{classbtMultiBody_a8c16a6fdd585bfb3759757f4fe80f16a}} 
+void {\bfseries set\+Joint\+Vel} (int i, bt\+Scalar qdot)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abc072b33c2616cb5b61345a4f0cf0b44}\label{classbtMultiBody_abc072b33c2616cb5b61345a4f0cf0b44}} 
+const bt\+Scalar $\ast$ {\bfseries get\+Velocity\+Vector} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a46cab9e9195096c906e8425c3416e5ce}\label{classbtMultiBody_a46cab9e9195096c906e8425c3416e5ce}} 
+const bt\+Vector3 \& {\bfseries get\+R\+Vector} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_adf280476ed95d08b45cfc3745b56ac05}\label{classbtMultiBody_adf280476ed95d08b45cfc3745b56ac05}} 
+const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+Parent\+To\+Local\+Rot} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a3679bf96983455fe706670d6c57b013a}\label{classbtMultiBody_a3679bf96983455fe706670d6c57b013a}} 
+bt\+Vector3 {\bfseries local\+Pos\+To\+World} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abac00bae508109a169beb605de462012}\label{classbtMultiBody_abac00bae508109a169beb605de462012}} 
+bt\+Vector3 {\bfseries local\+Dir\+To\+World} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af3ea3389096463994058688eebfdd596}\label{classbtMultiBody_af3ea3389096463994058688eebfdd596}} 
+bt\+Vector3 {\bfseries world\+Pos\+To\+Local} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6c922a1a02409d8790f00c58019b1f41}\label{classbtMultiBody_a6c922a1a02409d8790f00c58019b1f41}} 
+bt\+Vector3 {\bfseries world\+Dir\+To\+Local} (int i, const bt\+Vector3 \&vec) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a42a042eba0b18e4f0d8b868d6dc23e8b}\label{classbtMultiBody_a42a042eba0b18e4f0d8b868d6dc23e8b}} 
+bt\+Scalar {\bfseries get\+Kinetic\+Energy} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acff3d6a623c306ce91cdd007fff0ed23}\label{classbtMultiBody_acff3d6a623c306ce91cdd007fff0ed23}} 
+bt\+Vector3 {\bfseries get\+Angular\+Momentum} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aff9f8aa773319219146b7f1aa5849e8e}\label{classbtMultiBody_aff9f8aa773319219146b7f1aa5849e8e}} 
+void {\bfseries clear\+Forces\+And\+Torques} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a504c9eb4bba7d799b76b3a5c2e59a2c1}\label{classbtMultiBody_a504c9eb4bba7d799b76b3a5c2e59a2c1}} 
+void {\bfseries clear\+Velocities} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_af485aabee052a04aafab737ed6d45c09}\label{classbtMultiBody_af485aabee052a04aafab737ed6d45c09}} 
+void {\bfseries add\+Base\+Force} (const bt\+Vector3 \&f)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a57545c47299f1a3ec305461e6ec6b5c4}\label{classbtMultiBody_a57545c47299f1a3ec305461e6ec6b5c4}} 
+void {\bfseries add\+Base\+Torque} (const bt\+Vector3 \&t)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7c3897d0dc78fae74b1f665349596713}\label{classbtMultiBody_a7c3897d0dc78fae74b1f665349596713}} 
+void {\bfseries add\+Link\+Force} (int i, const bt\+Vector3 \&f)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6fca672a0de1e44a828e2ed2b2bfca3b}\label{classbtMultiBody_a6fca672a0de1e44a828e2ed2b2bfca3b}} 
+void {\bfseries add\+Link\+Torque} (int i, const bt\+Vector3 \&t)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a7c55a0935f2bcc58863c9d6724f3976a}\label{classbtMultiBody_a7c55a0935f2bcc58863c9d6724f3976a}} 
+void {\bfseries add\+Joint\+Torque} (int i, bt\+Scalar Q)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9f18e807db3bd459bbbb5cf120302653}\label{classbtMultiBody_a9f18e807db3bd459bbbb5cf120302653}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Force} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_accd9836cb0693648aedb407dc4c824ff}\label{classbtMultiBody_accd9836cb0693648aedb407dc4c824ff}} 
+const bt\+Vector3 \& {\bfseries get\+Base\+Torque} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ad747f572700fd19e7adf3aedfe2f62da}\label{classbtMultiBody_ad747f572700fd19e7adf3aedfe2f62da}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Force} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a39c8e8401a29ec4a48ce38d78e3a09ad}\label{classbtMultiBody_a39c8e8401a29ec4a48ce38d78e3a09ad}} 
+const bt\+Vector3 \& {\bfseries get\+Link\+Torque} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9593430d6a1286f79cc7394c4aad98bf}\label{classbtMultiBody_a9593430d6a1286f79cc7394c4aad98bf}} 
+bt\+Scalar {\bfseries get\+Joint\+Torque} (int i) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a19f334bbde8909b282cd55bc28d75b4b}\label{classbtMultiBody_a19f334bbde8909b282cd55bc28d75b4b}} 
+void {\bfseries step\+Velocities} (bt\+Scalar dt, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Matrix3x3 $>$ \&scratch\+\_\+m)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_acdd6b296f59bcd747c614a58c616bdf0}\label{classbtMultiBody_acdd6b296f59bcd747c614a58c616bdf0}} 
+void {\bfseries calc\+Acceleration\+Deltas} (const bt\+Scalar $\ast$force, bt\+Scalar $\ast$output, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ad233408cb61f257b1c3977bf3b7bcd8e}\label{classbtMultiBody_ad233408cb61f257b1c3977bf3b7bcd8e}} 
+void {\bfseries apply\+Delta\+Vee} (const bt\+Scalar $\ast$delta\+\_\+vee)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aac7bf81725ac6ca493b03d264d06e663}\label{classbtMultiBody_aac7bf81725ac6ca493b03d264d06e663}} 
+void {\bfseries apply\+Delta\+Vee} (const bt\+Scalar $\ast$delta\+\_\+vee, bt\+Scalar multiplier)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a81d5daf2fe75d4f21149f2607002fe23}\label{classbtMultiBody_a81d5daf2fe75d4f21149f2607002fe23}} 
+void {\bfseries step\+Positions} (bt\+Scalar dt)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aab4d830259cb82acba18ef5f46c7ea81}\label{classbtMultiBody_aab4d830259cb82acba18ef5f46c7ea81}} 
+void {\bfseries fill\+Contact\+Jacobian} (int link, const bt\+Vector3 \&contact\+\_\+point, const bt\+Vector3 \&normal, bt\+Scalar $\ast$jac, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch\+\_\+r, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ \&scratch\+\_\+v, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Matrix3x3 $>$ \&scratch\+\_\+m) const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2659acc78021df7907f0ac75e4e9ea61}\label{classbtMultiBody_a2659acc78021df7907f0ac75e4e9ea61}} 
+void {\bfseries set\+Can\+Sleep} (bool can\+Sleep)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a15433657756131aef4055dcd7618ea1e}\label{classbtMultiBody_a15433657756131aef4055dcd7618ea1e}} 
+bool {\bfseries is\+Awake} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2cf38777cf487eafb13cdd5b56a0f530}\label{classbtMultiBody_a2cf38777cf487eafb13cdd5b56a0f530}} 
+void {\bfseries wake\+Up} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_adc438609bb0c384950cfba1ee720200b}\label{classbtMultiBody_adc438609bb0c384950cfba1ee720200b}} 
+void {\bfseries go\+To\+Sleep} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a6fda2785db8302ce2e487cf55aff23d5}\label{classbtMultiBody_a6fda2785db8302ce2e487cf55aff23d5}} 
+void {\bfseries check\+Motion\+And\+Sleep\+If\+Required} (bt\+Scalar timestep)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a9bb5d0e983f409d92cbe18238621a50a}\label{classbtMultiBody_a9bb5d0e983f409d92cbe18238621a50a}} 
+bool {\bfseries has\+Fixed\+Base} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2c614edf28ebaa080560f1e8061d3b79}\label{classbtMultiBody_a2c614edf28ebaa080560f1e8061d3b79}} 
+int {\bfseries get\+Companion\+Id} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aec0ff1d617e7d31344ad4f4c83e808e7}\label{classbtMultiBody_aec0ff1d617e7d31344ad4f4c83e808e7}} 
+void {\bfseries set\+Companion\+Id} (int id)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_ab2b5bc6f3953c9768bb6caa0aba43e63}\label{classbtMultiBody_ab2b5bc6f3953c9768bb6caa0aba43e63}} 
+void {\bfseries set\+Num\+Links} (int num\+Links)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_abde7f2e9e334ba27c207e9341e2ea064}\label{classbtMultiBody_abde7f2e9e334ba27c207e9341e2ea064}} 
+bt\+Scalar {\bfseries get\+Linear\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a51e85f96027e3b2d6a7c87d60b3c7660}\label{classbtMultiBody_a51e85f96027e3b2d6a7c87d60b3c7660}} 
+void {\bfseries set\+Linear\+Damping} (bt\+Scalar damp)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2ccb51f59b0ffdc6b28cfcae2adb938b}\label{classbtMultiBody_a2ccb51f59b0ffdc6b28cfcae2adb938b}} 
+bt\+Scalar {\bfseries get\+Angular\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a21cb8e09cc1a6b060fc39b6335fc0a2c}\label{classbtMultiBody_a21cb8e09cc1a6b060fc39b6335fc0a2c}} 
+bool {\bfseries get\+Use\+Gyro\+Term} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a2bcc1281a4e5d88d68c1caf6baa691c7}\label{classbtMultiBody_a2bcc1281a4e5d88d68c1caf6baa691c7}} 
+void {\bfseries set\+Use\+Gyro\+Term} (bool use\+Gyro)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_aa3573138f236844e4e141039740da588}\label{classbtMultiBody_aa3573138f236844e4e141039740da588}} 
+bt\+Scalar {\bfseries get\+Max\+Applied\+Impulse} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a0d79a9b5c5371b661b7692ee3d4a9e75}\label{classbtMultiBody_a0d79a9b5c5371b661b7692ee3d4a9e75}} 
+void {\bfseries set\+Max\+Applied\+Impulse} (bt\+Scalar max\+Imp)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a4c7bc3057da41bae8fa8873ea9dbb191}\label{classbtMultiBody_a4c7bc3057da41bae8fa8873ea9dbb191}} 
+void {\bfseries set\+Has\+Self\+Collision} (bool has\+Self\+Collision)
+\item 
+\mbox{\Hypertarget{classbtMultiBody_a53daf4eedb691d0b4dc280147a932aa3}\label{classbtMultiBody_a53daf4eedb691d0b4dc280147a932aa3}} 
+bool {\bfseries has\+Self\+Collision} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Featherstone/bt\+Multi\+Body.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Featherstone/bt\+Multi\+Body.\+cpp\end{DoxyCompactItemize}

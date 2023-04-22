@@ -1,0 +1,53 @@
+\hypertarget{classcocos2d_1_1network_1_1Downloader}{}\section{cocos2d\+:\+:network\+:\+:Downloader Class Reference}
+\label{classcocos2d_1_1network_1_1Downloader}\index{cocos2d\+::network\+::\+Downloader@{cocos2d\+::network\+::\+Downloader}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_abf3847bf098f10a49bd1c76eb686d2e3}\label{classcocos2d_1_1network_1_1Downloader_abf3847bf098f10a49bd1c76eb686d2e3}} 
+{\bfseries Downloader} (const \hyperlink{classcocos2d_1_1network_1_1DownloaderHints}{Downloader\+Hints} \&hints)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_ae021d24f3e35aad8566176a361502b32}\label{classcocos2d_1_1network_1_1Downloader_ae021d24f3e35aad8566176a361502b32}} 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} $>$ {\bfseries create\+Download\+Data\+Task} (const std\+::string \&src\+Url, const std\+::string \&identifier=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a3efa7714a27d0a2e5c4d02883b5dba2d}\label{classcocos2d_1_1network_1_1Downloader_a3efa7714a27d0a2e5c4d02883b5dba2d}} 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} $>$ {\bfseries create\+Download\+File\+Task} (const std\+::string \&src\+Url, const std\+::string \&storage\+Path, const std\+::string \&identifier=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_abf3847bf098f10a49bd1c76eb686d2e3}\label{classcocos2d_1_1network_1_1Downloader_abf3847bf098f10a49bd1c76eb686d2e3}} 
+{\bfseries Downloader} (const \hyperlink{classcocos2d_1_1network_1_1DownloaderHints}{Downloader\+Hints} \&hints)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_af56a668014aa9998bd02ea3058d8434a}\label{classcocos2d_1_1network_1_1Downloader_af56a668014aa9998bd02ea3058d8434a}} 
+void {\bfseries set\+On\+File\+Task\+Success} (const std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a2c74651509aa072c3acd07356ad6e0ec}\label{classcocos2d_1_1network_1_1Downloader_a2c74651509aa072c3acd07356ad6e0ec}} 
+void {\bfseries set\+On\+Task\+Progress} (const std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task, int64\+\_\+t bytes\+Received, int64\+\_\+t total\+Bytes\+Received, int64\+\_\+t total\+Bytes\+Expected)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a03afdaa81dcb69299cb80eb2d850273a}\label{classcocos2d_1_1network_1_1Downloader_a03afdaa81dcb69299cb80eb2d850273a}} 
+void {\bfseries set\+On\+Task\+Error} (const std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task, int error\+Code, int error\+Code\+Internal, const std\+::string \&error\+Str)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a8b6f360e9c3ff1dee201011afb3b82fe}\label{classcocos2d_1_1network_1_1Downloader_a8b6f360e9c3ff1dee201011afb3b82fe}} 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} $>$ {\bfseries create\+Download\+Data\+Task} (const std\+::string \&src\+Url, const std\+::string \&identifier=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_aafd6043f7cce6502a50416a067b41d33}\label{classcocos2d_1_1network_1_1Downloader_aafd6043f7cce6502a50416a067b41d33}} 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} $>$ {\bfseries create\+Download\+File\+Task} (const std\+::string \&src\+Url, const std\+::string \&storage\+Path, const std\+::string \&identifier=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a532db190ecddcc8bd2b09f9961972959}\label{classcocos2d_1_1network_1_1Downloader_a532db190ecddcc8bd2b09f9961972959}} 
+std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task, std\+::vector$<$ unsigned char $>$ \&data)$>$ {\bfseries on\+Data\+Task\+Success}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a577c214a2d43b4fae0185311367c986c}\label{classcocos2d_1_1network_1_1Downloader_a577c214a2d43b4fae0185311367c986c}} 
+std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task)$>$ {\bfseries on\+File\+Task\+Success}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_ab1095736c45d1d04930fe85e9403a73d}\label{classcocos2d_1_1network_1_1Downloader_ab1095736c45d1d04930fe85e9403a73d}} 
+std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task, int64\+\_\+t bytes\+Received, int64\+\_\+t total\+Bytes\+Received, int64\+\_\+t total\+Bytes\+Expected)$>$ {\bfseries on\+Task\+Progress}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1network_1_1Downloader_a132ebcc37f3f54333ab8201a7715d1b1}\label{classcocos2d_1_1network_1_1Downloader_a132ebcc37f3f54333ab8201a7715d1b1}} 
+std\+::function$<$ void(const \hyperlink{classcocos2d_1_1network_1_1DownloadTask}{Download\+Task} \&task, int error\+Code, int error\+Code\+Internal, const std\+::string \&error\+Str)$>$ {\bfseries on\+Task\+Error}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/C\+C\+Downloader.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/C\+C\+Downloader.\+cpp\end{DoxyCompactItemize}

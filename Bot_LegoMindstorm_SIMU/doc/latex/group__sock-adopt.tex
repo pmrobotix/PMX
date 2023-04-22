@@ -1,0 +1,406 @@
+\hypertarget{group__sock-adopt}{}\section{Socket adoption helpers}
+\label{group__sock-adopt}\index{Socket adoption helpers@{Socket adoption helpers}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionlws__sock__file__fd__type}{lws\+\_\+sock\+\_\+file\+\_\+fd\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}\label{group__sock-adopt_ga7e944a23efbb50187d34c62fb841d071}} 
+enum {\bfseries lws\+\_\+adoption\+\_\+type} \{ \newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+R\+A\+W\+\_\+\+F\+I\+L\+E\+\_\+\+D\+E\+SC} = 0, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+H\+T\+TP} = 1, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+S\+O\+C\+K\+ET} = 2, 
+\newline
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+SL} = 4, 
+{\bfseries L\+W\+S\+\_\+\+A\+D\+O\+P\+T\+\_\+\+W\+S\+\_\+\+P\+A\+R\+E\+N\+T\+IO} = 8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ \hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context, lws\+\_\+sockfd\+\_\+type accept\+\_\+fd)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ \hyperlink{group__sock-adopt_gab95398ca701a0a5189381fb472a890cc}{lws\+\_\+adopt\+\_\+socket\+\_\+vhost} (struct lws\+\_\+vhost $\ast$vh, lws\+\_\+sockfd\+\_\+type accept\+\_\+fd)
+\item 
+\mbox{\Hypertarget{group__sock-adopt_ga08b9cf35b4d5fb4616d1f9db2ca589d0}\label{group__sock-adopt_ga08b9cf35b4d5fb4616d1f9db2ca589d0}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ {\bfseries lws\+\_\+adopt\+\_\+descriptor\+\_\+vhost} (struct lws\+\_\+vhost $\ast$vh, lws\+\_\+adoption\+\_\+type type, \hyperlink{unionlws__sock__file__fd__type}{lws\+\_\+sock\+\_\+file\+\_\+fd\+\_\+type} fd, const char $\ast$vh\+\_\+prot\+\_\+name, struct \hyperlink{structlws}{lws} $\ast$parent)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ \hyperlink{group__sock-adopt_ga3c98a2ea8006836738b9260257bce69d}{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context, lws\+\_\+sockfd\+\_\+type accept\+\_\+fd, const char $\ast$readbuf, size\+\_\+t len)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ \hyperlink{group__sock-adopt_ga1ad01edd42dab4deca1b1c25694e0f3d}{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf} (struct lws\+\_\+vhost $\ast$vhost, lws\+\_\+sockfd\+\_\+type accept\+\_\+fd, const char $\ast$readbuf, size\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{Socket adoption helpers}
+
+When integrating with an external app with its own event loop, these can be used to accept connections from someone else\textquotesingle{}s listening socket.
+
+When using lws own event loop, these are not needed. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}\label{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}} 
+\index{Socket adoption helpers@{Socket adoption helpers}!lws\+\_\+adopt\+\_\+socket@{lws\+\_\+adopt\+\_\+socket}}
+\index{lws\+\_\+adopt\+\_\+socket@{lws\+\_\+adopt\+\_\+socket}!Socket adoption helpers@{Socket adoption helpers}}
+\subsubsection{\texorpdfstring{lws\+\_\+adopt\+\_\+socket()}{lws\_adopt\_socket()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ lws\+\_\+adopt\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{context,  }\item[{lws\+\_\+sockfd\+\_\+type}]{accept\+\_\+fd }\end{DoxyParamCaption})}
+
+\hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket()} -\/ adopt foreign socket as if listen socket accepted it for the default vhost of context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & lws context \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt\\
+\hline
+\end{DoxyParams}
+Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.
+
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http.
+
+\hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket()} -\/ adopt foreign socket as if listen socket accepted it 
+\begin{DoxyParams}{Parameters}
+{\em context} & lws context \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt\\
+\hline
+\end{DoxyParams}
+Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.
+
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http. \mbox{\Hypertarget{group__sock-adopt_ga3c98a2ea8006836738b9260257bce69d}\label{group__sock-adopt_ga3c98a2ea8006836738b9260257bce69d}} 
+\index{Socket adoption helpers@{Socket adoption helpers}!lws\+\_\+adopt\+\_\+socket\+\_\+readbuf@{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf}}
+\index{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf@{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf}!Socket adoption helpers@{Socket adoption helpers}}
+\subsubsection{\texorpdfstring{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf()}{lws\_adopt\_socket\_readbuf()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ lws\+\_\+adopt\+\_\+socket\+\_\+readbuf (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{context,  }\item[{lws\+\_\+sockfd\+\_\+type}]{accept\+\_\+fd,  }\item[{const char $\ast$}]{readbuf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\hyperlink{group__sock-adopt_ga3c98a2ea8006836738b9260257bce69d}{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf()} -\/ adopt foreign socket and first rx as if listen socket accepted it for the default vhost of context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & lws context \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt \\
+\hline
+{\em readbuf} & N\+U\+LL or pointer to data that must be drained before reading from accept\+\_\+fd \\
+\hline
+{\em len} & The length of the data held at \\
+\hline
+{\em readbuf} & Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.\\
+\hline
+\end{DoxyParams}
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http.
+
+If your external code did not already read from the socket, you can use \hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket()} instead.
+
+This api is guaranteed to use the data at 
+\begin{DoxyParams}{Parameters}
+{\em readbuf} & first, before reading from the socket.\\
+\hline
+\end{DoxyParams}
+readbuf is limited to the size of the ah rx buf, currently 2048 bytes.
+
+\hyperlink{group__sock-adopt_ga3c98a2ea8006836738b9260257bce69d}{lws\+\_\+adopt\+\_\+socket\+\_\+readbuf()} -\/ adopt foreign socket and first rx as if listen socket accepted it 
+\begin{DoxyParams}{Parameters}
+{\em context} & lws context \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt \\
+\hline
+{\em readbuf} & N\+U\+LL or pointer to data that must be drained before reading from accept\+\_\+fd \\
+\hline
+{\em len} & The length of the data held at \\
+\hline
+{\em readbuf} & Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.\\
+\hline
+\end{DoxyParams}
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http.
+
+If your external code did not already read from the socket, you can use \hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket()} instead.
+
+This api is guaranteed to use the data at 
+\begin{DoxyParams}{Parameters}
+{\em readbuf} & first, before reading from the socket.\\
+\hline
+\end{DoxyParams}
+readbuf is limited to the size of the ah rx buf, currently 2048 bytes. \mbox{\Hypertarget{group__sock-adopt_gab95398ca701a0a5189381fb472a890cc}\label{group__sock-adopt_gab95398ca701a0a5189381fb472a890cc}} 
+\index{Socket adoption helpers@{Socket adoption helpers}!lws\+\_\+adopt\+\_\+socket\+\_\+vhost@{lws\+\_\+adopt\+\_\+socket\+\_\+vhost}}
+\index{lws\+\_\+adopt\+\_\+socket\+\_\+vhost@{lws\+\_\+adopt\+\_\+socket\+\_\+vhost}!Socket adoption helpers@{Socket adoption helpers}}
+\subsubsection{\texorpdfstring{lws\+\_\+adopt\+\_\+socket\+\_\+vhost()}{lws\_adopt\_socket\_vhost()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ lws\+\_\+adopt\+\_\+socket\+\_\+vhost (\begin{DoxyParamCaption}\item[{struct lws\+\_\+vhost $\ast$}]{vh,  }\item[{lws\+\_\+sockfd\+\_\+type}]{accept\+\_\+fd }\end{DoxyParamCaption})}
+
+\hyperlink{group__sock-adopt_gab95398ca701a0a5189381fb472a890cc}{lws\+\_\+adopt\+\_\+socket\+\_\+vhost()} -\/ adopt foreign socket as if listen socket accepted it for vhost
+
+
+\begin{DoxyParams}{Parameters}
+{\em vh} & lws vhost \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt\\
+\hline
+\end{DoxyParams}
+Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.
+
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http. \mbox{\Hypertarget{group__sock-adopt_ga1ad01edd42dab4deca1b1c25694e0f3d}\label{group__sock-adopt_ga1ad01edd42dab4deca1b1c25694e0f3d}} 
+\index{Socket adoption helpers@{Socket adoption helpers}!lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf@{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf}}
+\index{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf@{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf}!Socket adoption helpers@{Socket adoption helpers}}
+\subsubsection{\texorpdfstring{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf()}{lws\_adopt\_socket\_vhost\_readbuf()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf (\begin{DoxyParamCaption}\item[{struct lws\+\_\+vhost $\ast$}]{vhost,  }\item[{lws\+\_\+sockfd\+\_\+type}]{accept\+\_\+fd,  }\item[{const char $\ast$}]{readbuf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\hyperlink{group__sock-adopt_ga1ad01edd42dab4deca1b1c25694e0f3d}{lws\+\_\+adopt\+\_\+socket\+\_\+vhost\+\_\+readbuf()} -\/ adopt foreign socket and first rx as if listen socket accepted it for vhost. 
+\begin{DoxyParams}{Parameters}
+{\em vhost} & lws vhost \\
+\hline
+{\em accept\+\_\+fd} & fd of already-\/accepted socket to adopt \\
+\hline
+{\em readbuf} & N\+U\+LL or pointer to data that must be drained before reading from accept\+\_\+fd \\
+\hline
+{\em len} & The length of the data held at \\
+\hline
+{\em readbuf} & Either returns new wsi bound to accept\+\_\+fd, or closes accept\+\_\+fd and returns N\+U\+LL, having cleaned up any new wsi pieces.\\
+\hline
+\end{DoxyParams}
+L\+WS adopts the socket in http serving mode, it\textquotesingle{}s ready to accept an upgrade to ws or just serve http.
+
+If your external code did not already read from the socket, you can use \hyperlink{group__sock-adopt_ga2003db73fc10b05b8e17a9ee715727a9}{lws\+\_\+adopt\+\_\+socket()} instead.
+
+This api is guaranteed to use the data at 
+\begin{DoxyParams}{Parameters}
+{\em readbuf} & first, before reading from the socket.\\
+\hline
+\end{DoxyParams}
+readbuf is limited to the size of the ah rx buf, currently 2048 bytes. 

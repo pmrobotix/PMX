@@ -1,0 +1,1267 @@
+\hypertarget{classdtNavMesh}{}\section{dt\+Nav\+Mesh Class Reference}
+\label{classdtNavMesh}\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\textbf{ Initialization and Tile Management}\par
+\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a020702938951249972b955a65967234a}{init} (const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$params)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}{init} (unsigned char $\ast$data, const int data\+Size, const int flags)
+\item 
+const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$ \hyperlink{classdtNavMesh_a9202ff1b571f26d948c0ee2f07c9bce8}{get\+Params} () const
+\begin{DoxyCompactList}\small\item\em The navigation mesh initialization params. \end{DoxyCompactList}\item 
+dt\+Status \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{add\+Tile} (unsigned char $\ast$data, int data\+Size, int flags, \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} last\+Ref, \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} $\ast$result)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}{remove\+Tile} (\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} ref, unsigned char $\ast$$\ast$data, int $\ast$data\+Size)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a020702938951249972b955a65967234a}{init} (const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$params)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}{init} (unsigned char $\ast$data, const int data\+Size, const int flags)
+\item 
+\mbox{\Hypertarget{classdtNavMesh_ab039f03f9b189e2537c501b75155d9ce}\label{classdtNavMesh_ab039f03f9b189e2537c501b75155d9ce}} 
+const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$ \hyperlink{classdtNavMesh_ab039f03f9b189e2537c501b75155d9ce}{get\+Params} () const
+\begin{DoxyCompactList}\small\item\em The navigation mesh initialization params. \end{DoxyCompactList}\item 
+dt\+Status \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{add\+Tile} (unsigned char $\ast$data, int data\+Size, int flags, \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} last\+Ref, \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} $\ast$result)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}{remove\+Tile} (\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} ref, unsigned char $\ast$$\ast$data, int $\ast$data\+Size)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Query Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}{calc\+Tile\+Loc} (const float $\ast$pos, int $\ast$tx, int $\ast$ty) const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_aecd08fb7ce20324cd18de51a834ff2ef}{get\+Tile\+At} (const int x, const int y, const int layer) const
+\item 
+int \hyperlink{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}{get\+Tiles\+At} (const int x, const int y, \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} const $\ast$$\ast$tiles, const int max\+Tiles) const
+\item 
+\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} \hyperlink{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}{get\+Tile\+Ref\+At} (int x, int y, int layer) const
+\item 
+\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} \hyperlink{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}{get\+Tile\+Ref} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_ac7924d8eeed5c67b04d2d23d0cc766ad}{get\+Tile\+By\+Ref} (\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} ref) const
+\item 
+int \hyperlink{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}{get\+Max\+Tiles} () const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_a52bb4f57b24a139600cfb6aeec1d9bcd}{get\+Tile} (int i) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}{get\+Tile\+And\+Poly\+By\+Ref} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$poly) const
+\item 
+void \hyperlink{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$poly) const
+\item 
+bool \hyperlink{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}{is\+Valid\+Poly\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}{get\+Poly\+Ref\+Base} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a5f4c392080406146805f674489feac4a}{get\+Off\+Mesh\+Connection\+Poly\+End\+Points} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} poly\+Ref, float $\ast$start\+Pos, float $\ast$end\+Pos) const
+\item 
+const \hyperlink{structdtOffMeshConnection}{dt\+Off\+Mesh\+Connection} $\ast$ \hyperlink{classdtNavMesh_a1db2c979241da0b6e0fda278206678de}{get\+Off\+Mesh\+Connection\+By\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+void \hyperlink{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}{calc\+Tile\+Loc} (const float $\ast$pos, int $\ast$tx, int $\ast$ty) const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_a5b5388eeb44e77d258e6327393634a41}{get\+Tile\+At} (const int x, const int y, const int layer) const
+\item 
+int \hyperlink{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}{get\+Tiles\+At} (const int x, const int y, \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} const $\ast$$\ast$tiles, const int max\+Tiles) const
+\item 
+\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} \hyperlink{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}{get\+Tile\+Ref\+At} (int x, int y, int layer) const
+\item 
+\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} \hyperlink{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}{get\+Tile\+Ref} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_ac0e0ca5289ea49b392501662d6dd9c39}{get\+Tile\+By\+Ref} (\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} ref) const
+\item 
+int \hyperlink{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}{get\+Max\+Tiles} () const
+\item 
+const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{classdtNavMesh_a0996a5c5f1028091fe18cd8da019d77e}{get\+Tile} (int i) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}{get\+Tile\+And\+Poly\+By\+Ref} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$poly) const
+\item 
+void \hyperlink{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$poly) const
+\item 
+bool \hyperlink{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}{is\+Valid\+Poly\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}{get\+Poly\+Ref\+Base} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a5f4c392080406146805f674489feac4a}{get\+Off\+Mesh\+Connection\+Poly\+End\+Points} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} poly\+Ref, float $\ast$start\+Pos, float $\ast$end\+Pos) const
+\item 
+const \hyperlink{structdtOffMeshConnection}{dt\+Off\+Mesh\+Connection} $\ast$ \hyperlink{classdtNavMesh_a4dec3003fb84ea8f45a2519ec3bc2f0d}{get\+Off\+Mesh\+Connection\+By\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ State Management}\par
+{\em These functions do not effect \hyperlink{group__detour_ga608138970cbb12594287ea6523be24ef}{dt\+Tile\+Ref} or \hyperlink{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}{dt\+Poly\+Ref}\textquotesingle{}s. }\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}{set\+Poly\+Flags} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned short flags)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}{get\+Poly\+Flags} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned short $\ast$result\+Flags) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}{set\+Poly\+Area} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned char area)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}{get\+Poly\+Area} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned char $\ast$result\+Area) const
+\item 
+int \hyperlink{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}{get\+Tile\+State\+Size} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, unsigned char $\ast$data, const int max\+Data\+Size) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}{restore\+Tile\+State} (\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, const unsigned char $\ast$data, const int max\+Data\+Size)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}{set\+Poly\+Flags} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned short flags)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}{get\+Poly\+Flags} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned short $\ast$result\+Flags) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}{set\+Poly\+Area} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned char area)
+\item 
+dt\+Status \hyperlink{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}{get\+Poly\+Area} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned char $\ast$result\+Area) const
+\item 
+int \hyperlink{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}{get\+Tile\+State\+Size} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} (const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, unsigned char $\ast$data, const int max\+Data\+Size) const
+\item 
+dt\+Status \hyperlink{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}{restore\+Tile\+State} (\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, const unsigned char $\ast$data, const int max\+Data\+Size)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Encoding and Decoding}\par
+{\em These functions are generally meant for internal use only. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} (unsigned int salt, unsigned int it, unsigned int ip) const
+\item 
+void \hyperlink{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}{decode\+Poly\+Id} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned int \&salt, unsigned int \&it, unsigned int \&ip) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}{decode\+Poly\+Id\+Salt} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}{decode\+Poly\+Id\+Tile} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}{decode\+Poly\+Id\+Poly} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} (unsigned int salt, unsigned int it, unsigned int ip) const
+\item 
+void \hyperlink{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}{decode\+Poly\+Id} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, unsigned int \&salt, unsigned int \&it, unsigned int \&ip) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}{decode\+Poly\+Id\+Salt} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}{decode\+Poly\+Id\+Tile} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+unsigned int \hyperlink{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}{decode\+Poly\+Id\+Poly} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A navigation mesh based on tiles of convex polygons.
+
+The navigation mesh consists of one or more tiles defining three primary types of structural data\+:
+
+A polygon mesh which defines most of the navigation graph. (See \hyperlink{structrcPolyMesh}{rc\+Poly\+Mesh} for its structure.) A detail mesh used for determining surface height on the polygon mesh. (See \hyperlink{structrcPolyMeshDetail}{rc\+Poly\+Mesh\+Detail} for its structure.) Off-\/mesh connections, which define custom point-\/to-\/point edges within the navigation graph.
+
+The general build process is as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Create \hyperlink{structrcPolyMesh}{rc\+Poly\+Mesh} and \hyperlink{structrcPolyMeshDetail}{rc\+Poly\+Mesh\+Detail} data using the Recast build pipeline.
+\item Optionally, create off-\/mesh connection data.
+\item Combine the source data into a \hyperlink{structdtNavMeshCreateParams}{dt\+Nav\+Mesh\+Create\+Params} structure.
+\item Create a tile data array using \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data()}.
+\item Allocate at \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} object and initialize it. (For single tile navigation meshes, the tile data is loaded during this step.)
+\item For multi-\/tile navigation meshes, load the tile data using \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{dt\+Nav\+Mesh\+::add\+Tile()}.
+\end{DoxyEnumerate}
+
+Notes\+:
+
+
+\begin{DoxyItemize}
+\item This class is usually used in conjunction with the \hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} class for pathfinding.
+\item Technically, all navigation meshes are tiled. A \textquotesingle{}solo\textquotesingle{} mesh is simply a navigation mesh initialized to have only a single tile.
+\item This class does not implement any asynchronous methods. So the \+::dt\+Status result of all methods will always contain either a success or failure flag.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query}, \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}, \hyperlink{structdtNavMeshCreateParams}{dt\+Nav\+Mesh\+Create\+Params}, \hyperlink{group__detour_ga73648d53c5a414855a2aa264aab9263c}{dt\+Alloc\+Nav\+Mesh}, \hyperlink{group__detour_gad938af5675a2f62c7c3830b38ea9a184}{dt\+Free\+Nav\+Mesh} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}\label{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!add\+Tile@{add\+Tile}}
+\index{add\+Tile@{add\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{add\+Tile()}{addTile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::add\+Tile (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{int}]{data\+Size,  }\item[{int}]{flags,  }\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{last\+Ref,  }\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} $\ast$}]{result }\end{DoxyParamCaption})}
+
+Adds a tile to the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & \hyperlink{classData}{Data} for the new tile mesh. (See\+: \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}) \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & \hyperlink{classData}{Data} size of the new tile mesh. \\
+\hline
+\mbox{\tt in}  & {\em flags} & \hyperlink{structTile}{Tile} flags. (See\+: \#dt\+Tile\+Flags) \\
+\hline
+\mbox{\tt in}  & {\em last\+Ref} & The desired reference for the tile. (When reloading a tile.) \mbox{[}opt\mbox{]} \mbox{[}Default\+: 0\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result} & The tile reference. (If the tile was succesfully added.) \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The add operation will fail if the data is in the wrong format, the allocated tile space is full, or there is a tile already at the specified reference.
+
+The last\+Ref parameter is used to restore a tile with the same tile reference it had previously used. In this case the \hyperlink{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}{dt\+Poly\+Ref}\textquotesingle{}s for the tile will be restored to the same values they were before the tile was removed.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}, \hyperlink{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}{remove\+Tile} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}\label{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!add\+Tile@{add\+Tile}}
+\index{add\+Tile@{add\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{add\+Tile()}{addTile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::add\+Tile (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{int}]{data\+Size,  }\item[{int}]{flags,  }\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{last\+Ref,  }\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} $\ast$}]{result }\end{DoxyParamCaption})}
+
+Adds a tile to the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & \hyperlink{classData}{Data} for the new tile mesh. (See\+: \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}) \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & \hyperlink{classData}{Data} size of the new tile mesh. \\
+\hline
+\mbox{\tt in}  & {\em flags} & \hyperlink{structTile}{Tile} flags. (See\+: \#dt\+Tile\+Flags) \\
+\hline
+\mbox{\tt in}  & {\em last\+Ref} & The desired reference for the tile. (When reloading a tile.) \mbox{[}opt\mbox{]} \mbox{[}Default\+: 0\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result} & The tile reference. (If the tile was succesfully added.) \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}\label{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!calc\+Tile\+Loc@{calc\+Tile\+Loc}}
+\index{calc\+Tile\+Loc@{calc\+Tile\+Loc}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{calc\+Tile\+Loc()}{calcTileLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::calc\+Tile\+Loc (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{int $\ast$}]{tx,  }\item[{int $\ast$}]{ty }\end{DoxyParamCaption}) const}
+
+Calculates the tile grid location for the specified world position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The world position for the query. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em tx} & The tile\textquotesingle{}s x-\/location. (x, y) \\
+\hline
+\mbox{\tt out}  & {\em ty} & The tile\textquotesingle{}s y-\/location. (x, y) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}\label{classdtNavMesh_a609d55c59062910ff645dbbd4c72fed1}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!calc\+Tile\+Loc@{calc\+Tile\+Loc}}
+\index{calc\+Tile\+Loc@{calc\+Tile\+Loc}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{calc\+Tile\+Loc()}{calcTileLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::calc\+Tile\+Loc (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pos,  }\item[{int $\ast$}]{tx,  }\item[{int $\ast$}]{ty }\end{DoxyParamCaption}) const}
+
+Calculates the tile grid location for the specified world position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The world position for the query. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em tx} & The tile\textquotesingle{}s x-\/location. (x, y) \\
+\hline
+\mbox{\tt out}  & {\em ty} & The tile\textquotesingle{}s y-\/location. (x, y) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}\label{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id@{decode\+Poly\+Id}}
+\index{decode\+Poly\+Id@{decode\+Poly\+Id}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id()}{decodePolyId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::decode\+Poly\+Id (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned int \&}]{salt,  }\item[{unsigned int \&}]{it,  }\item[{unsigned int \&}]{ip }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Decodes a standard polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to decode. \\
+\hline
+\mbox{\tt out}  & {\em salt} & The tile\textquotesingle{}s salt value. \\
+\hline
+\mbox{\tt out}  & {\em it} & The index of the tile. \\
+\hline
+\mbox{\tt out}  & {\em ip} & The index of the polygon within the tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}\label{classdtNavMesh_afaaf5c22864cdf4a61d5e40a4efce43f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id@{decode\+Poly\+Id}}
+\index{decode\+Poly\+Id@{decode\+Poly\+Id}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id()}{decodePolyId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::decode\+Poly\+Id (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned int \&}]{salt,  }\item[{unsigned int \&}]{it,  }\item[{unsigned int \&}]{ip }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Decodes a standard polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to decode. \\
+\hline
+\mbox{\tt out}  & {\em salt} & The tile\textquotesingle{}s salt value. \\
+\hline
+\mbox{\tt out}  & {\em it} & The index of the tile. \\
+\hline
+\mbox{\tt out}  & {\em ip} & The index of the polygon within the tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}\label{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Poly@{decode\+Poly\+Id\+Poly}}
+\index{decode\+Poly\+Id\+Poly@{decode\+Poly\+Id\+Poly}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Poly()}{decodePolyIdPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Poly (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts the polygon\textquotesingle{}s index (within its tile) from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}\label{classdtNavMesh_a936c3779e6cb7484e57dd106911eccc2}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Poly@{decode\+Poly\+Id\+Poly}}
+\index{decode\+Poly\+Id\+Poly@{decode\+Poly\+Id\+Poly}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Poly()}{decodePolyIdPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Poly (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts the polygon\textquotesingle{}s index (within its tile) from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}\label{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Salt@{decode\+Poly\+Id\+Salt}}
+\index{decode\+Poly\+Id\+Salt@{decode\+Poly\+Id\+Salt}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Salt()}{decodePolyIdSalt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Salt (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts a tile\textquotesingle{}s salt value from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}\label{classdtNavMesh_a588b6f839fd249430cff02cea71f347c}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Salt@{decode\+Poly\+Id\+Salt}}
+\index{decode\+Poly\+Id\+Salt@{decode\+Poly\+Id\+Salt}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Salt()}{decodePolyIdSalt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Salt (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts a tile\textquotesingle{}s salt value from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}\label{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Tile@{decode\+Poly\+Id\+Tile}}
+\index{decode\+Poly\+Id\+Tile@{decode\+Poly\+Id\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Tile()}{decodePolyIdTile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Tile (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts the tile\textquotesingle{}s index from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}\label{classdtNavMesh_a94cfcf0015d7d6d856acaf96126cd349}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!decode\+Poly\+Id\+Tile@{decode\+Poly\+Id\+Tile}}
+\index{decode\+Poly\+Id\+Tile@{decode\+Poly\+Id\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{decode\+Poly\+Id\+Tile()}{decodePolyIdTile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int dt\+Nav\+Mesh\+::decode\+Poly\+Id\+Tile (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Extracts the tile\textquotesingle{}s index from the specified polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}{encode\+Poly\+Id} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}\label{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!encode\+Poly\+Id@{encode\+Poly\+Id}}
+\index{encode\+Poly\+Id@{encode\+Poly\+Id}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{encode\+Poly\+Id()}{encodePolyId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} dt\+Nav\+Mesh\+::encode\+Poly\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{salt,  }\item[{unsigned int}]{it,  }\item[{unsigned int}]{ip }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Derives a standard polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em salt} & The tile\textquotesingle{}s salt value. \\
+\hline
+\mbox{\tt in}  & {\em it} & The index of the tile. \\
+\hline
+\mbox{\tt in}  & {\em ip} & The index of the polygon within the tile. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}\label{classdtNavMesh_a168a479840e7e32613f4b68ee4662d78}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!encode\+Poly\+Id@{encode\+Poly\+Id}}
+\index{encode\+Poly\+Id@{encode\+Poly\+Id}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{encode\+Poly\+Id()}{encodePolyId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} dt\+Nav\+Mesh\+::encode\+Poly\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{salt,  }\item[{unsigned int}]{it,  }\item[{unsigned int}]{ip }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Derives a standard polygon reference. \begin{DoxyNote}{Note}
+This function is generally meant for internal use only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em salt} & The tile\textquotesingle{}s salt value. \\
+\hline
+\mbox{\tt in}  & {\em it} & The index of the tile. \\
+\hline
+\mbox{\tt in}  & {\em ip} & The index of the polygon within the tile. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}\label{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Max\+Tiles@{get\+Max\+Tiles}}
+\index{get\+Max\+Tiles@{get\+Max\+Tiles}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Max\+Tiles()}{getMaxTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Max\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The maximum number of tiles supported by the navigation mesh. \begin{DoxyReturn}{Returns}
+The maximum number of tiles supported by the navigation mesh. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}\label{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Max\+Tiles@{get\+Max\+Tiles}}
+\index{get\+Max\+Tiles@{get\+Max\+Tiles}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Max\+Tiles()}{getMaxTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Max\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The maximum number of tiles supported by the navigation mesh. \begin{DoxyReturn}{Returns}
+The maximum number of tiles supported by the navigation mesh. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a1db2c979241da0b6e0fda278206678de}\label{classdtNavMesh_a1db2c979241da0b6e0fda278206678de}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Off\+Mesh\+Connection\+By\+Ref@{get\+Off\+Mesh\+Connection\+By\+Ref}}
+\index{get\+Off\+Mesh\+Connection\+By\+Ref@{get\+Off\+Mesh\+Connection\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Off\+Mesh\+Connection\+By\+Ref()}{getOffMeshConnectionByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtOffMeshConnection}{dt\+Off\+Mesh\+Connection} $\ast$ dt\+Nav\+Mesh\+::get\+Off\+Mesh\+Connection\+By\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Gets the specified off-\/mesh connection. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference of the off-\/mesh connection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The specified off-\/mesh connection, or null if the polygon reference is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a4dec3003fb84ea8f45a2519ec3bc2f0d}\label{classdtNavMesh_a4dec3003fb84ea8f45a2519ec3bc2f0d}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Off\+Mesh\+Connection\+By\+Ref@{get\+Off\+Mesh\+Connection\+By\+Ref}}
+\index{get\+Off\+Mesh\+Connection\+By\+Ref@{get\+Off\+Mesh\+Connection\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Off\+Mesh\+Connection\+By\+Ref()}{getOffMeshConnectionByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtOffMeshConnection}{dt\+Off\+Mesh\+Connection}$\ast$ dt\+Nav\+Mesh\+::get\+Off\+Mesh\+Connection\+By\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Gets the specified off-\/mesh connection. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference of the off-\/mesh connection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The specified off-\/mesh connection, or null if the polygon reference is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a5f4c392080406146805f674489feac4a}\label{classdtNavMesh_a5f4c392080406146805f674489feac4a}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Off\+Mesh\+Connection\+Poly\+End\+Points@{get\+Off\+Mesh\+Connection\+Poly\+End\+Points}}
+\index{get\+Off\+Mesh\+Connection\+Poly\+End\+Points@{get\+Off\+Mesh\+Connection\+Poly\+End\+Points}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Off\+Mesh\+Connection\+Poly\+End\+Points()}{getOffMeshConnectionPolyEndPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Off\+Mesh\+Connection\+Poly\+End\+Points (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{poly\+Ref,  }\item[{float $\ast$}]{start\+Pos,  }\item[{float $\ast$}]{end\+Pos }\end{DoxyParamCaption}) const}
+
+Gets the endpoints for an off-\/mesh connection, ordered by \char`\"{}direction of travel\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\+Ref} & The reference of the polygon before the connection. \\
+\hline
+\mbox{\tt in}  & {\em poly\+Ref} & The reference of the off-\/mesh connection polygon. \\
+\hline
+\mbox{\tt out}  & {\em start\+Pos} & The start position of the off-\/mesh connection. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em end\+Pos} & The end position of the off-\/mesh connection. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Off-\/mesh connections are stored in the navigation mesh as special 2-\/vertex polygons with a single edge. At least one of the vertices is expected to be inside a normal polygon. So an off-\/mesh connection is \char`\"{}entered\char`\"{} from a normal polygon at one of its endpoints. This is the polygon identified by the prev\+Ref parameter. \mbox{\Hypertarget{classdtNavMesh_a5f4c392080406146805f674489feac4a}\label{classdtNavMesh_a5f4c392080406146805f674489feac4a}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Off\+Mesh\+Connection\+Poly\+End\+Points@{get\+Off\+Mesh\+Connection\+Poly\+End\+Points}}
+\index{get\+Off\+Mesh\+Connection\+Poly\+End\+Points@{get\+Off\+Mesh\+Connection\+Poly\+End\+Points}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Off\+Mesh\+Connection\+Poly\+End\+Points()}{getOffMeshConnectionPolyEndPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Off\+Mesh\+Connection\+Poly\+End\+Points (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{poly\+Ref,  }\item[{float $\ast$}]{start\+Pos,  }\item[{float $\ast$}]{end\+Pos }\end{DoxyParamCaption}) const}
+
+Gets the endpoints for an off-\/mesh connection, ordered by \char`\"{}direction of travel\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\+Ref} & The reference of the polygon before the connection. \\
+\hline
+\mbox{\tt in}  & {\em poly\+Ref} & The reference of the off-\/mesh connection polygon. \\
+\hline
+\mbox{\tt out}  & {\em start\+Pos} & The start position of the off-\/mesh connection. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em end\+Pos} & The end position of the off-\/mesh connection. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a9202ff1b571f26d948c0ee2f07c9bce8}\label{classdtNavMesh_a9202ff1b571f26d948c0ee2f07c9bce8}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Params@{get\+Params}}
+\index{get\+Params@{get\+Params}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Params()}{getParams()}}
+{\footnotesize\ttfamily const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$ dt\+Nav\+Mesh\+::get\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The navigation mesh initialization params. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+The parameters are created automatically when the single tile initialization is performed. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}\label{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Area@{get\+Poly\+Area}}
+\index{get\+Poly\+Area@{get\+Poly\+Area}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Area()}{getPolyArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Poly\+Area (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned char $\ast$}]{result\+Area }\end{DoxyParamCaption}) const}
+
+Gets the user defined area for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt out}  & {\em result\+Area} & The area id for the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}\label{classdtNavMesh_aac53c07a2ab699b15228c91a17b3bafd}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Area@{get\+Poly\+Area}}
+\index{get\+Poly\+Area@{get\+Poly\+Area}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Area()}{getPolyArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Poly\+Area (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned char $\ast$}]{result\+Area }\end{DoxyParamCaption}) const}
+
+Gets the user defined area for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt out}  & {\em result\+Area} & The area id for the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}\label{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Flags@{get\+Poly\+Flags}}
+\index{get\+Poly\+Flags@{get\+Poly\+Flags}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Flags()}{getPolyFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Poly\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned short $\ast$}]{result\+Flags }\end{DoxyParamCaption}) const}
+
+Gets the user defined flags for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt out}  & {\em result\+Flags} & The polygon flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}\label{classdtNavMesh_a8d5d33030fc21afa6b1be3c80689f9b7}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Flags@{get\+Poly\+Flags}}
+\index{get\+Poly\+Flags@{get\+Poly\+Flags}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Flags()}{getPolyFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Poly\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned short $\ast$}]{result\+Flags }\end{DoxyParamCaption}) const}
+
+Gets the user defined flags for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt out}  & {\em result\+Flags} & The polygon flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}\label{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Ref\+Base@{get\+Poly\+Ref\+Base}}
+\index{get\+Poly\+Ref\+Base@{get\+Poly\+Ref\+Base}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Ref\+Base()}{getPolyRefBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} dt\+Nav\+Mesh\+::get\+Poly\+Ref\+Base (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the polygon reference for the tile\textquotesingle{}s base polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The polygon reference for the base polygon in the specified tile.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Example use case\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{const} \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dtPolyRef} base = navmesh->getPolyRefBase(tile);
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < tile->header->polyCount; ++i)
+\{
+    \textcolor{keyword}{const} \hyperlink{structdtPoly}{dtPoly}* p = &tile->polys[i];
+    \textcolor{keyword}{const} \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dtPolyRef} ref = base | (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dtPolyRef})i;
+    
+    \textcolor{comment}{// Use the reference to access the polygon data.}
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}\label{classdtNavMesh_a0741871ed1357c51e3847f22673fcc9c}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Poly\+Ref\+Base@{get\+Poly\+Ref\+Base}}
+\index{get\+Poly\+Ref\+Base@{get\+Poly\+Ref\+Base}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Poly\+Ref\+Base()}{getPolyRefBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} dt\+Nav\+Mesh\+::get\+Poly\+Ref\+Base (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the polygon reference for the tile\textquotesingle{}s base polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The polygon reference for the base polygon in the specified tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a0996a5c5f1028091fe18cd8da019d77e}\label{classdtNavMesh_a0996a5c5f1028091fe18cd8da019d77e}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile@{get\+Tile}}
+\index{get\+Tile@{get\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile()}{getTile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile}$\ast$ dt\+Nav\+Mesh\+::get\+Tile (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+Gets the tile at the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The tile index. \mbox{[}Limit\+: 0 $>$= index $<$ \hyperlink{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}{get\+Max\+Tiles()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a52bb4f57b24a139600cfb6aeec1d9bcd}\label{classdtNavMesh_a52bb4f57b24a139600cfb6aeec1d9bcd}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile@{get\+Tile}}
+\index{get\+Tile@{get\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile()}{getTile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ dt\+Nav\+Mesh\+::get\+Tile (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+Gets the tile at the specified index. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The tile index. \mbox{[}Limit\+: 0 $>$= index $<$ \hyperlink{classdtNavMesh_a17672fe19464d55eb66dc69f5f2f2b3f}{get\+Max\+Tiles()}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}\label{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+And\+Poly\+By\+Ref@{get\+Tile\+And\+Poly\+By\+Ref}}
+\index{get\+Tile\+And\+Poly\+By\+Ref@{get\+Tile\+And\+Poly\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+And\+Poly\+By\+Ref()}{getTileAndPolyByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Tile\+And\+Poly\+By\+Ref (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$}]{poly }\end{DoxyParamCaption}) const}
+
+Gets the tile and polygon for the specified polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference for the a polygon. \\
+\hline
+\mbox{\tt out}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt out}  & {\em poly} & The polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}\label{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+And\+Poly\+By\+Ref@{get\+Tile\+And\+Poly\+By\+Ref}}
+\index{get\+Tile\+And\+Poly\+By\+Ref@{get\+Tile\+And\+Poly\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+And\+Poly\+By\+Ref()}{getTileAndPolyByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::get\+Tile\+And\+Poly\+By\+Ref (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$}]{poly }\end{DoxyParamCaption}) const}
+
+Gets the tile and polygon for the specified polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference for the a polygon. \\
+\hline
+\mbox{\tt out}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt out}  & {\em poly} & The polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}\label{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+And\+Poly\+By\+Ref\+Unsafe@{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe}}
+\index{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe@{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe()}{getTileAndPolyByRefUnsafe()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::get\+Tile\+And\+Poly\+By\+Ref\+Unsafe (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$}]{poly }\end{DoxyParamCaption}) const}
+
+Returns the tile and polygon for the specified polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & A known valid reference for a polygon. \\
+\hline
+\mbox{\tt out}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt out}  & {\em poly} & The polygon. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}\label{classdtNavMesh_ac5c5b89a6af63b7de29089ae83091e0f}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+And\+Poly\+By\+Ref\+Unsafe@{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe}}
+\index{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe@{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+And\+Poly\+By\+Ref\+Unsafe()}{getTileAndPolyByRefUnsafe()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Nav\+Mesh\+::get\+Tile\+And\+Poly\+By\+Ref\+Unsafe (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$$\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$$\ast$}]{poly }\end{DoxyParamCaption}) const}
+
+Returns the tile and polygon for the specified polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & A known valid reference for a polygon. \\
+\hline
+\mbox{\tt out}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt out}  & {\em poly} & The polygon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Warning}
+Only use this function if it is known that the provided polygon reference is valid. This function is faster than \hyperlink{classdtNavMesh_a36a84aa7296d5cc257eb3ddc38181253}{get\+Tile\+And\+Poly\+By\+Ref}, but it does not validate the reference. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classdtNavMesh_a5b5388eeb44e77d258e6327393634a41}\label{classdtNavMesh_a5b5388eeb44e77d258e6327393634a41}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+At@{get\+Tile\+At}}
+\index{get\+Tile\+At@{get\+Tile\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+At()}{getTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile}$\ast$ dt\+Nav\+Mesh\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{layer }\end{DoxyParamCaption}) const}
+
+Gets the tile at the specified grid location. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em layer} & The tile\textquotesingle{}s layer. (x, y, layer) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile, or null if the tile does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_aecd08fb7ce20324cd18de51a834ff2ef}\label{classdtNavMesh_aecd08fb7ce20324cd18de51a834ff2ef}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+At@{get\+Tile\+At}}
+\index{get\+Tile\+At@{get\+Tile\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+At()}{getTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ dt\+Nav\+Mesh\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{const int}]{layer }\end{DoxyParamCaption}) const}
+
+Gets the tile at the specified grid location. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em layer} & The tile\textquotesingle{}s layer. (x, y, layer) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile, or null if the tile does not exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_ac7924d8eeed5c67b04d2d23d0cc766ad}\label{classdtNavMesh_ac7924d8eeed5c67b04d2d23d0cc766ad}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+By\+Ref@{get\+Tile\+By\+Ref}}
+\index{get\+Tile\+By\+Ref@{get\+Tile\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+By\+Ref()}{getTileByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ dt\+Nav\+Mesh\+::get\+Tile\+By\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Gets the tile for the specified tile reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The tile reference of the tile to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile for the specified reference, or null if the reference is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_ac0e0ca5289ea49b392501662d6dd9c39}\label{classdtNavMesh_ac0e0ca5289ea49b392501662d6dd9c39}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+By\+Ref@{get\+Tile\+By\+Ref}}
+\index{get\+Tile\+By\+Ref@{get\+Tile\+By\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+By\+Ref()}{getTileByRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile}$\ast$ dt\+Nav\+Mesh\+::get\+Tile\+By\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Gets the tile for the specified tile reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The tile reference of the tile to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile for the specified reference, or null if the reference is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}\label{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+Ref@{get\+Tile\+Ref}}
+\index{get\+Tile\+Ref@{get\+Tile\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+Ref()}{getTileRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} dt\+Nav\+Mesh\+::get\+Tile\+Ref (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the tile reference for the specified tile. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile reference of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}\label{classdtNavMesh_a6027a9a6f032dfd6a3b72563f17d80d7}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+Ref@{get\+Tile\+Ref}}
+\index{get\+Tile\+Ref@{get\+Tile\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+Ref()}{getTileRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} dt\+Nav\+Mesh\+::get\+Tile\+Ref (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the tile reference for the specified tile. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile reference of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}\label{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+Ref\+At@{get\+Tile\+Ref\+At}}
+\index{get\+Tile\+Ref\+At@{get\+Tile\+Ref\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+Ref\+At()}{getTileRefAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} dt\+Nav\+Mesh\+::get\+Tile\+Ref\+At (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{layer }\end{DoxyParamCaption}) const}
+
+Gets the tile reference for the tile at specified grid location. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em layer} & The tile\textquotesingle{}s layer. (x, y, layer) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile reference of the tile, or 0 if there is none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}\label{classdtNavMesh_a88f53f80fa95524b1e7197dface10948}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+Ref\+At@{get\+Tile\+Ref\+At}}
+\index{get\+Tile\+Ref\+At@{get\+Tile\+Ref\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+Ref\+At()}{getTileRefAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} dt\+Nav\+Mesh\+::get\+Tile\+Ref\+At (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{layer }\end{DoxyParamCaption}) const}
+
+Gets the tile reference for the tile at specified grid location. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y, layer) \\
+\hline
+\mbox{\tt in}  & {\em layer} & The tile\textquotesingle{}s layer. (x, y, layer) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile reference of the tile, or 0 if there is none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}\label{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tiles\+At@{get\+Tiles\+At}}
+\index{get\+Tiles\+At@{get\+Tiles\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tiles\+At()}{getTilesAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Tiles\+At (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} const $\ast$$\ast$}]{tiles,  }\item[{const int}]{max\+Tiles }\end{DoxyParamCaption}) const}
+
+Gets all tiles at the specified grid location. (All layers.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y) \\
+\hline
+\mbox{\tt out}  & {\em tiles} & A pointer to an array of tiles that will hold the result. \\
+\hline
+\mbox{\tt in}  & {\em max\+Tiles} & The maximum tiles the tiles parameter can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of tiles returned in the tiles array.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This function will not fail if the tiles array is too small to hold the entire result set. It will simply fill the array to capacity. \mbox{\Hypertarget{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}\label{classdtNavMesh_a1a89053de47c9ed459d598fc7f739670}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tiles\+At@{get\+Tiles\+At}}
+\index{get\+Tiles\+At@{get\+Tiles\+At}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tiles\+At()}{getTilesAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Tiles\+At (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} const $\ast$$\ast$}]{tiles,  }\item[{const int}]{max\+Tiles }\end{DoxyParamCaption}) const}
+
+Gets all tiles at the specified grid location. (All layers.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & The tile\textquotesingle{}s x-\/location. (x, y) \\
+\hline
+\mbox{\tt in}  & {\em y} & The tile\textquotesingle{}s y-\/location. (x, y) \\
+\hline
+\mbox{\tt out}  & {\em tiles} & A pointer to an array of tiles that will hold the result. \\
+\hline
+\mbox{\tt in}  & {\em max\+Tiles} & The maximum tiles the tiles parameter can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of tiles returned in the tiles array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}\label{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+State\+Size@{get\+Tile\+State\+Size}}
+\index{get\+Tile\+State\+Size@{get\+Tile\+State\+Size}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+State\+Size()}{getTileStateSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Tile\+State\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the size of the buffer required by \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} to store the specified tile\textquotesingle{}s state. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the buffer required to store the state.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}\label{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!get\+Tile\+State\+Size@{get\+Tile\+State\+Size}}
+\index{get\+Tile\+State\+Size@{get\+Tile\+State\+Size}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{get\+Tile\+State\+Size()}{getTileStateSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int dt\+Nav\+Mesh\+::get\+Tile\+State\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile }\end{DoxyParamCaption}) const}
+
+Gets the size of the buffer required by \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} to store the specified tile\textquotesingle{}s state. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the buffer required to store the state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a020702938951249972b955a65967234a}\label{classdtNavMesh_a020702938951249972b955a65967234a}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Initializes the navigation mesh for tiled use. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & Initialization parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a020702938951249972b955a65967234a}\label{classdtNavMesh_a020702938951249972b955a65967234a}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} $\ast$}]{params }\end{DoxyParamCaption})}
+
+Initializes the navigation mesh for tiled use. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & Initialization parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}\label{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::init (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{const int}]{data\+Size,  }\item[{const int}]{flags }\end{DoxyParamCaption})}
+
+Initializes the navigation mesh for single tile use. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & \hyperlink{classData}{Data} of the new tile. (See\+: \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}) \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & The data size of the new tile. \\
+\hline
+\mbox{\tt in}  & {\em flags} & The tile flags. (See\+: \#dt\+Tile\+Flags) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}\label{classdtNavMesh_a3cbc598755db0d1e9541b15f0f464318}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::init (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{const int}]{data\+Size,  }\item[{const int}]{flags }\end{DoxyParamCaption})}
+
+Initializes the navigation mesh for single tile use. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & \hyperlink{classData}{Data} of the new tile. (See\+: \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data}) \\
+\hline
+\mbox{\tt in}  & {\em data\+Size} & The data size of the new tile. \\
+\hline
+\mbox{\tt in}  & {\em flags} & The tile flags. (See\+: \#dt\+Tile\+Flags) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}\label{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}}
+\index{is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{is\+Valid\+Poly\+Ref()}{isValidPolyRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+::is\+Valid\+Poly\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Checks the validity of a polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon reference is valid for the navigation mesh. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}\label{classdtNavMesh_a84ce3e44a2a97c5377b3b308825fcd37}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}}
+\index{is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{is\+Valid\+Poly\+Ref()}{isValidPolyRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+::is\+Valid\+Poly\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Checks the validity of a polygon reference. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon reference is valid for the navigation mesh. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}\label{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!remove\+Tile@{remove\+Tile}}
+\index{remove\+Tile@{remove\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{remove\+Tile()}{removeTile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::remove\+Tile (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{ref,  }\item[{unsigned char $\ast$$\ast$}]{data,  }\item[{int $\ast$}]{data\+Size }\end{DoxyParamCaption})}
+
+Removes the specified tile from the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference of the tile to remove. \\
+\hline
+\mbox{\tt out}  & {\em data} & \hyperlink{classData}{Data} associated with deleted tile. \\
+\hline
+\mbox{\tt out}  & {\em data\+Size} & \hyperlink{classSize}{Size} of the data associated with deleted tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This function returns the data for the tile so that, if desired, it can be added back to the navigation mesh at a later point.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{add\+Tile} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}\label{classdtNavMesh_a5ca09946d00f1cee4987ed5e2f999fdb}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!remove\+Tile@{remove\+Tile}}
+\index{remove\+Tile@{remove\+Tile}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{remove\+Tile()}{removeTile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::remove\+Tile (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}]{ref,  }\item[{unsigned char $\ast$$\ast$}]{data,  }\item[{int $\ast$}]{data\+Size }\end{DoxyParamCaption})}
+
+Removes the specified tile from the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference of the tile to remove. \\
+\hline
+\mbox{\tt out}  & {\em data} & \hyperlink{classData}{Data} associated with deleted tile. \\
+\hline
+\mbox{\tt out}  & {\em data\+Size} & \hyperlink{classSize}{Size} of the data associated with deleted tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}\label{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!restore\+Tile\+State@{restore\+Tile\+State}}
+\index{restore\+Tile\+State@{restore\+Tile\+State}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{restore\+Tile\+State()}{restoreTileState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::restore\+Tile\+State (\begin{DoxyParamCaption}\item[{\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{const unsigned char $\ast$}]{data,  }\item[{const int}]{max\+Data\+Size }\end{DoxyParamCaption})}
+
+Restores the state of the tile. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\mbox{\tt in}  & {\em data} & The new state. (Obtained from \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State}.) \\
+\hline
+\mbox{\tt in}  & {\em max\+Data\+Size} & The size of the state within the data buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\hyperlink{structTile}{Tile} state includes non-\/structural data such as polygon flags, area ids, etc. \begin{DoxyNote}{Note}
+This function does not impact the tile\textquotesingle{}s \hyperlink{group__detour_ga608138970cbb12594287ea6523be24ef}{dt\+Tile\+Ref} and \hyperlink{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}{dt\+Poly\+Ref}\textquotesingle{}s. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}\label{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!restore\+Tile\+State@{restore\+Tile\+State}}
+\index{restore\+Tile\+State@{restore\+Tile\+State}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{restore\+Tile\+State()}{restoreTileState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::restore\+Tile\+State (\begin{DoxyParamCaption}\item[{\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{const unsigned char $\ast$}]{data,  }\item[{const int}]{max\+Data\+Size }\end{DoxyParamCaption})}
+
+Restores the state of the tile. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\mbox{\tt in}  & {\em data} & The new state. (Obtained from \hyperlink{classdtNavMesh_a141e01263950382365468ea265f48758}{store\+Tile\+State}.) \\
+\hline
+\mbox{\tt in}  & {\em max\+Data\+Size} & The size of the state within the data buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}\label{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!set\+Poly\+Area@{set\+Poly\+Area}}
+\index{set\+Poly\+Area@{set\+Poly\+Area}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{set\+Poly\+Area()}{setPolyArea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::set\+Poly\+Area (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned char}]{area }\end{DoxyParamCaption})}
+
+Sets the user defined area for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em area} & The new area id for the polygon. \mbox{[}Limit\+: $<$ \#\+D\+T\+\_\+\+M\+A\+X\+\_\+\+A\+R\+E\+AS\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}\label{classdtNavMesh_a74a6e65e04a87a1b6abf837349f214fb}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!set\+Poly\+Area@{set\+Poly\+Area}}
+\index{set\+Poly\+Area@{set\+Poly\+Area}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{set\+Poly\+Area()}{setPolyArea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::set\+Poly\+Area (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned char}]{area }\end{DoxyParamCaption})}
+
+Sets the user defined area for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em area} & The new area id for the polygon. \mbox{[}Limit\+: $<$ \#\+D\+T\+\_\+\+M\+A\+X\+\_\+\+A\+R\+E\+AS\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}\label{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!set\+Poly\+Flags@{set\+Poly\+Flags}}
+\index{set\+Poly\+Flags@{set\+Poly\+Flags}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{set\+Poly\+Flags()}{setPolyFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::set\+Poly\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned short}]{flags }\end{DoxyParamCaption})}
+
+Sets the user defined flags for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em flags} & The new flags for the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}\label{classdtNavMesh_af11a9e69fa88b6d5cf66c376d46b8889}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!set\+Poly\+Flags@{set\+Poly\+Flags}}
+\index{set\+Poly\+Flags@{set\+Poly\+Flags}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{set\+Poly\+Flags()}{setPolyFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::set\+Poly\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{unsigned short}]{flags }\end{DoxyParamCaption})}
+
+Sets the user defined flags for the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference. \\
+\hline
+\mbox{\tt in}  & {\em flags} & The new flags for the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMesh_a141e01263950382365468ea265f48758}\label{classdtNavMesh_a141e01263950382365468ea265f48758}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!store\+Tile\+State@{store\+Tile\+State}}
+\index{store\+Tile\+State@{store\+Tile\+State}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{store\+Tile\+State()}{storeTileState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::store\+Tile\+State (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{unsigned char $\ast$}]{data,  }\item[{const int}]{max\+Data\+Size }\end{DoxyParamCaption}) const}
+
+Stores the non-\/structural state of the tile in the specified buffer. (Flags, area ids, etc.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\mbox{\tt out}  & {\em data} & The buffer to store the tile\textquotesingle{}s state in. \\
+\hline
+\mbox{\tt in}  & {\em max\+Data\+Size} & The size of the data buffer. \mbox{[}Limit\+: $>$= \hyperlink{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}{get\+Tile\+State\+Size}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\hyperlink{structTile}{Tile} state includes non-\/structural data such as polygon flags, area ids, etc. \begin{DoxyNote}{Note}
+The state data is only valid until the tile reference changes. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}{get\+Tile\+State\+Size}, \hyperlink{classdtNavMesh_aef336a67e552a9d031d669ec84029fb8}{restore\+Tile\+State} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdtNavMesh_a141e01263950382365468ea265f48758}\label{classdtNavMesh_a141e01263950382365468ea265f48758}} 
+\index{dt\+Nav\+Mesh@{dt\+Nav\+Mesh}!store\+Tile\+State@{store\+Tile\+State}}
+\index{store\+Tile\+State@{store\+Tile\+State}!dt\+Nav\+Mesh@{dt\+Nav\+Mesh}}
+\subsubsection{\texorpdfstring{store\+Tile\+State()}{storeTileState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+::store\+Tile\+State (\begin{DoxyParamCaption}\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{unsigned char $\ast$}]{data,  }\item[{const int}]{max\+Data\+Size }\end{DoxyParamCaption}) const}
+
+Stores the non-\/structural state of the tile in the specified buffer. (Flags, area ids, etc.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tile} & The tile. \\
+\hline
+\mbox{\tt out}  & {\em data} & The buffer to store the tile\textquotesingle{}s state in. \\
+\hline
+\mbox{\tt in}  & {\em max\+Data\+Size} & The size of the data buffer. \mbox{[}Limit\+: $>$= \hyperlink{classdtNavMesh_aaf6f0b0ce2bd81c5e6cd8ac67f6a8638}{get\+Tile\+State\+Size}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the operation. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh.\+cpp\end{DoxyCompactItemize}

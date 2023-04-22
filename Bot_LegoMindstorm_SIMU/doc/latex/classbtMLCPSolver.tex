@@ -1,0 +1,168 @@
+\hypertarget{classbtMLCPSolver}{}\section{bt\+M\+L\+C\+P\+Solver Class Reference}
+\label{classbtMLCPSolver}\index{bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}}
+
+
+original version written by Erwin Coumans, October 2013  
+
+
+
+
+{\ttfamily \#include $<$bt\+M\+L\+C\+P\+Solver.\+h$>$}
+
+
+
+Inheritance diagram for bt\+M\+L\+C\+P\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classbtMLCPSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+M\+L\+C\+P\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtMLCPSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ac699f0a59f0b730ac39658ee2903b042}\label{classbtMLCPSolver_ac699f0a59f0b730ac39658ee2903b042}} 
+\hyperlink{classbtMLCPSolver_ac699f0a59f0b730ac39658ee2903b042}{bt\+M\+L\+C\+P\+Solver} (\hyperlink{classbtMLCPSolverInterface}{bt\+M\+L\+C\+P\+Solver\+Interface} $\ast$solver)
+\begin{DoxyCompactList}\small\item\em original version written by Erwin Coumans, October 2013 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtMLCPSolver_af5a0ef252391a313ba85f871b47710b0}\label{classbtMLCPSolver_af5a0ef252391a313ba85f871b47710b0}} 
+void {\bfseries set\+M\+L\+C\+P\+Solver} (\hyperlink{classbtMLCPSolverInterface}{bt\+M\+L\+C\+P\+Solver\+Interface} $\ast$solver)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_acad09cfe41fe66c3fe1cb418f3ffb390}\label{classbtMLCPSolver_acad09cfe41fe66c3fe1cb418f3ffb390}} 
+int {\bfseries get\+Num\+Fallbacks} () const
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ada02127142fb8e8028833d73a9341bfa}\label{classbtMLCPSolver_ada02127142fb8e8028833d73a9341bfa}} 
+void {\bfseries set\+Num\+Fallbacks} (int num)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_aeba65f41f71a01b893c116491d454b77}\label{classbtMLCPSolver_aeba65f41f71a01b893c116491d454b77}} 
+virtual bt\+Constraint\+Solver\+Type {\bfseries get\+Solver\+Type} () const
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ac699f0a59f0b730ac39658ee2903b042}\label{classbtMLCPSolver_ac699f0a59f0b730ac39658ee2903b042}} 
+{\bfseries bt\+M\+L\+C\+P\+Solver} (\hyperlink{classbtMLCPSolverInterface}{bt\+M\+L\+C\+P\+Solver\+Interface} $\ast$solver)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_af5a0ef252391a313ba85f871b47710b0}\label{classbtMLCPSolver_af5a0ef252391a313ba85f871b47710b0}} 
+void {\bfseries set\+M\+L\+C\+P\+Solver} (\hyperlink{classbtMLCPSolverInterface}{bt\+M\+L\+C\+P\+Solver\+Interface} $\ast$solver)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_acad09cfe41fe66c3fe1cb418f3ffb390}\label{classbtMLCPSolver_acad09cfe41fe66c3fe1cb418f3ffb390}} 
+int {\bfseries get\+Num\+Fallbacks} () const
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ada02127142fb8e8028833d73a9341bfa}\label{classbtMLCPSolver_ada02127142fb8e8028833d73a9341bfa}} 
+void {\bfseries set\+Num\+Fallbacks} (int num)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_aeba65f41f71a01b893c116491d454b77}\label{classbtMLCPSolver_aeba65f41f71a01b893c116491d454b77}} 
+virtual bt\+Constraint\+Solver\+Type {\bfseries get\+Solver\+Type} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bt\+Scalar \hyperlink{classbtMLCPSolver_aa465e167537eceb89f7125d3bb2d5321}{solve\+Group\+Cache\+Friendly\+Setup} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold\+Ptr, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_aba47abca0dc7f203f6ec5bc17d2f96a3}\label{classbtMLCPSolver_aba47abca0dc7f203f6ec5bc17d2f96a3}} 
+virtual bt\+Scalar {\bfseries solve\+Group\+Cache\+Friendly\+Iterations} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold\+Ptr, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+virtual void \hyperlink{classbtMLCPSolver_a83c6bc90a6a311204fccec04aa331aee}{create\+M\+L\+CP} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\item 
+virtual void \hyperlink{classbtMLCPSolver_ab36b9b3bf2bbbd1de7db27ba109e0a8a}{create\+M\+L\+C\+P\+Fast} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a8b3955c50047184e0deb904242a66941}\label{classbtMLCPSolver_a8b3955c50047184e0deb904242a66941}} 
+virtual bool {\bfseries solve\+M\+L\+CP} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a739f48418e0c54040373cc258ee6595c}\label{classbtMLCPSolver_a739f48418e0c54040373cc258ee6595c}} 
+virtual bt\+Scalar {\bfseries solve\+Group\+Cache\+Friendly\+Setup} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold\+Ptr, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a44520c991669384c6d6182fd8d75a986}\label{classbtMLCPSolver_a44520c991669384c6d6182fd8d75a986}} 
+virtual bt\+Scalar {\bfseries solve\+Group\+Cache\+Friendly\+Iterations} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold\+Ptr, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a45bda5afe71b1643d98f6c8a20383390}\label{classbtMLCPSolver_a45bda5afe71b1643d98f6c8a20383390}} 
+virtual void {\bfseries create\+M\+L\+CP} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a887c659ef9187491fad564cbec9a9c2d}\label{classbtMLCPSolver_a887c659ef9187491fad564cbec9a9c2d}} 
+virtual void {\bfseries create\+M\+L\+C\+P\+Fast} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ade2ba9a45a30bfa288b12476cd35882d}\label{classbtMLCPSolver_ade2ba9a45a30bfa288b12476cd35882d}} 
+virtual bool {\bfseries solve\+M\+L\+CP} (const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ab19d782b7687c2c0598a26678a904c3d}\label{classbtMLCPSolver_ab19d782b7687c2c0598a26678a904c3d}} 
+bt\+Matrix\+Xu {\bfseries m\+\_\+A}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a102a9cbe5333f818bd57ab58a61c9fa3}\label{classbtMLCPSolver_a102a9cbe5333f818bd57ab58a61c9fa3}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+b}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a79ad61721583b308de8be07cd33e67ae}\label{classbtMLCPSolver_a79ad61721583b308de8be07cd33e67ae}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+x}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ae7a49a4a3ef55eadd59ec64a2d2dce0d}\label{classbtMLCPSolver_ae7a49a4a3ef55eadd59ec64a2d2dce0d}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+lo}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_aaa4243bdf7468736d75c9da113153832}\label{classbtMLCPSolver_aaa4243bdf7468736d75c9da113153832}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+hi}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a9c1feb6855fa296c8ca582842f8e4fe3}\label{classbtMLCPSolver_a9c1feb6855fa296c8ca582842f8e4fe3}} 
+bt\+Vector\+Xu \hyperlink{classbtMLCPSolver_a9c1feb6855fa296c8ca582842f8e4fe3}{m\+\_\+b\+Split}
+\begin{DoxyCompactList}\small\item\em when using \textquotesingle{}split impulse\textquotesingle{} we solve two separate (M)L\+C\+Ps \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a87e493a2efd02e6ec58cdfd6806fc01d}\label{classbtMLCPSolver_a87e493a2efd02e6ec58cdfd6806fc01d}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+x\+Split}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a2ab2e9fed2b0d44ec90d4e4b430b9af5}\label{classbtMLCPSolver_a2ab2e9fed2b0d44ec90d4e4b430b9af5}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+b\+Split1}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ae570d6bb5466fcc50b94edaf608e9f40}\label{classbtMLCPSolver_ae570d6bb5466fcc50b94edaf608e9f40}} 
+bt\+Vector\+Xu {\bfseries m\+\_\+x\+Split2}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a3b1aa1b04437bd6df431d61154f9622c}\label{classbtMLCPSolver_a3b1aa1b04437bd6df431d61154f9622c}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+limit\+Dependencies}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a00881de9aded5d789029b2f86f664eac}\label{classbtMLCPSolver_a00881de9aded5d789029b2f86f664eac}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Constraint\+Array} {\bfseries m\+\_\+all\+Constraint\+Array}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_a35ff4f8a11a21c1b64c064107a44cf9d}\label{classbtMLCPSolver_a35ff4f8a11a21c1b64c064107a44cf9d}} 
+\hyperlink{classbtMLCPSolverInterface}{bt\+M\+L\+C\+P\+Solver\+Interface} $\ast$ {\bfseries m\+\_\+solver}
+\item 
+\mbox{\Hypertarget{classbtMLCPSolver_ac3debefed2fe370fd95302fef37182bc}\label{classbtMLCPSolver_ac3debefed2fe370fd95302fef37182bc}} 
+int {\bfseries m\+\_\+fallback}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+original version written by Erwin Coumans, October 2013 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtMLCPSolver_a83c6bc90a6a311204fccec04aa331aee}\label{classbtMLCPSolver_a83c6bc90a6a311204fccec04aa331aee}} 
+\index{bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}!create\+M\+L\+CP@{create\+M\+L\+CP}}
+\index{create\+M\+L\+CP@{create\+M\+L\+CP}!bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}}
+\subsubsection{\texorpdfstring{create\+M\+L\+C\+P()}{createMLCP()}}
+{\footnotesize\ttfamily void bt\+M\+L\+C\+P\+Solver\+::create\+M\+L\+CP (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&}]{info\+Global }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+todo\+: use proper cfm values from the constraints (get\+Info2) \mbox{\Hypertarget{classbtMLCPSolver_ab36b9b3bf2bbbd1de7db27ba109e0a8a}\label{classbtMLCPSolver_ab36b9b3bf2bbbd1de7db27ba109e0a8a}} 
+\index{bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}!create\+M\+L\+C\+P\+Fast@{create\+M\+L\+C\+P\+Fast}}
+\index{create\+M\+L\+C\+P\+Fast@{create\+M\+L\+C\+P\+Fast}!bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}}
+\subsubsection{\texorpdfstring{create\+M\+L\+C\+P\+Fast()}{createMLCPFast()}}
+{\footnotesize\ttfamily void bt\+M\+L\+C\+P\+Solver\+::create\+M\+L\+C\+P\+Fast (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&}]{info\+Global }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+todo\+: use proper cfm values from the constraints (get\+Info2)
+
+fill the upper triangle of the matrix, to make it symmetric \mbox{\Hypertarget{classbtMLCPSolver_aa465e167537eceb89f7125d3bb2d5321}\label{classbtMLCPSolver_aa465e167537eceb89f7125d3bb2d5321}} 
+\index{bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}!solve\+Group\+Cache\+Friendly\+Setup@{solve\+Group\+Cache\+Friendly\+Setup}}
+\index{solve\+Group\+Cache\+Friendly\+Setup@{solve\+Group\+Cache\+Friendly\+Setup}!bt\+M\+L\+C\+P\+Solver@{bt\+M\+L\+C\+P\+Solver}}
+\subsubsection{\texorpdfstring{solve\+Group\+Cache\+Friendly\+Setup()}{solveGroupCacheFriendlySetup()}}
+{\footnotesize\ttfamily bt\+Scalar bt\+M\+L\+C\+P\+Solver\+::solve\+Group\+Cache\+Friendly\+Setup (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$$\ast$}]{bodies,  }\item[{int}]{num\+Bodies,  }\item[{bt\+Persistent\+Manifold $\ast$$\ast$}]{manifold\+Ptr,  }\item[{int}]{num\+Manifolds,  }\item[{bt\+Typed\+Constraint $\ast$$\ast$}]{constraints,  }\item[{int}]{num\+Constraints,  }\item[{const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&}]{info\+Global,  }\item[{\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$}]{debug\+Drawer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+The bt\+Sequential\+Impulse\+Constraint\+Solver moves all friction constraints at the very end, we can also interleave them instead 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+M\+L\+C\+P\+Solvers/bt\+M\+L\+C\+P\+Solver.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+M\+L\+C\+P\+Solvers/bt\+M\+L\+C\+P\+Solver.\+cpp\end{DoxyCompactItemize}

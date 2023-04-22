@@ -1,0 +1,30 @@
+fbxconverter version 0.\+4 It is for cocos2d-\/x after version v3.\+3
+
+Convert .fbx to .c3t used by cocos2d-\/x. Thanks to libgdx fbx-\/conv. We use their code and do some change.
+
+You can get the source code from the address below\+: \href{https://github.com/lvlonggame/cocos2d-x-3rd-party-libs-src}{\tt https\+://github.\+com/lvlonggame/cocos2d-\/x-\/3rd-\/party-\/libs-\/src}
+
+U\+S\+A\+GE\+:
+
+Open a command line and enter into the fbx-\/conv directory, and then input the full path fbx-\/conv file (you can drag fbx-\/conv to command line directly) and then enter the parameters -\/a (-\/a means export both of c3t and c3b file, if parameter is empty we export c3b file by default), and then enter the file name which you want to convert.
+
+\hyperlink{classCommand}{Command} line\+: cd \mbox{[}path of fbx-\/conv\mbox{]} xx/xx/fbx-\/conv \mbox{[}options\mbox{]} $<$input$>$
+
+For example\+:
+\begin{DoxyEnumerate}
+\item cd /\+Users/xx/cocos2d-\/x-\/3rd-\/party-\/libs-\/bin/fbx-\/conv/mac
+\item /\+Users/xx/cocos2d-\/x-\/3rd-\/party-\/libs-\/bin/fbx-\/conv/mac/fbx-\/conv -\/a boss.\+F\+BX
+\end{DoxyEnumerate}
+
+You can use the -\/? option to see more help information.
+
+Note\+:
+
+
+\begin{DoxyEnumerate}
+\item Model need to have a material that contain one texture in the diffuse-\/channel at least.
+\item About animation, we just support skeletal animation.
+\item Just one skeletal animation object and no support multiple skeleton.
+\item You can export multiple static model , so you can support a static scene.
+\item The maximum amount of vertices or indices a mesh should less than 32767. 
+\end{DoxyEnumerate}

@@ -1,0 +1,1193 @@
+\hypertarget{classQuaternion}{}\section{Quaternion Class Reference}
+\label{classQuaternion}\index{Quaternion@{Quaternion}}
+
+
+{\ttfamily \#include $<$Quaternion.\+h$>$}
+
+
+
+Collaboration diagram for Quaternion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classQuaternion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion} ()
+\item 
+\hyperlink{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}{Quaternion} (float xx, float yy, float zz, float ww)
+\item 
+\hyperlink{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}{Quaternion} (float $\ast$array)
+\item 
+\hyperlink{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}{Quaternion} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+\hyperlink{classQuaternion_a58c28df43d7a0624734db4635cb98182}{Quaternion} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+\hyperlink{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}{Quaternion} (const \hyperlink{classQuaternion}{Quaternion} \&copy)
+\item 
+\hyperlink{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}{$\sim$\+Quaternion} ()
+\item 
+bool \hyperlink{classQuaternion_a64550e3147014607c42d40fc3bb7080b}{is\+Identity} () const
+\item 
+bool \hyperlink{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}{is\+Zero} () const
+\item 
+void \hyperlink{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}{conjugate} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_a340e18206128073f5457258284386974}{get\+Conjugated} () const
+\item 
+bool \hyperlink{classQuaternion_aabe14be8bd8676241317449595cdcfff}{inverse} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}{get\+Inversed} () const
+\item 
+void \hyperlink{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}{multiply} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}{normalize} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}{get\+Normalized} () const
+\item 
+void \hyperlink{classQuaternion_a435e47a2efca1a6c39f1835678437104}{set} (float xx, float yy, float zz, float ww)
+\item 
+void \hyperlink{classQuaternion_aaf18a418dc62bf348e7629e4875da050}{set} (float $\ast$array)
+\item 
+void \hyperlink{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}{set} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classQuaternion_a27ac949226c34a565311aee0a10d61dc}{set} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+void \hyperlink{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}{set} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classQuaternion_af180a480b5595be969233e728fc4563e}{set\+Identity} ()
+\item 
+float \hyperlink{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}{to\+Axis\+Angle} (\hyperlink{classVec3}{Vec3} $\ast$e) const
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_ae1144820c2f61dc0c8ee33060600ca7e}{operator$\ast$} (const \hyperlink{classQuaternion}{Quaternion} \&q) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}{operator$\ast$} (const \hyperlink{classVec3}{Vec3} \&v) const
+\item 
+\hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_a8941e3b43aabd15e2471e57ebd49c8a7}{operator$\ast$=} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+\hyperlink{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion} ()
+\item 
+\hyperlink{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}{Quaternion} (float xx, float yy, float zz, float ww)
+\item 
+\hyperlink{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}{Quaternion} (float $\ast$array)
+\item 
+\hyperlink{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}{Quaternion} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+\hyperlink{classQuaternion_a58c28df43d7a0624734db4635cb98182}{Quaternion} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+\hyperlink{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}{Quaternion} (const \hyperlink{classQuaternion}{Quaternion} \&copy)
+\item 
+\hyperlink{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}{$\sim$\+Quaternion} ()
+\item 
+bool \hyperlink{classQuaternion_a64550e3147014607c42d40fc3bb7080b}{is\+Identity} () const
+\item 
+bool \hyperlink{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}{is\+Zero} () const
+\item 
+void \hyperlink{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}{conjugate} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_a340e18206128073f5457258284386974}{get\+Conjugated} () const
+\item 
+bool \hyperlink{classQuaternion_aabe14be8bd8676241317449595cdcfff}{inverse} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}{get\+Inversed} () const
+\item 
+void \hyperlink{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}{multiply} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}{normalize} ()
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}{get\+Normalized} () const
+\item 
+void \hyperlink{classQuaternion_a435e47a2efca1a6c39f1835678437104}{set} (float xx, float yy, float zz, float ww)
+\item 
+void \hyperlink{classQuaternion_aaf18a418dc62bf348e7629e4875da050}{set} (float $\ast$array)
+\item 
+void \hyperlink{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}{set} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classQuaternion_a27ac949226c34a565311aee0a10d61dc}{set} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+void \hyperlink{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}{set} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classQuaternion_af180a480b5595be969233e728fc4563e}{set\+Identity} ()
+\item 
+float \hyperlink{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}{to\+Axis\+Angle} (\hyperlink{classVec3}{Vec3} $\ast$e) const
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_ab178e12364d87fb676d85695e491361f}{operator$\ast$} (const \hyperlink{classQuaternion}{Quaternion} \&q) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}{operator$\ast$} (const \hyperlink{classVec3}{Vec3} \&v) const
+\item 
+\hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_ae897d8ee92c5ac1f7cfd534170eb521c}{operator$\ast$=} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_a2094c622fd0efd4d47de5b840cfbbd2a}{identity} ()
+\item 
+static const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_a4e1623a2a43917b71d48953a1b712366}{zero} ()
+\item 
+static void \hyperlink{classQuaternion_aa2b36fa85ccf43b7aa801d86109b35c8}{create\+From\+Rotation\+Matrix} (const \hyperlink{classMat4}{Mat4} \&m, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_acb56cdb2e0e693ce79826e3d42892860}{create\+From\+Axis\+Angle} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a0c8580557a603a3822b3bf5b60c75884}{multiply} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a368f2a3510b1c20dfe0b9ab3fc10a1e7}{lerp} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a1f1bac1c3d55207b43cf6cc926c453af}{slerp} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_ad5f6786aac5fa54f2665a651f9aa1938}{squad} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, const \hyperlink{classQuaternion}{Quaternion} \&s1, const \hyperlink{classQuaternion}{Quaternion} \&s2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_ab201296bf4af9977fb3357d31b5f5378}{identity} ()
+\item 
+static const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classQuaternion_ab43289b15be2b706934d497cfcbe8fbe}{zero} ()
+\item 
+static void \hyperlink{classQuaternion_ab2e025a41afe07fc641df593bda3d377}{create\+From\+Rotation\+Matrix} (const \hyperlink{classMat4}{Mat4} \&m, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_abb750077ff3f44f0deb309ee2a733f89}{create\+From\+Axis\+Angle} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a7703494347997831de3c4d836355f6bb}{multiply} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a3bbac8b25450a8653a8bca2467cd9cb2}{lerp} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a4dd2d3bf98210b5af0451e6cc92a7113}{slerp} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\item 
+static void \hyperlink{classQuaternion_a77eb00899b99bd31fbb74dfecc258820}{squad} (const \hyperlink{classQuaternion}{Quaternion} \&q1, const \hyperlink{classQuaternion}{Quaternion} \&q2, const \hyperlink{classQuaternion}{Quaternion} \&s1, const \hyperlink{classQuaternion}{Quaternion} \&s2, float t, \hyperlink{classQuaternion}{Quaternion} $\ast$dst)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classQuaternion_a8b80f191a3155cc0158d2b4f4d50b2cb}{x}
+\item 
+float \hyperlink{classQuaternion_a3bd3f270462944423611f44e19d2511b}{y}
+\item 
+float \hyperlink{classQuaternion_a625cb732d8ff3083e7852b86b736ab29}{z}
+\item 
+float \hyperlink{classQuaternion_aa44a65ab99e36f6ab8771030eed8a7ad}{w}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classQuaternion}{Quaternion} \hyperlink{classQuaternion_a808de84686edca53817636945082be8b}{Z\+E\+RO}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQuaternion_a5542afcc22b4bab7679270a1de8ff818}\label{classQuaternion_a5542afcc22b4bab7679270a1de8ff818}} 
+class {\bfseries Curve}
+\item 
+\mbox{\Hypertarget{classQuaternion_aa1cc1190aa1b958d686d46e0860bc836}\label{classQuaternion_aa1cc1190aa1b958d686d46e0860bc836}} 
+class {\bfseries Transform}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a 4-\/element quaternion that represents the orientation of an object in space.
+
+Quaternions are typically used as a replacement for euler angles and rotation matrices as a way to achieve smooth interpolation and avoid gimbal lock.
+
+Note that this quaternion class does not automatically keep the quaternion normalized. Therefore, care must be taken to normalize the quaternion when necessary, by calling the normalize method. This class provides three methods for doing quaternion interpolation\+: lerp, slerp, and squad.
+
+lerp (linear interpolation)\+: the interpolation curve gives a straight line in quaternion space. It is simple and fast to compute. The only problem is that it does not provide constant angular velocity. Note that a constant velocity is not necessarily a requirement for a curve; slerp (spherical linear interpolation)\+: the interpolation curve forms a great arc on the quaternion unit sphere. Slerp provides constant angular velocity; squad (spherical spline interpolation)\+: interpolating between a series of rotations using slerp leads to the following problems\+:
+\begin{DoxyItemize}
+\item the curve is not smooth at the control points;
+\item the angular velocity is not constant;
+\item the angular velocity is not continuous at the control points.
+\end{DoxyItemize}
+
+Since squad is continuously differentiable, it remedies the first and third problems mentioned above. The slerp method provided here is intended for interpolation of principal rotations. It treats +q and -\/q as the same principal rotation and is at liberty to use the negative of either input. The resulting path is always the shorter arc.
+
+The lerp method provided here interpolates strictly in quaternion space. Note that the resulting path may pass through the origin if interpolating between a quaternion and its exact negative.
+
+As an example, consider the following quaternions\+:
+
+q1 = (0.\+6, 0.\+8, 0.\+0, 0.\+0), q2 = (0.\+0, 0.\+6, 0.\+8, 0.\+0), q3 = (0.\+6, 0.\+0, 0.\+8, 0.\+0), and q4 = (-\/0.\+8, 0.\+0, -\/0.\+6, 0.\+0). For the point p = (1.\+0, 1.\+0, 1.\+0), the following figures show the trajectories of p using lerp, slerp, and squad. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}\label{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a quaternion initialized to (0, 0, 0, 1). \mbox{\Hypertarget{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}\label{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy,  }\item[{float}]{zz,  }\item[{float}]{ww }\end{DoxyParamCaption})}
+
+Constructs a quaternion initialized to (0, 0, 0, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The x component of the quaternion. \\
+\hline
+{\em yy} & The y component of the quaternion. \\
+\hline
+{\em zz} & The z component of the quaternion. \\
+\hline
+{\em ww} & The w component of the quaternion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}\label{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Constructs a new quaternion from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The values for the new quaternion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}\label{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Constructs a quaternion equal to the rotational part of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a58c28df43d7a0624734db4635cb98182}\label{classQuaternion_a58c28df43d7a0624734db4635cb98182}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Constructs a quaternion equal to the rotation from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}\label{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{copy }\end{DoxyParamCaption})}
+
+Constructs a new quaternion that is a copy of the specified one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The quaternion to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}\label{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}} 
+\index{Quaternion@{Quaternion}!````~Quaternion@{$\sim$\+Quaternion}}
+\index{````~Quaternion@{$\sim$\+Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{$\sim$\+Quaternion()}{~Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Quaternion\+::$\sim$\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. \mbox{\Hypertarget{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}\label{classQuaternion_abcc01358aada56ea5f0db4da18aaf77d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a quaternion initialized to (0, 0, 0, 1). \mbox{\Hypertarget{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}\label{classQuaternion_a4dcf5b1a3c937b45a0d38ccd4ad6945f}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy,  }\item[{float}]{zz,  }\item[{float}]{ww }\end{DoxyParamCaption})}
+
+Constructs a quaternion initialized to (0, 0, 0, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The x component of the quaternion. \\
+\hline
+{\em yy} & The y component of the quaternion. \\
+\hline
+{\em zz} & The z component of the quaternion. \\
+\hline
+{\em ww} & The w component of the quaternion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}\label{classQuaternion_a27f24bbf6a82546ba6a9fcbb927d882f}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Constructs a new quaternion from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The values for the new quaternion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}\label{classQuaternion_a190681ee2747fb575ee2dd9ba670981d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Constructs a quaternion equal to the rotational part of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a58c28df43d7a0624734db4635cb98182}\label{classQuaternion_a58c28df43d7a0624734db4635cb98182}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Constructs a quaternion equal to the rotation from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}\label{classQuaternion_aea3b87270ed824acf7250b2a94c4af8d}} 
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{copy }\end{DoxyParamCaption})}
+
+Constructs a new quaternion that is a copy of the specified one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The quaternion to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}\label{classQuaternion_a5f834c2ca469cd71edc8a23fdc3f56e8}} 
+\index{Quaternion@{Quaternion}!````~Quaternion@{$\sim$\+Quaternion}}
+\index{````~Quaternion@{$\sim$\+Quaternion}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{$\sim$\+Quaternion()}{~Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Quaternion\+::$\sim$\+Quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}\label{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}} 
+\index{Quaternion@{Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{conjugate()}{conjugate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::conjugate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to the conjugate of itself. \mbox{\Hypertarget{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}\label{classQuaternion_ae387bec8f394bdc58a5ac1480f11140f}} 
+\index{Quaternion@{Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{conjugate()}{conjugate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Quaternion\+::conjugate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to the conjugate of itself. \mbox{\Hypertarget{classQuaternion_acb56cdb2e0e693ce79826e3d42892860}\label{classQuaternion_acb56cdb2e0e693ce79826e3d42892860}} 
+\index{Quaternion@{Quaternion}!create\+From\+Axis\+Angle@{create\+From\+Axis\+Angle}}
+\index{create\+From\+Axis\+Angle@{create\+From\+Axis\+Angle}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{create\+From\+Axis\+Angle()}{createFromAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::create\+From\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates this quaternion equal to the rotation from the specified axis and angle and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A quaternion to store the conjugate in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_abb750077ff3f44f0deb309ee2a733f89}\label{classQuaternion_abb750077ff3f44f0deb309ee2a733f89}} 
+\index{Quaternion@{Quaternion}!create\+From\+Axis\+Angle@{create\+From\+Axis\+Angle}}
+\index{create\+From\+Axis\+Angle@{create\+From\+Axis\+Angle}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{create\+From\+Axis\+Angle()}{createFromAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Quaternion\+::create\+From\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates this quaternion equal to the rotation from the specified axis and angle and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A quaternion to store the conjugate in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aa2b36fa85ccf43b7aa801d86109b35c8}\label{classQuaternion_aa2b36fa85ccf43b7aa801d86109b35c8}} 
+\index{Quaternion@{Quaternion}!create\+From\+Rotation\+Matrix@{create\+From\+Rotation\+Matrix}}
+\index{create\+From\+Rotation\+Matrix@{create\+From\+Rotation\+Matrix}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{create\+From\+Rotation\+Matrix()}{createFromRotationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::create\+From\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a quaternion equal to the rotational part of the specified matrix and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+{\em dst} & A quaternion to store the conjugate in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ab2e025a41afe07fc641df593bda3d377}\label{classQuaternion_ab2e025a41afe07fc641df593bda3d377}} 
+\index{Quaternion@{Quaternion}!create\+From\+Rotation\+Matrix@{create\+From\+Rotation\+Matrix}}
+\index{create\+From\+Rotation\+Matrix@{create\+From\+Rotation\+Matrix}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{create\+From\+Rotation\+Matrix()}{createFromRotationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Quaternion\+::create\+From\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a quaternion equal to the rotational part of the specified matrix and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+{\em dst} & A quaternion to store the conjugate in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a340e18206128073f5457258284386974}\label{classQuaternion_a340e18206128073f5457258284386974}} 
+\index{Quaternion@{Quaternion}!get\+Conjugated@{get\+Conjugated}}
+\index{get\+Conjugated@{get\+Conjugated}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Conjugated()}{getConjugated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Conjugated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the conjugate of this quaternion. \mbox{\Hypertarget{classQuaternion_a340e18206128073f5457258284386974}\label{classQuaternion_a340e18206128073f5457258284386974}} 
+\index{Quaternion@{Quaternion}!get\+Conjugated@{get\+Conjugated}}
+\index{get\+Conjugated@{get\+Conjugated}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Conjugated()}{getConjugated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Conjugated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the conjugate of this quaternion. \mbox{\Hypertarget{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}\label{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}} 
+\index{Quaternion@{Quaternion}!get\+Inversed@{get\+Inversed}}
+\index{get\+Inversed@{get\+Inversed}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Inversed()}{getInversed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Inversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the inverse of this quaternion.
+
+Note that the inverse of a quaternion is equal to its conjugate when the quaternion is unit-\/length. For this reason, it is more efficient to use the conjugate method directly when you know your quaternion is already unit-\/length. \mbox{\Hypertarget{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}\label{classQuaternion_acab26dc0925530cf5d58c92e5fbb9e5a}} 
+\index{Quaternion@{Quaternion}!get\+Inversed@{get\+Inversed}}
+\index{get\+Inversed@{get\+Inversed}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Inversed()}{getInversed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Inversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the inverse of this quaternion.
+
+Note that the inverse of a quaternion is equal to its conjugate when the quaternion is unit-\/length. For this reason, it is more efficient to use the conjugate method directly when you know your quaternion is already unit-\/length. \mbox{\Hypertarget{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}\label{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}} 
+\index{Quaternion@{Quaternion}!get\+Normalized@{get\+Normalized}}
+\index{get\+Normalized@{get\+Normalized}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Normalized()}{getNormalized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the normalized quaternion.
+
+If the quaternion already has unit length or if the length of the quaternion is zero, this method simply copies this vector. \mbox{\Hypertarget{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}\label{classQuaternion_a203c9c6bf25dcd25bfc25fbe17ec4481}} 
+\index{Quaternion@{Quaternion}!get\+Normalized@{get\+Normalized}}
+\index{get\+Normalized@{get\+Normalized}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{get\+Normalized()}{getNormalized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the normalized quaternion.
+
+If the quaternion already has unit length or if the length of the quaternion is zero, this method simply copies this vector. \mbox{\Hypertarget{classQuaternion_a2094c622fd0efd4d47de5b840cfbbd2a}\label{classQuaternion_a2094c622fd0efd4d47de5b840cfbbd2a}} 
+\index{Quaternion@{Quaternion}!identity@{identity}}
+\index{identity@{identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{identity()}{identity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion} \& Quaternion\+::identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the identity quaternion.
+
+\begin{DoxyReturn}{Returns}
+The identity quaternion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_ab201296bf4af9977fb3357d31b5f5378}\label{classQuaternion_ab201296bf4af9977fb3357d31b5f5378}} 
+\index{Quaternion@{Quaternion}!identity@{identity}}
+\index{identity@{identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{identity()}{identity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const \hyperlink{classQuaternion}{Quaternion}\& Quaternion\+::identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the identity quaternion.
+
+\begin{DoxyReturn}{Returns}
+The identity quaternion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_aabe14be8bd8676241317449595cdcfff}\label{classQuaternion_aabe14be8bd8676241317449595cdcfff}} 
+\index{Quaternion@{Quaternion}!inverse@{inverse}}
+\index{inverse@{inverse}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to the inverse of itself.
+
+Note that the inverse of a quaternion is equal to its conjugate when the quaternion is unit-\/length. For this reason, it is more efficient to use the conjugate method directly when you know your quaternion is already unit-\/length.
+
+\begin{DoxyReturn}{Returns}
+true if the inverse can be computed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_aabe14be8bd8676241317449595cdcfff}\label{classQuaternion_aabe14be8bd8676241317449595cdcfff}} 
+\index{Quaternion@{Quaternion}!inverse@{inverse}}
+\index{inverse@{inverse}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to the inverse of itself.
+
+Note that the inverse of a quaternion is equal to its conjugate when the quaternion is unit-\/length. For this reason, it is more efficient to use the conjugate method directly when you know your quaternion is already unit-\/length.
+
+\begin{DoxyReturn}{Returns}
+true if the inverse can be computed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a64550e3147014607c42d40fc3bb7080b}\label{classQuaternion_a64550e3147014607c42d40fc3bb7080b}} 
+\index{Quaternion@{Quaternion}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{is\+Identity()}{isIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this quaternion is equal to the identity quaternion.
+
+\begin{DoxyReturn}{Returns}
+true if it is the identity quaternion, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a64550e3147014607c42d40fc3bb7080b}\label{classQuaternion_a64550e3147014607c42d40fc3bb7080b}} 
+\index{Quaternion@{Quaternion}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{is\+Identity()}{isIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this quaternion is equal to the identity quaternion.
+
+\begin{DoxyReturn}{Returns}
+true if it is the identity quaternion, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}\label{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}} 
+\index{Quaternion@{Quaternion}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{is\+Zero()}{isZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this quaternion is all zeros.
+
+\begin{DoxyReturn}{Returns}
+true if this quaternion is all zeros, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}\label{classQuaternion_ab355dcc6194b9dcf4f303a1afec9f0b2}} 
+\index{Quaternion@{Quaternion}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{is\+Zero()}{isZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Quaternion\+::is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this quaternion is all zeros.
+
+\begin{DoxyReturn}{Returns}
+true if this quaternion is all zeros, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a368f2a3510b1c20dfe0b9ab3fc10a1e7}\label{classQuaternion_a368f2a3510b1c20dfe0b9ab3fc10a1e7}} 
+\index{Quaternion@{Quaternion}!lerp@{lerp}}
+\index{lerp@{lerp}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::lerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates between two quaternions using linear interpolation.
+
+The interpolation curve for linear interpolation between quaternions gives a straight line in quaternion space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a3bbac8b25450a8653a8bca2467cd9cb2}\label{classQuaternion_a3bbac8b25450a8653a8bca2467cd9cb2}} 
+\index{Quaternion@{Quaternion}!lerp@{lerp}}
+\index{lerp@{lerp}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Quaternion\+::lerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates between two quaternions using linear interpolation.
+
+The interpolation curve for linear interpolation between quaternions gives a straight line in quaternion space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}\label{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}} 
+\index{Quaternion@{Quaternion}!multiply@{multiply}}
+\index{multiply@{multiply}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Quaternion\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Multiplies this quaternion by the specified one and stores the result in this quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}\label{classQuaternion_ad4acdaaea6f57183536015a0b0aec661}} 
+\index{Quaternion@{Quaternion}!multiply@{multiply}}
+\index{multiply@{multiply}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Quaternion\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Multiplies this quaternion by the specified one and stores the result in this quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a0c8580557a603a3822b3bf5b60c75884}\label{classQuaternion_a0c8580557a603a3822b3bf5b60c75884}} 
+\index{Quaternion@{Quaternion}!multiply@{multiply}}
+\index{multiply@{multiply}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Quaternion\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies the specified quaternions and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a7703494347997831de3c4d836355f6bb}\label{classQuaternion_a7703494347997831de3c4d836355f6bb}} 
+\index{Quaternion@{Quaternion}!multiply@{multiply}}
+\index{multiply@{multiply}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Quaternion\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies the specified quaternions and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}\label{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}} 
+\index{Quaternion@{Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Normalizes this quaternion to have unit length.
+
+If the quaternion already has unit length or if the length of the quaternion is zero, this method does nothing. \mbox{\Hypertarget{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}\label{classQuaternion_a48e6bafb249c895ed25f29dc9170e11e}} 
+\index{Quaternion@{Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Quaternion\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Normalizes this quaternion to have unit length.
+
+If the quaternion already has unit length or if the length of the quaternion is zero, this method does nothing. \mbox{\Hypertarget{classQuaternion_ae1144820c2f61dc0c8ee33060600ca7e}\label{classQuaternion_ae1144820c2f61dc0c8ee33060600ca7e}} 
+\index{Quaternion@{Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+M\+A\+T\+H\+\_\+\+B\+E\+G\+IN \hyperlink{classQuaternion}{Quaternion} Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the quaternion product of this quaternion with the given quaternion.
+
+Note\+: this does not modify this quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The quaternion product.
+\end{DoxyReturn}
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project \mbox{\Hypertarget{classQuaternion_ab178e12364d87fb676d85695e491361f}\label{classQuaternion_ab178e12364d87fb676d85695e491361f}} 
+\index{Quaternion@{Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the quaternion product of this quaternion with the given quaternion.
+
+Note\+: this does not modify this quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The quaternion product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}\label{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}} 
+\index{Quaternion@{Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the quaternion product of this quaternion with the given vec3. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The vec3 to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vec3 product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}\label{classQuaternion_a8b63a645c77ec58d1caa6ccb80f51c3b}} 
+\index{Quaternion@{Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the quaternion product of this quaternion with the given vec3. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The vec3 to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vec3 product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a8941e3b43aabd15e2471e57ebd49c8a7}\label{classQuaternion_a8941e3b43aabd15e2471e57ebd49c8a7}} 
+\index{Quaternion@{Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} \& Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies this quaternion with the given quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This quaternion, after the multiplication occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_ae897d8ee92c5ac1f7cfd534170eb521c}\label{classQuaternion_ae897d8ee92c5ac1f7cfd534170eb521c}} 
+\index{Quaternion@{Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion}\& Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies this quaternion with the given quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This quaternion, after the multiplication occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a435e47a2efca1a6c39f1835678437104}\label{classQuaternion_a435e47a2efca1a6c39f1835678437104}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy,  }\item[{float}]{zz,  }\item[{float}]{ww }\end{DoxyParamCaption})}
+
+Sets the elements of the quaternion to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The new x-\/value. \\
+\hline
+{\em yy} & The new y-\/value. \\
+\hline
+{\em zz} & The new z-\/value. \\
+\hline
+{\em ww} & The new w-\/value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a435e47a2efca1a6c39f1835678437104}\label{classQuaternion_a435e47a2efca1a6c39f1835678437104}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy,  }\item[{float}]{zz,  }\item[{float}]{ww }\end{DoxyParamCaption})}
+
+Sets the elements of the quaternion to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The new x-\/value. \\
+\hline
+{\em yy} & The new y-\/value. \\
+\hline
+{\em zz} & The new z-\/value. \\
+\hline
+{\em ww} & The new w-\/value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aaf18a418dc62bf348e7629e4875da050}\label{classQuaternion_aaf18a418dc62bf348e7629e4875da050}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Sets the elements of the quaternion from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the quaternion in the order x, y, z, w. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aaf18a418dc62bf348e7629e4875da050}\label{classQuaternion_aaf18a418dc62bf348e7629e4875da050}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Sets the elements of the quaternion from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the quaternion in the order x, y, z, w. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}\label{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the quaternion equal to the rotational part of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}\label{classQuaternion_ae51fe27416ac31583a4442cc0b8b2252}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the quaternion equal to the rotational part of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a27ac949226c34a565311aee0a10d61dc}\label{classQuaternion_a27ac949226c34a565311aee0a10d61dc}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Sets the quaternion equal to the rotation from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a27ac949226c34a565311aee0a10d61dc}\label{classQuaternion_a27ac949226c34a565311aee0a10d61dc}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Sets the quaternion equal to the rotation from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis of rotation. \\
+\hline
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}\label{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Sets the elements of this quaternion to a copy of the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}\label{classQuaternion_aebd9c51e5ff6f3d0cc09e61350d33dd3}} 
+\index{Quaternion@{Quaternion}!set@{set}}
+\index{set@{set}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Quaternion\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Sets the elements of this quaternion to a copy of the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_af180a480b5595be969233e728fc4563e}\label{classQuaternion_af180a480b5595be969233e728fc4563e}} 
+\index{Quaternion@{Quaternion}!set\+Identity@{set\+Identity}}
+\index{set\+Identity@{set\+Identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set\+Identity()}{setIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::set\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to be equal to the identity quaternion. \mbox{\Hypertarget{classQuaternion_af180a480b5595be969233e728fc4563e}\label{classQuaternion_af180a480b5595be969233e728fc4563e}} 
+\index{Quaternion@{Quaternion}!set\+Identity@{set\+Identity}}
+\index{set\+Identity@{set\+Identity}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{set\+Identity()}{setIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Quaternion\+::set\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this quaternion to be equal to the identity quaternion. \mbox{\Hypertarget{classQuaternion_a1f1bac1c3d55207b43cf6cc926c453af}\label{classQuaternion_a1f1bac1c3d55207b43cf6cc926c453af}} 
+\index{Quaternion@{Quaternion}!slerp@{slerp}}
+\index{slerp@{slerp}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{slerp()}{slerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::slerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates between two quaternions using spherical linear interpolation.
+
+Spherical linear interpolation provides smooth transitions between different orientations and is often useful for animating models or cameras in 3D.
+
+Note\+: For accurate interpolation, the input quaternions must be at (or close to) unit length. This method does not automatically normalize the input quaternions, so it is up to the caller to ensure they call normalize beforehand, if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a4dd2d3bf98210b5af0451e6cc92a7113}\label{classQuaternion_a4dd2d3bf98210b5af0451e6cc92a7113}} 
+\index{Quaternion@{Quaternion}!slerp@{slerp}}
+\index{slerp@{slerp}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{slerp()}{slerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Quaternion\+::slerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates between two quaternions using spherical linear interpolation.
+
+Spherical linear interpolation provides smooth transitions between different orientations and is often useful for animating models or cameras in 3D.
+
+Note\+: For accurate interpolation, the input quaternions must be at (or close to) unit length. This method does not automatically normalize the input quaternions, so it is up to the caller to ensure they call normalize beforehand, if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_ad5f6786aac5fa54f2665a651f9aa1938}\label{classQuaternion_ad5f6786aac5fa54f2665a651f9aa1938}} 
+\index{Quaternion@{Quaternion}!squad@{squad}}
+\index{squad@{squad}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{squad()}{squad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Quaternion\+::squad (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{s1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{s2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates over a series of quaternions using spherical spline interpolation.
+
+Spherical spline interpolation provides smooth transitions between different orientations and is often useful for animating models or cameras in 3D.
+
+Note\+: For accurate interpolation, the input quaternions must be unit. This method does not automatically normalize the input quaternions, so it is up to the caller to ensure they call normalize beforehand, if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em s1} & The first control point. \\
+\hline
+{\em s2} & The second control point. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a77eb00899b99bd31fbb74dfecc258820}\label{classQuaternion_a77eb00899b99bd31fbb74dfecc258820}} 
+\index{Quaternion@{Quaternion}!squad@{squad}}
+\index{squad@{squad}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{squad()}{squad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Quaternion\+::squad (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q2,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{s1,  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{s2,  }\item[{float}]{t,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Interpolates over a series of quaternions using spherical spline interpolation.
+
+Spherical spline interpolation provides smooth transitions between different orientations and is often useful for animating models or cameras in 3D.
+
+Note\+: For accurate interpolation, the input quaternions must be unit. This method does not automatically normalize the input quaternions, so it is up to the caller to ensure they call normalize beforehand, if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q1} & The first quaternion. \\
+\hline
+{\em q2} & The second quaternion. \\
+\hline
+{\em s1} & The first control point. \\
+\hline
+{\em s2} & The second control point. \\
+\hline
+{\em t} & The interpolation coefficient. \\
+\hline
+{\em dst} & A quaternion to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}\label{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}} 
+\index{Quaternion@{Quaternion}!to\+Axis\+Angle@{to\+Axis\+Angle}}
+\index{to\+Axis\+Angle@{to\+Axis\+Angle}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{to\+Axis\+Angle()}{toAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Quaternion\+::to\+Axis\+Angle (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{e }\end{DoxyParamCaption}) const}
+
+Converts this Quaternion4f to axis-\/angle notation. The axis is normalized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The Vec3f which stores the axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle (in radians). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}\label{classQuaternion_a122b18b294be2543bbc17cc1c7d8e25c}} 
+\index{Quaternion@{Quaternion}!to\+Axis\+Angle@{to\+Axis\+Angle}}
+\index{to\+Axis\+Angle@{to\+Axis\+Angle}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{to\+Axis\+Angle()}{toAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Quaternion\+::to\+Axis\+Angle (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{e }\end{DoxyParamCaption}) const}
+
+Converts this Quaternion4f to axis-\/angle notation. The axis is normalized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The Vec3f which stores the axis.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle (in radians). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_a4e1623a2a43917b71d48953a1b712366}\label{classQuaternion_a4e1623a2a43917b71d48953a1b712366}} 
+\index{Quaternion@{Quaternion}!zero@{zero}}
+\index{zero@{zero}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{zero()}{zero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion} \& Quaternion\+::zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the quaternion with all zeros.
+
+\begin{DoxyReturn}{Returns}
+The quaternion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQuaternion_ab43289b15be2b706934d497cfcbe8fbe}\label{classQuaternion_ab43289b15be2b706934d497cfcbe8fbe}} 
+\index{Quaternion@{Quaternion}!zero@{zero}}
+\index{zero@{zero}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{zero()}{zero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const \hyperlink{classQuaternion}{Quaternion}\& Quaternion\+::zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the quaternion with all zeros.
+
+\begin{DoxyReturn}{Returns}
+The quaternion. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classQuaternion_aa44a65ab99e36f6ab8771030eed8a7ad}\label{classQuaternion_aa44a65ab99e36f6ab8771030eed8a7ad}} 
+\index{Quaternion@{Quaternion}!w@{w}}
+\index{w@{w}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily float Quaternion\+::w}
+
+The scalar component of the quaternion. \mbox{\Hypertarget{classQuaternion_a8b80f191a3155cc0158d2b4f4d50b2cb}\label{classQuaternion_a8b80f191a3155cc0158d2b4f4d50b2cb}} 
+\index{Quaternion@{Quaternion}!x@{x}}
+\index{x@{x}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily float Quaternion\+::x}
+
+The x-\/value of the quaternion\textquotesingle{}s vector component. \mbox{\Hypertarget{classQuaternion_a3bd3f270462944423611f44e19d2511b}\label{classQuaternion_a3bd3f270462944423611f44e19d2511b}} 
+\index{Quaternion@{Quaternion}!y@{y}}
+\index{y@{y}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily float Quaternion\+::y}
+
+The y-\/value of the quaternion\textquotesingle{}s vector component. \mbox{\Hypertarget{classQuaternion_a625cb732d8ff3083e7852b86b736ab29}\label{classQuaternion_a625cb732d8ff3083e7852b86b736ab29}} 
+\index{Quaternion@{Quaternion}!z@{z}}
+\index{z@{z}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily float Quaternion\+::z}
+
+The z-\/value of the quaternion\textquotesingle{}s vector component. \mbox{\Hypertarget{classQuaternion_a808de84686edca53817636945082be8b}\label{classQuaternion_a808de84686edca53817636945082be8b}} 
+\index{Quaternion@{Quaternion}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!Quaternion@{Quaternion}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily static const \hyperlink{classQuaternion}{Quaternion} Quaternion\+::\+Z\+E\+RO\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classQuaternion}{Quaternion(0,0,0, 0)}
+
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project
+
+Copyright 2013 Black\+Berry Inc. Copyright (c) 2017-\/2018 Xiamen Yaji Software Co., Ltd.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Quaternion.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Quaternion.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Quaternion.\+inl\end{DoxyCompactItemize}

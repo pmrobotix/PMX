@@ -1,0 +1,578 @@
+\hypertarget{classWriter}{}\section{Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$ Class Template Reference}
+\label{classWriter}\index{Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$@{Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$}}
+
+
+J\+S\+ON writer.  
+
+
+
+
+{\ttfamily \#include $<$writer.\+h$>$}
+
+
+
+Inheritance diagram for Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structWriter_1_1Level}{Level}
+\begin{DoxyCompactList}\small\item\em Information for each nested level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_a5ba0d623162839460024b517fc2d5868}\label{classWriter_a5ba0d623162839460024b517fc2d5868}} 
+typedef Source\+Encoding\+::\+Ch {\bfseries Ch}
+\item 
+\mbox{\Hypertarget{classWriter_a5ba0d623162839460024b517fc2d5868}\label{classWriter_a5ba0d623162839460024b517fc2d5868}} 
+typedef Source\+Encoding\+::\+Ch {\bfseries Ch}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}{Writer} (Output\+Stream \&os, Stack\+Allocator $\ast$stack\+Allocator=0, size\+\_\+t level\+Depth=k\+Default\+Level\+Depth)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_a2a6c946bc2a9dcfdda9f958c3cfee66c}\label{classWriter_a2a6c946bc2a9dcfdda9f958c3cfee66c}} 
+{\bfseries Writer} (Stack\+Allocator $\ast$allocator=0, size\+\_\+t level\+Depth=k\+Default\+Level\+Depth)
+\item 
+void \hyperlink{classWriter_a4e5bd5e6364edca476125b511b3dca9c}{Reset} (Output\+Stream \&os)
+\begin{DoxyCompactList}\small\item\em Reset the writer with a new stream. \end{DoxyCompactList}\item 
+bool \hyperlink{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}{Is\+Complete} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the output is a complete J\+S\+ON. \end{DoxyCompactList}\item 
+\hyperlink{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}{Writer} (Output\+Stream \&os, Stack\+Allocator $\ast$stack\+Allocator=0, size\+\_\+t level\+Depth=k\+Default\+Level\+Depth)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_a2a6c946bc2a9dcfdda9f958c3cfee66c}\label{classWriter_a2a6c946bc2a9dcfdda9f958c3cfee66c}} 
+{\bfseries Writer} (Stack\+Allocator $\ast$allocator=0, size\+\_\+t level\+Depth=k\+Default\+Level\+Depth)
+\item 
+void \hyperlink{classWriter_a4e5bd5e6364edca476125b511b3dca9c}{Reset} (Output\+Stream \&os)
+\begin{DoxyCompactList}\small\item\em Reset the writer with a new stream. \end{DoxyCompactList}\item 
+bool \hyperlink{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}{Is\+Complete} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the output is a complete J\+S\+ON. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_aefe66230ff65fba439d7df7b14d49f89}\label{classWriter_aefe66230ff65fba439d7df7b14d49f89}} 
+int {\bfseries Get\+Max\+Decimal\+Places} () const
+\item 
+void \hyperlink{classWriter_adc08c69c399172cdf3dee9e5548c908f}{Set\+Max\+Decimal\+Places} (int max\+Decimal\+Places)
+\begin{DoxyCompactList}\small\item\em Sets the maximum number of decimal places for double output. \end{DoxyCompactList}\item 
+bool \hyperlink{classWriter_a35e496982fdbdc7f5d9d29775656cd38}{Raw\+Value} (const Ch $\ast$json, size\+\_\+t length, Type type)
+\begin{DoxyCompactList}\small\item\em Write a raw J\+S\+ON value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Implementation of Handler}\par
+{\em \begin{DoxySeeAlso}{See also}
+Handler 
+\end{DoxySeeAlso}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_a7d80ac367783ac4eb8b0118924b377bd}\label{classWriter_a7d80ac367783ac4eb8b0118924b377bd}} 
+bool {\bfseries Null} ()
+\item 
+\mbox{\Hypertarget{classWriter_adf126d95f0aec7c2f7667df048227929}\label{classWriter_adf126d95f0aec7c2f7667df048227929}} 
+bool {\bfseries Bool} (bool b)
+\item 
+\mbox{\Hypertarget{classWriter_ae006cfa073c369c57797bc842b817ba4}\label{classWriter_ae006cfa073c369c57797bc842b817ba4}} 
+bool {\bfseries Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_a20c4edc79c0d5a9402e1deb8f09feadf}\label{classWriter_a20c4edc79c0d5a9402e1deb8f09feadf}} 
+bool {\bfseries Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_aa63032bf3dce66f817267cc451922a6e}\label{classWriter_aa63032bf3dce66f817267cc451922a6e}} 
+bool {\bfseries Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_a71b2ee12ae85d181eb9abdb686565615}\label{classWriter_a71b2ee12ae85d181eb9abdb686565615}} 
+bool {\bfseries Uint64} (uint64\+\_\+t u64)
+\item 
+bool \hyperlink{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}{Double} (double d)
+\begin{DoxyCompactList}\small\item\em Writes the given {\ttfamily double} value to the stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_ac317eb622ea116293d99e3edffe6f1c3}\label{classWriter_ac317eb622ea116293d99e3edffe6f1c3}} 
+bool {\bfseries String} (const Ch $\ast$str, Size\+Type length, bool copy=false)
+\item 
+\mbox{\Hypertarget{classWriter_a393fe59329dfd8110016183090b02d57}\label{classWriter_a393fe59329dfd8110016183090b02d57}} 
+bool {\bfseries Start\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_a88f8aa2df45426ba81d293ddc71698af}\label{classWriter_a88f8aa2df45426ba81d293ddc71698af}} 
+bool {\bfseries Key} (const Ch $\ast$str, Size\+Type length, bool copy=false)
+\item 
+\mbox{\Hypertarget{classWriter_a3705f6d3f9a820f0a6652089222ed3ac}\label{classWriter_a3705f6d3f9a820f0a6652089222ed3ac}} 
+bool {\bfseries End\+Object} (Size\+Type member\+Count=0)
+\item 
+\mbox{\Hypertarget{classWriter_a8a981ed4f5618a545724789ee4c8dedb}\label{classWriter_a8a981ed4f5618a545724789ee4c8dedb}} 
+bool {\bfseries Start\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_ad8680f9f8d3289dad72f1f18a8763aa1}\label{classWriter_ad8680f9f8d3289dad72f1f18a8763aa1}} 
+bool {\bfseries End\+Array} (Size\+Type element\+Count=0)
+\item 
+\mbox{\Hypertarget{classWriter_a7d80ac367783ac4eb8b0118924b377bd}\label{classWriter_a7d80ac367783ac4eb8b0118924b377bd}} 
+bool {\bfseries Null} ()
+\item 
+\mbox{\Hypertarget{classWriter_adf126d95f0aec7c2f7667df048227929}\label{classWriter_adf126d95f0aec7c2f7667df048227929}} 
+bool {\bfseries Bool} (bool b)
+\item 
+\mbox{\Hypertarget{classWriter_ae006cfa073c369c57797bc842b817ba4}\label{classWriter_ae006cfa073c369c57797bc842b817ba4}} 
+bool {\bfseries Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_a20c4edc79c0d5a9402e1deb8f09feadf}\label{classWriter_a20c4edc79c0d5a9402e1deb8f09feadf}} 
+bool {\bfseries Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_aa63032bf3dce66f817267cc451922a6e}\label{classWriter_aa63032bf3dce66f817267cc451922a6e}} 
+bool {\bfseries Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_a71b2ee12ae85d181eb9abdb686565615}\label{classWriter_a71b2ee12ae85d181eb9abdb686565615}} 
+bool {\bfseries Uint64} (uint64\+\_\+t u64)
+\item 
+bool \hyperlink{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}{Double} (double d)
+\begin{DoxyCompactList}\small\item\em Writes the given {\ttfamily double} value to the stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_a3ce05da0fe6288502d6165da55c86d69}\label{classWriter_a3ce05da0fe6288502d6165da55c86d69}} 
+bool {\bfseries Raw\+Number} (const Ch $\ast$str, Size\+Type length, bool copy=false)
+\item 
+\mbox{\Hypertarget{classWriter_ac317eb622ea116293d99e3edffe6f1c3}\label{classWriter_ac317eb622ea116293d99e3edffe6f1c3}} 
+bool {\bfseries String} (const Ch $\ast$str, Size\+Type length, bool copy=false)
+\item 
+\mbox{\Hypertarget{classWriter_a393fe59329dfd8110016183090b02d57}\label{classWriter_a393fe59329dfd8110016183090b02d57}} 
+bool {\bfseries Start\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_a88f8aa2df45426ba81d293ddc71698af}\label{classWriter_a88f8aa2df45426ba81d293ddc71698af}} 
+bool {\bfseries Key} (const Ch $\ast$str, Size\+Type length, bool copy=false)
+\item 
+\mbox{\Hypertarget{classWriter_a3705f6d3f9a820f0a6652089222ed3ac}\label{classWriter_a3705f6d3f9a820f0a6652089222ed3ac}} 
+bool {\bfseries End\+Object} (Size\+Type member\+Count=0)
+\item 
+\mbox{\Hypertarget{classWriter_a8a981ed4f5618a545724789ee4c8dedb}\label{classWriter_a8a981ed4f5618a545724789ee4c8dedb}} 
+bool {\bfseries Start\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_ad8680f9f8d3289dad72f1f18a8763aa1}\label{classWriter_ad8680f9f8d3289dad72f1f18a8763aa1}} 
+bool {\bfseries End\+Array} (Size\+Type element\+Count=0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Convenience extensions}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}\label{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}} 
+bool \hyperlink{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}{String} (const Ch $\ast$str)
+\begin{DoxyCompactList}\small\item\em Simpler but slower overload. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_a77dbb4676e57aab1c0e976ec22145fb9}\label{classWriter_a77dbb4676e57aab1c0e976ec22145fb9}} 
+bool {\bfseries Key} (const Ch $\ast$str)
+\item 
+\mbox{\Hypertarget{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}\label{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}} 
+bool \hyperlink{classWriter_ad1525690e1d598d7e32892b8b83fbcd4}{String} (const Ch $\ast$str)
+\begin{DoxyCompactList}\small\item\em Simpler but slower overload. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWriter_a77dbb4676e57aab1c0e976ec22145fb9}\label{classWriter_a77dbb4676e57aab1c0e976ec22145fb9}} 
+bool {\bfseries Key} (const Ch $\ast$str)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_aae4a08df2e7529e2faeb81ca16eed1e4}\label{classWriter_aae4a08df2e7529e2faeb81ca16eed1e4}} 
+static const int {\bfseries k\+Default\+Max\+Decimal\+Places} = 324
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_af4f79d39ad69cbbc7976565dd257b436}\label{classWriter_af4f79d39ad69cbbc7976565dd257b436}} 
+bool {\bfseries Write\+Null} ()
+\item 
+\mbox{\Hypertarget{classWriter_a21f1adc6a520084ed4f39522ed9f4540}\label{classWriter_a21f1adc6a520084ed4f39522ed9f4540}} 
+bool {\bfseries Write\+Bool} (bool b)
+\item 
+\mbox{\Hypertarget{classWriter_acc42b38b43ae1488fc2e779c8a333d34}\label{classWriter_acc42b38b43ae1488fc2e779c8a333d34}} 
+bool {\bfseries Write\+Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_aa7e4196f87bfa66c9619e0efd15d16ea}\label{classWriter_aa7e4196f87bfa66c9619e0efd15d16ea}} 
+bool {\bfseries Write\+Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_ad68f4e0a85cc944a0740200544c97ed9}\label{classWriter_ad68f4e0a85cc944a0740200544c97ed9}} 
+bool {\bfseries Write\+Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_ac3d17e9409c202e39b0cd887545783d6}\label{classWriter_ac3d17e9409c202e39b0cd887545783d6}} 
+bool {\bfseries Write\+Uint64} (uint64\+\_\+t u64)
+\item 
+\mbox{\Hypertarget{classWriter_aced9cb2b88abc16c4a0bdb75920cd424}\label{classWriter_aced9cb2b88abc16c4a0bdb75920cd424}} 
+bool {\bfseries Write\+Double} (double d)
+\item 
+\mbox{\Hypertarget{classWriter_aab4926d061472149998b89b4d34e1a4b}\label{classWriter_aab4926d061472149998b89b4d34e1a4b}} 
+bool {\bfseries Write\+String} (const Ch $\ast$str, Size\+Type length)
+\item 
+\mbox{\Hypertarget{classWriter_ad3578f94664c62e6b0773f4dc0567a17}\label{classWriter_ad3578f94664c62e6b0773f4dc0567a17}} 
+bool {\bfseries Write\+Start\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_a9f76fcffaf403a49a311de074a23de2d}\label{classWriter_a9f76fcffaf403a49a311de074a23de2d}} 
+bool {\bfseries Write\+End\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_af3804bde535cf36e0733c07a56742111}\label{classWriter_af3804bde535cf36e0733c07a56742111}} 
+bool {\bfseries Write\+Start\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_a9d7ec17cfb0b64a88c009871ba741f52}\label{classWriter_a9d7ec17cfb0b64a88c009871ba741f52}} 
+bool {\bfseries Write\+End\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_ad56f2e953b7919ad2157a2fc2bedf873}\label{classWriter_ad56f2e953b7919ad2157a2fc2bedf873}} 
+void {\bfseries Prefix} (Type type)
+\item 
+\mbox{\Hypertarget{classWriter_af4f79d39ad69cbbc7976565dd257b436}\label{classWriter_af4f79d39ad69cbbc7976565dd257b436}} 
+bool {\bfseries Write\+Null} ()
+\item 
+\mbox{\Hypertarget{classWriter_a21f1adc6a520084ed4f39522ed9f4540}\label{classWriter_a21f1adc6a520084ed4f39522ed9f4540}} 
+bool {\bfseries Write\+Bool} (bool b)
+\item 
+\mbox{\Hypertarget{classWriter_acc42b38b43ae1488fc2e779c8a333d34}\label{classWriter_acc42b38b43ae1488fc2e779c8a333d34}} 
+bool {\bfseries Write\+Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_aa7e4196f87bfa66c9619e0efd15d16ea}\label{classWriter_aa7e4196f87bfa66c9619e0efd15d16ea}} 
+bool {\bfseries Write\+Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_ad68f4e0a85cc944a0740200544c97ed9}\label{classWriter_ad68f4e0a85cc944a0740200544c97ed9}} 
+bool {\bfseries Write\+Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_ac3d17e9409c202e39b0cd887545783d6}\label{classWriter_ac3d17e9409c202e39b0cd887545783d6}} 
+bool {\bfseries Write\+Uint64} (uint64\+\_\+t u64)
+\item 
+\mbox{\Hypertarget{classWriter_aced9cb2b88abc16c4a0bdb75920cd424}\label{classWriter_aced9cb2b88abc16c4a0bdb75920cd424}} 
+bool {\bfseries Write\+Double} (double d)
+\item 
+\mbox{\Hypertarget{classWriter_aab4926d061472149998b89b4d34e1a4b}\label{classWriter_aab4926d061472149998b89b4d34e1a4b}} 
+bool {\bfseries Write\+String} (const Ch $\ast$str, Size\+Type length)
+\item 
+\mbox{\Hypertarget{classWriter_a1a886f73bd0b094043899a71b65c92d5}\label{classWriter_a1a886f73bd0b094043899a71b65c92d5}} 
+bool {\bfseries Scan\+Write\+Unescaped\+String} (\hyperlink{structGenericStringStream}{Generic\+String\+Stream}$<$ Source\+Encoding $>$ \&is, size\+\_\+t length)
+\item 
+\mbox{\Hypertarget{classWriter_ad3578f94664c62e6b0773f4dc0567a17}\label{classWriter_ad3578f94664c62e6b0773f4dc0567a17}} 
+bool {\bfseries Write\+Start\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_a9f76fcffaf403a49a311de074a23de2d}\label{classWriter_a9f76fcffaf403a49a311de074a23de2d}} 
+bool {\bfseries Write\+End\+Object} ()
+\item 
+\mbox{\Hypertarget{classWriter_af3804bde535cf36e0733c07a56742111}\label{classWriter_af3804bde535cf36e0733c07a56742111}} 
+bool {\bfseries Write\+Start\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_a9d7ec17cfb0b64a88c009871ba741f52}\label{classWriter_a9d7ec17cfb0b64a88c009871ba741f52}} 
+bool {\bfseries Write\+End\+Array} ()
+\item 
+\mbox{\Hypertarget{classWriter_ad502719b59b9d037bb3c3c3a1f462e6c}\label{classWriter_ad502719b59b9d037bb3c3c3a1f462e6c}} 
+bool {\bfseries Write\+Raw\+Value} (const Ch $\ast$json, size\+\_\+t length)
+\item 
+\mbox{\Hypertarget{classWriter_ad56f2e953b7919ad2157a2fc2bedf873}\label{classWriter_ad56f2e953b7919ad2157a2fc2bedf873}} 
+void {\bfseries Prefix} (Type type)
+\item 
+\mbox{\Hypertarget{classWriter_a087faa974923e67f51edeb290ca00dd1}\label{classWriter_a087faa974923e67f51edeb290ca00dd1}} 
+bool {\bfseries End\+Value} (bool ret)
+\item 
+\mbox{\Hypertarget{classWriter_abefb163a93b376d056edecad5a7a82ef}\label{classWriter_abefb163a93b376d056edecad5a7a82ef}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_a9665a4a1549b286944b21927b80060cf}\label{classWriter_a9665a4a1549b286944b21927b80060cf}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_a3528a42394d50f3b92659de517433c85}\label{classWriter_a3528a42394d50f3b92659de517433c85}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_a025b3d2ca07d539a7067575e95f5578d}\label{classWriter_a025b3d2ca07d539a7067575e95f5578d}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Uint64} (uint64\+\_\+t u)
+\item 
+\mbox{\Hypertarget{classWriter_af317e1d24249b8c68503a6253c703bd2}\label{classWriter_af317e1d24249b8c68503a6253c703bd2}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Double} (double d)
+\item 
+\mbox{\Hypertarget{classWriter_abefb163a93b376d056edecad5a7a82ef}\label{classWriter_abefb163a93b376d056edecad5a7a82ef}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Int} (int i)
+\item 
+\mbox{\Hypertarget{classWriter_a9665a4a1549b286944b21927b80060cf}\label{classWriter_a9665a4a1549b286944b21927b80060cf}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Uint} (unsigned u)
+\item 
+\mbox{\Hypertarget{classWriter_a3528a42394d50f3b92659de517433c85}\label{classWriter_a3528a42394d50f3b92659de517433c85}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Int64} (int64\+\_\+t i64)
+\item 
+\mbox{\Hypertarget{classWriter_a025b3d2ca07d539a7067575e95f5578d}\label{classWriter_a025b3d2ca07d539a7067575e95f5578d}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Uint64} (uint64\+\_\+t u)
+\item 
+\mbox{\Hypertarget{classWriter_af317e1d24249b8c68503a6253c703bd2}\label{classWriter_af317e1d24249b8c68503a6253c703bd2}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Write\+Double} (double d)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_a437e517d23a1a3367839552daf2ce0dc}\label{classWriter_a437e517d23a1a3367839552daf2ce0dc}} 
+Output\+Stream $\ast$ {\bfseries os\+\_\+}
+\item 
+\mbox{\Hypertarget{classWriter_a7485082f9a06c9d194938c892a20e002}\label{classWriter_a7485082f9a06c9d194938c892a20e002}} 
+\hyperlink{classinternal_1_1Stack}{internal\+::\+Stack}$<$ Stack\+Allocator $>$ {\bfseries level\+\_\+stack\+\_\+}
+\item 
+\mbox{\Hypertarget{classWriter_af252ff409093ea786d5efce0d08d3804}\label{classWriter_af252ff409093ea786d5efce0d08d3804}} 
+bool {\bfseries has\+Root\+\_\+}
+\item 
+\mbox{\Hypertarget{classWriter_a7d1aa45668fd8e21be18f5980c9cd910}\label{classWriter_a7d1aa45668fd8e21be18f5980c9cd910}} 
+int {\bfseries max\+Decimal\+Places\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriter_a14f0c1dde0474dc531b325db66c9df38}\label{classWriter_a14f0c1dde0474dc531b325db66c9df38}} 
+static const size\+\_\+t {\bfseries k\+Default\+Level\+Depth} = 32
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$\newline
+class Writer$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$}
+
+J\+S\+ON writer. 
+
+\hyperlink{classWriter}{Writer} implements the concept Handler. It generates J\+S\+ON text by events to an output os.
+
+User may programmatically calls the functions of a writer to generate J\+S\+ON text.
+
+On the other side, a writer can also be passed to objects that generates events,
+
+for example \hyperlink{classGenericReader_a0c450620d14ff1824e58bb7bd9b42099}{Reader\+::\+Parse()} and Document\+::\+Accept().
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Output\+Stream} & Type of output stream. \\
+\hline
+{\em Source\+Encoding} & Encoding of source string. \\
+\hline
+{\em Target\+Encoding} & Encoding of output stream. \\
+\hline
+{\em Stack\+Allocator} & Type of allocator for allocating memory of stack. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+implements Handler concept 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}\label{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}} 
+\index{Writer@{Writer}!Writer@{Writer}}
+\index{Writer@{Writer}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Writer()}{Writer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+\hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::\hyperlink{classWriter}{Writer} (\begin{DoxyParamCaption}\item[{Output\+Stream \&}]{os,  }\item[{Stack\+Allocator $\ast$}]{stack\+Allocator = {\ttfamily 0},  }\item[{size\+\_\+t}]{level\+Depth = {\ttfamily kDefaultLevelDepth} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream. \\
+\hline
+{\em stack\+Allocator} & User supplied allocator. If it is null, it will create a private one. \\
+\hline
+{\em level\+Depth} & Initial capacity of stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}\label{classWriter_a27998a2e0fcb0aa23c95e1330b340abc}} 
+\index{Writer@{Writer}!Writer@{Writer}}
+\index{Writer@{Writer}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Writer()}{Writer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+\hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::\hyperlink{classWriter}{Writer} (\begin{DoxyParamCaption}\item[{Output\+Stream \&}]{os,  }\item[{Stack\+Allocator $\ast$}]{stack\+Allocator = {\ttfamily 0},  }\item[{size\+\_\+t}]{level\+Depth = {\ttfamily kDefaultLevelDepth} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream. \\
+\hline
+{\em stack\+Allocator} & User supplied allocator. If it is null, it will create a private one. \\
+\hline
+{\em level\+Depth} & Initial capacity of stack. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}\label{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}} 
+\index{Writer@{Writer}!Double@{Double}}
+\index{Double@{Double}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+bool \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes the given {\ttfamily double} value to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The value to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether it is succeed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}\label{classWriter_ae80dc830a4f1d84e6eaf6b182c0ceccb}} 
+\index{Writer@{Writer}!Double@{Double}}
+\index{Double@{Double}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+bool \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes the given {\ttfamily double} value to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The value to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether it is succeed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}\label{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}} 
+\index{Writer@{Writer}!Is\+Complete@{Is\+Complete}}
+\index{Is\+Complete@{Is\+Complete}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Is\+Complete()}{IsComplete()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+bool \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Is\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether the output is a complete J\+S\+ON. 
+
+A complete J\+S\+ON has a complete root object or array. \mbox{\Hypertarget{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}\label{classWriter_a3afe8548b06b9f9601f59fbc0687c79b}} 
+\index{Writer@{Writer}!Is\+Complete@{Is\+Complete}}
+\index{Is\+Complete@{Is\+Complete}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Is\+Complete()}{IsComplete()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+bool \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Is\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether the output is a complete J\+S\+ON. 
+
+A complete J\+S\+ON has a complete root object or array. \mbox{\Hypertarget{classWriter_a35e496982fdbdc7f5d9d29775656cd38}\label{classWriter_a35e496982fdbdc7f5d9d29775656cd38}} 
+\index{Writer@{Writer}!Raw\+Value@{Raw\+Value}}
+\index{Raw\+Value@{Raw\+Value}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Raw\+Value()}{RawValue()}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+bool \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Raw\+Value (\begin{DoxyParamCaption}\item[{const Ch $\ast$}]{json,  }\item[{size\+\_\+t}]{length,  }\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a raw J\+S\+ON value. 
+
+For user to write a stringified J\+S\+ON as a value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & A well-\/formed J\+S\+ON value. It should not contain null character within \mbox{[}0, length -\/ 1\mbox{]} range. \\
+\hline
+{\em length} & Length of the json. \\
+\hline
+{\em type} & Type of the root of json. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWriter_a4e5bd5e6364edca476125b511b3dca9c}\label{classWriter_a4e5bd5e6364edca476125b511b3dca9c}} 
+\index{Writer@{Writer}!Reset@{Reset}}
+\index{Reset@{Reset}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+void \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Reset (\begin{DoxyParamCaption}\item[{Output\+Stream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset the writer with a new stream. 
+
+This function reset the writer with a new stream and default settings, in order to make a \hyperlink{classWriter}{Writer} object reusable for output multiple J\+S\+O\+Ns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & New output stream. 
+\begin{DoxyCode}
+\hyperlink{classWriter}{Writer<OutputStream>} writer(os1);
+writer.StartObject();
+\textcolor{comment}{// ...}
+writer.EndObject();
+
+writer.Reset(os2);
+writer.StartObject();
+\textcolor{comment}{// ...}
+writer.EndObject();
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWriter_a4e5bd5e6364edca476125b511b3dca9c}\label{classWriter_a4e5bd5e6364edca476125b511b3dca9c}} 
+\index{Writer@{Writer}!Reset@{Reset}}
+\index{Reset@{Reset}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+void \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Reset (\begin{DoxyParamCaption}\item[{Output\+Stream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset the writer with a new stream. 
+
+This function reset the writer with a new stream and default settings, in order to make a \hyperlink{classWriter}{Writer} object reusable for output multiple J\+S\+O\+Ns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & New output stream. 
+\begin{DoxyCode}
+\hyperlink{classWriter}{Writer<OutputStream>} writer(os1);
+writer.StartObject();
+\textcolor{comment}{// ...}
+writer.EndObject();
+
+writer.Reset(os2);
+writer.StartObject();
+\textcolor{comment}{// ...}
+writer.EndObject();
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWriter_adc08c69c399172cdf3dee9e5548c908f}\label{classWriter_adc08c69c399172cdf3dee9e5548c908f}} 
+\index{Writer@{Writer}!Set\+Max\+Decimal\+Places@{Set\+Max\+Decimal\+Places}}
+\index{Set\+Max\+Decimal\+Places@{Set\+Max\+Decimal\+Places}!Writer@{Writer}}
+\subsubsection{\texorpdfstring{Set\+Max\+Decimal\+Places()}{SetMaxDecimalPlaces()}}
+{\footnotesize\ttfamily template$<$typename Output\+Stream, typename Source\+Encoding = U\+T\+F8$<$$>$, typename Target\+Encoding = U\+T\+F8$<$$>$, typename Stack\+Allocator = Crt\+Allocator$>$ \\
+void \hyperlink{classWriter}{Writer}$<$ Output\+Stream, Source\+Encoding, Target\+Encoding, Stack\+Allocator $>$\+::Set\+Max\+Decimal\+Places (\begin{DoxyParamCaption}\item[{int}]{max\+Decimal\+Places }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the maximum number of decimal places for double output. 
+
+This setting truncates the output with specified number of decimal places.
+
+For example,
+
+
+\begin{DoxyCode}
+writer.SetMaxDecimalPlaces(3);
+writer.StartArray();
+writer.Double(0.12345);                 \textcolor{comment}{// "0.123"}
+writer.Double(0.0001);                  \textcolor{comment}{// "0.0"}
+writer.Double(1.234567890123456e30);    \textcolor{comment}{// "1.234567890123456e30" (do not truncate significand for positive
+       exponent)}
+writer.Double(1.23e-4);                 \textcolor{comment}{// "0.0"                  (do truncate significand for negative
+       exponent)}
+writer.EndArray();
+\end{DoxyCode}
+
+
+The default setting does not truncate any decimal places. You can restore to this setting by calling 
+\begin{DoxyCode}
+writer.SetMaxDecimalPlaces(Writer::kDefaultMaxDecimalPlaces);
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/json/writer.\+h\end{DoxyCompactItemize}

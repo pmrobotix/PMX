@@ -1,0 +1,763 @@
+\hypertarget{classProtectedNode}{}\section{Protected\+Node Class Reference}
+\label{classProtectedNode}\index{Protected\+Node@{Protected\+Node}}
+
+
+A inner node type mainly used for UI module. It is useful for composing complex node type and it\textquotesingle{}s children are protected.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Protected\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Protected\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProtectedNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Protected\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProtectedNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classProtectedNode_afb1b2f3712d91a38bd5c691eeec6bbb9}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup} () override
+\item 
+virtual void \hyperlink{classProtectedNode_ade991090bee4173b4e1f47382adc99b9}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classProtectedNode_ab424c044446f8c5cf2018e450c4df78c}{on\+Enter\+Transition\+Did\+Finish} () override
+\item 
+virtual void \hyperlink{classProtectedNode_ad3eed150eb7243f2de8b2e527752a3a6}{on\+Exit} () override
+\item 
+virtual void \hyperlink{classProtectedNode_a3f4bf0c9b9ec81b486f479d30fc1ed67}{on\+Exit\+Transition\+Did\+Start} () override
+\item 
+virtual void \hyperlink{classProtectedNode_abe8e7d89709e01b0500ae8cf63991806}{update\+Displayed\+Opacity} (G\+Lubyte parent\+Opacity) override
+\item 
+virtual void \hyperlink{classProtectedNode_a53b09aefb1db2c87f6ee6560b0c48430}{update\+Displayed\+Color} (const \hyperlink{structColor3B}{Color3B} \&parent\+Color) override
+\item 
+\mbox{\Hypertarget{classProtectedNode_ae99076f31c4d18fa75f0a50a79f49a45}\label{classProtectedNode_ae99076f31c4d18fa75f0a50a79f49a45}} 
+virtual void {\bfseries disable\+Cascade\+Color} () override
+\item 
+\mbox{\Hypertarget{classProtectedNode_abc92a02814bd39651c5d295626ddb896}\label{classProtectedNode_abc92a02814bd39651c5d295626ddb896}} 
+virtual void {\bfseries disable\+Cascade\+Opacity} () override
+\item 
+virtual void \hyperlink{classProtectedNode_a45ddaa88c746ea6707b8a09bb50b457d}{set\+Camera\+Mask} (unsigned short mask, bool apply\+Children=true) override
+\item 
+virtual void \hyperlink{classProtectedNode_a705c838f46afa1b9eac5dae2aa4bc310}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classProtectedNode_a6eda3b644eb5be15fe5c717c48d25634}{cleanup} () override
+\item 
+virtual void \hyperlink{classProtectedNode_a3f321c087261805fe0ca95fe71109b41}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classProtectedNode_aac8fcdaf79295aa56c9b792d2e4135d6}{on\+Enter\+Transition\+Did\+Finish} () override
+\item 
+virtual void \hyperlink{classProtectedNode_a9f3d5d68659c662187089b18cc2dbda3}{on\+Exit} () override
+\item 
+virtual void \hyperlink{classProtectedNode_a3efa91524a31d8f0919be2db8af1ddc9}{on\+Exit\+Transition\+Did\+Start} () override
+\item 
+virtual void \hyperlink{classProtectedNode_aef8f27d6204a82d0ed5372e9082d12ae}{update\+Displayed\+Opacity} (G\+Lubyte parent\+Opacity) override
+\item 
+virtual void \hyperlink{classProtectedNode_ab628cf3ac452302f0c653600bb145b49}{update\+Displayed\+Color} (const \hyperlink{structColor3B}{Color3B} \&parent\+Color) override
+\item 
+\mbox{\Hypertarget{classProtectedNode_ac0417d9477230ed656705a6079adfc88}\label{classProtectedNode_ac0417d9477230ed656705a6079adfc88}} 
+virtual void {\bfseries disable\+Cascade\+Color} () override
+\item 
+\mbox{\Hypertarget{classProtectedNode_a71330ab5ee5157432fe84c72312b7af3}\label{classProtectedNode_a71330ab5ee5157432fe84c72312b7af3}} 
+virtual void {\bfseries disable\+Cascade\+Opacity} () override
+\item 
+virtual void \hyperlink{classProtectedNode_ad259bd1bedc5f273b3850c74dc58c2f2}{set\+Camera\+Mask} (unsigned short mask, bool apply\+Children=true) override
+\item 
+virtual void \hyperlink{classProtectedNode_a0d067b9056a934255c7a44a675dc9e92}{set\+Global\+Z\+Order} (float global\+Z\+Order) override
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Children and Parent}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classProtectedNode_ad36ce9f2e11226af49dec57aae1da4be}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+virtual void \hyperlink{classProtectedNode_a9f7688935e62904baacae03e8f2c2070}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order)
+\item 
+virtual void \hyperlink{classProtectedNode_a5fa7088c0b7baa650d62537a85e1c134}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order, int tag)
+\item 
+virtual \hyperlink{classNode}{Node} $\ast$ \hyperlink{classProtectedNode_a91e0476a6296c1d45d7859acace15d7d}{get\+Protected\+Child\+By\+Tag} (int tag)
+\item 
+virtual void \hyperlink{classProtectedNode_a0d5d30ee7194e85b5b607b428ab366ab}{remove\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true)
+\item 
+virtual void \hyperlink{classProtectedNode_a3acbf045580d1acbef9b63e812eb17c0}{remove\+Protected\+Child\+By\+Tag} (int tag, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true)
+\item 
+virtual void \hyperlink{classProtectedNode_acf7715345d19c9842db467ffc7345585}{remove\+All\+Protected\+Children} ()
+\item 
+virtual void \hyperlink{classProtectedNode_a0046f13e110ee0de2d038a85cd3f75c6}{remove\+All\+Protected\+Children\+With\+Cleanup} (bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup})
+\item 
+virtual void \hyperlink{classProtectedNode_a6386f04b4d8b7a3e12c65b455d6bcf38}{reorder\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order)
+\item 
+virtual void \hyperlink{classProtectedNode_a9be3508a853fd1c6e841b4ba50f4e1c8}{sort\+All\+Protected\+Children} ()
+\item 
+virtual void \hyperlink{classProtectedNode_a209c517b7a0b0f4dd1d0e0da97eff58d}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child)
+\item 
+virtual void \hyperlink{classProtectedNode_acb1ea1deb4ab6e3bb46fd0947fef1d8b}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order)
+\item 
+virtual void \hyperlink{classProtectedNode_a7c460eedbac4dbc3dbb88b6e087eab4b}{add\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order, int tag)
+\item 
+virtual \hyperlink{classNode}{Node} $\ast$ \hyperlink{classProtectedNode_a8ce823510d08580d4a8179ccf9aa1446}{get\+Protected\+Child\+By\+Tag} (int tag)
+\item 
+virtual void \hyperlink{classProtectedNode_a6e57c27ae8946caaa1a3ce4626742c4a}{remove\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true)
+\item 
+virtual void \hyperlink{classProtectedNode_a72d22821af23262abe3da2c8fb1d47a2}{remove\+Protected\+Child\+By\+Tag} (int tag, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true)
+\item 
+virtual void \hyperlink{classProtectedNode_a3442f092881a51775ec290a37e003652}{remove\+All\+Protected\+Children} ()
+\item 
+virtual void \hyperlink{classProtectedNode_ab28b415ead8bc9d1426567d75f6b6f0b}{remove\+All\+Protected\+Children\+With\+Cleanup} (bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup})
+\item 
+virtual void \hyperlink{classProtectedNode_af208be19b66a59e33760f6f4075154f4}{reorder\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order)
+\item 
+virtual void \hyperlink{classProtectedNode_a6c714462d5e41ceda921eb39628056c1}{sort\+All\+Protected\+Children} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classProtectedNode}{Protected\+Node} $\ast$ \hyperlink{classProtectedNode_a9eaee8bebe7898590b919e3065413da9}{create} (void)
+\item 
+static \hyperlink{classProtectedNode}{Protected\+Node} $\ast$ \hyperlink{classProtectedNode_a7f96a27d935e5849b43d7412a09e9810}{create} (void)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProtectedNode_a2acbd05a453cf161aa8a3e4399d655db}\label{classProtectedNode_a2acbd05a453cf161aa8a3e4399d655db}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classProtectedNode}{Protected\+Node}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}\label{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}} 
+void \hyperlink{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}{insert\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z)
+\begin{DoxyCompactList}\small\item\em helper that reorder a child \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}\label{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}} 
+void \hyperlink{classProtectedNode_ab84c3855f4c6e6b7b2e268080a9eb945}{insert\+Protected\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z)
+\begin{DoxyCompactList}\small\item\em helper that reorder a child \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProtectedNode_ae167540d88b3ac29488157eb48a4e426}\label{classProtectedNode_ae167540d88b3ac29488157eb48a4e426}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \hyperlink{classProtectedNode_ae167540d88b3ac29488157eb48a4e426}{\+\_\+protected\+Children}
+\begin{DoxyCompactList}\small\item\em array of children nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtectedNode_a262c30fcdccce57c1a51d599ea8f6297}\label{classProtectedNode_a262c30fcdccce57c1a51d599ea8f6297}} 
+bool {\bfseries \+\_\+reorder\+Protected\+Child\+Dirty}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A inner node type mainly used for UI module. It is useful for composing complex node type and it\textquotesingle{}s children are protected. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProtectedNode_ad36ce9f2e11226af49dec57aae1da4be}\label{classProtectedNode_ad36ce9f2e11226af49dec57aae1da4be}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a209c517b7a0b0f4dd1d0e0da97eff58d}\label{classProtectedNode_a209c517b7a0b0f4dd1d0e0da97eff58d}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a9f7688935e62904baacae03e8f2c2070}\label{classProtectedNode_a9f7688935e62904baacae03e8f2c2070}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_acb1ea1deb4ab6e3bb46fd0947fef1d8b}\label{classProtectedNode_acb1ea1deb4ab6e3bb46fd0947fef1d8b}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a5fa7088c0b7baa650d62537a85e1c134}\label{classProtectedNode_a5fa7088c0b7baa650d62537a85e1c134}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}} \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a7c460eedbac4dbc3dbb88b6e087eab4b}\label{classProtectedNode_a7c460eedbac4dbc3dbb88b6e087eab4b}} 
+\index{Protected\+Node@{Protected\+Node}!add\+Protected\+Child@{add\+Protected\+Child}}
+\index{add\+Protected\+Child@{add\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{add\+Protected\+Child()}{addProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::add\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}} \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}\label{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}} 
+\index{Protected\+Node@{Protected\+Node}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{cleanup()}{cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stops all running actions and schedulers 
+
+Reimplemented from \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_a6eda3b644eb5be15fe5c717c48d25634}\label{classProtectedNode_a6eda3b644eb5be15fe5c717c48d25634}} 
+\index{Protected\+Node@{Protected\+Node}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{cleanup()}{cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stops all running actions and schedulers 
+
+Reimplemented from \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_a9eaee8bebe7898590b919e3065413da9}\label{classProtectedNode_a9eaee8bebe7898590b919e3065413da9}} 
+\index{Protected\+Node@{Protected\+Node}!create@{create}}
+\index{create@{create}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProtectedNode}{Protected\+Node} $\ast$ Protected\+Node\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classProtectedNode}{Protected\+Node} with no argument. \begin{DoxyReturn}{Returns}
+A instance of \hyperlink{classProtectedNode}{Protected\+Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProtectedNode_a7f96a27d935e5849b43d7412a09e9810}\label{classProtectedNode_a7f96a27d935e5849b43d7412a09e9810}} 
+\index{Protected\+Node@{Protected\+Node}!create@{create}}
+\index{create@{create}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classProtectedNode}{Protected\+Node}$\ast$ Protected\+Node\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classProtectedNode}{Protected\+Node} with no argument. \begin{DoxyReturn}{Returns}
+A instance of \hyperlink{classProtectedNode}{Protected\+Node}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProtectedNode_a91e0476a6296c1d45d7859acace15d7d}\label{classProtectedNode_a91e0476a6296c1d45d7859acace15d7d}} 
+\index{Protected\+Node@{Protected\+Node}!get\+Protected\+Child\+By\+Tag@{get\+Protected\+Child\+By\+Tag}}
+\index{get\+Protected\+Child\+By\+Tag@{get\+Protected\+Child\+By\+Tag}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{get\+Protected\+Child\+By\+Tag()}{getProtectedChildByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node} $\ast$ Protected\+Node\+::get\+Protected\+Child\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets a child from the container with its tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An identifier to find the child node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classNode}{Node} object whose tag equals to the input parameter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProtectedNode_a8ce823510d08580d4a8179ccf9aa1446}\label{classProtectedNode_a8ce823510d08580d4a8179ccf9aa1446}} 
+\index{Protected\+Node@{Protected\+Node}!get\+Protected\+Child\+By\+Tag@{get\+Protected\+Child\+By\+Tag}}
+\index{get\+Protected\+Child\+By\+Tag@{get\+Protected\+Child\+By\+Tag}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{get\+Protected\+Child\+By\+Tag()}{getProtectedChildByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classNode}{Node}$\ast$ Protected\+Node\+::get\+Protected\+Child\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets a child from the container with its tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An identifier to find the child node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classNode}{Node} object whose tag equals to the input parameter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProtectedNode_ade991090bee4173b4e1f47382adc99b9}\label{classProtectedNode_ade991090bee4173b4e1f47382adc99b9}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Widget_a1df4415ad57003db87a5e9b069b56956}{ui\+::\+Widget}, \hyperlink{classui_1_1Widget_a9cda9b9ffbf77a8ed695e6b97b9a46cc}{ui\+::\+Widget}, \hyperlink{classui_1_1EditBox_a0506cfa2b498d2bcd24c4b85deff123d}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1TextField_a8798bcf6c7f3540b7c078338386c04a3}{ui\+::\+Text\+Field}, \hyperlink{classui_1_1TextField_ad7a8241c7d1a80bc8821e67044ffa20c}{ui\+::\+Text\+Field}, \hyperlink{classui_1_1ScrollView_afeb85b1cf1e420b57a66c97c08763138}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1ScrollView_a1fb1c9ad9108d8c0102af82bfb7ef66d}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1EditBox_a04667a919ce4f36fefb7605215267b28}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1Layout_ad3edf411791596999e99059861c0097a}{ui\+::\+Layout}, \hyperlink{classui_1_1Layout_a13b57bb4cec0d694e8053c393499d8b2}{ui\+::\+Layout}, \hyperlink{classui_1_1ScrollViewBar_a7f0ab392ce00fa9dbb9db54dfbe01e4a}{ui\+::\+Scroll\+View\+Bar}, and \hyperlink{classui_1_1ScrollViewBar_a6cf525ed1ead2a5b8e45de981bf2d0c1}{ui\+::\+Scroll\+View\+Bar}.
+
+\mbox{\Hypertarget{classProtectedNode_a3f321c087261805fe0ca95fe71109b41}\label{classProtectedNode_a3f321c087261805fe0ca95fe71109b41}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Widget_a1df4415ad57003db87a5e9b069b56956}{ui\+::\+Widget}, \hyperlink{classui_1_1Widget_a9cda9b9ffbf77a8ed695e6b97b9a46cc}{ui\+::\+Widget}, \hyperlink{classui_1_1EditBox_a0506cfa2b498d2bcd24c4b85deff123d}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1TextField_a8798bcf6c7f3540b7c078338386c04a3}{ui\+::\+Text\+Field}, \hyperlink{classui_1_1TextField_ad7a8241c7d1a80bc8821e67044ffa20c}{ui\+::\+Text\+Field}, \hyperlink{classui_1_1ScrollView_afeb85b1cf1e420b57a66c97c08763138}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1ScrollView_a1fb1c9ad9108d8c0102af82bfb7ef66d}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1EditBox_a04667a919ce4f36fefb7605215267b28}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1Layout_ad3edf411791596999e99059861c0097a}{ui\+::\+Layout}, \hyperlink{classui_1_1Layout_a13b57bb4cec0d694e8053c393499d8b2}{ui\+::\+Layout}, \hyperlink{classui_1_1ScrollViewBar_a7f0ab392ce00fa9dbb9db54dfbe01e4a}{ui\+::\+Scroll\+View\+Bar}, and \hyperlink{classui_1_1ScrollViewBar_a6cf525ed1ead2a5b8e45de981bf2d0c1}{ui\+::\+Scroll\+View\+Bar}.
+
+\mbox{\Hypertarget{classProtectedNode_ab424c044446f8c5cf2018e450c4df78c}\label{classProtectedNode_ab424c044446f8c5cf2018e450c4df78c}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Enter\+Transition\+Did\+Finish@{on\+Enter\+Transition\+Did\+Finish}}
+\index{on\+Enter\+Transition\+Did\+Finish@{on\+Enter\+Transition\+Did\+Finish}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Enter\+Transition\+Did\+Finish()}{onEnterTransitionDidFinish()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::on\+Enter\+Transition\+Did\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked when the \hyperlink{classNode}{Node} enters in the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. If you override on\+Enter\+Transition\+Did\+Finish, you shall call its parent\textquotesingle{}s one, e.\+g. \hyperlink{classNode_afef4b2a863042a9ea456e952cf26991d}{Node\+::on\+Enter\+Transition\+Did\+Finish()}  NA  NA 
+
+Reimplemented from \hyperlink{classNode_afef4b2a863042a9ea456e952cf26991d}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_aac8fcdaf79295aa56c9b792d2e4135d6}\label{classProtectedNode_aac8fcdaf79295aa56c9b792d2e4135d6}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Enter\+Transition\+Did\+Finish@{on\+Enter\+Transition\+Did\+Finish}}
+\index{on\+Enter\+Transition\+Did\+Finish@{on\+Enter\+Transition\+Did\+Finish}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Enter\+Transition\+Did\+Finish()}{onEnterTransitionDidFinish()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::on\+Enter\+Transition\+Did\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked when the \hyperlink{classNode}{Node} enters in the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. If you override on\+Enter\+Transition\+Did\+Finish, you shall call its parent\textquotesingle{}s one, e.\+g. \hyperlink{classNode_afef4b2a863042a9ea456e952cf26991d}{Node\+::on\+Enter\+Transition\+Did\+Finish()}  NA  NA 
+
+Reimplemented from \hyperlink{classNode_afef4b2a863042a9ea456e952cf26991d}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_ad3eed150eb7243f2de8b2e527752a3a6}\label{classProtectedNode_ad3eed150eb7243f2de8b2e527752a3a6}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Widget_a541dd9c8492eeb30a2e50b97cc94bd6e}{ui\+::\+Widget}, \hyperlink{classui_1_1Widget_a91cbac90873d76b6edb0e41eed5477eb}{ui\+::\+Widget}, \hyperlink{classui_1_1EditBox_a4c5c9db7c8b7711a719aec6a0842696b}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1ScrollView_a9c9bf9f6d171a618d57c369e53d91a25}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1EditBox_a4151e7abfe84c879cc89f683c4975285}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1Layout_ad6be3b3eb4ca53dcbd3eb1ca966299ff}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a6444f3e3f124723e75f80b3d36408e34}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_a9f3d5d68659c662187089b18cc2dbda3}\label{classProtectedNode_a9f3d5d68659c662187089b18cc2dbda3}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::on\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Widget_a541dd9c8492eeb30a2e50b97cc94bd6e}{ui\+::\+Widget}, \hyperlink{classui_1_1Widget_a91cbac90873d76b6edb0e41eed5477eb}{ui\+::\+Widget}, \hyperlink{classui_1_1EditBox_a4c5c9db7c8b7711a719aec6a0842696b}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1ScrollView_a9c9bf9f6d171a618d57c369e53d91a25}{ui\+::\+Scroll\+View}, \hyperlink{classui_1_1EditBox_a4151e7abfe84c879cc89f683c4975285}{ui\+::\+Edit\+Box}, \hyperlink{classui_1_1Layout_ad6be3b3eb4ca53dcbd3eb1ca966299ff}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a6444f3e3f124723e75f80b3d36408e34}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_a3f4bf0c9b9ec81b486f479d30fc1ed67}\label{classProtectedNode_a3f4bf0c9b9ec81b486f479d30fc1ed67}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Exit\+Transition\+Did\+Start@{on\+Exit\+Transition\+Did\+Start}}
+\index{on\+Exit\+Transition\+Did\+Start@{on\+Exit\+Transition\+Did\+Start}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Exit\+Transition\+Did\+Start()}{onExitTransitionDidStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::on\+Exit\+Transition\+Did\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is called every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this callback is called when the transition starts.  NA  NA 
+
+Reimplemented from \hyperlink{classNode_a11686054c0d2edd292a53aa9702aaece}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_a3efa91524a31d8f0919be2db8af1ddc9}\label{classProtectedNode_a3efa91524a31d8f0919be2db8af1ddc9}} 
+\index{Protected\+Node@{Protected\+Node}!on\+Exit\+Transition\+Did\+Start@{on\+Exit\+Transition\+Did\+Start}}
+\index{on\+Exit\+Transition\+Did\+Start@{on\+Exit\+Transition\+Did\+Start}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{on\+Exit\+Transition\+Did\+Start()}{onExitTransitionDidStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::on\+Exit\+Transition\+Did\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is called every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this callback is called when the transition starts.  NA  NA 
+
+Reimplemented from \hyperlink{classNode_a11686054c0d2edd292a53aa9702aaece}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_acf7715345d19c9842db467ffc7345585}\label{classProtectedNode_acf7715345d19c9842db467ffc7345585}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+All\+Protected\+Children@{remove\+All\+Protected\+Children}}
+\index{remove\+All\+Protected\+Children@{remove\+All\+Protected\+Children}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Protected\+Children()}{removeAllProtectedChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::remove\+All\+Protected\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{remove\+All\+Children\+With\+Cleanup(bool)}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classProtectedNode_a3442f092881a51775ec290a37e003652}\label{classProtectedNode_a3442f092881a51775ec290a37e003652}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+All\+Protected\+Children@{remove\+All\+Protected\+Children}}
+\index{remove\+All\+Protected\+Children@{remove\+All\+Protected\+Children}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Protected\+Children()}{removeAllProtectedChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::remove\+All\+Protected\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{remove\+All\+Children\+With\+Cleanup(bool)}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classProtectedNode_a0046f13e110ee0de2d038a85cd3f75c6}\label{classProtectedNode_a0046f13e110ee0de2d038a85cd3f75c6}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+All\+Protected\+Children\+With\+Cleanup@{remove\+All\+Protected\+Children\+With\+Cleanup}}
+\index{remove\+All\+Protected\+Children\+With\+Cleanup@{remove\+All\+Protected\+Children\+With\+Cleanup}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Protected\+Children\+With\+Cleanup()}{removeAllProtectedChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::remove\+All\+Protected\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & true if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_ab28b415ead8bc9d1426567d75f6b6f0b}\label{classProtectedNode_ab28b415ead8bc9d1426567d75f6b6f0b}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+All\+Protected\+Children\+With\+Cleanup@{remove\+All\+Protected\+Children\+With\+Cleanup}}
+\index{remove\+All\+Protected\+Children\+With\+Cleanup@{remove\+All\+Protected\+Children\+With\+Cleanup}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Protected\+Children\+With\+Cleanup()}{removeAllProtectedChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::remove\+All\+Protected\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & true if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a0d5d30ee7194e85b5b607b428ab366ab}\label{classProtectedNode_a0d5d30ee7194e85b5b607b428ab366ab}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+Protected\+Child@{remove\+Protected\+Child}}
+\index{remove\+Protected\+Child@{remove\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+Protected\+Child()}{removeProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::remove\+Protected\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & true if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a6e57c27ae8946caaa1a3ce4626742c4a}\label{classProtectedNode_a6e57c27ae8946caaa1a3ce4626742c4a}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+Protected\+Child@{remove\+Protected\+Child}}
+\index{remove\+Protected\+Child@{remove\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+Protected\+Child()}{removeProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::remove\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & true if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a3acbf045580d1acbef9b63e812eb17c0}\label{classProtectedNode_a3acbf045580d1acbef9b63e812eb17c0}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+Protected\+Child\+By\+Tag@{remove\+Protected\+Child\+By\+Tag}}
+\index{remove\+Protected\+Child\+By\+Tag@{remove\+Protected\+Child\+By\+Tag}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+Protected\+Child\+By\+Tag()}{removeProtectedChildByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::remove\+Protected\+Child\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a child from the container by tag value. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An integer number that identifies a child node. \\
+\hline
+{\em cleanup} & true if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a72d22821af23262abe3da2c8fb1d47a2}\label{classProtectedNode_a72d22821af23262abe3da2c8fb1d47a2}} 
+\index{Protected\+Node@{Protected\+Node}!remove\+Protected\+Child\+By\+Tag@{remove\+Protected\+Child\+By\+Tag}}
+\index{remove\+Protected\+Child\+By\+Tag@{remove\+Protected\+Child\+By\+Tag}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{remove\+Protected\+Child\+By\+Tag()}{removeProtectedChildByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::remove\+Protected\+Child\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a child from the container by tag value. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An integer number that identifies a child node. \\
+\hline
+{\em cleanup} & true if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a6386f04b4d8b7a3e12c65b455d6bcf38}\label{classProtectedNode_a6386f04b4d8b7a3e12c65b455d6bcf38}} 
+\index{Protected\+Node@{Protected\+Node}!reorder\+Protected\+Child@{reorder\+Protected\+Child}}
+\index{reorder\+Protected\+Child@{reorder\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{reorder\+Protected\+Child()}{reorderProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::reorder\+Protected\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reorders a child according to a new z value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & An already added child node. It M\+U\+ST be already added. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_af208be19b66a59e33760f6f4075154f4}\label{classProtectedNode_af208be19b66a59e33760f6f4075154f4}} 
+\index{Protected\+Node@{Protected\+Node}!reorder\+Protected\+Child@{reorder\+Protected\+Child}}
+\index{reorder\+Protected\+Child@{reorder\+Protected\+Child}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{reorder\+Protected\+Child()}{reorderProtectedChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::reorder\+Protected\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reorders a child according to a new z value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & An already added child node. It M\+U\+ST be already added. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtectedNode_a45ddaa88c746ea6707b8a09bb50b457d}\label{classProtectedNode_a45ddaa88c746ea6707b8a09bb50b457d}} 
+\index{Protected\+Node@{Protected\+Node}!set\+Camera\+Mask@{set\+Camera\+Mask}}
+\index{set\+Camera\+Mask@{set\+Camera\+Mask}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{set\+Camera\+Mask()}{setCameraMask()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::set\+Camera\+Mask (\begin{DoxyParamCaption}\item[{unsigned short}]{mask,  }\item[{bool}]{apply\+Children = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Modify the camera mask for current node. If apply\+Children is true, then it will modify the camera mask of its children recursively. 
+\begin{DoxyParams}{Parameters}
+{\em mask} & A unsigned short bit for mask. \\
+\hline
+{\em apply\+Children} & A boolean value to determine whether the mask bit should apply to its children or not. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a0403546687b2cb6fc211fb461e33ba4d}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Layout_a7468a69a70aa481c7a429db365f0362c}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a38e44717b8af16b5b5c1f299081ae854}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_ad259bd1bedc5f273b3850c74dc58c2f2}\label{classProtectedNode_ad259bd1bedc5f273b3850c74dc58c2f2}} 
+\index{Protected\+Node@{Protected\+Node}!set\+Camera\+Mask@{set\+Camera\+Mask}}
+\index{set\+Camera\+Mask@{set\+Camera\+Mask}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{set\+Camera\+Mask()}{setCameraMask()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::set\+Camera\+Mask (\begin{DoxyParamCaption}\item[{unsigned short}]{mask,  }\item[{bool}]{apply\+Children = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Modify the camera mask for current node. If apply\+Children is true, then it will modify the camera mask of its children recursively. 
+\begin{DoxyParams}{Parameters}
+{\em mask} & A unsigned short bit for mask. \\
+\hline
+{\em apply\+Children} & A boolean value to determine whether the mask bit should apply to its children or not. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a0403546687b2cb6fc211fb461e33ba4d}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Layout_a7468a69a70aa481c7a429db365f0362c}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a38e44717b8af16b5b5c1f299081ae854}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_a0d067b9056a934255c7a44a675dc9e92}\label{classProtectedNode_a0d067b9056a934255c7a44a675dc9e92}} 
+\index{Protected\+Node@{Protected\+Node}!set\+Global\+Z\+Order@{set\+Global\+Z\+Order}}
+\index{set\+Global\+Z\+Order@{set\+Global\+Z\+Order}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{set\+Global\+Z\+Order()}{setGlobalZOrder()}}
+{\footnotesize\ttfamily void Protected\+Node\+::set\+Global\+Z\+Order (\begin{DoxyParamCaption}\item[{float}]{global\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Defines the order in which the nodes are renderer. Nodes that have a Global Z Order lower, are renderer first.
+
+In case two or more nodes have the same Global Z Order, the order is not guaranteed. The only exception if the Nodes have a Global Z Order == 0. In that case, the \hyperlink{classScene}{Scene} Graph order is used.
+
+By default, all nodes have a Global Z Order = 0. That means that by default, the \hyperlink{classScene}{Scene} Graph order is used to render the nodes.
+
+Global Z Order is useful when you need to render nodes in an order different than the \hyperlink{classScene}{Scene} Graph order.
+
+Limitations\+: Global Z Order can\textquotesingle{}t be used by Nodes that have \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} as one of their ancestors. And if \hyperlink{classClippingNode}{Clipping\+Node} is one of the ancestors, then \char`\"{}global Z order\char`\"{} will be relative to the \hyperlink{classClippingNode}{Clipping\+Node}.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order()}} 
+
+{\ttfamily set\+Vertex\+Z()}
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v3.\+0
+\end{DoxySince}
+
+\begin{DoxyParams}{Parameters}
+{\em global\+Z\+Order} & The global Z order value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a32a5b9cb9a408d04008c4935a4776566}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Layout_a5ac5023a3f35c0ba03769ef6794c8537}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_a9be3508a853fd1c6e841b4ba50f4e1c8}\label{classProtectedNode_a9be3508a853fd1c6e841b4ba50f4e1c8}} 
+\index{Protected\+Node@{Protected\+Node}!sort\+All\+Protected\+Children@{sort\+All\+Protected\+Children}}
+\index{sort\+All\+Protected\+Children@{sort\+All\+Protected\+Children}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{sort\+All\+Protected\+Children()}{sortAllProtectedChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::sort\+All\+Protected\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sorts the children array once before drawing, instead of every time when a child is added or reordered. This approach can improves the performance massively. \begin{DoxyNote}{Note}
+Don\textquotesingle{}t call this manually unless a child added needs to be removed in the same frame 
+\end{DoxyNote}
+\mbox{\Hypertarget{classProtectedNode_a6c714462d5e41ceda921eb39628056c1}\label{classProtectedNode_a6c714462d5e41ceda921eb39628056c1}} 
+\index{Protected\+Node@{Protected\+Node}!sort\+All\+Protected\+Children@{sort\+All\+Protected\+Children}}
+\index{sort\+All\+Protected\+Children@{sort\+All\+Protected\+Children}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{sort\+All\+Protected\+Children()}{sortAllProtectedChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::sort\+All\+Protected\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sorts the children array once before drawing, instead of every time when a child is added or reordered. This approach can improves the performance massively. \begin{DoxyNote}{Note}
+Don\textquotesingle{}t call this manually unless a child added needs to be removed in the same frame 
+\end{DoxyNote}
+\mbox{\Hypertarget{classProtectedNode_a53b09aefb1db2c87f6ee6560b0c48430}\label{classProtectedNode_a53b09aefb1db2c87f6ee6560b0c48430}} 
+\index{Protected\+Node@{Protected\+Node}!update\+Displayed\+Color@{update\+Displayed\+Color}}
+\index{update\+Displayed\+Color@{update\+Displayed\+Color}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{update\+Displayed\+Color()}{updateDisplayedColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::update\+Displayed\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{parent\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update node\textquotesingle{}s displayed color with its parent color. 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ac733bae7b9590f8da746cbc3d1337a2f}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_ab628cf3ac452302f0c653600bb145b49}\label{classProtectedNode_ab628cf3ac452302f0c653600bb145b49}} 
+\index{Protected\+Node@{Protected\+Node}!update\+Displayed\+Color@{update\+Displayed\+Color}}
+\index{update\+Displayed\+Color@{update\+Displayed\+Color}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{update\+Displayed\+Color()}{updateDisplayedColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::update\+Displayed\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{parent\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update node\textquotesingle{}s displayed color with its parent color. 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ac733bae7b9590f8da746cbc3d1337a2f}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_abe8e7d89709e01b0500ae8cf63991806}\label{classProtectedNode_abe8e7d89709e01b0500ae8cf63991806}} 
+\index{Protected\+Node@{Protected\+Node}!update\+Displayed\+Opacity@{update\+Displayed\+Opacity}}
+\index{update\+Displayed\+Opacity@{update\+Displayed\+Opacity}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{update\+Displayed\+Opacity()}{updateDisplayedOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::update\+Displayed\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{parent\+Opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the displayed opacity of node with it\textquotesingle{}s parent opacity; 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Opacity} & The opacity of parent node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a3a0122884e7e1ce310b8b68abfbb245b}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_aef8f27d6204a82d0ed5372e9082d12ae}\label{classProtectedNode_aef8f27d6204a82d0ed5372e9082d12ae}} 
+\index{Protected\+Node@{Protected\+Node}!update\+Displayed\+Opacity@{update\+Displayed\+Opacity}}
+\index{update\+Displayed\+Opacity@{update\+Displayed\+Opacity}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{update\+Displayed\+Opacity()}{updateDisplayedOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::update\+Displayed\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{parent\+Opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the displayed opacity of node with it\textquotesingle{}s parent opacity; 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Opacity} & The opacity of parent node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a3a0122884e7e1ce310b8b68abfbb245b}{Node}.
+
+\mbox{\Hypertarget{classProtectedNode_afb1b2f3712d91a38bd5c691eeec6bbb9}\label{classProtectedNode_afb1b2f3712d91a38bd5c691eeec6bbb9}} 
+\index{Protected\+Node@{Protected\+Node}!visit@{visit}}
+\index{visit@{visit}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Protected\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Layout_a7857b109e0d674106c9fe22830ef4076}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a46a4f4f4836e1b9c985acb26f8fa4163}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classProtectedNode_a705c838f46afa1b9eac5dae2aa4bc310}\label{classProtectedNode_a705c838f46afa1b9eac5dae2aa4bc310}} 
+\index{Protected\+Node@{Protected\+Node}!visit@{visit}}
+\index{visit@{visit}!Protected\+Node@{Protected\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Protected\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1Layout_a7857b109e0d674106c9fe22830ef4076}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a46a4f4f4836e1b9c985acb26f8fa4163}{ui\+::\+Layout}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Protected\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Protected\+Node.\+cpp\end{DoxyCompactItemize}

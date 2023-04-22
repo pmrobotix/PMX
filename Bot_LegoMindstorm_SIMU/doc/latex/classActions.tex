@@ -1,0 +1,81 @@
+\hypertarget{classActions}{}\section{Actions Class Reference}
+\label{classActions}\index{Actions@{Actions}}
+
+
+{\ttfamily \#include $<$Actions.\+hpp$>$}
+
+
+
+Inheritance diagram for Actions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActions__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActions_ace0fce73fe3cfb2ea7112cfdbf12b131}\label{classActions_ace0fce73fe3cfb2ea7112cfdbf12b131}} 
+\hyperlink{classActions_ace0fce73fe3cfb2ea7112cfdbf12b131}{Actions} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActions_a0d03028ad72e0031f3d903493932aea1}\label{classActions_a0d03028ad72e0031f3d903493932aea1}} 
+\hyperlink{classActions_a0d03028ad72e0031f3d903493932aea1}{$\sim$\+Actions} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classActions_a710f952f5942e626d73e47733a8848b0}{add\+Action} (\hyperlink{classIAction}{I\+Action} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActions_a861130fdcc3238961cb93b5b96475e8f}\label{classActions_a861130fdcc3238961cb93b5b96475e8f}} 
+void {\bfseries add\+Timer} (\hyperlink{classITimerPosixListener}{I\+Timer\+Posix\+Listener} $\ast$timer)
+\item 
+\mbox{\Hypertarget{classActions_a49459ae072ed1f6ea6a69966a0ad4409}\label{classActions_a49459ae072ed1f6ea6a69966a0ad4409}} 
+void {\bfseries stop\+Timer} (std\+::string name)
+\item 
+void \hyperlink{classActions_adf0dec391b032c0b36b329a3f039001e}{start} ()
+\begin{DoxyCompactList}\small\item\em Active les actions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActions_a95422cfe6edb166b22bc6aa465aab866}\label{classActions_a95422cfe6edb166b22bc6aa465aab866}} 
+void \hyperlink{classActions_a95422cfe6edb166b22bc6aa465aab866}{clear\+All} ()
+\begin{DoxyCompactList}\small\item\em supprime toutes les actions et les timers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActions_a2dca3495645f189f728586d4157c699c}\label{classActions_a2dca3495645f189f728586d4157c699c}} 
+void \hyperlink{classActions_a2dca3495645f189f728586d4157c699c}{wait\+And\+Stop\+Managers} ()
+\begin{DoxyCompactList}\small\item\em Arrete le thread sensor\+Manager et action\+Manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActions_aa0181cb9c1642b42dca16faa8c9356e0}\label{classActions_aa0181cb9c1642b42dca16faa8c9356e0}} 
+void \hyperlink{classActions_aa0181cb9c1642b42dca16faa8c9356e0}{cancel} ()
+\begin{DoxyCompactList}\small\item\em Annule le thread en cours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+List of robot actions. It contains all common Robot\+Element. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActions_a710f952f5942e626d73e47733a8848b0}\label{classActions_a710f952f5942e626d73e47733a8848b0}} 
+\index{Actions@{Actions}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{add\+Action()}{addAction()}}
+{\footnotesize\ttfamily void Actions\+::add\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classIAction}{I\+Action} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajout d\textquotesingle{}une action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & L\textquotesingle{}action à ajouter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActions_adf0dec391b032c0b36b329a3f039001e}\label{classActions_adf0dec391b032c0b36b329a3f039001e}} 
+\index{Actions@{Actions}!start@{start}}
+\index{start@{start}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Actions\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Active les actions. 
+
+Cette méthode lance le thread gérant le \hyperlink{classActionManager}{Action\+Manager}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Actions.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Actions.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+\hypertarget{classPosixThreadSupport}{}\section{Posix\+Thread\+Support Class Reference}
+\label{classPosixThreadSupport}\index{Posix\+Thread\+Support@{Posix\+Thread\+Support}}
+
+
+Inheritance diagram for Posix\+Thread\+Support\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classPosixThreadSupport__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Posix\+Thread\+Support\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classPosixThreadSupport__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPosixThreadSupport_1_1btSpuStatus}{bt\+Spu\+Status}
+\item 
+struct \hyperlink{structPosixThreadSupport_1_1ThreadConstructionInfo}{Thread\+Construction\+Info}
+\begin{DoxyCompactList}\small\item\em Setup and initialize S\+P\+U/\+C\+E\+L\+L/\+Libspe2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_abfdc59ca08a829e71676df2525503e1f}\label{classPosixThreadSupport_abfdc59ca08a829e71676df2525503e1f}} 
+enum {\bfseries s\+Status} \{ \newline
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+B\+U\+SY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+A\+DY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+F\+I\+N\+I\+S\+H\+ED}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+B\+U\+SY}, 
+\newline
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+A\+DY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+F\+I\+N\+I\+S\+H\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_abfdc59ca08a829e71676df2525503e1f}\label{classPosixThreadSupport_abfdc59ca08a829e71676df2525503e1f}} 
+enum {\bfseries s\+Status} \{ \newline
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+B\+U\+SY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+A\+DY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+F\+I\+N\+I\+S\+H\+ED}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+B\+U\+SY}, 
+\newline
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+A\+DY}, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+F\+I\+N\+I\+S\+H\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a7344692b4f763cafbe540c8dac18c5c8}\label{classPosixThreadSupport_a7344692b4f763cafbe540c8dac18c5c8}} 
+typedef enum Posix\+Thread\+Support\+::s\+Status {\bfseries Status}
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a7344692b4f763cafbe540c8dac18c5c8}\label{classPosixThreadSupport_a7344692b4f763cafbe540c8dac18c5c8}} 
+typedef enum Posix\+Thread\+Support\+::s\+Status {\bfseries Status}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a6b82e5cd33a67247d6ce7dd2c9c1be17}\label{classPosixThreadSupport_a6b82e5cd33a67247d6ce7dd2c9c1be17}} 
+{\bfseries Posix\+Thread\+Support} (\hyperlink{structPosixThreadSupport_1_1ThreadConstructionInfo}{Thread\+Construction\+Info} \&thread\+Construction\+Info)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_aa1ba225967d704b9485eb636b28d670a}\label{classPosixThreadSupport_aa1ba225967d704b9485eb636b28d670a}} 
+virtual \hyperlink{classPosixThreadSupport_aa1ba225967d704b9485eb636b28d670a}{$\sim$\+Posix\+Thread\+Support} ()
+\begin{DoxyCompactList}\small\item\em cleanup/shutdown Libspe2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a4afd23caaba58363c15c578157d364ba}\label{classPosixThreadSupport_a4afd23caaba58363c15c578157d364ba}} 
+void {\bfseries start\+Threads} (\hyperlink{structPosixThreadSupport_1_1ThreadConstructionInfo}{Thread\+Construction\+Info} \&thread\+Info)
+\item 
+virtual void \hyperlink{classPosixThreadSupport_ab67534f720c0405821ea89cf05dd6b0f}{send\+Request} (uint32\+\_\+t ui\+Command, ppu\+\_\+address\+\_\+t ui\+Argument0, uint32\+\_\+t ui\+Argument1)
+\begin{DoxyCompactList}\small\item\em send messages to S\+P\+Us \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPosixThreadSupport_a65bf7f0f96518d97f781b0559495f91d}{wait\+For\+Response} (unsigned int $\ast$pui\+Argument0, unsigned int $\ast$pui\+Argument1)
+\begin{DoxyCompactList}\small\item\em check for messages from S\+P\+Us \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a937bbc2c359429b0f0c1d9514ab150eb}\label{classPosixThreadSupport_a937bbc2c359429b0f0c1d9514ab150eb}} 
+virtual void \hyperlink{classPosixThreadSupport_a937bbc2c359429b0f0c1d9514ab150eb}{start\+S\+PU} ()
+\begin{DoxyCompactList}\small\item\em start the spus (can be called at the beginning of each frame, to make sure that the right S\+PU program is loaded) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a42e31438ebcd31bce0ea15e3c16f5881}\label{classPosixThreadSupport_a42e31438ebcd31bce0ea15e3c16f5881}} 
+virtual void \hyperlink{classPosixThreadSupport_a42e31438ebcd31bce0ea15e3c16f5881}{stop\+S\+PU} ()
+\begin{DoxyCompactList}\small\item\em tell the task scheduler we are done with the S\+PU tasks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}\label{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}} 
+virtual void \hyperlink{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}{set\+Num\+Tasks} (int num\+Tasks)
+\begin{DoxyCompactList}\small\item\em tell the task scheduler to use no more than num\+Tasks tasks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a428b91ba73a254683a4056cbac56d265}\label{classPosixThreadSupport_a428b91ba73a254683a4056cbac56d265}} 
+virtual int {\bfseries get\+Num\+Tasks} () const
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_af7a49d2d846b1240055edc7b314ce30b}\label{classPosixThreadSupport_af7a49d2d846b1240055edc7b314ce30b}} 
+virtual \hyperlink{classbtBarrier}{bt\+Barrier} $\ast$ {\bfseries create\+Barrier} ()
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_aec07e6694368496f0e0e723fabc99c36}\label{classPosixThreadSupport_aec07e6694368496f0e0e723fabc99c36}} 
+virtual \hyperlink{classbtCriticalSection}{bt\+Critical\+Section} $\ast$ {\bfseries create\+Critical\+Section} ()
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a6e9f1aac4898126e0fb597ab07bd4b00}\label{classPosixThreadSupport_a6e9f1aac4898126e0fb597ab07bd4b00}} 
+virtual void {\bfseries delete\+Barrier} (\hyperlink{classbtBarrier}{bt\+Barrier} $\ast$barrier)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a2732d6edf3349a6c7d8bbbbcf3ba81f5}\label{classPosixThreadSupport_a2732d6edf3349a6c7d8bbbbcf3ba81f5}} 
+virtual void {\bfseries delete\+Critical\+Section} (\hyperlink{classbtCriticalSection}{bt\+Critical\+Section} $\ast$critical\+Section)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a0c1bbe94d966d082f8b5a3ea616ddf35}\label{classPosixThreadSupport_a0c1bbe94d966d082f8b5a3ea616ddf35}} 
+virtual void $\ast$ {\bfseries get\+Thread\+Local\+Memory} (int task\+Id)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a6b82e5cd33a67247d6ce7dd2c9c1be17}\label{classPosixThreadSupport_a6b82e5cd33a67247d6ce7dd2c9c1be17}} 
+{\bfseries Posix\+Thread\+Support} (\hyperlink{structPosixThreadSupport_1_1ThreadConstructionInfo}{Thread\+Construction\+Info} \&thread\+Construction\+Info)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a98290045e507e8d60b2f8e255a0fe1b6}\label{classPosixThreadSupport_a98290045e507e8d60b2f8e255a0fe1b6}} 
+virtual \hyperlink{classPosixThreadSupport_a98290045e507e8d60b2f8e255a0fe1b6}{$\sim$\+Posix\+Thread\+Support} ()
+\begin{DoxyCompactList}\small\item\em cleanup/shutdown Libspe2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a4afd23caaba58363c15c578157d364ba}\label{classPosixThreadSupport_a4afd23caaba58363c15c578157d364ba}} 
+void {\bfseries start\+Threads} (\hyperlink{structPosixThreadSupport_1_1ThreadConstructionInfo}{Thread\+Construction\+Info} \&thread\+Info)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a25512e56f0d812cb99040c9d395e5fc4}\label{classPosixThreadSupport_a25512e56f0d812cb99040c9d395e5fc4}} 
+virtual void \hyperlink{classPosixThreadSupport_a25512e56f0d812cb99040c9d395e5fc4}{send\+Request} (uint32\+\_\+t ui\+Command, ppu\+\_\+address\+\_\+t ui\+Argument0, uint32\+\_\+t ui\+Argument1)
+\begin{DoxyCompactList}\small\item\em send messages to S\+P\+Us \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_addc01382ac1979a87db891c203123ec3}\label{classPosixThreadSupport_addc01382ac1979a87db891c203123ec3}} 
+virtual void \hyperlink{classPosixThreadSupport_addc01382ac1979a87db891c203123ec3}{wait\+For\+Response} (unsigned int $\ast$pui\+Argument0, unsigned int $\ast$pui\+Argument1)
+\begin{DoxyCompactList}\small\item\em check for messages from S\+P\+Us \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_ac9816781a7ba8230694a6376ae1211a6}\label{classPosixThreadSupport_ac9816781a7ba8230694a6376ae1211a6}} 
+virtual void \hyperlink{classPosixThreadSupport_ac9816781a7ba8230694a6376ae1211a6}{start\+S\+PU} ()
+\begin{DoxyCompactList}\small\item\em start the spus (can be called at the beginning of each frame, to make sure that the right S\+PU program is loaded) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a02c5ba9465573be81a6d51baf2095f86}\label{classPosixThreadSupport_a02c5ba9465573be81a6d51baf2095f86}} 
+virtual void \hyperlink{classPosixThreadSupport_a02c5ba9465573be81a6d51baf2095f86}{stop\+S\+PU} ()
+\begin{DoxyCompactList}\small\item\em tell the task scheduler we are done with the S\+PU tasks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}\label{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}} 
+virtual void \hyperlink{classPosixThreadSupport_a8036f513f0c6f9116b60cafa021a9a1f}{set\+Num\+Tasks} (int num\+Tasks)
+\begin{DoxyCompactList}\small\item\em tell the task scheduler to use no more than num\+Tasks tasks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a428b91ba73a254683a4056cbac56d265}\label{classPosixThreadSupport_a428b91ba73a254683a4056cbac56d265}} 
+virtual int {\bfseries get\+Num\+Tasks} () const
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a9f9ea3e90b6fd7dbd738f4f915f5b519}\label{classPosixThreadSupport_a9f9ea3e90b6fd7dbd738f4f915f5b519}} 
+virtual \hyperlink{classbtBarrier}{bt\+Barrier} $\ast$ {\bfseries create\+Barrier} ()
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_abf35345ee890bb605f1a11e39cd7e64e}\label{classPosixThreadSupport_abf35345ee890bb605f1a11e39cd7e64e}} 
+virtual \hyperlink{classbtCriticalSection}{bt\+Critical\+Section} $\ast$ {\bfseries create\+Critical\+Section} ()
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a3534b684c4aee718c0af2a342eb13a05}\label{classPosixThreadSupport_a3534b684c4aee718c0af2a342eb13a05}} 
+virtual void {\bfseries delete\+Barrier} (\hyperlink{classbtBarrier}{bt\+Barrier} $\ast$barrier)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_ae6d75579596f43a7a32891ab36e0f465}\label{classPosixThreadSupport_ae6d75579596f43a7a32891ab36e0f465}} 
+virtual void {\bfseries delete\+Critical\+Section} (\hyperlink{classbtCriticalSection}{bt\+Critical\+Section} $\ast$critical\+Section)
+\item 
+\mbox{\Hypertarget{classPosixThreadSupport_a0c1bbe94d966d082f8b5a3ea616ddf35}\label{classPosixThreadSupport_a0c1bbe94d966d082f8b5a3ea616ddf35}} 
+virtual void $\ast$ {\bfseries get\+Thread\+Local\+Memory} (int task\+Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPosixThreadSupport_ab67534f720c0405821ea89cf05dd6b0f}\label{classPosixThreadSupport_ab67534f720c0405821ea89cf05dd6b0f}} 
+\index{Posix\+Thread\+Support@{Posix\+Thread\+Support}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!Posix\+Thread\+Support@{Posix\+Thread\+Support}}
+\subsubsection{\texorpdfstring{send\+Request()}{sendRequest()}}
+{\footnotesize\ttfamily void Posix\+Thread\+Support\+::send\+Request (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ui\+Command,  }\item[{ppu\+\_\+address\+\_\+t}]{ui\+Argument0,  }\item[{uint32\+\_\+t}]{ui\+Argument1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+send messages to S\+P\+Us 
+
+g\+Midphase\+S\+P\+U.\+send\+Request(\+C\+M\+D\+\_\+\+G\+A\+T\+H\+E\+R\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+P\+A\+I\+R\+L\+I\+S\+T, (uint32\+\_\+t) \&task\+Desc);
+
+we should spawn an S\+PU task here, and in \textquotesingle{}wait\+For\+Response\textquotesingle{} it should wait for response of the (one of) the first tasks that finished
+
+not implemented 
+
+Implements \hyperlink{classbtThreadSupportInterface_a2c20a0b41be978c429e0b1a2b2f03152}{bt\+Thread\+Support\+Interface}.
+
+\mbox{\Hypertarget{classPosixThreadSupport_a65bf7f0f96518d97f781b0559495f91d}\label{classPosixThreadSupport_a65bf7f0f96518d97f781b0559495f91d}} 
+\index{Posix\+Thread\+Support@{Posix\+Thread\+Support}!wait\+For\+Response@{wait\+For\+Response}}
+\index{wait\+For\+Response@{wait\+For\+Response}!Posix\+Thread\+Support@{Posix\+Thread\+Support}}
+\subsubsection{\texorpdfstring{wait\+For\+Response()}{waitForResponse()}}
+{\footnotesize\ttfamily void Posix\+Thread\+Support\+::wait\+For\+Response (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{pui\+Argument0,  }\item[{unsigned int $\ast$}]{pui\+Argument1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check for messages from S\+P\+Us 
+
+We should wait for (one of) the first tasks to finish (or other S\+PU messages), and report its response
+
+A possible response can be \textquotesingle{}yes, S\+PU handled it\textquotesingle{}, or \textquotesingle{}no, please do a P\+PU fallback\textquotesingle{} 
+
+Implements \hyperlink{classbtThreadSupportInterface_abe3c8fa6998096a4804dbfd28882cfd9}{bt\+Thread\+Support\+Interface}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Posix\+Thread\+Support.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Posix\+Thread\+Support.\+cpp\end{DoxyCompactItemize}

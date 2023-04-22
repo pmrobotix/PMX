@@ -1,0 +1,132 @@
+\hypertarget{classbtNullPairCache}{}\section{bt\+Null\+Pair\+Cache Class Reference}
+\label{classbtNullPairCache}\index{bt\+Null\+Pair\+Cache@{bt\+Null\+Pair\+Cache}}
+
+
+\hyperlink{classbtNullPairCache}{bt\+Null\+Pair\+Cache} skips add/removal of overlapping pairs. Userful for benchmarking and unit testing.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Overlapping\+Pair\+Cache.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Null\+Pair\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classbtNullPairCache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Null\+Pair\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classbtNullPairCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a4ec1efad728fc0578fb780d1b99a4fe3}\label{classbtNullPairCache_a4ec1efad728fc0578fb780d1b99a4fe3}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries get\+Overlapping\+Pair\+Array\+Ptr} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a4172f88610db99f01fa406575bf2bb30}\label{classbtNullPairCache_a4172f88610db99f01fa406575bf2bb30}} 
+const bt\+Broadphase\+Pair $\ast$ {\bfseries get\+Overlapping\+Pair\+Array\+Ptr} () const
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_ae5be2cc230e27881fd04fe1da320c7fe}\label{classbtNullPairCache_ae5be2cc230e27881fd04fe1da320c7fe}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Broadphase\+Pair\+Array} \& {\bfseries get\+Overlapping\+Pair\+Array} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a20b534e589edacd12ddf52124535c2cc}\label{classbtNullPairCache_a20b534e589edacd12ddf52124535c2cc}} 
+virtual void {\bfseries clean\+Overlapping\+Pair} (bt\+Broadphase\+Pair \&, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a76aa3a3bf39a8758310c55ef183ae80d}\label{classbtNullPairCache_a76aa3a3bf39a8758310c55ef183ae80d}} 
+virtual int {\bfseries get\+Num\+Overlapping\+Pairs} () const
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_ae8dd727539fe9ca3d6380557a925cd1f}\label{classbtNullPairCache_ae8dd727539fe9ca3d6380557a925cd1f}} 
+virtual void {\bfseries clean\+Proxy\+From\+Pairs} (bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a5c1cb3394936c0fddddb19a3be8241a3}\label{classbtNullPairCache_a5c1cb3394936c0fddddb19a3be8241a3}} 
+virtual void {\bfseries set\+Overlap\+Filter\+Callback} (\hyperlink{structbtOverlapFilterCallback}{bt\+Overlap\+Filter\+Callback} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a39c6b95bf7412b8f37dba2efa633ce09}\label{classbtNullPairCache_a39c6b95bf7412b8f37dba2efa633ce09}} 
+virtual void {\bfseries process\+All\+Overlapping\+Pairs} (\hyperlink{structbtOverlapCallback}{bt\+Overlap\+Callback} $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a1932ebc5d729f0f31528f7647b1c0ab9}\label{classbtNullPairCache_a1932ebc5d729f0f31528f7647b1c0ab9}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries find\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a937a29216d8c7585d8c710f84745bd1b}\label{classbtNullPairCache_a937a29216d8c7585d8c710f84745bd1b}} 
+virtual bool {\bfseries has\+Deferred\+Removal} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a5cb33e9d3694c71fe68038580da8cc69}\label{classbtNullPairCache_a5cb33e9d3694c71fe68038580da8cc69}} 
+virtual void {\bfseries set\+Internal\+Ghost\+Pair\+Callback} (\hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a76137e4519323ff5589d5702752bc2cb}\label{classbtNullPairCache_a76137e4519323ff5589d5702752bc2cb}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries add\+Overlapping\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a436b8c6da50f69e53425abb7cdc7976c}\label{classbtNullPairCache_a436b8c6da50f69e53425abb7cdc7976c}} 
+virtual void $\ast$ {\bfseries remove\+Overlapping\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a87574120b56624b329c0a0faf7fd5461}\label{classbtNullPairCache_a87574120b56624b329c0a0faf7fd5461}} 
+virtual void {\bfseries remove\+Overlapping\+Pairs\+Containing\+Proxy} (bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a12eeb9eea98cf0314d59e65feb95d344}\label{classbtNullPairCache_a12eeb9eea98cf0314d59e65feb95d344}} 
+virtual void {\bfseries sort\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a4ec1efad728fc0578fb780d1b99a4fe3}\label{classbtNullPairCache_a4ec1efad728fc0578fb780d1b99a4fe3}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries get\+Overlapping\+Pair\+Array\+Ptr} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a4172f88610db99f01fa406575bf2bb30}\label{classbtNullPairCache_a4172f88610db99f01fa406575bf2bb30}} 
+const bt\+Broadphase\+Pair $\ast$ {\bfseries get\+Overlapping\+Pair\+Array\+Ptr} () const
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_ae5be2cc230e27881fd04fe1da320c7fe}\label{classbtNullPairCache_ae5be2cc230e27881fd04fe1da320c7fe}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Broadphase\+Pair\+Array} \& {\bfseries get\+Overlapping\+Pair\+Array} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a20b534e589edacd12ddf52124535c2cc}\label{classbtNullPairCache_a20b534e589edacd12ddf52124535c2cc}} 
+virtual void {\bfseries clean\+Overlapping\+Pair} (bt\+Broadphase\+Pair \&, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a76aa3a3bf39a8758310c55ef183ae80d}\label{classbtNullPairCache_a76aa3a3bf39a8758310c55ef183ae80d}} 
+virtual int {\bfseries get\+Num\+Overlapping\+Pairs} () const
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_ae8dd727539fe9ca3d6380557a925cd1f}\label{classbtNullPairCache_ae8dd727539fe9ca3d6380557a925cd1f}} 
+virtual void {\bfseries clean\+Proxy\+From\+Pairs} (bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a5c1cb3394936c0fddddb19a3be8241a3}\label{classbtNullPairCache_a5c1cb3394936c0fddddb19a3be8241a3}} 
+virtual void {\bfseries set\+Overlap\+Filter\+Callback} (\hyperlink{structbtOverlapFilterCallback}{bt\+Overlap\+Filter\+Callback} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a39c6b95bf7412b8f37dba2efa633ce09}\label{classbtNullPairCache_a39c6b95bf7412b8f37dba2efa633ce09}} 
+virtual void {\bfseries process\+All\+Overlapping\+Pairs} (\hyperlink{structbtOverlapCallback}{bt\+Overlap\+Callback} $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a1932ebc5d729f0f31528f7647b1c0ab9}\label{classbtNullPairCache_a1932ebc5d729f0f31528f7647b1c0ab9}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries find\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a937a29216d8c7585d8c710f84745bd1b}\label{classbtNullPairCache_a937a29216d8c7585d8c710f84745bd1b}} 
+virtual bool {\bfseries has\+Deferred\+Removal} ()
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a5cb33e9d3694c71fe68038580da8cc69}\label{classbtNullPairCache_a5cb33e9d3694c71fe68038580da8cc69}} 
+virtual void {\bfseries set\+Internal\+Ghost\+Pair\+Callback} (\hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a76137e4519323ff5589d5702752bc2cb}\label{classbtNullPairCache_a76137e4519323ff5589d5702752bc2cb}} 
+virtual bt\+Broadphase\+Pair $\ast$ {\bfseries add\+Overlapping\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a436b8c6da50f69e53425abb7cdc7976c}\label{classbtNullPairCache_a436b8c6da50f69e53425abb7cdc7976c}} 
+virtual void $\ast$ {\bfseries remove\+Overlapping\+Pair} (bt\+Broadphase\+Proxy $\ast$, bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a87574120b56624b329c0a0faf7fd5461}\label{classbtNullPairCache_a87574120b56624b329c0a0faf7fd5461}} 
+virtual void {\bfseries remove\+Overlapping\+Pairs\+Containing\+Proxy} (bt\+Broadphase\+Proxy $\ast$, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$)
+\item 
+\mbox{\Hypertarget{classbtNullPairCache_a12eeb9eea98cf0314d59e65feb95d344}\label{classbtNullPairCache_a12eeb9eea98cf0314d59e65feb95d344}} 
+virtual void {\bfseries sort\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtNullPairCache}{bt\+Null\+Pair\+Cache} skips add/removal of overlapping pairs. Userful for benchmarking and unit testing. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Broadphase\+Collision/bt\+Overlapping\+Pair\+Cache.\+h\end{DoxyCompactItemize}

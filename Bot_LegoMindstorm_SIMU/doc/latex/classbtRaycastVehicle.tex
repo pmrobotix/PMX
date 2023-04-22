@@ -1,0 +1,263 @@
+\hypertarget{classbtRaycastVehicle}{}\section{bt\+Raycast\+Vehicle Class Reference}
+\label{classbtRaycastVehicle}\index{bt\+Raycast\+Vehicle@{bt\+Raycast\+Vehicle}}
+
+
+ray\+Cast vehicle, very special constraint that turn a rigidbody into a vehicle.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Raycast\+Vehicle.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Raycast\+Vehicle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classbtRaycastVehicle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Raycast\+Vehicle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classbtRaycastVehicle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbtRaycastVehicle_1_1btVehicleTuning}{bt\+Vehicle\+Tuning}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a7dd285cde99f2fb2b6c6a38ff4e4e151}\label{classbtRaycastVehicle_a7dd285cde99f2fb2b6c6a38ff4e4e151}} 
+{\bfseries bt\+Raycast\+Vehicle} (const \hyperlink{classbtRaycastVehicle_1_1btVehicleTuning}{bt\+Vehicle\+Tuning} \&tuning, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$chassis, \hyperlink{structbtVehicleRaycaster}{bt\+Vehicle\+Raycaster} $\ast$raycaster)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}\label{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}} 
+virtual void \hyperlink{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}{update\+Action} (\hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$collision\+World, bt\+Scalar step)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtActionInterface}{bt\+Action\+Interface} interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}\label{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}} 
+void \hyperlink{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}{debug\+Draw} (\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtActionInterface}{bt\+Action\+Interface} interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_acb7cdc79f160663bc7b0122bae2f4090}\label{classbtRaycastVehicle_acb7cdc79f160663bc7b0122bae2f4090}} 
+const bt\+Transform \& {\bfseries get\+Chassis\+World\+Transform} () const
+\item 
+bt\+Scalar \hyperlink{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}{ray\+Cast} (\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a9c7597378358b8f4609aa87090116014}\label{classbtRaycastVehicle_a9c7597378358b8f4609aa87090116014}} 
+virtual void {\bfseries update\+Vehicle} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a327f031abd00d7bee5546b7602d7fd6b}\label{classbtRaycastVehicle_a327f031abd00d7bee5546b7602d7fd6b}} 
+void {\bfseries reset\+Suspension} ()
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a61c029ffd3bec9c8404022ed20dd6264}\label{classbtRaycastVehicle_a61c029ffd3bec9c8404022ed20dd6264}} 
+bt\+Scalar {\bfseries get\+Steering\+Value} (int wheel) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_afbbaf96eadb808cea4102b696abd4649}\label{classbtRaycastVehicle_afbbaf96eadb808cea4102b696abd4649}} 
+void {\bfseries set\+Steering\+Value} (bt\+Scalar steering, int wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aafe6f81794ec7ad1ce900bdca2facb92}\label{classbtRaycastVehicle_aafe6f81794ec7ad1ce900bdca2facb92}} 
+void {\bfseries apply\+Engine\+Force} (bt\+Scalar force, int wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a30e803d12dbeb049ce7174dda04afbdc}\label{classbtRaycastVehicle_a30e803d12dbeb049ce7174dda04afbdc}} 
+const bt\+Transform \& {\bfseries get\+Wheel\+Transform\+WS} (int wheel\+Index) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_adf67ae421334225c886c3dc4c12fe1f2}\label{classbtRaycastVehicle_adf67ae421334225c886c3dc4c12fe1f2}} 
+void {\bfseries update\+Wheel\+Transform} (int wheel\+Index, bool interpolated\+Transform=true)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab553ee172346b9cea796abd56ba12a40}\label{classbtRaycastVehicle_ab553ee172346b9cea796abd56ba12a40}} 
+\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries add\+Wheel} (const bt\+Vector3 \&connection\+Point\+C\+S0, const bt\+Vector3 \&wheel\+Direction\+C\+S0, const bt\+Vector3 \&wheel\+Axle\+CS, bt\+Scalar suspension\+Rest\+Length, bt\+Scalar wheel\+Radius, const \hyperlink{classbtRaycastVehicle_1_1btVehicleTuning}{bt\+Vehicle\+Tuning} \&tuning, bool is\+Front\+Wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a49c9df37ed439ba8a5fe3a0c4a07047d}\label{classbtRaycastVehicle_a49c9df37ed439ba8a5fe3a0c4a07047d}} 
+int {\bfseries get\+Num\+Wheels} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aeb29696567a0ad447f1d769f1b3b8e75}\label{classbtRaycastVehicle_aeb29696567a0ad447f1d769f1b3b8e75}} 
+const \hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries get\+Wheel\+Info} (int index) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a59f388ee6ccf61c43b6b19d27d3a4b9f}\label{classbtRaycastVehicle_a59f388ee6ccf61c43b6b19d27d3a4b9f}} 
+\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries get\+Wheel\+Info} (int index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a097dff14b09869992c4c2ced984305b3}\label{classbtRaycastVehicle_a097dff14b09869992c4c2ced984305b3}} 
+void {\bfseries update\+Wheel\+Transforms\+WS} (\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&wheel, bool interpolated\+Transform=true)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a6b9dd519ac59a2bf326f4ff423e4ba6d}\label{classbtRaycastVehicle_a6b9dd519ac59a2bf326f4ff423e4ba6d}} 
+void {\bfseries set\+Brake} (bt\+Scalar brake, int wheel\+Index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab37ab7f7f32f8d62222061fd114aa822}\label{classbtRaycastVehicle_ab37ab7f7f32f8d62222061fd114aa822}} 
+void {\bfseries set\+Pitch\+Control} (bt\+Scalar pitch)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a6be582b77af41d8ad50369d30882776d}\label{classbtRaycastVehicle_a6be582b77af41d8ad50369d30882776d}} 
+void {\bfseries update\+Suspension} (bt\+Scalar delta\+Time)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a074131752aafd9bf75b5c05411439de3}\label{classbtRaycastVehicle_a074131752aafd9bf75b5c05411439de3}} 
+virtual void {\bfseries update\+Friction} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_af240c382a71932a3efd9a3d88895375c}\label{classbtRaycastVehicle_af240c382a71932a3efd9a3d88895375c}} 
+\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries get\+Rigid\+Body} ()
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a780e7abcff029bee48bf888327b0a856}\label{classbtRaycastVehicle_a780e7abcff029bee48bf888327b0a856}} 
+const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries get\+Rigid\+Body} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a8900579eb259c892f9866564560494e6}\label{classbtRaycastVehicle_a8900579eb259c892f9866564560494e6}} 
+int {\bfseries get\+Right\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a2b25853702eca35f0abbd66275864547}\label{classbtRaycastVehicle_a2b25853702eca35f0abbd66275864547}} 
+int {\bfseries get\+Up\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab78aa61c3533ef0369ed6a8304580334}\label{classbtRaycastVehicle_ab78aa61c3533ef0369ed6a8304580334}} 
+int {\bfseries get\+Forward\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}\label{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}} 
+bt\+Vector3 \hyperlink{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}{get\+Forward\+Vector} () const
+\begin{DoxyCompactList}\small\item\em Worldspace forward vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}\label{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}} 
+bt\+Scalar \hyperlink{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}{get\+Current\+Speed\+Km\+Hour} () const
+\begin{DoxyCompactList}\small\item\em Velocity of vehicle (positive if velocity vector has same direction as foward vector) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a505882e9089229da3cea15e6af922a0f}\label{classbtRaycastVehicle_a505882e9089229da3cea15e6af922a0f}} 
+virtual void {\bfseries set\+Coordinate\+System} (int right\+Index, int up\+Index, int forward\+Index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}\label{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}} 
+int \hyperlink{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}{get\+User\+Constraint\+Type} () const
+\begin{DoxyCompactList}\small\item\em backwards compatibility \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a552a25a880d5fe75c575800156d591fd}\label{classbtRaycastVehicle_a552a25a880d5fe75c575800156d591fd}} 
+void {\bfseries set\+User\+Constraint\+Type} (int user\+Constraint\+Type)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab894b724e8b19228b7eea8317e0eb43b}\label{classbtRaycastVehicle_ab894b724e8b19228b7eea8317e0eb43b}} 
+void {\bfseries set\+User\+Constraint\+Id} (int uid)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a4cbba8434f83154a9240b41ab486e72e}\label{classbtRaycastVehicle_a4cbba8434f83154a9240b41ab486e72e}} 
+int {\bfseries get\+User\+Constraint\+Id} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a7dd285cde99f2fb2b6c6a38ff4e4e151}\label{classbtRaycastVehicle_a7dd285cde99f2fb2b6c6a38ff4e4e151}} 
+{\bfseries bt\+Raycast\+Vehicle} (const \hyperlink{classbtRaycastVehicle_1_1btVehicleTuning}{bt\+Vehicle\+Tuning} \&tuning, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$chassis, \hyperlink{structbtVehicleRaycaster}{bt\+Vehicle\+Raycaster} $\ast$raycaster)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}\label{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}} 
+virtual void \hyperlink{classbtRaycastVehicle_a22d127e6b87137131485cdebd65ea5af}{update\+Action} (\hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$collision\+World, bt\+Scalar step)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtActionInterface}{bt\+Action\+Interface} interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}\label{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}} 
+void \hyperlink{classbtRaycastVehicle_ab5dfeb4a57f735f6fb069bfc5654428d}{debug\+Draw} (\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtActionInterface}{bt\+Action\+Interface} interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_abc911983edd69f2f216cc9cde7ea5906}\label{classbtRaycastVehicle_abc911983edd69f2f216cc9cde7ea5906}} 
+const bt\+Transform \& {\bfseries get\+Chassis\+World\+Transform} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}\label{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}} 
+bt\+Scalar {\bfseries ray\+Cast} (\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a696bb095c8d563ad76c521d79fb1f79d}\label{classbtRaycastVehicle_a696bb095c8d563ad76c521d79fb1f79d}} 
+virtual void {\bfseries update\+Vehicle} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a327f031abd00d7bee5546b7602d7fd6b}\label{classbtRaycastVehicle_a327f031abd00d7bee5546b7602d7fd6b}} 
+void {\bfseries reset\+Suspension} ()
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a61c029ffd3bec9c8404022ed20dd6264}\label{classbtRaycastVehicle_a61c029ffd3bec9c8404022ed20dd6264}} 
+bt\+Scalar {\bfseries get\+Steering\+Value} (int wheel) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_afbbaf96eadb808cea4102b696abd4649}\label{classbtRaycastVehicle_afbbaf96eadb808cea4102b696abd4649}} 
+void {\bfseries set\+Steering\+Value} (bt\+Scalar steering, int wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aafe6f81794ec7ad1ce900bdca2facb92}\label{classbtRaycastVehicle_aafe6f81794ec7ad1ce900bdca2facb92}} 
+void {\bfseries apply\+Engine\+Force} (bt\+Scalar force, int wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aa92f622b869f4791826568ad1f413a8e}\label{classbtRaycastVehicle_aa92f622b869f4791826568ad1f413a8e}} 
+const bt\+Transform \& {\bfseries get\+Wheel\+Transform\+WS} (int wheel\+Index) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_adf67ae421334225c886c3dc4c12fe1f2}\label{classbtRaycastVehicle_adf67ae421334225c886c3dc4c12fe1f2}} 
+void {\bfseries update\+Wheel\+Transform} (int wheel\+Index, bool interpolated\+Transform=true)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_addafac85eaea4515b436e366e6d692ec}\label{classbtRaycastVehicle_addafac85eaea4515b436e366e6d692ec}} 
+\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries add\+Wheel} (const bt\+Vector3 \&connection\+Point\+C\+S0, const bt\+Vector3 \&wheel\+Direction\+C\+S0, const bt\+Vector3 \&wheel\+Axle\+CS, bt\+Scalar suspension\+Rest\+Length, bt\+Scalar wheel\+Radius, const \hyperlink{classbtRaycastVehicle_1_1btVehicleTuning}{bt\+Vehicle\+Tuning} \&tuning, bool is\+Front\+Wheel)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a49c9df37ed439ba8a5fe3a0c4a07047d}\label{classbtRaycastVehicle_a49c9df37ed439ba8a5fe3a0c4a07047d}} 
+int {\bfseries get\+Num\+Wheels} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_abe3201b91a8cb71e08ec3b82667c6124}\label{classbtRaycastVehicle_abe3201b91a8cb71e08ec3b82667c6124}} 
+const \hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries get\+Wheel\+Info} (int index) const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ac3159550063d7dabd3c796735a77c2f4}\label{classbtRaycastVehicle_ac3159550063d7dabd3c796735a77c2f4}} 
+\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \& {\bfseries get\+Wheel\+Info} (int index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a097dff14b09869992c4c2ced984305b3}\label{classbtRaycastVehicle_a097dff14b09869992c4c2ced984305b3}} 
+void {\bfseries update\+Wheel\+Transforms\+WS} (\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&wheel, bool interpolated\+Transform=true)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a6b9dd519ac59a2bf326f4ff423e4ba6d}\label{classbtRaycastVehicle_a6b9dd519ac59a2bf326f4ff423e4ba6d}} 
+void {\bfseries set\+Brake} (bt\+Scalar brake, int wheel\+Index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab37ab7f7f32f8d62222061fd114aa822}\label{classbtRaycastVehicle_ab37ab7f7f32f8d62222061fd114aa822}} 
+void {\bfseries set\+Pitch\+Control} (bt\+Scalar pitch)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a6be582b77af41d8ad50369d30882776d}\label{classbtRaycastVehicle_a6be582b77af41d8ad50369d30882776d}} 
+void {\bfseries update\+Suspension} (bt\+Scalar delta\+Time)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a170d5dac1f150f63b837f5782a28b3fc}\label{classbtRaycastVehicle_a170d5dac1f150f63b837f5782a28b3fc}} 
+virtual void {\bfseries update\+Friction} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_af240c382a71932a3efd9a3d88895375c}\label{classbtRaycastVehicle_af240c382a71932a3efd9a3d88895375c}} 
+\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries get\+Rigid\+Body} ()
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a780e7abcff029bee48bf888327b0a856}\label{classbtRaycastVehicle_a780e7abcff029bee48bf888327b0a856}} 
+const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries get\+Rigid\+Body} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a8900579eb259c892f9866564560494e6}\label{classbtRaycastVehicle_a8900579eb259c892f9866564560494e6}} 
+int {\bfseries get\+Right\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a2b25853702eca35f0abbd66275864547}\label{classbtRaycastVehicle_a2b25853702eca35f0abbd66275864547}} 
+int {\bfseries get\+Up\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab78aa61c3533ef0369ed6a8304580334}\label{classbtRaycastVehicle_ab78aa61c3533ef0369ed6a8304580334}} 
+int {\bfseries get\+Forward\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}\label{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}} 
+bt\+Vector3 \hyperlink{classbtRaycastVehicle_a24312c6dce6a155b14147170c0eef263}{get\+Forward\+Vector} () const
+\begin{DoxyCompactList}\small\item\em Worldspace forward vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}\label{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}} 
+bt\+Scalar \hyperlink{classbtRaycastVehicle_aee54020262c0ff82165ea0e542319906}{get\+Current\+Speed\+Km\+Hour} () const
+\begin{DoxyCompactList}\small\item\em Velocity of vehicle (positive if velocity vector has same direction as foward vector) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a505882e9089229da3cea15e6af922a0f}\label{classbtRaycastVehicle_a505882e9089229da3cea15e6af922a0f}} 
+virtual void {\bfseries set\+Coordinate\+System} (int right\+Index, int up\+Index, int forward\+Index)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}\label{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}} 
+int \hyperlink{classbtRaycastVehicle_a1965219f0bc5b07eedb0fb745c890db6}{get\+User\+Constraint\+Type} () const
+\begin{DoxyCompactList}\small\item\em backwards compatibility \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a552a25a880d5fe75c575800156d591fd}\label{classbtRaycastVehicle_a552a25a880d5fe75c575800156d591fd}} 
+void {\bfseries set\+User\+Constraint\+Type} (int user\+Constraint\+Type)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_ab894b724e8b19228b7eea8317e0eb43b}\label{classbtRaycastVehicle_ab894b724e8b19228b7eea8317e0eb43b}} 
+void {\bfseries set\+User\+Constraint\+Id} (int uid)
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_a4cbba8434f83154a9240b41ab486e72e}\label{classbtRaycastVehicle_a4cbba8434f83154a9240b41ab486e72e}} 
+int {\bfseries get\+User\+Constraint\+Id} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRaycastVehicle_aae4a5468270c26dbfa0b882092fac990}\label{classbtRaycastVehicle_aae4a5468270c26dbfa0b882092fac990}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} $>$ {\bfseries m\+\_\+wheel\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+ray\+Cast vehicle, very special constraint that turn a rigidbody into a vehicle. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}\label{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}} 
+\index{bt\+Raycast\+Vehicle@{bt\+Raycast\+Vehicle}!ray\+Cast@{ray\+Cast}}
+\index{ray\+Cast@{ray\+Cast}!bt\+Raycast\+Vehicle@{bt\+Raycast\+Vehicle}}
+\subsubsection{\texorpdfstring{ray\+Cast()}{rayCast()}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Raycast\+Vehicle\+::ray\+Cast (\begin{DoxyParamCaption}\item[{\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&}]{wheel }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000035}{Todo}]for driving on dynamic/movable objects!; \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Vehicle/bt\+Raycast\+Vehicle.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Vehicle/bt\+Raycast\+Vehicle.\+cpp\end{DoxyCompactItemize}

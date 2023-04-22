@@ -1,0 +1,47 @@
+\hypertarget{group__mpg123__decoder}{}\section{mpg123 decoder selection}
+\label{group__mpg123__decoder}\index{mpg123 decoder selection@{mpg123 decoder selection}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT const char $\ast$$\ast$ \hyperlink{group__mpg123__decoder_ga3e8b169646870ff0848840c6f555ce6f}{mpg123\+\_\+decoders} (void)
+\item 
+E\+X\+P\+O\+RT const char $\ast$$\ast$ \hyperlink{group__mpg123__decoder_ga73a5e970f8ab6b12778e5959373721d8}{mpg123\+\_\+supported\+\_\+decoders} (void)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__decoder_ga44229d1ae46066bf06ea4cd0867848a1}{mpg123\+\_\+decoder} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, const char $\ast$decoder\+\_\+name)
+\item 
+E\+X\+P\+O\+RT const char $\ast$ \hyperlink{group__mpg123__decoder_ga96347ee6c5068e0abdd1acbe637d7bba}{mpg123\+\_\+current\+\_\+decoder} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to \hyperlink{protocollist-p}{list} and select the available decoders. Perhaps the most prominent feature of mpg123\+: You have several (optimized) decoders to choose from (on x86 and P\+PC (Mac\+OS) systems, that is). 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__decoder_ga96347ee6c5068e0abdd1acbe637d7bba}\label{group__mpg123__decoder_ga96347ee6c5068e0abdd1acbe637d7bba}} 
+\index{mpg123 decoder selection@{mpg123 decoder selection}!mpg123\+\_\+current\+\_\+decoder@{mpg123\+\_\+current\+\_\+decoder}}
+\index{mpg123\+\_\+current\+\_\+decoder@{mpg123\+\_\+current\+\_\+decoder}!mpg123 decoder selection@{mpg123 decoder selection}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+current\+\_\+decoder()}{mpg123\_current\_decoder()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT const char $\ast$ mpg123\+\_\+current\+\_\+decoder (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Get the currently active decoder engine name. The active decoder engine can vary depening on output constraints, mostly non-\/resampling, integer output is accelerated via 3\+D\+Now \& Co. but for other modes a fallback engine kicks in. Note that this can return a decoder that is ony active in the hidden and not available as decoder choice from the outside. \begin{DoxyReturn}{Returns}
+The decoder name or N\+U\+LL on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__decoder_ga44229d1ae46066bf06ea4cd0867848a1}\label{group__mpg123__decoder_ga44229d1ae46066bf06ea4cd0867848a1}} 
+\index{mpg123 decoder selection@{mpg123 decoder selection}!mpg123\+\_\+decoder@{mpg123\+\_\+decoder}}
+\index{mpg123\+\_\+decoder@{mpg123\+\_\+decoder}!mpg123 decoder selection@{mpg123 decoder selection}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+decoder()}{mpg123\_decoder()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+decoder (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{const char $\ast$}]{decoder\+\_\+name }\end{DoxyParamCaption})}
+
+Set the chosen decoder to \textquotesingle{}decoder\+\_\+name\textquotesingle{} \mbox{\Hypertarget{group__mpg123__decoder_ga3e8b169646870ff0848840c6f555ce6f}\label{group__mpg123__decoder_ga3e8b169646870ff0848840c6f555ce6f}} 
+\index{mpg123 decoder selection@{mpg123 decoder selection}!mpg123\+\_\+decoders@{mpg123\+\_\+decoders}}
+\index{mpg123\+\_\+decoders@{mpg123\+\_\+decoders}!mpg123 decoder selection@{mpg123 decoder selection}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+decoders()}{mpg123\_decoders()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT const char $\ast$$\ast$ mpg123\+\_\+decoders (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return a N\+U\+L\+L-\/terminated array of generally available decoder names (plain 8bit \hyperlink{structASCII}{A\+S\+C\+II}). \mbox{\Hypertarget{group__mpg123__decoder_ga73a5e970f8ab6b12778e5959373721d8}\label{group__mpg123__decoder_ga73a5e970f8ab6b12778e5959373721d8}} 
+\index{mpg123 decoder selection@{mpg123 decoder selection}!mpg123\+\_\+supported\+\_\+decoders@{mpg123\+\_\+supported\+\_\+decoders}}
+\index{mpg123\+\_\+supported\+\_\+decoders@{mpg123\+\_\+supported\+\_\+decoders}!mpg123 decoder selection@{mpg123 decoder selection}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+supported\+\_\+decoders()}{mpg123\_supported\_decoders()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT const char $\ast$$\ast$ mpg123\+\_\+supported\+\_\+decoders (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return a N\+U\+L\+L-\/terminated array of the decoders supported by the C\+PU (plain 8bit \hyperlink{structASCII}{A\+S\+C\+II}). 

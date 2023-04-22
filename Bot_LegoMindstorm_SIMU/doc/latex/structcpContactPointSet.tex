@@ -1,0 +1,69 @@
+\hypertarget{structcpContactPointSet}{}\section{cp\+Contact\+Point\+Set Struct Reference}
+\label{structcpContactPointSet}\index{cp\+Contact\+Point\+Set@{cp\+Contact\+Point\+Set}}
+
+
+A struct that wraps up the important collision data for an arbiter.  
+
+
+
+
+{\ttfamily \#include $<$cp\+Arbiter.\+h$>$}
+
+
+
+Collaboration diagram for cp\+Contact\+Point\+Set\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{structcpContactPointSet__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structcpContactPointSet_a06dadd34b06a8c7f00def95ca6a1ff88}\label{structcpContactPointSet_a06dadd34b06a8c7f00def95ca6a1ff88}} 
+int \hyperlink{structcpContactPointSet_a06dadd34b06a8c7f00def95ca6a1ff88}{count}
+\begin{DoxyCompactList}\small\item\em The number of contact points in the set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpContactPointSet_a2fab2c7e343e14833185b2c97e9fd5b8}\label{structcpContactPointSet_a2fab2c7e343e14833185b2c97e9fd5b8}} 
+\hyperlink{structcpVect}{cp\+Vect} \hyperlink{structcpContactPointSet_a2fab2c7e343e14833185b2c97e9fd5b8}{normal}
+\begin{DoxyCompactList}\small\item\em The normal of the collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpContactPointSet_a502bbcd00a97d6c92b7f00a5307498b9}\label{structcpContactPointSet_a502bbcd00a97d6c92b7f00a5307498b9}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{structcpVect}{cpVect} \hyperlink{structcpContactPointSet_a9d7ac05d747afa63699e89ea6dba62c2}{pointA}\\
+\>\>{\em The position of the contact on the surface of each shape. }\\
+\>\hyperlink{structcpVect}{cpVect} {\bfseries pointB}\\
+\>cpFloat \hyperlink{structcpContactPointSet_ad8581bff488e9f44ef899f75e044bc6c}{distance}\\
+\} \hyperlink{structcpContactPointSet_a502bbcd00a97d6c92b7f00a5307498b9}{points} \mbox{[}CP\_MAX\_CONTACTS\_PER\_ARBITER\mbox{]}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em The array of contact points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpContactPointSet_a0af11a619f8e6170cfd4884c55605aff}\label{structcpContactPointSet_a0af11a619f8e6170cfd4884c55605aff}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{structcpVect}{cpVect} \hyperlink{structcpContactPointSet_a9d7ac05d747afa63699e89ea6dba62c2}{pointA}\\
+\>\>{\em The position of the contact on the surface of each shape. }\\
+\>\hyperlink{structcpVect}{cpVect} {\bfseries pointB}\\
+\>cpFloat \hyperlink{structcpContactPointSet_ad8581bff488e9f44ef899f75e044bc6c}{distance}\\
+\} \hyperlink{structcpContactPointSet_a0af11a619f8e6170cfd4884c55605aff}{points} \mbox{[}CP\_MAX\_CONTACTS\_PER\_ARBITER\mbox{]}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em The array of contact points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A struct that wraps up the important collision data for an arbiter. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structcpContactPointSet_ad8581bff488e9f44ef899f75e044bc6c}\label{structcpContactPointSet_ad8581bff488e9f44ef899f75e044bc6c}} 
+\index{cp\+Contact\+Point\+Set@{cp\+Contact\+Point\+Set}!distance@{distance}}
+\index{distance@{distance}!cp\+Contact\+Point\+Set@{cp\+Contact\+Point\+Set}}
+\subsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily cp\+Float cp\+Contact\+Point\+Set\+::distance}
+
+Penetration distance of the two shapes. Overlapping means it will be negative. This value is calculated as cpvdot(cpvsub(point2, point1), normal) and is ignored by \hyperlink{group__cpArbiter_ga2a68f589f58dbae29de18cebee3de02d}{cp\+Arbiter\+Set\+Contact\+Point\+Set()}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/chipmunk/include/chipmunk/cp\+Arbiter.\+h\end{DoxyCompactItemize}

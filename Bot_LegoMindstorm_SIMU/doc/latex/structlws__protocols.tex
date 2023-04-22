@@ -1,0 +1,92 @@
+\hypertarget{structlws__protocols}{}\section{lws\+\_\+protocols Struct Reference}
+\label{structlws__protocols}\index{lws\+\_\+protocols@{lws\+\_\+protocols}}
+
+
+{\ttfamily \#include $<$libwebsockets.\+h$>$}
+
+
+
+Collaboration diagram for lws\+\_\+protocols\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{structlws__protocols__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structlws__protocols_af285ada5293641ed6cd74a53fa8bbeb6}{name}
+\item 
+\hyperlink{group__usercb_gad4fcb82e68d60ffacca61a3f783a0a2f}{lws\+\_\+callback\+\_\+function} $\ast$ \hyperlink{structlws__protocols_a7fd66ba094ac0f54ea8b176264449fef}{callback}
+\item 
+size\+\_\+t \hyperlink{structlws__protocols_a9bbd85f591ffb4259711cb5acbb05bea}{per\+\_\+session\+\_\+data\+\_\+size}
+\item 
+size\+\_\+t \hyperlink{structlws__protocols_a0d1d4996d81b2f5e125bcec981e461c5}{rx\+\_\+buffer\+\_\+size}
+\item 
+unsigned int \hyperlink{structlws__protocols_a6b632018590c2b1bbe43fbab6d5e6fac}{id}
+\item 
+void $\ast$ \hyperlink{structlws__protocols_aa952f56d53a0f261e486507b59e433ec}{user}
+\item 
+size\+\_\+t \hyperlink{structlws__protocols_aa18feb18890dd1faab944ac92cae9187}{tx\+\_\+packet\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} -\/ List of protocols and handlers client or server supports. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structlws__protocols_a7fd66ba094ac0f54ea8b176264449fef}\label{structlws__protocols_a7fd66ba094ac0f54ea8b176264449fef}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!callback@{callback}}
+\index{callback@{callback}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily \hyperlink{group__usercb_gad4fcb82e68d60ffacca61a3f783a0a2f}{lws\+\_\+callback\+\_\+function} $\ast$ lws\+\_\+protocols\+::callback}
+
+The service callback used for this protocol. It allows the service action for an entire protocol to be encapsulated in the protocol-\/specific callback \mbox{\Hypertarget{structlws__protocols_a6b632018590c2b1bbe43fbab6d5e6fac}\label{structlws__protocols_a6b632018590c2b1bbe43fbab6d5e6fac}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!id@{id}}
+\index{id@{id}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned int lws\+\_\+protocols\+::id}
+
+ignored by lws, but useful to contain user information bound to the selected protocol. For example if this protocol was called \char`\"{}myprotocol-\/v2\char`\"{}, you might set id to 2, and the user code that acts differently according to the version can do so by switch (wsi-\/$>$protocol-\/$>$id), user code might use some bits as capability flags based on selected protocol version, etc. \mbox{\Hypertarget{structlws__protocols_af285ada5293641ed6cd74a53fa8bbeb6}\label{structlws__protocols_af285ada5293641ed6cd74a53fa8bbeb6}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!name@{name}}
+\index{name@{name}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+protocols\+::name}
+
+Protocol name that must match the one given in the client Javascript new Web\+Socket(url, \textquotesingle{}protocol\textquotesingle{}) name. \mbox{\Hypertarget{structlws__protocols_a9bbd85f591ffb4259711cb5acbb05bea}\label{structlws__protocols_a9bbd85f591ffb4259711cb5acbb05bea}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!per\+\_\+session\+\_\+data\+\_\+size@{per\+\_\+session\+\_\+data\+\_\+size}}
+\index{per\+\_\+session\+\_\+data\+\_\+size@{per\+\_\+session\+\_\+data\+\_\+size}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{per\+\_\+session\+\_\+data\+\_\+size}{per\_session\_data\_size}}
+{\footnotesize\ttfamily size\+\_\+t lws\+\_\+protocols\+::per\+\_\+session\+\_\+data\+\_\+size}
+
+Each new connection using this protocol gets this much memory allocated on connection establishment and freed on connection takedown. A pointer to this per-\/connection allocation is passed into the callback in the \textquotesingle{}user\textquotesingle{} parameter \mbox{\Hypertarget{structlws__protocols_a0d1d4996d81b2f5e125bcec981e461c5}\label{structlws__protocols_a0d1d4996d81b2f5e125bcec981e461c5}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!rx\+\_\+buffer\+\_\+size@{rx\+\_\+buffer\+\_\+size}}
+\index{rx\+\_\+buffer\+\_\+size@{rx\+\_\+buffer\+\_\+size}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{rx\+\_\+buffer\+\_\+size}{rx\_buffer\_size}}
+{\footnotesize\ttfamily size\+\_\+t lws\+\_\+protocols\+::rx\+\_\+buffer\+\_\+size}
+
+lws allocates this much space for rx data and informs callback when something came. Due to rx flow control, the callback may not be able to consume it all without having to return to the event loop. That is supported in lws.
+
+If .tx\+\_\+packet\+\_\+size is 0, this also controls how much may be sent at once for backwards compatibility.
+
+lws allocates this much space for rx data and informs callback when something came. Due to rx flow control, the callback may not be able to consume it all without having to return to the event loop. That is supported in lws.
+
+This also controls how much may be sent at once at the moment, although this is likely to change. \mbox{\Hypertarget{structlws__protocols_aa18feb18890dd1faab944ac92cae9187}\label{structlws__protocols_aa18feb18890dd1faab944ac92cae9187}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!tx\+\_\+packet\+\_\+size@{tx\+\_\+packet\+\_\+size}}
+\index{tx\+\_\+packet\+\_\+size@{tx\+\_\+packet\+\_\+size}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{tx\+\_\+packet\+\_\+size}{tx\_packet\_size}}
+{\footnotesize\ttfamily size\+\_\+t lws\+\_\+protocols\+::tx\+\_\+packet\+\_\+size}
+
+0 indicates restrict send() size to .rx\+\_\+buffer\+\_\+size for backwards-\/ compatibility. If greater than zero, a single send() is restricted to this amount and any remainder is buffered by lws and sent afterwards also in these size chunks. Since that is expensive, it\textquotesingle{}s preferable to restrict one fragment you are trying to send to match this size. \mbox{\Hypertarget{structlws__protocols_aa952f56d53a0f261e486507b59e433ec}\label{structlws__protocols_aa952f56d53a0f261e486507b59e433ec}} 
+\index{lws\+\_\+protocols@{lws\+\_\+protocols}!user@{user}}
+\index{user@{user}!lws\+\_\+protocols@{lws\+\_\+protocols}}
+\subsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily void $\ast$ lws\+\_\+protocols\+::user}
+
+ignored by lws, but user code can pass a pointer here it can later access from the protocol callback 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/websockets/include/android/libwebsockets.\+h\end{DoxyCompactItemize}

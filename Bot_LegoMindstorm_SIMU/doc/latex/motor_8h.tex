@@ -1,0 +1,68 @@
+\hypertarget{motor_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor.h File Reference}
+\label{motor_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor.\+h}}
+{\ttfamily \#include \char`\"{}motion\+\_\+priv.\+h\char`\"{}}\newline
+Include dependency graph for motor.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{motor_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motor_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMOTOR}{M\+O\+T\+OR}
+\begin{DoxyCompactList}\small\item\em structure used internally for stocking current value for each motors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor_8h_a7f5f447d33b09e7475dad88f0e42ad0b}\label{motor_8h_a7f5f447d33b09e7475dad88f0e42ad0b}} 
+\#define {\bfseries L\+E\+F\+T\+\_\+\+M\+O\+T\+OR}~0
+\item 
+\mbox{\Hypertarget{motor_8h_ac9564ecabfd6f53bee9dc0742d63e19d}\label{motor_8h_ac9564ecabfd6f53bee9dc0742d63e19d}} 
+\#define {\bfseries R\+I\+G\+H\+T\+\_\+\+M\+O\+T\+OR}~1
+\item 
+\mbox{\Hypertarget{motor_8h_a768f67b5858603013b176e88b69a225c}\label{motor_8h_a768f67b5858603013b176e88b69a225c}} 
+\#define {\bfseries A\+L\+P\+H\+A\+\_\+\+M\+O\+T\+OR}~0
+\item 
+\mbox{\Hypertarget{motor_8h_aa0539794e440014fee0bef586c36c594}\label{motor_8h_aa0539794e440014fee0bef586c36c594}} 
+\#define {\bfseries D\+E\+L\+T\+A\+\_\+\+M\+O\+T\+OR}~1
+\item 
+\mbox{\Hypertarget{motor_8h_a23475932bec733210e3d481201a04f6b}\label{motor_8h_a23475932bec733210e3d481201a04f6b}} 
+\#define {\bfseries M\+O\+T\+O\+R\+\_\+\+P\+E\+R\+\_\+\+T\+Y\+PE}~2
+\item 
+\mbox{\Hypertarget{motor_8h_a4927c9cf9aed72f770323d58dc305228}\label{motor_8h_a4927c9cf9aed72f770323d58dc305228}} 
+\#define {\bfseries M\+O\+T\+O\+R\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+NB}~9
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor_8h_a46f39a479661021ca1b0b4fcd9935ea3}\label{motor_8h_a46f39a479661021ca1b0b4fcd9935ea3}} 
+void \hyperlink{motor_8h_a46f39a479661021ca1b0b4fcd9935ea3}{init\+Motor} (\hyperlink{structMOTOR}{M\+O\+T\+OR} $\ast$motor)
+\begin{DoxyCompactList}\small\item\em initialisation of the motor structure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor_8h_abfb53f1bbd8d4ff4505558912e2d3aed}\label{motor_8h_abfb53f1bbd8d4ff4505558912e2d3aed}} 
+void {\bfseries motors\+\_\+\+Config\+All\+I\+Max} (int32 imax)
+\item 
+\mbox{\Hypertarget{motor_8h_a1e8baca8e86c97041180c18a32e6f89f}\label{motor_8h_a1e8baca8e86c97041180c18a32e6f89f}} 
+void \hyperlink{motor_8h_a1e8baca8e86c97041180c18a32e6f89f}{update\+Motor} (\hyperlink{structMOTOR}{M\+O\+T\+OR} $\ast$motor, int32 delta)
+\begin{DoxyCompactList}\small\item\em update motor position and store value for speed computation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor_8h_a4b087fcbc607ff32afac6e1bcba14a6d}\label{motor_8h_a4b087fcbc607ff32afac6e1bcba14a6d}} 
+int32 \hyperlink{motor_8h_a4b087fcbc607ff32afac6e1bcba14a6d}{get\+Motor\+Speed} (\hyperlink{structMOTOR}{M\+O\+T\+OR} $\ast$motor)
+\begin{DoxyCompactList}\small\item\em Compute current motor speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}

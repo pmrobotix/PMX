@@ -1,0 +1,326 @@
+\hypertarget{classClippingRectangleNode}{}\section{Clipping\+Rectangle\+Node Class Reference}
+\label{classClippingRectangleNode}\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+
+
+Clipping Rectangle \hyperlink{classNode}{Node}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Clipping\+Rectangle\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Clipping\+Rectangle\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classClippingRectangleNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Clipping\+Rectangle\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClippingRectangleNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}{get\+Clipping\+Region} () const
+\begin{DoxyCompactList}\small\item\em Get the clipping rectangle. \end{DoxyCompactList}\item 
+void \hyperlink{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}{set\+Clipping\+Region} (const \hyperlink{classRect}{Rect} \&clipping\+Region)
+\begin{DoxyCompactList}\small\item\em Set the clipping rectangle. \end{DoxyCompactList}\item 
+bool \hyperlink{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}{is\+Clipping\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Get whether the clipping is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}{set\+Clipping\+Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable the clipping. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classClippingRectangleNode_ae875ea898f086aa7106b803ddbcbf47f}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}{get\+Clipping\+Region} () const
+\begin{DoxyCompactList}\small\item\em Get the clipping rectangle. \end{DoxyCompactList}\item 
+void \hyperlink{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}{set\+Clipping\+Region} (const \hyperlink{classRect}{Rect} \&clipping\+Region)
+\begin{DoxyCompactList}\small\item\em Set the clipping rectangle. \end{DoxyCompactList}\item 
+bool \hyperlink{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}{is\+Clipping\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Get whether the clipping is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}{set\+Clipping\+Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable the clipping. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classClippingRectangleNode_acffefe2919ca5110110e091d79448260}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ \hyperlink{classClippingRectangleNode_ad4837ccec4848abc6139659980152fff}{create} (const \hyperlink{classRect}{Rect} \&clipping\+Region)
+\begin{DoxyCompactList}\small\item\em Create node with specified clipping region. \end{DoxyCompactList}\item 
+static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ \hyperlink{classClippingRectangleNode_a69d4c06c031688276ed42221800adef4}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a clipping rectangle node. \end{DoxyCompactList}\item 
+static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ \hyperlink{classClippingRectangleNode_a2889a74ae21277b8e8f142c5b7da4d3a}{create} (const \hyperlink{classRect}{Rect} \&clipping\+Region)
+\begin{DoxyCompactList}\small\item\em Create node with specified clipping region. \end{DoxyCompactList}\item 
+static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ \hyperlink{classClippingRectangleNode_afc5eb0f59ea2d381e67875d7d1f7318d}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a clipping rectangle node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_ac0b4822fbaf7c950b03e97b001bda744}\label{classClippingRectangleNode_ac0b4822fbaf7c950b03e97b001bda744}} 
+void {\bfseries on\+Before\+Visit\+Scissor} ()
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_a2063edfd1ce71302b211a1afb06a9ade}\label{classClippingRectangleNode_a2063edfd1ce71302b211a1afb06a9ade}} 
+void {\bfseries on\+After\+Visit\+Scissor} ()
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_ac0b4822fbaf7c950b03e97b001bda744}\label{classClippingRectangleNode_ac0b4822fbaf7c950b03e97b001bda744}} 
+void {\bfseries on\+Before\+Visit\+Scissor} ()
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_a2063edfd1ce71302b211a1afb06a9ade}\label{classClippingRectangleNode_a2063edfd1ce71302b211a1afb06a9ade}} 
+void {\bfseries on\+After\+Visit\+Scissor} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_ae8098ce0bdaaadef48634d60596f91aa}\label{classClippingRectangleNode_ae8098ce0bdaaadef48634d60596f91aa}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+clipping\+Region}
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_ac6f23481947f8d66d1201ee2fb872fa5}\label{classClippingRectangleNode_ac6f23481947f8d66d1201ee2fb872fa5}} 
+bool {\bfseries \+\_\+clipping\+Enabled}
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_a3f0e27d5d74f258f37579132c3a12c04}\label{classClippingRectangleNode_a3f0e27d5d74f258f37579132c3a12c04}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+before\+Visit\+Cmd\+Scissor}
+\item 
+\mbox{\Hypertarget{classClippingRectangleNode_a20551f7a5b72c04f4f7ea951e7f7cedd}\label{classClippingRectangleNode_a20551f7a5b72c04f4f7ea951e7f7cedd}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+after\+Visit\+Cmd\+Scissor}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Clipping Rectangle \hyperlink{classNode}{Node}. 
+
+A node that clipped with specified rectangle. The region of \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} doesn\textquotesingle{}t support any transform except scale.  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classClippingRectangleNode_ad4837ccec4848abc6139659980152fff}\label{classClippingRectangleNode_ad4837ccec4848abc6139659980152fff}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!create@{create}}
+\index{create@{create}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ Clipping\+Rectangle\+Node\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{clipping\+Region }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create node with specified clipping region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clipping\+Region} & Specify the clipping rectangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}; otherwise return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a2889a74ae21277b8e8f142c5b7da4d3a}\label{classClippingRectangleNode_a2889a74ae21277b8e8f142c5b7da4d3a}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!create@{create}}
+\index{create@{create}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}$\ast$ Clipping\+Rectangle\+Node\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{clipping\+Region }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create node with specified clipping region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clipping\+Region} & Specify the clipping rectangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}; otherwise return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a69d4c06c031688276ed42221800adef4}\label{classClippingRectangleNode_a69d4c06c031688276ed42221800adef4}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!create@{create}}
+\index{create@{create}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node} $\ast$ Clipping\+Rectangle\+Node\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a clipping rectangle node. 
+
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}; otherwise return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_afc5eb0f59ea2d381e67875d7d1f7318d}\label{classClippingRectangleNode_afc5eb0f59ea2d381e67875d7d1f7318d}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!create@{create}}
+\index{create@{create}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}$\ast$ Clipping\+Rectangle\+Node\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a clipping rectangle node. 
+
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}; otherwise return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}\label{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!get\+Clipping\+Region@{get\+Clipping\+Region}}
+\index{get\+Clipping\+Region@{get\+Clipping\+Region}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{get\+Clipping\+Region()}{getClippingRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect}\& Clipping\+Rectangle\+Node\+::get\+Clipping\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the clipping rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The clipping rectangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}\label{classClippingRectangleNode_a344c7fa4f997d75ea410c6f6da3ecc40}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!get\+Clipping\+Region@{get\+Clipping\+Region}}
+\index{get\+Clipping\+Region@{get\+Clipping\+Region}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{get\+Clipping\+Region()}{getClippingRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect}\& Clipping\+Rectangle\+Node\+::get\+Clipping\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the clipping rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The clipping rectangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}\label{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!is\+Clipping\+Enabled@{is\+Clipping\+Enabled}}
+\index{is\+Clipping\+Enabled@{is\+Clipping\+Enabled}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{is\+Clipping\+Enabled()}{isClippingEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Clipping\+Rectangle\+Node\+::is\+Clipping\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether the clipping is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+Whether the clipping is enabled or not. Default is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}\label{classClippingRectangleNode_a8ebbf22123f002ba75266e25e050a031}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!is\+Clipping\+Enabled@{is\+Clipping\+Enabled}}
+\index{is\+Clipping\+Enabled@{is\+Clipping\+Enabled}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{is\+Clipping\+Enabled()}{isClippingEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Clipping\+Rectangle\+Node\+::is\+Clipping\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether the clipping is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+Whether the clipping is enabled or not. Default is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}\label{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!set\+Clipping\+Enabled@{set\+Clipping\+Enabled}}
+\index{set\+Clipping\+Enabled@{set\+Clipping\+Enabled}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{set\+Clipping\+Enabled()}{setClippingEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Clipping\+Rectangle\+Node\+::set\+Clipping\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/\+Disable the clipping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \hyperlink{classPass}{Pass} true to enable clipping. \hyperlink{classPass}{Pass} false to disable clipping. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}\label{classClippingRectangleNode_a3748322e0d2a5e082eaf2c56d74c6229}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!set\+Clipping\+Enabled@{set\+Clipping\+Enabled}}
+\index{set\+Clipping\+Enabled@{set\+Clipping\+Enabled}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{set\+Clipping\+Enabled()}{setClippingEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Clipping\+Rectangle\+Node\+::set\+Clipping\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/\+Disable the clipping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & \hyperlink{classPass}{Pass} true to enable clipping. \hyperlink{classPass}{Pass} false to disable clipping. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}\label{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!set\+Clipping\+Region@{set\+Clipping\+Region}}
+\index{set\+Clipping\+Region@{set\+Clipping\+Region}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{set\+Clipping\+Region()}{setClippingRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Clipping\+Rectangle\+Node\+::set\+Clipping\+Region (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{clipping\+Region }\end{DoxyParamCaption})}
+
+
+
+Set the clipping rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clipping\+Region} & Specify the clipping rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}\label{classClippingRectangleNode_a82398119a6db93a95eec2e8275119f2d}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!set\+Clipping\+Region@{set\+Clipping\+Region}}
+\index{set\+Clipping\+Region@{set\+Clipping\+Region}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{set\+Clipping\+Region()}{setClippingRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Clipping\+Rectangle\+Node\+::set\+Clipping\+Region (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{clipping\+Region }\end{DoxyParamCaption})}
+
+
+
+Set the clipping rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clipping\+Region} & Specify the clipping rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClippingRectangleNode_ae875ea898f086aa7106b803ddbcbf47f}\label{classClippingRectangleNode_ae875ea898f086aa7106b803ddbcbf47f}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!visit@{visit}}
+\index{visit@{visit}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Clipping\+Rectangle\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classClippingRectangleNode_acffefe2919ca5110110e091d79448260}\label{classClippingRectangleNode_acffefe2919ca5110110e091d79448260}} 
+\index{Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}!visit@{visit}}
+\index{visit@{visit}!Clipping\+Rectangle\+Node@{Clipping\+Rectangle\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Clipping\+Rectangle\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Clipping\+Rectangle\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Clipping\+Rectangle\+Node.\+cpp\end{DoxyCompactItemize}

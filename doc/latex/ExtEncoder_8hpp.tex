@@ -1,0 +1,146 @@
+\hypertarget{ExtEncoder_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Ext\+Encoder.hpp File Reference}
+\label{ExtEncoder_8hpp}\index{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Ext\+Encoder.\+hpp@{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Ext\+Encoder.\+hpp}}
+
+
+Définition de la classe \hyperlink{classExtEncoder}{Ext\+Encoder}. Interface library for chip L\+S7366R that does quadrature decoding of rotary encoders.  
+
+
+{\ttfamily \#include \char`\"{}../\+Log/\+Exception.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Log/\+Logger.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Log/\+Logger\+Factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Thread/\+Mutex.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Host\+Gpio\+Port.\+hpp\char`\"{}}\newline
+Include dependency graph for Ext\+Encoder.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ExtEncoder_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ExtEncoder_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classExtEncoder}{Ext\+Encoder}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_afa89cd22f9763ad2f70d1252d2a9d153}\label{ExtEncoder_8hpp_afa89cd22f9763ad2f70d1252d2a9d153}} 
+\#define {\bfseries C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+ER}~32
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ac97b8e73f1c627c8bf3d9c61f4bcea79}\label{ExtEncoder_8hpp_ac97b8e73f1c627c8bf3d9c61f4bcea79}} 
+\#define {\bfseries C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US}~48
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a4161e8ef8eb9844b77fb225882394624}\label{ExtEncoder_8hpp_a4161e8ef8eb9844b77fb225882394624}} 
+\#define {\bfseries R\+E\+A\+D\+\_\+\+C\+O\+U\+N\+T\+ER}~96
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a8e192e716a2e2265ea5f43dfe6ab0050}\label{ExtEncoder_8hpp_a8e192e716a2e2265ea5f43dfe6ab0050}} 
+\#define {\bfseries R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US}~112
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a201d9f50ed5a0c6e66d82d3929c4b38c}\label{ExtEncoder_8hpp_a201d9f50ed5a0c6e66d82d3929c4b38c}} 
+\#define {\bfseries W\+R\+I\+T\+E\+\_\+\+M\+O\+D\+E0}~136
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a098e6ff6d216bbdd147b63bec9d84c4f}\label{ExtEncoder_8hpp_a098e6ff6d216bbdd147b63bec9d84c4f}} 
+\#define {\bfseries W\+R\+I\+T\+E\+\_\+\+M\+O\+D\+E1}~144
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ac8551bdc3d8c10962b07b67d9558c6c8}\label{ExtEncoder_8hpp_ac8551bdc3d8c10962b07b67d9558c6c8}} 
+\#define {\bfseries N\+Q\+U\+AD}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a56cb489ea18306c755ca95aaab835749}\label{ExtEncoder_8hpp_a56cb489ea18306c755ca95aaab835749}} 
+\#define {\bfseries Q\+U\+A\+D\+R\+X1}~0x01
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_adde947448a8b0e8ed4232e6645adff17}\label{ExtEncoder_8hpp_adde947448a8b0e8ed4232e6645adff17}} 
+\#define {\bfseries Q\+U\+A\+D\+R\+X2}~0x02
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_af409c8fda3b8fee55811fb024cb030a6}\label{ExtEncoder_8hpp_af409c8fda3b8fee55811fb024cb030a6}} 
+\#define {\bfseries Q\+U\+A\+D\+R\+X4}~0x03
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a0a9f6fa936390e8bdc58e536b95d9c29}\label{ExtEncoder_8hpp_a0a9f6fa936390e8bdc58e536b95d9c29}} 
+\#define {\bfseries F\+R\+E\+E\+\_\+\+R\+UN}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a4087c0b793e4b5dcfdb9692f9dcf7dcc}\label{ExtEncoder_8hpp_a4087c0b793e4b5dcfdb9692f9dcf7dcc}} 
+\#define {\bfseries S\+I\+N\+G\+E\+\_\+\+C\+Y\+C\+LE}~0x04
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a31b7e33ba45b07c841ef2988515626c2}\label{ExtEncoder_8hpp_a31b7e33ba45b07c841ef2988515626c2}} 
+\#define {\bfseries R\+A\+N\+G\+E\+\_\+\+L\+I\+M\+IT}~0x08
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a286add63c87c46d697b3b0c326194d4d}\label{ExtEncoder_8hpp_a286add63c87c46d697b3b0c326194d4d}} 
+\#define {\bfseries M\+O\+D\+U\+L\+O\+\_\+N}~0x0C
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a9c85cd3313959f783e982dc29f5894b4}\label{ExtEncoder_8hpp_a9c85cd3313959f783e982dc29f5894b4}} 
+\#define {\bfseries D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+N\+DX}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_afccb4adb9d1d983a0168c7b2ad479be0}\label{ExtEncoder_8hpp_afccb4adb9d1d983a0168c7b2ad479be0}} 
+\#define {\bfseries I\+N\+D\+X\+\_\+\+L\+O\+A\+DC}~0x10
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ae4061c5a38091947401e476906f0414d}\label{ExtEncoder_8hpp_ae4061c5a38091947401e476906f0414d}} 
+\#define {\bfseries I\+N\+D\+X\+\_\+\+R\+E\+S\+E\+TC}~0x20
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a58ef749dca421662ecb45a087081e14d}\label{ExtEncoder_8hpp_a58ef749dca421662ecb45a087081e14d}} 
+\#define {\bfseries I\+N\+D\+X\+\_\+\+L\+O\+A\+DO}~0x30
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a862a841a15a8df2ec3fe318054577a65}\label{ExtEncoder_8hpp_a862a841a15a8df2ec3fe318054577a65}} 
+\#define {\bfseries A\+S\+Y\+N\+C\+H\+\_\+\+I\+N\+DX}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a524767a3389b4e228f054dc07cf03eb3}\label{ExtEncoder_8hpp_a524767a3389b4e228f054dc07cf03eb3}} 
+\#define {\bfseries S\+Y\+N\+C\+H\+\_\+\+I\+N\+DX}~0x40
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ad868c8b55c4dfcc54eae872431d2113e}\label{ExtEncoder_8hpp_ad868c8b55c4dfcc54eae872431d2113e}} 
+\#define {\bfseries F\+I\+L\+T\+E\+R\+\_\+1}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a8a9ff9129a0202b755fa962a1d7a1634}\label{ExtEncoder_8hpp_a8a9ff9129a0202b755fa962a1d7a1634}} 
+\#define {\bfseries F\+I\+L\+T\+E\+R\+\_\+2}~0x80
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a9cfcd032e38e55938e02821e97fe3660}\label{ExtEncoder_8hpp_a9cfcd032e38e55938e02821e97fe3660}} 
+\#define {\bfseries N\+O\+\_\+\+F\+L\+A\+GS}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a2ea1a424fdab0c4b7ddf54ff67dad08d}\label{ExtEncoder_8hpp_a2ea1a424fdab0c4b7ddf54ff67dad08d}} 
+\#define {\bfseries I\+D\+X\+\_\+\+F\+L\+AG}~0x10
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a074368acf74b589c1dbf45c7bad357e5}\label{ExtEncoder_8hpp_a074368acf74b589c1dbf45c7bad357e5}} 
+\#define {\bfseries C\+M\+P\+\_\+\+F\+L\+AG}~0x20
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ad9ee687e466278fb1d21a107227f5da8}\label{ExtEncoder_8hpp_ad9ee687e466278fb1d21a107227f5da8}} 
+\#define {\bfseries B\+W\+\_\+\+F\+L\+AG}~0x40
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a9e019b9d20cf7b4072da1a0892c7118a}\label{ExtEncoder_8hpp_a9e019b9d20cf7b4072da1a0892c7118a}} 
+\#define {\bfseries C\+Y\+\_\+\+F\+L\+AG}~0x80
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a331a010a3845e67f2cb06ba4c51e46f2}\label{ExtEncoder_8hpp_a331a010a3845e67f2cb06ba4c51e46f2}} 
+\#define {\bfseries B\+Y\+T\+E\+\_\+4}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a8c0001a2776c2f7ad759f43e77e460ca}\label{ExtEncoder_8hpp_a8c0001a2776c2f7ad759f43e77e460ca}} 
+\#define {\bfseries B\+Y\+T\+E\+\_\+3}~0x01
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a8478fde7b3478e18f57a71255db28c8a}\label{ExtEncoder_8hpp_a8478fde7b3478e18f57a71255db28c8a}} 
+\#define {\bfseries B\+Y\+T\+E\+\_\+2}~0x02
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_ab9a0d70cb746f776adf784200005e0a1}\label{ExtEncoder_8hpp_ab9a0d70cb746f776adf784200005e0a1}} 
+\#define {\bfseries B\+Y\+T\+E\+\_\+1}~0x03
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a6d53c8a07c6a28b77606d9adac788e1e}\label{ExtEncoder_8hpp_a6d53c8a07c6a28b77606d9adac788e1e}} 
+\#define {\bfseries E\+N\+\_\+\+C\+N\+TR}~0x00
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a9491da571d484ba3fc9cd23069f06c17}\label{ExtEncoder_8hpp_a9491da571d484ba3fc9cd23069f06c17}} 
+\#define {\bfseries D\+I\+S\+\_\+\+C\+N\+TR}~0x04
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ExtEncoder_8hpp_a4ae1dab0fb4b072a66584546209e7d58}\label{ExtEncoder_8hpp_a4ae1dab0fb4b072a66584546209e7d58}} 
+typedef unsigned char {\bfseries B\+Y\+TE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définition de la classe \hyperlink{classExtEncoder}{Ext\+Encoder}. Interface library for chip L\+S7366R that does quadrature decoding of rotary encoders. 
+

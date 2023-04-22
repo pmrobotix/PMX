@@ -1,0 +1,2354 @@
+\hypertarget{classVec2}{}\section{Vec2 Class Reference}
+\label{classVec2}\index{Vec2@{Vec2}}
+
+
+{\ttfamily \#include $<$Vec2.\+h$>$}
+
+
+
+Collaboration diagram for Vec2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classVec2__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVec2_a7d3b326498b7ecc18020731109cb4bb8}{Vec2} ()
+\item 
+\hyperlink{classVec2_a8e4727da05d8400e3c7153b76974214c}{Vec2} (float xx, float yy)
+\item 
+\hyperlink{classVec2_a469928d68a31daa0f3cd858e8b68701d}{Vec2} (const float $\ast$array)
+\item 
+\hyperlink{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}{Vec2} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2)
+\item 
+\hyperlink{classVec2_a89f30fddf7a90a5bcd36a6a1064bc81f}{Vec2} (const \hyperlink{classVec2}{Vec2} \&copy)
+\item 
+\hyperlink{classVec2_a13007f52587b4205f78ed6b1659f5eac}{$\sim$\+Vec2} ()
+\item 
+bool \hyperlink{classVec2_ad399155b1760c192c1afafdb5d7ccea3}{is\+Zero} () const
+\item 
+bool \hyperlink{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}{is\+One} () const
+\item 
+void \hyperlink{classVec2_a83705106dc5f7903512f26c09c317a21}{add} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a5c3444068aab183f97eb5081b817748a}{clamp} (const \hyperlink{classVec2}{Vec2} \&min, const \hyperlink{classVec2}{Vec2} \&max)
+\item 
+float \hyperlink{classVec2_a95cf4ec6593042a5c19186828f53d146}{distance} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}{distance\+Squared} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_a0077f35f41e7499847b5332a0ce42438}{dot} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}{length} () const
+\item 
+float \hyperlink{classVec2_a5dbc5e767907b2e217060479c52777bb}{length\+Squared} () const
+\item 
+void \hyperlink{classVec2_a26074525e995a2085bd63d9a146f2e33}{negate} ()
+\item 
+void \hyperlink{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}{normalize} ()
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a1bcbcc58d94b67c58718f2415afad1be}{get\+Normalized} () const
+\item 
+void \hyperlink{classVec2_a67d98d1e2261ae9369bd79c337187cd8}{scale} (float scalar)
+\item 
+void \hyperlink{classVec2_ae2c74b30190869c962302065cfeecf8c}{scale} (const \hyperlink{classVec2}{Vec2} \&scale)
+\item 
+void \hyperlink{classVec2_acb4191c1852c73801734d10386722ccf}{rotate} (const \hyperlink{classVec2}{Vec2} \&point, float \hyperlink{classVec2_a8e791a6d3b657e714587295b6fc331b6}{angle})
+\item 
+void \hyperlink{classVec2_a74b21ca56da0a8db13168c627929ffd0}{set} (float xx, float yy)
+\item 
+void \hyperlink{classVec2_a492bf35fe6975aebe475519f21d86364}{set} (const float $\ast$array)
+\item 
+void \hyperlink{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}{set} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a4e76b9c6df8c81a4035107961d670caf}{set} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2)
+\item 
+void \hyperlink{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}{set\+Zero} ()
+\item 
+void \hyperlink{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}{subtract} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}{smooth} (const \hyperlink{classVec2}{Vec2} \&target, float elapsed\+Time, float response\+Time)
+\item 
+const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ad2383d77974a8092b149391c2edce7fd}{operator+} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_ae19f0fad92bf57a440b0367a1a71acd2}{operator+=} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_afea5a75f39e0db3d893aa56f11e90a60}{operator-\/} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_a8be0266d41d4ee2f550a4e36e6f4b364}{operator-\/=} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}{operator-\/} () const
+\item 
+const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aac30b50a35381a11b76b89ea19dc7f12}{operator$\ast$} (float s) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_a9ab811215385bea7bb254b12cc9665af}{operator$\ast$=} (float s)
+\item 
+const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a30794ad88645e3d0279e8253e4355e8d}{operator/} (float s) const
+\item 
+bool \hyperlink{classVec2_aad24b95fb51746343f06c504a7a05681}{operator$<$} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}{operator$>$} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}{operator==} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}{operator!=} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+void \hyperlink{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}{set\+Point} (float xx, float yy)
+\item 
+bool \hyperlink{classVec2_a56fd3f594c7532a7ba84ea3473257671}{equals} (const \hyperlink{classVec2}{Vec2} \&target) const
+\item 
+bool \hyperlink{classVec2_a5ac04604789866d317ade8f4579b37a9}{fuzzy\+Equals} (const \hyperlink{classVec2}{Vec2} \&target, float variance) const
+\item 
+float \hyperlink{classVec2_ae486d0799b31a9831eef5a35164a4846}{get\+Length} () const
+\item 
+float \hyperlink{classVec2_a0b3f546ad8db551b9428d147318aee34}{get\+Length\+Sq} () const
+\item 
+float \hyperlink{classVec2_a5f2fee415aa806bdaad99e984cc991eb}{get\+Distance\+Sq} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_a44c9c4de94d07758f73195088788ded4}{get\+Distance} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_aaca24d4a0550be8892c4d84c7b37e027}{get\+Angle} () const
+\item 
+float \hyperlink{classVec2_a94017db9e730f5935efa27aee1bf7df7}{get\+Angle} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}{cross} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a0b6b1c97713d11486dc898aa203f1a72}{get\+Perp} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}{get\+Midpoint} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aa51d29f01d1826b236669a718569ffd2}{get\+Clamp\+Point} (const \hyperlink{classVec2}{Vec2} \&min\+\_\+inclusive, const \hyperlink{classVec2}{Vec2} \&max\+\_\+inclusive) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}{comp\+Op} (std\+::function$<$ float(float)$>$ function) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a3ae57753954a59e57d1ddaaa76b57485}{get\+R\+Perp} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ad1fc26536c25f01208a26e769c980b8d}{project} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}{rotate} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ac11c32b0ab0aeced26fc5264785b774a}{unrotate} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}{lerp} (const \hyperlink{classVec2}{Vec2} \&other, float alpha) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}{rotate\+By\+Angle} (const \hyperlink{classVec2}{Vec2} \&pivot, float \hyperlink{classVec2_a8e791a6d3b657e714587295b6fc331b6}{angle}) const
+\item 
+\hyperlink{classVec2_a76080feed7005893ecc634f903cfbae0}{Vec2} ()
+\item 
+\hyperlink{classVec2_a8e4727da05d8400e3c7153b76974214c}{Vec2} (float xx, float yy)
+\item 
+\hyperlink{classVec2_a469928d68a31daa0f3cd858e8b68701d}{Vec2} (const float $\ast$array)
+\item 
+\hyperlink{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}{Vec2} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2)
+\item 
+bool \hyperlink{classVec2_ad399155b1760c192c1afafdb5d7ccea3}{is\+Zero} () const
+\item 
+bool \hyperlink{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}{is\+One} () const
+\item 
+void \hyperlink{classVec2_a83705106dc5f7903512f26c09c317a21}{add} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a5c3444068aab183f97eb5081b817748a}{clamp} (const \hyperlink{classVec2}{Vec2} \&min, const \hyperlink{classVec2}{Vec2} \&max)
+\item 
+float \hyperlink{classVec2_a95cf4ec6593042a5c19186828f53d146}{distance} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}{distance\+Squared} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_a0077f35f41e7499847b5332a0ce42438}{dot} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+float \hyperlink{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}{length} () const
+\item 
+float \hyperlink{classVec2_a5dbc5e767907b2e217060479c52777bb}{length\+Squared} () const
+\item 
+void \hyperlink{classVec2_a26074525e995a2085bd63d9a146f2e33}{negate} ()
+\item 
+void \hyperlink{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}{normalize} ()
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a1bcbcc58d94b67c58718f2415afad1be}{get\+Normalized} () const
+\item 
+void \hyperlink{classVec2_a67d98d1e2261ae9369bd79c337187cd8}{scale} (float scalar)
+\item 
+void \hyperlink{classVec2_ae2c74b30190869c962302065cfeecf8c}{scale} (const \hyperlink{classVec2}{Vec2} \&scale)
+\item 
+void \hyperlink{classVec2_acb4191c1852c73801734d10386722ccf}{rotate} (const \hyperlink{classVec2}{Vec2} \&point, float \hyperlink{classVec2_a8e791a6d3b657e714587295b6fc331b6}{angle})
+\item 
+void \hyperlink{classVec2_a74b21ca56da0a8db13168c627929ffd0}{set} (float xx, float yy)
+\item 
+void \hyperlink{classVec2_a492bf35fe6975aebe475519f21d86364}{set} (const float $\ast$array)
+\item 
+void \hyperlink{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}{set} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a4e76b9c6df8c81a4035107961d670caf}{set} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2)
+\item 
+void \hyperlink{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}{set\+Zero} ()
+\item 
+void \hyperlink{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}{subtract} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+void \hyperlink{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}{smooth} (const \hyperlink{classVec2}{Vec2} \&target, float elapsed\+Time, float response\+Time)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ad2383d77974a8092b149391c2edce7fd}{operator+} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_a7f062667506f94bc207bdf492ca5b89c}{operator+=} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_afea5a75f39e0db3d893aa56f11e90a60}{operator-\/} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_af4a567f4055cde891fa22a17c8a3dccc}{operator-\/=} (const \hyperlink{classVec2}{Vec2} \&v)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}{operator-\/} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aac30b50a35381a11b76b89ea19dc7f12}{operator$\ast$} (float s) const
+\item 
+\hyperlink{classVec2}{Vec2} \& \hyperlink{classVec2_a579a80f68497014e300b45b9824998a1}{operator$\ast$=} (float s)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a30794ad88645e3d0279e8253e4355e8d}{operator/} (float s) const
+\item 
+bool \hyperlink{classVec2_aad24b95fb51746343f06c504a7a05681}{operator$<$} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}{operator$>$} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}{operator==} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+bool \hyperlink{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}{operator!=} (const \hyperlink{classVec2}{Vec2} \&v) const
+\item 
+void \hyperlink{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}{set\+Point} (float xx, float yy)
+\item 
+bool \hyperlink{classVec2_a56fd3f594c7532a7ba84ea3473257671}{equals} (const \hyperlink{classVec2}{Vec2} \&target) const
+\item 
+bool \hyperlink{classVec2_a5ac04604789866d317ade8f4579b37a9}{fuzzy\+Equals} (const \hyperlink{classVec2}{Vec2} \&target, float variance) const
+\item 
+float \hyperlink{classVec2_ae486d0799b31a9831eef5a35164a4846}{get\+Length} () const
+\item 
+float \hyperlink{classVec2_a0b3f546ad8db551b9428d147318aee34}{get\+Length\+Sq} () const
+\item 
+float \hyperlink{classVec2_a5f2fee415aa806bdaad99e984cc991eb}{get\+Distance\+Sq} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_a44c9c4de94d07758f73195088788ded4}{get\+Distance} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_aaca24d4a0550be8892c4d84c7b37e027}{get\+Angle} () const
+\item 
+float \hyperlink{classVec2_a94017db9e730f5935efa27aee1bf7df7}{get\+Angle} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+float \hyperlink{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}{cross} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a0b6b1c97713d11486dc898aa203f1a72}{get\+Perp} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}{get\+Midpoint} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aa51d29f01d1826b236669a718569ffd2}{get\+Clamp\+Point} (const \hyperlink{classVec2}{Vec2} \&min\+\_\+inclusive, const \hyperlink{classVec2}{Vec2} \&max\+\_\+inclusive) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}{comp\+Op} (std\+::function$<$ float(float)$>$ function) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a3ae57753954a59e57d1ddaaa76b57485}{get\+R\+Perp} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ad1fc26536c25f01208a26e769c980b8d}{project} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}{rotate} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ac11c32b0ab0aeced26fc5264785b774a}{unrotate} (const \hyperlink{classVec2}{Vec2} \&other) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}{lerp} (const \hyperlink{classVec2}{Vec2} \&other, float alpha) const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}{rotate\+By\+Angle} (const \hyperlink{classVec2}{Vec2} \&pivot, float \hyperlink{classVec2_a8e791a6d3b657e714587295b6fc331b6}{angle}) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{classVec2_a8e791a6d3b657e714587295b6fc331b6}{angle} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2)
+\item 
+static void \hyperlink{classVec2_a6f16f084728b1beb09dc000a017b048b}{add} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static void \hyperlink{classVec2_ab15d0c5365de52c4ee63a094448e1526}{clamp} (const \hyperlink{classVec2}{Vec2} \&v, const \hyperlink{classVec2}{Vec2} \&min, const \hyperlink{classVec2}{Vec2} \&max, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static float \hyperlink{classVec2_a399b823d9d25949b107850080a5f8653}{dot} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2)
+\item 
+static void \hyperlink{classVec2_a320e0720b043b46a2a921290167f1875}{subtract} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aba30a4b093635bdd1fa4e329e93455d9}{for\+Angle} (const float a)
+\item 
+static bool \hyperlink{classVec2_a04a88c3bcc6d5ecea1eaa75b59a62ae0}{is\+Line\+Intersect} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D, float $\ast$S=nullptr, float $\ast$T=nullptr)
+\item 
+static bool \hyperlink{classVec2_a658e44470389d83f72cfdf5c91718605}{is\+Line\+Overlap} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static bool \hyperlink{classVec2_a2fba06dc07b152f9a2efd2687c257035}{is\+Line\+Parallel} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static bool \hyperlink{classVec2_a99d2d2f5edf75476ba538ca19f2fb543}{is\+Segment\+Overlap} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D, \hyperlink{classVec2}{Vec2} $\ast$S=nullptr, \hyperlink{classVec2}{Vec2} $\ast$E=nullptr)
+\item 
+static bool \hyperlink{classVec2_a2f6e61e0994a71c17e6ba614e1d81c06}{is\+Segment\+Intersect} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ac0ffe8d77f93b1d6fa13d786d079f382}{get\+Intersect\+Point} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static float \hyperlink{classVec2_a57e7673ee790c5825b2fd6992aec2de3}{angle} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2)
+\item 
+static void \hyperlink{classVec2_aba6e4df1c6af7b575fb4e501d39e39d1}{add} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static void \hyperlink{classVec2_a6ac327ca40c0457b85fb9ee3c1a6e1fa}{clamp} (const \hyperlink{classVec2}{Vec2} \&v, const \hyperlink{classVec2}{Vec2} \&min, const \hyperlink{classVec2}{Vec2} \&max, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static float \hyperlink{classVec2_ab2482a8fb50ff53c53ac024a899dad44}{dot} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2)
+\item 
+static void \hyperlink{classVec2_a8bd709224a613e76c40223dcc873f574}{subtract} (const \hyperlink{classVec2}{Vec2} \&v1, const \hyperlink{classVec2}{Vec2} \&v2, \hyperlink{classVec2}{Vec2} $\ast$dst)
+\item 
+static \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_aba30a4b093635bdd1fa4e329e93455d9}{for\+Angle} (const float a)
+\item 
+static bool \hyperlink{classVec2_af2a542c6d0f65a8ba71ea1480d19d214}{is\+Line\+Intersect} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D, float $\ast$S=nullptr, float $\ast$T=nullptr)
+\item 
+static bool \hyperlink{classVec2_a56a8da20b34addc4bf717064f8ecc415}{is\+Line\+Overlap} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static bool \hyperlink{classVec2_ac526f6ebee4db5f43652b83a3c57ddc5}{is\+Line\+Parallel} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static bool \hyperlink{classVec2_a28c2d3ea6d0012ef5d41b024e91462ed}{is\+Segment\+Overlap} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D, \hyperlink{classVec2}{Vec2} $\ast$S=nullptr, \hyperlink{classVec2}{Vec2} $\ast$E=nullptr)
+\item 
+static bool \hyperlink{classVec2_a8c71387fe5009ce9d7c53aa705cd2e3b}{is\+Segment\+Intersect} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\item 
+static \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a6b7881ab13c3e0336ef1f77340df8b86}{get\+Intersect\+Point} (const \hyperlink{classVec2}{Vec2} \&A, const \hyperlink{classVec2}{Vec2} \&B, const \hyperlink{classVec2}{Vec2} \&C, const \hyperlink{classVec2}{Vec2} \&D)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classVec2_adf8ee322d4b4bcc04146762c018d731f}{x}
+\item 
+float \hyperlink{classVec2_a30543787e62f6d915543cf1dfb04c094}{y}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a5c80e2e7c8bd2adcbad2844d060e6245}{Z\+E\+RO}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a6b62ec70b5f9d4b6f78341a73b38d328}{O\+NE}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a27246f9cb36cc90f9b8d5abbcab43abb}{U\+N\+I\+T\+\_\+X}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a7b47ef0848a379cc5085ea0b3f2a1182}{U\+N\+I\+T\+\_\+Y}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_acd17600fac6fc51d4a847831ed7ffa92}{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ad33063675bb83f6fa1337d3d049fec3e}{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_ab0533215e446e0381d01bf49edd7ab7c}{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a89dea3751d0e72f6aa959e9b727bd8f6}{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a54a9b9e7162320f202595e489f2e8d02}{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_af8e20f7ed236cff72c1fd159a3f033f3}{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a4544bfcd8e350d7fccda1a25d8f7399b}{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a5c840d335260ef9cf62a14b342c567ec}{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP}
+\item 
+static const \hyperlink{classVec2}{Vec2} \hyperlink{classVec2_a5388b50c2923ea6aa54f4b0ab31f80ed}{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a 2-\/element floating point vector. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVec2_a7d3b326498b7ecc18020731109cb4bb8}\label{classVec2_a7d3b326498b7ecc18020731109cb4bb8}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+M\+A\+T\+H\+\_\+\+B\+E\+G\+IN Vec2\+::\+Vec2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new vector initialized to all zeros.
+
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project \mbox{\Hypertarget{classVec2_a8e4727da05d8400e3c7153b76974214c}\label{classVec2_a8e4727da05d8400e3c7153b76974214c}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new vector initialized to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The x coordinate. \\
+\hline
+{\em yy} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a469928d68a31daa0f3cd858e8b68701d}\label{classVec2_a469928d68a31daa0f3cd858e8b68701d}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{const float $\ast$}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new vector from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the vector in the order x, y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}\label{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a vector that describes the direction between the specified points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a89f30fddf7a90a5bcd36a6a1064bc81f}\label{classVec2_a89f30fddf7a90a5bcd36a6a1064bc81f}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new vector that is a copy of the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The vector to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a13007f52587b4205f78ed6b1659f5eac}\label{classVec2_a13007f52587b4205f78ed6b1659f5eac}} 
+\index{Vec2@{Vec2}!````~Vec2@{$\sim$\+Vec2}}
+\index{````~Vec2@{$\sim$\+Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{$\sim$\+Vec2()}{~Vec2()}}
+{\footnotesize\ttfamily Vec2\+::$\sim$\+Vec2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor. \mbox{\Hypertarget{classVec2_a76080feed7005893ecc634f903cfbae0}\label{classVec2_a76080feed7005893ecc634f903cfbae0}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a new vector initialized to all zeros. \mbox{\Hypertarget{classVec2_a8e4727da05d8400e3c7153b76974214c}\label{classVec2_a8e4727da05d8400e3c7153b76974214c}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})}
+
+Constructs a new vector initialized to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The x coordinate. \\
+\hline
+{\em yy} & The y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a469928d68a31daa0f3cd858e8b68701d}\label{classVec2_a469928d68a31daa0f3cd858e8b68701d}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{const float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Constructs a new vector from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the vector in the order x, y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}\label{classVec2_aff34a0a8b960dcfbcc5ac1d8d3af3493}} 
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Vec2()}{Vec2()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2 }\end{DoxyParamCaption})}
+
+Constructs a vector that describes the direction between the specified points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVec2_a83705106dc5f7903512f26c09c317a21}\label{classVec2_a83705106dc5f7903512f26c09c317a21}} 
+\index{Vec2@{Vec2}!add@{add}}
+\index{add@{add}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Vec2\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the elements of the specified vector to this one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_aba6e4df1c6af7b575fb4e501d39e39d1}\label{classVec2_aba6e4df1c6af7b575fb4e501d39e39d1}} 
+\index{Vec2@{Vec2}!add@{add}}
+\index{add@{add}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Vec2\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Adds the specified vectors and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector. \\
+\hline
+{\em dst} & A vector to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a83705106dc5f7903512f26c09c317a21}\label{classVec2_a83705106dc5f7903512f26c09c317a21}} 
+\index{Vec2@{Vec2}!add@{add}}
+\index{add@{add}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Vec2\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the elements of the specified vector to this one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a6f16f084728b1beb09dc000a017b048b}\label{classVec2_a6f16f084728b1beb09dc000a017b048b}} 
+\index{Vec2@{Vec2}!add@{add}}
+\index{add@{add}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Vec2\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Adds the specified vectors and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector. \\
+\hline
+{\em dst} & A vector to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a57e7673ee790c5825b2fd6992aec2de3}\label{classVec2_a57e7673ee790c5825b2fd6992aec2de3}} 
+\index{Vec2@{Vec2}!angle@{angle}}
+\index{angle@{angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{angle()}{angle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float Vec2\+::angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the angle (in radians) between the specified vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle between the two vectors (in radians). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a8e791a6d3b657e714587295b6fc331b6}\label{classVec2_a8e791a6d3b657e714587295b6fc331b6}} 
+\index{Vec2@{Vec2}!angle@{angle}}
+\index{angle@{angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{angle()}{angle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the angle (in radians) between the specified vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle between the two vectors (in radians). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a5c3444068aab183f97eb5081b817748a}\label{classVec2_a5c3444068aab183f97eb5081b817748a}} 
+\index{Vec2@{Vec2}!clamp@{clamp}}
+\index{clamp@{clamp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Vec2\+::clamp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{min,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max }\end{DoxyParamCaption})}
+
+Clamps this vector within the specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value. \\
+\hline
+{\em max} & The maximum value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a6ac327ca40c0457b85fb9ee3c1a6e1fa}\label{classVec2_a6ac327ca40c0457b85fb9ee3c1a6e1fa}} 
+\index{Vec2@{Vec2}!clamp@{clamp}}
+\index{clamp@{clamp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Vec2\+::clamp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{min,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clamps the specified vector within the specified range and returns it in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to clamp. \\
+\hline
+{\em min} & The minimum value. \\
+\hline
+{\em max} & The maximum value. \\
+\hline
+{\em dst} & A vector to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a5c3444068aab183f97eb5081b817748a}\label{classVec2_a5c3444068aab183f97eb5081b817748a}} 
+\index{Vec2@{Vec2}!clamp@{clamp}}
+\index{clamp@{clamp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Vec2\+::clamp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{min,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max }\end{DoxyParamCaption})}
+
+Clamps this vector within the specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value. \\
+\hline
+{\em max} & The maximum value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_ab15d0c5365de52c4ee63a094448e1526}\label{classVec2_ab15d0c5365de52c4ee63a094448e1526}} 
+\index{Vec2@{Vec2}!clamp@{clamp}}
+\index{clamp@{clamp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{clamp()}{clamp()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Vec2\+::clamp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{min,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clamps the specified vector within the specified range and returns it in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to clamp. \\
+\hline
+{\em min} & The minimum value. \\
+\hline
+{\em max} & The maximum value. \\
+\hline
+{\em dst} & A vector to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}\label{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}} 
+\index{Vec2@{Vec2}!comp\+Op@{comp\+Op}}
+\index{comp\+Op@{comp\+Op}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{comp\+Op()}{compOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::comp\+Op (\begin{DoxyParamCaption}\item[{std\+::function$<$ float(float)$>$}]{function }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Run a math operation function on each point component absf, floorf, ceilf, roundf any function that has the signature\+: float func(float); For example\+: let\textquotesingle{}s try to take the floor of x,y p.\+comp\+Op(floorf); \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}\label{classVec2_a50a6f35ecf43481fc94a1c5a3fcd62d9}} 
+\index{Vec2@{Vec2}!comp\+Op@{comp\+Op}}
+\index{comp\+Op@{comp\+Op}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{comp\+Op()}{compOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::comp\+Op (\begin{DoxyParamCaption}\item[{std\+::function$<$ float(float)$>$}]{function }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Run a math operation function on each point component absf, floorf, ceilf, roundf any function that has the signature\+: float func(float); For example\+: let\textquotesingle{}s try to take the floor of x,y p.\+comp\+Op(floorf); \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}\label{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}} 
+\index{Vec2@{Vec2}!cross@{cross}}
+\index{cross@{cross}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{cross()}{cross()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::cross (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates cross product of two points. \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}\label{classVec2_a4ff58f0ee9e2c3e7432407f256fade58}} 
+\index{Vec2@{Vec2}!cross@{cross}}
+\index{cross@{cross}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{cross()}{cross()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::cross (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates cross product of two points. \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a95cf4ec6593042a5c19186828f53d146}\label{classVec2_a95cf4ec6593042a5c19186828f53d146}} 
+\index{Vec2@{Vec2}!distance@{distance}}
+\index{distance@{distance}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{distance()}{distance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::distance (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const}
+
+Returns the distance between this vector and v.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between this vector and v.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}{distance\+Squared} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a95cf4ec6593042a5c19186828f53d146}\label{classVec2_a95cf4ec6593042a5c19186828f53d146}} 
+\index{Vec2@{Vec2}!distance@{distance}}
+\index{distance@{distance}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{distance()}{distance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::distance (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const}
+
+Returns the distance between this vector and v.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between this vector and v.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}{distance\+Squared} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}\label{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}} 
+\index{Vec2@{Vec2}!distance\+Squared@{distance\+Squared}}
+\index{distance\+Squared@{distance\+Squared}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{distance\+Squared()}{distanceSquared()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::distance\+Squared (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the squared distance between this vector and v.
+
+When it is not necessary to get the exact distance between two vectors (for example, when simply comparing the distance between different vectors), it is advised to use this method instead of distance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The squared distance between this vector and v.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a95cf4ec6593042a5c19186828f53d146}{distance} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}\label{classVec2_a5bf11958886ffb9d406a7d4e7eae4237}} 
+\index{Vec2@{Vec2}!distance\+Squared@{distance\+Squared}}
+\index{distance\+Squared@{distance\+Squared}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{distance\+Squared()}{distanceSquared()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::distance\+Squared (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the squared distance between this vector and v.
+
+When it is not necessary to get the exact distance between two vectors (for example, when simply comparing the distance between different vectors), it is advised to use this method instead of distance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The squared distance between this vector and v.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a95cf4ec6593042a5c19186828f53d146}{distance} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a0077f35f41e7499847b5332a0ce42438}\label{classVec2_a0077f35f41e7499847b5332a0ce42438}} 
+\index{Vec2@{Vec2}!dot@{dot}}
+\index{dot@{dot}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily float Vec2\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the dot product of this vector and the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compute the dot product with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ab2482a8fb50ff53c53ac024a899dad44}\label{classVec2_ab2482a8fb50ff53c53ac024a899dad44}} 
+\index{Vec2@{Vec2}!dot@{dot}}
+\index{dot@{dot}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static float Vec2\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the dot product between the specified vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product between the vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a0077f35f41e7499847b5332a0ce42438}\label{classVec2_a0077f35f41e7499847b5332a0ce42438}} 
+\index{Vec2@{Vec2}!dot@{dot}}
+\index{dot@{dot}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily float Vec2\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the dot product of this vector and the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compute the dot product with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a399b823d9d25949b107850080a5f8653}\label{classVec2_a399b823d9d25949b107850080a5f8653}} 
+\index{Vec2@{Vec2}!dot@{dot}}
+\index{dot@{dot}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily float Vec2\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the dot product between the specified vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product between the vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a56fd3f594c7532a7ba84ea3473257671}\label{classVec2_a56fd3f594c7532a7ba84ea3473257671}} 
+\index{Vec2@{Vec2}!equals@{equals}}
+\index{equals@{equals}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target }\end{DoxyParamCaption}) const}
+
+NA \mbox{\Hypertarget{classVec2_a56fd3f594c7532a7ba84ea3473257671}\label{classVec2_a56fd3f594c7532a7ba84ea3473257671}} 
+\index{Vec2@{Vec2}!equals@{equals}}
+\index{equals@{equals}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target }\end{DoxyParamCaption}) const}
+
+NA \mbox{\Hypertarget{classVec2_aba30a4b093635bdd1fa4e329e93455d9}\label{classVec2_aba30a4b093635bdd1fa4e329e93455d9}} 
+\index{Vec2@{Vec2}!for\+Angle@{for\+Angle}}
+\index{for\+Angle@{for\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{for\+Angle()}{forAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classVec2}{Vec2} Vec2\+::for\+Angle (\begin{DoxyParamCaption}\item[{const float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+NA  NA \mbox{\Hypertarget{classVec2_aba30a4b093635bdd1fa4e329e93455d9}\label{classVec2_aba30a4b093635bdd1fa4e329e93455d9}} 
+\index{Vec2@{Vec2}!for\+Angle@{for\+Angle}}
+\index{for\+Angle@{for\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{for\+Angle()}{forAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classVec2}{Vec2} Vec2\+::for\+Angle (\begin{DoxyParamCaption}\item[{const float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+NA  NA \mbox{\Hypertarget{classVec2_a5ac04604789866d317ade8f4579b37a9}\label{classVec2_a5ac04604789866d317ade8f4579b37a9}} 
+\index{Vec2@{Vec2}!fuzzy\+Equals@{fuzzy\+Equals}}
+\index{fuzzy\+Equals@{fuzzy\+Equals}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{fuzzy\+Equals()}{fuzzyEquals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::fuzzy\+Equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target,  }\item[{float}]{variance }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+if points have fuzzy equality which means equal with some degree of variance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a5ac04604789866d317ade8f4579b37a9}\label{classVec2_a5ac04604789866d317ade8f4579b37a9}} 
+\index{Vec2@{Vec2}!fuzzy\+Equals@{fuzzy\+Equals}}
+\index{fuzzy\+Equals@{fuzzy\+Equals}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{fuzzy\+Equals()}{fuzzyEquals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::fuzzy\+Equals (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target,  }\item[{float}]{variance }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+if points have fuzzy equality which means equal with some degree of variance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_aaca24d4a0550be8892c4d84c7b37e027}\label{classVec2_aaca24d4a0550be8892c4d84c7b37e027}} 
+\index{Vec2@{Vec2}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the angle in radians between this vector and the x axis 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a94017db9e730f5935efa27aee1bf7df7}\label{classVec2_a94017db9e730f5935efa27aee1bf7df7}} 
+\index{Vec2@{Vec2}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the angle in radians between two vector directions 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_aaca24d4a0550be8892c4d84c7b37e027}\label{classVec2_aaca24d4a0550be8892c4d84c7b37e027}} 
+\index{Vec2@{Vec2}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the angle in radians between this vector and the x axis 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a94017db9e730f5935efa27aee1bf7df7}\label{classVec2_a94017db9e730f5935efa27aee1bf7df7}} 
+\index{Vec2@{Vec2}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the angle in radians between two vector directions 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_aa51d29f01d1826b236669a718569ffd2}\label{classVec2_aa51d29f01d1826b236669a718569ffd2}} 
+\index{Vec2@{Vec2}!get\+Clamp\+Point@{get\+Clamp\+Point}}
+\index{get\+Clamp\+Point@{get\+Clamp\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Clamp\+Point()}{getClampPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Clamp\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{min\+\_\+inclusive,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max\+\_\+inclusive }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clamp a point between from and to. \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_aa51d29f01d1826b236669a718569ffd2}\label{classVec2_aa51d29f01d1826b236669a718569ffd2}} 
+\index{Vec2@{Vec2}!get\+Clamp\+Point@{get\+Clamp\+Point}}
+\index{get\+Clamp\+Point@{get\+Clamp\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Clamp\+Point()}{getClampPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Clamp\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{min\+\_\+inclusive,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{max\+\_\+inclusive }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clamp a point between from and to. \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a44c9c4de94d07758f73195088788ded4}\label{classVec2_a44c9c4de94d07758f73195088788ded4}} 
+\index{Vec2@{Vec2}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the distance between two points \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a44c9c4de94d07758f73195088788ded4}\label{classVec2_a44c9c4de94d07758f73195088788ded4}} 
+\index{Vec2@{Vec2}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the distance between two points \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a5f2fee415aa806bdaad99e984cc991eb}\label{classVec2_a5f2fee415aa806bdaad99e984cc991eb}} 
+\index{Vec2@{Vec2}!get\+Distance\+Sq@{get\+Distance\+Sq}}
+\index{get\+Distance\+Sq@{get\+Distance\+Sq}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Distance\+Sq()}{getDistanceSq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Distance\+Sq (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the square distance between two points (not calling sqrt() ) \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a5f2fee415aa806bdaad99e984cc991eb}\label{classVec2_a5f2fee415aa806bdaad99e984cc991eb}} 
+\index{Vec2@{Vec2}!get\+Distance\+Sq@{get\+Distance\+Sq}}
+\index{get\+Distance\+Sq@{get\+Distance\+Sq}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Distance\+Sq()}{getDistanceSq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Distance\+Sq (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the square distance between two points (not calling sqrt() ) \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a6b7881ab13c3e0336ef1f77340df8b86}\label{classVec2_a6b7881ab13c3e0336ef1f77340df8b86}} 
+\index{Vec2@{Vec2}!get\+Intersect\+Point@{get\+Intersect\+Point}}
+\index{get\+Intersect\+Point@{get\+Intersect\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Intersect\+Point()}{getIntersectPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classVec2}{Vec2} Vec2\+::get\+Intersect\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns the intersection point of line A-\/B, C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ac0ffe8d77f93b1d6fa13d786d079f382}\label{classVec2_ac0ffe8d77f93b1d6fa13d786d079f382}} 
+\index{Vec2@{Vec2}!get\+Intersect\+Point@{get\+Intersect\+Point}}
+\index{get\+Intersect\+Point@{get\+Intersect\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Intersect\+Point()}{getIntersectPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Intersect\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns the intersection point of line A-\/B, C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ae486d0799b31a9831eef5a35164a4846}\label{classVec2_ae486d0799b31a9831eef5a35164a4846}} 
+\index{Vec2@{Vec2}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Length()}{getLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates distance between point an origin \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ae486d0799b31a9831eef5a35164a4846}\label{classVec2_ae486d0799b31a9831eef5a35164a4846}} 
+\index{Vec2@{Vec2}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Length()}{getLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates distance between point an origin \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a0b3f546ad8db551b9428d147318aee34}\label{classVec2_a0b3f546ad8db551b9428d147318aee34}} 
+\index{Vec2@{Vec2}!get\+Length\+Sq@{get\+Length\+Sq}}
+\index{get\+Length\+Sq@{get\+Length\+Sq}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Length\+Sq()}{getLengthSq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Length\+Sq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the square length of a \hyperlink{classVec2}{Vec2} (not calling sqrt() ) \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a0b3f546ad8db551b9428d147318aee34}\label{classVec2_a0b3f546ad8db551b9428d147318aee34}} 
+\index{Vec2@{Vec2}!get\+Length\+Sq@{get\+Length\+Sq}}
+\index{get\+Length\+Sq@{get\+Length\+Sq}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Length\+Sq()}{getLengthSq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::get\+Length\+Sq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the square length of a \hyperlink{classVec2}{Vec2} (not calling sqrt() ) \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}\label{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}} 
+\index{Vec2@{Vec2}!get\+Midpoint@{get\+Midpoint}}
+\index{get\+Midpoint@{get\+Midpoint}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Midpoint()}{getMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Midpoint (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates midpoint between two points. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}\label{classVec2_ab4a3e36ded233d2b3b3f2a6a3ff9ca2c}} 
+\index{Vec2@{Vec2}!get\+Midpoint@{get\+Midpoint}}
+\index{get\+Midpoint@{get\+Midpoint}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Midpoint()}{getMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Midpoint (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates midpoint between two points. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a1bcbcc58d94b67c58718f2415afad1be}\label{classVec2_a1bcbcc58d94b67c58718f2415afad1be}} 
+\index{Vec2@{Vec2}!get\+Normalized@{get\+Normalized}}
+\index{get\+Normalized@{get\+Normalized}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Normalized()}{getNormalized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the normalized vector. \mbox{\Hypertarget{classVec2_a1bcbcc58d94b67c58718f2415afad1be}\label{classVec2_a1bcbcc58d94b67c58718f2415afad1be}} 
+\index{Vec2@{Vec2}!get\+Normalized@{get\+Normalized}}
+\index{get\+Normalized@{get\+Normalized}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Normalized()}{getNormalized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Normalized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the normalized vector. \mbox{\Hypertarget{classVec2_a0b6b1c97713d11486dc898aa203f1a72}\label{classVec2_a0b6b1c97713d11486dc898aa203f1a72}} 
+\index{Vec2@{Vec2}!get\+Perp@{get\+Perp}}
+\index{get\+Perp@{get\+Perp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Perp()}{getPerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Perp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates perpendicular of v, rotated 90 degrees counter-\/clockwise -- cross(v, perp(v)) $>$= 0 \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a0b6b1c97713d11486dc898aa203f1a72}\label{classVec2_a0b6b1c97713d11486dc898aa203f1a72}} 
+\index{Vec2@{Vec2}!get\+Perp@{get\+Perp}}
+\index{get\+Perp@{get\+Perp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+Perp()}{getPerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+Perp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates perpendicular of v, rotated 90 degrees counter-\/clockwise -- cross(v, perp(v)) $>$= 0 \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a3ae57753954a59e57d1ddaaa76b57485}\label{classVec2_a3ae57753954a59e57d1ddaaa76b57485}} 
+\index{Vec2@{Vec2}!get\+R\+Perp@{get\+R\+Perp}}
+\index{get\+R\+Perp@{get\+R\+Perp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+R\+Perp()}{getRPerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+R\+Perp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates perpendicular of v, rotated 90 degrees clockwise -- cross(v, rperp(v)) $<$= 0 \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a3ae57753954a59e57d1ddaaa76b57485}\label{classVec2_a3ae57753954a59e57d1ddaaa76b57485}} 
+\index{Vec2@{Vec2}!get\+R\+Perp@{get\+R\+Perp}}
+\index{get\+R\+Perp@{get\+R\+Perp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{get\+R\+Perp()}{getRPerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::get\+R\+Perp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates perpendicular of v, rotated 90 degrees clockwise -- cross(v, rperp(v)) $<$= 0 \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_af2a542c6d0f65a8ba71ea1480d19d214}\label{classVec2_af2a542c6d0f65a8ba71ea1480d19d214}} 
+\index{Vec2@{Vec2}!is\+Line\+Intersect@{is\+Line\+Intersect}}
+\index{is\+Line\+Intersect@{is\+Line\+Intersect}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Intersect()}{isLineIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Vec2\+::is\+Line\+Intersect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D,  }\item[{float $\ast$}]{S = {\ttfamily nullptr},  }\item[{float $\ast$}]{T = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A general line-\/line intersection test 
+\begin{DoxyParams}{Parameters}
+{\em A} & the startpoint for the first line L1 = (A -\/ B) \\
+\hline
+{\em B} & the endpoint for the first line L1 = (A -\/ B) \\
+\hline
+{\em C} & the startpoint for the second line L2 = (C -\/ D) \\
+\hline
+{\em D} & the endpoint for the second line L2 = (C -\/ D) \\
+\hline
+{\em S} & the range for a hitpoint in L1 (p = A + S$\ast$(B -\/ A)) \\
+\hline
+{\em T} & the range for a hitpoint in L2 (p = C + T$\ast$(D -\/ C)) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether these two lines intersects.
+\end{DoxyReturn}
+Note that to truly test intersection for segments we have to make sure that S \& T lie within \mbox{[}0..1\mbox{]} and for rays, make sure S \& T $>$ 0 the hit point is C + T $\ast$ (D -\/ C); the hit point also is A + S $\ast$ (B -\/ A); \begin{DoxySince}{Since}
+3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a04a88c3bcc6d5ecea1eaa75b59a62ae0}\label{classVec2_a04a88c3bcc6d5ecea1eaa75b59a62ae0}} 
+\index{Vec2@{Vec2}!is\+Line\+Intersect@{is\+Line\+Intersect}}
+\index{is\+Line\+Intersect@{is\+Line\+Intersect}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Intersect()}{isLineIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Line\+Intersect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D,  }\item[{float $\ast$}]{S = {\ttfamily nullptr},  }\item[{float $\ast$}]{T = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A general line-\/line intersection test 
+\begin{DoxyParams}{Parameters}
+{\em A} & the startpoint for the first line L1 = (A -\/ B) \\
+\hline
+{\em B} & the endpoint for the first line L1 = (A -\/ B) \\
+\hline
+{\em C} & the startpoint for the second line L2 = (C -\/ D) \\
+\hline
+{\em D} & the endpoint for the second line L2 = (C -\/ D) \\
+\hline
+{\em S} & the range for a hitpoint in L1 (p = A + S$\ast$(B -\/ A)) \\
+\hline
+{\em T} & the range for a hitpoint in L2 (p = C + T$\ast$(D -\/ C)) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether these two lines intersects.
+\end{DoxyReturn}
+Note that to truly test intersection for segments we have to make sure that S \& T lie within \mbox{[}0..1\mbox{]} and for rays, make sure S \& T $>$ 0 the hit point is C + T $\ast$ (D -\/ C); the hit point also is A + S $\ast$ (B -\/ A); \begin{DoxySince}{Since}
+3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a56a8da20b34addc4bf717064f8ecc415}\label{classVec2_a56a8da20b34addc4bf717064f8ecc415}} 
+\index{Vec2@{Vec2}!is\+Line\+Overlap@{is\+Line\+Overlap}}
+\index{is\+Line\+Overlap@{is\+Line\+Overlap}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Overlap()}{isLineOverlap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Vec2\+::is\+Line\+Overlap (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Line A-\/B overlap with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a658e44470389d83f72cfdf5c91718605}\label{classVec2_a658e44470389d83f72cfdf5c91718605}} 
+\index{Vec2@{Vec2}!is\+Line\+Overlap@{is\+Line\+Overlap}}
+\index{is\+Line\+Overlap@{is\+Line\+Overlap}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Overlap()}{isLineOverlap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Line\+Overlap (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Line A-\/B overlap with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ac526f6ebee4db5f43652b83a3c57ddc5}\label{classVec2_ac526f6ebee4db5f43652b83a3c57ddc5}} 
+\index{Vec2@{Vec2}!is\+Line\+Parallel@{is\+Line\+Parallel}}
+\index{is\+Line\+Parallel@{is\+Line\+Parallel}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Parallel()}{isLineParallel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Vec2\+::is\+Line\+Parallel (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Line A-\/B parallel with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a2fba06dc07b152f9a2efd2687c257035}\label{classVec2_a2fba06dc07b152f9a2efd2687c257035}} 
+\index{Vec2@{Vec2}!is\+Line\+Parallel@{is\+Line\+Parallel}}
+\index{is\+Line\+Parallel@{is\+Line\+Parallel}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Line\+Parallel()}{isLineParallel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Line\+Parallel (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Line A-\/B parallel with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}\label{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}} 
+\index{Vec2@{Vec2}!is\+One@{is\+One}}
+\index{is\+One@{is\+One}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+One()}{isOne()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+One (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether this vector contains all ones.
+
+\begin{DoxyReturn}{Returns}
+true if this vector contains all ones, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}\label{classVec2_a3fad8b882142f8e96c4b50a2a8c5d1a6}} 
+\index{Vec2@{Vec2}!is\+One@{is\+One}}
+\index{is\+One@{is\+One}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+One()}{isOne()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+One (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether this vector contains all ones.
+
+\begin{DoxyReturn}{Returns}
+true if this vector contains all ones, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a8c71387fe5009ce9d7c53aa705cd2e3b}\label{classVec2_a8c71387fe5009ce9d7c53aa705cd2e3b}} 
+\index{Vec2@{Vec2}!is\+Segment\+Intersect@{is\+Segment\+Intersect}}
+\index{is\+Segment\+Intersect@{is\+Segment\+Intersect}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Segment\+Intersect()}{isSegmentIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Vec2\+::is\+Segment\+Intersect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Segment A-\/B intersects with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a2f6e61e0994a71c17e6ba614e1d81c06}\label{classVec2_a2f6e61e0994a71c17e6ba614e1d81c06}} 
+\index{Vec2@{Vec2}!is\+Segment\+Intersect@{is\+Segment\+Intersect}}
+\index{is\+Segment\+Intersect@{is\+Segment\+Intersect}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Segment\+Intersect()}{isSegmentIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Segment\+Intersect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Segment A-\/B intersects with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a28c2d3ea6d0012ef5d41b024e91462ed}\label{classVec2_a28c2d3ea6d0012ef5d41b024e91462ed}} 
+\index{Vec2@{Vec2}!is\+Segment\+Overlap@{is\+Segment\+Overlap}}
+\index{is\+Segment\+Overlap@{is\+Segment\+Overlap}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Segment\+Overlap()}{isSegmentOverlap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Vec2\+::is\+Segment\+Overlap (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{S = {\ttfamily nullptr},  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{E = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Segment A-\/B overlap with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a99d2d2f5edf75476ba538ca19f2fb543}\label{classVec2_a99d2d2f5edf75476ba538ca19f2fb543}} 
+\index{Vec2@{Vec2}!is\+Segment\+Overlap@{is\+Segment\+Overlap}}
+\index{is\+Segment\+Overlap@{is\+Segment\+Overlap}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Segment\+Overlap()}{isSegmentOverlap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Segment\+Overlap (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{A,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{B,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{C,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{D,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{S = {\ttfamily nullptr},  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{E = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns true if Segment A-\/B overlap with segment C-\/D \begin{DoxySince}{Since}
+v3.\+0  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ad399155b1760c192c1afafdb5d7ccea3}\label{classVec2_ad399155b1760c192c1afafdb5d7ccea3}} 
+\index{Vec2@{Vec2}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Zero()}{isZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether this vector contains all zeros.
+
+\begin{DoxyReturn}{Returns}
+true if this vector contains all zeros, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ad399155b1760c192c1afafdb5d7ccea3}\label{classVec2_ad399155b1760c192c1afafdb5d7ccea3}} 
+\index{Vec2@{Vec2}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{is\+Zero()}{isZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether this vector contains all zeros.
+
+\begin{DoxyReturn}{Returns}
+true if this vector contains all zeros, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}\label{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}} 
+\index{Vec2@{Vec2}!length@{length}}
+\index{length@{length}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Computes the length of this vector.
+
+\begin{DoxyReturn}{Returns}
+The length of the vector.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a5dbc5e767907b2e217060479c52777bb}{length\+Squared} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}\label{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}} 
+\index{Vec2@{Vec2}!length@{length}}
+\index{length@{length}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Computes the length of this vector.
+
+\begin{DoxyReturn}{Returns}
+The length of the vector.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_a5dbc5e767907b2e217060479c52777bb}{length\+Squared} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a5dbc5e767907b2e217060479c52777bb}\label{classVec2_a5dbc5e767907b2e217060479c52777bb}} 
+\index{Vec2@{Vec2}!length\+Squared@{length\+Squared}}
+\index{length\+Squared@{length\+Squared}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{length\+Squared()}{lengthSquared()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Vec2\+::length\+Squared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the squared length of this vector.
+
+When it is not necessary to get the exact length of a vector (for example, when simply comparing the lengths of different vectors), it is advised to use this method instead of length.
+
+\begin{DoxyReturn}{Returns}
+The squared length of the vector.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}{length} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_a5dbc5e767907b2e217060479c52777bb}\label{classVec2_a5dbc5e767907b2e217060479c52777bb}} 
+\index{Vec2@{Vec2}!length\+Squared@{length\+Squared}}
+\index{length\+Squared@{length\+Squared}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{length\+Squared()}{lengthSquared()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Vec2\+::length\+Squared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the squared length of this vector.
+
+When it is not necessary to get the exact length of a vector (for example, when simply comparing the lengths of different vectors), it is advised to use this method instead of length.
+
+\begin{DoxyReturn}{Returns}
+The squared length of the vector.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classVec2_af9ebf7c8888fd5df9514e6d519b99fb2}{length} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}\label{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}} 
+\index{Vec2@{Vec2}!lerp@{lerp}}
+\index{lerp@{lerp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::lerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other,  }\item[{float}]{alpha }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Linear Interpolation between two points a and b \begin{DoxyReturn}{Returns}
+alpha == 0 ? a alpha == 1 ? b otherwise a value between a..b 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}\label{classVec2_ac0076d01a5bbbaa5718257c24ee93e06}} 
+\index{Vec2@{Vec2}!lerp@{lerp}}
+\index{lerp@{lerp}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::lerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other,  }\item[{float}]{alpha }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Linear Interpolation between two points a and b \begin{DoxyReturn}{Returns}
+alpha == 0 ? a alpha == 1 ? b otherwise a value between a..b 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a26074525e995a2085bd63d9a146f2e33}\label{classVec2_a26074525e995a2085bd63d9a146f2e33}} 
+\index{Vec2@{Vec2}!negate@{negate}}
+\index{negate@{negate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vec2\+::negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Negates this vector. \mbox{\Hypertarget{classVec2_a26074525e995a2085bd63d9a146f2e33}\label{classVec2_a26074525e995a2085bd63d9a146f2e33}} 
+\index{Vec2@{Vec2}!negate@{negate}}
+\index{negate@{negate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vec2\+::negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Negates this vector. \mbox{\Hypertarget{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}\label{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}} 
+\index{Vec2@{Vec2}!normalize@{normalize}}
+\index{normalize@{normalize}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vec2\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Normalizes this vector.
+
+This method normalizes this \hyperlink{classVec2}{Vec2} so that it is of unit length (in other words, the length of the vector after calling this method will be 1.\+0f). If the vector already has unit length or if the length of the vector is zero, this method does nothing.
+
+\begin{DoxyReturn}{Returns}
+This vector, after the normalization occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}\label{classVec2_aa0b240c09b19c98d2d2fe462aca478cd}} 
+\index{Vec2@{Vec2}!normalize@{normalize}}
+\index{normalize@{normalize}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vec2\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Normalizes this vector.
+
+This method normalizes this \hyperlink{classVec2}{Vec2} so that it is of unit length (in other words, the length of the vector after calling this method will be 1.\+0f). If the vector already has unit length or if the length of the vector is zero, this method does nothing.
+
+\begin{DoxyReturn}{Returns}
+This vector, after the normalization occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}\label{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}} 
+\index{Vec2@{Vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is not equal to the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is not equal to the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}\label{classVec2_a7d0cfd297b55abcb15ff1137cde32edd}} 
+\index{Vec2@{Vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is not equal to the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is not equal to the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_aac30b50a35381a11b76b89ea19dc7f12}\label{classVec2_aac30b50a35381a11b76b89ea19dc7f12}} 
+\index{Vec2@{Vec2}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the scalar product of this vector with the given value.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value to scale by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_aac30b50a35381a11b76b89ea19dc7f12}\label{classVec2_aac30b50a35381a11b76b89ea19dc7f12}} 
+\index{Vec2@{Vec2}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the scalar product of this vector with the given value.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value to scale by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a579a80f68497014e300b45b9824998a1}\label{classVec2_a579a80f68497014e300b45b9824998a1}} 
+\index{Vec2@{Vec2}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2}\& Vec2\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales this vector by the given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value to scale by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the scale occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a9ab811215385bea7bb254b12cc9665af}\label{classVec2_a9ab811215385bea7bb254b12cc9665af}} 
+\index{Vec2@{Vec2}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} \& Vec2\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales this vector by the given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value to scale by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the scale occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ad2383d77974a8092b149391c2edce7fd}\label{classVec2_ad2383d77974a8092b149391c2edce7fd}} 
+\index{Vec2@{Vec2}!operator+@{operator+}}
+\index{operator+@{operator+}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this vector with the given vector.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ad2383d77974a8092b149391c2edce7fd}\label{classVec2_ad2383d77974a8092b149391c2edce7fd}} 
+\index{Vec2@{Vec2}!operator+@{operator+}}
+\index{operator+@{operator+}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this vector with the given vector.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a7f062667506f94bc207bdf492ca5b89c}\label{classVec2_a7f062667506f94bc207bdf492ca5b89c}} 
+\index{Vec2@{Vec2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2}\& Vec2\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the given vector to this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the addition occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ae19f0fad92bf57a440b0367a1a71acd2}\label{classVec2_ae19f0fad92bf57a440b0367a1a71acd2}} 
+\index{Vec2@{Vec2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} \& Vec2\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the given vector to this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the addition occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_afea5a75f39e0db3d893aa56f11e90a60}\label{classVec2_afea5a75f39e0db3d893aa56f11e90a60}} 
+\index{Vec2@{Vec2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this vector with the given vector.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_afea5a75f39e0db3d893aa56f11e90a60}\label{classVec2_afea5a75f39e0db3d893aa56f11e90a60}} 
+\index{Vec2@{Vec2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this vector with the given vector.
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}\label{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}} 
+\index{Vec2@{Vec2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the negation of this vector.
+
+Note\+: this does not modify this vector.
+
+\begin{DoxyReturn}{Returns}
+The negation of this vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}\label{classVec2_ae96b9fc7ac393b36eae80d141d9f8819}} 
+\index{Vec2@{Vec2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the negation of this vector.
+
+Note\+: this does not modify this vector.
+
+\begin{DoxyReturn}{Returns}
+The negation of this vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_af4a567f4055cde891fa22a17c8a3dccc}\label{classVec2_af4a567f4055cde891fa22a17c8a3dccc}} 
+\index{Vec2@{Vec2}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2}\& Vec2\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts the given vector from this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the subtraction occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a8be0266d41d4ee2f550a4e36e6f4b364}\label{classVec2_a8be0266d41d4ee2f550a4e36e6f4b364}} 
+\index{Vec2@{Vec2}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} \& Vec2\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts the given vector from this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector, after the subtraction occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a30794ad88645e3d0279e8253e4355e8d}\label{classVec2_a30794ad88645e3d0279e8253e4355e8d}} 
+\index{Vec2@{Vec2}!operator/@{operator/}}
+\index{operator/@{operator/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator/ (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the components of this vector divided by the given constant
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the constant to divide this vector with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smaller vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a30794ad88645e3d0279e8253e4355e8d}\label{classVec2_a30794ad88645e3d0279e8253e4355e8d}} 
+\index{Vec2@{Vec2}!operator/@{operator/}}
+\index{operator/@{operator/}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::operator/ (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the components of this vector divided by the given constant
+
+Note\+: this does not modify this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the constant to divide this vector with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smaller vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_aad24b95fb51746343f06c504a7a05681}\label{classVec2_aad24b95fb51746343f06c504a7a05681}} 
+\index{Vec2@{Vec2}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is less than the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is less than the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_aad24b95fb51746343f06c504a7a05681}\label{classVec2_aad24b95fb51746343f06c504a7a05681}} 
+\index{Vec2@{Vec2}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is less than the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is less than the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}\label{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}} 
+\index{Vec2@{Vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is equal to the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is equal to the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}\label{classVec2_a08e7dcf7a04bd18d56d41dc03104ba64}} 
+\index{Vec2@{Vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is equal to the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is equal to the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}\label{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}} 
+\index{Vec2@{Vec2}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is greater than the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is greater than the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}\label{classVec2_a40d9c6d4290844d86f27cb76fb8a3556}} 
+\index{Vec2@{Vec2}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vec2\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines if this vector is greater than the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vector is greater than the given vector, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVec2_ad1fc26536c25f01208a26e769c980b8d}\label{classVec2_ad1fc26536c25f01208a26e769c980b8d}} 
+\index{Vec2@{Vec2}!project@{project}}
+\index{project@{project}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{project()}{project()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::project (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the projection of this over other. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ad1fc26536c25f01208a26e769c980b8d}\label{classVec2_ad1fc26536c25f01208a26e769c980b8d}} 
+\index{Vec2@{Vec2}!project@{project}}
+\index{project@{project}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{project()}{project()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::project (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the projection of this over other. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_acb4191c1852c73801734d10386722ccf}\label{classVec2_acb4191c1852c73801734d10386722ccf}} 
+\index{Vec2@{Vec2}!rotate@{rotate}}
+\index{rotate@{rotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Vec2\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Rotates this vector by angle (specified in radians) around the given point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to rotate around. \\
+\hline
+{\em angle} & The angle to rotate by (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_acb4191c1852c73801734d10386722ccf}\label{classVec2_acb4191c1852c73801734d10386722ccf}} 
+\index{Vec2@{Vec2}!rotate@{rotate}}
+\index{rotate@{rotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Vec2\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Rotates this vector by angle (specified in radians) around the given point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to rotate around. \\
+\hline
+{\em angle} & The angle to rotate by (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}\label{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}} 
+\index{Vec2@{Vec2}!rotate@{rotate}}
+\index{rotate@{rotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Complex multiplication of two points (\char`\"{}rotates\char`\"{} two points). \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} vector with an angle of this.\+get\+Angle() + other.\+get\+Angle(), and a length of this.\+get\+Length() $\ast$ other.\+get\+Length(). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}\label{classVec2_a992d4d9ea1c60c30d7a21b8c1f003dcc}} 
+\index{Vec2@{Vec2}!rotate@{rotate}}
+\index{rotate@{rotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Complex multiplication of two points (\char`\"{}rotates\char`\"{} two points). \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} vector with an angle of this.\+get\+Angle() + other.\+get\+Angle(), and a length of this.\+get\+Length() $\ast$ other.\+get\+Length(). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}\label{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}} 
+\index{Vec2@{Vec2}!rotate\+By\+Angle@{rotate\+By\+Angle}}
+\index{rotate\+By\+Angle@{rotate\+By\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate\+By\+Angle()}{rotateByAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::rotate\+By\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pivot,  }\item[{float}]{angle }\end{DoxyParamCaption}) const}
+
+Rotates a point counter clockwise by the angle around a pivot 
+\begin{DoxyParams}{Parameters}
+{\em pivot} & is the pivot, naturally \\
+\hline
+{\em angle} & is the angle of rotation ccw in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotated point 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}\label{classVec2_a1819c9ccc8f632bf0efbd36d0e890ce0}} 
+\index{Vec2@{Vec2}!rotate\+By\+Angle@{rotate\+By\+Angle}}
+\index{rotate\+By\+Angle@{rotate\+By\+Angle}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{rotate\+By\+Angle()}{rotateByAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::rotate\+By\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pivot,  }\item[{float}]{angle }\end{DoxyParamCaption}) const}
+
+Rotates a point counter clockwise by the angle around a pivot 
+\begin{DoxyParams}{Parameters}
+{\em pivot} & is the pivot, naturally \\
+\hline
+{\em angle} & is the angle of rotation ccw in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotated point 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_a67d98d1e2261ae9369bd79c337187cd8}\label{classVec2_a67d98d1e2261ae9369bd79c337187cd8}} 
+\index{Vec2@{Vec2}!scale@{scale}}
+\index{scale@{scale}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Vec2\+::scale (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales all elements of this vector by the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_ae2c74b30190869c962302065cfeecf8c}\label{classVec2_ae2c74b30190869c962302065cfeecf8c}} 
+\index{Vec2@{Vec2}!scale@{scale}}
+\index{scale@{scale}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Vec2\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales each element of this vector by the matching component of scale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The vector to scale by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a67d98d1e2261ae9369bd79c337187cd8}\label{classVec2_a67d98d1e2261ae9369bd79c337187cd8}} 
+\index{Vec2@{Vec2}!scale@{scale}}
+\index{scale@{scale}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Vec2\+::scale (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales all elements of this vector by the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_ae2c74b30190869c962302065cfeecf8c}\label{classVec2_ae2c74b30190869c962302065cfeecf8c}} 
+\index{Vec2@{Vec2}!scale@{scale}}
+\index{scale@{scale}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Vec2\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Scales each element of this vector by the matching component of scale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The vector to scale by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a74b21ca56da0a8db13168c627929ffd0}\label{classVec2_a74b21ca56da0a8db13168c627929ffd0}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The new x coordinate. \\
+\hline
+{\em yy} & The new y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a492bf35fe6975aebe475519f21d86364}\label{classVec2_a492bf35fe6975aebe475519f21d86364}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Sets the elements of this vector from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the vector in the order x, y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a74b21ca56da0a8db13168c627929ffd0}\label{classVec2_a74b21ca56da0a8db13168c627929ffd0}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xx} & The new x coordinate. \\
+\hline
+{\em yy} & The new y coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}\label{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to those in the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a492bf35fe6975aebe475519f21d86364}\label{classVec2_a492bf35fe6975aebe475519f21d86364}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const float $\ast$}]{array }\end{DoxyParamCaption})}
+
+Sets the elements of this vector from the values in the specified array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array containing the elements of the vector in the order x, y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a4e76b9c6df8c81a4035107961d670caf}\label{classVec2_a4e76b9c6df8c81a4035107961d670caf}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets this vector to the directional vector between the specified points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}\label{classVec2_a2c4e29e470c177b19c8f2ccaee8d6185}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to those in the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a4e76b9c6df8c81a4035107961d670caf}\label{classVec2_a4e76b9c6df8c81a4035107961d670caf}} 
+\index{Vec2@{Vec2}!set@{set}}
+\index{set@{set}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void Vec2\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets this vector to the directional vector between the specified points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}\label{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}} 
+\index{Vec2@{Vec2}!set\+Point@{set\+Point}}
+\index{set\+Point@{set\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set\+Point()}{setPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vec2\+::set\+Point (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}\label{classVec2_a3bfb9fcb76dde6c03534f94906bb33fc}} 
+\index{Vec2@{Vec2}!set\+Point@{set\+Point}}
+\index{set\+Point@{set\+Point}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set\+Point()}{setPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vec2\+::set\+Point (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}\label{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}} 
+\index{Vec2@{Vec2}!set\+Zero@{set\+Zero}}
+\index{set\+Zero@{set\+Zero}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set\+Zero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vec2\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to zero. \mbox{\Hypertarget{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}\label{classVec2_aa39a7344e5af312b4aa88fdf21aa5369}} 
+\index{Vec2@{Vec2}!set\+Zero@{set\+Zero}}
+\index{set\+Zero@{set\+Zero}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{set\+Zero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vec2\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the elements of this vector to zero. \mbox{\Hypertarget{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}\label{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}} 
+\index{Vec2@{Vec2}!smooth@{smooth}}
+\index{smooth@{smooth}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vec2\+::smooth (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{response\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates this vector towards the given target using a smoothing function. The given response time determines the amount of smoothing (lag). A longer response time yields a smoother result and more lag. To force this vector to follow the target closely, provide a response time that is very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em response\+Time} & response time (in the same units as elapsed\+Time). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}\label{classVec2_a6e37c8d6604b45cc5206ea64ac2d4c77}} 
+\index{Vec2@{Vec2}!smooth@{smooth}}
+\index{smooth@{smooth}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vec2\+::smooth (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{response\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates this vector towards the given target using a smoothing function. The given response time determines the amount of smoothing (lag). A longer response time yields a smoother result and more lag. To force this vector to follow the target closely, provide a response time that is very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em response\+Time} & response time (in the same units as elapsed\+Time). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}\label{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}} 
+\index{Vec2@{Vec2}!subtract@{subtract}}
+\index{subtract@{subtract}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Vec2\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts this vector and the specified vector as (this -\/ v) and stores the result in this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a8bd709224a613e76c40223dcc873f574}\label{classVec2_a8bd709224a613e76c40223dcc873f574}} 
+\index{Vec2@{Vec2}!subtract@{subtract}}
+\index{subtract@{subtract}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Vec2\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Subtracts the specified vectors and stores the result in dst. The resulting vector is computed as (v1 -\/ v2).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector. \\
+\hline
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}\label{classVec2_a16a3531b2ccb1517fde0f43bfaf7364c}} 
+\index{Vec2@{Vec2}!subtract@{subtract}}
+\index{subtract@{subtract}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Vec2\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts this vector and the specified vector as (this -\/ v) and stores the result in this vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_a320e0720b043b46a2a921290167f1875}\label{classVec2_a320e0720b043b46a2a921290167f1875}} 
+\index{Vec2@{Vec2}!subtract@{subtract}}
+\index{subtract@{subtract}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Vec2\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{v1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{v2,  }\item[{\hyperlink{classVec2}{Vec2} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Subtracts the specified vectors and stores the result in dst. The resulting vector is computed as (v1 -\/ v2).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & The first vector. \\
+\hline
+{\em v2} & The second vector. \\
+\hline
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVec2_ac11c32b0ab0aeced26fc5264785b774a}\label{classVec2_ac11c32b0ab0aeced26fc5264785b774a}} 
+\index{Vec2@{Vec2}!unrotate@{unrotate}}
+\index{unrotate@{unrotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{unrotate()}{unrotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::unrotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unrotates two points. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} vector with an angle of this.\+get\+Angle() -\/ other.\+get\+Angle(), and a length of this.\+get\+Length() $\ast$ other.\+get\+Length(). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classVec2_ac11c32b0ab0aeced26fc5264785b774a}\label{classVec2_ac11c32b0ab0aeced26fc5264785b774a}} 
+\index{Vec2@{Vec2}!unrotate@{unrotate}}
+\index{unrotate@{unrotate}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{unrotate()}{unrotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Vec2\+::unrotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unrotates two points. \begin{DoxyReturn}{Returns}
+\hyperlink{classVec2}{Vec2} vector with an angle of this.\+get\+Angle() -\/ other.\+get\+Angle(), and a length of this.\+get\+Length() $\ast$ other.\+get\+Length(). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v2.\+1.\+4  NA  NA 
+\end{DoxySince}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVec2_ad33063675bb83f6fa1337d3d049fec3e}\label{classVec2_ad33063675bb83f6fa1337d3d049fec3e}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT}{ANCHOR\_BOTTOM\_LEFT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+L\+E\+FT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(0, 0)} \mbox{\Hypertarget{classVec2_a89dea3751d0e72f6aa959e9b727bd8f6}\label{classVec2_a89dea3751d0e72f6aa959e9b727bd8f6}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT}{ANCHOR\_BOTTOM\_RIGHT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+R\+I\+G\+HT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(1, 0)} \mbox{\Hypertarget{classVec2_acd17600fac6fc51d4a847831ed7ffa92}\label{classVec2_acd17600fac6fc51d4a847831ed7ffa92}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE}{ANCHOR\_MIDDLE}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+LE\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2}(0.\+5, 0.\+5) \mbox{\Hypertarget{classVec2_a5388b50c2923ea6aa54f4b0ab31f80ed}\label{classVec2_a5388b50c2923ea6aa54f4b0ab31f80ed}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM}{ANCHOR\_MIDDLE\_BOTTOM}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+O\+T\+T\+OM\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2}(0.\+5, 0) \mbox{\Hypertarget{classVec2_a4544bfcd8e350d7fccda1a25d8f7399b}\label{classVec2_a4544bfcd8e350d7fccda1a25d8f7399b}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT}{ANCHOR\_MIDDLE\_LEFT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+L\+E\+FT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2}(0, 0.\+5) \mbox{\Hypertarget{classVec2_af8e20f7ed236cff72c1fd159a3f033f3}\label{classVec2_af8e20f7ed236cff72c1fd159a3f033f3}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT}{ANCHOR\_MIDDLE\_RIGHT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+R\+I\+G\+HT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2}(1, 0.\+5) \mbox{\Hypertarget{classVec2_a5c840d335260ef9cf62a14b342c567ec}\label{classVec2_a5c840d335260ef9cf62a14b342c567ec}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP@{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP}{ANCHOR\_MIDDLE\_TOP}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+T\+OP\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2}(0.\+5, 1) \mbox{\Hypertarget{classVec2_ab0533215e446e0381d01bf49edd7ab7c}\label{classVec2_ab0533215e446e0381d01bf49edd7ab7c}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT@{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}{ANCHOR\_TOP\_LEFT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(0, 1)} \mbox{\Hypertarget{classVec2_a54a9b9e7162320f202595e489f2e8d02}\label{classVec2_a54a9b9e7162320f202595e489f2e8d02}} 
+\index{Vec2@{Vec2}!A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}}
+\index{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT@{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}{ANCHOR\_TOP\_RIGHT}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(1, 1)} \mbox{\Hypertarget{classVec2_a6b62ec70b5f9d4b6f78341a73b38d328}\label{classVec2_a6b62ec70b5f9d4b6f78341a73b38d328}} 
+\index{Vec2@{Vec2}!O\+NE@{O\+NE}}
+\index{O\+NE@{O\+NE}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{O\+NE}{ONE}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+O\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(1,1)} \mbox{\Hypertarget{classVec2_a27246f9cb36cc90f9b8d5abbcab43abb}\label{classVec2_a27246f9cb36cc90f9b8d5abbcab43abb}} 
+\index{Vec2@{Vec2}!U\+N\+I\+T\+\_\+X@{U\+N\+I\+T\+\_\+X}}
+\index{U\+N\+I\+T\+\_\+X@{U\+N\+I\+T\+\_\+X}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{U\+N\+I\+T\+\_\+X}{UNIT\_X}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+U\+N\+I\+T\+\_\+X\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(1,0)} \mbox{\Hypertarget{classVec2_a7b47ef0848a379cc5085ea0b3f2a1182}\label{classVec2_a7b47ef0848a379cc5085ea0b3f2a1182}} 
+\index{Vec2@{Vec2}!U\+N\+I\+T\+\_\+Y@{U\+N\+I\+T\+\_\+Y}}
+\index{U\+N\+I\+T\+\_\+Y@{U\+N\+I\+T\+\_\+Y}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{U\+N\+I\+T\+\_\+Y}{UNIT\_Y}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+U\+N\+I\+T\+\_\+Y\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(0,1)} \mbox{\Hypertarget{classVec2_adf8ee322d4b4bcc04146762c018d731f}\label{classVec2_adf8ee322d4b4bcc04146762c018d731f}} 
+\index{Vec2@{Vec2}!x@{x}}
+\index{x@{x}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily float Vec2\+::x}
+
+The x coordinate. \mbox{\Hypertarget{classVec2_a30543787e62f6d915543cf1dfb04c094}\label{classVec2_a30543787e62f6d915543cf1dfb04c094}} 
+\index{Vec2@{Vec2}!y@{y}}
+\index{y@{y}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily float Vec2\+::y}
+
+The y coordinate. \mbox{\Hypertarget{classVec2_a5c80e2e7c8bd2adcbad2844d060e6245}\label{classVec2_a5c80e2e7c8bd2adcbad2844d060e6245}} 
+\index{Vec2@{Vec2}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!Vec2@{Vec2}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily static const \hyperlink{classVec2}{Vec2} Vec2\+::\+Z\+E\+RO\hspace{0.3cm}{\ttfamily [static]}}
+
+equals to \hyperlink{classVec2}{Vec2(0,0)} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Vec2.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Vec2.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Vec2.\+inl\end{DoxyCompactItemize}

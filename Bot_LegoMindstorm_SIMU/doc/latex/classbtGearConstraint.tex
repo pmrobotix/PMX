@@ -1,0 +1,131 @@
+\hypertarget{classbtGearConstraint}{}\section{bt\+Gear\+Constraint Class Reference}
+\label{classbtGearConstraint}\index{bt\+Gear\+Constraint@{bt\+Gear\+Constraint}}
+
+
+{\ttfamily \#include $<$bt\+Gear\+Constraint.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Gear\+Constraint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classbtGearConstraint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Gear\+Constraint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classbtGearConstraint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_aee33fd1dac22b6f0323757057204e891}\label{classbtGearConstraint_aee33fd1dac22b6f0323757057204e891}} 
+\hyperlink{classbtGearConstraint_aee33fd1dac22b6f0323757057204e891}{bt\+Gear\+Constraint} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} \&rbA, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} \&rbB, const bt\+Vector3 \&axis\+InA, const bt\+Vector3 \&axis\+InB, bt\+Scalar ratio=1.f)
+\begin{DoxyCompactList}\small\item\em Implemented by Erwin Coumans. The idea for the constraint comes from Dimitris Papavasiliou. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_ae8e7d953740bff99eca4441b5d9c7eb1}\label{classbtGearConstraint_ae8e7d953740bff99eca4441b5d9c7eb1}} 
+virtual void \hyperlink{classbtGearConstraint_ae8e7d953740bff99eca4441b5d9c7eb1}{get\+Info1} (bt\+Constraint\+Info1 $\ast$info)
+\begin{DoxyCompactList}\small\item\em internal method used by the constraint solver, don\textquotesingle{}t use them directly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_ae1c6770b8835458389ca7ae3ce7dfb05}\label{classbtGearConstraint_ae1c6770b8835458389ca7ae3ce7dfb05}} 
+virtual void \hyperlink{classbtGearConstraint_ae1c6770b8835458389ca7ae3ce7dfb05}{get\+Info2} (bt\+Constraint\+Info2 $\ast$info)
+\begin{DoxyCompactList}\small\item\em internal method used by the constraint solver, don\textquotesingle{}t use them directly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_a7eb82d1854a2ab8982d65af6d2bde007}\label{classbtGearConstraint_a7eb82d1854a2ab8982d65af6d2bde007}} 
+void {\bfseries set\+AxisA} (bt\+Vector3 \&axisA)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a846bd7962b466bf4a2796811d7fee1d8}\label{classbtGearConstraint_a846bd7962b466bf4a2796811d7fee1d8}} 
+void {\bfseries set\+AxisB} (bt\+Vector3 \&axisB)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a77e0470a164f0fb52aba7fc1fa6aae9e}\label{classbtGearConstraint_a77e0470a164f0fb52aba7fc1fa6aae9e}} 
+void {\bfseries set\+Ratio} (bt\+Scalar ratio)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a6b2e52133e6c014ef941ac058583a38b}\label{classbtGearConstraint_a6b2e52133e6c014ef941ac058583a38b}} 
+const bt\+Vector3 \& {\bfseries get\+AxisA} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_acc8047ff8a806ed857bf8ebdeaa790a1}\label{classbtGearConstraint_acc8047ff8a806ed857bf8ebdeaa790a1}} 
+const bt\+Vector3 \& {\bfseries get\+AxisB} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_aff98bc6ffbe12a3095be1a7d3e2afa67}\label{classbtGearConstraint_aff98bc6ffbe12a3095be1a7d3e2afa67}} 
+bt\+Scalar {\bfseries get\+Ratio} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a5fb040e6b923ec5d4a735cf0953a421a}\label{classbtGearConstraint_a5fb040e6b923ec5d4a735cf0953a421a}} 
+virtual void {\bfseries set\+Param} (int num, bt\+Scalar value, int axis=-\/1)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}\label{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}} 
+virtual bt\+Scalar \hyperlink{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}{get\+Param} (int num, int axis=-\/1) const
+\begin{DoxyCompactList}\small\item\em return the local value of parameter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_a53c38e37c91252f2444e9634a01a74f2}\label{classbtGearConstraint_a53c38e37c91252f2444e9634a01a74f2}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a11f076cf98d52f8219a6c6962fd69fed}\label{classbtGearConstraint_a11f076cf98d52f8219a6c6962fd69fed}} 
+virtual const char $\ast$ \hyperlink{classbtGearConstraint_a11f076cf98d52f8219a6c6962fd69fed}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_aee33fd1dac22b6f0323757057204e891}\label{classbtGearConstraint_aee33fd1dac22b6f0323757057204e891}} 
+{\bfseries bt\+Gear\+Constraint} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} \&rbA, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} \&rbB, const bt\+Vector3 \&axis\+InA, const bt\+Vector3 \&axis\+InB, bt\+Scalar ratio=1.f)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a0db1b260e1c4b050a0f904b75f2624c1}\label{classbtGearConstraint_a0db1b260e1c4b050a0f904b75f2624c1}} 
+virtual void \hyperlink{classbtGearConstraint_a0db1b260e1c4b050a0f904b75f2624c1}{get\+Info1} (bt\+Constraint\+Info1 $\ast$info)
+\begin{DoxyCompactList}\small\item\em internal method used by the constraint solver, don\textquotesingle{}t use them directly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_ae872512ec9203a76fdb0496af59af9f5}\label{classbtGearConstraint_ae872512ec9203a76fdb0496af59af9f5}} 
+virtual void \hyperlink{classbtGearConstraint_ae872512ec9203a76fdb0496af59af9f5}{get\+Info2} (bt\+Constraint\+Info2 $\ast$info)
+\begin{DoxyCompactList}\small\item\em internal method used by the constraint solver, don\textquotesingle{}t use them directly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_a7eb82d1854a2ab8982d65af6d2bde007}\label{classbtGearConstraint_a7eb82d1854a2ab8982d65af6d2bde007}} 
+void {\bfseries set\+AxisA} (bt\+Vector3 \&axisA)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a846bd7962b466bf4a2796811d7fee1d8}\label{classbtGearConstraint_a846bd7962b466bf4a2796811d7fee1d8}} 
+void {\bfseries set\+AxisB} (bt\+Vector3 \&axisB)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a77e0470a164f0fb52aba7fc1fa6aae9e}\label{classbtGearConstraint_a77e0470a164f0fb52aba7fc1fa6aae9e}} 
+void {\bfseries set\+Ratio} (bt\+Scalar ratio)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a6b2e52133e6c014ef941ac058583a38b}\label{classbtGearConstraint_a6b2e52133e6c014ef941ac058583a38b}} 
+const bt\+Vector3 \& {\bfseries get\+AxisA} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_acc8047ff8a806ed857bf8ebdeaa790a1}\label{classbtGearConstraint_acc8047ff8a806ed857bf8ebdeaa790a1}} 
+const bt\+Vector3 \& {\bfseries get\+AxisB} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_aff98bc6ffbe12a3095be1a7d3e2afa67}\label{classbtGearConstraint_aff98bc6ffbe12a3095be1a7d3e2afa67}} 
+bt\+Scalar {\bfseries get\+Ratio} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a5fb040e6b923ec5d4a735cf0953a421a}\label{classbtGearConstraint_a5fb040e6b923ec5d4a735cf0953a421a}} 
+virtual void {\bfseries set\+Param} (int num, bt\+Scalar value, int axis=-\/1)
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}\label{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}} 
+virtual bt\+Scalar \hyperlink{classbtGearConstraint_a522a5cd09cecc3ffae11e24019f07178}{get\+Param} (int num, int axis=-\/1) const
+\begin{DoxyCompactList}\small\item\em return the local value of parameter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGearConstraint_a42182017d77b1da4d09879a924ee03f1}\label{classbtGearConstraint_a42182017d77b1da4d09879a924ee03f1}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a32c7a6c67faab5ef15488950d3d3e07e}\label{classbtGearConstraint_a32c7a6c67faab5ef15488950d3d3e07e}} 
+virtual const char $\ast$ \hyperlink{classbtGearConstraint_a32c7a6c67faab5ef15488950d3d3e07e}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_acff9277f36d0e72e88d47f608adfa2d7}\label{classbtGearConstraint_acff9277f36d0e72e88d47f608adfa2d7}} 
+bt\+Vector3 {\bfseries m\+\_\+axis\+InA}
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a64c06b83340574c1fcc3be1a09ce3de1}\label{classbtGearConstraint_a64c06b83340574c1fcc3be1a09ce3de1}} 
+bt\+Vector3 {\bfseries m\+\_\+axis\+InB}
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a1c3cf937feefba932336972a5a62dbc6}\label{classbtGearConstraint_a1c3cf937feefba932336972a5a62dbc6}} 
+bool {\bfseries m\+\_\+use\+FrameA}
+\item 
+\mbox{\Hypertarget{classbtGearConstraint_a4fd812c772ec474962d6e7534b807613}\label{classbtGearConstraint_a4fd812c772ec474962d6e7534b807613}} 
+bt\+Scalar {\bfseries m\+\_\+ratio}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The bt\+Geat\+Constraint will couple the angular velocity for two bodies around given local axis and ratio. See Bullet/\+Demos/\+Constraint\+Demo for an example use. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Gear\+Constraint.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Gear\+Constraint.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\hypertarget{motor__stepCommand_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+step\+Command.c File Reference}
+\label{motor__stepCommand_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+step\+Command.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+step\+Command.\+c}}
+{\ttfamily \#include \char`\"{}motor\+\_\+step\+Command.\+h\char`\"{}}\newline
+Include dependency graph for motor\+\_\+step\+Command.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{motor__stepCommand_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{motor__stepCommand_8c_a486e57bc2594b04887c00f09b41e452a}{Compute\+Step\+Order} (Step\+Command $\ast$out\+\_\+order, int32 steporder)
+\item 
+B\+O\+OL \hyperlink{motor__stepCommand_8c_a0c1b4dce8944adcd903e70872d637ca2}{Get\+Step\+Order} (Step\+Command $\ast$order, int32 $\ast$out\+\_\+order)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motor__stepCommand_8c_a486e57bc2594b04887c00f09b41e452a}\label{motor__stepCommand_8c_a486e57bc2594b04887c00f09b41e452a}} 
+\index{motor\+\_\+step\+Command.\+c@{motor\+\_\+step\+Command.\+c}!Compute\+Step\+Order@{Compute\+Step\+Order}}
+\index{Compute\+Step\+Order@{Compute\+Step\+Order}!motor\+\_\+step\+Command.\+c@{motor\+\_\+step\+Command.\+c}}
+\subsubsection{\texorpdfstring{Compute\+Step\+Order()}{ComputeStepOrder()}}
+{\footnotesize\ttfamily void Compute\+Step\+Order (\begin{DoxyParamCaption}\item[{Step\+Command $\ast$}]{out\+\_\+command,  }\item[{int32}]{steporder }\end{DoxyParamCaption})}
+
+Set a step movement for a given motor (for P\+ID tuning purpose)
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+command} & Pointer to the Step\+Order structure that will contain the order \\
+\hline
+{\em steporder} & Order that will be applied on the P\+ID system \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__stepCommand_8c_a0c1b4dce8944adcd903e70872d637ca2}\label{motor__stepCommand_8c_a0c1b4dce8944adcd903e70872d637ca2}} 
+\index{motor\+\_\+step\+Command.\+c@{motor\+\_\+step\+Command.\+c}!Get\+Step\+Order@{Get\+Step\+Order}}
+\index{Get\+Step\+Order@{Get\+Step\+Order}!motor\+\_\+step\+Command.\+c@{motor\+\_\+step\+Command.\+c}}
+\subsubsection{\texorpdfstring{Get\+Step\+Order()}{GetStepOrder()}}
+{\footnotesize\ttfamily B\+O\+OL Get\+Step\+Order (\begin{DoxyParamCaption}\item[{Step\+Command $\ast$}]{order,  }\item[{int32 $\ast$}]{out\+\_\+order }\end{DoxyParamCaption})}
+
+Return the current motor order for a step movement (for P\+ID tuning purpose)
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Id number of motor \\
+\hline
+{\em order} & Step\+Order that will be interpreted \\
+\hline
+\end{DoxyParams}

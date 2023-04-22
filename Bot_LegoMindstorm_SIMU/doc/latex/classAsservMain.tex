@@ -1,0 +1,59 @@
+\hypertarget{classAsservMain}{}\section{Asserv\+Main Class Reference}
+\label{classAsservMain}\index{Asserv\+Main@{Asserv\+Main}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsservMain_a757682a5588c799939cbe9baf3ea0069}\label{classAsservMain_a757682a5588c799939cbe9baf3ea0069}} 
+{\bfseries Asserv\+Main} (uint16\+\_\+t loop\+Frequency, uint16\+\_\+t speed\+Position\+Loop\+Divisor, float wheel\+Radius\+\_\+mm, float encoder\+Wheels\+Distance\+\_\+mm, uint32\+\_\+t encoders\+Ticks\+By\+Turn, \hyperlink{classCommandManager}{Command\+Manager} \&command\+Manager, \hyperlink{classMotorController}{Motor\+Controller} \&motor\+Controller, \hyperlink{classEncoders}{Encoders} \&encoders, \hyperlink{classOdometry}{Odometry} \&odometrie, \hyperlink{classRegulator}{Regulator} \&angle\+Regulator, \hyperlink{classRegulator}{Regulator} \&distance\+Regulator, \hyperlink{classAccelerationDecelerationLimiterInterface}{Acceleration\+Deceleration\+Limiter\+Interface} \&angle\+Regulator\+Acceleration\+Limiter, \hyperlink{classAccelerationDecelerationLimiterInterface}{Acceleration\+Deceleration\+Limiter\+Interface} \&distance\+Regulator\+Acceleration\+Limiter, \hyperlink{classSpeedController}{Speed\+Controller} \&speed\+Controller\+Right, \hyperlink{classSpeedController}{Speed\+Controller} \&speed\+Controller\+Left, \hyperlink{classPll}{Pll} \&right\+Pll, \hyperlink{classPll}{Pll} \&left\+Pll, \hyperlink{classBlockingDetector}{Blocking\+Detector} $\ast$blocking\+Detector=nullptr)
+\item 
+\mbox{\Hypertarget{classAsservMain_a41ef8d5926e980b78784a74be1d02576}\label{classAsservMain_a41ef8d5926e980b78784a74be1d02576}} 
+void {\bfseries main\+Loop} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_adc671b6c508bfc851207a93d00f163cd}\label{classAsservMain_adc671b6c508bfc851207a93d00f163cd}} 
+void {\bfseries set\+Wheels\+Speed} (float right\+Wheel\+Speed, float left\+Wheel\+Speed)
+\item 
+\mbox{\Hypertarget{classAsservMain_a3880d75375a1fe2102fce15368bfadc0}\label{classAsservMain_a3880d75375a1fe2102fce15368bfadc0}} 
+void {\bfseries set\+Regulators\+Speed} (float dist\+Speed, float angle\+Speed)
+\item 
+\mbox{\Hypertarget{classAsservMain_a6950c7167945ad045c70865a59579e0b}\label{classAsservMain_a6950c7167945ad045c70865a59579e0b}} 
+void {\bfseries reset\+To\+Normal\+Mode} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_acf5e6298e7877e15efc20b5d7ea87602}\label{classAsservMain_acf5e6298e7877e15efc20b5d7ea87602}} 
+void {\bfseries enable\+Motors} (bool enable)
+\item 
+\mbox{\Hypertarget{classAsservMain_a4cab29fc4a1736bf8686163a964f7c26}\label{classAsservMain_a4cab29fc4a1736bf8686163a964f7c26}} 
+void {\bfseries enable\+Polar} (bool enable)
+\item 
+\mbox{\Hypertarget{classAsservMain_aafe3c2a78a3abe48d18bebac26dbe53a}\label{classAsservMain_aafe3c2a78a3abe48d18bebac26dbe53a}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a5492788ba2d5f910fb988f651f5eb5a1}\label{classAsservMain_a5492788ba2d5f910fb988f651f5eb5a1}} 
+void {\bfseries set\+Emergency\+Stop} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a6ea6ae43a45dee3d782982a779f1cb96}\label{classAsservMain_a6ea6ae43a45dee3d782982a779f1cb96}} 
+void {\bfseries reset\+Emergency\+Stop} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a1c987dccffe45815a9b003f5ac85c0f4}\label{classAsservMain_a1c987dccffe45815a9b003f5ac85c0f4}} 
+void {\bfseries enable\+Angle\+Regulator} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a2a8446f9c8f651ed637e3abcf8112736}\label{classAsservMain_a2a8446f9c8f651ed637e3abcf8112736}} 
+void {\bfseries disable\+Angle\+Regulator} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a33cba691e13e38a0419d283c37a0107c}\label{classAsservMain_a33cba691e13e38a0419d283c37a0107c}} 
+void {\bfseries enable\+Distance\+Regulator} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_adf728439645ce6ca7f9d39d3119dd8ad}\label{classAsservMain_adf728439645ce6ca7f9d39d3119dd8ad}} 
+void {\bfseries disable\+Distance\+Regulator} ()
+\item 
+\mbox{\Hypertarget{classAsservMain_a8a88a960bcedae7224bed1ce6509b755}\label{classAsservMain_a8a88a960bcedae7224bed1ce6509b755}} 
+void {\bfseries set\+Position} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad)
+\item 
+\mbox{\Hypertarget{classAsservMain_a5e32d317afdaa0f133177c4a6cde0c19}\label{classAsservMain_a5e32d317afdaa0f133177c4a6cde0c19}} 
+void {\bfseries limit\+Motor\+Controller\+Consign\+To\+Percentage} (float percentage)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/Asserv\+Main.\+h\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/Asserv\+Main.\+cpp\end{DoxyCompactItemize}

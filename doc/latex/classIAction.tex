@@ -1,0 +1,76 @@
+\hypertarget{classIAction}{}\section{I\+Action Class Reference}
+\label{classIAction}\index{I\+Action@{I\+Action}}
+
+
+Cette interface représente une action executée.  
+
+
+
+
+{\ttfamily \#include $<$I\+Action.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classIAction__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classIAction_a8fabb15178fbba329f1458326c1d7c94}{execute} ()=0
+\begin{DoxyCompactList}\small\item\em Execute une action. Attention toujours renvoyer un bool, sinon seg fault ;) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIAction_a974d617d71344d64d2af7739a9e88d30}\label{classIAction_a974d617d71344d64d2af7739a9e88d30}} 
+virtual std\+::string \hyperlink{classIAction_a974d617d71344d64d2af7739a9e88d30}{info} ()
+\begin{DoxyCompactList}\small\item\em Getter sur les infos permettant d\textquotesingle{}identifier l\textquotesingle{}action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIAction_a4f8166b70afaa7a4c6093fc1975804c6}\label{classIAction_a4f8166b70afaa7a4c6093fc1975804c6}} 
+virtual \hyperlink{classIAction_a4f8166b70afaa7a4c6093fc1975804c6}{$\sim$ I\+Action} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIAction_a8add7e99c248231a9f29365a2ff187f6}\label{classIAction_a8add7e99c248231a9f29365a2ff187f6}} 
+\hyperlink{classIAction_a8add7e99c248231a9f29365a2ff187f6}{I\+Action} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIAction_a9745b2e0ed84329cf4836602c87cd6be}\label{classIAction_a9745b2e0ed84329cf4836602c87cd6be}} 
+std\+::string {\bfseries name\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette interface représente une action executée. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIAction_a8fabb15178fbba329f1458326c1d7c94}\label{classIAction_a8fabb15178fbba329f1458326c1d7c94}} 
+\index{I\+Action@{I\+Action}!execute@{execute}}
+\index{execute@{execute}!I\+Action@{I\+Action}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual bool I\+Action\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Execute une action. Attention toujours renvoyer un bool, sinon seg fault ;) 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Si l\textquotesingle{}éxecution doit être conservée. \\
+\hline
+{\em false} & Si l\textquotesingle{}action doit être supprimée après son execution. \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classLedBarAction_a67bc2c636064156c80319623b88ec5e8}{Led\+Bar\+Action}, \hyperlink{classSoundBarAction_ad080a35d375a14b912ed5d2625c0b687}{Sound\+Bar\+Action}, \hyperlink{classTestAction_a80c76775fe017bd75bc3c23abcbafb43}{Test\+Action}, and \hyperlink{classTestAction_abc2406605ef5655ea05fb3eaf2a74051}{Test\+Action}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/\hyperlink{IAction_8hpp}{I\+Action.\+hpp}\end{DoxyCompactItemize}

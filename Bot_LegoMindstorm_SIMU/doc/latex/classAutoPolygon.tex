@@ -1,0 +1,197 @@
+\hypertarget{classAutoPolygon}{}\section{Auto\+Polygon Class Reference}
+\label{classAutoPolygon}\index{Auto\+Polygon@{Auto\+Polygon}}
+
+
+{\ttfamily \#include $<$C\+C\+Auto\+Polygon.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{Auto\+Polygon} (const std\+::string \&filename)
+\item 
+\hyperlink{group____2d_gaca856dfbfddcb64d3fa29bf261dd10f8}{$\sim$\+Auto\+Polygon} ()
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gad9ffba6df684ed89dbed2173e66f2969}{trace} (const cocos2d\+::\+Rect \&rect, const float \&threshold=0.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga21c47c22ffc43bb0157be9b3be01f56b}{reduce} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, const float \&epsilon=2.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga13908bb1049ebcda0cdc63c7d6959ae6}{expand} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, const float \&epsilon)
+\item 
+\hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} \hyperlink{group____2d_ga0ee3e7e22fdf9982ec084191928caffa}{triangulate} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points)
+\item 
+void \hyperlink{group____2d_gab4db69f4d34a6f61c4a71590043056da}{calculate\+UV} (const \hyperlink{classRect}{Rect} \&rect, \hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$verts, const ssize\+\_\+t \&count)
+\item 
+\hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_gad8b3406e33de529b8aa6571a87f3c2b9}{generate\+Triangles} (const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, const float \&epsilon=2.\+0, const float \&threshold=0.\+05)
+\item 
+\hyperlink{classAutoPolygon_gaa74351ac8f735344958e7b2ac8363bb5}{Auto\+Polygon} (const std\+::string \&filename)
+\item 
+\hyperlink{classAutoPolygon_gaca856dfbfddcb64d3fa29bf261dd10f8}{$\sim$\+Auto\+Polygon} ()
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gaac8f745760eabe0b1bfeff151b84f1f3}{trace} (const cocos2d\+::\+Rect \&rect, float threshold=0.\+0f)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga0dc5100249481cd749cb692f6986cec0}{reduce} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, float epsilon=2.\+0f)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gab3d27e5dc8a0078f98b43db486b4a89f}{expand} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, float epsilon)
+\item 
+\hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} \hyperlink{classAutoPolygon_ga0ee3e7e22fdf9982ec084191928caffa}{triangulate} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points)
+\item 
+void \hyperlink{group____2d_gaa52f7459e5e90aaa2192a813dba5c699}{calculate\+UV} (const \hyperlink{classRect}{Rect} \&rect, \hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$verts, ssize\+\_\+t count)
+\item 
+\hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_gaf6a1f4dad82ff92fe6b5d26bea05f42a}{generate\+Triangles} (const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, float epsilon=2.\+0f, float threshold=0.\+05f)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_ga666950d66e9c86bab409f01b0daeb831}{generate\+Polygon} (const std\+::string \&filename, const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, const float epsilon=2.\+0, const float threshold=0.\+05)
+\item 
+static \hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{classAutoPolygon_ga666950d66e9c86bab409f01b0daeb831}{generate\+Polygon} (const std\+::string \&filename, const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, float epsilon=2.\+0f, float threshold=0.\+05f)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVec2}{Vec2} {\bfseries find\+First\+None\+Transparent\+Pixel} (const \hyperlink{classRect}{Rect} \&rect, const float \&threshold)
+\item 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries march\+Square} (const \hyperlink{classRect}{Rect} \&rect, const \hyperlink{classVec2}{Vec2} \&first, const float \&threshold)
+\item 
+unsigned int {\bfseries get\+Square\+Value} (const unsigned int \&x, const unsigned int \&y, const \hyperlink{classRect}{Rect} \&rect, const float \&threshold)
+\item 
+unsigned char {\bfseries get\+Alpha\+By\+Index} (const unsigned int \&i)
+\item 
+unsigned char {\bfseries get\+Alpha\+By\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+int {\bfseries get\+Index\+From\+Pos} (const unsigned int \&x, const unsigned int \&y)
+\item 
+cocos2d\+::\+Vec2 {\bfseries get\+Pos\+From\+Index} (const unsigned int \&i)
+\item 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries rdp} (const std\+::vector$<$ cocos2d\+::\+Vec2 $>$ \&v, float optimization)
+\item 
+float {\bfseries perpendicular\+Distance} (const cocos2d\+::\+Vec2 \&i, const cocos2d\+::\+Vec2 \&start, const cocos2d\+::\+Vec2 \&end)
+\item 
+\hyperlink{classRect}{Rect} {\bfseries get\+Real\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+\hyperlink{classVec2}{Vec2} {\bfseries find\+First\+None\+Transparent\+Pixel} (const \hyperlink{classRect}{Rect} \&rect, float threshold)
+\item 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries march\+Square} (const \hyperlink{classRect}{Rect} \&rect, const \hyperlink{classVec2}{Vec2} \&first, float threshold)
+\item 
+unsigned int {\bfseries get\+Square\+Value} (unsigned int x, unsigned int y, const \hyperlink{classRect}{Rect} \&rect, float threshold)
+\item 
+unsigned char {\bfseries get\+Alpha\+By\+Index} (unsigned int i)
+\item 
+\mbox{\Hypertarget{classAutoPolygon_ga94fbeedbd00cf4b73119eaca2a7029d2}\label{classAutoPolygon_ga94fbeedbd00cf4b73119eaca2a7029d2}} 
+unsigned char {\bfseries get\+Alpha\+By\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+int {\bfseries get\+Index\+From\+Pos} (unsigned int x, unsigned int y)
+\item 
+cocos2d\+::\+Vec2 {\bfseries get\+Pos\+From\+Index} (unsigned int i)
+\item 
+\mbox{\Hypertarget{classAutoPolygon_ga6046bd3ba1552bac9f5e334b82c57a41}\label{classAutoPolygon_ga6046bd3ba1552bac9f5e334b82c57a41}} 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries rdp} (const std\+::vector$<$ cocos2d\+::\+Vec2 $>$ \&v, float optimization)
+\item 
+\mbox{\Hypertarget{classAutoPolygon_gab3bf552fad7983845509c2fcd879c938}\label{classAutoPolygon_gab3bf552fad7983845509c2fcd879c938}} 
+float {\bfseries perpendicular\+Distance} (const cocos2d\+::\+Vec2 \&i, const cocos2d\+::\+Vec2 \&start, const cocos2d\+::\+Vec2 \&end)
+\item 
+\mbox{\Hypertarget{classAutoPolygon_ga8cce31e647cd6a216252ad8e14f8ffce}\label{classAutoPolygon_ga8cce31e647cd6a216252ad8e14f8ffce}} 
+\hyperlink{classRect}{Rect} {\bfseries get\+Real\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Image $\ast$ {\bfseries \+\_\+image}
+\item 
+unsigned char $\ast$ {\bfseries \+\_\+data}
+\item 
+std\+::string {\bfseries \+\_\+filename}
+\item 
+unsigned int {\bfseries \+\_\+width}
+\item 
+unsigned int {\bfseries \+\_\+height}
+\item 
+float {\bfseries \+\_\+scale\+Factor}
+\item 
+unsigned int {\bfseries \+\_\+threshold}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAutoPolygon}{Auto\+Polygon} is a helper Object \hyperlink{classAutoPolygon}{Auto\+Polygon}\textquotesingle{}s purpose is to process an image into 2d polygon mesh in runtime It has functions for each step in the process, from tracing all the points, to triangulation the result can be then passed to \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite\+::create()} to create a Polygon \hyperlink{classSprite}{Sprite} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAutoPolygon_gaa74351ac8f735344958e7b2ac8363bb5}\label{classAutoPolygon_gaa74351ac8f735344958e7b2ac8363bb5}} 
+\index{Auto\+Polygon@{Auto\+Polygon}!Auto\+Polygon@{Auto\+Polygon}}
+\index{Auto\+Polygon@{Auto\+Polygon}!Auto\+Polygon@{Auto\+Polygon}}
+\subsubsection{\texorpdfstring{Auto\+Polygon()}{AutoPolygon()}}
+{\footnotesize\ttfamily Auto\+Polygon\+::\+Auto\+Polygon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+create an \hyperlink{classAutoPolygon}{Auto\+Polygon} and initialize it with an image file the image must be a 32bit P\+NG for current version 3.\+7 
+\begin{DoxyParams}{Parameters}
+{\em filename} & a path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classAutoPolygon}{Auto\+Polygon} object; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutoPolygon_gaca856dfbfddcb64d3fa29bf261dd10f8}\label{classAutoPolygon_gaca856dfbfddcb64d3fa29bf261dd10f8}} 
+\index{Auto\+Polygon@{Auto\+Polygon}!````~Auto\+Polygon@{$\sim$\+Auto\+Polygon}}
+\index{````~Auto\+Polygon@{$\sim$\+Auto\+Polygon}!Auto\+Polygon@{Auto\+Polygon}}
+\subsubsection{\texorpdfstring{$\sim$\+Auto\+Polygon()}{~AutoPolygon()}}
+{\footnotesize\ttfamily Auto\+Polygon\+::$\sim$\+Auto\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of \hyperlink{classAutoPolygon}{Auto\+Polygon}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAutoPolygon_ga666950d66e9c86bab409f01b0daeb831}\label{classAutoPolygon_ga666950d66e9c86bab409f01b0daeb831}} 
+\index{Auto\+Polygon@{Auto\+Polygon}!generate\+Polygon@{generate\+Polygon}}
+\index{generate\+Polygon@{generate\+Polygon}!Auto\+Polygon@{Auto\+Polygon}}
+\subsubsection{\texorpdfstring{generate\+Polygon()}{generatePolygon()}}
+{\footnotesize\ttfamily static \hyperlink{classPolygonInfo}{Polygon\+Info} Auto\+Polygon\+::generate\+Polygon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect = {\ttfamily \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}},  }\item[{float}]{epsilon = {\ttfamily 2.0f},  }\item[{float}]{threshold = {\ttfamily 0.05f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+a helper function, packing auto\+Polygon creation, trace, reduce, expand, triangulate and calculate uv in one function \begin{DoxyWarning}{Warning}
+if you want to repetitively generate polygons, consider create an \hyperlink{classAutoPolygon}{Auto\+Polygon} object, and use generate\+Triangles function, as it only reads the file once 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{}. \\
+\hline
+{\em rect} & texture rect, use \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} for the size of the texture, default is \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} \\
+\hline
+{\em epsilon} & the value used to reduce and expand, default to 2.\+0 \\
+\hline
+{\em threshold} & the value where bigger than the threshold will be counted as opaque, used in trace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPolygonInfo}{Polygon\+Info}, to use with sprite 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} sp = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(\hyperlink{group____2d_ga666950d66e9c86bab409f01b0daeb831}{AutoPolygon::generatePolygon}(\textcolor{stringliteral}{"
+      grossini.png"}));
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutoPolygon_ga0ee3e7e22fdf9982ec084191928caffa}\label{classAutoPolygon_ga0ee3e7e22fdf9982ec084191928caffa}} 
+\index{Auto\+Polygon@{Auto\+Polygon}!triangulate@{triangulate}}
+\index{triangulate@{triangulate}!Auto\+Polygon@{Auto\+Polygon}}
+\subsubsection{\texorpdfstring{triangulate()}{triangulate()}}
+{\footnotesize\ttfamily \hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} Auto\+Polygon\+::triangulate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+Triangulate the input points into triangles for rendering using poly2tri \begin{DoxyWarning}{Warning}
+points must be closed loop, cannot have 2 points sharing the same position and cannot intersect itself 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of vec2 points as input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Triangles object with points and indices 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+\hyperlink{structTrianglesCommand_1_1Triangles}{TrianglesCommand::Triangles} myPolygons = ap.triangulate(myPoints);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Auto\+Polygon.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Auto\+Polygon.\+cpp\end{DoxyCompactItemize}

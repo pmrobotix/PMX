@@ -1,0 +1,80 @@
+\hypertarget{structbtSoftSingleRayCallback}{}\section{bt\+Soft\+Single\+Ray\+Callback Struct Reference}
+\label{structbtSoftSingleRayCallback}\index{bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}}
+
+
+Inheritance diagram for bt\+Soft\+Single\+Ray\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{structbtSoftSingleRayCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Single\+Ray\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtSoftSingleRayCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structbtSoftSingleRayCallback_ae3a700f866158df32a38877dc08eac9f}{bt\+Soft\+Single\+Ray\+Callback} (const bt\+Vector3 \&ray\+From\+World, const bt\+Vector3 \&ray\+To\+World, const \hyperlink{classbtSoftRigidDynamicsWorld}{bt\+Soft\+Rigid\+Dynamics\+World} $\ast$world, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{bt\+Collision\+World\+::\+Ray\+Result\+Callback} \&result\+Callback)
+\item 
+virtual bool \hyperlink{structbtSoftSingleRayCallback_a9625cb3d48cfe194f1af2b52c4cf90cd}{process} (const bt\+Broadphase\+Proxy $\ast$proxy)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a68f6d8119b8d1895ae9765c3e585ed2f}\label{structbtSoftSingleRayCallback_a68f6d8119b8d1895ae9765c3e585ed2f}} 
+bt\+Vector3 {\bfseries m\+\_\+ray\+From\+World}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a0e42ccec50994139110bd733ed11b347}\label{structbtSoftSingleRayCallback_a0e42ccec50994139110bd733ed11b347}} 
+bt\+Vector3 {\bfseries m\+\_\+ray\+To\+World}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a132922b82b3241e0519c8adc01cc4ce3}\label{structbtSoftSingleRayCallback_a132922b82b3241e0519c8adc01cc4ce3}} 
+bt\+Transform {\bfseries m\+\_\+ray\+From\+Trans}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a851cf14d6a16dd7e0616498c20cbb2ab}\label{structbtSoftSingleRayCallback_a851cf14d6a16dd7e0616498c20cbb2ab}} 
+bt\+Transform {\bfseries m\+\_\+ray\+To\+Trans}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a3c7f2ca88411446fe10a57fe767232b0}\label{structbtSoftSingleRayCallback_a3c7f2ca88411446fe10a57fe767232b0}} 
+bt\+Vector3 {\bfseries m\+\_\+hit\+Normal}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a7d1f57ecc6246ada02f47c144069878a}\label{structbtSoftSingleRayCallback_a7d1f57ecc6246ada02f47c144069878a}} 
+const \hyperlink{classbtSoftRigidDynamicsWorld}{bt\+Soft\+Rigid\+Dynamics\+World} $\ast$ {\bfseries m\+\_\+world}
+\item 
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_ad8b8d0e1e2031ee44c6ab40ef646a680}\label{structbtSoftSingleRayCallback_ad8b8d0e1e2031ee44c6ab40ef646a680}} 
+\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{bt\+Collision\+World\+::\+Ray\+Result\+Callback} \& {\bfseries m\+\_\+result\+Callback}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_ae3a700f866158df32a38877dc08eac9f}\label{structbtSoftSingleRayCallback_ae3a700f866158df32a38877dc08eac9f}} 
+\index{bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}!bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}}
+\index{bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}!bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}}
+\subsubsection{\texorpdfstring{bt\+Soft\+Single\+Ray\+Callback()}{btSoftSingleRayCallback()}}
+{\footnotesize\ttfamily bt\+Soft\+Single\+Ray\+Callback\+::bt\+Soft\+Single\+Ray\+Callback (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{ray\+From\+World,  }\item[{const bt\+Vector3 \&}]{ray\+To\+World,  }\item[{const \hyperlink{classbtSoftRigidDynamicsWorld}{bt\+Soft\+Rigid\+Dynamics\+World} $\ast$}]{world,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{bt\+Collision\+World\+::\+Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+what about division by zero? --$>$ just set ray\+Direction\mbox{[}i\mbox{]} to I\+N\+F/1e30 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structbtSoftSingleRayCallback_a9625cb3d48cfe194f1af2b52c4cf90cd}\label{structbtSoftSingleRayCallback_a9625cb3d48cfe194f1af2b52c4cf90cd}} 
+\index{bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}!process@{process}}
+\index{process@{process}!bt\+Soft\+Single\+Ray\+Callback@{bt\+Soft\+Single\+Ray\+Callback}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Single\+Ray\+Callback\+::process (\begin{DoxyParamCaption}\item[{const bt\+Broadphase\+Proxy $\ast$}]{proxy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+terminate further ray tests, once the closest\+Hit\+Fraction reached zero 
+
+Implements \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Rigid\+Dynamics\+World.\+cpp\end{DoxyCompactItemize}

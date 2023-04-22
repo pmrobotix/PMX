@@ -1,0 +1,524 @@
+\hypertarget{classBundle3D}{}\section{Bundle3D Class Reference}
+\label{classBundle3D}\index{Bundle3D@{Bundle3D}}
+
+
+Defines a bundle file that contains a collection of assets. \hyperlink{classMesh}{Mesh}, \hyperlink{classMaterial}{Material}, \hyperlink{classMeshSkin}{Mesh\+Skin}, \hyperlink{classAnimation}{Animation} There are two types of bundle files, c3t and c3b. c3t text file c3b binary file  NA  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Bundle3\+D.\+h$>$}
+
+
+
+Collaboration diagram for Bundle3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBundle3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBundle3D_aff84cf9426b151c05964590a84732da6}\label{classBundle3D_aff84cf9426b151c05964590a84732da6}} 
+virtual void {\bfseries clear} ()
+\item 
+virtual bool \hyperlink{classBundle3D_af3cfd71d2814f21b64e8343d447528a1}{load} (const std\+::string \&path)
+\item 
+virtual bool \hyperlink{classBundle3D_ae05b0ca31ac57e8184c06d64a8190995}{load\+Skin\+Data} (const std\+::string \&id, \hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+virtual bool \hyperlink{classBundle3D_a872eabde22d91ec0d412f4286e690d56}{load\+Animation\+Data} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ab6880713515ad5a666b55c3ad53674b1}\label{classBundle3D_ab6880713515ad5a666b55c3ad53674b1}} 
+virtual bool {\bfseries load\+Mesh\+Datas} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a700ef2c52258837a6e4dd53d03b122ff}\label{classBundle3D_a700ef2c52258837a6e4dd53d03b122ff}} 
+virtual bool {\bfseries load\+Nodes} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a63f9f94a37deb0f7d9c0be3a2de8a884}\label{classBundle3D_a63f9f94a37deb0f7d9c0be3a2de8a884}} 
+virtual bool {\bfseries load\+Materials} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a2fe09696c8ad71118973aebb5f5f72c5}\label{classBundle3D_a2fe09696c8ad71118973aebb5f5f72c5}} 
+virtual void {\bfseries clear} ()
+\item 
+virtual bool \hyperlink{classBundle3D_a3a86dcfb37941ff198572dffe0f60b74}{load} (const std\+::string \&path)
+\item 
+virtual bool \hyperlink{classBundle3D_ac7d550f1334d0cb561c098f93fd1caf1}{load\+Skin\+Data} (const std\+::string \&id, \hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+virtual bool \hyperlink{classBundle3D_a7b652fc7f56623ad51a4c84a6c68d8c9}{load\+Animation\+Data} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a471bfbfba8795c0b5d27bedc1a73b0d6}\label{classBundle3D_a471bfbfba8795c0b5d27bedc1a73b0d6}} 
+virtual bool {\bfseries load\+Mesh\+Datas} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_af7a59917d5d025dc2912a16231c25c06}\label{classBundle3D_af7a59917d5d025dc2912a16231c25c06}} 
+virtual bool {\bfseries load\+Nodes} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a15c7a2e25b8b78b4a50c2410ade1923d}\label{classBundle3D_a15c7a2e25b8b78b4a50c2410ade1923d}} 
+virtual bool {\bfseries load\+Materials} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classBundle3D}{Bundle3D} $\ast$ \hyperlink{classBundle3D_afeb39c466af4193d183ae1bac9cf97b9}{create\+Bundle} ()
+\item 
+\mbox{\Hypertarget{classBundle3D_a7b3dbee83513933ed9a6c064fa8243c5}\label{classBundle3D_a7b3dbee83513933ed9a6c064fa8243c5}} 
+static void {\bfseries destroy\+Bundle} (\hyperlink{classBundle3D}{Bundle3D} $\ast$bundle)
+\item 
+static std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ \hyperlink{classBundle3D_ae97afafbab50ed831d26097e8c94b6bf}{get\+Triangles\+List} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_af6c970afda2295f4d47bc1c8ccb020f0}\label{classBundle3D_af6c970afda2295f4d47bc1c8ccb020f0}} 
+static bool {\bfseries load\+Obj} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas, \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas, \hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas, const std\+::string \&full\+Path, const char $\ast$mtl\+\_\+basepath=nullptr)
+\item 
+\mbox{\Hypertarget{classBundle3D_a63adb2619e805f205fe20edaa2294151}\label{classBundle3D_a63adb2619e805f205fe20edaa2294151}} 
+static \hyperlink{classAABB}{A\+A\+BB} {\bfseries calculate\+A\+A\+BB} (const std\+::vector$<$ float $>$ \&vertex, int stride, const std\+::vector$<$ unsigned short $>$ \&index)
+\item 
+static \hyperlink{classBundle3D}{Bundle3D} $\ast$ \hyperlink{classBundle3D_a8b31b51ff4e3c3d39cb8e13c7dd07993}{create\+Bundle} ()
+\item 
+\mbox{\Hypertarget{classBundle3D_aa5cd2657b8c1adb9faa22a8b50fb5116}\label{classBundle3D_aa5cd2657b8c1adb9faa22a8b50fb5116}} 
+static void {\bfseries destroy\+Bundle} (\hyperlink{classBundle3D}{Bundle3D} $\ast$bundle)
+\item 
+static std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ \hyperlink{classBundle3D_a3e859939382cca035e3eb12425945db6}{get\+Triangles\+List} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_adf1b22d1ae937c3467c21171ebd79795}\label{classBundle3D_adf1b22d1ae937c3467c21171ebd79795}} 
+static bool {\bfseries load\+Obj} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas, \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas, \hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas, const std\+::string \&full\+Path, const char $\ast$mtl\+\_\+basepath=nullptr)
+\item 
+\mbox{\Hypertarget{classBundle3D_aba72e068b2317aa567f66820d1db8134}\label{classBundle3D_aba72e068b2317aa567f66820d1db8134}} 
+static \hyperlink{classAABB}{A\+A\+BB} {\bfseries calculate\+A\+A\+BB} (const std\+::vector$<$ float $>$ \&vertex, int stride, const std\+::vector$<$ unsigned short $>$ \&index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBundle3D_a553e0dc85ddecccc99bc638e77cb612c}\label{classBundle3D_a553e0dc85ddecccc99bc638e77cb612c}} 
+bool {\bfseries load\+Json} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_ab76b6bea00a0a651ba1df7346cae70ab}\label{classBundle3D_ab76b6bea00a0a651ba1df7346cae70ab}} 
+bool {\bfseries load\+Binary} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_ae12cd1944d7cf874a0d2f71df0991bc8}\label{classBundle3D_ae12cd1944d7cf874a0d2f71df0991bc8}} 
+bool {\bfseries load\+Mesh\+Datas\+Json} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a9d59ef3004556b7c949b1a8f1b72ada8}\label{classBundle3D_a9d59ef3004556b7c949b1a8f1b72ada8}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_ad87b9d28a1d45cb977df126a57073bc4}\label{classBundle3D_ad87b9d28a1d45cb977df126a57073bc4}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_ab9e41b6cd571717d4ffe73fe20eafb7f}\label{classBundle3D_ab9e41b6cd571717d4ffe73fe20eafb7f}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_accc23e1db385884932671f93b36c294e}\label{classBundle3D_accc23e1db385884932671f93b36c294e}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary\+\_\+0\+\_\+1} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a0e78626278f6d38a7c9aeca08301b6bd}\label{classBundle3D_a0e78626278f6d38a7c9aeca08301b6bd}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary\+\_\+0\+\_\+2} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a3c0fcdbe60122bdd2959cbcb3620d5a9}\label{classBundle3D_a3c0fcdbe60122bdd2959cbcb3620d5a9}} 
+bool {\bfseries load\+Materials\+Json} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a88eb1243de98974ec6ce6673139a5002}\label{classBundle3D_a88eb1243de98974ec6ce6673139a5002}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a2127473dc7b6e921ccfb6da63fee147e}\label{classBundle3D_a2127473dc7b6e921ccfb6da63fee147e}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a0b164bb390a863acb0f3f3099843641a}\label{classBundle3D_a0b164bb390a863acb0f3f3099843641a}} 
+bool {\bfseries load\+Materials\+Binary} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_af372519f7bdc9027079b9af883944d2b}\label{classBundle3D_af372519f7bdc9027079b9af883944d2b}} 
+bool {\bfseries load\+Materials\+Binary\+\_\+0\+\_\+1} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a48cb5a678aebe33cc4407cf740112d3a}\label{classBundle3D_a48cb5a678aebe33cc4407cf740112d3a}} 
+bool {\bfseries load\+Materials\+Binary\+\_\+0\+\_\+2} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a532229046a8cca11011bb82254fcdf3d}\label{classBundle3D_a532229046a8cca11011bb82254fcdf3d}} 
+bool {\bfseries load\+Mesh\+Data\+Json} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a7460364371642a2a4eb03e8e818b90de}\label{classBundle3D_a7460364371642a2a4eb03e8e818b90de}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a346f5c2e1cefb5bcedc3a85255021aaa}\label{classBundle3D_a346f5c2e1cefb5bcedc3a85255021aaa}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a8d937df77ebe15c51619cf31c205443c}\label{classBundle3D_a8d937df77ebe15c51619cf31c205443c}} 
+bool {\bfseries load\+Skin\+Data\+Json} (\hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ac4db994035a70495cc80bf9c613f0633}\label{classBundle3D_ac4db994035a70495cc80bf9c613f0633}} 
+bool {\bfseries load\+Skin\+Data\+Binary} (\hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a32705826d8a0f4853a8194b99f897443}\label{classBundle3D_a32705826d8a0f4853a8194b99f897443}} 
+bool {\bfseries load\+Material\+Data\+Json} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a54b6ae8b41c06cafdec15f0935527fad}\label{classBundle3D_a54b6ae8b41c06cafdec15f0935527fad}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a543832a83f1f45463d611e9390996108}\label{classBundle3D_a543832a83f1f45463d611e9390996108}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ae6586629f1c634ad7f12b32cdd980a3e}\label{classBundle3D_ae6586629f1c634ad7f12b32cdd980a3e}} 
+bool {\bfseries load\+Animation\+Data\+Json} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ad558daa9851e1fde1f6e036fb27dfb2f}\label{classBundle3D_ad558daa9851e1fde1f6e036fb27dfb2f}} 
+bool {\bfseries load\+Animation\+Data\+Binary} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+bool \hyperlink{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}{load\+Nodes\+Json} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a87784c6f259bb7eea5b348a3c1c99ba7}\label{classBundle3D_a87784c6f259bb7eea5b348a3c1c99ba7}} 
+\hyperlink{structNodeData}{Node\+Data} $\ast$ {\bfseries parse\+Nodes\+Recursively\+Json} (const rapidjson\+::\+Value \&jvalue, bool single\+Sprite)
+\item 
+bool \hyperlink{classBundle3D_a83744280068184dce4d36dc6260e69b8}{load\+Nodes\+Binary} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a2c813f8b93878258beee445d23a4c6fd}\label{classBundle3D_a2c813f8b93878258beee445d23a4c6fd}} 
+\hyperlink{structNodeData}{Node\+Data} $\ast$ {\bfseries parse\+Nodes\+Recursively\+Binary} (bool \&skeleton, bool single\+Sprite)
+\item 
+G\+Lenum \hyperlink{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}{parse\+G\+L\+Type} (const std\+::string \&str)
+\item 
+N\+Texture\+Data\+::\+Usage \hyperlink{classBundle3D_a467d6b0c572920193acd43365a7300d2}{parse\+G\+L\+Texture\+Type} (const std\+::string \&str)
+\item 
+unsigned int \hyperlink{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}{parse\+G\+L\+Program\+Attribute} (const std\+::string \&str)
+\item 
+\mbox{\Hypertarget{classBundle3D_a767d59fd16f4c7d0e0c7b7d3350ae12e}\label{classBundle3D_a767d59fd16f4c7d0e0c7b7d3350ae12e}} 
+void {\bfseries get\+Model\+Relative\+Path} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_aa3f5babb51bf4b02511ac3cec3bfec9b}\label{classBundle3D_aa3f5babb51bf4b02511ac3cec3bfec9b}} 
+\hyperlink{structReference}{Reference} $\ast$ {\bfseries seek\+To\+First\+Type} (unsigned int type, const std\+::string \&id=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classBundle3D_a553e0dc85ddecccc99bc638e77cb612c}\label{classBundle3D_a553e0dc85ddecccc99bc638e77cb612c}} 
+bool {\bfseries load\+Json} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_ab76b6bea00a0a651ba1df7346cae70ab}\label{classBundle3D_ab76b6bea00a0a651ba1df7346cae70ab}} 
+bool {\bfseries load\+Binary} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_ae12cd1944d7cf874a0d2f71df0991bc8}\label{classBundle3D_ae12cd1944d7cf874a0d2f71df0991bc8}} 
+bool {\bfseries load\+Mesh\+Datas\+Json} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a9d59ef3004556b7c949b1a8f1b72ada8}\label{classBundle3D_a9d59ef3004556b7c949b1a8f1b72ada8}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_ad87b9d28a1d45cb977df126a57073bc4}\label{classBundle3D_ad87b9d28a1d45cb977df126a57073bc4}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_ab9e41b6cd571717d4ffe73fe20eafb7f}\label{classBundle3D_ab9e41b6cd571717d4ffe73fe20eafb7f}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_accc23e1db385884932671f93b36c294e}\label{classBundle3D_accc23e1db385884932671f93b36c294e}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary\+\_\+0\+\_\+1} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a0e78626278f6d38a7c9aeca08301b6bd}\label{classBundle3D_a0e78626278f6d38a7c9aeca08301b6bd}} 
+bool {\bfseries load\+Mesh\+Datas\+Binary\+\_\+0\+\_\+2} (\hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a3c0fcdbe60122bdd2959cbcb3620d5a9}\label{classBundle3D_a3c0fcdbe60122bdd2959cbcb3620d5a9}} 
+bool {\bfseries load\+Materials\+Json} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a88eb1243de98974ec6ce6673139a5002}\label{classBundle3D_a88eb1243de98974ec6ce6673139a5002}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a2127473dc7b6e921ccfb6da63fee147e}\label{classBundle3D_a2127473dc7b6e921ccfb6da63fee147e}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a0b164bb390a863acb0f3f3099843641a}\label{classBundle3D_a0b164bb390a863acb0f3f3099843641a}} 
+bool {\bfseries load\+Materials\+Binary} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_af372519f7bdc9027079b9af883944d2b}\label{classBundle3D_af372519f7bdc9027079b9af883944d2b}} 
+bool {\bfseries load\+Materials\+Binary\+\_\+0\+\_\+1} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a48cb5a678aebe33cc4407cf740112d3a}\label{classBundle3D_a48cb5a678aebe33cc4407cf740112d3a}} 
+bool {\bfseries load\+Materials\+Binary\+\_\+0\+\_\+2} (\hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a532229046a8cca11011bb82254fcdf3d}\label{classBundle3D_a532229046a8cca11011bb82254fcdf3d}} 
+bool {\bfseries load\+Mesh\+Data\+Json} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a7460364371642a2a4eb03e8e818b90de}\label{classBundle3D_a7460364371642a2a4eb03e8e818b90de}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a346f5c2e1cefb5bcedc3a85255021aaa}\label{classBundle3D_a346f5c2e1cefb5bcedc3a85255021aaa}} 
+bool {\bfseries load\+Mesh\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMeshData}{Mesh\+Data} $\ast$meshdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a8d937df77ebe15c51619cf31c205443c}\label{classBundle3D_a8d937df77ebe15c51619cf31c205443c}} 
+bool {\bfseries load\+Skin\+Data\+Json} (\hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ac4db994035a70495cc80bf9c613f0633}\label{classBundle3D_ac4db994035a70495cc80bf9c613f0633}} 
+bool {\bfseries load\+Skin\+Data\+Binary} (\hyperlink{structSkinData}{Skin\+Data} $\ast$skindata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a32705826d8a0f4853a8194b99f897443}\label{classBundle3D_a32705826d8a0f4853a8194b99f897443}} 
+bool {\bfseries load\+Material\+Data\+Json} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a54b6ae8b41c06cafdec15f0935527fad}\label{classBundle3D_a54b6ae8b41c06cafdec15f0935527fad}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+1} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_a543832a83f1f45463d611e9390996108}\label{classBundle3D_a543832a83f1f45463d611e9390996108}} 
+bool {\bfseries load\+Material\+Data\+Json\+\_\+0\+\_\+2} (\hyperlink{structMaterialData}{Material\+Data} $\ast$materialdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ae6586629f1c634ad7f12b32cdd980a3e}\label{classBundle3D_ae6586629f1c634ad7f12b32cdd980a3e}} 
+bool {\bfseries load\+Animation\+Data\+Json} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+\mbox{\Hypertarget{classBundle3D_ad558daa9851e1fde1f6e036fb27dfb2f}\label{classBundle3D_ad558daa9851e1fde1f6e036fb27dfb2f}} 
+bool {\bfseries load\+Animation\+Data\+Binary} (const std\+::string \&id, \hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$animationdata)
+\item 
+bool \hyperlink{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}{load\+Nodes\+Json} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a012d6049b826180bb6f38c32cfff44ef}\label{classBundle3D_a012d6049b826180bb6f38c32cfff44ef}} 
+\hyperlink{structNodeData}{Node\+Data} $\ast$ {\bfseries parse\+Nodes\+Recursively\+Json} (const rapidjson\+::\+Value \&jvalue, bool single\+Sprite)
+\item 
+bool \hyperlink{classBundle3D_a83744280068184dce4d36dc6260e69b8}{load\+Nodes\+Binary} (\hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas)
+\item 
+\mbox{\Hypertarget{classBundle3D_a0a10a22f8a2dff21849330e3a2be9eaf}\label{classBundle3D_a0a10a22f8a2dff21849330e3a2be9eaf}} 
+\hyperlink{structNodeData}{Node\+Data} $\ast$ {\bfseries parse\+Nodes\+Recursively\+Binary} (bool \&skeleton, bool single\+Sprite)
+\item 
+G\+Lenum \hyperlink{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}{parse\+G\+L\+Type} (const std\+::string \&str)
+\item 
+N\+Texture\+Data\+::\+Usage \hyperlink{classBundle3D_a467d6b0c572920193acd43365a7300d2}{parse\+G\+L\+Texture\+Type} (const std\+::string \&str)
+\item 
+unsigned int \hyperlink{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}{parse\+G\+L\+Program\+Attribute} (const std\+::string \&str)
+\item 
+\mbox{\Hypertarget{classBundle3D_a767d59fd16f4c7d0e0c7b7d3350ae12e}\label{classBundle3D_a767d59fd16f4c7d0e0c7b7d3350ae12e}} 
+void {\bfseries get\+Model\+Relative\+Path} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classBundle3D_a1bc55cb390b4057e3e0ecb265dcfe272}\label{classBundle3D_a1bc55cb390b4057e3e0ecb265dcfe272}} 
+\hyperlink{structReference}{Reference} $\ast$ {\bfseries seek\+To\+First\+Type} (unsigned int type, const std\+::string \&id=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBundle3D_a00aa255ac5ce913f0ce86dc9178c01f4}\label{classBundle3D_a00aa255ac5ce913f0ce86dc9178c01f4}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classBundle3D}{Bundle3D}()
+\item 
+\mbox{\Hypertarget{classBundle3D_afb55e34887bbb94257dceaf5c4e8bfcc}\label{classBundle3D_afb55e34887bbb94257dceaf5c4e8bfcc}} 
+std\+::string {\bfseries \+\_\+model\+Path}
+\item 
+\mbox{\Hypertarget{classBundle3D_a248052200efc05d37f0efa277cc7b80d}\label{classBundle3D_a248052200efc05d37f0efa277cc7b80d}} 
+std\+::string {\bfseries \+\_\+path}
+\item 
+\mbox{\Hypertarget{classBundle3D_a70aaf4a06df9fea4d0585720b75451ef}\label{classBundle3D_a70aaf4a06df9fea4d0585720b75451ef}} 
+std\+::string {\bfseries \+\_\+version}
+\item 
+\mbox{\Hypertarget{classBundle3D_affc2034e3bbf51bb9034d9deb5c97b65}\label{classBundle3D_affc2034e3bbf51bb9034d9deb5c97b65}} 
+std\+::string {\bfseries \+\_\+json\+Buffer}
+\item 
+\mbox{\Hypertarget{classBundle3D_a56c0607a73d14a87e19ac1a413173789}\label{classBundle3D_a56c0607a73d14a87e19ac1a413173789}} 
+rapidjson\+::\+Document {\bfseries \+\_\+json\+Reader}
+\item 
+\mbox{\Hypertarget{classBundle3D_a9fae743d38264da011e44167427ad608}\label{classBundle3D_a9fae743d38264da011e44167427ad608}} 
+\hyperlink{classData}{Data} {\bfseries \+\_\+binary\+Buffer}
+\item 
+\mbox{\Hypertarget{classBundle3D_a8579d16eefc094c2e48bc4982871404a}\label{classBundle3D_a8579d16eefc094c2e48bc4982871404a}} 
+\hyperlink{classBundleReader}{Bundle\+Reader} {\bfseries \+\_\+binary\+Reader}
+\item 
+\mbox{\Hypertarget{classBundle3D_a26f28b6608c5c174f8ab9fcc84f1e6bd}\label{classBundle3D_a26f28b6608c5c174f8ab9fcc84f1e6bd}} 
+unsigned int {\bfseries \+\_\+reference\+Count}
+\item 
+\mbox{\Hypertarget{classBundle3D_a557afdac44542824a9479b3668e53033}\label{classBundle3D_a557afdac44542824a9479b3668e53033}} 
+\hyperlink{structReference}{Reference} $\ast$ {\bfseries \+\_\+references}
+\item 
+\mbox{\Hypertarget{classBundle3D_a8dbd8c1f8f5fe0a00a7d2890adce73cb}\label{classBundle3D_a8dbd8c1f8f5fe0a00a7d2890adce73cb}} 
+bool {\bfseries \+\_\+is\+Binary}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a bundle file that contains a collection of assets. \hyperlink{classMesh}{Mesh}, \hyperlink{classMaterial}{Material}, \hyperlink{classMeshSkin}{Mesh\+Skin}, \hyperlink{classAnimation}{Animation} There are two types of bundle files, c3t and c3b. c3t text file c3b binary file  NA  NA. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBundle3D_afeb39c466af4193d183ae1bac9cf97b9}\label{classBundle3D_afeb39c466af4193d183ae1bac9cf97b9}} 
+\index{Bundle3D@{Bundle3D}!create\+Bundle@{create\+Bundle}}
+\index{create\+Bundle@{create\+Bundle}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{create\+Bundle()}{createBundle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBundle3D}{Bundle3D} $\ast$ Bundle3\+D\+::create\+Bundle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a new bundle, destroy it when finish using it \mbox{\Hypertarget{classBundle3D_a8b31b51ff4e3c3d39cb8e13c7dd07993}\label{classBundle3D_a8b31b51ff4e3c3d39cb8e13c7dd07993}} 
+\index{Bundle3D@{Bundle3D}!create\+Bundle@{create\+Bundle}}
+\index{create\+Bundle@{create\+Bundle}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{create\+Bundle()}{createBundle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classBundle3D}{Bundle3D}$\ast$ Bundle3\+D\+::create\+Bundle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a new bundle, destroy it when finish using it \mbox{\Hypertarget{classBundle3D_ae97afafbab50ed831d26097e8c94b6bf}\label{classBundle3D_ae97afafbab50ed831d26097e8c94b6bf}} 
+\index{Bundle3D@{Bundle3D}!get\+Triangles\+List@{get\+Triangles\+List}}
+\index{get\+Triangles\+List@{get\+Triangles\+List}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{get\+Triangles\+List()}{getTrianglesList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ Bundle3\+D\+::get\+Triangles\+List (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+load triangle \hyperlink{protocollist-p}{list} 
+\begin{DoxyParams}{Parameters}
+{\em path} & the file path to load \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a3e859939382cca035e3eb12425945db6}\label{classBundle3D_a3e859939382cca035e3eb12425945db6}} 
+\index{Bundle3D@{Bundle3D}!get\+Triangles\+List@{get\+Triangles\+List}}
+\index{get\+Triangles\+List@{get\+Triangles\+List}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{get\+Triangles\+List()}{getTrianglesList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::vector$<$\hyperlink{classVec3}{Vec3}$>$ Bundle3\+D\+::get\+Triangles\+List (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+load triangle \hyperlink{protocollist-p}{list} 
+\begin{DoxyParams}{Parameters}
+{\em path} & the file path to load \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_af3cfd71d2814f21b64e8343d447528a1}\label{classBundle3D_af3cfd71d2814f21b64e8343d447528a1}} 
+\index{Bundle3D@{Bundle3D}!load@{load}}
+\index{load@{load}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load a file. You must load a file first, then call load\+Mesh\+Data, load\+Skin\+Data, and so on 
+\begin{DoxyParams}{Parameters}
+{\em path} & File to be loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of load 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBundle3D_a3a86dcfb37941ff198572dffe0f60b74}\label{classBundle3D_a3a86dcfb37941ff198572dffe0f60b74}} 
+\index{Bundle3D@{Bundle3D}!load@{load}}
+\index{load@{load}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Bundle3\+D\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load a file. You must load a file first, then call load\+Mesh\+Data, load\+Skin\+Data, and so on 
+\begin{DoxyParams}{Parameters}
+{\em path} & File to be loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of load 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBundle3D_a872eabde22d91ec0d412f4286e690d56}\label{classBundle3D_a872eabde22d91ec0d412f4286e690d56}} 
+\index{Bundle3D@{Bundle3D}!load\+Animation\+Data@{load\+Animation\+Data}}
+\index{load\+Animation\+Data@{load\+Animation\+Data}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Animation\+Data()}{loadAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$}]{animationdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load material data from bundle 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the animation, load the first animation in the bundle if it is empty \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a7b652fc7f56623ad51a4c84a6c68d8c9}\label{classBundle3D_a7b652fc7f56623ad51a4c84a6c68d8c9}} 
+\index{Bundle3D@{Bundle3D}!load\+Animation\+Data@{load\+Animation\+Data}}
+\index{load\+Animation\+Data@{load\+Animation\+Data}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Animation\+Data()}{loadAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Bundle3\+D\+::load\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{structAnimation3DData}{Animation3\+D\+Data} $\ast$}]{animationdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load material data from bundle 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the animation, load the first animation in the bundle if it is empty \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a83744280068184dce4d36dc6260e69b8}\label{classBundle3D_a83744280068184dce4d36dc6260e69b8}} 
+\index{Bundle3D@{Bundle3D}!load\+Nodes\+Binary@{load\+Nodes\+Binary}}
+\index{load\+Nodes\+Binary@{load\+Nodes\+Binary}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Nodes\+Binary()}{loadNodesBinary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Nodes\+Binary (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeDatas}{Node\+Datas} \&}]{nodedatas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load nodes of binary \mbox{\Hypertarget{classBundle3D_a83744280068184dce4d36dc6260e69b8}\label{classBundle3D_a83744280068184dce4d36dc6260e69b8}} 
+\index{Bundle3D@{Bundle3D}!load\+Nodes\+Binary@{load\+Nodes\+Binary}}
+\index{load\+Nodes\+Binary@{load\+Nodes\+Binary}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Nodes\+Binary()}{loadNodesBinary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Nodes\+Binary (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeDatas}{Node\+Datas} \&}]{nodedatas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load nodes of binary \mbox{\Hypertarget{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}\label{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}} 
+\index{Bundle3D@{Bundle3D}!load\+Nodes\+Json@{load\+Nodes\+Json}}
+\index{load\+Nodes\+Json@{load\+Nodes\+Json}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Nodes\+Json()}{loadNodesJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Nodes\+Json (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeDatas}{Node\+Datas} \&}]{nodedatas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load nodes of json \mbox{\Hypertarget{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}\label{classBundle3D_a3e4b6166d71360d79c4e043f780f6960}} 
+\index{Bundle3D@{Bundle3D}!load\+Nodes\+Json@{load\+Nodes\+Json}}
+\index{load\+Nodes\+Json@{load\+Nodes\+Json}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Nodes\+Json()}{loadNodesJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Nodes\+Json (\begin{DoxyParamCaption}\item[{\hyperlink{structNodeDatas}{Node\+Datas} \&}]{nodedatas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+load nodes of json \mbox{\Hypertarget{classBundle3D_ae05b0ca31ac57e8184c06d64a8190995}\label{classBundle3D_ae05b0ca31ac57e8184c06d64a8190995}} 
+\index{Bundle3D@{Bundle3D}!load\+Skin\+Data@{load\+Skin\+Data}}
+\index{load\+Skin\+Data@{load\+Skin\+Data}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Skin\+Data()}{loadSkinData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle3\+D\+::load\+Skin\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{structSkinData}{Skin\+Data} $\ast$}]{skindata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load skin data from bundle 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the skin, load the first Skin in the bundle if it is empty \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_ac7d550f1334d0cb561c098f93fd1caf1}\label{classBundle3D_ac7d550f1334d0cb561c098f93fd1caf1}} 
+\index{Bundle3D@{Bundle3D}!load\+Skin\+Data@{load\+Skin\+Data}}
+\index{load\+Skin\+Data@{load\+Skin\+Data}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{load\+Skin\+Data()}{loadSkinData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Bundle3\+D\+::load\+Skin\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{structSkinData}{Skin\+Data} $\ast$}]{skindata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+load skin data from bundle 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the skin, load the first Skin in the bundle if it is empty \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}\label{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Program\+Attribute@{parse\+G\+L\+Program\+Attribute}}
+\index{parse\+G\+L\+Program\+Attribute@{parse\+G\+L\+Program\+Attribute}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Program\+Attribute()}{parseGLProgramAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Bundle3\+D\+::parse\+G\+L\+Program\+Attribute (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get vertex attribute type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}\label{classBundle3D_a0a7ca57fdb38995fa753d07beffb7501}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Program\+Attribute@{parse\+G\+L\+Program\+Attribute}}
+\index{parse\+G\+L\+Program\+Attribute@{parse\+G\+L\+Program\+Attribute}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Program\+Attribute()}{parseGLProgramAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Bundle3\+D\+::parse\+G\+L\+Program\+Attribute (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get vertex attribute type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a467d6b0c572920193acd43365a7300d2}\label{classBundle3D_a467d6b0c572920193acd43365a7300d2}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Texture\+Type@{parse\+G\+L\+Texture\+Type}}
+\index{parse\+G\+L\+Texture\+Type@{parse\+G\+L\+Texture\+Type}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Texture\+Type()}{parseGLTextureType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+Texture\+Data\+::\+Usage Bundle3\+D\+::parse\+G\+L\+Texture\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get define data type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_a467d6b0c572920193acd43365a7300d2}\label{classBundle3D_a467d6b0c572920193acd43365a7300d2}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Texture\+Type@{parse\+G\+L\+Texture\+Type}}
+\index{parse\+G\+L\+Texture\+Type@{parse\+G\+L\+Texture\+Type}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Texture\+Type()}{parseGLTextureType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily N\+Texture\+Data\+::\+Usage Bundle3\+D\+::parse\+G\+L\+Texture\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get define data type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}\label{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Type@{parse\+G\+L\+Type}}
+\index{parse\+G\+L\+Type@{parse\+G\+L\+Type}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Type()}{parseGLType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lenum Bundle3\+D\+::parse\+G\+L\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get define data type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}\label{classBundle3D_ada1b94dfaf386bba7c8014a2678da5fb}} 
+\index{Bundle3D@{Bundle3D}!parse\+G\+L\+Type@{parse\+G\+L\+Type}}
+\index{parse\+G\+L\+Type@{parse\+G\+L\+Type}!Bundle3D@{Bundle3D}}
+\subsubsection{\texorpdfstring{parse\+G\+L\+Type()}{parseGLType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Lenum Bundle3\+D\+::parse\+G\+L\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+get define data type 
+\begin{DoxyParams}{Parameters}
+{\em str} & The type in string \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bundle3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bundle3\+D.\+cpp\end{DoxyCompactItemize}

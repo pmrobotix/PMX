@@ -1,0 +1,30 @@
+\hypertarget{group__unsafe}{}\section{Chipmunk Unsafe Shape Operations}
+\label{group__unsafe}\index{Chipmunk Unsafe Shape Operations@{Chipmunk Unsafe Shape Operations}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__unsafe_ga3e15a724d3181b3a896816e9eeaadc40}\label{group__unsafe_ga3e15a724d3181b3a896816e9eeaadc40}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_ga3e15a724d3181b3a896816e9eeaadc40}{cp\+Circle\+Shape\+Set\+Radius} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float radius)
+\begin{DoxyCompactList}\small\item\em Set the radius of a circle shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__unsafe_gad10b3edd28599778cc1109b0105bbd8a}\label{group__unsafe_gad10b3edd28599778cc1109b0105bbd8a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_gad10b3edd28599778cc1109b0105bbd8a}{cp\+Circle\+Shape\+Set\+Offset} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} offset)
+\begin{DoxyCompactList}\small\item\em Set the offset of a circle shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__unsafe_gaf88e902637a060c22763fd8821ae3344}\label{group__unsafe_gaf88e902637a060c22763fd8821ae3344}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_gaf88e902637a060c22763fd8821ae3344}{cp\+Segment\+Shape\+Set\+Endpoints} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b)
+\begin{DoxyCompactList}\small\item\em Set the endpoints of a segment shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__unsafe_ga712a6fe0c9b1f3a4f4c32cacb56485c7}\label{group__unsafe_ga712a6fe0c9b1f3a4f4c32cacb56485c7}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_ga712a6fe0c9b1f3a4f4c32cacb56485c7}{cp\+Segment\+Shape\+Set\+Radius} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float radius)
+\begin{DoxyCompactList}\small\item\em Set the radius of a segment shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__unsafe_gad5046c7627cb0ad37751c6ad5d4ad8b7}\label{group__unsafe_gad5046c7627cb0ad37751c6ad5d4ad8b7}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_gad5046c7627cb0ad37751c6ad5d4ad8b7}{cp\+Poly\+Shape\+Set\+Verts} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, int count, \hyperlink{structcpVect}{cp\+Vect} $\ast$verts, \hyperlink{structcpTransform}{cp\+Transform} transform)
+\begin{DoxyCompactList}\small\item\em Set the vertexes of a poly shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__unsafe_ga6911a79495d7d7233cb2fa6d0b3f1eeb}\label{group__unsafe_ga6911a79495d7d7233cb2fa6d0b3f1eeb}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Poly\+Shape\+Set\+Verts\+Raw} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, int count, \hyperlink{structcpVect}{cp\+Vect} $\ast$verts)
+\item 
+\mbox{\Hypertarget{group__unsafe_ga8a7d3c9e6117f0c7162c47ca73ae7226}\label{group__unsafe_ga8a7d3c9e6117f0c7162c47ca73ae7226}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__unsafe_ga8a7d3c9e6117f0c7162c47ca73ae7226}{cp\+Poly\+Shape\+Set\+Radius} (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, cp\+Float radius)
+\begin{DoxyCompactList}\small\item\em Set the radius of a poly shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+These functions are used for mutating collision shapes. Chipmunk does not have any way to get velocity information on changing shapes, so the results will be unrealistic. You must explicity include the chipmunk\+\_\+unsafe.\+h header to use them. 

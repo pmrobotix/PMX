@@ -1,0 +1,503 @@
+\hypertarget{classEventListener}{}\section{Event\+Listener Class Reference}
+\label{classEventListener}\index{Event\+Listener@{Event\+Listener}}
+
+
+The base class of event listener. If you need custom listener which with different callback, you need to inherit this class. For instance, you could refer to \hyperlink{classEventListenerAcceleration}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerKeyboard}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerTouchOneByOne}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Event\+Listener.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Listener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEventListener__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event\+Listener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEventListener__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} \{ \newline
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+O\+N\+E\+\_\+\+B\+Y\+\_\+\+O\+NE}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE}, 
+{\bfseries K\+E\+Y\+B\+O\+A\+RD}, 
+\newline
+{\bfseries M\+O\+U\+SE}, 
+{\bfseries A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+{\bfseries F\+O\+C\+US}, 
+{\bfseries G\+A\+M\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}, 
+\newline
+{\bfseries C\+U\+S\+T\+OM}, 
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+O\+N\+E\+\_\+\+B\+Y\+\_\+\+O\+NE}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE}, 
+\newline
+{\bfseries K\+E\+Y\+B\+O\+A\+RD}, 
+{\bfseries M\+O\+U\+SE}, 
+{\bfseries A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+{\bfseries F\+O\+C\+US}, 
+\newline
+{\bfseries G\+A\+M\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}, 
+{\bfseries C\+U\+S\+T\+OM}
+ \}
+\item 
+enum \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} \{ \newline
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+O\+N\+E\+\_\+\+B\+Y\+\_\+\+O\+NE}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE}, 
+{\bfseries K\+E\+Y\+B\+O\+A\+RD}, 
+\newline
+{\bfseries M\+O\+U\+SE}, 
+{\bfseries A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+{\bfseries F\+O\+C\+US}, 
+{\bfseries G\+A\+M\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}, 
+\newline
+{\bfseries C\+U\+S\+T\+OM}, 
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+O\+N\+E\+\_\+\+B\+Y\+\_\+\+O\+NE}, 
+{\bfseries T\+O\+U\+C\+H\+\_\+\+A\+L\+L\+\_\+\+A\+T\+\_\+\+O\+N\+CE}, 
+\newline
+{\bfseries K\+E\+Y\+B\+O\+A\+RD}, 
+{\bfseries M\+O\+U\+SE}, 
+{\bfseries A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+{\bfseries F\+O\+C\+US}, 
+\newline
+{\bfseries G\+A\+M\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}, 
+{\bfseries C\+U\+S\+T\+OM}
+ \}
+\item 
+\mbox{\Hypertarget{classEventListener_a553816f1d89c3e2c29cdb6ec7130ea99}\label{classEventListener_a553816f1d89c3e2c29cdb6ec7130ea99}} 
+typedef std\+::string {\bfseries Listener\+ID}
+\item 
+\mbox{\Hypertarget{classEventListener_a553816f1d89c3e2c29cdb6ec7130ea99}\label{classEventListener_a553816f1d89c3e2c29cdb6ec7130ea99}} 
+typedef std\+::string {\bfseries Listener\+ID}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}{init} (\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} t, const Listener\+ID \&listener\+ID, const std\+::function$<$ void(\hyperlink{classEvent}{Event} $\ast$)$>$ \&callback)
+\item 
+virtual \hyperlink{classEventListener_a7cc493c3e3df36d14e33504d8a92c898}{$\sim$\+Event\+Listener} ()
+\item 
+virtual bool \hyperlink{classEventListener_adf9e4eb37ea6e94c05f4d1b6594bd35e}{check\+Available} ()=0
+\item 
+virtual \hyperlink{classEventListener}{Event\+Listener} $\ast$ \hyperlink{classEventListener_a8707b41e85031f08e48def3584d51bc0}{clone} ()=0
+\item 
+void \hyperlink{classEventListener_a962aaf9f2de557fbb38e457569bca352}{set\+Enabled} (bool enabled)
+\item 
+bool \hyperlink{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}{is\+Enabled} () const
+\item 
+bool \hyperlink{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}{init} (\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} t, const Listener\+ID \&listener\+ID, const std\+::function$<$ void(\hyperlink{classEvent}{Event} $\ast$)$>$ \&callback)
+\item 
+virtual \hyperlink{classEventListener_ad03c1e6f45e92434d502995a4f31685e}{$\sim$\+Event\+Listener} ()
+\item 
+virtual bool \hyperlink{classEventListener_abef02641f86a853c36e063180c18f052}{check\+Available} ()=0
+\item 
+virtual \hyperlink{classEventListener}{Event\+Listener} $\ast$ \hyperlink{classEventListener_a8707b41e85031f08e48def3584d51bc0}{clone} ()=0
+\item 
+void \hyperlink{classEventListener_a962aaf9f2de557fbb38e457569bca352}{set\+Enabled} (bool enabled)
+\item 
+bool \hyperlink{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}{is\+Enabled} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListener_a451622d5f01c57cf9f43b632dc2b7098}\label{classEventListener_a451622d5f01c57cf9f43b632dc2b7098}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classEventListener}{Event\+Listener}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}{set\+Paused} (bool paused)
+\item 
+bool \hyperlink{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}{is\+Paused} () const
+\item 
+void \hyperlink{classEventListener_afd6557f250049331bf58d5f291634b82}{set\+Registered} (bool registered)
+\item 
+bool \hyperlink{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}{is\+Registered} () const
+\item 
+\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} \hyperlink{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}{get\+Type} () const
+\item 
+const Listener\+ID \& \hyperlink{classEventListener_ad6a1e5ec2ed320b48801228317d56624}{get\+Listener\+ID} () const
+\item 
+void \hyperlink{classEventListener_a01a0f3888940db868f7428094e19fe4a}{set\+Fixed\+Priority} (int fixed\+Priority)
+\item 
+int \hyperlink{classEventListener_ab19a7deec6bb7d936573ec33eff96891}{get\+Fixed\+Priority} () const
+\item 
+void \hyperlink{classEventListener_a6d1e92c8e26170ac8ec877446f619120}{set\+Associated\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classEventListener_a932ac8413ce8bec211320f36d8c30717}{get\+Associated\+Node} () const
+\item 
+void \hyperlink{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}{set\+Paused} (bool paused)
+\item 
+bool \hyperlink{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}{is\+Paused} () const
+\item 
+void \hyperlink{classEventListener_afd6557f250049331bf58d5f291634b82}{set\+Registered} (bool registered)
+\item 
+bool \hyperlink{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}{is\+Registered} () const
+\item 
+\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} \hyperlink{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}{get\+Type} () const
+\item 
+const Listener\+ID \& \hyperlink{classEventListener_ad6a1e5ec2ed320b48801228317d56624}{get\+Listener\+ID} () const
+\item 
+void \hyperlink{classEventListener_a01a0f3888940db868f7428094e19fe4a}{set\+Fixed\+Priority} (int fixed\+Priority)
+\item 
+int \hyperlink{classEventListener_ab19a7deec6bb7d936573ec33eff96891}{get\+Fixed\+Priority} () const
+\item 
+void \hyperlink{classEventListener_a6d1e92c8e26170ac8ec877446f619120}{set\+Associated\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classEventListener_a932ac8413ce8bec211320f36d8c30717}{get\+Associated\+Node} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListener_a663118ecf2f481a42c6cff9a31c97b70}\label{classEventListener_a663118ecf2f481a42c6cff9a31c97b70}} 
+std\+::function$<$ void(\hyperlink{classEvent}{Event} $\ast$)$>$ {\bfseries \+\_\+on\+Event}
+\item 
+\mbox{\Hypertarget{classEventListener_a6c42e40e14d6707476f7789299a3713d}\label{classEventListener_a6c42e40e14d6707476f7789299a3713d}} 
+\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} \hyperlink{classEventListener_a6c42e40e14d6707476f7789299a3713d}{\+\_\+type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEvent}{Event} callback function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventListener_a0ef8f47bd7e062da36ccb5d5d7a2d0a5}\label{classEventListener_a0ef8f47bd7e062da36ccb5d5d7a2d0a5}} 
+Listener\+ID \hyperlink{classEventListener_a0ef8f47bd7e062da36ccb5d5d7a2d0a5}{\+\_\+listener\+ID}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEvent}{Event} listener type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventListener_a54e63c9ca039f2e759e47347f25f9faa}\label{classEventListener_a54e63c9ca039f2e759e47347f25f9faa}} 
+bool \hyperlink{classEventListener_a54e63c9ca039f2e759e47347f25f9faa}{\+\_\+is\+Registered}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEvent}{Event} listener ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventListener_a4d8ad2934ba760937e1182421bcf4854}\label{classEventListener_a4d8ad2934ba760937e1182421bcf4854}} 
+int \hyperlink{classEventListener_a4d8ad2934ba760937e1182421bcf4854}{\+\_\+fixed\+Priority}
+\begin{DoxyCompactList}\small\item\em Whether the listener has been added to dispatcher. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventListener_aa58d1ee1c02c030bd578f53b39d087e8}\label{classEventListener_aa58d1ee1c02c030bd578f53b39d087e8}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries \+\_\+node}
+\item 
+\mbox{\Hypertarget{classEventListener_adf79c3b1b9788f5eb0b9b8c1ec608642}\label{classEventListener_adf79c3b1b9788f5eb0b9b8c1ec608642}} 
+bool {\bfseries \+\_\+paused}
+\item 
+\mbox{\Hypertarget{classEventListener_adfb141a7f91aba76857f4f464d24e88c}\label{classEventListener_adfb141a7f91aba76857f4f464d24e88c}} 
+bool {\bfseries \+\_\+is\+Enabled}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListener_a7de0ed02fc316d9e73b7eb3def69c105}\label{classEventListener_a7de0ed02fc316d9e73b7eb3def69c105}} 
+class {\bfseries Event\+Dispatcher}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class of event listener. If you need custom listener which with different callback, you need to inherit this class. For instance, you could refer to \hyperlink{classEventListenerAcceleration}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerKeyboard}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerTouchOneByOne}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}\label{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}} 
+\index{Event\+Listener@{Event\+Listener}!Type@{Type}}
+\index{Type@{Type}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Type \hyperlink{classEvent}{Event} type. \mbox{\Hypertarget{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}\label{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}} 
+\index{Event\+Listener@{Event\+Listener}!Type@{Type}}
+\index{Type@{Type}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Event\+Listener\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Type \hyperlink{classEvent}{Event} type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEventListener_a7cc493c3e3df36d14e33504d8a92c898}\label{classEventListener_a7cc493c3e3df36d14e33504d8a92c898}} 
+\index{Event\+Listener@{Event\+Listener}!````~Event\+Listener@{$\sim$\+Event\+Listener}}
+\index{````~Event\+Listener@{$\sim$\+Event\+Listener}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{$\sim$\+Event\+Listener()}{~EventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Event\+Listener\+::$\sim$\+Event\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor.  NA \mbox{\Hypertarget{classEventListener_ad03c1e6f45e92434d502995a4f31685e}\label{classEventListener_ad03c1e6f45e92434d502995a4f31685e}} 
+\index{Event\+Listener@{Event\+Listener}!````~Event\+Listener@{$\sim$\+Event\+Listener}}
+\index{````~Event\+Listener@{$\sim$\+Event\+Listener}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{$\sim$\+Event\+Listener()}{~EventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Event\+Listener\+::$\sim$\+Event\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor.  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEventListener_adf9e4eb37ea6e94c05f4d1b6594bd35e}\label{classEventListener_adf9e4eb37ea6e94c05f4d1b6594bd35e}} 
+\index{Event\+Listener@{Event\+Listener}!check\+Available@{check\+Available}}
+\index{check\+Available@{check\+Available}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{check\+Available()}{checkAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::check\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Checks whether the listener is available.
+
+\begin{DoxyReturn}{Returns}
+True if the listener is available. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classEventListenerTouchAllAtOnce_aa694c16160c353ed089ab1b80b003066}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchAllAtOnce_a2bae6413f00f5afbe6dfc39985ec76cf}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchOneByOne_a013a626d35805cc6ca030d9f9883610b}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerTouchOneByOne_af14f012850827bf3464369245611c05e}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom_a2de79f2f69bd89f68216b5467ed9f50b}{Event\+Listener\+Custom}, \hyperlink{classEventListenerCustom_a9be3f3ad1e20340dda29e33fe06de444}{Event\+Listener\+Custom}, \hyperlink{classEventListenerFocus_acc03526a7e5478b87327f3e8c28ded12}{Event\+Listener\+Focus}, \hyperlink{classEventListenerFocus_a103c10ed16e8ef1ddce0965d1e1c40c6}{Event\+Listener\+Focus}, \hyperlink{classEventListenerAcceleration_aa69415757d82f35612610dc767fd0aab}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerAcceleration_a3226671264e6e4dd44a29e36986eba11}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_af3f384634b0fa0e0f9d5c3f152aef42b}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a855c94e047e48d3ab419ae43280231c3}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerMouse_acf0e2a02290738775a08c6032c741d38}{Event\+Listener\+Mouse}, \hyperlink{classEventListenerController_a82ea8138d323671c6811b69deb297da7}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a7f7d0c2e82388278bfc98ff457dc2da8}{Event\+Listener\+Keyboard}, and \hyperlink{classEventListenerMouse_ac60e3ef56883beeb2f8660c921421e63}{Event\+Listener\+Mouse}.
+
+\mbox{\Hypertarget{classEventListener_abef02641f86a853c36e063180c18f052}\label{classEventListener_abef02641f86a853c36e063180c18f052}} 
+\index{Event\+Listener@{Event\+Listener}!check\+Available@{check\+Available}}
+\index{check\+Available@{check\+Available}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{check\+Available()}{checkAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Event\+Listener\+::check\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Checks whether the listener is available.
+
+\begin{DoxyReturn}{Returns}
+True if the listener is available. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classEventListenerTouchAllAtOnce_aa694c16160c353ed089ab1b80b003066}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchAllAtOnce_a2bae6413f00f5afbe6dfc39985ec76cf}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchOneByOne_a013a626d35805cc6ca030d9f9883610b}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerTouchOneByOne_af14f012850827bf3464369245611c05e}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom_a2de79f2f69bd89f68216b5467ed9f50b}{Event\+Listener\+Custom}, \hyperlink{classEventListenerCustom_a9be3f3ad1e20340dda29e33fe06de444}{Event\+Listener\+Custom}, \hyperlink{classEventListenerFocus_acc03526a7e5478b87327f3e8c28ded12}{Event\+Listener\+Focus}, \hyperlink{classEventListenerFocus_a103c10ed16e8ef1ddce0965d1e1c40c6}{Event\+Listener\+Focus}, \hyperlink{classEventListenerAcceleration_aa69415757d82f35612610dc767fd0aab}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerAcceleration_a3226671264e6e4dd44a29e36986eba11}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_af3f384634b0fa0e0f9d5c3f152aef42b}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a855c94e047e48d3ab419ae43280231c3}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerMouse_acf0e2a02290738775a08c6032c741d38}{Event\+Listener\+Mouse}, \hyperlink{classEventListenerController_a82ea8138d323671c6811b69deb297da7}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a7f7d0c2e82388278bfc98ff457dc2da8}{Event\+Listener\+Keyboard}, and \hyperlink{classEventListenerMouse_ac60e3ef56883beeb2f8660c921421e63}{Event\+Listener\+Mouse}.
+
+\mbox{\Hypertarget{classEventListener_a8707b41e85031f08e48def3584d51bc0}\label{classEventListener_a8707b41e85031f08e48def3584d51bc0}} 
+\index{Event\+Listener@{Event\+Listener}!clone@{clone}}
+\index{clone@{clone}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classEventListener}{Event\+Listener}$\ast$ Event\+Listener\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Clones the listener, its subclasses have to override this method. 
+
+Implemented in \hyperlink{classEventListenerTouchAllAtOnce_a0b2fd9403e7ea1548ad3ccc54270df4f}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchAllAtOnce_ab746dbbce44cceb3916ba7a81be36ede}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerCustom_a2b1c47443d2288b0b4a5b53fe35914ba}{Event\+Listener\+Custom}, \hyperlink{classEventListenerTouchOneByOne_aeb19046f96745ff3cb49ba4ee92a8335}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom_a9a8bffb7f8169c9ca32aba3bf4cd74bc}{Event\+Listener\+Custom}, \hyperlink{classEventListenerTouchOneByOne_ab6fd6db6eefeb57abf3f0aca46d0b5c8}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerFocus_a947808a74abc88554f23668cebff1a7d}{Event\+Listener\+Focus}, \hyperlink{classEventListenerFocus_a0c1533bf324759353479a453ac10981f}{Event\+Listener\+Focus}, \hyperlink{classEventListenerAcceleration_aaa4f9b30d3b8514511ffe2126c92722d}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_a10c944bc699aac977f85d8b8bdc65e15}{Event\+Listener\+Controller}, \hyperlink{classEventListenerAcceleration_afb99c69338b86b1af2ae8d564e229b54}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_ae4960229437589034e72b5c3dbb4a5c7}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a6597435f0ccb2d981201b1c2de867f93}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerMouse_ae4c910ce9d885e1f1efc7cd380bee94a}{Event\+Listener\+Mouse}, \hyperlink{classEventListenerKeyboard_afef5b79568f3b28f9f1bacdfe90067f5}{Event\+Listener\+Keyboard}, and \hyperlink{classEventListenerMouse_a7696b08cd79fcc6ef6bc165c8e0bbf81}{Event\+Listener\+Mouse}.
+
+\mbox{\Hypertarget{classEventListener_a8707b41e85031f08e48def3584d51bc0}\label{classEventListener_a8707b41e85031f08e48def3584d51bc0}} 
+\index{Event\+Listener@{Event\+Listener}!clone@{clone}}
+\index{clone@{clone}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classEventListener}{Event\+Listener}$\ast$ Event\+Listener\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Clones the listener, its subclasses have to override this method. 
+
+Implemented in \hyperlink{classEventListenerTouchAllAtOnce_a0b2fd9403e7ea1548ad3ccc54270df4f}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerTouchAllAtOnce_ab746dbbce44cceb3916ba7a81be36ede}{Event\+Listener\+Touch\+All\+At\+Once}, \hyperlink{classEventListenerCustom_a2b1c47443d2288b0b4a5b53fe35914ba}{Event\+Listener\+Custom}, \hyperlink{classEventListenerTouchOneByOne_aeb19046f96745ff3cb49ba4ee92a8335}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerCustom_a9a8bffb7f8169c9ca32aba3bf4cd74bc}{Event\+Listener\+Custom}, \hyperlink{classEventListenerTouchOneByOne_ab6fd6db6eefeb57abf3f0aca46d0b5c8}{Event\+Listener\+Touch\+One\+By\+One}, \hyperlink{classEventListenerFocus_a947808a74abc88554f23668cebff1a7d}{Event\+Listener\+Focus}, \hyperlink{classEventListenerFocus_a0c1533bf324759353479a453ac10981f}{Event\+Listener\+Focus}, \hyperlink{classEventListenerAcceleration_aaa4f9b30d3b8514511ffe2126c92722d}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_a10c944bc699aac977f85d8b8bdc65e15}{Event\+Listener\+Controller}, \hyperlink{classEventListenerAcceleration_afb99c69338b86b1af2ae8d564e229b54}{Event\+Listener\+Acceleration}, \hyperlink{classEventListenerController_ae4960229437589034e72b5c3dbb4a5c7}{Event\+Listener\+Controller}, \hyperlink{classEventListenerKeyboard_a6597435f0ccb2d981201b1c2de867f93}{Event\+Listener\+Keyboard}, \hyperlink{classEventListenerMouse_ae4c910ce9d885e1f1efc7cd380bee94a}{Event\+Listener\+Mouse}, \hyperlink{classEventListenerKeyboard_afef5b79568f3b28f9f1bacdfe90067f5}{Event\+Listener\+Keyboard}, and \hyperlink{classEventListenerMouse_a7696b08cd79fcc6ef6bc165c8e0bbf81}{Event\+Listener\+Mouse}.
+
+\mbox{\Hypertarget{classEventListener_a932ac8413ce8bec211320f36d8c30717}\label{classEventListener_a932ac8413ce8bec211320f36d8c30717}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Associated\+Node@{get\+Associated\+Node}}
+\index{get\+Associated\+Node@{get\+Associated\+Node}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Associated\+Node()}{getAssociatedNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node}$\ast$ Event\+Listener\+::get\+Associated\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the node associated with this listener \begin{DoxyReturn}{Returns}
+nullptr if it\textquotesingle{}s a fixed priority listener, otherwise return non-\/nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_a932ac8413ce8bec211320f36d8c30717}\label{classEventListener_a932ac8413ce8bec211320f36d8c30717}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Associated\+Node@{get\+Associated\+Node}}
+\index{get\+Associated\+Node@{get\+Associated\+Node}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Associated\+Node()}{getAssociatedNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node}$\ast$ Event\+Listener\+::get\+Associated\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the node associated with this listener \begin{DoxyReturn}{Returns}
+nullptr if it\textquotesingle{}s a fixed priority listener, otherwise return non-\/nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_ab19a7deec6bb7d936573ec33eff96891}\label{classEventListener_ab19a7deec6bb7d936573ec33eff96891}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Fixed\+Priority@{get\+Fixed\+Priority}}
+\index{get\+Fixed\+Priority@{get\+Fixed\+Priority}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Fixed\+Priority()}{getFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Event\+Listener\+::get\+Fixed\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the fixed priority of this listener \begin{DoxyReturn}{Returns}
+0 if it\textquotesingle{}s a scene graph priority listener, non-\/zero for fixed priority listener 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_ab19a7deec6bb7d936573ec33eff96891}\label{classEventListener_ab19a7deec6bb7d936573ec33eff96891}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Fixed\+Priority@{get\+Fixed\+Priority}}
+\index{get\+Fixed\+Priority@{get\+Fixed\+Priority}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Fixed\+Priority()}{getFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Event\+Listener\+::get\+Fixed\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the fixed priority of this listener \begin{DoxyReturn}{Returns}
+0 if it\textquotesingle{}s a scene graph priority listener, non-\/zero for fixed priority listener 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_ad6a1e5ec2ed320b48801228317d56624}\label{classEventListener_ad6a1e5ec2ed320b48801228317d56624}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Listener\+ID@{get\+Listener\+ID}}
+\index{get\+Listener\+ID@{get\+Listener\+ID}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Listener\+I\+D()}{getListenerID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Listener\+ID\& Event\+Listener\+::get\+Listener\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the listener ID of this listener When event is being dispatched, listener ID is used as key for searching listeners according to event type. \mbox{\Hypertarget{classEventListener_ad6a1e5ec2ed320b48801228317d56624}\label{classEventListener_ad6a1e5ec2ed320b48801228317d56624}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Listener\+ID@{get\+Listener\+ID}}
+\index{get\+Listener\+ID@{get\+Listener\+ID}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Listener\+I\+D()}{getListenerID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Listener\+ID\& Event\+Listener\+::get\+Listener\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the listener ID of this listener When event is being dispatched, listener ID is used as key for searching listeners according to event type. \mbox{\Hypertarget{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}\label{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} Event\+Listener\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the type of this listener \begin{DoxyNote}{Note}
+It\textquotesingle{}s different from {\ttfamily Event\+Type}, e.\+g. Touch\+Event has two kinds of event listeners -\/ Event\+Listener\+One\+By\+One, Event\+Listener\+All\+At\+Once 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}\label{classEventListener_ab04aa6c4e270b35ecd801c276d98f3b4}} 
+\index{Event\+Listener@{Event\+Listener}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type} Event\+Listener\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Gets the type of this listener \begin{DoxyNote}{Note}
+It\textquotesingle{}s different from {\ttfamily Event\+Type}, e.\+g. Touch\+Event has two kinds of event listeners -\/ Event\+Listener\+One\+By\+One, Event\+Listener\+All\+At\+Once 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}\label{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}} 
+\index{Event\+Listener@{Event\+Listener}!init@{init}}
+\index{init@{init}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type}}]{t,  }\item[{const Listener\+ID \&}]{listener\+ID,  }\item[{const std\+::function$<$ void(\hyperlink{classEvent}{Event} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Initializes event with type and callback function  NA \mbox{\Hypertarget{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}\label{classEventListener_a4acf01a750bd53ff94f7d7fb38a8b88d}} 
+\index{Event\+Listener@{Event\+Listener}!init@{init}}
+\index{init@{init}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{classEventListener_ab78e6acdfa2343490eda9e92d1555ee4}{Type}}]{t,  }\item[{const Listener\+ID \&}]{listener\+ID,  }\item[{const std\+::function$<$ void(\hyperlink{classEvent}{Event} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Initializes event with type and callback function  NA \mbox{\Hypertarget{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}\label{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether the listener is enabled.
+
+\begin{DoxyReturn}{Returns}
+True if the listener is enabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}\label{classEventListener_a6cf479cbd2b14dcba8f270fb11b38fe5}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether the listener is enabled.
+
+\begin{DoxyReturn}{Returns}
+True if the listener is enabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}\label{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Paused@{is\+Paused}}
+\index{is\+Paused@{is\+Paused}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Paused()}{isPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Checks whether the listener is paused \mbox{\Hypertarget{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}\label{classEventListener_a4ea8de9a3aec84b0239fe7f4b104f53c}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Paused@{is\+Paused}}
+\index{is\+Paused@{is\+Paused}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Paused()}{isPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Checks whether the listener is paused \mbox{\Hypertarget{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}\label{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Registered@{is\+Registered}}
+\index{is\+Registered@{is\+Registered}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Registered()}{isRegistered()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Registered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Checks whether the listener was registered by \hyperlink{classEventDispatcher}{Event\+Dispatcher} \mbox{\Hypertarget{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}\label{classEventListener_a01d25b75d01ebd4abbb6e5083a087df5}} 
+\index{Event\+Listener@{Event\+Listener}!is\+Registered@{is\+Registered}}
+\index{is\+Registered@{is\+Registered}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{is\+Registered()}{isRegistered()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+::is\+Registered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Checks whether the listener was registered by \hyperlink{classEventDispatcher}{Event\+Dispatcher} \mbox{\Hypertarget{classEventListener_a6d1e92c8e26170ac8ec877446f619120}\label{classEventListener_a6d1e92c8e26170ac8ec877446f619120}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Associated\+Node@{set\+Associated\+Node}}
+\index{set\+Associated\+Node@{set\+Associated\+Node}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Associated\+Node()}{setAssociatedNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Associated\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets the node associated with this listener \mbox{\Hypertarget{classEventListener_a6d1e92c8e26170ac8ec877446f619120}\label{classEventListener_a6d1e92c8e26170ac8ec877446f619120}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Associated\+Node@{set\+Associated\+Node}}
+\index{set\+Associated\+Node@{set\+Associated\+Node}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Associated\+Node()}{setAssociatedNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Associated\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets the node associated with this listener \mbox{\Hypertarget{classEventListener_a962aaf9f2de557fbb38e457569bca352}\label{classEventListener_a962aaf9f2de557fbb38e457569bca352}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables the listener. \begin{DoxyNote}{Note}
+Only listeners with {\ttfamily enabled} state will be able to receive events. When an listener was initialized, it\textquotesingle{}s enabled by default. An event listener can receive events when it is enabled and is not paused. paused state is always false when it is a fixed priority listener.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True if enables the listener. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventListener_a962aaf9f2de557fbb38e457569bca352}\label{classEventListener_a962aaf9f2de557fbb38e457569bca352}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables the listener. \begin{DoxyNote}{Note}
+Only listeners with {\ttfamily enabled} state will be able to receive events. When an listener was initialized, it\textquotesingle{}s enabled by default. An event listener can receive events when it is enabled and is not paused. paused state is always false when it is a fixed priority listener.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True if enables the listener. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEventListener_a01a0f3888940db868f7428094e19fe4a}\label{classEventListener_a01a0f3888940db868f7428094e19fe4a}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Fixed\+Priority@{set\+Fixed\+Priority}}
+\index{set\+Fixed\+Priority@{set\+Fixed\+Priority}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Fixed\+Priority()}{setFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets the fixed priority for this listener \begin{DoxyNote}{Note}
+This method is only used for {\ttfamily fixed priority listeners}, it needs to access a non-\/zero value. 0 is reserved for scene graph priority listeners 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_a01a0f3888940db868f7428094e19fe4a}\label{classEventListener_a01a0f3888940db868f7428094e19fe4a}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Fixed\+Priority@{set\+Fixed\+Priority}}
+\index{set\+Fixed\+Priority@{set\+Fixed\+Priority}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Fixed\+Priority()}{setFixedPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Fixed\+Priority (\begin{DoxyParamCaption}\item[{int}]{fixed\+Priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets the fixed priority for this listener \begin{DoxyNote}{Note}
+This method is only used for {\ttfamily fixed priority listeners}, it needs to access a non-\/zero value. 0 is reserved for scene graph priority listeners 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}\label{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Paused@{set\+Paused}}
+\index{set\+Paused@{set\+Paused}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Paused()}{setPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Paused (\begin{DoxyParamCaption}\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets paused state for the listener The paused state is only used for scene graph priority listeners. {\ttfamily Event\+Dispatcher\+::resume\+All\+Event\+Listeners\+For\+Target(node)} will set the paused state to {\ttfamily true}, while {\ttfamily Event\+Dispatcher\+::pause\+All\+Event\+Listeners\+For\+Target(node)} will set it to {\ttfamily false}. \begin{DoxyNote}{Note}
+1) Fixed priority listeners will never get paused. If a fixed priority doesn\textquotesingle{}t want to receive events, call {\ttfamily set\+Enabled(false)} instead. 2) In {\ttfamily \hyperlink{classNode}{Node}}\textquotesingle{}s on\+Enter and on\+Exit, the {\ttfamily paused state} of the listeners which associated with that node will be automatically updated. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}\label{classEventListener_a1897f06fa8bb777f636d3c7396d20a40}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Paused@{set\+Paused}}
+\index{set\+Paused@{set\+Paused}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Paused()}{setPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Paused (\begin{DoxyParamCaption}\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Sets paused state for the listener The paused state is only used for scene graph priority listeners. {\ttfamily Event\+Dispatcher\+::resume\+All\+Event\+Listeners\+For\+Target(node)} will set the paused state to {\ttfamily true}, while {\ttfamily Event\+Dispatcher\+::pause\+All\+Event\+Listeners\+For\+Target(node)} will set it to {\ttfamily false}. \begin{DoxyNote}{Note}
+1) Fixed priority listeners will never get paused. If a fixed priority doesn\textquotesingle{}t want to receive events, call {\ttfamily set\+Enabled(false)} instead. 2) In {\ttfamily \hyperlink{classNode}{Node}}\textquotesingle{}s on\+Enter and on\+Exit, the {\ttfamily paused state} of the listeners which associated with that node will be automatically updated. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classEventListener_afd6557f250049331bf58d5f291634b82}\label{classEventListener_afd6557f250049331bf58d5f291634b82}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Registered@{set\+Registered}}
+\index{set\+Registered@{set\+Registered}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Registered()}{setRegistered()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Registered (\begin{DoxyParamCaption}\item[{bool}]{registered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Marks the listener was registered by \hyperlink{classEventDispatcher}{Event\+Dispatcher} \mbox{\Hypertarget{classEventListener_afd6557f250049331bf58d5f291634b82}\label{classEventListener_afd6557f250049331bf58d5f291634b82}} 
+\index{Event\+Listener@{Event\+Listener}!set\+Registered@{set\+Registered}}
+\index{set\+Registered@{set\+Registered}!Event\+Listener@{Event\+Listener}}
+\subsubsection{\texorpdfstring{set\+Registered()}{setRegistered()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Event\+Listener\+::set\+Registered (\begin{DoxyParamCaption}\item[{bool}]{registered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Marks the listener was registered by \hyperlink{classEventDispatcher}{Event\+Dispatcher} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Listener.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Listener.\+cpp\end{DoxyCompactItemize}

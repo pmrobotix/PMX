@@ -1,0 +1,826 @@
+\hypertarget{classTextureAtlas}{}\section{Texture\+Atlas Class Reference}
+\label{classTextureAtlas}\index{Texture\+Atlas@{Texture\+Atlas}}
+
+
+A class that implements a Texture Atlas. Supported features\+: The atlas file can be a P\+V\+R\+TC, P\+NG or any other format supported by \hyperlink{classTexture2D}{Texture2D} Quads can be updated in runtime Quads can be added in runtime Quads can be removed in runtime Quads can be re-\/ordered in runtime The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased or decreased in runtime Open\+GL component\+: V3F, C4B, T2F. The quads are rendered using an Open\+GL ES V\+BO. To render the quads using an interleaved vertex array \hyperlink{protocollist-p}{list}, you should modify the cc\+Config.\+h file.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Texture\+Atlas.\+h$>$}
+
+
+
+Inheritance diagram for Texture\+Atlas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classTextureAtlas__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Texture\+Atlas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTextureAtlas__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextureAtlas_aa1c27b7bd19453c4c84f1aa8993450ec}{Texture\+Atlas} ()
+\item 
+virtual \hyperlink{classTextureAtlas_aed47504c1211eacc876b643e766365d1}{$\sim$\+Texture\+Atlas} ()
+\item 
+bool \hyperlink{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}{init\+With\+File} (const std\+::string \&file, ssize\+\_\+t capacity)
+\item 
+bool \hyperlink{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, ssize\+\_\+t capacity)
+\item 
+void \hyperlink{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}{update\+Quad} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quad, ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}{insert\+Quad} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quad, ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}{insert\+Quads} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quads, ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}{insert\+Quad\+From\+Index} (ssize\+\_\+t from\+Index, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}{remove\+Quad\+At\+Index} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}{remove\+Quads\+At\+Index} (ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}{remove\+All\+Quads} ()
+\item 
+bool \hyperlink{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}{resize\+Capacity} (ssize\+\_\+t capacity)
+\item 
+void \hyperlink{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}{increase\+Total\+Quads\+With} (ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}{move\+Quads\+From\+Index} (ssize\+\_\+t old\+Index, ssize\+\_\+t amount, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}{move\+Quads\+From\+Index} (ssize\+\_\+t index, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}{fill\+With\+Empty\+Quads\+From\+Index} (ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_af240674591a46ea07ab218b702767c5b}{draw\+Number\+Of\+Quads} (ssize\+\_\+t n)
+\item 
+void \hyperlink{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}{draw\+Number\+Of\+Quads} (ssize\+\_\+t number\+Of\+Quads, ssize\+\_\+t start)
+\item 
+void \hyperlink{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}{draw\+Quads} ()
+\item 
+void \hyperlink{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}{listen\+Renderer\+Recreated} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+bool \hyperlink{classTextureAtlas_ac8d0af048bcd6aeafcfedf1955e7b970}{is\+Dirty} (void)
+\item 
+void \hyperlink{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}{set\+Dirty} (bool b\+Dirty)
+\item 
+virtual std\+::string \hyperlink{classTextureAtlas_aa1cac3b15bf373f18fcf9a3565cd8700}{get\+Description} () const
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}{get\+Total\+Quads} () const
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}{get\+Capacity} () const
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classTextureAtlas_a03a776c2fefd92b7f3ed289ffe1a6254}{get\+Texture} () const
+\item 
+void \hyperlink{classTextureAtlas_ab55928f2095021b5f733e92e05496457}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$ \hyperlink{classTextureAtlas_ae6dc11457417198ddf8e1662e4b67fec}{get\+Quads} ()
+\item 
+void \hyperlink{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}{set\+Quads} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quads)
+\item 
+\hyperlink{classTextureAtlas_ad38d24295c6a728256392a9f2bcdf8e7}{Texture\+Atlas} ()
+\item 
+virtual \hyperlink{classTextureAtlas_a9d0defc60f5625e783f8725d6d75bbb7}{$\sim$\+Texture\+Atlas} ()
+\item 
+bool \hyperlink{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}{init\+With\+File} (const std\+::string \&file, ssize\+\_\+t capacity)
+\item 
+bool \hyperlink{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, ssize\+\_\+t capacity)
+\item 
+void \hyperlink{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}{update\+Quad} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quad, ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}{insert\+Quad} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quad, ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}{insert\+Quads} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quads, ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}{insert\+Quad\+From\+Index} (ssize\+\_\+t from\+Index, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}{remove\+Quad\+At\+Index} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}{remove\+Quads\+At\+Index} (ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}{remove\+All\+Quads} ()
+\item 
+bool \hyperlink{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}{resize\+Capacity} (ssize\+\_\+t capacity)
+\item 
+void \hyperlink{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}{increase\+Total\+Quads\+With} (ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}{move\+Quads\+From\+Index} (ssize\+\_\+t old\+Index, ssize\+\_\+t amount, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}{move\+Quads\+From\+Index} (ssize\+\_\+t index, ssize\+\_\+t new\+Index)
+\item 
+void \hyperlink{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}{fill\+With\+Empty\+Quads\+From\+Index} (ssize\+\_\+t index, ssize\+\_\+t amount)
+\item 
+void \hyperlink{classTextureAtlas_af240674591a46ea07ab218b702767c5b}{draw\+Number\+Of\+Quads} (ssize\+\_\+t n)
+\item 
+void \hyperlink{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}{draw\+Number\+Of\+Quads} (ssize\+\_\+t number\+Of\+Quads, ssize\+\_\+t start)
+\item 
+void \hyperlink{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}{draw\+Quads} ()
+\item 
+void \hyperlink{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}{listen\+Renderer\+Recreated} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+bool \hyperlink{classTextureAtlas_a60f4a4fb09df845856c1f06038df9aac}{is\+Dirty} ()
+\item 
+void \hyperlink{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}{set\+Dirty} (bool b\+Dirty)
+\item 
+virtual std\+::string \hyperlink{classTextureAtlas_a3a0b4443ac4466d657616396c88264b7}{get\+Description} () const
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}{get\+Total\+Quads} () const
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}{get\+Capacity} () const
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classTextureAtlas_ac2ada75c4c982218c699fa3b97904d95}{get\+Texture} () const
+\item 
+void \hyperlink{classTextureAtlas_ab55928f2095021b5f733e92e05496457}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$ \hyperlink{classTextureAtlas_ab8e5fd41b1bdfe951eeb40b3be7de50c}{get\+Quads} ()
+\item 
+void \hyperlink{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}{set\+Quads} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quads)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classTextureAtlas_a6e44c9ac5bfa5c9216facea7d11cbb64}{create} (const std\+::string \&file, ssize\+\_\+t capacity)
+\item 
+static \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classTextureAtlas_a2d41f36bf9d0aee784b604a0f2c34c1f}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, ssize\+\_\+t capacity)
+\item 
+static \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classTextureAtlas_a5be100c58863b5e6d3c364661feaa5dd}{create} (const std\+::string \&file, ssize\+\_\+t capacity)
+\item 
+static \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classTextureAtlas_aa71e400bb67b6d77871ae76a32750bdf}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, ssize\+\_\+t capacity)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTextureAtlas_a05137b254a67579fbcac5eacb8ddfe41}\label{classTextureAtlas_a05137b254a67579fbcac5eacb8ddfe41}} 
+G\+Lushort $\ast$ {\bfseries \+\_\+indices}
+\item 
+\mbox{\Hypertarget{classTextureAtlas_a328745753a486782c44981b1459d2816}\label{classTextureAtlas_a328745753a486782c44981b1459d2816}} 
+G\+Luint {\bfseries \+\_\+\+V\+A\+Oname}
+\item 
+\mbox{\Hypertarget{classTextureAtlas_a7fc7e17876e8b141f1ca06eac3624e9e}\label{classTextureAtlas_a7fc7e17876e8b141f1ca06eac3624e9e}} 
+G\+Luint {\bfseries \+\_\+buffers\+V\+BO} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classTextureAtlas_a96b7de7276005b23cde2523f5ce05b89}\label{classTextureAtlas_a96b7de7276005b23cde2523f5ce05b89}} 
+bool {\bfseries \+\_\+dirty}
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a57a013f57401888005ebbd4961f57d5b}{\+\_\+total\+Quads}
+\item 
+ssize\+\_\+t \hyperlink{classTextureAtlas_a27aaf85e903dedaa496bb88e58b6d9b7}{\+\_\+capacity}
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classTextureAtlas_adadaa6b0c4db68168819b743b30074a6}{\+\_\+texture}
+\item 
+\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$ \hyperlink{classTextureAtlas_a923f5462dd2253d7391f39edbd92f9cf}{\+\_\+quads}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A class that implements a Texture Atlas. Supported features\+: The atlas file can be a P\+V\+R\+TC, P\+NG or any other format supported by \hyperlink{classTexture2D}{Texture2D} Quads can be updated in runtime Quads can be added in runtime Quads can be removed in runtime Quads can be re-\/ordered in runtime The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased or decreased in runtime Open\+GL component\+: V3F, C4B, T2F. The quads are rendered using an Open\+GL ES V\+BO. To render the quads using an interleaved vertex array \hyperlink{protocollist-p}{list}, you should modify the cc\+Config.\+h file. 
+
+\begin{DoxyWarning}{Warning}
+If you want to use \hyperlink{classTextureAtlas}{Texture\+Atlas}, you\textquotesingle{}d better setup GL status before it\textquotesingle{}s rendered. Otherwise, the effect of \hyperlink{classTextureAtlas}{Texture\+Atlas} will be affected by the GL status of other nodes. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTextureAtlas_aa1c27b7bd19453c4c84f1aa8993450ec}\label{classTextureAtlas_aa1c27b7bd19453c4c84f1aa8993450ec}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\index{Texture\+Atlas@{Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{Texture\+Atlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTextureAtlas_aed47504c1211eacc876b643e766365d1}\label{classTextureAtlas_aed47504c1211eacc876b643e766365d1}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!````~Texture\+Atlas@{$\sim$\+Texture\+Atlas}}
+\index{````~Texture\+Atlas@{$\sim$\+Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture\+Atlas()}{~TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Texture\+Atlas\+::$\sim$\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classTextureAtlas_ad38d24295c6a728256392a9f2bcdf8e7}\label{classTextureAtlas_ad38d24295c6a728256392a9f2bcdf8e7}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\index{Texture\+Atlas@{Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{Texture\+Atlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTextureAtlas_a9d0defc60f5625e783f8725d6d75bbb7}\label{classTextureAtlas_a9d0defc60f5625e783f8725d6d75bbb7}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!````~Texture\+Atlas@{$\sim$\+Texture\+Atlas}}
+\index{````~Texture\+Atlas@{$\sim$\+Texture\+Atlas}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture\+Atlas()}{~TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Texture\+Atlas\+::$\sim$\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextureAtlas_a6e44c9ac5bfa5c9216facea7d11cbb64}\label{classTextureAtlas_a6e44c9ac5bfa5c9216facea7d11cbb64}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!create@{create}}
+\index{create@{create}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ Texture\+Atlas\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextureAtlas}{Texture\+Atlas} with an filename and with an initial capacity for Quads.
+
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. 
+\begin{DoxyParams}{Parameters}
+{\em file} & A null terminated string contains the file path. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a5be100c58863b5e6d3c364661feaa5dd}\label{classTextureAtlas_a5be100c58863b5e6d3c364661feaa5dd}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!create@{create}}
+\index{create@{create}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTextureAtlas}{Texture\+Atlas}$\ast$ Texture\+Atlas\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextureAtlas}{Texture\+Atlas} with an filename and with an initial capacity for Quads.
+
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. 
+\begin{DoxyParams}{Parameters}
+{\em file} & The file path. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a2d41f36bf9d0aee784b604a0f2c34c1f}\label{classTextureAtlas_a2d41f36bf9d0aee784b604a0f2c34c1f}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ Texture\+Atlas\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a previously initialized \hyperlink{classTexture2D}{Texture2D} object, and with an initial capacity for n Quads.
+
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. 
+\begin{DoxyParams}{Parameters}
+{\em texture} & A texture2D object pointer. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_aa71e400bb67b6d77871ae76a32750bdf}\label{classTextureAtlas_aa71e400bb67b6d77871ae76a32750bdf}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTextureAtlas}{Texture\+Atlas}$\ast$ Texture\+Atlas\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a previously initialized \hyperlink{classTexture2D}{Texture2D} object, and with an initial capacity for n Quads.
+
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. 
+\begin{DoxyParams}{Parameters}
+{\em texture} & A texture2D object pointer. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_af240674591a46ea07ab218b702767c5b}\label{classTextureAtlas_af240674591a46ea07ab218b702767c5b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}}
+\index{draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Number\+Of\+Quads()}{drawNumberOfQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Number\+Of\+Quads (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Draws n quads. N can\textquotesingle{}t be greater than the capacity of the Atlas. \mbox{\Hypertarget{classTextureAtlas_af240674591a46ea07ab218b702767c5b}\label{classTextureAtlas_af240674591a46ea07ab218b702767c5b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}}
+\index{draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Number\+Of\+Quads()}{drawNumberOfQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Number\+Of\+Quads (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Draws n quads. N can\textquotesingle{}t be greater than the capacity of the Atlas. \mbox{\Hypertarget{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}\label{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}}
+\index{draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Number\+Of\+Quads()}{drawNumberOfQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Number\+Of\+Quads (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{number\+Of\+Quads,  }\item[{ssize\+\_\+t}]{start }\end{DoxyParamCaption})}
+
+Draws n quads from an index (offset). N + start can\textquotesingle{}t be greater than the capacity of the atlas.
+
+\begin{DoxySince}{Since}
+v1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}\label{classTextureAtlas_a991e6b2fb3bd3303a7ef27d4f82d3cdc}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}}
+\index{draw\+Number\+Of\+Quads@{draw\+Number\+Of\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Number\+Of\+Quads()}{drawNumberOfQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Number\+Of\+Quads (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{number\+Of\+Quads,  }\item[{ssize\+\_\+t}]{start }\end{DoxyParamCaption})}
+
+Draws n quads from an index (offset). N + start can\textquotesingle{}t be greater than the capacity of the atlas.
+
+\begin{DoxySince}{Since}
+v1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}\label{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Quads@{draw\+Quads}}
+\index{draw\+Quads@{draw\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Quads()}{drawQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draws all the Atlas\textquotesingle{}s Quads. \mbox{\Hypertarget{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}\label{classTextureAtlas_a40a5702b4d87530a78f4e117088d41d6}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!draw\+Quads@{draw\+Quads}}
+\index{draw\+Quads@{draw\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{draw\+Quads()}{drawQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::draw\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draws all the Atlas\textquotesingle{}s Quads. \mbox{\Hypertarget{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}\label{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!fill\+With\+Empty\+Quads\+From\+Index@{fill\+With\+Empty\+Quads\+From\+Index}}
+\index{fill\+With\+Empty\+Quads\+From\+Index@{fill\+With\+Empty\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{fill\+With\+Empty\+Quads\+From\+Index()}{fillWithEmptyQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::fill\+With\+Empty\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Ensures that after a realloc quads are still empty. Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}\label{classTextureAtlas_ac32f2ddd656d12d187a5ad709c74017b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!fill\+With\+Empty\+Quads\+From\+Index@{fill\+With\+Empty\+Quads\+From\+Index}}
+\index{fill\+With\+Empty\+Quads\+From\+Index@{fill\+With\+Empty\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{fill\+With\+Empty\+Quads\+From\+Index()}{fillWithEmptyQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::fill\+With\+Empty\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Ensures that after a realloc quads are still empty. Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}\label{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Capacity@{get\+Capacity}}
+\index{get\+Capacity@{get\+Capacity}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Capacity()}{getCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the quantity of quads that can be stored with the current texture atlas size. \mbox{\Hypertarget{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}\label{classTextureAtlas_a36573b2d198fdf8f8bc118160408ea4b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Capacity@{get\+Capacity}}
+\index{get\+Capacity@{get\+Capacity}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Capacity()}{getCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the quantity of quads that can be stored with the current texture atlas size. \mbox{\Hypertarget{classTextureAtlas_aa1cac3b15bf373f18fcf9a3565cd8700}\label{classTextureAtlas_aa1cac3b15bf373f18fcf9a3565cd8700}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Texture\+Atlas\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get quads total amount.  NA  NA \mbox{\Hypertarget{classTextureAtlas_a3a0b4443ac4466d657616396c88264b7}\label{classTextureAtlas_a3a0b4443ac4466d657616396c88264b7}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Texture\+Atlas\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get quads total amount.  NA  NA \mbox{\Hypertarget{classTextureAtlas_ae6dc11457417198ddf8e1662e4b67fec}\label{classTextureAtlas_ae6dc11457417198ddf8e1662e4b67fec}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Quads@{get\+Quads}}
+\index{get\+Quads@{get\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Quads()}{getQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$ Texture\+Atlas\+::get\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the quads that are going to be rendered. \mbox{\Hypertarget{classTextureAtlas_ab8e5fd41b1bdfe951eeb40b3be7de50c}\label{classTextureAtlas_ab8e5fd41b1bdfe951eeb40b3be7de50c}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Quads@{get\+Quads}}
+\index{get\+Quads@{get\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Quads()}{getQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad}$\ast$ Texture\+Atlas\+::get\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the quads that are going to be rendered. \mbox{\Hypertarget{classTextureAtlas_a03a776c2fefd92b7f3ed289ffe1a6254}\label{classTextureAtlas_a03a776c2fefd92b7f3ed289ffe1a6254}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Texture\+Atlas\+::get\+Texture (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Gets the texture of the texture atlas. \mbox{\Hypertarget{classTextureAtlas_ac2ada75c4c982218c699fa3b97904d95}\label{classTextureAtlas_ac2ada75c4c982218c699fa3b97904d95}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D}$\ast$ Texture\+Atlas\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the texture of the texture atlas. \mbox{\Hypertarget{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}\label{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Total\+Quads@{get\+Total\+Quads}}
+\index{get\+Total\+Quads@{get\+Total\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Total\+Quads()}{getTotalQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::get\+Total\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the quantity of quads that are going to be drawn. \mbox{\Hypertarget{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}\label{classTextureAtlas_a4fca29377f79ca2092e36ddd42e31313}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!get\+Total\+Quads@{get\+Total\+Quads}}
+\index{get\+Total\+Quads@{get\+Total\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{get\+Total\+Quads()}{getTotalQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::get\+Total\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the quantity of quads that are going to be drawn. \mbox{\Hypertarget{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}\label{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!increase\+Total\+Quads\+With@{increase\+Total\+Quads\+With}}
+\index{increase\+Total\+Quads\+With@{increase\+Total\+Quads\+With}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{increase\+Total\+Quads\+With()}{increaseTotalQuadsWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::increase\+Total\+Quads\+With (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. don\textquotesingle{}t use this unless you know what you\textquotesingle{}re doing. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}\label{classTextureAtlas_a69818ba2fc5488effec077ff3a3a506c}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!increase\+Total\+Quads\+With@{increase\+Total\+Quads\+With}}
+\index{increase\+Total\+Quads\+With@{increase\+Total\+Quads\+With}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{increase\+Total\+Quads\+With()}{increaseTotalQuadsWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::increase\+Total\+Quads\+With (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. don\textquotesingle{}t use this unless you know what you\textquotesingle{}re doing. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}\label{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!init\+With\+File@{init\+With\+File}}
+\index{init\+With\+File@{init\+With\+File}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{init\+With\+File()}{initWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::init\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a filename and with a certain capacity for Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime.
+
+\begin{DoxyAttention}{Attention}
+Do not reinitialize the \hyperlink{classTextureAtlas}{Texture\+Atlas} because it will leak memory (issue \#706). 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & A null terminated string contains the file path. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}\label{classTextureAtlas_a325b82009a3ae2ec31ac42374eed1ab6}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!init\+With\+File@{init\+With\+File}}
+\index{init\+With\+File@{init\+With\+File}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{init\+With\+File()}{initWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::init\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a filename and with a certain capacity for Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime.
+
+\begin{DoxyAttention}{Attention}
+Do not reinitialize the \hyperlink{classTextureAtlas}{Texture\+Atlas} because it will leak memory (issue \#706). 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file path. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}\label{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a previously initialized \hyperlink{classTexture2D}{Texture2D} object, and with an initial capacity for Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. \begin{DoxyAttention}{Attention}
+\+: Do not reinitialize the \hyperlink{classTextureAtlas}{Texture\+Atlas} because it will leak memory (issue \#706). 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & A texture2D object pointer. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}\label{classTextureAtlas_a44ea8a3d38f0e758e33c6b10c725b44b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTextureAtlas}{Texture\+Atlas} with a previously initialized \hyperlink{classTexture2D}{Texture2D} object, and with an initial capacity for Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased in runtime. \begin{DoxyAttention}{Attention}
+\+: Do not reinitialize the \hyperlink{classTextureAtlas}{Texture\+Atlas} because it will leak memory (issue \#706). 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & A texture2D object pointer. \\
+\hline
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}\label{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quad@{insert\+Quad}}
+\index{insert\+Quad@{insert\+Quad}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quad()}{insertQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quad (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quad,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Inserts a Quad (texture, vertex and color) at a certain index. 
+\begin{DoxyParams}{Parameters}
+{\em quad} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}\label{classTextureAtlas_a7dc5079e603e3b7e78e73a1094d1560b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quad@{insert\+Quad}}
+\index{insert\+Quad@{insert\+Quad}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quad()}{insertQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quad (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quad,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Inserts a Quad (texture, vertex and color) at a certain index. 
+\begin{DoxyParams}{Parameters}
+{\em quad} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}\label{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quad\+From\+Index@{insert\+Quad\+From\+Index}}
+\index{insert\+Quad\+From\+Index@{insert\+Quad\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quad\+From\+Index()}{insertQuadFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quad\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{from\+Index,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Removes the quad that is located at a certain index and inserts it at a new index. This operation is faster than removing and inserting in a quad in 2 different steps. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}\label{classTextureAtlas_a5808a77487d3f789156a93ceb18df85b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quad\+From\+Index@{insert\+Quad\+From\+Index}}
+\index{insert\+Quad\+From\+Index@{insert\+Quad\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quad\+From\+Index()}{insertQuadFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quad\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{from\+Index,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Removes the quad that is located at a certain index and inserts it at a new index. This operation is faster than removing and inserting in a quad in 2 different steps. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}\label{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quads@{insert\+Quads}}
+\index{insert\+Quads@{insert\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quads()}{insertQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quads (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quads,  }\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Inserts a c array of quads at a given index. 
+\begin{DoxyParams}{Parameters}
+{\em quads} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+{\em amount} & The quads array amount. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+This method doesn\textquotesingle{}t enlarge the array when amount + index $>$ total\+Quads. 
+\end{DoxyAttention}
+\begin{DoxySince}{Since}
+v1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}\label{classTextureAtlas_ab80aca4252af179afcbc6e23208407f5}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!insert\+Quads@{insert\+Quads}}
+\index{insert\+Quads@{insert\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{insert\+Quads()}{insertQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::insert\+Quads (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quads,  }\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Inserts a c array of quads at a given index. 
+\begin{DoxyParams}{Parameters}
+{\em quads} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+{\em amount} & The quads array amount. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+This method doesn\textquotesingle{}t enlarge the array when amount + index $>$ total\+Quads. 
+\end{DoxyAttention}
+\begin{DoxySince}{Since}
+v1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ac8d0af048bcd6aeafcfedf1955e7b970}\label{classTextureAtlas_ac8d0af048bcd6aeafcfedf1955e7b970}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!is\+Dirty@{is\+Dirty}}
+\index{is\+Dirty@{is\+Dirty}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{is\+Dirty()}{isDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::is\+Dirty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the array buffer of the V\+BO needs to be updated. \mbox{\Hypertarget{classTextureAtlas_a60f4a4fb09df845856c1f06038df9aac}\label{classTextureAtlas_a60f4a4fb09df845856c1f06038df9aac}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!is\+Dirty@{is\+Dirty}}
+\index{is\+Dirty@{is\+Dirty}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{is\+Dirty()}{isDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::is\+Dirty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the array buffer of the V\+BO needs to be updated. \mbox{\Hypertarget{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}\label{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!listen\+Renderer\+Recreated@{listen\+Renderer\+Recreated}}
+\index{listen\+Renderer\+Recreated@{listen\+Renderer\+Recreated}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{listen\+Renderer\+Recreated()}{listenRendererRecreated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::listen\+Renderer\+Recreated (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen the event that renderer was recreated on Android. \mbox{\Hypertarget{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}\label{classTextureAtlas_a1ae9b2e2ee16ce31e44171fc248f76a4}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!listen\+Renderer\+Recreated@{listen\+Renderer\+Recreated}}
+\index{listen\+Renderer\+Recreated@{listen\+Renderer\+Recreated}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{listen\+Renderer\+Recreated()}{listenRendererRecreated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::listen\+Renderer\+Recreated (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen the event that renderer was recreated on Android. \mbox{\Hypertarget{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}\label{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!move\+Quads\+From\+Index@{move\+Quads\+From\+Index}}
+\index{move\+Quads\+From\+Index@{move\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{move\+Quads\+From\+Index()}{moveQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::move\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{old\+Index,  }\item[{ssize\+\_\+t}]{amount,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Moves an amount of quads from old\+Index at new\+Index. \begin{DoxySince}{Since}
+v1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}\label{classTextureAtlas_a074c3252ea542b77ae254a97917b51df}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!move\+Quads\+From\+Index@{move\+Quads\+From\+Index}}
+\index{move\+Quads\+From\+Index@{move\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{move\+Quads\+From\+Index()}{moveQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::move\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{old\+Index,  }\item[{ssize\+\_\+t}]{amount,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Moves an amount of quads from old\+Index at new\+Index. \begin{DoxySince}{Since}
+v1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}\label{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!move\+Quads\+From\+Index@{move\+Quads\+From\+Index}}
+\index{move\+Quads\+From\+Index@{move\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{move\+Quads\+From\+Index()}{moveQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::move\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Moves quads from index till total\+Quads to the new\+Index. Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. This method doesn\textquotesingle{}t enlarge the array if new\+Index + quads to be moved $>$ capacity. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}\label{classTextureAtlas_aa4fb28570142da6c7a47aba59a4f021b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!move\+Quads\+From\+Index@{move\+Quads\+From\+Index}}
+\index{move\+Quads\+From\+Index@{move\+Quads\+From\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{move\+Quads\+From\+Index()}{moveQuadsFromIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::move\+Quads\+From\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{new\+Index }\end{DoxyParamCaption})}
+
+Moves quads from index till total\+Quads to the new\+Index. Used internally by \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}. This method doesn\textquotesingle{}t enlarge the array if new\+Index + quads to be moved $>$ capacity. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}\label{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+All\+Quads@{remove\+All\+Quads}}
+\index{remove\+All\+Quads@{remove\+All\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+All\+Quads()}{removeAllQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+All\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity remains untouched. No memory is freed. The total number of quads to be drawn will be 0. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}\label{classTextureAtlas_aff17a9d95e8b279381d4b4820d0893f4}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+All\+Quads@{remove\+All\+Quads}}
+\index{remove\+All\+Quads@{remove\+All\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+All\+Quads()}{removeAllQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+All\+Quads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all Quads. The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity remains untouched. No memory is freed. The total number of quads to be drawn will be 0. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}\label{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+Quad\+At\+Index@{remove\+Quad\+At\+Index}}
+\index{remove\+Quad\+At\+Index@{remove\+Quad\+At\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+Quad\+At\+Index()}{removeQuadAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+Quad\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Removes a quad at a given index number. The capacity remains the same, but the total number of quads to be drawn is reduced in 1. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}\label{classTextureAtlas_a67ab93a008f52e7d204ae8a402f71a9b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+Quad\+At\+Index@{remove\+Quad\+At\+Index}}
+\index{remove\+Quad\+At\+Index@{remove\+Quad\+At\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+Quad\+At\+Index()}{removeQuadAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+Quad\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Removes a quad at a given index number. The capacity remains the same, but the total number of quads to be drawn is reduced in 1. \begin{DoxySince}{Since}
+v0.\+7.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}\label{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+Quads\+At\+Index@{remove\+Quads\+At\+Index}}
+\index{remove\+Quads\+At\+Index@{remove\+Quads\+At\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+Quads\+At\+Index()}{removeQuadsAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+Quads\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Removes a amount of quads starting from index. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}\label{classTextureAtlas_ab1c31f38025e77b95050fd798bd76919}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!remove\+Quads\+At\+Index@{remove\+Quads\+At\+Index}}
+\index{remove\+Quads\+At\+Index@{remove\+Quads\+At\+Index}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{remove\+Quads\+At\+Index()}{removeQuadsAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::remove\+Quads\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{ssize\+\_\+t}]{amount }\end{DoxyParamCaption})}
+
+Removes a amount of quads starting from index. \begin{DoxySince}{Since}
+1.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}\label{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!resize\+Capacity@{resize\+Capacity}}
+\index{resize\+Capacity@{resize\+Capacity}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{resize\+Capacity()}{resizeCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::resize\+Capacity (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Resize the capacity of the \hyperlink{classTextureAtlas}{Texture\+Atlas}. The new capacity can be lower or higher than the current one. It returns true if the resize was successful. If it fails to resize the capacity it will return false with a new capacity of 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}\label{classTextureAtlas_a2df218231fad90b00cbf5f7b8de2ecdf}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!resize\+Capacity@{resize\+Capacity}}
+\index{resize\+Capacity@{resize\+Capacity}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{resize\+Capacity()}{resizeCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture\+Atlas\+::resize\+Capacity (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Resize the capacity of the \hyperlink{classTextureAtlas}{Texture\+Atlas}. The new capacity can be lower or higher than the current one. It returns true if the resize was successful. If it fails to resize the capacity it will return false with a new capacity of 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Capacity for Quads. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}\label{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Dirty@{set\+Dirty}}
+\index{set\+Dirty@{set\+Dirty}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Dirty()}{setDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Dirty (\begin{DoxyParamCaption}\item[{bool}]{b\+Dirty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Specify if the array buffer of the V\+BO needs to be updated. \mbox{\Hypertarget{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}\label{classTextureAtlas_a8a0b4fcd17e2426ad339ba2d9c4d61c2}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Dirty@{set\+Dirty}}
+\index{set\+Dirty@{set\+Dirty}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Dirty()}{setDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Dirty (\begin{DoxyParamCaption}\item[{bool}]{b\+Dirty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Specify if the array buffer of the V\+BO needs to be updated. \mbox{\Hypertarget{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}\label{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Quads@{set\+Quads}}
+\index{set\+Quads@{set\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Quads()}{setQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Quads (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quads }\end{DoxyParamCaption})}
+
+Sets the quads that are going to be rendered. \mbox{\Hypertarget{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}\label{classTextureAtlas_a59e3e4fea0e05019cfc94bea32122467}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Quads@{set\+Quads}}
+\index{set\+Quads@{set\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Quads()}{setQuads()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Quads (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quads }\end{DoxyParamCaption})}
+
+Sets the quads that are going to be rendered. \mbox{\Hypertarget{classTextureAtlas_ab55928f2095021b5f733e92e05496457}\label{classTextureAtlas_ab55928f2095021b5f733e92e05496457}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+Sets the texture for the texture atlas. \mbox{\Hypertarget{classTextureAtlas_ab55928f2095021b5f733e92e05496457}\label{classTextureAtlas_ab55928f2095021b5f733e92e05496457}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+Sets the texture for the texture atlas. \mbox{\Hypertarget{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}\label{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!update\+Quad@{update\+Quad}}
+\index{update\+Quad@{update\+Quad}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{update\+Quad()}{updateQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::update\+Quad (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quad,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Updates a Quad (texture, vertex and color) at a certain index. 
+\begin{DoxyParams}{Parameters}
+{\em quad} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}\label{classTextureAtlas_a3811e75915851fc5035804f3ecc5423e}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!update\+Quad@{update\+Quad}}
+\index{update\+Quad@{update\+Quad}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{update\+Quad()}{updateQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture\+Atlas\+::update\+Quad (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quad,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Updates a Quad (texture, vertex and color) at a certain index. 
+\begin{DoxyParams}{Parameters}
+{\em quad} & Quad that are going to be rendered. \\
+\hline
+{\em index} & Index must be between 0 and the atlas capacity -\/ 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTextureAtlas_a27aaf85e903dedaa496bb88e58b6d9b7}\label{classTextureAtlas_a27aaf85e903dedaa496bb88e58b6d9b7}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!\+\_\+capacity@{\+\_\+capacity}}
+\index{\+\_\+capacity@{\+\_\+capacity}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{\+\_\+capacity}{\_capacity}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::\+\_\+capacity\hspace{0.3cm}{\ttfamily [protected]}}
+
+quantity of quads that can be stored with the current texture atlas size \mbox{\Hypertarget{classTextureAtlas_a923f5462dd2253d7391f39edbd92f9cf}\label{classTextureAtlas_a923f5462dd2253d7391f39edbd92f9cf}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!\+\_\+quads@{\+\_\+quads}}
+\index{\+\_\+quads@{\+\_\+quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{\+\_\+quads}{\_quads}}
+{\footnotesize\ttfamily \hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$ Texture\+Atlas\+::\+\_\+quads\hspace{0.3cm}{\ttfamily [protected]}}
+
+Quads that are going to be rendered \mbox{\Hypertarget{classTextureAtlas_adadaa6b0c4db68168819b743b30074a6}\label{classTextureAtlas_adadaa6b0c4db68168819b743b30074a6}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!\+\_\+texture@{\+\_\+texture}}
+\index{\+\_\+texture@{\+\_\+texture}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{\+\_\+texture}{\_texture}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Texture\+Atlas\+::\+\_\+texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+Texture of the texture atlas \mbox{\Hypertarget{classTextureAtlas_a57a013f57401888005ebbd4961f57d5b}\label{classTextureAtlas_a57a013f57401888005ebbd4961f57d5b}} 
+\index{Texture\+Atlas@{Texture\+Atlas}!\+\_\+total\+Quads@{\+\_\+total\+Quads}}
+\index{\+\_\+total\+Quads@{\+\_\+total\+Quads}!Texture\+Atlas@{Texture\+Atlas}}
+\subsubsection{\texorpdfstring{\+\_\+total\+Quads}{\_totalQuads}}
+{\footnotesize\ttfamily ssize\+\_\+t Texture\+Atlas\+::\+\_\+total\+Quads\hspace{0.3cm}{\ttfamily [protected]}}
+
+quantity of quads that are going to be drawn 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Texture\+Atlas.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Texture\+Atlas.\+cpp\end{DoxyCompactItemize}

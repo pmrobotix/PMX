@@ -1,0 +1,436 @@
+\hypertarget{classnetwork_1_1HttpClient}{}\section{network\+:\+:Http\+Client Class Reference}
+\label{classnetwork_1_1HttpClient}\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+
+
+{\ttfamily \#include $<$Http\+Client.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a9f36661fe77f479f5c66137f724013ac}\label{classnetwork_1_1HttpClient_a9f36661fe77f479f5c66137f724013ac}} 
+typedef std\+::function$<$ bool(\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$)$>$ {\bfseries Clear\+Request\+Predicate}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a1bce5b4009f9fb4be72b6c67e381b55a}\label{classnetwork_1_1HttpClient_a1bce5b4009f9fb4be72b6c67e381b55a}} 
+typedef std\+::function$<$ bool(\hyperlink{classnetwork_1_1HttpResponse}{Http\+Response} $\ast$)$>$ {\bfseries Clear\+Response\+Predicate}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}{enable\+Cookies} (const char $\ast$cookie\+File)
+\item 
+const std\+::string \& \hyperlink{classnetwork_1_1HttpClient_ae97920b1e10b7617ccbde99cf5c2c2a0}{get\+Cookie\+Filename} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}{set\+S\+S\+L\+Verification} (const std\+::string \&ca\+File)
+\item 
+const std\+::string \& \hyperlink{classnetwork_1_1HttpClient_a80bc5e78ec453afdc746c0580e414ccc}{get\+S\+S\+L\+Verification} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}{send} (\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$request)
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}{send\+Immediate} (\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$request)
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}{set\+Timeout\+For\+Connect} (int value)
+\item 
+int \hyperlink{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}{get\+Timeout\+For\+Connect} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}{set\+Timeout\+For\+Read} (int value)
+\item 
+int \hyperlink{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}{get\+Timeout\+For\+Read} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_afef8932c5ac7e1fa82c5bfb7288f0bf8}\label{classnetwork_1_1HttpClient_afef8932c5ac7e1fa82c5bfb7288f0bf8}} 
+Http\+Cookie $\ast$ {\bfseries get\+Cookie} () const
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_aab2e0b6eef1dddd744430241a040c2c5}\label{classnetwork_1_1HttpClient_aab2e0b6eef1dddd744430241a040c2c5}} 
+std\+::mutex \& {\bfseries get\+Cookie\+File\+Mutex} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a3b669b262b2dc49db18909e1b8648fbb}\label{classnetwork_1_1HttpClient_a3b669b262b2dc49db18909e1b8648fbb}} 
+std\+::mutex \& {\bfseries get\+S\+S\+L\+Ca\+File\+Mutex} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}{enable\+Cookies} (const char $\ast$cookie\+File)
+\item 
+const std\+::string \& \hyperlink{classnetwork_1_1HttpClient_a502f57c5fa481e85d33b1eeaa4f8dc8e}{get\+Cookie\+Filename} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}{set\+S\+S\+L\+Verification} (const std\+::string \&ca\+File)
+\item 
+const std\+::string \& \hyperlink{classnetwork_1_1HttpClient_adce8601485f9c5051278723a21af500b}{get\+S\+S\+L\+Verification} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}{send} (\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$request)
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}{send\+Immediate} (\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$request)
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}{set\+Timeout\+For\+Connect} (int value)
+\item 
+int \hyperlink{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}{get\+Timeout\+For\+Connect} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}{set\+Timeout\+For\+Read} (int value)
+\item 
+int \hyperlink{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}{get\+Timeout\+For\+Read} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_afef8932c5ac7e1fa82c5bfb7288f0bf8}\label{classnetwork_1_1HttpClient_afef8932c5ac7e1fa82c5bfb7288f0bf8}} 
+Http\+Cookie $\ast$ {\bfseries get\+Cookie} () const
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_aab2e0b6eef1dddd744430241a040c2c5}\label{classnetwork_1_1HttpClient_aab2e0b6eef1dddd744430241a040c2c5}} 
+std\+::mutex \& {\bfseries get\+Cookie\+File\+Mutex} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a3b669b262b2dc49db18909e1b8648fbb}\label{classnetwork_1_1HttpClient_a3b669b262b2dc49db18909e1b8648fbb}} 
+std\+::mutex \& {\bfseries get\+S\+S\+L\+Ca\+File\+Mutex} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_ad613c1b57bc56386255b36da94a3b18d}{clear\+Response\+And\+Request\+Queue} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_acb6100ab800ab4e574b088086eac9c18}{set\+Clear\+Request\+Predicate} (Clear\+Request\+Predicate predicate)
+\item 
+void \hyperlink{classnetwork_1_1HttpClient_a0c7a9013ab5e56bee8efef1c79062665}{set\+Clear\+Response\+Predicate} (Clear\+Response\+Predicate predicate)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classnetwork_1_1HttpClient}{Http\+Client} $\ast$ \hyperlink{classnetwork_1_1HttpClient_aaa75d95d6615df0a573ee4839a49bb8a}{get\+Instance} ()
+\item 
+static void \hyperlink{classnetwork_1_1HttpClient_a468c50b7683b5b4a49f499ae052a0aa1}{destroy\+Instance} ()
+\item 
+static \hyperlink{classnetwork_1_1HttpClient}{Http\+Client} $\ast$ \hyperlink{classnetwork_1_1HttpClient_a545f440ef7035370d2d0731aa9935bea}{get\+Instance} ()
+\item 
+static void \hyperlink{classnetwork_1_1HttpClient_a9ee38b8135bf7a8161b857303a01c4ee}{destroy\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classnetwork_1_1HttpClient_aabc39c6245854ba7593237e8da6ca2ee}{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE} = 256
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton that handles asynchronous http requests.
+
+Once the request completed, a callback will issued in main thread when it provided during make request.
+
+NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_ad613c1b57bc56386255b36da94a3b18d}\label{classnetwork_1_1HttpClient_ad613c1b57bc56386255b36da94a3b18d}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!clear\+Response\+And\+Request\+Queue@{clear\+Response\+And\+Request\+Queue}}
+\index{clear\+Response\+And\+Request\+Queue@{clear\+Response\+And\+Request\+Queue}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{clear\+Response\+And\+Request\+Queue()}{clearResponseAndRequestQueue()}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::clear\+Response\+And\+Request\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears the pending http responses and http requests If defined, the method uses the Clear\+Request\+Predicate and Clear\+Response\+Predicate to check for each request/response which to delete \mbox{\Hypertarget{classnetwork_1_1HttpClient_a468c50b7683b5b4a49f499ae052a0aa1}\label{classnetwork_1_1HttpClient_a468c50b7683b5b4a49f499ae052a0aa1}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release the instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}. \mbox{\Hypertarget{classnetwork_1_1HttpClient_a9ee38b8135bf7a8161b857303a01c4ee}\label{classnetwork_1_1HttpClient_a9ee38b8135bf7a8161b857303a01c4ee}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void network\+::\+Http\+Client\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release the instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}. \mbox{\Hypertarget{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}\label{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!enable\+Cookies@{enable\+Cookies}}
+\index{enable\+Cookies@{enable\+Cookies}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{enable\+Cookies()}{enableCookies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::enable\+Cookies (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cookie\+File }\end{DoxyParamCaption})}
+
+Enable cookie support.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cookie\+File} & the filepath of cookie file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}\label{classnetwork_1_1HttpClient_a522608f82b2dad340931c2d83265a1bf}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!enable\+Cookies@{enable\+Cookies}}
+\index{enable\+Cookies@{enable\+Cookies}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{enable\+Cookies()}{enableCookies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::enable\+Cookies (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cookie\+File }\end{DoxyParamCaption})}
+
+Enable cookie support.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cookie\+File} & the filepath of cookie file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_ae97920b1e10b7617ccbde99cf5c2c2a0}\label{classnetwork_1_1HttpClient_ae97920b1e10b7617ccbde99cf5c2c2a0}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Cookie\+Filename@{get\+Cookie\+Filename}}
+\index{get\+Cookie\+Filename@{get\+Cookie\+Filename}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Cookie\+Filename()}{getCookieFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& network\+::\+Http\+Client\+::get\+Cookie\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the cookie filename
+
+\begin{DoxyReturn}{Returns}
+the cookie filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a502f57c5fa481e85d33b1eeaa4f8dc8e}\label{classnetwork_1_1HttpClient_a502f57c5fa481e85d33b1eeaa4f8dc8e}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Cookie\+Filename@{get\+Cookie\+Filename}}
+\index{get\+Cookie\+Filename@{get\+Cookie\+Filename}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Cookie\+Filename()}{getCookieFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& network\+::\+Http\+Client\+::get\+Cookie\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the cookie filename
+
+\begin{DoxyReturn}{Returns}
+the cookie filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_aaa75d95d6615df0a573ee4839a49bb8a}\label{classnetwork_1_1HttpClient_aaa75d95d6615df0a573ee4839a49bb8a}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1HttpClient}{Http\+Client} $\ast$ network\+::\+Http\+Client\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}.
+
+\begin{DoxyReturn}{Returns}
+the instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a545f440ef7035370d2d0731aa9935bea}\label{classnetwork_1_1HttpClient_a545f440ef7035370d2d0731aa9935bea}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}$\ast$ network\+::\+Http\+Client\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}.
+
+\begin{DoxyReturn}{Returns}
+the instance of \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a80bc5e78ec453afdc746c0580e414ccc}\label{classnetwork_1_1HttpClient_a80bc5e78ec453afdc746c0580e414ccc}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+S\+S\+L\+Verification@{get\+S\+S\+L\+Verification}}
+\index{get\+S\+S\+L\+Verification@{get\+S\+S\+L\+Verification}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+S\+S\+L\+Verification()}{getSSLVerification()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& network\+::\+Http\+Client\+::get\+S\+S\+L\+Verification (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the ssl CA filename
+
+\begin{DoxyReturn}{Returns}
+the ssl CA filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_adce8601485f9c5051278723a21af500b}\label{classnetwork_1_1HttpClient_adce8601485f9c5051278723a21af500b}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+S\+S\+L\+Verification@{get\+S\+S\+L\+Verification}}
+\index{get\+S\+S\+L\+Verification@{get\+S\+S\+L\+Verification}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+S\+S\+L\+Verification()}{getSSLVerification()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& network\+::\+Http\+Client\+::get\+S\+S\+L\+Verification (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the ssl CA filename
+
+\begin{DoxyReturn}{Returns}
+the ssl CA filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}\label{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Timeout\+For\+Connect@{get\+Timeout\+For\+Connect}}
+\index{get\+Timeout\+For\+Connect@{get\+Timeout\+For\+Connect}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Timeout\+For\+Connect()}{getTimeoutForConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int network\+::\+Http\+Client\+::get\+Timeout\+For\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the timeout value for connecting.
+
+\begin{DoxyReturn}{Returns}
+int the timeout value for connecting. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}\label{classnetwork_1_1HttpClient_abbc0c505d0d0a323d049a26f35c38329}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Timeout\+For\+Connect@{get\+Timeout\+For\+Connect}}
+\index{get\+Timeout\+For\+Connect@{get\+Timeout\+For\+Connect}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Timeout\+For\+Connect()}{getTimeoutForConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int network\+::\+Http\+Client\+::get\+Timeout\+For\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the timeout value for connecting.
+
+\begin{DoxyReturn}{Returns}
+int the timeout value for connecting. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}\label{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Timeout\+For\+Read@{get\+Timeout\+For\+Read}}
+\index{get\+Timeout\+For\+Read@{get\+Timeout\+For\+Read}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Timeout\+For\+Read()}{getTimeoutForRead()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int network\+::\+Http\+Client\+::get\+Timeout\+For\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the timeout value for reading.
+
+\begin{DoxyReturn}{Returns}
+int the timeout value for reading. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}\label{classnetwork_1_1HttpClient_a3398cc5ce8e6780267cd9227425331f5}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!get\+Timeout\+For\+Read@{get\+Timeout\+For\+Read}}
+\index{get\+Timeout\+For\+Read@{get\+Timeout\+For\+Read}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{get\+Timeout\+For\+Read()}{getTimeoutForRead()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int network\+::\+Http\+Client\+::get\+Timeout\+For\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the timeout value for reading.
+
+\begin{DoxyReturn}{Returns}
+int the timeout value for reading. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}\label{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!send@{send}}
+\index{send@{send}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::send (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$}]{request }\end{DoxyParamCaption})}
+
+Add a get request to task queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & a \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object, which includes url, response callback etc. please make sure request-\/$>$\+\_\+request\+Data is clear before calling \char`\"{}send\char`\"{} here. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}\label{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!send@{send}}
+\index{send@{send}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::send (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$}]{request }\end{DoxyParamCaption})}
+
+Add a get request to task queue
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & a \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object, which includes url, response callback etc. please make sure request-\/$>$\+\_\+request\+Data is clear before calling \char`\"{}send\char`\"{} here. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}\label{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!send\+Immediate@{send\+Immediate}}
+\index{send\+Immediate@{send\+Immediate}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{send\+Immediate()}{sendImmediate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::send\+Immediate (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$}]{request }\end{DoxyParamCaption})}
+
+Immediate send a request
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & a \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object, which includes url, response callback etc. please make sure request-\/$>$\+\_\+request\+Data is clear before calling \char`\"{}send\+Immediate\char`\"{} here. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}\label{classnetwork_1_1HttpClient_a1a8920937cbbbcdc17f64ad431ac9c63}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!send\+Immediate@{send\+Immediate}}
+\index{send\+Immediate@{send\+Immediate}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{send\+Immediate()}{sendImmediate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::send\+Immediate (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} $\ast$}]{request }\end{DoxyParamCaption})}
+
+Immediate send a request
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & a \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object, which includes url, response callback etc. please make sure request-\/$>$\+\_\+request\+Data is clear before calling \char`\"{}send\+Immediate\char`\"{} here. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_acb6100ab800ab4e574b088086eac9c18}\label{classnetwork_1_1HttpClient_acb6100ab800ab4e574b088086eac9c18}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Clear\+Request\+Predicate@{set\+Clear\+Request\+Predicate}}
+\index{set\+Clear\+Request\+Predicate@{set\+Clear\+Request\+Predicate}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Clear\+Request\+Predicate()}{setClearRequestPredicate()}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Clear\+Request\+Predicate (\begin{DoxyParamCaption}\item[{Clear\+Request\+Predicate}]{predicate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets a predicate function that is going to be called to determine if we proceed each of the pending requests
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & function that will be called \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a0c7a9013ab5e56bee8efef1c79062665}\label{classnetwork_1_1HttpClient_a0c7a9013ab5e56bee8efef1c79062665}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Clear\+Response\+Predicate@{set\+Clear\+Response\+Predicate}}
+\index{set\+Clear\+Response\+Predicate@{set\+Clear\+Response\+Predicate}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Clear\+Response\+Predicate()}{setClearResponsePredicate()}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Clear\+Response\+Predicate (\begin{DoxyParamCaption}\item[{Clear\+Response\+Predicate}]{predicate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets a predicate function that is going to be called to determine if we proceed each of the pending requests
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & predicate function that will be called \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}\label{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+S\+S\+L\+Verification@{set\+S\+S\+L\+Verification}}
+\index{set\+S\+S\+L\+Verification@{set\+S\+S\+L\+Verification}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+S\+S\+L\+Verification()}{setSSLVerification()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+S\+S\+L\+Verification (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ca\+File }\end{DoxyParamCaption})}
+
+Set root certificate path for S\+SL verification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ca\+File} & a full path of root certificate.\+if it is empty, S\+SL verification is disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}\label{classnetwork_1_1HttpClient_a55b52ba7821dd0520eed769123df1f16}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+S\+S\+L\+Verification@{set\+S\+S\+L\+Verification}}
+\index{set\+S\+S\+L\+Verification@{set\+S\+S\+L\+Verification}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+S\+S\+L\+Verification()}{setSSLVerification()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+S\+S\+L\+Verification (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ca\+File }\end{DoxyParamCaption})}
+
+Set root certificate path for S\+SL verification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ca\+File} & a full path of root certificate.\+if it is empty, S\+SL verification is disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}\label{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Timeout\+For\+Connect@{set\+Timeout\+For\+Connect}}
+\index{set\+Timeout\+For\+Connect@{set\+Timeout\+For\+Connect}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Timeout\+For\+Connect()}{setTimeoutForConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Timeout\+For\+Connect (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set the timeout value for connecting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the timeout value for connecting. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}\label{classnetwork_1_1HttpClient_a1cf782d82d843941ea049e6fe8d6d231}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Timeout\+For\+Connect@{set\+Timeout\+For\+Connect}}
+\index{set\+Timeout\+For\+Connect@{set\+Timeout\+For\+Connect}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Timeout\+For\+Connect()}{setTimeoutForConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Timeout\+For\+Connect (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set the timeout value for connecting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the timeout value for connecting. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}\label{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Timeout\+For\+Read@{set\+Timeout\+For\+Read}}
+\index{set\+Timeout\+For\+Read@{set\+Timeout\+For\+Read}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Timeout\+For\+Read()}{setTimeoutForRead()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Timeout\+For\+Read (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set the timeout value for reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the timeout value for reading. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}\label{classnetwork_1_1HttpClient_a30fa6578fdbe46651312fd7ead04981e}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!set\+Timeout\+For\+Read@{set\+Timeout\+For\+Read}}
+\index{set\+Timeout\+For\+Read@{set\+Timeout\+For\+Read}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{set\+Timeout\+For\+Read()}{setTimeoutForRead()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Client\+::set\+Timeout\+For\+Read (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set the timeout value for reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the timeout value for reading. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classnetwork_1_1HttpClient_aabc39c6245854ba7593237e8da6ca2ee}\label{classnetwork_1_1HttpClient_aabc39c6245854ba7593237e8da6ca2ee}} 
+\index{network\+::\+Http\+Client@{network\+::\+Http\+Client}!R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!network\+::\+Http\+Client@{network\+::\+Http\+Client}}
+\subsubsection{\texorpdfstring{R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{RESPONSE\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily static const int network\+::\+Http\+Client\+::\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE = 256\hspace{0.3cm}{\ttfamily [static]}}
+
+The buffer size of \+\_\+response\+Message 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Client.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Client-\/android.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Client-\/apple.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Client-\/winrt.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Client.\+cpp\end{DoxyCompactItemize}

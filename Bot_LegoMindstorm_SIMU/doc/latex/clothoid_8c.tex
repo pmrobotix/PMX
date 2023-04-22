@@ -1,0 +1,55 @@
+\hypertarget{clothoid_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/clothoid.c File Reference}
+\label{clothoid_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/clothoid.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/clothoid.\+c}}
+{\ttfamily \#include \char`\"{}clothoid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../global.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+Include dependency graph for clothoid.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clothoid_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{clothoid_8c_a78a009dc905828f1153030a6a2dab11c}{Fresnel\+C\+S\+Sqrt} (float x)
+\item 
+float \hyperlink{clothoid_8c_ad51cde42f0a622cfdf3178cddd237778}{Fresnel\+S\+Sqrt} (float x)
+\item 
+void \hyperlink{clothoid_8c_a5494872c13835ed1058d7eb58437025f}{Create\+Two\+Segment\+Traj} (float V0, float dist\+D1, float dist\+D2, float A0, float beta, float epsilon)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{clothoid_8c_a5494872c13835ed1058d7eb58437025f}\label{clothoid_8c_a5494872c13835ed1058d7eb58437025f}} 
+\index{clothoid.\+c@{clothoid.\+c}!Create\+Two\+Segment\+Traj@{Create\+Two\+Segment\+Traj}}
+\index{Create\+Two\+Segment\+Traj@{Create\+Two\+Segment\+Traj}!clothoid.\+c@{clothoid.\+c}}
+\subsubsection{\texorpdfstring{Create\+Two\+Segment\+Traj()}{CreateTwoSegmentTraj()}}
+{\footnotesize\ttfamily void Create\+Two\+Segment\+Traj (\begin{DoxyParamCaption}\item[{float}]{V0,  }\item[{float}]{dist\+D1,  }\item[{float}]{dist\+D2,  }\item[{float}]{A0,  }\item[{float}]{beta,  }\item[{float}]{epsilon }\end{DoxyParamCaption})}
+
+Create a clothoid trajectory made of two line segments, smoothly linked by an arc of clothoid This is a test function \mbox{\Hypertarget{clothoid_8c_a78a009dc905828f1153030a6a2dab11c}\label{clothoid_8c_a78a009dc905828f1153030a6a2dab11c}} 
+\index{clothoid.\+c@{clothoid.\+c}!Fresnel\+C\+S\+Sqrt@{Fresnel\+C\+S\+Sqrt}}
+\index{Fresnel\+C\+S\+Sqrt@{Fresnel\+C\+S\+Sqrt}!clothoid.\+c@{clothoid.\+c}}
+\subsubsection{\texorpdfstring{Fresnel\+C\+S\+Sqrt()}{FresnelCSSqrt()}}
+{\footnotesize\ttfamily float Fresnel\+C\+S\+Sqrt (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+Taylor decomposition of FresnelC( sqrt(x/\+Pi) ) / sqrt(FresnelS( sqrt(x/\+Pi) )) at x = Pi/2 and 3$\ast$\+Pi/2 the function should only be used with abs(x) $>$ 0.\+1 \mbox{\Hypertarget{clothoid_8c_ad51cde42f0a622cfdf3178cddd237778}\label{clothoid_8c_ad51cde42f0a622cfdf3178cddd237778}} 
+\index{clothoid.\+c@{clothoid.\+c}!Fresnel\+S\+Sqrt@{Fresnel\+S\+Sqrt}}
+\index{Fresnel\+S\+Sqrt@{Fresnel\+S\+Sqrt}!clothoid.\+c@{clothoid.\+c}}
+\subsubsection{\texorpdfstring{Fresnel\+S\+Sqrt()}{FresnelSSqrt()}}
+{\footnotesize\ttfamily float Fresnel\+S\+Sqrt (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+Taylor decomposition of FresnelS( sqrt(x/\+Pi) ) at x = Pi 

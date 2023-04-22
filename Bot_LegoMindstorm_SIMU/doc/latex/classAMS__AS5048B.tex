@@ -1,0 +1,310 @@
+\hypertarget{classAMS__AS5048B}{}\section{A\+M\+S\+\_\+\+A\+S5048B Class Reference}
+\label{classAMS__AS5048B}\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAMS__AS5048B_af3749e3b6d8b1a4eb755f56581aeacdc}{A\+M\+S\+\_\+\+A\+S5048B} (uint8\+\_\+t chip\+Address, uint8\+\_\+t i2c\+Num=1)
+\item 
+\mbox{\Hypertarget{classAMS__AS5048B_aa91e8e7c01a605f3bbe99404731e4eb9}\label{classAMS__AS5048B_aa91e8e7c01a605f3bbe99404731e4eb9}} 
+bool {\bfseries connected} ()
+\item 
+int \hyperlink{classAMS__AS5048B_a7c80b5daeb18595c1a0e7b5a9d44b4e8}{ping} ()
+\begin{DoxyCompactList}\small\item\em ping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAMS__AS5048B_ac1954845f9e735e995474e6de02d7e51}\label{classAMS__AS5048B_ac1954845f9e735e995474e6de02d7e51}} 
+bool {\bfseries connect} (void)
+\item 
+void \hyperlink{classAMS__AS5048B_a7f2a933875b46cf63eb29137c63dd11f}{reset} (void)
+\begin{DoxyCompactList}\small\item\em reset values and overall behaviors for A\+S5948B use \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_ac2485a851c68e9a5b410c47ffc3485ca}{toggle\+Debug} (void)
+\begin{DoxyCompactList}\small\item\em Toggle debug output to serial. \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a7f80205c1b980e90a13482c72711e62d}{set\+Clock\+Wise} (bool cw=true)
+\begin{DoxyCompactList}\small\item\em Set / unset clock wise counting -\/ sensor counts C\+CW natively. \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a6ff8070d7845ce5ef325a6c64ea29c96}{prog\+Register} (uint8\+\_\+t reg\+Val)
+\begin{DoxyCompactList}\small\item\em writes O\+TP control register \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a9acf55772619d8df888be48c8a31eef8}{do\+Prog} (void)
+\begin{DoxyCompactList}\small\item\em Burn values to the slave address O\+TP register. \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a69012e91b30cd4182f072a7d2f377305}{do\+Prog\+Zero} (void)
+\begin{DoxyCompactList}\small\item\em Burn values to the zero position O\+TP register. \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a8faebc24296fd8ac9464f5b5aab0d1d1}{address\+RegW} (uint8\+\_\+t reg\+Val)
+\begin{DoxyCompactList}\small\item\em write I2C address value (5 bits) into the address register \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAMS__AS5048B_a02b3c3054c8cca8c3d8167b835794ff6}{address\+RegR} (void)
+\begin{DoxyCompactList}\small\item\em reads I2C address register value \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_ad67ba3de9224a12102a31b35829450e8}{set\+Zero\+Reg} (void)
+\begin{DoxyCompactList}\small\item\em sets current angle as the zero position \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a67cbd882f0300705d615ce1e2dff2f47}{zero\+RegW} (uint16\+\_\+t reg\+Val)
+\begin{DoxyCompactList}\small\item\em writes the 2 bytes Zero position register value \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classAMS__AS5048B_a7784bc5f991bb485c2731a7189d277bf}{zero\+RegR} (void)
+\begin{DoxyCompactList}\small\item\em reads the 2 bytes Zero position register value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAMS__AS5048B_a4b356e895fbcddf68eeffaa020b27420}\label{classAMS__AS5048B_a4b356e895fbcddf68eeffaa020b27420}} 
+uint16\+\_\+t {\bfseries angle\+RegR} (void)
+\item 
+uint16\+\_\+t \hyperlink{classAMS__AS5048B_acd55346e4eedada7b86e43f42822ae2a}{magnitudeR} (void)
+\begin{DoxyCompactList}\small\item\em reads the 2 bytes magnitude register value \end{DoxyCompactList}\item 
+float \hyperlink{classAMS__AS5048B_a91b6f6054e75ed1eb43faa16edd38ec5}{angleR} (int unit=U\+\_\+\+R\+AW, bool new\+Val=true)
+\begin{DoxyCompactList}\small\item\em reads current angle value and converts it into the desired unit \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAMS__AS5048B_a5be27698e144b1889f9df2f43ad85cc9}{get\+Auto\+Gain} (void)
+\begin{DoxyCompactList}\small\item\em reads the 1 bytes auto gain register value \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classAMS__AS5048B_ae2ebf1d3b0e9b9cf73fbf5ea22ada636}{get\+Diag\+Reg} (void)
+\begin{DoxyCompactList}\small\item\em reads the 1 bytes diagnostic register value \end{DoxyCompactList}\item 
+void \hyperlink{classAMS__AS5048B_a20a1cab67cc2ec87135366723893b1aa}{update\+Moving\+Avg\+Exp} (void)
+\begin{DoxyCompactList}\small\item\em Performs an exponential moving average on the angle. Works on Sine and Cosine of the angle to avoid issues 0°/360° discontinuity. \end{DoxyCompactList}\item 
+float \hyperlink{classAMS__AS5048B_a1d994be5aa856d1e2e033ba4f7ed65fc}{get\+Moving\+Avg\+Exp} (int unit=U\+\_\+\+R\+AW)
+\begin{DoxyCompactList}\small\item\em sent back the exponential moving averaged angle in the desired unit \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAMS__AS5048B_ac4b8db2e8d36e45d894812aa799cd89e}\label{classAMS__AS5048B_ac4b8db2e8d36e45d894812aa799cd89e}} 
+void {\bfseries reset\+Moving\+Avg\+Exp} (void)
+\item 
+\mbox{\Hypertarget{classAMS__AS5048B_a642b24b2211ad4c4e4787f752ddfa65c}\label{classAMS__AS5048B_a642b24b2211ad4c4e4787f752ddfa65c}} 
+int {\bfseries get\+All\+Data} (uint8\+\_\+t $\ast$agc, uint8\+\_\+t $\ast$diag, uint16\+\_\+t $\ast$mag, uint16\+\_\+t $\ast$raw)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAMS__AS5048B_af3749e3b6d8b1a4eb755f56581aeacdc}\label{classAMS__AS5048B_af3749e3b6d8b1a4eb755f56581aeacdc}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{A\+M\+S\+\_\+\+A\+S5048\+B()}{AMS\_AS5048B()}}
+{\footnotesize\ttfamily A\+M\+S\+\_\+\+A\+S5048\+B\+::\+A\+M\+S\+\_\+\+A\+S5048B (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{chip\+Address,  }\item[{uint8\+\_\+t}]{i2c\+Num = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAMS__AS5048B_a02b3c3054c8cca8c3d8167b835794ff6}\label{classAMS__AS5048B_a02b3c3054c8cca8c3d8167b835794ff6}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!address\+RegR@{address\+RegR}}
+\index{address\+RegR@{address\+RegR}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{address\+Reg\+R()}{addressRegR()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+M\+S\+\_\+\+A\+S5048\+B\+::address\+RegR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reads I2C address register value 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+uint8\+\_\+t register value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a8faebc24296fd8ac9464f5b5aab0d1d1}\label{classAMS__AS5048B_a8faebc24296fd8ac9464f5b5aab0d1d1}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!address\+RegW@{address\+RegW}}
+\index{address\+RegW@{address\+RegW}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{address\+Reg\+W()}{addressRegW()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::address\+RegW (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Val }\end{DoxyParamCaption})}
+
+
+
+write I2C address value (5 bits) into the address register 
+
+\mbox{[}in\mbox{]} unit8\+\_\+t register value \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a91b6f6054e75ed1eb43faa16edd38ec5}\label{classAMS__AS5048B_a91b6f6054e75ed1eb43faa16edd38ec5}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!angleR@{angleR}}
+\index{angleR@{angleR}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{angle\+R()}{angleR()}}
+{\footnotesize\ttfamily float A\+M\+S\+\_\+\+A\+S5048\+B\+::angleR (\begin{DoxyParamCaption}\item[{int}]{unit = {\ttfamily U\+\_\+RAW},  }\item[{bool}]{new\+Val = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+reads current angle value and converts it into the desired unit 
+
+\mbox{[}in\mbox{]} String unit \+: string expressing the unit of the angle. Sensor raw value as default \mbox{[}in\mbox{]} Bool new\+Val \+: have a new measurement or use the last read one. True as default \begin{DoxyReturn}{Returns}
+float angle value converted into the desired unit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a9acf55772619d8df888be48c8a31eef8}\label{classAMS__AS5048B_a9acf55772619d8df888be48c8a31eef8}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!do\+Prog@{do\+Prog}}
+\index{do\+Prog@{do\+Prog}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{do\+Prog()}{doProg()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::do\+Prog (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Burn values to the slave address O\+TP register. 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a69012e91b30cd4182f072a7d2f377305}\label{classAMS__AS5048B_a69012e91b30cd4182f072a7d2f377305}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!do\+Prog\+Zero@{do\+Prog\+Zero}}
+\index{do\+Prog\+Zero@{do\+Prog\+Zero}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{do\+Prog\+Zero()}{doProgZero()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::do\+Prog\+Zero (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Burn values to the zero position O\+TP register. 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a5be27698e144b1889f9df2f43ad85cc9}\label{classAMS__AS5048B_a5be27698e144b1889f9df2f43ad85cc9}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!get\+Auto\+Gain@{get\+Auto\+Gain}}
+\index{get\+Auto\+Gain@{get\+Auto\+Gain}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{get\+Auto\+Gain()}{getAutoGain()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+M\+S\+\_\+\+A\+S5048\+B\+::get\+Auto\+Gain (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reads the 1 bytes auto gain register value 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+uint8\+\_\+t register value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_ae2ebf1d3b0e9b9cf73fbf5ea22ada636}\label{classAMS__AS5048B_ae2ebf1d3b0e9b9cf73fbf5ea22ada636}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!get\+Diag\+Reg@{get\+Diag\+Reg}}
+\index{get\+Diag\+Reg@{get\+Diag\+Reg}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{get\+Diag\+Reg()}{getDiagReg()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+M\+S\+\_\+\+A\+S5048\+B\+::get\+Diag\+Reg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reads the 1 bytes diagnostic register value 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+uint8\+\_\+t register value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a1d994be5aa856d1e2e033ba4f7ed65fc}\label{classAMS__AS5048B_a1d994be5aa856d1e2e033ba4f7ed65fc}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!get\+Moving\+Avg\+Exp@{get\+Moving\+Avg\+Exp}}
+\index{get\+Moving\+Avg\+Exp@{get\+Moving\+Avg\+Exp}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{get\+Moving\+Avg\+Exp()}{getMovingAvgExp()}}
+{\footnotesize\ttfamily float A\+M\+S\+\_\+\+A\+S5048\+B\+::get\+Moving\+Avg\+Exp (\begin{DoxyParamCaption}\item[{int}]{unit = {\ttfamily U\+\_\+RAW} }\end{DoxyParamCaption})}
+
+
+
+sent back the exponential moving averaged angle in the desired unit 
+
+\mbox{[}in\mbox{]} String unit \+: string expressing the unit of the angle. Sensor raw value as default \begin{DoxyReturn}{Returns}
+float exponential moving averaged angle value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_acd55346e4eedada7b86e43f42822ae2a}\label{classAMS__AS5048B_acd55346e4eedada7b86e43f42822ae2a}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!magnitudeR@{magnitudeR}}
+\index{magnitudeR@{magnitudeR}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{magnitude\+R()}{magnitudeR()}}
+{\footnotesize\ttfamily uint16\+\_\+t A\+M\+S\+\_\+\+A\+S5048\+B\+::magnitudeR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reads the 2 bytes magnitude register value 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+uint16\+\_\+t register value trimmed on 14 bits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a7c80b5daeb18595c1a0e7b5a9d44b4e8}\label{classAMS__AS5048B_a7c80b5daeb18595c1a0e7b5a9d44b4e8}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!ping@{ping}}
+\index{ping@{ping}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{ping()}{ping()}}
+{\footnotesize\ttfamily int A\+M\+S\+\_\+\+A\+S5048\+B\+::ping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ping 
+
+none \begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a6ff8070d7845ce5ef325a6c64ea29c96}\label{classAMS__AS5048B_a6ff8070d7845ce5ef325a6c64ea29c96}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!prog\+Register@{prog\+Register}}
+\index{prog\+Register@{prog\+Register}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{prog\+Register()}{progRegister()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::prog\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Val }\end{DoxyParamCaption})}
+
+
+
+writes O\+TP control register 
+
+\mbox{[}in\mbox{]} unit8\+\_\+t register value \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a7f2a933875b46cf63eb29137c63dd11f}\label{classAMS__AS5048B_a7f2a933875b46cf63eb29137c63dd11f}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!reset@{reset}}
+\index{reset@{reset}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reset values and overall behaviors for A\+S5948B use 
+
+none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a7f80205c1b980e90a13482c72711e62d}\label{classAMS__AS5048B_a7f80205c1b980e90a13482c72711e62d}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!set\+Clock\+Wise@{set\+Clock\+Wise}}
+\index{set\+Clock\+Wise@{set\+Clock\+Wise}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{set\+Clock\+Wise()}{setClockWise()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::set\+Clock\+Wise (\begin{DoxyParamCaption}\item[{bool}]{cw = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Set / unset clock wise counting -\/ sensor counts C\+CW natively. 
+
+\mbox{[}in\mbox{]} bool cw -\/ true\+: CW, false\+: C\+CW \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_ad67ba3de9224a12102a31b35829450e8}\label{classAMS__AS5048B_ad67ba3de9224a12102a31b35829450e8}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!set\+Zero\+Reg@{set\+Zero\+Reg}}
+\index{set\+Zero\+Reg@{set\+Zero\+Reg}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{set\+Zero\+Reg()}{setZeroReg()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::set\+Zero\+Reg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+sets current angle as the zero position 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_ac2485a851c68e9a5b410c47ffc3485ca}\label{classAMS__AS5048B_ac2485a851c68e9a5b410c47ffc3485ca}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!toggle\+Debug@{toggle\+Debug}}
+\index{toggle\+Debug@{toggle\+Debug}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{toggle\+Debug()}{toggleDebug()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::toggle\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Toggle debug output to serial. 
+
+none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a20a1cab67cc2ec87135366723893b1aa}\label{classAMS__AS5048B_a20a1cab67cc2ec87135366723893b1aa}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!update\+Moving\+Avg\+Exp@{update\+Moving\+Avg\+Exp}}
+\index{update\+Moving\+Avg\+Exp@{update\+Moving\+Avg\+Exp}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{update\+Moving\+Avg\+Exp()}{updateMovingAvgExp()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::update\+Moving\+Avg\+Exp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Performs an exponential moving average on the angle. Works on Sine and Cosine of the angle to avoid issues 0°/360° discontinuity. 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a7784bc5f991bb485c2731a7189d277bf}\label{classAMS__AS5048B_a7784bc5f991bb485c2731a7189d277bf}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!zero\+RegR@{zero\+RegR}}
+\index{zero\+RegR@{zero\+RegR}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{zero\+Reg\+R()}{zeroRegR()}}
+{\footnotesize\ttfamily uint16\+\_\+t A\+M\+S\+\_\+\+A\+S5048\+B\+::zero\+RegR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+reads the 2 bytes Zero position register value 
+
+\mbox{[}in\mbox{]} none \begin{DoxyReturn}{Returns}
+uint16\+\_\+t register value trimmed on 14 bits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAMS__AS5048B_a67cbd882f0300705d615ce1e2dff2f47}\label{classAMS__AS5048B_a67cbd882f0300705d615ce1e2dff2f47}} 
+\index{A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}!zero\+RegW@{zero\+RegW}}
+\index{zero\+RegW@{zero\+RegW}!A\+M\+S\+\_\+\+A\+S5048B@{A\+M\+S\+\_\+\+A\+S5048B}}
+\subsubsection{\texorpdfstring{zero\+Reg\+W()}{zeroRegW()}}
+{\footnotesize\ttfamily void A\+M\+S\+\_\+\+A\+S5048\+B\+::zero\+RegW (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{reg\+Val }\end{DoxyParamCaption})}
+
+
+
+writes the 2 bytes Zero position register value 
+
+\mbox{[}in\mbox{]} unit16\+\_\+t register value \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/ams\+\_\+as5048b.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/\hyperlink{ams__as5048b_8cpp}{ams\+\_\+as5048b.\+cpp}\end{DoxyCompactItemize}

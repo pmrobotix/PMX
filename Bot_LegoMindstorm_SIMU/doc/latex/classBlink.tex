@@ -1,0 +1,268 @@
+\hypertarget{classBlink}{}\section{Blink Class Reference}
+\label{classBlink}\index{Blink@{Blink}}
+
+
+Blinks a \hyperlink{classNode}{Node} object by modifying it\textquotesingle{}s visible attribute.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Blink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classBlink__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Blink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBlink__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_a01f5110523a8984f73a447cac74f1121}{clone} () const override
+\item 
+virtual \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_a4e2631e42f7ef86f0fc5097e87f352c5}{reverse} () const override
+\item 
+virtual void \hyperlink{classBlink_a20ce5c25af940fe152d600a20b183f84}{update} (float time) override
+\item 
+virtual void \hyperlink{classBlink_a29dde0a5d1edba675cd5a9e60cfa2de7}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classBlink_ac2299db1e757e2911e35ee9c88fc477c}{stop} () override
+\item 
+virtual \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_afb2d2eb745a9a3ea9f157fd9e83ca19a}{clone} () const override
+\item 
+virtual \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_aa491375c4dd70b209c4602a58b6e6e95}{reverse} () const override
+\item 
+virtual void \hyperlink{classBlink_aa9e0a219061963eecfa5b8193f2780f2}{update} (float time) override
+\item 
+virtual void \hyperlink{classBlink_aba011d756d22e0094d87a70d9ae6c613}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classBlink_a081f03902fb69d5b4ec0fddf0ee72b60}{stop} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_a283462c9ff5a6c4fcd33ad9f125a8f8b}{create} (float duration, int blinks)
+\item 
+static \hyperlink{classBlink}{Blink} $\ast$ \hyperlink{classBlink_a4369df860989ce2c3ffe8b535cfdae1c}{create} (float duration, int blinks)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlink_a2f2a3fb689c9a6d30f5b7f8b534546eb}\label{classBlink_a2f2a3fb689c9a6d30f5b7f8b534546eb}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classBlink}{Blink}() \{\} virtual $\sim$\hyperlink{classBlink}{Blink}() \{\} bool init\+With\+Duration(float duration
+\item 
+\mbox{\Hypertarget{classBlink_a92fadeea492071b30037cc7c6195f055}\label{classBlink_a92fadeea492071b30037cc7c6195f055}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} int {\bfseries blinks}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlink_a4e32c61ff7bf36c1b2ee6d3e8b18d499}\label{classBlink_a4e32c61ff7bf36c1b2ee6d3e8b18d499}} 
+int {\bfseries \+\_\+times}
+\item 
+\mbox{\Hypertarget{classBlink_a535a2679c26a1a15349ed30456e55aae}\label{classBlink_a535a2679c26a1a15349ed30456e55aae}} 
+bool {\bfseries \+\_\+original\+State}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Blinks a \hyperlink{classNode}{Node} object by modifying it\textquotesingle{}s visible attribute. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlink_a01f5110523a8984f73a447cac74f1121}\label{classBlink_a01f5110523a8984f73a447cac74f1121}} 
+\index{Blink@{Blink}!clone@{clone}}
+\index{clone@{clone}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBlink}{Blink} $\ast$ Blink\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_afb2d2eb745a9a3ea9f157fd9e83ca19a}\label{classBlink_afb2d2eb745a9a3ea9f157fd9e83ca19a}} 
+\index{Blink@{Blink}!clone@{clone}}
+\index{clone@{clone}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classBlink}{Blink}$\ast$ Blink\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_a283462c9ff5a6c4fcd33ad9f125a8f8b}\label{classBlink_a283462c9ff5a6c4fcd33ad9f125a8f8b}} 
+\index{Blink@{Blink}!create@{create}}
+\index{create@{create}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBlink}{Blink} $\ast$ Blink\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{int}]{blinks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em blinks} & \hyperlink{classBlink}{Blink} times. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBlink}{Blink} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlink_a4369df860989ce2c3ffe8b535cfdae1c}\label{classBlink_a4369df860989ce2c3ffe8b535cfdae1c}} 
+\index{Blink@{Blink}!create@{create}}
+\index{create@{create}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classBlink}{Blink}$\ast$ Blink\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{int}]{blinks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em blinks} & \hyperlink{classBlink}{Blink} times. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBlink}{Blink} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlink_a4e2631e42f7ef86f0fc5097e87f352c5}\label{classBlink_a4e2631e42f7ef86f0fc5097e87f352c5}} 
+\index{Blink@{Blink}!reverse@{reverse}}
+\index{reverse@{reverse}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBlink}{Blink} $\ast$ Blink\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_aa491375c4dd70b209c4602a58b6e6e95}\label{classBlink_aa491375c4dd70b209c4602a58b6e6e95}} 
+\index{Blink@{Blink}!reverse@{reverse}}
+\index{reverse@{reverse}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classBlink}{Blink}$\ast$ Blink\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_a29dde0a5d1edba675cd5a9e60cfa2de7}\label{classBlink_a29dde0a5d1edba675cd5a9e60cfa2de7}} 
+\index{Blink@{Blink}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Blink\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_aba011d756d22e0094d87a70d9ae6c613}\label{classBlink_aba011d756d22e0094d87a70d9ae6c613}} 
+\index{Blink@{Blink}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Blink\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classBlink_ac2299db1e757e2911e35ee9c88fc477c}\label{classBlink_ac2299db1e757e2911e35ee9c88fc477c}} 
+\index{Blink@{Blink}!stop@{stop}}
+\index{stop@{stop}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Blink\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classBlink_a081f03902fb69d5b4ec0fddf0ee72b60}\label{classBlink_a081f03902fb69d5b4ec0fddf0ee72b60}} 
+\index{Blink@{Blink}!stop@{stop}}
+\index{stop@{stop}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Blink\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classBlink_a20ce5c25af940fe152d600a20b183f84}\label{classBlink_a20ce5c25af940fe152d600a20b183f84}} 
+\index{Blink@{Blink}!update@{update}}
+\index{update@{update}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Blink\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classBlink_aa9e0a219061963eecfa5b8193f2780f2}\label{classBlink_aa9e0a219061963eecfa5b8193f2780f2}} 
+\index{Blink@{Blink}!update@{update}}
+\index{update@{update}!Blink@{Blink}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Blink\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

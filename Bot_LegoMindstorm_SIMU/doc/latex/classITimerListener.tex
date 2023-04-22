@@ -1,0 +1,74 @@
+\hypertarget{classITimerListener}{}\section{I\+Timer\+Listener Class Reference}
+\label{classITimerListener}\index{I\+Timer\+Listener@{I\+Timer\+Listener}}
+
+
+Cette interface représente une action executée par un timer lorsqu\textquotesingle{}il atteint son seuil d\textquotesingle{}execution.  
+
+
+
+
+{\ttfamily \#include $<$I\+Timer\+Listener.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Timer\+Listener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classITimerListener__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerListener_a0d974556acf49d43add83ffabb25abe8}\label{classITimerListener_a0d974556acf49d43add83ffabb25abe8}} 
+virtual void \hyperlink{classITimerListener_a0d974556acf49d43add83ffabb25abe8}{on\+Timer} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)=0
+\begin{DoxyCompactList}\small\item\em \hyperlink{classActions}{Actions} à executer pour le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerListener_a0004b567b000eef6df12d9d970909142}\label{classITimerListener_a0004b567b000eef6df12d9d970909142}} 
+virtual void \hyperlink{classITimerListener_a0004b567b000eef6df12d9d970909142}{on\+Timer\+End} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)=0
+\begin{DoxyCompactList}\small\item\em \hyperlink{classActions}{Actions} de fin à executer pour le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerListener_a1fb13795b7ae788210f5e6bce5a9aeb0}\label{classITimerListener_a1fb13795b7ae788210f5e6bce5a9aeb0}} 
+virtual std\+::string \hyperlink{classITimerListener_a1fb13795b7ae788210f5e6bce5a9aeb0}{name} ()
+\begin{DoxyCompactList}\small\item\em Getter sur les infos permettant d\textquotesingle{}identifier le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerListener_a746c0ceee4eb354754d2e90c5638454c}\label{classITimerListener_a746c0ceee4eb354754d2e90c5638454c}} 
+int {\bfseries time\+Span} ()
+\item 
+\mbox{\Hypertarget{classITimerListener_afdef8ccebdbaf3102d64df87951def4c}\label{classITimerListener_afdef8ccebdbaf3102d64df87951def4c}} 
+int {\bfseries get\+Last\+Time} ()
+\item 
+\mbox{\Hypertarget{classITimerListener_a459eb8a49927fb50bef7965140a196b7}\label{classITimerListener_a459eb8a49927fb50bef7965140a196b7}} 
+void {\bfseries set\+Last\+Time} (long l)
+\item 
+\mbox{\Hypertarget{classITimerListener_a5eb6e3cce242f255ee667c69c5d4041c}\label{classITimerListener_a5eb6e3cce242f255ee667c69c5d4041c}} 
+virtual \hyperlink{classITimerListener_a5eb6e3cce242f255ee667c69c5d4041c}{$\sim$ I\+Timer\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerListener_a2099c9b93c841f05c5e99449943d4e98}\label{classITimerListener_a2099c9b93c841f05c5e99449943d4e98}} 
+\hyperlink{classITimerListener_a2099c9b93c841f05c5e99449943d4e98}{I\+Timer\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerListener_a4557b2d0a2dae7ac879ba196afa7b9f3}\label{classITimerListener_a4557b2d0a2dae7ac879ba196afa7b9f3}} 
+bool {\bfseries has\+To\+Stop\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerListener_a79a8f5efb2fbba8bdc896a808e1eea5b}\label{classITimerListener_a79a8f5efb2fbba8bdc896a808e1eea5b}} 
+long {\bfseries time\+Span\+\_\+ms\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerListener_a9e909d3833770c23c16031c47babf846}\label{classITimerListener_a9e909d3833770c23c16031c47babf846}} 
+long {\bfseries lasttime\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerListener_a5cd3eba68cf1e8c8ca99732cb2c607d0}\label{classITimerListener_a5cd3eba68cf1e8c8ca99732cb2c607d0}} 
+std\+::string {\bfseries name\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette interface représente une action executée par un timer lorsqu\textquotesingle{}il atteint son seuil d\textquotesingle{}execution. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/\hyperlink{ITimerListener_8hpp}{I\+Timer\+Listener.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,192 @@
+\hypertarget{classbtMultiBodyConstraint}{}\section{bt\+Multi\+Body\+Constraint Class Reference}
+\label{classbtMultiBodyConstraint}\index{bt\+Multi\+Body\+Constraint@{bt\+Multi\+Body\+Constraint}}
+
+
+Inheritance diagram for bt\+Multi\+Body\+Constraint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtMultiBodyConstraint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Multi\+Body\+Constraint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classbtMultiBodyConstraint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aab943d7ae4486ecac8029f984d955894}\label{classbtMultiBodyConstraint_aab943d7ae4486ecac8029f984d955894}} 
+{\bfseries bt\+Multi\+Body\+Constraint} (\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$bodyA, \hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$bodyB, int linkA, int linkB, int num\+Rows, bool is\+Unilateral)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a1e78beb29c2694257d6ca681cea2cfda}\label{classbtMultiBodyConstraint_a1e78beb29c2694257d6ca681cea2cfda}} 
+virtual int {\bfseries get\+Island\+IdA} () const =0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ab305c7ace79332a44134319a9816022a}\label{classbtMultiBodyConstraint_ab305c7ace79332a44134319a9816022a}} 
+virtual int {\bfseries get\+Island\+IdB} () const =0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a9c20d0b45e909da415345c48cbd99ffa}\label{classbtMultiBodyConstraint_a9c20d0b45e909da415345c48cbd99ffa}} 
+virtual void {\bfseries create\+Constraint\+Rows} (\hyperlink{classbtAlignedObjectArray}{bt\+Multi\+Body\+Constraint\+Array} \&constraint\+Rows, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)=0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_af43b801cb4cd065b987847b59c9f7e1e}\label{classbtMultiBodyConstraint_af43b801cb4cd065b987847b59c9f7e1e}} 
+int {\bfseries get\+Num\+Rows} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a61afd0786777b6f4517d2e45e5c1659c}\label{classbtMultiBodyConstraint_a61afd0786777b6f4517d2e45e5c1659c}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries get\+Multi\+BodyA} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a7a5751526a00b81ddfb1b664d8b7f61b}\label{classbtMultiBodyConstraint_a7a5751526a00b81ddfb1b664d8b7f61b}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries get\+Multi\+BodyB} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a13249f1137e6f00948215807cbbd3f3d}\label{classbtMultiBodyConstraint_a13249f1137e6f00948215807cbbd3f3d}} 
+bt\+Scalar {\bfseries get\+Position} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a3c312406ee40987dc8fb52cc1ba56243}\label{classbtMultiBodyConstraint_a3c312406ee40987dc8fb52cc1ba56243}} 
+void {\bfseries set\+Position} (int row, bt\+Scalar pos)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ab4c15869729f6fd71583498ad3b0bf39}\label{classbtMultiBodyConstraint_ab4c15869729f6fd71583498ad3b0bf39}} 
+bool {\bfseries is\+Unilateral} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa450060c157dad0dbe7af57b49293af8}\label{classbtMultiBodyConstraint_aa450060c157dad0dbe7af57b49293af8}} 
+bt\+Scalar $\ast$ {\bfseries jacobianA} (int row)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a57d24815cf10d92eacd942792782c809}\label{classbtMultiBodyConstraint_a57d24815cf10d92eacd942792782c809}} 
+const bt\+Scalar $\ast$ {\bfseries jacobianA} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa712ee74160dbb266f5def990011e891}\label{classbtMultiBodyConstraint_aa712ee74160dbb266f5def990011e891}} 
+bt\+Scalar $\ast$ {\bfseries jacobianB} (int row)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a9c524b82b4e19f3a6a7a445a59cf215b}\label{classbtMultiBodyConstraint_a9c524b82b4e19f3a6a7a445a59cf215b}} 
+const bt\+Scalar $\ast$ {\bfseries jacobianB} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_acbb8b7711d2fbe43027fe4ed7a9f2b91}\label{classbtMultiBodyConstraint_acbb8b7711d2fbe43027fe4ed7a9f2b91}} 
+bt\+Scalar {\bfseries get\+Max\+Applied\+Impulse} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa5c88ed393fe5d4f1e0b1f840117bbe7}\label{classbtMultiBodyConstraint_aa5c88ed393fe5d4f1e0b1f840117bbe7}} 
+void {\bfseries set\+Max\+Applied\+Impulse} (bt\+Scalar max\+Imp)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aab943d7ae4486ecac8029f984d955894}\label{classbtMultiBodyConstraint_aab943d7ae4486ecac8029f984d955894}} 
+{\bfseries bt\+Multi\+Body\+Constraint} (\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$bodyA, \hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$bodyB, int linkA, int linkB, int num\+Rows, bool is\+Unilateral)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a1e78beb29c2694257d6ca681cea2cfda}\label{classbtMultiBodyConstraint_a1e78beb29c2694257d6ca681cea2cfda}} 
+virtual int {\bfseries get\+Island\+IdA} () const =0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ab305c7ace79332a44134319a9816022a}\label{classbtMultiBodyConstraint_ab305c7ace79332a44134319a9816022a}} 
+virtual int {\bfseries get\+Island\+IdB} () const =0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a9c20d0b45e909da415345c48cbd99ffa}\label{classbtMultiBodyConstraint_a9c20d0b45e909da415345c48cbd99ffa}} 
+virtual void {\bfseries create\+Constraint\+Rows} (\hyperlink{classbtAlignedObjectArray}{bt\+Multi\+Body\+Constraint\+Array} \&constraint\+Rows, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global)=0
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_af43b801cb4cd065b987847b59c9f7e1e}\label{classbtMultiBodyConstraint_af43b801cb4cd065b987847b59c9f7e1e}} 
+int {\bfseries get\+Num\+Rows} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a61afd0786777b6f4517d2e45e5c1659c}\label{classbtMultiBodyConstraint_a61afd0786777b6f4517d2e45e5c1659c}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries get\+Multi\+BodyA} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a7a5751526a00b81ddfb1b664d8b7f61b}\label{classbtMultiBodyConstraint_a7a5751526a00b81ddfb1b664d8b7f61b}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries get\+Multi\+BodyB} ()
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a13249f1137e6f00948215807cbbd3f3d}\label{classbtMultiBodyConstraint_a13249f1137e6f00948215807cbbd3f3d}} 
+bt\+Scalar {\bfseries get\+Position} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a3c312406ee40987dc8fb52cc1ba56243}\label{classbtMultiBodyConstraint_a3c312406ee40987dc8fb52cc1ba56243}} 
+void {\bfseries set\+Position} (int row, bt\+Scalar pos)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ab4c15869729f6fd71583498ad3b0bf39}\label{classbtMultiBodyConstraint_ab4c15869729f6fd71583498ad3b0bf39}} 
+bool {\bfseries is\+Unilateral} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa450060c157dad0dbe7af57b49293af8}\label{classbtMultiBodyConstraint_aa450060c157dad0dbe7af57b49293af8}} 
+bt\+Scalar $\ast$ {\bfseries jacobianA} (int row)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a57d24815cf10d92eacd942792782c809}\label{classbtMultiBodyConstraint_a57d24815cf10d92eacd942792782c809}} 
+const bt\+Scalar $\ast$ {\bfseries jacobianA} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa712ee74160dbb266f5def990011e891}\label{classbtMultiBodyConstraint_aa712ee74160dbb266f5def990011e891}} 
+bt\+Scalar $\ast$ {\bfseries jacobianB} (int row)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a9c524b82b4e19f3a6a7a445a59cf215b}\label{classbtMultiBodyConstraint_a9c524b82b4e19f3a6a7a445a59cf215b}} 
+const bt\+Scalar $\ast$ {\bfseries jacobianB} (int row) const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_acbb8b7711d2fbe43027fe4ed7a9f2b91}\label{classbtMultiBodyConstraint_acbb8b7711d2fbe43027fe4ed7a9f2b91}} 
+bt\+Scalar {\bfseries get\+Max\+Applied\+Impulse} () const
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aa5c88ed393fe5d4f1e0b1f840117bbe7}\label{classbtMultiBodyConstraint_aa5c88ed393fe5d4f1e0b1f840117bbe7}} 
+void {\bfseries set\+Max\+Applied\+Impulse} (bt\+Scalar max\+Imp)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a6a963a721e318ee010fadb4b12fbc33b}\label{classbtMultiBodyConstraint_a6a963a721e318ee010fadb4b12fbc33b}} 
+void {\bfseries apply\+Delta\+Vee} (\hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, bt\+Scalar $\ast$delta\+\_\+vee, bt\+Scalar impulse, int velocity\+Index, int ndof)
+\item 
+void \hyperlink{classbtMultiBodyConstraint_a0cdd1b0d275d96edff7accc9df216370}{fill\+Multi\+Body\+Constraint\+Mixed} (bt\+Multi\+Body\+Solver\+Constraint \&solver\+Constraint, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, const bt\+Vector3 \&contact\+Normal\+OnB, const bt\+Vector3 \&pos\+Aworld, const bt\+Vector3 \&pos\+Bworld, bt\+Scalar position, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, bt\+Scalar \&relaxation, bool is\+Friction, bt\+Scalar desired\+Velocity=0, bt\+Scalar cfm\+Slip=0)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a8bc70e38d498ba56f1c562a004235368}\label{classbtMultiBodyConstraint_a8bc70e38d498ba56f1c562a004235368}} 
+bt\+Scalar {\bfseries fill\+Constraint\+Row\+Multi\+Body\+Multi\+Body} (bt\+Multi\+Body\+Solver\+Constraint \&constraint\+Row, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, bt\+Scalar $\ast$jac\+OrgA, bt\+Scalar $\ast$jac\+OrgB, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, bt\+Scalar desired\+Velocity, bt\+Scalar lower\+Limit, bt\+Scalar upper\+Limit)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a6a963a721e318ee010fadb4b12fbc33b}\label{classbtMultiBodyConstraint_a6a963a721e318ee010fadb4b12fbc33b}} 
+void {\bfseries apply\+Delta\+Vee} (\hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, bt\+Scalar $\ast$delta\+\_\+vee, bt\+Scalar impulse, int velocity\+Index, int ndof)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a0cdd1b0d275d96edff7accc9df216370}\label{classbtMultiBodyConstraint_a0cdd1b0d275d96edff7accc9df216370}} 
+void {\bfseries fill\+Multi\+Body\+Constraint\+Mixed} (bt\+Multi\+Body\+Solver\+Constraint \&solver\+Constraint, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, const bt\+Vector3 \&contact\+Normal\+OnB, const bt\+Vector3 \&pos\+Aworld, const bt\+Vector3 \&pos\+Bworld, bt\+Scalar position, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, bt\+Scalar \&relaxation, bool is\+Friction, bt\+Scalar desired\+Velocity=0, bt\+Scalar cfm\+Slip=0)
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a8bc70e38d498ba56f1c562a004235368}\label{classbtMultiBodyConstraint_a8bc70e38d498ba56f1c562a004235368}} 
+bt\+Scalar {\bfseries fill\+Constraint\+Row\+Multi\+Body\+Multi\+Body} (bt\+Multi\+Body\+Solver\+Constraint \&constraint\+Row, \hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&data, bt\+Scalar $\ast$jac\+OrgA, bt\+Scalar $\ast$jac\+OrgB, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info\+Global, bt\+Scalar desired\+Velocity, bt\+Scalar lower\+Limit, bt\+Scalar upper\+Limit)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_abe653d650a85fca6226e992af49e480e}\label{classbtMultiBodyConstraint_abe653d650a85fca6226e992af49e480e}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries m\+\_\+bodyA}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ae20c8bca34f08f24f7fb82231752dc71}\label{classbtMultiBodyConstraint_ae20c8bca34f08f24f7fb82231752dc71}} 
+\hyperlink{classbtMultiBody}{bt\+Multi\+Body} $\ast$ {\bfseries m\+\_\+bodyB}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_afd44709b8735234772480c76cac3c8cc}\label{classbtMultiBodyConstraint_afd44709b8735234772480c76cac3c8cc}} 
+int {\bfseries m\+\_\+linkA}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_ad79d52066ab4ffa89f94e62d15ae727c}\label{classbtMultiBodyConstraint_ad79d52066ab4ffa89f94e62d15ae727c}} 
+int {\bfseries m\+\_\+linkB}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a1ec35ebd53f82747a674f013f7f067af}\label{classbtMultiBodyConstraint_a1ec35ebd53f82747a674f013f7f067af}} 
+int {\bfseries m\+\_\+num\+\_\+rows}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aeb00cd1a53a57e5f73c1a1b3d9b99060}\label{classbtMultiBodyConstraint_aeb00cd1a53a57e5f73c1a1b3d9b99060}} 
+int {\bfseries m\+\_\+jac\+\_\+size\+\_\+A}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a1b9d64aeba44040142413128aff6a79c}\label{classbtMultiBodyConstraint_a1b9d64aeba44040142413128aff6a79c}} 
+int {\bfseries m\+\_\+jac\+\_\+size\+\_\+both}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a98e4fe1fad5a6298e85d047daa4344ec}\label{classbtMultiBodyConstraint_a98e4fe1fad5a6298e85d047daa4344ec}} 
+int {\bfseries m\+\_\+pos\+\_\+offset}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_af846aeade929372655e350e696e27ae2}\label{classbtMultiBodyConstraint_af846aeade929372655e350e696e27ae2}} 
+bool {\bfseries m\+\_\+is\+Unilateral}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a6de947e9494e0b7a646a51d93655366d}\label{classbtMultiBodyConstraint_a6de947e9494e0b7a646a51d93655366d}} 
+bt\+Scalar {\bfseries m\+\_\+max\+Applied\+Impulse}
+\item 
+\mbox{\Hypertarget{classbtMultiBodyConstraint_aecf34cc91de0fdf09578198953cae647}\label{classbtMultiBodyConstraint_aecf34cc91de0fdf09578198953cae647}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtMultiBodyConstraint_a0cdd1b0d275d96edff7accc9df216370}\label{classbtMultiBodyConstraint_a0cdd1b0d275d96edff7accc9df216370}} 
+\index{bt\+Multi\+Body\+Constraint@{bt\+Multi\+Body\+Constraint}!fill\+Multi\+Body\+Constraint\+Mixed@{fill\+Multi\+Body\+Constraint\+Mixed}}
+\index{fill\+Multi\+Body\+Constraint\+Mixed@{fill\+Multi\+Body\+Constraint\+Mixed}!bt\+Multi\+Body\+Constraint@{bt\+Multi\+Body\+Constraint}}
+\subsubsection{\texorpdfstring{fill\+Multi\+Body\+Constraint\+Mixed()}{fillMultiBodyConstraintMixed()}}
+{\footnotesize\ttfamily void bt\+Multi\+Body\+Constraint\+::fill\+Multi\+Body\+Constraint\+Mixed (\begin{DoxyParamCaption}\item[{bt\+Multi\+Body\+Solver\+Constraint \&}]{solver\+Constraint,  }\item[{\hyperlink{structbtMultiBodyJacobianData}{bt\+Multi\+Body\+Jacobian\+Data} \&}]{data,  }\item[{const bt\+Vector3 \&}]{contact\+Normal\+OnB,  }\item[{const bt\+Vector3 \&}]{pos\+Aworld,  }\item[{const bt\+Vector3 \&}]{pos\+Bworld,  }\item[{bt\+Scalar}]{position,  }\item[{const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&}]{info\+Global,  }\item[{bt\+Scalar \&}]{relaxation,  }\item[{bool}]{is\+Friction,  }\item[{bt\+Scalar}]{desired\+Velocity = {\ttfamily 0},  }\item[{bt\+Scalar}]{cfm\+Slip = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+warm starting (or zero if disabled) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Featherstone/bt\+Multi\+Body\+Constraint.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Featherstone/bt\+Multi\+Body\+Constraint.\+cpp\end{DoxyCompactItemize}

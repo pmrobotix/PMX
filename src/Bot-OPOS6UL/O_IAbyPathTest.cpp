@@ -173,7 +173,13 @@ void O_IAByPathTest::IASetup()
 void O_IAByPathTest::initPlayground()
 {
     OPOS6UL_RobotExtended &robot = OPOS6UL_RobotExtended::instance();
+    //terrain horizontal
     p_ = new Playground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0);
+
+    //terrain vertical
+    //p_ = new Playground(0.0, 0.0, 2500.0, 3400.0, 0.5, 1.0);
+    p_ = new SymmetricalPlayground(0.0, 0.0, 2000.0, 3200.0, 0.5, 1.0, 1000.0);
+
     /*
      //bordure terrain
      p_->add_rectangle(1500, 0, 3000, 130, 0); //bottom

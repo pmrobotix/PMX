@@ -1,0 +1,329 @@
+\hypertarget{classMoveBy}{}\section{Move\+By Class Reference}
+\label{classMoveBy}\index{Move\+By@{Move\+By}}
+
+
+Moves a \hyperlink{classNode}{Node} object x,y pixels by modifying it\textquotesingle{}s position attribute. x and y are relative to the position of the object. Several \hyperlink{classMoveBy}{Move\+By} actions can be concurrently called, and the resulting movement will be the sum of individual movements.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Move\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classMoveBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Move\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMoveBy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a56e7a18b9eb4a9c106bac223103f937f}{clone} () const override
+\item 
+virtual \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a3a29609f88b72d383c31e122693185f7}{reverse} (void) const override
+\item 
+virtual void \hyperlink{classMoveBy_ab83e2fe86e82757fa11cb734a4971a5f}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classMoveBy_afabf897627fba061a80ab8121840347e}{update} (float time) override
+\item 
+\mbox{\Hypertarget{classMoveBy_ab610144edc349ff0fa2a9fe88ff067c1}\label{classMoveBy_ab610144edc349ff0fa2a9fe88ff067c1}} 
+bool {\bfseries init\+With\+Duration} (float duration, const \hyperlink{classVec3}{Vec3} \&delta\+Position)
+\item 
+virtual \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a61bec7fdd7e48d0388627f1e348ab450}{clone} () const override
+\item 
+virtual \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a5b1077bc56798449c06f216572345a5b}{reverse} () const override
+\item 
+virtual void \hyperlink{classMoveBy_a1eb16a340ada5b0256772c6ca3a97bea}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classMoveBy_aa068073d0de5b7b9e731c44f71362c9b}{update} (float time) override
+\item 
+\mbox{\Hypertarget{classMoveBy_ab610144edc349ff0fa2a9fe88ff067c1}\label{classMoveBy_ab610144edc349ff0fa2a9fe88ff067c1}} 
+bool {\bfseries init\+With\+Duration} (float duration, const \hyperlink{classVec3}{Vec3} \&delta\+Position)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a4781fe85da740426582c34276557be5c}{create} (float duration, const \hyperlink{classVec2}{Vec2} \&delta\+Position)
+\item 
+static \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a01ca68a3098b965f7edbf76da1009f3e}{create} (float duration, const \hyperlink{classVec3}{Vec3} \&delta\+Position)
+\item 
+static \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a01180b2a61d81859ee785c7232ffbeb9}{create} (float duration, const \hyperlink{classVec2}{Vec2} \&delta\+Position)
+\item 
+static \hyperlink{classMoveBy}{Move\+By} $\ast$ \hyperlink{classMoveBy_a2c99e020ef5ae6bfd613ca8661f70207}{create} (float duration, const \hyperlink{classVec3}{Vec3} \&delta\+Position)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMoveBy_a849c2c7a8501ec20026d8f6b7fc300a0}\label{classMoveBy_a849c2c7a8501ec20026d8f6b7fc300a0}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classMoveBy}{Move\+By}()\+:\+\_\+is3D(false) \{\} virtual $\sim$\hyperlink{classMoveBy}{Move\+By}() \{\} bool init\+With\+Duration(float duration
+\item 
+\mbox{\Hypertarget{classMoveBy_a7aa08f011230d1079672cd0b0dd615e8}\label{classMoveBy_a7aa08f011230d1079672cd0b0dd615e8}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} const \hyperlink{classVec2}{Vec2} \& {\bfseries delta\+Position}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMoveBy_a618e118e1bf2e3623f0d8d7ec49ef1d2}\label{classMoveBy_a618e118e1bf2e3623f0d8d7ec49ef1d2}} 
+bool {\bfseries \+\_\+is3D}
+\item 
+\mbox{\Hypertarget{classMoveBy_ac4fa686b4afa97d23d37d176c5350706}\label{classMoveBy_ac4fa686b4afa97d23d37d176c5350706}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+position\+Delta}
+\item 
+\mbox{\Hypertarget{classMoveBy_a5113346f591d52f1d748f7903399114b}\label{classMoveBy_a5113346f591d52f1d748f7903399114b}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+start\+Position}
+\item 
+\mbox{\Hypertarget{classMoveBy_a1f764f19b4eaff6cb3fbc43bb0c3d724}\label{classMoveBy_a1f764f19b4eaff6cb3fbc43bb0c3d724}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+previous\+Position}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Moves a \hyperlink{classNode}{Node} object x,y pixels by modifying it\textquotesingle{}s position attribute. x and y are relative to the position of the object. Several \hyperlink{classMoveBy}{Move\+By} actions can be concurrently called, and the resulting movement will be the sum of individual movements. 
+
+\begin{DoxySince}{Since}
+v2.\+1beta2-\/custom 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMoveBy_a56e7a18b9eb4a9c106bac223103f937f}\label{classMoveBy_a56e7a18b9eb4a9c106bac223103f937f}} 
+\index{Move\+By@{Move\+By}!clone@{clone}}
+\index{clone@{clone}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMoveBy}{Move\+By} $\ast$ Move\+By\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a9e164c0f1ef2a22a61377120e5463e60}{Move\+To}, and \hyperlink{classMoveTo_a0b5517ba663ab08cd69a51ba72b8e14c}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_a61bec7fdd7e48d0388627f1e348ab450}\label{classMoveBy_a61bec7fdd7e48d0388627f1e348ab450}} 
+\index{Move\+By@{Move\+By}!clone@{clone}}
+\index{clone@{clone}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classMoveBy}{Move\+By}$\ast$ Move\+By\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a9e164c0f1ef2a22a61377120e5463e60}{Move\+To}, and \hyperlink{classMoveTo_a0b5517ba663ab08cd69a51ba72b8e14c}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_a4781fe85da740426582c34276557be5c}\label{classMoveBy_a4781fe85da740426582c34276557be5c}} 
+\index{Move\+By@{Move\+By}!create@{create}}
+\index{create@{create}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classMoveBy}{Move\+By} $\ast$ Move\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{delta\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em delta\+Position} & The delta distance in 2d, it\textquotesingle{}s a \hyperlink{classVec2}{Vec2} type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMoveBy}{Move\+By} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMoveBy_a01180b2a61d81859ee785c7232ffbeb9}\label{classMoveBy_a01180b2a61d81859ee785c7232ffbeb9}} 
+\index{Move\+By@{Move\+By}!create@{create}}
+\index{create@{create}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classMoveBy}{Move\+By}$\ast$ Move\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{delta\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em delta\+Position} & The delta distance in 2d, it\textquotesingle{}s a \hyperlink{classVec2}{Vec2} type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMoveBy}{Move\+By} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMoveBy_a01ca68a3098b965f7edbf76da1009f3e}\label{classMoveBy_a01ca68a3098b965f7edbf76da1009f3e}} 
+\index{Move\+By@{Move\+By}!create@{create}}
+\index{create@{create}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classMoveBy}{Move\+By} $\ast$ Move\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{delta\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em delta\+Position} & The delta distance in 3d, it\textquotesingle{}s a \hyperlink{classVec3}{Vec3} type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMoveBy}{Move\+By} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMoveBy_a2c99e020ef5ae6bfd613ca8661f70207}\label{classMoveBy_a2c99e020ef5ae6bfd613ca8661f70207}} 
+\index{Move\+By@{Move\+By}!create@{create}}
+\index{create@{create}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classMoveBy}{Move\+By}$\ast$ Move\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{delta\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em delta\+Position} & The delta distance in 3d, it\textquotesingle{}s a \hyperlink{classVec3}{Vec3} type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMoveBy}{Move\+By} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMoveBy_a3a29609f88b72d383c31e122693185f7}\label{classMoveBy_a3a29609f88b72d383c31e122693185f7}} 
+\index{Move\+By@{Move\+By}!reverse@{reverse}}
+\index{reverse@{reverse}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMoveBy}{Move\+By} $\ast$ Move\+By\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a6113c5521a72f5e4a8ce56df5ab50722}{Move\+To}, and \hyperlink{classMoveTo_afb568e581e69aad40f815e48eb13cb54}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_a5b1077bc56798449c06f216572345a5b}\label{classMoveBy_a5b1077bc56798449c06f216572345a5b}} 
+\index{Move\+By@{Move\+By}!reverse@{reverse}}
+\index{reverse@{reverse}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classMoveBy}{Move\+By}$\ast$ Move\+By\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a6113c5521a72f5e4a8ce56df5ab50722}{Move\+To}, and \hyperlink{classMoveTo_afb568e581e69aad40f815e48eb13cb54}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_ab83e2fe86e82757fa11cb734a4971a5f}\label{classMoveBy_ab83e2fe86e82757fa11cb734a4971a5f}} 
+\index{Move\+By@{Move\+By}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Move\+By\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a434fce91e656b8f239cef63938fb29a6}{Move\+To}, and \hyperlink{classMoveTo_af9f86e7c5d391fe494cf6a597b839b13}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_a1eb16a340ada5b0256772c6ca3a97bea}\label{classMoveBy_a1eb16a340ada5b0256772c6ca3a97bea}} 
+\index{Move\+By@{Move\+By}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Move\+By\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classMoveTo_a434fce91e656b8f239cef63938fb29a6}{Move\+To}, and \hyperlink{classMoveTo_af9f86e7c5d391fe494cf6a597b839b13}{Move\+To}.
+
+\mbox{\Hypertarget{classMoveBy_afabf897627fba061a80ab8121840347e}\label{classMoveBy_afabf897627fba061a80ab8121840347e}} 
+\index{Move\+By@{Move\+By}!update@{update}}
+\index{update@{update}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Move\+By\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & in seconds \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classMoveBy_aa068073d0de5b7b9e731c44f71362c9b}\label{classMoveBy_aa068073d0de5b7b9e731c44f71362c9b}} 
+\index{Move\+By@{Move\+By}!update@{update}}
+\index{update@{update}!Move\+By@{Move\+By}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Move\+By\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & in seconds \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

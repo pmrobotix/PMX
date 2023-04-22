@@ -1,0 +1,167 @@
+\hypertarget{classCameraBackgroundColorBrush}{}\section{Camera\+Background\+Color\+Brush Class Reference}
+\label{classCameraBackgroundColorBrush}\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+
+
+{\ttfamily \#include $<$C\+C\+Camera\+Background\+Brush.\+h$>$}
+
+
+
+Inheritance diagram for Camera\+Background\+Color\+Brush\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classCameraBackgroundColorBrush__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Camera\+Background\+Color\+Brush\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCameraBackgroundColorBrush__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCameraBackgroundBrush_acb83e8d05e7ab9386c041d22c444760f}{Brush\+Type} \hyperlink{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}{get\+Brush\+Type} () const override
+\item 
+void \hyperlink{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}{set\+Color} (const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a1f8fe65aa52e54842620a7d7aa0ee1ef}\label{classCameraBackgroundColorBrush_a1f8fe65aa52e54842620a7d7aa0ee1ef}} 
+virtual bool {\bfseries init} () override
+\item 
+virtual \hyperlink{classCameraBackgroundBrush_acb83e8d05e7ab9386c041d22c444760f}{Brush\+Type} \hyperlink{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}{get\+Brush\+Type} () const override
+\item 
+virtual void \hyperlink{classCameraBackgroundColorBrush_aa07e5c7ea9d5c233c51920bf75d1381b}{draw\+Background} (\hyperlink{classCamera}{Camera} $\ast$camera) override
+\item 
+void \hyperlink{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}{set\+Color} (const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a45033cabd558da8ad54e91906305da0f}\label{classCameraBackgroundColorBrush_a45033cabd558da8ad54e91906305da0f}} 
+virtual bool {\bfseries init} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCameraBackgroundColorBrush}{Camera\+Background\+Color\+Brush} $\ast$ \hyperlink{classCameraBackgroundColorBrush_ad4b910ac4cab440aebc91c800f8b60d6}{create} (const \hyperlink{structColor4F}{Color4F} \&color, float depth)
+\item 
+static \hyperlink{classCameraBackgroundColorBrush}{Camera\+Background\+Color\+Brush} $\ast$ \hyperlink{classCameraBackgroundColorBrush_a2842107f9ebac9204075d259b66176f0}{create} (const \hyperlink{structColor4F}{Color4F} \&color, float depth)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a50bc53495adabd62a50d8e5a021c4e1d}\label{classCameraBackgroundColorBrush_a50bc53495adabd62a50d8e5a021c4e1d}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classCameraBackgroundColorBrush}{Camera\+Background\+Color\+Brush}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a6b579fad29c7ccac0cf791ded21bc02a}\label{classCameraBackgroundColorBrush_a6b579fad29c7ccac0cf791ded21bc02a}} 
+\hyperlink{structColor4F}{Color4F} {\bfseries \+\_\+color}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Color brush clear buffer with given depth and color 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_ad4b910ac4cab440aebc91c800f8b60d6}\label{classCameraBackgroundColorBrush_ad4b910ac4cab440aebc91c800f8b60d6}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!create@{create}}
+\index{create@{create}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCameraBackgroundColorBrush}{Camera\+Background\+Color\+Brush} $\ast$ Camera\+Background\+Color\+Brush\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color,  }\item[{float}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a color brush 
+\begin{DoxyParams}{Parameters}
+{\em color} & Color used to clear the color buffer \\
+\hline
+{\em depth} & Depth used to clear the depth buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created brush 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a2842107f9ebac9204075d259b66176f0}\label{classCameraBackgroundColorBrush_a2842107f9ebac9204075d259b66176f0}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!create@{create}}
+\index{create@{create}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCameraBackgroundColorBrush}{Camera\+Background\+Color\+Brush}$\ast$ Camera\+Background\+Color\+Brush\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color,  }\item[{float}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a color brush 
+\begin{DoxyParams}{Parameters}
+{\em color} & Color used to clear the color buffer \\
+\hline
+{\em depth} & Depth used to clear the depth buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created brush 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_aa07e5c7ea9d5c233c51920bf75d1381b}\label{classCameraBackgroundColorBrush_aa07e5c7ea9d5c233c51920bf75d1381b}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!draw\+Background@{draw\+Background}}
+\index{draw\+Background@{draw\+Background}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{draw\+Background()}{drawBackground()}}
+{\footnotesize\ttfamily void Camera\+Background\+Color\+Brush\+::draw\+Background (\begin{DoxyParamCaption}\item[{\hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw background 
+
+Reimplemented from \hyperlink{classCameraBackgroundDepthBrush_afe438cdd7dbcf77d6421ec50224579d1}{Camera\+Background\+Depth\+Brush}.
+
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}\label{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!get\+Brush\+Type@{get\+Brush\+Type}}
+\index{get\+Brush\+Type@{get\+Brush\+Type}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{get\+Brush\+Type()}{getBrushType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classCameraBackgroundBrush_acb83e8d05e7ab9386c041d22c444760f}{Brush\+Type} Camera\+Background\+Color\+Brush\+::get\+Brush\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get brush type. Should be Brush\+Type\+::\+C\+O\+L\+OR \begin{DoxyReturn}{Returns}
+brush type 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCameraBackgroundDepthBrush_ad4cc258ce1a1cd3ac43ea0d2580409d5}{Camera\+Background\+Depth\+Brush}.
+
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}\label{classCameraBackgroundColorBrush_a96ecf77baa742b668db0d22c350b8f1b}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!get\+Brush\+Type@{get\+Brush\+Type}}
+\index{get\+Brush\+Type@{get\+Brush\+Type}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{get\+Brush\+Type()}{getBrushType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classCameraBackgroundBrush_acb83e8d05e7ab9386c041d22c444760f}{Brush\+Type} Camera\+Background\+Color\+Brush\+::get\+Brush\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get brush type. Should be Brush\+Type\+::\+C\+O\+L\+OR \begin{DoxyReturn}{Returns}
+brush type 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCameraBackgroundDepthBrush_ad4cc258ce1a1cd3ac43ea0d2580409d5}{Camera\+Background\+Depth\+Brush}.
+
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}\label{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+Background\+Color\+Brush\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Set clear color 
+\begin{DoxyParams}{Parameters}
+{\em color} & Color used to clear the color buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}\label{classCameraBackgroundColorBrush_a893195becfc210703450698a8537e5bc}} 
+\index{Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Camera\+Background\+Color\+Brush@{Camera\+Background\+Color\+Brush}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+Background\+Color\+Brush\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Set clear color 
+\begin{DoxyParams}{Parameters}
+{\em color} & Color used to clear the color buffer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Camera\+Background\+Brush.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Camera\+Background\+Brush.\+cpp\end{DoxyCompactItemize}

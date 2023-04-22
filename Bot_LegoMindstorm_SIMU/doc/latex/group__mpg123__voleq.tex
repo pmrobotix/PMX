@@ -1,0 +1,169 @@
+\hypertarget{group__mpg123__voleq}{}\section{mpg123 volume and equalizer}
+\label{group__mpg123__voleq}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels} \{ \newline
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}{M\+P\+G123\+\_\+\+L\+E\+FT} =0x1, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}{M\+P\+G123\+\_\+\+R\+I\+G\+HT} =0x2, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}{M\+P\+G123\+\_\+\+LR} =0x3, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}{M\+P\+G123\+\_\+\+L\+E\+FT} =0x1, 
+\newline
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}{M\+P\+G123\+\_\+\+R\+I\+G\+HT} =0x2, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}{M\+P\+G123\+\_\+\+LR} =0x3
+ \}
+\item 
+enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels} \{ \newline
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}{M\+P\+G123\+\_\+\+L\+E\+FT} =0x1, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}{M\+P\+G123\+\_\+\+R\+I\+G\+HT} =0x2, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}{M\+P\+G123\+\_\+\+LR} =0x3, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}{M\+P\+G123\+\_\+\+L\+E\+FT} =0x1, 
+\newline
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}{M\+P\+G123\+\_\+\+R\+I\+G\+HT} =0x2, 
+\hyperlink{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}{M\+P\+G123\+\_\+\+LR} =0x3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__voleq_ga9f4b1d0684de725162ae2daa20084397}{mpg123\+\_\+eq} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels} channel, int band, double val)
+\item 
+E\+X\+P\+O\+RT double \hyperlink{group__mpg123__voleq_gaaed80df5bab4d9396680ab13fff10903}{mpg123\+\_\+geteq} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels} channel, int band)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__voleq_gaef321456fd43bbe9d52a5f507cc83d9b}{mpg123\+\_\+reset\+\_\+eq} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__voleq_ga16fcff6db0bffbbc4341c07e373d3bd7}{mpg123\+\_\+volume} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, double vol)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__voleq_gaae358b14b2f7f2d66af48b484a0de1db}{mpg123\+\_\+volume\+\_\+change} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, double change)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__voleq_ga9e64133e633dae55d94923a2852e1668}{mpg123\+\_\+getvolume} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, double $\ast$base, double $\ast$really, double $\ast$rva\+\_\+db)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}\label{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+channels@{mpg123\+\_\+channels}}
+\index{mpg123\+\_\+channels@{mpg123\+\_\+channels}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+channels}{mpg123\_channels}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}} 
+M\+P\+G123\+\_\+\+L\+E\+FT&The Left Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}} 
+M\+P\+G123\+\_\+\+R\+I\+G\+HT&The Right Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}} 
+M\+P\+G123\+\_\+\+LR&Both left and right channel; same as M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}} 
+M\+P\+G123\+\_\+\+L\+E\+FT&The Left Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}} 
+M\+P\+G123\+\_\+\+R\+I\+G\+HT&The Right Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}} 
+M\+P\+G123\+\_\+\+LR&Both left and right channel; same as M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}\label{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+channels@{mpg123\+\_\+channels}}
+\index{mpg123\+\_\+channels@{mpg123\+\_\+channels}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+channels}{mpg123\_channels}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}} 
+M\+P\+G123\+\_\+\+L\+E\+FT&The Left Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}} 
+M\+P\+G123\+\_\+\+R\+I\+G\+HT&The Right Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}} 
+M\+P\+G123\+\_\+\+LR&Both left and right channel; same as M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+L\+E\+FT@{M\+P\+G123\+\_\+\+L\+E\+FT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a0442a02c69eba4474b27d271da00478a}} 
+M\+P\+G123\+\_\+\+L\+E\+FT&The Left Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+R\+I\+G\+HT@{M\+P\+G123\+\_\+\+R\+I\+G\+HT}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840a15ced0bea77e48f6e23d15410058d543}} 
+M\+P\+G123\+\_\+\+R\+I\+G\+HT&The Right Channel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!M\+P\+G123\+\_\+\+LR@{M\+P\+G123\+\_\+\+LR}}}\mbox{\Hypertarget{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}\label{group__mpg123__voleq_ggaf6ae0d8c593d295c36e7d20e9f892840ab3dd5fa5351f27c4678e30013fceee2b}} 
+M\+P\+G123\+\_\+\+LR&Both left and right channel; same as M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__voleq_ga9f4b1d0684de725162ae2daa20084397}\label{group__mpg123__voleq_ga9f4b1d0684de725162ae2daa20084397}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+eq@{mpg123\+\_\+eq}}
+\index{mpg123\+\_\+eq@{mpg123\+\_\+eq}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+eq()}{mpg123\_eq()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+eq (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels}}]{channel,  }\item[{int}]{band,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+Set the 32 Band \hyperlink{classAudio}{Audio} Equalizer settings. 
+\begin{DoxyParams}{Parameters}
+{\em channel} & Can be M\+P\+G123\+\_\+\+L\+E\+FT, M\+P\+G123\+\_\+\+R\+I\+G\+HT or M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT for both. \\
+\hline
+{\em band} & The equaliser band to change (from 0 to 31) \\
+\hline
+{\em val} & The (linear) adjustment factor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__mpg123__voleq_gaaed80df5bab4d9396680ab13fff10903}\label{group__mpg123__voleq_gaaed80df5bab4d9396680ab13fff10903}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+geteq@{mpg123\+\_\+geteq}}
+\index{mpg123\+\_\+geteq@{mpg123\+\_\+geteq}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+geteq()}{mpg123\_geteq()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT double mpg123\+\_\+geteq (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{enum \hyperlink{group__mpg123__voleq_gaf6ae0d8c593d295c36e7d20e9f892840}{mpg123\+\_\+channels}}]{channel,  }\item[{int}]{band }\end{DoxyParamCaption})}
+
+Get the 32 Band \hyperlink{classAudio}{Audio} Equalizer settings. 
+\begin{DoxyParams}{Parameters}
+{\em channel} & Can be M\+P\+G123\+\_\+\+L\+E\+FT, M\+P\+G123\+\_\+\+R\+I\+G\+HT or M\+P\+G123\+\_\+\+L\+E\+F\+T$\vert$\+M\+P\+G123\+\_\+\+R\+I\+G\+HT for (arithmetic mean of) both. \\
+\hline
+{\em band} & The equaliser band to change (from 0 to 31) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (linear) adjustment factor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__voleq_ga9e64133e633dae55d94923a2852e1668}\label{group__mpg123__voleq_ga9e64133e633dae55d94923a2852e1668}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+getvolume@{mpg123\+\_\+getvolume}}
+\index{mpg123\+\_\+getvolume@{mpg123\+\_\+getvolume}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+getvolume()}{mpg123\_getvolume()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+getvolume (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{double $\ast$}]{base,  }\item[{double $\ast$}]{really,  }\item[{double $\ast$}]{rva\+\_\+db }\end{DoxyParamCaption})}
+
+Return current volume setting, the actual value due to R\+VA, and the R\+VA adjustment itself. It\textquotesingle{}s all as double float value to abstract the sample format. The volume values are linear factors / amplitudes (not percent) and the R\+VA value is in decibels. \mbox{\Hypertarget{group__mpg123__voleq_gaef321456fd43bbe9d52a5f507cc83d9b}\label{group__mpg123__voleq_gaef321456fd43bbe9d52a5f507cc83d9b}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+reset\+\_\+eq@{mpg123\+\_\+reset\+\_\+eq}}
+\index{mpg123\+\_\+reset\+\_\+eq@{mpg123\+\_\+reset\+\_\+eq}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+reset\+\_\+eq()}{mpg123\_reset\_eq()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+reset\+\_\+eq (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Reset the 32 Band \hyperlink{classAudio}{Audio} Equalizer settings to flat \mbox{\Hypertarget{group__mpg123__voleq_ga16fcff6db0bffbbc4341c07e373d3bd7}\label{group__mpg123__voleq_ga16fcff6db0bffbbc4341c07e373d3bd7}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+volume@{mpg123\+\_\+volume}}
+\index{mpg123\+\_\+volume@{mpg123\+\_\+volume}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+volume()}{mpg123\_volume()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+volume (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{double}]{vol }\end{DoxyParamCaption})}
+
+Set the absolute output volume including the R\+VA setting, vol$<$0 just applies (a possibly changed) R\+VA setting. \mbox{\Hypertarget{group__mpg123__voleq_gaae358b14b2f7f2d66af48b484a0de1db}\label{group__mpg123__voleq_gaae358b14b2f7f2d66af48b484a0de1db}} 
+\index{mpg123 volume and equalizer@{mpg123 volume and equalizer}!mpg123\+\_\+volume\+\_\+change@{mpg123\+\_\+volume\+\_\+change}}
+\index{mpg123\+\_\+volume\+\_\+change@{mpg123\+\_\+volume\+\_\+change}!mpg123 volume and equalizer@{mpg123 volume and equalizer}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+volume\+\_\+change()}{mpg123\_volume\_change()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+volume\+\_\+change (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{double}]{change }\end{DoxyParamCaption})}
+
+Adjust output volume including the R\+VA setting by chosen amount 

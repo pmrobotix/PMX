@@ -1,0 +1,293 @@
+\hypertarget{classActionEase}{}\section{Action\+Ease Class Reference}
+\label{classActionEase}\index{Action\+Ease@{Action\+Ease}}
+
+
+Base class for Easing actions.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Ease.\+h$>$}
+
+
+
+Inheritance diagram for Action\+Ease\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionEase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Ease\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionEase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classActionInterval}{Action\+Interval} $\ast$ \hyperlink{classActionEase_aa024b3c9b78949381d06af515ffeaf9e}{get\+Inner\+Action} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer of the inner action. \end{DoxyCompactList}\item 
+virtual \hyperlink{classActionEase}{Action\+Ease} $\ast$ \hyperlink{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}{clone} () const override
+\item 
+virtual \hyperlink{classActionEase}{Action\+Ease} $\ast$ \hyperlink{classActionEase_ab99eb083fa033fae1d6c948fdc730782}{reverse} () const override
+\item 
+virtual void \hyperlink{classActionEase_a04976f42219b97e850043ab9cd182918}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classActionEase_a1a12083389f0bec7b1de3ef2c832597a}{stop} () override
+\item 
+virtual void \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{update} (float time) override
+\item 
+bool \hyperlink{classActionEase_a57660327c119242bbb1fe682fc723b5a}{init\+With\+Action} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Initializes the action. \end{DoxyCompactList}\item 
+virtual \hyperlink{classActionInterval}{Action\+Interval} $\ast$ \hyperlink{classActionEase_ac26a5049b514d8824361a6e8eb6b2fc4}{get\+Inner\+Action} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer of the inner action. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classActionEase_a2b1a6fe2d83fe96723ca32c30301fda5}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classActionEase_a2f9afe79f5848689a7f6f54c55764275}{stop} () override
+\item 
+virtual void \hyperlink{classActionEase_afaef2afc55ebf4e8d6897c3cb1977c1e}{update} (float time) override
+\item 
+bool \hyperlink{classActionEase_a57660327c119242bbb1fe682fc723b5a}{init\+With\+Action} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Initializes the action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionEase_ad8931612dad1bb5b1a06b6e669074c9e}\label{classActionEase_ad8931612dad1bb5b1a06b6e669074c9e}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classActionEase}{Action\+Ease}() \+: \hyperlink{classActionEase_ae8717262cdb409d9810e5f7ac2478b98}{\+\_\+inner}(nullptr) \{\} virtual $\sim$\hyperlink{classActionEase}{Action\+Ease}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classActionInterval}{Action\+Interval} $\ast$ \hyperlink{classActionEase_ae8717262cdb409d9810e5f7ac2478b98}{\+\_\+inner}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for Easing actions. 
+
+Ease actions are created from other interval actions. The ease action will change the timeline of the inner action. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}\label{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}} 
+\index{Action\+Ease@{Action\+Ease}!clone@{clone}}
+\index{clone@{clone}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionEase}{Action\+Ease}$\ast$ Action\+Ease\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classEaseCubicActionInOut_a763cbeffe3a66602e1524b5ec68341ad}{Ease\+Cubic\+Action\+In\+Out}, \hyperlink{classEaseCubicActionOut_a477348e29bfcbe3bfd4766398aaefed8}{Ease\+Cubic\+Action\+Out}, \hyperlink{classEaseCubicActionIn_a710f732cc78c6ef8d4697d4bd0021b3e}{Ease\+Cubic\+Action\+In}, \hyperlink{classEaseCircleActionInOut_a552bd0eca0772b24c6ff2624072f65c3}{Ease\+Circle\+Action\+In\+Out}, \hyperlink{classEaseCircleActionOut_af7b506b72c223ae7ed2268dad54e5416}{Ease\+Circle\+Action\+Out}, \hyperlink{classEaseCircleActionIn_a5660f86732520e32f34649644ac716e6}{Ease\+Circle\+Action\+In}, \hyperlink{classEaseQuinticActionInOut_a526fb6329aaea716cd6af4ea53d2cc01}{Ease\+Quintic\+Action\+In\+Out}, \hyperlink{classEaseQuinticActionOut_aa64dfcfe97d7f5b6684f7fd1ad252492}{Ease\+Quintic\+Action\+Out}, \hyperlink{classEaseQuinticActionIn_a181a8206b5d3bd9aedf4c8ba88087c6c}{Ease\+Quintic\+Action\+In}, \hyperlink{classEaseQuarticActionInOut_a5f29576edb9028cb7c4461eea1030085}{Ease\+Quartic\+Action\+In\+Out}, \hyperlink{classEaseQuarticActionOut_a0d29354269fc9a975fe64ff915bced49}{Ease\+Quartic\+Action\+Out}, \hyperlink{classEaseQuarticActionIn_a8b5a6564a7eb7284fc165aeb2b465986}{Ease\+Quartic\+Action\+In}, \hyperlink{classEaseQuadraticActionInOut_a0cb4186dee46962ef6e801288c199a53}{Ease\+Quadratic\+Action\+In\+Out}, \hyperlink{classEaseQuadraticActionOut_a9621d836369fbaafdc3fda28846fe191}{Ease\+Quadratic\+Action\+Out}, \hyperlink{classEaseQuadraticActionIn_a2e61f6edb0accd7573d55784d1ca508a}{Ease\+Quadratic\+Action\+In}, \hyperlink{classEaseBezierAction_a8d25557473e4f02ab18fe846ed193e06}{Ease\+Bezier\+Action}, \hyperlink{classEaseBackInOut_a30f30de6135349f2454843428d7777e3}{Ease\+Back\+In\+Out}, \hyperlink{classEaseBackOut_a76c84f18730150e2705b95f9678ad8c7}{Ease\+Back\+Out}, \hyperlink{classEaseBackIn_a2f409b8e89fc64d521a6268ff701045d}{Ease\+Back\+In}, \hyperlink{classEaseBounceInOut_acc12db9c905d8d49b135e084a9beef5e}{Ease\+Bounce\+In\+Out}, \hyperlink{classEaseBounceOut_ae0c5aff0f2e8c7fcfad0d8385e1e2ec1}{Ease\+Bounce\+Out}, \hyperlink{classEaseBounceIn_a36d193006cd57d915b764a7fc52d2768}{Ease\+Bounce\+In}, \hyperlink{classEaseBounce_a3a39e9fa829cc40be5f2114787a98db6}{Ease\+Bounce}, \hyperlink{classEaseElasticInOut_a3b008e59719729110c7965170788c0b4}{Ease\+Elastic\+In\+Out}, \hyperlink{classEaseElasticOut_a1f1e56422100f620e725ec11c595e1f2}{Ease\+Elastic\+Out}, \hyperlink{classEaseBezierAction_ae097f3480deee8064133c6e479c45020}{Ease\+Bezier\+Action}, \hyperlink{classEaseElasticIn_af0095a2934fe5ba057205638349c132f}{Ease\+Elastic\+In}, \hyperlink{classEaseElastic_a72d5dc8a380dbb00e68c1d7c80258d28}{Ease\+Elastic}, \hyperlink{classEaseSineInOut_a78a36c0d403d763d2d1c6a03a56a283c}{Ease\+Sine\+In\+Out}, \hyperlink{classEaseSineOut_ae364e7d3ac055bea87dc624642709fd6}{Ease\+Sine\+Out}, \hyperlink{classEaseSineIn_a140c6fd97ab8a7d381fe5eebca3c4719}{Ease\+Sine\+In}, \hyperlink{classEaseExponentialInOut_a04bfa04ce8c396bdd5d058cfc771b9cb}{Ease\+Exponential\+In\+Out}, \hyperlink{classEaseExponentialOut_a484d36a99d2847cfa4f273d5ec73c209}{Ease\+Exponential\+Out}, \hyperlink{classEaseExponentialIn_a028a3801fc36418cf59018c457b8a102}{Ease\+Exponential\+In}, \hyperlink{classEaseInOut_a5bee2d31db0c1fefd2656c8eedd5831e}{Ease\+In\+Out}, \hyperlink{classEaseOut_aaa3ddcdc100a3378279054d596e87178}{Ease\+Out}, \hyperlink{classEaseIn_ac2db345fad4b62fa8485e6d40121a83c}{Ease\+In}, and \hyperlink{classEaseRateAction_a50323a94f7587203d7b02bb66fe2e67e}{Ease\+Rate\+Action}.
+
+\mbox{\Hypertarget{classActionEase_aa024b3c9b78949381d06af515ffeaf9e}\label{classActionEase_aa024b3c9b78949381d06af515ffeaf9e}} 
+\index{Action\+Ease@{Action\+Ease}!get\+Inner\+Action@{get\+Inner\+Action}}
+\index{get\+Inner\+Action@{get\+Inner\+Action}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{get\+Inner\+Action()}{getInnerAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionInterval}{Action\+Interval} $\ast$ Action\+Ease\+::get\+Inner\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the pointer of the inner action. 
+
+\begin{DoxyReturn}{Returns}
+The pointer of the inner action. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionEase_ac26a5049b514d8824361a6e8eb6b2fc4}\label{classActionEase_ac26a5049b514d8824361a6e8eb6b2fc4}} 
+\index{Action\+Ease@{Action\+Ease}!get\+Inner\+Action@{get\+Inner\+Action}}
+\index{get\+Inner\+Action@{get\+Inner\+Action}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{get\+Inner\+Action()}{getInnerAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionInterval}{Action\+Interval}$\ast$ Action\+Ease\+::get\+Inner\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the pointer of the inner action. 
+
+\begin{DoxyReturn}{Returns}
+The pointer of the inner action. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionEase_a57660327c119242bbb1fe682fc723b5a}\label{classActionEase_a57660327c119242bbb1fe682fc723b5a}} 
+\index{Action\+Ease@{Action\+Ease}!init\+With\+Action@{init\+With\+Action}}
+\index{init\+With\+Action@{init\+With\+Action}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{init\+With\+Action()}{initWithAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Action\+Ease\+::init\+With\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action }\end{DoxyParamCaption})}
+
+
+
+Initializes the action. 
+
+\begin{DoxyReturn}{Returns}
+Return true when the initialization success, otherwise return false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionEase_a57660327c119242bbb1fe682fc723b5a}\label{classActionEase_a57660327c119242bbb1fe682fc723b5a}} 
+\index{Action\+Ease@{Action\+Ease}!init\+With\+Action@{init\+With\+Action}}
+\index{init\+With\+Action@{init\+With\+Action}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{init\+With\+Action()}{initWithAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Action\+Ease\+::init\+With\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action }\end{DoxyParamCaption})}
+
+
+
+Initializes the action. 
+
+\begin{DoxyReturn}{Returns}
+Return true when the initialization success, otherwise return false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionEase_ab99eb083fa033fae1d6c948fdc730782}\label{classActionEase_ab99eb083fa033fae1d6c948fdc730782}} 
+\index{Action\+Ease@{Action\+Ease}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionEase}{Action\+Ease}$\ast$ Action\+Ease\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classEaseCubicActionInOut_a3a63b33ec9a062bd76116f17dd2eb8b4}{Ease\+Cubic\+Action\+In\+Out}, \hyperlink{classEaseCubicActionOut_a739aa8e9008ddd302ac95eb64c804d11}{Ease\+Cubic\+Action\+Out}, \hyperlink{classEaseCubicActionIn_aebf0f24c3890ea180706332f02d41b64}{Ease\+Cubic\+Action\+In}, \hyperlink{classEaseCircleActionInOut_ab661d01e3d2ddf781948ae6c42a52cb9}{Ease\+Circle\+Action\+In\+Out}, \hyperlink{classEaseCircleActionOut_aa42aec9f04ec15a24fd9deed855f9529}{Ease\+Circle\+Action\+Out}, \hyperlink{classEaseCircleActionIn_ac395a5073afd9b357e7bd02f37d65ff3}{Ease\+Circle\+Action\+In}, \hyperlink{classEaseQuinticActionInOut_a42cff7cafb10562b6e111274879f76bd}{Ease\+Quintic\+Action\+In\+Out}, \hyperlink{classEaseQuinticActionOut_a9a871dbf78c897831b89f17e19e56b12}{Ease\+Quintic\+Action\+Out}, \hyperlink{classEaseQuinticActionIn_a7f99df08baa80e8f09e0fbde4d143696}{Ease\+Quintic\+Action\+In}, \hyperlink{classEaseQuarticActionInOut_a71b1f0c1807a96a6c1c6903810357d68}{Ease\+Quartic\+Action\+In\+Out}, \hyperlink{classEaseQuarticActionOut_a0826d867637edc85123861ebac4b7a84}{Ease\+Quartic\+Action\+Out}, \hyperlink{classEaseQuarticActionIn_a30c40baba57b3dffc444b12fad880b67}{Ease\+Quartic\+Action\+In}, \hyperlink{classEaseQuadraticActionInOut_ab77788315a86df25eb5760c4a0970828}{Ease\+Quadratic\+Action\+In\+Out}, \hyperlink{classEaseQuadraticActionOut_ab7d8416ee33216c79f39beb9e775854c}{Ease\+Quadratic\+Action\+Out}, \hyperlink{classEaseQuadraticActionIn_ab6115c4fb960331b561bb6eeadf81616}{Ease\+Quadratic\+Action\+In}, \hyperlink{classEaseBezierAction_ad6a92ab332d64dcdbbd3b7db4cf2464c}{Ease\+Bezier\+Action}, \hyperlink{classEaseBackInOut_ab78f59eef3912ce006b0888eed4aac5c}{Ease\+Back\+In\+Out}, \hyperlink{classEaseBackOut_acf37a76a71da70fd233dd28934332316}{Ease\+Back\+Out}, \hyperlink{classEaseBackIn_a79ac3292fef1c39370c668b99372b256}{Ease\+Back\+In}, \hyperlink{classEaseBounceInOut_a5fce37e1a14d4f5ed99d19fad6b354f9}{Ease\+Bounce\+In\+Out}, \hyperlink{classEaseBounceOut_a03b87127deebcdf81cc7422690d0375e}{Ease\+Bounce\+Out}, \hyperlink{classEaseBounceIn_aac86ecee50c41de2e0b4047cf8047949}{Ease\+Bounce\+In}, \hyperlink{classEaseBounce_abbd0a4bae312fa781f226cad16222773}{Ease\+Bounce}, \hyperlink{classEaseElasticInOut_a08123565179ad98702f27561605dabae}{Ease\+Elastic\+In\+Out}, \hyperlink{classEaseElasticOut_a3da4544ffa360bd28296d2e120b2fdc9}{Ease\+Elastic\+Out}, \hyperlink{classEaseBezierAction_abf78e7a531e29240728c85b1d1aa0c6b}{Ease\+Bezier\+Action}, \hyperlink{classEaseElasticIn_ae29b6a632f6721e3b43786df80b86cc1}{Ease\+Elastic\+In}, \hyperlink{classEaseElastic_a9e0e8c55fbe1c50c706dd3d62834ed82}{Ease\+Elastic}, \hyperlink{classEaseSineInOut_aa8aba440311e86fcab00307d5359263d}{Ease\+Sine\+In\+Out}, \hyperlink{classEaseSineOut_a7fb6a1800ff40fa9cc4fc1ccf90f2540}{Ease\+Sine\+Out}, \hyperlink{classEaseSineIn_a1de9aa9234921476d8cbfa1a3f555c29}{Ease\+Sine\+In}, \hyperlink{classEaseExponentialInOut_a48f34b3525dacd953bd9dbd014e93356}{Ease\+Exponential\+In\+Out}, \hyperlink{classEaseExponentialOut_a99fbc2a18b0b61cfbb2a17414eb9119f}{Ease\+Exponential\+Out}, \hyperlink{classEaseExponentialIn_aed789ba9f06994ce25edbba5d6de5178}{Ease\+Exponential\+In}, \hyperlink{classEaseInOut_ab11193be98284ab001e120888b92803f}{Ease\+In\+Out}, \hyperlink{classEaseOut_a6ad7b6fdd15cf8c5f1c3ad325c384f51}{Ease\+Out}, \hyperlink{classEaseIn_adc23609d0a863b45012b4b6361178728}{Ease\+In}, and \hyperlink{classEaseRateAction_acd2b87a3358e01fa74a726634dcd41fb}{Ease\+Rate\+Action}.
+
+\mbox{\Hypertarget{classActionEase_a2b1a6fe2d83fe96723ca32c30301fda5}\label{classActionEase_a2b1a6fe2d83fe96723ca32c30301fda5}} 
+\index{Action\+Ease@{Action\+Ease}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Ease\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionEase_a04976f42219b97e850043ab9cd182918}\label{classActionEase_a04976f42219b97e850043ab9cd182918}} 
+\index{Action\+Ease@{Action\+Ease}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Ease\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionEase_a2f9afe79f5848689a7f6f54c55764275}\label{classActionEase_a2f9afe79f5848689a7f6f54c55764275}} 
+\index{Action\+Ease@{Action\+Ease}!stop@{stop}}
+\index{stop@{stop}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Ease\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classActionEase_a1a12083389f0bec7b1de3ef2c832597a}\label{classActionEase_a1a12083389f0bec7b1de3ef2c832597a}} 
+\index{Action\+Ease@{Action\+Ease}!stop@{stop}}
+\index{stop@{stop}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Ease\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classActionEase_afaef2afc55ebf4e8d6897c3cb1977c1e}\label{classActionEase_afaef2afc55ebf4e8d6897c3cb1977c1e}} 
+\index{Action\+Ease@{Action\+Ease}!update@{update}}
+\index{update@{update}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Ease\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+Reimplemented in \hyperlink{classEaseCubicActionInOut_a533edabe94657e779ad4e4c6d6d1782f}{Ease\+Cubic\+Action\+In\+Out}, \hyperlink{classEaseCubicActionOut_a2bebf38d7167886e1ae4643b92e05d72}{Ease\+Cubic\+Action\+Out}, \hyperlink{classEaseCubicActionIn_a245bc3028244567a11dbe02bc2e11a10}{Ease\+Cubic\+Action\+In}, \hyperlink{classEaseCircleActionInOut_a6a9cb49f30bc664ab65a067ce48b506e}{Ease\+Circle\+Action\+In\+Out}, \hyperlink{classEaseCircleActionOut_a48e4c603a5dd0eb56f289dd2ffd8d26b}{Ease\+Circle\+Action\+Out}, \hyperlink{classEaseCircleActionIn_a8d48762a47eb738ca2b8fb644182e91b}{Ease\+Circle\+Action\+In}, \hyperlink{classEaseQuinticActionInOut_ada59f8dcd6ba1daeaa1fb9d5b1087521}{Ease\+Quintic\+Action\+In\+Out}, \hyperlink{classEaseQuinticActionOut_ab78421446d94c0d0ded5329ed9a3716d}{Ease\+Quintic\+Action\+Out}, \hyperlink{classEaseQuinticActionIn_a168f914597d873e6071d39118f2cf9f5}{Ease\+Quintic\+Action\+In}, \hyperlink{classEaseQuarticActionInOut_a331f286f05a385660f6bff75d5665178}{Ease\+Quartic\+Action\+In\+Out}, \hyperlink{classEaseQuarticActionOut_a00d0cdbad4cb7d38c9655780f2034a97}{Ease\+Quartic\+Action\+Out}, \hyperlink{classEaseQuarticActionIn_a82026b58ce9a4eee9165380de2dd80dc}{Ease\+Quartic\+Action\+In}, \hyperlink{classEaseQuadraticActionInOut_ac72e1da241d156a748cf02d5cb8e72c1}{Ease\+Quadratic\+Action\+In\+Out}, \hyperlink{classEaseQuadraticActionOut_afa53b3044fab72ac2ad29a6c2a4b2a24}{Ease\+Quadratic\+Action\+Out}, \hyperlink{classEaseQuadraticActionIn_ac773c27eef9d3d90ae1021d75ad25301}{Ease\+Quadratic\+Action\+In}, \hyperlink{classEaseBezierAction_a8961e1604d79493c815dc42714261403}{Ease\+Bezier\+Action}, \hyperlink{classEaseBackInOut_ae26d3104da166cedfd16ea1915069a4a}{Ease\+Back\+In\+Out}, \hyperlink{classEaseBackOut_a458a06e1b120e51c52a4687ced84f757}{Ease\+Back\+Out}, \hyperlink{classEaseBackIn_a6c053160bd8e0c98f23b1dd3acbc527c}{Ease\+Back\+In}, \hyperlink{classEaseBounceInOut_abd929d5112158561a9d793a46cc51fc1}{Ease\+Bounce\+In\+Out}, \hyperlink{classEaseBounceOut_a044e81fb5f2c10b4064891a9bfdae231}{Ease\+Bounce\+Out}, \hyperlink{classEaseBounceIn_a3b912af264515d06f8671179b17ae729}{Ease\+Bounce\+In}, \hyperlink{classEaseElasticInOut_adb67d3b3eec6b3b8fd2b7a22ed72c4f8}{Ease\+Elastic\+In\+Out}, \hyperlink{classEaseElasticOut_a37dea32a0e909747540cc5625cd7893a}{Ease\+Elastic\+Out}, \hyperlink{classEaseBezierAction_aea1d8017627effcd9ad5d228d3e764f1}{Ease\+Bezier\+Action}, \hyperlink{classEaseElasticIn_acd62b61c4f4013bd98dcd991fbe9e276}{Ease\+Elastic\+In}, \hyperlink{classEaseSineInOut_a6c5c73d3e2bfeb21315b2d9798cf562f}{Ease\+Sine\+In\+Out}, \hyperlink{classEaseSineOut_ab22bfc099303b7e48a1f8c308a930e66}{Ease\+Sine\+Out}, \hyperlink{classEaseSineIn_aa409768eb74f38a9c8c7346f9c5243e1}{Ease\+Sine\+In}, \hyperlink{classEaseExponentialInOut_a856f7d0224d0ae8055b4a91a1538ce73}{Ease\+Exponential\+In\+Out}, \hyperlink{classEaseExponentialOut_acbd15c86c12116c3482640a3f8f83d5f}{Ease\+Exponential\+Out}, \hyperlink{classEaseExponentialIn_abc674dd0975bb25dd079583546516602}{Ease\+Exponential\+In}, \hyperlink{classEaseInOut_ac0e5f3d973cdc7b7d83cc73774ae0321}{Ease\+In\+Out}, \hyperlink{classEaseOut_a1fe43c782ff47f143ab5db00f7c76aea}{Ease\+Out}, and \hyperlink{classEaseIn_a9a03c0c893472d723d2d905e5fd39856}{Ease\+In}.
+
+\mbox{\Hypertarget{classActionEase_a77679f09c02cf75fb54776470c339fc5}\label{classActionEase_a77679f09c02cf75fb54776470c339fc5}} 
+\index{Action\+Ease@{Action\+Ease}!update@{update}}
+\index{update@{update}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Ease\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+Reimplemented in \hyperlink{classEaseCubicActionInOut_a533edabe94657e779ad4e4c6d6d1782f}{Ease\+Cubic\+Action\+In\+Out}, \hyperlink{classEaseCubicActionOut_a2bebf38d7167886e1ae4643b92e05d72}{Ease\+Cubic\+Action\+Out}, \hyperlink{classEaseCubicActionIn_a245bc3028244567a11dbe02bc2e11a10}{Ease\+Cubic\+Action\+In}, \hyperlink{classEaseCircleActionInOut_a6a9cb49f30bc664ab65a067ce48b506e}{Ease\+Circle\+Action\+In\+Out}, \hyperlink{classEaseCircleActionOut_a48e4c603a5dd0eb56f289dd2ffd8d26b}{Ease\+Circle\+Action\+Out}, \hyperlink{classEaseCircleActionIn_a8d48762a47eb738ca2b8fb644182e91b}{Ease\+Circle\+Action\+In}, \hyperlink{classEaseQuinticActionInOut_ada59f8dcd6ba1daeaa1fb9d5b1087521}{Ease\+Quintic\+Action\+In\+Out}, \hyperlink{classEaseQuinticActionOut_ab78421446d94c0d0ded5329ed9a3716d}{Ease\+Quintic\+Action\+Out}, \hyperlink{classEaseQuinticActionIn_a168f914597d873e6071d39118f2cf9f5}{Ease\+Quintic\+Action\+In}, \hyperlink{classEaseQuarticActionInOut_a331f286f05a385660f6bff75d5665178}{Ease\+Quartic\+Action\+In\+Out}, \hyperlink{classEaseQuarticActionOut_a00d0cdbad4cb7d38c9655780f2034a97}{Ease\+Quartic\+Action\+Out}, \hyperlink{classEaseQuarticActionIn_a82026b58ce9a4eee9165380de2dd80dc}{Ease\+Quartic\+Action\+In}, \hyperlink{classEaseQuadraticActionInOut_ac72e1da241d156a748cf02d5cb8e72c1}{Ease\+Quadratic\+Action\+In\+Out}, \hyperlink{classEaseQuadraticActionOut_afa53b3044fab72ac2ad29a6c2a4b2a24}{Ease\+Quadratic\+Action\+Out}, \hyperlink{classEaseQuadraticActionIn_ac773c27eef9d3d90ae1021d75ad25301}{Ease\+Quadratic\+Action\+In}, \hyperlink{classEaseBezierAction_a8961e1604d79493c815dc42714261403}{Ease\+Bezier\+Action}, \hyperlink{classEaseBackInOut_ae26d3104da166cedfd16ea1915069a4a}{Ease\+Back\+In\+Out}, \hyperlink{classEaseBackOut_a458a06e1b120e51c52a4687ced84f757}{Ease\+Back\+Out}, \hyperlink{classEaseBackIn_a6c053160bd8e0c98f23b1dd3acbc527c}{Ease\+Back\+In}, \hyperlink{classEaseBounceInOut_abd929d5112158561a9d793a46cc51fc1}{Ease\+Bounce\+In\+Out}, \hyperlink{classEaseBounceOut_a044e81fb5f2c10b4064891a9bfdae231}{Ease\+Bounce\+Out}, \hyperlink{classEaseBounceIn_a3b912af264515d06f8671179b17ae729}{Ease\+Bounce\+In}, \hyperlink{classEaseElasticInOut_adb67d3b3eec6b3b8fd2b7a22ed72c4f8}{Ease\+Elastic\+In\+Out}, \hyperlink{classEaseElasticOut_a37dea32a0e909747540cc5625cd7893a}{Ease\+Elastic\+Out}, \hyperlink{classEaseBezierAction_aea1d8017627effcd9ad5d228d3e764f1}{Ease\+Bezier\+Action}, \hyperlink{classEaseElasticIn_acd62b61c4f4013bd98dcd991fbe9e276}{Ease\+Elastic\+In}, \hyperlink{classEaseSineInOut_a6c5c73d3e2bfeb21315b2d9798cf562f}{Ease\+Sine\+In\+Out}, \hyperlink{classEaseSineOut_ab22bfc099303b7e48a1f8c308a930e66}{Ease\+Sine\+Out}, \hyperlink{classEaseSineIn_aa409768eb74f38a9c8c7346f9c5243e1}{Ease\+Sine\+In}, \hyperlink{classEaseExponentialInOut_a856f7d0224d0ae8055b4a91a1538ce73}{Ease\+Exponential\+In\+Out}, \hyperlink{classEaseExponentialOut_acbd15c86c12116c3482640a3f8f83d5f}{Ease\+Exponential\+Out}, \hyperlink{classEaseExponentialIn_abc674dd0975bb25dd079583546516602}{Ease\+Exponential\+In}, \hyperlink{classEaseInOut_ac0e5f3d973cdc7b7d83cc73774ae0321}{Ease\+In\+Out}, \hyperlink{classEaseOut_a1fe43c782ff47f143ab5db00f7c76aea}{Ease\+Out}, and \hyperlink{classEaseIn_a9a03c0c893472d723d2d905e5fd39856}{Ease\+In}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classActionEase_ae8717262cdb409d9810e5f7ac2478b98}\label{classActionEase_ae8717262cdb409d9810e5f7ac2478b98}} 
+\index{Action\+Ease@{Action\+Ease}!\+\_\+inner@{\+\_\+inner}}
+\index{\+\_\+inner@{\+\_\+inner}!Action\+Ease@{Action\+Ease}}
+\subsubsection{\texorpdfstring{\+\_\+inner}{\_inner}}
+{\footnotesize\ttfamily \hyperlink{classActionInterval}{Action\+Interval} $\ast$ Action\+Ease\+::\+\_\+inner\hspace{0.3cm}{\ttfamily [protected]}}
+
+The inner action 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+cpp\end{DoxyCompactItemize}

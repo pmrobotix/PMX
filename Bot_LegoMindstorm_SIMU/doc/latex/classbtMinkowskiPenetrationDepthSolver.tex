@@ -1,0 +1,65 @@
+\hypertarget{classbtMinkowskiPenetrationDepthSolver}{}\section{bt\+Minkowski\+Penetration\+Depth\+Solver Class Reference}
+\label{classbtMinkowskiPenetrationDepthSolver}\index{bt\+Minkowski\+Penetration\+Depth\+Solver@{bt\+Minkowski\+Penetration\+Depth\+Solver}}
+
+
+{\ttfamily \#include $<$bt\+Minkowski\+Penetration\+Depth\+Solver.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Minkowski\+Penetration\+Depth\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classbtMinkowskiPenetrationDepthSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Minkowski\+Penetration\+Depth\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classbtMinkowskiPenetrationDepthSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classbtMinkowskiPenetrationDepthSolver_ada75e93337af3d895f0f33f3140361c7}{calc\+Pen\+Depth} (bt\+Simplex\+Solver\+Interface \&simplex\+Solver, const bt\+Convex\+Shape $\ast$convexA, const bt\+Convex\+Shape $\ast$convexB, const bt\+Transform \&transA, const bt\+Transform \&transB, bt\+Vector3 \&v, bt\+Vector3 \&pa, bt\+Vector3 \&pb, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw)
+\item 
+\mbox{\Hypertarget{classbtMinkowskiPenetrationDepthSolver_a25adbd4ac3fc3d3b939c768ffaeef8c2}\label{classbtMinkowskiPenetrationDepthSolver_a25adbd4ac3fc3d3b939c768ffaeef8c2}} 
+virtual bool {\bfseries calc\+Pen\+Depth} (bt\+Simplex\+Solver\+Interface \&simplex\+Solver, const bt\+Convex\+Shape $\ast$convexA, const bt\+Convex\+Shape $\ast$convexB, const bt\+Transform \&transA, const bt\+Transform \&transB, bt\+Vector3 \&v, bt\+Vector3 \&pa, bt\+Vector3 \&pb, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtMinkowskiPenetrationDepthSolver_a2b606f614668dcb03bf86c88f035e702}\label{classbtMinkowskiPenetrationDepthSolver_a2b606f614668dcb03bf86c88f035e702}} 
+static bt\+Vector3 $\ast$ {\bfseries get\+Penetration\+Directions} ()
+\item 
+\mbox{\Hypertarget{classbtMinkowskiPenetrationDepthSolver_afeda5b0b31ee75c3c6d52b1116df5af5}\label{classbtMinkowskiPenetrationDepthSolver_afeda5b0b31ee75c3c6d52b1116df5af5}} 
+static bt\+Vector3 $\ast$ {\bfseries get\+Penetration\+Directions} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Minkowski\+Penetration\+Depth\+Solver implements bruteforce penetration depth estimation. Implementation is based on sampling the depth using support mapping, and using G\+JK step to get the witness points. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtMinkowskiPenetrationDepthSolver_ada75e93337af3d895f0f33f3140361c7}\label{classbtMinkowskiPenetrationDepthSolver_ada75e93337af3d895f0f33f3140361c7}} 
+\index{bt\+Minkowski\+Penetration\+Depth\+Solver@{bt\+Minkowski\+Penetration\+Depth\+Solver}!calc\+Pen\+Depth@{calc\+Pen\+Depth}}
+\index{calc\+Pen\+Depth@{calc\+Pen\+Depth}!bt\+Minkowski\+Penetration\+Depth\+Solver@{bt\+Minkowski\+Penetration\+Depth\+Solver}}
+\subsubsection{\texorpdfstring{calc\+Pen\+Depth()}{calcPenDepth()}}
+{\footnotesize\ttfamily bool bt\+Minkowski\+Penetration\+Depth\+Solver\+::calc\+Pen\+Depth (\begin{DoxyParamCaption}\item[{bt\+Simplex\+Solver\+Interface \&}]{simplex\+Solver,  }\item[{const bt\+Convex\+Shape $\ast$}]{convexA,  }\item[{const bt\+Convex\+Shape $\ast$}]{convexB,  }\item[{const bt\+Transform \&}]{transA,  }\item[{const bt\+Transform \&}]{transB,  }\item[{bt\+Vector3 \&}]{v,  }\item[{bt\+Vector3 \&}]{pa,  }\item[{bt\+Vector3 \&}]{pb,  }\item[{class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$}]{debug\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+scale dependent 
+
+Implements \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Minkowski\+Penetration\+Depth\+Solver.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Minkowski\+Penetration\+Depth\+Solver.\+cpp\end{DoxyCompactItemize}

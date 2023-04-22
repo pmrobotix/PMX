@@ -1,0 +1,69 @@
+\hypertarget{classServoMotorStd}{}\section{Servo\+Motor\+Std Class Reference}
+\label{classServoMotorStd}\index{Servo\+Motor\+Std@{Servo\+Motor\+Std}}
+
+
+Cette classe représente l\textquotesingle{}un des servomoteurs fonctionnant sur n positions du robot et utilisant le \char`\"{}motion system\char`\"{} du F\+P\+GA.  
+
+
+
+
+{\ttfamily \#include $<$Servo\+Motor\+Std.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServoMotorStd_a8eddb416fb7421b67370778f0e085ff9}\label{classServoMotorStd_a8eddb416fb7421b67370778f0e085ff9}} 
+\hyperlink{classServoMotorStd_a8eddb416fb7421b67370778f0e085ff9}{Servo\+Motor\+Std} (int ID)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_aa774c78bc09e922fa1120d4940614b36}\label{classServoMotorStd_aa774c78bc09e922fa1120d4940614b36}} 
+\hyperlink{classServoMotorStd_aa774c78bc09e922fa1120d4940614b36}{$\sim$\+Servo\+Motor\+Std} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classServoMotorStd_a680ab8eb08df76e4da18255a55c6110d}{set\+Servo\+Enable} (int value)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}activer un servomoteur ou non (= mode freewheeling). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_a79e1d54582a2c4b03efd6ea8d4a2b951}\label{classServoMotorStd_a79e1d54582a2c4b03efd6ea8d4a2b951}} 
+void \hyperlink{classServoMotorStd_a79e1d54582a2c4b03efd6ea8d4a2b951}{set\+Servo\+Offset} (int)
+\begin{DoxyCompactList}\small\item\em Mets à jour la valeur d\textquotesingle{}offset du servo associé. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_aaa80293c0fed06bf725387a9dc49fd8f}\label{classServoMotorStd_aaa80293c0fed06bf725387a9dc49fd8f}} 
+void \hyperlink{classServoMotorStd_aaa80293c0fed06bf725387a9dc49fd8f}{set\+Servo\+Position} (int)
+\begin{DoxyCompactList}\small\item\em Tourne le servo à la valeur de position demandée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_a4aa6332476150562db280920882b65ba}\label{classServoMotorStd_a4aa6332476150562db280920882b65ba}} 
+void \hyperlink{classServoMotorStd_a4aa6332476150562db280920882b65ba}{set\+Servo\+Speed} (int)
+\begin{DoxyCompactList}\small\item\em Change la vitesse. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_a2484ca12416ecd273cd1d0c68f9939e0}\label{classServoMotorStd_a2484ca12416ecd273cd1d0c68f9939e0}} 
+int \hyperlink{classServoMotorStd_a2484ca12416ecd273cd1d0c68f9939e0}{get\+Servo\+Id} ()
+\begin{DoxyCompactList}\small\item\em indique l\textquotesingle{}identifiant du servomoteur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_afbc96aff6e05c991f514c326b0fbd5fb}\label{classServoMotorStd_afbc96aff6e05c991f514c326b0fbd5fb}} 
+int \hyperlink{classServoMotorStd_afbc96aff6e05c991f514c326b0fbd5fb}{get\+Servo\+Current\+Position} ()
+\begin{DoxyCompactList}\small\item\em indique la valeur courante de la position du servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoMotorStd_a5075ff60f754d7133bb69e157cfdc185}\label{classServoMotorStd_a5075ff60f754d7133bb69e157cfdc185}} 
+void \hyperlink{classServoMotorStd_a5075ff60f754d7133bb69e157cfdc185}{is\+Inverted} ()
+\begin{DoxyCompactList}\small\item\em indique si le servo doit etre inversé. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe représente l\textquotesingle{}un des servomoteurs fonctionnant sur n positions du robot et utilisant le \char`\"{}motion system\char`\"{} du F\+P\+GA. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classServoMotorStd_a680ab8eb08df76e4da18255a55c6110d}\label{classServoMotorStd_a680ab8eb08df76e4da18255a55c6110d}} 
+\index{Servo\+Motor\+Std@{Servo\+Motor\+Std}!set\+Servo\+Enable@{set\+Servo\+Enable}}
+\index{set\+Servo\+Enable@{set\+Servo\+Enable}!Servo\+Motor\+Std@{Servo\+Motor\+Std}}
+\subsubsection{\texorpdfstring{set\+Servo\+Enable()}{setServoEnable()}}
+{\footnotesize\ttfamily void Servo\+Motor\+Std\+::set\+Servo\+Enable (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}activer un servomoteur ou non (= mode freewheeling). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo\+ID} & \+: identifiant du servomoteur. \\
+\hline
+{\em value} & \+: prend la valeur 0\+:desactivé ou 1\+:activé. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{ServoMotorStd_8hpp}{Servo\+Motor\+Std.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{ServoMotorStd_8cpp}{Servo\+Motor\+Std.\+cpp}\end{DoxyCompactItemize}

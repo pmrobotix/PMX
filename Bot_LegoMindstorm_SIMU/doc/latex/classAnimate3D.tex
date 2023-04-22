@@ -1,0 +1,644 @@
+\hypertarget{classAnimate3D}{}\section{Animate3D Class Reference}
+\label{classAnimate3D}\index{Animate3D@{Animate3D}}
+
+
+\hyperlink{classAnimate3D}{Animate3D}, Animates a \hyperlink{classSprite3D}{Sprite3D} given with an \hyperlink{classAnimation3D}{Animation3D}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Animate3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Animate3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classAnimate3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Animate3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimate3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAnimate3D_1_1Animate3DDisplayedEventInfo}{Animate3\+D\+Displayed\+Event\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAnimate3D_a9d27a950ce7942a73a392936951fc263}{stop} () override
+\item 
+\mbox{\Hypertarget{classAnimate3D_a0bd0e3f67af5be334ef07255a711c476}\label{classAnimate3D_a0bd0e3f67af5be334ef07255a711c476}} 
+virtual void \hyperlink{classAnimate3D_a0bd0e3f67af5be334ef07255a711c476}{step} (float dt) override
+\begin{DoxyCompactList}\small\item\em called every frame with it\textquotesingle{}s delta time. D\+ON\textquotesingle{}T override unless you know what you are doing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAnimate3D_a0c04fb9d432a3fd7811235c492a4969f}\label{classAnimate3D_a0c04fb9d432a3fd7811235c492a4969f}} 
+virtual void \hyperlink{classAnimate3D_a0c04fb9d432a3fd7811235c492a4969f}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\begin{DoxyCompactList}\small\item\em called before the action start. It will also set the target. \end{DoxyCompactList}\item 
+virtual \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_aa8acc0668132f57fee370bfdbea308cb}{reverse} () const override
+\item 
+virtual \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a13868382e90e2760717cf8f91f697bc0}{clone} () const override
+\item 
+virtual void \hyperlink{classAnimate3D_a03bc0bc8212147a742f059fc93361910}{update} (float t) override
+\item 
+float \hyperlink{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}{get\+Speed} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ad731fd7945fe60d58052e6d5aa14a675}\label{classAnimate3D_ad731fd7945fe60d58052e6d5aa14a675}} 
+void {\bfseries set\+Speed} (float speed)
+\item 
+float \hyperlink{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}{get\+Weight} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ac84a327ea6852e0b6ba757ec1cdaaa50}\label{classAnimate3D_ac84a327ea6852e0b6ba757ec1cdaaa50}} 
+void {\bfseries set\+Weight} (float weight)
+\item 
+void \hyperlink{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}{set\+Origin\+Interval} (float interval)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a428a507dd96210b1399ed1de8f096d29}\label{classAnimate3D_a428a507dd96210b1399ed1de8f096d29}} 
+float {\bfseries get\+Origin\+Interval} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}{get\+Play\+Back} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ae71e30a9bea943566d828ddfd9e700e8}\label{classAnimate3D_ae71e30a9bea943566d828ddfd9e700e8}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Play\+Back} (bool \hyperlink{classAnimate3D_aa8acc0668132f57fee370bfdbea308cb}{reverse})
+\item 
+void \hyperlink{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}{set\+Quality} (Animate3\+D\+Quality quality)
+\item 
+Animate3\+D\+Quality \hyperlink{classAnimate3D_af9e4be0cb5896579154c7dd971315914}{get\+Quality} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_a92074f1cf279429fa72051702f14e59c}\label{classAnimate3D_a92074f1cf279429fa72051702f14e59c}} 
+void {\bfseries set\+Key\+Frame\+User\+Info} (int key\+Frame, const Value\+Map \&user\+Info)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a9fb4da88f55ba61386ba3d5766be32ea}\label{classAnimate3D_a9fb4da88f55ba61386ba3d5766be32ea}} 
+const Value\+Map $\ast$ {\bfseries get\+Key\+Frame\+User\+Info} (int key\+Frame) const
+\item 
+\mbox{\Hypertarget{classAnimate3D_a884c5d512689d482cea873a5936bd736}\label{classAnimate3D_a884c5d512689d482cea873a5936bd736}} 
+Value\+Map $\ast$ {\bfseries get\+Key\+Frame\+User\+Info} (int key\+Frame)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a044297fc83835844b19474d4179a24b1}\label{classAnimate3D_a044297fc83835844b19474d4179a24b1}} 
+void {\bfseries remove\+From\+Map} ()
+\item 
+bool \hyperlink{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}{init} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a300abdd17ec48a6609147664a33b5208}\label{classAnimate3D_a300abdd17ec48a6609147664a33b5208}} 
+bool {\bfseries init} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, float from\+Time, float duration)
+\item 
+\mbox{\Hypertarget{classAnimate3D_af2c95c3e14ca8a176b34883e7e76e056}\label{classAnimate3D_af2c95c3e14ca8a176b34883e7e76e056}} 
+bool {\bfseries init\+With\+Frames} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, int start\+Frame, int end\+Frame, float frame\+Rate)
+\item 
+virtual void \hyperlink{classAnimate3D_af37f00e045b7dc5cd1a0c54a4f4f8042}{stop} () override
+\item 
+virtual void \hyperlink{classAnimate3D_a9fed05e5478085f002769b6931a123d4}{step} (float dt) override
+\item 
+virtual void \hyperlink{classAnimate3D_a684fa4c9666a80e949c45356e1c1961f}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a54f554bc2790e7c405716c291e00daf7}{reverse} () const override
+\item 
+virtual \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a1de37c3ea3435bc8961d6e5d6d3ac50d}{clone} () const override
+\item 
+virtual void \hyperlink{classAnimate3D_ae71b012a3b1dd55d12a50148755a5f68}{update} (float t) override
+\item 
+float \hyperlink{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}{get\+Speed} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ad731fd7945fe60d58052e6d5aa14a675}\label{classAnimate3D_ad731fd7945fe60d58052e6d5aa14a675}} 
+void {\bfseries set\+Speed} (float speed)
+\item 
+float \hyperlink{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}{get\+Weight} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ac84a327ea6852e0b6ba757ec1cdaaa50}\label{classAnimate3D_ac84a327ea6852e0b6ba757ec1cdaaa50}} 
+void {\bfseries set\+Weight} (float weight)
+\item 
+void \hyperlink{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}{set\+Origin\+Interval} (float interval)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a428a507dd96210b1399ed1de8f096d29}\label{classAnimate3D_a428a507dd96210b1399ed1de8f096d29}} 
+float {\bfseries get\+Origin\+Interval} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}{get\+Play\+Back} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_ae71e30a9bea943566d828ddfd9e700e8}\label{classAnimate3D_ae71e30a9bea943566d828ddfd9e700e8}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Play\+Back} (bool \hyperlink{classAnimate3D_aa8acc0668132f57fee370bfdbea308cb}{reverse})
+\item 
+void \hyperlink{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}{set\+Quality} (Animate3\+D\+Quality quality)
+\item 
+Animate3\+D\+Quality \hyperlink{classAnimate3D_af9e4be0cb5896579154c7dd971315914}{get\+Quality} () const
+\item 
+\mbox{\Hypertarget{classAnimate3D_a92074f1cf279429fa72051702f14e59c}\label{classAnimate3D_a92074f1cf279429fa72051702f14e59c}} 
+void {\bfseries set\+Key\+Frame\+User\+Info} (int key\+Frame, const Value\+Map \&user\+Info)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a9e1e86c94bec416b77009103df32272a}\label{classAnimate3D_a9e1e86c94bec416b77009103df32272a}} 
+const Value\+Map $\ast$ {\bfseries get\+Key\+Frame\+User\+Info} (int key\+Frame) const
+\item 
+\mbox{\Hypertarget{classAnimate3D_a0d9df2026c7d4f82bdf65d4f55f81906}\label{classAnimate3D_a0d9df2026c7d4f82bdf65d4f55f81906}} 
+Value\+Map $\ast$ {\bfseries get\+Key\+Frame\+User\+Info} (int key\+Frame)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a044297fc83835844b19474d4179a24b1}\label{classAnimate3D_a044297fc83835844b19474d4179a24b1}} 
+void {\bfseries remove\+From\+Map} ()
+\item 
+bool \hyperlink{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}{init} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation)
+\item 
+\mbox{\Hypertarget{classAnimate3D_a300abdd17ec48a6609147664a33b5208}\label{classAnimate3D_a300abdd17ec48a6609147664a33b5208}} 
+bool {\bfseries init} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, float from\+Time, float duration)
+\item 
+\mbox{\Hypertarget{classAnimate3D_af2c95c3e14ca8a176b34883e7e76e056}\label{classAnimate3D_af2c95c3e14ca8a176b34883e7e76e056}} 
+bool {\bfseries init\+With\+Frames} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, int start\+Frame, int end\+Frame, float frame\+Rate)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a06f3e2e2a62513821684d5c406772b22}{create} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation)
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a5362314cf5bdc352f8cfc76501a15a62}{create} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, float from\+Time, float duration)
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a57bed08df4a445a7aff0cde34abb686d}{create\+With\+Frames} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, int start\+Frame, int end\+Frame, float frame\+Rate=30.f)
+\item 
+static float \hyperlink{classAnimate3D_a50adc250e0012bd6fffc86763854360b}{get\+Transition\+Time} ()
+\item 
+static void \hyperlink{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}{set\+Transition\+Time} (float trans\+Time)
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a0739534e304f350190b939e7392f7b40}{create} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation)
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a335084c3a2223c250f9b1f1ebded5450}{create} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, float from\+Time, float duration)
+\item 
+static \hyperlink{classAnimate3D}{Animate3D} $\ast$ \hyperlink{classAnimate3D_a1f13b7c0281f969bf7a2fdf6068df78f}{create\+With\+Frames} (\hyperlink{classAnimation3D}{Animation3D} $\ast$animation, int start\+Frame, int end\+Frame, float frame\+Rate=30.f)
+\item 
+static float \hyperlink{classAnimate3D_a50adc250e0012bd6fffc86763854360b}{get\+Transition\+Time} ()
+\item 
+static void \hyperlink{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}{set\+Transition\+Time} (float trans\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate3D_afaa091a3c8b8210ab87fc2aae2e28da0}\label{classAnimate3D_afaa091a3c8b8210ab87fc2aae2e28da0}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAnimate3D}{Animate3D}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a0fec0940baac80382ddb04634468800e}\label{classAnimate3D_a0fec0940baac80382ddb04634468800e}} 
+enum {\bfseries Animate3\+D\+State} \{ \newline
+{\bfseries Fade\+In}, 
+{\bfseries Fade\+Out}, 
+{\bfseries Running}, 
+{\bfseries Fade\+In}, 
+\newline
+{\bfseries Fade\+Out}, 
+{\bfseries Running}
+ \}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a0fec0940baac80382ddb04634468800e}\label{classAnimate3D_a0fec0940baac80382ddb04634468800e}} 
+enum {\bfseries Animate3\+D\+State} \{ \newline
+{\bfseries Fade\+In}, 
+{\bfseries Fade\+Out}, 
+{\bfseries Running}, 
+{\bfseries Fade\+In}, 
+\newline
+{\bfseries Fade\+Out}, 
+{\bfseries Running}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a7b8f4d0be59ae9e4d99496078df71725}\label{classAnimate3D_a7b8f4d0be59ae9e4d99496078df71725}} 
+Animate3\+D\+State {\bfseries \+\_\+state}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a9ae458de1f95f28ba39b72d690fda4da}\label{classAnimate3D_a9ae458de1f95f28ba39b72d690fda4da}} 
+\hyperlink{classAnimation3D}{Animation3D} $\ast$ {\bfseries \+\_\+animation}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a5a0f2183f7aa1ebf7ed8c0cccb7397eb}\label{classAnimate3D_a5a0f2183f7aa1ebf7ed8c0cccb7397eb}} 
+float {\bfseries \+\_\+abs\+Speed}
+\item 
+\mbox{\Hypertarget{classAnimate3D_ab9a3ce70fb11b207a0dcb3269af75dde}\label{classAnimate3D_ab9a3ce70fb11b207a0dcb3269af75dde}} 
+float {\bfseries \+\_\+weight}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a8a760b69b8713adf6c9f463a0438b692}\label{classAnimate3D_a8a760b69b8713adf6c9f463a0438b692}} 
+float {\bfseries \+\_\+start}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a52adc7660c518c2403ec33e0deeae7dd}\label{classAnimate3D_a52adc7660c518c2403ec33e0deeae7dd}} 
+float {\bfseries \+\_\+last}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a283d70144f1ba04f81accb5a8ab849b8}\label{classAnimate3D_a283d70144f1ba04f81accb5a8ab849b8}} 
+bool {\bfseries \+\_\+play\+Reverse}
+\item 
+\mbox{\Hypertarget{classAnimate3D_ad6ee01452ef2437bb6e0289525b795b3}\label{classAnimate3D_ad6ee01452ef2437bb6e0289525b795b3}} 
+float {\bfseries \+\_\+acc\+Trans\+Time}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a9b9c80deb5c151285df6e1d0ae72291d}\label{classAnimate3D_a9b9c80deb5c151285df6e1d0ae72291d}} 
+float {\bfseries \+\_\+last\+Time}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a255e2f108385eaf550975621c54d80d3}\label{classAnimate3D_a255e2f108385eaf550975621c54d80d3}} 
+float {\bfseries \+\_\+origin\+Interval}
+\item 
+\mbox{\Hypertarget{classAnimate3D_aa0f6dc74ccd17e1d31008b24fac54c08}\label{classAnimate3D_aa0f6dc74ccd17e1d31008b24fac54c08}} 
+float {\bfseries \+\_\+frame\+Rate}
+\item 
+\mbox{\Hypertarget{classAnimate3D_afabff26944c2fef3be5b67217cdb39df}\label{classAnimate3D_afabff26944c2fef3be5b67217cdb39df}} 
+\hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type} {\bfseries \+\_\+translate\+Evaluate}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a9c2f392ab0dc59f104c823c4209c2061}\label{classAnimate3D_a9c2f392ab0dc59f104c823c4209c2061}} 
+\hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type} {\bfseries \+\_\+rote\+Evaluate}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a4f9c82b89ff98f58c06e3d9136c993f4}\label{classAnimate3D_a4f9c82b89ff98f58c06e3d9136c993f4}} 
+\hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type} {\bfseries \+\_\+scale\+Evaluate}
+\item 
+\mbox{\Hypertarget{classAnimate3D_ad1ae66a8dfffac65d9cc628094394fa1}\label{classAnimate3D_ad1ae66a8dfffac65d9cc628094394fa1}} 
+Animate3\+D\+Quality {\bfseries \+\_\+quality}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a2c317ff3e4fd5f045cc3c59ad9df2668}\label{classAnimate3D_a2c317ff3e4fd5f045cc3c59ad9df2668}} 
+std\+::unordered\+\_\+map$<$ \hyperlink{classBone3D}{Bone3D} $\ast$, \hyperlink{classAnimation3D_1_1Curve}{Animation3\+D\+::\+Curve} $\ast$ $>$ {\bfseries \+\_\+bone\+Curves}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a4e35d184d6956e547bd3745dce6cacda}\label{classAnimate3D_a4e35d184d6956e547bd3745dce6cacda}} 
+std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, \hyperlink{classAnimation3D_1_1Curve}{Animation3\+D\+::\+Curve} $\ast$ $>$ {\bfseries \+\_\+node\+Curves}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a16e55626ebadadbe401b47d340b88f1c}\label{classAnimate3D_a16e55626ebadadbe401b47d340b88f1c}} 
+std\+::unordered\+\_\+map$<$ int, Value\+Map $>$ {\bfseries \+\_\+key\+Frame\+User\+Infos}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a2224313fac35787933195435abc196e5}\label{classAnimate3D_a2224313fac35787933195435abc196e5}} 
+std\+::unordered\+\_\+map$<$ int, \hyperlink{classEventCustom}{Event\+Custom} $\ast$ $>$ {\bfseries \+\_\+key\+Frame\+Event}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a2dac86682e5ddbbb2e08e8d9958dcdeb}\label{classAnimate3D_a2dac86682e5ddbbb2e08e8d9958dcdeb}} 
+std\+::unordered\+\_\+map$<$ int, \hyperlink{structAnimate3D_1_1Animate3DDisplayedEventInfo}{Animate3\+D\+Displayed\+Event\+Info} $>$ {\bfseries \+\_\+displayed\+Event\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a18d2e9a7cb3b503fc384d6da2fec212e}\label{classAnimate3D_a18d2e9a7cb3b503fc384d6da2fec212e}} 
+static float {\bfseries \+\_\+trans\+Time} = 0.\+1f
+\item 
+\mbox{\Hypertarget{classAnimate3D_aae8036cd8c984cea8203c20fd002d51f}\label{classAnimate3D_aae8036cd8c984cea8203c20fd002d51f}} 
+static std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, \hyperlink{classAnimate3D}{Animate3D} $\ast$ $>$ {\bfseries s\+\_\+fade\+In\+Animates}
+\item 
+\mbox{\Hypertarget{classAnimate3D_a7d908465df233018b8809934919753a8}\label{classAnimate3D_a7d908465df233018b8809934919753a8}} 
+static std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, \hyperlink{classAnimate3D}{Animate3D} $\ast$ $>$ {\bfseries s\+\_\+fade\+Out\+Animates}
+\item 
+\mbox{\Hypertarget{classAnimate3D_af32e9dc2f42ec958db9f4c6ccb190efc}\label{classAnimate3D_af32e9dc2f42ec958db9f4c6ccb190efc}} 
+static std\+::unordered\+\_\+map$<$ \hyperlink{classNode}{Node} $\ast$, \hyperlink{classAnimate3D}{Animate3D} $\ast$ $>$ {\bfseries s\+\_\+running\+Animates}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAnimate3D}{Animate3D}, Animates a \hyperlink{classSprite3D}{Sprite3D} given with an \hyperlink{classAnimation3D}{Animation3D}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimate3D_a13868382e90e2760717cf8f91f697bc0}\label{classAnimate3D_a13868382e90e2760717cf8f91f697bc0}} 
+\index{Animate3D@{Animate3D}!clone@{clone}}
+\index{clone@{clone}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate3D}{Animate3D} $\ast$ Animate3\+D\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+returns a clone of action 
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a1de37c3ea3435bc8961d6e5d6d3ac50d}\label{classAnimate3D_a1de37c3ea3435bc8961d6e5d6d3ac50d}} 
+\index{Animate3D@{Animate3D}!clone@{clone}}
+\index{clone@{clone}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAnimate3D}{Animate3D}$\ast$ Animate3\+D\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a06f3e2e2a62513821684d5c406772b22}\label{classAnimate3D_a06f3e2e2a62513821684d5c406772b22}} 
+\index{Animate3D@{Animate3D}!create@{create}}
+\index{create@{create}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate3D}{Animate3D} $\ast$ Animate3\+D\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} using \hyperlink{classAnimation}{Animation}. \mbox{\Hypertarget{classAnimate3D_a0739534e304f350190b939e7392f7b40}\label{classAnimate3D_a0739534e304f350190b939e7392f7b40}} 
+\index{Animate3D@{Animate3D}!create@{create}}
+\index{create@{create}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classAnimate3D}{Animate3D}$\ast$ Animate3\+D\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} using \hyperlink{classAnimation}{Animation}. \mbox{\Hypertarget{classAnimate3D_a5362314cf5bdc352f8cfc76501a15a62}\label{classAnimate3D_a5362314cf5bdc352f8cfc76501a15a62}} 
+\index{Animate3D@{Animate3D}!create@{create}}
+\index{create@{create}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate3D}{Animate3D} $\ast$ Animate3\+D\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation,  }\item[{float}]{from\+Time,  }\item[{float}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} 
+\begin{DoxyParams}{Parameters}
+{\em animation} & used to generate animate3D \\
+\hline
+{\em from\+Time} & \\
+\hline
+{\em duration} & Time the \hyperlink{classAnimate3D}{Animate3D} lasts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classAnimate3D}{Animate3D} created using animate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate3D_a335084c3a2223c250f9b1f1ebded5450}\label{classAnimate3D_a335084c3a2223c250f9b1f1ebded5450}} 
+\index{Animate3D@{Animate3D}!create@{create}}
+\index{create@{create}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classAnimate3D}{Animate3D}$\ast$ Animate3\+D\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation,  }\item[{float}]{from\+Time,  }\item[{float}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} 
+\begin{DoxyParams}{Parameters}
+{\em animation} & used to generate animate3D \\
+\hline
+{\em from\+Time} & \\
+\hline
+{\em duration} & Time the \hyperlink{classAnimate3D}{Animate3D} lasts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classAnimate3D}{Animate3D} created using animate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate3D_a57bed08df4a445a7aff0cde34abb686d}\label{classAnimate3D_a57bed08df4a445a7aff0cde34abb686d}} 
+\index{Animate3D@{Animate3D}!create\+With\+Frames@{create\+With\+Frames}}
+\index{create\+With\+Frames@{create\+With\+Frames}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create\+With\+Frames()}{createWithFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate3D}{Animate3D} $\ast$ Animate3\+D\+::create\+With\+Frames (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation,  }\item[{int}]{start\+Frame,  }\item[{int}]{end\+Frame,  }\item[{float}]{frame\+Rate = {\ttfamily 30.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} by frame section, \mbox{[}start\+Frame, end\+Frame) 
+\begin{DoxyParams}{Parameters}
+{\em animation} & used to generate animate3D \\
+\hline
+{\em start\+Frame} & \\
+\hline
+{\em end\+Frame} & \\
+\hline
+{\em frame\+Rate} & default is 30 per second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classAnimate3D}{Animate3D} created using animate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate3D_a1f13b7c0281f969bf7a2fdf6068df78f}\label{classAnimate3D_a1f13b7c0281f969bf7a2fdf6068df78f}} 
+\index{Animate3D@{Animate3D}!create\+With\+Frames@{create\+With\+Frames}}
+\index{create\+With\+Frames@{create\+With\+Frames}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{create\+With\+Frames()}{createWithFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAnimate3D}{Animate3D}$\ast$ Animate3\+D\+::create\+With\+Frames (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation,  }\item[{int}]{start\+Frame,  }\item[{int}]{end\+Frame,  }\item[{float}]{frame\+Rate = {\ttfamily 30.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create \hyperlink{classAnimate3D}{Animate3D} by frame section, \mbox{[}start\+Frame, end\+Frame) 
+\begin{DoxyParams}{Parameters}
+{\em animation} & used to generate animate3D \\
+\hline
+{\em start\+Frame} & \\
+\hline
+{\em end\+Frame} & \\
+\hline
+{\em frame\+Rate} & default is 30 per second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classAnimate3D}{Animate3D} created using animate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}\label{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}} 
+\index{Animate3D@{Animate3D}!get\+Play\+Back@{get\+Play\+Back}}
+\index{get\+Play\+Back@{get\+Play\+Back}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Play\+Back()}{getPlayBack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Animate3\+D\+::get\+Play\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set play reverse, these are deprecated, use set negative speed instead \mbox{\Hypertarget{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}\label{classAnimate3D_ac9ca6671172132e1e29ceeb810df4ba4}} 
+\index{Animate3D@{Animate3D}!get\+Play\+Back@{get\+Play\+Back}}
+\index{get\+Play\+Back@{get\+Play\+Back}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Play\+Back()}{getPlayBack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Animate3\+D\+::get\+Play\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set play reverse, these are deprecated, use set negative speed instead \mbox{\Hypertarget{classAnimate3D_af9e4be0cb5896579154c7dd971315914}\label{classAnimate3D_af9e4be0cb5896579154c7dd971315914}} 
+\index{Animate3D@{Animate3D}!get\+Quality@{get\+Quality}}
+\index{get\+Quality@{get\+Quality}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Quality()}{getQuality()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Animate3\+D\+Quality Animate3\+D\+::get\+Quality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get animate quality \mbox{\Hypertarget{classAnimate3D_af9e4be0cb5896579154c7dd971315914}\label{classAnimate3D_af9e4be0cb5896579154c7dd971315914}} 
+\index{Animate3D@{Animate3D}!get\+Quality@{get\+Quality}}
+\index{get\+Quality@{get\+Quality}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Quality()}{getQuality()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Animate3\+D\+Quality Animate3\+D\+::get\+Quality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get animate quality \mbox{\Hypertarget{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}\label{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}} 
+\index{Animate3D@{Animate3D}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Animate3\+D\+::get\+Speed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+get \& set speed, negative speed means playing reverse \mbox{\Hypertarget{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}\label{classAnimate3D_a22cd253f8b3caf2d96e68c5ff7f833b4}} 
+\index{Animate3D@{Animate3D}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Animate3\+D\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \& set speed, negative speed means playing reverse \mbox{\Hypertarget{classAnimate3D_a50adc250e0012bd6fffc86763854360b}\label{classAnimate3D_a50adc250e0012bd6fffc86763854360b}} 
+\index{Animate3D@{Animate3D}!get\+Transition\+Time@{get\+Transition\+Time}}
+\index{get\+Transition\+Time@{get\+Transition\+Time}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Transition\+Time()}{getTransitionTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float Animate3\+D\+::get\+Transition\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+get animate transition time between 3d animations \mbox{\Hypertarget{classAnimate3D_a50adc250e0012bd6fffc86763854360b}\label{classAnimate3D_a50adc250e0012bd6fffc86763854360b}} 
+\index{Animate3D@{Animate3D}!get\+Transition\+Time@{get\+Transition\+Time}}
+\index{get\+Transition\+Time@{get\+Transition\+Time}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Transition\+Time()}{getTransitionTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float Animate3\+D\+::get\+Transition\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+get animate transition time between 3d animations \mbox{\Hypertarget{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}\label{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}} 
+\index{Animate3D@{Animate3D}!get\+Weight@{get\+Weight}}
+\index{get\+Weight@{get\+Weight}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Weight()}{getWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Animate3\+D\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set blend weight, weight must positive \mbox{\Hypertarget{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}\label{classAnimate3D_ac221fedd9e89cf60aa2a9ba6b7fabea8}} 
+\index{Animate3D@{Animate3D}!get\+Weight@{get\+Weight}}
+\index{get\+Weight@{get\+Weight}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{get\+Weight()}{getWeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Animate3\+D\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set blend weight, weight must positive \mbox{\Hypertarget{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}\label{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}} 
+\index{Animate3D@{Animate3D}!init@{init}}
+\index{init@{init}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animate3\+D\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+init method \mbox{\Hypertarget{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}\label{classAnimate3D_a08ca260aabb4f6569dd1ced348309aaf}} 
+\index{Animate3D@{Animate3D}!init@{init}}
+\index{init@{init}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animate3\+D\+::init (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation3D}{Animation3D} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+init method \mbox{\Hypertarget{classAnimate3D_aa8acc0668132f57fee370bfdbea308cb}\label{classAnimate3D_aa8acc0668132f57fee370bfdbea308cb}} 
+\index{Animate3D@{Animate3D}!reverse@{reverse}}
+\index{reverse@{reverse}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate3D}{Animate3D} $\ast$ Animate3\+D\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+returns a new action that performs the exactly the reverse action 
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a54f554bc2790e7c405716c291e00daf7}\label{classAnimate3D_a54f554bc2790e7c405716c291e00daf7}} 
+\index{Animate3D@{Animate3D}!reverse@{reverse}}
+\index{reverse@{reverse}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAnimate3D}{Animate3D}$\ast$ Animate3\+D\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}\label{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}} 
+\index{Animate3D@{Animate3D}!set\+Origin\+Interval@{set\+Origin\+Interval}}
+\index{set\+Origin\+Interval@{set\+Origin\+Interval}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Origin\+Interval()}{setOriginInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::set\+Origin\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval }\end{DoxyParamCaption})}
+
+get \& set origin interval \mbox{\Hypertarget{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}\label{classAnimate3D_a1b01bd49f7aaa50586f21d41137555c2}} 
+\index{Animate3D@{Animate3D}!set\+Origin\+Interval@{set\+Origin\+Interval}}
+\index{set\+Origin\+Interval@{set\+Origin\+Interval}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Origin\+Interval()}{setOriginInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::set\+Origin\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval }\end{DoxyParamCaption})}
+
+get \& set origin interval \mbox{\Hypertarget{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}\label{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}} 
+\index{Animate3D@{Animate3D}!set\+Quality@{set\+Quality}}
+\index{set\+Quality@{set\+Quality}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Quality()}{setQuality()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::set\+Quality (\begin{DoxyParamCaption}\item[{Animate3\+D\+Quality}]{quality }\end{DoxyParamCaption})}
+
+set animate quality \mbox{\Hypertarget{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}\label{classAnimate3D_a0dd43ee90872c19d04c87904fceb99a6}} 
+\index{Animate3D@{Animate3D}!set\+Quality@{set\+Quality}}
+\index{set\+Quality@{set\+Quality}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Quality()}{setQuality()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::set\+Quality (\begin{DoxyParamCaption}\item[{Animate3\+D\+Quality}]{quality }\end{DoxyParamCaption})}
+
+set animate quality \mbox{\Hypertarget{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}\label{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}} 
+\index{Animate3D@{Animate3D}!set\+Transition\+Time@{set\+Transition\+Time}}
+\index{set\+Transition\+Time@{set\+Transition\+Time}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Transition\+Time()}{setTransitionTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Animate3\+D\+::set\+Transition\+Time (\begin{DoxyParamCaption}\item[{float}]{trans\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+set animate transition time between 3d animations \mbox{\Hypertarget{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}\label{classAnimate3D_aba0ac7ebee334d4348a945c781a12a66}} 
+\index{Animate3D@{Animate3D}!set\+Transition\+Time@{set\+Transition\+Time}}
+\index{set\+Transition\+Time@{set\+Transition\+Time}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{set\+Transition\+Time()}{setTransitionTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Animate3\+D\+::set\+Transition\+Time (\begin{DoxyParamCaption}\item[{float}]{trans\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+set animate transition time between 3d animations \mbox{\Hypertarget{classAnimate3D_a684fa4c9666a80e949c45356e1c1961f}\label{classAnimate3D_a684fa4c9666a80e949c45356e1c1961f}} 
+\index{Animate3D@{Animate3D}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}}
+{\footnotesize\ttfamily virtual void Animate3\+D\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a9fed05e5478085f002769b6931a123d4}\label{classAnimate3D_a9fed05e5478085f002769b6931a123d4}} 
+\index{Animate3D@{Animate3D}!step@{step}}
+\index{step@{step}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily virtual void Animate3\+D\+::step (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & in seconds \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9a520f0c4bd2d5b92e7f355bccd6f5cf}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate3D_a9d27a950ce7942a73a392936951fc263}\label{classAnimate3D_a9d27a950ce7942a73a392936951fc263}} 
+\index{Animate3D@{Animate3D}!stop@{stop}}
+\index{stop@{stop}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classAnimate3D_af37f00e045b7dc5cd1a0c54a4f4f8042}\label{classAnimate3D_af37f00e045b7dc5cd1a0c54a4f4f8042}} 
+\index{Animate3D@{Animate3D}!stop@{stop}}
+\index{stop@{stop}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Animate3\+D\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classAnimate3D_a03bc0bc8212147a742f059fc93361910}\label{classAnimate3D_a03bc0bc8212147a742f059fc93361910}} 
+\index{Animate3D@{Animate3D}!update@{update}}
+\index{update@{update}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classAnimate3D_ae71b012a3b1dd55d12a50148755a5f68}\label{classAnimate3D_ae71b012a3b1dd55d12a50148755a5f68}} 
+\index{Animate3D@{Animate3D}!update@{update}}
+\index{update@{update}!Animate3D@{Animate3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Animate3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Animate3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Animate3\+D.\+cpp\end{DoxyCompactItemize}

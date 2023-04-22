@@ -1,0 +1,105 @@
+\hypertarget{classAServoDriver}{}\section{A\+Servo\+Driver Class Reference}
+\label{classAServoDriver}\index{A\+Servo\+Driver@{A\+Servo\+Driver}}
+
+
+Inheritance diagram for A\+Servo\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAServoDriver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAServoDriver_af202d0a72cdde1d9c0c0eba05e253365}\label{classAServoDriver_af202d0a72cdde1d9c0c0eba05e253365}} 
+enum {\bfseries Servo\+Type} \{ {\bfseries S\+E\+R\+V\+O\+\_\+\+S\+T\+A\+N\+D\+A\+RD}, 
+{\bfseries S\+E\+R\+V\+O\+\_\+\+D\+Y\+N\+A\+M\+I\+X\+EL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAServoDriver_a3dbde2c92b140d02e520cf646bdd47f4}\label{classAServoDriver_a3dbde2c92b140d02e520cf646bdd47f4}} 
+virtual \hyperlink{classAServoDriver_a3dbde2c92b140d02e520cf646bdd47f4}{$\sim$\+A\+Servo\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_a6f11bdbeabd16744ddfd24edcf24db3d}\label{classAServoDriver_a6f11bdbeabd16744ddfd24edcf24db3d}} 
+\hyperlink{classAServoDriver_a6f11bdbeabd16744ddfd24edcf24db3d}{A\+Servo\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_ad21637417b10b9f06418e070428a8b8d}\label{classAServoDriver_ad21637417b10b9f06418e070428a8b8d}} 
+long {\bfseries constrain} (long value, long valeur\+Min, long valeur\+Max)
+\item 
+\mbox{\Hypertarget{classAServoDriver_af90488fb6a2ea3149f4bf68ae01e61b2}\label{classAServoDriver_af90488fb6a2ea3149f4bf68ae01e61b2}} 
+virtual void \hyperlink{classAServoDriver_af90488fb6a2ea3149f4bf68ae01e61b2}{hold} (int servo)=0
+\begin{DoxyCompactList}\small\item\em Tenir la position sur un servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_a9005ceeeecc056474f1ae6e54ce8ba23}\label{classAServoDriver_a9005ceeeecc056474f1ae6e54ce8ba23}} 
+virtual void \hyperlink{classAServoDriver_a9005ceeeecc056474f1ae6e54ce8ba23}{release} (int servo)=0
+\begin{DoxyCompactList}\small\item\em Relache un servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_aea0af472e44c21328bf4ebb7203ca416}\label{classAServoDriver_aea0af472e44c21328bf4ebb7203ca416}} 
+virtual void \hyperlink{classAServoDriver_aea0af472e44c21328bf4ebb7203ca416}{turn} (int servo, int speed)=0
+\begin{DoxyCompactList}\small\item\em Tourne en mode moteur à une vitesse donnée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_ae62c47db79d56930d8b51f91da9907af}\label{classAServoDriver_ae62c47db79d56930d8b51f91da9907af}} 
+virtual void \hyperlink{classAServoDriver_ae62c47db79d56930d8b51f91da9907af}{set\+Pulse\+Pos} (int servo, int pulse, int rate\+\_\+milli=0)=0
+\begin{DoxyCompactList}\small\item\em definit la position en pulsation(duty cycle = periode de temps du rapport cyclique) en microseconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_a615a611ba1daaa290b5bd0f442b1ff19}\label{classAServoDriver_a615a611ba1daaa290b5bd0f442b1ff19}} 
+virtual void \hyperlink{classAServoDriver_a615a611ba1daaa290b5bd0f442b1ff19}{set\+Rate} (int servo, int milli)=0
+\begin{DoxyCompactList}\small\item\em Définit la vitesse de rotation du servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_ac0f03a69563322014fc956c1a24078ae}\label{classAServoDriver_ac0f03a69563322014fc956c1a24078ae}} 
+virtual void {\bfseries set\+Min\+Pulse} (int servo, int value)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a33b073e7c2c9bce6cd7002ddc9786b83}\label{classAServoDriver_a33b073e7c2c9bce6cd7002ddc9786b83}} 
+virtual void {\bfseries set\+Mid\+Pulse} (int servo, int value)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a2c8ca2180aab710c796a8a52587adaa8}\label{classAServoDriver_a2c8ca2180aab710c796a8a52587adaa8}} 
+virtual void {\bfseries set\+Max\+Pulse} (int servo, int value)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a9fc6590e81391fc05ea59b5512c982ad}\label{classAServoDriver_a9fc6590e81391fc05ea59b5512c982ad}} 
+virtual void {\bfseries set\+Polarity} (int servo, bool inversed)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a31b38e09e476fb9895dd012d9d3100a0}\label{classAServoDriver_a31b38e09e476fb9895dd012d9d3100a0}} 
+virtual void {\bfseries set\+Type} (int servo, Servo\+Type)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a75ffc42390ff51d5d8b56985d3c93a47}\label{classAServoDriver_a75ffc42390ff51d5d8b56985d3c93a47}} 
+virtual int {\bfseries ping} (int servo)=0
+\item 
+virtual int \hyperlink{classAServoDriver_a954ac7340407b997387d84d7059ed32b}{get\+Moving} (int servo)=0
+\begin{DoxyCompactList}\small\item\em donne le statut \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAServoDriver_a478684e583054bdff2d31ee2c7aa944d}\label{classAServoDriver_a478684e583054bdff2d31ee2c7aa944d}} 
+virtual int {\bfseries get\+Pulse\+Pos} (int servo)=0
+\item 
+\mbox{\Hypertarget{classAServoDriver_a9a95b8efce958c283fb4ef65649a38cd}\label{classAServoDriver_a9a95b8efce958c283fb4ef65649a38cd}} 
+virtual int {\bfseries get\+Torque} (int servo)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAServoDriver_a82847339a8d4bf66b8bcd372ef0f2f4a}\label{classAServoDriver_a82847339a8d4bf66b8bcd372ef0f2f4a}} 
+static \hyperlink{classAServoDriver}{A\+Servo\+Driver} $\ast$ \hyperlink{classAServoDriver_a82847339a8d4bf66b8bcd372ef0f2f4a}{create} ()
+\begin{DoxyCompactList}\small\item\em single instance creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAServoDriver_a954ac7340407b997387d84d7059ed32b}\label{classAServoDriver_a954ac7340407b997387d84d7059ed32b}} 
+\index{A\+Servo\+Driver@{A\+Servo\+Driver}!get\+Moving@{get\+Moving}}
+\index{get\+Moving@{get\+Moving}!A\+Servo\+Driver@{A\+Servo\+Driver}}
+\subsubsection{\texorpdfstring{get\+Moving()}{getMoving()}}
+{\footnotesize\ttfamily virtual int A\+Servo\+Driver\+::get\+Moving (\begin{DoxyParamCaption}\item[{int}]{servo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+donne le statut 
+
+\begin{DoxyReturn}{Returns}
+1 when in progress, 0 when completed, -\/1 on error 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}, \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}, \hyperlink{classDynamixelDriver_a142a774bb716628483fa010727b84cdb}{Dynamixel\+Driver}, \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}, \hyperlink{classServoDriverMindstorm_acdb0988017ed22bad0bb3dcc848f03f1}{Servo\+Driver\+Mindstorm}, \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}, \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}, and \hyperlink{classServoDriver_a0a8e84f0bbcff39549ddfc239f1a6237}{Servo\+Driver}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action.\+Driver/A\+Servo\+Driver.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/Servo\+Driver.\+cpp\end{DoxyCompactItemize}

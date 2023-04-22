@@ -1,0 +1,74 @@
+\hypertarget{categoryNSError_07FBError_08}{}\section{N\+S\+Error(F\+B\+Error) Category Reference}
+\label{categoryNSError_07FBError_08}\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+
+
+{\ttfamily \#import $<$N\+S\+Error+\+F\+B\+Error.\+h$>$}
+
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+F\+B\+Error\+Category \hyperlink{categoryNSError_07FBError_08_af1fa6b39d9a25fb7fbb8531996021bb8}{fberror\+Category}
+\item 
+B\+O\+OL \hyperlink{categoryNSError_07FBError_08_aa6c42b44d37936d83861e190cee733b5}{fberror\+Should\+Notify\+User}
+\item 
+N\+S\+String $\ast$ \hyperlink{categoryNSError_07FBError_08_a96ac758ea6dba64313a38fe957730a83}{fberror\+User\+Message}
+\item 
+N\+S\+String $\ast$ \hyperlink{categoryNSError_07FBError_08_a4e7460632037ca8b5750ff586085ae30}{fberror\+User\+Title}
+\item 
+B\+O\+OL \hyperlink{categoryNSError_07FBError_08_a86c97474af8d8a44eae81bbf654525d4}{fberror\+Is\+Transient}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adds additional properties to N\+S\+Error to provide more information for \hyperlink{interfaceFacebook}{Facebook} related errors. 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{categoryNSError_07FBError_08_af1fa6b39d9a25fb7fbb8531996021bb8}\label{categoryNSError_07FBError_08_af1fa6b39d9a25fb7fbb8531996021bb8}} 
+\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}!fberror\+Category@{fberror\+Category}}
+\index{fberror\+Category@{fberror\+Category}!N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+\subsubsection{\texorpdfstring{fberror\+Category}{fberrorCategory}}
+{\footnotesize\ttfamily -\/ (F\+B\+Error\+Category) fberror\+Category\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}
+
+Categorizes the error, if it is \hyperlink{interfaceFacebook}{Facebook} related, to simplify application mitigation behavior
+
+In general, in response to an error connecting to \hyperlink{interfaceFacebook}{Facebook}, an application should, retry the operation, request permissions, reconnect the application, or prompt the user to take an action. The error category can be used to understand the class of error received from \hyperlink{interfaceFacebook}{Facebook}. For more infomation on this see \href{https://developers.facebook.com/docs/reference/api/errors/}{\tt https\+://developers.\+facebook.\+com/docs/reference/api/errors/} \mbox{\Hypertarget{categoryNSError_07FBError_08_a86c97474af8d8a44eae81bbf654525d4}\label{categoryNSError_07FBError_08_a86c97474af8d8a44eae81bbf654525d4}} 
+\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}!fberror\+Is\+Transient@{fberror\+Is\+Transient}}
+\index{fberror\+Is\+Transient@{fberror\+Is\+Transient}!N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+\subsubsection{\texorpdfstring{fberror\+Is\+Transient}{fberrorIsTransient}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) fberror\+Is\+Transient\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}
+
+Y\+ES if this error is transient and may succeed if the initial action is retried as-\/is. \hyperlink{classApplication}{Application} may use this information to display a \char`\"{}\+Retry\char`\"{} button, if user should be notified about this error. \mbox{\Hypertarget{categoryNSError_07FBError_08_aa6c42b44d37936d83861e190cee733b5}\label{categoryNSError_07FBError_08_aa6c42b44d37936d83861e190cee733b5}} 
+\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}!fberror\+Should\+Notify\+User@{fberror\+Should\+Notify\+User}}
+\index{fberror\+Should\+Notify\+User@{fberror\+Should\+Notify\+User}!N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+\subsubsection{\texorpdfstring{fberror\+Should\+Notify\+User}{fberrorShouldNotifyUser}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) fberror\+Should\+Notify\+User\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}
+
+If Y\+ES indicates that a user action is required in order to successfully continue with the \hyperlink{interfaceFacebook}{Facebook} operation.
+
+In general if fberror\+Should\+Notify\+User is NO, then the application has a straightforward mitigation, such as retry the operation or request permissions from the user, etc. In some cases it is necessary for the user to take an action before the application continues to attempt a \hyperlink{interfaceFacebook}{Facebook} connection. For more infomation on this see \href{https://developers.facebook.com/docs/reference/api/errors/}{\tt https\+://developers.\+facebook.\+com/docs/reference/api/errors/} \mbox{\Hypertarget{categoryNSError_07FBError_08_a96ac758ea6dba64313a38fe957730a83}\label{categoryNSError_07FBError_08_a96ac758ea6dba64313a38fe957730a83}} 
+\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}!fberror\+User\+Message@{fberror\+User\+Message}}
+\index{fberror\+User\+Message@{fberror\+User\+Message}!N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+\subsubsection{\texorpdfstring{fberror\+User\+Message}{fberrorUserMessage}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) fberror\+User\+Message\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [atomic]}, {\ttfamily [copy]}}
+
+A message suitable for display to the user, describing a user action necessary to enable \hyperlink{interfaceFacebook}{Facebook} functionality. Not all \hyperlink{interfaceFacebook}{Facebook} errors yield a message suitable for user display; however in all cases where fberror\+Should\+Notify\+User is Y\+ES, this property returns a localizable message suitable for display.
+
+\begin{DoxySeeAlso}{See also}
++\mbox{[}\hyperlink{interfaceFBErrorUtility}{F\+B\+Error\+Utility} user\+Message\+For\+Error\+:\mbox{]} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{categoryNSError_07FBError_08_a4e7460632037ca8b5750ff586085ae30}\label{categoryNSError_07FBError_08_a4e7460632037ca8b5750ff586085ae30}} 
+\index{N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}!fberror\+User\+Title@{fberror\+User\+Title}}
+\index{fberror\+User\+Title@{fberror\+User\+Title}!N\+S\+Error(\+F\+B\+Error)@{N\+S\+Error(\+F\+B\+Error)}}
+\subsubsection{\texorpdfstring{fberror\+User\+Title}{fberrorUserTitle}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) fberror\+User\+Title\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [atomic]}, {\ttfamily [copy]}}
+
+A short summary of this error suitable for display to the user. Not all \hyperlink{interfaceFacebook}{Facebook} errors yield a message/title suitable for user display; However in all cases when title is available, user should be notified.
+
+\begin{DoxySeeAlso}{See also}
++\mbox{[}\hyperlink{interfaceFBErrorUtility}{F\+B\+Error\+Utility} user\+Title\+For\+Error\+:\mbox{]} 
+\end{DoxySeeAlso}
+
+
+The documentation for this category was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/facebook/proj.\+ios/\+Facebook\+S\+D\+K.\+framework/\+Headers/N\+S\+Error+\+F\+B\+Error.\+h\end{DoxyCompactItemize}

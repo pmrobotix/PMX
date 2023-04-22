@@ -1,0 +1,66 @@
+\hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{}\section{org.\+cocos2dx.\+plugin.\+util.\+Inventory Class Reference}
+\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}\index{org.\+cocos2dx.\+plugin.\+util.\+Inventory@{org.\+cocos2dx.\+plugin.\+util.\+Inventory}}
+
+
+Collaboration diagram for org.\+cocos2dx.\+plugin.\+util.\+Inventory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1SkuDetails}{Sku\+Details} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ac70d891f17efa646a9d72f1d05b65d6e}{get\+Sku\+Details} (String sku)
+\item 
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a13b3181f29640855a9150998ac10db02}{get\+Purchase} (String sku)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ab3594605b252244f49c65238c930b3f5}{has\+Purchase} (String sku)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a5a47dba6ae3d3d90d558e200be08cb58}{has\+Details} (String sku)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a74df7fe3843c49ac093af1fcca2ce86b}{erase\+Purchase} (String sku)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a block of information about in-\/app items. An \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} is returned by such methods as \hyperlink{}{Iab\+Helper\#query\+Inventory}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a74df7fe3843c49ac093af1fcca2ce86b}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a74df7fe3843c49ac093af1fcca2ce86b}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}!erase\+Purchase@{erase\+Purchase}}
+\index{erase\+Purchase@{erase\+Purchase}!org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}}
+\subsubsection{\texorpdfstring{erase\+Purchase()}{erasePurchase()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Inventory.\+erase\+Purchase (\begin{DoxyParamCaption}\item[{String}]{sku }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Erase a purchase (locally) from the inventory, given its product ID. This just modifies the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} object locally and has no effect on the server! This is useful when you have an existing \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} object which you know to be up to date, and you have just consumed an item successfully, which means that erasing its purchase data from the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} you already have is quicker than querying for a new \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory}. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a13b3181f29640855a9150998ac10db02}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a13b3181f29640855a9150998ac10db02}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}!get\+Purchase@{get\+Purchase}}
+\index{get\+Purchase@{get\+Purchase}!org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}}
+\subsubsection{\texorpdfstring{get\+Purchase()}{getPurchase()}}
+{\footnotesize\ttfamily \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase} org.\+cocos2dx.\+plugin.\+util.\+Inventory.\+get\+Purchase (\begin{DoxyParamCaption}\item[{String}]{sku }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns purchase information for a given product, or null if there is no purchase. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ac70d891f17efa646a9d72f1d05b65d6e}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ac70d891f17efa646a9d72f1d05b65d6e}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}!get\+Sku\+Details@{get\+Sku\+Details}}
+\index{get\+Sku\+Details@{get\+Sku\+Details}!org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}}
+\subsubsection{\texorpdfstring{get\+Sku\+Details()}{getSkuDetails()}}
+{\footnotesize\ttfamily \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1SkuDetails}{Sku\+Details} org.\+cocos2dx.\+plugin.\+util.\+Inventory.\+get\+Sku\+Details (\begin{DoxyParamCaption}\item[{String}]{sku }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the listing details for an in-\/app product. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a5a47dba6ae3d3d90d558e200be08cb58}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_a5a47dba6ae3d3d90d558e200be08cb58}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}!has\+Details@{has\+Details}}
+\index{has\+Details@{has\+Details}!org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}}
+\subsubsection{\texorpdfstring{has\+Details()}{hasDetails()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+util.\+Inventory.\+has\+Details (\begin{DoxyParamCaption}\item[{String}]{sku }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return whether or not details about the given product are available. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ab3594605b252244f49c65238c930b3f5}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory_ab3594605b252244f49c65238c930b3f5}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}!has\+Purchase@{has\+Purchase}}
+\index{has\+Purchase@{has\+Purchase}!org\+::cocos2dx\+::plugin\+::util\+::\+Inventory@{org\+::cocos2dx\+::plugin\+::util\+::\+Inventory}}
+\subsubsection{\texorpdfstring{has\+Purchase()}{hasPurchase()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+util.\+Inventory.\+has\+Purchase (\begin{DoxyParamCaption}\item[{String}]{sku }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether or not there exists a purchase of the given product. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/googleplay/proj.\+android/src/org/cocos2dx/plugin/util/Inventory.\+java\end{DoxyCompactItemize}

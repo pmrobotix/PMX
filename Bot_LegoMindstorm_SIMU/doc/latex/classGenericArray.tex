@@ -1,0 +1,117 @@
+\hypertarget{classGenericArray}{}\section{Generic\+Array$<$ Const, ValueT $>$ Class Template Reference}
+\label{classGenericArray}\index{Generic\+Array$<$ Const, Value\+T $>$@{Generic\+Array$<$ Const, Value\+T $>$}}
+
+
+Helper class for accessing \hyperlink{classValue}{Value} of array type.  
+
+
+
+
+{\ttfamily \#include $<$document.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGenericArray_a84f0b14518bc5cc44b4ff76a7d5ef81b}\label{classGenericArray_a84f0b14518bc5cc44b4ff76a7d5ef81b}} 
+typedef \hyperlink{classGenericArray}{Generic\+Array}$<$ true, ValueT $>$ {\bfseries Const\+Array}
+\item 
+\mbox{\Hypertarget{classGenericArray_a6683902e86c051c2319e873537dca7b1}\label{classGenericArray_a6683902e86c051c2319e873537dca7b1}} 
+typedef \hyperlink{classGenericArray}{Generic\+Array}$<$ false, ValueT $>$ {\bfseries Array}
+\item 
+\mbox{\Hypertarget{classGenericArray_aecea8be3dca6799bc523f4bffd221839}\label{classGenericArray_aecea8be3dca6799bc523f4bffd221839}} 
+typedef ValueT {\bfseries Plain\+Type}
+\item 
+\mbox{\Hypertarget{classGenericArray_a93e53f38a99fc5167eb2a28653de64ed}\label{classGenericArray_a93e53f38a99fc5167eb2a28653de64ed}} 
+typedef internal\+::\+Maybe\+Add\+Const$<$ Const, Plain\+Type $>$\+::Type {\bfseries Value\+Type}
+\item 
+\mbox{\Hypertarget{classGenericArray_afc6ad62c3f00531fa378db266182704a}\label{classGenericArray_afc6ad62c3f00531fa378db266182704a}} 
+typedef Value\+Type $\ast$ {\bfseries Value\+Iterator}
+\item 
+\mbox{\Hypertarget{classGenericArray_a1cd7bb3e75ccfeed3e8b0a6bb5563d68}\label{classGenericArray_a1cd7bb3e75ccfeed3e8b0a6bb5563d68}} 
+typedef const ValueT $\ast$ {\bfseries Const\+Value\+Iterator}
+\item 
+\mbox{\Hypertarget{classGenericArray_af9cdc12de03c742b9c33dfc172756b97}\label{classGenericArray_af9cdc12de03c742b9c33dfc172756b97}} 
+typedef Value\+Type\+::\+Allocator\+Type {\bfseries Allocator\+Type}
+\item 
+\mbox{\Hypertarget{classGenericArray_a8dcb9e2a2e103ce1051c16a7486465b9}\label{classGenericArray_a8dcb9e2a2e103ce1051c16a7486465b9}} 
+typedef Value\+Type\+::\+String\+Ref\+Type {\bfseries String\+Ref\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGenericArray_aa589d897a194b349d5053391a6f1491d}\label{classGenericArray_aa589d897a194b349d5053391a6f1491d}} 
+{\bfseries Generic\+Array} (const \hyperlink{classGenericArray}{Generic\+Array} \&rhs)
+\item 
+\mbox{\Hypertarget{classGenericArray_addbff152092d0998b2c550bd575f4b83}\label{classGenericArray_addbff152092d0998b2c550bd575f4b83}} 
+\hyperlink{classGenericArray}{Generic\+Array} \& {\bfseries operator=} (const \hyperlink{classGenericArray}{Generic\+Array} \&rhs)
+\item 
+\mbox{\Hypertarget{classGenericArray_a62d5b7f423edc2141cd4524c7dfd138b}\label{classGenericArray_a62d5b7f423edc2141cd4524c7dfd138b}} 
+Size\+Type {\bfseries Size} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_ab385434ab7a99de7a0a17e5ee7e09d7f}\label{classGenericArray_ab385434ab7a99de7a0a17e5ee7e09d7f}} 
+Size\+Type {\bfseries Capacity} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_af09e3aaeaeeb5fd825d79cc6663dfcf5}\label{classGenericArray_af09e3aaeaeeb5fd825d79cc6663dfcf5}} 
+bool {\bfseries Empty} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_a5e6c158ff76ab8a8ed568fa486e63c80}\label{classGenericArray_a5e6c158ff76ab8a8ed568fa486e63c80}} 
+void {\bfseries Clear} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_aa185d997e7787e9b4f624d5de592b886}\label{classGenericArray_aa185d997e7787e9b4f624d5de592b886}} 
+Value\+Type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (Size\+Type index) const
+\item 
+\mbox{\Hypertarget{classGenericArray_a3efaa020b29ceed9c1a03465676a32a7}\label{classGenericArray_a3efaa020b29ceed9c1a03465676a32a7}} 
+Value\+Iterator {\bfseries Begin} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_a396f83d328f4879225106ea14b1dca84}\label{classGenericArray_a396f83d328f4879225106ea14b1dca84}} 
+Value\+Iterator {\bfseries End} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_a7c74901e8e2174fe4661f4848995f355}\label{classGenericArray_a7c74901e8e2174fe4661f4848995f355}} 
+\hyperlink{classGenericArray}{Generic\+Array} {\bfseries Reserve} (Size\+Type new\+Capacity, Allocator\+Type \&allocator) const
+\item 
+\mbox{\Hypertarget{classGenericArray_a2ed88f0630c044bad695a127a866c348}\label{classGenericArray_a2ed88f0630c044bad695a127a866c348}} 
+\hyperlink{classGenericArray}{Generic\+Array} {\bfseries Push\+Back} (Value\+Type \&value, Allocator\+Type \&allocator) const
+\item 
+\mbox{\Hypertarget{classGenericArray_ae599de6aee1167648085672b79dd6bcc}\label{classGenericArray_ae599de6aee1167648085672b79dd6bcc}} 
+\hyperlink{classGenericArray}{Generic\+Array} {\bfseries Push\+Back} (String\+Ref\+Type value, Allocator\+Type \&allocator) const
+\item 
+\mbox{\Hypertarget{classGenericArray_a12adff0c1e11aa3be6f4160015a65df0}\label{classGenericArray_a12adff0c1e11aa3be6f4160015a65df0}} 
+{\footnotesize template$<$typename T $>$ }\\{\bfseries R\+A\+P\+I\+D\+J\+S\+O\+N\+\_\+\+D\+I\+S\+A\+B\+L\+E\+I\+F\+\_\+\+R\+E\+T\+U\+RN} ((internal\+::\+Or\+Expr$<$ internal\+::\+Is\+Pointer$<$ T $>$, \hyperlink{structinternal_1_1IsGenericValue}{internal\+::\+Is\+Generic\+Value}$<$ T $>$ $>$),(const \hyperlink{classGenericArray}{Generic\+Array} \&)) Push\+Back(T value
+\item 
+\mbox{\Hypertarget{classGenericArray_afd1c75a82d2fc4366cde18256962edf6}\label{classGenericArray_afd1c75a82d2fc4366cde18256962edf6}} 
+\hyperlink{classGenericArray}{Generic\+Array} {\bfseries Pop\+Back} () const
+\item 
+\mbox{\Hypertarget{classGenericArray_aefa57a363accf2ade867583771f8a54b}\label{classGenericArray_aefa57a363accf2ade867583771f8a54b}} 
+Value\+Iterator {\bfseries Erase} (Const\+Value\+Iterator pos) const
+\item 
+\mbox{\Hypertarget{classGenericArray_ac1be0c701ad3aaf0570a8a1ffc715fd5}\label{classGenericArray_ac1be0c701ad3aaf0570a8a1ffc715fd5}} 
+Value\+Iterator {\bfseries Erase} (Const\+Value\+Iterator first, Const\+Value\+Iterator last) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGenericArray_a25d2ed55daa117c41db6a5b3f87e9ddc}\label{classGenericArray_a25d2ed55daa117c41db6a5b3f87e9ddc}} 
+Allocator\+Type \&allocator {\bfseries const} \{ value\+\_\+.\+Push\+Back(value, allocator)
+\item 
+\mbox{\Hypertarget{classGenericArray_aef8b7baa9ec5cd68d8951fa8bad85217}\label{classGenericArray_aef8b7baa9ec5cd68d8951fa8bad85217}} 
+return $\ast$ {\bfseries this}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGenericArray_a899449e1a645b5e377af059fb61113d8}\label{classGenericArray_a899449e1a645b5e377af059fb61113d8}} 
+{\footnotesize template$<$typename , typename $>$ }\\class {\bfseries Generic\+Value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$bool Const, typename ValueT$>$\newline
+class Generic\+Array$<$ Const, Value\+T $>$}
+
+Helper class for accessing \hyperlink{classValue}{Value} of array type. 
+
+Instance of this helper class is obtained by {\ttfamily Generic\+Value\+::\+Get\+Array()}. In addition to all A\+P\+Is for array type, it provides range-\/based for loop if {\ttfamily R\+A\+P\+I\+D\+J\+S\+O\+N\+\_\+\+H\+A\+S\+\_\+\+C\+X\+X11\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+OR=1}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/json/document.\+h\end{DoxyCompactItemize}

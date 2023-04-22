@@ -1,0 +1,302 @@
+\hypertarget{classAssetsManager}{}\section{Assets\+Manager Class Reference}
+\label{classAssetsManager}\index{Assets\+Manager@{Assets\+Manager}}
+
+
+Inheritance diagram for Assets\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classAssetsManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Assets\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAssetsManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}{Error\+Code} \{ \newline
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+I\+LE}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}{Error\+Code\+::\+N\+E\+T\+W\+O\+RK}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}{Error\+Code\+::\+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}{Error\+Code\+::\+U\+N\+C\+O\+M\+P\+R\+E\+SS}, 
+\newline
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+I\+LE}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}{Error\+Code\+::\+N\+E\+T\+W\+O\+RK}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}{Error\+Code\+::\+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}{Error\+Code\+::\+U\+N\+C\+O\+M\+P\+R\+E\+SS}
+ \}
+\item 
+enum \hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}{Error\+Code} \{ \newline
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+I\+LE}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}{Error\+Code\+::\+N\+E\+T\+W\+O\+RK}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}{Error\+Code\+::\+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}{Error\+Code\+::\+U\+N\+C\+O\+M\+P\+R\+E\+SS}, 
+\newline
+{\bfseries C\+R\+E\+A\+T\+E\+\_\+\+F\+I\+LE}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}{Error\+Code\+::\+N\+E\+T\+W\+O\+RK}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}{Error\+Code\+::\+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}{Error\+Code\+::\+U\+N\+C\+O\+M\+P\+R\+E\+SS}
+ \}
+\item 
+\mbox{\Hypertarget{classAssetsManager_ab4f90202a149a326e85571b14d4f8988}\label{classAssetsManager_ab4f90202a149a326e85571b14d4f8988}} 
+typedef std\+::function$<$ void(int)$>$ {\bfseries Error\+Callback}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a498d71bf7480b55816caa6a8b16becc9}\label{classAssetsManager_a498d71bf7480b55816caa6a8b16becc9}} 
+typedef std\+::function$<$ void(int)$>$ {\bfseries Progress\+Callback}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a4e573c918a678b47a2d5439d4c46c686}\label{classAssetsManager_a4e573c918a678b47a2d5439d4c46c686}} 
+typedef std\+::function$<$ void(void)$>$ {\bfseries Success\+Callback}
+\item 
+\mbox{\Hypertarget{classAssetsManager_ab4f90202a149a326e85571b14d4f8988}\label{classAssetsManager_ab4f90202a149a326e85571b14d4f8988}} 
+typedef std\+::function$<$ void(int)$>$ {\bfseries Error\+Callback}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a498d71bf7480b55816caa6a8b16becc9}\label{classAssetsManager_a498d71bf7480b55816caa6a8b16becc9}} 
+typedef std\+::function$<$ void(int)$>$ {\bfseries Progress\+Callback}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a4e573c918a678b47a2d5439d4c46c686}\label{classAssetsManager_a4e573c918a678b47a2d5439d4c46c686}} 
+typedef std\+::function$<$ void(void)$>$ {\bfseries Success\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a9104b270065e041b92c404bca70f80d9}\label{classAssetsManager_a9104b270065e041b92c404bca70f80d9}} 
+{\bfseries Assets\+Manager} (const char $\ast$package\+Url=N\+U\+LL, const char $\ast$version\+File\+Url=N\+U\+LL, const char $\ast$storage\+Path=N\+U\+LL)
+\item 
+virtual \hyperlink{classAssetsManager_aa3edb24b073adecfb1281d9caa5896d2}{$\sim$\+Assets\+Manager} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a36e4937618db2017943decb61c692c43}\label{classAssetsManager_a36e4937618db2017943decb61c692c43}} 
+virtual bool {\bfseries check\+Update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_ae1205174d0af054719de654282c047e8}\label{classAssetsManager_ae1205174d0af054719de654282c047e8}} 
+virtual void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a7682a348774aab39a87ec993aef9689d}\label{classAssetsManager_a7682a348774aab39a87ec993aef9689d}} 
+const char $\ast$ {\bfseries get\+Package\+Url} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_aa5234577a726a8ebf5bd56b4369ba647}\label{classAssetsManager_aa5234577a726a8ebf5bd56b4369ba647}} 
+void {\bfseries set\+Package\+Url} (const char $\ast$package\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManager_a7254ac579f635e5eccb77c0ee684ac6e}\label{classAssetsManager_a7254ac579f635e5eccb77c0ee684ac6e}} 
+const char $\ast$ {\bfseries get\+Version\+File\+Url} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_a3048ff13ed5b96c9f15773e765d2037d}\label{classAssetsManager_a3048ff13ed5b96c9f15773e765d2037d}} 
+void {\bfseries set\+Version\+File\+Url} (const char $\ast$version\+File\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManager_aecb93254b1eb900d6f72817b6923ba31}\label{classAssetsManager_aecb93254b1eb900d6f72817b6923ba31}} 
+std\+::string {\bfseries get\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a73f93d30f3dd699558e25b07d42cf648}\label{classAssetsManager_a73f93d30f3dd699558e25b07d42cf648}} 
+void {\bfseries delete\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_ac95ca34f1e5de01687fc06ccb17b2948}\label{classAssetsManager_ac95ca34f1e5de01687fc06ccb17b2948}} 
+const char $\ast$ {\bfseries get\+Storage\+Path} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_ab4f07674f77335d2011b6d20cf2f10cf}\label{classAssetsManager_ab4f07674f77335d2011b6d20cf2f10cf}} 
+void {\bfseries set\+Storage\+Path} (const char $\ast$storage\+Path)
+\item 
+\mbox{\Hypertarget{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}\label{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}} 
+void \hyperlink{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}{set\+Delegate} (\hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol} $\ast$delegate)
+\begin{DoxyCompactList}\small\item\em Sets delegate, the delegate will receive messages  NA  NA. \end{DoxyCompactList}\item 
+\hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol} $\ast$ \hyperlink{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}{get\+Delegate} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_a577f7023974b3ff2ba8331311354688b}\label{classAssetsManager_a577f7023974b3ff2ba8331311354688b}} 
+void \hyperlink{classAssetsManager_a577f7023974b3ff2ba8331311354688b}{set\+Connection\+Timeout} (unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sets connection time out in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}\label{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}} 
+unsigned int \hyperlink{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}{get\+Connection\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Gets connection time out in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManager_a9104b270065e041b92c404bca70f80d9}\label{classAssetsManager_a9104b270065e041b92c404bca70f80d9}} 
+{\bfseries Assets\+Manager} (const char $\ast$package\+Url=N\+U\+LL, const char $\ast$version\+File\+Url=N\+U\+LL, const char $\ast$storage\+Path=N\+U\+LL)
+\item 
+virtual \hyperlink{classAssetsManager_a059cca91ff2ea8871011da0225c614bb}{$\sim$\+Assets\+Manager} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_aff6c4cee82ffb699c565b4c7b1c9c280}\label{classAssetsManager_aff6c4cee82ffb699c565b4c7b1c9c280}} 
+virtual bool {\bfseries check\+Update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a9370c48b5c196944dd19c27dd8058af4}\label{classAssetsManager_a9370c48b5c196944dd19c27dd8058af4}} 
+virtual void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_adfcf62d7d0d7d37d07d2a9869e186b51}\label{classAssetsManager_adfcf62d7d0d7d37d07d2a9869e186b51}} 
+const char $\ast$ {\bfseries get\+Package\+Url} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_aa5234577a726a8ebf5bd56b4369ba647}\label{classAssetsManager_aa5234577a726a8ebf5bd56b4369ba647}} 
+void {\bfseries set\+Package\+Url} (const char $\ast$package\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManager_ace4e93d2a454abd3a4bf1fe35b78086f}\label{classAssetsManager_ace4e93d2a454abd3a4bf1fe35b78086f}} 
+const char $\ast$ {\bfseries get\+Version\+File\+Url} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_a3048ff13ed5b96c9f15773e765d2037d}\label{classAssetsManager_a3048ff13ed5b96c9f15773e765d2037d}} 
+void {\bfseries set\+Version\+File\+Url} (const char $\ast$version\+File\+Url)
+\item 
+\mbox{\Hypertarget{classAssetsManager_ad97e9ecf9072c7a6db0e1f02e326fb11}\label{classAssetsManager_ad97e9ecf9072c7a6db0e1f02e326fb11}} 
+std\+::string {\bfseries get\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a73f93d30f3dd699558e25b07d42cf648}\label{classAssetsManager_a73f93d30f3dd699558e25b07d42cf648}} 
+void {\bfseries delete\+Version} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a892e3c0f359039ea119f21ddc5a1a2e1}\label{classAssetsManager_a892e3c0f359039ea119f21ddc5a1a2e1}} 
+const char $\ast$ {\bfseries get\+Storage\+Path} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_ab4f07674f77335d2011b6d20cf2f10cf}\label{classAssetsManager_ab4f07674f77335d2011b6d20cf2f10cf}} 
+void {\bfseries set\+Storage\+Path} (const char $\ast$storage\+Path)
+\item 
+\mbox{\Hypertarget{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}\label{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}} 
+void \hyperlink{classAssetsManager_a3a146a72ce6e481f8833cce8e007b881}{set\+Delegate} (\hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol} $\ast$delegate)
+\begin{DoxyCompactList}\small\item\em Sets delegate, the delegate will receive messages  NA  NA. \end{DoxyCompactList}\item 
+\hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol} $\ast$ \hyperlink{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}{get\+Delegate} () const
+\item 
+\mbox{\Hypertarget{classAssetsManager_a577f7023974b3ff2ba8331311354688b}\label{classAssetsManager_a577f7023974b3ff2ba8331311354688b}} 
+void \hyperlink{classAssetsManager_a577f7023974b3ff2ba8331311354688b}{set\+Connection\+Timeout} (unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sets connection time out in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}\label{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}} 
+unsigned int \hyperlink{classAssetsManager_a7507fe3047a85bd861c02b95f54c1dd2}{get\+Connection\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Gets connection time out in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a49e8c569c25784537dac60ebacc7969b}\label{classAssetsManager_a49e8c569c25784537dac60ebacc7969b}} 
+static \hyperlink{classAssetsManager}{Assets\+Manager} $\ast$ {\bfseries create} (const char $\ast$package\+Url, const char $\ast$version\+File\+Url, const char $\ast$storage\+Path, Error\+Callback error\+Callback, Progress\+Callback progress\+Callback, Success\+Callback success\+Callback)
+\item 
+\mbox{\Hypertarget{classAssetsManager_a48c90dcbed3c23dee97eeaeaabdedc72}\label{classAssetsManager_a48c90dcbed3c23dee97eeaeaabdedc72}} 
+static \hyperlink{classAssetsManager}{Assets\+Manager} $\ast$ {\bfseries create} (const char $\ast$package\+Url, const char $\ast$version\+File\+Url, const char $\ast$storage\+Path, Error\+Callback error\+Callback, Progress\+Callback progress\+Callback, Success\+Callback success\+Callback)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAssetsManager_a354738a2e589f87ba7eb5bbdddf6fa0c}\label{classAssetsManager_a354738a2e589f87ba7eb5bbdddf6fa0c}} 
+void {\bfseries check\+Storage\+Path} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a33ac76b5776ba6cced632b82f799ae8b}\label{classAssetsManager_a33ac76b5776ba6cced632b82f799ae8b}} 
+bool {\bfseries uncompress} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_ad0abdfde74514a74c0492faeeb151e5d}\label{classAssetsManager_ad0abdfde74514a74c0492faeeb151e5d}} 
+void {\bfseries set\+Search\+Path} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a2cb09e2725e1905d276dbf3ec4a0d551}\label{classAssetsManager_a2cb09e2725e1905d276dbf3ec4a0d551}} 
+void {\bfseries download\+And\+Uncompress} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a354738a2e589f87ba7eb5bbdddf6fa0c}\label{classAssetsManager_a354738a2e589f87ba7eb5bbdddf6fa0c}} 
+void {\bfseries check\+Storage\+Path} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a33ac76b5776ba6cced632b82f799ae8b}\label{classAssetsManager_a33ac76b5776ba6cced632b82f799ae8b}} 
+bool {\bfseries uncompress} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_ad0abdfde74514a74c0492faeeb151e5d}\label{classAssetsManager_ad0abdfde74514a74c0492faeeb151e5d}} 
+void {\bfseries set\+Search\+Path} ()
+\item 
+\mbox{\Hypertarget{classAssetsManager_a2cb09e2725e1905d276dbf3ec4a0d551}\label{classAssetsManager_a2cb09e2725e1905d276dbf3ec4a0d551}} 
+void {\bfseries download\+And\+Uncompress} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}} 
+\index{Assets\+Manager@{Assets\+Manager}!Error\+Code@{Error\+Code}}
+\index{Error\+Code@{Error\+Code}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{Error\+Code}{ErrorCode}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}{Assets\+Manager\+::\+Error\+Code}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}} 
+N\+E\+T\+W\+O\+RK&Error caused by network -- network unavailable -- timeout -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}} 
+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON&There is not a new version \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}} 
+U\+N\+C\+O\+M\+P\+R\+E\+SS&Error caused in uncompressing stage -- can not open zip file -- can not read file global information -- can not read file information -- can not create a directory -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}} 
+N\+E\+T\+W\+O\+RK&Error caused by network -- network unavailable -- timeout -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}} 
+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON&There is not a new version \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}} 
+U\+N\+C\+O\+M\+P\+R\+E\+SS&Error caused in uncompressing stage -- can not open zip file -- can not read file global information -- can not read file information -- can not create a directory -- ... \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}} 
+\index{Assets\+Manager@{Assets\+Manager}!Error\+Code@{Error\+Code}}
+\index{Error\+Code@{Error\+Code}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{Error\+Code}{ErrorCode}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classAssetsManager_a5e348d12e70204e183b449f8dec2577d}{Assets\+Manager\+::\+Error\+Code}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}} 
+N\+E\+T\+W\+O\+RK&Error caused by network -- network unavailable -- timeout -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}} 
+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON&There is not a new version \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}} 
+U\+N\+C\+O\+M\+P\+R\+E\+SS&Error caused in uncompressing stage -- can not open zip file -- can not read file global information -- can not read file information -- can not create a directory -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+E\+T\+W\+O\+RK@{N\+E\+T\+W\+O\+RK}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da25835188a2355e9530d3a10fcbe4c65b}} 
+N\+E\+T\+W\+O\+RK&Error caused by network -- network unavailable -- timeout -- ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON@{N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da07ea76f9bfecb8465b3d2a1126761310}} 
+N\+O\+\_\+\+N\+E\+W\+\_\+\+V\+E\+R\+S\+I\+ON&There is not a new version \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}!Assets\+Manager@{Assets\+Manager}}\index{Assets\+Manager@{Assets\+Manager}!U\+N\+C\+O\+M\+P\+R\+E\+SS@{U\+N\+C\+O\+M\+P\+R\+E\+SS}}}\mbox{\Hypertarget{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}\label{classAssetsManager_a5e348d12e70204e183b449f8dec2577da125ee7a84dca120371a1d7757d9d4a44}} 
+U\+N\+C\+O\+M\+P\+R\+E\+SS&Error caused in uncompressing stage -- can not open zip file -- can not read file global information -- can not read file information -- can not create a directory -- ... \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAssetsManager_aa3edb24b073adecfb1281d9caa5896d2}\label{classAssetsManager_aa3edb24b073adecfb1281d9caa5896d2}} 
+\index{Assets\+Manager@{Assets\+Manager}!````~Assets\+Manager@{$\sim$\+Assets\+Manager}}
+\index{````~Assets\+Manager@{$\sim$\+Assets\+Manager}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Assets\+Manager()}{~AssetsManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Assets\+Manager\+::$\sim$\+Assets\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classAssetsManager_a059cca91ff2ea8871011da0225c614bb}\label{classAssetsManager_a059cca91ff2ea8871011da0225c614bb}} 
+\index{Assets\+Manager@{Assets\+Manager}!````~Assets\+Manager@{$\sim$\+Assets\+Manager}}
+\index{````~Assets\+Manager@{$\sim$\+Assets\+Manager}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Assets\+Manager()}{~AssetsManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Assets\+Manager\+::$\sim$\+Assets\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}\label{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}} 
+\index{Assets\+Manager@{Assets\+Manager}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol}$\ast$ Assets\+Manager\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}\label{classAssetsManager_a297c23ec228e1885904f9ab9864a4d65}} 
+\index{Assets\+Manager@{Assets\+Manager}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Assets\+Manager@{Assets\+Manager}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classAssetsManagerDelegateProtocol}{Assets\+Manager\+Delegate\+Protocol}$\ast$ Assets\+Manager\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/assets-\/manager/Assets\+Manager.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/assets-\/manager/Assets\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,383 @@
+\hypertarget{classAnimate}{}\section{Animate Class Reference}
+\label{classAnimate}\index{Animate@{Animate}}
+
+
+Animates a sprite given the name of an \hyperlink{classAnimation}{Animation}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Animate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classAnimate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Animate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAnimate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnimate_a041aefb7a2f9398a962bb9b37888af05}{set\+Animation} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\item 
+\hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}{get\+Animation} ()
+\item 
+\mbox{\Hypertarget{classAnimate_afb97e19748e233716aa557cac78872b6}\label{classAnimate_afb97e19748e233716aa557cac78872b6}} 
+const \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries get\+Animation} () const
+\item 
+int \hyperlink{classAnimate_a0817746a8202c5e57b45762ada7e7a32}{get\+Current\+Frame\+Index} ()
+\item 
+virtual \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_a1c234e715c559e4482d7f955cf3f3e2d}{clone} () const override
+\item 
+virtual \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_a30f0bdbce81651636bae3ad34b5b64b8}{reverse} () const override
+\item 
+virtual void \hyperlink{classAnimate_ad9c0defb552a4bd8bfbc4d9dad96c59b}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classAnimate_a546b7b7817303ad58f57c6c97d64c4ed}{stop} (void) override
+\item 
+virtual void \hyperlink{classAnimate_ae86fbd3249e9272b1d35d7256d6bcfd6}{update} (float t) override
+\item 
+bool \hyperlink{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}{init\+With\+Animation} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\item 
+void \hyperlink{classAnimate_a041aefb7a2f9398a962bb9b37888af05}{set\+Animation} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\item 
+\hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}{get\+Animation} ()
+\item 
+\mbox{\Hypertarget{classAnimate_afb97e19748e233716aa557cac78872b6}\label{classAnimate_afb97e19748e233716aa557cac78872b6}} 
+const \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries get\+Animation} () const
+\item 
+int \hyperlink{classAnimate_a0817746a8202c5e57b45762ada7e7a32}{get\+Current\+Frame\+Index} ()
+\item 
+virtual \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_a71fedb833a7443dfd48237a6c3b339ab}{clone} () const override
+\item 
+virtual \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_a199fd586e88f3560c2b1cb1c3f18b04f}{reverse} () const override
+\item 
+virtual void \hyperlink{classAnimate_a44376cdc03073bcba141e3ec309622f7}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classAnimate_acca8e3d000ced3182958b87e531ac423}{stop} () override
+\item 
+virtual void \hyperlink{classAnimate_a643f933a12b158eb94d1aaa2d8eff13f}{update} (float t) override
+\item 
+bool \hyperlink{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}{init\+With\+Animation} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_aaa1198ded0f8c25bd265ed8b0b9d8a1c}{create} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\item 
+static \hyperlink{classAnimate}{Animate} $\ast$ \hyperlink{classAnimate_a54e2e0807ac2a9d6542f478c60703de5}{create} (\hyperlink{classAnimation}{Animation} $\ast$animation)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate_a204f7e377f75fbc1c9cc8db2d0a2da91}\label{classAnimate_a204f7e377f75fbc1c9cc8db2d0a2da91}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAnimate}{Animate}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimate_a92881310fa61c0d0b4d9f573d19ac758}\label{classAnimate_a92881310fa61c0d0b4d9f573d19ac758}} 
+std\+::vector$<$ float $>$ $\ast$ {\bfseries \+\_\+split\+Times}
+\item 
+\mbox{\Hypertarget{classAnimate_a8fec3566e81c301e1db41b6b253be482}\label{classAnimate_a8fec3566e81c301e1db41b6b253be482}} 
+int {\bfseries \+\_\+next\+Frame}
+\item 
+\mbox{\Hypertarget{classAnimate_a6a71aaddf71b16672e1548571f74e607}\label{classAnimate_a6a71aaddf71b16672e1548571f74e607}} 
+\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$ {\bfseries \+\_\+orig\+Frame}
+\item 
+\mbox{\Hypertarget{classAnimate_a8f41b398b9fe818c78527d067722a354}\label{classAnimate_a8f41b398b9fe818c78527d067722a354}} 
+int {\bfseries \+\_\+curr\+Frame\+Index}
+\item 
+\mbox{\Hypertarget{classAnimate_a62c72ab7317d264f3d6ac867c06727b9}\label{classAnimate_a62c72ab7317d264f3d6ac867c06727b9}} 
+unsigned int {\bfseries \+\_\+executed\+Loops}
+\item 
+\mbox{\Hypertarget{classAnimate_ad032ead08266ec22681d6fd851f59478}\label{classAnimate_ad032ead08266ec22681d6fd851f59478}} 
+\hyperlink{classAnimation}{Animation} $\ast$ {\bfseries \+\_\+animation}
+\item 
+\mbox{\Hypertarget{classAnimate_aa8573c82d7791f5aac3ced61db60a1c7}\label{classAnimate_aa8573c82d7791f5aac3ced61db60a1c7}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+frame\+Displayed\+Event}
+\item 
+\mbox{\Hypertarget{classAnimate_a3498466a50792c658d78a2de847eb548}\label{classAnimate_a3498466a50792c658d78a2de847eb548}} 
+\hyperlink{structAnimationFrame_1_1DisplayedEventInfo}{Animation\+Frame\+::\+Displayed\+Event\+Info} {\bfseries \+\_\+frame\+Displayed\+Event\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Animates a sprite given the name of an \hyperlink{classAnimation}{Animation}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimate_a1c234e715c559e4482d7f955cf3f3e2d}\label{classAnimate_a1c234e715c559e4482d7f955cf3f3e2d}} 
+\index{Animate@{Animate}!clone@{clone}}
+\index{clone@{clone}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate}{Animate} $\ast$ Animate\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_a71fedb833a7443dfd48237a6c3b339ab}\label{classAnimate_a71fedb833a7443dfd48237a6c3b339ab}} 
+\index{Animate@{Animate}!clone@{clone}}
+\index{clone@{clone}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAnimate}{Animate}$\ast$ Animate\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_aaa1198ded0f8c25bd265ed8b0b9d8a1c}\label{classAnimate_aaa1198ded0f8c25bd265ed8b0b9d8a1c}} 
+\index{Animate@{Animate}!create@{create}}
+\index{create@{create}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate}{Animate} $\ast$ Animate\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action with an \hyperlink{classAnimation}{Animation} and will restore the original frame when the animation is over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animation} & A certain animation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classAnimate}{Animate} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_a54e2e0807ac2a9d6542f478c60703de5}\label{classAnimate_a54e2e0807ac2a9d6542f478c60703de5}} 
+\index{Animate@{Animate}!create@{create}}
+\index{create@{create}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAnimate}{Animate}$\ast$ Animate\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action with an \hyperlink{classAnimation}{Animation} and will restore the original frame when the animation is over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animation} & A certain animation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classAnimate}{Animate} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}\label{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}} 
+\index{Animate@{Animate}!get\+Animation@{get\+Animation}}
+\index{get\+Animation@{get\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{get\+Animation()}{getAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimation}{Animation}$\ast$ Animate\+::get\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the \hyperlink{classAnimation}{Animation} object that is being animated
+
+\begin{DoxyReturn}{Returns}
+Gets the animation object that is being animated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}\label{classAnimate_aa5a0ca4d90430f3701129e068a4282f6}} 
+\index{Animate@{Animate}!get\+Animation@{get\+Animation}}
+\index{get\+Animation@{get\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{get\+Animation()}{getAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimation}{Animation}$\ast$ Animate\+::get\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the \hyperlink{classAnimation}{Animation} object that is being animated
+
+\begin{DoxyReturn}{Returns}
+Gets the animation object that is being animated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_a0817746a8202c5e57b45762ada7e7a32}\label{classAnimate_a0817746a8202c5e57b45762ada7e7a32}} 
+\index{Animate@{Animate}!get\+Current\+Frame\+Index@{get\+Current\+Frame\+Index}}
+\index{get\+Current\+Frame\+Index@{get\+Current\+Frame\+Index}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{get\+Current\+Frame\+Index()}{getCurrentFrameIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Animate\+::get\+Current\+Frame\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the index of sprite frame currently displayed. \begin{DoxyReturn}{Returns}
+int the index of sprite frame currently displayed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_a0817746a8202c5e57b45762ada7e7a32}\label{classAnimate_a0817746a8202c5e57b45762ada7e7a32}} 
+\index{Animate@{Animate}!get\+Current\+Frame\+Index@{get\+Current\+Frame\+Index}}
+\index{get\+Current\+Frame\+Index@{get\+Current\+Frame\+Index}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{get\+Current\+Frame\+Index()}{getCurrentFrameIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Animate\+::get\+Current\+Frame\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the index of sprite frame currently displayed. \begin{DoxyReturn}{Returns}
+int the index of sprite frame currently displayed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}\label{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}} 
+\index{Animate@{Animate}!init\+With\+Animation@{init\+With\+Animation}}
+\index{init\+With\+Animation@{init\+With\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{init\+With\+Animation()}{initWithAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animate\+::init\+With\+Animation (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+initializes the action with an \hyperlink{classAnimation}{Animation} and will restore the original frame when the animation is over \mbox{\Hypertarget{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}\label{classAnimate_a12360cf2067d0dfa3470ff2a3c248c34}} 
+\index{Animate@{Animate}!init\+With\+Animation@{init\+With\+Animation}}
+\index{init\+With\+Animation@{init\+With\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{init\+With\+Animation()}{initWithAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animate\+::init\+With\+Animation (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+initializes the action with an \hyperlink{classAnimation}{Animation} and will restore the original frame when the animation is over \mbox{\Hypertarget{classAnimate_a30f0bdbce81651636bae3ad34b5b64b8}\label{classAnimate_a30f0bdbce81651636bae3ad34b5b64b8}} 
+\index{Animate@{Animate}!reverse@{reverse}}
+\index{reverse@{reverse}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimate}{Animate} $\ast$ Animate\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_a199fd586e88f3560c2b1cb1c3f18b04f}\label{classAnimate_a199fd586e88f3560c2b1cb1c3f18b04f}} 
+\index{Animate@{Animate}!reverse@{reverse}}
+\index{reverse@{reverse}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAnimate}{Animate}$\ast$ Animate\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_a041aefb7a2f9398a962bb9b37888af05}\label{classAnimate_a041aefb7a2f9398a962bb9b37888af05}} 
+\index{Animate@{Animate}!set\+Animation@{set\+Animation}}
+\index{set\+Animation@{set\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{set\+Animation()}{setAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate\+::set\+Animation (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classAnimation}{Animation} object to be animated
+
+
+\begin{DoxyParams}{Parameters}
+{\em animation} & certain animation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimate_a041aefb7a2f9398a962bb9b37888af05}\label{classAnimate_a041aefb7a2f9398a962bb9b37888af05}} 
+\index{Animate@{Animate}!set\+Animation@{set\+Animation}}
+\index{set\+Animation@{set\+Animation}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{set\+Animation()}{setAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animate\+::set\+Animation (\begin{DoxyParamCaption}\item[{\hyperlink{classAnimation}{Animation} $\ast$}]{animation }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classAnimation}{Animation} object to be animated
+
+
+\begin{DoxyParams}{Parameters}
+{\em animation} & certain animation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimate_ad9c0defb552a4bd8bfbc4d9dad96c59b}\label{classAnimate_ad9c0defb552a4bd8bfbc4d9dad96c59b}} 
+\index{Animate@{Animate}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_a44376cdc03073bcba141e3ec309622f7}\label{classAnimate_a44376cdc03073bcba141e3ec309622f7}} 
+\index{Animate@{Animate}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Animate\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classAnimate_a546b7b7817303ad58f57c6c97d64c4ed}\label{classAnimate_a546b7b7817303ad58f57c6c97d64c4ed}} 
+\index{Animate@{Animate}!stop@{stop}}
+\index{stop@{stop}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classAnimate_acca8e3d000ced3182958b87e531ac423}\label{classAnimate_acca8e3d000ced3182958b87e531ac423}} 
+\index{Animate@{Animate}!stop@{stop}}
+\index{stop@{stop}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Animate\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classAnimate_ae86fbd3249e9272b1d35d7256d6bcfd6}\label{classAnimate_ae86fbd3249e9272b1d35d7256d6bcfd6}} 
+\index{Animate@{Animate}!update@{update}}
+\index{update@{update}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animate\+::update (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classAnimate_a643f933a12b158eb94d1aaa2d8eff13f}\label{classAnimate_a643f933a12b158eb94d1aaa2d8eff13f}} 
+\index{Animate@{Animate}!update@{update}}
+\index{update@{update}!Animate@{Animate}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Animate\+::update (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

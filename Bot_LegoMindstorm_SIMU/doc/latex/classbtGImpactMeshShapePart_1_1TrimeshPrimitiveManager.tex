@@ -1,0 +1,158 @@
+\hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager}{}\section{bt\+G\+Impact\+Mesh\+Shape\+Part\+:\+:Trimesh\+Primitive\+Manager Class Reference}
+\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager}\index{bt\+G\+Impact\+Mesh\+Shape\+Part\+::\+Trimesh\+Primitive\+Manager@{bt\+G\+Impact\+Mesh\+Shape\+Part\+::\+Trimesh\+Primitive\+Manager}}
+
+
+Trimesh primitive manager.  
+
+
+
+
+{\ttfamily \#include $<$bt\+G\+Impact\+Shape.\+h$>$}
+
+
+
+Inheritance diagram for bt\+G\+Impact\+Mesh\+Shape\+Part\+:\+:Trimesh\+Primitive\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+G\+Impact\+Mesh\+Shape\+Part\+:\+:Trimesh\+Primitive\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac2132d17cd0eaab2deee81783492ea34}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac2132d17cd0eaab2deee81783492ea34}} 
+{\bfseries Trimesh\+Primitive\+Manager} (const \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager}{Trimesh\+Primitive\+Manager} \&manager)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2e8cb2bb12d4a52d99f10afbb2a5c06f}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2e8cb2bb12d4a52d99f10afbb2a5c06f}} 
+{\bfseries Trimesh\+Primitive\+Manager} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface, int part)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a48a013e72b76f832638a54326a7cc709}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a48a013e72b76f832638a54326a7cc709}} 
+void {\bfseries lock} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aaa44d0463dfc7e66e203ede074db17ed}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aaa44d0463dfc7e66e203ede074db17ed}} 
+void {\bfseries unlock} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}} 
+virtual bool \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}{is\+\_\+trimesh} () const
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a3dd197e6b8d45058edbec0a974fa2dfc}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a3dd197e6b8d45058edbec0a974fa2dfc}} 
+virtual int {\bfseries get\+\_\+primitive\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a25388a6fc8303ae40c4442287c540b5e}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a25388a6fc8303ae40c4442287c540b5e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE int {\bfseries get\+\_\+vertex\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1ffd0ccbb9c1dc0254feb7f4c499351d}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1ffd0ccbb9c1dc0254feb7f4c499351d}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+indices} (int face\+\_\+index, unsigned int \&i0, unsigned int \&i1, unsigned int \&i2) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89dde972e76dabc5dcf5832d878f7c5e}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89dde972e76dabc5dcf5832d878f7c5e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+vertex} (unsigned int vertex\+\_\+index, bt\+Vector3 \&vertex) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_af577425b36503f969bea9582fc439f07}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_af577425b36503f969bea9582fc439f07}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (int prim\+\_\+index, bt\+A\+A\+BB \&primbox) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}} 
+virtual void \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}{get\+\_\+primitive\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtPrimitiveTriangle}{bt\+Primitive\+Triangle} \&triangle) const
+\begin{DoxyCompactList}\small\item\em retrieves only the points of the triangle, and the collision margin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1eced6a7be515298bb6ccb320d10672f}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1eced6a7be515298bb6ccb320d10672f}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+bullet\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac2132d17cd0eaab2deee81783492ea34}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac2132d17cd0eaab2deee81783492ea34}} 
+{\bfseries Trimesh\+Primitive\+Manager} (const \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager}{Trimesh\+Primitive\+Manager} \&manager)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2e8cb2bb12d4a52d99f10afbb2a5c06f}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2e8cb2bb12d4a52d99f10afbb2a5c06f}} 
+{\bfseries Trimesh\+Primitive\+Manager} (bt\+Striding\+Mesh\+Interface $\ast$mesh\+Interface, int part)
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a48a013e72b76f832638a54326a7cc709}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a48a013e72b76f832638a54326a7cc709}} 
+void {\bfseries lock} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aaa44d0463dfc7e66e203ede074db17ed}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aaa44d0463dfc7e66e203ede074db17ed}} 
+void {\bfseries unlock} ()
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}} 
+virtual bool \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ab6653df67e4563e23a15528916826375}{is\+\_\+trimesh} () const
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a3dd197e6b8d45058edbec0a974fa2dfc}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a3dd197e6b8d45058edbec0a974fa2dfc}} 
+virtual int {\bfseries get\+\_\+primitive\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a25388a6fc8303ae40c4442287c540b5e}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a25388a6fc8303ae40c4442287c540b5e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE int {\bfseries get\+\_\+vertex\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1ffd0ccbb9c1dc0254feb7f4c499351d}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1ffd0ccbb9c1dc0254feb7f4c499351d}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+indices} (int face\+\_\+index, unsigned int \&i0, unsigned int \&i1, unsigned int \&i2) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89dde972e76dabc5dcf5832d878f7c5e}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89dde972e76dabc5dcf5832d878f7c5e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+vertex} (unsigned int vertex\+\_\+index, bt\+Vector3 \&vertex) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_af577425b36503f969bea9582fc439f07}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_af577425b36503f969bea9582fc439f07}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (int prim\+\_\+index, bt\+A\+A\+BB \&primbox) const
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}} 
+virtual void \hyperlink{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a7932ca8b6bfb549b150859d116bab1ee}{get\+\_\+primitive\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtPrimitiveTriangle}{bt\+Primitive\+Triangle} \&triangle) const
+\begin{DoxyCompactList}\small\item\em retrieves only the points of the triangle, and the collision margin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1eced6a7be515298bb6ccb320d10672f}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1eced6a7be515298bb6ccb320d10672f}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+bullet\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac5ffde9a1505e865f2465c4c56267d67}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ac5ffde9a1505e865f2465c4c56267d67}} 
+bt\+Scalar {\bfseries m\+\_\+margin}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2473ee5b12ed86f987238a606b0ec8f0}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a2473ee5b12ed86f987238a606b0ec8f0}} 
+bt\+Striding\+Mesh\+Interface $\ast$ {\bfseries m\+\_\+mesh\+Interface}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ae153a4cac52bb18615db6a1a69379d04}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ae153a4cac52bb18615db6a1a69379d04}} 
+bt\+Vector3 {\bfseries m\+\_\+scale}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ad76087b394a6d50b32c25d67b13db8dd}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ad76087b394a6d50b32c25d67b13db8dd}} 
+int {\bfseries m\+\_\+part}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a51a615e74daa0529d41f67892c1c57c9}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a51a615e74daa0529d41f67892c1c57c9}} 
+int {\bfseries m\+\_\+lock\+\_\+count}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ad5465b8eba20d037ff55b92956586566}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_ad5465b8eba20d037ff55b92956586566}} 
+const unsigned char $\ast$ {\bfseries vertexbase}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1365c8589297063d34459570d964b87c}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a1365c8589297063d34459570d964b87c}} 
+int {\bfseries numverts}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a732eca4ca085b232ba4164fb3361cf23}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a732eca4ca085b232ba4164fb3361cf23}} 
+P\+H\+Y\+\_\+\+Scalar\+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aac08e1d058c883c2d55743b49fcfc22a}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_aac08e1d058c883c2d55743b49fcfc22a}} 
+int {\bfseries stride}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a31333827ca41c174e0433c50e61f4a5a}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a31333827ca41c174e0433c50e61f4a5a}} 
+const unsigned char $\ast$ {\bfseries indexbase}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89579bcad54eab7c6f0a2a2c333bbb86}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a89579bcad54eab7c6f0a2a2c333bbb86}} 
+int {\bfseries indexstride}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a11cbf1f22ec8f970e5c6eb8da6467c70}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a11cbf1f22ec8f970e5c6eb8da6467c70}} 
+int {\bfseries numfaces}
+\item 
+\mbox{\Hypertarget{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a8ac8d4c60009c6bb9f81c93b6f9d43f0}\label{classbtGImpactMeshShapePart_1_1TrimeshPrimitiveManager_a8ac8d4c60009c6bb9f81c93b6f9d43f0}} 
+P\+H\+Y\+\_\+\+Scalar\+Type {\bfseries indicestype}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trimesh primitive manager. 
+
+Manages the info from bt\+Striding\+Mesh\+Interface object and controls the Lock/\+Unlock mechanism 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Shape.\+h\end{DoxyCompactItemize}

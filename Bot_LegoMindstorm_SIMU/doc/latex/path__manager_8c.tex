@@ -1,0 +1,96 @@
+\hypertarget{path__manager_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/path\+\_\+manager.c File Reference}
+\label{path__manager_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/path\+\_\+manager.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/path\+\_\+manager.\+c}}
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../exception\+\_\+handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+Include dependency graph for path\+\_\+manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{path__manager_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{path__manager_8c_af22e01caa5ad40a37c5c1250b0cefbd4}{path\+\_\+\+Trigger\+Waypoint} (\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} state)
+\item 
+\mbox{\Hypertarget{path__manager_8c_abbcba94fb7e15f061498e62aa3460573}\label{path__manager_8c_abbcba94fb7e15f061498e62aa3460573}} 
+void {\bfseries path\+\_\+\+Init} (void)
+\item 
+\mbox{\Hypertarget{path__manager_8c_a150dcc4ba459446dee812f4277bf21c5}\label{path__manager_8c_a150dcc4ba459446dee812f4277bf21c5}} 
+void \hyperlink{path__manager_8c_a150dcc4ba459446dee812f4277bf21c5}{path\+\_\+\+Set\+Next\+Waypoint} (\hyperlink{structWAYPOINT}{W\+A\+Y\+P\+O\+I\+NT} $\ast$wp)
+\begin{DoxyCompactList}\small\item\em Set the next waypoint. \end{DoxyCompactList}\item 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{path__manager_8c_ab9be8fbc564d3f4ea1ec5d8baca74146}{path\+\_\+\+Wait\+Waypoint} ()
+\begin{DoxyCompactList}\small\item\em Wait for the current waypoint. \end{DoxyCompactList}\item 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{path__manager_8c_ae00e8e780509072515c2159e8f88684e}{path\+\_\+\+Wait\+End\+Of\+Trajectory} ()
+\begin{DoxyCompactList}\small\item\em Wait for the end of the current trajectory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{path__manager_8c_aeb9c40fc4d03d3f3c0deaffd268507f6}\label{path__manager_8c_aeb9c40fc4d03d3f3c0deaffd268507f6}} 
+void \hyperlink{path__manager_8c_aeb9c40fc4d03d3f3c0deaffd268507f6}{path\+\_\+\+Launch\+Trajectory} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$traj)
+\begin{DoxyCompactList}\small\item\em Execute trajectory, this is an asynchronous call. \end{DoxyCompactList}\item 
+void \hyperlink{path__manager_8c_a9b498059e1d8ebfa6be8381a636f231b}{path\+\_\+\+Cancel\+Trajectory} ()
+\item 
+void \hyperlink{path__manager_8c_a54d5478f2608b0cfdb8c3704a178cf41}{path\+\_\+\+Interrupt\+Trajectory} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{path__manager_8c_acce39136f64f5e4ddc93c5c6450c75e0}\label{path__manager_8c_acce39136f64f5e4ddc93c5c6450c75e0}} 
+\hyperlink{structWAYPOINT}{W\+A\+Y\+P\+O\+I\+NT} {\bfseries next\+Waypoint}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{path__manager_8c_a9b498059e1d8ebfa6be8381a636f231b}\label{path__manager_8c_a9b498059e1d8ebfa6be8381a636f231b}} 
+\index{path\+\_\+manager.\+c@{path\+\_\+manager.\+c}!path\+\_\+\+Cancel\+Trajectory@{path\+\_\+\+Cancel\+Trajectory}}
+\index{path\+\_\+\+Cancel\+Trajectory@{path\+\_\+\+Cancel\+Trajectory}!path\+\_\+manager.\+c@{path\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Cancel\+Trajectory()}{path\_CancelTrajectory()}}
+{\footnotesize\ttfamily void path\+\_\+\+Cancel\+Trajectory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Cancel the current trajectory and stop the robot
+
+Mostly needed for remote control, use collision function when a collision is detected. \mbox{\Hypertarget{path__manager_8c_a54d5478f2608b0cfdb8c3704a178cf41}\label{path__manager_8c_a54d5478f2608b0cfdb8c3704a178cf41}} 
+\index{path\+\_\+manager.\+c@{path\+\_\+manager.\+c}!path\+\_\+\+Interrupt\+Trajectory@{path\+\_\+\+Interrupt\+Trajectory}}
+\index{path\+\_\+\+Interrupt\+Trajectory@{path\+\_\+\+Interrupt\+Trajectory}!path\+\_\+manager.\+c@{path\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Interrupt\+Trajectory()}{path\_InterruptTrajectory()}}
+{\footnotesize\ttfamily void path\+\_\+\+Interrupt\+Trajectory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Interrupt current trajectory and stop robot
+
+Used to stop on a particular event (for instance actuator event) \mbox{\Hypertarget{path__manager_8c_af22e01caa5ad40a37c5c1250b0cefbd4}\label{path__manager_8c_af22e01caa5ad40a37c5c1250b0cefbd4}} 
+\index{path\+\_\+manager.\+c@{path\+\_\+manager.\+c}!path\+\_\+\+Trigger\+Waypoint@{path\+\_\+\+Trigger\+Waypoint}}
+\index{path\+\_\+\+Trigger\+Waypoint@{path\+\_\+\+Trigger\+Waypoint}!path\+\_\+manager.\+c@{path\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Trigger\+Waypoint()}{path\_TriggerWaypoint()}}
+{\footnotesize\ttfamily void path\+\_\+\+Trigger\+Waypoint (\begin{DoxyParamCaption}\item[{\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE}}]{state }\end{DoxyParamCaption})}
+
+Trigger the current waypoint motion control internal function \mbox{\Hypertarget{path__manager_8c_ae00e8e780509072515c2159e8f88684e}\label{path__manager_8c_ae00e8e780509072515c2159e8f88684e}} 
+\index{path\+\_\+manager.\+c@{path\+\_\+manager.\+c}!path\+\_\+\+Wait\+End\+Of\+Trajectory@{path\+\_\+\+Wait\+End\+Of\+Trajectory}}
+\index{path\+\_\+\+Wait\+End\+Of\+Trajectory@{path\+\_\+\+Wait\+End\+Of\+Trajectory}!path\+\_\+manager.\+c@{path\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Wait\+End\+Of\+Trajectory()}{path\_WaitEndOfTrajectory()}}
+{\footnotesize\ttfamily \hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} path\+\_\+\+Wait\+End\+Of\+Trajectory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wait for the end of the current trajectory. 
+
+This is an utility function that call path\+\_\+\+Set\+Next\+Waypoint and \hyperlink{path__manager_8h_a0791bf47a73d0ad03265b7ff44c86e32}{path\+\_\+\+Wait\+Waypoint()} \mbox{\Hypertarget{path__manager_8c_ab9be8fbc564d3f4ea1ec5d8baca74146}\label{path__manager_8c_ab9be8fbc564d3f4ea1ec5d8baca74146}} 
+\index{path\+\_\+manager.\+c@{path\+\_\+manager.\+c}!path\+\_\+\+Wait\+Waypoint@{path\+\_\+\+Wait\+Waypoint}}
+\index{path\+\_\+\+Wait\+Waypoint@{path\+\_\+\+Wait\+Waypoint}!path\+\_\+manager.\+c@{path\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Wait\+Waypoint()}{path\_WaitWaypoint()}}
+{\footnotesize\ttfamily \hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} path\+\_\+\+Wait\+Waypoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wait for the current waypoint. 
+
+You must have called path\+\_\+\+Set\+Next\+Waypoint before Wait for waypoint semaphore 

@@ -1,0 +1,283 @@
+\hypertarget{classBezierBy}{}\section{Bezier\+By Class Reference}
+\label{classBezierBy}\index{Bezier\+By@{Bezier\+By}}
+
+
+An action that moves the target with a cubic \hyperlink{structBezier}{Bezier} curve by a certain distance.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Bezier\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classBezierBy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bezier\+By\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBezierBy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_a38e476c4def21766d8592a864813dcfe}{clone} () const override
+\item 
+virtual \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_a6b767fe2cddd49ad43cc2724684e3810}{reverse} (void) const override
+\item 
+virtual void \hyperlink{classBezierBy_a3a68011f000b7f0ad58668b3ec0f7494}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classBezierBy_a99520417807192413ef4a3eca76682b8}{update} (float time) override
+\item 
+virtual \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_a23998a4d8a7df8df06a00decd6e3b38b}{clone} () const override
+\item 
+virtual \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_ac773db6f4fd27c351c6d4c2c7929b4e7}{reverse} () const override
+\item 
+virtual void \hyperlink{classBezierBy_af09cb1b4ced8b91c0e87f74bf844427b}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classBezierBy_a2f097a33bf957da1f466896735e3c094}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_adc16945f587b0e7850106751d8f5eaef}{create} (float t, const \hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} \&c)
+\item 
+static \hyperlink{classBezierBy}{Bezier\+By} $\ast$ \hyperlink{classBezierBy_ab2e8aa132f37688fbbc9822139df2063}{create} (float t, const \hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} \&c)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBezierBy_a06762b178988630dabd2715784e60d6f}\label{classBezierBy_a06762b178988630dabd2715784e60d6f}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classBezierBy}{Bezier\+By}() \{\} virtual $\sim$\hyperlink{classBezierBy}{Bezier\+By}() \{\} bool init\+With\+Duration(float t
+\item 
+\mbox{\Hypertarget{classBezierBy_aac2be0d9b111b708a37a78be0e74aaf5}\label{classBezierBy_aac2be0d9b111b708a37a78be0e74aaf5}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} const \hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} \& {\bfseries c}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBezierBy_ac20875c694b0f4498edd829cc9c67581}\label{classBezierBy_ac20875c694b0f4498edd829cc9c67581}} 
+\hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} {\bfseries \+\_\+config}
+\item 
+\mbox{\Hypertarget{classBezierBy_a35347b965ee44152ba9df668bbf311c6}\label{classBezierBy_a35347b965ee44152ba9df668bbf311c6}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+start\+Position}
+\item 
+\mbox{\Hypertarget{classBezierBy_a7de799382fb76dee18f85d1e0beec46e}\label{classBezierBy_a7de799382fb76dee18f85d1e0beec46e}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+previous\+Position}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An action that moves the target with a cubic \hyperlink{structBezier}{Bezier} curve by a certain distance. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBezierBy_a38e476c4def21766d8592a864813dcfe}\label{classBezierBy_a38e476c4def21766d8592a864813dcfe}} 
+\index{Bezier\+By@{Bezier\+By}!clone@{clone}}
+\index{clone@{clone}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBezierBy}{Bezier\+By} $\ast$ Bezier\+By\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a3cb15fbd6d2b9038ab3f25608765d54a}{Bezier\+To}, and \hyperlink{classBezierTo_ace522cd65d274c3f0a77c7925a2f12d5}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_a23998a4d8a7df8df06a00decd6e3b38b}\label{classBezierBy_a23998a4d8a7df8df06a00decd6e3b38b}} 
+\index{Bezier\+By@{Bezier\+By}!clone@{clone}}
+\index{clone@{clone}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classBezierBy}{Bezier\+By}$\ast$ Bezier\+By\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a3cb15fbd6d2b9038ab3f25608765d54a}{Bezier\+To}, and \hyperlink{classBezierTo_ace522cd65d274c3f0a77c7925a2f12d5}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_adc16945f587b0e7850106751d8f5eaef}\label{classBezierBy_adc16945f587b0e7850106751d8f5eaef}} 
+\index{Bezier\+By@{Bezier\+By}!create@{create}}
+\index{create@{create}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBezierBy}{Bezier\+By} $\ast$ Bezier\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{t,  }\item[{const \hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action with a duration and a bezier configuration. 
+\begin{DoxyParams}{Parameters}
+{\em t} & Duration time, in seconds. \\
+\hline
+{\em c} & \hyperlink{structBezier}{Bezier} config. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBezierBy}{Bezier\+By} object. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed.
+in js: var \hyperlink{classBezierBy_adc16945f587b0e7850106751d8f5eaef}{create}(var t,var table)
+in lua: local \hyperlink{classBezierBy_adc16945f587b0e7850106751d8f5eaef}{create}(local t, local table)
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBezierBy_ab2e8aa132f37688fbbc9822139df2063}\label{classBezierBy_ab2e8aa132f37688fbbc9822139df2063}} 
+\index{Bezier\+By@{Bezier\+By}!create@{create}}
+\index{create@{create}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classBezierBy}{Bezier\+By}$\ast$ Bezier\+By\+::create (\begin{DoxyParamCaption}\item[{float}]{t,  }\item[{const \hyperlink{struct__ccBezierConfig}{cc\+Bezier\+Config} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action with a duration and a bezier configuration. 
+\begin{DoxyParams}{Parameters}
+{\em t} & Duration time, in seconds. \\
+\hline
+{\em c} & \hyperlink{structBezier}{Bezier} config. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBezierBy}{Bezier\+By} object. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed.
+in js: var \hyperlink{classBezierBy_adc16945f587b0e7850106751d8f5eaef}{create}(var t,var table)
+in lua: local \hyperlink{classBezierBy_adc16945f587b0e7850106751d8f5eaef}{create}(local t, local table)
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBezierBy_a6b767fe2cddd49ad43cc2724684e3810}\label{classBezierBy_a6b767fe2cddd49ad43cc2724684e3810}} 
+\index{Bezier\+By@{Bezier\+By}!reverse@{reverse}}
+\index{reverse@{reverse}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBezierBy}{Bezier\+By} $\ast$ Bezier\+By\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a96685cb733eb9f61b6e6550bcd210f93}{Bezier\+To}, and \hyperlink{classBezierTo_a18d090decbea9839a379121a012063f6}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_ac773db6f4fd27c351c6d4c2c7929b4e7}\label{classBezierBy_ac773db6f4fd27c351c6d4c2c7929b4e7}} 
+\index{Bezier\+By@{Bezier\+By}!reverse@{reverse}}
+\index{reverse@{reverse}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classBezierBy}{Bezier\+By}$\ast$ Bezier\+By\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a96685cb733eb9f61b6e6550bcd210f93}{Bezier\+To}, and \hyperlink{classBezierTo_a18d090decbea9839a379121a012063f6}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_a3a68011f000b7f0ad58668b3ec0f7494}\label{classBezierBy_a3a68011f000b7f0ad58668b3ec0f7494}} 
+\index{Bezier\+By@{Bezier\+By}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bezier\+By\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a0afa7e2b008c5d8f8a63d559face86a3}{Bezier\+To}, and \hyperlink{classBezierTo_ad45e47e3da2159e77c5b82fa1b6b2b1a}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_af09cb1b4ced8b91c0e87f74bf844427b}\label{classBezierBy_af09cb1b4ced8b91c0e87f74bf844427b}} 
+\index{Bezier\+By@{Bezier\+By}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Bezier\+By\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classBezierTo_a0afa7e2b008c5d8f8a63d559face86a3}{Bezier\+To}, and \hyperlink{classBezierTo_ad45e47e3da2159e77c5b82fa1b6b2b1a}{Bezier\+To}.
+
+\mbox{\Hypertarget{classBezierBy_a99520417807192413ef4a3eca76682b8}\label{classBezierBy_a99520417807192413ef4a3eca76682b8}} 
+\index{Bezier\+By@{Bezier\+By}!update@{update}}
+\index{update@{update}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bezier\+By\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classBezierBy_a2f097a33bf957da1f466896735e3c094}\label{classBezierBy_a2f097a33bf957da1f466896735e3c094}} 
+\index{Bezier\+By@{Bezier\+By}!update@{update}}
+\index{update@{update}!Bezier\+By@{Bezier\+By}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Bezier\+By\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

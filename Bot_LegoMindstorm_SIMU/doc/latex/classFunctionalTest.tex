@@ -1,0 +1,125 @@
+\hypertarget{classFunctionalTest}{}\section{Functional\+Test Class Reference}
+\label{classFunctionalTest}\index{Functional\+Test@{Functional\+Test}}
+
+
+Abstract class to implement functional tests using \hyperlink{classConsoleManager}{Console\+Manager}.  
+
+
+
+
+{\ttfamily \#include $<$Functional\+Test.\+hpp$>$}
+
+
+
+Inheritance diagram for Functional\+Test\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classFunctionalTest__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classFunctionalTest_ab3207865c4ba2087ae1611ca92da07d7}{$\sim$ Functional\+Test} ()
+\item 
+const std\+::string \& \hyperlink{classFunctionalTest_ae40fb49a44014898c3b647e96a485922}{name} () const
+\item 
+const std\+::string \& \hyperlink{classFunctionalTest_a7b310fa513c607660bf445cc36959eac}{desc} () const
+\item 
+int \hyperlink{classFunctionalTest_ad12ed2cc723ce1584ff0a5c7dcddcf5e}{position} ()
+\item 
+void \hyperlink{classFunctionalTest_add2d19aff8e1754df1f6775abad4b98e}{set\+Pos} (int num)
+\item 
+virtual void \hyperlink{classFunctionalTest_a9942d82ed217f8410935d88cd70f64c5}{run} (int argc, char $\ast$$\ast$argv)=0
+\item 
+\mbox{\Hypertarget{classFunctionalTest_ab883801a3de94eb67111f92f494c6aa7}\label{classFunctionalTest_ab883801a3de94eb67111f92f494c6aa7}} 
+virtual void {\bfseries configure\+Console\+Args} (int, char $\ast$$\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFunctionalTest_a2a6a15ddfbeb221b6eedc486138504c3}{Functional\+Test} (const std\+::string \&\hyperlink{classFunctionalTest_ae40fb49a44014898c3b647e96a485922}{name}, const std\+::string \&\hyperlink{classFunctionalTest_a7b310fa513c607660bf445cc36959eac}{desc})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class to implement functional tests using \hyperlink{classConsoleManager}{Console\+Manager}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFunctionalTest_a2a6a15ddfbeb221b6eedc486138504c3}\label{classFunctionalTest_a2a6a15ddfbeb221b6eedc486138504c3}} 
+\index{Functional\+Test@{Functional\+Test}!Functional\+Test@{Functional\+Test}}
+\index{Functional\+Test@{Functional\+Test}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{Functional\+Test()}{FunctionalTest()}}
+{\footnotesize\ttfamily Functional\+Test\+::\+Functional\+Test (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructeur de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du test. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFunctionalTest_ab3207865c4ba2087ae1611ca92da07d7}\label{classFunctionalTest_ab3207865c4ba2087ae1611ca92da07d7}} 
+\index{Functional\+Test@{Functional\+Test}!````~ Functional\+Test@{$\sim$ Functional\+Test}}
+\index{````~ Functional\+Test@{$\sim$ Functional\+Test}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{$\sim$ Functional\+Test()}{~ FunctionalTest()}}
+{\footnotesize\ttfamily virtual Functional\+Test\+::$\sim$ \hyperlink{classFunctionalTest}{Functional\+Test} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructeur de la classe. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFunctionalTest_a7b310fa513c607660bf445cc36959eac}\label{classFunctionalTest_a7b310fa513c607660bf445cc36959eac}} 
+\index{Functional\+Test@{Functional\+Test}!desc@{desc}}
+\index{desc@{desc}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{desc()}{desc()}}
+{\footnotesize\ttfamily const std\+::string\& Functional\+Test\+::desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Description du test. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFunctionalTest_ae40fb49a44014898c3b647e96a485922}\label{classFunctionalTest_ae40fb49a44014898c3b647e96a485922}} 
+\index{Functional\+Test@{Functional\+Test}!name@{name}}
+\index{name@{name}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Functional\+Test\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Nom du test. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFunctionalTest_ad12ed2cc723ce1584ff0a5c7dcddcf5e}\label{classFunctionalTest_ad12ed2cc723ce1584ff0a5c7dcddcf5e}} 
+\index{Functional\+Test@{Functional\+Test}!position@{position}}
+\index{position@{position}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily int Functional\+Test\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Numero/position du test. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFunctionalTest_a9942d82ed217f8410935d88cd70f64c5}\label{classFunctionalTest_a9942d82ed217f8410935d88cd70f64c5}} 
+\index{Functional\+Test@{Functional\+Test}!run@{run}}
+\index{run@{run}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void Functional\+Test\+::run (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Méthode exécutant le test associé. 
+
+Implemented in \hyperlink{classO__ActionManagerTimerTest_ab88b301cdfa06385c521335dd27932c9}{O\+\_\+\+Action\+Manager\+Timer\+Test}, \hyperlink{classO__IAByPathTest_a3f57f585ff1382a52bf7f79a28d43629}{O\+\_\+\+I\+A\+By\+Path\+Test}, \hyperlink{classL__ActionManagerTimerTest_a8142442fb7b9ed2b09b48bfec2cf49e2}{L\+\_\+\+Action\+Manager\+Timer\+Test}, \hyperlink{classA__IATest_a53c1fd77a64d6a55a6386829ba6f7697}{A\+\_\+\+I\+A\+Test}, \hyperlink{classA__LcdBoardTest_ae41885fb9b4623bb4897e264b1550054}{A\+\_\+\+Lcd\+Board\+Test}, \hyperlink{classA__LedBarTest_ab90a8b6aa14e330f417f72ee5f08e00a}{A\+\_\+\+Led\+Bar\+Test}, \hyperlink{classL__IAByPathTest_af141ff239ba9f21329a1ef3a1a84a512}{L\+\_\+\+I\+A\+By\+Path\+Test}, \hyperlink{classL__IATest_adae506ab06c58655167898d93903d767}{L\+\_\+\+I\+A\+Test}, \hyperlink{classL__ServoObjectTest_adbf78503aa8a5f23673ff10bcd924a84}{L\+\_\+\+Servo\+Object\+Test}, \hyperlink{classL__ServoUsingMotorTest_a5da92b0b22c5e55b230547a2be00c940}{L\+\_\+\+Servo\+Using\+Motor\+Test}, \hyperlink{classL__SoundBarTest_ad518b52a13cf17ad327f7b96e3d3e44b}{L\+\_\+\+Sound\+Bar\+Test}, \hyperlink{classO__LcdBoardTest_a5fe507797dd1ee404d3fd4a0fd6b7885}{O\+\_\+\+Lcd\+Board\+Test}, \hyperlink{classA__Asserv__SetResolutionTest_a545e3f61effce9ada7362c956fa7b5d0}{A\+\_\+\+Asserv\+\_\+\+Set\+Resolution\+Test}, \hyperlink{classA__ButtonBarTest_a63c0ce685488028c4cf777c773d1632c}{A\+\_\+\+Button\+Bar\+Test}, \hyperlink{classL__ButtonBarTest_a8b9670eb86f11aab09cb80040b856b45}{L\+\_\+\+Button\+Bar\+Test}, \hyperlink{classL__LedBarTest_ade4267d18949f8e4150410f6a18743f8}{L\+\_\+\+Led\+Bar\+Test}, \hyperlink{classO__LedBarTest_af9e0e172d13b334cda0fe32bb659b414}{O\+\_\+\+Led\+Bar\+Test}, \hyperlink{classL__AsservPidTest_a7161b32c707082e95469394e12c2a3f8}{L\+\_\+\+Asserv\+Pid\+Test}, \hyperlink{classA__Asserv__FindPIDTest_acc445eae5445a7f0add802f1bc34851e}{A\+\_\+\+Asserv\+\_\+\+Find\+P\+I\+D\+Test}, \hyperlink{classA__Asserv__SquareTest_ac79fb82ae484354c587c6fd925c6c599}{A\+\_\+\+Asserv\+\_\+\+Square\+Test}, \hyperlink{classA__AsservInsaTest_aecdab7eb1a270927321e01a00f5faa12}{A\+\_\+\+Asserv\+Insa\+Test}, \hyperlink{classA__AsservRunTest_a333d95553c334244fa2a1d63e5eba13a}{A\+\_\+\+Asserv\+Run\+Test}, \hyperlink{classA__MovingBaseTest_a1ac04e328db4ee50ebbd7cee6bfe39ca}{A\+\_\+\+Moving\+Base\+Test}, \hyperlink{classA__SensorsTest_a862d3ed0b994946f6ac42280515b2c36}{A\+\_\+\+Sensors\+Test}, \hyperlink{classA__ServoStepTest_ad98ddd1d901a5ac0c76e4a10a7e1b46c}{A\+\_\+\+Servo\+Step\+Test}, \hyperlink{classA__ServoTest_aed1e78e5ad48ce31a9b419cf399ac2cc}{A\+\_\+\+Servo\+Test}, \hyperlink{classA__TiretteTest_ad33ea95cc22c7b0e438faae54df6ef9b}{A\+\_\+\+Tirette\+Test}, \hyperlink{classL__Asserv__CalageTest_abc64058cdc72d378657e017e8b0e5f01}{L\+\_\+\+Asserv\+\_\+\+Calage\+Test}, \hyperlink{classL__Asserv__SquareTest_a6b3ec946f9fef73fd3720cf7408cb06f}{L\+\_\+\+Asserv\+\_\+\+Square\+Test}, \hyperlink{classL__AsservEsialTest_a4edc54bd068ceb00479b87cdb9b5d8c5}{L\+\_\+\+Asserv\+Esial\+Test}, \hyperlink{classL__AsservInsaTest_a17f23a7e7f4bba61e098e1aecdd643f2}{L\+\_\+\+Asserv\+Insa\+Test}, \hyperlink{classL__AsservLineRotateTest_a3130bff61c4efa01f140441a74224f12}{L\+\_\+\+Asserv\+Line\+Rotate\+Test}, \hyperlink{classL__AsservRunTest_a72f0bd680ef18d02eb866811eaa3d43f}{L\+\_\+\+Asserv\+Run\+Test}, \hyperlink{classL__LcdTest_ae3d35792d8e5332141b8c4f45c365960}{L\+\_\+\+Lcd\+Test}, \hyperlink{classL__MovingBaseTest_a2d0a96c01d9852b952a399362d7c990b}{L\+\_\+\+Moving\+Base\+Test}, \hyperlink{classL__SensorsTest_a2f73f467b8367f1d8e85cbff388c89cf}{L\+\_\+\+Sensors\+Test}, \hyperlink{classL__ServoStepTest_a34bf11a5d95b6a2efdecefee16f7235e}{L\+\_\+\+Servo\+Step\+Test}, \hyperlink{classL__TiretteTest_a1c1901939ffe424db413a47561cea31d}{L\+\_\+\+Tirette\+Test}, \hyperlink{classO__Asserv__CalageTest_ad731f64308b62269f060e74c0282e30f}{O\+\_\+\+Asserv\+\_\+\+Calage\+Test}, \hyperlink{classO__Asserv__SquareTest_a16a0bf866c8070611cfa8952e3ef64d8}{O\+\_\+\+Asserv\+\_\+\+Square\+Test}, \hyperlink{classO__AsservEsialTest_af4ba3aac5f013e385a2be034b92e9748}{O\+\_\+\+Asserv\+Esial\+Test}, \hyperlink{classO__AsservLineRotateTest_ac54536863ccc3f6bc0ce3f30e99e1b70}{O\+\_\+\+Asserv\+Line\+Rotate\+Test}, \hyperlink{classO__AsservTest_a87e2ffa360e3e12ff5c7b81b1952a04f}{O\+\_\+\+Asserv\+Test}, \hyperlink{classO__GroveColorTest_a035d68d80a1be3d3140e3b9de6cba795}{O\+\_\+\+Grove\+Color\+Test}, \hyperlink{classO__ServoObjectsTest_aabfa9ba518070128940062ed11028ca7}{O\+\_\+\+Servo\+Objects\+Test}, \hyperlink{classO__ServoStepTest_aefbe5c17504e0782e71a6ca13ed40518}{O\+\_\+\+Servo\+Step\+Test}, \hyperlink{classO__ButtonBarTest_a444c3618a504b59d0236b4b530f463e1}{O\+\_\+\+Button\+Bar\+Test}, \hyperlink{classO__SensorsTest_ae3b998034225e16586ded4ba3bd419e5}{O\+\_\+\+Sensors\+Test}, and \hyperlink{classO__TiretteTest_a66d6839aab8764140c00e77046ac4563}{O\+\_\+\+Tirette\+Test}.
+
+\mbox{\Hypertarget{classFunctionalTest_add2d19aff8e1754df1f6775abad4b98e}\label{classFunctionalTest_add2d19aff8e1754df1f6775abad4b98e}} 
+\index{Functional\+Test@{Functional\+Test}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!Functional\+Test@{Functional\+Test}}
+\subsubsection{\texorpdfstring{set\+Pos()}{setPos()}}
+{\footnotesize\ttfamily void Functional\+Test\+::set\+Pos (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Numero/position du test. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\hyperlink{FunctionalTest_8hpp}{Functional\+Test.\+hpp}\end{DoxyCompactItemize}

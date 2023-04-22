@@ -1,0 +1,105 @@
+\hypertarget{motion_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.c File Reference}
+\label{motion_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.\+c}}
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+priv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mouse\+\_\+sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor\+\_\+\+P\+I\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+slippage.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Protocol/motion\+\_\+protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../position.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}encoder.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../app\+\_\+cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+Include dependency graph for motion.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion_8c_a7cea7ed64fd2ab9b472dec298222a2f3}\label{motion_8c_a7cea7ed64fd2ab9b472dec298222a2f3}} 
+void {\bfseries motion\+\_\+\+I\+T\+Task} (void $\ast$p\+\_\+arg)
+\item 
+\mbox{\Hypertarget{motion_8c_a172b8284dc998f2c5256bb0fdcec66f8}\label{motion_8c_a172b8284dc998f2c5256bb0fdcec66f8}} 
+void {\bfseries motion\+\_\+\+Init\+Timer} (int frequency)
+\item 
+\mbox{\Hypertarget{motion_8c_a428d429e060d60c0b086eeb8310ed4b6}\label{motion_8c_a428d429e060d60c0b086eeb8310ed4b6}} 
+void {\bfseries init\+P\+WM} (void)
+\item 
+\mbox{\Hypertarget{motion_8c_a35eeffbb159708646244b67d805f7f17}\label{motion_8c_a35eeffbb159708646244b67d805f7f17}} 
+void {\bfseries signal\+End\+Of\+Traj} (void)
+\item 
+\mbox{\Hypertarget{motion_8c_abbcba94fb7e15f061498e62aa3460573}\label{motion_8c_abbcba94fb7e15f061498e62aa3460573}} 
+void {\bfseries path\+\_\+\+Init} (void)
+\item 
+void \hyperlink{motion_8c_af22e01caa5ad40a37c5c1250b0cefbd4}{path\+\_\+\+Trigger\+Waypoint} (\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} state)
+\item 
+\mbox{\Hypertarget{motion_8c_a69edf51ddbf41d29ea37c8310234378b}\label{motion_8c_a69edf51ddbf41d29ea37c8310234378b}} 
+void \hyperlink{motion_8c_a69edf51ddbf41d29ea37c8310234378b}{motion\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Load motion control module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_a7d0120ff14de70ab0139c02a11127b4a}\label{motion_8c_a7d0120ff14de70ab0139c02a11127b4a}} 
+void {\bfseries reset\+All\+P\+I\+D\+Errors} (void)
+\item 
+\mbox{\Hypertarget{motion_8c_ad75f5ced2c0795587ebc316af741b498}\label{motion_8c_ad75f5ced2c0795587ebc316af741b498}} 
+void \hyperlink{motion_8c_ad75f5ced2c0795587ebc316af741b498}{motion\+\_\+\+Free\+Motion} ()
+\begin{DoxyCompactList}\small\item\em Stop motion control for a moment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_ab81824a98ce618b010daed84a8d48788}\label{motion_8c_ab81824a98ce618b010daed84a8d48788}} 
+void \hyperlink{motion_8c_ab81824a98ce618b010daed84a8d48788}{motion\+\_\+\+Assisted\+Handling} ()
+\begin{DoxyCompactList}\small\item\em Assisted movement mode =) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_a22c84ee8746020f3872ddda8906744f9}\label{motion_8c_a22c84ee8746020f3872ddda8906744f9}} 
+void \hyperlink{motion_8c_a22c84ee8746020f3872ddda8906744f9}{motion\+\_\+\+Disable\+P\+ID} ()
+\begin{DoxyCompactList}\small\item\em Stop motion control and disable P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_a86881701a76662b316cc619ab14911f1}\label{motion_8c_a86881701a76662b316cc619ab14911f1}} 
+void {\bfseries load\+Command} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$cmd)
+\item 
+\mbox{\Hypertarget{motion_8c_a2c1caf4082ee35d48180244ad0bd91e0}\label{motion_8c_a2c1caf4082ee35d48180244ad0bd91e0}} 
+void \hyperlink{motion_8c_a2c1caf4082ee35d48180244ad0bd91e0}{motion\+\_\+\+Set\+Current\+Command} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Set a robot command and execute it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_a68fc1845fc900763b9551e9cd1e7f238}\label{motion_8c_a68fc1845fc900763b9551e9cd1e7f238}} 
+void {\bfseries Send\+Motor\+Errors} (int32 error0, int32 error1)
+\item 
+\mbox{\Hypertarget{motion_8c_a5f10ed748186fbf276294942fdc48de3}\label{motion_8c_a5f10ed748186fbf276294942fdc48de3}} 
+void {\bfseries Motion\+\_\+\+IT} (void)
+\item 
+\mbox{\Hypertarget{motion_8c_a2f73024a50c0246d15e19ab44eb1b7a7}\label{motion_8c_a2f73024a50c0246d15e19ab44eb1b7a7}} 
+void \hyperlink{motion_8c_a2f73024a50c0246d15e19ab44eb1b7a7}{motion\+\_\+\+Stop\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Stop motion control timer, used to shutdown motion control. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8c_a607c74a879205f68d260b1cfdf58dc25}\label{motion_8c_a607c74a879205f68d260b1cfdf58dc25}} 
+void \hyperlink{motion_8c_a607c74a879205f68d260b1cfdf58dc25}{set\+P\+WM} (int16 pwm\+Left, int16 pwm\+Right)
+\begin{DoxyCompactList}\small\item\em Directly set the pwm for the motor (used both internally and for test) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion_8c_ad64778d5691e65cb69de1a30c8ae2d3d}\label{motion_8c_ad64778d5691e65cb69de1a30c8ae2d3d}} 
+M\+O\+T\+I\+O\+N\+\_\+\+S\+T\+A\+TE {\bfseries Robot\+Motion\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motion_8c_af22e01caa5ad40a37c5c1250b0cefbd4}\label{motion_8c_af22e01caa5ad40a37c5c1250b0cefbd4}} 
+\index{motion.\+c@{motion.\+c}!path\+\_\+\+Trigger\+Waypoint@{path\+\_\+\+Trigger\+Waypoint}}
+\index{path\+\_\+\+Trigger\+Waypoint@{path\+\_\+\+Trigger\+Waypoint}!motion.\+c@{motion.\+c}}
+\subsubsection{\texorpdfstring{path\+\_\+\+Trigger\+Waypoint()}{path\_TriggerWaypoint()}}
+{\footnotesize\ttfamily void path\+\_\+\+Trigger\+Waypoint (\begin{DoxyParamCaption}\item[{\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE}}]{state }\end{DoxyParamCaption})}
+
+Trigger the current waypoint motion control internal function 

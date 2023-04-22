@@ -1,0 +1,730 @@
+\hypertarget{classnetwork_1_1HttpRequest}{}\section{network\+:\+:Http\+Request Class Reference}
+\label{classnetwork_1_1HttpRequest}\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+
+
+{\ttfamily \#include $<$Http\+Request.\+h$>$}
+
+
+
+Inheritance diagram for network\+:\+:Http\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classnetwork_1_1HttpRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for network\+:\+:Http\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classnetwork_1_1HttpRequest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} \{ \newline
+{\bfseries G\+ET}, 
+{\bfseries P\+O\+ST}, 
+{\bfseries P\+UT}, 
+{\bfseries D\+E\+L\+E\+TE}, 
+\newline
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries G\+ET}, 
+{\bfseries P\+O\+ST}, 
+{\bfseries P\+UT}, 
+\newline
+{\bfseries D\+E\+L\+E\+TE}, 
+{\bfseries U\+N\+K\+N\+O\+WN}
+ \}
+\item 
+enum \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} \{ \newline
+{\bfseries G\+ET}, 
+{\bfseries P\+O\+ST}, 
+{\bfseries P\+UT}, 
+{\bfseries D\+E\+L\+E\+TE}, 
+\newline
+{\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries G\+ET}, 
+{\bfseries P\+O\+ST}, 
+{\bfseries P\+UT}, 
+\newline
+{\bfseries D\+E\+L\+E\+TE}, 
+{\bfseries U\+N\+K\+N\+O\+WN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}{Http\+Request} ()
+\item 
+virtual \hyperlink{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}{$\sim$\+Http\+Request} ()
+\item 
+\hyperlink{classRef}{Ref} $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}{autorelease} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}{set\+Request\+Type} (\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} type)
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} \hyperlink{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}{get\+Request\+Type} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}{set\+Url} (const std\+::string \&url)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}{get\+Url} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}{set\+Request\+Data} (const char $\ast$buffer, size\+\_\+t len)
+\item 
+char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}{get\+Request\+Data} ()
+\item 
+ssize\+\_\+t \hyperlink{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}{get\+Request\+Data\+Size} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}{set\+Tag} (const std\+::string \&tag)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}{get\+Tag} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}{set\+User\+Data} (void $\ast$p\+User\+Data)
+\item 
+void $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}{get\+User\+Data} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}{set\+Response\+Callback} (\hyperlink{classRef}{Ref} $\ast$p\+Target, S\+E\+L\+\_\+\+Call\+Func\+ND p\+Selector)
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}{set\+Response\+Callback} (\hyperlink{classRef}{Ref} $\ast$p\+Target, S\+E\+L\+\_\+\+Http\+Response p\+Selector)
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}{set\+Response\+Callback} (const cc\+Http\+Request\+Callback \&callback)
+\item 
+\hyperlink{classRef}{Ref} $\ast$ \hyperlink{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}{get\+Target} () const
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} \hyperlink{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}{get\+Selector} () const
+\item 
+const cc\+Http\+Request\+Callback \& \hyperlink{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}{get\+Callback} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}{set\+Headers} (const std\+::vector$<$ std\+::string $>$ \&headers)
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}{get\+Headers} () const
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}{Http\+Request} ()
+\item 
+virtual \hyperlink{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}{$\sim$\+Http\+Request} ()
+\item 
+\hyperlink{classRef}{Ref} $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}{autorelease} ()
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}{set\+Request\+Type} (\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} type)
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} \hyperlink{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}{get\+Request\+Type} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}{set\+Url} (const std\+::string \&url)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}{get\+Url} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}{set\+Request\+Data} (const char $\ast$buffer, size\+\_\+t len)
+\item 
+char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}{get\+Request\+Data} ()
+\item 
+ssize\+\_\+t \hyperlink{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}{get\+Request\+Data\+Size} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}{set\+Tag} (const std\+::string \&tag)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}{get\+Tag} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}{set\+User\+Data} (void $\ast$p\+User\+Data)
+\item 
+void $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}{get\+User\+Data} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}{set\+Response\+Callback} (\hyperlink{classRef}{Ref} $\ast$p\+Target, S\+E\+L\+\_\+\+Call\+Func\+ND p\+Selector)
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}{set\+Response\+Callback} (\hyperlink{classRef}{Ref} $\ast$p\+Target, S\+E\+L\+\_\+\+Http\+Response p\+Selector)
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}{set\+Response\+Callback} (const cc\+Http\+Request\+Callback \&callback)
+\item 
+\hyperlink{classRef}{Ref} $\ast$ \hyperlink{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}{get\+Target} () const
+\item 
+\hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} \hyperlink{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}{get\+Selector} () const
+\item 
+const cc\+Http\+Request\+Callback \& \hyperlink{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}{get\+Callback} () const
+\item 
+void \hyperlink{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}{set\+Headers} (const std\+::vector$<$ std\+::string $>$ \&headers)
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}{get\+Headers} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a632381deeb6b78a7742e321433b08605}\label{classnetwork_1_1HttpRequest_a632381deeb6b78a7742e321433b08605}} 
+\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} {\bfseries \+\_\+request\+Type}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_aabd51d317a3a259afdb2b14e06a58124}\label{classnetwork_1_1HttpRequest_aabd51d317a3a259afdb2b14e06a58124}} 
+std\+::string \hyperlink{classnetwork_1_1HttpRequest_aabd51d317a3a259afdb2b14e06a58124}{\+\_\+url}
+\begin{DoxyCompactList}\small\item\em k\+Http\+Request\+Get, k\+Http\+Request\+Post or other enums \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ad575ec6662399d734a35ac456a40da91}\label{classnetwork_1_1HttpRequest_ad575ec6662399d734a35ac456a40da91}} 
+std\+::vector$<$ char $>$ \hyperlink{classnetwork_1_1HttpRequest_ad575ec6662399d734a35ac456a40da91}{\+\_\+request\+Data}
+\begin{DoxyCompactList}\small\item\em target url that this request is sent to \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a42bffce54b8aa2a207bb5de697bd48e7}\label{classnetwork_1_1HttpRequest_a42bffce54b8aa2a207bb5de697bd48e7}} 
+std\+::string \hyperlink{classnetwork_1_1HttpRequest_a42bffce54b8aa2a207bb5de697bd48e7}{\+\_\+tag}
+\begin{DoxyCompactList}\small\item\em used for P\+O\+ST \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a9719091a92701653976b93dcd686495e}\label{classnetwork_1_1HttpRequest_a9719091a92701653976b93dcd686495e}} 
+\hyperlink{classRef}{Ref} $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a9719091a92701653976b93dcd686495e}{\+\_\+p\+Target}
+\begin{DoxyCompactList}\small\item\em user defined tag, to identify different requests in response callback \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a9087f937d342396874a1ced1123e5ceb}\label{classnetwork_1_1HttpRequest_a9087f937d342396874a1ced1123e5ceb}} 
+S\+E\+L\+\_\+\+Http\+Response \hyperlink{classnetwork_1_1HttpRequest_a9087f937d342396874a1ced1123e5ceb}{\+\_\+p\+Selector}
+\begin{DoxyCompactList}\small\item\em callback target of p\+Selector function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a436ad53072c69a77ce7bc3c06561d0e2}\label{classnetwork_1_1HttpRequest_a436ad53072c69a77ce7bc3c06561d0e2}} 
+cc\+Http\+Request\+Callback \hyperlink{classnetwork_1_1HttpRequest_a436ad53072c69a77ce7bc3c06561d0e2}{\+\_\+p\+Callback}
+\begin{DoxyCompactList}\small\item\em callback function, e.\+g. My\+Layer\+::on\+Http\+Response(\+Http\+Client $\ast$sender, Http\+Response $\ast$ response) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a6d152570c93a25ba63f2cfa8b4de1b74}\label{classnetwork_1_1HttpRequest_a6d152570c93a25ba63f2cfa8b4de1b74}} 
+void $\ast$ \hyperlink{classnetwork_1_1HttpRequest_a6d152570c93a25ba63f2cfa8b4de1b74}{\+\_\+p\+User\+Data}
+\begin{DoxyCompactList}\small\item\em C++11 style callbacks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a3641519765b2647452bf982171ed6375}\label{classnetwork_1_1HttpRequest_a3641519765b2647452bf982171ed6375}} 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classnetwork_1_1HttpRequest_a3641519765b2647452bf982171ed6375}{\+\_\+headers}
+\begin{DoxyCompactList}\small\item\em You can add your customed data here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines the object which users must packed for \hyperlink{classnetwork_1_1HttpClient_a912e8ba506a485bf5fcc2d06293f118b}{Http\+Client\+::send(\+Http\+Request$\ast$)} method. Please refer to tests/test-\/cpp/\+Classes/\+Extension\+Test/\+Network\+Test/\+Http\+Client\+Test.\+cpp as a sample \begin{DoxySince}{Since}
+v2.\+0.\+2
+\end{DoxySince}
+NA 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}\label{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!Type@{Type}}
+\index{Type@{Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{network\+::\+Http\+Request\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} type enum used in the \hyperlink{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}{Http\+Request\+::set\+Request\+Type}. \mbox{\Hypertarget{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}\label{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!Type@{Type}}
+\index{Type@{Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{network\+::\+Http\+Request\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} type enum used in the \hyperlink{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}{Http\+Request\+::set\+Request\+Type}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}\label{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!Http\+Request@{Http\+Request}}
+\index{Http\+Request@{Http\+Request}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{Http\+Request()}{HttpRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily network\+::\+Http\+Request\+::\+Http\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. Because \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object will be used between UI thread and network thread, request\+Obj-\/$>$\hyperlink{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}{autorelease()} is forbidden to avoid crashes in \hyperlink{classAutoreleasePool}{Autorelease\+Pool} new/retain/release still works, which means you need to release it manually Please refer to Http\+Request\+Test.\+cpp to find its usage. \mbox{\Hypertarget{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}\label{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!````~Http\+Request@{$\sim$\+Http\+Request}}
+\index{````~Http\+Request@{$\sim$\+Http\+Request}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{$\sim$\+Http\+Request()}{~HttpRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual network\+::\+Http\+Request\+::$\sim$\+Http\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor. \mbox{\Hypertarget{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}\label{classnetwork_1_1HttpRequest_ae2e924419ee17ce1bbc87f0122688bb4}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!Http\+Request@{Http\+Request}}
+\index{Http\+Request@{Http\+Request}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{Http\+Request()}{HttpRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily network\+::\+Http\+Request\+::\+Http\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. Because \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object will be used between UI thread and network thread, request\+Obj-\/$>$\hyperlink{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}{autorelease()} is forbidden to avoid crashes in \hyperlink{classAutoreleasePool}{Autorelease\+Pool} new/retain/release still works, which means you need to release it manually Please refer to Http\+Request\+Test.\+cpp to find its usage. \mbox{\Hypertarget{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}\label{classnetwork_1_1HttpRequest_aeb9ba7fdc3fef6237d611fc9af752bad}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!````~Http\+Request@{$\sim$\+Http\+Request}}
+\index{````~Http\+Request@{$\sim$\+Http\+Request}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{$\sim$\+Http\+Request()}{~HttpRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual network\+::\+Http\+Request\+::$\sim$\+Http\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}\label{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!autorelease@{autorelease}}
+\index{autorelease@{autorelease}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{autorelease()}{autorelease()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRef}{Ref}$\ast$ network\+::\+Http\+Request\+::autorelease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override autorelease method to avoid developers to call it. If this function was called, it would trigger assert in debug mode
+
+\begin{DoxyReturn}{Returns}
+Ref$\ast$ always return nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}\label{classnetwork_1_1HttpRequest_a0fc06041ec6a34d4f92c786a99a91a33}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!autorelease@{autorelease}}
+\index{autorelease@{autorelease}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{autorelease()}{autorelease()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRef}{Ref}$\ast$ network\+::\+Http\+Request\+::autorelease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override autorelease method to avoid developers to call it. If this function was called, it would trigger assert in debug mode
+
+\begin{DoxyReturn}{Returns}
+Ref$\ast$ always return nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}\label{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Callback@{get\+Callback}}
+\index{get\+Callback@{get\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Callback()}{getCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const cc\+Http\+Request\+Callback\& network\+::\+Http\+Request\+::get\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get cc\+Http\+Request\+Callback callback function.
+
+\begin{DoxyReturn}{Returns}
+const cc\+Http\+Request\+Callback\& cc\+Http\+Request\+Callback callback function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}\label{classnetwork_1_1HttpRequest_abc46429ca35e9585ddb0a96a744ecee2}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Callback@{get\+Callback}}
+\index{get\+Callback@{get\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Callback()}{getCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const cc\+Http\+Request\+Callback\& network\+::\+Http\+Request\+::get\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get cc\+Http\+Request\+Callback callback function.
+
+\begin{DoxyReturn}{Returns}
+const cc\+Http\+Request\+Callback\& cc\+Http\+Request\+Callback callback function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}\label{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Headers@{get\+Headers}}
+\index{get\+Headers@{get\+Headers}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Headers()}{getHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ network\+::\+Http\+Request\+::get\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get custom headers.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ the string vector of custom-\/defined headers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}\label{classnetwork_1_1HttpRequest_a3555ebc2bb79d38bf80a36ab9d979e6a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Headers@{get\+Headers}}
+\index{get\+Headers@{get\+Headers}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Headers()}{getHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ network\+::\+Http\+Request\+::get\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get custom headers.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ the string vector of custom-\/defined headers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}\label{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Data@{get\+Request\+Data}}
+\index{get\+Request\+Data@{get\+Request\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Data()}{getRequestData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char$\ast$ network\+::\+Http\+Request\+::get\+Request\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the request data pointer of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+char$\ast$ the request data pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}\label{classnetwork_1_1HttpRequest_a13f6e9e055afd00d0f5ff3be2d791858}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Data@{get\+Request\+Data}}
+\index{get\+Request\+Data@{get\+Request\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Data()}{getRequestData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char$\ast$ network\+::\+Http\+Request\+::get\+Request\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the request data pointer of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+char$\ast$ the request data pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}\label{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Data\+Size@{get\+Request\+Data\+Size}}
+\index{get\+Request\+Data\+Size@{get\+Request\+Data\+Size}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Data\+Size()}{getRequestDataSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t network\+::\+Http\+Request\+::get\+Request\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the size of request data
+
+\begin{DoxyReturn}{Returns}
+ssize\+\_\+t the size of request data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}\label{classnetwork_1_1HttpRequest_a3e78c2a4f271bb2e5fb8f30e965d319f}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Data\+Size@{get\+Request\+Data\+Size}}
+\index{get\+Request\+Data\+Size@{get\+Request\+Data\+Size}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Data\+Size()}{getRequestDataSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t network\+::\+Http\+Request\+::get\+Request\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the size of request data
+
+\begin{DoxyReturn}{Returns}
+ssize\+\_\+t the size of request data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}\label{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Type@{get\+Request\+Type}}
+\index{get\+Request\+Type@{get\+Request\+Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Type()}{getRequestType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} network\+::\+Http\+Request\+::get\+Request\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the request type of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Http\+Request\+::\+Type}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}\label{classnetwork_1_1HttpRequest_ad9faf7f8b3f7a86a94f650271eea5442}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Request\+Type@{get\+Request\+Type}}
+\index{get\+Request\+Type@{get\+Request\+Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Type()}{getRequestType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type} network\+::\+Http\+Request\+::get\+Request\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the request type of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Http\+Request\+::\+Type}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}\label{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Selector@{get\+Selector}}
+\index{get\+Selector@{get\+Selector}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Selector()}{getSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} network\+::\+Http\+Request\+::get\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} object by the \+\_\+p\+Selector.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} the \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}\label{classnetwork_1_1HttpRequest_abe07bda45e38e73f220bf9eb64ea7f85}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Selector@{get\+Selector}}
+\index{get\+Selector@{get\+Selector}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Selector()}{getSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} network\+::\+Http\+Request\+::get\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} object by the \+\_\+p\+Selector.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} the \hyperlink{classnetwork_1_1HttpRequest_1_1__prxy}{\+\_\+prxy} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}\label{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+Http\+Request\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the string tag to identify the request. The best practice is to use it in your My\+Class\+::on\+My\+Http\+Request\+Completed(sender, Http\+Response$\ast$) callback.
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer of \+\_\+tag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}\label{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+Http\+Request\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the string tag to identify the request. The best practice is to use it in your My\+Class\+::on\+My\+Http\+Request\+Completed(sender, Http\+Response$\ast$) callback.
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer of \+\_\+tag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}\label{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Target@{get\+Target}}
+\index{get\+Target@{get\+Target}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Target()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRef}{Ref}$\ast$ network\+::\+Http\+Request\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the target of callback selector function, mainly used by \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}.
+
+\begin{DoxyReturn}{Returns}
+Ref$\ast$ the target of callback selector function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}\label{classnetwork_1_1HttpRequest_ac372c9d736add6a9c5bdcbfda7f7f1f5}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Target@{get\+Target}}
+\index{get\+Target@{get\+Target}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Target()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRef}{Ref}$\ast$ network\+::\+Http\+Request\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the target of callback selector function, mainly used by \hyperlink{classnetwork_1_1HttpClient}{Http\+Client}.
+
+\begin{DoxyReturn}{Returns}
+Ref$\ast$ the target of callback selector function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}\label{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Url@{get\+Url}}
+\index{get\+Url@{get\+Url}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Url()}{getUrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+Http\+Request\+::get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the url address of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer of \+\_\+url. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}\label{classnetwork_1_1HttpRequest_a9379bae7239cf005675dfbec1db0134f}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+Url@{get\+Url}}
+\index{get\+Url@{get\+Url}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+Url()}{getUrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+Http\+Request\+::get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the url address of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer of \+\_\+url. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}\label{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+User\+Data@{get\+User\+Data}}
+\index{get\+User\+Data@{get\+User\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+User\+Data()}{getUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ network\+::\+Http\+Request\+::get\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the user-\/customed data pointer which were pre-\/setted. Don\textquotesingle{}t forget to delete it. Http\+Client/\+Http\+Response/\+Http\+Request will do nothing with this pointer.
+
+\begin{DoxyReturn}{Returns}
+void$\ast$ the pointer of user-\/customed data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}\label{classnetwork_1_1HttpRequest_a54c3f127831cbe5ad995396a100972d6}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!get\+User\+Data@{get\+User\+Data}}
+\index{get\+User\+Data@{get\+User\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{get\+User\+Data()}{getUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void$\ast$ network\+::\+Http\+Request\+::get\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the user-\/customed data pointer which were pre-\/setted. Don\textquotesingle{}t forget to delete it. Http\+Client/\+Http\+Response/\+Http\+Request will do nothing with this pointer.
+
+\begin{DoxyReturn}{Returns}
+void$\ast$ the pointer of user-\/customed data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}\label{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Headers@{set\+Headers}}
+\index{set\+Headers@{set\+Headers}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Headers()}{setHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Headers (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set custom-\/defined headers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em headers} & The string vector of custom-\/defined headers. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}\label{classnetwork_1_1HttpRequest_aeb33f773e9e3f18864f1945fa3e4e2c4}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Headers@{set\+Headers}}
+\index{set\+Headers@{set\+Headers}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Headers()}{setHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Headers (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set custom-\/defined headers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em headers} & The string vector of custom-\/defined headers. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}\label{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Request\+Data@{set\+Request\+Data}}
+\index{set\+Request\+Data@{set\+Request\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Request\+Data()}{setRequestData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Request\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the request data of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer of request data, it support binary data. \\
+\hline
+{\em len} & the size of request data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}\label{classnetwork_1_1HttpRequest_a819fd1cea3e4772de3ab45c6135c29e5}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Request\+Data@{set\+Request\+Data}}
+\index{set\+Request\+Data@{set\+Request\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Request\+Data()}{setRequestData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Request\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the request data of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer of request data, it support binary data. \\
+\hline
+{\em len} & the size of request data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}\label{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Request\+Type@{set\+Request\+Type}}
+\index{set\+Request\+Type@{set\+Request\+Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Request\+Type()}{setRequestType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Request\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set request type of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object before being sent,now it support the enum value of \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Http\+Request\+::\+Type}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the request type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}\label{classnetwork_1_1HttpRequest_a07865a1628998a33a57e38cfe254e4cc}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Request\+Type@{set\+Request\+Type}}
+\index{set\+Request\+Type@{set\+Request\+Type}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Request\+Type()}{setRequestType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Request\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Type}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set request type of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object before being sent,now it support the enum value of \hyperlink{classnetwork_1_1HttpRequest_abcc6d7ee2ea91a721d32fd6d396743fe}{Http\+Request\+::\+Type}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the request type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}\label{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{p\+Target,  }\item[{S\+E\+L\+\_\+\+Call\+Func\+ND}]{p\+Selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the target and related callback selector. When response come back, it would call (p\+Target-\/$>$$\ast$p\+Selector) to process something.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Target} & the target object pointer. \\
+\hline
+{\em p\+Selector} & the callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}\label{classnetwork_1_1HttpRequest_a24620015312b35c28a9cb5300d969393}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{p\+Target,  }\item[{S\+E\+L\+\_\+\+Call\+Func\+ND}]{p\+Selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the target and related callback selector. When response come back, it would call (p\+Target-\/$>$$\ast$p\+Selector) to process something.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Target} & the target object pointer. \\
+\hline
+{\em p\+Selector} & the callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}\label{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{p\+Target,  }\item[{S\+E\+L\+\_\+\+Http\+Response}]{p\+Selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the target and related callback selector of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. When response come back, we would call (p\+Target-\/$>$$\ast$p\+Selector) to process response data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Target} & the target object pointer. \\
+\hline
+{\em p\+Selector} & the S\+E\+L\+\_\+\+Http\+Response function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}\label{classnetwork_1_1HttpRequest_a58c485555dd39dfdcbc641cfb6d3fb9a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{p\+Target,  }\item[{S\+E\+L\+\_\+\+Http\+Response}]{p\+Selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the target and related callback selector of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. When response come back, we would call (p\+Target-\/$>$$\ast$p\+Selector) to process response data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Target} & the target object pointer. \\
+\hline
+{\em p\+Selector} & the S\+E\+L\+\_\+\+Http\+Response function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}\label{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{const cc\+Http\+Request\+Callback \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set response callback function of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. When response come back, we would call \+\_\+p\+Callback to process response data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & the cc\+Http\+Request\+Callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}\label{classnetwork_1_1HttpRequest_adc68acc891305b3066f10f4763e03748}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Response\+Callback@{set\+Response\+Callback}}
+\index{set\+Response\+Callback@{set\+Response\+Callback}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Response\+Callback()}{setResponseCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Response\+Callback (\begin{DoxyParamCaption}\item[{const cc\+Http\+Request\+Callback \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set response callback function of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. When response come back, we would call \+\_\+p\+Callback to process response data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & the cc\+Http\+Request\+Callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}\label{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a string tag to identify your request. This tag can be found in Http\+Response-\/$>$get\+Http\+Request-\/$>$\hyperlink{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}{get\+Tag()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the string object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}\label{classnetwork_1_1HttpRequest_a0e4f8ff5b153e624857183be498ef33d}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a string tag to identify your request. This tag can be found in Http\+Response-\/$>$get\+Http\+Request-\/$>$\hyperlink{classnetwork_1_1HttpRequest_a6f8026156353b462ecfa2884e0b83421}{get\+Tag()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the string object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}\label{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Url@{set\+Url}}
+\index{set\+Url@{set\+Url}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Url()}{setUrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the url address of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. The url value could be like these\+: \char`\"{}http\+://httpbin.\+org/ip\char`\"{} or \char`\"{}https\+://httpbin.\+org/get\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & the string object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}\label{classnetwork_1_1HttpRequest_a2f7663791f980b15c90c34acf281fe4a}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+Url@{set\+Url}}
+\index{set\+Url@{set\+Url}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+Url()}{setUrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+Url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the url address of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. The url value could be like these\+: \char`\"{}http\+://httpbin.\+org/ip\char`\"{} or \char`\"{}https\+://httpbin.\+org/get\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & the string object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}\label{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+User\+Data@{set\+User\+Data}}
+\index{set\+User\+Data@{set\+User\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+User\+Data()}{setUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+User\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+User\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set user-\/customed data of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. You can attach a customed data in each request, and get it back in response callback. But you need to new/delete the data pointer manually.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+User\+Data} & the string pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}\label{classnetwork_1_1HttpRequest_a7afec412b6f1fb5ab420212f7889313d}} 
+\index{network\+::\+Http\+Request@{network\+::\+Http\+Request}!set\+User\+Data@{set\+User\+Data}}
+\index{set\+User\+Data@{set\+User\+Data}!network\+::\+Http\+Request@{network\+::\+Http\+Request}}
+\subsubsection{\texorpdfstring{set\+User\+Data()}{setUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+Http\+Request\+::set\+User\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+User\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set user-\/customed data of \hyperlink{classnetwork_1_1HttpRequest}{Http\+Request} object. You can attach a customed data in each request, and get it back in response callback. But you need to new/delete the data pointer manually.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+User\+Data} & the string pointer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Http\+Request.\+h\end{DoxyCompactItemize}

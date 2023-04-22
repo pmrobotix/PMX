@@ -1,0 +1,306 @@
+\hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{}\section{org.\+cocos2dx.\+plugin.\+util.\+Base64 Class Reference}
+\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}\index{org.\+cocos2dx.\+plugin.\+util.\+Base64@{org.\+cocos2dx.\+plugin.\+util.\+Base64}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4d965b06e97270e1f3989e73bdad171e}{encode} (byte\mbox{[}$\,$\mbox{]} source)
+\item 
+static String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4726c7d8d38436e17b5c49ec5d028132}{encode\+Web\+Safe} (byte\mbox{[}$\,$\mbox{]} source, boolean do\+Padding)
+\item 
+static String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a70461ddf22199c83aeca320cec399187}{encode} (byte\mbox{[}$\,$\mbox{]} source, int off, int len, byte\mbox{[}$\,$\mbox{]} alphabet, boolean do\+Padding)
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aecdf0ebe1048a7dc60c3d0023a023489}{encode} (byte\mbox{[}$\,$\mbox{]} source, int off, int len, byte\mbox{[}$\,$\mbox{]} alphabet, int max\+Line\+Length)
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ad2bac3d895c8b36bb6141dd142c8e77e}{decode} (String s)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a0df7e57a3859fb99da3a700402bb2155}{decode\+Web\+Safe} (String s)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_afc764d12c8b0ecf6cfcd9a7b34c44e29}{decode} (byte\mbox{[}$\,$\mbox{]} source)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aaf8f202924a5e06f73ba1b111db69346}{decode\+Web\+Safe} (byte\mbox{[}$\,$\mbox{]} source)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a7c98b97ad848ef0e656b81020bf51d72}{decode} (byte\mbox{[}$\,$\mbox{]} source, int off, int len)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a8de5b08172c34db233e20982ff553222}{decode\+Web\+Safe} (byte\mbox{[}$\,$\mbox{]} source, int off, int len)  throws Base64\+Decoder\+Exception 
+\item 
+static byte \mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a427da971e6fa682edbab8dc17a282342}{decode} (byte\mbox{[}$\,$\mbox{]} source, int off, int len, byte\mbox{[}$\,$\mbox{]} decodabet)  throws Base64\+Decoder\+Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ae470fc5366fc836525ed00c85cff4d47}{E\+N\+C\+O\+DE} = true
+\item 
+static final boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ac34d0f67dded79aa4e9439320e741d45}{D\+E\+C\+O\+DE} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} converter class. This code is not a complete M\+I\+ME encoder; it simply converts binary data to base64 data and back.
+
+Note \hyperlink{}{Char\+Base64} is a G\+W\+T-\/compatible implementation of this class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ad2bac3d895c8b36bb6141dd142c8e77e}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ad2bac3d895c8b36bb6141dd142c8e77e}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode@{decode}}
+\index{decode@{decode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode()}{decode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes data from \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to decode (decoded in default encoding) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded data 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+4 
+\end{DoxySince}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_afc764d12c8b0ecf6cfcd9a7b34c44e29}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_afc764d12c8b0ecf6cfcd9a7b34c44e29}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode@{decode}}
+\index{decode@{decode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode()}{decode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content in byte array format and returns the decoded byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} encoded data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decoded data 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+3 
+\end{DoxySince}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a7c98b97ad848ef0e656b81020bf51d72}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a7c98b97ad848ef0e656b81020bf51d72}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode@{decode}}
+\index{decode@{decode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode()}{decode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{off,  }\item[{int}]{len }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content in byte array format and returns the decoded byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} encoded data \\
+\hline
+{\em off} & the offset of where to begin decoding \\
+\hline
+{\em len} & the length of characters to decode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decoded data 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+3 
+\end{DoxySince}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a427da971e6fa682edbab8dc17a282342}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a427da971e6fa682edbab8dc17a282342}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode@{decode}}
+\index{decode@{decode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode()}{decode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{off,  }\item[{int}]{len,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{decodabet }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content using the supplied decodabet and returns the decoded byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} encoded data \\
+\hline
+{\em off} & the offset of where to begin decoding \\
+\hline
+{\em len} & the length of characters to decode \\
+\hline
+{\em decodabet} & the decodabet for decoding \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decoded data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a0df7e57a3859fb99da3a700402bb2155}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a0df7e57a3859fb99da3a700402bb2155}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode\+Web\+Safe@{decode\+Web\+Safe}}
+\index{decode\+Web\+Safe@{decode\+Web\+Safe}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode\+Web\+Safe()}{decodeWebSafe()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode\+Web\+Safe (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes data from web safe \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation. Web safe encoding uses \textquotesingle{}-\/\textquotesingle{} instead of \textquotesingle{}+\textquotesingle{}, \textquotesingle{}\+\_\+\textquotesingle{} instead of \textquotesingle{}/\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to decode (decoded in default encoding) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aaf8f202924a5e06f73ba1b111db69346}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aaf8f202924a5e06f73ba1b111db69346}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode\+Web\+Safe@{decode\+Web\+Safe}}
+\index{decode\+Web\+Safe@{decode\+Web\+Safe}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode\+Web\+Safe()}{decodeWebSafe()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode\+Web\+Safe (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes web safe \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content in byte array format and returns the decoded data. Web safe encoding uses \textquotesingle{}-\/\textquotesingle{} instead of \textquotesingle{}+\textquotesingle{}, \textquotesingle{}\+\_\+\textquotesingle{} instead of \textquotesingle{}/\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the string to decode (decoded in default encoding) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a8de5b08172c34db233e20982ff553222}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a8de5b08172c34db233e20982ff553222}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!decode\+Web\+Safe@{decode\+Web\+Safe}}
+\index{decode\+Web\+Safe@{decode\+Web\+Safe}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{decode\+Web\+Safe()}{decodeWebSafe()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+decode\+Web\+Safe (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{off,  }\item[{int}]{len }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64DecoderException}{Base64\+Decoder\+Exception}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Decodes web safe \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} content in byte array format and returns the decoded byte array. Web safe encoding uses \textquotesingle{}-\/\textquotesingle{} instead of \textquotesingle{}+\textquotesingle{}, \textquotesingle{}\+\_\+\textquotesingle{} instead of \textquotesingle{}/\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} encoded data \\
+\hline
+{\em off} & the offset of where to begin decoding \\
+\hline
+{\em len} & the length of characters to decode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decoded data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4d965b06e97270e1f3989e73bdad171e}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4d965b06e97270e1f3989e73bdad171e}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!encode@{encode}}
+\index{encode@{encode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{encode()}{encode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static String org.\+cocos2dx.\+plugin.\+util.\+Base64.\+encode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Encodes a byte array into \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation. Equivalent to calling 
+\begin{DoxyCode}
+encodeBytes(source, 0, source.length) 
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The data to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+4 
+\end{DoxySince}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a70461ddf22199c83aeca320cec399187}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a70461ddf22199c83aeca320cec399187}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!encode@{encode}}
+\index{encode@{encode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{encode()}{encode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static String org.\+cocos2dx.\+plugin.\+util.\+Base64.\+encode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{off,  }\item[{int}]{len,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{alphabet,  }\item[{boolean}]{do\+Padding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Encodes a byte array into \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the data to convert \\
+\hline
+{\em off} & offset in array where conversion should begin \\
+\hline
+{\em len} & length of data to convert \\
+\hline
+{\em alphabet} & the encoding alphabet \\
+\hline
+{\em do\+Padding} & is
+\begin{DoxyCode}
+\textcolor{keyword}{true} 
+\end{DoxyCode}
+ to pad result with \textquotesingle{}=\textquotesingle{} chars if it does not fall on 3 byte boundaries \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+4 
+\end{DoxySince}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aecdf0ebe1048a7dc60c3d0023a023489}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_aecdf0ebe1048a7dc60c3d0023a023489}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!encode@{encode}}
+\index{encode@{encode}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{encode()}{encode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} org.\+cocos2dx.\+plugin.\+util.\+Base64.\+encode (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{off,  }\item[{int}]{len,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{alphabet,  }\item[{int}]{max\+Line\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Encodes a byte array into \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the data to convert \\
+\hline
+{\em off} & offset in array where conversion should begin \\
+\hline
+{\em len} & length of data to convert \\
+\hline
+{\em alphabet} & is the encoding alphabet \\
+\hline
+{\em max\+Line\+Length} & maximum length of one line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the B\+A\+S\+E64-\/encoded byte array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4726c7d8d38436e17b5c49ec5d028132}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_a4726c7d8d38436e17b5c49ec5d028132}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!encode\+Web\+Safe@{encode\+Web\+Safe}}
+\index{encode\+Web\+Safe@{encode\+Web\+Safe}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{encode\+Web\+Safe()}{encodeWebSafe()}}
+{\footnotesize\ttfamily static String org.\+cocos2dx.\+plugin.\+util.\+Base64.\+encode\+Web\+Safe (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{boolean}]{do\+Padding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Encodes a byte array into web safe \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64}{Base64} notation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The data to convert \\
+\hline
+{\em do\+Padding} & is
+\begin{DoxyCode}
+\textcolor{keyword}{true} 
+\end{DoxyCode}
+ to pad result with \textquotesingle{}=\textquotesingle{} chars if it does not fall on 3 byte boundaries \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ac34d0f67dded79aa4e9439320e741d45}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ac34d0f67dded79aa4e9439320e741d45}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!D\+E\+C\+O\+DE@{D\+E\+C\+O\+DE}}
+\index{D\+E\+C\+O\+DE@{D\+E\+C\+O\+DE}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{D\+E\+C\+O\+DE}{DECODE}}
+{\footnotesize\ttfamily final boolean org.\+cocos2dx.\+plugin.\+util.\+Base64.\+D\+E\+C\+O\+DE = false\hspace{0.3cm}{\ttfamily [static]}}
+
+Specify decoding (value is
+\begin{DoxyCode}
+\textcolor{keyword}{false} 
+\end{DoxyCode}
+ ). \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ae470fc5366fc836525ed00c85cff4d47}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Base64_ae470fc5366fc836525ed00c85cff4d47}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}!E\+N\+C\+O\+DE@{E\+N\+C\+O\+DE}}
+\index{E\+N\+C\+O\+DE@{E\+N\+C\+O\+DE}!org\+::cocos2dx\+::plugin\+::util\+::\+Base64@{org\+::cocos2dx\+::plugin\+::util\+::\+Base64}}
+\subsubsection{\texorpdfstring{E\+N\+C\+O\+DE}{ENCODE}}
+{\footnotesize\ttfamily final boolean org.\+cocos2dx.\+plugin.\+util.\+Base64.\+E\+N\+C\+O\+DE = true\hspace{0.3cm}{\ttfamily [static]}}
+
+Specify encoding (value is
+\begin{DoxyCode}
+\textcolor{keyword}{true} 
+\end{DoxyCode}
+ ). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/googleplay/proj.\+android/src/org/cocos2dx/plugin/util/Base64.\+java\end{DoxyCompactItemize}

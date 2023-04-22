@@ -1,0 +1,374 @@
+\hypertarget{classRenderQueue}{}\section{Render\+Queue Class Reference}
+\label{classRenderQueue}\index{Render\+Queue@{Render\+Queue}}
+
+
+{\ttfamily \#include $<$C\+C\+Renderer.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} \{ \newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG} = 0, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}{O\+P\+A\+Q\+U\+E\+\_\+3D} = 1, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D} = 2, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO} = 3, 
+\newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS} = 4, 
+{\bfseries Q\+U\+E\+U\+E\+\_\+\+C\+O\+U\+NT} = 5, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG} = 0, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}{O\+P\+A\+Q\+U\+E\+\_\+3D} = 1, 
+\newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D} = 2, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO} = 3, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS} = 4, 
+{\bfseries Q\+U\+E\+U\+E\+\_\+\+C\+O\+U\+NT} = 5
+ \}
+\item 
+enum \hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} \{ \newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG} = 0, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}{O\+P\+A\+Q\+U\+E\+\_\+3D} = 1, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D} = 2, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO} = 3, 
+\newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS} = 4, 
+{\bfseries Q\+U\+E\+U\+E\+\_\+\+C\+O\+U\+NT} = 5, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG} = 0, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}{O\+P\+A\+Q\+U\+E\+\_\+3D} = 1, 
+\newline
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D} = 2, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO} = 3, 
+\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS} = 4, 
+{\bfseries Q\+U\+E\+U\+E\+\_\+\+C\+O\+U\+NT} = 5
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}{Render\+Queue} ()
+\item 
+void \hyperlink{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}{push\+\_\+back} (\hyperlink{classRenderCommand}{Render\+Command} $\ast$command)
+\item 
+ssize\+\_\+t \hyperlink{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}{size} () const
+\item 
+void \hyperlink{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}{sort} ()
+\item 
+\hyperlink{classRenderCommand}{Render\+Command} $\ast$ \hyperlink{classRenderQueue_ac5131e58ffb15d488fb752fb4a6fa791}{operator\mbox{[}$\,$\mbox{]}} (ssize\+\_\+t index) const
+\item 
+void \hyperlink{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}{clear} ()
+\item 
+void \hyperlink{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}{realloc} (size\+\_\+t reserve\+Size)
+\item 
+std\+::vector$<$ \hyperlink{classRenderCommand}{Render\+Command} $\ast$ $>$ \& \hyperlink{classRenderQueue_af6486c291c439094adcd12d197a8f200}{get\+Sub\+Queue} (\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} group)
+\item 
+ssize\+\_\+t \hyperlink{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}{get\+Sub\+Queue\+Size} (\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} group) const
+\item 
+void \hyperlink{classRenderQueue_a69e89af620d29b96de300710c39ea293}{save\+Render\+State} ()
+\item 
+void \hyperlink{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}{restore\+Render\+State} ()
+\item 
+\hyperlink{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}{Render\+Queue} ()
+\item 
+void \hyperlink{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}{push\+\_\+back} (\hyperlink{classRenderCommand}{Render\+Command} $\ast$command)
+\item 
+ssize\+\_\+t \hyperlink{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}{size} () const
+\item 
+void \hyperlink{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}{sort} ()
+\item 
+\hyperlink{classRenderCommand}{Render\+Command} $\ast$ \hyperlink{classRenderQueue_adf360589819adb5ec72a950d20d2ae22}{operator\mbox{[}$\,$\mbox{]}} (ssize\+\_\+t index) const
+\item 
+void \hyperlink{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}{clear} ()
+\item 
+void \hyperlink{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}{realloc} (size\+\_\+t reserve\+Size)
+\item 
+std\+::vector$<$ \hyperlink{classRenderCommand}{Render\+Command} $\ast$ $>$ \& \hyperlink{classRenderQueue_af6486c291c439094adcd12d197a8f200}{get\+Sub\+Queue} (\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} group)
+\item 
+ssize\+\_\+t \hyperlink{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}{get\+Sub\+Queue\+Size} (\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP} group) const
+\item 
+void \hyperlink{classRenderQueue_a69e89af620d29b96de300710c39ea293}{save\+Render\+State} ()
+\item 
+void \hyperlink{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}{restore\+Render\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classRenderCommand}{Render\+Command} $\ast$ $>$ \hyperlink{classRenderQueue_ae188745e0ea9c53f8e4f5027d3f0ceb2}{\+\_\+commands} \mbox{[}Q\+U\+E\+U\+E\+\_\+\+C\+O\+U\+NT\mbox{]}
+\item 
+bool \hyperlink{classRenderQueue_a559ae66cabf2fe661c2d32d9f1ea77c7}{\+\_\+is\+Cull\+Enabled}
+\item 
+bool \hyperlink{classRenderQueue_a6ee087bd3171e79953ceca457f2c58e1}{\+\_\+is\+Depth\+Enabled}
+\item 
+G\+Lboolean \hyperlink{classRenderQueue_af8a6675da62368094d61396ef6987877}{\+\_\+is\+Depth\+Write}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that knows how to sort {\ttfamily \hyperlink{classRenderCommand}{Render\+Command}} objects. Since the commands that have {\ttfamily z == 0} are \char`\"{}pushed back\char`\"{} in the correct order, the only {\ttfamily \hyperlink{classRenderCommand}{Render\+Command}} objects that need to be sorted, are the ones that have {\ttfamily z $<$ 0} and {\ttfamily z $>$ 0}. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}} 
+\index{Render\+Queue@{Render\+Queue}!Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP@{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}
+\index{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP@{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}{QUEUE\_GROUP}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Render\+Queue\+::\+Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}
+
+\hyperlink{classRenderCommand}{Render\+Command} will be divided into Queue Groups. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG&Objects with globalZ smaller than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}} 
+O\+P\+A\+Q\+U\+E\+\_\+3D&Opaque 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}} 
+T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D&Transparent 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO&2D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS&Objects with globalZ bigger than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG&Objects with globalZ smaller than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}} 
+O\+P\+A\+Q\+U\+E\+\_\+3D&Opaque 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}} 
+T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D&Transparent 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO&2D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS&Objects with globalZ bigger than 0. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}} 
+\index{Render\+Queue@{Render\+Queue}!Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP@{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}
+\index{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP@{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}{QUEUE\_GROUP}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Render\+Queue\+::\+Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}
+
+\hyperlink{classRenderCommand}{Render\+Command} will be divided into Queue Groups. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG&Objects with globalZ smaller than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}} 
+O\+P\+A\+Q\+U\+E\+\_\+3D&Opaque 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}} 
+T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D&Transparent 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO&2D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS&Objects with globalZ bigger than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea007a71d4a36a76a8cf3245f860940719}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+N\+EG&Objects with globalZ smaller than 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!O\+P\+A\+Q\+U\+E\+\_\+3D@{O\+P\+A\+Q\+U\+E\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854eab547d49374a5df7ced88f03810c2fed6}} 
+O\+P\+A\+Q\+U\+E\+\_\+3D&Opaque 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D@{T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea6613186e6bd47285eb20933cdefe0d00}} 
+T\+R\+A\+N\+S\+P\+A\+R\+E\+N\+T\+\_\+3D&Transparent 3D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea2324a4a46acd2ff3cda968d33a389c69}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+Z\+E\+RO&2D objects with 0 globalZ. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}!Render\+Queue@{Render\+Queue}}\index{Render\+Queue@{Render\+Queue}!G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS@{G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS}}}\mbox{\Hypertarget{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}\label{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854ea32525bc27584cb81b709016333a2b56f}} 
+G\+L\+O\+B\+A\+L\+Z\+\_\+\+P\+OS&Objects with globalZ bigger than 0. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}\label{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}} 
+\index{Render\+Queue@{Render\+Queue}!Render\+Queue@{Render\+Queue}}
+\index{Render\+Queue@{Render\+Queue}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{Render\+Queue()}{RenderQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Render\+Queue\+::\+Render\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. \mbox{\Hypertarget{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}\label{classRenderQueue_ae893f8a1ae83c2e55e85378ed92fd5b9}} 
+\index{Render\+Queue@{Render\+Queue}!Render\+Queue@{Render\+Queue}}
+\index{Render\+Queue@{Render\+Queue}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{Render\+Queue()}{RenderQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Render\+Queue\+::\+Render\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}\label{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}} 
+\index{Render\+Queue@{Render\+Queue}!clear@{clear}}
+\index{clear@{clear}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all rendered commands. \mbox{\Hypertarget{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}\label{classRenderQueue_a8f4c44eedd6d9cc788100022ed725568}} 
+\index{Render\+Queue@{Render\+Queue}!clear@{clear}}
+\index{clear@{clear}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all rendered commands. \mbox{\Hypertarget{classRenderQueue_af6486c291c439094adcd12d197a8f200}\label{classRenderQueue_af6486c291c439094adcd12d197a8f200}} 
+\index{Render\+Queue@{Render\+Queue}!get\+Sub\+Queue@{get\+Sub\+Queue}}
+\index{get\+Sub\+Queue@{get\+Sub\+Queue}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{get\+Sub\+Queue()}{getSubQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classRenderCommand}{Render\+Command}$\ast$$>$\& Render\+Queue\+::get\+Sub\+Queue (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a sub group of the render queue. \mbox{\Hypertarget{classRenderQueue_af6486c291c439094adcd12d197a8f200}\label{classRenderQueue_af6486c291c439094adcd12d197a8f200}} 
+\index{Render\+Queue@{Render\+Queue}!get\+Sub\+Queue@{get\+Sub\+Queue}}
+\index{get\+Sub\+Queue@{get\+Sub\+Queue}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{get\+Sub\+Queue()}{getSubQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classRenderCommand}{Render\+Command}$\ast$$>$\& Render\+Queue\+::get\+Sub\+Queue (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a sub group of the render queue. \mbox{\Hypertarget{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}\label{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}} 
+\index{Render\+Queue@{Render\+Queue}!get\+Sub\+Queue\+Size@{get\+Sub\+Queue\+Size}}
+\index{get\+Sub\+Queue\+Size@{get\+Sub\+Queue\+Size}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{get\+Sub\+Queue\+Size()}{getSubQueueSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Render\+Queue\+::get\+Sub\+Queue\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}]{group }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of render commands contained in a subqueue. \mbox{\Hypertarget{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}\label{classRenderQueue_a0e2d32f2bb26fac3c08b6a7e8d827b04}} 
+\index{Render\+Queue@{Render\+Queue}!get\+Sub\+Queue\+Size@{get\+Sub\+Queue\+Size}}
+\index{get\+Sub\+Queue\+Size@{get\+Sub\+Queue\+Size}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{get\+Sub\+Queue\+Size()}{getSubQueueSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Render\+Queue\+::get\+Sub\+Queue\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderQueue_a546a6ca0aa906f2fd8f86c698c76854e}{Q\+U\+E\+U\+E\+\_\+\+G\+R\+O\+UP}}]{group }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of render commands contained in a subqueue. \mbox{\Hypertarget{classRenderQueue_ac5131e58ffb15d488fb752fb4a6fa791}\label{classRenderQueue_ac5131e58ffb15d488fb752fb4a6fa791}} 
+\index{Render\+Queue@{Render\+Queue}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderCommand}{Render\+Command} $\ast$ Render\+Queue\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Treat sorted commands as an array, access them one by one. \mbox{\Hypertarget{classRenderQueue_adf360589819adb5ec72a950d20d2ae22}\label{classRenderQueue_adf360589819adb5ec72a950d20d2ae22}} 
+\index{Render\+Queue@{Render\+Queue}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderCommand}{Render\+Command}$\ast$ Render\+Queue\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Treat sorted commands as an array, access them one by one. \mbox{\Hypertarget{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}\label{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}} 
+\index{Render\+Queue@{Render\+Queue}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderCommand}{Render\+Command} $\ast$}]{command }\end{DoxyParamCaption})}
+
+Push a render\+Command into current renderqueue. \mbox{\Hypertarget{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}\label{classRenderQueue_adedac420d661ed5b32a8f47d9f6c842b}} 
+\index{Render\+Queue@{Render\+Queue}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderCommand}{Render\+Command} $\ast$}]{command }\end{DoxyParamCaption})}
+
+Push a render\+Command into current renderqueue. \mbox{\Hypertarget{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}\label{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}} 
+\index{Render\+Queue@{Render\+Queue}!realloc@{realloc}}
+\index{realloc@{realloc}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{realloc()}{realloc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::realloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{reserve\+Size }\end{DoxyParamCaption})}
+
+Realloc command queues and reserve with given size. Note\+: this clears any existing commands. \mbox{\Hypertarget{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}\label{classRenderQueue_a6a9e1c224b1c5d3c7ac92f9a3e14f23c}} 
+\index{Render\+Queue@{Render\+Queue}!realloc@{realloc}}
+\index{realloc@{realloc}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{realloc()}{realloc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::realloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{reserve\+Size }\end{DoxyParamCaption})}
+
+Realloc command queues and reserve with given size. Note\+: this clears any existing commands. \mbox{\Hypertarget{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}\label{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}} 
+\index{Render\+Queue@{Render\+Queue}!restore\+Render\+State@{restore\+Render\+State}}
+\index{restore\+Render\+State@{restore\+Render\+State}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{restore\+Render\+State()}{restoreRenderState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::restore\+Render\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restore the saved Depth\+State, Cull\+State, Depth\+Write\+State render state. \mbox{\Hypertarget{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}\label{classRenderQueue_a232643cb44bd75fd6ebdc5ef85ad4460}} 
+\index{Render\+Queue@{Render\+Queue}!restore\+Render\+State@{restore\+Render\+State}}
+\index{restore\+Render\+State@{restore\+Render\+State}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{restore\+Render\+State()}{restoreRenderState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::restore\+Render\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restore the saved Depth\+State, Cull\+State, Depth\+Write\+State render state. \mbox{\Hypertarget{classRenderQueue_a69e89af620d29b96de300710c39ea293}\label{classRenderQueue_a69e89af620d29b96de300710c39ea293}} 
+\index{Render\+Queue@{Render\+Queue}!save\+Render\+State@{save\+Render\+State}}
+\index{save\+Render\+State@{save\+Render\+State}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{save\+Render\+State()}{saveRenderState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::save\+Render\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save the current Depth\+State, Cull\+State, Depth\+Write\+State render state. \mbox{\Hypertarget{classRenderQueue_a69e89af620d29b96de300710c39ea293}\label{classRenderQueue_a69e89af620d29b96de300710c39ea293}} 
+\index{Render\+Queue@{Render\+Queue}!save\+Render\+State@{save\+Render\+State}}
+\index{save\+Render\+State@{save\+Render\+State}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{save\+Render\+State()}{saveRenderState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::save\+Render\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save the current Depth\+State, Cull\+State, Depth\+Write\+State render state. \mbox{\Hypertarget{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}\label{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}} 
+\index{Render\+Queue@{Render\+Queue}!size@{size}}
+\index{size@{size}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Render\+Queue\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the number of render commands. \mbox{\Hypertarget{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}\label{classRenderQueue_aadadee1f1d53d85fa2d91cad921652e4}} 
+\index{Render\+Queue@{Render\+Queue}!size@{size}}
+\index{size@{size}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Render\+Queue\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the number of render commands. \mbox{\Hypertarget{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}\label{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}} 
+\index{Render\+Queue@{Render\+Queue}!sort@{sort}}
+\index{sort@{sort}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{sort()}{sort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sort the render commands. \mbox{\Hypertarget{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}\label{classRenderQueue_a5dce2ab80620ec15c36ccdf2da1fd87a}} 
+\index{Render\+Queue@{Render\+Queue}!sort@{sort}}
+\index{sort@{sort}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{sort()}{sort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Queue\+::sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sort the render commands. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRenderQueue_ae188745e0ea9c53f8e4f5027d3f0ceb2}\label{classRenderQueue_ae188745e0ea9c53f8e4f5027d3f0ceb2}} 
+\index{Render\+Queue@{Render\+Queue}!\+\_\+commands@{\+\_\+commands}}
+\index{\+\_\+commands@{\+\_\+commands}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+commands}{\_commands}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classRenderCommand}{Render\+Command} $\ast$ $>$ Render\+Queue\+::\+\_\+commands\hspace{0.3cm}{\ttfamily [protected]}}
+
+The commands in the render queue. \mbox{\Hypertarget{classRenderQueue_a559ae66cabf2fe661c2d32d9f1ea77c7}\label{classRenderQueue_a559ae66cabf2fe661c2d32d9f1ea77c7}} 
+\index{Render\+Queue@{Render\+Queue}!\+\_\+is\+Cull\+Enabled@{\+\_\+is\+Cull\+Enabled}}
+\index{\+\_\+is\+Cull\+Enabled@{\+\_\+is\+Cull\+Enabled}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+is\+Cull\+Enabled}{\_isCullEnabled}}
+{\footnotesize\ttfamily bool Render\+Queue\+::\+\_\+is\+Cull\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+Cull state. \mbox{\Hypertarget{classRenderQueue_a6ee087bd3171e79953ceca457f2c58e1}\label{classRenderQueue_a6ee087bd3171e79953ceca457f2c58e1}} 
+\index{Render\+Queue@{Render\+Queue}!\+\_\+is\+Depth\+Enabled@{\+\_\+is\+Depth\+Enabled}}
+\index{\+\_\+is\+Depth\+Enabled@{\+\_\+is\+Depth\+Enabled}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+is\+Depth\+Enabled}{\_isDepthEnabled}}
+{\footnotesize\ttfamily bool Render\+Queue\+::\+\_\+is\+Depth\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+Depth test enable state. \mbox{\Hypertarget{classRenderQueue_af8a6675da62368094d61396ef6987877}\label{classRenderQueue_af8a6675da62368094d61396ef6987877}} 
+\index{Render\+Queue@{Render\+Queue}!\+\_\+is\+Depth\+Write@{\+\_\+is\+Depth\+Write}}
+\index{\+\_\+is\+Depth\+Write@{\+\_\+is\+Depth\+Write}!Render\+Queue@{Render\+Queue}}
+\subsubsection{\texorpdfstring{\+\_\+is\+Depth\+Write}{\_isDepthWrite}}
+{\footnotesize\ttfamily G\+Lboolean Render\+Queue\+::\+\_\+is\+Depth\+Write\hspace{0.3cm}{\ttfamily [protected]}}
+
+Depth buffer write state. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Renderer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Renderer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,141 @@
+\hypertarget{classPUColorAffector}{}\section{P\+U\+Color\+Affector Class Reference}
+\label{classPUColorAffector}\index{P\+U\+Color\+Affector@{P\+U\+Color\+Affector}}
+
+
+Inheritance diagram for P\+U\+Color\+Affector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classPUColorAffector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Color\+Affector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUColorAffector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a1e6bfa296a6738fb31513b0d1c7ac42c}\label{classPUColorAffector_a1e6bfa296a6738fb31513b0d1c7ac42c}} 
+enum {\bfseries Color\+Operation} \{ {\bfseries C\+A\+O\+\_\+\+M\+U\+L\+T\+I\+P\+LY}, 
+{\bfseries C\+A\+O\+\_\+\+S\+ET}, 
+{\bfseries C\+A\+O\+\_\+\+M\+U\+L\+T\+I\+P\+LY}, 
+{\bfseries C\+A\+O\+\_\+\+S\+ET}
+ \}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a1e6bfa296a6738fb31513b0d1c7ac42c}\label{classPUColorAffector_a1e6bfa296a6738fb31513b0d1c7ac42c}} 
+enum {\bfseries Color\+Operation} \{ {\bfseries C\+A\+O\+\_\+\+M\+U\+L\+T\+I\+P\+LY}, 
+{\bfseries C\+A\+O\+\_\+\+S\+ET}, 
+{\bfseries C\+A\+O\+\_\+\+M\+U\+L\+T\+I\+P\+LY}, 
+{\bfseries C\+A\+O\+\_\+\+S\+ET}
+ \}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_af2d3a65eb6f3b152fd97bec02a12c820}\label{classPUColorAffector_af2d3a65eb6f3b152fd97bec02a12c820}} 
+typedef std\+::map$<$ float, \hyperlink{classVec4}{Vec4} $>$ {\bfseries Color\+Map}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a1e02dd0efdd65950e2f180ff4737d39d}\label{classPUColorAffector_a1e02dd0efdd65950e2f180ff4737d39d}} 
+typedef std\+::map$<$ float, \hyperlink{classVec4}{Vec4} $>$\+::iterator {\bfseries Color\+Map\+Iterator}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_af2d3a65eb6f3b152fd97bec02a12c820}\label{classPUColorAffector_af2d3a65eb6f3b152fd97bec02a12c820}} 
+typedef std\+::map$<$ float, \hyperlink{classVec4}{Vec4} $>$ {\bfseries Color\+Map}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a1e02dd0efdd65950e2f180ff4737d39d}\label{classPUColorAffector_a1e02dd0efdd65950e2f180ff4737d39d}} 
+typedef std\+::map$<$ float, \hyperlink{classVec4}{Vec4} $>$\+::iterator {\bfseries Color\+Map\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a92c040e00df5bb07744eeaa81521f21f}\label{classPUColorAffector_a92c040e00df5bb07744eeaa81521f21f}} 
+virtual void {\bfseries update\+P\+U\+Affector} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time) override
+\item 
+\mbox{\Hypertarget{classPUColorAffector_ad5e64cf47543f024c13371d20da10cb1}\label{classPUColorAffector_ad5e64cf47543f024c13371d20da10cb1}} 
+void {\bfseries add\+Color} (float time\+Fraction, const \hyperlink{classVec4}{Vec4} \&color)
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a6757a12f4f139b7e17fcb2295de2586c}\label{classPUColorAffector_a6757a12f4f139b7e17fcb2295de2586c}} 
+const Color\+Map \& {\bfseries get\+Time\+And\+Color} () const
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a0bd88d77ad37b586158a1c3a4a4ba652}\label{classPUColorAffector_a0bd88d77ad37b586158a1c3a4a4ba652}} 
+void {\bfseries clear\+Color\+Map} ()
+\item 
+\mbox{\Hypertarget{classPUColorAffector_ab0a145e002205191fceaf9fc71823477}\label{classPUColorAffector_ab0a145e002205191fceaf9fc71823477}} 
+const Color\+Operation \& {\bfseries get\+Color\+Operation} () const
+\item 
+\mbox{\Hypertarget{classPUColorAffector_aadaa119df7e501c214aedf8e45d26526}\label{classPUColorAffector_aadaa119df7e501c214aedf8e45d26526}} 
+void {\bfseries set\+Color\+Operation} (const Color\+Operation \&color\+Operation)
+\item 
+\mbox{\Hypertarget{classPUColorAffector_af059b572ac43a0c5da6985f4d4ca5b8c}\label{classPUColorAffector_af059b572ac43a0c5da6985f4d4ca5b8c}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUAffector}{P\+U\+Affector} $\ast$affector) override
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a4a680a6b617160e9c5538fa7f57a68e1}\label{classPUColorAffector_a4a680a6b617160e9c5538fa7f57a68e1}} 
+virtual void {\bfseries update\+P\+U\+Affector} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time) override
+\item 
+\mbox{\Hypertarget{classPUColorAffector_ad5e64cf47543f024c13371d20da10cb1}\label{classPUColorAffector_ad5e64cf47543f024c13371d20da10cb1}} 
+void {\bfseries add\+Color} (float time\+Fraction, const \hyperlink{classVec4}{Vec4} \&color)
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a25408278d25f36e44352a6b09aa72956}\label{classPUColorAffector_a25408278d25f36e44352a6b09aa72956}} 
+const Color\+Map \& {\bfseries get\+Time\+And\+Color} () const
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a0bd88d77ad37b586158a1c3a4a4ba652}\label{classPUColorAffector_a0bd88d77ad37b586158a1c3a4a4ba652}} 
+void {\bfseries clear\+Color\+Map} ()
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a183b265602bfe5b49ed4a70f4343e4f7}\label{classPUColorAffector_a183b265602bfe5b49ed4a70f4343e4f7}} 
+const Color\+Operation \& {\bfseries get\+Color\+Operation} () const
+\item 
+\mbox{\Hypertarget{classPUColorAffector_aadaa119df7e501c214aedf8e45d26526}\label{classPUColorAffector_aadaa119df7e501c214aedf8e45d26526}} 
+void {\bfseries set\+Color\+Operation} (const Color\+Operation \&color\+Operation)
+\item 
+\mbox{\Hypertarget{classPUColorAffector_aa819ac056adfbf5bdd3822120dfecdec}\label{classPUColorAffector_aa819ac056adfbf5bdd3822120dfecdec}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUAffector}{P\+U\+Affector} $\ast$affector) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a3948e0b1380576fccb3b3d9e3a51da93}\label{classPUColorAffector_a3948e0b1380576fccb3b3d9e3a51da93}} 
+static \hyperlink{classPUColorAffector}{P\+U\+Color\+Affector} $\ast$ {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classPUColorAffector_afd8714327ae73422c425782e627518a1}\label{classPUColorAffector_afd8714327ae73422c425782e627518a1}} 
+static \hyperlink{classPUColorAffector}{P\+U\+Color\+Affector} $\ast$ {\bfseries create} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_ade256bb09013acc3c0fbeb0b71f8ada5}\label{classPUColorAffector_ade256bb09013acc3c0fbeb0b71f8ada5}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classPUColorAffector}{P\+U\+Color\+Affector}()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_afc8e1aa43a9d4336e41fcfeaede7dcdf}\label{classPUColorAffector_afc8e1aa43a9d4336e41fcfeaede7dcdf}} 
+static const Color\+Operation {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+ON} = P\+U\+Color\+Affector\+::\+C\+A\+O\+\_\+\+S\+ET
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_a181daffe9b9d3ba9342f81285f7f676a}\label{classPUColorAffector_a181daffe9b9d3ba9342f81285f7f676a}} 
+Color\+Map\+Iterator {\bfseries find\+Nearest\+Color\+Map\+Iterator} (float time\+Fraction)
+\item 
+\mbox{\Hypertarget{classPUColorAffector_ac636e33642028ba32c3f6a9766ae0924}\label{classPUColorAffector_ac636e33642028ba32c3f6a9766ae0924}} 
+Color\+Map\+Iterator {\bfseries find\+Nearest\+Color\+Map\+Iterator} (float time\+Fraction)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_aaf88b152e11565273100be4b878ecfff}\label{classPUColorAffector_aaf88b152e11565273100be4b878ecfff}} 
+Color\+Map {\bfseries \+\_\+color\+Map}
+\item 
+\mbox{\Hypertarget{classPUColorAffector_af8e3910bfe67764d8f9efd56312548fa}\label{classPUColorAffector_af8e3910bfe67764d8f9efd56312548fa}} 
+Color\+Operation {\bfseries \+\_\+color\+Operation}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Color\+Affector.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Color\+Affector.\+cpp\end{DoxyCompactItemize}

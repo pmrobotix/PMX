@@ -1,0 +1,853 @@
+\hypertarget{classProgressTimer}{}\section{Progress\+Timer Class Reference}
+\label{classProgressTimer}\index{Progress\+Timer@{Progress\+Timer}}
+
+
+\hyperlink{classProgressTimer}{Progress\+Timer} is a subclass of \hyperlink{classNode}{Node}. It renders the inner sprite according to the percentage. The progress can be Radial, Horizontal or vertical.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Progress\+Timer.\+h$>$}
+
+
+
+Inheritance diagram for Progress\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classProgressTimer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Progress\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgressTimer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} \{ {\bfseries R\+A\+D\+I\+AL}, 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}{Type\+::\+B\+AR}, 
+{\bfseries R\+A\+D\+I\+AL}, 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}{Type\+::\+B\+AR}
+ \}
+\item 
+enum \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} \{ {\bfseries R\+A\+D\+I\+AL}, 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}{Type\+::\+B\+AR}, 
+{\bfseries R\+A\+D\+I\+AL}, 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}{Type\+::\+B\+AR}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} \hyperlink{classProgressTimer_a322177b2b80d358482270730ba811cbd}{get\+Type} () const
+\item 
+float \hyperlink{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}{get\+Percentage} () const
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classProgressTimer_abf78b31860b22109143633f44508233f}{get\+Sprite} () const
+\item 
+void \hyperlink{classProgressTimer_a13901defa20b543b0d92bbf043215945}{set\+Percentage} (float percentage)
+\item 
+void \hyperlink{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}{set\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+void \hyperlink{classProgressTimer_abe2478baf4201427691e7bd615151c19}{set\+Type} (\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} type)
+\item 
+void \hyperlink{classProgressTimer_a59c9d45e3083b9af6e95b0138dae3fed}{set\+Reverse\+Progress} (bool reverse)
+\item 
+bool \hyperlink{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}{is\+Reverse\+Direction} ()
+\item 
+void \hyperlink{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}{set\+Reverse\+Direction} (bool value)
+\item 
+void \hyperlink{classProgressTimer_a69680f76df01ea815970964cc1dc673b}{set\+Midpoint} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}{get\+Midpoint} () const
+\item 
+void \hyperlink{classProgressTimer_ac54f707a0291274c04e265b2898586d6}{set\+Bar\+Change\+Rate} (const \hyperlink{classVec2}{Vec2} \&bar\+Change\+Rate)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}{get\+Bar\+Change\+Rate} () const
+\item 
+virtual void \hyperlink{classProgressTimer_aeff75c55be12ed0c7cc8893140c78de6}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classProgressTimer_a2d83a3a9d2aa6a7d949a3800c82dfc68}{set\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&anchor\+Point) override
+\item 
+virtual void \hyperlink{classProgressTimer_aabc06a02c225d876ac5746dc6561949f}{set\+Color} (const \hyperlink{structColor3B}{Color3B} \&color) override
+\item 
+virtual const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classProgressTimer_acf6cb8de15ca3e8954c05a64adec8402}{get\+Color} () const override
+\item 
+virtual void \hyperlink{classProgressTimer_a9f36a7fde3a6490b81e53f23ebbd3df9}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual G\+Lubyte \hyperlink{classProgressTimer_ae9f8f93b5849d34fce2fa84ffec463c1}{get\+Opacity} () const override
+\item 
+virtual \hyperlink{classProgressTimer_a95ee08f7c26113454f87421f45c641b0}{$\sim$\+Progress\+Timer} ()
+\item 
+bool \hyperlink{classProgressTimer_afa1640086b67814db77d3ae725c18b45}{init\+With\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sp)
+\item 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} \hyperlink{classProgressTimer_a322177b2b80d358482270730ba811cbd}{get\+Type} () const
+\item 
+float \hyperlink{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}{get\+Percentage} () const
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classProgressTimer_abf78b31860b22109143633f44508233f}{get\+Sprite} () const
+\item 
+void \hyperlink{classProgressTimer_a13901defa20b543b0d92bbf043215945}{set\+Percentage} (float percentage)
+\item 
+void \hyperlink{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}{set\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+void \hyperlink{classProgressTimer_abe2478baf4201427691e7bd615151c19}{set\+Type} (\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} type)
+\item 
+bool \hyperlink{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}{is\+Reverse\+Direction} ()
+\item 
+void \hyperlink{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}{set\+Reverse\+Direction} (bool value)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classProgressTimer_ac97bd260d1f006c29c20a5d741a7e11b}{set\+Reverse\+Progress} (bool reverse)
+\item 
+void \hyperlink{classProgressTimer_a69680f76df01ea815970964cc1dc673b}{set\+Midpoint} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}{get\+Midpoint} () const
+\item 
+void \hyperlink{classProgressTimer_ac54f707a0291274c04e265b2898586d6}{set\+Bar\+Change\+Rate} (const \hyperlink{classVec2}{Vec2} \&bar\+Change\+Rate)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}{get\+Bar\+Change\+Rate} () const
+\item 
+virtual void \hyperlink{classProgressTimer_a93e4e885d40db09173bea0a7cf19addb}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classProgressTimer_a9f177a39d3158dd2f48f6558db5dcd02}{set\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&anchor\+Point) override
+\item 
+virtual void \hyperlink{classProgressTimer_a3cd315f15a68b541ab276648fa5803cf}{set\+Color} (const \hyperlink{structColor3B}{Color3B} \&color) override
+\item 
+virtual const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classProgressTimer_ad8ca5deb560d078fcd576c896981b5c2}{get\+Color} () const override
+\item 
+virtual void \hyperlink{classProgressTimer_a757eb314cc8f4633c6e5e240b2e6a4e8}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual G\+Lubyte \hyperlink{classProgressTimer_ab65270de82c7f02e733ce017830c2409}{get\+Opacity} () const override
+\item 
+virtual \hyperlink{classProgressTimer_ae5b642ead8174fcbc4d5684fceb86a55}{$\sim$\+Progress\+Timer} ()
+\item 
+bool \hyperlink{classProgressTimer_afa1640086b67814db77d3ae725c18b45}{init\+With\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sp)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classProgressTimer}{Progress\+Timer} $\ast$ \hyperlink{classProgressTimer_a04df0bb71ad5378f3d70abcb8ceb0123}{create} (\hyperlink{classSprite}{Sprite} $\ast$sp)
+\item 
+static \hyperlink{classProgressTimer}{Progress\+Timer} $\ast$ \hyperlink{classProgressTimer_ae4b5741da712802b7f09859b21e0f69f}{create} (\hyperlink{classSprite}{Sprite} $\ast$sp)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a14503c0072cee80efd1df22c8e149971}\label{classProgressTimer_a14503c0072cee80efd1df22c8e149971}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classProgressTimer}{Progress\+Timer}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a9a87492e087cc845024b28470dc79855}\label{classProgressTimer_a9a87492e087cc845024b28470dc79855}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a6290a574830e3455828c3acae65b6157}\label{classProgressTimer_a6290a574830e3455828c3acae65b6157}} 
+\hyperlink{structTex2F}{Tex2F} {\bfseries texture\+Coord\+From\+Alpha\+Point} (\hyperlink{classVec2}{Vec2} alpha)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a88cfd67d1031815c3ac363d39a23afc8}\label{classProgressTimer_a88cfd67d1031815c3ac363d39a23afc8}} 
+\hyperlink{classVec2}{Vec2} {\bfseries vertex\+From\+Alpha\+Point} (\hyperlink{classVec2}{Vec2} alpha)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a7218bccd4f74911a53b4242a24914133}\label{classProgressTimer_a7218bccd4f74911a53b4242a24914133}} 
+void {\bfseries update\+Progress} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_af49361f4d7043a3d070dbed3f7fec95f}\label{classProgressTimer_af49361f4d7043a3d070dbed3f7fec95f}} 
+void {\bfseries update\+Bar} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a865bf398e8cdbae67228b1af04921b3a}\label{classProgressTimer_a865bf398e8cdbae67228b1af04921b3a}} 
+void {\bfseries update\+Radial} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_affa0877198be4bdbd5ae6abdbf51010b}\label{classProgressTimer_affa0877198be4bdbd5ae6abdbf51010b}} 
+virtual void {\bfseries update\+Color} (void) override
+\item 
+\mbox{\Hypertarget{classProgressTimer_aae89a5b7ddd4348c4f8d28d5fe83f722}\label{classProgressTimer_aae89a5b7ddd4348c4f8d28d5fe83f722}} 
+\hyperlink{classVec2}{Vec2} {\bfseries boundary\+Tex\+Coord} (char index)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a9a87492e087cc845024b28470dc79855}\label{classProgressTimer_a9a87492e087cc845024b28470dc79855}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a6290a574830e3455828c3acae65b6157}\label{classProgressTimer_a6290a574830e3455828c3acae65b6157}} 
+\hyperlink{structTex2F}{Tex2F} {\bfseries texture\+Coord\+From\+Alpha\+Point} (\hyperlink{classVec2}{Vec2} alpha)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a88cfd67d1031815c3ac363d39a23afc8}\label{classProgressTimer_a88cfd67d1031815c3ac363d39a23afc8}} 
+\hyperlink{classVec2}{Vec2} {\bfseries vertex\+From\+Alpha\+Point} (\hyperlink{classVec2}{Vec2} alpha)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a7218bccd4f74911a53b4242a24914133}\label{classProgressTimer_a7218bccd4f74911a53b4242a24914133}} 
+void {\bfseries update\+Progress} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_af49361f4d7043a3d070dbed3f7fec95f}\label{classProgressTimer_af49361f4d7043a3d070dbed3f7fec95f}} 
+void {\bfseries update\+Bar} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_a865bf398e8cdbae67228b1af04921b3a}\label{classProgressTimer_a865bf398e8cdbae67228b1af04921b3a}} 
+void {\bfseries update\+Radial} (void)
+\item 
+\mbox{\Hypertarget{classProgressTimer_af1c80af01417805039aff2d89c188b1f}\label{classProgressTimer_af1c80af01417805039aff2d89c188b1f}} 
+virtual void {\bfseries update\+Color} (void) override
+\item 
+\mbox{\Hypertarget{classProgressTimer_aae89a5b7ddd4348c4f8d28d5fe83f722}\label{classProgressTimer_aae89a5b7ddd4348c4f8d28d5fe83f722}} 
+\hyperlink{classVec2}{Vec2} {\bfseries boundary\+Tex\+Coord} (char index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgressTimer_ad00405360dfedb86de90d81dea8f9ddd}\label{classProgressTimer_ad00405360dfedb86de90d81dea8f9ddd}} 
+\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} {\bfseries \+\_\+type}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a14a34a6cab4aa6280011a9593c9d526c}\label{classProgressTimer_a14a34a6cab4aa6280011a9593c9d526c}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+midpoint}
+\item 
+\mbox{\Hypertarget{classProgressTimer_ae1094487f63f41b37e6c2306edee41a0}\label{classProgressTimer_ae1094487f63f41b37e6c2306edee41a0}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+bar\+Change\+Rate}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a74de1bcc32a54ceff6811b30be694743}\label{classProgressTimer_a74de1bcc32a54ceff6811b30be694743}} 
+float {\bfseries \+\_\+percentage}
+\item 
+\mbox{\Hypertarget{classProgressTimer_af81b1ac91477aceb7ab6c4764558b613}\label{classProgressTimer_af81b1ac91477aceb7ab6c4764558b613}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+sprite}
+\item 
+\mbox{\Hypertarget{classProgressTimer_aea4fa9b9362ee0ef57ae9d4c296cc9ad}\label{classProgressTimer_aea4fa9b9362ee0ef57ae9d4c296cc9ad}} 
+int {\bfseries \+\_\+vertex\+Data\+Count}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a23486cb5bb30d13b6fd935c672023f5e}\label{classProgressTimer_a23486cb5bb30d13b6fd935c672023f5e}} 
+\hyperlink{structV2F__C4B__T2F}{V2\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$ {\bfseries \+\_\+vertex\+Data}
+\item 
+\mbox{\Hypertarget{classProgressTimer_add15e4ebeecc4a08601dcc8d7a28c6cb}\label{classProgressTimer_add15e4ebeecc4a08601dcc8d7a28c6cb}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command}
+\item 
+\mbox{\Hypertarget{classProgressTimer_a60e9d6c0ca4f77a716c23a7ace19893b}\label{classProgressTimer_a60e9d6c0ca4f77a716c23a7ace19893b}} 
+bool {\bfseries \+\_\+reverse\+Direction}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classProgressTimer}{Progress\+Timer} is a subclass of \hyperlink{classNode}{Node}. It renders the inner sprite according to the percentage. The progress can be Radial, Horizontal or vertical. 
+
+\begin{DoxySince}{Since}
+v0.\+99.\+1 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}} 
+\index{Progress\+Timer@{Progress\+Timer}!Type@{Type}}
+\index{Type@{Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Progress\+Timer\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Types of progress \begin{DoxySince}{Since}
+v0.\+99.\+1 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+AR@{B\+AR}!Progress\+Timer@{Progress\+Timer}}\index{Progress\+Timer@{Progress\+Timer}!B\+AR@{B\+AR}}}\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}} 
+B\+AR&Radial Counter-\/\+Clockwise. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+AR@{B\+AR}!Progress\+Timer@{Progress\+Timer}}\index{Progress\+Timer@{Progress\+Timer}!B\+AR@{B\+AR}}}\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}} 
+B\+AR&Radial Counter-\/\+Clockwise. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}} 
+\index{Progress\+Timer@{Progress\+Timer}!Type@{Type}}
+\index{Type@{Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Progress\+Timer\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Types of progress \begin{DoxySince}{Since}
+v0.\+99.\+1 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+AR@{B\+AR}!Progress\+Timer@{Progress\+Timer}}\index{Progress\+Timer@{Progress\+Timer}!B\+AR@{B\+AR}}}\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}} 
+B\+AR&Radial Counter-\/\+Clockwise. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+AR@{B\+AR}!Progress\+Timer@{Progress\+Timer}}\index{Progress\+Timer@{Progress\+Timer}!B\+AR@{B\+AR}}}\mbox{\Hypertarget{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}\label{classProgressTimer_a9638d092b86d51bce727621b1a70d32fa3d75eec709b70a350e143492192a1736}} 
+B\+AR&Radial Counter-\/\+Clockwise. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProgressTimer_a95ee08f7c26113454f87421f45c641b0}\label{classProgressTimer_a95ee08f7c26113454f87421f45c641b0}} 
+\index{Progress\+Timer@{Progress\+Timer}!````~Progress\+Timer@{$\sim$\+Progress\+Timer}}
+\index{````~Progress\+Timer@{$\sim$\+Progress\+Timer}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{$\sim$\+Progress\+Timer()}{~ProgressTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Progress\+Timer\+::$\sim$\+Progress\+Timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classProgressTimer_ae5b642ead8174fcbc4d5684fceb86a55}\label{classProgressTimer_ae5b642ead8174fcbc4d5684fceb86a55}} 
+\index{Progress\+Timer@{Progress\+Timer}!````~Progress\+Timer@{$\sim$\+Progress\+Timer}}
+\index{````~Progress\+Timer@{$\sim$\+Progress\+Timer}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{$\sim$\+Progress\+Timer()}{~ProgressTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Progress\+Timer\+::$\sim$\+Progress\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProgressTimer_a04df0bb71ad5378f3d70abcb8ceb0123}\label{classProgressTimer_a04df0bb71ad5378f3d70abcb8ceb0123}} 
+\index{Progress\+Timer@{Progress\+Timer}!create@{create}}
+\index{create@{create}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTimer}{Progress\+Timer} $\ast$ Progress\+Timer\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a progress timer with the sprite as the shape the timer goes through.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite as the shape the timer goes through. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classProgressTimer}{Progress\+Timer}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_ae4b5741da712802b7f09859b21e0f69f}\label{classProgressTimer_ae4b5741da712802b7f09859b21e0f69f}} 
+\index{Progress\+Timer@{Progress\+Timer}!create@{create}}
+\index{create@{create}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classProgressTimer}{Progress\+Timer}$\ast$ Progress\+Timer\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a progress timer with the sprite as the shape the timer goes through.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite as the shape the timer goes through. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classProgressTimer}{Progress\+Timer}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_aeff75c55be12ed0c7cc8893140c78de6}\label{classProgressTimer_aeff75c55be12ed0c7cc8893140c78de6}} 
+\index{Progress\+Timer@{Progress\+Timer}!draw@{draw}}
+\index{draw@{draw}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a93e4e885d40db09173bea0a7cf19addb}\label{classProgressTimer_a93e4e885d40db09173bea0a7cf19addb}} 
+\index{Progress\+Timer@{Progress\+Timer}!draw@{draw}}
+\index{draw@{draw}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+Timer\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}\label{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Bar\+Change\+Rate@{get\+Bar\+Change\+Rate}}
+\index{get\+Bar\+Change\+Rate@{get\+Bar\+Change\+Rate}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Bar\+Change\+Rate()}{getBarChangeRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Progress\+Timer\+::get\+Bar\+Change\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Bar\+Change\+Rate.
+
+\begin{DoxyReturn}{Returns}
+A bar\+Change\+Rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}\label{classProgressTimer_a0f3e761df2dca3294dab8e553e19adfa}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Bar\+Change\+Rate@{get\+Bar\+Change\+Rate}}
+\index{get\+Bar\+Change\+Rate@{get\+Bar\+Change\+Rate}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Bar\+Change\+Rate()}{getBarChangeRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Progress\+Timer\+::get\+Bar\+Change\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Bar\+Change\+Rate.
+
+\begin{DoxyReturn}{Returns}
+A bar\+Change\+Rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_acf6cb8de15ca3e8954c05a64adec8402}\label{classProgressTimer_acf6cb8de15ca3e8954c05a64adec8402}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B} \& Progress\+Timer\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query node\textquotesingle{}s color value. \begin{DoxyReturn}{Returns}
+A \hyperlink{structColor3B}{Color3B} color value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a06721d272f5a59e02e355d95be25bb99}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_ad8ca5deb560d078fcd576c896981b5c2}\label{classProgressTimer_ad8ca5deb560d078fcd576c896981b5c2}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structColor3B}{Color3B}\& Progress\+Timer\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query node\textquotesingle{}s color value. \begin{DoxyReturn}{Returns}
+A \hyperlink{structColor3B}{Color3B} color value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a06721d272f5a59e02e355d95be25bb99}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}\label{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Midpoint@{get\+Midpoint}}
+\index{get\+Midpoint@{get\+Midpoint}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Midpoint()}{getMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Progress\+Timer\+::get\+Midpoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the Midpoint.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classVec2}{Vec2}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}\label{classProgressTimer_a3b680cbc620a22d766aea62b518ef66f}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Midpoint@{get\+Midpoint}}
+\index{get\+Midpoint@{get\+Midpoint}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Midpoint()}{getMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Progress\+Timer\+::get\+Midpoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the Midpoint.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classVec2}{Vec2}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_ae9f8f93b5849d34fce2fa84ffec463c1}\label{classProgressTimer_ae9f8f93b5849d34fce2fa84ffec463c1}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Opacity@{get\+Opacity}}
+\index{get\+Opacity@{get\+Opacity}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Opacity()}{getOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lubyte Progress\+Timer\+::get\+Opacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the node\textquotesingle{}s opacity. \begin{DoxyReturn}{Returns}
+A G\+Lubyte value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab999cce3763ea09e74014245c770ea97}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_ab65270de82c7f02e733ce017830c2409}\label{classProgressTimer_ab65270de82c7f02e733ce017830c2409}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Opacity@{get\+Opacity}}
+\index{get\+Opacity@{get\+Opacity}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Opacity()}{getOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual G\+Lubyte Progress\+Timer\+::get\+Opacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the node\textquotesingle{}s opacity. \begin{DoxyReturn}{Returns}
+A G\+Lubyte value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab999cce3763ea09e74014245c770ea97}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}\label{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Percentage@{get\+Percentage}}
+\index{get\+Percentage@{get\+Percentage}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Percentage()}{getPercentage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Progress\+Timer\+::get\+Percentage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Percentages are from 0 to 100.
+
+\begin{DoxyReturn}{Returns}
+Percentages. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}\label{classProgressTimer_a446b52a689c8ea0f556f3c1b12eda7b8}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Percentage@{get\+Percentage}}
+\index{get\+Percentage@{get\+Percentage}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Percentage()}{getPercentage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Progress\+Timer\+::get\+Percentage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Percentages are from 0 to 100.
+
+\begin{DoxyReturn}{Returns}
+Percentages. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_abf78b31860b22109143633f44508233f}\label{classProgressTimer_abf78b31860b22109143633f44508233f}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ Progress\+Timer\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The image to show the progress percentage, retain.
+
+\begin{DoxyReturn}{Returns}
+A sprite. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_abf78b31860b22109143633f44508233f}\label{classProgressTimer_abf78b31860b22109143633f44508233f}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ Progress\+Timer\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The image to show the progress percentage, retain.
+
+\begin{DoxyReturn}{Returns}
+A sprite. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a322177b2b80d358482270730ba811cbd}\label{classProgressTimer_a322177b2b80d358482270730ba811cbd}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} Progress\+Timer\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change the percentage to change progress.
+
+\begin{DoxyReturn}{Returns}
+A Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a322177b2b80d358482270730ba811cbd}\label{classProgressTimer_a322177b2b80d358482270730ba811cbd}} 
+\index{Progress\+Timer@{Progress\+Timer}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type} Progress\+Timer\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change the percentage to change progress.
+
+\begin{DoxyReturn}{Returns}
+A Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_afa1640086b67814db77d3ae725c18b45}\label{classProgressTimer_afa1640086b67814db77d3ae725c18b45}} 
+\index{Progress\+Timer@{Progress\+Timer}!init\+With\+Sprite@{init\+With\+Sprite}}
+\index{init\+With\+Sprite@{init\+With\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{init\+With\+Sprite()}{initWithSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Progress\+Timer\+::init\+With\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sp }\end{DoxyParamCaption})}
+
+Initializes a progress timer with the sprite as the shape the timer goes through \mbox{\Hypertarget{classProgressTimer_afa1640086b67814db77d3ae725c18b45}\label{classProgressTimer_afa1640086b67814db77d3ae725c18b45}} 
+\index{Progress\+Timer@{Progress\+Timer}!init\+With\+Sprite@{init\+With\+Sprite}}
+\index{init\+With\+Sprite@{init\+With\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{init\+With\+Sprite()}{initWithSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Progress\+Timer\+::init\+With\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sp }\end{DoxyParamCaption})}
+
+Initializes a progress timer with the sprite as the shape the timer goes through \mbox{\Hypertarget{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}\label{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}} 
+\index{Progress\+Timer@{Progress\+Timer}!is\+Reverse\+Direction@{is\+Reverse\+Direction}}
+\index{is\+Reverse\+Direction@{is\+Reverse\+Direction}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{is\+Reverse\+Direction()}{isReverseDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Progress\+Timer\+::is\+Reverse\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the Reverse direction.
+
+\begin{DoxyReturn}{Returns}
+If the direction is Anti-\/clockwise,it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}\label{classProgressTimer_a97b759861d5e2e32ff94833f23e24eb7}} 
+\index{Progress\+Timer@{Progress\+Timer}!is\+Reverse\+Direction@{is\+Reverse\+Direction}}
+\index{is\+Reverse\+Direction@{is\+Reverse\+Direction}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{is\+Reverse\+Direction()}{isReverseDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Progress\+Timer\+::is\+Reverse\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the Reverse direction.
+
+\begin{DoxyReturn}{Returns}
+If the direction is Anti-\/clockwise,it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTimer_a2d83a3a9d2aa6a7d949a3800c82dfc68}\label{classProgressTimer_a2d83a3a9d2aa6a7d949a3800c82dfc68}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Anchor\+Point@{set\+Anchor\+Point}}
+\index{set\+Anchor\+Point@{set\+Anchor\+Point}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Point()}{setAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{anchor\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the anchor point in percent.
+
+anchor\+Point is the point around which all transformations and positioning manipulations take place. It\textquotesingle{}s like a pin in the node where it is \char`\"{}attached\char`\"{} to its parent. The anchor\+Point is normalized, like a percentage. (0,0) means the bottom-\/left corner and (1,1) means the top-\/right corner. But you can use values higher than (1,1) and lower than (0,0) too. The default anchor\+Point is (0.\+5,0.\+5), so it starts in the center of the node. \begin{DoxyNote}{Note}
+If node has a physics body, the anchor must be in the middle, you can\textquotesingle{}t change this to other value.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em anchor\+Point} & The anchor point of node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a4dd45cb48a51df7c257675f527e3f277}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a9f177a39d3158dd2f48f6558db5dcd02}\label{classProgressTimer_a9f177a39d3158dd2f48f6558db5dcd02}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Anchor\+Point@{set\+Anchor\+Point}}
+\index{set\+Anchor\+Point@{set\+Anchor\+Point}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Point()}{setAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+Timer\+::set\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{anchor\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the anchor point in percent.
+
+anchor\+Point is the point around which all transformations and positioning manipulations take place. It\textquotesingle{}s like a pin in the node where it is \char`\"{}attached\char`\"{} to its parent. The anchor\+Point is normalized, like a percentage. (0,0) means the bottom-\/left corner and (1,1) means the top-\/right corner. But you can use values higher than (1,1) and lower than (0,0) too. The default anchor\+Point is (0.\+5,0.\+5), so it starts in the center of the node. \begin{DoxyNote}{Note}
+If node has a physics body, the anchor must be in the middle, you can\textquotesingle{}t change this to other value.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em anchor\+Point} & The anchor point of node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a4dd45cb48a51df7c257675f527e3f277}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_ac54f707a0291274c04e265b2898586d6}\label{classProgressTimer_ac54f707a0291274c04e265b2898586d6}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Bar\+Change\+Rate@{set\+Bar\+Change\+Rate}}
+\index{set\+Bar\+Change\+Rate@{set\+Bar\+Change\+Rate}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Bar\+Change\+Rate()}{setBarChangeRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Bar\+Change\+Rate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{bar\+Change\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This allows the bar type to move the component at a specific rate. Set the component to 0 to make sure it stays at 100\%. For example you want a left to right bar but not have the height stay 100\%. Set the rate to be \hyperlink{classVec2}{Vec2(0,1)}; and set the midpoint to = \hyperlink{classVec2}{Vec2}(0,.5f). 
+\begin{DoxyParams}{Parameters}
+{\em bar\+Change\+Rate} & A \hyperlink{classVec2}{Vec2}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_ac54f707a0291274c04e265b2898586d6}\label{classProgressTimer_ac54f707a0291274c04e265b2898586d6}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Bar\+Change\+Rate@{set\+Bar\+Change\+Rate}}
+\index{set\+Bar\+Change\+Rate@{set\+Bar\+Change\+Rate}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Bar\+Change\+Rate()}{setBarChangeRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Bar\+Change\+Rate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{bar\+Change\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This allows the bar type to move the component at a specific rate. Set the component to 0 to make sure it stays at 100\%. For example you want a left to right bar but not have the height stay 100\%. Set the rate to be \hyperlink{classVec2}{Vec2(0,1)}; and set the midpoint to = \hyperlink{classVec2}{Vec2}(0,.5f). 
+\begin{DoxyParams}{Parameters}
+{\em bar\+Change\+Rate} & A \hyperlink{classVec2}{Vec2}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_aabc06a02c225d876ac5746dc6561949f}\label{classProgressTimer_aabc06a02c225d876ac5746dc6561949f}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of node. 
+\begin{DoxyParams}{Parameters}
+{\em color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_af45037de5b13602263b1ce51b50cafdd}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a3cd315f15a68b541ab276648fa5803cf}\label{classProgressTimer_a3cd315f15a68b541ab276648fa5803cf}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+Timer\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of node. 
+\begin{DoxyParams}{Parameters}
+{\em color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_af45037de5b13602263b1ce51b50cafdd}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a69680f76df01ea815970964cc1dc673b}\label{classProgressTimer_a69680f76df01ea815970964cc1dc673b}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Midpoint@{set\+Midpoint}}
+\index{set\+Midpoint@{set\+Midpoint}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Midpoint()}{setMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Midpoint (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Midpoint is used to modify the progress start position. If you\textquotesingle{}re using radials type then the midpoint changes the center point. If you\textquotesingle{}re using bar type then the midpoint changes the bar growth. it expands from the center but clamps to the sprites edge so\+: you want a left to right then set the midpoint all the way to \hyperlink{classVec2}{Vec2(0,y)}. you want a right to left then set the midpoint all the way to \hyperlink{classVec2}{Vec2(1,y)}. you want a bottom to top then set the midpoint all the way to \hyperlink{classVec2}{Vec2(x,0)}. you want a top to bottom then set the midpoint all the way to \hyperlink{classVec2}{Vec2(x,1)}. 
+\begin{DoxyParams}{Parameters}
+{\em point} & A \hyperlink{classVec2}{Vec2} point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a69680f76df01ea815970964cc1dc673b}\label{classProgressTimer_a69680f76df01ea815970964cc1dc673b}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Midpoint@{set\+Midpoint}}
+\index{set\+Midpoint@{set\+Midpoint}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Midpoint()}{setMidpoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Midpoint (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Midpoint is used to modify the progress start position. If you\textquotesingle{}re using radials type then the midpoint changes the center point. If you\textquotesingle{}re using bar type then the midpoint changes the bar growth. it expands from the center but clamps to the sprites edge so\+: you want a left to right then set the midpoint all the way to \hyperlink{classVec2}{Vec2(0,y)}. you want a right to left then set the midpoint all the way to \hyperlink{classVec2}{Vec2(1,y)}. you want a bottom to top then set the midpoint all the way to \hyperlink{classVec2}{Vec2(x,0)}. you want a top to bottom then set the midpoint all the way to \hyperlink{classVec2}{Vec2(x,1)}. 
+\begin{DoxyParams}{Parameters}
+{\em point} & A \hyperlink{classVec2}{Vec2} point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a9f36a7fde3a6490b81e53f23ebbd3df9}\label{classProgressTimer_a9f36a7fde3a6490b81e53f23ebbd3df9}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a757eb314cc8f4633c6e5e240b2e6a4e8}\label{classProgressTimer_a757eb314cc8f4633c6e5e240b2e6a4e8}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+Timer\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classProgressTimer_a13901defa20b543b0d92bbf043215945}\label{classProgressTimer_a13901defa20b543b0d92bbf043215945}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Percentage@{set\+Percentage}}
+\index{set\+Percentage@{set\+Percentage}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Percentage()}{setPercentage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Percentage (\begin{DoxyParamCaption}\item[{float}]{percentage }\end{DoxyParamCaption})}
+
+Set the initial percentage values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentage} & The initial percentage values. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a13901defa20b543b0d92bbf043215945}\label{classProgressTimer_a13901defa20b543b0d92bbf043215945}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Percentage@{set\+Percentage}}
+\index{set\+Percentage@{set\+Percentage}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Percentage()}{setPercentage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Percentage (\begin{DoxyParamCaption}\item[{float}]{percentage }\end{DoxyParamCaption})}
+
+Set the initial percentage values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentage} & The initial percentage values. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}\label{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Reverse\+Direction@{set\+Reverse\+Direction}}
+\index{set\+Reverse\+Direction@{set\+Reverse\+Direction}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Reverse\+Direction()}{setReverseDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Reverse\+Direction (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+Set the Reverse direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & If value is false it will clockwise,if is true it will Anti-\/clockwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}\label{classProgressTimer_a1bfa9056523c014a8453caf962a1e69c}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Reverse\+Direction@{set\+Reverse\+Direction}}
+\index{set\+Reverse\+Direction@{set\+Reverse\+Direction}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Reverse\+Direction()}{setReverseDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Reverse\+Direction (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the Reverse direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & If value is false it will clockwise,if is true it will Anti-\/clockwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a59c9d45e3083b9af6e95b0138dae3fed}\label{classProgressTimer_a59c9d45e3083b9af6e95b0138dae3fed}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Reverse\+Progress@{set\+Reverse\+Progress}}
+\index{set\+Reverse\+Progress@{set\+Reverse\+Progress}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Reverse\+Progress()}{setReverseProgress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Reverse\+Progress (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})}
+
+Set the Reverse direction.  set\+Reverse\+Direction  set\+Reverse\+Direction 
+\begin{DoxyParams}{Parameters}
+{\em reverse} & If reverse is false it will clockwise,if is true it will Anti-\/clockwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_ac97bd260d1f006c29c20a5d741a7e11b}\label{classProgressTimer_ac97bd260d1f006c29c20a5d741a7e11b}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Reverse\+Progress@{set\+Reverse\+Progress}}
+\index{set\+Reverse\+Progress@{set\+Reverse\+Progress}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Reverse\+Progress()}{setReverseProgress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Progress\+Timer\+::set\+Reverse\+Progress (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the Reverse direction.  set\+Reverse\+Direction  set\+Reverse\+Direction 
+\begin{DoxyParams}{Parameters}
+{\em reverse} & If reverse is false it will clockwise,if is true it will Anti-\/clockwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}\label{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Sprite@{set\+Sprite}}
+\index{set\+Sprite@{set\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Sprite()}{setSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Set the sprite as the shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The sprite as the shape. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}\label{classProgressTimer_a3910e7c59c07732edcc2039dacbe7172}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Sprite@{set\+Sprite}}
+\index{set\+Sprite@{set\+Sprite}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Sprite()}{setSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Set the sprite as the shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The sprite as the shape. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_abe2478baf4201427691e7bd615151c19}\label{classProgressTimer_abe2478baf4201427691e7bd615151c19}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Type()}{setType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type}}]{type }\end{DoxyParamCaption})}
+
+Set the \hyperlink{classProgressTimer}{Progress\+Timer} type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Is an Type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProgressTimer_abe2478baf4201427691e7bd615151c19}\label{classProgressTimer_abe2478baf4201427691e7bd615151c19}} 
+\index{Progress\+Timer@{Progress\+Timer}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Progress\+Timer@{Progress\+Timer}}
+\subsubsection{\texorpdfstring{set\+Type()}{setType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Progress\+Timer\+::set\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classProgressTimer_a9638d092b86d51bce727621b1a70d32f}{Type}}]{type }\end{DoxyParamCaption})}
+
+Set the \hyperlink{classProgressTimer}{Progress\+Timer} type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Is an Type. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Progress\+Timer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Progress\+Timer.\+cpp\end{DoxyCompactItemize}

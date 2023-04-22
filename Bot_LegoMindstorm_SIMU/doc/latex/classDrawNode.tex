@@ -1,0 +1,1383 @@
+\hypertarget{classDrawNode}{}\section{Draw\+Node Class Reference}
+\label{classDrawNode}\index{Draw\+Node@{Draw\+Node}}
+
+
+\hyperlink{classNode}{Node} that draws dots, segments and polygons. Faster than the \char`\"{}drawing primitives\char`\"{} since they draws everything in one single batch.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Draw\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Draw\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classDrawNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Draw\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDrawNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDrawNode_ae95a0e497adf2884d571262e4725822e}{draw\+Point} (const \hyperlink{classVec2}{Vec2} \&point, const float point\+Size, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}{draw\+Points} (const \hyperlink{classVec2}{Vec2} $\ast$position, unsigned int number\+Of\+Points, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0bd985652af62bea73a86155560ec313}{draw\+Points} (const \hyperlink{classVec2}{Vec2} $\ast$position, unsigned int number\+Of\+Points, const float point\+Size, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0e45a721e54084a78121171f3e752933}{draw\+Line} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}{draw\+Rect} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}{draw\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, bool close\+Polygon, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center, float scaleX, float scaleY, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}{draw\+Quad\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}{draw\+Cubic\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control1, const \hyperlink{classVec2}{Vec2} \&control2, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}{draw\+Cardinal\+Spline} (\hyperlink{classPointArray}{Point\+Array} $\ast$config, float tension, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0d495593f7877ce67007bc0fea68147a}{draw\+Catmull\+Rom} (\hyperlink{classPointArray}{Point\+Array} $\ast$points, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_af88d6e8ceecb345279adc955df8d1220}{draw\+Dot} (const \hyperlink{classVec2}{Vec2} \&pos, float radius, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}{draw\+Rect} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2, const \hyperlink{classVec2}{Vec2} \&p3, const \hyperlink{classVec2}{Vec2} \&p4, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}{draw\+Solid\+Rect} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a577574914623292940783273d1ea6bff}{draw\+Solid\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, float scaleX, float scaleY, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}{draw\+Segment} (const \hyperlink{classVec2}{Vec2} \&from, const \hyperlink{classVec2}{Vec2} \&to, float radius, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{draw\+Polygon} (const \hyperlink{classVec2}{Vec2} $\ast$verts, int count, const \hyperlink{structColor4F}{Color4F} \&fill\+Color, float border\+Width, const \hyperlink{structColor4F}{Color4F} \&border\+Color)
+\item 
+void \hyperlink{classDrawNode_ab8b8098cd512e011428e3732016fa08b}{draw\+Triangle} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2, const \hyperlink{classVec2}{Vec2} \&p3, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classDrawNode_a78d781bde114c683d9aaf8d1a9beb3e6}{draw\+Quadratic\+Bezier} (const \hyperlink{classVec2}{Vec2} \&from, const \hyperlink{classVec2}{Vec2} \&control, const \hyperlink{classVec2}{Vec2} \&to, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}{clear} ()
+\item 
+const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classDrawNode_a4852c0f114e65e96420095aaa6e63837}{get\+Blend\+Func} () const
+\item 
+void \hyperlink{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+virtual void \hyperlink{classDrawNode_aed389c5d434e56bd438fb6153eedd8d7}{on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_a19ecf575260b8db580cf78921cdd40ee}{on\+Draw\+G\+L\+Line} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_afd5151bb132169da091320b4a354945b}{on\+Draw\+G\+L\+Point} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_a425b5c32a324be510862d2fee31328f5}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classDrawNode_abe4bfc04c799afd7c86e1ded2be1860e}\label{classDrawNode_abe4bfc04c799afd7c86e1ded2be1860e}} 
+void {\bfseries set\+Line\+Width} (int line\+Width)
+\item 
+\mbox{\Hypertarget{classDrawNode_a017a52661990b0f71d7df51f87776204}\label{classDrawNode_a017a52661990b0f71d7df51f87776204}} 
+float {\bfseries get\+Line\+Width} ()
+\item 
+\mbox{\Hypertarget{classDrawNode_a8a54e5d3ccf97fb731e937d22c85db02}\label{classDrawNode_a8a54e5d3ccf97fb731e937d22c85db02}} 
+virtual bool {\bfseries init} () override
+\item 
+void \hyperlink{classDrawNode_ae95a0e497adf2884d571262e4725822e}{draw\+Point} (const \hyperlink{classVec2}{Vec2} \&point, const float point\+Size, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}{draw\+Points} (const \hyperlink{classVec2}{Vec2} $\ast$position, unsigned int number\+Of\+Points, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0bd985652af62bea73a86155560ec313}{draw\+Points} (const \hyperlink{classVec2}{Vec2} $\ast$position, unsigned int number\+Of\+Points, const float point\+Size, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0e45a721e54084a78121171f3e752933}{draw\+Line} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}{draw\+Rect} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}{draw\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, bool close\+Polygon, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center, float scaleX, float scaleY, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}{draw\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, bool draw\+Line\+To\+Center, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}{draw\+Quad\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}{draw\+Cubic\+Bezier} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&control1, const \hyperlink{classVec2}{Vec2} \&control2, const \hyperlink{classVec2}{Vec2} \&destination, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}{draw\+Cardinal\+Spline} (\hyperlink{classPointArray}{Point\+Array} $\ast$config, float tension, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a0d495593f7877ce67007bc0fea68147a}{draw\+Catmull\+Rom} (\hyperlink{classPointArray}{Point\+Array} $\ast$points, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_af88d6e8ceecb345279adc955df8d1220}{draw\+Dot} (const \hyperlink{classVec2}{Vec2} \&pos, float radius, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}{draw\+Rect} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2, const \hyperlink{classVec2}{Vec2} \&p3, const \hyperlink{classVec2}{Vec2} \&p4, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}{draw\+Solid\+Rect} (const \hyperlink{classVec2}{Vec2} \&origin, const \hyperlink{classVec2}{Vec2} \&destination, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a577574914623292940783273d1ea6bff}{draw\+Solid\+Poly} (const \hyperlink{classVec2}{Vec2} $\ast$poli, unsigned int number\+Of\+Points, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, float scaleX, float scaleY, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}{draw\+Solid\+Circle} (const \hyperlink{classVec2}{Vec2} \&center, float radius, float angle, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}{draw\+Segment} (const \hyperlink{classVec2}{Vec2} \&from, const \hyperlink{classVec2}{Vec2} \&to, float radius, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{draw\+Polygon} (const \hyperlink{classVec2}{Vec2} $\ast$verts, int count, const \hyperlink{structColor4F}{Color4F} \&fill\+Color, float border\+Width, const \hyperlink{structColor4F}{Color4F} \&border\+Color)
+\item 
+void \hyperlink{classDrawNode_ab8b8098cd512e011428e3732016fa08b}{draw\+Triangle} (const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2, const \hyperlink{classVec2}{Vec2} \&p3, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classDrawNode_a6e8d1ede793e31611bd10c0f11ede77c}{draw\+Quadratic\+Bezier} (const \hyperlink{classVec2}{Vec2} \&from, const \hyperlink{classVec2}{Vec2} \&control, const \hyperlink{classVec2}{Vec2} \&to, unsigned int segments, const \hyperlink{structColor4F}{Color4F} \&color)
+\item 
+void \hyperlink{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}{clear} ()
+\item 
+const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classDrawNode_ae64c516a7111c6102087e7d0ec399759}{get\+Blend\+Func} () const
+\item 
+void \hyperlink{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+virtual void \hyperlink{classDrawNode_ac634e7823879167ff1707108fbabb7df}{on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_a21bb183a4a833a64c3b37ee102cae6b5}{on\+Draw\+G\+L\+Line} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_a57cdee495c8c817e6bc0dafd3228b998}{on\+Draw\+G\+L\+Point} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+virtual void \hyperlink{classDrawNode_aa08f94d95bce895a248ae66251df846c}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classDrawNode_adffd70536383fa1dd73ab4a6e785808a}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classDrawNode_ad0329ed528d2896ce7486c9917b9474d}\label{classDrawNode_ad0329ed528d2896ce7486c9917b9474d}} 
+void {\bfseries set\+Line\+Width} (G\+Lfloat line\+Width)
+\item 
+\mbox{\Hypertarget{classDrawNode_a017a52661990b0f71d7df51f87776204}\label{classDrawNode_a017a52661990b0f71d7df51f87776204}} 
+G\+Lfloat {\bfseries get\+Line\+Width} ()
+\item 
+void \hyperlink{classDrawNode_aea4968d4500887d631d759fccc8cf4df}{set\+Isolated} (bool isolated)
+\item 
+\mbox{\Hypertarget{classDrawNode_ac7b1ab87bf6c497437570c0d7f553e77}\label{classDrawNode_ac7b1ab87bf6c497437570c0d7f553e77}} 
+bool {\bfseries is\+Isolated} () const
+\item 
+\mbox{\Hypertarget{classDrawNode_a1772f747a8ce3667ef5de7fe9baa315c}\label{classDrawNode_a1772f747a8ce3667ef5de7fe9baa315c}} 
+virtual bool {\bfseries init} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDrawNode}{Draw\+Node} $\ast$ \hyperlink{classDrawNode_af4af0612e76dd98c04d95a946e3fb47f}{create} (int default\+Line\+Width=D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+I\+N\+E\+\_\+\+W\+I\+D\+TH)
+\item 
+static \hyperlink{classDrawNode}{Draw\+Node} $\ast$ \hyperlink{classDrawNode_a2caa3d228ff9195174ad1b8ea7a17cc0}{create} (G\+Lfloat default\+Line\+Width=D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+I\+N\+E\+\_\+\+W\+I\+D\+TH)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawNode_a82ad96bd2634ec45072dab73be58c2f1}\label{classDrawNode_a82ad96bd2634ec45072dab73be58c2f1}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classDrawNode}{Draw\+Node}(int line\+Width = D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+I\+N\+E\+\_\+\+W\+I\+D\+TH)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawNode_a6d2a7257460123b096a646682c4b63e6}\label{classDrawNode_a6d2a7257460123b096a646682c4b63e6}} 
+void {\bfseries ensure\+Capacity} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_a9ad4710044c6087b49968fb322b0eefc}\label{classDrawNode_a9ad4710044c6087b49968fb322b0eefc}} 
+void {\bfseries ensure\+Capacity\+G\+L\+Point} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_a5b3695ec41d24afcb889cc8117150ddb}\label{classDrawNode_a5b3695ec41d24afcb889cc8117150ddb}} 
+void {\bfseries ensure\+Capacity\+G\+L\+Line} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_a6d2a7257460123b096a646682c4b63e6}\label{classDrawNode_a6d2a7257460123b096a646682c4b63e6}} 
+void {\bfseries ensure\+Capacity} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_a9ad4710044c6087b49968fb322b0eefc}\label{classDrawNode_a9ad4710044c6087b49968fb322b0eefc}} 
+void {\bfseries ensure\+Capacity\+G\+L\+Point} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_a5b3695ec41d24afcb889cc8117150ddb}\label{classDrawNode_a5b3695ec41d24afcb889cc8117150ddb}} 
+void {\bfseries ensure\+Capacity\+G\+L\+Line} (int count)
+\item 
+\mbox{\Hypertarget{classDrawNode_abf171f04cef7ebdd046bf7edf1334714}\label{classDrawNode_abf171f04cef7ebdd046bf7edf1334714}} 
+void {\bfseries setup\+Buffer} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawNode_a9a5a75301e06f533439f62c969b4e995}\label{classDrawNode_a9a5a75301e06f533439f62c969b4e995}} 
+G\+Luint {\bfseries \+\_\+vao} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a44c013bb3c46844f8679e588665b650a}\label{classDrawNode_a44c013bb3c46844f8679e588665b650a}} 
+G\+Luint {\bfseries \+\_\+vbo} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a20337cdccd3f4b0b08a7d48265d10eb6}\label{classDrawNode_a20337cdccd3f4b0b08a7d48265d10eb6}} 
+G\+Luint {\bfseries \+\_\+vao\+G\+L\+Point} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a917b39100b651ce6a46e5faa5e357bb2}\label{classDrawNode_a917b39100b651ce6a46e5faa5e357bb2}} 
+G\+Luint {\bfseries \+\_\+vbo\+G\+L\+Point} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_aecd75805a126f57db3ffa3e4e666290c}\label{classDrawNode_aecd75805a126f57db3ffa3e4e666290c}} 
+G\+Luint {\bfseries \+\_\+vao\+G\+L\+Line} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a54eec0394a9f6a880a5352328b498255}\label{classDrawNode_a54eec0394a9f6a880a5352328b498255}} 
+G\+Luint {\bfseries \+\_\+vbo\+G\+L\+Line} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a046a8f19fd6451235960409bd23f256f}\label{classDrawNode_a046a8f19fd6451235960409bd23f256f}} 
+int {\bfseries \+\_\+buffer\+Capacity} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a14e2f005bc6d804de3238d724ec705ef}\label{classDrawNode_a14e2f005bc6d804de3238d724ec705ef}} 
+G\+Lsizei {\bfseries \+\_\+buffer\+Count} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a037c55c859b506e4a9a5639f609af12c}\label{classDrawNode_a037c55c859b506e4a9a5639f609af12c}} 
+\hyperlink{structV2F__C4B__T2F}{V2\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$ {\bfseries \+\_\+buffer} = nullptr
+\item 
+\mbox{\Hypertarget{classDrawNode_a71b709e92aae905560dc79e6f997dec2}\label{classDrawNode_a71b709e92aae905560dc79e6f997dec2}} 
+int {\bfseries \+\_\+buffer\+Capacity\+G\+L\+Point} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a3ca54aedd724c64b29437956b13e641d}\label{classDrawNode_a3ca54aedd724c64b29437956b13e641d}} 
+G\+Lsizei {\bfseries \+\_\+buffer\+Count\+G\+L\+Point} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_afa7d7d79232db53000a25b77553b434f}\label{classDrawNode_afa7d7d79232db53000a25b77553b434f}} 
+\hyperlink{structV2F__C4B__T2F}{V2\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$ {\bfseries \+\_\+buffer\+G\+L\+Point} = nullptr
+\item 
+\mbox{\Hypertarget{classDrawNode_a9c1586452bd79811235c83a5e3f35205}\label{classDrawNode_a9c1586452bd79811235c83a5e3f35205}} 
+\hyperlink{structColor4F}{Color4F} {\bfseries \+\_\+point\+Color}
+\item 
+\mbox{\Hypertarget{classDrawNode_aa931897019898aa59cd5eb27c1331f04}\label{classDrawNode_aa931897019898aa59cd5eb27c1331f04}} 
+int {\bfseries \+\_\+point\+Size} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a69404f15a27ea9a4f5527a91bde1eca8}\label{classDrawNode_a69404f15a27ea9a4f5527a91bde1eca8}} 
+int {\bfseries \+\_\+buffer\+Capacity\+G\+L\+Line} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_ad95723387f9369a09245a2bbe80461aa}\label{classDrawNode_ad95723387f9369a09245a2bbe80461aa}} 
+G\+Lsizei {\bfseries \+\_\+buffer\+Count\+G\+L\+Line} = 0
+\item 
+\mbox{\Hypertarget{classDrawNode_a590ea62440ab73eda483df3a7c180954}\label{classDrawNode_a590ea62440ab73eda483df3a7c180954}} 
+\hyperlink{structV2F__C4B__T2F}{V2\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$ {\bfseries \+\_\+buffer\+G\+L\+Line} = nullptr
+\item 
+\mbox{\Hypertarget{classDrawNode_a0c88b17dbd9aa1c8a192c02e24c2ea11}\label{classDrawNode_a0c88b17dbd9aa1c8a192c02e24c2ea11}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend\+Func}
+\item 
+\mbox{\Hypertarget{classDrawNode_a4a00b2fcd1d0faae30218f159a1f10f1}\label{classDrawNode_a4a00b2fcd1d0faae30218f159a1f10f1}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command}
+\item 
+\mbox{\Hypertarget{classDrawNode_a1f5e7fc51ec09ff32a8bc7a23d083921}\label{classDrawNode_a1f5e7fc51ec09ff32a8bc7a23d083921}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command\+G\+L\+Point}
+\item 
+\mbox{\Hypertarget{classDrawNode_adcb6cf4ce769804cca7c3181c068050f}\label{classDrawNode_adcb6cf4ce769804cca7c3181c068050f}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command\+G\+L\+Line}
+\item 
+\mbox{\Hypertarget{classDrawNode_a45923ad8306ea09cdf6b578bd0777992}\label{classDrawNode_a45923ad8306ea09cdf6b578bd0777992}} 
+bool {\bfseries \+\_\+dirty} = false
+\item 
+\mbox{\Hypertarget{classDrawNode_ac4be36f61f36094befe91cbd78260a54}\label{classDrawNode_ac4be36f61f36094befe91cbd78260a54}} 
+bool {\bfseries \+\_\+dirty\+G\+L\+Point} = false
+\item 
+\mbox{\Hypertarget{classDrawNode_a1f57c5febefa71431f75458f4e039efb}\label{classDrawNode_a1f57c5febefa71431f75458f4e039efb}} 
+bool {\bfseries \+\_\+dirty\+G\+L\+Line} = false
+\item 
+\mbox{\Hypertarget{classDrawNode_a46b58e2e3463d378c7148f0fe00d69a3}\label{classDrawNode_a46b58e2e3463d378c7148f0fe00d69a3}} 
+int {\bfseries \+\_\+line\+Width}
+\item 
+\mbox{\Hypertarget{classDrawNode_a6883d8cfe3d75c012be088377fa9165a}\label{classDrawNode_a6883d8cfe3d75c012be088377fa9165a}} 
+int {\bfseries \+\_\+default\+Line\+Width}
+\item 
+\mbox{\Hypertarget{classDrawNode_a1a18556ab979cfc6bcc376dc09fac502}\label{classDrawNode_a1a18556ab979cfc6bcc376dc09fac502}} 
+bool {\bfseries \+\_\+isolated} = false
+\item 
+\mbox{\Hypertarget{classDrawNode_ae6c402d1f270a5fe29a813c2bcfd941a}\label{classDrawNode_ae6c402d1f270a5fe29a813c2bcfd941a}} 
+G\+Lfloat {\bfseries \+\_\+line\+Width} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDrawNode_a8b121efeb2e75a784ee5d50bc82a2ed1}\label{classDrawNode_a8b121efeb2e75a784ee5d50bc82a2ed1}} 
+G\+Lfloat {\bfseries \+\_\+default\+Line\+Width} = 0.\+0f
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classNode}{Node} that draws dots, segments and polygons. Faster than the \char`\"{}drawing primitives\char`\"{} since they draws everything in one single batch. 
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}\label{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}} 
+\index{Draw\+Node@{Draw\+Node}!clear@{clear}}
+\index{clear@{clear}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear the geometry in the node\textquotesingle{}s buffer. \mbox{\Hypertarget{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}\label{classDrawNode_a9e650c39c26a8ba3c912f21388b2218d}} 
+\index{Draw\+Node@{Draw\+Node}!clear@{clear}}
+\index{clear@{clear}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear the geometry in the node\textquotesingle{}s buffer. \mbox{\Hypertarget{classDrawNode_af4af0612e76dd98c04d95a946e3fb47f}\label{classDrawNode_af4af0612e76dd98c04d95a946e3fb47f}} 
+\index{Draw\+Node@{Draw\+Node}!create@{create}}
+\index{create@{create}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDrawNode}{Draw\+Node} $\ast$ Draw\+Node\+::create (\begin{DoxyParamCaption}\item[{int}]{default\+Line\+Width = {\ttfamily DEFAULT\+\_\+LINE\+\_\+WIDTH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates and initialize a \hyperlink{classDrawNode}{Draw\+Node} node.
+
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDrawNode_a2caa3d228ff9195174ad1b8ea7a17cc0}\label{classDrawNode_a2caa3d228ff9195174ad1b8ea7a17cc0}} 
+\index{Draw\+Node@{Draw\+Node}!create@{create}}
+\index{create@{create}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDrawNode}{Draw\+Node} $\ast$ Draw\+Node\+::create (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{default\+Line\+Width = {\ttfamily DEFAULT\+\_\+LINE\+\_\+WIDTH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates and initialize a \hyperlink{classDrawNode}{Draw\+Node} node.
+
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDrawNode_a425b5c32a324be510862d2fee31328f5}\label{classDrawNode_a425b5c32a324be510862d2fee31328f5}} 
+\index{Draw\+Node@{Draw\+Node}!draw@{draw}}
+\index{draw@{draw}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPhysicsDebugNode_a71bda24e446762fc1a1ae2d31927d19a}{Physics\+Debug\+Node}, and \hyperlink{classPhysicsDebugNode_a78fe785679cead2a155f0f767932a89f}{Physics\+Debug\+Node}.
+
+\mbox{\Hypertarget{classDrawNode_aa08f94d95bce895a248ae66251df846c}\label{classDrawNode_aa08f94d95bce895a248ae66251df846c}} 
+\index{Draw\+Node@{Draw\+Node}!draw@{draw}}
+\index{draw@{draw}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Draw\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPhysicsDebugNode_a71bda24e446762fc1a1ae2d31927d19a}{Physics\+Debug\+Node}, and \hyperlink{classPhysicsDebugNode_a78fe785679cead2a155f0f767932a89f}{Physics\+Debug\+Node}.
+
+\mbox{\Hypertarget{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}\label{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}}
+\index{draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Cardinal\+Spline()}{drawCardinalSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Cardinal\+Spline (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{config,  }\item[{float}]{tension,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a Cardinal Spline path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A array point. \\
+\hline
+{\em tension} & The tension of the spline. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the Spline color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}\label{classDrawNode_a3a049a11a464ef816b4e0883a7995f99}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}}
+\index{draw\+Cardinal\+Spline@{draw\+Cardinal\+Spline}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Cardinal\+Spline()}{drawCardinalSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Cardinal\+Spline (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{config,  }\item[{float}]{tension,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a Cardinal Spline path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & A array point. \\
+\hline
+{\em tension} & The tension of the spline. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the Spline color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0d495593f7877ce67007bc0fea68147a}\label{classDrawNode_a0d495593f7877ce67007bc0fea68147a}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Catmull\+Rom@{draw\+Catmull\+Rom}}
+\index{draw\+Catmull\+Rom@{draw\+Catmull\+Rom}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Catmull\+Rom()}{drawCatmullRom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Catmull\+Rom (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a Catmull Rom path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & A point array of control point. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The Catmull Rom color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0d495593f7877ce67007bc0fea68147a}\label{classDrawNode_a0d495593f7877ce67007bc0fea68147a}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Catmull\+Rom@{draw\+Catmull\+Rom}}
+\index{draw\+Catmull\+Rom@{draw\+Catmull\+Rom}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Catmull\+Rom()}{drawCatmullRom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Catmull\+Rom (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a Catmull Rom path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & A point array of control point. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The Catmull Rom color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}\label{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y. \\
+\hline
+{\em color} & Set the circle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}\label{classDrawNode_adf9a11257ee5e1e308792a8949e3093b}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y. \\
+\hline
+{\em color} & Set the circle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}\label{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+{\em color} & Set the circle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}\label{classDrawNode_af5a7e9947c1048ab5b718c1b5bbca12f}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Circle@{draw\+Circle}}
+\index{draw\+Circle@{draw\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Circle()}{drawCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{bool}]{draw\+Line\+To\+Center,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a circle given the center, radius and number of segments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em draw\+Line\+To\+Center} & Whether or not draw the line from the origin to center. \\
+\hline
+{\em color} & Set the circle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}\label{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}}
+\index{draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Cubic\+Bezier()}{drawCubicBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a cubic bezier curve with color and number of segments
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control1} & The first control of the bezier path. \\
+\hline
+{\em control2} & The second control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the cubic bezier color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}\label{classDrawNode_a116fefaf98aab7aed0e75e72c4b44851}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}}
+\index{draw\+Cubic\+Bezier@{draw\+Cubic\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Cubic\+Bezier()}{drawCubicBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a cubic bezier curve with color and number of segments
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control1} & The first control of the bezier path. \\
+\hline
+{\em control2} & The second control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the cubic bezier color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_af88d6e8ceecb345279adc955df8d1220}\label{classDrawNode_af88d6e8ceecb345279adc955df8d1220}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Dot@{draw\+Dot}}
+\index{draw\+Dot@{draw\+Dot}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Dot()}{drawDot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos,  }\item[{float}]{radius,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a dot at a position, with a given radius and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The dot center. \\
+\hline
+{\em radius} & The dot radius. \\
+\hline
+{\em color} & The dot color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_af88d6e8ceecb345279adc955df8d1220}\label{classDrawNode_af88d6e8ceecb345279adc955df8d1220}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Dot@{draw\+Dot}}
+\index{draw\+Dot@{draw\+Dot}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Dot()}{drawDot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos,  }\item[{float}]{radius,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a dot at a position, with a given radius and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The dot center. \\
+\hline
+{\em radius} & The dot radius. \\
+\hline
+{\em color} & The dot color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0e45a721e54084a78121171f3e752933}\label{classDrawNode_a0e45a721e54084a78121171f3e752933}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw an line from origin to destination with color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The line origin. \\
+\hline
+{\em destination} & The line destination. \\
+\hline
+{\em color} & The line color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0e45a721e54084a78121171f3e752933}\label{classDrawNode_a0e45a721e54084a78121171f3e752933}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Line@{draw\+Line}}
+\index{draw\+Line@{draw\+Line}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Line()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw an line from origin to destination with color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The line origin. \\
+\hline
+{\em destination} & The line destination. \\
+\hline
+{\em color} & The line color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ae95a0e497adf2884d571262e4725822e}\label{classDrawNode_ae95a0e497adf2884d571262e4725822e}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Point@{draw\+Point}}
+\index{draw\+Point@{draw\+Point}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Point()}{drawPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{const float}]{point\+Size,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & A \hyperlink{classVec2}{Vec2} used to point. \\
+\hline
+{\em point\+Size} & The point size. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ae95a0e497adf2884d571262e4725822e}\label{classDrawNode_ae95a0e497adf2884d571262e4725822e}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Point@{draw\+Point}}
+\index{draw\+Point@{draw\+Point}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Point()}{drawPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{const float}]{point\+Size,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & A \hyperlink{classVec2}{Vec2} used to point. \\
+\hline
+{\em point\+Size} & The point size. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}\label{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Points()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{position,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a group point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A \hyperlink{classVec2}{Vec2} pointer. \\
+\hline
+{\em number\+Of\+Points} & The number of points. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}\label{classDrawNode_a258b2a3fb7e094b1eebf17b0538e6dde}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Points()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{position,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a group point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A \hyperlink{classVec2}{Vec2} pointer. \\
+\hline
+{\em number\+Of\+Points} & The number of points. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0bd985652af62bea73a86155560ec313}\label{classDrawNode_a0bd985652af62bea73a86155560ec313}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Points()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{position,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const float}]{point\+Size,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a group point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A \hyperlink{classVec2}{Vec2} pointer. \\
+\hline
+{\em number\+Of\+Points} & The number of points. \\
+\hline
+{\em point\+Size} & The point size. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a0bd985652af62bea73a86155560ec313}\label{classDrawNode_a0bd985652af62bea73a86155560ec313}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Points()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{position,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const float}]{point\+Size,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draw a group point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A \hyperlink{classVec2}{Vec2} pointer. \\
+\hline
+{\em number\+Of\+Points} & The number of points. \\
+\hline
+{\em point\+Size} & The point size. \\
+\hline
+{\em color} & The point color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}\label{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Poly@{draw\+Poly}}
+\index{draw\+Poly@{draw\+Poly}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Poly()}{drawPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{poli,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{bool}]{close\+Polygon,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a polygon given a pointer to point coordinates and the number of vertices measured in points. The polygon can be closed or open.
+
+
+\begin{DoxyParams}{Parameters}
+{\em poli} & A pointer to point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of vertices measured in points. \\
+\hline
+{\em close\+Polygon} & The polygon can be closed or open. \\
+\hline
+{\em color} & The polygon color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}\label{classDrawNode_a099aa3372ad6fe9f135a166e1e071130}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Poly@{draw\+Poly}}
+\index{draw\+Poly@{draw\+Poly}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Poly()}{drawPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{poli,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{bool}]{close\+Polygon,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a polygon given a pointer to point coordinates and the number of vertices measured in points. The polygon can be closed or open.
+
+
+\begin{DoxyParams}{Parameters}
+{\em poli} & A pointer to point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of vertices measured in points. \\
+\hline
+{\em close\+Polygon} & The polygon can be closed or open. \\
+\hline
+{\em color} & The polygon color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a217a186e97728b74c06579375b173992}\label{classDrawNode_a217a186e97728b74c06579375b173992}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Polygon@{draw\+Polygon}}
+\index{draw\+Polygon@{draw\+Polygon}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Polygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{verts,  }\item[{int}]{count,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{fill\+Color,  }\item[{float}]{border\+Width,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{border\+Color }\end{DoxyParamCaption})}
+
+draw a polygon with a fill color and line color 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{drawPolygon}(var Arrayofpoints, var fillColor, var width, var borderColor)
+In lua:local \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{drawPolygon}(local pointTable,local tableCount,local fillColor,local width,local 
+      borderColor)
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em verts} & A pointer to point coordinates. \\
+\hline
+{\em count} & The number of verts measured in points. \\
+\hline
+{\em fill\+Color} & The color will fill in polygon. \\
+\hline
+{\em border\+Width} & The border of line width. \\
+\hline
+{\em border\+Color} & The border of line color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a217a186e97728b74c06579375b173992}\label{classDrawNode_a217a186e97728b74c06579375b173992}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Polygon@{draw\+Polygon}}
+\index{draw\+Polygon@{draw\+Polygon}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Polygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{verts,  }\item[{int}]{count,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{fill\+Color,  }\item[{float}]{border\+Width,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{border\+Color }\end{DoxyParamCaption})}
+
+draw a polygon with a fill color and line color 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{drawPolygon}(var Arrayofpoints, var fillColor, var width, var borderColor)
+In lua:local \hyperlink{classDrawNode_a217a186e97728b74c06579375b173992}{drawPolygon}(local pointTable,local tableCount,local fillColor,local width,local 
+      borderColor)
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em verts} & A pointer to point coordinates. \\
+\hline
+{\em count} & The number of verts measured in points. \\
+\hline
+{\em fill\+Color} & The color will fill in polygon. \\
+\hline
+{\em border\+Width} & The border of line width. \\
+\hline
+{\em border\+Color} & The border of line color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}\label{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Quad\+Bezier@{draw\+Quad\+Bezier}}
+\index{draw\+Quad\+Bezier@{draw\+Quad\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Quad\+Bezier()}{drawQuadBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Quad\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a quad bezier path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control} & The control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the quad bezier color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}\label{classDrawNode_a16f0f5a0e7825e469c33df8694b51dc6}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Quad\+Bezier@{draw\+Quad\+Bezier}}
+\index{draw\+Quad\+Bezier@{draw\+Quad\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Quad\+Bezier()}{drawQuadBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Quad\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a quad bezier path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin of the bezier path. \\
+\hline
+{\em control} & The control of the bezier path. \\
+\hline
+{\em destination} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & Set the quad bezier color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a78d781bde114c683d9aaf8d1a9beb3e6}\label{classDrawNode_a78d781bde114c683d9aaf8d1a9beb3e6}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Quadratic\+Bezier@{draw\+Quadratic\+Bezier}}
+\index{draw\+Quadratic\+Bezier@{draw\+Quadratic\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Quadratic\+Bezier()}{drawQuadraticBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Quadratic\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{from,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{to,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a quadratic bezier curve with color and number of segments, use draw\+Quad\+Bezier instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The origin of the bezier path. \\
+\hline
+{\em control} & The control of the bezier path. \\
+\hline
+{\em to} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The quadratic bezier color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a6e8d1ede793e31611bd10c0f11ede77c}\label{classDrawNode_a6e8d1ede793e31611bd10c0f11ede77c}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Quadratic\+Bezier@{draw\+Quadratic\+Bezier}}
+\index{draw\+Quadratic\+Bezier@{draw\+Quadratic\+Bezier}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Quadratic\+Bezier()}{drawQuadraticBezier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Draw\+Node\+::draw\+Quadratic\+Bezier (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{from,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{control,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{to,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a quadratic bezier curve with color and number of segments, use draw\+Quad\+Bezier instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The origin of the bezier path. \\
+\hline
+{\em control} & The control of the bezier path. \\
+\hline
+{\em to} & The destination of the bezier path. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The quadratic bezier color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}\label{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Rect()}{drawRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}\label{classDrawNode_ac4a2969bd4fb055c9212c37b0966e093}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Rect()}{drawRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}\label{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Rect()}{drawRect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p4,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a rectangle with 4 points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The rectangle vertex point. \\
+\hline
+{\em p2} & The rectangle vertex point. \\
+\hline
+{\em p3} & The rectangle vertex point. \\
+\hline
+{\em p4} & The rectangle vertex point. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}\label{classDrawNode_a7bfae00862072e6ebbb4529c2a17246e}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Rect@{draw\+Rect}}
+\index{draw\+Rect@{draw\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Rect()}{drawRect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p4,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a rectangle with 4 points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The rectangle vertex point. \\
+\hline
+{\em p2} & The rectangle vertex point. \\
+\hline
+{\em p3} & The rectangle vertex point. \\
+\hline
+{\em p4} & The rectangle vertex point. \\
+\hline
+{\em color} & The rectangle color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}\label{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Segment@{draw\+Segment}}
+\index{draw\+Segment@{draw\+Segment}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Segment()}{drawSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Segment (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{from,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{to,  }\item[{float}]{radius,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a segment with a radius and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The segment origin. \\
+\hline
+{\em to} & The segment destination. \\
+\hline
+{\em radius} & The segment radius. \\
+\hline
+{\em color} & The segment color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}\label{classDrawNode_aa6394fffe90f57a2027289bee80d0ce5}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Segment@{draw\+Segment}}
+\index{draw\+Segment@{draw\+Segment}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Segment()}{drawSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Segment (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{from,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{to,  }\item[{float}]{radius,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a segment with a radius and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The segment origin. \\
+\hline
+{\em to} & The segment destination. \\
+\hline
+{\em radius} & The segment radius. \\
+\hline
+{\em color} & The segment color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}\label{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y. \\
+\hline
+{\em color} & The solid circle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}\label{classDrawNode_ae875c4cb68b20c87ea3d65c88b09e801}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em scaleX} & The scale value in x. \\
+\hline
+{\em scaleY} & The scale value in y. \\
+\hline
+{\em color} & The solid circle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}\label{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The solid circle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}\label{classDrawNode_afd7235844ce36bc75a1dc950f0ab8a4d}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Circle@{draw\+Solid\+Circle}}
+\index{draw\+Solid\+Circle@{draw\+Solid\+Circle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Circle()}{drawSolidCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Circle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{center,  }\item[{float}]{radius,  }\item[{float}]{angle,  }\item[{unsigned int}]{segments,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid circle given the center, radius and number of segments. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The circle center point. \\
+\hline
+{\em radius} & The circle rotate of radius. \\
+\hline
+{\em angle} & The circle angle. \\
+\hline
+{\em segments} & The number of segments. \\
+\hline
+{\em color} & The solid circle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a577574914623292940783273d1ea6bff}\label{classDrawNode_a577574914623292940783273d1ea6bff}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Poly@{draw\+Solid\+Poly}}
+\index{draw\+Solid\+Poly@{draw\+Solid\+Poly}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Poly()}{drawSolidPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{poli,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid polygon given a pointer to C\+G\+Point coordinates, the number of vertices measured in points, and a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em poli} & A solid polygon given a pointer to C\+G\+Point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of vertices measured in points. \\
+\hline
+{\em color} & The solid polygon color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a577574914623292940783273d1ea6bff}\label{classDrawNode_a577574914623292940783273d1ea6bff}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Poly@{draw\+Solid\+Poly}}
+\index{draw\+Solid\+Poly@{draw\+Solid\+Poly}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Poly()}{drawSolidPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Poly (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} $\ast$}]{poli,  }\item[{unsigned int}]{number\+Of\+Points,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid polygon given a pointer to C\+G\+Point coordinates, the number of vertices measured in points, and a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em poli} & A solid polygon given a pointer to C\+G\+Point coordinates. \\
+\hline
+{\em number\+Of\+Points} & The number of vertices measured in points. \\
+\hline
+{\em color} & The solid polygon color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}\label{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Rect@{draw\+Solid\+Rect}}
+\index{draw\+Solid\+Rect@{draw\+Solid\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Rect()}{drawSolidRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+{\em color} & The rectangle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}\label{classDrawNode_a4eed155f58988bab43e8d8bc31bf5ccb}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Solid\+Rect@{draw\+Solid\+Rect}}
+\index{draw\+Solid\+Rect@{draw\+Solid\+Rect}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Solid\+Rect()}{drawSolidRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Solid\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{origin,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{destination,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+Draws a solid rectangle given the origin and destination point measured in points. The origin and the destination can not have the same x and y coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The rectangle origin. \\
+\hline
+{\em destination} & The rectangle destination. \\
+\hline
+{\em color} & The rectangle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ab8b8098cd512e011428e3732016fa08b}\label{classDrawNode_ab8b8098cd512e011428e3732016fa08b}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Triangle@{draw\+Triangle}}
+\index{draw\+Triangle@{draw\+Triangle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Triangle()}{drawTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Triangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a triangle with color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The triangle vertex point. \\
+\hline
+{\em p2} & The triangle vertex point. \\
+\hline
+{\em p3} & The triangle vertex point. \\
+\hline
+{\em color} & The triangle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_ab8b8098cd512e011428e3732016fa08b}\label{classDrawNode_ab8b8098cd512e011428e3732016fa08b}} 
+\index{Draw\+Node@{Draw\+Node}!draw\+Triangle@{draw\+Triangle}}
+\index{draw\+Triangle@{draw\+Triangle}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{draw\+Triangle()}{drawTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::draw\+Triangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{const \hyperlink{structColor4F}{Color4F} \&}]{color }\end{DoxyParamCaption})}
+
+draw a triangle with color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The triangle vertex point. \\
+\hline
+{\em p2} & The triangle vertex point. \\
+\hline
+{\em p3} & The triangle vertex point. \\
+\hline
+{\em color} & The triangle color.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawNode_a4852c0f114e65e96420095aaa6e63837}\label{classDrawNode_a4852c0f114e65e96420095aaa6e63837}} 
+\index{Draw\+Node@{Draw\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func} \& Draw\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the color mixed mode.  NA \mbox{\Hypertarget{classDrawNode_ae64c516a7111c6102087e7d0ec399759}\label{classDrawNode_ae64c516a7111c6102087e7d0ec399759}} 
+\index{Draw\+Node@{Draw\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func}\& Draw\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the color mixed mode.  NA \mbox{\Hypertarget{classDrawNode_aed389c5d434e56bd438fb6153eedd8d7}\label{classDrawNode_aed389c5d434e56bd438fb6153eedd8d7}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw@{on\+Draw}}
+\index{on\+Draw@{on\+Draw}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw()}{onDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::on\+Draw (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_ac634e7823879167ff1707108fbabb7df}\label{classDrawNode_ac634e7823879167ff1707108fbabb7df}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw@{on\+Draw}}
+\index{on\+Draw@{on\+Draw}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw()}{onDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Draw\+Node\+::on\+Draw (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_a19ecf575260b8db580cf78921cdd40ee}\label{classDrawNode_a19ecf575260b8db580cf78921cdd40ee}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw\+G\+L\+Line@{on\+Draw\+G\+L\+Line}}
+\index{on\+Draw\+G\+L\+Line@{on\+Draw\+G\+L\+Line}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw\+G\+L\+Line()}{onDrawGLLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::on\+Draw\+G\+L\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_a21bb183a4a833a64c3b37ee102cae6b5}\label{classDrawNode_a21bb183a4a833a64c3b37ee102cae6b5}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw\+G\+L\+Line@{on\+Draw\+G\+L\+Line}}
+\index{on\+Draw\+G\+L\+Line@{on\+Draw\+G\+L\+Line}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw\+G\+L\+Line()}{onDrawGLLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Draw\+Node\+::on\+Draw\+G\+L\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_afd5151bb132169da091320b4a354945b}\label{classDrawNode_afd5151bb132169da091320b4a354945b}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw\+G\+L\+Point@{on\+Draw\+G\+L\+Point}}
+\index{on\+Draw\+G\+L\+Point@{on\+Draw\+G\+L\+Point}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw\+G\+L\+Point()}{onDrawGLPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::on\+Draw\+G\+L\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_a57cdee495c8c817e6bc0dafd3228b998}\label{classDrawNode_a57cdee495c8c817e6bc0dafd3228b998}} 
+\index{Draw\+Node@{Draw\+Node}!on\+Draw\+G\+L\+Point@{on\+Draw\+G\+L\+Point}}
+\index{on\+Draw\+G\+L\+Point@{on\+Draw\+G\+L\+Point}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{on\+Draw\+G\+L\+Point()}{onDrawGLPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Draw\+Node\+::on\+Draw\+G\+L\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}\label{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}} 
+\index{Draw\+Node@{Draw\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})}
+
+Set the color mixed mode. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}{setBlendFunc}(var src, var dst)
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}\label{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}} 
+\index{Draw\+Node@{Draw\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Draw\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})}
+
+Set the color mixed mode. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classDrawNode_aa2fec0829a3f19c5996946fc25eccd66}{setBlendFunc}(var src, var dst)
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classDrawNode_aea4968d4500887d631d759fccc8cf4df}\label{classDrawNode_aea4968d4500887d631d759fccc8cf4df}} 
+\index{Draw\+Node@{Draw\+Node}!set\+Isolated@{set\+Isolated}}
+\index{set\+Isolated@{set\+Isolated}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{set\+Isolated()}{setIsolated()}}
+{\footnotesize\ttfamily void Draw\+Node\+::set\+Isolated (\begin{DoxyParamCaption}\item[{bool}]{isolated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+When isolated is set, the position of the node is no longer affected by parent nodes. Which means it will be drawn just like a root node. \mbox{\Hypertarget{classDrawNode_adffd70536383fa1dd73ab4a6e785808a}\label{classDrawNode_adffd70536383fa1dd73ab4a6e785808a}} 
+\index{Draw\+Node@{Draw\+Node}!visit@{visit}}
+\index{visit@{visit}!Draw\+Node@{Draw\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void Draw\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Draw\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Draw\+Node.\+cpp\end{DoxyCompactItemize}

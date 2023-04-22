@@ -1,0 +1,227 @@
+\hypertarget{classNinePatchImageParser}{}\section{Nine\+Patch\+Image\+Parser Class Reference}
+\label{classNinePatchImageParser}\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+
+
+{\ttfamily \#include $<$C\+C\+Nine\+Patch\+Image\+Parser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}{Nine\+Patch\+Image\+Parser} ()
+\item 
+\hyperlink{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}{Nine\+Patch\+Image\+Parser} (Image $\ast$image)
+\item 
+\hyperlink{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}{Nine\+Patch\+Image\+Parser} (Image $\ast$image, const \hyperlink{classRect}{Rect} \&frame\+Rect, bool rotated)
+\item 
+void \hyperlink{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}{set\+Sprite\+Frame\+Info} (Image $\ast$image, const \hyperlink{classRect}{Rect} \&frame\+Rect, bool rotated)
+\item 
+virtual \hyperlink{classNinePatchImageParser_afbc12ecc1d19ebe03223c78ec2808e48}{$\sim$\+Nine\+Patch\+Image\+Parser} ()
+\item 
+\hyperlink{classRect}{Rect} \hyperlink{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}{parse\+Cap\+Inset} () const
+\item 
+\hyperlink{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}{Nine\+Patch\+Image\+Parser} ()
+\item 
+\hyperlink{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}{Nine\+Patch\+Image\+Parser} (Image $\ast$image)
+\item 
+\hyperlink{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}{Nine\+Patch\+Image\+Parser} (Image $\ast$image, const \hyperlink{classRect}{Rect} \&frame\+Rect, bool rotated)
+\item 
+void \hyperlink{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}{set\+Sprite\+Frame\+Info} (Image $\ast$image, const \hyperlink{classRect}{Rect} \&frame\+Rect, bool rotated)
+\item 
+virtual \hyperlink{classNinePatchImageParser_aa111308955969701a1c0f28025b646cd}{$\sim$\+Nine\+Patch\+Image\+Parser} ()
+\item 
+\hyperlink{classRect}{Rect} \hyperlink{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}{parse\+Cap\+Inset} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classNinePatchImageParser_a2be4f16b58661d5211b59fa121c32c22}{is\+Nine\+Patch\+Image} (const std\+::string \&filename)
+\item 
+static bool \hyperlink{classNinePatchImageParser_a914715744d8e64528fda1e8fd004438d}{is\+Nine\+Patch\+Image} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class for paring Android .9 patch image. For more about Android .9 patch image format, please refer to \href{http://developer.android.com/tools/help/draw9patch.html}{\tt http\+://developer.\+android.\+com/tools/help/draw9patch.\+html}
+
+The class could parse a single .9 patch image and produce the cap\+Insets as well as a sprite atlas and store all the cap\+Insets infos in a \hyperlink{classTexture2D}{Texture2D}. Note\+:
+\begin{DoxyItemize}
+\item Currently only Pixel\+Format\+::\+R\+G\+B\+A8888 is supported.
+\item Texture\+Packer Trim mode is not supported at the moment. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}\label{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. \mbox{\Hypertarget{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}\label{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Instantiate a \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} with a Image object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A Image object pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}\label{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{const \hyperlink{classRect}{Rect} \&}]{frame\+Rect,  }\item[{bool}]{rotated }\end{DoxyParamCaption})}
+
+Instantiate a \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} with a Image object and the sprite\+Frame info. The sprite\+Frame contains the frame rect in the image atlas and whether it is rotated or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A Image object pointer. \\
+\hline
+{\em frame\+Rect} & The sprite frame rect in the image atlas. \\
+\hline
+{\em rotated} & Whether is sprite frame is rotated in the image atlas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNinePatchImageParser_afbc12ecc1d19ebe03223c78ec2808e48}\label{classNinePatchImageParser_afbc12ecc1d19ebe03223c78ec2808e48}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!````~Nine\+Patch\+Image\+Parser@{$\sim$\+Nine\+Patch\+Image\+Parser}}
+\index{````~Nine\+Patch\+Image\+Parser@{$\sim$\+Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{$\sim$\+Nine\+Patch\+Image\+Parser()}{~NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Nine\+Patch\+Image\+Parser\+::$\sim$\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor. \mbox{\Hypertarget{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}\label{classNinePatchImageParser_ad64d0b93c7f5a73386ba972d0f3a4d8d}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. \mbox{\Hypertarget{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}\label{classNinePatchImageParser_a64d01b936897a64a9cd6c5325c01f074}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Instantiate a \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} with a Image object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A Image object pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}\label{classNinePatchImageParser_af6a7854a94eb39c9881b90b5c1c04e0f}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{Nine\+Patch\+Image\+Parser()}{NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Nine\+Patch\+Image\+Parser\+::\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{const \hyperlink{classRect}{Rect} \&}]{frame\+Rect,  }\item[{bool}]{rotated }\end{DoxyParamCaption})}
+
+Instantiate a \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser} with a Image object and the sprite\+Frame info. The sprite\+Frame contains the frame rect in the image atlas and whether it is rotated or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A Image object pointer. \\
+\hline
+{\em frame\+Rect} & The sprite frame rect in the image atlas. \\
+\hline
+{\em rotated} & Whether is sprite frame is rotated in the image atlas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNinePatchImageParser_aa111308955969701a1c0f28025b646cd}\label{classNinePatchImageParser_aa111308955969701a1c0f28025b646cd}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!````~Nine\+Patch\+Image\+Parser@{$\sim$\+Nine\+Patch\+Image\+Parser}}
+\index{````~Nine\+Patch\+Image\+Parser@{$\sim$\+Nine\+Patch\+Image\+Parser}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{$\sim$\+Nine\+Patch\+Image\+Parser()}{~NinePatchImageParser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Nine\+Patch\+Image\+Parser\+::$\sim$\+Nine\+Patch\+Image\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNinePatchImageParser_a2be4f16b58661d5211b59fa121c32c22}\label{classNinePatchImageParser_a2be4f16b58661d5211b59fa121c32c22}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!is\+Nine\+Patch\+Image@{is\+Nine\+Patch\+Image}}
+\index{is\+Nine\+Patch\+Image@{is\+Nine\+Patch\+Image}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{is\+Nine\+Patch\+Image()}{isNinePatchImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Nine\+Patch\+Image\+Parser\+::is\+Nine\+Patch\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Determines whether a filename contains \char`\"{}.\+9.\+png\char`\"{} suffix. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & A 9-\/patch image name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the filename contains \char`\"{}.\+9.\+png\char`\"{}, then return true, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_a914715744d8e64528fda1e8fd004438d}\label{classNinePatchImageParser_a914715744d8e64528fda1e8fd004438d}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!is\+Nine\+Patch\+Image@{is\+Nine\+Patch\+Image}}
+\index{is\+Nine\+Patch\+Image@{is\+Nine\+Patch\+Image}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{is\+Nine\+Patch\+Image()}{isNinePatchImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Nine\+Patch\+Image\+Parser\+::is\+Nine\+Patch\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Determines whether a filename contains \char`\"{}.\+9.\+png\char`\"{} suffix. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & A 9-\/patch image name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the filename contains \char`\"{}.\+9.\+png\char`\"{}, then return true, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}\label{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!parse\+Cap\+Inset@{parse\+Cap\+Inset}}
+\index{parse\+Cap\+Inset@{parse\+Cap\+Inset}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Cap\+Inset()}{parseCapInset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} Nine\+Patch\+Image\+Parser\+::parse\+Cap\+Inset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Parsing the image data and extract the cap\+Insets info. \begin{DoxyReturn}{Returns}
+The cap\+Insets \hyperlink{classRect}{Rect}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}\label{classNinePatchImageParser_a85313610f427ab890684f3c5fc4fe3c7}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!parse\+Cap\+Inset@{parse\+Cap\+Inset}}
+\index{parse\+Cap\+Inset@{parse\+Cap\+Inset}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{parse\+Cap\+Inset()}{parseCapInset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} Nine\+Patch\+Image\+Parser\+::parse\+Cap\+Inset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Parsing the image data and extract the cap\+Insets info. \begin{DoxyReturn}{Returns}
+The cap\+Insets \hyperlink{classRect}{Rect}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}\label{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!set\+Sprite\+Frame\+Info@{set\+Sprite\+Frame\+Info}}
+\index{set\+Sprite\+Frame\+Info@{set\+Sprite\+Frame\+Info}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{set\+Sprite\+Frame\+Info()}{setSpriteFrameInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Nine\+Patch\+Image\+Parser\+::set\+Sprite\+Frame\+Info (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{const \hyperlink{classRect}{Rect} \&}]{frame\+Rect,  }\item[{bool}]{rotated }\end{DoxyParamCaption})}
+
+Change the sprite frame info. It is useful when parsing multiple sprite frame with only on \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Rect} & The sprite frame rect in the image atlas. \\
+\hline
+{\em rotated} & Whether is sprite frame is rotated in the image atlas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}\label{classNinePatchImageParser_a304418601a8d21cc6cd894158b605ea3}} 
+\index{Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}!set\+Sprite\+Frame\+Info@{set\+Sprite\+Frame\+Info}}
+\index{set\+Sprite\+Frame\+Info@{set\+Sprite\+Frame\+Info}!Nine\+Patch\+Image\+Parser@{Nine\+Patch\+Image\+Parser}}
+\subsubsection{\texorpdfstring{set\+Sprite\+Frame\+Info()}{setSpriteFrameInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Nine\+Patch\+Image\+Parser\+::set\+Sprite\+Frame\+Info (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{const \hyperlink{classRect}{Rect} \&}]{frame\+Rect,  }\item[{bool}]{rotated }\end{DoxyParamCaption})}
+
+Change the sprite frame info. It is useful when parsing multiple sprite frame with only on \hyperlink{classNinePatchImageParser}{Nine\+Patch\+Image\+Parser}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Rect} & The sprite frame rect in the image atlas. \\
+\hline
+{\em rotated} & Whether is sprite frame is rotated in the image atlas. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Nine\+Patch\+Image\+Parser.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Nine\+Patch\+Image\+Parser.\+cpp\end{DoxyCompactItemize}

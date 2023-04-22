@@ -1,0 +1,333 @@
+\hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware}{}\section{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware Class Reference}
+\label{classbtSoftBodyLinkDataOpenCLSIMDAware}\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+
+
+Inheritance diagram for bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classbtSoftBodyLinkDataOpenCLSIMDAware__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBodyLinkDataOpenCLSIMDAware__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1BatchPair}{Batch\+Pair}
+\item 
+struct \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1NumBatchesVerticesPair}{Num\+Batches\+Vertices\+Pair}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_ae2bb335b68de0888086496e38f6208b7}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_ae2bb335b68de0888086496e38f6208b7}} 
+{\bfseries bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware} (cl\+\_\+command\+\_\+queue queue, cl\+\_\+context ctx)
+\item 
+virtual void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a43ee8b9067c214c87e073057a63071ba}{create\+Links} (int num\+Links)
+\item 
+virtual void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a9a1482f91ff8105f41a1f991e183e120}{set\+Link\+At} (const \hyperlink{classbtSoftBodyLinkData_1_1LinkDescription}{Link\+Description} \&link, int link\+Index)
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a5016c89bbdf9c87283c138d629f34601}{on\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a37ded0994aded2026babb6c35838af75}{move\+To\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a9eed0794cbaa4b7f0c8dd1fc5570c15f}{move\+From\+Accelerator} ()
+\item 
+void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}{generate\+Batches} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aaa92ad2be3e876c9f166c25359428782}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aaa92ad2be3e876c9f166c25359428782}} 
+int {\bfseries get\+Max\+Vertices\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aebd97637efa9006aa0a8dc7e0d3399b4}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aebd97637efa9006aa0a8dc7e0d3399b4}} 
+int {\bfseries get\+Wavefront\+Size} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aba4551d9c0fd8035ff1db4b5584ce2c9}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aba4551d9c0fd8035ff1db4b5584ce2c9}} 
+int {\bfseries get\+Links\+Per\+Work\+Item} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aa06ef3fc9271423186db2993834acf13}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aa06ef3fc9271423186db2993834acf13}} 
+int {\bfseries get\+Max\+Links\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aa70ec1e6f3a5c2e00e2bb7e9ca77487f}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aa70ec1e6f3a5c2e00e2bb7e9ca77487f}} 
+int {\bfseries get\+Max\+Batches\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c043815f72b537dfa3dce9b23efbc94}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c043815f72b537dfa3dce9b23efbc94}} 
+int {\bfseries get\+Num\+Wavefronts} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9fe26bb2f2461f8a34157eac83d30e0c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9fe26bb2f2461f8a34157eac83d30e0c}} 
+\hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1NumBatchesVerticesPair}{Num\+Batches\+Vertices\+Pair} {\bfseries get\+Num\+Batches\+And\+Vertices\+Within\+Wavefront} (int wavefront)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a755a465a5e26910287ddbed34ae96a5c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a755a465a5e26910287ddbed34ae96a5c}} 
+int {\bfseries get\+Vertex\+Global\+Addresses} (int vertex\+Index)
+\item 
+\hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}{get\+Vertex\+Pair\+Local\+Addresses} (int link\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_ae2bb335b68de0888086496e38f6208b7}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_ae2bb335b68de0888086496e38f6208b7}} 
+{\bfseries bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware} (cl\+\_\+command\+\_\+queue queue, cl\+\_\+context ctx)
+\item 
+virtual void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_afa62243874cf252299a3dd17eb6502c1}{create\+Links} (int num\+Links)
+\item 
+virtual void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bc02902c70fab9bc96d6d8adcc69b5}{set\+Link\+At} (const \hyperlink{classbtSoftBodyLinkData_1_1LinkDescription}{Link\+Description} \&link, int link\+Index)
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a0b6e6e7c88ca01fcb83160bfec42ecbe}{on\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_ac76fd4a1a8b28a48e283050efc14a096}{move\+To\+Accelerator} ()
+\item 
+virtual bool \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a5ae3174b36d5ee2c13c96ddf775785b8}{move\+From\+Accelerator} ()
+\item 
+void \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}{generate\+Batches} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aaa92ad2be3e876c9f166c25359428782}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aaa92ad2be3e876c9f166c25359428782}} 
+int {\bfseries get\+Max\+Vertices\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aebd97637efa9006aa0a8dc7e0d3399b4}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aebd97637efa9006aa0a8dc7e0d3399b4}} 
+int {\bfseries get\+Wavefront\+Size} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aba4551d9c0fd8035ff1db4b5584ce2c9}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aba4551d9c0fd8035ff1db4b5584ce2c9}} 
+int {\bfseries get\+Links\+Per\+Work\+Item} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aa06ef3fc9271423186db2993834acf13}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aa06ef3fc9271423186db2993834acf13}} 
+int {\bfseries get\+Max\+Links\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aa70ec1e6f3a5c2e00e2bb7e9ca77487f}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aa70ec1e6f3a5c2e00e2bb7e9ca77487f}} 
+int {\bfseries get\+Max\+Batches\+Per\+Wavefront} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c043815f72b537dfa3dce9b23efbc94}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c043815f72b537dfa3dce9b23efbc94}} 
+int {\bfseries get\+Num\+Wavefronts} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9fe26bb2f2461f8a34157eac83d30e0c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9fe26bb2f2461f8a34157eac83d30e0c}} 
+\hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1NumBatchesVerticesPair}{Num\+Batches\+Vertices\+Pair} {\bfseries get\+Num\+Batches\+And\+Vertices\+Within\+Wavefront} (int wavefront)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a755a465a5e26910287ddbed34ae96a5c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a755a465a5e26910287ddbed34ae96a5c}} 
+int {\bfseries get\+Vertex\+Global\+Addresses} (int vertex\+Index)
+\item 
+\hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}{get\+Vertex\+Pair\+Local\+Addresses} (int link\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_abd2c44b432a69f63e2d96a950c8b37c0}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_abd2c44b432a69f63e2d96a950c8b37c0}} 
+bool {\bfseries m\+\_\+on\+G\+PU}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a8574edbc7fa9c436fc319ed2e980a836}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a8574edbc7fa9c436fc319ed2e980a836}} 
+cl\+\_\+command\+\_\+queue {\bfseries m\+\_\+cq\+Command\+Que}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a6479a5a7d8b30b16a689bdbd871e4284}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a6479a5a7d8b30b16a689bdbd871e4284}} 
+const int {\bfseries m\+\_\+wavefront\+Size}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a26a9e2afc1a4a5a828be7cadab934d5c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a26a9e2afc1a4a5a828be7cadab934d5c}} 
+const int {\bfseries m\+\_\+links\+Per\+Work\+Item}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a3165d901f322e6cc8326ed5eb16a6355}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a3165d901f322e6cc8326ed5eb16a6355}} 
+const int {\bfseries m\+\_\+max\+Links\+Per\+Wavefront}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a1e23a78e2f29b3f6a63f1f48140b49b5}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a1e23a78e2f29b3f6a63f1f48140b49b5}} 
+int {\bfseries m\+\_\+max\+Batches\+Within\+Wave}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_ad03f0695d1a16f1d69d38a228d78d312}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_ad03f0695d1a16f1d69d38a228d78d312}} 
+int {\bfseries m\+\_\+max\+Vertices\+Within\+Wave}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c6838494a809bac1941ff530b1f800c}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9c6838494a809bac1941ff530b1f800c}} 
+int {\bfseries m\+\_\+num\+Wavefronts}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e78ed7667d9cf432d9e1ff216f6dcd1}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e78ed7667d9cf432d9e1ff216f6dcd1}} 
+int {\bfseries m\+\_\+max\+Vertex}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a585750270f2d52986a70bc9e9fce69bc}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a585750270f2d52986a70bc9e9fce69bc}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+links\+Per\+Wavefront}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a22df988ba5d1cb3cafa69a3d69b65605}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a22df988ba5d1cb3cafa69a3d69b65605}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1NumBatchesVerticesPair}{Num\+Batches\+Vertices\+Pair} $>$ {\bfseries m\+\_\+num\+Batches\+And\+Vertices\+Within\+Waves}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e28eaf45a112c30896896c409177d6d}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e28eaf45a112c30896896c409177d6d}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1NumBatchesVerticesPair}{Num\+Batches\+Vertices\+Pair} $>$ {\bfseries m\+\_\+cl\+Num\+Batches\+And\+Vertices\+Within\+Waves}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_abb837d480b19c6af1a42494054f70820}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_abb837d480b19c6af1a42494054f70820}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+wavefront\+Vertices\+Global\+Addresses}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_ad03f578fcf2d01f4a15c6e7374a8eaa6}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_ad03f578fcf2d01f4a15c6e7374a8eaa6}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ int $>$ {\bfseries m\+\_\+cl\+Wavefront\+Vertices\+Global\+Addresses}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a5eb1278822cf10066651d3a363e18610}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a5eb1278822cf10066651d3a363e18610}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} $>$ {\bfseries m\+\_\+link\+Vertices\+Local\+Addresses}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a5a789ddbceec13b5f9d1f00116e99bd4}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a5a789ddbceec13b5f9d1f00116e99bd4}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ \hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} $>$ {\bfseries m\+\_\+cl\+Link\+Vertices\+Local\+Addresses}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a0c2413c3bede418582a03af857220653}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a0c2413c3bede418582a03af857220653}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ float $>$ {\bfseries m\+\_\+cl\+Link\+Strength}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a467151798d841225f0935c72ce2888e4}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a467151798d841225f0935c72ce2888e4}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ float $>$ {\bfseries m\+\_\+cl\+Links\+Mass\+L\+SC}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_aa7e887ee90296314748c010268a78b4f}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_aa7e887ee90296314748c010268a78b4f}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ float $>$ {\bfseries m\+\_\+cl\+Links\+Rest\+Length\+Squared}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a23661a0173894340a9ce33c7628322f4}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a23661a0173894340a9ce33c7628322f4}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ float $>$ {\bfseries m\+\_\+cl\+Links\+Rest\+Length}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a4c6c66bfca09087ec9003572fead458a}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a4c6c66bfca09087ec9003572fead458a}} 
+\hyperlink{classbtOpenCLBuffer}{bt\+Open\+C\+L\+Buffer}$<$ float $>$ {\bfseries m\+\_\+cl\+Links\+Material\+Linear\+Stiffness\+Coefficient}
+\item 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e083b3c7dc8384ddbd073bff540a406}{m\+\_\+link\+Addresses}
+\item 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1BatchPair}{Batch\+Pair} $>$ \hyperlink{classbtSoftBodyLinkDataOpenCLSIMDAware_a4c49f65f43a5eca3408ae17c0b3340c3}{m\+\_\+wavefront\+Batch\+Start\+Lengths}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a43ee8b9067c214c87e073057a63071ba}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a43ee8b9067c214c87e073057a63071ba}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!create\+Links@{create\+Links}}
+\index{create\+Links@{create\+Links}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{create\+Links()}{createLinks()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::create\+Links (\begin{DoxyParamCaption}\item[{int}]{num\+Links }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Allocate enough space in all link-\/related arrays to fit num\+Links links 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a1713d14604037ca88d7915d627a32a13}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_afa62243874cf252299a3dd17eb6502c1}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_afa62243874cf252299a3dd17eb6502c1}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!create\+Links@{create\+Links}}
+\index{create\+Links@{create\+Links}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{create\+Links()}{createLinks()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::create\+Links (\begin{DoxyParamCaption}\item[{int}]{num\+Links }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Allocate enough space in all link-\/related arrays to fit num\+Links links 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a1713d14604037ca88d7915d627a32a13}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!generate\+Batches@{generate\+Batches}}
+\index{generate\+Batches@{generate\+Batches}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{generate\+Batches()}{generateBatches()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::generate\+Batches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generate (and later update) the batching for the entire link set. This redoes a lot of work because it batches the entire set when each cloth is inserted. In theory we could delay it until just before we need the cloth. It\textquotesingle{}s a one-\/off overhead, though, so that is a later optimisation. \mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_afe1f0f82b680db86b53f86711444e5e0}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!generate\+Batches@{generate\+Batches}}
+\index{generate\+Batches@{generate\+Batches}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{generate\+Batches()}{generateBatches()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::generate\+Batches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generate (and later update) the batching for the entire link set. This redoes a lot of work because it batches the entire set when each cloth is inserted. In theory we could delay it until just before we need the cloth. It\textquotesingle{}s a one-\/off overhead, though, so that is a later optimisation. \mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!get\+Vertex\+Pair\+Local\+Addresses@{get\+Vertex\+Pair\+Local\+Addresses}}
+\index{get\+Vertex\+Pair\+Local\+Addresses@{get\+Vertex\+Pair\+Local\+Addresses}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Pair\+Local\+Addresses()}{getVertexPairLocalAddresses()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::get\+Vertex\+Pair\+Local\+Addresses (\begin{DoxyParamCaption}\item[{int}]{link\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get post-\/batching local addresses of the vertex pair for a link assuming all vertices used by a wavefront are loaded locally. \mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bb3654ae8ced9acdae914a23e0ae2b}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!get\+Vertex\+Pair\+Local\+Addresses@{get\+Vertex\+Pair\+Local\+Addresses}}
+\index{get\+Vertex\+Pair\+Local\+Addresses@{get\+Vertex\+Pair\+Local\+Addresses}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Pair\+Local\+Addresses()}{getVertexPairLocalAddresses()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtSoftBodyLinkData_1_1LinkNodePair}{Link\+Node\+Pair} bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::get\+Vertex\+Pair\+Local\+Addresses (\begin{DoxyParamCaption}\item[{int}]{link\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get post-\/batching local addresses of the vertex pair for a link assuming all vertices used by a wavefront are loaded locally. \mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9eed0794cbaa4b7f0c8dd1fc5570c15f}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9eed0794cbaa4b7f0c8dd1fc5570c15f}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!move\+From\+Accelerator@{move\+From\+Accelerator}}
+\index{move\+From\+Accelerator@{move\+From\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{move\+From\+Accelerator()}{moveFromAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::move\+From\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Move data from host memory from the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a5018ad236aae590df94bca63c1ad7ee1}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a5ae3174b36d5ee2c13c96ddf775785b8}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a5ae3174b36d5ee2c13c96ddf775785b8}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!move\+From\+Accelerator@{move\+From\+Accelerator}}
+\index{move\+From\+Accelerator@{move\+From\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{move\+From\+Accelerator()}{moveFromAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::move\+From\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Move data from host memory from the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a5018ad236aae590df94bca63c1ad7ee1}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_ac76fd4a1a8b28a48e283050efc14a096}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_ac76fd4a1a8b28a48e283050efc14a096}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!move\+To\+Accelerator@{move\+To\+Accelerator}}
+\index{move\+To\+Accelerator@{move\+To\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{move\+To\+Accelerator()}{moveToAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::move\+To\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Move data from host memory to the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a6cce268f804d465f3bc998771d3a7433}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a37ded0994aded2026babb6c35838af75}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a37ded0994aded2026babb6c35838af75}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!move\+To\+Accelerator@{move\+To\+Accelerator}}
+\index{move\+To\+Accelerator@{move\+To\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{move\+To\+Accelerator()}{moveToAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::move\+To\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Move data from host memory to the accelerator. The C\+PU version will always return that it has moved it. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a6cce268f804d465f3bc998771d3a7433}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a0b6e6e7c88ca01fcb83160bfec42ecbe}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a0b6e6e7c88ca01fcb83160bfec42ecbe}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!on\+Accelerator@{on\+Accelerator}}
+\index{on\+Accelerator@{on\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{on\+Accelerator()}{onAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::on\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Return true if data is on the accelerator. The C\+PU version of this class will return true here because the C\+PU is the same as the accelerator. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_ae284c2a182ddf82dde057a8c2eb17ac3}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a5016c89bbdf9c87283c138d629f34601}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a5016c89bbdf9c87283c138d629f34601}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!on\+Accelerator@{on\+Accelerator}}
+\index{on\+Accelerator@{on\+Accelerator}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{on\+Accelerator()}{onAccelerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::on\+Accelerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Return true if data is on the accelerator. The C\+PU version of this class will return true here because the C\+PU is the same as the accelerator. 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_ae284c2a182ddf82dde057a8c2eb17ac3}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bc02902c70fab9bc96d6d8adcc69b5}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a02bc02902c70fab9bc96d6d8adcc69b5}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!set\+Link\+At@{set\+Link\+At}}
+\index{set\+Link\+At@{set\+Link\+At}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{set\+Link\+At()}{setLinkAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::set\+Link\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtSoftBodyLinkData_1_1LinkDescription}{Link\+Description} \&}]{link,  }\item[{int}]{link\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Insert the link described into the correct data structures assuming space has already been allocated by a call to create\+Links 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a44f200dcb878405cebf3704dc7a8b8cd}{bt\+Soft\+Body\+Link\+Data}.
+
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9a1482f91ff8105f41a1f991e183e120}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9a1482f91ff8105f41a1f991e183e120}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!set\+Link\+At@{set\+Link\+At}}
+\index{set\+Link\+At@{set\+Link\+At}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{set\+Link\+At()}{setLinkAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::set\+Link\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtSoftBodyLinkData_1_1LinkDescription}{Link\+Description} \&}]{link,  }\item[{int}]{link\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Insert the link described into the correct data structures assuming space has already been allocated by a call to create\+Links 
+
+Reimplemented from \hyperlink{classbtSoftBodyLinkData_a44f200dcb878405cebf3704dc7a8b8cd}{bt\+Soft\+Body\+Link\+Data}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e083b3c7dc8384ddbd073bff540a406}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a9e083b3c7dc8384ddbd073bff540a406}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!m\+\_\+link\+Addresses@{m\+\_\+link\+Addresses}}
+\index{m\+\_\+link\+Addresses@{m\+\_\+link\+Addresses}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{m\+\_\+link\+Addresses}{m\_linkAddresses}}
+{\footnotesize\ttfamily \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::m\+\_\+link\+Addresses}
+
+Link addressing information for each cloth. Allows link locations to be computed independently of data batching. \mbox{\Hypertarget{classbtSoftBodyLinkDataOpenCLSIMDAware_a4c49f65f43a5eca3408ae17c0b3340c3}\label{classbtSoftBodyLinkDataOpenCLSIMDAware_a4c49f65f43a5eca3408ae17c0b3340c3}} 
+\index{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}!m\+\_\+wavefront\+Batch\+Start\+Lengths@{m\+\_\+wavefront\+Batch\+Start\+Lengths}}
+\index{m\+\_\+wavefront\+Batch\+Start\+Lengths@{m\+\_\+wavefront\+Batch\+Start\+Lengths}!bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware@{bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware}}
+\subsubsection{\texorpdfstring{m\+\_\+wavefront\+Batch\+Start\+Lengths}{m\_wavefrontBatchStartLengths}}
+{\footnotesize\ttfamily \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBodyLinkDataOpenCLSIMDAware_1_1BatchPair}{Batch\+Pair} $>$ bt\+Soft\+Body\+Link\+Data\+Open\+C\+L\+S\+I\+M\+D\+Aware\+::m\+\_\+wavefront\+Batch\+Start\+Lengths}
+
+Start and length values for computation batches over link data. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/\+Gpu\+Soft\+Body\+Solvers/\+Open\+C\+L/bt\+Soft\+Body\+Solver\+Link\+Data\+\_\+\+Open\+C\+L\+S\+I\+M\+D\+Aware.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/\+Gpu\+Soft\+Body\+Solvers/\+Open\+C\+L/bt\+Soft\+Body\+Solver\+\_\+\+Open\+C\+L\+S\+I\+M\+D\+Aware.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{classbtSoftBodyRigidBodyCollisionConfiguration}{}\section{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration Class Reference}
+\label{classbtSoftBodyRigidBodyCollisionConfiguration}\index{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}}
+
+
+\hyperlink{classbtSoftBodyRigidBodyCollisionConfiguration}{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration} add softbody interaction on top of \hyperlink{classbtDefaultCollisionConfiguration}{bt\+Default\+Collision\+Configuration}  
+
+
+
+
+{\ttfamily \#include $<$bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classbtSoftBodyRigidBodyCollisionConfiguration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBodyRigidBodyCollisionConfiguration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbtSoftBodyRigidBodyCollisionConfiguration_aed032b3ffc351d036e28b503d3cdc801}{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration} (const \hyperlink{structbtDefaultCollisionConstructionInfo}{bt\+Default\+Collision\+Construction\+Info} \&construction\+Info=\hyperlink{structbtDefaultCollisionConstructionInfo}{bt\+Default\+Collision\+Construction\+Info}())
+\item 
+virtual \hyperlink{structbtCollisionAlgorithmCreateFunc}{bt\+Collision\+Algorithm\+Create\+Func} $\ast$ \hyperlink{classbtSoftBodyRigidBodyCollisionConfiguration_a81be88bc433469b4703fc0fb9d504a50}{get\+Collision\+Algorithm\+Create\+Func} (int proxy\+Type0, int proxy\+Type1)
+\begin{DoxyCompactList}\small\item\em creation of soft-\/soft and soft-\/rigid, and otherwise fallback to base class implementation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtSoftBodyRigidBodyCollisionConfiguration}{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration} add softbody interaction on top of \hyperlink{classbtDefaultCollisionConfiguration}{bt\+Default\+Collision\+Configuration} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbtSoftBodyRigidBodyCollisionConfiguration_aed032b3ffc351d036e28b503d3cdc801}\label{classbtSoftBodyRigidBodyCollisionConfiguration_aed032b3ffc351d036e28b503d3cdc801}} 
+\index{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}!bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}}
+\index{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}!bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}}
+\subsubsection{\texorpdfstring{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration()}{btSoftBodyRigidBodyCollisionConfiguration()}}
+{\footnotesize\ttfamily bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration\+::bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtDefaultCollisionConstructionInfo}{bt\+Default\+Collision\+Construction\+Info} \&}]{construction\+Info = {\ttfamily \hyperlink{structbtDefaultCollisionConstructionInfo}{bt\+Default\+Collision\+Construction\+Info}()} }\end{DoxyParamCaption})}
+
+calculate maximum element size, big enough to fit any collision algorithm in the memory pool 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBodyRigidBodyCollisionConfiguration_a81be88bc433469b4703fc0fb9d504a50}\label{classbtSoftBodyRigidBodyCollisionConfiguration_a81be88bc433469b4703fc0fb9d504a50}} 
+\index{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}!get\+Collision\+Algorithm\+Create\+Func@{get\+Collision\+Algorithm\+Create\+Func}}
+\index{get\+Collision\+Algorithm\+Create\+Func@{get\+Collision\+Algorithm\+Create\+Func}!bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration@{bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration}}
+\subsubsection{\texorpdfstring{get\+Collision\+Algorithm\+Create\+Func()}{getCollisionAlgorithmCreateFunc()}}
+{\footnotesize\ttfamily \hyperlink{structbtCollisionAlgorithmCreateFunc}{bt\+Collision\+Algorithm\+Create\+Func} $\ast$ bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration\+::get\+Collision\+Algorithm\+Create\+Func (\begin{DoxyParamCaption}\item[{int}]{proxy\+Type0,  }\item[{int}]{proxy\+Type1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+creation of soft-\/soft and soft-\/rigid, and otherwise fallback to base class implementation 
+
+try to handle the softbody interactions first
+
+softbody versus convex
+
+convex versus soft body
+
+softbody versus convex
+
+convex versus soft body
+
+fallback to the regular rigid collision shape 
+
+Reimplemented from \hyperlink{classbtDefaultCollisionConfiguration}{bt\+Default\+Collision\+Configuration}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Rigid\+Body\+Collision\+Configuration.\+cpp\end{DoxyCompactItemize}

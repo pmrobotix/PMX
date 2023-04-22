@@ -1,0 +1,483 @@
+\hypertarget{classserialib}{}\section{serialib Class Reference}
+\label{classserialib}\index{serialib@{serialib}}
+
+
+This class is used for communication over a serial device.  
+
+
+
+
+{\ttfamily \#include $<$serialib.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classserialib_a26166f63ad73013ca7cbcd2ae59edc91}\label{classserialib_a26166f63ad73013ca7cbcd2ae59edc91}} 
+\hyperlink{classserialib_a26166f63ad73013ca7cbcd2ae59edc91}{serialib} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the class serialib. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classserialib_ac44215001ae198f2c196bb7993327a4b}\label{classserialib_ac44215001ae198f2c196bb7993327a4b}} 
+\hyperlink{classserialib_ac44215001ae198f2c196bb7993327a4b}{$\sim$serialib} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the class serialib. It close the connection. \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_a5c2f95793e0fcd7fa6615682e8f58f16}{open\+Device} (const char $\ast$Device, const unsigned int Bauds)
+\begin{DoxyCompactList}\small\item\em Open the serial port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classserialib_a8a1c8803c8df1a19222d6006328534b8}\label{classserialib_a8a1c8803c8df1a19222d6006328534b8}} 
+void \hyperlink{classserialib_a8a1c8803c8df1a19222d6006328534b8}{close\+Device} ()
+\begin{DoxyCompactList}\small\item\em Close the connection with the current device. \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_aa6d231cb99664a613bcb503830f73497}{write\+Char} (char)
+\begin{DoxyCompactList}\small\item\em Write a char on the current serial port. \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_a6c78b8a11ae7b8af57eea3dbc7fa237b}{read\+Char} (char $\ast$p\+Byte, const unsigned int time\+Out\+\_\+ms=0)
+\begin{DoxyCompactList}\small\item\em Wait for a byte from the serial device and return the data read. \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_a6a32655c718b998e5b63d8cdc483ac6d}{write\+String} (const char $\ast$String)
+\begin{DoxyCompactList}\small\item\em Write a string on the current serial port. \end{DoxyCompactList}\item 
+int \hyperlink{classserialib_ab155c84352ddefe1304d391c19497ac1}{read\+String} (char $\ast$received\+String, char final\+Char, unsigned int max\+Nb\+Bytes, const unsigned int time\+Out\+\_\+ms=0)
+\begin{DoxyCompactList}\small\item\em Read a string from the serial device (with timeout) \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_aa14196b6f422584bf5eebc4ddb71d483}{write\+Bytes} (const void $\ast$Buffer, const unsigned int Nb\+Bytes)
+\begin{DoxyCompactList}\small\item\em Write an array of data on the current serial port. \end{DoxyCompactList}\item 
+int \hyperlink{classserialib_ab05e51ff3bc47c02d7d000d58b45a961}{read\+Bytes} (void $\ast$buffer, unsigned int max\+Nb\+Bytes, const unsigned int time\+Out\+\_\+ms=0, unsigned int sleep\+Duration\+\_\+us=100)
+\begin{DoxyCompactList}\small\item\em Read an array of bytes from the serial device (with timeout) \end{DoxyCompactList}\item 
+char \hyperlink{classserialib_a572dd8d208511ec81d848de72cb05c7a}{flush\+Receiver} ()
+\begin{DoxyCompactList}\small\item\em Empty receiver buffer. \end{DoxyCompactList}\item 
+int \hyperlink{classserialib_a50c91bf8cab23afdfdf05ca58392456f}{available} ()
+\begin{DoxyCompactList}\small\item\em Return the number of bytes in the received buffer (U\+N\+IX only) \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a3dc0ec56e84ab2b43dc02fc2e02148a1}{D\+TR} (bool status)
+\begin{DoxyCompactList}\small\item\em Set or unset the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready Convenience method \+:This method calls set\+D\+TR and clear\+D\+TR. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a7564b9e28b1b50675d9d6d3fabc896c0}{set\+D\+TR} ()
+\begin{DoxyCompactList}\small\item\em Set the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_adf49bff6401d3101b41fb52e98309635}{clear\+D\+TR} ()
+\begin{DoxyCompactList}\small\item\em Clear the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a5a73f159762fa4d5c252f36acfe7ab47}{R\+TS} (bool status)
+\begin{DoxyCompactList}\small\item\em Set or unset the bit R\+TS (pin 7) R\+TS stands for Data Termina Ready Convenience method \+:This method calls set\+D\+TR and clear\+D\+TR. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a21767ffe86a76f300a71c496fbcc26a1}{set\+R\+TS} ()
+\begin{DoxyCompactList}\small\item\em Set the bit R\+TS (pin 7) R\+TS stands for Data Terminal Ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_ab0b5882339240002fccf7701f5321e0a}{clear\+R\+TS} ()
+\begin{DoxyCompactList}\small\item\em Clear the bit R\+TS (pin 7) R\+TS stands for Data Terminal Ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a605d8a8015fadb5db5521350aefe084e}{is\+RI} ()
+\begin{DoxyCompactList}\small\item\em Get the R\+I\+NG\textquotesingle{}s status (pin 9) Ring Indicator. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a5f451a5eea7c8c1bdcff684ba131d6ff}{is\+D\+CD} ()
+\begin{DoxyCompactList}\small\item\em Get the D\+CD\textquotesingle{}s status (pin 1) C\+DC stands for Data Carrier Detect. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_aca544a6f8dfa33f8e771713646768215}{is\+C\+TS} ()
+\begin{DoxyCompactList}\small\item\em Get the C\+TS\textquotesingle{}s status (pin 8) C\+TS stands for Clear To Send. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a3f1f0894543dfb17955de50157965dd7}{is\+D\+SR} ()
+\begin{DoxyCompactList}\small\item\em Get the D\+SR\textquotesingle{}s status (pin 6) D\+SR stands for Data Set Ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_ab2b121af07fb732f82668f6a14e93cfb}{is\+R\+TS} ()
+\begin{DoxyCompactList}\small\item\em Get the R\+TS\textquotesingle{}s status (pin 7) R\+TS stands for Request To Send May behave abnormally on Windows. \end{DoxyCompactList}\item 
+bool \hyperlink{classserialib_a4ec78286be81602bf1df44a4eb8372a8}{is\+D\+TR} ()
+\begin{DoxyCompactList}\small\item\em Get the D\+TR\textquotesingle{}s status (pin 4) D\+TR stands for Data Terminal Ready May behave abnormally on Windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used for communication over a serial device. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classserialib_a50c91bf8cab23afdfdf05ca58392456f}\label{classserialib_a50c91bf8cab23afdfdf05ca58392456f}} 
+\index{serialib@{serialib}!available@{available}}
+\index{available@{available}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily int serialib\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the number of bytes in the received buffer (U\+N\+IX only) 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes received by the serial provider but not yet read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_adf49bff6401d3101b41fb52e98309635}\label{classserialib_adf49bff6401d3101b41fb52e98309635}} 
+\index{serialib@{serialib}!clear\+D\+TR@{clear\+D\+TR}}
+\index{clear\+D\+TR@{clear\+D\+TR}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{clear\+D\+T\+R()}{clearDTR()}}
+{\footnotesize\ttfamily bool serialib\+::clear\+D\+TR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready. 
+
+\begin{DoxyReturn}{Returns}
+If the function fails, the return value is false If the function succeeds, the return value is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_ab0b5882339240002fccf7701f5321e0a}\label{classserialib_ab0b5882339240002fccf7701f5321e0a}} 
+\index{serialib@{serialib}!clear\+R\+TS@{clear\+R\+TS}}
+\index{clear\+R\+TS@{clear\+R\+TS}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{clear\+R\+T\+S()}{clearRTS()}}
+{\footnotesize\ttfamily bool serialib\+::clear\+R\+TS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the bit R\+TS (pin 7) R\+TS stands for Data Terminal Ready. 
+
+\begin{DoxyReturn}{Returns}
+If the function fails, the return value is false If the function succeeds, the return value is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a3dc0ec56e84ab2b43dc02fc2e02148a1}\label{classserialib_a3dc0ec56e84ab2b43dc02fc2e02148a1}} 
+\index{serialib@{serialib}!D\+TR@{D\+TR}}
+\index{D\+TR@{D\+TR}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{D\+T\+R()}{DTR()}}
+{\footnotesize\ttfamily bool serialib\+::\+D\+TR (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})}
+
+
+
+Set or unset the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready Convenience method \+:This method calls set\+D\+TR and clear\+D\+TR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & = true set D\+TR status = false unset D\+TR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the function fails, the return value is false If the function succeeds, the return value is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a572dd8d208511ec81d848de72cb05c7a}\label{classserialib_a572dd8d208511ec81d848de72cb05c7a}} 
+\index{serialib@{serialib}!flush\+Receiver@{flush\+Receiver}}
+\index{flush\+Receiver@{flush\+Receiver}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{flush\+Receiver()}{flushReceiver()}}
+{\footnotesize\ttfamily char serialib\+::flush\+Receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Empty receiver buffer. 
+
+\begin{DoxyReturn}{Returns}
+If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_aca544a6f8dfa33f8e771713646768215}\label{classserialib_aca544a6f8dfa33f8e771713646768215}} 
+\index{serialib@{serialib}!is\+C\+TS@{is\+C\+TS}}
+\index{is\+C\+TS@{is\+C\+TS}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+C\+T\+S()}{isCTS()}}
+{\footnotesize\ttfamily bool serialib\+::is\+C\+TS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the C\+TS\textquotesingle{}s status (pin 8) C\+TS stands for Clear To Send. 
+
+\begin{DoxyReturn}{Returns}
+Return true if C\+TS is set otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a5f451a5eea7c8c1bdcff684ba131d6ff}\label{classserialib_a5f451a5eea7c8c1bdcff684ba131d6ff}} 
+\index{serialib@{serialib}!is\+D\+CD@{is\+D\+CD}}
+\index{is\+D\+CD@{is\+D\+CD}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+D\+C\+D()}{isDCD()}}
+{\footnotesize\ttfamily bool serialib\+::is\+D\+CD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the D\+CD\textquotesingle{}s status (pin 1) C\+DC stands for Data Carrier Detect. 
+
+\begin{DoxyReturn}{Returns}
+true if D\+CD is set 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a3f1f0894543dfb17955de50157965dd7}\label{classserialib_a3f1f0894543dfb17955de50157965dd7}} 
+\index{serialib@{serialib}!is\+D\+SR@{is\+D\+SR}}
+\index{is\+D\+SR@{is\+D\+SR}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+D\+S\+R()}{isDSR()}}
+{\footnotesize\ttfamily bool serialib\+::is\+D\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the D\+SR\textquotesingle{}s status (pin 6) D\+SR stands for Data Set Ready. 
+
+\begin{DoxyReturn}{Returns}
+Return true if D\+TR is set otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a4ec78286be81602bf1df44a4eb8372a8}\label{classserialib_a4ec78286be81602bf1df44a4eb8372a8}} 
+\index{serialib@{serialib}!is\+D\+TR@{is\+D\+TR}}
+\index{is\+D\+TR@{is\+D\+TR}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+D\+T\+R()}{isDTR()}}
+{\footnotesize\ttfamily bool serialib\+::is\+D\+TR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the D\+TR\textquotesingle{}s status (pin 4) D\+TR stands for Data Terminal Ready May behave abnormally on Windows. 
+
+\begin{DoxyReturn}{Returns}
+Return true if C\+TS is set otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a605d8a8015fadb5db5521350aefe084e}\label{classserialib_a605d8a8015fadb5db5521350aefe084e}} 
+\index{serialib@{serialib}!is\+RI@{is\+RI}}
+\index{is\+RI@{is\+RI}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+R\+I()}{isRI()}}
+{\footnotesize\ttfamily bool serialib\+::is\+RI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+I\+NG\textquotesingle{}s status (pin 9) Ring Indicator. 
+
+\begin{DoxyReturn}{Returns}
+Return true if R\+I\+NG is set otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_ab2b121af07fb732f82668f6a14e93cfb}\label{classserialib_ab2b121af07fb732f82668f6a14e93cfb}} 
+\index{serialib@{serialib}!is\+R\+TS@{is\+R\+TS}}
+\index{is\+R\+TS@{is\+R\+TS}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{is\+R\+T\+S()}{isRTS()}}
+{\footnotesize\ttfamily bool serialib\+::is\+R\+TS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+TS\textquotesingle{}s status (pin 7) R\+TS stands for Request To Send May behave abnormally on Windows. 
+
+\begin{DoxyReturn}{Returns}
+Return true if R\+TS is set otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a5c2f95793e0fcd7fa6615682e8f58f16}\label{classserialib_a5c2f95793e0fcd7fa6615682e8f58f16}} 
+\index{serialib@{serialib}!open\+Device@{open\+Device}}
+\index{open\+Device@{open\+Device}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{open\+Device()}{openDevice()}}
+{\footnotesize\ttfamily char serialib\+::open\+Device (\begin{DoxyParamCaption}\item[{const char $\ast$}]{Device,  }\item[{const unsigned int}]{Bauds }\end{DoxyParamCaption})}
+
+
+
+Open the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device} & \+: Port name (C\+O\+M1, C\+O\+M2, ... for Windows ) or (/dev/tty\+S0, /dev/tty\+A\+C\+M0, /dev/tty\+U\+S\+B0 ... for linux) \\
+\hline
+{\em Bauds} & \+: Baud rate of the serial port. \begin{DoxyVerb}       \n Supported baud rate for Windows :
+               - 110
+               - 300
+               - 600
+               - 1200
+               - 2400
+               - 4800
+               - 9600
+               - 14400
+               - 19200
+               - 38400
+               - 56000
+               - 57600
+               - 115200
+               - 128000
+               - 256000
+
+      \n Supported baud rate for Linux :\n
+               - 110
+               - 300
+               - 600
+               - 1200
+               - 2400
+               - 4800
+               - 9600
+               - 19200
+               - 38400
+               - 57600
+               - 115200
+\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 success 
+
+-\/1 device not found 
+
+-\/2 error while opening the device 
+
+-\/3 error while getting port parameters 
+
+-\/4 Speed (Bauds) not recognized 
+
+-\/5 error while writing port parameters 
+
+-\/6 error while writing timeout parameters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_ab05e51ff3bc47c02d7d000d58b45a961}\label{classserialib_ab05e51ff3bc47c02d7d000d58b45a961}} 
+\index{serialib@{serialib}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{read\+Bytes()}{readBytes()}}
+{\footnotesize\ttfamily int serialib\+::read\+Bytes (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{unsigned int}]{max\+Nb\+Bytes,  }\item[{const unsigned int}]{time\+Out\+\_\+ms = {\ttfamily 0},  }\item[{unsigned int}]{sleep\+Duration\+\_\+us = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Read an array of bytes from the serial device (with timeout) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \+: array of bytes read from the serial device \\
+\hline
+{\em max\+Nb\+Bytes} & \+: maximum allowed number of bytes read \\
+\hline
+{\em time\+Out\+\_\+ms} & \+: delay of timeout before giving up the reading \\
+\hline
+{\em sleep\+Duration\+\_\+us} & \+: delay of C\+PU relaxing in microseconds (Linux only) In the reading loop, a sleep can be performed after each reading This allows C\+PU to perform other tasks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$=0 return the number of bytes read before timeout or requested data is completed 
+
+-\/1 error while setting the Timeout 
+
+-\/2 error while reading the byte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a6c78b8a11ae7b8af57eea3dbc7fa237b}\label{classserialib_a6c78b8a11ae7b8af57eea3dbc7fa237b}} 
+\index{serialib@{serialib}!read\+Char@{read\+Char}}
+\index{read\+Char@{read\+Char}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{read\+Char()}{readChar()}}
+{\footnotesize\ttfamily char serialib\+::read\+Char (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+Byte,  }\item[{const unsigned int}]{time\+Out\+\_\+ms = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Wait for a byte from the serial device and return the data read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Byte} & \+: data read on the serial device \\
+\hline
+{\em time\+Out\+\_\+ms} & \+: delay of timeout before giving up the reading If set to zero, timeout is disable (Optional) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 success 
+
+0 Timeout reached 
+
+-\/1 error while setting the Timeout 
+
+-\/2 error while reading the byte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_ab155c84352ddefe1304d391c19497ac1}\label{classserialib_ab155c84352ddefe1304d391c19497ac1}} 
+\index{serialib@{serialib}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{read\+String()}{readString()}}
+{\footnotesize\ttfamily int serialib\+::read\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{received\+String,  }\item[{char}]{final\+Char,  }\item[{unsigned int}]{max\+Nb\+Bytes,  }\item[{const unsigned int}]{time\+Out\+\_\+ms = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Read a string from the serial device (with timeout) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em received\+String} & \+: string read on the serial device \\
+\hline
+{\em final\+Char} & \+: final char of the string \\
+\hline
+{\em max\+Nb\+Bytes} & \+: maximum allowed number of bytes read \\
+\hline
+{\em time\+Out\+\_\+ms} & \+: delay of timeout before giving up the reading (optional) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 success, return the number of bytes read 
+
+0 timeout is reached 
+
+-\/1 error while setting the Timeout 
+
+-\/2 error while reading the byte 
+
+-\/3 Max\+Nb\+Bytes is reached 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a5a73f159762fa4d5c252f36acfe7ab47}\label{classserialib_a5a73f159762fa4d5c252f36acfe7ab47}} 
+\index{serialib@{serialib}!R\+TS@{R\+TS}}
+\index{R\+TS@{R\+TS}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{R\+T\+S()}{RTS()}}
+{\footnotesize\ttfamily bool serialib\+::\+R\+TS (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})}
+
+
+
+Set or unset the bit R\+TS (pin 7) R\+TS stands for Data Termina Ready Convenience method \+:This method calls set\+D\+TR and clear\+D\+TR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & = true set D\+TR status = false unset D\+TR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the function fails 
+
+true if the function succeeds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a7564b9e28b1b50675d9d6d3fabc896c0}\label{classserialib_a7564b9e28b1b50675d9d6d3fabc896c0}} 
+\index{serialib@{serialib}!set\+D\+TR@{set\+D\+TR}}
+\index{set\+D\+TR@{set\+D\+TR}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{set\+D\+T\+R()}{setDTR()}}
+{\footnotesize\ttfamily bool serialib\+::set\+D\+TR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the bit D\+TR (pin 4) D\+TR stands for Data Terminal Ready. 
+
+\begin{DoxyReturn}{Returns}
+If the function fails, the return value is false If the function succeeds, the return value is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a21767ffe86a76f300a71c496fbcc26a1}\label{classserialib_a21767ffe86a76f300a71c496fbcc26a1}} 
+\index{serialib@{serialib}!set\+R\+TS@{set\+R\+TS}}
+\index{set\+R\+TS@{set\+R\+TS}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{set\+R\+T\+S()}{setRTS()}}
+{\footnotesize\ttfamily bool serialib\+::set\+R\+TS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the bit R\+TS (pin 7) R\+TS stands for Data Terminal Ready. 
+
+\begin{DoxyReturn}{Returns}
+If the function fails, the return value is false If the function succeeds, the return value is true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_aa14196b6f422584bf5eebc4ddb71d483}\label{classserialib_aa14196b6f422584bf5eebc4ddb71d483}} 
+\index{serialib@{serialib}!write\+Bytes@{write\+Bytes}}
+\index{write\+Bytes@{write\+Bytes}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{write\+Bytes()}{writeBytes()}}
+{\footnotesize\ttfamily char serialib\+::write\+Bytes (\begin{DoxyParamCaption}\item[{const void $\ast$}]{Buffer,  }\item[{const unsigned int}]{Nb\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Write an array of data on the current serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Buffer} & \+: array of bytes to send on the port \\
+\hline
+{\em Nb\+Bytes} & \+: number of byte to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 success 
+
+-\/1 error while writting data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_aa6d231cb99664a613bcb503830f73497}\label{classserialib_aa6d231cb99664a613bcb503830f73497}} 
+\index{serialib@{serialib}!write\+Char@{write\+Char}}
+\index{write\+Char@{write\+Char}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{write\+Char()}{writeChar()}}
+{\footnotesize\ttfamily char serialib\+::write\+Char (\begin{DoxyParamCaption}\item[{char}]{Byte }\end{DoxyParamCaption})}
+
+
+
+Write a char on the current serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Byte} & \+: char to send on the port (must be terminated by \textquotesingle{}\textbackslash{}0\textquotesingle{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 success 
+
+-\/1 error while writting data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserialib_a6a32655c718b998e5b63d8cdc483ac6d}\label{classserialib_a6a32655c718b998e5b63d8cdc483ac6d}} 
+\index{serialib@{serialib}!write\+String@{write\+String}}
+\index{write\+String@{write\+String}!serialib@{serialib}}
+\subsubsection{\texorpdfstring{write\+String()}{writeString()}}
+{\footnotesize\ttfamily char serialib\+::write\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{received\+String }\end{DoxyParamCaption})}
+
+
+
+Write a string on the current serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em received\+String} & \+: string to send on the port (must be terminated by \textquotesingle{}\textbackslash{}0\textquotesingle{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 success 
+
+-\/1 error while writting data 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+O\+P\+O\+S6\+U\+L\+\_\+\+A\+R\+M/serialib.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+O\+P\+O\+S6\+U\+L\+\_\+\+A\+R\+M/\hyperlink{serialib_8cpp}{serialib.\+cpp}\end{DoxyCompactItemize}

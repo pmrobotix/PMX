@@ -1,0 +1,133 @@
+\hypertarget{group__mpg123__seek}{}\section{mpg123 position and seeking}
+\label{group__mpg123__seek}\index{mpg123 position and seeking@{mpg123 position and seeking}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_gaa52d46fb00dcd357abe8d0e642404151}{mpg123\+\_\+tell} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_gac9e7addd98557c3bb784a7b93b3eeb17}{mpg123\+\_\+tellframe} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_ga4c378fd8dc49dd4cb0eccd6de96c3f9d}{mpg123\+\_\+tell\+\_\+stream} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_ga9a20e3728c86d5a4bfa80facb9b36047}{mpg123\+\_\+seek} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t sampleoff, int whence)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_ga558dd104b09d39624ea73f9cb1d47cbc}{mpg123\+\_\+feedseek} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t sampleoff, int whence, off\+\_\+t $\ast$input\+\_\+offset)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_ga5e0882914fcb29fbc6018711b18b012a}{mpg123\+\_\+seek\+\_\+frame} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t frameoff, int whence)
+\item 
+E\+X\+P\+O\+RT off\+\_\+t \hyperlink{group__mpg123__seek_gaee6dc54beea9eae0e196a357ed55cd5f}{mpg123\+\_\+timeframe} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, double sec)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}{mpg123\+\_\+index} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t $\ast$$\ast$offsets, off\+\_\+t $\ast$step, size\+\_\+t $\ast$fill)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}{mpg123\+\_\+set\+\_\+index} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t $\ast$offsets, off\+\_\+t step, size\+\_\+t fill)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__seek_ga3ae552c9fe5b27ec5562c444bacba5fe}{mpg123\+\_\+position} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, off\+\_\+t frame\+\_\+offset, off\+\_\+t buffered\+\_\+bytes, off\+\_\+t $\ast$current\+\_\+frame, off\+\_\+t $\ast$frames\+\_\+left, double $\ast$current\+\_\+seconds, double $\ast$seconds\+\_\+left)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions querying and manipulating position in the decoded audio bitstream. The position is measured in decoded audio samples, or M\+P\+EG frame offset for the specific functions. If gapless code is in effect, the positions are adjusted to compensate the skipped padding/delay -\/ meaning, you should not care about that at all and just use the position defined for the samples you get out of the decoder;-\/) The general usage is modelled after stdlib\textquotesingle{}s ftell() and fseek(). Especially, the whence parameter for the seek functions has the same meaning as the one for fseek() and needs the same constants from stdlib.\+h\+:
+\begin{DoxyItemize}
+\item S\+E\+E\+K\+\_\+\+S\+ET\+: set position to (or near to) specified offset
+\item S\+E\+E\+K\+\_\+\+C\+UR\+: change position by offset from now
+\item S\+E\+E\+K\+\_\+\+E\+ND\+: set position to offset from end
+\end{DoxyItemize}
+
+Note that sample-\/accurate seek only works when gapless support has been enabled at compile time; seek is frame-\/accurate otherwise. Also, really sample-\/accurate seeking (meaning that you get the identical sample value after seeking compared to plain decoding up to the position) is only guaranteed when you do not mess with the position code by using M\+P\+G123\+\_\+\+U\+P\+S\+P\+E\+ED, M\+P\+G123\+\_\+\+D\+O\+W\+N\+S\+P\+E\+ED or M\+P\+G123\+\_\+\+S\+T\+A\+R\+T\+\_\+\+F\+R\+A\+ME. The first two mainly should cause trouble with NtoM resampling, but in any case with these options in effect, you have to keep in mind that the sample offset is not the same as counting the samples you get from decoding since mpg123 counts the skipped samples, too (or the samples played twice only once)! Short\+: When you care about the sample position, don\textquotesingle{}t mess with those parameters;-\/) Also, seeking is not guaranteed to work for all streams (underlying stream may not support it). And yet another caveat\+: If the stream is concatenated out of differing pieces (Frankenstein stream), seeking may suffer, too. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__seek_ga558dd104b09d39624ea73f9cb1d47cbc}\label{group__mpg123__seek_ga558dd104b09d39624ea73f9cb1d47cbc}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+feedseek@{mpg123\+\_\+feedseek}}
+\index{mpg123\+\_\+feedseek@{mpg123\+\_\+feedseek}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+feedseek()}{mpg123\_feedseek()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+feedseek (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t}]{sampleoff,  }\item[{int}]{whence,  }\item[{off\+\_\+t $\ast$}]{input\+\_\+offset }\end{DoxyParamCaption})}
+
+Seek to a desired sample offset in data feeding mode. This just prepares things to be right only if you ensure that the next chunk of input data will be from input\+\_\+offset byte position. 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+offset} & The position it expects to be at the next time data is fed to \hyperlink{group__mpg123__input_gad35309fe0892d534b6430e3bfde68358}{mpg123\+\_\+decode()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting offset $>$= 0 or error/message code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}\label{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+index@{mpg123\+\_\+index}}
+\index{mpg123\+\_\+index@{mpg123\+\_\+index}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+index()}{mpg123\_index()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+index (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t $\ast$$\ast$}]{offsets,  }\item[{off\+\_\+t $\ast$}]{step,  }\item[{size\+\_\+t $\ast$}]{fill }\end{DoxyParamCaption})}
+
+Give access to the frame index table that is managed for seeking. You are asked not to modify the values... Use mpg123\+\_\+set\+\_\+index to set the seek index 
+\begin{DoxyParams}{Parameters}
+{\em offsets} & pointer to the index array \\
+\hline
+{\em step} & one index byte offset advances this many M\+P\+EG frames \\
+\hline
+{\em fill} & number of recorded index offsets; size of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__mpg123__seek_ga3ae552c9fe5b27ec5562c444bacba5fe}\label{group__mpg123__seek_ga3ae552c9fe5b27ec5562c444bacba5fe}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+position@{mpg123\+\_\+position}}
+\index{mpg123\+\_\+position@{mpg123\+\_\+position}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+position()}{mpg123\_position()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+position (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t}]{frame\+\_\+offset,  }\item[{off\+\_\+t}]{buffered\+\_\+bytes,  }\item[{off\+\_\+t $\ast$}]{current\+\_\+frame,  }\item[{off\+\_\+t $\ast$}]{frames\+\_\+left,  }\item[{double $\ast$}]{current\+\_\+seconds,  }\item[{double $\ast$}]{seconds\+\_\+left }\end{DoxyParamCaption})}
+
+Get information about current and remaining frames/seconds. W\+A\+R\+N\+I\+NG\+: This function is there because of special usage by standalone mpg123 and may be removed in the final version of libmpg123! You provide an offset (in frames) from now and a number of output bytes served by libmpg123 but not yet played. You get the projected current frame and seconds, as well as the remaining frames/seconds. This does {\itshape not} care about skipped samples due to gapless playback. \mbox{\Hypertarget{group__mpg123__seek_ga9a20e3728c86d5a4bfa80facb9b36047}\label{group__mpg123__seek_ga9a20e3728c86d5a4bfa80facb9b36047}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+seek@{mpg123\+\_\+seek}}
+\index{mpg123\+\_\+seek@{mpg123\+\_\+seek}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+seek()}{mpg123\_seek()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+seek (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t}]{sampleoff,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+Seek to a desired sample offset. Set whence to S\+E\+E\+K\+\_\+\+S\+ET, S\+E\+E\+K\+\_\+\+C\+UR or S\+E\+E\+K\+\_\+\+E\+ND. \begin{DoxyReturn}{Returns}
+The resulting offset $>$= 0 or error/message code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__seek_ga5e0882914fcb29fbc6018711b18b012a}\label{group__mpg123__seek_ga5e0882914fcb29fbc6018711b18b012a}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+seek\+\_\+frame@{mpg123\+\_\+seek\+\_\+frame}}
+\index{mpg123\+\_\+seek\+\_\+frame@{mpg123\+\_\+seek\+\_\+frame}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+seek\+\_\+frame()}{mpg123\_seek\_frame()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+seek\+\_\+frame (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t}]{frameoff,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+Seek to a desired M\+P\+EG frame index. Set whence to S\+E\+E\+K\+\_\+\+S\+ET, S\+E\+E\+K\+\_\+\+C\+UR or S\+E\+E\+K\+\_\+\+E\+ND. \begin{DoxyReturn}{Returns}
+The resulting offset $>$= 0 or error/message code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}\label{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+set\+\_\+index@{mpg123\+\_\+set\+\_\+index}}
+\index{mpg123\+\_\+set\+\_\+index@{mpg123\+\_\+set\+\_\+index}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+set\+\_\+index()}{mpg123\_set\_index()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+set\+\_\+index (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{off\+\_\+t $\ast$}]{offsets,  }\item[{off\+\_\+t}]{step,  }\item[{size\+\_\+t}]{fill }\end{DoxyParamCaption})}
+
+Set the frame index table Setting offsets to N\+U\+LL and fill $>$ 0 will allocate fill entries. Setting offsets to N\+U\+LL and fill to 0 will clear the index and free the allocated memory used by the index. 
+\begin{DoxyParams}{Parameters}
+{\em offsets} & pointer to the index array \\
+\hline
+{\em step} & one index byte offset advances this many M\+P\+EG frames \\
+\hline
+{\em fill} & number of recorded index offsets; size of the array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__mpg123__seek_gaa52d46fb00dcd357abe8d0e642404151}\label{group__mpg123__seek_gaa52d46fb00dcd357abe8d0e642404151}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+tell@{mpg123\+\_\+tell}}
+\index{mpg123\+\_\+tell@{mpg123\+\_\+tell}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+tell()}{mpg123\_tell()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+tell (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Returns the current position in samples. On the next read, you\textquotesingle{}d get that sample. \mbox{\Hypertarget{group__mpg123__seek_ga4c378fd8dc49dd4cb0eccd6de96c3f9d}\label{group__mpg123__seek_ga4c378fd8dc49dd4cb0eccd6de96c3f9d}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+tell\+\_\+stream@{mpg123\+\_\+tell\+\_\+stream}}
+\index{mpg123\+\_\+tell\+\_\+stream@{mpg123\+\_\+tell\+\_\+stream}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+tell\+\_\+stream()}{mpg123\_tell\_stream()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+tell\+\_\+stream (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Returns the current byte offset in the input stream. \mbox{\Hypertarget{group__mpg123__seek_gac9e7addd98557c3bb784a7b93b3eeb17}\label{group__mpg123__seek_gac9e7addd98557c3bb784a7b93b3eeb17}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+tellframe@{mpg123\+\_\+tellframe}}
+\index{mpg123\+\_\+tellframe@{mpg123\+\_\+tellframe}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+tellframe()}{mpg123\_tellframe()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+tellframe (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Returns the frame number that the next read will give you data from. \mbox{\Hypertarget{group__mpg123__seek_gaee6dc54beea9eae0e196a357ed55cd5f}\label{group__mpg123__seek_gaee6dc54beea9eae0e196a357ed55cd5f}} 
+\index{mpg123 position and seeking@{mpg123 position and seeking}!mpg123\+\_\+timeframe@{mpg123\+\_\+timeframe}}
+\index{mpg123\+\_\+timeframe@{mpg123\+\_\+timeframe}!mpg123 position and seeking@{mpg123 position and seeking}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+timeframe()}{mpg123\_timeframe()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT off\+\_\+t mpg123\+\_\+timeframe (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{double}]{sec }\end{DoxyParamCaption})}
+
+Return a M\+P\+EG frame offset corresponding to an offset in seconds. This assumes that the samples per frame do not change in the file/stream, which is a good assumption for any sane file/stream only. \begin{DoxyReturn}{Returns}
+frame offset $>$= 0 or error/message code 
+\end{DoxyReturn}

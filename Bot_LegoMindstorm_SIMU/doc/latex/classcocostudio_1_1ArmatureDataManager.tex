@@ -1,0 +1,524 @@
+\hypertarget{classcocostudio_1_1ArmatureDataManager}{}\section{cocostudio\+:\+:Armature\+Data\+Manager Class Reference}
+\label{classcocostudio_1_1ArmatureDataManager}\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+
+
+format and manage armature configuration and armature animation  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Armature\+Data\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for cocostudio\+:\+:Armature\+Data\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classcocostudio_1_1ArmatureDataManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocostudio\+:\+:Armature\+Data\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classcocostudio_1_1ArmatureDataManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classcocostudio_1_1ArmatureDataManager_ae06a336867256bd67f78ec38e14e9fd9}{init} ()
+\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}{add\+Armature\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$armature\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a8ae85e5c414861b3ca843d9497e27cb1}{get\+Armature\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get armature data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}{remove\+Armature\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove armature data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}{add\+Animation\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$animation\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em add animation data \end{DoxyCompactList}\item 
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a256a53756d5a9888f18d6474ff82c199}{get\+Animation\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get animation data from \+\_\+animation\+Datas(\+Dictionary) \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}{remove\+Animation\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove animation data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}{add\+Texture\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$texture\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em add texture data \end{DoxyCompactList}\item 
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a8d464fbdee16e338481824a7e3725d11}{get\+Texture\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get texture data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}{remove\+Texture\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove texture data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}\label{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}{add\+Armature\+File\+Info} (const std\+::string \&config\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}\label{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}{add\+Armature\+File\+Info\+Async} (const std\+::string \&config\+File\+Path, cocos2d\+::\+Ref $\ast$target, cocos2d\+::\+S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. It will load data in a new thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}\label{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}{add\+Armature\+File\+Info} (const std\+::string \&image\+Path, const std\+::string \&plist\+Path, const std\+::string \&config\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}\label{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}{add\+Armature\+File\+Info\+Async} (const std\+::string \&image\+Path, const std\+::string \&plist\+Path, const std\+::string \&config\+File\+Path, cocos2d\+::\+Ref $\ast$target, cocos2d\+::\+S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. It will load data in a new thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}\label{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}{add\+Sprite\+Frame\+From\+File} (const std\+::string \&plist\+Path, const std\+::string \&image\+Path, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add sprite frame to C\+C\+Sprite\+Frame\+Cache, it will save display name and it\textquotesingle{}s relative image name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad92cbd6101717fdbb85b656e91c8898a}\label{classcocostudio_1_1ArmatureDataManager_ad92cbd6101717fdbb85b656e91c8898a}} 
+virtual void {\bfseries remove\+Armature\+File\+Info} (const std\+::string \&config\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}\label{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}} 
+bool \hyperlink{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}{is\+Auto\+Load\+Sprite\+File} ()
+\begin{DoxyCompactList}\small\item\em Judge whether or not need auto load sprite file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a1995bf9e5571d580df24411f77a68855}\label{classcocostudio_1_1ArmatureDataManager_a1995bf9e5571d580df24411f77a68855}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ $>$ \& {\bfseries get\+Armature\+Datas} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a134cfa037d2efc7d13c08ab4a4743af7}\label{classcocostudio_1_1ArmatureDataManager_a134cfa037d2efc7d13c08ab4a4743af7}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ $>$ \& {\bfseries get\+Animation\+Datas} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa52c8d33342a1440c2cf8b7e2d8b91ee}\label{classcocostudio_1_1ArmatureDataManager_aa52c8d33342a1440c2cf8b7e2d8b91ee}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ $>$ \& {\bfseries get\+Texture\+Datas} () const
+\item 
+virtual bool \hyperlink{classcocostudio_1_1ArmatureDataManager_ae9e571092820f26fc2c6a841a91b2b38}{init} ()
+\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}{add\+Armature\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$armature\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a19d1df9bd2bfa449ac9187450d17ad1b}{get\+Armature\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get armature data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}{remove\+Armature\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove armature data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}{add\+Animation\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$animation\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em add animation data \end{DoxyCompactList}\item 
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_aa16bcd30c063c4143787fe799a6f4a45}{get\+Animation\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get animation data from \+\_\+animation\+Datas(\+Dictionary) \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}{remove\+Animation\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove animation data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}{add\+Texture\+Data} (const std\+::string \&id, \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$texture\+Data, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em add texture data \end{DoxyCompactList}\item 
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a5516347b007b20f6a6f685a630ba76b1}{get\+Texture\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em get texture data \end{DoxyCompactList}\item 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}{remove\+Texture\+Data} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em remove texture data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}\label{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_a364290e4e2ae9420b51ca4076394e16c}{add\+Armature\+File\+Info} (const std\+::string \&config\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}\label{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ad7322691cd5f9944744ad6a474374710}{add\+Armature\+File\+Info\+Async} (const std\+::string \&config\+File\+Path, cocos2d\+::\+Ref $\ast$target, cocos2d\+::\+S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. It will load data in a new thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}\label{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aa2580efec928c88513b321b66b3977e0}{add\+Armature\+File\+Info} (const std\+::string \&image\+Path, const std\+::string \&plist\+Path, const std\+::string \&config\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}\label{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_ae4bd5cc9b48209df7869dc027c5d2550}{add\+Armature\+File\+Info\+Async} (const std\+::string \&image\+Path, const std\+::string \&plist\+Path, const std\+::string \&config\+File\+Path, cocos2d\+::\+Ref $\ast$target, cocos2d\+::\+S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\begin{DoxyCompactList}\small\item\em Add Armature\+File\+Info, it is managed by \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}. It will load data in a new thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}\label{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}} 
+void \hyperlink{classcocostudio_1_1ArmatureDataManager_aa878105ec4cd7dbfb415864a13bd908e}{add\+Sprite\+Frame\+From\+File} (const std\+::string \&plist\+Path, const std\+::string \&image\+Path, const std\+::string \&config\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add sprite frame to C\+C\+Sprite\+Frame\+Cache, it will save display name and it\textquotesingle{}s relative image name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a1d705c75c9b7c7f1b26d2120286a9a40}\label{classcocostudio_1_1ArmatureDataManager_a1d705c75c9b7c7f1b26d2120286a9a40}} 
+virtual void {\bfseries remove\+Armature\+File\+Info} (const std\+::string \&config\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}\label{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}} 
+bool \hyperlink{classcocostudio_1_1ArmatureDataManager_af799c20a271544234f00a85d380d9d75}{is\+Auto\+Load\+Sprite\+File} ()
+\begin{DoxyCompactList}\small\item\em Judge whether or not need auto load sprite file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ab89cdbf94e009af2ae4861d486dbc85d}\label{classcocostudio_1_1ArmatureDataManager_ab89cdbf94e009af2ae4861d486dbc85d}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ $>$ \& {\bfseries get\+Armature\+Datas} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad3f710fa178dfeddbaeee22661c6d146}\label{classcocostudio_1_1ArmatureDataManager_ad3f710fa178dfeddbaeee22661c6d146}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ $>$ \& {\bfseries get\+Animation\+Datas} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a34e9d9c01c2f054c4ab068320684c975}\label{classcocostudio_1_1ArmatureDataManager_a34e9d9c01c2f054c4ab068320684c975}} 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ $>$ \& {\bfseries get\+Texture\+Datas} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}{shared\+Armature\+Data\+Manager} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}{purge} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a5dc327053e5563d7c4702c012aef62f5}\label{classcocostudio_1_1ArmatureDataManager_a5dc327053e5563d7c4702c012aef62f5}} 
+static \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} $\ast$ {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa226b1e02e1810c7673eea6e0ebe5171}\label{classcocostudio_1_1ArmatureDataManager_aa226b1e02e1810c7673eea6e0ebe5171}} 
+static void {\bfseries destroy\+Instance} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} $\ast$ \hyperlink{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}{shared\+Armature\+Data\+Manager} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}{purge} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a10f7fe3e017cd7cba9ff66751068b9ed}\label{classcocostudio_1_1ArmatureDataManager_a10f7fe3e017cd7cba9ff66751068b9ed}} 
+static \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} $\ast$ {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_af898e796c0bff8de596b84054f736e7f}\label{classcocostudio_1_1ArmatureDataManager_af898e796c0bff8de596b84054f736e7f}} 
+static void {\bfseries destroy\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a0a60c5159c640298b1d5313c7639e853}\label{classcocostudio_1_1ArmatureDataManager_a0a60c5159c640298b1d5313c7639e853}} 
+void {\bfseries add\+Relative\+Data} (const std\+::string \&config\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a1f33a565302c3c640f93eaab34899eec}\label{classcocostudio_1_1ArmatureDataManager_a1f33a565302c3c640f93eaab34899eec}} 
+\hyperlink{structcocostudio_1_1RelativeData}{Relative\+Data} $\ast$ {\bfseries get\+Relative\+Data} (const std\+::string \&config\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a0a60c5159c640298b1d5313c7639e853}\label{classcocostudio_1_1ArmatureDataManager_a0a60c5159c640298b1d5313c7639e853}} 
+void {\bfseries add\+Relative\+Data} (const std\+::string \&config\+File\+Path)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ae5274a1a926994e103d2e13749849a13}\label{classcocostudio_1_1ArmatureDataManager_ae5274a1a926994e103d2e13749849a13}} 
+\hyperlink{structcocostudio_1_1RelativeData}{Relative\+Data} $\ast$ {\bfseries get\+Relative\+Data} (const std\+::string \&config\+File\+Path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+format and manage armature configuration and armature animation 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}\label{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Animation\+Data@{add\+Animation\+Data}}
+\index{add\+Animation\+Data@{add\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Animation\+Data()}{addAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$}]{animation\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+add animation data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}\label{classcocostudio_1_1ArmatureDataManager_a36a1eb7cdc144ce7ee0a17bcc3f5726d}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Animation\+Data@{add\+Animation\+Data}}
+\index{add\+Animation\+Data@{add\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Animation\+Data()}{addAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$}]{animation\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+add animation data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}\label{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Armature\+Data@{add\+Armature\+Data}}
+\index{add\+Armature\+Data@{add\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Armature\+Data()}{addArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$}]{armature\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Add armature data 
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the armature data \\
+\hline
+{\em armature\+Data} & \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}\label{classcocostudio_1_1ArmatureDataManager_ad07ea60328afc77cd0787d6fc79ae519}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Armature\+Data@{add\+Armature\+Data}}
+\index{add\+Armature\+Data@{add\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Armature\+Data()}{addArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$}]{armature\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Add armature data 
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the armature data \\
+\hline
+{\em armature\+Data} & \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}\label{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Texture\+Data@{add\+Texture\+Data}}
+\index{add\+Texture\+Data@{add\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Texture\+Data()}{addTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$}]{texture\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+add texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}\label{classcocostudio_1_1ArmatureDataManager_aed885f4d9ab821f83f3a3826655e3325}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!add\+Texture\+Data@{add\+Texture\+Data}}
+\index{add\+Texture\+Data@{add\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{add\+Texture\+Data()}{addTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::add\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$}]{texture\+Data,  }\item[{const std\+::string \&}]{config\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+add texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a256a53756d5a9888f18d6474ff82c199}\label{classcocostudio_1_1ArmatureDataManager_a256a53756d5a9888f18d6474ff82c199}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Animation\+Data@{get\+Animation\+Data}}
+\index{get\+Animation\+Data@{get\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Animation\+Data()}{getAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get animation data from \+\_\+animation\+Datas(\+Dictionary) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_aa16bcd30c063c4143787fe799a6f4a45}\label{classcocostudio_1_1ArmatureDataManager_aa16bcd30c063c4143787fe799a6f4a45}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Animation\+Data@{get\+Animation\+Data}}
+\index{get\+Animation\+Data@{get\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Animation\+Data()}{getAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data}$\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get animation data from \+\_\+animation\+Datas(\+Dictionary) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1AnimationData}{Animation\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a8ae85e5c414861b3ca843d9497e27cb1}\label{classcocostudio_1_1ArmatureDataManager_a8ae85e5c414861b3ca843d9497e27cb1}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Armature\+Data@{get\+Armature\+Data}}
+\index{get\+Armature\+Data@{get\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Armature\+Data()}{getArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get armature data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the armature data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a19d1df9bd2bfa449ac9187450d17ad1b}\label{classcocostudio_1_1ArmatureDataManager_a19d1df9bd2bfa449ac9187450d17ad1b}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Armature\+Data@{get\+Armature\+Data}}
+\index{get\+Armature\+Data@{get\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Armature\+Data()}{getArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data}$\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get armature data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the armature data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a8d464fbdee16e338481824a7e3725d11}\label{classcocostudio_1_1ArmatureDataManager_a8d464fbdee16e338481824a7e3725d11}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Texture\+Data@{get\+Texture\+Data}}
+\index{get\+Texture\+Data@{get\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Texture\+Data()}{getTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a5516347b007b20f6a6f685a630ba76b1}\label{classcocostudio_1_1ArmatureDataManager_a5516347b007b20f6a6f685a630ba76b1}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!get\+Texture\+Data@{get\+Texture\+Data}}
+\index{get\+Texture\+Data@{get\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Texture\+Data()}{getTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1TextureData}{Texture\+Data}$\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::get\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+get texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data you want to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1TextureData}{Texture\+Data} $\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ae06a336867256bd67f78ec38e14e9fd9}\label{classcocostudio_1_1ArmatureDataManager_ae06a336867256bd67f78ec38e14e9fd9}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool cocostudio\+::\+Armature\+Data\+Manager\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} \mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ae9e571092820f26fc2c6a841a91b2b38}\label{classcocostudio_1_1ArmatureDataManager_ae9e571092820f26fc2c6a841a91b2b38}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool cocostudio\+::\+Armature\+Data\+Manager\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} \mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}\label{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!purge@{purge}}
+\index{purge@{purge}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{purge()}{purge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void cocostudio\+::\+Armature\+Data\+Manager\+::purge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000078}{Deprecated}]Use destroy\+Instance() instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}\label{classcocostudio_1_1ArmatureDataManager_a408db55c27dbcaea97edcfed1a4ba66b}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!purge@{purge}}
+\index{purge@{purge}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{purge()}{purge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void cocostudio\+::\+Armature\+Data\+Manager\+::purge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000313}{Deprecated}]Use destroy\+Instance() instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}\label{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Animation\+Data@{remove\+Animation\+Data}}
+\index{remove\+Animation\+Data@{remove\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Animation\+Data()}{removeAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove animation data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}\label{classcocostudio_1_1ArmatureDataManager_a7355fd9a994fe9a51bc7b0ce35cb9008}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Animation\+Data@{remove\+Animation\+Data}}
+\index{remove\+Animation\+Data@{remove\+Animation\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Animation\+Data()}{removeAnimationData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Animation\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove animation data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the animation data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}\label{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Armature\+Data@{remove\+Armature\+Data}}
+\index{remove\+Armature\+Data@{remove\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Armature\+Data()}{removeArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove armature data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the armature data you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}\label{classcocostudio_1_1ArmatureDataManager_ab749f66043b0dd603720ff8c31f2a3b6}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Armature\+Data@{remove\+Armature\+Data}}
+\index{remove\+Armature\+Data@{remove\+Armature\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Armature\+Data()}{removeArmatureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Armature\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove armature data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the armature data you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}\label{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Texture\+Data@{remove\+Texture\+Data}}
+\index{remove\+Texture\+Data@{remove\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Texture\+Data()}{removeTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}\label{classcocostudio_1_1ArmatureDataManager_a53b3ec6a3d2264b4321be60b0cdeefc1}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!remove\+Texture\+Data@{remove\+Texture\+Data}}
+\index{remove\+Texture\+Data@{remove\+Texture\+Data}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Texture\+Data()}{removeTextureData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+Data\+Manager\+::remove\+Texture\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove texture data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the texture data you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}\label{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!shared\+Armature\+Data\+Manager@{shared\+Armature\+Data\+Manager}}
+\index{shared\+Armature\+Data\+Manager@{shared\+Armature\+Data\+Manager}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{shared\+Armature\+Data\+Manager()}{sharedArmatureDataManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}$\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::shared\+Armature\+Data\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000077}{Deprecated}]Use get\+Instance() instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}\label{classcocostudio_1_1ArmatureDataManager_a5f7ba0ce48d07b1aba63a2786c641607}} 
+\index{cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}!shared\+Armature\+Data\+Manager@{shared\+Armature\+Data\+Manager}}
+\index{shared\+Armature\+Data\+Manager@{shared\+Armature\+Data\+Manager}!cocostudio\+::\+Armature\+Data\+Manager@{cocostudio\+::\+Armature\+Data\+Manager}}
+\subsubsection{\texorpdfstring{shared\+Armature\+Data\+Manager()}{sharedArmatureDataManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager}$\ast$ cocostudio\+::\+Armature\+Data\+Manager\+::shared\+Armature\+Data\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000312}{Deprecated}]Use get\+Instance() instead \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/C\+C\+Armature\+Data\+Manager.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/C\+C\+Armature\+Data\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,189 @@
+\hypertarget{classActionManagerTimer}{}\section{Action\+Manager\+Timer Class Reference}
+\label{classActionManagerTimer}\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+
+
+Classe de gestion des actions du robot et des actions par timer.  
+
+
+
+
+{\ttfamily \#include $<$Action\+Manager\+Timer.\+hpp$>$}
+
+
+
+Inheritance diagram for Action\+Manager\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classActionManagerTimer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Manager\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classActionManagerTimer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionManagerTimer_a957a5706d13675e5282372523c2db521}\label{classActionManagerTimer_a957a5706d13675e5282372523c2db521}} 
+\hyperlink{classActionManagerTimer_a957a5706d13675e5282372523c2db521}{Action\+Manager\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_ad465b1e6b2f352a92cc10bcaf5e6416e}\label{classActionManagerTimer_ad465b1e6b2f352a92cc10bcaf5e6416e}} 
+virtual \hyperlink{classActionManagerTimer_ad465b1e6b2f352a92cc10bcaf5e6416e}{$\sim$\+Action\+Manager\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_a6e6db535941463a0e590a6779f111dd2}\label{classActionManagerTimer_a6e6db535941463a0e590a6779f111dd2}} 
+int \hyperlink{classActionManagerTimer_a6e6db535941463a0e590a6779f111dd2}{count\+Actions} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nombre d\textquotesingle{}actions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_af44ca42a2cebadd32062dedf874d4f82}\label{classActionManagerTimer_af44ca42a2cebadd32062dedf874d4f82}} 
+int \hyperlink{classActionManagerTimer_af44ca42a2cebadd32062dedf874d4f82}{count\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de timers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_ad5a07cffbb588205edcdcb594208769c}\label{classActionManagerTimer_ad5a07cffbb588205edcdcb594208769c}} 
+int \hyperlink{classActionManagerTimer_ad5a07cffbb588205edcdcb594208769c}{count\+P\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de timers posix. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_ad44aa7bf3d361e60d3ed764d833eafc5}{add\+Action} (\hyperlink{classIAction}{I\+Action} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une action. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_a37abad611ac11d81f2ebcb8d9d5766f8}{add\+Timer} (\hyperlink{classITimerListener}{I\+Timer\+Listener} $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un timer. deprecated. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_a4d893b58bd1d02a9a610eabea05bec1a}{add\+Timer} (\hyperlink{classITimerPosixListener}{I\+Timer\+Posix\+Listener} $\ast$timer)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un timer posix. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_a3043c43e2b56ed05633d68bf5c530c1f}{stop\+Timer} (std\+::string timer\+Name\+To\+Delete)
+\begin{DoxyCompactList}\small\item\em arrete un timer spécifique. Permet d\textquotesingle{}executer son action de fin puis le supprime de la liste. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_a77bc841824ad1722363dd29a351a74cf}{stop\+P\+Timer} (std\+::string timer\+Name\+To\+Delete)
+\begin{DoxyCompactList}\small\item\em arrete un timer posix spécifique. Permet d\textquotesingle{}executer son action de fin puis le supprime de la liste. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_aea93da8bac8e622881a125ee7506a7ca}\label{classActionManagerTimer_aea93da8bac8e622881a125ee7506a7ca}} 
+void \hyperlink{classActionManagerTimer_aea93da8bac8e622881a125ee7506a7ca}{stop\+All\+P\+Timers} ()
+\begin{DoxyCompactList}\small\item\em arrete tous les timers posix. Permet d\textquotesingle{}executer leur action de fin puis les supprime de la liste. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_a20bd3b06bc5f9b9fb747bb27d154d88d}\label{classActionManagerTimer_a20bd3b06bc5f9b9fb747bb27d154d88d}} 
+void \hyperlink{classActionManagerTimer_a20bd3b06bc5f9b9fb747bb27d154d88d}{clear\+Actions} ()
+\begin{DoxyCompactList}\small\item\em Vide la liste des actions actuellement enregistrées. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_af2afa74f3445e32823371b926aa3f55c}\label{classActionManagerTimer_af2afa74f3445e32823371b926aa3f55c}} 
+void \hyperlink{classActionManagerTimer_af2afa74f3445e32823371b926aa3f55c}{clear\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Vide la liste des timers actuellement enregistrés. \end{DoxyCompactList}\item 
+void \hyperlink{classActionManagerTimer_a072223491745aebbaa0344124635b7f8}{stop} ()
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}appel à cette méthode signale au thread qu\textquotesingle{}il doit s\textquotesingle{}arrêter (proprement). Arrete aussi tous les timers posix en cours en lancant leur tache de fin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_ad14a24ea8609f916a5fb3e43c7f0e856}\label{classActionManagerTimer_ad14a24ea8609f916a5fb3e43c7f0e856}} 
+void \hyperlink{classActionManagerTimer_ad14a24ea8609f916a5fb3e43c7f0e856}{pause} (bool value)
+\begin{DoxyCompactList}\small\item\em Met en pause la boucle du manager d\textquotesingle{}actions et de timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_a40e5f9d8c2706434376d416d3e43fd3b}\label{classActionManagerTimer_a40e5f9d8c2706434376d416d3e43fd3b}} 
+void \hyperlink{classActionManagerTimer_a40e5f9d8c2706434376d416d3e43fd3b}{debug\+Actions} ()
+\begin{DoxyCompactList}\small\item\em Affiche via le logger les différentes actions en cours. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_a17c6563c7a6c0955c7ca2230b038d832}\label{classActionManagerTimer_a17c6563c7a6c0955c7ca2230b038d832}} 
+void {\bfseries debug\+P\+Timers} ()
+\item 
+\mbox{\Hypertarget{classActionManagerTimer_aef6be0b68f6595c8ac5ce89c66b9333a}\label{classActionManagerTimer_aef6be0b68f6595c8ac5ce89c66b9333a}} 
+void {\bfseries debug\+Timers} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionManagerTimer_a8eb81df877c40053d71f659265882058}\label{classActionManagerTimer_a8eb81df877c40053d71f659265882058}} 
+virtual void \hyperlink{classActionManagerTimer_a8eb81df877c40053d71f659265882058}{execute} ()
+\begin{DoxyCompactList}\small\item\em Execute l\textquotesingle{}ensemble des actions enregistrées. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionManagerTimer_a39f4cbb5ddbbe6a40980bb59b8b59b05}\label{classActionManagerTimer_a39f4cbb5ddbbe6a40980bb59b8b59b05}} 
+void {\bfseries unblock} (std\+::string debug=\char`\"{}Action\+Manager\+Timer\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Classe de gestion des actions du robot et des actions par timer. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionManagerTimer_ad44aa7bf3d361e60d3ed764d833eafc5}\label{classActionManagerTimer_ad44aa7bf3d361e60d3ed764d833eafc5}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{add\+Action()}{addAction()}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::add\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classIAction}{I\+Action} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajout d\textquotesingle{}une action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & L\textquotesingle{}action à ajouter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManagerTimer_a37abad611ac11d81f2ebcb8d9d5766f8}\label{classActionManagerTimer_a37abad611ac11d81f2ebcb8d9d5766f8}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!add\+Timer@{add\+Timer}}
+\index{add\+Timer@{add\+Timer}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{add\+Timer()}{addTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::add\+Timer (\begin{DoxyParamCaption}\item[{\hyperlink{classITimerListener}{I\+Timer\+Listener} $\ast$}]{timer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajout d\textquotesingle{}un timer. deprecated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & le timer à ajouter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManagerTimer_a4d893b58bd1d02a9a610eabea05bec1a}\label{classActionManagerTimer_a4d893b58bd1d02a9a610eabea05bec1a}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!add\+Timer@{add\+Timer}}
+\index{add\+Timer@{add\+Timer}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{add\+Timer()}{addTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::add\+Timer (\begin{DoxyParamCaption}\item[{\hyperlink{classITimerPosixListener}{I\+Timer\+Posix\+Listener} $\ast$}]{timer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajout d\textquotesingle{}un timer posix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & le timer posix à ajouter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManagerTimer_a072223491745aebbaa0344124635b7f8}\label{classActionManagerTimer_a072223491745aebbaa0344124635b7f8}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!stop@{stop}}
+\index{stop@{stop}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+L\textquotesingle{}appel à cette méthode signale au thread qu\textquotesingle{}il doit s\textquotesingle{}arrêter (proprement). Arrete aussi tous les timers posix en cours en lancant leur tache de fin. 
+
+L\textquotesingle{}utilisation de la méthode Action\+Manager\+::stop() permet de savoir si le thread associé est arrêté. \mbox{\Hypertarget{classActionManagerTimer_a77bc841824ad1722363dd29a351a74cf}\label{classActionManagerTimer_a77bc841824ad1722363dd29a351a74cf}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!stop\+P\+Timer@{stop\+P\+Timer}}
+\index{stop\+P\+Timer@{stop\+P\+Timer}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{stop\+P\+Timer()}{stopPTimer()}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::stop\+P\+Timer (\begin{DoxyParamCaption}\item[{std\+::string}]{timer\+Name\+To\+Delete }\end{DoxyParamCaption})}
+
+
+
+arrete un timer posix spécifique. Permet d\textquotesingle{}executer son action de fin puis le supprime de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le label du timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManagerTimer_a3043c43e2b56ed05633d68bf5c530c1f}\label{classActionManagerTimer_a3043c43e2b56ed05633d68bf5c530c1f}} 
+\index{Action\+Manager\+Timer@{Action\+Manager\+Timer}!stop\+Timer@{stop\+Timer}}
+\index{stop\+Timer@{stop\+Timer}!Action\+Manager\+Timer@{Action\+Manager\+Timer}}
+\subsubsection{\texorpdfstring{stop\+Timer()}{stopTimer()}}
+{\footnotesize\ttfamily void Action\+Manager\+Timer\+::stop\+Timer (\begin{DoxyParamCaption}\item[{std\+::string}]{timer\+Name\+To\+Delete }\end{DoxyParamCaption})}
+
+
+
+arrete un timer spécifique. Permet d\textquotesingle{}executer son action de fin puis le supprime de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le label du timer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/\hyperlink{ActionManagerTimer_8hpp}{Action\+Manager\+Timer.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/\hyperlink{ActionManagerTimer_8cpp}{Action\+Manager\+Timer.\+cpp}\end{DoxyCompactItemize}

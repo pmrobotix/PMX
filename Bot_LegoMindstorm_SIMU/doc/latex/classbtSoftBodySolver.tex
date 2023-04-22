@@ -1,0 +1,193 @@
+\hypertarget{classbtSoftBodySolver}{}\section{bt\+Soft\+Body\+Solver Class Reference}
+\label{classbtSoftBodySolver}\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+
+
+Inheritance diagram for bt\+Soft\+Body\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBodySolver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodySolver_ae50676e1c9c6cdb0e3e59bd426baf540}\label{classbtSoftBodySolver_ae50676e1c9c6cdb0e3e59bd426baf540}} 
+enum {\bfseries Solver\+Types} \{ \newline
+{\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+O\+L\+V\+ER}, 
+{\bfseries C\+P\+U\+\_\+\+S\+O\+L\+V\+ER}, 
+{\bfseries C\+L\+\_\+\+S\+O\+L\+V\+ER}, 
+{\bfseries C\+L\+\_\+\+S\+I\+M\+D\+\_\+\+S\+O\+L\+V\+ER}, 
+\newline
+{\bfseries D\+X\+\_\+\+S\+O\+L\+V\+ER}, 
+{\bfseries D\+X\+\_\+\+S\+I\+M\+D\+\_\+\+S\+O\+L\+V\+ER}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Solver\+Types \hyperlink{classbtSoftBodySolver_aa08308ddb8e4661ab3c3e23cf3da647c}{get\+Solver\+Type} () const =0
+\item 
+virtual bool \hyperlink{classbtSoftBodySolver_aae0adf7ffc11cd7fafec927a54c654d5}{check\+Initialized} ()=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_af07da1ec6f11e7873bc5fafef426fcd3}{optimize} (\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$ $>$ \&soft\+Bodies, bool force\+Update=false)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_ac4034ba178cb75bd880a44958eaa38d1}{copy\+Back\+To\+Soft\+Bodies} (bool b\+Move=true)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a72f0c095ae30002a6f98fc194a63e1ba}{predict\+Motion} (float solverdt)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a5e71a2a32786574bedf409ba822980eb}{solve\+Constraints} (float solverdt)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_adac4b4f20eee46dc4fab26ed25be89ef}{update\+Soft\+Bodies} ()=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a7dea7c2ce8ad4e8cae29219ffeebe18d}{process\+Collision} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$, const struct \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a08f03a574f0936d834ff100f87755ea6}{process\+Collision} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$, \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$)=0
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a80ffccfd244c51b2843991989a4191c9}{set\+Number\+Of\+Position\+Iterations} (int iterations)
+\item 
+virtual int \hyperlink{classbtSoftBodySolver_a814e9da6744f13f47613903e6fee5587}{get\+Number\+Of\+Position\+Iterations} ()
+\item 
+virtual void \hyperlink{classbtSoftBodySolver_a48b281048407640c73bfd355125a55e5}{set\+Number\+Of\+Velocity\+Iterations} (int iterations)
+\item 
+virtual int \hyperlink{classbtSoftBodySolver_a19a6754913540e92a387ffa5dbb2d29c}{get\+Number\+Of\+Velocity\+Iterations} ()
+\item 
+float \hyperlink{classbtSoftBodySolver_a6abd002edc15d4c80472fd4983679ea2}{get\+Time\+Scale} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodySolver_aa1f0693cdd4eee6acae68f913ac22d1e}\label{classbtSoftBodySolver_aa1f0693cdd4eee6acae68f913ac22d1e}} 
+int {\bfseries m\+\_\+number\+Of\+Position\+Iterations}
+\item 
+\mbox{\Hypertarget{classbtSoftBodySolver_aae88ccedc8f0c3e17086664ddd565ca6}\label{classbtSoftBodySolver_aae88ccedc8f0c3e17086664ddd565ca6}} 
+int {\bfseries m\+\_\+number\+Of\+Velocity\+Iterations}
+\item 
+\mbox{\Hypertarget{classbtSoftBodySolver_a2f1b029913dc8873312d6107b768b67a}\label{classbtSoftBodySolver_a2f1b029913dc8873312d6107b768b67a}} 
+float {\bfseries m\+\_\+time\+Scale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBodySolver_aae0adf7ffc11cd7fafec927a54c654d5}\label{classbtSoftBodySolver_aae0adf7ffc11cd7fafec927a54c654d5}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!check\+Initialized@{check\+Initialized}}
+\index{check\+Initialized@{check\+Initialized}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{check\+Initialized()}{checkInitialized()}}
+{\footnotesize\ttfamily virtual bool bt\+Soft\+Body\+Solver\+::check\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Ensure that this solver is initialized. 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a22b92962365db3adc0086eaac84dde9f}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_aeb15cea9089da79d1eb40f3786ec86a0}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a7cafc88f5845c099ce33fb6c5b84968e}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a246093f49e31b6c17fad98c7ac878860}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_afa91458c5c1bf45d11bd0cc2b5a8fc71}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_ac4034ba178cb75bd880a44958eaa38d1}\label{classbtSoftBodySolver_ac4034ba178cb75bd880a44958eaa38d1}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!copy\+Back\+To\+Soft\+Bodies@{copy\+Back\+To\+Soft\+Bodies}}
+\index{copy\+Back\+To\+Soft\+Bodies@{copy\+Back\+To\+Soft\+Bodies}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{copy\+Back\+To\+Soft\+Bodies()}{copyBackToSoftBodies()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::copy\+Back\+To\+Soft\+Bodies (\begin{DoxyParamCaption}\item[{bool}]{b\+Move = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Copy necessary data back to the original soft body source objects. 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a0364c3791bd12386e32e9357546aeee0}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_aa0f25b116d336dabb716c8cd08f940b7}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_ab5490d39c1bf489ed33d6e6a4582f93b}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a374b440216ba03aa39db58e23280c08c}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_ad56d843b5c510c0cb1e2399e20ab212a}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_a814e9da6744f13f47613903e6fee5587}\label{classbtSoftBodySolver_a814e9da6744f13f47613903e6fee5587}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!get\+Number\+Of\+Position\+Iterations@{get\+Number\+Of\+Position\+Iterations}}
+\index{get\+Number\+Of\+Position\+Iterations@{get\+Number\+Of\+Position\+Iterations}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Position\+Iterations()}{getNumberOfPositionIterations()}}
+{\footnotesize\ttfamily virtual int bt\+Soft\+Body\+Solver\+::get\+Number\+Of\+Position\+Iterations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the number of velocity constraint solver iterations this solver uses. \mbox{\Hypertarget{classbtSoftBodySolver_a19a6754913540e92a387ffa5dbb2d29c}\label{classbtSoftBodySolver_a19a6754913540e92a387ffa5dbb2d29c}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!get\+Number\+Of\+Velocity\+Iterations@{get\+Number\+Of\+Velocity\+Iterations}}
+\index{get\+Number\+Of\+Velocity\+Iterations@{get\+Number\+Of\+Velocity\+Iterations}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Velocity\+Iterations()}{getNumberOfVelocityIterations()}}
+{\footnotesize\ttfamily virtual int bt\+Soft\+Body\+Solver\+::get\+Number\+Of\+Velocity\+Iterations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the number of velocity constraint solver iterations this solver uses. \mbox{\Hypertarget{classbtSoftBodySolver_aa08308ddb8e4661ab3c3e23cf3da647c}\label{classbtSoftBodySolver_aa08308ddb8e4661ab3c3e23cf3da647c}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!get\+Solver\+Type@{get\+Solver\+Type}}
+\index{get\+Solver\+Type@{get\+Solver\+Type}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{get\+Solver\+Type()}{getSolverType()}}
+{\footnotesize\ttfamily virtual Solver\+Types bt\+Soft\+Body\+Solver\+::get\+Solver\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the type of the solver. 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a1142bb4f735d275f161f003f7d703768}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_a1142bb4f735d275f161f003f7d703768}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a2b643547caacc5c1daedff3f67a140fb}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a2b643547caacc5c1daedff3f67a140fb}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_ad36369c7c58e1cb8ddea7ebd54612eb9}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_ad36369c7c58e1cb8ddea7ebd54612eb9}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_a34d8e98c8756aeeac24554c18f06c0c1}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_a34d8e98c8756aeeac24554c18f06c0c1}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, and \hyperlink{classbtDefaultSoftBodySolver_a8c7939edfff8dccf71e3eba0f80e9abe}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_a6abd002edc15d4c80472fd4983679ea2}\label{classbtSoftBodySolver_a6abd002edc15d4c80472fd4983679ea2}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!get\+Time\+Scale@{get\+Time\+Scale}}
+\index{get\+Time\+Scale@{get\+Time\+Scale}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{get\+Time\+Scale()}{getTimeScale()}}
+{\footnotesize\ttfamily float bt\+Soft\+Body\+Solver\+::get\+Time\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the timescale that the simulation is using \mbox{\Hypertarget{classbtSoftBodySolver_af07da1ec6f11e7873bc5fafef426fcd3}\label{classbtSoftBodySolver_af07da1ec6f11e7873bc5fafef426fcd3}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!optimize@{optimize}}
+\index{optimize@{optimize}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::optimize (\begin{DoxyParamCaption}\item[{\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$ $>$ \&}]{soft\+Bodies,  }\item[{bool}]{force\+Update = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Optimize soft bodies in this solver. 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a1d181b7e59619553241ac463db54c490}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_a59eaf00da6dcf9c6fc25bdb4cff2718a}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a1340686f32dcdd4e8f36a56788a2e51c}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_abfa7d114dc00cb643d73ecb79682cebe}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_ad1052da1c0e61eac7d9fe1df618c150c}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_a5b9fb1bbf50012e83d8e2c38c5fc2afb}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_a575cf63485ef6a9a55f045e13dcb7717}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_a438ad9c2749189a20c5c950023893f76}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_a6092bc7e7c762770b9202c231025120b}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_a72f0c095ae30002a6f98fc194a63e1ba}\label{classbtSoftBodySolver_a72f0c095ae30002a6f98fc194a63e1ba}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!predict\+Motion@{predict\+Motion}}
+\index{predict\+Motion@{predict\+Motion}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{predict\+Motion()}{predictMotion()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::predict\+Motion (\begin{DoxyParamCaption}\item[{float}]{solverdt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Predict motion of soft bodies into next timestep 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a2565453dfc806f819746d7bc04a57a96}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_a408e312da4af3721c9f3e0a5e2c2473d}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_ab48872d1de7b5b960d462c71d36ee92d}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a489602e08b20f977be04543e616abf46}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_a4fc93a921db26b802b6f9fa05d9a7d6b}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_a7dea7c2ce8ad4e8cae29219ffeebe18d}\label{classbtSoftBodySolver_a7dea7c2ce8ad4e8cae29219ffeebe18d}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!process\+Collision@{process\+Collision}}
+\index{process\+Collision@{process\+Collision}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{process\+Collision()}{processCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::process\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$}]{,  }\item[{const struct \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Process a collision between one of the world\textquotesingle{}s soft bodies and another collision object \mbox{\Hypertarget{classbtSoftBodySolver_a08f03a574f0936d834ff100f87755ea6}\label{classbtSoftBodySolver_a08f03a574f0936d834ff100f87755ea6}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!process\+Collision@{process\+Collision}}
+\index{process\+Collision@{process\+Collision}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{process\+Collision()}{processCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::process\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$}]{,  }\item[{\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Process a collision between two soft bodies 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a74adb4cab44b9058b9d67b7b8116d30e}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_af49d469304c58ed901182915915aee64}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a79c0fb52b0e405fec3ea991e2bf8ec29}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_abab8bf075930d09ce71458e2cab33c93}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_a537aa8ae1601bbafb87ebaf10f5e4e31}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_a80ffccfd244c51b2843991989a4191c9}\label{classbtSoftBodySolver_a80ffccfd244c51b2843991989a4191c9}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!set\+Number\+Of\+Position\+Iterations@{set\+Number\+Of\+Position\+Iterations}}
+\index{set\+Number\+Of\+Position\+Iterations@{set\+Number\+Of\+Position\+Iterations}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Position\+Iterations()}{setNumberOfPositionIterations()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::set\+Number\+Of\+Position\+Iterations (\begin{DoxyParamCaption}\item[{int}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set the number of velocity constraint solver iterations this solver uses. \mbox{\Hypertarget{classbtSoftBodySolver_a48b281048407640c73bfd355125a55e5}\label{classbtSoftBodySolver_a48b281048407640c73bfd355125a55e5}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!set\+Number\+Of\+Velocity\+Iterations@{set\+Number\+Of\+Velocity\+Iterations}}
+\index{set\+Number\+Of\+Velocity\+Iterations@{set\+Number\+Of\+Velocity\+Iterations}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Velocity\+Iterations()}{setNumberOfVelocityIterations()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::set\+Number\+Of\+Velocity\+Iterations (\begin{DoxyParamCaption}\item[{int}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set the number of velocity constraint solver iterations this solver uses. \mbox{\Hypertarget{classbtSoftBodySolver_a5e71a2a32786574bedf409ba822980eb}\label{classbtSoftBodySolver_a5e71a2a32786574bedf409ba822980eb}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!solve\+Constraints@{solve\+Constraints}}
+\index{solve\+Constraints@{solve\+Constraints}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{solve\+Constraints()}{solveConstraints()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::solve\+Constraints (\begin{DoxyParamCaption}\item[{float}]{solverdt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Solve constraints for a set of soft bodies 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_ab6477819156cdc0f5850514683b77f08}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_a4394232848404499b2a77fdf10336496}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a24daba36a553aeb1d49158cd804e039a}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_af418daf793b0cfe4d0af908e5cd43360}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_a38d944c9dcaa0579e001f93da1b5244d}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, \hyperlink{classbtOpenCLSoftBodySolverSIMDAware_aac2e9d5582da958b0943b6e04f7f4c5a}{bt\+Open\+C\+L\+Soft\+Body\+Solver\+S\+I\+M\+D\+Aware}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_ae78972e067e72a8b5cb51ad05def50df}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SIMDAwareSoftBodySolver_a952ce0e7cf089b1eee2db1f75319ec27}{bt\+D\+X11\+S\+I\+M\+D\+Aware\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_a039cf1be486f6493be0983df3f4f1fbf}{bt\+Default\+Soft\+Body\+Solver}.
+
+\mbox{\Hypertarget{classbtSoftBodySolver_adac4b4f20eee46dc4fab26ed25be89ef}\label{classbtSoftBodySolver_adac4b4f20eee46dc4fab26ed25be89ef}} 
+\index{bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}!update\+Soft\+Bodies@{update\+Soft\+Bodies}}
+\index{update\+Soft\+Bodies@{update\+Soft\+Bodies}!bt\+Soft\+Body\+Solver@{bt\+Soft\+Body\+Solver}}
+\subsubsection{\texorpdfstring{update\+Soft\+Bodies()}{updateSoftBodies()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+Solver\+::update\+Soft\+Bodies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Perform necessary per-\/step updates of soft bodies such as recomputing normals and bounding boxes 
+
+Implemented in \hyperlink{classbtDX11SoftBodySolver_a14550caa4b6eb1be4c47cef4a4b40336}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtDX11SoftBodySolver_a2b96a99eb97d2ae1fc9235bba8cb70ce}{bt\+D\+X11\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_ae37f7bd6f4ab0c4b8eb26fb1c104644a}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, \hyperlink{classbtOpenCLSoftBodySolver_a557948307d1eb34fa1af3d091ca243ab}{bt\+Open\+C\+L\+Soft\+Body\+Solver}, and \hyperlink{classbtDefaultSoftBodySolver_a28c27dd170396900b6e79379d5781610}{bt\+Default\+Soft\+Body\+Solver}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Solvers.\+h\end{DoxyCompactItemize}

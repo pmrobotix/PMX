@@ -1,0 +1,928 @@
+\hypertarget{classui_1_1AbstractCheckButton}{}\section{ui\+:\+:Abstract\+Check\+Button Class Reference}
+\label{classui_1_1AbstractCheckButton}\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+
+
+{\ttfamily \#include $<$U\+I\+Abstract\+Check\+Button.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Abstract\+Check\+Button\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1AbstractCheckButton__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Abstract\+Check\+Button\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1AbstractCheckButton__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}{load\+Textures} (const std\+::string \&background, const std\+::string \&background\+Selected, const std\+::string \&cross, const std\+::string \&background\+Disabled, const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}{load\+Texture\+Back\+Ground} (const std\+::string \&back\+Ground, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}{load\+Texture\+Back\+Ground\+Selected} (const std\+::string \&back\+Ground\+Selected, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}{load\+Texture\+Front\+Cross} (const std\+::string \&cross\+Texture\+Name, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}{load\+Texture\+Back\+Ground\+Disabled} (const std\+::string \&back\+Ground\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}{load\+Texture\+Front\+Cross\+Disabled} (const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+bool \hyperlink{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}{is\+Selected} () const
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_aca6eea451771dd184a1cd02984e77cc6}{set\+Selected} (bool selected)
+\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classui_1_1AbstractCheckButton_a0ad1948a65d977a254aaf06ca584ad8b}{get\+Virtual\+Renderer\+Size} () const override
+\item 
+virtual \hyperlink{classNode}{Node} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a51819285d8bfbe4b135dd09b8c382618}{get\+Virtual\+Renderer} () override
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}{set\+Zoom\+Scale} (float scale)
+\item 
+float \hyperlink{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}{get\+Zoom\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Return a zoom scale. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}{get\+Renderer\+Background} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}{get\+Renderer\+Background\+Selected} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background when selected. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}{get\+Renderer\+Front\+Cross} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of front cross. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}{get\+Renderer\+Background\+Disabled} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background when disabled. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}{get\+Renderer\+Front\+Cross\+Disabled} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of front cross when disabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aba382b9b74ffb88bdbd4f8c00f7a5d1c}\label{classui_1_1AbstractCheckButton_aba382b9b74ffb88bdbd4f8c00f7a5d1c}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Normal\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_afbcea517326a799204b9582012c521c1}\label{classui_1_1AbstractCheckButton_afbcea517326a799204b9582012c521c1}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Pressed\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ae00e42578fbd5239ec65df273ffd3620}\label{classui_1_1AbstractCheckButton_ae00e42578fbd5239ec65df273ffd3620}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Disabled\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa66ceb33d302e5dd62b9c52f37746b56}\label{classui_1_1AbstractCheckButton_aa66ceb33d302e5dd62b9c52f37746b56}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Cross\+Normal\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_af186b693cf16e7ed1d80555cdf4a12f0}\label{classui_1_1AbstractCheckButton_af186b693cf16e7ed1d80555cdf4a12f0}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Cross\+Disabled\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a627e16589a1041947055a0b7b4599071}\label{classui_1_1AbstractCheckButton_a627e16589a1041947055a0b7b4599071}} 
+virtual bool {\bfseries init} (const std\+::string \&back\+Ground, const std\+::string \&back\+Ground\+Seleted, const std\+::string \&cross, const std\+::string \&back\+Ground\+Disabled, const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}{load\+Textures} (const std\+::string \&background, const std\+::string \&background\+Selected, const std\+::string \&cross, const std\+::string \&background\+Disabled, const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}{load\+Texture\+Back\+Ground} (const std\+::string \&back\+Ground, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}{load\+Texture\+Back\+Ground\+Selected} (const std\+::string \&back\+Ground\+Selected, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}{load\+Texture\+Front\+Cross} (const std\+::string \&cross\+Texture\+Name, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}{load\+Texture\+Back\+Ground\+Disabled} (const std\+::string \&back\+Ground\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}{load\+Texture\+Front\+Cross\+Disabled} (const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+bool \hyperlink{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}{is\+Selected} () const
+\item 
+virtual void \hyperlink{classui_1_1AbstractCheckButton_a9ead27b2e3af75fdf9920134513683c4}{set\+Selected} (bool selected)
+\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classui_1_1AbstractCheckButton_a0c3cf028ae6915ee7eb59e287984b0ae}{get\+Virtual\+Renderer\+Size} () const override
+\item 
+virtual \hyperlink{classNode}{Node} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a4affc93c2631571aebcc499ddc2f0f62}{get\+Virtual\+Renderer} () override
+\item 
+void \hyperlink{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}{set\+Zoom\+Scale} (float scale)
+\item 
+float \hyperlink{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}{get\+Zoom\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Return a zoom scale. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}{get\+Renderer\+Background} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}{get\+Renderer\+Background\+Selected} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background when selected. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}{get\+Renderer\+Front\+Cross} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of front cross. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}{get\+Renderer\+Background\+Disabled} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of background when disabled. \end{DoxyCompactList}\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}{get\+Renderer\+Front\+Cross\+Disabled} () const
+\begin{DoxyCompactList}\small\item\em Return the sprite instance of front cross when disabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aba382b9b74ffb88bdbd4f8c00f7a5d1c}\label{classui_1_1AbstractCheckButton_aba382b9b74ffb88bdbd4f8c00f7a5d1c}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Normal\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_afbcea517326a799204b9582012c521c1}\label{classui_1_1AbstractCheckButton_afbcea517326a799204b9582012c521c1}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Pressed\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ae00e42578fbd5239ec65df273ffd3620}\label{classui_1_1AbstractCheckButton_ae00e42578fbd5239ec65df273ffd3620}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Back\+Disabled\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa66ceb33d302e5dd62b9c52f37746b56}\label{classui_1_1AbstractCheckButton_aa66ceb33d302e5dd62b9c52f37746b56}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Cross\+Normal\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_af186b693cf16e7ed1d80555cdf4a12f0}\label{classui_1_1AbstractCheckButton_af186b693cf16e7ed1d80555cdf4a12f0}} 
+\hyperlink{structResourceData}{Resource\+Data} {\bfseries get\+Cross\+Disabled\+File} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_abeebe6ffa0bb2d051d236c8053076abc}\label{classui_1_1AbstractCheckButton_abeebe6ffa0bb2d051d236c8053076abc}} 
+virtual bool {\bfseries init} (const std\+::string \&back\+Ground, const std\+::string \&back\+Ground\+Selected, const std\+::string \&cross, const std\+::string \&back\+Ground\+Disabled, const std\+::string \&front\+Cross\+Disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a38c472fb66dd22042824b3229072f5e9}\label{classui_1_1AbstractCheckButton_a38c472fb66dd22042824b3229072f5e9}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: virtual bool init() override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}{Abstract\+Check\+Button} ()
+\item 
+virtual \hyperlink{classui_1_1AbstractCheckButton_a85c1aaf7ad26be411cf5ca0d4c64b6d4}{$\sim$\+Abstract\+Check\+Button} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a2698a4a8e930e360a95760ba34f8912a}\label{classui_1_1AbstractCheckButton_a2698a4a8e930e360a95760ba34f8912a}} 
+virtual void {\bfseries init\+Renderer} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_acb161b6c208d7d76a0330205c0111b78}\label{classui_1_1AbstractCheckButton_acb161b6c208d7d76a0330205c0111b78}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Normal} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6f160212123aaf1ed6b9a94c3589b667}\label{classui_1_1AbstractCheckButton_a6f160212123aaf1ed6b9a94c3589b667}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Pressed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1af405ff5751bbe41262c2e777b11505}\label{classui_1_1AbstractCheckButton_a1af405ff5751bbe41262c2e777b11505}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Disabled} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a58baf970c7b93a68dd335874bebfb0b7}\label{classui_1_1AbstractCheckButton_a58baf970c7b93a68dd335874bebfb0b7}} 
+void {\bfseries setup\+Background\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aab03d9617db3263453bf660f2b1b3828}\label{classui_1_1AbstractCheckButton_aab03d9617db3263453bf660f2b1b3828}} 
+void {\bfseries load\+Texture\+Back\+Ground} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a5b6993263a76a1270c657e62bde1b54f}\label{classui_1_1AbstractCheckButton_a5b6993263a76a1270c657e62bde1b54f}} 
+void {\bfseries setup\+Background\+Selected\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aad9a5587fe9c73fa7797f53826cef95f}\label{classui_1_1AbstractCheckButton_aad9a5587fe9c73fa7797f53826cef95f}} 
+void {\bfseries load\+Texture\+Back\+Ground\+Selected} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a3c0e8f11a25ea2b931126e1f444d740b}\label{classui_1_1AbstractCheckButton_a3c0e8f11a25ea2b931126e1f444d740b}} 
+void {\bfseries setup\+Front\+Cross\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ace6534b9e2814b64e61330ee05c86d94}\label{classui_1_1AbstractCheckButton_ace6534b9e2814b64e61330ee05c86d94}} 
+void {\bfseries load\+Texture\+Front\+Cross} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_abe60616e4d5dc68661686d8d2ed17284}\label{classui_1_1AbstractCheckButton_abe60616e4d5dc68661686d8d2ed17284}} 
+void {\bfseries setup\+Background\+Disable} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ac5011dfae46f5f5d676fd48ecb5c1399}\label{classui_1_1AbstractCheckButton_ac5011dfae46f5f5d676fd48ecb5c1399}} 
+void {\bfseries load\+Texture\+Back\+Ground\+Disabled} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a5be6e61f423304f89b0c12486b798767}\label{classui_1_1AbstractCheckButton_a5be6e61f423304f89b0c12486b798767}} 
+void {\bfseries setup\+Front\+Cross\+Disable\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1d9def119477f9cba2bc55191645e016}\label{classui_1_1AbstractCheckButton_a1d9def119477f9cba2bc55191645e016}} 
+void {\bfseries load\+Texture\+Front\+Cross\+Disabled} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ac704c19d4c87d252d8a5974ede1742ac}\label{classui_1_1AbstractCheckButton_ac704c19d4c87d252d8a5974ede1742ac}} 
+virtual void {\bfseries dispatch\+Select\+Changed\+Event} (bool selected)=0
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ad908a1aeca7cb97b26b511a6be430f0e}\label{classui_1_1AbstractCheckButton_ad908a1aeca7cb97b26b511a6be430f0e}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a57dbde7a14afe446af934ac488553761}\label{classui_1_1AbstractCheckButton_a57dbde7a14afe446af934ac488553761}} 
+void {\bfseries back\+Ground\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a3abc6c1304a56471f2cdcd810450b46b}\label{classui_1_1AbstractCheckButton_a3abc6c1304a56471f2cdcd810450b46b}} 
+void {\bfseries back\+Ground\+Selected\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a26420a2f79fb04c55743a4a02170c0a5}\label{classui_1_1AbstractCheckButton_a26420a2f79fb04c55743a4a02170c0a5}} 
+void {\bfseries front\+Cross\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab663acaa710d54639fcb5e51ddb2588a}\label{classui_1_1AbstractCheckButton_ab663acaa710d54639fcb5e51ddb2588a}} 
+void {\bfseries back\+Ground\+Disabled\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab8f5c74a2c6c11330b2bd4ba8044d628}\label{classui_1_1AbstractCheckButton_ab8f5c74a2c6c11330b2bd4ba8044d628}} 
+void {\bfseries front\+Cross\+Disabled\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_afd6c68ee74b6aff6bc3ec41d173e5c12}\label{classui_1_1AbstractCheckButton_afd6c68ee74b6aff6bc3ec41d173e5c12}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1a93a5f21f7dc207efa99c1c395218a0}\label{classui_1_1AbstractCheckButton_a1a93a5f21f7dc207efa99c1c395218a0}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\item 
+\hyperlink{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}{Abstract\+Check\+Button} ()
+\item 
+virtual \hyperlink{classui_1_1AbstractCheckButton_a53e936912934087b312f483f554a5ca8}{$\sim$\+Abstract\+Check\+Button} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a491a71a6bf06eccab637d5f1c4de6fe6}\label{classui_1_1AbstractCheckButton_a491a71a6bf06eccab637d5f1c4de6fe6}} 
+virtual void {\bfseries init\+Renderer} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4fa6b1945b9efd767e9f71dfcc306c89}\label{classui_1_1AbstractCheckButton_a4fa6b1945b9efd767e9f71dfcc306c89}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Normal} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ae2bdb8c899181695155d534c196c69b8}\label{classui_1_1AbstractCheckButton_ae2bdb8c899181695155d534c196c69b8}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Pressed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a58277c4ba2130d01aa0873330035fa80}\label{classui_1_1AbstractCheckButton_a58277c4ba2130d01aa0873330035fa80}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Disabled} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a5694ac83d2639c22efc63cdfee19cb4a}\label{classui_1_1AbstractCheckButton_a5694ac83d2639c22efc63cdfee19cb4a}} 
+virtual void {\bfseries setup\+Background\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aab03d9617db3263453bf660f2b1b3828}\label{classui_1_1AbstractCheckButton_aab03d9617db3263453bf660f2b1b3828}} 
+void {\bfseries load\+Texture\+Back\+Ground} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_adf0a1953f49e551f2ea8aadf9f994a7e}\label{classui_1_1AbstractCheckButton_adf0a1953f49e551f2ea8aadf9f994a7e}} 
+virtual void {\bfseries setup\+Background\+Selected\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aad9a5587fe9c73fa7797f53826cef95f}\label{classui_1_1AbstractCheckButton_aad9a5587fe9c73fa7797f53826cef95f}} 
+void {\bfseries load\+Texture\+Back\+Ground\+Selected} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ac97e8bbc20f910730a1392d1588509f0}\label{classui_1_1AbstractCheckButton_ac97e8bbc20f910730a1392d1588509f0}} 
+virtual void {\bfseries setup\+Front\+Cross\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ace6534b9e2814b64e61330ee05c86d94}\label{classui_1_1AbstractCheckButton_ace6534b9e2814b64e61330ee05c86d94}} 
+void {\bfseries load\+Texture\+Front\+Cross} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a67c9bfc062113950ee530d70437e5ee9}\label{classui_1_1AbstractCheckButton_a67c9bfc062113950ee530d70437e5ee9}} 
+virtual void {\bfseries setup\+Background\+Disable} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ac5011dfae46f5f5d676fd48ecb5c1399}\label{classui_1_1AbstractCheckButton_ac5011dfae46f5f5d676fd48ecb5c1399}} 
+void {\bfseries load\+Texture\+Back\+Ground\+Disabled} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a8e88ab7113e7c66cf417c50683b383ab}\label{classui_1_1AbstractCheckButton_a8e88ab7113e7c66cf417c50683b383ab}} 
+virtual void {\bfseries setup\+Front\+Cross\+Disable\+Texture} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1d9def119477f9cba2bc55191645e016}\label{classui_1_1AbstractCheckButton_a1d9def119477f9cba2bc55191645e016}} 
+void {\bfseries load\+Texture\+Front\+Cross\+Disabled} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$spriteframe)
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ac704c19d4c87d252d8a5974ede1742ac}\label{classui_1_1AbstractCheckButton_ac704c19d4c87d252d8a5974ede1742ac}} 
+virtual void {\bfseries dispatch\+Select\+Changed\+Event} (bool selected)=0
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_adc7df23c9456b4804d769e1dbf677e1d}\label{classui_1_1AbstractCheckButton_adc7df23c9456b4804d769e1dbf677e1d}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a021172c93df99f592bd5c4c2f2490c4f}\label{classui_1_1AbstractCheckButton_a021172c93df99f592bd5c4c2f2490c4f}} 
+virtual void {\bfseries back\+Ground\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a3abc6c1304a56471f2cdcd810450b46b}\label{classui_1_1AbstractCheckButton_a3abc6c1304a56471f2cdcd810450b46b}} 
+void {\bfseries back\+Ground\+Selected\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a26420a2f79fb04c55743a4a02170c0a5}\label{classui_1_1AbstractCheckButton_a26420a2f79fb04c55743a4a02170c0a5}} 
+void {\bfseries front\+Cross\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab663acaa710d54639fcb5e51ddb2588a}\label{classui_1_1AbstractCheckButton_ab663acaa710d54639fcb5e51ddb2588a}} 
+void {\bfseries back\+Ground\+Disabled\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab8f5c74a2c6c11330b2bd4ba8044d628}\label{classui_1_1AbstractCheckButton_ab8f5c74a2c6c11330b2bd4ba8044d628}} 
+void {\bfseries front\+Cross\+Disabled\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a238f09f268e449c8b346b6738b58a9db}\label{classui_1_1AbstractCheckButton_a238f09f268e449c8b346b6738b58a9db}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab95af7798405dd9c77499154a298f8ac}\label{classui_1_1AbstractCheckButton_ab95af7798405dd9c77499154a298f8ac}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a2bc3705c2a9906b5e0e932d320804272}\label{classui_1_1AbstractCheckButton_a2bc3705c2a9906b5e0e932d320804272}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+back\+Ground\+Box\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aeff4f7aae1694357fedc7a03cb50c1b7}\label{classui_1_1AbstractCheckButton_aeff4f7aae1694357fedc7a03cb50c1b7}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+back\+Ground\+Selected\+Box\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0961b456e4483da0abc5a86098474ce0}\label{classui_1_1AbstractCheckButton_a0961b456e4483da0abc5a86098474ce0}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+front\+Cross\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a7acb21b0f20a6829c937276b9671ad50}\label{classui_1_1AbstractCheckButton_a7acb21b0f20a6829c937276b9671ad50}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+back\+Ground\+Box\+Disabled\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a958213ae43f363c7881d54a3afff814b}\label{classui_1_1AbstractCheckButton_a958213ae43f363c7881d54a3afff814b}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries \+\_\+front\+Cross\+Disabled\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a8877d98ce60424a5f45fac7425637262}\label{classui_1_1AbstractCheckButton_a8877d98ce60424a5f45fac7425637262}} 
+bool {\bfseries \+\_\+is\+Selected}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a433ee45ce590806856f843a777a5f2c8}\label{classui_1_1AbstractCheckButton_a433ee45ce590806856f843a777a5f2c8}} 
+bool {\bfseries \+\_\+is\+Background\+Selected\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a45dcc774122390b2b96622016e519923}\label{classui_1_1AbstractCheckButton_a45dcc774122390b2b96622016e519923}} 
+bool {\bfseries \+\_\+is\+Background\+Disabled\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa9d0d71110487372c4b6e1e8788d6fc0}\label{classui_1_1AbstractCheckButton_aa9d0d71110487372c4b6e1e8788d6fc0}} 
+bool {\bfseries \+\_\+is\+Front\+Cross\+Disabled\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a20deef2d08167a1e75db56a7ad732490}\label{classui_1_1AbstractCheckButton_a20deef2d08167a1e75db56a7ad732490}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+back\+Ground\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa737ab79a17c54c3454b756ecc680183}\label{classui_1_1AbstractCheckButton_aa737ab79a17c54c3454b756ecc680183}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+back\+Ground\+Selected\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa9b1ad42081200139f59d4b73e1d4403}\label{classui_1_1AbstractCheckButton_aa9b1ad42081200139f59d4b73e1d4403}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+front\+Cross\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4d9600d5e316c82d51ef824ae1484b02}\label{classui_1_1AbstractCheckButton_a4d9600d5e316c82d51ef824ae1484b02}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+back\+Ground\+Disabled\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a58f5846e48ce0283789416a70d2e8ae2}\label{classui_1_1AbstractCheckButton_a58f5846e48ce0283789416a70d2e8ae2}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+front\+Cross\+Disabled\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6fe9126aadaf97066fe7424de4e33804}\label{classui_1_1AbstractCheckButton_a6fe9126aadaf97066fe7424de4e33804}} 
+float {\bfseries \+\_\+zoom\+Scale}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a208f03364fb2f1e39bf7ba629aed675c}\label{classui_1_1AbstractCheckButton_a208f03364fb2f1e39bf7ba629aed675c}} 
+float {\bfseries \+\_\+background\+Texture\+ScaleX}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aec97d31de294b4ac80a03f54efdf44d3}\label{classui_1_1AbstractCheckButton_aec97d31de294b4ac80a03f54efdf44d3}} 
+float {\bfseries \+\_\+background\+Texture\+ScaleY}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa65e20ea4778083d313953b4d7785c04}\label{classui_1_1AbstractCheckButton_aa65e20ea4778083d313953b4d7785c04}} 
+bool {\bfseries \+\_\+back\+Ground\+Box\+Renderer\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_acc14d0bea2db2a4c90c714a7e2b36e13}\label{classui_1_1AbstractCheckButton_acc14d0bea2db2a4c90c714a7e2b36e13}} 
+bool {\bfseries \+\_\+back\+Ground\+Selected\+Box\+Renderer\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_adb82ddeccebc76feda667b4bfd6c0f7f}\label{classui_1_1AbstractCheckButton_adb82ddeccebc76feda667b4bfd6c0f7f}} 
+bool {\bfseries \+\_\+front\+Cross\+Renderer\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a33c4edda51f228797c3d6acb0a7e0ed9}\label{classui_1_1AbstractCheckButton_a33c4edda51f228797c3d6acb0a7e0ed9}} 
+bool {\bfseries \+\_\+back\+Ground\+Box\+Disabled\+Renderer\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab58f9cbb47f56e05895ab53de52c62a3}\label{classui_1_1AbstractCheckButton_ab58f9cbb47f56e05895ab53de52c62a3}} 
+bool {\bfseries \+\_\+front\+Cross\+Disabled\+Renderer\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a975e44c5a1dde6c9a287dac22077f7b3}\label{classui_1_1AbstractCheckButton_a975e44c5a1dde6c9a287dac22077f7b3}} 
+std\+::string {\bfseries \+\_\+back\+Ground\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4b9de78c2c0da8661b517c08f9c5a9d9}\label{classui_1_1AbstractCheckButton_a4b9de78c2c0da8661b517c08f9c5a9d9}} 
+std\+::string {\bfseries \+\_\+back\+Ground\+Selected\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0167e23543a4787a90406a83e706af63}\label{classui_1_1AbstractCheckButton_a0167e23543a4787a90406a83e706af63}} 
+std\+::string {\bfseries \+\_\+front\+Cross\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a44f1175a0d8b72a6ef65927a87d96f7e}\label{classui_1_1AbstractCheckButton_a44f1175a0d8b72a6ef65927a87d96f7e}} 
+std\+::string {\bfseries \+\_\+back\+Ground\+Disabled\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a29dd08f73564d2ea4462e3b9e30cb214}\label{classui_1_1AbstractCheckButton_a29dd08f73564d2ea4462e3b9e30cb214}} 
+std\+::string {\bfseries \+\_\+front\+Cross\+Disabled\+File\+Name}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classui_1_1AbstractCheckButton}{Abstract\+Check\+Button} is a specific type of two-\/states button that can be either checked or unchecked. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}\label{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!Abstract\+Check\+Button@{Abstract\+Check\+Button}}
+\index{Abstract\+Check\+Button@{Abstract\+Check\+Button}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{Abstract\+Check\+Button()}{AbstractCheckButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Abstract\+Check\+Button\+::\+Abstract\+Check\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default constructor. \mbox{\Hypertarget{classui_1_1AbstractCheckButton_a85c1aaf7ad26be411cf5ca0d4c64b6d4}\label{classui_1_1AbstractCheckButton_a85c1aaf7ad26be411cf5ca0d4c64b6d4}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!````~Abstract\+Check\+Button@{$\sim$\+Abstract\+Check\+Button}}
+\index{````~Abstract\+Check\+Button@{$\sim$\+Abstract\+Check\+Button}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{$\sim$\+Abstract\+Check\+Button()}{~AbstractCheckButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Abstract\+Check\+Button\+::$\sim$\+Abstract\+Check\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default destructor.
+
+NA \mbox{\Hypertarget{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}\label{classui_1_1AbstractCheckButton_a951d897f8066270c55a7744951b7eae1}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!Abstract\+Check\+Button@{Abstract\+Check\+Button}}
+\index{Abstract\+Check\+Button@{Abstract\+Check\+Button}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{Abstract\+Check\+Button()}{AbstractCheckButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+Abstract\+Check\+Button\+::\+Abstract\+Check\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default constructor. \mbox{\Hypertarget{classui_1_1AbstractCheckButton_a53e936912934087b312f483f554a5ca8}\label{classui_1_1AbstractCheckButton_a53e936912934087b312f483f554a5ca8}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!````~Abstract\+Check\+Button@{$\sim$\+Abstract\+Check\+Button}}
+\index{````~Abstract\+Check\+Button@{$\sim$\+Abstract\+Check\+Button}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{$\sim$\+Abstract\+Check\+Button()}{~AbstractCheckButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+Abstract\+Check\+Button\+::$\sim$\+Abstract\+Check\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default destructor.
+
+NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}\label{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background@{get\+Renderer\+Background}}
+\index{get\+Renderer\+Background@{get\+Renderer\+Background}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background()}{getRendererBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}\label{classui_1_1AbstractCheckButton_addc339c5331dc8427b525d1ccb675f00}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background@{get\+Renderer\+Background}}
+\index{get\+Renderer\+Background@{get\+Renderer\+Background}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background()}{getRendererBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}\label{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background\+Disabled@{get\+Renderer\+Background\+Disabled}}
+\index{get\+Renderer\+Background\+Disabled@{get\+Renderer\+Background\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background\+Disabled()}{getRendererBackgroundDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background when disabled. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background when disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}\label{classui_1_1AbstractCheckButton_a0dedc2cffba903975cfff7a6c21d90e8}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background\+Disabled@{get\+Renderer\+Background\+Disabled}}
+\index{get\+Renderer\+Background\+Disabled@{get\+Renderer\+Background\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background\+Disabled()}{getRendererBackgroundDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background when disabled. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background when disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}\label{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background\+Selected@{get\+Renderer\+Background\+Selected}}
+\index{get\+Renderer\+Background\+Selected@{get\+Renderer\+Background\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background\+Selected()}{getRendererBackgroundSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background when selected. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background when selected 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}\label{classui_1_1AbstractCheckButton_a1ba602c981e86948cc82b020f8e94958}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Background\+Selected@{get\+Renderer\+Background\+Selected}}
+\index{get\+Renderer\+Background\+Selected@{get\+Renderer\+Background\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Background\+Selected()}{getRendererBackgroundSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Background\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of background when selected. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of background when selected 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}\label{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Front\+Cross@{get\+Renderer\+Front\+Cross}}
+\index{get\+Renderer\+Front\+Cross@{get\+Renderer\+Front\+Cross}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Front\+Cross()}{getRendererFrontCross()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Front\+Cross (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of front cross. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of front cross 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}\label{classui_1_1AbstractCheckButton_a6527e80f91a37299249d5b95e6d32a17}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Front\+Cross@{get\+Renderer\+Front\+Cross}}
+\index{get\+Renderer\+Front\+Cross@{get\+Renderer\+Front\+Cross}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Front\+Cross()}{getRendererFrontCross()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Front\+Cross (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of front cross. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of front cross 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}\label{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Front\+Cross\+Disabled@{get\+Renderer\+Front\+Cross\+Disabled}}
+\index{get\+Renderer\+Front\+Cross\+Disabled@{get\+Renderer\+Front\+Cross\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Front\+Cross\+Disabled()}{getRendererFrontCrossDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Front\+Cross\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of front cross when disabled. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of front cross when disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}\label{classui_1_1AbstractCheckButton_a6b8e3b669fd52665e7ec93157dd1de06}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Renderer\+Front\+Cross\+Disabled@{get\+Renderer\+Front\+Cross\+Disabled}}
+\index{get\+Renderer\+Front\+Cross\+Disabled@{get\+Renderer\+Front\+Cross\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Renderer\+Front\+Cross\+Disabled()}{getRendererFrontCrossDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Renderer\+Front\+Cross\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sprite instance of front cross when disabled. 
+
+\begin{DoxyReturn}{Returns}
+the sprite instance of front cross when disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a51819285d8bfbe4b135dd09b8c382618}\label{classui_1_1AbstractCheckButton_a51819285d8bfbe4b135dd09b8c382618}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Virtual\+Renderer@{get\+Virtual\+Renderer}}
+\index{get\+Virtual\+Renderer@{get\+Virtual\+Renderer}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Virtual\+Renderer()}{getVirtualRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node} $\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Virtual\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the inner \hyperlink{classRenderer}{Renderer} node of widget.
+
+For example, a button\textquotesingle{}s Virtual \hyperlink{classRenderer}{Renderer} is it\textquotesingle{}s texture renderer.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classNode}{Node} pointer. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_acf862bf9235fbb3823819eeb65d46f25}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4affc93c2631571aebcc499ddc2f0f62}\label{classui_1_1AbstractCheckButton_a4affc93c2631571aebcc499ddc2f0f62}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Virtual\+Renderer@{get\+Virtual\+Renderer}}
+\index{get\+Virtual\+Renderer@{get\+Virtual\+Renderer}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Virtual\+Renderer()}{getVirtualRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classNode}{Node}$\ast$ ui\+::\+Abstract\+Check\+Button\+::get\+Virtual\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the inner \hyperlink{classRenderer}{Renderer} node of widget.
+
+For example, a button\textquotesingle{}s Virtual \hyperlink{classRenderer}{Renderer} is it\textquotesingle{}s texture renderer.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classNode}{Node} pointer. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_acf862bf9235fbb3823819eeb65d46f25}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0ad1948a65d977a254aaf06ca584ad8b}\label{classui_1_1AbstractCheckButton_a0ad1948a65d977a254aaf06ca584ad8b}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Virtual\+Renderer\+Size@{get\+Virtual\+Renderer\+Size}}
+\index{get\+Virtual\+Renderer\+Size@{get\+Virtual\+Renderer\+Size}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Virtual\+Renderer\+Size()}{getVirtualRendererSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} ui\+::\+Abstract\+Check\+Button\+::get\+Virtual\+Renderer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the virtual renderer\textquotesingle{}s size \begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1Widget}{Widget} virtual renderer size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_a2ed0d41565593f78dc59c975d58a869e}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a0c3cf028ae6915ee7eb59e287984b0ae}\label{classui_1_1AbstractCheckButton_a0c3cf028ae6915ee7eb59e287984b0ae}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Virtual\+Renderer\+Size@{get\+Virtual\+Renderer\+Size}}
+\index{get\+Virtual\+Renderer\+Size@{get\+Virtual\+Renderer\+Size}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Virtual\+Renderer\+Size()}{getVirtualRendererSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSize}{Size} ui\+::\+Abstract\+Check\+Button\+::get\+Virtual\+Renderer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the virtual renderer\textquotesingle{}s size \begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1Widget}{Widget} virtual renderer size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_a2ed0d41565593f78dc59c975d58a869e}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}\label{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Zoom\+Scale@{get\+Zoom\+Scale}}
+\index{get\+Zoom\+Scale@{get\+Zoom\+Scale}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Zoom\+Scale()}{getZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Abstract\+Check\+Button\+::get\+Zoom\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a zoom scale. 
+
+\begin{DoxyReturn}{Returns}
+A zoom scale of Checkbox. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}\label{classui_1_1AbstractCheckButton_aa63466704ea2e8d375796d0a1ca4f1b8}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!get\+Zoom\+Scale@{get\+Zoom\+Scale}}
+\index{get\+Zoom\+Scale@{get\+Zoom\+Scale}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{get\+Zoom\+Scale()}{getZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+Abstract\+Check\+Button\+::get\+Zoom\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a zoom scale. 
+
+\begin{DoxyReturn}{Returns}
+A zoom scale of Checkbox. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}\label{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!is\+Selected@{is\+Selected}}
+\index{is\+Selected@{is\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{is\+Selected()}{isSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Abstract\+Check\+Button\+::is\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query whether \hyperlink{classui_1_1CheckBox}{Check\+Box} is selected or not. \begin{DoxyReturn}{Returns}
+true means \char`\"{}selected\char`\"{}, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}\label{classui_1_1AbstractCheckButton_ade8bb264515600c46a81947344f4a53b}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!is\+Selected@{is\+Selected}}
+\index{is\+Selected@{is\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{is\+Selected()}{isSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Abstract\+Check\+Button\+::is\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query whether \hyperlink{classui_1_1CheckBox}{Check\+Box} is selected or not. \begin{DoxyReturn}{Returns}
+true means \char`\"{}selected\char`\"{}, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}\label{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground@{load\+Texture\+Back\+Ground}}
+\index{load\+Texture\+Back\+Ground@{load\+Texture\+Back\+Ground}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground()}{loadTextureBackGround()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground} & The background image name. \\
+\hline
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}\label{classui_1_1AbstractCheckButton_a881269a03ef3da6feeb95a97369c1e37}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground@{load\+Texture\+Back\+Ground}}
+\index{load\+Texture\+Back\+Ground@{load\+Texture\+Back\+Ground}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground()}{loadTextureBackGround()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground} & The background image name. \\
+\hline
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}\label{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground\+Disabled@{load\+Texture\+Back\+Ground\+Disabled}}
+\index{load\+Texture\+Back\+Ground\+Disabled@{load\+Texture\+Back\+Ground\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground\+Disabled()}{loadTextureBackGroundDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground\+Disabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background disabled state texture for checkbox.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground\+Disabled} & The background disabled state texture name.\\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}\label{classui_1_1AbstractCheckButton_a6571d84aee7a30b97be6488dd08b6690}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground\+Disabled@{load\+Texture\+Back\+Ground\+Disabled}}
+\index{load\+Texture\+Back\+Ground\+Disabled@{load\+Texture\+Back\+Ground\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground\+Disabled()}{loadTextureBackGroundDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground\+Disabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background disabled state texture for checkbox.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground\+Disabled} & The background disabled state texture name.\\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}\label{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground\+Selected@{load\+Texture\+Back\+Ground\+Selected}}
+\index{load\+Texture\+Back\+Ground\+Selected@{load\+Texture\+Back\+Ground\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground\+Selected()}{loadTextureBackGroundSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground\+Selected (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground\+Selected,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background selected state texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground\+Selected} & The background selected state image name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}\label{classui_1_1AbstractCheckButton_a060437afe2b6064928901d4839b2c5dc}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Back\+Ground\+Selected@{load\+Texture\+Back\+Ground\+Selected}}
+\index{load\+Texture\+Back\+Ground\+Selected@{load\+Texture\+Back\+Ground\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Back\+Ground\+Selected()}{loadTextureBackGroundSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Back\+Ground\+Selected (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{back\+Ground\+Selected,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load background selected state texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Ground\+Selected} & The background selected state image name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}\label{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Front\+Cross@{load\+Texture\+Front\+Cross}}
+\index{load\+Texture\+Front\+Cross@{load\+Texture\+Front\+Cross}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Front\+Cross()}{loadTextureFrontCross()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Front\+Cross (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cross\+Texture\+Name,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load cross texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cross\+Texture\+Name} & The cross texture name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}\label{classui_1_1AbstractCheckButton_a8a94e8e135a5e8d1d0be187d77970323}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Front\+Cross@{load\+Texture\+Front\+Cross}}
+\index{load\+Texture\+Front\+Cross@{load\+Texture\+Front\+Cross}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Front\+Cross()}{loadTextureFrontCross()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Front\+Cross (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cross\+Texture\+Name,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load cross texture for check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cross\+Texture\+Name} & The cross texture name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}\label{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Front\+Cross\+Disabled@{load\+Texture\+Front\+Cross\+Disabled}}
+\index{load\+Texture\+Front\+Cross\+Disabled@{load\+Texture\+Front\+Cross\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Front\+Cross\+Disabled()}{loadTextureFrontCrossDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Front\+Cross\+Disabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{front\+Cross\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load frontcross disabled texture for checkbox.
+
+
+\begin{DoxyParams}{Parameters}
+{\em front\+Cross\+Disabled} & The front cross disabled state texture name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}\label{classui_1_1AbstractCheckButton_a6434adf3966aa318552301fbdd32e6b2}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Texture\+Front\+Cross\+Disabled@{load\+Texture\+Front\+Cross\+Disabled}}
+\index{load\+Texture\+Front\+Cross\+Disabled@{load\+Texture\+Front\+Cross\+Disabled}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Texture\+Front\+Cross\+Disabled()}{loadTextureFrontCrossDisabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Texture\+Front\+Cross\+Disabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{front\+Cross\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load frontcross disabled texture for checkbox.
+
+
+\begin{DoxyParams}{Parameters}
+{\em front\+Cross\+Disabled} & The front cross disabled state texture name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}\label{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Textures@{load\+Textures}}
+\index{load\+Textures@{load\+Textures}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Textures()}{loadTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Textures (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{background,  }\item[{const std\+::string \&}]{background\+Selected,  }\item[{const std\+::string \&}]{cross,  }\item[{const std\+::string \&}]{background\+Disabled,  }\item[{const std\+::string \&}]{front\+Cross\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load all textures for initializing a check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em background} & The background image name. \\
+\hline
+{\em background\+Selected} & The background selected image name. \\
+\hline
+{\em cross} & The cross image name. \\
+\hline
+{\em background\+Disabled} & The background disabled state texture. \\
+\hline
+{\em front\+Cross\+Disabled} & The front cross disabled state image name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}\label{classui_1_1AbstractCheckButton_a4d375837cd83ff2008fffecf3a5ed1ac}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!load\+Textures@{load\+Textures}}
+\index{load\+Textures@{load\+Textures}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{load\+Textures()}{loadTextures()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::load\+Textures (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{background,  }\item[{const std\+::string \&}]{background\+Selected,  }\item[{const std\+::string \&}]{cross,  }\item[{const std\+::string \&}]{background\+Disabled,  }\item[{const std\+::string \&}]{front\+Cross\+Disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load all textures for initializing a check button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em background} & The background image name. \\
+\hline
+{\em background\+Selected} & The background selected image name. \\
+\hline
+{\em cross} & The cross image name. \\
+\hline
+{\em background\+Disabled} & The background disabled state texture. \\
+\hline
+{\em front\+Cross\+Disabled} & The front cross disabled state image name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_aca6eea451771dd184a1cd02984e77cc6}\label{classui_1_1AbstractCheckButton_aca6eea451771dd184a1cd02984e77cc6}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{set\+Selected()}{setSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})}
+
+Change \hyperlink{classui_1_1CheckBox}{Check\+Box} state. Set to true will cause the \hyperlink{classui_1_1CheckBox}{Check\+Box}\textquotesingle{}s state to \char`\"{}selected\char`\"{}, false otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em selected} & Set to true will change \hyperlink{classui_1_1CheckBox}{Check\+Box} to selected state, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_a9ead27b2e3af75fdf9920134513683c4}\label{classui_1_1AbstractCheckButton_a9ead27b2e3af75fdf9920134513683c4}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{set\+Selected()}{setSelected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Abstract\+Check\+Button\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change \hyperlink{classui_1_1CheckBox}{Check\+Box} state. Set to true will cause the \hyperlink{classui_1_1CheckBox}{Check\+Box}\textquotesingle{}s state to \char`\"{}selected\char`\"{}, false otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em selected} & Set to true will change \hyperlink{classui_1_1CheckBox}{Check\+Box} to selected state, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}\label{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!set\+Zoom\+Scale@{set\+Zoom\+Scale}}
+\index{set\+Zoom\+Scale@{set\+Zoom\+Scale}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale()}{setZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::set\+Zoom\+Scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})}
+
+When user pressed the \hyperlink{classui_1_1CheckBox}{Check\+Box}, the button will zoom to a scale. The final scale of the \hyperlink{classui_1_1CheckBox}{Check\+Box} equals (\hyperlink{classui_1_1CheckBox}{Check\+Box} original scale + \+\_\+zoom\+Scale) \begin{DoxySince}{Since}
+v3.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}\label{classui_1_1AbstractCheckButton_ab6a9572b00f989f020ec3002af92f904}} 
+\index{ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}!set\+Zoom\+Scale@{set\+Zoom\+Scale}}
+\index{set\+Zoom\+Scale@{set\+Zoom\+Scale}!ui\+::\+Abstract\+Check\+Button@{ui\+::\+Abstract\+Check\+Button}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale()}{setZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Abstract\+Check\+Button\+::set\+Zoom\+Scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})}
+
+When user pressed the \hyperlink{classui_1_1CheckBox}{Check\+Box}, the button will zoom to a scale. The final scale of the \hyperlink{classui_1_1CheckBox}{Check\+Box} equals (\hyperlink{classui_1_1CheckBox}{Check\+Box} original scale + \+\_\+zoom\+Scale) \begin{DoxySince}{Since}
+v3.\+3 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Abstract\+Check\+Button.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Abstract\+Check\+Button.\+cpp\end{DoxyCompactItemize}

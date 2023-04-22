@@ -1,0 +1,544 @@
+\hypertarget{classBone3D}{}\section{Bone3D Class Reference}
+\label{classBone3D}\index{Bone3D@{Bone3D}}
+
+
+Defines a basic hierarchical structure of transformation spaces.  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Skeleton3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Bone3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{classBone3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bone3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBone3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structBone3D_1_1BoneBlendState}{Bone\+Blend\+State}
+\begin{DoxyCompactList}\small\item\em store the transformation and weight for bone blending \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classBone3D_a399590986c9018faa422b53233860bbf}{get\+Inverse\+Bind\+Pose} ()
+\item 
+void \hyperlink{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}{update\+World\+Mat} ()
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classBone3D_a87f9a5957046e130b2170576717c219a}{get\+World\+Mat} ()
+\item 
+const std\+::string \& \hyperlink{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}{get\+Name} () const
+\item 
+void \hyperlink{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}{set\+Animation\+Value} (float $\ast$trans, float $\ast$rot, float $\ast$scale, void $\ast$tag=nullptr, float weight=1.\+0f)
+\item 
+void \hyperlink{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}{clear\+Bone\+Blend\+State} ()
+\item 
+void \hyperlink{classBone3D_a8fc88c76083482655350e6cba2bb4d37}{set\+Inverse\+Bind\+Pose} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}{set\+Ori\+Pose} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}{reset\+Pose} ()
+\item 
+void \hyperlink{classBone3D_aab877746976dc466bcc339845529b2e5}{update\+Joint\+Matrix} (\hyperlink{classVec4}{Vec4} $\ast$matrix\+Palette)
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_a9e18248b19b29586fbaca3ce62b66c32}{get\+Parent\+Bone} ()
+\item 
+ssize\+\_\+t \hyperlink{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}{get\+Child\+Bone\+Count} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_a0d6ff6c15e5f8ed01ffeeb60bf3b7cd0}{get\+Child\+Bone\+By\+Index} (int index) const
+\item 
+void \hyperlink{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}{add\+Child\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+void \hyperlink{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}{remove\+Child\+Bone\+By\+Index} (int index)
+\item 
+void \hyperlink{classBone3D_a384bcaace89faea2a5e61d7c172476f6}{remove\+Child\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+void \hyperlink{classBone3D_add11919591bf6a849c848eca3a986289}{remove\+All\+Child\+Bone} ()
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classBone3D_abeee6535e308b6057b1329b04f2a5b63}{get\+Inverse\+Bind\+Pose} ()
+\item 
+void \hyperlink{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}{update\+World\+Mat} ()
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classBone3D_a4027bb71e7e2ac272b57c582c9aa1158}{get\+World\+Mat} ()
+\item 
+const std\+::string \& \hyperlink{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}{get\+Name} () const
+\item 
+void \hyperlink{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}{set\+Animation\+Value} (float $\ast$trans, float $\ast$rot, float $\ast$scale, void $\ast$tag=nullptr, float weight=1.\+0f)
+\item 
+void \hyperlink{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}{clear\+Bone\+Blend\+State} ()
+\item 
+void \hyperlink{classBone3D_a30efff69c0378cc264db10c65fd8e18b}{set\+Inverse\+Bind\+Pose} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}{set\+Ori\+Pose} (const \hyperlink{classMat4}{Mat4} \&m)
+\item 
+void \hyperlink{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}{reset\+Pose} ()
+\item 
+void \hyperlink{classBone3D_aab877746976dc466bcc339845529b2e5}{update\+Joint\+Matrix} (\hyperlink{classVec4}{Vec4} $\ast$matrix\+Palette)
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_a617a97bd81b8f81fd2e946e95d82be6b}{get\+Parent\+Bone} ()
+\item 
+ssize\+\_\+t \hyperlink{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}{get\+Child\+Bone\+Count} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_a92d362cde5c05727ed182ae254bdd946}{get\+Child\+Bone\+By\+Index} (int index) const
+\item 
+void \hyperlink{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}{add\+Child\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+void \hyperlink{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}{remove\+Child\+Bone\+By\+Index} (int index)
+\item 
+void \hyperlink{classBone3D_a384bcaace89faea2a5e61d7c172476f6}{remove\+Child\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+void \hyperlink{classBone3D_add11919591bf6a849c848eca3a986289}{remove\+All\+Child\+Bone} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_a1708607e00df296c7377df101d43219a}{create} (const std\+::string \&id)
+\item 
+static \hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classBone3D_aa22fa6c00c3c8600309c67917db36481}{create} (const std\+::string \&id)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBone3D_a3e3acf00c8e4393609c241f82db764b7}{Bone3D} (const std\+::string \&id)
+\item 
+virtual \hyperlink{classBone3D_a98adf937eb08c046d99154ba66c9699d}{$\sim$\+Bone3D} ()
+\item 
+void \hyperlink{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}{update\+Local\+Mat} ()
+\item 
+void \hyperlink{classBone3D_a106b423193457bdc905e9a61d041d5d0}{set\+World\+Mat\+Dirty} (bool dirty=true)
+\item 
+\hyperlink{classBone3D_a3e3acf00c8e4393609c241f82db764b7}{Bone3D} (const std\+::string \&id)
+\item 
+virtual \hyperlink{classBone3D_a3548570bb866e539f51e8553689d7ce4}{$\sim$\+Bone3D} ()
+\item 
+void \hyperlink{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}{update\+Local\+Mat} ()
+\item 
+void \hyperlink{classBone3D_a106b423193457bdc905e9a61d041d5d0}{set\+World\+Mat\+Dirty} (bool dirty=true)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBone3D_a720d2e77e7cd2d086773da48a0bd1da2}\label{classBone3D_a720d2e77e7cd2d086773da48a0bd1da2}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classBone3D_ab8779fd741f178117b2dfe1cb8b79fb6}{\+\_\+inv\+Bind\+Pose}
+\item 
+\mbox{\Hypertarget{classBone3D_a08a93263b5480db75910e70caaabbba6}\label{classBone3D_a08a93263b5480db75910e70caaabbba6}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+ori\+Pose}
+\item 
+\mbox{\Hypertarget{classBone3D_abe6451c732f3970af49276f19844aec8}\label{classBone3D_abe6451c732f3970af49276f19844aec8}} 
+\hyperlink{classBone3D}{Bone3D} $\ast$ {\bfseries \+\_\+parent}
+\item 
+\mbox{\Hypertarget{classBone3D_acc6c10c42311fabc8f0fb0eb0f53c277}\label{classBone3D_acc6c10c42311fabc8f0fb0eb0f53c277}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classBone3D}{Bone3D} $\ast$ $>$ {\bfseries \+\_\+children}
+\item 
+\mbox{\Hypertarget{classBone3D_af3b9a48e06847eb5b2ca721f7a1d9c02}\label{classBone3D_af3b9a48e06847eb5b2ca721f7a1d9c02}} 
+bool {\bfseries \+\_\+world\+Dirty}
+\item 
+\mbox{\Hypertarget{classBone3D_a09f2af0464181f7df04315d204124a92}\label{classBone3D_a09f2af0464181f7df04315d204124a92}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+world}
+\item 
+\mbox{\Hypertarget{classBone3D_af9272bcce10c04459452355928d91bf5}\label{classBone3D_af9272bcce10c04459452355928d91bf5}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+local}
+\item 
+\mbox{\Hypertarget{classBone3D_a2f5ce34dd1bd44bf03a4e782a5009cc4}\label{classBone3D_a2f5ce34dd1bd44bf03a4e782a5009cc4}} 
+std\+::vector$<$ \hyperlink{structBone3D_1_1BoneBlendState}{Bone\+Blend\+State} $>$ {\bfseries \+\_\+blend\+States}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBone3D_aeec6204f3e32150a6216bac5f5015e17}\label{classBone3D_aeec6204f3e32150a6216bac5f5015e17}} 
+class {\bfseries Skeleton3D}
+\item 
+\mbox{\Hypertarget{classBone3D_a8a2d0104574751b55d55a41e1b14b2c4}\label{classBone3D_a8a2d0104574751b55d55a41e1b14b2c4}} 
+class {\bfseries Mesh\+Skin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a basic hierarchical structure of transformation spaces.  NA. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBone3D_a3e3acf00c8e4393609c241f82db764b7}\label{classBone3D_a3e3acf00c8e4393609c241f82db764b7}} 
+\index{Bone3D@{Bone3D}!Bone3D@{Bone3D}}
+\index{Bone3D@{Bone3D}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{Bone3\+D()}{Bone3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bone3\+D\+::\+Bone3D (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. \mbox{\Hypertarget{classBone3D_a98adf937eb08c046d99154ba66c9699d}\label{classBone3D_a98adf937eb08c046d99154ba66c9699d}} 
+\index{Bone3D@{Bone3D}!````~Bone3D@{$\sim$\+Bone3D}}
+\index{````~Bone3D@{$\sim$\+Bone3D}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{$\sim$\+Bone3\+D()}{~Bone3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bone3\+D\+::$\sim$\+Bone3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destructor. \mbox{\Hypertarget{classBone3D_a3e3acf00c8e4393609c241f82db764b7}\label{classBone3D_a3e3acf00c8e4393609c241f82db764b7}} 
+\index{Bone3D@{Bone3D}!Bone3D@{Bone3D}}
+\index{Bone3D@{Bone3D}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{Bone3\+D()}{Bone3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bone3\+D\+::\+Bone3D (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. \mbox{\Hypertarget{classBone3D_a3548570bb866e539f51e8553689d7ce4}\label{classBone3D_a3548570bb866e539f51e8553689d7ce4}} 
+\index{Bone3D@{Bone3D}!````~Bone3D@{$\sim$\+Bone3D}}
+\index{````~Bone3D@{$\sim$\+Bone3D}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{$\sim$\+Bone3\+D()}{~Bone3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Bone3\+D\+::$\sim$\+Bone3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}\label{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}} 
+\index{Bone3D@{Bone3D}!add\+Child\+Bone@{add\+Child\+Bone}}
+\index{add\+Child\+Bone@{add\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{add\+Child\+Bone()}{addChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::add\+Child\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+add child bone \mbox{\Hypertarget{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}\label{classBone3D_a666a91d8cb1bb98bd953144abe1385c5}} 
+\index{Bone3D@{Bone3D}!add\+Child\+Bone@{add\+Child\+Bone}}
+\index{add\+Child\+Bone@{add\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{add\+Child\+Bone()}{addChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::add\+Child\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+add child bone \mbox{\Hypertarget{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}\label{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}} 
+\index{Bone3D@{Bone3D}!clear\+Bone\+Blend\+State@{clear\+Bone\+Blend\+State}}
+\index{clear\+Bone\+Blend\+State@{clear\+Bone\+Blend\+State}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{clear\+Bone\+Blend\+State()}{clearBoneBlendState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::clear\+Bone\+Blend\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+clear bone blend states \mbox{\Hypertarget{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}\label{classBone3D_af2cf6d23bf2e4853ff944d7d4d0ed424}} 
+\index{Bone3D@{Bone3D}!clear\+Bone\+Blend\+State@{clear\+Bone\+Blend\+State}}
+\index{clear\+Bone\+Blend\+State@{clear\+Bone\+Blend\+State}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{clear\+Bone\+Blend\+State()}{clearBoneBlendState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::clear\+Bone\+Blend\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+clear bone blend states \mbox{\Hypertarget{classBone3D_a1708607e00df296c7377df101d43219a}\label{classBone3D_a1708607e00df296c7377df101d43219a}} 
+\index{Bone3D@{Bone3D}!create@{create}}
+\index{create@{create}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D} $\ast$ Bone3\+D\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates C3\+D\+Bone. \mbox{\Hypertarget{classBone3D_aa22fa6c00c3c8600309c67917db36481}\label{classBone3D_aa22fa6c00c3c8600309c67917db36481}} 
+\index{Bone3D@{Bone3D}!create@{create}}
+\index{create@{create}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classBone3D}{Bone3D}$\ast$ Bone3\+D\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates C3\+D\+Bone. \mbox{\Hypertarget{classBone3D_a0d6ff6c15e5f8ed01ffeeb60bf3b7cd0}\label{classBone3D_a0d6ff6c15e5f8ed01ffeeb60bf3b7cd0}} 
+\index{Bone3D@{Bone3D}!get\+Child\+Bone\+By\+Index@{get\+Child\+Bone\+By\+Index}}
+\index{get\+Child\+Bone\+By\+Index@{get\+Child\+Bone\+By\+Index}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Child\+Bone\+By\+Index()}{getChildBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D} $\ast$ Bone3\+D\+::get\+Child\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get child bone by index \mbox{\Hypertarget{classBone3D_a92d362cde5c05727ed182ae254bdd946}\label{classBone3D_a92d362cde5c05727ed182ae254bdd946}} 
+\index{Bone3D@{Bone3D}!get\+Child\+Bone\+By\+Index@{get\+Child\+Bone\+By\+Index}}
+\index{get\+Child\+Bone\+By\+Index@{get\+Child\+Bone\+By\+Index}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Child\+Bone\+By\+Index()}{getChildBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D}$\ast$ Bone3\+D\+::get\+Child\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get child bone by index \mbox{\Hypertarget{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}\label{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}} 
+\index{Bone3D@{Bone3D}!get\+Child\+Bone\+Count@{get\+Child\+Bone\+Count}}
+\index{get\+Child\+Bone\+Count@{get\+Child\+Bone\+Count}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Child\+Bone\+Count()}{getChildBoneCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bone3\+D\+::get\+Child\+Bone\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get child bone count \mbox{\Hypertarget{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}\label{classBone3D_a5538e8f3e7f8af18e7183d673a2041d6}} 
+\index{Bone3D@{Bone3D}!get\+Child\+Bone\+Count@{get\+Child\+Bone\+Count}}
+\index{get\+Child\+Bone\+Count@{get\+Child\+Bone\+Count}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Child\+Bone\+Count()}{getChildBoneCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bone3\+D\+::get\+Child\+Bone\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get child bone count \mbox{\Hypertarget{classBone3D_a399590986c9018faa422b53233860bbf}\label{classBone3D_a399590986c9018faa422b53233860bbf}} 
+\index{Bone3D@{Bone3D}!get\+Inverse\+Bind\+Pose@{get\+Inverse\+Bind\+Pose}}
+\index{get\+Inverse\+Bind\+Pose@{get\+Inverse\+Bind\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Inverse\+Bind\+Pose()}{getInverseBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Bone3\+D\+::get\+Inverse\+Bind\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the inverse bind pose matrix for this joint.
+
+\begin{DoxyReturn}{Returns}
+Inverse bind pose matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBone3D_abeee6535e308b6057b1329b04f2a5b63}\label{classBone3D_abeee6535e308b6057b1329b04f2a5b63}} 
+\index{Bone3D@{Bone3D}!get\+Inverse\+Bind\+Pose@{get\+Inverse\+Bind\+Pose}}
+\index{get\+Inverse\+Bind\+Pose@{get\+Inverse\+Bind\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Inverse\+Bind\+Pose()}{getInverseBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Bone3\+D\+::get\+Inverse\+Bind\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the inverse bind pose matrix for this joint.
+
+\begin{DoxyReturn}{Returns}
+Inverse bind pose matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}\label{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}} 
+\index{Bone3D@{Bone3D}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& Bone3\+D\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get bone name \mbox{\Hypertarget{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}\label{classBone3D_a013182c8e209ddf9282c7cb6e42d3d25}} 
+\index{Bone3D@{Bone3D}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& Bone3\+D\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get bone name \mbox{\Hypertarget{classBone3D_a9e18248b19b29586fbaca3ce62b66c32}\label{classBone3D_a9e18248b19b29586fbaca3ce62b66c32}} 
+\index{Bone3D@{Bone3D}!get\+Parent\+Bone@{get\+Parent\+Bone}}
+\index{get\+Parent\+Bone@{get\+Parent\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Parent\+Bone()}{getParentBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D} $\ast$ Bone3\+D\+::get\+Parent\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+bone tree, we do not inherit from \hyperlink{classNode}{Node}, \hyperlink{classNode}{Node} has too many properties that we do not need. A clean \hyperlink{classNode}{Node} is needed. \mbox{\Hypertarget{classBone3D_a617a97bd81b8f81fd2e946e95d82be6b}\label{classBone3D_a617a97bd81b8f81fd2e946e95d82be6b}} 
+\index{Bone3D@{Bone3D}!get\+Parent\+Bone@{get\+Parent\+Bone}}
+\index{get\+Parent\+Bone@{get\+Parent\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+Parent\+Bone()}{getParentBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D}$\ast$ Bone3\+D\+::get\+Parent\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+bone tree, we do not inherit from \hyperlink{classNode}{Node}, \hyperlink{classNode}{Node} has too many properties that we do not need. A clean \hyperlink{classNode}{Node} is needed. \mbox{\Hypertarget{classBone3D_a87f9a5957046e130b2170576717c219a}\label{classBone3D_a87f9a5957046e130b2170576717c219a}} 
+\index{Bone3D@{Bone3D}!get\+World\+Mat@{get\+World\+Mat}}
+\index{get\+World\+Mat@{get\+World\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+World\+Mat()}{getWorldMat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Bone3\+D\+::get\+World\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get world matrix \mbox{\Hypertarget{classBone3D_a4027bb71e7e2ac272b57c582c9aa1158}\label{classBone3D_a4027bb71e7e2ac272b57c582c9aa1158}} 
+\index{Bone3D@{Bone3D}!get\+World\+Mat@{get\+World\+Mat}}
+\index{get\+World\+Mat@{get\+World\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{get\+World\+Mat()}{getWorldMat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Bone3\+D\+::get\+World\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get world matrix \mbox{\Hypertarget{classBone3D_add11919591bf6a849c848eca3a986289}\label{classBone3D_add11919591bf6a849c848eca3a986289}} 
+\index{Bone3D@{Bone3D}!remove\+All\+Child\+Bone@{remove\+All\+Child\+Bone}}
+\index{remove\+All\+Child\+Bone@{remove\+All\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Child\+Bone()}{removeAllChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+All\+Child\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all child bone \mbox{\Hypertarget{classBone3D_add11919591bf6a849c848eca3a986289}\label{classBone3D_add11919591bf6a849c848eca3a986289}} 
+\index{Bone3D@{Bone3D}!remove\+All\+Child\+Bone@{remove\+All\+Child\+Bone}}
+\index{remove\+All\+Child\+Bone@{remove\+All\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Child\+Bone()}{removeAllChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+All\+Child\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all child bone \mbox{\Hypertarget{classBone3D_a384bcaace89faea2a5e61d7c172476f6}\label{classBone3D_a384bcaace89faea2a5e61d7c172476f6}} 
+\index{Bone3D@{Bone3D}!remove\+Child\+Bone@{remove\+Child\+Bone}}
+\index{remove\+Child\+Bone@{remove\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+Child\+Bone()}{removeChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+Child\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+remove child bone \mbox{\Hypertarget{classBone3D_a384bcaace89faea2a5e61d7c172476f6}\label{classBone3D_a384bcaace89faea2a5e61d7c172476f6}} 
+\index{Bone3D@{Bone3D}!remove\+Child\+Bone@{remove\+Child\+Bone}}
+\index{remove\+Child\+Bone@{remove\+Child\+Bone}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+Child\+Bone()}{removeChildBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+Child\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+remove child bone \mbox{\Hypertarget{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}\label{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}} 
+\index{Bone3D@{Bone3D}!remove\+Child\+Bone\+By\+Index@{remove\+Child\+Bone\+By\+Index}}
+\index{remove\+Child\+Bone\+By\+Index@{remove\+Child\+Bone\+By\+Index}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+Child\+Bone\+By\+Index()}{removeChildBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+Child\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove child bone by index \mbox{\Hypertarget{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}\label{classBone3D_a8ab61153ed7c8c90954346b6241e4e5c}} 
+\index{Bone3D@{Bone3D}!remove\+Child\+Bone\+By\+Index@{remove\+Child\+Bone\+By\+Index}}
+\index{remove\+Child\+Bone\+By\+Index@{remove\+Child\+Bone\+By\+Index}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{remove\+Child\+Bone\+By\+Index()}{removeChildBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::remove\+Child\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove child bone by index \mbox{\Hypertarget{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}\label{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}} 
+\index{Bone3D@{Bone3D}!reset\+Pose@{reset\+Pose}}
+\index{reset\+Pose@{reset\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{reset\+Pose()}{resetPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::reset\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reset pose to origin \mbox{\Hypertarget{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}\label{classBone3D_af6fe8d8595d2ffa91b490de86ce6e3e2}} 
+\index{Bone3D@{Bone3D}!reset\+Pose@{reset\+Pose}}
+\index{reset\+Pose@{reset\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{reset\+Pose()}{resetPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::reset\+Pose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reset pose to origin \mbox{\Hypertarget{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}\label{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}} 
+\index{Bone3D@{Bone3D}!set\+Animation\+Value@{set\+Animation\+Value}}
+\index{set\+Animation\+Value@{set\+Animation\+Value}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Animation\+Value()}{setAnimationValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+Animation\+Value (\begin{DoxyParamCaption}\item[{float $\ast$}]{trans,  }\item[{float $\ast$}]{rot,  }\item[{float $\ast$}]{scale,  }\item[{void $\ast$}]{tag = {\ttfamily nullptr},  }\item[{float}]{weight = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+set animation value 
+\begin{DoxyParams}{Parameters}
+{\em trans} & translate vec3 \\
+\hline
+{\em rot} & rotation quaternion \\
+\hline
+{\em scale} & scale vec3 \\
+\hline
+{\em tag} & unique tag, only blend animation between different tags \\
+\hline
+{\em weight} & blend weight \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}\label{classBone3D_a70a3d6a845913aac7ac332e4e0eb5a3c}} 
+\index{Bone3D@{Bone3D}!set\+Animation\+Value@{set\+Animation\+Value}}
+\index{set\+Animation\+Value@{set\+Animation\+Value}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Animation\+Value()}{setAnimationValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+Animation\+Value (\begin{DoxyParamCaption}\item[{float $\ast$}]{trans,  }\item[{float $\ast$}]{rot,  }\item[{float $\ast$}]{scale,  }\item[{void $\ast$}]{tag = {\ttfamily nullptr},  }\item[{float}]{weight = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+set animation value 
+\begin{DoxyParams}{Parameters}
+{\em trans} & translate vec3 \\
+\hline
+{\em rot} & rotation quaternion \\
+\hline
+{\em scale} & scale vec3 \\
+\hline
+{\em tag} & unique tag, only blend animation between different tags \\
+\hline
+{\em weight} & blend weight \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_a8fc88c76083482655350e6cba2bb4d37}\label{classBone3D_a8fc88c76083482655350e6cba2bb4d37}} 
+\index{Bone3D@{Bone3D}!set\+Inverse\+Bind\+Pose@{set\+Inverse\+Bind\+Pose}}
+\index{set\+Inverse\+Bind\+Pose@{set\+Inverse\+Bind\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Inverse\+Bind\+Pose()}{setInverseBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN void Bone3\+D\+::set\+Inverse\+Bind\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the inverse bind pose matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{classMat4}{Mat4} representing the inverse bind pose for this Bone.\\
+\hline
+\end{DoxyParams}
+Sets the inverse bind pose matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & C3\+D\+Matrix representing the inverse bind pose for this Bone. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_a30efff69c0378cc264db10c65fd8e18b}\label{classBone3D_a30efff69c0378cc264db10c65fd8e18b}} 
+\index{Bone3D@{Bone3D}!set\+Inverse\+Bind\+Pose@{set\+Inverse\+Bind\+Pose}}
+\index{set\+Inverse\+Bind\+Pose@{set\+Inverse\+Bind\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Inverse\+Bind\+Pose()}{setInverseBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+Inverse\+Bind\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the inverse bind pose matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{classMat4}{Mat4} representing the inverse bind pose for this Bone. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}\label{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}} 
+\index{Bone3D@{Bone3D}!set\+Ori\+Pose@{set\+Ori\+Pose}}
+\index{set\+Ori\+Pose@{set\+Ori\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Ori\+Pose()}{setOriPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+Ori\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the bone\textquotesingle{}s original pose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{classMat4}{Mat4} representing the original pose for this Bone. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}\label{classBone3D_abd2362340c7ad200d2e1e6974d27dfce}} 
+\index{Bone3D@{Bone3D}!set\+Ori\+Pose@{set\+Ori\+Pose}}
+\index{set\+Ori\+Pose@{set\+Ori\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+Ori\+Pose()}{setOriPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+Ori\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m }\end{DoxyParamCaption})}
+
+Sets the bone\textquotesingle{}s original pose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \hyperlink{classMat4}{Mat4} representing the original pose for this Bone. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_a106b423193457bdc905e9a61d041d5d0}\label{classBone3D_a106b423193457bdc905e9a61d041d5d0}} 
+\index{Bone3D@{Bone3D}!set\+World\+Mat\+Dirty@{set\+World\+Mat\+Dirty}}
+\index{set\+World\+Mat\+Dirty@{set\+World\+Mat\+Dirty}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+World\+Mat\+Dirty()}{setWorldMatDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+World\+Mat\+Dirty (\begin{DoxyParamCaption}\item[{bool}]{dirty = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+set world matrix dirty flag \mbox{\Hypertarget{classBone3D_a106b423193457bdc905e9a61d041d5d0}\label{classBone3D_a106b423193457bdc905e9a61d041d5d0}} 
+\index{Bone3D@{Bone3D}!set\+World\+Mat\+Dirty@{set\+World\+Mat\+Dirty}}
+\index{set\+World\+Mat\+Dirty@{set\+World\+Mat\+Dirty}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{set\+World\+Mat\+Dirty()}{setWorldMatDirty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::set\+World\+Mat\+Dirty (\begin{DoxyParamCaption}\item[{bool}]{dirty = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+set world matrix dirty flag \mbox{\Hypertarget{classBone3D_aab877746976dc466bcc339845529b2e5}\label{classBone3D_aab877746976dc466bcc339845529b2e5}} 
+\index{Bone3D@{Bone3D}!update\+Joint\+Matrix@{update\+Joint\+Matrix}}
+\index{update\+Joint\+Matrix@{update\+Joint\+Matrix}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+Joint\+Matrix()}{updateJointMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+Joint\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{matrix\+Palette }\end{DoxyParamCaption})}
+
+Updates the joint matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\+Palette} & The matrix palette to update. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_aab877746976dc466bcc339845529b2e5}\label{classBone3D_aab877746976dc466bcc339845529b2e5}} 
+\index{Bone3D@{Bone3D}!update\+Joint\+Matrix@{update\+Joint\+Matrix}}
+\index{update\+Joint\+Matrix@{update\+Joint\+Matrix}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+Joint\+Matrix()}{updateJointMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+Joint\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{matrix\+Palette }\end{DoxyParamCaption})}
+
+Updates the joint matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\+Palette} & The matrix palette to update. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}\label{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}} 
+\index{Bone3D@{Bone3D}!update\+Local\+Mat@{update\+Local\+Mat}}
+\index{update\+Local\+Mat@{update\+Local\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+Local\+Mat()}{updateLocalMat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+Local\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Update local matrix \mbox{\Hypertarget{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}\label{classBone3D_a3e5720b8df7a2d25d3d21362177949f8}} 
+\index{Bone3D@{Bone3D}!update\+Local\+Mat@{update\+Local\+Mat}}
+\index{update\+Local\+Mat@{update\+Local\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+Local\+Mat()}{updateLocalMat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+Local\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Update local matrix \mbox{\Hypertarget{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}\label{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}} 
+\index{Bone3D@{Bone3D}!update\+World\+Mat@{update\+World\+Mat}}
+\index{update\+World\+Mat@{update\+World\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+World\+Mat()}{updateWorldMat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+World\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+update own world matrix and children\textquotesingle{}s \mbox{\Hypertarget{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}\label{classBone3D_a9b804338ec06abeed0e6b50c8b17103a}} 
+\index{Bone3D@{Bone3D}!update\+World\+Mat@{update\+World\+Mat}}
+\index{update\+World\+Mat@{update\+World\+Mat}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{update\+World\+Mat()}{updateWorldMat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bone3\+D\+::update\+World\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+update own world matrix and children\textquotesingle{}s 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classBone3D_ab8779fd741f178117b2dfe1cb8b79fb6}\label{classBone3D_ab8779fd741f178117b2dfe1cb8b79fb6}} 
+\index{Bone3D@{Bone3D}!\+\_\+inv\+Bind\+Pose@{\+\_\+inv\+Bind\+Pose}}
+\index{\+\_\+inv\+Bind\+Pose@{\+\_\+inv\+Bind\+Pose}!Bone3D@{Bone3D}}
+\subsubsection{\texorpdfstring{\+\_\+inv\+Bind\+Pose}{\_invBindPose}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Bone3\+D\+::\+\_\+inv\+Bind\+Pose\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{classMat4}{Mat4} representation of the Joint\textquotesingle{}s bind pose. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Skeleton3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Skeleton3\+D.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,141 @@
+\hypertarget{classVertexAttribBinding}{}\section{Vertex\+Attrib\+Binding Class Reference}
+\label{classVertexAttribBinding}\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+
+
+{\ttfamily \#include $<$C\+C\+Vertex\+Attrib\+Binding.\+h$>$}
+
+
+
+Inheritance diagram for Vertex\+Attrib\+Binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classVertexAttribBinding__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vertex\+Attrib\+Binding\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classVertexAttribBinding__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}{bind} ()
+\item 
+void \hyperlink{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}{unbind} ()
+\item 
+uint32\+\_\+t \hyperlink{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}{get\+Vertex\+Attribs\+Flags} () const
+\item 
+void \hyperlink{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}{bind} ()
+\item 
+void \hyperlink{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}{unbind} ()
+\item 
+uint32\+\_\+t \hyperlink{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}{get\+Vertex\+Attribs\+Flags} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} $\ast$ \hyperlink{classVertexAttribBinding_a9be9594764bc5cad1def711385dbb278}{create} (\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$mesh\+Index\+Data, \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State)
+\item 
+static \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} $\ast$ \hyperlink{classVertexAttribBinding_ac0efc7ff6cca54db2e47d06db969ceeb}{create} (\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$mesh\+Index\+Data, \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines a binding between the vertex layout of a \hyperlink{classMesh}{Mesh} and the vertex input attributes of a vertex shader (Effect).
+
+In a perfect world, this class would always be a binding directly between a unique Vertex\+Format and an Effect, where the Vertex\+Format is simply the definition of the layout of any anonymous vertex buffer. However, the Open\+GL mechanism for setting up these bindings is Vertex Array Objects (V\+A\+Os). Open\+GL requires a separate V\+AO per vertex buffer object (V\+BO), rather than per vertex layout definition. Therefore, although we would like to define this binding between a Vertex\+Format and Effect, we are specifying the binding between a \hyperlink{classMesh}{Mesh} and Effect to satisfy the Open\+GL requirement of one V\+AO per V\+BO.
+
+Note that this class still does provide a binding between a Vertex\+Format and an Effect, however this binding is actually a client-\/side binding and should only be used when writing custom code that use client-\/side vertex arrays, since it is slower than the server-\/side V\+A\+Os used by Open\+GL (when creating a \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} between a \hyperlink{classMesh}{Mesh} and Effect). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}\label{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!bind@{bind}}
+\index{bind@{bind}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vertex\+Attrib\+Binding\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds this vertex array object. \mbox{\Hypertarget{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}\label{classVertexAttribBinding_a73d048fbb2ca9b0450b24c68024755d0}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!bind@{bind}}
+\index{bind@{bind}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vertex\+Attrib\+Binding\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds this vertex array object. \mbox{\Hypertarget{classVertexAttribBinding_a9be9594764bc5cad1def711385dbb278}\label{classVertexAttribBinding_a9be9594764bc5cad1def711385dbb278}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!create@{create}}
+\index{create@{create}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} $\ast$ Vertex\+Attrib\+Binding\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{mesh\+Index\+Data,  }\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} between the given \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data} and \hyperlink{classGLProgramState}{G\+L\+Program\+State}.
+
+If a \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} matching the specified \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data} and \hyperlink{classGLProgramState}{G\+L\+Program\+State} already exists, it will be returned. Otherwise, a new \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} will be returned. If Open\+GL V\+A\+Os are enabled, the a new V\+AO will be created and stored in the returned \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding}, otherwise a client-\/side array of vertex attribute bindings will be stored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The mesh. \\
+\hline
+{\em effect} & The effect.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} for the requested parameters. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVertexAttribBinding_ac0efc7ff6cca54db2e47d06db969ceeb}\label{classVertexAttribBinding_ac0efc7ff6cca54db2e47d06db969ceeb}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!create@{create}}
+\index{create@{create}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding}$\ast$ Vertex\+Attrib\+Binding\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{mesh\+Index\+Data,  }\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} between the given \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data} and \hyperlink{classGLProgramState}{G\+L\+Program\+State}.
+
+If a \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} matching the specified \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data} and \hyperlink{classGLProgramState}{G\+L\+Program\+State} already exists, it will be returned. Otherwise, a new \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} will be returned. If Open\+GL V\+A\+Os are enabled, the a new V\+AO will be created and stored in the returned \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding}, otherwise a client-\/side array of vertex attribute bindings will be stored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The mesh. \\
+\hline
+{\em effect} & The effect.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classVertexAttribBinding}{Vertex\+Attrib\+Binding} for the requested parameters. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}\label{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}}
+\index{get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attribs\+Flags()}{getVertexAttribsFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t Vertex\+Attrib\+Binding\+::get\+Vertex\+Attribs\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the vertex attrib flags \mbox{\Hypertarget{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}\label{classVertexAttribBinding_a686c067940b41b7db64d5103dc624799}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}}
+\index{get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attribs\+Flags()}{getVertexAttribsFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t Vertex\+Attrib\+Binding\+::get\+Vertex\+Attribs\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the vertex attrib flags \mbox{\Hypertarget{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}\label{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!unbind@{unbind}}
+\index{unbind@{unbind}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vertex\+Attrib\+Binding\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unbinds this vertex array object. \mbox{\Hypertarget{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}\label{classVertexAttribBinding_ab1b0ab9b2c5719b0558c460f266b9109}} 
+\index{Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}!unbind@{unbind}}
+\index{unbind@{unbind}!Vertex\+Attrib\+Binding@{Vertex\+Attrib\+Binding}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vertex\+Attrib\+Binding\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unbinds this vertex array object. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Vertex\+Attrib\+Binding.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Vertex\+Attrib\+Binding.\+cpp\end{DoxyCompactItemize}

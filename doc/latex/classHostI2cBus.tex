@@ -1,0 +1,249 @@
+\hypertarget{classHostI2cBus}{}\section{Host\+I2c\+Bus Class Reference}
+\label{classHostI2cBus}\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+
+
+Inheritance diagram for Host\+I2c\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classHostI2cBus__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Host\+I2c\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classHostI2cBus__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHostI2cBus_a38f7715da8cd5ba19f6ef9f388d074b4}\label{classHostI2cBus_a38f7715da8cd5ba19f6ef9f388d074b4}} 
+\hyperlink{classHostI2cBus_a38f7715da8cd5ba19f6ef9f388d074b4}{Host\+I2c\+Bus} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHostI2cBus_a24f833a9ed74a882342725f3ef813406}\label{classHostI2cBus_a24f833a9ed74a882342725f3ef813406}} 
+virtual \hyperlink{classHostI2cBus_a24f833a9ed74a882342725f3ef813406}{$\sim$\+Host\+I2c\+Bus} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_ad92abe2868c75ebed518d9426e747ad0}{set\+Slave\+Addr} (unsigned char a\+Addr)
+\begin{DoxyCompactList}\small\item\em Set chip\textquotesingle{}s I2C slave address. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a61dde8f92a1d4df552732d16e803934e}{get\+Slave\+Addr} () const
+\begin{DoxyCompactList}\small\item\em Get chip\textquotesingle{}s I2C slave address. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_adb02300bf8aacf65e169f84122848818}{read} (unsigned char $\ast$a\+Data, size\+\_\+t a\+Size) const
+\begin{DoxyCompactList}\small\item\em Read several bytes (ioctl() method) from given chip. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a23f6aad4bad6aa15170f02abe1348c33}{write} (unsigned char $\ast$a\+Data, size\+\_\+t a\+Size)
+\begin{DoxyCompactList}\small\item\em Write several bytes (ioctl() method) to given chip. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a841737a0dbc60be2d370f56e7f1a64b1}{read\+Reg} (unsigned char a\+Reg, unsigned char $\ast$a\+Data, size\+\_\+t a\+Size) const
+\begin{DoxyCompactList}\small\item\em Read from given chip at a given register address (ioctl() method). \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a6f7a8cf477287727ee6861bfc8007788}{write\+Reg} (unsigned char a\+Reg, unsigned char $\ast$a\+Data, size\+\_\+t a\+Size)
+\begin{DoxyCompactList}\small\item\em Write to given chip at a given register address (ioctl() method). \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a797e010bb0530a22c8f3e98fe37d9e2b}{read\+Msg} (unsigned char $\ast$a\+W\+Data, unsigned char a\+Write\+Size, unsigned char $\ast$a\+R\+Data, size\+\_\+t a\+Read\+Size)
+\begin{DoxyCompactList}\small\item\em forge a read message like this\+: S Addr\mbox{[}W\mbox{]} wdata0 \mbox{[}A\mbox{]} wdata1 \mbox{[}A\mbox{]} ... RS Addr R \mbox{[}rdata0\mbox{]} A \mbox{[}rdata1\mbox{]} A ... P \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a4f8ab723d256dde2f2c1d38ecb36c34e}{read\+Reg\+Byte} (unsigned char a\+Reg) const
+\begin{DoxyCompactList}\small\item\em Read a byte from the given register. \end{DoxyCompactList}\item 
+long \hyperlink{classHostI2cBus_a6083db2184ecc41d05fe67ba9fc40959}{write\+Reg\+Byte} (unsigned char a\+Reg, unsigned char a\+Val)
+\begin{DoxyCompactList}\small\item\em Write a byte to the given register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct as\+\_\+i2c\+\_\+device $\ast$ \hyperlink{classHostI2cBus_a981bd4515a65a782ab00fdb77f3476ce}{m\+Dev}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHostI2cBus_a61dde8f92a1d4df552732d16e803934e}\label{classHostI2cBus_a61dde8f92a1d4df552732d16e803934e}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!get\+Slave\+Addr@{get\+Slave\+Addr}}
+\index{get\+Slave\+Addr@{get\+Slave\+Addr}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{get\+Slave\+Addr()}{getSlaveAddr()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::get\+Slave\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get chip\textquotesingle{}s I2C slave address. 
+
+\begin{DoxyReturn}{Returns}
+slave\textquotesingle{}s address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_adb02300bf8aacf65e169f84122848818}\label{classHostI2cBus_adb02300bf8aacf65e169f84122848818}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!read@{read}}
+\index{read@{read}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::read (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{a\+Data,  }\item[{size\+\_\+t}]{a\+Size }\end{DoxyParamCaption}) const}
+
+
+
+Read several bytes (ioctl() method) from given chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Data} & read data \\
+\hline
+{\em a\+Size} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a797e010bb0530a22c8f3e98fe37d9e2b}\label{classHostI2cBus_a797e010bb0530a22c8f3e98fe37d9e2b}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!read\+Msg@{read\+Msg}}
+\index{read\+Msg@{read\+Msg}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{read\+Msg()}{readMsg()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::read\+Msg (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{a\+W\+Data,  }\item[{unsigned char}]{a\+Write\+Size,  }\item[{unsigned char $\ast$}]{a\+R\+Data,  }\item[{size\+\_\+t}]{a\+Read\+Size }\end{DoxyParamCaption})}
+
+
+
+forge a read message like this\+: S Addr\mbox{[}W\mbox{]} wdata0 \mbox{[}A\mbox{]} wdata1 \mbox{[}A\mbox{]} ... RS Addr R \mbox{[}rdata0\mbox{]} A \mbox{[}rdata1\mbox{]} A ... P 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+W\+Data} & data to write \\
+\hline
+{\em a\+Write\+Size} & written data size \\
+\hline
+{\em a\+R\+Data} & read data \\
+\hline
+{\em a\+Read\+Size} & read data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a841737a0dbc60be2d370f56e7f1a64b1}\label{classHostI2cBus_a841737a0dbc60be2d370f56e7f1a64b1}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!read\+Reg@{read\+Reg}}
+\index{read\+Reg@{read\+Reg}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{read\+Reg()}{readReg()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::read\+Reg (\begin{DoxyParamCaption}\item[{unsigned char}]{a\+Reg,  }\item[{unsigned char $\ast$}]{a\+Data,  }\item[{size\+\_\+t}]{a\+Size }\end{DoxyParamCaption}) const}
+
+
+
+Read from given chip at a given register address (ioctl() method). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Reg} & register address \\
+\hline
+{\em a\+Data} & read data \\
+\hline
+{\em a\+Size} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a4f8ab723d256dde2f2c1d38ecb36c34e}\label{classHostI2cBus_a4f8ab723d256dde2f2c1d38ecb36c34e}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!read\+Reg\+Byte@{read\+Reg\+Byte}}
+\index{read\+Reg\+Byte@{read\+Reg\+Byte}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{read\+Reg\+Byte()}{readRegByte()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::read\+Reg\+Byte (\begin{DoxyParamCaption}\item[{unsigned char}]{a\+Reg }\end{DoxyParamCaption}) const}
+
+
+
+Read a byte from the given register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Reg} & register address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+read byte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_ad92abe2868c75ebed518d9426e747ad0}\label{classHostI2cBus_ad92abe2868c75ebed518d9426e747ad0}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!set\+Slave\+Addr@{set\+Slave\+Addr}}
+\index{set\+Slave\+Addr@{set\+Slave\+Addr}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{set\+Slave\+Addr()}{setSlaveAddr()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::set\+Slave\+Addr (\begin{DoxyParamCaption}\item[{unsigned char}]{a\+Addr }\end{DoxyParamCaption})}
+
+
+
+Set chip\textquotesingle{}s I2C slave address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Addr} & slave\textquotesingle{}s address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a23f6aad4bad6aa15170f02abe1348c33}\label{classHostI2cBus_a23f6aad4bad6aa15170f02abe1348c33}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!write@{write}}
+\index{write@{write}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::write (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{a\+Data,  }\item[{size\+\_\+t}]{a\+Size }\end{DoxyParamCaption})}
+
+
+
+Write several bytes (ioctl() method) to given chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Data} & data to write \\
+\hline
+{\em a\+Size} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a6f7a8cf477287727ee6861bfc8007788}\label{classHostI2cBus_a6f7a8cf477287727ee6861bfc8007788}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!write\+Reg@{write\+Reg}}
+\index{write\+Reg@{write\+Reg}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{write\+Reg()}{writeReg()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::write\+Reg (\begin{DoxyParamCaption}\item[{unsigned char}]{a\+Reg,  }\item[{unsigned char $\ast$}]{a\+Data,  }\item[{size\+\_\+t}]{a\+Size }\end{DoxyParamCaption})}
+
+
+
+Write to given chip at a given register address (ioctl() method). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Reg} & register address \\
+\hline
+{\em a\+Data} & data to write \\
+\hline
+{\em a\+Size} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBus_a6083db2184ecc41d05fe67ba9fc40959}\label{classHostI2cBus_a6083db2184ecc41d05fe67ba9fc40959}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!write\+Reg\+Byte@{write\+Reg\+Byte}}
+\index{write\+Reg\+Byte@{write\+Reg\+Byte}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{write\+Reg\+Byte()}{writeRegByte()}}
+{\footnotesize\ttfamily long Host\+I2c\+Bus\+::write\+Reg\+Byte (\begin{DoxyParamCaption}\item[{unsigned char}]{a\+Reg,  }\item[{unsigned char}]{a\+Val }\end{DoxyParamCaption})}
+
+
+
+Write a byte to the given register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Reg} & register address \\
+\hline
+{\em a\+Val} & byte to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classHostI2cBus_a981bd4515a65a782ab00fdb77f3476ce}\label{classHostI2cBus_a981bd4515a65a782ab00fdb77f3476ce}} 
+\index{Host\+I2c\+Bus@{Host\+I2c\+Bus}!m\+Dev@{m\+Dev}}
+\index{m\+Dev@{m\+Dev}!Host\+I2c\+Bus@{Host\+I2c\+Bus}}
+\subsubsection{\texorpdfstring{m\+Dev}{mDev}}
+{\footnotesize\ttfamily struct as\+\_\+i2c\+\_\+device$\ast$ Host\+I2c\+Bus\+::m\+Dev\hspace{0.3cm}{\ttfamily [protected]}}
+
+I2C bus device C structure 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{HostI2cBus_8hpp}{Host\+I2c\+Bus.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{HostI2cBus_8cpp}{Host\+I2c\+Bus.\+cpp}\end{DoxyCompactItemize}

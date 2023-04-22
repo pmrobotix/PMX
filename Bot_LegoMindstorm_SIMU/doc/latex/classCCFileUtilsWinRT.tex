@@ -1,0 +1,222 @@
+\hypertarget{classCCFileUtilsWinRT}{}\section{C\+C\+File\+Utils\+Win\+RT Class Reference}
+\label{classCCFileUtilsWinRT}\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+
+
+Helper class to handle file operations.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+File\+Utils\+Win\+R\+T.\+h$>$}
+
+
+
+Inheritance diagram for C\+C\+File\+Utils\+Win\+RT\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCCFileUtilsWinRT__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+C\+File\+Utils\+Win\+RT\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classCCFileUtilsWinRT__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCCFileUtilsWinRT_a1f2d5c30d599ab4490a2dead634f7459}{init} ()
+\item 
+virtual std\+::string \hyperlink{classCCFileUtilsWinRT_a546c4b1920e4484929a0d3cffe554720}{get\+Writable\+Path} () const
+\item 
+virtual bool \hyperlink{classCCFileUtilsWinRT_a25ecf188d3b1724cfa64e040d2a93f7b}{is\+Absolute\+Path} (const std\+::string \&str\+Path) const
+\item 
+virtual std\+::string \hyperlink{classCCFileUtilsWinRT_a547ce34a14879e9b236ad726932c7d00}{get\+Path\+For\+Filename} (const std\+::string \&filename, const std\+::string \&resolution\+Directory, const std\+::string \&search\+Path) const override
+\item 
+virtual std\+::string \hyperlink{classCCFileUtilsWinRT_ab72a708f0159e1d0929053540421a2df}{get\+Full\+Path\+For\+Directory\+And\+Filename} (const std\+::string \&str\+Directory, const std\+::string \&str\+Filename) const override
+\item 
+virtual std\+::string \hyperlink{classCCFileUtilsWinRT_a655652f655870c93e5fd01259b3eca6b}{get\+Suitable\+F\+Open} (const std\+::string \&filename\+Utf8) const override
+\item 
+virtual long \hyperlink{classCCFileUtilsWinRT_a56b2cacd3791ebf132e90b5abce17db3}{get\+File\+Size} (const std\+::string \&filepath) override
+\item 
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a27981a5c26ddb5ed500de355d3b6a174}\label{classCCFileUtilsWinRT_a27981a5c26ddb5ed500de355d3b6a174}} 
+virtual File\+Utils\+::\+Status {\bfseries get\+Contents} (const std\+::string \&filename, \hyperlink{classResizableBuffer}{Resizable\+Buffer} $\ast$buffer) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCCFileUtilsWinRT_adaa8526ed3c2f27f997e14d04b2f2b28}\label{classCCFileUtilsWinRT_adaa8526ed3c2f27f997e14d04b2f2b28}} 
+static std\+::string {\bfseries get\+App\+Path} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a6dbe7ca774e78da4f740d18287a14042}\label{classCCFileUtilsWinRT_a6dbe7ca774e78da4f740d18287a14042}} 
+class {\bfseries File\+Utils}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Helper class to handle file operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a56b2cacd3791ebf132e90b5abce17db3}\label{classCCFileUtilsWinRT_a56b2cacd3791ebf132e90b5abce17db3}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}}
+{\footnotesize\ttfamily long C\+C\+File\+Utils\+Win\+R\+T\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_ab72a708f0159e1d0929053540421a2df}\label{classCCFileUtilsWinRT_ab72a708f0159e1d0929053540421a2df}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}}
+\index{get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Directory\+And\+Filename()}{getFullPathForDirectoryAndFilename()}}
+{\footnotesize\ttfamily std\+::string C\+C\+File\+Utils\+Win\+R\+T\+::get\+Full\+Path\+For\+Directory\+And\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a547ce34a14879e9b236ad726932c7d00}\label{classCCFileUtilsWinRT_a547ce34a14879e9b236ad726932c7d00}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!get\+Path\+For\+Filename@{get\+Path\+For\+Filename}}
+\index{get\+Path\+For\+Filename@{get\+Path\+For\+Filename}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{get\+Path\+For\+Filename()}{getPathForFilename()}}
+{\footnotesize\ttfamily std\+::string C\+C\+File\+Utils\+Win\+R\+T\+::get\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{resolution\+Directory,  }\item[{const std\+::string \&}]{search\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets full path for filename, resolution directory and search path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em resolution\+Directory} & The resolution directory. \\
+\hline
+{\em search\+Path} & The search path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file. It will return an empty string if the full path of the file doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_ae575880a693de746f1505be83c6b4bfa}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a655652f655870c93e5fd01259b3eca6b}\label{classCCFileUtilsWinRT_a655652f655870c93e5fd01259b3eca6b}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}}
+\index{get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{get\+Suitable\+F\+Open()}{getSuitableFOpen()}}
+{\footnotesize\ttfamily std\+::string C\+C\+File\+Utils\+Win\+R\+T\+::get\+Suitable\+F\+Open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename\+Utf8 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Windows fopen can\textquotesingle{}t support U\+T\+F-\/8 filename Need convert all parameters fopen and other 3rd-\/party libs
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Utf8} & std\+::string name file for conversion from utf-\/8 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string ansi filename in current locale 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a546c4b1920e4484929a0d3cffe554720}\label{classCCFileUtilsWinRT_a546c4b1920e4484929a0d3cffe554720}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}}
+{\footnotesize\ttfamily string C\+C\+File\+Utils\+Win\+R\+T\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a1f2d5c30d599ab4490a2dead634f7459}\label{classCCFileUtilsWinRT_a1f2d5c30d599ab4490a2dead634f7459}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!init@{init}}
+\index{init@{init}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool C\+C\+File\+Utils\+Win\+R\+T\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils}.
+
+\mbox{\Hypertarget{classCCFileUtilsWinRT_a25ecf188d3b1724cfa64e040d2a93f7b}\label{classCCFileUtilsWinRT_a25ecf188d3b1724cfa64e040d2a93f7b}} 
+\index{C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}!is\+Absolute\+Path@{is\+Absolute\+Path}}
+\index{is\+Absolute\+Path@{is\+Absolute\+Path}!C\+C\+File\+Utils\+Win\+RT@{C\+C\+File\+Utils\+Win\+RT}}
+\subsubsection{\texorpdfstring{is\+Absolute\+Path()}{isAbsolutePath()}}
+{\footnotesize\ttfamily bool C\+C\+File\+Utils\+Win\+R\+T\+::is\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the path is an absolute path.
+
+\begin{DoxyNote}{Note}
+On Android, if the parameter passed in is relative to \char`\"{}assets/\char`\"{}, this method will treat it as an absolute path. Also on Blackberry, path starts with \char`\"{}app/native/\+Resources/\char`\"{} is treated as an absolute path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path that needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s an absolute path, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}{File\+Utils}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/winrt/C\+C\+File\+Utils\+Win\+R\+T.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/winrt/C\+C\+File\+Utils\+Win\+R\+T.\+cpp\end{DoxyCompactItemize}

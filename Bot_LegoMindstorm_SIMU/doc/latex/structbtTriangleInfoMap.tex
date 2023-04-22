@@ -1,0 +1,88 @@
+\hypertarget{structbtTriangleInfoMap}{}\section{bt\+Triangle\+Info\+Map Struct Reference}
+\label{structbtTriangleInfoMap}\index{bt\+Triangle\+Info\+Map@{bt\+Triangle\+Info\+Map}}
+
+
+The \hyperlink{structbtTriangleInfoMap}{bt\+Triangle\+Info\+Map} stores edge angle information for some triangles. You can compute this information yourself or using bt\+Generate\+Internal\+Edge\+Info.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Triangle\+Info\+Map.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Triangle\+Info\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{structbtTriangleInfoMap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Triangle\+Info\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtTriangleInfoMap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}\label{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}} 
+\hyperlink{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}{bt\+Triangle\+Info\+Map} ()
+\begin{DoxyCompactList}\small\item\em used to determine if a triangle is degenerate (length squared of cross product of 2 triangle edges $<$ threshold) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a41b97746654d67667101d7c0e14c83a8}\label{structbtTriangleInfoMap_a41b97746654d67667101d7c0e14c83a8}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a261e882097348fb47cc787bcdf6e1420}\label{structbtTriangleInfoMap_a261e882097348fb47cc787bcdf6e1420}} 
+virtual const char $\ast$ \hyperlink{structbtTriangleInfoMap_a261e882097348fb47cc787bcdf6e1420}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a729483561a5100a27dae3f92fe57ebca}\label{structbtTriangleInfoMap_a729483561a5100a27dae3f92fe57ebca}} 
+void \hyperlink{structbtTriangleInfoMap_a729483561a5100a27dae3f92fe57ebca}{de\+Serialize} (struct \hyperlink{structbtTriangleInfoMapData}{bt\+Triangle\+Info\+Map\+Data} \&data)
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}\label{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}} 
+\hyperlink{structbtTriangleInfoMap_a60e9096e47e52a03e29004e77d9dd572}{bt\+Triangle\+Info\+Map} ()
+\begin{DoxyCompactList}\small\item\em used to determine if a triangle is degenerate (length squared of cross product of 2 triangle edges $<$ threshold) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a415f8a5b000e67ae91d4bb2a96a3ccb4}\label{structbtTriangleInfoMap_a415f8a5b000e67ae91d4bb2a96a3ccb4}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_af2dd04d94e55a15f2846bd3518df1b35}\label{structbtTriangleInfoMap_af2dd04d94e55a15f2846bd3518df1b35}} 
+virtual const char $\ast$ \hyperlink{structbtTriangleInfoMap_af2dd04d94e55a15f2846bd3518df1b35}{serialize} (void $\ast$data\+Buffer, \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a2fd5bc80cc57a717512fc3a2bcdb2287}\label{structbtTriangleInfoMap_a2fd5bc80cc57a717512fc3a2bcdb2287}} 
+void {\bfseries de\+Serialize} (struct \hyperlink{structbtTriangleInfoMapData}{bt\+Triangle\+Info\+Map\+Data} \&data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_ac471ee4ba8b753d2f8298fad2bdcda5e}\label{structbtTriangleInfoMap_ac471ee4ba8b753d2f8298fad2bdcda5e}} 
+bt\+Scalar {\bfseries m\+\_\+convex\+Epsilon}
+\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a7516c96369cd0eef22286b7e5ad537e8}\label{structbtTriangleInfoMap_a7516c96369cd0eef22286b7e5ad537e8}} 
+bt\+Scalar \hyperlink{structbtTriangleInfoMap_a7516c96369cd0eef22286b7e5ad537e8}{m\+\_\+planar\+Epsilon}
+\begin{DoxyCompactList}\small\item\em used to determine if an edge or contact normal is convex, using the dot product \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_aa980d33e5be082442a128f0ba2efb064}\label{structbtTriangleInfoMap_aa980d33e5be082442a128f0ba2efb064}} 
+bt\+Scalar \hyperlink{structbtTriangleInfoMap_aa980d33e5be082442a128f0ba2efb064}{m\+\_\+equal\+Vertex\+Threshold}
+\begin{DoxyCompactList}\small\item\em used to determine if a triangle edge is planar with zero angle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a521c0769aefc5c02b8394f924127dfc5}\label{structbtTriangleInfoMap_a521c0769aefc5c02b8394f924127dfc5}} 
+bt\+Scalar \hyperlink{structbtTriangleInfoMap_a521c0769aefc5c02b8394f924127dfc5}{m\+\_\+edge\+Distance\+Threshold}
+\begin{DoxyCompactList}\small\item\em used to compute connectivity\+: if the distance between two vertices is smaller than m\+\_\+equal\+Vertex\+Threshold, they are considered to be \textquotesingle{}shared\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a3fca61db63fe0db431044d0eba95107a}\label{structbtTriangleInfoMap_a3fca61db63fe0db431044d0eba95107a}} 
+bt\+Scalar \hyperlink{structbtTriangleInfoMap_a3fca61db63fe0db431044d0eba95107a}{m\+\_\+max\+Edge\+Angle\+Threshold}
+\begin{DoxyCompactList}\small\item\em used to determine edge contacts\+: if the closest distance between a contact point and an edge is smaller than this distance threshold it is considered to \char`\"{}hit the edge\char`\"{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtTriangleInfoMap_a5a218d3c04023fb08543f2cf8b50cd76}\label{structbtTriangleInfoMap_a5a218d3c04023fb08543f2cf8b50cd76}} 
+bt\+Scalar {\bfseries m\+\_\+zero\+Area\+Threshold}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{structbtTriangleInfoMap}{bt\+Triangle\+Info\+Map} stores edge angle information for some triangles. You can compute this information yourself or using bt\+Generate\+Internal\+Edge\+Info. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Shapes/bt\+Triangle\+Info\+Map.\+h\end{DoxyCompactItemize}

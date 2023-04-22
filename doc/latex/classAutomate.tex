@@ -1,0 +1,78 @@
+\hypertarget{classAutomate}{}\section{Automate Class Reference}
+\label{classAutomate}\index{Automate@{Automate}}
+
+
+Gère un automate simple.  
+
+
+
+
+{\ttfamily \#include $<$Automate.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAutomate_a79dcc6fd193e40ab8246b4a70b904a11}\label{classAutomate_a79dcc6fd193e40ab8246b4a70b904a11}} 
+\hyperlink{classAutomate_a79dcc6fd193e40ab8246b4a70b904a11}{Automate} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAutomate_acbe795cff71547d3c32a0cd5c0f6f2ac}\label{classAutomate_acbe795cff71547d3c32a0cd5c0f6f2ac}} 
+virtual \hyperlink{classAutomate_acbe795cff71547d3c32a0cd5c0f6f2ac}{$\sim$\+Automate} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classAutomate_a1df5d3b6c5abc353b347f4defcfde4e9}{run} (\hyperlink{classRobot}{Robot} \&robot, \hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$first)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}automate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAutomate_ae252283b4c9ffff3ae601ad2cdb89ccd}\label{classAutomate_ae252283b4c9ffff3ae601ad2cdb89ccd}} 
+\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$ \hyperlink{classAutomate_ae252283b4c9ffff3ae601ad2cdb89ccd}{current} () const
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}état courant de l\textquotesingle{}automate. \end{DoxyCompactList}\item 
+void \hyperlink{classAutomate_aed7acfdc298f502d450e993f96046cd5}{current} (\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$current)
+\begin{DoxyCompactList}\small\item\em Définie l\textquotesingle{}état courant de l\textquotesingle{}automate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gère un automate simple. 
+
+Un automate \char`\"{}simple\char`\"{} ne possède au plus qu\textquotesingle{}un état actif. Il n\textquotesingle{}est donc pas possible de gérer un enbranchement avec cette classe. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAutomate_aed7acfdc298f502d450e993f96046cd5}\label{classAutomate_aed7acfdc298f502d450e993f96046cd5}} 
+\index{Automate@{Automate}!current@{current}}
+\index{current@{current}!Automate@{Automate}}
+\subsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily void Automate\+::current (\begin{DoxyParamCaption}\item[{\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Définie l\textquotesingle{}état courant de l\textquotesingle{}automate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & Le nouvel état courant de l\textquotesingle{}automate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAutomate_a1df5d3b6c5abc353b347f4defcfde4e9}\label{classAutomate_a1df5d3b6c5abc353b347f4defcfde4e9}} 
+\index{Automate@{Automate}!run@{run}}
+\index{run@{run}!Automate@{Automate}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Automate\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classRobot}{Robot} \&}]{robot,  }\item[{\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$}]{first }\end{DoxyParamCaption})}
+
+
+
+Lance l\textquotesingle{}automate. 
+
+L\textquotesingle{}automate n\textquotesingle{}est P\+AS lancé sur un nouveau thread, cette méthode est donc bloquante pour le processus actuel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot} & Le robot à manipuler. \\
+\hline
+{\em first} & Etat initial de l\textquotesingle{}automate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+State/\hyperlink{Automate_8hpp}{Automate.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+State/\hyperlink{Automate_8cpp}{Automate.\+cpp}\end{DoxyCompactItemize}

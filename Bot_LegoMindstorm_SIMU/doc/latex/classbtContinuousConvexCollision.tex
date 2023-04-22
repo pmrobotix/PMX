@@ -1,0 +1,72 @@
+\hypertarget{classbtContinuousConvexCollision}{}\section{bt\+Continuous\+Convex\+Collision Class Reference}
+\label{classbtContinuousConvexCollision}\index{bt\+Continuous\+Convex\+Collision@{bt\+Continuous\+Convex\+Collision}}
+
+
+{\ttfamily \#include $<$bt\+Continuous\+Convex\+Collision.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Continuous\+Convex\+Collision\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classbtContinuousConvexCollision__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Continuous\+Convex\+Collision\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classbtContinuousConvexCollision__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtContinuousConvexCollision_a6c89f3b4ba10699790f486c1ab278159}\label{classbtContinuousConvexCollision_a6c89f3b4ba10699790f486c1ab278159}} 
+{\bfseries bt\+Continuous\+Convex\+Collision} (const bt\+Convex\+Shape $\ast$shapeA, const bt\+Convex\+Shape $\ast$shapeB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtContinuousConvexCollision_a5ee898b00f7a69d8815a4a9e90bef415}\label{classbtContinuousConvexCollision_a5ee898b00f7a69d8815a4a9e90bef415}} 
+{\bfseries bt\+Continuous\+Convex\+Collision} (const bt\+Convex\+Shape $\ast$shapeA, const bt\+Static\+Plane\+Shape $\ast$plane)
+\item 
+virtual bool \hyperlink{classbtContinuousConvexCollision_afc75a57bddfeded52781bbd65ee16f37}{calc\+Time\+Of\+Impact} (const bt\+Transform \&fromA, const bt\+Transform \&toA, const bt\+Transform \&fromB, const bt\+Transform \&toB, \hyperlink{structbtConvexCast_1_1CastResult}{Cast\+Result} \&result)
+\begin{DoxyCompactList}\small\item\em cast a convex against another convex object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtContinuousConvexCollision_a6c89f3b4ba10699790f486c1ab278159}\label{classbtContinuousConvexCollision_a6c89f3b4ba10699790f486c1ab278159}} 
+{\bfseries bt\+Continuous\+Convex\+Collision} (const bt\+Convex\+Shape $\ast$shapeA, const bt\+Convex\+Shape $\ast$shapeB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtContinuousConvexCollision_a5ee898b00f7a69d8815a4a9e90bef415}\label{classbtContinuousConvexCollision_a5ee898b00f7a69d8815a4a9e90bef415}} 
+{\bfseries bt\+Continuous\+Convex\+Collision} (const bt\+Convex\+Shape $\ast$shapeA, const bt\+Static\+Plane\+Shape $\ast$plane)
+\item 
+\mbox{\Hypertarget{classbtContinuousConvexCollision_a7c15d7830cbfed7934ed1f441bc394cd}\label{classbtContinuousConvexCollision_a7c15d7830cbfed7934ed1f441bc394cd}} 
+virtual bool \hyperlink{classbtContinuousConvexCollision_a7c15d7830cbfed7934ed1f441bc394cd}{calc\+Time\+Of\+Impact} (const bt\+Transform \&fromA, const bt\+Transform \&toA, const bt\+Transform \&fromB, const bt\+Transform \&toB, \hyperlink{structbtConvexCast_1_1CastResult}{Cast\+Result} \&result)
+\begin{DoxyCompactList}\small\item\em cast a convex against another convex object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtContinuousConvexCollision}{bt\+Continuous\+Convex\+Collision} implements angular and linear time of impact for convex objects. Based on Brian Mirtich\textquotesingle{}s Conservative Advancement idea (PhD thesis). Algorithm operates in worldspace, in order to keep inbetween motion globally consistent. It uses G\+JK at the moment. Future improvement would use minkowski sum / supporting vertex, merging innerloops 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtContinuousConvexCollision_afc75a57bddfeded52781bbd65ee16f37}\label{classbtContinuousConvexCollision_afc75a57bddfeded52781bbd65ee16f37}} 
+\index{bt\+Continuous\+Convex\+Collision@{bt\+Continuous\+Convex\+Collision}!calc\+Time\+Of\+Impact@{calc\+Time\+Of\+Impact}}
+\index{calc\+Time\+Of\+Impact@{calc\+Time\+Of\+Impact}!bt\+Continuous\+Convex\+Collision@{bt\+Continuous\+Convex\+Collision}}
+\subsubsection{\texorpdfstring{calc\+Time\+Of\+Impact()}{calcTimeOfImpact()}}
+{\footnotesize\ttfamily bool bt\+Continuous\+Convex\+Collision\+::calc\+Time\+Of\+Impact (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{fromA,  }\item[{const bt\+Transform \&}]{toA,  }\item[{const bt\+Transform \&}]{fromB,  }\item[{const bt\+Transform \&}]{toB,  }\item[{\hyperlink{structbtConvexCast_1_1CastResult}{Cast\+Result} \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+cast a convex against another convex object 
+
+compute linear and angular velocity for this interval, to interpolate 
+
+Implements \hyperlink{classbtConvexCast_abaf0f25a8cccfcafdaabada83c8d2bfb}{bt\+Convex\+Cast}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Continuous\+Convex\+Collision.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Continuous\+Convex\+Collision.\+cpp\end{DoxyCompactItemize}

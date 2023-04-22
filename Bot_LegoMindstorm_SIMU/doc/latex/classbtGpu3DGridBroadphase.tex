@@ -1,0 +1,315 @@
+\hypertarget{classbtGpu3DGridBroadphase}{}\section{bt\+Gpu3\+D\+Grid\+Broadphase Class Reference}
+\label{classbtGpu3DGridBroadphase}\index{bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}}
+
+
+The \hyperlink{classbtGpu3DGridBroadphase}{bt\+Gpu3\+D\+Grid\+Broadphase} uses G\+P\+U-\/style code compiled for C\+PU to compute overlapping pairs.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Gpu3\+D\+Grid\+Broadphase.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Gpu3\+D\+Grid\+Broadphase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classbtGpu3DGridBroadphase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Gpu3\+D\+Grid\+Broadphase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtGpu3DGridBroadphase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a16e59d6930a222fd5118611d4fccf0ba}\label{classbtGpu3DGridBroadphase_a16e59d6930a222fd5118611d4fccf0ba}} 
+{\bfseries bt\+Gpu3\+D\+Grid\+Broadphase} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a05fbb3eab41b49d68d270d2cf7d3fa00}\label{classbtGpu3DGridBroadphase_a05fbb3eab41b49d68d270d2cf7d3fa00}} 
+{\bfseries bt\+Gpu3\+D\+Grid\+Broadphase} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$overlapping\+Pair\+Cache, const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+virtual void \hyperlink{classbtGpu3DGridBroadphase_ad25b335c5cf7be1f4eee024ff91e5635}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+virtual bt\+Broadphase\+Proxy $\ast$ \hyperlink{classbtGpu3DGridBroadphase_ad381f8a0aca01a7147b7a3eafad9ac5a}{create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ab86c095b13af4025a1ba78c811fc1052}\label{classbtGpu3DGridBroadphase_ab86c095b13af4025a1ba78c811fc1052}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a56834601991a6ee9b12a691acdbd183b}\label{classbtGpu3DGridBroadphase_a56834601991a6ee9b12a691acdbd183b}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a2ba7288d1f24ee65d317fb36c3a4c1f1}\label{classbtGpu3DGridBroadphase_a2ba7288d1f24ee65d317fb36c3a4c1f1}} 
+virtual void \hyperlink{classbtGpu3DGridBroadphase_a2ba7288d1f24ee65d317fb36c3a4c1f1}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a16e59d6930a222fd5118611d4fccf0ba}\label{classbtGpu3DGridBroadphase_a16e59d6930a222fd5118611d4fccf0ba}} 
+{\bfseries bt\+Gpu3\+D\+Grid\+Broadphase} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a05fbb3eab41b49d68d270d2cf7d3fa00}\label{classbtGpu3DGridBroadphase_a05fbb3eab41b49d68d270d2cf7d3fa00}} 
+{\bfseries bt\+Gpu3\+D\+Grid\+Broadphase} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$overlapping\+Pair\+Cache, const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+virtual void \hyperlink{classbtGpu3DGridBroadphase_ac59344854cc1f33ded7cdedd72c7a454}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a71cda38c8610d2b5e714edc3feaafff0}\label{classbtGpu3DGridBroadphase_a71cda38c8610d2b5e714edc3feaafff0}} 
+virtual bt\+Broadphase\+Proxy $\ast$ {\bfseries create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a5e48ca45467676489ee0a4662edab457}\label{classbtGpu3DGridBroadphase_a5e48ca45467676489ee0a4662edab457}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a3f19bf81f9e3f375d00605878f568728}\label{classbtGpu3DGridBroadphase_a3f19bf81f9e3f375d00605878f568728}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a5f5f3a005c81d2153fcf441f8f2a6457}\label{classbtGpu3DGridBroadphase_a5f5f3a005c81d2153fcf441f8f2a6457}} 
+virtual void \hyperlink{classbtGpu3DGridBroadphase_a5f5f3a005c81d2153fcf441f8f2a6457}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a640c838da14e12aa1244b46bd134ee3a}\label{classbtGpu3DGridBroadphase_a640c838da14e12aa1244b46bd134ee3a}} 
+int {\bfseries alloc\+Large\+Handle} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a886be1bf1f2ebb9c18bd7ec714961794}\label{classbtGpu3DGridBroadphase_a886be1bf1f2ebb9c18bd7ec714961794}} 
+void {\bfseries free\+Large\+Handle} (\hyperlink{structbtSimpleBroadphaseProxy}{bt\+Simple\+Broadphase\+Proxy} $\ast$proxy)
+\item 
+bool \hyperlink{classbtGpu3DGridBroadphase_a131cfab867b25116adb72d79435be34d}{is\+Large\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a54623ad8091800695dcb9487da21ff4b}\label{classbtGpu3DGridBroadphase_a54623ad8091800695dcb9487da21ff4b}} 
+bool {\bfseries is\+Large\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a015bbc0dea05a6b9c5256c4cf5b290d0}\label{classbtGpu3DGridBroadphase_a015bbc0dea05a6b9c5256c4cf5b290d0}} 
+void {\bfseries \+\_\+initialize} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aa12d32dc4ad28e00961834e81719de19}\label{classbtGpu3DGridBroadphase_aa12d32dc4ad28e00961834e81719de19}} 
+void {\bfseries \+\_\+finalize} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad57933c61551ee1fc7f92ce911213228}\label{classbtGpu3DGridBroadphase_ad57933c61551ee1fc7f92ce911213228}} 
+void {\bfseries add\+Pairs\+To\+Cache} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad0bb78dee2cd822d0fa687ea5aa72a21}\label{classbtGpu3DGridBroadphase_ad0bb78dee2cd822d0fa687ea5aa72a21}} 
+void {\bfseries add\+Large2\+Large\+Pairs\+To\+Cache} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ab28568e76e171d94d482fe81f860281e}\label{classbtGpu3DGridBroadphase_ab28568e76e171d94d482fe81f860281e}} 
+virtual void {\bfseries set\+Parameters} (\hyperlink{structbt3DGridBroadphaseParams}{bt3\+D\+Grid\+Broadphase\+Params} $\ast$host\+Params)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a6c083d06a439c7c4a9218c4e336e0622}\label{classbtGpu3DGridBroadphase_a6c083d06a439c7c4a9218c4e336e0622}} 
+virtual void {\bfseries prepare\+A\+A\+BB} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a80159f60d018c65850a7fdacaf582930}\label{classbtGpu3DGridBroadphase_a80159f60d018c65850a7fdacaf582930}} 
+virtual void {\bfseries calc\+Hash\+A\+A\+BB} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a359392ed2ccfeebbc7fe619979c5f969}\label{classbtGpu3DGridBroadphase_a359392ed2ccfeebbc7fe619979c5f969}} 
+virtual void {\bfseries sort\+Hash} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ae77c39ed454a00219955ff434a3e461e}\label{classbtGpu3DGridBroadphase_ae77c39ed454a00219955ff434a3e461e}} 
+virtual void {\bfseries find\+Cell\+Start} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a3ab912cd45cf3a884bda07a530c45170}\label{classbtGpu3DGridBroadphase_a3ab912cd45cf3a884bda07a530c45170}} 
+virtual void {\bfseries find\+Overlapping\+Pairs} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a6884baa0fc33a33b90ab2e740232e6b6}\label{classbtGpu3DGridBroadphase_a6884baa0fc33a33b90ab2e740232e6b6}} 
+virtual void {\bfseries find\+Pairs\+Large} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a3af6e9b44de069f6eb21c835c209b0c5}\label{classbtGpu3DGridBroadphase_a3af6e9b44de069f6eb21c835c209b0c5}} 
+virtual void {\bfseries compute\+Pair\+Cache\+Changes} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a3fd520c5de7034e983fb04b9066139dd}\label{classbtGpu3DGridBroadphase_a3fd520c5de7034e983fb04b9066139dd}} 
+virtual void {\bfseries scan\+Overlapping\+Pair\+Buff} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a93ce349dfc6c9be130f90e49305a9bdd}\label{classbtGpu3DGridBroadphase_a93ce349dfc6c9be130f90e49305a9bdd}} 
+virtual void {\bfseries squeeze\+Overlapping\+Pair\+Buff} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a640c838da14e12aa1244b46bd134ee3a}\label{classbtGpu3DGridBroadphase_a640c838da14e12aa1244b46bd134ee3a}} 
+int {\bfseries alloc\+Large\+Handle} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a886be1bf1f2ebb9c18bd7ec714961794}\label{classbtGpu3DGridBroadphase_a886be1bf1f2ebb9c18bd7ec714961794}} 
+void {\bfseries free\+Large\+Handle} (\hyperlink{structbtSimpleBroadphaseProxy}{bt\+Simple\+Broadphase\+Proxy} $\ast$proxy)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a131cfab867b25116adb72d79435be34d}\label{classbtGpu3DGridBroadphase_a131cfab867b25116adb72d79435be34d}} 
+bool {\bfseries is\+Large\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a54623ad8091800695dcb9487da21ff4b}\label{classbtGpu3DGridBroadphase_a54623ad8091800695dcb9487da21ff4b}} 
+bool {\bfseries is\+Large\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a015bbc0dea05a6b9c5256c4cf5b290d0}\label{classbtGpu3DGridBroadphase_a015bbc0dea05a6b9c5256c4cf5b290d0}} 
+void {\bfseries \+\_\+initialize} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, int grid\+SizeX, int grid\+SizeY, int grid\+SizeZ, int max\+Small\+Proxies, int max\+Large\+Proxies, int max\+Pairs\+Per\+Body, int max\+Bodies\+Per\+Cell=8, bt\+Scalar cell\+Factor\+A\+A\+BB=bt\+Scalar(1.\+0f))
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aa12d32dc4ad28e00961834e81719de19}\label{classbtGpu3DGridBroadphase_aa12d32dc4ad28e00961834e81719de19}} 
+void {\bfseries \+\_\+finalize} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad57933c61551ee1fc7f92ce911213228}\label{classbtGpu3DGridBroadphase_ad57933c61551ee1fc7f92ce911213228}} 
+void {\bfseries add\+Pairs\+To\+Cache} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad0bb78dee2cd822d0fa687ea5aa72a21}\label{classbtGpu3DGridBroadphase_ad0bb78dee2cd822d0fa687ea5aa72a21}} 
+void {\bfseries add\+Large2\+Large\+Pairs\+To\+Cache} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a21fa5315f93558139cad53bc493a93f7}\label{classbtGpu3DGridBroadphase_a21fa5315f93558139cad53bc493a93f7}} 
+virtual void {\bfseries set\+Parameters} (\hyperlink{structbt3DGridBroadphaseParams}{bt3\+D\+Grid\+Broadphase\+Params} $\ast$host\+Params)
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a7c616ef21b6e0845a406e947bab665ff}\label{classbtGpu3DGridBroadphase_a7c616ef21b6e0845a406e947bab665ff}} 
+virtual void {\bfseries prepare\+A\+A\+BB} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a3ee79a36e9f18fbbee5b273ae9aeb415}\label{classbtGpu3DGridBroadphase_a3ee79a36e9f18fbbee5b273ae9aeb415}} 
+virtual void {\bfseries calc\+Hash\+A\+A\+BB} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a1f0b596c8235c470bbdd2e01c61fea09}\label{classbtGpu3DGridBroadphase_a1f0b596c8235c470bbdd2e01c61fea09}} 
+virtual void {\bfseries sort\+Hash} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ac0ee2fdb46aecc040660c9580cf05c04}\label{classbtGpu3DGridBroadphase_ac0ee2fdb46aecc040660c9580cf05c04}} 
+virtual void {\bfseries find\+Cell\+Start} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ae7f5fcee7e2c72cb2ef42226e06a9adb}\label{classbtGpu3DGridBroadphase_ae7f5fcee7e2c72cb2ef42226e06a9adb}} 
+virtual void {\bfseries find\+Overlapping\+Pairs} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a9a21025a31bab98e0a46ad76c667a1fc}\label{classbtGpu3DGridBroadphase_a9a21025a31bab98e0a46ad76c667a1fc}} 
+virtual void {\bfseries find\+Pairs\+Large} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a27157dfc55d379c018dda5621f5c67a2}\label{classbtGpu3DGridBroadphase_a27157dfc55d379c018dda5621f5c67a2}} 
+virtual void {\bfseries compute\+Pair\+Cache\+Changes} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aec0893a566324285d7bc4e1e92b0cbcc}\label{classbtGpu3DGridBroadphase_aec0893a566324285d7bc4e1e92b0cbcc}} 
+virtual void {\bfseries scan\+Overlapping\+Pair\+Buff} ()
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a9205774ff03df5908f783ea8e78c5954}\label{classbtGpu3DGridBroadphase_a9205774ff03df5908f783ea8e78c5954}} 
+virtual void {\bfseries squeeze\+Overlapping\+Pair\+Buff} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aeb1271e246db5d20b7db26b4d9eac50a}\label{classbtGpu3DGridBroadphase_aeb1271e246db5d20b7db26b4d9eac50a}} 
+bool {\bfseries m\+\_\+b\+Initialized}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a5510bbd924eb77bb0c5e2026392e593d}\label{classbtGpu3DGridBroadphase_a5510bbd924eb77bb0c5e2026392e593d}} 
+unsigned int {\bfseries m\+\_\+num\+Bodies}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aa9624333ee11a51e3ebc2e377476aca4}\label{classbtGpu3DGridBroadphase_aa9624333ee11a51e3ebc2e377476aca4}} 
+unsigned int {\bfseries m\+\_\+num\+Cells}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aa3295519566a7e5f37996e002dcaf256}\label{classbtGpu3DGridBroadphase_aa3295519566a7e5f37996e002dcaf256}} 
+unsigned int {\bfseries m\+\_\+max\+Pairs\+Per\+Body}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a8280465b1b126d5a90434d0b4ad85205}\label{classbtGpu3DGridBroadphase_a8280465b1b126d5a90434d0b4ad85205}} 
+bt\+Scalar {\bfseries m\+\_\+cell\+Factor\+A\+A\+BB}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a0bae4c8ca9d656a352f854547ede1d38}\label{classbtGpu3DGridBroadphase_a0bae4c8ca9d656a352f854547ede1d38}} 
+unsigned int {\bfseries m\+\_\+max\+Bodies\+Per\+Cell}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_acbca93bc9f25aeefea58ab7225fb0bb6}\label{classbtGpu3DGridBroadphase_acbca93bc9f25aeefea58ab7225fb0bb6}} 
+\hyperlink{structbt3DGridBroadphaseParams}{bt3\+D\+Grid\+Broadphase\+Params} {\bfseries m\+\_\+params}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a0c74f682574afbfbff7bb90d7b0f74d4}\label{classbtGpu3DGridBroadphase_a0c74f682574afbfbff7bb90d7b0f74d4}} 
+bt\+Scalar {\bfseries m\+\_\+max\+Radius}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a80cff58bb3afe0e416f0e021a9aaea3f}\label{classbtGpu3DGridBroadphase_a80cff58bb3afe0e416f0e021a9aaea3f}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Bodies\+Hash}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_addad4aae4bac08db1906debcf3d9af00}\label{classbtGpu3DGridBroadphase_addad4aae4bac08db1906debcf3d9af00}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Cell\+Start}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_af659b4617c720a1b72c117d347add6e4}\label{classbtGpu3DGridBroadphase_af659b4617c720a1b72c117d347add6e4}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Pair\+Buff\+Start\+Curr}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad821b4be5000a908d52640dc2befc61a}\label{classbtGpu3DGridBroadphase_ad821b4be5000a908d52640dc2befc61a}} 
+\hyperlink{structbt3DGrid3F1U}{bt3\+D\+Grid3\+F1U} $\ast$ {\bfseries m\+\_\+h\+A\+A\+BB}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ac394c43fab600083e3107d8811566dfd}\label{classbtGpu3DGridBroadphase_ac394c43fab600083e3107d8811566dfd}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Pair\+Buff}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ab57a60f44add25dc988b33d1e3b22f0a}\label{classbtGpu3DGridBroadphase_ab57a60f44add25dc988b33d1e3b22f0a}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Pair\+Scan}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a371e7aac9ebdf2e69c81ef75d617ea4e}\label{classbtGpu3DGridBroadphase_a371e7aac9ebdf2e69c81ef75d617ea4e}} 
+unsigned int $\ast$ {\bfseries m\+\_\+h\+Pair\+Out}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a8debe0b06a62576fe32af4144c30bd3d}\label{classbtGpu3DGridBroadphase_a8debe0b06a62576fe32af4144c30bd3d}} 
+int {\bfseries m\+\_\+num\+Large\+Handles}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aba04fb2f6fc1f413dee7a6c15d50fa44}\label{classbtGpu3DGridBroadphase_aba04fb2f6fc1f413dee7a6c15d50fa44}} 
+int {\bfseries m\+\_\+max\+Large\+Handles}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a9a5c70470a9547898fe4b276346cbf04}\label{classbtGpu3DGridBroadphase_a9a5c70470a9547898fe4b276346cbf04}} 
+int {\bfseries m\+\_\+\+Last\+Large\+Handle\+Index}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_aa84cee4691db101ed1bae143967782e1}\label{classbtGpu3DGridBroadphase_aa84cee4691db101ed1bae143967782e1}} 
+\hyperlink{structbtSimpleBroadphaseProxy}{bt\+Simple\+Broadphase\+Proxy} $\ast$ {\bfseries m\+\_\+p\+Large\+Handles}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a659b347a19cf135d26a14c4b60c454e7}\label{classbtGpu3DGridBroadphase_a659b347a19cf135d26a14c4b60c454e7}} 
+void $\ast$ {\bfseries m\+\_\+p\+Large\+Handles\+Raw\+Ptr}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a03a9e6ea64a4fefa3b1f15a4059b33d9}\label{classbtGpu3DGridBroadphase_a03a9e6ea64a4fefa3b1f15a4059b33d9}} 
+int {\bfseries m\+\_\+first\+Free\+Large\+Handle}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a8153417e6de7d4125ad3bee3dfa8f6ae}\label{classbtGpu3DGridBroadphase_a8153417e6de7d4125ad3bee3dfa8f6ae}} 
+unsigned int {\bfseries m\+\_\+num\+Pairs\+Added}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a77713805088e9f554f1188ef4576bf5c}\label{classbtGpu3DGridBroadphase_a77713805088e9f554f1188ef4576bf5c}} 
+unsigned int {\bfseries m\+\_\+num\+Pairs\+Removed}
+\item 
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a2ef1d503d53d84ae625b3fd9268473af}\label{classbtGpu3DGridBroadphase_a2ef1d503d53d84ae625b3fd9268473af}} 
+unsigned int {\bfseries m\+\_\+num\+Overflows}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtGpu3DGridBroadphase}{bt\+Gpu3\+D\+Grid\+Broadphase} uses G\+P\+U-\/style code compiled for C\+PU to compute overlapping pairs. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad25b335c5cf7be1f4eee024ff91e5635}\label{classbtGpu3DGridBroadphase_ad25b335c5cf7be1f4eee024ff91e5635}} 
+\index{bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}!calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}}
+\index{calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}!bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}}
+\subsubsection{\texorpdfstring{calculate\+Overlapping\+Pairs()}{calculateOverlappingPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Gpu3\+D\+Grid\+Broadphase\+::calculate\+Overlapping\+Pairs (\begin{DoxyParamCaption}\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb 
+
+if you don\textquotesingle{}t like to skip the invalid pairs in the array, execute following code\+: 
+
+Reimplemented from \hyperlink{classbtSimpleBroadphase_ac899d483e888fa132677125c88991de8}{bt\+Simple\+Broadphase}.
+
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ac59344854cc1f33ded7cdedd72c7a454}\label{classbtGpu3DGridBroadphase_ac59344854cc1f33ded7cdedd72c7a454}} 
+\index{bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}!calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}}
+\index{calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}!bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}}
+\subsubsection{\texorpdfstring{calculate\+Overlapping\+Pairs()}{calculateOverlappingPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+Gpu3\+D\+Grid\+Broadphase\+::calculate\+Overlapping\+Pairs (\begin{DoxyParamCaption}\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb 
+
+if you don\textquotesingle{}t like to skip the invalid pairs in the array, execute following code\+: 
+
+Reimplemented from \hyperlink{classbtSimpleBroadphase_ac899d483e888fa132677125c88991de8}{bt\+Simple\+Broadphase}.
+
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_ad381f8a0aca01a7147b7a3eafad9ac5a}\label{classbtGpu3DGridBroadphase_ad381f8a0aca01a7147b7a3eafad9ac5a}} 
+\index{bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}!create\+Proxy@{create\+Proxy}}
+\index{create\+Proxy@{create\+Proxy}!bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}}
+\subsubsection{\texorpdfstring{create\+Proxy()}{createProxy()}}
+{\footnotesize\ttfamily bt\+Broadphase\+Proxy $\ast$ bt\+Gpu3\+D\+Grid\+Broadphase\+::create\+Proxy (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{aabb\+Min,  }\item[{const bt\+Vector3 \&}]{aabb\+Max,  }\item[{int}]{shape\+Type,  }\item[{void $\ast$}]{user\+Ptr,  }\item[{short int}]{collision\+Filter\+Group,  }\item[{short int}]{collision\+Filter\+Mask,  }\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher,  }\item[{void $\ast$}]{multi\+Sap\+Proxy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+you have to increase the cell size, so \textquotesingle{}large\textquotesingle{} proxies become \textquotesingle{}small\textquotesingle{} proxies (fitting a cell) 
+
+Reimplemented from \hyperlink{classbtSimpleBroadphase}{bt\+Simple\+Broadphase}.
+
+\mbox{\Hypertarget{classbtGpu3DGridBroadphase_a131cfab867b25116adb72d79435be34d}\label{classbtGpu3DGridBroadphase_a131cfab867b25116adb72d79435be34d}} 
+\index{bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}!is\+Large\+Proxy@{is\+Large\+Proxy}}
+\index{is\+Large\+Proxy@{is\+Large\+Proxy}!bt\+Gpu3\+D\+Grid\+Broadphase@{bt\+Gpu3\+D\+Grid\+Broadphase}}
+\subsubsection{\texorpdfstring{is\+Large\+Proxy()}{isLargeProxy()}}
+{\footnotesize\ttfamily bool bt\+Gpu3\+D\+Grid\+Broadphase\+::is\+Large\+Proxy (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{aabb\+Min,  }\item[{const bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+use the bounding sphere radius of this bounding box, to include rotation 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/bt\+Gpu3\+D\+Grid\+Broadphase.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/bt\+Gpu3\+D\+Grid\+Broadphase.\+cpp\end{DoxyCompactItemize}

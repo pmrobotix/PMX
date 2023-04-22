@@ -1,0 +1,223 @@
+\hypertarget{classb2DynamicTree}{}\section{b2\+Dynamic\+Tree Class Reference}
+\label{classb2DynamicTree}\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+
+
+{\ttfamily \#include $<$b2\+Dynamic\+Tree.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}\label{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}} 
+\hyperlink{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}{b2\+Dynamic\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Constructing the tree initializes the node pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}\label{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}} 
+\hyperlink{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}{$\sim$b2\+Dynamic\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Destroy the tree, freeing the node pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}\label{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}} 
+int32 \hyperlink{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}{Create\+Proxy} (const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em Create a proxy. Provide a tight fitting \hyperlink{classAABB}{A\+A\+BB} and a user\+Data pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}\label{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}} 
+void \hyperlink{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}{Destroy\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Destroy a proxy. This asserts if the id is invalid. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}{Move\+Proxy} (int32 proxy\+Id, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb1, const \hyperlink{structb2Vec2}{b2\+Vec2} \&displacement)
+\item 
+void $\ast$ \hyperlink{classb2DynamicTree_aa8399f9440707780f267696098e8b920}{Get\+User\+Data} (int32 proxy\+Id) const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a655b9ddff43e4e0a34a372eddc03ecb9}\label{classb2DynamicTree_a655b9ddff43e4e0a34a372eddc03ecb9}} 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2DynamicTree_a655b9ddff43e4e0a34a372eddc03ecb9}{Get\+Fat\+A\+A\+BB} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the fat \hyperlink{classAABB}{A\+A\+BB} for a proxy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}{Query} (T $\ast$callback, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}{Ray\+Cast} (T $\ast$callback, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input) const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}\label{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}} 
+void \hyperlink{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}{Validate} () const
+\begin{DoxyCompactList}\small\item\em Validate this tree. For testing. \end{DoxyCompactList}\item 
+int32 \hyperlink{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}{Get\+Height} () const
+\item 
+int32 \hyperlink{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}{Get\+Max\+Balance} () const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}\label{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}} 
+float32 \hyperlink{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}{Get\+Area\+Ratio} () const
+\begin{DoxyCompactList}\small\item\em Get the ratio of the sum of the node areas to the root area. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}\label{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}} 
+void \hyperlink{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}{Rebuild\+Bottom\+Up} ()
+\begin{DoxyCompactList}\small\item\em Build an optimal tree. Very expensive. For testing. \end{DoxyCompactList}\item 
+void \hyperlink{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}{Shift\+Origin} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&new\+Origin)
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}\label{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}} 
+\hyperlink{classb2DynamicTree_a8af64cf6a1566fa4c5b5c9683bd937d9}{b2\+Dynamic\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Constructing the tree initializes the node pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}\label{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}} 
+\hyperlink{classb2DynamicTree_a9060565fc63b4dd87d9560775c076786}{$\sim$b2\+Dynamic\+Tree} ()
+\begin{DoxyCompactList}\small\item\em Destroy the tree, freeing the node pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}\label{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}} 
+int32 \hyperlink{classb2DynamicTree_ae44676f12977dada46037da47fc7ffbf}{Create\+Proxy} (const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em Create a proxy. Provide a tight fitting \hyperlink{classAABB}{A\+A\+BB} and a user\+Data pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}\label{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}} 
+void \hyperlink{classb2DynamicTree_a62aa451e7d7fe029818dd05f76ea9cdc}{Destroy\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Destroy a proxy. This asserts if the id is invalid. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}{Move\+Proxy} (int32 proxy\+Id, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb1, const \hyperlink{structb2Vec2}{b2\+Vec2} \&displacement)
+\item 
+void $\ast$ \hyperlink{classb2DynamicTree_ac36ab1d116884966f279b8a8fb89ea19}{Get\+User\+Data} (int32 proxy\+Id) const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a5d329e8f63a067d13f0263bf1bcd7a56}\label{classb2DynamicTree_a5d329e8f63a067d13f0263bf1bcd7a56}} 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2DynamicTree_a5d329e8f63a067d13f0263bf1bcd7a56}{Get\+Fat\+A\+A\+BB} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the fat \hyperlink{classAABB}{A\+A\+BB} for a proxy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}{Query} (T $\ast$callback, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}{Ray\+Cast} (T $\ast$callback, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input) const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}\label{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}} 
+void \hyperlink{classb2DynamicTree_ae9b989f0c04e38f9c940623d4e1728b9}{Validate} () const
+\begin{DoxyCompactList}\small\item\em Validate this tree. For testing. \end{DoxyCompactList}\item 
+int32 \hyperlink{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}{Get\+Height} () const
+\item 
+int32 \hyperlink{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}{Get\+Max\+Balance} () const
+\item 
+\mbox{\Hypertarget{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}\label{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}} 
+float32 \hyperlink{classb2DynamicTree_a87da9819c4f190faec38f7fe4608caae}{Get\+Area\+Ratio} () const
+\begin{DoxyCompactList}\small\item\em Get the ratio of the sum of the node areas to the root area. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}\label{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}} 
+void \hyperlink{classb2DynamicTree_abd146017cfec1cf5ea7b87331f30a3ff}{Rebuild\+Bottom\+Up} ()
+\begin{DoxyCompactList}\small\item\em Build an optimal tree. Very expensive. For testing. \end{DoxyCompactList}\item 
+void \hyperlink{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}{Shift\+Origin} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&new\+Origin)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dynamic \hyperlink{classAABB}{A\+A\+BB} tree broad-\/phase, inspired by Nathanael Presson\textquotesingle{}s \hyperlink{structbtDbvt}{bt\+Dbvt}. A dynamic tree arranges data in a binary tree to accelerate queries such as volume queries and ray casts. Leafs are proxies with an \hyperlink{classAABB}{A\+A\+BB}. In the tree we expand the proxy \hyperlink{classAABB}{A\+A\+BB} by b2\+\_\+fat\+A\+A\+B\+B\+Factor so that the proxy \hyperlink{classAABB}{A\+A\+BB} is bigger than the client object. This allows the client object to move by small amounts without triggering a tree update.
+
+Nodes are pooled and relocatable, so we use node indices rather than pointers. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}\label{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int32 b2\+Dynamic\+Tree\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Compute the height of the binary tree in O(\+N) time. Should not be called often. \mbox{\Hypertarget{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}\label{classb2DynamicTree_ae3c7dc771d596f1f95fd3a3d7f2f3e97}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int32 b2\+Dynamic\+Tree\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Compute the height of the binary tree in O(\+N) time. Should not be called often. \mbox{\Hypertarget{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}\label{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+Max\+Balance@{Get\+Max\+Balance}}
+\index{Get\+Max\+Balance@{Get\+Max\+Balance}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Max\+Balance()}{GetMaxBalance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int32 b2\+Dynamic\+Tree\+::\+Get\+Max\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the maximum balance of an node in the tree. The balance is the difference in height of the two children of a node. \mbox{\Hypertarget{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}\label{classb2DynamicTree_a3feab170229e0acd17f6a4ad3fca406e}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+Max\+Balance@{Get\+Max\+Balance}}
+\index{Get\+Max\+Balance@{Get\+Max\+Balance}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Max\+Balance()}{GetMaxBalance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int32 b2\+Dynamic\+Tree\+::\+Get\+Max\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the maximum balance of an node in the tree. The balance is the difference in height of the two children of a node. \mbox{\Hypertarget{classb2DynamicTree_ac36ab1d116884966f279b8a8fb89ea19}\label{classb2DynamicTree_ac36ab1d116884966f279b8a8fb89ea19}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+User\+Data()}{GetUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ b2\+Dynamic\+Tree\+::\+Get\+User\+Data (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id }\end{DoxyParamCaption}) const}
+
+Get proxy user data. \begin{DoxyReturn}{Returns}
+the proxy user data or 0 if the id is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2DynamicTree_aa8399f9440707780f267696098e8b920}\label{classb2DynamicTree_aa8399f9440707780f267696098e8b920}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Get\+User\+Data()}{GetUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void $\ast$ b2\+Dynamic\+Tree\+::\+Get\+User\+Data (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get proxy user data. \begin{DoxyReturn}{Returns}
+the proxy user data or 0 if the id is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}\label{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Move\+Proxy@{Move\+Proxy}}
+\index{Move\+Proxy@{Move\+Proxy}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Move\+Proxy()}{MoveProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Dynamic\+Tree\+::\+Move\+Proxy (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb1,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{displacement }\end{DoxyParamCaption})}
+
+Move a proxy with a swepted \hyperlink{classAABB}{A\+A\+BB}. If the proxy has moved outside of its fattened \hyperlink{classAABB}{A\+A\+BB}, then the proxy is removed from the tree and re-\/inserted. Otherwise the function returns immediately. \begin{DoxyReturn}{Returns}
+true if the proxy was re-\/inserted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}\label{classb2DynamicTree_a7748252811f3c575015931399cbe4daa}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Move\+Proxy@{Move\+Proxy}}
+\index{Move\+Proxy@{Move\+Proxy}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Move\+Proxy()}{MoveProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Dynamic\+Tree\+::\+Move\+Proxy (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb1,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{displacement }\end{DoxyParamCaption})}
+
+Move a proxy with a swepted \hyperlink{classAABB}{A\+A\+BB}. If the proxy has moved outside of its fattened \hyperlink{classAABB}{A\+A\+BB}, then the proxy is removed from the tree and re-\/inserted. Otherwise the function returns immediately. \begin{DoxyReturn}{Returns}
+true if the proxy was re-\/inserted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}\label{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Query@{Query}}
+\index{Query@{Query}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Dynamic\+Tree\+::\+Query (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const}
+
+Query an \hyperlink{classAABB}{A\+A\+BB} for overlapping proxies. The callback class is called for each proxy that overlaps the supplied \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}\label{classb2DynamicTree_a324df3eb65dfc22d3dcdca387737b193}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Query@{Query}}
+\index{Query@{Query}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Dynamic\+Tree\+::\+Query (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query an \hyperlink{classAABB}{A\+A\+BB} for overlapping proxies. The callback class is called for each proxy that overlaps the supplied \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}\label{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Dynamic\+Tree\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input }\end{DoxyParamCaption}) const}
+
+Ray-\/cast against the proxies in the tree. This relies on the callback to perform a exact ray-\/cast in the case were the proxy contains a shape. The callback also performs the any collision filtering. This has performance roughly equal to k $\ast$ log(n), where k is the number of collisions and n is the number of proxies in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the ray-\/cast input data. The ray extends from p1 to p1 + max\+Fraction $\ast$ (p2 -\/ p1). \\
+\hline
+{\em callback} & a callback class that is called for each proxy that is hit by the ray. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}\label{classb2DynamicTree_aebd2dc6ee462e0cd0763a5f472243a13}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Dynamic\+Tree\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Ray-\/cast against the proxies in the tree. This relies on the callback to perform a exact ray-\/cast in the case were the proxy contains a shape. The callback also performs the any collision filtering. This has performance roughly equal to k $\ast$ log(n), where k is the number of collisions and n is the number of proxies in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the ray-\/cast input data. The ray extends from p1 to p1 + max\+Fraction $\ast$ (p2 -\/ p1). \\
+\hline
+{\em callback} & a callback class that is called for each proxy that is hit by the ray. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}\label{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Shift\+Origin@{Shift\+Origin}}
+\index{Shift\+Origin@{Shift\+Origin}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Shift\+Origin()}{ShiftOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Dynamic\+Tree\+::\+Shift\+Origin (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{new\+Origin }\end{DoxyParamCaption})}
+
+Shift the world origin. Useful for large worlds. The shift formula is\+: position -\/= new\+Origin 
+\begin{DoxyParams}{Parameters}
+{\em new\+Origin} & the new origin with respect to the old origin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}\label{classb2DynamicTree_af37ddfed6a5da97d5a78b09918d19ceb}} 
+\index{b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}!Shift\+Origin@{Shift\+Origin}}
+\index{Shift\+Origin@{Shift\+Origin}!b2\+Dynamic\+Tree@{b2\+Dynamic\+Tree}}
+\subsubsection{\texorpdfstring{Shift\+Origin()}{ShiftOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Dynamic\+Tree\+::\+Shift\+Origin (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{new\+Origin }\end{DoxyParamCaption})}
+
+Shift the world origin. Useful for large worlds. The shift formula is\+: position -\/= new\+Origin 
+\begin{DoxyParams}{Parameters}
+{\em new\+Origin} & the new origin with respect to the old origin \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/b2\+Dynamic\+Tree.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/b2\+Dynamic\+Tree.\+cpp\end{DoxyCompactItemize}

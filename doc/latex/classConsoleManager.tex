@@ -1,0 +1,89 @@
+\hypertarget{classConsoleManager}{}\section{Console\+Manager Class Reference}
+\label{classConsoleManager}\index{Console\+Manager@{Console\+Manager}}
+
+
+Classe de gestion de l\textquotesingle{}ensemble des tests de fonctionnement du robot.  
+
+
+
+
+{\ttfamily \#include $<$Console\+Manager.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConsoleManager_a1b4322a881fa74d046e807e288d1a098}\label{classConsoleManager_a1b4322a881fa74d046e807e288d1a098}} 
+typedef std\+::vector$<$ \hyperlink{classFunctionalTest}{Functional\+Test} $\ast$ $>$ \hyperlink{classConsoleManager_a1b4322a881fa74d046e807e288d1a098}{data\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type associé aux stockages des tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConsoleManager_aa9f719ce8b6bb8c2efda952e49f534d6}\label{classConsoleManager_aa9f719ce8b6bb8c2efda952e49f534d6}} 
+\hyperlink{classConsoleManager_aa9f719ce8b6bb8c2efda952e49f534d6}{Console\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConsoleManager_a483b3fa35a693435ee115a0ebe04536d}\label{classConsoleManager_a483b3fa35a693435ee115a0ebe04536d}} 
+virtual \hyperlink{classConsoleManager_a483b3fa35a693435ee115a0ebe04536d}{$\sim$ Console\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classConsoleManager_aff7b3a0f19d93f25629cae84791a7084}{add} (\hyperlink{classFunctionalTest}{Functional\+Test} $\ast$test)
+\begin{DoxyCompactList}\small\item\em Ajoute un test au gestionnaire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConsoleManager_a21be37acc9749db68a3da63e703035c1}\label{classConsoleManager_a21be37acc9749db68a3da63e703035c1}} 
+void \hyperlink{classConsoleManager_a21be37acc9749db68a3da63e703035c1}{display\+Menu\+Functional\+Tests\+And\+Run} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Affiche un menu de sélection des tests. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConsoleManager_af43803201ea872cbf09223673662afeb}\label{classConsoleManager_af43803201ea872cbf09223673662afeb}} 
+std\+::string $\ast$ {\bfseries display\+Available\+Tests} (std\+::string color=\char`\"{}\textbackslash{}3\mbox{[}0m\char`\"{}, int selected=-\/1)
+\item 
+\mbox{\Hypertarget{classConsoleManager_adf3d9ef10328d6854c13ad8130fcbee2}\label{classConsoleManager_adf3d9ef10328d6854c13ad8130fcbee2}} 
+std\+::string {\bfseries display\+Menu\+First\+Argu} ()
+\item 
+\mbox{\Hypertarget{classConsoleManager_aeddef217e965ace2a8a1cd7bab45f2bf}\label{classConsoleManager_aeddef217e965ace2a8a1cd7bab45f2bf}} 
+void \hyperlink{classConsoleManager_aeddef217e965ace2a8a1cd7bab45f2bf}{run} (uint n\+Test, int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Détermine un test a lancer en fonction des paramètres de la ligne de commande. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classConsoleManager_a417ef6797adc469a5e5a609519a0f75e}{execute\+Test} (uint n\+Test, int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Execute un test en particulier en fonction de son identifiant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de gestion de l\textquotesingle{}ensemble des tests de fonctionnement du robot. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classConsoleManager_aff7b3a0f19d93f25629cae84791a7084}\label{classConsoleManager_aff7b3a0f19d93f25629cae84791a7084}} 
+\index{Console\+Manager@{Console\+Manager}!add@{add}}
+\index{add@{add}!Console\+Manager@{Console\+Manager}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Console\+Manager\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{classFunctionalTest}{Functional\+Test} $\ast$}]{test }\end{DoxyParamCaption})}
+
+
+
+Ajoute un test au gestionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test} & Le nouveau test associé au gestionnaire. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConsoleManager_a417ef6797adc469a5e5a609519a0f75e}\label{classConsoleManager_a417ef6797adc469a5e5a609519a0f75e}} 
+\index{Console\+Manager@{Console\+Manager}!execute\+Test@{execute\+Test}}
+\index{execute\+Test@{execute\+Test}!Console\+Manager@{Console\+Manager}}
+\subsubsection{\texorpdfstring{execute\+Test()}{executeTest()}}
+{\footnotesize\ttfamily void Console\+Manager\+::execute\+Test (\begin{DoxyParamCaption}\item[{uint}]{n\+Test,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Execute un test en particulier en fonction de son identifiant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Test} & Numéro de test à exécuter (à partir de 1). \\
+\hline
+{\em args} & Tableau d\textquotesingle{}argument. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\hyperlink{ConsoleManager_8hpp}{Console\+Manager.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\hyperlink{ConsoleManager_8cpp}{Console\+Manager.\+cpp}\end{DoxyCompactItemize}

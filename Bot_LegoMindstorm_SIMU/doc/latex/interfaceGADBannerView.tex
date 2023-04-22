@@ -1,0 +1,177 @@
+\hypertarget{interfaceGADBannerView}{}\section{G\+A\+D\+Banner\+View Class Reference}
+\label{interfaceGADBannerView}\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+
+
+{\ttfamily \#import $<$G\+A\+D\+Banner\+View.\+h$>$}
+
+
+
+Inheritance diagram for G\+A\+D\+Banner\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{interfaceGADBannerView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+A\+D\+Banner\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{interfaceGADBannerView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interfaceGADBannerView_a567c96091c9e7f1e3c1a86c3c85f03fa}{init\+With\+Ad\+Size\+:origin\+:}
+\item 
+(id) -\/ \hyperlink{interfaceGADBannerView_a5abf339e966c5be6ca60fb87328dab39}{init\+With\+Ad\+Size\+:}
+\item 
+(void) -\/ \hyperlink{interfaceGADBannerView_aae670f6f24b63f844440305f9d22b420}{load\+Request\+:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interfaceGADBannerView_aef7fb22ba623052ded92a496718b4a37}{ad\+Unit\+ID}
+\item 
+U\+I\+View\+Controller $\ast$ \hyperlink{interfaceGADBannerView_a6ee3d304435bd03ab011c4e08359563c}{root\+View\+Controller}
+\item 
+\hyperlink{structGADAdSize}{G\+A\+D\+Ad\+Size} \hyperlink{interfaceGADBannerView_afb0c778e6fa6584f63b7c1d06a4f96fa}{ad\+Size}
+\item 
+N\+S\+Object$<$ \hyperlink{protocolGADBannerViewDelegate-p}{G\+A\+D\+Banner\+View\+Delegate} $>$ $\ast$ \hyperlink{interfaceGADBannerView_a7e52a5109dc6d9936303c73a74ce4e5a}{delegate}
+\item 
+id$<$ \hyperlink{protocolGADInAppPurchaseDelegate-p}{G\+A\+D\+In\+App\+Purchase\+Delegate} $>$ \hyperlink{interfaceGADBannerView_a3570b23f24955977ad690b01bdb3279b}{in\+App\+Purchase\+Delegate}
+\item 
+B\+O\+OL \hyperlink{interfaceGADBannerView_a3f3b070d051daa56c1d60709ee5eeaab}{has\+Auto\+Refreshed}
+\item 
+U\+I\+View $\ast$ \hyperlink{interfaceGADBannerView_a239f588da48d1fe9e12eeff079ab6700}{mediated\+Ad\+View}
+\item 
+N\+S\+String $\ast$ \hyperlink{interfaceGADBannerView_ac3832b1fd7640885f26c780cd1f8c977}{ad\+Network\+Class\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The view that displays banner ads. A minimum implementation to get an ad from within a U\+I\+View\+Controller class is\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Create and setup the ad view, specifying the size and origin at \{0, 0\}.}
+\hyperlink{interfaceGADBannerView}{GADBannerView} *adView = [[\hyperlink{interfaceGADBannerView}{GADBannerView} alloc] initWithAdSize:kGADAdSizeBanner];
+adView.\hyperlink{interfaceGADBannerView_a6ee3d304435bd03ab011c4e08359563c}{rootViewController} = \textcolor{keyword}{self};
+adView.\hyperlink{interfaceGADBannerView_aef7fb22ba623052ded92a496718b4a37}{adUnitID} = \textcolor{stringliteral}{@"ID created when registering my app"};
+
+\textcolor{comment}{// Place the ad view onto the screen.}
+[\textcolor{keyword}{self}.view addSubview:adView];
+[adView release];
+
+\textcolor{comment}{// Request an ad without any additional targeting information.}
+[adView loadRequest:nil];
+\end{DoxyCode}
+ 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceGADBannerView_a5abf339e966c5be6ca60fb87328dab39}\label{interfaceGADBannerView_a5abf339e966c5be6ca60fb87328dab39}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!init\+With\+Ad\+Size\+:@{init\+With\+Ad\+Size\+:}}
+\index{init\+With\+Ad\+Size\+:@{init\+With\+Ad\+Size\+:}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{init\+With\+Ad\+Size\+:()}{initWithAdSize:()}}
+{\footnotesize\ttfamily -\/ (id) init\+With\+Ad\+Size\+: \begin{DoxyParamCaption}\item[{(\hyperlink{structGADAdSize}{G\+A\+D\+Ad\+Size})}]{size }\end{DoxyParamCaption}}
+
+Initializes a \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} and sets it to the specified size, and specifies its placement at the top left of its superview. If $\vert$size$\vert$ is invalid, an instance of \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} is not created and nil is returned instead. \mbox{\Hypertarget{interfaceGADBannerView_a567c96091c9e7f1e3c1a86c3c85f03fa}\label{interfaceGADBannerView_a567c96091c9e7f1e3c1a86c3c85f03fa}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!init\+With\+Ad\+Size\+:origin\+:@{init\+With\+Ad\+Size\+:origin\+:}}
+\index{init\+With\+Ad\+Size\+:origin\+:@{init\+With\+Ad\+Size\+:origin\+:}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{init\+With\+Ad\+Size\+:origin\+:()}{initWithAdSize:origin:()}}
+{\footnotesize\ttfamily -\/ (id) \hyperlink{interfaceGADBannerView_a5abf339e966c5be6ca60fb87328dab39}{init\+With\+Ad\+Size\+:} \begin{DoxyParamCaption}\item[{(\hyperlink{structGADAdSize}{G\+A\+D\+Ad\+Size})}]{size }\item[{origin:(C\+G\+Point)}]{origin }\end{DoxyParamCaption}}
+
+Initializes a \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} and sets it to the specified size, and specifies its placement within its superview bounds. If $\vert$size$\vert$ is invalid, an instance of \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} is not created and nil is returned instead. \mbox{\Hypertarget{interfaceGADBannerView_aae670f6f24b63f844440305f9d22b420}\label{interfaceGADBannerView_aae670f6f24b63f844440305f9d22b420}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!load\+Request\+:@{load\+Request\+:}}
+\index{load\+Request\+:@{load\+Request\+:}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{load\+Request\+:()}{loadRequest:()}}
+{\footnotesize\ttfamily -\/ (void) load\+Request\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADRequest}{G\+A\+D\+Request} $\ast$)}]{request }\end{DoxyParamCaption}}
+
+Makes an ad request. Additional targeting options can be supplied with a request object. Refresh the ad by calling this method again. 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{interfaceGADBannerView_ac3832b1fd7640885f26c780cd1f8c977}\label{interfaceGADBannerView_ac3832b1fd7640885f26c780cd1f8c977}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!ad\+Network\+Class\+Name@{ad\+Network\+Class\+Name}}
+\index{ad\+Network\+Class\+Name@{ad\+Network\+Class\+Name}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{ad\+Network\+Class\+Name}{adNetworkClassName}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) ad\+Network\+Class\+Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+The ad network class name that fetched the current ad. Returns nil while the latest ad request is in progress or if the latest ad request failed. For both standard and mediated Google Ad\+Mob ads, this method returns "G\+A\+D\+M\+Adapter\+Google\+Ad\+Mob\+Ads\char`\"{}. For ads fetched via mediation custom
+events, this method returns @\char`\"{}G\+A\+D\+M\+Adapter\+Custom\+Events". \mbox{\Hypertarget{interfaceGADBannerView_afb0c778e6fa6584f63b7c1d06a4f96fa}\label{interfaceGADBannerView_afb0c778e6fa6584f63b7c1d06a4f96fa}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!ad\+Size@{ad\+Size}}
+\index{ad\+Size@{ad\+Size}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{ad\+Size}{adSize}}
+{\footnotesize\ttfamily -\/ (\hyperlink{structGADAdSize}{G\+A\+D\+Ad\+Size}) ad\+Size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+Required to set this banner view to a proper size. Never create your own \hyperlink{structGADAdSize}{G\+A\+D\+Ad\+Size} directly. Use one of the predefined standard ad sizes (such as k\+G\+A\+D\+Ad\+Size\+Banner), or create one using the G\+A\+D\+Ad\+Size\+From\+C\+G\+Size method. If not using mediation, then changing the ad\+Size after an ad has been shown will cause a new request (for an ad of the new size) to be sent. If using mediation, then a new request may not be sent. \mbox{\Hypertarget{interfaceGADBannerView_aef7fb22ba623052ded92a496718b4a37}\label{interfaceGADBannerView_aef7fb22ba623052ded92a496718b4a37}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!ad\+Unit\+ID@{ad\+Unit\+ID}}
+\index{ad\+Unit\+ID@{ad\+Unit\+ID}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{ad\+Unit\+ID}{adUnitID}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) ad\+Unit\+ID\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}
+
+Required value created in the Ad\+Sense website. Create a new ad unit for every unique placement of an ad in your application. Set this to the ID assigned for this placement. Ad units are important for targeting and stats. Example values for different request types\+: \begin{DoxyVerb}AdMob: a0123456789ABCD
+  DFP: /0123/ca-pub-0123456789012345/my-ad-identifier
+\end{DoxyVerb}
+ Ad\+Sense\+: ca-\/mb-\/app-\/pub-\/0123456789012345/my-\/ad-\/identifier Mediation\+: A\+B123456789\+A\+B\+C\+DE \mbox{\Hypertarget{interfaceGADBannerView_a7e52a5109dc6d9936303c73a74ce4e5a}\label{interfaceGADBannerView_a7e52a5109dc6d9936303c73a74ce4e5a}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!delegate@{delegate}}
+\index{delegate@{delegate}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{delegate}{delegate}}
+{\footnotesize\ttfamily -\/ (N\+S\+Object$<$\hyperlink{protocolGADBannerViewDelegate-p}{G\+A\+D\+Banner\+View\+Delegate}$>$$\ast$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+Optional delegate object that receives state change notifications from this \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View}. Typically this is a U\+I\+View\+Controller, however, if you are unfamiliar with the delegate pattern it is recommended you subclass this \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} and make it the delegate. That avoids any chance of your application crashing if you forget to nil out the delegate. For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{@interface }MyAdView : \hyperlink{interfaceGADBannerView}{GADBannerView} <\hyperlink{protocolGADBannerViewDelegate-p}{GADBannerViewDelegate}>
+\textcolor{keyword}{@end}
+
+\textcolor{keyword}{@implementation }MyAdView
+- (id)initWithFrame:(CGRect)frame \{
+  \textcolor{keyword}{self} = [\textcolor{keyword}{super} initWithFrame:frame];
+  \textcolor{keywordflow}{if} (\textcolor{keyword}{self}) \{
+    \textcolor{keyword}{self}.delegate = \textcolor{keyword}{self};
+  \}
+  \textcolor{keywordflow}{return} \textcolor{keyword}{self};
+\}
+
+- (void)dealloc \{
+  \textcolor{keyword}{self}.delegate = nil;
+  [\textcolor{keyword}{super} dealloc];
+\}
+
+\textcolor{keyword}{@end}
+\end{DoxyCode}
+ \mbox{\Hypertarget{interfaceGADBannerView_a3f3b070d051daa56c1d60709ee5eeaab}\label{interfaceGADBannerView_a3f3b070d051daa56c1d60709ee5eeaab}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!has\+Auto\+Refreshed@{has\+Auto\+Refreshed}}
+\index{has\+Auto\+Refreshed@{has\+Auto\+Refreshed}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{has\+Auto\+Refreshed}{hasAutoRefreshed}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) has\+Auto\+Refreshed\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+Indicates if the currently displayed ad (or most recent failure) was a result of auto refreshing as specified on server. This property is set to NO after each load\+Request\+: method. \mbox{\Hypertarget{interfaceGADBannerView_a3570b23f24955977ad690b01bdb3279b}\label{interfaceGADBannerView_a3570b23f24955977ad690b01bdb3279b}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!in\+App\+Purchase\+Delegate@{in\+App\+Purchase\+Delegate}}
+\index{in\+App\+Purchase\+Delegate@{in\+App\+Purchase\+Delegate}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{in\+App\+Purchase\+Delegate}{inAppPurchaseDelegate}}
+{\footnotesize\ttfamily -\/ (id$<$\hyperlink{protocolGADInAppPurchaseDelegate-p}{G\+A\+D\+In\+App\+Purchase\+Delegate}$>$) in\+App\+Purchase\+Delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+Optional delegate object that receives In-\/\+App Purchase (I\+AP) notifications from this \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View}. Remember to nil the delegate before deallocating this object. \mbox{\Hypertarget{interfaceGADBannerView_a239f588da48d1fe9e12eeff079ab6700}\label{interfaceGADBannerView_a239f588da48d1fe9e12eeff079ab6700}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!mediated\+Ad\+View@{mediated\+Ad\+View}}
+\index{mediated\+Ad\+View@{mediated\+Ad\+View}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{mediated\+Ad\+View}{mediatedAdView}}
+{\footnotesize\ttfamily -\/ (U\+I\+View$\ast$) mediated\+Ad\+View\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+The underlying ad view of the mediated ad network. You may use this to find out the actual size of the ad and adjust \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} to fit the underlying ad view. \mbox{\Hypertarget{interfaceGADBannerView_a6ee3d304435bd03ab011c4e08359563c}\label{interfaceGADBannerView_a6ee3d304435bd03ab011c4e08359563c}} 
+\index{G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}!root\+View\+Controller@{root\+View\+Controller}}
+\index{root\+View\+Controller@{root\+View\+Controller}!G\+A\+D\+Banner\+View@{G\+A\+D\+Banner\+View}}
+\subsubsection{\texorpdfstring{root\+View\+Controller}{rootViewController}}
+{\footnotesize\ttfamily -\/ (U\+I\+View\+Controller$\ast$) root\+View\+Controller\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+Required reference to the current root view controller. For example the root view controller in tab-\/based application would be the U\+I\+Tab\+View\+Controller. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/admob/proj.\+ios/\+Admob/G\+A\+D\+Banner\+View.\+h\end{DoxyCompactItemize}

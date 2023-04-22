@@ -1,0 +1,123 @@
+\hypertarget{classFileUtilsLinux}{}\section{File\+Utils\+Linux Class Reference}
+\label{classFileUtilsLinux}\index{File\+Utils\+Linux@{File\+Utils\+Linux}}
+
+
+Helper class to handle file operations.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+File\+Utils-\/linux.\+h$>$}
+
+
+
+Inheritance diagram for File\+Utils\+Linux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classFileUtilsLinux__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Utils\+Linux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classFileUtilsLinux__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classFileUtilsLinux_a1f11f2fb2b248fe6670cf991251d2821}{init} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtilsLinux_a67c863ea1f03b866be4d8be53d4103a1}{get\+Writable\+Path} () const
+\item 
+bool \hyperlink{classFileUtilsLinux_a6de155528c1b10597d623f784b72762c}{init} () override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsLinux_a8d7c6a6b1d749016cf44849f4842407b}{get\+Writable\+Path} () const override
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtilsLinux_ab3d3da2a9e626c1aae143a4f83d35bdf}\label{classFileUtilsLinux_ab3d3da2a9e626c1aae143a4f83d35bdf}} 
+class {\bfseries File\+Utils}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Helper class to handle file operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileUtilsLinux_a67c863ea1f03b866be4d8be53d4103a1}\label{classFileUtilsLinux_a67c863ea1f03b866be4d8be53d4103a1}} 
+\index{File\+Utils\+Linux@{File\+Utils\+Linux}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Linux@{File\+Utils\+Linux}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string File\+Utils\+Linux\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsLinux_a8d7c6a6b1d749016cf44849f4842407b}\label{classFileUtilsLinux_a8d7c6a6b1d749016cf44849f4842407b}} 
+\index{File\+Utils\+Linux@{File\+Utils\+Linux}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Linux@{File\+Utils\+Linux}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+Linux\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsLinux_a1f11f2fb2b248fe6670cf991251d2821}\label{classFileUtilsLinux_a1f11f2fb2b248fe6670cf991251d2821}} 
+\index{File\+Utils\+Linux@{File\+Utils\+Linux}!init@{init}}
+\index{init@{init}!File\+Utils\+Linux@{File\+Utils\+Linux}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Linux\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsLinux_a6de155528c1b10597d623f784b72762c}\label{classFileUtilsLinux_a6de155528c1b10597d623f784b72762c}} 
+\index{File\+Utils\+Linux@{File\+Utils\+Linux}!init@{init}}
+\index{init@{init}!File\+Utils\+Linux@{File\+Utils\+Linux}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Linux\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/linux/C\+C\+File\+Utils-\/linux.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/linux/C\+C\+File\+Utils-\/linux.\+cpp\end{DoxyCompactItemize}

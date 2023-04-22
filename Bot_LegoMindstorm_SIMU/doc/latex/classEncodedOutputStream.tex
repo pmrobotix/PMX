@@ -1,0 +1,95 @@
+\hypertarget{classEncodedOutputStream}{}\section{Encoded\+Output\+Stream$<$ Encoding, Output\+Byte\+Stream $>$ Class Template Reference}
+\label{classEncodedOutputStream}\index{Encoded\+Output\+Stream$<$ Encoding, Output\+Byte\+Stream $>$@{Encoded\+Output\+Stream$<$ Encoding, Output\+Byte\+Stream $>$}}
+
+
+Output byte stream wrapper with statically bound encoding.  
+
+
+
+
+{\ttfamily \#include $<$encodedstream.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_aa8f494d7ee2808307fbc9cd658c0f760}\label{classEncodedOutputStream_aa8f494d7ee2808307fbc9cd658c0f760}} 
+typedef Encoding\+::\+Ch {\bfseries Ch}
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_aa8f494d7ee2808307fbc9cd658c0f760}\label{classEncodedOutputStream_aa8f494d7ee2808307fbc9cd658c0f760}} 
+typedef Encoding\+::\+Ch {\bfseries Ch}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_ad3360c613a30a6a15526ae9ad63bd004}\label{classEncodedOutputStream_ad3360c613a30a6a15526ae9ad63bd004}} 
+{\bfseries Encoded\+Output\+Stream} (Output\+Byte\+Stream \&os, bool put\+B\+OM=true)
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a0f3c00f94c195a38d78c05ecda497481}\label{classEncodedOutputStream_a0f3c00f94c195a38d78c05ecda497481}} 
+void {\bfseries Put} (Ch c)
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a657188f6a9f0fae01a4012c288d3fd46}\label{classEncodedOutputStream_a657188f6a9f0fae01a4012c288d3fd46}} 
+void {\bfseries Flush} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a22e00087e16ad7a12438fb34fb562bb7}\label{classEncodedOutputStream_a22e00087e16ad7a12438fb34fb562bb7}} 
+Ch {\bfseries Peek} () const
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a90f5a5e1598316a417ef5b6ad3d49f36}\label{classEncodedOutputStream_a90f5a5e1598316a417ef5b6ad3d49f36}} 
+Ch {\bfseries Take} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a1c6f6d51999b8d04e4d81d92ff725dbc}\label{classEncodedOutputStream_a1c6f6d51999b8d04e4d81d92ff725dbc}} 
+size\+\_\+t {\bfseries Tell} () const
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a78934de4f76c9fa65238e65d3630cbc5}\label{classEncodedOutputStream_a78934de4f76c9fa65238e65d3630cbc5}} 
+Ch $\ast$ {\bfseries Put\+Begin} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a818695f6d3fa8896e9d7d0fbdc7d4514}\label{classEncodedOutputStream_a818695f6d3fa8896e9d7d0fbdc7d4514}} 
+size\+\_\+t {\bfseries Put\+End} (Ch $\ast$)
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_ad3360c613a30a6a15526ae9ad63bd004}\label{classEncodedOutputStream_ad3360c613a30a6a15526ae9ad63bd004}} 
+{\bfseries Encoded\+Output\+Stream} (Output\+Byte\+Stream \&os, bool put\+B\+OM=true)
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a0f3c00f94c195a38d78c05ecda497481}\label{classEncodedOutputStream_a0f3c00f94c195a38d78c05ecda497481}} 
+void {\bfseries Put} (Ch c)
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a657188f6a9f0fae01a4012c288d3fd46}\label{classEncodedOutputStream_a657188f6a9f0fae01a4012c288d3fd46}} 
+void {\bfseries Flush} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a22e00087e16ad7a12438fb34fb562bb7}\label{classEncodedOutputStream_a22e00087e16ad7a12438fb34fb562bb7}} 
+Ch {\bfseries Peek} () const
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a90f5a5e1598316a417ef5b6ad3d49f36}\label{classEncodedOutputStream_a90f5a5e1598316a417ef5b6ad3d49f36}} 
+Ch {\bfseries Take} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a1c6f6d51999b8d04e4d81d92ff725dbc}\label{classEncodedOutputStream_a1c6f6d51999b8d04e4d81d92ff725dbc}} 
+size\+\_\+t {\bfseries Tell} () const
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a78934de4f76c9fa65238e65d3630cbc5}\label{classEncodedOutputStream_a78934de4f76c9fa65238e65d3630cbc5}} 
+Ch $\ast$ {\bfseries Put\+Begin} ()
+\item 
+\mbox{\Hypertarget{classEncodedOutputStream_a818695f6d3fa8896e9d7d0fbdc7d4514}\label{classEncodedOutputStream_a818695f6d3fa8896e9d7d0fbdc7d4514}} 
+size\+\_\+t {\bfseries Put\+End} (Ch $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Encoding, typename Output\+Byte\+Stream$>$\newline
+class Encoded\+Output\+Stream$<$ Encoding, Output\+Byte\+Stream $>$}
+
+Output byte stream wrapper with statically bound encoding. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Encoding} & The interpretation of encoding of the stream. Either \hyperlink{structUTF8}{U\+T\+F8}, \hyperlink{structUTF16LE}{U\+T\+F16\+LE}, \hyperlink{structUTF16BE}{U\+T\+F16\+BE}, \hyperlink{structUTF32LE}{U\+T\+F32\+LE}, \hyperlink{structUTF32BE}{U\+T\+F32\+BE}. \\
+\hline
+{\em Input\+Byte\+Stream} & Type of input byte stream. For example, \hyperlink{classFileWriteStream}{File\+Write\+Stream}.\\
+\hline
+{\em Encoding} & The interpretation of encoding of the stream. Either \hyperlink{structUTF8}{U\+T\+F8}, \hyperlink{structUTF16LE}{U\+T\+F16\+LE}, \hyperlink{structUTF16BE}{U\+T\+F16\+BE}, \hyperlink{structUTF32LE}{U\+T\+F32\+LE}, \hyperlink{structUTF32BE}{U\+T\+F32\+BE}. \\
+\hline
+{\em Output\+Byte\+Stream} & Type of input byte stream. For example, \hyperlink{classFileWriteStream}{File\+Write\+Stream}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/json/encodedstream.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\hypertarget{ServoMotorStd_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Servo\+Motor\+Std.hpp File Reference}
+\label{ServoMotorStd_8hpp}\index{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Servo\+Motor\+Std.\+hpp@{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Servo\+Motor\+Std.\+hpp}}
+
+
+Définition de la classe \hyperlink{classServoMotorStd}{Servo\+Motor\+Std} (sur n positions). Permet de gérer les R/C servos (Remote control servo moteur) via F\+P\+GA.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Log/\+Logger\+Factory.\+hpp\char`\"{}}\newline
+Include dependency graph for Servo\+Motor\+Std.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ServoMotorStd_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ServoMotorStd_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classServoMotorStd}{Servo\+Motor\+Std}
+\begin{DoxyCompactList}\small\item\em Cette classe représente l\textquotesingle{}un des servomoteurs fonctionnant sur n positions du robot et utilisant le \char`\"{}motion system\char`\"{} du F\+P\+GA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a12b6867fbeea78acfdfa09449cd25040}\label{ServoMotorStd_8hpp_a12b6867fbeea78acfdfa09449cd25040}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+Y\+S\+F\+S\+\_\+\+B\+A\+SE}~\char`\"{}/sys/class/servo/\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a19d089db9cbbb34e964c0f5bcea39cb6}\label{ServoMotorStd_8hpp_a19d089db9cbbb34e964c0f5bcea39cb6}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+F\+I\+LE}~\char`\"{}servo\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a88a9f5b18199e55a49bbcbfb7693507a}\label{ServoMotorStd_8hpp_a88a9f5b18199e55a49bbcbfb7693507a}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+F\+I\+LE}~\char`\"{}desired\+\_\+position\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_ac3bdc4f90e63a56ae323d7d6073c6bc6}\label{ServoMotorStd_8hpp_ac3bdc4f90e63a56ae323d7d6073c6bc6}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+S\+P\+E\+E\+D\+\_\+\+F\+I\+LE}~\char`\"{}speed\+\_\+step\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_af01e0659fcc545128d1043824983e6c6}\label{ServoMotorStd_8hpp_af01e0659fcc545128d1043824983e6c6}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+F\+I\+LE}~\char`\"{}enable\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a08f16030588e7df6d861788310dabb90}\label{ServoMotorStd_8hpp_a08f16030588e7df6d861788310dabb90}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+F\+I\+LE}~\char`\"{}offset\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a11bc37221017124569cb1f9cb185cfa7}\label{ServoMotorStd_8hpp_a11bc37221017124569cb1f9cb185cfa7}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+M\+I\+N\+\_\+\+F\+I\+LE}~\char`\"{}lower\+\_\+boundary\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_ad61b1a7fb36138bf78112e5a04453c26}\label{ServoMotorStd_8hpp_ad61b1a7fb36138bf78112e5a04453c26}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+M\+A\+X\+\_\+\+F\+I\+LE}~\char`\"{}upper\+\_\+boundary\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a3867f4af7fefa94ef8f2adeb805ab306}\label{ServoMotorStd_8hpp_a3867f4af7fefa94ef8f2adeb805ab306}} 
+\#define {\bfseries S\+E\+R\+V\+O\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+P\+OS}~\char`\"{}current\+\_\+position\char`\"{}
+\item 
+\mbox{\Hypertarget{ServoMotorStd_8hpp_a38e089e544c5a09e42eb3416e1c016f8}\label{ServoMotorStd_8hpp_a38e089e544c5a09e42eb3416e1c016f8}} 
+\#define {\bfseries Nb\+Max\+Servo}~10
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définition de la classe \hyperlink{classServoMotorStd}{Servo\+Motor\+Std} (sur n positions). Permet de gérer les R/C servos (Remote control servo moteur) via F\+P\+GA. 
+

@@ -1,0 +1,94 @@
+\hypertarget{classev3dev_1_1remote__control}{}\section{ev3dev\+:\+:remote\+\_\+control Class Reference}
+\label{classev3dev_1_1remote__control}\index{ev3dev\+::remote\+\_\+control@{ev3dev\+::remote\+\_\+control}}
+
+
+Collaboration diagram for ev3dev\+:\+:remote\+\_\+control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classev3dev_1_1remote__control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_accb8306bbfc25ca0767bd275b19e4321}\label{classev3dev_1_1remote__control_accb8306bbfc25ca0767bd275b19e4321}} 
+enum {\bfseries buttons} \{ \newline
+{\bfseries red\+\_\+up} = (1 $<$$<$ 0), 
+{\bfseries red\+\_\+down} = (1 $<$$<$ 1), 
+{\bfseries blue\+\_\+up} = (1 $<$$<$ 2), 
+{\bfseries blue\+\_\+down} = (1 $<$$<$ 3), 
+\newline
+{\bfseries beacon} = (1 $<$$<$ 4)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_ab94bdd42f135dbc574a55549ed34fce3}\label{classev3dev_1_1remote__control_ab94bdd42f135dbc574a55549ed34fce3}} 
+{\bfseries remote\+\_\+control} (unsigned channel=1)
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a2a0ea96e119422bb642296d5ce1dac52}\label{classev3dev_1_1remote__control_a2a0ea96e119422bb642296d5ce1dac52}} 
+{\bfseries remote\+\_\+control} (\hyperlink{classev3dev_1_1infrared__sensor}{infrared\+\_\+sensor} \&, unsigned channel=1)
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_ac60f44f5945b4dd333d7a73c36904597}\label{classev3dev_1_1remote__control_ac60f44f5945b4dd333d7a73c36904597}} 
+bool {\bfseries connected} () const
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a9e966ff89ac31b1d680cf0480d87eca4}\label{classev3dev_1_1remote__control_a9e966ff89ac31b1d680cf0480d87eca4}} 
+unsigned {\bfseries channel} () const
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a5f010a700a8686382cb24d22084432c2}\label{classev3dev_1_1remote__control_a5f010a700a8686382cb24d22084432c2}} 
+bool {\bfseries process} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a1b0f3b54fbfc002de865581deb1b618b}\label{classev3dev_1_1remote__control_a1b0f3b54fbfc002de865581deb1b618b}} 
+std\+::function$<$ void(bool)$>$ {\bfseries on\+\_\+red\+\_\+up}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_aa769bba6d94b45dfe7d1c592c4016803}\label{classev3dev_1_1remote__control_aa769bba6d94b45dfe7d1c592c4016803}} 
+std\+::function$<$ void(bool)$>$ {\bfseries on\+\_\+red\+\_\+down}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_ab6ad97ee11336002e1f3b67ad9cabda7}\label{classev3dev_1_1remote__control_ab6ad97ee11336002e1f3b67ad9cabda7}} 
+std\+::function$<$ void(bool)$>$ {\bfseries on\+\_\+blue\+\_\+up}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a590689b1b6e1ed6f1115dcec0d4c8f3f}\label{classev3dev_1_1remote__control_a590689b1b6e1ed6f1115dcec0d4c8f3f}} 
+std\+::function$<$ void(bool)$>$ {\bfseries on\+\_\+blue\+\_\+down}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a107ef0c858d7ce7eaa39806611d1afa2}\label{classev3dev_1_1remote__control_a107ef0c858d7ce7eaa39806611d1afa2}} 
+std\+::function$<$ void(bool)$>$ {\bfseries on\+\_\+beacon}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a7cee358ad301fbbcc5853525d1abd1d1}\label{classev3dev_1_1remote__control_a7cee358ad301fbbcc5853525d1abd1d1}} 
+std\+::function$<$ void(int)$>$ {\bfseries on\+\_\+state\+\_\+change}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_ab698f0264b3ea115867d4e580d916bff}\label{classev3dev_1_1remote__control_ab698f0264b3ea115867d4e580d916bff}} 
+virtual void {\bfseries on\+\_\+value\+\_\+changed} (int value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_abe9f275cbc7bcedf3e4fd78684d8ca49}\label{classev3dev_1_1remote__control_abe9f275cbc7bcedf3e4fd78684d8ca49}} 
+\hyperlink{classev3dev_1_1infrared__sensor}{infrared\+\_\+sensor} $\ast$ {\bfseries \+\_\+sensor} = nullptr
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a0b147019924235c6aa1080bd1b98b0c8}\label{classev3dev_1_1remote__control_a0b147019924235c6aa1080bd1b98b0c8}} 
+bool {\bfseries \+\_\+owns\+\_\+sensor} = false
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a46518f172176aa532482ad814b2a5ca0}\label{classev3dev_1_1remote__control_a46518f172176aa532482ad814b2a5ca0}} 
+unsigned {\bfseries \+\_\+channel} = 0
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a33a710524fb42247d3e38234a69c75fd}\label{classev3dev_1_1remote__control_a33a710524fb42247d3e38234a69c75fd}} 
+int {\bfseries \+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{classev3dev_1_1remote__control_a652bc7ca84144330659b0d16ce15edaa}\label{classev3dev_1_1remote__control_a652bc7ca84144330659b0d16ce15edaa}} 
+int {\bfseries \+\_\+state} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/ev3dev.\+h\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/ev3dev.\+cpp\end{DoxyCompactItemize}

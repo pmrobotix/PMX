@@ -1,0 +1,1122 @@
+\hypertarget{classb2Body}{}\section{b2\+Body Class Reference}
+\label{classb2Body}\index{b2\+Body@{b2\+Body}}
+
+
+A rigid body. These are created via \hyperlink{classb2World_a2eb36e967e43294bfa03ec3d177c2dae}{b2\+World\+::\+Create\+Body}.  
+
+
+
+
+{\ttfamily \#include $<$b2\+Body.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_aa4892301e9b9d62ede5e93dad1743894}{Create\+Fixture} (const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$def)
+\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_a52d971867086d5db79769a62bbb70a60}{Create\+Fixture} (const \hyperlink{classb2Shape}{b2\+Shape} $\ast$shape, float32 density)
+\item 
+void \hyperlink{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}{Destroy\+Fixture} (\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$fixture)
+\item 
+void \hyperlink{classb2Body_a4686f32bbce5723761e9719c706eca11}{Set\+Transform} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&position, float32 angle)
+\item 
+const \hyperlink{structb2Transform}{b2\+Transform} \& \hyperlink{classb2Body_afb316448e6e555ceb2df23ed216b2f53}{Get\+Transform} () const
+\item 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a7944dc953ac0cb1e00b32bc61b50e70d}{Get\+Position} () const
+\item 
+float32 \hyperlink{classb2Body_a20b9c8d0d722edf3af281034d37bd534}{Get\+Angle} () const
+\item 
+\mbox{\Hypertarget{classb2Body_a3e14cfe61c63913ef7b0f719f7145318}\label{classb2Body_a3e14cfe61c63913ef7b0f719f7145318}} 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a3e14cfe61c63913ef7b0f719f7145318}{Get\+World\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get the world position of the center of mass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a60cc46fc46849b0d5e61a151b7c41269}\label{classb2Body_a60cc46fc46849b0d5e61a151b7c41269}} 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a60cc46fc46849b0d5e61a151b7c41269}{Get\+Local\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get the local position of the center of mass. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_a832f3989a44f0d4782c80456832197ad}{Set\+Linear\+Velocity} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&v)
+\item 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a8fcaf842141320701057f679dff90b89}{Get\+Linear\+Velocity} () const
+\item 
+void \hyperlink{classb2Body_a37adc4160b84f73e8552a91cbde3f578}{Set\+Angular\+Velocity} (float32 omega)
+\item 
+float32 \hyperlink{classb2Body_a6a404d85efc510f43575f61cb95c07a7}{Get\+Angular\+Velocity} () const
+\item 
+void \hyperlink{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}{Apply\+Force} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&force, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, bool wake)
+\item 
+void \hyperlink{classb2Body_abeba04911f7a2a141169bb06fe98d06a}{Apply\+Force\+To\+Center} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&force, bool wake)
+\item 
+void \hyperlink{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}{Apply\+Torque} (float32 torque, bool wake)
+\item 
+void \hyperlink{classb2Body_a7f677e93efb3c4c065087aff317274a3}{Apply\+Linear\+Impulse} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&impulse, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, bool wake)
+\item 
+void \hyperlink{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}{Apply\+Angular\+Impulse} (float32 impulse, bool wake)
+\item 
+float32 \hyperlink{classb2Body_adfeebf45965d131894f728a2f264311d}{Get\+Mass} () const
+\item 
+float32 \hyperlink{classb2Body_a60929c13e4b6548492dca5ec79f159db}{Get\+Inertia} () const
+\item 
+void \hyperlink{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}{Get\+Mass\+Data} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$data) const
+\item 
+void \hyperlink{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}{Set\+Mass\+Data} (const \hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$data)
+\item 
+void \hyperlink{classb2Body_a109d8567c6ae84c61fce2919fb209c63}{Reset\+Mass\+Data} ()
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a712b782c61963c6f07beca86acc631ae}{Get\+World\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_ae8c434785b2a730f7c385e708b345bb6}{Get\+World\+Vector} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Vector) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a0df8f4312ab23223489323326b2d763d}{Get\+Local\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}{Get\+Local\+Vector} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Vector) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a5bc9a483e5f59199daa1751786034c1d}{Get\+Linear\+Velocity\+From\+World\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}{Get\+Linear\+Velocity\+From\+Local\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Point) const
+\item 
+\mbox{\Hypertarget{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}\label{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}} 
+float32 \hyperlink{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}{Get\+Linear\+Damping} () const
+\begin{DoxyCompactList}\small\item\em Get the linear damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a909f9753ad700f70282a56e00bc182a5}\label{classb2Body_a909f9753ad700f70282a56e00bc182a5}} 
+void \hyperlink{classb2Body_a909f9753ad700f70282a56e00bc182a5}{Set\+Linear\+Damping} (float32 linear\+Damping)
+\begin{DoxyCompactList}\small\item\em Set the linear damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a151f5e81e44037883f61b67821704999}\label{classb2Body_a151f5e81e44037883f61b67821704999}} 
+float32 \hyperlink{classb2Body_a151f5e81e44037883f61b67821704999}{Get\+Angular\+Damping} () const
+\begin{DoxyCompactList}\small\item\em Get the angular damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a73a79541b18394fa224d2eae8ad493e8}\label{classb2Body_a73a79541b18394fa224d2eae8ad493e8}} 
+void \hyperlink{classb2Body_a73a79541b18394fa224d2eae8ad493e8}{Set\+Angular\+Damping} (float32 angular\+Damping)
+\begin{DoxyCompactList}\small\item\em Set the angular damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_aa570b2310248b4b3bd776836e839bc45}\label{classb2Body_aa570b2310248b4b3bd776836e839bc45}} 
+float32 \hyperlink{classb2Body_aa570b2310248b4b3bd776836e839bc45}{Get\+Gravity\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Get the gravity scale of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a8e66a570c2aeee93b29d84cae861a612}\label{classb2Body_a8e66a570c2aeee93b29d84cae861a612}} 
+void \hyperlink{classb2Body_a8e66a570c2aeee93b29d84cae861a612}{Set\+Gravity\+Scale} (float32 scale)
+\begin{DoxyCompactList}\small\item\em Set the gravity scale of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}\label{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}} 
+void \hyperlink{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}{Set\+Type} (b2\+Body\+Type type)
+\begin{DoxyCompactList}\small\item\em Set the type of this body. This may alter the mass and velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}\label{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}} 
+b2\+Body\+Type \hyperlink{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}{Get\+Type} () const
+\begin{DoxyCompactList}\small\item\em Get the type of this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}\label{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}} 
+void \hyperlink{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}{Set\+Bullet} (bool flag)
+\begin{DoxyCompactList}\small\item\em Should this body be treated like a bullet for continuous collision detection? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}\label{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}} 
+bool \hyperlink{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}{Is\+Bullet} () const
+\begin{DoxyCompactList}\small\item\em Is this body treated like a bullet for continuous collision detection? \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_a229a6de228416203fecbf7a7544c33bb}{Set\+Sleeping\+Allowed} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}\label{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}} 
+bool \hyperlink{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}{Is\+Sleeping\+Allowed} () const
+\begin{DoxyCompactList}\small\item\em Is this body allowed to sleep. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_ac72ed3df52a26c33db82252ab57399af}{Set\+Awake} (bool flag)
+\item 
+bool \hyperlink{classb2Body_a697f708427cdf7d31a626e80e694682c}{Is\+Awake} () const
+\item 
+void \hyperlink{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}{Set\+Active} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}\label{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}} 
+bool \hyperlink{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}{Is\+Active} () const
+\begin{DoxyCompactList}\small\item\em Get the active state of the body. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_aff35078e2a221d2d05409674936cb8d2}{Set\+Fixed\+Rotation} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_a0920b7a770f7c876cf6d149e227036b5}\label{classb2Body_a0920b7a770f7c876cf6d149e227036b5}} 
+bool \hyperlink{classb2Body_a0920b7a770f7c876cf6d149e227036b5}{Is\+Fixed\+Rotation} () const
+\begin{DoxyCompactList}\small\item\em Does this body have fixed rotation? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a64634da20c6e0ab2d68a3cc9ea15efc3}\label{classb2Body_a64634da20c6e0ab2d68a3cc9ea15efc3}} 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_a64634da20c6e0ab2d68a3cc9ea15efc3}{Get\+Fixture\+List} ()
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{protocollist-p}{list} of all fixtures attached to this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_ae232293cb940477443434c5e846607e3}\label{classb2Body_ae232293cb940477443434c5e846607e3}} 
+const \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ {\bfseries Get\+Fixture\+List} () const
+\item 
+\mbox{\Hypertarget{classb2Body_a55cf2eb851780599ca5c1f6f25a17e41}\label{classb2Body_a55cf2eb851780599ca5c1f6f25a17e41}} 
+\hyperlink{structb2JointEdge}{b2\+Joint\+Edge} $\ast$ \hyperlink{classb2Body_a55cf2eb851780599ca5c1f6f25a17e41}{Get\+Joint\+List} ()
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{protocollist-p}{list} of all joints attached to this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a3e581c94ae0fbc4e1083bf6ed8c0f0a9}\label{classb2Body_a3e581c94ae0fbc4e1083bf6ed8c0f0a9}} 
+const \hyperlink{structb2JointEdge}{b2\+Joint\+Edge} $\ast$ {\bfseries Get\+Joint\+List} () const
+\item 
+\hyperlink{structb2ContactEdge}{b2\+Contact\+Edge} $\ast$ \hyperlink{classb2Body_a16bdbfb266c82a0ef51be351a8928bc5}{Get\+Contact\+List} ()
+\item 
+\mbox{\Hypertarget{classb2Body_a137168690469fb838ab89c5f27a7cf43}\label{classb2Body_a137168690469fb838ab89c5f27a7cf43}} 
+const \hyperlink{structb2ContactEdge}{b2\+Contact\+Edge} $\ast$ {\bfseries Get\+Contact\+List} () const
+\item 
+\mbox{\Hypertarget{classb2Body_ad54182a11d02362b027a0eb072775bdc}\label{classb2Body_ad54182a11d02362b027a0eb072775bdc}} 
+\hyperlink{classb2Body}{b2\+Body} $\ast$ \hyperlink{classb2Body_ad54182a11d02362b027a0eb072775bdc}{Get\+Next} ()
+\begin{DoxyCompactList}\small\item\em Get the next body in the world\textquotesingle{}s body \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_aa118d06e0ae6444c02bb5d22bb448269}\label{classb2Body_aa118d06e0ae6444c02bb5d22bb448269}} 
+const \hyperlink{classb2Body}{b2\+Body} $\ast$ {\bfseries Get\+Next} () const
+\item 
+\mbox{\Hypertarget{classb2Body_a672c782f7184faf3d673b08681dd63e3}\label{classb2Body_a672c782f7184faf3d673b08681dd63e3}} 
+void $\ast$ \hyperlink{classb2Body_a672c782f7184faf3d673b08681dd63e3}{Get\+User\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get the user data pointer that was provided in the body definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}\label{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}} 
+void \hyperlink{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}{Set\+User\+Data} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Set the user data. Use this to store your application specific data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_abfd9466763b20977f9122d0e162dfeb9}\label{classb2Body_abfd9466763b20977f9122d0e162dfeb9}} 
+\hyperlink{classb2World}{b2\+World} $\ast$ \hyperlink{classb2Body_abfd9466763b20977f9122d0e162dfeb9}{Get\+World} ()
+\begin{DoxyCompactList}\small\item\em Get the parent world of this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a7e0fc2b91fbfc11da467700fd0792088}\label{classb2Body_a7e0fc2b91fbfc11da467700fd0792088}} 
+const \hyperlink{classb2World}{b2\+World} $\ast$ {\bfseries Get\+World} () const
+\item 
+\mbox{\Hypertarget{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}\label{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}} 
+void \hyperlink{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}{Dump} ()
+\begin{DoxyCompactList}\small\item\em Dump this body to a log file. \end{DoxyCompactList}\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_a40dda91b34418bb40e31e2db9b1b76a5}{Create\+Fixture} (const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$def)
+\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_a9bdbbc58d1cc51aec51a978174a2ba48}{Create\+Fixture} (const \hyperlink{classb2Shape}{b2\+Shape} $\ast$shape, float32 density)
+\item 
+void \hyperlink{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}{Destroy\+Fixture} (\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$fixture)
+\item 
+void \hyperlink{classb2Body_a4686f32bbce5723761e9719c706eca11}{Set\+Transform} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&position, float32 angle)
+\item 
+const \hyperlink{structb2Transform}{b2\+Transform} \& \hyperlink{classb2Body_a23d09b0b15585eb9627007925fddf317}{Get\+Transform} () const
+\item 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_ae44c1dc2f64fd42af1b77ed0843dd886}{Get\+Position} () const
+\item 
+float32 \hyperlink{classb2Body_a20b9c8d0d722edf3af281034d37bd534}{Get\+Angle} () const
+\item 
+\mbox{\Hypertarget{classb2Body_ab12aaf56e3565813780b1514a796d2b1}\label{classb2Body_ab12aaf56e3565813780b1514a796d2b1}} 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_ab12aaf56e3565813780b1514a796d2b1}{Get\+World\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get the world position of the center of mass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a29cd97aa019450c9ea16a59904d8d465}\label{classb2Body_a29cd97aa019450c9ea16a59904d8d465}} 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a29cd97aa019450c9ea16a59904d8d465}{Get\+Local\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get the local position of the center of mass. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_a832f3989a44f0d4782c80456832197ad}{Set\+Linear\+Velocity} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&v)
+\item 
+const \hyperlink{structb2Vec2}{b2\+Vec2} \& \hyperlink{classb2Body_a0d513a5a078caa4b9e00bf8e199f29a2}{Get\+Linear\+Velocity} () const
+\item 
+void \hyperlink{classb2Body_a37adc4160b84f73e8552a91cbde3f578}{Set\+Angular\+Velocity} (float32 omega)
+\item 
+float32 \hyperlink{classb2Body_a6a404d85efc510f43575f61cb95c07a7}{Get\+Angular\+Velocity} () const
+\item 
+void \hyperlink{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}{Apply\+Force} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&force, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, bool wake)
+\item 
+void \hyperlink{classb2Body_abeba04911f7a2a141169bb06fe98d06a}{Apply\+Force\+To\+Center} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&force, bool wake)
+\item 
+void \hyperlink{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}{Apply\+Torque} (float32 torque, bool wake)
+\item 
+void \hyperlink{classb2Body_a7f677e93efb3c4c065087aff317274a3}{Apply\+Linear\+Impulse} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&impulse, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, bool wake)
+\item 
+void \hyperlink{classb2Body_afa249d2fc11735985211e47c3d8e16fb}{Apply\+Linear\+Impulse\+To\+Center} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&impulse, bool wake)
+\item 
+void \hyperlink{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}{Apply\+Angular\+Impulse} (float32 impulse, bool wake)
+\item 
+float32 \hyperlink{classb2Body_adfeebf45965d131894f728a2f264311d}{Get\+Mass} () const
+\item 
+float32 \hyperlink{classb2Body_a60929c13e4b6548492dca5ec79f159db}{Get\+Inertia} () const
+\item 
+void \hyperlink{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}{Get\+Mass\+Data} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$data) const
+\item 
+void \hyperlink{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}{Set\+Mass\+Data} (const \hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$data)
+\item 
+void \hyperlink{classb2Body_a109d8567c6ae84c61fce2919fb209c63}{Reset\+Mass\+Data} ()
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a712b782c61963c6f07beca86acc631ae}{Get\+World\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_ae8c434785b2a730f7c385e708b345bb6}{Get\+World\+Vector} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Vector) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a0df8f4312ab23223489323326b2d763d}{Get\+Local\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}{Get\+Local\+Vector} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Vector) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a5bc9a483e5f59199daa1751786034c1d}{Get\+Linear\+Velocity\+From\+World\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&world\+Point) const
+\item 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}{Get\+Linear\+Velocity\+From\+Local\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&local\+Point) const
+\item 
+\mbox{\Hypertarget{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}\label{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}} 
+float32 \hyperlink{classb2Body_aff6bc518ea0f07fa5bba7cb7782e86d1}{Get\+Linear\+Damping} () const
+\begin{DoxyCompactList}\small\item\em Get the linear damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a909f9753ad700f70282a56e00bc182a5}\label{classb2Body_a909f9753ad700f70282a56e00bc182a5}} 
+void \hyperlink{classb2Body_a909f9753ad700f70282a56e00bc182a5}{Set\+Linear\+Damping} (float32 linear\+Damping)
+\begin{DoxyCompactList}\small\item\em Set the linear damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a151f5e81e44037883f61b67821704999}\label{classb2Body_a151f5e81e44037883f61b67821704999}} 
+float32 \hyperlink{classb2Body_a151f5e81e44037883f61b67821704999}{Get\+Angular\+Damping} () const
+\begin{DoxyCompactList}\small\item\em Get the angular damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a73a79541b18394fa224d2eae8ad493e8}\label{classb2Body_a73a79541b18394fa224d2eae8ad493e8}} 
+void \hyperlink{classb2Body_a73a79541b18394fa224d2eae8ad493e8}{Set\+Angular\+Damping} (float32 angular\+Damping)
+\begin{DoxyCompactList}\small\item\em Set the angular damping of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_aa570b2310248b4b3bd776836e839bc45}\label{classb2Body_aa570b2310248b4b3bd776836e839bc45}} 
+float32 \hyperlink{classb2Body_aa570b2310248b4b3bd776836e839bc45}{Get\+Gravity\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Get the gravity scale of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a8e66a570c2aeee93b29d84cae861a612}\label{classb2Body_a8e66a570c2aeee93b29d84cae861a612}} 
+void \hyperlink{classb2Body_a8e66a570c2aeee93b29d84cae861a612}{Set\+Gravity\+Scale} (float32 scale)
+\begin{DoxyCompactList}\small\item\em Set the gravity scale of the body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}\label{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}} 
+void \hyperlink{classb2Body_a34ff1c84b10b74eb990749a025a1b1ad}{Set\+Type} (b2\+Body\+Type type)
+\begin{DoxyCompactList}\small\item\em Set the type of this body. This may alter the mass and velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}\label{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}} 
+b2\+Body\+Type \hyperlink{classb2Body_a9c2234b5a5fff91305a65ecd0cf0ee59}{Get\+Type} () const
+\begin{DoxyCompactList}\small\item\em Get the type of this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}\label{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}} 
+void \hyperlink{classb2Body_a3253af3725b8d6d63d8223bcd2ddab5c}{Set\+Bullet} (bool flag)
+\begin{DoxyCompactList}\small\item\em Should this body be treated like a bullet for continuous collision detection? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}\label{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}} 
+bool \hyperlink{classb2Body_ad99db1c7a19e8de333ff7f65b0b953f4}{Is\+Bullet} () const
+\begin{DoxyCompactList}\small\item\em Is this body treated like a bullet for continuous collision detection? \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_a229a6de228416203fecbf7a7544c33bb}{Set\+Sleeping\+Allowed} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}\label{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}} 
+bool \hyperlink{classb2Body_ac47251de3a8c0ccff620be7bd5ae696a}{Is\+Sleeping\+Allowed} () const
+\begin{DoxyCompactList}\small\item\em Is this body allowed to sleep. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_ac72ed3df52a26c33db82252ab57399af}{Set\+Awake} (bool flag)
+\item 
+bool \hyperlink{classb2Body_a697f708427cdf7d31a626e80e694682c}{Is\+Awake} () const
+\item 
+void \hyperlink{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}{Set\+Active} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}\label{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}} 
+bool \hyperlink{classb2Body_a825f37f457d3674ace96e2b8a9b4cae6}{Is\+Active} () const
+\begin{DoxyCompactList}\small\item\em Get the active state of the body. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Body_aff35078e2a221d2d05409674936cb8d2}{Set\+Fixed\+Rotation} (bool flag)
+\item 
+\mbox{\Hypertarget{classb2Body_a0920b7a770f7c876cf6d149e227036b5}\label{classb2Body_a0920b7a770f7c876cf6d149e227036b5}} 
+bool \hyperlink{classb2Body_a0920b7a770f7c876cf6d149e227036b5}{Is\+Fixed\+Rotation} () const
+\begin{DoxyCompactList}\small\item\em Does this body have fixed rotation? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a8a132608746291f2137f093c62d84992}\label{classb2Body_a8a132608746291f2137f093c62d84992}} 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Body_a8a132608746291f2137f093c62d84992}{Get\+Fixture\+List} ()
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{protocollist-p}{list} of all fixtures attached to this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a7472979d6cb440b0b02e251cdb9b5257}\label{classb2Body_a7472979d6cb440b0b02e251cdb9b5257}} 
+const \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ {\bfseries Get\+Fixture\+List} () const
+\item 
+\mbox{\Hypertarget{classb2Body_a1716a7b90039536a6a636d0011079fd2}\label{classb2Body_a1716a7b90039536a6a636d0011079fd2}} 
+\hyperlink{structb2JointEdge}{b2\+Joint\+Edge} $\ast$ \hyperlink{classb2Body_a1716a7b90039536a6a636d0011079fd2}{Get\+Joint\+List} ()
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{protocollist-p}{list} of all joints attached to this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_ad199b1c8c28e129afdd4a2975e9f9677}\label{classb2Body_ad199b1c8c28e129afdd4a2975e9f9677}} 
+const \hyperlink{structb2JointEdge}{b2\+Joint\+Edge} $\ast$ {\bfseries Get\+Joint\+List} () const
+\item 
+\hyperlink{structb2ContactEdge}{b2\+Contact\+Edge} $\ast$ \hyperlink{classb2Body_af0f564c41cd66f1a2f3910e83bf58d61}{Get\+Contact\+List} ()
+\item 
+\mbox{\Hypertarget{classb2Body_a74190d96a35a86d3f23dc1196fa2b11a}\label{classb2Body_a74190d96a35a86d3f23dc1196fa2b11a}} 
+const \hyperlink{structb2ContactEdge}{b2\+Contact\+Edge} $\ast$ {\bfseries Get\+Contact\+List} () const
+\item 
+\mbox{\Hypertarget{classb2Body_ad6ce9d4ac8eacea074f3198393a5d508}\label{classb2Body_ad6ce9d4ac8eacea074f3198393a5d508}} 
+\hyperlink{classb2Body}{b2\+Body} $\ast$ \hyperlink{classb2Body_ad6ce9d4ac8eacea074f3198393a5d508}{Get\+Next} ()
+\begin{DoxyCompactList}\small\item\em Get the next body in the world\textquotesingle{}s body \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_ad14be276c67c93e1bc859df14057ab52}\label{classb2Body_ad14be276c67c93e1bc859df14057ab52}} 
+const \hyperlink{classb2Body}{b2\+Body} $\ast$ {\bfseries Get\+Next} () const
+\item 
+\mbox{\Hypertarget{classb2Body_afc0f5338b6f2b62a45bdd580de602ecf}\label{classb2Body_afc0f5338b6f2b62a45bdd580de602ecf}} 
+void $\ast$ \hyperlink{classb2Body_afc0f5338b6f2b62a45bdd580de602ecf}{Get\+User\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get the user data pointer that was provided in the body definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}\label{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}} 
+void \hyperlink{classb2Body_a5553a5ecdfd2d7200ba2405ce6043f52}{Set\+User\+Data} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Set the user data. Use this to store your application specific data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a18d04c6677917a35ee90da1112fc1245}\label{classb2Body_a18d04c6677917a35ee90da1112fc1245}} 
+\hyperlink{classb2World}{b2\+World} $\ast$ \hyperlink{classb2Body_a18d04c6677917a35ee90da1112fc1245}{Get\+World} ()
+\begin{DoxyCompactList}\small\item\em Get the parent world of this body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Body_a5d818ba53f7434cf5f844cca54b0aec8}\label{classb2Body_a5d818ba53f7434cf5f844cca54b0aec8}} 
+const \hyperlink{classb2World}{b2\+World} $\ast$ {\bfseries Get\+World} () const
+\item 
+\mbox{\Hypertarget{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}\label{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}} 
+void \hyperlink{classb2Body_ac9e482f7d9df92801c24e79a7e751d06}{Dump} ()
+\begin{DoxyCompactList}\small\item\em Dump this body to a log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Body_ac7f385a7c800a297a8a6e9be3512e3ab}\label{classb2Body_ac7f385a7c800a297a8a6e9be3512e3ab}} 
+class {\bfseries b2\+World}
+\item 
+\mbox{\Hypertarget{classb2Body_a94868ed98b7053fbf0d83680ad6adcb5}\label{classb2Body_a94868ed98b7053fbf0d83680ad6adcb5}} 
+class {\bfseries b2\+Island}
+\item 
+\mbox{\Hypertarget{classb2Body_a3bbd3ece64fd6a24342844069f4f6ec0}\label{classb2Body_a3bbd3ece64fd6a24342844069f4f6ec0}} 
+class {\bfseries b2\+Contact\+Manager}
+\item 
+\mbox{\Hypertarget{classb2Body_a631e20cb9b11964da786db8a341b92bc}\label{classb2Body_a631e20cb9b11964da786db8a341b92bc}} 
+class {\bfseries b2\+Contact\+Solver}
+\item 
+\mbox{\Hypertarget{classb2Body_ab8681cbb624c63374e16c37686516d3b}\label{classb2Body_ab8681cbb624c63374e16c37686516d3b}} 
+class {\bfseries b2\+Contact}
+\item 
+\mbox{\Hypertarget{classb2Body_ac537ff3639c9b157c48149db669ca9e5}\label{classb2Body_ac537ff3639c9b157c48149db669ca9e5}} 
+class {\bfseries b2\+Distance\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a3cd7b05792e6ec329ed4301cd81063fe}\label{classb2Body_a3cd7b05792e6ec329ed4301cd81063fe}} 
+class {\bfseries b2\+Friction\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_ad10f779c9d5766655fce7233bbc4a554}\label{classb2Body_ad10f779c9d5766655fce7233bbc4a554}} 
+class {\bfseries b2\+Gear\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a0f0efd7c4b2b2f925a152d11b3c3db96}\label{classb2Body_a0f0efd7c4b2b2f925a152d11b3c3db96}} 
+class {\bfseries b2\+Motor\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a7a86f2fad09d8edfb12c4c1696fe1d78}\label{classb2Body_a7a86f2fad09d8edfb12c4c1696fe1d78}} 
+class {\bfseries b2\+Mouse\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_ada7a46dac4c3e49cc961ed010d109652}\label{classb2Body_ada7a46dac4c3e49cc961ed010d109652}} 
+class {\bfseries b2\+Prismatic\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a73b0afaa7a9770dcda5a473bae31686f}\label{classb2Body_a73b0afaa7a9770dcda5a473bae31686f}} 
+class {\bfseries b2\+Pulley\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a8ef36177b763226c78b23bda0a3872a9}\label{classb2Body_a8ef36177b763226c78b23bda0a3872a9}} 
+class {\bfseries b2\+Revolute\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_ae37ff72ce14065f7df3dc72c3f204cf7}\label{classb2Body_ae37ff72ce14065f7df3dc72c3f204cf7}} 
+class {\bfseries b2\+Rope\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_ae274f65f2eca0230dc66bab56ee95b77}\label{classb2Body_ae274f65f2eca0230dc66bab56ee95b77}} 
+class {\bfseries b2\+Weld\+Joint}
+\item 
+\mbox{\Hypertarget{classb2Body_a3944ed8d44330076a0b8fdc6409997ab}\label{classb2Body_a3944ed8d44330076a0b8fdc6409997ab}} 
+class {\bfseries b2\+Wheel\+Joint}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A rigid body. These are created via \hyperlink{classb2World_a2eb36e967e43294bfa03ec3d177c2dae}{b2\+World\+::\+Create\+Body}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}\label{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Angular\+Impulse@{Apply\+Angular\+Impulse}}
+\index{Apply\+Angular\+Impulse@{Apply\+Angular\+Impulse}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Angular\+Impulse()}{ApplyAngularImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Angular\+Impulse (\begin{DoxyParamCaption}\item[{float32}]{impulse,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply an angular impulse. 
+\begin{DoxyParams}{Parameters}
+{\em impulse} & the angular impulse in units of kg$\ast$m$\ast$m/s \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}\label{classb2Body_a65384cfad8db2376cdf3fab38cac06e5}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Angular\+Impulse@{Apply\+Angular\+Impulse}}
+\index{Apply\+Angular\+Impulse@{Apply\+Angular\+Impulse}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Angular\+Impulse()}{ApplyAngularImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Angular\+Impulse (\begin{DoxyParamCaption}\item[{float32}]{impulse,  }\item[{bool}]{wake }\end{DoxyParamCaption})}
+
+Apply an angular impulse. 
+\begin{DoxyParams}{Parameters}
+{\em impulse} & the angular impulse in units of kg$\ast$m$\ast$m/s \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}\label{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Force@{Apply\+Force}}
+\index{Apply\+Force@{Apply\+Force}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Force()}{ApplyForce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Force (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{force,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply a force at a world point. If the force is not applied at the center of mass, it will generate a torque and affect the angular velocity. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em force} & the world force vector, usually in Newtons (N). \\
+\hline
+{\em point} & the world position of the point of application. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}\label{classb2Body_a942be8e1cd2bcd06f53c4638c45a9525}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Force@{Apply\+Force}}
+\index{Apply\+Force@{Apply\+Force}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Force()}{ApplyForce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Force (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{force,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{bool}]{wake }\end{DoxyParamCaption})}
+
+Apply a force at a world point. If the force is not applied at the center of mass, it will generate a torque and affect the angular velocity. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em force} & the world force vector, usually in Newtons (N). \\
+\hline
+{\em point} & the world position of the point of application. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_abeba04911f7a2a141169bb06fe98d06a}\label{classb2Body_abeba04911f7a2a141169bb06fe98d06a}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Force\+To\+Center@{Apply\+Force\+To\+Center}}
+\index{Apply\+Force\+To\+Center@{Apply\+Force\+To\+Center}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Force\+To\+Center()}{ApplyForceToCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Force\+To\+Center (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{force,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply a force to the center of mass. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em force} & the world force vector, usually in Newtons (N). \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_abeba04911f7a2a141169bb06fe98d06a}\label{classb2Body_abeba04911f7a2a141169bb06fe98d06a}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Force\+To\+Center@{Apply\+Force\+To\+Center}}
+\index{Apply\+Force\+To\+Center@{Apply\+Force\+To\+Center}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Force\+To\+Center()}{ApplyForceToCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Force\+To\+Center (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{force,  }\item[{bool}]{wake }\end{DoxyParamCaption})}
+
+Apply a force to the center of mass. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em force} & the world force vector, usually in Newtons (N). \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a7f677e93efb3c4c065087aff317274a3}\label{classb2Body_a7f677e93efb3c4c065087aff317274a3}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Linear\+Impulse@{Apply\+Linear\+Impulse}}
+\index{Apply\+Linear\+Impulse@{Apply\+Linear\+Impulse}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Linear\+Impulse()}{ApplyLinearImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Linear\+Impulse (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{impulse,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply an impulse at a point. This immediately modifies the velocity. It also modifies the angular velocity if the point of application is not at the center of mass. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em impulse} & the world impulse vector, usually in N-\/seconds or kg-\/m/s. \\
+\hline
+{\em point} & the world position of the point of application. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a7f677e93efb3c4c065087aff317274a3}\label{classb2Body_a7f677e93efb3c4c065087aff317274a3}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Linear\+Impulse@{Apply\+Linear\+Impulse}}
+\index{Apply\+Linear\+Impulse@{Apply\+Linear\+Impulse}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Linear\+Impulse()}{ApplyLinearImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Linear\+Impulse (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{impulse,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{bool}]{wake }\end{DoxyParamCaption})}
+
+Apply an impulse at a point. This immediately modifies the velocity. It also modifies the angular velocity if the point of application is not at the center of mass. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em impulse} & the world impulse vector, usually in N-\/seconds or kg-\/m/s. \\
+\hline
+{\em point} & the world position of the point of application. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_afa249d2fc11735985211e47c3d8e16fb}\label{classb2Body_afa249d2fc11735985211e47c3d8e16fb}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Linear\+Impulse\+To\+Center@{Apply\+Linear\+Impulse\+To\+Center}}
+\index{Apply\+Linear\+Impulse\+To\+Center@{Apply\+Linear\+Impulse\+To\+Center}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Linear\+Impulse\+To\+Center()}{ApplyLinearImpulseToCenter()}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Linear\+Impulse\+To\+Center (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{impulse,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply an impulse to the center of mass. This immediately modifies the velocity. 
+\begin{DoxyParams}{Parameters}
+{\em impulse} & the world impulse vector, usually in N-\/seconds or kg-\/m/s. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}\label{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Torque@{Apply\+Torque}}
+\index{Apply\+Torque@{Apply\+Torque}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Torque()}{ApplyTorque()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Torque (\begin{DoxyParamCaption}\item[{float32}]{torque,  }\item[{bool}]{wake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apply a torque. This affects the angular velocity without affecting the linear velocity of the center of mass. This wakes up the body. 
+\begin{DoxyParams}{Parameters}
+{\em torque} & about the z-\/axis (out of the screen), usually in N-\/m. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}\label{classb2Body_a54a354447ac3b4cc224c8327a5abc0e8}} 
+\index{b2\+Body@{b2\+Body}!Apply\+Torque@{Apply\+Torque}}
+\index{Apply\+Torque@{Apply\+Torque}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Apply\+Torque()}{ApplyTorque()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Apply\+Torque (\begin{DoxyParamCaption}\item[{float32}]{torque,  }\item[{bool}]{wake }\end{DoxyParamCaption})}
+
+Apply a torque. This affects the angular velocity without affecting the linear velocity of the center of mass. 
+\begin{DoxyParams}{Parameters}
+{\em torque} & about the z-\/axis (out of the screen), usually in N-\/m. \\
+\hline
+{\em wake} & also wake up the body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_aa4892301e9b9d62ede5e93dad1743894}\label{classb2Body_aa4892301e9b9d62ede5e93dad1743894}} 
+\index{b2\+Body@{b2\+Body}!Create\+Fixture@{Create\+Fixture}}
+\index{Create\+Fixture@{Create\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Create\+Fixture()}{CreateFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ b2\+Body\+::\+Create\+Fixture (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$}]{def }\end{DoxyParamCaption})}
+
+Creates a fixture and attach it to this body. Use this function if you need to set some fixture parameters, like friction. Otherwise you can create the fixture directly from a shape. If the density is non-\/zero, this function automatically updates the mass of the body. Contacts are not created until the next time step. 
+\begin{DoxyParams}{Parameters}
+{\em def} & the fixture definition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a40dda91b34418bb40e31e2db9b1b76a5}\label{classb2Body_a40dda91b34418bb40e31e2db9b1b76a5}} 
+\index{b2\+Body@{b2\+Body}!Create\+Fixture@{Create\+Fixture}}
+\index{Create\+Fixture@{Create\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Create\+Fixture()}{CreateFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture}$\ast$ b2\+Body\+::\+Create\+Fixture (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$}]{def }\end{DoxyParamCaption})}
+
+Creates a fixture and attach it to this body. Use this function if you need to set some fixture parameters, like friction. Otherwise you can create the fixture directly from a shape. If the density is non-\/zero, this function automatically updates the mass of the body. Contacts are not created until the next time step. 
+\begin{DoxyParams}{Parameters}
+{\em def} & the fixture definition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a52d971867086d5db79769a62bbb70a60}\label{classb2Body_a52d971867086d5db79769a62bbb70a60}} 
+\index{b2\+Body@{b2\+Body}!Create\+Fixture@{Create\+Fixture}}
+\index{Create\+Fixture@{Create\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Create\+Fixture()}{CreateFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ b2\+Body\+::\+Create\+Fixture (\begin{DoxyParamCaption}\item[{const \hyperlink{classb2Shape}{b2\+Shape} $\ast$}]{shape,  }\item[{float32}]{density }\end{DoxyParamCaption})}
+
+Creates a fixture from a shape and attach it to this body. This is a convenience function. Use \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} if you need to set parameters like friction, restitution, user data, or filtering. If the density is non-\/zero, this function automatically updates the mass of the body. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & the shape to be cloned. \\
+\hline
+{\em density} & the shape density (set to zero for static bodies). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a9bdbbc58d1cc51aec51a978174a2ba48}\label{classb2Body_a9bdbbc58d1cc51aec51a978174a2ba48}} 
+\index{b2\+Body@{b2\+Body}!Create\+Fixture@{Create\+Fixture}}
+\index{Create\+Fixture@{Create\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Create\+Fixture()}{CreateFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture}$\ast$ b2\+Body\+::\+Create\+Fixture (\begin{DoxyParamCaption}\item[{const \hyperlink{classb2Shape}{b2\+Shape} $\ast$}]{shape,  }\item[{float32}]{density }\end{DoxyParamCaption})}
+
+Creates a fixture from a shape and attach it to this body. This is a convenience function. Use \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} if you need to set parameters like friction, restitution, user data, or filtering. If the density is non-\/zero, this function automatically updates the mass of the body. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & the shape to be cloned. \\
+\hline
+{\em density} & the shape density (set to zero for static bodies). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}\label{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}} 
+\index{b2\+Body@{b2\+Body}!Destroy\+Fixture@{Destroy\+Fixture}}
+\index{Destroy\+Fixture@{Destroy\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Destroy\+Fixture()}{DestroyFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Destroy\+Fixture (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$}]{fixture }\end{DoxyParamCaption})}
+
+Destroy a fixture. This removes the fixture from the broad-\/phase and destroys all contacts associated with this fixture. This will automatically adjust the mass of the body if the body is dynamic and the fixture has positive density. All fixtures attached to a body are implicitly destroyed when the body is destroyed. 
+\begin{DoxyParams}{Parameters}
+{\em fixture} & the fixture to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}\label{classb2Body_a856d1df86b7bded91f02d8cfcaea1c2f}} 
+\index{b2\+Body@{b2\+Body}!Destroy\+Fixture@{Destroy\+Fixture}}
+\index{Destroy\+Fixture@{Destroy\+Fixture}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Destroy\+Fixture()}{DestroyFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Destroy\+Fixture (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$}]{fixture }\end{DoxyParamCaption})}
+
+Destroy a fixture. This removes the fixture from the broad-\/phase and destroys all contacts associated with this fixture. This will automatically adjust the mass of the body if the body is dynamic and the fixture has positive density. All fixtures attached to a body are implicitly destroyed when the body is destroyed. 
+\begin{DoxyParams}{Parameters}
+{\em fixture} & the fixture to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This function is locked during callbacks. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a20b9c8d0d722edf3af281034d37bd534}\label{classb2Body_a20b9c8d0d722edf3af281034d37bd534}} 
+\index{b2\+Body@{b2\+Body}!Get\+Angle@{Get\+Angle}}
+\index{Get\+Angle@{Get\+Angle}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Angle()}{GetAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the angle in radians. \begin{DoxyReturn}{Returns}
+the current world rotation angle in radians. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a20b9c8d0d722edf3af281034d37bd534}\label{classb2Body_a20b9c8d0d722edf3af281034d37bd534}} 
+\index{b2\+Body@{b2\+Body}!Get\+Angle@{Get\+Angle}}
+\index{Get\+Angle@{Get\+Angle}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Angle()}{GetAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the angle in radians. \begin{DoxyReturn}{Returns}
+the current world rotation angle in radians. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a6a404d85efc510f43575f61cb95c07a7}\label{classb2Body_a6a404d85efc510f43575f61cb95c07a7}} 
+\index{b2\+Body@{b2\+Body}!Get\+Angular\+Velocity@{Get\+Angular\+Velocity}}
+\index{Get\+Angular\+Velocity@{Get\+Angular\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Angular\+Velocity()}{GetAngularVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the angular velocity. \begin{DoxyReturn}{Returns}
+the angular velocity in radians/second. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a6a404d85efc510f43575f61cb95c07a7}\label{classb2Body_a6a404d85efc510f43575f61cb95c07a7}} 
+\index{b2\+Body@{b2\+Body}!Get\+Angular\+Velocity@{Get\+Angular\+Velocity}}
+\index{Get\+Angular\+Velocity@{Get\+Angular\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Angular\+Velocity()}{GetAngularVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the angular velocity. \begin{DoxyReturn}{Returns}
+the angular velocity in radians/second. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a16bdbfb266c82a0ef51be351a8928bc5}\label{classb2Body_a16bdbfb266c82a0ef51be351a8928bc5}} 
+\index{b2\+Body@{b2\+Body}!Get\+Contact\+List@{Get\+Contact\+List}}
+\index{Get\+Contact\+List@{Get\+Contact\+List}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Contact\+List()}{GetContactList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2ContactEdge}{b2\+Contact\+Edge} $\ast$ b2\+Body\+::\+Get\+Contact\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \hyperlink{protocollist-p}{list} of all contacts attached to this body. \begin{DoxyWarning}{Warning}
+this \hyperlink{protocollist-p}{list} changes during the time step and you may miss some collisions if you don\textquotesingle{}t use \hyperlink{classb2ContactListener}{b2\+Contact\+Listener}. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_af0f564c41cd66f1a2f3910e83bf58d61}\label{classb2Body_af0f564c41cd66f1a2f3910e83bf58d61}} 
+\index{b2\+Body@{b2\+Body}!Get\+Contact\+List@{Get\+Contact\+List}}
+\index{Get\+Contact\+List@{Get\+Contact\+List}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Contact\+List()}{GetContactList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2ContactEdge}{b2\+Contact\+Edge}$\ast$ b2\+Body\+::\+Get\+Contact\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the \hyperlink{protocollist-p}{list} of all contacts attached to this body. \begin{DoxyWarning}{Warning}
+this \hyperlink{protocollist-p}{list} changes during the time step and you may miss some collisions if you don\textquotesingle{}t use \hyperlink{classb2ContactListener}{b2\+Contact\+Listener}. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classb2Body_a60929c13e4b6548492dca5ec79f159db}\label{classb2Body_a60929c13e4b6548492dca5ec79f159db}} 
+\index{b2\+Body@{b2\+Body}!Get\+Inertia@{Get\+Inertia}}
+\index{Get\+Inertia@{Get\+Inertia}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Inertia()}{GetInertia()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Inertia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the rotational inertia of the body about the local origin. \begin{DoxyReturn}{Returns}
+the rotational inertia, usually in kg-\/m$^\wedge$2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a60929c13e4b6548492dca5ec79f159db}\label{classb2Body_a60929c13e4b6548492dca5ec79f159db}} 
+\index{b2\+Body@{b2\+Body}!Get\+Inertia@{Get\+Inertia}}
+\index{Get\+Inertia@{Get\+Inertia}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Inertia()}{GetInertia()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Inertia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the rotational inertia of the body about the local origin. \begin{DoxyReturn}{Returns}
+the rotational inertia, usually in kg-\/m$^\wedge$2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a8fcaf842141320701057f679dff90b89}\label{classb2Body_a8fcaf842141320701057f679dff90b89}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity@{Get\+Linear\+Velocity}}
+\index{Get\+Linear\+Velocity@{Get\+Linear\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity()}{GetLinearVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Vec2}{b2\+Vec2} \& b2\+Body\+::\+Get\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the linear velocity of the center of mass. \begin{DoxyReturn}{Returns}
+the linear velocity of the center of mass. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a0d513a5a078caa4b9e00bf8e199f29a2}\label{classb2Body_a0d513a5a078caa4b9e00bf8e199f29a2}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity@{Get\+Linear\+Velocity}}
+\index{Get\+Linear\+Velocity@{Get\+Linear\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity()}{GetLinearVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Vec2}{b2\+Vec2}\& b2\+Body\+::\+Get\+Linear\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the linear velocity of the center of mass. \begin{DoxyReturn}{Returns}
+the linear velocity of the center of mass. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}\label{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity\+From\+Local\+Point@{Get\+Linear\+Velocity\+From\+Local\+Point}}
+\index{Get\+Linear\+Velocity\+From\+Local\+Point@{Get\+Linear\+Velocity\+From\+Local\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity\+From\+Local\+Point()}{GetLinearVelocityFromLocalPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Linear\+Velocity\+From\+Local\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the world velocity of a local point. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in local coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the world velocity of a point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}\label{classb2Body_a0ac0a4ad6ac3c7804652d9994239dcbd}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity\+From\+Local\+Point@{Get\+Linear\+Velocity\+From\+Local\+Point}}
+\index{Get\+Linear\+Velocity\+From\+Local\+Point@{Get\+Linear\+Velocity\+From\+Local\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity\+From\+Local\+Point()}{GetLinearVelocityFromLocalPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Linear\+Velocity\+From\+Local\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Point }\end{DoxyParamCaption}) const}
+
+Get the world velocity of a local point. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in local coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the world velocity of a point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a5bc9a483e5f59199daa1751786034c1d}\label{classb2Body_a5bc9a483e5f59199daa1751786034c1d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity\+From\+World\+Point@{Get\+Linear\+Velocity\+From\+World\+Point}}
+\index{Get\+Linear\+Velocity\+From\+World\+Point@{Get\+Linear\+Velocity\+From\+World\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity\+From\+World\+Point()}{GetLinearVelocityFromWorldPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Linear\+Velocity\+From\+World\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the world linear velocity of a world point attached to this body. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the world velocity of a point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a5bc9a483e5f59199daa1751786034c1d}\label{classb2Body_a5bc9a483e5f59199daa1751786034c1d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Linear\+Velocity\+From\+World\+Point@{Get\+Linear\+Velocity\+From\+World\+Point}}
+\index{Get\+Linear\+Velocity\+From\+World\+Point@{Get\+Linear\+Velocity\+From\+World\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Linear\+Velocity\+From\+World\+Point()}{GetLinearVelocityFromWorldPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Linear\+Velocity\+From\+World\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Point }\end{DoxyParamCaption}) const}
+
+Get the world linear velocity of a world point attached to this body. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the world velocity of a point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a0df8f4312ab23223489323326b2d763d}\label{classb2Body_a0df8f4312ab23223489323326b2d763d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Local\+Point@{Get\+Local\+Point}}
+\index{Get\+Local\+Point@{Get\+Local\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Local\+Point()}{GetLocalPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Local\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a local point relative to the body\textquotesingle{}s origin given a world point. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding local point relative to the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a0df8f4312ab23223489323326b2d763d}\label{classb2Body_a0df8f4312ab23223489323326b2d763d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Local\+Point@{Get\+Local\+Point}}
+\index{Get\+Local\+Point@{Get\+Local\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Local\+Point()}{GetLocalPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Local\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Point }\end{DoxyParamCaption}) const}
+
+Gets a local point relative to the body\textquotesingle{}s origin given a world point. 
+\begin{DoxyParams}{Parameters}
+{\em a} & point in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding local point relative to the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}\label{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}} 
+\index{b2\+Body@{b2\+Body}!Get\+Local\+Vector@{Get\+Local\+Vector}}
+\index{Get\+Local\+Vector@{Get\+Local\+Vector}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Local\+Vector()}{GetLocalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Local\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a local vector given a world vector. 
+\begin{DoxyParams}{Parameters}
+{\em a} & vector in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding local vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}\label{classb2Body_aed2f88179cedf4cdbdc47429ebe41288}} 
+\index{b2\+Body@{b2\+Body}!Get\+Local\+Vector@{Get\+Local\+Vector}}
+\index{Get\+Local\+Vector@{Get\+Local\+Vector}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Local\+Vector()}{GetLocalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+Local\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{world\+Vector }\end{DoxyParamCaption}) const}
+
+Gets a local vector given a world vector. 
+\begin{DoxyParams}{Parameters}
+{\em a} & vector in world coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding local vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_adfeebf45965d131894f728a2f264311d}\label{classb2Body_adfeebf45965d131894f728a2f264311d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Mass@{Get\+Mass}}
+\index{Get\+Mass@{Get\+Mass}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Mass()}{GetMass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the total mass of the body. \begin{DoxyReturn}{Returns}
+the mass, usually in kilograms (kg). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_adfeebf45965d131894f728a2f264311d}\label{classb2Body_adfeebf45965d131894f728a2f264311d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Mass@{Get\+Mass}}
+\index{Get\+Mass@{Get\+Mass}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Mass()}{GetMass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float32 b2\+Body\+::\+Get\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the total mass of the body. \begin{DoxyReturn}{Returns}
+the mass, usually in kilograms (kg). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}\label{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}} 
+\index{b2\+Body@{b2\+Body}!Get\+Mass\+Data@{Get\+Mass\+Data}}
+\index{Get\+Mass\+Data@{Get\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Mass\+Data()}{GetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Get\+Mass\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the mass data of the body. \begin{DoxyReturn}{Returns}
+a struct containing the mass, inertia and center of the body. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}\label{classb2Body_a5100927dbd39dd0addea79d5f323f3f1}} 
+\index{b2\+Body@{b2\+Body}!Get\+Mass\+Data@{Get\+Mass\+Data}}
+\index{Get\+Mass\+Data@{Get\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Mass\+Data()}{GetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Get\+Mass\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+Get the mass data of the body. \begin{DoxyReturn}{Returns}
+a struct containing the mass, inertia and center of the body. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a7944dc953ac0cb1e00b32bc61b50e70d}\label{classb2Body_a7944dc953ac0cb1e00b32bc61b50e70d}} 
+\index{b2\+Body@{b2\+Body}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Vec2}{b2\+Vec2} \& b2\+Body\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the world body origin position. \begin{DoxyReturn}{Returns}
+the world position of the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_ae44c1dc2f64fd42af1b77ed0843dd886}\label{classb2Body_ae44c1dc2f64fd42af1b77ed0843dd886}} 
+\index{b2\+Body@{b2\+Body}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Vec2}{b2\+Vec2}\& b2\+Body\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the world body origin position. \begin{DoxyReturn}{Returns}
+the world position of the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_afb316448e6e555ceb2df23ed216b2f53}\label{classb2Body_afb316448e6e555ceb2df23ed216b2f53}} 
+\index{b2\+Body@{b2\+Body}!Get\+Transform@{Get\+Transform}}
+\index{Get\+Transform@{Get\+Transform}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Transform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Transform}{b2\+Transform} \& b2\+Body\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the body transform for the body\textquotesingle{}s origin. \begin{DoxyReturn}{Returns}
+the world transform of the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a23d09b0b15585eb9627007925fddf317}\label{classb2Body_a23d09b0b15585eb9627007925fddf317}} 
+\index{b2\+Body@{b2\+Body}!Get\+Transform@{Get\+Transform}}
+\index{Get\+Transform@{Get\+Transform}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+Transform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2Transform}{b2\+Transform}\& b2\+Body\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the body transform for the body\textquotesingle{}s origin. \begin{DoxyReturn}{Returns}
+the world transform of the body\textquotesingle{}s origin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a712b782c61963c6f07beca86acc631ae}\label{classb2Body_a712b782c61963c6f07beca86acc631ae}} 
+\index{b2\+Body@{b2\+Body}!Get\+World\+Point@{Get\+World\+Point}}
+\index{Get\+World\+Point@{Get\+World\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+World\+Point()}{GetWorldPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+World\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the world coordinates of a point given the local coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em local\+Point} & a point on the body measured relative the the body\textquotesingle{}s origin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same point expressed in world coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a712b782c61963c6f07beca86acc631ae}\label{classb2Body_a712b782c61963c6f07beca86acc631ae}} 
+\index{b2\+Body@{b2\+Body}!Get\+World\+Point@{Get\+World\+Point}}
+\index{Get\+World\+Point@{Get\+World\+Point}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+World\+Point()}{GetWorldPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+World\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Point }\end{DoxyParamCaption}) const}
+
+Get the world coordinates of a point given the local coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em local\+Point} & a point on the body measured relative the the body\textquotesingle{}s origin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same point expressed in world coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_ae8c434785b2a730f7c385e708b345bb6}\label{classb2Body_ae8c434785b2a730f7c385e708b345bb6}} 
+\index{b2\+Body@{b2\+Body}!Get\+World\+Vector@{Get\+World\+Vector}}
+\index{Get\+World\+Vector@{Get\+World\+Vector}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+World\+Vector()}{GetWorldVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+World\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the world coordinates of a vector given the local coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em local\+Vector} & a vector fixed in the body. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same vector expressed in world coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_ae8c434785b2a730f7c385e708b345bb6}\label{classb2Body_ae8c434785b2a730f7c385e708b345bb6}} 
+\index{b2\+Body@{b2\+Body}!Get\+World\+Vector@{Get\+World\+Vector}}
+\index{Get\+World\+Vector@{Get\+World\+Vector}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Get\+World\+Vector()}{GetWorldVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structb2Vec2}{b2\+Vec2} b2\+Body\+::\+Get\+World\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{local\+Vector }\end{DoxyParamCaption}) const}
+
+Get the world coordinates of a vector given the local coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em local\+Vector} & a vector fixed in the body. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same vector expressed in world coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a697f708427cdf7d31a626e80e694682c}\label{classb2Body_a697f708427cdf7d31a626e80e694682c}} 
+\index{b2\+Body@{b2\+Body}!Is\+Awake@{Is\+Awake}}
+\index{Is\+Awake@{Is\+Awake}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Is\+Awake()}{IsAwake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Body\+::\+Is\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the sleeping state of this body. \begin{DoxyReturn}{Returns}
+true if the body is awake. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a697f708427cdf7d31a626e80e694682c}\label{classb2Body_a697f708427cdf7d31a626e80e694682c}} 
+\index{b2\+Body@{b2\+Body}!Is\+Awake@{Is\+Awake}}
+\index{Is\+Awake@{Is\+Awake}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Is\+Awake()}{IsAwake()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Body\+::\+Is\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the sleeping state of this body. \begin{DoxyReturn}{Returns}
+true if the body is awake. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Body_a109d8567c6ae84c61fce2919fb209c63}\label{classb2Body_a109d8567c6ae84c61fce2919fb209c63}} 
+\index{b2\+Body@{b2\+Body}!Reset\+Mass\+Data@{Reset\+Mass\+Data}}
+\index{Reset\+Mass\+Data@{Reset\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Reset\+Mass\+Data()}{ResetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Reset\+Mass\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This resets the mass properties to the sum of the mass properties of the fixtures. This normally does not need to be called unless you called Set\+Mass\+Data to override the mass and you later want to reset the mass. \mbox{\Hypertarget{classb2Body_a109d8567c6ae84c61fce2919fb209c63}\label{classb2Body_a109d8567c6ae84c61fce2919fb209c63}} 
+\index{b2\+Body@{b2\+Body}!Reset\+Mass\+Data@{Reset\+Mass\+Data}}
+\index{Reset\+Mass\+Data@{Reset\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Reset\+Mass\+Data()}{ResetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Reset\+Mass\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This resets the mass properties to the sum of the mass properties of the fixtures. This normally does not need to be called unless you called Set\+Mass\+Data to override the mass and you later want to reset the mass. \mbox{\Hypertarget{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}\label{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}} 
+\index{b2\+Body@{b2\+Body}!Set\+Active@{Set\+Active}}
+\index{Set\+Active@{Set\+Active}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Active()}{SetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+Set the active state of the body. An inactive body is not simulated and cannot be collided with or woken up. If you pass a flag of true, all fixtures will be added to the broad-\/phase. If you pass a flag of false, all fixtures will be removed from the broad-\/phase and all contacts will be destroyed. Fixtures and joints are otherwise unaffected. You may continue to create/destroy fixtures and joints on inactive bodies. Fixtures on an inactive body are implicitly inactive and will not participate in collisions, ray-\/casts, or queries. Joints connected to an inactive body are implicitly inactive. An inactive body is still owned by a \hyperlink{classb2World}{b2\+World} object and remains in the body \hyperlink{protocollist-p}{list}. \mbox{\Hypertarget{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}\label{classb2Body_ab8059b7b3e3b64aee17b54f68f7dde80}} 
+\index{b2\+Body@{b2\+Body}!Set\+Active@{Set\+Active}}
+\index{Set\+Active@{Set\+Active}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Active()}{SetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+Set the active state of the body. An inactive body is not simulated and cannot be collided with or woken up. If you pass a flag of true, all fixtures will be added to the broad-\/phase. If you pass a flag of false, all fixtures will be removed from the broad-\/phase and all contacts will be destroyed. Fixtures and joints are otherwise unaffected. You may continue to create/destroy fixtures and joints on inactive bodies. Fixtures on an inactive body are implicitly inactive and will not participate in collisions, ray-\/casts, or queries. Joints connected to an inactive body are implicitly inactive. An inactive body is still owned by a \hyperlink{classb2World}{b2\+World} object and remains in the body \hyperlink{protocollist-p}{list}. \mbox{\Hypertarget{classb2Body_a37adc4160b84f73e8552a91cbde3f578}\label{classb2Body_a37adc4160b84f73e8552a91cbde3f578}} 
+\index{b2\+Body@{b2\+Body}!Set\+Angular\+Velocity@{Set\+Angular\+Velocity}}
+\index{Set\+Angular\+Velocity@{Set\+Angular\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Angular\+Velocity()}{SetAngularVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{float32}]{omega }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the angular velocity. 
+\begin{DoxyParams}{Parameters}
+{\em omega} & the new angular velocity in radians/second. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a37adc4160b84f73e8552a91cbde3f578}\label{classb2Body_a37adc4160b84f73e8552a91cbde3f578}} 
+\index{b2\+Body@{b2\+Body}!Set\+Angular\+Velocity@{Set\+Angular\+Velocity}}
+\index{Set\+Angular\+Velocity@{Set\+Angular\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Angular\+Velocity()}{SetAngularVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{float32}]{omega }\end{DoxyParamCaption})}
+
+Set the angular velocity. 
+\begin{DoxyParams}{Parameters}
+{\em omega} & the new angular velocity in radians/second. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_ac72ed3df52a26c33db82252ab57399af}\label{classb2Body_ac72ed3df52a26c33db82252ab57399af}} 
+\index{b2\+Body@{b2\+Body}!Set\+Awake@{Set\+Awake}}
+\index{Set\+Awake@{Set\+Awake}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Awake()}{SetAwake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Awake (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the sleep state of the body. A sleeping body has very low C\+PU cost. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & set to true to wake the body, false to put it to sleep. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_ac72ed3df52a26c33db82252ab57399af}\label{classb2Body_ac72ed3df52a26c33db82252ab57399af}} 
+\index{b2\+Body@{b2\+Body}!Set\+Awake@{Set\+Awake}}
+\index{Set\+Awake@{Set\+Awake}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Awake()}{SetAwake()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Awake (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+Set the sleep state of the body. A sleeping body has very low C\+PU cost. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & set to true to wake the body, false to put it to sleep. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_aff35078e2a221d2d05409674936cb8d2}\label{classb2Body_aff35078e2a221d2d05409674936cb8d2}} 
+\index{b2\+Body@{b2\+Body}!Set\+Fixed\+Rotation@{Set\+Fixed\+Rotation}}
+\index{Set\+Fixed\+Rotation@{Set\+Fixed\+Rotation}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Fixed\+Rotation()}{SetFixedRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Fixed\+Rotation (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+Set this body to have fixed rotation. This causes the mass to be reset. \mbox{\Hypertarget{classb2Body_aff35078e2a221d2d05409674936cb8d2}\label{classb2Body_aff35078e2a221d2d05409674936cb8d2}} 
+\index{b2\+Body@{b2\+Body}!Set\+Fixed\+Rotation@{Set\+Fixed\+Rotation}}
+\index{Set\+Fixed\+Rotation@{Set\+Fixed\+Rotation}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Fixed\+Rotation()}{SetFixedRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Fixed\+Rotation (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+Set this body to have fixed rotation. This causes the mass to be reset. \mbox{\Hypertarget{classb2Body_a832f3989a44f0d4782c80456832197ad}\label{classb2Body_a832f3989a44f0d4782c80456832197ad}} 
+\index{b2\+Body@{b2\+Body}!Set\+Linear\+Velocity@{Set\+Linear\+Velocity}}
+\index{Set\+Linear\+Velocity@{Set\+Linear\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Linear\+Velocity()}{SetLinearVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Linear\+Velocity (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the linear velocity of the center of mass. 
+\begin{DoxyParams}{Parameters}
+{\em v} & the new linear velocity of the center of mass. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a832f3989a44f0d4782c80456832197ad}\label{classb2Body_a832f3989a44f0d4782c80456832197ad}} 
+\index{b2\+Body@{b2\+Body}!Set\+Linear\+Velocity@{Set\+Linear\+Velocity}}
+\index{Set\+Linear\+Velocity@{Set\+Linear\+Velocity}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Linear\+Velocity()}{SetLinearVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Linear\+Velocity (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{v }\end{DoxyParamCaption})}
+
+Set the linear velocity of the center of mass. 
+\begin{DoxyParams}{Parameters}
+{\em v} & the new linear velocity of the center of mass. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}\label{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}} 
+\index{b2\+Body@{b2\+Body}!Set\+Mass\+Data@{Set\+Mass\+Data}}
+\index{Set\+Mass\+Data@{Set\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Mass\+Data()}{SetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Mass\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Set the mass properties to override the mass properties of the fixtures. Note that this changes the center of mass position. Note that creating or destroying fixtures can also alter the mass. This function has no effect if the body isn\textquotesingle{}t dynamic. 
+\begin{DoxyParams}{Parameters}
+{\em mass\+Data} & the mass properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}\label{classb2Body_a58a641fedf8a81e1e26d09ec00a22fe2}} 
+\index{b2\+Body@{b2\+Body}!Set\+Mass\+Data@{Set\+Mass\+Data}}
+\index{Set\+Mass\+Data@{Set\+Mass\+Data}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Mass\+Data()}{SetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Mass\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Set the mass properties to override the mass properties of the fixtures. Note that this changes the center of mass position. Note that creating or destroying fixtures can also alter the mass. This function has no effect if the body isn\textquotesingle{}t dynamic. 
+\begin{DoxyParams}{Parameters}
+{\em mass\+Data} & the mass properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a229a6de228416203fecbf7a7544c33bb}\label{classb2Body_a229a6de228416203fecbf7a7544c33bb}} 
+\index{b2\+Body@{b2\+Body}!Set\+Sleeping\+Allowed@{Set\+Sleeping\+Allowed}}
+\index{Set\+Sleeping\+Allowed@{Set\+Sleeping\+Allowed}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Sleeping\+Allowed()}{SetSleepingAllowed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Sleeping\+Allowed (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+You can disable sleeping on this body. If you disable sleeping, the body will be woken. \mbox{\Hypertarget{classb2Body_a229a6de228416203fecbf7a7544c33bb}\label{classb2Body_a229a6de228416203fecbf7a7544c33bb}} 
+\index{b2\+Body@{b2\+Body}!Set\+Sleeping\+Allowed@{Set\+Sleeping\+Allowed}}
+\index{Set\+Sleeping\+Allowed@{Set\+Sleeping\+Allowed}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Sleeping\+Allowed()}{SetSleepingAllowed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Sleeping\+Allowed (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+You can disable sleeping on this body. If you disable sleeping, the body will be woken. \mbox{\Hypertarget{classb2Body_a4686f32bbce5723761e9719c706eca11}\label{classb2Body_a4686f32bbce5723761e9719c706eca11}} 
+\index{b2\+Body@{b2\+Body}!Set\+Transform@{Set\+Transform}}
+\index{Set\+Transform@{Set\+Transform}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Transform()}{SetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{position,  }\item[{float32}]{angle }\end{DoxyParamCaption})}
+
+Set the position of the body\textquotesingle{}s origin and rotation. Manipulating a body\textquotesingle{}s transform may cause non-\/physical behavior. Note\+: contacts are updated on the next call to \hyperlink{classb2World_a7a8eff61af98461f978fe43f3af7be90}{b2\+World\+::\+Step}. 
+\begin{DoxyParams}{Parameters}
+{\em position} & the world position of the body\textquotesingle{}s local origin. \\
+\hline
+{\em angle} & the world rotation in radians. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Body_a4686f32bbce5723761e9719c706eca11}\label{classb2Body_a4686f32bbce5723761e9719c706eca11}} 
+\index{b2\+Body@{b2\+Body}!Set\+Transform@{Set\+Transform}}
+\index{Set\+Transform@{Set\+Transform}!b2\+Body@{b2\+Body}}
+\subsubsection{\texorpdfstring{Set\+Transform()}{SetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Body\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{position,  }\item[{float32}]{angle }\end{DoxyParamCaption})}
+
+Set the position of the body\textquotesingle{}s origin and rotation. Manipulating a body\textquotesingle{}s transform may cause non-\/physical behavior. Note\+: contacts are updated on the next call to \hyperlink{classb2World_a7a8eff61af98461f978fe43f3af7be90}{b2\+World\+::\+Step}. 
+\begin{DoxyParams}{Parameters}
+{\em position} & the world position of the body\textquotesingle{}s local origin. \\
+\hline
+{\em angle} & the world rotation in radians. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+Body.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+Body.\+cpp\end{DoxyCompactItemize}

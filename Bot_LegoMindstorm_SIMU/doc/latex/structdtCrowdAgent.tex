@@ -1,0 +1,102 @@
+\hypertarget{structdtCrowdAgent}{}\section{dt\+Crowd\+Agent Struct Reference}
+\label{structdtCrowdAgent}\index{dt\+Crowd\+Agent@{dt\+Crowd\+Agent}}
+
+
+{\ttfamily \#include $<$Detour\+Crowd.\+h$>$}
+
+
+
+Collaboration diagram for dt\+Crowd\+Agent\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdtCrowdAgent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}\label{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}} 
+bool \hyperlink{structdtCrowdAgent_a6473f48354abf6f46f5b4d7ead9bca20}{active}
+\begin{DoxyCompactList}\small\item\em True if the agent is active, false if the agent is in an unused slot in the agent pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a091dd7851f63dbe00a59b54072152d5f}\label{structdtCrowdAgent_a091dd7851f63dbe00a59b54072152d5f}} 
+unsigned char \hyperlink{structdtCrowdAgent_a091dd7851f63dbe00a59b54072152d5f}{state}
+\begin{DoxyCompactList}\small\item\em The type of mesh polygon the agent is traversing. (See\+: \hyperlink{group__crowd_ga59bc9aa54705292d8f0f1ad9ca48ca82}{Crowd\+Agent\+State}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_aeb06d7c34ab74696ebb125b0c409043d}\label{structdtCrowdAgent_aeb06d7c34ab74696ebb125b0c409043d}} 
+bool \hyperlink{structdtCrowdAgent_aeb06d7c34ab74696ebb125b0c409043d}{partial}
+\begin{DoxyCompactList}\small\item\em True if the agent has valid path (target\+State == D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+V\+A\+L\+ID) and the path does not lead to the requested position, else false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a65166bf21e82273168b4f6f4864044ef}\label{structdtCrowdAgent_a65166bf21e82273168b4f6f4864044ef}} 
+\hyperlink{classdtPathCorridor}{dt\+Path\+Corridor} \hyperlink{structdtCrowdAgent_a65166bf21e82273168b4f6f4864044ef}{corridor}
+\begin{DoxyCompactList}\small\item\em The path corridor the agent is using. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a68fc2f237bd2ac88e4aed6afe6a77951}\label{structdtCrowdAgent_a68fc2f237bd2ac88e4aed6afe6a77951}} 
+\hyperlink{classdtLocalBoundary}{dt\+Local\+Boundary} \hyperlink{structdtCrowdAgent_a68fc2f237bd2ac88e4aed6afe6a77951}{boundary}
+\begin{DoxyCompactList}\small\item\em The local boundary data for the agent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a6c9330e499ceb3df18e047130a29f8f8}\label{structdtCrowdAgent_a6c9330e499ceb3df18e047130a29f8f8}} 
+float \hyperlink{structdtCrowdAgent_a6c9330e499ceb3df18e047130a29f8f8}{topology\+Opt\+Time}
+\begin{DoxyCompactList}\small\item\em Time since the agent\textquotesingle{}s path corridor was optimized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a00fbfb7b00f0e352cb2c6486a97d8eb4}\label{structdtCrowdAgent_a00fbfb7b00f0e352cb2c6486a97d8eb4}} 
+\hyperlink{structdtCrowdNeighbour}{dt\+Crowd\+Neighbour} \hyperlink{structdtCrowdAgent_a00fbfb7b00f0e352cb2c6486a97d8eb4}{neis} \mbox{[}D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+N\+E\+I\+G\+H\+B\+O\+U\+RS\mbox{]}
+\begin{DoxyCompactList}\small\item\em The known neighbors of the agent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a250ba2f5d9ebd40b88ad770aced4aeab}\label{structdtCrowdAgent_a250ba2f5d9ebd40b88ad770aced4aeab}} 
+int \hyperlink{structdtCrowdAgent_a250ba2f5d9ebd40b88ad770aced4aeab}{nneis}
+\begin{DoxyCompactList}\small\item\em The number of neighbors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_ac15a23fd617433db5be5544462ec34d8}\label{structdtCrowdAgent_ac15a23fd617433db5be5544462ec34d8}} 
+float \hyperlink{structdtCrowdAgent_ac15a23fd617433db5be5544462ec34d8}{desired\+Speed}
+\begin{DoxyCompactList}\small\item\em The desired speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a7fca233de63765485755b1d3fac0dc97}\label{structdtCrowdAgent_a7fca233de63765485755b1d3fac0dc97}} 
+float \hyperlink{structdtCrowdAgent_a7fca233de63765485755b1d3fac0dc97}{npos} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The current agent position. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_ac9a3833e430a133bde18698e8e3a93f5}\label{structdtCrowdAgent_ac9a3833e430a133bde18698e8e3a93f5}} 
+float {\bfseries disp} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a14233e0e769a8df1d1931ab878bc0333}\label{structdtCrowdAgent_a14233e0e769a8df1d1931ab878bc0333}} 
+float \hyperlink{structdtCrowdAgent_a14233e0e769a8df1d1931ab878bc0333}{dvel} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The desired velocity of the agent. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_ab37117892b55e16a078cf446ce5763a9}\label{structdtCrowdAgent_ab37117892b55e16a078cf446ce5763a9}} 
+float {\bfseries nvel} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{structdtCrowdAgent_af549e32118e5b42db1da5ee244d7d4b0}\label{structdtCrowdAgent_af549e32118e5b42db1da5ee244d7d4b0}} 
+float \hyperlink{structdtCrowdAgent_af549e32118e5b42db1da5ee244d7d4b0}{vel} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The actual velocity of the agent. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_acd1b22112639114ce05c793d178eb4b5}\label{structdtCrowdAgent_acd1b22112639114ce05c793d178eb4b5}} 
+\hyperlink{structdtCrowdAgentParams}{dt\+Crowd\+Agent\+Params} \hyperlink{structdtCrowdAgent_acd1b22112639114ce05c793d178eb4b5}{params}
+\begin{DoxyCompactList}\small\item\em The agent\textquotesingle{}s configuration parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_af64ea4c39bf846283f8f2386ae03ab39}\label{structdtCrowdAgent_af64ea4c39bf846283f8f2386ae03ab39}} 
+float \hyperlink{structdtCrowdAgent_af64ea4c39bf846283f8f2386ae03ab39}{corner\+Verts} \mbox{[}D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+R\+N\+E\+RS $\ast$3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The local path corridor corners for the agent. (Staight path.) \mbox{[}(x, y, z) $\ast$ \hyperlink{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}{ncorners}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a1a39ad4f8255f65ca8ef3da1cdd3a48e}\label{structdtCrowdAgent_a1a39ad4f8255f65ca8ef3da1cdd3a48e}} 
+unsigned char \hyperlink{structdtCrowdAgent_a1a39ad4f8255f65ca8ef3da1cdd3a48e}{corner\+Flags} \mbox{[}D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+R\+N\+E\+RS\mbox{]}
+\begin{DoxyCompactList}\small\item\em The local path corridor corner flags. (See\+: \#dt\+Straight\+Path\+Flags) \mbox{[}(flags) $\ast$ \hyperlink{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}{ncorners}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a713759e845ecc9f1b361b9ae1399bf8e}\label{structdtCrowdAgent_a713759e845ecc9f1b361b9ae1399bf8e}} 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{structdtCrowdAgent_a713759e845ecc9f1b361b9ae1399bf8e}{corner\+Polys} \mbox{[}D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+C\+O\+R\+N\+E\+RS\mbox{]}
+\begin{DoxyCompactList}\small\item\em The reference id of the polygon being entered at the corner. \mbox{[}(poly\+Ref) $\ast$ \hyperlink{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}{ncorners}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}\label{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}} 
+int \hyperlink{structdtCrowdAgent_a74e6935a70f5a787f9e06481d9c2905b}{ncorners}
+\begin{DoxyCompactList}\small\item\em The number of corners. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a221a6da715a7e67bbe39e8263ed39948}\label{structdtCrowdAgent_a221a6da715a7e67bbe39e8263ed39948}} 
+unsigned char \hyperlink{structdtCrowdAgent_a221a6da715a7e67bbe39e8263ed39948}{target\+State}
+\begin{DoxyCompactList}\small\item\em State of the movement request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a0f33325c1c0bc4050eefe2e0690f84c6}\label{structdtCrowdAgent_a0f33325c1c0bc4050eefe2e0690f84c6}} 
+\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} \hyperlink{structdtCrowdAgent_a0f33325c1c0bc4050eefe2e0690f84c6}{target\+Ref}
+\begin{DoxyCompactList}\small\item\em Target polyref of the movement request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_aed0a0999d8d6d100667adff1f64e327f}\label{structdtCrowdAgent_aed0a0999d8d6d100667adff1f64e327f}} 
+float \hyperlink{structdtCrowdAgent_aed0a0999d8d6d100667adff1f64e327f}{target\+Pos} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Target position of the movement request (or velocity in case of D\+T\+\_\+\+C\+R\+O\+W\+D\+A\+G\+E\+N\+T\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+V\+E\+L\+O\+C\+I\+TY). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a1e0f72d182c9cf391300840ab293976e}\label{structdtCrowdAgent_a1e0f72d182c9cf391300840ab293976e}} 
+dt\+Path\+Queue\+Ref \hyperlink{structdtCrowdAgent_a1e0f72d182c9cf391300840ab293976e}{target\+Pathq\+Ref}
+\begin{DoxyCompactList}\small\item\em Path finder ref. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a6300c91130b2690ac64e327e8909d2c8}\label{structdtCrowdAgent_a6300c91130b2690ac64e327e8909d2c8}} 
+bool \hyperlink{structdtCrowdAgent_a6300c91130b2690ac64e327e8909d2c8}{target\+Replan}
+\begin{DoxyCompactList}\small\item\em Flag indicating that the current path is being replanned. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtCrowdAgent_a58585d67fe18e987898f2d42405608b4}\label{structdtCrowdAgent_a58585d67fe18e987898f2d42405608b4}} 
+float {\bfseries target\+Replan\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an agent managed by a \hyperlink{classdtCrowd}{dt\+Crowd} object. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour\+Crowd/Detour\+Crowd.\+h\end{DoxyCompactItemize}

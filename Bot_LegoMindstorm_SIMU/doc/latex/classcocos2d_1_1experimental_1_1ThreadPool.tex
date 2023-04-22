@@ -1,0 +1,133 @@
+\hypertarget{classcocos2d_1_1experimental_1_1ThreadPool}{}\section{cocos2d\+:\+:experimental\+:\+:Thread\+Pool Class Reference}
+\label{classcocos2d_1_1experimental_1_1ThreadPool}\index{cocos2d\+::experimental\+::\+Thread\+Pool@{cocos2d\+::experimental\+::\+Thread\+Pool}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a0e578b9707fd927ab2413ffef9c3992e}\label{classcocos2d_1_1experimental_1_1ThreadPool_a0e578b9707fd927ab2413ffef9c3992e}} 
+enum {\bfseries Task\+Type} \{ \newline
+{\bfseries D\+E\+F\+A\+U\+LT} = 0, 
+{\bfseries N\+E\+T\+W\+O\+RK}, 
+{\bfseries IO}, 
+{\bfseries A\+U\+D\+IO}, 
+\newline
+{\bfseries U\+S\+ER} = 1000, 
+{\bfseries D\+E\+F\+A\+U\+LT} = 0, 
+{\bfseries N\+E\+T\+W\+O\+RK}, 
+{\bfseries IO}, 
+\newline
+{\bfseries A\+U\+D\+IO}, 
+{\bfseries U\+S\+ER} = 1000
+ \}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a0e578b9707fd927ab2413ffef9c3992e}\label{classcocos2d_1_1experimental_1_1ThreadPool_a0e578b9707fd927ab2413ffef9c3992e}} 
+enum {\bfseries Task\+Type} \{ \newline
+{\bfseries D\+E\+F\+A\+U\+LT} = 0, 
+{\bfseries N\+E\+T\+W\+O\+RK}, 
+{\bfseries IO}, 
+{\bfseries A\+U\+D\+IO}, 
+\newline
+{\bfseries U\+S\+ER} = 1000, 
+{\bfseries D\+E\+F\+A\+U\+LT} = 0, 
+{\bfseries N\+E\+T\+W\+O\+RK}, 
+{\bfseries IO}, 
+\newline
+{\bfseries A\+U\+D\+IO}, 
+{\bfseries U\+S\+ER} = 1000
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a44a4d0f1f4140d7c0faf7f8b77d134fc}\label{classcocos2d_1_1experimental_1_1ThreadPool_a44a4d0f1f4140d7c0faf7f8b77d134fc}} 
+void {\bfseries push\+Task} (const std\+::function$<$ void(int)$>$ \&runnable, Task\+Type type=Task\+Type\+::\+D\+E\+F\+A\+U\+LT)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a4964e4140ab8b1a03470f301c617aea2}\label{classcocos2d_1_1experimental_1_1ThreadPool_a4964e4140ab8b1a03470f301c617aea2}} 
+void {\bfseries stop\+All\+Tasks} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a9d2d03736025fc57b37d63ee2ffcf431}\label{classcocos2d_1_1experimental_1_1ThreadPool_a9d2d03736025fc57b37d63ee2ffcf431}} 
+void {\bfseries stop\+Tasks\+By\+Type} (Task\+Type type)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ad8c342b4139194783a478bc2db31ceda}\label{classcocos2d_1_1experimental_1_1ThreadPool_ad8c342b4139194783a478bc2db31ceda}} 
+int {\bfseries get\+Min\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_aad563f014a6276f2c48979ae2a22efe8}\label{classcocos2d_1_1experimental_1_1ThreadPool_aad563f014a6276f2c48979ae2a22efe8}} 
+int {\bfseries get\+Max\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a40ff3c0f42d3ecb71565c0520d732a89}\label{classcocos2d_1_1experimental_1_1ThreadPool_a40ff3c0f42d3ecb71565c0520d732a89}} 
+int {\bfseries get\+Idle\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a68700e241d5669acfc004f0b8061c6a8}\label{classcocos2d_1_1experimental_1_1ThreadPool_a68700e241d5669acfc004f0b8061c6a8}} 
+int {\bfseries get\+Inited\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a3f6cb122485d908ddfa2d74dd96f6afe}\label{classcocos2d_1_1experimental_1_1ThreadPool_a3f6cb122485d908ddfa2d74dd96f6afe}} 
+int {\bfseries get\+Task\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a8f807288766b6765b0fe14d05dd7a477}\label{classcocos2d_1_1experimental_1_1ThreadPool_a8f807288766b6765b0fe14d05dd7a477}} 
+bool {\bfseries try\+Shrink\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a44a4d0f1f4140d7c0faf7f8b77d134fc}\label{classcocos2d_1_1experimental_1_1ThreadPool_a44a4d0f1f4140d7c0faf7f8b77d134fc}} 
+void {\bfseries push\+Task} (const std\+::function$<$ void(int)$>$ \&runnable, Task\+Type type=Task\+Type\+::\+D\+E\+F\+A\+U\+LT)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a4964e4140ab8b1a03470f301c617aea2}\label{classcocos2d_1_1experimental_1_1ThreadPool_a4964e4140ab8b1a03470f301c617aea2}} 
+void {\bfseries stop\+All\+Tasks} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a9d2d03736025fc57b37d63ee2ffcf431}\label{classcocos2d_1_1experimental_1_1ThreadPool_a9d2d03736025fc57b37d63ee2ffcf431}} 
+void {\bfseries stop\+Tasks\+By\+Type} (Task\+Type type)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ad8c342b4139194783a478bc2db31ceda}\label{classcocos2d_1_1experimental_1_1ThreadPool_ad8c342b4139194783a478bc2db31ceda}} 
+int {\bfseries get\+Min\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_aad563f014a6276f2c48979ae2a22efe8}\label{classcocos2d_1_1experimental_1_1ThreadPool_aad563f014a6276f2c48979ae2a22efe8}} 
+int {\bfseries get\+Max\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a40ff3c0f42d3ecb71565c0520d732a89}\label{classcocos2d_1_1experimental_1_1ThreadPool_a40ff3c0f42d3ecb71565c0520d732a89}} 
+int {\bfseries get\+Idle\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a68700e241d5669acfc004f0b8061c6a8}\label{classcocos2d_1_1experimental_1_1ThreadPool_a68700e241d5669acfc004f0b8061c6a8}} 
+int {\bfseries get\+Inited\+Thread\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a3f6cb122485d908ddfa2d74dd96f6afe}\label{classcocos2d_1_1experimental_1_1ThreadPool_a3f6cb122485d908ddfa2d74dd96f6afe}} 
+int {\bfseries get\+Task\+Num} () const
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a8f807288766b6765b0fe14d05dd7a477}\label{classcocos2d_1_1experimental_1_1ThreadPool_a8f807288766b6765b0fe14d05dd7a477}} 
+bool {\bfseries try\+Shrink\+Pool} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a629a4ebd371a638fbcdac13a7a3b0bef}\label{classcocos2d_1_1experimental_1_1ThreadPool_a629a4ebd371a638fbcdac13a7a3b0bef}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries get\+Default\+Thread\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ac5c2b2def876a484c7f6c5a1c8560ed1}\label{classcocos2d_1_1experimental_1_1ThreadPool_ac5c2b2def876a484c7f6c5a1c8560ed1}} 
+static void {\bfseries destroy\+Default\+Thread\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_af09175a85f1394a4438dece620e6f07c}\label{classcocos2d_1_1experimental_1_1ThreadPool_af09175a85f1394a4438dece620e6f07c}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Cached\+Thread\+Pool} (int min\+Thread\+Num, int max\+Thread\+Num, int shrink\+Interval, int shrink\+Step, int stretch\+Step)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_adf9216cfa84b9cba604003fddd1b72d7}\label{classcocos2d_1_1experimental_1_1ThreadPool_adf9216cfa84b9cba604003fddd1b72d7}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Fixed\+Thread\+Pool} (int thread\+Num)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ac9dcad87434ac6876b08d664515821ed}\label{classcocos2d_1_1experimental_1_1ThreadPool_ac9dcad87434ac6876b08d664515821ed}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Single\+Thread\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_aab28e432cc9c0fb3b48325548610e821}\label{classcocos2d_1_1experimental_1_1ThreadPool_aab28e432cc9c0fb3b48325548610e821}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries get\+Default\+Thread\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a01e8f6f52f50d601bbde88940c787d19}\label{classcocos2d_1_1experimental_1_1ThreadPool_a01e8f6f52f50d601bbde88940c787d19}} 
+static void {\bfseries destroy\+Default\+Thread\+Pool} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ac9cb2165a86e2dd423f66758f5bd5b51}\label{classcocos2d_1_1experimental_1_1ThreadPool_ac9cb2165a86e2dd423f66758f5bd5b51}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Cached\+Thread\+Pool} (int min\+Thread\+Num, int max\+Thread\+Num, int shrink\+Interval, int shrink\+Step, int stretch\+Step)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_ac0d5f61018dc18a9ec7136f8399bf5ae}\label{classcocos2d_1_1experimental_1_1ThreadPool_ac0d5f61018dc18a9ec7136f8399bf5ae}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Fixed\+Thread\+Pool} (int thread\+Num)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1ThreadPool_a0157686294e7ee65608a0268a31820a0}\label{classcocos2d_1_1experimental_1_1ThreadPool_a0157686294e7ee65608a0268a31820a0}} 
+static \hyperlink{classcocos2d_1_1experimental_1_1ThreadPool}{Thread\+Pool} $\ast$ {\bfseries new\+Single\+Thread\+Pool} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/C\+C\+Thread\+Pool.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/C\+C\+Thread\+Pool.\+cpp\end{DoxyCompactItemize}

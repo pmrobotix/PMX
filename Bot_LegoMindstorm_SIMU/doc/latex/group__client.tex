@@ -1,0 +1,904 @@
+\hypertarget{group__client}{}\section{Client related functions}
+\label{group__client}\index{Client related functions@{Client related functions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags} \{ \newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+U\+S\+E\+\_\+\+S\+SL} = (1 $<$$<$ 0), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+S\+E\+L\+F\+S\+I\+G\+N\+ED} = (1 $<$$<$ 1), 
+\newline
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+S\+K\+I\+P\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+C\+E\+R\+T\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+C\+H\+E\+CK} = (1 $<$$<$ 2), 
+{\bfseries L\+C\+C\+S\+C\+F\+\_\+\+A\+L\+L\+O\+W\+\_\+\+E\+X\+P\+I\+R\+ED} = (1 $<$$<$ 3)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$ \hyperlink{group__client_ga0c966136905f467816307cfba6deb5fd}{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info} (struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} $\ast$ccinfo)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$clients, const char $\ast$address, int port, int ssl\+\_\+connection, const char $\ast$path, const char $\ast$host, const char $\ast$origin, const char $\ast$protocol, int ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one) L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws} $\ast$L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$clients, const char $\ast$address, int port, int ssl\+\_\+connection, const char $\ast$path, const char $\ast$host, const char $\ast$origin, const char $\ast$protocol, int ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one, void $\ast$userdata) L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{group__client_ga4f44b8230e6732816ca5cd8d1aaaf340}{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl} (const struct \hyperlink{structlws__context__creation__info}{lws\+\_\+context\+\_\+creation\+\_\+info} $\ast$info, struct lws\+\_\+vhost $\ast$vhost)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{group__client_ga4450c34200bf9dab3beb90ef23221870}{lws\+\_\+http\+\_\+client\+\_\+read} (struct \hyperlink{structlws}{lws} $\ast$wsi, char $\ast$$\ast$buf, int $\ast$len)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN unsigned int \hyperlink{group__client_ga715efffc0c4e8fbf72a4293008eb2187}{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response} (struct \hyperlink{structlws}{lws} $\ast$wsi)
+\item 
+\mbox{\Hypertarget{group__client_ga26588fb345083076c14169dd5859f57a}\label{group__client_ga26588fb345083076c14169dd5859f57a}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void {\bfseries lws\+\_\+client\+\_\+http\+\_\+body\+\_\+pending} (struct \hyperlink{structlws}{lws} $\ast$wsi, int something\+\_\+left\+\_\+to\+\_\+send)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{Client releated functions}
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created \mbox{\Hypertarget{group__client_ga96f3dbad54b2853969cfa933d66871ce}\label{group__client_ga96f3dbad54b2853969cfa933d66871ce}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags@{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}{lws\_client\_connect\_ssl\_connection\_flags}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily enum \hyperlink{group__client_ga96f3dbad54b2853969cfa933d66871ce}{lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags}}
+
+enum lws\+\_\+client\+\_\+connect\+\_\+ssl\+\_\+connection\+\_\+flags -\/ flags that may be used with struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} ssl\+\_\+connection member to control if and how S\+SL checks apply to the client connection being created 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}\label{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect@{lws\+\_\+client\+\_\+connect}}
+\index{lws\+\_\+client\+\_\+connect@{lws\+\_\+client\+\_\+connect}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect()}{lws\_client\_connect()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws}$\ast$ L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+client\+\_\+connect (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{clients,  }\item[{const char $\ast$}]{address,  }\item[{int}]{port,  }\item[{int}]{ssl\+\_\+connection,  }\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{host,  }\item[{const char $\ast$}]{origin,  }\item[{const char $\ast$}]{protocol,  }\item[{int}]{ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000418}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000421}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000424}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000427}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000430}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000433}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000436}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_ga4af0a20108a95e8b6d94dd4d80055ff3}{lws\+\_\+client\+\_\+connect()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000439}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. If you don\textquotesingle{}t want to specify a protocol, which is legal, use N\+U\+LL here. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server \mbox{\Hypertarget{group__client_gac6a8558b4410961a880241c2ac1271e2}\label{group__client_gac6a8558b4410961a880241c2ac1271e2}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+extended@{lws\+\_\+client\+\_\+connect\+\_\+extended}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+extended@{lws\+\_\+client\+\_\+connect\+\_\+extended}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+extended()}{lws\_client\_connect\_extended()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws}$\ast$ L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+client\+\_\+connect\+\_\+extended (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{clients,  }\item[{const char $\ast$}]{address,  }\item[{int}]{port,  }\item[{int}]{ssl\+\_\+connection,  }\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{host,  }\item[{const char $\ast$}]{origin,  }\item[{const char $\ast$}]{protocol,  }\item[{int}]{ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000419}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000422}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000425}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000428}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000431}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000434}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000437}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server
+
+\hyperlink{group__client_gac6a8558b4410961a880241c2ac1271e2}{lws\+\_\+client\+\_\+connect\+\_\+extended()} -\/ Connect to another websocket server \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000440}{Deprecated}]D\+E\+P\+R\+E\+C\+A\+T\+ED use lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clients} & Websocket context \\
+\hline
+{\em address} & Remote server address, eg, \char`\"{}myserver.\+com\char`\"{} \\
+\hline
+{\em port} & Port to connect to on the remote server, eg, 80 \\
+\hline
+{\em ssl\+\_\+connection} & 0 = ws\+://, 1 = wss\+:// encrypted, 2 = wss\+:// allow self signed certs \\
+\hline
+{\em path} & Websocket path on server \\
+\hline
+{\em host} & Hostname on server \\
+\hline
+{\em origin} & Socket origin name \\
+\hline
+{\em protocol} & Comma-\/separated \hyperlink{protocollist-p}{list} of protocols being asked for from the server, or just one. The server will pick the one it likes best. \\
+\hline
+{\em ietf\+\_\+version\+\_\+or\+\_\+minus\+\_\+one} & -\/1 to ask to connect using the default, latest protocol supported, or the specific protocol ordinal \\
+\hline
+{\em userdata} & Pre-\/allocated user data\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server \mbox{\Hypertarget{group__client_ga0c966136905f467816307cfba6deb5fd}\label{group__client_ga0c966136905f467816307cfba6deb5fd}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info@{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info}}
+\index{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info@{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info()}{lws\_client\_connect\_via\_info()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws}{lws}$\ast$ lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} $\ast$}]{ccinfo }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_ga0c966136905f467816307cfba6deb5fd}{lws\+\_\+client\+\_\+connect\+\_\+via\+\_\+info()} -\/ Connect to another websocket server 
+\begin{DoxyParams}{Parameters}
+{\em ccinfo} & pointer to \hyperlink{structlws__client__connect__info}{lws\+\_\+client\+\_\+connect\+\_\+info} struct\\
+\hline
+\end{DoxyParams}
+This function creates a connection to a remote server using the information provided in ccinfo. \mbox{\Hypertarget{group__client_ga715efffc0c4e8fbf72a4293008eb2187}\label{group__client_ga715efffc0c4e8fbf72a4293008eb2187}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response@{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response}}
+\index{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response@{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response()}{lws\_http\_client\_http\_response()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN unsigned int lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws}{lws} $\ast$}]{wsi }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_ga715efffc0c4e8fbf72a4293008eb2187}{lws\+\_\+http\+\_\+client\+\_\+http\+\_\+response()} -\/ get last H\+T\+TP response code
+
+
+\begin{DoxyParams}{Parameters}
+{\em wsi} & client connection\\
+\hline
+\end{DoxyParams}
+Returns the last server response code, eg, 200 for client http connections. \mbox{\Hypertarget{group__client_ga4450c34200bf9dab3beb90ef23221870}\label{group__client_ga4450c34200bf9dab3beb90ef23221870}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+http\+\_\+client\+\_\+read@{lws\+\_\+http\+\_\+client\+\_\+read}}
+\index{lws\+\_\+http\+\_\+client\+\_\+read@{lws\+\_\+http\+\_\+client\+\_\+read}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+http\+\_\+client\+\_\+read()}{lws\_http\_client\_read()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int lws\+\_\+http\+\_\+client\+\_\+read (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws}{lws} $\ast$}]{wsi,  }\item[{char $\ast$$\ast$}]{buf,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_ga4450c34200bf9dab3beb90ef23221870}{lws\+\_\+http\+\_\+client\+\_\+read()} -\/ consume waiting received http client data
+
+
+\begin{DoxyParams}{Parameters}
+{\em wsi} & client connection \\
+\hline
+{\em buf} & pointer to buffer pointer -\/ fill with pointer to your buffer \\
+\hline
+{\em len} & pointer to chunk length -\/ fill with max length of buffer\\
+\hline
+\end{DoxyParams}
+This is called when the user code is notified client http data has arrived. The user code may choose to delay calling it to consume the data, for example waiting until an onward connection is writeable.
+
+For non-\/chunked connections, up to len bytes of buf are filled with the received content. len is set to the actual amount filled before return.
+
+For chunked connections, the linear buffer content contains the chunking headers and it cannot be passed in one lump. Instead, this function will call back L\+W\+S\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+H\+T\+T\+P\+\_\+\+R\+E\+AD with in pointing to the chunk start and len set to the chunk length. There will be as many calls as there are chunks or partial chunks in the buffer. \mbox{\Hypertarget{group__client_ga4f44b8230e6732816ca5cd8d1aaaf340}\label{group__client_ga4f44b8230e6732816ca5cd8d1aaaf340}} 
+\index{Client related functions@{Client related functions}!lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl@{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl}}
+\index{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl@{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl}!Client related functions@{Client related functions}}
+\subsubsection{\texorpdfstring{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl()}{lws\_init\_vhost\_client\_ssl()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structlws__context__creation__info}{lws\+\_\+context\+\_\+creation\+\_\+info} $\ast$}]{info,  }\item[{struct lws\+\_\+vhost $\ast$}]{vhost }\end{DoxyParamCaption})}
+
+\hyperlink{group__client_ga4f44b8230e6732816ca5cd8d1aaaf340}{lws\+\_\+init\+\_\+vhost\+\_\+client\+\_\+ssl()} -\/ also enable client S\+SL on an existing vhost
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & client ssl related info \\
+\hline
+{\em vhost} & which vhost to initialize client ssl operations on\\
+\hline
+\end{DoxyParams}
+You only need to call this if you plan on using S\+SL client connections on the vhost. For non-\/\+S\+SL client connections, it\textquotesingle{}s not necessary to call this.
+
+The following members of info are used during the call
+
+
+\begin{DoxyItemize}
+\item options must have L\+W\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+D\+O\+\_\+\+S\+S\+L\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+I\+N\+IT set, otherwise the call does nothing
+\item provided\+\_\+client\+\_\+ssl\+\_\+ctx must be N\+U\+LL to get a generated client ssl context, otherwise you can pass a prepared one in by setting it
+\item ssl\+\_\+cipher\+\_\+list may be N\+U\+LL or set to the client valid cipher \hyperlink{protocollist-p}{list}
+\item ssl\+\_\+ca\+\_\+filepath may be N\+U\+LL or client cert filepath
+\item ssl\+\_\+cert\+\_\+filepath may be N\+U\+LL or client cert filepath
+\item ssl\+\_\+private\+\_\+key\+\_\+filepath may be N\+U\+LL or client cert private key
+\end{DoxyItemize}
+
+You must create your vhost explicitly if you want to use this, so you have a pointer to the vhost. Create the context first with the option flag L\+W\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+V\+H\+O\+S\+TS and then call \hyperlink{group__context-and-vhost_ga23a77adebff95ab8341a7143654b35c7}{lws\+\_\+create\+\_\+vhost()} with the same info struct. 

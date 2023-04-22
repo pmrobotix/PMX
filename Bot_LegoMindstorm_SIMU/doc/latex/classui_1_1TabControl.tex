@@ -1,0 +1,631 @@
+\hypertarget{classui_1_1TabControl}{}\section{ui\+:\+:Tab\+Control Class Reference}
+\label{classui_1_1TabControl}\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+
+
+{\ttfamily \#include $<$U\+I\+Tab\+Control.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Tab\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classui_1_1TabControl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Tab\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1TabControl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a8f69ef830a0a523b1f867f8e01d17e1d}\label{classui_1_1TabControl_a8f69ef830a0a523b1f867f8e01d17e1d}} 
+enum {\bfseries Dock} \{ \newline
+{\bfseries T\+OP}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries T\+OP}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries R\+I\+G\+HT}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ad1f67023ae14e5d192412ad2dc297fd9}\label{classui_1_1TabControl_ad1f67023ae14e5d192412ad2dc297fd9}} 
+enum {\bfseries Event\+Type} \{ {\bfseries S\+E\+L\+E\+C\+T\+\_\+\+C\+H\+A\+N\+G\+ED}, 
+{\bfseries S\+E\+L\+E\+C\+T\+\_\+\+C\+H\+A\+N\+G\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a8f69ef830a0a523b1f867f8e01d17e1d}\label{classui_1_1TabControl_a8f69ef830a0a523b1f867f8e01d17e1d}} 
+enum {\bfseries Dock} \{ \newline
+{\bfseries T\+OP}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries T\+OP}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries R\+I\+G\+HT}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ad1f67023ae14e5d192412ad2dc297fd9}\label{classui_1_1TabControl_ad1f67023ae14e5d192412ad2dc297fd9}} 
+enum {\bfseries Event\+Type} \{ {\bfseries S\+E\+L\+E\+C\+T\+\_\+\+C\+H\+A\+N\+G\+ED}, 
+{\bfseries S\+E\+L\+E\+C\+T\+\_\+\+C\+H\+A\+N\+G\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a46b6b0dad83c8bdd8c5086f7ba47e6c1}\label{classui_1_1TabControl_a46b6b0dad83c8bdd8c5086f7ba47e6c1}} 
+typedef std\+::function$<$ void(int tab\+Index, Event\+Type)$>$ {\bfseries cc\+Tab\+Control\+Callback}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a46b6b0dad83c8bdd8c5086f7ba47e6c1}\label{classui_1_1TabControl_a46b6b0dad83c8bdd8c5086f7ba47e6c1}} 
+typedef std\+::function$<$ void(int tab\+Index, Event\+Type)$>$ {\bfseries cc\+Tab\+Control\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{Indent}\textbf{ behaviours}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}{remove\+Tab} (int index)
+\item 
+void \hyperlink{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}{set\+Select\+Tab} (int index)
+\item 
+void \hyperlink{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}{set\+Select\+Tab} (\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$tab\+Header)
+\item 
+\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$ \hyperlink{classui_1_1TabControl_ae3313d78b4e18c07b4e77517a2bed36c}{get\+Tab\+Header} (int index) const
+\item 
+\hyperlink{classui_1_1Layout}{Layout} $\ast$ \hyperlink{classui_1_1TabControl_a08df77bcf0df42001144f4a77f1291cd}{get\+Tab\+Container} (int index) const
+\item 
+void \hyperlink{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}{insert\+Tab} (int index, \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$header, \hyperlink{classui_1_1Layout}{Layout} $\ast$container)
+\item 
+size\+\_\+t \hyperlink{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}{get\+Tab\+Count} () const
+\item 
+int \hyperlink{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}{get\+Selected\+Tab\+Index} () const
+\item 
+int \hyperlink{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}{index\+Of\+Tab\+Header} (const \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$tab\+Cell) const
+\item 
+void \hyperlink{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}{set\+Tab\+Changed\+Event\+Listener} (const cc\+Tab\+Control\+Callback \&callback)
+\item 
+void \hyperlink{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}{remove\+Tab} (int index)
+\item 
+void \hyperlink{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}{set\+Select\+Tab} (int index)
+\item 
+void \hyperlink{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}{set\+Select\+Tab} (\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$tab\+Header)
+\item 
+\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$ \hyperlink{classui_1_1TabControl_a1cb2ef78d7a3ec78979b0e73432964d7}{get\+Tab\+Header} (int index) const
+\item 
+\hyperlink{classui_1_1Layout}{Layout} $\ast$ \hyperlink{classui_1_1TabControl_a92075148e4191162362183f3729abc60}{get\+Tab\+Container} (int index) const
+\item 
+void \hyperlink{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}{insert\+Tab} (int index, \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$header, \hyperlink{classui_1_1Layout}{Layout} $\ast$container)
+\item 
+size\+\_\+t \hyperlink{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}{get\+Tab\+Count} () const
+\item 
+int \hyperlink{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}{get\+Selected\+Tab\+Index} () const
+\item 
+int \hyperlink{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}{index\+Of\+Tab\+Header} (const \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$tab\+Cell) const
+\item 
+void \hyperlink{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}{set\+Tab\+Changed\+Event\+Listener} (const cc\+Tab\+Control\+Callback \&callback)
+\end{DoxyCompactItemize}
+\end{Indent}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}{set\+Header\+Width} (float header\+Width)
+\item 
+float \hyperlink{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}{get\+Header\+Width} () const
+\item 
+void \hyperlink{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}{set\+Header\+Height} (float header\+Height)
+\item 
+int \hyperlink{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}{get\+Header\+Height} () const
+\item 
+void \hyperlink{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}{ignore\+Headers\+Texture\+Size} (bool ignore)
+\item 
+bool \hyperlink{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}{is\+Ignore\+Headers\+Texture\+Size} () const
+\item 
+void \hyperlink{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}{set\+Header\+Selected\+Zoom} (float zoom)
+\item 
+float \hyperlink{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}{get\+Header\+Selected\+Zoom} () const
+\item 
+void \hyperlink{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}{set\+Header\+Dock\+Place} (Tab\+Control\+::\+Dock dock\+Place)
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_af14da6ed88ba8e3fcdd436267ddc6927}\label{classui_1_1TabControl_af14da6ed88ba8e3fcdd436267ddc6927}} 
+Tab\+Control\+::\+Dock {\bfseries get\+Header\+Dock\+Place} () const
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}{set\+Header\+Width} (float header\+Width)
+\item 
+float \hyperlink{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}{get\+Header\+Width} () const
+\item 
+void \hyperlink{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}{set\+Header\+Height} (float header\+Height)
+\item 
+int \hyperlink{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}{get\+Header\+Height} () const
+\item 
+void \hyperlink{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}{ignore\+Headers\+Texture\+Size} (bool ignore)
+\item 
+bool \hyperlink{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}{is\+Ignore\+Headers\+Texture\+Size} () const
+\item 
+void \hyperlink{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}{set\+Header\+Selected\+Zoom} (float zoom)
+\item 
+float \hyperlink{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}{get\+Header\+Selected\+Zoom} () const
+\item 
+void \hyperlink{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}{set\+Header\+Dock\+Place} (Tab\+Control\+::\+Dock dock\+Place)
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_af14da6ed88ba8e3fcdd436267ddc6927}\label{classui_1_1TabControl_af14da6ed88ba8e3fcdd436267ddc6927}} 
+Tab\+Control\+::\+Dock {\bfseries get\+Header\+Dock\+Place} () const
+\end{DoxyCompactItemize}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a4bdb7e419b6c4c2c23be4d1e00a12b70}\label{classui_1_1TabControl_a4bdb7e419b6c4c2c23be4d1e00a12b70}} 
+static \hyperlink{classui_1_1TabControl}{Tab\+Control} $\ast$ {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a5cbc3c05d8431f2a560e1383817f9445}\label{classui_1_1TabControl_a5cbc3c05d8431f2a560e1383817f9445}} 
+static \hyperlink{classui_1_1TabControl}{Tab\+Control} $\ast$ {\bfseries create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_af998922d3b0c715156885b983e30d849}\label{classui_1_1TabControl_af998922d3b0c715156885b983e30d849}} 
+void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ae68d330c1f54dd9545c85d870733fd1c}\label{classui_1_1TabControl_ae68d330c1f54dd9545c85d870733fd1c}} 
+void {\bfseries init\+Tab\+Headers\+Pos} (int start\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ae51bb692cae9c2337769aa39ff79ce7c}\label{classui_1_1TabControl_ae51bb692cae9c2337769aa39ff79ce7c}} 
+void {\bfseries init\+Containers} ()
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_af84a8cc86aa3617d2ec2f47e5204b067}\label{classui_1_1TabControl_af84a8cc86aa3617d2ec2f47e5204b067}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a43517b5b9655880d19808f195baf5c04}\label{classui_1_1TabControl_a43517b5b9655880d19808f195baf5c04}} 
+void {\bfseries dispatch\+Selected\+Tab\+Changed} (int tab\+Index, Tab\+Header\+::\+Event\+Type event\+Type)
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_af998922d3b0c715156885b983e30d849}\label{classui_1_1TabControl_af998922d3b0c715156885b983e30d849}} 
+void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ae68d330c1f54dd9545c85d870733fd1c}\label{classui_1_1TabControl_ae68d330c1f54dd9545c85d870733fd1c}} 
+void {\bfseries init\+Tab\+Headers\+Pos} (int start\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ae51bb692cae9c2337769aa39ff79ce7c}\label{classui_1_1TabControl_ae51bb692cae9c2337769aa39ff79ce7c}} 
+void {\bfseries init\+Containers} ()
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a62811fff6dd12957f12a7f9c9577576b}\label{classui_1_1TabControl_a62811fff6dd12957f12a7f9c9577576b}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_a43517b5b9655880d19808f195baf5c04}\label{classui_1_1TabControl_a43517b5b9655880d19808f195baf5c04}} 
+void {\bfseries dispatch\+Selected\+Tab\+Changed} (int tab\+Index, Tab\+Header\+::\+Event\+Type event\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1TabControl_ac1df4a4c88e90795c33f6bad4d4c381a}\label{classui_1_1TabControl_ac1df4a4c88e90795c33f6bad4d4c381a}} 
+cc\+Tab\+Control\+Callback {\bfseries \+\_\+tab\+Changed\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classui_1_1TabControl}{Tab\+Control}, use header button switch container 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}\label{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Height@{get\+Header\+Height}}
+\index{get\+Header\+Height@{get\+Header\+Height}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Height()}{getHeaderHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::get\+Header\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get tab header\textquotesingle{}s height \begin{DoxyReturn}{Returns}
+header\textquotesingle{}s height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}\label{classui_1_1TabControl_a289b60ebd1c8230753132f7bce2c94aa}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Height@{get\+Header\+Height}}
+\index{get\+Header\+Height@{get\+Header\+Height}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Height()}{getHeaderHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::get\+Header\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get tab header\textquotesingle{}s height \begin{DoxyReturn}{Returns}
+header\textquotesingle{}s height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}\label{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Selected\+Zoom@{get\+Header\+Selected\+Zoom}}
+\index{get\+Header\+Selected\+Zoom@{get\+Header\+Selected\+Zoom}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Selected\+Zoom()}{getHeaderSelectedZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Tab\+Control\+::get\+Header\+Selected\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the delta zoom of selected tab \begin{DoxyReturn}{Returns}
+zoom, the delta zoom 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}\label{classui_1_1TabControl_a0b4d2d945e28d89fb7f071f46b161636}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Selected\+Zoom@{get\+Header\+Selected\+Zoom}}
+\index{get\+Header\+Selected\+Zoom@{get\+Header\+Selected\+Zoom}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Selected\+Zoom()}{getHeaderSelectedZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+Tab\+Control\+::get\+Header\+Selected\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get the delta zoom of selected tab \begin{DoxyReturn}{Returns}
+zoom, the delta zoom 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}\label{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Width@{get\+Header\+Width}}
+\index{get\+Header\+Width@{get\+Header\+Width}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Width()}{getHeaderWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Tab\+Control\+::get\+Header\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get tab header\textquotesingle{}s width \begin{DoxyReturn}{Returns}
+header\textquotesingle{}s width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}\label{classui_1_1TabControl_a077a40bfe4e7aee4a9026b166c45444e}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Header\+Width@{get\+Header\+Width}}
+\index{get\+Header\+Width@{get\+Header\+Width}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Header\+Width()}{getHeaderWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+Tab\+Control\+::get\+Header\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get tab header\textquotesingle{}s width \begin{DoxyReturn}{Returns}
+header\textquotesingle{}s width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}\label{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Selected\+Tab\+Index@{get\+Selected\+Tab\+Index}}
+\index{get\+Selected\+Tab\+Index@{get\+Selected\+Tab\+Index}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Selected\+Tab\+Index()}{getSelectedTabIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::get\+Selected\+Tab\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get current selected tab\textquotesingle{}s index \begin{DoxyReturn}{Returns}
+the current selected tab index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}\label{classui_1_1TabControl_ac446282790475b8afcfe3e5b81afac2a}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Selected\+Tab\+Index@{get\+Selected\+Tab\+Index}}
+\index{get\+Selected\+Tab\+Index@{get\+Selected\+Tab\+Index}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Selected\+Tab\+Index()}{getSelectedTabIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::get\+Selected\+Tab\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get current selected tab\textquotesingle{}s index \begin{DoxyReturn}{Returns}
+the current selected tab index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a08df77bcf0df42001144f4a77f1291cd}\label{classui_1_1TabControl_a08df77bcf0df42001144f4a77f1291cd}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Container@{get\+Tab\+Container}}
+\index{get\+Tab\+Container@{get\+Tab\+Container}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Container()}{getTabContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Layout}{Layout} $\ast$ ui\+::\+Tab\+Control\+::get\+Tab\+Container (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get Container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a92075148e4191162362183f3729abc60}\label{classui_1_1TabControl_a92075148e4191162362183f3729abc60}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Container@{get\+Tab\+Container}}
+\index{get\+Tab\+Container@{get\+Tab\+Container}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Container()}{getTabContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Layout}{Layout}$\ast$ ui\+::\+Tab\+Control\+::get\+Tab\+Container (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get Container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}\label{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Count@{get\+Tab\+Count}}
+\index{get\+Tab\+Count@{get\+Tab\+Count}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Count()}{getTabCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t ui\+::\+Tab\+Control\+::get\+Tab\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get the count of tabs in this \hyperlink{classui_1_1TabControl}{Tab\+Control} \begin{DoxyReturn}{Returns}
+the count of tabs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}\label{classui_1_1TabControl_a85ad9aa8633df37bd11b99ecce6ad8ee}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Count@{get\+Tab\+Count}}
+\index{get\+Tab\+Count@{get\+Tab\+Count}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Count()}{getTabCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t ui\+::\+Tab\+Control\+::get\+Tab\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get the count of tabs in this \hyperlink{classui_1_1TabControl}{Tab\+Control} \begin{DoxyReturn}{Returns}
+the count of tabs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_ae3313d78b4e18c07b4e77517a2bed36c}\label{classui_1_1TabControl_ae3313d78b4e18c07b4e77517a2bed36c}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Header@{get\+Tab\+Header}}
+\index{get\+Tab\+Header@{get\+Tab\+Header}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Header()}{getTabHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$ ui\+::\+Tab\+Control\+::get\+Tab\+Header (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classui_1_1TabHeader}{Tab\+Header} 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a1cb2ef78d7a3ec78979b0e73432964d7}\label{classui_1_1TabControl_a1cb2ef78d7a3ec78979b0e73432964d7}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!get\+Tab\+Header@{get\+Tab\+Header}}
+\index{get\+Tab\+Header@{get\+Tab\+Header}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{get\+Tab\+Header()}{getTabHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1TabHeader}{Tab\+Header}$\ast$ ui\+::\+Tab\+Control\+::get\+Tab\+Header (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classui_1_1TabHeader}{Tab\+Header} 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}\label{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!ignore\+Headers\+Texture\+Size@{ignore\+Headers\+Texture\+Size}}
+\index{ignore\+Headers\+Texture\+Size@{ignore\+Headers\+Texture\+Size}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{ignore\+Headers\+Texture\+Size()}{ignoreHeadersTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::ignore\+Headers\+Texture\+Size (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+ignore the textures\textquotesingle{} size in header, scale them with \+\_\+header\+Width and \+\_\+header\+Height 
+\begin{DoxyParams}{Parameters}
+{\em ignore} & is {\ttfamily true}, the header\textquotesingle{}s texture scale with \+\_\+header\+Width and \+\_\+header\+Height ignore is {\ttfamily false}, use the texture\textquotesingle{}s size, do not scale them \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}\label{classui_1_1TabControl_a5f4461d3c00405aedb662eaa5354e5ca}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!ignore\+Headers\+Texture\+Size@{ignore\+Headers\+Texture\+Size}}
+\index{ignore\+Headers\+Texture\+Size@{ignore\+Headers\+Texture\+Size}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{ignore\+Headers\+Texture\+Size()}{ignoreHeadersTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::ignore\+Headers\+Texture\+Size (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+ignore the textures\textquotesingle{} size in header, scale them with \+\_\+header\+Width and \+\_\+header\+Height 
+\begin{DoxyParams}{Parameters}
+{\em ignore} & is {\ttfamily true}, the header\textquotesingle{}s texture scale with \+\_\+header\+Width and \+\_\+header\+Height ignore is {\ttfamily false}, use the texture\textquotesingle{}s size, do not scale them \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}\label{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!index\+Of\+Tab\+Header@{index\+Of\+Tab\+Header}}
+\index{index\+Of\+Tab\+Header@{index\+Of\+Tab\+Header}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{index\+Of\+Tab\+Header()}{indexOfTabHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::index\+Of\+Tab\+Header (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{tab\+Cell }\end{DoxyParamCaption}) const}
+
+get the index of tab\+Cell in Tab\+View, return -\/1 if not exists in. \begin{DoxyReturn}{Returns}
+the index of tab\+Cell in Tab\+View, {\ttfamily -\/1} means not exists in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}\label{classui_1_1TabControl_a4783116cb27769670ed4c4eff9c0985b}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!index\+Of\+Tab\+Header@{index\+Of\+Tab\+Header}}
+\index{index\+Of\+Tab\+Header@{index\+Of\+Tab\+Header}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{index\+Of\+Tab\+Header()}{indexOfTabHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ui\+::\+Tab\+Control\+::index\+Of\+Tab\+Header (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{tab\+Cell }\end{DoxyParamCaption}) const}
+
+get the index of tab\+Cell in Tab\+View, return -\/1 if not exists in. \begin{DoxyReturn}{Returns}
+the index of tab\+Cell in Tab\+View, {\ttfamily -\/1} means not exists in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}\label{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!insert\+Tab@{insert\+Tab}}
+\index{insert\+Tab@{insert\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{insert\+Tab()}{insertTab()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::insert\+Tab (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{header,  }\item[{\hyperlink{classui_1_1Layout}{Layout} $\ast$}]{container }\end{DoxyParamCaption})}
+
+insert tab, and init the position of header and container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index tab should be \\
+\hline
+{\em header} & The header \hyperlink{classui_1_1Button}{Button}, will be a protected child in \hyperlink{classui_1_1TabControl}{Tab\+Control} \\
+\hline
+{\em container} & The container, will be a protected child in \hyperlink{classui_1_1TabControl}{Tab\+Control} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}\label{classui_1_1TabControl_a12d623c4549b6175cdeb1db13d4dfedf}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!insert\+Tab@{insert\+Tab}}
+\index{insert\+Tab@{insert\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{insert\+Tab()}{insertTab()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::insert\+Tab (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{header,  }\item[{\hyperlink{classui_1_1Layout}{Layout} $\ast$}]{container }\end{DoxyParamCaption})}
+
+insert tab, and init the position of header and container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index tab should be \\
+\hline
+{\em header} & The header \hyperlink{classui_1_1Button}{Button}, will be a protected child in \hyperlink{classui_1_1TabControl}{Tab\+Control} \\
+\hline
+{\em container} & The container, will be a protected child in \hyperlink{classui_1_1TabControl}{Tab\+Control} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}\label{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!is\+Ignore\+Headers\+Texture\+Size@{is\+Ignore\+Headers\+Texture\+Size}}
+\index{is\+Ignore\+Headers\+Texture\+Size@{is\+Ignore\+Headers\+Texture\+Size}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{is\+Ignore\+Headers\+Texture\+Size()}{isIgnoreHeadersTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Tab\+Control\+::is\+Ignore\+Headers\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get whether ignore the textures\textquotesingle{} size in header, scale them with \+\_\+header\+Width and \+\_\+header\+Height \begin{DoxyReturn}{Returns}
+whether ignore the textures\textquotesingle{} size in header 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}\label{classui_1_1TabControl_ae5722ba3054173be0943311ee51fcebe}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!is\+Ignore\+Headers\+Texture\+Size@{is\+Ignore\+Headers\+Texture\+Size}}
+\index{is\+Ignore\+Headers\+Texture\+Size@{is\+Ignore\+Headers\+Texture\+Size}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{is\+Ignore\+Headers\+Texture\+Size()}{isIgnoreHeadersTextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Tab\+Control\+::is\+Ignore\+Headers\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get whether ignore the textures\textquotesingle{} size in header, scale them with \+\_\+header\+Width and \+\_\+header\+Height \begin{DoxyReturn}{Returns}
+whether ignore the textures\textquotesingle{} size in header 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}\label{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!remove\+Tab@{remove\+Tab}}
+\index{remove\+Tab@{remove\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{remove\+Tab()}{removeTab()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::remove\+Tab (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove the tab from this \hyperlink{classui_1_1TabControl}{Tab\+Control} 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}\label{classui_1_1TabControl_a57d2ed03c45a39c9bb706da085f82ba0}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!remove\+Tab@{remove\+Tab}}
+\index{remove\+Tab@{remove\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{remove\+Tab()}{removeTab()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::remove\+Tab (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove the tab from this \hyperlink{classui_1_1TabControl}{Tab\+Control} 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}\label{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Dock\+Place@{set\+Header\+Dock\+Place}}
+\index{set\+Header\+Dock\+Place@{set\+Header\+Dock\+Place}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Dock\+Place()}{setHeaderDockPlace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Dock\+Place (\begin{DoxyParamCaption}\item[{Tab\+Control\+::\+Dock}]{dock\+Place }\end{DoxyParamCaption})}
+
+the header dock place of header in \hyperlink{classui_1_1TabControl}{Tab\+Control} 
+\begin{DoxyParams}{Parameters}
+{\em dock\+Place} & The strip place \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}\label{classui_1_1TabControl_afd8f0b327792d7a5a91359c135459b4c}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Dock\+Place@{set\+Header\+Dock\+Place}}
+\index{set\+Header\+Dock\+Place@{set\+Header\+Dock\+Place}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Dock\+Place()}{setHeaderDockPlace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Dock\+Place (\begin{DoxyParamCaption}\item[{Tab\+Control\+::\+Dock}]{dock\+Place }\end{DoxyParamCaption})}
+
+the header dock place of header in \hyperlink{classui_1_1TabControl}{Tab\+Control} 
+\begin{DoxyParams}{Parameters}
+{\em dock\+Place} & The strip place \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}\label{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Height@{set\+Header\+Height}}
+\index{set\+Header\+Height@{set\+Header\+Height}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Height()}{setHeaderHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Height (\begin{DoxyParamCaption}\item[{float}]{header\+Height }\end{DoxyParamCaption})}
+
+set header height, affect all tab 
+\begin{DoxyParams}{Parameters}
+{\em header\+Height} & each tab header\textquotesingle{}s height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}\label{classui_1_1TabControl_af24eae9f0c9d5613ccc4d28a37dc0f3a}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Height@{set\+Header\+Height}}
+\index{set\+Header\+Height@{set\+Header\+Height}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Height()}{setHeaderHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Height (\begin{DoxyParamCaption}\item[{float}]{header\+Height }\end{DoxyParamCaption})}
+
+set header height, affect all tab 
+\begin{DoxyParams}{Parameters}
+{\em header\+Height} & each tab header\textquotesingle{}s height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}\label{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Selected\+Zoom@{set\+Header\+Selected\+Zoom}}
+\index{set\+Header\+Selected\+Zoom@{set\+Header\+Selected\+Zoom}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Selected\+Zoom()}{setHeaderSelectedZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Selected\+Zoom (\begin{DoxyParamCaption}\item[{float}]{zoom }\end{DoxyParamCaption})}
+
+set the delta zoom of selected tab 
+\begin{DoxyParams}{Parameters}
+{\em zoom} & The delta zoom \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}\label{classui_1_1TabControl_ade6a8a4e54e5227c9e301fbb37967b96}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Selected\+Zoom@{set\+Header\+Selected\+Zoom}}
+\index{set\+Header\+Selected\+Zoom@{set\+Header\+Selected\+Zoom}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Selected\+Zoom()}{setHeaderSelectedZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Selected\+Zoom (\begin{DoxyParamCaption}\item[{float}]{zoom }\end{DoxyParamCaption})}
+
+set the delta zoom of selected tab 
+\begin{DoxyParams}{Parameters}
+{\em zoom} & The delta zoom \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}\label{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Width@{set\+Header\+Width}}
+\index{set\+Header\+Width@{set\+Header\+Width}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Width()}{setHeaderWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Width (\begin{DoxyParamCaption}\item[{float}]{header\+Width }\end{DoxyParamCaption})}
+
+@ properties set header width, affect all tab 
+\begin{DoxyParams}{Parameters}
+{\em header\+Width} & each tab header\textquotesingle{}s width \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}\label{classui_1_1TabControl_a684dfc06887f10ff5dddb1085aab7dd4}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Header\+Width@{set\+Header\+Width}}
+\index{set\+Header\+Width@{set\+Header\+Width}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Header\+Width()}{setHeaderWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Header\+Width (\begin{DoxyParamCaption}\item[{float}]{header\+Width }\end{DoxyParamCaption})}
+
+@ properties set header width, affect all tab 
+\begin{DoxyParams}{Parameters}
+{\em header\+Width} & each tab header\textquotesingle{}s width \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}\label{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Select\+Tab@{set\+Select\+Tab}}
+\index{set\+Select\+Tab@{set\+Select\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Select\+Tab()}{setSelectTab()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Select\+Tab (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+set tab selected, switch the current selected tab and visible container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}\label{classui_1_1TabControl_a1ac499ffee1045aabfb885b0ed873174}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Select\+Tab@{set\+Select\+Tab}}
+\index{set\+Select\+Tab@{set\+Select\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Select\+Tab()}{setSelectTab()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Select\+Tab (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+set tab selected, switch the current selected tab and visible container 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of tab \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}\label{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Select\+Tab@{set\+Select\+Tab}}
+\index{set\+Select\+Tab@{set\+Select\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Select\+Tab()}{setSelectTab()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Select\+Tab (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{tab\+Header }\end{DoxyParamCaption})}
+
+set tab selected, switch the current selected tab and visible container 
+\begin{DoxyParams}{Parameters}
+{\em tab\+Header} & The tab instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}\label{classui_1_1TabControl_a4312f6e1d6c73d858fc662443b623e93}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Select\+Tab@{set\+Select\+Tab}}
+\index{set\+Select\+Tab@{set\+Select\+Tab}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Select\+Tab()}{setSelectTab()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Select\+Tab (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1TabHeader}{Tab\+Header} $\ast$}]{tab\+Header }\end{DoxyParamCaption})}
+
+set tab selected, switch the current selected tab and visible container 
+\begin{DoxyParams}{Parameters}
+{\em tab\+Header} & The tab instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}\label{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Tab\+Changed\+Event\+Listener@{set\+Tab\+Changed\+Event\+Listener}}
+\index{set\+Tab\+Changed\+Event\+Listener@{set\+Tab\+Changed\+Event\+Listener}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Tab\+Changed\+Event\+Listener()}{setTabChangedEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Tab\+Changed\+Event\+Listener (\begin{DoxyParamCaption}\item[{const cc\+Tab\+Control\+Callback \&}]{callback }\end{DoxyParamCaption})}
+
+Add a callback function which would be called when selected tab changed 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A std\+::function with type \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily cc\+Tab\+Control\+Callback} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}\label{classui_1_1TabControl_a16fecfa3c0550e2afcfe9280aa633ada}} 
+\index{ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}!set\+Tab\+Changed\+Event\+Listener@{set\+Tab\+Changed\+Event\+Listener}}
+\index{set\+Tab\+Changed\+Event\+Listener@{set\+Tab\+Changed\+Event\+Listener}!ui\+::\+Tab\+Control@{ui\+::\+Tab\+Control}}
+\subsubsection{\texorpdfstring{set\+Tab\+Changed\+Event\+Listener()}{setTabChangedEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Tab\+Control\+::set\+Tab\+Changed\+Event\+Listener (\begin{DoxyParamCaption}\item[{const cc\+Tab\+Control\+Callback \&}]{callback }\end{DoxyParamCaption})}
+
+Add a callback function which would be called when selected tab changed 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A std\+::function with type \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily cc\+Tab\+Control\+Callback} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Tab\+Control.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Tab\+Control.\+cpp\end{DoxyCompactItemize}

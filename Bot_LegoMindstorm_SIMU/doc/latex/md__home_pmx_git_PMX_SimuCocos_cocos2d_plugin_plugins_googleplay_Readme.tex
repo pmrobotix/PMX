@@ -1,0 +1,66 @@
+This will be added into the samples later \+:)
+
+For the to compile correctly you must do the following.
+
+\subsection*{From C++}
+
+
+\begin{DoxyEnumerate}
+\item I\+AP class must be called with
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}
+loadPlugin(\textcolor{stringliteral}{"IAPGooglePlay"})
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Item must be in google format like so 
+\begin{DoxyCode}
+pInfo[\textcolor{stringliteral}{"IAPId"}] = \textcolor{stringliteral}{"com.game.example.item1"} 
+
+\textcolor{comment}{// pInfo is of type TProductInfo}
+\end{DoxyCode}
+
+\item The developer info must be specific to your app like so 
+\begin{DoxyCode}
+pPlayStoreInfo[\textcolor{stringliteral}{"GooglePlayAppKey"}] = \textcolor{stringliteral}{"Big long key from google :)"}
+s\_pPlayStore->configDeveloperInfo(pPlayStoreInfo);
+
+\textcolor{comment}{// s\_pPlayStore is of type cocos2d::plugin::ProtocolIAP*}
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{From Java}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// This must be added to the new Cocos2dxActivity.java classes in cocos2d-x 3.0 + recently added}
+
+
+\textcolor{keyword}{private} \textcolor{keyword}{static} Set<OnActivityResultListener> onActivityResultListeners = \textcolor{keyword}{new} 
+      LinkedHashSet<OnActivityResultListener>();
+
+
+\textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} addOnActivityResultListener(OnActivityResultListener listener) \{
+    onActivityResultListeners.add(listener);
+\}
+
+\textcolor{keyword}{public} \textcolor{keyword}{static} Set<OnActivityResultListener> getOnActivityResultListeners() \{
+    \textcolor{keywordflow}{return} onActivityResultListeners;
+\}
+
+
+
+ @Override
+    \textcolor{keyword}{protected} \textcolor{keywordtype}{void} onActivityResult(\textcolor{keywordtype}{int} requestCode, \textcolor{keywordtype}{int} resultCode, Intent data)
+    \{
+        \textcolor{keywordflow}{for} (OnActivityResultListener listener : Cocos2dxHelper.getOnActivityResultListeners()) \{
+            listener.onActivityResult(requestCode, resultCode, data);
+        \}
+
+        super.onActivityResult(requestCode, resultCode, data);
+    \}
+\end{DoxyCode}
+ 

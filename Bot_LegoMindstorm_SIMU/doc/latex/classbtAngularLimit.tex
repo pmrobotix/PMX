@@ -1,0 +1,128 @@
+\hypertarget{classbtAngularLimit}{}\section{bt\+Angular\+Limit Class Reference}
+\label{classbtAngularLimit}\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}\label{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}} 
+\hyperlink{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}{bt\+Angular\+Limit} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes limit as inactive, allowing free constraint movement. \end{DoxyCompactList}\item 
+void \hyperlink{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}{set} (bt\+Scalar low, bt\+Scalar high, bt\+Scalar \+\_\+softness=0.\+9f, bt\+Scalar \+\_\+bias\+Factor=0.\+3f, bt\+Scalar \+\_\+relaxation\+Factor=1.\+0f)
+\item 
+void \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test} (const bt\+Scalar angle)
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}\label{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}{get\+Softness} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s softness. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}\label{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}{get\+Bias\+Factor} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s bias factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}\label{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}{get\+Relaxation\+Factor} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s relaxation factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}\label{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}{get\+Correction} () const
+\begin{DoxyCompactList}\small\item\em Returns correction value evaluated when \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} was invoked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}\label{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}{get\+Sign} () const
+\begin{DoxyCompactList}\small\item\em Returns sign value evaluated when \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} was invoked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}\label{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}{get\+Half\+Range} () const
+\begin{DoxyCompactList}\small\item\em Gives half of the distance between min and max limit angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}\label{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}} 
+bool \hyperlink{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}{is\+Limit} () const
+\begin{DoxyCompactList}\small\item\em Returns true when the last \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} invocation recognized limit violation. \end{DoxyCompactList}\item 
+void \hyperlink{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}{fit} (bt\+Scalar \&angle) const
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}\label{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}{get\+Error} () const
+\begin{DoxyCompactList}\small\item\em Returns correction value multiplied by sign value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a2c131db6c0d9a10f3631b54a1075b4cd}\label{classbtAngularLimit_a2c131db6c0d9a10f3631b54a1075b4cd}} 
+bt\+Scalar {\bfseries get\+Low} () const
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a45dee16704e05e7e0fa485fe150f61f0}\label{classbtAngularLimit_a45dee16704e05e7e0fa485fe150f61f0}} 
+bt\+Scalar {\bfseries get\+High} () const
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}\label{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}} 
+\hyperlink{classbtAngularLimit_ac3364359851713e6cb32b16611e9331d}{bt\+Angular\+Limit} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes limit as inactive, allowing free constraint movement. \end{DoxyCompactList}\item 
+void \hyperlink{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}{set} (bt\+Scalar low, bt\+Scalar high, bt\+Scalar \+\_\+softness=0.\+9f, bt\+Scalar \+\_\+bias\+Factor=0.\+3f, bt\+Scalar \+\_\+relaxation\+Factor=1.\+0f)
+\item 
+void \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test} (const bt\+Scalar angle)
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}\label{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a53fcf2522b1988022f21e0ef2cde1b4c}{get\+Softness} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s softness. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}\label{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a2ba4c0092e8fd39cdf09113b6aedd740}{get\+Bias\+Factor} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s bias factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}\label{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_adce9b76f4e9c815806e6bf7ab8928194}{get\+Relaxation\+Factor} () const
+\begin{DoxyCompactList}\small\item\em Returns limit\textquotesingle{}s relaxation factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}\label{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a5f29d9654eaf63fb3e70e5d435e65121}{get\+Correction} () const
+\begin{DoxyCompactList}\small\item\em Returns correction value evaluated when \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} was invoked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}\label{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a862f3e44e3effe07b68ba5da11085fa5}{get\+Sign} () const
+\begin{DoxyCompactList}\small\item\em Returns sign value evaluated when \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} was invoked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}\label{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_acce7e5c554ebebbdf15e572dcd0bb2f9}{get\+Half\+Range} () const
+\begin{DoxyCompactList}\small\item\em Gives half of the distance between min and max limit angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}\label{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}} 
+bool \hyperlink{classbtAngularLimit_a034951d30c7aa18f0e0ed7f2673175ee}{is\+Limit} () const
+\begin{DoxyCompactList}\small\item\em Returns true when the last \hyperlink{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}{test()} invocation recognized limit violation. \end{DoxyCompactList}\item 
+void \hyperlink{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}{fit} (bt\+Scalar \&angle) const
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}\label{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}} 
+bt\+Scalar \hyperlink{classbtAngularLimit_a781f6596d248dbd0bc074069ca3bde2a}{get\+Error} () const
+\begin{DoxyCompactList}\small\item\em Returns correction value multiplied by sign value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAngularLimit_a2c131db6c0d9a10f3631b54a1075b4cd}\label{classbtAngularLimit_a2c131db6c0d9a10f3631b54a1075b4cd}} 
+bt\+Scalar {\bfseries get\+Low} () const
+\item 
+\mbox{\Hypertarget{classbtAngularLimit_a45dee16704e05e7e0fa485fe150f61f0}\label{classbtAngularLimit_a45dee16704e05e7e0fa485fe150f61f0}} 
+bt\+Scalar {\bfseries get\+High} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}\label{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!fit@{fit}}
+\index{fit@{fit}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{fit()}{fit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::fit (\begin{DoxyParamCaption}\item[{bt\+Scalar \&}]{angle }\end{DoxyParamCaption}) const}
+
+Checks given angle against limit. If limit is active and angle doesn\textquotesingle{}t fit it, the angle returned is modified so it equals to the limit closest to given angle. \mbox{\Hypertarget{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}\label{classbtAngularLimit_aba82fc7d176c0b4e483eb3959f84eb65}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!fit@{fit}}
+\index{fit@{fit}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{fit()}{fit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::fit (\begin{DoxyParamCaption}\item[{bt\+Scalar \&}]{angle }\end{DoxyParamCaption}) const}
+
+Checks given angle against limit. If limit is active and angle doesn\textquotesingle{}t fit it, the angle returned is modified so it equals to the limit closest to given angle. \mbox{\Hypertarget{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}\label{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!set@{set}}
+\index{set@{set}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::set (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{low,  }\item[{bt\+Scalar}]{high,  }\item[{bt\+Scalar}]{\+\_\+softness = {\ttfamily 0.9f},  }\item[{bt\+Scalar}]{\+\_\+bias\+Factor = {\ttfamily 0.3f},  }\item[{bt\+Scalar}]{\+\_\+relaxation\+Factor = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+Sets all limit\textquotesingle{}s parameters. When low $>$ high limit becomes inactive. When high -\/ low $>$ 2\+PI limit is ineffective too becouse no angle can exceed the limit \mbox{\Hypertarget{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}\label{classbtAngularLimit_aae9e0c21886c2f98f9ad1928bf024b3f}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!set@{set}}
+\index{set@{set}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::set (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{low,  }\item[{bt\+Scalar}]{high,  }\item[{bt\+Scalar}]{\+\_\+softness = {\ttfamily 0.9f},  }\item[{bt\+Scalar}]{\+\_\+bias\+Factor = {\ttfamily 0.3f},  }\item[{bt\+Scalar}]{\+\_\+relaxation\+Factor = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+Sets all limit\textquotesingle{}s parameters. When low $>$ high limit becomes inactive. When high -\/ low $>$ 2\+PI limit is ineffective too becouse no angle can exceed the limit \mbox{\Hypertarget{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}\label{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!test@{test}}
+\index{test@{test}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::test (\begin{DoxyParamCaption}\item[{const bt\+Scalar}]{angle }\end{DoxyParamCaption})}
+
+Checks conastaint angle against limit. If limit is active and the angle violates the limit correction is calculated. \mbox{\Hypertarget{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}\label{classbtAngularLimit_aa8908e320fa18257118bbe81948142d8}} 
+\index{bt\+Angular\+Limit@{bt\+Angular\+Limit}!test@{test}}
+\index{test@{test}!bt\+Angular\+Limit@{bt\+Angular\+Limit}}
+\subsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Angular\+Limit\+::test (\begin{DoxyParamCaption}\item[{const bt\+Scalar}]{angle }\end{DoxyParamCaption})}
+
+Checks conastaint angle against limit. If limit is active and the angle violates the limit correction is calculated. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Typed\+Constraint.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Typed\+Constraint.\+cpp\end{DoxyCompactItemize}

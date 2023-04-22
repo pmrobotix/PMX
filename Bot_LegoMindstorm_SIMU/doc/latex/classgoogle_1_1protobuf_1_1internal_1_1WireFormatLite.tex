@@ -1,0 +1,1118 @@
+\hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite}{}\section{google\+:\+:protobuf\+:\+:internal\+:\+:Wire\+Format\+Lite Class Reference}
+\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite}\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a07e74817dc05ab0327283186fb9d96f9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a07e74817dc05ab0327283186fb9d96f9}} 
+enum {\bfseries Wire\+Type} \{ \newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+V\+A\+R\+I\+NT} = 0, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 1, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ED} = 2, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+G\+R\+O\+UP} = 3, 
+\newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+E\+N\+D\+\_\+\+G\+R\+O\+UP} = 4, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 5, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+V\+A\+R\+I\+NT} = 0, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 1, 
+\newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ED} = 2, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+G\+R\+O\+UP} = 3, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+E\+N\+D\+\_\+\+G\+R\+O\+UP} = 4, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 5
+ \}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaffa24b0edf986fa1541988d845e92ca}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaffa24b0edf986fa1541988d845e92ca}} 
+enum {\bfseries Field\+Type} \{ \newline
+{\bfseries T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 1, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 2, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 3, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 5, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 6, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 7, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 8, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+{\bfseries T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP} = 10, 
+{\bfseries T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 11, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+Y\+T\+ES} = 12, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 13, 
+{\bfseries T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 14, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D32} = 15, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D64} = 16, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T32} = 17, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T64} = 18, 
+{\bfseries M\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+PE} = 18, 
+{\bfseries T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 1, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 2, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 3, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 5, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 6, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 7, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 8, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP} = 10, 
+{\bfseries T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 11, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+Y\+T\+ES} = 12, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 13, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 14, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D32} = 15, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D64} = 16, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T32} = 17, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T64} = 18, 
+{\bfseries M\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+PE} = 18
+ \}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a14ea06b246adcaff4062c1e54e9a761d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a14ea06b246adcaff4062c1e54e9a761d}} 
+enum {\bfseries Cpp\+Type} \{ \newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 1, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 2, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 3, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 5, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 6, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 7, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 8, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 10, 
+{\bfseries M\+A\+X\+\_\+\+C\+P\+P\+T\+Y\+PE} = 10, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 1, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 2, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 3, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 5, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 6, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 7, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 8, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 10, 
+{\bfseries M\+A\+X\+\_\+\+C\+P\+P\+T\+Y\+PE} = 10
+ \}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a07e74817dc05ab0327283186fb9d96f9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a07e74817dc05ab0327283186fb9d96f9}} 
+enum {\bfseries Wire\+Type} \{ \newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+V\+A\+R\+I\+NT} = 0, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 1, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ED} = 2, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+G\+R\+O\+UP} = 3, 
+\newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+E\+N\+D\+\_\+\+G\+R\+O\+UP} = 4, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 5, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+V\+A\+R\+I\+NT} = 0, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 1, 
+\newline
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ED} = 2, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+G\+R\+O\+UP} = 3, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+E\+N\+D\+\_\+\+G\+R\+O\+UP} = 4, 
+{\bfseries W\+I\+R\+E\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 5
+ \}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaffa24b0edf986fa1541988d845e92ca}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaffa24b0edf986fa1541988d845e92ca}} 
+enum {\bfseries Field\+Type} \{ \newline
+{\bfseries T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 1, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 2, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 3, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 5, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 6, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 7, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 8, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+{\bfseries T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP} = 10, 
+{\bfseries T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 11, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+Y\+T\+ES} = 12, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 13, 
+{\bfseries T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 14, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D32} = 15, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D64} = 16, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T32} = 17, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T64} = 18, 
+{\bfseries M\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+PE} = 18, 
+{\bfseries T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 1, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 2, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 3, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+{\bfseries T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 5, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D64} = 6, 
+{\bfseries T\+Y\+P\+E\+\_\+\+F\+I\+X\+E\+D32} = 7, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 8, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP} = 10, 
+{\bfseries T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 11, 
+{\bfseries T\+Y\+P\+E\+\_\+\+B\+Y\+T\+ES} = 12, 
+{\bfseries T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 13, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 14, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D32} = 15, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+F\+I\+X\+E\+D64} = 16, 
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T32} = 17, 
+\newline
+{\bfseries T\+Y\+P\+E\+\_\+\+S\+I\+N\+T64} = 18, 
+{\bfseries M\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+PE} = 18
+ \}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a14ea06b246adcaff4062c1e54e9a761d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a14ea06b246adcaff4062c1e54e9a761d}} 
+enum {\bfseries Cpp\+Type} \{ \newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 1, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 2, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 3, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 5, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 6, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 7, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 8, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 10, 
+{\bfseries M\+A\+X\+\_\+\+C\+P\+P\+T\+Y\+PE} = 10, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T32} = 1, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+I\+N\+T64} = 2, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T32} = 3, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+U\+I\+N\+T64} = 4, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE} = 5, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT} = 6, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+B\+O\+OL} = 7, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+E\+N\+UM} = 8, 
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG} = 9, 
+\newline
+{\bfseries C\+P\+P\+T\+Y\+P\+E\+\_\+\+M\+E\+S\+S\+A\+GE} = 10, 
+{\bfseries M\+A\+X\+\_\+\+C\+P\+P\+T\+Y\+PE} = 10
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8f11057d4368fb59ff8d947dfdb77492}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8f11057d4368fb59ff8d947dfdb77492}} 
+{\footnotesize template$<$typename C\+Type , enum Wire\+Format\+Lite\+::\+Field\+Type Declared\+Type$>$ }\\bool {\bfseries Read\+Repeated\+Primitive} (int, uint32 tag, \hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$values)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ee2efaaaca2ae0ebe0ec28bfa12eafa}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ee2efaaaca2ae0ebe0ec28bfa12eafa}} 
+{\footnotesize template$<$typename C\+Type , enum Wire\+Format\+Lite\+::\+Field\+Type Declared\+Type$>$ }\\bool {\bfseries Read\+Repeated\+Primitive\+No\+Inline} (int tag\+\_\+size, uint32 tag, \hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad1cc932a6eceaba8e943285d5db3a1ca}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad1cc932a6eceaba8e943285d5db3a1ca}} 
+{\footnotesize template$<$typename C\+Type , enum Wire\+Format\+Lite\+::\+Field\+Type Declared\+Type$>$ }\\bool {\bfseries Read\+Packed\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$values)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a79609687249d9f028a7020978b3042ce}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a79609687249d9f028a7020978b3042ce}} 
+{\footnotesize template$<$typename C\+Type , enum Wire\+Format\+Lite\+::\+Field\+Type Declared\+Type$>$ }\\bool {\bfseries Read\+Packed\+Primitive\+No\+Inline} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$values)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a36ab0c237b9fed07bb5340bce4d0894b}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a36ab0c237b9fed07bb5340bce4d0894b}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\bool {\bfseries Read\+Group\+No\+Virtual} (int field\+\_\+number, \hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816784413ce744b217f6b4e2092c7f96}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816784413ce744b217f6b4e2092c7f96}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\bool {\bfseries Read\+Message\+No\+Virtual} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9c467e70e559b8fc5e55457ff97fe225}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9c467e70e559b8fc5e55457ff97fe225}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\void {\bfseries Write\+Group\+No\+Virtual} (int field\+\_\+number, const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value, \hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedOutputStream}{io\+::\+Coded\+Output\+Stream} $\ast$output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8ca9244163ab9d2179bf24e8a42754d6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8ca9244163ab9d2179bf24e8a42754d6}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\void {\bfseries Write\+Message\+No\+Virtual} (int field\+\_\+number, const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value, \hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedOutputStream}{io\+::\+Coded\+Output\+Stream} $\ast$output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6fe2b3793868f16f51001b81e20d64f9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6fe2b3793868f16f51001b81e20d64f9}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\uint8 $\ast$ {\bfseries Write\+Group\+No\+Virtual\+To\+Array} (int field\+\_\+number, const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value, uint8 $\ast$target)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a645adaefa878f3e7646cb78d3d8457e1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a645adaefa878f3e7646cb78d3d8457e1}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\uint8 $\ast$ {\bfseries Write\+Message\+No\+Virtual\+To\+Array} (int field\+\_\+number, const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value, uint8 $\ast$target)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af3c5a5e1404821199abd7d7f336a287f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af3c5a5e1404821199abd7d7f336a287f}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\int {\bfseries Group\+Size\+No\+Virtual} (const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af4284dc31a104dda300a3fbc7bb0099f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af4284dc31a104dda300a3fbc7bb0099f}} 
+{\footnotesize template$<$typename Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect $>$ }\\int {\bfseries Message\+Size\+No\+Virtual} (const Message\+Type\+\_\+\+Work\+Around\+Cpp\+Lookup\+Defect \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a006d43265daa0972ce9ef688b5bfad64}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a006d43265daa0972ce9ef688b5bfad64}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab8efde617fc6177d352310904dc63fc5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab8efde617fc6177d352310904dc63fc5}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a006d43265daa0972ce9ef688b5bfad64}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a006d43265daa0972ce9ef688b5bfad64}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab8efde617fc6177d352310904dc63fc5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab8efde617fc6177d352310904dc63fc5}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad937cb6f432cd24810e1c9446b2fd328}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2b403f70285933949254f6150098e4e4}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a681f8302ab3e654582c418cfc6c9c28f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a681f8302ab3e654582c418cfc6c9c28f}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, float $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac18fc570064595064843c32994026ef0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac18fc570064595064843c32994026ef0}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, double $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a40910fb8c552c9a2b6302a8b2e30ae71}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a40910fb8c552c9a2b6302a8b2e30ae71}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, bool $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0bc22007a6072cc65f70fff13ea00771}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0bc22007a6072cc65f70fff13ea00771}} 
+{\footnotesize template$<$$>$ }\\bool {\bfseries Read\+Primitive} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, int $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af24ae7347bb5992a14fdc3d81c55379a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af24ae7347bb5992a14fdc3d81c55379a}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, uint32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e731d077b992a88ac4619a1e7210dbb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e731d077b992a88ac4619a1e7210dbb}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, uint64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3013339bb1f86cee5d8edba50348af51}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3013339bb1f86cee5d8edba50348af51}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, int32 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade2fe008e4cc916d038d39a07cb7c402}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade2fe008e4cc916d038d39a07cb7c402}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, int64 $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a12abb0495e864501522e7ea431344c3a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a12abb0495e864501522e7ea431344c3a}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, float $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_acc8feb3af8f37ea2fc3452e10dff804e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_acc8feb3af8f37ea2fc3452e10dff804e}} 
+{\footnotesize template$<$$>$ }\\const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, double $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa97a4f94646066dc782e0c9f166ad147}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa97a4f94646066dc782e0c9f166ad147}} 
+static Cpp\+Type {\bfseries Field\+Type\+To\+Cpp\+Type} (Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa271771fab1bff6db2b396c99c7e8978}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa271771fab1bff6db2b396c99c7e8978}} 
+static Wire\+Format\+Lite\+::\+Wire\+Type {\bfseries Wire\+Type\+For\+Field\+Type} (Wire\+Format\+Lite\+::\+Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af19df489143ee50c97e661946c7efb04}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af19df489143ee50c97e661946c7efb04}} 
+static uint32 {\bfseries Make\+Tag} (int field\+\_\+number, Wire\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3f6e4d1340d596b733f6ecaeaa5e57e3}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3f6e4d1340d596b733f6ecaeaa5e57e3}} 
+static Wire\+Type {\bfseries Get\+Tag\+Wire\+Type} (uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a52dc5c640f0566a5c7895404daf56a55}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a52dc5c640f0566a5c7895404daf56a55}} 
+static int {\bfseries Get\+Tag\+Field\+Number} (uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a914c5824edbf34013943b1cbe68736a9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a914c5824edbf34013943b1cbe68736a9}} 
+static int {\bfseries Tag\+Size} (int field\+\_\+number, Wire\+Format\+Lite\+::\+Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a910d3cd2972b5ab535ab828ad83a08c9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a910d3cd2972b5ab535ab828ad83a08c9}} 
+static bool {\bfseries Skip\+Field} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aabdd73de690d864f2814c7935c2e259a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aabdd73de690d864f2814c7935c2e259a}} 
+static bool {\bfseries Skip\+Message} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a97e8ea78dc9333c6160762db35327b6d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a97e8ea78dc9333c6160762db35327b6d}} 
+static uint32 {\bfseries Encode\+Float} (float value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13ab7dce199e339c9de86209c870cb0e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13ab7dce199e339c9de86209c870cb0e}} 
+static float {\bfseries Decode\+Float} (uint32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aac7fb24a3cf8bbf57e0a387d8f93297c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aac7fb24a3cf8bbf57e0a387d8f93297c}} 
+static uint64 {\bfseries Encode\+Double} (double value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9558b06c6c34303af9e2a6a114136b4f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9558b06c6c34303af9e2a6a114136b4f}} 
+static double {\bfseries Decode\+Double} (uint64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa5e759b366336b67353c7010b2acb272}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa5e759b366336b67353c7010b2acb272}} 
+static uint32 {\bfseries Zig\+Zag\+Encode32} (int32 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af8c09a2c684d865f824c6dca508f3e19}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af8c09a2c684d865f824c6dca508f3e19}} 
+static int32 {\bfseries Zig\+Zag\+Decode32} (uint32 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a62ae8d44567ff01919754d4acaf6cacb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a62ae8d44567ff01919754d4acaf6cacb}} 
+static uint64 {\bfseries Zig\+Zag\+Encode64} (int64 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac02955a05616135d7180013cedfffe00}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac02955a05616135d7180013cedfffe00}} 
+static int64 {\bfseries Zig\+Zag\+Decode64} (uint64 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a105ff35eb5c13e8b45c2b59f61b6ec4a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a105ff35eb5c13e8b45c2b59f61b6ec4a}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Primitive} (input, C\+Type $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1020f83d6b33ce3079df9c3ba7bb3472}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1020f83d6b33ce3079df9c3ba7bb3472}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Repeated\+Primitive} (int tag\+\_\+size, uint32 tag, input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816aa343268b474630cd0a16a64eec6a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816aa343268b474630cd0a16a64eec6a}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Repeated\+Primitive\+No\+Inline} (int tag\+\_\+size, uint32 tag, input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a425362d04a2fb7307c9f606c4f27615e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a425362d04a2fb7307c9f606c4f27615e}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, C\+Type $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a067946322d27a8adf7514adc4bb4f5a2}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a067946322d27a8adf7514adc4bb4f5a2}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Packed\+Primitive} (input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a91104beb17c682c6d516a046499961cd}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a91104beb17c682c6d516a046499961cd}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Packed\+Primitive\+No\+Inline} (input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a77be9cabe6a1914a76d82b079eea77c9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a77be9cabe6a1914a76d82b079eea77c9}} 
+static bool {\bfseries Read\+Packed\+Enum\+No\+Inline} (input, bool($\ast$is\+\_\+valid)(int), \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ int $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a361909342c353aeb0ec1ae21011c782d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a361909342c353aeb0ec1ae21011c782d}} 
+static bool {\bfseries Read\+String} (input, string $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac3a1b43bcd047a7cc1545015b6355458}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac3a1b43bcd047a7cc1545015b6355458}} 
+static bool {\bfseries Read\+Bytes} (input, string $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1bb59eccb61294feaf89548ce79eaedb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1bb59eccb61294feaf89548ce79eaedb}} 
+static bool {\bfseries Read\+Group} (field\+\_\+number, input, \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1497cefd585e58a16085b601aec64799}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1497cefd585e58a16085b601aec64799}} 
+static bool {\bfseries Read\+Message} (input, \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aec6941a8ac095e8f91480ee801edc487}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aec6941a8ac095e8f91480ee801edc487}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static bool {\bfseries Read\+Group\+No\+Virtual} (field\+\_\+number, input, Message\+Type $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a37b58a9b4cd56806106bdeffe647340e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a37b58a9b4cd56806106bdeffe647340e}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static bool {\bfseries Read\+Message\+No\+Virtual} (input, Message\+Type $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a213c9236ebd73d84441a0db5688ee744}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a213c9236ebd73d84441a0db5688ee744}} 
+static void {\bfseries Write\+Tag} (field\+\_\+number, Wire\+Type type, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a67e66c3c9d0e4c9487b271aae9b150bb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a67e66c3c9d0e4c9487b271aae9b150bb}} 
+static void {\bfseries Write\+Int32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae6fa7423cbae90a63ae35814c983c592}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae6fa7423cbae90a63ae35814c983c592}} 
+static void {\bfseries Write\+Int64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0f9fbf660fc2eafb11559a65ff24be3f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0f9fbf660fc2eafb11559a65ff24be3f}} 
+static void {\bfseries Write\+U\+Int32\+No\+Tag} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7845bbe461a6947f36475a345afa67ab}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7845bbe461a6947f36475a345afa67ab}} 
+static void {\bfseries Write\+U\+Int64\+No\+Tag} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaf493b57cc3c6da32b4d296e7c091a28}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaf493b57cc3c6da32b4d296e7c091a28}} 
+static void {\bfseries Write\+S\+Int32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab6478acbec097796e580e3c16bb13313}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab6478acbec097796e580e3c16bb13313}} 
+static void {\bfseries Write\+S\+Int64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7a27e25029209fefb41f7e359b6a50f6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7a27e25029209fefb41f7e359b6a50f6}} 
+static void {\bfseries Write\+Fixed32\+No\+Tag} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2777db9c1378f83f0b753ea39c41ec73}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2777db9c1378f83f0b753ea39c41ec73}} 
+static void {\bfseries Write\+Fixed64\+No\+Tag} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab3b87ce3abff2310ce828a45f4c8f18c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab3b87ce3abff2310ce828a45f4c8f18c}} 
+static void {\bfseries Write\+S\+Fixed32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ce16d7a9104d7d3a01ec8d71bf0ece5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ce16d7a9104d7d3a01ec8d71bf0ece5}} 
+static void {\bfseries Write\+S\+Fixed64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7b9c093d5fd3f5dc3e9bd2db6c7a3c00}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7b9c093d5fd3f5dc3e9bd2db6c7a3c00}} 
+static void {\bfseries Write\+Float\+No\+Tag} (float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad7568a4d883caaff6406c4528a5eebb3}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad7568a4d883caaff6406c4528a5eebb3}} 
+static void {\bfseries Write\+Double\+No\+Tag} (double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a71266c9e6ae4dfe1c205cf84d591430c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a71266c9e6ae4dfe1c205cf84d591430c}} 
+static void {\bfseries Write\+Bool\+No\+Tag} (bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1edc21982a58c9d9b3ef7ee09f0ec94}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1edc21982a58c9d9b3ef7ee09f0ec94}} 
+static void {\bfseries Write\+Enum\+No\+Tag} (int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab20e5fbf0633f9061f5ae1304f311612}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab20e5fbf0633f9061f5ae1304f311612}} 
+static void {\bfseries Write\+Int32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab47de7b57f2d47523f28ea44e18d676c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab47de7b57f2d47523f28ea44e18d676c}} 
+static void {\bfseries Write\+Int64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad8311fe48e6c21a1cdeda06def046ea0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad8311fe48e6c21a1cdeda06def046ea0}} 
+static void {\bfseries Write\+U\+Int32} (field\+\_\+number, uint32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2cbc325989738d93181741fdb295cc03}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2cbc325989738d93181741fdb295cc03}} 
+static void {\bfseries Write\+U\+Int64} (field\+\_\+number, uint64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a272392bde4d1734bd52e969e14c29e64}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a272392bde4d1734bd52e969e14c29e64}} 
+static void {\bfseries Write\+S\+Int32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6c995347e27fc5258c83b9f479dabe14}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6c995347e27fc5258c83b9f479dabe14}} 
+static void {\bfseries Write\+S\+Int64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af486c6b17e034f4dc7c55bf52a2a9b93}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af486c6b17e034f4dc7c55bf52a2a9b93}} 
+static void {\bfseries Write\+Fixed32} (field\+\_\+number, uint32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a10a39c30f306d9cf1b047bc4a9874fc8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a10a39c30f306d9cf1b047bc4a9874fc8}} 
+static void {\bfseries Write\+Fixed64} (field\+\_\+number, uint64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13eda20a6522cab220c0e6d3fee1561a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13eda20a6522cab220c0e6d3fee1561a}} 
+static void {\bfseries Write\+S\+Fixed32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6e8ec6d16f9237074f25e831266d4dae}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6e8ec6d16f9237074f25e831266d4dae}} 
+static void {\bfseries Write\+S\+Fixed64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aeb39f5022d311ebb0f9aeca44121f9b5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aeb39f5022d311ebb0f9aeca44121f9b5}} 
+static void {\bfseries Write\+Float} (field\+\_\+number, float value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a335907c9df3d48c81e2c99208d2ed11c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a335907c9df3d48c81e2c99208d2ed11c}} 
+static void {\bfseries Write\+Double} (field\+\_\+number, double value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0b3fac62bb08fefb845c59f1e550b871}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0b3fac62bb08fefb845c59f1e550b871}} 
+static void {\bfseries Write\+Bool} (field\+\_\+number, bool value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af801e7223c385e7c04674dfdaf7104f4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af801e7223c385e7c04674dfdaf7104f4}} 
+static void {\bfseries Write\+Enum} (field\+\_\+number, int value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae490a3b5447fd97608aed2177f79a7f6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae490a3b5447fd97608aed2177f79a7f6}} 
+static void {\bfseries Write\+String} (field\+\_\+number, const string \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5125634e40a343857ab301416974e848}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5125634e40a343857ab301416974e848}} 
+static void {\bfseries Write\+Bytes} (field\+\_\+number, const string \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a899b0adca1b491b0cab3941edbc70af1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a899b0adca1b491b0cab3941edbc70af1}} 
+static void {\bfseries Write\+Group} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adcc02f66dba5d3d9ae8d87f003210c2e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adcc02f66dba5d3d9ae8d87f003210c2e}} 
+static void {\bfseries Write\+Message} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a28ba85accd650e0bb29375e84e5a59e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a28ba85accd650e0bb29375e84e5a59e4}} 
+static void {\bfseries Write\+Group\+Maybe\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8278bc20346ebef174faa2430656949e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8278bc20346ebef174faa2430656949e}} 
+static void {\bfseries Write\+Message\+Maybe\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5ed44eec564fcc33e7099bfe8e95b5c5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5ed44eec564fcc33e7099bfe8e95b5c5}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static void {\bfseries Write\+Group\+No\+Virtual} (field\+\_\+number, const Message\+Type \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac8edbcaee63ebf1db5b38a9ffd1b156c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac8edbcaee63ebf1db5b38a9ffd1b156c}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static void {\bfseries Write\+Message\+No\+Virtual} (field\+\_\+number, const Message\+Type \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d4a8857fdce7e48b7dd53f3e436f09}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d4a8857fdce7e48b7dd53f3e436f09}} 
+static uint8 $\ast$ {\bfseries Write\+Tag\+To\+Array} (field\+\_\+number, Wire\+Type type, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade3f2cc014e7310defcef7164cea8e5c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade3f2cc014e7310defcef7164cea8e5c}} 
+static uint8 $\ast$ {\bfseries Write\+Int32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab2c8de1e9a8a6b5bdd4e1f9a4c0f70c4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab2c8de1e9a8a6b5bdd4e1f9a4c0f70c4}} 
+static uint8 $\ast$ {\bfseries Write\+Int64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7d22138813b79ce6407633b0e7c23174}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7d22138813b79ce6407633b0e7c23174}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int32\+No\+Tag\+To\+Array} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1621e62376014e886b75db3556ec274}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1621e62376014e886b75db3556ec274}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int64\+No\+Tag\+To\+Array} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a969f7f3256e1e992d76750de6833c06c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a969f7f3256e1e992d76750de6833c06c}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9ea96f664873502f8837879f2df6856f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9ea96f664873502f8837879f2df6856f}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a56bf3f9ebfa8be2ab6995d9e15f9bc66}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a56bf3f9ebfa8be2ab6995d9e15f9bc66}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed32\+No\+Tag\+To\+Array} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abe393da52b9f5175f699846ece166796}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abe393da52b9f5175f699846ece166796}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed64\+No\+Tag\+To\+Array} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59311507463440a1ea720b7b681ebe8f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59311507463440a1ea720b7b681ebe8f}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1c6855ded0a01ef1d8e1ff1bada71039}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1c6855ded0a01ef1d8e1ff1bada71039}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3ef7b0f8c7ded7561f3bb3f88adf60e5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3ef7b0f8c7ded7561f3bb3f88adf60e5}} 
+static uint8 $\ast$ {\bfseries Write\+Float\+No\+Tag\+To\+Array} (float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aab46110d9e33898937b2670b46a8415d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aab46110d9e33898937b2670b46a8415d}} 
+static uint8 $\ast$ {\bfseries Write\+Double\+No\+Tag\+To\+Array} (double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a24eebce4470ee72ccbd8e52d21e13f17}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a24eebce4470ee72ccbd8e52d21e13f17}} 
+static uint8 $\ast$ {\bfseries Write\+Bool\+No\+Tag\+To\+Array} (bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a60bba99034d76cf9c38950dd8d3edd1f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a60bba99034d76cf9c38950dd8d3edd1f}} 
+static uint8 $\ast$ {\bfseries Write\+Enum\+No\+Tag\+To\+Array} (int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e71653393842ca3e8421ed2c01323fe}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e71653393842ca3e8421ed2c01323fe}} 
+static uint8 $\ast$ {\bfseries Write\+Int32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_accc3eb2ed28d9df47ad423b7b6c0aaa6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_accc3eb2ed28d9df47ad423b7b6c0aaa6}} 
+static uint8 $\ast$ {\bfseries Write\+Int64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaee5e7f83029170e7e40f318505c0ff}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaee5e7f83029170e7e40f318505c0ff}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int32\+To\+Array} (field\+\_\+number, uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a61a86b37d65dc7cec00b312d33715fb4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a61a86b37d65dc7cec00b312d33715fb4}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int64\+To\+Array} (field\+\_\+number, uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a236e386b8ab32786b9d5bbf9e2920693}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a236e386b8ab32786b9d5bbf9e2920693}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab7b8b74a4165b92438f567c15e59d812}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab7b8b74a4165b92438f567c15e59d812}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2a8bbffc8731b3cbeceab8a8aff2ae}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2a8bbffc8731b3cbeceab8a8aff2ae}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed32\+To\+Array} (field\+\_\+number, uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad45cef4f9fd786012ab89f01753a0801}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad45cef4f9fd786012ab89f01753a0801}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed64\+To\+Array} (field\+\_\+number, uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6ded70e3ff6dee8b17f7aea4be0777db}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6ded70e3ff6dee8b17f7aea4be0777db}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae85b59da7c6aa7930e77730ffc1a63b8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae85b59da7c6aa7930e77730ffc1a63b8}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a98098cfdb51c5063850b82ed41916170}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a98098cfdb51c5063850b82ed41916170}} 
+static uint8 $\ast$ {\bfseries Write\+Float\+To\+Array} (field\+\_\+number, float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59ea08692608bf8c1c12b422a33ab988}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59ea08692608bf8c1c12b422a33ab988}} 
+static uint8 $\ast$ {\bfseries Write\+Double\+To\+Array} (field\+\_\+number, double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8c274cfbfa082b779055046f77204838}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8c274cfbfa082b779055046f77204838}} 
+static uint8 $\ast$ {\bfseries Write\+Bool\+To\+Array} (field\+\_\+number, bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae4cf72e5389e405fe0e636b3d23a46a0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae4cf72e5389e405fe0e636b3d23a46a0}} 
+static uint8 $\ast$ {\bfseries Write\+Enum\+To\+Array} (field\+\_\+number, int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d2dd4b78f1573537716fc56161c63d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d2dd4b78f1573537716fc56161c63d}} 
+static uint8 $\ast$ {\bfseries Write\+String\+To\+Array} (field\+\_\+number, const string \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae21cba6f72439d21f07af6cc8226894b}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae21cba6f72439d21f07af6cc8226894b}} 
+static uint8 $\ast$ {\bfseries Write\+Bytes\+To\+Array} (field\+\_\+number, const string \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a521de3eb58c8c5079f1f863af508043b}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a521de3eb58c8c5079f1f863af508043b}} 
+static uint8 $\ast$ {\bfseries Write\+Group\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0ab726057747951f25f2649b45109614}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0ab726057747951f25f2649b45109614}} 
+static uint8 $\ast$ {\bfseries Write\+Message\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad20f8e1badac0efeea423aacd01e6403}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad20f8e1badac0efeea423aacd01e6403}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static uint8 $\ast$ {\bfseries Write\+Group\+No\+Virtual\+To\+Array} (field\+\_\+number, const Message\+Type \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2e10be9f3e6c8ddb58e452a9b5e489}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2e10be9f3e6c8ddb58e452a9b5e489}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static uint8 $\ast$ {\bfseries Write\+Message\+No\+Virtual\+To\+Array} (field\+\_\+number, const Message\+Type \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3c659c04d71372421f8f6e90c79457e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3c659c04d71372421f8f6e90c79457e4}} 
+static int {\bfseries Int32\+Size} (int32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a36f629678d199f1517be4f0033549e07}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a36f629678d199f1517be4f0033549e07}} 
+static int {\bfseries Int64\+Size} (int64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab90d362f15832850eaab03a4f0841f97}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab90d362f15832850eaab03a4f0841f97}} 
+static int {\bfseries U\+Int32\+Size} (uint32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a932c20d13b0bf91f1ee2759343815b75}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a932c20d13b0bf91f1ee2759343815b75}} 
+static int {\bfseries U\+Int64\+Size} (uint64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a58e543db80b57cabf51b5b07cf8781b4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a58e543db80b57cabf51b5b07cf8781b4}} 
+static int {\bfseries S\+Int32\+Size} (int32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a70543499f652595e221377d07b883713}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a70543499f652595e221377d07b883713}} 
+static int {\bfseries S\+Int64\+Size} (int64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aabce97e032e8917ce1962014100da680}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aabce97e032e8917ce1962014100da680}} 
+static int {\bfseries Enum\+Size} (int value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a34f9559a1514a2deaf2dd2e4ab1cba11}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a34f9559a1514a2deaf2dd2e4ab1cba11}} 
+static int {\bfseries String\+Size} (const string \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab51547471515fbda66cb778ddbbac776}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab51547471515fbda66cb778ddbbac776}} 
+static int {\bfseries Bytes\+Size} (const string \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad41ce0bef3d80443d9048d60619da130}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad41ce0bef3d80443d9048d60619da130}} 
+static int {\bfseries Group\+Size} (const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aba94a07ed94924cbc8aedf000824dece}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aba94a07ed94924cbc8aedf000824dece}} 
+static int {\bfseries Message\+Size} (const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9f05ab0c496ec9d62026fcd9a580a7b5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9f05ab0c496ec9d62026fcd9a580a7b5}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static int {\bfseries Group\+Size\+No\+Virtual} (const Message\+Type \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4d08cbfffd3a10411a2bb7a28c5d70eb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4d08cbfffd3a10411a2bb7a28c5d70eb}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static int {\bfseries Message\+Size\+No\+Virtual} (const Message\+Type \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae8a5d0fd7455b5390358f920032342e1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae8a5d0fd7455b5390358f920032342e1}} 
+static int {\bfseries Length\+Delimited\+Size} (int length)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4b3a5a47c84432d524ed7c5461ebe267}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4b3a5a47c84432d524ed7c5461ebe267}} 
+static Cpp\+Type {\bfseries Field\+Type\+To\+Cpp\+Type} (Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa271771fab1bff6db2b396c99c7e8978}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa271771fab1bff6db2b396c99c7e8978}} 
+static Wire\+Format\+Lite\+::\+Wire\+Type {\bfseries Wire\+Type\+For\+Field\+Type} (Wire\+Format\+Lite\+::\+Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6960784ac11d03041156ed4ee94d9678}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6960784ac11d03041156ed4ee94d9678}} 
+static uint32 {\bfseries Make\+Tag} (int field\+\_\+number, Wire\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa9a85d10260b2f96c49c269d1910edcd}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aa9a85d10260b2f96c49c269d1910edcd}} 
+static Wire\+Type {\bfseries Get\+Tag\+Wire\+Type} (uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_acd1243c8c605486436c1d24e7ffdbb66}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_acd1243c8c605486436c1d24e7ffdbb66}} 
+static int {\bfseries Get\+Tag\+Field\+Number} (uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af12df61a0b2aef797bc4e371cf2e9955}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af12df61a0b2aef797bc4e371cf2e9955}} 
+static int {\bfseries Tag\+Size} (int field\+\_\+number, Wire\+Format\+Lite\+::\+Field\+Type type)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afe49d5d1e62ecd970849f5a03849ec36}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afe49d5d1e62ecd970849f5a03849ec36}} 
+static bool {\bfseries Skip\+Field} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input, uint32 tag)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6876d356ea5cc38b1461beaa511828d1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6876d356ea5cc38b1461beaa511828d1}} 
+static bool {\bfseries Skip\+Message} (\hyperlink{classgoogle_1_1protobuf_1_1io_1_1CodedInputStream}{io\+::\+Coded\+Input\+Stream} $\ast$input)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8584f56db8e6b5e642df5e7b219d4d0d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8584f56db8e6b5e642df5e7b219d4d0d}} 
+static uint32 {\bfseries Encode\+Float} (float value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af7b588357be46571fb3be6305be302f0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af7b588357be46571fb3be6305be302f0}} 
+static float {\bfseries Decode\+Float} (uint32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad4df337e1a6aafa824074a6fcd1f8ab3}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad4df337e1a6aafa824074a6fcd1f8ab3}} 
+static uint64 {\bfseries Encode\+Double} (double value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5a1c1bc67505bc85fe8314bdcf0b8765}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5a1c1bc67505bc85fe8314bdcf0b8765}} 
+static double {\bfseries Decode\+Double} (uint64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aebb6c1f337e3883c1f37ae6881f7b7cd}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aebb6c1f337e3883c1f37ae6881f7b7cd}} 
+static uint32 {\bfseries Zig\+Zag\+Encode32} (int32 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4ced561a1f82c66b6a483210effb79a7}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4ced561a1f82c66b6a483210effb79a7}} 
+static int32 {\bfseries Zig\+Zag\+Decode32} (uint32 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac42ab165e5512aff266abcdcc05ff376}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac42ab165e5512aff266abcdcc05ff376}} 
+static uint64 {\bfseries Zig\+Zag\+Encode64} (int64 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a89069751d617554156a1a7ef9734064c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a89069751d617554156a1a7ef9734064c}} 
+static int64 {\bfseries Zig\+Zag\+Decode64} (uint64 n)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a105ff35eb5c13e8b45c2b59f61b6ec4a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a105ff35eb5c13e8b45c2b59f61b6ec4a}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Primitive} (input, C\+Type $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1020f83d6b33ce3079df9c3ba7bb3472}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1020f83d6b33ce3079df9c3ba7bb3472}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Repeated\+Primitive} (int tag\+\_\+size, uint32 tag, input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816aa343268b474630cd0a16a64eec6a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a816aa343268b474630cd0a16a64eec6a}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Repeated\+Primitive\+No\+Inline} (int tag\+\_\+size, uint32 tag, input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a425362d04a2fb7307c9f606c4f27615e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a425362d04a2fb7307c9f606c4f27615e}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static const uint8 $\ast$ {\bfseries Read\+Primitive\+From\+Array} (const uint8 $\ast$buffer, C\+Type $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a067946322d27a8adf7514adc4bb4f5a2}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a067946322d27a8adf7514adc4bb4f5a2}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Packed\+Primitive} (input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a91104beb17c682c6d516a046499961cd}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a91104beb17c682c6d516a046499961cd}} 
+{\footnotesize template$<$typename C\+Type , enum Field\+Type Declared\+Type$>$ }\\static bool {\bfseries Read\+Packed\+Primitive\+No\+Inline} (input, \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ C\+Type $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a77be9cabe6a1914a76d82b079eea77c9}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a77be9cabe6a1914a76d82b079eea77c9}} 
+static bool {\bfseries Read\+Packed\+Enum\+No\+Inline} (input, bool($\ast$is\+\_\+valid)(int), \hyperlink{classgoogle_1_1protobuf_1_1RepeatedField}{Repeated\+Field}$<$ int $>$ $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a361909342c353aeb0ec1ae21011c782d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a361909342c353aeb0ec1ae21011c782d}} 
+static bool {\bfseries Read\+String} (input, string $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac3a1b43bcd047a7cc1545015b6355458}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac3a1b43bcd047a7cc1545015b6355458}} 
+static bool {\bfseries Read\+Bytes} (input, string $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1bb59eccb61294feaf89548ce79eaedb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1bb59eccb61294feaf89548ce79eaedb}} 
+static bool {\bfseries Read\+Group} (field\+\_\+number, input, \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1497cefd585e58a16085b601aec64799}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1497cefd585e58a16085b601aec64799}} 
+static bool {\bfseries Read\+Message} (input, \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aec6941a8ac095e8f91480ee801edc487}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aec6941a8ac095e8f91480ee801edc487}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static bool {\bfseries Read\+Group\+No\+Virtual} (field\+\_\+number, input, Message\+Type $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a37b58a9b4cd56806106bdeffe647340e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a37b58a9b4cd56806106bdeffe647340e}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static bool {\bfseries Read\+Message\+No\+Virtual} (input, Message\+Type $\ast$value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a213c9236ebd73d84441a0db5688ee744}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a213c9236ebd73d84441a0db5688ee744}} 
+static void {\bfseries Write\+Tag} (field\+\_\+number, Wire\+Type type, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a67e66c3c9d0e4c9487b271aae9b150bb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a67e66c3c9d0e4c9487b271aae9b150bb}} 
+static void {\bfseries Write\+Int32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae6fa7423cbae90a63ae35814c983c592}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae6fa7423cbae90a63ae35814c983c592}} 
+static void {\bfseries Write\+Int64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0f9fbf660fc2eafb11559a65ff24be3f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0f9fbf660fc2eafb11559a65ff24be3f}} 
+static void {\bfseries Write\+U\+Int32\+No\+Tag} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7845bbe461a6947f36475a345afa67ab}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7845bbe461a6947f36475a345afa67ab}} 
+static void {\bfseries Write\+U\+Int64\+No\+Tag} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaf493b57cc3c6da32b4d296e7c091a28}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aaf493b57cc3c6da32b4d296e7c091a28}} 
+static void {\bfseries Write\+S\+Int32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab6478acbec097796e580e3c16bb13313}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab6478acbec097796e580e3c16bb13313}} 
+static void {\bfseries Write\+S\+Int64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7a27e25029209fefb41f7e359b6a50f6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7a27e25029209fefb41f7e359b6a50f6}} 
+static void {\bfseries Write\+Fixed32\+No\+Tag} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2777db9c1378f83f0b753ea39c41ec73}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2777db9c1378f83f0b753ea39c41ec73}} 
+static void {\bfseries Write\+Fixed64\+No\+Tag} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab3b87ce3abff2310ce828a45f4c8f18c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab3b87ce3abff2310ce828a45f4c8f18c}} 
+static void {\bfseries Write\+S\+Fixed32\+No\+Tag} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ce16d7a9104d7d3a01ec8d71bf0ece5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7ce16d7a9104d7d3a01ec8d71bf0ece5}} 
+static void {\bfseries Write\+S\+Fixed64\+No\+Tag} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7b9c093d5fd3f5dc3e9bd2db6c7a3c00}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7b9c093d5fd3f5dc3e9bd2db6c7a3c00}} 
+static void {\bfseries Write\+Float\+No\+Tag} (float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad7568a4d883caaff6406c4528a5eebb3}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad7568a4d883caaff6406c4528a5eebb3}} 
+static void {\bfseries Write\+Double\+No\+Tag} (double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a71266c9e6ae4dfe1c205cf84d591430c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a71266c9e6ae4dfe1c205cf84d591430c}} 
+static void {\bfseries Write\+Bool\+No\+Tag} (bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1edc21982a58c9d9b3ef7ee09f0ec94}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1edc21982a58c9d9b3ef7ee09f0ec94}} 
+static void {\bfseries Write\+Enum\+No\+Tag} (int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab20e5fbf0633f9061f5ae1304f311612}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab20e5fbf0633f9061f5ae1304f311612}} 
+static void {\bfseries Write\+Int32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab47de7b57f2d47523f28ea44e18d676c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab47de7b57f2d47523f28ea44e18d676c}} 
+static void {\bfseries Write\+Int64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad8311fe48e6c21a1cdeda06def046ea0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad8311fe48e6c21a1cdeda06def046ea0}} 
+static void {\bfseries Write\+U\+Int32} (field\+\_\+number, uint32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2cbc325989738d93181741fdb295cc03}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a2cbc325989738d93181741fdb295cc03}} 
+static void {\bfseries Write\+U\+Int64} (field\+\_\+number, uint64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a272392bde4d1734bd52e969e14c29e64}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a272392bde4d1734bd52e969e14c29e64}} 
+static void {\bfseries Write\+S\+Int32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6c995347e27fc5258c83b9f479dabe14}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6c995347e27fc5258c83b9f479dabe14}} 
+static void {\bfseries Write\+S\+Int64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af486c6b17e034f4dc7c55bf52a2a9b93}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af486c6b17e034f4dc7c55bf52a2a9b93}} 
+static void {\bfseries Write\+Fixed32} (field\+\_\+number, uint32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a10a39c30f306d9cf1b047bc4a9874fc8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a10a39c30f306d9cf1b047bc4a9874fc8}} 
+static void {\bfseries Write\+Fixed64} (field\+\_\+number, uint64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13eda20a6522cab220c0e6d3fee1561a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a13eda20a6522cab220c0e6d3fee1561a}} 
+static void {\bfseries Write\+S\+Fixed32} (field\+\_\+number, int32 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6e8ec6d16f9237074f25e831266d4dae}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6e8ec6d16f9237074f25e831266d4dae}} 
+static void {\bfseries Write\+S\+Fixed64} (field\+\_\+number, int64 value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aeb39f5022d311ebb0f9aeca44121f9b5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aeb39f5022d311ebb0f9aeca44121f9b5}} 
+static void {\bfseries Write\+Float} (field\+\_\+number, float value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a335907c9df3d48c81e2c99208d2ed11c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a335907c9df3d48c81e2c99208d2ed11c}} 
+static void {\bfseries Write\+Double} (field\+\_\+number, double value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0b3fac62bb08fefb845c59f1e550b871}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0b3fac62bb08fefb845c59f1e550b871}} 
+static void {\bfseries Write\+Bool} (field\+\_\+number, bool value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af801e7223c385e7c04674dfdaf7104f4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af801e7223c385e7c04674dfdaf7104f4}} 
+static void {\bfseries Write\+Enum} (field\+\_\+number, int value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae490a3b5447fd97608aed2177f79a7f6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae490a3b5447fd97608aed2177f79a7f6}} 
+static void {\bfseries Write\+String} (field\+\_\+number, const string \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5125634e40a343857ab301416974e848}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5125634e40a343857ab301416974e848}} 
+static void {\bfseries Write\+Bytes} (field\+\_\+number, const string \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a899b0adca1b491b0cab3941edbc70af1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a899b0adca1b491b0cab3941edbc70af1}} 
+static void {\bfseries Write\+Group} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adcc02f66dba5d3d9ae8d87f003210c2e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adcc02f66dba5d3d9ae8d87f003210c2e}} 
+static void {\bfseries Write\+Message} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a28ba85accd650e0bb29375e84e5a59e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a28ba85accd650e0bb29375e84e5a59e4}} 
+static void {\bfseries Write\+Group\+Maybe\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8278bc20346ebef174faa2430656949e}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8278bc20346ebef174faa2430656949e}} 
+static void {\bfseries Write\+Message\+Maybe\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5ed44eec564fcc33e7099bfe8e95b5c5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a5ed44eec564fcc33e7099bfe8e95b5c5}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static void {\bfseries Write\+Group\+No\+Virtual} (field\+\_\+number, const Message\+Type \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac8edbcaee63ebf1db5b38a9ffd1b156c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac8edbcaee63ebf1db5b38a9ffd1b156c}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static void {\bfseries Write\+Message\+No\+Virtual} (field\+\_\+number, const Message\+Type \&value, output)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d4a8857fdce7e48b7dd53f3e436f09}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d4a8857fdce7e48b7dd53f3e436f09}} 
+static uint8 $\ast$ {\bfseries Write\+Tag\+To\+Array} (field\+\_\+number, Wire\+Type type, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade3f2cc014e7310defcef7164cea8e5c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ade3f2cc014e7310defcef7164cea8e5c}} 
+static uint8 $\ast$ {\bfseries Write\+Int32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab2c8de1e9a8a6b5bdd4e1f9a4c0f70c4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab2c8de1e9a8a6b5bdd4e1f9a4c0f70c4}} 
+static uint8 $\ast$ {\bfseries Write\+Int64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7d22138813b79ce6407633b0e7c23174}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7d22138813b79ce6407633b0e7c23174}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int32\+No\+Tag\+To\+Array} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1621e62376014e886b75db3556ec274}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab1621e62376014e886b75db3556ec274}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int64\+No\+Tag\+To\+Array} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a969f7f3256e1e992d76750de6833c06c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a969f7f3256e1e992d76750de6833c06c}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9ea96f664873502f8837879f2df6856f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9ea96f664873502f8837879f2df6856f}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a56bf3f9ebfa8be2ab6995d9e15f9bc66}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a56bf3f9ebfa8be2ab6995d9e15f9bc66}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed32\+No\+Tag\+To\+Array} (uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abe393da52b9f5175f699846ece166796}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abe393da52b9f5175f699846ece166796}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed64\+No\+Tag\+To\+Array} (uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59311507463440a1ea720b7b681ebe8f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59311507463440a1ea720b7b681ebe8f}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed32\+No\+Tag\+To\+Array} (int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1c6855ded0a01ef1d8e1ff1bada71039}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1c6855ded0a01ef1d8e1ff1bada71039}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed64\+No\+Tag\+To\+Array} (int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3ef7b0f8c7ded7561f3bb3f88adf60e5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3ef7b0f8c7ded7561f3bb3f88adf60e5}} 
+static uint8 $\ast$ {\bfseries Write\+Float\+No\+Tag\+To\+Array} (float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aab46110d9e33898937b2670b46a8415d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_aab46110d9e33898937b2670b46a8415d}} 
+static uint8 $\ast$ {\bfseries Write\+Double\+No\+Tag\+To\+Array} (double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a24eebce4470ee72ccbd8e52d21e13f17}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a24eebce4470ee72ccbd8e52d21e13f17}} 
+static uint8 $\ast$ {\bfseries Write\+Bool\+No\+Tag\+To\+Array} (bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a60bba99034d76cf9c38950dd8d3edd1f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a60bba99034d76cf9c38950dd8d3edd1f}} 
+static uint8 $\ast$ {\bfseries Write\+Enum\+No\+Tag\+To\+Array} (int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e71653393842ca3e8421ed2c01323fe}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0e71653393842ca3e8421ed2c01323fe}} 
+static uint8 $\ast$ {\bfseries Write\+Int32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_accc3eb2ed28d9df47ad423b7b6c0aaa6}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_accc3eb2ed28d9df47ad423b7b6c0aaa6}} 
+static uint8 $\ast$ {\bfseries Write\+Int64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaee5e7f83029170e7e40f318505c0ff}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaee5e7f83029170e7e40f318505c0ff}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int32\+To\+Array} (field\+\_\+number, uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a61a86b37d65dc7cec00b312d33715fb4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a61a86b37d65dc7cec00b312d33715fb4}} 
+static uint8 $\ast$ {\bfseries Write\+U\+Int64\+To\+Array} (field\+\_\+number, uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a236e386b8ab32786b9d5bbf9e2920693}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a236e386b8ab32786b9d5bbf9e2920693}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab7b8b74a4165b92438f567c15e59d812}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab7b8b74a4165b92438f567c15e59d812}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Int64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2a8bbffc8731b3cbeceab8a8aff2ae}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2a8bbffc8731b3cbeceab8a8aff2ae}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed32\+To\+Array} (field\+\_\+number, uint32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad45cef4f9fd786012ab89f01753a0801}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad45cef4f9fd786012ab89f01753a0801}} 
+static uint8 $\ast$ {\bfseries Write\+Fixed64\+To\+Array} (field\+\_\+number, uint64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6ded70e3ff6dee8b17f7aea4be0777db}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6ded70e3ff6dee8b17f7aea4be0777db}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed32\+To\+Array} (field\+\_\+number, int32 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae85b59da7c6aa7930e77730ffc1a63b8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae85b59da7c6aa7930e77730ffc1a63b8}} 
+static uint8 $\ast$ {\bfseries Write\+S\+Fixed64\+To\+Array} (field\+\_\+number, int64 value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a98098cfdb51c5063850b82ed41916170}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a98098cfdb51c5063850b82ed41916170}} 
+static uint8 $\ast$ {\bfseries Write\+Float\+To\+Array} (field\+\_\+number, float value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59ea08692608bf8c1c12b422a33ab988}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a59ea08692608bf8c1c12b422a33ab988}} 
+static uint8 $\ast$ {\bfseries Write\+Double\+To\+Array} (field\+\_\+number, double value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8c274cfbfa082b779055046f77204838}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8c274cfbfa082b779055046f77204838}} 
+static uint8 $\ast$ {\bfseries Write\+Bool\+To\+Array} (field\+\_\+number, bool value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae4cf72e5389e405fe0e636b3d23a46a0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae4cf72e5389e405fe0e636b3d23a46a0}} 
+static uint8 $\ast$ {\bfseries Write\+Enum\+To\+Array} (field\+\_\+number, int value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d2dd4b78f1573537716fc56161c63d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac9d2dd4b78f1573537716fc56161c63d}} 
+static uint8 $\ast$ {\bfseries Write\+String\+To\+Array} (field\+\_\+number, const string \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae21cba6f72439d21f07af6cc8226894b}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae21cba6f72439d21f07af6cc8226894b}} 
+static uint8 $\ast$ {\bfseries Write\+Bytes\+To\+Array} (field\+\_\+number, const string \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a521de3eb58c8c5079f1f863af508043b}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a521de3eb58c8c5079f1f863af508043b}} 
+static uint8 $\ast$ {\bfseries Write\+Group\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0ab726057747951f25f2649b45109614}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a0ab726057747951f25f2649b45109614}} 
+static uint8 $\ast$ {\bfseries Write\+Message\+To\+Array} (field\+\_\+number, const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad20f8e1badac0efeea423aacd01e6403}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ad20f8e1badac0efeea423aacd01e6403}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static uint8 $\ast$ {\bfseries Write\+Group\+No\+Virtual\+To\+Array} (field\+\_\+number, const Message\+Type \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2e10be9f3e6c8ddb58e452a9b5e489}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_adb2e10be9f3e6c8ddb58e452a9b5e489}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static uint8 $\ast$ {\bfseries Write\+Message\+No\+Virtual\+To\+Array} (field\+\_\+number, const Message\+Type \&value, output) I\+NL
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a32262e4712a2dd60b25f509bb6a7d964}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a32262e4712a2dd60b25f509bb6a7d964}} 
+static int {\bfseries Int32\+Size} (int32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9a012e746eb64088ed8df1e8c957dad0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9a012e746eb64088ed8df1e8c957dad0}} 
+static int {\bfseries Int64\+Size} (int64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8056f64245334b3f1ce64edd0de324c2}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a8056f64245334b3f1ce64edd0de324c2}} 
+static int {\bfseries U\+Int32\+Size} (uint32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ace5cd3f68f288a97a1ceee86901c716a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ace5cd3f68f288a97a1ceee86901c716a}} 
+static int {\bfseries U\+Int64\+Size} (uint64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6791bd6e2ddd05b3f5272701ae9548d1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6791bd6e2ddd05b3f5272701ae9548d1}} 
+static int {\bfseries S\+Int32\+Size} (int32 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af64ebf0b76e9913082d24bb156a2993d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_af64ebf0b76e9913082d24bb156a2993d}} 
+static int {\bfseries S\+Int64\+Size} (int64 value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a70edd447b0b2f4d6cdb5ee895ab1b668}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a70edd447b0b2f4d6cdb5ee895ab1b668}} 
+static int {\bfseries Enum\+Size} (int value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afc56aa620c791f5383665ddac09364e4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afc56aa620c791f5383665ddac09364e4}} 
+static int {\bfseries String\+Size} (const string \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a63a27c7dd7da8ff9413b8cbecc3efe01}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a63a27c7dd7da8ff9413b8cbecc3efe01}} 
+static int {\bfseries Bytes\+Size} (const string \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab254d748969219e01680be2b5ac5c3f5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab254d748969219e01680be2b5ac5c3f5}} 
+static int {\bfseries Group\+Size} (const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a41898835aa411b8a4f8ba0c903a689c8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a41898835aa411b8a4f8ba0c903a689c8}} 
+static int {\bfseries Message\+Size} (const \hyperlink{classgoogle_1_1protobuf_1_1MessageLite}{Message\+Lite} \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9f05ab0c496ec9d62026fcd9a580a7b5}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9f05ab0c496ec9d62026fcd9a580a7b5}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static int {\bfseries Group\+Size\+No\+Virtual} (const Message\+Type \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4d08cbfffd3a10411a2bb7a28c5d70eb}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4d08cbfffd3a10411a2bb7a28c5d70eb}} 
+{\footnotesize template$<$typename Message\+Type $>$ }\\static int {\bfseries Message\+Size\+No\+Virtual} (const Message\+Type \&value)
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a99c456a8e1f01f2544b2d5e42565b407}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a99c456a8e1f01f2544b2d5e42565b407}} 
+static int {\bfseries Length\+Delimited\+Size} (int length)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae595c287c1554c7c4ce575787aab2483}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ae595c287c1554c7c4ce575787aab2483}} 
+static const int {\bfseries k\+Tag\+Type\+Bits} = 3
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7c55949efebf93a2f822fde9cc98169d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a7c55949efebf93a2f822fde9cc98169d}} 
+static const uint32 {\bfseries k\+Tag\+Type\+Mask} = (1 $<$$<$ k\+Tag\+Type\+Bits) -\/ 1
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a55645ee6caac01b2c90cef915ea2c455}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a55645ee6caac01b2c90cef915ea2c455}} 
+static const int {\bfseries k\+Message\+Set\+Item\+Number} = 1
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4662c3d53a36ca644504b2a7a71bcc0c}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a4662c3d53a36ca644504b2a7a71bcc0c}} 
+static const int {\bfseries k\+Message\+Set\+Type\+Id\+Number} = 2
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab4e3609b6809d7796b4262e1a9b18ad0}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ab4e3609b6809d7796b4262e1a9b18ad0}} 
+static const int {\bfseries k\+Message\+Set\+Message\+Number} = 3
+\item 
+static const int {\bfseries k\+Message\+Set\+Item\+Start\+Tag}
+\item 
+static const int {\bfseries k\+Message\+Set\+Item\+End\+Tag}
+\item 
+static const int {\bfseries k\+Message\+Set\+Type\+Id\+Tag}
+\item 
+static const int {\bfseries k\+Message\+Set\+Message\+Tag}
+\item 
+static const int {\bfseries k\+Message\+Set\+Item\+Tags\+Size}
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a16666f7cf5cb21dd84e8c2e01077b63a}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a16666f7cf5cb21dd84e8c2e01077b63a}} 
+static const int {\bfseries k\+Fixed32\+Size} = 4
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac49e6fac77d51396154e1993bcc5d6f8}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_ac49e6fac77d51396154e1993bcc5d6f8}} 
+static const int {\bfseries k\+Fixed64\+Size} = 8
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abae6d39cf7493e28c2c737aae98c27b4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_abae6d39cf7493e28c2c737aae98c27b4}} 
+static const int {\bfseries k\+S\+Fixed32\+Size} = 4
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3478b3d8131ff33375ba657c374dfe07}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a3478b3d8131ff33375ba657c374dfe07}} 
+static const int {\bfseries k\+S\+Fixed64\+Size} = 8
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaf501a7d199002f73af5711bbe149b4}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_afaf501a7d199002f73af5711bbe149b4}} 
+static const int {\bfseries k\+Float\+Size} = 4
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a951bbbb70a661200d40ea3a17de8274d}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a951bbbb70a661200d40ea3a17de8274d}} 
+static const int {\bfseries k\+Double\+Size} = 8
+\item 
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6b11c434b49add686955112e392a24b1}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a6b11c434b49add686955112e392a24b1}} 
+static const int {\bfseries k\+Bool\+Size} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9d6470bb4fa58e5eb0a8bdc72c3f5491}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a9d6470bb4fa58e5eb0a8bdc72c3f5491}} 
+\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}!k\+Message\+Set\+Item\+End\+Tag@{k\+Message\+Set\+Item\+End\+Tag}}
+\index{k\+Message\+Set\+Item\+End\+Tag@{k\+Message\+Set\+Item\+End\+Tag}!google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsubsection{\texorpdfstring{k\+Message\+Set\+Item\+End\+Tag}{kMessageSetItemEndTag}}
+{\footnotesize\ttfamily static const int google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite\+::k\+Message\+Set\+Item\+End\+Tag\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    GOOGLE\_PROTOBUF\_WIRE\_FORMAT\_MAKE\_TAG(kMessageSetItemNumber,
+                                WireFormatLite::WIRETYPE\_END\_GROUP)
+\end{DoxyCode}
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1b64731065f4e48e7b4a7ba31d5ff553}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a1b64731065f4e48e7b4a7ba31d5ff553}} 
+\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}!k\+Message\+Set\+Item\+Start\+Tag@{k\+Message\+Set\+Item\+Start\+Tag}}
+\index{k\+Message\+Set\+Item\+Start\+Tag@{k\+Message\+Set\+Item\+Start\+Tag}!google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsubsection{\texorpdfstring{k\+Message\+Set\+Item\+Start\+Tag}{kMessageSetItemStartTag}}
+{\footnotesize\ttfamily static const int google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite\+::k\+Message\+Set\+Item\+Start\+Tag\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    GOOGLE\_PROTOBUF\_WIRE\_FORMAT\_MAKE\_TAG(kMessageSetItemNumber,
+                                WireFormatLite::WIRETYPE\_START\_GROUP)
+\end{DoxyCode}
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_addad3ceb239cd79b021b7e6a12fd6e90}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_addad3ceb239cd79b021b7e6a12fd6e90}} 
+\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}!k\+Message\+Set\+Item\+Tags\+Size@{k\+Message\+Set\+Item\+Tags\+Size}}
+\index{k\+Message\+Set\+Item\+Tags\+Size@{k\+Message\+Set\+Item\+Tags\+Size}!google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsubsection{\texorpdfstring{k\+Message\+Set\+Item\+Tags\+Size}{kMessageSetItemTagsSize}}
+{\footnotesize\ttfamily static const int google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite\+::k\+Message\+Set\+Item\+Tags\+Size\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+  io::CodedOutputStream::StaticVarintSize32<kMessageSetItemStartTag>::value +
+  io::CodedOutputStream::StaticVarintSize32<kMessageSetItemEndTag>::value +
+  io::CodedOutputStream::StaticVarintSize32<kMessageSetTypeIdTag>::value +
+  io::CodedOutputStream::StaticVarintSize32<kMessageSetMessageTag>::value
+\end{DoxyCode}
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_add1d6418dfbe558913f1f2d62b632d10}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_add1d6418dfbe558913f1f2d62b632d10}} 
+\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}!k\+Message\+Set\+Message\+Tag@{k\+Message\+Set\+Message\+Tag}}
+\index{k\+Message\+Set\+Message\+Tag@{k\+Message\+Set\+Message\+Tag}!google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsubsection{\texorpdfstring{k\+Message\+Set\+Message\+Tag}{kMessageSetMessageTag}}
+{\footnotesize\ttfamily static const int google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite\+::k\+Message\+Set\+Message\+Tag\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    GOOGLE\_PROTOBUF\_WIRE\_FORMAT\_MAKE\_TAG(kMessageSetMessageNumber,
+                                WireFormatLite::WIRETYPE\_LENGTH\_DELIMITED)
+\end{DoxyCode}
+\mbox{\Hypertarget{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a19868c5a4441581de6e2a48abaf6888f}\label{classgoogle_1_1protobuf_1_1internal_1_1WireFormatLite_a19868c5a4441581de6e2a48abaf6888f}} 
+\index{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}!k\+Message\+Set\+Type\+Id\+Tag@{k\+Message\+Set\+Type\+Id\+Tag}}
+\index{k\+Message\+Set\+Type\+Id\+Tag@{k\+Message\+Set\+Type\+Id\+Tag}!google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite@{google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite}}
+\subsubsection{\texorpdfstring{k\+Message\+Set\+Type\+Id\+Tag}{kMessageSetTypeIdTag}}
+{\footnotesize\ttfamily static const int google\+::protobuf\+::internal\+::\+Wire\+Format\+Lite\+::k\+Message\+Set\+Type\+Id\+Tag\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    GOOGLE\_PROTOBUF\_WIRE\_FORMAT\_MAKE\_TAG(kMessageSetTypeIdNumber,
+                                WireFormatLite::WIRETYPE\_VARINT)
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/tools/simulator/libsimulator/lib/protobuf-\/lite/google/protobuf/wire\+\_\+format\+\_\+lite.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/tools/simulator/libsimulator/lib/protobuf-\/lite/google/protobuf/wire\+\_\+format\+\_\+lite.\+cc\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/tools/simulator/libsimulator/lib/protobuf-\/lite/google/protobuf/wire\+\_\+format\+\_\+lite\+\_\+inl.\+h\end{DoxyCompactItemize}

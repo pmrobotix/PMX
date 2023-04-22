@@ -1,0 +1,123 @@
+\hypertarget{group____3d}{}\section{3D Nodes}
+\label{group____3d}\index{3\+D Nodes@{3\+D Nodes}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAABB}{A\+A\+BB}
+\item 
+class \hyperlink{classAnimate3D}{Animate3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAnimate3D}{Animate3D}, Animates a \hyperlink{classSprite3D}{Sprite3D} given with an \hyperlink{classAnimation3D}{Animation3D}. \end{DoxyCompactList}\item 
+class \hyperlink{classAnimation3D}{Animation3D}
+\begin{DoxyCompactList}\small\item\em static animation data, shared \end{DoxyCompactList}\item 
+class \hyperlink{classAnimation3DCache}{Animation3\+D\+Cache}
+\item 
+class \hyperlink{classAnimationCurve}{Animation\+Curve$<$ component\+Size $>$}
+\begin{DoxyCompactList}\small\item\em curve of bone\textquotesingle{}s position, rotation or scale \end{DoxyCompactList}\item 
+class \hyperlink{classAttachNode}{Attach\+Node}
+\begin{DoxyCompactList}\small\item\em attach a node to a bone usage\+: auto sprite = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}girl.\+c3b\char`\"{}); auto weapon = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}weapon.\+c3b\char`\"{}); auto attach\+Node = sprite-\/$>$get\+Attach\+Node(\char`\"{}left hand\char`\"{}); attach\+Node-\/$>$add\+Child(weapon); \end{DoxyCompactList}\item 
+class \hyperlink{classBillBoard}{Bill\+Board}
+\begin{DoxyCompactList}\small\item\em Inherit from \hyperlink{classSprite}{Sprite}, achieve \hyperlink{classBillBoard}{Bill\+Board}. \end{DoxyCompactList}\item 
+class \hyperlink{classBundle3D}{Bundle3D}
+\begin{DoxyCompactList}\small\item\em Defines a bundle file that contains a collection of assets. \hyperlink{classMesh}{Mesh}, \hyperlink{classMaterial}{Material}, \hyperlink{classMeshSkin}{Mesh\+Skin}, \hyperlink{classAnimation}{Animation} There are two types of bundle files, c3t and c3b. c3t text file c3b binary file  NA  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classBundleReader}{Bundle\+Reader}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBundleReader}{Bundle\+Reader} is an interface for reading sequence of bytes.  NA  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classMesh}{Mesh}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMesh}{Mesh}\+: contains ref to index buffer, \hyperlink{classGLProgramState}{G\+L\+Program\+State}, texture, skin, blend function, aabb and so on. \end{DoxyCompactList}\item 
+class \hyperlink{classMeshSkin}{Mesh\+Skin}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMeshSkin}{Mesh\+Skin}, A class maintain a collection of bones that affect \hyperlink{classMesh}{Mesh} vertex. And it is responsible for computing matrix palettes that used by skin mesh rendering.  NA  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classMeshIndexData}{Mesh\+Index\+Data}
+\begin{DoxyCompactList}\small\item\em the \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} contain all of the indices data which mesh need.  NA  NA \end{DoxyCompactList}\item 
+class \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data}
+\begin{DoxyCompactList}\small\item\em the \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} contain all of the vertices data which mesh need. \end{DoxyCompactList}\item 
+class \hyperlink{classMotionStreak3D}{Motion\+Streak3D}
+\begin{DoxyCompactList}\small\item\em Creates a trailing path. It is created from a line segment sweeping along the path. \end{DoxyCompactList}\item 
+class \hyperlink{classOBB}{O\+BB}
+\begin{DoxyCompactList}\small\item\em the \hyperlink{classOBB}{O\+BB} is similar to the \hyperlink{classAABB}{A\+A\+BB} but the bounding box has the same direction as \hyperlink{classSprite3D}{Sprite3D}. so it\textquotesingle{}s collision detection more precise than \hyperlink{classAABB}{A\+A\+BB}  NA \end{DoxyCompactList}\item 
+class \hyperlink{classRay}{Ray}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRay}{Ray} is a line with one end. usually use it to check intersects with some object,such as \hyperlink{classPlane}{Plane}, \hyperlink{classOBB}{O\+BB}, \hyperlink{classAABB}{A\+A\+BB}  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classBone3D}{Bone3D}
+\begin{DoxyCompactList}\small\item\em Defines a basic hierarchical structure of transformation spaces.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classSkeleton3D}{Skeleton3D}
+\item 
+class \hyperlink{classSkybox}{Skybox}
+\item 
+class \hyperlink{classSprite3D}{Sprite3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSprite3D}{Sprite3D}\+: A sprite can be loaded from 3D model files, .obj, .c3t, .c3b, then can be drawn as sprite. \end{DoxyCompactList}\item 
+class \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache}
+\begin{DoxyCompactList}\small\item\em the cache data of \hyperlink{classSprite3D}{Sprite3D}, use to speed up \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create} \end{DoxyCompactList}\item 
+class \hyperlink{classSprite3DMaterial}{Sprite3\+D\+Material}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSprite3DMaterial}{Sprite3\+D\+Material}\+: \hyperlink{classMaterial}{Material} for \hyperlink{classSprite3D}{Sprite3D}. \end{DoxyCompactList}\item 
+class \hyperlink{classSprite3DMaterialCache}{Sprite3\+D\+Material\+Cache}
+\begin{DoxyCompactList}\small\item\em the sprite3D material is only texture for now  NA  NA \end{DoxyCompactList}\item 
+class \hyperlink{classTerrain}{Terrain}
+\item 
+class \hyperlink{classTextureCube}{Texture\+Cube}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}~256
+\item 
+\#define \hyperlink{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}~256
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type} \{ \newline
+{\bfseries I\+N\+T\+\_\+\+L\+I\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+Q\+U\+A\+T\+\_\+\+S\+L\+E\+RP}, 
+{\bfseries I\+N\+T\+\_\+\+U\+S\+E\+R\+\_\+\+F\+U\+N\+C\+T\+I\+ON}, 
+\newline
+{\bfseries I\+N\+T\+\_\+\+L\+I\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+Q\+U\+A\+T\+\_\+\+S\+L\+E\+RP}, 
+{\bfseries I\+N\+T\+\_\+\+U\+S\+E\+R\+\_\+\+F\+U\+N\+C\+T\+I\+ON}
+ \}
+\item 
+enum \hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type} \{ \newline
+{\bfseries I\+N\+T\+\_\+\+L\+I\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+Q\+U\+A\+T\+\_\+\+S\+L\+E\+RP}, 
+{\bfseries I\+N\+T\+\_\+\+U\+S\+E\+R\+\_\+\+F\+U\+N\+C\+T\+I\+ON}, 
+\newline
+{\bfseries I\+N\+T\+\_\+\+L\+I\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+N\+E\+AR}, 
+{\bfseries I\+N\+T\+\_\+\+Q\+U\+A\+T\+\_\+\+S\+L\+E\+RP}, 
+{\bfseries I\+N\+T\+\_\+\+U\+S\+E\+R\+\_\+\+F\+U\+N\+C\+T\+I\+ON}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}\label{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}} 
+\index{3\+D Nodes@{3\+D Nodes}!M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES@{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}}
+\index{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES@{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}!3\+D Nodes@{3\+D Nodes}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}{MAX\_CHUNKES}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES~256}
+
+the maximum amount of the chunks \mbox{\Hypertarget{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}\label{group____3d_gab12c6db0eef20a3be56a8bf8452ae432}} 
+\index{3\+D Nodes@{3\+D Nodes}!M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES@{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}}
+\index{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES@{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}!3\+D Nodes@{3\+D Nodes}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES}{MAX\_CHUNKES}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+H\+U\+N\+K\+ES~256}
+
+the maximum amount of the chunks 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}\label{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}} 
+\index{3\+D Nodes@{3\+D Nodes}!Evaluate\+Type@{Evaluate\+Type}}
+\index{Evaluate\+Type@{Evaluate\+Type}!3\+D Nodes@{3\+D Nodes}}
+\subsubsection{\texorpdfstring{Evaluate\+Type}{EvaluateType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Evaluate Type \mbox{\Hypertarget{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}\label{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}} 
+\index{3\+D Nodes@{3\+D Nodes}!Evaluate\+Type@{Evaluate\+Type}}
+\index{Evaluate\+Type@{Evaluate\+Type}!3\+D Nodes@{3\+D Nodes}}
+\subsubsection{\texorpdfstring{Evaluate\+Type}{EvaluateType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group____3d_ga3c41e728b3058f4688800b2d4d1f5c95}{Evaluate\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Evaluate Type 

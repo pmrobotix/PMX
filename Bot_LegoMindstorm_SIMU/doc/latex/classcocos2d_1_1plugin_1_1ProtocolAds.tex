@@ -1,0 +1,172 @@
+\hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds}{}\section{cocos2d\+:\+:plugin\+:\+:Protocol\+Ads Class Reference}
+\label{classcocos2d_1_1plugin_1_1ProtocolAds}\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+
+
+Inheritance diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+Ads\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classcocos2d_1_1plugin_1_1ProtocolAds__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+Ads\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcocos2d_1_1plugin_1_1ProtocolAds__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a17d340ca67ac512bb617f2f1bf4982fa}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a17d340ca67ac512bb617f2f1bf4982fa}} 
+enum {\bfseries Ads\+Pos} \{ \newline
+{\bfseries k\+Pos\+Center} = 0, 
+{\bfseries k\+Pos\+Top}, 
+{\bfseries k\+Pos\+Top\+Left}, 
+{\bfseries k\+Pos\+Top\+Right}, 
+\newline
+{\bfseries k\+Pos\+Bottom}, 
+{\bfseries k\+Pos\+Bottom\+Left}, 
+{\bfseries k\+Pos\+Bottom\+Right}
+ \}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a23d0880327ba9f3c178ea33efc93a824}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a23d0880327ba9f3c178ea33efc93a824}} 
+typedef std\+::function$<$ void(int, std\+::string \&)$>$ {\bfseries Protocol\+Ads\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_a4fc710e3937e28cbd03e2820b7517f9c}{config\+Developer\+Info} (T\+Ads\+Developer\+Info dev\+Info)
+\begin{DoxyCompactList}\small\item\em config the application info \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_ab645861aadce7f9736169e66bc30110e}{show\+Ads} (T\+Ads\+Info info, Ads\+Pos pos=k\+Pos\+Center)
+\begin{DoxyCompactList}\small\item\em show adview \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_a43a0b1574b54ced4ca21616fad379859}{hide\+Ads} (T\+Ads\+Info info)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classHide}{Hide} the adview. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_af06a1c9f37a85b51447c4c37493a04e1}\label{classcocos2d_1_1plugin_1_1ProtocolAds_af06a1c9f37a85b51447c4c37493a04e1}} 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_af06a1c9f37a85b51447c4c37493a04e1}{query\+Points} ()
+\begin{DoxyCompactList}\small\item\em Query the points of player. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_afb4e3dc087a9cd9e3a4779198cb4a2da}{spend\+Points} (int points)
+\begin{DoxyCompactList}\small\item\em Spend the points. Use this method to notify server spend points. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_a2ea6f225787b7f62431d2fd695b753c6}{set\+Ads\+Listener} (\hyperlink{classcocos2d_1_1plugin_1_1AdsListener}{Ads\+Listener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em set the Ads listener \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocos2d_1_1plugin_1_1AdsListener}{Ads\+Listener} $\ast$ \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_a283f33d33936b8fd0b8267b65e757ec0}{get\+Ads\+Listener} ()
+\begin{DoxyCompactList}\small\item\em set the Ads listener \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_abcc82176165df867c7349cd6e741e400}\label{classcocos2d_1_1plugin_1_1ProtocolAds_abcc82176165df867c7349cd6e741e400}} 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_abcc82176165df867c7349cd6e741e400}{set\+Callback} (Protocol\+Ads\+Callback \&cb)
+\begin{DoxyCompactList}\small\item\em set the Ads callback function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a8c43ac264e7d5140d69f6fdc9e7ef0dd}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a8c43ac264e7d5140d69f6fdc9e7ef0dd}} 
+Protocol\+Ads\+Callback \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAds_a8c43ac264e7d5140d69f6fdc9e7ef0dd}{get\+Callback} ()
+\begin{DoxyCompactList}\small\item\em get the Ads callback function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_ac72a27b14bd5666d9c6329d6b761763a}\label{classcocos2d_1_1plugin_1_1ProtocolAds_ac72a27b14bd5666d9c6329d6b761763a}} 
+\hyperlink{classcocos2d_1_1plugin_1_1AdsListener}{Ads\+Listener} $\ast$ {\bfseries \+\_\+listener}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a90206a71b4ade7d5f05943a267686d67}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a90206a71b4ade7d5f05943a267686d67}} 
+Protocol\+Ads\+Callback {\bfseries \+\_\+callback}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a4fc710e3937e28cbd03e2820b7517f9c}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a4fc710e3937e28cbd03e2820b7517f9c}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!config\+Developer\+Info@{config\+Developer\+Info}}
+\index{config\+Developer\+Info@{config\+Developer\+Info}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{config\+Developer\+Info()}{configDeveloperInfo()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Ads\+::config\+Developer\+Info (\begin{DoxyParamCaption}\item[{T\+Ads\+Developer\+Info}]{dev\+Info }\end{DoxyParamCaption})}
+
+
+
+config the application info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Info} & This parameter is the info of aplication, different plugin have different format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Must invoke this interface before other interfaces. And invoked only once. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a283f33d33936b8fd0b8267b65e757ec0}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a283f33d33936b8fd0b8267b65e757ec0}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!get\+Ads\+Listener@{get\+Ads\+Listener}}
+\index{get\+Ads\+Listener@{get\+Ads\+Listener}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{get\+Ads\+Listener()}{getAdsListener()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocos2d_1_1plugin_1_1AdsListener}{Ads\+Listener}$\ast$ cocos2d\+::plugin\+::\+Protocol\+Ads\+::get\+Ads\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the Ads listener 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000231}{Deprecated}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a43a0b1574b54ced4ca21616fad379859}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a43a0b1574b54ced4ca21616fad379859}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!hide\+Ads@{hide\+Ads}}
+\index{hide\+Ads@{hide\+Ads}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{hide\+Ads()}{hideAds()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Ads\+::hide\+Ads (\begin{DoxyParamCaption}\item[{T\+Ads\+Info}]{info }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classHide}{Hide} the adview. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The information of adview will be hided \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_a2ea6f225787b7f62431d2fd695b753c6}\label{classcocos2d_1_1plugin_1_1ProtocolAds_a2ea6f225787b7f62431d2fd695b753c6}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!set\+Ads\+Listener@{set\+Ads\+Listener}}
+\index{set\+Ads\+Listener@{set\+Ads\+Listener}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{set\+Ads\+Listener()}{setAdsListener()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void cocos2d\+::plugin\+::\+Protocol\+Ads\+::set\+Ads\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classcocos2d_1_1plugin_1_1AdsListener}{Ads\+Listener} $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the Ads listener 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000230}{Deprecated}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_ab645861aadce7f9736169e66bc30110e}\label{classcocos2d_1_1plugin_1_1ProtocolAds_ab645861aadce7f9736169e66bc30110e}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!show\+Ads@{show\+Ads}}
+\index{show\+Ads@{show\+Ads}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{show\+Ads()}{showAds()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Ads\+::show\+Ads (\begin{DoxyParamCaption}\item[{T\+Ads\+Info}]{info,  }\item[{Ads\+Pos}]{pos = {\ttfamily kPosCenter} }\end{DoxyParamCaption})}
+
+
+
+show adview 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The information of adview will be shown Pay attention to the subclass definition \\
+\hline
+{\em pos} & The position where the adview be shown. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAds_afb4e3dc087a9cd9e3a4779198cb4a2da}\label{classcocos2d_1_1plugin_1_1ProtocolAds_afb4e3dc087a9cd9e3a4779198cb4a2da}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}!spend\+Points@{spend\+Points}}
+\index{spend\+Points@{spend\+Points}!cocos2d\+::plugin\+::\+Protocol\+Ads@{cocos2d\+::plugin\+::\+Protocol\+Ads}}
+\subsubsection{\texorpdfstring{spend\+Points()}{spendPoints()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Ads\+::spend\+Points (\begin{DoxyParamCaption}\item[{int}]{points }\end{DoxyParamCaption})}
+
+
+
+Spend the points. Use this method to notify server spend points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Need spend number of points \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/include/Protocol\+Ads.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/android/Protocol\+Ads.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/ios/Protocol\+Ads.\+mm\end{DoxyCompactItemize}

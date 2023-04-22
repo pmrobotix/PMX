@@ -1,0 +1,71 @@
+\hypertarget{structb2Manifold}{}\section{b2\+Manifold Struct Reference}
+\label{structb2Manifold}\index{b2\+Manifold@{b2\+Manifold}}
+
+
+{\ttfamily \#include $<$b2\+Collision.\+h$>$}
+
+
+
+Collaboration diagram for b2\+Manifold\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{structb2Manifold__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2Manifold_aa9c347e2ff2e27ee820a926efbb33e12}\label{structb2Manifold_aa9c347e2ff2e27ee820a926efbb33e12}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries e\+\_\+circles}, 
+{\bfseries e\+\_\+faceA}, 
+{\bfseries e\+\_\+faceB}, 
+{\bfseries e\+\_\+circles}, 
+\newline
+{\bfseries e\+\_\+faceA}, 
+{\bfseries e\+\_\+faceB}
+ \}
+\item 
+\mbox{\Hypertarget{structb2Manifold_aa9c347e2ff2e27ee820a926efbb33e12}\label{structb2Manifold_aa9c347e2ff2e27ee820a926efbb33e12}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries e\+\_\+circles}, 
+{\bfseries e\+\_\+faceA}, 
+{\bfseries e\+\_\+faceB}, 
+{\bfseries e\+\_\+circles}, 
+\newline
+{\bfseries e\+\_\+faceA}, 
+{\bfseries e\+\_\+faceB}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2Manifold_acd82a1b1a8dd2b9fcfa75f0c22f8d092}\label{structb2Manifold_acd82a1b1a8dd2b9fcfa75f0c22f8d092}} 
+\hyperlink{structb2ManifoldPoint}{b2\+Manifold\+Point} \hyperlink{structb2Manifold_acd82a1b1a8dd2b9fcfa75f0c22f8d092}{points} \mbox{[}\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Common_2b2Settings_8h_aa5f44cc9edf711433dea2b2ec94f3c42}{b2\+\_\+max\+Manifold\+Points}\mbox{]}
+\begin{DoxyCompactList}\small\item\em the points of contact \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2Manifold_a3604e9fef2a03347c5649c71a9fd4c79}\label{structb2Manifold_a3604e9fef2a03347c5649c71a9fd4c79}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2Manifold_a3604e9fef2a03347c5649c71a9fd4c79}{local\+Normal}
+\begin{DoxyCompactList}\small\item\em not use for Type\+::e\+\_\+points \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2Manifold_a8825cea31b27dbbaf22c13c3070870d5}\label{structb2Manifold_a8825cea31b27dbbaf22c13c3070870d5}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2Manifold_a8825cea31b27dbbaf22c13c3070870d5}{local\+Point}
+\begin{DoxyCompactList}\small\item\em usage depends on manifold type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2Manifold_a4cb6ceba7105513b1e5bd6dbf0cce168}\label{structb2Manifold_a4cb6ceba7105513b1e5bd6dbf0cce168}} 
+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{structb2Manifold_abf59ff6fa36bed34b0242ad54951a696}\label{structb2Manifold_abf59ff6fa36bed34b0242ad54951a696}} 
+int32 \hyperlink{structb2Manifold_abf59ff6fa36bed34b0242ad54951a696}{point\+Count}
+\begin{DoxyCompactList}\small\item\em the number of manifold points \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A manifold for two touching convex shapes. Box2D supports multiple types of contact\+:
+\begin{DoxyItemize}
+\item clip point versus plane with radius
+\item point versus point with radius (circles) The local point usage depends on the manifold type\+: -\/e\+\_\+circles\+: the local center of circleA -\/e\+\_\+faceA\+: the center of faceA -\/e\+\_\+faceB\+: the center of faceB Similarly the local normal usage\+: -\/e\+\_\+circles\+: not used -\/e\+\_\+faceA\+: the normal on polygonA -\/e\+\_\+faceB\+: the normal on polygonB We store contacts in this way so that position correction can account for movement, which is critical for continuous physics. All contact scenarios must be expressed in one of these types. This structure is stored across time steps, so we keep it small. 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h}{b2\+Collision.\+h}\end{DoxyCompactItemize}

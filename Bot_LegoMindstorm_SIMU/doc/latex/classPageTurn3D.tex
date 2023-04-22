@@ -1,0 +1,211 @@
+\hypertarget{classPageTurn3D}{}\section{Page\+Turn3D Class Reference}
+\label{classPageTurn3D}\index{Page\+Turn3D@{Page\+Turn3D}}
+
+
+This action simulates a page turn from the bottom right hand corner of the screen.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Page\+Turn3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Page\+Turn3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classPageTurn3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Page\+Turn3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPageTurn3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classGridBase}{Grid\+Base} $\ast$ \hyperlink{classPageTurn3D_a7b3315a39780438de87cbaa2c9c52c9c}{get\+Grid} () override
+\item 
+virtual \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ \hyperlink{classPageTurn3D_a98aa1300a97553c4f4185d974021bdc4}{clone} () const override
+\item 
+virtual void \hyperlink{classPageTurn3D_afe5bcf11756795416fc882a3b0be1c66}{update} (float time) override
+\item 
+virtual \hyperlink{classGridBase}{Grid\+Base} $\ast$ \hyperlink{classPageTurn3D_a69c44c157a7652d2a183dba481bce69a}{get\+Grid} () override
+\item 
+virtual \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ \hyperlink{classPageTurn3D_a4679e461471010cd87932c11be5bef9a}{clone} () const override
+\item 
+virtual void \hyperlink{classPageTurn3D_a5d1f2853531e5a8ee8857c287c4f3cbc}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ \hyperlink{classPageTurn3D_aa0e4fcc501ac1c486459a41539b3a604}{create} (float duration, const \hyperlink{classSize}{Size} \&grid\+Size)
+\begin{DoxyCompactList}\small\item\em Create an action with duration, grid size. \end{DoxyCompactList}\item 
+static \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ \hyperlink{classPageTurn3D_a627e22ddcf38209e8bc6f6b03146d423}{create} (float duration, const \hyperlink{classSize}{Size} \&grid\+Size)
+\begin{DoxyCompactList}\small\item\em Create an action with duration, grid size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This action simulates a page turn from the bottom right hand corner of the screen. 
+
+It\textquotesingle{}s not much use by itself but is used by the Page\+Turn\+Transition. Based on an original paper by L Hong et al. \href{http://www.parc.com/publication/1638/turning-pages-of-3d-electronic-books.html}{\tt http\+://www.\+parc.\+com/publication/1638/turning-\/pages-\/of-\/3d-\/electronic-\/books.\+html}
+
+\begin{DoxySince}{Since}
+v0.\+8.\+2 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPageTurn3D_a98aa1300a97553c4f4185d974021bdc4}\label{classPageTurn3D_a98aa1300a97553c4f4185d974021bdc4}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!clone@{clone}}
+\index{clone@{clone}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ Page\+Turn3\+D\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classGrid3DAction_a01d5b2d60654ef66d6551ac2190ed14c}{Grid3\+D\+Action}.
+
+\mbox{\Hypertarget{classPageTurn3D_a4679e461471010cd87932c11be5bef9a}\label{classPageTurn3D_a4679e461471010cd87932c11be5bef9a}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!clone@{clone}}
+\index{clone@{clone}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classPageTurn3D}{Page\+Turn3D}$\ast$ Page\+Turn3\+D\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classGrid3DAction_a01d5b2d60654ef66d6551ac2190ed14c}{Grid3\+D\+Action}.
+
+\mbox{\Hypertarget{classPageTurn3D_aa0e4fcc501ac1c486459a41539b3a604}\label{classPageTurn3D_aa0e4fcc501ac1c486459a41539b3a604}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!create@{create}}
+\index{create@{create}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classPageTurn3D}{Page\+Turn3D} $\ast$ Page\+Turn3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classSize}{Size} \&}]{grid\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create an action with duration, grid size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Specify the duration of the \hyperlink{classPageTurn3D}{Page\+Turn3D} action. It\textquotesingle{}s a value in seconds. \\
+\hline
+{\em grid\+Size} & Specify the size of the grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classPageTurn3D}{Page\+Turn3D} action; otherwise, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPageTurn3D_a627e22ddcf38209e8bc6f6b03146d423}\label{classPageTurn3D_a627e22ddcf38209e8bc6f6b03146d423}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!create@{create}}
+\index{create@{create}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classPageTurn3D}{Page\+Turn3D}$\ast$ Page\+Turn3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const \hyperlink{classSize}{Size} \&}]{grid\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create an action with duration, grid size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Specify the duration of the \hyperlink{classPageTurn3D}{Page\+Turn3D} action. It\textquotesingle{}s a value in seconds. \\
+\hline
+{\em grid\+Size} & Specify the size of the grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classPageTurn3D}{Page\+Turn3D} action; otherwise, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPageTurn3D_a7b3315a39780438de87cbaa2c9c52c9c}\label{classPageTurn3D_a7b3315a39780438de87cbaa2c9c52c9c}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGridBase}{Grid\+Base} $\ast$ Page\+Turn3\+D\+::get\+Grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classGrid3DAction_ad68b52ba318636b43a4c7aab0a9c2887}{Grid3\+D\+Action}.
+
+\mbox{\Hypertarget{classPageTurn3D_a69c44c157a7652d2a183dba481bce69a}\label{classPageTurn3D_a69c44c157a7652d2a183dba481bce69a}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classGridBase}{Grid\+Base}$\ast$ Page\+Turn3\+D\+::get\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classGrid3DAction_ad68b52ba318636b43a4c7aab0a9c2887}{Grid3\+D\+Action}.
+
+\mbox{\Hypertarget{classPageTurn3D_afe5bcf11756795416fc882a3b0be1c66}\label{classPageTurn3D_afe5bcf11756795416fc882a3b0be1c66}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!update@{update}}
+\index{update@{update}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Page\+Turn3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classPageTurn3D_a5d1f2853531e5a8ee8857c287c4f3cbc}\label{classPageTurn3D_a5d1f2853531e5a8ee8857c287c4f3cbc}} 
+\index{Page\+Turn3D@{Page\+Turn3D}!update@{update}}
+\index{update@{update}!Page\+Turn3D@{Page\+Turn3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Page\+Turn3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Page\+Turn3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Page\+Turn3\+D.\+cpp\end{DoxyCompactItemize}

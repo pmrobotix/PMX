@@ -1,0 +1,85 @@
+\hypertarget{encoder_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/encoder.h File Reference}
+\label{encoder_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/encoder.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/encoder.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for encoder.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{encoder_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{encoder_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{encoder_8h_a2949b287c46ac24985a93162d953d4e2}\label{encoder_8h_a2949b287c46ac24985a93162d953d4e2}} 
+void \hyperlink{encoder_8h_a2949b287c46ac24985a93162d953d4e2}{encoder\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialisation. \end{DoxyCompactList}\item 
+void \hyperlink{encoder_8h_a237b418eebbdcf1c1a5758fa4b97bde1}{encoder\+\_\+\+Set\+Dist} (float dist)
+\item 
+void \hyperlink{encoder_8h_aff3623515f38494a8a436a5c8343858f}{encoder\+\_\+\+Set\+Resolution} (uint32 left\+Ticks\+PerM, uint32 right\+Ticks\+PerM)
+\item 
+void \hyperlink{encoder_8h_af0ab991c33bb4f83866e35759dadfcda}{encoder\+\_\+\+Read\+Sensor} (int32 $\ast$d\+Left, int32 $\ast$d\+Right, int32 $\ast$d\+Alpha, int32 $\ast$d\+Delta)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{encoder_8h_af0ab991c33bb4f83866e35759dadfcda}\label{encoder_8h_af0ab991c33bb4f83866e35759dadfcda}} 
+\index{encoder.\+h@{encoder.\+h}!encoder\+\_\+\+Read\+Sensor@{encoder\+\_\+\+Read\+Sensor}}
+\index{encoder\+\_\+\+Read\+Sensor@{encoder\+\_\+\+Read\+Sensor}!encoder.\+h@{encoder.\+h}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Read\+Sensor()}{encoder\_ReadSensor()}}
+{\footnotesize\ttfamily void encoder\+\_\+\+Read\+Sensor (\begin{DoxyParamCaption}\item[{int32 $\ast$}]{d\+Left,  }\item[{int32 $\ast$}]{d\+Right,  }\item[{int32 $\ast$}]{d\+Alpha,  }\item[{int32 $\ast$}]{d\+Delta }\end{DoxyParamCaption})}
+
+Get new encoders values
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Left} & left motor motion \\
+\hline
+{\em d\+Right} & right motor motion \\
+\hline
+{\em d\+Alpha} & alpha motor motion \\
+\hline
+{\em d\+Delta} & delta motor motion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{encoder_8h_a237b418eebbdcf1c1a5758fa4b97bde1}\label{encoder_8h_a237b418eebbdcf1c1a5758fa4b97bde1}} 
+\index{encoder.\+h@{encoder.\+h}!encoder\+\_\+\+Set\+Dist@{encoder\+\_\+\+Set\+Dist}}
+\index{encoder\+\_\+\+Set\+Dist@{encoder\+\_\+\+Set\+Dist}!encoder.\+h@{encoder.\+h}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Set\+Dist()}{encoder\_SetDist()}}
+{\footnotesize\ttfamily void encoder\+\_\+\+Set\+Dist (\begin{DoxyParamCaption}\item[{float}]{dist }\end{DoxyParamCaption})}
+
+Set distance between encoder 
+\begin{DoxyParams}{Parameters}
+{\em dist} & Encoder distance in meters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{encoder_8h_aff3623515f38494a8a436a5c8343858f}\label{encoder_8h_aff3623515f38494a8a436a5c8343858f}} 
+\index{encoder.\+h@{encoder.\+h}!encoder\+\_\+\+Set\+Resolution@{encoder\+\_\+\+Set\+Resolution}}
+\index{encoder\+\_\+\+Set\+Resolution@{encoder\+\_\+\+Set\+Resolution}!encoder.\+h@{encoder.\+h}}
+\subsubsection{\texorpdfstring{encoder\+\_\+\+Set\+Resolution()}{encoder\_SetResolution()}}
+{\footnotesize\ttfamily void encoder\+\_\+\+Set\+Resolution (\begin{DoxyParamCaption}\item[{uint32}]{left\+Ticks\+PerM,  }\item[{uint32}]{right\+Ticks\+PerM }\end{DoxyParamCaption})}
+
+Set encoder resolution and recompute value of v\+Tops etc... 
+\begin{DoxyParams}{Parameters}
+{\em left\+Ticks\+PerM} & left encoder resolution in ticks per meter \\
+\hline
+{\em right\+Ticks\+PerM} & right encoder resolution in ticks per meter \\
+\hline
+\end{DoxyParams}

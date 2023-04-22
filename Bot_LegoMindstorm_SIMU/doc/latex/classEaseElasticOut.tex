@@ -1,0 +1,166 @@
+\hypertarget{classEaseElasticOut}{}\section{Ease\+Elastic\+Out Class Reference}
+\label{classEaseElasticOut}\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+
+
+Ease Elastic Out action.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Ease.\+h$>$}
+
+
+
+Inheritance diagram for Ease\+Elastic\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classEaseElasticOut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ease\+Elastic\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEaseElasticOut__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classEaseElasticOut_a37dea32a0e909747540cc5625cd7893a}{update} (float time) override
+\item 
+virtual \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ \hyperlink{classEaseElasticOut_a1f1e56422100f620e725ec11c595e1f2}{clone} () const override
+\item 
+virtual \hyperlink{classEaseElastic}{Ease\+Elastic} $\ast$ \hyperlink{classEaseElasticOut_a3da4544ffa360bd28296d2e120b2fdc9}{reverse} () const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ \hyperlink{classEaseElasticOut_a417951cd2049c51c27779ed8b7067c42}{create} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action, float period)
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action with the inner action and the period in radians. \end{DoxyCompactList}\item 
+static \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ \hyperlink{classEaseElasticOut_a82a88455e85f749ac5d657f898f1b41d}{create} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action with the inner action and period value is 0.\+3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEaseElasticOut_a1f0487ca0930808b8f478fa97071b043}\label{classEaseElasticOut_a1f0487ca0930808b8f478fa97071b043}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out}() \{\} virtual $\sim$\hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out}() \{\}private\+: C\+C\+\_\+\+D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN(\hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Ease Elastic Out action. 
+
+If time == 0 or time == 1, the timeline of inner action will not be changed. Else, the timeline of inner action will be changed by\+: ${ 2 }^{ -10*time }*sin((time-\frac { period }{ 4 } )*\pi *2/period)+1$. \begin{DoxyWarning}{Warning}
+This action doesn\textquotesingle{}t use a bijective function. \hyperlink{classActions}{Actions} like \hyperlink{classSequence}{Sequence} might have an unexpected result when used with this action. 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8.\+2 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEaseElasticOut_a1f1e56422100f620e725ec11c595e1f2}\label{classEaseElasticOut_a1f1e56422100f620e725ec11c595e1f2}} 
+\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}!clone@{clone}}
+\index{clone@{clone}!Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ Ease\+Elastic\+Out\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classEaseElastic_a72d5dc8a380dbb00e68c1d7c80258d28}{Ease\+Elastic}.
+
+\mbox{\Hypertarget{classEaseElasticOut_a417951cd2049c51c27779ed8b7067c42}\label{classEaseElasticOut_a417951cd2049c51c27779ed8b7067c42}} 
+\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}!create@{create}}
+\index{create@{create}!Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ Ease\+Elastic\+Out\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action,  }\item[{float}]{period }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action with the inner action and the period in radians. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The pointer of the inner action. \\
+\hline
+{\em period} & Period of the wave in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer of \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action. If creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEaseElasticOut_a82a88455e85f749ac5d657f898f1b41d}\label{classEaseElasticOut_a82a88455e85f749ac5d657f898f1b41d}} 
+\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}!create@{create}}
+\index{create@{create}!Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} $\ast$ Ease\+Elastic\+Out\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action with the inner action and period value is 0.\+3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The pointer of the inner action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer of \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out} action. If creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEaseElasticOut_a3da4544ffa360bd28296d2e120b2fdc9}\label{classEaseElasticOut_a3da4544ffa360bd28296d2e120b2fdc9}} 
+\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}!reverse@{reverse}}
+\index{reverse@{reverse}!Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily \hyperlink{classEaseElastic}{Ease\+Elastic} $\ast$ Ease\+Elastic\+Out\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classEaseElastic_a9e0e8c55fbe1c50c706dd3d62834ed82}{Ease\+Elastic}.
+
+\mbox{\Hypertarget{classEaseElasticOut_a37dea32a0e909747540cc5625cd7893a}\label{classEaseElasticOut_a37dea32a0e909747540cc5625cd7893a}} 
+\index{Ease\+Elastic\+Out@{Ease\+Elastic\+Out}!update@{update}}
+\index{update@{update}!Ease\+Elastic\+Out@{Ease\+Elastic\+Out}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ease\+Elastic\+Out\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{Action\+Ease}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+cpp\end{DoxyCompactItemize}

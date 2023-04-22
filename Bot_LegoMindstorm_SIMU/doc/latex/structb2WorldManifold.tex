@@ -1,0 +1,64 @@
+\hypertarget{structb2WorldManifold}{}\section{b2\+World\+Manifold Struct Reference}
+\label{structb2WorldManifold}\index{b2\+World\+Manifold@{b2\+World\+Manifold}}
+
+
+This is used to compute the current state of a contact manifold.  
+
+
+
+
+{\ttfamily \#include $<$b2\+Collision.\+h$>$}
+
+
+
+Collaboration diagram for b2\+World\+Manifold\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{structb2WorldManifold__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}{Initialize} (const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, float32 radiusA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB, float32 radiusB)
+\item 
+void \hyperlink{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}{Initialize} (const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$manifold, const \hyperlink{structb2Transform}{b2\+Transform} \&xfA, float32 radiusA, const \hyperlink{structb2Transform}{b2\+Transform} \&xfB, float32 radiusB)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2WorldManifold_acf8de61b73d9784d16f7d0e824ce44bf}\label{structb2WorldManifold_acf8de61b73d9784d16f7d0e824ce44bf}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2WorldManifold_acf8de61b73d9784d16f7d0e824ce44bf}{normal}
+\begin{DoxyCompactList}\small\item\em world vector pointing from A to B \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2WorldManifold_a3609f22f6b5bcc0444ba53ec1068f400}\label{structb2WorldManifold_a3609f22f6b5bcc0444ba53ec1068f400}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2WorldManifold_a3609f22f6b5bcc0444ba53ec1068f400}{points} \mbox{[}\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Common_2b2Settings_8h_aa5f44cc9edf711433dea2b2ec94f3c42}{b2\+\_\+max\+Manifold\+Points}\mbox{]}
+\begin{DoxyCompactList}\small\item\em world contact point (point of intersection) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2WorldManifold_a4dfa21ad0492dc5e0439f01faf36c177}\label{structb2WorldManifold_a4dfa21ad0492dc5e0439f01faf36c177}} 
+float32 \hyperlink{structb2WorldManifold_a4dfa21ad0492dc5e0439f01faf36c177}{separations} \mbox{[}\hyperlink{_2cocos2d_2external_2Box2D_2include_2Box2D_2Common_2b2Settings_8h_aa5f44cc9edf711433dea2b2ec94f3c42}{b2\+\_\+max\+Manifold\+Points}\mbox{]}
+\begin{DoxyCompactList}\small\item\em a negative value indicates overlap, in meters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is used to compute the current state of a contact manifold. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}\label{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}} 
+\index{b2\+World\+Manifold@{b2\+World\+Manifold}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!b2\+World\+Manifold@{b2\+World\+Manifold}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+World\+Manifold\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{manifold,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xfA,  }\item[{float32}]{radiusA,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xfB,  }\item[{float32}]{radiusB }\end{DoxyParamCaption})}
+
+Evaluate the manifold with supplied transforms. This assumes modest motion from the original state. This does not change the point count, impulses, etc. The radii must come from the shapes that generated the manifold. \mbox{\Hypertarget{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}\label{structb2WorldManifold_a896dd7e7d4d6f6a5bc69e19fbd6871bd}} 
+\index{b2\+World\+Manifold@{b2\+World\+Manifold}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!b2\+World\+Manifold@{b2\+World\+Manifold}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+World\+Manifold\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{manifold,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xfA,  }\item[{float32}]{radiusA,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xfB,  }\item[{float32}]{radiusB }\end{DoxyParamCaption})}
+
+Evaluate the manifold with supplied transforms. This assumes modest motion from the original state. This does not change the point count, impulses, etc. The radii must come from the shapes that generated the manifold. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/\hyperlink{cocos2d_2external_2Box2D_2Collision_2b2Collision_8h}{b2\+Collision.\+h}\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/b2\+Collision.\+cpp\end{DoxyCompactItemize}

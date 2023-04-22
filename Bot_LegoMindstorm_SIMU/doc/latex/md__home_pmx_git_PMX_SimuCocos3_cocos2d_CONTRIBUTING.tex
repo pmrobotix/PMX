@@ -1,0 +1,94 @@
+\subsection*{For general questions}
+
+You can ask general questions by using\+:
+
+
+\begin{DoxyItemize}
+\item Forum (preferred way)\+: \href{http://discuss.cocos2d-x.org/}{\tt http\+://discuss.\+cocos2d-\/x.\+org/}
+\item I\+RC\+: \href{https://webchat.freenode.net/}{\tt https\+://webchat.\+freenode.\+net/} (Use the {\itshape cocos2d} or {\itshape cocos2d-\/x} channels)
+\item Weibo\+: \href{http://t.sina.com.cn/cocos2dx}{\tt http\+://t.\+sina.\+com.\+cn/cocos2dx}
+\item Twitter\+: \href{http://www.twitter.com/cocos2dx}{\tt http\+://www.\+twitter.\+com/cocos2dx}
+\end{DoxyItemize}
+
+\subsection*{Reporting bugs}
+
+To report bugs, please use the \href{https://github.com/cocos2d/cocos2d-x/issues}{\tt Issue Tracker}
+
+Steps to report a bug\+:
+\begin{DoxyItemize}
+\item Open the \href{https://github.com/cocos2d/cocos2d-x/issues/new}{\tt url}
+\item Add all the needed information to reproduce the bug, the information include
+\begin{DoxyItemize}
+\item engine version
+\item steps to reproduce the bug
+\item some pseudocode
+\item resources link if needed
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Submitting patches}
+
+If you want to contribute code, please follow these steps\+:
+
+(If you are new to git and/or Git\+Hub, you should read \href{http://progit.org/book/}{\tt Pro Git} , especially the section on \href{http://progit.org/book/ch5-2.html#public_small_project}{\tt Contributing to a project\+:Small/\+Large Public Project} )
+
+
+\begin{DoxyItemize}
+\item Download the latest cocos2d-\/x develop branch from github\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+$ git clone git://github.com/cocos2d/cocos2d-x.git
+$ cd cocos2d-x
+$ git checkout v3
+$ ./download-deps.py
+$ git submodule update --init
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Apply your changes in the recently downloaded repository
+\item Commit your changes in your own repository
+\item Create a new branch with your patch\+: {\ttfamily \$ git checkout -\/b my\+\_\+fix\+\_\+branch}
+\item Push your new branch to your public repository
+\item Send a “pull request” to user “cocos2d”
+\item It must be {\itshape complete}. See the definition below
+\item It must follow the {\itshape Releases} rules. See the definition below
+\end{DoxyItemize}
+
+\subsection*{Only {\itshape complete} patches will be merged}
+
+The patch must be {\itshape complete}. And by that, we mean\+:
+
+
+\begin{DoxyItemize}
+\item For C++ code follow the https\+://github.com/cocos2d/cocos2d-\/x/blob/v3/docs/\+C\+O\+D\+I\+N\+G\+\_\+\+S\+T\+Y\+L\+E.\+md \char`\"{}\+Cocos2d C++ Coding Style\char`\"{}
+\item For Python code follow the \href{https://www.python.org/dev/peps/pep-0008}{\tt P\+E\+P8 guidelines}
+\item Describe what the patch does
+\item Include test cases if applicable
+\item Include unit tests if applicable
+\item Must be tested in all supported platforms \mbox{[}$\ast$\mbox{]}
+\item Must N\+OT degrade the performance
+\item Must N\+OT break existing tests cases
+\item Must N\+OT break the Continuous Integration build
+\item Must N\+OT break backward compatibility
+\item Must compile W\+I\+T\+H\+O\+UT warnings
+\item New A\+P\+Is M\+U\+ST be {\bfseries easy to use}, {\bfseries familiar} to cocos2d-\/x users
+\item Code M\+U\+ST be {\bfseries easy to extend} and {\bfseries maintain}
+\item Must have documentation\+: C++ A\+P\+Is must use Doxygen strings, tools must have a R\+E\+A\+D\+M\+E.\+md file that describe how to use the tool
+\item Must be efficient (fast / low memory needs)
+\item It must not duplicate existing code, unless the new code deprecates the old one
+\item Patches that refactor key components will only be merged in the next major versions.
+\end{DoxyItemize}
+
+\mbox{[}$\ast$\mbox{]}\+: If you don\textquotesingle{}t have access to test your code in all the supported platforms, let us know.
+
+{\bfseries T\+BD}\+: Is this applicable for big features ? What is the best way to merge big features ?
+
+\section*{Promoting cocos2d}
+
+Help us promote cocos2d-\/x by using the cocos2d logo in your game, or by mentioning cocos2d in the credits.
+
+\href{http://www.cocos2d-x.org/wiki/Logo_Resources_of_Cocos2d-x}{\tt Logo Resources of Cocos2d-\/x} 

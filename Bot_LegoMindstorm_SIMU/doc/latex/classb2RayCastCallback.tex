@@ -1,0 +1,60 @@
+\hypertarget{classb2RayCastCallback}{}\section{b2\+Ray\+Cast\+Callback Class Reference}
+\label{classb2RayCastCallback}\index{b2\+Ray\+Cast\+Callback@{b2\+Ray\+Cast\+Callback}}
+
+
+{\ttfamily \#include $<$b2\+World\+Callbacks.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float32 \hyperlink{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}{Report\+Fixture} (\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$fixture, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, const \hyperlink{structb2Vec2}{b2\+Vec2} \&normal, float32 fraction)=0
+\item 
+virtual float32 \hyperlink{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}{Report\+Fixture} (\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$fixture, const \hyperlink{structb2Vec2}{b2\+Vec2} \&point, const \hyperlink{structb2Vec2}{b2\+Vec2} \&normal, float32 fraction)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback class for ray casts. See \hyperlink{classb2World_aa9955d94a254253997daaf16ce77bab6}{b2\+World\+::\+Ray\+Cast} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}\label{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}} 
+\index{b2\+Ray\+Cast\+Callback@{b2\+Ray\+Cast\+Callback}!Report\+Fixture@{Report\+Fixture}}
+\index{Report\+Fixture@{Report\+Fixture}!b2\+Ray\+Cast\+Callback@{b2\+Ray\+Cast\+Callback}}
+\subsubsection{\texorpdfstring{Report\+Fixture()}{ReportFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual float32 b2\+Ray\+Cast\+Callback\+::\+Report\+Fixture (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$}]{fixture,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{normal,  }\item[{float32}]{fraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called for each fixture found in the query. You control how the ray cast proceeds by returning a float\+: return -\/1\+: ignore this fixture and continue return 0\+: terminate the ray cast return fraction\+: clip the ray to this point return 1\+: don\textquotesingle{}t clip the ray and continue 
+\begin{DoxyParams}{Parameters}
+{\em fixture} & the fixture hit by the ray \\
+\hline
+{\em point} & the point of initial intersection \\
+\hline
+{\em normal} & the normal vector at the point of intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 to filter, 0 to terminate, fraction to clip the ray for closest hit, 1 to continue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}\label{classb2RayCastCallback_a658d5c8e89e0c73230cc8bddade4f3a4}} 
+\index{b2\+Ray\+Cast\+Callback@{b2\+Ray\+Cast\+Callback}!Report\+Fixture@{Report\+Fixture}}
+\index{Report\+Fixture@{Report\+Fixture}!b2\+Ray\+Cast\+Callback@{b2\+Ray\+Cast\+Callback}}
+\subsubsection{\texorpdfstring{Report\+Fixture()}{ReportFixture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float32 b2\+Ray\+Cast\+Callback\+::\+Report\+Fixture (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$}]{fixture,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{point,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{normal,  }\item[{float32}]{fraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called for each fixture found in the query. You control how the ray cast proceeds by returning a float\+: return -\/1\+: ignore this fixture and continue return 0\+: terminate the ray cast return fraction\+: clip the ray to this point return 1\+: don\textquotesingle{}t clip the ray and continue 
+\begin{DoxyParams}{Parameters}
+{\em fixture} & the fixture hit by the ray \\
+\hline
+{\em point} & the point of initial intersection \\
+\hline
+{\em normal} & the normal vector at the point of intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 to filter, 0 to terminate, fraction to clip the ray for closest hit, 1 to continue 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+World\+Callbacks.\+h\end{DoxyCompactItemize}

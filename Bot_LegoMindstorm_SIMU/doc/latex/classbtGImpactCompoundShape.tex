@@ -1,0 +1,238 @@
+\hypertarget{classbtGImpactCompoundShape}{}\section{bt\+G\+Impact\+Compound\+Shape Class Reference}
+\label{classbtGImpactCompoundShape}\index{bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}}
+
+
+\hyperlink{classbtGImpactCompoundShape}{bt\+G\+Impact\+Compound\+Shape} allows to handle multiple bt\+Collision\+Shape objects at once  
+
+
+
+
+{\ttfamily \#include $<$bt\+G\+Impact\+Shape.\+h$>$}
+
+
+
+Inheritance diagram for bt\+G\+Impact\+Compound\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbtGImpactCompoundShape__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+G\+Impact\+Compound\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtGImpactCompoundShape__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbtGImpactCompoundShape_1_1CompoundPrimitiveManager}{Compound\+Primitive\+Manager}
+\begin{DoxyCompactList}\small\item\em compound primitive manager \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a315f703c2006537efde116aceef17b57}\label{classbtGImpactCompoundShape_a315f703c2006537efde116aceef17b57}} 
+{\bfseries bt\+G\+Impact\+Compound\+Shape} (bool children\+\_\+has\+\_\+transform=true)
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}\label{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}{children\+Has\+Transform} () const
+\begin{DoxyCompactList}\small\item\em if true, then its children must get transforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}\label{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}} 
+virtual const \hyperlink{classbtPrimitiveManagerBase}{bt\+Primitive\+Manager\+Base} $\ast$ \hyperlink{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}{get\+Primitive\+Manager} () const
+\begin{DoxyCompactList}\small\item\em Obtains the primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}\label{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtGImpactCompoundShape_1_1CompoundPrimitiveManager}{Compound\+Primitive\+Manager} $\ast$ \hyperlink{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}{get\+Compound\+Primitive\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Obtains the compopund primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}\label{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}} 
+virtual int \hyperlink{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}{get\+Num\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}\label{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}} 
+void \hyperlink{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}{add\+Child\+Shape} (const bt\+Transform \&local\+Transform, bt\+Collision\+Shape $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Use this method for adding children. Only Convex shapes are allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}\label{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}} 
+void \hyperlink{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}{add\+Child\+Shape} (bt\+Collision\+Shape $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Use this method for adding children. Only Convex shapes are allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}\label{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}} 
+virtual bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}{get\+Child\+Shape} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}\label{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}} 
+virtual const bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}{get\+Child\+Shape} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}\label{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}} 
+virtual void \hyperlink{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}{get\+Child\+Aabb} (int child\+\_\+index, const bt\+Transform \&t, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Retrieves the bound from a child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}\label{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}} 
+virtual bt\+Transform \hyperlink{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}{get\+Child\+Transform} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children transform. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}{set\+Child\+Transform} (int index, const bt\+Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Sets the children transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}\label{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}{needs\+Retrieve\+Triangles} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}\label{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}{needs\+Retrieve\+Tetrahedrons} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has tetrahedrons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a39de42da0f8e91f0bdce41eb7df70983}\label{classbtGImpactCompoundShape_a39de42da0f8e91f0bdce41eb7df70983}} 
+virtual void {\bfseries get\+Bullet\+Triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_aff66df97b1355545cbc5aecd85ef5432}\label{classbtGImpactCompoundShape_aff66df97b1355545cbc5aecd85ef5432}} 
+virtual void {\bfseries get\+Bullet\+Tetrahedron} (int prim\+\_\+index, \hyperlink{classbtTetrahedronShapeEx}{bt\+Tetrahedron\+Shape\+Ex} \&tetrahedron) const
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a36786f1e5efb6a0ddb6e22a993a3b09b}\label{classbtGImpactCompoundShape_a36786f1e5efb6a0ddb6e22a993a3b09b}} 
+virtual void \hyperlink{classbtGImpactCompoundShape_a36786f1e5efb6a0ddb6e22a993a3b09b}{calculate\+Local\+Inertia} (bt\+Scalar mass, bt\+Vector3 \&inertia) const
+\begin{DoxyCompactList}\small\item\em Calculates the exact inertia tensor for this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a5d5b8c3c0e0e7542fd3a71271c97619f}\label{classbtGImpactCompoundShape_a5d5b8c3c0e0e7542fd3a71271c97619f}} 
+virtual const char $\ast$ {\bfseries get\+Name} () const
+\item 
+virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE \hyperlink{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}{get\+G\+Impact\+Shape\+Type} () const
+\begin{DoxyCompactList}\small\item\em Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a315f703c2006537efde116aceef17b57}\label{classbtGImpactCompoundShape_a315f703c2006537efde116aceef17b57}} 
+{\bfseries bt\+G\+Impact\+Compound\+Shape} (bool children\+\_\+has\+\_\+transform=true)
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}\label{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_ab5879b0f493aee95f2703c196ace6f21}{children\+Has\+Transform} () const
+\begin{DoxyCompactList}\small\item\em if true, then its children must get transforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}\label{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}} 
+virtual const \hyperlink{classbtPrimitiveManagerBase}{bt\+Primitive\+Manager\+Base} $\ast$ \hyperlink{classbtGImpactCompoundShape_ac27e9ff4012de1dd02d8e58ba9f4533d}{get\+Primitive\+Manager} () const
+\begin{DoxyCompactList}\small\item\em Obtains the primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}\label{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtGImpactCompoundShape_1_1CompoundPrimitiveManager}{Compound\+Primitive\+Manager} $\ast$ \hyperlink{classbtGImpactCompoundShape_a5608f37c18454c3e82504120e053f67a}{get\+Compound\+Primitive\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Obtains the compopund primitive manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}\label{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}} 
+virtual int \hyperlink{classbtGImpactCompoundShape_ae0673a0cf5bb33ed1e3b18b3c2565811}{get\+Num\+Child\+Shapes} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}\label{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}} 
+void \hyperlink{classbtGImpactCompoundShape_a3c97aab1f6511033df73007096ed4c8a}{add\+Child\+Shape} (const bt\+Transform \&local\+Transform, bt\+Collision\+Shape $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Use this method for adding children. Only Convex shapes are allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}\label{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}} 
+void \hyperlink{classbtGImpactCompoundShape_a106e3d9999c847a9748c962378ab3f46}{add\+Child\+Shape} (bt\+Collision\+Shape $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Use this method for adding children. Only Convex shapes are allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}\label{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}} 
+virtual bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactCompoundShape_a91310884e33cfa7dc25d803ffb577ac0}{get\+Child\+Shape} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}\label{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}} 
+virtual const bt\+Collision\+Shape $\ast$ \hyperlink{classbtGImpactCompoundShape_a26b37689fa96844fabdba83be64a2cce}{get\+Child\+Shape} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}\label{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}} 
+virtual void \hyperlink{classbtGImpactCompoundShape_ad5aab7d8e9258c3d0df2b6b5d7313b0f}{get\+Child\+Aabb} (int child\+\_\+index, const bt\+Transform \&t, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em Retrieves the bound from a child. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}\label{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}} 
+virtual bt\+Transform \hyperlink{classbtGImpactCompoundShape_ac322cfe8338bb24d56f6690fb488789f}{get\+Child\+Transform} (int index) const
+\begin{DoxyCompactList}\small\item\em Gets the children transform. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}{set\+Child\+Transform} (int index, const bt\+Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Sets the children transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}\label{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_ab3d78754ea1181c99ba0e982e863cca9}{needs\+Retrieve\+Triangles} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}\label{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}} 
+virtual bool \hyperlink{classbtGImpactCompoundShape_abb543dfb4b62ec2de171c7cabdf66e37}{needs\+Retrieve\+Tetrahedrons} () const
+\begin{DoxyCompactList}\small\item\em Determines if this shape has tetrahedrons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a39de42da0f8e91f0bdce41eb7df70983}\label{classbtGImpactCompoundShape_a39de42da0f8e91f0bdce41eb7df70983}} 
+virtual void {\bfseries get\+Bullet\+Triangle} (int prim\+\_\+index, \hyperlink{classbtTriangleShapeEx}{bt\+Triangle\+Shape\+Ex} \&triangle) const
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_aff66df97b1355545cbc5aecd85ef5432}\label{classbtGImpactCompoundShape_aff66df97b1355545cbc5aecd85ef5432}} 
+virtual void {\bfseries get\+Bullet\+Tetrahedron} (int prim\+\_\+index, \hyperlink{classbtTetrahedronShapeEx}{bt\+Tetrahedron\+Shape\+Ex} \&tetrahedron) const
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a0b7c0e8fb17142e9f2a7f43951823c44}\label{classbtGImpactCompoundShape_a0b7c0e8fb17142e9f2a7f43951823c44}} 
+virtual void \hyperlink{classbtGImpactCompoundShape_a0b7c0e8fb17142e9f2a7f43951823c44}{calculate\+Local\+Inertia} (bt\+Scalar mass, bt\+Vector3 \&inertia) const
+\begin{DoxyCompactList}\small\item\em Calculates the exact inertia tensor for this shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a5d5b8c3c0e0e7542fd3a71271c97619f}\label{classbtGImpactCompoundShape_a5d5b8c3c0e0e7542fd3a71271c97619f}} 
+virtual const char $\ast$ {\bfseries get\+Name} () const
+\item 
+virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE \hyperlink{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}{get\+G\+Impact\+Shape\+Type} () const
+\begin{DoxyCompactList}\small\item\em Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_ae4ad14e04e69e88634f9811973a39109}\label{classbtGImpactCompoundShape_ae4ad14e04e69e88634f9811973a39109}} 
+\hyperlink{classbtGImpactCompoundShape_1_1CompoundPrimitiveManager}{Compound\+Primitive\+Manager} {\bfseries m\+\_\+primitive\+\_\+manager}
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a850512ffb3a1cdda6073317ea4bf1944}\label{classbtGImpactCompoundShape_a850512ffb3a1cdda6073317ea4bf1944}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Transform $>$ {\bfseries m\+\_\+child\+Transforms}
+\item 
+\mbox{\Hypertarget{classbtGImpactCompoundShape_af1488633ecb9ae646bd92d520b564bc9}\label{classbtGImpactCompoundShape_af1488633ecb9ae646bd92d520b564bc9}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Collision\+Shape $\ast$ $>$ {\bfseries m\+\_\+child\+Shapes}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtGImpactCompoundShape}{bt\+G\+Impact\+Compound\+Shape} allows to handle multiple bt\+Collision\+Shape objects at once 
+
+This class only can manage Convex subshapes 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}\label{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}} 
+\index{bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}!get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}}
+\index{get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}!bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}}
+\subsubsection{\texorpdfstring{get\+G\+Impact\+Shape\+Type()}{getGImpactShapeType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE bt\+G\+Impact\+Compound\+Shape\+::get\+G\+Impact\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. 
+
+Subshape member functions 
+
+Implements \hyperlink{classbtGImpactShapeInterface_a25cacbe448997e3f8ec99cb2d4952859}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}\label{classbtGImpactCompoundShape_a6f75f32671f5555df85d4efd342c1c67}} 
+\index{bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}!get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}}
+\index{get\+G\+Impact\+Shape\+Type@{get\+G\+Impact\+Shape\+Type}!bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}}
+\subsubsection{\texorpdfstring{get\+G\+Impact\+Shape\+Type()}{getGImpactShapeType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual e\+G\+I\+M\+P\+A\+C\+T\+\_\+\+S\+H\+A\+P\+E\+\_\+\+T\+Y\+PE bt\+G\+Impact\+Compound\+Shape\+::get\+G\+Impact\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Base method for determinig which kind of G\+I\+M\+P\+A\+CT shape we get. 
+
+Subshape member functions 
+
+Implements \hyperlink{classbtGImpactShapeInterface_a25cacbe448997e3f8ec99cb2d4952859}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}\label{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}} 
+\index{bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}!set\+Child\+Transform@{set\+Child\+Transform}}
+\index{set\+Child\+Transform@{set\+Child\+Transform}!bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}}
+\subsubsection{\texorpdfstring{set\+Child\+Transform()}{setChildTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Compound\+Shape\+::set\+Child\+Transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const bt\+Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the children transform. 
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classbtGImpactShapeInterface_a83392f97bd7dfeb71ccdce6913a465b0}{bt\+G\+Impact\+Shape\+Interface}.
+
+\mbox{\Hypertarget{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}\label{classbtGImpactCompoundShape_a560410e20842ad73227d7712a574385c}} 
+\index{bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}!set\+Child\+Transform@{set\+Child\+Transform}}
+\index{set\+Child\+Transform@{set\+Child\+Transform}!bt\+G\+Impact\+Compound\+Shape@{bt\+G\+Impact\+Compound\+Shape}}
+\subsubsection{\texorpdfstring{set\+Child\+Transform()}{setChildTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+G\+Impact\+Compound\+Shape\+::set\+Child\+Transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{const bt\+Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the children transform. 
+
+\begin{DoxyPostcond}{Postcondition}
+You must call \hyperlink{classbtGImpactShapeInterface_acb26c2d7a2aecabd06b996b72b848492}{update\+Bound()} for update the box set. 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classbtGImpactShapeInterface_a83392f97bd7dfeb71ccdce6913a465b0}{bt\+G\+Impact\+Shape\+Interface}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Shape.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Shape.\+cpp\end{DoxyCompactItemize}

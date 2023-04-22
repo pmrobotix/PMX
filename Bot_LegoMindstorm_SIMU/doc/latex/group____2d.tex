@@ -1,0 +1,1013 @@
+\hypertarget{group____2d}{}\section{2D Nodes}
+\label{group____2d}\index{2\+D Nodes@{2\+D Nodes}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceDrawPrimitives}{Draw\+Primitives}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAnimationFrame}{Animation\+Frame}
+\item 
+class \hyperlink{classAnimation}{Animation}
+\item 
+class \hyperlink{classAnimationCache}{Animation\+Cache}
+\item 
+class \hyperlink{classAtlasNode}{Atlas\+Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAtlasNode}{Atlas\+Node} is a subclass of \hyperlink{classNode}{Node} that implements the R\+G\+B\+A\+Protocol and Texture\+Protocol protocol. It knows how to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} object. If you are going to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} consider subclassing \hyperlink{classAtlasNode}{Atlas\+Node} (or a subclass of \hyperlink{classAtlasNode}{Atlas\+Node}). All features from \hyperlink{classNode}{Node} are valid, plus the following features\+: \end{DoxyCompactList}\item 
+class \hyperlink{classPolygonInfo}{Polygon\+Info}
+\item 
+class \hyperlink{classAutoPolygon}{Auto\+Polygon}
+\item 
+class \hyperlink{classClippingNode}{Clipping\+Node}
+\item 
+class \hyperlink{classClippingRectangleNode}{Clipping\+Rectangle\+Node}
+\begin{DoxyCompactList}\small\item\em Clipping Rectangle \hyperlink{classNode}{Node}. \end{DoxyCompactList}\item 
+class \hyperlink{classDrawNode}{Draw\+Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} that draws dots, segments and polygons. Faster than the \char`\"{}drawing primitives\char`\"{} since they draws everything in one single batch. \end{DoxyCompactList}\item 
+class \hyperlink{classexperimental_1_1TMXLayer}{experimental\+::\+T\+M\+X\+Layer}
+\begin{DoxyCompactList}\small\item\em Fast\+T\+M\+X\+Layer represents the T\+MX layer. \end{DoxyCompactList}\item 
+class \hyperlink{classexperimental_1_1TMXTiledMap}{experimental\+::\+T\+M\+X\+Tiled\+Map}
+\begin{DoxyCompactList}\small\item\em Fast\+T\+M\+X\+Tiled\+Map knows how to parse and render a T\+MX map. \end{DoxyCompactList}\item 
+class \hyperlink{classGrabber}{Grabber}
+\item 
+class \hyperlink{classGridBase}{Grid\+Base}
+\item 
+class \hyperlink{classGrid3D}{Grid3D}
+\item 
+class \hyperlink{classTiledGrid3D}{Tiled\+Grid3D}
+\item 
+struct \hyperlink{struct__ttfConfig}{\+\_\+ttf\+Config}
+\item 
+class \hyperlink{classLabel}{Label}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLabel}{Label} is a subclass of \hyperlink{classNode}{Node} that knows how to render text labels. \end{DoxyCompactList}\item 
+class \hyperlink{classLabelAtlas}{Label\+Atlas}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLabelAtlas}{Label\+Atlas} is a subclass of \hyperlink{classAtlasNode}{Atlas\+Node}. \end{DoxyCompactList}\item 
+class \hyperlink{classLayer}{Layer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLayer}{Layer} is a subclass of \hyperlink{classNode}{Node} that implements the Touch\+Events\+Delegate protocol. \end{DoxyCompactList}\item 
+class \hyperlink{class____LayerRGBA}{\+\_\+\+\_\+\+Layer\+R\+G\+BA}
+\begin{DoxyCompactList}\small\item\em Layer\+R\+G\+BA is a subclass of \hyperlink{classLayer}{Layer} that implements the R\+G\+B\+A\+Protocol protocol using a solid color as the background. \end{DoxyCompactList}\item 
+class \hyperlink{classLayerColor}{Layer\+Color}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLayerColor}{Layer\+Color} is a subclass of \hyperlink{classLayer}{Layer} that implements the R\+G\+B\+A\+Protocol protocol. \end{DoxyCompactList}\item 
+class \hyperlink{classLayerGradient}{Layer\+Gradient}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLayerGradient}{Layer\+Gradient} is a subclass of \hyperlink{classLayerColor}{Layer\+Color} that draws gradients across the background. \end{DoxyCompactList}\item 
+class \hyperlink{classLayerMultiplex}{Layer\+Multiplex}
+\begin{DoxyCompactList}\small\item\em Multiple\+Layer is a \hyperlink{classLayer}{Layer} with the ability to multiplex it\textquotesingle{}s children. Features\+: \end{DoxyCompactList}\item 
+class \hyperlink{classMenu}{Menu}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classMenu}{Menu} for touch handling. \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItem}{Menu\+Item}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMenuItem}{Menu\+Item} base class. \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemLabel}{Menu\+Item\+Label}
+\begin{DoxyCompactList}\small\item\em An abstract class for \char`\"{}label\char`\"{} \hyperlink{classMenuItemLabel}{Menu\+Item\+Label} items. Any \hyperlink{classNode}{Node} that supports the Label\+Protocol protocol can be added. Supported nodes\+: \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemAtlasFont}{Menu\+Item\+Atlas\+Font}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classMenuItemAtlasFont}{Menu\+Item\+Atlas\+Font}. Helper class that creates a \hyperlink{classMenuItemLabel}{Menu\+Item\+Label} class with a \hyperlink{classLabelAtlas}{Label\+Atlas}. \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemFont}{Menu\+Item\+Font}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classMenuItemFont}{Menu\+Item\+Font}. Helper class that creates a \hyperlink{classMenuItemLabel}{Menu\+Item\+Label} class with a \hyperlink{classLabel}{Label}. \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemSprite}{Menu\+Item\+Sprite}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMenuItemSprite}{Menu\+Item\+Sprite} accepts Node$<$\+R\+G\+B\+A\+Protocol$>$ objects as items. The images has 3 different states\+: \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemImage}{Menu\+Item\+Image}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMenuItemImage}{Menu\+Item\+Image} accepts images as items. The images has 3 different states\+: \end{DoxyCompactList}\item 
+class \hyperlink{classMenuItemToggle}{Menu\+Item\+Toggle}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classMenuItemToggle}{Menu\+Item\+Toggle}. A simple container class that \char`\"{}toggles\char`\"{} it\textquotesingle{}s inner items. The inner items can be any \hyperlink{classMenuItem}{Menu\+Item}. \end{DoxyCompactList}\item 
+class \hyperlink{classMotionStreak}{Motion\+Streak}
+\begin{DoxyCompactList}\small\item\em Creates a trailing path. \end{DoxyCompactList}\item 
+class \hyperlink{classNode}{Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} is the base element of the \hyperlink{classScene}{Scene} Graph. Elements of the \hyperlink{classScene}{Scene} Graph must be \hyperlink{classNode}{Node} objects or subclasses of it. The most common \hyperlink{classNode}{Node} objects are\+: \hyperlink{classScene}{Scene}, \hyperlink{classLayer}{Layer}, \hyperlink{classSprite}{Sprite}, \hyperlink{classMenu}{Menu}, \hyperlink{classLabel}{Label}. \end{DoxyCompactList}\item 
+class \hyperlink{class____NodeRGBA}{\+\_\+\+\_\+\+Node\+R\+G\+BA}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class____NodeRGBA}{\+\_\+\+\_\+\+Node\+R\+G\+BA} is a subclass of \hyperlink{classNode}{Node} that implements the R\+G\+B\+A\+Protocol protocol. \end{DoxyCompactList}\item 
+class \hyperlink{classNodeGrid}{Node\+Grid}
+\begin{DoxyCompactList}\small\item\em Base class for Grid \hyperlink{classNode}{Node}. \end{DoxyCompactList}\item 
+class \hyperlink{classParallaxNode}{Parallax\+Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classParallaxNode}{Parallax\+Node}\+: A node that simulates a parallax scroller. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classParticleBatchNode}{Particle\+Batch\+Node} is like a batch node\+: if it contains children, it will draw them in 1 single Open\+GL call (often known as \char`\"{}batch draw\char`\"{}). \end{DoxyCompactList}\item 
+class \hyperlink{classParticleFire}{Particle\+Fire}
+\begin{DoxyCompactList}\small\item\em A fire particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleFireworks}{Particle\+Fireworks}
+\begin{DoxyCompactList}\small\item\em A fireworks particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleSun}{Particle\+Sun}
+\begin{DoxyCompactList}\small\item\em A sun particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleGalaxy}{Particle\+Galaxy}
+\begin{DoxyCompactList}\small\item\em A galaxy particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleFlower}{Particle\+Flower}
+\begin{DoxyCompactList}\small\item\em A flower particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleMeteor}{Particle\+Meteor}
+\begin{DoxyCompactList}\small\item\em A meteor particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleSpiral}{Particle\+Spiral}
+\begin{DoxyCompactList}\small\item\em An spiral particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleExplosion}{Particle\+Explosion}
+\begin{DoxyCompactList}\small\item\em An explosion particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleSmoke}{Particle\+Smoke}
+\begin{DoxyCompactList}\small\item\em An smoke particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleSnow}{Particle\+Snow}
+\begin{DoxyCompactList}\small\item\em An snow particle system. \end{DoxyCompactList}\item 
+class \hyperlink{classParticleRain}{Particle\+Rain}
+\begin{DoxyCompactList}\small\item\em A rain particle system. \end{DoxyCompactList}\item 
+struct \hyperlink{structparticle__point}{particle\+\_\+point}
+\item 
+class \hyperlink{classParticleData}{Particle\+Data}
+\item 
+class \hyperlink{classParticleSystem}{Particle\+System}
+\begin{DoxyCompactList}\small\item\em Particle System base class. Attributes of a Particle System\+: \end{DoxyCompactList}\item 
+class \hyperlink{classParticleSystemQuad}{Particle\+System\+Quad}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classParticleSystemQuad}{Particle\+System\+Quad} is a subclass of \hyperlink{classParticleSystem}{Particle\+System}. \end{DoxyCompactList}\item 
+class \hyperlink{classProgressTimer}{Progress\+Timer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classProgressTimer}{Progress\+Timer} is a subclass of \hyperlink{classNode}{Node}. It renders the inner sprite according to the percentage. The progress can be Radial, Horizontal or vertical. \end{DoxyCompactList}\item 
+class \hyperlink{classProtectedNode}{Protected\+Node}
+\begin{DoxyCompactList}\small\item\em A inner node type mainly used for UI module. It is useful for composing complex node type and it\textquotesingle{}s children are protected. \end{DoxyCompactList}\item 
+class \hyperlink{classRenderTexture}{Render\+Texture}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRenderTexture}{Render\+Texture} is a generic rendering target. To render things into it, simply construct a render target, call begin on it, call visit on any cocos scenes or objects to render them, and call end. For convenience, render texture adds a sprite as it\textquotesingle{}s display child with the results, so you can simply add the render texture to your scene and treat it like any other Cocos\+Node. There are also functions for saving the render texture to disk in P\+NG or J\+PG format. \end{DoxyCompactList}\item 
+class \hyperlink{classScene}{Scene}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classScene}{Scene} is a subclass of \hyperlink{classNode}{Node} that is used only as an abstract concept. \end{DoxyCompactList}\item 
+class \hyperlink{classSprite}{Sprite}
+\item 
+class \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}
+\item 
+class \hyperlink{classSpriteFrame}{Sprite\+Frame}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classSpriteFrame}{Sprite\+Frame} has\+: \end{DoxyCompactList}\item 
+class \hyperlink{classSpriteFrameCache}{Sprite\+Frame\+Cache}
+\begin{DoxyCompactList}\small\item\em Singleton that handles the loading of the sprite frames. \end{DoxyCompactList}\item 
+class \hyperlink{classTMXLayer}{T\+M\+X\+Layer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTMXLayer}{T\+M\+X\+Layer} represents the T\+MX layer. It is a subclass of \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}. By default the tiles are rendered using a \hyperlink{classTextureAtlas}{Texture\+Atlas}. If you modify a tile on runtime, then, that tile will become a \hyperlink{classSprite}{Sprite}, otherwise no \hyperlink{classSprite}{Sprite} objects are created. The benefits of using \hyperlink{classSprite}{Sprite} objects as tiles are\+: \end{DoxyCompactList}\item 
+class \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} represents the T\+MX object group. \end{DoxyCompactList}\item 
+class \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} knows how to parse and render a T\+MX map. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionEaseScene}{Transition\+Ease\+Scene}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionEaseScene}{Transition\+Ease\+Scene} can ease the actions of the scene protocol. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionScene}{Transition\+Scene}
+\begin{DoxyCompactList}\small\item\em Base class for Transition scenes. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSceneOriented}{Transition\+Scene\+Oriented}
+\begin{DoxyCompactList}\small\item\em A Transition that supports orientation like. Possible orientation\+: Left\+Over, Right\+Over, Up\+Over, Down\+Over. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionRotoZoom}{Transition\+Roto\+Zoom}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionRotoZoom}{Transition\+Roto\+Zoom}\+: Rotate and zoom out the outgoing scene, and then rotate and zoom in the incoming. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionJumpZoom}{Transition\+Jump\+Zoom}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionJumpZoom}{Transition\+Jump\+Zoom}\+: Zoom out and jump the outgoing scene, and then jump and zoom in the incoming. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionMoveInL}{Transition\+Move\+InL}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionMoveInL}{Transition\+Move\+InL}\+: Move in from to the left the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionMoveInR}{Transition\+Move\+InR}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionMoveInR}{Transition\+Move\+InR}\+: Move in from to the right the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionMoveInT}{Transition\+Move\+InT}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionMoveInT}{Transition\+Move\+InT}\+: Move in from to the top the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionMoveInB}{Transition\+Move\+InB}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionMoveInB}{Transition\+Move\+InB}\+: Move in from to the bottom the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSlideInL}{Transition\+Slide\+InL}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSlideInL}{Transition\+Slide\+InL}\+: Slide in the incoming scene from the left border. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSlideInR}{Transition\+Slide\+InR}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSlideInR}{Transition\+Slide\+InR}\+: Slide in the incoming scene from the right border. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSlideInB}{Transition\+Slide\+InB}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSlideInB}{Transition\+Slide\+InB}\+: Slide in the incoming scene from the bottom border. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSlideInT}{Transition\+Slide\+InT}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSlideInT}{Transition\+Slide\+InT}\+: Slide in the incoming scene from the top border. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionShrinkGrow}{Transition\+Shrink\+Grow}
+\begin{DoxyCompactList}\small\item\em Shrink the outgoing scene while grow the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFlipX}{Transition\+FlipX}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFlipX}{Transition\+FlipX}\+: Flips the screen horizontally. The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFlipY}{Transition\+FlipY}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFlipY}{Transition\+FlipY}\+: Flips the screen vertically. The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFlipAngular}{Transition\+Flip\+Angular}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFlipAngular}{Transition\+Flip\+Angular}\+: Flips the screen half horizontally and half vertically. The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionZoomFlipX}{Transition\+Zoom\+FlipX}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionZoomFlipX}{Transition\+Zoom\+FlipX}\+: Flips the screen horizontally doing a zoom out/in The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionZoomFlipY}{Transition\+Zoom\+FlipY}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionZoomFlipY}{Transition\+Zoom\+FlipY}\+: Flips the screen vertically doing a little zooming out/in The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionZoomFlipAngular}{Transition\+Zoom\+Flip\+Angular}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionZoomFlipAngular}{Transition\+Zoom\+Flip\+Angular}\+: Flips the screen half horizontally and half vertically doing a little zooming out/in. The front face is the outgoing scene and the back face is the incoming scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFade}{Transition\+Fade}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFade}{Transition\+Fade}\+: Fade out the outgoing scene and then fade in the incoming scene.\textquotesingle{}\textquotesingle{}\textquotesingle{}. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionCrossFade}{Transition\+Cross\+Fade}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionCrossFade}{Transition\+Cross\+Fade}\+: Cross fades two scenes using the \hyperlink{classRenderTexture}{Render\+Texture} object. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionTurnOffTiles}{Transition\+Turn\+Off\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionTurnOffTiles}{Transition\+Turn\+Off\+Tiles}\+: \hyperlink{classTurn}{Turn} off the tiles of the outgoing scene in random order. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSplitCols}{Transition\+Split\+Cols}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSplitCols}{Transition\+Split\+Cols}\+: The odd columns goes upwards while the even columns goes downwards. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionSplitRows}{Transition\+Split\+Rows}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionSplitRows}{Transition\+Split\+Rows}\+: The odd rows goes to the left while the even rows goes to the right. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFadeTR}{Transition\+Fade\+TR}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFadeTR}{Transition\+Fade\+TR}\+: Fade the tiles of the outgoing scene from the left-\/bottom corner the to top-\/right corner. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFadeBL}{Transition\+Fade\+BL}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFadeBL}{Transition\+Fade\+BL}\+: Fade the tiles of the outgoing scene from the top-\/right corner to the bottom-\/left corner. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFadeUp}{Transition\+Fade\+Up}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFadeUp}{Transition\+Fade\+Up}\+: Fade the tiles of the outgoing scene from the bottom to the top. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionFadeDown}{Transition\+Fade\+Down}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionFadeDown}{Transition\+Fade\+Down}\+: Fade the tiles of the outgoing scene from the top to the bottom. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionPageTurn}{Transition\+Page\+Turn}
+\begin{DoxyCompactList}\small\item\em A transition which peels back the bottom right hand corner of a scene to transition to the scene beneath it simulating a page turn. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgress}{Transition\+Progress}
+\begin{DoxyCompactList}\small\item\em A base class of progress transition. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressRadialCCW}{Transition\+Progress\+Radial\+C\+CW}
+\begin{DoxyCompactList}\small\item\em Transition\+Radial\+C\+CW transition. A counter clock-\/wise radial transition to the next scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressRadialCW}{Transition\+Progress\+Radial\+CW}
+\begin{DoxyCompactList}\small\item\em Transition\+Radial\+CW transition. A counter clock-\/wise radial transition to the next scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressHorizontal}{Transition\+Progress\+Horizontal}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionProgressHorizontal}{Transition\+Progress\+Horizontal} transition. A clock-\/wise radial transition to the next scene. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressVertical}{Transition\+Progress\+Vertical}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionProgressVertical}{Transition\+Progress\+Vertical} transition. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressInOut}{Transition\+Progress\+In\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionProgressInOut}{Transition\+Progress\+In\+Out} transition. \end{DoxyCompactList}\item 
+class \hyperlink{classTransitionProgressOutIn}{Transition\+Progress\+Out\+In}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTransitionProgressOutIn}{Transition\+Progress\+Out\+In} transition. \end{DoxyCompactList}\item 
+class \hyperlink{classTexture2D}{Texture2D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTexture2D}{Texture2D} class. This class allows to easily create Open\+GL 2D textures from images, text or raw data. The created \hyperlink{classTexture2D}{Texture2D} object will always have power-\/of-\/two dimensions. Depending on how you create the \hyperlink{classTexture2D}{Texture2D} object, the actual image area of the texture might be smaller than the texture dimensions i.\+e. \char`\"{}content\+Size\char`\"{} != (pixels\+Wide, pixels\+High) and (maxS, maxT) != (1.\+0, 1.\+0). Be aware that the content of the generated textures will be upside-\/down! \end{DoxyCompactList}\item 
+class \hyperlink{classTextureAtlas}{Texture\+Atlas}
+\begin{DoxyCompactList}\small\item\em A class that implements a Texture Atlas. Supported features\+: The atlas file can be a P\+V\+R\+TC, P\+NG or any other format supported by \hyperlink{classTexture2D}{Texture2D} Quads can be updated in runtime Quads can be added in runtime Quads can be removed in runtime Quads can be re-\/ordered in runtime The \hyperlink{classTextureAtlas}{Texture\+Atlas} capacity can be increased or decreased in runtime Open\+GL component\+: V3F, C4B, T2F. The quads are rendered using an Open\+GL ES V\+BO. To render the quads using an interleaved vertex array \hyperlink{protocollist-p}{list}, you should modify the cc\+Config.\+h file. \end{DoxyCompactList}\item 
+class \hyperlink{classTextureCache}{Texture\+Cache}
+\begin{DoxyCompactList}\small\item\em Singleton that handles the loading of textures. Once the texture is loaded, the next time it will return. A reference of the previously loaded texture reducing G\+PU \& C\+PU memory. \end{DoxyCompactList}\item 
+class \hyperlink{classLayerRadialGradient}{Layer\+Radial\+Gradient}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLayerRadialGradient}{Layer\+Radial\+Gradient} is a subclass of \hyperlink{classLayer}{Layer} that draws radial gradients across the background. \end{DoxyCompactList}\item 
+struct \hyperlink{structTTFConfig}{T\+T\+F\+Config}
+\item 
+struct \hyperlink{structsParticle}{s\+Particle}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group____2d_gac8774050a26654549400b29576e19391}\label{group____2d_gac8774050a26654549400b29576e19391}} 
+\#define {\bfseries k\+Particle\+Default\+Capacity}~500
+\item 
+\mbox{\Hypertarget{group____2d_ga047b2fa743906fe7cfea6c3ac3f12725}\label{group____2d_ga047b2fa743906fe7cfea6c3ac3f12725}} 
+\#define {\bfseries C\+C\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+S\+I\+ZE}~12
+\item 
+\mbox{\Hypertarget{group____2d_gac8774050a26654549400b29576e19391}\label{group____2d_gac8774050a26654549400b29576e19391}} 
+\#define {\bfseries k\+Particle\+Default\+Capacity}~500
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group____2d_gafb5a75091e8f89a4f7b02dab0722ffa3}\label{group____2d_gafb5a75091e8f89a4f7b02dab0722ffa3}} 
+typedef struct \hyperlink{struct__ttfConfig}{\+\_\+ttf\+Config} {\bfseries T\+T\+F\+Config}
+\item 
+\mbox{\Hypertarget{group____2d_gafb5a75091e8f89a4f7b02dab0722ffa3}\label{group____2d_gafb5a75091e8f89a4f7b02dab0722ffa3}} 
+typedef struct \hyperlink{struct__ttfConfig}{\+\_\+ttf\+Config} {\bfseries T\+T\+F\+Config}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group____2d_ga9225b19be8532afc1a22a4df07fd5e16}\label{group____2d_ga9225b19be8532afc1a22a4df07fd5e16}} 
+enum {\bfseries Text\+Formatter} \+: char \{ {\bfseries New\+Line} = \textquotesingle{}\textbackslash{}n\textquotesingle{}, 
+{\bfseries Carriage\+Return} = \textquotesingle{}\textbackslash{}r\textquotesingle{}, 
+{\bfseries Next\+Char\+No\+ChangeX} = \textquotesingle{}\textbackslash{}b\textquotesingle{}
+ \}
+\item 
+\mbox{\Hypertarget{group____2d_gabed82baf7f470b522273a3e37c24c600}\label{group____2d_gabed82baf7f470b522273a3e37c24c600}} 
+enum \{ \newline
+{\bfseries k\+Node\+On\+Enter}, 
+{\bfseries k\+Node\+On\+Exit}, 
+{\bfseries k\+Node\+On\+Enter\+Transition\+Did\+Finish}, 
+{\bfseries k\+Node\+On\+Exit\+Transition\+Did\+Start}, 
+\newline
+{\bfseries k\+Node\+On\+Cleanup}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a6e605dfb7c2c2feae0c28597a7e5bf33}{T\+M\+X\+Orientation\+Ortho}, 
+\hyperlink{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25abc4f9eb49e1e2819fbd0009bb0748652}{T\+M\+X\+Orientation\+Hex}, 
+\hyperlink{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a0584ce842cf448823601c495b428302a}{T\+M\+X\+Orientation\+Iso}, 
+\hyperlink{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a7bc6f3f47d73bb8d55469314412d2c8f}{T\+M\+X\+Orientation\+Staggered}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea144f1dacc945aeaed93bfa0c97febaad}{T\+M\+X\+Stagger\+Axis\+\_\+X}, 
+\hyperlink{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea0e2dd404e5125c2bbd4ddf90827beca4}{T\+M\+X\+Stagger\+Axis\+\_\+Y}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_gga80155586fa275b28773c9b203f52cabaa5a499a035916d3408262fe103cc830a2}{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}, 
+\hyperlink{group____2d_gga80155586fa275b28773c9b203f52cabaa3943e33b77c96b43bf6bc2f9ca0b2120}{T\+M\+X\+Stagger\+Index\+\_\+\+Even}
+ \}
+\item 
+\mbox{\Hypertarget{group____2d_ga6fde86696b9fb4575b16ddc150ff0a84}\label{group____2d_ga6fde86696b9fb4575b16ddc150ff0a84}} 
+enum \{ \newline
+{\bfseries k\+Node\+On\+Enter}, 
+{\bfseries k\+Node\+On\+Exit}, 
+{\bfseries k\+Node\+On\+Enter\+Transition\+Did\+Finish}, 
+{\bfseries k\+Node\+On\+Exit\+Transition\+Did\+Start}, 
+\newline
+{\bfseries k\+Node\+On\+Cleanup}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_ggaf6d61abedd58f4942675f955a24a642ba6e605dfb7c2c2feae0c28597a7e5bf33}{T\+M\+X\+Orientation\+Ortho}, 
+\hyperlink{group____2d_ggaf6d61abedd58f4942675f955a24a642babc4f9eb49e1e2819fbd0009bb0748652}{T\+M\+X\+Orientation\+Hex}, 
+\hyperlink{group____2d_ggaf6d61abedd58f4942675f955a24a642ba0584ce842cf448823601c495b428302a}{T\+M\+X\+Orientation\+Iso}, 
+\hyperlink{group____2d_ggaf6d61abedd58f4942675f955a24a642ba7bc6f3f47d73bb8d55469314412d2c8f}{T\+M\+X\+Orientation\+Staggered}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a144f1dacc945aeaed93bfa0c97febaad}{T\+M\+X\+Stagger\+Axis\+\_\+X}, 
+\hyperlink{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a0e2dd404e5125c2bbd4ddf90827beca4}{T\+M\+X\+Stagger\+Axis\+\_\+Y}
+ \}
+\item 
+enum \{ \hyperlink{group____2d_gga4eeeead548222804e141df8f1b205ca8a5a499a035916d3408262fe103cc830a2}{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}, 
+\hyperlink{group____2d_gga4eeeead548222804e141df8f1b205ca8a3943e33b77c96b43bf6bc2f9ca0b2120}{T\+M\+X\+Stagger\+Index\+\_\+\+Even}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPolygonInfo}{Polygon\+Info} \& \hyperlink{group____2d_ga93a62a7d94006f7a4cb05e8471486200}{Polygon\+Info\+::operator=} (const \hyperlink{classPolygonInfo}{Polygon\+Info} \&other)
+\item 
+void \hyperlink{group____2d_ga119fbf0478829130e57de44eeddb37ea}{Polygon\+Info\+::set\+Quad} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quad)
+\item 
+void \hyperlink{group____2d_ga0fd028d854bdb30347161b5d816743a4}{Polygon\+Info\+::set\+Triangles} (const \hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} \&triangles)
+\item 
+unsigned int \hyperlink{group____2d_ga266fe3f8a962c0281b381ad1a55835bd}{Polygon\+Info\+::get\+Vert\+Count} () const
+\item 
+unsigned int \hyperlink{group____2d_ga0ca8e8c33d34a16c1f8cf33d13aeea2b}{Polygon\+Info\+::get\+Triangles\+Count} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned int \hyperlink{group____2d_ga29950bcfeaeaa13bca256166562caabc}{Polygon\+Info\+::get\+Triagles\+Count} () const
+\item 
+float \hyperlink{group____2d_gae6fa5ff93a6637153aa41a755486c21b}{Polygon\+Info\+::get\+Area} () const
+\item 
+\hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{Auto\+Polygon\+::\+Auto\+Polygon} (const std\+::string \&filename)
+\item 
+\hyperlink{group____2d_gaca856dfbfddcb64d3fa29bf261dd10f8}{Auto\+Polygon\+::$\sim$\+Auto\+Polygon} ()
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gad9ffba6df684ed89dbed2173e66f2969}{Auto\+Polygon\+::trace} (const cocos2d\+::\+Rect \&rect, const float \&threshold=0.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga21c47c22ffc43bb0157be9b3be01f56b}{Auto\+Polygon\+::reduce} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, const float \&epsilon=2.\+0)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga13908bb1049ebcda0cdc63c7d6959ae6}{Auto\+Polygon\+::expand} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, const float \&epsilon)
+\item 
+\hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} \hyperlink{group____2d_ga0ee3e7e22fdf9982ec084191928caffa}{Auto\+Polygon\+::triangulate} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points)
+\item 
+void \hyperlink{group____2d_gab4db69f4d34a6f61c4a71590043056da}{Auto\+Polygon\+::calculate\+UV} (const \hyperlink{classRect}{Rect} \&rect, \hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$verts, const ssize\+\_\+t \&count)
+\item 
+\hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_gad8b3406e33de529b8aa6571a87f3c2b9}{Auto\+Polygon\+::generate\+Triangles} (const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, const float \&epsilon=2.\+0, const float \&threshold=0.\+05)
+\item 
+static \hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_ga666950d66e9c86bab409f01b0daeb831}{Auto\+Polygon\+::generate\+Polygon} (const std\+::string \&filename, const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, const float epsilon=2.\+0, const float threshold=0.\+05)
+\item 
+\mbox{\Hypertarget{group____2d_ga646417030e8ba4e685e625c11e55fd99}\label{group____2d_ga646417030e8ba4e685e625c11e55fd99}} 
+\hyperlink{classVec2}{Vec2} {\bfseries Auto\+Polygon\+::find\+First\+None\+Transparent\+Pixel} (const \hyperlink{classRect}{Rect} \&rect, const float \&threshold)
+\item 
+\mbox{\Hypertarget{group____2d_gad54339716cf8f7d214a78579c898ab88}\label{group____2d_gad54339716cf8f7d214a78579c898ab88}} 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries Auto\+Polygon\+::march\+Square} (const \hyperlink{classRect}{Rect} \&rect, const \hyperlink{classVec2}{Vec2} \&first, const float \&threshold)
+\item 
+\mbox{\Hypertarget{group____2d_gabd213ffc2f00a5c3d09ba261eee7a304}\label{group____2d_gabd213ffc2f00a5c3d09ba261eee7a304}} 
+unsigned int {\bfseries Auto\+Polygon\+::get\+Square\+Value} (const unsigned int \&x, const unsigned int \&y, const \hyperlink{classRect}{Rect} \&rect, const float \&threshold)
+\item 
+\mbox{\Hypertarget{group____2d_ga7bf48596553af5600a4020f117259894}\label{group____2d_ga7bf48596553af5600a4020f117259894}} 
+unsigned char {\bfseries Auto\+Polygon\+::get\+Alpha\+By\+Index} (const unsigned int \&i)
+\item 
+\mbox{\Hypertarget{group____2d_ga94fbeedbd00cf4b73119eaca2a7029d2}\label{group____2d_ga94fbeedbd00cf4b73119eaca2a7029d2}} 
+unsigned char {\bfseries Auto\+Polygon\+::get\+Alpha\+By\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{group____2d_ga819aa1adb1c364a62cc09a6631fadf2e}\label{group____2d_ga819aa1adb1c364a62cc09a6631fadf2e}} 
+int {\bfseries Auto\+Polygon\+::get\+Index\+From\+Pos} (const unsigned int \&x, const unsigned int \&y)
+\item 
+\mbox{\Hypertarget{group____2d_ga2929510d6fdad410105455327a0e95ae}\label{group____2d_ga2929510d6fdad410105455327a0e95ae}} 
+cocos2d\+::\+Vec2 {\bfseries Auto\+Polygon\+::get\+Pos\+From\+Index} (const unsigned int \&i)
+\item 
+\mbox{\Hypertarget{group____2d_ga6046bd3ba1552bac9f5e334b82c57a41}\label{group____2d_ga6046bd3ba1552bac9f5e334b82c57a41}} 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries Auto\+Polygon\+::rdp} (const std\+::vector$<$ cocos2d\+::\+Vec2 $>$ \&v, float optimization)
+\item 
+\mbox{\Hypertarget{group____2d_gab3bf552fad7983845509c2fcd879c938}\label{group____2d_gab3bf552fad7983845509c2fcd879c938}} 
+float {\bfseries Auto\+Polygon\+::perpendicular\+Distance} (const cocos2d\+::\+Vec2 \&i, const cocos2d\+::\+Vec2 \&start, const cocos2d\+::\+Vec2 \&end)
+\item 
+\mbox{\Hypertarget{group____2d_ga8cce31e647cd6a216252ad8e14f8ffce}\label{group____2d_ga8cce31e647cd6a216252ad8e14f8ffce}} 
+\hyperlink{classRect}{Rect} {\bfseries Auto\+Polygon\+::get\+Real\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+bool C\+C\+\_\+\+D\+LL \hyperlink{group____2d_gac59eef974273313c2393f4098f2d8345}{is\+Screen\+Point\+In\+Rect} (const \hyperlink{classVec2}{Vec2} \&pt, const \hyperlink{classCamera}{Camera} $\ast$camera, const \hyperlink{classMat4}{Mat4} \&w2l, const \hyperlink{classRect}{Rect} \&rect, \hyperlink{classVec3}{Vec3} $\ast$p)
+\item 
+void \hyperlink{group____2d_ga6fcf67328cc769e665e5b70b9138d64d}{Polygon\+Info\+::set\+Quads} (\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$quads, int number\+Of\+Quads)
+\item 
+\mbox{\Hypertarget{group____2d_ga30cef532a9cc895d1b380b4149fb6e81}\label{group____2d_ga30cef532a9cc895d1b380b4149fb6e81}} 
+const \hyperlink{classRect}{Rect} \& {\bfseries Polygon\+Info\+::get\+Rect} () const
+\item 
+\mbox{\Hypertarget{group____2d_ga84c40eea3f784db0db67d77d0a051777}\label{group____2d_ga84c40eea3f784db0db67d77d0a051777}} 
+void {\bfseries Polygon\+Info\+::set\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+\mbox{\Hypertarget{group____2d_ga12bc45d3989ba681914229b9138f46aa}\label{group____2d_ga12bc45d3989ba681914229b9138f46aa}} 
+const std\+::string \& {\bfseries Polygon\+Info\+::get\+Filename} () const
+\item 
+\mbox{\Hypertarget{group____2d_gaeb5c9c287d4fe93fd3426dcd94b97995}\label{group____2d_gaeb5c9c287d4fe93fd3426dcd94b97995}} 
+void {\bfseries Polygon\+Info\+::set\+Filename} (const std\+::string \&filename)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gaac8f745760eabe0b1bfeff151b84f1f3}{Auto\+Polygon\+::trace} (const cocos2d\+::\+Rect \&rect, float threshold=0.\+0f)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_ga0dc5100249481cd749cb692f6986cec0}{Auto\+Polygon\+::reduce} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, float epsilon=2.\+0f)
+\item 
+std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \hyperlink{group____2d_gab3d27e5dc8a0078f98b43db486b4a89f}{Auto\+Polygon\+::expand} (const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&points, const \hyperlink{classRect}{Rect} \&rect, float epsilon)
+\item 
+void \hyperlink{group____2d_gaa52f7459e5e90aaa2192a813dba5c699}{Auto\+Polygon\+::calculate\+UV} (const \hyperlink{classRect}{Rect} \&rect, \hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$verts, ssize\+\_\+t count)
+\item 
+\hyperlink{classPolygonInfo}{Polygon\+Info} \hyperlink{group____2d_gaf6a1f4dad82ff92fe6b5d26bea05f42a}{Auto\+Polygon\+::generate\+Triangles} (const \hyperlink{classRect}{Rect} \&rect=\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}, float epsilon=2.\+0f, float threshold=0.\+05f)
+\item 
+\mbox{\Hypertarget{group____2d_ga4bb97d6a47930f3ad07e33a29267ddbf}\label{group____2d_ga4bb97d6a47930f3ad07e33a29267ddbf}} 
+\hyperlink{classVec2}{Vec2} {\bfseries Auto\+Polygon\+::find\+First\+None\+Transparent\+Pixel} (const \hyperlink{classRect}{Rect} \&rect, float threshold)
+\item 
+\mbox{\Hypertarget{group____2d_ga1b18663f50f5023083fd9f6e9add52f0}\label{group____2d_ga1b18663f50f5023083fd9f6e9add52f0}} 
+std\+::vector$<$ cocos2d\+::\+Vec2 $>$ {\bfseries Auto\+Polygon\+::march\+Square} (const \hyperlink{classRect}{Rect} \&rect, const \hyperlink{classVec2}{Vec2} \&first, float threshold)
+\item 
+\mbox{\Hypertarget{group____2d_ga223fe50d22790b0230d0df81e1b40d54}\label{group____2d_ga223fe50d22790b0230d0df81e1b40d54}} 
+unsigned int {\bfseries Auto\+Polygon\+::get\+Square\+Value} (unsigned int x, unsigned int y, const \hyperlink{classRect}{Rect} \&rect, float threshold)
+\item 
+\mbox{\Hypertarget{group____2d_ga472c0c55c8d49dfa6cb96845c4a80c8e}\label{group____2d_ga472c0c55c8d49dfa6cb96845c4a80c8e}} 
+unsigned char {\bfseries Auto\+Polygon\+::get\+Alpha\+By\+Index} (unsigned int i)
+\item 
+\mbox{\Hypertarget{group____2d_gaf3673a169615beec0c9d645987452803}\label{group____2d_gaf3673a169615beec0c9d645987452803}} 
+int {\bfseries Auto\+Polygon\+::get\+Index\+From\+Pos} (unsigned int x, unsigned int y)
+\item 
+\mbox{\Hypertarget{group____2d_ga30343a9dbbf33738aad895e5b9469944}\label{group____2d_ga30343a9dbbf33738aad895e5b9469944}} 
+cocos2d\+::\+Vec2 {\bfseries Auto\+Polygon\+::get\+Pos\+From\+Index} (unsigned int i)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group____2d_gae866228b8f29e84658e6b2ae9900f43d}\label{group____2d_gae866228b8f29e84658e6b2ae9900f43d}} 
+\hyperlink{classRect}{Rect} {\bfseries Polygon\+Info\+::rect}
+\item 
+\mbox{\Hypertarget{group____2d_ga2c16c4a1931d48b5c3833333b686ee20}\label{group____2d_ga2c16c4a1931d48b5c3833333b686ee20}} 
+std\+::string {\bfseries Polygon\+Info\+::filename}
+\item 
+\mbox{\Hypertarget{group____2d_ga32f2f5f29ba9fb32a56acae62c289f42}\label{group____2d_ga32f2f5f29ba9fb32a56acae62c289f42}} 
+\hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} {\bfseries Polygon\+Info\+::triangles}
+\item 
+\mbox{\Hypertarget{group____2d_ga4f99f4c922fc0f1a114fca8784553240}\label{group____2d_ga4f99f4c922fc0f1a114fca8784553240}} 
+bool {\bfseries Polygon\+Info\+::is\+Verts\+Owner}
+\item 
+\mbox{\Hypertarget{group____2d_ga148dd22f76ab0fda55e6a3abd03c5a12}\label{group____2d_ga148dd22f76ab0fda55e6a3abd03c5a12}} 
+Image $\ast$ {\bfseries Auto\+Polygon\+::\+\_\+image}
+\item 
+\mbox{\Hypertarget{group____2d_ga3f524d9ecfaa7843d0199a3b5b0a1032}\label{group____2d_ga3f524d9ecfaa7843d0199a3b5b0a1032}} 
+unsigned char $\ast$ {\bfseries Auto\+Polygon\+::\+\_\+data}
+\item 
+\mbox{\Hypertarget{group____2d_gae5dfc5f211b3c6cd5ec411d21fd760e6}\label{group____2d_gae5dfc5f211b3c6cd5ec411d21fd760e6}} 
+std\+::string {\bfseries Auto\+Polygon\+::\+\_\+filename}
+\item 
+\mbox{\Hypertarget{group____2d_gae47e939aeff393889e90a77f704adfd7}\label{group____2d_gae47e939aeff393889e90a77f704adfd7}} 
+unsigned int {\bfseries Auto\+Polygon\+::\+\_\+width}
+\item 
+\mbox{\Hypertarget{group____2d_gaa9678de67d90ded732fca5bbcd494875}\label{group____2d_gaa9678de67d90ded732fca5bbcd494875}} 
+unsigned int {\bfseries Auto\+Polygon\+::\+\_\+height}
+\item 
+\mbox{\Hypertarget{group____2d_ga1580d982254e1a236d2c852baa72035c}\label{group____2d_ga1580d982254e1a236d2c852baa72035c}} 
+float {\bfseries Auto\+Polygon\+::\+\_\+scale\+Factor}
+\item 
+\mbox{\Hypertarget{group____2d_gaac88e340e4b0156d61b6cc9cc22182de}\label{group____2d_gaac88e340e4b0156d61b6cc9cc22182de}} 
+unsigned int {\bfseries Auto\+Polygon\+::\+\_\+threshold}
+\item 
+\mbox{\Hypertarget{group____2d_ga664b6425ce8bbef5dca23fb3354b690d}\label{group____2d_ga664b6425ce8bbef5dca23fb3354b690d}} 
+bool {\bfseries Polygon\+Info\+::\+\_\+is\+Verts\+Owner}
+\item 
+\mbox{\Hypertarget{group____2d_ga8deed510b8b3d6490c66c7cdc4c4a315}\label{group____2d_ga8deed510b8b3d6490c66c7cdc4c4a315}} 
+\hyperlink{classRect}{Rect} {\bfseries Polygon\+Info\+::\+\_\+rect}
+\item 
+\mbox{\Hypertarget{group____2d_gab8ed08e8bf879fdd1141c028a23fc64f}\label{group____2d_gab8ed08e8bf879fdd1141c028a23fc64f}} 
+std\+::string {\bfseries Polygon\+Info\+::\+\_\+filename}
+\end{DoxyCompactItemize}
+\subsection*{Creators}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group____2d_ga069ceb08829c62f4d834b633b86ae420}{Polygon\+Info\+::\+Polygon\+Info} ()
+\item 
+\hyperlink{group____2d_gaf6fd909ca1d09d9b4acff7ca0be82683}{Polygon\+Info\+::\+Polygon\+Info} (const \hyperlink{classPolygonInfo}{Polygon\+Info} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group____2d_gaba01db17f4a2bfbc3db60dc172972a25}\label{group____2d_gaba01db17f4a2bfbc3db60dc172972a25}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible orientations of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Ortho@{T\+M\+X\+Orientation\+Ortho}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Ortho@{T\+M\+X\+Orientation\+Ortho}}}\mbox{\Hypertarget{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a6e605dfb7c2c2feae0c28597a7e5bf33}\label{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a6e605dfb7c2c2feae0c28597a7e5bf33}} 
+T\+M\+X\+Orientation\+Ortho&Orthogonal orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Hex@{T\+M\+X\+Orientation\+Hex}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Hex@{T\+M\+X\+Orientation\+Hex}}}\mbox{\Hypertarget{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25abc4f9eb49e1e2819fbd0009bb0748652}\label{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25abc4f9eb49e1e2819fbd0009bb0748652}} 
+T\+M\+X\+Orientation\+Hex&Hexagonal orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Iso@{T\+M\+X\+Orientation\+Iso}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Iso@{T\+M\+X\+Orientation\+Iso}}}\mbox{\Hypertarget{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a0584ce842cf448823601c495b428302a}\label{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a0584ce842cf448823601c495b428302a}} 
+T\+M\+X\+Orientation\+Iso&Isometric orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Staggered@{T\+M\+X\+Orientation\+Staggered}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Staggered@{T\+M\+X\+Orientation\+Staggered}}}\mbox{\Hypertarget{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a7bc6f3f47d73bb8d55469314412d2c8f}\label{group____2d_ggaba01db17f4a2bfbc3db60dc172972a25a7bc6f3f47d73bb8d55469314412d2c8f}} 
+T\+M\+X\+Orientation\+Staggered&Isometric staggered orientation. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group____2d_gaaf105ae5beaca1dee30ae54530691fce}\label{group____2d_gaaf105ae5beaca1dee30ae54530691fce}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible stagger axis of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Axis\+\_\+X@{T\+M\+X\+Stagger\+Axis\+\_\+X}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Axis\+\_\+X@{T\+M\+X\+Stagger\+Axis\+\_\+X}}}\mbox{\Hypertarget{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea144f1dacc945aeaed93bfa0c97febaad}\label{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea144f1dacc945aeaed93bfa0c97febaad}} 
+T\+M\+X\+Stagger\+Axis\+\_\+X&Stagger Axis x. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Axis\+\_\+Y@{T\+M\+X\+Stagger\+Axis\+\_\+Y}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Axis\+\_\+Y@{T\+M\+X\+Stagger\+Axis\+\_\+Y}}}\mbox{\Hypertarget{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea0e2dd404e5125c2bbd4ddf90827beca4}\label{group____2d_ggaaf105ae5beaca1dee30ae54530691fcea0e2dd404e5125c2bbd4ddf90827beca4}} 
+T\+M\+X\+Stagger\+Axis\+\_\+Y&Stagger Axis y. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group____2d_ga80155586fa275b28773c9b203f52caba}\label{group____2d_ga80155586fa275b28773c9b203f52caba}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible stagger index of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Index\+\_\+\+Odd@{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Index\+\_\+\+Odd@{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}}}\mbox{\Hypertarget{group____2d_gga80155586fa275b28773c9b203f52cabaa5a499a035916d3408262fe103cc830a2}\label{group____2d_gga80155586fa275b28773c9b203f52cabaa5a499a035916d3408262fe103cc830a2}} 
+T\+M\+X\+Stagger\+Index\+\_\+\+Odd&Stagger Index\+: Odd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Index\+\_\+\+Even@{T\+M\+X\+Stagger\+Index\+\_\+\+Even}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Index\+\_\+\+Even@{T\+M\+X\+Stagger\+Index\+\_\+\+Even}}}\mbox{\Hypertarget{group____2d_gga80155586fa275b28773c9b203f52cabaa3943e33b77c96b43bf6bc2f9ca0b2120}\label{group____2d_gga80155586fa275b28773c9b203f52cabaa3943e33b77c96b43bf6bc2f9ca0b2120}} 
+T\+M\+X\+Stagger\+Index\+\_\+\+Even&Stagger Index\+: Even \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group____2d_gaf6d61abedd58f4942675f955a24a642b}\label{group____2d_gaf6d61abedd58f4942675f955a24a642b}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible orientations of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Ortho@{T\+M\+X\+Orientation\+Ortho}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Ortho@{T\+M\+X\+Orientation\+Ortho}}}\mbox{\Hypertarget{group____2d_ggaf6d61abedd58f4942675f955a24a642ba6e605dfb7c2c2feae0c28597a7e5bf33}\label{group____2d_ggaf6d61abedd58f4942675f955a24a642ba6e605dfb7c2c2feae0c28597a7e5bf33}} 
+T\+M\+X\+Orientation\+Ortho&Orthogonal orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Hex@{T\+M\+X\+Orientation\+Hex}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Hex@{T\+M\+X\+Orientation\+Hex}}}\mbox{\Hypertarget{group____2d_ggaf6d61abedd58f4942675f955a24a642babc4f9eb49e1e2819fbd0009bb0748652}\label{group____2d_ggaf6d61abedd58f4942675f955a24a642babc4f9eb49e1e2819fbd0009bb0748652}} 
+T\+M\+X\+Orientation\+Hex&Hexagonal orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Iso@{T\+M\+X\+Orientation\+Iso}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Iso@{T\+M\+X\+Orientation\+Iso}}}\mbox{\Hypertarget{group____2d_ggaf6d61abedd58f4942675f955a24a642ba0584ce842cf448823601c495b428302a}\label{group____2d_ggaf6d61abedd58f4942675f955a24a642ba0584ce842cf448823601c495b428302a}} 
+T\+M\+X\+Orientation\+Iso&Isometric orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Orientation\+Staggered@{T\+M\+X\+Orientation\+Staggered}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Orientation\+Staggered@{T\+M\+X\+Orientation\+Staggered}}}\mbox{\Hypertarget{group____2d_ggaf6d61abedd58f4942675f955a24a642ba7bc6f3f47d73bb8d55469314412d2c8f}\label{group____2d_ggaf6d61abedd58f4942675f955a24a642ba7bc6f3f47d73bb8d55469314412d2c8f}} 
+T\+M\+X\+Orientation\+Staggered&Isometric staggered orientation. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group____2d_gad1df9dc2600f2dda7e99d31c00fd73e0}\label{group____2d_gad1df9dc2600f2dda7e99d31c00fd73e0}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible stagger axis of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Axis\+\_\+X@{T\+M\+X\+Stagger\+Axis\+\_\+X}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Axis\+\_\+X@{T\+M\+X\+Stagger\+Axis\+\_\+X}}}\mbox{\Hypertarget{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a144f1dacc945aeaed93bfa0c97febaad}\label{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a144f1dacc945aeaed93bfa0c97febaad}} 
+T\+M\+X\+Stagger\+Axis\+\_\+X&Stagger Axis x. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Axis\+\_\+Y@{T\+M\+X\+Stagger\+Axis\+\_\+Y}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Axis\+\_\+Y@{T\+M\+X\+Stagger\+Axis\+\_\+Y}}}\mbox{\Hypertarget{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a0e2dd404e5125c2bbd4ddf90827beca4}\label{group____2d_ggad1df9dc2600f2dda7e99d31c00fd73e0a0e2dd404e5125c2bbd4ddf90827beca4}} 
+T\+M\+X\+Stagger\+Axis\+\_\+Y&Stagger Axis y. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group____2d_ga4eeeead548222804e141df8f1b205ca8}\label{group____2d_ga4eeeead548222804e141df8f1b205ca8}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Possible stagger index of the T\+MX map. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Index\+\_\+\+Odd@{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Index\+\_\+\+Odd@{T\+M\+X\+Stagger\+Index\+\_\+\+Odd}}}\mbox{\Hypertarget{group____2d_gga4eeeead548222804e141df8f1b205ca8a5a499a035916d3408262fe103cc830a2}\label{group____2d_gga4eeeead548222804e141df8f1b205ca8a5a499a035916d3408262fe103cc830a2}} 
+T\+M\+X\+Stagger\+Index\+\_\+\+Odd&Stagger Index\+: Odd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+M\+X\+Stagger\+Index\+\_\+\+Even@{T\+M\+X\+Stagger\+Index\+\_\+\+Even}!2\+D Nodes@{2\+D Nodes}}\index{2\+D Nodes@{2\+D Nodes}!T\+M\+X\+Stagger\+Index\+\_\+\+Even@{T\+M\+X\+Stagger\+Index\+\_\+\+Even}}}\mbox{\Hypertarget{group____2d_gga4eeeead548222804e141df8f1b205ca8a3943e33b77c96b43bf6bc2f9ca0b2120}\label{group____2d_gga4eeeead548222804e141df8f1b205ca8a3943e33b77c96b43bf6bc2f9ca0b2120}} 
+T\+M\+X\+Stagger\+Index\+\_\+\+Even&Stagger Index\+: Even \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}\label{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}} 
+\index{2\+D Nodes@{2\+D Nodes}!Auto\+Polygon@{Auto\+Polygon}}
+\index{Auto\+Polygon@{Auto\+Polygon}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{Auto\+Polygon()}{AutoPolygon()}}
+{\footnotesize\ttfamily Auto\+Polygon\+::\+Auto\+Polygon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+create an \hyperlink{classAutoPolygon}{Auto\+Polygon} and initialize it with an image file the image must be a 32bit P\+NG for current version 3.\+7 
+\begin{DoxyParams}{Parameters}
+{\em filename} & a path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classAutoPolygon}{Auto\+Polygon} object; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gab4db69f4d34a6f61c4a71590043056da}\label{group____2d_gab4db69f4d34a6f61c4a71590043056da}} 
+\index{2\+D Nodes@{2\+D Nodes}!calculate\+UV@{calculate\+UV}}
+\index{calculate\+UV@{calculate\+UV}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{calculate\+U\+V()}{calculateUV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Auto\+Polygon\+::calculate\+UV (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{\hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$}]{verts,  }\item[{const ssize\+\_\+t \&}]{count }\end{DoxyParamCaption})}
+
+calculate the UV coordinates for each points based on a texture rect \begin{DoxyWarning}{Warning}
+This method requires the \hyperlink{classAutoPolygon}{Auto\+Polygon} object to know the texture file dimension 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & a texture rect to specify where to map the UV \\
+\hline
+{\em verts} & a pointer to the verts array, served both as input and output verts \\
+\hline
+{\em count} & the count for the verts array 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\hyperlink{structTrianglesCommand_1_1Triangles}{TrianglesCommand::Triangles} myPolygons = ap.triangulate(myPoints);
+ap.calculateUV(rect, myPolygons.\hyperlink{structTrianglesCommand_1_1Triangles_a38ec346029e58886359e2d598ed8bb07}{verts}, 20);
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_gaa52f7459e5e90aaa2192a813dba5c699}\label{group____2d_gaa52f7459e5e90aaa2192a813dba5c699}} 
+\index{2\+D Nodes@{2\+D Nodes}!calculate\+UV@{calculate\+UV}}
+\index{calculate\+UV@{calculate\+UV}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{calculate\+U\+V()}{calculateUV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Auto\+Polygon\+::calculate\+UV (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{\hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} $\ast$}]{verts,  }\item[{ssize\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+calculate the UV coordinates for each points based on a texture rect \begin{DoxyWarning}{Warning}
+This method requires the \hyperlink{classAutoPolygon}{Auto\+Polygon} object to know the texture file dimension 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & a texture rect to specify where to map the UV \\
+\hline
+{\em verts} & a pointer to the verts array, served both as input and output verts \\
+\hline
+{\em count} & the count for the verts array 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\hyperlink{structTrianglesCommand_1_1Triangles}{TrianglesCommand::Triangles} myPolygons = ap.triangulate(myPoints);
+ap.calculateUV(rect, myPolygons.\hyperlink{structTrianglesCommand_1_1Triangles_a38ec346029e58886359e2d598ed8bb07}{verts}, 20);
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_ga13908bb1049ebcda0cdc63c7d6959ae6}\label{group____2d_ga13908bb1049ebcda0cdc63c7d6959ae6}} 
+\index{2\+D Nodes@{2\+D Nodes}!expand@{expand}}
+\index{expand@{expand}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{expand()}{expand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classVec2}{Vec2}$>$ Auto\+Polygon\+::expand (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{const float \&}]{epsilon }\end{DoxyParamCaption})}
+
+expand the points along their edge, useful after you reduce the points that cuts into the sprite using Clipper\+Lib 
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of \hyperlink{classVec2}{Vec2} points as input \\
+\hline
+{\em rect} & a texture rect for specify an area of the image, the expanded points will be clamped in this rect, ultimately resulting in a quad if the expansion is too great \\
+\hline
+{\em epsilon} & the distance which the edges will expand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of \hyperlink{classVec2}{Vec2} as the result of the expansion 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+std::vector<Vec2> expanded = ap.expand(inputPoints, rect, 2.0);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gab3d27e5dc8a0078f98b43db486b4a89f}\label{group____2d_gab3d27e5dc8a0078f98b43db486b4a89f}} 
+\index{2\+D Nodes@{2\+D Nodes}!expand@{expand}}
+\index{expand@{expand}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{expand()}{expand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classVec2}{Vec2}$>$ Auto\+Polygon\+::expand (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{float}]{epsilon }\end{DoxyParamCaption})}
+
+expand the points along their edge, useful after you reduce the points that cuts into the sprite using Clipper\+Lib 
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of \hyperlink{classVec2}{Vec2} points as input \\
+\hline
+{\em rect} & a texture rect for specify an area of the image, the expanded points will be clamped in this rect, ultimately resulting in a quad if the expansion is too great \\
+\hline
+{\em epsilon} & the distance which the edges will expand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of \hyperlink{classVec2}{Vec2} as the result of the expansion 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+std::vector<Vec2> expanded = ap.expand(inputPoints, rect, 2.0);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga666950d66e9c86bab409f01b0daeb831}\label{group____2d_ga666950d66e9c86bab409f01b0daeb831}} 
+\index{2\+D Nodes@{2\+D Nodes}!generate\+Polygon@{generate\+Polygon}}
+\index{generate\+Polygon@{generate\+Polygon}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{generate\+Polygon()}{generatePolygon()}}
+{\footnotesize\ttfamily \hyperlink{classPolygonInfo}{Polygon\+Info} Auto\+Polygon\+::generate\+Polygon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect = {\ttfamily \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}},  }\item[{const float}]{epsilon = {\ttfamily 2.0},  }\item[{const float}]{threshold = {\ttfamily 0.05} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+a helper function, packing auto\+Polygon creation, trace, reduce, expand, triangulate and calculate uv in one function \begin{DoxyWarning}{Warning}
+if you want to repetitively generate polygons, consider create an \hyperlink{classAutoPolygon}{Auto\+Polygon} object, and use generate\+Triangles function, as it only reads the file once 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{}. \\
+\hline
+{\em rect} & texture rect, use \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} for the size of the texture, default is \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} \\
+\hline
+{\em epsilon} & the value used to reduce and expand, default to 2.\+0 \\
+\hline
+{\em threshold} & the value where bigger than the threshold will be counted as opaque, used in trace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPolygonInfo}{Polygon\+Info}, to use with sprite 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} sp = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(\hyperlink{group____2d_ga666950d66e9c86bab409f01b0daeb831}{AutoPolygon::generatePolygon}(\textcolor{stringliteral}{"
+      grossini.png"}));
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gad8b3406e33de529b8aa6571a87f3c2b9}\label{group____2d_gad8b3406e33de529b8aa6571a87f3c2b9}} 
+\index{2\+D Nodes@{2\+D Nodes}!generate\+Triangles@{generate\+Triangles}}
+\index{generate\+Triangles@{generate\+Triangles}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{generate\+Triangles()}{generateTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPolygonInfo}{Polygon\+Info} Auto\+Polygon\+::generate\+Triangles (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect = {\ttfamily \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}},  }\item[{const float \&}]{epsilon = {\ttfamily 2.0},  }\item[{const float \&}]{threshold = {\ttfamily 0.05} }\end{DoxyParamCaption})}
+
+a helper function, packing trace, reduce, expand, triangulate and calculate uv in one function 
+\begin{DoxyParams}{Parameters}
+{\em rect} & texture rect, use \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} for the size of the texture, default is \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} \\
+\hline
+{\em epsilon} & the value used to reduce and expand, default to 2.\+0 \\
+\hline
+{\em threshold} & the value where bigger than the threshold will be counted as opaque, used in trace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPolygonInfo}{Polygon\+Info}, to use with sprite 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\hyperlink{classPolygonInfo}{PolygonInfo} myInfo = ap.generateTriangles();\textcolor{comment}{//use all default values}
+\textcolor{keyword}{auto} sp1 = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(myInfo);
+polygonInfo myInfo2 = ap.generateTriangles(\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect::ZERO}, 5.0, 0.1);\textcolor{comment}{//ap can be reused to generate
+       another set of PolygonInfo with different settings}
+\textcolor{keyword}{auto} sp2 = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(myInfo2);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gaf6a1f4dad82ff92fe6b5d26bea05f42a}\label{group____2d_gaf6a1f4dad82ff92fe6b5d26bea05f42a}} 
+\index{2\+D Nodes@{2\+D Nodes}!generate\+Triangles@{generate\+Triangles}}
+\index{generate\+Triangles@{generate\+Triangles}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{generate\+Triangles()}{generateTriangles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPolygonInfo}{Polygon\+Info} Auto\+Polygon\+::generate\+Triangles (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect = {\ttfamily \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO}},  }\item[{float}]{epsilon = {\ttfamily 2.0f},  }\item[{float}]{threshold = {\ttfamily 0.05f} }\end{DoxyParamCaption})}
+
+a helper function, packing trace, reduce, expand, triangulate and calculate uv in one function 
+\begin{DoxyParams}{Parameters}
+{\em rect} & texture rect, use \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} for the size of the texture, default is \hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect\+::\+Z\+E\+RO} \\
+\hline
+{\em epsilon} & the value used to reduce and expand, default to 2.\+0 \\
+\hline
+{\em threshold} & the value where bigger than the threshold will be counted as opaque, used in trace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPolygonInfo}{Polygon\+Info}, to use with sprite 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\hyperlink{classPolygonInfo}{PolygonInfo} myInfo = ap.generateTriangles();\textcolor{comment}{//use all default values}
+\textcolor{keyword}{auto} sp1 = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(myInfo);
+polygonInfo myInfo2 = ap.generateTriangles(\hyperlink{classRect_a590be46e60027b2ca0f62a457f91a83e}{Rect::ZERO}, 5.0, 0.1);\textcolor{comment}{//ap can be reused to generate
+       another set of PolygonInfo with different settings}
+\textcolor{keyword}{auto} sp2 = \hyperlink{classSprite_a6b7ca689b01646e2c58a9ffae3683413}{Sprite::create}(myInfo2);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gae6fa5ff93a6637153aa41a755486c21b}\label{group____2d_gae6fa5ff93a6637153aa41a755486c21b}} 
+\index{2\+D Nodes@{2\+D Nodes}!get\+Area@{get\+Area}}
+\index{get\+Area@{get\+Area}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{get\+Area()}{getArea()}}
+{\footnotesize\ttfamily float Polygon\+Info\+::get\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get sum of all triangle area size \begin{DoxyReturn}{Returns}
+sum of all triangle area size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga29950bcfeaeaa13bca256166562caabc}\label{group____2d_ga29950bcfeaeaa13bca256166562caabc}} 
+\index{2\+D Nodes@{2\+D Nodes}!get\+Triagles\+Count@{get\+Triagles\+Count}}
+\index{get\+Triagles\+Count@{get\+Triagles\+Count}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{get\+Triagles\+Count()}{getTriaglesCount()}}
+{\footnotesize\ttfamily unsigned int Polygon\+Info\+::get\+Triagles\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000023}{Deprecated}]Use method \hyperlink{group____2d_ga0ca8e8c33d34a16c1f8cf33d13aeea2b}{get\+Triangles\+Count()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{group____2d_ga0ca8e8c33d34a16c1f8cf33d13aeea2b}\label{group____2d_ga0ca8e8c33d34a16c1f8cf33d13aeea2b}} 
+\index{2\+D Nodes@{2\+D Nodes}!get\+Triangles\+Count@{get\+Triangles\+Count}}
+\index{get\+Triangles\+Count@{get\+Triangles\+Count}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{get\+Triangles\+Count()}{getTrianglesCount()}}
+{\footnotesize\ttfamily unsigned int Polygon\+Info\+::get\+Triangles\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get triangles count \begin{DoxyReturn}{Returns}
+number of triangles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga266fe3f8a962c0281b381ad1a55835bd}\label{group____2d_ga266fe3f8a962c0281b381ad1a55835bd}} 
+\index{2\+D Nodes@{2\+D Nodes}!get\+Vert\+Count@{get\+Vert\+Count}}
+\index{get\+Vert\+Count@{get\+Vert\+Count}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{get\+Vert\+Count()}{getVertCount()}}
+{\footnotesize\ttfamily unsigned int Polygon\+Info\+::get\+Vert\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get vertex count \begin{DoxyReturn}{Returns}
+number of vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gac59eef974273313c2393f4098f2d8345}\label{group____2d_gac59eef974273313c2393f4098f2d8345}} 
+\index{2\+D Nodes@{2\+D Nodes}!is\+Screen\+Point\+In\+Rect@{is\+Screen\+Point\+In\+Rect}}
+\index{is\+Screen\+Point\+In\+Rect@{is\+Screen\+Point\+In\+Rect}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{is\+Screen\+Point\+In\+Rect()}{isScreenPointInRect()}}
+{\footnotesize\ttfamily bool C\+C\+\_\+\+D\+LL is\+Screen\+Point\+In\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pt,  }\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{w2l,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{p }\end{DoxyParamCaption})}
+
+This is a helper function, checks a GL screen point is in content rectangle space.
+
+The content rectangle defined by origin(0,0) and content size. This function convert GL screen point to near and far planes as points Pn and Pf, then calculate the intersect point P which the line Pn\+Pf intersect with content rectangle. If P in content rectangle means this node be hit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & The point in GL screen space. \\
+\hline
+{\em camera} & Which camera used to unproject pt to near/far planes. \\
+\hline
+{\em w2l} & World to local transform matrix, used to convert Pn and Pf to rectangle space. \\
+\hline
+{\em rect} & The test rectangle in local space.  p Point to a \hyperlink{classVec3}{Vec3} for store the intersect point, if don\textquotesingle{}t need them set to nullptr. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point is in content rectangle, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga93a62a7d94006f7a4cb05e8471486200}\label{group____2d_ga93a62a7d94006f7a4cb05e8471486200}} 
+\index{2\+D Nodes@{2\+D Nodes}!operator=@{operator=}}
+\index{operator=@{operator=}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classPolygonInfo}{Polygon\+Info} \& Polygon\+Info\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classPolygonInfo}{Polygon\+Info} \&}]{other }\end{DoxyParamCaption})}
+
+Copy the member of the other \hyperlink{classPolygonInfo}{Polygon\+Info} 
+\begin{DoxyParams}{Parameters}
+{\em other} & another \hyperlink{classPolygonInfo}{Polygon\+Info} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_ga069ceb08829c62f4d834b633b86ae420}\label{group____2d_ga069ceb08829c62f4d834b633b86ae420}} 
+\index{2\+D Nodes@{2\+D Nodes}!Polygon\+Info@{Polygon\+Info}}
+\index{Polygon\+Info@{Polygon\+Info}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{Polygon\+Info()}{PolygonInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Polygon\+Info\+::\+Polygon\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates an empty Polygon info
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPolygonInfo}{Polygon\+Info} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gaf6fd909ca1d09d9b4acff7ca0be82683}\label{group____2d_gaf6fd909ca1d09d9b4acff7ca0be82683}} 
+\index{2\+D Nodes@{2\+D Nodes}!Polygon\+Info@{Polygon\+Info}}
+\index{Polygon\+Info@{Polygon\+Info}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{Polygon\+Info()}{PolygonInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Polygon\+Info\+::\+Polygon\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{classPolygonInfo}{Polygon\+Info} \&}]{other }\end{DoxyParamCaption})}
+
+Create an polygoninfo from the data of another Polygoninfo 
+\begin{DoxyParams}{Parameters}
+{\em other} & another \hyperlink{classPolygonInfo}{Polygon\+Info} to be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+duplicate of the other \hyperlink{classPolygonInfo}{Polygon\+Info} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga21c47c22ffc43bb0157be9b3be01f56b}\label{group____2d_ga21c47c22ffc43bb0157be9b3be01f56b}} 
+\index{2\+D Nodes@{2\+D Nodes}!reduce@{reduce}}
+\index{reduce@{reduce}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{reduce()}{reduce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ Auto\+Polygon\+::reduce (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{const float \&}]{epsilon = {\ttfamily 2.0} }\end{DoxyParamCaption})}
+
+reduce the amount of points so its faster for G\+PU to process and draw based on Ramer-\/\+Douglas-\/\+Puecker algorithm 
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of \hyperlink{classVec2}{Vec2} points as input \\
+\hline
+{\em rect} & a texture rect for specify an area of the image to avoid over reduction \\
+\hline
+{\em epsilon} & the perpendicular distance where points smaller than this value will be discarded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of \hyperlink{classVec2}{Vec2} of the remaining points in clockwise order 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+std::vector<Vec2> reduced = ap.reduce(inputPoints, rect);\textcolor{comment}{//default epsilon is 2}
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga0dc5100249481cd749cb692f6986cec0}\label{group____2d_ga0dc5100249481cd749cb692f6986cec0}} 
+\index{2\+D Nodes@{2\+D Nodes}!reduce@{reduce}}
+\index{reduce@{reduce}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{reduce()}{reduce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ Auto\+Polygon\+::reduce (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{float}]{epsilon = {\ttfamily 2.0f} }\end{DoxyParamCaption})}
+
+reduce the amount of points so its faster for G\+PU to process and draw based on Ramer-\/\+Douglas-\/\+Peucker algorithm 
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of \hyperlink{classVec2}{Vec2} points as input \\
+\hline
+{\em rect} & a texture rect for specify an area of the image to avoid over reduction \\
+\hline
+{\em epsilon} & the perpendicular distance where points smaller than this value will be discarded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of \hyperlink{classVec2}{Vec2} of the remaining points in clockwise order 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+std::vector<Vec2> reduced = ap.reduce(inputPoints, rect);\textcolor{comment}{//default epsilon is 2}
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga119fbf0478829130e57de44eeddb37ea}\label{group____2d_ga119fbf0478829130e57de44eeddb37ea}} 
+\index{2\+D Nodes@{2\+D Nodes}!set\+Quad@{set\+Quad}}
+\index{set\+Quad@{set\+Quad}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{set\+Quad()}{setQuad()}}
+{\footnotesize\ttfamily void Polygon\+Info\+::set\+Quad (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quad }\end{DoxyParamCaption})}
+
+set the data to be a pointer to a quad the member verts will not be released when this \hyperlink{classPolygonInfo}{Polygon\+Info} destructs as the verts memory are managed by other objects 
+\begin{DoxyParams}{Parameters}
+{\em quad} & a pointer to the \hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_ga6fcf67328cc769e665e5b70b9138d64d}\label{group____2d_ga6fcf67328cc769e665e5b70b9138d64d}} 
+\index{2\+D Nodes@{2\+D Nodes}!set\+Quads@{set\+Quads}}
+\index{set\+Quads@{set\+Quads}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{set\+Quads()}{setQuads()}}
+{\footnotesize\ttfamily void Polygon\+Info\+::set\+Quads (\begin{DoxyParamCaption}\item[{\hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} $\ast$}]{quads,  }\item[{int}]{number\+Of\+Quads }\end{DoxyParamCaption})}
+
+set the data to be a pointer to a number of Quads the member verts will not be released when this \hyperlink{classPolygonInfo}{Polygon\+Info} destructs as the verts memory are managed by other objects 
+\begin{DoxyParams}{Parameters}
+{\em quad} & a pointer to the \hyperlink{structV3F__C4B__T2F__Quad}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2\+F\+\_\+\+Quad} quads \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_ga0fd028d854bdb30347161b5d816743a4}\label{group____2d_ga0fd028d854bdb30347161b5d816743a4}} 
+\index{2\+D Nodes@{2\+D Nodes}!set\+Triangles@{set\+Triangles}}
+\index{set\+Triangles@{set\+Triangles}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{set\+Triangles()}{setTriangles()}}
+{\footnotesize\ttfamily void Polygon\+Info\+::set\+Triangles (\begin{DoxyParamCaption}\item[{const \hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} \&}]{triangles }\end{DoxyParamCaption})}
+
+set the data to be a pointer to a triangles the member verts will not be released when this \hyperlink{classPolygonInfo}{Polygon\+Info} destructs as the verts memory are managed by other objects 
+\begin{DoxyParams}{Parameters}
+{\em triangles} & a pointer to the \hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group____2d_gad9ffba6df684ed89dbed2173e66f2969}\label{group____2d_gad9ffba6df684ed89dbed2173e66f2969}} 
+\index{2\+D Nodes@{2\+D Nodes}!trace@{trace}}
+\index{trace@{trace}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{trace()}{trace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classVec2}{Vec2}$>$ Auto\+Polygon\+::trace (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Rect \&}]{rect,  }\item[{const float \&}]{threshold = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+trace all the points along the outline of the image, \begin{DoxyWarning}{Warning}
+must create \hyperlink{classAutoPolygon}{Auto\+Polygon} with filename to use this function 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & a texture rect for specify an area of the image \\
+\hline
+{\em threshold} & the value when alpha is greater than this value will be counted as opaque, default to 0.\+0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of vec2 of all the points found in clockwise order 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\textcolor{keyword}{auto} rect = \hyperlink{classRect}{Rect}(100, 100, 200, 200);
+std::vector<Vec2> points = ap.trace(rect);\textcolor{comment}{//default threshold is 0.0}
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gaac8f745760eabe0b1bfeff151b84f1f3}\label{group____2d_gaac8f745760eabe0b1bfeff151b84f1f3}} 
+\index{2\+D Nodes@{2\+D Nodes}!trace@{trace}}
+\index{trace@{trace}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{trace()}{trace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classVec2}{Vec2}$>$ Auto\+Polygon\+::trace (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Rect \&}]{rect,  }\item[{float}]{threshold = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+trace all the points along the outline of the image, \begin{DoxyWarning}{Warning}
+must create \hyperlink{classAutoPolygon}{Auto\+Polygon} with filename to use this function 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & a texture rect for specify an area of the image \\
+\hline
+{\em threshold} & the value when alpha is greater than this value will be counted as opaque, default to 0.\+0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of vec2 of all the points found in clockwise order 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}(\textcolor{stringliteral}{"grossini.png"});
+\textcolor{keyword}{auto} rect = \hyperlink{classRect}{Rect}(100, 100, 200, 200);
+std::vector<Vec2> points = ap.trace(rect);\textcolor{comment}{//default threshold is 0.0}
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_ga0ee3e7e22fdf9982ec084191928caffa}\label{group____2d_ga0ee3e7e22fdf9982ec084191928caffa}} 
+\index{2\+D Nodes@{2\+D Nodes}!triangulate@{triangulate}}
+\index{triangulate@{triangulate}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{triangulate()}{triangulate()}}
+{\footnotesize\ttfamily \hyperlink{structTrianglesCommand_1_1Triangles}{Triangles\+Command\+::\+Triangles} Auto\+Polygon\+::triangulate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classVec2}{Vec2} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+Triangulate the input points into triangles for rendering using poly2tri \begin{DoxyWarning}{Warning}
+points must be closed loop, cannot have 2 points sharing the same position and cannot intersect itself 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em points} & a vector of vec2 points as input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Triangles object with points and indices 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} ap = \hyperlink{group____2d_gaa74351ac8f735344958e7b2ac8363bb5}{AutoPolygon}();
+\hyperlink{structTrianglesCommand_1_1Triangles}{TrianglesCommand::Triangles} myPolygons = ap.triangulate(myPoints);
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group____2d_gaca856dfbfddcb64d3fa29bf261dd10f8}\label{group____2d_gaca856dfbfddcb64d3fa29bf261dd10f8}} 
+\index{2\+D Nodes@{2\+D Nodes}!````~Auto\+Polygon@{$\sim$\+Auto\+Polygon}}
+\index{````~Auto\+Polygon@{$\sim$\+Auto\+Polygon}!2\+D Nodes@{2\+D Nodes}}
+\subsubsection{\texorpdfstring{$\sim$\+Auto\+Polygon()}{~AutoPolygon()}}
+{\footnotesize\ttfamily Auto\+Polygon\+::$\sim$\+Auto\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor of \hyperlink{classAutoPolygon}{Auto\+Polygon}. 

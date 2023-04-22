@@ -1,0 +1,106 @@
+\hypertarget{classSvgWriter}{}\section{Svg\+Writer Class Reference}
+\label{classSvgWriter}\index{Svg\+Writer@{Svg\+Writer}}
+
+
+Wrapper pour la génération de fichier svg via le système de log.  
+
+
+
+
+{\ttfamily \#include $<$Svg\+Writer.\+hpp$>$}
+
+
+
+Inheritance diagram for Svg\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSvgWriter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Svg\+Writer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classSvgWriter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSvgWriter_a30059a7d7289c57d3bf1bf623713dc0a}{Svg\+Writer} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSvgWriter_ae9f503ecbe84f673f7f05dc50a52728d}\label{classSvgWriter_ae9f503ecbe84f673f7f05dc50a52728d}} 
+virtual \hyperlink{classSvgWriter_ae9f503ecbe84f673f7f05dc50a52728d}{$\sim$\+Svg\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSvgWriter_a0a4640b661160b29d991116a197f7aaf}\label{classSvgWriter_a0a4640b661160b29d991116a197f7aaf}} 
+const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \& {\bfseries logger} ()
+\item 
+\mbox{\Hypertarget{classSvgWriter_a9fbe18d7bc202481f93b87a1b3a9077e}\label{classSvgWriter_a9fbe18d7bc202481f93b87a1b3a9077e}} 
+void {\bfseries add\+Defs\+Symbol} (std\+::string symbol)
+\item 
+\mbox{\Hypertarget{classSvgWriter_ac6b52164bb48debc2aa814b2e96ec233}\label{classSvgWriter_ac6b52164bb48debc2aa814b2e96ec233}} 
+void {\bfseries begin\+Header} ()
+\item 
+\mbox{\Hypertarget{classSvgWriter_a18e6747b544e14bc12f184bce594ec63}\label{classSvgWriter_a18e6747b544e14bc12f184bce594ec63}} 
+void {\bfseries end\+Header} ()
+\item 
+\mbox{\Hypertarget{classSvgWriter_a1860768b0bf4858dae8577f2b7653cac}\label{classSvgWriter_a1860768b0bf4858dae8577f2b7653cac}} 
+void {\bfseries write\+Text} (float x\+\_\+mm, float y\+\_\+mm, std\+::string text)
+\item 
+\mbox{\Hypertarget{classSvgWriter_ae4246028907242734cc14db98d492eb5}\label{classSvgWriter_ae4246028907242734cc14db98d492eb5}} 
+void {\bfseries write\+Text\+Custom} (float x\+\_\+mm, float y\+\_\+mm, std\+::string text, std\+::string color, std\+::string fontsize)
+\item 
+\mbox{\Hypertarget{classSvgWriter_a1b9df8d232ad40c0818be21ee057cad0}\label{classSvgWriter_a1b9df8d232ad40c0818be21ee057cad0}} 
+virtual void {\bfseries write\+Position\+\_\+\+Bot} (float x\+\_\+mm, float y\+\_\+mm, float a\+\_\+rad, int color=0)=0
+\item 
+\mbox{\Hypertarget{classSvgWriter_af8e2a0679e17a9b8df363450fc7ca598}\label{classSvgWriter_af8e2a0679e17a9b8df363450fc7ca598}} 
+virtual void {\bfseries write\+Position\+\_\+\+Bot\+Pos} (float x\+\_\+mm, float y\+\_\+mm, float a\+\_\+rad)=0
+\item 
+\mbox{\Hypertarget{classSvgWriter_ac1a7e8a8541391a22424b4e6c6efa6c8}\label{classSvgWriter_ac1a7e8a8541391a22424b4e6c6efa6c8}} 
+virtual void {\bfseries write\+Zone} (const char $\ast$name, float min\+X\+\_\+mm, float min\+Y\+\_\+mm, float width\+\_\+mm, float height\+\_\+mm, float start\+X\+\_\+mm, float start\+Y\+\_\+mm, float start\+Angle\+\_\+rad)=0
+\item 
+\mbox{\Hypertarget{classSvgWriter_a9f3b5c557a70c8ef2daee65ef61e8456}\label{classSvgWriter_a9f3b5c557a70c8ef2daee65ef61e8456}} 
+virtual void {\bfseries write\+Ia\+Path} (const char $\ast$zone1\+Name, const char $\ast$zone2\+Name, float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classSvgWriter_a7079faf0c694ff10efe2f7e178d9e97c}\label{classSvgWriter_a7079faf0c694ff10efe2f7e178d9e97c}} 
+virtual void {\bfseries path\+Polyline} (std\+::string points)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSvgWriter_a13da502348d120472ef4b6032a98dd8a}\label{classSvgWriter_a13da502348d120472ef4b6032a98dd8a}} 
+bool {\bfseries done\+\_\+}
+\item 
+\mbox{\Hypertarget{classSvgWriter_a628e2263568c0486b340c77684982c54}\label{classSvgWriter_a628e2263568c0486b340c77684982c54}} 
+bool {\bfseries begin\+Done\+\_\+}
+\item 
+\mbox{\Hypertarget{classSvgWriter_a8b23484c91d2b42d081a1ff21c4e45e6}\label{classSvgWriter_a8b23484c91d2b42d081a1ff21c4e45e6}} 
+const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} $\ast$ {\bfseries f\+Logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper pour la génération de fichier svg via le système de log. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSvgWriter_a30059a7d7289c57d3bf1bf623713dc0a}\label{classSvgWriter_a30059a7d7289c57d3bf1bf623713dc0a}} 
+\index{Svg\+Writer@{Svg\+Writer}!Svg\+Writer@{Svg\+Writer}}
+\index{Svg\+Writer@{Svg\+Writer}!Svg\+Writer@{Svg\+Writer}}
+\subsubsection{\texorpdfstring{Svg\+Writer()}{SvgWriter()}}
+{\footnotesize\ttfamily Svg\+Writer\+::\+Svg\+Writer (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe. 
+
+Ce constructeur est privé pour empécher la création d\textquotesingle{}une instance de la classe. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{SvgWriter_8hpp}{Svg\+Writer.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{SvgWriter_8cpp}{Svg\+Writer.\+cpp}\end{DoxyCompactItemize}

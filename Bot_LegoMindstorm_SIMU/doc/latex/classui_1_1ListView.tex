@@ -1,0 +1,2252 @@
+\hypertarget{classui_1_1ListView}{}\section{ui\+:\+:List\+View Class Reference}
+\label{classui_1_1ListView}\index{ui\+::\+List\+View@{ui\+::\+List\+View}}
+
+
+\hyperlink{classui_1_1ListView}{List\+View} is a view group that displays a \hyperlink{protocollist-p}{list} of scrollable items. The \hyperlink{protocollist-p}{list} items are inserted to the \hyperlink{protocollist-p}{list} by using {\ttfamily add\+Child} or {\ttfamily insert\+Default\+Item}.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+List\+View.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:List\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classui_1_1ListView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:List\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1ListView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity} \{ \newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries T\+OP}, 
+\newline
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}
+ \}
+\item 
+enum \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type} \{ {\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+E\+ND}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+E\+ND}
+ \}
+\item 
+enum \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries C\+E\+N\+T\+ER}, 
+{\bfseries B\+O\+T\+H\+\_\+\+E\+ND}, 
+{\bfseries L\+E\+FT}, 
+\newline
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries N\+O\+NE}, 
+\newline
+{\bfseries C\+E\+N\+T\+ER}, 
+{\bfseries B\+O\+T\+H\+\_\+\+E\+ND}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}
+ \}
+\item 
+enum \hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity} \{ \newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries T\+OP}, 
+\newline
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}
+ \}
+\item 
+enum \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type} \{ {\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+E\+ND}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries O\+N\+\_\+\+S\+E\+L\+E\+C\+T\+E\+D\+\_\+\+I\+T\+E\+M\+\_\+\+E\+ND}
+ \}
+\item 
+enum \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries C\+E\+N\+T\+ER}, 
+{\bfseries B\+O\+T\+H\+\_\+\+E\+ND}, 
+{\bfseries L\+E\+FT}, 
+\newline
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}, 
+{\bfseries N\+O\+NE}, 
+\newline
+{\bfseries C\+E\+N\+T\+ER}, 
+{\bfseries B\+O\+T\+H\+\_\+\+E\+ND}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+\newline
+{\bfseries T\+OP}, 
+{\bfseries B\+O\+T\+T\+OM}
+ \}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}{List\+View} ()
+\item 
+virtual \hyperlink{classui_1_1ListView_acd8c9c5b0bd4ef6166c056798665c08d}{$\sim$\+List\+View} ()
+\item 
+void \hyperlink{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}{set\+Item\+Model} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model)
+\item 
+void \hyperlink{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}{push\+Back\+Default\+Item} ()
+\item 
+void \hyperlink{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}{insert\+Default\+Item} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}{push\+Back\+Custom\+Item} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item)
+\item 
+void \hyperlink{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}{insert\+Custom\+Item} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item, ssize\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Insert a custom widget into \hyperlink{classui_1_1ListView}{List\+View} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}{remove\+Last\+Item} ()
+\item 
+void \hyperlink{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}{remove\+Item} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}\label{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}} 
+void \hyperlink{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}{remove\+All\+Items} ()
+\begin{DoxyCompactList}\small\item\em Remove all items in current \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_adc14ba59d9dfa3064a7d9e77fadddd38}{get\+Item} (ssize\+\_\+t index) const
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Widget}{Widget} $\ast$ $>$ \& \hyperlink{classui_1_1ListView_a92a6e83bdbfec80ae5133ab7ccd0a824}{get\+Items} ()
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}{get\+Index} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item) const
+\item 
+void \hyperlink{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}{set\+Gravity} (\hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity} gravity)
+\item 
+void \hyperlink{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}{set\+Magnetic\+Type} (\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} magnetic\+Type)
+\item 
+\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} \hyperlink{classui_1_1ListView_a78e5f1e9024b6d195035e07e4183976d}{get\+Magnetic\+Type} () const
+\item 
+void \hyperlink{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}{set\+Magnetic\+Allowed\+Out\+Of\+Boundary} (bool magnetic\+Allowed\+Out\+Of\+Boundary)
+\item 
+bool \hyperlink{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}{get\+Magnetic\+Allowed\+Out\+Of\+Boundary} () const
+\item 
+void \hyperlink{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}{set\+Items\+Margin} (float margin)
+\item 
+float \hyperlink{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}{get\+Items\+Margin} () const
+\begin{DoxyCompactList}\small\item\em Query margin between each item in \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}{set\+Scroll\+Duration} (float time)
+\item 
+float \hyperlink{classui_1_1ListView_a85116b79e39403d670411684410feef0}{get\+Scroll\+Duration} () const
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ad633b42ebb764e761a41c73643189dc4}\label{classui_1_1ListView_ad633b42ebb764e761a41c73643189dc4}} 
+virtual void \hyperlink{classui_1_1ListView_ad633b42ebb764e761a41c73643189dc4}{do\+Layout} () override
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1ListView_ad02cdf77d0d8f0dd2586b2bc083d4750}{request\+Do\+Layout} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_aeee2116f21f0e89de5a2e1b9cc93e012}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a36ef7247ab78ee7019eca8c409a30356}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a9963ad5969a99d1e67694cfb926f56cc}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_ac05cf0e2ff70c59b487662364d55eebc}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a7e534825fe60406ed544a254b0975489}{remove\+All\+Children} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a01691c095058bc86f372e6439b15b151}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a7002fe4ad783aeccf56cebbe4144036e}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true) override
+\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a1a6b73d54545ff7e1e4631185472b2eb}{get\+Closest\+Item\+To\+Position} (const \hyperlink{classVec2}{Vec2} \&target\+Position, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point) const
+\begin{DoxyCompactList}\small\item\em Query the closest item to a specific position in inner container. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a0d21477a14d78ef1d1355bf0ab02fb80}{get\+Closest\+Item\+To\+Position\+In\+Current\+View} (const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point) const
+\begin{DoxyCompactList}\small\item\em Query the closest item to a specific position in current view. For instance, to find the item in the center of view, call \textquotesingle{}get\+Closest\+Item\+To\+Position\+In\+Current\+View(\+Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E, Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E)\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a7647c121e0fd17ad5cac0f6a76f9791b}{get\+Center\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the center item. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a734534e1c90d258a63dfa3199c2603a4}{get\+Leftmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the leftmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_abb5fcb39d6937a6840e6ea39c91978d5}{get\+Rightmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the rightmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a301ef416364411d2f6e85f8a13dcda90}{get\+Topmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the topmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_af4d954d5d1e8cb870c3026ddbd131d44}{get\+Bottommost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the bottommost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1ListView_a188c4b2a431157ef28ba92c26f1157cc}{jump\+To\+Bottom} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_af3477294f3fc87bbc9aaa1bec3c86fd8}{jump\+To\+Top} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a80457edf6517c62347fab9583e6ad063}{jump\+To\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a07a1265c424478b68dc7d691bd29dc85}{jump\+To\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a18c1e20a9c26bffa2ff05156673d4ce9}{jump\+To\+Top\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a9410511689cc348ef305886a44ec0d96}{jump\+To\+Top\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a298f184bd6a527a03e8a3f28ec20fc6a}{jump\+To\+Bottom\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_ac76553a765cff9931a56c75c75484650}{jump\+To\+Bottom\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a970383495e57eebfa9306c1876dbcff6}{jump\+To\+Percent\+Vertical} (float percent) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a770ffffaa274cc0bd86828910586632d}{jump\+To\+Percent\+Horizontal} (float percent) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_aeb683b8f4eb94d0f22d78c0652bd331a}{jump\+To\+Percent\+Both\+Direction} (const \hyperlink{classVec2}{Vec2} \&percent) override
+\item 
+void \hyperlink{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}{jump\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Jump to specific item. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}{scroll\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Scroll to specific item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1ListView_a7655f58119a990d51921f7b453bac14f}\label{classui_1_1ListView_a7655f58119a990d51921f7b453bac14f}} 
+void {\bfseries scroll\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point, float time\+In\+Sec)
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}{get\+Cur\+Selected\+Index} () const
+\begin{DoxyCompactList}\small\item\em Query current selected widget\textquotesingle{}s index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}{set\+Cur\+Selected\+Index} (int item\+Index)
+\begin{DoxyCompactList}\small\item\em Set current selected widget\textquotesingle{}s index and call Touch\+Event\+Type\+::\+E\+N\+D\+ED event. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_a556eebb13ecb5dd706023857477c4b46}{add\+Event\+Listener\+List\+View} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+List\+View\+Event selector)
+\item 
+void \hyperlink{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}{add\+Event\+Listener} (const \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback} \&callback)
+\item 
+virtual void \hyperlink{classui_1_1ListView_aaac3381602537a823529058b64bffabf}{set\+Direction} (\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction} dir) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1ListView_a653bb454095ef227949f7c791b68180c}{get\+Description} () const override
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}{request\+Refresh\+View} ()
+\begin{DoxyCompactList}\small\item\em Refresh view and layout of \hyperlink{classui_1_1ListView}{List\+View} manually. This method will mark \hyperlink{classui_1_1ListView}{List\+View} content as dirty and the content view will be refreshed in the next frame. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_a67165072bad734eacc1cd3607471f024}{refresh\+View} ()
+\begin{DoxyCompactList}\small\item\em Refresh content view of \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}{List\+View} ()
+\item 
+virtual \hyperlink{classui_1_1ListView_aef61591c247562c7516d47a98972cadc}{$\sim$\+List\+View} ()
+\item 
+void \hyperlink{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}{set\+Item\+Model} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model)
+\item 
+void \hyperlink{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}{push\+Back\+Default\+Item} ()
+\item 
+void \hyperlink{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}{insert\+Default\+Item} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}{push\+Back\+Custom\+Item} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item)
+\item 
+void \hyperlink{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}{insert\+Custom\+Item} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item, ssize\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Insert a custom widget into \hyperlink{classui_1_1ListView}{List\+View} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}{remove\+Last\+Item} ()
+\item 
+void \hyperlink{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}{remove\+Item} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}\label{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}} 
+void \hyperlink{classui_1_1ListView_ae4bc74035bed0c50bac28562479630c9}{remove\+All\+Items} ()
+\begin{DoxyCompactList}\small\item\em Remove all items in current \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_ae28dcb453c3cd18850e4f34975ca64b0}{get\+Item} (ssize\+\_\+t index) const
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Widget}{Widget} $\ast$ $>$ \& \hyperlink{classui_1_1ListView_a4b746fb73635a3b5302fc3493d7eb725}{get\+Items} ()
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}{get\+Index} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item) const
+\item 
+void \hyperlink{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}{set\+Gravity} (\hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity} gravity)
+\item 
+void \hyperlink{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}{set\+Magnetic\+Type} (\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} magnetic\+Type)
+\item 
+\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} \hyperlink{classui_1_1ListView_ab5b6b09f66fbdd931364ee64022edec7}{get\+Magnetic\+Type} () const
+\item 
+void \hyperlink{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}{set\+Magnetic\+Allowed\+Out\+Of\+Boundary} (bool magnetic\+Allowed\+Out\+Of\+Boundary)
+\item 
+bool \hyperlink{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}{get\+Magnetic\+Allowed\+Out\+Of\+Boundary} () const
+\item 
+void \hyperlink{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}{set\+Items\+Margin} (float margin)
+\item 
+float \hyperlink{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}{get\+Items\+Margin} () const
+\begin{DoxyCompactList}\small\item\em Query margin between each item in \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_af258cfedf835f3dce4d180d0df3fa888}{set\+Padding} (float l, float t, float r, float b)
+\item 
+void \hyperlink{classui_1_1ListView_a3ea5e926f73d1ed517d3e49c8acc53f2}{set\+Left\+Padding} (float l)
+\item 
+void \hyperlink{classui_1_1ListView_aeb8a524c2ba33a74b77267b7815bd949}{set\+Top\+Padding} (float t)
+\item 
+void \hyperlink{classui_1_1ListView_a365a73786412617945110d39c685c6b2}{set\+Right\+Padding} (float r)
+\item 
+void \hyperlink{classui_1_1ListView_aa68f32002427564b3608cb5ee7a30c9b}{set\+Bottom\+Padding} (float b)
+\item 
+float \hyperlink{classui_1_1ListView_a6ea04d617c8705f8eb6e6fce706b737b}{get\+Left\+Padding} () const
+\item 
+float \hyperlink{classui_1_1ListView_afa41ccf9bd1b8301f33745756424625d}{get\+Top\+Padding} () const
+\item 
+float \hyperlink{classui_1_1ListView_ad2b4b1c9eceedda8d659058d2d6a92bf}{get\+Right\+Padding} () const
+\item 
+float \hyperlink{classui_1_1ListView_ae537c409ff29867ea5b747ddf048fd7c}{get\+Bottom\+Padding} () const
+\item 
+void \hyperlink{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}{set\+Scroll\+Duration} (float time)
+\item 
+float \hyperlink{classui_1_1ListView_a85116b79e39403d670411684410feef0}{get\+Scroll\+Duration} () const
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9aebab6351a573a175aacb11e4846b7d}\label{classui_1_1ListView_a9aebab6351a573a175aacb11e4846b7d}} 
+virtual void \hyperlink{classui_1_1ListView_a9aebab6351a573a175aacb11e4846b7d}{do\+Layout} () override
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1ListView_ab559aec6b481480fad169f2a53094028}{request\+Do\+Layout} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a7fb7f42f3f3ee9e9ca8ee3bb959e2c32}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_afb7109d348b36c0d672066589ef1e00b}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int local\+Z\+Order) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_aee4869d9b2ca6d88b5075f9078853644}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a48d15dfd548d451a87af9a1300343725}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_acfa88e95692c1e9713697fbd2754379b}{remove\+All\+Children} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a04bcc9bd8c55dea8f034a8380b3ab3a8}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_ace4890246e03a8de66cfe9d0312df365}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classProtectedNode_a5462a6202b458193c1881bcdcc5be78d}{cleanup}=true) override
+\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_a3b735d6f86e49897cfa1fd064b43e1e9}{get\+Closest\+Item\+To\+Position} (const \hyperlink{classVec2}{Vec2} \&target\+Position, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point) const
+\begin{DoxyCompactList}\small\item\em Query the closest item to a specific position in inner container. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_ab96d0803fe3fde3d5691631b6c3d9803}{get\+Closest\+Item\+To\+Position\+In\+Current\+View} (const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point) const
+\begin{DoxyCompactList}\small\item\em Query the closest item to a specific position in current view. For instance, to find the item in the center of view, call \textquotesingle{}get\+Closest\+Item\+To\+Position\+In\+Current\+View(\+Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E, Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E)\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_af2e7fa5bfed742f093ad2b83361cabb3}{get\+Center\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the center item. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_af04187e02ececdb0124f37f1fbee32d9}{get\+Leftmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the leftmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_ae6bf1a01bfab1bc737bd3a3f33497f6b}{get\+Rightmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the rightmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_ac80f26ac523ac2335d136baaf4eb5fab}{get\+Topmost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the topmost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ \hyperlink{classui_1_1ListView_ac3946e3858a88bfdefb9b597e09a581b}{get\+Bottommost\+Item\+In\+Current\+View} () const
+\begin{DoxyCompactList}\small\item\em Query the bottommost item in horizontal \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1ListView_aeffa88663d344fbba91e24360458e207}{jump\+To\+Bottom} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_ac816b897b329ca67365e8e3f31a5bf18}{jump\+To\+Top} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a141ba140d285c6cc7eba00c9a6dc1efc}{jump\+To\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_aca7e4b44da940fdab188d7b713ada04a}{jump\+To\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a16fed680b5ef2a65ae0e3a1540e9727e}{jump\+To\+Top\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a7b90df8fdae3bf08a3714c332f8c2854}{jump\+To\+Top\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a001320a34234f830a4f35096ceb86d48}{jump\+To\+Bottom\+Left} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a1147d7b2ad27eb3101bb6e31d1fe73e1}{jump\+To\+Bottom\+Right} () override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a0c76de2de006a8e9eea7225df545622e}{jump\+To\+Percent\+Vertical} (float percent) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_a783891312300a50f3b05ff15ea3f5b19}{jump\+To\+Percent\+Horizontal} (float percent) override
+\item 
+virtual void \hyperlink{classui_1_1ListView_ad6bbe89fde987d1bb2ead8de0bc688b5}{jump\+To\+Percent\+Both\+Direction} (const \hyperlink{classVec2}{Vec2} \&percent) override
+\item 
+void \hyperlink{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}{jump\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Jump to specific item. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}{scroll\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Scroll to specific item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1ListView_a7655f58119a990d51921f7b453bac14f}\label{classui_1_1ListView_a7655f58119a990d51921f7b453bac14f}} 
+void {\bfseries scroll\+To\+Item} (ssize\+\_\+t item\+Index, const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point, float time\+In\+Sec)
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}{get\+Cur\+Selected\+Index} () const
+\begin{DoxyCompactList}\small\item\em Query current selected widget\textquotesingle{}s index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}{set\+Cur\+Selected\+Index} (int item\+Index)
+\begin{DoxyCompactList}\small\item\em Set current selected widget\textquotesingle{}s index and call Touch\+Event\+Type\+::\+E\+N\+D\+ED event. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_ad2a7ee403cd9f7559f99e34046c1a8bb}{add\+Event\+Listener\+List\+View} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+List\+View\+Event selector)
+\item 
+void \hyperlink{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}{add\+Event\+Listener} (const \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback} \&callback)
+\item 
+virtual void \hyperlink{classui_1_1ListView_aa4999666131727cdb1a32f13957914e3}{set\+Direction} (\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction} dir) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1ListView_a921a755d9787f976af9424ceb16a1aa3}{get\+Description} () const override
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}{request\+Refresh\+View} ()
+\begin{DoxyCompactList}\small\item\em Refresh view and layout of \hyperlink{classui_1_1ListView}{List\+View} manually. This method will mark \hyperlink{classui_1_1ListView}{List\+View} content as dirty and the content view will be refreshed in the next frame. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1ListView_a2bf4b49c5d219112bf5690b891ea9cad}{refresh\+View} ()
+\begin{DoxyCompactList}\small\item\em Refresh content view of \hyperlink{classui_1_1ListView}{List\+View}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1ListView}{List\+View} $\ast$ \hyperlink{classui_1_1ListView_a5dc4e7e3fe7c954a4b07ea53bd40ca97}{create} ()
+\item 
+static \hyperlink{classui_1_1ListView}{List\+View} $\ast$ \hyperlink{classui_1_1ListView_a31ae9f031409d417a2079fc73d220703}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_affb51de4a87ccfab4185cda7c2b669e6}\label{classui_1_1ListView_affb51de4a87ccfab4185cda7c2b669e6}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: virtual bool init() override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a23e5fff6540df9164ef699bde392d8b8}\label{classui_1_1ListView_a23e5fff6540df9164ef699bde392d8b8}} 
+virtual void {\bfseries handle\+Release\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a718787483e872bb945172654fac68984}\label{classui_1_1ListView_a718787483e872bb945172654fac68984}} 
+virtual void {\bfseries on\+Item\+List\+Changed} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a0be47c080f65b39e68deb809ad22b9a3}\label{classui_1_1ListView_a0be47c080f65b39e68deb809ad22b9a3}} 
+virtual void {\bfseries remedy\+Layout\+Parameter} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_abc4959ce115171f988bad089f0ee900b}\label{classui_1_1ListView_abc4959ce115171f988bad089f0ee900b}} 
+void {\bfseries update\+Inner\+Container\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a4c9fc40aeb27c0c1361f7087b6b9fc16}\label{classui_1_1ListView_a4c9fc40aeb27c0c1361f7087b6b9fc16}} 
+void {\bfseries remedy\+Vertical\+Layout\+Parameter} (\hyperlink{classui_1_1LinearLayoutParameter}{Linear\+Layout\+Parameter} $\ast$layout\+Parameter, ssize\+\_\+t item\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_aaf5c944a246168c77a938a69275c1f27}\label{classui_1_1ListView_aaf5c944a246168c77a938a69275c1f27}} 
+void {\bfseries remedy\+Horizontal\+Layout\+Parameter} (\hyperlink{classui_1_1LinearLayoutParameter}{Linear\+Layout\+Parameter} $\ast$layout\+Parameter, ssize\+\_\+t item\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ae5b8301dcf99c7f44484e3f997dd2bab}\label{classui_1_1ListView_ae5b8301dcf99c7f44484e3f997dd2bab}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9f8169ee8e614fe9dcd7a2441fe75a34}\label{classui_1_1ListView_a9f8169ee8e614fe9dcd7a2441fe75a34}} 
+virtual \hyperlink{classui_1_1Widget}{Widget} $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ab665d74509682e351623bff3e6b9e349}\label{classui_1_1ListView_ab665d74509682e351623bff3e6b9e349}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_af33a33b3e7da9dbb50ecf33b0dcada3e}\label{classui_1_1ListView_af33a33b3e7da9dbb50ecf33b0dcada3e}} 
+virtual void {\bfseries copy\+Cloned\+Widget\+Children} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a44bec6d5b26502059a40f056a8ae16e1}\label{classui_1_1ListView_a44bec6d5b26502059a40f056a8ae16e1}} 
+void {\bfseries selected\+Item\+Event} (\hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Touch\+Event\+Type} event)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a06d484208fd82024f323d86d59a4f21b}\label{classui_1_1ListView_a06d484208fd82024f323d86d59a4f21b}} 
+virtual void {\bfseries intercept\+Touch\+Event} (\hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Widget\+::\+Touch\+Event\+Type} event, \hyperlink{classui_1_1Widget}{Widget} $\ast$sender, \hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a3c52f4a404b13d8fc2458711cea4b1cf}\label{classui_1_1ListView_a3c52f4a404b13d8fc2458711cea4b1cf}} 
+virtual \hyperlink{classVec2}{Vec2} {\bfseries get\+How\+Much\+Out\+Of\+Boundary} (const \hyperlink{classVec2}{Vec2} \&addition=\hyperlink{classVec2_a5c80e2e7c8bd2adcbad2844d060e6245}{Vec2\+::\+Z\+E\+RO}) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_af7c9c210a6ce32d355092aa5ece10b42}\label{classui_1_1ListView_af7c9c210a6ce32d355092aa5ece10b42}} 
+virtual void {\bfseries start\+Attenuating\+Auto\+Scroll} (const \hyperlink{classVec2}{Vec2} \&delta\+Move, const \hyperlink{classVec2}{Vec2} \&initial\+Velocity) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9331e4ab296569082819c855edcd0a91}\label{classui_1_1ListView_a9331e4ab296569082819c855edcd0a91}} 
+void {\bfseries start\+Magnetic\+Scroll} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a4ac5978c0152bbca5b822c2418068a51}\label{classui_1_1ListView_a4ac5978c0152bbca5b822c2418068a51}} 
+\hyperlink{classVec2}{Vec2} {\bfseries calculate\+Item\+Destination} (const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, \hyperlink{classui_1_1Widget}{Widget} $\ast$item, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a154aefebe8fe8233034d5d4856e6901e}\label{classui_1_1ListView_a154aefebe8fe8233034d5d4856e6901e}} 
+virtual void {\bfseries handle\+Release\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a0e26dcfe141e8c8f20f33aef87c0daec}\label{classui_1_1ListView_a0e26dcfe141e8c8f20f33aef87c0daec}} 
+virtual void {\bfseries on\+Item\+List\+Changed} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a40f9bf005bf97706954093adad572a4d}\label{classui_1_1ListView_a40f9bf005bf97706954093adad572a4d}} 
+virtual void {\bfseries remedy\+Layout\+Parameter} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_abc4959ce115171f988bad089f0ee900b}\label{classui_1_1ListView_abc4959ce115171f988bad089f0ee900b}} 
+void {\bfseries update\+Inner\+Container\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a4c9fc40aeb27c0c1361f7087b6b9fc16}\label{classui_1_1ListView_a4c9fc40aeb27c0c1361f7087b6b9fc16}} 
+void {\bfseries remedy\+Vertical\+Layout\+Parameter} (\hyperlink{classui_1_1LinearLayoutParameter}{Linear\+Layout\+Parameter} $\ast$layout\+Parameter, ssize\+\_\+t item\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_aaf5c944a246168c77a938a69275c1f27}\label{classui_1_1ListView_aaf5c944a246168c77a938a69275c1f27}} 
+void {\bfseries remedy\+Horizontal\+Layout\+Parameter} (\hyperlink{classui_1_1LinearLayoutParameter}{Linear\+Layout\+Parameter} $\ast$layout\+Parameter, ssize\+\_\+t item\+Index)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a815a2198f11229bbdb784529c00efebc}\label{classui_1_1ListView_a815a2198f11229bbdb784529c00efebc}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a887ce4b5401afdd04bbe49a12c7da464}\label{classui_1_1ListView_a887ce4b5401afdd04bbe49a12c7da464}} 
+virtual \hyperlink{classui_1_1Widget}{Widget} $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a7388f3fb985edbfdbb7c628754a0c1d1}\label{classui_1_1ListView_a7388f3fb985edbfdbb7c628754a0c1d1}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a002be606b8f25fb39dbabae4da37874d}\label{classui_1_1ListView_a002be606b8f25fb39dbabae4da37874d}} 
+virtual void {\bfseries copy\+Cloned\+Widget\+Children} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a44bec6d5b26502059a40f056a8ae16e1}\label{classui_1_1ListView_a44bec6d5b26502059a40f056a8ae16e1}} 
+void {\bfseries selected\+Item\+Event} (\hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Touch\+Event\+Type} event)
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a43249fd66ec2fd5a98e7be0ad0da187b}\label{classui_1_1ListView_a43249fd66ec2fd5a98e7be0ad0da187b}} 
+virtual void {\bfseries intercept\+Touch\+Event} (\hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Widget\+::\+Touch\+Event\+Type} event, \hyperlink{classui_1_1Widget}{Widget} $\ast$sender, \hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a3ca5321e50adadba006907b7c23e9545}\label{classui_1_1ListView_a3ca5321e50adadba006907b7c23e9545}} 
+virtual \hyperlink{classVec2}{Vec2} {\bfseries get\+How\+Much\+Out\+Of\+Boundary} (const \hyperlink{classVec2}{Vec2} \&addition=\hyperlink{classVec2_a5c80e2e7c8bd2adcbad2844d060e6245}{Vec2\+::\+Z\+E\+RO}) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a5db37e4b914390c9c67801094d9b9614}\label{classui_1_1ListView_a5db37e4b914390c9c67801094d9b9614}} 
+virtual void {\bfseries start\+Attenuating\+Auto\+Scroll} (const \hyperlink{classVec2}{Vec2} \&delta\+Move, const \hyperlink{classVec2}{Vec2} \&initial\+Velocity) override
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9331e4ab296569082819c855edcd0a91}\label{classui_1_1ListView_a9331e4ab296569082819c855edcd0a91}} 
+void {\bfseries start\+Magnetic\+Scroll} ()
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a4ac5978c0152bbca5b822c2418068a51}\label{classui_1_1ListView_a4ac5978c0152bbca5b822c2418068a51}} 
+\hyperlink{classVec2}{Vec2} {\bfseries calculate\+Item\+Destination} (const \hyperlink{classVec2}{Vec2} \&position\+Ratio\+In\+View, \hyperlink{classui_1_1Widget}{Widget} $\ast$item, const \hyperlink{classVec2}{Vec2} \&item\+Anchor\+Point)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_abc8489c13364ce87111b53fb89deb166}\label{classui_1_1ListView_abc8489c13364ce87111b53fb89deb166}} 
+\hyperlink{classui_1_1Widget}{Widget} $\ast$ {\bfseries \+\_\+model}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9993b2ce6ef3f816ee0be076371fbcde}\label{classui_1_1ListView_a9993b2ce6ef3f816ee0be076371fbcde}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Widget}{Widget} $\ast$ $>$ {\bfseries \+\_\+items}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ad6f3b66fe72d0dfa7eb358eec179bc15}\label{classui_1_1ListView_ad6f3b66fe72d0dfa7eb358eec179bc15}} 
+\hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity} {\bfseries \+\_\+gravity}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a1f6c3bbafa27df6194046fffec2a9d0b}\label{classui_1_1ListView_a1f6c3bbafa27df6194046fffec2a9d0b}} 
+\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} {\bfseries \+\_\+magnetic\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a02302523514dc9d7b96debc0d7bf21aa}\label{classui_1_1ListView_a02302523514dc9d7b96debc0d7bf21aa}} 
+bool {\bfseries \+\_\+magnetic\+Allowed\+Out\+Of\+Boundary}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a0c87bc91c5fff743e16d3878662cbffe}\label{classui_1_1ListView_a0c87bc91c5fff743e16d3878662cbffe}} 
+float {\bfseries \+\_\+items\+Margin}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a92c1621a22fbf8446cb0625cbca27152}\label{classui_1_1ListView_a92c1621a22fbf8446cb0625cbca27152}} 
+float {\bfseries \+\_\+scroll\+Time}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a9ee2e49c644567175d376d49eac6c5da}\label{classui_1_1ListView_a9ee2e49c644567175d376d49eac6c5da}} 
+ssize\+\_\+t {\bfseries \+\_\+cur\+Selected\+Index}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a5b534a43515710fa1ecf7d8d4a47e13e}\label{classui_1_1ListView_a5b534a43515710fa1ecf7d8d4a47e13e}} 
+bool {\bfseries \+\_\+inner\+Container\+Do\+Layout\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a460e5d0ecb50b80024fd686ecadfe16b}\label{classui_1_1ListView_a460e5d0ecb50b80024fd686ecadfe16b}} 
+\hyperlink{classRef}{Ref} $\ast$ {\bfseries \+\_\+list\+View\+Event\+Listener}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a396b0d0f44bd03587576d9bd342efc6f}\label{classui_1_1ListView_a396b0d0f44bd03587576d9bd342efc6f}} 
+S\+E\+L\+\_\+\+List\+View\+Event {\bfseries \+\_\+list\+View\+Event\+Selector}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_ab6a6432f9b507f90428d236e447ff1c9}\label{classui_1_1ListView_ab6a6432f9b507f90428d236e447ff1c9}} 
+\hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback} {\bfseries \+\_\+event\+Callback}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_a7e4e7b1e1007abeb5439803a217f6969}\label{classui_1_1ListView_a7e4e7b1e1007abeb5439803a217f6969}} 
+float {\bfseries \+\_\+left\+Padding}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_aa152ae62d221a3b0dc3f981ad6c5bcbe}\label{classui_1_1ListView_aa152ae62d221a3b0dc3f981ad6c5bcbe}} 
+float {\bfseries \+\_\+top\+Padding}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_af1d23e2ba6e1ab8d4f4898c6d0cdaccb}\label{classui_1_1ListView_af1d23e2ba6e1ab8d4f4898c6d0cdaccb}} 
+float {\bfseries \+\_\+right\+Padding}
+\item 
+\mbox{\Hypertarget{classui_1_1ListView_aa44312d5a4f7c793f925169bbecc4ac8}\label{classui_1_1ListView_aa44312d5a4f7c793f925169bbecc4ac8}} 
+float {\bfseries \+\_\+bottom\+Padding}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classui_1_1ListView}{List\+View} is a view group that displays a \hyperlink{protocollist-p}{list} of scrollable items. The \hyperlink{protocollist-p}{list} items are inserted to the \hyperlink{protocollist-p}{list} by using {\ttfamily add\+Child} or {\ttfamily insert\+Default\+Item}. 
+
+\begin{DoxyWarning}{Warning}
+The \hyperlink{protocollist-p}{list} item in \hyperlink{classui_1_1ListView}{List\+View} doesn\textquotesingle{}t support cell reuse at the moment, if you have a large amount of data need to be displayed, use {\ttfamily \hyperlink{classTableView}{Table\+View}} instead. \hyperlink{classui_1_1ListView}{List\+View} is a subclass of {\ttfamily \hyperlink{classui_1_1ScrollView}{Scroll\+View}}, so it shares many features of \hyperlink{classui_1_1ScrollView}{Scroll\+View}. 
+\end{DoxyWarning}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}\label{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!cc\+List\+View\+Callback@{cc\+List\+View\+Callback}}
+\index{cc\+List\+View\+Callback@{cc\+List\+View\+Callback}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{cc\+List\+View\+Callback}{ccListViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{ui\+::\+List\+View\+::cc\+List\+View\+Callback}}
+
+\hyperlink{classui_1_1ListView}{List\+View} item click callback. \mbox{\Hypertarget{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}\label{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!cc\+List\+View\+Callback@{cc\+List\+View\+Callback}}
+\index{cc\+List\+View\+Callback@{cc\+List\+View\+Callback}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{cc\+List\+View\+Callback}{ccListViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{ui\+::\+List\+View\+::cc\+List\+View\+Callback}}
+
+\hyperlink{classui_1_1ListView}{List\+View} item click callback. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}\label{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{ui\+::\+List\+View\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classui_1_1ListView}{List\+View} element item click event. \mbox{\Hypertarget{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}\label{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{ui\+::\+List\+View\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classui_1_1ListView}{List\+View} element item click event. \mbox{\Hypertarget{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}\label{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Gravity@{Gravity}}
+\index{Gravity@{Gravity}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Gravity}{Gravity}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{ui\+::\+List\+View\+::\+Gravity}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Gravity for docking elements in \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}\label{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Gravity@{Gravity}}
+\index{Gravity@{Gravity}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Gravity}{Gravity}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{ui\+::\+List\+View\+::\+Gravity}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Gravity for docking elements in \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_a143593e762b785241572552b060aed6f}\label{classui_1_1ListView_a143593e762b785241572552b060aed6f}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Magnetic\+Type@{Magnetic\+Type}}
+\index{Magnetic\+Type@{Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Magnetic\+Type}{MagneticType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{ui\+::\+List\+View\+::\+Magnetic\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classui_1_1ListView}{List\+View} supports magnetic scroll. With C\+E\+N\+T\+ER type, \hyperlink{classui_1_1ListView}{List\+View} tries to align its items in center of current view. With B\+O\+T\+H\+\_\+\+E\+ND type, \hyperlink{classui_1_1ListView}{List\+View} tries to align its items in left or right end if it is horizontal, top or bottom in vertical. The aligning side (left or right, top or bottom) is determined by user\textquotesingle{}s scroll direction. \mbox{\Hypertarget{classui_1_1ListView_a143593e762b785241572552b060aed6f}\label{classui_1_1ListView_a143593e762b785241572552b060aed6f}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!Magnetic\+Type@{Magnetic\+Type}}
+\index{Magnetic\+Type@{Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{Magnetic\+Type}{MagneticType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{ui\+::\+List\+View\+::\+Magnetic\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classui_1_1ListView}{List\+View} supports magnetic scroll. With C\+E\+N\+T\+ER type, \hyperlink{classui_1_1ListView}{List\+View} tries to align its items in center of current view. With B\+O\+T\+H\+\_\+\+E\+ND type, \hyperlink{classui_1_1ListView}{List\+View} tries to align its items in left or right end if it is horizontal, top or bottom in vertical. The aligning side (left or right, top or bottom) is determined by user\textquotesingle{}s scroll direction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}\label{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!List\+View@{List\+View}}
+\index{List\+View@{List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{List\+View()}{ListView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+List\+View\+::\+List\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor  ctor  new \mbox{\Hypertarget{classui_1_1ListView_acd8c9c5b0bd4ef6166c056798665c08d}\label{classui_1_1ListView_acd8c9c5b0bd4ef6166c056798665c08d}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!````~List\+View@{$\sim$\+List\+View}}
+\index{````~List\+View@{$\sim$\+List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+List\+View()}{~ListView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+List\+View\+::$\sim$\+List\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor  NA  NA \mbox{\Hypertarget{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}\label{classui_1_1ListView_a51ad2443dcfbd766ace32060e102f706}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!List\+View@{List\+View}}
+\index{List\+View@{List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{List\+View()}{ListView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+List\+View\+::\+List\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor  ctor  new \mbox{\Hypertarget{classui_1_1ListView_aef61591c247562c7516d47a98972cadc}\label{classui_1_1ListView_aef61591c247562c7516d47a98972cadc}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!````~List\+View@{$\sim$\+List\+View}}
+\index{````~List\+View@{$\sim$\+List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+List\+View()}{~ListView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+List\+View\+::$\sim$\+List\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor  NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1ListView_aeee2116f21f0e89de5a2e1b9cc93e012}\label{classui_1_1ListView_aeee2116f21f0e89de5a2e1b9cc93e012}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a6cdee934880e71245c6f5e6a2789c48a}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a36ef7247ab78ee7019eca8c409a30356}\label{classui_1_1ListView_a36ef7247ab78ee7019eca8c409a30356}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a42849e8b7b80ca0bcee880f40de9eccd}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a9963ad5969a99d1e67694cfb926f56cc}\label{classui_1_1ListView_a9963ad5969a99d1e67694cfb926f56cc}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)} \\
+\hline
+{\em tag} & A integer to identify the node easily. Please refer to \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a1843e13af3409763de103e52eb28f3bd}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ac05cf0e2ff70c59b487662364d55eebc}\label{classui_1_1ListView_ac05cf0e2ff70c59b487662364d55eebc}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a84baef5d2ad68df9c19a73da551a780d}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a7fb7f42f3f3ee9e9ca8ee3bb959e2c32}\label{classui_1_1ListView_a7fb7f42f3f3ee9e9ca8ee3bb959e2c32}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z-\/order as 0.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a6cdee934880e71245c6f5e6a2789c48a}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_afb7109d348b36c0d672066589ef1e00b}\label{classui_1_1ListView_afb7109d348b36c0d672066589ef1e00b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with a local z-\/order.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a42849e8b7b80ca0bcee880f40de9eccd}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_aee4869d9b2ca6d88b5075f9078853644}\label{classui_1_1ListView_aee4869d9b2ca6d88b5075f9078853644}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)} \\
+\hline
+{\em tag} & A integer to identify the node easily. Please refer to \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a1843e13af3409763de103e52eb28f3bd}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a48d15dfd548d451a87af9a1300343725}\label{classui_1_1ListView_a48d15dfd548d451a87af9a1300343725}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a84baef5d2ad68df9c19a73da551a780d}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}\label{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add an event click callback to \hyperlink{classui_1_1ListView}{List\+View}, then one item of Listview is clicked, the callback will be called. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A callback function with type of {\ttfamily cc\+List\+View\+Callback}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ad8aeb3841d9330558f538d4aad679073}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{ui\+::\+Page\+View}, and \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}\label{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1ListView_ac67b2dd17d792bb61a9020b3935ffc79}{cc\+List\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add an event click callback to \hyperlink{classui_1_1ListView}{List\+View}, then one item of Listview is clicked, the callback will be called. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A callback function with type of {\ttfamily cc\+List\+View\+Callback}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ad8aeb3841d9330558f538d4aad679073}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a556eebb13ecb5dd706023857477c4b46}\label{classui_1_1ListView_a556eebb13ecb5dd706023857477c4b46}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Event\+Listener\+List\+View@{add\+Event\+Listener\+List\+View}}
+\index{add\+Event\+Listener\+List\+View@{add\+Event\+Listener\+List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+List\+View()}{addEventListenerListView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::add\+Event\+Listener\+List\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+List\+View\+Event}]{selector }\end{DoxyParamCaption})}
+
+Add an event click callback to \hyperlink{classui_1_1ListView}{List\+View}, then one item of Listview is clicked, the callback will be called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000145}{Deprecated}]Use {\ttfamily add\+Event\+Listener} instead. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A pointer of {\ttfamily Ref$\ast$} type. \\
+\hline
+{\em selector} & A member function pointer with type of {\ttfamily S\+E\+L\+\_\+\+List\+View\+Event}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_ad2a7ee403cd9f7559f99e34046c1a8bb}\label{classui_1_1ListView_ad2a7ee403cd9f7559f99e34046c1a8bb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!add\+Event\+Listener\+List\+View@{add\+Event\+Listener\+List\+View}}
+\index{add\+Event\+Listener\+List\+View@{add\+Event\+Listener\+List\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+List\+View()}{addEventListenerListView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+List\+View\+::add\+Event\+Listener\+List\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+List\+View\+Event}]{selector }\end{DoxyParamCaption})}
+
+Add an event click callback to \hyperlink{classui_1_1ListView}{List\+View}, then one item of Listview is clicked, the callback will be called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000380}{Deprecated}]Use {\ttfamily add\+Event\+Listener} instead. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A pointer of {\ttfamily Ref$\ast$} type. \\
+\hline
+{\em selector} & A member function pointer with type of {\ttfamily S\+E\+L\+\_\+\+List\+View\+Event}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a5dc4e7e3fe7c954a4b07ea53bd40ca97}\label{classui_1_1ListView_a5dc4e7e3fe7c954a4b07ea53bd40ca97}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!create@{create}}
+\index{create@{create}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1ListView}{List\+View} $\ast$ ui\+::\+List\+View\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create an empty \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1ListView}{List\+View} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a31ae9f031409d417a2079fc73d220703}\label{classui_1_1ListView_a31ae9f031409d417a2079fc73d220703}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!create@{create}}
+\index{create@{create}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1ListView}{List\+View}$\ast$ ui\+::\+List\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create an empty \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1ListView}{List\+View} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_af4d954d5d1e8cb870c3026ddbd131d44}\label{classui_1_1ListView_af4d954d5d1e8cb870c3026ddbd131d44}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Bottommost\+Item\+In\+Current\+View@{get\+Bottommost\+Item\+In\+Current\+View}}
+\index{get\+Bottommost\+Item\+In\+Current\+View@{get\+Bottommost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Bottommost\+Item\+In\+Current\+View()}{getBottommostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Bottommost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the bottommost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ac3946e3858a88bfdefb9b597e09a581b}\label{classui_1_1ListView_ac3946e3858a88bfdefb9b597e09a581b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Bottommost\+Item\+In\+Current\+View@{get\+Bottommost\+Item\+In\+Current\+View}}
+\index{get\+Bottommost\+Item\+In\+Current\+View@{get\+Bottommost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Bottommost\+Item\+In\+Current\+View()}{getBottommostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Bottommost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the bottommost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ae537c409ff29867ea5b747ddf048fd7c}\label{classui_1_1ListView_ae537c409ff29867ea5b747ddf048fd7c}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Bottom\+Padding@{get\+Bottom\+Padding}}
+\index{get\+Bottom\+Padding@{get\+Bottom\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Bottom\+Padding()}{getBottomPadding()}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Bottom\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the bottom padding in \hyperlink{classui_1_1ListView}{List\+View} \begin{DoxyReturn}{Returns}
+Bottom padding in float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a7647c121e0fd17ad5cac0f6a76f9791b}\label{classui_1_1ListView_a7647c121e0fd17ad5cac0f6a76f9791b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Center\+Item\+In\+Current\+View@{get\+Center\+Item\+In\+Current\+View}}
+\index{get\+Center\+Item\+In\+Current\+View@{get\+Center\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Center\+Item\+In\+Current\+View()}{getCenterItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Center\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the center item. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_af2e7fa5bfed742f093ad2b83361cabb3}\label{classui_1_1ListView_af2e7fa5bfed742f093ad2b83361cabb3}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Center\+Item\+In\+Current\+View@{get\+Center\+Item\+In\+Current\+View}}
+\index{get\+Center\+Item\+In\+Current\+View@{get\+Center\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Center\+Item\+In\+Current\+View()}{getCenterItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Center\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the center item. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a1a6b73d54545ff7e1e4631185472b2eb}\label{classui_1_1ListView_a1a6b73d54545ff7e1e4631185472b2eb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Closest\+Item\+To\+Position@{get\+Closest\+Item\+To\+Position}}
+\index{get\+Closest\+Item\+To\+Position@{get\+Closest\+Item\+To\+Position}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Closest\+Item\+To\+Position()}{getClosestItemToPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Closest\+Item\+To\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target\+Position,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Query the closest item to a specific position in inner container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Position} & Specifies the target position in inner container\textquotesingle{}s coordinates. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An item instance if \hyperlink{protocollist-p}{list} view is not empty. Otherwise, returns null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a3b735d6f86e49897cfa1fd064b43e1e9}\label{classui_1_1ListView_a3b735d6f86e49897cfa1fd064b43e1e9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Closest\+Item\+To\+Position@{get\+Closest\+Item\+To\+Position}}
+\index{get\+Closest\+Item\+To\+Position@{get\+Closest\+Item\+To\+Position}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Closest\+Item\+To\+Position()}{getClosestItemToPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Closest\+Item\+To\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{target\+Position,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Query the closest item to a specific position in inner container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Position} & Specifies the target position in inner container\textquotesingle{}s coordinates. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An item instance if \hyperlink{protocollist-p}{list} view is not empty. Otherwise, returns null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a0d21477a14d78ef1d1355bf0ab02fb80}\label{classui_1_1ListView_a0d21477a14d78ef1d1355bf0ab02fb80}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Closest\+Item\+To\+Position\+In\+Current\+View@{get\+Closest\+Item\+To\+Position\+In\+Current\+View}}
+\index{get\+Closest\+Item\+To\+Position\+In\+Current\+View@{get\+Closest\+Item\+To\+Position\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Closest\+Item\+To\+Position\+In\+Current\+View()}{getClosestItemToPositionInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Closest\+Item\+To\+Position\+In\+Current\+View (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Query the closest item to a specific position in current view. For instance, to find the item in the center of view, call \textquotesingle{}get\+Closest\+Item\+To\+Position\+In\+Current\+View(\+Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E, Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E)\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Ratio\+In\+View} & Specifies the target position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An item instance if \hyperlink{protocollist-p}{list} view is not empty. Otherwise, returns null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ab96d0803fe3fde3d5691631b6c3d9803}\label{classui_1_1ListView_ab96d0803fe3fde3d5691631b6c3d9803}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Closest\+Item\+To\+Position\+In\+Current\+View@{get\+Closest\+Item\+To\+Position\+In\+Current\+View}}
+\index{get\+Closest\+Item\+To\+Position\+In\+Current\+View@{get\+Closest\+Item\+To\+Position\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Closest\+Item\+To\+Position\+In\+Current\+View()}{getClosestItemToPositionInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Closest\+Item\+To\+Position\+In\+Current\+View (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Query the closest item to a specific position in current view. For instance, to find the item in the center of view, call \textquotesingle{}get\+Closest\+Item\+To\+Position\+In\+Current\+View(\+Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E, Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+M\+I\+D\+D\+L\+E)\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Ratio\+In\+View} & Specifies the target position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An item instance if \hyperlink{protocollist-p}{list} view is not empty. Otherwise, returns null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}\label{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Cur\+Selected\+Index@{get\+Cur\+Selected\+Index}}
+\index{get\+Cur\+Selected\+Index@{get\+Cur\+Selected\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Cur\+Selected\+Index()}{getCurSelectedIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+List\+View\+::get\+Cur\+Selected\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query current selected widget\textquotesingle{}s index. 
+
+\begin{DoxyReturn}{Returns}
+An index of a selected item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}\label{classui_1_1ListView_a6efee3d32e83e99b248afd96dfbfef94}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Cur\+Selected\+Index@{get\+Cur\+Selected\+Index}}
+\index{get\+Cur\+Selected\+Index@{get\+Cur\+Selected\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Cur\+Selected\+Index()}{getCurSelectedIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+List\+View\+::get\+Cur\+Selected\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query current selected widget\textquotesingle{}s index. 
+
+\begin{DoxyReturn}{Returns}
+An index of a selected item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a653bb454095ef227949f7c791b68180c}\label{classui_1_1ListView_a653bb454095ef227949f7c791b68180c}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+List\+View\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a3a808390a8d9162dbbf83d5211e87f2e}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_aead0575c0e5d24da3731501afadf81e9}{ui\+::\+Page\+View}, and \hyperlink{classui_1_1PageView_a3c9b2934fdbbb44e2c456feee27b53de}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a921a755d9787f976af9424ceb16a1aa3}\label{classui_1_1ListView_a921a755d9787f976af9424ceb16a1aa3}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string ui\+::\+List\+View\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a3a808390a8d9162dbbf83d5211e87f2e}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_aead0575c0e5d24da3731501afadf81e9}{ui\+::\+Page\+View}, and \hyperlink{classui_1_1PageView_a3c9b2934fdbbb44e2c456feee27b53de}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}\label{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Index@{get\+Index}}
+\index{get\+Index@{get\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Index()}{getIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+List\+View\+::get\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item }\end{DoxyParamCaption}) const}
+
+Return the index of specified widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A widget pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of a given widget in \hyperlink{classui_1_1ListView}{List\+View}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}\label{classui_1_1ListView_a4f0306a68670aba071042347db7fe21e}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Index@{get\+Index}}
+\index{get\+Index@{get\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Index()}{getIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+List\+View\+::get\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item }\end{DoxyParamCaption}) const}
+
+Return the index of specified widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A widget pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of a given widget in \hyperlink{classui_1_1ListView}{List\+View}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_adc14ba59d9dfa3064a7d9e77fadddd38}\label{classui_1_1ListView_adc14ba59d9dfa3064a7d9e77fadddd38}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Item()}{getItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Return an item at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A widget instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ae28dcb453c3cd18850e4f34975ca64b0}\label{classui_1_1ListView_ae28dcb453c3cd18850e4f34975ca64b0}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Item()}{getItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Return an item at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A widget instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a92a6e83bdbfec80ae5133ab7ccd0a824}\label{classui_1_1ListView_a92a6e83bdbfec80ae5133ab7ccd0a824}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Items@{get\+Items}}
+\index{get\+Items@{get\+Items}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Items()}{getItems()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Widget}{Widget} $\ast$ $>$ \& ui\+::\+List\+View\+::get\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return all items in a \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxyReturn}{Returns}
+A vector of widget pointers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a4b746fb73635a3b5302fc3493d7eb725}\label{classui_1_1ListView_a4b746fb73635a3b5302fc3493d7eb725}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Items@{get\+Items}}
+\index{get\+Items@{get\+Items}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Items()}{getItems()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$\hyperlink{classui_1_1Widget}{Widget}$\ast$$>$\& ui\+::\+List\+View\+::get\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return all items in a \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxyReturn}{Returns}
+A vector of widget pointers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}\label{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Items\+Margin@{get\+Items\+Margin}}
+\index{get\+Items\+Margin@{get\+Items\+Margin}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Items\+Margin()}{getItemsMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Items\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query margin between each item in \hyperlink{classui_1_1ListView}{List\+View}. 
+
+\begin{DoxyReturn}{Returns}
+A margin in float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}\label{classui_1_1ListView_a1b035dc59aabb5c9addcef3e16917900}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Items\+Margin@{get\+Items\+Margin}}
+\index{get\+Items\+Margin@{get\+Items\+Margin}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Items\+Margin()}{getItemsMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Items\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query margin between each item in \hyperlink{classui_1_1ListView}{List\+View}. 
+
+\begin{DoxyReturn}{Returns}
+A margin in float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a734534e1c90d258a63dfa3199c2603a4}\label{classui_1_1ListView_a734534e1c90d258a63dfa3199c2603a4}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Leftmost\+Item\+In\+Current\+View@{get\+Leftmost\+Item\+In\+Current\+View}}
+\index{get\+Leftmost\+Item\+In\+Current\+View@{get\+Leftmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Leftmost\+Item\+In\+Current\+View()}{getLeftmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Leftmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the leftmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_af04187e02ececdb0124f37f1fbee32d9}\label{classui_1_1ListView_af04187e02ececdb0124f37f1fbee32d9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Leftmost\+Item\+In\+Current\+View@{get\+Leftmost\+Item\+In\+Current\+View}}
+\index{get\+Leftmost\+Item\+In\+Current\+View@{get\+Leftmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Leftmost\+Item\+In\+Current\+View()}{getLeftmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Leftmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the leftmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a6ea04d617c8705f8eb6e6fce706b737b}\label{classui_1_1ListView_a6ea04d617c8705f8eb6e6fce706b737b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Left\+Padding@{get\+Left\+Padding}}
+\index{get\+Left\+Padding@{get\+Left\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Left\+Padding()}{getLeftPadding()}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Left\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the left padding in \hyperlink{classui_1_1ListView}{List\+View} \begin{DoxyReturn}{Returns}
+Left padding in float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}\label{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Magnetic\+Allowed\+Out\+Of\+Boundary@{get\+Magnetic\+Allowed\+Out\+Of\+Boundary}}
+\index{get\+Magnetic\+Allowed\+Out\+Of\+Boundary@{get\+Magnetic\+Allowed\+Out\+Of\+Boundary}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Magnetic\+Allowed\+Out\+Of\+Boundary()}{getMagneticAllowedOutOfBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+List\+View\+::get\+Magnetic\+Allowed\+Out\+Of\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query whether the magnetic out of boundary is allowed. \mbox{\Hypertarget{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}\label{classui_1_1ListView_acfed7db635b37551e6a1429b54dd8178}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Magnetic\+Allowed\+Out\+Of\+Boundary@{get\+Magnetic\+Allowed\+Out\+Of\+Boundary}}
+\index{get\+Magnetic\+Allowed\+Out\+Of\+Boundary@{get\+Magnetic\+Allowed\+Out\+Of\+Boundary}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Magnetic\+Allowed\+Out\+Of\+Boundary()}{getMagneticAllowedOutOfBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+List\+View\+::get\+Magnetic\+Allowed\+Out\+Of\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query whether the magnetic out of boundary is allowed. \mbox{\Hypertarget{classui_1_1ListView_a78e5f1e9024b6d195035e07e4183976d}\label{classui_1_1ListView_a78e5f1e9024b6d195035e07e4183976d}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Magnetic\+Type@{get\+Magnetic\+Type}}
+\index{get\+Magnetic\+Type@{get\+Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Magnetic\+Type()}{getMagneticType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{List\+View\+::\+Magnetic\+Type} ui\+::\+List\+View\+::get\+Magnetic\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get magnetic type of \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_ab5b6b09f66fbdd931364ee64022edec7}\label{classui_1_1ListView_ab5b6b09f66fbdd931364ee64022edec7}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Magnetic\+Type@{get\+Magnetic\+Type}}
+\index{get\+Magnetic\+Type@{get\+Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Magnetic\+Type()}{getMagneticType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type} ui\+::\+List\+View\+::get\+Magnetic\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get magnetic type of \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_abb5fcb39d6937a6840e6ea39c91978d5}\label{classui_1_1ListView_abb5fcb39d6937a6840e6ea39c91978d5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Rightmost\+Item\+In\+Current\+View@{get\+Rightmost\+Item\+In\+Current\+View}}
+\index{get\+Rightmost\+Item\+In\+Current\+View@{get\+Rightmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Rightmost\+Item\+In\+Current\+View()}{getRightmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Rightmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the rightmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ae6bf1a01bfab1bc737bd3a3f33497f6b}\label{classui_1_1ListView_ae6bf1a01bfab1bc737bd3a3f33497f6b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Rightmost\+Item\+In\+Current\+View@{get\+Rightmost\+Item\+In\+Current\+View}}
+\index{get\+Rightmost\+Item\+In\+Current\+View@{get\+Rightmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Rightmost\+Item\+In\+Current\+View()}{getRightmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Rightmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the rightmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ad2b4b1c9eceedda8d659058d2d6a92bf}\label{classui_1_1ListView_ad2b4b1c9eceedda8d659058d2d6a92bf}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Right\+Padding@{get\+Right\+Padding}}
+\index{get\+Right\+Padding@{get\+Right\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Right\+Padding()}{getRightPadding()}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Right\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the right padding in \hyperlink{classui_1_1ListView}{List\+View} \begin{DoxyReturn}{Returns}
+Right padding in float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_a85116b79e39403d670411684410feef0}\label{classui_1_1ListView_a85116b79e39403d670411684410feef0}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Scroll\+Duration@{get\+Scroll\+Duration}}
+\index{get\+Scroll\+Duration@{get\+Scroll\+Duration}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Scroll\+Duration()}{getScrollDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Scroll\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the time in seconds to scroll between items. \begin{DoxyReturn}{Returns}
+The time in seconds to scroll between items 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}{set\+Scroll\+Duration(float)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_a85116b79e39403d670411684410feef0}\label{classui_1_1ListView_a85116b79e39403d670411684410feef0}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Scroll\+Duration@{get\+Scroll\+Duration}}
+\index{get\+Scroll\+Duration@{get\+Scroll\+Duration}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Scroll\+Duration()}{getScrollDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Scroll\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the time in seconds to scroll between items. \begin{DoxyReturn}{Returns}
+The time in seconds to scroll between items 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}{set\+Scroll\+Duration(float)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_a301ef416364411d2f6e85f8a13dcda90}\label{classui_1_1ListView_a301ef416364411d2f6e85f8a13dcda90}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Topmost\+Item\+In\+Current\+View@{get\+Topmost\+Item\+In\+Current\+View}}
+\index{get\+Topmost\+Item\+In\+Current\+View@{get\+Topmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Topmost\+Item\+In\+Current\+View()}{getTopmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget} $\ast$ ui\+::\+List\+View\+::get\+Topmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the topmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ac80f26ac523ac2335d136baaf4eb5fab}\label{classui_1_1ListView_ac80f26ac523ac2335d136baaf4eb5fab}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Topmost\+Item\+In\+Current\+View@{get\+Topmost\+Item\+In\+Current\+View}}
+\index{get\+Topmost\+Item\+In\+Current\+View@{get\+Topmost\+Item\+In\+Current\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Topmost\+Item\+In\+Current\+View()}{getTopmostItemInCurrentView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Widget}{Widget}$\ast$ ui\+::\+List\+View\+::get\+Topmost\+Item\+In\+Current\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the topmost item in horizontal \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyReturn}{Returns}
+An item instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_afa41ccf9bd1b8301f33745756424625d}\label{classui_1_1ListView_afa41ccf9bd1b8301f33745756424625d}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!get\+Top\+Padding@{get\+Top\+Padding}}
+\index{get\+Top\+Padding@{get\+Top\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{get\+Top\+Padding()}{getTopPadding()}}
+{\footnotesize\ttfamily float ui\+::\+List\+View\+::get\+Top\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the top padding in \hyperlink{classui_1_1ListView}{List\+View} \begin{DoxyReturn}{Returns}
+Top padding in float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}\label{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!insert\+Custom\+Item@{insert\+Custom\+Item}}
+\index{insert\+Custom\+Item@{insert\+Custom\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{insert\+Custom\+Item()}{insertCustomItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::insert\+Custom\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Insert a custom widget into \hyperlink{classui_1_1ListView}{List\+View} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A widget pointer to be inserted. \\
+\hline
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}\label{classui_1_1ListView_ab6e5f75b2cdf36871d994fccd55c75ae}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!insert\+Custom\+Item@{insert\+Custom\+Item}}
+\index{insert\+Custom\+Item@{insert\+Custom\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{insert\+Custom\+Item()}{insertCustomItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::insert\+Custom\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Insert a custom widget into \hyperlink{classui_1_1ListView}{List\+View} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A widget pointer to be inserted. \\
+\hline
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}\label{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!insert\+Default\+Item@{insert\+Default\+Item}}
+\index{insert\+Default\+Item@{insert\+Default\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{insert\+Default\+Item()}{insertDefaultItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::insert\+Default\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Insert a default item(create by cloning model) into listview at a give index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & An index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}\label{classui_1_1ListView_aca5f63e916a28a84842f8a1bc4320cdb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!insert\+Default\+Item@{insert\+Default\+Item}}
+\index{insert\+Default\+Item@{insert\+Default\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{insert\+Default\+Item()}{insertDefaultItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::insert\+Default\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Insert a default item(create by cloning model) into listview at a give index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & An index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a188c4b2a431157ef28ba92c26f1157cc}\label{classui_1_1ListView_a188c4b2a431157ef28ba92c26f1157cc}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom@{jump\+To\+Bottom}}
+\index{jump\+To\+Bottom@{jump\+To\+Bottom}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom()}{jumpToBottom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override functions 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a239246ce0e70711ca19504badf56db13}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_aeffa88663d344fbba91e24360458e207}\label{classui_1_1ListView_aeffa88663d344fbba91e24360458e207}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom@{jump\+To\+Bottom}}
+\index{jump\+To\+Bottom@{jump\+To\+Bottom}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom()}{jumpToBottom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override functions 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a239246ce0e70711ca19504badf56db13}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a298f184bd6a527a03e8a3f28ec20fc6a}\label{classui_1_1ListView_a298f184bd6a527a03e8a3f28ec20fc6a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom\+Left@{jump\+To\+Bottom\+Left}}
+\index{jump\+To\+Bottom\+Left@{jump\+To\+Bottom\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom\+Left()}{jumpToBottomLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Bottom\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to bottom and left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_aa06afeba18463d129dfdc3a9352aaf4a}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a001320a34234f830a4f35096ceb86d48}\label{classui_1_1ListView_a001320a34234f830a4f35096ceb86d48}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom\+Left@{jump\+To\+Bottom\+Left}}
+\index{jump\+To\+Bottom\+Left@{jump\+To\+Bottom\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom\+Left()}{jumpToBottomLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Bottom\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to bottom and left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_aa06afeba18463d129dfdc3a9352aaf4a}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ac76553a765cff9931a56c75c75484650}\label{classui_1_1ListView_ac76553a765cff9931a56c75c75484650}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom\+Right@{jump\+To\+Bottom\+Right}}
+\index{jump\+To\+Bottom\+Right@{jump\+To\+Bottom\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom\+Right()}{jumpToBottomRight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Bottom\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to bottom and right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a71e1de6f85955a4d4b96931244bffd22}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a1147d7b2ad27eb3101bb6e31d1fe73e1}\label{classui_1_1ListView_a1147d7b2ad27eb3101bb6e31d1fe73e1}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Bottom\+Right@{jump\+To\+Bottom\+Right}}
+\index{jump\+To\+Bottom\+Right@{jump\+To\+Bottom\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Bottom\+Right()}{jumpToBottomRight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Bottom\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to bottom and right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a71e1de6f85955a4d4b96931244bffd22}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}\label{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Item@{jump\+To\+Item}}
+\index{jump\+To\+Item@{jump\+To\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Item()}{jumpToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Jump to specific item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & Specifies the item\textquotesingle{}s index \\
+\hline
+{\em position\+Ratio\+In\+View} & Specifies the position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}\label{classui_1_1ListView_a15d78fe1de4f989add6874266d153804}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Item@{jump\+To\+Item}}
+\index{jump\+To\+Item@{jump\+To\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Item()}{jumpToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Jump to specific item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & Specifies the item\textquotesingle{}s index \\
+\hline
+{\em position\+Ratio\+In\+View} & Specifies the position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a80457edf6517c62347fab9583e6ad063}\label{classui_1_1ListView_a80457edf6517c62347fab9583e6ad063}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Left@{jump\+To\+Left}}
+\index{jump\+To\+Left@{jump\+To\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Left()}{jumpToLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a997d4610191286c00079f1b75062f5a5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a141ba140d285c6cc7eba00c9a6dc1efc}\label{classui_1_1ListView_a141ba140d285c6cc7eba00c9a6dc1efc}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Left@{jump\+To\+Left}}
+\index{jump\+To\+Left@{jump\+To\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Left()}{jumpToLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a997d4610191286c00079f1b75062f5a5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_aeb683b8f4eb94d0f22d78c0652bd331a}\label{classui_1_1ListView_aeb683b8f4eb94d0f22d78c0652bd331a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Both\+Direction@{jump\+To\+Percent\+Both\+Direction}}
+\index{jump\+To\+Percent\+Both\+Direction@{jump\+To\+Percent\+Both\+Direction}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Both\+Direction()}{jumpToPercentBothDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Percent\+Both\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to both direction percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a288c35e8d899c4455f5574099fc17d1d}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ad6bbe89fde987d1bb2ead8de0bc688b5}\label{classui_1_1ListView_ad6bbe89fde987d1bb2ead8de0bc688b5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Both\+Direction@{jump\+To\+Percent\+Both\+Direction}}
+\index{jump\+To\+Percent\+Both\+Direction@{jump\+To\+Percent\+Both\+Direction}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Both\+Direction()}{jumpToPercentBothDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Percent\+Both\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to both direction percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a288c35e8d899c4455f5574099fc17d1d}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a770ffffaa274cc0bd86828910586632d}\label{classui_1_1ListView_a770ffffaa274cc0bd86828910586632d}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Horizontal@{jump\+To\+Percent\+Horizontal}}
+\index{jump\+To\+Percent\+Horizontal@{jump\+To\+Percent\+Horizontal}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Horizontal()}{jumpToPercentHorizontal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Percent\+Horizontal (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to horizontal percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ab3816071846ac5c8d4b5b4ae3c3ee5a5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a783891312300a50f3b05ff15ea3f5b19}\label{classui_1_1ListView_a783891312300a50f3b05ff15ea3f5b19}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Horizontal@{jump\+To\+Percent\+Horizontal}}
+\index{jump\+To\+Percent\+Horizontal@{jump\+To\+Percent\+Horizontal}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Horizontal()}{jumpToPercentHorizontal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Percent\+Horizontal (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to horizontal percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ab3816071846ac5c8d4b5b4ae3c3ee5a5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a970383495e57eebfa9306c1876dbcff6}\label{classui_1_1ListView_a970383495e57eebfa9306c1876dbcff6}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Vertical@{jump\+To\+Percent\+Vertical}}
+\index{jump\+To\+Percent\+Vertical@{jump\+To\+Percent\+Vertical}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Vertical()}{jumpToPercentVertical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Percent\+Vertical (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to vertical percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a64f1cc13581ea0173bf708bb10198c2f}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a0c76de2de006a8e9eea7225df545622e}\label{classui_1_1ListView_a0c76de2de006a8e9eea7225df545622e}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Percent\+Vertical@{jump\+To\+Percent\+Vertical}}
+\index{jump\+To\+Percent\+Vertical@{jump\+To\+Percent\+Vertical}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Percent\+Vertical()}{jumpToPercentVertical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Percent\+Vertical (\begin{DoxyParamCaption}\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to vertical percent position of scrollview. 
+\begin{DoxyParams}{Parameters}
+{\em percent} & A value between 0 and 100. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a64f1cc13581ea0173bf708bb10198c2f}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a07a1265c424478b68dc7d691bd29dc85}\label{classui_1_1ListView_a07a1265c424478b68dc7d691bd29dc85}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Right@{jump\+To\+Right}}
+\index{jump\+To\+Right@{jump\+To\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Right()}{jumpToRight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ade536205c63207b9efdf6d2dac9631ae}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_aca7e4b44da940fdab188d7b713ada04a}\label{classui_1_1ListView_aca7e4b44da940fdab188d7b713ada04a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Right@{jump\+To\+Right}}
+\index{jump\+To\+Right@{jump\+To\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Right()}{jumpToRight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ade536205c63207b9efdf6d2dac9631ae}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_af3477294f3fc87bbc9aaa1bec3c86fd8}\label{classui_1_1ListView_af3477294f3fc87bbc9aaa1bec3c86fd8}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top@{jump\+To\+Top}}
+\index{jump\+To\+Top@{jump\+To\+Top}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top()}{jumpToTop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_abdc304338a86f1fd0cea613fca25ffef}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ac816b897b329ca67365e8e3f31a5bf18}\label{classui_1_1ListView_ac816b897b329ca67365e8e3f31a5bf18}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top@{jump\+To\+Top}}
+\index{jump\+To\+Top@{jump\+To\+Top}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top()}{jumpToTop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_abdc304338a86f1fd0cea613fca25ffef}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a18c1e20a9c26bffa2ff05156673d4ce9}\label{classui_1_1ListView_a18c1e20a9c26bffa2ff05156673d4ce9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top\+Left@{jump\+To\+Top\+Left}}
+\index{jump\+To\+Top\+Left@{jump\+To\+Top\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top\+Left()}{jumpToTopLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Top\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top and left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ac61119b9f40bf3a81e3a71e3d84c0c90}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a16fed680b5ef2a65ae0e3a1540e9727e}\label{classui_1_1ListView_a16fed680b5ef2a65ae0e3a1540e9727e}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top\+Left@{jump\+To\+Top\+Left}}
+\index{jump\+To\+Top\+Left@{jump\+To\+Top\+Left}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top\+Left()}{jumpToTopLeft()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Top\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top and left boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ac61119b9f40bf3a81e3a71e3d84c0c90}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a9410511689cc348ef305886a44ec0d96}\label{classui_1_1ListView_a9410511689cc348ef305886a44ec0d96}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top\+Right@{jump\+To\+Top\+Right}}
+\index{jump\+To\+Top\+Right@{jump\+To\+Top\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top\+Right()}{jumpToTopRight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::jump\+To\+Top\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top and right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ae2496521c218e2e53a364d98f223883b}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a7b90df8fdae3bf08a3714c332f8c2854}\label{classui_1_1ListView_a7b90df8fdae3bf08a3714c332f8c2854}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!jump\+To\+Top\+Right@{jump\+To\+Top\+Right}}
+\index{jump\+To\+Top\+Right@{jump\+To\+Top\+Right}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{jump\+To\+Top\+Right()}{jumpToTopRight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::jump\+To\+Top\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move inner container to top and right boundary of scrollview. 
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ae2496521c218e2e53a364d98f223883b}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}\label{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!push\+Back\+Custom\+Item@{push\+Back\+Custom\+Item}}
+\index{push\+Back\+Custom\+Item@{push\+Back\+Custom\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{push\+Back\+Custom\+Item()}{pushBackCustomItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::push\+Back\+Custom\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item }\end{DoxyParamCaption})}
+
+Insert a custom item into the end of \hyperlink{classui_1_1ListView}{List\+View}. 
+\begin{DoxyParams}{Parameters}
+{\em item} & An item in {\ttfamily Widget$\ast$}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}\label{classui_1_1ListView_afb0981c8954c749a31ca95d38b22de2a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!push\+Back\+Custom\+Item@{push\+Back\+Custom\+Item}}
+\index{push\+Back\+Custom\+Item@{push\+Back\+Custom\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{push\+Back\+Custom\+Item()}{pushBackCustomItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::push\+Back\+Custom\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{item }\end{DoxyParamCaption})}
+
+Insert a custom item into the end of \hyperlink{classui_1_1ListView}{List\+View}. 
+\begin{DoxyParams}{Parameters}
+{\em item} & An item in {\ttfamily Widget$\ast$}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}\label{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!push\+Back\+Default\+Item@{push\+Back\+Default\+Item}}
+\index{push\+Back\+Default\+Item@{push\+Back\+Default\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{push\+Back\+Default\+Item()}{pushBackDefaultItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::push\+Back\+Default\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Insert a default item(create by a cloned model) at the end of the listview. \mbox{\Hypertarget{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}\label{classui_1_1ListView_a9ef7771758b5ffa248ac88d3bff471fe}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!push\+Back\+Default\+Item@{push\+Back\+Default\+Item}}
+\index{push\+Back\+Default\+Item@{push\+Back\+Default\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{push\+Back\+Default\+Item()}{pushBackDefaultItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::push\+Back\+Default\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Insert a default item(create by a cloned model) at the end of the listview. \mbox{\Hypertarget{classui_1_1ListView_a67165072bad734eacc1cd3607471f024}\label{classui_1_1ListView_a67165072bad734eacc1cd3607471f024}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!refresh\+View@{refresh\+View}}
+\index{refresh\+View@{refresh\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{refresh\+View()}{refreshView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::refresh\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refresh content view of \hyperlink{classui_1_1ListView}{List\+View}. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000147}{Deprecated}]Use method \hyperlink{classui_1_1Layout_a280952253418e0951ecdff43172a3c68}{force\+Do\+Layout()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1ListView_a2bf4b49c5d219112bf5690b891ea9cad}\label{classui_1_1ListView_a2bf4b49c5d219112bf5690b891ea9cad}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!refresh\+View@{refresh\+View}}
+\index{refresh\+View@{refresh\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{refresh\+View()}{refreshView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+List\+View\+::refresh\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refresh content view of \hyperlink{classui_1_1ListView}{List\+View}. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000382}{Deprecated}]Use method \hyperlink{classui_1_1Layout_a280952253418e0951ecdff43172a3c68}{force\+Do\+Layout()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1ListView_a7e534825fe60406ed544a254b0975489}\label{classui_1_1ListView_a7e534825fe60406ed544a254b0975489}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1ListView_a01691c095058bc86f372e6439b15b151}{remove\+All\+Children\+With\+Cleanup(bool)}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_aaef2d3ce7b1b7d485af4a3657bea17e5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_acfa88e95692c1e9713697fbd2754379b}\label{classui_1_1ListView_acfa88e95692c1e9713697fbd2754379b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1ListView_a01691c095058bc86f372e6439b15b151}{remove\+All\+Children\+With\+Cleanup(bool)}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_aaef2d3ce7b1b7d485af4a3657bea17e5}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a01691c095058bc86f372e6439b15b151}\label{classui_1_1ListView_a01691c095058bc86f372e6439b15b151}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & true if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a04bcc9bd8c55dea8f034a8380b3ab3a8}\label{classui_1_1ListView_a04bcc9bd8c55dea8f034a8380b3ab3a8}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & true if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a7002fe4ad783aeccf56cebbe4144036e}\label{classui_1_1ListView_a7002fe4ad783aeccf56cebbe4144036e}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+Child (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a678108e716966e8beccc25c0de1d9b29}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ace4890246e03a8de66cfe9d0312df365}\label{classui_1_1ListView_ace4890246e03a8de66cfe9d0312df365}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a678108e716966e8beccc25c0de1d9b29}{ui\+::\+Scroll\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}\label{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Item@{remove\+Item}}
+\index{remove\+Item@{remove\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Item()}{removeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Remove an item at given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}\label{classui_1_1ListView_a71d47608a35c7e6b7c4d986916998baa}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Item@{remove\+Item}}
+\index{remove\+Item@{remove\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Item()}{removeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Remove an item at given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in ssize\+\_\+t. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}\label{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Last\+Item@{remove\+Last\+Item}}
+\index{remove\+Last\+Item@{remove\+Last\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Last\+Item()}{removeLastItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+Last\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes the last item of \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}\label{classui_1_1ListView_ac1f87fcfe590bd09123528ef19885cdb}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!remove\+Last\+Item@{remove\+Last\+Item}}
+\index{remove\+Last\+Item@{remove\+Last\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{remove\+Last\+Item()}{removeLastItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::remove\+Last\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes the last item of \hyperlink{classui_1_1ListView}{List\+View}. \mbox{\Hypertarget{classui_1_1ListView_ad02cdf77d0d8f0dd2586b2bc083d4750}\label{classui_1_1ListView_ad02cdf77d0d8f0dd2586b2bc083d4750}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!request\+Do\+Layout@{request\+Do\+Layout}}
+\index{request\+Do\+Layout@{request\+Do\+Layout}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{request\+Do\+Layout()}{requestDoLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::request\+Do\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+request to refresh widget layout 
+
+Reimplemented from \hyperlink{classui_1_1Layout_a972bfe6c80741c99becff44a3f991558}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ab559aec6b481480fad169f2a53094028}\label{classui_1_1ListView_ab559aec6b481480fad169f2a53094028}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!request\+Do\+Layout@{request\+Do\+Layout}}
+\index{request\+Do\+Layout@{request\+Do\+Layout}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{request\+Do\+Layout()}{requestDoLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::request\+Do\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+request to refresh widget layout 
+
+Reimplemented from \hyperlink{classui_1_1Layout_a972bfe6c80741c99becff44a3f991558}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}\label{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!request\+Refresh\+View@{request\+Refresh\+View}}
+\index{request\+Refresh\+View@{request\+Refresh\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{request\+Refresh\+View()}{requestRefreshView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+List\+View\+::request\+Refresh\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refresh view and layout of \hyperlink{classui_1_1ListView}{List\+View} manually. This method will mark \hyperlink{classui_1_1ListView}{List\+View} content as dirty and the content view will be refreshed in the next frame. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000146}{Deprecated}]Use method \hyperlink{classui_1_1ListView_ad02cdf77d0d8f0dd2586b2bc083d4750}{request\+Do\+Layout()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}\label{classui_1_1ListView_a4c022c87acd7ba5ddaaae7a3f0dac170}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!request\+Refresh\+View@{request\+Refresh\+View}}
+\index{request\+Refresh\+View@{request\+Refresh\+View}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{request\+Refresh\+View()}{requestRefreshView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+List\+View\+::request\+Refresh\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refresh view and layout of \hyperlink{classui_1_1ListView}{List\+View} manually. This method will mark \hyperlink{classui_1_1ListView}{List\+View} content as dirty and the content view will be refreshed in the next frame. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000381}{Deprecated}]Use method \hyperlink{classui_1_1ListView_ad02cdf77d0d8f0dd2586b2bc083d4750}{request\+Do\+Layout()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}\label{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!scroll\+To\+Item@{scroll\+To\+Item}}
+\index{scroll\+To\+Item@{scroll\+To\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Item()}{scrollToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::scroll\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Scroll to specific item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Ratio\+In\+View} & Specifies the position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+{\em time\+In\+Sec} & Scroll time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}\label{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!scroll\+To\+Item@{scroll\+To\+Item}}
+\index{scroll\+To\+Item@{scroll\+To\+Item}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Item()}{scrollToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::scroll\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+Ratio\+In\+View,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{item\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Scroll to specific item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Ratio\+In\+View} & Specifies the position with ratio in \hyperlink{protocollist-p}{list} view\textquotesingle{}s content size. \\
+\hline
+{\em item\+Anchor\+Point} & Specifies an anchor point of each item for position to calculate distance. \\
+\hline
+{\em time\+In\+Sec} & Scroll time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_aa68f32002427564b3608cb5ee7a30c9b}\label{classui_1_1ListView_aa68f32002427564b3608cb5ee7a30c9b}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Bottom\+Padding@{set\+Bottom\+Padding}}
+\index{set\+Bottom\+Padding@{set\+Bottom\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Bottom\+Padding()}{setBottomPadding()}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Bottom\+Padding (\begin{DoxyParamCaption}\item[{float}]{b }\end{DoxyParamCaption})}
+
+Change padding with bottom padding 
+\begin{DoxyParams}{Parameters}
+{\em b} & Bottom padding in float \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}\label{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Cur\+Selected\+Index@{set\+Cur\+Selected\+Index}}
+\index{set\+Cur\+Selected\+Index@{set\+Cur\+Selected\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Cur\+Selected\+Index()}{setCurSelectedIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Cur\+Selected\+Index (\begin{DoxyParamCaption}\item[{int}]{item\+Index }\end{DoxyParamCaption})}
+
+
+
+Set current selected widget\textquotesingle{}s index and call Touch\+Event\+Type\+::\+E\+N\+D\+ED event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & A index of a selected item. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}\label{classui_1_1ListView_a087e340d27a4f774c63b5b8dadd4206a}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Cur\+Selected\+Index@{set\+Cur\+Selected\+Index}}
+\index{set\+Cur\+Selected\+Index@{set\+Cur\+Selected\+Index}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Cur\+Selected\+Index()}{setCurSelectedIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Cur\+Selected\+Index (\begin{DoxyParamCaption}\item[{int}]{item\+Index }\end{DoxyParamCaption})}
+
+
+
+Set current selected widget\textquotesingle{}s index and call Touch\+Event\+Type\+::\+E\+N\+D\+ED event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & A index of a selected item. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_aaac3381602537a823529058b64bffabf}\label{classui_1_1ListView_aaac3381602537a823529058b64bffabf}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Direction()}{setDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes scroll direction of scrollview.
+
+Direction Direction\+::\+V\+E\+R\+T\+I\+C\+AL means vertical scroll, Direction\+::\+H\+O\+R\+I\+Z\+O\+N\+T\+AL means horizontal scroll. 
+\begin{DoxyParams}{Parameters}
+{\em dir} & Set the \hyperlink{protocollist-p}{list} view\textquotesingle{}s scroll direction. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a7b30815b6ca380b56c974b6c0b6aa78e}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_a4ac6e8672026f60e326ffc054d167365}{ui\+::\+Page\+View}, and \hyperlink{classui_1_1PageView_a594124394d2bc1dff86069b87939b14c}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_aa4999666131727cdb1a32f13957914e3}\label{classui_1_1ListView_aa4999666131727cdb1a32f13957914e3}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Direction()}{setDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+List\+View\+::set\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes scroll direction of scrollview.
+
+Direction Direction\+::\+V\+E\+R\+T\+I\+C\+AL means vertical scroll, Direction\+::\+H\+O\+R\+I\+Z\+O\+N\+T\+AL means horizontal scroll. 
+\begin{DoxyParams}{Parameters}
+{\em dir} & Set the \hyperlink{protocollist-p}{list} view\textquotesingle{}s scroll direction. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ScrollView_a7b30815b6ca380b56c974b6c0b6aa78e}{ui\+::\+Scroll\+View}.
+
+
+
+Reimplemented in \hyperlink{classui_1_1PageView_a4ac6e8672026f60e326ffc054d167365}{ui\+::\+Page\+View}, and \hyperlink{classui_1_1PageView_a594124394d2bc1dff86069b87939b14c}{ui\+::\+Page\+View}.
+
+\mbox{\Hypertarget{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}\label{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Gravity@{set\+Gravity}}
+\index{set\+Gravity@{set\+Gravity}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Gravity()}{setGravity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Gravity (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity}}]{gravity }\end{DoxyParamCaption})}
+
+Set the gravity of \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxySeeAlso}{See also}
+{\ttfamily List\+View\+Gravity} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}\label{classui_1_1ListView_ae65016cdf079cded10de1db27fff4be9}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Gravity@{set\+Gravity}}
+\index{set\+Gravity@{set\+Gravity}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Gravity()}{setGravity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Gravity (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ListView_af79b44631b38c1782c384830acf20cf6}{Gravity}}]{gravity }\end{DoxyParamCaption})}
+
+Set the gravity of \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxySeeAlso}{See also}
+{\ttfamily List\+View\+Gravity} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}\label{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Item\+Model@{set\+Item\+Model}}
+\index{set\+Item\+Model@{set\+Item\+Model}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Item\+Model()}{setItemModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Item\+Model (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{model }\end{DoxyParamCaption})}
+
+Set an item model for listview.
+
+When calling {\ttfamily push\+Back\+Default\+Item}, the model will be used as a blueprint and new model copy will be inserted into \hyperlink{classui_1_1ListView}{List\+View}. 
+\begin{DoxyParams}{Parameters}
+{\em model} & Model in {\ttfamily Widget$\ast$}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}\label{classui_1_1ListView_ab925e8282e44c05155b27b27d4a05808}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Item\+Model@{set\+Item\+Model}}
+\index{set\+Item\+Model@{set\+Item\+Model}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Item\+Model()}{setItemModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Item\+Model (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{model }\end{DoxyParamCaption})}
+
+Set an item model for listview.
+
+When calling {\ttfamily push\+Back\+Default\+Item}, the model will be used as a blueprint and new model copy will be inserted into \hyperlink{classui_1_1ListView}{List\+View}. 
+\begin{DoxyParams}{Parameters}
+{\em model} & Model in {\ttfamily Widget$\ast$}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}\label{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Items\+Margin@{set\+Items\+Margin}}
+\index{set\+Items\+Margin@{set\+Items\+Margin}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Items\+Margin()}{setItemsMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Items\+Margin (\begin{DoxyParamCaption}\item[{float}]{margin }\end{DoxyParamCaption})}
+
+Set the margin between each item in \hyperlink{classui_1_1ListView}{List\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em margin} & A margin in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}\label{classui_1_1ListView_a945511bd4d4c08d528bd1cf50dbedb35}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Items\+Margin@{set\+Items\+Margin}}
+\index{set\+Items\+Margin@{set\+Items\+Margin}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Items\+Margin()}{setItemsMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Items\+Margin (\begin{DoxyParamCaption}\item[{float}]{margin }\end{DoxyParamCaption})}
+
+Set the margin between each item in \hyperlink{classui_1_1ListView}{List\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em margin} & A margin in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a3ea5e926f73d1ed517d3e49c8acc53f2}\label{classui_1_1ListView_a3ea5e926f73d1ed517d3e49c8acc53f2}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Left\+Padding@{set\+Left\+Padding}}
+\index{set\+Left\+Padding@{set\+Left\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Left\+Padding()}{setLeftPadding()}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Left\+Padding (\begin{DoxyParamCaption}\item[{float}]{l }\end{DoxyParamCaption})}
+
+Change padding with left padding 
+\begin{DoxyParams}{Parameters}
+{\em l} & Left padding in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}\label{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Magnetic\+Allowed\+Out\+Of\+Boundary@{set\+Magnetic\+Allowed\+Out\+Of\+Boundary}}
+\index{set\+Magnetic\+Allowed\+Out\+Of\+Boundary@{set\+Magnetic\+Allowed\+Out\+Of\+Boundary}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Magnetic\+Allowed\+Out\+Of\+Boundary()}{setMagneticAllowedOutOfBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Magnetic\+Allowed\+Out\+Of\+Boundary (\begin{DoxyParamCaption}\item[{bool}]{magnetic\+Allowed\+Out\+Of\+Boundary }\end{DoxyParamCaption})}
+
+Set magnetic allowed out of boundary. \mbox{\Hypertarget{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}\label{classui_1_1ListView_a0869253d15f9257c5313c5b156bc5ba5}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Magnetic\+Allowed\+Out\+Of\+Boundary@{set\+Magnetic\+Allowed\+Out\+Of\+Boundary}}
+\index{set\+Magnetic\+Allowed\+Out\+Of\+Boundary@{set\+Magnetic\+Allowed\+Out\+Of\+Boundary}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Magnetic\+Allowed\+Out\+Of\+Boundary()}{setMagneticAllowedOutOfBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Magnetic\+Allowed\+Out\+Of\+Boundary (\begin{DoxyParamCaption}\item[{bool}]{magnetic\+Allowed\+Out\+Of\+Boundary }\end{DoxyParamCaption})}
+
+Set magnetic allowed out of boundary. \mbox{\Hypertarget{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}\label{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Magnetic\+Type@{set\+Magnetic\+Type}}
+\index{set\+Magnetic\+Type@{set\+Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Magnetic\+Type()}{setMagneticType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Magnetic\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type}}]{magnetic\+Type }\end{DoxyParamCaption})}
+
+Set magnetic type of \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}\label{classui_1_1ListView_ab94e44098f2d082aaf5dab97a4a02f61}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Magnetic\+Type@{set\+Magnetic\+Type}}
+\index{set\+Magnetic\+Type@{set\+Magnetic\+Type}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Magnetic\+Type()}{setMagneticType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Magnetic\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type}}]{magnetic\+Type }\end{DoxyParamCaption})}
+
+Set magnetic type of \hyperlink{classui_1_1ListView}{List\+View}. \begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1ListView_a143593e762b785241572552b060aed6f}{Magnetic\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_af258cfedf835f3dce4d180d0df3fa888}\label{classui_1_1ListView_af258cfedf835f3dce4d180d0df3fa888}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Padding@{set\+Padding}}
+\index{set\+Padding@{set\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Padding()}{setPadding()}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Padding (\begin{DoxyParamCaption}\item[{float}]{l,  }\item[{float}]{t,  }\item[{float}]{r,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+Change padding with left, top, right, and bottom padding. 
+\begin{DoxyParams}{Parameters}
+{\em l} & Left padding in float. \\
+\hline
+{\em t} & Top margin in float. \\
+\hline
+{\em r} & Right margin in float. \\
+\hline
+{\em b} & Bottom margin in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a365a73786412617945110d39c685c6b2}\label{classui_1_1ListView_a365a73786412617945110d39c685c6b2}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Right\+Padding@{set\+Right\+Padding}}
+\index{set\+Right\+Padding@{set\+Right\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Right\+Padding()}{setRightPadding()}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Right\+Padding (\begin{DoxyParamCaption}\item[{float}]{r }\end{DoxyParamCaption})}
+
+Change padding with right padding 
+\begin{DoxyParams}{Parameters}
+{\em r} & Right padding in float \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}\label{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Scroll\+Duration@{set\+Scroll\+Duration}}
+\index{set\+Scroll\+Duration@{set\+Scroll\+Duration}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Scroll\+Duration()}{setScrollDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Scroll\+Duration (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+Set the time in seconds to scroll between items. Subsequent calls of function \textquotesingle{}scroll\+To\+Item\textquotesingle{}, will take \textquotesingle{}time\textquotesingle{} seconds for scrolling. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The seconds needed to scroll between two items. \textquotesingle{}time\textquotesingle{} must be $>$= 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}{scroll\+To\+Item(ssize\+\_\+t, const Vec2\&, const Vec2\&)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}\label{classui_1_1ListView_a9f0e93625317fa86700986bed97efc88}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Scroll\+Duration@{set\+Scroll\+Duration}}
+\index{set\+Scroll\+Duration@{set\+Scroll\+Duration}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Scroll\+Duration()}{setScrollDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Scroll\+Duration (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+Set the time in seconds to scroll between items. Subsequent calls of function \textquotesingle{}scroll\+To\+Item\textquotesingle{}, will take \textquotesingle{}time\textquotesingle{} seconds for scrolling. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The seconds needed to scroll between two items. \textquotesingle{}time\textquotesingle{} must be $>$= 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1ListView_aeb284de1ebb4ae2e30c6c478d6e1d1a0}{scroll\+To\+Item(ssize\+\_\+t, const Vec2\&, const Vec2\&)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1ListView_aeb8a524c2ba33a74b77267b7815bd949}\label{classui_1_1ListView_aeb8a524c2ba33a74b77267b7815bd949}} 
+\index{ui\+::\+List\+View@{ui\+::\+List\+View}!set\+Top\+Padding@{set\+Top\+Padding}}
+\index{set\+Top\+Padding@{set\+Top\+Padding}!ui\+::\+List\+View@{ui\+::\+List\+View}}
+\subsubsection{\texorpdfstring{set\+Top\+Padding()}{setTopPadding()}}
+{\footnotesize\ttfamily void ui\+::\+List\+View\+::set\+Top\+Padding (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})}
+
+Change padding with top padding 
+\begin{DoxyParams}{Parameters}
+{\em t} & Top padding in float \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+List\+View.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+List\+View.\+cpp\end{DoxyCompactItemize}

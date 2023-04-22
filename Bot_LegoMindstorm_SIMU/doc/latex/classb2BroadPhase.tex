@@ -1,0 +1,206 @@
+\hypertarget{classb2BroadPhase}{}\section{b2\+Broad\+Phase Class Reference}
+\label{classb2BroadPhase}\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+
+
+{\ttfamily \#include $<$b2\+Broad\+Phase.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a8b47f59da4b34af73b401643bc88812b}\label{classb2BroadPhase_a8b47f59da4b34af73b401643bc88812b}} 
+enum \{ {\bfseries e\+\_\+null\+Proxy} = -\/1
+ \}
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a721b527b53f35574f5573645d27dd826}\label{classb2BroadPhase_a721b527b53f35574f5573645d27dd826}} 
+enum \{ {\bfseries e\+\_\+null\+Proxy} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32 \hyperlink{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}{Create\+Proxy} (const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, void $\ast$user\+Data)
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}\label{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}} 
+void \hyperlink{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}{Destroy\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Destroy a proxy. It is up to the client to remove any pairs. \end{DoxyCompactList}\item 
+void \hyperlink{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}{Move\+Proxy} (int32 proxy\+Id, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, const \hyperlink{structb2Vec2}{b2\+Vec2} \&displacement)
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}\label{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}} 
+void \hyperlink{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}{Touch\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Call to trigger a re-\/processing of it\textquotesingle{}s pairs on the next call to Update\+Pairs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_af5c47c036ca67d44676ea3cec73ae3d8}\label{classb2BroadPhase_af5c47c036ca67d44676ea3cec73ae3d8}} 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2BroadPhase_af5c47c036ca67d44676ea3cec73ae3d8}{Get\+Fat\+A\+A\+BB} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the fat \hyperlink{classAABB}{A\+A\+BB} for a proxy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a3b85893e3cf18b43087cb96b0b9076d1}\label{classb2BroadPhase_a3b85893e3cf18b43087cb96b0b9076d1}} 
+void $\ast$ \hyperlink{classb2BroadPhase_a3b85893e3cf18b43087cb96b0b9076d1}{Get\+User\+Data} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get user data from a proxy. Returns N\+U\+LL if the id is invalid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}\label{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}} 
+bool \hyperlink{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}{Test\+Overlap} (int32 proxy\+IdA, int32 proxy\+IdB) const
+\begin{DoxyCompactList}\small\item\em Test overlap of fat A\+A\+B\+Bs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}\label{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}} 
+int32 \hyperlink{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}{Get\+Proxy\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get the number of proxies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}\label{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}} 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}{Update\+Pairs} (T $\ast$callback)
+\begin{DoxyCompactList}\small\item\em Update the pairs. This results in pair callbacks. This can only add pairs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}{Query} (T $\ast$callback, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}{Ray\+Cast} (T $\ast$callback, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input) const
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}\label{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}} 
+int32 \hyperlink{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}{Get\+Tree\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the embedded tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a29612faf9f0191827440178629d5e887}\label{classb2BroadPhase_a29612faf9f0191827440178629d5e887}} 
+int32 \hyperlink{classb2BroadPhase_a29612faf9f0191827440178629d5e887}{Get\+Tree\+Balance} () const
+\begin{DoxyCompactList}\small\item\em Get the balance of the embedded tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}\label{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}} 
+float32 \hyperlink{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}{Get\+Tree\+Quality} () const
+\begin{DoxyCompactList}\small\item\em Get the quality metric of the embedded tree. \end{DoxyCompactList}\item 
+void \hyperlink{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}{Shift\+Origin} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&new\+Origin)
+\item 
+int32 \hyperlink{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}{Create\+Proxy} (const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, void $\ast$user\+Data)
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}\label{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}} 
+void \hyperlink{classb2BroadPhase_a84f0fb227dc01a9b9baa55c7b8c68984}{Destroy\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Destroy a proxy. It is up to the client to remove any pairs. \end{DoxyCompactList}\item 
+void \hyperlink{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}{Move\+Proxy} (int32 proxy\+Id, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb, const \hyperlink{structb2Vec2}{b2\+Vec2} \&displacement)
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}\label{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}} 
+void \hyperlink{classb2BroadPhase_a67b296431ebbc7b44037f21d645d9166}{Touch\+Proxy} (int32 proxy\+Id)
+\begin{DoxyCompactList}\small\item\em Call to trigger a re-\/processing of it\textquotesingle{}s pairs on the next call to Update\+Pairs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_aac8a590072e98a19fa0e9e6cfa37684f}\label{classb2BroadPhase_aac8a590072e98a19fa0e9e6cfa37684f}} 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2BroadPhase_aac8a590072e98a19fa0e9e6cfa37684f}{Get\+Fat\+A\+A\+BB} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get the fat \hyperlink{classAABB}{A\+A\+BB} for a proxy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a9d8134b21cc9d3786a62813dcabadcf4}\label{classb2BroadPhase_a9d8134b21cc9d3786a62813dcabadcf4}} 
+void $\ast$ \hyperlink{classb2BroadPhase_a9d8134b21cc9d3786a62813dcabadcf4}{Get\+User\+Data} (int32 proxy\+Id) const
+\begin{DoxyCompactList}\small\item\em Get user data from a proxy. Returns nullptr if the id is invalid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}\label{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}} 
+bool \hyperlink{classb2BroadPhase_a263cc21e2a3f1f892c20b048eca3cad6}{Test\+Overlap} (int32 proxy\+IdA, int32 proxy\+IdB) const
+\begin{DoxyCompactList}\small\item\em Test overlap of fat A\+A\+B\+Bs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}\label{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}} 
+int32 \hyperlink{classb2BroadPhase_ab7a8c31223d8404b79f6c57e8fc69837}{Get\+Proxy\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get the number of proxies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}\label{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}} 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_a0a1acd693466b997700242ae00784c20}{Update\+Pairs} (T $\ast$callback)
+\begin{DoxyCompactList}\small\item\em Update the pairs. This results in pair callbacks. This can only add pairs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}{Query} (T $\ast$callback, const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&aabb) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}{Ray\+Cast} (T $\ast$callback, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input) const
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}\label{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}} 
+int32 \hyperlink{classb2BroadPhase_a868f95225d62c3ea79d231ed305253ea}{Get\+Tree\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the embedded tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a29612faf9f0191827440178629d5e887}\label{classb2BroadPhase_a29612faf9f0191827440178629d5e887}} 
+int32 \hyperlink{classb2BroadPhase_a29612faf9f0191827440178629d5e887}{Get\+Tree\+Balance} () const
+\begin{DoxyCompactList}\small\item\em Get the balance of the embedded tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}\label{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}} 
+float32 \hyperlink{classb2BroadPhase_a4e7d2f5d16ac100b18511e6a42e758bf}{Get\+Tree\+Quality} () const
+\begin{DoxyCompactList}\small\item\em Get the quality metric of the embedded tree. \end{DoxyCompactList}\item 
+void \hyperlink{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}{Shift\+Origin} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&new\+Origin)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2BroadPhase_ab98c00f14bde2796d3ccec29cf365701}\label{classb2BroadPhase_ab98c00f14bde2796d3ccec29cf365701}} 
+class {\bfseries b2\+Dynamic\+Tree}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The broad-\/phase is used for computing pairs and performing volume queries and ray casts. This broad-\/phase does not persist pairs. Instead, this reports potentially new pairs. It is up to the client to consume the new pairs and to track subsequent overlap. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}\label{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Create\+Proxy@{Create\+Proxy}}
+\index{Create\+Proxy@{Create\+Proxy}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Create\+Proxy()}{CreateProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int32 b2\+Broad\+Phase\+::\+Create\+Proxy (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb,  }\item[{void $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Create a proxy with an initial \hyperlink{classAABB}{A\+A\+BB}. Pairs are not reported until Update\+Pairs is called. \mbox{\Hypertarget{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}\label{classb2BroadPhase_ae2f7af756bc55ece45221466c5af449c}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Create\+Proxy@{Create\+Proxy}}
+\index{Create\+Proxy@{Create\+Proxy}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Create\+Proxy()}{CreateProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int32 b2\+Broad\+Phase\+::\+Create\+Proxy (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb,  }\item[{void $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Create a proxy with an initial \hyperlink{classAABB}{A\+A\+BB}. Pairs are not reported until Update\+Pairs is called. \mbox{\Hypertarget{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}\label{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Move\+Proxy@{Move\+Proxy}}
+\index{Move\+Proxy@{Move\+Proxy}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Move\+Proxy()}{MoveProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Broad\+Phase\+::\+Move\+Proxy (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{displacement }\end{DoxyParamCaption})}
+
+Call Move\+Proxy as many times as you like, then when you are done call Update\+Pairs to finalized the proxy pairs (for your time step). \mbox{\Hypertarget{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}\label{classb2BroadPhase_a01dc18a19c2b5d0cc1d9cd8c8554234c}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Move\+Proxy@{Move\+Proxy}}
+\index{Move\+Proxy@{Move\+Proxy}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Move\+Proxy()}{MoveProxy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Broad\+Phase\+::\+Move\+Proxy (\begin{DoxyParamCaption}\item[{int32}]{proxy\+Id,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{displacement }\end{DoxyParamCaption})}
+
+Call Move\+Proxy as many times as you like, then when you are done call Update\+Pairs to finalized the proxy pairs (for your time step). \mbox{\Hypertarget{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}\label{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Query@{Query}}
+\index{Query@{Query}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Broad\+Phase\+::\+Query (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const}
+
+Query an \hyperlink{classAABB}{A\+A\+BB} for overlapping proxies. The callback class is called for each proxy that overlaps the supplied \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}\label{classb2BroadPhase_a187586ea98b9d16e5ef6e12fa31f8de2}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Query@{Query}}
+\index{Query@{Query}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Broad\+Phase\+::\+Query (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query an \hyperlink{classAABB}{A\+A\+BB} for overlapping proxies. The callback class is called for each proxy that overlaps the supplied \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}\label{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Broad\+Phase\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input }\end{DoxyParamCaption}) const}
+
+Ray-\/cast against the proxies in the tree. This relies on the callback to perform a exact ray-\/cast in the case were the proxy contains a shape. The callback also performs the any collision filtering. This has performance roughly equal to k $\ast$ log(n), where k is the number of collisions and n is the number of proxies in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the ray-\/cast input data. The ray extends from p1 to p1 + max\+Fraction $\ast$ (p2 -\/ p1). \\
+\hline
+{\em callback} & a callback class that is called for each proxy that is hit by the ray. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}\label{classb2BroadPhase_ae65392ea91c7d0839ed5312f78b2837a}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void b2\+Broad\+Phase\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{T $\ast$}]{callback,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Ray-\/cast against the proxies in the tree. This relies on the callback to perform a exact ray-\/cast in the case were the proxy contains a shape. The callback also performs the any collision filtering. This has performance roughly equal to k $\ast$ log(n), where k is the number of collisions and n is the number of proxies in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the ray-\/cast input data. The ray extends from p1 to p1 + max\+Fraction $\ast$ (p2 -\/ p1). \\
+\hline
+{\em callback} & a callback class that is called for each proxy that is hit by the ray. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}\label{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Shift\+Origin@{Shift\+Origin}}
+\index{Shift\+Origin@{Shift\+Origin}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Shift\+Origin()}{ShiftOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Broad\+Phase\+::\+Shift\+Origin (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{new\+Origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shift the world origin. Useful for large worlds. The shift formula is\+: position -\/= new\+Origin 
+\begin{DoxyParams}{Parameters}
+{\em new\+Origin} & the new origin with respect to the old origin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}\label{classb2BroadPhase_a410e6115e3d1b4fca61cfbf397767772}} 
+\index{b2\+Broad\+Phase@{b2\+Broad\+Phase}!Shift\+Origin@{Shift\+Origin}}
+\index{Shift\+Origin@{Shift\+Origin}!b2\+Broad\+Phase@{b2\+Broad\+Phase}}
+\subsubsection{\texorpdfstring{Shift\+Origin()}{ShiftOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Broad\+Phase\+::\+Shift\+Origin (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{new\+Origin }\end{DoxyParamCaption})}
+
+Shift the world origin. Useful for large worlds. The shift formula is\+: position -\/= new\+Origin 
+\begin{DoxyParams}{Parameters}
+{\em new\+Origin} & the new origin with respect to the old origin \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/b2\+Broad\+Phase.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/b2\+Broad\+Phase.\+cpp\end{DoxyCompactItemize}

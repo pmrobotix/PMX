@@ -1,0 +1,157 @@
+\hypertarget{classFrustum}{}\section{Frustum Class Reference}
+\label{classFrustum}\index{Frustum@{Frustum}}
+
+
+{\ttfamily \#include $<$C\+C\+Frustum.\+h$>$}
+
+
+
+Collaboration diagram for Frustum\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classFrustum__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrustum_a172ae3492592e3ac891642299d628494}{Frustum} ()
+\item 
+bool \hyperlink{classFrustum_a763ea95a5a61afb4ea0d0396fd49ab33}{init\+Frustum} (const \hyperlink{classCamera}{Camera} $\ast$camera)
+\item 
+bool \hyperlink{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}{is\+Out\+Of\+Frustum} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb) const
+\item 
+bool \hyperlink{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}{is\+Out\+Of\+Frustum} (const \hyperlink{classOBB}{O\+BB} \&obb) const
+\item 
+void \hyperlink{classFrustum_aeaee893e649086140744a814e62f5701}{set\+ClipZ} (bool clipZ)
+\item 
+\mbox{\Hypertarget{classFrustum_a7247825c3a1f8f4aa34de56e0c74aeb3}\label{classFrustum_a7247825c3a1f8f4aa34de56e0c74aeb3}} 
+bool {\bfseries is\+ClipZ} ()
+\item 
+\hyperlink{classFrustum_a172ae3492592e3ac891642299d628494}{Frustum} ()
+\item 
+bool \hyperlink{classFrustum_a3dda1026433e9335df72c7ce893cc5c6}{init\+Frustum} (const \hyperlink{classCamera}{Camera} $\ast$camera)
+\item 
+bool \hyperlink{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}{is\+Out\+Of\+Frustum} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb) const
+\item 
+bool \hyperlink{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}{is\+Out\+Of\+Frustum} (const \hyperlink{classOBB}{O\+BB} \&obb) const
+\item 
+void \hyperlink{classFrustum_aeaee893e649086140744a814e62f5701}{set\+ClipZ} (bool clipZ)
+\item 
+\mbox{\Hypertarget{classFrustum_a7247825c3a1f8f4aa34de56e0c74aeb3}\label{classFrustum_a7247825c3a1f8f4aa34de56e0c74aeb3}} 
+bool {\bfseries is\+ClipZ} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}{create\+Plane} (const \hyperlink{classCamera}{Camera} $\ast$camera)
+\item 
+void \hyperlink{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}{create\+Plane} (const \hyperlink{classCamera}{Camera} $\ast$camera)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFrustum_a0d29ca2df862ce9c8f848278540fb1a4}\label{classFrustum_a0d29ca2df862ce9c8f848278540fb1a4}} 
+\hyperlink{classPlane}{Plane} {\bfseries \+\_\+plane} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{classFrustum_a0c1cde87984a42f04cfd77a667ff5226}\label{classFrustum_a0c1cde87984a42f04cfd77a667ff5226}} 
+bool {\bfseries \+\_\+clipZ}
+\item 
+\mbox{\Hypertarget{classFrustum_ac210ea665f1beb2f067bd762746ace94}\label{classFrustum_ac210ea665f1beb2f067bd762746ace94}} 
+bool {\bfseries \+\_\+initialized}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFrustum_adc0591c2c6aa3aa864336ece4978ab62}\label{classFrustum_adc0591c2c6aa3aa864336ece4978ab62}} 
+class {\bfseries Camera}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the frustum is a six-\/side geometry, usually use the frustum to do fast-\/culling\+: check a entity whether is a potential visible entity  NA  NA 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFrustum_a172ae3492592e3ac891642299d628494}\label{classFrustum_a172ae3492592e3ac891642299d628494}} 
+\index{Frustum@{Frustum}!Frustum@{Frustum}}
+\index{Frustum@{Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{Frustum()}{Frustum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Frustum\+::\+Frustum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \& Destructor. \mbox{\Hypertarget{classFrustum_a172ae3492592e3ac891642299d628494}\label{classFrustum_a172ae3492592e3ac891642299d628494}} 
+\index{Frustum@{Frustum}!Frustum@{Frustum}}
+\index{Frustum@{Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{Frustum()}{Frustum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Frustum\+::\+Frustum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \& Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}\label{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}} 
+\index{Frustum@{Frustum}!create\+Plane@{create\+Plane}}
+\index{create\+Plane@{create\+Plane}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{create\+Plane()}{createPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Frustum\+::create\+Plane (\begin{DoxyParamCaption}\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+create clip plane \mbox{\Hypertarget{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}\label{classFrustum_a3b271a1a0fcce5eeaca0ec684fe02f7b}} 
+\index{Frustum@{Frustum}!create\+Plane@{create\+Plane}}
+\index{create\+Plane@{create\+Plane}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{create\+Plane()}{createPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Frustum\+::create\+Plane (\begin{DoxyParamCaption}\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+create clip plane \mbox{\Hypertarget{classFrustum_a763ea95a5a61afb4ea0d0396fd49ab33}\label{classFrustum_a763ea95a5a61afb4ea0d0396fd49ab33}} 
+\index{Frustum@{Frustum}!init\+Frustum@{init\+Frustum}}
+\index{init\+Frustum@{init\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{init\+Frustum()}{initFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN bool Frustum\+::init\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+init frustum from camera. \mbox{\Hypertarget{classFrustum_a3dda1026433e9335df72c7ce893cc5c6}\label{classFrustum_a3dda1026433e9335df72c7ce893cc5c6}} 
+\index{Frustum@{Frustum}!init\+Frustum@{init\+Frustum}}
+\index{init\+Frustum@{init\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{init\+Frustum()}{initFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Frustum\+::init\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+init frustum from camera. \mbox{\Hypertarget{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}\label{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}} 
+\index{Frustum@{Frustum}!is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}}
+\index{is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{is\+Out\+Of\+Frustum()}{isOutOfFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Frustum\+::is\+Out\+Of\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const}
+
+is aabb out of frustum. \mbox{\Hypertarget{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}\label{classFrustum_a618fd2d27f0337512ca1b1aeee8580e1}} 
+\index{Frustum@{Frustum}!is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}}
+\index{is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{is\+Out\+Of\+Frustum()}{isOutOfFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Frustum\+::is\+Out\+Of\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} \&}]{aabb }\end{DoxyParamCaption}) const}
+
+is aabb out of frustum. \mbox{\Hypertarget{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}\label{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}} 
+\index{Frustum@{Frustum}!is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}}
+\index{is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{is\+Out\+Of\+Frustum()}{isOutOfFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Frustum\+::is\+Out\+Of\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classOBB}{O\+BB} \&}]{obb }\end{DoxyParamCaption}) const}
+
+is obb out of frustum \mbox{\Hypertarget{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}\label{classFrustum_ae9285dfe28bfbf7d6439cddcec8d06cb}} 
+\index{Frustum@{Frustum}!is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}}
+\index{is\+Out\+Of\+Frustum@{is\+Out\+Of\+Frustum}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{is\+Out\+Of\+Frustum()}{isOutOfFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Frustum\+::is\+Out\+Of\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classOBB}{O\+BB} \&}]{obb }\end{DoxyParamCaption}) const}
+
+is obb out of frustum \mbox{\Hypertarget{classFrustum_aeaee893e649086140744a814e62f5701}\label{classFrustum_aeaee893e649086140744a814e62f5701}} 
+\index{Frustum@{Frustum}!set\+ClipZ@{set\+ClipZ}}
+\index{set\+ClipZ@{set\+ClipZ}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{set\+Clip\+Z()}{setClipZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Frustum\+::set\+ClipZ (\begin{DoxyParamCaption}\item[{bool}]{clipZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set z clip. if bclipZ == true use near and far plane \mbox{\Hypertarget{classFrustum_aeaee893e649086140744a814e62f5701}\label{classFrustum_aeaee893e649086140744a814e62f5701}} 
+\index{Frustum@{Frustum}!set\+ClipZ@{set\+ClipZ}}
+\index{set\+ClipZ@{set\+ClipZ}!Frustum@{Frustum}}
+\subsubsection{\texorpdfstring{set\+Clip\+Z()}{setClipZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Frustum\+::set\+ClipZ (\begin{DoxyParamCaption}\item[{bool}]{clipZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set z clip. if bclipZ == true use near and far plane 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Frustum.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Frustum.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,555 @@
+\hypertarget{protocolFlurryAdDelegate_01-p}{}\section{$<$Flurry\+Ad\+Delegate $>$ Protocol Reference}
+\label{protocolFlurryAdDelegate_01-p}\index{$<$\+Flurry\+Ad\+Delegate $>$@{$<$\+Flurry\+Ad\+Delegate $>$}}
+
+
+Provides all available delegates for receiving callbacks related to Ad Serving.  
+
+
+
+
+{\ttfamily \#import $<$Flurry\+Ad\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for $<$Flurry\+Ad\+Delegate $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{protocolFlurryAdDelegate_01-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$Flurry\+Ad\+Delegate $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{protocolFlurryAdDelegate_01-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a92196ccfbcf5263cfc54554c676a39ae}{space\+Did\+Receive\+Ad\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when an ad is received for the specified {\ttfamily ad\+Space}. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_af97ae68142b2dde8c4428cffacfa00b4}{space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when an ad can not be retrieved for the specified {\ttfamily ad\+Space}. \end{DoxyCompactList}\item 
+(B\+O\+OL) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a6d902e66617c05092d538de0fe9dbb07}{space\+Should\+Display\+:interstitial\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when an ad is about to display on the specified {\ttfamily ad\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a0d4c164db8eac8d25f61807ac4264578}\label{protocolFlurryAdDelegate_01-p_a0d4c164db8eac8d25f61807ac4264578}} 
+(B\+O\+OL) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a0d4c164db8eac8d25f61807ac4264578}{space\+Should\+Display\+:for\+Type\+:}
+\begin{DoxyCompactList}\small\item\em \mbox{[}Deprecated\mbox{]} This method is deprecated. -\/\mbox{[}space\+Should\+Display\+:interstitial\+:\mbox{]} should be used. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_af988369f8b2606cebfca16672aabb280}{space\+Did\+Fail\+To\+Render\+:error\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when an ad fails to render. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a4e39fac0521e2e56e095d29f04f173c3}{space\+Will\+Dismiss\+:interstitial\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when the ad will be removed. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a18f10b96c0332ed1c482bc835d8867a3}{space\+Did\+Dismiss\+:interstitial\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when the ad has been removed. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a910cb5e909faea49101305a5740ecccb}{space\+Will\+Leave\+Application\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when the ad has been selected that will take the user out of the app. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_ad1c9f8b7c7d8ba096be69f48a2b87fd5}{space\+Will\+Expand\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when a space will be expanded. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a175999b6e0069b35919f24ab3e8f6c49}{space\+Will\+Collapse\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when a space will be collapsed. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a5094ad1ca096d70d75b05a5ab4a9a9a5}{space\+Did\+Collapse\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when a space has been collapsed. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a9d972858b15ed8102d1675fc96bbd97c}{space\+Did\+Receive\+Click\+:}
+\begin{DoxyCompactList}\small\item\em Informational callback invoked when an ad is clicked for the specified {\ttfamily ad\+Space}. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a26d6d70993f75935789bf7ad45f3ca3c}{video\+Did\+Finish\+:}
+\begin{DoxyCompactList}\small\item\em Invoked when a video finishes playing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Third party network Calls}\par
+{\em Optional calls to pass information needed to display ads through 3rd parties. }\begin{DoxyCompactItemize}
+\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a01d0c47af3d321b8d0785fd76d68576d}{app\+Spot\+Millennial\+App\+Key}
+\begin{DoxyCompactList}\small\item\em The Millennial A\+P\+ID. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a366bfa8d8eca645ec976fe0debe94ae9}{app\+Spot\+Millennial\+Interstital\+App\+Key}
+\begin{DoxyCompactList}\small\item\em The Millennial A\+P\+ID for interstitials. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_ac24b29663d5da5a036df7c651eb8fa1f}{app\+Spot\+In\+Mobi\+App\+Key}
+\begin{DoxyCompactList}\small\item\em The In\+Mobi A\+P\+ID. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a7d107749c75f41d2590dbf3e8a1e64bf}{app\+Spot\+Ad\+Mob\+Publisher\+ID}
+\begin{DoxyCompactList}\small\item\em The Ad\+Mob Publisher Id. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_af91d5c9908f99a56139a9efaa052defc}{app\+Spot\+Mobclix\+Application\+ID}
+\begin{DoxyCompactList}\small\item\em The Mobclix \hyperlink{classApplication}{Application} Id. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_aa47f249e8a0aeeb33395e5edd0aaf626}{app\+Spot\+Jumptap\+Publisher\+ID}
+\begin{DoxyCompactList}\small\item\em The Jumptap Publisher Id. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a7099c0b2d18dac48c8a887efa0cfbca6}{app\+Spot\+Jumptap\+Site\+ID}
+\begin{DoxyCompactList}\small\item\em The Jumptap Site Id. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a45802f6353c98d52e470dec6bc5ea9cb}{app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID}
+\begin{DoxyCompactList}\small\item\em Jumptap Banner Ad Spot ID. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a50616f32d54066bfee17998faa126218}{app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID}
+\begin{DoxyCompactList}\small\item\em Jumptap Leaderboard Ad Spot ID. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a929633c2f77ecc7bc030e01663d9e312}{app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID}
+\begin{DoxyCompactList}\small\item\em Jumptap Medium Rectange Ad Spot ID. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a10602b838acd93e710ef1aab13a20ee5}{app\+Spot\+Greystripe\+Application\+ID}
+\begin{DoxyCompactList}\small\item\em The Greystripe \hyperlink{classApplication}{Application} Id. \end{DoxyCompactList}\item 
+((deprecated) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_ae9d0c306e8852b82f57c2d321e4f95ba}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}
+\begin{DoxyCompactList}\small\item\em \mbox{[}Deprecated\mbox{]} Allow you to set your root\+View\+Controller. \end{DoxyCompactList}\item 
+(B\+O\+OL) -\/ \hyperlink{protocolFlurryAdDelegate_01-p_a8f9730aef4765d97bfbb612cdcfa74dc}{app\+Spot\+Accelerometer\+Enabled}
+\begin{DoxyCompactList}\small\item\em For networks that support accelerometer-\/enabled ads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Provides all available delegates for receiving callbacks related to Ad Serving. 
+
+Set of methods that allow developers to manage and take actions within different phases of App ad display.
+
+\begin{DoxyNote}{Note}
+This class serves as a delegate for \hyperlink{interfaceFlurryAds}{Flurry\+Ads}. ~\newline
+For additional information on how to use \hyperlink{interfaceFlurry}{Flurry}\textquotesingle{}s Ads S\+DK to attract high-\/quality users and monetize your user base see \href{http://wiki.flurry.com/index.php?title=Publisher}{\tt Support Center -\/ Publisher}. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+2010 -\/ 2013 \hyperlink{interfaceFlurry}{Flurry}, Inc. All Rights Reserved. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\+3.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_ae9d0c306e8852b82f57c2d321e4f95ba}\label{protocolFlurryAdDelegate_01-p_ae9d0c306e8852b82f57c2d321e4f95ba}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily -\/ ((deprecated Flurry\+Ad\+Delegate) \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+\mbox{[}Deprecated\mbox{]} Allow you to set your root\+View\+Controller. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000227}{Deprecated}]\end{DoxyRefDesc}
+
+
+This method has been deprecated. Please call Flurry\+Ads\+::initialze\+: instead. \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a8f9730aef4765d97bfbb612cdcfa74dc}\label{protocolFlurryAdDelegate_01-p_a8f9730aef4765d97bfbb612cdcfa74dc}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Accelerometer\+Enabled@{app\+Spot\+Accelerometer\+Enabled}}
+\index{app\+Spot\+Accelerometer\+Enabled@{app\+Spot\+Accelerometer\+Enabled}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Accelerometer\+Enabled()}{appSpotAccelerometerEnabled()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL Flurry\+Ad\+Delegate) app\+Spot\+Accelerometer\+Enabled \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+For networks that support accelerometer-\/enabled ads. 
+
+Some networks support accelerometer-\/enabled ads.
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method allows you to enable accelerometer based ads for networks that support this setting via the client sdk. Set to NO if your app uses the accelerometer to avoid conflict. Set to Y\+ES if you want the special ads. Default is NO. \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a7d107749c75f41d2590dbf3e8a1e64bf}\label{protocolFlurryAdDelegate_01-p_a7d107749c75f41d2590dbf3e8a1e64bf}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Ad\+Mob\+Publisher\+ID@{app\+Spot\+Ad\+Mob\+Publisher\+ID}}
+\index{app\+Spot\+Ad\+Mob\+Publisher\+ID@{app\+Spot\+Ad\+Mob\+Publisher\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Ad\+Mob\+Publisher\+I\+D()}{appSpotAdMobPublisherID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Ad\+Mob\+Publisher\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Ad\+Mob Publisher Id. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in Ad\+Mob, found here\+: \href{http://www.admob.com/my_sites/}{\tt http\+://www.\+admob.\+com/my\+\_\+sites/} (click manage settings) \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a10602b838acd93e710ef1aab13a20ee5}\label{protocolFlurryAdDelegate_01-p_a10602b838acd93e710ef1aab13a20ee5}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Greystripe\+Application\+ID@{app\+Spot\+Greystripe\+Application\+ID}}
+\index{app\+Spot\+Greystripe\+Application\+ID@{app\+Spot\+Greystripe\+Application\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Greystripe\+Application\+I\+D()}{appSpotGreystripeApplicationID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Greystripe\+Application\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Greystripe \hyperlink{classApplication}{Application} Id. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in Greystripe \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_ac24b29663d5da5a036df7c651eb8fa1f}\label{protocolFlurryAdDelegate_01-p_ac24b29663d5da5a036df7c651eb8fa1f}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+In\+Mobi\+App\+Key@{app\+Spot\+In\+Mobi\+App\+Key}}
+\index{app\+Spot\+In\+Mobi\+App\+Key@{app\+Spot\+In\+Mobi\+App\+Key}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+In\+Mobi\+App\+Key()}{appSpotInMobiAppKey()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+In\+Mobi\+App\+Key \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The In\+Mobi A\+P\+ID. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in In\+Mobi, found here\+: \href{https://www.inmobi.com/pub/mysite.html?platFormType=all}{\tt https\+://www.\+inmobi.\+com/pub/mysite.\+html?plat\+Form\+Type=all} \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a45802f6353c98d52e470dec6bc5ea9cb}\label{protocolFlurryAdDelegate_01-p_a45802f6353c98d52e470dec6bc5ea9cb}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID}}
+\index{app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+I\+D()}{appSpotJumptapBannerAdSpotID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Jumptap\+Banner\+Ad\+Spot\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Jumptap Banner Ad Spot ID. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+2
+\end{DoxySince}
+This is the ad spot id for a Banner (320x50) ad spot set in Jump\+Tap \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a50616f32d54066bfee17998faa126218}\label{protocolFlurryAdDelegate_01-p_a50616f32d54066bfee17998faa126218}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID}}
+\index{app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+I\+D()}{appSpotJumptapLeaderboardAdSpotID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Jumptap\+Leaderboard\+Ad\+Spot\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Jumptap Leaderboard Ad Spot ID. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+2
+\end{DoxySince}
+This is the ad spot id for a Leaderboard (720x90) ad spot set in Jump\+Tap \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a929633c2f77ecc7bc030e01663d9e312}\label{protocolFlurryAdDelegate_01-p_a929633c2f77ecc7bc030e01663d9e312}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID}}
+\index{app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID@{app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+I\+D()}{appSpotJumptapMediumRectangleAdSpotID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Jumptap\+Medium\+Rectangle\+Ad\+Spot\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Jumptap Medium Rectange Ad Spot ID. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+2
+\end{DoxySince}
+This is the ad spot id for a Medium Rectangle (320x50) ad spot set in Jump\+Tap. The Medium Rectangle Ad Spot ID will be used whenever the ad frame can fit it (e.\+g. interstitial ads). \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_aa47f249e8a0aeeb33395e5edd0aaf626}\label{protocolFlurryAdDelegate_01-p_aa47f249e8a0aeeb33395e5edd0aaf626}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Jumptap\+Publisher\+ID@{app\+Spot\+Jumptap\+Publisher\+ID}}
+\index{app\+Spot\+Jumptap\+Publisher\+ID@{app\+Spot\+Jumptap\+Publisher\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Jumptap\+Publisher\+I\+D()}{appSpotJumptapPublisherID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Jumptap\+Publisher\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Jumptap Publisher Id. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+2
+\end{DoxySince}
+This is the pub id for your app as set in Jumptap \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a7099c0b2d18dac48c8a887efa0cfbca6}\label{protocolFlurryAdDelegate_01-p_a7099c0b2d18dac48c8a887efa0cfbca6}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Jumptap\+Site\+ID@{app\+Spot\+Jumptap\+Site\+ID}}
+\index{app\+Spot\+Jumptap\+Site\+ID@{app\+Spot\+Jumptap\+Site\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Jumptap\+Site\+I\+D()}{appSpotJumptapSiteID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Jumptap\+Site\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Jumptap Site Id. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+2
+\end{DoxySince}
+This is the site id for your app as set in Jumptap. It is an optional parameter. \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a01d0c47af3d321b8d0785fd76d68576d}\label{protocolFlurryAdDelegate_01-p_a01d0c47af3d321b8d0785fd76d68576d}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Millennial\+App\+Key@{app\+Spot\+Millennial\+App\+Key}}
+\index{app\+Spot\+Millennial\+App\+Key@{app\+Spot\+Millennial\+App\+Key}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Millennial\+App\+Key()}{appSpotMillennialAppKey()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Millennial\+App\+Key \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Millennial A\+P\+ID. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in Millennial, found here\+: \href{https://developer.millennialmedia.com/Application/index.php#manageApps}{\tt https\+://developer.\+millennialmedia.\+com/\+Application/index.\+php\#manage\+Apps}. \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a366bfa8d8eca645ec976fe0debe94ae9}\label{protocolFlurryAdDelegate_01-p_a366bfa8d8eca645ec976fe0debe94ae9}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Millennial\+Interstital\+App\+Key@{app\+Spot\+Millennial\+Interstital\+App\+Key}}
+\index{app\+Spot\+Millennial\+Interstital\+App\+Key@{app\+Spot\+Millennial\+Interstital\+App\+Key}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Millennial\+Interstital\+App\+Key()}{appSpotMillennialInterstitalAppKey()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Millennial\+Interstital\+App\+Key \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Millennial A\+P\+ID for interstitials. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in Millennial, found here\+: \href{https://developer.millennialmedia.com/Application/index.php#manageApps}{\tt https\+://developer.\+millennialmedia.\+com/\+Application/index.\+php\#manage\+Apps}. \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_af91d5c9908f99a56139a9efaa052defc}\label{protocolFlurryAdDelegate_01-p_af91d5c9908f99a56139a9efaa052defc}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!app\+Spot\+Mobclix\+Application\+ID@{app\+Spot\+Mobclix\+Application\+ID}}
+\index{app\+Spot\+Mobclix\+Application\+ID@{app\+Spot\+Mobclix\+Application\+ID}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{app\+Spot\+Mobclix\+Application\+I\+D()}{appSpotMobclixApplicationID()}}
+{\footnotesize\ttfamily -\/ (N\+S\+String $\ast$ Flurry\+Ad\+Delegate) app\+Spot\+Mobclix\+Application\+ID \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+The Mobclix \hyperlink{classApplication}{Application} Id. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This is the id for your app as set in Mobclix \mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a5094ad1ca096d70d75b05a5ab4a9a9a5}\label{protocolFlurryAdDelegate_01-p_a5094ad1ca096d70d75b05a5ab4a9a9a5}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Collapse\+:@{space\+Did\+Collapse\+:}}
+\index{space\+Did\+Collapse\+:@{space\+Did\+Collapse\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Collapse\+:()}{spaceDidCollapse:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Collapse\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when a space has been collapsed. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app an ad space (typcially a banner) has been collapsed. Apps should resume their state when they receive this notification
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a18f10b96c0332ed1c482bc835d8867a3}\label{protocolFlurryAdDelegate_01-p_a18f10b96c0332ed1c482bc835d8867a3}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Dismiss\+:interstitial\+:@{space\+Did\+Dismiss\+:interstitial\+:}}
+\index{space\+Did\+Dismiss\+:interstitial\+:@{space\+Did\+Dismiss\+:interstitial\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Dismiss\+:interstitial\+:()}{spaceDidDismiss:interstitial:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Dismiss\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\item[{interstitial:(B\+O\+OL)}]{interstitial }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when the ad has been removed. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method informs the app that an ad has closed. You can use this to resume app states.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em interstitial} & Y\+E\+S/\+NO indicates if space being removed is an interstitial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_af97ae68142b2dde8c4428cffacfa00b4}\label{protocolFlurryAdDelegate_01-p_af97ae68142b2dde8c4428cffacfa00b4}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:@{space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:}}
+\index{space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:@{space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Fail\+To\+Receive\+Ad\+:error\+:()}{spaceDidFailToReceiveAd:error:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Fail\+To\+Receive\+Ad\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\item[{error:(N\+S\+Error $\ast$)}]{error }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when an ad can not be retrieved for the specified {\ttfamily ad\+Space}. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app that an ad has failed to be received for the given ad\+Space.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_a7eb674e15673f908467be52017169368}{+ fetch\+Ad\+For\+Space\+:frame\+:size\+: (\+Flurry\+Ads)} for details on the method that will invoke this delegate.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may \\
+\hline
+{\em error} & The error, if known, that caused ads not to be received. be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_af988369f8b2606cebfca16672aabb280}\label{protocolFlurryAdDelegate_01-p_af988369f8b2606cebfca16672aabb280}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Fail\+To\+Render\+:error\+:@{space\+Did\+Fail\+To\+Render\+:error\+:}}
+\index{space\+Did\+Fail\+To\+Render\+:error\+:@{space\+Did\+Fail\+To\+Render\+:error\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Fail\+To\+Render\+:error\+:()}{spaceDidFailToRender:error:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Fail\+To\+Render\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{error:(N\+S\+Error $\ast$)}]{error }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when an ad fails to render. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method informs the user an ad was retrieved, however, was unsuccessful in displaying to the user (could be lost network connectivity for example).
+
+\begin{DoxySeeAlso}{See also}
+Flurry\+Ads\+::display\+Ad\+For\+Space\+:view\+: for details on the method that will invoke this delegate. ~\newline
+\hyperlink{interfaceFlurryAds_a6015497d507dc4c08a3b03b3717711ea}{+ fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+: (\+Flurry\+Ads)} for details on the method that will invoke this delegate.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may \\
+\hline
+{\em error} & The error, if known, that caused ads not to be rendered. be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a92196ccfbcf5263cfc54554c676a39ae}\label{protocolFlurryAdDelegate_01-p_a92196ccfbcf5263cfc54554c676a39ae}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Receive\+Ad\+:@{space\+Did\+Receive\+Ad\+:}}
+\index{space\+Did\+Receive\+Ad\+:@{space\+Did\+Receive\+Ad\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Receive\+Ad\+:()}{spaceDidReceiveAd:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Receive\+Ad\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when an ad is received for the specified {\ttfamily ad\+Space}. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app that an ad has been received and is available for display.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_a7eb674e15673f908467be52017169368}{+ fetch\+Ad\+For\+Space\+:frame\+:size\+: (\+Flurry\+Ads)} for details on the method that will invoke this delegate.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a9d972858b15ed8102d1675fc96bbd97c}\label{protocolFlurryAdDelegate_01-p_a9d972858b15ed8102d1675fc96bbd97c}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Did\+Receive\+Click\+:@{space\+Did\+Receive\+Click\+:}}
+\index{space\+Did\+Receive\+Click\+:@{space\+Did\+Receive\+Click\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Did\+Receive\+Click\+:()}{spaceDidReceiveClick:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Did\+Receive\+Click\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Informational callback invoked when an ad is clicked for the specified {\ttfamily ad\+Space}. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app that an ad has been clicked. This should not be used to adjust state of an app. It is only intended for informational purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a6d902e66617c05092d538de0fe9dbb07}\label{protocolFlurryAdDelegate_01-p_a6d902e66617c05092d538de0fe9dbb07}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Should\+Display\+:interstitial\+:@{space\+Should\+Display\+:interstitial\+:}}
+\index{space\+Should\+Display\+:interstitial\+:@{space\+Should\+Display\+:interstitial\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Should\+Display\+:interstitial\+:()}{spaceShouldDisplay:interstitial:()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL Flurry\+Ad\+Delegate) space\+Should\+Display\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\item[{interstitial:(B\+O\+OL)}]{interstitial }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when an ad is about to display on the specified {\ttfamily ad\+Space}. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+0
+\end{DoxySince}
+This method informs the app that an ad is about to be displayed. You can decide at this point not to show this ad by simply returning NO.
+
+\begin{DoxySeeAlso}{See also}
+Flurry\+Ads\+::display\+Ad\+For\+Space\+:view\+: for details on the method that will invoke this delegate. ~\newline
+\hyperlink{interfaceFlurryAds_a6015497d507dc4c08a3b03b3717711ea}{+ fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+: (\+Flurry\+Ads)} for details on the method that will invoke this delegate.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em interstitial} & Y\+E\+S/\+NO if the space to display will be an interstitial. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a175999b6e0069b35919f24ab3e8f6c49}\label{protocolFlurryAdDelegate_01-p_a175999b6e0069b35919f24ab3e8f6c49}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Will\+Collapse\+:@{space\+Will\+Collapse\+:}}
+\index{space\+Will\+Collapse\+:@{space\+Will\+Collapse\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Will\+Collapse\+:()}{spaceWillCollapse:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Will\+Collapse\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when a space will be collapsed. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app an ad space (typcially a banner) will be collapsed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a4e39fac0521e2e56e095d29f04f173c3}\label{protocolFlurryAdDelegate_01-p_a4e39fac0521e2e56e095d29f04f173c3}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Will\+Dismiss\+:interstitial\+:@{space\+Will\+Dismiss\+:interstitial\+:}}
+\index{space\+Will\+Dismiss\+:interstitial\+:@{space\+Will\+Dismiss\+:interstitial\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Will\+Dismiss\+:interstitial\+:()}{spaceWillDismiss:interstitial:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Will\+Dismiss\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\item[{interstitial:(B\+O\+OL)}]{interstitial }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when the ad will be removed. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app that an ad will be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em interstitial} & Y\+E\+S/\+NO indicates if space being removed is an interstitial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_ad1c9f8b7c7d8ba096be69f48a2b87fd5}\label{protocolFlurryAdDelegate_01-p_ad1c9f8b7c7d8ba096be69f48a2b87fd5}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Will\+Expand\+:@{space\+Will\+Expand\+:}}
+\index{space\+Will\+Expand\+:@{space\+Will\+Expand\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Will\+Expand\+:()}{spaceWillExpand:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Will\+Expand\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when a space will be expanded. 
+
+\begin{DoxySince}{Since}
+4.\+1
+\end{DoxySince}
+This method informs the app an ad space (typcially a banner) will be expanded. Apps should pause their state when they receive this notification
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a910cb5e909faea49101305a5740ecccb}\label{protocolFlurryAdDelegate_01-p_a910cb5e909faea49101305a5740ecccb}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!space\+Will\+Leave\+Application\+:@{space\+Will\+Leave\+Application\+:}}
+\index{space\+Will\+Leave\+Application\+:@{space\+Will\+Leave\+Application\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{space\+Will\+Leave\+Application\+:()}{spaceWillLeaveApplication:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) space\+Will\+Leave\+Application\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when the ad has been selected that will take the user out of the app. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method informs the app that an ad has been clicked and the user is about to be taken outside the app.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocolFlurryAdDelegate_01-p_a26d6d70993f75935789bf7ad45f3ca3c}\label{protocolFlurryAdDelegate_01-p_a26d6d70993f75935789bf7ad45f3ca3c}} 
+\index{Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}!video\+Did\+Finish\+:@{video\+Did\+Finish\+:}}
+\index{video\+Did\+Finish\+:@{video\+Did\+Finish\+:}!Flurry\+Ad\+Delegate -\/p@{Flurry\+Ad\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{video\+Did\+Finish\+:()}{videoDidFinish:()}}
+{\footnotesize\ttfamily -\/ (void Flurry\+Ad\+Delegate) video\+Did\+Finish\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{ad\+Space }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+
+
+Invoked when a video finishes playing. 
+
+\begin{DoxySince}{Since}
+4.\+2.\+0
+\end{DoxySince}
+This method informs the app that a video associated with an ad has finished playing
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\+Space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/flurry/proj.\+ios/\+Flurry\+Ads/Flurry\+Ad\+Delegate.\+h\end{DoxyCompactItemize}

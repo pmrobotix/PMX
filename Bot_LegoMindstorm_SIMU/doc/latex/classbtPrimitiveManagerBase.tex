@@ -1,0 +1,58 @@
+\hypertarget{classbtPrimitiveManagerBase}{}\section{bt\+Primitive\+Manager\+Base Class Reference}
+\label{classbtPrimitiveManagerBase}\index{bt\+Primitive\+Manager\+Base@{bt\+Primitive\+Manager\+Base}}
+
+
+Prototype Base class for primitive classification.  
+
+
+
+
+{\ttfamily \#include $<$bt\+G\+Impact\+Bvh.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Primitive\+Manager\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtPrimitiveManagerBase__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}\label{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}} 
+virtual bool \hyperlink{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}{is\+\_\+trimesh} () const =0
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a9799cc93c1cf51471d22c5295f276ae8}\label{classbtPrimitiveManagerBase_a9799cc93c1cf51471d22c5295f276ae8}} 
+virtual int {\bfseries get\+\_\+primitive\+\_\+count} () const =0
+\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_ac826409d978724f266d4e3453118de4e}\label{classbtPrimitiveManagerBase_ac826409d978724f266d4e3453118de4e}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (int prim\+\_\+index, bt\+A\+A\+BB \&primbox) const =0
+\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}\label{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}} 
+virtual void \hyperlink{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}{get\+\_\+primitive\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtPrimitiveTriangle}{bt\+Primitive\+Triangle} \&triangle) const =0
+\begin{DoxyCompactList}\small\item\em retrieves only the points of the triangle, and the collision margin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}\label{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}} 
+virtual bool \hyperlink{classbtPrimitiveManagerBase_a7dce7dd350286219d9adddefa20394f9}{is\+\_\+trimesh} () const =0
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a9799cc93c1cf51471d22c5295f276ae8}\label{classbtPrimitiveManagerBase_a9799cc93c1cf51471d22c5295f276ae8}} 
+virtual int {\bfseries get\+\_\+primitive\+\_\+count} () const =0
+\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_ac826409d978724f266d4e3453118de4e}\label{classbtPrimitiveManagerBase_ac826409d978724f266d4e3453118de4e}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (int prim\+\_\+index, bt\+A\+A\+BB \&primbox) const =0
+\item 
+\mbox{\Hypertarget{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}\label{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}} 
+virtual void \hyperlink{classbtPrimitiveManagerBase_a2eb95b960e4259da38c5ee4ac080fdf7}{get\+\_\+primitive\+\_\+triangle} (int prim\+\_\+index, \hyperlink{classbtPrimitiveTriangle}{bt\+Primitive\+Triangle} \&triangle) const =0
+\begin{DoxyCompactList}\small\item\em retrieves only the points of the triangle, and the collision margin \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototype Base class for primitive classification. 
+
+This class is a wrapper for primitive collections. This tells relevant info for the Bounding \hyperlink{classBox}{Box} set classes, which take care of space classification. This class can manage Compound shapes and trimeshes, and if it is managing trimesh then the Hierarchy Bounding \hyperlink{classBox}{Box} classes will take advantage of primitive Vs \hyperlink{classBox}{Box} overlapping tests for getting optimal results and less Per \hyperlink{classBox}{Box} compairisons. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/bt\+G\+Impact\+Bvh.\+h\end{DoxyCompactItemize}

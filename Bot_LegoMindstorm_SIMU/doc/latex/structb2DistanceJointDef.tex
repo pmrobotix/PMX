@@ -1,0 +1,86 @@
+\hypertarget{structb2DistanceJointDef}{}\section{b2\+Distance\+Joint\+Def Struct Reference}
+\label{structb2DistanceJointDef}\index{b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}}
+
+
+{\ttfamily \#include $<$b2\+Distance\+Joint.\+h$>$}
+
+
+
+Inheritance diagram for b2\+Distance\+Joint\+Def\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{structb2DistanceJointDef__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for b2\+Distance\+Joint\+Def\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{structb2DistanceJointDef__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}{Initialize} (\hyperlink{classb2Body}{b2\+Body} $\ast$\hyperlink{structb2JointDef_a592b8e186f5f0d8848ef6b7ce77f0f70}{bodyA}, \hyperlink{classb2Body}{b2\+Body} $\ast$\hyperlink{structb2JointDef_a3d1a39831332b8c5a41611c06396480a}{bodyB}, const \hyperlink{structb2Vec2}{b2\+Vec2} \&anchorA, const \hyperlink{structb2Vec2}{b2\+Vec2} \&anchorB)
+\item 
+void \hyperlink{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}{Initialize} (\hyperlink{classb2Body}{b2\+Body} $\ast$\hyperlink{structb2JointDef_a592b8e186f5f0d8848ef6b7ce77f0f70}{bodyA}, \hyperlink{classb2Body}{b2\+Body} $\ast$\hyperlink{structb2JointDef_a3d1a39831332b8c5a41611c06396480a}{bodyB}, const \hyperlink{structb2Vec2}{b2\+Vec2} \&anchorA, const \hyperlink{structb2Vec2}{b2\+Vec2} \&anchorB)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2DistanceJointDef_a15c7a75fa277e2056bf1b44198658518}\label{structb2DistanceJointDef_a15c7a75fa277e2056bf1b44198658518}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2DistanceJointDef_a15c7a75fa277e2056bf1b44198658518}{local\+AnchorA}
+\begin{DoxyCompactList}\small\item\em The local anchor point relative to bodyA\textquotesingle{}s origin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2DistanceJointDef_a3c8995be726238eee084af750442255c}\label{structb2DistanceJointDef_a3c8995be726238eee084af750442255c}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2DistanceJointDef_a3c8995be726238eee084af750442255c}{local\+AnchorB}
+\begin{DoxyCompactList}\small\item\em The local anchor point relative to bodyB\textquotesingle{}s origin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2DistanceJointDef_ac2c48ad52de91c804c386c12c5bf3714}\label{structb2DistanceJointDef_ac2c48ad52de91c804c386c12c5bf3714}} 
+float32 \hyperlink{structb2DistanceJointDef_ac2c48ad52de91c804c386c12c5bf3714}{length}
+\begin{DoxyCompactList}\small\item\em The natural length between the anchor points. \end{DoxyCompactList}\item 
+float32 \hyperlink{structb2DistanceJointDef_a35e2362bcb6c58734f95d0ac045863ea}{frequency\+Hz}
+\item 
+\mbox{\Hypertarget{structb2DistanceJointDef_ad009b24ff211158eb4e1db4815a63b94}\label{structb2DistanceJointDef_ad009b24ff211158eb4e1db4815a63b94}} 
+float32 \hyperlink{structb2DistanceJointDef_ad009b24ff211158eb4e1db4815a63b94}{damping\+Ratio}
+\begin{DoxyCompactList}\small\item\em The damping ratio. 0 = no damping, 1 = critical damping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Distance joint definition. This requires defining an anchor point on both bodies and the non-\/zero length of the distance joint. The definition uses local anchor points so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game. \begin{DoxyWarning}{Warning}
+Do not use a zero or short length. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}\label{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}} 
+\index{b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Distance\+Joint\+Def\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Body}{b2\+Body} $\ast$}]{bodyA,  }\item[{\hyperlink{classb2Body}{b2\+Body} $\ast$}]{bodyB,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{anchorA,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{anchorB }\end{DoxyParamCaption})}
+
+Initialize the bodies, anchors, and length using the world anchors. \mbox{\Hypertarget{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}\label{structb2DistanceJointDef_a99788a534638cc28cd1e44e0036503f0}} 
+\index{b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Distance\+Joint\+Def\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Body}{b2\+Body} $\ast$}]{bodyA,  }\item[{\hyperlink{classb2Body}{b2\+Body} $\ast$}]{bodyB,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{anchorA,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{anchorB }\end{DoxyParamCaption})}
+
+Initialize the bodies, anchors, and length using the world anchors. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structb2DistanceJointDef_a35e2362bcb6c58734f95d0ac045863ea}\label{structb2DistanceJointDef_a35e2362bcb6c58734f95d0ac045863ea}} 
+\index{b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}!frequency\+Hz@{frequency\+Hz}}
+\index{frequency\+Hz@{frequency\+Hz}!b2\+Distance\+Joint\+Def@{b2\+Distance\+Joint\+Def}}
+\subsubsection{\texorpdfstring{frequency\+Hz}{frequencyHz}}
+{\footnotesize\ttfamily float32 b2\+Distance\+Joint\+Def\+::frequency\+Hz}
+
+The mass-\/spring-\/damper frequency in Hertz. A value of 0 disables softness. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/\+Joints/b2\+Distance\+Joint.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/\+Joints/b2\+Distance\+Joint.\+cpp\end{DoxyCompactItemize}

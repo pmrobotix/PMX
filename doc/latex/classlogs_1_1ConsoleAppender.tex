@@ -1,0 +1,85 @@
+\hypertarget{classlogs_1_1ConsoleAppender}{}\section{logs\+:\+:Console\+Appender Class Reference}
+\label{classlogs_1_1ConsoleAppender}\index{logs\+::\+Console\+Appender@{logs\+::\+Console\+Appender}}
+
+
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une écriture des traces sur un flux de sortie de type std\+::ostream.  
+
+
+
+
+{\ttfamily \#include $<$Console\+Appender.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Console\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1ConsoleAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:Console\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1ConsoleAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1ConsoleAppender_a4c1c5c3fb8c290aa54fb48b65cf4151d}\label{classlogs_1_1ConsoleAppender_a4c1c5c3fb8c290aa54fb48b65cf4151d}} 
+\hyperlink{classlogs_1_1ConsoleAppender_a4c1c5c3fb8c290aa54fb48b65cf4151d}{Console\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. L\textquotesingle{}appender sera associé au flux de sortie standard. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1ConsoleAppender_abf5d52e24c1afecdaacf3d4b45ee28ba}\label{classlogs_1_1ConsoleAppender_abf5d52e24c1afecdaacf3d4b45ee28ba}} 
+virtual \hyperlink{classlogs_1_1ConsoleAppender_abf5d52e24c1afecdaacf3d4b45ee28ba}{$\sim$\+Console\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1ConsoleAppender_a8bc998ae5666863d846b6909207b2fc7}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Méthode de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1ConsoleAppender_afc3661954e4bdeee3f80da1984494a36}\label{classlogs_1_1ConsoleAppender_afc3661954e4bdeee3f80da1984494a36}} 
+void \hyperlink{classlogs_1_1ConsoleAppender_afc3661954e4bdeee3f80da1984494a36}{flush} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode affiche tous les messages engistrés sur le flux de sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une écriture des traces sur un flux de sortie de type std\+::ostream. 
+
+Cette implémentation se base sur un thread secondaire pour l\textquotesingle{}écriture dans le fichier des informations.
+
+Le constructeur par défaut de cette classe permet de créer un \hyperlink{classlogs_1_1Appender}{Appender} vers la sortie standard. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1ConsoleAppender_a8bc998ae5666863d846b6909207b2fc7}\label{classlogs_1_1ConsoleAppender_a8bc998ae5666863d846b6909207b2fc7}} 
+\index{logs\+::\+Console\+Appender@{logs\+::\+Console\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+Console\+Appender@{logs\+::\+Console\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void logs\+::\+Console\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & \hyperlink{classlogs_1_1Logger}{Logger} de référence du message. \\
+\hline
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message à tracer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{ConsoleAppender_8hpp}{Console\+Appender.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{ConsoleAppender_8cpp}{Console\+Appender.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\hypertarget{structbtGeneric6DofSpringConstraintData}{}\section{bt\+Generic6\+Dof\+Spring\+Constraint\+Data Struct Reference}
+\label{structbtGeneric6DofSpringConstraintData}\index{bt\+Generic6\+Dof\+Spring\+Constraint\+Data@{bt\+Generic6\+Dof\+Spring\+Constraint\+Data}}
+
+
+Generic 6 D\+OF constraint that allows to set spring motors to any translational and rotational D\+OF.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Generic6\+Dof\+Spring\+Constraint.\+h$>$}
+
+
+
+Collaboration diagram for bt\+Generic6\+Dof\+Spring\+Constraint\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtGeneric6DofSpringConstraintData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofSpringConstraintData_a033219c3bd37c0dad9609f23c12ebb69}\label{structbtGeneric6DofSpringConstraintData_a033219c3bd37c0dad9609f23c12ebb69}} 
+\hyperlink{structbtGeneric6DofConstraintData}{bt\+Generic6\+Dof\+Constraint\+Data} {\bfseries m\+\_\+6dof\+Data}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofSpringConstraintData_a3f023986635f589af9ed1cda168adda8}\label{structbtGeneric6DofSpringConstraintData_a3f023986635f589af9ed1cda168adda8}} 
+int {\bfseries m\+\_\+spring\+Enabled} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofSpringConstraintData_aa0515b478e511ae2bf3a565ce0b5b4a5}\label{structbtGeneric6DofSpringConstraintData_aa0515b478e511ae2bf3a565ce0b5b4a5}} 
+float {\bfseries m\+\_\+equilibrium\+Point} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofSpringConstraintData_af5e4b940662431f2cbd72f196ed4721e}\label{structbtGeneric6DofSpringConstraintData_af5e4b940662431f2cbd72f196ed4721e}} 
+float {\bfseries m\+\_\+spring\+Stiffness} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofSpringConstraintData_a57c04b85b5eb6f9909ae93cfa855f3ad}\label{structbtGeneric6DofSpringConstraintData_a57c04b85b5eb6f9909ae93cfa855f3ad}} 
+float {\bfseries m\+\_\+spring\+Damping} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic 6 D\+OF constraint that allows to set spring motors to any translational and rotational D\+OF. 
+
+D\+OF index used in enable\+Spring() and set\+Stiffness() means\+: 0 \+: translation X 1 \+: translation Y 2 \+: translation Z 3 \+: rotation X (3rd Euler rotational around new position of X axis, range \mbox{[}-\/\+P\+I+epsilon, P\+I-\/epsilon\mbox{]} ) 4 \+: rotation Y (2nd Euler rotational around new position of Y axis, range \mbox{[}-\/\+P\+I/2+epsilon, P\+I/2-\/epsilon\mbox{]} ) 5 \+: rotation Z (1st Euler rotational around Z axis, range \mbox{[}-\/\+P\+I+epsilon, P\+I-\/epsilon\mbox{]} ) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Generic6\+Dof\+Spring\+Constraint.\+h\end{DoxyCompactItemize}

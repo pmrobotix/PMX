@@ -1,0 +1,97 @@
+\hypertarget{classbtCompoundCollisionAlgorithm}{}\section{bt\+Compound\+Collision\+Algorithm Class Reference}
+\label{classbtCompoundCollisionAlgorithm}\index{bt\+Compound\+Collision\+Algorithm@{bt\+Compound\+Collision\+Algorithm}}
+
+
+\hyperlink{classbtCompoundCollisionAlgorithm}{bt\+Compound\+Collision\+Algorithm} supports collision between Compound\+Collision\+Shapes and other collision shapes  
+
+
+
+
+{\ttfamily \#include $<$bt\+Compound\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Compound\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classbtCompoundCollisionAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Compound\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classbtCompoundCollisionAlgorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtCompoundCollisionAlgorithm_1_1CreateFunc}{Create\+Func}
+\item 
+struct \hyperlink{structbtCompoundCollisionAlgorithm_1_1SwappedCreateFunc}{Swapped\+Create\+Func}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_acb81b191f56f62a703723fe32523b505}\label{classbtCompoundCollisionAlgorithm_acb81b191f56f62a703723fe32523b505}} 
+{\bfseries bt\+Compound\+Collision\+Algorithm} (const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_af779babe4aaaa78c5d5193693236668e}\label{classbtCompoundCollisionAlgorithm_af779babe4aaaa78c5d5193693236668e}} 
+\hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm} $\ast$ {\bfseries get\+Child\+Algorithm} (int n) const
+\item 
+virtual void \hyperlink{classbtCompoundCollisionAlgorithm_a173ce993461795e0572dd2924c54cdc0}{process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_aa223c7b4af581c9050a7ad20a1309ac0}\label{classbtCompoundCollisionAlgorithm_aa223c7b4af581c9050a7ad20a1309ac0}} 
+bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_a317a7f5e99fca79e6caaa267274ca0dc}\label{classbtCompoundCollisionAlgorithm_a317a7f5e99fca79e6caaa267274ca0dc}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_acb81b191f56f62a703723fe32523b505}\label{classbtCompoundCollisionAlgorithm_acb81b191f56f62a703723fe32523b505}} 
+{\bfseries bt\+Compound\+Collision\+Algorithm} (const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_af779babe4aaaa78c5d5193693236668e}\label{classbtCompoundCollisionAlgorithm_af779babe4aaaa78c5d5193693236668e}} 
+\hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm} $\ast$ {\bfseries get\+Child\+Algorithm} (int n) const
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_aac14e642099f1c65603c9a47cd5b01aa}\label{classbtCompoundCollisionAlgorithm_aac14e642099f1c65603c9a47cd5b01aa}} 
+virtual void {\bfseries process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_aa223c7b4af581c9050a7ad20a1309ac0}\label{classbtCompoundCollisionAlgorithm_aa223c7b4af581c9050a7ad20a1309ac0}} 
+bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_a317a7f5e99fca79e6caaa267274ca0dc}\label{classbtCompoundCollisionAlgorithm_a317a7f5e99fca79e6caaa267274ca0dc}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtCompoundCollisionAlgorithm}{bt\+Compound\+Collision\+Algorithm} supports collision between Compound\+Collision\+Shapes and other collision shapes 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtCompoundCollisionAlgorithm_a173ce993461795e0572dd2924c54cdc0}\label{classbtCompoundCollisionAlgorithm_a173ce993461795e0572dd2924c54cdc0}} 
+\index{bt\+Compound\+Collision\+Algorithm@{bt\+Compound\+Collision\+Algorithm}!process\+Collision@{process\+Collision}}
+\index{process\+Collision@{process\+Collision}!bt\+Compound\+Collision\+Algorithm@{bt\+Compound\+Collision\+Algorithm}}
+\subsubsection{\texorpdfstring{process\+Collision()}{processCollision()}}
+{\footnotesize\ttfamily void bt\+Compound\+Collision\+Algorithm\+::process\+Collision (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{body0\+Wrap,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{body1\+Wrap,  }\item[{const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&}]{dispatch\+Info,  }\item[{\hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$}]{result\+Out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+bt\+Compound\+Shape might have changed\+: /make sure the internal child collision algorithm caches are still valid
+
+clear and update all
+
+we need to refresh all contact manifolds note that we should actually recursively traverse all children, bt\+Compound\+Shape can nested more then 1 level deep so we should add a \textquotesingle{}refresh\+Manifolds\textquotesingle{} in the \hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm} 
+
+Implements \hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Compound\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Compound\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

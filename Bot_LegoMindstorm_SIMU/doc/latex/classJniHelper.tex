@@ -1,0 +1,235 @@
+\hypertarget{classJniHelper}{}\section{Jni\+Helper Class Reference}
+\label{classJniHelper}\index{Jni\+Helper@{Jni\+Helper}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJniHelper_aa8a736d6ef6f0cd33dfacb7908326ed4}\label{classJniHelper_aa8a736d6ef6f0cd33dfacb7908326ed4}} 
+typedef std\+::unordered\+\_\+map$<$ J\+N\+I\+Env $\ast$, std\+::vector$<$ jobject $>$ $>$ {\bfseries Local\+Ref\+Map\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJniHelper_ac0648dcc61b25777ecf25e1d74c0efc4}\label{classJniHelper_ac0648dcc61b25777ecf25e1d74c0efc4}} 
+static void {\bfseries set\+Java\+VM} (Java\+VM $\ast$java\+VM)
+\item 
+\mbox{\Hypertarget{classJniHelper_a7f86412296b664016818ab2c408c8ac7}\label{classJniHelper_a7f86412296b664016818ab2c408c8ac7}} 
+static Java\+VM $\ast$ {\bfseries get\+Java\+VM} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_a471d6ccc2029cb5324d64fb8f1560b9c}\label{classJniHelper_a471d6ccc2029cb5324d64fb8f1560b9c}} 
+static J\+N\+I\+Env $\ast$ {\bfseries get\+Env} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_a8bf413b5ffc5b80157ecc4f1b21395dc}\label{classJniHelper_a8bf413b5ffc5b80157ecc4f1b21395dc}} 
+static jobject {\bfseries get\+Activity} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_ad07a0bb1795f223f149ba165ee61d724}\label{classJniHelper_ad07a0bb1795f223f149ba165ee61d724}} 
+static bool {\bfseries set\+Class\+Loader\+From} (jobject activity\+Instance)
+\item 
+\mbox{\Hypertarget{classJniHelper_a9be9fb9b7e5a757cb8d0e40c51614129}\label{classJniHelper_a9be9fb9b7e5a757cb8d0e40c51614129}} 
+static bool {\bfseries get\+Static\+Method\+Info} (Jni\+Method\+Info \&methodinfo, const char $\ast$class\+Name, const char $\ast$method\+Name, const char $\ast$param\+Code)
+\item 
+\mbox{\Hypertarget{classJniHelper_accfc6d9459e6e6a14a82ba429032f27c}\label{classJniHelper_accfc6d9459e6e6a14a82ba429032f27c}} 
+static bool {\bfseries get\+Method\+Info} (Jni\+Method\+Info \&methodinfo, const char $\ast$class\+Name, const char $\ast$method\+Name, const char $\ast$param\+Code)
+\item 
+\mbox{\Hypertarget{classJniHelper_a702f700e9f03c67efd12ea316b0a203e}\label{classJniHelper_a702f700e9f03c67efd12ea316b0a203e}} 
+static std\+::string {\bfseries jstring2string} (jstring str)
+\item 
+\mbox{\Hypertarget{classJniHelper_a150e8688e93959e9e7baec5ef231af93}\label{classJniHelper_a150e8688e93959e9e7baec5ef231af93}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static void {\bfseries call\+Static\+Void\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_abe141f8f565c0852058f9c08952b5eac}\label{classJniHelper_abe141f8f565c0852058f9c08952b5eac}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static bool {\bfseries call\+Static\+Boolean\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_a91319243246966249a5b5ff3b1110f5a}\label{classJniHelper_a91319243246966249a5b5ff3b1110f5a}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static int {\bfseries call\+Static\+Int\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_a67019482bf6cae8f91a828ab6372c7bb}\label{classJniHelper_a67019482bf6cae8f91a828ab6372c7bb}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static float {\bfseries call\+Static\+Float\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_ad3f793ae3cab1bfd61fc97fa4c4d2e65}\label{classJniHelper_ad3f793ae3cab1bfd61fc97fa4c4d2e65}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static float $\ast$ {\bfseries call\+Static\+Float\+Array\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_a9388a9c8636e4583b73ba913dfae9751}\label{classJniHelper_a9388a9c8636e4583b73ba913dfae9751}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static \hyperlink{classVec3}{Vec3} {\bfseries call\+Static\+Vec3\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_a1a1bfc8c89a94a3ca24c2752f2123283}\label{classJniHelper_a1a1bfc8c89a94a3ca24c2752f2123283}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static double {\bfseries call\+Static\+Double\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_a1b3bdf85d19fe5e8a54dff67a42720da}\label{classJniHelper_a1b3bdf85d19fe5e8a54dff67a42720da}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static std\+::string {\bfseries call\+Static\+String\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\item 
+\mbox{\Hypertarget{classJniHelper_aec23852a7ceeffeb69cd2d7144481ca9}\label{classJniHelper_aec23852a7ceeffeb69cd2d7144481ca9}} 
+static void {\bfseries set\+Java\+VM} (Java\+VM $\ast$java\+VM)
+\item 
+\mbox{\Hypertarget{classJniHelper_ae8aa0c4df3a0b897bd755d58e7071387}\label{classJniHelper_ae8aa0c4df3a0b897bd755d58e7071387}} 
+static Java\+VM $\ast$ {\bfseries get\+Java\+VM} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_a8a2b603f67bf8636bc14607a857ac695}\label{classJniHelper_a8a2b603f67bf8636bc14607a857ac695}} 
+static J\+N\+I\+Env $\ast$ {\bfseries get\+Env} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_aaf2dcd411fdbc1fb5c42416af262ac2b}\label{classJniHelper_aaf2dcd411fdbc1fb5c42416af262ac2b}} 
+static jobject {\bfseries get\+Activity} ()
+\item 
+\mbox{\Hypertarget{classJniHelper_a9bd1327a373c0860da2cc5e20de24cf2}\label{classJniHelper_a9bd1327a373c0860da2cc5e20de24cf2}} 
+static bool {\bfseries set\+Class\+Loader\+From} (jobject activity\+Instance)
+\item 
+\mbox{\Hypertarget{classJniHelper_a188156a3c235f3555df597902425abbd}\label{classJniHelper_a188156a3c235f3555df597902425abbd}} 
+static bool {\bfseries get\+Static\+Method\+Info} (Jni\+Method\+Info \&methodinfo, const char $\ast$class\+Name, const char $\ast$method\+Name, const char $\ast$param\+Code)
+\item 
+\mbox{\Hypertarget{classJniHelper_ad173ee23161723497e7725ea1c956254}\label{classJniHelper_ad173ee23161723497e7725ea1c956254}} 
+static bool {\bfseries get\+Method\+Info} (Jni\+Method\+Info \&methodinfo, const char $\ast$class\+Name, const char $\ast$method\+Name, const char $\ast$param\+Code)
+\item 
+\mbox{\Hypertarget{classJniHelper_ad608dc7493a1d48894c8c7a3f55096c7}\label{classJniHelper_ad608dc7493a1d48894c8c7a3f55096c7}} 
+static std\+::string {\bfseries jstring2string} (jstring str)
+\item 
+\mbox{\Hypertarget{classJniHelper_a150e8688e93959e9e7baec5ef231af93}\label{classJniHelper_a150e8688e93959e9e7baec5ef231af93}} 
+{\footnotesize template$<$typename... Ts$>$ }\\static void \hyperlink{classJniHelper_a150e8688e93959e9e7baec5ef231af93}{call\+Static\+Void\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static void method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static bool \hyperlink{classJniHelper_abe141f8f565c0852058f9c08952b5eac}{call\+Static\+Boolean\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static boolean method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static int \hyperlink{classJniHelper_a91319243246966249a5b5ff3b1110f5a}{call\+Static\+Int\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static int method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static float \hyperlink{classJniHelper_a67019482bf6cae8f91a828ab6372c7bb}{call\+Static\+Float\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static float method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static float $\ast$ \hyperlink{classJniHelper_ad3f793ae3cab1bfd61fc97fa4c4d2e65}{call\+Static\+Float\+Array\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static float$\ast$ method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static int $\ast$ \hyperlink{classJniHelper_a344d60af8e2b8ff94c1f7081d216f71d}{call\+Static\+Int\+Array\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static int$\ast$ method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static \hyperlink{classVec3}{Vec3} \hyperlink{classJniHelper_a9388a9c8636e4583b73ba913dfae9751}{call\+Static\+Vec3\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static \hyperlink{classVec3}{Vec3} method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static double \hyperlink{classJniHelper_a1a1bfc8c89a94a3ca24c2752f2123283}{call\+Static\+Double\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static double method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Ts$>$ }\\static std\+::string \hyperlink{classJniHelper_a1b3bdf85d19fe5e8a54dff67a42720da}{call\+Static\+String\+Method} (const std\+::string \&class\+Name, const std\+::string \&method\+Name, Ts... xs)
+\begin{DoxyCompactList}\small\item\em Call of Java static string method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJniHelper_ab9b4cc15a0f2c170db49e4b0f4877b2d}\label{classJniHelper_ab9b4cc15a0f2c170db49e4b0f4877b2d}} 
+static jmethod\+ID {\bfseries loadclass\+Method\+\_\+method\+ID} = nullptr
+\item 
+\mbox{\Hypertarget{classJniHelper_a35d9dace49b77d76135e28d281578a24}\label{classJniHelper_a35d9dace49b77d76135e28d281578a24}} 
+static jobject {\bfseries classloader} = nullptr
+\item 
+\mbox{\Hypertarget{classJniHelper_ab2bf60961a6a2d2aef6f642ef910eaef}\label{classJniHelper_ab2bf60961a6a2d2aef6f642ef910eaef}} 
+static std\+::function$<$ void()$>$ {\bfseries classloader\+Callback} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJniHelper_abe141f8f565c0852058f9c08952b5eac}\label{classJniHelper_abe141f8f565c0852058f9c08952b5eac}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Boolean\+Method@{call\+Static\+Boolean\+Method}}
+\index{call\+Static\+Boolean\+Method@{call\+Static\+Boolean\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Boolean\+Method()}{callStaticBooleanMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static bool Jni\+Helper\+::call\+Static\+Boolean\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static boolean method. 
+
+\begin{DoxyReturn}{Returns}
+value from Java static boolean method if there are proper Jni\+Method\+Info; otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a1a1bfc8c89a94a3ca24c2752f2123283}\label{classJniHelper_a1a1bfc8c89a94a3ca24c2752f2123283}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Double\+Method@{call\+Static\+Double\+Method}}
+\index{call\+Static\+Double\+Method@{call\+Static\+Double\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Double\+Method()}{callStaticDoubleMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static double Jni\+Helper\+::call\+Static\+Double\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static double method. 
+
+\begin{DoxyReturn}{Returns}
+value from Java static double method if there are proper Jni\+Method\+Info; otherwise 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_ad3f793ae3cab1bfd61fc97fa4c4d2e65}\label{classJniHelper_ad3f793ae3cab1bfd61fc97fa4c4d2e65}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Float\+Array\+Method@{call\+Static\+Float\+Array\+Method}}
+\index{call\+Static\+Float\+Array\+Method@{call\+Static\+Float\+Array\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Float\+Array\+Method()}{callStaticFloatArrayMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static float$\ast$ Jni\+Helper\+::call\+Static\+Float\+Array\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static float$\ast$ method. 
+
+\begin{DoxyReturn}{Returns}
+address of Jni\+Method\+Info if there are proper Jni\+Method\+Info; otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a67019482bf6cae8f91a828ab6372c7bb}\label{classJniHelper_a67019482bf6cae8f91a828ab6372c7bb}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Float\+Method@{call\+Static\+Float\+Method}}
+\index{call\+Static\+Float\+Method@{call\+Static\+Float\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Float\+Method()}{callStaticFloatMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static float Jni\+Helper\+::call\+Static\+Float\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static float method. 
+
+\begin{DoxyReturn}{Returns}
+value from Java static float method if there are proper Jni\+Method\+Info; otherwise 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a344d60af8e2b8ff94c1f7081d216f71d}\label{classJniHelper_a344d60af8e2b8ff94c1f7081d216f71d}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Int\+Array\+Method@{call\+Static\+Int\+Array\+Method}}
+\index{call\+Static\+Int\+Array\+Method@{call\+Static\+Int\+Array\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Int\+Array\+Method()}{callStaticIntArrayMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static int$\ast$ Jni\+Helper\+::call\+Static\+Int\+Array\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static int$\ast$ method. 
+
+\begin{DoxyReturn}{Returns}
+address of Jni\+Method\+Info if there are proper Jni\+Method\+Info; otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a91319243246966249a5b5ff3b1110f5a}\label{classJniHelper_a91319243246966249a5b5ff3b1110f5a}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Int\+Method@{call\+Static\+Int\+Method}}
+\index{call\+Static\+Int\+Method@{call\+Static\+Int\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Int\+Method()}{callStaticIntMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static int Jni\+Helper\+::call\+Static\+Int\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static int method. 
+
+\begin{DoxyReturn}{Returns}
+value from Java static int method if there are proper Jni\+Method\+Info; otherwise 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a1b3bdf85d19fe5e8a54dff67a42720da}\label{classJniHelper_a1b3bdf85d19fe5e8a54dff67a42720da}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+String\+Method@{call\+Static\+String\+Method}}
+\index{call\+Static\+String\+Method@{call\+Static\+String\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+String\+Method()}{callStaticStringMethod()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static std\+::string Jni\+Helper\+::call\+Static\+String\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static string method. 
+
+\begin{DoxyReturn}{Returns}
+Jni\+Method\+Info of string type if there are proper Jni\+Method\+Info; otherwise empty string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJniHelper_a9388a9c8636e4583b73ba913dfae9751}\label{classJniHelper_a9388a9c8636e4583b73ba913dfae9751}} 
+\index{Jni\+Helper@{Jni\+Helper}!call\+Static\+Vec3\+Method@{call\+Static\+Vec3\+Method}}
+\index{call\+Static\+Vec3\+Method@{call\+Static\+Vec3\+Method}!Jni\+Helper@{Jni\+Helper}}
+\subsubsection{\texorpdfstring{call\+Static\+Vec3\+Method()}{callStaticVec3Method()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+static \hyperlink{classVec3}{Vec3} Jni\+Helper\+::call\+Static\+Vec3\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name,  }\item[{const std\+::string \&}]{method\+Name,  }\item[{Ts...}]{xs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Call of Java static \hyperlink{classVec3}{Vec3} method. 
+
+\begin{DoxyReturn}{Returns}
+Jni\+Method\+Info of \hyperlink{classVec3}{Vec3} type if there are proper Jni\+Method\+Info; otherwise \hyperlink{classVec3}{Vec3(0, 0, 0)}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/android/jni/Jni\+Helper.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/android/jni/Jni\+Helper.\+cpp\end{DoxyCompactItemize}

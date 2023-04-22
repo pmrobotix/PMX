@@ -1,0 +1,275 @@
+\hypertarget{classProgressTo}{}\section{Progress\+To Class Reference}
+\label{classProgressTo}\index{Progress\+To@{Progress\+To}}
+
+
+Progress to percentage.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Progress\+Timer.\+h$>$}
+
+
+
+Inheritance diagram for Progress\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classProgressTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Progress\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProgressTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_a55a418dbd387fca470d425df87291b0b}{clone} () const override
+\item 
+virtual \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_af09c310239f700015d1875bdaf6dc8ae}{reverse} () const override
+\item 
+virtual void \hyperlink{classProgressTo_a9533f1dab48b9243b170f463b8498f07}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classProgressTo_afce4ccb876eb502a7c1fa7521cb06099}{update} (float time) override
+\item 
+virtual \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_a993bf559112f3bbe3f4d38027711fd8e}{clone} () const override
+\item 
+virtual \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_ac8120eda623416e455871c5e25bac87e}{reverse} () const override
+\item 
+virtual void \hyperlink{classProgressTo_ac32af7881cffffec6eb7dcfcb0a18c6b}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classProgressTo_a33f0be899372bd32644de3d87a0308f3}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_ac6129d29666546255f5462b5e5bf471f}{create} (float duration, float percent)
+\begin{DoxyCompactList}\small\item\em Create and initializes with a duration and a destination percentage. \end{DoxyCompactList}\item 
+static \hyperlink{classProgressTo}{Progress\+To} $\ast$ \hyperlink{classProgressTo_a2c8c9ee63137e50754cb231c3fdd4f5d}{create} (float duration, float percent)
+\begin{DoxyCompactList}\small\item\em Create and initializes with a duration and a destination percentage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgressTo_ade6e8a11a12ca800ab66911189cc9e1a}\label{classProgressTo_ade6e8a11a12ca800ab66911189cc9e1a}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classProgressTo}{Progress\+To}() \{\} virtual $\sim$\hyperlink{classProgressTo}{Progress\+To}() \{\} bool init\+With\+Duration(float duration
+\item 
+\mbox{\Hypertarget{classProgressTo_ac3266d109044e4616bf00c0b26ebd56c}\label{classProgressTo_ac3266d109044e4616bf00c0b26ebd56c}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} float {\bfseries percent}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgressTo_a60b313c8f0980e009357be7496c8e0b8}\label{classProgressTo_a60b313c8f0980e009357be7496c8e0b8}} 
+float {\bfseries \+\_\+to}
+\item 
+\mbox{\Hypertarget{classProgressTo_a0d4cc5f9ec7c940f874adb5eeae39603}\label{classProgressTo_a0d4cc5f9ec7c940f874adb5eeae39603}} 
+float {\bfseries \+\_\+from}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Progress to percentage. 
+
+This action show the target node from current percentage to the specified percentage. You should specify the destination percentage when creating the action. \begin{DoxySince}{Since}
+v0.\+99.\+1 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProgressTo_a55a418dbd387fca470d425df87291b0b}\label{classProgressTo_a55a418dbd387fca470d425df87291b0b}} 
+\index{Progress\+To@{Progress\+To}!clone@{clone}}
+\index{clone@{clone}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTo}{Progress\+To} $\ast$ Progress\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_a993bf559112f3bbe3f4d38027711fd8e}\label{classProgressTo_a993bf559112f3bbe3f4d38027711fd8e}} 
+\index{Progress\+To@{Progress\+To}!clone@{clone}}
+\index{clone@{clone}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classProgressTo}{Progress\+To}$\ast$ Progress\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_ac6129d29666546255f5462b5e5bf471f}\label{classProgressTo_ac6129d29666546255f5462b5e5bf471f}} 
+\index{Progress\+To@{Progress\+To}!create@{create}}
+\index{create@{create}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTo}{Progress\+To} $\ast$ Progress\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create and initializes with a duration and a destination percentage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Specify the duration of the \hyperlink{classProgressTo}{Progress\+To} action. It\textquotesingle{}s a value in seconds. \\
+\hline
+{\em percent} & Specify the destination percentage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classProgressTo}{Progress\+To} action; otherwise, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTo_a2c8c9ee63137e50754cb231c3fdd4f5d}\label{classProgressTo_a2c8c9ee63137e50754cb231c3fdd4f5d}} 
+\index{Progress\+To@{Progress\+To}!create@{create}}
+\index{create@{create}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classProgressTo}{Progress\+To}$\ast$ Progress\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create and initializes with a duration and a destination percentage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Specify the duration of the \hyperlink{classProgressTo}{Progress\+To} action. It\textquotesingle{}s a value in seconds. \\
+\hline
+{\em percent} & Specify the destination percentage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the creation success, return a pointer of \hyperlink{classProgressTo}{Progress\+To} action; otherwise, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgressTo_af09c310239f700015d1875bdaf6dc8ae}\label{classProgressTo_af09c310239f700015d1875bdaf6dc8ae}} 
+\index{Progress\+To@{Progress\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classProgressTo}{Progress\+To} $\ast$ Progress\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_ac8120eda623416e455871c5e25bac87e}\label{classProgressTo_ac8120eda623416e455871c5e25bac87e}} 
+\index{Progress\+To@{Progress\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classProgressTo}{Progress\+To}$\ast$ Progress\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_a9533f1dab48b9243b170f463b8498f07}\label{classProgressTo_a9533f1dab48b9243b170f463b8498f07}} 
+\index{Progress\+To@{Progress\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_ac32af7881cffffec6eb7dcfcb0a18c6b}\label{classProgressTo_ac32af7881cffffec6eb7dcfcb0a18c6b}} 
+\index{Progress\+To@{Progress\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classProgressTo_afce4ccb876eb502a7c1fa7521cb06099}\label{classProgressTo_afce4ccb876eb502a7c1fa7521cb06099}} 
+\index{Progress\+To@{Progress\+To}!update@{update}}
+\index{update@{update}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Progress\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classProgressTo_a33f0be899372bd32644de3d87a0308f3}\label{classProgressTo_a33f0be899372bd32644de3d87a0308f3}} 
+\index{Progress\+To@{Progress\+To}!update@{update}}
+\index{update@{update}!Progress\+To@{Progress\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Progress\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Progress\+Timer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Progress\+Timer.\+cpp\end{DoxyCompactItemize}

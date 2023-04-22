@@ -1,0 +1,57 @@
+{\bfseries Table of Contents} {\itshape generated with \href{https://github.com/thlorenz/doctoc}{\tt Doc\+Toc}}
+
+
+\begin{DoxyItemize}
+\item \href{#v3131}{\tt v3.\+13.\+1}
+\begin{DoxyItemize}
+\item \href{#bug%E4%BF%AE%E5%A4%8D}{\tt Bug修复}
+\item \href{#cocos%E5%91%BD%E4%BB%A4%E7%9A%84%E6%94%B9%E5%8A%A8}{\tt Cocos命令的改动}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{v3.\+13.\+1}
+
+\subsection*{Bug修复}
+
+
+\begin{DoxyItemize}
+\item Label的颜色错误问题
+\item 如果没有设置{\ttfamily design resolution}，应用程序在debug模式下会崩溃
+\item 在\+Android系统，如果通过点击应用图标从后台推前台，可能导致崩溃
+\item 在\+Android系统，如果音乐或音效资源不在\+A\+P\+K包里，会导致无法播放
+\item 在\+Android系统，\+Audio\+Engine\+::stop()会回调{\ttfamily finish}回调函数
+\item 使用{\ttfamily \hyperlink{interfaceSimpleAudioEngine}{Simple\+Audio\+Engine}}或者{\ttfamily Audio\+Engine}播放音效或者背景音乐，在\+Android 2.\+3.\+x会崩溃
+\item J\+S\+B中，如果传入object.\+set\+String()的参数类型是数字，没有任何效果
+\end{DoxyItemize}
+
+对应的github issue可以从\href{https://github.com/cocos2d/cocos2d-x/milestone/33}{\tt 这里}找到。
+
+\subsection*{Cocos命令的改动}
+
+之前的版本，在\+Android平台下，cocos命令编译代码时会找大于等于指定的\+A\+P\+I级别的\+Android S\+D\+K，比如{\ttfamily A\+P\+P\+\_\+\+R\+O\+O\+T/proj.\+android/project.properties}的内容是这样的
+
+
+\begin{DoxyCode}
+target=android-13 // Android API级别
+android.library.reference.1=../../../cocos/platform/android/java
+\end{DoxyCode}
+ 那么cocos命令会在{\ttfamily A\+N\+D\+R\+O\+I\+D\+\_\+\+S\+D\+K\+\_\+\+R\+O\+O\+T/platforms}目录下找{\ttfamily android-\/13}，如果找不到就会找{\ttfamily android-\/14}，如果找不到的话会找{\ttfamily android-\/15}直到找到一个合适的级别。
+
+该算法有个问题，假设你只下载了{\ttfamily android-\/21}，虽然{\ttfamily A\+P\+P\+\_\+\+R\+O\+O\+T/proj.\+android/project.properties}指定是要使用{\ttfamily android-\/13}，最终也会使用{\ttfamily android-\/21}编译。编译出来的程序如果跑在\+Android 4.\+0的设备，那么就可能会崩溃。使用高版本\+Android S\+D\+K编译的程序不能保证能在低版本的\+Andoid系统上运行，就好比用i\+OS 9编译的程序不能保证运行在i\+OS 8一样。
+
+从3.13.\+1开始，cocos命令如果找不到指定的\+A\+P\+I级别会立即停止。想用指定的\+A\+P\+I级别编译的话需要使用命令行参数指定：
+
+
+\begin{DoxyCode}
+cocos compile -p android --ap android-19
+\end{DoxyCode}
+ 注意的事，一旦该命令运行后，那么{\ttfamily A\+P\+P\+\_\+\+R\+O\+O\+T/proj.\+android/project.properties}的内容就会改动，变成
+
+
+\begin{DoxyCode}
+target=android-19 // Android API级别
+android.library.reference.1=../../../cocos/platform/android/java
+\end{DoxyCode}
+
+
+Android A\+P\+I级别和\+Android系统版本间存在对应的映射关系，可以参看\href{https://developer.android.com/guide/topics/manifest/uses-sdk-element.html}{\tt 该文档}获取详细的内容。 

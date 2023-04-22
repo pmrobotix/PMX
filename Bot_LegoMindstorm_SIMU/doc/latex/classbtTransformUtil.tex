@@ -1,0 +1,65 @@
+\hypertarget{classbtTransformUtil}{}\section{bt\+Transform\+Util Class Reference}
+\label{classbtTransformUtil}\index{bt\+Transform\+Util@{bt\+Transform\+Util}}
+
+
+\hyperlink{classUtils}{Utils} related to temporal transforms.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Transform\+Util.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_ac943ee956ab17687013a60a5918b23e4}\label{classbtTransformUtil_ac943ee956ab17687013a60a5918b23e4}} 
+static void {\bfseries integrate\+Transform} (const bt\+Transform \&cur\+Trans, const bt\+Vector3 \&linvel, const bt\+Vector3 \&angvel, bt\+Scalar time\+Step, bt\+Transform \&predicted\+Transform)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_a291f6db1cc528595ad710ab8f256b98a}\label{classbtTransformUtil_a291f6db1cc528595ad710ab8f256b98a}} 
+static void {\bfseries calculate\+Velocity\+Quaternion} (const bt\+Vector3 \&pos0, const bt\+Vector3 \&pos1, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn0, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn1, bt\+Scalar time\+Step, bt\+Vector3 \&lin\+Vel, bt\+Vector3 \&ang\+Vel)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_a11daea5e8931d47ceaf56aee74dadf96}\label{classbtTransformUtil_a11daea5e8931d47ceaf56aee74dadf96}} 
+static void {\bfseries calculate\+Diff\+Axis\+Angle\+Quaternion} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn0, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn1a, bt\+Vector3 \&axis, bt\+Scalar \&angle)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_adea3509ccb6eb65675a102c80aa1b312}\label{classbtTransformUtil_adea3509ccb6eb65675a102c80aa1b312}} 
+static void {\bfseries calculate\+Velocity} (const bt\+Transform \&transform0, const bt\+Transform \&transform1, bt\+Scalar time\+Step, bt\+Vector3 \&lin\+Vel, bt\+Vector3 \&ang\+Vel)
+\item 
+static void \hyperlink{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}{calculate\+Diff\+Axis\+Angle} (const bt\+Transform \&transform0, const bt\+Transform \&transform1, bt\+Vector3 \&axis, bt\+Scalar \&angle)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_ac943ee956ab17687013a60a5918b23e4}\label{classbtTransformUtil_ac943ee956ab17687013a60a5918b23e4}} 
+static void {\bfseries integrate\+Transform} (const bt\+Transform \&cur\+Trans, const bt\+Vector3 \&linvel, const bt\+Vector3 \&angvel, bt\+Scalar time\+Step, bt\+Transform \&predicted\+Transform)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_a291f6db1cc528595ad710ab8f256b98a}\label{classbtTransformUtil_a291f6db1cc528595ad710ab8f256b98a}} 
+static void {\bfseries calculate\+Velocity\+Quaternion} (const bt\+Vector3 \&pos0, const bt\+Vector3 \&pos1, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn0, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn1, bt\+Scalar time\+Step, bt\+Vector3 \&lin\+Vel, bt\+Vector3 \&ang\+Vel)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_a11daea5e8931d47ceaf56aee74dadf96}\label{classbtTransformUtil_a11daea5e8931d47ceaf56aee74dadf96}} 
+static void {\bfseries calculate\+Diff\+Axis\+Angle\+Quaternion} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn0, const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&orn1a, bt\+Vector3 \&axis, bt\+Scalar \&angle)
+\item 
+\mbox{\Hypertarget{classbtTransformUtil_adea3509ccb6eb65675a102c80aa1b312}\label{classbtTransformUtil_adea3509ccb6eb65675a102c80aa1b312}} 
+static void {\bfseries calculate\+Velocity} (const bt\+Transform \&transform0, const bt\+Transform \&transform1, bt\+Scalar time\+Step, bt\+Vector3 \&lin\+Vel, bt\+Vector3 \&ang\+Vel)
+\item 
+static void \hyperlink{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}{calculate\+Diff\+Axis\+Angle} (const bt\+Transform \&transform0, const bt\+Transform \&transform1, bt\+Vector3 \&axis, bt\+Scalar \&angle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classUtils}{Utils} related to temporal transforms. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}\label{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}} 
+\index{bt\+Transform\+Util@{bt\+Transform\+Util}!calculate\+Diff\+Axis\+Angle@{calculate\+Diff\+Axis\+Angle}}
+\index{calculate\+Diff\+Axis\+Angle@{calculate\+Diff\+Axis\+Angle}!bt\+Transform\+Util@{bt\+Transform\+Util}}
+\subsubsection{\texorpdfstring{calculate\+Diff\+Axis\+Angle()}{calculateDiffAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void bt\+Transform\+Util\+::calculate\+Diff\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{transform0,  }\item[{const bt\+Transform \&}]{transform1,  }\item[{bt\+Vector3 \&}]{axis,  }\item[{bt\+Scalar \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+floating point inaccuracy can lead to w component $>$ 1..., which breaks \mbox{\Hypertarget{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}\label{classbtTransformUtil_a39f53b05940a57082053067bd5e337ec}} 
+\index{bt\+Transform\+Util@{bt\+Transform\+Util}!calculate\+Diff\+Axis\+Angle@{calculate\+Diff\+Axis\+Angle}}
+\index{calculate\+Diff\+Axis\+Angle@{calculate\+Diff\+Axis\+Angle}!bt\+Transform\+Util@{bt\+Transform\+Util}}
+\subsubsection{\texorpdfstring{calculate\+Diff\+Axis\+Angle()}{calculateDiffAxisAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void bt\+Transform\+Util\+::calculate\+Diff\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{transform0,  }\item[{const bt\+Transform \&}]{transform1,  }\item[{bt\+Vector3 \&}]{axis,  }\item[{bt\+Scalar \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+floating point inaccuracy can lead to w component $>$ 1..., which breaks 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+Transform\+Util.\+h\end{DoxyCompactItemize}

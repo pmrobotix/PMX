@@ -1,0 +1,108 @@
+\hypertarget{classActionTweenDelegate}{}\section{Action\+Tween\+Delegate Class Reference}
+\label{classActionTweenDelegate}\index{Action\+Tween\+Delegate@{Action\+Tween\+Delegate}}
+
+
+The delegate class for \hyperlink{classActionTween}{Action\+Tween}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Tween.\+h$>$}
+
+
+
+Inheritance diagram for Action\+Tween\+Delegate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classActionTweenDelegate__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}{$\sim$\+Action\+Tween\+Delegate} ()
+\item 
+virtual void \hyperlink{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}{update\+Tween\+Action} (float value, const std\+::string \&key)=0
+\begin{DoxyCompactList}\small\item\em The callback function when \hyperlink{classActionTween}{Action\+Tween} is running. \end{DoxyCompactList}\item 
+virtual \hyperlink{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}{$\sim$\+Action\+Tween\+Delegate} ()
+\item 
+virtual void \hyperlink{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}{update\+Tween\+Action} (float value, const std\+::string \&key)=0
+\begin{DoxyCompactList}\small\item\em The callback function when \hyperlink{classActionTween}{Action\+Tween} is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The delegate class for \hyperlink{classActionTween}{Action\+Tween}. 
+
+If you want to use \hyperlink{classActionTween}{Action\+Tween} on a node. You should implement the node follow these steps\+:
+\begin{DoxyEnumerate}
+\item The node should be inherit from \hyperlink{classActionTweenDelegate}{Action\+Tween\+Delegate}.
+\item Override the virtual method update\+Tween\+Action in the node.
+\end{DoxyEnumerate}
+
+Then once you running \hyperlink{classActionTween}{Action\+Tween} on the node, the method update\+Tween\+Action will be invoked. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}\label{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}} 
+\index{Action\+Tween\+Delegate@{Action\+Tween\+Delegate}!````~Action\+Tween\+Delegate@{$\sim$\+Action\+Tween\+Delegate}}
+\index{````~Action\+Tween\+Delegate@{$\sim$\+Action\+Tween\+Delegate}!Action\+Tween\+Delegate@{Action\+Tween\+Delegate}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Tween\+Delegate()}{~ActionTweenDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual Action\+Tween\+Delegate\+::$\sim$\+Action\+Tween\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}\label{classActionTweenDelegate_aafecfad24eba11952027e807af3405e0}} 
+\index{Action\+Tween\+Delegate@{Action\+Tween\+Delegate}!````~Action\+Tween\+Delegate@{$\sim$\+Action\+Tween\+Delegate}}
+\index{````~Action\+Tween\+Delegate@{$\sim$\+Action\+Tween\+Delegate}!Action\+Tween\+Delegate@{Action\+Tween\+Delegate}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Tween\+Delegate()}{~ActionTweenDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Action\+Tween\+Delegate\+::$\sim$\+Action\+Tween\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}\label{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}} 
+\index{Action\+Tween\+Delegate@{Action\+Tween\+Delegate}!update\+Tween\+Action@{update\+Tween\+Action}}
+\index{update\+Tween\+Action@{update\+Tween\+Action}!Action\+Tween\+Delegate@{Action\+Tween\+Delegate}}
+\subsubsection{\texorpdfstring{update\+Tween\+Action()}{updateTweenAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Tween\+Delegate\+::update\+Tween\+Action (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The callback function when \hyperlink{classActionTween}{Action\+Tween} is running. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new value of the specified key. \\
+\hline
+{\em key} & The key of property which should be updated. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{Scroll\+View}, \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{Scroll\+View}, \hyperlink{classControlSwitchSprite_ad8a83b2b2fdf822e067ade20df0df786}{Control\+Switch\+Sprite}, and \hyperlink{classControlSwitchSprite_a084b47aa783c1e03e14a87f73ae511b3}{Control\+Switch\+Sprite}.
+
+\mbox{\Hypertarget{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}\label{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}} 
+\index{Action\+Tween\+Delegate@{Action\+Tween\+Delegate}!update\+Tween\+Action@{update\+Tween\+Action}}
+\index{update\+Tween\+Action@{update\+Tween\+Action}!Action\+Tween\+Delegate@{Action\+Tween\+Delegate}}
+\subsubsection{\texorpdfstring{update\+Tween\+Action()}{updateTweenAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Tween\+Delegate\+::update\+Tween\+Action (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The callback function when \hyperlink{classActionTween}{Action\+Tween} is running. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new value of the specified key. \\
+\hline
+{\em key} & The key of property which should be updated. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{Scroll\+View}, \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{Scroll\+View}, \hyperlink{classControlSwitchSprite_ad8a83b2b2fdf822e067ade20df0df786}{Control\+Switch\+Sprite}, and \hyperlink{classControlSwitchSprite_a084b47aa783c1e03e14a87f73ae511b3}{Control\+Switch\+Sprite}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Tween.\+h\end{DoxyCompactItemize}

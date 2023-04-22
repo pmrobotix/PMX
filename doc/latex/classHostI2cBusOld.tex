@@ -1,0 +1,118 @@
+\hypertarget{classHostI2cBusOld}{}\section{Host\+I2c\+Bus\+Old Class Reference}
+\label{classHostI2cBusOld}\index{Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}}
+
+
+Inheritance diagram for Host\+I2c\+Bus\+Old\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classHostI2cBusOld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Host\+I2c\+Bus\+Old\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classHostI2cBusOld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHostI2cBusOld_a461e61c91e278b3d2eb08b9818210a3b}\label{classHostI2cBusOld_a461e61c91e278b3d2eb08b9818210a3b}} 
+\hyperlink{classHostI2cBusOld_a461e61c91e278b3d2eb08b9818210a3b}{Host\+I2c\+Bus\+Old} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHostI2cBusOld_a435d4a9dc0c2665ec0696f526d04f248}\label{classHostI2cBusOld_a435d4a9dc0c2665ec0696f526d04f248}} 
+virtual \hyperlink{classHostI2cBusOld_a435d4a9dc0c2665ec0696f526d04f248}{$\sim$\+Host\+I2c\+Bus\+Old} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHostI2cBusOld_ac46075b6311e25fab18c3069a7fb0b72}\label{classHostI2cBusOld_ac46075b6311e25fab18c3069a7fb0b72}} 
+int {\bfseries is\+Opened} (void)
+\item 
+int \hyperlink{classHostI2cBusOld_a9f680c445abf285e804f9a259d1ad777}{read\+Reg\+Value} (unsigned char slave\+\_\+addr, unsigned char reg, unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read a byte from the given register. \end{DoxyCompactList}\item 
+int \hyperlink{classHostI2cBusOld_a85fb525b83ff1c773a4cde7c39ac1a0e}{write\+Reg\+Value} (unsigned char slave\+\_\+addr, unsigned char reg, unsigned char value)
+\begin{DoxyCompactList}\small\item\em Write a byte to the I2C given register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHostI2cBusOld_a1fac86785cbcf9c9e8937d2bde04da89}\label{classHostI2cBusOld_a1fac86785cbcf9c9e8937d2bde04da89}} 
+int {\bfseries read\+I2c\+Size} (unsigned char slave\+\_\+addr, char $\ast$buf, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classHostI2cBusOld_a27695e023af31a1e5f13296c98598ce3}\label{classHostI2cBusOld_a27695e023af31a1e5f13296c98598ce3}} 
+int {\bfseries write\+I2c\+Size} (unsigned char slave\+\_\+addr, const char $\ast$buf, size\+\_\+t size)
+\item 
+void \hyperlink{classHostI2cBusOld_adffe1c1419af5c47cc58f802ea3426ae}{open} (unsigned char slave\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Read 4 bytes from the given register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHostI2cBusOld_a297fae73b69dea7f896b954aea951af2}\label{classHostI2cBusOld_a297fae73b69dea7f896b954aea951af2}} 
+void \hyperlink{classHostI2cBusOld_a297fae73b69dea7f896b954aea951af2}{close\+\_\+i2c} ()
+\begin{DoxyCompactList}\small\item\em Close i2c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHostI2cBusOld_adffe1c1419af5c47cc58f802ea3426ae}\label{classHostI2cBusOld_adffe1c1419af5c47cc58f802ea3426ae}} 
+\index{Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}!open@{open}}
+\index{open@{open}!Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Host\+I2c\+Bus\+Old\+::open (\begin{DoxyParamCaption}\item[{unsigned char}]{slave\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Read 4 bytes from the given register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & the given register. \\
+\hline
+{\em data} & the read value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return 0 on success, -\/1 on write error ({\itshape reg} byte), -\/2 on read error.
+\end{DoxyReturn}
+Open i2c. \mbox{\Hypertarget{classHostI2cBusOld_a9f680c445abf285e804f9a259d1ad777}\label{classHostI2cBusOld_a9f680c445abf285e804f9a259d1ad777}} 
+\index{Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}!read\+Reg\+Value@{read\+Reg\+Value}}
+\index{read\+Reg\+Value@{read\+Reg\+Value}!Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}}
+\subsubsection{\texorpdfstring{read\+Reg\+Value()}{readRegValue()}}
+{\footnotesize\ttfamily int Host\+I2c\+Bus\+Old\+::read\+Reg\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{slave\+\_\+addr,  }\item[{unsigned char}]{reg,  }\item[{unsigned char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read a byte from the given register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & the given register. \\
+\hline
+{\em data} & the read value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return 0 on success, -\/1 on write error ({\itshape reg} byte), -\/2 on read error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHostI2cBusOld_a85fb525b83ff1c773a4cde7c39ac1a0e}\label{classHostI2cBusOld_a85fb525b83ff1c773a4cde7c39ac1a0e}} 
+\index{Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}!write\+Reg\+Value@{write\+Reg\+Value}}
+\index{write\+Reg\+Value@{write\+Reg\+Value}!Host\+I2c\+Bus\+Old@{Host\+I2c\+Bus\+Old}}
+\subsubsection{\texorpdfstring{write\+Reg\+Value()}{writeRegValue()}}
+{\footnotesize\ttfamily int Host\+I2c\+Bus\+Old\+::write\+Reg\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{slave\+\_\+addr,  }\item[{unsigned char}]{reg,  }\item[{unsigned char}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a byte to the I2C given register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & register to write. \\
+\hline
+{\em value} & value to apply.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{HostI2cBus_8hpp}{Host\+I2c\+Bus.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{HostI2cBus_8cpp}{Host\+I2c\+Bus.\+cpp}\end{DoxyCompactItemize}

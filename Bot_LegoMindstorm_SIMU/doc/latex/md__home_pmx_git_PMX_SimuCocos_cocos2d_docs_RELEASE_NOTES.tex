@@ -1,0 +1,63 @@
+{\bfseries Table of Contents} {\itshape generated with \href{https://github.com/thlorenz/doctoc}{\tt Doc\+Toc}}
+
+
+\begin{DoxyItemize}
+\item \href{#cocos2d-x-3131-release-notes}{\tt Cocos2d-\/x 3.\+13.\+1 Release Notes}
+\item \href{#misc-information}{\tt Misc Information}
+\item \href{#v3131}{\tt v3.\+13.\+1}
+\begin{DoxyItemize}
+\item \href{#bug-fixed}{\tt Bug fixed}
+\item \href{#cocos-command-modification}{\tt Cocos command modification}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\section*{Cocos2d-\/x 3.\+13.\+1 Release Notes}
+
+\section*{Misc Information}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG}{\tt Full Changelog}
+\end{DoxyItemize}
+
+\section*{v3.\+13.\+1}
+
+\subsection*{Bug fixed}
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classLabel}{Label} color broken
+\item application will crash in debug mode if don\textquotesingle{}t specify a design resolution
+\item may crash if coming from background by clicking application icon on Android
+\item Audio\+Engine can not play audio if the audio lies outside A\+PK on Android
+\item Audio\+Engine\+::stop() will trigger {\ttfamily finish} callback on Android
+\item application will crash if using \hyperlink{interfaceSimpleAudioEngine}{Simple\+Audio\+Engine} or new Audio\+Engine to play audio on Android 2.\+3.\+x
+\item object.\+set\+String() has not effect if passing a number on J\+SB
+\end{DoxyItemize}
+
+\subsection*{Cocos command modification}
+
+In previous, cocos command will find an Android A\+PI level $>$= specified Android A\+PI level to build source codes on Android. For example, if the content of {\ttfamily A\+P\+P\+\_\+\+R\+O\+O\+T/proj.\+android/project.properties} is
+
+
+\begin{DoxyCode}
+target=android-13 // the default android api level
+android.library.reference.1=../../../cocos/platform/android/java
+\end{DoxyCode}
+ then cocos command will find {\ttfamily android-\/13} in {\ttfamily A\+N\+D\+R\+O\+I\+D\+\_\+\+S\+D\+K\+\_\+\+R\+O\+O\+T/platforms}, if not found then it will find {\ttfamily android-\/14}, if {\ttfamily android-\/14} is not found, then it will find {\ttfamily android-\/15} and so on until it found one.
+
+This algorithm has a problem that if you only download Android 21, then application will be built with Android 21 though the default A\+PI level is 13. If the application runs on a device with lower Android OS(such as Android 4.\+0), then the application may crash. Building with high A\+PI level Android S\+DK can not make sure run on devices with low Android OS. It is reasonable, an applicatoin build with i\+OS 9 can not make sure run on i\+OS 8.
+
+Since v3.\+13.\+1, cocos command will stop if it can not find specific A\+PI level(default is android-\/13). If you want to build with high level Android S\+DK, you should explicitely specify it like this\+:
+
+
+\begin{DoxyCode}
+cocos compile -p android --ap android-19
+\end{DoxyCode}
+
+
+Keep in mind that, after running this command, content of {\ttfamily A\+P\+P\+\_\+\+R\+O\+O\+T/proj.\+android/project.properties} will be changed, {\ttfamily android-\/19} will be the default A\+PI level.
+
+There is a map between Android A\+PI level and Android OS version, can refer to \href{https://developer.android.com/guide/topics/manifest/uses-sdk-element.html}{\tt this documentation} for detail information.
+
+Can refer to \href{https://github.com/cocos2d/cocos2d-x/milestone/33}{\tt here} for detail information about these issues. 

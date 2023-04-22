@@ -1,0 +1,158 @@
+\hypertarget{classSprite3DCache}{}\section{Sprite3\+D\+Cache Class Reference}
+\label{classSprite3DCache}\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+
+
+the cache data of \hyperlink{classSprite3D}{Sprite3D}, use to speed up \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Sprite3\+D.\+h$>$}
+
+
+
+Collaboration diagram for Sprite3\+D\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classSprite3DCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$ \hyperlink{classSprite3DCache_a9ca39b86b1d20d96f7c37ae6627e0d87}{get\+Sprite\+Data} (const std\+::string \&key) const
+\item 
+bool \hyperlink{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}{add\+Sprite3\+D\+Data} (const std\+::string \&key, \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$spritedata)
+\item 
+void \hyperlink{classSprite3DCache_afac35769b8587bc50efe723463e7082c}{remove\+Sprite3\+D\+Data} (const std\+::string \&key)
+\item 
+void \hyperlink{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}{remove\+All\+Sprite3\+D\+Data} ()
+\item 
+\hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$ \hyperlink{classSprite3DCache_a9f2648cc6646cbeffb106ecc6234edcb}{get\+Sprite\+Data} (const std\+::string \&key) const
+\item 
+bool \hyperlink{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}{add\+Sprite3\+D\+Data} (const std\+::string \&key, \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$spritedata)
+\item 
+void \hyperlink{classSprite3DCache_afac35769b8587bc50efe723463e7082c}{remove\+Sprite3\+D\+Data} (const std\+::string \&key)
+\item 
+void \hyperlink{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}{remove\+All\+Sprite3\+D\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache} $\ast$ \hyperlink{classSprite3DCache_abded39f123736a9dd38eda5b8e5d5424}{get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classSprite3DCache_a7b0eb2fcc34df7d4cfbe6e3dcb1bdd33}\label{classSprite3DCache_a7b0eb2fcc34df7d4cfbe6e3dcb1bdd33}} 
+static void {\bfseries destroy\+Instance} ()
+\item 
+static \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache} $\ast$ \hyperlink{classSprite3DCache_af5483cbe2447db7046d5adfed594e67b}{get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classSprite3DCache_a7a50b00e9548670614658e90450960fd}\label{classSprite3DCache_a7a50b00e9548670614658e90450960fd}} 
+static void {\bfseries destroy\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSprite3DCache_a1cbd2ca5173a07bf2d58dc39e68a5f2b}\label{classSprite3DCache_a1cbd2ca5173a07bf2d58dc39e68a5f2b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSprite3DCache_a71b89ba4f495a2826f7865564635eacf}\label{classSprite3DCache_a71b89ba4f495a2826f7865564635eacf}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$ $>$ {\bfseries \+\_\+sprite\+Datas}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSprite3DCache_a03b27914787435be3b1b619555c05362}\label{classSprite3DCache_a03b27914787435be3b1b619555c05362}} 
+static \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache} $\ast$ {\bfseries \+\_\+cache\+Instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the cache data of \hyperlink{classSprite3D}{Sprite3D}, use to speed up \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create} 
+
+\hyperlink{classSprite3DCache}{Sprite3\+D\+Cache} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}\label{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!add\+Sprite3\+D\+Data@{add\+Sprite3\+D\+Data}}
+\index{add\+Sprite3\+D\+Data@{add\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{add\+Sprite3\+D\+Data()}{addSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+Cache\+::add\+Sprite3\+D\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{\hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Cache\+::\+Sprite3\+D\+Data} $\ast$}]{spritedata }\end{DoxyParamCaption})}
+
+add the Sprite\+Data into \hyperlink{classSprite3D}{Sprite3D} by given the specified key
+
+NA \mbox{\Hypertarget{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}\label{classSprite3DCache_a8347de6c622a257f92a286f21a1774bf}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!add\+Sprite3\+D\+Data@{add\+Sprite3\+D\+Data}}
+\index{add\+Sprite3\+D\+Data@{add\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{add\+Sprite3\+D\+Data()}{addSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+Cache\+::add\+Sprite3\+D\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{\hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data} $\ast$}]{spritedata }\end{DoxyParamCaption})}
+
+add the Sprite\+Data into \hyperlink{classSprite3D}{Sprite3D} by given the specified key
+
+NA \mbox{\Hypertarget{classSprite3DCache_abded39f123736a9dd38eda5b8e5d5424}\label{classSprite3DCache_abded39f123736a9dd38eda5b8e5d5424}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache} $\ast$ Sprite3\+D\+Cache\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get \& destroy \mbox{\Hypertarget{classSprite3DCache_af5483cbe2447db7046d5adfed594e67b}\label{classSprite3DCache_af5483cbe2447db7046d5adfed594e67b}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSprite3DCache}{Sprite3\+D\+Cache}$\ast$ Sprite3\+D\+Cache\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get \& destroy \mbox{\Hypertarget{classSprite3DCache_a9ca39b86b1d20d96f7c37ae6627e0d87}\label{classSprite3DCache_a9ca39b86b1d20d96f7c37ae6627e0d87}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!get\+Sprite\+Data@{get\+Sprite\+Data}}
+\index{get\+Sprite\+Data@{get\+Sprite\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{get\+Sprite\+Data()}{getSpriteData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Cache\+::\+Sprite3\+D\+Data} $\ast$ Sprite3\+D\+Cache\+::get\+Sprite\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+get the Sprite\+Data struct
+
+NA \mbox{\Hypertarget{classSprite3DCache_a9f2648cc6646cbeffb106ecc6234edcb}\label{classSprite3DCache_a9f2648cc6646cbeffb106ecc6234edcb}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!get\+Sprite\+Data@{get\+Sprite\+Data}}
+\index{get\+Sprite\+Data@{get\+Sprite\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{get\+Sprite\+Data()}{getSpriteData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structSprite3DCache_1_1Sprite3DData}{Sprite3\+D\+Data}$\ast$ Sprite3\+D\+Cache\+::get\+Sprite\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+get the Sprite\+Data struct
+
+NA \mbox{\Hypertarget{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}\label{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!remove\+All\+Sprite3\+D\+Data@{remove\+All\+Sprite3\+D\+Data}}
+\index{remove\+All\+Sprite3\+D\+Data@{remove\+All\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{remove\+All\+Sprite3\+D\+Data()}{removeAllSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+Cache\+::remove\+All\+Sprite3\+D\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all the Sprite\+Data from \hyperlink{classSprite3D}{Sprite3D} \mbox{\Hypertarget{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}\label{classSprite3DCache_a0281a59eee1cd1897705855a1409260d}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!remove\+All\+Sprite3\+D\+Data@{remove\+All\+Sprite3\+D\+Data}}
+\index{remove\+All\+Sprite3\+D\+Data@{remove\+All\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{remove\+All\+Sprite3\+D\+Data()}{removeAllSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+Cache\+::remove\+All\+Sprite3\+D\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all the Sprite\+Data from \hyperlink{classSprite3D}{Sprite3D} \mbox{\Hypertarget{classSprite3DCache_afac35769b8587bc50efe723463e7082c}\label{classSprite3DCache_afac35769b8587bc50efe723463e7082c}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!remove\+Sprite3\+D\+Data@{remove\+Sprite3\+D\+Data}}
+\index{remove\+Sprite3\+D\+Data@{remove\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{remove\+Sprite3\+D\+Data()}{removeSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+Cache\+::remove\+Sprite3\+D\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+remove the Sprite\+Data from \hyperlink{classSprite3D}{Sprite3D} by given the specified key \mbox{\Hypertarget{classSprite3DCache_afac35769b8587bc50efe723463e7082c}\label{classSprite3DCache_afac35769b8587bc50efe723463e7082c}} 
+\index{Sprite3\+D\+Cache@{Sprite3\+D\+Cache}!remove\+Sprite3\+D\+Data@{remove\+Sprite3\+D\+Data}}
+\index{remove\+Sprite3\+D\+Data@{remove\+Sprite3\+D\+Data}!Sprite3\+D\+Cache@{Sprite3\+D\+Cache}}
+\subsubsection{\texorpdfstring{remove\+Sprite3\+D\+Data()}{removeSprite3DData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+Cache\+::remove\+Sprite3\+D\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+remove the Sprite\+Data from \hyperlink{classSprite3D}{Sprite3D} by given the specified key 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Sprite3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Sprite3\+D.\+cpp\end{DoxyCompactItemize}

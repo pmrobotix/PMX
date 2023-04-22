@@ -86,7 +86,7 @@ bool ButtonDriver::pressed(ButtonTouch button)
         return false;
     }
 
-    usleep(30000);//necessaire pour eviter le rebond
+    usleep(10000);//necessaire pour eviter le rebond
 
     /*
      cInput = ConsoleKeyInput::mygetch(); //wait a user action

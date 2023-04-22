@@ -1,0 +1,194 @@
+\hypertarget{classBatchCommand}{}\section{Batch\+Command Class Reference}
+\label{classBatchCommand}\index{Batch\+Command@{Batch\+Command}}
+
+
+{\ttfamily \#include $<$C\+C\+Batch\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Batch\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classBatchCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Batch\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBatchCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBatchCommand_ad6eefd9a6d6ddbd2f5591de8a1c9ff6f}{Batch\+Command} ()
+\item 
+\hyperlink{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}{$\sim$\+Batch\+Command} ()
+\item 
+void \hyperlink{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}{init} (float global\+Z\+Order, \hyperlink{classGLProgram}{G\+L\+Program} $\ast$shader, \hyperlink{structBlendFunc}{Blend\+Func} blend\+Type, \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas, const \hyperlink{classMat4}{Mat4} \&model\+View\+Transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classBatchCommand_a3bcac74f8c9fa53d33e0614043f27d14}\label{classBatchCommand_a3bcac74f8c9fa53d33e0614043f27d14}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries init} (float depth, \hyperlink{classGLProgram}{G\+L\+Program} $\ast$shader, \hyperlink{structBlendFunc}{Blend\+Func} blend\+Type, \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas, const \hyperlink{classMat4}{Mat4} \&model\+View\+Transform)
+\item 
+void \hyperlink{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}{execute} ()
+\item 
+\hyperlink{classBatchCommand_a91707ba642adedddf02fcdc8d8ee8ca4}{Batch\+Command} ()
+\item 
+\hyperlink{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}{$\sim$\+Batch\+Command} ()
+\item 
+void \hyperlink{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}{init} (float global\+Z\+Order, \hyperlink{classGLProgram}{G\+L\+Program} $\ast$shader, \hyperlink{structBlendFunc}{Blend\+Func} blend\+Type, \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas, const \hyperlink{classMat4}{Mat4} \&model\+View\+Transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classBatchCommand_a7be46884aba5c10bbd5a0fc7f14c5c3a}\label{classBatchCommand_a7be46884aba5c10bbd5a0fc7f14c5c3a}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries init} (float depth, \hyperlink{classGLProgram}{G\+L\+Program} $\ast$shader, \hyperlink{structBlendFunc}{Blend\+Func} blend\+Type, \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas, const \hyperlink{classMat4}{Mat4} \&model\+View\+Transform)
+\item 
+void \hyperlink{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}{execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBatchCommand_a0c38e4396d7d151f13080ed4a0003390}\label{classBatchCommand_a0c38e4396d7d151f13080ed4a0003390}} 
+int32\+\_\+t {\bfseries \+\_\+material\+ID}
+\item 
+G\+Luint \hyperlink{classBatchCommand_abfc6a1e43ec6c7c030699d5a057c6865}{\+\_\+texture\+ID}
+\item 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ \hyperlink{classBatchCommand_ae4845fdc280485ac6058058fa663ea3a}{\+\_\+shader}
+\item 
+\hyperlink{structBlendFunc}{Blend\+Func} \hyperlink{classBatchCommand_af4546dfb461c3f5093688a1456839260}{\+\_\+blend\+Type}
+\item 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classBatchCommand_a0ee7b43fdbd09066770f40fd17193d1f}{\+\_\+texture\+Atlas}
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classBatchCommand_ae916df5b25e735ba236a470953becf68}{\+\_\+mv}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCommand}{Command} used to draw batches in one \hyperlink{classTextureAtlas}{Texture\+Atlas}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBatchCommand_ad6eefd9a6d6ddbd2f5591de8a1c9ff6f}\label{classBatchCommand_ad6eefd9a6d6ddbd2f5591de8a1c9ff6f}} 
+\index{Batch\+Command@{Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\index{Batch\+Command@{Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{Batch\+Command()}{BatchCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Batch\+Command\+::\+Batch\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. \mbox{\Hypertarget{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}\label{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}} 
+\index{Batch\+Command@{Batch\+Command}!````~Batch\+Command@{$\sim$\+Batch\+Command}}
+\index{````~Batch\+Command@{$\sim$\+Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{$\sim$\+Batch\+Command()}{~BatchCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Batch\+Command\+::$\sim$\+Batch\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. \mbox{\Hypertarget{classBatchCommand_a91707ba642adedddf02fcdc8d8ee8ca4}\label{classBatchCommand_a91707ba642adedddf02fcdc8d8ee8ca4}} 
+\index{Batch\+Command@{Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\index{Batch\+Command@{Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{Batch\+Command()}{BatchCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Batch\+Command\+::\+Batch\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. \mbox{\Hypertarget{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}\label{classBatchCommand_aaf05282fde697675c8bc18171c87f1f1}} 
+\index{Batch\+Command@{Batch\+Command}!````~Batch\+Command@{$\sim$\+Batch\+Command}}
+\index{````~Batch\+Command@{$\sim$\+Batch\+Command}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{$\sim$\+Batch\+Command()}{~BatchCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Batch\+Command\+::$\sim$\+Batch\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}\label{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}} 
+\index{Batch\+Command@{Batch\+Command}!execute@{execute}}
+\index{execute@{execute}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Batch\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Execute the command, which will call open\+GL function to draw the texture atlas. \mbox{\Hypertarget{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}\label{classBatchCommand_a064c2181c57145a9c22d7293a1f1febf}} 
+\index{Batch\+Command@{Batch\+Command}!execute@{execute}}
+\index{execute@{execute}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Batch\+Command\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Execute the command, which will call open\+GL function to draw the texture atlas. \mbox{\Hypertarget{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}\label{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}} 
+\index{Batch\+Command@{Batch\+Command}!init@{init}}
+\index{init@{init}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Batch\+Command\+::init (\begin{DoxyParamCaption}\item[{float}]{global\+Z\+Order,  }\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{shader,  }\item[{\hyperlink{structBlendFunc}{Blend\+Func}}]{blend\+Type,  }\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View\+Transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+Init the batch command. 
+\begin{DoxyParams}{Parameters}
+{\em global\+Z\+Order} & Global\+Z\+Order of the render command. \\
+\hline
+{\em shader} & Shader used for draw the texture atlas. \\
+\hline
+{\em blend\+Type} & Blend function for texture atlas. \\
+\hline
+{\em texture\+Atlas} & Texture atlas, will contain both quads and texture for rendering. \\
+\hline
+{\em model\+View\+Transform} & Model view transform used for rendering. \\
+\hline
+{\em flags} & Indicate the render command should be rendered in 3D mode or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}\label{classBatchCommand_a8e0fe35ceddb9f2a7001f659b9ce47c9}} 
+\index{Batch\+Command@{Batch\+Command}!init@{init}}
+\index{init@{init}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Batch\+Command\+::init (\begin{DoxyParamCaption}\item[{float}]{global\+Z\+Order,  }\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{shader,  }\item[{\hyperlink{structBlendFunc}{Blend\+Func}}]{blend\+Type,  }\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View\+Transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})}
+
+Init the batch command. 
+\begin{DoxyParams}{Parameters}
+{\em global\+Z\+Order} & Global\+Z\+Order of the render command. \\
+\hline
+{\em shader} & Shader used for draw the texture atlas. \\
+\hline
+{\em blend\+Type} & Blend function for texture atlas. \\
+\hline
+{\em texture\+Atlas} & Texture atlas, will contain both quads and texture for rendering. \\
+\hline
+{\em model\+View\+Transform} & Model view transform used for rendering. \\
+\hline
+{\em flags} & Indicate the render command should be rendered in 3D mode or not. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classBatchCommand_af4546dfb461c3f5093688a1456839260}\label{classBatchCommand_af4546dfb461c3f5093688a1456839260}} 
+\index{Batch\+Command@{Batch\+Command}!\+\_\+blend\+Type@{\+\_\+blend\+Type}}
+\index{\+\_\+blend\+Type@{\+\_\+blend\+Type}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{\+\_\+blend\+Type}{\_blendType}}
+{\footnotesize\ttfamily \hyperlink{structBlendFunc}{Blend\+Func} Batch\+Command\+::\+\_\+blend\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+Blend function for rendering. \mbox{\Hypertarget{classBatchCommand_ae916df5b25e735ba236a470953becf68}\label{classBatchCommand_ae916df5b25e735ba236a470953becf68}} 
+\index{Batch\+Command@{Batch\+Command}!\+\_\+mv@{\+\_\+mv}}
+\index{\+\_\+mv@{\+\_\+mv}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{\+\_\+mv}{\_mv}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Batch\+Command\+::\+\_\+mv\hspace{0.3cm}{\ttfamily [protected]}}
+
+Model\+View transform. \mbox{\Hypertarget{classBatchCommand_ae4845fdc280485ac6058058fa663ea3a}\label{classBatchCommand_ae4845fdc280485ac6058058fa663ea3a}} 
+\index{Batch\+Command@{Batch\+Command}!\+\_\+shader@{\+\_\+shader}}
+\index{\+\_\+shader@{\+\_\+shader}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{\+\_\+shader}{\_shader}}
+{\footnotesize\ttfamily \hyperlink{classGLProgram}{G\+L\+Program} $\ast$ Batch\+Command\+::\+\_\+shader\hspace{0.3cm}{\ttfamily [protected]}}
+
+Shaders used for rendering. \mbox{\Hypertarget{classBatchCommand_a0ee7b43fdbd09066770f40fd17193d1f}\label{classBatchCommand_a0ee7b43fdbd09066770f40fd17193d1f}} 
+\index{Batch\+Command@{Batch\+Command}!\+\_\+texture\+Atlas@{\+\_\+texture\+Atlas}}
+\index{\+\_\+texture\+Atlas@{\+\_\+texture\+Atlas}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{\+\_\+texture\+Atlas}{\_textureAtlas}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ Batch\+Command\+::\+\_\+texture\+Atlas\hspace{0.3cm}{\ttfamily [protected]}}
+
+Texture atlas for rendering. \mbox{\Hypertarget{classBatchCommand_abfc6a1e43ec6c7c030699d5a057c6865}\label{classBatchCommand_abfc6a1e43ec6c7c030699d5a057c6865}} 
+\index{Batch\+Command@{Batch\+Command}!\+\_\+texture\+ID@{\+\_\+texture\+ID}}
+\index{\+\_\+texture\+ID@{\+\_\+texture\+ID}!Batch\+Command@{Batch\+Command}}
+\subsubsection{\texorpdfstring{\+\_\+texture\+ID}{\_textureID}}
+{\footnotesize\ttfamily G\+Luint Batch\+Command\+::\+\_\+texture\+ID\hspace{0.3cm}{\ttfamily [protected]}}
+
+Texture ID used for texture atlas rendering. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Batch\+Command.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Batch\+Command.\+cpp\end{DoxyCompactItemize}

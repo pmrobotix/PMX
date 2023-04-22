@@ -1,0 +1,68 @@
+\hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Gpio\+P\+C\+A9555.hpp File Reference}
+\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp}\index{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Gpio\+P\+C\+A9555.\+hpp@{/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\+Gpio\+P\+C\+A9555.\+hpp}}
+
+
+Définition de la classe \hyperlink{classGpioPCA9555}{Gpio\+P\+C\+A9555}. Program for the 12C P\+C\+A9555 Board part number D\+F\+R0013 I\+IC TO G\+P\+IO module from dfrobot.\+com 16 outputs that I used to drive this relay board made in Bulgaria \href{http://www.denkovi.com/product/21/16-relay-board-for-your-pic-avr-project-12v.html}{\tt http\+://www.\+denkovi.\+com/product/21/16-\/relay-\/board-\/for-\/your-\/pic-\/avr-\/project-\/12v.\+html}.  
+
+
+{\ttfamily \#include \char`\"{}../\+Log/\+Logger\+Factory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Host\+I2c\+Bus.\+hpp\char`\"{}}\newline
+Include dependency graph for Gpio\+P\+C\+A9555.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Driver-APF9328__ARM_2GpioPCA9555_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{Driver-APF9328__ARM_2GpioPCA9555_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGpioPCA9555}{Gpio\+P\+C\+A9555}
+\begin{DoxyCompactList}\small\item\em Implementation for the 12C P\+C\+A9555 Board part number D\+F\+R0013 I\+IC TO G\+P\+IO module from dfrobot.\+com. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_afada43ef75977ee2d6affe27b63592e7}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_afada43ef75977ee2d6affe27b63592e7}} 
+\#define {\bfseries G\+P\+I\+O\+B\+O\+A\+R\+D\+\_\+\+P\+C\+A9555}~0x24
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_ad5d243facb2f0b60bae4e2bcd4507133}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_ad5d243facb2f0b60bae4e2bcd4507133}} 
+\#define {\bfseries I\+N\+\_\+\+P0}~0x00
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_aae8ab17c66ca2200c187994907d6b16c}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_aae8ab17c66ca2200c187994907d6b16c}} 
+\#define {\bfseries I\+N\+\_\+\+P1}~0x01
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a90c98bc31603eaf644c72656b48f5cff}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a90c98bc31603eaf644c72656b48f5cff}} 
+\#define {\bfseries O\+U\+T\+\_\+\+P0}~0x02
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a6ebb86f05678172c35a63b3543683ac0}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a6ebb86f05678172c35a63b3543683ac0}} 
+\#define {\bfseries O\+U\+T\+\_\+\+P1}~0x03
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a236702c8f9bbd04b12151d53751479c4}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a236702c8f9bbd04b12151d53751479c4}} 
+\#define {\bfseries I\+N\+V\+\_\+\+P0}~0x04
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a9f4a7cb71447f0f7078def6685858e9a}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a9f4a7cb71447f0f7078def6685858e9a}} 
+\#define {\bfseries I\+N\+V\+\_\+\+P1}~0x05
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a8ce1f52d19af060466222c2c37dd04d6}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a8ce1f52d19af060466222c2c37dd04d6}} 
+\#define {\bfseries C\+O\+N\+F\+I\+G\+\_\+\+P0}~0x06
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a99732f7c96d976f153270f3f27911274}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a99732f7c96d976f153270f3f27911274}} 
+\#define {\bfseries C\+O\+N\+F\+I\+G\+\_\+\+P1}~0x07
+\item 
+\mbox{\Hypertarget{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a5666ac5930c9f903698073ab1fa694f7}\label{Driver-APF9328__ARM_2GpioPCA9555_8hpp_a5666ac5930c9f903698073ab1fa694f7}} 
+\#define {\bfseries P\+A\+U\+SE}~200000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définition de la classe \hyperlink{classGpioPCA9555}{Gpio\+P\+C\+A9555}. Program for the 12C P\+C\+A9555 Board part number D\+F\+R0013 I\+IC TO G\+P\+IO module from dfrobot.\+com 16 outputs that I used to drive this relay board made in Bulgaria \href{http://www.denkovi.com/product/21/16-relay-board-for-your-pic-avr-project-12v.html}{\tt http\+://www.\+denkovi.\+com/product/21/16-\/relay-\/board-\/for-\/your-\/pic-\/avr-\/project-\/12v.\+html}. 
+

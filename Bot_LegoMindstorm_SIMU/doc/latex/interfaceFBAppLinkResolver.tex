@@ -1,0 +1,175 @@
+\hypertarget{interfaceFBAppLinkResolver}{}\section{F\+B\+App\+Link\+Resolver Class Reference}
+\label{interfaceFBAppLinkResolver}\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+
+
+{\ttfamily \#import $<$F\+B\+App\+Link\+Resolver.\+h$>$}
+
+
+
+Inheritance diagram for F\+B\+App\+Link\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{interfaceFBAppLinkResolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\+B\+App\+Link\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{interfaceFBAppLinkResolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\+F\+Task $\ast$) -\/ \hyperlink{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}
+\item 
+(B\+F\+Task $\ast$) -\/ \hyperlink{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}
+\item 
+(B\+F\+Task $\ast$) -\/ \hyperlink{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}
+\item 
+(B\+F\+Task $\ast$) -\/ \hyperlink{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}
+\item 
+(B\+F\+Task $\ast$) -\/ \hyperlink{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}{resolver}
+\item 
+(instancetype) + \hyperlink{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}{resolver}
+\item 
+(instancetype) + \hyperlink{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}{resolver}
+\item 
+(instancetype) + \hyperlink{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}{resolver}
+\item 
+(instancetype) + \hyperlink{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}{resolver}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides an implementation of the \hyperlink{classBFAppLinkResolving-p}{B\+F\+App\+Link\+Resolving} protocol that uses the \hyperlink{interfaceFacebook}{Facebook} app link index to resolve App Links given a U\+RL. It also provides an additional helper method that can resolve multiple App Links in a single call.
+
+Usage of this type requires a client token. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}}. 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}\label{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}}
+\index{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:()}{appLinksFromURLsInBackground:()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily -\/ (B\+F\+Task $\ast$) app\+Links\+From\+U\+R\+Ls\+In\+Background\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{urls }\end{DoxyParamCaption}}
+
+Asynchronously resolves App Link data for multiple U\+R\+Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\+S\+U\+R\+Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\+F\+Task that will return dictionary mapping input N\+S\+U\+R\+Ls to their corresponding B\+F\+App\+Link.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}} \mbox{\Hypertarget{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}\label{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}}
+\index{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:()}{appLinksFromURLsInBackground:()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily -\/ (B\+F\+Task $\ast$) app\+Links\+From\+U\+R\+Ls\+In\+Background\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{urls }\end{DoxyParamCaption}}
+
+Asynchronously resolves App Link data for multiple U\+R\+Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\+S\+U\+R\+Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\+F\+Task that will return dictionary mapping input N\+S\+U\+R\+Ls to their corresponding B\+F\+App\+Link.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}} \mbox{\Hypertarget{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}\label{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}}
+\index{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:()}{appLinksFromURLsInBackground:()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily -\/ (B\+F\+Task $\ast$) app\+Links\+From\+U\+R\+Ls\+In\+Background\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{urls }\end{DoxyParamCaption}}
+
+Asynchronously resolves App Link data for multiple U\+R\+Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\+S\+U\+R\+Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\+F\+Task that will return dictionary mapping input N\+S\+U\+R\+Ls to their corresponding B\+F\+App\+Link.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}} \mbox{\Hypertarget{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}\label{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}}
+\index{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:()}{appLinksFromURLsInBackground:()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily -\/ (B\+F\+Task $\ast$) app\+Links\+From\+U\+R\+Ls\+In\+Background\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{urls }\end{DoxyParamCaption}}
+
+Asynchronously resolves App Link data for multiple U\+R\+Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\+S\+U\+R\+Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\+F\+Task that will return dictionary mapping input N\+S\+U\+R\+Ls to their corresponding B\+F\+App\+Link.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}} \mbox{\Hypertarget{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}\label{interfaceFBAppLinkResolver_aefdaa81da8bc6105172f4f2632c12daa}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}}
+\index{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:@{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{app\+Links\+From\+U\+R\+Ls\+In\+Background\+:()}{appLinksFromURLsInBackground:()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily -\/ (B\+F\+Task $\ast$) app\+Links\+From\+U\+R\+Ls\+In\+Background\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{urls }\end{DoxyParamCaption}}
+
+Asynchronously resolves App Link data for multiple U\+R\+Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\+S\+U\+R\+Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A B\+F\+Task that will return dictionary mapping input N\+S\+U\+R\+Ls to their corresponding B\+F\+App\+Link.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interfaceFBSettings}{F\+B\+Settings} set\+Client\+Token\+:\mbox{]}} \mbox{\Hypertarget{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}\label{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{resolver()}{resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily + (instancetype) resolver \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Allocates and initializes a new instance of \hyperlink{interfaceFBAppLinkResolver}{F\+B\+App\+Link\+Resolver}. \mbox{\Hypertarget{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}\label{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{resolver()}{resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily + (instancetype) resolver \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Allocates and initializes a new instance of \hyperlink{interfaceFBAppLinkResolver}{F\+B\+App\+Link\+Resolver}. \mbox{\Hypertarget{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}\label{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{resolver()}{resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily + (instancetype) resolver \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Allocates and initializes a new instance of \hyperlink{interfaceFBAppLinkResolver}{F\+B\+App\+Link\+Resolver}. \mbox{\Hypertarget{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}\label{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{resolver()}{resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily + (instancetype) resolver \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Allocates and initializes a new instance of \hyperlink{interfaceFBAppLinkResolver}{F\+B\+App\+Link\+Resolver}. \mbox{\Hypertarget{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}\label{interfaceFBAppLinkResolver_a2012888799cc3416e4c6d01e1a18f90b}} 
+\index{F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!F\+B\+App\+Link\+Resolver@{F\+B\+App\+Link\+Resolver}}
+\subsubsection{\texorpdfstring{resolver()}{resolver()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily + (instancetype) resolver \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Allocates and initializes a new instance of \hyperlink{interfaceFBAppLinkResolver}{F\+B\+App\+Link\+Resolver}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/facebook/proj.\+ios/\+Facebook\+S\+D\+K.\+framework/\+Headers/F\+B\+App\+Link\+Resolver.\+h\end{DoxyCompactItemize}

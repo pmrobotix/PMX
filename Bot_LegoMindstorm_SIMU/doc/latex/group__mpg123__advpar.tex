@@ -1,0 +1,127 @@
+\hypertarget{group__mpg123__advpar}{}\section{mpg123 advanced parameter A\+PI}
+\label{group__mpg123__advpar}\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct mpg123\+\_\+pars\+\_\+struct \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars}
+\item 
+typedef struct mpg123\+\_\+pars\+\_\+struct \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT \hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$ \hyperlink{group__mpg123__advpar_gac821d9eb625a70c1d30a3a14a211f2d2}{mpg123\+\_\+parnew} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp, const char $\ast$decoder, int $\ast$error)
+\item 
+E\+X\+P\+O\+RT \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$ \hyperlink{group__mpg123__advpar_ga4ca3810b635b11e97aa3253d97029948}{mpg123\+\_\+new\+\_\+pars} (int $\ast$error)
+\item 
+E\+X\+P\+O\+RT void \hyperlink{group__mpg123__advpar_gae2b9963cd5295f736db026dbe2c2e1a3}{mpg123\+\_\+delete\+\_\+pars} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_gaf84d9ade7166f3b41c70e457b71b1b38}{mpg123\+\_\+fmt\+\_\+none} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_ga9712fbe0f36a29d4c38a1c96a333083a}{mpg123\+\_\+fmt\+\_\+all} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_ga0a4e4931437176e1365a98d5af921a6a}{mpg123\+\_\+fmt} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mh, long rate, int channels, int encodings)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_ga26bfa94065adbda219b0ef4572385293}{mpg123\+\_\+fmt\+\_\+support} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mh, long rate, int encoding)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_ga1264032012d421572198dda37ed88bd2}{mpg123\+\_\+par} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp, enum \hyperlink{group__mpg123__init_ga73a8ff3363028b89afc72b3ea032b9cb}{mpg123\+\_\+parms} type, long value, double fvalue)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__advpar_gac8aef7a3971c4617022e288b3fa12285}{mpg123\+\_\+getpar} (\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$mp, enum \hyperlink{group__mpg123__init_ga73a8ff3363028b89afc72b3ea032b9cb}{mpg123\+\_\+parms} type, long $\ast$val, double $\ast$fval)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Direct access to a parameter set without full handle around it. Possible uses\+:
+\begin{DoxyItemize}
+\item Influence behaviour of library {\itshape during} initialization of handle (M\+P\+G123\+\_\+\+V\+E\+R\+B\+O\+SE).
+\item Use one set of parameters for multiple handles.
+\end{DoxyItemize}
+
+The functions for handling mpg123\+\_\+pars (\hyperlink{group__mpg123__advpar_ga1264032012d421572198dda37ed88bd2}{mpg123\+\_\+par()} and \hyperlink{group__mpg123__advpar_ga0a4e4931437176e1365a98d5af921a6a}{mpg123\+\_\+fmt()} family) directly return a fully qualified mpg123 error code, the ones operating on full handles normally M\+P\+G123\+\_\+\+OK or M\+P\+G123\+\_\+\+E\+RR, storing the specific error code itseld inside the handle. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}\label{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+pars@{mpg123\+\_\+pars}}
+\index{mpg123\+\_\+pars@{mpg123\+\_\+pars}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+pars}{mpg123\_pars}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct mpg123\+\_\+pars\+\_\+struct \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars}}
+
+Opaque structure for the libmpg123 decoder parameters. \mbox{\Hypertarget{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}\label{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+pars@{mpg123\+\_\+pars}}
+\index{mpg123\+\_\+pars@{mpg123\+\_\+pars}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+pars}{mpg123\_pars}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct mpg123\+\_\+pars\+\_\+struct \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars}}
+
+Opaque structure for the libmpg123 decoder parameters. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__advpar_gae2b9963cd5295f736db026dbe2c2e1a3}\label{group__mpg123__advpar_gae2b9963cd5295f736db026dbe2c2e1a3}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+delete\+\_\+pars@{mpg123\+\_\+delete\+\_\+pars}}
+\index{mpg123\+\_\+delete\+\_\+pars@{mpg123\+\_\+delete\+\_\+pars}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+delete\+\_\+pars()}{mpg123\_delete\_pars()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT void mpg123\+\_\+delete\+\_\+pars (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp }\end{DoxyParamCaption})}
+
+Delete and free up memory used by a mpg123\+\_\+pars data structure \mbox{\Hypertarget{group__mpg123__advpar_ga0a4e4931437176e1365a98d5af921a6a}\label{group__mpg123__advpar_ga0a4e4931437176e1365a98d5af921a6a}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+fmt@{mpg123\+\_\+fmt}}
+\index{mpg123\+\_\+fmt@{mpg123\+\_\+fmt}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+fmt()}{mpg123\_fmt()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+fmt (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mh,  }\item[{long}]{rate,  }\item[{int}]{channels,  }\item[{int}]{encodings }\end{DoxyParamCaption})}
+
+Set the audio format support of a mpg123\+\_\+pars in detail\+: 
+\begin{DoxyParams}{Parameters}
+{\em rate} & The sample rate value (in Hertz). \\
+\hline
+{\em channels} & A combination of M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO and M\+P\+G123\+\_\+\+M\+O\+NO. \\
+\hline
+{\em encodings} & A combination of accepted encodings for rate and channels, p.\+ex M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D16$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8 (or 0 for no support). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 if there was an error. / 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__advpar_ga9712fbe0f36a29d4c38a1c96a333083a}\label{group__mpg123__advpar_ga9712fbe0f36a29d4c38a1c96a333083a}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+fmt\+\_\+all@{mpg123\+\_\+fmt\+\_\+all}}
+\index{mpg123\+\_\+fmt\+\_\+all@{mpg123\+\_\+fmt\+\_\+all}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+fmt\+\_\+all()}{mpg123\_fmt\_all()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+fmt\+\_\+all (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp }\end{DoxyParamCaption})}
+
+Configure mpg123 parameters to accept all formats (also any custom rate you may set) -- this is default. \mbox{\Hypertarget{group__mpg123__advpar_gaf84d9ade7166f3b41c70e457b71b1b38}\label{group__mpg123__advpar_gaf84d9ade7166f3b41c70e457b71b1b38}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+fmt\+\_\+none@{mpg123\+\_\+fmt\+\_\+none}}
+\index{mpg123\+\_\+fmt\+\_\+none@{mpg123\+\_\+fmt\+\_\+none}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+fmt\+\_\+none()}{mpg123\_fmt\_none()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+fmt\+\_\+none (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp }\end{DoxyParamCaption})}
+
+Configure mpg123 parameters to accept no output format at all, use before specifying supported formats with mpg123\+\_\+format \mbox{\Hypertarget{group__mpg123__advpar_ga26bfa94065adbda219b0ef4572385293}\label{group__mpg123__advpar_ga26bfa94065adbda219b0ef4572385293}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+fmt\+\_\+support@{mpg123\+\_\+fmt\+\_\+support}}
+\index{mpg123\+\_\+fmt\+\_\+support@{mpg123\+\_\+fmt\+\_\+support}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+fmt\+\_\+support()}{mpg123\_fmt\_support()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+fmt\+\_\+support (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mh,  }\item[{long}]{rate,  }\item[{int}]{encoding }\end{DoxyParamCaption})}
+
+Check to see if a specific format at a specific rate is supported by mpg123\+\_\+pars. \begin{DoxyReturn}{Returns}
+0 for no support (that includes invalid parameters), M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO, M\+P\+G123\+\_\+\+M\+O\+NO or M\+P\+G123\+\_\+\+S\+T\+E\+R\+E\+O$\vert$\+M\+P\+G123\+\_\+\+M\+O\+NO. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__advpar_gac8aef7a3971c4617022e288b3fa12285}\label{group__mpg123__advpar_gac8aef7a3971c4617022e288b3fa12285}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+getpar@{mpg123\+\_\+getpar}}
+\index{mpg123\+\_\+getpar@{mpg123\+\_\+getpar}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+getpar()}{mpg123\_getpar()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+getpar (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp,  }\item[{enum \hyperlink{group__mpg123__init_ga73a8ff3363028b89afc72b3ea032b9cb}{mpg123\+\_\+parms}}]{type,  }\item[{long $\ast$}]{val,  }\item[{double $\ast$}]{fval }\end{DoxyParamCaption})}
+
+Get a specific parameter, for a specific mpg123\+\_\+pars. See the mpg123\+\_\+parms enumeration for a \hyperlink{protocollist-p}{list} of available parameters. \mbox{\Hypertarget{group__mpg123__advpar_ga4ca3810b635b11e97aa3253d97029948}\label{group__mpg123__advpar_ga4ca3810b635b11e97aa3253d97029948}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+new\+\_\+pars@{mpg123\+\_\+new\+\_\+pars}}
+\index{mpg123\+\_\+new\+\_\+pars@{mpg123\+\_\+new\+\_\+pars}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+new\+\_\+pars()}{mpg123\_new\_pars()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT \hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$ mpg123\+\_\+new\+\_\+pars (\begin{DoxyParamCaption}\item[{int $\ast$}]{error }\end{DoxyParamCaption})}
+
+Allocate memory for and return a pointer to a new mpg123\+\_\+pars \mbox{\Hypertarget{group__mpg123__advpar_ga1264032012d421572198dda37ed88bd2}\label{group__mpg123__advpar_ga1264032012d421572198dda37ed88bd2}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+par@{mpg123\+\_\+par}}
+\index{mpg123\+\_\+par@{mpg123\+\_\+par}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+par()}{mpg123\_par()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+par (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp,  }\item[{enum \hyperlink{group__mpg123__init_ga73a8ff3363028b89afc72b3ea032b9cb}{mpg123\+\_\+parms}}]{type,  }\item[{long}]{value,  }\item[{double}]{fvalue }\end{DoxyParamCaption})}
+
+Set a specific parameter, for a specific mpg123\+\_\+pars, using a parameter type key chosen from the mpg123\+\_\+parms enumeration, to the specified value. \mbox{\Hypertarget{group__mpg123__advpar_gac821d9eb625a70c1d30a3a14a211f2d2}\label{group__mpg123__advpar_gac821d9eb625a70c1d30a3a14a211f2d2}} 
+\index{mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}!mpg123\+\_\+parnew@{mpg123\+\_\+parnew}}
+\index{mpg123\+\_\+parnew@{mpg123\+\_\+parnew}!mpg123 advanced parameter A\+PI@{mpg123 advanced parameter A\+PI}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+parnew()}{mpg123\_parnew()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT \hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$ mpg123\+\_\+parnew (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__advpar_ga3983578625af3bb6dc7e3b74d0cab4aa}{mpg123\+\_\+pars} $\ast$}]{mp,  }\item[{const char $\ast$}]{decoder,  }\item[{int $\ast$}]{error }\end{DoxyParamCaption})}
+
+Create a handle with preset parameters. 

@@ -1,0 +1,42 @@
+\hypertarget{classSpuSampleTaskProcess}{}\section{Spu\+Sample\+Task\+Process Class Reference}
+\label{classSpuSampleTaskProcess}\index{Spu\+Sample\+Task\+Process@{Spu\+Sample\+Task\+Process}}
+
+
+{\ttfamily \#include $<$Spu\+Sample\+Task\+Process.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a8144853118a2787f3ebd8986ef07249f}\label{classSpuSampleTaskProcess_a8144853118a2787f3ebd8986ef07249f}} 
+{\bfseries Spu\+Sample\+Task\+Process} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}\label{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}} 
+void \hyperlink{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}{initialize} ()
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a2f9d210a42b8bd17d5a118c36fa57a38}\label{classSpuSampleTaskProcess_a2f9d210a42b8bd17d5a118c36fa57a38}} 
+void {\bfseries issue\+Task} (void $\ast$sample\+Main\+Mem\+Ptr, int sample\+Value, int sample\+Command)
+\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}\label{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}} 
+void \hyperlink{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}{flush} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a8144853118a2787f3ebd8986ef07249f}\label{classSpuSampleTaskProcess_a8144853118a2787f3ebd8986ef07249f}} 
+{\bfseries Spu\+Sample\+Task\+Process} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}\label{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}} 
+void \hyperlink{classSpuSampleTaskProcess_a955dfb43d04179a0caef12dd9d339ebb}{initialize} ()
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_a2f9d210a42b8bd17d5a118c36fa57a38}\label{classSpuSampleTaskProcess_a2f9d210a42b8bd17d5a118c36fa57a38}} 
+void {\bfseries issue\+Task} (void $\ast$sample\+Main\+Mem\+Ptr, int sample\+Value, int sample\+Command)
+\item 
+\mbox{\Hypertarget{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}\label{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}} 
+void \hyperlink{classSpuSampleTaskProcess_ad9804e89ae7a0a54c0d43bebd13f3cb9}{flush} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSpuSampleTaskProcess}{Spu\+Sample\+Task\+Process} handles S\+PU processing of collision pairs. When P\+PU issues a task, it will look for completed task buffers P\+PU will do postprocessing, dependent on workunit output (not likely) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Sample\+Task\+Process.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Sample\+Task\+Process.\+cpp\end{DoxyCompactItemize}

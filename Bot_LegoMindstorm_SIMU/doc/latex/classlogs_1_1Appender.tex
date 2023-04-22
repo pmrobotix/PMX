@@ -1,0 +1,72 @@
+\hypertarget{classlogs_1_1Appender}{}\section{logs\+:\+:Appender Class Reference}
+\label{classlogs_1_1Appender}\index{logs\+::\+Appender@{logs\+::\+Appender}}
+
+
+Classe de gestion des flux de sortie pour les logs.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlogs_1_1Appender__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1Appender_a253afd272c37d4f76c0e26228d7a892f}\label{classlogs_1_1Appender_a253afd272c37d4f76c0e26228d7a892f}} 
+virtual \hyperlink{classlogs_1_1Appender_a253afd272c37d4f76c0e26228d7a892f}{$\sim$ Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlogs_1_1Appender_a940a63ebc17c8e29c1922948903c60e1}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)=0
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Appender_ad682aa0a59e34dc962e4abec5e9b1722}\label{classlogs_1_1Appender_ad682aa0a59e34dc962e4abec5e9b1722}} 
+virtual void \hyperlink{classlogs_1_1Appender_ad682aa0a59e34dc962e4abec5e9b1722}{flush} ()=0
+\begin{DoxyCompactList}\small\item\em Méthode générique pour l\textquotesingle{}ecriture des traces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1Appender_a6c2acb37a497bad50ecb8bb13f906569}\label{classlogs_1_1Appender_a6c2acb37a497bad50ecb8bb13f906569}} 
+\hyperlink{classlogs_1_1Appender_a6c2acb37a497bad50ecb8bb13f906569}{Appender} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de gestion des flux de sortie pour les logs. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1Appender_a940a63ebc17c8e29c1922948903c60e1}\label{classlogs_1_1Appender_a940a63ebc17c8e29c1922948903c60e1}} 
+\index{logs\+::\+Appender@{logs\+::\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+Appender@{logs\+::\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily virtual void logs\+::\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & \hyperlink{classlogs_1_1Logger}{Logger} de référence du message. \\
+\hline
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message a tracer. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classlogs_1_1TelemetryAppender_ac016e9912989d9550e5f5b42603a793c}{logs\+::\+Telemetry\+Appender}, \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}, \hyperlink{classlogs_1_1FileAppender_ab0dad2dab0f7d659321a574bdfa769c7}{logs\+::\+File\+Appender}, \hyperlink{classlogs_1_1ConsoleAppender_a8bc998ae5666863d846b6909207b2fc7}{logs\+::\+Console\+Appender}, \hyperlink{classlogs_1_1SvgAppender_a9ec86931329330e976a213510d4d82e6}{logs\+::\+Svg\+Appender}, and \hyperlink{classUnitTestAppender_a2b69943419d6fe74a7f8a9c6cdcd0c98}{Unit\+Test\+Appender}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{Logger_8hpp}{Logger.\+hpp}\end{DoxyCompactItemize}

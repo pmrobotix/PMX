@@ -1,0 +1,95 @@
+\hypertarget{structbtSparseSdf}{}\section{bt\+Sparse\+Sdf$<$ C\+E\+L\+L\+S\+I\+ZE $>$ Struct Template Reference}
+\label{structbtSparseSdf}\index{bt\+Sparse\+Sdf$<$ C\+E\+L\+L\+S\+I\+Z\+E $>$@{bt\+Sparse\+Sdf$<$ C\+E\+L\+L\+S\+I\+Z\+E $>$}}
+
+
+Collaboration diagram for bt\+Sparse\+Sdf$<$ C\+E\+L\+L\+S\+I\+ZE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{structbtSparseSdf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtSparseSdf_1_1Cell}{Cell}
+\item 
+struct \hyperlink{structbtSparseSdf_1_1IntFrac}{Int\+Frac}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_afe91a2239636a83c17b9ae57034a9d2f}\label{structbtSparseSdf_afe91a2239636a83c17b9ae57034a9d2f}} 
+void {\bfseries Initialize} (int hashsize=2383, int clamp\+Cells=256 $\ast$1024)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a2f650f4de0d04f74ee7cf17cf598ea24}\label{structbtSparseSdf_a2f650f4de0d04f74ee7cf17cf598ea24}} 
+void {\bfseries Reset} ()
+\item 
+void \hyperlink{structbtSparseSdf_a08dbaa356f577ebbd0808329766111d1}{Garbage\+Collect} (int lifetime=256)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a83c76728ac778112b4c1c2fb82ba4477}\label{structbtSparseSdf_a83c76728ac778112b4c1c2fb82ba4477}} 
+int {\bfseries Remove\+References} (bt\+Collision\+Shape $\ast$pcs)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a9e16c04bb8321538b9b79d426a251096}\label{structbtSparseSdf_a9e16c04bb8321538b9b79d426a251096}} 
+bt\+Scalar {\bfseries Evaluate} (const bt\+Vector3 \&x, const bt\+Collision\+Shape $\ast$shape, bt\+Vector3 \&normal, bt\+Scalar margin)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_ac91f0a240d638c6c69c900d6995e6eb8}\label{structbtSparseSdf_ac91f0a240d638c6c69c900d6995e6eb8}} 
+void {\bfseries Build\+Cell} (\hyperlink{structbtSparseSdf_1_1Cell}{Cell} \&c)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a5bb4cb1c91f3f7a94f8924a87526c18c}\label{structbtSparseSdf_a5bb4cb1c91f3f7a94f8924a87526c18c}} 
+static bt\+Scalar {\bfseries Distance\+To\+Shape} (const bt\+Vector3 \&x, const bt\+Collision\+Shape $\ast$shape)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a2f1d693d445c2d3c9cebe86f1fc440a6}\label{structbtSparseSdf_a2f1d693d445c2d3c9cebe86f1fc440a6}} 
+static \hyperlink{structbtSparseSdf_1_1IntFrac}{Int\+Frac} {\bfseries Decompose} (bt\+Scalar x)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_acf8197387b8c7737dab9e79d40aa2355}\label{structbtSparseSdf_acf8197387b8c7737dab9e79d40aa2355}} 
+static bt\+Scalar {\bfseries Lerp} (bt\+Scalar a, bt\+Scalar b, bt\+Scalar t)
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_ad1595c6fc8c7913b34d81d53af508656}\label{structbtSparseSdf_ad1595c6fc8c7913b34d81d53af508656}} 
+static unsigned int {\bfseries Hash} (int x, int y, int z, const bt\+Collision\+Shape $\ast$shape)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a96994688745162aae2fbaa80987b82f6}\label{structbtSparseSdf_a96994688745162aae2fbaa80987b82f6}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSparseSdf_1_1Cell}{Cell} $\ast$ $>$ {\bfseries cells}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_af08d0b4463c5dd5dffddb172b2095705}\label{structbtSparseSdf_af08d0b4463c5dd5dffddb172b2095705}} 
+bt\+Scalar {\bfseries voxelsz}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_aff0dcb600fe35b805e95f48d205ab17b}\label{structbtSparseSdf_aff0dcb600fe35b805e95f48d205ab17b}} 
+int {\bfseries puid}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a04622e2f419471b6976d817e8a7327e7}\label{structbtSparseSdf_a04622e2f419471b6976d817e8a7327e7}} 
+int {\bfseries ncells}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a8bca9c6ebbe23a19d02127a81260dc55}\label{structbtSparseSdf_a8bca9c6ebbe23a19d02127a81260dc55}} 
+int {\bfseries m\+\_\+clamp\+Cells}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_a937be99aca40d5cbedf8357a21ab765d}\label{structbtSparseSdf_a937be99aca40d5cbedf8357a21ab765d}} 
+int {\bfseries nprobes}
+\item 
+\mbox{\Hypertarget{structbtSparseSdf_ac5a660d252157f0cd9de683951921bc0}\label{structbtSparseSdf_ac5a660d252157f0cd9de683951921bc0}} 
+int {\bfseries nqueries}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structbtSparseSdf_a08dbaa356f577ebbd0808329766111d1}\label{structbtSparseSdf_a08dbaa356f577ebbd0808329766111d1}} 
+\index{bt\+Sparse\+Sdf@{bt\+Sparse\+Sdf}!Garbage\+Collect@{Garbage\+Collect}}
+\index{Garbage\+Collect@{Garbage\+Collect}!bt\+Sparse\+Sdf@{bt\+Sparse\+Sdf}}
+\subsubsection{\texorpdfstring{Garbage\+Collect()}{GarbageCollect()}}
+{\footnotesize\ttfamily template$<$const int C\+E\+L\+L\+S\+I\+ZE$>$ \\
+void \hyperlink{structbtSparseSdf}{bt\+Sparse\+Sdf}$<$ C\+E\+L\+L\+S\+I\+ZE $>$\+::Garbage\+Collect (\begin{DoxyParamCaption}\item[{int}]{lifetime = {\ttfamily 256} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000038}{Todo}]\+: Reset puid\textquotesingle{}s when int range limit is reached $\ast$/ \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Sparse\+S\+D\+F.\+h\end{DoxyCompactItemize}

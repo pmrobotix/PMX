@@ -1,0 +1,78 @@
+\hypertarget{classbtDantzigSolver}{}\section{bt\+Dantzig\+Solver Class Reference}
+\label{classbtDantzigSolver}\index{bt\+Dantzig\+Solver@{bt\+Dantzig\+Solver}}
+
+
+original version written by Erwin Coumans, October 2013  
+
+
+
+
+{\ttfamily \#include $<$bt\+Dantzig\+Solver.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Dantzig\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classbtDantzigSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Dantzig\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtDantzigSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_a9c660881e66a59e3647da9e02c014725}\label{classbtDantzigSolver_a9c660881e66a59e3647da9e02c014725}} 
+virtual bool {\bfseries solve\+M\+L\+CP} (const bt\+Matrix\+Xu \&A, const bt\+Vector\+Xu \&b, bt\+Vector\+Xu \&x, const bt\+Vector\+Xu \&lo, const bt\+Vector\+Xu \&hi, const \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ \&limit\+Dependency, int num\+Iterations, bool use\+Sparsity=true)
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_a9c660881e66a59e3647da9e02c014725}\label{classbtDantzigSolver_a9c660881e66a59e3647da9e02c014725}} 
+virtual bool {\bfseries solve\+M\+L\+CP} (const bt\+Matrix\+Xu \&A, const bt\+Vector\+Xu \&b, bt\+Vector\+Xu \&x, const bt\+Vector\+Xu \&lo, const bt\+Vector\+Xu \&hi, const \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ \&limit\+Dependency, int num\+Iterations, bool use\+Sparsity=true)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_aa6598890a5f1aa8661e986af9dc56ac7}\label{classbtDantzigSolver_aa6598890a5f1aa8661e986af9dc56ac7}} 
+bt\+Scalar {\bfseries m\+\_\+acceptable\+Upper\+Limit\+Solution}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_a26e3843c879635311d5d34800cc023eb}\label{classbtDantzigSolver_a26e3843c879635311d5d34800cc023eb}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ char $>$ {\bfseries m\+\_\+temp\+Buffer}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_aec8f1d2bfa12a3b872998acbbe268493}\label{classbtDantzigSolver_aec8f1d2bfa12a3b872998acbbe268493}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+A}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_af6b70abce9079f5ecc9a87377df23860}\label{classbtDantzigSolver_af6b70abce9079f5ecc9a87377df23860}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+b}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_af2c20a2fea3c79b293c112155380b627}\label{classbtDantzigSolver_af2c20a2fea3c79b293c112155380b627}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+x}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_aee283de892160f75836dca804430ed0b}\label{classbtDantzigSolver_aee283de892160f75836dca804430ed0b}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+lo}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_a92d361ade8daac56537da41d94272721}\label{classbtDantzigSolver_a92d361ade8daac56537da41d94272721}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries m\+\_\+hi}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_aaebea1b9724e345055464cc5bcd25bf5}\label{classbtDantzigSolver_aaebea1b9724e345055464cc5bcd25bf5}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+dependencies}
+\item 
+\mbox{\Hypertarget{classbtDantzigSolver_a8a3d108d7d813d89976f41861de7f3e4}\label{classbtDantzigSolver_a8a3d108d7d813d89976f41861de7f3e4}} 
+\hyperlink{structbtDantzigScratchMemory}{bt\+Dantzig\+Scratch\+Memory} {\bfseries m\+\_\+scratch\+Memory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+original version written by Erwin Coumans, October 2013 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+M\+L\+C\+P\+Solvers/bt\+Dantzig\+Solver.\+h\end{DoxyCompactItemize}

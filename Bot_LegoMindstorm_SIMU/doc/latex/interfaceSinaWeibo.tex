@@ -1,0 +1,213 @@
+\hypertarget{interfaceSinaWeibo}{}\section{Sina\+Weibo Class Reference}
+\label{interfaceSinaWeibo}\index{Sina\+Weibo@{Sina\+Weibo}}
+
+
+Inheritance diagram for Sina\+Weibo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceSinaWeibo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sina\+Weibo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceSinaWeibo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interfaceSinaWeibo_a408d060c799e1befe8392fbd3c2ff3a6}{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:}
+\item 
+(id) -\/ \hyperlink{interfaceSinaWeibo_a9fd776c3dae6bf7b83a3ca724b39741c}{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:}
+\item 
+(void) -\/ \hyperlink{interfaceSinaWeibo_a25e35513f1e08bce93767002a4cc033e}{application\+Did\+Become\+Active}
+\item 
+(B\+O\+OL) -\/ \hyperlink{interfaceSinaWeibo_a68219880919ba0f8a902e17ca79a9158}{handle\+Open\+U\+R\+L\+:}
+\item 
+(void) -\/ \hyperlink{interfaceSinaWeibo_a953a72271fc1ece0b642989834068f18}{log\+In}
+\item 
+(void) -\/ \hyperlink{interfaceSinaWeibo_a36f57431cea7641d660f3031138d6313}{log\+Out}
+\item 
+(B\+O\+OL) -\/ \hyperlink{interfaceSinaWeibo_a9e6b35bab485a4a712486d323893f4a2}{is\+Logged\+In}
+\item 
+(B\+O\+OL) -\/ \hyperlink{interfaceSinaWeibo_a94e0b3b239568b2d5ca8f920622c0b25}{is\+Authorize\+Expired}
+\item 
+(B\+O\+OL) -\/ \hyperlink{interfaceSinaWeibo_a29d41dae95cdc485a2d49d4ac7091d84}{is\+Auth\+Valid}
+\item 
+(\hyperlink{interfaceSinaWeiboRequest}{Sina\+Weibo\+Request} $\ast$) -\/ \hyperlink{interfaceSinaWeibo_a7bf415eba4182dfe73dc90e8e4b2b675}{request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a4198c5548a8ff3eb14027d96df0d9fb5}\label{interfaceSinaWeibo_a4198c5548a8ff3eb14027d96df0d9fb5}} 
+N\+S\+String $\ast$ {\bfseries user\+ID}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a7b51907b184bb635c49053055612dc4b}\label{interfaceSinaWeibo_a7b51907b184bb635c49053055612dc4b}} 
+N\+S\+String $\ast$ {\bfseries access\+Token}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_abf4a95c9959a894297e8b200cafab6e9}\label{interfaceSinaWeibo_abf4a95c9959a894297e8b200cafab6e9}} 
+N\+S\+Date $\ast$ {\bfseries expiration\+Date}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a7fb4c08759d9ed53ea913842bff39882}\label{interfaceSinaWeibo_a7fb4c08759d9ed53ea913842bff39882}} 
+id$<$ Sina\+Weibo\+Delegate $>$ {\bfseries delegate}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_aa4814b1bbfe28cd46ddce60758433cdc}\label{interfaceSinaWeibo_aa4814b1bbfe28cd46ddce60758433cdc}} 
+N\+S\+String $\ast$ {\bfseries app\+Key}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_afae59fb8183098cb7aa55ec3af55afb1}\label{interfaceSinaWeibo_afae59fb8183098cb7aa55ec3af55afb1}} 
+N\+S\+String $\ast$ {\bfseries app\+Secret}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a9c1e112e3ba42591e04f54c3a0d8fc17}\label{interfaceSinaWeibo_a9c1e112e3ba42591e04f54c3a0d8fc17}} 
+N\+S\+String $\ast$ {\bfseries app\+Redirect\+U\+RI}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_aced10a7bb64fb19b8a043c01d4406683}\label{interfaceSinaWeibo_aced10a7bb64fb19b8a043c01d4406683}} 
+N\+S\+String $\ast$ {\bfseries sso\+Callback\+Scheme}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_ae1db8c370b3b9fcf1e7953bed735a0cd}\label{interfaceSinaWeibo_ae1db8c370b3b9fcf1e7953bed735a0cd}} 
+\hyperlink{interfaceSinaWeiboRequest}{Sina\+Weibo\+Request} $\ast$ {\bfseries request}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a83cac96b18b9abcca991c7c0609c5329}\label{interfaceSinaWeibo_a83cac96b18b9abcca991c7c0609c5329}} 
+N\+S\+Mutable\+Set $\ast$ {\bfseries requests}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_a61c6088a9b2af15fb7ec1075250904c6}\label{interfaceSinaWeibo_a61c6088a9b2af15fb7ec1075250904c6}} 
+B\+O\+OL {\bfseries sso\+Logging\+In}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interfaceSinaWeibo_aa18fe7234b8a98e7592a3de57a5c61b9}\label{interfaceSinaWeibo_aa18fe7234b8a98e7592a3de57a5c61b9}} 
+N\+S\+String $\ast$ {\bfseries refresh\+Token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceSinaWeibo_a25e35513f1e08bce93767002a4cc033e}\label{interfaceSinaWeibo_a25e35513f1e08bce93767002a4cc033e}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!application\+Did\+Become\+Active@{application\+Did\+Become\+Active}}
+\index{application\+Did\+Become\+Active@{application\+Did\+Become\+Active}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{application\+Did\+Become\+Active()}{applicationDidBecomeActive()}}
+{\footnotesize\ttfamily -\/ (void) application\+Did\+Become\+Active \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+当应用从后台唤起时，应调用此方法，需要完成退出当前登录状态的功能 \mbox{\Hypertarget{interfaceSinaWeibo_a68219880919ba0f8a902e17ca79a9158}\label{interfaceSinaWeibo_a68219880919ba0f8a902e17ca79a9158}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!handle\+Open\+U\+R\+L\+:@{handle\+Open\+U\+R\+L\+:}}
+\index{handle\+Open\+U\+R\+L\+:@{handle\+Open\+U\+R\+L\+:}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{handle\+Open\+U\+R\+L\+:()}{handleOpenURL:()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) handle\+Open\+U\+R\+L\+: \begin{DoxyParamCaption}\item[{(N\+S\+U\+RL $\ast$)}]{url }\end{DoxyParamCaption}}
+
+sso回调方法，官方客户端完成sso授权后，回调唤起应用，应用中应调用此方法完成sso登录 
+\begin{DoxyParams}{Parameters}
+{\em url} & 官方客户端回调给应用时传回的参数，包含认证信息等 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+ES 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a408d060c799e1befe8392fbd3c2ff3a6}\label{interfaceSinaWeibo_a408d060c799e1befe8392fbd3c2ff3a6}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:@{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:}}
+\index{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:@{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:and\+Delegate\+:()}{initWithAppKey:appSecret:appRedirectURI:andDelegate:()}}
+{\footnotesize\ttfamily -\/ (id) init\+With\+App\+Key\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{\+\_\+app\+Key }\item[{appSecret:(N\+S\+String $\ast$)}]{\+\_\+app\+Secrect }\item[{appRedirectURI:(N\+S\+String $\ast$)}]{\+\_\+app\+Redirect\+U\+RI }\item[{andDelegate:(id$<$Sina\+Weibo\+Delegate$>$)}]{\+\_\+delegate }\end{DoxyParamCaption}}
+
+初始化构造函数，返回采用默认sso回调地址构造的\+Sina\+Weibo对象 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+app\+Key} & 分配给第三方应用的appkey \\
+\hline
+{\em \+\_\+app\+Secrect} & 分配给第三方应用的appsecrect \\
+\hline
+{\em \+\_\+app\+Redirect\+U\+RI} & 微博开放平台中授权设置的应用回调页 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sina\+Weibo对象 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a9fd776c3dae6bf7b83a3ca724b39741c}\label{interfaceSinaWeibo_a9fd776c3dae6bf7b83a3ca724b39741c}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:@{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:}}
+\index{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:@{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{init\+With\+App\+Key\+:app\+Secret\+:app\+Redirect\+U\+R\+I\+:sso\+Callback\+Scheme\+:and\+Delegate\+:()}{initWithAppKey:appSecret:appRedirectURI:ssoCallbackScheme:andDelegate:()}}
+{\footnotesize\ttfamily -\/ (id) init\+With\+App\+Key\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{\+\_\+app\+Key }\item[{appSecret:(N\+S\+String $\ast$)}]{\+\_\+app\+Secrect }\item[{appRedirectURI:(N\+S\+String $\ast$)}]{\+\_\+app\+Redirect\+U\+RI }\item[{ssoCallbackScheme:(N\+S\+String $\ast$)}]{\+\_\+sso\+Callback\+Scheme }\item[{andDelegate:(id$<$Sina\+Weibo\+Delegate$>$)}]{\+\_\+delegate }\end{DoxyParamCaption}}
+
+初始化构造函数，返回采用默认sso回调地址构造的\+Sina\+Weibo对象 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+app\+Key} & 分配给第三方应用的appkey \\
+\hline
+{\em \+\_\+app\+Secrect} & 分配给第三方应用的appsecrect \\
+\hline
+{\em \+\_\+sso\+Callback\+Scheme} & sso回调地址，此值应与\+U\+RL Types中定义的保持一致 若为nil,则初始化为默认格式 sinaweibosso.\+your\+\_\+app\+\_\+key; \\
+\hline
+{\em \+\_\+app\+Redirect\+U\+RI} & 微博开放平台中授权设置的应用回调页 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sina\+Weibo对象 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a94e0b3b239568b2d5ca8f920622c0b25}\label{interfaceSinaWeibo_a94e0b3b239568b2d5ca8f920622c0b25}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!is\+Authorize\+Expired@{is\+Authorize\+Expired}}
+\index{is\+Authorize\+Expired@{is\+Authorize\+Expired}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{is\+Authorize\+Expired()}{isAuthorizeExpired()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) is\+Authorize\+Expired \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+判断登录是否过期 \begin{DoxyReturn}{Returns}
+Y\+E\+S为已过期；\+N\+O为未为期 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a29d41dae95cdc485a2d49d4ac7091d84}\label{interfaceSinaWeibo_a29d41dae95cdc485a2d49d4ac7091d84}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!is\+Auth\+Valid@{is\+Auth\+Valid}}
+\index{is\+Auth\+Valid@{is\+Auth\+Valid}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{is\+Auth\+Valid()}{isAuthValid()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) is\+Auth\+Valid \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+判断登录是否有效，当已登录并且登录未过期时为有效状态 \begin{DoxyReturn}{Returns}
+Y\+E\+S为有效；\+N\+O为无效 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a9e6b35bab485a4a712486d323893f4a2}\label{interfaceSinaWeibo_a9e6b35bab485a4a712486d323893f4a2}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!is\+Logged\+In@{is\+Logged\+In}}
+\index{is\+Logged\+In@{is\+Logged\+In}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{is\+Logged\+In()}{isLoggedIn()}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) is\+Logged\+In \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+判断是否登录 \begin{DoxyReturn}{Returns}
+Y\+E\+S为已登录；\+N\+O为未登录 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceSinaWeibo_a953a72271fc1ece0b642989834068f18}\label{interfaceSinaWeibo_a953a72271fc1ece0b642989834068f18}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!log\+In@{log\+In}}
+\index{log\+In@{log\+In}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{log\+In()}{logIn()}}
+{\footnotesize\ttfamily -\/ (void) log\+In \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+登录入口，当初始化\+Sina\+Weibo对象完成后直接调用此方法完成登录 \mbox{\Hypertarget{interfaceSinaWeibo_a36f57431cea7641d660f3031138d6313}\label{interfaceSinaWeibo_a36f57431cea7641d660f3031138d6313}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!log\+Out@{log\+Out}}
+\index{log\+Out@{log\+Out}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{log\+Out()}{logOut()}}
+{\footnotesize\ttfamily -\/ (void) log\+Out \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+退出方法，需要退出时直接调用此方法 \mbox{\Hypertarget{interfaceSinaWeibo_a7bf415eba4182dfe73dc90e8e4b2b675}\label{interfaceSinaWeibo_a7bf415eba4182dfe73dc90e8e4b2b675}} 
+\index{Sina\+Weibo@{Sina\+Weibo}!request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:@{request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:}}
+\index{request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:@{request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:}!Sina\+Weibo@{Sina\+Weibo}}
+\subsubsection{\texorpdfstring{request\+With\+U\+R\+L\+:params\+:http\+Method\+:delegate\+:()}{requestWithURL:params:httpMethod:delegate:()}}
+{\footnotesize\ttfamily -\/ (\hyperlink{interfaceSinaWeiboRequest}{Sina\+Weibo\+Request} $\ast$) request\+With\+U\+R\+L\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{url }\item[{params:(N\+S\+Mutable\+Dictionary $\ast$)}]{params }\item[{httpMethod:(N\+S\+String $\ast$)}]{http\+Method }\item[{delegate:(id$<$Sina\+Weibo\+Request\+Delegate$>$)}]{\+\_\+delegate }\end{DoxyParamCaption}}
+
+微博\+A\+P\+I的请求接口，方法中自动完成token信息的拼接 
+\begin{DoxyParams}{Parameters}
+{\em url} & 请求的接口 \\
+\hline
+{\em params} & 请求的参数，如发微博所带的文字内容等 \\
+\hline
+{\em http\+Method} & http类型，\+G\+E\+T或\+P\+O\+ST \\
+\hline
+{\em \+\_\+delegate} & 处理请求结果的回调的对象，\+Sinaweibo\+Request\+Delegate类 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+完成实际请求操作的\+Sina\+Weibo\+Request对象 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/weibo/proj.\+ios/\+Sina\+Weibo/Sina\+Weibo.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/weibo/proj.\+ios/\+Sina\+Weibo/Sina\+Weibo.\+m\end{DoxyCompactItemize}

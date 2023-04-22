@@ -1,0 +1,695 @@
+\hypertarget{interfaceFlurryAds}{}\section{Flurry\+Ads Class Reference}
+\label{interfaceFlurryAds}\index{Flurry\+Ads@{Flurry\+Ads}}
+
+
+Provides all available methods for displaying ads.  
+
+
+
+
+{\ttfamily \#import $<$Flurry\+Ads.\+h$>$}
+
+
+
+Inheritance diagram for Flurry\+Ads\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{interfaceFlurryAds__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flurry\+Ads\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{interfaceFlurryAds__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interfaceFlurryAds_a7eb674e15673f908467be52017169368}{fetch\+Ad\+For\+Space\+:frame\+:size\+:}
+\begin{DoxyCompactList}\small\item\em Retrieves an ad for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(B\+O\+OL) + \hyperlink{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}{ad\+Ready\+For\+Space\+:}
+\begin{DoxyCompactList}\small\item\em Returns if an ad is currently ready to display for a given {\ttfamily space}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a3a0f6e50b29081bbe13a9856cc5e4844}{display\+Ad\+For\+Space\+:on\+View\+:}
+\begin{DoxyCompactList}\small\item\em Display an ad for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a0ae5e7f43964b0a0245bc21ef08cfdfa}{display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:}
+\begin{DoxyCompactList}\small\item\em Display an ad for the given interstitial {\ttfamily space}. \end{DoxyCompactList}\item 
+(B\+O\+OL) + \hyperlink{interfaceFlurryAds_abf047d7df31c163b9b5d4c706827419f}{is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:}
+\begin{DoxyCompactList}\small\item\em \mbox{[}Deprecated\mbox{]} Check if an ad is available for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(B\+O\+OL) + \hyperlink{interfaceFlurryAds_a8d460375f558369833a1f43e568ed137}{show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:}
+\begin{DoxyCompactList}\small\item\em \mbox{[}Deprecated\mbox{]} Display an ad for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a6015497d507dc4c08a3b03b3717711ea}{fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:}
+\begin{DoxyCompactList}\small\item\em Fetch and Display an ad for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{remove\+Ad\+From\+Space\+:}
+\begin{DoxyCompactList}\small\item\em Removes an ad for the given {\ttfamily space}. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a35a71c7b8775be1c95aefc4b1e6e236b}{initialize\+:}
+\begin{DoxyCompactList}\small\item\em Initializes the ad serving system. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a647e20365b75b7f0e4337660aa51b116}{set\+Ad\+Delegate\+:}
+\begin{DoxyCompactList}\small\item\em Sets the object to receive various delegate methods. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_ab7060d936494e1ab82566c5592385837}{enable\+Test\+Ads\+:}
+\begin{DoxyCompactList}\small\item\em Informs server to send test ads. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_ab24e531118ba482ff41fcf695a21de39}{set\+User\+Cookies\+:}
+\begin{DoxyCompactList}\small\item\em Sets a dictionary of key/value pairs, which will be transmitted to \hyperlink{interfaceFlurry}{Flurry} servers when a user clicks on an ad. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a5bd6c927d8116fe1c39ac47b9c7015d2}{clear\+User\+Cookies}
+\begin{DoxyCompactList}\small\item\em Removes a previously set dictionary of key/value pairs. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_ab20cb7f809e23a2a3a4984f6759144bc}{set\+Keywords\+For\+Targeting\+:}
+\begin{DoxyCompactList}\small\item\em Sets a dictionary of key/value pairs, which will be transmitted to \hyperlink{interfaceFlurry}{Flurry} servers when an ad is requested. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a4126bd3f3c8d8b48e77f5b6eb2788e78}{clear\+Keywords}
+\begin{DoxyCompactList}\small\item\em Removes a previously set dictionary of key/value pairs. \end{DoxyCompactList}\item 
+(void) + \hyperlink{interfaceFlurryAds_a5990d1a5ce87ebc8b0ecf246cfcb6a4e}{add\+Custom\+Ad\+Network\+:with\+Properties\+:}
+\begin{DoxyCompactList}\small\item\em Method to add a custom ad network to be served through the standard \hyperlink{interfaceFlurry}{Flurry} ad system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides all available methods for displaying ads. 
+
+Set of methods that allow publishers to configure, target, and deliver ads to their customers.
+
+\begin{DoxyNote}{Note}
+This class depends on \hyperlink{Flurry_8h_source}{Flurry.\+h}. For information on how to use \hyperlink{interfaceFlurry}{Flurry}\textquotesingle{}s Ads S\+DK to attract high-\/quality users and monetize your user base see \href{http://support.flurry.com/index.php?title=Publishers}{\tt Support Center -\/ Publishers}.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+2009 -\/ 2013 \hyperlink{interfaceFlurry}{Flurry}, Inc. All Rights Reserved. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\+3.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceFlurryAds_a5990d1a5ce87ebc8b0ecf246cfcb6a4e}\label{interfaceFlurryAds_a5990d1a5ce87ebc8b0ecf246cfcb6a4e}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!add\+Custom\+Ad\+Network\+:with\+Properties\+:@{add\+Custom\+Ad\+Network\+:with\+Properties\+:}}
+\index{add\+Custom\+Ad\+Network\+:with\+Properties\+:@{add\+Custom\+Ad\+Network\+:with\+Properties\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{add\+Custom\+Ad\+Network\+:with\+Properties\+:()}{addCustomAdNetwork:withProperties:()}}
+{\footnotesize\ttfamily + (void) add\+Custom\+Ad\+Network\+: \begin{DoxyParamCaption}\item[{(Class$<$ Flurry\+Custom\+Ad\+Network $>$)}]{ad\+Network\+Class }\item[{withProperties:(id$<$ Flurry\+Custom\+Ad\+Network\+Properties $>$)}]{ad\+Network\+Properties }\end{DoxyParamCaption}}
+
+
+
+Method to add a custom ad network to be served through the standard \hyperlink{interfaceFlurry}{Flurry} ad system. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method adds a network with the necessary publisher supplied properties to the \hyperlink{interfaceFlurry}{Flurry} sdk.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily Flurry\+Custom\+Ad\+Network} and {\ttfamily Flurry\+Custom\+Ad\+Network\+Properties} for details. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}\label{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!ad\+Ready\+For\+Space\+:@{ad\+Ready\+For\+Space\+:}}
+\index{ad\+Ready\+For\+Space\+:@{ad\+Ready\+For\+Space\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{ad\+Ready\+For\+Space\+:()}{adReadyForSpace:()}}
+{\footnotesize\ttfamily + (B\+O\+OL) ad\+Ready\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\end{DoxyParamCaption}}
+
+
+
+Returns if an ad is currently ready to display for a given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+0
+\end{DoxySince}
+This method will verify if there is an ad is currently available for this user. If an ad is not available, you may call \#fetch\+Ad\+For\+Space\+:view\+:size\+: to load a new ad.
+
+\begin{DoxyNote}{Note}
+If this method returns Y\+ES, an ad will be available when you attempt to display an ad. However, it is still advisable to listen to the delegate Flurry\+Ads\+Delegate\+::space\+Did\+Fail\+To\+Render\+:. ~\newline
+The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. For example, if you are displaying a full screen ad on your splash screen and after level completeion, you may have the following spaces {\ttfamily "S\+P\+L\+A\+S\+H\+\_\+\+AD\char`\"{} and @c @\char`\"{}L\+E\+V\+E\+L\+\_\+\+AD"}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\#fetch\+Ad\+For\+Space\+:view\+:size\+: for details on retrieving an ad.~\newline
+ \#display\+Ad\+For\+Space\+: for details on displaying the available ad.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)showButtonForAd:(NSString *)placement 
+\{
+\textcolor{comment}{// Placement may be SPLASH\_AD as noted above}
+\textcolor{keywordflow}{if}([\hyperlink{interfaceFlurryAds}{FlurryAds} adReadyForSpace:placement]) 
+\{
+\textcolor{comment}{// Show button that ads are available.}
+\}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+E\+S/\+NO to indicate if an ad is ready to be displayed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceFlurryAds_a4126bd3f3c8d8b48e77f5b6eb2788e78}\label{interfaceFlurryAds_a4126bd3f3c8d8b48e77f5b6eb2788e78}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!clear\+Keywords@{clear\+Keywords}}
+\index{clear\+Keywords@{clear\+Keywords}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{clear\+Keywords()}{clearKeywords()}}
+{\footnotesize\ttfamily + (void) clear\+Keywords \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Removes a previously set dictionary of key/value pairs. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method removes information from the one keywords object.
+
+\begin{DoxySeeAlso}{See also}
+\#set\+Keywords\+: for details on setting keywords. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{interfaceFlurryAds_a5bd6c927d8116fe1c39ac47b9c7015d2}\label{interfaceFlurryAds_a5bd6c927d8116fe1c39ac47b9c7015d2}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!clear\+User\+Cookies@{clear\+User\+Cookies}}
+\index{clear\+User\+Cookies@{clear\+User\+Cookies}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{clear\+User\+Cookies()}{clearUserCookies()}}
+{\footnotesize\ttfamily + (void) clear\+User\+Cookies \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+
+
+Removes a previously set dictionary of key/value pairs. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method removes information from the one User\+Cookie object.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_ab24e531118ba482ff41fcf695a21de39}{+ set\+User\+Cookies\+:} for details on setting user cookies. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{interfaceFlurryAds_a0ae5e7f43964b0a0245bc21ef08cfdfa}\label{interfaceFlurryAds_a0ae5e7f43964b0a0245bc21ef08cfdfa}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:@{display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:}}
+\index{display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:@{display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{display\+Ad\+For\+Space\+:modally\+For\+View\+Controller\+:()}{displayAdForSpace:modallyForViewController:()}}
+{\footnotesize\ttfamily + (void) display\+Ad\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{modallyForViewController:(U\+I\+View\+Controller $\ast$)}]{view\+Controller }\end{DoxyParamCaption}}
+
+
+
+Display an ad for the given interstitial {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+2.\+2
+\end{DoxySince}
+This method will display an interstitial ad if one is ready for display on the device for specified U\+I\+View\+Controller instance
+
+\begin{DoxyNote}{Note}
+The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. Only one ad will show at a time for any given ad space. For example, if you are displaying a full screen ad on your splash screen and after level completeion, you may have the following spaces {\ttfamily "S\+P\+L\+A\+S\+H\+\_\+\+AD\char`\"{} and @c @\char`\"{}L\+E\+V\+E\+L\+\_\+\+AD"}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\#fetch\+Ad\+For\+Space\+:view\+:size\+: for details on retrieving an ad.~\newline
+ \hyperlink{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}{+ ad\+Ready\+For\+Space\+:} for details on verifying is an ad is ready to be displayed. ~\newline
+ \hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{+ remove\+Ad\+From\+Space\+:} for details on manually removing an ad from a view. ~\newline
+ Flurry\+Ad\+Delegate\+::space\+Should\+Display\+:for\+Type\+: for details on controlling whether an ad will display immediately before it is set to be rendered to the user. Flurry\+Ad\+Delegate\+::space\+Did\+Fail\+To\+Render\+:error\+: for details on notification of error in rendering an ad for this request.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+  in UIViewController based \textcolor{keyword}{class}:
+   - (void)showFullscreenAd:(NSString *)placement 
+\{
+\textcolor{comment}{// Placement may be SPLASH\_AD as noted above}
+\textcolor{keywordflow}{if}([\hyperlink{interfaceFlurryAds}{FlurryAds} adReadyForSpace:placement])
+\{
+   [\hyperlink{interfaceFlurryAds}{FlurryAds} displayAdForSpace:placement modallyForViewController:\textcolor{keyword}{self}];
+\}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may \\
+\hline
+{\em view\+Controller} & The view\+Controller to show the fullscreen ad modally. Note this method should not be used for banners. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a3a0f6e50b29081bbe13a9856cc5e4844}\label{interfaceFlurryAds_a3a0f6e50b29081bbe13a9856cc5e4844}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!display\+Ad\+For\+Space\+:on\+View\+:@{display\+Ad\+For\+Space\+:on\+View\+:}}
+\index{display\+Ad\+For\+Space\+:on\+View\+:@{display\+Ad\+For\+Space\+:on\+View\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{display\+Ad\+For\+Space\+:on\+View\+:()}{displayAdForSpace:onView:()}}
+{\footnotesize\ttfamily + (void) display\+Ad\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{onView:(U\+I\+View $\ast$)}]{view }\end{DoxyParamCaption}}
+
+
+
+Display an ad for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+0
+\end{DoxySince}
+This method will display an ad if one is ready for display on the device.
+
+\begin{DoxyNote}{Note}
+The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. Only one ad will show at a time for any given ad space. For example, if you are displaying a full screen ad on your splash screen and after level completeion, you may have the following spaces {\ttfamily "S\+P\+L\+A\+S\+H\+\_\+\+AD\char`\"{} and @c @\char`\"{}L\+E\+V\+E\+L\+\_\+\+AD"}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\#fetch\+Ad\+For\+Space\+:view\+:size\+: for details on retrieving an ad.~\newline
+ \hyperlink{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}{+ ad\+Ready\+For\+Space\+:} for details on verifying is an ad is ready to be displayed. ~\newline
+ \hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{+ remove\+Ad\+From\+Space\+:} for details on manually removing an ad from a view. ~\newline
+ Flurry\+Ad\+Delegate\+::space\+Should\+Display\+:for\+Type\+: for details on controlling whether an ad will display immediately before it is set to be rendered to the user. Flurry\+Ad\+Delegate\+::space\+Did\+Fail\+To\+Render\+:error\+: for details on notification of error in rendering an ad for this request.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)showFullscreenAd:(NSString *)placement 
+\{
+\textcolor{comment}{// Placement may be SPLASH\_AD as noted above}
+\textcolor{keywordflow}{if}([\hyperlink{interfaceFlurryAds}{FlurryAds} adReadyForSpace:placement])
+\{
+   [\hyperlink{interfaceFlurryAds}{FlurryAds} displayAdForSpace:placement onView:view];
+\}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may \\
+\hline
+{\em view} & The view to place the ad. The view frame should be identical to the view frame passed in \#fetch\+Ad\+For\+Space\+:frame\+:size. Note view is not used for interstitials. be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_ab7060d936494e1ab82566c5592385837}\label{interfaceFlurryAds_ab7060d936494e1ab82566c5592385837}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!enable\+Test\+Ads\+:@{enable\+Test\+Ads\+:}}
+\index{enable\+Test\+Ads\+:@{enable\+Test\+Ads\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{enable\+Test\+Ads\+:()}{enableTestAds:()}}
+{\footnotesize\ttfamily + (void) enable\+Test\+Ads\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{enable }\end{DoxyParamCaption}}
+
+
+
+Informs server to send test ads. 
+
+\begin{DoxySince}{Since}
+4.\+0
+\end{DoxySince}
+This method allows you to request test ads from the server. These ads do not generate revenue so it is C\+R\+I\+T\+I\+C\+AL this call is removed prior to app submission.
+
+
+\begin{DoxyCode}
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+    \textcolor{comment}{// Optional Flurry startup methods}
+    [\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} enableTestAds:YES];
+
+    \textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Y\+ES to receive test ads to the device. Not including this method is equivalent to passing NO. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a7eb674e15673f908467be52017169368}\label{interfaceFlurryAds_a7eb674e15673f908467be52017169368}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!fetch\+Ad\+For\+Space\+:frame\+:size\+:@{fetch\+Ad\+For\+Space\+:frame\+:size\+:}}
+\index{fetch\+Ad\+For\+Space\+:frame\+:size\+:@{fetch\+Ad\+For\+Space\+:frame\+:size\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{fetch\+Ad\+For\+Space\+:frame\+:size\+:()}{fetchAdForSpace:frame:size:()}}
+{\footnotesize\ttfamily + (void) fetch\+Ad\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{frame:(C\+G\+Rect)}]{frame }\item[{size:(Flurry\+Ad\+Size)}]{size }\end{DoxyParamCaption}}
+
+
+
+Retrieves an ad for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+1.\+0
+\end{DoxySince}
+This method will attempt to retrieve ads for the given space from the \hyperlink{interfaceFlurry}{Flurry} server.
+
+\begin{DoxyNote}{Note}
+The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. For example, if you are displaying a full screen ad on your splash screen and after level completeion, you may have the following spaces {\ttfamily "S\+P\+L\+A\+S\+H\+\_\+\+AD\char`\"{} and @c @\char`\"{}L\+E\+V\+E\+L\+\_\+\+AD"}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{+ remove\+Ad\+From\+Space\+:} for details on manually removing an ad from a view. ~\newline
+ Flurry\+Ad\+Delegate\+::space\+Did\+Receive\+Ad\+: for details on the notification of ads being received. Flurry\+Ad\+Delegate\+::space\+Did\+Fail\+To\+Receive\+Ad\+:error\+: for details on notification of failure to receive ads from this request. \#display\+Ad\+For\+Space\+: for details on displaying an available ad.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)fetchAd:(NSString *)placement 
+\{
+   \textcolor{comment}{// Placement may be SPLASH\_AD as noted above}
+   [\hyperlink{interfaceFlurryAds}{FlurryAds} fetchAdForSpace:placement view:\textcolor{keyword}{self}.view.frame size:FULLSCREEN]; 
+\}
+
+   \textcolor{comment}{// Show whenever delegate is invoked}
+- (void) spaceDidReceiveAd:(NSString *)adSpace \{
+   \textcolor{comment}{// Received Ad}
+   [\hyperlink{interfaceFlurryAds}{FlurryAds} displayAdForSpace:adSpace];
+\}
+   \textcolor{comment}{// Alternatively, try to display at a certain point in the app}
+- (void) levelComplete \{
+   \textcolor{keywordflow}{if}([\hyperlink{interfaceFlurryAds}{FlurryAds} adReadyForSpace:adSpace]) \{
+       [\hyperlink{interfaceFlurryAds}{FlurryAds} displayAdForSpace:adSpace];
+   \}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em frame} & The frame of the view that will be used for the ad container. \\
+\hline
+{\em size} & The default size of an ad space. This can be overriden on the server. See {\ttfamily Flurry\+Ad\+Size} in the \hyperlink{FlurryAds_8h_source}{Flurry\+Ads.\+h} file for allowable values. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a6015497d507dc4c08a3b03b3717711ea}\label{interfaceFlurryAds_a6015497d507dc4c08a3b03b3717711ea}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:@{fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:}}
+\index{fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:@{fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:()}{fetchAndDisplayAdForSpace:view:size:()}}
+{\footnotesize\ttfamily + (void) fetch\+And\+Display\+Ad\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{view:(U\+I\+View $\ast$)}]{view\+Container }\item[{size:(Flurry\+Ad\+Size)}]{size }\end{DoxyParamCaption}}
+
+
+
+Fetch and Display an ad for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method will display an ad if one is available from the \hyperlink{interfaceFlurry}{Flurry} server for this user.
+
+\begin{DoxyNote}{Note}
+If this method returns Y\+ES, an ad is available for the space within {\ttfamily timeout}. ~\newline
+ This is a blocking method that allows you to change the user experience based on availability of an ad. If you would like to display an ad asynchronously, just set timeout to 0. This is useful in the case of banners for instance where the user should not wait for its display. If you are loading async with timeout set to 0, ignore the return value of this method and rely exclusively on the relevant delegate methods listed below~\newline
+ The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. Only one ad will show at a time for any given ad space. For example, if you are displaying a full screen ad on your splash screen and after level completeion, you may have the following spaces {\ttfamily "S\+P\+L\+A\+S\+H\+\_\+\+AD\char`\"{} and @c @\char`\"{}L\+E\+V\+E\+L\+\_\+\+AD"}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_a1f87cd568f71e77a9c89264b165d2164}{+ ad\+Ready\+For\+Space\+:} for details on verifying is an ad is ready to be displayed. ~\newline
+ \hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{+ remove\+Ad\+From\+Space\+:} for details on manually removing an ad from a view. ~\newline
+ Flurry\+Ad\+Delegate\+::space\+Did\+Receive\+Ad\+: for details on the notification of ads being received. Flurry\+Ad\+Delegate\+::space\+Did\+Fail\+To\+Receive\+Ad\+:error\+: for details on notification of failure to receive ads from this request. Flurry\+Ad\+Delegate\+::space\+Should\+Display\+:for\+Type\+: for details on controlling whether an ad will display immediately before it is set to be rendered to the user. Flurry\+Ad\+Delegate\+::space\+Did\+Fail\+To\+Render\+:error\+: for details on notification of error in rendering an ad for this request.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)showFullscreenAd:(NSString *)placement
+\{
+\textcolor{comment}{// Placement may be SPLASH\_AD as noted above}
+[\hyperlink{interfaceFlurryAds}{FlurryAds} fetchAndDisplayAdForSpace:placement view:\textcolor{keyword}{self}.view size:FULLSCREEN timeout:3000];
+
+\}
+
+- (void)viewWillAppear:(BOOL)animated
+\{
+\textcolor{comment}{// Show a banner whenever this view appears}
+\textcolor{comment}{// Display banner ad completely asyncrhonously by providing timeout == 0}
+[\hyperlink{interfaceFlurryAds}{FlurryAds} fetchAndDisplayAdForSpace:\textcolor{stringliteral}{@"VIEW\_XYZ\_BANNER\_AD"} view:\textcolor{keyword}{self}.view size:BANNER\_BOTTOM 
+      timeout:0];
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em view} & The U\+I\+View in your app that the ad will be placed as a subview. Note\+: for fullscreen ads, this view is not used as a container, but the size of the view may still be used for determining what types of ads will fit in this space. \\
+\hline
+{\em size} & The default size of an ad space. This can be overriden on the server. See {\ttfamily Flurry\+Ad\+Size} in the \hyperlink{FlurryAds_8h_source}{Flurry\+Ads.\+h} file for allowable values. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a35a71c7b8775be1c95aefc4b1e6e236b}\label{interfaceFlurryAds_a35a71c7b8775be1c95aefc4b1e6e236b}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!initialize\+:@{initialize\+:}}
+\index{initialize\+:@{initialize\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{initialize\+:()}{initialize:()}}
+{\footnotesize\ttfamily + (void) initialize\+: \begin{DoxyParamCaption}\item[{(U\+I\+View\+Controller $\ast$)}]{rvc }\end{DoxyParamCaption}}
+
+
+
+Initializes the ad serving system. 
+
+\begin{DoxySince}{Since}
+4.\+0
+\end{DoxySince}
+This method initializes the ad serving system and can be used to pre-\/cache ads from the server (this is done when ad spaces are configured on the server).
+
+\begin{DoxyNote}{Note}
+This method must be called sometime after \hyperlink{interfaceFlurry_aeadfa23545c392ffd46db448b6a95809}{start\+Session\+: (\+Flurry)}.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+    \textcolor{comment}{// Optional Flurry startup methods}
+    [\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} setAdDelegate:\textcolor{keyword}{self}];
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} initialize:myWindow.rootViewController];
+
+    \textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em rvc} & The primary root view controller of your app. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_abf047d7df31c163b9b5d4c706827419f}\label{interfaceFlurryAds_abf047d7df31c163b9b5d4c706827419f}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:@{is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:}}
+\index{is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:@{is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:()}{isAdAvailableForSpace:view:size:timeout:()}}
+{\footnotesize\ttfamily + (B\+O\+OL) is\+Ad\+Available\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{view:(U\+I\+View $\ast$)}]{view }\item[{size:(Flurry\+Ad\+Size)}]{size }\item[{timeout:((deprecated))}]{\+\_\+\+\_\+attribute\+\_\+\+\_\+ }\end{DoxyParamCaption}}
+
+
+
+\mbox{[}Deprecated\mbox{]} Check if an ad is available for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000228}{Deprecated}]\end{DoxyRefDesc}
+
+
+\mbox{[}Deprecated\mbox{]} This method will verify with the \hyperlink{interfaceFlurry}{Flurry} server if an ad is currently available for this user. If an ad is not available, we recommend not providing the user the option to view. For example, you may have a button that reads \char`\"{}\+See other great apps!\char`\"{}. That button should only be displayed if this method returns Y\+ES.
+
+\begin{DoxyNote}{Note}
+This method has been deprecated.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\#fetch\+Ad\+For\+Space\+:view\+:size\+: for replacement method.~\newline
+ 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em view} & The U\+I\+View in your app that the ad will be placed as a subview. Note\+: for fullscreen ads, this view is not used as a container, but the size of the view may still be used for determining what types of ads will fit in this space. \\
+\hline
+{\em size} & The default size of an ad space. This can be overriden on the server. See {\ttfamily Flurry\+Ad\+Size} in the \hyperlink{FlurryAds_8h_source}{Flurry\+Ads.\+h} file for allowable values. \\
+\hline
+{\em timeout} & The maximum amount of time to wait for the server to return a result. Set this to 0 to check the cache and return immediately.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+E\+S/\+NO to indicate if an ad is available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}\label{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!remove\+Ad\+From\+Space\+:@{remove\+Ad\+From\+Space\+:}}
+\index{remove\+Ad\+From\+Space\+:@{remove\+Ad\+From\+Space\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{remove\+Ad\+From\+Space\+:()}{removeAdFromSpace:()}}
+{\footnotesize\ttfamily + (void) remove\+Ad\+From\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\end{DoxyParamCaption}}
+
+
+
+Removes an ad for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+This method will remove an ad if one is currently displaying.
+
+\begin{DoxyNote}{Note}
+The {\ttfamily space} simply represents the placement of the ad in your app and should be unique for each placement. Only one ad will show at a time for any given ad space.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_abf047d7df31c163b9b5d4c706827419f}{+ is\+Ad\+Available\+For\+Space\+:view\+:size\+:timeout\+:} for details on displaying an available ad. ~\newline
+\hyperlink{interfaceFlurryAds_aaf30e23048de55a1adb8a2c067428be6}{+ remove\+Ad\+From\+Space\+:} for details on manually removing an ad from a view. ~\newline
+Flurry\+Ad\+Delegate\+::space\+Should\+Display\+:for\+Type\+: for details on controlling whether an ad will display immediately before it is set to be rendered to the user.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+- (void)viewDidUnload 
+\{
+    \textcolor{comment}{// Remove a banner whenever this view dissapears}
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} removeAdFromSpace:\textcolor{stringliteral}{@"VIEW\_XYZ\_BANNER\_AD"}];
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a647e20365b75b7f0e4337660aa51b116}\label{interfaceFlurryAds_a647e20365b75b7f0e4337660aa51b116}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!set\+Ad\+Delegate\+:@{set\+Ad\+Delegate\+:}}
+\index{set\+Ad\+Delegate\+:@{set\+Ad\+Delegate\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{set\+Ad\+Delegate\+:()}{setAdDelegate:()}}
+{\footnotesize\ttfamily + (void) set\+Ad\+Delegate\+: \begin{DoxyParamCaption}\item[{(id)}]{delegate }\end{DoxyParamCaption}}
+
+
+
+Sets the object to receive various delegate methods. 
+
+\begin{DoxySince}{Since}
+4.\+0
+\end{DoxySince}
+This method allows you to register an object that will receive notifications at different phases of ad serving.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{FlurryAdDelegate_8h_source}{Flurry\+Ad\+Delegate.\+h} for details on delegates available.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+    \textcolor{comment}{// Optional Flurry startup methods}
+    [\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} setAdDelegate:\textcolor{keyword}{self}];
+
+    \textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em delegate} & The object to receive notifications of various ad actions. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_ab20cb7f809e23a2a3a4984f6759144bc}\label{interfaceFlurryAds_ab20cb7f809e23a2a3a4984f6759144bc}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!set\+Keywords\+For\+Targeting\+:@{set\+Keywords\+For\+Targeting\+:}}
+\index{set\+Keywords\+For\+Targeting\+:@{set\+Keywords\+For\+Targeting\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{set\+Keywords\+For\+Targeting\+:()}{setKeywordsForTargeting:()}}
+{\footnotesize\ttfamily + (void) set\+Keywords\+For\+Targeting\+: \begin{DoxyParamCaption}\item[{(N\+S\+Dictionary $\ast$)}]{keywords }\end{DoxyParamCaption}}
+
+
+
+Sets a dictionary of key/value pairs, which will be transmitted to \hyperlink{interfaceFlurry}{Flurry} servers when an ad is requested. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+Keywords allow the developer to specify information on a user executing an ad action for the purposes of targeting. There is one keywords object that is transmitted to the \hyperlink{interfaceFlurry}{Flurry} servers on each ad request. If corresponding keywords are matched on the ad server, a subset of targeted ads will be delivered. This allows partners to supply information they track internally, which is not available to \hyperlink{interfaceFlurry}{Flurry}\textquotesingle{}s targeting system.
+
+\begin{DoxyNote}{Note}
+Calling this method with a nil or empty dictionary has no effect. Calling this method a second time with a valid dictionary will replace the previous entries. To clear previously set keywords, you must call \hyperlink{interfaceFlurryAds_a4126bd3f3c8d8b48e77f5b6eb2788e78}{clear\+Keywords}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_a4126bd3f3c8d8b48e77f5b6eb2788e78}{+ clear\+Keywords} for details on removing keywords set through this method.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+   - (void)applicationDidFinishLaunching:(UIApplication *)application 
+   \{
+       \textcolor{comment}{// Optional Flurry startup methods}
+       [\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+
+       \textcolor{comment}{// Specify that user loves vacations}
+       NSDictionary *keywords =
+           [NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"vacation"}, \textcolor{comment}{// Parameter Value}
+           \textcolor{stringliteral}{@"UserPreference"}, \textcolor{comment}{// Parameter Name}
+           nil];
+           [\hyperlink{interfaceFlurryAds}{FlurryAds} setKeywords:keywords];
+
+\textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em keywords} & The information about the user to be used in targeting an ad. Note\+: do not transmit personally identifiable information in keywords. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_ab24e531118ba482ff41fcf695a21de39}\label{interfaceFlurryAds_ab24e531118ba482ff41fcf695a21de39}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!set\+User\+Cookies\+:@{set\+User\+Cookies\+:}}
+\index{set\+User\+Cookies\+:@{set\+User\+Cookies\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{set\+User\+Cookies\+:()}{setUserCookies:()}}
+{\footnotesize\ttfamily + (void) set\+User\+Cookies\+: \begin{DoxyParamCaption}\item[{(N\+S\+Dictionary $\ast$)}]{user\+Cookies }\end{DoxyParamCaption}}
+
+
+
+Sets a dictionary of key/value pairs, which will be transmitted to \hyperlink{interfaceFlurry}{Flurry} servers when a user clicks on an ad. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0
+\end{DoxySince}
+User\+Cookies allow the developer to specify information on a user executing an ad action. There is one User\+Cookie object, and on each ad click that User\+Cookie is transmitted to the \hyperlink{interfaceFlurry}{Flurry} servers. The User\+Cookie key/value pairs will be transmitted back to the developer via the app callback if one is set. This is useful for rewarded inventory, to identify which of your users should be rewarded when a reward callback is sent.
+
+\begin{DoxyNote}{Note}
+Calling this method with a nil or empty dictionary has no effect. Calling this method a second time with a valid dictionary will replace the previous entries. To clear previously set user\+Cookies, you must call \hyperlink{interfaceFlurryAds_a5bd6c927d8116fe1c39ac47b9c7015d2}{clear\+User\+Cookies}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interfaceFlurryAds_a5bd6c927d8116fe1c39ac47b9c7015d2}{+ clear\+User\+Cookies} for details on removing user cookies set through this method.
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+\{
+    \textcolor{comment}{// Optional Flurry startup methods}
+    [\hyperlink{interfaceFlurry}{Flurry} startSession:\textcolor{stringliteral}{@"YOUR\_API\_KEY"}];
+
+    NSDictionary *cookies =
+        [NSDictionary dictionaryWithObjectsAndKeys:\textcolor{stringliteral}{@"xyz123"}, \textcolor{comment}{// Parameter Value}
+        \textcolor{stringliteral}{@"UserCharacterId"}, \textcolor{comment}{// Parameter Name}
+        nil];
+    [\hyperlink{interfaceFlurryAds}{FlurryAds} setUserCookies:cookies];
+
+    \textcolor{comment}{// ....}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Cookies} & The information about the user executing ad actions. Note\+: do not transmit personally identifiable information in the user cookies. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interfaceFlurryAds_a8d460375f558369833a1f43e568ed137}\label{interfaceFlurryAds_a8d460375f558369833a1f43e568ed137}} 
+\index{Flurry\+Ads@{Flurry\+Ads}!show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:@{show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:}}
+\index{show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:@{show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:}!Flurry\+Ads@{Flurry\+Ads}}
+\subsubsection{\texorpdfstring{show\+Ad\+For\+Space\+:view\+:size\+:timeout\+:()}{showAdForSpace:view:size:timeout:()}}
+{\footnotesize\ttfamily + (B\+O\+OL) show\+Ad\+For\+Space\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{space }\item[{view:(U\+I\+View $\ast$)}]{view\+Container }\item[{size:(Flurry\+Ad\+Size)}]{size }\item[{timeout:((deprecated))}]{\+\_\+\+\_\+attribute\+\_\+\+\_\+ }\end{DoxyParamCaption}}
+
+
+
+\mbox{[}Deprecated\mbox{]} Display an ad for the given {\ttfamily space}. 
+
+\begin{DoxySince}{Since}
+4.\+0.\+0 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000229}{Deprecated}]\end{DoxyRefDesc}
+
+
+\mbox{[}Deprecated\mbox{]} This method will display an ad if one is available from the \hyperlink{interfaceFlurry}{Flurry} server for this user.
+
+\begin{DoxyNote}{Note}
+This method has been deprecated.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\#fetch\+And\+Display\+Ad\+For\+Space\+:view\+:size\+:timeout\+: for replacement method
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em space} & The placement of an ad in your app, where placement may be splash screen for S\+P\+L\+A\+S\+H\+\_\+\+AD. \\
+\hline
+{\em view} & The U\+I\+View in your app that the ad will be placed as a subview. Note\+: for fullscreen ads, this view is not used as a container, but the size of the view may still be used for determining what types of ads will fit in this space. \\
+\hline
+{\em size} & The default size of an ad space. This can be overriden on the server. See {\ttfamily Flurry\+Ad\+Size} in the \hyperlink{FlurryAds_8h_source}{Flurry\+Ads.\+h} file for allowable values. \\
+\hline
+{\em timeout} & The maximum amount of time to wait for the server to return a valid ad. Set this to 0 to display an ad in the background (e.\+g. -\/ for showing banners).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+E\+S/\+NO to indicate if an ad is available. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/flurry/proj.\+ios/\+Flurry\+Ads/Flurry\+Ads.\+h\end{DoxyCompactItemize}

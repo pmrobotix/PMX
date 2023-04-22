@@ -1,0 +1,647 @@
+\hypertarget{classPUObserver}{}\section{P\+U\+Observer Class Reference}
+\label{classPUObserver}\index{P\+U\+Observer@{P\+U\+Observer}}
+
+
+Inheritance diagram for P\+U\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUObserver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUObserver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUObserver_ac2d89deb46c92abf19c0534b5c325d60}\label{classPUObserver_ac2d89deb46c92abf19c0534b5c325d60}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$\+::iterator {\bfseries Particle\+Event\+Handler\+Iterator}
+\item 
+\mbox{\Hypertarget{classPUObserver_a92bf7f9dc5ee99bd687c2bbfab71bf26}\label{classPUObserver_a92bf7f9dc5ee99bd687c2bbfab71bf26}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$\+::const\+\_\+iterator {\bfseries Particle\+Event\+Handler\+Const\+Iterator}
+\item 
+\mbox{\Hypertarget{classPUObserver_a1245519223dd1f3f0661a5f13705a8cf}\label{classPUObserver_a1245519223dd1f3f0661a5f13705a8cf}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$ {\bfseries Particle\+Event\+Handler\+List}
+\item 
+\mbox{\Hypertarget{classPUObserver_ac2d89deb46c92abf19c0534b5c325d60}\label{classPUObserver_ac2d89deb46c92abf19c0534b5c325d60}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$\+::iterator {\bfseries Particle\+Event\+Handler\+Iterator}
+\item 
+\mbox{\Hypertarget{classPUObserver_a92bf7f9dc5ee99bd687c2bbfab71bf26}\label{classPUObserver_a92bf7f9dc5ee99bd687c2bbfab71bf26}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$\+::const\+\_\+iterator {\bfseries Particle\+Event\+Handler\+Const\+Iterator}
+\item 
+\mbox{\Hypertarget{classPUObserver_a1245519223dd1f3f0661a5f13705a8cf}\label{classPUObserver_a1245519223dd1f3f0661a5f13705a8cf}} 
+typedef std\+::vector$<$ \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ $>$ {\bfseries Particle\+Event\+Handler\+List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \hyperlink{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}{get\+Observer\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a18658c09249599dd36749e09c63e9d1e}\label{classPUObserver_a18658c09249599dd36749e09c63e9d1e}} 
+void {\bfseries set\+Observer\+Type} (const std\+::string \&observer\+Type)
+\item 
+virtual bool \hyperlink{classPUObserver_a5f09175e0647409938779df070433660}{is\+Enabled} (void) const
+\item 
+bool \hyperlink{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}{\+\_\+get\+Original\+Enabled} (void) const
+\item 
+virtual void \hyperlink{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}{set\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}{\+\_\+reset\+Enabled} (void)
+\item 
+const std\+::string \& \hyperlink{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}{get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a19d3639b53a6c9afa304558b51e620ba}\label{classPUObserver_a19d3639b53a6c9afa304558b51e620ba}} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+const P\+U\+Particle3\+D\+::\+Particle\+Type \& \hyperlink{classPUObserver_a22aaee1547d3e035806f3b422efcc261}{get\+Particle\+Type\+To\+Observe} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a40341090f2b84d50cd56e7571b639345}\label{classPUObserver_a40341090f2b84d50cd56e7571b639345}} 
+void {\bfseries set\+Particle\+Type\+To\+Observe} (const P\+U\+Particle3\+D\+::\+Particle\+Type particle\+Type\+To\+Observe)
+\item 
+\mbox{\Hypertarget{classPUObserver_a39e35f02e4aca5d1942cc28f15abf00b}\label{classPUObserver_a39e35f02e4aca5d1942cc28f15abf00b}} 
+virtual void {\bfseries notify\+Start} (void)
+\item 
+\mbox{\Hypertarget{classPUObserver_afb8ce0f27d5640e75fb9c92608160f37}\label{classPUObserver_afb8ce0f27d5640e75fb9c92608160f37}} 
+virtual void {\bfseries notify\+Stop} (void)
+\item 
+\mbox{\Hypertarget{classPUObserver_a5bee61b78964890ce90a5a6e508227c0}\label{classPUObserver_a5bee61b78964890ce90a5a6e508227c0}} 
+virtual void {\bfseries notify\+Rescaled} (const \hyperlink{classVec3}{Vec3} \&scale)
+\item 
+\mbox{\Hypertarget{classPUObserver_a85548534c7593d1f36a49afabbec862d}\label{classPUObserver_a85548534c7593d1f36a49afabbec862d}} 
+virtual void {\bfseries pre\+Update\+Observer} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUObserver_a21a9263fc32dca1d137e6ba39c19a316}\label{classPUObserver_a21a9263fc32dca1d137e6ba39c19a316}} 
+virtual void {\bfseries update\+Observer} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time, bool first\+Particle)
+\item 
+\mbox{\Hypertarget{classPUObserver_acf0be2b537a3bc3b4b647cc2c36edecb}\label{classPUObserver_acf0be2b537a3bc3b4b647cc2c36edecb}} 
+virtual void {\bfseries post\+Update\+Observer} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUObserver_a221d8f1ea6e6633ec6412b4fb097fc62}\label{classPUObserver_a221d8f1ea6e6633ec6412b4fb097fc62}} 
+virtual void {\bfseries first\+Particle\+Update} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time)
+\item 
+virtual bool \hyperlink{classPUObserver_a50f59cc3245e291b641463db5d3037f7}{observe} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)=0
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_aafcac25a48541ea6dc5dd75aec100268}{create\+Event\+Handler} (const std\+::string \&event\+Handler\+Type)
+\item 
+void \hyperlink{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}{add\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+void \hyperlink{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}{remove\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_a50d3ac2a8c1ca063484fee39d2149e51}{get\+Event\+Handler} (size\+\_\+t index) const
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_a01846fc48a256d5503703aad243ee813}{get\+Event\+Handler} (const std\+::string \&event\+Handler\+Name) const
+\item 
+size\+\_\+t \hyperlink{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}{get\+Num\+Event\+Handlers} (void) const
+\item 
+void \hyperlink{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}{destroy\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+void \hyperlink{classPUObserver_a8470070593a74e4b940cf02550193c27}{destroy\+Event\+Handler} (size\+\_\+t index)
+\item 
+void \hyperlink{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}{destroy\+All\+Event\+Handlers} (void)
+\item 
+float \hyperlink{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}{get\+Observer\+Interval} (void) const
+\item 
+void \hyperlink{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}{set\+Observer\+Interval} (float observer\+Interval)
+\item 
+bool \hyperlink{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}{get\+Observe\+Until\+Event} (void) const
+\item 
+void \hyperlink{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}{set\+Observe\+Until\+Event} (bool observe\+Until\+Event)
+\item 
+bool \hyperlink{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}{is\+Particle\+Type\+To\+Observe\+Set} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_af4c3e4d1d694721b3027854a8bec97a9}\label{classPUObserver_af4c3e4d1d694721b3027854a8bec97a9}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUObserver}{P\+U\+Observer} $\ast$observer)
+\item 
+const std\+::string \& \hyperlink{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}{get\+Observer\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a18658c09249599dd36749e09c63e9d1e}\label{classPUObserver_a18658c09249599dd36749e09c63e9d1e}} 
+void {\bfseries set\+Observer\+Type} (const std\+::string \&observer\+Type)
+\item 
+virtual bool \hyperlink{classPUObserver_a33670aead4140f1a00691754e4dafdf0}{is\+Enabled} (void) const
+\item 
+bool \hyperlink{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}{\+\_\+get\+Original\+Enabled} (void) const
+\item 
+virtual void \hyperlink{classPUObserver_abb0f7240f433f41756e28ed4db707b1e}{set\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}{\+\_\+reset\+Enabled} (void)
+\item 
+const std\+::string \& \hyperlink{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}{get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a19d3639b53a6c9afa304558b51e620ba}\label{classPUObserver_a19d3639b53a6c9afa304558b51e620ba}} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+const P\+U\+Particle3\+D\+::\+Particle\+Type \& \hyperlink{classPUObserver_a22aaee1547d3e035806f3b422efcc261}{get\+Particle\+Type\+To\+Observe} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a40341090f2b84d50cd56e7571b639345}\label{classPUObserver_a40341090f2b84d50cd56e7571b639345}} 
+void {\bfseries set\+Particle\+Type\+To\+Observe} (const P\+U\+Particle3\+D\+::\+Particle\+Type particle\+Type\+To\+Observe)
+\item 
+\mbox{\Hypertarget{classPUObserver_afdff79765ddccdc9d6f295f465f5763b}\label{classPUObserver_afdff79765ddccdc9d6f295f465f5763b}} 
+virtual void {\bfseries notify\+Start} (void)
+\item 
+\mbox{\Hypertarget{classPUObserver_afb8ce0f27d5640e75fb9c92608160f37}\label{classPUObserver_afb8ce0f27d5640e75fb9c92608160f37}} 
+virtual void {\bfseries notify\+Stop} (void)
+\item 
+\mbox{\Hypertarget{classPUObserver_aa71ad27d39dc5bc4aacdb0a7bceadf7a}\label{classPUObserver_aa71ad27d39dc5bc4aacdb0a7bceadf7a}} 
+virtual void {\bfseries notify\+Rescaled} (const \hyperlink{classVec3}{Vec3} \&scale)
+\item 
+\mbox{\Hypertarget{classPUObserver_aac520854750b811d910da05e19e15fd7}\label{classPUObserver_aac520854750b811d910da05e19e15fd7}} 
+virtual void {\bfseries pre\+Update\+Observer} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUObserver_a3a22242b6699dd5e6b822f5684892dbb}\label{classPUObserver_a3a22242b6699dd5e6b822f5684892dbb}} 
+virtual void {\bfseries update\+Observer} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time, bool first\+Particle)
+\item 
+\mbox{\Hypertarget{classPUObserver_a4c2fbe1caf88c4e8998dd3a3fb7d656f}\label{classPUObserver_a4c2fbe1caf88c4e8998dd3a3fb7d656f}} 
+virtual void {\bfseries post\+Update\+Observer} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUObserver_a22d83c390d4ec1ffdedaa087d4e2a5af}\label{classPUObserver_a22d83c390d4ec1ffdedaa087d4e2a5af}} 
+virtual void {\bfseries first\+Particle\+Update} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float delta\+Time)
+\item 
+virtual bool \hyperlink{classPUObserver_a50f59cc3245e291b641463db5d3037f7}{observe} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)=0
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_ae2a4fc75b6fb674ae8a83e61d55f3bfc}{create\+Event\+Handler} (const std\+::string \&event\+Handler\+Type)
+\item 
+void \hyperlink{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}{add\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+void \hyperlink{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}{remove\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_a7cbf02169d92612a139cc854e37d66d3}{get\+Event\+Handler} (size\+\_\+t index) const
+\item 
+\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ \hyperlink{classPUObserver_a12558402f3021048071e98cf557ff5a4}{get\+Event\+Handler} (const std\+::string \&event\+Handler\+Name) const
+\item 
+size\+\_\+t \hyperlink{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}{get\+Num\+Event\+Handlers} (void) const
+\item 
+void \hyperlink{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}{destroy\+Event\+Handler} (\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$event\+Handler)
+\item 
+void \hyperlink{classPUObserver_a8470070593a74e4b940cf02550193c27}{destroy\+Event\+Handler} (size\+\_\+t index)
+\item 
+void \hyperlink{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}{destroy\+All\+Event\+Handlers} (void)
+\item 
+float \hyperlink{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}{get\+Observer\+Interval} (void) const
+\item 
+void \hyperlink{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}{set\+Observer\+Interval} (float observer\+Interval)
+\item 
+bool \hyperlink{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}{get\+Observe\+Until\+Event} (void) const
+\item 
+void \hyperlink{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}{set\+Observe\+Until\+Event} (bool observe\+Until\+Event)
+\item 
+bool \hyperlink{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}{is\+Particle\+Type\+To\+Observe\+Set} (void) const
+\item 
+\mbox{\Hypertarget{classPUObserver_a681a45f01f8da608f4686b633aac9e9b}\label{classPUObserver_a681a45f01f8da608f4686b633aac9e9b}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUObserver}{P\+U\+Observer} $\ast$observer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUObserver_a5029a1daf7d598d11a5d18c23a600b71}\label{classPUObserver_a5029a1daf7d598d11a5d18c23a600b71}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classPUObserver}{P\+U\+Observer}(void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUObserver_a402d18a070beab3b326879f47723996a}\label{classPUObserver_a402d18a070beab3b326879f47723996a}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+A\+B\+L\+ED} = true
+\item 
+\mbox{\Hypertarget{classPUObserver_a56f3af315931ed9623c1a9dc1467ee41}\label{classPUObserver_a56f3af315931ed9623c1a9dc1467ee41}} 
+static const P\+U\+Particle3\+D\+::\+Particle\+Type {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+A\+R\+T\+I\+C\+L\+E\+\_\+\+T\+Y\+PE} = P\+U\+Particle3\+D\+::\+P\+T\+\_\+\+V\+I\+S\+U\+AL
+\item 
+\mbox{\Hypertarget{classPUObserver_a6a92bfb99992284846331d852e2bf5ba}\label{classPUObserver_a6a92bfb99992284846331d852e2bf5ba}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 0.\+05f
+\item 
+\mbox{\Hypertarget{classPUObserver_ae40b43f434b1ff5c5fa0d46c130f5edd}\label{classPUObserver_ae40b43f434b1ff5c5fa0d46c130f5edd}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+N\+T\+I\+L\+\_\+\+E\+V\+E\+NT} = false
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classPUObserver_a45f88a4df42b5812129f0cdb1acdef0b}{handle\+Observe} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)
+\item 
+virtual void \hyperlink{classPUObserver_a17d1b4aad5474b11a9aa20373e18189a}{handle\+Event} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)
+\item 
+virtual void \hyperlink{classPUObserver_ac40b9b0e19178cfc83f7c389d40bce59}{handle\+Observe} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)
+\item 
+virtual void \hyperlink{classPUObserver_add59b575d5f91e3b1768b2dd5785991a}{handle\+Event} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle, float time\+Elapsed)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUObserver_ac8621c6d4105798562dbf4d234ce8f37}\label{classPUObserver_ac8621c6d4105798562dbf4d234ce8f37}} 
+\hyperlink{classPUParticleSystem3D}{P\+U\+Particle\+System3D} $\ast$ {\bfseries \+\_\+particle\+System}
+\item 
+\mbox{\Hypertarget{classPUObserver_a2e8e4be52a1893b91d93a8e6e1da2dab}\label{classPUObserver_a2e8e4be52a1893b91d93a8e6e1da2dab}} 
+std\+::string {\bfseries \+\_\+observer\+Type}
+\item 
+\mbox{\Hypertarget{classPUObserver_a367c24c80159311fd59c8938616a1c48}\label{classPUObserver_a367c24c80159311fd59c8938616a1c48}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+bool \hyperlink{classPUObserver_abd2d0d30d38ff290c7a552f8c45e75df}{\+\_\+enabled}
+\item 
+\mbox{\Hypertarget{classPUObserver_a8fe80466aa80fcbd4f6ddebf4966ac28}\label{classPUObserver_a8fe80466aa80fcbd4f6ddebf4966ac28}} 
+bool {\bfseries \+\_\+original\+Enabled}
+\item 
+\mbox{\Hypertarget{classPUObserver_ae95ffee8d98889407ea3fab3a9dc4a75}\label{classPUObserver_ae95ffee8d98889407ea3fab3a9dc4a75}} 
+bool {\bfseries \+\_\+original\+Enabled\+Set}
+\item 
+bool \hyperlink{classPUObserver_a312f941c888fc472b0537b0d5238d042}{\+\_\+observe}
+\item 
+bool \hyperlink{classPUObserver_ac52443fc22487cd03368972848813e52}{\+\_\+observe\+Until\+Event}
+\item 
+bool \hyperlink{classPUObserver_a2e2bdbb02ceea9ed72679cdc13662579}{\+\_\+event\+Handlers\+Executed}
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUObserver_ad96714e5e2acc265fffcdfcaf8cdac58}{\+\_\+observer\+Scale}
+\item 
+\mbox{\Hypertarget{classPUObserver_a30eece46bb9a3770e2b54661ad5923e9}\label{classPUObserver_a30eece46bb9a3770e2b54661ad5923e9}} 
+P\+U\+Particle3\+D\+::\+Particle\+Type {\bfseries \+\_\+particle\+Type\+To\+Observe}
+\item 
+bool \hyperlink{classPUObserver_ac350905c69ad227b05ae5c981d6e725a}{\+\_\+particle\+Type\+To\+Observe\+Set}
+\item 
+\mbox{\Hypertarget{classPUObserver_ab5b9891d7abeb04ca19d24795222b706}\label{classPUObserver_ab5b9891d7abeb04ca19d24795222b706}} 
+Particle\+Event\+Handler\+List {\bfseries \+\_\+event\+Handlers}
+\item 
+float \hyperlink{classPUObserver_a3e5a3237291c9ac55ae24352729efc10}{\+\_\+observer\+Interval}
+\item 
+\mbox{\Hypertarget{classPUObserver_aa0173ea4c1893c2d0c21b1b1d3c2798f}\label{classPUObserver_aa0173ea4c1893c2d0c21b1b1d3c2798f}} 
+float {\bfseries \+\_\+observer\+Interval\+Remainder}
+\item 
+\mbox{\Hypertarget{classPUObserver_aed859d7d810afab7cac25d7086f7a6d0}\label{classPUObserver_aed859d7d810afab7cac25d7086f7a6d0}} 
+bool {\bfseries \+\_\+observer\+Interval\+Set}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUObserver_a6facc234295c573636e9e1f78b0777c8}\label{classPUObserver_a6facc234295c573636e9e1f78b0777c8}} 
+class {\bfseries P\+U\+Particle\+System3D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}\label{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+get\+Original\+Enabled@{\+\_\+get\+Original\+Enabled}}
+\index{\+\_\+get\+Original\+Enabled@{\+\_\+get\+Original\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+get\+Original\+Enabled()}{\_getOriginalEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+get\+Original\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the \textquotesingle{}enabled\textquotesingle{} value that was set in \hyperlink{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}{set\+Enabled()} and not altered during execution. \mbox{\Hypertarget{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}\label{classPUObserver_a380858d42cdfa11c854f91bfef9d8395}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+get\+Original\+Enabled@{\+\_\+get\+Original\+Enabled}}
+\index{\+\_\+get\+Original\+Enabled@{\+\_\+get\+Original\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+get\+Original\+Enabled()}{\_getOriginalEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+get\+Original\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the \textquotesingle{}enabled\textquotesingle{} value that was set in \hyperlink{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}{set\+Enabled()} and not altered during execution. \mbox{\Hypertarget{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}\label{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+reset\+Enabled@{\+\_\+reset\+Enabled}}
+\index{\+\_\+reset\+Enabled@{\+\_\+reset\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+reset\+Enabled()}{\_resetEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::\+\_\+reset\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Reset internal values for \textquotesingle{}enabled\textquotesingle{}. This means that both the m\+Enabled and m\+Original\+Enabled can be set again using set\+Enabled. \begin{DoxyRemark}{Remarks}
+Using \hyperlink{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}{\+\_\+reset\+Enabled()} makes it possible to use \hyperlink{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}{set\+Enabled()} without the restriction of having a fixed m\+Original\+Enabled value. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}\label{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+reset\+Enabled@{\+\_\+reset\+Enabled}}
+\index{\+\_\+reset\+Enabled@{\+\_\+reset\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+reset\+Enabled()}{\_resetEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::\+\_\+reset\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Reset internal values for \textquotesingle{}enabled\textquotesingle{}. This means that both the m\+Enabled and m\+Original\+Enabled can be set again using set\+Enabled. \begin{DoxyRemark}{Remarks}
+Using \hyperlink{classPUObserver_a344fad62cfdc3d670e52f290a0bf20e8}{\+\_\+reset\+Enabled()} makes it possible to use \hyperlink{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}{set\+Enabled()} without the restriction of having a fixed m\+Original\+Enabled value. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}\label{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!add\+Event\+Handler@{add\+Event\+Handler}}
+\index{add\+Event\+Handler@{add\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{add\+Event\+Handler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}\label{classPUObserver_a5c2f1f1d9f90de62c986c0d57ee36950}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!add\+Event\+Handler@{add\+Event\+Handler}}
+\index{add\+Event\+Handler@{add\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{add\+Event\+Handler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_aafcac25a48541ea6dc5dd75aec100268}\label{classPUObserver_aafcac25a48541ea6dc5dd75aec100268}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!create\+Event\+Handler@{create\+Event\+Handler}}
+\index{create\+Event\+Handler@{create\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{create\+Event\+Handler()}{createEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ P\+U\+Observer\+::create\+Event\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Handler\+Type }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_ae2a4fc75b6fb674ae8a83e61d55f3bfc}\label{classPUObserver_ae2a4fc75b6fb674ae8a83e61d55f3bfc}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!create\+Event\+Handler@{create\+Event\+Handler}}
+\index{create\+Event\+Handler@{create\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{create\+Event\+Handler()}{createEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler}$\ast$ P\+U\+Observer\+::create\+Event\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Handler\+Type }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}\label{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+All\+Event\+Handlers@{destroy\+All\+Event\+Handlers}}
+\index{destroy\+All\+Event\+Handlers@{destroy\+All\+Event\+Handlers}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+All\+Event\+Handlers()}{destroyAllEventHandlers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+All\+Event\+Handlers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}\label{classPUObserver_a8fd1d6c0034cc9ff650718e3a3c667f3}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+All\+Event\+Handlers@{destroy\+All\+Event\+Handlers}}
+\index{destroy\+All\+Event\+Handlers@{destroy\+All\+Event\+Handlers}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+All\+Event\+Handlers()}{destroyAllEventHandlers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+All\+Event\+Handlers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}\label{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+Event\+Handler@{destroy\+Event\+Handler}}
+\index{destroy\+Event\+Handler@{destroy\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+Event\+Handler()}{destroyEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}\label{classPUObserver_ab9a8d586068cc43f9eed0a3440448bbc}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+Event\+Handler@{destroy\+Event\+Handler}}
+\index{destroy\+Event\+Handler@{destroy\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+Event\+Handler()}{destroyEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a8470070593a74e4b940cf02550193c27}\label{classPUObserver_a8470070593a74e4b940cf02550193c27}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+Event\+Handler@{destroy\+Event\+Handler}}
+\index{destroy\+Event\+Handler@{destroy\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+Event\+Handler()}{destroyEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+Event\+Handler (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a8470070593a74e4b940cf02550193c27}\label{classPUObserver_a8470070593a74e4b940cf02550193c27}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!destroy\+Event\+Handler@{destroy\+Event\+Handler}}
+\index{destroy\+Event\+Handler@{destroy\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{destroy\+Event\+Handler()}{destroyEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::destroy\+Event\+Handler (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a50d3ac2a8c1ca063484fee39d2149e51}\label{classPUObserver_a50d3ac2a8c1ca063484fee39d2149e51}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Event\+Handler@{get\+Event\+Handler}}
+\index{get\+Event\+Handler@{get\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Event\+Handler()}{getEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ P\+U\+Observer\+::get\+Event\+Handler (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_a7cbf02169d92612a139cc854e37d66d3}\label{classPUObserver_a7cbf02169d92612a139cc854e37d66d3}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Event\+Handler@{get\+Event\+Handler}}
+\index{get\+Event\+Handler@{get\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Event\+Handler()}{getEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler}$\ast$ P\+U\+Observer\+::get\+Event\+Handler (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_a01846fc48a256d5503703aad243ee813}\label{classPUObserver_a01846fc48a256d5503703aad243ee813}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Event\+Handler@{get\+Event\+Handler}}
+\index{get\+Event\+Handler@{get\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Event\+Handler()}{getEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$ P\+U\+Observer\+::get\+Event\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Handler\+Name }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_a12558402f3021048071e98cf557ff5a4}\label{classPUObserver_a12558402f3021048071e98cf557ff5a4}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Event\+Handler@{get\+Event\+Handler}}
+\index{get\+Event\+Handler@{get\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Event\+Handler()}{getEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classPUEventHandler}{P\+U\+Event\+Handler}$\ast$ P\+U\+Observer\+::get\+Event\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Handler\+Name }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}\label{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Observer\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo\+Todo \mbox{\Hypertarget{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}\label{classPUObserver_a733b40d829f215dcbc8b85852e727d6e}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Observer\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo\+Todo \mbox{\Hypertarget{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}\label{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Num\+Event\+Handlers@{get\+Num\+Event\+Handlers}}
+\index{get\+Num\+Event\+Handlers@{get\+Num\+Event\+Handlers}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Num\+Event\+Handlers()}{getNumEventHandlers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t P\+U\+Observer\+::get\+Num\+Event\+Handlers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}\label{classPUObserver_af173b2134fc4b4d2eae639cff104fe02}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Num\+Event\+Handlers@{get\+Num\+Event\+Handlers}}
+\index{get\+Num\+Event\+Handlers@{get\+Num\+Event\+Handlers}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Num\+Event\+Handlers()}{getNumEventHandlers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t P\+U\+Observer\+::get\+Num\+Event\+Handlers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}\label{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observer\+Interval@{get\+Observer\+Interval}}
+\index{get\+Observer\+Interval@{get\+Observer\+Interval}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observer\+Interval()}{getObserverInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Observer\+::get\+Observer\+Interval (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Return the interval value, which defines at what interval the observer is called. \mbox{\Hypertarget{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}\label{classPUObserver_aeff68820bc2e27913c0b1f8bc18753d0}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observer\+Interval@{get\+Observer\+Interval}}
+\index{get\+Observer\+Interval@{get\+Observer\+Interval}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observer\+Interval()}{getObserverInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float P\+U\+Observer\+::get\+Observer\+Interval (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Return the interval value, which defines at what interval the observer is called. \mbox{\Hypertarget{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}\label{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observer\+Type@{get\+Observer\+Type}}
+\index{get\+Observer\+Type@{get\+Observer\+Type}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observer\+Type()}{getObserverType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Observer\+::get\+Observer\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}\label{classPUObserver_ada77c2db2e1e1d40237d41fcca481361}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observer\+Type@{get\+Observer\+Type}}
+\index{get\+Observer\+Type@{get\+Observer\+Type}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observer\+Type()}{getObserverType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Observer\+::get\+Observer\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}\label{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observe\+Until\+Event@{get\+Observe\+Until\+Event}}
+\index{get\+Observe\+Until\+Event@{get\+Observe\+Until\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observe\+Until\+Event()}{getObserveUntilEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::get\+Observe\+Until\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Return the value of m\+Observe\+Until\+Event. \mbox{\Hypertarget{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}\label{classPUObserver_a7d44e67979d599d99333e20c2faa73f0}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Observe\+Until\+Event@{get\+Observe\+Until\+Event}}
+\index{get\+Observe\+Until\+Event@{get\+Observe\+Until\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Observe\+Until\+Event()}{getObserveUntilEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::get\+Observe\+Until\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Return the value of m\+Observe\+Until\+Event. \mbox{\Hypertarget{classPUObserver_a22aaee1547d3e035806f3b422efcc261}\label{classPUObserver_a22aaee1547d3e035806f3b422efcc261}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Particle\+Type\+To\+Observe@{get\+Particle\+Type\+To\+Observe}}
+\index{get\+Particle\+Type\+To\+Observe@{get\+Particle\+Type\+To\+Observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Particle\+Type\+To\+Observe()}{getParticleTypeToObserve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const P\+U\+Particle3\+D\+::\+Particle\+Type\& P\+U\+Observer\+::get\+Particle\+Type\+To\+Observe (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a22aaee1547d3e035806f3b422efcc261}\label{classPUObserver_a22aaee1547d3e035806f3b422efcc261}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!get\+Particle\+Type\+To\+Observe@{get\+Particle\+Type\+To\+Observe}}
+\index{get\+Particle\+Type\+To\+Observe@{get\+Particle\+Type\+To\+Observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{get\+Particle\+Type\+To\+Observe()}{getParticleTypeToObserve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const P\+U\+Particle3\+D\+::\+Particle\+Type\& P\+U\+Observer\+::get\+Particle\+Type\+To\+Observe (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a17d1b4aad5474b11a9aa20373e18189a}\label{classPUObserver_a17d1b4aad5474b11a9aa20373e18189a}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{handle\+Event()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::handle\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Handle the event. \begin{DoxyRemark}{Remarks}
+This function iterates over all at the observer registered handlers and executes them. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUObserver_add59b575d5f91e3b1768b2dd5785991a}\label{classPUObserver_add59b575d5f91e3b1768b2dd5785991a}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{handle\+Event()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Observer\+::handle\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Handle the event. \begin{DoxyRemark}{Remarks}
+This function iterates over all at the observer registered handlers and executes them. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUObserver_a45f88a4df42b5812129f0cdb1acdef0b}\label{classPUObserver_a45f88a4df42b5812129f0cdb1acdef0b}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!handle\+Observe@{handle\+Observe}}
+\index{handle\+Observe@{handle\+Observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{handle\+Observe()}{handleObserve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::handle\+Observe (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Handle the observer implementation. \mbox{\Hypertarget{classPUObserver_ac40b9b0e19178cfc83f7c389d40bce59}\label{classPUObserver_ac40b9b0e19178cfc83f7c389d40bce59}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!handle\+Observe@{handle\+Observe}}
+\index{handle\+Observe@{handle\+Observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{handle\+Observe()}{handleObserve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Observer\+::handle\+Observe (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Handle the observer implementation. \mbox{\Hypertarget{classPUObserver_a5f09175e0647409938779df070433660}\label{classPUObserver_a5f09175e0647409938779df070433660}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a33670aead4140f1a00691754e4dafdf0}\label{classPUObserver_a33670aead4140f1a00691754e4dafdf0}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Observer\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}\label{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!is\+Particle\+Type\+To\+Observe\+Set@{is\+Particle\+Type\+To\+Observe\+Set}}
+\index{is\+Particle\+Type\+To\+Observe\+Set@{is\+Particle\+Type\+To\+Observe\+Set}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{is\+Particle\+Type\+To\+Observe\+Set()}{isParticleTypeToObserveSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::is\+Particle\+Type\+To\+Observe\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns true if the particle type to observe specifically has been set. \mbox{\Hypertarget{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}\label{classPUObserver_a50f62938d95ab7c7f2028d889bdc56ca}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!is\+Particle\+Type\+To\+Observe\+Set@{is\+Particle\+Type\+To\+Observe\+Set}}
+\index{is\+Particle\+Type\+To\+Observe\+Set@{is\+Particle\+Type\+To\+Observe\+Set}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{is\+Particle\+Type\+To\+Observe\+Set()}{isParticleTypeToObserveSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::is\+Particle\+Type\+To\+Observe\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns true if the particle type to observe specifically has been set. \mbox{\Hypertarget{classPUObserver_a50f59cc3245e291b641463db5d3037f7}\label{classPUObserver_a50f59cc3245e291b641463db5d3037f7}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!observe@{observe}}
+\index{observe@{observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{observe()}{observe()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Observer\+::observe (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function determines whether a condition (the event) is true or false. 
+
+Implemented in \hyperlink{classPUOnCountObserver_ae183110704061276d72a79b3c746677f}{P\+U\+On\+Count\+Observer}, \hyperlink{classPUOnCountObserver_a8f6c4a64fa9fc49264a5cb3430d04c27}{P\+U\+On\+Count\+Observer}, \hyperlink{classPUOnRandomObserver_a00961e9d122d4343ddf9b63c8c0dd720}{P\+U\+On\+Random\+Observer}, \hyperlink{classPUOnRandomObserver_a788e7e6c809434acb224aa15183a9554}{P\+U\+On\+Random\+Observer}, \hyperlink{classPUOnTimeObserver_ae8ec581632549ab8b8cd7e934c17a8b9}{P\+U\+On\+Time\+Observer}, \hyperlink{classPUOnTimeObserver_a15ec72bea8accd66333cd9b50e9683da}{P\+U\+On\+Time\+Observer}, \hyperlink{classPUOnEventFlagObserver_a686b31262aca58e1fd6ae83cdafa809b}{P\+U\+On\+Event\+Flag\+Observer}, \hyperlink{classPUOnEventFlagObserver_acf9852b52ba0a7fcf2ebaf35f3dd64ee}{P\+U\+On\+Event\+Flag\+Observer}, \hyperlink{classPUOnClearObserver_ac6c19fab71428b5c01df6e39955fa7fd}{P\+U\+On\+Clear\+Observer}, \hyperlink{classPUOnClearObserver_a63170ff694bf58c730d63145129b0dc0}{P\+U\+On\+Clear\+Observer}, \hyperlink{classPUOnExpireObserver_ad14849989e86b0d3c24bfab468149b9d}{P\+U\+On\+Expire\+Observer}, \hyperlink{classPUOnPositionObserver_a2c47b5b4b29896c659d4dea79d8360f1}{P\+U\+On\+Position\+Observer}, \hyperlink{classPUOnVelocityObserver_aac0680a7af1e86d54dbf17edc20f83b9}{P\+U\+On\+Velocity\+Observer}, \hyperlink{classPUOnExpireObserver_aaaddff7c0cc6987a1f341437167729af}{P\+U\+On\+Expire\+Observer}, \hyperlink{classPUOnPositionObserver_ab6d9011751d16face64818214a1acd21}{P\+U\+On\+Position\+Observer}, \hyperlink{classPUOnVelocityObserver_a2719478a33935f6cafee11b72b1968bf}{P\+U\+On\+Velocity\+Observer}, \hyperlink{classPUOnEmissionObserver_a943d4b27b5a19b1918a0f7877c5dffb2}{P\+U\+On\+Emission\+Observer}, \hyperlink{classPUOnQuotaObserver_aa0d90169df0c2b2c2cf0d3021c3b674a}{P\+U\+On\+Quota\+Observer}, \hyperlink{classPUOnEmissionObserver_a8e44d09b84802c78a7cbe671a104962c}{P\+U\+On\+Emission\+Observer}, \hyperlink{classPUOnQuotaObserver_a0126f46b5e421c15218697814c5922ff}{P\+U\+On\+Quota\+Observer}, \hyperlink{classPUOnCollisionObserver_a59b536488e3a91560d8e3d730b860185}{P\+U\+On\+Collision\+Observer}, and \hyperlink{classPUOnCollisionObserver_ab3b3d75044d271697792ff7f6d7eff4e}{P\+U\+On\+Collision\+Observer}.
+
+\mbox{\Hypertarget{classPUObserver_a50f59cc3245e291b641463db5d3037f7}\label{classPUObserver_a50f59cc3245e291b641463db5d3037f7}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!observe@{observe}}
+\index{observe@{observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{observe()}{observe()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Observer\+::observe (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle,  }\item[{float}]{time\+Elapsed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function determines whether a condition (the event) is true or false. 
+
+Implemented in \hyperlink{classPUOnCountObserver_ae183110704061276d72a79b3c746677f}{P\+U\+On\+Count\+Observer}, \hyperlink{classPUOnCountObserver_a8f6c4a64fa9fc49264a5cb3430d04c27}{P\+U\+On\+Count\+Observer}, \hyperlink{classPUOnRandomObserver_a00961e9d122d4343ddf9b63c8c0dd720}{P\+U\+On\+Random\+Observer}, \hyperlink{classPUOnRandomObserver_a788e7e6c809434acb224aa15183a9554}{P\+U\+On\+Random\+Observer}, \hyperlink{classPUOnTimeObserver_ae8ec581632549ab8b8cd7e934c17a8b9}{P\+U\+On\+Time\+Observer}, \hyperlink{classPUOnTimeObserver_a15ec72bea8accd66333cd9b50e9683da}{P\+U\+On\+Time\+Observer}, \hyperlink{classPUOnEventFlagObserver_a686b31262aca58e1fd6ae83cdafa809b}{P\+U\+On\+Event\+Flag\+Observer}, \hyperlink{classPUOnEventFlagObserver_acf9852b52ba0a7fcf2ebaf35f3dd64ee}{P\+U\+On\+Event\+Flag\+Observer}, \hyperlink{classPUOnClearObserver_ac6c19fab71428b5c01df6e39955fa7fd}{P\+U\+On\+Clear\+Observer}, \hyperlink{classPUOnClearObserver_a63170ff694bf58c730d63145129b0dc0}{P\+U\+On\+Clear\+Observer}, \hyperlink{classPUOnExpireObserver_ad14849989e86b0d3c24bfab468149b9d}{P\+U\+On\+Expire\+Observer}, \hyperlink{classPUOnPositionObserver_a2c47b5b4b29896c659d4dea79d8360f1}{P\+U\+On\+Position\+Observer}, \hyperlink{classPUOnVelocityObserver_aac0680a7af1e86d54dbf17edc20f83b9}{P\+U\+On\+Velocity\+Observer}, \hyperlink{classPUOnExpireObserver_aaaddff7c0cc6987a1f341437167729af}{P\+U\+On\+Expire\+Observer}, \hyperlink{classPUOnPositionObserver_ab6d9011751d16face64818214a1acd21}{P\+U\+On\+Position\+Observer}, \hyperlink{classPUOnVelocityObserver_a2719478a33935f6cafee11b72b1968bf}{P\+U\+On\+Velocity\+Observer}, \hyperlink{classPUOnEmissionObserver_a943d4b27b5a19b1918a0f7877c5dffb2}{P\+U\+On\+Emission\+Observer}, \hyperlink{classPUOnQuotaObserver_aa0d90169df0c2b2c2cf0d3021c3b674a}{P\+U\+On\+Quota\+Observer}, \hyperlink{classPUOnEmissionObserver_a8e44d09b84802c78a7cbe671a104962c}{P\+U\+On\+Emission\+Observer}, \hyperlink{classPUOnQuotaObserver_a0126f46b5e421c15218697814c5922ff}{P\+U\+On\+Quota\+Observer}, \hyperlink{classPUOnCollisionObserver_a59b536488e3a91560d8e3d730b860185}{P\+U\+On\+Collision\+Observer}, and \hyperlink{classPUOnCollisionObserver_ab3b3d75044d271697792ff7f6d7eff4e}{P\+U\+On\+Collision\+Observer}.
+
+\mbox{\Hypertarget{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}\label{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!remove\+Event\+Handler@{remove\+Event\+Handler}}
+\index{remove\+Event\+Handler@{remove\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{remove\+Event\+Handler()}{removeEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::remove\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}\label{classPUObserver_abd9e5585ab25795109269ba07fbc51e6}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!remove\+Event\+Handler@{remove\+Event\+Handler}}
+\index{remove\+Event\+Handler@{remove\+Event\+Handler}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{remove\+Event\+Handler()}{removeEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::remove\+Event\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classPUEventHandler}{P\+U\+Event\+Handler} $\ast$}]{event\+Handler }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}\label{classPUObserver_a5f2b1a071d5579cac1cfbc09b9871853}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_abb0f7240f433f41756e28ed4db707b1e}\label{classPUObserver_abb0f7240f433f41756e28ed4db707b1e}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Observer\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Todo \mbox{\Hypertarget{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}\label{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Observer\+Interval@{set\+Observer\+Interval}}
+\index{set\+Observer\+Interval@{set\+Observer\+Interval}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Observer\+Interval()}{setObserverInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::set\+Observer\+Interval (\begin{DoxyParamCaption}\item[{float}]{observer\+Interval }\end{DoxyParamCaption})}
+
+Set the interval value, which defines at what interval the observer is called. \mbox{\Hypertarget{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}\label{classPUObserver_a8346c5d59ec8435e8d17dfc317ae4b90}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Observer\+Interval@{set\+Observer\+Interval}}
+\index{set\+Observer\+Interval@{set\+Observer\+Interval}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Observer\+Interval()}{setObserverInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::set\+Observer\+Interval (\begin{DoxyParamCaption}\item[{float}]{observer\+Interval }\end{DoxyParamCaption})}
+
+Set the interval value, which defines at what interval the observer is called. \mbox{\Hypertarget{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}\label{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Observe\+Until\+Event@{set\+Observe\+Until\+Event}}
+\index{set\+Observe\+Until\+Event@{set\+Observe\+Until\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Observe\+Until\+Event()}{setObserveUntilEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::set\+Observe\+Until\+Event (\begin{DoxyParamCaption}\item[{bool}]{observe\+Until\+Event }\end{DoxyParamCaption})}
+
+Sets the value of m\+Observe\+Until\+Event. This value determines whether observation must be continued after an event occurred and the event handlers are called. \mbox{\Hypertarget{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}\label{classPUObserver_a798f63e99e51477fd10b70167d0ddf4a}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!set\+Observe\+Until\+Event@{set\+Observe\+Until\+Event}}
+\index{set\+Observe\+Until\+Event@{set\+Observe\+Until\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{set\+Observe\+Until\+Event()}{setObserveUntilEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Observer\+::set\+Observe\+Until\+Event (\begin{DoxyParamCaption}\item[{bool}]{observe\+Until\+Event }\end{DoxyParamCaption})}
+
+Sets the value of m\+Observe\+Until\+Event. This value determines whether observation must be continued after an event occurred and the event handlers are called. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPUObserver_abd2d0d30d38ff290c7a552f8c45e75df}\label{classPUObserver_abd2d0d30d38ff290c7a552f8c45e75df}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+enabled@{\+\_\+enabled}}
+\index{\+\_\+enabled@{\+\_\+enabled}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+enabled}{\_enabled}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether an observer is activated. \mbox{\Hypertarget{classPUObserver_a2e2bdbb02ceea9ed72679cdc13662579}\label{classPUObserver_a2e2bdbb02ceea9ed72679cdc13662579}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+event\+Handlers\+Executed@{\+\_\+event\+Handlers\+Executed}}
+\index{\+\_\+event\+Handlers\+Executed@{\+\_\+event\+Handlers\+Executed}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+event\+Handlers\+Executed}{\_eventHandlersExecuted}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+event\+Handlers\+Executed\hspace{0.3cm}{\ttfamily [protected]}}
+
+Flag that is set if the event handler(s) are called at least once. \mbox{\Hypertarget{classPUObserver_a312f941c888fc472b0537b0d5238d042}\label{classPUObserver_a312f941c888fc472b0537b0d5238d042}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+observe@{\+\_\+observe}}
+\index{\+\_\+observe@{\+\_\+observe}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+observe}{\_observe}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+observe\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether the \hyperlink{classPUObserver_a312f941c888fc472b0537b0d5238d042}{\+\_\+observe()} function must be executed. \begin{DoxyRemark}{Remarks}
+This is independent of m\+Enabled, which means that an observer can be enabled, but if m\+Observe has been set to false, it still doesn\textquotesingle{}t observe. It is used to enable/disable execution of the \hyperlink{classPUObserver_a312f941c888fc472b0537b0d5238d042}{\+\_\+observe()} function in combination with the update interval. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUObserver_a3e5a3237291c9ac55ae24352729efc10}\label{classPUObserver_a3e5a3237291c9ac55ae24352729efc10}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+observer\+Interval@{\+\_\+observer\+Interval}}
+\index{\+\_\+observer\+Interval@{\+\_\+observer\+Interval}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+observer\+Interval}{\_observerInterval}}
+{\footnotesize\ttfamily float P\+U\+Observer\+::\+\_\+observer\+Interval\hspace{0.3cm}{\ttfamily [protected]}}
+
+Values that determine that the observer is called after every interval. \mbox{\Hypertarget{classPUObserver_ad96714e5e2acc265fffcdfcaf8cdac58}\label{classPUObserver_ad96714e5e2acc265fffcdfcaf8cdac58}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+observer\+Scale@{\+\_\+observer\+Scale}}
+\index{\+\_\+observer\+Scale@{\+\_\+observer\+Scale}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+observer\+Scale}{\_observerScale}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Observer\+::\+\_\+observer\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+Although the scale is on a Particle System level, the observer can also be scaled. \mbox{\Hypertarget{classPUObserver_ac52443fc22487cd03368972848813e52}\label{classPUObserver_ac52443fc22487cd03368972848813e52}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+observe\+Until\+Event@{\+\_\+observe\+Until\+Event}}
+\index{\+\_\+observe\+Until\+Event@{\+\_\+observe\+Until\+Event}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+observe\+Until\+Event}{\_observeUntilEvent}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+observe\+Until\+Event\hspace{0.3cm}{\ttfamily [protected]}}
+
+Observes until an event takes place. If the event occurs, the event handlers are called and after that the observer doesn\textquotesingle{}t observe anymore. \mbox{\Hypertarget{classPUObserver_ac350905c69ad227b05ae5c981d6e725a}\label{classPUObserver_ac350905c69ad227b05ae5c981d6e725a}} 
+\index{P\+U\+Observer@{P\+U\+Observer}!\+\_\+particle\+Type\+To\+Observe\+Set@{\+\_\+particle\+Type\+To\+Observe\+Set}}
+\index{\+\_\+particle\+Type\+To\+Observe\+Set@{\+\_\+particle\+Type\+To\+Observe\+Set}!P\+U\+Observer@{P\+U\+Observer}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Type\+To\+Observe\+Set}{\_particleTypeToObserveSet}}
+{\footnotesize\ttfamily bool P\+U\+Observer\+::\+\_\+particle\+Type\+To\+Observe\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether m\+Particle\+Type\+To\+Observe is set. If true only that particles of the specified type are observed. If false (= default), all particles are observed. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Observer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Observer.\+cpp\end{DoxyCompactItemize}

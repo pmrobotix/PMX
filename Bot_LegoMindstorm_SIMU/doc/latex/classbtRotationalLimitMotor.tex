@@ -1,0 +1,177 @@
+\hypertarget{classbtRotationalLimitMotor}{}\section{bt\+Rotational\+Limit\+Motor Class Reference}
+\label{classbtRotationalLimitMotor}\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+
+
+Rotation Limit structure for generic joints.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Generic6\+Dof\+Constraint.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a2e7652de69dacf8f37eaef5fd460f4a3}\label{classbtRotationalLimitMotor_a2e7652de69dacf8f37eaef5fd460f4a3}} 
+{\bfseries bt\+Rotational\+Limit\+Motor} (const \hyperlink{classbtRotationalLimitMotor}{bt\+Rotational\+Limit\+Motor} \&limot)
+\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}\label{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}} 
+bool \hyperlink{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}{is\+Limited} ()
+\begin{DoxyCompactList}\small\item\em Is limited. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}\label{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}} 
+bool \hyperlink{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}{need\+Apply\+Torques} ()
+\begin{DoxyCompactList}\small\item\em Need apply correction. \end{DoxyCompactList}\item 
+int \hyperlink{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}{test\+Limit\+Value} (bt\+Scalar test\+\_\+value)
+\begin{DoxyCompactList}\small\item\em calculates error \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}{solve\+Angular\+Limits} (bt\+Scalar time\+Step, bt\+Vector3 \&axis, bt\+Scalar jac\+Diag\+A\+B\+Inv, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body0, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body1)
+\begin{DoxyCompactList}\small\item\em apply the correction impulses for two bodies \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a2e7652de69dacf8f37eaef5fd460f4a3}\label{classbtRotationalLimitMotor_a2e7652de69dacf8f37eaef5fd460f4a3}} 
+{\bfseries bt\+Rotational\+Limit\+Motor} (const \hyperlink{classbtRotationalLimitMotor}{bt\+Rotational\+Limit\+Motor} \&limot)
+\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}\label{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}} 
+bool \hyperlink{classbtRotationalLimitMotor_ac47bf3f6fe0afc82d123407221d4cb10}{is\+Limited} ()
+\begin{DoxyCompactList}\small\item\em Is limited. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}\label{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}} 
+bool \hyperlink{classbtRotationalLimitMotor_af8f10179d361ad46f5a4636822af6d7d}{need\+Apply\+Torques} ()
+\begin{DoxyCompactList}\small\item\em Need apply correction. \end{DoxyCompactList}\item 
+int \hyperlink{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}{test\+Limit\+Value} (bt\+Scalar test\+\_\+value)
+\begin{DoxyCompactList}\small\item\em calculates error \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}\label{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}{solve\+Angular\+Limits} (bt\+Scalar time\+Step, bt\+Vector3 \&axis, bt\+Scalar jac\+Diag\+A\+B\+Inv, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body0, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body1)
+\begin{DoxyCompactList}\small\item\em apply the correction impulses for two bodies \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a57ff414e1856d661d81b797702c4f986}{m\+\_\+lo\+Limit}
+\begin{DoxyCompactList}\small\item\em joint limit \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a3201531c631a779615146a373840239c}\label{classbtRotationalLimitMotor_a3201531c631a779615146a373840239c}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a3201531c631a779615146a373840239c}{m\+\_\+hi\+Limit}
+\begin{DoxyCompactList}\small\item\em joint limit \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a2860fd161d1628ecadd9d39af888cd28}\label{classbtRotationalLimitMotor_a2860fd161d1628ecadd9d39af888cd28}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a2860fd161d1628ecadd9d39af888cd28}{m\+\_\+target\+Velocity}
+\begin{DoxyCompactList}\small\item\em target motor velocity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a3dfeda127bd08b83bb709ec2b40d63ec}\label{classbtRotationalLimitMotor_a3dfeda127bd08b83bb709ec2b40d63ec}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a3dfeda127bd08b83bb709ec2b40d63ec}{m\+\_\+max\+Motor\+Force}
+\begin{DoxyCompactList}\small\item\em max force on motor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_acab8742c3e12050bd168fc8d45319721}\label{classbtRotationalLimitMotor_acab8742c3e12050bd168fc8d45319721}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_acab8742c3e12050bd168fc8d45319721}{m\+\_\+max\+Limit\+Force}
+\begin{DoxyCompactList}\small\item\em max force on limit \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a4aaabbd7dac171217b2ac36c3f2bc240}\label{classbtRotationalLimitMotor_a4aaabbd7dac171217b2ac36c3f2bc240}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a4aaabbd7dac171217b2ac36c3f2bc240}{m\+\_\+damping}
+\begin{DoxyCompactList}\small\item\em Damping. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a7f3a07a418826d16a0917a57af079867}\label{classbtRotationalLimitMotor_a7f3a07a418826d16a0917a57af079867}} 
+bt\+Scalar {\bfseries m\+\_\+limit\+Softness}
+\item 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a3d06f5a5de013fd97f39cf63273dce45}{m\+\_\+normal\+C\+FM}
+\begin{DoxyCompactList}\small\item\em Relaxation factor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a88139c248dfa9b9ab4a8a2431e86aa45}\label{classbtRotationalLimitMotor_a88139c248dfa9b9ab4a8a2431e86aa45}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a88139c248dfa9b9ab4a8a2431e86aa45}{m\+\_\+stop\+E\+RP}
+\begin{DoxyCompactList}\small\item\em Error tolerance factor when joint is at limit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ae2f949d3de4c3b059cd914e11fd5ebcd}\label{classbtRotationalLimitMotor_ae2f949d3de4c3b059cd914e11fd5ebcd}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_ae2f949d3de4c3b059cd914e11fd5ebcd}{m\+\_\+stop\+C\+FM}
+\begin{DoxyCompactList}\small\item\em Constraint force mixing factor when joint is at limit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a4cfd3d5d8d3ba75f1ce4b59f01017364}\label{classbtRotationalLimitMotor_a4cfd3d5d8d3ba75f1ce4b59f01017364}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a4cfd3d5d8d3ba75f1ce4b59f01017364}{m\+\_\+bounce}
+\begin{DoxyCompactList}\small\item\em restitution factor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a8a515092c2d9f564d6bfe2774a56a394}\label{classbtRotationalLimitMotor_a8a515092c2d9f564d6bfe2774a56a394}} 
+bool {\bfseries m\+\_\+enable\+Motor}
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a7128feccb391176842f287b584e375d3}{m\+\_\+current\+Limit\+Error}
+\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_a1f334e324d5e337257c2b338e8e948de}\label{classbtRotationalLimitMotor_a1f334e324d5e337257c2b338e8e948de}} 
+bt\+Scalar \hyperlink{classbtRotationalLimitMotor_a1f334e324d5e337257c2b338e8e948de}{m\+\_\+current\+Position}
+\begin{DoxyCompactList}\small\item\em How much is violated this limit. \end{DoxyCompactList}\item 
+int \hyperlink{classbtRotationalLimitMotor_ad1e4fa6cb3ea2e4b78c96feab97448e8}{m\+\_\+current\+Limit}
+\begin{DoxyCompactList}\small\item\em current value of angle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ac039866aac865fee30f5db25c0330c2f}\label{classbtRotationalLimitMotor_ac039866aac865fee30f5db25c0330c2f}} 
+bt\+Scalar {\bfseries m\+\_\+accumulated\+Impulse}
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+Rotation Limit structure for generic joints. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}\label{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!solve\+Angular\+Limits@{solve\+Angular\+Limits}}
+\index{solve\+Angular\+Limits@{solve\+Angular\+Limits}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{solve\+Angular\+Limits()}{solveAngularLimits()}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Rotational\+Limit\+Motor\+::solve\+Angular\+Limits (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{time\+Step,  }\item[{bt\+Vector3 \&}]{axis,  }\item[{bt\+Scalar}]{jac\+Diag\+A\+B\+Inv,  }\item[{\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$}]{body0,  }\item[{\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$}]{body1 }\end{DoxyParamCaption})}
+
+
+
+apply the correction impulses for two bodies 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000028}{Todo}]\+: should clip against accumulated impulse \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}\label{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!test\+Limit\+Value@{test\+Limit\+Value}}
+\index{test\+Limit\+Value@{test\+Limit\+Value}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{test\+Limit\+Value()}{testLimitValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int bt\+Rotational\+Limit\+Motor\+::test\+Limit\+Value (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{test\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+calculates error 
+
+calculates m\+\_\+current\+Limit and m\+\_\+current\+Limit\+Error. \mbox{\Hypertarget{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}\label{classbtRotationalLimitMotor_ac0651bd36beda2dbb23c45a90dc1cccd}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!test\+Limit\+Value@{test\+Limit\+Value}}
+\index{test\+Limit\+Value@{test\+Limit\+Value}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{test\+Limit\+Value()}{testLimitValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int bt\+Rotational\+Limit\+Motor\+::test\+Limit\+Value (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{test\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+calculates error 
+
+calculates m\+\_\+current\+Limit and m\+\_\+current\+Limit\+Error. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbtRotationalLimitMotor_ad1e4fa6cb3ea2e4b78c96feab97448e8}\label{classbtRotationalLimitMotor_ad1e4fa6cb3ea2e4b78c96feab97448e8}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!m\+\_\+current\+Limit@{m\+\_\+current\+Limit}}
+\index{m\+\_\+current\+Limit@{m\+\_\+current\+Limit}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{m\+\_\+current\+Limit}{m\_currentLimit}}
+{\footnotesize\ttfamily int bt\+Rotational\+Limit\+Motor\+::m\+\_\+current\+Limit}
+
+
+
+current value of angle 
+
+0=free, 1=at lo limit, 2=at hi limit \mbox{\Hypertarget{classbtRotationalLimitMotor_a7128feccb391176842f287b584e375d3}\label{classbtRotationalLimitMotor_a7128feccb391176842f287b584e375d3}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!m\+\_\+current\+Limit\+Error@{m\+\_\+current\+Limit\+Error}}
+\index{m\+\_\+current\+Limit\+Error@{m\+\_\+current\+Limit\+Error}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{m\+\_\+current\+Limit\+Error}{m\_currentLimitError}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Rotational\+Limit\+Motor\+::m\+\_\+current\+Limit\+Error}
+
+temp\+\_\+variables \mbox{\Hypertarget{classbtRotationalLimitMotor_a57ff414e1856d661d81b797702c4f986}\label{classbtRotationalLimitMotor_a57ff414e1856d661d81b797702c4f986}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!m\+\_\+lo\+Limit@{m\+\_\+lo\+Limit}}
+\index{m\+\_\+lo\+Limit@{m\+\_\+lo\+Limit}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{m\+\_\+lo\+Limit}{m\_loLimit}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Rotational\+Limit\+Motor\+::m\+\_\+lo\+Limit}
+
+
+
+joint limit 
+
+limit\+\_\+parameters \mbox{\Hypertarget{classbtRotationalLimitMotor_a3d06f5a5de013fd97f39cf63273dce45}\label{classbtRotationalLimitMotor_a3d06f5a5de013fd97f39cf63273dce45}} 
+\index{bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}!m\+\_\+normal\+C\+FM@{m\+\_\+normal\+C\+FM}}
+\index{m\+\_\+normal\+C\+FM@{m\+\_\+normal\+C\+FM}!bt\+Rotational\+Limit\+Motor@{bt\+Rotational\+Limit\+Motor}}
+\subsubsection{\texorpdfstring{m\+\_\+normal\+C\+FM}{m\_normalCFM}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Rotational\+Limit\+Motor\+::m\+\_\+normal\+C\+FM}
+
+
+
+Relaxation factor. 
+
+Constraint force mixing factor 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Generic6\+Dof\+Constraint.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Generic6\+Dof\+Constraint.\+cpp\end{DoxyCompactItemize}

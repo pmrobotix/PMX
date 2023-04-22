@@ -1,0 +1,57 @@
+\hypertarget{classQuadRampDerivee}{}\section{Quad\+Ramp\+Derivee Class Reference}
+\label{classQuadRampDerivee}\index{Quad\+Ramp\+Derivee@{Quad\+Ramp\+Derivee}}
+
+
+Inheritance diagram for Quad\+Ramp\+Derivee\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classQuadRampDerivee__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Quad\+Ramp\+Derivee\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classQuadRampDerivee__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQuadRampDerivee_ac7357f26608a18ad04cfd30b0b5df4d0}\label{classQuadRampDerivee_ac7357f26608a18ad04cfd30b0b5df4d0}} 
+{\bfseries Quad\+Ramp\+Derivee} (bool is\+Distance)
+\item 
+\mbox{\Hypertarget{classQuadRampDerivee_a009b8c2873b1f879112f44b42d0ad5a4}\label{classQuadRampDerivee_a009b8c2873b1f879112f44b42d0ad5a4}} 
+bool {\bfseries is\+Ramp\+Finished} ()
+\item 
+\mbox{\Hypertarget{classQuadRampDerivee_a3ff2140bd9fdde67f183d9c287ac8dfe}\label{classQuadRampDerivee_a3ff2140bd9fdde67f183d9c287ac8dfe}} 
+void {\bfseries set\+Vitesse\+Marche\+Arriere} (int64\+\_\+t vitesse)
+\item 
+\mbox{\Hypertarget{classQuadRampDerivee_a93bcf8fec5db6b43f4c2237c5d06c7ac}\label{classQuadRampDerivee_a93bcf8fec5db6b43f4c2237c5d06c7ac}} 
+void {\bfseries set\+Vitesse\+Marche\+Avant} (int64\+\_\+t vitesse)
+\item 
+\mbox{\Hypertarget{classQuadRampDerivee_a45473d7e987261cc063e4eaf720e0754}\label{classQuadRampDerivee_a45473d7e987261cc063e4eaf720e0754}} 
+int64\+\_\+t {\bfseries filtre\+\_\+old} (int64\+\_\+t consigne, int64\+\_\+t position\+\_\+actuelle, int64\+\_\+t vitesse)
+\item 
+int64\+\_\+t \hyperlink{classQuadRampDerivee_a2c380e34be56a518ccbf3775eabb8d4a}{filtre} (int64\+\_\+t consigne, int64\+\_\+t position\+\_\+actuelle, int64\+\_\+t vitesse)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classQuadRampDerivee_a2c380e34be56a518ccbf3775eabb8d4a}\label{classQuadRampDerivee_a2c380e34be56a518ccbf3775eabb8d4a}} 
+\index{Quad\+Ramp\+Derivee@{Quad\+Ramp\+Derivee}!filtre@{filtre}}
+\index{filtre@{filtre}!Quad\+Ramp\+Derivee@{Quad\+Ramp\+Derivee}}
+\subsubsection{\texorpdfstring{filtre()}{filtre()}}
+{\footnotesize\ttfamily int64\+\_\+t Quad\+Ramp\+Derivee\+::filtre (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{consigne,  }\item[{int64\+\_\+t}]{position\+\_\+actuelle,  }\item[{int64\+\_\+t}]{vitesse }\end{DoxyParamCaption})}
+
+distance\+Freinage = (int64\+\_\+t)(1.\+0 $\ast$ (vitesse/derivee\+\_\+2nd\+\_\+neg\+\_\+av) $\ast$ (vitesse/derivee\+\_\+2nd\+\_\+neg\+\_\+av) $\ast$ gain\+Anticipation\+\_\+av) ; 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Esial/filtres/\+Quad\+Ramp\+Derivee/Quad\+Ramp\+Derivee.\+h\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Esial/filtres/\+Quad\+Ramp\+Derivee/Quad\+Ramp\+Derivee.\+cpp\end{DoxyCompactItemize}

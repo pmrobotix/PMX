@@ -1,0 +1,148 @@
+\hypertarget{classUnitTest}{}\section{Unit\+Test Class Reference}
+\label{classUnitTest}\index{Unit\+Test@{Unit\+Test}}
+
+
+Cette classe permet de créer des tests unitaires.  
+
+
+
+
+{\ttfamily \#include $<$Unit\+Test.\+hpp$>$}
+
+
+
+Inheritance diagram for Unit\+Test\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classUnitTest__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnitTest_a5a57054084ce200e1e92ff3eecc8420a}\label{classUnitTest_a5a57054084ce200e1e92ff3eecc8420a}} 
+virtual \hyperlink{classUnitTest_a5a57054084ce200e1e92ff3eecc8420a}{$\sim$\+Unit\+Test} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{classUnitTest_a6582f12faa929906359112ac916263ea}{name} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom du test. \end{DoxyCompactList}\item 
+void \hyperlink{classUnitTest_a94aab90579073ba6e2068bbc05c47c4a}{assert} (bool test, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Valide un test dans le cadre des tests unitaires. \end{DoxyCompactList}\item 
+void \hyperlink{classUnitTest_aae657d6d8bdc56cb2a9d4e4e9f5f8929}{fail} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Cette méthode fait échouer un test. \end{DoxyCompactList}\item 
+void \hyperlink{classUnitTest_a734b8df5cd0686245f9ce9ccbb73c5ee}{expected\+Error} (const std\+::string \&expected)
+\begin{DoxyCompactList}\small\item\em Vérifie si un message d\textquotesingle{}erreur à bien été émis. \end{DoxyCompactList}\item 
+void \hyperlink{classUnitTest_a00a74363b89994348f5025b42f7ea96f}{expected\+Error} (const std\+::string \&expected, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Vérifie si un message d\textquotesingle{}erreur à bien été émis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUnitTest_a15eae3e23414a5877c8652655dd88c3f}\label{classUnitTest_a15eae3e23414a5877c8652655dd88c3f}} 
+virtual void \hyperlink{classUnitTest_a15eae3e23414a5877c8652655dd88c3f}{suite} ()=0
+\begin{DoxyCompactList}\small\item\em Execute les tests associés à la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnitTest_aefa94b0ad902a2e8ccff1f0441cafbff}\label{classUnitTest_aefa94b0ad902a2e8ccff1f0441cafbff}} 
+\hyperlink{classUnitTest_aefa94b0ad902a2e8ccff1f0441cafbff}{Unit\+Test} (const std\+::string \&\hyperlink{classUnitTest_a6582f12faa929906359112ac916263ea}{name})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe permet de créer des tests unitaires. 
+
+Chaque classe de test devra hériter de cette classe et définir la méthode \hyperlink{classUnitTest_a15eae3e23414a5877c8652655dd88c3f}{Unit\+Test\+::suite()} qui lancera les différents tests unitaires associés.
+
+Tous les tests doivent avoir un nom propre définit à la construction de l\textquotesingle{}objet.
+
+Les méthodes \hyperlink{classUnitTest_a94aab90579073ba6e2068bbc05c47c4a}{Unit\+Test\+::assert()} et \hyperlink{classUnitTest_aae657d6d8bdc56cb2a9d4e4e9f5f8929}{Unit\+Test\+::fail()} permettent de valider les tests effectués. La première vérifie qu\textquotesingle{}un test booléen est vrai, la seconde arrète le test en cours et retourne une erreur.
+
+Les classes héritant de la classe {\ttfamily \hyperlink{classUnitTest}{Unit\+Test}} devrait respecter les points suivants \+:
+\begin{DoxyItemize}
+\item Le nom de la classe se compose du nom de la classe testée, suffixé par {\ttfamily Test}.
+\item Les méthodes de tests sont préfixées par {\ttfamily test}.
+\item Toutes les méthodes de tests sont appelées par la méthode {\ttfamily \hyperlink{classUnitTest_a15eae3e23414a5877c8652655dd88c3f}{suite()}}. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUnitTest_a94aab90579073ba6e2068bbc05c47c4a}\label{classUnitTest_a94aab90579073ba6e2068bbc05c47c4a}} 
+\index{Unit\+Test@{Unit\+Test}!assert@{assert}}
+\index{assert@{assert}!Unit\+Test@{Unit\+Test}}
+\subsubsection{\texorpdfstring{assert()}{assert()}}
+{\footnotesize\ttfamily void Unit\+Test\+::assert (\begin{DoxyParamCaption}\item[{bool}]{test,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Valide un test dans le cadre des tests unitaires. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test} & Test effectué, true si le test est correct. \\
+\hline
+{\em message} & Message d\textquotesingle{}erreur si le test échoue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUnitTest_a734b8df5cd0686245f9ce9ccbb73c5ee}\label{classUnitTest_a734b8df5cd0686245f9ce9ccbb73c5ee}} 
+\index{Unit\+Test@{Unit\+Test}!expected\+Error@{expected\+Error}}
+\index{expected\+Error@{expected\+Error}!Unit\+Test@{Unit\+Test}}
+\subsubsection{\texorpdfstring{expected\+Error()}{expectedError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Unit\+Test\+::expected\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un message d\textquotesingle{}erreur à bien été émis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Le message d\textquotesingle{}erreur attendu intégrant le logger et le level. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUnitTest_a00a74363b89994348f5025b42f7ea96f}\label{classUnitTest_a00a74363b89994348f5025b42f7ea96f}} 
+\index{Unit\+Test@{Unit\+Test}!expected\+Error@{expected\+Error}}
+\index{expected\+Error@{expected\+Error}!Unit\+Test@{Unit\+Test}}
+\subsubsection{\texorpdfstring{expected\+Error()}{expectedError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Unit\+Test\+::expected\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un message d\textquotesingle{}erreur à bien été émis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Le message d\textquotesingle{}erreur attendu intégrant le logger et le level. \\
+\hline
+{\em message} & Erreur associé si le message d\textquotesingle{}erreur n\textquotesingle{}a pas été émis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUnitTest_aae657d6d8bdc56cb2a9d4e4e9f5f8929}\label{classUnitTest_aae657d6d8bdc56cb2a9d4e4e9f5f8929}} 
+\index{Unit\+Test@{Unit\+Test}!fail@{fail}}
+\index{fail@{fail}!Unit\+Test@{Unit\+Test}}
+\subsubsection{\texorpdfstring{fail()}{fail()}}
+{\footnotesize\ttfamily void Unit\+Test\+::fail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Cette méthode fait échouer un test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message d\textquotesingle{}erreur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUnitTest_a6582f12faa929906359112ac916263ea}\label{classUnitTest_a6582f12faa929906359112ac916263ea}} 
+\index{Unit\+Test@{Unit\+Test}!name@{name}}
+\index{name@{name}!Unit\+Test@{Unit\+Test}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Unit\+Test\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le nom du test. 
+
+\begin{DoxyReturn}{Returns}
+Le nom du test. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/test/\+Suite/\hyperlink{UnitTest_8hpp}{Unit\+Test.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/test/\+Suite/\hyperlink{UnitTest_8cpp}{Unit\+Test.\+cpp}\end{DoxyCompactItemize}

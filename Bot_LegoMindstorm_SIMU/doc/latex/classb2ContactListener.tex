@@ -1,0 +1,67 @@
+\hypertarget{classb2ContactListener}{}\section{b2\+Contact\+Listener Class Reference}
+\label{classb2ContactListener}\index{b2\+Contact\+Listener@{b2\+Contact\+Listener}}
+
+
+{\ttfamily \#include $<$b2\+World\+Callbacks.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}\label{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}} 
+virtual void \hyperlink{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}{Begin\+Contact} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Called when two fixtures begin to touch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}\label{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}} 
+virtual void \hyperlink{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}{End\+Contact} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Called when two fixtures cease to touch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}{Pre\+Solve} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact, const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$old\+Manifold)
+\item 
+virtual void \hyperlink{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}{Post\+Solve} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact, const \hyperlink{structb2ContactImpulse}{b2\+Contact\+Impulse} $\ast$impulse)
+\item 
+\mbox{\Hypertarget{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}\label{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}} 
+virtual void \hyperlink{classb2ContactListener_a35148fc56fb9eac12077200fbd928f65}{Begin\+Contact} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Called when two fixtures begin to touch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}\label{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}} 
+virtual void \hyperlink{classb2ContactListener_afb3059058e5c47903a3947c2eef5826b}{End\+Contact} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact)
+\begin{DoxyCompactList}\small\item\em Called when two fixtures cease to touch. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}{Pre\+Solve} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact, const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$old\+Manifold)
+\item 
+virtual void \hyperlink{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}{Post\+Solve} (\hyperlink{classb2Contact}{b2\+Contact} $\ast$contact, const \hyperlink{structb2ContactImpulse}{b2\+Contact\+Impulse} $\ast$impulse)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implement this class to get contact information. You can use these results for things like sounds and game logic. You can also get contact results by traversing the contact lists after the time step. However, you might miss some contacts because continuous physics leads to sub-\/stepping. Additionally you may receive multiple callbacks for the same contact in a single time step. You should strive to make your callbacks efficient because there may be many callbacks per time step. \begin{DoxyWarning}{Warning}
+You cannot create/destroy Box2D entities inside these callbacks. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}\label{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}} 
+\index{b2\+Contact\+Listener@{b2\+Contact\+Listener}!Post\+Solve@{Post\+Solve}}
+\index{Post\+Solve@{Post\+Solve}!b2\+Contact\+Listener@{b2\+Contact\+Listener}}
+\subsubsection{\texorpdfstring{Post\+Solve()}{PostSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void b2\+Contact\+Listener\+::\+Post\+Solve (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Contact}{b2\+Contact} $\ast$}]{contact,  }\item[{const \hyperlink{structb2ContactImpulse}{b2\+Contact\+Impulse} $\ast$}]{impulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This lets you inspect a contact after the solver is finished. This is useful for inspecting impulses. Note\+: the contact manifold does not include time of impact impulses, which can be arbitrarily large if the sub-\/step is small. Hence the impulse is provided explicitly in a separate data structure. Note\+: this is only called for contacts that are touching, solid, and awake. \mbox{\Hypertarget{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}\label{classb2ContactListener_acd58ec96f7569b95eec65b8ca3f8013d}} 
+\index{b2\+Contact\+Listener@{b2\+Contact\+Listener}!Post\+Solve@{Post\+Solve}}
+\index{Post\+Solve@{Post\+Solve}!b2\+Contact\+Listener@{b2\+Contact\+Listener}}
+\subsubsection{\texorpdfstring{Post\+Solve()}{PostSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void b2\+Contact\+Listener\+::\+Post\+Solve (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Contact}{b2\+Contact} $\ast$}]{contact,  }\item[{const \hyperlink{structb2ContactImpulse}{b2\+Contact\+Impulse} $\ast$}]{impulse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This lets you inspect a contact after the solver is finished. This is useful for inspecting impulses. Note\+: the contact manifold does not include time of impact impulses, which can be arbitrarily large if the sub-\/step is small. Hence the impulse is provided explicitly in a separate data structure. Note\+: this is only called for contacts that are touching, solid, and awake. \mbox{\Hypertarget{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}\label{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}} 
+\index{b2\+Contact\+Listener@{b2\+Contact\+Listener}!Pre\+Solve@{Pre\+Solve}}
+\index{Pre\+Solve@{Pre\+Solve}!b2\+Contact\+Listener@{b2\+Contact\+Listener}}
+\subsubsection{\texorpdfstring{Pre\+Solve()}{PreSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void b2\+Contact\+Listener\+::\+Pre\+Solve (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Contact}{b2\+Contact} $\ast$}]{contact,  }\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{old\+Manifold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This is called after a contact is updated. This allows you to inspect a contact before it goes to the solver. If you are careful, you can modify the contact manifold (e.\+g. disable contact). A copy of the old manifold is provided so that you can detect changes. Note\+: this is called only for awake bodies. Note\+: this is called even when the number of contact points is zero. Note\+: this is not called for sensors. Note\+: if you set the number of contact points to zero, you will not get an End\+Contact callback. However, you may get a Begin\+Contact callback the next step. \mbox{\Hypertarget{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}\label{classb2ContactListener_a416f85eb45a1099053402b15a19a7de0}} 
+\index{b2\+Contact\+Listener@{b2\+Contact\+Listener}!Pre\+Solve@{Pre\+Solve}}
+\index{Pre\+Solve@{Pre\+Solve}!b2\+Contact\+Listener@{b2\+Contact\+Listener}}
+\subsubsection{\texorpdfstring{Pre\+Solve()}{PreSolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void b2\+Contact\+Listener\+::\+Pre\+Solve (\begin{DoxyParamCaption}\item[{\hyperlink{classb2Contact}{b2\+Contact} $\ast$}]{contact,  }\item[{const \hyperlink{structb2Manifold}{b2\+Manifold} $\ast$}]{old\+Manifold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This is called after a contact is updated. This allows you to inspect a contact before it goes to the solver. If you are careful, you can modify the contact manifold (e.\+g. disable contact). A copy of the old manifold is provided so that you can detect changes. Note\+: this is called only for awake bodies. Note\+: this is called even when the number of contact points is zero. Note\+: this is not called for sensors. Note\+: if you set the number of contact points to zero, you will not get an End\+Contact callback. However, you may get a Begin\+Contact callback the next step. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+World\+Callbacks.\+h\end{DoxyCompactItemize}

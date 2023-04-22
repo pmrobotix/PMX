@@ -1,0 +1,238 @@
+\hypertarget{classbtIDebugDraw}{}\section{bt\+I\+Debug\+Draw Class Reference}
+\label{classbtIDebugDraw}\index{bt\+I\+Debug\+Draw@{bt\+I\+Debug\+Draw}}
+
+
+{\ttfamily \#include $<$bt\+I\+Debug\+Draw.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ab4bb43fbfefb526c552c0943fac5832a}\label{classbtIDebugDraw_ab4bb43fbfefb526c552c0943fac5832a}} 
+enum {\bfseries Debug\+Draw\+Modes} \{ \newline
+{\bfseries D\+B\+G\+\_\+\+No\+Debug} =0, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Wireframe} = 1, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Aabb} =2, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Features\+Text} =4, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Contact\+Points} =8, 
+{\bfseries D\+B\+G\+\_\+\+No\+Deactivation} =16, 
+{\bfseries D\+B\+G\+\_\+\+No\+Help\+Text} = 32, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Text} =64, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Profile\+Timings} = 128, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+Sat\+Comparison} = 256, 
+{\bfseries D\+B\+G\+\_\+\+Disable\+Bullet\+L\+CP} = 512, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+C\+CD} = 1024, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraints} = (1 $<$$<$ 11), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraint\+Limits} = (1 $<$$<$ 12), 
+{\bfseries D\+B\+G\+\_\+\+Fast\+Wireframe} = (1$<$$<$13), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Normals} = (1$<$$<$14), 
+\newline
+{\bfseries D\+B\+G\+\_\+\+M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+M\+O\+DE}, 
+{\bfseries D\+B\+G\+\_\+\+No\+Debug} =0, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Wireframe} = 1, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Aabb} =2, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Features\+Text} =4, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Contact\+Points} =8, 
+{\bfseries D\+B\+G\+\_\+\+No\+Deactivation} =16, 
+{\bfseries D\+B\+G\+\_\+\+No\+Help\+Text} = 32, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Text} =64, 
+{\bfseries D\+B\+G\+\_\+\+Profile\+Timings} = 128, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+Sat\+Comparison} = 256, 
+{\bfseries D\+B\+G\+\_\+\+Disable\+Bullet\+L\+CP} = 512, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Enable\+C\+CD} = 1024, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraints} = (1 $<$$<$ 11), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraint\+Limits} = (1 $<$$<$ 12), 
+{\bfseries D\+B\+G\+\_\+\+Fast\+Wireframe} = (1$<$$<$13), 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Normals} = (1$<$$<$14), 
+{\bfseries D\+B\+G\+\_\+\+M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+M\+O\+DE}
+ \}
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ab4bb43fbfefb526c552c0943fac5832a}\label{classbtIDebugDraw_ab4bb43fbfefb526c552c0943fac5832a}} 
+enum {\bfseries Debug\+Draw\+Modes} \{ \newline
+{\bfseries D\+B\+G\+\_\+\+No\+Debug} =0, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Wireframe} = 1, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Aabb} =2, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Features\+Text} =4, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Contact\+Points} =8, 
+{\bfseries D\+B\+G\+\_\+\+No\+Deactivation} =16, 
+{\bfseries D\+B\+G\+\_\+\+No\+Help\+Text} = 32, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Text} =64, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Profile\+Timings} = 128, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+Sat\+Comparison} = 256, 
+{\bfseries D\+B\+G\+\_\+\+Disable\+Bullet\+L\+CP} = 512, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+C\+CD} = 1024, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraints} = (1 $<$$<$ 11), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraint\+Limits} = (1 $<$$<$ 12), 
+{\bfseries D\+B\+G\+\_\+\+Fast\+Wireframe} = (1$<$$<$13), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Normals} = (1$<$$<$14), 
+\newline
+{\bfseries D\+B\+G\+\_\+\+M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+M\+O\+DE}, 
+{\bfseries D\+B\+G\+\_\+\+No\+Debug} =0, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Wireframe} = 1, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Aabb} =2, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Features\+Text} =4, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Contact\+Points} =8, 
+{\bfseries D\+B\+G\+\_\+\+No\+Deactivation} =16, 
+{\bfseries D\+B\+G\+\_\+\+No\+Help\+Text} = 32, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Text} =64, 
+{\bfseries D\+B\+G\+\_\+\+Profile\+Timings} = 128, 
+{\bfseries D\+B\+G\+\_\+\+Enable\+Sat\+Comparison} = 256, 
+{\bfseries D\+B\+G\+\_\+\+Disable\+Bullet\+L\+CP} = 512, 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Enable\+C\+CD} = 1024, 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraints} = (1 $<$$<$ 11), 
+{\bfseries D\+B\+G\+\_\+\+Draw\+Constraint\+Limits} = (1 $<$$<$ 12), 
+{\bfseries D\+B\+G\+\_\+\+Fast\+Wireframe} = (1$<$$<$13), 
+\newline
+{\bfseries D\+B\+G\+\_\+\+Draw\+Normals} = (1$<$$<$14), 
+{\bfseries D\+B\+G\+\_\+\+M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+M\+O\+DE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a07b08e255ab4607ab5aeb24399332aff}\label{classbtIDebugDraw_a07b08e255ab4607ab5aeb24399332aff}} 
+virtual void {\bfseries draw\+Line} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&color)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a0e9e92ccb0b2eec9c2fc8792a286af9a}\label{classbtIDebugDraw_a0e9e92ccb0b2eec9c2fc8792a286af9a}} 
+virtual void {\bfseries draw\+Line} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&from\+Color, const bt\+Vector3 \&to\+Color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a29033d7c4f7d8c1745301bc4b5253f3b}\label{classbtIDebugDraw_a29033d7c4f7d8c1745301bc4b5253f3b}} 
+virtual void {\bfseries draw\+Sphere} (bt\+Scalar radius, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a49e2bf7b122f241b7b29913888d6825b}\label{classbtIDebugDraw_a49e2bf7b122f241b7b29913888d6825b}} 
+virtual void {\bfseries draw\+Sphere} (const bt\+Vector3 \&p, bt\+Scalar radius, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a3f0eec1b40109254182f0fe35f6308d0}\label{classbtIDebugDraw_a3f0eec1b40109254182f0fe35f6308d0}} 
+virtual void {\bfseries draw\+Triangle} (const bt\+Vector3 \&v0, const bt\+Vector3 \&v1, const bt\+Vector3 \&v2, const bt\+Vector3 \&, const bt\+Vector3 \&, const bt\+Vector3 \&, const bt\+Vector3 \&color, bt\+Scalar alpha)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ae537cc49a9061703ec1f1be33cf24ea3}\label{classbtIDebugDraw_ae537cc49a9061703ec1f1be33cf24ea3}} 
+virtual void {\bfseries draw\+Triangle} (const bt\+Vector3 \&v0, const bt\+Vector3 \&v1, const bt\+Vector3 \&v2, const bt\+Vector3 \&color, bt\+Scalar)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a791eba72577f83519499bd646bb4a3f1}\label{classbtIDebugDraw_a791eba72577f83519499bd646bb4a3f1}} 
+virtual void {\bfseries draw\+Contact\+Point} (const bt\+Vector3 \&Point\+OnB, const bt\+Vector3 \&normal\+OnB, bt\+Scalar distance, int life\+Time, const bt\+Vector3 \&color)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a4114a426d9d922d7b834673bb4044757}\label{classbtIDebugDraw_a4114a426d9d922d7b834673bb4044757}} 
+virtual void {\bfseries report\+Error\+Warning} (const char $\ast$warning\+String)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a287102dad359ae7c0685ec527c54ea48}\label{classbtIDebugDraw_a287102dad359ae7c0685ec527c54ea48}} 
+virtual void {\bfseries draw3d\+Text} (const bt\+Vector3 \&location, const char $\ast$text\+String)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a682fb01e96403d1da04207b7a9b46639}\label{classbtIDebugDraw_a682fb01e96403d1da04207b7a9b46639}} 
+virtual void {\bfseries set\+Debug\+Mode} (int debug\+Mode)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a8b0e36c47552ec81ea61a16f6239f92d}\label{classbtIDebugDraw_a8b0e36c47552ec81ea61a16f6239f92d}} 
+virtual int {\bfseries get\+Debug\+Mode} () const =0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ae60d3fc7f75c75712261d970dbd87fb9}\label{classbtIDebugDraw_ae60d3fc7f75c75712261d970dbd87fb9}} 
+virtual void {\bfseries draw\+Aabb} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a6faa8214eebc450104325b6833448b1e}\label{classbtIDebugDraw_a6faa8214eebc450104325b6833448b1e}} 
+virtual void {\bfseries draw\+Transform} (const bt\+Transform \&transform, bt\+Scalar ortho\+Len)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a19cd036ce23c673c4ac13cc3f2a5ac33}\label{classbtIDebugDraw_a19cd036ce23c673c4ac13cc3f2a5ac33}} 
+virtual void {\bfseries draw\+Arc} (const bt\+Vector3 \&center, const bt\+Vector3 \&normal, const bt\+Vector3 \&axis, bt\+Scalar radiusA, bt\+Scalar radiusB, bt\+Scalar min\+Angle, bt\+Scalar max\+Angle, const bt\+Vector3 \&color, bool draw\+Sect, bt\+Scalar step\+Degrees=bt\+Scalar(10.f))
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aaa3510d1efce41e4a98915ef542c4288}\label{classbtIDebugDraw_aaa3510d1efce41e4a98915ef542c4288}} 
+virtual void {\bfseries draw\+Sphere\+Patch} (const bt\+Vector3 \&center, const bt\+Vector3 \&up, const bt\+Vector3 \&axis, bt\+Scalar radius, bt\+Scalar min\+Th, bt\+Scalar max\+Th, bt\+Scalar min\+Ps, bt\+Scalar max\+Ps, const bt\+Vector3 \&color, bt\+Scalar step\+Degrees=bt\+Scalar(10.f), bool draw\+Center=true)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a9c9e46fa03d6296f8b3f57538db6be7f}\label{classbtIDebugDraw_a9c9e46fa03d6296f8b3f57538db6be7f}} 
+virtual void {\bfseries draw\+Box} (const bt\+Vector3 \&bb\+Min, const bt\+Vector3 \&bb\+Max, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a1895c36d90017439329ad2b375c92285}\label{classbtIDebugDraw_a1895c36d90017439329ad2b375c92285}} 
+virtual void {\bfseries draw\+Box} (const bt\+Vector3 \&bb\+Min, const bt\+Vector3 \&bb\+Max, const bt\+Transform \&trans, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aec2ac4fe5ee1073a2eeb7f459a22dd87}\label{classbtIDebugDraw_aec2ac4fe5ee1073a2eeb7f459a22dd87}} 
+virtual void {\bfseries draw\+Capsule} (bt\+Scalar radius, bt\+Scalar half\+Height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aa0f2076c26f158ba5579a07a931fabd6}\label{classbtIDebugDraw_aa0f2076c26f158ba5579a07a931fabd6}} 
+virtual void {\bfseries draw\+Cylinder} (bt\+Scalar radius, bt\+Scalar half\+Height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a0059af5b0a43dd6b2d464f94938d4d14}\label{classbtIDebugDraw_a0059af5b0a43dd6b2d464f94938d4d14}} 
+virtual void {\bfseries draw\+Cone} (bt\+Scalar radius, bt\+Scalar height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a012926f8d101863d8d9d1af6f2fca0a0}\label{classbtIDebugDraw_a012926f8d101863d8d9d1af6f2fca0a0}} 
+virtual void {\bfseries draw\+Plane} (const bt\+Vector3 \&plane\+Normal, bt\+Scalar plane\+Const, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a07b08e255ab4607ab5aeb24399332aff}\label{classbtIDebugDraw_a07b08e255ab4607ab5aeb24399332aff}} 
+virtual void {\bfseries draw\+Line} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&color)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a0e9e92ccb0b2eec9c2fc8792a286af9a}\label{classbtIDebugDraw_a0e9e92ccb0b2eec9c2fc8792a286af9a}} 
+virtual void {\bfseries draw\+Line} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&from\+Color, const bt\+Vector3 \&to\+Color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a29033d7c4f7d8c1745301bc4b5253f3b}\label{classbtIDebugDraw_a29033d7c4f7d8c1745301bc4b5253f3b}} 
+virtual void {\bfseries draw\+Sphere} (bt\+Scalar radius, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a49e2bf7b122f241b7b29913888d6825b}\label{classbtIDebugDraw_a49e2bf7b122f241b7b29913888d6825b}} 
+virtual void {\bfseries draw\+Sphere} (const bt\+Vector3 \&p, bt\+Scalar radius, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a3f0eec1b40109254182f0fe35f6308d0}\label{classbtIDebugDraw_a3f0eec1b40109254182f0fe35f6308d0}} 
+virtual void {\bfseries draw\+Triangle} (const bt\+Vector3 \&v0, const bt\+Vector3 \&v1, const bt\+Vector3 \&v2, const bt\+Vector3 \&, const bt\+Vector3 \&, const bt\+Vector3 \&, const bt\+Vector3 \&color, bt\+Scalar alpha)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ae537cc49a9061703ec1f1be33cf24ea3}\label{classbtIDebugDraw_ae537cc49a9061703ec1f1be33cf24ea3}} 
+virtual void {\bfseries draw\+Triangle} (const bt\+Vector3 \&v0, const bt\+Vector3 \&v1, const bt\+Vector3 \&v2, const bt\+Vector3 \&color, bt\+Scalar)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a791eba72577f83519499bd646bb4a3f1}\label{classbtIDebugDraw_a791eba72577f83519499bd646bb4a3f1}} 
+virtual void {\bfseries draw\+Contact\+Point} (const bt\+Vector3 \&Point\+OnB, const bt\+Vector3 \&normal\+OnB, bt\+Scalar distance, int life\+Time, const bt\+Vector3 \&color)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a4114a426d9d922d7b834673bb4044757}\label{classbtIDebugDraw_a4114a426d9d922d7b834673bb4044757}} 
+virtual void {\bfseries report\+Error\+Warning} (const char $\ast$warning\+String)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a287102dad359ae7c0685ec527c54ea48}\label{classbtIDebugDraw_a287102dad359ae7c0685ec527c54ea48}} 
+virtual void {\bfseries draw3d\+Text} (const bt\+Vector3 \&location, const char $\ast$text\+String)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a682fb01e96403d1da04207b7a9b46639}\label{classbtIDebugDraw_a682fb01e96403d1da04207b7a9b46639}} 
+virtual void {\bfseries set\+Debug\+Mode} (int debug\+Mode)=0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a8b0e36c47552ec81ea61a16f6239f92d}\label{classbtIDebugDraw_a8b0e36c47552ec81ea61a16f6239f92d}} 
+virtual int {\bfseries get\+Debug\+Mode} () const =0
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_ae60d3fc7f75c75712261d970dbd87fb9}\label{classbtIDebugDraw_ae60d3fc7f75c75712261d970dbd87fb9}} 
+virtual void {\bfseries draw\+Aabb} (const bt\+Vector3 \&from, const bt\+Vector3 \&to, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a6faa8214eebc450104325b6833448b1e}\label{classbtIDebugDraw_a6faa8214eebc450104325b6833448b1e}} 
+virtual void {\bfseries draw\+Transform} (const bt\+Transform \&transform, bt\+Scalar ortho\+Len)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a19cd036ce23c673c4ac13cc3f2a5ac33}\label{classbtIDebugDraw_a19cd036ce23c673c4ac13cc3f2a5ac33}} 
+virtual void {\bfseries draw\+Arc} (const bt\+Vector3 \&center, const bt\+Vector3 \&normal, const bt\+Vector3 \&axis, bt\+Scalar radiusA, bt\+Scalar radiusB, bt\+Scalar min\+Angle, bt\+Scalar max\+Angle, const bt\+Vector3 \&color, bool draw\+Sect, bt\+Scalar step\+Degrees=bt\+Scalar(10.f))
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aaa3510d1efce41e4a98915ef542c4288}\label{classbtIDebugDraw_aaa3510d1efce41e4a98915ef542c4288}} 
+virtual void {\bfseries draw\+Sphere\+Patch} (const bt\+Vector3 \&center, const bt\+Vector3 \&up, const bt\+Vector3 \&axis, bt\+Scalar radius, bt\+Scalar min\+Th, bt\+Scalar max\+Th, bt\+Scalar min\+Ps, bt\+Scalar max\+Ps, const bt\+Vector3 \&color, bt\+Scalar step\+Degrees=bt\+Scalar(10.f), bool draw\+Center=true)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a9c9e46fa03d6296f8b3f57538db6be7f}\label{classbtIDebugDraw_a9c9e46fa03d6296f8b3f57538db6be7f}} 
+virtual void {\bfseries draw\+Box} (const bt\+Vector3 \&bb\+Min, const bt\+Vector3 \&bb\+Max, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a1895c36d90017439329ad2b375c92285}\label{classbtIDebugDraw_a1895c36d90017439329ad2b375c92285}} 
+virtual void {\bfseries draw\+Box} (const bt\+Vector3 \&bb\+Min, const bt\+Vector3 \&bb\+Max, const bt\+Transform \&trans, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aec2ac4fe5ee1073a2eeb7f459a22dd87}\label{classbtIDebugDraw_aec2ac4fe5ee1073a2eeb7f459a22dd87}} 
+virtual void {\bfseries draw\+Capsule} (bt\+Scalar radius, bt\+Scalar half\+Height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_aa0f2076c26f158ba5579a07a931fabd6}\label{classbtIDebugDraw_aa0f2076c26f158ba5579a07a931fabd6}} 
+virtual void {\bfseries draw\+Cylinder} (bt\+Scalar radius, bt\+Scalar half\+Height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a0059af5b0a43dd6b2d464f94938d4d14}\label{classbtIDebugDraw_a0059af5b0a43dd6b2d464f94938d4d14}} 
+virtual void {\bfseries draw\+Cone} (bt\+Scalar radius, bt\+Scalar height, int up\+Axis, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtIDebugDraw_a012926f8d101863d8d9d1af6f2fca0a0}\label{classbtIDebugDraw_a012926f8d101863d8d9d1af6f2fca0a0}} 
+virtual void {\bfseries draw\+Plane} (const bt\+Vector3 \&plane\+Normal, bt\+Scalar plane\+Const, const bt\+Transform \&transform, const bt\+Vector3 \&color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} interface class allows hooking up a debug renderer to visually debug simulations. Typical use case\+: create a debug drawer object, and assign it to a \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} or \hyperlink{classbtDynamicsWorld}{bt\+Dynamics\+World} using set\+Debug\+Drawer and call debug\+Draw\+World. A class that implements the \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} interface has to implement the draw\+Line method at a minimum. For color arguments the X,Y,Z components refer to Red, Green and Blue each in the range \mbox{[}0..1\mbox{]} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+I\+Debug\+Draw.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,1488 @@
+\hypertarget{classdtNavMeshQuery}{}\section{dt\+Nav\+Mesh\+Query Class Reference}
+\label{classdtNavMeshQuery}\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh\+Query.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}{init} (const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$nav, const int max\+Nodes)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}{init} (const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$nav, const int max\+Nodes)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Standard Pathfinding Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}{find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} end\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}{find\+Straight\+Path} (const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, const int path\+Size, float $\ast$straight\+Path, unsigned char $\ast$straight\+Path\+Flags, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$straight\+Path\+Refs, int $\ast$straight\+Path\+Count, const int max\+Straight\+Path, const int options=0) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}{find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} end\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}{find\+Straight\+Path} (const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, const int path\+Size, float $\ast$straight\+Path, unsigned char $\ast$straight\+Path\+Flags, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$straight\+Path\+Refs, int $\ast$straight\+Path\+Count, const int max\+Straight\+Path, const int options=0) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Sliced Pathfinding Functions}\par
+{\em Common use case\+:
+\begin{DoxyEnumerate}
+\item Call \hyperlink{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}{init\+Sliced\+Find\+Path()} to initialize the sliced path query.
+\item Call \hyperlink{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}{update\+Sliced\+Find\+Path()} until it returns complete.
+\item Call \hyperlink{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}{finalize\+Sliced\+Find\+Path()} to get the path. 
+\end{DoxyEnumerate}}\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}{init\+Sliced\+Find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} end\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, const unsigned int options=0)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}{update\+Sliced\+Find\+Path} (const int max\+Iter, int $\ast$done\+Iters)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}{finalize\+Sliced\+Find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}{finalize\+Sliced\+Find\+Path\+Partial} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$existing, const int existing\+Size, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}{init\+Sliced\+Find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} end\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, const unsigned int options=0)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}{update\+Sliced\+Find\+Path} (const int max\+Iter, int $\ast$done\+Iters)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}{finalize\+Sliced\+Find\+Path} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path)
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}{finalize\+Sliced\+Find\+Path\+Partial} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$existing, const int existing\+Size, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Dijkstra Search Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}{find\+Polys\+Around\+Circle} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, float $\ast$result\+Cost, int $\ast$result\+Count, const int max\+Result) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}{find\+Polys\+Around\+Shape} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$verts, const int nverts, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, float $\ast$result\+Cost, int $\ast$result\+Count, const int max\+Result) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}{find\+Polys\+Around\+Circle} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, float $\ast$result\+Cost, int $\ast$result\+Count, const int max\+Result) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}{find\+Polys\+Around\+Shape} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$verts, const int nverts, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, float $\ast$result\+Cost, int $\ast$result\+Count, const int max\+Result) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Local Query Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}{find\+Nearest\+Poly} (const float $\ast$center, const float $\ast$extents, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$nearest\+Ref, float $\ast$nearest\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}{query\+Polygons} (const float $\ast$center, const float $\ast$extents, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$polys, int $\ast$poly\+Count, const int max\+Polys) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}{find\+Local\+Neighbourhood} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, int $\ast$result\+Count, const int max\+Result) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}{move\+Along\+Surface} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$result\+Pos, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$visited, int $\ast$visited\+Count, const int max\+Visited\+Size) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}{raycast} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$t, float $\ast$hit\+Normal, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}{raycast} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, const unsigned int options, \hyperlink{structdtRaycastHit}{dt\+Raycast\+Hit} $\ast$hit, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref=0) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}{find\+Distance\+To\+Wall} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float max\+Radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$hit\+Dist, float $\ast$hit\+Pos, float $\ast$hit\+Normal) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}{get\+Poly\+Wall\+Segments} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$segment\+Verts, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$segment\+Refs, int $\ast$segment\+Count, const int max\+Segments) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}{find\+Random\+Point} (const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float($\ast$frand)(), \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$random\+Ref, float $\ast$random\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}{find\+Random\+Point\+Around\+Circle} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float max\+Radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float($\ast$frand)(), \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$random\+Ref, float $\ast$random\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}{closest\+Point\+On\+Poly} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$closest, bool $\ast$pos\+Over\+Poly) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}{closest\+Point\+On\+Poly\+Boundary} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$closest) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}{get\+Poly\+Height} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$height) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}{find\+Nearest\+Poly} (const float $\ast$center, const float $\ast$extents, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$nearest\+Ref, float $\ast$nearest\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}{query\+Polygons} (const float $\ast$center, const float $\ast$extents, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$polys, int $\ast$poly\+Count, const int max\+Polys) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}{find\+Local\+Neighbourhood} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Ref, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$result\+Parent, int $\ast$result\+Count, const int max\+Result) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}{move\+Along\+Surface} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$result\+Pos, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$visited, int $\ast$visited\+Count, const int max\+Visited\+Size) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}{raycast} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$t, float $\ast$hit\+Normal, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$path, int $\ast$path\+Count, const int max\+Path) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}{raycast} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$start\+Pos, const float $\ast$end\+Pos, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, const unsigned int options, \hyperlink{structdtRaycastHit}{dt\+Raycast\+Hit} $\ast$hit, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref=0) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}{find\+Distance\+To\+Wall} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float max\+Radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$hit\+Dist, float $\ast$hit\+Pos, float $\ast$hit\+Normal) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}{get\+Poly\+Wall\+Segments} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float $\ast$segment\+Verts, \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$segment\+Refs, int $\ast$segment\+Count, const int max\+Segments) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}{find\+Random\+Point} (const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float($\ast$frand)(), \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$random\+Ref, float $\ast$random\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}{find\+Random\+Point\+Around\+Circle} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} start\+Ref, const float $\ast$center\+Pos, const float max\+Radius, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter, float($\ast$frand)(), \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$random\+Ref, float $\ast$random\+Pt) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}{closest\+Point\+On\+Poly} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$closest, bool $\ast$pos\+Over\+Poly) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}{closest\+Point\+On\+Poly\+Boundary} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$closest) const
+\item 
+dt\+Status \hyperlink{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}{get\+Poly\+Height} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const float $\ast$pos, float $\ast$height) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Miscellaneous Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}{is\+Valid\+Poly\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter) const
+\item 
+bool \hyperlink{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}{is\+In\+Closed\+List} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+class \hyperlink{classdtNodePool}{dt\+Node\+Pool} $\ast$ \hyperlink{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}{get\+Node\+Pool} () const
+\item 
+const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$ \hyperlink{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}{get\+Attached\+Nav\+Mesh} () const
+\item 
+bool \hyperlink{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}{is\+Valid\+Poly\+Ref} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$filter) const
+\item 
+bool \hyperlink{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}{is\+In\+Closed\+List} (\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref) const
+\item 
+class \hyperlink{classdtNodePool}{dt\+Node\+Pool} $\ast$ \hyperlink{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}{get\+Node\+Pool} () const
+\item 
+const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$ \hyperlink{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}{get\+Attached\+Nav\+Mesh} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Provides the ability to perform pathfinding related queries against a navigation mesh.
+
+For methods that support undersized buffers, if the buffer is too small to hold the entire result set the return status of the method will include the \#\+D\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+O\+O\+\_\+\+S\+M\+A\+LL flag.
+
+Constant member functions can be used by multiple clients without side effects. (E.\+g. No change to the closed \hyperlink{protocollist-p}{list}. No impact on an in-\/progress sliced path query. Etc.)
+
+Walls and portals\+: A {\itshape wall} is a polygon segment that is considered impassable. A {\itshape portal} is a passable segment between polygons. A portal may be treated as a wall based on the \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} used for a query.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}, \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}, \hyperlink{group__detour_gae547f165feefc955136130c8e22f207a}{dt\+Alloc\+Nav\+Mesh\+Query()}, \hyperlink{group__detour_gae547f165feefc955136130c8e22f207a}{dt\+Alloc\+Nav\+Mesh\+Query()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}\label{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!closest\+Point\+On\+Poly@{closest\+Point\+On\+Poly}}
+\index{closest\+Point\+On\+Poly@{closest\+Point\+On\+Poly}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{closest\+Point\+On\+Poly()}{closestPointOnPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::closest\+Point\+On\+Poly (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{closest,  }\item[{bool $\ast$}]{pos\+Over\+Poly }\end{DoxyParamCaption}) const}
+
+Finds the closest point on the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position to check. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em closest} & The closest point on the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em pos\+Over\+Poly} & True of the position is over the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Uses the detail polygons to find the surface height. (Most accurate.)
+
+{\ttfamily pos} does not have to be within the bounds of the polygon or navigation mesh.
+
+See \hyperlink{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}{closest\+Point\+On\+Poly\+Boundary()} for a limited but faster option. \mbox{\Hypertarget{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}\label{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!closest\+Point\+On\+Poly@{closest\+Point\+On\+Poly}}
+\index{closest\+Point\+On\+Poly@{closest\+Point\+On\+Poly}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{closest\+Point\+On\+Poly()}{closestPointOnPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::closest\+Point\+On\+Poly (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{closest,  }\item[{bool $\ast$}]{pos\+Over\+Poly }\end{DoxyParamCaption}) const}
+
+Finds the closest point on the specified polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position to check. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em closest} & The closest point on the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em pos\+Over\+Poly} & True of the position is over the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}\label{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!closest\+Point\+On\+Poly\+Boundary@{closest\+Point\+On\+Poly\+Boundary}}
+\index{closest\+Point\+On\+Poly\+Boundary@{closest\+Point\+On\+Poly\+Boundary}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{closest\+Point\+On\+Poly\+Boundary()}{closestPointOnPolyBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::closest\+Point\+On\+Poly\+Boundary (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{closest }\end{DoxyParamCaption}) const}
+
+Returns a point on the boundary closest to the source point if the source point is outside the polygon\textquotesingle{}s xz-\/bounds. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id to the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position to check. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em closest} & The closest point. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Much faster than \hyperlink{classdtNavMeshQuery_a07a90efe5d1a2b4b530aa236370574d9}{closest\+Point\+On\+Poly()}.
+
+If the provided position lies within the polygon\textquotesingle{}s xz-\/bounds (above or below), then {\ttfamily pos} and {\ttfamily closest} will be equal.
+
+The height of {\ttfamily closest} will be the polygon boundary. The height detail is not used.
+
+{\ttfamily pos} does not have to be within the bounds of the polybon or the navigation mesh. \mbox{\Hypertarget{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}\label{classdtNavMeshQuery_aa53b9573e61eda951213ea9e4354e744}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!closest\+Point\+On\+Poly\+Boundary@{closest\+Point\+On\+Poly\+Boundary}}
+\index{closest\+Point\+On\+Poly\+Boundary@{closest\+Point\+On\+Poly\+Boundary}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{closest\+Point\+On\+Poly\+Boundary()}{closestPointOnPolyBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::closest\+Point\+On\+Poly\+Boundary (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{closest }\end{DoxyParamCaption}) const}
+
+Returns a point on the boundary closest to the source point if the source point is outside the polygon\textquotesingle{}s xz-\/bounds. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id to the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position to check. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em closest} & The closest point. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}\label{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!finalize\+Sliced\+Find\+Path@{finalize\+Sliced\+Find\+Path}}
+\index{finalize\+Sliced\+Find\+Path@{finalize\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{finalize\+Sliced\+Find\+Path()}{finalizeSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::finalize\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption})}
+
+Finalizes and returns the results of a sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The max number of polygons the path array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}\label{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!finalize\+Sliced\+Find\+Path@{finalize\+Sliced\+Find\+Path}}
+\index{finalize\+Sliced\+Find\+Path@{finalize\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{finalize\+Sliced\+Find\+Path()}{finalizeSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::finalize\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption})}
+
+Finalizes and returns the results of a sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The max number of polygons the path array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}\label{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!finalize\+Sliced\+Find\+Path\+Partial@{finalize\+Sliced\+Find\+Path\+Partial}}
+\index{finalize\+Sliced\+Find\+Path\+Partial@{finalize\+Sliced\+Find\+Path\+Partial}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{finalize\+Sliced\+Find\+Path\+Partial()}{finalizeSlicedFindPathPartial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::finalize\+Sliced\+Find\+Path\+Partial (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{existing,  }\item[{const int}]{existing\+Size,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption})}
+
+Finalizes and returns the results of an incomplete sliced path query, returning the path to the furthest polygon on the existing path that was visited during the search. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em existing} & An array of polygon references for the existing path. \\
+\hline
+\mbox{\tt in}  & {\em existing\+Size} & The number of polygon in the {\ttfamily existing} array. \\
+\hline
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The max number of polygons the {\ttfamily path} array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}\label{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!finalize\+Sliced\+Find\+Path\+Partial@{finalize\+Sliced\+Find\+Path\+Partial}}
+\index{finalize\+Sliced\+Find\+Path\+Partial@{finalize\+Sliced\+Find\+Path\+Partial}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{finalize\+Sliced\+Find\+Path\+Partial()}{finalizeSlicedFindPathPartial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::finalize\+Sliced\+Find\+Path\+Partial (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{existing,  }\item[{const int}]{existing\+Size,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption})}
+
+Finalizes and returns the results of an incomplete sliced path query, returning the path to the furthest polygon on the existing path that was visited during the search. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em existing} & An array of polygon references for the existing path. \\
+\hline
+\mbox{\tt in}  & {\em existing\+Size} & The number of polygon in the {\ttfamily existing} array. \\
+\hline
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The max number of polygons the {\ttfamily path} array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}\label{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Distance\+To\+Wall@{find\+Distance\+To\+Wall}}
+\index{find\+Distance\+To\+Wall@{find\+Distance\+To\+Wall}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Distance\+To\+Wall()}{findDistanceToWall()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Distance\+To\+Wall (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{max\+Radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{hit\+Dist,  }\item[{float $\ast$}]{hit\+Pos,  }\item[{float $\ast$}]{hit\+Normal }\end{DoxyParamCaption}) const}
+
+Finds the distance from the specified position to the nearest polygon wall. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon containing {\ttfamily center\+Pos}. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Radius} & The radius of the search circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em hit\+Dist} & The distance to the nearest wall from {\ttfamily center\+Pos}. \\
+\hline
+\mbox{\tt out}  & {\em hit\+Pos} & The nearest position on the wall that was hit. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em hit\+Normal} & The normalized ray formed from the wall point to the source point. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+{\ttfamily hit\+Pos} is not adjusted using the height detail data.
+
+{\ttfamily hit\+Dist} will equal the search radius if there is no wall within the radius. In this case the values of {\ttfamily hit\+Pos} and {\ttfamily hit\+Normal} are undefined.
+
+The normal will become unpredicable if {\ttfamily hit\+Dist} is a very small number. \mbox{\Hypertarget{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}\label{classdtNavMeshQuery_a1576a980ae29e44ad4809a25974fbd40}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Distance\+To\+Wall@{find\+Distance\+To\+Wall}}
+\index{find\+Distance\+To\+Wall@{find\+Distance\+To\+Wall}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Distance\+To\+Wall()}{findDistanceToWall()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Distance\+To\+Wall (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{max\+Radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{hit\+Dist,  }\item[{float $\ast$}]{hit\+Pos,  }\item[{float $\ast$}]{hit\+Normal }\end{DoxyParamCaption}) const}
+
+Finds the distance from the specified position to the nearest polygon wall. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon containing {\ttfamily center\+Pos}. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Radius} & The radius of the search circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em hit\+Dist} & The distance to the nearest wall from {\ttfamily center\+Pos}. \\
+\hline
+\mbox{\tt out}  & {\em hit\+Pos} & The nearest position on the wall that was hit. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em hit\+Normal} & The normalized ray formed from the wall point to the source point. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}\label{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Local\+Neighbourhood@{find\+Local\+Neighbourhood}}
+\index{find\+Local\+Neighbourhood@{find\+Local\+Neighbourhood}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Local\+Neighbourhood()}{findLocalNeighbourhood()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Local\+Neighbourhood (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the non-\/overlapping navigation polygons in the local neighbourhood around the center position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the query circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em radius} & The radius of the query circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the circle. \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}\label{classdtNavMeshQuery_a9864032da48ba6f1055deab90633ffd6}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Local\+Neighbourhood@{find\+Local\+Neighbourhood}}
+\index{find\+Local\+Neighbourhood@{find\+Local\+Neighbourhood}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Local\+Neighbourhood()}{findLocalNeighbourhood()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Local\+Neighbourhood (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the non-\/overlapping navigation polygons in the local neighbourhood around the center position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the query circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em radius} & The radius of the query circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the circle. \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method is optimized for a small search radius and small number of result polygons.
+
+Candidate polygons are found by searching the navigation graph beginning at the start polygon.
+
+The same intersection test restrictions that apply to the find\+Polys\+Around\+Circle mehtod applies to this method.
+
+The value of the center point is used as the start point for cost calculations. It is not projected onto the surface of the mesh, so its y-\/value will effect the costs.
+
+Intersection tests occur in 2D. All polygons and the search circle are projected onto the xz-\/plane. So the y-\/value of the center point does not effect intersection tests.
+
+If the result arrays are is too small to hold the entire result set, they will be filled to capacity. \mbox{\Hypertarget{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}\label{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Nearest\+Poly@{find\+Nearest\+Poly}}
+\index{find\+Nearest\+Poly@{find\+Nearest\+Poly}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Nearest\+Poly()}{findNearestPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Nearest\+Poly (\begin{DoxyParamCaption}\item[{const float $\ast$}]{center,  }\item[{const float $\ast$}]{extents,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{nearest\+Ref,  }\item[{float $\ast$}]{nearest\+Pt }\end{DoxyParamCaption}) const}
+
+Finds the polygon nearest to the specified center point. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em center} & The center of the search box. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em extents} & The search distance along each axis. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em nearest\+Ref} & The reference id of the nearest polygon. \\
+\hline
+\mbox{\tt out}  & {\em nearest\+Pt} & The nearest point on the polygon. \mbox{[}opt\mbox{]} \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+If the search box does not intersect any polygons the search will return \#\+D\+T\+\_\+\+S\+U\+C\+C\+E\+SS, but {\ttfamily nearest\+Ref} will be zero. So if in doubt, check {\ttfamily nearest\+Ref} before using {\ttfamily nearest\+Pt}.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This function is not suitable for large area searches. If the search extents overlaps more than M\+A\+X\+\_\+\+S\+E\+A\+R\+CH (128) polygons it may return an invalid result. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}\label{classdtNavMeshQuery_aed1dfebde233657db668416ceaee8537}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Nearest\+Poly@{find\+Nearest\+Poly}}
+\index{find\+Nearest\+Poly@{find\+Nearest\+Poly}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Nearest\+Poly()}{findNearestPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Nearest\+Poly (\begin{DoxyParamCaption}\item[{const float $\ast$}]{center,  }\item[{const float $\ast$}]{extents,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{nearest\+Ref,  }\item[{float $\ast$}]{nearest\+Pt }\end{DoxyParamCaption}) const}
+
+Finds the polygon nearest to the specified center point. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em center} & The center of the search box. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em extents} & The search distance along each axis. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em nearest\+Ref} & The reference id of the nearest polygon. \\
+\hline
+\mbox{\tt out}  & {\em nearest\+Pt} & The nearest point on the polygon. \mbox{[}opt\mbox{]} \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}\label{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Path@{find\+Path}}
+\index{find\+Path@{find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Path()}{findPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{end\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption}) const}
+
+Finds a path from the start polygon to the end polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The refrence id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em end\+Ref} & The reference id of the end polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & A position within the end polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The maximum number of polygons the {\ttfamily path} array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+If the end polygon cannot be reached through the navigation graph, the last polygon in the path will be the nearest the end polygon.
+
+If the path array is to small to hold the full result, it will be filled as far as possible from the start polygon toward the end polygon.
+
+The start and end positions are used to calculate traversal costs. (The y-\/values impact the result.) \mbox{\Hypertarget{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}\label{classdtNavMeshQuery_a9d86502949fcd4f96ffd350d4ef69e3c}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Path@{find\+Path}}
+\index{find\+Path@{find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Path()}{findPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{end\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption}) const}
+
+Finds a path from the start polygon to the end polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The refrence id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em end\+Ref} & The reference id of the end polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & A position within the end polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em path} & An ordered \hyperlink{protocollist-p}{list} of polygon references representing the path. (Start to end.) \mbox{[}(poly\+Ref) $\ast$ {\ttfamily path\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of polygons returned in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The maximum number of polygons the {\ttfamily path} array can hold. \mbox{[}Limit\+: $>$= 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}\label{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Polys\+Around\+Circle@{find\+Polys\+Around\+Circle}}
+\index{find\+Polys\+Around\+Circle@{find\+Polys\+Around\+Circle}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Polys\+Around\+Circle()}{findPolysAroundCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Polys\+Around\+Circle (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{float $\ast$}]{result\+Cost,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the polygons along the navigation graph that touch the specified circle. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em radius} & The radius of the search circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the circle. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Cost} & The search cost from {\ttfamily center\+Pos} to the polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}\label{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Polys\+Around\+Circle@{find\+Polys\+Around\+Circle}}
+\index{find\+Polys\+Around\+Circle@{find\+Polys\+Around\+Circle}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Polys\+Around\+Circle()}{findPolysAroundCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Polys\+Around\+Circle (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{float $\ast$}]{result\+Cost,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the polygons along the navigation graph that touch the specified circle. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em radius} & The radius of the search circle. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the circle. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Cost} & The search cost from {\ttfamily center\+Pos} to the polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+At least one result array must be provided.
+
+The order of the result set is from least to highest cost to reach the polygon.
+
+A common use case for this method is to perform Dijkstra searches. Candidate polygons are found by searching the graph beginning at the start polygon.
+
+If a polygon is not found via the graph search, even if it intersects the search circle, it will not be included in the result set. For example\+:
+
+polyA is the start polygon. polyB shares an edge with polyA. (Is adjacent.) polyC shares an edge with polyB, but not with polyA Even if the search circle overlaps polyC, it will not be included in the result set unless polyB is also in the set.
+
+The value of the center point is used as the start position for cost calculations. It is not projected onto the surface of the mesh, so its y-\/value will effect the costs.
+
+Intersection tests occur in 2D. All polygons and the search circle are projected onto the xz-\/plane. So the y-\/value of the center point does not effect intersection tests.
+
+If the result arrays are to small to hold the entire result set, they will be filled to capacity. \mbox{\Hypertarget{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}\label{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Polys\+Around\+Shape@{find\+Polys\+Around\+Shape}}
+\index{find\+Polys\+Around\+Shape@{find\+Polys\+Around\+Shape}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Polys\+Around\+Shape()}{findPolysAroundShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Polys\+Around\+Shape (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{verts,  }\item[{const int}]{nverts,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{float $\ast$}]{result\+Cost,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the polygons along the naviation graph that touch the specified convex polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em verts} & The vertices describing the convex polygon. (C\+CW) \mbox{[}(x, y, z) $\ast$ {\ttfamily nverts}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em nverts} & The number of vertices in the polygon. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the search polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Cost} & The search cost from the centroid point to the polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The order of the result set is from least to highest cost.
+
+At least one result array must be provided.
+
+A common use case for this method is to perform Dijkstra searches. Candidate polygons are found by searching the graph beginning at the start polygon.
+
+The same intersection test restrictions that apply to \hyperlink{classdtNavMeshQuery_a1131b39f205440349e7efe7f2d9b0ef9}{find\+Polys\+Around\+Circle()} method apply to this method.
+
+The 3D centroid of the search polygon is used as the start position for cost calculations.
+
+Intersection tests occur in 2D. All polygons are projected onto the xz-\/plane. So the y-\/values of the vertices do not effect intersection tests.
+
+If the result arrays are is too small to hold the entire result set, they will be filled to capacity. \mbox{\Hypertarget{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}\label{classdtNavMeshQuery_aa142b8c1e54bdefc39ab41507fe931d1}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Polys\+Around\+Shape@{find\+Polys\+Around\+Shape}}
+\index{find\+Polys\+Around\+Shape@{find\+Polys\+Around\+Shape}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Polys\+Around\+Shape()}{findPolysAroundShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Polys\+Around\+Shape (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{verts,  }\item[{const int}]{nverts,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{result\+Parent,  }\item[{float $\ast$}]{result\+Cost,  }\item[{int $\ast$}]{result\+Count,  }\item[{const int}]{max\+Result }\end{DoxyParamCaption}) const}
+
+Finds the polygons along the naviation graph that touch the specified convex polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em verts} & The vertices describing the convex polygon. (C\+CW) \mbox{[}(x, y, z) $\ast$ {\ttfamily nverts}\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em nverts} & The number of vertices in the polygon. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ref} & The reference ids of the polygons touched by the search polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Parent} & The reference ids of the parent polygons for each result. Zero if a result polygon has no parent. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Cost} & The search cost from the centroid point to the polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em result\+Count} & The number of polygons found. \\
+\hline
+\mbox{\tt in}  & {\em max\+Result} & The maximum number of polygons the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}\label{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Random\+Point@{find\+Random\+Point}}
+\index{find\+Random\+Point@{find\+Random\+Point}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Random\+Point()}{findRandomPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Random\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float($\ast$)()}]{frand,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{random\+Ref,  }\item[{float $\ast$}]{random\+Pt }\end{DoxyParamCaption}) const}
+
+Returns random location on navmesh. Polygons are chosen weighted by area. The search runs in linear related to number of polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em frand} & Function returning a random number \mbox{[}0..1). \\
+\hline
+\mbox{\tt out}  & {\em random\+Ref} & The reference id of the random location. \\
+\hline
+\mbox{\tt out}  & {\em random\+Pt} & The random location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}\label{classdtNavMeshQuery_af86c392a14bd788b0caecf21d9fb4b3d}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Random\+Point@{find\+Random\+Point}}
+\index{find\+Random\+Point@{find\+Random\+Point}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Random\+Point()}{findRandomPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Random\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float($\ast$)()}]{frand,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{random\+Ref,  }\item[{float $\ast$}]{random\+Pt }\end{DoxyParamCaption}) const}
+
+Returns random location on navmesh. Polygons are chosen weighted by area. The search runs in linear related to number of polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em frand} & Function returning a random number \mbox{[}0..1). \\
+\hline
+\mbox{\tt out}  & {\em random\+Ref} & The reference id of the random location. \\
+\hline
+\mbox{\tt out}  & {\em random\+Pt} & The random location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}\label{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Random\+Point\+Around\+Circle@{find\+Random\+Point\+Around\+Circle}}
+\index{find\+Random\+Point\+Around\+Circle@{find\+Random\+Point\+Around\+Circle}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Random\+Point\+Around\+Circle()}{findRandomPointAroundCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Random\+Point\+Around\+Circle (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{max\+Radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float($\ast$)()}]{frand,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{random\+Ref,  }\item[{float $\ast$}]{random\+Pt }\end{DoxyParamCaption}) const}
+
+Returns random location on navmesh within the reach of specified location. Polygons are chosen weighted by area. The search runs in linear related to number of polygon. The location is not exactly constrained by the circle, but it limits the visited polygons. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em frand} & Function returning a random number \mbox{[}0..1). \\
+\hline
+\mbox{\tt out}  & {\em random\+Ref} & The reference id of the random location. \\
+\hline
+\mbox{\tt out}  & {\em random\+Pt} & The random location. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}\label{classdtNavMeshQuery_abfb87531eb962cbd51c649469de2e4fa}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Random\+Point\+Around\+Circle@{find\+Random\+Point\+Around\+Circle}}
+\index{find\+Random\+Point\+Around\+Circle@{find\+Random\+Point\+Around\+Circle}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Random\+Point\+Around\+Circle()}{findRandomPointAroundCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Random\+Point\+Around\+Circle (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{center\+Pos,  }\item[{const float}]{max\+Radius,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float($\ast$)()}]{frand,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{random\+Ref,  }\item[{float $\ast$}]{random\+Pt }\end{DoxyParamCaption}) const}
+
+Returns random location on navmesh within the reach of specified location. Polygons are chosen weighted by area. The search runs in linear related to number of polygon. The location is not exactly constrained by the circle, but it limits the visited polygons. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the polygon where the search starts. \\
+\hline
+\mbox{\tt in}  & {\em center\+Pos} & The center of the search circle. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em frand} & Function returning a random number \mbox{[}0..1). \\
+\hline
+\mbox{\tt out}  & {\em random\+Ref} & The reference id of the random location. \\
+\hline
+\mbox{\tt out}  & {\em random\+Pt} & The random location. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}\label{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Straight\+Path@{find\+Straight\+Path}}
+\index{find\+Straight\+Path@{find\+Straight\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Straight\+Path()}{findStraightPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Straight\+Path (\begin{DoxyParamCaption}\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{const int}]{path\+Size,  }\item[{float $\ast$}]{straight\+Path,  }\item[{unsigned char $\ast$}]{straight\+Path\+Flags,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{straight\+Path\+Refs,  }\item[{int $\ast$}]{straight\+Path\+Count,  }\item[{const int}]{max\+Straight\+Path,  }\item[{const int}]{options = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Finds the straight path from the start to the end position within the polygon corridor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Pos} & Path start position. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & Path end position. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em path} & An array of polygon references that represent the path corridor. \\
+\hline
+\mbox{\tt in}  & {\em path\+Size} & The number of polygons in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path} & Points describing the straight path. \mbox{[}(x, y, z) $\ast$ {\ttfamily straight\+Path\+Count}\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Flags} & Flags describing each point. (See\+: \#dt\+Straight\+Path\+Flags) \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Refs} & The reference id of the polygon that is being entered at each point. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Count} & The number of points in the straight path. \\
+\hline
+\mbox{\tt in}  & {\em max\+Straight\+Path} & The maximum number of points the straight path arrays can hold. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em options} & Query options. (see\+: \#dt\+Straight\+Path\+Options) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method peforms what is often called \textquotesingle{}string pulling\textquotesingle{}.
+
+The start position is clamped to the first polygon in the path, and the end position is clamped to the last. So the start and end positions should normally be within or very near the first and last polygons respectively.
+
+The returned polygon references represent the reference id of the polygon that is entered at the associated path position. The reference id associated with the end point will always be zero. This allows, for example, matching off-\/mesh link points to their representative polygons.
+
+If the provided result buffers are too small for the entire result set, they will be filled as far as possible from the start toward the end position. \mbox{\Hypertarget{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}\label{classdtNavMeshQuery_ac160434c85bdf9edec24fa621f120d2d}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!find\+Straight\+Path@{find\+Straight\+Path}}
+\index{find\+Straight\+Path@{find\+Straight\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{find\+Straight\+Path()}{findStraightPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::find\+Straight\+Path (\begin{DoxyParamCaption}\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{const int}]{path\+Size,  }\item[{float $\ast$}]{straight\+Path,  }\item[{unsigned char $\ast$}]{straight\+Path\+Flags,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{straight\+Path\+Refs,  }\item[{int $\ast$}]{straight\+Path\+Count,  }\item[{const int}]{max\+Straight\+Path,  }\item[{const int}]{options = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Finds the straight path from the start to the end position within the polygon corridor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Pos} & Path start position. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & Path end position. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em path} & An array of polygon references that represent the path corridor. \\
+\hline
+\mbox{\tt in}  & {\em path\+Size} & The number of polygons in the {\ttfamily path} array. \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path} & Points describing the straight path. \mbox{[}(x, y, z) $\ast$ {\ttfamily straight\+Path\+Count}\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Flags} & Flags describing each point. (See\+: \#dt\+Straight\+Path\+Flags) \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Refs} & The reference id of the polygon that is being entered at each point. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em straight\+Path\+Count} & The number of points in the straight path. \\
+\hline
+\mbox{\tt in}  & {\em max\+Straight\+Path} & The maximum number of points the straight path arrays can hold. \mbox{[}Limit\+: $>$ 0\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em options} & Query options. (see\+: \#dt\+Straight\+Path\+Options) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}\label{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Attached\+Nav\+Mesh@{get\+Attached\+Nav\+Mesh}}
+\index{get\+Attached\+Nav\+Mesh@{get\+Attached\+Nav\+Mesh}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Attached\+Nav\+Mesh()}{getAttachedNavMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}$\ast$ dt\+Nav\+Mesh\+Query\+::get\+Attached\+Nav\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the navigation mesh the query object is using. \begin{DoxyReturn}{Returns}
+The navigation mesh the query object is using. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}\label{classdtNavMeshQuery_a05ddaa41019804494be7da66207882de}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Attached\+Nav\+Mesh@{get\+Attached\+Nav\+Mesh}}
+\index{get\+Attached\+Nav\+Mesh@{get\+Attached\+Nav\+Mesh}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Attached\+Nav\+Mesh()}{getAttachedNavMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}$\ast$ dt\+Nav\+Mesh\+Query\+::get\+Attached\+Nav\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the navigation mesh the query object is using. \begin{DoxyReturn}{Returns}
+The navigation mesh the query object is using. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}\label{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Node\+Pool@{get\+Node\+Pool}}
+\index{get\+Node\+Pool@{get\+Node\+Pool}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Node\+Pool()}{getNodePool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily class \hyperlink{classdtNodePool}{dt\+Node\+Pool}$\ast$ dt\+Nav\+Mesh\+Query\+::get\+Node\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the node pool. \begin{DoxyReturn}{Returns}
+The node pool. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}\label{classdtNavMeshQuery_a5f5baaa868aad36ba023ea81b10e70bd}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Node\+Pool@{get\+Node\+Pool}}
+\index{get\+Node\+Pool@{get\+Node\+Pool}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Node\+Pool()}{getNodePool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily class \hyperlink{classdtNodePool}{dt\+Node\+Pool}$\ast$ dt\+Nav\+Mesh\+Query\+::get\+Node\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the node pool. \begin{DoxyReturn}{Returns}
+The node pool. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}\label{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Poly\+Height@{get\+Poly\+Height}}
+\index{get\+Poly\+Height@{get\+Poly\+Height}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Poly\+Height()}{getPolyHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::get\+Poly\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{height }\end{DoxyParamCaption}) const}
+
+Gets the height of the polygon at the provided position using the height detail. (Most accurate.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & A position within the xz-\/bounds of the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em height} & The height at the surface of the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Will return \#\+D\+T\+\_\+\+F\+A\+I\+L\+U\+RE if the provided position is outside the xz-\/bounds of the polygon. \mbox{\Hypertarget{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}\label{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Poly\+Height@{get\+Poly\+Height}}
+\index{get\+Poly\+Height@{get\+Poly\+Height}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Poly\+Height()}{getPolyHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::get\+Poly\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const float $\ast$}]{pos,  }\item[{float $\ast$}]{height }\end{DoxyParamCaption}) const}
+
+Gets the height of the polygon at the provided position using the height detail. (Most accurate.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em pos} & A position within the xz-\/bounds of the polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em height} & The height at the surface of the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}\label{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Poly\+Wall\+Segments@{get\+Poly\+Wall\+Segments}}
+\index{get\+Poly\+Wall\+Segments@{get\+Poly\+Wall\+Segments}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Poly\+Wall\+Segments()}{getPolyWallSegments()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::get\+Poly\+Wall\+Segments (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{segment\+Verts,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{segment\+Refs,  }\item[{int $\ast$}]{segment\+Count,  }\item[{const int}]{max\+Segments }\end{DoxyParamCaption}) const}
+
+Returns the segments for the specified polygon, optionally including portals. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em segment\+Verts} & The segments. \mbox{[}(ax, ay, az, bx, by, bz) $\ast$ segment\+Count\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em segment\+Refs} & The reference ids of each segment\textquotesingle{}s neighbor polygon. Or zero if the segment is a wall. \mbox{[}opt\mbox{]} \mbox{[}(parent\+Ref) $\ast$ {\ttfamily segment\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em segment\+Count} & The number of segments returned. \\
+\hline
+\mbox{\tt in}  & {\em max\+Segments} & The maximum number of segments the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+If the {\ttfamily segment\+Refs} parameter is provided, then all polygon segments will be returned. Otherwise only the wall segments are returned.
+
+A segment that is normally a portal will be included in the result set as a wall if the {\ttfamily filter} results in the neighbor polygon becoomming impassable.
+
+The {\ttfamily segment\+Verts} and {\ttfamily segment\+Refs} buffers should normally be sized for the maximum segments per polygon of the source navigation mesh. \mbox{\Hypertarget{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}\label{classdtNavMeshQuery_a2c49662f07e52f1488622089952a154c}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!get\+Poly\+Wall\+Segments@{get\+Poly\+Wall\+Segments}}
+\index{get\+Poly\+Wall\+Segments@{get\+Poly\+Wall\+Segments}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{get\+Poly\+Wall\+Segments()}{getPolyWallSegments()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::get\+Poly\+Wall\+Segments (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{segment\+Verts,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{segment\+Refs,  }\item[{int $\ast$}]{segment\+Count,  }\item[{const int}]{max\+Segments }\end{DoxyParamCaption}) const}
+
+Returns the segments for the specified polygon, optionally including portals. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em segment\+Verts} & The segments. \mbox{[}(ax, ay, az, bx, by, bz) $\ast$ segment\+Count\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em segment\+Refs} & The reference ids of each segment\textquotesingle{}s neighbor polygon. Or zero if the segment is a wall. \mbox{[}opt\mbox{]} \mbox{[}(parent\+Ref) $\ast$ {\ttfamily segment\+Count}\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em segment\+Count} & The number of segments returned. \\
+\hline
+\mbox{\tt in}  & {\em max\+Segments} & The maximum number of segments the result arrays can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}\label{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$}]{nav,  }\item[{const int}]{max\+Nodes }\end{DoxyParamCaption})}
+
+Initializes the query object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nav} & Pointer to the \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} object to use for all queries. \\
+\hline
+\mbox{\tt in}  & {\em max\+Nodes} & Maximum number of search nodes. \mbox{[}Limits\+: 0 $<$ value $<$= 65536\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Must be the first function called after construction, before other functions are used.
+
+This function can be used multiple times. \mbox{\Hypertarget{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}\label{classdtNavMeshQuery_acb51d0d2798d0bc7c669ac38c25d4116}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!init@{init}}
+\index{init@{init}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$}]{nav,  }\item[{const int}]{max\+Nodes }\end{DoxyParamCaption})}
+
+Initializes the query object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nav} & Pointer to the \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} object to use for all queries. \\
+\hline
+\mbox{\tt in}  & {\em max\+Nodes} & Maximum number of search nodes. \mbox{[}Limits\+: 0 $<$ value $<$= 65536\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}\label{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!init\+Sliced\+Find\+Path@{init\+Sliced\+Find\+Path}}
+\index{init\+Sliced\+Find\+Path@{init\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{init\+Sliced\+Find\+Path()}{initSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::init\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{end\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{const unsigned int}]{options = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Intializes a sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The refrence id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em end\+Ref} & The reference id of the end polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & A position within the end polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em options} & query options (see\+: \#dt\+Find\+Path\+Options) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Warning}
+Calling any non-\/slice methods before calling \hyperlink{classdtNavMeshQuery_a98673bb238fbb139ec8407e266fa76fd}{finalize\+Sliced\+Find\+Path()} or \hyperlink{classdtNavMeshQuery_a01b18dcb5d25fc392b6030ae5d4f310e}{finalize\+Sliced\+Find\+Path\+Partial()} may result in corrupted data!
+\end{DoxyWarning}
+The {\ttfamily filter} pointer is stored and used for the duration of the sliced path query. \mbox{\Hypertarget{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}\label{classdtNavMeshQuery_ae9a478194f14f1a4591f8b6528007d82}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!init\+Sliced\+Find\+Path@{init\+Sliced\+Find\+Path}}
+\index{init\+Sliced\+Find\+Path@{init\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{init\+Sliced\+Find\+Path()}{initSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::init\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{end\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{const unsigned int}]{options = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Intializes a sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The refrence id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em end\+Ref} & The reference id of the end polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & A position within the end polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em options} & query options (see\+: \#dt\+Find\+Path\+Options) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}\label{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!is\+In\+Closed\+List@{is\+In\+Closed\+List}}
+\index{is\+In\+Closed\+List@{is\+In\+Closed\+List}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{is\+In\+Closed\+List()}{isInClosedList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+Query\+::is\+In\+Closed\+List (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Returns true if the polygon reference is in the closed \hyperlink{protocollist-p}{list}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the polygon is in closed \hyperlink{protocollist-p}{list}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}\label{classdtNavMeshQuery_ad1de0c0d7cc527905d3f83c613897eb3}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!is\+In\+Closed\+List@{is\+In\+Closed\+List}}
+\index{is\+In\+Closed\+List@{is\+In\+Closed\+List}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{is\+In\+Closed\+List()}{isInClosedList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+Query\+::is\+In\+Closed\+List (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref }\end{DoxyParamCaption}) const}
+
+Returns true if the polygon reference is in the closed \hyperlink{protocollist-p}{list}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the polygon is in closed \hyperlink{protocollist-p}{list}.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The closed \hyperlink{protocollist-p}{list} is the \hyperlink{protocollist-p}{list} of polygons that were fully evaluated during the last navigation graph search. (A$\ast$ or Dijkstra) \mbox{\Hypertarget{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}\label{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}}
+\index{is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{is\+Valid\+Poly\+Ref()}{isValidPolyRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+Query\+::is\+Valid\+Poly\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter }\end{DoxyParamCaption}) const}
+
+Returns true if the polygon reference is valid and passes the filter restrictions. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to check. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The filter to apply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}\label{classdtNavMeshQuery_ac76164ed97fdedd9ea8abbe52f6c2c8a}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}}
+\index{is\+Valid\+Poly\+Ref@{is\+Valid\+Poly\+Ref}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{is\+Valid\+Poly\+Ref()}{isValidPolyRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Nav\+Mesh\+Query\+::is\+Valid\+Poly\+Ref (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter }\end{DoxyParamCaption}) const}
+
+Returns true if the polygon reference is valid and passes the filter restrictions. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The polygon reference to check. \\
+\hline
+\mbox{\tt in}  & {\em filter} & The filter to apply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}\label{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!move\+Along\+Surface@{move\+Along\+Surface}}
+\index{move\+Along\+Surface@{move\+Along\+Surface}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{move\+Along\+Surface()}{moveAlongSurface()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::move\+Along\+Surface (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{result\+Pos,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{visited,  }\item[{int $\ast$}]{visited\+Count,  }\item[{const int}]{max\+Visited\+Size }\end{DoxyParamCaption}) const}
+
+Moves from the start to the end position constrained to the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position of the mover within the start polygon. \mbox{[}(x, y, x)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The desired end position of the mover. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Pos} & The result position of the mover. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em visited} & The reference ids of the polygons visited during the move. \\
+\hline
+\mbox{\tt out}  & {\em visited\+Count} & The number of polygons visited during the move. \\
+\hline
+\mbox{\tt in}  & {\em max\+Visited\+Size} & The maximum number of polygons the {\ttfamily visited} array can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method is optimized for small delta movement and a small number of polygons. If used for too great a distance, the result set will form an incomplete path.
+
+{\ttfamily result\+Pos} will equal the {\ttfamily end\+Pos} if the end is reached. Otherwise the closest reachable position will be returned.
+
+{\ttfamily result\+Pos} is not projected onto the surface of the navigation mesh. Use \hyperlink{classdtNavMeshQuery_af8303a12749e252c6688c15c5c887b69}{get\+Poly\+Height} if this is needed.
+
+This method treats the end position in the same manner as the \hyperlink{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}{raycast} method. (As a 2D point.) See that method\textquotesingle{}s documentation for details.
+
+If the {\ttfamily visited} array is too small to hold the entire result set, it will be filled as far as possible from the start position toward the end position. \mbox{\Hypertarget{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}\label{classdtNavMeshQuery_a95f6d7c92a75c7773ababeb144206968}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!move\+Along\+Surface@{move\+Along\+Surface}}
+\index{move\+Along\+Surface@{move\+Along\+Surface}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{move\+Along\+Surface()}{moveAlongSurface()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::move\+Along\+Surface (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{result\+Pos,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{visited,  }\item[{int $\ast$}]{visited\+Count,  }\item[{const int}]{max\+Visited\+Size }\end{DoxyParamCaption}) const}
+
+Moves from the start to the end position constrained to the navigation mesh. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position of the mover within the start polygon. \mbox{[}(x, y, x)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The desired end position of the mover. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em result\+Pos} & The result position of the mover. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em visited} & The reference ids of the polygons visited during the move. \\
+\hline
+\mbox{\tt out}  & {\em visited\+Count} & The number of polygons visited during the move. \\
+\hline
+\mbox{\tt in}  & {\em max\+Visited\+Size} & The maximum number of polygons the {\ttfamily visited} array can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}\label{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!query\+Polygons@{query\+Polygons}}
+\index{query\+Polygons@{query\+Polygons}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{query\+Polygons()}{queryPolygons()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::query\+Polygons (\begin{DoxyParamCaption}\item[{const float $\ast$}]{center,  }\item[{const float $\ast$}]{extents,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{polys,  }\item[{int $\ast$}]{poly\+Count,  }\item[{const int}]{max\+Polys }\end{DoxyParamCaption}) const}
+
+Finds polygons that overlap the search box. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em center} & The center of the search box. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em extents} & The search distance along each axis. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em polys} & The reference ids of the polygons that overlap the query box. \\
+\hline
+\mbox{\tt out}  & {\em poly\+Count} & The number of polygons in the search result. \\
+\hline
+\mbox{\tt in}  & {\em max\+Polys} & The maximum number of polygons the search result can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+If no polygons are found, the function will return \#\+D\+T\+\_\+\+S\+U\+C\+C\+E\+SS with a {\ttfamily poly\+Count} of zero.
+
+If {\ttfamily polys} is too small to hold the entire result set, then the array will be filled to capacity. The method of choosing which polygons from the full set are included in the partial result set is undefined. \mbox{\Hypertarget{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}\label{classdtNavMeshQuery_ae7eb88f9f77aa29f1c85f8ccf8ad1d49}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!query\+Polygons@{query\+Polygons}}
+\index{query\+Polygons@{query\+Polygons}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{query\+Polygons()}{queryPolygons()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::query\+Polygons (\begin{DoxyParamCaption}\item[{const float $\ast$}]{center,  }\item[{const float $\ast$}]{extents,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{polys,  }\item[{int $\ast$}]{poly\+Count,  }\item[{const int}]{max\+Polys }\end{DoxyParamCaption}) const}
+
+Finds polygons that overlap the search box. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em center} & The center of the search box. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em extents} & The search distance along each axis. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em polys} & The reference ids of the polygons that overlap the query box. \\
+\hline
+\mbox{\tt out}  & {\em poly\+Count} & The number of polygons in the search result. \\
+\hline
+\mbox{\tt in}  & {\em max\+Polys} & The maximum number of polygons the search result can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}\label{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!raycast@{raycast}}
+\index{raycast@{raycast}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{raycast()}{raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::raycast (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{t,  }\item[{float $\ast$}]{hit\+Normal,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption}) const}
+
+Casts a \textquotesingle{}walkability\textquotesingle{} ray along the surface of the navigation mesh from the start position toward the end position. \begin{DoxyNote}{Note}
+A wrapper around raycast(..., Raycast\+Hit$\ast$). Retained for backward compatibility. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon representing the start of the ray. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The position to cast the ray toward. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em t} & The hit parameter. (F\+L\+T\+\_\+\+M\+AX if no wall hit.) \\
+\hline
+\mbox{\tt out}  & {\em hit\+Normal} & The normal of the nearest wall hit. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em path} & The reference ids of the visited polygons. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of visited polygons. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The maximum number of polygons the {\ttfamily path} array can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method is meant to be used for quick, short distance checks.
+
+If the path array is too small to hold the result, it will be filled as far as possible from the start postion toward the end position.
+
+{\bfseries Using the Hit \hyperlink{structParameter}{Parameter} (t)}
+
+If the hit parameter is a very high value (F\+L\+T\+\_\+\+M\+AX), then the ray has hit the end position. In this case the path represents a valid corridor to the end position and the value of {\ttfamily hit\+Normal} is undefined.
+
+If the hit parameter is zero, then the start position is on the wall that was hit and the value of {\ttfamily hit\+Normal} is undefined.
+
+If 0 $<$ t $<$ 1.\+0 then the following applies\+:
+
+
+\begin{DoxyCode}
+distanceToHitBorder = distanceToEndPosition * t
+hitPoint = startPos + (endPos - startPos) * t
+\end{DoxyCode}
+
+
+{\bfseries Use Case Restriction}
+
+The raycast ignores the y-\/value of the end position. (2D check.) This places significant limits on how it can be used. For example\+:
+
+Consider a scene where there is a main floor with a second floor balcony that hangs over the main floor. So the first floor mesh extends below the balcony mesh. The start position is somewhere on the first floor. The end position is on the balcony.
+
+The raycast will search toward the end position along the first floor mesh. If it reaches the end position\textquotesingle{}s xz-\/coordinates it will indicate F\+L\+T\+\_\+\+M\+AX (no wall hit), meaning it reached the end position. This is one example of why this method is meant for short distance checks. \mbox{\Hypertarget{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}\label{classdtNavMeshQuery_a7509a4bf31a215f20478c5050ef25913}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!raycast@{raycast}}
+\index{raycast@{raycast}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{raycast()}{raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::raycast (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{float $\ast$}]{t,  }\item[{float $\ast$}]{hit\+Normal,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} $\ast$}]{path,  }\item[{int $\ast$}]{path\+Count,  }\item[{const int}]{max\+Path }\end{DoxyParamCaption}) const}
+
+Casts a \textquotesingle{}walkability\textquotesingle{} ray along the surface of the navigation mesh from the start position toward the end position. \begin{DoxyNote}{Note}
+A wrapper around raycast(..., Raycast\+Hit$\ast$). Retained for backward compatibility. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon representing the start of the ray. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The position to cast the ray toward. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em t} & The hit parameter. (F\+L\+T\+\_\+\+M\+AX if no wall hit.) \\
+\hline
+\mbox{\tt out}  & {\em hit\+Normal} & The normal of the nearest wall hit. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt out}  & {\em path} & The reference ids of the visited polygons. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt out}  & {\em path\+Count} & The number of visited polygons. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em max\+Path} & The maximum number of polygons the {\ttfamily path} array can hold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}\label{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!raycast@{raycast}}
+\index{raycast@{raycast}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{raycast()}{raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::raycast (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{const unsigned int}]{options,  }\item[{\hyperlink{structdtRaycastHit}{dt\+Raycast\+Hit} $\ast$}]{hit,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Casts a \textquotesingle{}walkability\textquotesingle{} ray along the surface of the navigation mesh from the start position toward the end position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon representing the start of the ray. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The position to cast the ray toward. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em flags} & govern how the raycast behaves. See dt\+Raycast\+Options \\
+\hline
+\mbox{\tt out}  & {\em hit} & Pointer to a raycast hit structure which will be filled by the results. \\
+\hline
+\mbox{\tt in}  & {\em prev\+Ref} & parent of start ref. Used during for cost calculation \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This method is meant to be used for quick, short distance checks.
+
+If the path array is too small to hold the result, it will be filled as far as possible from the start postion toward the end position.
+
+{\bfseries Using the Hit \hyperlink{structParameter}{Parameter} t of Raycast\+Hit}
+
+If the hit parameter is a very high value (F\+L\+T\+\_\+\+M\+AX), then the ray has hit the end position. In this case the path represents a valid corridor to the end position and the value of {\ttfamily hit\+Normal} is undefined.
+
+If the hit parameter is zero, then the start position is on the wall that was hit and the value of {\ttfamily hit\+Normal} is undefined.
+
+If 0 $<$ t $<$ 1.\+0 then the following applies\+:
+
+
+\begin{DoxyCode}
+distanceToHitBorder = distanceToEndPosition * t
+hitPoint = startPos + (endPos - startPos) * t
+\end{DoxyCode}
+
+
+{\bfseries Use Case Restriction}
+
+The raycast ignores the y-\/value of the end position. (2D check.) This places significant limits on how it can be used. For example\+:
+
+Consider a scene where there is a main floor with a second floor balcony that hangs over the main floor. So the first floor mesh extends below the balcony mesh. The start position is somewhere on the first floor. The end position is on the balcony.
+
+The raycast will search toward the end position along the first floor mesh. If it reaches the end position\textquotesingle{}s xz-\/coordinates it will indicate F\+L\+T\+\_\+\+M\+AX (no wall hit), meaning it reached the end position. This is one example of why this method is meant for short distance checks. \mbox{\Hypertarget{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}\label{classdtNavMeshQuery_a96bd4282df1e863d1c813b2fe881a262}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!raycast@{raycast}}
+\index{raycast@{raycast}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{raycast()}{raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::raycast (\begin{DoxyParamCaption}\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{start\+Ref,  }\item[{const float $\ast$}]{start\+Pos,  }\item[{const float $\ast$}]{end\+Pos,  }\item[{const \hyperlink{classdtQueryFilter}{dt\+Query\+Filter} $\ast$}]{filter,  }\item[{const unsigned int}]{options,  }\item[{\hyperlink{structdtRaycastHit}{dt\+Raycast\+Hit} $\ast$}]{hit,  }\item[{\hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Casts a \textquotesingle{}walkability\textquotesingle{} ray along the surface of the navigation mesh from the start position toward the end position. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\+Ref} & The reference id of the start polygon. \\
+\hline
+\mbox{\tt in}  & {\em start\+Pos} & A position within the start polygon representing the start of the ray. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em end\+Pos} & The position to cast the ray toward. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em filter} & The polygon filter to apply to the query. \\
+\hline
+\mbox{\tt in}  & {\em flags} & govern how the raycast behaves. See dt\+Raycast\+Options \\
+\hline
+\mbox{\tt out}  & {\em hit} & Pointer to a raycast hit structure which will be filled by the results. \\
+\hline
+\mbox{\tt in}  & {\em prev\+Ref} & parent of start ref. Used during for cost calculation \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}\label{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!update\+Sliced\+Find\+Path@{update\+Sliced\+Find\+Path}}
+\index{update\+Sliced\+Find\+Path@{update\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{update\+Sliced\+Find\+Path()}{updateSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::update\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{const int}]{max\+Iter,  }\item[{int $\ast$}]{done\+Iters }\end{DoxyParamCaption})}
+
+Updates an in-\/progress sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\+Iter} & The maximum number of iterations to perform. \\
+\hline
+\mbox{\tt out}  & {\em done\+Iters} & The actual number of iterations completed. \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}\label{classdtNavMeshQuery_aa0c147e3da7fd0b59342da0fc456afc7}} 
+\index{dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}!update\+Sliced\+Find\+Path@{update\+Sliced\+Find\+Path}}
+\index{update\+Sliced\+Find\+Path@{update\+Sliced\+Find\+Path}!dt\+Nav\+Mesh\+Query@{dt\+Nav\+Mesh\+Query}}
+\subsubsection{\texorpdfstring{update\+Sliced\+Find\+Path()}{updateSlicedFindPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dt\+Status dt\+Nav\+Mesh\+Query\+::update\+Sliced\+Find\+Path (\begin{DoxyParamCaption}\item[{const int}]{max\+Iter,  }\item[{int $\ast$}]{done\+Iters }\end{DoxyParamCaption})}
+
+Updates an in-\/progress sliced path query. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em max\+Iter} & The maximum number of iterations to perform. \\
+\hline
+\mbox{\tt out}  & {\em done\+Iters} & The actual number of iterations completed. \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status flags for the query. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh\+Query.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh\+Query.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,180 @@
+\hypertarget{classbtManifoldResult}{}\section{bt\+Manifold\+Result Class Reference}
+\label{classbtManifoldResult}\index{bt\+Manifold\+Result@{bt\+Manifold\+Result}}
+
+
+\hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} is a helper class to manage contact results.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Manifold\+Result.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Manifold\+Result\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtManifoldResult__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Manifold\+Result\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtManifoldResult__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a012034766365adbebc5a4430f6dfa955}\label{classbtManifoldResult_a012034766365adbebc5a4430f6dfa955}} 
+{\bfseries bt\+Manifold\+Result} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a7a46d46b9a13c2896695e458c1d6df1f}\label{classbtManifoldResult_a7a46d46b9a13c2896695e458c1d6df1f}} 
+void {\bfseries set\+Persistent\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold\+Ptr)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a222d8b2a5ee129b2c0bcad2eaa01d3ed}\label{classbtManifoldResult_a222d8b2a5ee129b2c0bcad2eaa01d3ed}} 
+const bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Persistent\+Manifold} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a4e02b9721e32500c1af01fb775edf14e}\label{classbtManifoldResult_a4e02b9721e32500c1af01fb775edf14e}} 
+bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Persistent\+Manifold} ()
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}\label{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}} 
+virtual void \hyperlink{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}{set\+Shape\+IdentifiersA} (int part\+Id0, int index0)
+\begin{DoxyCompactList}\small\item\em set\+Shape\+Identifiers\+A/B provides experimental support for per-\/triangle material / custom material combiner \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtManifoldResult_a95a5dab38f08b08af1feb6756d60a681}\label{classbtManifoldResult_a95a5dab38f08b08af1feb6756d60a681}} 
+virtual void {\bfseries set\+Shape\+IdentifiersB} (int part\+Id1, int index1)
+\item 
+virtual void \hyperlink{classbtManifoldResult_aebe32f0c202d988d0458e88d768602c6}{add\+Contact\+Point} (const bt\+Vector3 \&normal\+On\+B\+In\+World, const bt\+Vector3 \&point\+In\+World, bt\+Scalar depth)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_adbcfd865252ac9dc8a3543f404e2dcf1}\label{classbtManifoldResult_adbcfd865252ac9dc8a3543f404e2dcf1}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries refresh\+Contact\+Points} ()
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a3ffec9c15260f1a8c22ace0cd2b52d75}\label{classbtManifoldResult_a3ffec9c15260f1a8c22ace0cd2b52d75}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries get\+Body0\+Wrap} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a140127f80ee0efb8a8301a6a0c7c304c}\label{classbtManifoldResult_a140127f80ee0efb8a8301a6a0c7c304c}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries get\+Body1\+Wrap} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a0599942ca5ec1ddf5ea914ce734ba272}\label{classbtManifoldResult_a0599942ca5ec1ddf5ea914ce734ba272}} 
+void {\bfseries set\+Body0\+Wrap} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$obj0\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a6fd0c696483fd32ab5def0785a9dbc12}\label{classbtManifoldResult_a6fd0c696483fd32ab5def0785a9dbc12}} 
+void {\bfseries set\+Body1\+Wrap} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$obj1\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a10455cf6b5f6999359852732bf91b4ab}\label{classbtManifoldResult_a10455cf6b5f6999359852732bf91b4ab}} 
+const bt\+Collision\+Object $\ast$ {\bfseries get\+Body0\+Internal} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_af872b6f2fc0c82d64d4f35b710bae861}\label{classbtManifoldResult_af872b6f2fc0c82d64d4f35b710bae861}} 
+const bt\+Collision\+Object $\ast$ {\bfseries get\+Body1\+Internal} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a012034766365adbebc5a4430f6dfa955}\label{classbtManifoldResult_a012034766365adbebc5a4430f6dfa955}} 
+{\bfseries bt\+Manifold\+Result} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a7a46d46b9a13c2896695e458c1d6df1f}\label{classbtManifoldResult_a7a46d46b9a13c2896695e458c1d6df1f}} 
+void {\bfseries set\+Persistent\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold\+Ptr)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a222d8b2a5ee129b2c0bcad2eaa01d3ed}\label{classbtManifoldResult_a222d8b2a5ee129b2c0bcad2eaa01d3ed}} 
+const bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Persistent\+Manifold} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a4e02b9721e32500c1af01fb775edf14e}\label{classbtManifoldResult_a4e02b9721e32500c1af01fb775edf14e}} 
+bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Persistent\+Manifold} ()
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}\label{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}} 
+virtual void \hyperlink{classbtManifoldResult_a01f472fc7b6d431845d22f55842f029d}{set\+Shape\+IdentifiersA} (int part\+Id0, int index0)
+\begin{DoxyCompactList}\small\item\em set\+Shape\+Identifiers\+A/B provides experimental support for per-\/triangle material / custom material combiner \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtManifoldResult_a95a5dab38f08b08af1feb6756d60a681}\label{classbtManifoldResult_a95a5dab38f08b08af1feb6756d60a681}} 
+virtual void {\bfseries set\+Shape\+IdentifiersB} (int part\+Id1, int index1)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a7af5985689311d88c5e0c79745c984ef}\label{classbtManifoldResult_a7af5985689311d88c5e0c79745c984ef}} 
+virtual void {\bfseries add\+Contact\+Point} (const bt\+Vector3 \&normal\+On\+B\+In\+World, const bt\+Vector3 \&point\+In\+World, bt\+Scalar depth)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_adbcfd865252ac9dc8a3543f404e2dcf1}\label{classbtManifoldResult_adbcfd865252ac9dc8a3543f404e2dcf1}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries refresh\+Contact\+Points} ()
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a3ffec9c15260f1a8c22ace0cd2b52d75}\label{classbtManifoldResult_a3ffec9c15260f1a8c22ace0cd2b52d75}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries get\+Body0\+Wrap} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a140127f80ee0efb8a8301a6a0c7c304c}\label{classbtManifoldResult_a140127f80ee0efb8a8301a6a0c7c304c}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries get\+Body1\+Wrap} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a0599942ca5ec1ddf5ea914ce734ba272}\label{classbtManifoldResult_a0599942ca5ec1ddf5ea914ce734ba272}} 
+void {\bfseries set\+Body0\+Wrap} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$obj0\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a6fd0c696483fd32ab5def0785a9dbc12}\label{classbtManifoldResult_a6fd0c696483fd32ab5def0785a9dbc12}} 
+void {\bfseries set\+Body1\+Wrap} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$obj1\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a10455cf6b5f6999359852732bf91b4ab}\label{classbtManifoldResult_a10455cf6b5f6999359852732bf91b4ab}} 
+const bt\+Collision\+Object $\ast$ {\bfseries get\+Body0\+Internal} () const
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_af872b6f2fc0c82d64d4f35b710bae861}\label{classbtManifoldResult_af872b6f2fc0c82d64d4f35b710bae861}} 
+const bt\+Collision\+Object $\ast$ {\bfseries get\+Body1\+Internal} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_aa4419fc3b0d13ccc2cbfd7739b047c04}\label{classbtManifoldResult_aa4419fc3b0d13ccc2cbfd7739b047c04}} 
+static bt\+Scalar \hyperlink{classbtManifoldResult_aa4419fc3b0d13ccc2cbfd7739b047c04}{calculate\+Combined\+Restitution} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)
+\begin{DoxyCompactList}\small\item\em in the future we can let the user override the methods to combine restitution and friction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtManifoldResult_a162717dce3ef3a756ae55ec04a179ed5}\label{classbtManifoldResult_a162717dce3ef3a756ae55ec04a179ed5}} 
+static bt\+Scalar \hyperlink{classbtManifoldResult_a162717dce3ef3a756ae55ec04a179ed5}{calculate\+Combined\+Friction} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)
+\begin{DoxyCompactList}\small\item\em User can override this material combiner by implementing g\+Contact\+Added\+Callback and setting body0-\/$>$m\+\_\+collision\+Flags $\vert$= bt\+Collision\+Object\+::custom\+Material\+Callback;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtManifoldResult_a470c79d121cf7f324e3545bd0006ce62}\label{classbtManifoldResult_a470c79d121cf7f324e3545bd0006ce62}} 
+static bt\+Scalar \hyperlink{classbtManifoldResult_a470c79d121cf7f324e3545bd0006ce62}{calculate\+Combined\+Restitution} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)
+\begin{DoxyCompactList}\small\item\em in the future we can let the user override the methods to combine restitution and friction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtManifoldResult_a56cb1cd539f0a1ad775296937fe96cc4}\label{classbtManifoldResult_a56cb1cd539f0a1ad775296937fe96cc4}} 
+static bt\+Scalar {\bfseries calculate\+Combined\+Friction} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a3780f000196cb804b413c6a89d386279}\label{classbtManifoldResult_a3780f000196cb804b413c6a89d386279}} 
+bt\+Persistent\+Manifold $\ast$ {\bfseries m\+\_\+manifold\+Ptr}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a25c2b07a56d94fd1f5c996bccea5fcdf}\label{classbtManifoldResult_a25c2b07a56d94fd1f5c996bccea5fcdf}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries m\+\_\+body0\+Wrap}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_aa7c0a224b16443ef764ab86e6cf7e48c}\label{classbtManifoldResult_aa7c0a224b16443ef764ab86e6cf7e48c}} 
+const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$ {\bfseries m\+\_\+body1\+Wrap}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a1102526a3290f8d9cd399ed6c11513f1}\label{classbtManifoldResult_a1102526a3290f8d9cd399ed6c11513f1}} 
+int {\bfseries m\+\_\+part\+Id0}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a5aeb5f67205d6414f832cd2a9a1a6f73}\label{classbtManifoldResult_a5aeb5f67205d6414f832cd2a9a1a6f73}} 
+int {\bfseries m\+\_\+part\+Id1}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_a8d7d067fb1799b3992196f80e8aa3c28}\label{classbtManifoldResult_a8d7d067fb1799b3992196f80e8aa3c28}} 
+int {\bfseries m\+\_\+index0}
+\item 
+\mbox{\Hypertarget{classbtManifoldResult_aff6db948e364ab9ed2fc8bb7e7557305}\label{classbtManifoldResult_aff6db948e364ab9ed2fc8bb7e7557305}} 
+int {\bfseries m\+\_\+index1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} is a helper class to manage contact results. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtManifoldResult_aebe32f0c202d988d0458e88d768602c6}\label{classbtManifoldResult_aebe32f0c202d988d0458e88d768602c6}} 
+\index{bt\+Manifold\+Result@{bt\+Manifold\+Result}!add\+Contact\+Point@{add\+Contact\+Point}}
+\index{add\+Contact\+Point@{add\+Contact\+Point}!bt\+Manifold\+Result@{bt\+Manifold\+Result}}
+\subsubsection{\texorpdfstring{add\+Contact\+Point()}{addContactPoint()}}
+{\footnotesize\ttfamily void bt\+Manifold\+Result\+::add\+Contact\+Point (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{normal\+On\+B\+In\+World,  }\item[{const bt\+Vector3 \&}]{point\+In\+World,  }\item[{bt\+Scalar}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000015}{Todo}], check this for any side effects \end{DoxyRefDesc}
+
+
+Implements \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{bt\+Discrete\+Collision\+Detector\+Interface\+::\+Result}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Manifold\+Result.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Manifold\+Result.\+cpp\end{DoxyCompactItemize}

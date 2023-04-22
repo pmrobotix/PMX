@@ -1,0 +1,309 @@
+\hypertarget{classgim__array}{}\section{gim\+\_\+array$<$ T $>$ Class Template Reference}
+\label{classgim__array}\index{gim\+\_\+array$<$ T $>$@{gim\+\_\+array$<$ T $>$}}
+
+
+Very simple array container with fast access and simd memory.  
+
+
+
+
+{\ttfamily \#include $<$gim\+\_\+array.\+h$>$}
+
+
+
+Collaboration diagram for gim\+\_\+array$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classgim__array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgim__array_aa7a9dca42674415635846cd077cb4a97}{destroy\+Data} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a9d4559f0f847dd3ff602e0b828df31f2}\label{classgim__array_a9d4559f0f847dd3ff602e0b828df31f2}} 
+bool {\bfseries resize\+Data} (G\+U\+I\+NT newsize)
+\item 
+\mbox{\Hypertarget{classgim__array_aa9c596ff1639a5f6c69c16f25710f7d1}\label{classgim__array_aa9c596ff1639a5f6c69c16f25710f7d1}} 
+bool {\bfseries growing\+Check} ()
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}{reserve} (G\+U\+I\+NT size)
+\item 
+\mbox{\Hypertarget{classgim__array_aaebc1828ad96b461a0351127b1dfb9f3}\label{classgim__array_aaebc1828ad96b461a0351127b1dfb9f3}} 
+void {\bfseries clear\+\_\+range} (G\+U\+I\+NT start\+\_\+range)
+\item 
+\mbox{\Hypertarget{classgim__array_aae3374d96bac249ba926b6f0825c034e}\label{classgim__array_aae3374d96bac249ba926b6f0825c034e}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classgim__array_afe6bc1b2062f48a25ff1af7bccf46718}\label{classgim__array_afe6bc1b2062f48a25ff1af7bccf46718}} 
+void {\bfseries clear\+\_\+memory} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a42be09e9a8fa1d7e9f3f8385647d69c2}\label{classgim__array_a42be09e9a8fa1d7e9f3f8385647d69c2}} 
+{\bfseries gim\+\_\+array} (G\+U\+I\+NT reservesize)
+\item 
+\mbox{\Hypertarget{classgim__array_a81607b0c307618345418ec2b8b978af0}\label{classgim__array_a81607b0c307618345418ec2b8b978af0}} 
+G\+U\+I\+NT {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8ab8601b580ef9f951411ac5d25e649b}\label{classgim__array_a8ab8601b580ef9f951411ac5d25e649b}} 
+G\+U\+I\+NT {\bfseries max\+\_\+size} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8c58fd37fa4da11e1dc75a0bb9099363}\label{classgim__array_a8c58fd37fa4da11e1dc75a0bb9099363}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{classgim__array_a6df4e1f1223b8c7cb3cf2dc0039b7a55}\label{classgim__array_a6df4e1f1223b8c7cb3cf2dc0039b7a55}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
+\item 
+\mbox{\Hypertarget{classgim__array_ad3e924dc4d51d64fd6b4a2ab2ffae793}\label{classgim__array_ad3e924dc4d51d64fd6b4a2ab2ffae793}} 
+T $\ast$ {\bfseries pointer} ()
+\item 
+\mbox{\Hypertarget{classgim__array_aefbe347f7417a9c5b8ebaa6989cce8bc}\label{classgim__array_aefbe347f7417a9c5b8ebaa6989cce8bc}} 
+const T $\ast$ {\bfseries pointer} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8d24180b31e4b971b0b0d3ee07b0e0f0}\label{classgim__array_a8d24180b31e4b971b0b0d3ee07b0e0f0}} 
+T $\ast$ {\bfseries get\+\_\+pointer\+\_\+at} (G\+U\+I\+NT i)
+\item 
+\mbox{\Hypertarget{classgim__array_ad406b937dd8e791fbb8234cb92b3d943}\label{classgim__array_ad406b937dd8e791fbb8234cb92b3d943}} 
+const T $\ast$ {\bfseries get\+\_\+pointer\+\_\+at} (G\+U\+I\+NT i) const
+\item 
+\mbox{\Hypertarget{classgim__array_ae76ad8c556a353a67d4331a9def31676}\label{classgim__array_ae76ad8c556a353a67d4331a9def31676}} 
+T \& {\bfseries at} (G\+U\+I\+NT i)
+\item 
+\mbox{\Hypertarget{classgim__array_a6123b8cb4fc75751430778a4f2376627}\label{classgim__array_a6123b8cb4fc75751430778a4f2376627}} 
+const T \& {\bfseries at} (G\+U\+I\+NT i) const
+\item 
+\mbox{\Hypertarget{classgim__array_a60fc3e0355cfdc09cc169c1c595d5d1b}\label{classgim__array_a60fc3e0355cfdc09cc169c1c595d5d1b}} 
+T \& {\bfseries front} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a4a19fa926c2d9d8752c3ca73db8b3a17}\label{classgim__array_a4a19fa926c2d9d8752c3ca73db8b3a17}} 
+const T \& {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{classgim__array_aab58b1694b45fbd101c64258ac105669}\label{classgim__array_aab58b1694b45fbd101c64258ac105669}} 
+T \& {\bfseries back} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a5770ffb08d3c5e27e099d5809bb23a1b}\label{classgim__array_a5770ffb08d3c5e27e099d5809bb23a1b}} 
+const T \& {\bfseries back} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a99a6869a790e5d746d455b56f1d65e32}\label{classgim__array_a99a6869a790e5d746d455b56f1d65e32}} 
+void {\bfseries swap} (G\+U\+I\+NT i, G\+U\+I\+NT j)
+\item 
+\mbox{\Hypertarget{classgim__array_a45b9c313cf887ed8a2fd6d1895b2c309}\label{classgim__array_a45b9c313cf887ed8a2fd6d1895b2c309}} 
+void {\bfseries push\+\_\+back} (const T \&obj)
+\item 
+\mbox{\Hypertarget{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}\label{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}} 
+void \hyperlink{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}{push\+\_\+back\+\_\+mem} ()
+\begin{DoxyCompactList}\small\item\em Simply increase the m\+\_\+size, doesn\textquotesingle{}t call the new element constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a8ef553253e1a77ed4f3168ca2e4da225}\label{classgim__array_a8ef553253e1a77ed4f3168ca2e4da225}} 
+void {\bfseries push\+\_\+back\+\_\+memcpy} (const T \&obj)
+\item 
+\mbox{\Hypertarget{classgim__array_aeebbf5deb27265451bf00db5ce57c5fc}\label{classgim__array_aeebbf5deb27265451bf00db5ce57c5fc}} 
+void {\bfseries pop\+\_\+back} ()
+\item 
+\mbox{\Hypertarget{classgim__array_aa15906909f6f824e559864359096db63}\label{classgim__array_aa15906909f6f824e559864359096db63}} 
+void \hyperlink{classgim__array_aa15906909f6f824e559864359096db63}{pop\+\_\+back\+\_\+mem} ()
+\begin{DoxyCompactList}\small\item\em Simply decrease the m\+\_\+size, doesn\textquotesingle{}t call the deleted element destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}\label{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}} 
+void \hyperlink{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}{erase} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em fast erase \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a878dddc1e188bfdbd738ec925f4386cf}\label{classgim__array_a878dddc1e188bfdbd738ec925f4386cf}} 
+void {\bfseries erase\+\_\+sorted\+\_\+mem} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_a992f8d76ef464690cd11a4ffc3d5ac2d}\label{classgim__array_a992f8d76ef464690cd11a4ffc3d5ac2d}} 
+void {\bfseries erase\+\_\+sorted} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_ad136c0af14df7e2943e437be26edda29}\label{classgim__array_ad136c0af14df7e2943e437be26edda29}} 
+void {\bfseries insert\+\_\+mem} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_aa1855162e3317aead1e20dfe895dfe5c}\label{classgim__array_aa1855162e3317aead1e20dfe895dfe5c}} 
+void {\bfseries insert} (const T \&obj, G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_aa4a78ae4cec9771904e3b461c494431a}\label{classgim__array_aa4a78ae4cec9771904e3b461c494431a}} 
+void {\bfseries resize} (G\+U\+I\+NT size, bool call\+\_\+constructor=true, const T \&fill\+Data=T())
+\item 
+\mbox{\Hypertarget{classgim__array_adee8674335c3f49686fffe144cca6deb}\label{classgim__array_adee8674335c3f49686fffe144cca6deb}} 
+void {\bfseries refit} ()
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgim__array_aa7a9dca42674415635846cd077cb4a97}{destroy\+Data} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a9d4559f0f847dd3ff602e0b828df31f2}\label{classgim__array_a9d4559f0f847dd3ff602e0b828df31f2}} 
+bool {\bfseries resize\+Data} (G\+U\+I\+NT newsize)
+\item 
+\mbox{\Hypertarget{classgim__array_aa9c596ff1639a5f6c69c16f25710f7d1}\label{classgim__array_aa9c596ff1639a5f6c69c16f25710f7d1}} 
+bool {\bfseries growing\+Check} ()
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}{reserve} (G\+U\+I\+NT size)
+\item 
+\mbox{\Hypertarget{classgim__array_aaebc1828ad96b461a0351127b1dfb9f3}\label{classgim__array_aaebc1828ad96b461a0351127b1dfb9f3}} 
+void {\bfseries clear\+\_\+range} (G\+U\+I\+NT start\+\_\+range)
+\item 
+\mbox{\Hypertarget{classgim__array_aae3374d96bac249ba926b6f0825c034e}\label{classgim__array_aae3374d96bac249ba926b6f0825c034e}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classgim__array_afe6bc1b2062f48a25ff1af7bccf46718}\label{classgim__array_afe6bc1b2062f48a25ff1af7bccf46718}} 
+void {\bfseries clear\+\_\+memory} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a42be09e9a8fa1d7e9f3f8385647d69c2}\label{classgim__array_a42be09e9a8fa1d7e9f3f8385647d69c2}} 
+{\bfseries gim\+\_\+array} (G\+U\+I\+NT reservesize)
+\item 
+\mbox{\Hypertarget{classgim__array_a81607b0c307618345418ec2b8b978af0}\label{classgim__array_a81607b0c307618345418ec2b8b978af0}} 
+G\+U\+I\+NT {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8ab8601b580ef9f951411ac5d25e649b}\label{classgim__array_a8ab8601b580ef9f951411ac5d25e649b}} 
+G\+U\+I\+NT {\bfseries max\+\_\+size} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8c58fd37fa4da11e1dc75a0bb9099363}\label{classgim__array_a8c58fd37fa4da11e1dc75a0bb9099363}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i)
+\item 
+\mbox{\Hypertarget{classgim__array_a6df4e1f1223b8c7cb3cf2dc0039b7a55}\label{classgim__array_a6df4e1f1223b8c7cb3cf2dc0039b7a55}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
+\item 
+\mbox{\Hypertarget{classgim__array_ad3e924dc4d51d64fd6b4a2ab2ffae793}\label{classgim__array_ad3e924dc4d51d64fd6b4a2ab2ffae793}} 
+T $\ast$ {\bfseries pointer} ()
+\item 
+\mbox{\Hypertarget{classgim__array_aefbe347f7417a9c5b8ebaa6989cce8bc}\label{classgim__array_aefbe347f7417a9c5b8ebaa6989cce8bc}} 
+const T $\ast$ {\bfseries pointer} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a8d24180b31e4b971b0b0d3ee07b0e0f0}\label{classgim__array_a8d24180b31e4b971b0b0d3ee07b0e0f0}} 
+T $\ast$ {\bfseries get\+\_\+pointer\+\_\+at} (G\+U\+I\+NT i)
+\item 
+\mbox{\Hypertarget{classgim__array_ad406b937dd8e791fbb8234cb92b3d943}\label{classgim__array_ad406b937dd8e791fbb8234cb92b3d943}} 
+const T $\ast$ {\bfseries get\+\_\+pointer\+\_\+at} (G\+U\+I\+NT i) const
+\item 
+\mbox{\Hypertarget{classgim__array_ae76ad8c556a353a67d4331a9def31676}\label{classgim__array_ae76ad8c556a353a67d4331a9def31676}} 
+T \& {\bfseries at} (G\+U\+I\+NT i)
+\item 
+\mbox{\Hypertarget{classgim__array_a6123b8cb4fc75751430778a4f2376627}\label{classgim__array_a6123b8cb4fc75751430778a4f2376627}} 
+const T \& {\bfseries at} (G\+U\+I\+NT i) const
+\item 
+\mbox{\Hypertarget{classgim__array_a60fc3e0355cfdc09cc169c1c595d5d1b}\label{classgim__array_a60fc3e0355cfdc09cc169c1c595d5d1b}} 
+T \& {\bfseries front} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a4a19fa926c2d9d8752c3ca73db8b3a17}\label{classgim__array_a4a19fa926c2d9d8752c3ca73db8b3a17}} 
+const T \& {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{classgim__array_aab58b1694b45fbd101c64258ac105669}\label{classgim__array_aab58b1694b45fbd101c64258ac105669}} 
+T \& {\bfseries back} ()
+\item 
+\mbox{\Hypertarget{classgim__array_a5770ffb08d3c5e27e099d5809bb23a1b}\label{classgim__array_a5770ffb08d3c5e27e099d5809bb23a1b}} 
+const T \& {\bfseries back} () const
+\item 
+\mbox{\Hypertarget{classgim__array_a99a6869a790e5d746d455b56f1d65e32}\label{classgim__array_a99a6869a790e5d746d455b56f1d65e32}} 
+void {\bfseries swap} (G\+U\+I\+NT i, G\+U\+I\+NT j)
+\item 
+\mbox{\Hypertarget{classgim__array_a45b9c313cf887ed8a2fd6d1895b2c309}\label{classgim__array_a45b9c313cf887ed8a2fd6d1895b2c309}} 
+void {\bfseries push\+\_\+back} (const T \&obj)
+\item 
+\mbox{\Hypertarget{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}\label{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}} 
+void \hyperlink{classgim__array_acbd3ad9a6756d0b91e42549a0e7107f0}{push\+\_\+back\+\_\+mem} ()
+\begin{DoxyCompactList}\small\item\em Simply increase the m\+\_\+size, doesn\textquotesingle{}t call the new element constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a8ef553253e1a77ed4f3168ca2e4da225}\label{classgim__array_a8ef553253e1a77ed4f3168ca2e4da225}} 
+void {\bfseries push\+\_\+back\+\_\+memcpy} (const T \&obj)
+\item 
+\mbox{\Hypertarget{classgim__array_aeebbf5deb27265451bf00db5ce57c5fc}\label{classgim__array_aeebbf5deb27265451bf00db5ce57c5fc}} 
+void {\bfseries pop\+\_\+back} ()
+\item 
+\mbox{\Hypertarget{classgim__array_aa15906909f6f824e559864359096db63}\label{classgim__array_aa15906909f6f824e559864359096db63}} 
+void \hyperlink{classgim__array_aa15906909f6f824e559864359096db63}{pop\+\_\+back\+\_\+mem} ()
+\begin{DoxyCompactList}\small\item\em Simply decrease the m\+\_\+size, doesn\textquotesingle{}t call the deleted element destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}\label{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}} 
+void \hyperlink{classgim__array_a0de98d5b161c18568c7bc3a13e90df51}{erase} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em fast erase \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__array_a878dddc1e188bfdbd738ec925f4386cf}\label{classgim__array_a878dddc1e188bfdbd738ec925f4386cf}} 
+void {\bfseries erase\+\_\+sorted\+\_\+mem} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_a992f8d76ef464690cd11a4ffc3d5ac2d}\label{classgim__array_a992f8d76ef464690cd11a4ffc3d5ac2d}} 
+void {\bfseries erase\+\_\+sorted} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_ad136c0af14df7e2943e437be26edda29}\label{classgim__array_ad136c0af14df7e2943e437be26edda29}} 
+void {\bfseries insert\+\_\+mem} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_aa1855162e3317aead1e20dfe895dfe5c}\label{classgim__array_aa1855162e3317aead1e20dfe895dfe5c}} 
+void {\bfseries insert} (const T \&obj, G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__array_aa4a78ae4cec9771904e3b461c494431a}\label{classgim__array_aa4a78ae4cec9771904e3b461c494431a}} 
+void {\bfseries resize} (G\+U\+I\+NT size, bool call\+\_\+constructor=true, const T \&fill\+Data=T())
+\item 
+\mbox{\Hypertarget{classgim__array_adee8674335c3f49686fffe144cca6deb}\label{classgim__array_adee8674335c3f49686fffe144cca6deb}} 
+void {\bfseries refit} ()
+\end{DoxyCompactItemize}
+
+\subsection*{Public Attributes}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classgim__array_a0ac4ef950a94175dd3b5013c2a4a11a3}{m\+\_\+data}
+\item 
+\mbox{\Hypertarget{classgim__array_a2cf2f444d6ce2cf6262d20d1d3c49278}\label{classgim__array_a2cf2f444d6ce2cf6262d20d1d3c49278}} 
+G\+U\+I\+NT {\bfseries m\+\_\+size}
+\item 
+\mbox{\Hypertarget{classgim__array_abd86b4cd0d2dcc03d13505f02e950752}\label{classgim__array_abd86b4cd0d2dcc03d13505f02e950752}} 
+G\+U\+I\+NT {\bfseries m\+\_\+allocated\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class gim\+\_\+array$<$ T $>$}
+
+Very simple array container with fast access and simd memory. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgim__array_aa7a9dca42674415635846cd077cb4a97}\label{classgim__array_aa7a9dca42674415635846cd077cb4a97}} 
+\index{gim\+\_\+array@{gim\+\_\+array}!destroy\+Data@{destroy\+Data}}
+\index{destroy\+Data@{destroy\+Data}!gim\+\_\+array@{gim\+\_\+array}}
+\subsubsection{\texorpdfstring{destroy\+Data()}{destroyData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classgim__array}{gim\+\_\+array}$<$ T $>$\+::destroy\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+protected operations \mbox{\Hypertarget{classgim__array_aa7a9dca42674415635846cd077cb4a97}\label{classgim__array_aa7a9dca42674415635846cd077cb4a97}} 
+\index{gim\+\_\+array@{gim\+\_\+array}!destroy\+Data@{destroy\+Data}}
+\index{destroy\+Data@{destroy\+Data}!gim\+\_\+array@{gim\+\_\+array}}
+\subsubsection{\texorpdfstring{destroy\+Data()}{destroyData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classgim__array}{gim\+\_\+array}$<$ T $>$\+::destroy\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+protected operations \mbox{\Hypertarget{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}\label{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}} 
+\index{gim\+\_\+array@{gim\+\_\+array}!reserve@{reserve}}
+\index{reserve@{reserve}!gim\+\_\+array@{gim\+\_\+array}}
+\subsubsection{\texorpdfstring{reserve()}{reserve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classgim__array}{gim\+\_\+array}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+public operations \mbox{\Hypertarget{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}\label{classgim__array_a572f94b5b67d505335150a2dea8a7e3d}} 
+\index{gim\+\_\+array@{gim\+\_\+array}!reserve@{reserve}}
+\index{reserve@{reserve}!gim\+\_\+array@{gim\+\_\+array}}
+\subsubsection{\texorpdfstring{reserve()}{reserve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classgim__array}{gim\+\_\+array}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+public operations 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classgim__array_a0ac4ef950a94175dd3b5013c2a4a11a3}\label{classgim__array_a0ac4ef950a94175dd3b5013c2a4a11a3}} 
+\index{gim\+\_\+array@{gim\+\_\+array}!m\+\_\+data@{m\+\_\+data}}
+\index{m\+\_\+data@{m\+\_\+data}!gim\+\_\+array@{gim\+\_\+array}}
+\subsubsection{\texorpdfstring{m\+\_\+data}{m\_data}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T $\ast$ \hyperlink{classgim__array}{gim\+\_\+array}$<$ T $>$\+::m\+\_\+data}
+
+properties 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+array.\+h\end{DoxyCompactItemize}

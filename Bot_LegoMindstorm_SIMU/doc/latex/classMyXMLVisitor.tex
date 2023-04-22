@@ -1,0 +1,344 @@
+\hypertarget{classMyXMLVisitor}{}\section{My\+X\+M\+L\+Visitor Class Reference}
+\label{classMyXMLVisitor}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}
+
+
+parse a X\+ML.  
+
+
+
+
+Inheritance diagram for My\+X\+M\+L\+Visitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classMyXMLVisitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for My\+X\+M\+L\+Visitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classMyXMLVisitor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMyXMLVisitor_1_1Attributes}{Attributes}
+\begin{DoxyCompactList}\small\item\em the attributes of text tag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}{Style\+Line} \{ \newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}{Style\+Line\+::\+U\+N\+D\+E\+R\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}{Style\+Line\+::\+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}, 
+{\bfseries N\+O\+NE}, 
+\newline
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}{Style\+Line\+::\+U\+N\+D\+E\+R\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}{Style\+Line\+::\+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}
+ \}\begin{DoxyCompactList}\small\item\em underline or strikethrough \end{DoxyCompactList}
+\item 
+enum \hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}{Style\+Effect} \{ \newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}{Style\+Effect\+::\+O\+U\+T\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}{Style\+Effect\+::\+S\+H\+A\+D\+OW}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}{Style\+Effect\+::\+G\+L\+OW}, 
+\newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}{Style\+Effect\+::\+O\+U\+T\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}{Style\+Effect\+::\+S\+H\+A\+D\+OW}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}{Style\+Effect\+::\+G\+L\+OW}
+ \}\begin{DoxyCompactList}\small\item\em outline, shadow or glow \end{DoxyCompactList}
+\item 
+enum \hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}{Style\+Line} \{ \newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}{Style\+Line\+::\+U\+N\+D\+E\+R\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}{Style\+Line\+::\+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}, 
+{\bfseries N\+O\+NE}, 
+\newline
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}{Style\+Line\+::\+U\+N\+D\+E\+R\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}{Style\+Line\+::\+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}
+ \}\begin{DoxyCompactList}\small\item\em underline or strikethrough \end{DoxyCompactList}
+\item 
+enum \hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}{Style\+Effect} \{ \newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}{Style\+Effect\+::\+O\+U\+T\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}{Style\+Effect\+::\+S\+H\+A\+D\+OW}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}{Style\+Effect\+::\+G\+L\+OW}, 
+\newline
+{\bfseries N\+O\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}{Style\+Effect\+::\+O\+U\+T\+L\+I\+NE}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}{Style\+Effect\+::\+S\+H\+A\+D\+OW}, 
+\hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}{Style\+Effect\+::\+G\+L\+OW}
+ \}\begin{DoxyCompactList}\small\item\em outline, shadow or glow \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a56b8607b7e816dfcf5a2eaeb56e664df}\label{classMyXMLVisitor_a56b8607b7e816dfcf5a2eaeb56e664df}} 
+{\bfseries My\+X\+M\+L\+Visitor} (Rich\+Text $\ast$rich\+Text)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a6861b2431540f01a29d3e4b4902127ca}\label{classMyXMLVisitor_a6861b2431540f01a29d3e4b4902127ca}} 
+\hyperlink{structColor3B}{Color3B} {\bfseries get\+Color} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a1402af12b242f2bb0fe1a3f32df3421f}\label{classMyXMLVisitor_a1402af12b242f2bb0fe1a3f32df3421f}} 
+float {\bfseries get\+Font\+Size} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a77d4316337823fec2e63774aeef40150}\label{classMyXMLVisitor_a77d4316337823fec2e63774aeef40150}} 
+std\+::string {\bfseries get\+Face} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a29f0af6573fa9b974c2232ea6bdc83d1}\label{classMyXMLVisitor_a29f0af6573fa9b974c2232ea6bdc83d1}} 
+std\+::string {\bfseries get\+U\+RL} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_acd0f683d0915d2d2329caeb15547c8fc}\label{classMyXMLVisitor_acd0f683d0915d2d2329caeb15547c8fc}} 
+bool {\bfseries get\+Bold} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a4c0a19b1cb58c2c97d86439dd22722a5}\label{classMyXMLVisitor_a4c0a19b1cb58c2c97d86439dd22722a5}} 
+bool {\bfseries get\+Italics} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aaf8db99a90b26f2f0860bb7b70f178c9}\label{classMyXMLVisitor_aaf8db99a90b26f2f0860bb7b70f178c9}} 
+bool {\bfseries get\+Underline} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_af5f729532b53b9c5ee03e544da2897a4}\label{classMyXMLVisitor_af5f729532b53b9c5ee03e544da2897a4}} 
+bool {\bfseries get\+Strikethrough} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a6cd53775cf6a131eb74f6d1f8563a518}\label{classMyXMLVisitor_a6cd53775cf6a131eb74f6d1f8563a518}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B}, int $>$ {\bfseries get\+Outline} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ae0f66872bf15928a1eb039b32b824dd1}\label{classMyXMLVisitor_ae0f66872bf15928a1eb039b32b824dd1}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B}, cocos2d\+::\+Size, int $>$ {\bfseries get\+Shadow} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a96360f8968e859b34347c01af6aae9e8}\label{classMyXMLVisitor_a96360f8968e859b34347c01af6aae9e8}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B} $>$ {\bfseries get\+Glow} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a92bce41265c7e499c9aa6ec57f82128a}\label{classMyXMLVisitor_a92bce41265c7e499c9aa6ec57f82128a}} 
+virtual bool \hyperlink{classMyXMLVisitor_a92bce41265c7e499c9aa6ec57f82128a}{Visit\+Enter} (const \hyperlink{classtinyxml2_1_1XMLElement}{tinyxml2\+::\+X\+M\+L\+Element} \&element, const \hyperlink{classtinyxml2_1_1XMLAttribute}{tinyxml2\+::\+X\+M\+L\+Attribute} $\ast$first\+Attribute)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ab9f66d59ebac21016fded2054d3fbe8b}\label{classMyXMLVisitor_ab9f66d59ebac21016fded2054d3fbe8b}} 
+virtual bool \hyperlink{classMyXMLVisitor_ab9f66d59ebac21016fded2054d3fbe8b}{Visit\+Exit} (const \hyperlink{classtinyxml2_1_1XMLElement}{tinyxml2\+::\+X\+M\+L\+Element} \&element)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ac7a2a4b0ec103641b379db7123f29a61}\label{classMyXMLVisitor_ac7a2a4b0ec103641b379db7123f29a61}} 
+virtual bool \hyperlink{classMyXMLVisitor_ac7a2a4b0ec103641b379db7123f29a61}{Visit} (const \hyperlink{classtinyxml2_1_1XMLText}{tinyxml2\+::\+X\+M\+L\+Text} \&text)
+\begin{DoxyCompactList}\small\item\em Visit a text node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ab94c7279ab48928d8356c9c77be5491e}\label{classMyXMLVisitor_ab94c7279ab48928d8356c9c77be5491e}} 
+void {\bfseries push\+Back\+Font\+Element} (const \hyperlink{structMyXMLVisitor_1_1Attributes}{Attributes} \&attribs)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a4c46162b27702c4e45af8fc959c34c79}\label{classMyXMLVisitor_a4c46162b27702c4e45af8fc959c34c79}} 
+void {\bfseries pop\+Back\+Font\+Element} ()
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aa87da874608c0b2ebff352521e7f5d91}\label{classMyXMLVisitor_aa87da874608c0b2ebff352521e7f5d91}} 
+void {\bfseries push\+Back\+Element} (Rich\+Element $\ast$element)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a56b8607b7e816dfcf5a2eaeb56e664df}\label{classMyXMLVisitor_a56b8607b7e816dfcf5a2eaeb56e664df}} 
+{\bfseries My\+X\+M\+L\+Visitor} (Rich\+Text $\ast$rich\+Text)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a6861b2431540f01a29d3e4b4902127ca}\label{classMyXMLVisitor_a6861b2431540f01a29d3e4b4902127ca}} 
+\hyperlink{structColor3B}{Color3B} {\bfseries get\+Color} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a1402af12b242f2bb0fe1a3f32df3421f}\label{classMyXMLVisitor_a1402af12b242f2bb0fe1a3f32df3421f}} 
+float {\bfseries get\+Font\+Size} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a77d4316337823fec2e63774aeef40150}\label{classMyXMLVisitor_a77d4316337823fec2e63774aeef40150}} 
+std\+::string {\bfseries get\+Face} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a29f0af6573fa9b974c2232ea6bdc83d1}\label{classMyXMLVisitor_a29f0af6573fa9b974c2232ea6bdc83d1}} 
+std\+::string {\bfseries get\+U\+RL} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_acd0f683d0915d2d2329caeb15547c8fc}\label{classMyXMLVisitor_acd0f683d0915d2d2329caeb15547c8fc}} 
+bool {\bfseries get\+Bold} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a4c0a19b1cb58c2c97d86439dd22722a5}\label{classMyXMLVisitor_a4c0a19b1cb58c2c97d86439dd22722a5}} 
+bool {\bfseries get\+Italics} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aaf8db99a90b26f2f0860bb7b70f178c9}\label{classMyXMLVisitor_aaf8db99a90b26f2f0860bb7b70f178c9}} 
+bool {\bfseries get\+Underline} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_af5f729532b53b9c5ee03e544da2897a4}\label{classMyXMLVisitor_af5f729532b53b9c5ee03e544da2897a4}} 
+bool {\bfseries get\+Strikethrough} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ada96771dc96f182370b43c2f14277ac6}\label{classMyXMLVisitor_ada96771dc96f182370b43c2f14277ac6}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B}, int $>$ {\bfseries get\+Outline} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a043097d28765aa05421969d50d54a851}\label{classMyXMLVisitor_a043097d28765aa05421969d50d54a851}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B}, cocos2d\+::\+Size, int $>$ {\bfseries get\+Shadow} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_adfc27cbb48d650bd7223ca84a9194f93}\label{classMyXMLVisitor_adfc27cbb48d650bd7223ca84a9194f93}} 
+std\+::tuple$<$ bool, \hyperlink{structColor3B}{Color3B} $>$ {\bfseries get\+Glow} () const
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aa8492d8607c8bc25569d88d009f8f3d3}\label{classMyXMLVisitor_aa8492d8607c8bc25569d88d009f8f3d3}} 
+void {\bfseries start\+Element} (void $\ast$ctx, const char $\ast$name, const char $\ast$$\ast$atts) override
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a6c39e5fb58b9f8c18d1481e7dff9de03}\label{classMyXMLVisitor_a6c39e5fb58b9f8c18d1481e7dff9de03}} 
+void {\bfseries end\+Element} (void $\ast$ctx, const char $\ast$name) override
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aa43cd9cb6dbab1ff783667f7317bc7e3}\label{classMyXMLVisitor_aa43cd9cb6dbab1ff783667f7317bc7e3}} 
+void {\bfseries text\+Handler} (void $\ast$ctx, const char $\ast$s, size\+\_\+t len) override
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ab94c7279ab48928d8356c9c77be5491e}\label{classMyXMLVisitor_ab94c7279ab48928d8356c9c77be5491e}} 
+void {\bfseries push\+Back\+Font\+Element} (const \hyperlink{structMyXMLVisitor_1_1Attributes}{Attributes} \&attribs)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a4c46162b27702c4e45af8fc959c34c79}\label{classMyXMLVisitor_a4c46162b27702c4e45af8fc959c34c79}} 
+void {\bfseries pop\+Back\+Font\+Element} ()
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_aa87da874608c0b2ebff352521e7f5d91}\label{classMyXMLVisitor_aa87da874608c0b2ebff352521e7f5d91}} 
+void {\bfseries push\+Back\+Element} (Rich\+Element $\ast$element)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ad3d8fa96f43f704dbad7d725bd254aac}\label{classMyXMLVisitor_ad3d8fa96f43f704dbad7d725bd254aac}} 
+static void {\bfseries set\+Tag\+Description} (const std\+::string \&tag, bool is\+Font\+Element, Rich\+Text\+::\+Visit\+Enter\+Handler handle\+Visit\+Enter)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_ad37329dd3b5d83895638038c911ecd02}\label{classMyXMLVisitor_ad37329dd3b5d83895638038c911ecd02}} 
+static void {\bfseries remove\+Tag\+Description} (const std\+::string \&tag)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a6ffc8855d5a4dcdd9d7360d7dbc5c302}\label{classMyXMLVisitor_a6ffc8855d5a4dcdd9d7360d7dbc5c302}} 
+static void {\bfseries set\+Tag\+Description} (const std\+::string \&tag, bool is\+Font\+Element, Rich\+Text\+::\+Visit\+Enter\+Handler handle\+Visit\+Enter)
+\item 
+\mbox{\Hypertarget{classMyXMLVisitor_a4e8ef95981219fa156dd09c7d1372a90}\label{classMyXMLVisitor_a4e8ef95981219fa156dd09c7d1372a90}} 
+static void {\bfseries remove\+Tag\+Description} (const std\+::string \&tag)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+parse a X\+ML. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}} 
+\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!Style\+Effect@{Style\+Effect}}
+\index{Style\+Effect@{Style\+Effect}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}
+\subsubsection{\texorpdfstring{Style\+Effect}{StyleEffect}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}{My\+X\+M\+L\+Visitor\+::\+Style\+Effect}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+outline, shadow or glow 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}} 
+O\+U\+T\+L\+I\+NE&outline effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}} 
+S\+H\+A\+D\+OW&shadow effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+OW@{G\+L\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!G\+L\+OW@{G\+L\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}} 
+G\+L\+OW&glow effect enabled  Limiting use to only when the \hyperlink{classLabel}{Label} created with true type font. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}} 
+O\+U\+T\+L\+I\+NE&outline effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}} 
+S\+H\+A\+D\+OW&shadow effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+OW@{G\+L\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!G\+L\+OW@{G\+L\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}} 
+G\+L\+OW&glow effect enabled  Limiting use to only when the \hyperlink{classLabel}{Label} created with true type font. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}} 
+\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!Style\+Effect@{Style\+Effect}}
+\index{Style\+Effect@{Style\+Effect}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}
+\subsubsection{\texorpdfstring{Style\+Effect}{StyleEffect}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2c}{My\+X\+M\+L\+Visitor\+::\+Style\+Effect}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+outline, shadow or glow 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}} 
+O\+U\+T\+L\+I\+NE&outline effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}} 
+S\+H\+A\+D\+OW&shadow effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+OW@{G\+L\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!G\+L\+OW@{G\+L\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}} 
+G\+L\+OW&glow effect enabled  Limiting use to only when the \hyperlink{classLabel}{Label} created with true type font. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!O\+U\+T\+L\+I\+NE@{O\+U\+T\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca6a656275b77dd69c1cc1f49c58859151}} 
+O\+U\+T\+L\+I\+NE&outline effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+H\+A\+D\+OW@{S\+H\+A\+D\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2ca8160fba05a5a291372a94bc22b55f62b}} 
+S\+H\+A\+D\+OW&shadow effect enabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+OW@{G\+L\+OW}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!G\+L\+OW@{G\+L\+OW}}}\mbox{\Hypertarget{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}\label{classMyXMLVisitor_a7f84d816c0b481e9cb35884996af6c2cac1f6db55d4aa7ba3eda97848763b6489}} 
+G\+L\+OW&glow effect enabled  Limiting use to only when the \hyperlink{classLabel}{Label} created with true type font. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}} 
+\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!Style\+Line@{Style\+Line}}
+\index{Style\+Line@{Style\+Line}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}
+\subsubsection{\texorpdfstring{Style\+Line}{StyleLine}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}{My\+X\+M\+L\+Visitor\+::\+Style\+Line}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+underline or strikethrough 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}} 
+U\+N\+D\+E\+R\+L\+I\+NE&underline \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}} 
+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH&a typographical presentation of words with a horizontal line through their center \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}} 
+U\+N\+D\+E\+R\+L\+I\+NE&underline \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}} 
+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH&a typographical presentation of words with a horizontal line through their center \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}} 
+\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!Style\+Line@{Style\+Line}}
+\index{Style\+Line@{Style\+Line}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}
+\subsubsection{\texorpdfstring{Style\+Line}{StyleLine}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7}{My\+X\+M\+L\+Visitor\+::\+Style\+Line}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+underline or strikethrough 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}} 
+U\+N\+D\+E\+R\+L\+I\+NE&underline \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}} 
+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH&a typographical presentation of words with a horizontal line through their center \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!U\+N\+D\+E\+R\+L\+I\+NE@{U\+N\+D\+E\+R\+L\+I\+NE}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7a0086c73c90c261db630b4dc8aea09bcf}} 
+U\+N\+D\+E\+R\+L\+I\+NE&underline \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}!My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}}\index{My\+X\+M\+L\+Visitor@{My\+X\+M\+L\+Visitor}!S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH@{S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH}}}\mbox{\Hypertarget{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}\label{classMyXMLVisitor_a75a0b4e2723f798f35a0941ddba7c5a7aad166989fa2b7da7d238b3e7105c64f8}} 
+S\+T\+R\+I\+K\+E\+T\+H\+R\+O\+U\+GH&a typographical presentation of words with a horizontal line through their center \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Rich\+Text.\+cpp\end{DoxyCompactItemize}

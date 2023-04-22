@@ -1,0 +1,54 @@
+\hypertarget{structrcHeightfield}{}\section{rc\+Heightfield Struct Reference}
+\label{structrcHeightfield}\index{rc\+Heightfield@{rc\+Heightfield}}
+
+
+{\ttfamily \#include $<$Recast.\+h$>$}
+
+
+
+Collaboration diagram for rc\+Heightfield\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{structrcHeightfield__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrcHeightfield_a9dd6e386c167f1537e3c7638f6b9a752}\label{structrcHeightfield_a9dd6e386c167f1537e3c7638f6b9a752}} 
+int \hyperlink{structrcHeightfield_a9dd6e386c167f1537e3c7638f6b9a752}{width}
+\begin{DoxyCompactList}\small\item\em The width of the heightfield. (Along the x-\/axis in cell units.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_a568ceeea7acb4ddf67dd78ec4fee7672}\label{structrcHeightfield_a568ceeea7acb4ddf67dd78ec4fee7672}} 
+int \hyperlink{structrcHeightfield_a568ceeea7acb4ddf67dd78ec4fee7672}{height}
+\begin{DoxyCompactList}\small\item\em The height of the heightfield. (Along the z-\/axis in cell units.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_aa870f9af5426e1833fadda77a1d051f3}\label{structrcHeightfield_aa870f9af5426e1833fadda77a1d051f3}} 
+float \hyperlink{structrcHeightfield_aa870f9af5426e1833fadda77a1d051f3}{bmin} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The minimum bounds in world space. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_a9e7ddf31b6833deabed1c9ad1aa1ae95}\label{structrcHeightfield_a9e7ddf31b6833deabed1c9ad1aa1ae95}} 
+float \hyperlink{structrcHeightfield_a9e7ddf31b6833deabed1c9ad1aa1ae95}{bmax} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The maximum bounds in world space. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_a3f28962585b2f726d809b1a86b925edb}\label{structrcHeightfield_a3f28962585b2f726d809b1a86b925edb}} 
+float \hyperlink{structrcHeightfield_a3f28962585b2f726d809b1a86b925edb}{cs}
+\begin{DoxyCompactList}\small\item\em The size of each cell. (On the xz-\/plane.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_a23488349cb552d5410e29d089234effc}\label{structrcHeightfield_a23488349cb552d5410e29d089234effc}} 
+float \hyperlink{structrcHeightfield_a23488349cb552d5410e29d089234effc}{ch}
+\begin{DoxyCompactList}\small\item\em The height of each cell. (The minimum increment along the y-\/axis.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_aefbfec1f80ef61023994371f90e317ee}\label{structrcHeightfield_aefbfec1f80ef61023994371f90e317ee}} 
+\hyperlink{structrcSpan}{rc\+Span} $\ast$$\ast$ \hyperlink{structrcHeightfield_aefbfec1f80ef61023994371f90e317ee}{spans}
+\begin{DoxyCompactList}\small\item\em Heightfield of spans (width$\ast$height). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_a2c3d7f8d23f2681bb60797ab5465f83d}\label{structrcHeightfield_a2c3d7f8d23f2681bb60797ab5465f83d}} 
+\hyperlink{structrcSpanPool}{rc\+Span\+Pool} $\ast$ \hyperlink{structrcHeightfield_a2c3d7f8d23f2681bb60797ab5465f83d}{pools}
+\begin{DoxyCompactList}\small\item\em Linked \hyperlink{protocollist-p}{list} of span pools. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcHeightfield_aa4bb2a65d28dc333ba410616801ab4cb}\label{structrcHeightfield_aa4bb2a65d28dc333ba410616801ab4cb}} 
+\hyperlink{structrcSpan}{rc\+Span} $\ast$ \hyperlink{structrcHeightfield_aa4bb2a65d28dc333ba410616801ab4cb}{freelist}
+\begin{DoxyCompactList}\small\item\em The next free span. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dynamic heightfield representing obstructed space. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast.\+h\end{DoxyCompactItemize}

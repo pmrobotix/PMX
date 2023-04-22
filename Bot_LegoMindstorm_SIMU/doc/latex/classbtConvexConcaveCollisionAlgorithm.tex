@@ -1,0 +1,81 @@
+\hypertarget{classbtConvexConcaveCollisionAlgorithm}{}\section{bt\+Convex\+Concave\+Collision\+Algorithm Class Reference}
+\label{classbtConvexConcaveCollisionAlgorithm}\index{bt\+Convex\+Concave\+Collision\+Algorithm@{bt\+Convex\+Concave\+Collision\+Algorithm}}
+
+
+\hyperlink{classbtConvexConcaveCollisionAlgorithm}{bt\+Convex\+Concave\+Collision\+Algorithm} supports collision between convex shapes and (concave) trianges meshes.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Convex\+Concave\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Convex\+Concave\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classbtConvexConcaveCollisionAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Convex\+Concave\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classbtConvexConcaveCollisionAlgorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtConvexConcaveCollisionAlgorithm_1_1CreateFunc}{Create\+Func}
+\item 
+struct \hyperlink{structbtConvexConcaveCollisionAlgorithm_1_1SwappedCreateFunc}{Swapped\+Create\+Func}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a163b3a3ea828565ea58e6acfd7434505}\label{classbtConvexConcaveCollisionAlgorithm_a163b3a3ea828565ea58e6acfd7434505}} 
+{\bfseries bt\+Convex\+Concave\+Collision\+Algorithm} (const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_af9942ac6cc9024779ec2687c092d2d17}\label{classbtConvexConcaveCollisionAlgorithm_af9942ac6cc9024779ec2687c092d2d17}} 
+virtual void {\bfseries process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a6d6690180cedd5e41c5ce632a2fb2350}\label{classbtConvexConcaveCollisionAlgorithm_a6d6690180cedd5e41c5ce632a2fb2350}} 
+bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_adc2ee2058d09d696b42e64f1ab03ef93}\label{classbtConvexConcaveCollisionAlgorithm_adc2ee2058d09d696b42e64f1ab03ef93}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a73fa1c9ce188094312b3372e1948dcf5}\label{classbtConvexConcaveCollisionAlgorithm_a73fa1c9ce188094312b3372e1948dcf5}} 
+void {\bfseries clear\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a163b3a3ea828565ea58e6acfd7434505}\label{classbtConvexConcaveCollisionAlgorithm_a163b3a3ea828565ea58e6acfd7434505}} 
+{\bfseries bt\+Convex\+Concave\+Collision\+Algorithm} (const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_abd99ff6be221a0e9df9360dd6c89d976}\label{classbtConvexConcaveCollisionAlgorithm_abd99ff6be221a0e9df9360dd6c89d976}} 
+virtual void {\bfseries process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a6d6690180cedd5e41c5ce632a2fb2350}\label{classbtConvexConcaveCollisionAlgorithm_a6d6690180cedd5e41c5ce632a2fb2350}} 
+bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a7778a7ba3b7a990ce722ed43a71d0025}\label{classbtConvexConcaveCollisionAlgorithm_a7778a7ba3b7a990ce722ed43a71d0025}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\item 
+\mbox{\Hypertarget{classbtConvexConcaveCollisionAlgorithm_a73fa1c9ce188094312b3372e1948dcf5}\label{classbtConvexConcaveCollisionAlgorithm_a73fa1c9ce188094312b3372e1948dcf5}} 
+void {\bfseries clear\+Cache} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtConvexConcaveCollisionAlgorithm}{bt\+Convex\+Concave\+Collision\+Algorithm} supports collision between convex shapes and (concave) trianges meshes. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Convex\+Concave\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Convex\+Concave\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

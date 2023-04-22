@@ -1,0 +1,59 @@
+\hypertarget{classFileStream}{}\section{File\+Stream Class Reference}
+\label{classFileStream}\index{File\+Stream@{File\+Stream}}
+
+
+(Deprecated) Wrapper of C file stream for input or output.  
+
+
+
+
+{\ttfamily \#include $<$filestream.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileStream_a400811e8f4424670049662a79ea29a74}\label{classFileStream_a400811e8f4424670049662a79ea29a74}} 
+typedef char \hyperlink{classFileStream_a400811e8f4424670049662a79ea29a74}{Ch}
+\begin{DoxyCompactList}\small\item\em Character type. Only support char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileStream_a6fde58817cd007440c8b9e68e5affb97}\label{classFileStream_a6fde58817cd007440c8b9e68e5affb97}} 
+{\bfseries File\+Stream} (std\+::\+F\+I\+LE $\ast$fp)
+\item 
+\mbox{\Hypertarget{classFileStream_a4a1313420f8e2a70d64aea93f74fe6c7}\label{classFileStream_a4a1313420f8e2a70d64aea93f74fe6c7}} 
+char {\bfseries Peek} () const
+\item 
+\mbox{\Hypertarget{classFileStream_a73acfe1397558b60afcee732e63a9087}\label{classFileStream_a73acfe1397558b60afcee732e63a9087}} 
+char {\bfseries Take} ()
+\item 
+\mbox{\Hypertarget{classFileStream_a5ce195d8a2bba3f3e3fcb8f14a66176c}\label{classFileStream_a5ce195d8a2bba3f3e3fcb8f14a66176c}} 
+size\+\_\+t {\bfseries Tell} () const
+\item 
+\mbox{\Hypertarget{classFileStream_ae8af9a5c2a5982c6dd19dde23a6d455e}\label{classFileStream_ae8af9a5c2a5982c6dd19dde23a6d455e}} 
+void {\bfseries Put} (char c)
+\item 
+\mbox{\Hypertarget{classFileStream_aa1258c8c83aec85987ab5866f222bafd}\label{classFileStream_aa1258c8c83aec85987ab5866f222bafd}} 
+void {\bfseries Flush} ()
+\item 
+\mbox{\Hypertarget{classFileStream_a0d8ed908ea40a634fb2f6b510d9d115e}\label{classFileStream_a0d8ed908ea40a634fb2f6b510d9d115e}} 
+char $\ast$ {\bfseries Put\+Begin} ()
+\item 
+\mbox{\Hypertarget{classFileStream_a627c5916b0b977069baf4f1e76f43e45}\label{classFileStream_a627c5916b0b977069baf4f1e76f43e45}} 
+size\+\_\+t {\bfseries Put\+End} (char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+(Deprecated) Wrapper of C file stream for input or output. 
+
+This simple wrapper does not check the validity of the stream. \begin{DoxyNote}{Note}
+implements Stream concept 
+
+deprecated\+: This was only for basic testing in version 0.\+1, it is found that the performance is very low by using fgetc(). Use \hyperlink{classFileReadStream}{File\+Read\+Stream} instead. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/json/filestream.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\hypertarget{classAAutomateState}{}\section{A\+Automate\+State Class Reference}
+\label{classAAutomateState}\index{A\+Automate\+State@{A\+Automate\+State}}
+
+
+Définit les méthodes communes à tous les états.  
+
+
+
+
+{\ttfamily \#include $<$A\+Automate\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for A\+Automate\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAAutomateState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+Automate\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classAAutomateState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAAutomateState_adaca6ae61aacda9bb75b3acee9d951d1}\label{classAAutomateState_adaca6ae61aacda9bb75b3acee9d951d1}} 
+\hyperlink{classAAutomateState_adaca6ae61aacda9bb75b3acee9d951d1}{A\+Automate\+State} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAutomateState_a3116f6449e6eb43d2610bfa049d70f00}\label{classAAutomateState_a3116f6449e6eb43d2610bfa049d70f00}} 
+virtual std\+::string {\bfseries name} ()
+\item 
+\mbox{\Hypertarget{classAAutomateState_ad69fc5adb9a6f0ccbbebea324e55c532}\label{classAAutomateState_ad69fc5adb9a6f0ccbbebea324e55c532}} 
+virtual \hyperlink{classAAutomateState_ad69fc5adb9a6f0ccbbebea324e55c532}{$\sim$\+A\+Automate\+State} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classAAutomateState_a2f141db7bda71b605195c3516b0dac51}{add\+State} (const std\+::string \&name, \hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Ajoute une transition possible à cet état. \end{DoxyCompactList}\item 
+\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$ \hyperlink{classAAutomateState_a98966c27660941825dba0da7130a957f}{get\+State} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}état associé à une transition spécifique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Définit les méthodes communes à tous les états. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAAutomateState_a2f141db7bda71b605195c3516b0dac51}\label{classAAutomateState_a2f141db7bda71b605195c3516b0dac51}} 
+\index{A\+Automate\+State@{A\+Automate\+State}!add\+State@{add\+State}}
+\index{add\+State@{add\+State}!A\+Automate\+State@{A\+Automate\+State}}
+\subsubsection{\texorpdfstring{add\+State()}{addState()}}
+{\footnotesize\ttfamily void A\+Automate\+State\+::add\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Ajoute une transition possible à cet état. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la transition \\
+\hline
+{\em state} & Etat associé à la transition \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classIAutomateState_a2d088c807e6d7b30b93511096a34af2a}{I\+Automate\+State}.
+
+\mbox{\Hypertarget{classAAutomateState_a98966c27660941825dba0da7130a957f}\label{classAAutomateState_a98966c27660941825dba0da7130a957f}} 
+\index{A\+Automate\+State@{A\+Automate\+State}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!A\+Automate\+State@{A\+Automate\+State}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily \hyperlink{classIAutomateState}{I\+Automate\+State}$\ast$ A\+Automate\+State\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retourne l\textquotesingle{}état associé à une transition spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la transition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état associé à la transition ou {\ttfamily N\+U\+LL}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIAutomateState_a228fe704fd235a83cae36e5dd197c473}{I\+Automate\+State}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+State/\hyperlink{AAutomateState_8hpp}{A\+Automate\+State.\+hpp}\end{DoxyCompactItemize}

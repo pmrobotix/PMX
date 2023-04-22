@@ -1,0 +1,1215 @@
+\hypertarget{classMotionStreak3D}{}\section{Motion\+Streak3D Class Reference}
+\label{classMotionStreak3D}\index{Motion\+Streak3D@{Motion\+Streak3D}}
+
+
+Creates a trailing path. It is created from a line segment sweeping along the path.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Motion\+Streak3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Motion\+Streak3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classMotionStreak3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Motion\+Streak3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMotionStreak3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}{tint\+With\+Color} (const \hyperlink{structColor3B}{Color3B} \&colors)
+\item 
+void \hyperlink{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}{reset} ()
+\item 
+float \hyperlink{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}{get\+Stroke} () const
+\item 
+void \hyperlink{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}{set\+Stroke} (float stroke)
+\item 
+bool \hyperlink{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}{is\+Starting\+Position\+Initialized} () const
+\item 
+void \hyperlink{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}{set\+Starting\+Position\+Initialized} (bool b\+Starting\+Position\+Initialized)
+\item 
+virtual void \hyperlink{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}{set\+Position} (const \hyperlink{classVec2}{Vec2} \&position) override
+\begin{DoxyCompactList}\small\item\em position setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMotionStreak3D_ada67cecb8a81f0f48615d24eb9fc2373}{set\+Position} (float x, float y) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a0a0d2f5f302ecaecb2e6652e5863f28f}{set\+Position3D} (const \hyperlink{classVec3}{Vec3} \&position) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_abe4bc651d6ce068c366edc18cb0aaead}{set\+Rotation3D} (const \hyperlink{classVec3}{Vec3} \&rotation) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_ab3b762bdfe6cbda5cda6b69ca8d31845}{set\+Rotation\+Quat} (const \hyperlink{classQuaternion}{Quaternion} \&quat) override
+\item 
+virtual const \hyperlink{classVec2}{Vec2} \& \hyperlink{classMotionStreak3D_a5c9d70a707ecdaf49d8793ae6e4bce7e}{get\+Position} () const override
+\begin{DoxyCompactList}\small\item\em position getter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMotionStreak3D_a16c2911514702c9d808d1afad8d0ece3}{get\+Position} (float $\ast$x, float $\ast$y) const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a9c363f74a20d8b5e83357343ecfad7d4}{set\+PositionX} (float x) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_afb3de2f3e93486b5be3877d081159d57}{set\+PositionY} (float y) override
+\item 
+virtual float \hyperlink{classMotionStreak3D_a2dcc5baf8956d2fef986b564bc21ff5c}{get\+PositionX} (void) const override
+\item 
+virtual float \hyperlink{classMotionStreak3D_aad2e9762fabf564601865096174a9b54}{get\+PositionY} (void) const override
+\item 
+virtual \hyperlink{classVec3}{Vec3} \hyperlink{classMotionStreak3D_a60ec5113c30e2b81c15b43595a98ce63}{get\+Position3D} () const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a108b68a6e6a37a5bc307761c1d14fdaa}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a195dbdebb5c5d55d3d09c4e5dc716a91}{update} (float delta) override
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a07b036fae5213cb44b3a6cb7b076fafe}\label{classMotionStreak3D_a07b036fae5213cb44b3a6cb7b076fafe}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_ae1e6cb4046eeba7451e6ac03fa8e3570}\label{classMotionStreak3D_ae1e6cb4046eeba7451e6ac03fa8e3570}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a37b0b1eb59733188836e76dfed2ab181}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classMotionStreak3D_a74db7796ac204990d57ffb203fc7cfd1}{get\+Blend\+Func} () const override
+\item 
+virtual G\+Lubyte \hyperlink{classMotionStreak3D_ad801e665463b5ed5b60a2d01468ddb89}{get\+Opacity} () const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_aebd12e84f982bb11ab3cc3c92e769f73}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_ac4ef49b3087c63f5cea40efe91d4f271}{set\+Opacity\+Modify\+R\+GB} (bool value) override
+\item 
+virtual bool \hyperlink{classMotionStreak3D_a6b513fcdb7b462e2a28bb67e3dd35836}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+void \hyperlink{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}{set\+Sweep\+Axis} (const \hyperlink{classVec3}{Vec3} \&sweep\+Axis)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}{get\+Sweep\+Axis} () const
+\item 
+bool \hyperlink{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}{init\+With\+Fade} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, const std\+::string \&path)
+\item 
+bool \hyperlink{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}{init\+With\+Fade} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+void \hyperlink{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}{tint\+With\+Color} (const \hyperlink{structColor3B}{Color3B} \&colors)
+\item 
+void \hyperlink{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}{reset} ()
+\item 
+float \hyperlink{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}{get\+Stroke} () const
+\item 
+void \hyperlink{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}{set\+Stroke} (float stroke)
+\item 
+bool \hyperlink{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}{is\+Starting\+Position\+Initialized} () const
+\item 
+void \hyperlink{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}{set\+Starting\+Position\+Initialized} (bool b\+Starting\+Position\+Initialized)
+\item 
+virtual void \hyperlink{classMotionStreak3D_a070710f82d947115207e9bfc0eeb4d30}{set\+Position} (const \hyperlink{classVec2}{Vec2} \&position) override
+\begin{DoxyCompactList}\small\item\em position setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMotionStreak3D_af19878b923b0caae1704f93a9ee21699}{set\+Position} (float x, float y) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a34fac2c60502d074f8e40e99d01d9180}{set\+Position3D} (const \hyperlink{classVec3}{Vec3} \&position) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a6ef719a2412711e81c3bfc40ce53c3e2}{set\+Rotation3D} (const \hyperlink{classVec3}{Vec3} \&rotation) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a7e9e94bce7204f28d6b8dff196d163d9}{set\+Rotation\+Quat} (const \hyperlink{classQuaternion}{Quaternion} \&quat) override
+\item 
+virtual const \hyperlink{classVec2}{Vec2} \& \hyperlink{classMotionStreak3D_a17b236b952ac5670676b2b50a0fab421}{get\+Position} () const override
+\begin{DoxyCompactList}\small\item\em position getter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMotionStreak3D_aca30ce7817540e8cf038cf11adc58154}{get\+Position} (float $\ast$x, float $\ast$y) const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a1b723a27b44aa12ced168fe18ca920de}{set\+PositionX} (float x) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a8f63bcfa700cf9d67907d9e6f31bace6}{set\+PositionY} (float y) override
+\item 
+virtual float \hyperlink{classMotionStreak3D_a1cbae92f092d3fb20371a676de053d07}{get\+PositionX} (void) const override
+\item 
+virtual float \hyperlink{classMotionStreak3D_a9880e5a12cec812ba36804232e73bd7b}{get\+PositionY} (void) const override
+\item 
+virtual \hyperlink{classVec3}{Vec3} \hyperlink{classMotionStreak3D_ab2c89d13a16dc7ee2e8f2408a1f5afbb}{get\+Position3D} () const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a3b13ccd501ac16227a117870695f34f1}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a3d336bcb41bd598ba73389378b278382}{update} (float delta) override
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a8a93b8b940b06d118b4aec02e8cdca24}\label{classMotionStreak3D_a8a93b8b940b06d118b4aec02e8cdca24}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a2e996a9c0ba2badb8aa9a66db579d3c7}\label{classMotionStreak3D_a2e996a9c0ba2badb8aa9a66db579d3c7}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_a80ee5d8b98847fff388cff81997818d0}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classMotionStreak3D_a9d57c6213ec8145cd4e3ac9bb9c65ba0}{get\+Blend\+Func} () const override
+\item 
+virtual G\+Lubyte \hyperlink{classMotionStreak3D_aae52587b7c2cb5833f133b40add6a860}{get\+Opacity} () const override
+\item 
+virtual void \hyperlink{classMotionStreak3D_aaf983644b09cefdf815a650c7cfd426a}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual void \hyperlink{classMotionStreak3D_ad201e04b841b5fb15fea56bfd6b9cb03}{set\+Opacity\+Modify\+R\+GB} (bool value) override
+\item 
+virtual bool \hyperlink{classMotionStreak3D_a5de4e2e686f06acfecf86fc7b7caed6e}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+void \hyperlink{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}{set\+Sweep\+Axis} (const \hyperlink{classVec3}{Vec3} \&sweep\+Axis)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}{get\+Sweep\+Axis} () const
+\item 
+bool \hyperlink{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}{init\+With\+Fade} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, const std\+::string \&path)
+\item 
+bool \hyperlink{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}{init\+With\+Fade} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ \hyperlink{classMotionStreak3D_a2f965f35588cdb7611269b6e0d0f44a2}{create} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, const std\+::string \&path)
+\item 
+static \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ \hyperlink{classMotionStreak3D_ab0660c5cf12f18aa1828bef2dbb9fd93}{create} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+static \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ \hyperlink{classMotionStreak3D_a89cc5717ddfbde59d8ed94db36feb09c}{create} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, const std\+::string \&path)
+\item 
+static \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ \hyperlink{classMotionStreak3D_a7b271f557b9f7fabda648254f8dce80c}{create} (float fade, float min\+Seg, float stroke, const \hyperlink{structColor3B}{Color3B} \&color, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a16fe484ac30c063e0421c26bfb4e1eaf}\label{classMotionStreak3D_a16fe484ac30c063e0421c26bfb4e1eaf}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classMotionStreak3D}{Motion\+Streak3D}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_aab5bfc20c34a01150cc882bf5193531f}\label{classMotionStreak3D_aab5bfc20c34a01150cc882bf5193531f}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_aab5bfc20c34a01150cc882bf5193531f}\label{classMotionStreak3D_aab5bfc20c34a01150cc882bf5193531f}} 
+void {\bfseries on\+Draw} (const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a5fd10f72740ee7f3302cb5ab5ca56637}\label{classMotionStreak3D_a5fd10f72740ee7f3302cb5ab5ca56637}} 
+bool {\bfseries \+\_\+starting\+Position\+Initialized}
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classMotionStreak3D_abd22c4ad88b80e8c7b9ae52366e6c662}{\+\_\+texture}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_af0532dafe0b3537e6c5a5962f91c9823}\label{classMotionStreak3D_af0532dafe0b3537e6c5a5962f91c9823}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend\+Func}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_af9a97c5fee46dda6832e6459b588b537}\label{classMotionStreak3D_af9a97c5fee46dda6832e6459b588b537}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+positionR}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a2e74de474aa185c36da6853552e2cadd}\label{classMotionStreak3D_a2e74de474aa185c36da6853552e2cadd}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+position\+R2D}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_accbef08f1f2395fd5a99e0eeda081bef}\label{classMotionStreak3D_accbef08f1f2395fd5a99e0eeda081bef}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+sweep\+Axis}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_acd5b2455d6bcf6f2b9f456eac93cf382}\label{classMotionStreak3D_acd5b2455d6bcf6f2b9f456eac93cf382}} 
+float {\bfseries \+\_\+stroke}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a510fdc2b34ee681223666ee243cf8115}\label{classMotionStreak3D_a510fdc2b34ee681223666ee243cf8115}} 
+float {\bfseries \+\_\+fade\+Delta}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_adca87762cceda5d61790dce32a6a50f3}\label{classMotionStreak3D_adca87762cceda5d61790dce32a6a50f3}} 
+float {\bfseries \+\_\+min\+Seg}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a17588643b808ad800875510bfd90ccd8}\label{classMotionStreak3D_a17588643b808ad800875510bfd90ccd8}} 
+unsigned int {\bfseries \+\_\+max\+Points}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a69bcade7c7ab6add629d009c6100c7d4}\label{classMotionStreak3D_a69bcade7c7ab6add629d009c6100c7d4}} 
+unsigned int {\bfseries \+\_\+nu\+Points}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a762e1bfe2a3ea5462580ec49368328e6}\label{classMotionStreak3D_a762e1bfe2a3ea5462580ec49368328e6}} 
+unsigned int {\bfseries \+\_\+previous\+Nu\+Points}
+\item 
+\hyperlink{classVec3}{Vec3} $\ast$ \hyperlink{classMotionStreak3D_ad06a526af1362cc3f9c4e4da850e4b9d}{\+\_\+point\+Vertexes}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a8d1016c40f905e435990e85939a49ecf}\label{classMotionStreak3D_a8d1016c40f905e435990e85939a49ecf}} 
+float $\ast$ {\bfseries \+\_\+point\+State}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_ab7fe027f690c1366fe93442f833e9b32}\label{classMotionStreak3D_ab7fe027f690c1366fe93442f833e9b32}} 
+\hyperlink{classVec3}{Vec3} $\ast$ {\bfseries \+\_\+vertices}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a3f75f586253cbfaba598ee64139a69a9}\label{classMotionStreak3D_a3f75f586253cbfaba598ee64139a69a9}} 
+G\+Lubyte $\ast$ {\bfseries \+\_\+color\+Pointer}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a13de4dcab53bf3f6450ccc8dcb7fa51c}\label{classMotionStreak3D_a13de4dcab53bf3f6450ccc8dcb7fa51c}} 
+\hyperlink{structTex2F}{Tex2F} $\ast$ {\bfseries \+\_\+tex\+Coords}
+\item 
+\mbox{\Hypertarget{classMotionStreak3D_a31091b957344f15244bfa2e9fbffc013}\label{classMotionStreak3D_a31091b957344f15244bfa2e9fbffc013}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+custom\+Command}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Creates a trailing path. It is created from a line segment sweeping along the path. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMotionStreak3D_a2f965f35588cdb7611269b6e0d0f44a2}\label{classMotionStreak3D_a2f965f35588cdb7611269b6e0d0f44a2}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!create@{create}}
+\index{create@{create}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ Motion\+Streak3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates and initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color, texture filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fade} & The fade time, in seconds. \\
+\hline
+{\em min\+Seg} & The minimum segments. \\
+\hline
+{\em stroke} & The width of stroke. \\
+\hline
+{\em color} & The color of stroke. \\
+\hline
+{\em path} & The texture file name of stoke. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMotionStreak3D}{Motion\+Streak3D} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_a89cc5717ddfbde59d8ed94db36feb09c}\label{classMotionStreak3D_a89cc5717ddfbde59d8ed94db36feb09c}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!create@{create}}
+\index{create@{create}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classMotionStreak3D}{Motion\+Streak3D}$\ast$ Motion\+Streak3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates and initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color, texture filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fade} & The fade time, in seconds. \\
+\hline
+{\em min\+Seg} & The minimum segments. \\
+\hline
+{\em stroke} & The width of stroke. \\
+\hline
+{\em color} & The color of stroke. \\
+\hline
+{\em path} & The texture file name of stoke. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMotionStreak3D}{Motion\+Streak3D} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_ab0660c5cf12f18aa1828bef2dbb9fd93}\label{classMotionStreak3D_ab0660c5cf12f18aa1828bef2dbb9fd93}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!create@{create}}
+\index{create@{create}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classMotionStreak3D}{Motion\+Streak3D} $\ast$ Motion\+Streak3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates and initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color, texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fade} & The fade time, in seconds. \\
+\hline
+{\em min\+Seg} & The minimum segments. \\
+\hline
+{\em stroke} & The width of stroke. \\
+\hline
+{\em color} & The color of stroke. \\
+\hline
+{\em texture} & The texture name of stoke. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMotionStreak3D}{Motion\+Streak3D} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_a7b271f557b9f7fabda648254f8dce80c}\label{classMotionStreak3D_a7b271f557b9f7fabda648254f8dce80c}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!create@{create}}
+\index{create@{create}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classMotionStreak3D}{Motion\+Streak3D}$\ast$ Motion\+Streak3\+D\+::create (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates and initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color, texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fade} & The fade time, in seconds. \\
+\hline
+{\em min\+Seg} & The minimum segments. \\
+\hline
+{\em stroke} & The width of stroke. \\
+\hline
+{\em color} & The color of stroke. \\
+\hline
+{\em texture} & The texture name of stoke. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classMotionStreak3D}{Motion\+Streak3D} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_a108b68a6e6a37a5bc307761c1d14fdaa}\label{classMotionStreak3D_a108b68a6e6a37a5bc307761c1d14fdaa}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!draw@{draw}}
+\index{draw@{draw}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a3b13ccd501ac16227a117870695f34f1}\label{classMotionStreak3D_a3b13ccd501ac16227a117870695f34f1}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!draw@{draw}}
+\index{draw@{draw}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a74db7796ac204990d57ffb203fc7cfd1}\label{classMotionStreak3D_a74db7796ac204990d57ffb203fc7cfd1}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func} \& Motion\+Streak3\+D\+::get\+Blend\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classMotionStreak3D_a9d57c6213ec8145cd4e3ac9bb9c65ba0}\label{classMotionStreak3D_a9d57c6213ec8145cd4e3ac9bb9c65ba0}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structBlendFunc}{Blend\+Func}\& Motion\+Streak3\+D\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classMotionStreak3D_ad801e665463b5ed5b60a2d01468ddb89}\label{classMotionStreak3D_ad801e665463b5ed5b60a2d01468ddb89}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Opacity@{get\+Opacity}}
+\index{get\+Opacity@{get\+Opacity}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Opacity()}{getOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lubyte Motion\+Streak3\+D\+::get\+Opacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the node\textquotesingle{}s opacity. \begin{DoxyReturn}{Returns}
+A G\+Lubyte value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab999cce3763ea09e74014245c770ea97}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_aae52587b7c2cb5833f133b40add6a860}\label{classMotionStreak3D_aae52587b7c2cb5833f133b40add6a860}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Opacity@{get\+Opacity}}
+\index{get\+Opacity@{get\+Opacity}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Opacity()}{getOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual G\+Lubyte Motion\+Streak3\+D\+::get\+Opacity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the node\textquotesingle{}s opacity. \begin{DoxyReturn}{Returns}
+A G\+Lubyte value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab999cce3763ea09e74014245c770ea97}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a5c9d70a707ecdaf49d8793ae6e4bce7e}\label{classMotionStreak3D_a5c9d70a707ecdaf49d8793ae6e4bce7e}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \hyperlink{classVec2}{Vec2} \& Motion\+Streak3\+D\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+position getter 
+
+Gets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}{set\+Position(const Vec2\&)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The position (x,y) of the node in Open\+GL coordinates. 
+\begin{DoxyCode}
+In js and lua \textcolor{keywordflow}{return} value is table which contains x,y.
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a1c78c6feace91b27b6cbb12ee16e8eb0}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a17b236b952ac5670676b2b50a0fab421}\label{classMotionStreak3D_a17b236b952ac5670676b2b50a0fab421}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classVec2}{Vec2}\& Motion\+Streak3\+D\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+position getter 
+
+Gets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}{set\+Position(const Vec2\&)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The position (x,y) of the node in Open\+GL coordinates. 
+\begin{DoxyCode}
+In js and lua \textcolor{keywordflow}{return} value is table which contains x,y.
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a1c78c6feace91b27b6cbb12ee16e8eb0}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a16c2911514702c9d808d1afad8d0ece3}\label{classMotionStreak3D_a16c2911514702c9d808d1afad8d0ece3}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::get\+Position (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float $\ast$}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets position in a more efficient way, returns two number instead of a \hyperlink{classVec2}{Vec2} object.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classMotionStreak3D_ada67cecb8a81f0f48615d24eb9fc2373}{set\+Position(float, float)}} In js,out value not return.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & To receive x coordinate for position. \\
+\hline
+{\em y} & To receive y coordinate for position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a216f30e9a2dda896b2ffff1885b33a98}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_aca30ce7817540e8cf038cf11adc58154}\label{classMotionStreak3D_aca30ce7817540e8cf038cf11adc58154}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::get\+Position (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float $\ast$}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets position in a more efficient way, returns two number instead of a \hyperlink{classVec2}{Vec2} object.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classMotionStreak3D_ada67cecb8a81f0f48615d24eb9fc2373}{set\+Position(float, float)}} In js,out value not return.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & To receive x coordinate for position. \\
+\hline
+{\em y} & To receive y coordinate for position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a216f30e9a2dda896b2ffff1885b33a98}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a60ec5113c30e2b81c15b43595a98ce63}\label{classMotionStreak3D_a60ec5113c30e2b81c15b43595a98ce63}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position3D@{get\+Position3D}}
+\index{get\+Position3D@{get\+Position3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position3\+D()}{getPosition3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Motion\+Streak3\+D\+::get\+Position3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the position (X,Y,Z) in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a8617dd2eb9af75a66ebaff0d3c99285e}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_ab2c89d13a16dc7ee2e8f2408a1f5afbb}\label{classMotionStreak3D_ab2c89d13a16dc7ee2e8f2408a1f5afbb}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Position3D@{get\+Position3D}}
+\index{get\+Position3D@{get\+Position3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position3\+D()}{getPosition3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classVec3}{Vec3} Motion\+Streak3\+D\+::get\+Position3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the position (X,Y,Z) in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a8617dd2eb9af75a66ebaff0d3c99285e}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a2dcc5baf8956d2fef986b564bc21ff5c}\label{classMotionStreak3D_a2dcc5baf8956d2fef986b564bc21ff5c}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+PositionX@{get\+PositionX}}
+\index{get\+PositionX@{get\+PositionX}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position\+X()}{getPositionX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Motion\+Streak3\+D\+::get\+PositionX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the x coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The x coordinate of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ad4b27cd8bc98960789fbd2b574666a25}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a1cbae92f092d3fb20371a676de053d07}\label{classMotionStreak3D_a1cbae92f092d3fb20371a676de053d07}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+PositionX@{get\+PositionX}}
+\index{get\+PositionX@{get\+PositionX}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position\+X()}{getPositionX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float Motion\+Streak3\+D\+::get\+PositionX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the x coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The x coordinate of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ad4b27cd8bc98960789fbd2b574666a25}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_aad2e9762fabf564601865096174a9b54}\label{classMotionStreak3D_aad2e9762fabf564601865096174a9b54}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+PositionY@{get\+PositionY}}
+\index{get\+PositionY@{get\+PositionY}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position\+Y()}{getPositionY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Motion\+Streak3\+D\+::get\+PositionY (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the y coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The y coordinate of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae2ab411fb5477789b7b96477b18c0f83}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a9880e5a12cec812ba36804232e73bd7b}\label{classMotionStreak3D_a9880e5a12cec812ba36804232e73bd7b}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+PositionY@{get\+PositionY}}
+\index{get\+PositionY@{get\+PositionY}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Position\+Y()}{getPositionY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float Motion\+Streak3\+D\+::get\+PositionY (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the y coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+The y coordinate of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae2ab411fb5477789b7b96477b18c0f83}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}\label{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Stroke@{get\+Stroke}}
+\index{get\+Stroke@{get\+Stroke}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Stroke()}{getStroke()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Motion\+Streak3\+D\+::get\+Stroke (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get stroke.
+
+\begin{DoxyReturn}{Returns}
+float stroke. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}\label{classMotionStreak3D_a6bb96d9a0dceaa6d4fa56b6c93c0a9b0}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Stroke@{get\+Stroke}}
+\index{get\+Stroke@{get\+Stroke}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Stroke()}{getStroke()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Motion\+Streak3\+D\+::get\+Stroke (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get stroke.
+
+\begin{DoxyReturn}{Returns}
+float stroke. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}\label{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Sweep\+Axis@{get\+Sweep\+Axis}}
+\index{get\+Sweep\+Axis@{get\+Sweep\+Axis}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Sweep\+Axis()}{getSweepAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& Motion\+Streak3\+D\+::get\+Sweep\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the direction of sweeping line segment \mbox{\Hypertarget{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}\label{classMotionStreak3D_aa6cd925496130156b4aadf09bcfc9b32}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!get\+Sweep\+Axis@{get\+Sweep\+Axis}}
+\index{get\+Sweep\+Axis@{get\+Sweep\+Axis}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{get\+Sweep\+Axis()}{getSweepAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& Motion\+Streak3\+D\+::get\+Sweep\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the direction of sweeping line segment \mbox{\Hypertarget{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}\label{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!init\+With\+Fade@{init\+With\+Fade}}
+\index{init\+With\+Fade@{init\+With\+Fade}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{init\+With\+Fade()}{initWithFade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::init\+With\+Fade (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color and texture filename \mbox{\Hypertarget{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}\label{classMotionStreak3D_aeb508d5a9a772ca2f87a195a92631501}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!init\+With\+Fade@{init\+With\+Fade}}
+\index{init\+With\+Fade@{init\+With\+Fade}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{init\+With\+Fade()}{initWithFade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::init\+With\+Fade (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color and texture filename \mbox{\Hypertarget{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}\label{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!init\+With\+Fade@{init\+With\+Fade}}
+\index{init\+With\+Fade@{init\+With\+Fade}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{init\+With\+Fade()}{initWithFade()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::init\+With\+Fade (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color and texture \mbox{\Hypertarget{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}\label{classMotionStreak3D_a6b99e3a23ebf47e35f83a9cab843ee9d}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!init\+With\+Fade@{init\+With\+Fade}}
+\index{init\+With\+Fade@{init\+With\+Fade}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{init\+With\+Fade()}{initWithFade()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::init\+With\+Fade (\begin{DoxyParamCaption}\item[{float}]{fade,  }\item[{float}]{min\+Seg,  }\item[{float}]{stroke,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+initializes a motion streak with fade in seconds, minimum segments, stroke\textquotesingle{}s width, color and texture \mbox{\Hypertarget{classMotionStreak3D_a6b513fcdb7b462e2a28bb67e3dd35836}\label{classMotionStreak3D_a6b513fcdb7b462e2a28bb67e3dd35836}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a5de4e2e686f06acfecf86fc7b7caed6e}\label{classMotionStreak3D_a5de4e2e686f06acfecf86fc7b7caed6e}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Motion\+Streak3\+D\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}\label{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!is\+Starting\+Position\+Initialized@{is\+Starting\+Position\+Initialized}}
+\index{is\+Starting\+Position\+Initialized@{is\+Starting\+Position\+Initialized}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{is\+Starting\+Position\+Initialized()}{isStartingPositionInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::is\+Starting\+Position\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Is the starting position initialized or not.
+
+\begin{DoxyReturn}{Returns}
+True if the starting position is initialized. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}\label{classMotionStreak3D_a886e755c13fabbeab8f326b512289ade}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!is\+Starting\+Position\+Initialized@{is\+Starting\+Position\+Initialized}}
+\index{is\+Starting\+Position\+Initialized@{is\+Starting\+Position\+Initialized}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{is\+Starting\+Position\+Initialized()}{isStartingPositionInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Motion\+Streak3\+D\+::is\+Starting\+Position\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Is the starting position initialized or not.
+
+\begin{DoxyReturn}{Returns}
+True if the starting position is initialized. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}\label{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!reset@{reset}}
+\index{reset@{reset}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove all living segments of the ribbon. \mbox{\Hypertarget{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}\label{classMotionStreak3D_af626dc0c3699973f3d051a4771bbf8a5}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!reset@{reset}}
+\index{reset@{reset}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove all living segments of the ribbon. \mbox{\Hypertarget{classMotionStreak3D_a37b0b1eb59733188836e76dfed2ab181}\label{classMotionStreak3D_a37b0b1eb59733188836e76dfed2ab181}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classMotionStreak3D_a80ee5d8b98847fff388cff81997818d0}\label{classMotionStreak3D_a80ee5d8b98847fff388cff81997818d0}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classMotionStreak3D_aebd12e84f982bb11ab3cc3c92e769f73}\label{classMotionStreak3D_aebd12e84f982bb11ab3cc3c92e769f73}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_aaf983644b09cefdf815a650c7cfd426a}\label{classMotionStreak3D_aaf983644b09cefdf815a650c7cfd426a}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_ac4ef49b3087c63f5cea40efe91d4f271}\label{classMotionStreak3D_ac4ef49b3087c63f5cea40efe91d4f271}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_ad201e04b841b5fb15fea56bfd6b9cb03}\label{classMotionStreak3D_ad201e04b841b5fb15fea56bfd6b9cb03}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}\label{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+position setter 
+
+Sets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+Usually we use {\ttfamily \hyperlink{classVec2}{Vec2(x,y)}} to compose \hyperlink{classVec2}{Vec2} object. This code snippet sets the node in the center of screen. 
+\begin{DoxyCode}
+\hyperlink{classSize}{Size} size = \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director::getInstance}()->\hyperlink{classDirector_af07668df4a8916e6eb0f79a93f6588fe}{getWinSize}();
+node->setPosition(size.\hyperlink{classSize_af0be19024ddd79e7843492b3760c21f0}{width}/2, size.\hyperlink{classSize_a880fa21eaad5a5a0fe439d440776fd05}{height}/2);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position (x,y) of the node in Open\+GL coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a8ffbf25763ef5f15eeae7227779505bc}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_ada67cecb8a81f0f48615d24eb9fc2373}\label{classMotionStreak3D_ada67cecb8a81f0f48615d24eb9fc2373}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+Passing two numbers (x,y) is much efficient than passing \hyperlink{classVec2}{Vec2} object. This method is bound to Lua and Java\+Script. Passing a number is 10 times faster than passing a object from Lua to c++.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// sample code in Lua}
+local pos  = node::getPosition()  -- returns \hyperlink{classVec2}{Vec2} \textcolor{keywordtype}{object} from C++.
+node:\hyperlink{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}{setPosition}(x, y)            -- pass x, y coordinate to C++.
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate for position. \\
+\hline
+{\em y} & Y coordinate for position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aaa8545c103ef1b35e5076dbedab93af5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a070710f82d947115207e9bfc0eeb4d30}\label{classMotionStreak3D_a070710f82d947115207e9bfc0eeb4d30}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+position setter 
+
+Sets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+Usually we use {\ttfamily \hyperlink{classVec2}{Vec2(x,y)}} to compose \hyperlink{classVec2}{Vec2} object. This code snippet sets the node in the center of screen. 
+\begin{DoxyCode}
+\hyperlink{classSize}{Size} size = \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director::getInstance}()->\hyperlink{classDirector_af07668df4a8916e6eb0f79a93f6588fe}{getWinSize}();
+node->setPosition(size.\hyperlink{classSize_af0be19024ddd79e7843492b3760c21f0}{width}/2, size.\hyperlink{classSize_a880fa21eaad5a5a0fe439d440776fd05}{height}/2);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position (x,y) of the node in Open\+GL coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a8ffbf25763ef5f15eeae7227779505bc}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_af19878b923b0caae1704f93a9ee21699}\label{classMotionStreak3D_af19878b923b0caae1704f93a9ee21699}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the position (x,y) of the node in its parent\textquotesingle{}s coordinate system.
+
+Passing two numbers (x,y) is much efficient than passing \hyperlink{classVec2}{Vec2} object. This method is bound to Lua and Java\+Script. Passing a number is 10 times faster than passing a object from Lua to c++.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// sample code in Lua}
+local pos  = node::getPosition()  -- returns \hyperlink{classVec2}{Vec2} \textcolor{keywordtype}{object} from C++.
+node:\hyperlink{classMotionStreak3D_a8e4698c3850e094f90600e3ba4604651}{setPosition}(x, y)            -- pass x, y coordinate to C++.
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate for position. \\
+\hline
+{\em y} & Y coordinate for position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aaa8545c103ef1b35e5076dbedab93af5}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a0a0d2f5f302ecaecb2e6652e5863f28f}\label{classMotionStreak3D_a0a0d2f5f302ecaecb2e6652e5863f28f}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position3D@{set\+Position3D}}
+\index{set\+Position3D@{set\+Position3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position3\+D()}{setPosition3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Position3D (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aa9eee02836d359b1469cf8a1484b485f}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a34fac2c60502d074f8e40e99d01d9180}\label{classMotionStreak3D_a34fac2c60502d074f8e40e99d01d9180}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Position3D@{set\+Position3D}}
+\index{set\+Position3D@{set\+Position3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position3\+D()}{setPosition3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Position3D (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position (X, Y, and Z) in its parent\textquotesingle{}s coordinate system.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aa9eee02836d359b1469cf8a1484b485f}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a9c363f74a20d8b5e83357343ecfad7d4}\label{classMotionStreak3D_a9c363f74a20d8b5e83357343ecfad7d4}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+PositionX@{set\+PositionX}}
+\index{set\+PositionX@{set\+PositionX}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position\+X()}{setPositionX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+PositionX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets/\+Sets x or y coordinate individually for position. These methods are used in Lua and Javascript Bindings Sets the x coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae1dfc73d6122a95778d5d9db3d1fd913}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a1b723a27b44aa12ced168fe18ca920de}\label{classMotionStreak3D_a1b723a27b44aa12ced168fe18ca920de}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+PositionX@{set\+PositionX}}
+\index{set\+PositionX@{set\+PositionX}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position\+X()}{setPositionX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+PositionX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets/\+Sets x or y coordinate individually for position. These methods are used in Lua and Javascript Bindings Sets the x coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae1dfc73d6122a95778d5d9db3d1fd913}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_afb3de2f3e93486b5be3877d081159d57}\label{classMotionStreak3D_afb3de2f3e93486b5be3877d081159d57}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+PositionY@{set\+PositionY}}
+\index{set\+PositionY@{set\+PositionY}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position\+Y()}{setPositionY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+PositionY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the y coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The y coordinate of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a5c97d36655f0daa71a5f6c715d2b0470}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a8f63bcfa700cf9d67907d9e6f31bace6}\label{classMotionStreak3D_a8f63bcfa700cf9d67907d9e6f31bace6}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+PositionY@{set\+PositionY}}
+\index{set\+PositionY@{set\+PositionY}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Position\+Y()}{setPositionY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+PositionY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the y coordinate of the node in its parent\textquotesingle{}s coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The y coordinate of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a5c97d36655f0daa71a5f6c715d2b0470}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_abe4bc651d6ce068c366edc18cb0aaead}\label{classMotionStreak3D_abe4bc651d6ce068c366edc18cb0aaead}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Rotation3D@{set\+Rotation3D}}
+\index{set\+Rotation3D@{set\+Rotation3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Rotation3\+D()}{setRotation3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Rotation3D (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the rotation (X,Y,Z) in degrees. Useful for 3d rotations.
+
+\begin{DoxyWarning}{Warning}
+The physics body doesn\textquotesingle{}t support this.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & The rotation of the node in 3d.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a2ce988bebd6c8b804d8bfdfafd511c40}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a6ef719a2412711e81c3bfc40ce53c3e2}\label{classMotionStreak3D_a6ef719a2412711e81c3bfc40ce53c3e2}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Rotation3D@{set\+Rotation3D}}
+\index{set\+Rotation3D@{set\+Rotation3D}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Rotation3\+D()}{setRotation3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Rotation3D (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the rotation (X,Y,Z) in degrees. Useful for 3d rotations.
+
+\begin{DoxyWarning}{Warning}
+The physics body doesn\textquotesingle{}t support this.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & The rotation of the node in 3d.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a2ce988bebd6c8b804d8bfdfafd511c40}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_ab3b762bdfe6cbda5cda6b69ca8d31845}\label{classMotionStreak3D_ab3b762bdfe6cbda5cda6b69ca8d31845}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Rotation\+Quat@{set\+Rotation\+Quat}}
+\index{set\+Rotation\+Quat@{set\+Rotation\+Quat}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Rotation\+Quat()}{setRotationQuat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Rotation\+Quat (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{quat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set rotation by quaternion. You should make sure the quaternion is normalized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quat} & The rotation in quaternion, note that the quat must be normalized.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a59c0b9e9afc4668320d90c340e5727e7}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a7e9e94bce7204f28d6b8dff196d163d9}\label{classMotionStreak3D_a7e9e94bce7204f28d6b8dff196d163d9}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Rotation\+Quat@{set\+Rotation\+Quat}}
+\index{set\+Rotation\+Quat@{set\+Rotation\+Quat}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Rotation\+Quat()}{setRotationQuat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::set\+Rotation\+Quat (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{quat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set rotation by quaternion. You should make sure the quaternion is normalized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quat} & The rotation in quaternion, note that the quat must be normalized.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a59c0b9e9afc4668320d90c340e5727e7}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}\label{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Starting\+Position\+Initialized@{set\+Starting\+Position\+Initialized}}
+\index{set\+Starting\+Position\+Initialized@{set\+Starting\+Position\+Initialized}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Starting\+Position\+Initialized()}{setStartingPositionInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Starting\+Position\+Initialized (\begin{DoxyParamCaption}\item[{bool}]{b\+Starting\+Position\+Initialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the starting position initialized or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Starting\+Position\+Initialized} & True if initialized the starting position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}\label{classMotionStreak3D_a62b248c1dd60a576a0a471da62e3b5de}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Starting\+Position\+Initialized@{set\+Starting\+Position\+Initialized}}
+\index{set\+Starting\+Position\+Initialized@{set\+Starting\+Position\+Initialized}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Starting\+Position\+Initialized()}{setStartingPositionInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Starting\+Position\+Initialized (\begin{DoxyParamCaption}\item[{bool}]{b\+Starting\+Position\+Initialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the starting position initialized or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Starting\+Position\+Initialized} & True if initialized the starting position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}\label{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Stroke@{set\+Stroke}}
+\index{set\+Stroke@{set\+Stroke}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Stroke()}{setStroke()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Stroke (\begin{DoxyParamCaption}\item[{float}]{stroke }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set stroke.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stroke} & The width of stroke. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}\label{classMotionStreak3D_a7e5feedbf87874e24710d564d16d4649}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Stroke@{set\+Stroke}}
+\index{set\+Stroke@{set\+Stroke}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Stroke()}{setStroke()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Stroke (\begin{DoxyParamCaption}\item[{float}]{stroke }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set stroke.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stroke} & The width of stroke. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}\label{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Sweep\+Axis@{set\+Sweep\+Axis}}
+\index{set\+Sweep\+Axis@{set\+Sweep\+Axis}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Sweep\+Axis()}{setSweepAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Sweep\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{sweep\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the direction of sweeping line segment. 
+\begin{DoxyParams}{Parameters}
+{\em sweep\+Axis} & Direction of sweeping line segment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}\label{classMotionStreak3D_a1d9e11935a4992f5c475d13d955c6578}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!set\+Sweep\+Axis@{set\+Sweep\+Axis}}
+\index{set\+Sweep\+Axis@{set\+Sweep\+Axis}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{set\+Sweep\+Axis()}{setSweepAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::set\+Sweep\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{sweep\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the direction of sweeping line segment. 
+\begin{DoxyParams}{Parameters}
+{\em sweep\+Axis} & Direction of sweeping line segment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}\label{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!tint\+With\+Color@{tint\+With\+Color}}
+\index{tint\+With\+Color@{tint\+With\+Color}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{tint\+With\+Color()}{tintWithColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::tint\+With\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{colors }\end{DoxyParamCaption})}
+
+Color used for the tint.
+
+
+\begin{DoxyParams}{Parameters}
+{\em colors} & The color used for the tint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}\label{classMotionStreak3D_a5c79a196ddadb3a869da49e3d501bb24}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!tint\+With\+Color@{tint\+With\+Color}}
+\index{tint\+With\+Color@{tint\+With\+Color}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{tint\+With\+Color()}{tintWithColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::tint\+With\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{colors }\end{DoxyParamCaption})}
+
+Color used for the tint.
+
+
+\begin{DoxyParams}{Parameters}
+{\em colors} & The color used for the tint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMotionStreak3D_a195dbdebb5c5d55d3d09c4e5dc716a91}\label{classMotionStreak3D_a195dbdebb5c5d55d3d09c4e5dc716a91}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!update@{update}}
+\index{update@{update}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Motion\+Streak3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+\mbox{\Hypertarget{classMotionStreak3D_a3d336bcb41bd598ba73389378b278382}\label{classMotionStreak3D_a3d336bcb41bd598ba73389378b278382}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!update@{update}}
+\index{update@{update}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Motion\+Streak3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMotionStreak3D_ad06a526af1362cc3f9c4e4da850e4b9d}\label{classMotionStreak3D_ad06a526af1362cc3f9c4e4da850e4b9d}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!\+\_\+point\+Vertexes@{\+\_\+point\+Vertexes}}
+\index{\+\_\+point\+Vertexes@{\+\_\+point\+Vertexes}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{\+\_\+point\+Vertexes}{\_pointVertexes}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} $\ast$ Motion\+Streak3\+D\+::\+\_\+point\+Vertexes\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointers \mbox{\Hypertarget{classMotionStreak3D_abd22c4ad88b80e8c7b9ae52366e6c662}\label{classMotionStreak3D_abd22c4ad88b80e8c7b9ae52366e6c662}} 
+\index{Motion\+Streak3D@{Motion\+Streak3D}!\+\_\+texture@{\+\_\+texture}}
+\index{\+\_\+texture@{\+\_\+texture}!Motion\+Streak3D@{Motion\+Streak3D}}
+\subsubsection{\texorpdfstring{\+\_\+texture}{\_texture}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Motion\+Streak3\+D\+::\+\_\+texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+texture used for the motion streak 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Motion\+Streak3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Motion\+Streak3\+D.\+cpp\end{DoxyCompactItemize}

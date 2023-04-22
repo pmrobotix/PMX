@@ -1,0 +1,174 @@
+\hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics}{}\section{cocos2d\+:\+:plugin\+:\+:Protocol\+Analytics Class Reference}
+\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics}\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+
+
+Inheritance diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+Analytics\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classcocos2d_1_1plugin_1_1ProtocolAnalytics__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+Analytics\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classcocos2d_1_1plugin_1_1ProtocolAnalytics__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a06e31e415d1354d3abf4775c389a67ae}{start\+Session} (const char $\ast$app\+Key)
+\begin{DoxyCompactList}\small\item\em Start a new session. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a75e7cfb9f04fa49b795fd195fe663204}{stop\+Session} ()
+\begin{DoxyCompactList}\small\item\em Stop a session. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a037c60ea8869cbaedbdf9202bb7e1b67}{set\+Session\+Continue\+Millis} (long millis)
+\begin{DoxyCompactList}\small\item\em Set the timeout for expiring a session. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_acc95ad8a3c0c2e3a195605e515a9ee59}{log\+Error} (const char $\ast$error\+Id, const char $\ast$message)
+\begin{DoxyCompactList}\small\item\em log an error \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a67758ef2c55576858a04b1df3a587b5e}{log\+Event} (const char $\ast$event\+Id, Log\+Event\+Param\+Map $\ast$param\+Map=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em log an event. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ad7677531ddb888fbadcf2fa5211782b8}{log\+Timed\+Event\+Begin} (const char $\ast$event\+Id)
+\begin{DoxyCompactList}\small\item\em Track an event begin. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a019f1e89d75c6f4c6cf89c28aad9a098}{log\+Timed\+Event\+End} (const char $\ast$event\+Id)
+\begin{DoxyCompactList}\small\item\em Track an event end. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ae51f9264d28735701d38d45b947f76b8}{set\+Capture\+Uncaught\+Exception} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Whether to catch uncaught exceptions to server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_acc95ad8a3c0c2e3a195605e515a9ee59}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_acc95ad8a3c0c2e3a195605e515a9ee59}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!log\+Error@{log\+Error}}
+\index{log\+Error@{log\+Error}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{log\+Error()}{logError()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::log\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{error\+Id,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+log an error 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Id} & The identity of error \\
+\hline
+{\em message} & Extern message for the error \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a67758ef2c55576858a04b1df3a587b5e}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a67758ef2c55576858a04b1df3a587b5e}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!log\+Event@{log\+Event}}
+\index{log\+Event@{log\+Event}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{log\+Event()}{logEvent()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::log\+Event (\begin{DoxyParamCaption}\item[{const char $\ast$}]{event\+Id,  }\item[{Log\+Event\+Param\+Map $\ast$}]{param\+Map = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+log an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Id} & The identity of event \\
+\hline
+{\em param\+Map} & Extern parameters of the event, use N\+U\+LL if not needed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ad7677531ddb888fbadcf2fa5211782b8}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ad7677531ddb888fbadcf2fa5211782b8}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!log\+Timed\+Event\+Begin@{log\+Timed\+Event\+Begin}}
+\index{log\+Timed\+Event\+Begin@{log\+Timed\+Event\+Begin}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{log\+Timed\+Event\+Begin()}{logTimedEventBegin()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::log\+Timed\+Event\+Begin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{event\+Id }\end{DoxyParamCaption})}
+
+
+
+Track an event begin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Id} & The identity of event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a019f1e89d75c6f4c6cf89c28aad9a098}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a019f1e89d75c6f4c6cf89c28aad9a098}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!log\+Timed\+Event\+End@{log\+Timed\+Event\+End}}
+\index{log\+Timed\+Event\+End@{log\+Timed\+Event\+End}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{log\+Timed\+Event\+End()}{logTimedEventEnd()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::log\+Timed\+Event\+End (\begin{DoxyParamCaption}\item[{const char $\ast$}]{event\+Id }\end{DoxyParamCaption})}
+
+
+
+Track an event end. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Id} & The identity of event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ae51f9264d28735701d38d45b947f76b8}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_ae51f9264d28735701d38d45b947f76b8}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!set\+Capture\+Uncaught\+Exception@{set\+Capture\+Uncaught\+Exception}}
+\index{set\+Capture\+Uncaught\+Exception@{set\+Capture\+Uncaught\+Exception}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{set\+Capture\+Uncaught\+Exception()}{setCaptureUncaughtException()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::set\+Capture\+Uncaught\+Exception (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Whether to catch uncaught exceptions to server. 
+
+\begin{DoxyWarning}{Warning}
+This interface only worked on android. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a037c60ea8869cbaedbdf9202bb7e1b67}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a037c60ea8869cbaedbdf9202bb7e1b67}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!set\+Session\+Continue\+Millis@{set\+Session\+Continue\+Millis}}
+\index{set\+Session\+Continue\+Millis@{set\+Session\+Continue\+Millis}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{set\+Session\+Continue\+Millis()}{setSessionContinueMillis()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::set\+Session\+Continue\+Millis (\begin{DoxyParamCaption}\item[{long}]{millis }\end{DoxyParamCaption})}
+
+
+
+Set the timeout for expiring a session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em millis} & In milliseconds as the unit of time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It must be invoked before calling start\+Session. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a06e31e415d1354d3abf4775c389a67ae}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a06e31e415d1354d3abf4775c389a67ae}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!start\+Session@{start\+Session}}
+\index{start\+Session@{start\+Session}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{start\+Session()}{startSession()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::start\+Session (\begin{DoxyParamCaption}\item[{const char $\ast$}]{app\+Key }\end{DoxyParamCaption})}
+
+
+
+Start a new session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+Key} & The identity of the application. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a75e7cfb9f04fa49b795fd195fe663204}\label{classcocos2d_1_1plugin_1_1ProtocolAnalytics_a75e7cfb9f04fa49b795fd195fe663204}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}!stop\+Session@{stop\+Session}}
+\index{stop\+Session@{stop\+Session}!cocos2d\+::plugin\+::\+Protocol\+Analytics@{cocos2d\+::plugin\+::\+Protocol\+Analytics}}
+\subsubsection{\texorpdfstring{stop\+Session()}{stopSession()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+Analytics\+::stop\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop a session. 
+
+\begin{DoxyWarning}{Warning}
+This interface only worked on android 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/include/Protocol\+Analytics.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/android/Protocol\+Analytics.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/ios/Protocol\+Analytics.\+mm\end{DoxyCompactItemize}

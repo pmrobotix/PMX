@@ -1,0 +1,156 @@
+\hypertarget{classOBB}{}\section{O\+BB Class Reference}
+\label{classOBB}\index{O\+BB@{O\+BB}}
+
+
+the \hyperlink{classOBB}{O\+BB} is similar to the \hyperlink{classAABB}{A\+A\+BB} but the bounding box has the same direction as \hyperlink{classSprite3D}{Sprite3D}. so it\textquotesingle{}s collision detection more precise than \hyperlink{classAABB}{A\+A\+BB}  NA  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+O\+B\+B.\+h$>$}
+
+
+
+Collaboration diagram for O\+BB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classOBB__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOBB_ad991c58a1f319ce9925799aa4a247838}\label{classOBB_ad991c58a1f319ce9925799aa4a247838}} 
+{\bfseries O\+BB} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb)
+\item 
+\mbox{\Hypertarget{classOBB_a59d89f514c45a1008b42a0fb41f03094}\label{classOBB_a59d89f514c45a1008b42a0fb41f03094}} 
+{\bfseries O\+BB} (const \hyperlink{classVec3}{Vec3} $\ast$verts, int num)
+\item 
+\mbox{\Hypertarget{classOBB_a516fbb05199b8dd3ed82bc2a1497702b}\label{classOBB_a516fbb05199b8dd3ed82bc2a1497702b}} 
+bool {\bfseries contain\+Point} (const \hyperlink{classVec3}{Vec3} \&point) const
+\item 
+\mbox{\Hypertarget{classOBB_ae044e3ae729477346252e34b858be368}\label{classOBB_ae044e3ae729477346252e34b858be368}} 
+void {\bfseries set} (const \hyperlink{classVec3}{Vec3} \&center, const \hyperlink{classVec3}{Vec3} \&\+\_\+x\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+y\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+z\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+extents)
+\item 
+\mbox{\Hypertarget{classOBB_ae7bbc7ac460611a00e531a7c5832f352}\label{classOBB_ae7bbc7ac460611a00e531a7c5832f352}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classOBB_a195a8fcbcd765a5c2d546be1db7fede7}\label{classOBB_a195a8fcbcd765a5c2d546be1db7fede7}} 
+void {\bfseries get\+Corners} (\hyperlink{classVec3}{Vec3} $\ast$verts) const
+\item 
+\mbox{\Hypertarget{classOBB_a10d5595d178edbde5d0e96968f1148d0}\label{classOBB_a10d5595d178edbde5d0e96968f1148d0}} 
+bool {\bfseries intersects} (const \hyperlink{classOBB}{O\+BB} \&box) const
+\item 
+void \hyperlink{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}{transform} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+\mbox{\Hypertarget{classOBB_ad991c58a1f319ce9925799aa4a247838}\label{classOBB_ad991c58a1f319ce9925799aa4a247838}} 
+{\bfseries O\+BB} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb)
+\item 
+\mbox{\Hypertarget{classOBB_a59d89f514c45a1008b42a0fb41f03094}\label{classOBB_a59d89f514c45a1008b42a0fb41f03094}} 
+{\bfseries O\+BB} (const \hyperlink{classVec3}{Vec3} $\ast$verts, int num)
+\item 
+\mbox{\Hypertarget{classOBB_a516fbb05199b8dd3ed82bc2a1497702b}\label{classOBB_a516fbb05199b8dd3ed82bc2a1497702b}} 
+bool {\bfseries contain\+Point} (const \hyperlink{classVec3}{Vec3} \&point) const
+\item 
+\mbox{\Hypertarget{classOBB_ae044e3ae729477346252e34b858be368}\label{classOBB_ae044e3ae729477346252e34b858be368}} 
+void {\bfseries set} (const \hyperlink{classVec3}{Vec3} \&center, const \hyperlink{classVec3}{Vec3} \&\+\_\+x\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+y\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+z\+Axis, const \hyperlink{classVec3}{Vec3} \&\+\_\+extents)
+\item 
+\mbox{\Hypertarget{classOBB_ae7bbc7ac460611a00e531a7c5832f352}\label{classOBB_ae7bbc7ac460611a00e531a7c5832f352}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classOBB_a195a8fcbcd765a5c2d546be1db7fede7}\label{classOBB_a195a8fcbcd765a5c2d546be1db7fede7}} 
+void {\bfseries get\+Corners} (\hyperlink{classVec3}{Vec3} $\ast$verts) const
+\item 
+\mbox{\Hypertarget{classOBB_a10d5595d178edbde5d0e96968f1148d0}\label{classOBB_a10d5595d178edbde5d0e96968f1148d0}} 
+bool {\bfseries intersects} (const \hyperlink{classOBB}{O\+BB} \&box) const
+\item 
+void \hyperlink{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}{transform} (const \hyperlink{classMat4}{Mat4} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOBB_ad02130c69d0d3cf11dda243cbc87dd0b}\label{classOBB_ad02130c69d0d3cf11dda243cbc87dd0b}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+center}
+\item 
+\mbox{\Hypertarget{classOBB_acf150ee8a2ec77f9e5bfe393f14b0a98}\label{classOBB_acf150ee8a2ec77f9e5bfe393f14b0a98}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+x\+Axis}
+\item 
+\mbox{\Hypertarget{classOBB_a151744892d2d6c02fd6c33c75fb21aac}\label{classOBB_a151744892d2d6c02fd6c33c75fb21aac}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+y\+Axis}
+\item 
+\mbox{\Hypertarget{classOBB_a30a582160f0364540b9515a74f23ae0d}\label{classOBB_a30a582160f0364540b9515a74f23ae0d}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+z\+Axis}
+\item 
+\mbox{\Hypertarget{classOBB_ac536c850954fe2633d89b4bd261ebcca}\label{classOBB_ac536c850954fe2633d89b4bd261ebcca}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+extentX}
+\item 
+\mbox{\Hypertarget{classOBB_a676a35c745a90bd428b93eb917ccd5f5}\label{classOBB_a676a35c745a90bd428b93eb917ccd5f5}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+extentY}
+\item 
+\mbox{\Hypertarget{classOBB_a76a6ba7cae3ab2514cb33e2be9f94c22}\label{classOBB_a76a6ba7cae3ab2514cb33e2be9f94c22}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+extentZ}
+\item 
+\mbox{\Hypertarget{classOBB_a8b75068a9dd8f242bd23b81388847258}\label{classOBB_a8b75068a9dd8f242bd23b81388847258}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+extents}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOBB_a2184f003bfb6fe1432c3a3c694e85133}\label{classOBB_a2184f003bfb6fe1432c3a3c694e85133}} 
+void {\bfseries compute\+Ext\+Axis} ()
+\item 
+\mbox{\Hypertarget{classOBB_acda8428014d10ac4af2894b29e65a4b8}\label{classOBB_acda8428014d10ac4af2894b29e65a4b8}} 
+float {\bfseries project\+Point} (const \hyperlink{classVec3}{Vec3} \&point, const \hyperlink{classVec3}{Vec3} \&axis) const
+\item 
+\mbox{\Hypertarget{classOBB_aaebc56df31c15e2c43fb1ae3f261c5b3}\label{classOBB_aaebc56df31c15e2c43fb1ae3f261c5b3}} 
+void {\bfseries get\+Interval} (const \hyperlink{classOBB}{O\+BB} \&box, const \hyperlink{classVec3}{Vec3} \&axis, float \&min, float \&max) const
+\item 
+\mbox{\Hypertarget{classOBB_a064b266b1daba1481feedfc3da898e42}\label{classOBB_a064b266b1daba1481feedfc3da898e42}} 
+\hyperlink{classVec3}{Vec3} {\bfseries get\+Edge\+Direction} (int index) const
+\item 
+\mbox{\Hypertarget{classOBB_ac47fb1fa827ae13b9d9168c64d9ead9b}\label{classOBB_ac47fb1fa827ae13b9d9168c64d9ead9b}} 
+\hyperlink{classVec3}{Vec3} {\bfseries get\+Face\+Direction} (int index) const
+\item 
+\mbox{\Hypertarget{classOBB_a2184f003bfb6fe1432c3a3c694e85133}\label{classOBB_a2184f003bfb6fe1432c3a3c694e85133}} 
+void {\bfseries compute\+Ext\+Axis} ()
+\item 
+\mbox{\Hypertarget{classOBB_acda8428014d10ac4af2894b29e65a4b8}\label{classOBB_acda8428014d10ac4af2894b29e65a4b8}} 
+float {\bfseries project\+Point} (const \hyperlink{classVec3}{Vec3} \&point, const \hyperlink{classVec3}{Vec3} \&axis) const
+\item 
+\mbox{\Hypertarget{classOBB_aaebc56df31c15e2c43fb1ae3f261c5b3}\label{classOBB_aaebc56df31c15e2c43fb1ae3f261c5b3}} 
+void {\bfseries get\+Interval} (const \hyperlink{classOBB}{O\+BB} \&box, const \hyperlink{classVec3}{Vec3} \&axis, float \&min, float \&max) const
+\item 
+\mbox{\Hypertarget{classOBB_a064b266b1daba1481feedfc3da898e42}\label{classOBB_a064b266b1daba1481feedfc3da898e42}} 
+\hyperlink{classVec3}{Vec3} {\bfseries get\+Edge\+Direction} (int index) const
+\item 
+\mbox{\Hypertarget{classOBB_ac47fb1fa827ae13b9d9168c64d9ead9b}\label{classOBB_ac47fb1fa827ae13b9d9168c64d9ead9b}} 
+\hyperlink{classVec3}{Vec3} {\bfseries get\+Face\+Direction} (int index) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the \hyperlink{classOBB}{O\+BB} is similar to the \hyperlink{classAABB}{A\+A\+BB} but the bounding box has the same direction as \hyperlink{classSprite3D}{Sprite3D}. so it\textquotesingle{}s collision detection more precise than \hyperlink{classAABB}{A\+A\+BB}  NA 
+
+Oriented Bounding \hyperlink{classBox}{Box(\+O\+B\+B)} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}\label{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}} 
+\index{O\+BB@{O\+BB}!transform@{transform}}
+\index{transform@{transform}!O\+BB@{O\+BB}}
+\subsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void O\+B\+B\+::transform (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Transforms the obb by the given transformation matrix. \mbox{\Hypertarget{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}\label{classOBB_ad62eb091e1ad05d6b9b196f4bb4d94b7}} 
+\index{O\+BB@{O\+BB}!transform@{transform}}
+\index{transform@{transform}!O\+BB@{O\+BB}}
+\subsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void O\+B\+B\+::transform (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Transforms the obb by the given transformation matrix. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+O\+B\+B.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+O\+B\+B.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1578 @@
+\hypertarget{classScrollView}{}\section{Scroll\+View Class Reference}
+\label{classScrollView}\index{Scroll\+View@{Scroll\+View}}
+
+
+{\ttfamily \#include $<$C\+C\+Scroll\+View.\+h$>$}
+
+
+
+Inheritance diagram for Scroll\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classScrollView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scroll\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScrollView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScrollView_af6f9fe2ea575021cc020df1f0564a7a2}\label{classScrollView_af6f9fe2ea575021cc020df1f0564a7a2}} 
+enum {\bfseries Direction} \{ \newline
+{\bfseries N\+O\+NE} = -\/1, 
+{\bfseries H\+O\+R\+I\+Z\+O\+N\+T\+AL} = 0, 
+{\bfseries V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries B\+O\+TH}, 
+\newline
+{\bfseries N\+O\+NE} = -\/1, 
+{\bfseries H\+O\+R\+I\+Z\+O\+N\+T\+AL} = 0, 
+{\bfseries V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries B\+O\+TH}
+ \}
+\item 
+\mbox{\Hypertarget{classScrollView_af6f9fe2ea575021cc020df1f0564a7a2}\label{classScrollView_af6f9fe2ea575021cc020df1f0564a7a2}} 
+enum {\bfseries Direction} \{ \newline
+{\bfseries N\+O\+NE} = -\/1, 
+{\bfseries H\+O\+R\+I\+Z\+O\+N\+T\+AL} = 0, 
+{\bfseries V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries B\+O\+TH}, 
+\newline
+{\bfseries N\+O\+NE} = -\/1, 
+{\bfseries H\+O\+R\+I\+Z\+O\+N\+T\+AL} = 0, 
+{\bfseries V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries B\+O\+TH}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}{Scroll\+View} ()
+\item 
+virtual \hyperlink{classScrollView_a4a5220ac36e0c7d03973be1bdde8d7a1}{$\sim$\+Scroll\+View} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a816fd4b60480d60ff4704e88299c40e9}\label{classScrollView_a816fd4b60480d60ff4704e88299c40e9}} 
+bool {\bfseries init} () override
+\item 
+bool \hyperlink{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}{init\+With\+View\+Size} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+void \hyperlink{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}{set\+Content\+Offset} (\hyperlink{classVec2}{Vec2} offset, bool animated=false)
+\item 
+\mbox{\Hypertarget{classScrollView_ad5f0dcac1ccec63afe1c2dab0aea34c5}\label{classScrollView_ad5f0dcac1ccec63afe1c2dab0aea34c5}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Content\+Offset} ()
+\item 
+void \hyperlink{classScrollView_ad98397d42075b810de17c35eb9843ec7}{set\+Content\+Offset\+In\+Duration} (\hyperlink{classVec2}{Vec2} offset, float dt)
+\item 
+void \hyperlink{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}{stop\+Animated\+Content\+Offset} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a6e3020ab1ab0e1b59476753e2bdda04b}\label{classScrollView_a6e3020ab1ab0e1b59476753e2bdda04b}} 
+void {\bfseries set\+Zoom\+Scale} (float s)
+\item 
+void \hyperlink{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}{set\+Zoom\+Scale} (float s, bool animated)
+\item 
+\mbox{\Hypertarget{classScrollView_a03153f8bab88f3fb4dc1176b7b018035}\label{classScrollView_a03153f8bab88f3fb4dc1176b7b018035}} 
+float {\bfseries get\+Zoom\+Scale} ()
+\item 
+void \hyperlink{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}{set\+Zoom\+Scale\+In\+Duration} (float s, float dt)
+\item 
+void \hyperlink{classScrollView_a4037050171ea3ffcd365024ef3e74009}{set\+Min\+Scale} (float min\+Scale)
+\item 
+void \hyperlink{classScrollView_a8ec505c49d181c320f88cadbd2be5785}{set\+Max\+Scale} (float max\+Scale)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a53daf6cba39b0e1340d66728394c6a41}{min\+Container\+Offset} ()
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}{max\+Container\+Offset} ()
+\item 
+bool \hyperlink{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}{is\+Node\+Visible} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classScrollView_a8e0243782ea8fba9fca1909c47b5acca}\label{classScrollView_a8e0243782ea8fba9fca1909c47b5acca}} 
+void {\bfseries pause} (\hyperlink{classRef}{Ref} $\ast$sender)
+\item 
+\mbox{\Hypertarget{classScrollView_aecbf33a1806c9416e145b6bdfa34d87f}\label{classScrollView_aecbf33a1806c9416e145b6bdfa34d87f}} 
+void {\bfseries resume} (\hyperlink{classRef}{Ref} $\ast$sender)
+\item 
+\mbox{\Hypertarget{classScrollView_a5ba7f6eb8537a9bd30b2026227a5631a}\label{classScrollView_a5ba7f6eb8537a9bd30b2026227a5631a}} 
+void {\bfseries set\+Touch\+Enabled} (bool enabled)
+\item 
+\mbox{\Hypertarget{classScrollView_a963d2bacb68ccefbb5dfffcf88a5a7b5}\label{classScrollView_a963d2bacb68ccefbb5dfffcf88a5a7b5}} 
+bool {\bfseries is\+Touch\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classScrollView_ae9307d50e4ca9ca19731400b6f801363}\label{classScrollView_ae9307d50e4ca9ca19731400b6f801363}} 
+bool {\bfseries is\+Dragging} () const
+\item 
+\mbox{\Hypertarget{classScrollView_aad09fb7b94c104e83ef8b499552aa805}\label{classScrollView_aad09fb7b94c104e83ef8b499552aa805}} 
+bool {\bfseries is\+Touch\+Moved} () const
+\item 
+\mbox{\Hypertarget{classScrollView_ac3086ac241a29eb9ce311043506238e1}\label{classScrollView_ac3086ac241a29eb9ce311043506238e1}} 
+bool {\bfseries is\+Bounceable} () const
+\item 
+\mbox{\Hypertarget{classScrollView_ad21c34fd7ab0d5e7dfaa4fb5b35e8476}\label{classScrollView_ad21c34fd7ab0d5e7dfaa4fb5b35e8476}} 
+void {\bfseries set\+Bounceable} (bool b\+Bounceable)
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}{get\+View\+Size} () const
+\item 
+\mbox{\Hypertarget{classScrollView_af4e7c57f46b1654ecb64bfeba9979275}\label{classScrollView_af4e7c57f46b1654ecb64bfeba9979275}} 
+void {\bfseries set\+View\+Size} (\hyperlink{classSize}{Size} size)
+\item 
+\mbox{\Hypertarget{classScrollView_ae5d014a4d0fa32c2b5f2f5d3589ce606}\label{classScrollView_ae5d014a4d0fa32c2b5f2f5d3589ce606}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries get\+Container} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a1379d2b9cd15a386f4c97f179d748dde}\label{classScrollView_a1379d2b9cd15a386f4c97f179d748dde}} 
+void {\bfseries set\+Container} (\hyperlink{classNode}{Node} $\ast$p\+Container)
+\item 
+Direction \hyperlink{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}{get\+Direction} () const
+\item 
+\mbox{\Hypertarget{classScrollView_acf607cfec58d1f0565178272b2b102b6}\label{classScrollView_acf607cfec58d1f0565178272b2b102b6}} 
+virtual void {\bfseries set\+Direction} (Direction e\+Direction)
+\item 
+\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$ \hyperlink{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}{get\+Delegate} ()
+\item 
+void \hyperlink{classScrollView_a450371726a685f72266384598630439c}{set\+Delegate} (\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$p\+Delegate)
+\item 
+\mbox{\Hypertarget{classScrollView_a0d2e0d1f2fcd7587a0bb45e1e142bc84}\label{classScrollView_a0d2e0d1f2fcd7587a0bb45e1e142bc84}} 
+void {\bfseries update\+Inset} ()
+\item 
+bool \hyperlink{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}{is\+Clipping\+To\+Bounds} ()
+\item 
+\mbox{\Hypertarget{classScrollView_aacdda6e1da63c3fd215e458e5e3e1b9a}\label{classScrollView_aacdda6e1da63c3fd215e458e5e3e1b9a}} 
+void {\bfseries set\+Clipping\+To\+Bounds} (bool b\+Clipping\+To\+Bounds)
+\item 
+virtual bool \hyperlink{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_a86f57715da926a475b75d67eff84701d}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_a3cf1d7fd072898e64498a7dc9c5932c1}{set\+Content\+Size} (const \hyperlink{classSize}{Size} \&size) override
+\item 
+virtual const \hyperlink{classSize}{Size} \& \hyperlink{classScrollView_a137f08e58505c253a4c3274c426200b2}{get\+Content\+Size} () const override
+\begin{DoxyCompactList}\small\item\em content\+Size getter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classScrollView_a9766dfe15b34a8d7d1e3fd7b6acfcc32}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classScrollView_a36cedf4f110c025a6fc1196f6db3cd44}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classScrollView_a29ff1f072b73708543aefc5f5983acba}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classScrollView_aaef2d3ce7b1b7d485af4a3657bea17e5}{remove\+All\+Children} () override
+\item 
+virtual void \hyperlink{classScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classScrollView_a678108e716966e8beccc25c0de1d9b29}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}=true) override
+\item 
+void \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{update\+Tween\+Action} (float value, const std\+::string \&key) override
+\item 
+\mbox{\Hypertarget{classScrollView_a40274c1a8232b918781bdc04fe90c51d}\label{classScrollView_a40274c1a8232b918781bdc04fe90c51d}} 
+bool {\bfseries has\+Visible\+Parents} () const
+\item 
+\hyperlink{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}{Scroll\+View} ()
+\item 
+virtual \hyperlink{classScrollView_a0bacfb202cd2daa890445aeb544fd17e}{$\sim$\+Scroll\+View} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a816fd4b60480d60ff4704e88299c40e9}\label{classScrollView_a816fd4b60480d60ff4704e88299c40e9}} 
+bool {\bfseries init} () override
+\item 
+bool \hyperlink{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}{init\+With\+View\+Size} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+void \hyperlink{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}{set\+Content\+Offset} (\hyperlink{classVec2}{Vec2} offset, bool animated=false)
+\item 
+\mbox{\Hypertarget{classScrollView_ad5f0dcac1ccec63afe1c2dab0aea34c5}\label{classScrollView_ad5f0dcac1ccec63afe1c2dab0aea34c5}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Content\+Offset} ()
+\item 
+void \hyperlink{classScrollView_ad98397d42075b810de17c35eb9843ec7}{set\+Content\+Offset\+In\+Duration} (\hyperlink{classVec2}{Vec2} offset, float dt)
+\item 
+void \hyperlink{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}{stop\+Animated\+Content\+Offset} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a6e3020ab1ab0e1b59476753e2bdda04b}\label{classScrollView_a6e3020ab1ab0e1b59476753e2bdda04b}} 
+void {\bfseries set\+Zoom\+Scale} (float s)
+\item 
+void \hyperlink{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}{set\+Zoom\+Scale} (float s, bool animated)
+\item 
+\mbox{\Hypertarget{classScrollView_a03153f8bab88f3fb4dc1176b7b018035}\label{classScrollView_a03153f8bab88f3fb4dc1176b7b018035}} 
+float {\bfseries get\+Zoom\+Scale} ()
+\item 
+void \hyperlink{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}{set\+Zoom\+Scale\+In\+Duration} (float s, float dt)
+\item 
+void \hyperlink{classScrollView_a4037050171ea3ffcd365024ef3e74009}{set\+Min\+Scale} (float min\+Scale)
+\item 
+void \hyperlink{classScrollView_a8ec505c49d181c320f88cadbd2be5785}{set\+Max\+Scale} (float max\+Scale)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a53daf6cba39b0e1340d66728394c6a41}{min\+Container\+Offset} ()
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}{max\+Container\+Offset} ()
+\item 
+bool \hyperlink{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}{is\+Node\+Visible} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classScrollView_a8e0243782ea8fba9fca1909c47b5acca}\label{classScrollView_a8e0243782ea8fba9fca1909c47b5acca}} 
+void {\bfseries pause} (\hyperlink{classRef}{Ref} $\ast$sender)
+\item 
+\mbox{\Hypertarget{classScrollView_aecbf33a1806c9416e145b6bdfa34d87f}\label{classScrollView_aecbf33a1806c9416e145b6bdfa34d87f}} 
+void {\bfseries resume} (\hyperlink{classRef}{Ref} $\ast$sender)
+\item 
+\mbox{\Hypertarget{classScrollView_a5ba7f6eb8537a9bd30b2026227a5631a}\label{classScrollView_a5ba7f6eb8537a9bd30b2026227a5631a}} 
+void {\bfseries set\+Touch\+Enabled} (bool enabled)
+\item 
+\mbox{\Hypertarget{classScrollView_a963d2bacb68ccefbb5dfffcf88a5a7b5}\label{classScrollView_a963d2bacb68ccefbb5dfffcf88a5a7b5}} 
+bool {\bfseries is\+Touch\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classScrollView_a1aacddfc45fb0299b53764001c5b6cf2}\label{classScrollView_a1aacddfc45fb0299b53764001c5b6cf2}} 
+void {\bfseries set\+Swallow\+Touches} (bool need\+Swallow)
+\item 
+\mbox{\Hypertarget{classScrollView_ae9307d50e4ca9ca19731400b6f801363}\label{classScrollView_ae9307d50e4ca9ca19731400b6f801363}} 
+bool {\bfseries is\+Dragging} () const
+\item 
+\mbox{\Hypertarget{classScrollView_aad09fb7b94c104e83ef8b499552aa805}\label{classScrollView_aad09fb7b94c104e83ef8b499552aa805}} 
+bool {\bfseries is\+Touch\+Moved} () const
+\item 
+\mbox{\Hypertarget{classScrollView_ac3086ac241a29eb9ce311043506238e1}\label{classScrollView_ac3086ac241a29eb9ce311043506238e1}} 
+bool {\bfseries is\+Bounceable} () const
+\item 
+\mbox{\Hypertarget{classScrollView_ad21c34fd7ab0d5e7dfaa4fb5b35e8476}\label{classScrollView_ad21c34fd7ab0d5e7dfaa4fb5b35e8476}} 
+void {\bfseries set\+Bounceable} (bool b\+Bounceable)
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}{get\+View\+Size} () const
+\item 
+\mbox{\Hypertarget{classScrollView_af4e7c57f46b1654ecb64bfeba9979275}\label{classScrollView_af4e7c57f46b1654ecb64bfeba9979275}} 
+void {\bfseries set\+View\+Size} (\hyperlink{classSize}{Size} size)
+\item 
+\mbox{\Hypertarget{classScrollView_a88f619f933f85f6ceccae2151c7a740a}\label{classScrollView_a88f619f933f85f6ceccae2151c7a740a}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries get\+Container} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a1379d2b9cd15a386f4c97f179d748dde}\label{classScrollView_a1379d2b9cd15a386f4c97f179d748dde}} 
+void {\bfseries set\+Container} (\hyperlink{classNode}{Node} $\ast$p\+Container)
+\item 
+Direction \hyperlink{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}{get\+Direction} () const
+\item 
+\mbox{\Hypertarget{classScrollView_acf607cfec58d1f0565178272b2b102b6}\label{classScrollView_acf607cfec58d1f0565178272b2b102b6}} 
+virtual void {\bfseries set\+Direction} (Direction e\+Direction)
+\item 
+\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$ \hyperlink{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}{get\+Delegate} ()
+\item 
+void \hyperlink{classScrollView_a450371726a685f72266384598630439c}{set\+Delegate} (\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$p\+Delegate)
+\item 
+\mbox{\Hypertarget{classScrollView_a0d2e0d1f2fcd7587a0bb45e1e142bc84}\label{classScrollView_a0d2e0d1f2fcd7587a0bb45e1e142bc84}} 
+void {\bfseries update\+Inset} ()
+\item 
+bool \hyperlink{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}{is\+Clipping\+To\+Bounds} ()
+\item 
+\mbox{\Hypertarget{classScrollView_aacdda6e1da63c3fd215e458e5e3e1b9a}\label{classScrollView_aacdda6e1da63c3fd215e458e5e3e1b9a}} 
+void {\bfseries set\+Clipping\+To\+Bounds} (bool b\+Clipping\+To\+Bounds)
+\item 
+virtual bool \hyperlink{classScrollView_a3b24de8c28e9cfd8a2f44d626266e1be}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classScrollView_a8a0b3a876f644fbd941773e577c7b550}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_aafc1076e1f21bc66749a4c814814d681}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_a911e0e123c9f120f654744626bfcfd2c}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event) override
+\item 
+virtual void \hyperlink{classScrollView_a9d52bf1ed3831200285167c35fafa686}{set\+Content\+Size} (const \hyperlink{classSize}{Size} \&size) override
+\item 
+virtual const \hyperlink{classSize}{Size} \& \hyperlink{classScrollView_a996456628c049a6cc2876a7b18d15648}{get\+Content\+Size} () const override
+\begin{DoxyCompactList}\small\item\em content\+Size getter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classScrollView_a7aee8e0ccdc8235a7ed9e2932ccdcf25}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classScrollView_a251eb14f9abefa4c10ab4d0602b107c1}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classScrollView_af6d19fb104d88a3d884305c2a29842b0}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classScrollView_a6a3b9ea8f88bca7ad741b511de369f24}{remove\+All\+Children} () override
+\item 
+virtual void \hyperlink{classScrollView_a8b2cfd556bae69ffbd5ae3d5813d53e5}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classScrollView_a10009c987a878297cabe629369142972}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}=true) override
+\item 
+void \hyperlink{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}{update\+Tween\+Action} (float value, const std\+::string \&key) override
+\item 
+\mbox{\Hypertarget{classScrollView_a40274c1a8232b918781bdc04fe90c51d}\label{classScrollView_a40274c1a8232b918781bdc04fe90c51d}} 
+bool {\bfseries has\+Visible\+Parents} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classScrollView}{Scroll\+View} $\ast$ \hyperlink{classScrollView_a1442b0e45ca34a346264d4eaaf3306a4}{create} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+static \hyperlink{classScrollView}{Scroll\+View} $\ast$ \hyperlink{classScrollView_a67c16969c9f515d00488fb58dd8318a3}{create} ()
+\item 
+static \hyperlink{classScrollView}{Scroll\+View} $\ast$ \hyperlink{classScrollView_adca37a2f6083dacfab480417e517e3d6}{create} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+static \hyperlink{classScrollView}{Scroll\+View} $\ast$ \hyperlink{classScrollView_ab688cda5af4913f7299b627ddb0eb6cb}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}{relocate\+Container} (bool animated)
+\item 
+void \hyperlink{classScrollView_ad3519eeb9b3afad87767e722b54427f0}{deaccelerate\+Scrolling} (float dt)
+\item 
+void \hyperlink{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}{performed\+Animated\+Scroll} (float dt)
+\item 
+void \hyperlink{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}{stopped\+Animated\+Scroll} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}{before\+Draw} ()
+\item 
+void \hyperlink{classScrollView_acffe0b2442bc6ef4d9f3885c536e6c44}{on\+Before\+Draw} ()
+\item 
+void \hyperlink{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}{after\+Draw} ()
+\item 
+void \hyperlink{classScrollView_a5c8a81ace51864941969d9fc1e4cc505}{on\+After\+Draw} ()
+\item 
+void \hyperlink{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}{handle\+Zoom} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a1a64fa99456d234f42950aae4b3d92cb}\label{classScrollView_a1a64fa99456d234f42950aae4b3d92cb}} 
+\hyperlink{classRect}{Rect} {\bfseries get\+View\+Rect} ()
+\item 
+void \hyperlink{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}{relocate\+Container} (bool animated)
+\item 
+void \hyperlink{classScrollView_ad3519eeb9b3afad87767e722b54427f0}{deaccelerate\+Scrolling} (float dt)
+\item 
+void \hyperlink{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}{performed\+Animated\+Scroll} (float dt)
+\item 
+void \hyperlink{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}{stopped\+Animated\+Scroll} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}{before\+Draw} ()
+\item 
+\mbox{\Hypertarget{classScrollView_acffe0b2442bc6ef4d9f3885c536e6c44}\label{classScrollView_acffe0b2442bc6ef4d9f3885c536e6c44}} 
+void {\bfseries on\+Before\+Draw} ()
+\item 
+void \hyperlink{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}{after\+Draw} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a5c8a81ace51864941969d9fc1e4cc505}\label{classScrollView_a5c8a81ace51864941969d9fc1e4cc505}} 
+void {\bfseries on\+After\+Draw} ()
+\item 
+void \hyperlink{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}{handle\+Zoom} ()
+\item 
+\mbox{\Hypertarget{classScrollView_a1a64fa99456d234f42950aae4b3d92cb}\label{classScrollView_a1a64fa99456d234f42950aae4b3d92cb}} 
+\hyperlink{classRect}{Rect} {\bfseries get\+View\+Rect} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$ \hyperlink{classScrollView_a34ebfd00cb6aa44524e6330104de951c}{\+\_\+delegate}
+\item 
+\mbox{\Hypertarget{classScrollView_a23fc2df134b5ea936731f86d4dab4e0c}\label{classScrollView_a23fc2df134b5ea936731f86d4dab4e0c}} 
+Direction {\bfseries \+\_\+direction}
+\item 
+bool \hyperlink{classScrollView_a273f65143fd85a5059b6542f03394817}{\+\_\+dragging}
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a33f263e50cdf70ec078e863b49ecbaf9}{\+\_\+content\+Offset}
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classScrollView_a81d46625d9c9566a8ffb58c2b7a16f19}{\+\_\+container}
+\item 
+bool \hyperlink{classScrollView_af8fbe879a0228e957ee32265b5123e2c}{\+\_\+touch\+Moved}
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a9d3fd49fe5409afadcbc3fd72e458472}{\+\_\+max\+Inset}
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a0765d9e9863c30d05eda4f1e8118e953}{\+\_\+min\+Inset}
+\item 
+bool \hyperlink{classScrollView_a303fdf5ed50f0a9dc15912669de54b24}{\+\_\+bounceable}
+\item 
+\mbox{\Hypertarget{classScrollView_a359b9eca9ea80c8c5156d3eddefeb4d5}\label{classScrollView_a359b9eca9ea80c8c5156d3eddefeb4d5}} 
+bool {\bfseries \+\_\+clipping\+To\+Bounds}
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a45287113b00b55970d1cfceb860f7101}{\+\_\+scroll\+Distance}
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classScrollView_a9c087ffb8d2c3b180e9a7ed77fc07f05}{\+\_\+touch\+Point}
+\item 
+float \hyperlink{classScrollView_aed43981d625e9c19cd9969f71e7825fb}{\+\_\+touch\+Length}
+\item 
+std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$ $>$ \hyperlink{classScrollView_a2cc2133efc670e4b73ea1b2df30fe0e2}{\+\_\+touches}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classScrollView_ad4f31d6c396e8487716de175eea55a08}{\+\_\+view\+Size}
+\item 
+float \hyperlink{classScrollView_a65c741ae285cb6769864913876512bd6}{\+\_\+min\+Scale}
+\item 
+\mbox{\Hypertarget{classScrollView_a3fdc07a5c51ee632ec1e4ade16a04df2}\label{classScrollView_a3fdc07a5c51ee632ec1e4ade16a04df2}} 
+float {\bfseries \+\_\+max\+Scale}
+\item 
+\hyperlink{classRect}{Rect} \hyperlink{classScrollView_a0d99cf5b2372a67ca4ad18257beef46c}{\+\_\+parent\+Scissor\+Rect}
+\item 
+\mbox{\Hypertarget{classScrollView_ab82a1ca0d6b2cabb48ed5d53d472f21e}\label{classScrollView_ab82a1ca0d6b2cabb48ed5d53d472f21e}} 
+bool {\bfseries \+\_\+scissor\+Restored}
+\item 
+\hyperlink{classEventListenerTouchOneByOne}{Event\+Listener\+Touch\+One\+By\+One} $\ast$ \hyperlink{classScrollView_a5265050c036f42b2144a7d5cc737b387}{\+\_\+touch\+Listener}
+\item 
+\mbox{\Hypertarget{classScrollView_a6f1c4128b9d59f087b140a1ff5058c99}\label{classScrollView_a6f1c4128b9d59f087b140a1ff5058c99}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+before\+Draw\+Command}
+\item 
+\mbox{\Hypertarget{classScrollView_a7f207159e11b9c53eb6991603fc4f13c}\label{classScrollView_a7f207159e11b9c53eb6991603fc4f13c}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+after\+Draw\+Command}
+\item 
+\hyperlink{classAction}{Action} $\ast$ \hyperlink{classScrollView_a42ddc8c9146791b538cd9dbd102a2b1d}{\+\_\+animated\+Scroll\+Action}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classScrollView}{Scroll\+View} support for cocos2d-\/x. It provides scroll view functionalities to cocos2d projects natively. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}\label{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}} 
+\index{Scroll\+View@{Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\index{Scroll\+View@{Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{Scroll\+View()}{ScrollView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scroll\+View\+::\+Scroll\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classScrollView_a4a5220ac36e0c7d03973be1bdde8d7a1}\label{classScrollView_a4a5220ac36e0c7d03973be1bdde8d7a1}} 
+\index{Scroll\+View@{Scroll\+View}!````~Scroll\+View@{$\sim$\+Scroll\+View}}
+\index{````~Scroll\+View@{$\sim$\+Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Scroll\+View()}{~ScrollView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scroll\+View\+::$\sim$\+Scroll\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}\label{classScrollView_afe9273a62ee4829f87d13a22e0576ac7}} 
+\index{Scroll\+View@{Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\index{Scroll\+View@{Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{Scroll\+View()}{ScrollView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scroll\+View\+::\+Scroll\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classScrollView_a0bacfb202cd2daa890445aeb544fd17e}\label{classScrollView_a0bacfb202cd2daa890445aeb544fd17e}} 
+\index{Scroll\+View@{Scroll\+View}!````~Scroll\+View@{$\sim$\+Scroll\+View}}
+\index{````~Scroll\+View@{$\sim$\+Scroll\+View}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Scroll\+View()}{~ScrollView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Scroll\+View\+::$\sim$\+Scroll\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScrollView_a36cedf4f110c025a6fc1196f6db3cd44}\label{classScrollView_a36cedf4f110c025a6fc1196f6db3cd44}} 
+\index{Scroll\+View@{Scroll\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Scroll\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+make sure all children go to the container 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a29ff1f072b73708543aefc5f5983acba}\label{classScrollView_a29ff1f072b73708543aefc5f5983acba}} 
+\index{Scroll\+View@{Scroll\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Scroll\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a251eb14f9abefa4c10ab4d0602b107c1}\label{classScrollView_a251eb14f9abefa4c10ab4d0602b107c1}} 
+\index{Scroll\+View@{Scroll\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classScrollView_a29ff1f072b73708543aefc5f5983acba}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+\mbox{\Hypertarget{classScrollView_af6d19fb104d88a3d884305c2a29842b0}\label{classScrollView_af6d19fb104d88a3d884305c2a29842b0}} 
+\index{Scroll\+View@{Scroll\+View}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}\label{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}} 
+\index{Scroll\+View@{Scroll\+View}!after\+Draw@{after\+Draw}}
+\index{after\+Draw@{after\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{after\+Draw()}{afterDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::after\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+retract what\textquotesingle{}s done in before\+Draw so that there\textquotesingle{}s no side effect to other nodes. \mbox{\Hypertarget{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}\label{classScrollView_a1dbdfe5db3d1d1dbfe2099c2167818e3}} 
+\index{Scroll\+View@{Scroll\+View}!after\+Draw@{after\+Draw}}
+\index{after\+Draw@{after\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{after\+Draw()}{afterDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::after\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+retract what\textquotesingle{}s done in before\+Draw so that there\textquotesingle{}s no side effect to other nodes. \mbox{\Hypertarget{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}\label{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}} 
+\index{Scroll\+View@{Scroll\+View}!before\+Draw@{before\+Draw}}
+\index{before\+Draw@{before\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{before\+Draw()}{beforeDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::before\+Draw (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+clip this view so that outside of the visible bounds can be hidden. \mbox{\Hypertarget{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}\label{classScrollView_a4576d3e279850eb6f31c1fa48aeb8d6e}} 
+\index{Scroll\+View@{Scroll\+View}!before\+Draw@{before\+Draw}}
+\index{before\+Draw@{before\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{before\+Draw()}{beforeDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::before\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+clip this view so that outside of the visible bounds can be hidden. \mbox{\Hypertarget{classScrollView_a1442b0e45ca34a346264d4eaaf3306a4}\label{classScrollView_a1442b0e45ca34a346264d4eaaf3306a4}} 
+\index{Scroll\+View@{Scroll\+View}!create@{create}}
+\index{create@{create}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classScrollView}{Scroll\+View} $\ast$ Scroll\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an autoreleased scroll view object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & view size \\
+\hline
+{\em container} & parent object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+autoreleased scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_adca37a2f6083dacfab480417e517e3d6}\label{classScrollView_adca37a2f6083dacfab480417e517e3d6}} 
+\index{Scroll\+View@{Scroll\+View}!create@{create}}
+\index{create@{create}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classScrollView}{Scroll\+View}$\ast$ Scroll\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an autoreleased scroll view object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & view size \\
+\hline
+{\em container} & parent object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+autoreleased scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_a67c16969c9f515d00488fb58dd8318a3}\label{classScrollView_a67c16969c9f515d00488fb58dd8318a3}} 
+\index{Scroll\+View@{Scroll\+View}!create@{create}}
+\index{create@{create}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classScrollView}{Scroll\+View} $\ast$ Scroll\+View\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an autoreleased scroll view object.
+
+\begin{DoxyReturn}{Returns}
+autoreleased scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_ab688cda5af4913f7299b627ddb0eb6cb}\label{classScrollView_ab688cda5af4913f7299b627ddb0eb6cb}} 
+\index{Scroll\+View@{Scroll\+View}!create@{create}}
+\index{create@{create}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classScrollView}{Scroll\+View}$\ast$ Scroll\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an autoreleased scroll view object.
+
+\begin{DoxyReturn}{Returns}
+autoreleased scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_ad3519eeb9b3afad87767e722b54427f0}\label{classScrollView_ad3519eeb9b3afad87767e722b54427f0}} 
+\index{Scroll\+View@{Scroll\+View}!deaccelerate\+Scrolling@{deaccelerate\+Scrolling}}
+\index{deaccelerate\+Scrolling@{deaccelerate\+Scrolling}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{deaccelerate\+Scrolling()}{deaccelerateScrolling()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::deaccelerate\+Scrolling (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+implements auto-\/scrolling behavior. change S\+C\+R\+O\+L\+L\+\_\+\+D\+E\+A\+C\+C\+E\+L\+\_\+\+R\+A\+TE as needed to choose deacceleration speed. it must be less than 1.\+0f.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & delta \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_ad3519eeb9b3afad87767e722b54427f0}\label{classScrollView_ad3519eeb9b3afad87767e722b54427f0}} 
+\index{Scroll\+View@{Scroll\+View}!deaccelerate\+Scrolling@{deaccelerate\+Scrolling}}
+\index{deaccelerate\+Scrolling@{deaccelerate\+Scrolling}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{deaccelerate\+Scrolling()}{deaccelerateScrolling()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::deaccelerate\+Scrolling (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+implements auto-\/scrolling behavior. change S\+C\+R\+O\+L\+L\+\_\+\+D\+E\+A\+C\+C\+E\+L\+\_\+\+R\+A\+TE as needed to choose deacceleration speed. it must be less than 1.\+0f.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & delta \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a137f08e58505c253a4c3274c426200b2}\label{classScrollView_a137f08e58505c253a4c3274c426200b2}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Content\+Size@{get\+Content\+Size}}
+\index{get\+Content\+Size@{get\+Content\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Content\+Size()}{getContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size} \& Scroll\+View\+::get\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+content\+Size getter 
+
+Returns the untransformed size of the node.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classScrollView_a3cf1d7fd072898e64498a7dc9c5932c1}{set\+Content\+Size(const Size\&)}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The untransformed size of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a3828836a62dbf0862ecaa99a72babc13}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a996456628c049a6cc2876a7b18d15648}\label{classScrollView_a996456628c049a6cc2876a7b18d15648}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Content\+Size@{get\+Content\+Size}}
+\index{get\+Content\+Size@{get\+Content\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Content\+Size()}{getContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classSize}{Size}\& Scroll\+View\+::get\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+content\+Size getter 
+
+Returns the untransformed size of the node.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classScrollView_a3cf1d7fd072898e64498a7dc9c5932c1}{set\+Content\+Size(const Size\&)}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The untransformed size of the node. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a3828836a62dbf0862ecaa99a72babc13}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}\label{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate}$\ast$ Scroll\+View\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}\label{classScrollView_a49b7e183c04e572d20f20ac4d8a6d3c6}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate}$\ast$ Scroll\+View\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}\label{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Direction()}{getDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Direction Scroll\+View\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+direction allowed to scroll. Scroll\+View\+Direction\+Both by default. \mbox{\Hypertarget{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}\label{classScrollView_a29b46de3ff7003160ddb9b51f38e64c1}} 
+\index{Scroll\+View@{Scroll\+View}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+Direction()}{getDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Direction Scroll\+View\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+direction allowed to scroll. Scroll\+View\+Direction\+Both by default. \mbox{\Hypertarget{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}\label{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}} 
+\index{Scroll\+View@{Scroll\+View}!get\+View\+Size@{get\+View\+Size}}
+\index{get\+View\+Size@{get\+View\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Size()}{getViewSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Scroll\+View\+::get\+View\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+size to clip. \hyperlink{classNode}{Node} bounding\+Box uses content\+Size directly. It\textquotesingle{}s semantically different what it actually means to common scroll views. Hence, this scroll view will use a separate size property. \mbox{\Hypertarget{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}\label{classScrollView_a84b4e4eb00a0877a2b2e71e3f1792b68}} 
+\index{Scroll\+View@{Scroll\+View}!get\+View\+Size@{get\+View\+Size}}
+\index{get\+View\+Size@{get\+View\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Size()}{getViewSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Scroll\+View\+::get\+View\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+size to clip. \hyperlink{classNode}{Node} bounding\+Box uses content\+Size directly. It\textquotesingle{}s semantically different what it actually means to common scroll views. Hence, this scroll view will use a separate size property. \mbox{\Hypertarget{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}\label{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}} 
+\index{Scroll\+View@{Scroll\+View}!handle\+Zoom@{handle\+Zoom}}
+\index{handle\+Zoom@{handle\+Zoom}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{handle\+Zoom()}{handleZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::handle\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Zoom handling \mbox{\Hypertarget{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}\label{classScrollView_a9eedb1e4515a77abc80fcfacb4638474}} 
+\index{Scroll\+View@{Scroll\+View}!handle\+Zoom@{handle\+Zoom}}
+\index{handle\+Zoom@{handle\+Zoom}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{handle\+Zoom()}{handleZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::handle\+Zoom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Zoom handling \mbox{\Hypertarget{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}\label{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}} 
+\index{Scroll\+View@{Scroll\+View}!init\+With\+View\+Size@{init\+With\+View\+Size}}
+\index{init\+With\+View\+Size@{init\+With\+View\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{init\+With\+View\+Size()}{initWithViewSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::init\+With\+View\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Returns a scroll view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & view size \\
+\hline
+{\em container} & parent object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}\label{classScrollView_ae672005fc1d0d8dd3605d85e9f41a1d4}} 
+\index{Scroll\+View@{Scroll\+View}!init\+With\+View\+Size@{init\+With\+View\+Size}}
+\index{init\+With\+View\+Size@{init\+With\+View\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{init\+With\+View\+Size()}{initWithViewSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::init\+With\+View\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Returns a scroll view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & view size \\
+\hline
+{\em container} & parent object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+scroll view object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}\label{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}} 
+\index{Scroll\+View@{Scroll\+View}!is\+Clipping\+To\+Bounds@{is\+Clipping\+To\+Bounds}}
+\index{is\+Clipping\+To\+Bounds@{is\+Clipping\+To\+Bounds}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{is\+Clipping\+To\+Bounds()}{isClippingToBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::is\+Clipping\+To\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines whether it clips its children or not. \mbox{\Hypertarget{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}\label{classScrollView_a7c5e4247b97f795d120e68b1fbee751e}} 
+\index{Scroll\+View@{Scroll\+View}!is\+Clipping\+To\+Bounds@{is\+Clipping\+To\+Bounds}}
+\index{is\+Clipping\+To\+Bounds@{is\+Clipping\+To\+Bounds}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{is\+Clipping\+To\+Bounds()}{isClippingToBounds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::is\+Clipping\+To\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determines whether it clips its children or not. \mbox{\Hypertarget{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}\label{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}} 
+\index{Scroll\+View@{Scroll\+View}!is\+Node\+Visible@{is\+Node\+Visible}}
+\index{is\+Node\+Visible@{is\+Node\+Visible}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{is\+Node\+Visible()}{isNodeVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::is\+Node\+Visible (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Determines if a given node\textquotesingle{}s bounding box is in visible bounds
+
+\begin{DoxyReturn}{Returns}
+true if it is in visible bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}\label{classScrollView_a0605de8c4ddbb06479cfdb8eee65e41e}} 
+\index{Scroll\+View@{Scroll\+View}!is\+Node\+Visible@{is\+Node\+Visible}}
+\index{is\+Node\+Visible@{is\+Node\+Visible}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{is\+Node\+Visible()}{isNodeVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::is\+Node\+Visible (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Determines if a given node\textquotesingle{}s bounding box is in visible bounds
+
+\begin{DoxyReturn}{Returns}
+true if it is in visible bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}\label{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}} 
+\index{Scroll\+View@{Scroll\+View}!max\+Container\+Offset@{max\+Container\+Offset}}
+\index{max\+Container\+Offset@{max\+Container\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{max\+Container\+Offset()}{maxContainerOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::max\+Container\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current container\textquotesingle{}s maximum offset. You may want this while you animate scrolling by yourself \mbox{\Hypertarget{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}\label{classScrollView_a0c3c4cc77fc7af466bfc3cccd6b1b122}} 
+\index{Scroll\+View@{Scroll\+View}!max\+Container\+Offset@{max\+Container\+Offset}}
+\index{max\+Container\+Offset@{max\+Container\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{max\+Container\+Offset()}{maxContainerOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::max\+Container\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current container\textquotesingle{}s maximum offset. You may want this while you animate scrolling by yourself \mbox{\Hypertarget{classScrollView_a53daf6cba39b0e1340d66728394c6a41}\label{classScrollView_a53daf6cba39b0e1340d66728394c6a41}} 
+\index{Scroll\+View@{Scroll\+View}!min\+Container\+Offset@{min\+Container\+Offset}}
+\index{min\+Container\+Offset@{min\+Container\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{min\+Container\+Offset()}{minContainerOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::min\+Container\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current container\textquotesingle{}s minimum offset. You may want this while you animate scrolling by yourself \mbox{\Hypertarget{classScrollView_a53daf6cba39b0e1340d66728394c6a41}\label{classScrollView_a53daf6cba39b0e1340d66728394c6a41}} 
+\index{Scroll\+View@{Scroll\+View}!min\+Container\+Offset@{min\+Container\+Offset}}
+\index{min\+Container\+Offset@{min\+Container\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{min\+Container\+Offset()}{minContainerOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::min\+Container\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current container\textquotesingle{}s minimum offset. You may want this while you animate scrolling by yourself \mbox{\Hypertarget{classScrollView_a5c8a81ace51864941969d9fc1e4cc505}\label{classScrollView_a5c8a81ace51864941969d9fc1e4cc505}} 
+\index{Scroll\+View@{Scroll\+View}!on\+After\+Draw@{on\+After\+Draw}}
+\index{on\+After\+Draw@{on\+After\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+After\+Draw()}{onAfterDraw()}}
+{\footnotesize\ttfamily void Scroll\+View\+::on\+After\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+retract what\textquotesingle{}s done in before\+Draw so that there\textquotesingle{}s no side effect to other nodes. \mbox{\Hypertarget{classScrollView_acffe0b2442bc6ef4d9f3885c536e6c44}\label{classScrollView_acffe0b2442bc6ef4d9f3885c536e6c44}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Before\+Draw@{on\+Before\+Draw}}
+\index{on\+Before\+Draw@{on\+Before\+Draw}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Before\+Draw()}{onBeforeDraw()}}
+{\footnotesize\ttfamily void Scroll\+View\+::on\+Before\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+clip this view so that outside of the visible bounds can be hidden. \mbox{\Hypertarget{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}\label{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Scroll\+View\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a57908fcd3fe592e50ff721dd84675a01}{Table\+View}, and \hyperlink{classTableView_a195a00658f0ba79be1b59935569c3c7c}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a3b24de8c28e9cfd8a2f44d626266e1be}\label{classScrollView_a3b24de8c28e9cfd8a2f44d626266e1be}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Scroll\+View\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a57908fcd3fe592e50ff721dd84675a01}{Table\+View}, and \hyperlink{classTableView_a195a00658f0ba79be1b59935569c3c7c}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}\label{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a5ed81baf58526698abefaf8ca08a6c01}{Table\+View}, and \hyperlink{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a911e0e123c9f120f654744626bfcfd2c}\label{classScrollView_a911e0e123c9f120f654744626bfcfd2c}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a5ed81baf58526698abefaf8ca08a6c01}{Table\+View}, and \hyperlink{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a86f57715da926a475b75d67eff84701d}\label{classScrollView_a86f57715da926a475b75d67eff84701d}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}{Table\+View}, and \hyperlink{classTableView_a361d91c5c592b3d81ed43b6743487fc3}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_aafc1076e1f21bc66749a4c814814d681}\label{classScrollView_aafc1076e1f21bc66749a4c814814d681}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}{Table\+View}, and \hyperlink{classTableView_a361d91c5c592b3d81ed43b6743487fc3}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}\label{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_acd131e5fa29332743e625a1a0d047965}{Table\+View}, and \hyperlink{classTableView_a242e9d8c695681b41eef636471e768b5}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_a8a0b3a876f644fbd941773e577c7b550}\label{classScrollView_a8a0b3a876f644fbd941773e577c7b550}} 
+\index{Scroll\+View@{Scroll\+View}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{Layer}.
+
+
+
+Reimplemented in \hyperlink{classTableView_acd131e5fa29332743e625a1a0d047965}{Table\+View}, and \hyperlink{classTableView_a242e9d8c695681b41eef636471e768b5}{Table\+View}.
+
+\mbox{\Hypertarget{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}\label{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}} 
+\index{Scroll\+View@{Scroll\+View}!performed\+Animated\+Scroll@{performed\+Animated\+Scroll}}
+\index{performed\+Animated\+Scroll@{performed\+Animated\+Scroll}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{performed\+Animated\+Scroll()}{performedAnimatedScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::performed\+Animated\+Scroll (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+This method makes sure auto scrolling causes delegate to invoke its method \mbox{\Hypertarget{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}\label{classScrollView_ac3f32e65ea62a4322c37da1316ebc110}} 
+\index{Scroll\+View@{Scroll\+View}!performed\+Animated\+Scroll@{performed\+Animated\+Scroll}}
+\index{performed\+Animated\+Scroll@{performed\+Animated\+Scroll}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{performed\+Animated\+Scroll()}{performedAnimatedScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::performed\+Animated\+Scroll (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+This method makes sure auto scrolling causes delegate to invoke its method \mbox{\Hypertarget{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}\label{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}} 
+\index{Scroll\+View@{Scroll\+View}!relocate\+Container@{relocate\+Container}}
+\index{relocate\+Container@{relocate\+Container}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{relocate\+Container()}{relocateContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::relocate\+Container (\begin{DoxyParamCaption}\item[{bool}]{animated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Relocates the container at the proper offset, in bounds of max/min offsets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated} & If true, relocation is animated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}\label{classScrollView_a2c4fd75c5fd7f66cfaec50553d2efa69}} 
+\index{Scroll\+View@{Scroll\+View}!relocate\+Container@{relocate\+Container}}
+\index{relocate\+Container@{relocate\+Container}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{relocate\+Container()}{relocateContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::relocate\+Container (\begin{DoxyParamCaption}\item[{bool}]{animated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Relocates the container at the proper offset, in bounds of max/min offsets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated} & If true, relocation is animated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_aaef2d3ce7b1b7d485af4a3657bea17e5}\label{classScrollView_aaef2d3ce7b1b7d485af4a3657bea17e5}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}{remove\+All\+Children\+With\+Cleanup(bool)}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classNode_a0f6ef5518d2e5dd5be405e98b37ace4a}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a6a3b9ea8f88bca7ad741b511de369f24}\label{classScrollView_a6a3b9ea8f88bca7ad741b511de369f24}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container with a cleanup.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}{remove\+All\+Children\+With\+Cleanup(bool)}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classNode_a0f6ef5518d2e5dd5be405e98b37ace4a}{Node}.
+
+\mbox{\Hypertarget{classScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}\label{classScrollView_ac71d0fe89be6291abbccf6a6f8f011b4}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & True if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a8b2cfd556bae69ffbd5ae3d5813d53e5}\label{classScrollView_a8b2cfd556bae69ffbd5ae3d5813d53e5}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cleanup} & True if all running actions on all children nodes should be cleanup, false otherwise.  remove\+All\+Children  remove\+All\+Children \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a678108e716966e8beccc25c0de1d9b29}\label{classScrollView_a678108e716966e8beccc25c0de1d9b29}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a10009c987a878297cabe629369142972}\label{classScrollView_a10009c987a878297cabe629369142972}} 
+\index{Scroll\+View@{Scroll\+View}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+\mbox{\Hypertarget{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}\label{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Offset@{set\+Content\+Offset}}
+\index{set\+Content\+Offset@{set\+Content\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Offset()}{setContentOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Content\+Offset (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{offset,  }\item[{bool}]{animated = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Sets a new content offset. It ignores max/min offset. It just sets what\textquotesingle{}s given. (just like U\+I\+Kit\textquotesingle{}s U\+I\+Scroll\+View)
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The new offset. \\
+\hline
+{\em animated} & If true, the view will scroll to the new offset. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}\label{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Offset@{set\+Content\+Offset}}
+\index{set\+Content\+Offset@{set\+Content\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Offset()}{setContentOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Content\+Offset (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{offset,  }\item[{bool}]{animated = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Sets a new content offset. It ignores max/min offset. It just sets what\textquotesingle{}s given. (just like U\+I\+Kit\textquotesingle{}s U\+I\+Scroll\+View)
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The new offset. \\
+\hline
+{\em animated} & If true, the view will scroll to the new offset. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_ad98397d42075b810de17c35eb9843ec7}\label{classScrollView_ad98397d42075b810de17c35eb9843ec7}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Offset\+In\+Duration@{set\+Content\+Offset\+In\+Duration}}
+\index{set\+Content\+Offset\+In\+Duration@{set\+Content\+Offset\+In\+Duration}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Offset\+In\+Duration()}{setContentOffsetInDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Content\+Offset\+In\+Duration (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{offset,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Sets a new content offset. It ignores max/min offset. It just sets what\textquotesingle{}s given. (just like U\+I\+Kit\textquotesingle{}s U\+I\+Scroll\+View) You can override the animation duration with this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The new offset. \\
+\hline
+{\em dt} & The animation duration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_ad98397d42075b810de17c35eb9843ec7}\label{classScrollView_ad98397d42075b810de17c35eb9843ec7}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Offset\+In\+Duration@{set\+Content\+Offset\+In\+Duration}}
+\index{set\+Content\+Offset\+In\+Duration@{set\+Content\+Offset\+In\+Duration}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Offset\+In\+Duration()}{setContentOffsetInDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Content\+Offset\+In\+Duration (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{offset,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Sets a new content offset. It ignores max/min offset. It just sets what\textquotesingle{}s given. (just like U\+I\+Kit\textquotesingle{}s U\+I\+Scroll\+View) You can override the animation duration with this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The new offset. \\
+\hline
+{\em dt} & The animation duration. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a3cf1d7fd072898e64498a7dc9c5932c1}\label{classScrollView_a3cf1d7fd072898e64498a7dc9c5932c1}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Size@{set\+Content\+Size}}
+\index{set\+Content\+Size@{set\+Content\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Size()}{setContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Content\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the untransformed size of the node.
+
+The content\+Size remains the same no matter the node is scaled or rotated. All nodes has a size. \hyperlink{classLayer}{Layer} and \hyperlink{classScene}{Scene} has the same size of the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em content\+Size} & The untransformed size of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ade113d7fc9244f58ac98a4712da49818}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a9d52bf1ed3831200285167c35fafa686}\label{classScrollView_a9d52bf1ed3831200285167c35fafa686}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Content\+Size@{set\+Content\+Size}}
+\index{set\+Content\+Size@{set\+Content\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Size()}{setContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::set\+Content\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the untransformed size of the node.
+
+The content\+Size remains the same no matter the node is scaled or rotated. All nodes has a size. \hyperlink{classLayer}{Layer} and \hyperlink{classScene}{Scene} has the same size of the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em content\+Size} & The untransformed size of the node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ade113d7fc9244f58ac98a4712da49818}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a450371726a685f72266384598630439c}\label{classScrollView_a450371726a685f72266384598630439c}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$}]{p\+Delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input param are changed
+in js: var \hyperlink{classScrollView_a450371726a685f72266384598630439c}{setDelegate}(var jsObject)
+in lua: local \hyperlink{classScrollView_a450371726a685f72266384598630439c}{setDelegate}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classScrollView_a450371726a685f72266384598630439c}\label{classScrollView_a450371726a685f72266384598630439c}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$}]{p\+Delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input param are changed
+in js: var \hyperlink{classScrollView_a450371726a685f72266384598630439c}{setDelegate}(var jsObject)
+in lua: local \hyperlink{classScrollView_a450371726a685f72266384598630439c}{setDelegate}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classScrollView_a8ec505c49d181c320f88cadbd2be5785}\label{classScrollView_a8ec505c49d181c320f88cadbd2be5785}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Max\+Scale@{set\+Max\+Scale}}
+\index{set\+Max\+Scale@{set\+Max\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Max\+Scale()}{setMaxScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Max\+Scale (\begin{DoxyParamCaption}\item[{float}]{max\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set max scale
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Scale} & max scale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a8ec505c49d181c320f88cadbd2be5785}\label{classScrollView_a8ec505c49d181c320f88cadbd2be5785}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Max\+Scale@{set\+Max\+Scale}}
+\index{set\+Max\+Scale@{set\+Max\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Max\+Scale()}{setMaxScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Max\+Scale (\begin{DoxyParamCaption}\item[{float}]{max\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set max scale
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Scale} & max scale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a4037050171ea3ffcd365024ef3e74009}\label{classScrollView_a4037050171ea3ffcd365024ef3e74009}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Min\+Scale@{set\+Min\+Scale}}
+\index{set\+Min\+Scale@{set\+Min\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Min\+Scale()}{setMinScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Min\+Scale (\begin{DoxyParamCaption}\item[{float}]{min\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set min scale
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Scale} & min scale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a4037050171ea3ffcd365024ef3e74009}\label{classScrollView_a4037050171ea3ffcd365024ef3e74009}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Min\+Scale@{set\+Min\+Scale}}
+\index{set\+Min\+Scale@{set\+Min\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Min\+Scale()}{setMinScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Min\+Scale (\begin{DoxyParamCaption}\item[{float}]{min\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set min scale
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Scale} & min scale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}\label{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Zoom\+Scale@{set\+Zoom\+Scale}}
+\index{set\+Zoom\+Scale@{set\+Zoom\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale()}{setZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Zoom\+Scale (\begin{DoxyParamCaption}\item[{float}]{s,  }\item[{bool}]{animated }\end{DoxyParamCaption})}
+
+Sets a new scale and does that for a predefined duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The new scale vale \\
+\hline
+{\em animated} & If true, scaling is animated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}\label{classScrollView_a9c9101d58eeb922bfe64b9b4cd01b314}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Zoom\+Scale@{set\+Zoom\+Scale}}
+\index{set\+Zoom\+Scale@{set\+Zoom\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale()}{setZoomScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Zoom\+Scale (\begin{DoxyParamCaption}\item[{float}]{s,  }\item[{bool}]{animated }\end{DoxyParamCaption})}
+
+Sets a new scale and does that for a predefined duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The new scale vale \\
+\hline
+{\em animated} & If true, scaling is animated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}\label{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Zoom\+Scale\+In\+Duration@{set\+Zoom\+Scale\+In\+Duration}}
+\index{set\+Zoom\+Scale\+In\+Duration@{set\+Zoom\+Scale\+In\+Duration}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale\+In\+Duration()}{setZoomScaleInDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Zoom\+Scale\+In\+Duration (\begin{DoxyParamCaption}\item[{float}]{s,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Sets a new scale for container in a given duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The new scale value \\
+\hline
+{\em dt} & The animation duration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}\label{classScrollView_a04c9d8527dc9a0b883324c90d5b30ae2}} 
+\index{Scroll\+View@{Scroll\+View}!set\+Zoom\+Scale\+In\+Duration@{set\+Zoom\+Scale\+In\+Duration}}
+\index{set\+Zoom\+Scale\+In\+Duration@{set\+Zoom\+Scale\+In\+Duration}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Scale\+In\+Duration()}{setZoomScaleInDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::set\+Zoom\+Scale\+In\+Duration (\begin{DoxyParamCaption}\item[{float}]{s,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Sets a new scale for container in a given duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The new scale value \\
+\hline
+{\em dt} & The animation duration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}\label{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}} 
+\index{Scroll\+View@{Scroll\+View}!stop\+Animated\+Content\+Offset@{stop\+Animated\+Content\+Offset}}
+\index{stop\+Animated\+Content\+Offset@{stop\+Animated\+Content\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{stop\+Animated\+Content\+Offset()}{stopAnimatedContentOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::stop\+Animated\+Content\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Halts the movement animation of the inner content started with \hyperlink{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}{set\+Content\+Offset()} or \hyperlink{classScrollView_ad98397d42075b810de17c35eb9843ec7}{set\+Content\+Offset\+In\+Duration()} \mbox{\Hypertarget{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}\label{classScrollView_a13c84492be7e7c8e06a29f6bd3bdcc7e}} 
+\index{Scroll\+View@{Scroll\+View}!stop\+Animated\+Content\+Offset@{stop\+Animated\+Content\+Offset}}
+\index{stop\+Animated\+Content\+Offset@{stop\+Animated\+Content\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{stop\+Animated\+Content\+Offset()}{stopAnimatedContentOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::stop\+Animated\+Content\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Halts the movement animation of the inner content started with \hyperlink{classScrollView_ab8bc90e2fef0ba2e8ddf04778bb44dfe}{set\+Content\+Offset()} or \hyperlink{classScrollView_ad98397d42075b810de17c35eb9843ec7}{set\+Content\+Offset\+In\+Duration()} \mbox{\Hypertarget{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}\label{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}} 
+\index{Scroll\+View@{Scroll\+View}!stopped\+Animated\+Scroll@{stopped\+Animated\+Scroll}}
+\index{stopped\+Animated\+Scroll@{stopped\+Animated\+Scroll}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{stopped\+Animated\+Scroll()}{stoppedAnimatedScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::stopped\+Animated\+Scroll (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Expire animated scroll delegate calls \mbox{\Hypertarget{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}\label{classScrollView_a63f5487af2b0ff9b8a58dcb3921c9026}} 
+\index{Scroll\+View@{Scroll\+View}!stopped\+Animated\+Scroll@{stopped\+Animated\+Scroll}}
+\index{stopped\+Animated\+Scroll@{stopped\+Animated\+Scroll}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{stopped\+Animated\+Scroll()}{stoppedAnimatedScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::stopped\+Animated\+Scroll (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Expire animated scroll delegate calls \mbox{\Hypertarget{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}\label{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}} 
+\index{Scroll\+View@{Scroll\+View}!update\+Tween\+Action@{update\+Tween\+Action}}
+\index{update\+Tween\+Action@{update\+Tween\+Action}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{update\+Tween\+Action()}{updateTweenAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::update\+Tween\+Action (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+C\+C\+Action\+Tween\+Delegate 
+
+Implements \hyperlink{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}{Action\+Tween\+Delegate}.
+
+\mbox{\Hypertarget{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}\label{classScrollView_a0af7498e959826dad2ae4d66f1b5b71d}} 
+\index{Scroll\+View@{Scroll\+View}!update\+Tween\+Action@{update\+Tween\+Action}}
+\index{update\+Tween\+Action@{update\+Tween\+Action}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{update\+Tween\+Action()}{updateTweenAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::update\+Tween\+Action (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+C\+C\+Action\+Tween\+Delegate 
+
+Implements \hyperlink{classActionTweenDelegate_a6cb6dce375e29bd38af1a81001eeac66}{Action\+Tween\+Delegate}.
+
+\mbox{\Hypertarget{classScrollView_a9766dfe15b34a8d7d1e3fd7b6acfcc32}\label{classScrollView_a9766dfe15b34a8d7d1e3fd7b6acfcc32}} 
+\index{Scroll\+View@{Scroll\+View}!visit@{visit}}
+\index{visit@{visit}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scroll\+View\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classScrollView_a7aee8e0ccdc8235a7ed9e2932ccdcf25}\label{classScrollView_a7aee8e0ccdc8235a7ed9e2932ccdcf25}} 
+\index{Scroll\+View@{Scroll\+View}!visit@{visit}}
+\index{visit@{visit}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scroll\+View\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classScrollView_a42ddc8c9146791b538cd9dbd102a2b1d}\label{classScrollView_a42ddc8c9146791b538cd9dbd102a2b1d}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+animated\+Scroll\+Action@{\+\_\+animated\+Scroll\+Action}}
+\index{\+\_\+animated\+Scroll\+Action@{\+\_\+animated\+Scroll\+Action}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+animated\+Scroll\+Action}{\_animatedScrollAction}}
+{\footnotesize\ttfamily \hyperlink{classAction}{Action} $\ast$ Scroll\+View\+::\+\_\+animated\+Scroll\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classAction}{Action} created with \hyperlink{classScrollView_ad98397d42075b810de17c35eb9843ec7}{set\+Content\+Offset\+In\+Duration()}, saved so it can be halted \mbox{\Hypertarget{classScrollView_a303fdf5ed50f0a9dc15912669de54b24}\label{classScrollView_a303fdf5ed50f0a9dc15912669de54b24}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+bounceable@{\+\_\+bounceable}}
+\index{\+\_\+bounceable@{\+\_\+bounceable}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+bounceable}{\_bounceable}}
+{\footnotesize\ttfamily bool Scroll\+View\+::\+\_\+bounceable\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether the scroll view is allowed to bounce or not. \mbox{\Hypertarget{classScrollView_a81d46625d9c9566a8ffb58c2b7a16f19}\label{classScrollView_a81d46625d9c9566a8ffb58c2b7a16f19}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+container@{\+\_\+container}}
+\index{\+\_\+container@{\+\_\+container}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+container}{\_container}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node} $\ast$ Scroll\+View\+::\+\_\+container\hspace{0.3cm}{\ttfamily [protected]}}
+
+Container holds scroll view contents, Sets the scrollable container object of the scroll view \mbox{\Hypertarget{classScrollView_a33f263e50cdf70ec078e863b49ecbaf9}\label{classScrollView_a33f263e50cdf70ec078e863b49ecbaf9}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+content\+Offset@{\+\_\+content\+Offset}}
+\index{\+\_\+content\+Offset@{\+\_\+content\+Offset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+content\+Offset}{\_contentOffset}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::\+\_\+content\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+Content offset. Note that left-\/bottom point is the origin \mbox{\Hypertarget{classScrollView_a34ebfd00cb6aa44524e6330104de951c}\label{classScrollView_a34ebfd00cb6aa44524e6330104de951c}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+delegate@{\+\_\+delegate}}
+\index{\+\_\+delegate@{\+\_\+delegate}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+delegate}{\_delegate}}
+{\footnotesize\ttfamily \hyperlink{classScrollViewDelegate}{Scroll\+View\+Delegate} $\ast$ Scroll\+View\+::\+\_\+delegate\hspace{0.3cm}{\ttfamily [protected]}}
+
+scroll view delegate \mbox{\Hypertarget{classScrollView_a273f65143fd85a5059b6542f03394817}\label{classScrollView_a273f65143fd85a5059b6542f03394817}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+dragging@{\+\_\+dragging}}
+\index{\+\_\+dragging@{\+\_\+dragging}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+dragging}{\_dragging}}
+{\footnotesize\ttfamily bool Scroll\+View\+::\+\_\+dragging\hspace{0.3cm}{\ttfamily [protected]}}
+
+If Y\+ES, the view is being dragged. \mbox{\Hypertarget{classScrollView_a9d3fd49fe5409afadcbc3fd72e458472}\label{classScrollView_a9d3fd49fe5409afadcbc3fd72e458472}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+max\+Inset@{\+\_\+max\+Inset}}
+\index{\+\_\+max\+Inset@{\+\_\+max\+Inset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Inset}{\_maxInset}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::\+\_\+max\+Inset\hspace{0.3cm}{\ttfamily [protected]}}
+
+max inset point to limit scrolling by touch \mbox{\Hypertarget{classScrollView_a0765d9e9863c30d05eda4f1e8118e953}\label{classScrollView_a0765d9e9863c30d05eda4f1e8118e953}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+min\+Inset@{\+\_\+min\+Inset}}
+\index{\+\_\+min\+Inset@{\+\_\+min\+Inset}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Inset}{\_minInset}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::\+\_\+min\+Inset\hspace{0.3cm}{\ttfamily [protected]}}
+
+min inset point to limit scrolling by touch \mbox{\Hypertarget{classScrollView_a65c741ae285cb6769864913876512bd6}\label{classScrollView_a65c741ae285cb6769864913876512bd6}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+min\+Scale@{\+\_\+min\+Scale}}
+\index{\+\_\+min\+Scale@{\+\_\+min\+Scale}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+min\+Scale}{\_minScale}}
+{\footnotesize\ttfamily float Scroll\+View\+::\+\_\+min\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+max and min scale \mbox{\Hypertarget{classScrollView_a0d99cf5b2372a67ca4ad18257beef46c}\label{classScrollView_a0d99cf5b2372a67ca4ad18257beef46c}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+parent\+Scissor\+Rect@{\+\_\+parent\+Scissor\+Rect}}
+\index{\+\_\+parent\+Scissor\+Rect@{\+\_\+parent\+Scissor\+Rect}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+parent\+Scissor\+Rect}{\_parentScissorRect}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} Scroll\+View\+::\+\_\+parent\+Scissor\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+scissor rect for parent, just for restoring G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+B\+OX \mbox{\Hypertarget{classScrollView_a45287113b00b55970d1cfceb860f7101}\label{classScrollView_a45287113b00b55970d1cfceb860f7101}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+scroll\+Distance@{\+\_\+scroll\+Distance}}
+\index{\+\_\+scroll\+Distance@{\+\_\+scroll\+Distance}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+scroll\+Distance}{\_scrollDistance}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::\+\_\+scroll\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+scroll speed \mbox{\Hypertarget{classScrollView_a2cc2133efc670e4b73ea1b2df30fe0e2}\label{classScrollView_a2cc2133efc670e4b73ea1b2df30fe0e2}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+touches@{\+\_\+touches}}
+\index{\+\_\+touches@{\+\_\+touches}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+touches}{\_touches}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$ $>$ Scroll\+View\+::\+\_\+touches\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classTouch}{Touch} objects to detect multitouch \mbox{\Hypertarget{classScrollView_aed43981d625e9c19cd9969f71e7825fb}\label{classScrollView_aed43981d625e9c19cd9969f71e7825fb}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+touch\+Length@{\+\_\+touch\+Length}}
+\index{\+\_\+touch\+Length@{\+\_\+touch\+Length}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+touch\+Length}{\_touchLength}}
+{\footnotesize\ttfamily float Scroll\+View\+::\+\_\+touch\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+
+length between two fingers \mbox{\Hypertarget{classScrollView_a5265050c036f42b2144a7d5cc737b387}\label{classScrollView_a5265050c036f42b2144a7d5cc737b387}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+touch\+Listener@{\+\_\+touch\+Listener}}
+\index{\+\_\+touch\+Listener@{\+\_\+touch\+Listener}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+touch\+Listener}{\_touchListener}}
+{\footnotesize\ttfamily \hyperlink{classEventListenerTouchOneByOne}{Event\+Listener\+Touch\+One\+By\+One} $\ast$ Scroll\+View\+::\+\_\+touch\+Listener\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classTouch}{Touch} listener \mbox{\Hypertarget{classScrollView_af8fbe879a0228e957ee32265b5123e2c}\label{classScrollView_af8fbe879a0228e957ee32265b5123e2c}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+touch\+Moved@{\+\_\+touch\+Moved}}
+\index{\+\_\+touch\+Moved@{\+\_\+touch\+Moved}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+touch\+Moved}{\_touchMoved}}
+{\footnotesize\ttfamily bool Scroll\+View\+::\+\_\+touch\+Moved\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether user touch is moved after begin phase. \mbox{\Hypertarget{classScrollView_a9c087ffb8d2c3b180e9a7ed77fc07f05}\label{classScrollView_a9c087ffb8d2c3b180e9a7ed77fc07f05}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+touch\+Point@{\+\_\+touch\+Point}}
+\index{\+\_\+touch\+Point@{\+\_\+touch\+Point}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+touch\+Point}{\_touchPoint}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Scroll\+View\+::\+\_\+touch\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classTouch}{Touch} point \mbox{\Hypertarget{classScrollView_ad4f31d6c396e8487716de175eea55a08}\label{classScrollView_ad4f31d6c396e8487716de175eea55a08}} 
+\index{Scroll\+View@{Scroll\+View}!\+\_\+view\+Size@{\+\_\+view\+Size}}
+\index{\+\_\+view\+Size@{\+\_\+view\+Size}!Scroll\+View@{Scroll\+View}}
+\subsubsection{\texorpdfstring{\+\_\+view\+Size}{\_viewSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Scroll\+View\+::\+\_\+view\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+size to clip. \hyperlink{classNode}{Node} bounding\+Box uses content\+Size directly. It\textquotesingle{}s semantically different what it actually means to common scroll views. Hence, this scroll view will use a separate size property. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Scroll\+View/C\+C\+Scroll\+View.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Scroll\+View/C\+C\+Scroll\+View.\+cpp\end{DoxyCompactItemize}

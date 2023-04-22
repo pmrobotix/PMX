@@ -1,0 +1,127 @@
+\hypertarget{classIAutomateState}{}\section{I\+Automate\+State Class Reference}
+\label{classIAutomateState}\index{I\+Automate\+State@{I\+Automate\+State}}
+
+
+Définit l\textquotesingle{}état d\textquotesingle{}un automate.  
+
+
+
+
+{\ttfamily \#include $<$I\+Automate\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Automate\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIAutomateState__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$ \hyperlink{classIAutomateState_a58bf3c2c5b55f7ba3fc1783fc36e102b}{execute} (\hyperlink{classRobot}{Robot} \&robot)=0
+\begin{DoxyCompactList}\small\item\em Traite l\textquotesingle{}état actuel et renvoie l\textquotesingle{}état suivant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIAutomateState_a3f77f7f5b6503ebf9f9740f7b7c6bcda}\label{classIAutomateState_a3f77f7f5b6503ebf9f9740f7b7c6bcda}} 
+virtual \hyperlink{classIAutomateState_a3f77f7f5b6503ebf9f9740f7b7c6bcda}{$\sim$\+I\+Automate\+State} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIAutomateState_a2d088c807e6d7b30b93511096a34af2a}{add\+State} (const std\+::string \&name, \hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$state)=0
+\begin{DoxyCompactList}\small\item\em Ajoute une transition possible à cet état. \end{DoxyCompactList}\item 
+virtual \hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$ \hyperlink{classIAutomateState_a228fe704fd235a83cae36e5dd197c473}{get\+State} (const std\+::string \&name)=0
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}état associé à une transition spécifique. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIAutomateState_a11468bf9104e6574479588f0aacaabd3}\label{classIAutomateState_a11468bf9104e6574479588f0aacaabd3}} 
+virtual std\+::string {\bfseries name} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIAutomateState_a9a2b971eb5ea06b77649e6becc846c24}\label{classIAutomateState_a9a2b971eb5ea06b77649e6becc846c24}} 
+\hyperlink{classIAutomateState_a9a2b971eb5ea06b77649e6becc846c24}{I\+Automate\+State} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définit l\textquotesingle{}état d\textquotesingle{}un automate. 
+
+Un état posséde une méthode \hyperlink{classIAutomateState_a58bf3c2c5b55f7ba3fc1783fc36e102b}{execute()} qui va effectuer la ou les opérations associés à l\textquotesingle{}état de l\textquotesingle{}automate et retourner l\textquotesingle{}état suivant.
+
+\begin{DoxySeeAlso}{See also}
+pmx\+::\+Automate 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIAutomateState_a2d088c807e6d7b30b93511096a34af2a}\label{classIAutomateState_a2d088c807e6d7b30b93511096a34af2a}} 
+\index{I\+Automate\+State@{I\+Automate\+State}!add\+State@{add\+State}}
+\index{add\+State@{add\+State}!I\+Automate\+State@{I\+Automate\+State}}
+\subsubsection{\texorpdfstring{add\+State()}{addState()}}
+{\footnotesize\ttfamily virtual void I\+Automate\+State\+::add\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classIAutomateState}{I\+Automate\+State} $\ast$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ajoute une transition possible à cet état. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la transition \\
+\hline
+{\em state} & Etat associé à la transition \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAAutomateState_a2f141db7bda71b605195c3516b0dac51}{A\+Automate\+State}.
+
+\mbox{\Hypertarget{classIAutomateState_a58bf3c2c5b55f7ba3fc1783fc36e102b}\label{classIAutomateState_a58bf3c2c5b55f7ba3fc1783fc36e102b}} 
+\index{I\+Automate\+State@{I\+Automate\+State}!execute@{execute}}
+\index{execute@{execute}!I\+Automate\+State@{I\+Automate\+State}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual \hyperlink{classIAutomateState}{I\+Automate\+State}$\ast$ I\+Automate\+State\+::execute (\begin{DoxyParamCaption}\item[{\hyperlink{classRobot}{Robot} \&}]{robot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Traite l\textquotesingle{}état actuel et renvoie l\textquotesingle{}état suivant. 
+
+Cette méthode doit être bloquante pour le processus et ne retourner un résultat qu\textquotesingle{}une fois l\textquotesingle{}une de ses transitions actives.
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot} & Le robot à manipuler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état suivant ou {\ttfamily N\+U\+LL} si la fin de l\textquotesingle{}automate est atteinte. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classL__State__WaitEndOfMatch_a537e556e995b79725420de71b6ecce19}{L\+\_\+\+State\+\_\+\+Wait\+End\+Of\+Match}, \hyperlink{classO__State__WaitEndOfMatch_aa73613440b37c8dd42181e2e0265ae86}{O\+\_\+\+State\+\_\+\+Wait\+End\+Of\+Match}, \hyperlink{classL__State__Init_a444992513b49078f12eaa858f11591fe}{L\+\_\+\+State\+\_\+\+Init}, \hyperlink{classO__State__Init_abc19788b7457d1f819245dd28367fe91}{O\+\_\+\+State\+\_\+\+Init}, and \hyperlink{classA__State1_a351a7c94100ccc0dfb8a09e2037d4cc2}{A\+\_\+\+State1}.
+
+\mbox{\Hypertarget{classIAutomateState_a228fe704fd235a83cae36e5dd197c473}\label{classIAutomateState_a228fe704fd235a83cae36e5dd197c473}} 
+\index{I\+Automate\+State@{I\+Automate\+State}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!I\+Automate\+State@{I\+Automate\+State}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily virtual \hyperlink{classIAutomateState}{I\+Automate\+State}$\ast$ I\+Automate\+State\+::get\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retourne l\textquotesingle{}état associé à une transition spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la transition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état associé à la transition ou {\ttfamily N\+U\+LL}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAAutomateState_a98966c27660941825dba0da7130a957f}{A\+Automate\+State}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+State/\hyperlink{IAutomateState_8hpp}{I\+Automate\+State.\+hpp}\end{DoxyCompactItemize}

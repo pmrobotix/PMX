@@ -1,0 +1,68 @@
+\hypertarget{classTimerPosix}{}\section{Timer\+Posix Class Reference}
+\label{classTimerPosix}\index{Timer\+Posix@{Timer\+Posix}}
+
+
+Collaboration diagram for Timer\+Posix\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classTimerPosix__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTimerPosix_ae358f5c54efabea8f110b9476e747951}\label{classTimerPosix_ae358f5c54efabea8f110b9476e747951}} 
+{\bfseries Timer\+Posix} (std\+::string id)
+\item 
+\mbox{\Hypertarget{classTimerPosix_ab15271c50cd9cc4306fc8a454df1e36f}\label{classTimerPosix_ab15271c50cd9cc4306fc8a454df1e36f}} 
+void {\bfseries start} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classTimerPosix_af7cfc4df52fb786aac3ceb435e32c0bf}{alarm\+Function} (int sig\+Numb, siginfo\+\_\+t $\ast$si, void $\ast$uc)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTimerPosix_a9554ddc8cb1185be4dc32487bb8f4773}\label{classTimerPosix_a9554ddc8cb1185be4dc32487bb8f4773}} 
+timer\+\_\+t {\bfseries timer\+ID}
+\item 
+\mbox{\Hypertarget{classTimerPosix_a966f56106600e6413b24fd41c010730d}\label{classTimerPosix_a966f56106600e6413b24fd41c010730d}} 
+sigset\+\_\+t {\bfseries Sig\+Block\+Set}
+\item 
+\mbox{\Hypertarget{classTimerPosix_ae624207220776d1b272744131aa39ca0}\label{classTimerPosix_ae624207220776d1b272744131aa39ca0}} 
+struct sigevent {\bfseries signal\+Event}
+\item 
+\mbox{\Hypertarget{classTimerPosix_ad0a5559e579653d3066787e0266fb3c8}\label{classTimerPosix_ad0a5559e579653d3066787e0266fb3c8}} 
+struct sigaction {\bfseries Signal\+Action}
+\item 
+\mbox{\Hypertarget{classTimerPosix_a7131277458f07dcb3440301350b70f3e}\label{classTimerPosix_a7131277458f07dcb3440301350b70f3e}} 
+struct itimerspec {\bfseries timer\+Specs}
+\item 
+\mbox{\Hypertarget{classTimerPosix_acc7146e8d22986242f777b57627a558d}\label{classTimerPosix_acc7146e8d22986242f777b57627a558d}} 
+std\+::string {\bfseries id\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTimerPosix_a0a70d15da40ac1d4daa906f30d4c075a}\label{classTimerPosix_a0a70d15da40ac1d4daa906f30d4c075a}} 
+static \hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} {\bfseries chrono} = \hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer}(\char`\"{}Timer\+Posix\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTimerPosix_af7cfc4df52fb786aac3ceb435e32c0bf}\label{classTimerPosix_af7cfc4df52fb786aac3ceb435e32c0bf}} 
+\index{Timer\+Posix@{Timer\+Posix}!alarm\+Function@{alarm\+Function}}
+\index{alarm\+Function@{alarm\+Function}!Timer\+Posix@{Timer\+Posix}}
+\subsubsection{\texorpdfstring{alarm\+Function()}{alarmFunction()}}
+{\footnotesize\ttfamily static void Timer\+Posix\+::alarm\+Function (\begin{DoxyParamCaption}\item[{int}]{sig\+Numb,  }\item[{siginfo\+\_\+t $\ast$}]{si,  }\item[{void $\ast$}]{uc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+The signal handler function with extended signature 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Timer\+Posix.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Timer\+Posix.\+cpp\end{DoxyCompactItemize}

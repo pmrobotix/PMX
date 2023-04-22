@@ -1,0 +1,61 @@
+\hypertarget{interfaceFBLoginTooltipView}{}\section{F\+B\+Login\+Tooltip\+View Class Reference}
+\label{interfaceFBLoginTooltipView}\index{F\+B\+Login\+Tooltip\+View@{F\+B\+Login\+Tooltip\+View}}
+
+
+{\ttfamily \#import $<$F\+B\+Login\+Tooltip\+View.\+h$>$}
+
+
+
+Inheritance diagram for F\+B\+Login\+Tooltip\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{interfaceFBLoginTooltipView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\+B\+Login\+Tooltip\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{interfaceFBLoginTooltipView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id$<$ F\+B\+Login\+Tooltip\+View\+Delegate $>$ \hyperlink{interfaceFBLoginTooltipView_a07fa6e31f14940ef41f87e938a5fe5d6}{delegate}
+\item 
+B\+O\+OL \hyperlink{interfaceFBLoginTooltipView_a98970e89f2bb1476b33ee20a0d525ea0}{force\+Display}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a tooltip to be displayed next to a \hyperlink{interfaceFacebook}{Facebook} login button to highlight features for new users.
+
+The {\ttfamily \hyperlink{interfaceFBLoginView}{F\+B\+Login\+View}} may display this view automatically. If you do not use the {\ttfamily \hyperlink{interfaceFBLoginView}{F\+B\+Login\+View}}, you can manually call one of the {\ttfamily present$\ast$} methods as appropriate and customize behavior via {\ttfamily F\+B\+Login\+Tooltip\+View\+Delegate} delegate.
+
+By default, the {\ttfamily \hyperlink{interfaceFBLoginTooltipView}{F\+B\+Login\+Tooltip\+View}} is not added to the superview until it is determined the app has migrated to the new login experience. You can override this (e.\+g., to test the UI layout) by implementing the delegate or setting {\ttfamily force\+Display} to Y\+ES. 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{interfaceFBLoginTooltipView_a07fa6e31f14940ef41f87e938a5fe5d6}\label{interfaceFBLoginTooltipView_a07fa6e31f14940ef41f87e938a5fe5d6}} 
+\index{F\+B\+Login\+Tooltip\+View@{F\+B\+Login\+Tooltip\+View}!delegate@{delegate}}
+\index{delegate@{delegate}!F\+B\+Login\+Tooltip\+View@{F\+B\+Login\+Tooltip\+View}}
+\subsubsection{\texorpdfstring{delegate}{delegate}}
+{\footnotesize\ttfamily -\/ (id$<$ F\+B\+Login\+Tooltip\+View\+Delegate $>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+the delegate \mbox{\Hypertarget{interfaceFBLoginTooltipView_a98970e89f2bb1476b33ee20a0d525ea0}\label{interfaceFBLoginTooltipView_a98970e89f2bb1476b33ee20a0d525ea0}} 
+\index{F\+B\+Login\+Tooltip\+View@{F\+B\+Login\+Tooltip\+View}!force\+Display@{force\+Display}}
+\index{force\+Display@{force\+Display}!F\+B\+Login\+Tooltip\+View@{F\+B\+Login\+Tooltip\+View}}
+\subsubsection{\texorpdfstring{force\+Display}{forceDisplay}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) force\+Display\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+if set to Y\+ES, the view will always be displayed and the delegate\textquotesingle{}s {\ttfamily login\+Tooltip\+View\+:should\+Appear\+:} will N\+OT be called. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/facebook/proj.\+ios/\+Facebook\+S\+D\+K.\+framework/\+Headers/F\+B\+Login\+Tooltip\+View.\+h\end{DoxyCompactItemize}

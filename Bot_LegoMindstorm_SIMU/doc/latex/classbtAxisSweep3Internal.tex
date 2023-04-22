@@ -1,0 +1,352 @@
+\hypertarget{classbtAxisSweep3Internal}{}\section{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$ Class Template Reference}
+\label{classbtAxisSweep3Internal}\index{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$@{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}}
+
+
+{\ttfamily \#include $<$bt\+Axis\+Sweep3.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classbtAxisSweep3Internal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtAxisSweep3Internal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbtAxisSweep3Internal_1_1Edge}{Edge}
+\item 
+class \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad90bd2c40561f5151dee7a938a0afe44}\label{classbtAxisSweep3Internal_ad90bd2c40561f5151dee7a938a0afe44}} 
+{\bfseries B\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+L\+L\+O\+C\+A\+T\+OR} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac995b48f3a60ffac694c1d3c1e891226}\label{classbtAxisSweep3Internal_ac995b48f3a60ffac694c1d3c1e891226}} 
+{\bfseries bt\+Axis\+Sweep3\+Internal} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle\+Mask, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle\+Sentinel, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE max\+Handles=16384, \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache=0, bool disable\+Raycast\+Accelerator=false)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a86d2dfd94fee65d42d8c288de249681b}\label{classbtAxisSweep3Internal_a86d2dfd94fee65d42d8c288de249681b}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries get\+Num\+Handles} () const
+\item 
+virtual void \hyperlink{classbtAxisSweep3Internal_ab89835d4ecb51e2dadc7e3b6e7c29adb}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad83a70943bd46e24813b16fbc02b38d6}\label{classbtAxisSweep3Internal_ad83a70943bd46e24813b16fbc02b38d6}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries add\+Handle} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, void $\ast$p\+Owner, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+void \hyperlink{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}{remove\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac9852514d20572ebdde3e72215b09410}\label{classbtAxisSweep3Internal_ac9852514d20572ebdde3e72215b09410}} 
+void {\bfseries update\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a7b5d56d6783b872714158a0f90cbd1da}\label{classbtAxisSweep3Internal_a7b5d56d6783b872714158a0f90cbd1da}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$ {\bfseries get\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE index) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_aeecfcc066ca77ec8b9bf2c8d422716ee}\label{classbtAxisSweep3Internal_aeecfcc066ca77ec8b9bf2c8d422716ee}} 
+virtual void \hyperlink{classbtAxisSweep3Internal_aeecfcc066ca77ec8b9bf2c8d422716ee}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_adc81ed36fde6cccd3e9fcb2ec3bc759c}\label{classbtAxisSweep3Internal_adc81ed36fde6cccd3e9fcb2ec3bc759c}} 
+void {\bfseries process\+All\+Overlapping\+Pairs} (\hyperlink{structbtOverlapCallback}{bt\+Overlap\+Callback} $\ast$callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_aa640bd232bae128a3551acbf2cb01116}\label{classbtAxisSweep3Internal_aa640bd232bae128a3551acbf2cb01116}} 
+virtual bt\+Broadphase\+Proxy $\ast$ {\bfseries create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad994787298649e89fc55a6d43af65a1e}\label{classbtAxisSweep3Internal_ad994787298649e89fc55a6d43af65a1e}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ab75a4fc28e56239fe76c061f6ee9231c}\label{classbtAxisSweep3Internal_ab75a4fc28e56239fe76c061f6ee9231c}} 
+virtual void {\bfseries set\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a026daa514a4f37ecab5e49266c1203b2}\label{classbtAxisSweep3Internal_a026daa514a4f37ecab5e49266c1203b2}} 
+virtual void {\bfseries get\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a370bc732655b33bf166114afe22fb9e7}\label{classbtAxisSweep3Internal_a370bc732655b33bf166114afe22fb9e7}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac93d0e99a1f936209fae09406663b9b6}\label{classbtAxisSweep3Internal_ac93d0e99a1f936209fae09406663b9b6}} 
+virtual void {\bfseries aabb\+Test} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback} \&callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a852908ebce2e0b632f18cae17860fc47}\label{classbtAxisSweep3Internal_a852908ebce2e0b632f18cae17860fc47}} 
+void {\bfseries quantize} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $\ast$out, const bt\+Vector3 \&point, int is\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}\label{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}} 
+void \hyperlink{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}{un\+Quantize} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em un\+Quantize should be conservative\+: aabb\+Min/aabb\+Max should be larger then \textquotesingle{}get\+Aabb\textquotesingle{} result \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a24ac067f6bebde7e1905620d89c83686}\label{classbtAxisSweep3Internal_a24ac067f6bebde7e1905620d89c83686}} 
+bool {\bfseries test\+Aabb\+Overlap} (bt\+Broadphase\+Proxy $\ast$proxy0, bt\+Broadphase\+Proxy $\ast$proxy1)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a501f2bbdc02b65b9ea0a2b42e3237841}\label{classbtAxisSweep3Internal_a501f2bbdc02b65b9ea0a2b42e3237841}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a5a6c14389040519c9c534908c2eb8498}\label{classbtAxisSweep3Internal_a5a6c14389040519c9c534908c2eb8498}} 
+const \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} () const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ae8602eb252ae2085960583bd4f8e7451}\label{classbtAxisSweep3Internal_ae8602eb252ae2085960583bd4f8e7451}} 
+void {\bfseries set\+Overlapping\+Pair\+User\+Callback} (\hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$pair\+Callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad76e960a9d725351f5c19aee227db2e8}\label{classbtAxisSweep3Internal_ad76e960a9d725351f5c19aee227db2e8}} 
+const \hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$ {\bfseries get\+Overlapping\+Pair\+User\+Callback} () const
+\item 
+virtual void \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{get\+Broadphase\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a5fe22bd436bcafe8f17b939cc6803a2d}\label{classbtAxisSweep3Internal_a5fe22bd436bcafe8f17b939cc6803a2d}} 
+virtual void {\bfseries print\+Stats} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad90bd2c40561f5151dee7a938a0afe44}\label{classbtAxisSweep3Internal_ad90bd2c40561f5151dee7a938a0afe44}} 
+{\bfseries B\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+A\+L\+L\+O\+C\+A\+T\+OR} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac995b48f3a60ffac694c1d3c1e891226}\label{classbtAxisSweep3Internal_ac995b48f3a60ffac694c1d3c1e891226}} 
+{\bfseries bt\+Axis\+Sweep3\+Internal} (const bt\+Vector3 \&world\+Aabb\+Min, const bt\+Vector3 \&world\+Aabb\+Max, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle\+Mask, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle\+Sentinel, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE max\+Handles=16384, \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache=0, bool disable\+Raycast\+Accelerator=false)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a86d2dfd94fee65d42d8c288de249681b}\label{classbtAxisSweep3Internal_a86d2dfd94fee65d42d8c288de249681b}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries get\+Num\+Handles} () const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a8858db666e60ef09141b0030922fbe0e}\label{classbtAxisSweep3Internal_a8858db666e60ef09141b0030922fbe0e}} 
+virtual void \hyperlink{classbtAxisSweep3Internal_a8858db666e60ef09141b0030922fbe0e}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad83a70943bd46e24813b16fbc02b38d6}\label{classbtAxisSweep3Internal_ad83a70943bd46e24813b16fbc02b38d6}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries add\+Handle} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, void $\ast$p\+Owner, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}\label{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}} 
+void {\bfseries remove\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac9852514d20572ebdde3e72215b09410}\label{classbtAxisSweep3Internal_ac9852514d20572ebdde3e72215b09410}} 
+void {\bfseries update\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a7b5d56d6783b872714158a0f90cbd1da}\label{classbtAxisSweep3Internal_a7b5d56d6783b872714158a0f90cbd1da}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$ {\bfseries get\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE index) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a579f1edcfac9fa9d6d86a2376baee6ce}\label{classbtAxisSweep3Internal_a579f1edcfac9fa9d6d86a2376baee6ce}} 
+virtual void \hyperlink{classbtAxisSweep3Internal_a579f1edcfac9fa9d6d86a2376baee6ce}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_adc81ed36fde6cccd3e9fcb2ec3bc759c}\label{classbtAxisSweep3Internal_adc81ed36fde6cccd3e9fcb2ec3bc759c}} 
+void {\bfseries process\+All\+Overlapping\+Pairs} (\hyperlink{structbtOverlapCallback}{bt\+Overlap\+Callback} $\ast$callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a479bf8cdb5aaa134f8c35d1ef1b8106a}\label{classbtAxisSweep3Internal_a479bf8cdb5aaa134f8c35d1ef1b8106a}} 
+virtual bt\+Broadphase\+Proxy $\ast$ {\bfseries create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a740a753513babe140440f3c5612d2630}\label{classbtAxisSweep3Internal_a740a753513babe140440f3c5612d2630}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a63cea29c28e0b3852182f4971ec3f7e5}\label{classbtAxisSweep3Internal_a63cea29c28e0b3852182f4971ec3f7e5}} 
+virtual void {\bfseries set\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a1f45b60f3a8cb35376ca06e727902ff0}\label{classbtAxisSweep3Internal_a1f45b60f3a8cb35376ca06e727902ff0}} 
+virtual void {\bfseries get\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac26477769762c0969dff980385c50070}\label{classbtAxisSweep3Internal_ac26477769762c0969dff980385c50070}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a49fb65a9b4fa5e7b3e2fb941e59ca21d}\label{classbtAxisSweep3Internal_a49fb65a9b4fa5e7b3e2fb941e59ca21d}} 
+virtual void {\bfseries aabb\+Test} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback} \&callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a852908ebce2e0b632f18cae17860fc47}\label{classbtAxisSweep3Internal_a852908ebce2e0b632f18cae17860fc47}} 
+void {\bfseries quantize} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $\ast$out, const bt\+Vector3 \&point, int is\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}\label{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}} 
+void \hyperlink{classbtAxisSweep3Internal_a33d53264ea5d7f695e97200ca752fbe5}{un\+Quantize} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\begin{DoxyCompactList}\small\item\em un\+Quantize should be conservative\+: aabb\+Min/aabb\+Max should be larger then \textquotesingle{}get\+Aabb\textquotesingle{} result \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a24ac067f6bebde7e1905620d89c83686}\label{classbtAxisSweep3Internal_a24ac067f6bebde7e1905620d89c83686}} 
+bool {\bfseries test\+Aabb\+Overlap} (bt\+Broadphase\+Proxy $\ast$proxy0, bt\+Broadphase\+Proxy $\ast$proxy1)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a501f2bbdc02b65b9ea0a2b42e3237841}\label{classbtAxisSweep3Internal_a501f2bbdc02b65b9ea0a2b42e3237841}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a5a6c14389040519c9c534908c2eb8498}\label{classbtAxisSweep3Internal_a5a6c14389040519c9c534908c2eb8498}} 
+const \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} () const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ae8602eb252ae2085960583bd4f8e7451}\label{classbtAxisSweep3Internal_ae8602eb252ae2085960583bd4f8e7451}} 
+void {\bfseries set\+Overlapping\+Pair\+User\+Callback} (\hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$pair\+Callback)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad76e960a9d725351f5c19aee227db2e8}\label{classbtAxisSweep3Internal_ad76e960a9d725351f5c19aee227db2e8}} 
+const \hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$ {\bfseries get\+Overlapping\+Pair\+User\+Callback} () const
+\item 
+virtual void \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{get\+Broadphase\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a5fe22bd436bcafe8f17b939cc6803a2d}\label{classbtAxisSweep3Internal_a5fe22bd436bcafe8f17b939cc6803a2d}} 
+virtual void {\bfseries print\+Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a40b3512ebfeefbec480a906328053988}\label{classbtAxisSweep3Internal_a40b3512ebfeefbec480a906328053988}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries alloc\+Handle} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac40f411fe4911c17c681d47656296b26}\label{classbtAxisSweep3Internal_ac40f411fe4911c17c681d47656296b26}} 
+void {\bfseries free\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a49abf8db2723c3ec699031539ab6e06d}\label{classbtAxisSweep3Internal_a49abf8db2723c3ec699031539ab6e06d}} 
+bool {\bfseries test\+Overlap2D} (const \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$p\+HandleA, const \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$p\+HandleB, int axis0, int axis1)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac12a6524d4fe2b30f084be1c556e8087}\label{classbtAxisSweep3Internal_ac12a6524d4fe2b30f084be1c556e8087}} 
+void {\bfseries sort\+Min\+Down} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ae2547559962876e0da7899dadca7f9aa}\label{classbtAxisSweep3Internal_ae2547559962876e0da7899dadca7f9aa}} 
+void {\bfseries sort\+Min\+Up} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a345b7d853ad2a2449da0b51b1f35ff49}\label{classbtAxisSweep3Internal_a345b7d853ad2a2449da0b51b1f35ff49}} 
+void {\bfseries sort\+Max\+Down} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_af8e014dfdce82a2d16dde9cb342fa58f}\label{classbtAxisSweep3Internal_af8e014dfdce82a2d16dde9cb342fa58f}} 
+void {\bfseries sort\+Max\+Up} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a40b3512ebfeefbec480a906328053988}\label{classbtAxisSweep3Internal_a40b3512ebfeefbec480a906328053988}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries alloc\+Handle} ()
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac40f411fe4911c17c681d47656296b26}\label{classbtAxisSweep3Internal_ac40f411fe4911c17c681d47656296b26}} 
+void {\bfseries free\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a49abf8db2723c3ec699031539ab6e06d}\label{classbtAxisSweep3Internal_a49abf8db2723c3ec699031539ab6e06d}} 
+bool {\bfseries test\+Overlap2D} (const \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$p\+HandleA, const \hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$p\+HandleB, int axis0, int axis1)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ac12a6524d4fe2b30f084be1c556e8087}\label{classbtAxisSweep3Internal_ac12a6524d4fe2b30f084be1c556e8087}} 
+void {\bfseries sort\+Min\+Down} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ae2547559962876e0da7899dadca7f9aa}\label{classbtAxisSweep3Internal_ae2547559962876e0da7899dadca7f9aa}} 
+void {\bfseries sort\+Min\+Up} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a345b7d853ad2a2449da0b51b1f35ff49}\label{classbtAxisSweep3Internal_a345b7d853ad2a2449da0b51b1f35ff49}} 
+void {\bfseries sort\+Max\+Down} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_af8e014dfdce82a2d16dde9cb342fa58f}\label{classbtAxisSweep3Internal_af8e014dfdce82a2d16dde9cb342fa58f}} 
+void {\bfseries sort\+Max\+Up} (int axis, B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE edge, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, bool update\+Overlaps)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a374ece6e21a89d616375bebb6493430d}\label{classbtAxisSweep3Internal_a374ece6e21a89d616375bebb6493430d}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries m\+\_\+bp\+Handle\+Mask}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a18153ae465d1eeda11704d50948b777a}\label{classbtAxisSweep3Internal_a18153ae465d1eeda11704d50948b777a}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries m\+\_\+handle\+Sentinel}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a1df6e697fc92e802bd62f9f0dafdc209}\label{classbtAxisSweep3Internal_a1df6e697fc92e802bd62f9f0dafdc209}} 
+bt\+Vector3 {\bfseries m\+\_\+world\+Aabb\+Min}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a2b397b8d483f546f7aeacfb55cc3cd6e}\label{classbtAxisSweep3Internal_a2b397b8d483f546f7aeacfb55cc3cd6e}} 
+bt\+Vector3 {\bfseries m\+\_\+world\+Aabb\+Max}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a9521807b9aa6d623f047fe84e74bc8bb}\label{classbtAxisSweep3Internal_a9521807b9aa6d623f047fe84e74bc8bb}} 
+bt\+Vector3 {\bfseries m\+\_\+quantize}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a47d1b6c41f837b5a2cf537dc262f890b}\label{classbtAxisSweep3Internal_a47d1b6c41f837b5a2cf537dc262f890b}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries m\+\_\+num\+Handles}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ab129b793a163c711ef38d56e3d2a20cf}\label{classbtAxisSweep3Internal_ab129b793a163c711ef38d56e3d2a20cf}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries m\+\_\+max\+Handles}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a018ff593342bd12d992d626c4564db27}\label{classbtAxisSweep3Internal_a018ff593342bd12d992d626c4564db27}} 
+\hyperlink{classbtAxisSweep3Internal_1_1Handle}{Handle} $\ast$ {\bfseries m\+\_\+p\+Handles}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ae101ad664a9632021ca498894ebc046e}\label{classbtAxisSweep3Internal_ae101ad664a9632021ca498894ebc046e}} 
+B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE {\bfseries m\+\_\+first\+Free\+Handle}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a4f202cfa083a3ad4185384b7c7a10aa7}\label{classbtAxisSweep3Internal_a4f202cfa083a3ad4185384b7c7a10aa7}} 
+\hyperlink{classbtAxisSweep3Internal_1_1Edge}{Edge} $\ast$ {\bfseries m\+\_\+p\+Edges} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a3579ccb6d1dc85e5dbe6eada4a71d433}\label{classbtAxisSweep3Internal_a3579ccb6d1dc85e5dbe6eada4a71d433}} 
+void $\ast$ {\bfseries m\+\_\+p\+Edges\+Raw\+Ptr} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a9e576084560e387d1f6b515643bce115}\label{classbtAxisSweep3Internal_a9e576084560e387d1f6b515643bce115}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries m\+\_\+pair\+Cache}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a56721c6695a40edd025c846f421a9dc7}\label{classbtAxisSweep3Internal_a56721c6695a40edd025c846f421a9dc7}} 
+\hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} $\ast$ \hyperlink{classbtAxisSweep3Internal_a56721c6695a40edd025c846f421a9dc7}{m\+\_\+user\+Pair\+Callback}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtOverlappingPairCallback}{bt\+Overlapping\+Pair\+Callback} is an additional optional user callback for adding/removing overlapping pairs, similar interface to \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a4ae7463e32030034f503bd6f32835108}\label{classbtAxisSweep3Internal_a4ae7463e32030034f503bd6f32835108}} 
+bool {\bfseries m\+\_\+owns\+Pair\+Cache}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a6ecb6f04fd6ed4e84f99b0e934615537}\label{classbtAxisSweep3Internal_a6ecb6f04fd6ed4e84f99b0e934615537}} 
+int {\bfseries m\+\_\+invalid\+Pair}
+\item 
+\hyperlink{structbtDbvtBroadphase}{bt\+Dbvt\+Broadphase} $\ast$ \hyperlink{classbtAxisSweep3Internal_a059cd72f13ef063c5bcaecb6e46930bc}{m\+\_\+raycast\+Accelerator}
+\item 
+\mbox{\Hypertarget{classbtAxisSweep3Internal_aacfc8338c920f0f354b1180b3d2810c4}\label{classbtAxisSweep3Internal_aacfc8338c920f0f354b1180b3d2810c4}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries m\+\_\+null\+Pair\+Cache}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE$>$\newline
+class bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}
+
+The internal templace class \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal} implements the sweep and prune broadphase. It uses quantized integers to represent the begin and end points for each of the 3 axis. Dont use this class directly, use \hyperlink{classbtAxisSweep3}{bt\+Axis\+Sweep3} or \hyperlink{classbt32BitAxisSweep3}{bt32\+Bit\+Axis\+Sweep3} instead. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ab89835d4ecb51e2dadc7e3b6e7c29adb}\label{classbtAxisSweep3Internal_ab89835d4ecb51e2dadc7e3b6e7c29adb}} 
+\index{bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}!calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}}
+\index{calculate\+Overlapping\+Pairs@{calculate\+Overlapping\+Pairs}!bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}}
+\subsubsection{\texorpdfstring{calculate\+Overlapping\+Pairs()}{calculateOverlappingPairs()}}
+{\footnotesize\ttfamily template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$ \\
+void \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal}$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+::calculate\+Overlapping\+Pairs (\begin{DoxyParamCaption}\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb 
+
+important to use an \hyperlink{classAABB}{A\+A\+BB} test that is consistent with the broadphase
+
+if you don\textquotesingle{}t like to skip the invalid pairs in the array, execute following code\+: 
+
+Implements \hyperlink{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}{bt\+Broadphase\+Interface}.
+
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}\label{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}} 
+\index{bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}!get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}}
+\index{get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}!bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}}
+\subsubsection{\texorpdfstring{get\+Broadphase\+Aabb()}{getBroadphaseAabb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE$>$ \\
+virtual void \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal}$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+::get\+Broadphase\+Aabb (\begin{DoxyParamCaption}\item[{bt\+Vector3 \&}]{aabb\+Min,  }\item[{bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get\+Aabb returns the axis aligned bounding box in the \textquotesingle{}global\textquotesingle{} coordinate frame will add some transform later 
+
+Implements \hyperlink{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}{bt\+Broadphase\+Interface}.
+
+\mbox{\Hypertarget{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}\label{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}} 
+\index{bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}!get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}}
+\index{get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}!bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}}
+\subsubsection{\texorpdfstring{get\+Broadphase\+Aabb()}{getBroadphaseAabb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE$>$ \\
+virtual void \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal}$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+::get\+Broadphase\+Aabb (\begin{DoxyParamCaption}\item[{bt\+Vector3 \&}]{aabb\+Min,  }\item[{bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get\+Aabb returns the axis aligned bounding box in the \textquotesingle{}global\textquotesingle{} coordinate frame will add some transform later 
+
+Implements \hyperlink{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}{bt\+Broadphase\+Interface}.
+
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}\label{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}} 
+\index{bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}!remove\+Handle@{remove\+Handle}}
+\index{remove\+Handle@{remove\+Handle}!bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}}
+\subsubsection{\texorpdfstring{remove\+Handle()}{removeHandle()}}
+{\footnotesize\ttfamily template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE$>$ \\
+void \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal}$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+::remove\+Handle (\begin{DoxyParamCaption}\item[{B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE}]{handle,  }\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000007}{Todo}]\+: compare performance \end{DoxyRefDesc}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbtAxisSweep3Internal_a059cd72f13ef063c5bcaecb6e46930bc}\label{classbtAxisSweep3Internal_a059cd72f13ef063c5bcaecb6e46930bc}} 
+\index{bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}!m\+\_\+raycast\+Accelerator@{m\+\_\+raycast\+Accelerator}}
+\index{m\+\_\+raycast\+Accelerator@{m\+\_\+raycast\+Accelerator}!bt\+Axis\+Sweep3\+Internal@{bt\+Axis\+Sweep3\+Internal}}
+\subsubsection{\texorpdfstring{m\+\_\+raycast\+Accelerator}{m\_raycastAccelerator}}
+{\footnotesize\ttfamily template$<$typename B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE$>$ \\
+\hyperlink{structbtDbvtBroadphase}{bt\+Dbvt\+Broadphase} $\ast$ \hyperlink{classbtAxisSweep3Internal}{bt\+Axis\+Sweep3\+Internal}$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+::m\+\_\+raycast\+Accelerator\hspace{0.3cm}{\ttfamily [protected]}}
+
+additional dynamic aabb structure, used to accelerate ray cast queries. can be disabled using a optional argument in the constructor 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Broadphase\+Collision/bt\+Axis\+Sweep3.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\hypertarget{structbtGeneric6DofConstraintData}{}\section{bt\+Generic6\+Dof\+Constraint\+Data Struct Reference}
+\label{structbtGeneric6DofConstraintData}\index{bt\+Generic6\+Dof\+Constraint\+Data@{bt\+Generic6\+Dof\+Constraint\+Data}}
+
+
+bt\+Generic6\+Dof\+Constraint between two rigidbodies each with a pivotpoint that descibes the axis location in local space  
+
+
+
+
+{\ttfamily \#include $<$bt\+Generic6\+Dof\+Constraint.\+h$>$}
+
+
+
+Collaboration diagram for bt\+Generic6\+Dof\+Constraint\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtGeneric6DofConstraintData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_a9ea5c6ab0368141d1213bc5d06498db9}\label{structbtGeneric6DofConstraintData_a9ea5c6ab0368141d1213bc5d06498db9}} 
+\hyperlink{structbtTypedConstraintData}{bt\+Typed\+Constraint\+Data} {\bfseries m\+\_\+type\+Constraint\+Data}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_ae6ba1a602c98f480d2fe00f1c9bc04aa}\label{structbtGeneric6DofConstraintData_ae6ba1a602c98f480d2fe00f1c9bc04aa}} 
+\hyperlink{structbtTransformFloatData}{bt\+Transform\+Float\+Data} {\bfseries m\+\_\+rb\+A\+Frame}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_a0a260944a3be8bf2e43e33feb8e09fc0}\label{structbtGeneric6DofConstraintData_a0a260944a3be8bf2e43e33feb8e09fc0}} 
+\hyperlink{structbtTransformFloatData}{bt\+Transform\+Float\+Data} {\bfseries m\+\_\+rb\+B\+Frame}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_a92fcacfe88143ac78819fbcc7755c113}\label{structbtGeneric6DofConstraintData_a92fcacfe88143ac78819fbcc7755c113}} 
+\hyperlink{structbtVector3FloatData}{bt\+Vector3\+Float\+Data} {\bfseries m\+\_\+linear\+Upper\+Limit}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_aa34d60cc73104a0a3d35d39cd76242b3}\label{structbtGeneric6DofConstraintData_aa34d60cc73104a0a3d35d39cd76242b3}} 
+\hyperlink{structbtVector3FloatData}{bt\+Vector3\+Float\+Data} {\bfseries m\+\_\+linear\+Lower\+Limit}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_ad73e73ab137dee84edc9056ff08e1384}\label{structbtGeneric6DofConstraintData_ad73e73ab137dee84edc9056ff08e1384}} 
+\hyperlink{structbtVector3FloatData}{bt\+Vector3\+Float\+Data} {\bfseries m\+\_\+angular\+Upper\+Limit}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_ac2bc0498cdb28efdefef0898e943d504}\label{structbtGeneric6DofConstraintData_ac2bc0498cdb28efdefef0898e943d504}} 
+\hyperlink{structbtVector3FloatData}{bt\+Vector3\+Float\+Data} {\bfseries m\+\_\+angular\+Lower\+Limit}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_a7261fd3530f55f13185ebb5a11bf0d85}\label{structbtGeneric6DofConstraintData_a7261fd3530f55f13185ebb5a11bf0d85}} 
+int {\bfseries m\+\_\+use\+Linear\+Reference\+FrameA}
+\item 
+\mbox{\Hypertarget{structbtGeneric6DofConstraintData_a995e6fd4f5e2f798bc265384757c81a1}\label{structbtGeneric6DofConstraintData_a995e6fd4f5e2f798bc265384757c81a1}} 
+int {\bfseries m\+\_\+use\+Offset\+For\+Constraint\+Frame}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+bt\+Generic6\+Dof\+Constraint between two rigidbodies each with a pivotpoint that descibes the axis location in local space 
+
+bt\+Generic6\+Dof\+Constraint can leave any of the 6 degree of freedom \textquotesingle{}free\textquotesingle{} or \textquotesingle{}locked\textquotesingle{}. currently this limit supports rotational motors~\newline
+ 
+\begin{DoxyItemize}
+\item For Linear limits, use bt\+Generic6\+Dof\+Constraint.\+set\+Linear\+Upper\+Limit, bt\+Generic6\+Dof\+Constraint.\+set\+Linear\+Lower\+Limit. You can set the parameters with the \hyperlink{classbtTranslationalLimitMotor}{bt\+Translational\+Limit\+Motor} structure accsesible through the bt\+Generic6\+Dof\+Constraint.\+get\+Translational\+Limit\+Motor method. At this moment translational motors are not supported. May be in the future. 
+
+
+\item For Angular limits, use the \hyperlink{classbtRotationalLimitMotor}{bt\+Rotational\+Limit\+Motor} structure for configuring the limit. This is accessible through bt\+Generic6\+Dof\+Constraint.\+get\+Limit\+Motor method, This brings support for limit parameters and motors. 
+
+
+\item Angulars limits have these possible ranges\+: \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+{\bfseries A\+X\+IS} &{\bfseries M\+IN A\+N\+G\+LE} &{\bfseries M\+AX A\+N\+G\+LE} \\\cline{1-3}
+X &-\/\+PI &PI \\\cline{1-3}
+Y &-\/\+P\+I/2 &P\+I/2 \\\cline{1-3}
+Z &-\/\+PI &PI  \\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyItemize}
+
+Calcs the global transform for the joint offset for body A an B, and also calcs the agle differences between the bodies. \begin{DoxySeeAlso}{See also}
+bt\+Generic6\+Dof\+Constraint.\+get\+Calculated\+TransformA , bt\+Generic6\+Dof\+Constraint.\+get\+Calculated\+TransformB, bt\+Generic6\+Dof\+Constraint.\+calculate\+Angle\+Info
+
+bt\+Generic6\+Dof\+Constraint.\+get\+Frame\+OffsetA, bt\+Generic6\+Dof\+Constraint.\+get\+Frame\+OffsetB, bt\+Generic6\+Dof\+Constraint.\+calculate\+Angle\+Info.
+
+bt\+Generic6\+Dof\+Constraint.\+get\+Frame\+OffsetA, bt\+Generic6\+Dof\+Constraint.\+get\+Frame\+OffsetB, bt\+Generic6\+Dof\+Constraint.\+calculate\+Angle\+Info.
+\end{DoxySeeAlso}
+\begin{DoxyPrecond}{Precondition}
+bt\+Generic6\+Dof\+Constraint.\+build\+Jacobian must be called previously.
+
+bt\+Generic6\+Dof\+Constraint\+::calculate\+Transforms() must be called previously.
+
+bt\+Generic6\+Dof\+Constraint\+::calculate\+Transforms() must be called previously.
+\end{DoxyPrecond}
+Calculates angular correction and returns true if limit needs to be corrected. \begin{DoxyPrecond}{Precondition}
+bt\+Generic6\+Dof\+Constraint\+::calculate\+Transforms() must be called previously.
+\end{DoxyPrecond}
+
+\begin{DoxyItemize}
+\item free means upper $<$ lower,
+\item locked means upper == lower
+\item limited means upper $>$ lower
+\item limit\+Index\+: first 3 are linear, next 3 are angular 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Constraint\+Solver/bt\+Generic6\+Dof\+Constraint.\+h\end{DoxyCompactItemize}

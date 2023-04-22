@@ -1,0 +1,1522 @@
+\hypertarget{classGLView}{}\section{G\+L\+View Class Reference}
+\label{classGLView}\index{G\+L\+View@{G\+L\+View}}
+
+
+By \hyperlink{classGLView}{G\+L\+View} you can operate the frame information of E\+GL view through some function.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+G\+L\+View.\+h$>$}
+
+
+
+Inheritance diagram for G\+L\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classGLView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+L\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGLView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGLView_a33f41548b6b0256c886ce75edf8015ce}{G\+L\+View} ()
+\item 
+virtual \hyperlink{classGLView_a6741063a17561ed25347f1b94d354113}{$\sim$\+G\+L\+View} ()
+\item 
+virtual void \hyperlink{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}{end} ()=0
+\item 
+virtual bool \hyperlink{classGLView_a23326d6cbff86205a0d5fa953557838d}{is\+Open\+G\+L\+Ready} ()=0
+\item 
+virtual void \hyperlink{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}{swap\+Buffers} ()=0
+\item 
+virtual void \hyperlink{classGLView_aaa70edad9dd4b2052237867db978e06d}{set\+I\+M\+E\+Keyboard\+State} (bool open)=0
+\item 
+virtual bool \hyperlink{classGLView_aa7a837484fd21d7c0a394e996963e84f}{window\+Should\+Close} ()
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classGLView_a5b93395a827f1886414a5d4186544ddb}{poll\+Input\+Events} ()
+\item 
+virtual void \hyperlink{classGLView_a707854960055e05a3841d4b8cf88f9ce}{poll\+Events} ()
+\item 
+virtual const \hyperlink{classSize}{Size} \& \hyperlink{classGLView_aadfda5aa1419ab211b4a18b12c34af3c}{get\+Frame\+Size} () const
+\item 
+virtual void \hyperlink{classGLView_ac18f93506550c54c119f7ae87f33f220}{set\+Frame\+Size} (float width, float height)
+\item 
+virtual void \hyperlink{classGLView_afe38f42b6954c9bc29382f411b49f448}{set\+Frame\+Zoom\+Factor} (float zoom\+Factor)
+\item 
+virtual float \hyperlink{classGLView_ab804d7568f68b8d91cf420d1c0057f38}{get\+Frame\+Zoom\+Factor} () const
+\item 
+virtual void \hyperlink{classGLView_a1d09cf734d01c1a789ded4caef734b2a}{set\+Cursor\+Visible} (bool is\+Visible)
+\item 
+virtual int \hyperlink{classGLView_a5dd430351b6192d7c014458e7863ba6d}{get\+Retina\+Factor} () const
+\item 
+virtual bool \hyperlink{classGLView_a40714c1d078f964bb51d12228af98054}{set\+Content\+Scale\+Factor} (float scale\+Factor)
+\item 
+virtual float \hyperlink{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}{get\+Content\+Scale\+Factor} () const
+\item 
+virtual bool \hyperlink{classGLView_a6b51811c80d053326246f2f318010edc}{is\+Retina\+Display} () const
+\item 
+\mbox{\Hypertarget{classGLView_a5b0d14981b3b688a747a194c87bbe9a0}\label{classGLView_a5b0d14981b3b688a747a194c87bbe9a0}} 
+virtual void $\ast$ {\bfseries get\+E\+A\+G\+L\+View} () const
+\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classGLView_a0f947fc229b184153cb67e9437244c7b}{get\+Visible\+Size} () const
+\item 
+virtual \hyperlink{classVec2}{Vec2} \hyperlink{classGLView_ad9dd07f5472dc82f3ae71988401bcd81}{get\+Visible\+Origin} () const
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classGLView_a72ed119a20fd0dfe89890770c2824cd3}{get\+Visible\+Rect} () const
+\item 
+virtual void \hyperlink{classGLView_a754e253a506c4eb9a923a2a33b4b955c}{set\+Design\+Resolution\+Size} (float width, float height, Resolution\+Policy resolution\+Policy)
+\item 
+virtual const \hyperlink{classSize}{Size} \& \hyperlink{classGLView_a002c77306c0ee47cbf17c05bbfec3a7f}{get\+Design\+Resolution\+Size} () const
+\item 
+virtual void \hyperlink{classGLView_ab19f26fc6123c51f48c2852b059eb676}{set\+View\+Port\+In\+Points} (float x, float y, float w, float h)
+\item 
+virtual void \hyperlink{classGLView_a92dd9d0d58e97aeb5cb236f8155b9040}{set\+Scissor\+In\+Points} (float x, float y, float w, float h)
+\item 
+virtual bool \hyperlink{classGLView_a0dccbd245a5f49590693fd46a55d322d}{is\+Scissor\+Enabled} ()
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classGLView_a83917d65d7b496a031bfa7a7516c319c}{get\+Scissor\+Rect} () const
+\item 
+virtual void \hyperlink{classGLView_abc3a9132adea8262abaa85dc4f63830f}{set\+View\+Name} (const std\+::string \&viewname)
+\item 
+const std\+::string \& \hyperlink{classGLView_a71162616a3fcb442b640c0ef9efe6a42}{get\+View\+Name} () const
+\item 
+virtual void \hyperlink{classGLView_a0db8bb472b496eda8861c39cb5bab43d}{handle\+Touches\+Begin} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_a11f47e82b25f84dd0f976872cad038c4}{handle\+Touches\+Move} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_ac5aca8c81bcd8297cb35c0dec74598ce}{handle\+Touches\+Move} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]}, float fs\mbox{[}$\,$\mbox{]}, float ms\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_ac92c6ff5d59d28571cb20af5df29c12d}{handle\+Touches\+End} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_afcf8388182be3b40e51d3d1526722038}{handle\+Touches\+Cancel} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classGLView_a8372ba3ae530fbf428cda94ba20b18fb}{get\+View\+Port\+Rect} () const
+\item 
+std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$ $>$ \hyperlink{classGLView_ac66a21bfd3605354ebc3aecd6cfd85ed}{get\+All\+Touches} () const
+\item 
+float \hyperlink{classGLView_a98f6226c66f3614d21f61ed844ed28bb}{get\+ScaleX} () const
+\item 
+float \hyperlink{classGLView_a3ee3994af139859a58568ccf3ba85aa6}{get\+ScaleY} () const
+\item 
+Resolution\+Policy \hyperlink{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}{get\+Resolution\+Policy} () const
+\item 
+\mbox{\Hypertarget{classGLView_aa143334d2fcc5beebc75f3216d91e3bd}\label{classGLView_aa143334d2fcc5beebc75f3216d91e3bd}} 
+virtual H\+W\+ND {\bfseries get\+Win32\+Window} ()=0
+\item 
+\mbox{\Hypertarget{classGLView_a6b457d77ae8c3cf0b400d0921d7a3ee8}\label{classGLView_a6b457d77ae8c3cf0b400d0921d7a3ee8}} 
+virtual id {\bfseries get\+Cocoa\+Window} ()=0
+\item 
+void \hyperlink{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}{render\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene, \hyperlink{classRenderer}{Renderer} $\ast$renderer)
+\item 
+void \hyperlink{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}{set\+VR} (\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$vrrenderer)
+\item 
+\mbox{\Hypertarget{classGLView_abfb8445ea5472f4bafe886776df5e922}\label{classGLView_abfb8445ea5472f4bafe886776df5e922}} 
+\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$ {\bfseries get\+VR} () const
+\item 
+\hyperlink{classGLView_a33f41548b6b0256c886ce75edf8015ce}{G\+L\+View} ()
+\item 
+virtual \hyperlink{classGLView_ad7def61cbd7d95ffac0f01de59ea58d6}{$\sim$\+G\+L\+View} ()
+\item 
+virtual void \hyperlink{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}{end} ()=0
+\item 
+virtual bool \hyperlink{classGLView_a23326d6cbff86205a0d5fa953557838d}{is\+Open\+G\+L\+Ready} ()=0
+\item 
+virtual void \hyperlink{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}{swap\+Buffers} ()=0
+\item 
+virtual void \hyperlink{classGLView_aaa70edad9dd4b2052237867db978e06d}{set\+I\+M\+E\+Keyboard\+State} (bool open)=0
+\item 
+virtual bool \hyperlink{classGLView_aa7a837484fd21d7c0a394e996963e84f}{window\+Should\+Close} ()
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classGLView_ace980598802adb0f6c06b22525eeb062}{poll\+Input\+Events} ()
+\item 
+virtual void \hyperlink{classGLView_a5e5a3b7fd25698d24df6c53f617fefdf}{poll\+Events} ()
+\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classGLView_a799a1769901a6bbd707457746e8d3763}{get\+Frame\+Size} () const
+\item 
+virtual void \hyperlink{classGLView_a9d6aa2c05e70f0b748049c0c057ff603}{set\+Frame\+Size} (float width, float height)
+\item 
+virtual void \hyperlink{classGLView_a1e9bc3b630d2225332656cf385ac7b2c}{set\+Frame\+Zoom\+Factor} (float)
+\item 
+virtual float \hyperlink{classGLView_ab804d7568f68b8d91cf420d1c0057f38}{get\+Frame\+Zoom\+Factor} () const
+\item 
+virtual void \hyperlink{classGLView_ab9defa8d2bbfb495da622958e2f9a500}{set\+Cursor} (const std\+::string \&filename, \hyperlink{classVec2}{Vec2} hotspot=\hyperlink{classVec2_ab0533215e446e0381d01bf49edd7ab7c}{Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT})
+\item 
+virtual void \hyperlink{classGLView_a527977ed54ff5ae4ca8a3e2e7a541551}{set\+Default\+Cursor} ()
+\item 
+virtual void \hyperlink{classGLView_afa971ce0119e72731a7ff42443d3e90d}{set\+Cursor\+Visible} (bool)
+\item 
+virtual int \hyperlink{classGLView_a5dd430351b6192d7c014458e7863ba6d}{get\+Retina\+Factor} () const
+\item 
+virtual bool \hyperlink{classGLView_aed19813eb650f6d30f0f385a8f5c4a62}{set\+Content\+Scale\+Factor} (float)
+\item 
+virtual float \hyperlink{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}{get\+Content\+Scale\+Factor} () const
+\item 
+virtual bool \hyperlink{classGLView_a6b51811c80d053326246f2f318010edc}{is\+Retina\+Display} () const
+\item 
+\mbox{\Hypertarget{classGLView_a5b0d14981b3b688a747a194c87bbe9a0}\label{classGLView_a5b0d14981b3b688a747a194c87bbe9a0}} 
+virtual void $\ast$ {\bfseries get\+E\+A\+G\+L\+View} () const
+\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classGLView_aae96f8054234a3e35478a6f5518c03b0}{get\+Visible\+Size} () const
+\item 
+virtual \hyperlink{classVec2}{Vec2} \hyperlink{classGLView_acb5d330576705d12b2468282f8def3b2}{get\+Visible\+Origin} () const
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classGLView_a48ef3d920aea2744c7f48db26b1da1c4}{get\+Visible\+Rect} () const
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classGLView_a2faaa7d06e887d6e8c832868f23e0adc}{get\+Safe\+Area\+Rect} () const
+\item 
+virtual void \hyperlink{classGLView_af0c6db7063ef5d16cec6e9305313f576}{set\+Design\+Resolution\+Size} (float width, float height, Resolution\+Policy resolution\+Policy)
+\item 
+virtual const \hyperlink{classSize}{Size} \& \hyperlink{classGLView_adcaede3f487202ed5fef44550274396a}{get\+Design\+Resolution\+Size} () const
+\item 
+virtual void \hyperlink{classGLView_a189fdd0ef4a85b26170305676216e763}{set\+View\+Port\+In\+Points} (float x, float y, float w, float h)
+\item 
+virtual void \hyperlink{classGLView_ac53be51610430ad8a8422c391886b9bd}{set\+Scissor\+In\+Points} (float x, float y, float w, float h)
+\item 
+virtual bool \hyperlink{classGLView_ae7de84c958af33c5e3f049014928f242}{is\+Scissor\+Enabled} ()
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classGLView_a3d3f1a186da65fd5787740f95f17dbbe}{get\+Scissor\+Rect} () const
+\item 
+virtual void \hyperlink{classGLView_a141e0fbac581ef3404a8d57cc7e8453f}{set\+View\+Name} (const std\+::string \&viewname)
+\item 
+const std\+::string \& \hyperlink{classGLView_acfeda35caf23db9ae26fa07b5fc7dda1}{get\+View\+Name} () const
+\item 
+virtual void \hyperlink{classGLView_acfa810096bdf2755333b34a28637c800}{handle\+Touches\+Begin} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_a7b7dfb9bb8402d5b4661ff385fac0acb}{handle\+Touches\+Move} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_af0602750d445ba834c08914ccf747ce5}{handle\+Touches\+Move} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]}, float fs\mbox{[}$\,$\mbox{]}, float ms\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_a09f7e2f850149f7064e3f6d1f8bad8a3}{handle\+Touches\+End} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_ac5963abf17c7363af3374877910b0a88}{handle\+Touches\+Cancel} (int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classGLView_a3f7af6e8ef7059255a6626c86ecce17e}{set\+Icon} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classGLView_a35b469df944ab7e768e20dc1803154fe}{set\+Icon} (const std\+::vector$<$ std\+::string $>$ \&filelist) const
+\item 
+virtual void \hyperlink{classGLView_a27d3fd61c627780fa1cf2b1357f07d15}{set\+Default\+Icon} () const
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classGLView_ac34de16bd3fd4eb1a524e77b18f47546}{get\+View\+Port\+Rect} () const
+\item 
+std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$ $>$ \hyperlink{classGLView_af967a29c1bde166b9f48b1d8d1174d91}{get\+All\+Touches} () const
+\item 
+float \hyperlink{classGLView_a98f6226c66f3614d21f61ed844ed28bb}{get\+ScaleX} () const
+\item 
+float \hyperlink{classGLView_a3ee3994af139859a58568ccf3ba85aa6}{get\+ScaleY} () const
+\item 
+Resolution\+Policy \hyperlink{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}{get\+Resolution\+Policy} () const
+\item 
+\mbox{\Hypertarget{classGLView_aa143334d2fcc5beebc75f3216d91e3bd}\label{classGLView_aa143334d2fcc5beebc75f3216d91e3bd}} 
+virtual H\+W\+ND {\bfseries get\+Win32\+Window} ()=0
+\item 
+\mbox{\Hypertarget{classGLView_a6b457d77ae8c3cf0b400d0921d7a3ee8}\label{classGLView_a6b457d77ae8c3cf0b400d0921d7a3ee8}} 
+virtual id {\bfseries get\+Cocoa\+Window} ()=0
+\item 
+\mbox{\Hypertarget{classGLView_a4ac91ffda3c070716567486400a431fc}\label{classGLView_a4ac91ffda3c070716567486400a431fc}} 
+virtual id {\bfseries get\+N\+S\+G\+L\+Context} ()=0
+\item 
+void \hyperlink{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}{render\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene, \hyperlink{classRenderer}{Renderer} $\ast$renderer)
+\item 
+void \hyperlink{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}{set\+VR} (\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$vrrenderer)
+\item 
+\mbox{\Hypertarget{classGLView_ac9dc79a10d42cd277ec851ebb0ab01f9}\label{classGLView_ac9dc79a10d42cd277ec851ebb0ab01f9}} 
+\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$ {\bfseries get\+VR} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classGLView_abf100389994d936ad6bf9f32966bb7cf}{set\+G\+L\+Context\+Attrs} (\hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \&gl\+Context\+Attrs)
+\item 
+static \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \hyperlink{classGLView_a763e8536b9443103dec35f4f0cc843ff}{get\+G\+L\+Context\+Attrs} ()
+\item 
+static void \hyperlink{classGLView_a67b7c433b4bb6578948ca06ac01d1e38}{set\+G\+L\+Context\+Attrs} (\hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \&gl\+Context\+Attrs)
+\item 
+static \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \hyperlink{classGLView_affa74828fec36fea7e3acc692c3f1218}{get\+G\+L\+Context\+Attrs} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \hyperlink{classGLView_a9d594512212b1e389a373d4d067ec058}{\+\_\+gl\+Context\+Attrs} = \{5, 6, 5, 0, 16, 0\}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLView_a8c1383361ffd8afde6c88dc9713fce02}\label{classGLView_a8c1383361ffd8afde6c88dc9713fce02}} 
+void {\bfseries update\+Design\+Resolution\+Size} ()
+\item 
+\mbox{\Hypertarget{classGLView_a3efba826b120b933c230e20c1cbe1e82}\label{classGLView_a3efba826b120b933c230e20c1cbe1e82}} 
+void {\bfseries handle\+Touches\+Of\+End\+Or\+Cancel} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Code, int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classGLView_a8c1383361ffd8afde6c88dc9713fce02}\label{classGLView_a8c1383361ffd8afde6c88dc9713fce02}} 
+void {\bfseries update\+Design\+Resolution\+Size} ()
+\item 
+\mbox{\Hypertarget{classGLView_a3efba826b120b933c230e20c1cbe1e82}\label{classGLView_a3efba826b120b933c230e20c1cbe1e82}} 
+void {\bfseries handle\+Touches\+Of\+End\+Or\+Cancel} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Code, int num, intptr\+\_\+t ids\mbox{[}$\,$\mbox{]}, float xs\mbox{[}$\,$\mbox{]}, float ys\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLView_a44ff126272d7ef211b4ee1134f5a8b69}\label{classGLView_a44ff126272d7ef211b4ee1134f5a8b69}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+screen\+Size}
+\item 
+\mbox{\Hypertarget{classGLView_af3b66e79d96ded0a884994188a47cbbf}\label{classGLView_af3b66e79d96ded0a884994188a47cbbf}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+design\+Resolution\+Size}
+\item 
+\mbox{\Hypertarget{classGLView_a484a07cc99a77fb82614311bfb83ea9d}\label{classGLView_a484a07cc99a77fb82614311bfb83ea9d}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+view\+Port\+Rect}
+\item 
+\mbox{\Hypertarget{classGLView_a21aadd869607f7d86ea0069ec4f843bf}\label{classGLView_a21aadd869607f7d86ea0069ec4f843bf}} 
+std\+::string {\bfseries \+\_\+view\+Name}
+\item 
+\mbox{\Hypertarget{classGLView_ae1ff2e0375d9bafac4048999ce0ec423}\label{classGLView_ae1ff2e0375d9bafac4048999ce0ec423}} 
+float {\bfseries \+\_\+scaleX}
+\item 
+\mbox{\Hypertarget{classGLView_a01511f8f12b53aa831d1289c32edc02f}\label{classGLView_a01511f8f12b53aa831d1289c32edc02f}} 
+float {\bfseries \+\_\+scaleY}
+\item 
+\mbox{\Hypertarget{classGLView_a5f156c4708a83978ed7422f027ed1259}\label{classGLView_a5f156c4708a83978ed7422f027ed1259}} 
+Resolution\+Policy {\bfseries \+\_\+resolution\+Policy}
+\item 
+\mbox{\Hypertarget{classGLView_a0c5ef38c6008ce8bfee04c35a6f71317}\label{classGLView_a0c5ef38c6008ce8bfee04c35a6f71317}} 
+\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$ {\bfseries \+\_\+vr\+Impl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+By \hyperlink{classGLView}{G\+L\+View} you can operate the frame information of E\+GL view through some function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGLView_a33f41548b6b0256c886ce75edf8015ce}\label{classGLView_a33f41548b6b0256c886ce75edf8015ce}} 
+\index{G\+L\+View@{G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\index{G\+L\+View@{G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{G\+L\+View()}{GLView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+L\+View\+::\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classGLView_a6741063a17561ed25347f1b94d354113}\label{classGLView_a6741063a17561ed25347f1b94d354113}} 
+\index{G\+L\+View@{G\+L\+View}!````~G\+L\+View@{$\sim$\+G\+L\+View}}
+\index{````~G\+L\+View@{$\sim$\+G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+G\+L\+View()}{~GLView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+L\+View\+::$\sim$\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classGLView_a33f41548b6b0256c886ce75edf8015ce}\label{classGLView_a33f41548b6b0256c886ce75edf8015ce}} 
+\index{G\+L\+View@{G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\index{G\+L\+View@{G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{G\+L\+View()}{GLView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+L\+View\+::\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classGLView_ad7def61cbd7d95ffac0f01de59ea58d6}\label{classGLView_ad7def61cbd7d95ffac0f01de59ea58d6}} 
+\index{G\+L\+View@{G\+L\+View}!````~G\+L\+View@{$\sim$\+G\+L\+View}}
+\index{````~G\+L\+View@{$\sim$\+G\+L\+View}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+G\+L\+View()}{~GLView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual G\+L\+View\+::$\sim$\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}\label{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}} 
+\index{G\+L\+View@{G\+L\+View}!end@{end}}
+\index{end@{end}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Force destroying E\+GL view, subclass must implement this method.
+
+end\+To\+Lua 
+
+Implemented in \hyperlink{classGLViewImpl_a045b39ae9907d0c2d25d49a70e5ce9e4}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a045b39ae9907d0c2d25d49a70e5ce9e4}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}\label{classGLView_aaa284e08de7b4e530a2b15b1d27dced0}} 
+\index{G\+L\+View@{G\+L\+View}!end@{end}}
+\index{end@{end}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Force destroying E\+GL view, subclass must implement this method.
+
+end\+To\+Lua 
+
+Implemented in \hyperlink{classGLViewImpl_a045b39ae9907d0c2d25d49a70e5ce9e4}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab5a08a3ea92598cdabbed94686eed58a}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a045b39ae9907d0c2d25d49a70e5ce9e4}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_ab2d87c9a94b84691ed9ae4ca378745a8}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_ac66a21bfd3605354ebc3aecd6cfd85ed}\label{classGLView_ac66a21bfd3605354ebc3aecd6cfd85ed}} 
+\index{G\+L\+View@{G\+L\+View}!get\+All\+Touches@{get\+All\+Touches}}
+\index{get\+All\+Touches@{get\+All\+Touches}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+All\+Touches()}{getAllTouches()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$ $>$ G\+L\+View\+::get\+All\+Touches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \hyperlink{protocollist-p}{list} of all active touches.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{protocollist-p}{list} of all active touches. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_af967a29c1bde166b9f48b1d8d1174d91}\label{classGLView_af967a29c1bde166b9f48b1d8d1174d91}} 
+\index{G\+L\+View@{G\+L\+View}!get\+All\+Touches@{get\+All\+Touches}}
+\index{get\+All\+Touches@{get\+All\+Touches}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+All\+Touches()}{getAllTouches()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classTouch}{Touch}$\ast$$>$ G\+L\+View\+::get\+All\+Touches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \hyperlink{protocollist-p}{list} of all active touches.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{protocollist-p}{list} of all active touches. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}\label{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}}
+\index{get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Content\+Scale\+Factor()}{getContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual float G\+L\+View\+::get\+Content\+Scale\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Only works on ios platform. Get Content Scale of the Factor. 
+
+Reimplemented in \hyperlink{classGLViewImpl_a475f5c382360141199bf110655941a22}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a507c696f2d69451ca36ff787a996bf22}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}\label{classGLView_a730b2ced5ee33d2bf975eb3fffd317bf}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}}
+\index{get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Content\+Scale\+Factor()}{getContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float G\+L\+View\+::get\+Content\+Scale\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Only works on ios platform. Get Content Scale of the Factor. 
+
+Reimplemented in \hyperlink{classGLViewImpl_a475f5c382360141199bf110655941a22}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a507c696f2d69451ca36ff787a996bf22}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a002c77306c0ee47cbf17c05bbfec3a7f}\label{classGLView_a002c77306c0ee47cbf17c05bbfec3a7f}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Design\+Resolution\+Size@{get\+Design\+Resolution\+Size}}
+\index{get\+Design\+Resolution\+Size@{get\+Design\+Resolution\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Design\+Resolution\+Size()}{getDesignResolutionSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size} \& G\+L\+View\+::get\+Design\+Resolution\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get design resolution size. Default resolution size is the same as \textquotesingle{}get\+Frame\+Size\textquotesingle{}.
+
+\begin{DoxyReturn}{Returns}
+The design resolution size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_adcaede3f487202ed5fef44550274396a}\label{classGLView_adcaede3f487202ed5fef44550274396a}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Design\+Resolution\+Size@{get\+Design\+Resolution\+Size}}
+\index{get\+Design\+Resolution\+Size@{get\+Design\+Resolution\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Design\+Resolution\+Size()}{getDesignResolutionSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classSize}{Size}\& G\+L\+View\+::get\+Design\+Resolution\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get design resolution size. Default resolution size is the same as \textquotesingle{}get\+Frame\+Size\textquotesingle{}.
+
+\begin{DoxyReturn}{Returns}
+The design resolution size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_aadfda5aa1419ab211b4a18b12c34af3c}\label{classGLView_aadfda5aa1419ab211b4a18b12c34af3c}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Frame\+Size@{get\+Frame\+Size}}
+\index{get\+Frame\+Size@{get\+Frame\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Frame\+Size()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} G\+L\+View\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the frame size of E\+GL view. In general, it returns the screen size since the E\+GL view is a fullscreen view.
+
+\begin{DoxyReturn}{Returns}
+The frame size of E\+GL view. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a799a1769901a6bbd707457746e8d3763}\label{classGLView_a799a1769901a6bbd707457746e8d3763}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Frame\+Size@{get\+Frame\+Size}}
+\index{get\+Frame\+Size@{get\+Frame\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Frame\+Size()}{getFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSize}{Size} G\+L\+View\+::get\+Frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the frame size of E\+GL view. In general, it returns the screen size since the E\+GL view is a fullscreen view.
+
+\begin{DoxyReturn}{Returns}
+The frame size of E\+GL view. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_ab804d7568f68b8d91cf420d1c0057f38}\label{classGLView_ab804d7568f68b8d91cf420d1c0057f38}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Frame\+Zoom\+Factor@{get\+Frame\+Zoom\+Factor}}
+\index{get\+Frame\+Zoom\+Factor@{get\+Frame\+Zoom\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Frame\+Zoom\+Factor()}{getFrameZoomFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual float G\+L\+View\+::get\+Frame\+Zoom\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get zoom factor for frame. This methods are for debugging big resolution (e.\+g.\+new ipad) app on desktop.
+
+\begin{DoxyReturn}{Returns}
+The zoom factor for frame. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a16f58cd2c122ecf8f3feb7bca6f4309d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a16f58cd2c122ecf8f3feb7bca6f4309d}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_ab804d7568f68b8d91cf420d1c0057f38}\label{classGLView_ab804d7568f68b8d91cf420d1c0057f38}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Frame\+Zoom\+Factor@{get\+Frame\+Zoom\+Factor}}
+\index{get\+Frame\+Zoom\+Factor@{get\+Frame\+Zoom\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Frame\+Zoom\+Factor()}{getFrameZoomFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float G\+L\+View\+::get\+Frame\+Zoom\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get zoom factor for frame. This methods are for debugging big resolution (e.\+g.\+new ipad) app on desktop.
+
+\begin{DoxyReturn}{Returns}
+The zoom factor for frame. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a16f58cd2c122ecf8f3feb7bca6f4309d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a16f58cd2c122ecf8f3feb7bca6f4309d}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a763e8536b9443103dec35f4f0cc843ff}\label{classGLView_a763e8536b9443103dec35f4f0cc843ff}} 
+\index{G\+L\+View@{G\+L\+View}!get\+G\+L\+Context\+Attrs@{get\+G\+L\+Context\+Attrs}}
+\index{get\+G\+L\+Context\+Attrs@{get\+G\+L\+Context\+Attrs}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Context\+Attrs()}{getGLContextAttrs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} G\+L\+View\+::get\+G\+L\+Context\+Attrs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the Open\+GL context attrs.
+
+\begin{DoxyReturn}{Returns}
+Return the Open\+GL context attrs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_affa74828fec36fea7e3acc692c3f1218}\label{classGLView_affa74828fec36fea7e3acc692c3f1218}} 
+\index{G\+L\+View@{G\+L\+View}!get\+G\+L\+Context\+Attrs@{get\+G\+L\+Context\+Attrs}}
+\index{get\+G\+L\+Context\+Attrs@{get\+G\+L\+Context\+Attrs}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Context\+Attrs()}{getGLContextAttrs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} G\+L\+View\+::get\+G\+L\+Context\+Attrs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the Open\+GL context attrs.
+
+\begin{DoxyReturn}{Returns}
+Return the Open\+GL context attrs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}\label{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Resolution\+Policy@{get\+Resolution\+Policy}}
+\index{get\+Resolution\+Policy@{get\+Resolution\+Policy}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Resolution\+Policy()}{getResolutionPolicy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Resolution\+Policy G\+L\+View\+::get\+Resolution\+Policy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current Resolution policy.
+
+\begin{DoxyReturn}{Returns}
+The current Resolution policy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}\label{classGLView_a826c04e9fc58895b6a7d95ba68ac1ba1}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Resolution\+Policy@{get\+Resolution\+Policy}}
+\index{get\+Resolution\+Policy@{get\+Resolution\+Policy}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Resolution\+Policy()}{getResolutionPolicy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Resolution\+Policy G\+L\+View\+::get\+Resolution\+Policy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current Resolution policy.
+
+\begin{DoxyReturn}{Returns}
+The current Resolution policy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a5dd430351b6192d7c014458e7863ba6d}\label{classGLView_a5dd430351b6192d7c014458e7863ba6d}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Retina\+Factor@{get\+Retina\+Factor}}
+\index{get\+Retina\+Factor@{get\+Retina\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Retina\+Factor()}{getRetinaFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int G\+L\+View\+::get\+Retina\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get retina factor.
+
+\begin{DoxyReturn}{Returns}
+The retina factor. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a0844b876076edafc4f6e47e3fafb16da}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a0844b876076edafc4f6e47e3fafb16da}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a5dd430351b6192d7c014458e7863ba6d}\label{classGLView_a5dd430351b6192d7c014458e7863ba6d}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Retina\+Factor@{get\+Retina\+Factor}}
+\index{get\+Retina\+Factor@{get\+Retina\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Retina\+Factor()}{getRetinaFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int G\+L\+View\+::get\+Retina\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get retina factor.
+
+\begin{DoxyReturn}{Returns}
+The retina factor. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a0844b876076edafc4f6e47e3fafb16da}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a0844b876076edafc4f6e47e3fafb16da}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a2faaa7d06e887d6e8c832868f23e0adc}\label{classGLView_a2faaa7d06e887d6e8c832868f23e0adc}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Safe\+Area\+Rect@{get\+Safe\+Area\+Rect}}
+\index{get\+Safe\+Area\+Rect@{get\+Safe\+Area\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Safe\+Area\+Rect()}{getSafeAreaRect()}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} G\+L\+View\+::get\+Safe\+Area\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets safe area rectangle 
+
+Reimplemented in \hyperlink{classGLViewImpl_aeae826111cb62438b2038d311b95049b}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_ac25c5ec4b554f880becc5c448b3d70e2}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a98f6226c66f3614d21f61ed844ed28bb}\label{classGLView_a98f6226c66f3614d21f61ed844ed28bb}} 
+\index{G\+L\+View@{G\+L\+View}!get\+ScaleX@{get\+ScaleX}}
+\index{get\+ScaleX@{get\+ScaleX}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scale\+X()}{getScaleX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float G\+L\+View\+::get\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get scale factor of the horizontal direction.
+
+\begin{DoxyReturn}{Returns}
+Scale factor of the horizontal direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a98f6226c66f3614d21f61ed844ed28bb}\label{classGLView_a98f6226c66f3614d21f61ed844ed28bb}} 
+\index{G\+L\+View@{G\+L\+View}!get\+ScaleX@{get\+ScaleX}}
+\index{get\+ScaleX@{get\+ScaleX}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scale\+X()}{getScaleX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float G\+L\+View\+::get\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get scale factor of the horizontal direction.
+
+\begin{DoxyReturn}{Returns}
+Scale factor of the horizontal direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a3ee3994af139859a58568ccf3ba85aa6}\label{classGLView_a3ee3994af139859a58568ccf3ba85aa6}} 
+\index{G\+L\+View@{G\+L\+View}!get\+ScaleY@{get\+ScaleY}}
+\index{get\+ScaleY@{get\+ScaleY}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scale\+Y()}{getScaleY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float G\+L\+View\+::get\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get scale factor of the vertical direction.
+
+\begin{DoxyReturn}{Returns}
+Scale factor of the vertical direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a3ee3994af139859a58568ccf3ba85aa6}\label{classGLView_a3ee3994af139859a58568ccf3ba85aa6}} 
+\index{G\+L\+View@{G\+L\+View}!get\+ScaleY@{get\+ScaleY}}
+\index{get\+ScaleY@{get\+ScaleY}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scale\+Y()}{getScaleY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float G\+L\+View\+::get\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get scale factor of the vertical direction.
+
+\begin{DoxyReturn}{Returns}
+Scale factor of the vertical direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a83917d65d7b496a031bfa7a7516c319c}\label{classGLView_a83917d65d7b496a031bfa7a7516c319c}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Scissor\+Rect@{get\+Scissor\+Rect}}
+\index{get\+Scissor\+Rect@{get\+Scissor\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scissor\+Rect()}{getScissorRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} G\+L\+View\+::get\+Scissor\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the current scissor rectangle.
+
+\begin{DoxyReturn}{Returns}
+The current scissor rectangle. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_ab6bbfe46964ec4797344ecaa4fff3b1d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_ada58319111ad3cca8b03ed92cfbf1bdf}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a3d3f1a186da65fd5787740f95f17dbbe}\label{classGLView_a3d3f1a186da65fd5787740f95f17dbbe}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Scissor\+Rect@{get\+Scissor\+Rect}}
+\index{get\+Scissor\+Rect@{get\+Scissor\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Scissor\+Rect()}{getScissorRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classRect}{Rect} G\+L\+View\+::get\+Scissor\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the current scissor rectangle.
+
+\begin{DoxyReturn}{Returns}
+The current scissor rectangle. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_ab6bbfe46964ec4797344ecaa4fff3b1d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_ada58319111ad3cca8b03ed92cfbf1bdf}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a71162616a3fcb442b640c0ef9efe6a42}\label{classGLView_a71162616a3fcb442b640c0ef9efe6a42}} 
+\index{G\+L\+View@{G\+L\+View}!get\+View\+Name@{get\+View\+Name}}
+\index{get\+View\+Name@{get\+View\+Name}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Name()}{getViewName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& G\+L\+View\+::get\+View\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the view name.
+
+\begin{DoxyReturn}{Returns}
+The view name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_acfeda35caf23db9ae26fa07b5fc7dda1}\label{classGLView_acfeda35caf23db9ae26fa07b5fc7dda1}} 
+\index{G\+L\+View@{G\+L\+View}!get\+View\+Name@{get\+View\+Name}}
+\index{get\+View\+Name@{get\+View\+Name}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Name()}{getViewName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& G\+L\+View\+::get\+View\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the view name.
+
+\begin{DoxyReturn}{Returns}
+The view name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a8372ba3ae530fbf428cda94ba20b18fb}\label{classGLView_a8372ba3ae530fbf428cda94ba20b18fb}} 
+\index{G\+L\+View@{G\+L\+View}!get\+View\+Port\+Rect@{get\+View\+Port\+Rect}}
+\index{get\+View\+Port\+Rect@{get\+View\+Port\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Rect()}{getViewPortRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect} \& G\+L\+View\+::get\+View\+Port\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the opengl view port rectangle.
+
+\begin{DoxyReturn}{Returns}
+Return the opengl view port rectangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_ac34de16bd3fd4eb1a524e77b18f47546}\label{classGLView_ac34de16bd3fd4eb1a524e77b18f47546}} 
+\index{G\+L\+View@{G\+L\+View}!get\+View\+Port\+Rect@{get\+View\+Port\+Rect}}
+\index{get\+View\+Port\+Rect@{get\+View\+Port\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Rect()}{getViewPortRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect}\& G\+L\+View\+::get\+View\+Port\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the opengl view port rectangle.
+
+\begin{DoxyReturn}{Returns}
+Return the opengl view port rectangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_ad9dd07f5472dc82f3ae71988401bcd81}\label{classGLView_ad9dd07f5472dc82f3ae71988401bcd81}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Origin@{get\+Visible\+Origin}}
+\index{get\+Visible\+Origin@{get\+Visible\+Origin}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Origin()}{getVisibleOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} G\+L\+View\+::get\+Visible\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible origin point of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible origin point of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_acb5d330576705d12b2468282f8def3b2}\label{classGLView_acb5d330576705d12b2468282f8def3b2}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Origin@{get\+Visible\+Origin}}
+\index{get\+Visible\+Origin@{get\+Visible\+Origin}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Origin()}{getVisibleOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classVec2}{Vec2} G\+L\+View\+::get\+Visible\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible origin point of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible origin point of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a72ed119a20fd0dfe89890770c2824cd3}\label{classGLView_a72ed119a20fd0dfe89890770c2824cd3}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Rect@{get\+Visible\+Rect}}
+\index{get\+Visible\+Rect@{get\+Visible\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Rect()}{getVisibleRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} G\+L\+View\+::get\+Visible\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible rectangle of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible rectangle of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a48ef3d920aea2744c7f48db26b1da1c4}\label{classGLView_a48ef3d920aea2744c7f48db26b1da1c4}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Rect@{get\+Visible\+Rect}}
+\index{get\+Visible\+Rect@{get\+Visible\+Rect}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Rect()}{getVisibleRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classRect}{Rect} G\+L\+View\+::get\+Visible\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible rectangle of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible rectangle of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a0f947fc229b184153cb67e9437244c7b}\label{classGLView_a0f947fc229b184153cb67e9437244c7b}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Size@{get\+Visible\+Size}}
+\index{get\+Visible\+Size@{get\+Visible\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Size()}{getVisibleSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} G\+L\+View\+::get\+Visible\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible area size of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible area size of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_aae96f8054234a3e35478a6f5518c03b0}\label{classGLView_aae96f8054234a3e35478a6f5518c03b0}} 
+\index{G\+L\+View@{G\+L\+View}!get\+Visible\+Size@{get\+Visible\+Size}}
+\index{get\+Visible\+Size@{get\+Visible\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{get\+Visible\+Size()}{getVisibleSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSize}{Size} G\+L\+View\+::get\+Visible\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the visible area size of opengl viewport.
+
+\begin{DoxyReturn}{Returns}
+The visible area size of opengl viewport. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a0db8bb472b496eda8861c39cb5bab43d}\label{classGLView_a0db8bb472b496eda8861c39cb5bab43d}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Begin@{handle\+Touches\+Begin}}
+\index{handle\+Touches\+Begin@{handle\+Touches\+Begin}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Begin()}{handleTouchesBegin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::handle\+Touches\+Begin (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_acfa810096bdf2755333b34a28637c800}\label{classGLView_acfa810096bdf2755333b34a28637c800}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Begin@{handle\+Touches\+Begin}}
+\index{handle\+Touches\+Begin@{handle\+Touches\+Begin}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Begin()}{handleTouchesBegin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::handle\+Touches\+Begin (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_afcf8388182be3b40e51d3d1526722038}\label{classGLView_afcf8388182be3b40e51d3d1526722038}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Cancel@{handle\+Touches\+Cancel}}
+\index{handle\+Touches\+Cancel@{handle\+Touches\+Cancel}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Cancel()}{handleTouchesCancel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::handle\+Touches\+Cancel (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_ac5963abf17c7363af3374877910b0a88}\label{classGLView_ac5963abf17c7363af3374877910b0a88}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Cancel@{handle\+Touches\+Cancel}}
+\index{handle\+Touches\+Cancel@{handle\+Touches\+Cancel}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Cancel()}{handleTouchesCancel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::handle\+Touches\+Cancel (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_ac92c6ff5d59d28571cb20af5df29c12d}\label{classGLView_ac92c6ff5d59d28571cb20af5df29c12d}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+End@{handle\+Touches\+End}}
+\index{handle\+Touches\+End@{handle\+Touches\+End}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+End()}{handleTouchesEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::handle\+Touches\+End (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a09f7e2f850149f7064e3f6d1f8bad8a3}\label{classGLView_a09f7e2f850149f7064e3f6d1f8bad8a3}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+End@{handle\+Touches\+End}}
+\index{handle\+Touches\+End@{handle\+Touches\+End}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+End()}{handleTouchesEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::handle\+Touches\+End (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a11f47e82b25f84dd0f976872cad038c4}\label{classGLView_a11f47e82b25f84dd0f976872cad038c4}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Move@{handle\+Touches\+Move}}
+\index{handle\+Touches\+Move@{handle\+Touches\+Move}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Move()}{handleTouchesMove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void G\+L\+View\+::handle\+Touches\+Move (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_ac5aca8c81bcd8297cb35c0dec74598ce}\label{classGLView_ac5aca8c81bcd8297cb35c0dec74598ce}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Move@{handle\+Touches\+Move}}
+\index{handle\+Touches\+Move@{handle\+Touches\+Move}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Move()}{handleTouchesMove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void G\+L\+View\+::handle\+Touches\+Move (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]},  }\item[{float}]{fs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ms\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+{\em fs} & The force of 3d touches. \subsection*{ms The maximum force of 3d touches}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a7b7dfb9bb8402d5b4661ff385fac0acb}\label{classGLView_a7b7dfb9bb8402d5b4661ff385fac0acb}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Move@{handle\+Touches\+Move}}
+\index{handle\+Touches\+Move@{handle\+Touches\+Move}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Move()}{handleTouchesMove()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::handle\+Touches\+Move (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_af0602750d445ba834c08914ccf747ce5}\label{classGLView_af0602750d445ba834c08914ccf747ce5}} 
+\index{G\+L\+View@{G\+L\+View}!handle\+Touches\+Move@{handle\+Touches\+Move}}
+\index{handle\+Touches\+Move@{handle\+Touches\+Move}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{handle\+Touches\+Move()}{handleTouchesMove()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::handle\+Touches\+Move (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{intptr\+\_\+t}]{ids\mbox{[}$\,$\mbox{]},  }\item[{float}]{xs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ys\mbox{[}$\,$\mbox{]},  }\item[{float}]{fs\mbox{[}$\,$\mbox{]},  }\item[{float}]{ms\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classTouch}{Touch} events are handled by default; if you want to customize your handlers, please override this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The number of touch. \\
+\hline
+{\em ids} & The identity of the touch. \\
+\hline
+{\em xs} & The points of x. \\
+\hline
+{\em ys} & The points of y. \\
+\hline
+{\em fs} & The force of 3d touches. \subsection*{ms The maximum force of 3d touches}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a23326d6cbff86205a0d5fa953557838d}\label{classGLView_a23326d6cbff86205a0d5fa953557838d}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Open\+G\+L\+Ready@{is\+Open\+G\+L\+Ready}}
+\index{is\+Open\+G\+L\+Ready@{is\+Open\+G\+L\+Ready}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Open\+G\+L\+Ready()}{isOpenGLReady()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::is\+Open\+G\+L\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get whether opengl render system is ready, subclass must implement this method. 
+
+Implemented in \hyperlink{classGLViewImpl_a4fdf5280c768291ab6a46731639f8829}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a4fdf5280c768291ab6a46731639f8829}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a23326d6cbff86205a0d5fa953557838d}\label{classGLView_a23326d6cbff86205a0d5fa953557838d}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Open\+G\+L\+Ready@{is\+Open\+G\+L\+Ready}}
+\index{is\+Open\+G\+L\+Ready@{is\+Open\+G\+L\+Ready}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Open\+G\+L\+Ready()}{isOpenGLReady()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::is\+Open\+G\+L\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get whether opengl render system is ready, subclass must implement this method. 
+
+Implemented in \hyperlink{classGLViewImpl_a4fdf5280c768291ab6a46731639f8829}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_af539e58d1d28db65ba47f107c9c801d7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a4fdf5280c768291ab6a46731639f8829}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a037047e04b2070c1c6d874756a978a02}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a6b51811c80d053326246f2f318010edc}\label{classGLView_a6b51811c80d053326246f2f318010edc}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Retina\+Display@{is\+Retina\+Display}}
+\index{is\+Retina\+Display@{is\+Retina\+Display}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Retina\+Display()}{isRetinaDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::is\+Retina\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns whether or not the view is in Retina Display mode.
+
+\begin{DoxyReturn}{Returns}
+Returns whether or not the view is in Retina Display mode. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a3c02a8e95e8f2ee4821935f78be3f6b0}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a3c02a8e95e8f2ee4821935f78be3f6b0}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a6b51811c80d053326246f2f318010edc}\label{classGLView_a6b51811c80d053326246f2f318010edc}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Retina\+Display@{is\+Retina\+Display}}
+\index{is\+Retina\+Display@{is\+Retina\+Display}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Retina\+Display()}{isRetinaDisplay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::is\+Retina\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns whether or not the view is in Retina Display mode.
+
+\begin{DoxyReturn}{Returns}
+Returns whether or not the view is in Retina Display mode. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a3c02a8e95e8f2ee4821935f78be3f6b0}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a3c02a8e95e8f2ee4821935f78be3f6b0}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a0dccbd245a5f49590693fd46a55d322d}\label{classGLView_a0dccbd245a5f49590693fd46a55d322d}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Scissor\+Enabled@{is\+Scissor\+Enabled}}
+\index{is\+Scissor\+Enabled@{is\+Scissor\+Enabled}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Scissor\+Enabled()}{isScissorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool G\+L\+View\+::is\+Scissor\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get whether G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+T\+E\+ST is enable.
+
+\begin{DoxyReturn}{Returns}
+Whether G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+T\+E\+ST is enable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_ae7de84c958af33c5e3f049014928f242}\label{classGLView_ae7de84c958af33c5e3f049014928f242}} 
+\index{G\+L\+View@{G\+L\+View}!is\+Scissor\+Enabled@{is\+Scissor\+Enabled}}
+\index{is\+Scissor\+Enabled@{is\+Scissor\+Enabled}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{is\+Scissor\+Enabled()}{isScissorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::is\+Scissor\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get whether G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+T\+E\+ST is enable.
+
+\begin{DoxyReturn}{Returns}
+Whether G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+T\+E\+ST is enable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLView_a707854960055e05a3841d4b8cf88f9ce}\label{classGLView_a707854960055e05a3841d4b8cf88f9ce}} 
+\index{G\+L\+View@{G\+L\+View}!poll\+Events@{poll\+Events}}
+\index{poll\+Events@{poll\+Events}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{poll\+Events()}{pollEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Polls the events. 
+
+Reimplemented in \hyperlink{classGLViewImpl_aafbe949f616506c1faeb090fe9456bcc}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_aafbe949f616506c1faeb090fe9456bcc}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a5e5a3b7fd25698d24df6c53f617fefdf}\label{classGLView_a5e5a3b7fd25698d24df6c53f617fefdf}} 
+\index{G\+L\+View@{G\+L\+View}!poll\+Events@{poll\+Events}}
+\index{poll\+Events@{poll\+Events}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{poll\+Events()}{pollEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Polls the events. 
+
+Reimplemented in \hyperlink{classGLViewImpl_aafbe949f616506c1faeb090fe9456bcc}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_aafbe949f616506c1faeb090fe9456bcc}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a5b93395a827f1886414a5d4186544ddb}\label{classGLView_a5b93395a827f1886414a5d4186544ddb}} 
+\index{G\+L\+View@{G\+L\+View}!poll\+Input\+Events@{poll\+Input\+Events}}
+\index{poll\+Input\+Events@{poll\+Input\+Events}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{poll\+Input\+Events()}{pollInputEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::poll\+Input\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000116}{Deprecated}]Polls input events. Subclass must implement methods if platform does not provide event callbacks. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classGLView_ace980598802adb0f6c06b22525eeb062}\label{classGLView_ace980598802adb0f6c06b22525eeb062}} 
+\index{G\+L\+View@{G\+L\+View}!poll\+Input\+Events@{poll\+Input\+Events}}
+\index{poll\+Input\+Events@{poll\+Input\+Events}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{poll\+Input\+Events()}{pollInputEvents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void G\+L\+View\+::poll\+Input\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000351}{Deprecated}]Polls input events. Subclass must implement methods if platform does not provide event callbacks. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}\label{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}} 
+\index{G\+L\+View@{G\+L\+View}!render\+Scene@{render\+Scene}}
+\index{render\+Scene@{render\+Scene}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{render\+Scene()}{renderScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::render\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene,  }\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+Renders a \hyperlink{classScene}{Scene} with a \hyperlink{classRenderer}{Renderer} This method is called directly by the \hyperlink{classDirector}{Director} \mbox{\Hypertarget{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}\label{classGLView_a47d30a4a1d8ed5f7a1556c456a5af74f}} 
+\index{G\+L\+View@{G\+L\+View}!render\+Scene@{render\+Scene}}
+\index{render\+Scene@{render\+Scene}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{render\+Scene()}{renderScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::render\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene,  }\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+Renders a \hyperlink{classScene}{Scene} with a \hyperlink{classRenderer}{Renderer} This method is called directly by the \hyperlink{classDirector}{Director} \mbox{\Hypertarget{classGLView_a40714c1d078f964bb51d12228af98054}\label{classGLView_a40714c1d078f964bb51d12228af98054}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}}
+\index{set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Scale\+Factor()}{setContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::set\+Content\+Scale\+Factor (\begin{DoxyParamCaption}\item[{float}]{scale\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Only works on ios platform. Set Content Scale of the Factor. 
+
+Reimplemented in \hyperlink{classGLViewImpl_ae5fc53c9751b15efc4a6a1bc12db262c}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a7bd1df076bd10554cc6aff25f2b07238}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_aed19813eb650f6d30f0f385a8f5c4a62}\label{classGLView_aed19813eb650f6d30f0f385a8f5c4a62}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}}
+\index{set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Content\+Scale\+Factor()}{setContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::set\+Content\+Scale\+Factor (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Only works on ios platform. Set Content Scale of the Factor. 
+
+Reimplemented in \hyperlink{classGLViewImpl_ae5fc53c9751b15efc4a6a1bc12db262c}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a7bd1df076bd10554cc6aff25f2b07238}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_ab9defa8d2bbfb495da622958e2f9a500}\label{classGLView_ab9defa8d2bbfb495da622958e2f9a500}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Cursor@{set\+Cursor}}
+\index{set\+Cursor@{set\+Cursor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Cursor()}{setCursor()}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Cursor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\hyperlink{classVec2}{Vec2}}]{hotspot = {\ttfamily \hyperlink{classVec2_ab0533215e446e0381d01bf49edd7ab7c}{Vec2\+::\+A\+N\+C\+H\+O\+R\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the cursor for the window with custom image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}cursors/custom.\+png\char`\"{}. \\
+\hline
+{\em hotspot} & Cursor hotspot, as a anchor point, default is top left (0, 1) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a80189f01cb7314cd79fb37ccc5a1d779}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a1d09cf734d01c1a789ded4caef734b2a}\label{classGLView_a1d09cf734d01c1a789ded4caef734b2a}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Cursor\+Visible@{set\+Cursor\+Visible}}
+\index{set\+Cursor\+Visible@{set\+Cursor\+Visible}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Visible()}{setCursorVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Cursor\+Visible (\begin{DoxyParamCaption}\item[{bool}]{is\+Visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\hyperlink{classHide}{Hide} or \hyperlink{classShow}{Show} the mouse cursor if there is one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Visible} & \hyperlink{classHide}{Hide} or \hyperlink{classShow}{Show} the mouse cursor if there is one. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a7e609efc4d34d98544b42e5f18ff29b8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a6a90e8743caf5fff31f0502dc44c986d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a7e609efc4d34d98544b42e5f18ff29b8}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_afa971ce0119e72731a7ff42443d3e90d}\label{classGLView_afa971ce0119e72731a7ff42443d3e90d}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Cursor\+Visible@{set\+Cursor\+Visible}}
+\index{set\+Cursor\+Visible@{set\+Cursor\+Visible}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Visible()}{setCursorVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Cursor\+Visible (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\hyperlink{classHide}{Hide} or \hyperlink{classShow}{Show} the mouse cursor if there is one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Visible} & \hyperlink{classHide}{Hide} or \hyperlink{classShow}{Show} the mouse cursor if there is one. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a7e609efc4d34d98544b42e5f18ff29b8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a6a90e8743caf5fff31f0502dc44c986d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a7e609efc4d34d98544b42e5f18ff29b8}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a527977ed54ff5ae4ca8a3e2e7a541551}\label{classGLView_a527977ed54ff5ae4ca8a3e2e7a541551}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Default\+Cursor@{set\+Default\+Cursor}}
+\index{set\+Default\+Cursor@{set\+Default\+Cursor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Default\+Cursor()}{setDefaultCursor()}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Default\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the cursor for the window back to default. 
+
+Reimplemented in \hyperlink{classGLViewImpl_afdb494137883635527117299e81cd78d}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a27d3fd61c627780fa1cf2b1357f07d15}\label{classGLView_a27d3fd61c627780fa1cf2b1357f07d15}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Default\+Icon@{set\+Default\+Icon}}
+\index{set\+Default\+Icon@{set\+Default\+Icon}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Default\+Icon()}{setDefaultIcon()}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Default\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set default window icon (implemented for windows and linux). On windows it will use icon from .exe file (if included). On linux it will use default window icon. \mbox{\Hypertarget{classGLView_a754e253a506c4eb9a923a2a33b4b955c}\label{classGLView_a754e253a506c4eb9a923a2a33b4b955c}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Design\+Resolution\+Size@{set\+Design\+Resolution\+Size}}
+\index{set\+Design\+Resolution\+Size@{set\+Design\+Resolution\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Design\+Resolution\+Size()}{setDesignResolutionSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+Design\+Resolution\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{Resolution\+Policy}]{resolution\+Policy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the design resolution size. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Design resolution width. \\
+\hline
+{\em height} & Design resolution height. \\
+\hline
+{\em resolution\+Policy} & The resolution policy desired, you may choose\+: \mbox{[}1\mbox{]} E\+X\+A\+C\+T\+\_\+\+F\+IT Fill screen by stretch-\/to-\/fit\+: if the design resolution ratio of width to height is different from the screen resolution ratio, your game view will be stretched. \mbox{[}2\mbox{]} N\+O\+\_\+\+B\+O\+R\+D\+ER Full screen without black border\+: if the design resolution ratio of width to height is different from the screen resolution ratio, two areas of your game view will be cut. \mbox{[}3\mbox{]} S\+H\+O\+W\+\_\+\+A\+LL Full screen with black border\+: if the design resolution ratio of width to height is different from the screen resolution ratio, two black borders will be shown. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_af0c6db7063ef5d16cec6e9305313f576}\label{classGLView_af0c6db7063ef5d16cec6e9305313f576}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Design\+Resolution\+Size@{set\+Design\+Resolution\+Size}}
+\index{set\+Design\+Resolution\+Size@{set\+Design\+Resolution\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Design\+Resolution\+Size()}{setDesignResolutionSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Design\+Resolution\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{Resolution\+Policy}]{resolution\+Policy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the design resolution size. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Design resolution width. \\
+\hline
+{\em height} & Design resolution height. \\
+\hline
+{\em resolution\+Policy} & The resolution policy desired, you may choose\+: \mbox{[}1\mbox{]} E\+X\+A\+C\+T\+\_\+\+F\+IT Fill screen by stretch-\/to-\/fit\+: if the design resolution ratio of width to height is different from the screen resolution ratio, your game view will be stretched. \mbox{[}2\mbox{]} N\+O\+\_\+\+B\+O\+R\+D\+ER Full screen without black border\+: if the design resolution ratio of width to height is different from the screen resolution ratio, two areas of your game view will be cut. \mbox{[}3\mbox{]} S\+H\+O\+W\+\_\+\+A\+LL Full screen with black border\+: if the design resolution ratio of width to height is different from the screen resolution ratio, two black borders will be shown. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_ac18f93506550c54c119f7ae87f33f220}\label{classGLView_ac18f93506550c54c119f7ae87f33f220}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Frame\+Size@{set\+Frame\+Size}}
+\index{set\+Frame\+Size@{set\+Frame\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Frame\+Size()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the frame size of E\+GL view.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the fram size. \\
+\hline
+{\em height} & The height of the fram size. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_ab7eed967b49c7807cbaeb186e3df8f1c}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a16286e087255bfe27d0bef183761eaa0}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a73c722d907a4428983a5059aac85af46}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a9d6aa2c05e70f0b748049c0c057ff603}\label{classGLView_a9d6aa2c05e70f0b748049c0c057ff603}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Frame\+Size@{set\+Frame\+Size}}
+\index{set\+Frame\+Size@{set\+Frame\+Size}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Frame\+Size()}{setFrameSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Frame\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the frame size of E\+GL view.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the fram size. \\
+\hline
+{\em height} & The height of the fram size. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_ab7eed967b49c7807cbaeb186e3df8f1c}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a16286e087255bfe27d0bef183761eaa0}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a73c722d907a4428983a5059aac85af46}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_afe38f42b6954c9bc29382f411b49f448}\label{classGLView_afe38f42b6954c9bc29382f411b49f448}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Frame\+Zoom\+Factor@{set\+Frame\+Zoom\+Factor}}
+\index{set\+Frame\+Zoom\+Factor@{set\+Frame\+Zoom\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Frame\+Zoom\+Factor()}{setFrameZoomFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Frame\+Zoom\+Factor (\begin{DoxyParamCaption}\item[{float}]{zoom\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set zoom factor for frame. This methods are for debugging big resolution (e.\+g.\+new ipad) app on desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoom\+Factor} & The zoom factor for frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a7db37b677458517eb4a2563bae912d1e}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a1fbfd81198efe1e87f725b2dfa53bab8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_aa8868ddca63e739ecfc2beeeaa61c1dd}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_aa8868ddca63e739ecfc2beeeaa61c1dd}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a1e9bc3b630d2225332656cf385ac7b2c}\label{classGLView_a1e9bc3b630d2225332656cf385ac7b2c}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Frame\+Zoom\+Factor@{set\+Frame\+Zoom\+Factor}}
+\index{set\+Frame\+Zoom\+Factor@{set\+Frame\+Zoom\+Factor}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Frame\+Zoom\+Factor()}{setFrameZoomFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Frame\+Zoom\+Factor (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set zoom factor for frame. This methods are for debugging big resolution (e.\+g.\+new ipad) app on desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoom\+Factor} & The zoom factor for frame. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a7db37b677458517eb4a2563bae912d1e}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a1fbfd81198efe1e87f725b2dfa53bab8}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_aa8868ddca63e739ecfc2beeeaa61c1dd}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_aa8868ddca63e739ecfc2beeeaa61c1dd}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_abf100389994d936ad6bf9f32966bb7cf}\label{classGLView_abf100389994d936ad6bf9f32966bb7cf}} 
+\index{G\+L\+View@{G\+L\+View}!set\+G\+L\+Context\+Attrs@{set\+G\+L\+Context\+Attrs}}
+\index{set\+G\+L\+Context\+Attrs@{set\+G\+L\+Context\+Attrs}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Context\+Attrs()}{setGLContextAttrs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+G\+L\+Context\+Attrs (\begin{DoxyParamCaption}\item[{\hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \&}]{gl\+Context\+Attrs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static method and member so that we can modify it on all platforms before create Open\+GL context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gl\+Context\+Attrs} & The Open\+GL context attrs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a67b7c433b4bb6578948ca06ac01d1e38}\label{classGLView_a67b7c433b4bb6578948ca06ac01d1e38}} 
+\index{G\+L\+View@{G\+L\+View}!set\+G\+L\+Context\+Attrs@{set\+G\+L\+Context\+Attrs}}
+\index{set\+G\+L\+Context\+Attrs@{set\+G\+L\+Context\+Attrs}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Context\+Attrs()}{setGLContextAttrs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void G\+L\+View\+::set\+G\+L\+Context\+Attrs (\begin{DoxyParamCaption}\item[{\hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} \&}]{gl\+Context\+Attrs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static method and member so that we can modify it on all platforms before create Open\+GL context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gl\+Context\+Attrs} & The Open\+GL context attrs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a3f7af6e8ef7059255a6626c86ecce17e}\label{classGLView_a3f7af6e8ef7059255a6626c86ecce17e}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Icon@{set\+Icon}}
+\index{set\+Icon@{set\+Icon}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Icon()}{setIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Icon (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set window icon (implemented for windows and linux).
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}icons/custom.\+png\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a35b469df944ab7e768e20dc1803154fe}\label{classGLView_a35b469df944ab7e768e20dc1803154fe}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Icon@{set\+Icon}}
+\index{set\+Icon@{set\+Icon}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Icon()}{setIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Icon (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{filelist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set window icon (implemented for windows and linux). Best icon (based on size) will be auto selected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filelist} & The array contains icons. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_aaa70edad9dd4b2052237867db978e06d}\label{classGLView_aaa70edad9dd4b2052237867db978e06d}} 
+\index{G\+L\+View@{G\+L\+View}!set\+I\+M\+E\+Keyboard\+State@{set\+I\+M\+E\+Keyboard\+State}}
+\index{set\+I\+M\+E\+Keyboard\+State@{set\+I\+M\+E\+Keyboard\+State}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+I\+M\+E\+Keyboard\+State()}{setIMEKeyboardState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+I\+M\+E\+Keyboard\+State (\begin{DoxyParamCaption}\item[{bool}]{open }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Open or close I\+ME keyboard , subclass must implement this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em open} & Open or close I\+ME keyboard. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGLViewImpl_a97c906321e44204249b112de5706a617}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_aaa70edad9dd4b2052237867db978e06d}\label{classGLView_aaa70edad9dd4b2052237867db978e06d}} 
+\index{G\+L\+View@{G\+L\+View}!set\+I\+M\+E\+Keyboard\+State@{set\+I\+M\+E\+Keyboard\+State}}
+\index{set\+I\+M\+E\+Keyboard\+State@{set\+I\+M\+E\+Keyboard\+State}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+I\+M\+E\+Keyboard\+State()}{setIMEKeyboardState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+I\+M\+E\+Keyboard\+State (\begin{DoxyParamCaption}\item[{bool}]{open }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Open or close I\+ME keyboard , subclass must implement this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em open} & Open or close I\+ME keyboard. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGLViewImpl_a97c906321e44204249b112de5706a617}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a37e04acaf52f6258ebe98d6b36c3b6c3}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a134389b64b11ebd0af740c9acba58dc9}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a92dd9d0d58e97aeb5cb236f8155b9040}\label{classGLView_a92dd9d0d58e97aeb5cb236f8155b9040}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Scissor\+In\+Points@{set\+Scissor\+In\+Points}}
+\index{set\+Scissor\+In\+Points@{set\+Scissor\+In\+Points}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Scissor\+In\+Points()}{setScissorInPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+Scissor\+In\+Points (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{w,  }\item[{float}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set Scissor rectangle with points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set the points of x. \\
+\hline
+{\em y} & Set the points of y. \\
+\hline
+{\em w} & Set the width of the view port \\
+\hline
+{\em h} & Set the Height of the view port. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a5cdf75952a1c06fada8e1fe7b918a928}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a76dc10b4cab007815628df12ac037bde}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_ac53be51610430ad8a8422c391886b9bd}\label{classGLView_ac53be51610430ad8a8422c391886b9bd}} 
+\index{G\+L\+View@{G\+L\+View}!set\+Scissor\+In\+Points@{set\+Scissor\+In\+Points}}
+\index{set\+Scissor\+In\+Points@{set\+Scissor\+In\+Points}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+Scissor\+In\+Points()}{setScissorInPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+Scissor\+In\+Points (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{w,  }\item[{float}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set Scissor rectangle with points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set the points of x. \\
+\hline
+{\em y} & Set the points of y. \\
+\hline
+{\em w} & Set the width of the view port \\
+\hline
+{\em h} & Set the Height of the view port. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a5cdf75952a1c06fada8e1fe7b918a928}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a76dc10b4cab007815628df12ac037bde}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_abc3a9132adea8262abaa85dc4f63830f}\label{classGLView_abc3a9132adea8262abaa85dc4f63830f}} 
+\index{G\+L\+View@{G\+L\+View}!set\+View\+Name@{set\+View\+Name}}
+\index{set\+View\+Name@{set\+View\+Name}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+View\+Name()}{setViewName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+View\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{viewname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the view name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em viewname} & A string will be set to the view as name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_a141e0fbac581ef3404a8d57cc7e8453f}\label{classGLView_a141e0fbac581ef3404a8d57cc7e8453f}} 
+\index{G\+L\+View@{G\+L\+View}!set\+View\+Name@{set\+View\+Name}}
+\index{set\+View\+Name@{set\+View\+Name}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+View\+Name()}{setViewName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+View\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{viewname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the view name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em viewname} & A string will be set to the view as name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLView_ab19f26fc6123c51f48c2852b059eb676}\label{classGLView_ab19f26fc6123c51f48c2852b059eb676}} 
+\index{G\+L\+View@{G\+L\+View}!set\+View\+Port\+In\+Points@{set\+View\+Port\+In\+Points}}
+\index{set\+View\+Port\+In\+Points@{set\+View\+Port\+In\+Points}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+In\+Points()}{setViewPortInPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+View\+Port\+In\+Points (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{w,  }\item[{float}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set opengl view port rectangle with points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set the points of x. \\
+\hline
+{\em y} & Set the points of y. \\
+\hline
+{\em w} & Set the width of the view port \\
+\hline
+{\em h} & Set the Height of the view port. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a94e81cfc410b0fc2ae11c372e9fd135d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a137ba16cbdb6ce3877544f898d113f92}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a189fdd0ef4a85b26170305676216e763}\label{classGLView_a189fdd0ef4a85b26170305676216e763}} 
+\index{G\+L\+View@{G\+L\+View}!set\+View\+Port\+In\+Points@{set\+View\+Port\+In\+Points}}
+\index{set\+View\+Port\+In\+Points@{set\+View\+Port\+In\+Points}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+In\+Points()}{setViewPortInPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::set\+View\+Port\+In\+Points (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{w,  }\item[{float}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set opengl view port rectangle with points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set the points of x. \\
+\hline
+{\em y} & Set the points of y. \\
+\hline
+{\em w} & Set the width of the view port \\
+\hline
+{\em h} & Set the Height of the view port. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a94e81cfc410b0fc2ae11c372e9fd135d}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a137ba16cbdb6ce3877544f898d113f92}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}\label{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}} 
+\index{G\+L\+View@{G\+L\+View}!set\+VR@{set\+VR}}
+\index{set\+VR@{set\+VR}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+V\+R()}{setVR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+VR (\begin{DoxyParamCaption}\item[{\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$}]{vrrenderer }\end{DoxyParamCaption})}
+
+Sets a VR renderer. if {\ttfamily vrrenderer} is {\ttfamily nullptr} VR will be disabled \mbox{\Hypertarget{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}\label{classGLView_a28b947c83a97c1cbda8a34acadd62f7b}} 
+\index{G\+L\+View@{G\+L\+View}!set\+VR@{set\+VR}}
+\index{set\+VR@{set\+VR}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{set\+V\+R()}{setVR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+View\+::set\+VR (\begin{DoxyParamCaption}\item[{\hyperlink{classVRIRenderer}{V\+R\+I\+Renderer} $\ast$}]{vrrenderer }\end{DoxyParamCaption})}
+
+Sets a VR renderer. if {\ttfamily vrrenderer} is {\ttfamily nullptr} VR will be disabled \mbox{\Hypertarget{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}\label{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}} 
+\index{G\+L\+View@{G\+L\+View}!swap\+Buffers@{swap\+Buffers}}
+\index{swap\+Buffers@{swap\+Buffers}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{swap\+Buffers()}{swapBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::swap\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Exchanges the front and back buffers, subclass must implement this method. 
+
+Implemented in \hyperlink{classGLViewImpl_afe7883d151fd7d92d19d3359dc33e8b9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_afe7883d151fd7d92d19d3359dc33e8b9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}\label{classGLView_a8868ba73f19216f5f6c8dbcc1a7c9bb4}} 
+\index{G\+L\+View@{G\+L\+View}!swap\+Buffers@{swap\+Buffers}}
+\index{swap\+Buffers@{swap\+Buffers}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{swap\+Buffers()}{swapBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+L\+View\+::swap\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Exchanges the front and back buffers, subclass must implement this method. 
+
+Implemented in \hyperlink{classGLViewImpl_afe7883d151fd7d92d19d3359dc33e8b9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_ab434675d26eb367ae74f9533c34d2ca7}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_afe7883d151fd7d92d19d3359dc33e8b9}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}, \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a29bbe397ac0cd3793fa0815b34cd37aa}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_aa7a837484fd21d7c0a394e996963e84f}\label{classGLView_aa7a837484fd21d7c0a394e996963e84f}} 
+\index{G\+L\+View@{G\+L\+View}!window\+Should\+Close@{window\+Should\+Close}}
+\index{window\+Should\+Close@{window\+Should\+Close}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{window\+Should\+Close()}{windowShouldClose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::window\+Should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+When the window is closed, it will return false if the platforms is Ios or Android. If the platforms is windows or Mac,it will return true.
+
+\begin{DoxyReturn}{Returns}
+In ios and android it will return false,if in windows or Mac it will return true. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a0d0a12b4bfa3656c9b24ca8b141f7b1e}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a0d0a12b4bfa3656c9b24ca8b141f7b1e}{G\+L\+View\+Impl}.
+
+\mbox{\Hypertarget{classGLView_aa7a837484fd21d7c0a394e996963e84f}\label{classGLView_aa7a837484fd21d7c0a394e996963e84f}} 
+\index{G\+L\+View@{G\+L\+View}!window\+Should\+Close@{window\+Should\+Close}}
+\index{window\+Should\+Close@{window\+Should\+Close}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{window\+Should\+Close()}{windowShouldClose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+View\+::window\+Should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+When the window is closed, it will return false if the platforms is Ios or Android. If the platforms is windows or Mac,it will return true.
+
+\begin{DoxyReturn}{Returns}
+In ios and android it will return false,if in windows or Mac it will return true. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classGLViewImpl_a0d0a12b4bfa3656c9b24ca8b141f7b1e}{G\+L\+View\+Impl}, and \hyperlink{classGLViewImpl_a0d0a12b4bfa3656c9b24ca8b141f7b1e}{G\+L\+View\+Impl}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classGLView_a9d594512212b1e389a373d4d067ec058}\label{classGLView_a9d594512212b1e389a373d4d067ec058}} 
+\index{G\+L\+View@{G\+L\+View}!\+\_\+gl\+Context\+Attrs@{\+\_\+gl\+Context\+Attrs}}
+\index{\+\_\+gl\+Context\+Attrs@{\+\_\+gl\+Context\+Attrs}!G\+L\+View@{G\+L\+View}}
+\subsubsection{\texorpdfstring{\+\_\+gl\+Context\+Attrs}{\_glContextAttrs}}
+{\footnotesize\ttfamily static \hyperlink{structGLContextAttrs}{G\+L\+Context\+Attrs} G\+L\+View\+::\+\_\+gl\+Context\+Attrs = \{5, 6, 5, 0, 16, 0\}\hspace{0.3cm}{\ttfamily [static]}}
+
+The Open\+GL context attrs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/C\+C\+G\+L\+View.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/C\+C\+G\+L\+View.\+cpp\end{DoxyCompactItemize}

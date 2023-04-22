@@ -1,0 +1,548 @@
+\hypertarget{classgim__hash__table}{}\section{gim\+\_\+hash\+\_\+table$<$ T $>$ Class Template Reference}
+\label{classgim__hash__table}\index{gim\+\_\+hash\+\_\+table$<$ T $>$@{gim\+\_\+hash\+\_\+table$<$ T $>$}}
+
+
+A compact hash table implementation.  
+
+
+
+
+{\ttfamily \#include $<$gim\+\_\+hash\+\_\+table.\+h$>$}
+
+
+
+Collaboration diagram for gim\+\_\+hash\+\_\+table$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classgim__hash__table__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}{gim\+\_\+hash\+\_\+table} (G\+U\+I\+NT reserve\+\_\+size=G\+I\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+S\+I\+ZE, G\+U\+I\+NT node\+\_\+size=G\+I\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+N\+O\+D\+E\+\_\+\+S\+I\+ZE, G\+U\+I\+NT min\+\_\+hash\+\_\+table\+\_\+size=G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_ab7ab2e3e9ac09ec98d5c7112ea092aad}\label{classgim__hash__table_ab7ab2e3e9ac09ec98d5c7112ea092aad}} 
+bool {\bfseries is\+\_\+hash\+\_\+table} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a075a9857030ef2630d036b57778e2a46}\label{classgim__hash__table_a075a9857030ef2630d036b57778e2a46}} 
+bool {\bfseries is\+\_\+sorted} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_adc65cdfbdb6906e4d0ebf66766f65557}\label{classgim__hash__table_adc65cdfbdb6906e4d0ebf66766f65557}} 
+bool {\bfseries sort} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a02b51868862156240818dafe2f8df01d}\label{classgim__hash__table_a02b51868862156240818dafe2f8df01d}} 
+bool {\bfseries switch\+\_\+to\+\_\+hashtable} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_acf8117de90e6486e712fc6184ea40225}\label{classgim__hash__table_acf8117de90e6486e712fc6184ea40225}} 
+bool {\bfseries switch\+\_\+to\+\_\+sorted\+\_\+array} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}\label{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}} 
+bool \hyperlink{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}{check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable} ()
+\begin{DoxyCompactList}\small\item\em If the container reaches the. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abe1662ebb0f7a17a84e7fc5d0f993c58}\label{classgim__hash__table_abe1662ebb0f7a17a84e7fc5d0f993c58}} 
+void {\bfseries set\+\_\+sorted} (bool value)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}\label{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}{size} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of keys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}\label{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}{get\+\_\+key} (G\+U\+I\+NT index) const
+\begin{DoxyCompactList}\small\item\em Retrieves the hash key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}\label{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}} 
+T $\ast$ \hyperlink{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}{get\+\_\+value\+\_\+by\+\_\+index} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em Retrieves the value by index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a8462bb3aa6342465fc54659648f8c8c9}\label{classgim__hash__table_a8462bb3aa6342465fc54659648f8c8c9}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (G\+U\+I\+NT index) const
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a0df819cc9b510d933132f2e5d5f87488}\label{classgim__hash__table_a0df819cc9b510d933132f2e5d5f87488}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (G\+U\+I\+NT index)
+\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}{find} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Finds the index of the element with the key. \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}{get\+\_\+value} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Retrieves the value associated with the index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abd4a9523a14496c9e3eacd7f790dad2c}\label{classgim__hash__table_abd4a9523a14496c9e3eacd7f790dad2c}} 
+bool {\bfseries erase\+\_\+by\+\_\+index} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a22cce5d8ed58cfb7e16d6b81aaf5acb7}\label{classgim__hash__table_a22cce5d8ed58cfb7e16d6b81aaf5acb7}} 
+bool {\bfseries erase\+\_\+by\+\_\+index\+\_\+unsorted} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a156d142f1eb74c3ef758a14fffe1763a}\label{classgim__hash__table_a156d142f1eb74c3ef758a14fffe1763a}} 
+bool {\bfseries erase\+\_\+by\+\_\+key} (G\+U\+I\+NT hashkey)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a1574ca1850a9258db8b778282134ff42}\label{classgim__hash__table_a1574ca1850a9258db8b778282134ff42}} 
+void {\bfseries clear} ()
+\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}{insert} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash. \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a83987136757654921c71b183de8ec55e}{insert\+\_\+override} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash, and could overrite an existing object with the same hash. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}\label{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}{insert\+\_\+unsorted} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash,But if this container is a sorted array, this inserts it unsorted. \end{DoxyCompactList}\item 
+\hyperlink{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}{gim\+\_\+hash\+\_\+table} (G\+U\+I\+NT reserve\+\_\+size=G\+I\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+S\+I\+ZE, G\+U\+I\+NT node\+\_\+size=G\+I\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+N\+O\+D\+E\+\_\+\+S\+I\+ZE, G\+U\+I\+NT min\+\_\+hash\+\_\+table\+\_\+size=G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_ab7ab2e3e9ac09ec98d5c7112ea092aad}\label{classgim__hash__table_ab7ab2e3e9ac09ec98d5c7112ea092aad}} 
+bool {\bfseries is\+\_\+hash\+\_\+table} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a075a9857030ef2630d036b57778e2a46}\label{classgim__hash__table_a075a9857030ef2630d036b57778e2a46}} 
+bool {\bfseries is\+\_\+sorted} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_adc65cdfbdb6906e4d0ebf66766f65557}\label{classgim__hash__table_adc65cdfbdb6906e4d0ebf66766f65557}} 
+bool {\bfseries sort} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a02b51868862156240818dafe2f8df01d}\label{classgim__hash__table_a02b51868862156240818dafe2f8df01d}} 
+bool {\bfseries switch\+\_\+to\+\_\+hashtable} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_acf8117de90e6486e712fc6184ea40225}\label{classgim__hash__table_acf8117de90e6486e712fc6184ea40225}} 
+bool {\bfseries switch\+\_\+to\+\_\+sorted\+\_\+array} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}\label{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}} 
+bool \hyperlink{classgim__hash__table_aba33eeb9b5aa00b0d8a002c549b71ed3}{check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable} ()
+\begin{DoxyCompactList}\small\item\em If the container reaches the. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abe1662ebb0f7a17a84e7fc5d0f993c58}\label{classgim__hash__table_abe1662ebb0f7a17a84e7fc5d0f993c58}} 
+void {\bfseries set\+\_\+sorted} (bool value)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}\label{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a77994868ac8519736e69c93c1c989dde}{size} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of keys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}\label{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aa9f8b2ae1ac505ed5dfe73b83510dad0}{get\+\_\+key} (G\+U\+I\+NT index) const
+\begin{DoxyCompactList}\small\item\em Retrieves the hash key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}\label{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}} 
+T $\ast$ \hyperlink{classgim__hash__table_ab5ec54c3096e790e8c7ae570300df95d}{get\+\_\+value\+\_\+by\+\_\+index} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em Retrieves the value by index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a8462bb3aa6342465fc54659648f8c8c9}\label{classgim__hash__table_a8462bb3aa6342465fc54659648f8c8c9}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (G\+U\+I\+NT index) const
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a0df819cc9b510d933132f2e5d5f87488}\label{classgim__hash__table_a0df819cc9b510d933132f2e5d5f87488}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (G\+U\+I\+NT index)
+\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}{find} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Finds the index of the element with the key. \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}{get\+\_\+value} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Retrieves the value associated with the index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abd4a9523a14496c9e3eacd7f790dad2c}\label{classgim__hash__table_abd4a9523a14496c9e3eacd7f790dad2c}} 
+bool {\bfseries erase\+\_\+by\+\_\+index} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a22cce5d8ed58cfb7e16d6b81aaf5acb7}\label{classgim__hash__table_a22cce5d8ed58cfb7e16d6b81aaf5acb7}} 
+bool {\bfseries erase\+\_\+by\+\_\+index\+\_\+unsorted} (G\+U\+I\+NT index)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a156d142f1eb74c3ef758a14fffe1763a}\label{classgim__hash__table_a156d142f1eb74c3ef758a14fffe1763a}} 
+bool {\bfseries erase\+\_\+by\+\_\+key} (G\+U\+I\+NT hashkey)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a1574ca1850a9258db8b778282134ff42}\label{classgim__hash__table_a1574ca1850a9258db8b778282134ff42}} 
+void {\bfseries clear} ()
+\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}{insert} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash. \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a83987136757654921c71b183de8ec55e}{insert\+\_\+override} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash, and could overrite an existing object with the same hash. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}\label{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_abe9a629ec7dfe612065ed9d161adc7e8}{insert\+\_\+unsorted} (G\+U\+I\+NT hashkey, const T \&element)
+\begin{DoxyCompactList}\small\item\em Insert an element into the hash,But if this container is a sorted array, this inserts it unsorted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a93f9195325cf57b3789e575a18a929a5}\label{classgim__hash__table_a93f9195325cf57b3789e575a18a929a5}} 
+typedef \hyperlink{structGIM__HASH__TABLE__NODE}{G\+I\+M\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+N\+O\+DE}$<$ T $>$ {\bfseries \+\_\+node\+\_\+type}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a93f9195325cf57b3789e575a18a929a5}\label{classgim__hash__table_a93f9195325cf57b3789e575a18a929a5}} 
+typedef \hyperlink{structGIM__HASH__TABLE__NODE}{G\+I\+M\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+N\+O\+DE}$<$ T $>$ {\bfseries \+\_\+node\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}\label{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}{\+\_\+find\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Returns the cell index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}\label{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}{\+\_\+find\+\_\+avaliable\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Find the avaliable cell for the hashkey, and return an existing cell if it has the same hash key. \end{DoxyCompactList}\item 
+void \hyperlink{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}{\+\_\+reserve\+\_\+table\+\_\+memory} (G\+U\+I\+NT newtablesize)
+\begin{DoxyCompactList}\small\item\em reserves the memory for the hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ab638970e2ec565cc9cfd473612127358}\label{classgim__hash__table_ab638970e2ec565cc9cfd473612127358}} 
+void {\bfseries \+\_\+invalidate\+\_\+keys} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}\label{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}} 
+void \hyperlink{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}{\+\_\+clear\+\_\+table\+\_\+memory} ()
+\begin{DoxyCompactList}\small\item\em Clear all memory for the hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}\label{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}} 
+void \hyperlink{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}{\+\_\+rehash} ()
+\begin{DoxyCompactList}\small\item\em Invalidates the keys (Assigning G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH to all) Reorders the hash keys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}\label{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}} 
+void \hyperlink{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}{\+\_\+resize\+\_\+table} (G\+U\+I\+NT newsize)
+\begin{DoxyCompactList}\small\item\em Resize hash table indices. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}\label{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}} 
+void \hyperlink{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}{\+\_\+destroy} ()
+\begin{DoxyCompactList}\small\item\em Destroy hash table memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}\label{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}{\+\_\+assign\+\_\+hash\+\_\+table\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Finds an avaliable hash table cell, and resizes the table if there isn\textquotesingle{}t space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_afbaacd523281706f94476ae60917856e}\label{classgim__hash__table_afbaacd523281706f94476ae60917856e}} 
+bool \hyperlink{classgim__hash__table_afbaacd523281706f94476ae60917856e}{\+\_\+erase\+\_\+by\+\_\+index\+\_\+hash\+\_\+table} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em erase by index in hash table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}\label{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}} 
+bool \hyperlink{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}{\+\_\+erase\+\_\+hash\+\_\+table} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em erase by key in hash table \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}{\+\_\+insert\+\_\+hash\+\_\+table} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em insert an element in hash table \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em insert an element in hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}\label{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}} 
+bool \hyperlink{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}{\+\_\+erase\+\_\+sorted} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em Sorted array data management. The hash table has the indices to the corresponding m\+\_\+nodes array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}\label{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}} 
+bool \hyperlink{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}{\+\_\+erase\+\_\+unsorted} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em faster, but unsorted \end{DoxyCompactList}\item 
+void \hyperlink{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}{\+\_\+insert\+\_\+in\+\_\+pos} (G\+U\+I\+NT hashkey, const T \&value, G\+U\+I\+NT pos)
+\begin{DoxyCompactList}\small\item\em Insert in position ordered. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}\label{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}{\+\_\+insert\+\_\+sorted} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em Insert an element in an ordered array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ac221e1462f7711085b1260fc229b6183}\label{classgim__hash__table_ac221e1462f7711085b1260fc229b6183}} 
+G\+U\+I\+NT {\bfseries \+\_\+insert\+\_\+sorted\+\_\+replace} (G\+U\+I\+NT hashkey, const T \&value)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a95f93f63d75663f494388dc03423332f}\label{classgim__hash__table_a95f93f63d75663f494388dc03423332f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a95f93f63d75663f494388dc03423332f}{\+\_\+insert\+\_\+unsorted} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em Fast insertion in m\+\_\+nodes array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}\label{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_aaaff4cea9e6b86276d364041e651605f}{\+\_\+find\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Returns the cell index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}\label{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_acc2d3d29a0190232386fb155ec9e5d8f}{\+\_\+find\+\_\+avaliable\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Find the avaliable cell for the hashkey, and return an existing cell if it has the same hash key. \end{DoxyCompactList}\item 
+void \hyperlink{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}{\+\_\+reserve\+\_\+table\+\_\+memory} (G\+U\+I\+NT newtablesize)
+\begin{DoxyCompactList}\small\item\em reserves the memory for the hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ab638970e2ec565cc9cfd473612127358}\label{classgim__hash__table_ab638970e2ec565cc9cfd473612127358}} 
+void {\bfseries \+\_\+invalidate\+\_\+keys} ()
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}\label{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}} 
+void \hyperlink{classgim__hash__table_a06933fdb198971dcd753564d1d6e9424}{\+\_\+clear\+\_\+table\+\_\+memory} ()
+\begin{DoxyCompactList}\small\item\em Clear all memory for the hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}\label{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}} 
+void \hyperlink{classgim__hash__table_aa33115e75d8cc5c489fa6ce8b1a23654}{\+\_\+rehash} ()
+\begin{DoxyCompactList}\small\item\em Invalidates the keys (Assigning G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH to all) Reorders the hash keys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}\label{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}} 
+void \hyperlink{classgim__hash__table_a51905040dee4c41954f5de1634c090dd}{\+\_\+resize\+\_\+table} (G\+U\+I\+NT newsize)
+\begin{DoxyCompactList}\small\item\em Resize hash table indices. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}\label{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}} 
+void \hyperlink{classgim__hash__table_a2b7a2b3eb817edf8af93a85ce910a5ca}{\+\_\+destroy} ()
+\begin{DoxyCompactList}\small\item\em Destroy hash table memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}\label{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a93e5bf5c573a39e21e9bd0a4aec38e1a}{\+\_\+assign\+\_\+hash\+\_\+table\+\_\+cell} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em Finds an avaliable hash table cell, and resizes the table if there isn\textquotesingle{}t space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_afbaacd523281706f94476ae60917856e}\label{classgim__hash__table_afbaacd523281706f94476ae60917856e}} 
+bool \hyperlink{classgim__hash__table_afbaacd523281706f94476ae60917856e}{\+\_\+erase\+\_\+by\+\_\+index\+\_\+hash\+\_\+table} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em erase by index in hash table \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}\label{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}} 
+bool \hyperlink{classgim__hash__table_af03ef67dcf7b0e805e34df6a5de4425f}{\+\_\+erase\+\_\+hash\+\_\+table} (G\+U\+I\+NT hashkey)
+\begin{DoxyCompactList}\small\item\em erase by key in hash table \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}{\+\_\+insert\+\_\+hash\+\_\+table} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em insert an element in hash table \end{DoxyCompactList}\item 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em insert an element in hash table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}\label{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}} 
+bool \hyperlink{classgim__hash__table_ae347a062b1b5907b81127e6bacbbb10e}{\+\_\+erase\+\_\+sorted} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em Sorted array data management. The hash table has the indices to the corresponding m\+\_\+nodes array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}\label{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}} 
+bool \hyperlink{classgim__hash__table_a0b68afa191499a10ac7d7c34230a7d89}{\+\_\+erase\+\_\+unsorted} (G\+U\+I\+NT index)
+\begin{DoxyCompactList}\small\item\em faster, but unsorted \end{DoxyCompactList}\item 
+void \hyperlink{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}{\+\_\+insert\+\_\+in\+\_\+pos} (G\+U\+I\+NT hashkey, const T \&value, G\+U\+I\+NT pos)
+\begin{DoxyCompactList}\small\item\em Insert in position ordered. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}\label{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a66d18cb60b0628a9aa759304395f4825}{\+\_\+insert\+\_\+sorted} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em Insert an element in an ordered array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_ac221e1462f7711085b1260fc229b6183}\label{classgim__hash__table_ac221e1462f7711085b1260fc229b6183}} 
+G\+U\+I\+NT {\bfseries \+\_\+insert\+\_\+sorted\+\_\+replace} (G\+U\+I\+NT hashkey, const T \&value)
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a95f93f63d75663f494388dc03423332f}\label{classgim__hash__table_a95f93f63d75663f494388dc03423332f}} 
+G\+U\+I\+NT \hyperlink{classgim__hash__table_a95f93f63d75663f494388dc03423332f}{\+\_\+insert\+\_\+unsorted} (G\+U\+I\+NT hashkey, const T \&value)
+\begin{DoxyCompactList}\small\item\em Fast insertion in m\+\_\+nodes array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_ada83cac38bcf3fd282287f463def04e4}\label{classgim__hash__table_ada83cac38bcf3fd282287f463def04e4}} 
+\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__HASH__TABLE__NODE}{\+\_\+node\+\_\+type} $>$ \hyperlink{classgim__hash__table_ada83cac38bcf3fd282287f463def04e4}{m\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em The nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_adefa6197dfd5c1564969b38d4d27848b}\label{classgim__hash__table_adefa6197dfd5c1564969b38d4d27848b}} 
+bool {\bfseries m\+\_\+sorted}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_ac4f0dd16fac941dd3b485f34083103fb}\label{classgim__hash__table_ac4f0dd16fac941dd3b485f34083103fb}} 
+G\+U\+I\+NT $\ast$ \hyperlink{classgim__hash__table_ac4f0dd16fac941dd3b485f34083103fb}{m\+\_\+hash\+\_\+table}
+\begin{DoxyCompactList}\small\item\em Hash table data management. The hash table has the indices to the corresponding m\+\_\+nodes array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgim__hash__table_a39de8ad99c0fd79c595aa95d14be4e72}\label{classgim__hash__table_a39de8ad99c0fd79c595aa95d14be4e72}} 
+G\+U\+I\+NT {\bfseries m\+\_\+table\+\_\+size}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_a1f81ffd2e5dd96b222eafa228ae6aa9c}\label{classgim__hash__table_a1f81ffd2e5dd96b222eafa228ae6aa9c}} 
+G\+U\+I\+NT {\bfseries m\+\_\+node\+\_\+size}
+\item 
+\mbox{\Hypertarget{classgim__hash__table_ad0eb38448dd75c3a7964ff0fd5c6c7d0}\label{classgim__hash__table_ad0eb38448dd75c3a7964ff0fd5c6c7d0}} 
+G\+U\+I\+NT {\bfseries m\+\_\+min\+\_\+hash\+\_\+table\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class gim\+\_\+hash\+\_\+table$<$ T $>$}
+
+A compact hash table implementation. 
+
+A memory aligned compact hash table that coud be treated as an array. It could be a simple sorted array without the overhead of the hash key bucked, or could be a formely hash table with an array of keys. You can use switch\+\_\+to\+\_\+hashtable() and switch\+\_\+to\+\_\+sorted\+\_\+array for saving space or increase speed. 
+
+
+\begin{DoxyItemize}
+\item if node\+\_\+size = 0, then this container becomes a simple sorted array allocator. reserve\+\_\+size is used for reserve memory in m\+\_\+nodes. When the array size reaches the size equivalent to \textquotesingle{}min\+\_\+hash\+\_\+table\+\_\+size\textquotesingle{}, then it becomes a hash table by calling check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable. 
+\item If node\+\_\+size != 0, then this container becomes a hash table for ever 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}\label{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{gim\+\_\+hash\+\_\+table()}{gim\_hash\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table} (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{reserve\+\_\+size = {\ttfamily GIM\+\_\+DEFAULT\+\_\+HASH\+\_\+TABLE\+\_\+SIZE},  }\item[{G\+U\+I\+NT}]{node\+\_\+size = {\ttfamily GIM\+\_\+DEFAULT\+\_\+HASH\+\_\+TABLE\+\_\+NODE\+\_\+SIZE},  }\item[{G\+U\+I\+NT}]{min\+\_\+hash\+\_\+table\+\_\+size = {\ttfamily GIM\+\_\+INVALID\+\_\+HASH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if node\+\_\+size = 0, then this container becomes a simple sorted array allocator. reserve\+\_\+size is used for reserve memory in m\+\_\+nodes. When the array size reaches the size equivalent to \textquotesingle{}min\+\_\+hash\+\_\+table\+\_\+size\textquotesingle{}, then it becomes a hash table by calling check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable.  If node\+\_\+size != 0, then this container becomes a hash table for ever  \mbox{\Hypertarget{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}\label{classgim__hash__table_aefe21c907c69c8077ec0886aaa778f6f}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{gim\+\_\+hash\+\_\+table()}{gim\_hash\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table} (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{reserve\+\_\+size = {\ttfamily GIM\+\_\+DEFAULT\+\_\+HASH\+\_\+TABLE\+\_\+SIZE},  }\item[{G\+U\+I\+NT}]{node\+\_\+size = {\ttfamily GIM\+\_\+DEFAULT\+\_\+HASH\+\_\+TABLE\+\_\+NODE\+\_\+SIZE},  }\item[{G\+U\+I\+NT}]{min\+\_\+hash\+\_\+table\+\_\+size = {\ttfamily GIM\+\_\+INVALID\+\_\+HASH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if node\+\_\+size = 0, then this container becomes a simple sorted array allocator. reserve\+\_\+size is used for reserve memory in m\+\_\+nodes. When the array size reaches the size equivalent to \textquotesingle{}min\+\_\+hash\+\_\+table\+\_\+size\textquotesingle{}, then it becomes a hash table by calling check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable.  If node\+\_\+size != 0, then this container becomes a hash table for ever  
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}\label{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+hash\+\_\+table@{\+\_\+insert\+\_\+hash\+\_\+table}}
+\index{\+\_\+insert\+\_\+hash\+\_\+table@{\+\_\+insert\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+hash\+\_\+table()}{\_insert\_hash\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+insert an element in hash table 
+
+If the element exists, this won\textquotesingle{}t insert the element \begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}\label{classgim__hash__table_a4339a279d721d1e687b8d8063332bac8}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+hash\+\_\+table@{\+\_\+insert\+\_\+hash\+\_\+table}}
+\index{\+\_\+insert\+\_\+hash\+\_\+table@{\+\_\+insert\+\_\+hash\+\_\+table}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+hash\+\_\+table()}{\_insert\_hash\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+insert an element in hash table 
+
+If the element exists, this won\textquotesingle{}t insert the element \begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}\label{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace@{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace}}
+\index{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace@{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace()}{\_insert\_hash\_table\_replace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+insert an element in hash table. 
+
+If the element exists, this replaces the element. \begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}\label{classgim__hash__table_a6ebfb7415bd946855ec5730651f7c191}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace@{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace}}
+\index{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace@{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace()}{\_insert\_hash\_table\_replace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+hash\+\_\+table\+\_\+replace (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+insert an element in hash table. 
+
+If the element exists, this replaces the element. \begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}\label{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+in\+\_\+pos@{\+\_\+insert\+\_\+in\+\_\+pos}}
+\index{\+\_\+insert\+\_\+in\+\_\+pos@{\+\_\+insert\+\_\+in\+\_\+pos}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+in\+\_\+pos()}{\_insert\_in\_pos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+in\+\_\+pos (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value,  }\item[{G\+U\+I\+NT}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Insert in position ordered. 
+
+Also checks if it is needed to transform this container to a hash table, by calling check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable \mbox{\Hypertarget{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}\label{classgim__hash__table_a3eacaf88e1b18815c0b89d368d77a93a}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+insert\+\_\+in\+\_\+pos@{\+\_\+insert\+\_\+in\+\_\+pos}}
+\index{\+\_\+insert\+\_\+in\+\_\+pos@{\+\_\+insert\+\_\+in\+\_\+pos}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+insert\+\_\+in\+\_\+pos()}{\_insert\_in\_pos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+insert\+\_\+in\+\_\+pos (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{value,  }\item[{G\+U\+I\+NT}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Insert in position ordered. 
+
+Also checks if it is needed to transform this container to a hash table, by calling check\+\_\+for\+\_\+switching\+\_\+to\+\_\+hashtable \mbox{\Hypertarget{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}\label{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+reserve\+\_\+table\+\_\+memory@{\+\_\+reserve\+\_\+table\+\_\+memory}}
+\index{\+\_\+reserve\+\_\+table\+\_\+memory@{\+\_\+reserve\+\_\+table\+\_\+memory}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+reserve\+\_\+table\+\_\+memory()}{\_reserve\_table\_memory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+reserve\+\_\+table\+\_\+memory (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{newtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+reserves the memory for the hash table. 
+
+\begin{DoxyPrecond}{Precondition}
+hash table must be empty 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+reserves the memory for the hash table, an initializes all elements to G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}\label{classgim__hash__table_a4d9347e131c0e17ac2d4966c092817f8}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!\+\_\+reserve\+\_\+table\+\_\+memory@{\+\_\+reserve\+\_\+table\+\_\+memory}}
+\index{\+\_\+reserve\+\_\+table\+\_\+memory@{\+\_\+reserve\+\_\+table\+\_\+memory}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{\+\_\+reserve\+\_\+table\+\_\+memory()}{\_reserve\_table\_memory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::\+\_\+reserve\+\_\+table\+\_\+memory (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{newtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+reserves the memory for the hash table. 
+
+\begin{DoxyPrecond}{Precondition}
+hash table must be empty 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+reserves the memory for the hash table, an initializes all elements to G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}\label{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!find@{find}}
+\index{find@{find}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the index of the element with the key. 
+
+\begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}\label{classgim__hash__table_a14261b2d7de34188f8bc5179e4d60760}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!find@{find}}
+\index{find@{find}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the index of the element with the key. 
+
+\begin{DoxyReturn}{Returns}
+the index in the array of the existing element,or G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH if the element has been inserted If so, the element has been inserted at the last position of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}\label{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{get\+\_\+value()}{get\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T$\ast$ \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the value associated with the index. 
+
+\begin{DoxyReturn}{Returns}
+the found element, or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}\label{classgim__hash__table_a40b5c46a0117da3948cd1b093f185321}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{get\+\_\+value()}{get\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T$\ast$ \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the value associated with the index. 
+
+\begin{DoxyReturn}{Returns}
+the found element, or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}\label{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!insert@{insert}}
+\index{insert@{insert}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert an element into the hash. 
+
+\begin{DoxyReturn}{Returns}
+If G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH, the object has been inserted succesfully. Else it returns the position of the existing element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}\label{classgim__hash__table_aff0e9bdb5bd6aacf9272db6789c514f7}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!insert@{insert}}
+\index{insert@{insert}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert an element into the hash. 
+
+\begin{DoxyReturn}{Returns}
+If G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH, the object has been inserted succesfully. Else it returns the position of the existing element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a83987136757654921c71b183de8ec55e}\label{classgim__hash__table_a83987136757654921c71b183de8ec55e}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!insert\+\_\+override@{insert\+\_\+override}}
+\index{insert\+\_\+override@{insert\+\_\+override}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{insert\+\_\+override()}{insert\_override()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::insert\+\_\+override (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert an element into the hash, and could overrite an existing object with the same hash. 
+
+\begin{DoxyReturn}{Returns}
+If G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH, the object has been inserted succesfully. Else it returns the position of the replaced element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgim__hash__table_a83987136757654921c71b183de8ec55e}\label{classgim__hash__table_a83987136757654921c71b183de8ec55e}} 
+\index{gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}!insert\+\_\+override@{insert\+\_\+override}}
+\index{insert\+\_\+override@{insert\+\_\+override}!gim\+\_\+hash\+\_\+table@{gim\+\_\+hash\+\_\+table}}
+\subsubsection{\texorpdfstring{insert\+\_\+override()}{insert\_override()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+G\+U\+I\+NT \hyperlink{classgim__hash__table}{gim\+\_\+hash\+\_\+table}$<$ T $>$\+::insert\+\_\+override (\begin{DoxyParamCaption}\item[{G\+U\+I\+NT}]{hashkey,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert an element into the hash, and could overrite an existing object with the same hash. 
+
+\begin{DoxyReturn}{Returns}
+If G\+I\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+SH, the object has been inserted succesfully. Else it returns the position of the replaced element. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+hash\+\_\+table.\+h\end{DoxyCompactItemize}

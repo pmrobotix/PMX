@@ -1,0 +1,75 @@
+\hypertarget{motion__priv_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+priv.h File Reference}
+\label{motion__priv_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+priv.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+priv.\+h}}
+{\ttfamily \#include \char`\"{}motor\+\_\+\+P\+I\+D.\+h\char`\"{}}\newline
+Include dependency graph for motion\+\_\+priv.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{motion__priv_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion__priv_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{motion__priv_8h_adf6b297d2de6b3c70f5adee852af3a18}{C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW}(value,  max\+\_\+value)~\{if((value)$>$(max\+\_\+value/2))value-\/=max\+\_\+value; else if((value)$<$(-\/(max\+\_\+value/2)))value+=max\+\_\+value;\}
+\item 
+\#define \hyperlink{motion__priv_8h_a74a58484a767c0469a35809c1592705d}{B\+O\+U\+N\+D\+\_\+\+I\+NT}(value,  max\+\_\+abs)~\{if(value$>$max\+\_\+abs)value=max\+\_\+abs; else if(value$<$-\/max\+\_\+abs)value=-\/max\+\_\+abs;\}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion__priv_8h_a1d1a73519a3668e4ebdd186cb848afe7}\label{motion__priv_8h_a1d1a73519a3668e4ebdd186cb848afe7}} 
+enum {\bfseries M\+O\+T\+O\+R\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+T\+Y\+PE} \{ \newline
+{\bfseries P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+C\+O\+M\+M\+A\+ND}, 
+{\bfseries S\+P\+E\+E\+D\+\_\+\+C\+O\+M\+M\+A\+ND}, 
+{\bfseries S\+T\+E\+P\+\_\+\+C\+O\+M\+M\+A\+ND}, 
+{\bfseries P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+C\+O\+M\+M\+A\+ND}, 
+\newline
+{\bfseries S\+P\+E\+E\+D\+\_\+\+C\+O\+M\+M\+A\+ND}, 
+{\bfseries S\+T\+E\+P\+\_\+\+C\+O\+M\+M\+A\+ND}
+ \}
+\item 
+\mbox{\Hypertarget{motion__priv_8h_a6d1839909bb109652fe72da60dcc1ae9}\label{motion__priv_8h_a6d1839909bb109652fe72da60dcc1ae9}} 
+enum {\bfseries M\+O\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+Y\+PE} \{ \newline
+{\bfseries L\+E\+F\+T\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries A\+L\+P\+H\+A\+\_\+\+D\+E\+L\+TA}, 
+{\bfseries M\+A\+X\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+M\+B\+ER}, 
+{\bfseries L\+E\+F\+T\+\_\+\+R\+I\+G\+HT}, 
+\newline
+{\bfseries A\+L\+P\+H\+A\+\_\+\+D\+E\+L\+TA}, 
+{\bfseries M\+A\+X\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+M\+B\+ER}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{motion__priv_8h_a74a58484a767c0469a35809c1592705d}\label{motion__priv_8h_a74a58484a767c0469a35809c1592705d}} 
+\index{motion\+\_\+priv.\+h@{motion\+\_\+priv.\+h}!B\+O\+U\+N\+D\+\_\+\+I\+NT@{B\+O\+U\+N\+D\+\_\+\+I\+NT}}
+\index{B\+O\+U\+N\+D\+\_\+\+I\+NT@{B\+O\+U\+N\+D\+\_\+\+I\+NT}!motion\+\_\+priv.\+h@{motion\+\_\+priv.\+h}}
+\subsubsection{\texorpdfstring{B\+O\+U\+N\+D\+\_\+\+I\+NT}{BOUND\_INT}}
+{\footnotesize\ttfamily \#define B\+O\+U\+N\+D\+\_\+\+I\+NT(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{max\+\_\+abs }\end{DoxyParamCaption})~\{if(value$>$max\+\_\+abs)value=max\+\_\+abs; else if(value$<$-\/max\+\_\+abs)value=-\/max\+\_\+abs;\}}
+
+Macro that bound an integer to a maximum absolute value for instance \+: \hyperlink{motion__priv_8h_a74a58484a767c0469a35809c1592705d}{B\+O\+U\+N\+D\+\_\+\+I\+N\+T(i, 100)} with i==143 set i=100 \hyperlink{motion__priv_8h_a74a58484a767c0469a35809c1592705d}{B\+O\+U\+N\+D\+\_\+\+I\+N\+T(i, 100)} with i==-\/160 set i=-\/100 \hyperlink{motion__priv_8h_a74a58484a767c0469a35809c1592705d}{B\+O\+U\+N\+D\+\_\+\+I\+N\+T(i, 100)} with i==-\/16 set i=-\/16 \mbox{\Hypertarget{motion__priv_8h_adf6b297d2de6b3c70f5adee852af3a18}\label{motion__priv_8h_adf6b297d2de6b3c70f5adee852af3a18}} 
+\index{motion\+\_\+priv.\+h@{motion\+\_\+priv.\+h}!C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}
+\index{C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!motion\+\_\+priv.\+h@{motion\+\_\+priv.\+h}}
+\subsubsection{\texorpdfstring{C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW}{CORRECT\_DELTA\_OVERFLOW}}
+{\footnotesize\ttfamily \#define C\+O\+R\+R\+E\+C\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+O\+V\+E\+R\+F\+L\+OW(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{max\+\_\+value }\end{DoxyParamCaption})~\{if((value)$>$(max\+\_\+value/2))value-\/=max\+\_\+value; else if((value)$<$(-\/(max\+\_\+value/2)))value+=max\+\_\+value;\}}
+
+Macro that correct integer overflow for a difference of two value typically when you calculate an error using error = new-\/old, and new has overflowed the macro substract or add the maximum value if needed to compensate the overflow of new 

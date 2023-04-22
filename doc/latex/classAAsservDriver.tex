@@ -1,0 +1,180 @@
+\hypertarget{classAAsservDriver}{}\section{A\+Asserv\+Driver Class Reference}
+\label{classAAsservDriver}\index{A\+Asserv\+Driver@{A\+Asserv\+Driver}}
+
+
+Inheritance diagram for A\+Asserv\+Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAAsservDriver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a624c97511d788f1df927625a1d0eb54c}\label{classAAsservDriver_a624c97511d788f1df927625a1d0eb54c}} 
+virtual \hyperlink{classAAsservDriver_a624c97511d788f1df927625a1d0eb54c}{$\sim$\+A\+Asserv\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_af6a0b1c219c8a25d589667f05da7f64d}\label{classAAsservDriver_af6a0b1c219c8a25d589667f05da7f64d}} 
+\hyperlink{classAAsservDriver_af6a0b1c219c8a25d589667f05da7f64d}{A\+Asserv\+Driver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_a54ee068cec3c9f9f98b9e6b3d8c10f6e}\label{classAAsservDriver_a54ee068cec3c9f9f98b9e6b3d8c10f6e}} 
+virtual void \hyperlink{classAAsservDriver_a54ee068cec3c9f9f98b9e6b3d8c10f6e}{end\+What\+Todo} ()=0
+\begin{DoxyCompactList}\small\item\em actions à faire avant de quitter le programme. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_a77a5c938390e25a3231fe8b735ff3237}\label{classAAsservDriver_a77a5c938390e25a3231fe8b735ff3237}} 
+virtual void \hyperlink{classAAsservDriver_a77a5c938390e25a3231fe8b735ff3237}{set\+Motor\+Left\+Position} (int power, long ticks)=0
+\begin{DoxyCompactList}\small\item\em Fonctions utilisées uniquement par les drivers d\textquotesingle{}asserv et permettant un simple controle basique des moteurs et codeurs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_a68eacbe79f71032a0dab1109948ea5f8}\label{classAAsservDriver_a68eacbe79f71032a0dab1109948ea5f8}} 
+virtual void {\bfseries set\+Motor\+Right\+Position} (int power, long ticks)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a67ed5e8b3460f9496f36662beab44a46}\label{classAAsservDriver_a67ed5e8b3460f9496f36662beab44a46}} 
+virtual void {\bfseries set\+Motor\+Left\+Power} (int power, int time\+\_\+ms)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a6cd9bf62cb78150f94d38fa978c0a83a}\label{classAAsservDriver_a6cd9bf62cb78150f94d38fa978c0a83a}} 
+virtual void {\bfseries set\+Motor\+Right\+Power} (int power, int time\+\_\+ms)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ac30b15c18f0bf293cb322ae90a5bf7cc}\label{classAAsservDriver_ac30b15c18f0bf293cb322ae90a5bf7cc}} 
+virtual long {\bfseries get\+Left\+External\+Encoder} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a2799a875b5fc7975d6eeb0a3f98bc108}\label{classAAsservDriver_a2799a875b5fc7975d6eeb0a3f98bc108}} 
+virtual long {\bfseries get\+Right\+External\+Encoder} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a733770d9a0eb73caa897baadd3e36f9d}\label{classAAsservDriver_a733770d9a0eb73caa897baadd3e36f9d}} 
+virtual void {\bfseries get\+Counts\+External} (int32\+\_\+t $\ast$countR, int32\+\_\+t $\ast$countL)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ac303905f9004ca89964b7fd6c3b5df81}\label{classAAsservDriver_ac303905f9004ca89964b7fd6c3b5df81}} 
+virtual void {\bfseries get\+Delta\+Counts\+External} (int32\+\_\+t $\ast$deltaR, int32\+\_\+t $\ast$deltaL)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a99137b00bcf944c7fe8280d4e6adf194}\label{classAAsservDriver_a99137b00bcf944c7fe8280d4e6adf194}} 
+virtual long {\bfseries get\+Left\+Internal\+Encoder} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a474f74d48b64f813c6c7a3aa67bb5c07}\label{classAAsservDriver_a474f74d48b64f813c6c7a3aa67bb5c07}} 
+virtual long {\bfseries get\+Right\+Internal\+Encoder} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_aaa5418d791cab277447abf18afe31c4e}\label{classAAsservDriver_aaa5418d791cab277447abf18afe31c4e}} 
+virtual void {\bfseries get\+Counts\+Internal} (int32\+\_\+t $\ast$countR, int32\+\_\+t $\ast$countL)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_affe6c7f465c2f499a6f1e28ea2e7eb85}\label{classAAsservDriver_affe6c7f465c2f499a6f1e28ea2e7eb85}} 
+virtual void {\bfseries reset\+Encoders} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a40cc13dd2668e52283fa8fdc22ba7805}\label{classAAsservDriver_a40cc13dd2668e52283fa8fdc22ba7805}} 
+virtual void {\bfseries reset\+Internal\+Encoders} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ac1124f108bbdb293cf71ae1ce3d0222c}\label{classAAsservDriver_ac1124f108bbdb293cf71ae1ce3d0222c}} 
+virtual void {\bfseries reset\+External\+Encoders} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a7e3415d0b04fb227e468f23f7b7a0ad0}\label{classAAsservDriver_a7e3415d0b04fb227e468f23f7b7a0ad0}} 
+virtual void {\bfseries stop\+Motor\+Left} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_aaa92c72fe63cf97fb219566f912bdbbc}\label{classAAsservDriver_aaa92c72fe63cf97fb219566f912bdbbc}} 
+virtual void {\bfseries stop\+Motor\+Right} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a8b6c4cafec7a55188604ec8af44b11bb}\label{classAAsservDriver_a8b6c4cafec7a55188604ec8af44b11bb}} 
+virtual int {\bfseries get\+Motor\+Left\+Current} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a29ab60a2685bdec463339cca10e6efaf}\label{classAAsservDriver_a29ab60a2685bdec463339cca10e6efaf}} 
+virtual int {\bfseries get\+Motor\+Right\+Current} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a1980c0a6071940839bfe9782ab939db0}\label{classAAsservDriver_a1980c0a6071940839bfe9782ab939db0}} 
+virtual void \hyperlink{classAAsservDriver_a1980c0a6071940839bfe9782ab939db0}{odo\+\_\+\+Set\+Position} (float x\+\_\+mm, float y\+\_\+mm, float angle\+\_\+rad)=0
+\begin{DoxyCompactList}\small\item\em Fonctions permettant d\textquotesingle{}utiliser un asservissement externe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_acaea1ffd7a880d7796b1274bea4cff96}\label{classAAsservDriver_acaea1ffd7a880d7796b1274bea4cff96}} 
+virtual \hyperlink{structRobotPosition}{Robot\+Position} {\bfseries odo\+\_\+\+Get\+Position} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_af6cff4776b36ad5f17e3683112eaba86}\label{classAAsservDriver_af6cff4776b36ad5f17e3683112eaba86}} 
+virtual int {\bfseries path\+\_\+\+Get\+Last\+Command\+Status} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a3c40ae9ee4591963723aab90e7b1d7a0}\label{classAAsservDriver_a3c40ae9ee4591963723aab90e7b1d7a0}} 
+virtual void {\bfseries path\+\_\+\+Interrupt\+Trajectory} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a0faec2325a4b8e159bbccc28ddb4eba0}\label{classAAsservDriver_a0faec2325a4b8e159bbccc28ddb4eba0}} 
+virtual void {\bfseries path\+\_\+\+Collision\+On\+Trajectory} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a46391c5413a97747093f0bbe366d16fc}\label{classAAsservDriver_a46391c5413a97747093f0bbe366d16fc}} 
+virtual void {\bfseries path\+\_\+\+Collision\+Rear\+On\+Trajectory} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a5bc22cc735af0982a4c7a4d6fbe19c4f}\label{classAAsservDriver_a5bc22cc735af0982a4c7a4d6fbe19c4f}} 
+virtual void {\bfseries path\+\_\+\+Cancel\+Trajectory} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a55e3b442898d83f302b9d9e0898317b6}\label{classAAsservDriver_a55e3b442898d83f302b9d9e0898317b6}} 
+virtual void {\bfseries path\+\_\+\+Reset\+Emergency\+Stop} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a1a20a75bd63b75ecaf511e824a8a796a}\label{classAAsservDriver_a1a20a75bd63b75ecaf511e824a8a796a}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Do\+Face} (float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a9a605eb37c55384962093a200a512bad}\label{classAAsservDriver_a9a605eb37c55384962093a200a512bad}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Do\+Line} (float dist\+\_\+meters)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a2211748fb68a1431096c17ba4f9d7c42}\label{classAAsservDriver_a2211748fb68a1431096c17ba4f9d7c42}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Do\+Rotate} (float angle\+\_\+radians)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a3c41681cce40f67e84af3ad973281913}\label{classAAsservDriver_a3c41681cce40f67e84af3ad973281913}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Do\+Arc\+Rotate} (float angle\+\_\+radians, float radius)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ac62c5066c309e395a63a155f78053c9e}\label{classAAsservDriver_ac62c5066c309e395a63a155f78053c9e}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Goto} (float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a19b77ce59325a7c6c5f65eac3d9c7593}\label{classAAsservDriver_a19b77ce59325a7c6c5f65eac3d9c7593}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Goto\+Reverse} (float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ab8a6a390e76b8999c59a28c2e8190106}\label{classAAsservDriver_ab8a6a390e76b8999c59a28c2e8190106}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Goto\+Chain} (float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_afa0de8f03c96e899d5339d394295c560}\label{classAAsservDriver_afa0de8f03c96e899d5339d394295c560}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Goto\+Reverse\+Chain} (float x\+\_\+mm, float y\+\_\+mm)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_aca4741e0e7e11947180f53ba8abe0730}\label{classAAsservDriver_aca4741e0e7e11947180f53ba8abe0730}} 
+virtual void {\bfseries motion\+\_\+\+Free\+Motion} (void)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a3d4f4d2a80ee1887212f38fda3094c26}\label{classAAsservDriver_a3d4f4d2a80ee1887212f38fda3094c26}} 
+virtual void {\bfseries motion\+\_\+\+Disable\+P\+ID} (void)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a83153736da05eba6451f02b399eb4438}\label{classAAsservDriver_a83153736da05eba6451f02b399eb4438}} 
+virtual void \hyperlink{classAAsservDriver_a83153736da05eba6451f02b399eb4438}{motion\+\_\+\+Assisted\+Handling} (void)=0
+\begin{DoxyCompactList}\small\item\em Stop motion control and disable P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_a046eb790d147ad8ec34bcd9565ad675b}\label{classAAsservDriver_a046eb790d147ad8ec34bcd9565ad675b}} 
+virtual void \hyperlink{classAAsservDriver_a046eb790d147ad8ec34bcd9565ad675b}{motion\+\_\+\+Activate\+Manager} (bool enablethread)=0
+\begin{DoxyCompactList}\small\item\em Assisted movement mode =) (activate P\+ID) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAAsservDriver_a6912c759115a6357b3ce8ce55f365663}\label{classAAsservDriver_a6912c759115a6357b3ce8ce55f365663}} 
+virtual void {\bfseries motion\+\_\+set\+Low\+Speed\+Forward} (bool enable, int percent=0)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a621a0b60fec76be04f8960f2e56ba5fe}\label{classAAsservDriver_a621a0b60fec76be04f8960f2e56ba5fe}} 
+virtual void {\bfseries motion\+\_\+set\+Low\+Speed\+Backward} (bool enable, int percent=0)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a7a41963b5f908604a55f109e7ea3214e}\label{classAAsservDriver_a7a41963b5f908604a55f109e7ea3214e}} 
+virtual void {\bfseries motion\+\_\+\+Activate\+Regu\+Dist} (bool enable)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_ae5b16fb3a46e690deb213b556749e33f}\label{classAAsservDriver_ae5b16fb3a46e690deb213b556749e33f}} 
+virtual void {\bfseries motion\+\_\+\+Activate\+Regu\+Angle} (bool enable)=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a658d7dad992e6eb5066a396a8fbaf645}\label{classAAsservDriver_a658d7dad992e6eb5066a396a8fbaf645}} 
+virtual void {\bfseries motion\+\_\+\+Reset\+Regu\+Dist} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a0426d6401a8fa5ff8489f9b040a616da}\label{classAAsservDriver_a0426d6401a8fa5ff8489f9b040a616da}} 
+virtual void {\bfseries motion\+\_\+\+Reset\+Regu\+Angle} ()=0
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a24fc4fe4bd8dae4d0658b5102f343657}\label{classAAsservDriver_a24fc4fe4bd8dae4d0658b5102f343657}} 
+virtual T\+R\+A\+J\+\_\+\+S\+T\+A\+TE {\bfseries motion\+\_\+\+Do\+Direct\+Line} (float dist\+\_\+mm)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAAsservDriver_aa8b144fdccac014af94b93f743d89fa8}\label{classAAsservDriver_aa8b144fdccac014af94b93f743d89fa8}} 
+static \hyperlink{classAAsservDriver}{A\+Asserv\+Driver} $\ast$ \hyperlink{classAAsservDriver_aa8b144fdccac014af94b93f743d89fa8}{create} (std\+::string botid)
+\begin{DoxyCompactList}\small\item\em single instance creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a956b5f3a782e15931aa80fd834dd63e7}\label{classAAsservDriver_a956b5f3a782e15931aa80fd834dd63e7}} 
+float {\bfseries deg\+To\+Rad} (float deg)
+\item 
+\mbox{\Hypertarget{classAAsservDriver_a231f237f4a38854b1cc70bc87636727e}\label{classAAsservDriver_a231f237f4a38854b1cc70bc87636727e}} 
+float {\bfseries rad\+To\+Deg} (float rad)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Asserv.\+Driver/A\+Asserv\+Driver.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/Asserv\+Driver.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+\hypertarget{group__Protocols-and-Plugins}{}\section{Protocols and Plugins}
+\label{group__Protocols-and-Plugins}\index{Protocols and Plugins@{Protocols and Plugins}}
+Collaboration diagram for Protocols and Plugins\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__Protocols-and-Plugins}
+\end{center}
+\end{figure}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__generic-sessions}{plugin\+: generic-\/sessions}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlws__protocols}{lws\+\_\+protocols}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$ \hyperlink{group__Protocols-and-Plugins_ga2a4e5ce5e4492f77e892935397de5303}{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol} (struct lws\+\_\+vhost $\ast$vh, const char $\ast$name)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$ \hyperlink{group__Protocols-and-Plugins_ga72ad550786ca7976463589d347e62112}{lws\+\_\+get\+\_\+protocol} (struct \hyperlink{structlws}{lws} $\ast$wsi)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$ \hyperlink{group__Protocols-and-Plugins_ga181a7e600f9d921f483b05483d528fd8}{lws\+\_\+protocol\+\_\+get} (struct \hyperlink{structlws}{lws} $\ast$wsi) L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ \hyperlink{group__Protocols-and-Plugins_gaf8bb5f2a2ac92f42e807d7335f9552c2}{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc} (struct lws\+\_\+vhost $\ast$vhost, const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$prot, int size)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ \hyperlink{group__Protocols-and-Plugins_ga7e8d95fccf8654f5a0b6beadd7c8dbf1}{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get} (struct lws\+\_\+vhost $\ast$vhost, const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$prot)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ \hyperlink{group__Protocols-and-Plugins_ga40c0a7194f2ac0c2813ad7e374f0d852}{lws\+\_\+adjust\+\_\+protocol\+\_\+psds} (struct \hyperlink{structlws}{lws} $\ast$wsi, size\+\_\+t new\+\_\+size)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{group__Protocols-and-Plugins_ga106b37ae9c247e84d191ab09441adc43}{lws\+\_\+finalize\+\_\+startup} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context)
+\item 
+\mbox{\Hypertarget{group__Protocols-and-Plugins_ga502b1bc5295d2dc0f51fb95d9b8d7132}\label{group__Protocols-and-Plugins_ga502b1bc5295d2dc0f51fb95d9b8d7132}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int {\bfseries lws\+\_\+protocol\+\_\+init} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{Protocol and protocol plugin -\/related apis}
+
+Protocols bind ws protocol names to a custom callback specific to that protocol implementaion.
+
+A \hyperlink{protocollist-p}{list} of protocols can be passed in at context creation time, but it is also legal to leave that N\+U\+LL and add the protocols and their callback code using plugins.
+
+Plugins are much preferable compared to cut and pasting code into an application each time, since they can be used standalone. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__Protocols-and-Plugins_ga40c0a7194f2ac0c2813ad7e374f0d852}\label{group__Protocols-and-Plugins_ga40c0a7194f2ac0c2813ad7e374f0d852}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+adjust\+\_\+protocol\+\_\+psds@{lws\+\_\+adjust\+\_\+protocol\+\_\+psds}}
+\index{lws\+\_\+adjust\+\_\+protocol\+\_\+psds@{lws\+\_\+adjust\+\_\+protocol\+\_\+psds}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+adjust\+\_\+protocol\+\_\+psds()}{lws\_adjust\_protocol\_psds()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ lws\+\_\+adjust\+\_\+protocol\+\_\+psds (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws}{lws} $\ast$}]{wsi,  }\item[{size\+\_\+t}]{new\+\_\+size }\end{DoxyParamCaption})}
+
+lws\+\_\+adjust\+\_\+protocol\+\_\+psds -\/ change a vhost protocol\textquotesingle{}s per session data size
+
+
+\begin{DoxyParams}{Parameters}
+{\em wsi} & a connection with the protocol to change \\
+\hline
+{\em new\+\_\+size} & the new size of the per session data size for the protocol\\
+\hline
+\end{DoxyParams}
+Returns user\+\_\+space for the wsi, after allocating
+
+This should not be used except to initalize a vhost protocol\textquotesingle{}s per session data size one time, before any connections are accepted.
+
+Sometimes the protocol wraps another protocol and needs to discover and set its per session data size at runtime. \mbox{\Hypertarget{group__Protocols-and-Plugins_ga106b37ae9c247e84d191ab09441adc43}\label{group__Protocols-and-Plugins_ga106b37ae9c247e84d191ab09441adc43}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+finalize\+\_\+startup@{lws\+\_\+finalize\+\_\+startup}}
+\index{lws\+\_\+finalize\+\_\+startup@{lws\+\_\+finalize\+\_\+startup}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+finalize\+\_\+startup()}{lws\_finalize\_startup()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int lws\+\_\+finalize\+\_\+startup (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{context }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_ga106b37ae9c247e84d191ab09441adc43}{lws\+\_\+finalize\+\_\+startup()} -\/ drop initial process privileges
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & lws context\\
+\hline
+\end{DoxyParams}
+This is called after the end of the vhost protocol initializations, but you may choose to call it earlier \mbox{\Hypertarget{group__Protocols-and-Plugins_ga72ad550786ca7976463589d347e62112}\label{group__Protocols-and-Plugins_ga72ad550786ca7976463589d347e62112}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+get\+\_\+protocol@{lws\+\_\+get\+\_\+protocol}}
+\index{lws\+\_\+get\+\_\+protocol@{lws\+\_\+get\+\_\+protocol}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+get\+\_\+protocol()}{lws\_get\_protocol()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols}$\ast$ lws\+\_\+get\+\_\+protocol (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws}{lws} $\ast$}]{wsi }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_ga72ad550786ca7976463589d347e62112}{lws\+\_\+get\+\_\+protocol()} -\/ Returns a protocol pointer from a websocket connection. 
+\begin{DoxyParams}{Parameters}
+{\em wsi} & pointer to struct websocket you want to know the protocol of\\
+\hline
+\end{DoxyParams}
+Some apis can act on all live connections of a given protocol, this is how you can get a pointer to the active protocol if needed. \mbox{\Hypertarget{group__Protocols-and-Plugins_ga181a7e600f9d921f483b05483d528fd8}\label{group__Protocols-and-Plugins_ga181a7e600f9d921f483b05483d528fd8}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+protocol\+\_\+get@{lws\+\_\+protocol\+\_\+get}}
+\index{lws\+\_\+protocol\+\_\+get@{lws\+\_\+protocol\+\_\+get}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+protocol\+\_\+get()}{lws\_protocol\_get()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$ lws\+\_\+protocol\+\_\+get (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws}{lws} $\ast$}]{wsi }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_ga181a7e600f9d921f483b05483d528fd8}{lws\+\_\+protocol\+\_\+get()} -\/ deprecated\+: use lws\+\_\+get\+\_\+protocol \mbox{\Hypertarget{group__Protocols-and-Plugins_ga7e8d95fccf8654f5a0b6beadd7c8dbf1}\label{group__Protocols-and-Plugins_ga7e8d95fccf8654f5a0b6beadd7c8dbf1}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get@{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get}}
+\index{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get@{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get()}{lws\_protocol\_vh\_priv\_get()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get (\begin{DoxyParamCaption}\item[{struct lws\+\_\+vhost $\ast$}]{vhost,  }\item[{const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$}]{prot }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_ga7e8d95fccf8654f5a0b6beadd7c8dbf1}{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+get()} -\/ retreive a protocol\textquotesingle{}s per-\/vhost storage
+
+
+\begin{DoxyParams}{Parameters}
+{\em vhost} & vhost the instance is related to \\
+\hline
+{\em prot} & protocol the instance is related to\\
+\hline
+\end{DoxyParams}
+Recover a pointer to the allocated per-\/vhost storage for the protocol created by \hyperlink{group__Protocols-and-Plugins_gaf8bb5f2a2ac92f42e807d7335f9552c2}{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc()} earlier \mbox{\Hypertarget{group__Protocols-and-Plugins_gaf8bb5f2a2ac92f42e807d7335f9552c2}\label{group__Protocols-and-Plugins_gaf8bb5f2a2ac92f42e807d7335f9552c2}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc@{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc}}
+\index{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc@{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc()}{lws\_protocol\_vh\_priv\_zalloc()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void $\ast$ lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc (\begin{DoxyParamCaption}\item[{struct lws\+\_\+vhost $\ast$}]{vhost,  }\item[{const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$}]{prot,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_gaf8bb5f2a2ac92f42e807d7335f9552c2}{lws\+\_\+protocol\+\_\+vh\+\_\+priv\+\_\+zalloc()} -\/ Allocate and zero down a protocol\textquotesingle{}s per-\/vhost storage 
+\begin{DoxyParams}{Parameters}
+{\em vhost} & vhost the instance is related to \\
+\hline
+{\em prot} & protocol the instance is related to \\
+\hline
+{\em size} & bytes to allocate\\
+\hline
+\end{DoxyParams}
+Protocols often find it useful to allocate a per-\/vhost struct, this is a helper to be called in the per-\/vhost init L\+W\+S\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+\_\+\+P\+R\+O\+T\+O\+C\+O\+L\+\_\+\+I\+N\+IT \mbox{\Hypertarget{group__Protocols-and-Plugins_ga2a4e5ce5e4492f77e892935397de5303}\label{group__Protocols-and-Plugins_ga2a4e5ce5e4492f77e892935397de5303}} 
+\index{Protocols and Plugins@{Protocols and Plugins}!lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol@{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol}}
+\index{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol@{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol}!Protocols and Plugins@{Protocols and Plugins}}
+\subsubsection{\texorpdfstring{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol()}{lws\_vhost\_name\_to\_protocol()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const struct \hyperlink{structlws__protocols}{lws\+\_\+protocols} $\ast$ lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol (\begin{DoxyParamCaption}\item[{struct lws\+\_\+vhost $\ast$}]{vh,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\hyperlink{group__Protocols-and-Plugins_ga2a4e5ce5e4492f77e892935397de5303}{lws\+\_\+vhost\+\_\+name\+\_\+to\+\_\+protocol()} -\/ get vhost\textquotesingle{}s protocol object from its name
+
+
+\begin{DoxyParams}{Parameters}
+{\em vh} & vhost to search \\
+\hline
+{\em name} & protocol name\\
+\hline
+\end{DoxyParams}
+Returns N\+U\+LL or a pointer to the vhost\textquotesingle{}s protocol of the requested name 

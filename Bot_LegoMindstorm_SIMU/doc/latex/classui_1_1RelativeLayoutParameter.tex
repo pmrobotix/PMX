@@ -1,0 +1,508 @@
+\hypertarget{classui_1_1RelativeLayoutParameter}{}\section{ui\+:\+:Relative\+Layout\+Parameter Class Reference}
+\label{classui_1_1RelativeLayoutParameter}\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+
+
+Relative layout parameter. It is mainly used by {\ttfamily \hyperlink{classui_1_1RelativeLayoutManager}{Relative\+Layout\+Manager}}.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Layout\+Parameter.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Relative\+Layout\+Parameter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classui_1_1RelativeLayoutParameter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Relative\+Layout\+Parameter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classui_1_1RelativeLayoutParameter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+I\+N\+\_\+\+P\+A\+R\+E\+NT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries N\+O\+NE}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+I\+N\+\_\+\+P\+A\+R\+E\+NT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}
+ \}
+\item 
+enum \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+I\+N\+\_\+\+P\+A\+R\+E\+NT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries N\+O\+NE}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+L\+E\+FT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries C\+E\+N\+T\+E\+R\+\_\+\+I\+N\+\_\+\+P\+A\+R\+E\+NT}, 
+\newline
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+V\+E\+R\+T\+I\+C\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+B\+O\+T\+T\+O\+M\+\_\+\+C\+E\+N\+T\+E\+R\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL}, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+B\+O\+T\+T\+OM}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+A\+B\+O\+V\+E\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+T\+O\+P\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+O\+F\+\_\+\+B\+O\+T\+T\+O\+M\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+L\+E\+F\+T\+A\+L\+I\+GN}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries L\+O\+C\+A\+T\+I\+O\+N\+\_\+\+B\+E\+L\+O\+W\+\_\+\+R\+I\+G\+H\+T\+A\+L\+I\+GN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}{Relative\+Layout\+Parameter} ()
+\item 
+virtual \hyperlink{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}{$\sim$\+Relative\+Layout\+Parameter} ()
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}{set\+Align} (\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} align)
+\item 
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} \hyperlink{classui_1_1RelativeLayoutParameter_ad4cdf1f742c39831440047ae90ad9160}{get\+Align} () const
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}{set\+Relative\+To\+Widget\+Name} (const std\+::string \&name)
+\item 
+const std\+::string \& \hyperlink{classui_1_1RelativeLayoutParameter_aca4e12f2edd43375f8af9c528270f8e3}{get\+Relative\+To\+Widget\+Name} () const
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}{set\+Relative\+Name} (const std\+::string \&name)
+\item 
+const std\+::string \& \hyperlink{classui_1_1RelativeLayoutParameter_a9b0f38b4f867f2acd88b85b37b76a0d4}{get\+Relative\+Name} () const
+\item 
+virtual \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$ \hyperlink{classui_1_1RelativeLayoutParameter_ac9b09ffad77d413122c56c06c230c4c7}{create\+Clone\+Instance} () override
+\item 
+virtual void \hyperlink{classui_1_1RelativeLayoutParameter_a901aed8a9c121ff7c62a488facc7edfd}{copy\+Properties} (\hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$model) override
+\item 
+\hyperlink{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}{Relative\+Layout\+Parameter} ()
+\item 
+virtual \hyperlink{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}{$\sim$\+Relative\+Layout\+Parameter} ()
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}{set\+Align} (\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} align)
+\item 
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} \hyperlink{classui_1_1RelativeLayoutParameter_a1b2a2308ca06248641853062be1cb55b}{get\+Align} () const
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}{set\+Relative\+To\+Widget\+Name} (const std\+::string \&name)
+\item 
+const std\+::string \& \hyperlink{classui_1_1RelativeLayoutParameter_a5519af0b68eb3cf47febaa910c7aa57e}{get\+Relative\+To\+Widget\+Name} () const
+\item 
+void \hyperlink{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}{set\+Relative\+Name} (const std\+::string \&name)
+\item 
+const std\+::string \& \hyperlink{classui_1_1RelativeLayoutParameter_a4e83789fab96a1c78211e15887e41a6e}{get\+Relative\+Name} () const
+\item 
+virtual \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$ \hyperlink{classui_1_1RelativeLayoutParameter_ad3da385d6428bced2722a6308ce685f4}{create\+Clone\+Instance} () override
+\item 
+virtual void \hyperlink{classui_1_1RelativeLayoutParameter_a370cb1f399839e47fcc471d8dfc7fffc}{copy\+Properties} (\hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$model) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter} $\ast$ \hyperlink{classui_1_1RelativeLayoutParameter_a6202a08e1d8315adba9ea01c5dd22de0}{create} ()
+\item 
+static \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter} $\ast$ \hyperlink{classui_1_1RelativeLayoutParameter_ae9b1b854947632ce43085f68451c793a}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a1f4fe4e76cf32da54f80f9c5728df1cf}\label{classui_1_1RelativeLayoutParameter_a1f4fe4e76cf32da54f80f9c5728df1cf}} 
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} {\bfseries \+\_\+relative\+Align}
+\item 
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a37855e6a00f32fd4582d666f9fda8018}\label{classui_1_1RelativeLayoutParameter_a37855e6a00f32fd4582d666f9fda8018}} 
+std\+::string {\bfseries \+\_\+relative\+Widget\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a9c354b8663d206bf7d5e5577238e73e8}\label{classui_1_1RelativeLayoutParameter_a9c354b8663d206bf7d5e5577238e73e8}} 
+std\+::string {\bfseries \+\_\+relative\+Layout\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a0a1812e6368761d3f55e2c199aee01a4}\label{classui_1_1RelativeLayoutParameter_a0a1812e6368761d3f55e2c199aee01a4}} 
+bool {\bfseries \+\_\+put}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a61ad8b39480850e839047b37cfd83e0c}\label{classui_1_1RelativeLayoutParameter_a61ad8b39480850e839047b37cfd83e0c}} 
+class {\bfseries Relative\+Layout\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Relative layout parameter. It is mainly used by {\ttfamily \hyperlink{classui_1_1RelativeLayoutManager}{Relative\+Layout\+Manager}}. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}\label{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!Relative\+Align@{Relative\+Align}}
+\index{Relative\+Align@{Relative\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{Relative\+Align}{RelativeAlign}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{ui\+::\+Relative\+Layout\+Parameter\+::\+Relative\+Align}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Relative Alignment type \mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}\label{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!Relative\+Align@{Relative\+Align}}
+\index{Relative\+Align@{Relative\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{Relative\+Align}{RelativeAlign}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{ui\+::\+Relative\+Layout\+Parameter\+::\+Relative\+Align}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Relative Alignment type 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}\label{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!Relative\+Layout\+Parameter@{Relative\+Layout\+Parameter}}
+\index{Relative\+Layout\+Parameter@{Relative\+Layout\+Parameter}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{Relative\+Layout\+Parameter()}{RelativeLayoutParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Relative\+Layout\+Parameter\+::\+Relative\+Layout\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor
+
+new \mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}\label{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!````~Relative\+Layout\+Parameter@{$\sim$\+Relative\+Layout\+Parameter}}
+\index{````~Relative\+Layout\+Parameter@{$\sim$\+Relative\+Layout\+Parameter}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{$\sim$\+Relative\+Layout\+Parameter()}{~RelativeLayoutParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+Relative\+Layout\+Parameter\+::$\sim$\+Relative\+Layout\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Default destructor
+
+NA \mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}\label{classui_1_1RelativeLayoutParameter_a135c976765d002c634124d3049d27595}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!Relative\+Layout\+Parameter@{Relative\+Layout\+Parameter}}
+\index{Relative\+Layout\+Parameter@{Relative\+Layout\+Parameter}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{Relative\+Layout\+Parameter()}{RelativeLayoutParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+Relative\+Layout\+Parameter\+::\+Relative\+Layout\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor
+
+new \mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}\label{classui_1_1RelativeLayoutParameter_a27550ff5e299abc21ca72a8cc4bea3df}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!````~Relative\+Layout\+Parameter@{$\sim$\+Relative\+Layout\+Parameter}}
+\index{````~Relative\+Layout\+Parameter@{$\sim$\+Relative\+Layout\+Parameter}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{$\sim$\+Relative\+Layout\+Parameter()}{~RelativeLayoutParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+Relative\+Layout\+Parameter\+::$\sim$\+Relative\+Layout\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Default destructor
+
+NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a901aed8a9c121ff7c62a488facc7edfd}\label{classui_1_1RelativeLayoutParameter_a901aed8a9c121ff7c62a488facc7edfd}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!copy\+Properties@{copy\+Properties}}
+\index{copy\+Properties@{copy\+Properties}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{copy\+Properties()}{copyProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::copy\+Properties (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Copy all the member field from argument \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} to self. 
+\begin{DoxyParams}{Parameters}
+{\em model} & A \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} instance. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1LayoutParameter_af4c1b163c31ac6244902610334ead73f}{ui\+::\+Layout\+Parameter}.
+
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a370cb1f399839e47fcc471d8dfc7fffc}\label{classui_1_1RelativeLayoutParameter_a370cb1f399839e47fcc471d8dfc7fffc}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!copy\+Properties@{copy\+Properties}}
+\index{copy\+Properties@{copy\+Properties}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{copy\+Properties()}{copyProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Relative\+Layout\+Parameter\+::copy\+Properties (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Copy all the member field from argument \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} to self. 
+\begin{DoxyParams}{Parameters}
+{\em model} & A \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} instance. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1LayoutParameter_af4c1b163c31ac6244902610334ead73f}{ui\+::\+Layout\+Parameter}.
+
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a6202a08e1d8315adba9ea01c5dd22de0}\label{classui_1_1RelativeLayoutParameter_a6202a08e1d8315adba9ea01c5dd22de0}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!create@{create}}
+\index{create@{create}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter} $\ast$ ui\+::\+Relative\+Layout\+Parameter\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter} instance. \begin{DoxyReturn}{Returns}
+A initialized \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_ae9b1b854947632ce43085f68451c793a}\label{classui_1_1RelativeLayoutParameter_ae9b1b854947632ce43085f68451c793a}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!create@{create}}
+\index{create@{create}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter}$\ast$ ui\+::\+Relative\+Layout\+Parameter\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a \hyperlink{classui_1_1RelativeLayoutParameter}{Relative\+Layout\+Parameter} instance. \begin{DoxyReturn}{Returns}
+A initialized \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_ac9b09ffad77d413122c56c06c230c4c7}\label{classui_1_1RelativeLayoutParameter_ac9b09ffad77d413122c56c06c230c4c7}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!create\+Clone\+Instance@{create\+Clone\+Instance}}
+\index{create\+Clone\+Instance@{create\+Clone\+Instance}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{create\+Clone\+Instance()}{createCloneInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} $\ast$ ui\+::\+Relative\+Layout\+Parameter\+::create\+Clone\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Create a cloned instance of \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} pointer. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1LayoutParameter_a6ca908e0dd4f85238894b28d5d816974}{ui\+::\+Layout\+Parameter}.
+
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_ad3da385d6428bced2722a6308ce685f4}\label{classui_1_1RelativeLayoutParameter_ad3da385d6428bced2722a6308ce685f4}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!create\+Clone\+Instance@{create\+Clone\+Instance}}
+\index{create\+Clone\+Instance@{create\+Clone\+Instance}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{create\+Clone\+Instance()}{createCloneInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}$\ast$ ui\+::\+Relative\+Layout\+Parameter\+::create\+Clone\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Create a cloned instance of \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} pointer. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1LayoutParameter_a6ca908e0dd4f85238894b28d5d816974}{ui\+::\+Layout\+Parameter}.
+
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_ad4cdf1f742c39831440047ae90ad9160}\label{classui_1_1RelativeLayoutParameter_ad4cdf1f742c39831440047ae90ad9160}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Align@{get\+Align}}
+\index{get\+Align@{get\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Align()}{getAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Layout\+Parameter\+::\+Relative\+Align} ui\+::\+Relative\+Layout\+Parameter\+::get\+Align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get Relative\+Align parameter for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+A Relative\+Align variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a1b2a2308ca06248641853062be1cb55b}\label{classui_1_1RelativeLayoutParameter_a1b2a2308ca06248641853062be1cb55b}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Align@{get\+Align}}
+\index{get\+Align@{get\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Align()}{getAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} ui\+::\+Relative\+Layout\+Parameter\+::get\+Align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get Relative\+Align parameter for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+A Relative\+Align variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a9b0f38b4f867f2acd88b85b37b76a0d4}\label{classui_1_1RelativeLayoutParameter_a9b0f38b4f867f2acd88b85b37b76a0d4}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Relative\+Name@{get\+Relative\+Name}}
+\index{get\+Relative\+Name@{get\+Relative\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Relative\+Name()}{getRelativeName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& ui\+::\+Relative\+Layout\+Parameter\+::get\+Relative\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a name of \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} in Relative \hyperlink{classui_1_1Layout}{Layout}.
+
+\begin{DoxyReturn}{Returns}
+name Relative name in string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a4e83789fab96a1c78211e15887e41a6e}\label{classui_1_1RelativeLayoutParameter_a4e83789fab96a1c78211e15887e41a6e}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Relative\+Name@{get\+Relative\+Name}}
+\index{get\+Relative\+Name@{get\+Relative\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Relative\+Name()}{getRelativeName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& ui\+::\+Relative\+Layout\+Parameter\+::get\+Relative\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a name of \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} in Relative \hyperlink{classui_1_1Layout}{Layout}.
+
+\begin{DoxyReturn}{Returns}
+name Relative name in string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_aca4e12f2edd43375f8af9c528270f8e3}\label{classui_1_1RelativeLayoutParameter_aca4e12f2edd43375f8af9c528270f8e3}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Relative\+To\+Widget\+Name@{get\+Relative\+To\+Widget\+Name}}
+\index{get\+Relative\+To\+Widget\+Name@{get\+Relative\+To\+Widget\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Relative\+To\+Widget\+Name()}{getRelativeToWidgetName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& ui\+::\+Relative\+Layout\+Parameter\+::get\+Relative\+To\+Widget\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the relative widget name. \begin{DoxyReturn}{Returns}
+name A relative widget name in string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a5519af0b68eb3cf47febaa910c7aa57e}\label{classui_1_1RelativeLayoutParameter_a5519af0b68eb3cf47febaa910c7aa57e}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!get\+Relative\+To\+Widget\+Name@{get\+Relative\+To\+Widget\+Name}}
+\index{get\+Relative\+To\+Widget\+Name@{get\+Relative\+To\+Widget\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{get\+Relative\+To\+Widget\+Name()}{getRelativeToWidgetName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& ui\+::\+Relative\+Layout\+Parameter\+::get\+Relative\+To\+Widget\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the relative widget name. \begin{DoxyReturn}{Returns}
+name A relative widget name in string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}\label{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Align@{set\+Align}}
+\index{set\+Align@{set\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Align()}{setAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Align (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align}}]{align }\end{DoxyParamCaption})}
+
+Sets Relative\+Align parameter for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em align} & Relative align in {\ttfamily Relative\+Align}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}\label{classui_1_1RelativeLayoutParameter_a5eadca3a1cac5c1b87d493945281696a}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Align@{set\+Align}}
+\index{set\+Align@{set\+Align}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Align()}{setAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Align (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align}}]{align }\end{DoxyParamCaption})}
+
+Sets Relative\+Align parameter for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1RelativeLayoutParameter_a40283d09524c58e61741de3288e6769d}{Relative\+Align} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em align} & Relative align in {\ttfamily Relative\+Align}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}\label{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Relative\+Name@{set\+Relative\+Name}}
+\index{set\+Relative\+Name@{set\+Relative\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Relative\+Name()}{setRelativeName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Relative\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Set a name for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} in Relative \hyperlink{classui_1_1Layout}{Layout}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A string name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}\label{classui_1_1RelativeLayoutParameter_a08d5be0738e5aa06c95d4ecf20b87b5f}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Relative\+Name@{set\+Relative\+Name}}
+\index{set\+Relative\+Name@{set\+Relative\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Relative\+Name()}{setRelativeName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Relative\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Set a name for \hyperlink{classui_1_1LayoutParameter}{Layout\+Parameter} in Relative \hyperlink{classui_1_1Layout}{Layout}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A string name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}\label{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Relative\+To\+Widget\+Name@{set\+Relative\+To\+Widget\+Name}}
+\index{set\+Relative\+To\+Widget\+Name@{set\+Relative\+To\+Widget\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Relative\+To\+Widget\+Name()}{setRelativeToWidgetName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Relative\+To\+Widget\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Set widget name your widget want to relative to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Relative widget name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}\label{classui_1_1RelativeLayoutParameter_aa1ba720efd1054c7dfedca47dfb26975}} 
+\index{ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}!set\+Relative\+To\+Widget\+Name@{set\+Relative\+To\+Widget\+Name}}
+\index{set\+Relative\+To\+Widget\+Name@{set\+Relative\+To\+Widget\+Name}!ui\+::\+Relative\+Layout\+Parameter@{ui\+::\+Relative\+Layout\+Parameter}}
+\subsubsection{\texorpdfstring{set\+Relative\+To\+Widget\+Name()}{setRelativeToWidgetName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Relative\+Layout\+Parameter\+::set\+Relative\+To\+Widget\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Set widget name your widget want to relative to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Relative widget name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Layout\+Parameter.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Layout\+Parameter.\+cpp\end{DoxyCompactItemize}

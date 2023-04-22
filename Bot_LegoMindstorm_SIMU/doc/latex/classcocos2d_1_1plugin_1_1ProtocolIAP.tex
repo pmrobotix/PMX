@@ -1,0 +1,136 @@
+\hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP}{}\section{cocos2d\+:\+:plugin\+:\+:Protocol\+I\+AP Class Reference}
+\label{classcocos2d_1_1plugin_1_1ProtocolIAP}\index{cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}}
+
+
+Inheritance diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+I\+AP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classcocos2d_1_1plugin_1_1ProtocolIAP__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocos2d\+:\+:plugin\+:\+:Protocol\+I\+AP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcocos2d_1_1plugin_1_1ProtocolIAP__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a0e860275e47aed6225b04899efd8ee9b}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a0e860275e47aed6225b04899efd8ee9b}} 
+typedef std\+::function$<$ void(int, std\+::string \&)$>$ {\bfseries Protocol\+I\+A\+P\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_a0432aee3e56133c07dc99c33d9ae362b}{config\+Developer\+Info} (T\+I\+A\+P\+Developer\+Info dev\+Info)
+\begin{DoxyCompactList}\small\item\em config the developer info \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_aee946689b5ec6c570366e29c2c52939f}{pay\+For\+Product} (T\+Product\+Info info)
+\begin{DoxyCompactList}\small\item\em pay for product \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a24fe572ceabf2f60917a39e5afd404d5}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a24fe572ceabf2f60917a39e5afd404d5}} 
+void {\bfseries pay\+For\+Product} (T\+Product\+Info info, Protocol\+I\+A\+P\+Callback cb)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_a1007416d75f6215930e54626be8a64ea}{set\+Result\+Listener} (\hyperlink{classcocos2d_1_1plugin_1_1PayResultListener}{Pay\+Result\+Listener} $\ast$p\+Listener)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocos2d_1_1plugin_1_1PayResultListener}{Pay\+Result\+Listener} $\ast$ \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_ab6984d5cfdbe3b7f5c1a0797ee8e086b}{get\+Result\+Listener} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a373c4e2b3c7890e444ed812e02f7141e}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a373c4e2b3c7890e444ed812e02f7141e}} 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_a373c4e2b3c7890e444ed812e02f7141e}{on\+Pay\+Result} (Pay\+Result\+Code ret, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em pay result callback \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a312f740988cf288081b4c9c934fb5fc3}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a312f740988cf288081b4c9c934fb5fc3}} 
+void \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_a312f740988cf288081b4c9c934fb5fc3}{set\+Callback} (Protocol\+I\+A\+P\+Callback \&cb)
+\begin{DoxyCompactList}\small\item\em set callback function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a368b0b817bca36ddfbceaab4f5af149e}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a368b0b817bca36ddfbceaab4f5af149e}} 
+Protocol\+I\+A\+P\+Callback \hyperlink{classcocos2d_1_1plugin_1_1ProtocolIAP_a368b0b817bca36ddfbceaab4f5af149e}{get\+Callback} ()
+\begin{DoxyCompactList}\small\item\em get callback function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a171ea817eba6eca8fb06c40b97e06f04}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a171ea817eba6eca8fb06c40b97e06f04}} 
+T\+Product\+Info {\bfseries \+\_\+cur\+Info}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a233eff9a8ee38016363a727a13e16558}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a233eff9a8ee38016363a727a13e16558}} 
+\hyperlink{classcocos2d_1_1plugin_1_1PayResultListener}{Pay\+Result\+Listener} $\ast$ {\bfseries \+\_\+listener}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a0eef13b41a8764d3a585ba23fd4ad662}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a0eef13b41a8764d3a585ba23fd4ad662}} 
+Protocol\+I\+A\+P\+Callback {\bfseries \+\_\+callback}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a3cab9dcc8de69e97b2eb0ed60f180aac}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a3cab9dcc8de69e97b2eb0ed60f180aac}} 
+static bool {\bfseries \+\_\+paying} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a0432aee3e56133c07dc99c33d9ae362b}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a0432aee3e56133c07dc99c33d9ae362b}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}!config\+Developer\+Info@{config\+Developer\+Info}}
+\index{config\+Developer\+Info@{config\+Developer\+Info}!cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}}
+\subsubsection{\texorpdfstring{config\+Developer\+Info()}{configDeveloperInfo()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+I\+A\+P\+::config\+Developer\+Info (\begin{DoxyParamCaption}\item[{T\+I\+A\+P\+Developer\+Info}]{dev\+Info }\end{DoxyParamCaption})}
+
+
+
+config the developer info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Info} & This parameter is the info of developer, different plugin have different format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Must invoke this interface before other interfaces. And invoked only once. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_ab6984d5cfdbe3b7f5c1a0797ee8e086b}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_ab6984d5cfdbe3b7f5c1a0797ee8e086b}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}!get\+Result\+Listener@{get\+Result\+Listener}}
+\index{get\+Result\+Listener@{get\+Result\+Listener}!cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}}
+\subsubsection{\texorpdfstring{get\+Result\+Listener()}{getResultListener()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classcocos2d_1_1plugin_1_1PayResultListener}{Pay\+Result\+Listener}$\ast$ cocos2d\+::plugin\+::\+Protocol\+I\+A\+P\+::get\+Result\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000233}{Deprecated}]get the result listener \end{DoxyRefDesc}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_aee946689b5ec6c570366e29c2c52939f}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_aee946689b5ec6c570366e29c2c52939f}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}!pay\+For\+Product@{pay\+For\+Product}}
+\index{pay\+For\+Product@{pay\+For\+Product}!cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}}
+\subsubsection{\texorpdfstring{pay\+For\+Product()}{payForProduct()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+I\+A\+P\+::pay\+For\+Product (\begin{DoxyParamCaption}\item[{T\+Product\+Info}]{info }\end{DoxyParamCaption})}
+
+
+
+pay for product 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The info of product, must contains key\+: product\+Name The name of product product\+Price The price of product(must can be parse to float) product\+Desc The description of product \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+For different plugin, the parameter should have other keys to pay. Look at the manual of plugins. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classcocos2d_1_1plugin_1_1ProtocolIAP_a1007416d75f6215930e54626be8a64ea}\label{classcocos2d_1_1plugin_1_1ProtocolIAP_a1007416d75f6215930e54626be8a64ea}} 
+\index{cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}!set\+Result\+Listener@{set\+Result\+Listener}}
+\index{set\+Result\+Listener@{set\+Result\+Listener}!cocos2d\+::plugin\+::\+Protocol\+I\+AP@{cocos2d\+::plugin\+::\+Protocol\+I\+AP}}
+\subsubsection{\texorpdfstring{set\+Result\+Listener()}{setResultListener()}}
+{\footnotesize\ttfamily void cocos2d\+::plugin\+::\+Protocol\+I\+A\+P\+::set\+Result\+Listener (\begin{DoxyParamCaption}\item[{\hyperlink{classcocos2d_1_1plugin_1_1PayResultListener}{Pay\+Result\+Listener} $\ast$}]{p\+Listener }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000232}{Deprecated}]set the result listener \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Listener} & The callback object for pay result  Must invoke this interface before pay\+For\+Product. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/include/Protocol\+I\+A\+P.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/android/Protocol\+I\+A\+P.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/protocols/platform/ios/Protocol\+I\+A\+P.\+mm\end{DoxyCompactItemize}

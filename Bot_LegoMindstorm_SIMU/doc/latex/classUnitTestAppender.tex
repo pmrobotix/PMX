@@ -1,0 +1,109 @@
+\hypertarget{classUnitTestAppender}{}\section{Unit\+Test\+Appender Class Reference}
+\label{classUnitTestAppender}\index{Unit\+Test\+Appender@{Unit\+Test\+Appender}}
+
+
+Implémente un appender spécifique à l\textquotesingle{}execution et au suivi des tests unitaires.  
+
+
+
+
+{\ttfamily \#include $<$Unit\+Test\+Appender.\+hpp$>$}
+
+
+
+Inheritance diagram for Unit\+Test\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classUnitTestAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Unit\+Test\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classUnitTestAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnitTestAppender_a1c7d981379814dd2f678d766644fe047}\label{classUnitTestAppender_a1c7d981379814dd2f678d766644fe047}} 
+\hyperlink{classUnitTestAppender_a1c7d981379814dd2f678d766644fe047}{Unit\+Test\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUnitTestAppender_a709f7028bb1c3d32bd4524b3266bfdf3}\label{classUnitTestAppender_a709f7028bb1c3d32bd4524b3266bfdf3}} 
+virtual \hyperlink{classUnitTestAppender_a709f7028bb1c3d32bd4524b3266bfdf3}{$\sim$\+Unit\+Test\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUnitTestAppender_a2b69943419d6fe74a7f8a9c6cdcd0c98}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUnitTestAppender_a8142469443969a4e2c75820ef033c9cc}\label{classUnitTestAppender_a8142469443969a4e2c75820ef033c9cc}} 
+void \hyperlink{classUnitTestAppender_a8142469443969a4e2c75820ef033c9cc}{increase\+Indent} ()
+\begin{DoxyCompactList}\small\item\em Augmente l\textquotesingle{}indentation de la trace. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUnitTestAppender_a64063acb53860350f1efc8fe5e408ae9}\label{classUnitTestAppender_a64063acb53860350f1efc8fe5e408ae9}} 
+void \hyperlink{classUnitTestAppender_a64063acb53860350f1efc8fe5e408ae9}{decrease\+Indent} ()
+\begin{DoxyCompactList}\small\item\em Diminue l\textquotesingle{}indentation de la trace. \end{DoxyCompactList}\item 
+bool \hyperlink{classUnitTestAppender_a673b17f2a021ca7cd78971409180061c}{expected\+Error} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Indique qu\textquotesingle{}un message d\textquotesingle{}erreur doit avoir été enregistré. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUnitTestAppender_a7ae813ab0a74967bd584b69531881825}\label{classUnitTestAppender_a7ae813ab0a74967bd584b69531881825}} 
+void \hyperlink{classUnitTestAppender_a7ae813ab0a74967bd584b69531881825}{clean\+Messages} ()
+\begin{DoxyCompactList}\small\item\em Supprime tous les message enregistrés. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémente un appender spécifique à l\textquotesingle{}execution et au suivi des tests unitaires. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUnitTestAppender_a673b17f2a021ca7cd78971409180061c}\label{classUnitTestAppender_a673b17f2a021ca7cd78971409180061c}} 
+\index{Unit\+Test\+Appender@{Unit\+Test\+Appender}!expected\+Error@{expected\+Error}}
+\index{expected\+Error@{expected\+Error}!Unit\+Test\+Appender@{Unit\+Test\+Appender}}
+\subsubsection{\texorpdfstring{expected\+Error()}{expectedError()}}
+{\footnotesize\ttfamily bool Unit\+Test\+Appender\+::expected\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Indique qu\textquotesingle{}un message d\textquotesingle{}erreur doit avoir été enregistré. 
+
+Si le message d\textquotesingle{}erreur est trouvé, celui-\/ci est supprimé des messages enregistré.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Le texte du message enregistré (incluant le logger et le niveau). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} uniquement si le message a été trouvé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUnitTestAppender_a2b69943419d6fe74a7f8a9c6cdcd0c98}\label{classUnitTestAppender_a2b69943419d6fe74a7f8a9c6cdcd0c98}} 
+\index{Unit\+Test\+Appender@{Unit\+Test\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!Unit\+Test\+Appender@{Unit\+Test\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void Unit\+Test\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & Logger de référence du message. \\
+\hline
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message à tracer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/test/\+Suite/\hyperlink{UnitTestAppender_8hpp}{Unit\+Test\+Appender.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/test/\+Suite/\hyperlink{UnitTestAppender_8cpp}{Unit\+Test\+Appender.\+cpp}\end{DoxyCompactItemize}

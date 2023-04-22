@@ -1,0 +1,1743 @@
+\hypertarget{classTexture2D}{}\section{Texture2D Class Reference}
+\label{classTexture2D}\index{Texture2D@{Texture2D}}
+
+
+\hyperlink{classTexture2D}{Texture2D} class. This class allows to easily create Open\+GL 2D textures from images, text or raw data. The created \hyperlink{classTexture2D}{Texture2D} object will always have power-\/of-\/two dimensions. Depending on how you create the \hyperlink{classTexture2D}{Texture2D} object, the actual image area of the texture might be smaller than the texture dimensions i.\+e. \char`\"{}content\+Size\char`\"{} != (pixels\+Wide, pixels\+High) and (maxS, maxT) != (1.\+0, 1.\+0). Be aware that the content of the generated textures will be upside-\/down!  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Texture2\+D.\+h$>$}
+
+
+
+Inheritance diagram for Texture2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classTexture2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Texture2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTexture2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structTexture2D_1_1__TexParams}{\+\_\+\+Tex\+Params}
+\item 
+struct \hyperlink{structTexture2D_1_1PixelFormatInfo}{Pixel\+Format\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format} \{ \newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}{Pixel\+Format\+::\+A\+U\+TO}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}{Pixel\+Format\+::\+B\+G\+R\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Pixel\+Format\+::\+R\+G\+B\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Pixel\+Format\+::\+R\+G\+B888}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Pixel\+Format\+::\+R\+G\+B565}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Pixel\+Format\+::\+A8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}{Pixel\+Format\+::\+I8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}{Pixel\+Format\+::\+A\+I88}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Pixel\+Format\+::\+R\+G\+B\+A4444}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Pixel\+Format\+::\+R\+G\+B5\+A1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}{Pixel\+Format\+::\+P\+V\+R\+T\+C4}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}{Pixel\+Format\+::\+P\+V\+R\+T\+C4A}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}{Pixel\+Format\+::\+P\+V\+R\+T\+C2}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}{Pixel\+Format\+::\+P\+V\+R\+T\+C2A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}{Pixel\+Format\+::\+E\+TC}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T1}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T3}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T5}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+R\+GB}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}{Pixel\+Format\+::\+D\+E\+F\+A\+U\+LT} = A\+U\+TO, 
+{\bfseries N\+O\+NE} = -\/1, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}{Pixel\+Format\+::\+A\+U\+TO}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}{Pixel\+Format\+::\+B\+G\+R\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Pixel\+Format\+::\+R\+G\+B\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Pixel\+Format\+::\+R\+G\+B888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Pixel\+Format\+::\+R\+G\+B565}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Pixel\+Format\+::\+A8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}{Pixel\+Format\+::\+I8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}{Pixel\+Format\+::\+A\+I88}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Pixel\+Format\+::\+R\+G\+B\+A4444}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Pixel\+Format\+::\+R\+G\+B5\+A1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}{Pixel\+Format\+::\+P\+V\+R\+T\+C4}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}{Pixel\+Format\+::\+P\+V\+R\+T\+C4A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}{Pixel\+Format\+::\+P\+V\+R\+T\+C2}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}{Pixel\+Format\+::\+P\+V\+R\+T\+C2A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}{Pixel\+Format\+::\+E\+TC}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T3}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T5}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+R\+GB}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}{Pixel\+Format\+::\+D\+E\+F\+A\+U\+LT} = A\+U\+TO, 
+{\bfseries N\+O\+NE} = -\/1
+ \}
+\item 
+enum \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format} \{ \newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}{Pixel\+Format\+::\+A\+U\+TO}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}{Pixel\+Format\+::\+B\+G\+R\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Pixel\+Format\+::\+R\+G\+B\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Pixel\+Format\+::\+R\+G\+B888}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Pixel\+Format\+::\+R\+G\+B565}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Pixel\+Format\+::\+A8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}{Pixel\+Format\+::\+I8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}{Pixel\+Format\+::\+A\+I88}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Pixel\+Format\+::\+R\+G\+B\+A4444}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Pixel\+Format\+::\+R\+G\+B5\+A1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}{Pixel\+Format\+::\+P\+V\+R\+T\+C4}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}{Pixel\+Format\+::\+P\+V\+R\+T\+C4A}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}{Pixel\+Format\+::\+P\+V\+R\+T\+C2}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}{Pixel\+Format\+::\+P\+V\+R\+T\+C2A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}{Pixel\+Format\+::\+E\+TC}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T1}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T3}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T5}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+R\+GB}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}{Pixel\+Format\+::\+D\+E\+F\+A\+U\+LT} = A\+U\+TO, 
+{\bfseries N\+O\+NE} = -\/1, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}{Pixel\+Format\+::\+A\+U\+TO}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}{Pixel\+Format\+::\+B\+G\+R\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Pixel\+Format\+::\+R\+G\+B\+A8888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Pixel\+Format\+::\+R\+G\+B888}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Pixel\+Format\+::\+R\+G\+B565}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Pixel\+Format\+::\+A8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}{Pixel\+Format\+::\+I8}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}{Pixel\+Format\+::\+A\+I88}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Pixel\+Format\+::\+R\+G\+B\+A4444}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Pixel\+Format\+::\+R\+G\+B5\+A1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}{Pixel\+Format\+::\+P\+V\+R\+T\+C4}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}{Pixel\+Format\+::\+P\+V\+R\+T\+C4A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}{Pixel\+Format\+::\+P\+V\+R\+T\+C2}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}{Pixel\+Format\+::\+P\+V\+R\+T\+C2A}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}{Pixel\+Format\+::\+E\+TC}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T1}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T3}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}{Pixel\+Format\+::\+S3\+T\+C\+\_\+\+D\+X\+T5}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+R\+GB}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}, 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}{Pixel\+Format\+::\+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}, 
+\newline
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}{Pixel\+Format\+::\+D\+E\+F\+A\+U\+LT} = A\+U\+TO, 
+{\bfseries N\+O\+NE} = -\/1
+ \}
+\item 
+\mbox{\Hypertarget{classTexture2D_a4758bb235aa81bcb47bca36baf42be14}\label{classTexture2D_a4758bb235aa81bcb47bca36baf42be14}} 
+typedef std\+::map$<$ \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}, const \hyperlink{structTexture2D_1_1PixelFormatInfo}{Pixel\+Format\+Info} $>$ {\bfseries Pixel\+Format\+Info\+Map}
+\item 
+typedef struct \hyperlink{structTexture2D_1_1__TexParams}{Texture2\+D\+::\+\_\+\+Tex\+Params} \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params}
+\item 
+\mbox{\Hypertarget{classTexture2D_a4758bb235aa81bcb47bca36baf42be14}\label{classTexture2D_a4758bb235aa81bcb47bca36baf42be14}} 
+typedef std\+::map$<$ \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}, const \hyperlink{structTexture2D_1_1PixelFormatInfo}{Pixel\+Format\+Info} $>$ {\bfseries Pixel\+Format\+Info\+Map}
+\item 
+typedef struct \hyperlink{structTexture2D_1_1__TexParams}{Texture2\+D\+::\+\_\+\+Tex\+Params} \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{Texture2D} ()
+\item 
+virtual \hyperlink{classTexture2D_a84210f27b55799a096b8abc36380a077}{$\sim$\+Texture2D} ()
+\item 
+virtual std\+::string \hyperlink{classTexture2D_a3fd096dcfb192b188323c542edee64b5}{get\+Description} () const
+\item 
+void \hyperlink{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}{release\+G\+L\+Texture} ()
+\item 
+bool \hyperlink{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}{init\+With\+Data} (const void $\ast$data, ssize\+\_\+t data\+Len, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} pixel\+Format, int pixels\+Wide, int pixels\+High, const \hyperlink{classSize}{Size} \&content\+Size)
+\item 
+bool \hyperlink{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}{init\+With\+Mipmaps} (Mipmap\+Info $\ast$mipmaps, int mipmaps\+Num, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} pixel\+Format, int pixels\+Wide, int pixels\+High)
+\item 
+bool \hyperlink{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}{update\+With\+Data} (const void $\ast$data, int offsetX, int offsetY, int width, int height)
+\item 
+void \hyperlink{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}{draw\+At\+Point} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+void \hyperlink{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}{draw\+In\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+bool \hyperlink{classTexture2D_a1ae4992389059e5f78785e28d28d53be}{init\+With\+Image} (Image $\ast$image)
+\item 
+bool \hyperlink{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}{init\+With\+Image} (Image $\ast$image, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format} format)
+\item 
+bool \hyperlink{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}{init\+With\+String} (const char $\ast$text, const std\+::string \&font\+Name, float font\+Size, const \hyperlink{classSize}{Size} \&dimensions=\hyperlink{classSize}{Size}(0, 0), Text\+H\+Alignment h\+Alignment=Text\+H\+Alignment\+::\+C\+E\+N\+T\+ER, Text\+V\+Alignment v\+Alignment=Text\+V\+Alignment\+::\+T\+OP, bool enable\+Wrap=true, int overflow=0)
+\item 
+bool \hyperlink{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}{init\+With\+String} (const char $\ast$text, const \hyperlink{structFontDefinition}{Font\+Definition} \&text\+Definition)
+\item 
+void \hyperlink{classTexture2D_acdea523f6f6306462129e45b185205e4}{set\+Tex\+Parameters} (const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} \&tex\+Params)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classTexture2D_a002022936392284060c890589b3a4bca}{set\+Tex\+Parameters} (const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} $\ast$tex\+Params)
+\item 
+void \hyperlink{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}{set\+Anti\+Alias\+Tex\+Parameters} ()
+\item 
+void \hyperlink{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}{set\+Alias\+Tex\+Parameters} ()
+\item 
+void \hyperlink{classTexture2D_a91bccde122da02002c5518480474c177}{generate\+Mipmap} ()
+\item 
+const char $\ast$ \hyperlink{classTexture2D_ac3c139b0e9dd7a2e02b8b8e8d413620b}{get\+String\+For\+Format} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a4f33e9b9373d54060bf5edffd0dd8479}\label{classTexture2D_a4f33e9b9373d54060bf5edffd0dd8479}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE const char $\ast$ {\bfseries string\+For\+Format} () const
+\item 
+unsigned int \hyperlink{classTexture2D_af29476c171cc5167c8392265f80fb9af}{get\+Bits\+Per\+Pixel\+For\+Format} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a931434c465fc156e8c4679829884aec3}\label{classTexture2D_a931434c465fc156e8c4679829884aec3}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned int {\bfseries bits\+Per\+Pixel\+For\+Format} () const
+\item 
+unsigned int \hyperlink{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}{get\+Bits\+Per\+Pixel\+For\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format) const
+\item 
+\mbox{\Hypertarget{classTexture2D_afe02fb3ca232889c58339125bf2e2e8e}\label{classTexture2D_afe02fb3ca232889c58339125bf2e2e8e}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned int {\bfseries bits\+Per\+Pixel\+For\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format) const
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTexture2D_ac158f36e8cd5a584e8a76f67abad563d}{get\+Content\+Size\+In\+Pixels} ()
+\item 
+bool \hyperlink{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}{has\+Premultiplied\+Alpha} () const
+\item 
+bool \hyperlink{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}{has\+Mipmaps} () const
+\item 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} \hyperlink{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}{get\+Pixel\+Format} () const
+\item 
+int \hyperlink{classTexture2D_a87918e080c6edb84236e2438c055307b}{get\+Pixels\+Wide} () const
+\item 
+int \hyperlink{classTexture2D_a380681da07007b979df13ff7855312e5}{get\+Pixels\+High} () const
+\item 
+G\+Luint \hyperlink{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}{get\+Name} () const
+\item 
+G\+Lfloat \hyperlink{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}{get\+MaxS} () const
+\item 
+void \hyperlink{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}{set\+MaxS} (G\+Lfloat maxS)
+\item 
+G\+Lfloat \hyperlink{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}{get\+MaxT} () const
+\item 
+void \hyperlink{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}{set\+MaxT} (G\+Lfloat maxT)
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTexture2D_a3ca89213245342676defce5f4124e36b}{get\+Content\+Size} () const
+\item 
+void \hyperlink{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ \hyperlink{classTexture2D_ae61deb7557336bc34a563d12e7a1c315}{get\+G\+L\+Program} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a0fece49baa70c5257db2e9ddf88b8fcd}\label{classTexture2D_a0fece49baa70c5257db2e9ddf88b8fcd}} 
+std\+::string {\bfseries get\+Path} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a40d47bff7f05c1ef11a7a6a40ad0578c}\label{classTexture2D_a40d47bff7f05c1ef11a7a6a40ad0578c}} 
+void \hyperlink{classTexture2D_a40d47bff7f05c1ef11a7a6a40ad0578c}{set\+Alpha\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$alpha\+Texture)
+\begin{DoxyCompactList}\small\item\em halx99 spec, A\+N\+D\+R\+O\+ID E\+T\+C1 A\+L\+P\+HA supports. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTexture2D_adccfd52496163de8b3e62e7ed041ae60}\label{classTexture2D_adccfd52496163de8b3e62e7ed041ae60}} 
+G\+Luint {\bfseries get\+Alpha\+Texture\+Name} () const
+\item 
+\hyperlink{classTexture2D_ab62c7c5172a4800b4629cd475147819d}{Texture2D} ()
+\item 
+virtual \hyperlink{classTexture2D_a7871eee8e1b6621b4fb15cc767778459}{$\sim$\+Texture2D} ()
+\item 
+virtual std\+::string \hyperlink{classTexture2D_aa2c1fc6c5eb4f22fff53abb9a03b1dea}{get\+Description} () const
+\item 
+void \hyperlink{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}{release\+G\+L\+Texture} ()
+\item 
+bool \hyperlink{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}{init\+With\+Data} (const void $\ast$data, ssize\+\_\+t data\+Len, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} pixel\+Format, int pixels\+Wide, int pixels\+High, const \hyperlink{classSize}{Size} \&content\+Size)
+\item 
+bool \hyperlink{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}{init\+With\+Mipmaps} (Mipmap\+Info $\ast$mipmaps, int mipmaps\+Num, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} pixel\+Format, int pixels\+Wide, int pixels\+High)
+\item 
+bool \hyperlink{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}{update\+With\+Data} (const void $\ast$data, int offsetX, int offsetY, int width, int height)
+\item 
+void \hyperlink{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}{draw\+At\+Point} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+void \hyperlink{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}{draw\+In\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+bool \hyperlink{classTexture2D_a1ae4992389059e5f78785e28d28d53be}{init\+With\+Image} (Image $\ast$image)
+\item 
+bool \hyperlink{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}{init\+With\+Image} (Image $\ast$image, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format} format)
+\item 
+bool \hyperlink{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}{init\+With\+String} (const char $\ast$text, const std\+::string \&font\+Name, float font\+Size, const \hyperlink{classSize}{Size} \&dimensions=\hyperlink{classSize}{Size}(0, 0), Text\+H\+Alignment h\+Alignment=Text\+H\+Alignment\+::\+C\+E\+N\+T\+ER, Text\+V\+Alignment v\+Alignment=Text\+V\+Alignment\+::\+T\+OP, bool enable\+Wrap=true, int overflow=0)
+\item 
+bool \hyperlink{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}{init\+With\+String} (const char $\ast$text, const \hyperlink{structFontDefinition}{Font\+Definition} \&text\+Definition)
+\item 
+void \hyperlink{classTexture2D_acdea523f6f6306462129e45b185205e4}{set\+Tex\+Parameters} (const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} \&tex\+Params)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classTexture2D_a002022936392284060c890589b3a4bca}{set\+Tex\+Parameters} (const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} $\ast$tex\+Params)
+\item 
+void \hyperlink{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}{set\+Anti\+Alias\+Tex\+Parameters} ()
+\item 
+void \hyperlink{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}{set\+Alias\+Tex\+Parameters} ()
+\item 
+void \hyperlink{classTexture2D_a91bccde122da02002c5518480474c177}{generate\+Mipmap} ()
+\item 
+const char $\ast$ \hyperlink{classTexture2D_a8d12a9614b12a67a7956182004e92ca0}{get\+String\+For\+Format} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a4f33e9b9373d54060bf5edffd0dd8479}\label{classTexture2D_a4f33e9b9373d54060bf5edffd0dd8479}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE const char $\ast$ {\bfseries string\+For\+Format} () const
+\item 
+unsigned int \hyperlink{classTexture2D_af29476c171cc5167c8392265f80fb9af}{get\+Bits\+Per\+Pixel\+For\+Format} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a931434c465fc156e8c4679829884aec3}\label{classTexture2D_a931434c465fc156e8c4679829884aec3}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned int {\bfseries bits\+Per\+Pixel\+For\+Format} () const
+\item 
+unsigned int \hyperlink{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}{get\+Bits\+Per\+Pixel\+For\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format) const
+\item 
+\mbox{\Hypertarget{classTexture2D_afe02fb3ca232889c58339125bf2e2e8e}\label{classTexture2D_afe02fb3ca232889c58339125bf2e2e8e}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned int {\bfseries bits\+Per\+Pixel\+For\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format) const
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTexture2D_a827e7f2d58de577a63e62d3ed4f488cd}{get\+Content\+Size\+In\+Pixels} ()
+\item 
+bool \hyperlink{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}{has\+Premultiplied\+Alpha} () const
+\item 
+bool \hyperlink{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}{has\+Mipmaps} () const
+\item 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} \hyperlink{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}{get\+Pixel\+Format} () const
+\item 
+int \hyperlink{classTexture2D_a87918e080c6edb84236e2438c055307b}{get\+Pixels\+Wide} () const
+\item 
+int \hyperlink{classTexture2D_a380681da07007b979df13ff7855312e5}{get\+Pixels\+High} () const
+\item 
+G\+Luint \hyperlink{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}{get\+Name} () const
+\item 
+G\+Lfloat \hyperlink{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}{get\+MaxS} () const
+\item 
+void \hyperlink{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}{set\+MaxS} (G\+Lfloat maxS)
+\item 
+G\+Lfloat \hyperlink{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}{get\+MaxT} () const
+\item 
+void \hyperlink{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}{set\+MaxT} (G\+Lfloat maxT)
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTexture2D_a3ca89213245342676defce5f4124e36b}{get\+Content\+Size} () const
+\item 
+void \hyperlink{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ \hyperlink{classTexture2D_ad1f4b0143dc648e4d41ee5e1969b96ea}{get\+G\+L\+Program} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a0fece49baa70c5257db2e9ddf88b8fcd}\label{classTexture2D_a0fece49baa70c5257db2e9ddf88b8fcd}} 
+std\+::string {\bfseries get\+Path} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_a40d47bff7f05c1ef11a7a6a40ad0578c}\label{classTexture2D_a40d47bff7f05c1ef11a7a6a40ad0578c}} 
+void {\bfseries set\+Alpha\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$alpha\+Texture)
+\item 
+\mbox{\Hypertarget{classTexture2D_a99343b2d121d1baf40b93336caf2fdf9}\label{classTexture2D_a99343b2d121d1baf40b93336caf2fdf9}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Alpha\+Texture} () const
+\item 
+\mbox{\Hypertarget{classTexture2D_adccfd52496163de8b3e62e7ed041ae60}\label{classTexture2D_adccfd52496163de8b3e62e7ed041ae60}} 
+G\+Luint {\bfseries get\+Alpha\+Texture\+Name} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classTexture2D_ac624647313a211073d20a29a07d01622}{set\+Default\+Alpha\+Pixel\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+static \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} \hyperlink{classTexture2D_ab08c2f098f96cc9549fd583177ac9971}{get\+Default\+Alpha\+Pixel\+Format} ()
+\item 
+\mbox{\Hypertarget{classTexture2D_aa2a23302278277037c06d0018e5900dc}\label{classTexture2D_aa2a23302278277037c06d0018e5900dc}} 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} {\bfseries default\+Alpha\+Pixel\+Format} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classTexture2D_a62ab6fca303a92c550ad28fafd52bb6e}{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha} (bool have\+Alpha\+Premultiplied)
+\item 
+static const Pixel\+Format\+Info\+Map \& \hyperlink{classTexture2D_a2c619bc5157360bd84af422b68397328}{get\+Pixel\+Format\+Info\+Map} ()
+\item 
+static void \hyperlink{classTexture2D_ae384caf70dece31466fa989f2640a33a}{set\+Default\+Alpha\+Pixel\+Format} (\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+static \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} \hyperlink{classTexture2D_ae7e9ce2ec2a62fafe9e25c96f24a57bb}{get\+Default\+Alpha\+Pixel\+Format} ()
+\item 
+\mbox{\Hypertarget{classTexture2D_aa2a23302278277037c06d0018e5900dc}\label{classTexture2D_aa2a23302278277037c06d0018e5900dc}} 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} {\bfseries default\+Alpha\+Pixel\+Format} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classTexture2D_ae7ffb5940ab10a05213b85456eafff2f}{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha} (bool have\+Alpha\+Premultiplied)
+\item 
+static const Pixel\+Format\+Info\+Map \& \hyperlink{classTexture2D_abe771002b23ab001b927696754828b1f}{get\+Pixel\+Format\+Info\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} \hyperlink{classTexture2D_a441a4aac7b87627925bc0f7118b19197}{\+\_\+pixel\+Format}
+\item 
+int \hyperlink{classTexture2D_aafe73e21b23f281bf37f8747681bd597}{\+\_\+pixels\+Wide}
+\item 
+int \hyperlink{classTexture2D_a956e691335f81bbba88519433f3dd32a}{\+\_\+pixels\+High}
+\item 
+G\+Luint \hyperlink{classTexture2D_afd329b5789c733a418d8b947af606439}{\+\_\+name}
+\item 
+G\+Lfloat \hyperlink{classTexture2D_a02773ea122d74c18db5964be9cafb911}{\+\_\+maxS}
+\item 
+G\+Lfloat \hyperlink{classTexture2D_a78c00a0c3ebf812a37ba3539b71aa0fd}{\+\_\+maxT}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTexture2D_a4cd0c2d737eea24037dec491e4a7a5ce}{\+\_\+content\+Size}
+\item 
+bool \hyperlink{classTexture2D_a31a436824796fa6eba3ae5db84142ef3}{\+\_\+has\+Premultiplied\+Alpha}
+\item 
+bool \hyperlink{classTexture2D_a6c6efa029970d1ab412ed24a9dc1a5f1}{\+\_\+has\+Mipmaps}
+\item 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ \hyperlink{classTexture2D_a446077c65f0e78f1f6cd91058cf8634a}{\+\_\+shader\+Program}
+\item 
+\mbox{\Hypertarget{classTexture2D_a8a8cbac9047e6063a3c5d420af54f844}\label{classTexture2D_a8a8cbac9047e6063a3c5d420af54f844}} 
+bool {\bfseries \+\_\+antialias\+Enabled}
+\item 
+\mbox{\Hypertarget{classTexture2D_a4ee5aca21bff703c7d6928b3c136e832}\label{classTexture2D_a4ee5aca21bff703c7d6928b3c136e832}} 
+Nine\+Patch\+Info $\ast$ {\bfseries \+\_\+nine\+Patch\+Info}
+\item 
+\mbox{\Hypertarget{classTexture2D_a31aae8a750a2be61788ec1ae85410436}\label{classTexture2D_a31aae8a750a2be61788ec1ae85410436}} 
+bool {\bfseries \+\_\+valid}
+\item 
+\mbox{\Hypertarget{classTexture2D_a3e02b30715205645fbc33fb4df75d01a}\label{classTexture2D_a3e02b30715205645fbc33fb4df75d01a}} 
+std\+::string {\bfseries \+\_\+file\+Path}
+\item 
+\mbox{\Hypertarget{classTexture2D_a7088672aff3fd9a7d4c4236d86547239}\label{classTexture2D_a7088672aff3fd9a7d4c4236d86547239}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+alpha\+Texture}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTexture2D_a582708a5334a1ac5ed3997823181b633}\label{classTexture2D_a582708a5334a1ac5ed3997823181b633}} 
+static const Pixel\+Format\+Info\+Map {\bfseries \+\_\+pixel\+Format\+Info\+Tables}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTexture2D_a84172cf86f750ec7a2016517c8658a7a}\label{classTexture2D_a84172cf86f750ec7a2016517c8658a7a}} 
+class {\bfseries Sprite\+Frame\+Cache}
+\item 
+\mbox{\Hypertarget{classTexture2D_a6aed23c13f403937c0a3c2b4119e8934}\label{classTexture2D_a6aed23c13f403937c0a3c2b4119e8934}} 
+class {\bfseries Texture\+Cache}
+\item 
+\mbox{\Hypertarget{classTexture2D_afcf5b358e405758f9b3a21c606ca004e}\label{classTexture2D_afcf5b358e405758f9b3a21c606ca004e}} 
+class {\bfseries ui\+::\+Scale9\+Sprite}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTexture2D}{Texture2D} class. This class allows to easily create Open\+GL 2D textures from images, text or raw data. The created \hyperlink{classTexture2D}{Texture2D} object will always have power-\/of-\/two dimensions. Depending on how you create the \hyperlink{classTexture2D}{Texture2D} object, the actual image area of the texture might be smaller than the texture dimensions i.\+e. \char`\"{}content\+Size\char`\"{} != (pixels\+Wide, pixels\+High) and (maxS, maxT) != (1.\+0, 1.\+0). Be aware that the content of the generated textures will be upside-\/down! 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}\label{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}} 
+\index{Texture2D@{Texture2D}!Tex\+Params@{Tex\+Params}}
+\index{Tex\+Params@{Tex\+Params}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Tex\+Params}{TexParams}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structTexture2D_1_1__TexParams}{Texture2\+D\+::\+\_\+\+Tex\+Params} \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Texture2\+D\+::\+Tex\+Params}}
+
+Extension to set the Min / Mag filter \mbox{\Hypertarget{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}\label{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}} 
+\index{Texture2D@{Texture2D}!Tex\+Params@{Tex\+Params}}
+\index{Tex\+Params@{Tex\+Params}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Tex\+Params}{TexParams}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structTexture2D_1_1__TexParams}{Texture2\+D\+::\+\_\+\+Tex\+Params} \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Texture2\+D\+::\+Tex\+Params}}
+
+Extension to set the Min / Mag filter 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}} 
+\index{Texture2D@{Texture2D}!Pixel\+Format@{Pixel\+Format}}
+\index{Pixel\+Format@{Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Pixel\+Format}{PixelFormat}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Possible texture pixel formats \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+U\+TO@{A\+U\+TO}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+U\+TO@{A\+U\+TO}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}} 
+A\+U\+TO&auto detect the type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+G\+R\+A8888@{B\+G\+R\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!B\+G\+R\+A8888@{B\+G\+R\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}} 
+B\+G\+R\+A8888&32-\/bit texture\+: B\+G\+R\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A8888@{R\+G\+B\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A8888@{R\+G\+B\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}} 
+R\+G\+B\+A8888&32-\/bit texture\+: R\+G\+B\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B888@{R\+G\+B888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B888@{R\+G\+B888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}} 
+R\+G\+B888&24-\/bit texture\+: R\+G\+B\+A888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B565@{R\+G\+B565}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B565@{R\+G\+B565}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}} 
+R\+G\+B565&16-\/bit texture without Alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A8@{A8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A8@{A8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}} 
+A8&8-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I8@{I8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!I8@{I8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}} 
+I8&8-\/bit intensity texture \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+I88@{A\+I88}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+I88@{A\+I88}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}} 
+A\+I88&16-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A4444@{R\+G\+B\+A4444}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A4444@{R\+G\+B\+A4444}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}} 
+R\+G\+B\+A4444&16-\/bit textures\+: R\+G\+B\+A4444 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B5\+A1@{R\+G\+B5\+A1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B5\+A1@{R\+G\+B5\+A1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}} 
+R\+G\+B5\+A1&16-\/bit textures\+: R\+G\+B5\+A1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}} 
+P\+V\+R\+T\+C4&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}} 
+P\+V\+R\+T\+C4A&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}} 
+P\+V\+R\+T\+C2&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}} 
+P\+V\+R\+T\+C2A&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+TC@{E\+TC}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!E\+TC@{E\+TC}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}} 
+E\+TC&E\+T\+C-\/compressed texture\+: E\+TC. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}} 
+S3\+T\+C\+\_\+\+D\+X\+T1&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}} 
+S3\+T\+C\+\_\+\+D\+X\+T3&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}} 
+S3\+T\+C\+\_\+\+D\+X\+T5&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}} 
+A\+T\+C\+\_\+\+R\+GB&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+R\+GB. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}} 
+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}} 
+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default texture format\+: A\+U\+TO. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+U\+TO@{A\+U\+TO}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+U\+TO@{A\+U\+TO}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}} 
+A\+U\+TO&auto detect the type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+G\+R\+A8888@{B\+G\+R\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!B\+G\+R\+A8888@{B\+G\+R\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}} 
+B\+G\+R\+A8888&32-\/bit texture\+: B\+G\+R\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A8888@{R\+G\+B\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A8888@{R\+G\+B\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}} 
+R\+G\+B\+A8888&32-\/bit texture\+: R\+G\+B\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B888@{R\+G\+B888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B888@{R\+G\+B888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}} 
+R\+G\+B888&24-\/bit texture\+: R\+G\+B\+A888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B565@{R\+G\+B565}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B565@{R\+G\+B565}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}} 
+R\+G\+B565&16-\/bit texture without Alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A8@{A8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A8@{A8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}} 
+A8&8-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I8@{I8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!I8@{I8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}} 
+I8&8-\/bit intensity texture \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+I88@{A\+I88}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+I88@{A\+I88}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}} 
+A\+I88&16-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A4444@{R\+G\+B\+A4444}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A4444@{R\+G\+B\+A4444}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}} 
+R\+G\+B\+A4444&16-\/bit textures\+: R\+G\+B\+A4444 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B5\+A1@{R\+G\+B5\+A1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B5\+A1@{R\+G\+B5\+A1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}} 
+R\+G\+B5\+A1&16-\/bit textures\+: R\+G\+B5\+A1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}} 
+P\+V\+R\+T\+C4&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}} 
+P\+V\+R\+T\+C4A&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}} 
+P\+V\+R\+T\+C2&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}} 
+P\+V\+R\+T\+C2A&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+TC@{E\+TC}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!E\+TC@{E\+TC}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}} 
+E\+TC&E\+T\+C-\/compressed texture\+: E\+TC. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}} 
+S3\+T\+C\+\_\+\+D\+X\+T1&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}} 
+S3\+T\+C\+\_\+\+D\+X\+T3&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}} 
+S3\+T\+C\+\_\+\+D\+X\+T5&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}} 
+A\+T\+C\+\_\+\+R\+GB&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+R\+GB. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}} 
+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}} 
+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default texture format\+: A\+U\+TO. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}} 
+\index{Texture2D@{Texture2D}!Pixel\+Format@{Pixel\+Format}}
+\index{Pixel\+Format@{Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Pixel\+Format}{PixelFormat}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+U\+TO@{A\+U\+TO}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+U\+TO@{A\+U\+TO}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}} 
+A\+U\+TO&auto detect the type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+G\+R\+A8888@{B\+G\+R\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!B\+G\+R\+A8888@{B\+G\+R\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}} 
+B\+G\+R\+A8888&32-\/bit texture\+: B\+G\+R\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A8888@{R\+G\+B\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A8888@{R\+G\+B\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}} 
+R\+G\+B\+A8888&32-\/bit texture\+: R\+G\+B\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B888@{R\+G\+B888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B888@{R\+G\+B888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}} 
+R\+G\+B888&24-\/bit texture\+: R\+G\+B\+A888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B565@{R\+G\+B565}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B565@{R\+G\+B565}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}} 
+R\+G\+B565&16-\/bit texture without Alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A8@{A8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A8@{A8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}} 
+A8&8-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I8@{I8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!I8@{I8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}} 
+I8&8-\/bit intensity texture \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+I88@{A\+I88}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+I88@{A\+I88}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}} 
+A\+I88&16-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A4444@{R\+G\+B\+A4444}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A4444@{R\+G\+B\+A4444}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}} 
+R\+G\+B\+A4444&16-\/bit textures\+: R\+G\+B\+A4444 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B5\+A1@{R\+G\+B5\+A1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B5\+A1@{R\+G\+B5\+A1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}} 
+R\+G\+B5\+A1&16-\/bit textures\+: R\+G\+B5\+A1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}} 
+P\+V\+R\+T\+C4&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}} 
+P\+V\+R\+T\+C4A&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}} 
+P\+V\+R\+T\+C2&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}} 
+P\+V\+R\+T\+C2A&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+TC@{E\+TC}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!E\+TC@{E\+TC}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}} 
+E\+TC&E\+T\+C-\/compressed texture\+: E\+TC. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}} 
+S3\+T\+C\+\_\+\+D\+X\+T1&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}} 
+S3\+T\+C\+\_\+\+D\+X\+T3&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}} 
+S3\+T\+C\+\_\+\+D\+X\+T5&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}} 
+A\+T\+C\+\_\+\+R\+GB&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+R\+GB. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}} 
+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}} 
+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default texture format\+: A\+U\+TO. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+U\+TO@{A\+U\+TO}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+U\+TO@{A\+U\+TO}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae1f2d5134ed2543d38a0de9751cf75d9}} 
+A\+U\+TO&auto detect the type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+G\+R\+A8888@{B\+G\+R\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!B\+G\+R\+A8888@{B\+G\+R\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a0ec600bfbcf9efd33a5d337700f19896}} 
+B\+G\+R\+A8888&32-\/bit texture\+: B\+G\+R\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A8888@{R\+G\+B\+A8888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A8888@{R\+G\+B\+A8888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}} 
+R\+G\+B\+A8888&32-\/bit texture\+: R\+G\+B\+A8888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B888@{R\+G\+B888}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B888@{R\+G\+B888}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}} 
+R\+G\+B888&24-\/bit texture\+: R\+G\+B\+A888 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B565@{R\+G\+B565}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B565@{R\+G\+B565}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}} 
+R\+G\+B565&16-\/bit texture without Alpha channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A8@{A8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A8@{A8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}} 
+A8&8-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I8@{I8}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!I8@{I8}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5aef4e3ea379fa0eb2bf42d979443902}} 
+I8&8-\/bit intensity texture \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+I88@{A\+I88}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+I88@{A\+I88}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a718542a7d1bf328b4f9507f27da43494}} 
+A\+I88&16-\/bit textures used as masks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B\+A4444@{R\+G\+B\+A4444}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B\+A4444@{R\+G\+B\+A4444}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}} 
+R\+G\+B\+A4444&16-\/bit textures\+: R\+G\+B\+A4444 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+G\+B5\+A1@{R\+G\+B5\+A1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!R\+G\+B5\+A1@{R\+G\+B5\+A1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}} 
+R\+G\+B5\+A1&16-\/bit textures\+: R\+G\+B5\+A1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4@{P\+V\+R\+T\+C4}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a759978c6ff5b5e0ce1720f8dd863e3bf}} 
+P\+V\+R\+T\+C4&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C4A@{P\+V\+R\+T\+C4A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220ae4f65a663abc68a4fd703b0b69588319}} 
+P\+V\+R\+T\+C4A&4-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C4 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2@{P\+V\+R\+T\+C2}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aa54f5bdd6d55a32997d1352a5c8234a4}} 
+P\+V\+R\+T\+C2&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!P\+V\+R\+T\+C2A@{P\+V\+R\+T\+C2A}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a91e71a0bdf4c31dfcc9248aface9cf7e}} 
+P\+V\+R\+T\+C2A&2-\/bit P\+V\+R\+T\+C-\/compressed texture\+: P\+V\+R\+T\+C2 (has alpha channel) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+TC@{E\+TC}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!E\+TC@{E\+TC}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a602bcb15b1e1b9719d1fae7b1b512431}} 
+E\+TC&E\+T\+C-\/compressed texture\+: E\+TC. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T1@{S3\+T\+C\+\_\+\+D\+X\+T1}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a60ee23bc579fe9b7d6d30460b54b416f}} 
+S3\+T\+C\+\_\+\+D\+X\+T1&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T3@{S3\+T\+C\+\_\+\+D\+X\+T3}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a18afa393996c4f35141e45f74b3f19cd}} 
+S3\+T\+C\+\_\+\+D\+X\+T3&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!S3\+T\+C\+\_\+\+D\+X\+T5@{S3\+T\+C\+\_\+\+D\+X\+T5}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a35accb284fb4482d04bc1cd507dfc2b5}} 
+S3\+T\+C\+\_\+\+D\+X\+T5&S3\+T\+C-\/compressed texture\+: S3\+T\+C\+\_\+\+Dxt5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+R\+GB@{A\+T\+C\+\_\+\+R\+GB}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afbfbadcc995ccea23d1d976ed36c794b}} 
+A\+T\+C\+\_\+\+R\+GB&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+R\+GB. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a50ba257f69441f6a76816a1a0a62c9b8}} 
+A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA@{A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220aaa2dec660ac790c7f1ac1802d073e38e}} 
+A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA&A\+T\+I\+T\+C-\/compressed texture\+: A\+T\+C\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+T\+E\+D\+\_\+\+A\+L\+P\+HA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Texture2D@{Texture2D}}\index{Texture2D@{Texture2D}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default texture format\+: A\+U\+TO. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTexture2D_ab62c7c5172a4800b4629cd475147819d}\label{classTexture2D_ab62c7c5172a4800b4629cd475147819d}} 
+\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Texture2\+D()}{Texture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Texture2\+D\+::\+Texture2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTexture2D_a84210f27b55799a096b8abc36380a077}\label{classTexture2D_a84210f27b55799a096b8abc36380a077}} 
+\index{Texture2D@{Texture2D}!````~Texture2D@{$\sim$\+Texture2D}}
+\index{````~Texture2D@{$\sim$\+Texture2D}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture2\+D()}{~Texture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Texture2\+D\+::$\sim$\+Texture2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classTexture2D_ab62c7c5172a4800b4629cd475147819d}\label{classTexture2D_ab62c7c5172a4800b4629cd475147819d}} 
+\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\index{Texture2D@{Texture2D}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{Texture2\+D()}{Texture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Texture2\+D\+::\+Texture2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTexture2D_a7871eee8e1b6621b4fb15cc767778459}\label{classTexture2D_a7871eee8e1b6621b4fb15cc767778459}} 
+\index{Texture2D@{Texture2D}!````~Texture2D@{$\sim$\+Texture2D}}
+\index{````~Texture2D@{$\sim$\+Texture2D}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture2\+D()}{~Texture2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Texture2\+D\+::$\sim$\+Texture2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}\label{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}} 
+\index{Texture2D@{Texture2D}!draw\+At\+Point@{draw\+At\+Point}}
+\index{draw\+At\+Point@{draw\+At\+Point}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{draw\+At\+Point()}{drawAtPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::draw\+At\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Drawing extensions to make it easy to draw basic quads using a \hyperlink{classTexture2D}{Texture2D} object. These functions require G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2D and both G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+AY and G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+AY client states to be enabled.\+Draws a texture at a given point. \mbox{\Hypertarget{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}\label{classTexture2D_a58fcaf9540bdeac3b4858d0c3eaa5b97}} 
+\index{Texture2D@{Texture2D}!draw\+At\+Point@{draw\+At\+Point}}
+\index{draw\+At\+Point@{draw\+At\+Point}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{draw\+At\+Point()}{drawAtPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::draw\+At\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Drawing extensions to make it easy to draw basic quads using a \hyperlink{classTexture2D}{Texture2D} object. These functions require G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2D and both G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+AY and G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+AY client states to be enabled.\+Draws a texture at a given point. \mbox{\Hypertarget{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}\label{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}} 
+\index{Texture2D@{Texture2D}!draw\+In\+Rect@{draw\+In\+Rect}}
+\index{draw\+In\+Rect@{draw\+In\+Rect}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{draw\+In\+Rect()}{drawInRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::draw\+In\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect }\end{DoxyParamCaption})}
+
+Draws a texture inside a rect. \mbox{\Hypertarget{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}\label{classTexture2D_aaacff4a0ff5d60af71daa090f6e35654}} 
+\index{Texture2D@{Texture2D}!draw\+In\+Rect@{draw\+In\+Rect}}
+\index{draw\+In\+Rect@{draw\+In\+Rect}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{draw\+In\+Rect()}{drawInRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::draw\+In\+Rect (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{rect }\end{DoxyParamCaption})}
+
+Draws a texture inside a rect. \mbox{\Hypertarget{classTexture2D_a91bccde122da02002c5518480474c177}\label{classTexture2D_a91bccde122da02002c5518480474c177}} 
+\index{Texture2D@{Texture2D}!generate\+Mipmap@{generate\+Mipmap}}
+\index{generate\+Mipmap@{generate\+Mipmap}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{generate\+Mipmap()}{generateMipmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::generate\+Mipmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generates mipmap images for the texture. It only works if the texture size is P\+OT (power of 2). \begin{DoxySince}{Since}
+v0.\+99.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a91bccde122da02002c5518480474c177}\label{classTexture2D_a91bccde122da02002c5518480474c177}} 
+\index{Texture2D@{Texture2D}!generate\+Mipmap@{generate\+Mipmap}}
+\index{generate\+Mipmap@{generate\+Mipmap}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{generate\+Mipmap()}{generateMipmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::generate\+Mipmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generates mipmap images for the texture. It only works if the texture size is P\+OT (power of 2). \begin{DoxySince}{Since}
+v0.\+99.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_af29476c171cc5167c8392265f80fb9af}\label{classTexture2D_af29476c171cc5167c8392265f80fb9af}} 
+\index{Texture2D@{Texture2D}!get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}}
+\index{get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Bits\+Per\+Pixel\+For\+Format()}{getBitsPerPixelForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily unsigned int Texture2\+D\+::get\+Bits\+Per\+Pixel\+For\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the bits-\/per-\/pixel of the in-\/memory Open\+GL texture \begin{DoxySince}{Since}
+v1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_af29476c171cc5167c8392265f80fb9af}\label{classTexture2D_af29476c171cc5167c8392265f80fb9af}} 
+\index{Texture2D@{Texture2D}!get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}}
+\index{get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Bits\+Per\+Pixel\+For\+Format()}{getBitsPerPixelForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily unsigned int Texture2\+D\+::get\+Bits\+Per\+Pixel\+For\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the bits-\/per-\/pixel of the in-\/memory Open\+GL texture \begin{DoxySince}{Since}
+v1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}\label{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}} 
+\index{Texture2D@{Texture2D}!get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}}
+\index{get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Bits\+Per\+Pixel\+For\+Format()}{getBitsPerPixelForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily unsigned int Texture2\+D\+::get\+Bits\+Per\+Pixel\+For\+Format (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption}) const}
+
+Helper functions that returns bits per pixels for a given format. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}\label{classTexture2D_ada259b363b6d48c23acfcc79db3d2a47}} 
+\index{Texture2D@{Texture2D}!get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}}
+\index{get\+Bits\+Per\+Pixel\+For\+Format@{get\+Bits\+Per\+Pixel\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Bits\+Per\+Pixel\+For\+Format()}{getBitsPerPixelForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily unsigned int Texture2\+D\+::get\+Bits\+Per\+Pixel\+For\+Format (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption}) const}
+
+Helper functions that returns bits per pixels for a given format. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a3ca89213245342676defce5f4124e36b}\label{classTexture2D_a3ca89213245342676defce5f4124e36b}} 
+\index{Texture2D@{Texture2D}!get\+Content\+Size@{get\+Content\+Size}}
+\index{get\+Content\+Size@{get\+Content\+Size}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Content\+Size()}{getContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Texture2\+D\+::get\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the texture content size. \mbox{\Hypertarget{classTexture2D_a3ca89213245342676defce5f4124e36b}\label{classTexture2D_a3ca89213245342676defce5f4124e36b}} 
+\index{Texture2D@{Texture2D}!get\+Content\+Size@{get\+Content\+Size}}
+\index{get\+Content\+Size@{get\+Content\+Size}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Content\+Size()}{getContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Texture2\+D\+::get\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the texture content size. \mbox{\Hypertarget{classTexture2D_ac158f36e8cd5a584e8a76f67abad563d}\label{classTexture2D_ac158f36e8cd5a584e8a76f67abad563d}} 
+\index{Texture2D@{Texture2D}!get\+Content\+Size\+In\+Pixels@{get\+Content\+Size\+In\+Pixels}}
+\index{get\+Content\+Size\+In\+Pixels@{get\+Content\+Size\+In\+Pixels}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Content\+Size\+In\+Pixels()}{getContentSizeInPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size} \& Texture2\+D\+::get\+Content\+Size\+In\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get content size. \mbox{\Hypertarget{classTexture2D_a827e7f2d58de577a63e62d3ed4f488cd}\label{classTexture2D_a827e7f2d58de577a63e62d3ed4f488cd}} 
+\index{Texture2D@{Texture2D}!get\+Content\+Size\+In\+Pixels@{get\+Content\+Size\+In\+Pixels}}
+\index{get\+Content\+Size\+In\+Pixels@{get\+Content\+Size\+In\+Pixels}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Content\+Size\+In\+Pixels()}{getContentSizeInPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& Texture2\+D\+::get\+Content\+Size\+In\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get content size. \mbox{\Hypertarget{classTexture2D_ab08c2f098f96cc9549fd583177ac9971}\label{classTexture2D_ab08c2f098f96cc9549fd583177ac9971}} 
+\index{Texture2D@{Texture2D}!get\+Default\+Alpha\+Pixel\+Format@{get\+Default\+Alpha\+Pixel\+Format}}
+\index{get\+Default\+Alpha\+Pixel\+Format@{get\+Default\+Alpha\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Default\+Alpha\+Pixel\+Format()}{getDefaultAlphaPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} Texture2\+D\+::get\+Default\+Alpha\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the alpha pixel format. \begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ae7e9ce2ec2a62fafe9e25c96f24a57bb}\label{classTexture2D_ae7e9ce2ec2a62fafe9e25c96f24a57bb}} 
+\index{Texture2D@{Texture2D}!get\+Default\+Alpha\+Pixel\+Format@{get\+Default\+Alpha\+Pixel\+Format}}
+\index{get\+Default\+Alpha\+Pixel\+Format@{get\+Default\+Alpha\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Default\+Alpha\+Pixel\+Format()}{getDefaultAlphaPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} Texture2\+D\+::get\+Default\+Alpha\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the alpha pixel format. \begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a3fd096dcfb192b188323c542edee64b5}\label{classTexture2D_a3fd096dcfb192b188323c542edee64b5}} 
+\index{Texture2D@{Texture2D}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Texture2\+D\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get texture name, dimensions and coordinates message by a string.  NA  NA \mbox{\Hypertarget{classTexture2D_aa2c1fc6c5eb4f22fff53abb9a03b1dea}\label{classTexture2D_aa2c1fc6c5eb4f22fff53abb9a03b1dea}} 
+\index{Texture2D@{Texture2D}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Texture2\+D\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get texture name, dimensions and coordinates message by a string.  NA  NA \mbox{\Hypertarget{classTexture2D_ae61deb7557336bc34a563d12e7a1c315}\label{classTexture2D_ae61deb7557336bc34a563d12e7a1c315}} 
+\index{Texture2D@{Texture2D}!get\+G\+L\+Program@{get\+G\+L\+Program}}
+\index{get\+G\+L\+Program@{get\+G\+L\+Program}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program()}{getGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgram}{G\+L\+Program} $\ast$ Texture2\+D\+::get\+G\+L\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a shader program from the texture. \mbox{\Hypertarget{classTexture2D_ad1f4b0143dc648e4d41ee5e1969b96ea}\label{classTexture2D_ad1f4b0143dc648e4d41ee5e1969b96ea}} 
+\index{Texture2D@{Texture2D}!get\+G\+L\+Program@{get\+G\+L\+Program}}
+\index{get\+G\+L\+Program@{get\+G\+L\+Program}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program()}{getGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgram}{G\+L\+Program}$\ast$ Texture2\+D\+::get\+G\+L\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a shader program from the texture. \mbox{\Hypertarget{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}\label{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}} 
+\index{Texture2D@{Texture2D}!get\+MaxS@{get\+MaxS}}
+\index{get\+MaxS@{get\+MaxS}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Max\+S()}{getMaxS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::get\+MaxS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets max S. \mbox{\Hypertarget{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}\label{classTexture2D_ac5d32187817ecac6e541ab5d41900b16}} 
+\index{Texture2D@{Texture2D}!get\+MaxS@{get\+MaxS}}
+\index{get\+MaxS@{get\+MaxS}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Max\+S()}{getMaxS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::get\+MaxS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets max S. \mbox{\Hypertarget{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}\label{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}} 
+\index{Texture2D@{Texture2D}!get\+MaxT@{get\+MaxT}}
+\index{get\+MaxT@{get\+MaxT}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Max\+T()}{getMaxT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::get\+MaxT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets max T. \mbox{\Hypertarget{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}\label{classTexture2D_a1aca482857641c5f4d59afb90dd7ec9e}} 
+\index{Texture2D@{Texture2D}!get\+MaxT@{get\+MaxT}}
+\index{get\+MaxT@{get\+MaxT}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Max\+T()}{getMaxT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::get\+MaxT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets max T. \mbox{\Hypertarget{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}\label{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}} 
+\index{Texture2D@{Texture2D}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Luint Texture2\+D\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the texture name. \mbox{\Hypertarget{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}\label{classTexture2D_a2190dbf64d30302d1a3626a799a3504c}} 
+\index{Texture2D@{Texture2D}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Luint Texture2\+D\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the texture name. \mbox{\Hypertarget{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}\label{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}} 
+\index{Texture2D@{Texture2D}!get\+Pixel\+Format@{get\+Pixel\+Format}}
+\index{get\+Pixel\+Format@{get\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixel\+Format()}{getPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} Texture2\+D\+::get\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the pixel format of the texture. \mbox{\Hypertarget{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}\label{classTexture2D_a50abeeaa43511e402499c0e3c3c1ef22}} 
+\index{Texture2D@{Texture2D}!get\+Pixel\+Format@{get\+Pixel\+Format}}
+\index{get\+Pixel\+Format@{get\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixel\+Format()}{getPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} Texture2\+D\+::get\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the pixel format of the texture. \mbox{\Hypertarget{classTexture2D_a2c619bc5157360bd84af422b68397328}\label{classTexture2D_a2c619bc5157360bd84af422b68397328}} 
+\index{Texture2D@{Texture2D}!get\+Pixel\+Format\+Info\+Map@{get\+Pixel\+Format\+Info\+Map}}
+\index{get\+Pixel\+Format\+Info\+Map@{get\+Pixel\+Format\+Info\+Map}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixel\+Format\+Info\+Map()}{getPixelFormatInfoMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const Texture2\+D\+::\+Pixel\+Format\+Info\+Map \& Texture2\+D\+::get\+Pixel\+Format\+Info\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get pixel info map, the key-\/value pairs is Pixel\+Format and \hyperlink{structTexture2D_1_1PixelFormatInfo}{Pixel\+Format\+Info}. \mbox{\Hypertarget{classTexture2D_abe771002b23ab001b927696754828b1f}\label{classTexture2D_abe771002b23ab001b927696754828b1f}} 
+\index{Texture2D@{Texture2D}!get\+Pixel\+Format\+Info\+Map@{get\+Pixel\+Format\+Info\+Map}}
+\index{get\+Pixel\+Format\+Info\+Map@{get\+Pixel\+Format\+Info\+Map}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixel\+Format\+Info\+Map()}{getPixelFormatInfoMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const Pixel\+Format\+Info\+Map\& Texture2\+D\+::get\+Pixel\+Format\+Info\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get pixel info map, the key-\/value pairs is Pixel\+Format and \hyperlink{structTexture2D_1_1PixelFormatInfo}{Pixel\+Format\+Info}. \mbox{\Hypertarget{classTexture2D_a380681da07007b979df13ff7855312e5}\label{classTexture2D_a380681da07007b979df13ff7855312e5}} 
+\index{Texture2D@{Texture2D}!get\+Pixels\+High@{get\+Pixels\+High}}
+\index{get\+Pixels\+High@{get\+Pixels\+High}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixels\+High()}{getPixelsHigh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Texture2\+D\+::get\+Pixels\+High (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the height of the texture in pixels. \mbox{\Hypertarget{classTexture2D_a380681da07007b979df13ff7855312e5}\label{classTexture2D_a380681da07007b979df13ff7855312e5}} 
+\index{Texture2D@{Texture2D}!get\+Pixels\+High@{get\+Pixels\+High}}
+\index{get\+Pixels\+High@{get\+Pixels\+High}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixels\+High()}{getPixelsHigh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Texture2\+D\+::get\+Pixels\+High (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the height of the texture in pixels. \mbox{\Hypertarget{classTexture2D_a87918e080c6edb84236e2438c055307b}\label{classTexture2D_a87918e080c6edb84236e2438c055307b}} 
+\index{Texture2D@{Texture2D}!get\+Pixels\+Wide@{get\+Pixels\+Wide}}
+\index{get\+Pixels\+Wide@{get\+Pixels\+Wide}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixels\+Wide()}{getPixelsWide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Texture2\+D\+::get\+Pixels\+Wide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the width of the texture in pixels. \mbox{\Hypertarget{classTexture2D_a87918e080c6edb84236e2438c055307b}\label{classTexture2D_a87918e080c6edb84236e2438c055307b}} 
+\index{Texture2D@{Texture2D}!get\+Pixels\+Wide@{get\+Pixels\+Wide}}
+\index{get\+Pixels\+Wide@{get\+Pixels\+Wide}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+Pixels\+Wide()}{getPixelsWide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Texture2\+D\+::get\+Pixels\+Wide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the width of the texture in pixels. \mbox{\Hypertarget{classTexture2D_ac3c139b0e9dd7a2e02b8b8e8d413620b}\label{classTexture2D_ac3c139b0e9dd7a2e02b8b8e8d413620b}} 
+\index{Texture2D@{Texture2D}!get\+String\+For\+Format@{get\+String\+For\+Format}}
+\index{get\+String\+For\+Format@{get\+String\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+String\+For\+Format()}{getStringForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Texture2\+D\+::get\+String\+For\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the pixel format. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a8d12a9614b12a67a7956182004e92ca0}\label{classTexture2D_a8d12a9614b12a67a7956182004e92ca0}} 
+\index{Texture2D@{Texture2D}!get\+String\+For\+Format@{get\+String\+For\+Format}}
+\index{get\+String\+For\+Format@{get\+String\+For\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{get\+String\+For\+Format()}{getStringForFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ Texture2\+D\+::get\+String\+For\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the pixel format. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}\label{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}} 
+\index{Texture2D@{Texture2D}!has\+Mipmaps@{has\+Mipmaps}}
+\index{has\+Mipmaps@{has\+Mipmaps}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{has\+Mipmaps()}{hasMipmaps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::has\+Mipmaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not the texture has mip maps. \mbox{\Hypertarget{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}\label{classTexture2D_a5a19e34a8e9f9192f81193f7bf8cdbc2}} 
+\index{Texture2D@{Texture2D}!has\+Mipmaps@{has\+Mipmaps}}
+\index{has\+Mipmaps@{has\+Mipmaps}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{has\+Mipmaps()}{hasMipmaps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::has\+Mipmaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not the texture has mip maps. \mbox{\Hypertarget{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}\label{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}} 
+\index{Texture2D@{Texture2D}!has\+Premultiplied\+Alpha@{has\+Premultiplied\+Alpha}}
+\index{has\+Premultiplied\+Alpha@{has\+Premultiplied\+Alpha}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{has\+Premultiplied\+Alpha()}{hasPremultipliedAlpha()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::has\+Premultiplied\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not the texture has their Alpha premultiplied. \mbox{\Hypertarget{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}\label{classTexture2D_aa1cc09ea8b7015cc2bf66a7847ee0990}} 
+\index{Texture2D@{Texture2D}!has\+Premultiplied\+Alpha@{has\+Premultiplied\+Alpha}}
+\index{has\+Premultiplied\+Alpha@{has\+Premultiplied\+Alpha}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{has\+Premultiplied\+Alpha()}{hasPremultipliedAlpha()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::has\+Premultiplied\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not the texture has their Alpha premultiplied. \mbox{\Hypertarget{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}\label{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}} 
+\index{Texture2D@{Texture2D}!init\+With\+Data@{init\+With\+Data}}
+\index{init\+With\+Data@{init\+With\+Data}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Data()}{initWithData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{ssize\+\_\+t}]{data\+Len,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{pixel\+Format,  }\item[{int}]{pixels\+Wide,  }\item[{int}]{pixels\+High,  }\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})}
+
+Initializes with a texture2d with data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em data\+Len} & The image data length. \\
+\hline
+{\em pixel\+Format} & The image pixel\+Format. \\
+\hline
+{\em pixels\+Wide} & The image width. \\
+\hline
+{\em pixels\+High} & The image height. \\
+\hline
+{\em content\+Size} & The image content size.  NA  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}\label{classTexture2D_a7e0c3fb5fc89625c4943dba0cba3b444}} 
+\index{Texture2D@{Texture2D}!init\+With\+Data@{init\+With\+Data}}
+\index{init\+With\+Data@{init\+With\+Data}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Data()}{initWithData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{ssize\+\_\+t}]{data\+Len,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{pixel\+Format,  }\item[{int}]{pixels\+Wide,  }\item[{int}]{pixels\+High,  }\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})}
+
+Initializes with a texture2d with data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em data\+Len} & The image data length. \\
+\hline
+{\em pixel\+Format} & The image pixel\+Format. \\
+\hline
+{\em pixels\+Wide} & The image width. \\
+\hline
+{\em pixels\+High} & The image height. \\
+\hline
+{\em content\+Size} & The image content size.  NA  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a1ae4992389059e5f78785e28d28d53be}\label{classTexture2D_a1ae4992389059e5f78785e28d28d53be}} 
+\index{Texture2D@{Texture2D}!init\+With\+Image@{init\+With\+Image}}
+\index{init\+With\+Image@{init\+With\+Image}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Image()}{initWithImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Image (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image }\end{DoxyParamCaption})}
+
+Extensions to make it easy to create a \hyperlink{classTexture2D}{Texture2D} object from an image file. Initializes a texture from a U\+I\+Image object.
+
+We will use the format you specified with set\+Default\+Alpha\+Pixel\+Format to convert the image for texture. N\+O\+TE\+: It will not convert the pvr image file. 
+\begin{DoxyParams}{Parameters}
+{\em image} & An U\+I\+Image object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a1ae4992389059e5f78785e28d28d53be}\label{classTexture2D_a1ae4992389059e5f78785e28d28d53be}} 
+\index{Texture2D@{Texture2D}!init\+With\+Image@{init\+With\+Image}}
+\index{init\+With\+Image@{init\+With\+Image}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Image()}{initWithImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Image (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image }\end{DoxyParamCaption})}
+
+Extensions to make it easy to create a \hyperlink{classTexture2D}{Texture2D} object from an image file. Initializes a texture from a U\+I\+Image object.
+
+We will use the format you specified with set\+Default\+Alpha\+Pixel\+Format to convert the image for texture. N\+O\+TE\+: It will not convert the pvr image file. 
+\begin{DoxyParams}{Parameters}
+{\em image} & An U\+I\+Image object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}\label{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}} 
+\index{Texture2D@{Texture2D}!init\+With\+Image@{init\+With\+Image}}
+\index{init\+With\+Image@{init\+With\+Image}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Image()}{initWithImage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Image (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format}}]{format }\end{DoxyParamCaption})}
+
+Initializes a texture from a U\+I\+Image object.
+
+We will use the format you passed to the function to convert the image format to the texture format. If you pass Pixel\+Format\+::\+Automatic, we will auto detect the image render type and use that type for texture to render. 
+\begin{DoxyParams}{Parameters}
+{\em image} & An U\+I\+Image object. \\
+\hline
+{\em format} & Texture pixel formats. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}\label{classTexture2D_a52292343ab1e6f4f3e20d35181d98b5f}} 
+\index{Texture2D@{Texture2D}!init\+With\+Image@{init\+With\+Image}}
+\index{init\+With\+Image@{init\+With\+Image}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Image()}{initWithImage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Image (\begin{DoxyParamCaption}\item[{Image $\ast$}]{image,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Pixel\+Format}}]{format }\end{DoxyParamCaption})}
+
+Initializes a texture from a U\+I\+Image object.
+
+We will use the format you passed to the function to convert the image format to the texture format. If you pass Pixel\+Format\+::\+Automatic, we will auto detect the image render type and use that type for texture to render. 
+\begin{DoxyParams}{Parameters}
+{\em image} & An U\+I\+Image object. \\
+\hline
+{\em format} & Texture pixel formats. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}\label{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}} 
+\index{Texture2D@{Texture2D}!init\+With\+Mipmaps@{init\+With\+Mipmaps}}
+\index{init\+With\+Mipmaps@{init\+With\+Mipmaps}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Mipmaps()}{initWithMipmaps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Mipmaps (\begin{DoxyParamCaption}\item[{Mipmap\+Info $\ast$}]{mipmaps,  }\item[{int}]{mipmaps\+Num,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{pixel\+Format,  }\item[{int}]{pixels\+Wide,  }\item[{int}]{pixels\+High }\end{DoxyParamCaption})}
+
+Initializes with mipmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mipmaps} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em mipmaps\+Num} & The mipmaps number. \\
+\hline
+{\em pixel\+Format} & The image pixel\+Format. \\
+\hline
+{\em pixels\+Wide} & The image width. \\
+\hline
+{\em pixels\+High} & The image height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}\label{classTexture2D_ae57b9e38403f115d0959308ec653a8b0}} 
+\index{Texture2D@{Texture2D}!init\+With\+Mipmaps@{init\+With\+Mipmaps}}
+\index{init\+With\+Mipmaps@{init\+With\+Mipmaps}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+Mipmaps()}{initWithMipmaps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+Mipmaps (\begin{DoxyParamCaption}\item[{Mipmap\+Info $\ast$}]{mipmaps,  }\item[{int}]{mipmaps\+Num,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{pixel\+Format,  }\item[{int}]{pixels\+Wide,  }\item[{int}]{pixels\+High }\end{DoxyParamCaption})}
+
+Initializes with mipmaps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mipmaps} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em mipmaps\+Num} & The mipmaps number. \\
+\hline
+{\em pixel\+Format} & The image pixel\+Format. \\
+\hline
+{\em pixels\+Wide} & The image width. \\
+\hline
+{\em pixels\+High} & The image height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}\label{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}} 
+\index{Texture2D@{Texture2D}!init\+With\+String@{init\+With\+String}}
+\index{init\+With\+String@{init\+With\+String}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+String()}{initWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions = {\ttfamily \hyperlink{classSize}{Size}(0,~0)},  }\item[{Text\+H\+Alignment}]{h\+Alignment = {\ttfamily TextHAlignment\+:\+:CENTER},  }\item[{Text\+V\+Alignment}]{v\+Alignment = {\ttfamily TextVAlignment\+:\+:TOP},  }\item[{bool}]{enable\+Wrap = {\ttfamily true},  }\item[{int}]{overflow = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initializes a texture from a string with dimensions, alignment, font name and font size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null terminated string. \\
+\hline
+{\em font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+{\em dimensions} & The font dimension. \\
+\hline
+{\em h\+Alignment} & The font horizontal text alignment type. \\
+\hline
+{\em v\+Alignment} & The font vertical text alignment type. \\
+\hline
+{\em enable\+Wrap} & Whether enable text wrap or not. \\
+\hline
+{\em overflow} & Whether shrink font size when content larger than the dimensions. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}\label{classTexture2D_af560d3c6590d2c656ae5b0d16c0a94d9}} 
+\index{Texture2D@{Texture2D}!init\+With\+String@{init\+With\+String}}
+\index{init\+With\+String@{init\+With\+String}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+String()}{initWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions = {\ttfamily \hyperlink{classSize}{Size}(0,~0)},  }\item[{Text\+H\+Alignment}]{h\+Alignment = {\ttfamily TextHAlignment\+:\+:CENTER},  }\item[{Text\+V\+Alignment}]{v\+Alignment = {\ttfamily TextVAlignment\+:\+:TOP},  }\item[{bool}]{enable\+Wrap = {\ttfamily true},  }\item[{int}]{overflow = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initializes a texture from a string with dimensions, alignment, font name and font size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null terminated string. \\
+\hline
+{\em font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+{\em dimensions} & The font dimension. \\
+\hline
+{\em h\+Alignment} & The font horizontal text alignment type. \\
+\hline
+{\em v\+Alignment} & The font vertical text alignment type. \\
+\hline
+{\em enable\+Wrap} & Whether enable text wrap or not. \\
+\hline
+{\em overflow} & Whether shrink font size when content larger than the dimensions. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}\label{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}} 
+\index{Texture2D@{Texture2D}!init\+With\+String@{init\+With\+String}}
+\index{init\+With\+String@{init\+With\+String}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+String()}{initWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{const \hyperlink{structFontDefinition}{Font\+Definition} \&}]{text\+Definition }\end{DoxyParamCaption})}
+
+Initializes a texture from a string using a text definition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null terminated string. \\
+\hline
+{\em text\+Definition} & A \hyperlink{structFontDefinition}{Font\+Definition} object contains font attributes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}\label{classTexture2D_a2c00c9110a7fbaca76ea41e756dabeea}} 
+\index{Texture2D@{Texture2D}!init\+With\+String@{init\+With\+String}}
+\index{init\+With\+String@{init\+With\+String}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{init\+With\+String()}{initWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::init\+With\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{const \hyperlink{structFontDefinition}{Font\+Definition} \&}]{text\+Definition }\end{DoxyParamCaption})}
+
+Initializes a texture from a string using a text definition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A null terminated string. \\
+\hline
+{\em text\+Definition} & A \hyperlink{structFontDefinition}{Font\+Definition} object contains font attributes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a62ab6fca303a92c550ad28fafd52bb6e}\label{classTexture2D_a62ab6fca303a92c550ad28fafd52bb6e}} 
+\index{Texture2D@{Texture2D}!P\+V\+R\+Images\+Have\+Premultiplied\+Alpha@{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha}}
+\index{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha@{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha()}{PVRImagesHavePremultipliedAlpha()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::\+P\+V\+R\+Images\+Have\+Premultiplied\+Alpha (\begin{DoxyParamCaption}\item[{bool}]{have\+Alpha\+Premultiplied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Treats (or not) P\+VR files as if they have alpha premultiplied.
+
+
+\begin{DoxyParams}{Parameters}
+{\em have\+Alpha\+Premultiplied} & Since it is impossible to know at runtime if the P\+VR images have the alpha channel premultiplied, it is possible load them as if they have (or not) the alpha channel premultiplied.\\
+\hline
+\end{DoxyParams}
+By default it is disabled.
+
+deprecated, please use Image\+::set\+P\+V\+R\+Images\+Have\+Premultiplied\+Alpha() instead.
+
+\begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ae7ffb5940ab10a05213b85456eafff2f}\label{classTexture2D_ae7ffb5940ab10a05213b85456eafff2f}} 
+\index{Texture2D@{Texture2D}!P\+V\+R\+Images\+Have\+Premultiplied\+Alpha@{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha}}
+\index{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha@{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{P\+V\+R\+Images\+Have\+Premultiplied\+Alpha()}{PVRImagesHavePremultipliedAlpha()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Texture2\+D\+::\+P\+V\+R\+Images\+Have\+Premultiplied\+Alpha (\begin{DoxyParamCaption}\item[{bool}]{have\+Alpha\+Premultiplied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Treats (or not) P\+VR files as if they have alpha premultiplied.
+
+
+\begin{DoxyParams}{Parameters}
+{\em have\+Alpha\+Premultiplied} & Since it is impossible to know at runtime if the P\+VR images have the alpha channel premultiplied, it is possible load them as if they have (or not) the alpha channel premultiplied.\\
+\hline
+\end{DoxyParams}
+By default it is disabled.
+
+deprecated, please use Image\+::set\+P\+V\+R\+Images\+Have\+Premultiplied\+Alpha() instead.
+
+\begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}\label{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}} 
+\index{Texture2D@{Texture2D}!release\+G\+L\+Texture@{release\+G\+L\+Texture}}
+\index{release\+G\+L\+Texture@{release\+G\+L\+Texture}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{release\+G\+L\+Texture()}{releaseGLTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::release\+G\+L\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Release only the gl texture.  NA  NA \mbox{\Hypertarget{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}\label{classTexture2D_ae9edf32b4f3dc4841e09a2b1835fc08c}} 
+\index{Texture2D@{Texture2D}!release\+G\+L\+Texture@{release\+G\+L\+Texture}}
+\index{release\+G\+L\+Texture@{release\+G\+L\+Texture}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{release\+G\+L\+Texture()}{releaseGLTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::release\+G\+L\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Release only the gl texture.  NA  NA \mbox{\Hypertarget{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}\label{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}} 
+\index{Texture2D@{Texture2D}!set\+Alias\+Tex\+Parameters@{set\+Alias\+Tex\+Parameters}}
+\index{set\+Alias\+Tex\+Parameters@{set\+Alias\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Alias\+Tex\+Parameters()}{setAliasTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Alias\+Tex\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets alias texture parameters\+:
+\begin{DoxyItemize}
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+I\+N\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+G\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}\label{classTexture2D_affbb5fcc6fee13cfab17dada97d59904}} 
+\index{Texture2D@{Texture2D}!set\+Alias\+Tex\+Parameters@{set\+Alias\+Tex\+Parameters}}
+\index{set\+Alias\+Tex\+Parameters@{set\+Alias\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Alias\+Tex\+Parameters()}{setAliasTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Alias\+Tex\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets alias texture parameters\+:
+\begin{DoxyItemize}
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+I\+N\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+G\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}\label{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}} 
+\index{Texture2D@{Texture2D}!set\+Anti\+Alias\+Tex\+Parameters@{set\+Anti\+Alias\+Tex\+Parameters}}
+\index{set\+Anti\+Alias\+Tex\+Parameters@{set\+Anti\+Alias\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Anti\+Alias\+Tex\+Parameters()}{setAntiAliasTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Anti\+Alias\+Tex\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets antialias texture parameters\+:
+\begin{DoxyItemize}
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+I\+N\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+L\+I\+N\+E\+AR
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+G\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+L\+I\+N\+E\+AR
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}\label{classTexture2D_a2b9bc7bc273b0793c6b58010c55724e6}} 
+\index{Texture2D@{Texture2D}!set\+Anti\+Alias\+Tex\+Parameters@{set\+Anti\+Alias\+Tex\+Parameters}}
+\index{set\+Anti\+Alias\+Tex\+Parameters@{set\+Anti\+Alias\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Anti\+Alias\+Tex\+Parameters()}{setAntiAliasTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Anti\+Alias\+Tex\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets antialias texture parameters\+:
+\begin{DoxyItemize}
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+I\+N\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+L\+I\+N\+E\+AR
+\item G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+G\+\_\+\+F\+I\+L\+T\+ER = G\+L\+\_\+\+L\+I\+N\+E\+AR
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ac624647313a211073d20a29a07d01622}\label{classTexture2D_ac624647313a211073d20a29a07d01622}} 
+\index{Texture2D@{Texture2D}!set\+Default\+Alpha\+Pixel\+Format@{set\+Default\+Alpha\+Pixel\+Format}}
+\index{set\+Default\+Alpha\+Pixel\+Format@{set\+Default\+Alpha\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Default\+Alpha\+Pixel\+Format()}{setDefaultAlphaPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Default\+Alpha\+Pixel\+Format (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+sets the default pixel format for U\+I\+Imagescontains alpha channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & If the U\+I\+Image contains alpha channel, then the options are\+:
+\begin{DoxyItemize}
+\item generate 32-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B\+A8888} (default one)
+\item generate 24-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B888}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B\+A4444}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B5\+A1}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B565}
+\item generate 8-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Texture2\+D\+::\+Pixel\+Format\+::\+A8} (only use it if you use just 1 color)
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+How does it work ?
+\begin{DoxyItemize}
+\item If the image is an \hyperlink{structRGBA}{R\+G\+BA} (with Alpha) then the default pixel format will be used (it can be a 8-\/bit, 16-\/bit or 32-\/bit texture)
+\item If the image is an R\+GB (without Alpha) then\+: If the default pixel format is R\+G\+B\+A8888 then a R\+G\+B\+A8888 (32-\/bit) will be used. Otherwise a R\+G\+B565 (16-\/bit texture) will be used.
+\end{DoxyItemize}
+
+This parameter is not valid for P\+VR / P\+V\+R.\+C\+CZ images.
+
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ae384caf70dece31466fa989f2640a33a}\label{classTexture2D_ae384caf70dece31466fa989f2640a33a}} 
+\index{Texture2D@{Texture2D}!set\+Default\+Alpha\+Pixel\+Format@{set\+Default\+Alpha\+Pixel\+Format}}
+\index{set\+Default\+Alpha\+Pixel\+Format@{set\+Default\+Alpha\+Pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Default\+Alpha\+Pixel\+Format()}{setDefaultAlphaPixelFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Texture2\+D\+::set\+Default\+Alpha\+Pixel\+Format (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+sets the default pixel format for U\+I\+Imagescontains alpha channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & If the U\+I\+Image contains alpha channel, then the options are\+:
+\begin{DoxyItemize}
+\item generate 32-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a165f06116e7b8d9b2481dfc805db4619}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B\+A8888} (default one)
+\item generate 24-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a30ff380a3be74628024063a99fba10f0}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B888}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3660a3d64821411531dc60f54cee4f52}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B\+A4444}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a145a041c8e2080c43fa129fb5b17d8be}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B5\+A1}
+\item generate 16-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220a3b73e4d15701467ed72f157ffaff680a}{Texture2\+D\+::\+Pixel\+Format\+::\+R\+G\+B565}
+\item generate 8-\/bit textures\+: \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220afd301d675be7b677ba979a430a80c010}{Texture2\+D\+::\+Pixel\+Format\+::\+A8} (only use it if you use just 1 color)
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+How does it work ?
+\begin{DoxyItemize}
+\item If the image is an \hyperlink{structRGBA}{R\+G\+BA} (with Alpha) then the default pixel format will be used (it can be a 8-\/bit, 16-\/bit or 32-\/bit texture)
+\item If the image is an R\+GB (without Alpha) then\+: If the default pixel format is R\+G\+B\+A8888 then a R\+G\+B\+A8888 (32-\/bit) will be used. Otherwise a R\+G\+B565 (16-\/bit texture) will be used.
+\end{DoxyItemize}
+
+This parameter is not valid for P\+VR / P\+V\+R.\+C\+CZ images.
+
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}\label{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}} 
+\index{Texture2D@{Texture2D}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{program }\end{DoxyParamCaption})}
+
+Set a shader program to the texture.
+
+It\textquotesingle{}s used by draw\+At\+Point and draw\+In\+Rect \mbox{\Hypertarget{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}\label{classTexture2D_ab1e3f2bdc255d893dfc6ad541ceb29c0}} 
+\index{Texture2D@{Texture2D}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{program }\end{DoxyParamCaption})}
+
+Set a shader program to the texture.
+
+It\textquotesingle{}s used by draw\+At\+Point and draw\+In\+Rect \mbox{\Hypertarget{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}\label{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}} 
+\index{Texture2D@{Texture2D}!set\+MaxS@{set\+MaxS}}
+\index{set\+MaxS@{set\+MaxS}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Max\+S()}{setMaxS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+MaxS (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{maxS }\end{DoxyParamCaption})}
+
+Sets max S. \mbox{\Hypertarget{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}\label{classTexture2D_afff3f3a59a2fec96d6a343a7e4c2ea97}} 
+\index{Texture2D@{Texture2D}!set\+MaxS@{set\+MaxS}}
+\index{set\+MaxS@{set\+MaxS}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Max\+S()}{setMaxS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+MaxS (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{maxS }\end{DoxyParamCaption})}
+
+Sets max S. \mbox{\Hypertarget{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}\label{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}} 
+\index{Texture2D@{Texture2D}!set\+MaxT@{set\+MaxT}}
+\index{set\+MaxT@{set\+MaxT}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Max\+T()}{setMaxT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+MaxT (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{maxT }\end{DoxyParamCaption})}
+
+Sets max T. \mbox{\Hypertarget{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}\label{classTexture2D_add1529d1406a3a408bfaa68bd5af8693}} 
+\index{Texture2D@{Texture2D}!set\+MaxT@{set\+MaxT}}
+\index{set\+MaxT@{set\+MaxT}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Max\+T()}{setMaxT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+MaxT (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{maxT }\end{DoxyParamCaption})}
+
+Sets max T. \mbox{\Hypertarget{classTexture2D_acdea523f6f6306462129e45b185205e4}\label{classTexture2D_acdea523f6f6306462129e45b185205e4}} 
+\index{Texture2D@{Texture2D}!set\+Tex\+Parameters@{set\+Tex\+Parameters}}
+\index{set\+Tex\+Parameters@{set\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Tex\+Parameters()}{setTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Tex\+Parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} \&}]{tex\+Params }\end{DoxyParamCaption})}
+
+Sets the min filter, mag filter, wrap s and wrap t texture parameters. If the texture size is N\+P\+OT (non power of 2), then in can only use G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE in G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+\_\+\{S,T\}.
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the input parameter will be changed
+In js: var setBlendFunc(var arg1, var arg2, var arg3, var arg4)
+In lua: local setBlendFunc(local arg1, local arg2, local arg3, local arg4)
+\end{DoxyCode}
+ 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_acdea523f6f6306462129e45b185205e4}\label{classTexture2D_acdea523f6f6306462129e45b185205e4}} 
+\index{Texture2D@{Texture2D}!set\+Tex\+Parameters@{set\+Tex\+Parameters}}
+\index{set\+Tex\+Parameters@{set\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Tex\+Parameters()}{setTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Texture2\+D\+::set\+Tex\+Parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} \&}]{tex\+Params }\end{DoxyParamCaption})}
+
+Sets the min filter, mag filter, wrap s and wrap t texture parameters. If the texture size is N\+P\+OT (non power of 2), then in can only use G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE in G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+\_\+\{S,T\}.
+
+\begin{DoxyWarning}{Warning}
+Calling this method could allocate additional texture memory.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+v0.\+8 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the input parameter will be changed
+In js: var setBlendFunc(var arg1, var arg2, var arg3, var arg4)
+In lua: local setBlendFunc(local arg1, local arg2, local arg3, local arg4)
+\end{DoxyCode}
+ 
+\end{DoxySince}
+\mbox{\Hypertarget{classTexture2D_a002022936392284060c890589b3a4bca}\label{classTexture2D_a002022936392284060c890589b3a4bca}} 
+\index{Texture2D@{Texture2D}!set\+Tex\+Parameters@{set\+Tex\+Parameters}}
+\index{set\+Tex\+Parameters@{set\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Tex\+Parameters()}{setTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Texture2\+D\+::set\+Tex\+Parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} $\ast$}]{tex\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTexture2D_a002022936392284060c890589b3a4bca}\label{classTexture2D_a002022936392284060c890589b3a4bca}} 
+\index{Texture2D@{Texture2D}!set\+Tex\+Parameters@{set\+Tex\+Parameters}}
+\index{set\+Tex\+Parameters@{set\+Tex\+Parameters}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{set\+Tex\+Parameters()}{setTexParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Texture2\+D\+::set\+Tex\+Parameters (\begin{DoxyParamCaption}\item[{const \hyperlink{classTexture2D_af2ea04a3dfcdf7274db17dda4bd555e3}{Tex\+Params} $\ast$}]{tex\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}\label{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}} 
+\index{Texture2D@{Texture2D}!update\+With\+Data@{update\+With\+Data}}
+\index{update\+With\+Data@{update\+With\+Data}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{update\+With\+Data()}{updateWithData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::update\+With\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{int}]{offsetX,  }\item[{int}]{offsetY,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+Update with texture data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em offsetX} & Specifies a texel offset in the x direction within the texture array. \\
+\hline
+{\em offsetY} & Specifies a texel offset in the y direction within the texture array. \\
+\hline
+{\em width} & Specifies the width of the texture subimage. \\
+\hline
+{\em height} & Specifies the height of the texture subimage. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}\label{classTexture2D_a06d6b7b456d0211776628f67e686f1bc}} 
+\index{Texture2D@{Texture2D}!update\+With\+Data@{update\+With\+Data}}
+\index{update\+With\+Data@{update\+With\+Data}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{update\+With\+Data()}{updateWithData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Texture2\+D\+::update\+With\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{int}]{offsetX,  }\item[{int}]{offsetY,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+Update with texture data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Specifies a pointer to the image data in memory. \\
+\hline
+{\em offsetX} & Specifies a texel offset in the x direction within the texture array. \\
+\hline
+{\em offsetY} & Specifies a texel offset in the y direction within the texture array. \\
+\hline
+{\em width} & Specifies the width of the texture subimage. \\
+\hline
+{\em height} & Specifies the height of the texture subimage. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTexture2D_a4cd0c2d737eea24037dec491e4a7a5ce}\label{classTexture2D_a4cd0c2d737eea24037dec491e4a7a5ce}} 
+\index{Texture2D@{Texture2D}!\+\_\+content\+Size@{\+\_\+content\+Size}}
+\index{\+\_\+content\+Size@{\+\_\+content\+Size}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+content\+Size}{\_contentSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Texture2\+D\+::\+\_\+content\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+content size \mbox{\Hypertarget{classTexture2D_a6c6efa029970d1ab412ed24a9dc1a5f1}\label{classTexture2D_a6c6efa029970d1ab412ed24a9dc1a5f1}} 
+\index{Texture2D@{Texture2D}!\+\_\+has\+Mipmaps@{\+\_\+has\+Mipmaps}}
+\index{\+\_\+has\+Mipmaps@{\+\_\+has\+Mipmaps}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+has\+Mipmaps}{\_hasMipmaps}}
+{\footnotesize\ttfamily bool Texture2\+D\+::\+\_\+has\+Mipmaps\hspace{0.3cm}{\ttfamily [protected]}}
+
+whether or not the texture has mip maps \mbox{\Hypertarget{classTexture2D_a31a436824796fa6eba3ae5db84142ef3}\label{classTexture2D_a31a436824796fa6eba3ae5db84142ef3}} 
+\index{Texture2D@{Texture2D}!\+\_\+has\+Premultiplied\+Alpha@{\+\_\+has\+Premultiplied\+Alpha}}
+\index{\+\_\+has\+Premultiplied\+Alpha@{\+\_\+has\+Premultiplied\+Alpha}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+has\+Premultiplied\+Alpha}{\_hasPremultipliedAlpha}}
+{\footnotesize\ttfamily bool Texture2\+D\+::\+\_\+has\+Premultiplied\+Alpha\hspace{0.3cm}{\ttfamily [protected]}}
+
+whether or not the texture has their Alpha premultiplied \mbox{\Hypertarget{classTexture2D_a02773ea122d74c18db5964be9cafb911}\label{classTexture2D_a02773ea122d74c18db5964be9cafb911}} 
+\index{Texture2D@{Texture2D}!\+\_\+maxS@{\+\_\+maxS}}
+\index{\+\_\+maxS@{\+\_\+maxS}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+maxS}{\_maxS}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::\+\_\+maxS\hspace{0.3cm}{\ttfamily [protected]}}
+
+texture max S \mbox{\Hypertarget{classTexture2D_a78c00a0c3ebf812a37ba3539b71aa0fd}\label{classTexture2D_a78c00a0c3ebf812a37ba3539b71aa0fd}} 
+\index{Texture2D@{Texture2D}!\+\_\+maxT@{\+\_\+maxT}}
+\index{\+\_\+maxT@{\+\_\+maxT}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+maxT}{\_maxT}}
+{\footnotesize\ttfamily G\+Lfloat Texture2\+D\+::\+\_\+maxT\hspace{0.3cm}{\ttfamily [protected]}}
+
+texture max T \mbox{\Hypertarget{classTexture2D_afd329b5789c733a418d8b947af606439}\label{classTexture2D_afd329b5789c733a418d8b947af606439}} 
+\index{Texture2D@{Texture2D}!\+\_\+name@{\+\_\+name}}
+\index{\+\_\+name@{\+\_\+name}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+name}{\_name}}
+{\footnotesize\ttfamily G\+Luint Texture2\+D\+::\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+texture name \mbox{\Hypertarget{classTexture2D_a441a4aac7b87627925bc0f7118b19197}\label{classTexture2D_a441a4aac7b87627925bc0f7118b19197}} 
+\index{Texture2D@{Texture2D}!\+\_\+pixel\+Format@{\+\_\+pixel\+Format}}
+\index{\+\_\+pixel\+Format@{\+\_\+pixel\+Format}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+pixel\+Format}{\_pixelFormat}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} Texture2\+D\+::\+\_\+pixel\+Format\hspace{0.3cm}{\ttfamily [protected]}}
+
+pixel format of the texture \mbox{\Hypertarget{classTexture2D_a956e691335f81bbba88519433f3dd32a}\label{classTexture2D_a956e691335f81bbba88519433f3dd32a}} 
+\index{Texture2D@{Texture2D}!\+\_\+pixels\+High@{\+\_\+pixels\+High}}
+\index{\+\_\+pixels\+High@{\+\_\+pixels\+High}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+pixels\+High}{\_pixelsHigh}}
+{\footnotesize\ttfamily int Texture2\+D\+::\+\_\+pixels\+High\hspace{0.3cm}{\ttfamily [protected]}}
+
+height in pixels \mbox{\Hypertarget{classTexture2D_aafe73e21b23f281bf37f8747681bd597}\label{classTexture2D_aafe73e21b23f281bf37f8747681bd597}} 
+\index{Texture2D@{Texture2D}!\+\_\+pixels\+Wide@{\+\_\+pixels\+Wide}}
+\index{\+\_\+pixels\+Wide@{\+\_\+pixels\+Wide}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+pixels\+Wide}{\_pixelsWide}}
+{\footnotesize\ttfamily int Texture2\+D\+::\+\_\+pixels\+Wide\hspace{0.3cm}{\ttfamily [protected]}}
+
+width in pixels \mbox{\Hypertarget{classTexture2D_a446077c65f0e78f1f6cd91058cf8634a}\label{classTexture2D_a446077c65f0e78f1f6cd91058cf8634a}} 
+\index{Texture2D@{Texture2D}!\+\_\+shader\+Program@{\+\_\+shader\+Program}}
+\index{\+\_\+shader\+Program@{\+\_\+shader\+Program}!Texture2D@{Texture2D}}
+\subsubsection{\texorpdfstring{\+\_\+shader\+Program}{\_shaderProgram}}
+{\footnotesize\ttfamily \hyperlink{classGLProgram}{G\+L\+Program} $\ast$ Texture2\+D\+::\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+shader program used by draw\+At\+Point and draw\+In\+Rect 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Texture2\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Texture2\+D.\+cpp\end{DoxyCompactItemize}

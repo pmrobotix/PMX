@@ -1,0 +1,180 @@
+\hypertarget{classutils_1_1Thread}{}\section{utils\+:\+:Thread Class Reference}
+\label{classutils_1_1Thread}\index{utils\+::\+Thread@{utils\+::\+Thread}}
+
+
+Cette classe encapsule l\textquotesingle{}implémentation des threads.  
+
+
+
+
+{\ttfamily \#include $<$Thread.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+:\+:Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutils_1_1Thread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+:\+:Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classutils_1_1Thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_aea8daf2decfe3206f7ce6f89e7eb0569}\label{classutils_1_1Thread_aea8daf2decfe3206f7ce6f89e7eb0569}} 
+virtual \hyperlink{classutils_1_1Thread_aea8daf2decfe3206f7ce6f89e7eb0569}{$\sim$\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+bool \hyperlink{classutils_1_1Thread_a430ee2b8962147b587157fac97932219}{start} (std\+::string name, int priority=0)
+\begin{DoxyCompactList}\small\item\em Lancement du thread. \end{DoxyCompactList}\item 
+\hyperlink{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}{Thread\+State} \hyperlink{classutils_1_1Thread_ada9233f3e669c925e9ed518201ad31cd}{state} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne l\textquotesingle{}état du thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Thread_a46589324e8fc0735c20268db70d34aa5}\label{classutils_1_1Thread_a46589324e8fc0735c20268db70d34aa5}} 
+void {\bfseries set\+State} (\hyperlink{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}{Thread\+State} \hyperlink{classutils_1_1Thread_ada9233f3e669c925e9ed518201ad31cd}{state})
+\item 
+bool \hyperlink{classutils_1_1Thread_acc5214a88eab5c3bd421e7ee06f66b1a}{is\+Finished} ()
+\begin{DoxyCompactList}\small\item\em Indique si le thread est terminé ou pas démarré. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Thread_a29b8cb62f6b5f80ffe5b050167780f97}\label{classutils_1_1Thread_a29b8cb62f6b5f80ffe5b050167780f97}} 
+void {\bfseries wait\+For\+End} ()
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_ac7174393a61b12f962bfacef078bf43e}\label{classutils_1_1Thread_ac7174393a61b12f962bfacef078bf43e}} 
+void {\bfseries cancel} ()
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_a48b51d705e5e07f19f4acc17c6fc5411}\label{classutils_1_1Thread_a48b51d705e5e07f19f4acc17c6fc5411}} 
+std\+::string {\bfseries name} ()
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_ab3ecfb3efec3bb3d24d82de3fa5d1645}\label{classutils_1_1Thread_ab3ecfb3efec3bb3d24d82de3fa5d1645}} 
+Thread\+Id {\bfseries id} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_a37ac9e17f8e0f6e29541278ede555465}\label{classutils_1_1Thread_a37ac9e17f8e0f6e29541278ede555465}} 
+\hyperlink{classutils_1_1Thread_a37ac9e17f8e0f6e29541278ede555465}{Thread} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classutils_1_1Thread_a2535cf3474384aad6621c0556813097f}{yield} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode libère le controle du thread et permet au processus appelant de traiter un autre thread. \end{DoxyCompactList}\item 
+void \hyperlink{classutils_1_1Thread_a540314edf56707d4f8732af3be6d7044}{sched\+\_\+yield} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode libère le controle du thread et permet au processus appelant de traiter un autre thread de même priorité \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Thread_ad5bc89ff373a37499d1bf12d9624f964}\label{classutils_1_1Thread_ad5bc89ff373a37499d1bf12d9624f964}} 
+void {\bfseries sleep\+\_\+for\+\_\+micros} (int64\+\_\+t usec)
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_abf0fce52d68ec9df1bd813c8b9e50da6}\label{classutils_1_1Thread_abf0fce52d68ec9df1bd813c8b9e50da6}} 
+void {\bfseries sleep\+\_\+for\+\_\+millis} (int64\+\_\+t msec)
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_ae98681ec5fca60939f1a5daff44bcc67}\label{classutils_1_1Thread_ae98681ec5fca60939f1a5daff44bcc67}} 
+void {\bfseries sleep\+\_\+for\+\_\+secs} (int64\+\_\+t sec)
+\item 
+\mbox{\Hypertarget{classutils_1_1Thread_a202b3fabad41b3be6d996043b262a43a}\label{classutils_1_1Thread_a202b3fabad41b3be6d996043b262a43a}} 
+virtual void \hyperlink{classutils_1_1Thread_a202b3fabad41b3be6d996043b262a43a}{execute} ()=0
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}implementation de cette méthode détaille le traitement réalisé par ce thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void $\ast$ \hyperlink{classutils_1_1Thread_a61b6c3d0b87570254646120b323b89f7}{entry\+Point} (void $\ast$object)
+\begin{DoxyCompactList}\small\item\em Cette méthode sert de point d\textquotesingle{}entrée pour l\textquotesingle{}appel à pcreate\+\_\+thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe encapsule l\textquotesingle{}implémentation des threads. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Ajouter les méthodes join() et kill(). \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1Thread_a61b6c3d0b87570254646120b323b89f7}\label{classutils_1_1Thread_a61b6c3d0b87570254646120b323b89f7}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!entry\+Point@{entry\+Point}}
+\index{entry\+Point@{entry\+Point}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{entry\+Point()}{entryPoint()}}
+{\footnotesize\ttfamily void $\ast$ utils\+::\+Thread\+::entry\+Point (\begin{DoxyParamCaption}\item[{void $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Cette méthode sert de point d\textquotesingle{}entrée pour l\textquotesingle{}appel à pcreate\+\_\+thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Instance de \hyperlink{classutils_1_1Thread}{Thread} qui doit être lancé. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutils_1_1Thread_acc5214a88eab5c3bd421e7ee06f66b1a}\label{classutils_1_1Thread_acc5214a88eab5c3bd421e7ee06f66b1a}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{is\+Finished()}{isFinished()}}
+{\footnotesize\ttfamily bool utils\+::\+Thread\+::is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indique si le thread est terminé ou pas démarré. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si le thread est terminé ou simplement créé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Thread_a540314edf56707d4f8732af3be6d7044}\label{classutils_1_1Thread_a540314edf56707d4f8732af3be6d7044}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!sched\+\_\+yield@{sched\+\_\+yield}}
+\index{sched\+\_\+yield@{sched\+\_\+yield}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{sched\+\_\+yield()}{sched\_yield()}}
+{\footnotesize\ttfamily void utils\+::\+Thread\+::sched\+\_\+yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode libère le controle du thread et permet au processus appelant de traiter un autre thread de même priorité 
+
+Donne la main à un autre thread de meme priorité  \hyperlink{classutils_1_1Thread_a540314edf56707d4f8732af3be6d7044}{sched\+\_\+yield()} function checks to see if other processes at the same priority as that of the calling process are R\+E\+A\+DY to run. If so, the calling process yields to them and places itself at the end of the R\+E\+A\+DY process queue. The \hyperlink{classutils_1_1Thread_a540314edf56707d4f8732af3be6d7044}{sched\+\_\+yield()} function never yields to a lower priority process. \mbox{\Hypertarget{classutils_1_1Thread_a430ee2b8962147b587157fac97932219}\label{classutils_1_1Thread_a430ee2b8962147b587157fac97932219}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!start@{start}}
+\index{start@{start}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool utils\+::\+Thread\+::start (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{priority = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Lancement du thread. 
+
+Start thread.
+
+Cette méthode initialise le thread et appelle la méthode \+::execute().
+
+name of the thread
+
+priority \+:0 is low priority ; 99 is high priority ; default 0
+
+return Returns false if the thread was successfully started, true if there was an error starting the thread \mbox{\Hypertarget{classutils_1_1Thread_ada9233f3e669c925e9ed518201ad31cd}\label{classutils_1_1Thread_ada9233f3e669c925e9ed518201ad31cd}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!state@{state}}
+\index{state@{state}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{state()}{state()}}
+{\footnotesize\ttfamily \hyperlink{Thread_8hpp_a504e3834817aefe4aa5d0403791dd269}{Thread\+State} utils\+::\+Thread\+::state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cette méthode retourne l\textquotesingle{}état du thread. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}état du thread. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Thread_a2535cf3474384aad6621c0556813097f}\label{classutils_1_1Thread_a2535cf3474384aad6621c0556813097f}} 
+\index{utils\+::\+Thread@{utils\+::\+Thread}!yield@{yield}}
+\index{yield@{yield}!utils\+::\+Thread@{utils\+::\+Thread}}
+\subsubsection{\texorpdfstring{yield()}{yield()}}
+{\footnotesize\ttfamily void utils\+::\+Thread\+::yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode libère le controle du thread et permet au processus appelant de traiter un autre thread. 
+
+Donne la main à un autre thread. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Thread/\hyperlink{Thread_8hpp}{Thread.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Thread/\hyperlink{Thread_8cpp}{Thread.\+cpp}\end{DoxyCompactItemize}

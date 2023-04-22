@@ -1,0 +1,335 @@
+\hypertarget{classMd25}{}\section{Md25 Class Reference}
+\label{classMd25}\index{Md25@{Md25}}
+
+
+Cette classe permet d\textquotesingle{}interagir avec la carte de motorisation M\+D25.  
+
+
+
+
+{\ttfamily \#include $<$Md25.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMd25_a9191009668233af38c0545c3fa638b74}\label{classMd25_a9191009668233af38c0545c3fa638b74}} 
+virtual \hyperlink{classMd25_a9191009668233af38c0545c3fa638b74}{$\sim$\+Md25} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMd25_aafcc18c70fd3398bbb1717957269e155}\label{classMd25_aafcc18c70fd3398bbb1717957269e155}} 
+\hyperlink{classMd25_aafcc18c70fd3398bbb1717957269e155}{Md25} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMd25_a953794c697add1778ff8ae370c5ec958}\label{classMd25_a953794c697add1778ff8ae370c5ec958}} 
+void {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classMd25_a3ffb27f7479370ec871892d4ecf18216}\label{classMd25_a3ffb27f7479370ec871892d4ecf18216}} 
+void {\bfseries setup} ()
+\item 
+\mbox{\Hypertarget{classMd25_a922ef7a8c805a8aab2454557111cb7a2}\label{classMd25_a922ef7a8c805a8aab2454557111cb7a2}} 
+bool {\bfseries is\+Connected} ()
+\item 
+\mbox{\Hypertarget{classMd25_a695f4a5fe6ef9b19615119f2902ca50f}\label{classMd25_a695f4a5fe6ef9b19615119f2902ca50f}} 
+void {\bfseries reset\+Encoders} ()
+\item 
+void \hyperlink{classMd25_a1bb2bac91e24a008856f5b3b7909fbf8}{get\+Encoder} (long $\ast$value, unsigned char M\+D25\+Register)
+\begin{DoxyCompactList}\small\item\em Read encoder for channel 1 or 2. \end{DoxyCompactList}\item 
+long \hyperlink{classMd25_a7ae9bff45c48099fe56746360135a660}{ensure\+Get\+Encoder} (long last, unsigned char M\+D25\+Register)
+\begin{DoxyCompactList}\small\item\em Read encoder for channel 1 or 2. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_ada7700354c1d30fa2463b364ab705247}{get\+Software\+Version} (void)
+\begin{DoxyCompactList}\small\item\em Read current software version. \end{DoxyCompactList}\item 
+float \hyperlink{classMd25_aab64f06aef0d5e0214772c519eb6a2e8}{get\+Battery\+Volts} (void)
+\begin{DoxyCompactList}\small\item\em Read battery voltage. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a50bd56e7105bb66c2392fc6f6708f0d1}{get\+Acceleration\+Rate} (void)
+\begin{DoxyCompactList}\small\item\em read acceleration rate. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a1535d2b845905df746a4e1e3620d7cfb}{get\+Motor1\+Current} (void)
+\begin{DoxyCompactList}\small\item\em read current from motor channel 1. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a7c7811080004fe8c066b4fd50260e252}{get\+Motor2\+Current} (void)
+\begin{DoxyCompactList}\small\item\em read current from motor channel 2. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a630e4aebcbee4178b5ce5a7044f8f2ce}{get\+Motor1\+Speed} (void)
+\begin{DoxyCompactList}\small\item\em read current speed register for motor channel 1. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a2ff03a376f76d6e0132a722fe77acfb7}{get\+Motor2\+Speed} (void)
+\begin{DoxyCompactList}\small\item\em read current speed register for motor channel 2. \end{DoxyCompactList}\item 
+int \hyperlink{classMd25_a8bd5ce341e890968e63be0f8809d9f5b}{get\+Mode} (void)
+\begin{DoxyCompactList}\small\item\em read current mode. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a4f1c692574af8ecc2b7a3d3a35a26d51}{set\+Mode} (unsigned char mode)
+\begin{DoxyCompactList}\small\item\em set system mode. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a867fba5da9401423ee3dabfc18bbc1ed}{set\+Acceleration\+Rate} (unsigned char rate)
+\begin{DoxyCompactList}\small\item\em set acceleration rate. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a470d70216b3a09da61e59a2074619ee2}{set\+Command} (unsigned char command)
+\begin{DoxyCompactList}\small\item\em send command to command register. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a47d84a3612a8a59db1b48165eb143253}{set\+Speed\+Registers} (int speed\+\_\+1, int speed\+\_\+2)
+\begin{DoxyCompactList}\small\item\em set speed registers for both channels. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a0b8767325de548ebb8b75bf6f9bbcd77}{ensure\+Set\+Speed} (int speed, unsigned char reg)
+\begin{DoxyCompactList}\small\item\em ensure (2 times) to set speed register for channel 1 or 2. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a2f3b787d1ba19a791f9256898fca1413}{set\+Speed\+Reg} (int speed, unsigned char reg)
+\begin{DoxyCompactList}\small\item\em set speed register for channel 1 or 2. \end{DoxyCompactList}\item 
+void \hyperlink{classMd25_a009f1a95005464e6f1cf06a81bb2319f}{stop\+Motor} (unsigned char reg)
+\begin{DoxyCompactList}\small\item\em switch motor (1 or 2) off. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMd25_ada207481d3843059ee542290cf2d7572}\label{classMd25_ada207481d3843059ee542290cf2d7572}} 
+void \hyperlink{classMd25_ada207481d3843059ee542290cf2d7572}{stop\+Motors} (void)
+\begin{DoxyCompactList}\small\item\em switch both motors off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette classe permet d\textquotesingle{}interagir avec la carte de motorisation M\+D25. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMd25_a7ae9bff45c48099fe56746360135a660}\label{classMd25_a7ae9bff45c48099fe56746360135a660}} 
+\index{Md25@{Md25}!ensure\+Get\+Encoder@{ensure\+Get\+Encoder}}
+\index{ensure\+Get\+Encoder@{ensure\+Get\+Encoder}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{ensure\+Get\+Encoder()}{ensureGetEncoder()}}
+{\footnotesize\ttfamily long Md25\+::ensure\+Get\+Encoder (\begin{DoxyParamCaption}\item[{long}]{last,  }\item[{unsigned char}]{M\+D25\+Register }\end{DoxyParamCaption})}
+
+
+
+Read encoder for channel 1 or 2. 
+
+\begin{DoxyReturn}{Returns}
+Last value if error otherwise the new value of the encoder. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em last} & Last value of current encoder. \\
+\hline
+{\em M\+D25\+Register} & Choose M\+D25\+\_\+\+E\+N\+C\+O\+D\+E\+R1\+\_\+\+R\+EG ou M\+D25\+\_\+\+E\+N\+C\+O\+D\+E\+R2\+\_\+\+R\+EG. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a0b8767325de548ebb8b75bf6f9bbcd77}\label{classMd25_a0b8767325de548ebb8b75bf6f9bbcd77}} 
+\index{Md25@{Md25}!ensure\+Set\+Speed@{ensure\+Set\+Speed}}
+\index{ensure\+Set\+Speed@{ensure\+Set\+Speed}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{ensure\+Set\+Speed()}{ensureSetSpeed()}}
+{\footnotesize\ttfamily void Md25\+::ensure\+Set\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed,  }\item[{unsigned char}]{reg }\end{DoxyParamCaption})}
+
+
+
+ensure (2 times) to set speed register for channel 1 or 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & $>$0 (M\+D25 mode0) =$>$ 0-\/128-\/255 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a50bd56e7105bb66c2392fc6f6708f0d1}\label{classMd25_a50bd56e7105bb66c2392fc6f6708f0d1}} 
+\index{Md25@{Md25}!get\+Acceleration\+Rate@{get\+Acceleration\+Rate}}
+\index{get\+Acceleration\+Rate@{get\+Acceleration\+Rate}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Acceleration\+Rate()}{getAccelerationRate()}}
+{\footnotesize\ttfamily int Md25\+::get\+Acceleration\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read acceleration rate. 
+
+\begin{DoxyReturn}{Returns}
+acceleration rate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_aab64f06aef0d5e0214772c519eb6a2e8}\label{classMd25_aab64f06aef0d5e0214772c519eb6a2e8}} 
+\index{Md25@{Md25}!get\+Battery\+Volts@{get\+Battery\+Volts}}
+\index{get\+Battery\+Volts@{get\+Battery\+Volts}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Battery\+Volts()}{getBatteryVolts()}}
+{\footnotesize\ttfamily float Md25\+::get\+Battery\+Volts (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read battery voltage. 
+
+\begin{DoxyReturn}{Returns}
+voltage value in float format 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a1bb2bac91e24a008856f5b3b7909fbf8}\label{classMd25_a1bb2bac91e24a008856f5b3b7909fbf8}} 
+\index{Md25@{Md25}!get\+Encoder@{get\+Encoder}}
+\index{get\+Encoder@{get\+Encoder}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Encoder()}{getEncoder()}}
+{\footnotesize\ttfamily void Md25\+::get\+Encoder (\begin{DoxyParamCaption}\item[{long $\ast$}]{value,  }\item[{unsigned char}]{M\+D25\+Register }\end{DoxyParamCaption})}
+
+
+
+Read encoder for channel 1 or 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 32-\/bit signed long value of current encoder value for channel 1 or 2. \\
+\hline
+{\em M\+D25\+Register} & Choose M\+D25\+\_\+\+E\+N\+C\+O\+D\+E\+R1\+\_\+\+R\+EG ou M\+D25\+\_\+\+E\+N\+C\+O\+D\+E\+R2\+\_\+\+R\+EG. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a8bd5ce341e890968e63be0f8809d9f5b}\label{classMd25_a8bd5ce341e890968e63be0f8809d9f5b}} 
+\index{Md25@{Md25}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Mode()}{getMode()}}
+{\footnotesize\ttfamily int Md25\+::get\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read current mode. 
+
+\begin{DoxyReturn}{Returns}
+mode value (0, 1, 2, or 3); default is mode 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a1535d2b845905df746a4e1e3620d7cfb}\label{classMd25_a1535d2b845905df746a4e1e3620d7cfb}} 
+\index{Md25@{Md25}!get\+Motor1\+Current@{get\+Motor1\+Current}}
+\index{get\+Motor1\+Current@{get\+Motor1\+Current}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Motor1\+Current()}{getMotor1Current()}}
+{\footnotesize\ttfamily int Md25\+::get\+Motor1\+Current (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read current from motor channel 1. 
+
+\begin{DoxyReturn}{Returns}
+current value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a630e4aebcbee4178b5ce5a7044f8f2ce}\label{classMd25_a630e4aebcbee4178b5ce5a7044f8f2ce}} 
+\index{Md25@{Md25}!get\+Motor1\+Speed@{get\+Motor1\+Speed}}
+\index{get\+Motor1\+Speed@{get\+Motor1\+Speed}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Motor1\+Speed()}{getMotor1Speed()}}
+{\footnotesize\ttfamily int Md25\+::get\+Motor1\+Speed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read current speed register for motor channel 1. 
+
+\begin{DoxyReturn}{Returns}
+speed value (0-\/$>$255); meaning dependent on mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a7c7811080004fe8c066b4fd50260e252}\label{classMd25_a7c7811080004fe8c066b4fd50260e252}} 
+\index{Md25@{Md25}!get\+Motor2\+Current@{get\+Motor2\+Current}}
+\index{get\+Motor2\+Current@{get\+Motor2\+Current}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Motor2\+Current()}{getMotor2Current()}}
+{\footnotesize\ttfamily int Md25\+::get\+Motor2\+Current (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read current from motor channel 2. 
+
+\begin{DoxyReturn}{Returns}
+current value in apprx. units of 0.\+1amp 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a2ff03a376f76d6e0132a722fe77acfb7}\label{classMd25_a2ff03a376f76d6e0132a722fe77acfb7}} 
+\index{Md25@{Md25}!get\+Motor2\+Speed@{get\+Motor2\+Speed}}
+\index{get\+Motor2\+Speed@{get\+Motor2\+Speed}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Motor2\+Speed()}{getMotor2Speed()}}
+{\footnotesize\ttfamily int Md25\+::get\+Motor2\+Speed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+read current speed register for motor channel 2. 
+
+\begin{DoxyReturn}{Returns}
+speed value (0-\/$>$255); meaning dependent on mode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_ada7700354c1d30fa2463b364ab705247}\label{classMd25_ada7700354c1d30fa2463b364ab705247}} 
+\index{Md25@{Md25}!get\+Software\+Version@{get\+Software\+Version}}
+\index{get\+Software\+Version@{get\+Software\+Version}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{get\+Software\+Version()}{getSoftwareVersion()}}
+{\footnotesize\ttfamily int Md25\+::get\+Software\+Version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read current software version. 
+
+\begin{DoxyReturn}{Returns}
+version number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMd25_a867fba5da9401423ee3dabfc18bbc1ed}\label{classMd25_a867fba5da9401423ee3dabfc18bbc1ed}} 
+\index{Md25@{Md25}!set\+Acceleration\+Rate@{set\+Acceleration\+Rate}}
+\index{set\+Acceleration\+Rate@{set\+Acceleration\+Rate}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{set\+Acceleration\+Rate()}{setAccelerationRate()}}
+{\footnotesize\ttfamily void Md25\+::set\+Acceleration\+Rate (\begin{DoxyParamCaption}\item[{unsigned char}]{rate }\end{DoxyParamCaption})}
+
+
+
+set acceleration rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & acceleration rate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a470d70216b3a09da61e59a2074619ee2}\label{classMd25_a470d70216b3a09da61e59a2074619ee2}} 
+\index{Md25@{Md25}!set\+Command@{set\+Command}}
+\index{set\+Command@{set\+Command}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{set\+Command()}{setCommand()}}
+{\footnotesize\ttfamily void Md25\+::set\+Command (\begin{DoxyParamCaption}\item[{unsigned char}]{command }\end{DoxyParamCaption})}
+
+
+
+send command to command register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & command code.\\
+\hline
+\end{DoxyParams}
+M\+D25\+\_\+\+R\+E\+S\+E\+T\+\_\+\+E\+N\+C\+O\+D\+E\+RS 0x20 M\+D25\+\_\+\+D\+I\+A\+B\+LE S\+P\+E\+E\+D\+\_\+\+R\+E\+G\+U\+L\+A\+T\+I\+ON 0x30 M\+D25\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+R\+E\+G\+U\+L\+A\+T\+I\+ON 0x31 M\+D25\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+T\+I\+M\+E\+O\+UT 0x32 M\+D25\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+T\+I\+M\+E\+O\+UT 0x33 \mbox{\Hypertarget{classMd25_a4f1c692574af8ecc2b7a3d3a35a26d51}\label{classMd25_a4f1c692574af8ecc2b7a3d3a35a26d51}} 
+\index{Md25@{Md25}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{set\+Mode()}{setMode()}}
+{\footnotesize\ttfamily void Md25\+::set\+Mode (\begin{DoxyParamCaption}\item[{unsigned char}]{mode }\end{DoxyParamCaption})}
+
+
+
+set system mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & value (0, 1, 2, or 3) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a2f3b787d1ba19a791f9256898fca1413}\label{classMd25_a2f3b787d1ba19a791f9256898fca1413}} 
+\index{Md25@{Md25}!set\+Speed\+Reg@{set\+Speed\+Reg}}
+\index{set\+Speed\+Reg@{set\+Speed\+Reg}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{set\+Speed\+Reg()}{setSpeedReg()}}
+{\footnotesize\ttfamily void Md25\+::set\+Speed\+Reg (\begin{DoxyParamCaption}\item[{int}]{speed,  }\item[{unsigned char}]{reg }\end{DoxyParamCaption})}
+
+
+
+set speed register for channel 1 or 2. 
+
+Effect of value is dependent on system mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & speed register for channel (-\/128-\/$>$127) \\
+\hline
+{\em M\+D25\+\_\+\+S\+P\+E\+E\+D1\+\_\+\+R\+EG} & or M\+D25\+\_\+\+S\+P\+E\+E\+D2\+\_\+\+R\+EG \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a47d84a3612a8a59db1b48165eb143253}\label{classMd25_a47d84a3612a8a59db1b48165eb143253}} 
+\index{Md25@{Md25}!set\+Speed\+Registers@{set\+Speed\+Registers}}
+\index{set\+Speed\+Registers@{set\+Speed\+Registers}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{set\+Speed\+Registers()}{setSpeedRegisters()}}
+{\footnotesize\ttfamily void Md25\+::set\+Speed\+Registers (\begin{DoxyParamCaption}\item[{int}]{speed\+\_\+1,  }\item[{int}]{speed\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+set speed registers for both channels. 
+
+Effect of value is dependent on system mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed\+\_\+1} & speed register for channel 1 (-\/128-\/$>$127) \\
+\hline
+{\em speed\+\_\+2} & speed register for channel 2 (-\/128-\/$>$127) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMd25_a009f1a95005464e6f1cf06a81bb2319f}\label{classMd25_a009f1a95005464e6f1cf06a81bb2319f}} 
+\index{Md25@{Md25}!stop\+Motor@{stop\+Motor}}
+\index{stop\+Motor@{stop\+Motor}!Md25@{Md25}}
+\subsubsection{\texorpdfstring{stop\+Motor()}{stopMotor()}}
+{\footnotesize\ttfamily void Md25\+::stop\+Motor (\begin{DoxyParamCaption}\item[{unsigned char}]{reg }\end{DoxyParamCaption})}
+
+
+
+switch motor (1 or 2) off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M\+D25\+\_\+\+S\+P\+E\+E\+D1\+\_\+\+R\+EG} & or M\+D25\+\_\+\+S\+P\+E\+E\+D2\+\_\+\+R\+EG \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{Md25_8hpp}{Md25.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+A\+P\+F9328\+\_\+\+A\+R\+M/\hyperlink{Md25_8cpp}{Md25.\+cpp}\end{DoxyCompactItemize}

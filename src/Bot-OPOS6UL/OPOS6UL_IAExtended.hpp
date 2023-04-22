@@ -24,20 +24,25 @@ public:
     PlaygroundObjectID opponent_3;
     PlaygroundObjectID opponent_4;
 
-    PlaygroundObjectID area_alea_violet;
-    PlaygroundObjectID area_alea_yellow;
 
-    PlaygroundObjectID area_3_start_violet;
-    PlaygroundObjectID area_3_start_yellow;
+    PlaygroundObjectID area_start_blue;
+    PlaygroundObjectID area_start_green;
 
-    PlaygroundObjectID area_triangle_violet;
-    PlaygroundObjectID area_triangle_yellow;
 
-    PlaygroundObjectID area_distrib_violet;
-    PlaygroundObjectID area_distrib_yellow;
-
-    PlaygroundObjectID area_galerie_violet;
-    PlaygroundObjectID area_galerie_yellow;
+//    PlaygroundObjectID area_alea_violet;
+//    PlaygroundObjectID area_alea_yellow;
+//
+//    PlaygroundObjectID area_3_start_violet;
+//    PlaygroundObjectID area_3_start_yellow;
+//
+//    PlaygroundObjectID area_triangle_violet;
+//    PlaygroundObjectID area_triangle_yellow;
+//
+//    PlaygroundObjectID area_distrib_violet;
+//    PlaygroundObjectID area_distrib_yellow;
+//
+//    PlaygroundObjectID area_galerie_violet;
+//    PlaygroundObjectID area_galerie_yellow;
 
 //    PlaygroundObjectID area_alea_yellow;
 //    PlaygroundObjectID area_alea_blue;

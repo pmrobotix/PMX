@@ -1,0 +1,103 @@
+\hypertarget{classbtVertexBufferDescriptor}{}\section{bt\+Vertex\+Buffer\+Descriptor Class Reference}
+\label{classbtVertexBufferDescriptor}\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+
+
+Inheritance diagram for bt\+Vertex\+Buffer\+Descriptor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtVertexBufferDescriptor__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a90f92d0f6b588348cfd365cf70596e8f}\label{classbtVertexBufferDescriptor_a90f92d0f6b588348cfd365cf70596e8f}} 
+enum {\bfseries Buffer\+Types} \{ {\bfseries C\+P\+U\+\_\+\+B\+U\+F\+F\+ER}, 
+{\bfseries D\+X11\+\_\+\+B\+U\+F\+F\+ER}, 
+{\bfseries O\+P\+E\+N\+G\+L\+\_\+\+B\+U\+F\+F\+ER}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a1b4a0ce94d997324610e8b98e228d5fb}\label{classbtVertexBufferDescriptor_a1b4a0ce94d997324610e8b98e228d5fb}} 
+virtual bool {\bfseries has\+Vertex\+Positions} () const
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a642695b86669cddd89bdae550a8332bb}\label{classbtVertexBufferDescriptor_a642695b86669cddd89bdae550a8332bb}} 
+virtual bool {\bfseries has\+Normals} () const
+\item 
+virtual Buffer\+Types \hyperlink{classbtVertexBufferDescriptor_a1744d7c3b3452f130a215927d63ab130}{get\+Buffer\+Type} () const =0
+\item 
+virtual int \hyperlink{classbtVertexBufferDescriptor_a4aa0eefd247d63f25f142ffaa5203768}{get\+Vertex\+Offset} () const
+\item 
+virtual int \hyperlink{classbtVertexBufferDescriptor_af6dd3dc1695b1837d5706337d659a60e}{get\+Vertex\+Stride} () const
+\item 
+virtual int \hyperlink{classbtVertexBufferDescriptor_a38dab3efcecf209f8d2486b2cc6c2288}{get\+Normal\+Offset} () const
+\item 
+virtual int \hyperlink{classbtVertexBufferDescriptor_a7a5c20d4d889bfc14d169c9d94586bb4}{get\+Normal\+Stride} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a3e861a636f88c138ba3563b62c471057}\label{classbtVertexBufferDescriptor_a3e861a636f88c138ba3563b62c471057}} 
+bool {\bfseries m\+\_\+has\+Vertex\+Positions}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_adfd35400605cff7d521282750283a7a2}\label{classbtVertexBufferDescriptor_adfd35400605cff7d521282750283a7a2}} 
+bool {\bfseries m\+\_\+has\+Normals}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a0cc09360818e4b0d16e6ca0b8746b6ae}\label{classbtVertexBufferDescriptor_a0cc09360818e4b0d16e6ca0b8746b6ae}} 
+int {\bfseries m\+\_\+vertex\+Offset}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_afd308d4b38d5050d0ad8da232518f435}\label{classbtVertexBufferDescriptor_afd308d4b38d5050d0ad8da232518f435}} 
+int {\bfseries m\+\_\+vertex\+Stride}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_aec53d6fab025322ed6f6efe8be561a74}\label{classbtVertexBufferDescriptor_aec53d6fab025322ed6f6efe8be561a74}} 
+int {\bfseries m\+\_\+normal\+Offset}
+\item 
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_afd801257bdefce6cee72d77e4660ecd9}\label{classbtVertexBufferDescriptor_afd801257bdefce6cee72d77e4660ecd9}} 
+int {\bfseries m\+\_\+normal\+Stride}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a1744d7c3b3452f130a215927d63ab130}\label{classbtVertexBufferDescriptor_a1744d7c3b3452f130a215927d63ab130}} 
+\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}!get\+Buffer\+Type@{get\+Buffer\+Type}}
+\index{get\+Buffer\+Type@{get\+Buffer\+Type}!bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+\subsubsection{\texorpdfstring{get\+Buffer\+Type()}{getBufferType()}}
+{\footnotesize\ttfamily virtual Buffer\+Types bt\+Vertex\+Buffer\+Descriptor\+::get\+Buffer\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the type of the vertex buffer descriptor. 
+
+Implemented in \hyperlink{classbtCPUVertexBufferDescriptor_ab0ade8a42a69f574e48abb88b7e5350e}{bt\+C\+P\+U\+Vertex\+Buffer\+Descriptor}, \hyperlink{classbtOpenGLInteropVertexBufferDescriptor_ad53252ccc0b8f46e1b0af4d8ba1cd445}{bt\+Open\+G\+L\+Interop\+Vertex\+Buffer\+Descriptor}, \hyperlink{classbtOpenGLInteropVertexBufferDescriptor_ad53252ccc0b8f46e1b0af4d8ba1cd445}{bt\+Open\+G\+L\+Interop\+Vertex\+Buffer\+Descriptor}, \hyperlink{classbtDX11VertexBufferDescriptor_aaa92499e7319fda25f7cd787b14c4933}{bt\+D\+X11\+Vertex\+Buffer\+Descriptor}, and \hyperlink{classbtDX11VertexBufferDescriptor_aaa92499e7319fda25f7cd787b14c4933}{bt\+D\+X11\+Vertex\+Buffer\+Descriptor}.
+
+\mbox{\Hypertarget{classbtVertexBufferDescriptor_a38dab3efcecf209f8d2486b2cc6c2288}\label{classbtVertexBufferDescriptor_a38dab3efcecf209f8d2486b2cc6c2288}} 
+\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}!get\+Normal\+Offset@{get\+Normal\+Offset}}
+\index{get\+Normal\+Offset@{get\+Normal\+Offset}!bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+\subsubsection{\texorpdfstring{get\+Normal\+Offset()}{getNormalOffset()}}
+{\footnotesize\ttfamily virtual int bt\+Vertex\+Buffer\+Descriptor\+::get\+Normal\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return the vertex offset in floats from the base pointer. \mbox{\Hypertarget{classbtVertexBufferDescriptor_a7a5c20d4d889bfc14d169c9d94586bb4}\label{classbtVertexBufferDescriptor_a7a5c20d4d889bfc14d169c9d94586bb4}} 
+\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}!get\+Normal\+Stride@{get\+Normal\+Stride}}
+\index{get\+Normal\+Stride@{get\+Normal\+Stride}!bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+\subsubsection{\texorpdfstring{get\+Normal\+Stride()}{getNormalStride()}}
+{\footnotesize\ttfamily virtual int bt\+Vertex\+Buffer\+Descriptor\+::get\+Normal\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return the vertex stride in number of floats between vertices. \mbox{\Hypertarget{classbtVertexBufferDescriptor_a4aa0eefd247d63f25f142ffaa5203768}\label{classbtVertexBufferDescriptor_a4aa0eefd247d63f25f142ffaa5203768}} 
+\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}!get\+Vertex\+Offset@{get\+Vertex\+Offset}}
+\index{get\+Vertex\+Offset@{get\+Vertex\+Offset}!bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Offset()}{getVertexOffset()}}
+{\footnotesize\ttfamily virtual int bt\+Vertex\+Buffer\+Descriptor\+::get\+Vertex\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return the vertex offset in floats from the base pointer. \mbox{\Hypertarget{classbtVertexBufferDescriptor_af6dd3dc1695b1837d5706337d659a60e}\label{classbtVertexBufferDescriptor_af6dd3dc1695b1837d5706337d659a60e}} 
+\index{bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}!get\+Vertex\+Stride@{get\+Vertex\+Stride}}
+\index{get\+Vertex\+Stride@{get\+Vertex\+Stride}!bt\+Vertex\+Buffer\+Descriptor@{bt\+Vertex\+Buffer\+Descriptor}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Stride()}{getVertexStride()}}
+{\footnotesize\ttfamily virtual int bt\+Vertex\+Buffer\+Descriptor\+::get\+Vertex\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Return the vertex stride in number of floats between vertices. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Solver\+Vertex\+Buffer.\+h\end{DoxyCompactItemize}

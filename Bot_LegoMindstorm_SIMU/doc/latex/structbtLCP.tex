@@ -1,0 +1,130 @@
+\hypertarget{structbtLCP}{}\section{bt\+L\+CP Struct Reference}
+\label{structbtLCP}\index{bt\+L\+CP@{bt\+L\+CP}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtLCP_a3b93bdc126485234ed4b25b3c43cbe3b}\label{structbtLCP_a3b93bdc126485234ed4b25b3c43cbe3b}} 
+{\bfseries bt\+L\+CP} (int \+\_\+n, int \+\_\+nskip, int \+\_\+nub, bt\+Scalar $\ast$\+\_\+\+Adata, bt\+Scalar $\ast$\+\_\+x, bt\+Scalar $\ast$\+\_\+b, bt\+Scalar $\ast$\+\_\+w, bt\+Scalar $\ast$\+\_\+lo, bt\+Scalar $\ast$\+\_\+hi, bt\+Scalar $\ast$\+\_\+L, bt\+Scalar $\ast$\+\_\+d, bt\+Scalar $\ast$\+\_\+\+Dell, bt\+Scalar $\ast$\+\_\+ell, bt\+Scalar $\ast$\+\_\+tmp, bool $\ast$\+\_\+state, int $\ast$\+\_\+findex, int $\ast$\+\_\+p, int $\ast$\+\_\+C, bt\+Scalar $\ast$$\ast$Arows)
+\item 
+\mbox{\Hypertarget{structbtLCP_a4e1142b9bc604967db46c2fa26c53b19}\label{structbtLCP_a4e1142b9bc604967db46c2fa26c53b19}} 
+int {\bfseries get\+Nub} () const
+\item 
+\mbox{\Hypertarget{structbtLCP_abb2bd986398389b62d9428642e157d3d}\label{structbtLCP_abb2bd986398389b62d9428642e157d3d}} 
+void {\bfseries transfer\+\_\+i\+\_\+to\+\_\+C} (int i)
+\item 
+\mbox{\Hypertarget{structbtLCP_a6078eafa2e4e2c1687cec0393ecca84b}\label{structbtLCP_a6078eafa2e4e2c1687cec0393ecca84b}} 
+void {\bfseries transfer\+\_\+i\+\_\+to\+\_\+N} (int i)
+\item 
+\mbox{\Hypertarget{structbtLCP_a799932d89b0afff17e1620aec228fe3a}\label{structbtLCP_a799932d89b0afff17e1620aec228fe3a}} 
+void {\bfseries transfer\+\_\+i\+\_\+from\+\_\+\+N\+\_\+to\+\_\+C} (int i)
+\item 
+\mbox{\Hypertarget{structbtLCP_af1ecdf66b5febdba9333b1645dce328a}\label{structbtLCP_af1ecdf66b5febdba9333b1645dce328a}} 
+void {\bfseries transfer\+\_\+i\+\_\+from\+\_\+\+C\+\_\+to\+\_\+N} (int i, \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ \&scratch)
+\item 
+\mbox{\Hypertarget{structbtLCP_aa7b6c15a85e7106505f55bbadf4d2dd9}\label{structbtLCP_aa7b6c15a85e7106505f55bbadf4d2dd9}} 
+int {\bfseries numC} () const
+\item 
+\mbox{\Hypertarget{structbtLCP_aa28009ebee17f057a15df1109c82b9a5}\label{structbtLCP_aa28009ebee17f057a15df1109c82b9a5}} 
+int {\bfseries numN} () const
+\item 
+\mbox{\Hypertarget{structbtLCP_a1b3dc439f10e7e52d4bc416cf88bbb51}\label{structbtLCP_a1b3dc439f10e7e52d4bc416cf88bbb51}} 
+int {\bfseries indexC} (int i) const
+\item 
+\mbox{\Hypertarget{structbtLCP_a0f6a862a7ef960ea964aaadb13fddad1}\label{structbtLCP_a0f6a862a7ef960ea964aaadb13fddad1}} 
+int {\bfseries indexN} (int i) const
+\item 
+\mbox{\Hypertarget{structbtLCP_a0cb554a5bad4d27f89a6cbfcc04f4262}\label{structbtLCP_a0cb554a5bad4d27f89a6cbfcc04f4262}} 
+bt\+Scalar {\bfseries Aii} (int i) const
+\item 
+\mbox{\Hypertarget{structbtLCP_adecda8eecba460f3b482ddd3530425e7}\label{structbtLCP_adecda8eecba460f3b482ddd3530425e7}} 
+bt\+Scalar {\bfseries Ai\+C\+\_\+times\+\_\+qC} (int i, bt\+Scalar $\ast$q) const
+\item 
+\mbox{\Hypertarget{structbtLCP_a3d037cc0c0607d1848954ea48c0c6c56}\label{structbtLCP_a3d037cc0c0607d1848954ea48c0c6c56}} 
+bt\+Scalar {\bfseries Ai\+N\+\_\+times\+\_\+qN} (int i, bt\+Scalar $\ast$q) const
+\item 
+\mbox{\Hypertarget{structbtLCP_a1b5944789b52cd4d96ef8aff9931ed53}\label{structbtLCP_a1b5944789b52cd4d96ef8aff9931ed53}} 
+void {\bfseries p\+N\+\_\+equals\+\_\+\+A\+N\+C\+\_\+times\+\_\+qC} (bt\+Scalar $\ast$p, bt\+Scalar $\ast$q)
+\item 
+\mbox{\Hypertarget{structbtLCP_ab1a1253987c80210d7365f62269b05d4}\label{structbtLCP_ab1a1253987c80210d7365f62269b05d4}} 
+void {\bfseries p\+N\+\_\+plusequals\+\_\+\+A\+Ni} (bt\+Scalar $\ast$p, int i, int sign=1)
+\item 
+\mbox{\Hypertarget{structbtLCP_aaf8c495c5bae7d5ec7cbbdb1cd4e17a5}\label{structbtLCP_aaf8c495c5bae7d5ec7cbbdb1cd4e17a5}} 
+void {\bfseries p\+C\+\_\+plusequals\+\_\+s\+\_\+times\+\_\+qC} (bt\+Scalar $\ast$p, bt\+Scalar s, bt\+Scalar $\ast$q)
+\item 
+\mbox{\Hypertarget{structbtLCP_a74c5ca0cfd9eb03e64c5b681ed4e31dc}\label{structbtLCP_a74c5ca0cfd9eb03e64c5b681ed4e31dc}} 
+void {\bfseries p\+N\+\_\+plusequals\+\_\+s\+\_\+times\+\_\+qN} (bt\+Scalar $\ast$p, bt\+Scalar s, bt\+Scalar $\ast$q)
+\item 
+\mbox{\Hypertarget{structbtLCP_a9c5d3a27366a808a038ab40a6c63188c}\label{structbtLCP_a9c5d3a27366a808a038ab40a6c63188c}} 
+void {\bfseries solve1} (bt\+Scalar $\ast$a, int i, int dir=1, int only\+\_\+transfer=0)
+\item 
+\mbox{\Hypertarget{structbtLCP_a6787ffab2a737d68ed46588e96b07b9f}\label{structbtLCP_a6787ffab2a737d68ed46588e96b07b9f}} 
+void {\bfseries unpermute} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtLCP_ac8c8fd565e74f55450f4abdd04954c92}\label{structbtLCP_ac8c8fd565e74f55450f4abdd04954c92}} 
+const int {\bfseries m\+\_\+n}
+\item 
+\mbox{\Hypertarget{structbtLCP_ae8ec68abc6a78202c1533581104f164a}\label{structbtLCP_ae8ec68abc6a78202c1533581104f164a}} 
+const int {\bfseries m\+\_\+nskip}
+\item 
+\mbox{\Hypertarget{structbtLCP_a51d9683d575838c18ad046dffa52a0c5}\label{structbtLCP_a51d9683d575838c18ad046dffa52a0c5}} 
+int {\bfseries m\+\_\+nub}
+\item 
+\mbox{\Hypertarget{structbtLCP_aeee48c144803b6279e9d89f5a3d5274e}\label{structbtLCP_aeee48c144803b6279e9d89f5a3d5274e}} 
+int {\bfseries m\+\_\+nC}
+\item 
+\mbox{\Hypertarget{structbtLCP_a7ec31227dca361284651e5d52c0fd564}\label{structbtLCP_a7ec31227dca361284651e5d52c0fd564}} 
+int {\bfseries m\+\_\+nN}
+\item 
+\mbox{\Hypertarget{structbtLCP_a1c0a8e6fc3f21e89ec2c4cddd11cf73e}\label{structbtLCP_a1c0a8e6fc3f21e89ec2c4cddd11cf73e}} 
+B\+T\+A\+T\+Y\+PE const {\bfseries m\+\_\+A}
+\item 
+\mbox{\Hypertarget{structbtLCP_aead7fa2a27c86cc54d606aa51d715464}\label{structbtLCP_aead7fa2a27c86cc54d606aa51d715464}} 
+bt\+Scalar $\ast$const {\bfseries m\+\_\+x}
+\item 
+\mbox{\Hypertarget{structbtLCP_addda0b0a2a2cb39f4321b11353c50a86}\label{structbtLCP_addda0b0a2a2cb39f4321b11353c50a86}} 
+bt\+Scalar $\ast$const $\ast$const {\bfseries m\+\_\+b}
+\item 
+\mbox{\Hypertarget{structbtLCP_af142d857c3eead5ef1c7156ac6f62416}\label{structbtLCP_af142d857c3eead5ef1c7156ac6f62416}} 
+bt\+Scalar $\ast$const $\ast$const $\ast$const {\bfseries m\+\_\+w}
+\item 
+\mbox{\Hypertarget{structbtLCP_a326b08ad06b1e152f15935d28796f04c}\label{structbtLCP_a326b08ad06b1e152f15935d28796f04c}} 
+bt\+Scalar $\ast$const $\ast$const $\ast$const $\ast$const {\bfseries m\+\_\+lo}
+\item 
+\mbox{\Hypertarget{structbtLCP_a85a59f1bd03c3b8adfaa200efa1f7574}\label{structbtLCP_a85a59f1bd03c3b8adfaa200efa1f7574}} 
+bt\+Scalar $\ast$const $\ast$const $\ast$const $\ast$const $\ast$const {\bfseries m\+\_\+hi}
+\item 
+\mbox{\Hypertarget{structbtLCP_a3c564417864dd18fe487d4e49b8666ec}\label{structbtLCP_a3c564417864dd18fe487d4e49b8666ec}} 
+bt\+Scalar $\ast$const {\bfseries m\+\_\+L}
+\item 
+\mbox{\Hypertarget{structbtLCP_a78fbbc01b23f5f9e37d73653dc6ba75b}\label{structbtLCP_a78fbbc01b23f5f9e37d73653dc6ba75b}} 
+bt\+Scalar $\ast$const $\ast$const {\bfseries m\+\_\+d}
+\item 
+\mbox{\Hypertarget{structbtLCP_a7236e12b27304697136aebf726da726a}\label{structbtLCP_a7236e12b27304697136aebf726da726a}} 
+bt\+Scalar $\ast$const {\bfseries m\+\_\+\+Dell}
+\item 
+\mbox{\Hypertarget{structbtLCP_a52629c175f180aa86d966e21c13648a9}\label{structbtLCP_a52629c175f180aa86d966e21c13648a9}} 
+bt\+Scalar $\ast$const $\ast$const {\bfseries m\+\_\+ell}
+\item 
+\mbox{\Hypertarget{structbtLCP_aa4b88ed1357c6b8455bddfcf217a4881}\label{structbtLCP_aa4b88ed1357c6b8455bddfcf217a4881}} 
+bt\+Scalar $\ast$const $\ast$const $\ast$const {\bfseries m\+\_\+tmp}
+\item 
+\mbox{\Hypertarget{structbtLCP_a177c7bb2e8b2ac4a200e5ad675c258d3}\label{structbtLCP_a177c7bb2e8b2ac4a200e5ad675c258d3}} 
+bool $\ast$const {\bfseries m\+\_\+state}
+\item 
+\mbox{\Hypertarget{structbtLCP_a5295ef7e1ffa36784a58aa19387804de}\label{structbtLCP_a5295ef7e1ffa36784a58aa19387804de}} 
+int $\ast$const {\bfseries m\+\_\+findex}
+\item 
+\mbox{\Hypertarget{structbtLCP_a8639bff9e8a3a8089d23bc79b9662495}\label{structbtLCP_a8639bff9e8a3a8089d23bc79b9662495}} 
+int $\ast$const $\ast$const {\bfseries m\+\_\+p}
+\item 
+\mbox{\Hypertarget{structbtLCP_a6eb0424fda803fe87963911b48c6f826}\label{structbtLCP_a6eb0424fda803fe87963911b48c6f826}} 
+int $\ast$const $\ast$const $\ast$const {\bfseries m\+\_\+C}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+M\+L\+C\+P\+Solvers/bt\+Dantzig\+L\+C\+P.\+cpp\end{DoxyCompactItemize}

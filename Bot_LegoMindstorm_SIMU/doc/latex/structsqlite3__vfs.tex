@@ -1,0 +1,86 @@
+\hypertarget{structsqlite3__vfs}{}\section{sqlite3\+\_\+vfs Struct Reference}
+\label{structsqlite3__vfs}\index{sqlite3\+\_\+vfs@{sqlite3\+\_\+vfs}}
+
+
+Collaboration diagram for sqlite3\+\_\+vfs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{structsqlite3__vfs__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a694dd264949bd163545fe174510ed019}\label{structsqlite3__vfs_a694dd264949bd163545fe174510ed019}} 
+int {\bfseries i\+Version}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a549399081342d61134b6398562a0a997}\label{structsqlite3__vfs_a549399081342d61134b6398562a0a997}} 
+int {\bfseries sz\+Os\+File}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_adb2d82c74891b00b5529fb94e7710135}\label{structsqlite3__vfs_adb2d82c74891b00b5529fb94e7710135}} 
+int {\bfseries mx\+Pathname}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a4b12c503e4083854a9c4d91697a12de3}\label{structsqlite3__vfs_a4b12c503e4083854a9c4d91697a12de3}} 
+\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$ {\bfseries p\+Next}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a01a82d3e1a7efc00a762a00751ed592b}\label{structsqlite3__vfs_a01a82d3e1a7efc00a762a00751ed592b}} 
+const char $\ast$ {\bfseries z\+Name}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a8de686c5e679ba421479ac96d6654527}\label{structsqlite3__vfs_a8de686c5e679ba421479ac96d6654527}} 
+void $\ast$ {\bfseries p\+App\+Data}
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a5f35d5528d8fdf1d26e1e206879afbe1}\label{structsqlite3__vfs_a5f35d5528d8fdf1d26e1e206879afbe1}} 
+int($\ast$ {\bfseries x\+Open} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name, \hyperlink{structsqlite3__file}{sqlite3\+\_\+file} $\ast$, int flags, int $\ast$p\+Out\+Flags)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a5f547a3e54f91c7ebef140d51054bbc0}\label{structsqlite3__vfs_a5f547a3e54f91c7ebef140d51054bbc0}} 
+int($\ast$ {\bfseries x\+Delete} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name, int sync\+Dir)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_ab4344474034c2dbc9223a362c65ff235}\label{structsqlite3__vfs_ab4344474034c2dbc9223a362c65ff235}} 
+int($\ast$ {\bfseries x\+Access} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name, int flags, int $\ast$p\+Res\+Out)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a02fafc56d26adab5f236df6493a8bd55}\label{structsqlite3__vfs_a02fafc56d26adab5f236df6493a8bd55}} 
+int($\ast$ {\bfseries x\+Full\+Pathname} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name, int n\+Out, char $\ast$z\+Out)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_ad6587e730f4f8bce2b0129664a9a86b9}\label{structsqlite3__vfs_ad6587e730f4f8bce2b0129664a9a86b9}} 
+void $\ast$($\ast$ {\bfseries x\+Dl\+Open} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Filename)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a3cda3a00a43861cef4d5554354cdfda4}\label{structsqlite3__vfs_a3cda3a00a43861cef4d5554354cdfda4}} 
+void($\ast$ {\bfseries x\+Dl\+Error} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, int n\+Byte, char $\ast$z\+Err\+Msg)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a20ef3dacb974e3e480782629cbbf7534}\label{structsqlite3__vfs_a20ef3dacb974e3e480782629cbbf7534}} 
+void($\ast$($\ast$ {\bfseries x\+Dl\+Sym} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, void $\ast$, const char $\ast$z\+Symbol))(void)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_adaa986b55a44971e7048d160ac5071ad}\label{structsqlite3__vfs_adaa986b55a44971e7048d160ac5071ad}} 
+void($\ast$ {\bfseries x\+Dl\+Close} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, void $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_ace3fcb41cb01a947457532f645ba4c88}\label{structsqlite3__vfs_ace3fcb41cb01a947457532f645ba4c88}} 
+int($\ast$ {\bfseries x\+Randomness} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, int n\+Byte, char $\ast$z\+Out)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a8ebcfaceced9713024cb8e2508fe6c1b}\label{structsqlite3__vfs_a8ebcfaceced9713024cb8e2508fe6c1b}} 
+int($\ast$ {\bfseries x\+Sleep} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, int microseconds)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_ab85a8a3ab59f76a6685508fefaa7b691}\label{structsqlite3__vfs_ab85a8a3ab59f76a6685508fefaa7b691}} 
+int($\ast$ {\bfseries x\+Current\+Time} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, double $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a4994110c79d082f7770ce553d507748f}\label{structsqlite3__vfs_a4994110c79d082f7770ce553d507748f}} 
+int($\ast$ {\bfseries x\+Get\+Last\+Error} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, int, char $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_aa281584c422969b7f0df0e5f918fc590}\label{structsqlite3__vfs_aa281584c422969b7f0df0e5f918fc590}} 
+int($\ast$ {\bfseries x\+Current\+Time\+Int64} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, sqlite3\+\_\+int64 $\ast$)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a69996d40229d6eabe6869bb3fc80b730}\label{structsqlite3__vfs_a69996d40229d6eabe6869bb3fc80b730}} 
+int($\ast$ {\bfseries x\+Set\+System\+Call} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name, sqlite3\+\_\+syscall\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_a604384e58c645e06b6db38d8a45e1103}\label{structsqlite3__vfs_a604384e58c645e06b6db38d8a45e1103}} 
+sqlite3\+\_\+syscall\+\_\+ptr($\ast$ {\bfseries x\+Get\+System\+Call} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name)
+\item 
+\mbox{\Hypertarget{structsqlite3__vfs_ac2930d34749977f39b1bbc27dc1de2b2}\label{structsqlite3__vfs_ac2930d34749977f39b1bbc27dc1de2b2}} 
+const char $\ast$($\ast$ {\bfseries x\+Next\+System\+Call} )(\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs} $\ast$, const char $\ast$z\+Name)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/sqlite3/include/sqlite3.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,283 @@
+\hypertarget{classVertexData}{}\section{Vertex\+Data Class Reference}
+\label{classVertexData}\index{Vertex\+Data@{Vertex\+Data}}
+
+
+{\ttfamily \#include $<$C\+C\+Vertex\+Index\+Data.\+h$>$}
+
+
+
+Inheritance diagram for Vertex\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classVertexData__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vertex\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classVertexData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structVertexData_1_1BufferAttribute}{Buffer\+Attribute}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}{get\+Vertex\+Stream\+Count} () const
+\item 
+bool \hyperlink{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}{set\+Stream} (\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$buffer, const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} \&stream)
+\item 
+void \hyperlink{classVertexData_a80e806241d648894e1e9992d863e20b6}{remove\+Stream} (int semantic)
+\item 
+const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ \hyperlink{classVertexData_a7d018c082102d57b0feaa54758e62cef}{get\+Stream\+Attribute} (int semantic) const
+\item 
+\hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ \hyperlink{classVertexData_a8e24cfbf96cf8e5086da86aa5d196c0b}{get\+Stream\+Attribute} (int semantic)
+\item 
+\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$ \hyperlink{classVertexData_a1c3f19c5ecb86192031eca7f8ee09d88}{get\+Stream\+Buffer} (int semantic) const
+\item 
+void \hyperlink{classVertexData_a441995cde63c9a71140645667632bc3d}{use} ()
+\item 
+size\+\_\+t \hyperlink{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}{get\+Vertex\+Stream\+Count} () const
+\item 
+bool \hyperlink{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}{set\+Stream} (\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$buffer, const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} \&stream)
+\item 
+void \hyperlink{classVertexData_a80e806241d648894e1e9992d863e20b6}{remove\+Stream} (int semantic)
+\item 
+const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ \hyperlink{classVertexData_a8a5d0dcaf3036449fd5cc721857ef305}{get\+Stream\+Attribute} (int semantic) const
+\item 
+\hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ \hyperlink{classVertexData_a4240665844704a386ae7436f097e0cb8}{get\+Stream\+Attribute} (int semantic)
+\item 
+\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$ \hyperlink{classVertexData_ae9b78d5a039150804d83da739000ecd0}{get\+Stream\+Buffer} (int semantic) const
+\item 
+void \hyperlink{classVertexData_a441995cde63c9a71140645667632bc3d}{use} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classVertexData}{Vertex\+Data} $\ast$ \hyperlink{classVertexData_ad87e3c945044fac9f2cef09317fb9ccb}{create} ()
+\item 
+static \hyperlink{classVertexData}{Vertex\+Data} $\ast$ \hyperlink{classVertexData_af77ed761106e9859e52add75359d3387}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVertexData_ad1c08dd6d476cbcb834f74a101591460}{Vertex\+Data} ()
+\item 
+virtual \hyperlink{classVertexData_a90be443368ca95a4dd4eec5a66f788b3}{$\sim$\+Vertex\+Data} ()
+\item 
+\hyperlink{classVertexData_ad1c08dd6d476cbcb834f74a101591460}{Vertex\+Data} ()
+\item 
+virtual \hyperlink{classVertexData_acc9d1644da6e2b00f81c8bac1cd06960}{$\sim$\+Vertex\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ int, \hyperlink{structVertexData_1_1BufferAttribute}{Buffer\+Attribute} $>$ \hyperlink{classVertexData_ade96e434961d895eb540ffb4547c5e32}{\+\_\+vertex\+Streams}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classVertexData}{Vertex\+Data} is a class used for specify input streams for G\+PU rendering pipeline, a \hyperlink{classVertexData}{Vertex\+Data} will be composed by several streams, every stream will contain a \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} and the binding \hyperlink{classVertexBuffer}{Vertex\+Buffer}. Streams will be identified by semantic.  NA 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVertexData_ad1c08dd6d476cbcb834f74a101591460}\label{classVertexData_ad1c08dd6d476cbcb834f74a101591460}} 
+\index{Vertex\+Data@{Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\index{Vertex\+Data@{Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{Vertex\+Data()}{VertexData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vertex\+Data\+::\+Vertex\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. \mbox{\Hypertarget{classVertexData_a90be443368ca95a4dd4eec5a66f788b3}\label{classVertexData_a90be443368ca95a4dd4eec5a66f788b3}} 
+\index{Vertex\+Data@{Vertex\+Data}!````~Vertex\+Data@{$\sim$\+Vertex\+Data}}
+\index{````~Vertex\+Data@{$\sim$\+Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Vertex\+Data()}{~VertexData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vertex\+Data\+::$\sim$\+Vertex\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destructor. \mbox{\Hypertarget{classVertexData_ad1c08dd6d476cbcb834f74a101591460}\label{classVertexData_ad1c08dd6d476cbcb834f74a101591460}} 
+\index{Vertex\+Data@{Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\index{Vertex\+Data@{Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{Vertex\+Data()}{VertexData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vertex\+Data\+::\+Vertex\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. \mbox{\Hypertarget{classVertexData_acc9d1644da6e2b00f81c8bac1cd06960}\label{classVertexData_acc9d1644da6e2b00f81c8bac1cd06960}} 
+\index{Vertex\+Data@{Vertex\+Data}!````~Vertex\+Data@{$\sim$\+Vertex\+Data}}
+\index{````~Vertex\+Data@{$\sim$\+Vertex\+Data}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Vertex\+Data()}{~VertexData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Vertex\+Data\+::$\sim$\+Vertex\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVertexData_ad87e3c945044fac9f2cef09317fb9ccb}\label{classVertexData_ad87e3c945044fac9f2cef09317fb9ccb}} 
+\index{Vertex\+Data@{Vertex\+Data}!create@{create}}
+\index{create@{create}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classVertexData}{Vertex\+Data} $\ast$ Vertex\+Data\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create function, used to create a instance of \hyperlink{classVertexData}{Vertex\+Data}. \mbox{\Hypertarget{classVertexData_af77ed761106e9859e52add75359d3387}\label{classVertexData_af77ed761106e9859e52add75359d3387}} 
+\index{Vertex\+Data@{Vertex\+Data}!create@{create}}
+\index{create@{create}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classVertexData}{Vertex\+Data}$\ast$ Vertex\+Data\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create function, used to create a instance of \hyperlink{classVertexData}{Vertex\+Data}. \mbox{\Hypertarget{classVertexData_a7d018c082102d57b0feaa54758e62cef}\label{classVertexData_a7d018c082102d57b0feaa54758e62cef}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Attribute@{get\+Stream\+Attribute}}
+\index{get\+Stream\+Attribute@{get\+Stream\+Attribute}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Attribute()}{getStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ Vertex\+Data\+::get\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption}) const}
+
+Get the attribute of stream, const version. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a8a5d0dcaf3036449fd5cc721857ef305}\label{classVertexData_a8a5d0dcaf3036449fd5cc721857ef305}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Attribute@{get\+Stream\+Attribute}}
+\index{get\+Stream\+Attribute@{get\+Stream\+Attribute}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Attribute()}{getStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute}$\ast$ Vertex\+Data\+::get\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption}) const}
+
+Get the attribute of stream, const version. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a8e24cfbf96cf8e5086da86aa5d196c0b}\label{classVertexData_a8e24cfbf96cf8e5086da86aa5d196c0b}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Attribute@{get\+Stream\+Attribute}}
+\index{get\+Stream\+Attribute@{get\+Stream\+Attribute}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Attribute()}{getStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} $\ast$ Vertex\+Data\+::get\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption})}
+
+Get the attribute of stream. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a4240665844704a386ae7436f097e0cb8}\label{classVertexData_a4240665844704a386ae7436f097e0cb8}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Attribute@{get\+Stream\+Attribute}}
+\index{get\+Stream\+Attribute@{get\+Stream\+Attribute}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Attribute()}{getStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute}$\ast$ Vertex\+Data\+::get\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption})}
+
+Get the attribute of stream. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a1c3f19c5ecb86192031eca7f8ee09d88}\label{classVertexData_a1c3f19c5ecb86192031eca7f8ee09d88}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Buffer@{get\+Stream\+Buffer}}
+\index{get\+Stream\+Buffer@{get\+Stream\+Buffer}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Buffer()}{getStreamBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$ Vertex\+Data\+::get\+Stream\+Buffer (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption}) const}
+
+Get the binded buffer of the stream. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_ae9b78d5a039150804d83da739000ecd0}\label{classVertexData_ae9b78d5a039150804d83da739000ecd0}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Stream\+Buffer@{get\+Stream\+Buffer}}
+\index{get\+Stream\+Buffer@{get\+Stream\+Buffer}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Stream\+Buffer()}{getStreamBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVertexBuffer}{Vertex\+Buffer}$\ast$ Vertex\+Data\+::get\+Stream\+Buffer (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption}) const}
+
+Get the binded buffer of the stream. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}\label{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Vertex\+Stream\+Count@{get\+Vertex\+Stream\+Count}}
+\index{get\+Vertex\+Stream\+Count@{get\+Vertex\+Stream\+Count}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Stream\+Count()}{getVertexStreamCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Vertex\+Data\+::get\+Vertex\+Stream\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the number of streams in the \hyperlink{classVertexData}{Vertex\+Data}. \mbox{\Hypertarget{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}\label{classVertexData_a33c6eaabfec301c9e45718ab27b5a1c5}} 
+\index{Vertex\+Data@{Vertex\+Data}!get\+Vertex\+Stream\+Count@{get\+Vertex\+Stream\+Count}}
+\index{get\+Vertex\+Stream\+Count@{get\+Vertex\+Stream\+Count}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Stream\+Count()}{getVertexStreamCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Vertex\+Data\+::get\+Vertex\+Stream\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the number of streams in the \hyperlink{classVertexData}{Vertex\+Data}. \mbox{\Hypertarget{classVertexData_a80e806241d648894e1e9992d863e20b6}\label{classVertexData_a80e806241d648894e1e9992d863e20b6}} 
+\index{Vertex\+Data@{Vertex\+Data}!remove\+Stream@{remove\+Stream}}
+\index{remove\+Stream@{remove\+Stream}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{remove\+Stream()}{removeStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vertex\+Data\+::remove\+Stream (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption})}
+
+Remove the given streams. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a80e806241d648894e1e9992d863e20b6}\label{classVertexData_a80e806241d648894e1e9992d863e20b6}} 
+\index{Vertex\+Data@{Vertex\+Data}!remove\+Stream@{remove\+Stream}}
+\index{remove\+Stream@{remove\+Stream}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{remove\+Stream()}{removeStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vertex\+Data\+::remove\+Stream (\begin{DoxyParamCaption}\item[{int}]{semantic }\end{DoxyParamCaption})}
+
+Remove the given streams. 
+\begin{DoxyParams}{Parameters}
+{\em semantic} & The semantic of the stream. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}\label{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}} 
+\index{Vertex\+Data@{Vertex\+Data}!set\+Stream@{set\+Stream}}
+\index{set\+Stream@{set\+Stream}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{set\+Stream()}{setStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Vertex\+Data\+::set\+Stream (\begin{DoxyParamCaption}\item[{\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$}]{buffer,  }\item[{const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} \&}]{stream }\end{DoxyParamCaption})}
+
+Set a stream to \hyperlink{classVertexData}{Vertex\+Data},given that stream is identified by semantic, so if the semantic is not specified before, it will add a stream, or it will override the old one. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The binding buffer of the stream. \\
+\hline
+{\em stream} & The binding vertex attribute, its member semantic will be used as the identifier. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}\label{classVertexData_a7089b4ec262edd25dfafaaff2d915a6a}} 
+\index{Vertex\+Data@{Vertex\+Data}!set\+Stream@{set\+Stream}}
+\index{set\+Stream@{set\+Stream}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{set\+Stream()}{setStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Vertex\+Data\+::set\+Stream (\begin{DoxyParamCaption}\item[{\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$}]{buffer,  }\item[{const \hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} \&}]{stream }\end{DoxyParamCaption})}
+
+Set a stream to \hyperlink{classVertexData}{Vertex\+Data},given that stream is identified by semantic, so if the semantic is not specified before, it will add a stream, or it will override the old one. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The binding buffer of the stream. \\
+\hline
+{\em stream} & The binding vertex attribute, its member semantic will be used as the identifier. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVertexData_a441995cde63c9a71140645667632bc3d}\label{classVertexData_a441995cde63c9a71140645667632bc3d}} 
+\index{Vertex\+Data@{Vertex\+Data}!use@{use}}
+\index{use@{use}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{use()}{use()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vertex\+Data\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Called for rendering, it will bind the state of vertex data to current rendering pipeline. \mbox{\Hypertarget{classVertexData_a441995cde63c9a71140645667632bc3d}\label{classVertexData_a441995cde63c9a71140645667632bc3d}} 
+\index{Vertex\+Data@{Vertex\+Data}!use@{use}}
+\index{use@{use}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{use()}{use()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vertex\+Data\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Called for rendering, it will bind the state of vertex data to current rendering pipeline. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVertexData_ade96e434961d895eb540ffb4547c5e32}\label{classVertexData_ade96e434961d895eb540ffb4547c5e32}} 
+\index{Vertex\+Data@{Vertex\+Data}!\+\_\+vertex\+Streams@{\+\_\+vertex\+Streams}}
+\index{\+\_\+vertex\+Streams@{\+\_\+vertex\+Streams}!Vertex\+Data@{Vertex\+Data}}
+\subsubsection{\texorpdfstring{\+\_\+vertex\+Streams}{\_vertexStreams}}
+{\footnotesize\ttfamily std\+::map$<$ int, \hyperlink{structVertexData_1_1BufferAttribute}{Buffer\+Attribute} $>$ Vertex\+Data\+::\+\_\+vertex\+Streams\hspace{0.3cm}{\ttfamily [protected]}}
+
+Streams in the \hyperlink{classVertexData}{Vertex\+Data}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Vertex\+Index\+Data.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Vertex\+Index\+Data.\+cpp\end{DoxyCompactItemize}

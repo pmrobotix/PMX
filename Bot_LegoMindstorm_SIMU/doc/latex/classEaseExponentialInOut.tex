@@ -1,0 +1,138 @@
+\hypertarget{classEaseExponentialInOut}{}\section{Ease\+Exponential\+In\+Out Class Reference}
+\label{classEaseExponentialInOut}\index{Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}}
+
+
+Ease Exponential In\+Out.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Ease.\+h$>$}
+
+
+
+Inheritance diagram for Ease\+Exponential\+In\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classEaseExponentialInOut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ease\+Exponential\+In\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEaseExponentialInOut__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classEaseExponentialInOut_a856f7d0224d0ae8055b4a91a1538ce73}{update} (float time) override
+\item 
+virtual \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ \hyperlink{classEaseExponentialInOut_a04bfa04ce8c396bdd5d058cfc771b9cb}{clone} () const override
+\item 
+virtual \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ \hyperlink{classEaseExponentialInOut_a48f34b3525dacd953bd9dbd014e93356}{reverse} () const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ \hyperlink{classEaseExponentialInOut_ad8a47b8472e752b8aeae8faa290a0f1f}{create} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Create the action with the inner action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEaseExponentialInOut_a75cfc712bfa92f70659a9723f00f2b79}\label{classEaseExponentialInOut_a75cfc712bfa92f70659a9723f00f2b79}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out}() \{\} virtual $\sim$\hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out}() \{\}private\+: C\+C\+\_\+\+D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN(\hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Ease Exponential In\+Out. 
+
+If time $\ast$ 2 $<$ 1, the timeline of inner action will be changed by\+: $0.5*{ 2 }^{ 10*(time-1) }$. else, the timeline of inner action will be changed by\+: $0.5*(2-{ 2 }^{ -10*(time-1) })$. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEaseExponentialInOut_a04bfa04ce8c396bdd5d058cfc771b9cb}\label{classEaseExponentialInOut_a04bfa04ce8c396bdd5d058cfc771b9cb}} 
+\index{Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}!clone@{clone}}
+\index{clone@{clone}!Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ Ease\+Exponential\+In\+Out\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}{Action\+Ease}.
+
+\mbox{\Hypertarget{classEaseExponentialInOut_ad8a47b8472e752b8aeae8faa290a0f1f}\label{classEaseExponentialInOut_ad8a47b8472e752b8aeae8faa290a0f1f}} 
+\index{Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}!create@{create}}
+\index{create@{create}!Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ Ease\+Exponential\+In\+Out\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the action with the inner action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The pointer of the inner action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer of \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} action. If creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEaseExponentialInOut_a48f34b3525dacd953bd9dbd014e93356}\label{classEaseExponentialInOut_a48f34b3525dacd953bd9dbd014e93356}} 
+\index{Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}!reverse@{reverse}}
+\index{reverse@{reverse}!Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out} $\ast$ Ease\+Exponential\+In\+Out\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionEase_ab99eb083fa033fae1d6c948fdc730782}{Action\+Ease}.
+
+\mbox{\Hypertarget{classEaseExponentialInOut_a856f7d0224d0ae8055b4a91a1538ce73}\label{classEaseExponentialInOut_a856f7d0224d0ae8055b4a91a1538ce73}} 
+\index{Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}!update@{update}}
+\index{update@{update}!Ease\+Exponential\+In\+Out@{Ease\+Exponential\+In\+Out}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ease\+Exponential\+In\+Out\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{Action\+Ease}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+cpp\end{DoxyCompactItemize}

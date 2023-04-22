@@ -1,0 +1,134 @@
+\hypertarget{structlws__plat__file__ops}{}\section{lws\+\_\+plat\+\_\+file\+\_\+ops Struct Reference}
+\label{structlws__plat__file__ops}\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+
+
+{\ttfamily \#include $<$libwebsockets.\+h$>$}
+
+
+
+Collaboration diagram for lws\+\_\+plat\+\_\+file\+\_\+ops\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structlws__plat__file__ops__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lws\+\_\+filefd\+\_\+type($\ast$ \hyperlink{structlws__plat__file__ops_a795c1bff8c56f57e97b10fdb9e606947}{open} )(struct \hyperlink{structlws}{lws} $\ast$wsi, const char $\ast$filename, unsigned long $\ast$filelen, int flags)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_ac6d1f0da750b68f23dd93a36aa32a3d7}{close} )(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd)
+\item 
+unsigned long($\ast$ \hyperlink{structlws__plat__file__ops_a4674d930d95dfaeb13793aba133ada07}{seek\+\_\+cur} )(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, long offset\+\_\+from\+\_\+cur\+\_\+pos)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_ae7d4c66f479bb978213197301878d335}{read} )(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, unsigned long $\ast$amount, unsigned char $\ast$buf, unsigned long len)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_a22186d061e99baee5a17fb41417a0e5e}{write} )(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, unsigned long $\ast$amount, unsigned char $\ast$buf, unsigned long len)
+\item 
+\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}($\ast$ \hyperlink{structlws__plat__file__ops_ae3f3bf075838ea3bbf90dba3a359f688}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN} )(const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$fops, const char $\ast$filename, const char $\ast$vpath, lws\+\_\+fop\+\_\+flags\+\_\+t $\ast$flags)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_a39fdbb10ec92a4f5e4a66c9719c28d20}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE} )(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} $\ast$fop\+\_\+fd)
+\item 
+lws\+\_\+fileofs\+\_\+t($\ast$ \hyperlink{structlws__plat__file__ops_a9e073286e9b14b28cff6331abb56293c}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR} )(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+fileofs\+\_\+t offset\+\_\+from\+\_\+cur\+\_\+pos)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_aae5f22fbf335e6d4294b96c8b4e3b707}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD} )(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)
+\item 
+int($\ast$ \hyperlink{structlws__plat__file__ops_a745869c12377b44f51fd6a905031b255}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE} )(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)
+\item 
+struct \hyperlink{structlws__fops__index}{lws\+\_\+fops\+\_\+index} \hyperlink{structlws__plat__file__ops_a1a9484f0e6c57b84d76bbbc1e68fc750}{fi} \mbox{[}3\mbox{]}
+\item 
+const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$ \hyperlink{structlws__plat__file__ops_a43c884ea92f1b34ebf3cdaee6ca41aa1}{next}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code.
+
+\+: Open file (always binary access if plat supports it) filelen is filled on exit to be the length of the file flags should be set to O\+\_\+\+R\+D\+O\+N\+LY or O\+\_\+\+R\+D\+WR \+: Close file \+: Seek from current position \+: Read fron file $\ast$amount is set on exit to amount read \+: Write to file $\ast$amount is set on exit as amount written
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structlws__plat__file__ops_ac6d1f0da750b68f23dd93a36aa32a3d7}\label{structlws__plat__file__ops_ac6d1f0da750b68f23dd93a36aa32a3d7}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!close@{close}}
+\index{close@{close}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::close)(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd)}
+
+close file \mbox{\Hypertarget{structlws__plat__file__ops_a1a9484f0e6c57b84d76bbbc1e68fc750}\label{structlws__plat__file__ops_a1a9484f0e6c57b84d76bbbc1e68fc750}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!fi@{fi}}
+\index{fi@{fi}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{fi}{fi}}
+{\footnotesize\ttfamily struct \hyperlink{structlws__fops__index}{lws\+\_\+fops\+\_\+index} lws\+\_\+plat\+\_\+file\+\_\+ops\+::fi}
+
+vfs path signatures implying use of this fops \mbox{\Hypertarget{structlws__plat__file__ops_a39fdbb10ec92a4f5e4a66c9719c28d20}\label{structlws__plat__file__ops_a39fdbb10ec92a4f5e4a66c9719c28d20}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}{LWS\_FOP\_CLOSE}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::\+L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE)(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} $\ast$fop\+\_\+fd)}
+
+close file A\+ND set the pointer to N\+U\+LL \mbox{\Hypertarget{structlws__plat__file__ops_ae3f3bf075838ea3bbf90dba3a359f688}\label{structlws__plat__file__ops_ae3f3bf075838ea3bbf90dba3a359f688}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}}
+{\footnotesize\ttfamily \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::\+L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN)(const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$fops, const char $\ast$filename, const char $\ast$vpath, lws\+\_\+fop\+\_\+flags\+\_\+t $\ast$flags)}
+
+Open file (always binary access if plat supports it) vpath may be N\+U\+LL, or if the fops understands it, the point at which the filename\textquotesingle{}s virtual part starts. $\ast$flags \& L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK should be set to O\+\_\+\+R\+D\+O\+N\+LY or O\+\_\+\+R\+D\+WR. If the file may be gzip-\/compressed, L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP is set. If it actually is gzip-\/compressed, then the open handler should OR L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP on to $\ast$flags before returning. \mbox{\Hypertarget{structlws__plat__file__ops_aae5f22fbf335e6d4294b96c8b4e3b707}\label{structlws__plat__file__ops_aae5f22fbf335e6d4294b96c8b4e3b707}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}{LWS\_FOP\_READ}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::\+L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD)(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)}
+
+Read from file, on exit $\ast$amount is set to amount actually read \mbox{\Hypertarget{structlws__plat__file__ops_a9e073286e9b14b28cff6331abb56293c}\label{structlws__plat__file__ops_a9e073286e9b14b28cff6331abb56293c}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}{LWS\_FOP\_SEEK\_CUR}}
+{\footnotesize\ttfamily lws\+\_\+fileofs\+\_\+t($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::\+L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR)(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+fileofs\+\_\+t offset\+\_\+from\+\_\+cur\+\_\+pos)}
+
+seek from current position \mbox{\Hypertarget{structlws__plat__file__ops_a745869c12377b44f51fd6a905031b255}\label{structlws__plat__file__ops_a745869c12377b44f51fd6a905031b255}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}{LWS\_FOP\_WRITE}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::\+L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE)(\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)}
+
+Write to file, on exit $\ast$amount is set to amount actually written \mbox{\Hypertarget{structlws__plat__file__ops_a43c884ea92f1b34ebf3cdaee6ca41aa1}\label{structlws__plat__file__ops_a43c884ea92f1b34ebf3cdaee6ca41aa1}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!next@{next}}
+\index{next@{next}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::next}
+
+N\+U\+LL or next fops in \hyperlink{protocollist-p}{list} \mbox{\Hypertarget{structlws__plat__file__ops_a795c1bff8c56f57e97b10fdb9e606947}\label{structlws__plat__file__ops_a795c1bff8c56f57e97b10fdb9e606947}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!open@{open}}
+\index{open@{open}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{open}{open}}
+{\footnotesize\ttfamily lws\+\_\+filefd\+\_\+type($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::open)(struct \hyperlink{structlws}{lws} $\ast$wsi, const char $\ast$filename, unsigned long $\ast$filelen, int flags)}
+
+Open file (always binary access if plat supports it) filelen is filled on exit to be the length of the file flags should be set to O\+\_\+\+R\+D\+O\+N\+LY or O\+\_\+\+R\+D\+WR \mbox{\Hypertarget{structlws__plat__file__ops_ae7d4c66f479bb978213197301878d335}\label{structlws__plat__file__ops_ae7d4c66f479bb978213197301878d335}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!read@{read}}
+\index{read@{read}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::read)(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, unsigned long $\ast$amount, unsigned char $\ast$buf, unsigned long len)}
+
+Read from file, on exit $\ast$amount is set to amount actually read \mbox{\Hypertarget{structlws__plat__file__ops_a4674d930d95dfaeb13793aba133ada07}\label{structlws__plat__file__ops_a4674d930d95dfaeb13793aba133ada07}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!seek\+\_\+cur@{seek\+\_\+cur}}
+\index{seek\+\_\+cur@{seek\+\_\+cur}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{seek\+\_\+cur}{seek\_cur}}
+{\footnotesize\ttfamily unsigned long($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::seek\+\_\+cur)(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, long offset\+\_\+from\+\_\+cur\+\_\+pos)}
+
+seek from current position \mbox{\Hypertarget{structlws__plat__file__ops_a22186d061e99baee5a17fb41417a0e5e}\label{structlws__plat__file__ops_a22186d061e99baee5a17fb41417a0e5e}} 
+\index{lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}!write@{write}}
+\index{write@{write}!lws\+\_\+plat\+\_\+file\+\_\+ops@{lws\+\_\+plat\+\_\+file\+\_\+ops}}
+\subsubsection{\texorpdfstring{write}{write}}
+{\footnotesize\ttfamily int($\ast$ lws\+\_\+plat\+\_\+file\+\_\+ops\+::write)(struct \hyperlink{structlws}{lws} $\ast$wsi, lws\+\_\+filefd\+\_\+type fd, unsigned long $\ast$amount, unsigned char $\ast$buf, unsigned long len)}
+
+Write to file, on exit $\ast$amount is set to amount actually written 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/websockets/include/android/libwebsockets.\+h\end{DoxyCompactItemize}

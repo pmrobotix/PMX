@@ -1,0 +1,434 @@
+\hypertarget{classCardinalSplineTo}{}\section{Cardinal\+Spline\+To Class Reference}
+\label{classCardinalSplineTo}\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Catmull\+Rom.\+h$>$}
+
+
+
+Inheritance diagram for Cardinal\+Spline\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classCardinalSplineTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cardinal\+Spline\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCardinalSplineTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCardinalSplineTo_a010ec0625178c6c109cf59a8b56cc18a}{$\sim$\+Cardinal\+Spline\+To} ()
+\item 
+\hyperlink{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}{Cardinal\+Spline\+To} ()
+\item 
+bool \hyperlink{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}{init\+With\+Duration} (float duration, \hyperlink{classPointArray}{Point\+Array} $\ast$points, float tension)
+\item 
+virtual void \hyperlink{classCardinalSplineTo_a3ab5cf5c0296a69e675c42293c82a606}{update\+Position} (\hyperlink{classVec2}{Vec2} \&new\+Pos)
+\item 
+\hyperlink{classPointArray}{Point\+Array} $\ast$ \hyperlink{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}{get\+Points} ()
+\item 
+void \hyperlink{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}{set\+Points} (\hyperlink{classPointArray}{Point\+Array} $\ast$points)
+\item 
+virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_aed2a776edc3e26b2ba7524230edf42de}{clone} () const override
+\item 
+virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_aecb2ad46af2d58995820c9dfc1f6459f}{reverse} () const override
+\item 
+virtual void \hyperlink{classCardinalSplineTo_ab1e28aab8fe748bd90cc370efc52bef5}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classCardinalSplineTo_ae59f479c5041896e373bdcc8af9cdd30}{update} (float time) override
+\item 
+virtual \hyperlink{classCardinalSplineTo_a1b36baf8a4073953e4cea7028b031202}{$\sim$\+Cardinal\+Spline\+To} ()
+\item 
+\hyperlink{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}{Cardinal\+Spline\+To} ()
+\item 
+bool \hyperlink{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}{init\+With\+Duration} (float duration, \hyperlink{classPointArray}{Point\+Array} $\ast$points, float tension)
+\item 
+virtual void \hyperlink{classCardinalSplineTo_a18b90e37ad31dd48a7aaa611e6608369}{update\+Position} (const \hyperlink{classVec2}{Vec2} \&new\+Pos)
+\item 
+\hyperlink{classPointArray}{Point\+Array} $\ast$ \hyperlink{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}{get\+Points} ()
+\item 
+void \hyperlink{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}{set\+Points} (\hyperlink{classPointArray}{Point\+Array} $\ast$points)
+\item 
+virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_a2203360a7f12e0223870dc8574cbe084}{clone} () const override
+\item 
+virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_aea43897c48192fa9e19f45c343d0a7fd}{reverse} () const override
+\item 
+virtual void \hyperlink{classCardinalSplineTo_a395a93dfe6f1d9e9298236bd44f04ade}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classCardinalSplineTo_a8bad76ed354e2a5ef225e25f39e51184}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}{create} (float duration, \hyperlink{classPointArray}{Point\+Array} $\ast$points, float tension)
+\item 
+static \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ \hyperlink{classCardinalSplineTo_af78b3f869e29001d3962efe682bb31e3}{create} (float duration, \hyperlink{classPointArray}{Point\+Array} $\ast$points, float tension)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPointArray}{Point\+Array} $\ast$ \hyperlink{classCardinalSplineTo_a3ef76fd17e6ad9641c4f6aa27b5d6ec9}{\+\_\+points}
+\item 
+\mbox{\Hypertarget{classCardinalSplineTo_aacfa7f1704ca793acd4a5555498dada7}\label{classCardinalSplineTo_aacfa7f1704ca793acd4a5555498dada7}} 
+float {\bfseries \+\_\+deltaT}
+\item 
+\mbox{\Hypertarget{classCardinalSplineTo_abad24f24a0bcc8af9bea186979179979}\label{classCardinalSplineTo_abad24f24a0bcc8af9bea186979179979}} 
+float {\bfseries \+\_\+tension}
+\item 
+\mbox{\Hypertarget{classCardinalSplineTo_a1bc10750bd03d6f4393320c5fd72152c}\label{classCardinalSplineTo_a1bc10750bd03d6f4393320c5fd72152c}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+previous\+Position}
+\item 
+\mbox{\Hypertarget{classCardinalSplineTo_aec59ab2d2bb76360da0b734852026db3}\label{classCardinalSplineTo_aec59ab2d2bb76360da0b734852026db3}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+accumulated\+Diff}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Cardinal Spline path. \href{http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Cardinal_spline}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Cubic\+\_\+\+Hermite\+\_\+spline\#\+Cardinal\+\_\+spline} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCardinalSplineTo_a010ec0625178c6c109cf59a8b56cc18a}\label{classCardinalSplineTo_a010ec0625178c6c109cf59a8b56cc18a}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!````~Cardinal\+Spline\+To@{$\sim$\+Cardinal\+Spline\+To}}
+\index{````~Cardinal\+Spline\+To@{$\sim$\+Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{$\sim$\+Cardinal\+Spline\+To()}{~CardinalSplineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cardinal\+Spline\+To\+::$\sim$\+Cardinal\+Spline\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}\label{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{Cardinal\+Spline\+To()}{CardinalSplineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cardinal\+Spline\+To\+::\+Cardinal\+Spline\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  NA \mbox{\Hypertarget{classCardinalSplineTo_a1b36baf8a4073953e4cea7028b031202}\label{classCardinalSplineTo_a1b36baf8a4073953e4cea7028b031202}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!````~Cardinal\+Spline\+To@{$\sim$\+Cardinal\+Spline\+To}}
+\index{````~Cardinal\+Spline\+To@{$\sim$\+Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{$\sim$\+Cardinal\+Spline\+To()}{~CardinalSplineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Cardinal\+Spline\+To\+::$\sim$\+Cardinal\+Spline\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}\label{classCardinalSplineTo_a4e2f955e57a3711c7dc7d0703d229dd4}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{Cardinal\+Spline\+To()}{CardinalSplineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cardinal\+Spline\+To\+::\+Cardinal\+Spline\+To (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCardinalSplineTo_aed2a776edc3e26b2ba7524230edf42de}\label{classCardinalSplineTo_aed2a776edc3e26b2ba7524230edf42de}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!clone@{clone}}
+\index{clone@{clone}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ Cardinal\+Spline\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCatmullRomBy_aea28e624bd562521e444af38384470aa}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomBy_a972f2e516b44eaa141ae270f575024e5}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomTo_afa8df104554278343334dfa497cc1526}{Catmull\+Rom\+To}, \hyperlink{classCatmullRomTo_ac06c19763c7b07903f19178f94694541}{Catmull\+Rom\+To}, \hyperlink{classCardinalSplineBy_abe6e897500669708f01d42fd97226a02}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_a35b00381b2823644533fd485817b147e}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a2203360a7f12e0223870dc8574cbe084}\label{classCardinalSplineTo_a2203360a7f12e0223870dc8574cbe084}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!clone@{clone}}
+\index{clone@{clone}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To}$\ast$ Cardinal\+Spline\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCatmullRomBy_aea28e624bd562521e444af38384470aa}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomBy_a972f2e516b44eaa141ae270f575024e5}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomTo_afa8df104554278343334dfa497cc1526}{Catmull\+Rom\+To}, \hyperlink{classCatmullRomTo_ac06c19763c7b07903f19178f94694541}{Catmull\+Rom\+To}, \hyperlink{classCardinalSplineBy_abe6e897500669708f01d42fd97226a02}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_a35b00381b2823644533fd485817b147e}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}\label{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!create@{create}}
+\index{create@{create}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ Cardinal\+Spline\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{float}]{tension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an action with a Cardinal Spline array of points and tension. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & In seconds. \\
+\hline
+{\em points} & An \hyperlink{classPointArray}{Point\+Array}. \\
+\hline
+{\em tension} & Goodness of fit. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed.
+In js: var \hyperlink{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}{create}(var t,var table)
+In lua: local \hyperlink{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}{create}(local t, local table)
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCardinalSplineTo_af78b3f869e29001d3962efe682bb31e3}\label{classCardinalSplineTo_af78b3f869e29001d3962efe682bb31e3}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!create@{create}}
+\index{create@{create}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To}$\ast$ Cardinal\+Spline\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{float}]{tension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an action with a Cardinal Spline array of points and tension. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & In seconds. \\
+\hline
+{\em points} & An \hyperlink{classPointArray}{Point\+Array}. \\
+\hline
+{\em tension} & Goodness of fit. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed.
+In js: var \hyperlink{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}{create}(var t,var table)
+In lua: local \hyperlink{classCardinalSplineTo_a49dcc4667a5af6476e9b10792735033c}{create}(local t, local table)
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}\label{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!get\+Points@{get\+Points}}
+\index{get\+Points@{get\+Points}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{get\+Points()}{getPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPointArray}{Point\+Array}$\ast$ Cardinal\+Spline\+To\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a \hyperlink{classPointArray}{Point\+Array}.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPointArray}{Point\+Array}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}\label{classCardinalSplineTo_a81579b21c78debeaeca0063b46bf9a9d}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!get\+Points@{get\+Points}}
+\index{get\+Points@{get\+Points}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{get\+Points()}{getPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPointArray}{Point\+Array}$\ast$ Cardinal\+Spline\+To\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a \hyperlink{classPointArray}{Point\+Array}.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPointArray}{Point\+Array}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}\label{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!init\+With\+Duration@{init\+With\+Duration}}
+\index{init\+With\+Duration@{init\+With\+Duration}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{init\+With\+Duration()}{initWithDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Cardinal\+Spline\+To\+::init\+With\+Duration (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{float}]{tension }\end{DoxyParamCaption})}
+
+Initializes the action with a duration and an array of points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & In seconds. \\
+\hline
+{\em points} & An \hyperlink{classPointArray}{Point\+Array}. \\
+\hline
+{\em tension} & Goodness of fit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}\label{classCardinalSplineTo_ac20ad3890618649914a42710e9eee434}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!init\+With\+Duration@{init\+With\+Duration}}
+\index{init\+With\+Duration@{init\+With\+Duration}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{init\+With\+Duration()}{initWithDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Cardinal\+Spline\+To\+::init\+With\+Duration (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points,  }\item[{float}]{tension }\end{DoxyParamCaption})}
+
+Initializes the action with a duration and an array of points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & In seconds. \\
+\hline
+{\em points} & An \hyperlink{classPointArray}{Point\+Array}. \\
+\hline
+{\em tension} & Goodness of fit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCardinalSplineTo_aecb2ad46af2d58995820c9dfc1f6459f}\label{classCardinalSplineTo_aecb2ad46af2d58995820c9dfc1f6459f}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To} $\ast$ Cardinal\+Spline\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCatmullRomBy_ab489930d039c543d5965637ed50420d3}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomBy_a2f027f2c6627f98ffcc75a64ff6b0cd0}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomTo_a4657e8372500bbf9faa339cde93d1610}{Catmull\+Rom\+To}, \hyperlink{classCatmullRomTo_ac3a4e10bb0ce746fc0dc76d804482bc3}{Catmull\+Rom\+To}, \hyperlink{classCardinalSplineBy_a565e7afdb1544698e29dda40a201ccae}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_ac5084ddc681589404f2a26d52815344b}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_aea43897c48192fa9e19f45c343d0a7fd}\label{classCardinalSplineTo_aea43897c48192fa9e19f45c343d0a7fd}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To}$\ast$ Cardinal\+Spline\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCatmullRomBy_ab489930d039c543d5965637ed50420d3}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomBy_a2f027f2c6627f98ffcc75a64ff6b0cd0}{Catmull\+Rom\+By}, \hyperlink{classCatmullRomTo_a4657e8372500bbf9faa339cde93d1610}{Catmull\+Rom\+To}, \hyperlink{classCatmullRomTo_ac3a4e10bb0ce746fc0dc76d804482bc3}{Catmull\+Rom\+To}, \hyperlink{classCardinalSplineBy_a565e7afdb1544698e29dda40a201ccae}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_ac5084ddc681589404f2a26d52815344b}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}\label{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!set\+Points@{set\+Points}}
+\index{set\+Points@{set\+Points}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{set\+Points()}{setPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Cardinal\+Spline\+To\+::set\+Points (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}\label{classCardinalSplineTo_a303a067d9052d21a6ffc8004c174001b}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!set\+Points@{set\+Points}}
+\index{set\+Points@{set\+Points}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{set\+Points()}{setPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Cardinal\+Spline\+To\+::set\+Points (\begin{DoxyParamCaption}\item[{\hyperlink{classPointArray}{Point\+Array} $\ast$}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classCardinalSplineTo_ab1e28aab8fe748bd90cc370efc52bef5}\label{classCardinalSplineTo_ab1e28aab8fe748bd90cc370efc52bef5}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Cardinal\+Spline\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCardinalSplineBy_a913fc62fee3b78dcdeb76b9bf8d05b35}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_aaf4bff6ebce3d2ccf6dfaa71678d4462}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a395a93dfe6f1d9e9298236bd44f04ade}\label{classCardinalSplineTo_a395a93dfe6f1d9e9298236bd44f04ade}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Cardinal\+Spline\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classCardinalSplineBy_a913fc62fee3b78dcdeb76b9bf8d05b35}{Cardinal\+Spline\+By}, and \hyperlink{classCardinalSplineBy_aaf4bff6ebce3d2ccf6dfaa71678d4462}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_ae59f479c5041896e373bdcc8af9cdd30}\label{classCardinalSplineTo_ae59f479c5041896e373bdcc8af9cdd30}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!update@{update}}
+\index{update@{update}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Cardinal\+Spline\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a8bad76ed354e2a5ef225e25f39e51184}\label{classCardinalSplineTo_a8bad76ed354e2a5ef225e25f39e51184}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!update@{update}}
+\index{update@{update}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Cardinal\+Spline\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a3ab5cf5c0296a69e675c42293c82a606}\label{classCardinalSplineTo_a3ab5cf5c0296a69e675c42293c82a606}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!update\+Position@{update\+Position}}
+\index{update\+Position@{update\+Position}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{update\+Position()}{updatePosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Cardinal\+Spline\+To\+::update\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2} \&}]{new\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+It will update the target position and change the \+\_\+previous\+Position to new\+Pos
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & The new position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCardinalSplineBy_af49fedd4b7c5ef7c1a8cd58773c5644e}{Cardinal\+Spline\+By}.
+
+\mbox{\Hypertarget{classCardinalSplineTo_a18b90e37ad31dd48a7aaa611e6608369}\label{classCardinalSplineTo_a18b90e37ad31dd48a7aaa611e6608369}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!update\+Position@{update\+Position}}
+\index{update\+Position@{update\+Position}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{update\+Position()}{updatePosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Cardinal\+Spline\+To\+::update\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{new\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+It will update the target position and change the \+\_\+previous\+Position to new\+Pos
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & The new position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCardinalSplineBy_ac28d6a528e8d265913b07d74a700cca9}{Cardinal\+Spline\+By}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCardinalSplineTo_a3ef76fd17e6ad9641c4f6aa27b5d6ec9}\label{classCardinalSplineTo_a3ef76fd17e6ad9641c4f6aa27b5d6ec9}} 
+\index{Cardinal\+Spline\+To@{Cardinal\+Spline\+To}!\+\_\+points@{\+\_\+points}}
+\index{\+\_\+points@{\+\_\+points}!Cardinal\+Spline\+To@{Cardinal\+Spline\+To}}
+\subsubsection{\texorpdfstring{\+\_\+points}{\_points}}
+{\footnotesize\ttfamily \hyperlink{classPointArray}{Point\+Array} $\ast$ Cardinal\+Spline\+To\+::\+\_\+points\hspace{0.3cm}{\ttfamily [protected]}}
+
+Array of control points 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Catmull\+Rom.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Catmull\+Rom.\+cpp\end{DoxyCompactItemize}

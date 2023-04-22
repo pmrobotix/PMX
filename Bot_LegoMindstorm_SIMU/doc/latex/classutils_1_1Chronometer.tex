@@ -1,0 +1,133 @@
+\hypertarget{classutils_1_1Chronometer}{}\section{utils\+:\+:Chronometer Class Reference}
+\label{classutils_1_1Chronometer}\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+
+
+Gestion d\textquotesingle{}un chronomètre.  
+
+
+
+
+{\ttfamily \#include $<$Chronometer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_a96be54a4bf5045e1b6f65ad092c23ded}\label{classutils_1_1Chronometer_a96be54a4bf5045e1b6f65ad092c23ded}} 
+\hyperlink{classutils_1_1Chronometer_a96be54a4bf5045e1b6f65ad092c23ded}{Chronometer} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. Le chronomètre créé n\textquotesingle{}est pas lancé par le constructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_a4c03aa0beaf5d6f0f2e588fa97ed5298}\label{classutils_1_1Chronometer_a4c03aa0beaf5d6f0f2e588fa97ed5298}} 
+virtual \hyperlink{classutils_1_1Chronometer_a4c03aa0beaf5d6f0f2e588fa97ed5298}{$\sim$ Chronometer} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+bool \hyperlink{classutils_1_1Chronometer_af09b58a8ae28db72b09bca32efa3f95b}{started} ()
+\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_a174c35f7b276290813fe913ed5c82bd3}\label{classutils_1_1Chronometer_a174c35f7b276290813fe913ed5c82bd3}} 
+void \hyperlink{classutils_1_1Chronometer_a174c35f7b276290813fe913ed5c82bd3}{start} ()
+\begin{DoxyCompactList}\small\item\em Lance ou reset le chronomètre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_ab5884be726059e187292392b76ba63e3}\label{classutils_1_1Chronometer_ab5884be726059e187292392b76ba63e3}} 
+void \hyperlink{classutils_1_1Chronometer_ab5884be726059e187292392b76ba63e3}{stop} ()
+\begin{DoxyCompactList}\small\item\em Arrete le chronomètre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_a1dbc0872c71691197c8b4791c6ef3077}\label{classutils_1_1Chronometer_a1dbc0872c71691197c8b4791c6ef3077}} 
+void \hyperlink{classutils_1_1Chronometer_a1dbc0872c71691197c8b4791c6ef3077}{set\+Timer} (unsigned int usec)
+\begin{DoxyCompactList}\small\item\em Set un timer. \end{DoxyCompactList}\item 
+int \hyperlink{classutils_1_1Chronometer_a821bfe0e70f7b50199557667c08dbb67}{wait\+Timer} (int delay\+\_\+us=0, bool debug=false)
+\begin{DoxyCompactList}\small\item\em Verifie un timer (après avoir effectué un Set\+Timer). \end{DoxyCompactList}\item 
+float \hyperlink{classutils_1_1Chronometer_acf0f4b7283770941a7d3e134160790de}{get\+Elapsed\+Time} ()
+\begin{DoxyCompactList}\small\item\em Un alias pour la méthode \hyperlink{classutils_1_1Chronometer_a935aa20dd1791cfc8aec203a8838598d}{get\+Elapsed\+Time\+In\+Sec()}. \end{DoxyCompactList}\item 
+float \hyperlink{classutils_1_1Chronometer_a935aa20dd1791cfc8aec203a8838598d}{get\+Elapsed\+Time\+In\+Sec} ()
+\item 
+float \hyperlink{classutils_1_1Chronometer_aecf9f2e3ced9629be0a03b3ecf0ee01a}{get\+Elapsed\+Time\+In\+Milli\+Sec} ()
+\item 
+unsigned long long \hyperlink{classutils_1_1Chronometer_a8c641a39ccca4bf655bb09d9c1cd8d9b}{get\+Elapsed\+Time\+In\+Micro\+Sec} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1Chronometer_a4f4e58c494682a60b6cc7163ab9206b7}\label{classutils_1_1Chronometer_a4f4e58c494682a60b6cc7163ab9206b7}} 
+static timeval {\bfseries get\+Time} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gestion d\textquotesingle{}un chronomètre. 
+
+Cette précision de ce chronomètre est de l\textquotesingle{}ordre de la microseconde. Son fonctionnement est \textquotesingle{}basique\textquotesingle{} \+:
+\begin{DoxyItemize}
+\item il est lancé via la méthode \hyperlink{classutils_1_1Chronometer_a174c35f7b276290813fe913ed5c82bd3}{start()},
+\item il est arrété via la méthode \hyperlink{classutils_1_1Chronometer_ab5884be726059e187292392b76ba63e3}{stop()}.
+\item Les méthodes get\+Elapsed\+Time\+X\+X\+X() retournent le temps associé au compteur.
+\end{DoxyItemize}
+
+Remarques \+: Les appels successifs à \hyperlink{classutils_1_1Chronometer_a174c35f7b276290813fe913ed5c82bd3}{start()} réinitialise le chronomètre. Le constructeur initialise un chronomètre mais ne le lance pas. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1Chronometer_acf0f4b7283770941a7d3e134160790de}\label{classutils_1_1Chronometer_acf0f4b7283770941a7d3e134160790de}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!get\+Elapsed\+Time@{get\+Elapsed\+Time}}
+\index{get\+Elapsed\+Time@{get\+Elapsed\+Time}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{get\+Elapsed\+Time()}{getElapsedTime()}}
+{\footnotesize\ttfamily float utils\+::\+Chronometer\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Un alias pour la méthode \hyperlink{classutils_1_1Chronometer_a935aa20dd1791cfc8aec203a8838598d}{get\+Elapsed\+Time\+In\+Sec()}. 
+
+\begin{DoxyReturn}{Returns}
+Le nb de periodes ecoulées depuis le début. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Chronometer_a8c641a39ccca4bf655bb09d9c1cd8d9b}\label{classutils_1_1Chronometer_a8c641a39ccca4bf655bb09d9c1cd8d9b}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!get\+Elapsed\+Time\+In\+Micro\+Sec@{get\+Elapsed\+Time\+In\+Micro\+Sec}}
+\index{get\+Elapsed\+Time\+In\+Micro\+Sec@{get\+Elapsed\+Time\+In\+Micro\+Sec}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{get\+Elapsed\+Time\+In\+Micro\+Sec()}{getElapsedTimeInMicroSec()}}
+{\footnotesize\ttfamily unsigned long long utils\+::\+Chronometer\+::get\+Elapsed\+Time\+In\+Micro\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Le temps du chronomètre en microseconde. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Chronometer_aecf9f2e3ced9629be0a03b3ecf0ee01a}\label{classutils_1_1Chronometer_aecf9f2e3ced9629be0a03b3ecf0ee01a}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!get\+Elapsed\+Time\+In\+Milli\+Sec@{get\+Elapsed\+Time\+In\+Milli\+Sec}}
+\index{get\+Elapsed\+Time\+In\+Milli\+Sec@{get\+Elapsed\+Time\+In\+Milli\+Sec}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{get\+Elapsed\+Time\+In\+Milli\+Sec()}{getElapsedTimeInMilliSec()}}
+{\footnotesize\ttfamily float utils\+::\+Chronometer\+::get\+Elapsed\+Time\+In\+Milli\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Le temps du chronomètre en milliseconde. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Chronometer_a935aa20dd1791cfc8aec203a8838598d}\label{classutils_1_1Chronometer_a935aa20dd1791cfc8aec203a8838598d}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!get\+Elapsed\+Time\+In\+Sec@{get\+Elapsed\+Time\+In\+Sec}}
+\index{get\+Elapsed\+Time\+In\+Sec@{get\+Elapsed\+Time\+In\+Sec}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{get\+Elapsed\+Time\+In\+Sec()}{getElapsedTimeInSec()}}
+{\footnotesize\ttfamily float utils\+::\+Chronometer\+::get\+Elapsed\+Time\+In\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Le temps du chronomètre en seconde. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Chronometer_af09b58a8ae28db72b09bca32efa3f95b}\label{classutils_1_1Chronometer_af09b58a8ae28db72b09bca32efa3f95b}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!started@{started}}
+\index{started@{started}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{started()}{started()}}
+{\footnotesize\ttfamily bool utils\+::\+Chronometer\+::started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si le chronometer est démarré. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutils_1_1Chronometer_a821bfe0e70f7b50199557667c08dbb67}\label{classutils_1_1Chronometer_a821bfe0e70f7b50199557667c08dbb67}} 
+\index{utils\+::\+Chronometer@{utils\+::\+Chronometer}!wait\+Timer@{wait\+Timer}}
+\index{wait\+Timer@{wait\+Timer}!utils\+::\+Chronometer@{utils\+::\+Chronometer}}
+\subsubsection{\texorpdfstring{wait\+Timer()}{waitTimer()}}
+{\footnotesize\ttfamily int utils\+::\+Chronometer\+::wait\+Timer (\begin{DoxyParamCaption}\item[{int}]{delay\+\_\+us = {\ttfamily 0},  }\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Verifie un timer (après avoir effectué un Set\+Timer). 
+
+\begin{DoxyReturn}{Returns}
+1 si le timer est dépassé.
+\end{DoxyReturn}
+Verifie un timer (après avoir effectué un Set\+Timer). \begin{DoxyReturn}{Returns}
+1 si le timer est dépassé. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/\hyperlink{Chronometer_8hpp}{Chronometer.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/\hyperlink{Chronometer_8cpp}{Chronometer.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{classGoto}{}\section{Goto Class Reference}
+\label{classGoto}\index{Goto@{Goto}}
+
+
+Inheritance diagram for Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classGoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classGoto__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structGoto_1_1GotoConfiguration}{Goto\+Configuration}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGoto_afbf185c764d963a96c32fdca709ebb6e}\label{classGoto_afbf185c764d963a96c32fdca709ebb6e}} 
+{\bfseries Goto} (float consign\+X\+\_\+mm, float consign\+Y\+\_\+mm, \hyperlink{structGoto_1_1GotoConfiguration}{Goto\+Configuration} const $\ast$configuration, float backward\+Mode=false)
+\item 
+\mbox{\Hypertarget{classGoto_a8b7770cfbe996d43e312a22576817a12}\label{classGoto_a8b7770cfbe996d43e312a22576817a12}} 
+virtual void {\bfseries compute\+Initial\+Consign} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, float $\ast$distance\+Consig, float $\ast$angle\+Consign, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator)
+\item 
+\mbox{\Hypertarget{classGoto_abe5732a3f70668e07bbb9363b537e2b4}\label{classGoto_abe5732a3f70668e07bbb9363b537e2b4}} 
+virtual void {\bfseries update\+Consign} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, float $\ast$distance\+Consig, float $\ast$angle\+Consign, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator)
+\item 
+\mbox{\Hypertarget{classGoto_a9251ad78adca0b3e9358346d3bf90ad0}\label{classGoto_a9251ad78adca0b3e9358346d3bf90ad0}} 
+virtual bool {\bfseries is\+Goal\+Reached} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator, const \hyperlink{classCommand}{Command} $\ast$next\+Command)
+\item 
+\mbox{\Hypertarget{classGoto_a6896a408afe83ab037f6fe9c4a596358}\label{classGoto_a6896a408afe83ab037f6fe9c4a596358}} 
+virtual bool {\bfseries no\+Stop} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGoto_a40f2209d86b38d1ed8a2660e16868f4d}\label{classGoto_a40f2209d86b38d1ed8a2660e16868f4d}} 
+static float {\bfseries compute\+Delta\+Dist} (float deltaX, float deltaY)
+\item 
+\mbox{\Hypertarget{classGoto_aa38fb0a34b86a9ee4924aabfffe1c96f}\label{classGoto_aa38fb0a34b86a9ee4924aabfffe1c96f}} 
+static float {\bfseries compute\+Delta\+Theta} (float deltaX, float deltaY, float theta\+\_\+rad)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/command\+Manager/\+Commands/Goto.\+h\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/command\+Manager/\+Commands/Goto.\+cpp\end{DoxyCompactItemize}

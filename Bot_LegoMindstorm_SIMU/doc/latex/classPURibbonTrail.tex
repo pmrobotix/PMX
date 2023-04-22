@@ -1,0 +1,711 @@
+\hypertarget{classPURibbonTrail}{}\section{P\+U\+Ribbon\+Trail Class Reference}
+\label{classPURibbonTrail}\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+
+
+Inheritance diagram for P\+U\+Ribbon\+Trail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classPURibbonTrail__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Ribbon\+Trail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPURibbonTrail__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_ab4d5ca62e5ae77ee6c3aa1a7c79f61e4}\label{classPURibbonTrail_ab4d5ca62e5ae77ee6c3aa1a7c79f61e4}} 
+typedef std\+::vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ {\bfseries Node\+List}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_ab4d5ca62e5ae77ee6c3aa1a7c79f61e4}\label{classPURibbonTrail_ab4d5ca62e5ae77ee6c3aa1a7c79f61e4}} 
+typedef std\+::vector$<$ \hyperlink{classNode}{Node} $\ast$ $>$ {\bfseries Node\+List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPURibbonTrail_a9cf6152a0b0a57b2ebd40108d4b60647}{P\+U\+Ribbon\+Trail} (const std\+::string \&name, const std\+::string \&tex\+File=\char`\"{}\char`\"{}, size\+\_\+t max\+Elements=20, size\+\_\+t number\+Of\+Chains=1, bool use\+Texture\+Coords=true, bool use\+Colours=true)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a182c68d0f3d519787f73a9852c5fe9a4}\label{classPURibbonTrail_a182c68d0f3d519787f73a9852c5fe9a4}} 
+virtual \hyperlink{classPURibbonTrail_a182c68d0f3d519787f73a9852c5fe9a4}{$\sim$\+P\+U\+Ribbon\+Trail} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPURibbonTrail_a9220a9096a518fb57cf064767d804a79}{add\+Node} (\hyperlink{classNode}{Node} $\ast$n)
+\item 
+virtual void \hyperlink{classPURibbonTrail_abcb0fb34b7cda45a2180285d4903e4fc}{remove\+Node} (\hyperlink{classNode}{Node} $\ast$n)
+\item 
+virtual size\+\_\+t \hyperlink{classPURibbonTrail_a570003f3cf26fbf9977d2d402705325f}{get\+Chain\+Index\+For\+Node} (const \hyperlink{classNode}{Node} $\ast$n)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a925a8af6ebe70c26a3d0b694ed04ce73}\label{classPURibbonTrail_a925a8af6ebe70c26a3d0b694ed04ce73}} 
+void {\bfseries set\+Attached\+Node} (\hyperlink{classNode}{Node} $\ast$parent)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a48529874c9823d5b2bd38fddd8aaeced}{set\+Trail\+Length} (float len)
+\item 
+virtual float \hyperlink{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}{get\+Trail\+Length} (void) const
+\item 
+void \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{set\+Max\+Chain\+Elements} (size\+\_\+t max\+Elements) override
+\item 
+virtual void \hyperlink{classPURibbonTrail_a73dff6c67263bc49678ce73a16d03756}{set\+Number\+Of\+Chains} (size\+\_\+t num\+Chains) override
+\item 
+void \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{clear\+Chain} (size\+\_\+t chain\+Index) override
+\item 
+virtual void \hyperlink{classPURibbonTrail_a5a84fe723e163b729896fb5f307fe04b}{set\+Initial\+Colour} (size\+\_\+t chain\+Index, const \hyperlink{classVec4}{Vec4} \&col)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a358e7014b6eb2d7a3a3cbfaf28455e4f}{set\+Initial\+Colour} (size\+\_\+t chain\+Index, float r, float g, float b, float a=1.\+0)
+\item 
+virtual const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPURibbonTrail_ae68d1591603536035c6c31736c298356}{get\+Initial\+Colour} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_a110171311c7a9bd54e247133943fd4c7}{set\+Colour\+Change} (size\+\_\+t chain\+Index, const \hyperlink{classVec4}{Vec4} \&value\+Per\+Second)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a15332ae9a9cd320b5dfa5537777ce77b}{set\+Initial\+Width} (size\+\_\+t chain\+Index, float width)
+\item 
+virtual float \hyperlink{classPURibbonTrail_aef05b972efc8314ac9474f947b4c2295}{get\+Initial\+Width} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_a744d20056345182e98e7e8a54657fd0b}{set\+Width\+Change} (size\+\_\+t chain\+Index, float width\+Delta\+Per\+Second)
+\item 
+virtual float \hyperlink{classPURibbonTrail_a4a8d19d06f53121cc8c6332a5c7106ef}{get\+Width\+Change} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_a7e97efa8ae300499c7de548705cd0873}{set\+Colour\+Change} (size\+\_\+t chain\+Index, float r, float g, float b, float a)
+\item 
+virtual const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPURibbonTrail_acb288780202f2382d949f80be32b02ab}{get\+Colour\+Change} (size\+\_\+t chain\+Index) const
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a67e9519e2613d8aaf1b4dd92f26f49be}\label{classPURibbonTrail_a67e9519e2613d8aaf1b4dd92f26f49be}} 
+void {\bfseries update} (float delta\+Time)
+\item 
+void \hyperlink{classPURibbonTrail_a67db1906af616c173f790428bd98f318}{node\+Updated} (const \hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}{node\+Destroyed} (const \hyperlink{classNode}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}\label{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}} 
+void \hyperlink{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}{time\+Update} (float time)
+\begin{DoxyCompactList}\small\item\em Perform any fading / width delta required; internal method. \end{DoxyCompactList}\item 
+\hyperlink{classPURibbonTrail_ab7cd922100aa2ca7725a1f608b5d6c26}{P\+U\+Ribbon\+Trail} (const std\+::string \&name, const std\+::string \&tex\+File=\char`\"{}\char`\"{}, size\+\_\+t max\+Elements=20, size\+\_\+t number\+Of\+Chains=1, bool use\+Texture\+Coords=true, bool use\+Colours=true)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a91ff0bc5ee29538ff6f3641602c18a77}\label{classPURibbonTrail_a91ff0bc5ee29538ff6f3641602c18a77}} 
+virtual \hyperlink{classPURibbonTrail_a91ff0bc5ee29538ff6f3641602c18a77}{$\sim$\+P\+U\+Ribbon\+Trail} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPURibbonTrail_a1ffe32a409da10330b7200bc77e25b0d}{add\+Node} (\hyperlink{classNode}{Node} $\ast$n)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a0c3fce3ad7a234a09915afd9a0f7a3b8}{remove\+Node} (\hyperlink{classNode}{Node} $\ast$n)
+\item 
+virtual size\+\_\+t \hyperlink{classPURibbonTrail_ab09933f2c4821065bfd81bac9566733d}{get\+Chain\+Index\+For\+Node} (const \hyperlink{classNode}{Node} $\ast$n)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a925a8af6ebe70c26a3d0b694ed04ce73}\label{classPURibbonTrail_a925a8af6ebe70c26a3d0b694ed04ce73}} 
+void {\bfseries set\+Attached\+Node} (\hyperlink{classNode}{Node} $\ast$parent)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a59f44fbda81a2323685745dd073348f8}{set\+Trail\+Length} (float len)
+\item 
+virtual float \hyperlink{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}{get\+Trail\+Length} (void) const
+\item 
+void \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{set\+Max\+Chain\+Elements} (size\+\_\+t max\+Elements) override
+\item 
+virtual void \hyperlink{classPURibbonTrail_a13906fbe3daa9f8b198fa95308dc30fb}{set\+Number\+Of\+Chains} (size\+\_\+t num\+Chains) override
+\item 
+void \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{clear\+Chain} (size\+\_\+t chain\+Index) override
+\item 
+virtual void \hyperlink{classPURibbonTrail_a0edec50ab0e916eeaf1670ee4cf4df15}{set\+Initial\+Colour} (size\+\_\+t chain\+Index, const \hyperlink{classVec4}{Vec4} \&col)
+\item 
+virtual void \hyperlink{classPURibbonTrail_a812b6a2c2e50987e22e28a534f52fcf0}{set\+Initial\+Colour} (size\+\_\+t chain\+Index, float r, float g, float b, float a=1.\+0)
+\item 
+virtual const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPURibbonTrail_a219cb94e438b1ee2957d78eb2c8695c4}{get\+Initial\+Colour} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_a1749004a876834e8cf875abd9fe969e3}{set\+Colour\+Change} (size\+\_\+t chain\+Index, const \hyperlink{classVec4}{Vec4} \&value\+Per\+Second)
+\item 
+virtual void \hyperlink{classPURibbonTrail_abae89c4ad509b7c21d2020e7327ee32c}{set\+Initial\+Width} (size\+\_\+t chain\+Index, float width)
+\item 
+virtual float \hyperlink{classPURibbonTrail_a586e54109396fad4c29f0d0938a2e4df}{get\+Initial\+Width} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_af3b7d47b5cf1b0bc44f851019601c070}{set\+Width\+Change} (size\+\_\+t chain\+Index, float width\+Delta\+Per\+Second)
+\item 
+virtual float \hyperlink{classPURibbonTrail_aefadbf42e7c96432fdf60511b78b3289}{get\+Width\+Change} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPURibbonTrail_ac344cbb2bf3277fe737c6152a2468832}{set\+Colour\+Change} (size\+\_\+t chain\+Index, float r, float g, float b, float a)
+\item 
+virtual const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPURibbonTrail_ab556e5f1f6d0d7fd4e128c1eef5060b6}{get\+Colour\+Change} (size\+\_\+t chain\+Index) const
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a67e9519e2613d8aaf1b4dd92f26f49be}\label{classPURibbonTrail_a67e9519e2613d8aaf1b4dd92f26f49be}} 
+void {\bfseries update} (float delta\+Time)
+\item 
+void \hyperlink{classPURibbonTrail_a67db1906af616c173f790428bd98f318}{node\+Updated} (const \hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}{node\+Destroyed} (const \hyperlink{classNode}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}\label{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}} 
+void \hyperlink{classPURibbonTrail_abf38ce5e5b57c0b3cf947439e78d500c}{time\+Update} (float time)
+\begin{DoxyCompactList}\small\item\em Perform any fading / width delta required; internal method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}\label{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}} 
+typedef std\+::vector$<$ size\+\_\+t $>$ \hyperlink{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}{Index\+Vector}
+\begin{DoxyCompactList}\small\item\em Mapping of nodes to chain segments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_ac7733bc8055ecb0e30d3cae191aa7eab}\label{classPURibbonTrail_ac7733bc8055ecb0e30d3cae191aa7eab}} 
+typedef std\+::map$<$ const \hyperlink{classNode}{Node} $\ast$, size\+\_\+t $>$ {\bfseries Node\+To\+Chain\+Segment\+Map}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_ac0699399c080484de5f5e95e38246c98}\label{classPURibbonTrail_ac0699399c080484de5f5e95e38246c98}} 
+typedef std\+::vector$<$ \hyperlink{classVec4}{Vec4} $>$ {\bfseries Color\+Value\+List}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_aaaa07534d7f79209abb2154f1b54542d}\label{classPURibbonTrail_aaaa07534d7f79209abb2154f1b54542d}} 
+typedef std\+::vector$<$ float $>$ {\bfseries Real\+List}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}\label{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}} 
+typedef std\+::vector$<$ size\+\_\+t $>$ \hyperlink{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}{Index\+Vector}
+\begin{DoxyCompactList}\small\item\em Mapping of nodes to chain segments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_ab428b1ce272152b30b5f9f4de248b0bb}\label{classPURibbonTrail_ab428b1ce272152b30b5f9f4de248b0bb}} 
+typedef std\+::unordered\+\_\+map$<$ const \hyperlink{classNode}{Node} $\ast$, size\+\_\+t $>$ {\bfseries Node\+To\+Chain\+Segment\+Map}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_ac0699399c080484de5f5e95e38246c98}\label{classPURibbonTrail_ac0699399c080484de5f5e95e38246c98}} 
+typedef std\+::vector$<$ \hyperlink{classVec4}{Vec4} $>$ {\bfseries Color\+Value\+List}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_aaaa07534d7f79209abb2154f1b54542d}\label{classPURibbonTrail_aaaa07534d7f79209abb2154f1b54542d}} 
+typedef std\+::vector$<$ float $>$ {\bfseries Real\+List}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}\label{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}} 
+void \hyperlink{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}{manage\+Controller} (void)
+\begin{DoxyCompactList}\small\item\em Manage updates to the time controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}\label{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}} 
+void \hyperlink{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}{update\+Trail} (size\+\_\+t index, const \hyperlink{classNode}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} has changed position, update. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}\label{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}} 
+void \hyperlink{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}{reset\+Trail} (size\+\_\+t index, const \hyperlink{classNode}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Reset the tracked chain to initial state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}\label{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}} 
+void \hyperlink{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}{reset\+All\+Trails} (void)
+\begin{DoxyCompactList}\small\item\em Reset all tracked chains to initial state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}\label{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}} 
+void \hyperlink{classPURibbonTrail_a9386aa10b2c9e83b10378c3efc211fb5}{manage\+Controller} (void)
+\begin{DoxyCompactList}\small\item\em Manage updates to the time controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}\label{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}} 
+void \hyperlink{classPURibbonTrail_a0cc8552c45972e4d612177321e7dfd1b}{update\+Trail} (size\+\_\+t index, const \hyperlink{classNode}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} has changed position, update. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}\label{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}} 
+void \hyperlink{classPURibbonTrail_adb8130d276a73559b0abc864af60dc64}{reset\+Trail} (size\+\_\+t index, const \hyperlink{classNode}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Reset the tracked chain to initial state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}\label{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}} 
+void \hyperlink{classPURibbonTrail_a3fd6b55cc4412cad9ab41586c2af9986}{reset\+All\+Trails} (void)
+\begin{DoxyCompactList}\small\item\em Reset all tracked chains to initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_abcb0a6a7ba202808a2d3dc0430609b6a}\label{classPURibbonTrail_abcb0a6a7ba202808a2d3dc0430609b6a}} 
+Node\+List \hyperlink{classPURibbonTrail_abcb0a6a7ba202808a2d3dc0430609b6a}{\+\_\+node\+List}
+\begin{DoxyCompactList}\small\item\em List of nodes being trailed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_ac1cdcc9e70e4a47c460233c12cd6b9a7}\label{classPURibbonTrail_ac1cdcc9e70e4a47c460233c12cd6b9a7}} 
+\hyperlink{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}{Index\+Vector} \hyperlink{classPURibbonTrail_ac1cdcc9e70e4a47c460233c12cd6b9a7}{\+\_\+node\+To\+Chain\+Segment}
+\begin{DoxyCompactList}\small\item\em Ordered like m\+Node\+List, contains chain index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a9bf6c10317e5f386c0793c73715abe72}\label{classPURibbonTrail_a9bf6c10317e5f386c0793c73715abe72}} 
+\hyperlink{classPURibbonTrail_a3737804875a2e8ac5c038f9ed98f1924}{Index\+Vector} {\bfseries \+\_\+free\+Chains}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a4add7c543f73c62a3aeac4c5077285c7}\label{classPURibbonTrail_a4add7c543f73c62a3aeac4c5077285c7}} 
+Node\+To\+Chain\+Segment\+Map {\bfseries \+\_\+node\+To\+Seg\+Map}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a6ce967a3fa8067dec35d7963309b923e}\label{classPURibbonTrail_a6ce967a3fa8067dec35d7963309b923e}} 
+float \hyperlink{classPURibbonTrail_a6ce967a3fa8067dec35d7963309b923e}{\+\_\+trail\+Length}
+\begin{DoxyCompactList}\small\item\em Total length of trail in world units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a0fb9c4fcd2b813f4e70cf73bb07589cd}\label{classPURibbonTrail_a0fb9c4fcd2b813f4e70cf73bb07589cd}} 
+float \hyperlink{classPURibbonTrail_a0fb9c4fcd2b813f4e70cf73bb07589cd}{\+\_\+elem\+Length}
+\begin{DoxyCompactList}\small\item\em length of each element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a2d1734d1c9ffc3674fcbc759984a4f6d}\label{classPURibbonTrail_a2d1734d1c9ffc3674fcbc759984a4f6d}} 
+float \hyperlink{classPURibbonTrail_a2d1734d1c9ffc3674fcbc759984a4f6d}{\+\_\+squared\+Elem\+Length}
+\begin{DoxyCompactList}\small\item\em Squared length of each element. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a62929235f1755b507dfc99b003d86106}\label{classPURibbonTrail_a62929235f1755b507dfc99b003d86106}} 
+Color\+Value\+List \hyperlink{classPURibbonTrail_a62929235f1755b507dfc99b003d86106}{\+\_\+initial\+Color}
+\begin{DoxyCompactList}\small\item\em Initial colour of the ribbon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_aacfa609a232caa8b0b15e6a1bbc85a2e}\label{classPURibbonTrail_aacfa609a232caa8b0b15e6a1bbc85a2e}} 
+Color\+Value\+List \hyperlink{classPURibbonTrail_aacfa609a232caa8b0b15e6a1bbc85a2e}{\+\_\+delta\+Color}
+\begin{DoxyCompactList}\small\item\em fade amount per second \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a300ee202bd80090e3a809acbfc6b7526}\label{classPURibbonTrail_a300ee202bd80090e3a809acbfc6b7526}} 
+Real\+List \hyperlink{classPURibbonTrail_a300ee202bd80090e3a809acbfc6b7526}{\+\_\+initial\+Width}
+\begin{DoxyCompactList}\small\item\em Initial width of the ribbon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a39927ecc60711493a6253f340890df6e}\label{classPURibbonTrail_a39927ecc60711493a6253f340890df6e}} 
+Real\+List \hyperlink{classPURibbonTrail_a39927ecc60711493a6253f340890df6e}{\+\_\+delta\+Width}
+\begin{DoxyCompactList}\small\item\em Delta width of the ribbon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPURibbonTrail_a4168d8a93a4fcf80c40e94a89e75c54c}\label{classPURibbonTrail_a4168d8a93a4fcf80c40e94a89e75c54c}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries \+\_\+parent\+Node}
+\item 
+\mbox{\Hypertarget{classPURibbonTrail_a117f3b5dd4d48731eb24ac8381c7614b}\label{classPURibbonTrail_a117f3b5dd4d48731eb24ac8381c7614b}} 
+bool {\bfseries \+\_\+need\+Time\+Update}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPURibbonTrail_a9cf6152a0b0a57b2ebd40108d4b60647}\label{classPURibbonTrail_a9cf6152a0b0a57b2ebd40108d4b60647}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{P\+U\+Ribbon\+Trail()}{PURibbonTrail()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN P\+U\+Ribbon\+Trail\+::\+P\+U\+Ribbon\+Trail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{tex\+File = {\ttfamily \char`\"{}\char`\"{}},  }\item[{size\+\_\+t}]{max\+Elements = {\ttfamily 20},  }\item[{size\+\_\+t}]{number\+Of\+Chains = {\ttfamily 1},  }\item[{bool}]{use\+Texture\+Coords = {\ttfamily true},  }\item[{bool}]{use\+Colours = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to give this object \\
+\hline
+{\em max\+Elements} & The maximum number of elements per chain \\
+\hline
+{\em number\+Of\+Chains} & The number of separate chain segments contained in this object, ie the maximum number of nodes that can have trails attached \\
+\hline
+{\em use\+Texture\+Coords} & If true, use texture coordinates from the chain elements \\
+\hline
+{\em use\+Vertex\+Colors} & If true, use vertex colors from the chain elements (must be true if you intend to use fading) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_ab7cd922100aa2ca7725a1f608b5d6c26}\label{classPURibbonTrail_ab7cd922100aa2ca7725a1f608b5d6c26}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{P\+U\+Ribbon\+Trail()}{PURibbonTrail()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+U\+Ribbon\+Trail\+::\+P\+U\+Ribbon\+Trail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{tex\+File = {\ttfamily \char`\"{}\char`\"{}},  }\item[{size\+\_\+t}]{max\+Elements = {\ttfamily 20},  }\item[{size\+\_\+t}]{number\+Of\+Chains = {\ttfamily 1},  }\item[{bool}]{use\+Texture\+Coords = {\ttfamily true},  }\item[{bool}]{use\+Colours = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to give this object \\
+\hline
+{\em max\+Elements} & The maximum number of elements per chain \\
+\hline
+{\em number\+Of\+Chains} & The number of separate chain segments contained in this object, ie the maximum number of nodes that can have trails attached \\
+\hline
+{\em use\+Texture\+Coords} & If true, use texture coordinates from the chain elements \\
+\hline
+{\em use\+Vertex\+Colors} & If true, use vertex colors from the chain elements (must be true if you intend to use fading) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPURibbonTrail_a9220a9096a518fb57cf064767d804a79}\label{classPURibbonTrail_a9220a9096a518fb57cf064767d804a79}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!add\+Node@{add\+Node}}
+\index{add\+Node@{add\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{add\+Node()}{addNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::add\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add a node to be tracked. 
+\begin{DoxyParams}{Parameters}
+{\em n} & The node that will be tracked. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a1ffe32a409da10330b7200bc77e25b0d}\label{classPURibbonTrail_a1ffe32a409da10330b7200bc77e25b0d}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!add\+Node@{add\+Node}}
+\index{add\+Node@{add\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{add\+Node()}{addNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::add\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add a node to be tracked. 
+\begin{DoxyParams}{Parameters}
+{\em n} & The node that will be tracked. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}\label{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!clear\+Chain@{clear\+Chain}}
+\index{clear\+Chain@{clear\+Chain}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{clear\+Chain()}{clearChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::clear\+Chain (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_a95dbb4b66dabb496bc3c9448e9e0a06f}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}\label{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!clear\+Chain@{clear\+Chain}}
+\index{clear\+Chain@{clear\+Chain}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{clear\+Chain()}{clearChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::clear\+Chain (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_a95dbb4b66dabb496bc3c9448e9e0a06f}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_a570003f3cf26fbf9977d2d402705325f}\label{classPURibbonTrail_a570003f3cf26fbf9977d2d402705325f}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Chain\+Index\+For\+Node@{get\+Chain\+Index\+For\+Node}}
+\index{get\+Chain\+Index\+For\+Node@{get\+Chain\+Index\+For\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Chain\+Index\+For\+Node()}{getChainIndexForNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t P\+U\+Ribbon\+Trail\+::get\+Chain\+Index\+For\+Node (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the chain index for a given \hyperlink{classNode}{Node} being tracked. \mbox{\Hypertarget{classPURibbonTrail_ab09933f2c4821065bfd81bac9566733d}\label{classPURibbonTrail_ab09933f2c4821065bfd81bac9566733d}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Chain\+Index\+For\+Node@{get\+Chain\+Index\+For\+Node}}
+\index{get\+Chain\+Index\+For\+Node@{get\+Chain\+Index\+For\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Chain\+Index\+For\+Node()}{getChainIndexForNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Ribbon\+Trail\+::get\+Chain\+Index\+For\+Node (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the chain index for a given \hyperlink{classNode}{Node} being tracked. \mbox{\Hypertarget{classPURibbonTrail_acb288780202f2382d949f80be32b02ab}\label{classPURibbonTrail_acb288780202f2382d949f80be32b02ab}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Colour\+Change@{get\+Colour\+Change}}
+\index{get\+Colour\+Change@{get\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Colour\+Change()}{getColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4} \& P\+U\+Ribbon\+Trail\+::get\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the per-\/second fading amount \mbox{\Hypertarget{classPURibbonTrail_ab556e5f1f6d0d7fd4e128c1eef5060b6}\label{classPURibbonTrail_ab556e5f1f6d0d7fd4e128c1eef5060b6}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Colour\+Change@{get\+Colour\+Change}}
+\index{get\+Colour\+Change@{get\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Colour\+Change()}{getColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classVec4}{Vec4}\& P\+U\+Ribbon\+Trail\+::get\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the per-\/second fading amount \mbox{\Hypertarget{classPURibbonTrail_ae68d1591603536035c6c31736c298356}\label{classPURibbonTrail_ae68d1591603536035c6c31736c298356}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Initial\+Colour@{get\+Initial\+Colour}}
+\index{get\+Initial\+Colour@{get\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Initial\+Colour()}{getInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4} \& P\+U\+Ribbon\+Trail\+::get\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the starting ribbon colour. \mbox{\Hypertarget{classPURibbonTrail_a219cb94e438b1ee2957d78eb2c8695c4}\label{classPURibbonTrail_a219cb94e438b1ee2957d78eb2c8695c4}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Initial\+Colour@{get\+Initial\+Colour}}
+\index{get\+Initial\+Colour@{get\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Initial\+Colour()}{getInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classVec4}{Vec4}\& P\+U\+Ribbon\+Trail\+::get\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the starting ribbon colour. \mbox{\Hypertarget{classPURibbonTrail_aef05b972efc8314ac9474f947b4c2295}\label{classPURibbonTrail_aef05b972efc8314ac9474f947b4c2295}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Initial\+Width@{get\+Initial\+Width}}
+\index{get\+Initial\+Width@{get\+Initial\+Width}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Initial\+Width()}{getInitialWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Ribbon\+Trail\+::get\+Initial\+Width (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the starting ribbon width in world units. \mbox{\Hypertarget{classPURibbonTrail_a586e54109396fad4c29f0d0938a2e4df}\label{classPURibbonTrail_a586e54109396fad4c29f0d0938a2e4df}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Initial\+Width@{get\+Initial\+Width}}
+\index{get\+Initial\+Width@{get\+Initial\+Width}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Initial\+Width()}{getInitialWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float P\+U\+Ribbon\+Trail\+::get\+Initial\+Width (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the starting ribbon width in world units. \mbox{\Hypertarget{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}\label{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Trail\+Length@{get\+Trail\+Length}}
+\index{get\+Trail\+Length@{get\+Trail\+Length}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Trail\+Length()}{getTrailLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual float P\+U\+Ribbon\+Trail\+::get\+Trail\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the length of the trail. \mbox{\Hypertarget{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}\label{classPURibbonTrail_a1c63f6dcfb5ac3dcd9fc0abb2098e074}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Trail\+Length@{get\+Trail\+Length}}
+\index{get\+Trail\+Length@{get\+Trail\+Length}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Trail\+Length()}{getTrailLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float P\+U\+Ribbon\+Trail\+::get\+Trail\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the length of the trail. \mbox{\Hypertarget{classPURibbonTrail_a4a8d19d06f53121cc8c6332a5c7106ef}\label{classPURibbonTrail_a4a8d19d06f53121cc8c6332a5c7106ef}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Width\+Change@{get\+Width\+Change}}
+\index{get\+Width\+Change@{get\+Width\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Width\+Change()}{getWidthChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Ribbon\+Trail\+::get\+Width\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the change in ribbon width per second. \mbox{\Hypertarget{classPURibbonTrail_aefadbf42e7c96432fdf60511b78b3289}\label{classPURibbonTrail_aefadbf42e7c96432fdf60511b78b3289}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!get\+Width\+Change@{get\+Width\+Change}}
+\index{get\+Width\+Change@{get\+Width\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{get\+Width\+Change()}{getWidthChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float P\+U\+Ribbon\+Trail\+::get\+Width\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the change in ribbon width per second. \mbox{\Hypertarget{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}\label{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!node\+Destroyed@{node\+Destroyed}}
+\index{node\+Destroyed@{node\+Destroyed}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{node\+Destroyed()}{nodeDestroyed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::node\+Destroyed (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+Node\+::\+Listener\+::node\+Destroyed 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}\label{classPURibbonTrail_a2330a097fe804b197556eff5bce345ec}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!node\+Destroyed@{node\+Destroyed}}
+\index{node\+Destroyed@{node\+Destroyed}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{node\+Destroyed()}{nodeDestroyed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::node\+Destroyed (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+Node\+::\+Listener\+::node\+Destroyed 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classPURibbonTrail_a67db1906af616c173f790428bd98f318}\label{classPURibbonTrail_a67db1906af616c173f790428bd98f318}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!node\+Updated@{node\+Updated}}
+\index{node\+Updated@{node\+Updated}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{node\+Updated()}{nodeUpdated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::node\+Updated (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+Node\+::\+Listener\+::node\+Updated 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classPURibbonTrail_a67db1906af616c173f790428bd98f318}\label{classPURibbonTrail_a67db1906af616c173f790428bd98f318}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!node\+Updated@{node\+Updated}}
+\index{node\+Updated@{node\+Updated}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{node\+Updated()}{nodeUpdated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::node\+Updated (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+Node\+::\+Listener\+::node\+Updated 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classPURibbonTrail_abcb0fb34b7cda45a2180285d4903e4fc}\label{classPURibbonTrail_abcb0fb34b7cda45a2180285d4903e4fc}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!remove\+Node@{remove\+Node}}
+\index{remove\+Node@{remove\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{remove\+Node()}{removeNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::remove\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove tracking on a given node. \mbox{\Hypertarget{classPURibbonTrail_a0c3fce3ad7a234a09915afd9a0f7a3b8}\label{classPURibbonTrail_a0c3fce3ad7a234a09915afd9a0f7a3b8}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!remove\+Node@{remove\+Node}}
+\index{remove\+Node@{remove\+Node}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{remove\+Node()}{removeNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::remove\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove tracking on a given node. \mbox{\Hypertarget{classPURibbonTrail_a110171311c7a9bd54e247133943fd4c7}\label{classPURibbonTrail_a110171311c7a9bd54e247133943fd4c7}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Colour\+Change@{set\+Colour\+Change}}
+\index{set\+Colour\+Change@{set\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Colour\+Change()}{setColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classVec4}{Vec4} \&}]{value\+Per\+Second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enables / disables fading the trail using colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em value\+Per\+Second} & The amount to subtract from colour each second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a1749004a876834e8cf875abd9fe969e3}\label{classPURibbonTrail_a1749004a876834e8cf875abd9fe969e3}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Colour\+Change@{set\+Colour\+Change}}
+\index{set\+Colour\+Change@{set\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Colour\+Change()}{setColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classVec4}{Vec4} \&}]{value\+Per\+Second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enables / disables fading the trail using colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em value\+Per\+Second} & The amount to subtract from colour each second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a7e97efa8ae300499c7de548705cd0873}\label{classPURibbonTrail_a7e97efa8ae300499c7de548705cd0873}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Colour\+Change@{set\+Colour\+Change}}
+\index{set\+Colour\+Change@{set\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Colour\+Change()}{setColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enables / disables fading the trail using colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em r,g,b,a} & The amount to subtract from each colour channel per second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_ac344cbb2bf3277fe737c6152a2468832}\label{classPURibbonTrail_ac344cbb2bf3277fe737c6152a2468832}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Colour\+Change@{set\+Colour\+Change}}
+\index{set\+Colour\+Change@{set\+Colour\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Colour\+Change()}{setColourChange()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Colour\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enables / disables fading the trail using colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em r,g,b,a} & The amount to subtract from each colour channel per second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a5a84fe723e163b729896fb5f307fe04b}\label{classPURibbonTrail_a5a84fe723e163b729896fb5f307fe04b}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Colour@{set\+Initial\+Colour}}
+\index{set\+Initial\+Colour@{set\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Colour()}{setInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classVec4}{Vec4} \&}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon colour for a given segment. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em col} & The initial colour \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only used if this instance is using vertex colours. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPURibbonTrail_a0edec50ab0e916eeaf1670ee4cf4df15}\label{classPURibbonTrail_a0edec50ab0e916eeaf1670ee4cf4df15}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Colour@{set\+Initial\+Colour}}
+\index{set\+Initial\+Colour@{set\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Colour()}{setInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classVec4}{Vec4} \&}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon colour for a given segment. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em col} & The initial colour \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only used if this instance is using vertex colours. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPURibbonTrail_a358e7014b6eb2d7a3a3cbfaf28455e4f}\label{classPURibbonTrail_a358e7014b6eb2d7a3a3cbfaf28455e4f}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Colour@{set\+Initial\+Colour}}
+\index{set\+Initial\+Colour@{set\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Colour()}{setInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em r,b,g,a} & The initial colour \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only used if this instance is using vertex colours. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPURibbonTrail_a812b6a2c2e50987e22e28a534f52fcf0}\label{classPURibbonTrail_a812b6a2c2e50987e22e28a534f52fcf0}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Colour@{set\+Initial\+Colour}}
+\index{set\+Initial\+Colour@{set\+Initial\+Colour}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Colour()}{setInitialColour()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Initial\+Colour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon colour. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em r,b,g,a} & The initial colour \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only used if this instance is using vertex colours. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPURibbonTrail_a15332ae9a9cd320b5dfa5537777ce77b}\label{classPURibbonTrail_a15332ae9a9cd320b5dfa5537777ce77b}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Width@{set\+Initial\+Width}}
+\index{set\+Initial\+Width@{set\+Initial\+Width}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Width()}{setInitialWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Initial\+Width (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon width in world units. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em width} & The initial width of the ribbon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_abae89c4ad509b7c21d2020e7327ee32c}\label{classPURibbonTrail_abae89c4ad509b7c21d2020e7327ee32c}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Initial\+Width@{set\+Initial\+Width}}
+\index{set\+Initial\+Width@{set\+Initial\+Width}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Initial\+Width()}{setInitialWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Initial\+Width (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the starting ribbon width in world units. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em width} & The initial width of the ribbon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}\label{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}}
+\index{set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Max\+Chain\+Elements()}{setMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_aa58e00d60390334e66dd7742f708ee76}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}\label{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}}
+\index{set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Max\+Chain\+Elements()}{setMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_aa58e00d60390334e66dd7742f708ee76}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_a73dff6c67263bc49678ce73a16d03756}\label{classPURibbonTrail_a73dff6c67263bc49678ce73a16d03756}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}}
+\index{set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Chains()}{setNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Chains }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_afb09bb4c28a0475beb2c6575c7eeffa5}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_a13906fbe3daa9f8b198fa95308dc30fb}\label{classPURibbonTrail_a13906fbe3daa9f8b198fa95308dc30fb}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}}
+\index{set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Chains()}{setNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Chains }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+
+
+
+
+Reimplemented from \hyperlink{classPUBillboardChain_afb09bb4c28a0475beb2c6575c7eeffa5}{P\+U\+Billboard\+Chain}.
+
+\mbox{\Hypertarget{classPURibbonTrail_a48529874c9823d5b2bd38fddd8aaeced}\label{classPURibbonTrail_a48529874c9823d5b2bd38fddd8aaeced}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Trail\+Length@{set\+Trail\+Length}}
+\index{set\+Trail\+Length@{set\+Trail\+Length}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Trail\+Length()}{setTrailLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Trail\+Length (\begin{DoxyParamCaption}\item[{float}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the length of the trail. \begin{DoxyRemark}{Remarks}
+This sets the length of the trail, in world units. It also sets how far apart each segment will be, ie length / max\+\_\+elements. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em len} & The length of the trail in world units \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a59f44fbda81a2323685745dd073348f8}\label{classPURibbonTrail_a59f44fbda81a2323685745dd073348f8}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Trail\+Length@{set\+Trail\+Length}}
+\index{set\+Trail\+Length@{set\+Trail\+Length}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Trail\+Length()}{setTrailLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Trail\+Length (\begin{DoxyParamCaption}\item[{float}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the length of the trail. \begin{DoxyRemark}{Remarks}
+This sets the length of the trail, in world units. It also sets how far apart each segment will be, ie length / max\+\_\+elements. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em len} & The length of the trail in world units \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_a744d20056345182e98e7e8a54657fd0b}\label{classPURibbonTrail_a744d20056345182e98e7e8a54657fd0b}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Width\+Change@{set\+Width\+Change}}
+\index{set\+Width\+Change@{set\+Width\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Width\+Change()}{setWidthChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Ribbon\+Trail\+::set\+Width\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{width\+Delta\+Per\+Second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the change in ribbon width per second. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em width\+Delta\+Per\+Second} & The amount the width will reduce by per second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPURibbonTrail_af3b7d47b5cf1b0bc44f851019601c070}\label{classPURibbonTrail_af3b7d47b5cf1b0bc44f851019601c070}} 
+\index{P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}!set\+Width\+Change@{set\+Width\+Change}}
+\index{set\+Width\+Change@{set\+Width\+Change}!P\+U\+Ribbon\+Trail@{P\+U\+Ribbon\+Trail}}
+\subsubsection{\texorpdfstring{set\+Width\+Change()}{setWidthChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Ribbon\+Trail\+::set\+Width\+Change (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{float}]{width\+Delta\+Per\+Second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the change in ribbon width per second. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em width\+Delta\+Per\+Second} & The amount the width will reduce by per second \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Ribbon\+Trail.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Ribbon\+Trail.\+cpp\end{DoxyCompactItemize}

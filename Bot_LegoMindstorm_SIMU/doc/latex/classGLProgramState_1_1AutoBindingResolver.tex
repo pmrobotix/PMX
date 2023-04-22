@@ -1,0 +1,121 @@
+\hypertarget{classGLProgramState_1_1AutoBindingResolver}{}\section{G\+L\+Program\+State\+:\+:Auto\+Binding\+Resolver Class Reference}
+\label{classGLProgramState_1_1AutoBindingResolver}\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+
+
+{\ttfamily \#include $<$C\+C\+G\+L\+Program\+State.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classGLProgramState_1_1AutoBindingResolver_ac396b30720f4b0cbbdc9f696f55cea8c}{$\sim$\+Auto\+Binding\+Resolver} ()
+\item 
+virtual bool \hyperlink{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}{resolve\+Auto\+Binding} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State, \hyperlink{classNode}{Node} $\ast$node, const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)=0
+\item 
+virtual \hyperlink{classGLProgramState_1_1AutoBindingResolver_ab41a254f7728f8a24761a56cdaa1df17}{$\sim$\+Auto\+Binding\+Resolver} ()
+\item 
+virtual bool \hyperlink{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}{resolve\+Auto\+Binding} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State, \hyperlink{classNode}{Node} $\ast$node, const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}{Auto\+Binding\+Resolver} ()
+\item 
+\hyperlink{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}{Auto\+Binding\+Resolver} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract base class that can be extended to support custom material auto bindings.
+
+Implementing a custom auto binding resolver allows the set of built-\/in parameter auto bindings to be extended or overridden. Any parameter auto binding that is set on a material will be forwarded to any custom auto binding resolvers, in the order in which they are registered. If a registered resolver returns true (specifying that it handles the specified auto\+Binding), no further code will be executed for that auto\+Binding. This allows auto binding resolvers to not only implement new/custom binding strings, but it also lets them override existing/built-\/in ones. For this reason, you should ensure that you O\+N\+LY return true if you explicitly handle a custom auto binding; return false otherwise.
+
+Note that the custom resolver is called only once for a \hyperlink{classGLProgramState}{G\+L\+Program\+State} object when its node binding is initially set. This occurs when a material is initially bound to a \hyperlink{classNode}{Node}. The resolver is N\+OT called each frame or each time the \hyperlink{classGLProgramState}{G\+L\+Program\+State} is bound.
+
+If no registered resolvers explicitly handle an auto binding, the binding will attempt to be resolved using the internal/built-\/in resolver, which is able to handle any auto bindings found in the G\+L\+Program\+State\+::\+Auto\+Binding enumeration.
+
+When an instance of a class that extends \hyperlink{classGLProgramState_1_1AutoBindingResolver}{Auto\+Binding\+Resolver} is created, it is automatically registered as a custom auto binding handler. Likewise, it is automatically unregistered on destruction.
+
+\{ignore\} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_ac396b30720f4b0cbbdc9f696f55cea8c}\label{classGLProgramState_1_1AutoBindingResolver_ac396b30720f4b0cbbdc9f696f55cea8c}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!````~Auto\+Binding\+Resolver@{$\sim$\+Auto\+Binding\+Resolver}}
+\index{````~Auto\+Binding\+Resolver@{$\sim$\+Auto\+Binding\+Resolver}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{$\sim$\+Auto\+Binding\+Resolver()}{~AutoBindingResolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::$\sim$\+Auto\+Binding\+Resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor. \mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}\label{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!Auto\+Binding\+Resolver@{Auto\+Binding\+Resolver}}
+\index{Auto\+Binding\+Resolver@{Auto\+Binding\+Resolver}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{Auto\+Binding\+Resolver()}{AutoBindingResolver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::\+Auto\+Binding\+Resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. \mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_ab41a254f7728f8a24761a56cdaa1df17}\label{classGLProgramState_1_1AutoBindingResolver_ab41a254f7728f8a24761a56cdaa1df17}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!````~Auto\+Binding\+Resolver@{$\sim$\+Auto\+Binding\+Resolver}}
+\index{````~Auto\+Binding\+Resolver@{$\sim$\+Auto\+Binding\+Resolver}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{$\sim$\+Auto\+Binding\+Resolver()}{~AutoBindingResolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::$\sim$\+Auto\+Binding\+Resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor. \mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}\label{classGLProgramState_1_1AutoBindingResolver_a8d74ab1028fb55fb058874954f3f5985}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!Auto\+Binding\+Resolver@{Auto\+Binding\+Resolver}}
+\index{Auto\+Binding\+Resolver@{Auto\+Binding\+Resolver}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{Auto\+Binding\+Resolver()}{AutoBindingResolver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::\+Auto\+Binding\+Resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}\label{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!resolve\+Auto\+Binding@{resolve\+Auto\+Binding}}
+\index{resolve\+Auto\+Binding@{resolve\+Auto\+Binding}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{resolve\+Auto\+Binding()}{resolveAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::resolve\+Auto\+Binding (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when an unrecognized uniform variable is encountered during material loading.
+
+Implementations of this method should do a string comparison on the passed in name parameter and decide whether or not they should handle the parameter. If the parameter is not handled, false should be returned so that other auto binding resolvers get a chance to handle the parameter. Otherwise, the parameter should be set or bound and true should be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gl\+Program\+State} & The gl\+Program\+State \\
+\hline
+{\em node} & The node that the material is attached to. \\
+\hline
+{\em uniform\+Name} & Name of the uniform \\
+\hline
+{\em auto\+Binding} & Name of the auto binding to be resolved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the auto binding is handled and the associated parameter is bound, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}\label{classGLProgramState_1_1AutoBindingResolver_af05a384559d21bc985414d2277075178}} 
+\index{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}!resolve\+Auto\+Binding@{resolve\+Auto\+Binding}}
+\index{resolve\+Auto\+Binding@{resolve\+Auto\+Binding}!G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver@{G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver}}
+\subsubsection{\texorpdfstring{resolve\+Auto\+Binding()}{resolveAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool G\+L\+Program\+State\+::\+Auto\+Binding\+Resolver\+::resolve\+Auto\+Binding (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{node,  }\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when an unrecognized uniform variable is encountered during material loading.
+
+Implementations of this method should do a string comparison on the passed in name parameter and decide whether or not they should handle the parameter. If the parameter is not handled, false should be returned so that other auto binding resolvers get a chance to handle the parameter. Otherwise, the parameter should be set or bound and true should be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gl\+Program\+State} & The gl\+Program\+State \\
+\hline
+{\em node} & The node that the material is attached to. \\
+\hline
+{\em uniform\+Name} & Name of the uniform \\
+\hline
+{\em auto\+Binding} & Name of the auto binding to be resolved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the auto binding is handled and the associated parameter is bound, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State.\+cpp\end{DoxyCompactItemize}

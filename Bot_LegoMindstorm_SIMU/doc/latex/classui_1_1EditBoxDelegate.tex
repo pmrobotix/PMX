@@ -1,0 +1,170 @@
+\hypertarget{classui_1_1EditBoxDelegate}{}\section{ui\+:\+:Edit\+Box\+Delegate Class Reference}
+\label{classui_1_1EditBoxDelegate}\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+
+
+Editbox delegate class. It\textquotesingle{}s useful when you want to do some customization during Editbox input event.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Edit\+Box.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}{Edit\+Box\+End\+Action} \{ {\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+A\+B\+\_\+\+T\+O\+\_\+\+N\+E\+XT}, 
+{\bfseries T\+A\+B\+\_\+\+T\+O\+\_\+\+P\+R\+E\+V\+I\+O\+US}, 
+{\bfseries R\+E\+T\+U\+RN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_aad37c3eef84de98c9bf5611b17a223b5}{edit\+Box\+Editing\+Did\+Begin} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$edit\+Box)
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_acbd33fc4e40fabb6e7b9ed925b273bbe}{edit\+Box\+Editing\+Did\+End} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$edit\+Box)
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_af58ec2338b2250abcb129c584ba424fb}{edit\+Box\+Text\+Changed} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$edit\+Box, const std\+::string \&text)
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}{edit\+Box\+Return} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$edit\+Box)=0
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_ad1d1f9d071792d418f48b1ad64527f4d}{edit\+Box\+Editing\+Did\+Begin} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1EditBoxDelegate_a0703fe7737a945f4791c53be7dcffa1e}{edit\+Box\+Editing\+Did\+End} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$)
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_ac98e63e402ea39fc74cfb0dd33a132ab}{edit\+Box\+Text\+Changed} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$, const std\+::string \&)
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}{edit\+Box\+Return} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$edit\+Box)=0
+\item 
+virtual void \hyperlink{classui_1_1EditBoxDelegate_a61ed8e1dccf66b4734f36e18e3bb14be}{edit\+Box\+Editing\+Did\+End\+With\+Action} (\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$, \hyperlink{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}{Edit\+Box\+End\+Action})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Editbox delegate class. It\textquotesingle{}s useful when you want to do some customization during Editbox input event. 
+
+NA  NA 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}\label{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!Edit\+Box\+End\+Action@{Edit\+Box\+End\+Action}}
+\index{Edit\+Box\+End\+Action@{Edit\+Box\+End\+Action}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{Edit\+Box\+End\+Action}{EditBoxEndAction}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}{ui\+::\+Edit\+Box\+Delegate\+::\+Edit\+Box\+End\+Action}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Reason for ending edit (for platforms where it is known) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_aad37c3eef84de98c9bf5611b17a223b5}\label{classui_1_1EditBoxDelegate_aad37c3eef84de98c9bf5611b17a223b5}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Editing\+Did\+Begin@{edit\+Box\+Editing\+Did\+Begin}}
+\index{edit\+Box\+Editing\+Did\+Begin@{edit\+Box\+Editing\+Did\+Begin}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Editing\+Did\+Begin()}{editBoxEditingDidBegin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Editing\+Did\+Begin (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{edit\+Box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when an edit box gains focus after keyboard is shown. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_ad1d1f9d071792d418f48b1ad64527f4d}\label{classui_1_1EditBoxDelegate_ad1d1f9d071792d418f48b1ad64527f4d}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Editing\+Did\+Begin@{edit\+Box\+Editing\+Did\+Begin}}
+\index{edit\+Box\+Editing\+Did\+Begin@{edit\+Box\+Editing\+Did\+Begin}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Editing\+Did\+Begin()}{editBoxEditingDidBegin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Editing\+Did\+Begin (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when an edit box gains focus after keyboard is shown. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_acbd33fc4e40fabb6e7b9ed925b273bbe}\label{classui_1_1EditBoxDelegate_acbd33fc4e40fabb6e7b9ed925b273bbe}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Editing\+Did\+End@{edit\+Box\+Editing\+Did\+End}}
+\index{edit\+Box\+Editing\+Did\+End@{edit\+Box\+Editing\+Did\+End}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Editing\+Did\+End()}{editBoxEditingDidEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Editing\+Did\+End (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{edit\+Box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when an edit box loses focus after keyboard is hidden. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_a0703fe7737a945f4791c53be7dcffa1e}\label{classui_1_1EditBoxDelegate_a0703fe7737a945f4791c53be7dcffa1e}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Editing\+Did\+End@{edit\+Box\+Editing\+Did\+End}}
+\index{edit\+Box\+Editing\+Did\+End@{edit\+Box\+Editing\+Did\+End}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Editing\+Did\+End()}{editBoxEditingDidEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Editing\+Did\+End (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when an edit box loses focus after keyboard is hidden. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000375}{Deprecated}]Use \hyperlink{classui_1_1EditBoxDelegate_a61ed8e1dccf66b4734f36e18e3bb14be}{edit\+Box\+Editing\+Did\+End\+With\+Action()} instead to receive reason for end \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_a61ed8e1dccf66b4734f36e18e3bb14be}\label{classui_1_1EditBoxDelegate_a61ed8e1dccf66b4734f36e18e3bb14be}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Editing\+Did\+End\+With\+Action@{edit\+Box\+Editing\+Did\+End\+With\+Action}}
+\index{edit\+Box\+Editing\+Did\+End\+With\+Action@{edit\+Box\+Editing\+Did\+End\+With\+Action}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Editing\+Did\+End\+With\+Action()}{editBoxEditingDidEndWithAction()}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Editing\+Did\+End\+With\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{,  }\item[{\hyperlink{classui_1_1EditBoxDelegate_ae7285a0cdbe2f2daf0557c97dba0bdb5}{Edit\+Box\+End\+Action}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when an edit box loses focus after keyboard is hidden. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+{\em type} & The reason why editing ended. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}\label{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Return@{edit\+Box\+Return}}
+\index{edit\+Box\+Return@{edit\+Box\+Return}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Return()}{editBoxReturn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Return (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{edit\+Box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This method is called when the return button was pressed or the outside area of keyboard was touched. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}\label{classui_1_1EditBoxDelegate_acf0e70504509694fb0b73b5e517669c6}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Return@{edit\+Box\+Return}}
+\index{edit\+Box\+Return@{edit\+Box\+Return}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Return()}{editBoxReturn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Return (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{edit\+Box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This method is called when the return button was pressed or the outside area of keyboard was touched. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_af58ec2338b2250abcb129c584ba424fb}\label{classui_1_1EditBoxDelegate_af58ec2338b2250abcb129c584ba424fb}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Text\+Changed@{edit\+Box\+Text\+Changed}}
+\index{edit\+Box\+Text\+Changed@{edit\+Box\+Text\+Changed}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Text\+Changed()}{editBoxTextChanged()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Text\+Changed (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{edit\+Box,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when the edit box text was changed. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+{\em text} & The new text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBoxDelegate_ac98e63e402ea39fc74cfb0dd33a132ab}\label{classui_1_1EditBoxDelegate_ac98e63e402ea39fc74cfb0dd33a132ab}} 
+\index{ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}!edit\+Box\+Text\+Changed@{edit\+Box\+Text\+Changed}}
+\index{edit\+Box\+Text\+Changed@{edit\+Box\+Text\+Changed}!ui\+::\+Edit\+Box\+Delegate@{ui\+::\+Edit\+Box\+Delegate}}
+\subsubsection{\texorpdfstring{edit\+Box\+Text\+Changed()}{editBoxTextChanged()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+Delegate\+::edit\+Box\+Text\+Changed (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is called when the edit box text was changed. 
+\begin{DoxyParams}{Parameters}
+{\em edit\+Box} & The edit box object that generated the event. \\
+\hline
+{\em text} & The new text. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/\+U\+I\+Edit\+Box/U\+I\+Edit\+Box.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{group__mpg123__lowio}{}\section{mpg123 low level I/O}
+\label{group__mpg123__lowio}\index{mpg123 low level I/O@{mpg123 low level I/O}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__lowio_ga4004912737be35ad51ff4dac17022407}{mpg123\+\_\+replace\+\_\+buffer} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, unsigned char $\ast$data, size\+\_\+t size)
+\item 
+E\+X\+P\+O\+RT size\+\_\+t \hyperlink{group__mpg123__lowio_ga07215fe811cff7925517e5548768e652}{mpg123\+\_\+outblock} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__lowio_ga8112b25fedb2d52c76abb1b103e6e2cc}{mpg123\+\_\+replace\+\_\+reader} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, ssize\+\_\+t($\ast$r\+\_\+read)(int, void $\ast$, size\+\_\+t), off\+\_\+t($\ast$r\+\_\+lseek)(int, off\+\_\+t, int))
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__lowio_gacce158687fce659acb242952b0a30916}{mpg123\+\_\+replace\+\_\+reader\+\_\+handle} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, ssize\+\_\+t($\ast$r\+\_\+read)(void $\ast$, void $\ast$, size\+\_\+t), off\+\_\+t($\ast$r\+\_\+lseek)(void $\ast$, off\+\_\+t, int), void($\ast$cleanup)(void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+You may want to do tricky stuff with I/O that does not work with mpg123\textquotesingle{}s default file access or you want to make it decode into your own pocket... 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__lowio_ga07215fe811cff7925517e5548768e652}\label{group__mpg123__lowio_ga07215fe811cff7925517e5548768e652}} 
+\index{mpg123 low level I/O@{mpg123 low level I/O}!mpg123\+\_\+outblock@{mpg123\+\_\+outblock}}
+\index{mpg123\+\_\+outblock@{mpg123\+\_\+outblock}!mpg123 low level I/O@{mpg123 low level I/O}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+outblock()}{mpg123\_outblock()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT size\+\_\+t mpg123\+\_\+outblock (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+The max size of one frame\textquotesingle{}s decoded output with current settings. Use that to determine an appropriate minimum buffer size for decoding one frame. \mbox{\Hypertarget{group__mpg123__lowio_ga4004912737be35ad51ff4dac17022407}\label{group__mpg123__lowio_ga4004912737be35ad51ff4dac17022407}} 
+\index{mpg123 low level I/O@{mpg123 low level I/O}!mpg123\+\_\+replace\+\_\+buffer@{mpg123\+\_\+replace\+\_\+buffer}}
+\index{mpg123\+\_\+replace\+\_\+buffer@{mpg123\+\_\+replace\+\_\+buffer}!mpg123 low level I/O@{mpg123 low level I/O}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+replace\+\_\+buffer()}{mpg123\_replace\_buffer()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+replace\+\_\+buffer (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Replace default internal buffer with user-\/supplied buffer. Instead of working on it\textquotesingle{}s own private buffer, mpg123 will directly use the one you provide for storing decoded audio. Note that the required buffer size could be bigger than expected from output encoding if libmpg123 has to convert from primary decoder output (p.\+ex. 32 bit storage for 24 bit output. \mbox{\Hypertarget{group__mpg123__lowio_ga8112b25fedb2d52c76abb1b103e6e2cc}\label{group__mpg123__lowio_ga8112b25fedb2d52c76abb1b103e6e2cc}} 
+\index{mpg123 low level I/O@{mpg123 low level I/O}!mpg123\+\_\+replace\+\_\+reader@{mpg123\+\_\+replace\+\_\+reader}}
+\index{mpg123\+\_\+replace\+\_\+reader@{mpg123\+\_\+replace\+\_\+reader}!mpg123 low level I/O@{mpg123 low level I/O}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+replace\+\_\+reader()}{mpg123\_replace\_reader()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+replace\+\_\+reader (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{ssize\+\_\+t($\ast$)(int, void $\ast$, size\+\_\+t)}]{r\+\_\+read,  }\item[{off\+\_\+t($\ast$)(int, off\+\_\+t, int)}]{r\+\_\+lseek }\end{DoxyParamCaption})}
+
+Replace low-\/level stream access functions; read and lseek as known in P\+O\+S\+IX. You can use this to make any fancy file opening/closing yourself, using \hyperlink{group__mpg123__input_gaf205cf0e2c2a6612f564b17d50d227f4}{mpg123\+\_\+open\+\_\+fd()} to set the file descriptor for your read/lseek (doesn\textquotesingle{}t need to be a \char`\"{}real\char`\"{} file descriptor...). Setting a function to N\+U\+LL means that the default internal read is used (active from next mpg123\+\_\+open call on). Note\+: As it would be troublesome to mess with this while having a file open, this implies \hyperlink{group__mpg123__input_ga1c86c6042807ab7734b67a829ee7a2e7}{mpg123\+\_\+close()}. \mbox{\Hypertarget{group__mpg123__lowio_gacce158687fce659acb242952b0a30916}\label{group__mpg123__lowio_gacce158687fce659acb242952b0a30916}} 
+\index{mpg123 low level I/O@{mpg123 low level I/O}!mpg123\+\_\+replace\+\_\+reader\+\_\+handle@{mpg123\+\_\+replace\+\_\+reader\+\_\+handle}}
+\index{mpg123\+\_\+replace\+\_\+reader\+\_\+handle@{mpg123\+\_\+replace\+\_\+reader\+\_\+handle}!mpg123 low level I/O@{mpg123 low level I/O}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+replace\+\_\+reader\+\_\+handle()}{mpg123\_replace\_reader\_handle()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+replace\+\_\+reader\+\_\+handle (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{ssize\+\_\+t($\ast$)(void $\ast$, void $\ast$, size\+\_\+t)}]{r\+\_\+read,  }\item[{off\+\_\+t($\ast$)(void $\ast$, off\+\_\+t, int)}]{r\+\_\+lseek,  }\item[{void($\ast$)(void $\ast$)}]{cleanup }\end{DoxyParamCaption})}
+
+Replace I/O functions with your own ones operating on some kind of handle instead of integer descriptors. The handle is a void pointer, so you can pass any data you want... \hyperlink{group__mpg123__input_gad6637826d5288242db3eef0ba6c421ba}{mpg123\+\_\+open\+\_\+handle()} is the call you make to use the I/O defined here. There is no fallback to internal read/seek here. Note\+: As it would be troublesome to mess with this while having a file open, this \hyperlink{group__mpg123__input_ga1c86c6042807ab7734b67a829ee7a2e7}{mpg123\+\_\+close()} is implied here. 
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+read} & The callback for reading (behaviour like posix read). \\
+\hline
+{\em r\+\_\+lseek} & The callback for seeking (like posix lseek). \\
+\hline
+{\em cleanup} & A callback to clean up an I/O handle on mpg123\+\_\+close, can be N\+U\+LL for none (you take care of cleaning your handles). \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,304 @@
+\hypertarget{classFileUtilsApple}{}\section{File\+Utils\+Apple Class Reference}
+\label{classFileUtilsApple}\index{File\+Utils\+Apple@{File\+Utils\+Apple}}
+
+
+Helper class to handle file operations.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+File\+Utils-\/apple.\+h$>$}
+
+
+
+Inheritance diagram for File\+Utils\+Apple\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classFileUtilsApple__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Utils\+Apple\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classFileUtilsApple__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structFileUtilsApple_1_1IMPL}{I\+M\+PL}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \hyperlink{classFileUtilsApple_ab88aca64f02b23087542ed28f1ad43d8}{get\+Writable\+Path} () const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsApple_aebc8f6fdf63b084f39ab0500b179368a}{get\+Full\+Path\+For\+Directory\+And\+Filename} (const std\+::string \&directory, const std\+::string \&filename) const override
+\item 
+virtual Value\+Map \hyperlink{classFileUtilsApple_a29093cea02fd4a89629ffb087e0f480b}{get\+Value\+Map\+From\+File} (const std\+::string \&filename) override
+\item 
+virtual Value\+Map \hyperlink{classFileUtilsApple_aa692d9cc3bb1a5b913fd5ce5dee0a548}{get\+Value\+Map\+From\+Data} (const char $\ast$filedata, int filesize) override
+\item 
+virtual bool \hyperlink{classFileUtilsApple_a57fe37f168814e2f6911fff52f7626c0}{write\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path) override
+\item 
+\mbox{\Hypertarget{classFileUtilsApple_acf77dba43a16dbeff5dd02136b0c87ba}\label{classFileUtilsApple_acf77dba43a16dbeff5dd02136b0c87ba}} 
+virtual Value\+Vector {\bfseries get\+Value\+Vector\+From\+File} (const std\+::string \&filename) override
+\item 
+virtual bool \hyperlink{classFileUtilsApple_a2b55deedf8b0fda7ceec1442f3944b1e}{create\+Directory} (const std\+::string \&path) override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsApple_a595858371ceb723ab608f535f8a2c454}{get\+Writable\+Path} () const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsApple_aa05388c597ff89171e955808338de05e}{get\+Full\+Path\+For\+Filename\+Within\+Directory} (const std\+::string \&directory, const std\+::string \&filename) const override
+\item 
+virtual Value\+Map \hyperlink{classFileUtilsApple_a400898c9e5777199a45372e98f1c6e0c}{get\+Value\+Map\+From\+File} (const std\+::string \&filename) const override
+\item 
+virtual Value\+Map \hyperlink{classFileUtilsApple_a5ecaabfb986144039b4adb55ac463f95}{get\+Value\+Map\+From\+Data} (const char $\ast$filedata, int filesize) const override
+\item 
+virtual bool \hyperlink{classFileUtilsApple_a2c762108569f84b4db36ae6d6cb3760f}{write\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path) const override
+\item 
+\mbox{\Hypertarget{classFileUtilsApple_ad246f5fafe8c6281395997f50a965641}\label{classFileUtilsApple_ad246f5fafe8c6281395997f50a965641}} 
+virtual Value\+Vector {\bfseries get\+Value\+Vector\+From\+File} (const std\+::string \&filename) const override
+\item 
+virtual bool \hyperlink{classFileUtilsApple_a104a38b7f8adf8de79f9ec2fcaa09735}{create\+Directory} (const std\+::string \&path) const override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Helper class to handle file operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileUtilsApple_a2b55deedf8b0fda7ceec1442f3944b1e}\label{classFileUtilsApple_a2b55deedf8b0fda7ceec1442f3944b1e}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Apple\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a04129d55c22dfa031fd45aeda4de5e77}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a104a38b7f8adf8de79f9ec2fcaa09735}\label{classFileUtilsApple_a104a38b7f8adf8de79f9ec2fcaa09735}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Apple\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a9d9383b68669dcbef30165514f26d7f6}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_aebc8f6fdf63b084f39ab0500b179368a}\label{classFileUtilsApple_aebc8f6fdf63b084f39ab0500b179368a}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}}
+\index{get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Directory\+And\+Filename()}{getFullPathForDirectoryAndFilename()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Apple\+::get\+Full\+Path\+For\+Directory\+And\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_aa05388c597ff89171e955808338de05e}\label{classFileUtilsApple_aa05388c597ff89171e955808338de05e}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}}
+\index{get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Filename\+Within\+Directory()}{getFullPathForFilenameWithinDirectory()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Apple\+::get\+Full\+Path\+For\+Filename\+Within\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aa6bae4977b0a23b40f5c4dfea7aee3ff}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_aa692d9cc3bb1a5b913fd5ce5dee0a548}\label{classFileUtilsApple_aa692d9cc3bb1a5b913fd5ce5dee0a548}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}}
+\index{get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+Data()}{getValueMapFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+Apple\+::get\+Value\+Map\+From\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filedata,  }\item[{int}]{filesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. This method is used internally. 
+
+Reimplemented from \hyperlink{classFileUtils_a3b1cb7c770ba78d1d68c2da204e15a15}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a5ecaabfb986144039b4adb55ac463f95}\label{classFileUtilsApple_a5ecaabfb986144039b4adb55ac463f95}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}}
+\index{get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+Data()}{getValueMapFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+Apple\+::get\+Value\+Map\+From\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filedata,  }\item[{int}]{filesize }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. This method is used internally. 
+
+Reimplemented from \hyperlink{classFileUtils_a9c882af1acde6d249e35713e82b53607}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a29093cea02fd4a89629ffb087e0f480b}\label{classFileUtilsApple_a29093cea02fd4a89629ffb087e0f480b}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}}
+\index{get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+File()}{getValueMapFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+Apple\+::get\+Value\+Map\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename of the file to gets content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value\+Map of the file contents. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method is used internally. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classFileUtils_a67aa84a7b5bcfb46a646260c084ad829}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a400898c9e5777199a45372e98f1c6e0c}\label{classFileUtilsApple_a400898c9e5777199a45372e98f1c6e0c}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}}
+\index{get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+File()}{getValueMapFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+Apple\+::get\+Value\+Map\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename of the file to gets content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value\+Map of the file contents. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method is used internally. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classFileUtils_a7a5c18baa7c28962d642c101513c7c1b}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_ab88aca64f02b23087542ed28f1ad43d8}\label{classFileUtilsApple_ab88aca64f02b23087542ed28f1ad43d8}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Apple\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a595858371ceb723ab608f535f8a2c454}\label{classFileUtilsApple_a595858371ceb723ab608f535f8a2c454}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+Apple\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a57fe37f168814e2f6911fff52f7626c0}\label{classFileUtilsApple_a57fe37f168814e2f6911fff52f7626c0}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!write\+To\+File@{write\+To\+File}}
+\index{write\+To\+File@{write\+To\+File}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{write\+To\+File()}{writeToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Apple\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+write a Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a503e4cf24b5bd8b13780370fa8e2c8f4}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsApple_a2c762108569f84b4db36ae6d6cb3760f}\label{classFileUtilsApple_a2c762108569f84b4db36ae6d6cb3760f}} 
+\index{File\+Utils\+Apple@{File\+Utils\+Apple}!write\+To\+File@{write\+To\+File}}
+\index{write\+To\+File@{write\+To\+File}!File\+Utils\+Apple@{File\+Utils\+Apple}}
+\subsubsection{\texorpdfstring{write\+To\+File()}{writeToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Apple\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+write a Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aaf55e6d080352b5fec3924521ab553e2}{File\+Utils}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/apple/C\+C\+File\+Utils-\/apple.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/apple/C\+C\+File\+Utils-\/apple.\+mm\end{DoxyCompactItemize}

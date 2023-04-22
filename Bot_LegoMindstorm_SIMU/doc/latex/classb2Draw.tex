@@ -1,0 +1,186 @@
+\hypertarget{classb2Draw}{}\section{b2\+Draw Class Reference}
+\label{classb2Draw}\index{b2\+Draw@{b2\+Draw}}
+
+
+{\ttfamily \#include $<$b2\+Draw.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}{e\+\_\+shape\+Bit} = 0x0001, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}{e\+\_\+joint\+Bit} = 0x0002, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}{e\+\_\+aabb\+Bit} = 0x0004, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}{e\+\_\+pair\+Bit} = 0x0008, 
+\newline
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}{e\+\_\+center\+Of\+Mass\+Bit} = 0x0010
+ \}
+\item 
+enum \{ \newline
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}{e\+\_\+shape\+Bit} = 0x0001, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}{e\+\_\+joint\+Bit} = 0x0002, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}{e\+\_\+aabb\+Bit} = 0x0004, 
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}{e\+\_\+pair\+Bit} = 0x0008, 
+\newline
+\hyperlink{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}{e\+\_\+center\+Of\+Mass\+Bit} = 0x0010
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}\label{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}} 
+void \hyperlink{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}{Set\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Set the drawing flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a10926d67ad6d3a2517197c4f10923700}\label{classb2Draw_a10926d67ad6d3a2517197c4f10923700}} 
+uint32 \hyperlink{classb2Draw_a10926d67ad6d3a2517197c4f10923700}{Get\+Flags} () const
+\begin{DoxyCompactList}\small\item\em Get the drawing flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_acc2fd4648ee0a65574770c64528f7166}\label{classb2Draw_acc2fd4648ee0a65574770c64528f7166}} 
+void \hyperlink{classb2Draw_acc2fd4648ee0a65574770c64528f7166}{Append\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Append flags to the current flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}\label{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}} 
+void \hyperlink{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}{Clear\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Clear flags from the current flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}\label{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}} 
+virtual void \hyperlink{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}{Draw\+Polygon} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 vertex\+Count, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a closed polygon provided in C\+CW order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}\label{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}} 
+virtual void \hyperlink{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}{Draw\+Solid\+Polygon} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 vertex\+Count, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a solid closed polygon provided in C\+CW order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}\label{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}} 
+virtual void \hyperlink{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}{Draw\+Circle} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&center, float32 radius, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}\label{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}} 
+virtual void \hyperlink{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}{Draw\+Solid\+Circle} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&center, float32 radius, const \hyperlink{structb2Vec2}{b2\+Vec2} \&axis, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a solid circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a1de5aaf50db875d1c644c596832af57d}\label{classb2Draw_a1de5aaf50db875d1c644c596832af57d}} 
+virtual void \hyperlink{classb2Draw_a1de5aaf50db875d1c644c596832af57d}{Draw\+Segment} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&p1, const \hyperlink{structb2Vec2}{b2\+Vec2} \&p2, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a line segment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}{Draw\+Transform} (const \hyperlink{structb2Transform}{b2\+Transform} \&xf)=0
+\item 
+\mbox{\Hypertarget{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}\label{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}} 
+void \hyperlink{classb2Draw_ac2bbe31595478690e44de4ff1e7f347e}{Set\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Set the drawing flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a10926d67ad6d3a2517197c4f10923700}\label{classb2Draw_a10926d67ad6d3a2517197c4f10923700}} 
+uint32 \hyperlink{classb2Draw_a10926d67ad6d3a2517197c4f10923700}{Get\+Flags} () const
+\begin{DoxyCompactList}\small\item\em Get the drawing flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_acc2fd4648ee0a65574770c64528f7166}\label{classb2Draw_acc2fd4648ee0a65574770c64528f7166}} 
+void \hyperlink{classb2Draw_acc2fd4648ee0a65574770c64528f7166}{Append\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Append flags to the current flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}\label{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}} 
+void \hyperlink{classb2Draw_afc240b71f4ba8c17440d6ed526d4e22e}{Clear\+Flags} (uint32 flags)
+\begin{DoxyCompactList}\small\item\em Clear flags from the current flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}\label{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}} 
+virtual void \hyperlink{classb2Draw_acd5427d1d2e7d19f1b34ad3620134d28}{Draw\+Polygon} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 vertex\+Count, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a closed polygon provided in C\+CW order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}\label{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}} 
+virtual void \hyperlink{classb2Draw_a76f2d67de0781a32cab116278c5c9eea}{Draw\+Solid\+Polygon} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 vertex\+Count, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a solid closed polygon provided in C\+CW order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}\label{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}} 
+virtual void \hyperlink{classb2Draw_ae2effe9bca87c8d7cb90e860d13b7e9e}{Draw\+Circle} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&center, float32 radius, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}\label{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}} 
+virtual void \hyperlink{classb2Draw_a775a1d0472c5980d597904c7b596a0a6}{Draw\+Solid\+Circle} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&center, float32 radius, const \hyperlink{structb2Vec2}{b2\+Vec2} \&axis, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a solid circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Draw_a1de5aaf50db875d1c644c596832af57d}\label{classb2Draw_a1de5aaf50db875d1c644c596832af57d}} 
+virtual void \hyperlink{classb2Draw_a1de5aaf50db875d1c644c596832af57d}{Draw\+Segment} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&p1, const \hyperlink{structb2Vec2}{b2\+Vec2} \&p2, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a line segment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}{Draw\+Transform} (const \hyperlink{structb2Transform}{b2\+Transform} \&xf)=0
+\item 
+\mbox{\Hypertarget{classb2Draw_acc83934a18c276d4391296c4968d9e16}\label{classb2Draw_acc83934a18c276d4391296c4968d9e16}} 
+virtual void \hyperlink{classb2Draw_acc83934a18c276d4391296c4968d9e16}{Draw\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&p, float32 size, const \hyperlink{structb2Color}{b2\+Color} \&color)=0
+\begin{DoxyCompactList}\small\item\em Draw a point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Draw_adfcd2e54ddaec6f0a111ec1a1cf8b9a0}\label{classb2Draw_adfcd2e54ddaec6f0a111ec1a1cf8b9a0}} 
+uint32 {\bfseries m\+\_\+draw\+Flags}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implement and register this class with a \hyperlink{classb2World}{b2\+World} to provide debug drawing of physics entities in your game. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3e}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3e}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+shape\+Bit@{e\+\_\+shape\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+shape\+Bit@{e\+\_\+shape\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}} 
+e\+\_\+shape\+Bit&draw shapes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+joint\+Bit@{e\+\_\+joint\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+joint\+Bit@{e\+\_\+joint\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}} 
+e\+\_\+joint\+Bit&draw joint connections \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+aabb\+Bit@{e\+\_\+aabb\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+aabb\+Bit@{e\+\_\+aabb\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}} 
+e\+\_\+aabb\+Bit&draw axis aligned bounding boxes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+pair\+Bit@{e\+\_\+pair\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+pair\+Bit@{e\+\_\+pair\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}} 
+e\+\_\+pair\+Bit&draw broad-\/phase pairs \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+center\+Of\+Mass\+Bit@{e\+\_\+center\+Of\+Mass\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+center\+Of\+Mass\+Bit@{e\+\_\+center\+Of\+Mass\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}} 
+e\+\_\+center\+Of\+Mass\+Bit&draw center of mass frame \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classb2Draw_a2aa79dd422fc0c09795a70398a7526d6}\label{classb2Draw_a2aa79dd422fc0c09795a70398a7526d6}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+shape\+Bit@{e\+\_\+shape\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+shape\+Bit@{e\+\_\+shape\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eac617e88eae2b7890857d12b67cfd45ed}} 
+e\+\_\+shape\+Bit&draw shapes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+joint\+Bit@{e\+\_\+joint\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+joint\+Bit@{e\+\_\+joint\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3eafcb7058ebcae22c25dd34c6d75dd90d7}} 
+e\+\_\+joint\+Bit&draw joint connections \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+aabb\+Bit@{e\+\_\+aabb\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+aabb\+Bit@{e\+\_\+aabb\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea613d9a539ab829c1e5d682a7a34de3fb}} 
+e\+\_\+aabb\+Bit&draw axis aligned bounding boxes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+pair\+Bit@{e\+\_\+pair\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+pair\+Bit@{e\+\_\+pair\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea1a23346db70a5aa83e3e6fffbd6b9d7b}} 
+e\+\_\+pair\+Bit&draw broad-\/phase pairs \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{e\+\_\+center\+Of\+Mass\+Bit@{e\+\_\+center\+Of\+Mass\+Bit}!b2\+Draw@{b2\+Draw}}\index{b2\+Draw@{b2\+Draw}!e\+\_\+center\+Of\+Mass\+Bit@{e\+\_\+center\+Of\+Mass\+Bit}}}\mbox{\Hypertarget{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}\label{classb2Draw_a1ab40b2d49a84ff37701511d3060ff3ea542b80153eca8bf44cad102af6a2bd2b}} 
+e\+\_\+center\+Of\+Mass\+Bit&draw center of mass frame \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}\label{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}} 
+\index{b2\+Draw@{b2\+Draw}!Draw\+Transform@{Draw\+Transform}}
+\index{Draw\+Transform@{Draw\+Transform}!b2\+Draw@{b2\+Draw}}
+\subsubsection{\texorpdfstring{Draw\+Transform()}{DrawTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void b2\+Draw\+::\+Draw\+Transform (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draw a transform. Choose your own length scale. 
+\begin{DoxyParams}{Parameters}
+{\em xf} & a transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}\label{classb2Draw_ade698123482a491a7a61fa1fe4d3a4f4}} 
+\index{b2\+Draw@{b2\+Draw}!Draw\+Transform@{Draw\+Transform}}
+\index{Draw\+Transform@{Draw\+Transform}!b2\+Draw@{b2\+Draw}}
+\subsubsection{\texorpdfstring{Draw\+Transform()}{DrawTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void b2\+Draw\+::\+Draw\+Transform (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{xf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Draw a transform. Choose your own length scale. 
+\begin{DoxyParams}{Parameters}
+{\em xf} & a transform. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Common/b2\+Draw.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Common/b2\+Draw.\+cpp\end{DoxyCompactItemize}

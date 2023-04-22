@@ -1,0 +1,59 @@
+\hypertarget{structrcPolyMesh}{}\section{rc\+Poly\+Mesh Struct Reference}
+\label{structrcPolyMesh}\index{rc\+Poly\+Mesh@{rc\+Poly\+Mesh}}
+
+
+{\ttfamily \#include $<$Recast.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrcPolyMesh_a6fb2125631266e4cfc462b856d533966}\label{structrcPolyMesh_a6fb2125631266e4cfc462b856d533966}} 
+unsigned short $\ast$ \hyperlink{structrcPolyMesh_a6fb2125631266e4cfc462b856d533966}{verts}
+\begin{DoxyCompactList}\small\item\em The mesh vertices. \mbox{[}Form\+: (x, y, z) $\ast$ \hyperlink{structrcPolyMesh_ac9c762a21343c45649638e02332e53eb}{nverts}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_a446054c826c580a8b1036be4b92e41de}\label{structrcPolyMesh_a446054c826c580a8b1036be4b92e41de}} 
+unsigned short $\ast$ \hyperlink{structrcPolyMesh_a446054c826c580a8b1036be4b92e41de}{polys}
+\begin{DoxyCompactList}\small\item\em Polygon and neighbor data. \mbox{[}Length\+: \hyperlink{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}{maxpolys} $\ast$ 2 $\ast$ \hyperlink{structrcPolyMesh_ab0c55272b556ffc9db9e643b463cb66a}{nvp}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_ab58b865ca7cf2230143aad77f5be4103}\label{structrcPolyMesh_ab58b865ca7cf2230143aad77f5be4103}} 
+unsigned short $\ast$ \hyperlink{structrcPolyMesh_ab58b865ca7cf2230143aad77f5be4103}{regs}
+\begin{DoxyCompactList}\small\item\em The region id assigned to each polygon. \mbox{[}Length\+: \hyperlink{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}{maxpolys}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_a36afba0b01f0050ec3ecfac73513bae5}\label{structrcPolyMesh_a36afba0b01f0050ec3ecfac73513bae5}} 
+unsigned short $\ast$ \hyperlink{structrcPolyMesh_a36afba0b01f0050ec3ecfac73513bae5}{flags}
+\begin{DoxyCompactList}\small\item\em The user defined flags for each polygon. \mbox{[}Length\+: \hyperlink{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}{maxpolys}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_a6f2fa0d9eb2ecaa995b7e7a3430a46a5}\label{structrcPolyMesh_a6f2fa0d9eb2ecaa995b7e7a3430a46a5}} 
+unsigned char $\ast$ \hyperlink{structrcPolyMesh_a6f2fa0d9eb2ecaa995b7e7a3430a46a5}{areas}
+\begin{DoxyCompactList}\small\item\em The area id assigned to each polygon. \mbox{[}Length\+: \hyperlink{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}{maxpolys}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_ac9c762a21343c45649638e02332e53eb}\label{structrcPolyMesh_ac9c762a21343c45649638e02332e53eb}} 
+int \hyperlink{structrcPolyMesh_ac9c762a21343c45649638e02332e53eb}{nverts}
+\begin{DoxyCompactList}\small\item\em The number of vertices. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_abd3e50c1eb0aba7157aa3e2902ae019e}\label{structrcPolyMesh_abd3e50c1eb0aba7157aa3e2902ae019e}} 
+int \hyperlink{structrcPolyMesh_abd3e50c1eb0aba7157aa3e2902ae019e}{npolys}
+\begin{DoxyCompactList}\small\item\em The number of polygons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}\label{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}} 
+int \hyperlink{structrcPolyMesh_afc6261e7cee3e3ff2a83b6ee8baf14a9}{maxpolys}
+\begin{DoxyCompactList}\small\item\em The number of allocated polygons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_ab0c55272b556ffc9db9e643b463cb66a}\label{structrcPolyMesh_ab0c55272b556ffc9db9e643b463cb66a}} 
+int \hyperlink{structrcPolyMesh_ab0c55272b556ffc9db9e643b463cb66a}{nvp}
+\begin{DoxyCompactList}\small\item\em The maximum number of vertices per polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_ae7486964a6d65c79df1ef35edb38363f}\label{structrcPolyMesh_ae7486964a6d65c79df1ef35edb38363f}} 
+float \hyperlink{structrcPolyMesh_ae7486964a6d65c79df1ef35edb38363f}{bmin} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The minimum bounds in world space. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_ad36c5c68d491f0118330974576c35b7c}\label{structrcPolyMesh_ad36c5c68d491f0118330974576c35b7c}} 
+float \hyperlink{structrcPolyMesh_ad36c5c68d491f0118330974576c35b7c}{bmax} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The maximum bounds in world space. \mbox{[}(x, y, z)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_a4c3ca520c55f96037cffcf6a92809563}\label{structrcPolyMesh_a4c3ca520c55f96037cffcf6a92809563}} 
+float \hyperlink{structrcPolyMesh_a4c3ca520c55f96037cffcf6a92809563}{cs}
+\begin{DoxyCompactList}\small\item\em The size of each cell. (On the xz-\/plane.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_aa1ba795ddbb893da041b2a5273716ac5}\label{structrcPolyMesh_aa1ba795ddbb893da041b2a5273716ac5}} 
+float \hyperlink{structrcPolyMesh_aa1ba795ddbb893da041b2a5273716ac5}{ch}
+\begin{DoxyCompactList}\small\item\em The height of each cell. (The minimum increment along the y-\/axis.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcPolyMesh_a9f367a88b878ce8029b9709fb27b878b}\label{structrcPolyMesh_a9f367a88b878ce8029b9709fb27b878b}} 
+int \hyperlink{structrcPolyMesh_a9f367a88b878ce8029b9709fb27b878b}{border\+Size}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAABB}{A\+A\+BB} border size used to generate the source data from which the mesh was derived. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a polygon mesh suitable for use in building a navigation mesh. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast.\+h\end{DoxyCompactItemize}

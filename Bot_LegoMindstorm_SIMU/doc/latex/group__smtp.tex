@@ -1,0 +1,22 @@
+\hypertarget{group__smtp}{}\section{S\+M\+TP related functions}
+\label{group__smtp}\index{S\+M\+T\+P related functions@{S\+M\+T\+P related functions}}
+\subsubsection*{S\+M\+TP related functions}
+
+These apis let you communicate with a local S\+M\+TP server to send email from lws. It handles all the S\+M\+TP sequencing and protocol actions.
+
+Your system should have postfix, sendmail or another M\+TA listening on port 25 and able to send email using the \char`\"{}mail\char`\"{} commandline app. Usually distro M\+T\+As are configured for this by default.
+
+It runs via its own libuv events if initialized (which requires giving it a libuv loop to attach to).
+
+It operates using three callbacks, on\+\_\+next() queries if there is a new email to send, on\+\_\+get\+\_\+body() asks for the body of the email, and on\+\_\+sent() is called after the email is successfully sent.
+
+To use it
+
+
+\begin{DoxyItemize}
+\item create an lws\+\_\+email struct
+\item initialize data, loop, the email\+\_\+$\ast$ strings, max\+\_\+content\+\_\+size and the callbacks
+\item call lws\+\_\+email\+\_\+init()
+\end{DoxyItemize}
+
+When you have at least one email to send, call lws\+\_\+email\+\_\+check() to schedule starting to send it. 

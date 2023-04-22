@@ -1,0 +1,115 @@
+\hypertarget{classbtAlignedAllocator}{}\section{bt\+Aligned\+Allocator$<$ T, Alignment $>$ Class Template Reference}
+\label{classbtAlignedAllocator}\index{bt\+Aligned\+Allocator$<$ T, Alignment $>$@{bt\+Aligned\+Allocator$<$ T, Alignment $>$}}
+
+
+{\ttfamily \#include $<$bt\+Aligned\+Allocator.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtAlignedAllocator_1_1rebind}{rebind}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a0e891e100940277ebbd7272040f10e03}\label{classbtAlignedAllocator_a0e891e100940277ebbd7272040f10e03}} 
+typedef const T $\ast$ {\bfseries const\+\_\+pointer}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_ae5f6da84ca9c043329e3aae5c7fb3899}\label{classbtAlignedAllocator_ae5f6da84ca9c043329e3aae5c7fb3899}} 
+typedef const T \& {\bfseries const\+\_\+reference}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a437328614e195e0241532556ebb24585}\label{classbtAlignedAllocator_a437328614e195e0241532556ebb24585}} 
+typedef T $\ast$ {\bfseries pointer}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_ae700086710c0e3968d6291a58afb5179}\label{classbtAlignedAllocator_ae700086710c0e3968d6291a58afb5179}} 
+typedef T \& {\bfseries reference}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_adbcb544104a69cedd789d279c03ff861}\label{classbtAlignedAllocator_adbcb544104a69cedd789d279c03ff861}} 
+typedef T {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a0e891e100940277ebbd7272040f10e03}\label{classbtAlignedAllocator_a0e891e100940277ebbd7272040f10e03}} 
+typedef const T $\ast$ {\bfseries const\+\_\+pointer}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_ae5f6da84ca9c043329e3aae5c7fb3899}\label{classbtAlignedAllocator_ae5f6da84ca9c043329e3aae5c7fb3899}} 
+typedef const T \& {\bfseries const\+\_\+reference}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a437328614e195e0241532556ebb24585}\label{classbtAlignedAllocator_a437328614e195e0241532556ebb24585}} 
+typedef T $\ast$ {\bfseries pointer}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_ae700086710c0e3968d6291a58afb5179}\label{classbtAlignedAllocator_ae700086710c0e3968d6291a58afb5179}} 
+typedef T \& {\bfseries reference}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_adbcb544104a69cedd789d279c03ff861}\label{classbtAlignedAllocator_adbcb544104a69cedd789d279c03ff861}} 
+typedef T {\bfseries value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a8b129ab9ee2c6b8f638714913f5ac7a6}\label{classbtAlignedAllocator_a8b129ab9ee2c6b8f638714913f5ac7a6}} 
+{\footnotesize template$<$typename Other $>$ }\\{\bfseries bt\+Aligned\+Allocator} (const \hyperlink{classbtAlignedAllocator}{bt\+Aligned\+Allocator}$<$ Other, Alignment $>$ \&)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_adaf5f8601f0b27ec5fe962ba35e5b6ff}\label{classbtAlignedAllocator_adaf5f8601f0b27ec5fe962ba35e5b6ff}} 
+pointer {\bfseries address} (reference ref) const
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a85187907179eadeb9907902ba7ee371a}\label{classbtAlignedAllocator_a85187907179eadeb9907902ba7ee371a}} 
+const\+\_\+pointer {\bfseries address} (const\+\_\+reference ref) const
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a5b14474126ff00cd364dfb74304ec6c3}\label{classbtAlignedAllocator_a5b14474126ff00cd364dfb74304ec6c3}} 
+pointer {\bfseries allocate} (size\+\_\+type n, const\+\_\+pointer $\ast$hint=0)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_afdb40058534d13fed3fddade2939bd8e}\label{classbtAlignedAllocator_afdb40058534d13fed3fddade2939bd8e}} 
+void {\bfseries construct} (pointer ptr, const value\+\_\+type \&value)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a9aa2ce10c6b68eb249116f8712008724}\label{classbtAlignedAllocator_a9aa2ce10c6b68eb249116f8712008724}} 
+void {\bfseries deallocate} (pointer ptr)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a8570a358258bc64869f0effd8405b69b}\label{classbtAlignedAllocator_a8570a358258bc64869f0effd8405b69b}} 
+void {\bfseries destroy} (pointer ptr)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a5366e980346aa0b85befd8ffecdffb9d}\label{classbtAlignedAllocator_a5366e980346aa0b85befd8ffecdffb9d}} 
+{\footnotesize template$<$typename O $>$ }\\\hyperlink{classbtAlignedAllocator}{self\+\_\+type} \& {\bfseries operator=} (const \hyperlink{classbtAlignedAllocator}{bt\+Aligned\+Allocator}$<$ O, Alignment $>$ \&)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a8b129ab9ee2c6b8f638714913f5ac7a6}\label{classbtAlignedAllocator_a8b129ab9ee2c6b8f638714913f5ac7a6}} 
+{\footnotesize template$<$typename Other $>$ }\\{\bfseries bt\+Aligned\+Allocator} (const \hyperlink{classbtAlignedAllocator}{bt\+Aligned\+Allocator}$<$ Other, Alignment $>$ \&)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_adaf5f8601f0b27ec5fe962ba35e5b6ff}\label{classbtAlignedAllocator_adaf5f8601f0b27ec5fe962ba35e5b6ff}} 
+pointer {\bfseries address} (reference ref) const
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a85187907179eadeb9907902ba7ee371a}\label{classbtAlignedAllocator_a85187907179eadeb9907902ba7ee371a}} 
+const\+\_\+pointer {\bfseries address} (const\+\_\+reference ref) const
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a5b14474126ff00cd364dfb74304ec6c3}\label{classbtAlignedAllocator_a5b14474126ff00cd364dfb74304ec6c3}} 
+pointer {\bfseries allocate} (size\+\_\+type n, const\+\_\+pointer $\ast$hint=0)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_afdb40058534d13fed3fddade2939bd8e}\label{classbtAlignedAllocator_afdb40058534d13fed3fddade2939bd8e}} 
+void {\bfseries construct} (pointer ptr, const value\+\_\+type \&value)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a9aa2ce10c6b68eb249116f8712008724}\label{classbtAlignedAllocator_a9aa2ce10c6b68eb249116f8712008724}} 
+void {\bfseries deallocate} (pointer ptr)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a8570a358258bc64869f0effd8405b69b}\label{classbtAlignedAllocator_a8570a358258bc64869f0effd8405b69b}} 
+void {\bfseries destroy} (pointer ptr)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a5366e980346aa0b85befd8ffecdffb9d}\label{classbtAlignedAllocator_a5366e980346aa0b85befd8ffecdffb9d}} 
+{\footnotesize template$<$typename O $>$ }\\\hyperlink{classbtAlignedAllocator}{self\+\_\+type} \& {\bfseries operator=} (const \hyperlink{classbtAlignedAllocator}{bt\+Aligned\+Allocator}$<$ O, Alignment $>$ \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a925f6a7a595252ceb9a7c4be506f983c}\label{classbtAlignedAllocator_a925f6a7a595252ceb9a7c4be506f983c}} 
+bool {\bfseries operator==} (const \hyperlink{classbtAlignedAllocator}{self\+\_\+type} \&, const \hyperlink{classbtAlignedAllocator}{self\+\_\+type} \&)
+\item 
+\mbox{\Hypertarget{classbtAlignedAllocator_a925f6a7a595252ceb9a7c4be506f983c}\label{classbtAlignedAllocator_a925f6a7a595252ceb9a7c4be506f983c}} 
+bool {\bfseries operator==} (const \hyperlink{classbtAlignedAllocator}{self\+\_\+type} \&, const \hyperlink{classbtAlignedAllocator}{self\+\_\+type} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned Alignment$>$\newline
+class bt\+Aligned\+Allocator$<$ T, Alignment $>$}
+
+The \hyperlink{classbtAlignedAllocator}{bt\+Aligned\+Allocator} is a portable class for aligned memory allocations. Default implementations for unaligned and aligned allocations can be overridden by a custom allocator using bt\+Aligned\+Alloc\+Set\+Custom and bt\+Aligned\+Alloc\+Set\+Custom\+Aligned. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+Aligned\+Allocator.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{classbtTriangleBuffer}{}\section{bt\+Triangle\+Buffer Class Reference}
+\label{classbtTriangleBuffer}\index{bt\+Triangle\+Buffer@{bt\+Triangle\+Buffer}}
+
+
+{\ttfamily \#include $<$bt\+Triangle\+Buffer.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Triangle\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classbtTriangleBuffer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Triangle\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classbtTriangleBuffer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a511eed7cab5be9dc886314611a2fda9d}\label{classbtTriangleBuffer_a511eed7cab5be9dc886314611a2fda9d}} 
+virtual void {\bfseries process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a0661fb2bff4122347eb7c915b6e85e32}\label{classbtTriangleBuffer_a0661fb2bff4122347eb7c915b6e85e32}} 
+int {\bfseries get\+Num\+Triangles} () const
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a0bbebedae88130835a8af99bcd95b829}\label{classbtTriangleBuffer_a0bbebedae88130835a8af99bcd95b829}} 
+const \hyperlink{structbtTriangle}{bt\+Triangle} \& {\bfseries get\+Triangle} (int index) const
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a7fb6eab091904e3ebc4a206fee381a56}\label{classbtTriangleBuffer_a7fb6eab091904e3ebc4a206fee381a56}} 
+void {\bfseries clear\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a8708e87be9be2ad21d37a43e5b063792}\label{classbtTriangleBuffer_a8708e87be9be2ad21d37a43e5b063792}} 
+virtual void {\bfseries process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a0661fb2bff4122347eb7c915b6e85e32}\label{classbtTriangleBuffer_a0661fb2bff4122347eb7c915b6e85e32}} 
+int {\bfseries get\+Num\+Triangles} () const
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a0bbebedae88130835a8af99bcd95b829}\label{classbtTriangleBuffer_a0bbebedae88130835a8af99bcd95b829}} 
+const \hyperlink{structbtTriangle}{bt\+Triangle} \& {\bfseries get\+Triangle} (int index) const
+\item 
+\mbox{\Hypertarget{classbtTriangleBuffer_a7fb6eab091904e3ebc4a206fee381a56}\label{classbtTriangleBuffer_a7fb6eab091904e3ebc4a206fee381a56}} 
+void {\bfseries clear\+Buffer} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtTriangleBuffer}{bt\+Triangle\+Buffer} callback can be useful to collect and store overlapping triangles between \hyperlink{classAABB}{A\+A\+BB} and concave objects that support \textquotesingle{}process\+All\+Triangles\textquotesingle{} Example usage of this class\+: \hyperlink{classbtTriangleBuffer}{bt\+Triangle\+Buffer} tri\+Buf; concave\+Shape-\/$>$process\+All\+Triangles(\&tri\+Buf,aabb\+Min, aabb\+Max); for (int i=0;i$<$tri\+Buf.\+get\+Num\+Triangles();i++) \{ const \hyperlink{structbtTriangle}{bt\+Triangle}\& tri = tri\+Buf.\+get\+Triangle(i); //do something useful here with the triangle \} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Shapes/bt\+Triangle\+Buffer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Shapes/bt\+Triangle\+Buffer.\+cpp\end{DoxyCompactItemize}

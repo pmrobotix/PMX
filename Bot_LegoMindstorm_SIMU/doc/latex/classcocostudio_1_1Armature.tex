@@ -1,0 +1,585 @@
+\hypertarget{classcocostudio_1_1Armature}{}\section{cocostudio\+:\+:Armature Class Reference}
+\label{classcocostudio_1_1Armature}\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+
+
+Inheritance diagram for cocostudio\+:\+:Armature\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classcocostudio_1_1Armature__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocostudio\+:\+:Armature\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcocostudio_1_1Armature__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}{Armature} ()
+\item 
+virtual \hyperlink{classcocostudio_1_1Armature_a3a94874b75c364d3cbfb604f1dd098c3}{$\sim$\+Armature} (void)
+\item 
+virtual bool \hyperlink{classcocostudio_1_1Armature_a8de388faf27f014c38aae2448f836fe2}{init} () override
+\item 
+virtual bool \hyperlink{classcocostudio_1_1Armature_af45353f74cf4d20d0d91e384029147e3}{init} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a941cef9aef2589dee671b80d69cb4115}\label{classcocostudio_1_1Armature_a941cef9aef2589dee671b80d69cb4115}} 
+virtual bool {\bfseries init} (const std\+::string \&name, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_af7a204c1c43c67de2c29c9d3dff58c55}{add\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, const std\+::string \&parent\+Name)
+\item 
+virtual \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ \hyperlink{classcocostudio_1_1Armature_aaf530de7857d358713da7c1ead1d7ee5}{get\+Bone} (const std\+::string \&name) const
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a993a948ec75aa9ebb41918babe51dc61}{change\+Bone\+Parent} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, const std\+::string \&parent\+Name)
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a412c0baaf26ff1b635de8b426bb3ecae}{remove\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, bool recursion)
+\item 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ $>$ \& \hyperlink{classcocostudio_1_1Armature_a46584bbc3ff6ae89dc94388d10cdd19a}{get\+Bone\+Dic} () const
+\item 
+virtual cocos2d\+::\+Rect \hyperlink{classcocostudio_1_1Armature_a9088f827e4dacfa6b06e86a7d7d0be36}{get\+Bounding\+Box} () const override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a84b93840fbbe3b09147ed0d494970746}\label{classcocostudio_1_1Armature_a84b93840fbbe3b09147ed0d494970746}} 
+\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries get\+Bone\+At\+Point} (float x, float y) const
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}{visit} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aee8a1edbefa706f6e6d71ab704b150ed}\label{classcocostudio_1_1Armature_aee8a1edbefa706f6e6d71ab704b150ed}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ac1b31c8f0d5582d00e9f44a367c93834}\label{classcocostudio_1_1Armature_ac1b31c8f0d5582d00e9f44a367c93834}} 
+virtual void {\bfseries update} (float dt) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a7aaf0f1936090adf8cde3baa8ee3ccd4}\label{classcocostudio_1_1Armature_a7aaf0f1936090adf8cde3baa8ee3ccd4}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a0b9ccec3b7d718846ae91a1d0cb2feb3}\label{classcocostudio_1_1Armature_a0b9ccec3b7d718846ae91a1d0cb2feb3}} 
+virtual void {\bfseries on\+Exit} () override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a0c3ad103261ea36a70fd2f20df693203}\label{classcocostudio_1_1Armature_a0c3ad103261ea36a70fd2f20df693203}} 
+virtual const cocos2d\+::\+Mat4 \& {\bfseries get\+Node\+To\+Parent\+Transform} () const override
+\item 
+void \hyperlink{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}{set\+Blend\+Func} (const cocos2d\+::\+Blend\+Func \&blend\+Func) override
+\item 
+const cocos2d\+::\+Blend\+Func \& \hyperlink{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}{get\+Blend\+Func} (void) const override
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a5108693264d1c398ab32fc70ba1bf059}{update\+Offset\+Point} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ad4af082dcf3d4b94cf5e151dd94f1063}\label{classcocostudio_1_1Armature_ad4af082dcf3d4b94cf5e151dd94f1063}} 
+virtual void {\bfseries set\+Anchor\+Point} (const cocos2d\+::\+Vec2 \&point) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a03a4d4eab2182448cc8ca75dbcdca7aa}\label{classcocostudio_1_1Armature_a03a4d4eab2182448cc8ca75dbcdca7aa}} 
+virtual const cocos2d\+::\+Vec2 \& {\bfseries get\+Anchor\+Point\+In\+Points} () const override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a3b99eefff1a9dff39729ae3eb28cc275}\label{classcocostudio_1_1Armature_a3b99eefff1a9dff39729ae3eb28cc275}} 
+virtual const cocos2d\+::\+Vec2 \& {\bfseries get\+Offset\+Points} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a20b3d48808acef4b0d42f1e5b27c1e4e}\label{classcocostudio_1_1Armature_a20b3d48808acef4b0d42f1e5b27c1e4e}} 
+virtual void {\bfseries set\+Animation} (\hyperlink{classcocostudio_1_1ArmatureAnimation}{Armature\+Animation} $\ast$animation)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a60da8b6b110a7dadd2c0f345017bc0cb}\label{classcocostudio_1_1Armature_a60da8b6b110a7dadd2c0f345017bc0cb}} 
+virtual \hyperlink{classcocostudio_1_1ArmatureAnimation}{Armature\+Animation} $\ast$ {\bfseries get\+Animation} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a260df92f322ad478a3ab019a453965ca}\label{classcocostudio_1_1Armature_a260df92f322ad478a3ab019a453965ca}} 
+virtual bool {\bfseries get\+Armature\+Transform\+Dirty} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ae1796e26e80c5804e3a255981e2b5acc}\label{classcocostudio_1_1Armature_ae1796e26e80c5804e3a255981e2b5acc}} 
+virtual void {\bfseries set\+Armature\+Data} (\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$armature\+Data)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa90068e13db10e4e1c058e6468fc00ed}\label{classcocostudio_1_1Armature_aa90068e13db10e4e1c058e6468fc00ed}} 
+virtual \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ {\bfseries get\+Armature\+Data} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a42c7f95393732fa3d2badc691551e2c4}\label{classcocostudio_1_1Armature_a42c7f95393732fa3d2badc691551e2c4}} 
+virtual void {\bfseries set\+Parent\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_afd8d70c1ce3ee117b18dfb8a0f1322d4}\label{classcocostudio_1_1Armature_afd8d70c1ce3ee117b18dfb8a0f1322d4}} 
+virtual \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries get\+Parent\+Bone} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa7a51245d492cd407f53d6118b4db04f}\label{classcocostudio_1_1Armature_aa7a51245d492cd407f53d6118b4db04f}} 
+virtual void {\bfseries set\+Version} (float version)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ab58b26fd8e6defdaf6027297337bb5b6}\label{classcocostudio_1_1Armature_ab58b26fd8e6defdaf6027297337bb5b6}} 
+virtual float {\bfseries get\+Version} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a955eae625c52b5c559f0265ef0ac8ae8}\label{classcocostudio_1_1Armature_a955eae625c52b5c559f0265ef0ac8ae8}} 
+virtual void {\bfseries set\+Batch\+Node} (\hyperlink{classcocostudio_1_1BatchNode}{Batch\+Node} $\ast$batch\+Node)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a91867c634809bb6c93bc29b406ac3927}\label{classcocostudio_1_1Armature_a91867c634809bb6c93bc29b406ac3927}} 
+virtual \hyperlink{classcocostudio_1_1BatchNode}{Batch\+Node} $\ast$ {\bfseries get\+Batch\+Node} () const
+\item 
+\hyperlink{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}{Armature} ()
+\item 
+virtual \hyperlink{classcocostudio_1_1Armature_a7823517771d2cbb4847197d987e89d12}{$\sim$\+Armature} (void)
+\item 
+virtual bool \hyperlink{classcocostudio_1_1Armature_a0040255ac5cd22f79d0756ed6ecf2e98}{init} () override
+\item 
+virtual bool \hyperlink{classcocostudio_1_1Armature_a22bc686ea92c2dad9559d848fb3554f1}{init} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ab87c0172fffa77e39fe06a85c7c76c9d}\label{classcocostudio_1_1Armature_ab87c0172fffa77e39fe06a85c7c76c9d}} 
+virtual bool {\bfseries init} (const std\+::string \&name, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a59f16d46413e78cf4b8cdcf17daa0971}{add\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, const std\+::string \&parent\+Name)
+\item 
+virtual \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ \hyperlink{classcocostudio_1_1Armature_a69ac2b237149578f3762f843b1656ef5}{get\+Bone} (const std\+::string \&name) const
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a5f1f9869b893c204e02a8c451f4a1067}{change\+Bone\+Parent} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, const std\+::string \&parent\+Name)
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_aefa283cddbe9761986b4c76dd5301865}{remove\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$bone, bool recursion)
+\item 
+const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ $>$ \& \hyperlink{classcocostudio_1_1Armature_a87c56d4bba4ed13a510cd1b2781465a3}{get\+Bone\+Dic} () const
+\item 
+virtual cocos2d\+::\+Rect \hyperlink{classcocostudio_1_1Armature_af7afbacf2d682e65cee5c791c47a68b6}{get\+Bounding\+Box} () const override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa10caa433ab4b698f002204fba292ce5}\label{classcocostudio_1_1Armature_aa10caa433ab4b698f002204fba292ce5}} 
+\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries get\+Bone\+At\+Point} (float x, float y) const
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}{visit} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aee8a1edbefa706f6e6d71ab704b150ed}\label{classcocostudio_1_1Armature_aee8a1edbefa706f6e6d71ab704b150ed}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, const cocos2d\+::\+Mat4 \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a7cae826997205a4a334da799575e2444}\label{classcocostudio_1_1Armature_a7cae826997205a4a334da799575e2444}} 
+virtual void {\bfseries update} (float dt) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a5aa5a5a2712964b385a7a5e8facf748b}\label{classcocostudio_1_1Armature_a5aa5a5a2712964b385a7a5e8facf748b}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_adaa7b806fbf93d81f0439a3ea16dce3a}\label{classcocostudio_1_1Armature_adaa7b806fbf93d81f0439a3ea16dce3a}} 
+virtual void {\bfseries on\+Exit} () override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a9e28f0404b34c3a84fb3b47e566bf671}\label{classcocostudio_1_1Armature_a9e28f0404b34c3a84fb3b47e566bf671}} 
+virtual const cocos2d\+::\+Mat4 \& {\bfseries get\+Node\+To\+Parent\+Transform} () const override
+\item 
+void \hyperlink{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}{set\+Blend\+Func} (const cocos2d\+::\+Blend\+Func \&blend\+Func) override
+\item 
+const cocos2d\+::\+Blend\+Func \& \hyperlink{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}{get\+Blend\+Func} (void) const override
+\item 
+virtual void \hyperlink{classcocostudio_1_1Armature_a298f0a4ad78ad4b250bbed5dbdac7b67}{update\+Offset\+Point} ()
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ad4af082dcf3d4b94cf5e151dd94f1063}\label{classcocostudio_1_1Armature_ad4af082dcf3d4b94cf5e151dd94f1063}} 
+virtual void {\bfseries set\+Anchor\+Point} (const cocos2d\+::\+Vec2 \&point) override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a2ea227193d8d2b449c874631c24d5e90}\label{classcocostudio_1_1Armature_a2ea227193d8d2b449c874631c24d5e90}} 
+virtual const cocos2d\+::\+Vec2 \& {\bfseries get\+Anchor\+Point\+In\+Points} () const override
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_acad2870787715eced42d1393f435582e}\label{classcocostudio_1_1Armature_acad2870787715eced42d1393f435582e}} 
+virtual const cocos2d\+::\+Vec2 \& {\bfseries get\+Offset\+Points} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa671516038fce5df83da4e5f40587889}\label{classcocostudio_1_1Armature_aa671516038fce5df83da4e5f40587889}} 
+virtual void {\bfseries set\+Animation} (\hyperlink{classcocostudio_1_1ArmatureAnimation}{Armature\+Animation} $\ast$animation)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ad7b430c3e58680ab65b36955e41db448}\label{classcocostudio_1_1Armature_ad7b430c3e58680ab65b36955e41db448}} 
+virtual \hyperlink{classcocostudio_1_1ArmatureAnimation}{Armature\+Animation} $\ast$ {\bfseries get\+Animation} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa79a4487888f6ba24e46e581f4e6a1a9}\label{classcocostudio_1_1Armature_aa79a4487888f6ba24e46e581f4e6a1a9}} 
+virtual bool {\bfseries get\+Armature\+Transform\+Dirty} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ae1796e26e80c5804e3a255981e2b5acc}\label{classcocostudio_1_1Armature_ae1796e26e80c5804e3a255981e2b5acc}} 
+virtual void {\bfseries set\+Armature\+Data} (\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$armature\+Data)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa90068e13db10e4e1c058e6468fc00ed}\label{classcocostudio_1_1Armature_aa90068e13db10e4e1c058e6468fc00ed}} 
+virtual \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ {\bfseries get\+Armature\+Data} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa1f5449bfba8b3813557090672c477e0}\label{classcocostudio_1_1Armature_aa1f5449bfba8b3813557090672c477e0}} 
+virtual void {\bfseries set\+Parent\+Bone} (\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a69910040b7cb93c5ac26f2ab70b18dd9}\label{classcocostudio_1_1Armature_a69910040b7cb93c5ac26f2ab70b18dd9}} 
+virtual \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries get\+Parent\+Bone} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa7a51245d492cd407f53d6118b4db04f}\label{classcocostudio_1_1Armature_aa7a51245d492cd407f53d6118b4db04f}} 
+virtual void {\bfseries set\+Version} (float version)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ab58b26fd8e6defdaf6027297337bb5b6}\label{classcocostudio_1_1Armature_ab58b26fd8e6defdaf6027297337bb5b6}} 
+virtual float {\bfseries get\+Version} () const
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a955eae625c52b5c559f0265ef0ac8ae8}\label{classcocostudio_1_1Armature_a955eae625c52b5c559f0265ef0ac8ae8}} 
+virtual void {\bfseries set\+Batch\+Node} (\hyperlink{classcocostudio_1_1BatchNode}{Batch\+Node} $\ast$batch\+Node)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a91867c634809bb6c93bc29b406ac3927}\label{classcocostudio_1_1Armature_a91867c634809bb6c93bc29b406ac3927}} 
+virtual \hyperlink{classcocostudio_1_1BatchNode}{Batch\+Node} $\ast$ {\bfseries get\+Batch\+Node} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ \hyperlink{classcocostudio_1_1Armature_aa6c6116e301706938905b26b27a33de9}{create} ()
+\item 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ \hyperlink{classcocostudio_1_1Armature_a0d1589fd9a1cb8bd33792ed7acfbcfd1}{create} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a9fcdb6f45d166e77af00584bfaa35c07}\label{classcocostudio_1_1Armature_a9fcdb6f45d166e77af00584bfaa35c07}} 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ {\bfseries create} (const std\+::string \&name, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\item 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ \hyperlink{classcocostudio_1_1Armature_ab6588941f349230af3314e190fe6eb83}{create} ()
+\item 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ \hyperlink{classcocostudio_1_1Armature_a9f461aaafb80e01a6760af5101197702}{create} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ae21801e6d8dd42203882d90a91a57173}\label{classcocostudio_1_1Armature_ae21801e6d8dd42203882d90a91a57173}} 
+static \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ {\bfseries create} (const std\+::string \&name, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$parent\+Bone)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a6f3453ae9d2fce4900ab7679886c1cf6}\label{classcocostudio_1_1Armature_a6f3453ae9d2fce4900ab7679886c1cf6}} 
+\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries create\+Bone} (const std\+::string \&bone\+Name)
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a27cdebc0824aaddc8363a37036cc22af}\label{classcocostudio_1_1Armature_a27cdebc0824aaddc8363a37036cc22af}} 
+\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries create\+Bone} (const std\+::string \&bone\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a4bba5b545df8690bdc5dff4d67b00f8a}\label{classcocostudio_1_1Armature_a4bba5b545df8690bdc5dff4d67b00f8a}} 
+\hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} $\ast$ {\bfseries \+\_\+armature\+Data}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a7a1e9f3846c1f07281b29605f7732d5e}\label{classcocostudio_1_1Armature_a7a1e9f3846c1f07281b29605f7732d5e}} 
+\hyperlink{classcocostudio_1_1BatchNode}{Batch\+Node} $\ast$ {\bfseries \+\_\+batch\+Node}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a47386e7a21e9802de80c97512aa7a5b8}\label{classcocostudio_1_1Armature_a47386e7a21e9802de80c97512aa7a5b8}} 
+\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ {\bfseries \+\_\+parent\+Bone}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a649e9737b65a38e9e6ec0b6e8300f872}\label{classcocostudio_1_1Armature_a649e9737b65a38e9e6ec0b6e8300f872}} 
+float {\bfseries \+\_\+version}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a909ca816325ae9231a797cd6da0af65c}\label{classcocostudio_1_1Armature_a909ca816325ae9231a797cd6da0af65c}} 
+bool {\bfseries \+\_\+armature\+Transform\+Dirty}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ace042b0625c6fa7f73eb00a557d2b714}\label{classcocostudio_1_1Armature_ace042b0625c6fa7f73eb00a557d2b714}} 
+cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ $>$ {\bfseries \+\_\+bone\+Dic}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a6701a1a54ccb815bcb7ecfd8217f7781}\label{classcocostudio_1_1Armature_a6701a1a54ccb815bcb7ecfd8217f7781}} 
+cocos2d\+::\+Vector$<$ \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ $>$ \hyperlink{classcocostudio_1_1Armature_a6701a1a54ccb815bcb7ecfd8217f7781}{\+\_\+top\+Bone\+List}
+\begin{DoxyCompactList}\small\item\em The dictionary of the bones, include all bones in the armature, no matter it is the direct bone or the indirect bone. It is different from m\+\_\+p\+Chindren. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a977585376f6c529323371db818375caf}\label{classcocostudio_1_1Armature_a977585376f6c529323371db818375caf}} 
+cocos2d\+::\+Blend\+Func {\bfseries \+\_\+blend\+Func}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a8526263a93985a96e4e19dad0ef71942}\label{classcocostudio_1_1Armature_a8526263a93985a96e4e19dad0ef71942}} 
+cocos2d\+::\+Vec2 \hyperlink{classcocostudio_1_1Armature_a8526263a93985a96e4e19dad0ef71942}{\+\_\+offset\+Point}
+\begin{DoxyCompactList}\small\item\em It\textquotesingle{}s required for C\+C\+Texture\+Protocol inheritance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aac574ed927a067e101e141192049f1cf}\label{classcocostudio_1_1Armature_aac574ed927a067e101e141192049f1cf}} 
+cocos2d\+::\+Vec2 {\bfseries \+\_\+real\+Anchor\+Point\+In\+Points}
+\item 
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a2ee44a08ed2183ca0ca97a069ec46444}\label{classcocostudio_1_1Armature_a2ee44a08ed2183ca0ca97a069ec46444}} 
+\hyperlink{classcocostudio_1_1ArmatureAnimation}{Armature\+Animation} $\ast$ {\bfseries \+\_\+animation}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}\label{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!Armature@{Armature}}
+\index{Armature@{Armature}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{Armature()}{Armature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocostudio\+::\+Armature\+::\+Armature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classcocostudio_1_1Armature_a3a94874b75c364d3cbfb604f1dd098c3}\label{classcocostudio_1_1Armature_a3a94874b75c364d3cbfb604f1dd098c3}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!````~Armature@{$\sim$\+Armature}}
+\index{````~Armature@{$\sim$\+Armature}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{$\sim$\+Armature()}{~Armature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocostudio\+::\+Armature\+::$\sim$\+Armature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}\label{classcocostudio_1_1Armature_a718f247b339d19f4159b9abf847826aa}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!Armature@{Armature}}
+\index{Armature@{Armature}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{Armature()}{Armature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cocostudio\+::\+Armature\+::\+Armature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classcocostudio_1_1Armature_a7823517771d2cbb4847197d987e89d12}\label{classcocostudio_1_1Armature_a7823517771d2cbb4847197d987e89d12}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!````~Armature@{$\sim$\+Armature}}
+\index{````~Armature@{$\sim$\+Armature}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{$\sim$\+Armature()}{~Armature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual cocostudio\+::\+Armature\+::$\sim$\+Armature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_af7a204c1c43c67de2c29c9d3dff58c55}\label{classcocostudio_1_1Armature_af7a204c1c43c67de2c29c9d3dff58c55}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!add\+Bone@{add\+Bone}}
+\index{add\+Bone@{add\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{add\+Bone()}{addBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::add\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{const std\+::string \&}]{parent\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add a \hyperlink{classcocostudio_1_1Bone}{Bone} to this \hyperlink{classcocostudio_1_1Armature}{Armature},
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The \hyperlink{classcocostudio_1_1Bone}{Bone} you want to add to \hyperlink{classcocostudio_1_1Armature}{Armature} \\
+\hline
+{\em parent\+Name} & The parent \hyperlink{classcocostudio_1_1Bone}{Bone}\textquotesingle{}s name you want to add to . If it\textquotesingle{}s nullptr, then set \hyperlink{classcocostudio_1_1Armature}{Armature} to its parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a59f16d46413e78cf4b8cdcf17daa0971}\label{classcocostudio_1_1Armature_a59f16d46413e78cf4b8cdcf17daa0971}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!add\+Bone@{add\+Bone}}
+\index{add\+Bone@{add\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{add\+Bone()}{addBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::add\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{const std\+::string \&}]{parent\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add a \hyperlink{classcocostudio_1_1Bone}{Bone} to this \hyperlink{classcocostudio_1_1Armature}{Armature},
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The \hyperlink{classcocostudio_1_1Bone}{Bone} you want to add to \hyperlink{classcocostudio_1_1Armature}{Armature} \\
+\hline
+{\em parent\+Name} & The parent \hyperlink{classcocostudio_1_1Bone}{Bone}\textquotesingle{}s name you want to add to . If it\textquotesingle{}s nullptr, then set \hyperlink{classcocostudio_1_1Armature}{Armature} to its parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a993a948ec75aa9ebb41918babe51dc61}\label{classcocostudio_1_1Armature_a993a948ec75aa9ebb41918babe51dc61}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!change\+Bone\+Parent@{change\+Bone\+Parent}}
+\index{change\+Bone\+Parent@{change\+Bone\+Parent}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{change\+Bone\+Parent()}{changeBoneParent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::change\+Bone\+Parent (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{const std\+::string \&}]{parent\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change a bone\textquotesingle{}s parent with the specified parent name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The bone you want to change parent \\
+\hline
+{\em parent\+Name} & The new parent\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a5f1f9869b893c204e02a8c451f4a1067}\label{classcocostudio_1_1Armature_a5f1f9869b893c204e02a8c451f4a1067}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!change\+Bone\+Parent@{change\+Bone\+Parent}}
+\index{change\+Bone\+Parent@{change\+Bone\+Parent}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{change\+Bone\+Parent()}{changeBoneParent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::change\+Bone\+Parent (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{const std\+::string \&}]{parent\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change a bone\textquotesingle{}s parent with the specified parent name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The bone you want to change parent \\
+\hline
+{\em parent\+Name} & The new parent\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aa6c6116e301706938905b26b27a33de9}\label{classcocostudio_1_1Armature_aa6c6116e301706938905b26b27a33de9}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!create@{create}}
+\index{create@{create}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ cocostudio\+::\+Armature\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates and initializes an armature. \begin{DoxyReturn}{Returns}
+An initialized armature which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_ab6588941f349230af3314e190fe6eb83}\label{classcocostudio_1_1Armature_ab6588941f349230af3314e190fe6eb83}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!create@{create}}
+\index{create@{create}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classcocostudio_1_1Armature}{Armature}$\ast$ cocostudio\+::\+Armature\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates and initializes an armature. \begin{DoxyReturn}{Returns}
+An initialized armature which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a0d1589fd9a1cb8bd33792ed7acfbcfd1}\label{classcocostudio_1_1Armature_a0d1589fd9a1cb8bd33792ed7acfbcfd1}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!create@{create}}
+\index{create@{create}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1Armature}{Armature} $\ast$ cocostudio\+::\+Armature\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates an armature, and use the \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} named name in \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} to initializes the armature.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{classcocostudio_1_1Armature}{Armature} will use the name to find the \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} to initializes it. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A initialized armature which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a9f461aaafb80e01a6760af5101197702}\label{classcocostudio_1_1Armature_a9f461aaafb80e01a6760af5101197702}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!create@{create}}
+\index{create@{create}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classcocostudio_1_1Armature}{Armature}$\ast$ cocostudio\+::\+Armature\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates an armature, and use the \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} named name in \hyperlink{classcocostudio_1_1ArmatureDataManager}{Armature\+Data\+Manager} to initializes the armature.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{classcocostudio_1_1Armature}{Armature} will use the name to find the \hyperlink{classcocostudio_1_1ArmatureData}{Armature\+Data} to initializes it. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A initialized armature which is marked as \char`\"{}autorelease\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}\label{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const cocos2d\+::\+Blend\+Func\& cocostudio\+::\+Armature\+::get\+Blend\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}\label{classcocostudio_1_1Armature_acd462bbd0dc9fec97bb2778a2ad13bfc}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const cocos2d\+::\+Blend\+Func\& cocostudio\+::\+Armature\+::get\+Blend\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_aaf530de7857d358713da7c1ead1d7ee5}\label{classcocostudio_1_1Armature_aaf530de7857d358713da7c1ead1d7ee5}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bone@{get\+Bone}}
+\index{get\+Bone@{get\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bone()}{getBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ cocostudio\+::\+Armature\+::get\+Bone (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get a bone with the specified name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The bone\textquotesingle{}s name you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a69ac2b237149578f3762f843b1656ef5}\label{classcocostudio_1_1Armature_a69ac2b237149578f3762f843b1656ef5}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bone@{get\+Bone}}
+\index{get\+Bone@{get\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bone()}{getBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classcocostudio_1_1Bone}{Bone}$\ast$ cocostudio\+::\+Armature\+::get\+Bone (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get a bone with the specified name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The bone\textquotesingle{}s name you want to get \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a46584bbc3ff6ae89dc94388d10cdd19a}\label{classcocostudio_1_1Armature_a46584bbc3ff6ae89dc94388d10cdd19a}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bone\+Dic@{get\+Bone\+Dic}}
+\index{get\+Bone\+Dic@{get\+Bone\+Dic}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bone\+Dic()}{getBoneDic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const cocos2d\+::\+Map$<$ std\+::string, \hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$ $>$ \& cocostudio\+::\+Armature\+::get\+Bone\+Dic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \hyperlink{classcocostudio_1_1Armature}{Armature}\textquotesingle{}s bone dictionary \begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1Armature}{Armature}\textquotesingle{}s bone dictionary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a87c56d4bba4ed13a510cd1b2781465a3}\label{classcocostudio_1_1Armature_a87c56d4bba4ed13a510cd1b2781465a3}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bone\+Dic@{get\+Bone\+Dic}}
+\index{get\+Bone\+Dic@{get\+Bone\+Dic}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bone\+Dic()}{getBoneDic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const cocos2d\+::\+Map$<$std\+::string, \hyperlink{classcocostudio_1_1Bone}{Bone}$\ast$$>$\& cocostudio\+::\+Armature\+::get\+Bone\+Dic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \hyperlink{classcocostudio_1_1Armature}{Armature}\textquotesingle{}s bone dictionary \begin{DoxyReturn}{Returns}
+\hyperlink{classcocostudio_1_1Armature}{Armature}\textquotesingle{}s bone dictionary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a9088f827e4dacfa6b06e86a7d7d0be36}\label{classcocostudio_1_1Armature_a9088f827e4dacfa6b06e86a7d7d0be36}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bounding\+Box()}{getBoundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} cocostudio\+::\+Armature\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This bounding\+Box will calculate all bones\textquotesingle{} bounding\+Box every time \mbox{\Hypertarget{classcocostudio_1_1Armature_af7afbacf2d682e65cee5c791c47a68b6}\label{classcocostudio_1_1Armature_af7afbacf2d682e65cee5c791c47a68b6}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{get\+Bounding\+Box()}{getBoundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual cocos2d\+::\+Rect cocostudio\+::\+Armature\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This bounding\+Box will calculate all bones\textquotesingle{} bounding\+Box every time \mbox{\Hypertarget{classcocostudio_1_1Armature_a8de388faf27f014c38aae2448f836fe2}\label{classcocostudio_1_1Armature_a8de388faf27f014c38aae2448f836fe2}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool cocostudio\+::\+Armature\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Init the empty armature \mbox{\Hypertarget{classcocostudio_1_1Armature_a0040255ac5cd22f79d0756ed6ecf2e98}\label{classcocostudio_1_1Armature_a0040255ac5cd22f79d0756ed6ecf2e98}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual bool cocostudio\+::\+Armature\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Init the empty armature \mbox{\Hypertarget{classcocostudio_1_1Armature_af45353f74cf4d20d0d91e384029147e3}\label{classcocostudio_1_1Armature_af45353f74cf4d20d0d91e384029147e3}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool cocostudio\+::\+Armature\+::init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init an armature with specified name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{classcocostudio_1_1Armature}{Armature} name \\
+\hline
+\end{DoxyParams}
+init bone\textquotesingle{}s \hyperlink{classcocostudio_1_1Tween}{Tween} to 1st movement\textquotesingle{}s 1st frame
+
+init bone\textquotesingle{}s \hyperlink{classcocostudio_1_1Tween}{Tween} to 1st movement\textquotesingle{}s 1st frame \mbox{\Hypertarget{classcocostudio_1_1Armature_a22bc686ea92c2dad9559d848fb3554f1}\label{classcocostudio_1_1Armature_a22bc686ea92c2dad9559d848fb3554f1}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!init@{init}}
+\index{init@{init}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual bool cocostudio\+::\+Armature\+::init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init an armature with specified name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{classcocostudio_1_1Armature}{Armature} name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a412c0baaf26ff1b635de8b426bb3ecae}\label{classcocostudio_1_1Armature_a412c0baaf26ff1b635de8b426bb3ecae}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!remove\+Bone@{remove\+Bone}}
+\index{remove\+Bone@{remove\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{remove\+Bone()}{removeBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::remove\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{bool}]{recursion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove a bone with the specified name. If recursion it will also remove child \hyperlink{classcocostudio_1_1Bone}{Bone} recursionly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The bone you want to remove \\
+\hline
+{\em recursion} & Determine whether remove the bone\textquotesingle{}s child recursion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_aefa283cddbe9761986b4c76dd5301865}\label{classcocostudio_1_1Armature_aefa283cddbe9761986b4c76dd5301865}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!remove\+Bone@{remove\+Bone}}
+\index{remove\+Bone@{remove\+Bone}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{remove\+Bone()}{removeBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::remove\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classcocostudio_1_1Bone}{Bone} $\ast$}]{bone,  }\item[{bool}]{recursion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove a bone with the specified name. If recursion it will also remove child \hyperlink{classcocostudio_1_1Bone}{Bone} recursionly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone} & The bone you want to remove \\
+\hline
+{\em recursion} & Determine whether remove the bone\textquotesingle{}s child recursion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}\label{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Blend\+Func \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}\label{classcocostudio_1_1Armature_a2adcf2445626fd9ebbc52923960c567c}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Blend\+Func \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_a5108693264d1c398ab32fc70ba1bf059}\label{classcocostudio_1_1Armature_a5108693264d1c398ab32fc70ba1bf059}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!update\+Offset\+Point@{update\+Offset\+Point}}
+\index{update\+Offset\+Point@{update\+Offset\+Point}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{update\+Offset\+Point()}{updateOffsetPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cocostudio\+::\+Armature\+::update\+Offset\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set contentsize and Calculate anchor point. \mbox{\Hypertarget{classcocostudio_1_1Armature_a298f0a4ad78ad4b250bbed5dbdac7b67}\label{classcocostudio_1_1Armature_a298f0a4ad78ad4b250bbed5dbdac7b67}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!update\+Offset\+Point@{update\+Offset\+Point}}
+\index{update\+Offset\+Point@{update\+Offset\+Point}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{update\+Offset\+Point()}{updateOffsetPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::update\+Offset\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set contentsize and Calculate anchor point. \mbox{\Hypertarget{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}\label{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!visit@{visit}}
+\index{visit@{visit}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::visit (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Renderer $\ast$}]{renderer,  }\item[{const cocos2d\+::\+Mat4 \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}\label{classcocostudio_1_1Armature_a1937eec5f06a4d889d2a46612b027714}} 
+\index{cocostudio\+::\+Armature@{cocostudio\+::\+Armature}!visit@{visit}}
+\index{visit@{visit}!cocostudio\+::\+Armature@{cocostudio\+::\+Armature}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void cocostudio\+::\+Armature\+::visit (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Renderer $\ast$}]{renderer,  }\item[{const cocos2d\+::\+Mat4 \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/C\+C\+Armature.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/C\+C\+Armature.\+cpp\end{DoxyCompactItemize}

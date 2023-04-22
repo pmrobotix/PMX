@@ -1,0 +1,64 @@
+\hypertarget{classrapidjson_1_1Handler}{}\section{rapidjson\+:\+:Handler Class Reference}
+\label{classrapidjson_1_1Handler}\index{rapidjson\+::\+Handler@{rapidjson\+::\+Handler}}
+
+
+Concept for receiving events from \hyperlink{classGenericReader}{Generic\+Reader} upon parsing. The functions return true if no error occurs. If they return false, the event publisher should terminate the process.  
+
+
+
+
+{\ttfamily \#include $<$reader.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+Concept for receiving events from \hyperlink{classGenericReader}{Generic\+Reader} upon parsing. The functions return true if no error occurs. If they return false, the event publisher should terminate the process. 
+
+
+\begin{DoxyCode}
+concept Handler \{
+    \textcolor{keyword}{typename} Ch;
+
+    \textcolor{keywordtype}{bool} Null();
+    \textcolor{keywordtype}{bool} Bool(\textcolor{keywordtype}{bool} b);
+    \textcolor{keywordtype}{bool} Int(\textcolor{keywordtype}{int} i);
+    \textcolor{keywordtype}{bool} Uint(\textcolor{keywordtype}{unsigned} i);
+    \textcolor{keywordtype}{bool} Int64(int64\_t i);
+    \textcolor{keywordtype}{bool} Uint64(uint64\_t i);
+    \textcolor{keywordtype}{bool} Double(\textcolor{keywordtype}{double} d);
+    \textcolor{keywordtype}{bool} String(\textcolor{keyword}{const} Ch* str, SizeType length, \textcolor{keywordtype}{bool} copy);
+    \textcolor{keywordtype}{bool} StartObject();
+    \textcolor{keywordtype}{bool} Key(\textcolor{keyword}{const} Ch* str, SizeType length, \textcolor{keywordtype}{bool} copy);
+    \textcolor{keywordtype}{bool} EndObject(SizeType memberCount);
+    \textcolor{keywordtype}{bool} StartArray();
+    \textcolor{keywordtype}{bool} EndArray(SizeType elementCount);
+\};
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+concept Handler \{
+    \textcolor{keyword}{typename} Ch;
+
+    \textcolor{keywordtype}{bool} Null();
+    \textcolor{keywordtype}{bool} Bool(\textcolor{keywordtype}{bool} b);
+    \textcolor{keywordtype}{bool} Int(\textcolor{keywordtype}{int} i);
+    \textcolor{keywordtype}{bool} Uint(\textcolor{keywordtype}{unsigned} i);
+    \textcolor{keywordtype}{bool} Int64(int64\_t i);
+    \textcolor{keywordtype}{bool} Uint64(uint64\_t i);
+    \textcolor{keywordtype}{bool} Double(\textcolor{keywordtype}{double} d);
+    \textcolor{keywordtype}{bool} RawNumber(\textcolor{keyword}{const} Ch* str, SizeType length, \textcolor{keywordtype}{bool} copy);
+    \textcolor{keywordtype}{bool} String(\textcolor{keyword}{const} Ch* str, SizeType length, \textcolor{keywordtype}{bool} copy);
+    \textcolor{keywordtype}{bool} StartObject();
+    \textcolor{keywordtype}{bool} Key(\textcolor{keyword}{const} Ch* str, SizeType length, \textcolor{keywordtype}{bool} copy);
+    \textcolor{keywordtype}{bool} EndObject(SizeType memberCount);
+    \textcolor{keywordtype}{bool} StartArray();
+    \textcolor{keywordtype}{bool} EndArray(SizeType elementCount);
+\};
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/json/reader.\+h\end{DoxyCompactItemize}

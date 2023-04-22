@@ -1,0 +1,1644 @@
+\hypertarget{classui_1_1RichText}{}\section{ui\+:\+:Rich\+Text Class Reference}
+\label{classui_1_1RichText}\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+
+
+A container for displaying various Rich\+Elements. We could use it to display texts with images easily.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Rich\+Text.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Rich\+Text\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classui_1_1RichText__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Rich\+Text\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1RichText__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a056976f10f3628a161e01044c08b9e0b}\label{classui_1_1RichText_a056976f10f3628a161e01044c08b9e0b}} 
+enum {\bfseries Wrap\+Mode} \{ {\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a056976f10f3628a161e01044c08b9e0b}\label{classui_1_1RichText_a056976f10f3628a161e01044c08b9e0b}} 
+enum {\bfseries Wrap\+Mode} \{ {\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD}, 
+{\bfseries W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR}
+ \}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a4f179a24ff9048ae07fd20d94c09e264}\label{classui_1_1RichText_a4f179a24ff9048ae07fd20d94c09e264}} 
+enum {\bfseries Horizontal\+Alignment} \{ {\bfseries L\+E\+FT}, 
+{\bfseries C\+E\+N\+T\+ER}, 
+{\bfseries R\+I\+G\+HT}
+ \}
+\item 
+typedef std\+::function$<$ void(const std\+::string \&url)$>$ \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler}
+\begin{DoxyCompactList}\small\item\em call to open a resource specified by a U\+RL \end{DoxyCompactList}\item 
+typedef std\+::function$<$ std\+::pair$<$ Value\+Map, \hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$ $>$const Value\+Map \&tag\+Attr\+Value\+Map)$>$ \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler}
+\begin{DoxyCompactList}\small\item\em called on the specified tag \end{DoxyCompactList}\item 
+typedef std\+::function$<$ void(const std\+::string \&url)$>$ \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler}
+\begin{DoxyCompactList}\small\item\em call to open a resource specified by a U\+RL \end{DoxyCompactList}\item 
+typedef std\+::function$<$ std\+::pair$<$ Value\+Map, \hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$ $>$const Value\+Map \&tag\+Attr\+Value\+Map)$>$ \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler}
+\begin{DoxyCompactList}\small\item\em called on the specified tag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a52853cd9bda30569081d5ba8507205be}\label{classui_1_1RichText_a52853cd9bda30569081d5ba8507205be}} 
+\hyperlink{classui_1_1RichText_a52853cd9bda30569081d5ba8507205be}{Rich\+Text} ()
+\begin{DoxyCompactList}\small\item\em Default constructor.  ctor  new. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a4d75c5a3bda55c939407ecf1e0601793}\label{classui_1_1RichText_a4d75c5a3bda55c939407ecf1e0601793}} 
+virtual \hyperlink{classui_1_1RichText_a4d75c5a3bda55c939407ecf1e0601793}{$\sim$\+Rich\+Text} ()
+\begin{DoxyCompactList}\small\item\em Default destructor.  NA  NA. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a60507d7854a4d1ac99722d9c0ff5237b}{insert\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element, int index)
+\begin{DoxyCompactList}\small\item\em Insert a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a94dcc56e14381d00fa01b185cd797037}{push\+Back\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{classui_1_1RichElement}{Rich\+Element} at the end of \hyperlink{classui_1_1RichText}{Rich\+Text}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a1bb5065db5ec47543bc3cf80eb5cda44}{remove\+Element} (int index)
+\begin{DoxyCompactList}\small\item\em Remove a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a5db2f690c2dadc6ac6f5f0ef3f4ba55c}{remove\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Remove specific \hyperlink{classui_1_1RichElement}{Rich\+Element}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_aa947b6c2404cc5b22d7794f5c601c069}{set\+Vertical\+Space} (float space)
+\begin{DoxyCompactList}\small\item\em Set vertical space between each \hyperlink{classui_1_1RichElement}{Rich\+Element}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a01c63af976d602ca0d90dfe6ce885749}\label{classui_1_1RichText_a01c63af976d602ca0d90dfe6ce885749}} 
+void \hyperlink{classui_1_1RichText_a01c63af976d602ca0d90dfe6ce885749}{format\+Text} ()
+\begin{DoxyCompactList}\small\item\em Rearrange all \hyperlink{classui_1_1RichElement}{Rich\+Element} in the \hyperlink{classui_1_1RichText}{Rich\+Text}. It\textquotesingle{}s usually called internally. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}{ignore\+Content\+Adapt\+With\+Size} (bool ignore) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}{get\+Description} () const override
+\item 
+void \hyperlink{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}{set\+Wrap\+Mode} (Wrap\+Mode wrap\+Mode)
+\item 
+Wrap\+Mode \hyperlink{classui_1_1RichText_a20353e463ebf2676380e88cdf4143e07}{get\+Wrap\+Mode} () const
+\item 
+void \hyperlink{classui_1_1RichText_afed903a1b6a5c8f96615f22b644c2bbd}{set\+Font\+Color} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_aac64b7e3593e6723d51d514ee03dc0e4}{get\+Font\+Color} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a45c8e3ddbf180a6eb4f9912494f6e5a8}{get\+Font\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_a45a5d5e1f075648230019b8d1400df87}{set\+Font\+Size} (float size)
+\item 
+float \hyperlink{classui_1_1RichText_a9b6f6464318fdeaf139161f169560c53}{get\+Font\+Size} ()
+\item 
+void \hyperlink{classui_1_1RichText_aece9d280930f5c88b721838dc414f6e9}{set\+Font\+Face} (const std\+::string \&face)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_af3bbdb1b6e2c5ea81cefcfcadc760acd}{get\+Font\+Face} ()
+\item 
+void \hyperlink{classui_1_1RichText_a60ebf6b715a3c538ce8a4c77c979b305}{set\+Anchor\+Font\+Color} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_a3d776737d4159673aab16af9b46d19e6}{get\+Anchor\+Font\+Color} ()
+\item 
+cocos2d\+::\+Color3B \hyperlink{classui_1_1RichText_a79706c4385b96017aa5c504f4881b0a9}{get\+Anchor\+Font\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_a35bade50d3042d9c5c63ae3d8e61fb78}{set\+Anchor\+Text\+Bold} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_a823f58bcacdb897d067e3fb6ab7b06d0}{is\+Anchor\+Text\+Bold\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_a0b7b72f39b363b3ab4bf99d623464123}{set\+Anchor\+Text\+Italic} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_affb8bc75d84245bd768c23a9b9f635a5}{is\+Anchor\+Text\+Italic\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_ab9d69f1f319f4c28620ebf7fed1246ff}{set\+Anchor\+Text\+Del} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_acf4f6b2e493d468a372bfea93c4cde54}{is\+Anchor\+Text\+Del\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_a5a435489915c1e0d98fb4f53382ec6e0}{set\+Anchor\+Text\+Underline} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_aaa284641d098978d7b548c57afcc930a}{is\+Anchor\+Text\+Underline\+Enabled} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}\label{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}} 
+void \hyperlink{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}{set\+Anchor\+Text\+Outline} (bool enable, const \hyperlink{structColor3B}{Color3B} \&outline\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}, int outline\+Size=-\/1)
+\begin{DoxyCompactList}\small\item\em enable the outline of a-\/tag \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1RichText_a13483bdeac1fe64523469efe5afd597b}{is\+Anchor\+Text\+Outline\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a7df98348ce2190568baded594b3a52fb}{get\+Anchor\+Text\+Outline\+Color3B} ()
+\item 
+int \hyperlink{classui_1_1RichText_adb488707dcd66e8fd24271d617bbf536}{get\+Anchor\+Text\+Outline\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}\label{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}} 
+void \hyperlink{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}{set\+Anchor\+Text\+Shadow} (bool enable, const \hyperlink{structColor3B}{Color3B} \&shadow\+Color=Color3\+B\+::\+B\+L\+A\+CK, const \hyperlink{classSize}{Size} \&offset=\hyperlink{classSize}{Size}(2.\+0, -\/2.\+0), int blur\+Radius=0)
+\begin{DoxyCompactList}\small\item\em enable the shadow of a-\/tag \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1RichText_a132592d95473377f4663f02fc605a9fc}{is\+Anchor\+Text\+Shadow\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a2a125ff069d785fea3e890b71d819392}{get\+Anchor\+Text\+Shadow\+Color3B} ()
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classui_1_1RichText_a1f4a01e0e49d63694398c694288b81ae}{get\+Anchor\+Text\+Shadow\+Offset} ()
+\item 
+int \hyperlink{classui_1_1RichText_afd76a6cb26b1bf6a4c81ca52c05bd7ec}{get\+Anchor\+Text\+Shadow\+Blur\+Radius} ()
+\item 
+void \hyperlink{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}{set\+Anchor\+Text\+Glow} (bool enable, const \hyperlink{structColor3B}{Color3B} \&glow\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE})
+\item 
+bool \hyperlink{classui_1_1RichText_a633187b54e74c2f84d2ef1085fa2306d}{is\+Anchor\+Text\+Glow\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a2fe160ec411c8935e5d383e695fb1969}{get\+Anchor\+Text\+Glow\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_a81b7598f89c8fa589afb315ff74f5aa3}{set\+Defaults} (const Value\+Map \&defaults)
+\item 
+Value\+Map \hyperlink{classui_1_1RichText_ac5ae824e98115ea1e26ac5dde056e448}{get\+Defaults} () const
+\item 
+cocos2d\+::\+Color3B \hyperlink{classui_1_1RichText_a1303c59d7cc30d83570ca248b08d09a4}{color3\+B\+With\+String} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_ab923374d5a30f539696c9a4f887b4307}{string\+With\+Color3B} (const cocos2d\+::\+Color3B \&color3b)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_a82ba2d0b27f544d8f729cf18a32d3bad}{string\+With\+Color4B} (const cocos2d\+::\+Color4B \&color4b)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a7b7911f8d219b556d41a86bfdaca6887}\label{classui_1_1RichText_a7b7911f8d219b556d41a86bfdaca6887}} 
+void {\bfseries open\+Url} (const std\+::string \&url)
+\item 
+void \hyperlink{classui_1_1RichText_afd77b67b1697a3e837a31fb88df0795e}{set\+Open\+Url\+Handler} (const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url)
+\begin{DoxyCompactList}\small\item\em Asks the callback to open a resource specified by a U\+RL.  If you set up your own U\+RL in the anchor tag, it is used to intercept the U\+RL open. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a854a0d338833d1f4608a3f71a87e4da8}\label{classui_1_1RichText_a854a0d338833d1f4608a3f71a87e4da8}} 
+bool {\bfseries init\+With\+X\+ML} (const std\+::string \&xml, const Value\+Map \&defaults=Value\+Map(), const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url=nullptr)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ac16e7db472bb0474b3a13e76468fac9d}\label{classui_1_1RichText_ac16e7db472bb0474b3a13e76468fac9d}} 
+\hyperlink{classui_1_1RichText_ac16e7db472bb0474b3a13e76468fac9d}{Rich\+Text} ()
+\begin{DoxyCompactList}\small\item\em Default constructor.  ctor  new. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a9b2396845c063571d51d755b7942b891}\label{classui_1_1RichText_a9b2396845c063571d51d755b7942b891}} 
+virtual \hyperlink{classui_1_1RichText_a9b2396845c063571d51d755b7942b891}{$\sim$\+Rich\+Text} ()
+\begin{DoxyCompactList}\small\item\em Default destructor.  NA  NA. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a7275315b5e730c96a4e9b39e18c2cb9e}{insert\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element, int index)
+\begin{DoxyCompactList}\small\item\em Insert a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a9d9c7e5a460fec33d81de7811deb44ca}{push\+Back\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{classui_1_1RichElement}{Rich\+Element} at the end of \hyperlink{classui_1_1RichText}{Rich\+Text}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a5943a34f2a067b8f40e21ee0678732a4}{remove\+Element} (int index)
+\begin{DoxyCompactList}\small\item\em Remove a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_ae17d3860bef08a3a61992e228bd6c483}{remove\+Element} (\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Remove specific \hyperlink{classui_1_1RichElement}{Rich\+Element}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1RichText_a73876d64898fdce17df00e74a1d68864}{set\+Vertical\+Space} (float space)
+\begin{DoxyCompactList}\small\item\em Set vertical space between each \hyperlink{classui_1_1RichElement}{Rich\+Element}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a4694a2d2bca0645209f9edeb675cb76a}\label{classui_1_1RichText_a4694a2d2bca0645209f9edeb675cb76a}} 
+void \hyperlink{classui_1_1RichText_a4694a2d2bca0645209f9edeb675cb76a}{format\+Text} ()
+\begin{DoxyCompactList}\small\item\em Rearrange all \hyperlink{classui_1_1RichElement}{Rich\+Element} in the \hyperlink{classui_1_1RichText}{Rich\+Text}. It\textquotesingle{}s usually called internally. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}{ignore\+Content\+Adapt\+With\+Size} (bool ignore) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}{get\+Description} () const override
+\item 
+void \hyperlink{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}{set\+Wrap\+Mode} (Wrap\+Mode wrap\+Mode)
+\item 
+Wrap\+Mode \hyperlink{classui_1_1RichText_ae502474a4a692215e7458ff13a46c623}{get\+Wrap\+Mode} () const
+\item 
+void \hyperlink{classui_1_1RichText_a027387771913d560334d2711ee77ee9d}{set\+Horizontal\+Alignment} (Horizontal\+Alignment a)
+\item 
+Horizontal\+Alignment \hyperlink{classui_1_1RichText_a491a30899b80e68cc539bff9c075f9d4}{get\+Horizontal\+Alignment} () const
+\item 
+void \hyperlink{classui_1_1RichText_a5cd519c793200b5aaccfdb0fa8892e9a}{set\+Font\+Color} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_a9bfe97a06ce0d02b42d6709050e57bbc}{get\+Font\+Color} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a43e534f4c1307afa1f8ba91c9dee49c8}{get\+Font\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_a60d0a694863a77b5608c59f49ceda3c1}{set\+Font\+Size} (float size)
+\item 
+float \hyperlink{classui_1_1RichText_af30313070309eb44097c18abcedb4957}{get\+Font\+Size} ()
+\item 
+void \hyperlink{classui_1_1RichText_a9ea95bec970e9f1c03ba0bf34c11b93d}{set\+Font\+Face} (const std\+::string \&face)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_a72a70b40c13af3bd2f921c50f734fef5}{get\+Font\+Face} ()
+\item 
+void \hyperlink{classui_1_1RichText_ab5765e7b72e36140f923a34a3e891536}{set\+Anchor\+Font\+Color} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_a87568750c7b12cf8b2d542ea4d9b3271}{get\+Anchor\+Font\+Color} ()
+\item 
+cocos2d\+::\+Color3B \hyperlink{classui_1_1RichText_a6ebd0ca1c3d4d8efe02ab8278ee58467}{get\+Anchor\+Font\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_af06a8855abd80bb3685bfa9d73649221}{set\+Anchor\+Text\+Bold} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_a9168dc9df12d1caa8752c30cedcfff3e}{is\+Anchor\+Text\+Bold\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_ac453dba85e6b3ae984505377244e8cab}{set\+Anchor\+Text\+Italic} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_a25313840dc6addc935cabcff9e784302}{is\+Anchor\+Text\+Italic\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_ac92f9783c67dbb7f294e917c7019d618}{set\+Anchor\+Text\+Del} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_ad0872f418f4d5e486328961254d6da45}{is\+Anchor\+Text\+Del\+Enabled} ()
+\item 
+void \hyperlink{classui_1_1RichText_a8e545c2ecb49337c34873e6335277714}{set\+Anchor\+Text\+Underline} (bool enable)
+\item 
+bool \hyperlink{classui_1_1RichText_ab133b87aace1a3d5e34cde0fb6183bde}{is\+Anchor\+Text\+Underline\+Enabled} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}\label{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}} 
+void \hyperlink{classui_1_1RichText_aa68c15b36eeba056f623a567ef532994}{set\+Anchor\+Text\+Outline} (bool enable, const \hyperlink{structColor3B}{Color3B} \&outline\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}, int outline\+Size=-\/1)
+\begin{DoxyCompactList}\small\item\em enable the outline of a-\/tag \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1RichText_aac2385d3fb2dd635cecb25cb3a0110a2}{is\+Anchor\+Text\+Outline\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_aa8c308cac49231bb2c1a9f36526333f9}{get\+Anchor\+Text\+Outline\+Color3B} ()
+\item 
+int \hyperlink{classui_1_1RichText_a9f64b2a515def4e43cfc4f28d874ecff}{get\+Anchor\+Text\+Outline\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}\label{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}} 
+void \hyperlink{classui_1_1RichText_ae3e0bd83332893cd92078da8f4b0caab}{set\+Anchor\+Text\+Shadow} (bool enable, const \hyperlink{structColor3B}{Color3B} \&shadow\+Color=Color3\+B\+::\+B\+L\+A\+CK, const \hyperlink{classSize}{Size} \&offset=\hyperlink{classSize}{Size}(2.\+0, -\/2.\+0), int blur\+Radius=0)
+\begin{DoxyCompactList}\small\item\em enable the shadow of a-\/tag \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1RichText_a565ca0b2333f5a6aeb2ea07863ba8892}{is\+Anchor\+Text\+Shadow\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a4f1fbacca39aa0b5104e3df63fe558c2}{get\+Anchor\+Text\+Shadow\+Color3B} ()
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classui_1_1RichText_a1e937cf6d302328c7ff37fa20ab5a049}{get\+Anchor\+Text\+Shadow\+Offset} ()
+\item 
+int \hyperlink{classui_1_1RichText_a427e82aabe87ba960aacdad621f82bb4}{get\+Anchor\+Text\+Shadow\+Blur\+Radius} ()
+\item 
+void \hyperlink{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}{set\+Anchor\+Text\+Glow} (bool enable, const \hyperlink{structColor3B}{Color3B} \&glow\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE})
+\item 
+bool \hyperlink{classui_1_1RichText_a74d51f173cc76e9141e536eaaa31e817}{is\+Anchor\+Text\+Glow\+Enabled} ()
+\item 
+\hyperlink{structColor3B}{Color3B} \hyperlink{classui_1_1RichText_a6b4271d09fe2e6e1f7b501dfd3da36b2}{get\+Anchor\+Text\+Glow\+Color3B} ()
+\item 
+void \hyperlink{classui_1_1RichText_afa1a22d29820f1174ad61b2a65f24211}{set\+Defaults} (const Value\+Map \&defaults)
+\item 
+Value\+Map \hyperlink{classui_1_1RichText_a63f5715a0904d8799910a300854cc2f6}{get\+Defaults} () const
+\item 
+cocos2d\+::\+Color3B \hyperlink{classui_1_1RichText_ad55a7556763a65d5c87e3826f3e8335b}{color3\+B\+With\+String} (const std\+::string \&color)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_ac81e46b4a4d36f7c607803fc125721e6}{string\+With\+Color3B} (const cocos2d\+::\+Color3B \&color3b)
+\item 
+std\+::string \hyperlink{classui_1_1RichText_ae6ebbc92f1c67012b680ac70de932d0a}{string\+With\+Color4B} (const cocos2d\+::\+Color4B \&color4b)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_af6721dffe38613d991f11ea159ab1e4b}\label{classui_1_1RichText_af6721dffe38613d991f11ea159ab1e4b}} 
+void {\bfseries open\+Url} (const std\+::string \&url)
+\item 
+void \hyperlink{classui_1_1RichText_a750e15147a256bf092a8670720548f38}{set\+Open\+Url\+Handler} (const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url)
+\begin{DoxyCompactList}\small\item\em Asks the callback to open a resource specified by a U\+RL.  If you set up your own U\+RL in the anchor tag, it is used to intercept the U\+RL open. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1RichText_a854a0d338833d1f4608a3f71a87e4da8}\label{classui_1_1RichText_a854a0d338833d1f4608a3f71a87e4da8}} 
+bool {\bfseries init\+With\+X\+ML} (const std\+::string \&xml, const Value\+Map \&defaults=Value\+Map(), const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url=nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1RichText}{Rich\+Text} $\ast$ \hyperlink{classui_1_1RichText_ae4e83215a254608fe6b26aecd224abfa}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a empty \hyperlink{classui_1_1RichText}{Rich\+Text}. \end{DoxyCompactList}\item 
+static \hyperlink{classui_1_1RichText}{Rich\+Text} $\ast$ \hyperlink{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}{create\+With\+X\+ML} (const std\+::string \&xml, const Value\+Map \&defaults=Value\+Map(), const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url=nullptr)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{classui_1_1RichText}{Rich\+Text} from an X\+ML. \end{DoxyCompactList}\item 
+static void \hyperlink{classui_1_1RichText_a421781e8515f59cf033477d77d4461f0}{set\+Tag\+Description} (const std\+::string \&tag, bool is\+Font\+Element, \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler} handle\+Visit\+Enter)
+\begin{DoxyCompactList}\small\item\em add a callback to own tag. \end{DoxyCompactList}\item 
+static void \hyperlink{classui_1_1RichText_a28cf05a1a014f4845544f3664ba4c8fb}{remove\+Tag\+Description} (const std\+::string \&tag)
+\begin{DoxyCompactList}\small\item\em remove a callback to own tag. \end{DoxyCompactList}\item 
+static \hyperlink{classui_1_1RichText}{Rich\+Text} $\ast$ \hyperlink{classui_1_1RichText_a67dbc7d118c0f02c9598221a3bceaf20}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a empty \hyperlink{classui_1_1RichText}{Rich\+Text}. \end{DoxyCompactList}\item 
+static \hyperlink{classui_1_1RichText}{Rich\+Text} $\ast$ \hyperlink{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}{create\+With\+X\+ML} (const std\+::string \&xml, const Value\+Map \&defaults=Value\+Map(), const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&handle\+Open\+Url=nullptr)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{classui_1_1RichText}{Rich\+Text} from an X\+ML. \end{DoxyCompactList}\item 
+static void \hyperlink{classui_1_1RichText_a67bacb0c6c0706f3dd47cd9b1b2b3034}{set\+Tag\+Description} (const std\+::string \&tag, bool is\+Font\+Element, \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler} handle\+Visit\+Enter)
+\begin{DoxyCompactList}\small\item\em add a callback to own tag. \end{DoxyCompactList}\item 
+static void \hyperlink{classui_1_1RichText_a3f03f9553cb5f1036b7a6645c5eb842a}{remove\+Tag\+Description} (const std\+::string \&tag)
+\begin{DoxyCompactList}\small\item\em remove a callback to own tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ac564fb6d8edb55c846930b57994d32c0}\label{classui_1_1RichText_ac564fb6d8edb55c846930b57994d32c0}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: virtual bool init() override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_aafaa649d0090a6395e33db8260b7c947}{K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a187a1da319ad4e0a7735c019e72e4ca8}{K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a2ce7959b432f8aa9f840b743323f3e8f}{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a11fdac9c5788c91aad497b147e8016ff}{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a411f11d3cab0eea1eff4cbb209119984}{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a653e354559b29baa3ef36f1626ec6981}{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a26963265cb953c676222e9b302ed20c4}{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a7d3535f7df3a1c2f0794ca08ed616d1c}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a2e2afdb6d58039fe1df90cab41a8a6c5}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_add95eb2e23a5a7dbf9dba353226cc745}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a163bdbf308eeba8a44cd5e911152837c}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a9714aa0d351221f74048696cf9723b0c}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a4af5934e4df5e3b363d2de9202f5ba1a}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a9fd78731e14ee45424277f1f09620146}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a64657467343deaeec8d7029808a82659}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a65e983b7f1aac7c519b019a1720d8087}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a65fbbe1beb8e0b3cb5e37b3ed559d5bf}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_aa4091843d1db8368559d19884cf30324}{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ac6b353e040ab5cf03351bc66cb1c8027}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a0cb8a5126ed47a2f167b8dd7775ec61d}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a4b06b8bb8c20d1733d52a92326d4921c}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_aa85fdb82f7f36c2c88d4990f453ed9d6}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ab892b910a46d88b2d3af24412ccfe226}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a278da76791afdec2de5bbc9a8df969f7}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a9e4c9189d439ba1e0405c89a99c1723f}{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_af4da12422c05f1e20988d40942a1cf89}{K\+E\+Y\+\_\+\+U\+RL}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ad186dea565c08991d07d0f99c1bb7ca0}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_aa6cf1b421bcb2be6b6323e3eb1da7646}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ae699db5d95297238f5a6a1a0cb4437d9}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_accc7b0c8591e61d291357f8feeb4d192}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a09bdfcd573f03e95510b73597c9f62e4}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a0f70931bbd000a5816e6a2348012cc30}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ad478d379daf2cb1c97abb98c384e449f}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a14afde696212da2e1ab0c8b380fc3ee6}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ac4f7dcb9d7c159657a4837f86742202a}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_ac493b3faeb317ea15227e919b853ba27}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_a3a532548a65ea327b984e85a803e72cc}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_aad059061c9508a3f651a4caf41bc8d67}{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}
+\item 
+static const std\+::string \hyperlink{classui_1_1RichText_acb5ff23cf5b1e5f69faef9664ff741c6}{K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a588bd6db644fdfc6205948503f007c9c}\label{classui_1_1RichText_a588bd6db644fdfc6205948503f007c9c}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ab39e5ede39b969ec3c5c5495f60423f3}\label{classui_1_1RichText_ab39e5ede39b969ec3c5c5495f60423f3}} 
+virtual void {\bfseries init\+Renderer} () override
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ad61247d0c0acb2218b034a12dc6fc6e4}\label{classui_1_1RichText_ad61247d0c0acb2218b034a12dc6fc6e4}} 
+void {\bfseries push\+To\+Container} (\hyperlink{classNode}{Node} $\ast$renderer)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ab5129556f3cf8b4c1b5b63c391aba47d}\label{classui_1_1RichText_ab5129556f3cf8b4c1b5b63c391aba47d}} 
+void {\bfseries handle\+Text\+Renderer} (const std\+::string \&text, const std\+::string \&font\+Name, float font\+Size, const \hyperlink{structColor3B}{Color3B} \&color, G\+Lubyte opacity, uint32\+\_\+t flags, const std\+::string \&url=\char`\"{}\char`\"{}, const \hyperlink{structColor3B}{Color3B} \&outline\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}, int outline\+Size=-\/1, const \hyperlink{structColor3B}{Color3B} \&shadow\+Color=Color3\+B\+::\+B\+L\+A\+CK, const cocos2d\+::\+Size \&shadow\+Offset=\hyperlink{classSize}{Size}(2.\+0, -\/2.\+0), int shadow\+Blur\+Radius=0, const \hyperlink{structColor3B}{Color3B} \&glow\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE})
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ab05036e02db2af3e34cd50a20451a8d1}\label{classui_1_1RichText_ab05036e02db2af3e34cd50a20451a8d1}} 
+void {\bfseries handle\+Image\+Renderer} (const std\+::string \&file\+Parh, const \hyperlink{structColor3B}{Color3B} \&color, G\+Lubyte opacity, int width, int height, const std\+::string \&url)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a403610d2ba44e45be8337e077d8e4920}\label{classui_1_1RichText_a403610d2ba44e45be8337e077d8e4920}} 
+void {\bfseries handle\+Custom\+Renderer} (\hyperlink{classNode}{Node} $\ast$renderer)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a8ff3eb18627c1838187a445600cc7573}\label{classui_1_1RichText_a8ff3eb18627c1838187a445600cc7573}} 
+void {\bfseries formar\+Renderers} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a1b8cca846778f4c86c094e9b2a1ce1e9}\label{classui_1_1RichText_a1b8cca846778f4c86c094e9b2a1ce1e9}} 
+void {\bfseries add\+New\+Line} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ac61c3506f05a1e1403285e3114974f70}\label{classui_1_1RichText_ac61c3506f05a1e1403285e3114974f70}} 
+int {\bfseries find\+Split\+Position\+For\+Word} (cocos2d\+::\+Label $\ast$label, const std\+::string \&text)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a712b57c98845f615f924a07285e77668}\label{classui_1_1RichText_a712b57c98845f615f924a07285e77668}} 
+int {\bfseries find\+Split\+Position\+For\+Char} (cocos2d\+::\+Label $\ast$label, const std\+::string \&text)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a588bd6db644fdfc6205948503f007c9c}\label{classui_1_1RichText_a588bd6db644fdfc6205948503f007c9c}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ab39e5ede39b969ec3c5c5495f60423f3}\label{classui_1_1RichText_ab39e5ede39b969ec3c5c5495f60423f3}} 
+virtual void {\bfseries init\+Renderer} () override
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ad61247d0c0acb2218b034a12dc6fc6e4}\label{classui_1_1RichText_ad61247d0c0acb2218b034a12dc6fc6e4}} 
+void {\bfseries push\+To\+Container} (\hyperlink{classNode}{Node} $\ast$renderer)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_aaec0885af9c4f2ff188c97288c99a199}\label{classui_1_1RichText_aaec0885af9c4f2ff188c97288c99a199}} 
+void {\bfseries handle\+Text\+Renderer} (const std\+::string \&text, const std\+::string \&font\+Name, float font\+Size, const \hyperlink{structColor3B}{Color3B} \&color, G\+Lubyte opacity, uint32\+\_\+t flags, const std\+::string \&url=\char`\"{}\char`\"{}, const \hyperlink{structColor3B}{Color3B} \&outline\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}, int outline\+Size=-\/1, const \hyperlink{structColor3B}{Color3B} \&shadow\+Color=Color3\+B\+::\+B\+L\+A\+CK, const \hyperlink{classSize}{Size} \&shadow\+Offset=\hyperlink{classSize}{Size}(2.\+0, -\/2.\+0), int shadow\+Blur\+Radius=0, const \hyperlink{structColor3B}{Color3B} \&glow\+Color=\hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE})
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ad4889520c45f8e196f1a30b674a2c0aa}\label{classui_1_1RichText_ad4889520c45f8e196f1a30b674a2c0aa}} 
+void {\bfseries handle\+Image\+Renderer} (const std\+::string \&file\+Path, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type} texture\+Type, const \hyperlink{structColor3B}{Color3B} \&color, G\+Lubyte opacity, int width, int height, const std\+::string \&url)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a403610d2ba44e45be8337e077d8e4920}\label{classui_1_1RichText_a403610d2ba44e45be8337e077d8e4920}} 
+void {\bfseries handle\+Custom\+Renderer} (\hyperlink{classNode}{Node} $\ast$renderer)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ae1db37a688dc94ef2100635aab5ebdc1}\label{classui_1_1RichText_ae1db37a688dc94ef2100635aab5ebdc1}} 
+void {\bfseries format\+Renderers} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_abefb9a51c377fc8a5934e8dd245c446e}\label{classui_1_1RichText_abefb9a51c377fc8a5934e8dd245c446e}} 
+void {\bfseries add\+New\+Line} ()
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ad9bf19319cf7f8fc6ddafee46f2d2860}\label{classui_1_1RichText_ad9bf19319cf7f8fc6ddafee46f2d2860}} 
+void {\bfseries do\+Horizontal\+Alignment} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&row, float row\+Width)
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a9a09b062644958c82b8fb9338bdfc20d}\label{classui_1_1RichText_a9a09b062644958c82b8fb9338bdfc20d}} 
+float {\bfseries strip\+Trailing\+Whitespace} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&row)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a2379dbc82de32cdea75461965a364ae6}\label{classui_1_1RichText_a2379dbc82de32cdea75461965a364ae6}} 
+bool {\bfseries \+\_\+format\+Text\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a1491541783b70dcecf307736674973fb}\label{classui_1_1RichText_a1491541783b70dcecf307736674973fb}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$ $>$ {\bfseries \+\_\+rich\+Elements}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_abb331d66614a702b8691157948e5354f}\label{classui_1_1RichText_abb331d66614a702b8691157948e5354f}} 
+std\+::vector$<$ \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ $\ast$ $>$ {\bfseries \+\_\+element\+Renders}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_a70f35439756b3cd490b4e2fc873e77ea}\label{classui_1_1RichText_a70f35439756b3cd490b4e2fc873e77ea}} 
+float {\bfseries \+\_\+left\+Space\+Width}
+\item 
+Value\+Map \hyperlink{classui_1_1RichText_ad6f6ba7e12a897612068df6d93b1f9b6}{\+\_\+defaults}
+\item 
+\hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \hyperlink{classui_1_1RichText_adc716a3556a97f5b034caf78e8e30276}{\+\_\+handle\+Open\+Url}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_ae3d80b7a7aae94c72ce01e25e613383f}\label{classui_1_1RichText_ae3d80b7a7aae94c72ce01e25e613383f}} 
+std\+::vector$<$ \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ $>$ {\bfseries \+\_\+element\+Renders}
+\item 
+\mbox{\Hypertarget{classui_1_1RichText_aba64a955fd50ca2d5ab428dce55098da}\label{classui_1_1RichText_aba64a955fd50ca2d5ab428dce55098da}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+line\+Heights}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A container for displaying various Rich\+Elements. We could use it to display texts with images easily. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}\label{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!Open\+Url\+Handler@{Open\+Url\+Handler}}
+\index{Open\+Url\+Handler@{Open\+Url\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{Open\+Url\+Handler}{OpenUrlHandler}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(const std\+::string\& url)$>$ \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{ui\+::\+Rich\+Text\+::\+Open\+Url\+Handler}}
+
+
+
+call to open a resource specified by a U\+RL 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & a U\+RL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}\label{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!Open\+Url\+Handler@{Open\+Url\+Handler}}
+\index{Open\+Url\+Handler@{Open\+Url\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{Open\+Url\+Handler}{OpenUrlHandler}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(const std\+::string\& url)$>$ \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{ui\+::\+Rich\+Text\+::\+Open\+Url\+Handler}}
+
+
+
+call to open a resource specified by a U\+RL 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & a U\+RL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}\label{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!Visit\+Enter\+Handler@{Visit\+Enter\+Handler}}
+\index{Visit\+Enter\+Handler@{Visit\+Enter\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{Visit\+Enter\+Handler}{VisitEnterHandler}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$std\+::pair$<$Value\+Map, \hyperlink{classui_1_1RichElement}{Rich\+Element}$\ast$$>$const Value\+Map\& tag\+Attr\+Value\+Map)$>$ \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{ui\+::\+Rich\+Text\+::\+Visit\+Enter\+Handler}}
+
+
+
+called on the specified tag 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\+Attr\+Value\+Map} & the attributes of a tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text attributes and \hyperlink{classui_1_1RichElement}{Rich\+Element} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}\label{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!Visit\+Enter\+Handler@{Visit\+Enter\+Handler}}
+\index{Visit\+Enter\+Handler@{Visit\+Enter\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{Visit\+Enter\+Handler}{VisitEnterHandler}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$std\+::pair$<$Value\+Map, \hyperlink{classui_1_1RichElement}{Rich\+Element}$\ast$$>$const Value\+Map\& tag\+Attr\+Value\+Map)$>$ \hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{ui\+::\+Rich\+Text\+::\+Visit\+Enter\+Handler}}
+
+
+
+called on the specified tag 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\+Attr\+Value\+Map} & the attributes of a tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text attributes and \hyperlink{classui_1_1RichElement}{Rich\+Element} 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1RichText_a1303c59d7cc30d83570ca248b08d09a4}\label{classui_1_1RichText_a1303c59d7cc30d83570ca248b08d09a4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!color3\+B\+With\+String@{color3\+B\+With\+String}}
+\index{color3\+B\+With\+String@{color3\+B\+With\+String}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{color3\+B\+With\+String()}{color3BWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Color3B ui\+::\+Rich\+Text\+::color3\+B\+With\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+convert a color string into a \hyperlink{structColor3B}{Color3B}. \mbox{\Hypertarget{classui_1_1RichText_ad55a7556763a65d5c87e3826f3e8335b}\label{classui_1_1RichText_ad55a7556763a65d5c87e3826f3e8335b}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!color3\+B\+With\+String@{color3\+B\+With\+String}}
+\index{color3\+B\+With\+String@{color3\+B\+With\+String}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{color3\+B\+With\+String()}{color3BWithString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Color3B Rich\+Text\+::color3\+B\+With\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+convert a color string into a \hyperlink{structColor3B}{Color3B}. \mbox{\Hypertarget{classui_1_1RichText_ae4e83215a254608fe6b26aecd224abfa}\label{classui_1_1RichText_ae4e83215a254608fe6b26aecd224abfa}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!create@{create}}
+\index{create@{create}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1RichText}{Rich\+Text}$\ast$ ui\+::\+Rich\+Text\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a empty \hyperlink{classui_1_1RichText}{Rich\+Text}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1RichText}{Rich\+Text} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RichText_a67dbc7d118c0f02c9598221a3bceaf20}\label{classui_1_1RichText_a67dbc7d118c0f02c9598221a3bceaf20}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!create@{create}}
+\index{create@{create}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1RichText}{Rich\+Text} $\ast$ Rich\+Text\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a empty \hyperlink{classui_1_1RichText}{Rich\+Text}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1RichText}{Rich\+Text} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}\label{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!create\+With\+X\+ML@{create\+With\+X\+ML}}
+\index{create\+With\+X\+ML@{create\+With\+X\+ML}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{create\+With\+X\+M\+L()}{createWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1RichText}{Rich\+Text}$\ast$ ui\+::\+Rich\+Text\+::create\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{xml,  }\item[{const Value\+Map \&}]{defaults = {\ttfamily ValueMap()},  }\item[{const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&}]{handle\+Open\+Url = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \hyperlink{classui_1_1RichText}{Rich\+Text} from an X\+ML. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1RichText}{Rich\+Text} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}\label{classui_1_1RichText_a90c6d73c16d60b0f32308edb67415116}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!create\+With\+X\+ML@{create\+With\+X\+ML}}
+\index{create\+With\+X\+ML@{create\+With\+X\+ML}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{create\+With\+X\+M\+L()}{createWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1RichText}{Rich\+Text}$\ast$ ui\+::\+Rich\+Text\+::create\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{xml,  }\item[{const Value\+Map \&}]{defaults = {\ttfamily ValueMap()},  }\item[{const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&}]{handle\+Open\+Url = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \hyperlink{classui_1_1RichText}{Rich\+Text} from an X\+ML. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classui_1_1RichText}{Rich\+Text} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1RichText_a3d776737d4159673aab16af9b46d19e6}\label{classui_1_1RichText_a3d776737d4159673aab16af9b46d19e6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Font\+Color@{get\+Anchor\+Font\+Color}}
+\index{get\+Anchor\+Font\+Color@{get\+Anchor\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Font\+Color()}{getAnchorFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Rich\+Text\+::get\+Anchor\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a87568750c7b12cf8b2d542ea4d9b3271}\label{classui_1_1RichText_a87568750c7b12cf8b2d542ea4d9b3271}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Font\+Color@{get\+Anchor\+Font\+Color}}
+\index{get\+Anchor\+Font\+Color@{get\+Anchor\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Font\+Color()}{getAnchorFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rich\+Text\+::get\+Anchor\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a79706c4385b96017aa5c504f4881b0a9}\label{classui_1_1RichText_a79706c4385b96017aa5c504f4881b0a9}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Font\+Color3B@{get\+Anchor\+Font\+Color3B}}
+\index{get\+Anchor\+Font\+Color3B@{get\+Anchor\+Font\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Font\+Color3\+B()}{getAnchorFontColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Color3B ui\+::\+Rich\+Text\+::get\+Anchor\+Font\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a6ebd0ca1c3d4d8efe02ab8278ee58467}\label{classui_1_1RichText_a6ebd0ca1c3d4d8efe02ab8278ee58467}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Font\+Color3B@{get\+Anchor\+Font\+Color3B}}
+\index{get\+Anchor\+Font\+Color3B@{get\+Anchor\+Font\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Font\+Color3\+B()}{getAnchorFontColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Color3B Rich\+Text\+::get\+Anchor\+Font\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a2fe160ec411c8935e5d383e695fb1969}\label{classui_1_1RichText_a2fe160ec411c8935e5d383e695fb1969}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Glow\+Color3B@{get\+Anchor\+Text\+Glow\+Color3B}}
+\index{get\+Anchor\+Text\+Glow\+Color3B@{get\+Anchor\+Text\+Glow\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Glow\+Color3\+B()}{getAnchorTextGlowColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Glow\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text glow color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a6b4271d09fe2e6e1f7b501dfd3da36b2}\label{classui_1_1RichText_a6b4271d09fe2e6e1f7b501dfd3da36b2}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Glow\+Color3B@{get\+Anchor\+Text\+Glow\+Color3B}}
+\index{get\+Anchor\+Text\+Glow\+Color3B@{get\+Anchor\+Text\+Glow\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Glow\+Color3\+B()}{getAnchorTextGlowColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} Rich\+Text\+::get\+Anchor\+Text\+Glow\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text glow color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a7df98348ce2190568baded594b3a52fb}\label{classui_1_1RichText_a7df98348ce2190568baded594b3a52fb}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Outline\+Color3B@{get\+Anchor\+Text\+Outline\+Color3B}}
+\index{get\+Anchor\+Text\+Outline\+Color3B@{get\+Anchor\+Text\+Outline\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Outline\+Color3\+B()}{getAnchorTextOutlineColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Outline\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text outline color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_aa8c308cac49231bb2c1a9f36526333f9}\label{classui_1_1RichText_aa8c308cac49231bb2c1a9f36526333f9}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Outline\+Color3B@{get\+Anchor\+Text\+Outline\+Color3B}}
+\index{get\+Anchor\+Text\+Outline\+Color3B@{get\+Anchor\+Text\+Outline\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Outline\+Color3\+B()}{getAnchorTextOutlineColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} Rich\+Text\+::get\+Anchor\+Text\+Outline\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text outline color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_adb488707dcd66e8fd24271d617bbf536}\label{classui_1_1RichText_adb488707dcd66e8fd24271d617bbf536}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Outline\+Size@{get\+Anchor\+Text\+Outline\+Size}}
+\index{get\+Anchor\+Text\+Outline\+Size@{get\+Anchor\+Text\+Outline\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Outline\+Size()}{getAnchorTextOutlineSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Outline\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text outline size of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a9f64b2a515def4e43cfc4f28d874ecff}\label{classui_1_1RichText_a9f64b2a515def4e43cfc4f28d874ecff}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Outline\+Size@{get\+Anchor\+Text\+Outline\+Size}}
+\index{get\+Anchor\+Text\+Outline\+Size@{get\+Anchor\+Text\+Outline\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Outline\+Size()}{getAnchorTextOutlineSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Rich\+Text\+::get\+Anchor\+Text\+Outline\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text outline size of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_afd76a6cb26b1bf6a4c81ca52c05bd7ec}\label{classui_1_1RichText_afd76a6cb26b1bf6a4c81ca52c05bd7ec}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Blur\+Radius@{get\+Anchor\+Text\+Shadow\+Blur\+Radius}}
+\index{get\+Anchor\+Text\+Shadow\+Blur\+Radius@{get\+Anchor\+Text\+Shadow\+Blur\+Radius}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Blur\+Radius()}{getAnchorTextShadowBlurRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Blur\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow blur radius of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a427e82aabe87ba960aacdad621f82bb4}\label{classui_1_1RichText_a427e82aabe87ba960aacdad621f82bb4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Blur\+Radius@{get\+Anchor\+Text\+Shadow\+Blur\+Radius}}
+\index{get\+Anchor\+Text\+Shadow\+Blur\+Radius@{get\+Anchor\+Text\+Shadow\+Blur\+Radius}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Blur\+Radius()}{getAnchorTextShadowBlurRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Blur\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow blur radius of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a2a125ff069d785fea3e890b71d819392}\label{classui_1_1RichText_a2a125ff069d785fea3e890b71d819392}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Color3B@{get\+Anchor\+Text\+Shadow\+Color3B}}
+\index{get\+Anchor\+Text\+Shadow\+Color3B@{get\+Anchor\+Text\+Shadow\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Color3\+B()}{getAnchorTextShadowColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a4f1fbacca39aa0b5104e3df63fe558c2}\label{classui_1_1RichText_a4f1fbacca39aa0b5104e3df63fe558c2}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Color3B@{get\+Anchor\+Text\+Shadow\+Color3B}}
+\index{get\+Anchor\+Text\+Shadow\+Color3B@{get\+Anchor\+Text\+Shadow\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Color3\+B()}{getAnchorTextShadowColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow color of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a1f4a01e0e49d63694398c694288b81ae}\label{classui_1_1RichText_a1f4a01e0e49d63694398c694288b81ae}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Offset@{get\+Anchor\+Text\+Shadow\+Offset}}
+\index{get\+Anchor\+Text\+Shadow\+Offset@{get\+Anchor\+Text\+Shadow\+Offset}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Offset()}{getAnchorTextShadowOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} ui\+::\+Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow offset of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a1e937cf6d302328c7ff37fa20ab5a049}\label{classui_1_1RichText_a1e937cf6d302328c7ff37fa20ab5a049}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Anchor\+Text\+Shadow\+Offset@{get\+Anchor\+Text\+Shadow\+Offset}}
+\index{get\+Anchor\+Text\+Shadow\+Offset@{get\+Anchor\+Text\+Shadow\+Offset}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Anchor\+Text\+Shadow\+Offset()}{getAnchorTextShadowOffset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Rich\+Text\+::get\+Anchor\+Text\+Shadow\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current text shadow offset of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_ac5ae824e98115ea1e26ac5dde056e448}\label{classui_1_1RichText_ac5ae824e98115ea1e26ac5dde056e448}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Defaults@{get\+Defaults}}
+\index{get\+Defaults@{get\+Defaults}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Defaults()}{getDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Map ui\+::\+Rich\+Text\+::get\+Defaults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the default values \mbox{\Hypertarget{classui_1_1RichText_a63f5715a0904d8799910a300854cc2f6}\label{classui_1_1RichText_a63f5715a0904d8799910a300854cc2f6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Defaults@{get\+Defaults}}
+\index{get\+Defaults@{get\+Defaults}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Defaults()}{getDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Map Rich\+Text\+::get\+Defaults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the default values \mbox{\Hypertarget{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}\label{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string ui\+::\+Rich\+Text\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the string representation of widget class name \begin{DoxyReturn}{Returns}
+get the class description. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad85abdaa9133dc6b8efc32670ae9b93f}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}\label{classui_1_1RichText_aeae6c6fd1f11e9342ada2ef87dbf8681}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string ui\+::\+Rich\+Text\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the string representation of widget class name \begin{DoxyReturn}{Returns}
+get the class description. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad85abdaa9133dc6b8efc32670ae9b93f}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1RichText_aac64b7e3593e6723d51d514ee03dc0e4}\label{classui_1_1RichText_aac64b7e3593e6723d51d514ee03dc0e4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Color@{get\+Font\+Color}}
+\index{get\+Font\+Color@{get\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Color()}{getFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Rich\+Text\+::get\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color \mbox{\Hypertarget{classui_1_1RichText_a9bfe97a06ce0d02b42d6709050e57bbc}\label{classui_1_1RichText_a9bfe97a06ce0d02b42d6709050e57bbc}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Color@{get\+Font\+Color}}
+\index{get\+Font\+Color@{get\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Color()}{getFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rich\+Text\+::get\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color \mbox{\Hypertarget{classui_1_1RichText_a45c8e3ddbf180a6eb4f9912494f6e5a8}\label{classui_1_1RichText_a45c8e3ddbf180a6eb4f9912494f6e5a8}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Color3B@{get\+Font\+Color3B}}
+\index{get\+Font\+Color3B@{get\+Font\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Color3\+B()}{getFontColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structColor3B}{Color3B} ui\+::\+Rich\+Text\+::get\+Font\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color \mbox{\Hypertarget{classui_1_1RichText_a43e534f4c1307afa1f8ba91c9dee49c8}\label{classui_1_1RichText_a43e534f4c1307afa1f8ba91c9dee49c8}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Color3B@{get\+Font\+Color3B}}
+\index{get\+Font\+Color3B@{get\+Font\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Color3\+B()}{getFontColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cocos2d\+::\+Color3B Rich\+Text\+::get\+Font\+Color3B (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font color \mbox{\Hypertarget{classui_1_1RichText_af3bbdb1b6e2c5ea81cefcfcadc760acd}\label{classui_1_1RichText_af3bbdb1b6e2c5ea81cefcfcadc760acd}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Face@{get\+Font\+Face}}
+\index{get\+Font\+Face@{get\+Font\+Face}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Face()}{getFontFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Rich\+Text\+::get\+Font\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font face \mbox{\Hypertarget{classui_1_1RichText_a72a70b40c13af3bd2f921c50f734fef5}\label{classui_1_1RichText_a72a70b40c13af3bd2f921c50f734fef5}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Face@{get\+Font\+Face}}
+\index{get\+Font\+Face@{get\+Font\+Face}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Face()}{getFontFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rich\+Text\+::get\+Font\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font face \mbox{\Hypertarget{classui_1_1RichText_a9b6f6464318fdeaf139161f169560c53}\label{classui_1_1RichText_a9b6f6464318fdeaf139161f169560c53}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Size@{get\+Font\+Size}}
+\index{get\+Font\+Size@{get\+Font\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Size()}{getFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Rich\+Text\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font size \mbox{\Hypertarget{classui_1_1RichText_af30313070309eb44097c18abcedb4957}\label{classui_1_1RichText_af30313070309eb44097c18abcedb4957}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Font\+Size@{get\+Font\+Size}}
+\index{get\+Font\+Size@{get\+Font\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Font\+Size()}{getFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Rich\+Text\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the current font size \mbox{\Hypertarget{classui_1_1RichText_a491a30899b80e68cc539bff9c075f9d4}\label{classui_1_1RichText_a491a30899b80e68cc539bff9c075f9d4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Horizontal\+Alignment@{get\+Horizontal\+Alignment}}
+\index{get\+Horizontal\+Alignment@{get\+Horizontal\+Alignment}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Horizontal\+Alignment()}{getHorizontalAlignment()}}
+{\footnotesize\ttfamily Rich\+Text\+::\+Horizontal\+Alignment Rich\+Text\+::get\+Horizontal\+Alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the current horizontal alignment mode \mbox{\Hypertarget{classui_1_1RichText_a20353e463ebf2676380e88cdf4143e07}\label{classui_1_1RichText_a20353e463ebf2676380e88cdf4143e07}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Wrap\+Mode@{get\+Wrap\+Mode}}
+\index{get\+Wrap\+Mode@{get\+Wrap\+Mode}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Wrap\+Mode()}{getWrapMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Wrap\+Mode ui\+::\+Rich\+Text\+::get\+Wrap\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the current wrapping mode \mbox{\Hypertarget{classui_1_1RichText_ae502474a4a692215e7458ff13a46c623}\label{classui_1_1RichText_ae502474a4a692215e7458ff13a46c623}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!get\+Wrap\+Mode@{get\+Wrap\+Mode}}
+\index{get\+Wrap\+Mode@{get\+Wrap\+Mode}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{get\+Wrap\+Mode()}{getWrapMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rich\+Text\+::\+Wrap\+Mode Rich\+Text\+::get\+Wrap\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns the current wrapping mode \mbox{\Hypertarget{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}\label{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!ignore\+Content\+Adapt\+With\+Size@{ignore\+Content\+Adapt\+With\+Size}}
+\index{ignore\+Content\+Adapt\+With\+Size@{ignore\+Content\+Adapt\+With\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{ignore\+Content\+Adapt\+With\+Size()}{ignoreContentAdaptWithSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Rich\+Text\+::ignore\+Content\+Adapt\+With\+Size (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Toggle whether ignore user defined content size for widget. Set true will ignore user defined content size which means the widget size is always equal to the return value of {\ttfamily get\+Virtual\+Renderer\+Size}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ignore} & set member variable \+\_\+ignore\+Size to ignore \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_a47ec556e48f2ac20290c197e30434d36}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}\label{classui_1_1RichText_a82b3965a42f134415afab5605ef73ffa}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!ignore\+Content\+Adapt\+With\+Size@{ignore\+Content\+Adapt\+With\+Size}}
+\index{ignore\+Content\+Adapt\+With\+Size@{ignore\+Content\+Adapt\+With\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{ignore\+Content\+Adapt\+With\+Size()}{ignoreContentAdaptWithSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Rich\+Text\+::ignore\+Content\+Adapt\+With\+Size (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Toggle whether ignore user defined content size for widget. Set true will ignore user defined content size which means the widget size is always equal to the return value of {\ttfamily get\+Virtual\+Renderer\+Size}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ignore} & set member variable \+\_\+ignore\+Size to ignore \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_a47ec556e48f2ac20290c197e30434d36}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1RichText_a60507d7854a4d1ac99722d9c0ff5237b}\label{classui_1_1RichText_a60507d7854a4d1ac99722d9c0ff5237b}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!insert\+Element@{insert\+Element}}
+\index{insert\+Element@{insert\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{insert\+Element()}{insertElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::insert\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Insert a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} type. \\
+\hline
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a7275315b5e730c96a4e9b39e18c2cb9e}\label{classui_1_1RichText_a7275315b5e730c96a4e9b39e18c2cb9e}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!insert\+Element@{insert\+Element}}
+\index{insert\+Element@{insert\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{insert\+Element()}{insertElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::insert\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Insert a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} type. \\
+\hline
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a823f58bcacdb897d067e3fb6ab7b06d0}\label{classui_1_1RichText_a823f58bcacdb897d067e3fb6ab7b06d0}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Bold\+Enabled@{is\+Anchor\+Text\+Bold\+Enabled}}
+\index{is\+Anchor\+Text\+Bold\+Enabled@{is\+Anchor\+Text\+Bold\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Bold\+Enabled()}{isAnchorTextBoldEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Bold\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid style is bold text of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a9168dc9df12d1caa8752c30cedcfff3e}\label{classui_1_1RichText_a9168dc9df12d1caa8752c30cedcfff3e}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Bold\+Enabled@{is\+Anchor\+Text\+Bold\+Enabled}}
+\index{is\+Anchor\+Text\+Bold\+Enabled@{is\+Anchor\+Text\+Bold\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Bold\+Enabled()}{isAnchorTextBoldEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Bold\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid style is bold text of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_acf4f6b2e493d468a372bfea93c4cde54}\label{classui_1_1RichText_acf4f6b2e493d468a372bfea93c4cde54}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Del\+Enabled@{is\+Anchor\+Text\+Del\+Enabled}}
+\index{is\+Anchor\+Text\+Del\+Enabled@{is\+Anchor\+Text\+Del\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Del\+Enabled()}{isAnchorTextDelEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Del\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid strikethrough of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_ad0872f418f4d5e486328961254d6da45}\label{classui_1_1RichText_ad0872f418f4d5e486328961254d6da45}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Del\+Enabled@{is\+Anchor\+Text\+Del\+Enabled}}
+\index{is\+Anchor\+Text\+Del\+Enabled@{is\+Anchor\+Text\+Del\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Del\+Enabled()}{isAnchorTextDelEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Del\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid strikethrough of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a633187b54e74c2f84d2ef1085fa2306d}\label{classui_1_1RichText_a633187b54e74c2f84d2ef1085fa2306d}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Glow\+Enabled@{is\+Anchor\+Text\+Glow\+Enabled}}
+\index{is\+Anchor\+Text\+Glow\+Enabled@{is\+Anchor\+Text\+Glow\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Glow\+Enabled()}{isAnchorTextGlowEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Glow\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid glow of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a74d51f173cc76e9141e536eaaa31e817}\label{classui_1_1RichText_a74d51f173cc76e9141e536eaaa31e817}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Glow\+Enabled@{is\+Anchor\+Text\+Glow\+Enabled}}
+\index{is\+Anchor\+Text\+Glow\+Enabled@{is\+Anchor\+Text\+Glow\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Glow\+Enabled()}{isAnchorTextGlowEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Glow\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid glow of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_affb8bc75d84245bd768c23a9b9f635a5}\label{classui_1_1RichText_affb8bc75d84245bd768c23a9b9f635a5}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Italic\+Enabled@{is\+Anchor\+Text\+Italic\+Enabled}}
+\index{is\+Anchor\+Text\+Italic\+Enabled@{is\+Anchor\+Text\+Italic\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Italic\+Enabled()}{isAnchorTextItalicEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Italic\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid style is italic text of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a25313840dc6addc935cabcff9e784302}\label{classui_1_1RichText_a25313840dc6addc935cabcff9e784302}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Italic\+Enabled@{is\+Anchor\+Text\+Italic\+Enabled}}
+\index{is\+Anchor\+Text\+Italic\+Enabled@{is\+Anchor\+Text\+Italic\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Italic\+Enabled()}{isAnchorTextItalicEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Italic\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid style is italic text of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a13483bdeac1fe64523469efe5afd597b}\label{classui_1_1RichText_a13483bdeac1fe64523469efe5afd597b}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Outline\+Enabled@{is\+Anchor\+Text\+Outline\+Enabled}}
+\index{is\+Anchor\+Text\+Outline\+Enabled@{is\+Anchor\+Text\+Outline\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Outline\+Enabled()}{isAnchorTextOutlineEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Outline\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid outline of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_aac2385d3fb2dd635cecb25cb3a0110a2}\label{classui_1_1RichText_aac2385d3fb2dd635cecb25cb3a0110a2}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Outline\+Enabled@{is\+Anchor\+Text\+Outline\+Enabled}}
+\index{is\+Anchor\+Text\+Outline\+Enabled@{is\+Anchor\+Text\+Outline\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Outline\+Enabled()}{isAnchorTextOutlineEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Outline\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid outline of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a132592d95473377f4663f02fc605a9fc}\label{classui_1_1RichText_a132592d95473377f4663f02fc605a9fc}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Shadow\+Enabled@{is\+Anchor\+Text\+Shadow\+Enabled}}
+\index{is\+Anchor\+Text\+Shadow\+Enabled@{is\+Anchor\+Text\+Shadow\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Shadow\+Enabled()}{isAnchorTextShadowEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Shadow\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid shadow of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a565ca0b2333f5a6aeb2ea07863ba8892}\label{classui_1_1RichText_a565ca0b2333f5a6aeb2ea07863ba8892}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Shadow\+Enabled@{is\+Anchor\+Text\+Shadow\+Enabled}}
+\index{is\+Anchor\+Text\+Shadow\+Enabled@{is\+Anchor\+Text\+Shadow\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Shadow\+Enabled()}{isAnchorTextShadowEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Shadow\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid shadow of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_aaa284641d098978d7b548c57afcc930a}\label{classui_1_1RichText_aaa284641d098978d7b548c57afcc930a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Underline\+Enabled@{is\+Anchor\+Text\+Underline\+Enabled}}
+\index{is\+Anchor\+Text\+Underline\+Enabled@{is\+Anchor\+Text\+Underline\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Underline\+Enabled()}{isAnchorTextUnderlineEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Rich\+Text\+::is\+Anchor\+Text\+Underline\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid underline of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_ab133b87aace1a3d5e34cde0fb6183bde}\label{classui_1_1RichText_ab133b87aace1a3d5e34cde0fb6183bde}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!is\+Anchor\+Text\+Underline\+Enabled@{is\+Anchor\+Text\+Underline\+Enabled}}
+\index{is\+Anchor\+Text\+Underline\+Enabled@{is\+Anchor\+Text\+Underline\+Enabled}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{is\+Anchor\+Text\+Underline\+Enabled()}{isAnchorTextUnderlineEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rich\+Text\+::is\+Anchor\+Text\+Underline\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+valid underline of a-\/tag? \mbox{\Hypertarget{classui_1_1RichText_a94dcc56e14381d00fa01b185cd797037}\label{classui_1_1RichText_a94dcc56e14381d00fa01b185cd797037}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!push\+Back\+Element@{push\+Back\+Element}}
+\index{push\+Back\+Element@{push\+Back\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{push\+Back\+Element()}{pushBackElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::push\+Back\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Add a \hyperlink{classui_1_1RichElement}{Rich\+Element} at the end of \hyperlink{classui_1_1RichText}{Rich\+Text}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a9d9c7e5a460fec33d81de7811deb44ca}\label{classui_1_1RichText_a9d9c7e5a460fec33d81de7811deb44ca}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!push\+Back\+Element@{push\+Back\+Element}}
+\index{push\+Back\+Element@{push\+Back\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{push\+Back\+Element()}{pushBackElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::push\+Back\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Add a \hyperlink{classui_1_1RichElement}{Rich\+Element} at the end of \hyperlink{classui_1_1RichText}{Rich\+Text}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a1bb5065db5ec47543bc3cf80eb5cda44}\label{classui_1_1RichText_a1bb5065db5ec47543bc3cf80eb5cda44}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Element@{remove\+Element}}
+\index{remove\+Element@{remove\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Element()}{removeElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::remove\+Element (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Remove a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A integer index value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a5db2f690c2dadc6ac6f5f0ef3f4ba55c}\label{classui_1_1RichText_a5db2f690c2dadc6ac6f5f0ef3f4ba55c}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Element@{remove\+Element}}
+\index{remove\+Element@{remove\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Element()}{removeElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::remove\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Remove specific \hyperlink{classui_1_1RichElement}{Rich\+Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a5943a34f2a067b8f40e21ee0678732a4}\label{classui_1_1RichText_a5943a34f2a067b8f40e21ee0678732a4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Element@{remove\+Element}}
+\index{remove\+Element@{remove\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Element()}{removeElement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Rich\+Text\+::remove\+Element (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Remove a \hyperlink{classui_1_1RichElement}{Rich\+Element} at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A integer index value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_ae17d3860bef08a3a61992e228bd6c483}\label{classui_1_1RichText_ae17d3860bef08a3a61992e228bd6c483}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Element@{remove\+Element}}
+\index{remove\+Element@{remove\+Element}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Element()}{removeElement()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Rich\+Text\+::remove\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1RichElement}{Rich\+Element} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Remove specific \hyperlink{classui_1_1RichElement}{Rich\+Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & A \hyperlink{classui_1_1RichElement}{Rich\+Element} type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a28cf05a1a014f4845544f3664ba4c8fb}\label{classui_1_1RichText_a28cf05a1a014f4845544f3664ba4c8fb}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Tag\+Description@{remove\+Tag\+Description}}
+\index{remove\+Tag\+Description@{remove\+Tag\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Tag\+Description()}{removeTagDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void ui\+::\+Rich\+Text\+::remove\+Tag\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+remove a callback to own tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a3f03f9553cb5f1036b7a6645c5eb842a}\label{classui_1_1RichText_a3f03f9553cb5f1036b7a6645c5eb842a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!remove\+Tag\+Description@{remove\+Tag\+Description}}
+\index{remove\+Tag\+Description@{remove\+Tag\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{remove\+Tag\+Description()}{removeTagDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::remove\+Tag\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+remove a callback to own tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a60ebf6b715a3c538ce8a4c77c979b305}\label{classui_1_1RichText_a60ebf6b715a3c538ce8a4c77c979b305}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Font\+Color@{set\+Anchor\+Font\+Color}}
+\index{set\+Anchor\+Font\+Color@{set\+Anchor\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Font\+Color()}{setAnchorFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Font\+Color (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of a-\/tag. 
+\begin{DoxyParams}{Parameters}
+{\em face} & the font color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_ab5765e7b72e36140f923a34a3e891536}\label{classui_1_1RichText_ab5765e7b72e36140f923a34a3e891536}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Font\+Color@{set\+Anchor\+Font\+Color}}
+\index{set\+Anchor\+Font\+Color@{set\+Anchor\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Font\+Color()}{setAnchorFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Anchor\+Font\+Color (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of a-\/tag. 
+\begin{DoxyParams}{Parameters}
+{\em face} & the font color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a35bade50d3042d9c5c63ae3d8e61fb78}\label{classui_1_1RichText_a35bade50d3042d9c5c63ae3d8e61fb78}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Bold@{set\+Anchor\+Text\+Bold}}
+\index{set\+Anchor\+Text\+Bold@{set\+Anchor\+Text\+Bold}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Bold()}{setAnchorTextBold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Bold (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable bold text of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_af06a8855abd80bb3685bfa9d73649221}\label{classui_1_1RichText_af06a8855abd80bb3685bfa9d73649221}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Bold@{set\+Anchor\+Text\+Bold}}
+\index{set\+Anchor\+Text\+Bold@{set\+Anchor\+Text\+Bold}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Bold()}{setAnchorTextBold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Anchor\+Text\+Bold (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable bold text of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_ab9d69f1f319f4c28620ebf7fed1246ff}\label{classui_1_1RichText_ab9d69f1f319f4c28620ebf7fed1246ff}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Del@{set\+Anchor\+Text\+Del}}
+\index{set\+Anchor\+Text\+Del@{set\+Anchor\+Text\+Del}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Del()}{setAnchorTextDel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Del (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable the strikethrough of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_ac92f9783c67dbb7f294e917c7019d618}\label{classui_1_1RichText_ac92f9783c67dbb7f294e917c7019d618}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Del@{set\+Anchor\+Text\+Del}}
+\index{set\+Anchor\+Text\+Del@{set\+Anchor\+Text\+Del}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Del()}{setAnchorTextDel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Anchor\+Text\+Del (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable the strikethrough of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}\label{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Glow@{set\+Anchor\+Text\+Glow}}
+\index{set\+Anchor\+Text\+Glow@{set\+Anchor\+Text\+Glow}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Glow()}{setAnchorTextGlow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Glow (\begin{DoxyParamCaption}\item[{bool}]{enable,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{glow\+Color = {\ttfamily \hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}} }\end{DoxyParamCaption})}
+
+enable the glow of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}\label{classui_1_1RichText_a71a3a6d9c9bb3c62b36b5b989b7a3c55}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Glow@{set\+Anchor\+Text\+Glow}}
+\index{set\+Anchor\+Text\+Glow@{set\+Anchor\+Text\+Glow}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Glow()}{setAnchorTextGlow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Glow (\begin{DoxyParamCaption}\item[{bool}]{enable,  }\item[{const \hyperlink{structColor3B}{Color3B} \&}]{glow\+Color = {\ttfamily \hyperlink{structColor3B_adf57cb86ca15f434b29215ad471cdc35}{Color3\+B\+::\+W\+H\+I\+TE}} }\end{DoxyParamCaption})}
+
+enable the glow of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a0b7b72f39b363b3ab4bf99d623464123}\label{classui_1_1RichText_a0b7b72f39b363b3ab4bf99d623464123}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Italic@{set\+Anchor\+Text\+Italic}}
+\index{set\+Anchor\+Text\+Italic@{set\+Anchor\+Text\+Italic}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Italic()}{setAnchorTextItalic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Italic (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable italic text of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_ac453dba85e6b3ae984505377244e8cab}\label{classui_1_1RichText_ac453dba85e6b3ae984505377244e8cab}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Italic@{set\+Anchor\+Text\+Italic}}
+\index{set\+Anchor\+Text\+Italic@{set\+Anchor\+Text\+Italic}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Italic()}{setAnchorTextItalic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Anchor\+Text\+Italic (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable italic text of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a5a435489915c1e0d98fb4f53382ec6e0}\label{classui_1_1RichText_a5a435489915c1e0d98fb4f53382ec6e0}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Underline@{set\+Anchor\+Text\+Underline}}
+\index{set\+Anchor\+Text\+Underline@{set\+Anchor\+Text\+Underline}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Underline()}{setAnchorTextUnderline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Anchor\+Text\+Underline (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable the underline of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a8e545c2ecb49337c34873e6335277714}\label{classui_1_1RichText_a8e545c2ecb49337c34873e6335277714}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Anchor\+Text\+Underline@{set\+Anchor\+Text\+Underline}}
+\index{set\+Anchor\+Text\+Underline@{set\+Anchor\+Text\+Underline}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Text\+Underline()}{setAnchorTextUnderline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Anchor\+Text\+Underline (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+enable the underline of a-\/tag \mbox{\Hypertarget{classui_1_1RichText_a81b7598f89c8fa589afb315ff74f5aa3}\label{classui_1_1RichText_a81b7598f89c8fa589afb315ff74f5aa3}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Defaults@{set\+Defaults}}
+\index{set\+Defaults@{set\+Defaults}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Defaults()}{setDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Defaults (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{defaults }\end{DoxyParamCaption})}
+
+set the default values \mbox{\Hypertarget{classui_1_1RichText_afa1a22d29820f1174ad61b2a65f24211}\label{classui_1_1RichText_afa1a22d29820f1174ad61b2a65f24211}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Defaults@{set\+Defaults}}
+\index{set\+Defaults@{set\+Defaults}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Defaults()}{setDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Defaults (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{defaults }\end{DoxyParamCaption})}
+
+set the default values \mbox{\Hypertarget{classui_1_1RichText_afed903a1b6a5c8f96615f22b644c2bbd}\label{classui_1_1RichText_afed903a1b6a5c8f96615f22b644c2bbd}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Color@{set\+Font\+Color}}
+\index{set\+Font\+Color@{set\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Color()}{setFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Font\+Color (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color. 
+\begin{DoxyParams}{Parameters}
+{\em color} & the \#\+R\+R\+G\+G\+BB hexadecimal notation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a5cd519c793200b5aaccfdb0fa8892e9a}\label{classui_1_1RichText_a5cd519c793200b5aaccfdb0fa8892e9a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Color@{set\+Font\+Color}}
+\index{set\+Font\+Color@{set\+Font\+Color}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Color()}{setFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Font\+Color (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color. 
+\begin{DoxyParams}{Parameters}
+{\em color} & the \#\+R\+R\+G\+G\+BB hexadecimal notation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_aece9d280930f5c88b721838dc414f6e9}\label{classui_1_1RichText_aece9d280930f5c88b721838dc414f6e9}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Face@{set\+Font\+Face}}
+\index{set\+Font\+Face@{set\+Font\+Face}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Face()}{setFontFace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Font\+Face (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{face }\end{DoxyParamCaption})}
+
+Set the font face. 
+\begin{DoxyParams}{Parameters}
+{\em face} & the font face. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a9ea95bec970e9f1c03ba0bf34c11b93d}\label{classui_1_1RichText_a9ea95bec970e9f1c03ba0bf34c11b93d}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Face@{set\+Font\+Face}}
+\index{set\+Font\+Face@{set\+Font\+Face}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Face()}{setFontFace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Font\+Face (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{face }\end{DoxyParamCaption})}
+
+Set the font face. 
+\begin{DoxyParams}{Parameters}
+{\em face} & the font face. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a45a5d5e1f075648230019b8d1400df87}\label{classui_1_1RichText_a45a5d5e1f075648230019b8d1400df87}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Size@{set\+Font\+Size}}
+\index{set\+Font\+Size@{set\+Font\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Size()}{setFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Font\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+Set the font size. 
+\begin{DoxyParams}{Parameters}
+{\em size} & the font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a60d0a694863a77b5608c59f49ceda3c1}\label{classui_1_1RichText_a60d0a694863a77b5608c59f49ceda3c1}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Font\+Size@{set\+Font\+Size}}
+\index{set\+Font\+Size@{set\+Font\+Size}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Font\+Size()}{setFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Font\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+Set the font size. 
+\begin{DoxyParams}{Parameters}
+{\em size} & the font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a027387771913d560334d2711ee77ee9d}\label{classui_1_1RichText_a027387771913d560334d2711ee77ee9d}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Horizontal\+Alignment@{set\+Horizontal\+Alignment}}
+\index{set\+Horizontal\+Alignment@{set\+Horizontal\+Alignment}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Horizontal\+Alignment()}{setHorizontalAlignment()}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Horizontal\+Alignment (\begin{DoxyParamCaption}\item[{Horizontal\+Alignment}]{a }\end{DoxyParamCaption})}
+
+sets the horizontal alignment mode\+: L\+E\+FT, C\+E\+N\+T\+ER, or R\+I\+G\+HT \mbox{\Hypertarget{classui_1_1RichText_afd77b67b1697a3e837a31fb88df0795e}\label{classui_1_1RichText_afd77b67b1697a3e837a31fb88df0795e}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Open\+Url\+Handler@{set\+Open\+Url\+Handler}}
+\index{set\+Open\+Url\+Handler@{set\+Open\+Url\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Open\+Url\+Handler()}{setOpenUrlHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Open\+Url\+Handler (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&}]{handle\+Open\+Url }\end{DoxyParamCaption})}
+
+
+
+Asks the callback to open a resource specified by a U\+RL.  If you set up your own U\+RL in the anchor tag, it is used to intercept the U\+RL open. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle\+Open\+Url} & the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a750e15147a256bf092a8670720548f38}\label{classui_1_1RichText_a750e15147a256bf092a8670720548f38}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Open\+Url\+Handler@{set\+Open\+Url\+Handler}}
+\index{set\+Open\+Url\+Handler@{set\+Open\+Url\+Handler}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Open\+Url\+Handler()}{setOpenUrlHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Open\+Url\+Handler (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} \&}]{handle\+Open\+Url }\end{DoxyParamCaption})}
+
+
+
+Asks the callback to open a resource specified by a U\+RL.  If you set up your own U\+RL in the anchor tag, it is used to intercept the U\+RL open. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle\+Open\+Url} & the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a421781e8515f59cf033477d77d4461f0}\label{classui_1_1RichText_a421781e8515f59cf033477d77d4461f0}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Tag\+Description@{set\+Tag\+Description}}
+\index{set\+Tag\+Description@{set\+Tag\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Tag\+Description()}{setTagDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void ui\+::\+Rich\+Text\+::set\+Tag\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag,  }\item[{bool}]{is\+Font\+Element,  }\item[{\hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler}}]{handle\+Visit\+Enter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+add a callback to own tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag\textquotesingle{}s name \\
+\hline
+{\em is\+Font\+Element} & use attributes of text tag \\
+\hline
+{\em handle\+Visit\+Enter} & callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a67bacb0c6c0706f3dd47cd9b1b2b3034}\label{classui_1_1RichText_a67bacb0c6c0706f3dd47cd9b1b2b3034}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Tag\+Description@{set\+Tag\+Description}}
+\index{set\+Tag\+Description@{set\+Tag\+Description}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Tag\+Description()}{setTagDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Tag\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag,  }\item[{bool}]{is\+Font\+Element,  }\item[{\hyperlink{classui_1_1RichText_a195114ba2bddc97248b8a0c400d489f7}{Visit\+Enter\+Handler}}]{handle\+Visit\+Enter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+add a callback to own tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag\textquotesingle{}s name \\
+\hline
+{\em is\+Font\+Element} & use attributes of text tag \\
+\hline
+{\em handle\+Visit\+Enter} & callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_aa947b6c2404cc5b22d7794f5c601c069}\label{classui_1_1RichText_aa947b6c2404cc5b22d7794f5c601c069}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Vertical\+Space@{set\+Vertical\+Space}}
+\index{set\+Vertical\+Space@{set\+Vertical\+Space}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Vertical\+Space()}{setVerticalSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Vertical\+Space (\begin{DoxyParamCaption}\item[{float}]{space }\end{DoxyParamCaption})}
+
+
+
+Set vertical space between each \hyperlink{classui_1_1RichElement}{Rich\+Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & Point in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a73876d64898fdce17df00e74a1d68864}\label{classui_1_1RichText_a73876d64898fdce17df00e74a1d68864}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Vertical\+Space@{set\+Vertical\+Space}}
+\index{set\+Vertical\+Space@{set\+Vertical\+Space}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Vertical\+Space()}{setVerticalSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rich\+Text\+::set\+Vertical\+Space (\begin{DoxyParamCaption}\item[{float}]{space }\end{DoxyParamCaption})}
+
+
+
+Set vertical space between each \hyperlink{classui_1_1RichElement}{Rich\+Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em space} & Point in float. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}\label{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Wrap\+Mode@{set\+Wrap\+Mode}}
+\index{set\+Wrap\+Mode@{set\+Wrap\+Mode}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Wrap\+Mode()}{setWrapMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Wrap\+Mode (\begin{DoxyParamCaption}\item[{Wrap\+Mode}]{wrap\+Mode }\end{DoxyParamCaption})}
+
+sets the wrapping mode\+: W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR or W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD \mbox{\Hypertarget{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}\label{classui_1_1RichText_a19f13164d96c8c3374c394c59dce40f5}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!set\+Wrap\+Mode@{set\+Wrap\+Mode}}
+\index{set\+Wrap\+Mode@{set\+Wrap\+Mode}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{set\+Wrap\+Mode()}{setWrapMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Rich\+Text\+::set\+Wrap\+Mode (\begin{DoxyParamCaption}\item[{Wrap\+Mode}]{wrap\+Mode }\end{DoxyParamCaption})}
+
+sets the wrapping mode\+: W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR or W\+R\+A\+P\+\_\+\+P\+E\+R\+\_\+\+W\+O\+RD \mbox{\Hypertarget{classui_1_1RichText_ab923374d5a30f539696c9a4f887b4307}\label{classui_1_1RichText_ab923374d5a30f539696c9a4f887b4307}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!string\+With\+Color3B@{string\+With\+Color3B}}
+\index{string\+With\+Color3B@{string\+With\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{string\+With\+Color3\+B()}{stringWithColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Rich\+Text\+::string\+With\+Color3B (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Color3B \&}]{color3b }\end{DoxyParamCaption})}
+
+convert a \hyperlink{structColor3B}{Color3B} into a color string. \mbox{\Hypertarget{classui_1_1RichText_ac81e46b4a4d36f7c607803fc125721e6}\label{classui_1_1RichText_ac81e46b4a4d36f7c607803fc125721e6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!string\+With\+Color3B@{string\+With\+Color3B}}
+\index{string\+With\+Color3B@{string\+With\+Color3B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{string\+With\+Color3\+B()}{stringWithColor3B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rich\+Text\+::string\+With\+Color3B (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Color3B \&}]{color3b }\end{DoxyParamCaption})}
+
+convert a \hyperlink{structColor3B}{Color3B} into a color string. \mbox{\Hypertarget{classui_1_1RichText_a82ba2d0b27f544d8f729cf18a32d3bad}\label{classui_1_1RichText_a82ba2d0b27f544d8f729cf18a32d3bad}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!string\+With\+Color4B@{string\+With\+Color4B}}
+\index{string\+With\+Color4B@{string\+With\+Color4B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{string\+With\+Color4\+B()}{stringWithColor4B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Rich\+Text\+::string\+With\+Color4B (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Color4B \&}]{color4b }\end{DoxyParamCaption})}
+
+convert a \hyperlink{structColor4B}{Color4B} into a color string. \mbox{\Hypertarget{classui_1_1RichText_ae6ebbc92f1c67012b680ac70de932d0a}\label{classui_1_1RichText_ae6ebbc92f1c67012b680ac70de932d0a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!string\+With\+Color4B@{string\+With\+Color4B}}
+\index{string\+With\+Color4B@{string\+With\+Color4B}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{string\+With\+Color4\+B()}{stringWithColor4B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rich\+Text\+::string\+With\+Color4B (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Color4B \&}]{color4b }\end{DoxyParamCaption})}
+
+convert a \hyperlink{structColor4B}{Color4B} into a color string. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classui_1_1RichText_ad6f6ba7e12a897612068df6d93b1f9b6}\label{classui_1_1RichText_ad6f6ba7e12a897612068df6d93b1f9b6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!\+\_\+defaults@{\+\_\+defaults}}
+\index{\+\_\+defaults@{\+\_\+defaults}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{\+\_\+defaults}{\_defaults}}
+{\footnotesize\ttfamily Value\+Map ui\+::\+Rich\+Text\+::\+\_\+defaults\hspace{0.3cm}{\ttfamily [protected]}}
+
+default values \mbox{\Hypertarget{classui_1_1RichText_adc716a3556a97f5b034caf78e8e30276}\label{classui_1_1RichText_adc716a3556a97f5b034caf78e8e30276}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!\+\_\+handle\+Open\+Url@{\+\_\+handle\+Open\+Url}}
+\index{\+\_\+handle\+Open\+Url@{\+\_\+handle\+Open\+Url}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{\+\_\+handle\+Open\+Url}{\_handleOpenUrl}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1RichText_ad3631ae61d204f1d9576f5923bbd762e}{Open\+Url\+Handler} ui\+::\+Rich\+Text\+::\+\_\+handle\+Open\+Url\hspace{0.3cm}{\ttfamily [protected]}}
+
+the callback for open U\+RL \mbox{\Hypertarget{classui_1_1RichText_ad186dea565c08991d07d0f99c1bb7ca0}\label{classui_1_1RichText_ad186dea565c08991d07d0f99c1bb7ca0}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}{KEY\_ANCHOR\_FONT\_COLOR\_STRING}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font color of anchor tag \mbox{\Hypertarget{classui_1_1RichText_aa6cf1b421bcb2be6b6323e3eb1da7646}\label{classui_1_1RichText_aa6cf1b421bcb2be6b6323e3eb1da7646}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}{KEY\_ANCHOR\_TEXT\_BOLD}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD\hspace{0.3cm}{\ttfamily [static]}}
+
+key of text bold of anchor tag \mbox{\Hypertarget{classui_1_1RichText_aad059061c9508a3f651a4caf41bc8d67}\label{classui_1_1RichText_aad059061c9508a3f651a4caf41bc8d67}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}{KEY\_ANCHOR\_TEXT\_GLOW\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of glow color of anchor tag \mbox{\Hypertarget{classui_1_1RichText_ae699db5d95297238f5a6a1a0cb4437d9}\label{classui_1_1RichText_ae699db5d95297238f5a6a1a0cb4437d9}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}{KEY\_ANCHOR\_TEXT\_ITALIC}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC\hspace{0.3cm}{\ttfamily [static]}}
+
+key of text italic of anchor tag \mbox{\Hypertarget{classui_1_1RichText_accc7b0c8591e61d291357f8feeb4d192}\label{classui_1_1RichText_accc7b0c8591e61d291357f8feeb4d192}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}{KEY\_ANCHOR\_TEXT\_LINE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of line style of anchor tag \mbox{\Hypertarget{classui_1_1RichText_a0f70931bbd000a5816e6a2348012cc30}\label{classui_1_1RichText_a0f70931bbd000a5816e6a2348012cc30}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}{KEY\_ANCHOR\_TEXT\_OUTLINE\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of outline color of anchor tag \mbox{\Hypertarget{classui_1_1RichText_ad478d379daf2cb1c97abb98c384e449f}\label{classui_1_1RichText_ad478d379daf2cb1c97abb98c384e449f}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}{KEY\_ANCHOR\_TEXT\_OUTLINE\_SIZE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of outline size of anchor tag \mbox{\Hypertarget{classui_1_1RichText_a3a532548a65ea327b984e85a803e72cc}\label{classui_1_1RichText_a3a532548a65ea327b984e85a803e72cc}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}{KEY\_ANCHOR\_TEXT\_SHADOW\_BLUR\_RADIUS}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow blur radius of anchor tag \mbox{\Hypertarget{classui_1_1RichText_a14afde696212da2e1ab0c8b380fc3ee6}\label{classui_1_1RichText_a14afde696212da2e1ab0c8b380fc3ee6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}{KEY\_ANCHOR\_TEXT\_SHADOW\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow color of anchor tag \mbox{\Hypertarget{classui_1_1RichText_ac493b3faeb317ea15227e919b853ba27}\label{classui_1_1RichText_ac493b3faeb317ea15227e919b853ba27}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}{KEY\_ANCHOR\_TEXT\_SHADOW\_OFFSET\_HEIGHT}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow offset (height) of anchor tag \mbox{\Hypertarget{classui_1_1RichText_ac4f7dcb9d7c159657a4837f86742202a}\label{classui_1_1RichText_ac4f7dcb9d7c159657a4837f86742202a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}{KEY\_ANCHOR\_TEXT\_SHADOW\_OFFSET\_WIDTH}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow offset (width) of anchor tag \mbox{\Hypertarget{classui_1_1RichText_a09bdfcd573f03e95510b73597c9f62e4}\label{classui_1_1RichText_a09bdfcd573f03e95510b73597c9f62e4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}}
+\index{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE@{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}{KEY\_ANCHOR\_TEXT\_STYLE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+A\+N\+C\+H\+O\+R\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of effect style of anchor tag \mbox{\Hypertarget{classui_1_1RichText_a653e354559b29baa3ef36f1626ec6981}\label{classui_1_1RichText_a653e354559b29baa3ef36f1626ec6981}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG}}
+\index{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG}{KEY\_FONT\_BIG}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+B\+IG\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font size big \mbox{\Hypertarget{classui_1_1RichText_a2ce7959b432f8aa9f840b743323f3e8f}\label{classui_1_1RichText_a2ce7959b432f8aa9f840b743323f3e8f}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}}
+\index{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG}{KEY\_FONT\_COLOR\_STRING}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+S\+T\+R\+I\+NG\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font color \mbox{\Hypertarget{classui_1_1RichText_a26963265cb953c676222e9b302ed20c4}\label{classui_1_1RichText_a26963265cb953c676222e9b302ed20c4}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE}}
+\index{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE}{KEY\_FONT\_FACE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+F\+A\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font name \mbox{\Hypertarget{classui_1_1RichText_a11fdac9c5788c91aad497b147e8016ff}\label{classui_1_1RichText_a11fdac9c5788c91aad497b147e8016ff}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE}}
+\index{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE}{KEY\_FONT\_SIZE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+I\+ZE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font size \mbox{\Hypertarget{classui_1_1RichText_a411f11d3cab0eea1eff4cbb209119984}\label{classui_1_1RichText_a411f11d3cab0eea1eff4cbb209119984}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL}}
+\index{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL@{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL}{KEY\_FONT\_SMALL}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+F\+O\+N\+T\+\_\+\+S\+M\+A\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+key of font size small \mbox{\Hypertarget{classui_1_1RichText_acb5ff23cf5b1e5f69faef9664ff741c6}\label{classui_1_1RichText_acb5ff23cf5b1e5f69faef9664ff741c6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT@{K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}}
+\index{K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT@{K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}{KEY\_HORIZONTAL\_ALIGNMENT}}
+{\footnotesize\ttfamily const std\+::string Rich\+Text\+::\+K\+E\+Y\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT\hspace{0.3cm}{\ttfamily [static]}}
+
+key of left, right, or center \mbox{\Hypertarget{classui_1_1RichText_a7d3535f7df3a1c2f0794ca08ed616d1c}\label{classui_1_1RichText_a7d3535f7df3a1c2f0794ca08ed616d1c}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD}{KEY\_TEXT\_BOLD}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+B\+O\+LD\hspace{0.3cm}{\ttfamily [static]}}
+
+key of text bold \mbox{\Hypertarget{classui_1_1RichText_a9e4c9189d439ba1e0405c89a99c1723f}\label{classui_1_1RichText_a9e4c9189d439ba1e0405c89a99c1723f}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR}{KEY\_TEXT\_GLOW\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+G\+L\+O\+W\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of glow color \mbox{\Hypertarget{classui_1_1RichText_a2e2afdb6d58039fe1df90cab41a8a6c5}\label{classui_1_1RichText_a2e2afdb6d58039fe1df90cab41a8a6c5}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC}{KEY\_TEXT\_ITALIC}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+I\+T\+A\+L\+IC\hspace{0.3cm}{\ttfamily [static]}}
+
+key of text italic \mbox{\Hypertarget{classui_1_1RichText_add95eb2e23a5a7dbf9dba353226cc745}\label{classui_1_1RichText_add95eb2e23a5a7dbf9dba353226cc745}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE}{KEY\_TEXT\_LINE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of line style \mbox{\Hypertarget{classui_1_1RichText_ac6b353e040ab5cf03351bc66cb1c8027}\label{classui_1_1RichText_ac6b353e040ab5cf03351bc66cb1c8027}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR}{KEY\_TEXT\_OUTLINE\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of outline color \mbox{\Hypertarget{classui_1_1RichText_a0cb8a5126ed47a2f167b8dd7775ec61d}\label{classui_1_1RichText_a0cb8a5126ed47a2f167b8dd7775ec61d}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}{KEY\_TEXT\_OUTLINE\_SIZE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+O\+U\+T\+L\+I\+N\+E\+\_\+\+S\+I\+ZE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of outline size \mbox{\Hypertarget{classui_1_1RichText_a278da76791afdec2de5bbc9a8df969f7}\label{classui_1_1RichText_a278da76791afdec2de5bbc9a8df969f7}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US}{KEY\_TEXT\_SHADOW\_BLUR\_RADIUS}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+B\+L\+U\+R\+\_\+\+R\+A\+D\+I\+US\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow blur radius \mbox{\Hypertarget{classui_1_1RichText_a4b06b8bb8c20d1733d52a92326d4921c}\label{classui_1_1RichText_a4b06b8bb8c20d1733d52a92326d4921c}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR}{KEY\_TEXT\_SHADOW\_COLOR}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow color \mbox{\Hypertarget{classui_1_1RichText_ab892b910a46d88b2d3af24412ccfe226}\label{classui_1_1RichText_ab892b910a46d88b2d3af24412ccfe226}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT}{KEY\_TEXT\_SHADOW\_OFFSET\_HEIGHT}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+H\+E\+I\+G\+HT\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow offset (height) \mbox{\Hypertarget{classui_1_1RichText_aa85fdb82f7f36c2c88d4990f453ed9d6}\label{classui_1_1RichText_aa85fdb82f7f36c2c88d4990f453ed9d6}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH}{KEY\_TEXT\_SHADOW\_OFFSET\_WIDTH}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+W\+I\+D\+TH\hspace{0.3cm}{\ttfamily [static]}}
+
+key of shadow offset (width) \mbox{\Hypertarget{classui_1_1RichText_a9fd78731e14ee45424277f1f09620146}\label{classui_1_1RichText_a9fd78731e14ee45424277f1f09620146}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}}
+\index{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE@{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE}{KEY\_TEXT\_STYLE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+LE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of effect style \mbox{\Hypertarget{classui_1_1RichText_af4da12422c05f1e20988d40942a1cf89}\label{classui_1_1RichText_af4da12422c05f1e20988d40942a1cf89}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+U\+RL@{K\+E\+Y\+\_\+\+U\+RL}}
+\index{K\+E\+Y\+\_\+\+U\+RL@{K\+E\+Y\+\_\+\+U\+RL}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+U\+RL}{KEY\_URL}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+U\+RL\hspace{0.3cm}{\ttfamily [static]}}
+
+key of url \mbox{\Hypertarget{classui_1_1RichText_aafaa649d0090a6395e33db8260b7c947}\label{classui_1_1RichText_aafaa649d0090a6395e33db8260b7c947}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE@{K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE}}
+\index{K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE@{K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE}{KEY\_VERTICAL\_SPACE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+\_\+\+S\+P\+A\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of vertical space \mbox{\Hypertarget{classui_1_1RichText_a187a1da319ad4e0a7735c019e72e4ca8}\label{classui_1_1RichText_a187a1da319ad4e0a7735c019e72e4ca8}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE@{K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE}}
+\index{K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE@{K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE}{KEY\_WRAP\_MODE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+K\+E\+Y\+\_\+\+W\+R\+A\+P\+\_\+\+M\+O\+DE\hspace{0.3cm}{\ttfamily [static]}}
+
+key of per word, or per char \mbox{\Hypertarget{classui_1_1RichText_a9714aa0d351221f74048696cf9723b0c}\label{classui_1_1RichText_a9714aa0d351221f74048696cf9723b0c}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL}{VALUE\_TEXT\_LINE\_DEL}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+D\+EL\hspace{0.3cm}{\ttfamily [static]}}
+
+value of strikethrough line \mbox{\Hypertarget{classui_1_1RichText_a163bdbf308eeba8a44cd5e911152837c}\label{classui_1_1RichText_a163bdbf308eeba8a44cd5e911152837c}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE}{VALUE\_TEXT\_LINE\_NONE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+N\+O\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+value of none \mbox{\Hypertarget{classui_1_1RichText_a4af5934e4df5e3b363d2de9202f5ba1a}\label{classui_1_1RichText_a4af5934e4df5e3b363d2de9202f5ba1a}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER}{VALUE\_TEXT\_LINE\_UNDER}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+L\+I\+N\+E\+\_\+\+U\+N\+D\+ER\hspace{0.3cm}{\ttfamily [static]}}
+
+value of underline \mbox{\Hypertarget{classui_1_1RichText_aa4091843d1db8368559d19884cf30324}\label{classui_1_1RichText_aa4091843d1db8368559d19884cf30324}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW}{VALUE\_TEXT\_STYLE\_GLOW}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+G\+L\+OW\hspace{0.3cm}{\ttfamily [static]}}
+
+value of glow \mbox{\Hypertarget{classui_1_1RichText_a64657467343deaeec8d7029808a82659}\label{classui_1_1RichText_a64657467343deaeec8d7029808a82659}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE}{VALUE\_TEXT\_STYLE\_NONE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+N\+O\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+value of none \mbox{\Hypertarget{classui_1_1RichText_a65e983b7f1aac7c519b019a1720d8087}\label{classui_1_1RichText_a65e983b7f1aac7c519b019a1720d8087}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE}{VALUE\_TEXT\_STYLE\_OUTLINE}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+O\+U\+T\+L\+I\+NE\hspace{0.3cm}{\ttfamily [static]}}
+
+value of outline \mbox{\Hypertarget{classui_1_1RichText_a65fbbe1beb8e0b3cb5e37b3ed559d5bf}\label{classui_1_1RichText_a65fbbe1beb8e0b3cb5e37b3ed559d5bf}} 
+\index{ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}!V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW}}
+\index{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW@{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW}!ui\+::\+Rich\+Text@{ui\+::\+Rich\+Text}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW}{VALUE\_TEXT\_STYLE\_SHADOW}}
+{\footnotesize\ttfamily static const std\+::string ui\+::\+Rich\+Text\+::\+V\+A\+L\+U\+E\+\_\+\+T\+E\+X\+T\+\_\+\+S\+T\+Y\+L\+E\+\_\+\+S\+H\+A\+D\+OW\hspace{0.3cm}{\ttfamily [static]}}
+
+value of shadow 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Rich\+Text.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Rich\+Text.\+cpp\end{DoxyCompactItemize}

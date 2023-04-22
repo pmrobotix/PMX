@@ -1,0 +1,137 @@
+\hypertarget{classbtGjkPairDetector}{}\section{bt\+Gjk\+Pair\+Detector Class Reference}
+\label{classbtGjkPairDetector}\index{bt\+Gjk\+Pair\+Detector@{bt\+Gjk\+Pair\+Detector}}
+
+
+\hyperlink{classbtGjkPairDetector}{bt\+Gjk\+Pair\+Detector} uses G\+JK to implement the \hyperlink{structbtDiscreteCollisionDetectorInterface}{bt\+Discrete\+Collision\+Detector\+Interface}  
+
+
+
+
+{\ttfamily \#include $<$bt\+Gjk\+Pair\+Detector.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Gjk\+Pair\+Detector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbtGjkPairDetector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Gjk\+Pair\+Detector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbtGjkPairDetector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a57f8635def7c26f5eebada28c1e6f2e0}\label{classbtGjkPairDetector_a57f8635def7c26f5eebada28c1e6f2e0}} 
+{\bfseries bt\+Gjk\+Pair\+Detector} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a1de8180060fdf40cda4a00c9c9493c26}\label{classbtGjkPairDetector_a1de8180060fdf40cda4a00c9c9493c26}} 
+{\bfseries bt\+Gjk\+Pair\+Detector} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, int shape\+TypeA, int shape\+TypeB, bt\+Scalar marginA, bt\+Scalar marginB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a42505a0ccc728c82595febe9af3a3bc8}\label{classbtGjkPairDetector_a42505a0ccc728c82595febe9af3a3bc8}} 
+virtual void {\bfseries get\+Closest\+Points} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw, bool swap\+Results=false)
+\item 
+void \hyperlink{classbtGjkPairDetector_abc29953dd7aee59e9ca887963c26c8c2}{get\+Closest\+Points\+Non\+Virtual} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aa1c126f716f8c80f355ad48a5234ca73}\label{classbtGjkPairDetector_aa1c126f716f8c80f355ad48a5234ca73}} 
+void {\bfseries set\+MinkowskiA} (const bt\+Convex\+Shape $\ast$minkA)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aee8fc2c182e482574ba9e819eea7b23a}\label{classbtGjkPairDetector_aee8fc2c182e482574ba9e819eea7b23a}} 
+void {\bfseries set\+MinkowskiB} (const bt\+Convex\+Shape $\ast$minkB)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_ab7fa662834f692ae7ee3c08cc1f23cd0}\label{classbtGjkPairDetector_ab7fa662834f692ae7ee3c08cc1f23cd0}} 
+void {\bfseries set\+Cached\+Seperating\+Axis} (const bt\+Vector3 \&seperating\+Axis)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aa90041d8e75db3d580c93b1b60cfb101}\label{classbtGjkPairDetector_aa90041d8e75db3d580c93b1b60cfb101}} 
+const bt\+Vector3 \& {\bfseries get\+Cached\+Separating\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a42b0eac142de4c92cb541932533a13ee}\label{classbtGjkPairDetector_a42b0eac142de4c92cb541932533a13ee}} 
+bt\+Scalar {\bfseries get\+Cached\+Separating\+Distance} () const
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a253d7d36f6ca288e41305682814c8c60}\label{classbtGjkPairDetector_a253d7d36f6ca288e41305682814c8c60}} 
+void {\bfseries set\+Penetration\+Depth\+Solver} (\hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}\label{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}} 
+void \hyperlink{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}{set\+Ignore\+Margin} (bool ignore\+Margin)
+\begin{DoxyCompactList}\small\item\em don\textquotesingle{}t use set\+Ignore\+Margin, it\textquotesingle{}s for Bullet\textquotesingle{}s internal use \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a57f8635def7c26f5eebada28c1e6f2e0}\label{classbtGjkPairDetector_a57f8635def7c26f5eebada28c1e6f2e0}} 
+{\bfseries bt\+Gjk\+Pair\+Detector} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a1de8180060fdf40cda4a00c9c9493c26}\label{classbtGjkPairDetector_a1de8180060fdf40cda4a00c9c9493c26}} 
+{\bfseries bt\+Gjk\+Pair\+Detector} (const bt\+Convex\+Shape $\ast$objectA, const bt\+Convex\+Shape $\ast$objectB, int shape\+TypeA, int shape\+TypeB, bt\+Scalar marginA, bt\+Scalar marginB, bt\+Simplex\+Solver\+Interface $\ast$simplex\+Solver, \hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a379db82ceb07eec40cded73527158305}\label{classbtGjkPairDetector_a379db82ceb07eec40cded73527158305}} 
+virtual void {\bfseries get\+Closest\+Points} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw, bool swap\+Results=false)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_abc29953dd7aee59e9ca887963c26c8c2}\label{classbtGjkPairDetector_abc29953dd7aee59e9ca887963c26c8c2}} 
+void {\bfseries get\+Closest\+Points\+Non\+Virtual} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aa1c126f716f8c80f355ad48a5234ca73}\label{classbtGjkPairDetector_aa1c126f716f8c80f355ad48a5234ca73}} 
+void {\bfseries set\+MinkowskiA} (const bt\+Convex\+Shape $\ast$minkA)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aee8fc2c182e482574ba9e819eea7b23a}\label{classbtGjkPairDetector_aee8fc2c182e482574ba9e819eea7b23a}} 
+void {\bfseries set\+MinkowskiB} (const bt\+Convex\+Shape $\ast$minkB)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_ab7fa662834f692ae7ee3c08cc1f23cd0}\label{classbtGjkPairDetector_ab7fa662834f692ae7ee3c08cc1f23cd0}} 
+void {\bfseries set\+Cached\+Seperating\+Axis} (const bt\+Vector3 \&seperating\+Axis)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_aa90041d8e75db3d580c93b1b60cfb101}\label{classbtGjkPairDetector_aa90041d8e75db3d580c93b1b60cfb101}} 
+const bt\+Vector3 \& {\bfseries get\+Cached\+Separating\+Axis} () const
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a42b0eac142de4c92cb541932533a13ee}\label{classbtGjkPairDetector_a42b0eac142de4c92cb541932533a13ee}} 
+bt\+Scalar {\bfseries get\+Cached\+Separating\+Distance} () const
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a253d7d36f6ca288e41305682814c8c60}\label{classbtGjkPairDetector_a253d7d36f6ca288e41305682814c8c60}} 
+void {\bfseries set\+Penetration\+Depth\+Solver} (\hyperlink{classbtConvexPenetrationDepthSolver}{bt\+Convex\+Penetration\+Depth\+Solver} $\ast$penetration\+Depth\+Solver)
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}\label{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}} 
+void \hyperlink{classbtGjkPairDetector_a93e9752920c57c39faca247fc005750e}{set\+Ignore\+Margin} (bool ignore\+Margin)
+\begin{DoxyCompactList}\small\item\em don\textquotesingle{}t use set\+Ignore\+Margin, it\textquotesingle{}s for Bullet\textquotesingle{}s internal use \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a54ad1723f4470c39849f2367d235bd63}\label{classbtGjkPairDetector_a54ad1723f4470c39849f2367d235bd63}} 
+int {\bfseries m\+\_\+last\+Used\+Method}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_ac78c8065175f8c0082ebd95f94607e20}\label{classbtGjkPairDetector_ac78c8065175f8c0082ebd95f94607e20}} 
+int {\bfseries m\+\_\+cur\+Iter}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a85d196506ed41900a4bb834af461d41d}\label{classbtGjkPairDetector_a85d196506ed41900a4bb834af461d41d}} 
+int {\bfseries m\+\_\+degenerate\+Simplex}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a47b5f1df3aa7d5ce044b56d7ced46859}\label{classbtGjkPairDetector_a47b5f1df3aa7d5ce044b56d7ced46859}} 
+int {\bfseries m\+\_\+catch\+Degeneracies}
+\item 
+\mbox{\Hypertarget{classbtGjkPairDetector_a5d0d6dc51db85ed7088638aca4044cef}\label{classbtGjkPairDetector_a5d0d6dc51db85ed7088638aca4044cef}} 
+int {\bfseries m\+\_\+fix\+Contact\+Normal\+Direction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtGjkPairDetector}{bt\+Gjk\+Pair\+Detector} uses G\+JK to implement the \hyperlink{structbtDiscreteCollisionDetectorInterface}{bt\+Discrete\+Collision\+Detector\+Interface} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtGjkPairDetector_abc29953dd7aee59e9ca887963c26c8c2}\label{classbtGjkPairDetector_abc29953dd7aee59e9ca887963c26c8c2}} 
+\index{bt\+Gjk\+Pair\+Detector@{bt\+Gjk\+Pair\+Detector}!get\+Closest\+Points\+Non\+Virtual@{get\+Closest\+Points\+Non\+Virtual}}
+\index{get\+Closest\+Points\+Non\+Virtual@{get\+Closest\+Points\+Non\+Virtual}!bt\+Gjk\+Pair\+Detector@{bt\+Gjk\+Pair\+Detector}}
+\subsubsection{\texorpdfstring{get\+Closest\+Points\+Non\+Virtual()}{getClosestPointsNonVirtual()}}
+{\footnotesize\ttfamily void bt\+Gjk\+Pair\+Detector\+::get\+Closest\+Points\+Non\+Virtual (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&}]{input,  }\item[{\hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&}]{output,  }\item[{class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$}]{debug\+Draw }\end{DoxyParamCaption})}
+
+this is another degenerate case, where the initial G\+JK calculation reports a degenerate case E\+PA reports no penetration, and the second G\+JK (using the supporting vector without margin) reports a valid positive distance. Use the results of the second G\+JK instead of failing. thanks to Jacob.\+Langford for the reproduction case \href{http://code.google.com/p/bullet/issues/detail?id=250}{\tt http\+://code.\+google.\+com/p/bullet/issues/detail?id=250}
+
+for sticky convex collisions 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Gjk\+Pair\+Detector.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Gjk\+Pair\+Detector.\+cpp\end{DoxyCompactItemize}

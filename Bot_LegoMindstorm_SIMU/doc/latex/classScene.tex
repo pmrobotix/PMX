@@ -1,0 +1,378 @@
+\hypertarget{classScene}{}\section{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+\hyperlink{classScene}{Scene} is a subclass of \hyperlink{classNode}{Node} that is used only as an abstract concept.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Scene.\+h$>$}
+
+
+
+Inheritance diagram for Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScene__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \hyperlink{classScene_a81381e50c3ae90f1f5f02ca2ef1c7158}{get\+Description} () const override
+\item 
+const std\+::vector$<$ \hyperlink{classCamera}{Camera} $\ast$ $>$ \& \hyperlink{classScene_adceefa9911890dde81660ddbc15c34e3}{get\+Cameras} ()
+\item 
+\hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}{get\+Default\+Camera} () const
+\item 
+const std\+::vector$<$ \hyperlink{classBaseLight}{Base\+Light} $\ast$ $>$ \& \hyperlink{classScene_abf8fbf57b95e05400254effb2f057125}{get\+Lights} () const
+\item 
+virtual void \hyperlink{classScene_a26d5468761d68ff0f3beb177bf8d2734}{render} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&eye\+Transform, const \hyperlink{classMat4}{Mat4} $\ast$eye\+Projection=nullptr)
+\item 
+virtual void \hyperlink{classScene_a7e54f25b14b057ab896b0ef3262cef86}{remove\+All\+Children} () override
+\item 
+\mbox{\Hypertarget{classScene_a5afe475d025de4afd4ae430a49cfa8f8}\label{classScene_a5afe475d025de4afd4ae430a49cfa8f8}} 
+bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classScene_a37d7ad2f2d3aafd5ca5b82cf25acb694}\label{classScene_a37d7ad2f2d3aafd5ca5b82cf25acb694}} 
+bool {\bfseries init\+With\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+\mbox{\Hypertarget{classScene_ad0d85e1b04419e7bc8f9c12aa7a8fbc2}\label{classScene_ad0d85e1b04419e7bc8f9c12aa7a8fbc2}} 
+void {\bfseries set\+Camera\+Order\+Dirty} ()
+\item 
+\mbox{\Hypertarget{classScene_a10d4cc3da3ef635b4ad3e8889e7f317b}\label{classScene_a10d4cc3da3ef635b4ad3e8889e7f317b}} 
+void {\bfseries on\+Projection\+Changed} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+virtual std\+::string \hyperlink{classScene_a072cf51850bc3ec24da49d338c202fe1}{get\+Description} () const override
+\item 
+const std\+::vector$<$ \hyperlink{classCamera}{Camera} $\ast$ $>$ \& \hyperlink{classScene_a6498f3056fa7a586181fee2bc863edf5}{get\+Cameras} ()
+\item 
+\hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}{get\+Default\+Camera} () const
+\item 
+const std\+::vector$<$ \hyperlink{classBaseLight}{Base\+Light} $\ast$ $>$ \& \hyperlink{classScene_abf8fbf57b95e05400254effb2f057125}{get\+Lights} () const
+\item 
+virtual void \hyperlink{classScene_a084f0a984d5bba3602bd35f785fa3929}{render} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&eye\+Transform, const \hyperlink{classMat4}{Mat4} $\ast$eye\+Projection=nullptr)
+\item 
+virtual void \hyperlink{classScene_aced683107a4ce95e8cc437f8d3914d1e}{render} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} $\ast$eye\+Transforms, const \hyperlink{classMat4}{Mat4} $\ast$eye\+Projections, unsigned int multi\+View\+Count)
+\item 
+virtual void \hyperlink{classScene_af55bdd0731d6ccfdd1c95c4011451adb}{remove\+All\+Children} () override
+\item 
+virtual void \hyperlink{classScene_a0f685cac49f90456c69f1b03aa5c8674}{on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classScene_a5afe475d025de4afd4ae430a49cfa8f8}\label{classScene_a5afe475d025de4afd4ae430a49cfa8f8}} 
+bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classScene_a37d7ad2f2d3aafd5ca5b82cf25acb694}\label{classScene_a37d7ad2f2d3aafd5ca5b82cf25acb694}} 
+bool {\bfseries init\+With\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+\mbox{\Hypertarget{classScene_ad0d85e1b04419e7bc8f9c12aa7a8fbc2}\label{classScene_ad0d85e1b04419e7bc8f9c12aa7a8fbc2}} 
+void {\bfseries set\+Camera\+Order\+Dirty} ()
+\item 
+\mbox{\Hypertarget{classScene_a10d4cc3da3ef635b4ad3e8889e7f317b}\label{classScene_a10d4cc3da3ef635b4ad3e8889e7f317b}} 
+void {\bfseries on\+Projection\+Changed} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classScene}{Scene} $\ast$ \hyperlink{classScene_a49adab0d8120fd9232ab734a2343338c}{create} ()
+\item 
+static \hyperlink{classScene}{Scene} $\ast$ \hyperlink{classScene_a7fd7c626da47b96d4357466614285f48}{create\+With\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+static \hyperlink{classScene}{Scene} $\ast$ \hyperlink{classScene_a69bfc1e98a629a8433e1308eca39ff59}{create} ()
+\item 
+static \hyperlink{classScene}{Scene} $\ast$ \hyperlink{classScene_a755586699d886f1bc64e9d35eca863d3}{create\+With\+Size} (const \hyperlink{classSize}{Size} \&size)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScene_a2c65206afdfe953e789b48e29dae981b}\label{classScene_a2c65206afdfe953e789b48e29dae981b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classScene}{Scene}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScene_a086c90a9f5fc73d651831dd12577199a}\label{classScene_a086c90a9f5fc73d651831dd12577199a}} 
+std\+::vector$<$ \hyperlink{classCamera}{Camera} $\ast$ $>$ {\bfseries \+\_\+cameras}
+\item 
+\mbox{\Hypertarget{classScene_a0394ee6eb43b1ad5819b843ac3ea4e0a}\label{classScene_a0394ee6eb43b1ad5819b843ac3ea4e0a}} 
+\hyperlink{classCamera}{Camera} $\ast$ {\bfseries \+\_\+default\+Camera}
+\item 
+\mbox{\Hypertarget{classScene_a580f60981224bf3847690322b5ca7e5c}\label{classScene_a580f60981224bf3847690322b5ca7e5c}} 
+bool {\bfseries \+\_\+camera\+Order\+Dirty}
+\item 
+\mbox{\Hypertarget{classScene_a0f7bdc773795aeb090f516609b90108f}\label{classScene_a0f7bdc773795aeb090f516609b90108f}} 
+\hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ {\bfseries \+\_\+event}
+\item 
+\mbox{\Hypertarget{classScene_a98676793cda9b427d94e7b21c60c2a69}\label{classScene_a98676793cda9b427d94e7b21c60c2a69}} 
+std\+::vector$<$ \hyperlink{classBaseLight}{Base\+Light} $\ast$ $>$ {\bfseries \+\_\+lights}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScene_aed91756449328e2c454e53e9c5e53936}\label{classScene_aed91756449328e2c454e53e9c5e53936}} 
+class {\bfseries Node}
+\item 
+\mbox{\Hypertarget{classScene_a7532f114e7c0a628f41d9aeac4207282}\label{classScene_a7532f114e7c0a628f41d9aeac4207282}} 
+class {\bfseries Protected\+Node}
+\item 
+\mbox{\Hypertarget{classScene_a3132f3cfc4f874c13f9b2a9c4dfca000}\label{classScene_a3132f3cfc4f874c13f9b2a9c4dfca000}} 
+class {\bfseries Sprite\+Batch\+Node}
+\item 
+\mbox{\Hypertarget{classScene_adc0591c2c6aa3aa864336ece4978ab62}\label{classScene_adc0591c2c6aa3aa864336ece4978ab62}} 
+class {\bfseries Camera}
+\item 
+\mbox{\Hypertarget{classScene_a07f30d31dcbd514a13d446c446632e7d}\label{classScene_a07f30d31dcbd514a13d446c446632e7d}} 
+class {\bfseries Base\+Light}
+\item 
+\mbox{\Hypertarget{classScene_a7482e5338f9824f1190a0846d209c666}\label{classScene_a7482e5338f9824f1190a0846d209c666}} 
+class {\bfseries Renderer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classScene}{Scene} is a subclass of \hyperlink{classNode}{Node} that is used only as an abstract concept. 
+
+\hyperlink{classScene}{Scene} and \hyperlink{classNode}{Node} are almost identical with the difference that \hyperlink{classScene}{Scene} has its anchor point (by default) at the center of the screen.
+
+For the moment \hyperlink{classScene}{Scene} has no other logic than that, but in future releases it might have additional logic.
+
+It is a good practice to use a \hyperlink{classScene}{Scene} as the parent of all your nodes.
+
+\hyperlink{classScene}{Scene} will create a default camera for you. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScene_a49adab0d8120fd9232ab734a2343338c}\label{classScene_a49adab0d8120fd9232ab734a2343338c}} 
+\index{Scene@{Scene}!create@{create}}
+\index{create@{create}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene} $\ast$ Scene\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classScene}{Scene} object.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classScene}{Scene} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a69bfc1e98a629a8433e1308eca39ff59}\label{classScene_a69bfc1e98a629a8433e1308eca39ff59}} 
+\index{Scene@{Scene}!create@{create}}
+\index{create@{create}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classScene}{Scene}$\ast$ Scene\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classScene}{Scene} object.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classScene}{Scene} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a7fd7c626da47b96d4357466614285f48}\label{classScene_a7fd7c626da47b96d4357466614285f48}} 
+\index{Scene@{Scene}!create\+With\+Size@{create\+With\+Size}}
+\index{create\+With\+Size@{create\+With\+Size}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{create\+With\+Size()}{createWithSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene} $\ast$ Scene\+::create\+With\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classScene}{Scene} object with a predefined \hyperlink{classSize}{Size}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The predefined size of scene. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classScene}{Scene} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a755586699d886f1bc64e9d35eca863d3}\label{classScene_a755586699d886f1bc64e9d35eca863d3}} 
+\index{Scene@{Scene}!create\+With\+Size@{create\+With\+Size}}
+\index{create\+With\+Size@{create\+With\+Size}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{create\+With\+Size()}{createWithSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classScene}{Scene}$\ast$ Scene\+::create\+With\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new \hyperlink{classScene}{Scene} object with a predefined \hyperlink{classSize}{Size}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The predefined size of scene. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classScene}{Scene} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_adceefa9911890dde81660ddbc15c34e3}\label{classScene_adceefa9911890dde81660ddbc15c34e3}} 
+\index{Scene@{Scene}!get\+Cameras@{get\+Cameras}}
+\index{get\+Cameras@{get\+Cameras}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Cameras()}{getCameras()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{classCamera}{Camera} $\ast$ $>$ \& Scene\+::get\+Cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all cameras.
+
+\begin{DoxyReturn}{Returns}
+The vector of all cameras, ordered by camera depth.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a6498f3056fa7a586181fee2bc863edf5}\label{classScene_a6498f3056fa7a586181fee2bc863edf5}} 
+\index{Scene@{Scene}!get\+Cameras@{get\+Cameras}}
+\index{get\+Cameras@{get\+Cameras}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Cameras()}{getCameras()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\hyperlink{classCamera}{Camera}$\ast$$>$\& Scene\+::get\+Cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all cameras.
+
+\begin{DoxyReturn}{Returns}
+The vector of all cameras, ordered by camera depth.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}\label{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}} 
+\index{Scene@{Scene}!get\+Default\+Camera@{get\+Default\+Camera}}
+\index{get\+Default\+Camera@{get\+Default\+Camera}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Default\+Camera()}{getDefaultCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera}$\ast$ Scene\+::get\+Default\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the default camera.  NA \begin{DoxyReturn}{Returns}
+The default camera of scene. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}\label{classScene_a3c0cfe939da06f1ffe9a5ad9914bbde4}} 
+\index{Scene@{Scene}!get\+Default\+Camera@{get\+Default\+Camera}}
+\index{get\+Default\+Camera@{get\+Default\+Camera}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Default\+Camera()}{getDefaultCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera}$\ast$ Scene\+::get\+Default\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the default camera.  NA \begin{DoxyReturn}{Returns}
+The default camera of scene. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a81381e50c3ae90f1f5f02ca2ef1c7158}\label{classScene_a81381e50c3ae90f1f5f02ca2ef1c7158}} 
+\index{Scene@{Scene}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Scene\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+\mbox{\Hypertarget{classScene_a072cf51850bc3ec24da49d338c202fe1}\label{classScene_a072cf51850bc3ec24da49d338c202fe1}} 
+\index{Scene@{Scene}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Scene\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+\mbox{\Hypertarget{classScene_abf8fbf57b95e05400254effb2f057125}\label{classScene_abf8fbf57b95e05400254effb2f057125}} 
+\index{Scene@{Scene}!get\+Lights@{get\+Lights}}
+\index{get\+Lights@{get\+Lights}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Lights()}{getLights()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\hyperlink{classBaseLight}{Base\+Light}$\ast$$>$\& Scene\+::get\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get lights. \begin{DoxyReturn}{Returns}
+The vector of lights.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_abf8fbf57b95e05400254effb2f057125}\label{classScene_abf8fbf57b95e05400254effb2f057125}} 
+\index{Scene@{Scene}!get\+Lights@{get\+Lights}}
+\index{get\+Lights@{get\+Lights}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Lights()}{getLights()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\hyperlink{classBaseLight}{Base\+Light}$\ast$$>$\& Scene\+::get\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get lights. \begin{DoxyReturn}{Returns}
+The vector of lights.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a0f685cac49f90456c69f1b03aa5c8674}\label{classScene_a0f685cac49f90456c69f1b03aa5c8674}} 
+\index{Scene@{Scene}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}}
+{\footnotesize\ttfamily void Scene\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTransitionFadeTR_a0233b4bea549912854460a1a969f8bb4}{Transition\+Fade\+TR}, \hyperlink{classTransitionFadeTR_aff4ebcd832386860100daad82ad48bc2}{Transition\+Fade\+TR}, \hyperlink{classTransitionSplitCols_abcf9feef35de88cbc529d3a134f7f098}{Transition\+Split\+Cols}, \hyperlink{classTransitionSplitCols_ad172cf3e4da16ebf82ca1efbaaaacdc1}{Transition\+Split\+Cols}, \hyperlink{classTransitionTurnOffTiles_aa32c923595c2e6c212c16f07958cc72b}{Transition\+Turn\+Off\+Tiles}, \hyperlink{classTransitionTurnOffTiles_ae0dc8ca8038400db02d3ed87a594481a}{Transition\+Turn\+Off\+Tiles}, \hyperlink{classTransitionCrossFade_acd2958371059f6a1accb7ad12645090a}{Transition\+Cross\+Fade}, \hyperlink{classTransitionCrossFade_a453757b830ce0be18bc27ded6634d949}{Transition\+Cross\+Fade}, \hyperlink{classTransitionFade_a2fadd05a4c0d74b34b1530c7d7f07255}{Transition\+Fade}, \hyperlink{classTransitionFade_aaeb601022c4d71c24e333fe1807f88d4}{Transition\+Fade}, \hyperlink{classTransitionZoomFlipAngular_aacb744aa3be41964b84c4413472cb456}{Transition\+Zoom\+Flip\+Angular}, \hyperlink{classTransitionZoomFlipAngular_aabb32c716e6bcc7d75b1ac65e2b4d577}{Transition\+Zoom\+Flip\+Angular}, \hyperlink{classTransitionZoomFlipY_a0a91781c926ef8dd5942897c599dc961}{Transition\+Zoom\+FlipY}, \hyperlink{classTransitionZoomFlipY_a6909fa709a95fbd9b3556399ee00c215}{Transition\+Zoom\+FlipY}, \hyperlink{classTransitionZoomFlipX_a7f853a4b72233504d0947458408ac75c}{Transition\+Zoom\+FlipX}, \hyperlink{classTransitionZoomFlipX_a4a321886abfa6785e4a8b9e955791562}{Transition\+Zoom\+FlipX}, \hyperlink{classTransitionFlipAngular_a146fb601d0d9dfabbe0a833f6d08c58b}{Transition\+Flip\+Angular}, \hyperlink{classTransitionFlipAngular_af9318ac2862656fa0853c2457994066f}{Transition\+Flip\+Angular}, \hyperlink{classTransitionFlipY_a55d7608988c869dc431bf2cff7601aaa}{Transition\+FlipY}, \hyperlink{classTransitionFlipY_a51bbed9d1827d77df16747731fe17e00}{Transition\+FlipY}, \hyperlink{classTransitionFlipX_abe704195ebf90a0adb19bd54446f977b}{Transition\+FlipX}, \hyperlink{classTransitionFlipX_a736da7551a598a7f71167870f63a06d4}{Transition\+FlipX}, \hyperlink{classTransitionShrinkGrow_af22969e16b81f0880e5ef6c768c88961}{Transition\+Shrink\+Grow}, \hyperlink{classTransitionShrinkGrow_a7ae52d07e1889121b706fbc6b1e7b6ff}{Transition\+Shrink\+Grow}, \hyperlink{classTransitionSlideInL_a73601109845268099d90b12808de6b40}{Transition\+Slide\+InL}, \hyperlink{classTransitionSlideInL_a6dcdddd697019eb9907e6df4a205da98}{Transition\+Slide\+InL}, \hyperlink{classTransitionMoveInL_a4cf29668bcdd420cebb6135f80dd81f8}{Transition\+Move\+InL}, \hyperlink{classTransitionMoveInL_a790048ed6247fef9cefd40f39b53d3d5}{Transition\+Move\+InL}, \hyperlink{classTransitionJumpZoom_a06952f1bbf702804d28bda0923d9ca31}{Transition\+Jump\+Zoom}, \hyperlink{classTransitionJumpZoom_aa57e87e6adf5e62f533d5478fdd6155e}{Transition\+Jump\+Zoom}, \hyperlink{classTransitionRotoZoom_ac996aa76e096939509fda8a3468fc113}{Transition\+Roto\+Zoom}, \hyperlink{classTransitionRotoZoom_a087ead50631d8e2fdf62f7fd6c265caa}{Transition\+Roto\+Zoom}, \hyperlink{classTransitionScene_a9093cbd324910ea7c9e3955317f7b661}{Transition\+Scene}, \hyperlink{classTransitionScene_aace390a1bd8f3c73bb650a1e256a0f83}{Transition\+Scene}, \hyperlink{classTransitionPageTurn_adb15cf19b760250156d6fa3f2e1dbf31}{Transition\+Page\+Turn}, \hyperlink{classTransitionPageTurn_a451cf478d1f344678dde975e0db39b46}{Transition\+Page\+Turn}, \hyperlink{classTransitionProgress_aa3ccb7515691f10b5410b75d912e2b68}{Transition\+Progress}, and \hyperlink{classTransitionProgress_a4bb6172fb74abe0a0a0de2a3742a9cf6}{Transition\+Progress}.
+
+\mbox{\Hypertarget{classScene_a7e54f25b14b057ab896b0ef3262cef86}\label{classScene_a7e54f25b14b057ab896b0ef3262cef86}} 
+\index{Scene@{Scene}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scene\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_a0f6ef5518d2e5dd5be405e98b37ace4a}{Node}.
+
+\mbox{\Hypertarget{classScene_af55bdd0731d6ccfdd1c95c4011451adb}\label{classScene_af55bdd0731d6ccfdd1c95c4011451adb}} 
+\index{Scene@{Scene}!remove\+All\+Children@{remove\+All\+Children}}
+\index{remove\+All\+Children@{remove\+All\+Children}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{remove\+All\+Children()}{removeAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::remove\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_a0f6ef5518d2e5dd5be405e98b37ace4a}{Node}.
+
+\mbox{\Hypertarget{classScene_a26d5468761d68ff0f3beb177bf8d2734}\label{classScene_a26d5468761d68ff0f3beb177bf8d2734}} 
+\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Scene\+::render (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{eye\+Transform,  }\item[{const \hyperlink{classMat4}{Mat4} $\ast$}]{eye\+Projection = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Render the scene. 
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer use to render the scene.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_a084f0a984d5bba3602bd35f785fa3929}\label{classScene_a084f0a984d5bba3602bd35f785fa3929}} 
+\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Scene\+::render (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{eye\+Transform,  }\item[{const \hyperlink{classMat4}{Mat4} $\ast$}]{eye\+Projection = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Render the scene. 
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer use to render the scene. \\
+\hline
+{\em eye\+Transform} & The Additional\+Transform of camera. \\
+\hline
+{\em eye\+Projection} & The projection matrix of camera.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_aced683107a4ce95e8cc437f8d3914d1e}\label{classScene_aced683107a4ce95e8cc437f8d3914d1e}} 
+\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Scene\+::render (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} $\ast$}]{eye\+Transforms,  }\item[{const \hyperlink{classMat4}{Mat4} $\ast$}]{eye\+Projections,  }\item[{unsigned int}]{multi\+View\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Render the scene. 
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer use to render the scene. \\
+\hline
+{\em eye\+Transforms} & The Additional\+Transform List of camera of multi\+View. \\
+\hline
+{\em eye\+Projections} & The projection matrix List of camera of multi\+View. \\
+\hline
+{\em multi\+View\+Count} & The number of multi\+View.  NA \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Scene.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Scene.\+cpp\end{DoxyCompactItemize}

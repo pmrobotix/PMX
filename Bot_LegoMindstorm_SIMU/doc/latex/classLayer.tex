@@ -1,0 +1,880 @@
+\hypertarget{classLayer}{}\section{Layer Class Reference}
+\label{classLayer}\index{Layer@{Layer}}
+
+
+\hyperlink{classLayer}{Layer} is a subclass of \hyperlink{classNode}{Node} that implements the Touch\+Events\+Delegate protocol.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Layer.\+h$>$}
+
+
+
+Inheritance diagram for Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLayer_ae630e893c049982100fa89117e54f101}\label{classLayer_ae630e893c049982100fa89117e54f101}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries cc\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_ac749a627e3ac8969115ac0e56a211a5d}\label{classLayer_ac749a627e3ac8969115ac0e56a211a5d}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_affedf550a1a11a280dd91b58ecc682ea}\label{classLayer_affedf550a1a11a280dd91b58ecc682ea}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a61af6998ab902f9c5b0a949c6821772d}\label{classLayer_a61af6998ab902f9c5b0a949c6821772d}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_aa21822d5e058f95a171333755fb9da05}\label{classLayer_aa21822d5e058f95a171333755fb9da05}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Began} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a1b52d1828b5fcfae6da2d0c44bd39372}\label{classLayer_a1b52d1828b5fcfae6da2d0c44bd39372}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Moved} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a2261a657097ec2691076be2b3662bd44}\label{classLayer_a2261a657097ec2691076be2b3662bd44}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Ended} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_af74425b0b9392ab8f90698a6cf2f12cb}\label{classLayer_af74425b0b9392ab8f90698a6cf2f12cb}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Cancelled} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+virtual bool \hyperlink{classLayer_abe632dc131bdeb3d603090d4d31db25c}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLayer_ad614a7a347f171cd6185e7aeef125047}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a9254f82e75c109b81c392d415ecf7b3d}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a215f7865e3391ae605885af8b639277a}{on\+Touches\+Began} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_af1c25a5eb91f619ca30b130c59f8ccbd}{on\+Touches\+Moved} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a25edcc53db05941565bcd2e09e8149aa}{on\+Touches\+Ended} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_af5ebddb9ced172ccbd60b82330448b2f}{on\+Touches\+Cancelled} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aea727ae25fc6f47bd9ef029cb99c629a}{did\+Accelerate} (\hyperlink{classAcceleration}{Acceleration} $\ast$acceleration\+Value) final
+\item 
+virtual void \hyperlink{classLayer_a8ae68656f6cceffb0c12336d3bef82cd}{on\+Acceleration} (\hyperlink{classAcceleration}{Acceleration} $\ast$acc, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}{register\+With\+Touch\+Dispatcher} () final
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_a7adf5b4a876042d5a80364f652abe169}{is\+Touch\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em is\+Touch\+Enabled getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLayer_aa2839b0b5e3fc98bd93f9bebd6c6a827}\label{classLayer_aa2839b0b5e3fc98bd93f9bebd6c6a827}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aa2839b0b5e3fc98bd93f9bebd6c6a827}{set\+Touch\+Enabled} (bool value)
+\begin{DoxyCompactList}\small\item\em is\+Touch\+Enabled setter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLayer_a4d28faecdc959c2207d1e6d24514a675}\label{classLayer_a4d28faecdc959c2207d1e6d24514a675}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Touch\+Mode} (\hyperlink{classTouch_a3970fe1342ce78786781e8383164983d}{Touch\+::\+Dispatch\+Mode} mode)
+\item 
+\mbox{\Hypertarget{classLayer_a3438a95d671df2ed7babcc192c342ffa}\label{classLayer_a3438a95d671df2ed7babcc192c342ffa}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTouch_a3970fe1342ce78786781e8383164983d}{Touch\+::\+Dispatch\+Mode} {\bfseries get\+Touch\+Mode} () const
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_a97217d10fcefbce95537ea3a4ea04baf}{set\+Swallows\+Touches} (bool swallows\+Touches)
+\item 
+\mbox{\Hypertarget{classLayer_ae60fcfbe2cef9673df35eaab0c3b96f4}\label{classLayer_ae60fcfbe2cef9673df35eaab0c3b96f4}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries is\+Swallows\+Touches} () const
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_ab9ea31abf3231b9a5086173228df9e46}{is\+Accelerometer\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em is\+Accelerometer\+Enabled getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLayer_aff2ed49cc6dd60b437e6a08dde222b08}\label{classLayer_aff2ed49cc6dd60b437e6a08dde222b08}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aff2ed49cc6dd60b437e6a08dde222b08}{set\+Accelerometer\+Enabled} (bool value)
+\begin{DoxyCompactList}\small\item\em is\+Accelerometer\+Enabled setter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLayer_a9ad96822c08ca52ec325fd425a8998ad}\label{classLayer_a9ad96822c08ca52ec325fd425a8998ad}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Accelerometer\+Interval} (double interval)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_a038e7b38bbd680609a6c05604971bebb}{is\+Keyboard\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em is\+Keyboard\+Enabled getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLayer_aa1c10581f33e5c7cfdefa79e961e3f21}\label{classLayer_aa1c10581f33e5c7cfdefa79e961e3f21}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aa1c10581f33e5c7cfdefa79e961e3f21}{set\+Keyboard\+Enabled} (bool value)
+\begin{DoxyCompactList}\small\item\em is\+Keyboard\+Enabled setter \end{DoxyCompactList}\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_a8f3ccce82635e42a9c01346bdfa163ec}{key\+Pressed} (int key\+Code) final
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_acf527c64c7817cffc979507b4888d71a}{key\+Released} (int key\+Code) final
+\item 
+virtual void \hyperlink{classLayer_aa92de73700bdffa7e30a37cac4ea6e98}{on\+Key\+Pressed} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+virtual void \hyperlink{classLayer_a5d382621487e2df6726084535071daca}{on\+Key\+Released} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+\mbox{\Hypertarget{classLayer_a3739dde26584085e331444f4da5ef60b}\label{classLayer_a3739dde26584085e331444f4da5ef60b}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries is\+Keypad\+Enabled} () const final
+\item 
+\mbox{\Hypertarget{classLayer_a62615d286fd150ec967d76f784ad6d2b}\label{classLayer_a62615d286fd150ec967d76f784ad6d2b}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Keypad\+Enabled} (bool value)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}{key\+Back\+Clicked} () final
+\item 
+\mbox{\Hypertarget{classLayer_a42d14eb2fd8bd090562f9144e5a770bc}\label{classLayer_a42d14eb2fd8bd090562f9144e5a770bc}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries key\+Menu\+Clicked} () final
+\item 
+virtual std\+::string \hyperlink{classLayer_acadcdf383e0bf892c95213a4f7725672}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classLayer_a3d81bbeec30969c2c94b217c8d3f0692}\label{classLayer_a3d81bbeec30969c2c94b217c8d3f0692}} 
+virtual bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classLayer_a697a803ad49ae16aa869972d80757d15}\label{classLayer_a697a803ad49ae16aa869972d80757d15}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries cc\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_ad32ac185c13dbaccd83be322e61a27a3}\label{classLayer_ad32ac185c13dbaccd83be322e61a27a3}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_adca44a7523c8879178844f3fbf629cd6}\label{classLayer_adca44a7523c8879178844f3fbf629cd6}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_ab916bffa056e49d4c2d0d9957ca8adff}\label{classLayer_ab916bffa056e49d4c2d0d9957ca8adff}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a857e443265ff0ec1c440c97bf0b892c2}\label{classLayer_a857e443265ff0ec1c440c97bf0b892c2}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Began} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a0a00b745b6d32266d6858bc76f3fa868}\label{classLayer_a0a00b745b6d32266d6858bc76f3fa868}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Moved} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a973d5b8db9043cb2133b3cd69dc738aa}\label{classLayer_a973d5b8db9043cb2133b3cd69dc738aa}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Ended} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+\mbox{\Hypertarget{classLayer_a27fb16ee2aedec106dcdd13a28071276}\label{classLayer_a27fb16ee2aedec106dcdd13a28071276}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries cc\+Touches\+Cancelled} (\+\_\+\+\_\+\+Set $\ast$p\+Touches, \hyperlink{classEvent}{Event} $\ast$p\+Event) final
+\item 
+virtual bool \hyperlink{classLayer_af51202b4ab21e485ccc8f502103c5672}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a282a91b3508a3f5d77ffcc765800878e}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a953c3166b987743f281b03c003a98859}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a47f3275e8c91e68d9a7230e44c0706ee}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_aff1b8435f8f420498162153b0e71c70b}{on\+Touches\+Began} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_aab61c8121d4765a5956c8348e0bd49d9}{on\+Touches\+Moved} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_a5bcef7ed687630bfd02e0de57f066c6f}{on\+Touches\+Ended} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual void \hyperlink{classLayer_aeb1f39e95ed1940697aa6fe9de0d6419}{on\+Touches\+Cancelled} (const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_ad38c31e14fb4fb9561eede982d6b8ef5}{did\+Accelerate} (\hyperlink{classAcceleration}{Acceleration} $\ast$) final
+\item 
+virtual void \hyperlink{classLayer_a85943c6937c71bafbbde26980eec9007}{on\+Acceleration} (\hyperlink{classAcceleration}{Acceleration} $\ast$acc, \hyperlink{classEvent}{Event} $\ast$unused\+\_\+event)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}{register\+With\+Touch\+Dispatcher} () final
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_a4a76db13ede97c17f458a93d4b14c183}{is\+Touch\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classLayer_a14c3b32403c950de6b53bde76306524d}\label{classLayer_a14c3b32403c950de6b53bde76306524d}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Touch\+Enabled} (bool value)
+\item 
+\mbox{\Hypertarget{classLayer_aa55d4b1313bd4592dbc371ced4ef8ee1}\label{classLayer_aa55d4b1313bd4592dbc371ced4ef8ee1}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Touch\+Mode} (\hyperlink{classTouch_a3970fe1342ce78786781e8383164983d}{Touch\+::\+Dispatch\+Mode} mode)
+\item 
+\mbox{\Hypertarget{classLayer_afcc9b1d05e5e718192b1181210f95753}\label{classLayer_afcc9b1d05e5e718192b1181210f95753}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTouch_a3970fe1342ce78786781e8383164983d}{Touch\+::\+Dispatch\+Mode} {\bfseries get\+Touch\+Mode} () const
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_a5f501802738f5f497da4dbf64a1a75e1}{set\+Swallows\+Touches} (bool swallows\+Touches)
+\item 
+\mbox{\Hypertarget{classLayer_a7ce1ba2d184742baaab24ee93dcedd7a}\label{classLayer_a7ce1ba2d184742baaab24ee93dcedd7a}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries is\+Swallows\+Touches} () const
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_af95bbd9e4e412e8f1d3a28c9dc9a7ce2}{is\+Accelerometer\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classLayer_a9983e72319eccef2929c0006fcd1a0fc}\label{classLayer_a9983e72319eccef2929c0006fcd1a0fc}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Accelerometer\+Enabled} (bool value)
+\item 
+\mbox{\Hypertarget{classLayer_a19ab821e80fde021ac969678ada8ca95}\label{classLayer_a19ab821e80fde021ac969678ada8ca95}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Accelerometer\+Interval} (double interval)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classLayer_a762e193aa1b2515510a16ff621a81662}{is\+Keyboard\+Enabled} () const
+\item 
+\mbox{\Hypertarget{classLayer_a802a1405ce43b326f4fbd25d51f04899}\label{classLayer_a802a1405ce43b326f4fbd25d51f04899}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Keyboard\+Enabled} (bool value)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aff1ce0d6398816823cabb880461da415}{key\+Pressed} (int) final
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_ad7e6ea710a36e46dace8acb93eee10f9}{key\+Released} (int) final
+\item 
+virtual void \hyperlink{classLayer_ab45df2e3f40c128c11da1a92826ceef1}{on\+Key\+Pressed} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+virtual void \hyperlink{classLayer_a2b6862d65f1d0d318b1340394ddade96}{on\+Key\+Released} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+\mbox{\Hypertarget{classLayer_a3739dde26584085e331444f4da5ef60b}\label{classLayer_a3739dde26584085e331444f4da5ef60b}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool {\bfseries is\+Keypad\+Enabled} () const final
+\item 
+\mbox{\Hypertarget{classLayer_a6e0153ac9b0f0e985121ab4d1abb911a}\label{classLayer_a6e0153ac9b0f0e985121ab4d1abb911a}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries set\+Keypad\+Enabled} (bool value)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}{key\+Back\+Clicked} () final
+\item 
+\mbox{\Hypertarget{classLayer_a42d14eb2fd8bd090562f9144e5a770bc}\label{classLayer_a42d14eb2fd8bd090562f9144e5a770bc}} 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries key\+Menu\+Clicked} () final
+\item 
+virtual std\+::string \hyperlink{classLayer_ac35b850bd512fae372643e3217083260}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classLayer_a29b9bae6fe8a6f135907536a19405d17}\label{classLayer_a29b9bae6fe8a6f135907536a19405d17}} 
+virtual bool {\bfseries init} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLayer}{Layer} $\ast$ \hyperlink{classLayer_a779e4a3b9a3b2218a972b84f77a7ca04}{create} ()
+\item 
+static \hyperlink{classLayer}{Layer} $\ast$ \hyperlink{classLayer_a53a8d19f9f175f842a3316196b664d1e}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLayer_a6e33d5706a5a673ded7d4ad28cddb3d8}\label{classLayer_a6e33d5706a5a673ded7d4ad28cddb3d8}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classLayer}{Layer}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLayer_aa7bdd5dbd7796a2ea7ce2131dcfe9349}\label{classLayer_aa7bdd5dbd7796a2ea7ce2131dcfe9349}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries \+\_\+add\+Touch\+Listener} ()
+\item 
+\mbox{\Hypertarget{classLayer_a87d79546dd7547688ac0b3635a52eae0}\label{classLayer_a87d79546dd7547688ac0b3635a52eae0}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries add\+Touch\+Listener} ()
+\item 
+\mbox{\Hypertarget{classLayer_a2c361175f5e341d0b722a45053eb3bf7}\label{classLayer_a2c361175f5e341d0b722a45053eb3bf7}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE int {\bfseries execute\+Script\+Touch\+Handler} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Type, \hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+\mbox{\Hypertarget{classLayer_a581ac189050c88a84802871f0df7656e}\label{classLayer_a581ac189050c88a84802871f0df7656e}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE int {\bfseries execute\+Script\+Touches\+Handler} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Type, const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+\mbox{\Hypertarget{classLayer_aa7bdd5dbd7796a2ea7ce2131dcfe9349}\label{classLayer_aa7bdd5dbd7796a2ea7ce2131dcfe9349}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries \+\_\+add\+Touch\+Listener} ()
+\item 
+\mbox{\Hypertarget{classLayer_a87d79546dd7547688ac0b3635a52eae0}\label{classLayer_a87d79546dd7547688ac0b3635a52eae0}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void {\bfseries add\+Touch\+Listener} ()
+\item 
+\mbox{\Hypertarget{classLayer_a38871a6966dc1fa20286f1ade8740ae0}\label{classLayer_a38871a6966dc1fa20286f1ade8740ae0}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE int {\bfseries execute\+Script\+Touch\+Handler} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Type, \hyperlink{classTouch}{Touch} $\ast$touch, \hyperlink{classEvent}{Event} $\ast$event)
+\item 
+\mbox{\Hypertarget{classLayer_a2341513c0ac3cea507553dc2ce0e2ba3}\label{classLayer_a2341513c0ac3cea507553dc2ce0e2ba3}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE int {\bfseries execute\+Script\+Touches\+Handler} (\hyperlink{classEventTouch_a35816ad7349f0b7accc0a30a469b0087}{Event\+Touch\+::\+Event\+Code} event\+Type, const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&touches, \hyperlink{classEvent}{Event} $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLayer_af6e97cdd59f47e18dcbe54c3928916f8}\label{classLayer_af6e97cdd59f47e18dcbe54c3928916f8}} 
+bool {\bfseries \+\_\+touch\+Enabled}
+\item 
+\mbox{\Hypertarget{classLayer_a83dfc61b0243a5ba4f33b03618f7c5de}\label{classLayer_a83dfc61b0243a5ba4f33b03618f7c5de}} 
+bool {\bfseries \+\_\+accelerometer\+Enabled}
+\item 
+\mbox{\Hypertarget{classLayer_ae546b97ee775634a9a825b04d5ea3b0c}\label{classLayer_ae546b97ee775634a9a825b04d5ea3b0c}} 
+bool {\bfseries \+\_\+keyboard\+Enabled}
+\item 
+\mbox{\Hypertarget{classLayer_a231786d793ff4c12e051759eeb5aa193}\label{classLayer_a231786d793ff4c12e051759eeb5aa193}} 
+\hyperlink{classEventListener}{Event\+Listener} $\ast$ {\bfseries \+\_\+touch\+Listener}
+\item 
+\mbox{\Hypertarget{classLayer_a78cfdbeffea8a78ca1af2abd1cae9135}\label{classLayer_a78cfdbeffea8a78ca1af2abd1cae9135}} 
+\hyperlink{classEventListenerKeyboard}{Event\+Listener\+Keyboard} $\ast$ {\bfseries \+\_\+keyboard\+Listener}
+\item 
+\mbox{\Hypertarget{classLayer_a8858d5e4b98681f89235340c920b9120}\label{classLayer_a8858d5e4b98681f89235340c920b9120}} 
+\hyperlink{classEventListenerAcceleration}{Event\+Listener\+Acceleration} $\ast$ {\bfseries \+\_\+acceleration\+Listener}
+\item 
+\mbox{\Hypertarget{classLayer_a5f6208fd5cb7fca0b5cec6d03f1625db}\label{classLayer_a5f6208fd5cb7fca0b5cec6d03f1625db}} 
+\hyperlink{classTouch_a3970fe1342ce78786781e8383164983d}{Touch\+::\+Dispatch\+Mode} {\bfseries \+\_\+touch\+Mode}
+\item 
+\mbox{\Hypertarget{classLayer_ab3cac7fe4093167c7839e6cd81eaac3e}\label{classLayer_ab3cac7fe4093167c7839e6cd81eaac3e}} 
+bool {\bfseries \+\_\+swallows\+Touches}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLayer}{Layer} is a subclass of \hyperlink{classNode}{Node} that implements the Touch\+Events\+Delegate protocol. 
+
+All features from \hyperlink{classNode}{Node} are valid, plus the following new features\+:
+\begin{DoxyItemize}
+\item It can receive i\+Phone Touches
+\item It can receive Accelerometer input 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLayer_a779e4a3b9a3b2218a972b84f77a7ca04}\label{classLayer_a779e4a3b9a3b2218a972b84f77a7ca04}} 
+\index{Layer@{Layer}!create@{create}}
+\index{create@{create}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classLayer}{Layer} $\ast$ Layer\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a fullscreen black layer.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classLayer}{Layer} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLayer_a53a8d19f9f175f842a3316196b664d1e}\label{classLayer_a53a8d19f9f175f842a3316196b664d1e}} 
+\index{Layer@{Layer}!create@{create}}
+\index{create@{create}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classLayer}{Layer}$\ast$ Layer\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a fullscreen black layer.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classLayer}{Layer} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLayer_aea727ae25fc6f47bd9ef029cb99c629a}\label{classLayer_aea727ae25fc6f47bd9ef029cb99c629a}} 
+\index{Layer@{Layer}!did\+Accelerate@{did\+Accelerate}}
+\index{did\+Accelerate@{did\+Accelerate}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{did\+Accelerate()}{didAccelerate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::did\+Accelerate (\begin{DoxyParamCaption}\item[{\hyperlink{classAcceleration}{Acceleration} $\ast$}]{acceleration\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000026}{Deprecated}]Please override on\+Acceleration  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classLayer_ad38c31e14fb4fb9561eede982d6b8ef5}\label{classLayer_ad38c31e14fb4fb9561eede982d6b8ef5}} 
+\index{Layer@{Layer}!did\+Accelerate@{did\+Accelerate}}
+\index{did\+Accelerate@{did\+Accelerate}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{did\+Accelerate()}{didAccelerate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::did\+Accelerate (\begin{DoxyParamCaption}\item[{\hyperlink{classAcceleration}{Acceleration} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000256}{Deprecated}]Please override on\+Acceleration  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classLayer_acadcdf383e0bf892c95213a4f7725672}\label{classLayer_acadcdf383e0bf892c95213a4f7725672}} 
+\index{Layer@{Layer}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Layer\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+
+
+Reimplemented in \hyperlink{classLayerMultiplex_ab87bcf38601d2ef54325b95e22565d31}{Layer\+Multiplex}, \hyperlink{classLayerMultiplex_a60e44b51edd0e10a3601bf5e5094c30d}{Layer\+Multiplex}, \hyperlink{classLayerGradient_ace9ed0ed0422bdc89a7e440a9f8307d3}{Layer\+Gradient}, \hyperlink{classLayerGradient_a95a281f25e6c4196664e9866e451fcc2}{Layer\+Gradient}, \hyperlink{classLayerColor_a363da7455314bdf8a5fd4f809e70796e}{Layer\+Color}, \hyperlink{classLayerColor_aae6932d9d9e0ae21cc34e1e37d0b2d92}{Layer\+Color}, \hyperlink{classMenu_ac8ea6b6d3296f7c973e1d82051425afe}{Menu}, and \hyperlink{classMenu_a2f8bee450bcae21f9d5f27941467ff59}{Menu}.
+
+\mbox{\Hypertarget{classLayer_ac35b850bd512fae372643e3217083260}\label{classLayer_ac35b850bd512fae372643e3217083260}} 
+\index{Layer@{Layer}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Layer\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the description string. It makes debugging easier. \begin{DoxyReturn}{Returns}
+A string  NA  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+
+
+Reimplemented in \hyperlink{classLayerMultiplex_ab87bcf38601d2ef54325b95e22565d31}{Layer\+Multiplex}, \hyperlink{classLayerMultiplex_a60e44b51edd0e10a3601bf5e5094c30d}{Layer\+Multiplex}, \hyperlink{classLayerGradient_ace9ed0ed0422bdc89a7e440a9f8307d3}{Layer\+Gradient}, \hyperlink{classLayerGradient_a95a281f25e6c4196664e9866e451fcc2}{Layer\+Gradient}, \hyperlink{classLayerColor_a363da7455314bdf8a5fd4f809e70796e}{Layer\+Color}, \hyperlink{classLayerColor_aae6932d9d9e0ae21cc34e1e37d0b2d92}{Layer\+Color}, \hyperlink{classMenu_ac8ea6b6d3296f7c973e1d82051425afe}{Menu}, and \hyperlink{classMenu_a2f8bee450bcae21f9d5f27941467ff59}{Menu}.
+
+\mbox{\Hypertarget{classLayer_ab9ea31abf3231b9a5086173228df9e46}\label{classLayer_ab9ea31abf3231b9a5086173228df9e46}} 
+\index{Layer@{Layer}!is\+Accelerometer\+Enabled@{is\+Accelerometer\+Enabled}}
+\index{is\+Accelerometer\+Enabled@{is\+Accelerometer\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Accelerometer\+Enabled()}{isAccelerometerEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Layer\+::is\+Accelerometer\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+Accelerometer\+Enabled getter 
+
+whether or not it will receive Accelerometer events You can enable / disable accelerometer events with this property. \begin{DoxySince}{Since}
+v0.\+8.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_af95bbd9e4e412e8f1d3a28c9dc9a7ce2}\label{classLayer_af95bbd9e4e412e8f1d3a28c9dc9a7ce2}} 
+\index{Layer@{Layer}!is\+Accelerometer\+Enabled@{is\+Accelerometer\+Enabled}}
+\index{is\+Accelerometer\+Enabled@{is\+Accelerometer\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Accelerometer\+Enabled()}{isAccelerometerEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Layer\+::is\+Accelerometer\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+whether or not it will receive Accelerometer events You can enable / disable accelerometer events with this property. \begin{DoxySince}{Since}
+v0.\+8.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_a038e7b38bbd680609a6c05604971bebb}\label{classLayer_a038e7b38bbd680609a6c05604971bebb}} 
+\index{Layer@{Layer}!is\+Keyboard\+Enabled@{is\+Keyboard\+Enabled}}
+\index{is\+Keyboard\+Enabled@{is\+Keyboard\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Keyboard\+Enabled()}{isKeyboardEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Layer\+::is\+Keyboard\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+Keyboard\+Enabled getter 
+
+whether or not it will receive keyboard or keypad events You can enable / disable accelerometer events with this property. it\textquotesingle{}s new in cocos2d-\/x  NA \mbox{\Hypertarget{classLayer_a762e193aa1b2515510a16ff621a81662}\label{classLayer_a762e193aa1b2515510a16ff621a81662}} 
+\index{Layer@{Layer}!is\+Keyboard\+Enabled@{is\+Keyboard\+Enabled}}
+\index{is\+Keyboard\+Enabled@{is\+Keyboard\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Keyboard\+Enabled()}{isKeyboardEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Layer\+::is\+Keyboard\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+whether or not it will receive keyboard or keypad events You can enable / disable accelerometer events with this property. it\textquotesingle{}s new in cocos2d-\/x  NA \mbox{\Hypertarget{classLayer_a7adf5b4a876042d5a80364f652abe169}\label{classLayer_a7adf5b4a876042d5a80364f652abe169}} 
+\index{Layer@{Layer}!is\+Touch\+Enabled@{is\+Touch\+Enabled}}
+\index{is\+Touch\+Enabled@{is\+Touch\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Touch\+Enabled()}{isTouchEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Layer\+::is\+Touch\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is\+Touch\+Enabled getter 
+
+whether or not it will receive \hyperlink{classTouch}{Touch} events. You can enable / disable touch events with this property. Only the touches of this node will be affected. This \char`\"{}method\char`\"{} is not propagated to it\textquotesingle{}s children. \begin{DoxySince}{Since}
+v0.\+8.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_a4a76db13ede97c17f458a93d4b14c183}\label{classLayer_a4a76db13ede97c17f458a93d4b14c183}} 
+\index{Layer@{Layer}!is\+Touch\+Enabled@{is\+Touch\+Enabled}}
+\index{is\+Touch\+Enabled@{is\+Touch\+Enabled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{is\+Touch\+Enabled()}{isTouchEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Layer\+::is\+Touch\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+whether or not it will receive \hyperlink{classTouch}{Touch} events. You can enable / disable touch events with this property. Only the touches of this node will be affected. This \char`\"{}method\char`\"{} is not propagated to it\textquotesingle{}s children. \begin{DoxySince}{Since}
+v0.\+8.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}\label{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}} 
+\index{Layer@{Layer}!key\+Back\+Clicked@{key\+Back\+Clicked}}
+\index{key\+Back\+Clicked@{key\+Back\+Clicked}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Back\+Clicked()}{keyBackClicked()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Back\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000027}{Deprecated}]Please override on\+Key\+Released and check the keycode of Keyboard\+Event\+::\+Key\+Code\+::\+Menu(\+K\+E\+Y\+\_\+\+B\+A\+C\+K\+S\+P\+A\+C\+E) instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}\label{classLayer_aea2ec8f77681b4fd1c988bbeeb3d1c22}} 
+\index{Layer@{Layer}!key\+Back\+Clicked@{key\+Back\+Clicked}}
+\index{key\+Back\+Clicked@{key\+Back\+Clicked}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Back\+Clicked()}{keyBackClicked()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Back\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000257}{Deprecated}]Please override on\+Key\+Released and check the keycode of Keyboard\+Event\+::\+Key\+Code\+::\+Menu(\+K\+E\+Y\+\_\+\+B\+A\+C\+K\+S\+P\+A\+C\+E) instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classLayer_a8f3ccce82635e42a9c01346bdfa163ec}\label{classLayer_a8f3ccce82635e42a9c01346bdfa163ec}} 
+\index{Layer@{Layer}!key\+Pressed@{key\+Pressed}}
+\index{key\+Pressed@{key\+Pressed}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Pressed()}{keyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+Please use on\+Key\+Pressed instead.  NA \mbox{\Hypertarget{classLayer_aff1ce0d6398816823cabb880461da415}\label{classLayer_aff1ce0d6398816823cabb880461da415}} 
+\index{Layer@{Layer}!key\+Pressed@{key\+Pressed}}
+\index{key\+Pressed@{key\+Pressed}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Pressed()}{keyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+Please use on\+Key\+Pressed instead.  NA \mbox{\Hypertarget{classLayer_acf527c64c7817cffc979507b4888d71a}\label{classLayer_acf527c64c7817cffc979507b4888d71a}} 
+\index{Layer@{Layer}!key\+Released@{key\+Released}}
+\index{key\+Released@{key\+Released}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Released()}{keyReleased()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Released (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+Please use on\+Key\+Released instead.  NA \mbox{\Hypertarget{classLayer_ad7e6ea710a36e46dace8acb93eee10f9}\label{classLayer_ad7e6ea710a36e46dace8acb93eee10f9}} 
+\index{Layer@{Layer}!key\+Released@{key\+Released}}
+\index{key\+Released@{key\+Released}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{key\+Released()}{keyReleased()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::key\+Released (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+Please use on\+Key\+Released instead.  NA \mbox{\Hypertarget{classLayer_a8ae68656f6cceffb0c12336d3bef82cd}\label{classLayer_a8ae68656f6cceffb0c12336d3bef82cd}} 
+\index{Layer@{Layer}!on\+Acceleration@{on\+Acceleration}}
+\index{on\+Acceleration@{on\+Acceleration}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Acceleration()}{onAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Acceleration (\begin{DoxyParamCaption}\item[{\hyperlink{classAcceleration}{Acceleration} $\ast$}]{acc,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for acceleration. 
+\begin{DoxyParams}{Parameters}
+{\em acc} & \hyperlink{classAcceleration}{Acceleration} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_a85943c6937c71bafbbde26980eec9007}\label{classLayer_a85943c6937c71bafbbde26980eec9007}} 
+\index{Layer@{Layer}!on\+Acceleration@{on\+Acceleration}}
+\index{on\+Acceleration@{on\+Acceleration}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Acceleration()}{onAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Acceleration (\begin{DoxyParamCaption}\item[{\hyperlink{classAcceleration}{Acceleration} $\ast$}]{acc,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for acceleration. 
+\begin{DoxyParams}{Parameters}
+{\em acc} & \hyperlink{classAcceleration}{Acceleration} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_aa92de73700bdffa7e30a37cac4ea6e98}\label{classLayer_aa92de73700bdffa7e30a37cac4ea6e98}} 
+\index{Layer@{Layer}!on\+Key\+Pressed@{on\+Key\+Pressed}}
+\index{on\+Key\+Pressed@{on\+Key\+Pressed}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Key\+Pressed()}{onKeyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Key\+Pressed (\begin{DoxyParamCaption}\item[{\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code}}]{key\+Code,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & Key\+Code information. \\
+\hline
+{\em event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_ab45df2e3f40c128c11da1a92826ceef1}\label{classLayer_ab45df2e3f40c128c11da1a92826ceef1}} 
+\index{Layer@{Layer}!on\+Key\+Pressed@{on\+Key\+Pressed}}
+\index{on\+Key\+Pressed@{on\+Key\+Pressed}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Key\+Pressed()}{onKeyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Key\+Pressed (\begin{DoxyParamCaption}\item[{\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code}}]{key\+Code,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & Key\+Code information. \\
+\hline
+{\em event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_a5d382621487e2df6726084535071daca}\label{classLayer_a5d382621487e2df6726084535071daca}} 
+\index{Layer@{Layer}!on\+Key\+Released@{on\+Key\+Released}}
+\index{on\+Key\+Released@{on\+Key\+Released}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Key\+Released()}{onKeyReleased()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Key\+Released (\begin{DoxyParamCaption}\item[{\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code}}]{key\+Code,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for key released. 
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & Key\+Code information. \\
+\hline
+{\em event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_a2b6862d65f1d0d318b1340394ddade96}\label{classLayer_a2b6862d65f1d0d318b1340394ddade96}} 
+\index{Layer@{Layer}!on\+Key\+Released@{on\+Key\+Released}}
+\index{on\+Key\+Released@{on\+Key\+Released}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Key\+Released()}{onKeyReleased()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Key\+Released (\begin{DoxyParamCaption}\item[{\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code}}]{key\+Code,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for key released. 
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & Key\+Code information. \\
+\hline
+{\em event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_abe632dc131bdeb3d603090d4d31db25c}\label{classLayer_abe632dc131bdeb3d603090d4d31db25c}} 
+\index{Layer@{Layer}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Layer\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classTableView_a57908fcd3fe592e50ff721dd84675a01}{Table\+View}, \hyperlink{classTableView_a195a00658f0ba79be1b59935569c3c7c}{Table\+View}, \hyperlink{classScrollView_a3b24de8c28e9cfd8a2f44d626266e1be}{Scroll\+View}, \hyperlink{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}{Scroll\+View}, \hyperlink{classControlButton_a170cc0df0207fba7bc352acc6173d948}{Control\+Button}, \hyperlink{classControlButton_a1f4736ab73edd357bf9caf9fa0e1dcd6}{Control\+Button}, \hyperlink{classMenu_a2492a2fef0ccf44baf794ebc7676d986}{Menu}, \hyperlink{classControl_acdbc84186be785b6e2970c93f4252b72}{Control}, \hyperlink{classMenu_aea88e7147647b3295a5453990c47f1be}{Menu}, \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}, \hyperlink{classControlSlider_a501e9da8ef3f1dacbfb9f7a12ecb2aed}{Control\+Slider}, \hyperlink{classControlSlider_a8f6fb619bb23b4e1507f1f2bb904f808}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a8660ed765c6c5c0d8856f59aa0ba34b2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_a4de153e53cccd78b56d9dc3e18411777}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_aaba407c9125d0e4cc85fb5ae59ea964c}{Control\+Switch}, \hyperlink{classControlSwitch_a67af886fe24ec32313023514b28991f3}{Control\+Switch}, \hyperlink{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7fbb969bb376da49033a5df63f562905}{Control\+Stepper}, \hyperlink{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}{Control\+Stepper}, \hyperlink{classControlColourPicker_aec95ec2b1f58342568c73ecd208d6a12}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_a83493e9deb3c69dd40be99009a4759d6}{Control\+Colour\+Picker}, \hyperlink{classControlHuePicker_af178753e94f91d15e613bf0c6387af5b}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_ae14f5994e10b93bec6b4de027902b2a1}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classLayer_af51202b4ab21e485ccc8f502103c5672}\label{classLayer_af51202b4ab21e485ccc8f502103c5672}} 
+\index{Layer@{Layer}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Layer\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classTableView_a57908fcd3fe592e50ff721dd84675a01}{Table\+View}, \hyperlink{classTableView_a195a00658f0ba79be1b59935569c3c7c}{Table\+View}, \hyperlink{classScrollView_a3b24de8c28e9cfd8a2f44d626266e1be}{Scroll\+View}, \hyperlink{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}{Scroll\+View}, \hyperlink{classControlButton_a170cc0df0207fba7bc352acc6173d948}{Control\+Button}, \hyperlink{classControlButton_a1f4736ab73edd357bf9caf9fa0e1dcd6}{Control\+Button}, \hyperlink{classMenu_a2492a2fef0ccf44baf794ebc7676d986}{Menu}, \hyperlink{classControl_acdbc84186be785b6e2970c93f4252b72}{Control}, \hyperlink{classMenu_aea88e7147647b3295a5453990c47f1be}{Menu}, \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}, \hyperlink{classControlSlider_a501e9da8ef3f1dacbfb9f7a12ecb2aed}{Control\+Slider}, \hyperlink{classControlSlider_a8f6fb619bb23b4e1507f1f2bb904f808}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a8660ed765c6c5c0d8856f59aa0ba34b2}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_a4de153e53cccd78b56d9dc3e18411777}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_aaba407c9125d0e4cc85fb5ae59ea964c}{Control\+Switch}, \hyperlink{classControlSwitch_a67af886fe24ec32313023514b28991f3}{Control\+Switch}, \hyperlink{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7fbb969bb376da49033a5df63f562905}{Control\+Stepper}, \hyperlink{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}{Control\+Stepper}, \hyperlink{classControlColourPicker_aec95ec2b1f58342568c73ecd208d6a12}{Control\+Colour\+Picker}, \hyperlink{classControlColourPicker_a83493e9deb3c69dd40be99009a4759d6}{Control\+Colour\+Picker}, \hyperlink{classControlHuePicker_af178753e94f91d15e613bf0c6387af5b}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_ae14f5994e10b93bec6b4de027902b2a1}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classLayer_a9254f82e75c109b81c392d415ecf7b3d}\label{classLayer_a9254f82e75c109b81c392d415ecf7b3d}} 
+\index{Layer@{Layer}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_a5ed81baf58526698abefaf8ca08a6c01}{Table\+View}, \hyperlink{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}{Table\+View}, \hyperlink{classScrollView_a911e0e123c9f120f654744626bfcfd2c}{Scroll\+View}, \hyperlink{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}{Scroll\+View}, \hyperlink{classControlButton_a32a7a37982d52d6660b532adabb8099e}{Control\+Button}, \hyperlink{classControlButton_a95558febae1ea6790245d093766ba20e}{Control\+Button}, \hyperlink{classControl_ab7fb8582f430d82180dbefea27c4cff9}{Control}, \hyperlink{classMenu_acb29e6ae77c5acba03ac48c5f1b6b23a}{Menu}, \hyperlink{classMenu_a19ffec24a2ec30dd290354e0e0e3aa9a}{Menu}, \hyperlink{classControl_a573efad6a6b492f4a6f4c5d06f0cdb88}{Control}, \hyperlink{classControlSwitch_a31cc47f044081bb65d8490ac1b8900c0}{Control\+Switch}, and \hyperlink{classControlSwitch_aa4c6a2f3766e9916f0619a0249ddd7d7}{Control\+Switch}.
+
+\mbox{\Hypertarget{classLayer_a47f3275e8c91e68d9a7230e44c0706ee}\label{classLayer_a47f3275e8c91e68d9a7230e44c0706ee}} 
+\index{Layer@{Layer}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_a5ed81baf58526698abefaf8ca08a6c01}{Table\+View}, \hyperlink{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}{Table\+View}, \hyperlink{classScrollView_a911e0e123c9f120f654744626bfcfd2c}{Scroll\+View}, \hyperlink{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}{Scroll\+View}, \hyperlink{classControlButton_a32a7a37982d52d6660b532adabb8099e}{Control\+Button}, \hyperlink{classControlButton_a95558febae1ea6790245d093766ba20e}{Control\+Button}, \hyperlink{classControl_ab7fb8582f430d82180dbefea27c4cff9}{Control}, \hyperlink{classMenu_acb29e6ae77c5acba03ac48c5f1b6b23a}{Menu}, \hyperlink{classMenu_a19ffec24a2ec30dd290354e0e0e3aa9a}{Menu}, \hyperlink{classControl_a573efad6a6b492f4a6f4c5d06f0cdb88}{Control}, \hyperlink{classControlSwitch_a31cc47f044081bb65d8490ac1b8900c0}{Control\+Switch}, and \hyperlink{classControlSwitch_aa4c6a2f3766e9916f0619a0249ddd7d7}{Control\+Switch}.
+
+\mbox{\Hypertarget{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}\label{classLayer_a9dbcca0eab3b0cd3cdc279615c604413}} 
+\index{Layer@{Layer}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}{Table\+View}, \hyperlink{classTableView_a361d91c5c592b3d81ed43b6743487fc3}{Table\+View}, \hyperlink{classScrollView_aafc1076e1f21bc66749a4c814814d681}{Scroll\+View}, \hyperlink{classScrollView_a86f57715da926a475b75d67eff84701d}{Scroll\+View}, \hyperlink{classControlButton_a7597744c683964152429472a358b3fd2}{Control\+Button}, \hyperlink{classControlButton_a6f562dc0b399591189883ea7788603d7}{Control\+Button}, \hyperlink{classControl_af31a373d40a3181e2a97f0f9dc85c1f8}{Control}, \hyperlink{classMenu_ab8d24a11ed99eead18acd6376a0a3d76}{Menu}, \hyperlink{classMenu_a8d9a867ea2dfc4ec2a3309f3df71cc35}{Menu}, \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}, \hyperlink{classControlSlider_a9ba0559605c93e08dc4548261cbc2773}{Control\+Slider}, \hyperlink{classControlSlider_acdda8fa6365ab06db757c0a525c5108e}{Control\+Slider}, \hyperlink{classControlSwitch_a6976aba81f0846eb827114efc06301d3}{Control\+Switch}, \hyperlink{classControlSwitch_a13db70a616ea0e992710fc8041792f66}{Control\+Switch}, \hyperlink{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7934349dae09881fce7a72d4985d0154}{Control\+Stepper}, and \hyperlink{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}{Control\+Stepper}.
+
+\mbox{\Hypertarget{classLayer_a953c3166b987743f281b03c003a98859}\label{classLayer_a953c3166b987743f281b03c003a98859}} 
+\index{Layer@{Layer}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}{Table\+View}, \hyperlink{classTableView_a361d91c5c592b3d81ed43b6743487fc3}{Table\+View}, \hyperlink{classScrollView_aafc1076e1f21bc66749a4c814814d681}{Scroll\+View}, \hyperlink{classScrollView_a86f57715da926a475b75d67eff84701d}{Scroll\+View}, \hyperlink{classControlButton_a7597744c683964152429472a358b3fd2}{Control\+Button}, \hyperlink{classControlButton_a6f562dc0b399591189883ea7788603d7}{Control\+Button}, \hyperlink{classControl_af31a373d40a3181e2a97f0f9dc85c1f8}{Control}, \hyperlink{classMenu_ab8d24a11ed99eead18acd6376a0a3d76}{Menu}, \hyperlink{classMenu_a8d9a867ea2dfc4ec2a3309f3df71cc35}{Menu}, \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}, \hyperlink{classControlSlider_a9ba0559605c93e08dc4548261cbc2773}{Control\+Slider}, \hyperlink{classControlSlider_acdda8fa6365ab06db757c0a525c5108e}{Control\+Slider}, \hyperlink{classControlSwitch_a6976aba81f0846eb827114efc06301d3}{Control\+Switch}, \hyperlink{classControlSwitch_a13db70a616ea0e992710fc8041792f66}{Control\+Switch}, \hyperlink{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}{Control\+Potentiometer}, \hyperlink{classControlStepper_a7934349dae09881fce7a72d4985d0154}{Control\+Stepper}, and \hyperlink{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}{Control\+Stepper}.
+
+\mbox{\Hypertarget{classLayer_a215f7865e3391ae605885af8b639277a}\label{classLayer_a215f7865e3391ae605885af8b639277a}} 
+\index{Layer@{Layer}!on\+Touches\+Began@{on\+Touches\+Began}}
+\index{on\+Touches\+Began@{on\+Touches\+Began}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Began()}{onTouchesBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touches\+Began (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_aff1b8435f8f420498162153b0e71c70b}\label{classLayer_aff1b8435f8f420498162153b0e71c70b}} 
+\index{Layer@{Layer}!on\+Touches\+Began@{on\+Touches\+Began}}
+\index{on\+Touches\+Began@{on\+Touches\+Began}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Began()}{onTouchesBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touches\+Began (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_af5ebddb9ced172ccbd60b82330448b2f}\label{classLayer_af5ebddb9ced172ccbd60b82330448b2f}} 
+\index{Layer@{Layer}!on\+Touches\+Cancelled@{on\+Touches\+Cancelled}}
+\index{on\+Touches\+Cancelled@{on\+Touches\+Cancelled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Cancelled()}{onTouchesCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touches\+Cancelled (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_aeb1f39e95ed1940697aa6fe9de0d6419}\label{classLayer_aeb1f39e95ed1940697aa6fe9de0d6419}} 
+\index{Layer@{Layer}!on\+Touches\+Cancelled@{on\+Touches\+Cancelled}}
+\index{on\+Touches\+Cancelled@{on\+Touches\+Cancelled}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Cancelled()}{onTouchesCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touches\+Cancelled (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_a25edcc53db05941565bcd2e09e8149aa}\label{classLayer_a25edcc53db05941565bcd2e09e8149aa}} 
+\index{Layer@{Layer}!on\+Touches\+Ended@{on\+Touches\+Ended}}
+\index{on\+Touches\+Ended@{on\+Touches\+Ended}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Ended()}{onTouchesEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touches\+Ended (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_a5bcef7ed687630bfd02e0de57f066c6f}\label{classLayer_a5bcef7ed687630bfd02e0de57f066c6f}} 
+\index{Layer@{Layer}!on\+Touches\+Ended@{on\+Touches\+Ended}}
+\index{on\+Touches\+Ended@{on\+Touches\+Ended}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Ended()}{onTouchesEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touches\+Ended (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_af1c25a5eb91f619ca30b130c59f8ccbd}\label{classLayer_af1c25a5eb91f619ca30b130c59f8ccbd}} 
+\index{Layer@{Layer}!on\+Touches\+Moved@{on\+Touches\+Moved}}
+\index{on\+Touches\+Moved@{on\+Touches\+Moved}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Moved()}{onTouchesMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touches\+Moved (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_aab61c8121d4765a5956c8348e0bd49d9}\label{classLayer_aab61c8121d4765a5956c8348e0bd49d9}} 
+\index{Layer@{Layer}!on\+Touches\+Moved@{on\+Touches\+Moved}}
+\index{on\+Touches\+Moved@{on\+Touches\+Moved}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touches\+Moved()}{onTouchesMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touches\+Moved (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{classTouch}{Touch} $\ast$$>$ \&}]{touches,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for multiple touches moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touches} & Touches information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLayer_ad614a7a347f171cd6185e7aeef125047}\label{classLayer_ad614a7a347f171cd6185e7aeef125047}} 
+\index{Layer@{Layer}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_acd131e5fa29332743e625a1a0d047965}{Table\+View}, \hyperlink{classTableView_a242e9d8c695681b41eef636471e768b5}{Table\+View}, \hyperlink{classScrollView_a8a0b3a876f644fbd941773e577c7b550}{Scroll\+View}, \hyperlink{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}{Scroll\+View}, \hyperlink{classControlButton_a8c8a5c24adf67ec671fbc113889f0870}{Control\+Button}, \hyperlink{classControlButton_aacecc916b91af98f4f9a2550d678bd44}{Control\+Button}, \hyperlink{classMenu_a0d8965a2a3df64d987e2bc91f77a43fd}{Menu}, \hyperlink{classMenu_ad69115ad80e86bbe904d575253afc781}{Menu}, \hyperlink{classControl_a98c8b1c7d2a15318ca720b5a398fbb14}{Control}, \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}, \hyperlink{classControlSlider_ad7aab266125d50d61a0a58c00f44f94d}{Control\+Slider}, \hyperlink{classControlSlider_adc06e1f4b54e0f72c9359c111b6913ff}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a1330b4d2fca4a1a312b1594e6ee6b99c}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_aea0bada57d1f6e2bb3f456e77e342979}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_a74c30d86ef910e4ee32a413153e74042}{Control\+Switch}, \hyperlink{classControlSwitch_a74e7f363deee0b399be486f668dad631}{Control\+Switch}, \hyperlink{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}{Control\+Potentiometer}, \hyperlink{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}{Control\+Stepper}, \hyperlink{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}{Control\+Stepper}, \hyperlink{classControlHuePicker_ae287e5f1cd8856c76475825549f098d8}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_a09874584a6a21355d830546ee3b0751d}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classLayer_a282a91b3508a3f5d77ffcc765800878e}\label{classLayer_a282a91b3508a3f5d77ffcc765800878e}} 
+\index{Layer@{Layer}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Layer\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTableView_acd131e5fa29332743e625a1a0d047965}{Table\+View}, \hyperlink{classTableView_a242e9d8c695681b41eef636471e768b5}{Table\+View}, \hyperlink{classScrollView_a8a0b3a876f644fbd941773e577c7b550}{Scroll\+View}, \hyperlink{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}{Scroll\+View}, \hyperlink{classControlButton_a8c8a5c24adf67ec671fbc113889f0870}{Control\+Button}, \hyperlink{classControlButton_aacecc916b91af98f4f9a2550d678bd44}{Control\+Button}, \hyperlink{classMenu_a0d8965a2a3df64d987e2bc91f77a43fd}{Menu}, \hyperlink{classMenu_ad69115ad80e86bbe904d575253afc781}{Menu}, \hyperlink{classControl_a98c8b1c7d2a15318ca720b5a398fbb14}{Control}, \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}, \hyperlink{classControlSlider_ad7aab266125d50d61a0a58c00f44f94d}{Control\+Slider}, \hyperlink{classControlSlider_adc06e1f4b54e0f72c9359c111b6913ff}{Control\+Slider}, \hyperlink{classControlSaturationBrightnessPicker_a1330b4d2fca4a1a312b1594e6ee6b99c}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSaturationBrightnessPicker_aea0bada57d1f6e2bb3f456e77e342979}{Control\+Saturation\+Brightness\+Picker}, \hyperlink{classControlSwitch_a74c30d86ef910e4ee32a413153e74042}{Control\+Switch}, \hyperlink{classControlSwitch_a74e7f363deee0b399be486f668dad631}{Control\+Switch}, \hyperlink{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}{Control\+Potentiometer}, \hyperlink{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}{Control\+Potentiometer}, \hyperlink{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}{Control\+Stepper}, \hyperlink{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}{Control\+Stepper}, \hyperlink{classControlHuePicker_ae287e5f1cd8856c76475825549f098d8}{Control\+Hue\+Picker}, and \hyperlink{classControlHuePicker_a09874584a6a21355d830546ee3b0751d}{Control\+Hue\+Picker}.
+
+\mbox{\Hypertarget{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}\label{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}} 
+\index{Layer@{Layer}!register\+With\+Touch\+Dispatcher@{register\+With\+Touch\+Dispatcher}}
+\index{register\+With\+Touch\+Dispatcher@{register\+With\+Touch\+Dispatcher}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{register\+With\+Touch\+Dispatcher()}{registerWithTouchDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::register\+With\+Touch\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+If is\+Touch\+Enabled, this method is called on\+Enter. Override it to change the way \hyperlink{classLayer}{Layer} receives touch events. ( Default\+: Touch\+Dispatcher\+::shared\+Dispatcher()-\/$>$add\+Standard\+Delegate(this,0); ) Example\+: void \hyperlink{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}{Layer\+::register\+With\+Touch\+Dispatcher()} \{ Touch\+Dispatcher\+::shared\+Dispatcher()-\/$>$add\+Targeted\+Delegate(this,I\+N\+T\+\_\+\+M\+I\+N+1,true); \} \begin{DoxySince}{Since}
+v0.\+8.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}\label{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}} 
+\index{Layer@{Layer}!register\+With\+Touch\+Dispatcher@{register\+With\+Touch\+Dispatcher}}
+\index{register\+With\+Touch\+Dispatcher@{register\+With\+Touch\+Dispatcher}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{register\+With\+Touch\+Dispatcher()}{registerWithTouchDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::register\+With\+Touch\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+If is\+Touch\+Enabled, this method is called on\+Enter. Override it to change the way \hyperlink{classLayer}{Layer} receives touch events. ( Default\+: Touch\+Dispatcher\+::shared\+Dispatcher()-\/$>$add\+Standard\+Delegate(this,0); ) Example\+: void \hyperlink{classLayer_a988787d86ff8b8f1d0d75dcc6c2c181b}{Layer\+::register\+With\+Touch\+Dispatcher()} \{ Touch\+Dispatcher\+::shared\+Dispatcher()-\/$>$add\+Targeted\+Delegate(this,I\+N\+T\+\_\+\+M\+I\+N+1,true); \} \begin{DoxySince}{Since}
+v0.\+8.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classLayer_a97217d10fcefbce95537ea3a4ea04baf}\label{classLayer_a97217d10fcefbce95537ea3a4ea04baf}} 
+\index{Layer@{Layer}!set\+Swallows\+Touches@{set\+Swallows\+Touches}}
+\index{set\+Swallows\+Touches@{set\+Swallows\+Touches}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{set\+Swallows\+Touches()}{setSwallowsTouches()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Layer\+::set\+Swallows\+Touches (\begin{DoxyParamCaption}\item[{bool}]{swallows\+Touches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+swallows\+Touches of the touch events. Default is true  NA \mbox{\Hypertarget{classLayer_a5f501802738f5f497da4dbf64a1a75e1}\label{classLayer_a5f501802738f5f497da4dbf64a1a75e1}} 
+\index{Layer@{Layer}!set\+Swallows\+Touches@{set\+Swallows\+Touches}}
+\index{set\+Swallows\+Touches@{set\+Swallows\+Touches}!Layer@{Layer}}
+\subsubsection{\texorpdfstring{set\+Swallows\+Touches()}{setSwallowsTouches()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Layer\+::set\+Swallows\+Touches (\begin{DoxyParamCaption}\item[{bool}]{swallows\+Touches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+swallows\+Touches of the touch events. Default is true  NA 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Layer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Layer.\+cpp\end{DoxyCompactItemize}

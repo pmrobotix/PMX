@@ -12,23 +12,31 @@ OPOS6UL_IAExtended::OPOS6UL_IAExtended(std::string botId, Robot *robot) :
     opponent_3 = Playground::INVALID;
     opponent_4 = Playground::INVALID;
 
-    area_alea_violet = Playground::INVALID;
-    area_alea_yellow = Playground::INVALID;
+    area_start_green = Playground::INVALID;
+    area_start_blue = Playground::INVALID;
 
 
-
-    p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
+    //terrain horizontal
+    //p_ = new SymmetricalPlayground(0.0, 0.0, 3400.0, 2500.0, 0.5, 1.0, 1500.0);
+    //terrain vertical
+    p_ = new SymmetricalPlayground(0.0, 0.0, 2400.0, 3200.0, 0.5, 1.0, 1000.0);
 
     initPlayground();
 
 }
 
 void OPOS6UL_IAExtended::initPlayground() {
-    //bordure terrain
-    p_->add_rectangle_lower_left(0, 0, 129, 2000, 0); //cote gauche
-    p_->add_rectangle_lower_left(3000, 0, -129, 2000, 0); //cote droit
-    p_->add_rectangle_lower_left(0, 0, 3000, 129, 0); //bas
-    p_->add_rectangle_lower_left(0, 2000 - 129, 3000, 2000, 0); //haut
+    //bordure terrain horizontal
+//    p_->add_rectangle_lower_left(0, 0, 129, 2000, 0); //cote gauche
+//    p_->add_rectangle_lower_left(3000, 0, -129, 2000, 0); //cote droit
+//    p_->add_rectangle_lower_left(0, 0, 3000, 129, 0); //bas
+//    p_->add_rectangle_lower_left(0, 2000 - 129, 3000, 2000, 0); //haut
+    //bordure terrain vertical
+    p_->add_rectangle_lower_left(0, 0, 129, 3000, 0); //cote gauche
+    p_->add_rectangle_lower_left(2000, 0, -129, 3000, 0); //cote droit
+    p_->add_rectangle_lower_left(0, 0, 2000, 129, 0); //bas
+    p_->add_rectangle_lower_left(0, 3000 - 129, 2000, 3000, 0); //haut
+
 
     //bordure terrain lego
 //    p_->add_rectangle(1500, 0, 3000, 140, 0); //bottom
@@ -36,8 +44,14 @@ void OPOS6UL_IAExtended::initPlayground() {
 //    p_->add_rectangle(0, 1000, 140, 2000, 0); //left
 //    p_->add_rectangle(3000, 1000, 140, 2000, 0); //right
 
+//2023
+    p_->add_rectangle_lower_left_symmetrical(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
+   //p_->add_rectangle_lower_left(this->area_start_green, this->area_start_blue, 1400.0, 0.0, 650.0, 650.0, 0.0);
 
+    //p_->enable(this->area_start_green, false);
 
+//2022
+    /*
     //zone de triangle piedestal
     p_->add_rectangle_symmetrical(this->area_triangle_yellow, this->area_triangle_violet, 200.0, 200.0, 300.0, 750.0, M_PI / 4.0);
 
@@ -55,6 +69,8 @@ void OPOS6UL_IAExtended::initPlayground() {
     p_->add_rectangle_lower_left_symmetrical(this->area_galerie_yellow, this->area_galerie_violet, 400.0, 1800.0, 1100.0, 200.0, 0.0);
     //barre milieu
     p_->add_rectangle(1500, 1850, 260, 550, 0);
+*/
+
 
     /*
      std::vector<Point*> relative_point_refs = std::vector<Point*>(3);

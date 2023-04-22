@@ -1,0 +1,699 @@
+\hypertarget{classexperimental_1_1ui_1_1VideoPlayer}{}\section{experimental\+:\+:ui\+:\+:Video\+Player Class Reference}
+\label{classexperimental_1_1ui_1_1VideoPlayer}\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+
+
+Displays a video file.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Video\+Player.\+h$>$}
+
+
+
+Inheritance diagram for experimental\+:\+:ui\+:\+:Video\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classexperimental_1_1ui_1_1VideoPlayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for experimental\+:\+:ui\+:\+:Video\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classexperimental_1_1ui_1_1VideoPlayer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Event\+Type} \{ \newline
+{\bfseries P\+L\+A\+Y\+I\+NG} = 0, 
+{\bfseries P\+A\+U\+S\+ED}, 
+{\bfseries S\+T\+O\+P\+P\+ED}, 
+{\bfseries C\+O\+M\+P\+L\+E\+T\+ED}, 
+\newline
+{\bfseries P\+L\+A\+Y\+I\+NG} = 0, 
+{\bfseries P\+A\+U\+S\+ED}, 
+{\bfseries S\+T\+O\+P\+P\+ED}, 
+{\bfseries C\+O\+M\+P\+L\+E\+T\+ED}, 
+\newline
+{\bfseries E\+R\+R\+OR}
+ \}
+\item 
+enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Event\+Type} \{ \newline
+{\bfseries P\+L\+A\+Y\+I\+NG} = 0, 
+{\bfseries P\+A\+U\+S\+ED}, 
+{\bfseries S\+T\+O\+P\+P\+ED}, 
+{\bfseries C\+O\+M\+P\+L\+E\+T\+ED}, 
+\newline
+{\bfseries P\+L\+A\+Y\+I\+NG} = 0, 
+{\bfseries P\+A\+U\+S\+ED}, 
+{\bfseries S\+T\+O\+P\+P\+ED}, 
+{\bfseries C\+O\+M\+P\+L\+E\+T\+ED}, 
+\newline
+{\bfseries E\+R\+R\+OR}
+ \}
+\item 
+enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}{Style\+Type} \{ {\bfseries D\+E\+F\+A\+U\+LT} = 0, 
+{\bfseries N\+O\+NE}
+ \}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type})$>$ \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{cc\+Video\+Player\+Callback}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type})$>$ \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{cc\+Video\+Player\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC} (\hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player})
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}{set\+File\+Name} (const std\+::string \&video\+Path)
+\item 
+virtual const std\+::string \& \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}{get\+File\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get the local video file name. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}{set\+U\+RL} (const std\+::string \&\+\_\+video\+U\+RL)
+\item 
+virtual const std\+::string \& \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}{get\+U\+RL} () const
+\begin{DoxyCompactList}\small\item\em Get the U\+RL of remoting video source. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_af435ce3d899cc2a47f18f3256a8c0cd9}{play} ()
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}{pause} () override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}{resume} () override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_af28796de69c4a67f627945fe070861bf}{stop} ()
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a10d60bf8f49a041a5d6700fede51aab5}{seek\+To} (float sec)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a7b1ec8be02ad13696249b75e589586fc}{is\+Playing} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a97787adc7535bbdbb74970784015ce01}{set\+Keep\+Aspect\+Ratio\+Enabled} (bool enable)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}{is\+Keep\+Aspect\+Ratio\+Enabled} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}{set\+Full\+Screen\+Enabled} (bool fullscreen)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a466c25180bccd97a4e96708c94f6d1aa}{is\+Full\+Screen\+Enabled} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a18d411ee29a29b32e965daf2934836da}{add\+Event\+Listener} (const \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{Video\+Player\+::cc\+Video\+Player\+Callback} \&callback)
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a88b4f377554bef7bca9c974c30dac91b}{on\+Play\+Event} (int event)
+\begin{DoxyCompactList}\small\item\em A function which will be called when video is playing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a985e80592c90bf48352d8d1e8f80e6db}\label{classexperimental_1_1ui_1_1VideoPlayer_a985e80592c90bf48352d8d1e8f80e6db}} 
+virtual void {\bfseries set\+Visible} (bool visible) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a826447649569991f4bed709faee88e7a}\label{classexperimental_1_1ui_1_1VideoPlayer_a826447649569991f4bed709faee88e7a}} 
+virtual void {\bfseries draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a34ce9b072958d0f9029724551bfbeec8}\label{classexperimental_1_1ui_1_1VideoPlayer_a34ce9b072958d0f9029724551bfbeec8}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ad0fd0948305759e347a6b26f0020fc57}\label{classexperimental_1_1ui_1_1VideoPlayer_ad0fd0948305759e347a6b26f0020fc57}} 
+virtual void {\bfseries on\+Exit} () override
+\item 
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC} (\hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player})
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}{set\+File\+Name} (const std\+::string \&video\+Path)
+\item 
+virtual const std\+::string \& \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}{get\+File\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get the local video file name. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}{set\+U\+RL} (const std\+::string \&\+\_\+video\+U\+RL)
+\item 
+virtual const std\+::string \& \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}{get\+U\+RL} () const
+\begin{DoxyCompactList}\small\item\em Get the U\+RL of remoting video source. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_ac9a14f276f28fed8fde5c29f79402f1f}{set\+Looping} (bool looping)
+\begin{DoxyCompactList}\small\item\em Set if playback is done in loop mode. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a1adc885898d12a1aba789699ed0ed84e}{set\+User\+Input\+Enabled} (bool enable\+Input)
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a89e6a62ff9b3b05281a31180098a1ed3}{set\+Style} (\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}{Style\+Type} style)
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a13ba0d270e849566f33ceffd7fb425c0}{play} ()
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}{pause} () override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}{resume} () override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a1f0ecb61a2f7860525be697832cb6b8d}{stop} ()
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_ad08fd0814f311ac160b5f0eab4e3009a}{seek\+To} (float sec)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_acc07be3ef6a4b2b639f9eb44d8c8f7d1}{is\+Playing} () const
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a8b375ef4829ef04e022a9e7d0ada24aa}{is\+Looping} () const
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a6fe34ddb8d9cb2774d9097ff1ea68c47}{is\+User\+Input\+Enabled} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a0421f619865f1ba5978e9cfbaf73e1e8}{set\+Keep\+Aspect\+Ratio\+Enabled} (bool enable)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}{is\+Keep\+Aspect\+Ratio\+Enabled} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}{set\+Full\+Screen\+Enabled} (bool fullscreen)
+\item 
+virtual bool \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_ab2381455eeb422dc2872dc4bd7613e70}{is\+Full\+Screen\+Enabled} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a5c8ddd1fd32da63de5c88bf0570b10df}{add\+Event\+Listener} (const \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{Video\+Player\+::cc\+Video\+Player\+Callback} \&callback)
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a76314bbf716a9b8685257c70fce7115f}{on\+Play\+Event} (int event)
+\begin{DoxyCompactList}\small\item\em A function which will be called when video is playing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a985e80592c90bf48352d8d1e8f80e6db}\label{classexperimental_1_1ui_1_1VideoPlayer_a985e80592c90bf48352d8d1e8f80e6db}} 
+virtual void {\bfseries set\+Visible} (bool visible) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a826447649569991f4bed709faee88e7a}\label{classexperimental_1_1ui_1_1VideoPlayer_a826447649569991f4bed709faee88e7a}} 
+virtual void {\bfseries draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a34ce9b072958d0f9029724551bfbeec8}\label{classexperimental_1_1ui_1_1VideoPlayer_a34ce9b072958d0f9029724551bfbeec8}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ad0fd0948305759e347a6b26f0020fc57}\label{classexperimental_1_1ui_1_1VideoPlayer_ad0fd0948305759e347a6b26f0020fc57}} 
+virtual void {\bfseries on\+Exit} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a8a681e7c5307008e77b46d9846cb1631}\label{classexperimental_1_1ui_1_1VideoPlayer_a8a681e7c5307008e77b46d9846cb1631}} 
+enum {\bfseries Source} \{ {\bfseries F\+I\+L\+E\+N\+A\+ME} = 0, 
+{\bfseries U\+RL}, 
+{\bfseries F\+I\+L\+E\+N\+A\+ME} = 0, 
+{\bfseries U\+RL}
+ \}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a8a681e7c5307008e77b46d9846cb1631}\label{classexperimental_1_1ui_1_1VideoPlayer_a8a681e7c5307008e77b46d9846cb1631}} 
+enum {\bfseries Source} \{ {\bfseries F\+I\+L\+E\+N\+A\+ME} = 0, 
+{\bfseries U\+RL}, 
+{\bfseries F\+I\+L\+E\+N\+A\+ME} = 0, 
+{\bfseries U\+RL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a5921fe8656e07337819479ddebba188b}\label{classexperimental_1_1ui_1_1VideoPlayer_a5921fe8656e07337819479ddebba188b}} 
+virtual cocos2d\+::ui\+::\+Widget $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a4ebf0407c6e35e64d50841a748c4f081}\label{classexperimental_1_1ui_1_1VideoPlayer_a4ebf0407c6e35e64d50841a748c4f081}} 
+virtual void {\bfseries copy\+Special\+Properties} (Widget $\ast$model) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a5921fe8656e07337819479ddebba188b}\label{classexperimental_1_1ui_1_1VideoPlayer_a5921fe8656e07337819479ddebba188b}} 
+virtual cocos2d\+::ui\+::\+Widget $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a4ebf0407c6e35e64d50841a748c4f081}\label{classexperimental_1_1ui_1_1VideoPlayer_a4ebf0407c6e35e64d50841a748c4f081}} 
+virtual void {\bfseries copy\+Special\+Properties} (Widget $\ast$model) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a8d5d6d21f4832f9f496c77534d82f143}\label{classexperimental_1_1ui_1_1VideoPlayer_a8d5d6d21f4832f9f496c77534d82f143}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_aae6a0ce3f83c426c03fafa3a0b24e47a}\label{classexperimental_1_1ui_1_1VideoPlayer_aae6a0ce3f83c426c03fafa3a0b24e47a}} 
+bool {\bfseries \+\_\+is\+Playing}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a0fe23cb62cf3ed67ed6b7702f275c4ea}\label{classexperimental_1_1ui_1_1VideoPlayer_a0fe23cb62cf3ed67ed6b7702f275c4ea}} 
+bool {\bfseries \+\_\+full\+Screen\+Dirty}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a58f8bf206941b800ea79a36370166796}\label{classexperimental_1_1ui_1_1VideoPlayer_a58f8bf206941b800ea79a36370166796}} 
+bool {\bfseries \+\_\+full\+Screen\+Enabled}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a28522104398d581c31130e223226fd1c}\label{classexperimental_1_1ui_1_1VideoPlayer_a28522104398d581c31130e223226fd1c}} 
+bool {\bfseries \+\_\+keep\+Aspect\+Ratio\+Enabled}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_aa5f0f92b4da15ddcd6e78b3692bd44ee}\label{classexperimental_1_1ui_1_1VideoPlayer_aa5f0f92b4da15ddcd6e78b3692bd44ee}} 
+std\+::string {\bfseries \+\_\+video\+U\+RL}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a0ae4cf8d858edf937830f8ef5b48f6cb}\label{classexperimental_1_1ui_1_1VideoPlayer_a0ae4cf8d858edf937830f8ef5b48f6cb}} 
+Source {\bfseries \+\_\+video\+Source}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a8683642d113b4bac35f197e88760d195}\label{classexperimental_1_1ui_1_1VideoPlayer_a8683642d113b4bac35f197e88760d195}} 
+int {\bfseries \+\_\+video\+Player\+Index}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a20f6363c9bee7fff6c40466b830fc2a7}\label{classexperimental_1_1ui_1_1VideoPlayer_a20f6363c9bee7fff6c40466b830fc2a7}} 
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{cc\+Video\+Player\+Callback} {\bfseries \+\_\+event\+Callback}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a3b4de5836fcfa2f93adeb3687f68de02}\label{classexperimental_1_1ui_1_1VideoPlayer_a3b4de5836fcfa2f93adeb3687f68de02}} 
+void $\ast$ {\bfseries \+\_\+video\+View}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_aaafbeee4ef095d9c0a5661c178dcfbdf}\label{classexperimental_1_1ui_1_1VideoPlayer_aaafbeee4ef095d9c0a5661c178dcfbdf}} 
+bool {\bfseries \+\_\+is\+Looping}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a6afe5adc4d6e8b30a5643e499c51a270}\label{classexperimental_1_1ui_1_1VideoPlayer_a6afe5adc4d6e8b30a5643e499c51a270}} 
+bool {\bfseries \+\_\+is\+User\+Input\+Enabled}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a1e4b7bc03975d580e6ee5756c179d163}\label{classexperimental_1_1ui_1_1VideoPlayer_a1e4b7bc03975d580e6ee5756c179d163}} 
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}{Style\+Type} {\bfseries \+\_\+style\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Displays a video file. 
+
+\begin{DoxyNote}{Note}
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} displays a video file base on system widget. It\textquotesingle{}s mean \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} displays a video file above all graphical elements of cocos2d-\/x.  NA 
+\end{DoxyNote}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}\label{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!cc\+Video\+Player\+Callback@{cc\+Video\+Player\+Callback}}
+\index{cc\+Video\+Player\+Callback@{cc\+Video\+Player\+Callback}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{cc\+Video\+Player\+Callback}{ccVideoPlayerCallback}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$,\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type})$>$ \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{experimental\+::ui\+::\+Video\+Player\+::cc\+Video\+Player\+Callback}}
+
+A callback which will be called after specific \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} event happens. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}\label{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!cc\+Video\+Player\+Callback@{cc\+Video\+Player\+Callback}}
+\index{cc\+Video\+Player\+Callback@{cc\+Video\+Player\+Callback}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{cc\+Video\+Player\+Callback}{ccVideoPlayerCallback}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$,\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type})$>$ \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{experimental\+::ui\+::\+Video\+Player\+::cc\+Video\+Player\+Callback}}
+
+A callback which will be called after specific \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} event happens. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}\label{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{experimental\+::ui\+::\+Video\+Player\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Videoplayer play event type. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}\label{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{experimental\+::ui\+::\+Video\+Player\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Videoplayer play event type. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}\label{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!Style\+Type@{Style\+Type}}
+\index{Style\+Type@{Style\+Type}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{Style\+Type}{StyleType}}
+{\footnotesize\ttfamily enum \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}{experimental\+::ui\+::\+Video\+Player\+::\+Style\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Styles of how the the video player is presented For now only used on i\+OS to use either M\+P\+Movie\+Control\+Style\+Embedded (D\+E\+F\+A\+U\+LT) or M\+P\+Movie\+Control\+Style\+None (N\+O\+NE) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a18d411ee29a29b32e965daf2934836da}\label{classexperimental_1_1ui_1_1VideoPlayer_a18d411ee29a29b32e965daf2934836da}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{Video\+Player\+::cc\+Video\+Player\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Register a callback to be invoked when the video state is updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback that will be run. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a5c8ddd1fd32da63de5c88bf0570b10df}\label{classexperimental_1_1ui_1_1VideoPlayer_a5c8ddd1fd32da63de5c88bf0570b10df}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a64ebf250429fec0efea303b13cecf02e}{Video\+Player\+::cc\+Video\+Player\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Register a callback to be invoked when the video state is updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback that will be run. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}\label{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC@{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC}}
+\index{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC@{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+N\+C()}{CREATE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily experimental\+::ui\+::\+Video\+Player\+::\+C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}}]{ }\end{DoxyParamCaption})}
+
+Static create method for instancing a \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}\label{classexperimental_1_1ui_1_1VideoPlayer_a4030f5cbef6122fc7b377b21c641466b}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC@{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC}}
+\index{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC@{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+N\+C()}{CREATE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily experimental\+::ui\+::\+Video\+Player\+::\+C\+R\+E\+A\+T\+E\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}}]{ }\end{DoxyParamCaption})}
+
+Static create method for instancing a \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}\label{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{get\+File\+Name()}{getFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& experimental\+::ui\+::\+Video\+Player\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the local video file name. 
+
+\begin{DoxyReturn}{Returns}
+The video file name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}\label{classexperimental_1_1ui_1_1VideoPlayer_a82c2ba3d951b67d69420a83cd615d8b5}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{get\+File\+Name()}{getFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& experimental\+::ui\+::\+Video\+Player\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the local video file name. 
+
+\begin{DoxyReturn}{Returns}
+The video file name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}\label{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!get\+U\+RL@{get\+U\+RL}}
+\index{get\+U\+RL@{get\+U\+RL}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{get\+U\+R\+L()}{getURL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& experimental\+::ui\+::\+Video\+Player\+::get\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the U\+RL of remoting video source. 
+
+\begin{DoxyReturn}{Returns}
+A remoting U\+RL address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}\label{classexperimental_1_1ui_1_1VideoPlayer_a30f50a39a6fac899967613866ec274c1}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!get\+U\+RL@{get\+U\+RL}}
+\index{get\+U\+RL@{get\+U\+RL}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{get\+U\+R\+L()}{getURL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& experimental\+::ui\+::\+Video\+Player\+::get\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the U\+RL of remoting video source. 
+
+\begin{DoxyReturn}{Returns}
+A remoting U\+RL address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a466c25180bccd97a4e96708c94f6d1aa}\label{classexperimental_1_1ui_1_1VideoPlayer_a466c25180bccd97a4e96708c94f6d1aa}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Full\+Screen\+Enabled@{is\+Full\+Screen\+Enabled}}
+\index{is\+Full\+Screen\+Enabled@{is\+Full\+Screen\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Full\+Screen\+Enabled()}{isFullScreenEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool experimental\+::ui\+::\+Video\+Player\+::is\+Full\+Screen\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Indicates whether the video player is in full-\/screen mode.
+
+\begin{DoxyReturn}{Returns}
+True if the video player is in full-\/screen mode, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ab2381455eeb422dc2872dc4bd7613e70}\label{classexperimental_1_1ui_1_1VideoPlayer_ab2381455eeb422dc2872dc4bd7613e70}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Full\+Screen\+Enabled@{is\+Full\+Screen\+Enabled}}
+\index{is\+Full\+Screen\+Enabled@{is\+Full\+Screen\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Full\+Screen\+Enabled()}{isFullScreenEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Video\+Player\+::is\+Full\+Screen\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Indicates whether the video player is in full-\/screen mode.
+
+\begin{DoxyReturn}{Returns}
+True if the video player is in full-\/screen mode, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}\label{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Keep\+Aspect\+Ratio\+Enabled@{is\+Keep\+Aspect\+Ratio\+Enabled}}
+\index{is\+Keep\+Aspect\+Ratio\+Enabled@{is\+Keep\+Aspect\+Ratio\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Keep\+Aspect\+Ratio\+Enabled()}{isKeepAspectRatioEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool experimental\+::ui\+::\+Video\+Player\+::is\+Keep\+Aspect\+Ratio\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Indicates whether the video player keep aspect ratio when displaying the video. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}\label{classexperimental_1_1ui_1_1VideoPlayer_af3bf649848afacd0efd84e06656f2828}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Keep\+Aspect\+Ratio\+Enabled@{is\+Keep\+Aspect\+Ratio\+Enabled}}
+\index{is\+Keep\+Aspect\+Ratio\+Enabled@{is\+Keep\+Aspect\+Ratio\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Keep\+Aspect\+Ratio\+Enabled()}{isKeepAspectRatioEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool experimental\+::ui\+::\+Video\+Player\+::is\+Keep\+Aspect\+Ratio\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Indicates whether the video player keep aspect ratio when displaying the video. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a8b375ef4829ef04e022a9e7d0ada24aa}\label{classexperimental_1_1ui_1_1VideoPlayer_a8b375ef4829ef04e022a9e7d0ada24aa}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Looping@{is\+Looping}}
+\index{is\+Looping@{is\+Looping}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Looping()}{isLooping()}}
+{\footnotesize\ttfamily bool Video\+Player\+::is\+Looping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} is set with looping mode.
+
+\begin{DoxyReturn}{Returns}
+true if the videoplayer is set to loop, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a7b1ec8be02ad13696249b75e589586fc}\label{classexperimental_1_1ui_1_1VideoPlayer_a7b1ec8be02ad13696249b75e589586fc}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Playing()}{isPlaying()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool experimental\+::ui\+::\+Video\+Player\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} is playing.
+
+\begin{DoxyReturn}{Returns}
+True if currently playing, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_acc07be3ef6a4b2b639f9eb44d8c8f7d1}\label{classexperimental_1_1ui_1_1VideoPlayer_acc07be3ef6a4b2b639f9eb44d8c8f7d1}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+Playing()}{isPlaying()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Video\+Player\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} is playing.
+
+\begin{DoxyReturn}{Returns}
+True if currently playing, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a6fe34ddb8d9cb2774d9097ff1ea68c47}\label{classexperimental_1_1ui_1_1VideoPlayer_a6fe34ddb8d9cb2774d9097ff1ea68c47}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!is\+User\+Input\+Enabled@{is\+User\+Input\+Enabled}}
+\index{is\+User\+Input\+Enabled@{is\+User\+Input\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{is\+User\+Input\+Enabled()}{isUserInputEnabled()}}
+{\footnotesize\ttfamily bool Video\+Player\+::is\+User\+Input\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player} is set to listen user input to resume and pause the video
+
+\begin{DoxyReturn}{Returns}
+true if the videoplayer user input is set, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a88b4f377554bef7bca9c974c30dac91b}\label{classexperimental_1_1ui_1_1VideoPlayer_a88b4f377554bef7bca9c974c30dac91b}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!on\+Play\+Event@{on\+Play\+Event}}
+\index{on\+Play\+Event@{on\+Play\+Event}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{on\+Play\+Event()}{onPlayEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::on\+Play\+Event (\begin{DoxyParamCaption}\item[{int}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A function which will be called when video is playing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a76314bbf716a9b8685257c70fce7115f}\label{classexperimental_1_1ui_1_1VideoPlayer_a76314bbf716a9b8685257c70fce7115f}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!on\+Play\+Event@{on\+Play\+Event}}
+\index{on\+Play\+Event@{on\+Play\+Event}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{on\+Play\+Event()}{onPlayEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::on\+Play\+Event (\begin{DoxyParamCaption}\item[{int}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A function which will be called when video is playing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a29899b427d61c030036fda6c5ddcb10a}{Video\+Player\+::\+Event\+Type}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}\label{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!pause@{pause}}
+\index{pause@{pause}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pauses playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}\label{classexperimental_1_1ui_1_1VideoPlayer_a420bb0e3cdf1e34d257f1a9f0cb25436}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!pause@{pause}}
+\index{pause@{pause}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pauses playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_af435ce3d899cc2a47f18f3256a8c0cd9}\label{classexperimental_1_1ui_1_1VideoPlayer_af435ce3d899cc2a47f18f3256a8c0cd9}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!play@{play}}
+\index{play@{play}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a13ba0d270e849566f33ceffd7fb425c0}\label{classexperimental_1_1ui_1_1VideoPlayer_a13ba0d270e849566f33ceffd7fb425c0}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!play@{play}}
+\index{play@{play}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}\label{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!resume@{resume}}
+\index{resume@{resume}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resumes playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}\label{classexperimental_1_1ui_1_1VideoPlayer_a729841b1854104223900a8f6c711040a}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!resume@{resume}}
+\index{resume@{resume}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Resumes playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a10d60bf8f49a041a5d6700fede51aab5}\label{classexperimental_1_1ui_1_1VideoPlayer_a10d60bf8f49a041a5d6700fede51aab5}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!seek\+To@{seek\+To}}
+\index{seek\+To@{seek\+To}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{seek\+To()}{seekTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::seek\+To (\begin{DoxyParamCaption}\item[{float}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Seeks to specified time position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & The offset in seconds from the start to seek to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ad08fd0814f311ac160b5f0eab4e3009a}\label{classexperimental_1_1ui_1_1VideoPlayer_ad08fd0814f311ac160b5f0eab4e3009a}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!seek\+To@{seek\+To}}
+\index{seek\+To@{seek\+To}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{seek\+To()}{seekTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::seek\+To (\begin{DoxyParamCaption}\item[{float}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Seeks to specified time position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & The offset in seconds from the start to seek to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}\label{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+File\+Name@{set\+File\+Name}}
+\index{set\+File\+Name@{set\+File\+Name}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+File\+Name()}{setFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{video\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets a file path as a video source for \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}\label{classexperimental_1_1ui_1_1VideoPlayer_a329b486cfda4e7ec8e22945f4f22ea62}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+File\+Name@{set\+File\+Name}}
+\index{set\+File\+Name@{set\+File\+Name}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+File\+Name()}{setFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{video\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets a file path as a video source for \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}\label{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Full\+Screen\+Enabled@{set\+Full\+Screen\+Enabled}}
+\index{set\+Full\+Screen\+Enabled@{set\+Full\+Screen\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Full\+Screen\+Enabled()}{setFullScreenEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+Full\+Screen\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{fullscreen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Causes the video player to enter or exit full-\/screen mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fullscreen} & Specify true to enter full-\/screen mode or false to exit full-\/screen mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}\label{classexperimental_1_1ui_1_1VideoPlayer_ab22336427d46be866e023e5b57f5fe68}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Full\+Screen\+Enabled@{set\+Full\+Screen\+Enabled}}
+\index{set\+Full\+Screen\+Enabled@{set\+Full\+Screen\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Full\+Screen\+Enabled()}{setFullScreenEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+Full\+Screen\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{fullscreen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Causes the video player to enter or exit full-\/screen mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fullscreen} & Specify true to enter full-\/screen mode or false to exit full-\/screen mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a97787adc7535bbdbb74970784015ce01}\label{classexperimental_1_1ui_1_1VideoPlayer_a97787adc7535bbdbb74970784015ce01}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Keep\+Aspect\+Ratio\+Enabled@{set\+Keep\+Aspect\+Ratio\+Enabled}}
+\index{set\+Keep\+Aspect\+Ratio\+Enabled@{set\+Keep\+Aspect\+Ratio\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Keep\+Aspect\+Ratio\+Enabled()}{setKeepAspectRatioEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+Keep\+Aspect\+Ratio\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Causes the video player to keep aspect ratio or no when displaying the video.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Specify true to keep aspect ratio or false to scale the video until both dimensions fit the visible bounds of the view exactly. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a0421f619865f1ba5978e9cfbaf73e1e8}\label{classexperimental_1_1ui_1_1VideoPlayer_a0421f619865f1ba5978e9cfbaf73e1e8}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Keep\+Aspect\+Ratio\+Enabled@{set\+Keep\+Aspect\+Ratio\+Enabled}}
+\index{set\+Keep\+Aspect\+Ratio\+Enabled@{set\+Keep\+Aspect\+Ratio\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Keep\+Aspect\+Ratio\+Enabled()}{setKeepAspectRatioEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::set\+Keep\+Aspect\+Ratio\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Causes the video player to keep aspect ratio or no when displaying the video.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Specify true to keep aspect ratio or false to scale the video until both dimensions fit the visible bounds of the view exactly. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_ac9a14f276f28fed8fde5c29f79402f1f}\label{classexperimental_1_1ui_1_1VideoPlayer_ac9a14f276f28fed8fde5c29f79402f1f}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Looping@{set\+Looping}}
+\index{set\+Looping@{set\+Looping}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Looping()}{setLooping()}}
+{\footnotesize\ttfamily void Video\+Player\+::set\+Looping (\begin{DoxyParamCaption}\item[{bool}]{looping }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set if playback is done in loop mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em looping} & the video will or not automatically restart at the end \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a89e6a62ff9b3b05281a31180098a1ed3}\label{classexperimental_1_1ui_1_1VideoPlayer_a89e6a62ff9b3b05281a31180098a1ed3}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+Style()}{setStyle()}}
+{\footnotesize\ttfamily void Video\+Player\+::set\+Style (\begin{DoxyParamCaption}\item[{\hyperlink{classexperimental_1_1ui_1_1VideoPlayer_a65711269d4eca8fe125aeda2928a80ec}{Style\+Type}}]{style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the style of the player
+
+
+\begin{DoxyParams}{Parameters}
+{\em style} & The corresponding style \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}\label{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+U\+RL@{set\+U\+RL}}
+\index{set\+U\+RL@{set\+U\+RL}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+U\+R\+L()}{setURL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+U\+RL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+video\+U\+RL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets a U\+RL as a video source for \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}\label{classexperimental_1_1ui_1_1VideoPlayer_a2491bab42a29abbb44710aecb730b566}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+U\+RL@{set\+U\+RL}}
+\index{set\+U\+RL@{set\+U\+RL}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+U\+R\+L()}{setURL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::set\+U\+RL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+video\+U\+RL }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets a U\+RL as a video source for \hyperlink{classexperimental_1_1ui_1_1VideoPlayer}{Video\+Player}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a1adc885898d12a1aba789699ed0ed84e}\label{classexperimental_1_1ui_1_1VideoPlayer_a1adc885898d12a1aba789699ed0ed84e}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!set\+User\+Input\+Enabled@{set\+User\+Input\+Enabled}}
+\index{set\+User\+Input\+Enabled@{set\+User\+Input\+Enabled}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{set\+User\+Input\+Enabled()}{setUserInputEnabled()}}
+{\footnotesize\ttfamily void Video\+Player\+::set\+User\+Input\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set if the player will enable user input for basic pause and resume of video
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+Input} & If true, input will be handled for basic functionality (pause/resume) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_af28796de69c4a67f627945fe070861bf}\label{classexperimental_1_1ui_1_1VideoPlayer_af28796de69c4a67f627945fe070861bf}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!stop@{stop}}
+\index{stop@{stop}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Video\+Player\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stops playback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1VideoPlayer_a1f0ecb61a2f7860525be697832cb6b8d}\label{classexperimental_1_1ui_1_1VideoPlayer_a1f0ecb61a2f7860525be697832cb6b8d}} 
+\index{experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}!stop@{stop}}
+\index{stop@{stop}!experimental\+::ui\+::\+Video\+Player@{experimental\+::ui\+::\+Video\+Player}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+Player\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stops playback. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Video\+Player.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Video\+Player-\/android.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Video\+Player-\/ios.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Video\+Player-\/tizen.\+cpp\end{DoxyCompactItemize}

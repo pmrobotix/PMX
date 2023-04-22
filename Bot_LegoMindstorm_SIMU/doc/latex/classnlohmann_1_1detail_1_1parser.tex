@@ -1,0 +1,86 @@
+\hypertarget{classnlohmann_1_1detail_1_1parser}{}\section{nlohmann\+:\+:detail\+:\+:parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1parser}\index{nlohmann\+::detail\+::parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$@{nlohmann\+::detail\+::parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$}}
+
+
+syntax analysis  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a33b852bf63cba58310d9c0d1242cfb12}\label{classnlohmann_1_1detail_1_1parser_a33b852bf63cba58310d9c0d1242cfb12}} 
+\hyperlink{classnlohmann_1_1detail_1_1parser_a33b852bf63cba58310d9c0d1242cfb12}{parser} (Input\+Adapter\+Type \&\&adapter, const parser\+\_\+callback\+\_\+t$<$ Basic\+Json\+Type $>$ cb=nullptr, const bool allow\+\_\+exceptions\+\_\+=true, const bool skip\+\_\+comments=false)
+\begin{DoxyCompactList}\small\item\em a parser reading from an input adapter \end{DoxyCompactList}\item 
+void \hyperlink{classnlohmann_1_1detail_1_1parser_a75fb9145ea85f1ad9cc14f61981e1111}{parse} (const bool \hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{strict}, Basic\+Json\+Type \&result)
+\begin{DoxyCompactList}\small\item\em public parser interface \end{DoxyCompactList}\item 
+bool \hyperlink{classnlohmann_1_1detail_1_1parser_a39784a586867c05388cb0adca0fd72b5}{accept} (const bool \hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{strict}=true)
+\begin{DoxyCompactList}\small\item\em public accept interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a073b8313a5194aac3a7d5da0d935788c}\label{classnlohmann_1_1detail_1_1parser_a073b8313a5194aac3a7d5da0d935788c}} 
+{\footnotesize template$<$typename S\+AX $>$ }\\bool {\bfseries sax\+\_\+parse} (S\+AX $\ast$sax, const bool \hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{strict}=true)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Input\+Adapter\+Type$>$\newline
+class nlohmann\+::detail\+::parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$}
+
+syntax analysis 
+
+This class implements a recursive descent parser. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a39784a586867c05388cb0adca0fd72b5}\label{classnlohmann_1_1detail_1_1parser_a39784a586867c05388cb0adca0fd72b5}} 
+\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!accept@{accept}}
+\index{accept@{accept}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::accept (\begin{DoxyParamCaption}\item[{const bool}]{strict = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+public accept interface 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em strict} & whether to expect the last token to be E\+OF \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the input is a proper J\+S\+ON text 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a75fb9145ea85f1ad9cc14f61981e1111}\label{classnlohmann_1_1detail_1_1parser_a75fb9145ea85f1ad9cc14f61981e1111}} 
+\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!parse@{parse}}
+\index{parse@{parse}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::parse (\begin{DoxyParamCaption}\item[{const bool}]{strict,  }\item[{Basic\+Json\+Type \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+public parser interface 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em strict} & whether to expect the last token to be E\+OF \\
+\hline
+\mbox{\tt in,out}  & {\em result} & parsed J\+S\+ON value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+101} & in case of an unexpected token \\
+\hline
+{\em parse\+\_\+error.\+102} & if to\+\_\+unicode fails or surrogate error \\
+\hline
+{\em parse\+\_\+error.\+103} & if to\+\_\+unicode fails \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/json.\+hpp\end{DoxyCompactItemize}

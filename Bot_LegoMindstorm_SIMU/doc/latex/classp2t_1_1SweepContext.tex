@@ -1,0 +1,172 @@
+\hypertarget{classp2t_1_1SweepContext}{}\section{p2t\+:\+:Sweep\+Context Class Reference}
+\label{classp2t_1_1SweepContext}\index{p2t\+::\+Sweep\+Context@{p2t\+::\+Sweep\+Context}}
+
+
+Collaboration diagram for p2t\+:\+:Sweep\+Context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classp2t_1_1SweepContext__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structp2t_1_1SweepContext_1_1Basin}{Basin}
+\item 
+struct \hyperlink{structp2t_1_1SweepContext_1_1EdgeEvent}{Edge\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}\label{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}} 
+\hyperlink{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}{Sweep\+Context} (const std\+::vector$<$ \hyperlink{structp2t_1_1Point}{Point} $\ast$$>$ \&polyline)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}\label{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}} 
+\hyperlink{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}{$\sim$\+Sweep\+Context} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_abd31ac7cc3ba9d418e08d5583ae7d32e}\label{classp2t_1_1SweepContext_abd31ac7cc3ba9d418e08d5583ae7d32e}} 
+void {\bfseries set\+\_\+head} (\hyperlink{structp2t_1_1Point}{Point} $\ast$p1)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a6200a1306eb5ddb4f41fc44ad7da568d}\label{classp2t_1_1SweepContext_a6200a1306eb5ddb4f41fc44ad7da568d}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries head} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ac685ab377d5f1b184b4bb94e151a2af9}\label{classp2t_1_1SweepContext_ac685ab377d5f1b184b4bb94e151a2af9}} 
+void {\bfseries set\+\_\+tail} (\hyperlink{structp2t_1_1Point}{Point} $\ast$p1)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a638a5e0fa56ceed1a701480dfbe971c0}\label{classp2t_1_1SweepContext_a638a5e0fa56ceed1a701480dfbe971c0}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries tail} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a8b15732d7078f336d0017475c422c15a}\label{classp2t_1_1SweepContext_a8b15732d7078f336d0017475c422c15a}} 
+size\+\_\+t {\bfseries point\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a5a29215e924f8a9f34347f7ea54f4ea2}\label{classp2t_1_1SweepContext_a5a29215e924f8a9f34347f7ea54f4ea2}} 
+\hyperlink{structp2t_1_1Node}{Node} \& {\bfseries Locate\+Node} (const \hyperlink{structp2t_1_1Point}{Point} \&point)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a0ea069bc88f6f7cd4b0022d988017d8d}\label{classp2t_1_1SweepContext_a0ea069bc88f6f7cd4b0022d988017d8d}} 
+void {\bfseries Remove\+Node} (\hyperlink{structp2t_1_1Node}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a7b4165dfb204b7058fe08a7e8611b738}\label{classp2t_1_1SweepContext_a7b4165dfb204b7058fe08a7e8611b738}} 
+void {\bfseries Create\+Advancing\+Front} (const std\+::vector$<$ \hyperlink{structp2t_1_1Node}{Node} $\ast$$>$ \&nodes)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}\label{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}} 
+void \hyperlink{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}{Map\+Triangle\+To\+Nodes} (\hyperlink{classp2t_1_1Triangle}{Triangle} \&t)
+\begin{DoxyCompactList}\small\item\em Try to map a node to all sides of this triangle that don\textquotesingle{}t have a neighbor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a9ae8715f961ca7e61cc5a986f6afbe12}\label{classp2t_1_1SweepContext_a9ae8715f961ca7e61cc5a986f6afbe12}} 
+void {\bfseries Add\+To\+Map} (\hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a4e3b5347e7d84b6b10be3f0022bad773}\label{classp2t_1_1SweepContext_a4e3b5347e7d84b6b10be3f0022bad773}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries Get\+Point} (size\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ae37f1dcc28825cffc9a0a7509686167f}\label{classp2t_1_1SweepContext_ae37f1dcc28825cffc9a0a7509686167f}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries Get\+Points} ()
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a7fb0c50ea27a52a1f912809404657f89}\label{classp2t_1_1SweepContext_a7fb0c50ea27a52a1f912809404657f89}} 
+void {\bfseries Remove\+From\+Map} (\hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a109ad5394add88882d3d547cb2f25b95}\label{classp2t_1_1SweepContext_a109ad5394add88882d3d547cb2f25b95}} 
+void {\bfseries Add\+Hole} (const std\+::vector$<$ \hyperlink{structp2t_1_1Point}{Point} $\ast$$>$ \&polyline)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a1197bffb2102eef7615a143ee5ce0437}\label{classp2t_1_1SweepContext_a1197bffb2102eef7615a143ee5ce0437}} 
+void {\bfseries Add\+Point} (\hyperlink{structp2t_1_1Point}{Point} $\ast$point)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a96c74c5c56fc875ab90edb5c4bec0ee2}\label{classp2t_1_1SweepContext_a96c74c5c56fc875ab90edb5c4bec0ee2}} 
+\hyperlink{classp2t_1_1AdvancingFront}{Advancing\+Front} $\ast$ {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a37a0e33f03be651567ae13cd65c25161}\label{classp2t_1_1SweepContext_a37a0e33f03be651567ae13cd65c25161}} 
+void {\bfseries Mesh\+Clean} (\hyperlink{classp2t_1_1Triangle}{Triangle} \&triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_aa1edb4e619dc44110d3aa0c71840fe21}\label{classp2t_1_1SweepContext_aa1edb4e619dc44110d3aa0c71840fe21}} 
+std\+::vector$<$ \hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$ $>$ \& {\bfseries Get\+Triangles} ()
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ab954404d08be7fb3b6c4cfb643befcfb}\label{classp2t_1_1SweepContext_ab954404d08be7fb3b6c4cfb643befcfb}} 
+std\+::list$<$ \hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$ $>$ \& {\bfseries Get\+Map} ()
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}\label{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}} 
+\hyperlink{classp2t_1_1SweepContext_a0e9d5ab3f563e9411c57a81d6f5fa784}{Sweep\+Context} (const std\+::vector$<$ \hyperlink{structp2t_1_1Point}{Point} $\ast$$>$ \&polyline)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}\label{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}} 
+\hyperlink{classp2t_1_1SweepContext_a4275f1eb166fe4c69d18670898c65f98}{$\sim$\+Sweep\+Context} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_abd31ac7cc3ba9d418e08d5583ae7d32e}\label{classp2t_1_1SweepContext_abd31ac7cc3ba9d418e08d5583ae7d32e}} 
+void {\bfseries set\+\_\+head} (\hyperlink{structp2t_1_1Point}{Point} $\ast$p1)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_aaf2c76fcee16a064144bee83f7452e98}\label{classp2t_1_1SweepContext_aaf2c76fcee16a064144bee83f7452e98}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries head} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ac685ab377d5f1b184b4bb94e151a2af9}\label{classp2t_1_1SweepContext_ac685ab377d5f1b184b4bb94e151a2af9}} 
+void {\bfseries set\+\_\+tail} (\hyperlink{structp2t_1_1Point}{Point} $\ast$p1)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ac9bdad9a5d768fe4cfa2cb81a8258b50}\label{classp2t_1_1SweepContext_ac9bdad9a5d768fe4cfa2cb81a8258b50}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries tail} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a8b15732d7078f336d0017475c422c15a}\label{classp2t_1_1SweepContext_a8b15732d7078f336d0017475c422c15a}} 
+size\+\_\+t {\bfseries point\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_abd006c55ca41efae6c24a61f9edcdaac}\label{classp2t_1_1SweepContext_abd006c55ca41efae6c24a61f9edcdaac}} 
+\hyperlink{structp2t_1_1Node}{Node} \& {\bfseries Locate\+Node} (const \hyperlink{structp2t_1_1Point}{Point} \&point)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a0ea069bc88f6f7cd4b0022d988017d8d}\label{classp2t_1_1SweepContext_a0ea069bc88f6f7cd4b0022d988017d8d}} 
+void {\bfseries Remove\+Node} (\hyperlink{structp2t_1_1Node}{Node} $\ast$node)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a7b4165dfb204b7058fe08a7e8611b738}\label{classp2t_1_1SweepContext_a7b4165dfb204b7058fe08a7e8611b738}} 
+void {\bfseries Create\+Advancing\+Front} (const std\+::vector$<$ \hyperlink{structp2t_1_1Node}{Node} $\ast$$>$ \&nodes)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}\label{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}} 
+void \hyperlink{classp2t_1_1SweepContext_aa1c59ec4b2bc6d6f3b248c452d6993c1}{Map\+Triangle\+To\+Nodes} (\hyperlink{classp2t_1_1Triangle}{Triangle} \&t)
+\begin{DoxyCompactList}\small\item\em Try to map a node to all sides of this triangle that don\textquotesingle{}t have a neighbor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a9ae8715f961ca7e61cc5a986f6afbe12}\label{classp2t_1_1SweepContext_a9ae8715f961ca7e61cc5a986f6afbe12}} 
+void {\bfseries Add\+To\+Map} (\hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ac3e25e5fd14c16bc2ee9908fe4895caf}\label{classp2t_1_1SweepContext_ac3e25e5fd14c16bc2ee9908fe4895caf}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries Get\+Point} (size\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ae37f1dcc28825cffc9a0a7509686167f}\label{classp2t_1_1SweepContext_ae37f1dcc28825cffc9a0a7509686167f}} 
+\hyperlink{structp2t_1_1Point}{Point} $\ast$ {\bfseries Get\+Points} ()
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a7fb0c50ea27a52a1f912809404657f89}\label{classp2t_1_1SweepContext_a7fb0c50ea27a52a1f912809404657f89}} 
+void {\bfseries Remove\+From\+Map} (\hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a109ad5394add88882d3d547cb2f25b95}\label{classp2t_1_1SweepContext_a109ad5394add88882d3d547cb2f25b95}} 
+void {\bfseries Add\+Hole} (const std\+::vector$<$ \hyperlink{structp2t_1_1Point}{Point} $\ast$$>$ \&polyline)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a1197bffb2102eef7615a143ee5ce0437}\label{classp2t_1_1SweepContext_a1197bffb2102eef7615a143ee5ce0437}} 
+void {\bfseries Add\+Point} (\hyperlink{structp2t_1_1Point}{Point} $\ast$point)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ae0ce12ccc07d50df6710d88199b03eb5}\label{classp2t_1_1SweepContext_ae0ce12ccc07d50df6710d88199b03eb5}} 
+\hyperlink{classp2t_1_1AdvancingFront}{Advancing\+Front} $\ast$ {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a37a0e33f03be651567ae13cd65c25161}\label{classp2t_1_1SweepContext_a37a0e33f03be651567ae13cd65c25161}} 
+void {\bfseries Mesh\+Clean} (\hyperlink{classp2t_1_1Triangle}{Triangle} \&triangle)
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_af0ea6f673aa6de9452e24a7f73668d1d}\label{classp2t_1_1SweepContext_af0ea6f673aa6de9452e24a7f73668d1d}} 
+std\+::vector$<$ \hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$ $>$ \& {\bfseries Get\+Triangles} ()
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_ab91d4326fc978072ae1611256d6b6c23}\label{classp2t_1_1SweepContext_ab91d4326fc978072ae1611256d6b6c23}} 
+std\+::list$<$ \hyperlink{classp2t_1_1Triangle}{Triangle} $\ast$ $>$ \& {\bfseries Get\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a68645009952205504856a17846c762ce}\label{classp2t_1_1SweepContext_a68645009952205504856a17846c762ce}} 
+std\+::vector$<$ \hyperlink{structp2t_1_1Edge}{Edge} $\ast$ $>$ {\bfseries edge\+\_\+list}
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a79c599f974533a926b6a9ec73870e7d4}\label{classp2t_1_1SweepContext_a79c599f974533a926b6a9ec73870e7d4}} 
+\hyperlink{structp2t_1_1SweepContext_1_1Basin}{Basin} {\bfseries basin}
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a86a138afe29697cfcd33158ec59c663e}\label{classp2t_1_1SweepContext_a86a138afe29697cfcd33158ec59c663e}} 
+\hyperlink{structp2t_1_1SweepContext_1_1EdgeEvent}{Edge\+Event} {\bfseries edge\+\_\+event}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classp2t_1_1SweepContext_a202298be2e52b0b25163e00cd5bea47a}\label{classp2t_1_1SweepContext_a202298be2e52b0b25163e00cd5bea47a}} 
+class {\bfseries Sweep}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/poly2tri/sweep/sweep\+\_\+context.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/poly2tri/sweep/sweep\+\_\+context.\+cc\end{DoxyCompactItemize}

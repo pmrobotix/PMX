@@ -1,0 +1,230 @@
+\hypertarget{classLedBar}{}\section{Led\+Bar Class Reference}
+\label{classLedBar}\index{Led\+Bar@{Led\+Bar}}
+
+
+Inheritance diagram for Led\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classLedBar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Led\+Bar\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classLedBar__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLedBar_a4f2e86893b6d174c1dd11a46c3dcf480}{Led\+Bar} (std\+::string bot\+Id, \hyperlink{classActions}{Actions} \&\hyperlink{classAActionsElement_a3fbd5b8201049a59602d8b7201a9ef8a}{actions}, int nb)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a8839ddd7f8500315818ab31d8b9aa0d9}\label{classLedBar_a8839ddd7f8500315818ab31d8b9aa0d9}} 
+\hyperlink{classLedBar_a8839ddd7f8500315818ab31d8b9aa0d9}{$\sim$\+Led\+Bar} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a94f27bc744c6cfa97c2e9392c3b59182}\label{classLedBar_a94f27bc744c6cfa97c2e9392c3b59182}} 
+std\+::string {\bfseries id} ()
+\item 
+\mbox{\Hypertarget{classLedBar_a6c7139e1a581510c85c11a318c7a0cf7}\label{classLedBar_a6c7139e1a581510c85c11a318c7a0cf7}} 
+void {\bfseries reset\+Stop} ()
+\item 
+\mbox{\Hypertarget{classLedBar_ae24456e9bb03e44adff5e4d9b6efed59}\label{classLedBar_ae24456e9bb03e44adff5e4d9b6efed59}} 
+bool {\bfseries has\+To\+Stop} ()
+\item 
+\mbox{\Hypertarget{classLedBar_a67de658c61e05e5b4d13f2c9bf8eb7ed}\label{classLedBar_a67de658c61e05e5b4d13f2c9bf8eb7ed}} 
+void {\bfseries running} (bool value)
+\item 
+\mbox{\Hypertarget{classLedBar_a2e77350f53c4579d7f71cc00d4f26dad}\label{classLedBar_a2e77350f53c4579d7f71cc00d4f26dad}} 
+bool {\bfseries running} () const
+\item 
+\mbox{\Hypertarget{classLedBar_a15e2f8d21596686ea1a6938899fe4251}\label{classLedBar_a15e2f8d21596686ea1a6938899fe4251}} 
+int {\bfseries nb\+Led} () const
+\item 
+\mbox{\Hypertarget{classLedBar_a0c1e129df2b8cec98a190bf3c9aa18d3}\label{classLedBar_a0c1e129df2b8cec98a190bf3c9aa18d3}} 
+void \hyperlink{classLedBar_a0c1e129df2b8cec98a190bf3c9aa18d3}{stop} (bool wait=true)
+\begin{DoxyCompactList}\small\item\em Donne l\textquotesingle{}ordre d\textquotesingle{}arreter et attend au moins 1 ms. \end{DoxyCompactList}\item 
+void \hyperlink{classLedBar_a4f6f26d47d0ea82380cebb8c2b9ea7c3}{set} (int position, Led\+Color color)
+\begin{DoxyCompactList}\small\item\em Change le statut d\textquotesingle{}une led. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a7bb1b0cf26c7202807bdc3e68e1f2e48}\label{classLedBar_a7bb1b0cf26c7202807bdc3e68e1f2e48}} 
+void {\bfseries rainbow} (uint nb, uint timeus)
+\item 
+void \hyperlink{classLedBar_aebfc6c5221a223364044fc5c6efacd7a}{set\+On} (int position)
+\begin{DoxyCompactList}\small\item\em Active une led spécifique. \end{DoxyCompactList}\item 
+void \hyperlink{classLedBar_a3069414fedb0a97740ffd3ff819d63f1}{set\+Off} (int position)
+\begin{DoxyCompactList}\small\item\em Désactive une led spécifique. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a31ff074dd2184f11b0fc4858542a8050}\label{classLedBar_a31ff074dd2184f11b0fc4858542a8050}} 
+void \hyperlink{classLedBar_a31ff074dd2184f11b0fc4858542a8050}{flash} (uint hex\+Position, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Allume/eteint les leds définit par hex\+Value, max = 0x\+FF. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_aa771bd13ff72b872ec4c34e9ef68ea1b}\label{classLedBar_aa771bd13ff72b872ec4c34e9ef68ea1b}} 
+void \hyperlink{classLedBar_aa771bd13ff72b872ec4c34e9ef68ea1b}{reset\+All} ()
+\begin{DoxyCompactList}\small\item\em Eteint toutes leds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_ad91d62f821e6b1eb6689a0d23f021097}\label{classLedBar_ad91d62f821e6b1eb6689a0d23f021097}} 
+void \hyperlink{classLedBar_ad91d62f821e6b1eb6689a0d23f021097}{flash\+All} (Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Allume toutes leds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_afad90556b784654b618c527eb19c50dd}\label{classLedBar_afad90556b784654b618c527eb19c50dd}} 
+void \hyperlink{classLedBar_afad90556b784654b618c527eb19c50dd}{blink} (uint nb, uint timeus, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Clignote toutes les leds nb fois. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_abc84af9e1f24d8e7a0c9a7f67767c34f}\label{classLedBar_abc84af9e1f24d8e7a0c9a7f67767c34f}} 
+void \hyperlink{classLedBar_abc84af9e1f24d8e7a0c9a7f67767c34f}{blink\+Pin} (uint nb, uint timeus, int position, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Clignote une led nb fois pendant timeus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_ab34bee22db4d68f6c6057e2fbb3b33cd}\label{classLedBar_ab34bee22db4d68f6c6057e2fbb3b33cd}} 
+void \hyperlink{classLedBar_ab34bee22db4d68f6c6057e2fbb3b33cd}{alternate} (uint nb, uint timeus, uint begin\+Val, uint end\+Val, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Clignote toutes les leds nb fois sur les 2 valeurs hex val1 et val2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a5272d702b081c2fe6288a690e92cc488}\label{classLedBar_a5272d702b081c2fe6288a690e92cc488}} 
+void \hyperlink{classLedBar_a5272d702b081c2fe6288a690e92cc488}{k2mil} (uint nb, uint timeus, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Clignote toutes les leds nb fois sur les 2 valeurs hex val1 et val2. \end{DoxyCompactList}\item 
+void \hyperlink{classLedBar_a985018b17b5051935a30d19e32880e11}{start\+Set} (uint position, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action de changer le statut d\textquotesingle{}une led en tache parallele sur l\textquotesingle{}actionmanager. \end{DoxyCompactList}\item 
+void \hyperlink{classLedBar_af2eb11c44122b3206a657eb3b0b6f05e}{start\+Set\+On} (uint position)
+\begin{DoxyCompactList}\small\item\em Active une led spécifique. \end{DoxyCompactList}\item 
+void \hyperlink{classLedBar_ad37f92ef4b6487afc785d739a59a32aa}{start\+Set\+Off} (uint position)
+\begin{DoxyCompactList}\small\item\em Désactive une led spécifique. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a77df047f6a8fadf44a3d24d51eb27f68}\label{classLedBar_a77df047f6a8fadf44a3d24d51eb27f68}} 
+void \hyperlink{classLedBar_a77df047f6a8fadf44a3d24d51eb27f68}{start\+Reset} ()
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action d\textquotesingle{}éteindre toutes les leds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a76595197ac9045d04f108bed1f3ac4fd}\label{classLedBar_a76595197ac9045d04f108bed1f3ac4fd}} 
+void \hyperlink{classLedBar_a76595197ac9045d04f108bed1f3ac4fd}{start\+Flash} ()
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action d\textquotesingle{}allumer toutes les leds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a714ebd39a178ddd3d602deed7af0bf56}\label{classLedBar_a714ebd39a178ddd3d602deed7af0bf56}} 
+void \hyperlink{classLedBar_a714ebd39a178ddd3d602deed7af0bf56}{start\+Flash\+Value} (uint hex\+Value, Led\+Color color)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action d\textquotesingle{}allumer les leds selon la valeur hex\+Value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_ac680352e575b6a86e40e0d9143db38d7}\label{classLedBar_ac680352e575b6a86e40e0d9143db38d7}} 
+void \hyperlink{classLedBar_ac680352e575b6a86e40e0d9143db38d7}{start\+Timer\+Alternate} (uint nb, uint timeus, uint hex\+Value, uint hex\+Value\+Next, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN, bool wait=false)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action de faire alterner les leds selon les valeurs hex\+Value et hex\+Value\+Next. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_ac7514d41eb32a1a7a47d742ca4892a50}\label{classLedBar_ac7514d41eb32a1a7a47d742ca4892a50}} 
+void \hyperlink{classLedBar_ac7514d41eb32a1a7a47d742ca4892a50}{start\+Timer\+Blink} (uint nb, uint timeus, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN, bool wait=false)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action de faire clignoter toutes les leds nb fois tous les timeus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a2fb2bd9ec3e7fcb7451cb859db3a6846}\label{classLedBar_a2fb2bd9ec3e7fcb7451cb859db3a6846}} 
+void \hyperlink{classLedBar_a2fb2bd9ec3e7fcb7451cb859db3a6846}{start\+Timer\+Blink\+Pin} (uint nb, uint timeus, int position, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN, bool wait=false)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action de faire clignoter une led nb fois tous les timeus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBar_a4e3205aef3a0d44b623d4f8434235cbb}\label{classLedBar_a4e3205aef3a0d44b623d4f8434235cbb}} 
+void \hyperlink{classLedBar_a4e3205aef3a0d44b623d4f8434235cbb}{start\+Timer\+K2mil} (uint nb, uint timeus, Led\+Color color=L\+E\+D\+\_\+\+G\+R\+E\+EN, bool wait=false)
+\begin{DoxyCompactList}\small\item\em Lance l\textquotesingle{}action d\textquotesingle{}allumer alternativement les leds à la \char`\"{}\+K2000\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLedBar_a4f2e86893b6d174c1dd11a46c3dcf480}\label{classLedBar_a4f2e86893b6d174c1dd11a46c3dcf480}} 
+\index{Led\+Bar@{Led\+Bar}!Led\+Bar@{Led\+Bar}}
+\index{Led\+Bar@{Led\+Bar}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{Led\+Bar()}{LedBar()}}
+{\footnotesize\ttfamily Led\+Bar\+::\+Led\+Bar (\begin{DoxyParamCaption}\item[{std\+::string}]{bot\+Id,  }\item[{\hyperlink{classActions}{Actions} \&}]{actions,  }\item[{int}]{nb }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb} & Number of leds in the \hyperlink{classLedBar}{Led\+Bar}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLedBar_a4f6f26d47d0ea82380cebb8c2b9ea7c3}\label{classLedBar_a4f6f26d47d0ea82380cebb8c2b9ea7c3}} 
+\index{Led\+Bar@{Led\+Bar}!set@{set}}
+\index{set@{set}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Led\+Bar\+::set (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{Led\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Change le statut d\textquotesingle{}une led. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led. \\
+\hline
+{\em color} & La couleur de la led, 0\+:O\+FF, 1\+:G\+R\+E\+EN, and optional 2\+:R\+ED 3\+:O\+R\+A\+N\+GE) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLedBar_a3069414fedb0a97740ffd3ff819d63f1}\label{classLedBar_a3069414fedb0a97740ffd3ff819d63f1}} 
+\index{Led\+Bar@{Led\+Bar}!set\+Off@{set\+Off}}
+\index{set\+Off@{set\+Off}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{set\+Off()}{setOff()}}
+{\footnotesize\ttfamily void Led\+Bar\+::set\+Off (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Désactive une led spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLedBar_aebfc6c5221a223364044fc5c6efacd7a}\label{classLedBar_aebfc6c5221a223364044fc5c6efacd7a}} 
+\index{Led\+Bar@{Led\+Bar}!set\+On@{set\+On}}
+\index{set\+On@{set\+On}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{set\+On()}{setOn()}}
+{\footnotesize\ttfamily void Led\+Bar\+::set\+On (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Active une led spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLedBar_a985018b17b5051935a30d19e32880e11}\label{classLedBar_a985018b17b5051935a30d19e32880e11}} 
+\index{Led\+Bar@{Led\+Bar}!start\+Set@{start\+Set}}
+\index{start\+Set@{start\+Set}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{start\+Set()}{startSet()}}
+{\footnotesize\ttfamily void Led\+Bar\+::start\+Set (\begin{DoxyParamCaption}\item[{uint}]{position,  }\item[{Led\+Color}]{color = {\ttfamily LED\+\_\+GREEN} }\end{DoxyParamCaption})}
+
+
+
+Lance l\textquotesingle{}action de changer le statut d\textquotesingle{}une led en tache parallele sur l\textquotesingle{}actionmanager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led (de 0 à 7). \\
+\hline
+{\em status} & Le statut de la led. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLedBar_ad37f92ef4b6487afc785d739a59a32aa}\label{classLedBar_ad37f92ef4b6487afc785d739a59a32aa}} 
+\index{Led\+Bar@{Led\+Bar}!start\+Set\+Off@{start\+Set\+Off}}
+\index{start\+Set\+Off@{start\+Set\+Off}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{start\+Set\+Off()}{startSetOff()}}
+{\footnotesize\ttfamily void Led\+Bar\+::start\+Set\+Off (\begin{DoxyParamCaption}\item[{uint}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Désactive une led spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led (de 0 à 7). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLedBar_af2eb11c44122b3206a657eb3b0b6f05e}\label{classLedBar_af2eb11c44122b3206a657eb3b0b6f05e}} 
+\index{Led\+Bar@{Led\+Bar}!start\+Set\+On@{start\+Set\+On}}
+\index{start\+Set\+On@{start\+Set\+On}!Led\+Bar@{Led\+Bar}}
+\subsubsection{\texorpdfstring{start\+Set\+On()}{startSetOn()}}
+{\footnotesize\ttfamily void Led\+Bar\+::start\+Set\+On (\begin{DoxyParamCaption}\item[{uint}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Active une led spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & La position de la led (de 0 à 7). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Led\+Bar.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Led\+Bar.\+cpp\end{DoxyCompactItemize}

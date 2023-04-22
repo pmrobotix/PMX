@@ -1,0 +1,607 @@
+\hypertarget{classAtlasNode}{}\section{Atlas\+Node Class Reference}
+\label{classAtlasNode}\index{Atlas\+Node@{Atlas\+Node}}
+
+
+\hyperlink{classAtlasNode}{Atlas\+Node} is a subclass of \hyperlink{classNode}{Node} that implements the R\+G\+B\+A\+Protocol and Texture\+Protocol protocol. It knows how to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} object. If you are going to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} consider subclassing \hyperlink{classAtlasNode}{Atlas\+Node} (or a subclass of \hyperlink{classAtlasNode}{Atlas\+Node}). All features from \hyperlink{classNode}{Node} are valid, plus the following features\+:  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Atlas\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Atlas\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classAtlasNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Atlas\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAtlasNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAtlasNode_ace1c88a0277a601bc02180da9641ebcd}{update\+Atlas\+Values} ()
+\item 
+void \hyperlink{classAtlasNode_ae008de73e7b0be719b73b57a94722894}{set\+Texture\+Atlas} (\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas)
+\item 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classAtlasNode_adce0f217e64e54bb095835acbea6174f}{get\+Texture\+Atlas} () const
+\item 
+\mbox{\Hypertarget{classAtlasNode_a75735e107d32bdd019216b8b3a706467}\label{classAtlasNode_a75735e107d32bdd019216b8b3a706467}} 
+void {\bfseries set\+Quads\+To\+Draw} (ssize\+\_\+t quads\+To\+Draw)
+\item 
+\mbox{\Hypertarget{classAtlasNode_a5fd045ec7e53606e5f58947359a3c332}\label{classAtlasNode_a5fd045ec7e53606e5f58947359a3c332}} 
+ssize\+\_\+t {\bfseries get\+Quads\+To\+Draw} () const
+\item 
+virtual void \hyperlink{classAtlasNode_aa396ca085059861b67e3ad9471de797c}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classAtlasNode_a2f3cbc0c526c36bba08950158672b35e}\label{classAtlasNode_a2f3cbc0c526c36bba08950158672b35e}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classAtlasNode_ab6631fcde0f4849b47a93667b10c02e8}\label{classAtlasNode_ab6631fcde0f4849b47a93667b10c02e8}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual bool \hyperlink{classAtlasNode_a3aa161e8abaff7422b7f9ef895f9439d}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+virtual void \hyperlink{classAtlasNode_adb5151b64bb92b157133f9efb07124a8}{set\+Opacity\+Modify\+R\+GB} (bool \hyperlink{classAtlasNode_a3aa161e8abaff7422b7f9ef895f9439d}{is\+Opacity\+Modify\+R\+GB}) override
+\item 
+virtual const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classAtlasNode_a9d19a5b168ff065c4cb565a94f9f3d7f}{get\+Color} (void) const override
+\item 
+virtual void \hyperlink{classAtlasNode_a67a26fd695101fe4efa0533cb3dc9f39}{set\+Color} (const \hyperlink{structColor3B}{Color3B} \&color) override
+\item 
+virtual void \hyperlink{classAtlasNode_a396e36e894a70722806e90c7101207bc}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual void \hyperlink{classAtlasNode_ad6f8b156ff845f7ffd08179e3a5af035}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classAtlasNode_a17f6efbcb86fa6e83df4213d23777977}{get\+Blend\+Func} () const override
+\item 
+bool \hyperlink{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}{init\+With\+Tile\+File} (const std\+::string \&tile, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\item 
+bool \hyperlink{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\item 
+virtual void \hyperlink{classAtlasNode_a89a11eaf03df2a45123470c3ac87be22}{update\+Atlas\+Values} ()
+\item 
+void \hyperlink{classAtlasNode_ae008de73e7b0be719b73b57a94722894}{set\+Texture\+Atlas} (\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas)
+\item 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classAtlasNode_ab383df8fe17243d03f86d47296d3bd33}{get\+Texture\+Atlas} () const
+\item 
+\mbox{\Hypertarget{classAtlasNode_a75735e107d32bdd019216b8b3a706467}\label{classAtlasNode_a75735e107d32bdd019216b8b3a706467}} 
+void {\bfseries set\+Quads\+To\+Draw} (ssize\+\_\+t quads\+To\+Draw)
+\item 
+\mbox{\Hypertarget{classAtlasNode_a5fd045ec7e53606e5f58947359a3c332}\label{classAtlasNode_a5fd045ec7e53606e5f58947359a3c332}} 
+ssize\+\_\+t {\bfseries get\+Quads\+To\+Draw} () const
+\item 
+virtual void \hyperlink{classAtlasNode_af4fb010941d0fd8d26c14a5c524a6b55}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classAtlasNode_afc7c3ce1e161d8379234dd316ddd5806}\label{classAtlasNode_afc7c3ce1e161d8379234dd316ddd5806}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classAtlasNode_a3de1c824725c066aec2d58a2274f6845}\label{classAtlasNode_a3de1c824725c066aec2d58a2274f6845}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual bool \hyperlink{classAtlasNode_ad7d0c0a791719739d15e4f07c75f6704}{is\+Opacity\+Modify\+R\+GB} () const override
+\item 
+virtual void \hyperlink{classAtlasNode_ab9dacc4ad5e4701ff0a531605f2d1f11}{set\+Opacity\+Modify\+R\+GB} (bool \hyperlink{classAtlasNode_a3aa161e8abaff7422b7f9ef895f9439d}{is\+Opacity\+Modify\+R\+GB}) override
+\item 
+virtual const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classAtlasNode_a2921f746aab7922633bcd18790619e75}{get\+Color} (void) const override
+\item 
+virtual void \hyperlink{classAtlasNode_a4205343f55700284ffba22a2988c5445}{set\+Color} (const \hyperlink{structColor3B}{Color3B} \&color) override
+\item 
+virtual void \hyperlink{classAtlasNode_af95a54e5d5157983414cad3d837853eb}{set\+Opacity} (G\+Lubyte opacity) override
+\item 
+virtual void \hyperlink{classAtlasNode_a3b718d1de3a8763fc3bfbab137f542de}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classAtlasNode_a23f13b43d776ea8d280d581847244b1a}{get\+Blend\+Func} () const override
+\item 
+bool \hyperlink{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}{init\+With\+Tile\+File} (const std\+::string \&tile, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\item 
+bool \hyperlink{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAtlasNode}{Atlas\+Node} $\ast$ \hyperlink{classAtlasNode_a34f6cb836619df9e64c1915c67512b03}{create} (const std\+::string \&filename, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\item 
+static \hyperlink{classAtlasNode}{Atlas\+Node} $\ast$ \hyperlink{classAtlasNode_a5b604375a0603a3ae0ef21682fdac499}{create} (const std\+::string \&filename, int tile\+Width, int tile\+Height, int items\+To\+Render)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAtlasNode_ac28e8eb7b34abdf22420a00c5f8dfccb}\label{classAtlasNode_ac28e8eb7b34abdf22420a00c5f8dfccb}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAtlasNode}{Atlas\+Node}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAtlasNode_a29c46d0ead64797c4bb98512f82fb881}\label{classAtlasNode_a29c46d0ead64797c4bb98512f82fb881}} 
+void {\bfseries calculate\+Max\+Items} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a36799ca1a36e21352db4b253ba14804c}\label{classAtlasNode_a36799ca1a36e21352db4b253ba14804c}} 
+void {\bfseries update\+Blend\+Func} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a7686d22e4c8a828f4ba611f1ae618f3b}\label{classAtlasNode_a7686d22e4c8a828f4ba611f1ae618f3b}} 
+void {\bfseries update\+Opacity\+Modify\+R\+GB} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a295944af998530da5c73ba4e1c2698d0}\label{classAtlasNode_a295944af998530da5c73ba4e1c2698d0}} 
+void {\bfseries set\+Ignore\+Content\+Scale\+Factor} (bool b\+Ignore\+Content\+Scale\+Factor)
+\item 
+\mbox{\Hypertarget{classAtlasNode_a29c46d0ead64797c4bb98512f82fb881}\label{classAtlasNode_a29c46d0ead64797c4bb98512f82fb881}} 
+void {\bfseries calculate\+Max\+Items} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a36799ca1a36e21352db4b253ba14804c}\label{classAtlasNode_a36799ca1a36e21352db4b253ba14804c}} 
+void {\bfseries update\+Blend\+Func} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a7686d22e4c8a828f4ba611f1ae618f3b}\label{classAtlasNode_a7686d22e4c8a828f4ba611f1ae618f3b}} 
+void {\bfseries update\+Opacity\+Modify\+R\+GB} ()
+\item 
+\mbox{\Hypertarget{classAtlasNode_a295944af998530da5c73ba4e1c2698d0}\label{classAtlasNode_a295944af998530da5c73ba4e1c2698d0}} 
+void {\bfseries set\+Ignore\+Content\+Scale\+Factor} (bool b\+Ignore\+Content\+Scale\+Factor)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classAtlasNode_ac224313faf20d019a9146a2a53c93ea9}{\+\_\+items\+Per\+Row}
+\item 
+int \hyperlink{classAtlasNode_a195c14ac62fba82ecccc211fa0aefb32}{\+\_\+items\+Per\+Column}
+\item 
+int \hyperlink{classAtlasNode_a396ab3fb2a06811dee6de4221969827e}{\+\_\+item\+Width}
+\item 
+int \hyperlink{classAtlasNode_a95aae51f9baec3ddb372ed1e8ee16cd1}{\+\_\+item\+Height}
+\item 
+\mbox{\Hypertarget{classAtlasNode_a7cc7570fb9dc70b8dac7f17f9b9fa0d3}\label{classAtlasNode_a7cc7570fb9dc70b8dac7f17f9b9fa0d3}} 
+\hyperlink{structColor3B}{Color3B} {\bfseries \+\_\+color\+Unmodified}
+\item 
+\mbox{\Hypertarget{classAtlasNode_ab58ec4d5f6dda4c30dea17f58351f43d}\label{classAtlasNode_ab58ec4d5f6dda4c30dea17f58351f43d}} 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ {\bfseries \+\_\+texture\+Atlas}
+\item 
+bool \hyperlink{classAtlasNode_ac983ebe69b7021fa28bb0726ebcf3e00}{\+\_\+is\+Opacity\+Modify\+R\+GB}
+\item 
+\mbox{\Hypertarget{classAtlasNode_a5a3bbf625792d8685c353723c9ccd9fd}\label{classAtlasNode_a5a3bbf625792d8685c353723c9ccd9fd}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend\+Func}
+\item 
+ssize\+\_\+t \hyperlink{classAtlasNode_a64721363834e101ffadd9904b1b1a34f}{\+\_\+quads\+To\+Draw}
+\item 
+G\+Lint \hyperlink{classAtlasNode_a33ef4d56cc8f62b17fa25d5385173e09}{\+\_\+uniform\+Color}
+\item 
+bool \hyperlink{classAtlasNode_adae4072d6a5781ce11712b376679ea2b}{\+\_\+ignore\+Content\+Scale\+Factor}
+\item 
+\hyperlink{classQuadCommand}{Quad\+Command} \hyperlink{classAtlasNode_a88646311a87e439f7fe4ac808eb2282a}{\+\_\+quad\+Command}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAtlasNode_a96e0e845c153610f2a2f0ad3238a2511}\label{classAtlasNode_a96e0e845c153610f2a2f0ad3238a2511}} 
+class {\bfseries Director}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAtlasNode}{Atlas\+Node} is a subclass of \hyperlink{classNode}{Node} that implements the R\+G\+B\+A\+Protocol and Texture\+Protocol protocol. It knows how to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} object. If you are going to render a \hyperlink{classTextureAtlas}{Texture\+Atlas} consider subclassing \hyperlink{classAtlasNode}{Atlas\+Node} (or a subclass of \hyperlink{classAtlasNode}{Atlas\+Node}). All features from \hyperlink{classNode}{Node} are valid, plus the following features\+: 
+
+
+\begin{DoxyItemize}
+\item opacity and R\+GB colors. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAtlasNode_a34f6cb836619df9e64c1915c67512b03}\label{classAtlasNode_a34f6cb836619df9e64c1915c67512b03}} 
+\index{Atlas\+Node@{Atlas\+Node}!create@{create}}
+\index{create@{create}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAtlasNode}{Atlas\+Node} $\ast$ Atlas\+Node\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates a \hyperlink{classAtlasNode}{Atlas\+Node} with an Atlas file the width and height of each item and the quantity of items to render.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of Atlas file. \\
+\hline
+{\em tile\+Width} & The width of the item. \\
+\hline
+{\em tile\+Height} & The height of the item. \\
+\hline
+{\em items\+To\+Render} & The quantity of items to render. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAtlasNode_a5b604375a0603a3ae0ef21682fdac499}\label{classAtlasNode_a5b604375a0603a3ae0ef21682fdac499}} 
+\index{Atlas\+Node@{Atlas\+Node}!create@{create}}
+\index{create@{create}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAtlasNode}{Atlas\+Node}$\ast$ Atlas\+Node\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates a \hyperlink{classAtlasNode}{Atlas\+Node} with an Atlas file the width and height of each item and the quantity of items to render.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of Atlas file. \\
+\hline
+{\em tile\+Width} & The width of the item. \\
+\hline
+{\em tile\+Height} & The height of the item. \\
+\hline
+{\em items\+To\+Render} & The quantity of items to render. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAtlasNode_aa396ca085059861b67e3ad9471de797c}\label{classAtlasNode_aa396ca085059861b67e3ad9471de797c}} 
+\index{Atlas\+Node@{Atlas\+Node}!draw@{draw}}
+\index{draw@{draw}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_af4fb010941d0fd8d26c14a5c524a6b55}\label{classAtlasNode_af4fb010941d0fd8d26c14a5c524a6b55}} 
+\index{Atlas\+Node@{Atlas\+Node}!draw@{draw}}
+\index{draw@{draw}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_a17f6efbcb86fa6e83df4213d23777977}\label{classAtlasNode_a17f6efbcb86fa6e83df4213d23777977}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func} \& Atlas\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classAtlasNode_a23f13b43d776ea8d280d581847244b1a}\label{classAtlasNode_a23f13b43d776ea8d280d581847244b1a}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structBlendFunc}{Blend\+Func}\& Atlas\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classAtlasNode_a9d19a5b168ff065c4cb565a94f9f3d7f}\label{classAtlasNode_a9d19a5b168ff065c4cb565a94f9f3d7f}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B} \& Atlas\+Node\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query node\textquotesingle{}s color value. \begin{DoxyReturn}{Returns}
+A \hyperlink{structColor3B}{Color3B} color value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a06721d272f5a59e02e355d95be25bb99}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_a2921f746aab7922633bcd18790619e75}\label{classAtlasNode_a2921f746aab7922633bcd18790619e75}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structColor3B}{Color3B}\& Atlas\+Node\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query node\textquotesingle{}s color value. \begin{DoxyReturn}{Returns}
+A \hyperlink{structColor3B}{Color3B} color value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a06721d272f5a59e02e355d95be25bb99}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_adce0f217e64e54bb095835acbea6174f}\label{classAtlasNode_adce0f217e64e54bb095835acbea6174f}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Texture\+Atlas@{get\+Texture\+Atlas}}
+\index{get\+Texture\+Atlas@{get\+Texture\+Atlas}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Texture\+Atlas()}{getTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ Atlas\+Node\+::get\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the buffer manager of the texture vertex.
+
+\begin{DoxyReturn}{Returns}
+Return A \hyperlink{classTextureAtlas}{Texture\+Atlas}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAtlasNode_ab383df8fe17243d03f86d47296d3bd33}\label{classAtlasNode_ab383df8fe17243d03f86d47296d3bd33}} 
+\index{Atlas\+Node@{Atlas\+Node}!get\+Texture\+Atlas@{get\+Texture\+Atlas}}
+\index{get\+Texture\+Atlas@{get\+Texture\+Atlas}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{get\+Texture\+Atlas()}{getTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas}$\ast$ Atlas\+Node\+::get\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the buffer manager of the texture vertex.
+
+\begin{DoxyReturn}{Returns}
+Return A \hyperlink{classTextureAtlas}{Texture\+Atlas}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}\label{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}} 
+\index{Atlas\+Node@{Atlas\+Node}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})}
+
+Initializes an \hyperlink{classAtlasNode}{Atlas\+Node} with a texture the width and height of each item measured in points and the quantity of items to render \mbox{\Hypertarget{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}\label{classAtlasNode_a2d9f1166a53720d7ac48ab665c847604}} 
+\index{Atlas\+Node@{Atlas\+Node}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})}
+
+Initializes an \hyperlink{classAtlasNode}{Atlas\+Node} with a texture the width and height of each item measured in points and the quantity of items to render \mbox{\Hypertarget{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}\label{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}} 
+\index{Atlas\+Node@{Atlas\+Node}!init\+With\+Tile\+File@{init\+With\+Tile\+File}}
+\index{init\+With\+Tile\+File@{init\+With\+Tile\+File}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Tile\+File()}{initWithTileFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::init\+With\+Tile\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tile,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})}
+
+Initializes an \hyperlink{classAtlasNode}{Atlas\+Node} with an Atlas file the width and height of each item and the quantity of items to render \mbox{\Hypertarget{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}\label{classAtlasNode_a70804bf430d042bb94a6e2b18c47d7f2}} 
+\index{Atlas\+Node@{Atlas\+Node}!init\+With\+Tile\+File@{init\+With\+Tile\+File}}
+\index{init\+With\+Tile\+File@{init\+With\+Tile\+File}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Tile\+File()}{initWithTileFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::init\+With\+Tile\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tile,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{items\+To\+Render }\end{DoxyParamCaption})}
+
+Initializes an \hyperlink{classAtlasNode}{Atlas\+Node} with an Atlas file the width and height of each item and the quantity of items to render \mbox{\Hypertarget{classAtlasNode_a3aa161e8abaff7422b7f9ef895f9439d}\label{classAtlasNode_a3aa161e8abaff7422b7f9ef895f9439d}} 
+\index{Atlas\+Node@{Atlas\+Node}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_ad7d0c0a791719739d15e4f07c75f6704}\label{classAtlasNode_ad7d0c0a791719739d15e4f07c75f6704}} 
+\index{Atlas\+Node@{Atlas\+Node}!is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}}
+\index{is\+Opacity\+Modify\+R\+GB@{is\+Opacity\+Modify\+R\+GB}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{is\+Opacity\+Modify\+R\+G\+B()}{isOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Atlas\+Node\+::is\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If node opacity will modify the R\+GB color value, then you should override this method and return true. \begin{DoxyReturn}{Returns}
+A boolean value, true indicates that opacity will modify color; false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ae6ce32d2088e2bb3426608334f1091c5}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_ad6f8b156ff845f7ffd08179e3a5af035}\label{classAtlasNode_ad6f8b156ff845f7ffd08179e3a5af035}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classAtlasNode_ad6f8b156ff845f7ffd08179e3a5af035}{setBlendFunc}(var src, var dst)
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classAtlasNode_a3b718d1de3a8763fc3bfbab137f542de}\label{classAtlasNode_a3b718d1de3a8763fc3bfbab137f542de}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed
+In js: var \hyperlink{classAtlasNode_ad6f8b156ff845f7ffd08179e3a5af035}{setBlendFunc}(var src, var dst)
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classAtlasNode_a67a26fd695101fe4efa0533cb3dc9f39}\label{classAtlasNode_a67a26fd695101fe4efa0533cb3dc9f39}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of node. 
+\begin{DoxyParams}{Parameters}
+{\em color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_af45037de5b13602263b1ce51b50cafdd}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_a4205343f55700284ffba22a2988c5445}\label{classAtlasNode_a4205343f55700284ffba22a2988c5445}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of node. 
+\begin{DoxyParams}{Parameters}
+{\em color} & A \hyperlink{structColor3B}{Color3B} color value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_af45037de5b13602263b1ce51b50cafdd}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_a396e36e894a70722806e90c7101207bc}\label{classAtlasNode_a396e36e894a70722806e90c7101207bc}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_af95a54e5d5157983414cad3d837853eb}\label{classAtlasNode_af95a54e5d5157983414cad3d837853eb}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Opacity@{set\+Opacity}}
+\index{set\+Opacity@{set\+Opacity}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Opacity()}{setOpacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::set\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change node opacity. 
+\begin{DoxyParams}{Parameters}
+{\em opacity} & A G\+Lubyte opacity value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ae41a9db63bfa3d466ee7c9d79c35352d}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_adb5151b64bb92b157133f9efb07124a8}\label{classAtlasNode_adb5151b64bb92b157133f9efb07124a8}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_ab9dacc4ad5e4701ff0a531605f2d1f11}\label{classAtlasNode_ab9dacc4ad5e4701ff0a531605f2d1f11}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}}
+\index{set\+Opacity\+Modify\+R\+GB@{set\+Opacity\+Modify\+R\+GB}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Modify\+R\+G\+B()}{setOpacityModifyRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::set\+Opacity\+Modify\+R\+GB (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If you want the opacity affect the color property, then set to true. 
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a978c5435ab23f76e9efdf0f7e9e288e5}{Node}.
+
+\mbox{\Hypertarget{classAtlasNode_ae008de73e7b0be719b73b57a94722894}\label{classAtlasNode_ae008de73e7b0be719b73b57a94722894}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Texture\+Atlas@{set\+Texture\+Atlas}}
+\index{set\+Texture\+Atlas@{set\+Texture\+Atlas}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Texture\+Atlas()}{setTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas }\end{DoxyParamCaption})}
+
+Set an buffer manager of the texture vertex. \mbox{\Hypertarget{classAtlasNode_ae008de73e7b0be719b73b57a94722894}\label{classAtlasNode_ae008de73e7b0be719b73b57a94722894}} 
+\index{Atlas\+Node@{Atlas\+Node}!set\+Texture\+Atlas@{set\+Texture\+Atlas}}
+\index{set\+Texture\+Atlas@{set\+Texture\+Atlas}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{set\+Texture\+Atlas()}{setTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::set\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas }\end{DoxyParamCaption})}
+
+Set an buffer manager of the texture vertex. \mbox{\Hypertarget{classAtlasNode_ace1c88a0277a601bc02180da9641ebcd}\label{classAtlasNode_ace1c88a0277a601bc02180da9641ebcd}} 
+\index{Atlas\+Node@{Atlas\+Node}!update\+Atlas\+Values@{update\+Atlas\+Values}}
+\index{update\+Atlas\+Values@{update\+Atlas\+Values}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{update\+Atlas\+Values()}{updateAtlasValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Atlas\+Node\+::update\+Atlas\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+updates the Atlas (indexed vertex array). Shall be overridden in subclasses. 
+
+Reimplemented in \hyperlink{classLabelAtlas_a0075a4071c6da704b665bca30393ac5b}{Label\+Atlas}, and \hyperlink{classLabelAtlas_af70aa9b7820b00dfc6aa2c7291532fd6}{Label\+Atlas}.
+
+\mbox{\Hypertarget{classAtlasNode_a89a11eaf03df2a45123470c3ac87be22}\label{classAtlasNode_a89a11eaf03df2a45123470c3ac87be22}} 
+\index{Atlas\+Node@{Atlas\+Node}!update\+Atlas\+Values@{update\+Atlas\+Values}}
+\index{update\+Atlas\+Values@{update\+Atlas\+Values}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{update\+Atlas\+Values()}{updateAtlasValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Atlas\+Node\+::update\+Atlas\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+updates the Atlas (indexed vertex array). Shall be overridden in subclasses. 
+
+Reimplemented in \hyperlink{classLabelAtlas_a0075a4071c6da704b665bca30393ac5b}{Label\+Atlas}, and \hyperlink{classLabelAtlas_af70aa9b7820b00dfc6aa2c7291532fd6}{Label\+Atlas}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classAtlasNode_adae4072d6a5781ce11712b376679ea2b}\label{classAtlasNode_adae4072d6a5781ce11712b376679ea2b}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+ignore\+Content\+Scale\+Factor@{\+\_\+ignore\+Content\+Scale\+Factor}}
+\index{\+\_\+ignore\+Content\+Scale\+Factor@{\+\_\+ignore\+Content\+Scale\+Factor}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+ignore\+Content\+Scale\+Factor}{\_ignoreContentScaleFactor}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::\+\_\+ignore\+Content\+Scale\+Factor\hspace{0.3cm}{\ttfamily [protected]}}
+
+This variable is only used for \hyperlink{classLabelAtlas}{Label\+Atlas} F\+PS display. So plz don\textquotesingle{}t modify its value. \mbox{\Hypertarget{classAtlasNode_ac983ebe69b7021fa28bb0726ebcf3e00}\label{classAtlasNode_ac983ebe69b7021fa28bb0726ebcf3e00}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+is\+Opacity\+Modify\+R\+GB@{\+\_\+is\+Opacity\+Modify\+R\+GB}}
+\index{\+\_\+is\+Opacity\+Modify\+R\+GB@{\+\_\+is\+Opacity\+Modify\+R\+GB}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+is\+Opacity\+Modify\+R\+GB}{\_isOpacityModifyRGB}}
+{\footnotesize\ttfamily bool Atlas\+Node\+::\+\_\+is\+Opacity\+Modify\+R\+GB\hspace{0.3cm}{\ttfamily [protected]}}
+
+Protocol variables. \mbox{\Hypertarget{classAtlasNode_a95aae51f9baec3ddb372ed1e8ee16cd1}\label{classAtlasNode_a95aae51f9baec3ddb372ed1e8ee16cd1}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+item\+Height@{\+\_\+item\+Height}}
+\index{\+\_\+item\+Height@{\+\_\+item\+Height}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+item\+Height}{\_itemHeight}}
+{\footnotesize\ttfamily int Atlas\+Node\+::\+\_\+item\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+Height of each char. \mbox{\Hypertarget{classAtlasNode_a195c14ac62fba82ecccc211fa0aefb32}\label{classAtlasNode_a195c14ac62fba82ecccc211fa0aefb32}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+items\+Per\+Column@{\+\_\+items\+Per\+Column}}
+\index{\+\_\+items\+Per\+Column@{\+\_\+items\+Per\+Column}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+items\+Per\+Column}{\_itemsPerColumn}}
+{\footnotesize\ttfamily int Atlas\+Node\+::\+\_\+items\+Per\+Column\hspace{0.3cm}{\ttfamily [protected]}}
+
+Chars per column. \mbox{\Hypertarget{classAtlasNode_ac224313faf20d019a9146a2a53c93ea9}\label{classAtlasNode_ac224313faf20d019a9146a2a53c93ea9}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+items\+Per\+Row@{\+\_\+items\+Per\+Row}}
+\index{\+\_\+items\+Per\+Row@{\+\_\+items\+Per\+Row}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+items\+Per\+Row}{\_itemsPerRow}}
+{\footnotesize\ttfamily int Atlas\+Node\+::\+\_\+items\+Per\+Row\hspace{0.3cm}{\ttfamily [protected]}}
+
+Chars per row. \mbox{\Hypertarget{classAtlasNode_a396ab3fb2a06811dee6de4221969827e}\label{classAtlasNode_a396ab3fb2a06811dee6de4221969827e}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+item\+Width@{\+\_\+item\+Width}}
+\index{\+\_\+item\+Width@{\+\_\+item\+Width}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+item\+Width}{\_itemWidth}}
+{\footnotesize\ttfamily int Atlas\+Node\+::\+\_\+item\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+Width of each char. \mbox{\Hypertarget{classAtlasNode_a88646311a87e439f7fe4ac808eb2282a}\label{classAtlasNode_a88646311a87e439f7fe4ac808eb2282a}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+quad\+Command@{\+\_\+quad\+Command}}
+\index{\+\_\+quad\+Command@{\+\_\+quad\+Command}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+quad\+Command}{\_quadCommand}}
+{\footnotesize\ttfamily \hyperlink{classQuadCommand}{Quad\+Command} Atlas\+Node\+::\+\_\+quad\+Command\hspace{0.3cm}{\ttfamily [protected]}}
+
+Quad command. \mbox{\Hypertarget{classAtlasNode_a64721363834e101ffadd9904b1b1a34f}\label{classAtlasNode_a64721363834e101ffadd9904b1b1a34f}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+quads\+To\+Draw@{\+\_\+quads\+To\+Draw}}
+\index{\+\_\+quads\+To\+Draw@{\+\_\+quads\+To\+Draw}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+quads\+To\+Draw}{\_quadsToDraw}}
+{\footnotesize\ttfamily ssize\+\_\+t Atlas\+Node\+::\+\_\+quads\+To\+Draw\hspace{0.3cm}{\ttfamily [protected]}}
+
+Quads to draw. \mbox{\Hypertarget{classAtlasNode_a33ef4d56cc8f62b17fa25d5385173e09}\label{classAtlasNode_a33ef4d56cc8f62b17fa25d5385173e09}} 
+\index{Atlas\+Node@{Atlas\+Node}!\+\_\+uniform\+Color@{\+\_\+uniform\+Color}}
+\index{\+\_\+uniform\+Color@{\+\_\+uniform\+Color}!Atlas\+Node@{Atlas\+Node}}
+\subsubsection{\texorpdfstring{\+\_\+uniform\+Color}{\_uniformColor}}
+{\footnotesize\ttfamily G\+Lint Atlas\+Node\+::\+\_\+uniform\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+Color uniform. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Atlas\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Atlas\+Node.\+cpp\end{DoxyCompactItemize}

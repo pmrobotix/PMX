@@ -1,0 +1,535 @@
+\hypertarget{classParticleSystem3D}{}\section{Particle\+System3D Class Reference}
+\label{classParticleSystem3D}\index{Particle\+System3D@{Particle\+System3D}}
+
+
+Inheritance diagram for Particle\+System3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classParticleSystem3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+System3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParticleSystem3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_ab8fdf94557bfcc6fb8197d125bc45148}\label{classParticleSystem3D_ab8fdf94557bfcc6fb8197d125bc45148}} 
+enum {\bfseries State} \{ \newline
+{\bfseries S\+T\+OP}, 
+{\bfseries R\+U\+N\+N\+I\+NG}, 
+{\bfseries P\+A\+U\+SE}, 
+{\bfseries S\+T\+OP}, 
+\newline
+{\bfseries R\+U\+N\+N\+I\+NG}, 
+{\bfseries P\+A\+U\+SE}
+ \}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_ab8fdf94557bfcc6fb8197d125bc45148}\label{classParticleSystem3D_ab8fdf94557bfcc6fb8197d125bc45148}} 
+enum {\bfseries State} \{ \newline
+{\bfseries S\+T\+OP}, 
+{\bfseries R\+U\+N\+N\+I\+NG}, 
+{\bfseries P\+A\+U\+SE}, 
+{\bfseries S\+T\+OP}, 
+\newline
+{\bfseries R\+U\+N\+N\+I\+NG}, 
+{\bfseries P\+A\+U\+SE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classParticleSystem3D_a04fb4f09a517f393b5deb8174b964e40}{update} (float delta) override
+\item 
+virtual void \hyperlink{classParticleSystem3D_a78e6969723062a91ffbd46b08dd0fcb2}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classParticleSystem3D_a93c7e5313e8860628304814631edfb94}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classParticleSystem3D_a20b5bdbd3a43ea851174fa6b680054ed}{get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classParticleSystem3D_aecd79152c049fc63e5ea464589765e5b}{start\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_a45c003e1eb2fc4d38ab74fd6231a7c47}{stop\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_ade8abd1ad8b534b6c8485aa43ed8c78e}{pause\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_ac5f7a2d3bd35d5243e2e90578b8daed3}{resume\+Particle\+System} ()
+\item 
+void \hyperlink{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}{set\+Emitter} (\hyperlink{classParticle3DEmitter}{Particle3\+D\+Emitter} $\ast$emitter)
+\item 
+void \hyperlink{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}{set\+Render} (\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$render)
+\item 
+\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$ \hyperlink{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}{get\+Render} ()
+\item 
+void \hyperlink{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}{add\+Affector} (\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$affector)
+\item 
+void \hyperlink{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}{remove\+Affector} (int index)
+\item 
+void \hyperlink{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}{remove\+All\+Affector} ()
+\item 
+unsigned int \hyperlink{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}{get\+Particle\+Quota} () const
+\item 
+void \hyperlink{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}{set\+Particle\+Quota} (unsigned int quota)
+\item 
+\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$ \hyperlink{classParticleSystem3D_a68fde91bc0333e387cc31d84ba69092c}{get\+Affector} (int index)
+\item 
+const \hyperlink{classDataPool}{Particle\+Pool} \& \hyperlink{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}{get\+Particle\+Pool} ()
+\item 
+virtual int \hyperlink{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}{get\+Alive\+Particle\+Count} () const
+\item 
+State \hyperlink{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}{get\+State} () const
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a87a2ac7688963232fd563e610dd558e9}\label{classParticleSystem3D_a87a2ac7688963232fd563e610dd558e9}} 
+bool {\bfseries is\+Keep\+Local} (void) const
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a7f346946b10068d5650efbada90d0083}\label{classParticleSystem3D_a7f346946b10068d5650efbada90d0083}} 
+void {\bfseries set\+Keep\+Local} (bool keep\+Local)
+\item 
+void \hyperlink{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}{set\+Enabled} (bool enabled)
+\item 
+bool \hyperlink{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}{is\+Enabled} (void) const
+\item 
+virtual void \hyperlink{classParticleSystem3D_a446b0819b60fb46ce308e3d17e7625b0}{update} (float delta) override
+\item 
+virtual void \hyperlink{classParticleSystem3D_af039c3af0d3805791c65c58d9abccc8a}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classParticleSystem3D_a4a1a9b7ade8b4ed237a1bb7da3ff462e}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classParticleSystem3D_a23387a435e3bc2f567194a5e260a9e93}{get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classParticleSystem3D_a98d50249c6db65e0fb72dd7690965d83}{start\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_a93d4c960fa9d37cde714c482080dea4e}{stop\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_ac1e89d8e8e1d6203580a883a9cb665bf}{pause\+Particle\+System} ()
+\item 
+virtual void \hyperlink{classParticleSystem3D_aeafc5947c1937c3df634ab06235fc7bf}{resume\+Particle\+System} ()
+\item 
+void \hyperlink{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}{set\+Emitter} (\hyperlink{classParticle3DEmitter}{Particle3\+D\+Emitter} $\ast$emitter)
+\item 
+void \hyperlink{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}{set\+Render} (\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$render)
+\item 
+\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$ \hyperlink{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}{get\+Render} ()
+\item 
+void \hyperlink{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}{add\+Affector} (\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$affector)
+\item 
+void \hyperlink{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}{remove\+Affector} (int index)
+\item 
+void \hyperlink{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}{remove\+All\+Affector} ()
+\item 
+unsigned int \hyperlink{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}{get\+Particle\+Quota} () const
+\item 
+void \hyperlink{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}{set\+Particle\+Quota} (unsigned int quota)
+\item 
+\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$ \hyperlink{classParticleSystem3D_ae6ada6195fe2ad8616385ecd370deaac}{get\+Affector} (int index)
+\item 
+const \hyperlink{classDataPool}{Particle\+Pool} \& \hyperlink{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}{get\+Particle\+Pool} ()
+\item 
+virtual int \hyperlink{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}{get\+Alive\+Particle\+Count} () const
+\item 
+State \hyperlink{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}{get\+State} () const
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a87a2ac7688963232fd563e610dd558e9}\label{classParticleSystem3D_a87a2ac7688963232fd563e610dd558e9}} 
+bool {\bfseries is\+Keep\+Local} (void) const
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a7f346946b10068d5650efbada90d0083}\label{classParticleSystem3D_a7f346946b10068d5650efbada90d0083}} 
+void {\bfseries set\+Keep\+Local} (bool keep\+Local)
+\item 
+void \hyperlink{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}{set\+Enabled} (bool enabled)
+\item 
+bool \hyperlink{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}{is\+Enabled} (void) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_ac234f698c0696339c7c057e2050002c8}\label{classParticleSystem3D_ac234f698c0696339c7c057e2050002c8}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classParticleSystem3D}{Particle\+System3D}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_aba4a27740ad9333cb47cb588e128bdb8}\label{classParticleSystem3D_aba4a27740ad9333cb47cb588e128bdb8}} 
+State {\bfseries \+\_\+state}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_aec175ec3d98fc5706c14eb9855635615}\label{classParticleSystem3D_aec175ec3d98fc5706c14eb9855635615}} 
+\hyperlink{classParticle3DEmitter}{Particle3\+D\+Emitter} $\ast$ {\bfseries \+\_\+emitter}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_addaa7ff36b9c4f88fad2ca9ada85fb95}\label{classParticleSystem3D_addaa7ff36b9c4f88fad2ca9ada85fb95}} 
+std\+::vector$<$ \hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$ $>$ {\bfseries \+\_\+affectors}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a1ffe1d2c5abaae7b9d4ae8d73882b2bd}\label{classParticleSystem3D_a1ffe1d2c5abaae7b9d4ae8d73882b2bd}} 
+\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$ {\bfseries \+\_\+render}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_af3422f341fa389d7c069406e87c460de}\label{classParticleSystem3D_af3422f341fa389d7c069406e87c460de}} 
+\hyperlink{classDataPool}{Particle\+Pool} {\bfseries \+\_\+particle\+Pool}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a82244eb5165117b5d93668cfb4039569}\label{classParticleSystem3D_a82244eb5165117b5d93668cfb4039569}} 
+int {\bfseries \+\_\+alive\+Particles\+Cnt}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a24be8e2163503113e3a04ca0f326157d}\label{classParticleSystem3D_a24be8e2163503113e3a04ca0f326157d}} 
+unsigned int {\bfseries \+\_\+particle\+Quota}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_ac4c5d8419eb59d7f04c0ac230ef8c5a5}\label{classParticleSystem3D_ac4c5d8419eb59d7f04c0ac230ef8c5a5}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_a405fdc9cdd776a81c36f4bca3a6cccaa}\label{classParticleSystem3D_a405fdc9cdd776a81c36f4bca3a6cccaa}} 
+bool {\bfseries \+\_\+keep\+Local}
+\item 
+\mbox{\Hypertarget{classParticleSystem3D_aef6364659a6c6f5201225441e49e5e5c}\label{classParticleSystem3D_aef6364659a6c6f5201225441e49e5e5c}} 
+bool {\bfseries \+\_\+is\+Enabled}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}\label{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}} 
+\index{Particle\+System3D@{Particle\+System3D}!add\+Affector@{add\+Affector}}
+\index{add\+Affector@{add\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{add\+Affector()}{addAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::add\+Affector (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$}]{affector }\end{DoxyParamCaption})}
+
+add particle affector \mbox{\Hypertarget{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}\label{classParticleSystem3D_ae724cd8008b8ef3206659c4fedbf7339}} 
+\index{Particle\+System3D@{Particle\+System3D}!add\+Affector@{add\+Affector}}
+\index{add\+Affector@{add\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{add\+Affector()}{addAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::add\+Affector (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$}]{affector }\end{DoxyParamCaption})}
+
+add particle affector \mbox{\Hypertarget{classParticleSystem3D_a78e6969723062a91ffbd46b08dd0fcb2}\label{classParticleSystem3D_a78e6969723062a91ffbd46b08dd0fcb2}} 
+\index{Particle\+System3D@{Particle\+System3D}!draw@{draw}}
+\index{draw@{draw}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a46c2d79b09fcac96e81be307f9148fea}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_ac4ab268d41e408ba4c2636827717cf48}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_af039c3af0d3805791c65c58d9abccc8a}\label{classParticleSystem3D_af039c3af0d3805791c65c58d9abccc8a}} 
+\index{Particle\+System3D@{Particle\+System3D}!draw@{draw}}
+\index{draw@{draw}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a46c2d79b09fcac96e81be307f9148fea}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_ac4ab268d41e408ba4c2636827717cf48}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a68fde91bc0333e387cc31d84ba69092c}\label{classParticleSystem3D_a68fde91bc0333e387cc31d84ba69092c}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Affector@{get\+Affector}}
+\index{get\+Affector@{get\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Affector()}{getAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classParticle3DAffector}{Particle3\+D\+Affector} $\ast$ Particle\+System3\+D\+::get\+Affector (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+get particle affector by index \mbox{\Hypertarget{classParticleSystem3D_ae6ada6195fe2ad8616385ecd370deaac}\label{classParticleSystem3D_ae6ada6195fe2ad8616385ecd370deaac}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Affector@{get\+Affector}}
+\index{get\+Affector@{get\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Affector()}{getAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classParticle3DAffector}{Particle3\+D\+Affector}$\ast$ Particle\+System3\+D\+::get\+Affector (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+get particle affector by index \mbox{\Hypertarget{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}\label{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Alive\+Particle\+Count@{get\+Alive\+Particle\+Count}}
+\index{get\+Alive\+Particle\+Count@{get\+Alive\+Particle\+Count}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Alive\+Particle\+Count()}{getAliveParticleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int Particle\+System3\+D\+::get\+Alive\+Particle\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get alive particles count 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_ae9437aa775ab70f4dde8acedc1ee124d}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a23b835c5c50aba7764c928b9edcb899c}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}\label{classParticleSystem3D_aa7437bbc0845857deea675f0fb137314}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Alive\+Particle\+Count@{get\+Alive\+Particle\+Count}}
+\index{get\+Alive\+Particle\+Count@{get\+Alive\+Particle\+Count}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Alive\+Particle\+Count()}{getAliveParticleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Particle\+System3\+D\+::get\+Alive\+Particle\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get alive particles count 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_ae9437aa775ab70f4dde8acedc1ee124d}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a23b835c5c50aba7764c928b9edcb899c}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a20b5bdbd3a43ea851174fa6b680054ed}\label{classParticleSystem3D_a20b5bdbd3a43ea851174fa6b680054ed}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func} \& Particle\+System3\+D\+::get\+Blend\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function \mbox{\Hypertarget{classParticleSystem3D_a23387a435e3bc2f567194a5e260a9e93}\label{classParticleSystem3D_a23387a435e3bc2f567194a5e260a9e93}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structBlendFunc}{Blend\+Func}\& Particle\+System3\+D\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function \mbox{\Hypertarget{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}\label{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Particle\+Pool@{get\+Particle\+Pool}}
+\index{get\+Particle\+Pool@{get\+Particle\+Pool}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Particle\+Pool()}{getParticlePool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classDataPool}{Particle\+Pool}\& Particle\+System3\+D\+::get\+Particle\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get particle pool \mbox{\Hypertarget{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}\label{classParticleSystem3D_a195df72ace8428bc873d0838ebc02a2a}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Particle\+Pool@{get\+Particle\+Pool}}
+\index{get\+Particle\+Pool@{get\+Particle\+Pool}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Particle\+Pool()}{getParticlePool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classDataPool}{Particle\+Pool}\& Particle\+System3\+D\+::get\+Particle\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get particle pool \mbox{\Hypertarget{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}\label{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Particle\+Quota@{get\+Particle\+Quota}}
+\index{get\+Particle\+Quota@{get\+Particle\+Quota}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Particle\+Quota()}{getParticleQuota()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Particle\+System3\+D\+::get\+Particle\+Quota (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get particle quota \mbox{\Hypertarget{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}\label{classParticleSystem3D_a1304d9f882b2fb6e2db12d8067755c38}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Particle\+Quota@{get\+Particle\+Quota}}
+\index{get\+Particle\+Quota@{get\+Particle\+Quota}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Particle\+Quota()}{getParticleQuota()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Particle\+System3\+D\+::get\+Particle\+Quota (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get particle quota \mbox{\Hypertarget{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}\label{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Render@{get\+Render}}
+\index{get\+Render@{get\+Render}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Render()}{getRender()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classParticle3DRender}{Particle3\+D\+Render}$\ast$ Particle\+System3\+D\+::get\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return particle render \mbox{\Hypertarget{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}\label{classParticleSystem3D_a7ca1509df2a6890b503dc54dfa08a2b4}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+Render@{get\+Render}}
+\index{get\+Render@{get\+Render}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+Render()}{getRender()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classParticle3DRender}{Particle3\+D\+Render}$\ast$ Particle\+System3\+D\+::get\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return particle render \mbox{\Hypertarget{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}\label{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily State Particle\+System3\+D\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get particle playing state \mbox{\Hypertarget{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}\label{classParticleSystem3D_a01944e27032c4afa6f115b69a0d359ed}} 
+\index{Particle\+System3D@{Particle\+System3D}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily State Particle\+System3\+D\+::get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get particle playing state \mbox{\Hypertarget{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}\label{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}} 
+\index{Particle\+System3D@{Particle\+System3D}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Particle\+System3\+D\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+is enabled \mbox{\Hypertarget{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}\label{classParticleSystem3D_a1c9b24591395d002ca3fc953d2ce938e}} 
+\index{Particle\+System3D@{Particle\+System3D}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Particle\+System3\+D\+::is\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+is enabled \mbox{\Hypertarget{classParticleSystem3D_ade8abd1ad8b534b6c8485aa43ed8c78e}\label{classParticleSystem3D_ade8abd1ad8b534b6c8485aa43ed8c78e}} 
+\index{Particle\+System3D@{Particle\+System3D}!pause\+Particle\+System@{pause\+Particle\+System}}
+\index{pause\+Particle\+System@{pause\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{pause\+Particle\+System()}{pauseParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::pause\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+pause particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a646df19f678e37df2d1793d7f9a970a2}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_aff7cc367d4a38e89a3935e6a3b5a482f}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_ac1e89d8e8e1d6203580a883a9cb665bf}\label{classParticleSystem3D_ac1e89d8e8e1d6203580a883a9cb665bf}} 
+\index{Particle\+System3D@{Particle\+System3D}!pause\+Particle\+System@{pause\+Particle\+System}}
+\index{pause\+Particle\+System@{pause\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{pause\+Particle\+System()}{pauseParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::pause\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+pause particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a646df19f678e37df2d1793d7f9a970a2}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_aff7cc367d4a38e89a3935e6a3b5a482f}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}\label{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}} 
+\index{Particle\+System3D@{Particle\+System3D}!remove\+Affector@{remove\+Affector}}
+\index{remove\+Affector@{remove\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{remove\+Affector()}{removeAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::remove\+Affector (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove affector by index \mbox{\Hypertarget{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}\label{classParticleSystem3D_a159d6fc0ffeb25901b1836e86b5e3dc4}} 
+\index{Particle\+System3D@{Particle\+System3D}!remove\+Affector@{remove\+Affector}}
+\index{remove\+Affector@{remove\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{remove\+Affector()}{removeAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::remove\+Affector (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove affector by index \mbox{\Hypertarget{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}\label{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}} 
+\index{Particle\+System3D@{Particle\+System3D}!remove\+All\+Affector@{remove\+All\+Affector}}
+\index{remove\+All\+Affector@{remove\+All\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Affector()}{removeAllAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::remove\+All\+Affector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all particle affector \mbox{\Hypertarget{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}\label{classParticleSystem3D_ab70f79480eab32ba5e32f36690809a9c}} 
+\index{Particle\+System3D@{Particle\+System3D}!remove\+All\+Affector@{remove\+All\+Affector}}
+\index{remove\+All\+Affector@{remove\+All\+Affector}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Affector()}{removeAllAffector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::remove\+All\+Affector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all particle affector \mbox{\Hypertarget{classParticleSystem3D_ac5f7a2d3bd35d5243e2e90578b8daed3}\label{classParticleSystem3D_ac5f7a2d3bd35d5243e2e90578b8daed3}} 
+\index{Particle\+System3D@{Particle\+System3D}!resume\+Particle\+System@{resume\+Particle\+System}}
+\index{resume\+Particle\+System@{resume\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{resume\+Particle\+System()}{resumeParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::resume\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+resume particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a02c88addf5387a7062e6418d6e8584c4}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a3a7be465950fdb5ad401eb436ec8ff32}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_aeafc5947c1937c3df634ab06235fc7bf}\label{classParticleSystem3D_aeafc5947c1937c3df634ab06235fc7bf}} 
+\index{Particle\+System3D@{Particle\+System3D}!resume\+Particle\+System@{resume\+Particle\+System}}
+\index{resume\+Particle\+System@{resume\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{resume\+Particle\+System()}{resumeParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::resume\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+resume particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a02c88addf5387a7062e6418d6e8584c4}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a3a7be465950fdb5ad401eb436ec8ff32}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a93c7e5313e8860628304814631edfb94}\label{classParticleSystem3D_a93c7e5313e8860628304814631edfb94}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function \mbox{\Hypertarget{classParticleSystem3D_a4a1a9b7ade8b4ed237a1bb7da3ff462e}\label{classParticleSystem3D_a4a1a9b7ade8b4ed237a1bb7da3ff462e}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function \mbox{\Hypertarget{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}\label{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Emitter@{set\+Emitter}}
+\index{set\+Emitter@{set\+Emitter}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Emitter()}{setEmitter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Emitter (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DEmitter}{Particle3\+D\+Emitter} $\ast$}]{emitter }\end{DoxyParamCaption})}
+
+set emitter for particle system, can set your own particle emitter \mbox{\Hypertarget{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}\label{classParticleSystem3D_aeb2593035516362a6e8209efdc8af68e}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Emitter@{set\+Emitter}}
+\index{set\+Emitter@{set\+Emitter}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Emitter()}{setEmitter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Emitter (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DEmitter}{Particle3\+D\+Emitter} $\ast$}]{emitter }\end{DoxyParamCaption})}
+
+set emitter for particle system, can set your own particle emitter \mbox{\Hypertarget{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}\label{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Enables or disables the system. \mbox{\Hypertarget{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}\label{classParticleSystem3D_a7e2e3536676b85183c6bb3e04e9f33ec}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Enables or disables the system. \mbox{\Hypertarget{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}\label{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Particle\+Quota@{set\+Particle\+Quota}}
+\index{set\+Particle\+Quota@{set\+Particle\+Quota}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Particle\+Quota()}{setParticleQuota()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Particle\+Quota (\begin{DoxyParamCaption}\item[{unsigned int}]{quota }\end{DoxyParamCaption})}
+
+set particle quota \mbox{\Hypertarget{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}\label{classParticleSystem3D_a6ab232323237daf0287d6d2e22089216}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Particle\+Quota@{set\+Particle\+Quota}}
+\index{set\+Particle\+Quota@{set\+Particle\+Quota}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Particle\+Quota()}{setParticleQuota()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Particle\+Quota (\begin{DoxyParamCaption}\item[{unsigned int}]{quota }\end{DoxyParamCaption})}
+
+set particle quota \mbox{\Hypertarget{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}\label{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Render@{set\+Render}}
+\index{set\+Render@{set\+Render}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Render()}{setRender()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Render (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$}]{render }\end{DoxyParamCaption})}
+
+set particle render, can set your own particle render \mbox{\Hypertarget{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}\label{classParticleSystem3D_abeb1c12eab97f24cd02adeb6453d6f2a}} 
+\index{Particle\+System3D@{Particle\+System3D}!set\+Render@{set\+Render}}
+\index{set\+Render@{set\+Render}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{set\+Render()}{setRender()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::set\+Render (\begin{DoxyParamCaption}\item[{\hyperlink{classParticle3DRender}{Particle3\+D\+Render} $\ast$}]{render }\end{DoxyParamCaption})}
+
+set particle render, can set your own particle render \mbox{\Hypertarget{classParticleSystem3D_aecd79152c049fc63e5ea464589765e5b}\label{classParticleSystem3D_aecd79152c049fc63e5ea464589765e5b}} 
+\index{Particle\+System3D@{Particle\+System3D}!start\+Particle\+System@{start\+Particle\+System}}
+\index{start\+Particle\+System@{start\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{start\+Particle\+System()}{startParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::start\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+particle system play control 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_ab59c7cf4ca02cb3cac7f9d49d46312f1}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_ac3ea37e1b73f622a72d7f2576118a551}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a98d50249c6db65e0fb72dd7690965d83}\label{classParticleSystem3D_a98d50249c6db65e0fb72dd7690965d83}} 
+\index{Particle\+System3D@{Particle\+System3D}!start\+Particle\+System@{start\+Particle\+System}}
+\index{start\+Particle\+System@{start\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{start\+Particle\+System()}{startParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::start\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+particle system play control 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_ab59c7cf4ca02cb3cac7f9d49d46312f1}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_ac3ea37e1b73f622a72d7f2576118a551}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a45c003e1eb2fc4d38ab74fd6231a7c47}\label{classParticleSystem3D_a45c003e1eb2fc4d38ab74fd6231a7c47}} 
+\index{Particle\+System3D@{Particle\+System3D}!stop\+Particle\+System@{stop\+Particle\+System}}
+\index{stop\+Particle\+System@{stop\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{stop\+Particle\+System()}{stopParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::stop\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+stop particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a95eff5c73f4e750e34b0f1901bfdae3d}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a2fb2d3bfd5bc6b7b827e1800f34f0157}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a93d4c960fa9d37cde714c482080dea4e}\label{classParticleSystem3D_a93d4c960fa9d37cde714c482080dea4e}} 
+\index{Particle\+System3D@{Particle\+System3D}!stop\+Particle\+System@{stop\+Particle\+System}}
+\index{stop\+Particle\+System@{stop\+Particle\+System}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{stop\+Particle\+System()}{stopParticleSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::stop\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+stop particle 
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a95eff5c73f4e750e34b0f1901bfdae3d}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a2fb2d3bfd5bc6b7b827e1800f34f0157}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a04fb4f09a517f393b5deb8174b964e40}\label{classParticleSystem3D_a04fb4f09a517f393b5deb8174b964e40}} 
+\index{Particle\+System3D@{Particle\+System3D}!update@{update}}
+\index{update@{update}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+System3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a42ba23b8909057126e8a9606f9cd4e8c}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a9fdfe542cd05fcf270644dff49f81857}{P\+U\+Particle\+System3D}.
+
+\mbox{\Hypertarget{classParticleSystem3D_a446b0819b60fb46ce308e3d17e7625b0}\label{classParticleSystem3D_a446b0819b60fb46ce308e3d17e7625b0}} 
+\index{Particle\+System3D@{Particle\+System3D}!update@{update}}
+\index{update@{update}!Particle\+System3D@{Particle\+System3D}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Particle\+System3\+D\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+override function 
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+
+
+Reimplemented in \hyperlink{classPUParticleSystem3D_a42ba23b8909057126e8a9606f9cd4e8c}{P\+U\+Particle\+System3D}, and \hyperlink{classPUParticleSystem3D_a9fdfe542cd05fcf270644dff49f81857}{P\+U\+Particle\+System3D}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/C\+C\+Particle\+System3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/C\+C\+Particle\+System3\+D.\+cpp\end{DoxyCompactItemize}

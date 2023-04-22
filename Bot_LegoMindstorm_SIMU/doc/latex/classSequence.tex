@@ -1,0 +1,493 @@
+\hypertarget{classSequence}{}\section{Sequence Class Reference}
+\label{classSequence}\index{Sequence@{Sequence}}
+
+
+Runs actions sequentially, one after another.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Sequence\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classSequence__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sequence\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSequence__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$ \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M}
+\item 
+typedef \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$ \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_ad6a4cd778ab275e08dfd945efd5a736f}{clone} () const override
+\item 
+virtual \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_ad637da9eb81e01e9b6535c23220f9221}{reverse} () const override
+\item 
+virtual void \hyperlink{classSequence_a8da6e287023489db0c5abe888b905697}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classSequence_a14332cc490ebbbb1c372eff0dc4cd025}{stop} (void) override
+\item 
+virtual void \hyperlink{classSequence_a336d205df83e1a4ff0ab4ecbc8cf56e3}{update} (float t) override
+\item 
+bool \hyperlink{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}{init\+With\+Two\+Actions} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$p\+Action\+One, \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$p\+Action\+Two)
+\item 
+\mbox{\Hypertarget{classSequence_ab8f25707ca9393932f4d7833e19e7cae}\label{classSequence_ab8f25707ca9393932f4d7833e19e7cae}} 
+bool {\bfseries init} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&array\+Of\+Actions)
+\item 
+virtual \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_af7a34db8abb86fa6c677e5fa7540f991}{clone} () const override
+\item 
+virtual \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_ab0d19f0b8c2272921aab829f583a91f0}{reverse} () const override
+\item 
+virtual void \hyperlink{classSequence_a4d17fdbc7a236a63798e23ae12971b77}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classSequence_a66d72eff9f99dfff3f0ac09d280f4360}{stop} () override
+\item 
+virtual bool \hyperlink{classSequence_a2f331fff9e2ab6e63569f55615a1c03e}{is\+Done} () const override
+\item 
+virtual void \hyperlink{classSequence_a3db260a7840e606c3b3883de4f7b1f48}{update} (float t) override
+\item 
+bool \hyperlink{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}{init\+With\+Two\+Actions} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$p\+Action\+One, \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$p\+Action\+Two)
+\item 
+\mbox{\Hypertarget{classSequence_ab8f25707ca9393932f4d7833e19e7cae}\label{classSequence_ab8f25707ca9393932f4d7833e19e7cae}} 
+bool {\bfseries init} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&array\+Of\+Actions)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSequence_a42a76c31f0064f04e73e425cb8a68eb8}\label{classSequence_a42a76c31f0064f04e73e425cb8a68eb8}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a0e505f60480c6ce8f68b9dc74e60a425}\label{classSequence_a0e505f60480c6ce8f68b9dc74e60a425}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a63967d5c496a474358ea2a5065048996}\label{classSequence_a63967d5c496a474358ea2a5065048996}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a31fbda54779cb824c6dc1f647afeacad}\label{classSequence_a31fbda54779cb824c6dc1f647afeacad}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a57158d83c280db011e1a23b6a818e5d2}\label{classSequence_a57158d83c280db011e1a23b6a818e5d2}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_acbbc3950dad27e8be0b3cdf9273f4647}\label{classSequence_acbbc3950dad27e8be0b3cdf9273f4647}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a9d745ad1837240fd8d2b55bbc16edd97}\label{classSequence_a9d745ad1837240fd8d2b55bbc16edd97}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a3cbede70db51c2c24dd7fdfbc12cc4cc}\label{classSequence_a3cbede70db51c2c24dd7fdfbc12cc4cc}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_ab2624258f211ba82cb5ffe4c9694c731}\label{classSequence_ab2624258f211ba82cb5ffe4c9694c731}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m9, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a65301e27474a3bc762ffca25ce2dfa15}\label{classSequence_a65301e27474a3bc762ffca25ce2dfa15}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m9, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m10, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a455816708ba4e99c718bdd06eaa21c44}\label{classSequence_a455816708ba4e99c718bdd06eaa21c44}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries variadic\+Create} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$item,...)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_a7ff3322e0f0f7a24f9d21835962b66dd}{create} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&array\+Of\+Actions)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_a7604201e2d9e58bdf1125defc27a1987}{create\+With\+Variable\+List} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action1, va\+\_\+list args)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_aa513abc4dc83fd38844537bf3412c0f9}{create\+With\+Two\+Actions} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action\+One, \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action\+Two)
+\item 
+\mbox{\Hypertarget{classSequence_a42a76c31f0064f04e73e425cb8a68eb8}\label{classSequence_a42a76c31f0064f04e73e425cb8a68eb8}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a0e505f60480c6ce8f68b9dc74e60a425}\label{classSequence_a0e505f60480c6ce8f68b9dc74e60a425}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a63967d5c496a474358ea2a5065048996}\label{classSequence_a63967d5c496a474358ea2a5065048996}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a31fbda54779cb824c6dc1f647afeacad}\label{classSequence_a31fbda54779cb824c6dc1f647afeacad}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a57158d83c280db011e1a23b6a818e5d2}\label{classSequence_a57158d83c280db011e1a23b6a818e5d2}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_acbbc3950dad27e8be0b3cdf9273f4647}\label{classSequence_acbbc3950dad27e8be0b3cdf9273f4647}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a9d745ad1837240fd8d2b55bbc16edd97}\label{classSequence_a9d745ad1837240fd8d2b55bbc16edd97}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a3cbede70db51c2c24dd7fdfbc12cc4cc}\label{classSequence_a3cbede70db51c2c24dd7fdfbc12cc4cc}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_ab2624258f211ba82cb5ffe4c9694c731}\label{classSequence_ab2624258f211ba82cb5ffe4c9694c731}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m9, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a65301e27474a3bc762ffca25ce2dfa15}\label{classSequence_a65301e27474a3bc762ffca25ce2dfa15}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries create} (\hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m1, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m2, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m3, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m4, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m5, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m6, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m7, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m8, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m9, \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{M} m10, std\+::nullptr\+\_\+t list\+End)
+\item 
+\mbox{\Hypertarget{classSequence_a5a2d5ec13db337690c289afcc63f3a20}\label{classSequence_a5a2d5ec13db337690c289afcc63f3a20}} 
+static \hyperlink{classSequence}{Sequence} $\ast$ {\bfseries variadic\+Create} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$item,...)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_a54e77ba176054b306ca152056baada57}{create} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&array\+Of\+Actions)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_afb4fccce4105b654a71ec37d73cc6f6c}{create\+With\+Variable\+List} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action1, va\+\_\+list args)
+\item 
+static \hyperlink{classSequence}{Sequence} $\ast$ \hyperlink{classSequence_ade83fc0733cdc510445af7274e03c6b3}{create\+With\+Two\+Actions} (\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action\+One, \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$action\+Two)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSequence_a5a0552640ba2d3a3cf1121e3308fe50d}\label{classSequence_a5a0552640ba2d3a3cf1121e3308fe50d}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classSequence}{Sequence}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSequence_ac80bf4663c1c73f6be86c85781bb0740}\label{classSequence_ac80bf4663c1c73f6be86c85781bb0740}} 
+\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$ {\bfseries \+\_\+actions} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classSequence_a5c0f43429cef6d57c140cdc3a67683dd}\label{classSequence_a5c0f43429cef6d57c140cdc3a67683dd}} 
+float {\bfseries \+\_\+split}
+\item 
+\mbox{\Hypertarget{classSequence_a30a391c645e1d7318d4939a737364689}\label{classSequence_a30a391c645e1d7318d4939a737364689}} 
+int {\bfseries \+\_\+last}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Runs actions sequentially, one after another. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classSequence_a6f34f8a978819442ffa4e9517ed49c10}\label{classSequence_a6f34f8a978819442ffa4e9517ed49c10}} 
+\index{Sequence@{Sequence}!M@{M}}
+\index{M@{M}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{M}{M}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action}$\ast$ \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{Sequence\+::M}}
+
+Helper constructor to create an array of sequenceable actions.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_a6f34f8a978819442ffa4e9517ed49c10}\label{classSequence_a6f34f8a978819442ffa4e9517ed49c10}} 
+\index{Sequence@{Sequence}!M@{M}}
+\index{M@{M}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{M}{M}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action}$\ast$ \hyperlink{classSequence_a6f34f8a978819442ffa4e9517ed49c10}{Sequence\+::M}}
+
+Helper constructor to create an array of sequenceable actions.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSequence_ad6a4cd778ab275e08dfd945efd5a736f}\label{classSequence_ad6a4cd778ab275e08dfd945efd5a736f}} 
+\index{Sequence@{Sequence}!clone@{clone}}
+\index{clone@{clone}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSequence}{Sequence} $\ast$ Sequence\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_af7a34db8abb86fa6c677e5fa7540f991}\label{classSequence_af7a34db8abb86fa6c677e5fa7540f991}} 
+\index{Sequence@{Sequence}!clone@{clone}}
+\index{clone@{clone}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSequence}{Sequence}$\ast$ Sequence\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_a7ff3322e0f0f7a24f9d21835962b66dd}\label{classSequence_a7ff3322e0f0f7a24f9d21835962b66dd}} 
+\index{Sequence@{Sequence}!create@{create}}
+\index{create@{create}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSequence}{Sequence} $\ast$ Sequence\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&}]{array\+Of\+Actions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper constructor to create an array of sequenceable actions given an array. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to the js or lua,the input params changed
+in js  :var   create(var   object1,var   object2, ...)
+in lua :local create(local object1,local object2, ...)
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Of\+Actions} & An array of sequenceable actions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_a54e77ba176054b306ca152056baada57}\label{classSequence_a54e77ba176054b306ca152056baada57}} 
+\index{Sequence@{Sequence}!create@{create}}
+\index{create@{create}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSequence}{Sequence}$\ast$ Sequence\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$$>$ \&}]{array\+Of\+Actions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper constructor to create an array of sequenceable actions given an array. 
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound to the js or lua,the input params changed
+in js  :var   create(var   object1,var   object2, ...)
+in lua :local create(local object1,local object2, ...)
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Of\+Actions} & An array of sequenceable actions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_aa513abc4dc83fd38844537bf3412c0f9}\label{classSequence_aa513abc4dc83fd38844537bf3412c0f9}} 
+\index{Sequence@{Sequence}!create\+With\+Two\+Actions@{create\+With\+Two\+Actions}}
+\index{create\+With\+Two\+Actions@{create\+With\+Two\+Actions}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create\+With\+Two\+Actions()}{createWithTwoActions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSequence}{Sequence} $\ast$ Sequence\+::create\+With\+Two\+Actions (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action\+One,  }\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action\+Two }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action. 
+\begin{DoxyParams}{Parameters}
+{\em action\+One} & The first sequenceable action. \\
+\hline
+{\em action\+Two} & The second sequenceable action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_ade83fc0733cdc510445af7274e03c6b3}\label{classSequence_ade83fc0733cdc510445af7274e03c6b3}} 
+\index{Sequence@{Sequence}!create\+With\+Two\+Actions@{create\+With\+Two\+Actions}}
+\index{create\+With\+Two\+Actions@{create\+With\+Two\+Actions}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create\+With\+Two\+Actions()}{createWithTwoActions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSequence}{Sequence}$\ast$ Sequence\+::create\+With\+Two\+Actions (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action\+One,  }\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action\+Two }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the action. 
+\begin{DoxyParams}{Parameters}
+{\em action\+One} & The first sequenceable action. \\
+\hline
+{\em action\+Two} & The second sequenceable action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_a7604201e2d9e58bdf1125defc27a1987}\label{classSequence_a7604201e2d9e58bdf1125defc27a1987}} 
+\index{Sequence@{Sequence}!create\+With\+Variable\+List@{create\+With\+Variable\+List}}
+\index{create\+With\+Variable\+List@{create\+With\+Variable\+List}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create\+With\+Variable\+List()}{createWithVariableList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSequence}{Sequence} $\ast$ Sequence\+::create\+With\+Variable\+List (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action1,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper constructor to create an array of sequence-\/able actions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action1} & The first sequenceable action. \\
+\hline
+{\em args} & The va\+\_\+list variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_afb4fccce4105b654a71ec37d73cc6f6c}\label{classSequence_afb4fccce4105b654a71ec37d73cc6f6c}} 
+\index{Sequence@{Sequence}!create\+With\+Variable\+List@{create\+With\+Variable\+List}}
+\index{create\+With\+Variable\+List@{create\+With\+Variable\+List}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{create\+With\+Variable\+List()}{createWithVariableList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSequence}{Sequence}$\ast$ Sequence\+::create\+With\+Variable\+List (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{action1,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper constructor to create an array of sequence-\/able actions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action1} & The first sequenceable action. \\
+\hline
+{\em args} & The va\+\_\+list variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classSequence}{Sequence} object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}\label{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}} 
+\index{Sequence@{Sequence}!init\+With\+Two\+Actions@{init\+With\+Two\+Actions}}
+\index{init\+With\+Two\+Actions@{init\+With\+Two\+Actions}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{init\+With\+Two\+Actions()}{initWithTwoActions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sequence\+::init\+With\+Two\+Actions (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{p\+Action\+One,  }\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{p\+Action\+Two }\end{DoxyParamCaption})}
+
+initializes the action \mbox{\Hypertarget{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}\label{classSequence_ae4324a26f6f238fd448ff7261e5f7c5e}} 
+\index{Sequence@{Sequence}!init\+With\+Two\+Actions@{init\+With\+Two\+Actions}}
+\index{init\+With\+Two\+Actions@{init\+With\+Two\+Actions}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{init\+With\+Two\+Actions()}{initWithTwoActions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sequence\+::init\+With\+Two\+Actions (\begin{DoxyParamCaption}\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{p\+Action\+One,  }\item[{\hyperlink{classFiniteTimeAction}{Finite\+Time\+Action} $\ast$}]{p\+Action\+Two }\end{DoxyParamCaption})}
+
+initializes the action \mbox{\Hypertarget{classSequence_a2f331fff9e2ab6e63569f55615a1c03e}\label{classSequence_a2f331fff9e2ab6e63569f55615a1c03e}} 
+\index{Sequence@{Sequence}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}}
+{\footnotesize\ttfamily bool Sequence\+::is\+Done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return true if the action has finished.
+
+\begin{DoxyReturn}{Returns}
+Is true if the action has finished. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a466ff6a3a5f95e47d4d01bfa4775290d}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_ad637da9eb81e01e9b6535c23220f9221}\label{classSequence_ad637da9eb81e01e9b6535c23220f9221}} 
+\index{Sequence@{Sequence}!reverse@{reverse}}
+\index{reverse@{reverse}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSequence}{Sequence} $\ast$ Sequence\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_ab0d19f0b8c2272921aab829f583a91f0}\label{classSequence_ab0d19f0b8c2272921aab829f583a91f0}} 
+\index{Sequence@{Sequence}!reverse@{reverse}}
+\index{reverse@{reverse}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSequence}{Sequence}$\ast$ Sequence\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_a8da6e287023489db0c5abe888b905697}\label{classSequence_a8da6e287023489db0c5abe888b905697}} 
+\index{Sequence@{Sequence}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sequence\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_a4d17fdbc7a236a63798e23ae12971b77}\label{classSequence_a4d17fdbc7a236a63798e23ae12971b77}} 
+\index{Sequence@{Sequence}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sequence\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classSequence_a14332cc490ebbbb1c372eff0dc4cd025}\label{classSequence_a14332cc490ebbbb1c372eff0dc4cd025}} 
+\index{Sequence@{Sequence}!stop@{stop}}
+\index{stop@{stop}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sequence\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classSequence_a66d72eff9f99dfff3f0ac09d280f4360}\label{classSequence_a66d72eff9f99dfff3f0ac09d280f4360}} 
+\index{Sequence@{Sequence}!stop@{stop}}
+\index{stop@{stop}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sequence\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after the action has finished. It will set the \textquotesingle{}target\textquotesingle{} to nil. I\+M\+P\+O\+R\+T\+A\+NT\+: You should never call \char`\"{}\+Action\+::stop()\char`\"{} manually. Instead, use\+: \char`\"{}target-\/$>$stop\+Action(action);\char`\"{}. 
+
+Reimplemented from \hyperlink{classAction_a968267fa7a1dcc46a2976249a712d3c8}{Action}.
+
+\mbox{\Hypertarget{classSequence_a336d205df83e1a4ff0ab4ecbc8cf56e3}\label{classSequence_a336d205df83e1a4ff0ab4ecbc8cf56e3}} 
+\index{Sequence@{Sequence}!update@{update}}
+\index{update@{update}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sequence\+::update (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classSequence_a3db260a7840e606c3b3883de4f7b1f48}\label{classSequence_a3db260a7840e606c3b3883de4f7b1f48}} 
+\index{Sequence@{Sequence}!update@{update}}
+\index{update@{update}!Sequence@{Sequence}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sequence\+::update (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

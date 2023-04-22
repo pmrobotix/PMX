@@ -22,8 +22,8 @@ void O_ServoStepTest::configureConsoleArgs(int argc, char** argv) //surcharge
 
     robot.getArgs().addArgument("num", "Numero du servo");
     robot.getArgs().addArgument("step", "Increment/decrement", "2");
-    robot.getArgs().addArgument("pos", "position initiale (0-4095)", "512");
-    robot.getArgs().addArgument("speed", "position initiale", "1023");
+    robot.getArgs().addArgument("pos", "position initiale (0-4095)", "512"); //POUR AX12 ? et les autres ?
+    robot.getArgs().addArgument("speed", "position initiale", "0");
 //    robot.getArgs().addArgument("type", "Std[0] or AX12[12]", "0");
 
     //reparse arguments
@@ -38,7 +38,8 @@ void O_ServoStepTest::run(int argc, char** argv) {
 
     Arguments args = robot.getArgs();
 
-    ServoObjectsSystem servoObjects = robot.actions().servos();
+
+    //ServoObjectsSystem servoObjects = robot.actions().servos(); // Segmentation fault (core dumped) CORE DUMP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     logger().info() << "N°" << this->position() << " - Executing - " << this->desc() << logs::end;
 
@@ -46,7 +47,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
     int step = 5;
     int speed = 1023;
     int num = 0;
-    int type = 0;
+
 
     if (args["num"] != "0") {
         num = atoi(args["num"].c_str());
@@ -81,23 +82,23 @@ void O_ServoStepTest::run(int argc, char** argv) {
     robot.actions().lcd2x16().print("SERVO n°");
     robot.actions().lcd2x16().print(num);
 
-    servoObjects.setSpeed(num, speed);
+    //robot.actions().servos().setSpeed(num, speed);
 
     //servoObjects.deploy(num, pos, 0);
-    servoObjects.release(num);
+    robot.actions().servos().release(num);
 
     ButtonTouch touch = BUTTON_NONE;
 
-//    AServoDriver::ServoType aType = AServoDriver::SERVO_STANDARD;
-//    if (type == 12) aType = AServoDriver::SERVO_DYNAMIXEL;
+
+
 
     int current_pos = 0;
     int torque = 0;
-    bool deploy = false;
+    //bool deploy = false;
 
     while (touch != BUTTON_BACK_KEY) {
-        current_pos = servoObjects.getPulseWidth(num);
-        torque = servoObjects.getTorque(num);
+        current_pos = robot.actions().servos().getPulseWidth(num);
+        torque = robot.actions().servos().getTorque(num);
         logger().info() << "SERVO " << num << " current_pos= " << current_pos << "  torque= " << torque << logs::end;
         robot.actions().lcd2x16().home();
         robot.actions().lcd2x16().print("SERVO ");
@@ -110,14 +111,14 @@ void O_ServoStepTest::run(int argc, char** argv) {
         robot.actions().lcd2x16().print(pos);
         robot.actions().lcd2x16().print("   ");
 
-        //touch = robot.actions().buttonBar().waitOneOfAllPressed();
-        touch = robot.actions().buttonBar().checkOneOfAllPressed();
+        touch = robot.actions().buttonBar().waitOneOfAllPressed();
+        //touch = robot.actions().buttonBar().checkOneOfAllPressed();
         //logger().info() << "touch = " << touch << logs::end;
         if (touch == BUTTON_UP_KEY) {
             pos = current_pos+step;
             if (pos >= 4095) pos = 4095;
             logger().info() << "+" << step << " pos=" << pos << logs::end;
-            servoObjects.deploy(num, pos, -1);
+            robot.actions().servos().deployWithVelocity(num, pos, -1, speed);
         }
 
         if (touch == BUTTON_DOWN_KEY) {
@@ -125,7 +126,7 @@ void O_ServoStepTest::run(int argc, char** argv) {
             if (pos <= 0) pos = 0;
             logger().info() << "-" << step << " pos=" << pos << logs::end;
 
-            servoObjects.deploy(num, pos, -1);
+            robot.actions().servos().deployWithVelocity(num, pos, -1, speed);
 
         }
 
@@ -161,31 +162,32 @@ void O_ServoStepTest::run(int argc, char** argv) {
 
         if (touch == BUTTON_RIGHT_KEY) {
             //pos = 512;
-            servoObjects.release(num);
+            robot.actions().servos().release(num);
             num = num + 1; //TODO passer d'un autre dans la liste
             if (num >= 10254) num--;
 
             //robot.actions().servos().setup(num, aType, 0, 1500, 3000, false);
             //robot.actions().servos().hold(num);
-            current_pos = servoObjects.getPulseWidth(num);
+            current_pos = robot.actions().servos().getPulseWidth(num);
             logger().info() << "SERVO " << num << " current_pos=" << current_pos << logs::end;
 
         }
 
         if (touch == BUTTON_LEFT_KEY) {
             //pos = 512;
-            servoObjects.release(num);
+            robot.actions().servos().release(num);
             num = num - 1;
             if (num < 0) num++;
 //            robot.actions().servos().setup(num, aType, 0, 1500, 3000, false);
 //            robot.actions().servos().hold(num);
-            current_pos = servoObjects.getPulseWidth(num);
+            current_pos = robot.actions().servos().getPulseWidth(num);
             logger().info() << "SERVO " << num << " current_pos=" << current_pos << logs::end;
 
         }
         //usleep (10000);
 
     }
+
     logger().info() << "RELEASE ALL " << logs::end;
     robot.actions().releaseAll();
 

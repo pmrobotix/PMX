@@ -1,0 +1,53 @@
+\hypertarget{rapidxml__utils_8hpp}{}\section{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/rapidxml/rapidxml\+\_\+utils.hpp File Reference}
+\label{rapidxml__utils_8hpp}\index{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/rapidxml/rapidxml\+\_\+utils.\+hpp@{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/rapidxml/rapidxml\+\_\+utils.\+hpp}}
+{\ttfamily \#include \char`\"{}rapidxml.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for rapidxml\+\_\+utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rapidxml__utils_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classrapidxml_1_1file}{rapidxml\+::file$<$ Ch $>$}
+\begin{DoxyCompactList}\small\item\em Represents data loaded from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Ch $>$ }\\std\+::size\+\_\+t \hyperlink{rapidxml__utils_8hpp_a21c1cf2814019385e6b8d09e75af1d34}{rapidxml\+::count\+\_\+children} (xml\+\_\+node$<$ Ch $>$ $\ast$node)
+\item 
+{\footnotesize template$<$class Ch $>$ }\\std\+::size\+\_\+t \hyperlink{rapidxml__utils_8hpp_a6255d15e5d8ad12ebcd7c60da51c97e2}{rapidxml\+::count\+\_\+attributes} (xml\+\_\+node$<$ Ch $>$ $\ast$node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains high-\/level rapidxml utilities that can be useful in certain simple scenarios. They should probably not be used if maximizing performance is the main objective. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rapidxml__utils_8hpp_file_a6255d15e5d8ad12ebcd7c60da51c97e2}\label{rapidxml__utils_8hpp_file_a6255d15e5d8ad12ebcd7c60da51c97e2}} 
+\index{rapidxml\+\_\+utils.\+hpp@{rapidxml\+\_\+utils.\+hpp}!count\+\_\+attributes@{count\+\_\+attributes}}
+\index{count\+\_\+attributes@{count\+\_\+attributes}!rapidxml\+\_\+utils.\+hpp@{rapidxml\+\_\+utils.\+hpp}}
+\subsubsection{\texorpdfstring{count\+\_\+attributes()}{count\_attributes()}}
+{\footnotesize\ttfamily template$<$class Ch $>$ \\
+std\+::size\+\_\+t rapidxml\+::count\+\_\+attributes (\begin{DoxyParamCaption}\item[{\hyperlink{classrapidxml_1_1xml__node}{xml\+\_\+node}$<$ Ch $>$ $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Counts attributes of node. Time complexity is O(n). \begin{DoxyReturn}{Returns}
+Number of attributes of node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rapidxml__utils_8hpp_file_a21c1cf2814019385e6b8d09e75af1d34}\label{rapidxml__utils_8hpp_file_a21c1cf2814019385e6b8d09e75af1d34}} 
+\index{rapidxml\+\_\+utils.\+hpp@{rapidxml\+\_\+utils.\+hpp}!count\+\_\+children@{count\+\_\+children}}
+\index{count\+\_\+children@{count\+\_\+children}!rapidxml\+\_\+utils.\+hpp@{rapidxml\+\_\+utils.\+hpp}}
+\subsubsection{\texorpdfstring{count\+\_\+children()}{count\_children()}}
+{\footnotesize\ttfamily template$<$class Ch $>$ \\
+std\+::size\+\_\+t rapidxml\+::count\+\_\+children (\begin{DoxyParamCaption}\item[{\hyperlink{classrapidxml_1_1xml__node}{xml\+\_\+node}$<$ Ch $>$ $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Counts children of node. Time complexity is O(n). \begin{DoxyReturn}{Returns}
+Number of children of node 
+\end{DoxyReturn}

@@ -1,0 +1,1921 @@
+\hypertarget{classDirector}{}\section{Director Class Reference}
+\label{classDirector}\index{Director@{Director}}
+
+
+Class that creates and handles the main Window and manages how and when to execute the Scenes.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Director.\+h$>$}
+
+
+
+Inheritance diagram for Director\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classDirector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Director\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDirector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} \{ \newline
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}{Projection\+::\+\_\+2D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}{Projection\+::\+\_\+3D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}{Projection\+::\+C\+U\+S\+T\+OM}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}{Projection\+::\+D\+E\+F\+A\+U\+LT} = \+\_\+3D, 
+\newline
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}{Projection\+::\+\_\+2D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}{Projection\+::\+\_\+3D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}{Projection\+::\+C\+U\+S\+T\+OM}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}{Projection\+::\+D\+E\+F\+A\+U\+LT} = \+\_\+3D
+ \}\begin{DoxyCompactList}\small\item\em Possible Open\+GL projections used by director. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} \{ \newline
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}{Projection\+::\+\_\+2D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}{Projection\+::\+\_\+3D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}{Projection\+::\+C\+U\+S\+T\+OM}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}{Projection\+::\+D\+E\+F\+A\+U\+LT} = \+\_\+3D, 
+\newline
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}{Projection\+::\+\_\+2D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}{Projection\+::\+\_\+3D}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}{Projection\+::\+C\+U\+S\+T\+OM}, 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}{Projection\+::\+D\+E\+F\+A\+U\+LT} = \+\_\+3D
+ \}\begin{DoxyCompactList}\small\item\em Possible Open\+GL projections used by director. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}{Director} ()
+\item 
+virtual \hyperlink{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}{$\sim$\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_aa0c98effd0ca901b5f64f62270777891}\label{classDirector_aa0c98effd0ca901b5f64f62270777891}} 
+virtual bool {\bfseries init} ()
+\item 
+\hyperlink{classScene}{Scene} $\ast$ \hyperlink{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}{get\+Running\+Scene} ()
+\item 
+float \hyperlink{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}{get\+Animation\+Interval} ()
+\item 
+virtual void \hyperlink{classDirector_a87d84ea16dfb7c991a4fcfd48e8d22ed}{set\+Animation\+Interval} (float interval)=0
+\item 
+bool \hyperlink{classDirector_a922631f5a39265d96972d63ddb76a7fc}{is\+Display\+Stats} ()
+\item 
+void \hyperlink{classDirector_a97986d4c3f91e7758316e3f0a0396baa}{set\+Display\+Stats} (bool display\+Stats)
+\item 
+float \hyperlink{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}{get\+Seconds\+Per\+Frame} ()
+\item 
+\hyperlink{classGLView}{G\+L\+View} $\ast$ \hyperlink{classDirector_a9480a6fa03967568e72b392e2b53c599}{get\+Open\+G\+L\+View} ()
+\item 
+void \hyperlink{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}{set\+Open\+G\+L\+View} (\hyperlink{classGLView}{G\+L\+View} $\ast$open\+G\+L\+View)
+\item 
+\mbox{\Hypertarget{classDirector_a0d0dc7e5b93c1e1dc88d0e8851758a5e}\label{classDirector_a0d0dc7e5b93c1e1dc88d0e8851758a5e}} 
+\hyperlink{classTextureCache}{Texture\+Cache} $\ast$ {\bfseries get\+Texture\+Cache} () const
+\item 
+bool \hyperlink{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}{is\+Next\+Delta\+Time\+Zero} ()
+\item 
+void \hyperlink{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}{set\+Next\+Delta\+Time\+Zero} (bool next\+Delta\+Time\+Zero)
+\item 
+bool \hyperlink{classDirector_a18b86013970deb49290996518f0ddae5}{is\+Paused} ()
+\item 
+unsigned int \hyperlink{classDirector_a2876d2ae1cc0b6832620f1144c38142a}{get\+Total\+Frames} ()
+\item 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} \hyperlink{classDirector_a36e916d304e26fb6861b497806dc9980}{get\+Projection} ()
+\item 
+void \hyperlink{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}{set\+Projection} (\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} projection)
+\item 
+void \hyperlink{classDirector_aa93aca162b691b52a1ec1d206ca39a64}{set\+Viewport} ()
+\item 
+bool \hyperlink{classDirector_a882d9e2320d19b11b1cfab88a4439833}{is\+Send\+Cleanup\+To\+Scene} ()
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classDirector_a33fe947ebf154c242198d3ad0d95cba4}{get\+Notification\+Node} () const
+\item 
+void \hyperlink{classDirector_ae94a4dda12c81955813683e016f769dd}{set\+Notification\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classDirector_af07668df4a8916e6eb0f79a93f6588fe}{get\+Win\+Size} () const
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}{get\+Win\+Size\+In\+Pixels} () const
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classDirector_ac17725c3dbb4876d745d897cb436b638}{get\+Visible\+Size} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a712d994af29f122e1b6496dd671718d5}{get\+Visible\+Origin} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a29371003ac8c3a6856eee412aa129d9c}{convert\+To\+GL} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a932324432ae4ccc8819db508951644e4}{convert\+To\+UI} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+float \hyperlink{classDirector_ad245779e1e70b0195e761afc0582b1da}{get\+Z\+Eye} () const
+\item 
+void \hyperlink{classDirector_a893e73a440a7832097e858bf8b9dff8a}{run\+With\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_ad113f1a2b5ab297788caa791b57f458b}{push\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}{pop\+Scene} ()
+\item 
+void \hyperlink{classDirector_a3990819e9d112e26258290ca82d91999}{pop\+To\+Root\+Scene} ()
+\item 
+void \hyperlink{classDirector_a56f61d47f337d996c069ca7aac5b3c79}{pop\+To\+Scene\+Stack\+Level} (int level)
+\item 
+void \hyperlink{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}{replace\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}{end} ()
+\item 
+void \hyperlink{classDirector_ad0e2e9b810e39c939e25ead3918faf00}{pause} ()
+\item 
+void \hyperlink{classDirector_a851df0aed8d550cc85159063b0c85dac}{resume} ()
+\item 
+\mbox{\Hypertarget{classDirector_a4043394eae66baf0f307121e442610d1}\label{classDirector_a4043394eae66baf0f307121e442610d1}} 
+void {\bfseries restart} ()
+\item 
+virtual void \hyperlink{classDirector_abe981a5c5d35aaf6c2aaf1b55f023e82}{stop\+Animation} ()=0
+\item 
+virtual void \hyperlink{classDirector_a122d685c783d0c2b7e2d22ba1ecb0d91}{start\+Animation} ()=0
+\item 
+void \hyperlink{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}{draw\+Scene} ()
+\item 
+void \hyperlink{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}{purge\+Cached\+Data} ()
+\item 
+void \hyperlink{classDirector_a55475c9785f74187a7d337d117224953}{set\+Default\+Values} ()
+\item 
+void \hyperlink{classDirector_a7271f672c2afb904023fe0510fbe215f}{set\+G\+L\+Default\+Values} ()
+\item 
+void \hyperlink{classDirector_a405b60d715c4828cc4541dfc5c34c04f}{set\+Alpha\+Blending} (bool on)
+\item 
+void \hyperlink{classDirector_a50fe8a47a3b94dc42366099e5862de40}{set\+Clear\+Color} (const \hyperlink{structColor4F}{Color4F} \&clear\+Color)
+\item 
+void \hyperlink{classDirector_a24a276dd9029d03e564c07750872aef6}{set\+Depth\+Test} (bool on)
+\item 
+\mbox{\Hypertarget{classDirector_a3c5e194226ccfe0da560e8ffee8fb95b}\label{classDirector_a3c5e194226ccfe0da560e8ffee8fb95b}} 
+virtual void {\bfseries main\+Loop} ()=0
+\item 
+void \hyperlink{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}{set\+Content\+Scale\+Factor} (float scale\+Factor)
+\item 
+float \hyperlink{classDirector_a233085ea94b316a44313e4120029f2a4}{get\+Content\+Scale\+Factor} () const
+\item 
+\hyperlink{classScheduler}{Scheduler} $\ast$ \hyperlink{classDirector_a9deefa201b7826b4c9960c85a4fa7022}{get\+Scheduler} () const
+\item 
+void \hyperlink{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}{set\+Scheduler} (\hyperlink{classScheduler}{Scheduler} $\ast$scheduler)
+\item 
+\hyperlink{classActionManager}{Action\+Manager} $\ast$ \hyperlink{classDirector_aecb253e4de577ebd009367f27d2a07de}{get\+Action\+Manager} () const
+\item 
+void \hyperlink{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}{set\+Action\+Manager} (\hyperlink{classActionManager}{Action\+Manager} $\ast$action\+Manager)
+\item 
+\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$ \hyperlink{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}{get\+Event\+Dispatcher} () const
+\item 
+void \hyperlink{classDirector_aaba36d4ea12402524b17755dc3b26b91}{set\+Event\+Dispatcher} (\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$dispatcher)
+\item 
+\hyperlink{classRenderer}{Renderer} $\ast$ \hyperlink{classDirector_a45e283c703cf856467ccbe484da739c5}{get\+Renderer} () const
+\item 
+Console $\ast$ \hyperlink{classDirector_a84f3750550158cbd24de5d7783852a12}{get\+Console} () const
+\item 
+\mbox{\Hypertarget{classDirector_a81022b89d60dbe3912084200953dbbbe}\label{classDirector_a81022b89d60dbe3912084200953dbbbe}} 
+float {\bfseries get\+Delta\+Time} () const
+\item 
+float \hyperlink{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}{get\+Frame\+Rate} () const
+\item 
+void \hyperlink{classDirector_afbc7bc9b5641105eae937965146ea3e2}{push\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_a4c47574ac63626fa0e14eee27fed8b99}{pop\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_a3491e578d2d80809b44892144bd6645a}{load\+Identity\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}{load\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type, const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classDirector_aec8693e208a9eeb95de9b4c6af300444}{multiply\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type, const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classDirector_a4e361548a1bec142a29b4a5e1148fe60}{get\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type) const
+\item 
+void \hyperlink{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}{reset\+Matrix\+Stack} ()
+\item 
+const std\+::thread\+::id \& \hyperlink{classDirector_a582225969ce1f42224c0387779f875e1}{get\+Cocos2d\+Thread\+Id} () const
+\item 
+\hyperlink{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}{Director} ()
+\item 
+\hyperlink{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}{$\sim$\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_aa0c98effd0ca901b5f64f62270777891}\label{classDirector_aa0c98effd0ca901b5f64f62270777891}} 
+bool {\bfseries init} ()
+\item 
+\hyperlink{classScene}{Scene} $\ast$ \hyperlink{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}{get\+Running\+Scene} ()
+\item 
+float \hyperlink{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}{get\+Animation\+Interval} ()
+\item 
+void \hyperlink{classDirector_aa6bb2738f121a6e9076a27c7916c38a5}{set\+Animation\+Interval} (float interval)
+\item 
+bool \hyperlink{classDirector_a922631f5a39265d96972d63ddb76a7fc}{is\+Display\+Stats} ()
+\item 
+void \hyperlink{classDirector_a97986d4c3f91e7758316e3f0a0396baa}{set\+Display\+Stats} (bool display\+Stats)
+\item 
+float \hyperlink{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}{get\+Seconds\+Per\+Frame} ()
+\item 
+\hyperlink{classGLView}{G\+L\+View} $\ast$ \hyperlink{classDirector_a9480a6fa03967568e72b392e2b53c599}{get\+Open\+G\+L\+View} ()
+\item 
+void \hyperlink{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}{set\+Open\+G\+L\+View} (\hyperlink{classGLView}{G\+L\+View} $\ast$open\+G\+L\+View)
+\item 
+\mbox{\Hypertarget{classDirector_a5fc2f5faa3030ecde94ace77a995c07e}\label{classDirector_a5fc2f5faa3030ecde94ace77a995c07e}} 
+\hyperlink{classTextureCache}{Texture\+Cache} $\ast$ {\bfseries get\+Texture\+Cache} () const
+\item 
+bool \hyperlink{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}{is\+Next\+Delta\+Time\+Zero} ()
+\item 
+void \hyperlink{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}{set\+Next\+Delta\+Time\+Zero} (bool next\+Delta\+Time\+Zero)
+\item 
+bool \hyperlink{classDirector_a18b86013970deb49290996518f0ddae5}{is\+Paused} ()
+\item 
+unsigned int \hyperlink{classDirector_a2876d2ae1cc0b6832620f1144c38142a}{get\+Total\+Frames} ()
+\item 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} \hyperlink{classDirector_a36e916d304e26fb6861b497806dc9980}{get\+Projection} ()
+\item 
+void \hyperlink{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}{set\+Projection} (\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} projection)
+\item 
+void \hyperlink{classDirector_aa93aca162b691b52a1ec1d206ca39a64}{set\+Viewport} ()
+\item 
+bool \hyperlink{classDirector_a882d9e2320d19b11b1cfab88a4439833}{is\+Send\+Cleanup\+To\+Scene} ()
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classDirector_a33fe947ebf154c242198d3ad0d95cba4}{get\+Notification\+Node} () const
+\item 
+void \hyperlink{classDirector_ae94a4dda12c81955813683e016f769dd}{set\+Notification\+Node} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classDirector_a2528d17deb09cec6ee7209127719640c}{get\+Win\+Size} () const
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}{get\+Win\+Size\+In\+Pixels} () const
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classDirector_ac17725c3dbb4876d745d897cb436b638}{get\+Visible\+Size} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a712d994af29f122e1b6496dd671718d5}{get\+Visible\+Origin} () const
+\item 
+\hyperlink{classRect}{Rect} \hyperlink{classDirector_a64fae32c207654447373c95bad35de4d}{get\+Safe\+Area\+Rect} () const
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a29371003ac8c3a6856eee412aa129d9c}{convert\+To\+GL} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classDirector_a932324432ae4ccc8819db508951644e4}{convert\+To\+UI} (const \hyperlink{classVec2}{Vec2} \&point)
+\item 
+float \hyperlink{classDirector_ad245779e1e70b0195e761afc0582b1da}{get\+Z\+Eye} () const
+\item 
+void \hyperlink{classDirector_a893e73a440a7832097e858bf8b9dff8a}{run\+With\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_ad113f1a2b5ab297788caa791b57f458b}{push\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}{pop\+Scene} ()
+\item 
+void \hyperlink{classDirector_a3990819e9d112e26258290ca82d91999}{pop\+To\+Root\+Scene} ()
+\item 
+void \hyperlink{classDirector_a56f61d47f337d996c069ca7aac5b3c79}{pop\+To\+Scene\+Stack\+Level} (int level)
+\item 
+void \hyperlink{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}{replace\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}{end} ()
+\item 
+void \hyperlink{classDirector_ad0e2e9b810e39c939e25ead3918faf00}{pause} ()
+\item 
+void \hyperlink{classDirector_a851df0aed8d550cc85159063b0c85dac}{resume} ()
+\item 
+\mbox{\Hypertarget{classDirector_a4043394eae66baf0f307121e442610d1}\label{classDirector_a4043394eae66baf0f307121e442610d1}} 
+void {\bfseries restart} ()
+\item 
+void \hyperlink{classDirector_a436d0f15a1cf160cb72a64edc2df217c}{stop\+Animation} ()
+\item 
+void \hyperlink{classDirector_ae194a51e690fc6e1a6334a6a83da5b2e}{start\+Animation} ()
+\item 
+void \hyperlink{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}{draw\+Scene} ()
+\item 
+void \hyperlink{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}{purge\+Cached\+Data} ()
+\item 
+void \hyperlink{classDirector_a55475c9785f74187a7d337d117224953}{set\+Default\+Values} ()
+\item 
+void \hyperlink{classDirector_a7271f672c2afb904023fe0510fbe215f}{set\+G\+L\+Default\+Values} ()
+\item 
+void \hyperlink{classDirector_a405b60d715c4828cc4541dfc5c34c04f}{set\+Alpha\+Blending} (bool on)
+\item 
+void \hyperlink{classDirector_a50fe8a47a3b94dc42366099e5862de40}{set\+Clear\+Color} (const \hyperlink{structColor4F}{Color4F} \&clear\+Color)
+\item 
+const \hyperlink{structColor4F}{Color4F} \& \hyperlink{classDirector_a980149bba5adee4a719c7a6e6accc810}{get\+Clear\+Color} () const
+\item 
+void \hyperlink{classDirector_a24a276dd9029d03e564c07750872aef6}{set\+Depth\+Test} (bool on)
+\item 
+\mbox{\Hypertarget{classDirector_a478075cd9b7e11f6c45e2e8929daa823}\label{classDirector_a478075cd9b7e11f6c45e2e8929daa823}} 
+void {\bfseries main\+Loop} ()
+\item 
+void \hyperlink{classDirector_aecddf44c9b1734615a3a71d7d010588a}{main\+Loop} (float dt)
+\item 
+void \hyperlink{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}{set\+Content\+Scale\+Factor} (float scale\+Factor)
+\item 
+float \hyperlink{classDirector_a233085ea94b316a44313e4120029f2a4}{get\+Content\+Scale\+Factor} () const
+\item 
+\hyperlink{classScheduler}{Scheduler} $\ast$ \hyperlink{classDirector_a9deefa201b7826b4c9960c85a4fa7022}{get\+Scheduler} () const
+\item 
+void \hyperlink{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}{set\+Scheduler} (\hyperlink{classScheduler}{Scheduler} $\ast$scheduler)
+\item 
+\hyperlink{classActionManager}{Action\+Manager} $\ast$ \hyperlink{classDirector_aecb253e4de577ebd009367f27d2a07de}{get\+Action\+Manager} () const
+\item 
+void \hyperlink{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}{set\+Action\+Manager} (\hyperlink{classActionManager}{Action\+Manager} $\ast$action\+Manager)
+\item 
+\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$ \hyperlink{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}{get\+Event\+Dispatcher} () const
+\item 
+void \hyperlink{classDirector_aaba36d4ea12402524b17755dc3b26b91}{set\+Event\+Dispatcher} (\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$dispatcher)
+\item 
+\hyperlink{classRenderer}{Renderer} $\ast$ \hyperlink{classDirector_a45e283c703cf856467ccbe484da739c5}{get\+Renderer} () const
+\item 
+Console $\ast$ \hyperlink{classDirector_a84f3750550158cbd24de5d7783852a12}{get\+Console} () const
+\item 
+\mbox{\Hypertarget{classDirector_a81022b89d60dbe3912084200953dbbbe}\label{classDirector_a81022b89d60dbe3912084200953dbbbe}} 
+float {\bfseries get\+Delta\+Time} () const
+\item 
+float \hyperlink{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}{get\+Frame\+Rate} () const
+\item 
+void \hyperlink{classDirector_afbc7bc9b5641105eae937965146ea3e2}{push\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_ad8bff3b0904a396202573b21b0bef62b}{push\+Projection\+Matrix} (size\+\_\+t index)
+\item 
+void \hyperlink{classDirector_a4c47574ac63626fa0e14eee27fed8b99}{pop\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_a116deb880d80374176070cac631a6fa2}{pop\+Projection\+Matrix} (size\+\_\+t index)
+\item 
+void \hyperlink{classDirector_a3491e578d2d80809b44892144bd6645a}{load\+Identity\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type)
+\item 
+void \hyperlink{classDirector_a03fb01ab412fed87f3fc86ce08f775be}{load\+Projection\+Identity\+Matrix} (size\+\_\+t index)
+\item 
+void \hyperlink{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}{load\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type, const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classDirector_aafa89a3617de480ba2370294fb2f809c}{load\+Projection\+Matrix} (const \hyperlink{classMat4}{Mat4} \&mat, size\+\_\+t index)
+\item 
+void \hyperlink{classDirector_aec8693e208a9eeb95de9b4c6af300444}{multiply\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type, const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classDirector_ad54a2ecc7e0d4f15388350954aaf4d6f}{multiply\+Projection\+Matrix} (const \hyperlink{classMat4}{Mat4} \&mat, size\+\_\+t index)
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classDirector_affe74971c575a355c5fe98fad47c3398}{get\+Matrix} (\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE} type) const
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classDirector_ada87fe90413c1c1045b705009969aaa8}{get\+Projection\+Matrix} (size\+\_\+t index) const
+\item 
+void \hyperlink{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}{reset\+Matrix\+Stack} ()
+\item 
+void \hyperlink{classDirector_a82d147e44c0e54adbc65560371de6328}{init\+Projection\+Matrix\+Stack} (size\+\_\+t stack\+Count)
+\item 
+size\+\_\+t \hyperlink{classDirector_aa8f831f8e9272790b8d1efdc3726cf12}{get\+Projection\+Matrix\+Stack\+Size} ()
+\item 
+const std\+::thread\+::id \& \hyperlink{classDirector_a582225969ce1f42224c0387779f875e1}{get\+Cocos2d\+Thread\+Id} () const
+\item 
+bool \hyperlink{classDirector_ac302214e1e2f245e70d2e22905829fba}{is\+Valid} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDirector}{Director} $\ast$ \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{get\+Instance} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classDirector}{Director} $\ast$ \hyperlink{classDirector_ade6993ad99aefbbe5643b60749871a39}{shared\+Director} ()
+\item 
+static \hyperlink{classDirector}{Director} $\ast$ \hyperlink{classDirector_a59a83fa0c2e9d0f70ca7f4a13f2dd341}{get\+Instance} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classDirector}{Director} $\ast$ \hyperlink{classDirector_ade6993ad99aefbbe5643b60749871a39}{shared\+Director} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a30d53951c86968fed8dddd9672faef64}{E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED} = \char`\"{}director\+\_\+projection\+\_\+changed\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a345124acb6519068c291f4ffbf4e1068}{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE} = \char`\"{}director\+\_\+before\+\_\+update\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a9b3d1b74e6fb8098d832d7896a87babd}{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE} = \char`\"{}director\+\_\+after\+\_\+update\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a4689f4e4daf5179fc590f0af2f9ac554}{E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET} = \char`\"{}director\+\_\+reset\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a666b12067c13df6d2ad1a2a687223344}{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT} = \char`\"{}director\+\_\+after\+\_\+visit\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_ad8fe3c8b557d53d56dd4633469adadca}{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW} = \char`\"{}director\+\_\+after\+\_\+draw\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a69288fc7e21b4609c37b8625518bf10a}{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE} = \char`\"{}director\+\_\+before\+\_\+set\+\_\+next\+\_\+scene\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a6007f71559e15f852461dbf8cb1ffac3}{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE} = \char`\"{}director\+\_\+after\+\_\+set\+\_\+next\+\_\+scene\char`\"{}
+\item 
+static const char $\ast$ \hyperlink{classDirector_a7e0dab9d5caa7903d7f1d5761c2986a0}{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW} = \char`\"{}director\+\_\+before\+\_\+draw\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDirector_ac1463a0c5fcea59162128d62d70c090e}\label{classDirector_ac1463a0c5fcea59162128d62d70c090e}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classDirector_a3316fe959fdd6e0a4ea5023068e63605}\label{classDirector_a3316fe959fdd6e0a4ea5023068e63605}} 
+void {\bfseries purge\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_ae92d3b82da0b5f76333156214b504ff0}\label{classDirector_ae92d3b82da0b5f76333156214b504ff0}} 
+void {\bfseries restart\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_af497c18cc3d9f7a26fc7877e3b8d66d1}\label{classDirector_af497c18cc3d9f7a26fc7877e3b8d66d1}} 
+void {\bfseries set\+Next\+Scene} ()
+\item 
+\mbox{\Hypertarget{classDirector_a2e490b9261f36c4cd09fa5609b3c66a5}\label{classDirector_a2e490b9261f36c4cd09fa5609b3c66a5}} 
+void {\bfseries show\+Stats} ()
+\item 
+\mbox{\Hypertarget{classDirector_a93bdeb13f8b3bed33418dcfc21db25fb}\label{classDirector_a93bdeb13f8b3bed33418dcfc21db25fb}} 
+void {\bfseries create\+Stats\+Label} ()
+\item 
+\mbox{\Hypertarget{classDirector_ae483b4f8bf06f869ce5253d980b0cab5}\label{classDirector_ae483b4f8bf06f869ce5253d980b0cab5}} 
+void {\bfseries calculate\+M\+PF} ()
+\item 
+\mbox{\Hypertarget{classDirector_aa05a81e87c1c3fdf84af0fab3ee08ccb}\label{classDirector_aa05a81e87c1c3fdf84af0fab3ee08ccb}} 
+void {\bfseries get\+F\+P\+S\+Image\+Data} (unsigned char $\ast$$\ast$datapointer, ssize\+\_\+t $\ast$length)
+\item 
+void \hyperlink{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}{calculate\+Delta\+Time} ()
+\item 
+\mbox{\Hypertarget{classDirector_a3999fb075f86b58f5a5a2cfa471a8ba6}\label{classDirector_a3999fb075f86b58f5a5a2cfa471a8ba6}} 
+void {\bfseries init\+Texture\+Cache} ()
+\item 
+\mbox{\Hypertarget{classDirector_a4b6f22af2234cbdc5a9735ed2b1946b2}\label{classDirector_a4b6f22af2234cbdc5a9735ed2b1946b2}} 
+void {\bfseries destroy\+Texture\+Cache} ()
+\item 
+\mbox{\Hypertarget{classDirector_a89c1a6f74e0e2d11cad7f499735c034d}\label{classDirector_a89c1a6f74e0e2d11cad7f499735c034d}} 
+void {\bfseries init\+Matrix\+Stack} ()
+\item 
+\mbox{\Hypertarget{classDirector_ac1463a0c5fcea59162128d62d70c090e}\label{classDirector_ac1463a0c5fcea59162128d62d70c090e}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classDirector_a3316fe959fdd6e0a4ea5023068e63605}\label{classDirector_a3316fe959fdd6e0a4ea5023068e63605}} 
+void {\bfseries purge\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_ae92d3b82da0b5f76333156214b504ff0}\label{classDirector_ae92d3b82da0b5f76333156214b504ff0}} 
+void {\bfseries restart\+Director} ()
+\item 
+\mbox{\Hypertarget{classDirector_af497c18cc3d9f7a26fc7877e3b8d66d1}\label{classDirector_af497c18cc3d9f7a26fc7877e3b8d66d1}} 
+void {\bfseries set\+Next\+Scene} ()
+\item 
+\mbox{\Hypertarget{classDirector_a4e96cd7ba3d19b827cdf0c05c8c6bb2c}\label{classDirector_a4e96cd7ba3d19b827cdf0c05c8c6bb2c}} 
+void {\bfseries update\+Frame\+Rate} ()
+\item 
+\mbox{\Hypertarget{classDirector_a2e490b9261f36c4cd09fa5609b3c66a5}\label{classDirector_a2e490b9261f36c4cd09fa5609b3c66a5}} 
+void {\bfseries show\+Stats} ()
+\item 
+\mbox{\Hypertarget{classDirector_a93bdeb13f8b3bed33418dcfc21db25fb}\label{classDirector_a93bdeb13f8b3bed33418dcfc21db25fb}} 
+void {\bfseries create\+Stats\+Label} ()
+\item 
+\mbox{\Hypertarget{classDirector_ae483b4f8bf06f869ce5253d980b0cab5}\label{classDirector_ae483b4f8bf06f869ce5253d980b0cab5}} 
+void {\bfseries calculate\+M\+PF} ()
+\item 
+\mbox{\Hypertarget{classDirector_aa05a81e87c1c3fdf84af0fab3ee08ccb}\label{classDirector_aa05a81e87c1c3fdf84af0fab3ee08ccb}} 
+void {\bfseries get\+F\+P\+S\+Image\+Data} (unsigned char $\ast$$\ast$datapointer, ssize\+\_\+t $\ast$length)
+\item 
+void \hyperlink{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}{calculate\+Delta\+Time} ()
+\item 
+\mbox{\Hypertarget{classDirector_a3999fb075f86b58f5a5a2cfa471a8ba6}\label{classDirector_a3999fb075f86b58f5a5a2cfa471a8ba6}} 
+void {\bfseries init\+Texture\+Cache} ()
+\item 
+\mbox{\Hypertarget{classDirector_a4b6f22af2234cbdc5a9735ed2b1946b2}\label{classDirector_a4b6f22af2234cbdc5a9735ed2b1946b2}} 
+void {\bfseries destroy\+Texture\+Cache} ()
+\item 
+\mbox{\Hypertarget{classDirector_a89c1a6f74e0e2d11cad7f499735c034d}\label{classDirector_a89c1a6f74e0e2d11cad7f499735c034d}} 
+void {\bfseries init\+Matrix\+Stack} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDirector_a8d161eab56d74138b14daba888b24aaf}\label{classDirector_a8d161eab56d74138b14daba888b24aaf}} 
+bool {\bfseries \+\_\+purge\+Director\+In\+Next\+Loop} = false
+\item 
+\mbox{\Hypertarget{classDirector_a3f49d039d9f1b74e1385273f688b4922}\label{classDirector_a3f49d039d9f1b74e1385273f688b4922}} 
+bool {\bfseries \+\_\+restart\+Director\+In\+Next\+Loop} = false
+\item 
+\mbox{\Hypertarget{classDirector_ac85888229b82b0f4febf9b53820ab529}\label{classDirector_ac85888229b82b0f4febf9b53820ab529}} 
+std\+::stack$<$ \hyperlink{classMat4}{Mat4} $>$ {\bfseries \+\_\+model\+View\+Matrix\+Stack}
+\item 
+\mbox{\Hypertarget{classDirector_aa407747aaecd16737bb06058697a9a6c}\label{classDirector_aa407747aaecd16737bb06058697a9a6c}} 
+std\+::stack$<$ \hyperlink{classMat4}{Mat4} $>$ {\bfseries \+\_\+projection\+Matrix\+Stack}
+\item 
+\mbox{\Hypertarget{classDirector_aa38e02847c51fb46991a78333bf7e8e0}\label{classDirector_aa38e02847c51fb46991a78333bf7e8e0}} 
+std\+::stack$<$ \hyperlink{classMat4}{Mat4} $>$ {\bfseries \+\_\+texture\+Matrix\+Stack}
+\item 
+\hyperlink{classScheduler}{Scheduler} $\ast$ \hyperlink{classDirector_a11abf6c355682cf63df2f3b1f610fe33}{\+\_\+scheduler} = nullptr
+\item 
+\hyperlink{classActionManager}{Action\+Manager} $\ast$ \hyperlink{classDirector_a0c57c42ef4fa57d55d6d6a5e2cf9d92a}{\+\_\+action\+Manager} = nullptr
+\item 
+\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$ \hyperlink{classDirector_a692fa8b03378f2c8f01133355fcaeb7b}{\+\_\+event\+Dispatcher} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a759bdd862d980eb2684c339a74c8ddc2}\label{classDirector_a759bdd862d980eb2684c339a74c8ddc2}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+Projection\+Changed} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a98fcbb95a6cfc2541f559bdd34cc9aee}\label{classDirector_a98fcbb95a6cfc2541f559bdd34cc9aee}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+After\+Draw} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_aeb3c2b28483903697ca76c584ebc7c13}\label{classDirector_aeb3c2b28483903697ca76c584ebc7c13}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+After\+Visit} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a323005b9f2d6d2dc07d05ababcac0486}\label{classDirector_a323005b9f2d6d2dc07d05ababcac0486}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+Before\+Update} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a2fa413e516a9e684c7cfa735942a7699}\label{classDirector_a2fa413e516a9e684c7cfa735942a7699}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+After\+Update} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a2b4c03a038609db92a661319640034c4}\label{classDirector_a2b4c03a038609db92a661319640034c4}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+Reset\+Director} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a0337a18ec46eecbc048a03fb9cdb38d8}\label{classDirector_a0337a18ec46eecbc048a03fb9cdb38d8}} 
+float {\bfseries \+\_\+delta\+Time} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a29d5b5ff73396011d6688aea4722ac5b}\label{classDirector_a29d5b5ff73396011d6688aea4722ac5b}} 
+\hyperlink{classGLView}{G\+L\+View} $\ast$ {\bfseries \+\_\+open\+G\+L\+View} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_aa371a38b0ee29d36b688427f0817ff67}\label{classDirector_aa371a38b0ee29d36b688427f0817ff67}} 
+\hyperlink{classTextureCache}{Texture\+Cache} $\ast$ {\bfseries \+\_\+texture\+Cache} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a50320fd21396b404874caab78d7eaaaf}\label{classDirector_a50320fd21396b404874caab78d7eaaaf}} 
+float {\bfseries \+\_\+animation\+Interval} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a96b8cddbdaa506a06a7cf3f02f6e782c}\label{classDirector_a96b8cddbdaa506a06a7cf3f02f6e782c}} 
+float {\bfseries \+\_\+old\+Animation\+Interval} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a6fd4659f5420b1bd242957472f62f9df}\label{classDirector_a6fd4659f5420b1bd242957472f62f9df}} 
+bool {\bfseries \+\_\+landscape}
+\item 
+\mbox{\Hypertarget{classDirector_a51fb5eac10c8b203125688e727798720}\label{classDirector_a51fb5eac10c8b203125688e727798720}} 
+bool {\bfseries \+\_\+display\+Stats} = false
+\item 
+\mbox{\Hypertarget{classDirector_a5b0fb4561388d8b48a3c1b9c8e3e05bd}\label{classDirector_a5b0fb4561388d8b48a3c1b9c8e3e05bd}} 
+float {\bfseries \+\_\+accum\+Dt} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a74601d493caa29aee2400a2108309a9b}\label{classDirector_a74601d493caa29aee2400a2108309a9b}} 
+float {\bfseries \+\_\+frame\+Rate} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a5cdefe937558b082a53d635d908ce8d0}\label{classDirector_a5cdefe937558b082a53d635d908ce8d0}} 
+\hyperlink{classLabelAtlas}{Label\+Atlas} $\ast$ {\bfseries \+\_\+\+F\+P\+S\+Label} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_abb91c905da7534a8b3bffc4cd4a09baa}\label{classDirector_abb91c905da7534a8b3bffc4cd4a09baa}} 
+\hyperlink{classLabelAtlas}{Label\+Atlas} $\ast$ {\bfseries \+\_\+drawn\+Batches\+Label} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_aa20b71b7db373bf41768052c984abf40}\label{classDirector_aa20b71b7db373bf41768052c984abf40}} 
+\hyperlink{classLabelAtlas}{Label\+Atlas} $\ast$ {\bfseries \+\_\+drawn\+Vertices\+Label} = nullptr
+\item 
+bool \hyperlink{classDirector_a672d832da8045559f18ff63302ac2aee}{\+\_\+paused} = false
+\item 
+\mbox{\Hypertarget{classDirector_a1ad2c2ced0469c495dbc1c1c507d0d82}\label{classDirector_a1ad2c2ced0469c495dbc1c1c507d0d82}} 
+unsigned int {\bfseries \+\_\+total\+Frames} = 0
+\item 
+\mbox{\Hypertarget{classDirector_ab8c8de2ca7e4b6c21b373b624e11e18b}\label{classDirector_ab8c8de2ca7e4b6c21b373b624e11e18b}} 
+float {\bfseries \+\_\+seconds\+Per\+Frame} = 1.f
+\item 
+\mbox{\Hypertarget{classDirector_ad5eba21a843e5ad14950d371ebccd4a1}\label{classDirector_ad5eba21a843e5ad14950d371ebccd4a1}} 
+\hyperlink{classScene}{Scene} $\ast$ {\bfseries \+\_\+running\+Scene} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a8a293bc1148434a61bf5bd9149fa2dfb}\label{classDirector_a8a293bc1148434a61bf5bd9149fa2dfb}} 
+\hyperlink{classScene}{Scene} $\ast$ {\bfseries \+\_\+next\+Scene} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a4eb64ee569dbf0a318e10a453dd4a4c1}\label{classDirector_a4eb64ee569dbf0a318e10a453dd4a4c1}} 
+bool {\bfseries \+\_\+send\+Cleanup\+To\+Scene} = false
+\item 
+\mbox{\Hypertarget{classDirector_a63b5f36fbe2bc4ae5ccfda3e3a0f19c6}\label{classDirector_a63b5f36fbe2bc4ae5ccfda3e3a0f19c6}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classScene}{Scene} $\ast$ $>$ {\bfseries \+\_\+scenes\+Stack}
+\item 
+\mbox{\Hypertarget{classDirector_a32702183f41d9122ed697b9febf5e67c}\label{classDirector_a32702183f41d9122ed697b9febf5e67c}} 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point {\bfseries \+\_\+last\+Update}
+\item 
+\mbox{\Hypertarget{classDirector_aa585992e39eb2fb010b4e294e1ef2b11}\label{classDirector_aa585992e39eb2fb010b4e294e1ef2b11}} 
+bool {\bfseries \+\_\+next\+Delta\+Time\+Zero} = false
+\item 
+\mbox{\Hypertarget{classDirector_adb95f43f076b9778e577a5afae6c6016}\label{classDirector_adb95f43f076b9778e577a5afae6c6016}} 
+\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} {\bfseries \+\_\+projection} = \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}{Projection\+::\+D\+E\+F\+A\+U\+LT}
+\item 
+\mbox{\Hypertarget{classDirector_afa633e851fa0ee01e815b22e4da74dc6}\label{classDirector_afa633e851fa0ee01e815b22e4da74dc6}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+win\+Size\+In\+Points} = \hyperlink{classSize_a724334f12c8ef877c36b3f69e1257aa7}{Size\+::\+Z\+E\+RO}
+\item 
+\mbox{\Hypertarget{classDirector_a18f3275daf041858b3adf8ea1dd0ec60}\label{classDirector_a18f3275daf041858b3adf8ea1dd0ec60}} 
+float {\bfseries \+\_\+content\+Scale\+Factor} = 1.\+0f
+\item 
+\mbox{\Hypertarget{classDirector_a199a50bcd2649d88d98dd6b8a31dd4b7}\label{classDirector_a199a50bcd2649d88d98dd6b8a31dd4b7}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries \+\_\+notification\+Node} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a905aabd2ba7b4ad9ca51cc75309ac3a2}\label{classDirector_a905aabd2ba7b4ad9ca51cc75309ac3a2}} 
+\hyperlink{classRenderer}{Renderer} $\ast$ {\bfseries \+\_\+renderer} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_ab41c0ec719fe66399fd8774458c2030f}\label{classDirector_ab41c0ec719fe66399fd8774458c2030f}} 
+\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$ {\bfseries \+\_\+default\+F\+BO}
+\item 
+\mbox{\Hypertarget{classDirector_a1c5ea71662d286c96ec2cb6442176687}\label{classDirector_a1c5ea71662d286c96ec2cb6442176687}} 
+Console $\ast$ {\bfseries \+\_\+console} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a8f1b737bd4b595c048c6a65dcf897b1a}\label{classDirector_a8f1b737bd4b595c048c6a65dcf897b1a}} 
+bool {\bfseries \+\_\+is\+Status\+Label\+Updated} = true
+\item 
+\mbox{\Hypertarget{classDirector_af68be87346c5abc63155f01914b90d16}\label{classDirector_af68be87346c5abc63155f01914b90d16}} 
+std\+::thread\+::id {\bfseries \+\_\+cocos2d\+\_\+thread\+\_\+id}
+\item 
+std\+::vector$<$ std\+::stack$<$ \hyperlink{classMat4}{Mat4} $>$ $>$ \hyperlink{classDirector_adf0f8f92f046f18003f9d947ea8536d3}{\+\_\+projection\+Matrix\+Stack\+List}
+\item 
+\mbox{\Hypertarget{classDirector_a7cca7ddad22e97c7a757998fd4727ea2}\label{classDirector_a7cca7ddad22e97c7a757998fd4727ea2}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+event\+Before\+Draw} =nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a885af88c57487408de8dbb4f31c662cf}\label{classDirector_a885af88c57487408de8dbb4f31c662cf}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+before\+Set\+Next\+Scene} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a6a7ff6faee8faaa1424a9a8c8bbe4f7f}\label{classDirector_a6a7ff6faee8faaa1424a9a8c8bbe4f7f}} 
+\hyperlink{classEventCustom}{Event\+Custom} $\ast$ {\bfseries \+\_\+after\+Set\+Next\+Scene} = nullptr
+\item 
+\mbox{\Hypertarget{classDirector_a29687ac5fe46df92302c5b22cfb1a0db}\label{classDirector_a29687ac5fe46df92302c5b22cfb1a0db}} 
+bool {\bfseries \+\_\+delta\+Time\+Passed\+By\+Caller} = false
+\item 
+\mbox{\Hypertarget{classDirector_a1a73e25afa47a97d2dfcff5a8471e489}\label{classDirector_a1a73e25afa47a97d2dfcff5a8471e489}} 
+unsigned int {\bfseries \+\_\+frames} = 0
+\item 
+\mbox{\Hypertarget{classDirector_a25dca830029005490abb4a7ab5e41a1a}\label{classDirector_a25dca830029005490abb4a7ab5e41a1a}} 
+bool {\bfseries \+\_\+invalid} = false
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDirector_a09787e486afef1b86760d393631c3fa2}\label{classDirector_a09787e486afef1b86760d393631c3fa2}} 
+class {\bfseries G\+L\+View}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that creates and handles the main Window and manages how and when to execute the Scenes. 
+
+The \hyperlink{classDirector}{Director} is also responsible for\+:
+\begin{DoxyItemize}
+\item initializing the Open\+GL context
+\item setting the Open\+GL buffer depth (default one is 0-\/bit)
+\item setting the projection (default one is 3D)
+\end{DoxyItemize}
+
+Since the \hyperlink{classDirector}{Director} is a singleton, the standard way to use it is by calling\+: \+\_\+ \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director\+::get\+Instance()}-\/$>$method\+Name(); 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}} 
+\index{Director@{Director}!Projection@{Projection}}
+\index{Projection@{Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{Projection}{Projection}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Director\+::\+Projection}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Possible Open\+GL projections used by director. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+2D@{\+\_\+2D}!Director@{Director}}\index{Director@{Director}!\+\_\+2D@{\+\_\+2D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}} 
+\+\_\+2D&Sets a 2D projection (orthogonal projection). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+3D@{\+\_\+3D}!Director@{Director}}\index{Director@{Director}!\+\_\+3D@{\+\_\+3D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}} 
+\+\_\+3D&Sets a 3D projection with a fovy=60, znear=0.\+5f and zfar=1500. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}!Director@{Director}}\index{Director@{Director}!C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}} 
+C\+U\+S\+T\+OM&It calls \char`\"{}update\+Projection\char`\"{} on the projection delegate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Director@{Director}}\index{Director@{Director}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default projection is 3D projection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+2D@{\+\_\+2D}!Director@{Director}}\index{Director@{Director}!\+\_\+2D@{\+\_\+2D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}} 
+\+\_\+2D&Sets a 2D projection (orthogonal projection). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+3D@{\+\_\+3D}!Director@{Director}}\index{Director@{Director}!\+\_\+3D@{\+\_\+3D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}} 
+\+\_\+3D&Sets a 3D projection with a fovy=60, znear=0.\+5f and zfar=1500. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}!Director@{Director}}\index{Director@{Director}!C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}} 
+C\+U\+S\+T\+OM&It calls \char`\"{}update\+Projection\char`\"{} on the projection delegate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Director@{Director}}\index{Director@{Director}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default projection is 3D projection. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}} 
+\index{Director@{Director}!Projection@{Projection}}
+\index{Projection@{Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{Projection}{Projection}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Director\+::\+Projection}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Possible Open\+GL projections used by director. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+2D@{\+\_\+2D}!Director@{Director}}\index{Director@{Director}!\+\_\+2D@{\+\_\+2D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}} 
+\+\_\+2D&Sets a 2D projection (orthogonal projection). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+3D@{\+\_\+3D}!Director@{Director}}\index{Director@{Director}!\+\_\+3D@{\+\_\+3D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}} 
+\+\_\+3D&Sets a 3D projection with a fovy=60, znear=0.\+5f and zfar=1500. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}!Director@{Director}}\index{Director@{Director}!C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}} 
+C\+U\+S\+T\+OM&It calls \char`\"{}update\+Projection\char`\"{} on the projection delegate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Director@{Director}}\index{Director@{Director}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default projection is 3D projection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+2D@{\+\_\+2D}!Director@{Director}}\index{Director@{Director}!\+\_\+2D@{\+\_\+2D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a8cf93a3cf4b8ee9a975671c37039d549}} 
+\+\_\+2D&Sets a 2D projection (orthogonal projection). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+3D@{\+\_\+3D}!Director@{Director}}\index{Director@{Director}!\+\_\+3D@{\+\_\+3D}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a38e0791348f0496a0cbf3c07b64afed1}} 
+\+\_\+3D&Sets a 3D projection with a fovy=60, znear=0.\+5f and zfar=1500. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}!Director@{Director}}\index{Director@{Director}!C\+U\+S\+T\+OM@{C\+U\+S\+T\+OM}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a72baef04098f035e8a320b03ad197818}} 
+C\+U\+S\+T\+OM&It calls \char`\"{}update\+Projection\char`\"{} on the projection delegate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Director@{Director}}\index{Director@{Director}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}\label{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2a5b39c8b553c821e7cddc6da64b5bd2ee}} 
+D\+E\+F\+A\+U\+LT&Default projection is 3D projection. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}\label{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}} 
+\index{Director@{Director}!Director@{Director}}
+\index{Director@{Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{Director()}{Director()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Director\+::\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}\label{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}} 
+\index{Director@{Director}!````~Director@{$\sim$\+Director}}
+\index{````~Director@{$\sim$\+Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{$\sim$\+Director()}{~Director()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Director\+::$\sim$\+Director (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}\label{classDirector_a607a41fe5c42dd9ca7e256a11942a6d7}} 
+\index{Director@{Director}!Director@{Director}}
+\index{Director@{Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{Director()}{Director()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Director\+::\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}\label{classDirector_a59d7a588bfd4edd22948a9e7fd8c854a}} 
+\index{Director@{Director}!````~Director@{$\sim$\+Director}}
+\index{````~Director@{$\sim$\+Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{$\sim$\+Director()}{~Director()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Director\+::$\sim$\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}\label{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}} 
+\index{Director@{Director}!calculate\+Delta\+Time@{calculate\+Delta\+Time}}
+\index{calculate\+Delta\+Time@{calculate\+Delta\+Time}!Director@{Director}}
+\subsubsection{\texorpdfstring{calculate\+Delta\+Time()}{calculateDeltaTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::calculate\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculates delta time since last time it was called \mbox{\Hypertarget{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}\label{classDirector_a74f5e65404e0ce2d6336d52ce68640ac}} 
+\index{Director@{Director}!calculate\+Delta\+Time@{calculate\+Delta\+Time}}
+\index{calculate\+Delta\+Time@{calculate\+Delta\+Time}!Director@{Director}}
+\subsubsection{\texorpdfstring{calculate\+Delta\+Time()}{calculateDeltaTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::calculate\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculates delta time since last time it was called \mbox{\Hypertarget{classDirector_a29371003ac8c3a6856eee412aa129d9c}\label{classDirector_a29371003ac8c3a6856eee412aa129d9c}} 
+\index{Director@{Director}!convert\+To\+GL@{convert\+To\+GL}}
+\index{convert\+To\+GL@{convert\+To\+GL}!Director@{Director}}
+\subsubsection{\texorpdfstring{convert\+To\+G\+L()}{convertToGL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::convert\+To\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Converts a screen coordinate to an Open\+GL coordinate. Useful to convert (multi) touch coordinates to the current layout (portrait or landscape). \mbox{\Hypertarget{classDirector_a29371003ac8c3a6856eee412aa129d9c}\label{classDirector_a29371003ac8c3a6856eee412aa129d9c}} 
+\index{Director@{Director}!convert\+To\+GL@{convert\+To\+GL}}
+\index{convert\+To\+GL@{convert\+To\+GL}!Director@{Director}}
+\subsubsection{\texorpdfstring{convert\+To\+G\+L()}{convertToGL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::convert\+To\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Converts a screen coordinate to an Open\+GL coordinate. Useful to convert (multi) touch coordinates to the current layout (portrait or landscape). \mbox{\Hypertarget{classDirector_a932324432ae4ccc8819db508951644e4}\label{classDirector_a932324432ae4ccc8819db508951644e4}} 
+\index{Director@{Director}!convert\+To\+UI@{convert\+To\+UI}}
+\index{convert\+To\+UI@{convert\+To\+UI}!Director@{Director}}
+\subsubsection{\texorpdfstring{convert\+To\+U\+I()}{convertToUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::convert\+To\+UI (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Converts an Open\+GL coordinate to a screen coordinate. Useful to convert node points to window points for calls such as gl\+Scissor. \mbox{\Hypertarget{classDirector_a932324432ae4ccc8819db508951644e4}\label{classDirector_a932324432ae4ccc8819db508951644e4}} 
+\index{Director@{Director}!convert\+To\+UI@{convert\+To\+UI}}
+\index{convert\+To\+UI@{convert\+To\+UI}!Director@{Director}}
+\subsubsection{\texorpdfstring{convert\+To\+U\+I()}{convertToUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::convert\+To\+UI (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point }\end{DoxyParamCaption})}
+
+Converts an Open\+GL coordinate to a screen coordinate. Useful to convert node points to window points for calls such as gl\+Scissor. \mbox{\Hypertarget{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}\label{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}} 
+\index{Director@{Director}!draw\+Scene@{draw\+Scene}}
+\index{draw\+Scene@{draw\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{draw\+Scene()}{drawScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::draw\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draw the scene. This method is called every frame. Don\textquotesingle{}t call it manually. \mbox{\Hypertarget{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}\label{classDirector_a9ab4f229ddfcf735ded9b8f25e091481}} 
+\index{Director@{Director}!draw\+Scene@{draw\+Scene}}
+\index{draw\+Scene@{draw\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{draw\+Scene()}{drawScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::draw\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Draw the scene. This method is called every frame. Don\textquotesingle{}t call it manually. \mbox{\Hypertarget{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}\label{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}} 
+\index{Director@{Director}!end@{end}}
+\index{end@{end}!Director@{Director}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ends the execution, releases the running scene.  end\+To\+Lua \mbox{\Hypertarget{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}\label{classDirector_ac609b09cf1e1054e588d2d25ecd51c36}} 
+\index{Director@{Director}!end@{end}}
+\index{end@{end}!Director@{Director}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ends the execution, releases the running scene.  end\+To\+Lua \mbox{\Hypertarget{classDirector_aecb253e4de577ebd009367f27d2a07de}\label{classDirector_aecb253e4de577ebd009367f27d2a07de}} 
+\index{Director@{Director}!get\+Action\+Manager@{get\+Action\+Manager}}
+\index{get\+Action\+Manager@{get\+Action\+Manager}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Action\+Manager()}{getActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionManager}{Action\+Manager}$\ast$ Director\+::get\+Action\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classActionManager}{Action\+Manager} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_aecb253e4de577ebd009367f27d2a07de}\label{classDirector_aecb253e4de577ebd009367f27d2a07de}} 
+\index{Director@{Director}!get\+Action\+Manager@{get\+Action\+Manager}}
+\index{get\+Action\+Manager@{get\+Action\+Manager}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Action\+Manager()}{getActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionManager}{Action\+Manager}$\ast$ Director\+::get\+Action\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classActionManager}{Action\+Manager} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}\label{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}} 
+\index{Director@{Director}!get\+Animation\+Interval@{get\+Animation\+Interval}}
+\index{get\+Animation\+Interval@{get\+Animation\+Interval}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Animation\+Interval()}{getAnimationInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Animation\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the F\+PS value. \mbox{\Hypertarget{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}\label{classDirector_ad69cc0f9296b7e083f1e91b3a84dad94}} 
+\index{Director@{Director}!get\+Animation\+Interval@{get\+Animation\+Interval}}
+\index{get\+Animation\+Interval@{get\+Animation\+Interval}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Animation\+Interval()}{getAnimationInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Animation\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the F\+PS value. \mbox{\Hypertarget{classDirector_a980149bba5adee4a719c7a6e6accc810}\label{classDirector_a980149bba5adee4a719c7a6e6accc810}} 
+\index{Director@{Director}!get\+Clear\+Color@{get\+Clear\+Color}}
+\index{get\+Clear\+Color@{get\+Clear\+Color}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Clear\+Color()}{getClearColor()}}
+{\footnotesize\ttfamily const \hyperlink{structColor4F}{Color4F} \& Director\+::get\+Clear\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets clear values for the color buffers.  NA \mbox{\Hypertarget{classDirector_a582225969ce1f42224c0387779f875e1}\label{classDirector_a582225969ce1f42224c0387779f875e1}} 
+\index{Director@{Director}!get\+Cocos2d\+Thread\+Id@{get\+Cocos2d\+Thread\+Id}}
+\index{get\+Cocos2d\+Thread\+Id@{get\+Cocos2d\+Thread\+Id}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Cocos2d\+Thread\+Id()}{getCocos2dThreadId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::thread\+::id\& Director\+::get\+Cocos2d\+Thread\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the cocos2d thread id. Useful to know if certain code is already running on the cocos2d thread \mbox{\Hypertarget{classDirector_a582225969ce1f42224c0387779f875e1}\label{classDirector_a582225969ce1f42224c0387779f875e1}} 
+\index{Director@{Director}!get\+Cocos2d\+Thread\+Id@{get\+Cocos2d\+Thread\+Id}}
+\index{get\+Cocos2d\+Thread\+Id@{get\+Cocos2d\+Thread\+Id}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Cocos2d\+Thread\+Id()}{getCocos2dThreadId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::thread\+::id\& Director\+::get\+Cocos2d\+Thread\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the cocos2d thread id. Useful to know if certain code is already running on the cocos2d thread \mbox{\Hypertarget{classDirector_a84f3750550158cbd24de5d7783852a12}\label{classDirector_a84f3750550158cbd24de5d7783852a12}} 
+\index{Director@{Director}!get\+Console@{get\+Console}}
+\index{get\+Console@{get\+Console}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Console()}{getConsole()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Console$\ast$ Director\+::get\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Console associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a84f3750550158cbd24de5d7783852a12}\label{classDirector_a84f3750550158cbd24de5d7783852a12}} 
+\index{Director@{Director}!get\+Console@{get\+Console}}
+\index{get\+Console@{get\+Console}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Console()}{getConsole()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Console$\ast$ Director\+::get\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Console associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a233085ea94b316a44313e4120029f2a4}\label{classDirector_a233085ea94b316a44313e4120029f2a4}} 
+\index{Director@{Director}!get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}}
+\index{get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Content\+Scale\+Factor()}{getContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Content\+Scale\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets content scale factor. \begin{DoxySeeAlso}{See also}
+\hyperlink{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}{Director\+::set\+Content\+Scale\+Factor()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classDirector_a233085ea94b316a44313e4120029f2a4}\label{classDirector_a233085ea94b316a44313e4120029f2a4}} 
+\index{Director@{Director}!get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}}
+\index{get\+Content\+Scale\+Factor@{get\+Content\+Scale\+Factor}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Content\+Scale\+Factor()}{getContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Content\+Scale\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets content scale factor. \begin{DoxySeeAlso}{See also}
+\hyperlink{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}{Director\+::set\+Content\+Scale\+Factor()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}\label{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}} 
+\index{Director@{Director}!get\+Event\+Dispatcher@{get\+Event\+Dispatcher}}
+\index{get\+Event\+Dispatcher@{get\+Event\+Dispatcher}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Event\+Dispatcher()}{getEventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventDispatcher}{Event\+Dispatcher}$\ast$ Director\+::get\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classEventDispatcher}{Event\+Dispatcher} associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}\label{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}} 
+\index{Director@{Director}!get\+Event\+Dispatcher@{get\+Event\+Dispatcher}}
+\index{get\+Event\+Dispatcher@{get\+Event\+Dispatcher}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Event\+Dispatcher()}{getEventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventDispatcher}{Event\+Dispatcher}$\ast$ Director\+::get\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classEventDispatcher}{Event\+Dispatcher} associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}\label{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}} 
+\index{Director@{Director}!get\+Frame\+Rate@{get\+Frame\+Rate}}
+\index{get\+Frame\+Rate@{get\+Frame\+Rate}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Frame\+Rate()}{getFrameRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Frame\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets \hyperlink{classFrame}{Frame} Rate.  NA \mbox{\Hypertarget{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}\label{classDirector_adb86cf6aa40949fd1d43ef8f837062e8}} 
+\index{Director@{Director}!get\+Frame\+Rate@{get\+Frame\+Rate}}
+\index{get\+Frame\+Rate@{get\+Frame\+Rate}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Frame\+Rate()}{getFrameRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Frame\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets \hyperlink{classFrame}{Frame} Rate.  NA \mbox{\Hypertarget{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}\label{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}} 
+\index{Director@{Director}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDirector}{Director} $\ast$ Director\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a shared instance of the director.  \+\_\+get\+Instance \mbox{\Hypertarget{classDirector_a59a83fa0c2e9d0f70ca7f4a13f2dd341}\label{classDirector_a59a83fa0c2e9d0f70ca7f4a13f2dd341}} 
+\index{Director@{Director}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classDirector}{Director}$\ast$ Director\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a shared instance of the director.  \+\_\+get\+Instance \mbox{\Hypertarget{classDirector_a4e361548a1bec142a29b4a5e1148fe60}\label{classDirector_a4e361548a1bec142a29b4a5e1148fe60}} 
+\index{Director@{Director}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Director\+::get\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption}) const}
+
+Gets the top matrix of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_affe74971c575a355c5fe98fad47c3398}\label{classDirector_affe74971c575a355c5fe98fad47c3398}} 
+\index{Director@{Director}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Director\+::get\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption}) const}
+
+Gets the top matrix of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_a33fe947ebf154c242198d3ad0d95cba4}\label{classDirector_a33fe947ebf154c242198d3ad0d95cba4}} 
+\index{Director@{Director}!get\+Notification\+Node@{get\+Notification\+Node}}
+\index{get\+Notification\+Node@{get\+Notification\+Node}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Notification\+Node()}{getNotificationNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node}$\ast$ Director\+::get\+Notification\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This object will be visited after the main scene is visited. This object M\+U\+ST implement the \char`\"{}visit\char`\"{} function. Useful to hook a notification object, like Notifications (\href{http://github.com/manucorporat/CCNotifications}{\tt http\+://github.\+com/manucorporat/\+C\+C\+Notifications}) \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a33fe947ebf154c242198d3ad0d95cba4}\label{classDirector_a33fe947ebf154c242198d3ad0d95cba4}} 
+\index{Director@{Director}!get\+Notification\+Node@{get\+Notification\+Node}}
+\index{get\+Notification\+Node@{get\+Notification\+Node}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Notification\+Node()}{getNotificationNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node}$\ast$ Director\+::get\+Notification\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This object will be visited after the main scene is visited. This object M\+U\+ST implement the \char`\"{}visit\char`\"{} function. Useful to hook a notification object, like Notifications (\href{http://github.com/manucorporat/CCNotifications}{\tt http\+://github.\+com/manucorporat/\+C\+C\+Notifications}) \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a9480a6fa03967568e72b392e2b53c599}\label{classDirector_a9480a6fa03967568e72b392e2b53c599}} 
+\index{Director@{Director}!get\+Open\+G\+L\+View@{get\+Open\+G\+L\+View}}
+\index{get\+Open\+G\+L\+View@{get\+Open\+G\+L\+View}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Open\+G\+L\+View()}{getOpenGLView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLView}{G\+L\+View}$\ast$ Director\+::get\+Open\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \hyperlink{classGLView}{G\+L\+View}.  NA \mbox{\Hypertarget{classDirector_a9480a6fa03967568e72b392e2b53c599}\label{classDirector_a9480a6fa03967568e72b392e2b53c599}} 
+\index{Director@{Director}!get\+Open\+G\+L\+View@{get\+Open\+G\+L\+View}}
+\index{get\+Open\+G\+L\+View@{get\+Open\+G\+L\+View}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Open\+G\+L\+View()}{getOpenGLView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLView}{G\+L\+View}$\ast$ Director\+::get\+Open\+G\+L\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \hyperlink{classGLView}{G\+L\+View}.  NA \mbox{\Hypertarget{classDirector_a36e916d304e26fb6861b497806dc9980}\label{classDirector_a36e916d304e26fb6861b497806dc9980}} 
+\index{Director@{Director}!get\+Projection@{get\+Projection}}
+\index{get\+Projection@{get\+Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Projection()}{getProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} Director\+::get\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets an Open\+GL projection. \begin{DoxySince}{Since}
+v0.\+8.\+2  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a36e916d304e26fb6861b497806dc9980}\label{classDirector_a36e916d304e26fb6861b497806dc9980}} 
+\index{Director@{Director}!get\+Projection@{get\+Projection}}
+\index{get\+Projection@{get\+Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Projection()}{getProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection} Director\+::get\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets an Open\+GL projection. \begin{DoxySince}{Since}
+v0.\+8.\+2  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_ada87fe90413c1c1045b705009969aaa8}\label{classDirector_ada87fe90413c1c1045b705009969aaa8}} 
+\index{Director@{Director}!get\+Projection\+Matrix@{get\+Projection\+Matrix}}
+\index{get\+Projection\+Matrix@{get\+Projection\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Projection\+Matrix()}{getProjectionMatrix()}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Director\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+Gets the top matrix of projection matrix stack. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_aa8f831f8e9272790b8d1efdc3726cf12}\label{classDirector_aa8f831f8e9272790b8d1efdc3726cf12}} 
+\index{Director@{Director}!get\+Projection\+Matrix\+Stack\+Size@{get\+Projection\+Matrix\+Stack\+Size}}
+\index{get\+Projection\+Matrix\+Stack\+Size@{get\+Projection\+Matrix\+Stack\+Size}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Projection\+Matrix\+Stack\+Size()}{getProjectionMatrixStackSize()}}
+{\footnotesize\ttfamily size\+\_\+t Director\+::get\+Projection\+Matrix\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the size of projection matrix stack.  NA \mbox{\Hypertarget{classDirector_a45e283c703cf856467ccbe484da739c5}\label{classDirector_a45e283c703cf856467ccbe484da739c5}} 
+\index{Director@{Director}!get\+Renderer@{get\+Renderer}}
+\index{get\+Renderer@{get\+Renderer}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Renderer()}{getRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderer}{Renderer}$\ast$ Director\+::get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \hyperlink{classRenderer}{Renderer} associated with this director. \begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a45e283c703cf856467ccbe484da739c5}\label{classDirector_a45e283c703cf856467ccbe484da739c5}} 
+\index{Director@{Director}!get\+Renderer@{get\+Renderer}}
+\index{get\+Renderer@{get\+Renderer}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Renderer()}{getRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderer}{Renderer}$\ast$ Director\+::get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \hyperlink{classRenderer}{Renderer} associated with this director. \begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}\label{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}} 
+\index{Director@{Director}!get\+Running\+Scene@{get\+Running\+Scene}}
+\index{get\+Running\+Scene@{get\+Running\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Running\+Scene()}{getRunningScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene}$\ast$ Director\+::get\+Running\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets current running \hyperlink{classScene}{Scene}. \hyperlink{classDirector}{Director} can only run one \hyperlink{classScene}{Scene} at a time. \mbox{\Hypertarget{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}\label{classDirector_a674852932c4b153b4e1ff4ee51ac07b8}} 
+\index{Director@{Director}!get\+Running\+Scene@{get\+Running\+Scene}}
+\index{get\+Running\+Scene@{get\+Running\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Running\+Scene()}{getRunningScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classScene}{Scene}$\ast$ Director\+::get\+Running\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets current running \hyperlink{classScene}{Scene}. \hyperlink{classDirector}{Director} can only run one \hyperlink{classScene}{Scene} at a time. \mbox{\Hypertarget{classDirector_a64fae32c207654447373c95bad35de4d}\label{classDirector_a64fae32c207654447373c95bad35de4d}} 
+\index{Director@{Director}!get\+Safe\+Area\+Rect@{get\+Safe\+Area\+Rect}}
+\index{get\+Safe\+Area\+Rect@{get\+Safe\+Area\+Rect}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Safe\+Area\+Rect()}{getSafeAreaRect()}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} Director\+::get\+Safe\+Area\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns safe area rectangle of the Open\+GL view in points. \mbox{\Hypertarget{classDirector_a9deefa201b7826b4c9960c85a4fa7022}\label{classDirector_a9deefa201b7826b4c9960c85a4fa7022}} 
+\index{Director@{Director}!get\+Scheduler@{get\+Scheduler}}
+\index{get\+Scheduler@{get\+Scheduler}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Scheduler()}{getScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classScheduler}{Scheduler}$\ast$ Director\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classScheduler}{Scheduler} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a9deefa201b7826b4c9960c85a4fa7022}\label{classDirector_a9deefa201b7826b4c9960c85a4fa7022}} 
+\index{Director@{Director}!get\+Scheduler@{get\+Scheduler}}
+\index{get\+Scheduler@{get\+Scheduler}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Scheduler()}{getScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classScheduler}{Scheduler}$\ast$ Director\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classScheduler}{Scheduler} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}\label{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}} 
+\index{Director@{Director}!get\+Seconds\+Per\+Frame@{get\+Seconds\+Per\+Frame}}
+\index{get\+Seconds\+Per\+Frame@{get\+Seconds\+Per\+Frame}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Seconds\+Per\+Frame()}{getSecondsPerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Seconds\+Per\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get seconds per frame. \mbox{\Hypertarget{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}\label{classDirector_a38da2885fd753374ee9e2cd545b9ae4c}} 
+\index{Director@{Director}!get\+Seconds\+Per\+Frame@{get\+Seconds\+Per\+Frame}}
+\index{get\+Seconds\+Per\+Frame@{get\+Seconds\+Per\+Frame}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Seconds\+Per\+Frame()}{getSecondsPerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Seconds\+Per\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get seconds per frame. \mbox{\Hypertarget{classDirector_a2876d2ae1cc0b6832620f1144c38142a}\label{classDirector_a2876d2ae1cc0b6832620f1144c38142a}} 
+\index{Director@{Director}!get\+Total\+Frames@{get\+Total\+Frames}}
+\index{get\+Total\+Frames@{get\+Total\+Frames}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Total\+Frames()}{getTotalFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Director\+::get\+Total\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+How many frames were called since the director started \mbox{\Hypertarget{classDirector_a2876d2ae1cc0b6832620f1144c38142a}\label{classDirector_a2876d2ae1cc0b6832620f1144c38142a}} 
+\index{Director@{Director}!get\+Total\+Frames@{get\+Total\+Frames}}
+\index{get\+Total\+Frames@{get\+Total\+Frames}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Total\+Frames()}{getTotalFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Director\+::get\+Total\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+How many frames were called since the director started \mbox{\Hypertarget{classDirector_a712d994af29f122e1b6496dd671718d5}\label{classDirector_a712d994af29f122e1b6496dd671718d5}} 
+\index{Director@{Director}!get\+Visible\+Origin@{get\+Visible\+Origin}}
+\index{get\+Visible\+Origin@{get\+Visible\+Origin}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Visible\+Origin()}{getVisibleOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::get\+Visible\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns visible origin coordinate of the Open\+GL view in points. \mbox{\Hypertarget{classDirector_a712d994af29f122e1b6496dd671718d5}\label{classDirector_a712d994af29f122e1b6496dd671718d5}} 
+\index{Director@{Director}!get\+Visible\+Origin@{get\+Visible\+Origin}}
+\index{get\+Visible\+Origin@{get\+Visible\+Origin}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Visible\+Origin()}{getVisibleOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} Director\+::get\+Visible\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns visible origin coordinate of the Open\+GL view in points. \mbox{\Hypertarget{classDirector_ac17725c3dbb4876d745d897cb436b638}\label{classDirector_ac17725c3dbb4876d745d897cb436b638}} 
+\index{Director@{Director}!get\+Visible\+Size@{get\+Visible\+Size}}
+\index{get\+Visible\+Size@{get\+Visible\+Size}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Visible\+Size()}{getVisibleSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Director\+::get\+Visible\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns visible size of the Open\+GL view in points. The value is equal to {\ttfamily \hyperlink{classDirector_af07668df4a8916e6eb0f79a93f6588fe}{Director\+::get\+Win\+Size()}} if don\textquotesingle{}t invoke {\ttfamily \hyperlink{classGLView_a754e253a506c4eb9a923a2a33b4b955c}{G\+L\+View\+::set\+Design\+Resolution\+Size()}}. \mbox{\Hypertarget{classDirector_ac17725c3dbb4876d745d897cb436b638}\label{classDirector_ac17725c3dbb4876d745d897cb436b638}} 
+\index{Director@{Director}!get\+Visible\+Size@{get\+Visible\+Size}}
+\index{get\+Visible\+Size@{get\+Visible\+Size}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Visible\+Size()}{getVisibleSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Director\+::get\+Visible\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns visible size of the Open\+GL view in points. The value is equal to {\ttfamily \hyperlink{classDirector_af07668df4a8916e6eb0f79a93f6588fe}{Director\+::get\+Win\+Size()}} if don\textquotesingle{}t invoke {\ttfamily \hyperlink{classGLView_a754e253a506c4eb9a923a2a33b4b955c}{G\+L\+View\+::set\+Design\+Resolution\+Size()}}. \mbox{\Hypertarget{classDirector_af07668df4a8916e6eb0f79a93f6588fe}\label{classDirector_af07668df4a8916e6eb0f79a93f6588fe}} 
+\index{Director@{Director}!get\+Win\+Size@{get\+Win\+Size}}
+\index{get\+Win\+Size@{get\+Win\+Size}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Win\+Size()}{getWinSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size} \& Director\+::get\+Win\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the size of the Open\+GL view in points. \mbox{\Hypertarget{classDirector_a2528d17deb09cec6ee7209127719640c}\label{classDirector_a2528d17deb09cec6ee7209127719640c}} 
+\index{Director@{Director}!get\+Win\+Size@{get\+Win\+Size}}
+\index{get\+Win\+Size@{get\+Win\+Size}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Win\+Size()}{getWinSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& Director\+::get\+Win\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the size of the Open\+GL view in points. \mbox{\Hypertarget{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}\label{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}} 
+\index{Director@{Director}!get\+Win\+Size\+In\+Pixels@{get\+Win\+Size\+In\+Pixels}}
+\index{get\+Win\+Size\+In\+Pixels@{get\+Win\+Size\+In\+Pixels}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Win\+Size\+In\+Pixels()}{getWinSizeInPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Director\+::get\+Win\+Size\+In\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the size of the Open\+GL view in pixels. \mbox{\Hypertarget{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}\label{classDirector_a2afa5db94fce20cd07c9f4fe57708e21}} 
+\index{Director@{Director}!get\+Win\+Size\+In\+Pixels@{get\+Win\+Size\+In\+Pixels}}
+\index{get\+Win\+Size\+In\+Pixels@{get\+Win\+Size\+In\+Pixels}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Win\+Size\+In\+Pixels()}{getWinSizeInPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} Director\+::get\+Win\+Size\+In\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the size of the Open\+GL view in pixels. \mbox{\Hypertarget{classDirector_ad245779e1e70b0195e761afc0582b1da}\label{classDirector_ad245779e1e70b0195e761afc0582b1da}} 
+\index{Director@{Director}!get\+Z\+Eye@{get\+Z\+Eye}}
+\index{get\+Z\+Eye@{get\+Z\+Eye}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Z\+Eye()}{getZEye()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Z\+Eye (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Gets the distance between camera and near clipping frame. It is correct for default camera that near clipping frame is same as the screen. \mbox{\Hypertarget{classDirector_ad245779e1e70b0195e761afc0582b1da}\label{classDirector_ad245779e1e70b0195e761afc0582b1da}} 
+\index{Director@{Director}!get\+Z\+Eye@{get\+Z\+Eye}}
+\index{get\+Z\+Eye@{get\+Z\+Eye}!Director@{Director}}
+\subsubsection{\texorpdfstring{get\+Z\+Eye()}{getZEye()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Director\+::get\+Z\+Eye (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the distance between camera and near clipping frame. It is correct for default camera that near clipping frame is same as the screen. \mbox{\Hypertarget{classDirector_a82d147e44c0e54adbc65560371de6328}\label{classDirector_a82d147e44c0e54adbc65560371de6328}} 
+\index{Director@{Director}!init\+Projection\+Matrix\+Stack@{init\+Projection\+Matrix\+Stack}}
+\index{init\+Projection\+Matrix\+Stack@{init\+Projection\+Matrix\+Stack}!Director@{Director}}
+\subsubsection{\texorpdfstring{init\+Projection\+Matrix\+Stack()}{initProjectionMatrixStack()}}
+{\footnotesize\ttfamily void Director\+::init\+Projection\+Matrix\+Stack (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{stack\+Count }\end{DoxyParamCaption})}
+
+Init the projection matrix stack. 
+\begin{DoxyParams}{Parameters}
+{\em stack\+Count} & The size of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_a922631f5a39265d96972d63ddb76a7fc}\label{classDirector_a922631f5a39265d96972d63ddb76a7fc}} 
+\index{Director@{Director}!is\+Display\+Stats@{is\+Display\+Stats}}
+\index{is\+Display\+Stats@{is\+Display\+Stats}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Display\+Stats()}{isDisplayStats()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Display\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not displaying the F\+PS on the bottom-\/left corner of the screen. \mbox{\Hypertarget{classDirector_a922631f5a39265d96972d63ddb76a7fc}\label{classDirector_a922631f5a39265d96972d63ddb76a7fc}} 
+\index{Director@{Director}!is\+Display\+Stats@{is\+Display\+Stats}}
+\index{is\+Display\+Stats@{is\+Display\+Stats}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Display\+Stats()}{isDisplayStats()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Display\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not displaying the F\+PS on the bottom-\/left corner of the screen. \mbox{\Hypertarget{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}\label{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}} 
+\index{Director@{Director}!is\+Next\+Delta\+Time\+Zero@{is\+Next\+Delta\+Time\+Zero}}
+\index{is\+Next\+Delta\+Time\+Zero@{is\+Next\+Delta\+Time\+Zero}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Next\+Delta\+Time\+Zero()}{isNextDeltaTimeZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Next\+Delta\+Time\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not {\ttfamily \+\_\+next\+Delta\+Time\+Zero} is set to 0. \mbox{\Hypertarget{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}\label{classDirector_a5f2f66a2f14f63e2a5fabb601c972b8b}} 
+\index{Director@{Director}!is\+Next\+Delta\+Time\+Zero@{is\+Next\+Delta\+Time\+Zero}}
+\index{is\+Next\+Delta\+Time\+Zero@{is\+Next\+Delta\+Time\+Zero}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Next\+Delta\+Time\+Zero()}{isNextDeltaTimeZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Next\+Delta\+Time\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not {\ttfamily \+\_\+next\+Delta\+Time\+Zero} is set to 0. \mbox{\Hypertarget{classDirector_a18b86013970deb49290996518f0ddae5}\label{classDirector_a18b86013970deb49290996518f0ddae5}} 
+\index{Director@{Director}!is\+Paused@{is\+Paused}}
+\index{is\+Paused@{is\+Paused}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Paused()}{isPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the \hyperlink{classDirector}{Director} is paused. \mbox{\Hypertarget{classDirector_a18b86013970deb49290996518f0ddae5}\label{classDirector_a18b86013970deb49290996518f0ddae5}} 
+\index{Director@{Director}!is\+Paused@{is\+Paused}}
+\index{is\+Paused@{is\+Paused}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Paused()}{isPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the \hyperlink{classDirector}{Director} is paused. \mbox{\Hypertarget{classDirector_a882d9e2320d19b11b1cfab88a4439833}\label{classDirector_a882d9e2320d19b11b1cfab88a4439833}} 
+\index{Director@{Director}!is\+Send\+Cleanup\+To\+Scene@{is\+Send\+Cleanup\+To\+Scene}}
+\index{is\+Send\+Cleanup\+To\+Scene@{is\+Send\+Cleanup\+To\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Send\+Cleanup\+To\+Scene()}{isSendCleanupToScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Send\+Cleanup\+To\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+How many frames were called since the director started Whether or not the replaced scene will receive the cleanup message. If the new scene is pushed, then the old scene won\textquotesingle{}t receive the \char`\"{}cleanup\char`\"{} message. If the new scene replaces the old one, the it will receive the \char`\"{}cleanup\char`\"{} message. \begin{DoxySince}{Since}
+v0.\+99.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a882d9e2320d19b11b1cfab88a4439833}\label{classDirector_a882d9e2320d19b11b1cfab88a4439833}} 
+\index{Director@{Director}!is\+Send\+Cleanup\+To\+Scene@{is\+Send\+Cleanup\+To\+Scene}}
+\index{is\+Send\+Cleanup\+To\+Scene@{is\+Send\+Cleanup\+To\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Send\+Cleanup\+To\+Scene()}{isSendCleanupToScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Director\+::is\+Send\+Cleanup\+To\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the replaced scene will receive the cleanup message. If the new scene is pushed, then the old scene won\textquotesingle{}t receive the \char`\"{}cleanup\char`\"{} message. If the new scene replaces the old one, the it will receive the \char`\"{}cleanup\char`\"{} message. \begin{DoxySince}{Since}
+v0.\+99.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_ac302214e1e2f245e70d2e22905829fba}\label{classDirector_ac302214e1e2f245e70d2e22905829fba}} 
+\index{Director@{Director}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Director@{Director}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Director\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns whether or not the \hyperlink{classDirector}{Director} is in a valid state \mbox{\Hypertarget{classDirector_a3491e578d2d80809b44892144bd6645a}\label{classDirector_a3491e578d2d80809b44892144bd6645a}} 
+\index{Director@{Director}!load\+Identity\+Matrix@{load\+Identity\+Matrix}}
+\index{load\+Identity\+Matrix@{load\+Identity\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Identity\+Matrix()}{loadIdentityMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::load\+Identity\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Adds an identity matrix to the top of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_a3491e578d2d80809b44892144bd6645a}\label{classDirector_a3491e578d2d80809b44892144bd6645a}} 
+\index{Director@{Director}!load\+Identity\+Matrix@{load\+Identity\+Matrix}}
+\index{load\+Identity\+Matrix@{load\+Identity\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Identity\+Matrix()}{loadIdentityMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::load\+Identity\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Adds an identity matrix to the top of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}\label{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}} 
+\index{Director@{Director}!load\+Matrix@{load\+Matrix}}
+\index{load\+Matrix@{load\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Matrix()}{loadMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::load\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Adds a matrix to the top of specified type of matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Matrix type. \\
+\hline
+{\em mat} & The matrix that to be added.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}\label{classDirector_a95ecc03e54db47241c59ad68c4eb9ec2}} 
+\index{Director@{Director}!load\+Matrix@{load\+Matrix}}
+\index{load\+Matrix@{load\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Matrix()}{loadMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::load\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Adds a matrix to the top of specified type of matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Matrix type. \\
+\hline
+{\em mat} & The matrix that to be added.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_a03fb01ab412fed87f3fc86ce08f775be}\label{classDirector_a03fb01ab412fed87f3fc86ce08f775be}} 
+\index{Director@{Director}!load\+Projection\+Identity\+Matrix@{load\+Projection\+Identity\+Matrix}}
+\index{load\+Projection\+Identity\+Matrix@{load\+Projection\+Identity\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Projection\+Identity\+Matrix()}{loadProjectionIdentityMatrix()}}
+{\footnotesize\ttfamily void Director\+::load\+Projection\+Identity\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Adds an identity matrix to the top of projection matrix stack. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_aafa89a3617de480ba2370294fb2f809c}\label{classDirector_aafa89a3617de480ba2370294fb2f809c}} 
+\index{Director@{Director}!load\+Projection\+Matrix@{load\+Projection\+Matrix}}
+\index{load\+Projection\+Matrix@{load\+Projection\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{load\+Projection\+Matrix()}{loadProjectionMatrix()}}
+{\footnotesize\ttfamily void Director\+::load\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Adds a matrix to the top of projection matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix that to be added. \\
+\hline
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_aecddf44c9b1734615a3a71d7d010588a}\label{classDirector_aecddf44c9b1734615a3a71d7d010588a}} 
+\index{Director@{Director}!main\+Loop@{main\+Loop}}
+\index{main\+Loop@{main\+Loop}!Director@{Director}}
+\subsubsection{\texorpdfstring{main\+Loop()}{mainLoop()}}
+{\footnotesize\ttfamily void Director\+::main\+Loop (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Invoke main loop with delta time. Then {\ttfamily calculate\+Delta\+Time} can just use the delta time directly. The delta time paseed may include vsync time. See issue \#17806 \begin{DoxySince}{Since}
+3.\+16 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_aec8693e208a9eeb95de9b4c6af300444}\label{classDirector_aec8693e208a9eeb95de9b4c6af300444}} 
+\index{Director@{Director}!multiply\+Matrix@{multiply\+Matrix}}
+\index{multiply\+Matrix@{multiply\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{multiply\+Matrix()}{multiplyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::multiply\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Multiplies a matrix to the top of specified type of matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Matrix type. \\
+\hline
+{\em mat} & The matrix that to be multiplied.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_aec8693e208a9eeb95de9b4c6af300444}\label{classDirector_aec8693e208a9eeb95de9b4c6af300444}} 
+\index{Director@{Director}!multiply\+Matrix@{multiply\+Matrix}}
+\index{multiply\+Matrix@{multiply\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{multiply\+Matrix()}{multiplyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::multiply\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Multiplies a matrix to the top of specified type of matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Matrix type. \\
+\hline
+{\em mat} & The matrix that to be multiplied.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_ad54a2ecc7e0d4f15388350954aaf4d6f}\label{classDirector_ad54a2ecc7e0d4f15388350954aaf4d6f}} 
+\index{Director@{Director}!multiply\+Projection\+Matrix@{multiply\+Projection\+Matrix}}
+\index{multiply\+Projection\+Matrix@{multiply\+Projection\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{multiply\+Projection\+Matrix()}{multiplyProjectionMatrix()}}
+{\footnotesize\ttfamily void Director\+::multiply\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Multiplies a matrix to the top of projection matrix stack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix that to be multiplied. \\
+\hline
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_ad0e2e9b810e39c939e25ead3918faf00}\label{classDirector_ad0e2e9b810e39c939e25ead3918faf00}} 
+\index{Director@{Director}!pause@{pause}}
+\index{pause@{pause}!Director@{Director}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::pause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Pauses the running scene. The running scene will be {\itshape drawed} but all scheduled timers will be paused. While paused, the draw rate will be 4 F\+PS to reduce C\+PU consumption. \mbox{\Hypertarget{classDirector_ad0e2e9b810e39c939e25ead3918faf00}\label{classDirector_ad0e2e9b810e39c939e25ead3918faf00}} 
+\index{Director@{Director}!pause@{pause}}
+\index{pause@{pause}!Director@{Director}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pauses the running scene. The running scene will be {\itshape drawed} but all scheduled timers will be paused. While paused, the draw rate will be 4 F\+PS to reduce C\+PU consumption. \mbox{\Hypertarget{classDirector_a4c47574ac63626fa0e14eee27fed8b99}\label{classDirector_a4c47574ac63626fa0e14eee27fed8b99}} 
+\index{Director@{Director}!pop\+Matrix@{pop\+Matrix}}
+\index{pop\+Matrix@{pop\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+Matrix()}{popMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Pops the top matrix of the specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_a4c47574ac63626fa0e14eee27fed8b99}\label{classDirector_a4c47574ac63626fa0e14eee27fed8b99}} 
+\index{Director@{Director}!pop\+Matrix@{pop\+Matrix}}
+\index{pop\+Matrix@{pop\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+Matrix()}{popMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Pops the top matrix of the specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_a116deb880d80374176070cac631a6fa2}\label{classDirector_a116deb880d80374176070cac631a6fa2}} 
+\index{Director@{Director}!pop\+Projection\+Matrix@{pop\+Projection\+Matrix}}
+\index{pop\+Projection\+Matrix@{pop\+Projection\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+Projection\+Matrix()}{popProjectionMatrix()}}
+{\footnotesize\ttfamily void Director\+::pop\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Pops the top matrix of the projection matrix stack. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}\label{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}} 
+\index{Director@{Director}!pop\+Scene@{pop\+Scene}}
+\index{pop\+Scene@{pop\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+Scene()}{popScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+Scene (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Pops out a scene from the stack. This scene will replace the running one. The running scene will be deleted. If there are no more scenes in the stack the execution is terminated. O\+N\+LY call it if there is a running scene. \mbox{\Hypertarget{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}\label{classDirector_a92916c5c47d0f0a202fe1a5023841e8b}} 
+\index{Director@{Director}!pop\+Scene@{pop\+Scene}}
+\index{pop\+Scene@{pop\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+Scene()}{popScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pops out a scene from the stack. This scene will replace the running one. The running scene will be deleted. If there are no more scenes in the stack the execution is terminated. O\+N\+LY call it if there is a running scene. \mbox{\Hypertarget{classDirector_a3990819e9d112e26258290ca82d91999}\label{classDirector_a3990819e9d112e26258290ca82d91999}} 
+\index{Director@{Director}!pop\+To\+Root\+Scene@{pop\+To\+Root\+Scene}}
+\index{pop\+To\+Root\+Scene@{pop\+To\+Root\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+To\+Root\+Scene()}{popToRootScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+To\+Root\+Scene (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Pops out all scenes from the stack until the root scene in the queue. This scene will replace the running one. Internally it will call {\ttfamily pop\+To\+Scene\+Stack\+Level(1)}. \mbox{\Hypertarget{classDirector_a3990819e9d112e26258290ca82d91999}\label{classDirector_a3990819e9d112e26258290ca82d91999}} 
+\index{Director@{Director}!pop\+To\+Root\+Scene@{pop\+To\+Root\+Scene}}
+\index{pop\+To\+Root\+Scene@{pop\+To\+Root\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+To\+Root\+Scene()}{popToRootScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+To\+Root\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pops out all scenes from the stack until the root scene in the queue. This scene will replace the running one. Internally it will call {\ttfamily pop\+To\+Scene\+Stack\+Level(1)}. \mbox{\Hypertarget{classDirector_a56f61d47f337d996c069ca7aac5b3c79}\label{classDirector_a56f61d47f337d996c069ca7aac5b3c79}} 
+\index{Director@{Director}!pop\+To\+Scene\+Stack\+Level@{pop\+To\+Scene\+Stack\+Level}}
+\index{pop\+To\+Scene\+Stack\+Level@{pop\+To\+Scene\+Stack\+Level}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+To\+Scene\+Stack\+Level()}{popToSceneStackLevel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+To\+Scene\+Stack\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+Pops out all scenes from the stack until it reaches {\ttfamily level}. If level is 0, it will end the director. If level is 1, it will pop all scenes until it reaches to root scene. If level is $<$= than the current stack level, it won\textquotesingle{}t do anything. \mbox{\Hypertarget{classDirector_a56f61d47f337d996c069ca7aac5b3c79}\label{classDirector_a56f61d47f337d996c069ca7aac5b3c79}} 
+\index{Director@{Director}!pop\+To\+Scene\+Stack\+Level@{pop\+To\+Scene\+Stack\+Level}}
+\index{pop\+To\+Scene\+Stack\+Level@{pop\+To\+Scene\+Stack\+Level}!Director@{Director}}
+\subsubsection{\texorpdfstring{pop\+To\+Scene\+Stack\+Level()}{popToSceneStackLevel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::pop\+To\+Scene\+Stack\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+Pops out all scenes from the stack until it reaches {\ttfamily level}. If level is 0, it will end the director. If level is 1, it will pop all scenes until it reaches to root scene. If level is $<$= than the current stack level, it won\textquotesingle{}t do anything. \mbox{\Hypertarget{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}\label{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}} 
+\index{Director@{Director}!purge\+Cached\+Data@{purge\+Cached\+Data}}
+\index{purge\+Cached\+Data@{purge\+Cached\+Data}!Director@{Director}}
+\subsubsection{\texorpdfstring{purge\+Cached\+Data()}{purgeCachedData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::purge\+Cached\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Removes all cocos2d cached data. It will purge the \hyperlink{classTextureCache}{Texture\+Cache}, \hyperlink{classSpriteFrameCache}{Sprite\+Frame\+Cache}, Label\+B\+M\+Font cache \begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}\label{classDirector_aed3733d86c85ee8d1f4966801ba5ad19}} 
+\index{Director@{Director}!purge\+Cached\+Data@{purge\+Cached\+Data}}
+\index{purge\+Cached\+Data@{purge\+Cached\+Data}!Director@{Director}}
+\subsubsection{\texorpdfstring{purge\+Cached\+Data()}{purgeCachedData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::purge\+Cached\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all cocos2d cached data. It will purge the \hyperlink{classTextureCache}{Texture\+Cache}, \hyperlink{classSpriteFrameCache}{Sprite\+Frame\+Cache}, Label\+B\+M\+Font cache \begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_afbc7bc9b5641105eae937965146ea3e2}\label{classDirector_afbc7bc9b5641105eae937965146ea3e2}} 
+\index{Director@{Director}!push\+Matrix@{push\+Matrix}}
+\index{push\+Matrix@{push\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{push\+Matrix()}{pushMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::push\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Clones a specified type matrix and put it to the top of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_afbc7bc9b5641105eae937965146ea3e2}\label{classDirector_afbc7bc9b5641105eae937965146ea3e2}} 
+\index{Director@{Director}!push\+Matrix@{push\+Matrix}}
+\index{push\+Matrix@{push\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{push\+Matrix()}{pushMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::push\+Matrix (\begin{DoxyParamCaption}\item[{\hyperlink{group__base_ga4d146cef7130a8f3a953d46964ea3905}{M\+A\+T\+R\+I\+X\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+Clones a specified type matrix and put it to the top of specified type of matrix stack.  NA \mbox{\Hypertarget{classDirector_ad8bff3b0904a396202573b21b0bef62b}\label{classDirector_ad8bff3b0904a396202573b21b0bef62b}} 
+\index{Director@{Director}!push\+Projection\+Matrix@{push\+Projection\+Matrix}}
+\index{push\+Projection\+Matrix@{push\+Projection\+Matrix}!Director@{Director}}
+\subsubsection{\texorpdfstring{push\+Projection\+Matrix()}{pushProjectionMatrix()}}
+{\footnotesize\ttfamily void Director\+::push\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Clones a projection matrix and put it to the top of projection matrix stack. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of projection matrix stack.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDirector_ad113f1a2b5ab297788caa791b57f458b}\label{classDirector_ad113f1a2b5ab297788caa791b57f458b}} 
+\index{Director@{Director}!push\+Scene@{push\+Scene}}
+\index{push\+Scene@{push\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{push\+Scene()}{pushScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::push\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Suspends the execution of the running scene, pushing it on the stack of suspended scenes. The new scene will be executed. Try to avoid big stacks of pushed scenes to reduce memory allocation. O\+N\+LY call it if there is a running scene. \mbox{\Hypertarget{classDirector_ad113f1a2b5ab297788caa791b57f458b}\label{classDirector_ad113f1a2b5ab297788caa791b57f458b}} 
+\index{Director@{Director}!push\+Scene@{push\+Scene}}
+\index{push\+Scene@{push\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{push\+Scene()}{pushScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::push\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Suspends the execution of the running scene, pushing it on the stack of suspended scenes. The new scene will be executed. Try to avoid big stacks of pushed scenes to reduce memory allocation. O\+N\+LY call it if there is a running scene. \mbox{\Hypertarget{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}\label{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}} 
+\index{Director@{Director}!replace\+Scene@{replace\+Scene}}
+\index{replace\+Scene@{replace\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{replace\+Scene()}{replaceScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::replace\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Replaces the running scene with a new one. The running scene is terminated. O\+N\+LY call it if there is a running scene.  NA \mbox{\Hypertarget{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}\label{classDirector_a75d57e62351449bb5a4ed2cd7412fb25}} 
+\index{Director@{Director}!replace\+Scene@{replace\+Scene}}
+\index{replace\+Scene@{replace\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{replace\+Scene()}{replaceScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::replace\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Replaces the running scene with a new one. The running scene is terminated. O\+N\+LY call it if there is a running scene.  NA \mbox{\Hypertarget{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}\label{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}} 
+\index{Director@{Director}!reset\+Matrix\+Stack@{reset\+Matrix\+Stack}}
+\index{reset\+Matrix\+Stack@{reset\+Matrix\+Stack}!Director@{Director}}
+\subsubsection{\texorpdfstring{reset\+Matrix\+Stack()}{resetMatrixStack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::reset\+Matrix\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all types of matrix stack, and add identity matrix to these matrix stacks.  NA \mbox{\Hypertarget{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}\label{classDirector_a1227205af91f2bc56f25fb9c5f0439bd}} 
+\index{Director@{Director}!reset\+Matrix\+Stack@{reset\+Matrix\+Stack}}
+\index{reset\+Matrix\+Stack@{reset\+Matrix\+Stack}!Director@{Director}}
+\subsubsection{\texorpdfstring{reset\+Matrix\+Stack()}{resetMatrixStack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::reset\+Matrix\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all types of matrix stack, and add identity matrix to these matrix stacks.  NA \mbox{\Hypertarget{classDirector_a851df0aed8d550cc85159063b0c85dac}\label{classDirector_a851df0aed8d550cc85159063b0c85dac}} 
+\index{Director@{Director}!resume@{resume}}
+\index{resume@{resume}!Director@{Director}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::resume (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Resumes the paused scene. The scheduled timers will be activated again. The \char`\"{}delta time\char`\"{} will be 0 (as if the game wasn\textquotesingle{}t paused). \mbox{\Hypertarget{classDirector_a851df0aed8d550cc85159063b0c85dac}\label{classDirector_a851df0aed8d550cc85159063b0c85dac}} 
+\index{Director@{Director}!resume@{resume}}
+\index{resume@{resume}!Director@{Director}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resumes the paused scene. The scheduled timers will be activated again. The \char`\"{}delta time\char`\"{} will be 0 (as if the game wasn\textquotesingle{}t paused). \mbox{\Hypertarget{classDirector_a893e73a440a7832097e858bf8b9dff8a}\label{classDirector_a893e73a440a7832097e858bf8b9dff8a}} 
+\index{Director@{Director}!run\+With\+Scene@{run\+With\+Scene}}
+\index{run\+With\+Scene@{run\+With\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{run\+With\+Scene()}{runWithScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::run\+With\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Enters the \hyperlink{classDirector}{Director}\textquotesingle{}s main loop with the given \hyperlink{classScene}{Scene}. Call it to run only your F\+I\+R\+ST scene. Don\textquotesingle{}t call it if there is already a running scene.
+
+It will call push\+Scene\+: and then it will call start\+Animation  NA \mbox{\Hypertarget{classDirector_a893e73a440a7832097e858bf8b9dff8a}\label{classDirector_a893e73a440a7832097e858bf8b9dff8a}} 
+\index{Director@{Director}!run\+With\+Scene@{run\+With\+Scene}}
+\index{run\+With\+Scene@{run\+With\+Scene}!Director@{Director}}
+\subsubsection{\texorpdfstring{run\+With\+Scene()}{runWithScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::run\+With\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Enters the \hyperlink{classDirector}{Director}\textquotesingle{}s main loop with the given \hyperlink{classScene}{Scene}. Call it to run only your F\+I\+R\+ST scene. Don\textquotesingle{}t call it if there is already a running scene.
+
+It will call push\+Scene\+: and then it will call start\+Animation  NA \mbox{\Hypertarget{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}\label{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}} 
+\index{Director@{Director}!set\+Action\+Manager@{set\+Action\+Manager}}
+\index{set\+Action\+Manager@{set\+Action\+Manager}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Action\+Manager()}{setActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Action\+Manager (\begin{DoxyParamCaption}\item[{\hyperlink{classActionManager}{Action\+Manager} $\ast$}]{action\+Manager }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classActionManager}{Action\+Manager} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}\label{classDirector_acf717de7917cf4ffd0a3e1c2b1965628}} 
+\index{Director@{Director}!set\+Action\+Manager@{set\+Action\+Manager}}
+\index{set\+Action\+Manager@{set\+Action\+Manager}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Action\+Manager()}{setActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Action\+Manager (\begin{DoxyParamCaption}\item[{\hyperlink{classActionManager}{Action\+Manager} $\ast$}]{action\+Manager }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classActionManager}{Action\+Manager} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a405b60d715c4828cc4541dfc5c34c04f}\label{classDirector_a405b60d715c4828cc4541dfc5c34c04f}} 
+\index{Director@{Director}!set\+Alpha\+Blending@{set\+Alpha\+Blending}}
+\index{set\+Alpha\+Blending@{set\+Alpha\+Blending}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Alpha\+Blending()}{setAlphaBlending()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Alpha\+Blending (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
+
+Enables/disables Open\+GL alpha blending. \mbox{\Hypertarget{classDirector_a405b60d715c4828cc4541dfc5c34c04f}\label{classDirector_a405b60d715c4828cc4541dfc5c34c04f}} 
+\index{Director@{Director}!set\+Alpha\+Blending@{set\+Alpha\+Blending}}
+\index{set\+Alpha\+Blending@{set\+Alpha\+Blending}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Alpha\+Blending()}{setAlphaBlending()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Alpha\+Blending (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
+
+Enables/disables Open\+GL alpha blending. \mbox{\Hypertarget{classDirector_a87d84ea16dfb7c991a4fcfd48e8d22ed}\label{classDirector_a87d84ea16dfb7c991a4fcfd48e8d22ed}} 
+\index{Director@{Director}!set\+Animation\+Interval@{set\+Animation\+Interval}}
+\index{set\+Animation\+Interval@{set\+Animation\+Interval}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Animation\+Interval()}{setAnimationInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Animation\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the F\+PS value. F\+PS = 1/interval. 
+
+Implemented in \hyperlink{classDisplayLinkDirector_ab433b1840297793f0723d673f8efea14}{Display\+Link\+Director}.
+
+\mbox{\Hypertarget{classDirector_aa6bb2738f121a6e9076a27c7916c38a5}\label{classDirector_aa6bb2738f121a6e9076a27c7916c38a5}} 
+\index{Director@{Director}!set\+Animation\+Interval@{set\+Animation\+Interval}}
+\index{set\+Animation\+Interval@{set\+Animation\+Interval}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Animation\+Interval()}{setAnimationInterval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Animation\+Interval (\begin{DoxyParamCaption}\item[{float}]{interval }\end{DoxyParamCaption})}
+
+Sets the F\+PS value. F\+PS = 1/interval. \mbox{\Hypertarget{classDirector_a50fe8a47a3b94dc42366099e5862de40}\label{classDirector_a50fe8a47a3b94dc42366099e5862de40}} 
+\index{Director@{Director}!set\+Clear\+Color@{set\+Clear\+Color}}
+\index{set\+Clear\+Color@{set\+Clear\+Color}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Clear\+Color()}{setClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Clear\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{clear\+Color }\end{DoxyParamCaption})}
+
+Sets clear values for the color buffers, value range of each element is \mbox{[}0.\+0, 1.\+0\mbox{]}.  NA \mbox{\Hypertarget{classDirector_a50fe8a47a3b94dc42366099e5862de40}\label{classDirector_a50fe8a47a3b94dc42366099e5862de40}} 
+\index{Director@{Director}!set\+Clear\+Color@{set\+Clear\+Color}}
+\index{set\+Clear\+Color@{set\+Clear\+Color}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Clear\+Color()}{setClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Clear\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{clear\+Color }\end{DoxyParamCaption})}
+
+Sets clear values for the color buffers, value range of each element is \mbox{[}0.\+0, 1.\+0\mbox{]}.  NA \mbox{\Hypertarget{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}\label{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}} 
+\index{Director@{Director}!set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}}
+\index{set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Content\+Scale\+Factor()}{setContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Content\+Scale\+Factor (\begin{DoxyParamCaption}\item[{float}]{scale\+Factor }\end{DoxyParamCaption})}
+
+The size in pixels of the surface. It could be different than the screen size. High-\/res devices might have a higher surface size than the screen size. Only available when compiled using S\+DK $>$= 4.\+0. \begin{DoxySince}{Since}
+v0.\+99.\+4 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}\label{classDirector_a0eef2543f7619fc1539a22b6cfe42acb}} 
+\index{Director@{Director}!set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}}
+\index{set\+Content\+Scale\+Factor@{set\+Content\+Scale\+Factor}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Content\+Scale\+Factor()}{setContentScaleFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Content\+Scale\+Factor (\begin{DoxyParamCaption}\item[{float}]{scale\+Factor }\end{DoxyParamCaption})}
+
+The size in pixels of the surface. It could be different than the screen size. High-\/res devices might have a higher surface size than the screen size. Only available when compiled using S\+DK $>$= 4.\+0. \begin{DoxySince}{Since}
+v0.\+99.\+4 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a55475c9785f74187a7d337d117224953}\label{classDirector_a55475c9785f74187a7d337d117224953}} 
+\index{Director@{Director}!set\+Default\+Values@{set\+Default\+Values}}
+\index{set\+Default\+Values@{set\+Default\+Values}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Default\+Values()}{setDefaultValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Default\+Values (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Sets the default values based on the \hyperlink{classConfiguration}{Configuration} info. \mbox{\Hypertarget{classDirector_a55475c9785f74187a7d337d117224953}\label{classDirector_a55475c9785f74187a7d337d117224953}} 
+\index{Director@{Director}!set\+Default\+Values@{set\+Default\+Values}}
+\index{set\+Default\+Values@{set\+Default\+Values}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Default\+Values()}{setDefaultValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Default\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the default values based on the \hyperlink{classConfiguration}{Configuration} info. \mbox{\Hypertarget{classDirector_a24a276dd9029d03e564c07750872aef6}\label{classDirector_a24a276dd9029d03e564c07750872aef6}} 
+\index{Director@{Director}!set\+Depth\+Test@{set\+Depth\+Test}}
+\index{set\+Depth\+Test@{set\+Depth\+Test}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Depth\+Test()}{setDepthTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Depth\+Test (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
+
+Enables/disables Open\+GL depth test. \mbox{\Hypertarget{classDirector_a24a276dd9029d03e564c07750872aef6}\label{classDirector_a24a276dd9029d03e564c07750872aef6}} 
+\index{Director@{Director}!set\+Depth\+Test@{set\+Depth\+Test}}
+\index{set\+Depth\+Test@{set\+Depth\+Test}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Depth\+Test()}{setDepthTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Depth\+Test (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
+
+Enables/disables Open\+GL depth test. \mbox{\Hypertarget{classDirector_a97986d4c3f91e7758316e3f0a0396baa}\label{classDirector_a97986d4c3f91e7758316e3f0a0396baa}} 
+\index{Director@{Director}!set\+Display\+Stats@{set\+Display\+Stats}}
+\index{set\+Display\+Stats@{set\+Display\+Stats}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Display\+Stats()}{setDisplayStats()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Display\+Stats (\begin{DoxyParamCaption}\item[{bool}]{display\+Stats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Display the F\+PS on the bottom-\/left corner of the screen. \mbox{\Hypertarget{classDirector_a97986d4c3f91e7758316e3f0a0396baa}\label{classDirector_a97986d4c3f91e7758316e3f0a0396baa}} 
+\index{Director@{Director}!set\+Display\+Stats@{set\+Display\+Stats}}
+\index{set\+Display\+Stats@{set\+Display\+Stats}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Display\+Stats()}{setDisplayStats()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Display\+Stats (\begin{DoxyParamCaption}\item[{bool}]{display\+Stats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Display the F\+PS on the bottom-\/left corner of the screen. \mbox{\Hypertarget{classDirector_aaba36d4ea12402524b17755dc3b26b91}\label{classDirector_aaba36d4ea12402524b17755dc3b26b91}} 
+\index{Director@{Director}!set\+Event\+Dispatcher@{set\+Event\+Dispatcher}}
+\index{set\+Event\+Dispatcher@{set\+Event\+Dispatcher}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Event\+Dispatcher()}{setEventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Event\+Dispatcher (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classEventDispatcher}{Event\+Dispatcher} associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_aaba36d4ea12402524b17755dc3b26b91}\label{classDirector_aaba36d4ea12402524b17755dc3b26b91}} 
+\index{Director@{Director}!set\+Event\+Dispatcher@{set\+Event\+Dispatcher}}
+\index{set\+Event\+Dispatcher@{set\+Event\+Dispatcher}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Event\+Dispatcher()}{setEventDispatcher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Event\+Dispatcher (\begin{DoxyParamCaption}\item[{\hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classEventDispatcher}{Event\+Dispatcher} associated with this director. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a7271f672c2afb904023fe0510fbe215f}\label{classDirector_a7271f672c2afb904023fe0510fbe215f}} 
+\index{Director@{Director}!set\+G\+L\+Default\+Values@{set\+G\+L\+Default\+Values}}
+\index{set\+G\+L\+Default\+Values@{set\+G\+L\+Default\+Values}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Default\+Values()}{setGLDefaultValues()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+G\+L\+Default\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the Open\+GL default values. It will enable alpha blending, disable depth test.  NA \mbox{\Hypertarget{classDirector_a7271f672c2afb904023fe0510fbe215f}\label{classDirector_a7271f672c2afb904023fe0510fbe215f}} 
+\index{Director@{Director}!set\+G\+L\+Default\+Values@{set\+G\+L\+Default\+Values}}
+\index{set\+G\+L\+Default\+Values@{set\+G\+L\+Default\+Values}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Default\+Values()}{setGLDefaultValues()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+G\+L\+Default\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the Open\+GL default values. It will enable alpha blending, disable depth test.  NA \mbox{\Hypertarget{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}\label{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}} 
+\index{Director@{Director}!set\+Next\+Delta\+Time\+Zero@{set\+Next\+Delta\+Time\+Zero}}
+\index{set\+Next\+Delta\+Time\+Zero@{set\+Next\+Delta\+Time\+Zero}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Next\+Delta\+Time\+Zero()}{setNextDeltaTimeZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Next\+Delta\+Time\+Zero (\begin{DoxyParamCaption}\item[{bool}]{next\+Delta\+Time\+Zero }\end{DoxyParamCaption})}
+
+Sets the delta time between current frame and next frame is 0. This value will be used in Schedule, and will affect all functions that are using frame delta time, such as \hyperlink{classActions}{Actions}. This value will take effect only one time. \mbox{\Hypertarget{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}\label{classDirector_a809b5dca9ab9d0896d2a9e201e2177ae}} 
+\index{Director@{Director}!set\+Next\+Delta\+Time\+Zero@{set\+Next\+Delta\+Time\+Zero}}
+\index{set\+Next\+Delta\+Time\+Zero@{set\+Next\+Delta\+Time\+Zero}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Next\+Delta\+Time\+Zero()}{setNextDeltaTimeZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Next\+Delta\+Time\+Zero (\begin{DoxyParamCaption}\item[{bool}]{next\+Delta\+Time\+Zero }\end{DoxyParamCaption})}
+
+Sets the delta time between current frame and next frame is 0. This value will be used in Schedule, and will affect all functions that are using frame delta time, such as \hyperlink{classActions}{Actions}. This value will take effect only one time. \mbox{\Hypertarget{classDirector_ae94a4dda12c81955813683e016f769dd}\label{classDirector_ae94a4dda12c81955813683e016f769dd}} 
+\index{Director@{Director}!set\+Notification\+Node@{set\+Notification\+Node}}
+\index{set\+Notification\+Node@{set\+Notification\+Node}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Notification\+Node()}{setNotificationNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Notification\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Sets the notification node. \begin{DoxySeeAlso}{See also}
+\hyperlink{classDirector_a33fe947ebf154c242198d3ad0d95cba4}{Director\+::get\+Notification\+Node()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classDirector_ae94a4dda12c81955813683e016f769dd}\label{classDirector_ae94a4dda12c81955813683e016f769dd}} 
+\index{Director@{Director}!set\+Notification\+Node@{set\+Notification\+Node}}
+\index{set\+Notification\+Node@{set\+Notification\+Node}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Notification\+Node()}{setNotificationNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Notification\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Sets the notification node. \begin{DoxySeeAlso}{See also}
+\hyperlink{classDirector_a33fe947ebf154c242198d3ad0d95cba4}{Director\+::get\+Notification\+Node()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}\label{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}} 
+\index{Director@{Director}!set\+Open\+G\+L\+View@{set\+Open\+G\+L\+View}}
+\index{set\+Open\+G\+L\+View@{set\+Open\+G\+L\+View}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Open\+G\+L\+View()}{setOpenGLView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Open\+G\+L\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classGLView}{G\+L\+View} $\ast$}]{open\+G\+L\+View }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classGLView}{G\+L\+View}.  NA \mbox{\Hypertarget{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}\label{classDirector_a6c9edb0fdb7c3c7142e90a16b80b0949}} 
+\index{Director@{Director}!set\+Open\+G\+L\+View@{set\+Open\+G\+L\+View}}
+\index{set\+Open\+G\+L\+View@{set\+Open\+G\+L\+View}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Open\+G\+L\+View()}{setOpenGLView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Open\+G\+L\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classGLView}{G\+L\+View} $\ast$}]{open\+G\+L\+View }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classGLView}{G\+L\+View}.  NA \mbox{\Hypertarget{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}\label{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}} 
+\index{Director@{Director}!set\+Projection@{set\+Projection}}
+\index{set\+Projection@{set\+Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Projection()}{setProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Projection (\begin{DoxyParamCaption}\item[{\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection}}]{projection }\end{DoxyParamCaption})}
+
+Sets Open\+GL projection. \mbox{\Hypertarget{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}\label{classDirector_a4cffcad9b7c5cbb16e5e0780ab5401b9}} 
+\index{Director@{Director}!set\+Projection@{set\+Projection}}
+\index{set\+Projection@{set\+Projection}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Projection()}{setProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Projection (\begin{DoxyParamCaption}\item[{\hyperlink{classDirector_aaa3d9a0eac7c805d87ecba67c974fcf2}{Projection}}]{projection }\end{DoxyParamCaption})}
+
+Sets Open\+GL projection. \mbox{\Hypertarget{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}\label{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}} 
+\index{Director@{Director}!set\+Scheduler@{set\+Scheduler}}
+\index{set\+Scheduler@{set\+Scheduler}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Scheduler()}{setScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Scheduler (\begin{DoxyParamCaption}\item[{\hyperlink{classScheduler}{Scheduler} $\ast$}]{scheduler }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classScheduler}{Scheduler} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}\label{classDirector_a8e802ef200191e7b6e92b08b37c81e4d}} 
+\index{Director@{Director}!set\+Scheduler@{set\+Scheduler}}
+\index{set\+Scheduler@{set\+Scheduler}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Scheduler()}{setScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Scheduler (\begin{DoxyParamCaption}\item[{\hyperlink{classScheduler}{Scheduler} $\ast$}]{scheduler }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classScheduler}{Scheduler} associated with this director. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_aa93aca162b691b52a1ec1d206ca39a64}\label{classDirector_aa93aca162b691b52a1ec1d206ca39a64}} 
+\index{Director@{Director}!set\+Viewport@{set\+Viewport}}
+\index{set\+Viewport@{set\+Viewport}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Viewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the gl\+Viewport. \mbox{\Hypertarget{classDirector_aa93aca162b691b52a1ec1d206ca39a64}\label{classDirector_aa93aca162b691b52a1ec1d206ca39a64}} 
+\index{Director@{Director}!set\+Viewport@{set\+Viewport}}
+\index{set\+Viewport@{set\+Viewport}!Director@{Director}}
+\subsubsection{\texorpdfstring{set\+Viewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::set\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the gl\+Viewport. \mbox{\Hypertarget{classDirector_ade6993ad99aefbbe5643b60749871a39}\label{classDirector_ade6993ad99aefbbe5643b60749871a39}} 
+\index{Director@{Director}!shared\+Director@{shared\+Director}}
+\index{shared\+Director@{shared\+Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{shared\+Director()}{sharedDirector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classDirector}{Director}$\ast$ Director\+::shared\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000051}{Deprecated}]Use \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{get\+Instance()} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classDirector_ade6993ad99aefbbe5643b60749871a39}\label{classDirector_ade6993ad99aefbbe5643b60749871a39}} 
+\index{Director@{Director}!shared\+Director@{shared\+Director}}
+\index{shared\+Director@{shared\+Director}!Director@{Director}}
+\subsubsection{\texorpdfstring{shared\+Director()}{sharedDirector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classDirector}{Director}$\ast$ Director\+::shared\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000286}{Deprecated}]Use \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{get\+Instance()} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classDirector_a122d685c783d0c2b7e2d22ba1ecb0d91}\label{classDirector_a122d685c783d0c2b7e2d22ba1ecb0d91}} 
+\index{Director@{Director}!start\+Animation@{start\+Animation}}
+\index{start\+Animation@{start\+Animation}!Director@{Director}}
+\subsubsection{\texorpdfstring{start\+Animation()}{startAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The main loop is triggered again. Call this function only if \mbox{[}stop\+Animation\mbox{]} was called earlier. \begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t call this function to start the main loop. To run the main loop call run\+With\+Scene. 
+\end{DoxyWarning}
+
+
+Implemented in \hyperlink{classDisplayLinkDirector_aed0e316ca8afa0b6e155a5257e3f9201}{Display\+Link\+Director}.
+
+\mbox{\Hypertarget{classDirector_ae194a51e690fc6e1a6334a6a83da5b2e}\label{classDirector_ae194a51e690fc6e1a6334a6a83da5b2e}} 
+\index{Director@{Director}!start\+Animation@{start\+Animation}}
+\index{start\+Animation@{start\+Animation}!Director@{Director}}
+\subsubsection{\texorpdfstring{start\+Animation()}{startAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The main loop is triggered again. Call this function only if \mbox{[}stop\+Animation\mbox{]} was called earlier. \begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t call this function to start the main loop. To run the main loop call run\+With\+Scene. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classDirector_abe981a5c5d35aaf6c2aaf1b55f023e82}\label{classDirector_abe981a5c5d35aaf6c2aaf1b55f023e82}} 
+\index{Director@{Director}!stop\+Animation@{stop\+Animation}}
+\index{stop\+Animation@{stop\+Animation}!Director@{Director}}
+\subsubsection{\texorpdfstring{stop\+Animation()}{stopAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Director\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Stops the animation. Nothing will be drawn. The main loop won\textquotesingle{}t be triggered anymore. If you don\textquotesingle{}t want to pause your animation call \mbox{[}pause\mbox{]} instead. 
+
+Implemented in \hyperlink{classDisplayLinkDirector_af3c6a2fbc71e733a9957e653c26c7798}{Display\+Link\+Director}.
+
+\mbox{\Hypertarget{classDirector_a436d0f15a1cf160cb72a64edc2df217c}\label{classDirector_a436d0f15a1cf160cb72a64edc2df217c}} 
+\index{Director@{Director}!stop\+Animation@{stop\+Animation}}
+\index{stop\+Animation@{stop\+Animation}!Director@{Director}}
+\subsubsection{\texorpdfstring{stop\+Animation()}{stopAnimation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Director\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the animation. Nothing will be drawn. The main loop won\textquotesingle{}t be triggered anymore. If you don\textquotesingle{}t want to pause your animation call \mbox{[}pause\mbox{]} instead. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDirector_a0c57c42ef4fa57d55d6d6a5e2cf9d92a}\label{classDirector_a0c57c42ef4fa57d55d6d6a5e2cf9d92a}} 
+\index{Director@{Director}!\+\_\+action\+Manager@{\+\_\+action\+Manager}}
+\index{\+\_\+action\+Manager@{\+\_\+action\+Manager}!Director@{Director}}
+\subsubsection{\texorpdfstring{\+\_\+action\+Manager}{\_actionManager}}
+{\footnotesize\ttfamily \hyperlink{classActionManager}{Action\+Manager} $\ast$ Director\+::\+\_\+action\+Manager = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classActionManager}{Action\+Manager} associated with this director \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a692fa8b03378f2c8f01133355fcaeb7b}\label{classDirector_a692fa8b03378f2c8f01133355fcaeb7b}} 
+\index{Director@{Director}!\+\_\+event\+Dispatcher@{\+\_\+event\+Dispatcher}}
+\index{\+\_\+event\+Dispatcher@{\+\_\+event\+Dispatcher}!Director@{Director}}
+\subsubsection{\texorpdfstring{\+\_\+event\+Dispatcher}{\_eventDispatcher}}
+{\footnotesize\ttfamily \hyperlink{classEventDispatcher}{Event\+Dispatcher} $\ast$ Director\+::\+\_\+event\+Dispatcher = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classEventDispatcher}{Event\+Dispatcher} associated with this director \begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_a672d832da8045559f18ff63302ac2aee}\label{classDirector_a672d832da8045559f18ff63302ac2aee}} 
+\index{Director@{Director}!\+\_\+paused@{\+\_\+paused}}
+\index{\+\_\+paused@{\+\_\+paused}!Director@{Director}}
+\subsubsection{\texorpdfstring{\+\_\+paused}{\_paused}}
+{\footnotesize\ttfamily bool Director\+::\+\_\+paused = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether or not the \hyperlink{classDirector}{Director} is paused \mbox{\Hypertarget{classDirector_adf0f8f92f046f18003f9d947ea8536d3}\label{classDirector_adf0f8f92f046f18003f9d947ea8536d3}} 
+\index{Director@{Director}!\+\_\+projection\+Matrix\+Stack\+List@{\+\_\+projection\+Matrix\+Stack\+List}}
+\index{\+\_\+projection\+Matrix\+Stack\+List@{\+\_\+projection\+Matrix\+Stack\+List}!Director@{Director}}
+\subsubsection{\texorpdfstring{\+\_\+projection\+Matrix\+Stack\+List}{\_projectionMatrixStackList}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::stack$<$\hyperlink{classMat4}{Mat4}$>$ $>$ Director\+::\+\_\+projection\+Matrix\+Stack\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+In order to support GL Multi\+View features, we need to use the matrix array, but we don\textquotesingle{}t know the number of Multi\+View, so using the vector instead. \mbox{\Hypertarget{classDirector_a11abf6c355682cf63df2f3b1f610fe33}\label{classDirector_a11abf6c355682cf63df2f3b1f610fe33}} 
+\index{Director@{Director}!\+\_\+scheduler@{\+\_\+scheduler}}
+\index{\+\_\+scheduler@{\+\_\+scheduler}!Director@{Director}}
+\subsubsection{\texorpdfstring{\+\_\+scheduler}{\_scheduler}}
+{\footnotesize\ttfamily \hyperlink{classScheduler}{Scheduler} $\ast$ Director\+::\+\_\+scheduler = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classScheduler}{Scheduler} associated with this director \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classDirector_ad8fe3c8b557d53d56dd4633469adadca}\label{classDirector_ad8fe3c8b557d53d56dd4633469adadca}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW}}
+\index{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW}{EVENT\_AFTER\_DRAW}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+D\+R\+AW = \char`\"{}director\+\_\+after\+\_\+draw\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event after a scene is drawn, the data is sent to G\+PU. \mbox{\Hypertarget{classDirector_a6007f71559e15f852461dbf8cb1ffac3}\label{classDirector_a6007f71559e15f852461dbf8cb1ffac3}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}}
+\index{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}{EVENT\_AFTER\_SET\_NEXT\_SCENE}}
+{\footnotesize\ttfamily const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE = \char`\"{}director\+\_\+after\+\_\+set\+\_\+next\+\_\+scene\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event after set next scene. \mbox{\Hypertarget{classDirector_a9b3d1b74e6fb8098d832d7896a87babd}\label{classDirector_a9b3d1b74e6fb8098d832d7896a87babd}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE}}
+\index{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE}{EVENT\_AFTER\_UPDATE}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+U\+P\+D\+A\+TE = \char`\"{}director\+\_\+after\+\_\+update\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event after Schedule\+::update() is invoked. \mbox{\Hypertarget{classDirector_a666b12067c13df6d2ad1a2a687223344}\label{classDirector_a666b12067c13df6d2ad1a2a687223344}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT}}
+\index{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT@{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT}{EVENT\_AFTER\_VISIT}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+A\+F\+T\+E\+R\+\_\+\+V\+I\+S\+IT = \char`\"{}director\+\_\+after\+\_\+visit\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event after \hyperlink{classScene_a26d5468761d68ff0f3beb177bf8d2734}{Scene\+::render()} is invoked. \mbox{\Hypertarget{classDirector_a7e0dab9d5caa7903d7f1d5761c2986a0}\label{classDirector_a7e0dab9d5caa7903d7f1d5761c2986a0}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW}}
+\index{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW}{EVENT\_BEFORE\_DRAW}}
+{\footnotesize\ttfamily const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+D\+R\+AW = \char`\"{}director\+\_\+before\+\_\+draw\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event before a scene is drawn, right after clear. \mbox{\Hypertarget{classDirector_a69288fc7e21b4609c37b8625518bf10a}\label{classDirector_a69288fc7e21b4609c37b8625518bf10a}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}}
+\index{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE}{EVENT\_BEFORE\_SET\_NEXT\_SCENE}}
+{\footnotesize\ttfamily const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+S\+E\+T\+\_\+\+N\+E\+X\+T\+\_\+\+S\+C\+E\+NE = \char`\"{}director\+\_\+before\+\_\+set\+\_\+next\+\_\+scene\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event before set next scene. \mbox{\Hypertarget{classDirector_a345124acb6519068c291f4ffbf4e1068}\label{classDirector_a345124acb6519068c291f4ffbf4e1068}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE}}
+\index{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE@{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE}{EVENT\_BEFORE\_UPDATE}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+U\+P\+D\+A\+TE = \char`\"{}director\+\_\+before\+\_\+update\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event before Schedule\+::update() is invoked. \mbox{\Hypertarget{classDirector_a30d53951c86968fed8dddd9672faef64}\label{classDirector_a30d53951c86968fed8dddd9672faef64}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED@{E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED}}
+\index{E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED@{E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED}{EVENT\_PROJECTION\_CHANGED}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+N\+G\+ED = \char`\"{}director\+\_\+projection\+\_\+changed\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event when projection type is changed. \mbox{\Hypertarget{classDirector_a4689f4e4daf5179fc590f0af2f9ac554}\label{classDirector_a4689f4e4daf5179fc590f0af2f9ac554}} 
+\index{Director@{Director}!E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET@{E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET}}
+\index{E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET@{E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET}!Director@{Director}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET}{EVENT\_RESET}}
+{\footnotesize\ttfamily static const char $\ast$ Director\+::\+E\+V\+E\+N\+T\+\_\+\+R\+E\+S\+ET = \char`\"{}director\+\_\+reset\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\hyperlink{classDirector}{Director} will trigger an event while resetting \hyperlink{classDirector}{Director} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Director.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Director.\+cpp\end{DoxyCompactItemize}

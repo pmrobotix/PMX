@@ -1,0 +1,632 @@
+\hypertarget{classexperimental_1_1AudioEngineImpl}{}\section{experimental\+:\+:Audio\+Engine\+Impl Class Reference}
+\label{classexperimental_1_1AudioEngineImpl}\index{experimental\+::\+Audio\+Engine\+Impl@{experimental\+::\+Audio\+Engine\+Impl}}
+
+
+Inheritance diagram for experimental\+:\+:Audio\+Engine\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classexperimental_1_1AudioEngineImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for experimental\+:\+:Audio\+Engine\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classexperimental_1_1AudioEngineImpl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}\label{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}} 
+void {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}\label{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}} 
+void {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a595eb65c12c8546732ac085b44a59075}\label{classexperimental_1_1AudioEngineImpl_a595eb65c12c8546732ac085b44a59075}} 
+void {\bfseries preload} (const std\+::string \&file\+Path, const std\+::function$<$ void(bool)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}\label{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}\label{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}} 
+bool {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_acef595ca5ae1dbb5731a9d040059fde2}\label{classexperimental_1_1AudioEngineImpl_acef595ca5ae1dbb5731a9d040059fde2}} 
+int {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool is\+Success)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+void \hyperlink{classexperimental_1_1AudioEngineImpl_a81a15f8396fd46cd51865b41ca9ac2ef}{on\+Sound\+Finished} (\hyperlink{classFMOD_1_1Channel}{F\+M\+O\+D\+::\+Channel} $\ast$channel)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}\label{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}} 
+void {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}\label{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}} 
+void {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aa90d0fa798010a1a9029ab48db51b240}\label{classexperimental_1_1AudioEngineImpl_aa90d0fa798010a1a9029ab48db51b240}} 
+void {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}\label{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}} 
+bool {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}\label{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}\label{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}} 
+bool {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}\label{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}\label{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}} 
+void {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}\label{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}} 
+void {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a6355342a5e98b205d7399d8aea66a924}\label{classexperimental_1_1AudioEngineImpl_a6355342a5e98b205d7399d8aea66a924}} 
+void {\bfseries preload} (const std\+::string \&file\+Path, const std\+::function$<$ void(bool)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8d41947ad360284ac613507ab147c4ac}\label{classexperimental_1_1AudioEngineImpl_a8d41947ad360284ac613507ab147c4ac}} 
+void {\bfseries set\+Audio\+Focus\+For\+All\+Players} (bool is\+Focus)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}\label{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}\label{classexperimental_1_1AudioEngineImpl_a811786e91bb552443b011659e35483bb}} 
+bool {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a2e1975784a08e524ebc2b1bf845c3b75}\label{classexperimental_1_1AudioEngineImpl_a2e1975784a08e524ebc2b1bf845c3b75}} 
+int {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool is\+Success)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+void \hyperlink{classexperimental_1_1AudioEngineImpl_ab4e729728bd4265f0d17952661fd2ba4}{on\+Sound\+Finished} (\hyperlink{classFMOD_1_1Channel}{F\+M\+O\+D\+::\+Channel} $\ast$channel)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}\label{classexperimental_1_1AudioEngineImpl_a9c4026caed1c625774d3fd1e2114322a}} 
+void {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}\label{classexperimental_1_1AudioEngineImpl_ad180e0563cfb6944074a19304152d990}} 
+void {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aa90d0fa798010a1a9029ab48db51b240}\label{classexperimental_1_1AudioEngineImpl_aa90d0fa798010a1a9029ab48db51b240}} 
+void {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}\label{classexperimental_1_1AudioEngineImpl_a908e5136201a8a6b53ae5c292329f82b}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}\label{classexperimental_1_1AudioEngineImpl_a04b788a8319f5d7f90e297a2a345f745}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}\label{classexperimental_1_1AudioEngineImpl_aaa11ae7fe8bfd4c4365c02aa71f119b0}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}\label{classexperimental_1_1AudioEngineImpl_afd6600a03fa747d44c79f09fbc41b373}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}\label{classexperimental_1_1AudioEngineImpl_a4b7cd4c0f622f263dee4f8067cc364a1}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}\label{classexperimental_1_1AudioEngineImpl_a300f339e4c5178c84522fe8654898e43}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}\label{classexperimental_1_1AudioEngineImpl_a56856900e92d2a4c19ea1a629bf19393}} 
+void {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}\label{classexperimental_1_1AudioEngineImpl_abcf87e42d6015ae5a0760ce815fb6f28}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}\label{classexperimental_1_1AudioEngineImpl_a12fa2f700f4d6e4effc72e1ad7e030cb}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}\label{classexperimental_1_1AudioEngineImpl_a47be5365efeebd307e3891f3f71386f0}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}\label{classexperimental_1_1AudioEngineImpl_a8abd3b8330fb7ca7f513016055333f9c}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}\label{classexperimental_1_1AudioEngineImpl_ab4bc0ee1754fda9638d7d0c4470cf170}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}\label{classexperimental_1_1AudioEngineImpl_a4ad8d3d499bf3e5fd262d710b215891e}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}\label{classexperimental_1_1AudioEngineImpl_ae439dacc5acebf311686ebf6f1f6b3df}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}\label{classexperimental_1_1AudioEngineImpl_a220cb2755bcaa7d4ae17e2740a9abf8c}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}\label{classexperimental_1_1AudioEngineImpl_a0aa9187ac5e5341a505cf6154feceaee}} 
+void {\bfseries update} (float dt)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab6f0bd94aefe53088bb4d87560a87331}\label{classexperimental_1_1AudioEngineImpl_ab6f0bd94aefe53088bb4d87560a87331}} 
+bool {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_abcabc0449cdfb6c488791972569e578c}\label{classexperimental_1_1AudioEngineImpl_abcabc0449cdfb6c488791972569e578c}} 
+int {\bfseries play2d} (const std\+::string \&file\+Full\+Path, bool loop, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a0d336c5f4f383a70463ab23eb8be2a2e}\label{classexperimental_1_1AudioEngineImpl_a0d336c5f4f383a70463ab23eb8be2a2e}} 
+void {\bfseries set\+Volume} (int audio\+ID, float volume)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_af9d511c772e6278d99dceb9f8af1d986}\label{classexperimental_1_1AudioEngineImpl_af9d511c772e6278d99dceb9f8af1d986}} 
+void {\bfseries set\+Loop} (int audio\+ID, bool loop)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_acfbf1c888af4835ae02626327ae0ab47}\label{classexperimental_1_1AudioEngineImpl_acfbf1c888af4835ae02626327ae0ab47}} 
+bool {\bfseries pause} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8c82f937ac18f6f3fcaa7320e1df44bd}\label{classexperimental_1_1AudioEngineImpl_a8c82f937ac18f6f3fcaa7320e1df44bd}} 
+bool {\bfseries resume} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8a71d322330c0db9eea78e0813de3d26}\label{classexperimental_1_1AudioEngineImpl_a8a71d322330c0db9eea78e0813de3d26}} 
+bool {\bfseries stop} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a8961e9bb715fece5dfaeca64d64c06d9}\label{classexperimental_1_1AudioEngineImpl_a8961e9bb715fece5dfaeca64d64c06d9}} 
+void {\bfseries stop\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ac5f8f652fbe1a06d7dde14db43b644ec}\label{classexperimental_1_1AudioEngineImpl_ac5f8f652fbe1a06d7dde14db43b644ec}} 
+float {\bfseries get\+Duration} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a3cb4f3a9c621d7f4ad6f5b57b4ba6cb6}\label{classexperimental_1_1AudioEngineImpl_a3cb4f3a9c621d7f4ad6f5b57b4ba6cb6}} 
+float {\bfseries get\+Current\+Time} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a966a526ab11d36c96fd4d75c1774ddda}\label{classexperimental_1_1AudioEngineImpl_a966a526ab11d36c96fd4d75c1774ddda}} 
+bool {\bfseries set\+Current\+Time} (int audio\+ID, float time)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a578dff2b3739e11ff78c2fb66202b9ae}\label{classexperimental_1_1AudioEngineImpl_a578dff2b3739e11ff78c2fb66202b9ae}} 
+void {\bfseries set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a34563b43f0528bca2bb16b4d9e2ba423}\label{classexperimental_1_1AudioEngineImpl_a34563b43f0528bca2bb16b4d9e2ba423}} 
+void {\bfseries uncache} (const std\+::string \&file\+Path)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_add63d1604ba7c93d09f3ccb8d61cd5d0}\label{classexperimental_1_1AudioEngineImpl_add63d1604ba7c93d09f3ccb8d61cd5d0}} 
+void {\bfseries uncache\+All} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a9bc8c8d1535cb237da0a8f6ab4185395}\label{classexperimental_1_1AudioEngineImpl_a9bc8c8d1535cb237da0a8f6ab4185395}} 
+\hyperlink{classexperimental_1_1AudioCache}{Audio\+Cache} $\ast$ {\bfseries preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a52f2b0ed6a73b5606f722a05e9b934ce}\label{classexperimental_1_1AudioEngineImpl_a52f2b0ed6a73b5606f722a05e9b934ce}} 
+void {\bfseries update} (float dt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_a81a15f8396fd46cd51865b41ca9ac2ef}\label{classexperimental_1_1AudioEngineImpl_a81a15f8396fd46cd51865b41ca9ac2ef}} 
+\index{experimental\+::\+Audio\+Engine\+Impl@{experimental\+::\+Audio\+Engine\+Impl}!on\+Sound\+Finished@{on\+Sound\+Finished}}
+\index{on\+Sound\+Finished@{on\+Sound\+Finished}!experimental\+::\+Audio\+Engine\+Impl@{experimental\+::\+Audio\+Engine\+Impl}}
+\subsubsection{\texorpdfstring{on\+Sound\+Finished()}{onSoundFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::\+Audio\+Engine\+Impl\+::on\+Sound\+Finished (\begin{DoxyParamCaption}\item[{\hyperlink{classFMOD_1_1Channel}{F\+M\+O\+D\+::\+Channel} $\ast$}]{channel }\end{DoxyParamCaption})}
+
+used internally by ffmod callback \mbox{\Hypertarget{classexperimental_1_1AudioEngineImpl_ab4e729728bd4265f0d17952661fd2ba4}\label{classexperimental_1_1AudioEngineImpl_ab4e729728bd4265f0d17952661fd2ba4}} 
+\index{experimental\+::\+Audio\+Engine\+Impl@{experimental\+::\+Audio\+Engine\+Impl}!on\+Sound\+Finished@{on\+Sound\+Finished}}
+\index{on\+Sound\+Finished@{on\+Sound\+Finished}!experimental\+::\+Audio\+Engine\+Impl@{experimental\+::\+Audio\+Engine\+Impl}}
+\subsubsection{\texorpdfstring{on\+Sound\+Finished()}{onSoundFinished()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Audio\+Engine\+Impl\+::on\+Sound\+Finished (\begin{DoxyParamCaption}\item[{\hyperlink{classFMOD_1_1Channel}{F\+M\+O\+D\+::\+Channel} $\ast$}]{channel }\end{DoxyParamCaption})}
+
+used internally by ffmod callback 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Engine-\/inl.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/linux/Audio\+Engine-\/linux.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/tizen/Audio\+Engine-\/tizen.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/win32/Audio\+Engine-\/win32.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/winrt/Audio\+Engine-\/winrt.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Engine-\/inl.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/apple/Audio\+Engine-\/inl.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/linux/Audio\+Engine-\/linux.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/tizen/Audio\+Engine-\/tizen.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/win32/Audio\+Engine-\/win32.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/winrt/Audio\+Engine-\/winrt.\+cpp\end{DoxyCompactItemize}

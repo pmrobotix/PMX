@@ -1,0 +1,254 @@
+\hypertarget{group__scaffolding}{}\section{Program Scaffolding Routines}
+\label{group__scaffolding}\index{Program Scaffolding Routines@{Program Scaffolding Routines}}
+Collaboration diagram for Program Scaffolding Routines\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{group__scaffolding}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__scaffolding_ga1b83ce2b0adc8a384cc5a4589a8c2140}{\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+}
+\item 
+\mbox{\Hypertarget{group__scaffolding_ga91164741f16fe7970ef266be19178415}\label{group__scaffolding_ga91164741f16fe7970ef266be19178415}} 
+\#define \hyperlink{group__scaffolding_ga91164741f16fe7970ef266be19178415}{T\+E\+R\+M\+\_\+\+C\+O\+L\+\_\+\+M\+IN}~1
+\begin{DoxyCompactList}\small\item\em Minimum Console Column value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__scaffolding_ga80a3ddd373d6bc24fd7e6929feb9e807}\label{group__scaffolding_ga80a3ddd373d6bc24fd7e6929feb9e807}} 
+\#define \hyperlink{group__scaffolding_ga80a3ddd373d6bc24fd7e6929feb9e807}{T\+E\+R\+M\+\_\+\+C\+O\+L\+\_\+\+M\+AX}~29
+\begin{DoxyCompactList}\small\item\em Maximum Console Column value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__scaffolding_ga3c42e3653e322d99249147e992e1976e}\label{group__scaffolding_ga3c42e3653e322d99249147e992e1976e}} 
+\#define \hyperlink{group__scaffolding_ga3c42e3653e322d99249147e992e1976e}{T\+E\+R\+M\+\_\+\+R\+O\+W\+\_\+\+M\+IN}~1
+\begin{DoxyCompactList}\small\item\em Minimum Console Row value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__scaffolding_ga141f599b6a2a3321a8a089004cd1e52a}\label{group__scaffolding_ga141f599b6a2a3321a8a089004cd1e52a}} 
+\#define \hyperlink{group__scaffolding_ga141f599b6a2a3321a8a089004cd1e52a}{T\+E\+R\+M\+\_\+\+R\+O\+W\+\_\+\+M\+AX}~10
+\begin{DoxyCompactList}\small\item\em Maximum Console Row value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__scaffolding_gadc1bdbe20a5b0bf20b786c454857af1a}{prog\+\_\+init} (void)
+\item 
+void \hyperlink{group__scaffolding_gae2602aec28da58d379b4136b455a62d7}{prog\+\_\+exit} (void)
+\item 
+void \hyperlink{group__scaffolding_gad26b68c9bc1df3aa990eb9f594e28760}{prog\+\_\+contentX} (std\+::string str, int row, int col)
+\item 
+\mbox{\Hypertarget{group__scaffolding_gae8773733374b0af1000042f78b017d3d}\label{group__scaffolding_gae8773733374b0af1000042f78b017d3d}} 
+void {\bfseries prog\+\_\+\+NumberX} (int value, int row, int col)
+\item 
+void \hyperlink{group__scaffolding_ga4472335aeac8c96294ad2f77d875d2cd}{prog\+\_\+clearscreen} (void)
+\item 
+bool \hyperlink{group__scaffolding_ga0420c11494d215979edc5f657819a2ca}{prog\+\_\+set\+\_\+cursorpos} (int col, int row)
+\item 
+void \hyperlink{group__scaffolding_ga59bf0af8d61ca90c1825e3224b45eaf9}{prog\+\_\+display\+\_\+string} (char $\ast$string)
+\item 
+void \hyperlink{group__scaffolding_ga0ea4957bdb462cada821c4d728494087}{prog\+\_\+display\+\_\+integer} (int value)
+\item 
+void \hyperlink{group__scaffolding_gae0f19e55443d5e98d104d9bc8a0e96a9}{prog\+\_\+display\+\_\+signed\+\_\+int} (int value)
+\item 
+void \hyperlink{group__scaffolding_ga455086b694579da94041147474387a9b}{prog\+\_\+display\+\_\+unsigned\+\_\+int} (uint value)
+\item 
+void \hyperlink{group__scaffolding_ga00fa862c209364a485690c01cf67b281}{prog\+\_\+display\+\_\+bin8} (unsigned char binvalue)
+\item 
+void \hyperlink{group__scaffolding_gae22b0332268122b8ef7443b7bc5024b9}{prog\+\_\+display\+\_\+hex32} (uint hexvalue)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Scaffolding library perform miscellaneous startup and shutdown tasks, as well as send display to the console with basic terminal handling. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__scaffolding_ga1b83ce2b0adc8a384cc5a4589a8c2140}\label{group__scaffolding_ga1b83ce2b0adc8a384cc5a4589a8c2140}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+}{\_\_FBCON\_EV3\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+F\+B\+C\+O\+N\+\_\+\+E\+V3\+\_\+\+\_\+}
+
+\hyperlink{classText}{Text} Terminal Screen Dimensions
+
+Assumes use of Lat15-\/\+Terminus12x6.\+psf.\+gz font for the E\+V3 178x128 Monochrome L\+CD Display 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__scaffolding_ga4472335aeac8c96294ad2f77d875d2cd}\label{group__scaffolding_ga4472335aeac8c96294ad2f77d875d2cd}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+clearscreen@{prog\+\_\+clearscreen}}
+\index{prog\+\_\+clearscreen@{prog\+\_\+clearscreen}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+clearscreen()}{prog\_clearscreen()}}
+{\footnotesize\ttfamily void prog\+\_\+clearscreen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clear the L\+CD \hyperlink{classText}{Text} Display. Cursor will be placed at (1,1) (Top Left) 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_gad26b68c9bc1df3aa990eb9f594e28760}\label{group__scaffolding_gad26b68c9bc1df3aa990eb9f594e28760}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+contentX@{prog\+\_\+contentX}}
+\index{prog\+\_\+contentX@{prog\+\_\+contentX}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+content\+X()}{prog\_contentX()}}
+{\footnotesize\ttfamily void prog\+\_\+contentX (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+Display Title string on L\+CD (Row 1) 
+\begin{DoxyParams}{Parameters}
+{\em string} & Null-\/terminated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None Display Content string on L\+CD (Row 3) 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Null-\/terminated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None Display Content string on L\+CD (Row 5) 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Null-\/terminated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None Display Content string on L\+CD (Row row) 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Null-\/terminated string \\
+\hline
+{\em row} & int\+: Row Index \mbox{[}1..M\+A\+X\+\_\+\+R\+OW\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_ga00fa862c209364a485690c01cf67b281}\label{group__scaffolding_ga00fa862c209364a485690c01cf67b281}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+bin8@{prog\+\_\+display\+\_\+bin8}}
+\index{prog\+\_\+display\+\_\+bin8@{prog\+\_\+display\+\_\+bin8}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+bin8()}{prog\_display\_bin8()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+bin8 (\begin{DoxyParamCaption}\item[{unsigned char}]{binvalue }\end{DoxyParamCaption})}
+
+Display 8-\/bit binary on L\+CD at current cursor position 
+\begin{DoxyParams}{Parameters}
+{\em value} & 8-\/bit binary value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_gae22b0332268122b8ef7443b7bc5024b9}\label{group__scaffolding_gae22b0332268122b8ef7443b7bc5024b9}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+hex32@{prog\+\_\+display\+\_\+hex32}}
+\index{prog\+\_\+display\+\_\+hex32@{prog\+\_\+display\+\_\+hex32}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+hex32()}{prog\_display\_hex32()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+hex32 (\begin{DoxyParamCaption}\item[{uint}]{hexvalue }\end{DoxyParamCaption})}
+
+Display 32-\/bit hexadecimal on L\+CD at current cursor position 
+\begin{DoxyParams}{Parameters}
+{\em value} & 32-\/bit hexadecimal value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_ga0ea4957bdb462cada821c4d728494087}\label{group__scaffolding_ga0ea4957bdb462cada821c4d728494087}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+integer@{prog\+\_\+display\+\_\+integer}}
+\index{prog\+\_\+display\+\_\+integer@{prog\+\_\+display\+\_\+integer}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+integer()}{prog\_display\_integer()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+integer (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Display signed integer on L\+CD at current cursor position The negative sign is displayed if it is negative, otherwise no signed is displayed. 
+\begin{DoxyParams}{Parameters}
+{\em value} & signed long value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_gae0f19e55443d5e98d104d9bc8a0e96a9}\label{group__scaffolding_gae0f19e55443d5e98d104d9bc8a0e96a9}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+signed\+\_\+int@{prog\+\_\+display\+\_\+signed\+\_\+int}}
+\index{prog\+\_\+display\+\_\+signed\+\_\+int@{prog\+\_\+display\+\_\+signed\+\_\+int}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+signed\+\_\+int()}{prog\_display\_signed\_int()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+signed\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+Display signed integer on L\+CD at current cursor position The sign is always displayed, regardless of the value being positive or negative. 
+\begin{DoxyParams}{Parameters}
+{\em value} & signed long value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_ga59bf0af8d61ca90c1825e3224b45eaf9}\label{group__scaffolding_ga59bf0af8d61ca90c1825e3224b45eaf9}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+string@{prog\+\_\+display\+\_\+string}}
+\index{prog\+\_\+display\+\_\+string@{prog\+\_\+display\+\_\+string}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+string()}{prog\_display\_string()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+Display string on L\+CD at current cursor position 
+\begin{DoxyParams}{Parameters}
+{\em string} & Null-\/terminated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_ga455086b694579da94041147474387a9b}\label{group__scaffolding_ga455086b694579da94041147474387a9b}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+display\+\_\+unsigned\+\_\+int@{prog\+\_\+display\+\_\+unsigned\+\_\+int}}
+\index{prog\+\_\+display\+\_\+unsigned\+\_\+int@{prog\+\_\+display\+\_\+unsigned\+\_\+int}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+display\+\_\+unsigned\+\_\+int()}{prog\_display\_unsigned\_int()}}
+{\footnotesize\ttfamily void prog\+\_\+display\+\_\+unsigned\+\_\+int (\begin{DoxyParamCaption}\item[{uint}]{value }\end{DoxyParamCaption})}
+
+Display unsigned integer on L\+CD at current cursor position 
+\begin{DoxyParams}{Parameters}
+{\em value} & unsigned long value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_gae2602aec28da58d379b4136b455a62d7}\label{group__scaffolding_gae2602aec28da58d379b4136b455a62d7}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+exit@{prog\+\_\+exit}}
+\index{prog\+\_\+exit@{prog\+\_\+exit}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+exit()}{prog\_exit()}}
+{\footnotesize\ttfamily void prog\+\_\+exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Exit A\+R\+M-\/\+B\+BR subsystems Generate exit tone 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_gadc1bdbe20a5b0bf20b786c454857af1a}\label{group__scaffolding_gadc1bdbe20a5b0bf20b786c454857af1a}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+init@{prog\+\_\+init}}
+\index{prog\+\_\+init@{prog\+\_\+init}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+init()}{prog\_init()}}
+{\footnotesize\ttfamily void prog\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Common Startup/\+Shutdown Routines for A\+R\+M-\/\+B\+BR programs Initialize A\+R\+M-\/\+B\+BR subsystems Clears L\+CD screen and generate startup tone 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__scaffolding_ga0420c11494d215979edc5f657819a2ca}\label{group__scaffolding_ga0420c11494d215979edc5f657819a2ca}} 
+\index{Program Scaffolding Routines@{Program Scaffolding Routines}!prog\+\_\+set\+\_\+cursorpos@{prog\+\_\+set\+\_\+cursorpos}}
+\index{prog\+\_\+set\+\_\+cursorpos@{prog\+\_\+set\+\_\+cursorpos}!Program Scaffolding Routines@{Program Scaffolding Routines}}
+\subsubsection{\texorpdfstring{prog\+\_\+set\+\_\+cursorpos()}{prog\_set\_cursorpos()}}
+{\footnotesize\ttfamily bool prog\+\_\+set\+\_\+cursorpos (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{row }\end{DoxyParamCaption})}
+
+Set the cursor on the L\+CD to new cursor position Note\+: This only works on the L\+CD screen. It does not work in the Debugger output window. 
+\begin{DoxyParams}{Parameters}
+{\em col} & integer value \\
+\hline
+{\em row} & integer value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: bool value 
+\end{DoxyReturn}

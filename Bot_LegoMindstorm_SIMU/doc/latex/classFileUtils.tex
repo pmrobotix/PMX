@@ -1,0 +1,2686 @@
+\hypertarget{classFileUtils}{}\section{File\+Utils Class Reference}
+\label{classFileUtils}\index{File\+Utils@{File\+Utils}}
+
+
+{\ttfamily \#include $<$C\+C\+File\+Utils.\+h$>$}
+
+
+
+Inheritance diagram for File\+Utils\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classFileUtils__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Utils\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classFileUtils__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtils_af39c06edc762abeeb425b6f9fc09a637}\label{classFileUtils_af39c06edc762abeeb425b6f9fc09a637}} 
+enum {\bfseries Status} \{ \newline
+{\bfseries OK} = 0, 
+{\bfseries Not\+Exists} = 1, 
+{\bfseries Open\+Failed} = 2, 
+{\bfseries Read\+Failed} = 3, 
+\newline
+{\bfseries Not\+Initialized} = 4, 
+{\bfseries Too\+Large} = 5, 
+{\bfseries Obtain\+Size\+Failed} = 6, 
+{\bfseries OK} = 0, 
+\newline
+{\bfseries Not\+Exists} = 1, 
+{\bfseries Open\+Failed} = 2, 
+{\bfseries Read\+Failed} = 3, 
+{\bfseries Not\+Initialized} = 4, 
+\newline
+{\bfseries Too\+Large} = 5, 
+{\bfseries Obtain\+Size\+Failed} = 6, 
+{\bfseries Not\+Regular\+File\+Type} = 7
+ \}
+\item 
+\mbox{\Hypertarget{classFileUtils_af39c06edc762abeeb425b6f9fc09a637}\label{classFileUtils_af39c06edc762abeeb425b6f9fc09a637}} 
+enum {\bfseries Status} \{ \newline
+{\bfseries OK} = 0, 
+{\bfseries Not\+Exists} = 1, 
+{\bfseries Open\+Failed} = 2, 
+{\bfseries Read\+Failed} = 3, 
+\newline
+{\bfseries Not\+Initialized} = 4, 
+{\bfseries Too\+Large} = 5, 
+{\bfseries Obtain\+Size\+Failed} = 6, 
+{\bfseries OK} = 0, 
+\newline
+{\bfseries Not\+Exists} = 1, 
+{\bfseries Open\+Failed} = 2, 
+{\bfseries Read\+Failed} = 3, 
+{\bfseries Not\+Initialized} = 4, 
+\newline
+{\bfseries Too\+Large} = 5, 
+{\bfseries Obtain\+Size\+Failed} = 6, 
+{\bfseries Not\+Regular\+File\+Type} = 7
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}{$\sim$\+File\+Utils} ()
+\item 
+virtual void \hyperlink{classFileUtils_a2a54bfc34349410e94c3b53e61bc026f}{purge\+Cached\+Entries} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a8e420b897f0e359c077976c31954e265}{get\+String\+From\+File} (const std\+::string \&filename)
+\item 
+virtual \hyperlink{classData}{Data} \hyperlink{classFileUtils_a0ed7a5e24b4f5d8643c6b3673cb6c46b}{get\+Data\+From\+File} (const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename T , typename Enable  = typename std\+::enable\+\_\+if$<$            std\+::is\+\_\+base\+\_\+of$<$ Resizable\+Buffer, Resizable\+Buffer\+Adapter$<$\+T$>$ $>$\+::value        $>$\+::type$>$ }\\Status \hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{get\+Contents} (const std\+::string \&filename, T $\ast$buffer)
+\item 
+\mbox{\Hypertarget{classFileUtils_a07b60438d585e1076c9b9c151aa18724}\label{classFileUtils_a07b60438d585e1076c9b9c151aa18724}} 
+virtual Status {\bfseries get\+Contents} (const std\+::string \&filename, \hyperlink{classResizableBuffer}{Resizable\+Buffer} $\ast$buffer)
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned char $\ast$ \hyperlink{classFileUtils_ae261ba024555431d4ecc746ace25fdfe}{get\+File\+Data} (const std\+::string \&filename, const char $\ast$mode, ssize\+\_\+t $\ast$size)
+\item 
+virtual unsigned char $\ast$ \hyperlink{classFileUtils_a38a12ace92fad87bd225c225db7093d5}{get\+File\+Data\+From\+Zip} (const std\+::string \&zip\+File\+Path, const std\+::string \&filename, ssize\+\_\+t $\ast$size)
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a678409294ab5f13195b109e503f6a1df}{full\+Path\+For\+Filename} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_a9886430fc0a8a3990379de3a04ebcd95}{load\+Filename\+Lookup\+Dictionary\+From\+File} (const std\+::string \&filename)
+\item 
+virtual void \hyperlink{classFileUtils_a9b5b9626c0c291f58e384bfc53949c97}{set\+Filename\+Lookup\+Dictionary} (const Value\+Map \&filename\+Lookup\+Dict)
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a632933377d6c84ec2687587883e2c419}{full\+Path\+From\+Relative\+File} (const std\+::string \&filename, const std\+::string \&relative\+File)
+\item 
+virtual void \hyperlink{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}{set\+Search\+Resolutions\+Order} (const std\+::vector$<$ std\+::string $>$ \&search\+Resolutions\+Order)
+\item 
+virtual void \hyperlink{classFileUtils_a06551ef2a3f73686052fa91203d2a219}{add\+Search\+Resolutions\+Order} (const std\+::string \&order, const bool front=false)
+\item 
+virtual const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classFileUtils_a079329ce5d4a0154fed6a3987d42dc26}{get\+Search\+Resolutions\+Order} () const
+\item 
+virtual void \hyperlink{classFileUtils_a70336b604a6a9eb20dc56db8e8581a3d}{set\+Search\+Paths} (const std\+::vector$<$ std\+::string $>$ \&search\+Paths)
+\item 
+void \hyperlink{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}{set\+Default\+Resource\+Root\+Path} (const std\+::string \&path)
+\item 
+void \hyperlink{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}{add\+Search\+Path} (const std\+::string \&path, const bool front=false)
+\item 
+virtual const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classFileUtils_a4e21f0076f5183637e1c0d273bd7d0ce}{get\+Search\+Paths} () const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{get\+Writable\+Path} () const =0
+\item 
+virtual void \hyperlink{classFileUtils_ac8241b72075065d1d23581761e051b75}{set\+Writable\+Path} (const std\+::string \&writable\+Path)
+\item 
+virtual void \hyperlink{classFileUtils_abf036eb8785edfb8077c2d92444d55a4}{set\+Popup\+Notify} (bool notify)
+\item 
+virtual bool \hyperlink{classFileUtils_acf344799ae42662fd4371b44ecaac739}{is\+Popup\+Notify} () const
+\item 
+virtual Value\+Map \hyperlink{classFileUtils_a67aa84a7b5bcfb46a646260c084ad829}{get\+Value\+Map\+From\+File} (const std\+::string \&filename)
+\item 
+virtual Value\+Map \hyperlink{classFileUtils_a3b1cb7c770ba78d1d68c2da204e15a15}{get\+Value\+Map\+From\+Data} (const char $\ast$filedata, int filesize)
+\item 
+virtual bool \hyperlink{classFileUtils_a503e4cf24b5bd8b13780370fa8e2c8f4}{write\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_acd55f56b9ae5d635f4194132b4aeee14}{write\+String\+To\+File} (const std\+::string \&data\+Str, const std\+::string \&full\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_a448ef43bd4c31852611018c951dd6eda}{write\+Data\+To\+File} (const \hyperlink{classData}{Data} \&data, const std\+::string \&full\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_a3bfc1cbc320b69f8fd2581431f6362d1}{write\+Value\+Map\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_a68821bd490a13b47e0e397980eabe481}{write\+Value\+Vector\+To\+File} (const Value\+Vector \&vec\+Data, const std\+::string \&full\+Path)
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}{get\+Suitable\+F\+Open} (const std\+::string \&filename\+Utf8) const
+\item 
+\mbox{\Hypertarget{classFileUtils_a7141ac7fe02980d1e3f78614e73aa0fa}\label{classFileUtils_a7141ac7fe02980d1e3f78614e73aa0fa}} 
+virtual Value\+Vector {\bfseries get\+Value\+Vector\+From\+File} (const std\+::string \&filename)
+\item 
+virtual bool \hyperlink{classFileUtils_a4e849a9b77e09971c4d8b879a5243eb3}{is\+File\+Exist} (const std\+::string \&filename) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a98ad20968d4fbab847ec823d49dda262}{get\+File\+Extension} (const std\+::string \&file\+Path) const
+\item 
+virtual bool \hyperlink{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}{is\+Absolute\+Path} (const std\+::string \&path) const
+\item 
+virtual bool \hyperlink{classFileUtils_a900bb088db70c091dd5c1984735925c1}{is\+Directory\+Exist} (const std\+::string \&dir\+Path) const
+\item 
+virtual bool \hyperlink{classFileUtils_a04129d55c22dfa031fd45aeda4de5e77}{create\+Directory} (const std\+::string \&dir\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_ad64d866c014013817c54582924f9592e}{remove\+Directory} (const std\+::string \&dir\+Path)
+\item 
+virtual bool \hyperlink{classFileUtils_aee725bf84f7bc707f9a94543d75b70fb}{remove\+File} (const std\+::string \&filepath)
+\item 
+virtual bool \hyperlink{classFileUtils_a9f7560060b9909e1af2e0a77923f61ac}{rename\+File} (const std\+::string \&path, const std\+::string \&oldname, const std\+::string \&name)
+\item 
+virtual bool \hyperlink{classFileUtils_a5a73b69c8322c48c3fbad2a262d354d8}{rename\+File} (const std\+::string \&oldfullpath, const std\+::string \&newfullpath)
+\item 
+virtual long \hyperlink{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}{get\+File\+Size} (const std\+::string \&filepath)
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \& \hyperlink{classFileUtils_a79f4f099ea02d95e5d90425f038fb9d3}{get\+Full\+Path\+Cache} () const
+\item 
+virtual \hyperlink{classFileUtils_a5e36e104e5d2c7adf7b50dff0a75b437}{$\sim$\+File\+Utils} ()
+\item 
+virtual void \hyperlink{classFileUtils_a344792c0707b0089493f7b39f2ad57d9}{purge\+Cached\+Entries} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a72a478f88775c6de04114c396971285e}{get\+String\+From\+File} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_a510afb98fe877771b610e9cbad94849a}{get\+String\+From\+File} (const std\+::string \&path, std\+::function$<$ void(std\+::string)$>$ callback) const
+\item 
+virtual \hyperlink{classData}{Data} \hyperlink{classFileUtils_ac59d79a67f7ce17ce47db607bba31ed7}{get\+Data\+From\+File} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_a1a2683fad8f40963f4ffa382ad47fca4}{get\+Data\+From\+File} (const std\+::string \&filename, std\+::function$<$ void(\hyperlink{classData}{Data})$>$ callback) const
+\item 
+{\footnotesize template$<$typename T , typename Enable  = typename std\+::enable\+\_\+if$<$            std\+::is\+\_\+base\+\_\+of$<$ Resizable\+Buffer, Resizable\+Buffer\+Adapter$<$\+T$>$ $>$\+::value        $>$\+::type$>$ }\\Status \hyperlink{classFileUtils_a8673a6529c3b2abcdbefbadd647ae139}{get\+Contents} (const std\+::string \&filename, T $\ast$buffer) const
+\item 
+\mbox{\Hypertarget{classFileUtils_a2ac9b9ef4ca3dbc05bfa09410b36aa9d}\label{classFileUtils_a2ac9b9ef4ca3dbc05bfa09410b36aa9d}} 
+virtual Status {\bfseries get\+Contents} (const std\+::string \&filename, \hyperlink{classResizableBuffer}{Resizable\+Buffer} $\ast$buffer) const
+\item 
+virtual C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE unsigned char $\ast$ \hyperlink{classFileUtils_a895b2f0b05b3163dcf18aaf456bbe46e}{get\+File\+Data} (const std\+::string \&filename, const char $\ast$mode, ssize\+\_\+t $\ast$size) const
+\item 
+virtual unsigned char $\ast$ \hyperlink{classFileUtils_a9d3d28064945c8410b6fd0927f8e894a}{get\+File\+Data\+From\+Zip} (const std\+::string \&zip\+File\+Path, const std\+::string \&filename, ssize\+\_\+t $\ast$size) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a06e56ef12b5ec5c7d11c138484f111bf}{full\+Path\+For\+Filename} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_ae8308c3d358c44312b6d804287dad1b7}{load\+Filename\+Lookup\+Dictionary\+From\+File} (const std\+::string \&filename)
+\item 
+virtual void \hyperlink{classFileUtils_a8039a26b5d8e3b29dfc8ad01104e966c}{set\+Filename\+Lookup\+Dictionary} (const Value\+Map \&filename\+Lookup\+Dict)
+\item 
+virtual std\+::string \hyperlink{classFileUtils_abc1dbf1656599ede5f15347c3fcedb85}{full\+Path\+From\+Relative\+File} (const std\+::string \&filename, const std\+::string \&relative\+File) const
+\item 
+virtual void \hyperlink{classFileUtils_ae9c17f012420d7acc993503c5596bf7f}{set\+Search\+Resolutions\+Order} (const std\+::vector$<$ std\+::string $>$ \&search\+Resolutions\+Order)
+\item 
+virtual void \hyperlink{classFileUtils_a9fd27cac8efc54927ced6fb1b5f9f657}{add\+Search\+Resolutions\+Order} (const std\+::string \&order, const bool front=false)
+\item 
+virtual const std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a3f1af62189d1c9f5fc944d38fc6265a6}{get\+Search\+Resolutions\+Order} () const
+\item 
+virtual void \hyperlink{classFileUtils_a40bd3826a4e4f49706179fc5e009a462}{set\+Search\+Paths} (const std\+::vector$<$ std\+::string $>$ \&search\+Paths)
+\item 
+const std\+::string \hyperlink{classFileUtils_ad7be12b938a4aab370beef6dcb553a1d}{get\+Default\+Resource\+Root\+Path} () const
+\item 
+void \hyperlink{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}{set\+Default\+Resource\+Root\+Path} (const std\+::string \&path)
+\item 
+void \hyperlink{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}{add\+Search\+Path} (const std\+::string \&path, const bool front=false)
+\item 
+virtual const std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a11610172e9e0ca8379c6574ed2433a8c}{get\+Search\+Paths} () const
+\item 
+virtual const std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a43670a0b6631730400ada9ca283bcc80}{get\+Original\+Search\+Paths} () const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{get\+Writable\+Path} () const =0
+\item 
+virtual void \hyperlink{classFileUtils_a198fe2619bd2bf551efeccf6010268b0}{set\+Writable\+Path} (const std\+::string \&writable\+Path)
+\item 
+virtual void \hyperlink{classFileUtils_a3763086a2f23fd47fc3ba77c56ab38a8}{set\+Popup\+Notify} (bool notify)
+\item 
+virtual bool \hyperlink{classFileUtils_a969a59acf14d03cf424d20f31d709d9c}{is\+Popup\+Notify} () const
+\item 
+virtual Value\+Map \hyperlink{classFileUtils_a7a5c18baa7c28962d642c101513c7c1b}{get\+Value\+Map\+From\+File} (const std\+::string \&filename) const
+\item 
+virtual Value\+Map \hyperlink{classFileUtils_a9c882af1acde6d249e35713e82b53607}{get\+Value\+Map\+From\+Data} (const char $\ast$filedata, int filesize) const
+\item 
+virtual bool \hyperlink{classFileUtils_aaf55e6d080352b5fec3924521ab553e2}{write\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path) const
+\item 
+virtual bool \hyperlink{classFileUtils_a0936e63c5225388250ff3dce11a5cc78}{write\+String\+To\+File} (const std\+::string \&data\+Str, const std\+::string \&full\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a053cc5146cc3a8aca08699f6707f8883}{write\+String\+To\+File} (std\+::string data\+Str, const std\+::string \&full\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a8b88ed03982d6aec3008baba5345f323}{write\+Data\+To\+File} (const \hyperlink{classData}{Data} \&data, const std\+::string \&full\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a5c32f11d009af2cab29b9f0fcb20b43a}{write\+Data\+To\+File} (\hyperlink{classData}{Data} data, const std\+::string \&full\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a19a124d3a50e5dcd1f4d93eb4799af6e}{write\+Value\+Map\+To\+File} (const Value\+Map \&dict, const std\+::string \&full\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a8efadc41f2a123969a3bd9ee5ae35ec9}{write\+Value\+Map\+To\+File} (Value\+Map dict, const std\+::string \&full\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a05afdedbbee8528bf4237b833789349e}{write\+Value\+Vector\+To\+File} (const Value\+Vector \&vec\+Data, const std\+::string \&full\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a13c34d3019012ab99be6e04ff199d643}{write\+Value\+Vector\+To\+File} (Value\+Vector vec\+Data, const std\+::string \&full\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_ab4cf90cd6dd8c8ba0b6b37b53bbd3ae8}{get\+Suitable\+F\+Open} (const std\+::string \&filename\+Utf8) const
+\item 
+\mbox{\Hypertarget{classFileUtils_a753415e0272a155b60097abe241d0fb7}\label{classFileUtils_a753415e0272a155b60097abe241d0fb7}} 
+virtual Value\+Vector {\bfseries get\+Value\+Vector\+From\+File} (const std\+::string \&filename) const
+\item 
+virtual bool \hyperlink{classFileUtils_a53eb44abd5db36aeb91ef29174077c8f}{is\+File\+Exist} (const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_ad681db9f60c32e3aacbebacaf6a316a8}{is\+File\+Exist} (const std\+::string \&filename, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_ad43573c4c3aa6af62616105cf8435668}{get\+File\+Extension} (const std\+::string \&file\+Path) const
+\item 
+virtual bool \hyperlink{classFileUtils_a1c8144d857ca750585e585b53f6b5d7f}{is\+Absolute\+Path} (const std\+::string \&path) const
+\item 
+virtual bool \hyperlink{classFileUtils_a24d3890687e080dccd916ce946012c96}{is\+Directory\+Exist} (const std\+::string \&dir\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_ae611008ddcaf05f7361876b1f2d37753}{is\+Directory\+Exist} (const std\+::string \&full\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a9d9383b68669dcbef30165514f26d7f6}{create\+Directory} (const std\+::string \&dir\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a22d5e9d49b1239b73d123c321e1a802c}{create\+Directory} (const std\+::string \&dir\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a0ced661e913489e0a86ef0273c0fb90f}{remove\+Directory} (const std\+::string \&dir\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_aa7f1736afe9208df38fd88f2da3a8524}{remove\+Directory} (const std\+::string \&dir\+Path, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_aa9131b62319c343316a68d45cbe1d6b1}{remove\+File} (const std\+::string \&filepath) const
+\item 
+virtual void \hyperlink{classFileUtils_a9f5c6583d4c07bdb9903a0129d34ec17}{remove\+File} (const std\+::string \&filepath, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a9228ab64b14c71afca8c5e4f7fb9bb55}{rename\+File} (const std\+::string \&path, const std\+::string \&oldname, const std\+::string \&name) const
+\item 
+virtual void \hyperlink{classFileUtils_ab48eedb6cf7d2667c49d68476faa22da}{rename\+File} (const std\+::string \&path, const std\+::string \&oldname, const std\+::string \&name, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual bool \hyperlink{classFileUtils_a3e68a89a46e1d78df898cbbe1776d75e}{rename\+File} (const std\+::string \&oldfullpath, const std\+::string \&newfullpath) const
+\item 
+virtual void \hyperlink{classFileUtils_a50eae0c881fdb024de1be74e315db3b9}{rename\+File} (const std\+::string \&oldfullpath, const std\+::string \&newfullpath, std\+::function$<$ void(bool)$>$ callback) const
+\item 
+virtual long \hyperlink{classFileUtils_acba4a8730094e74096bfe4cede7f0315}{get\+File\+Size} (const std\+::string \&filepath) const
+\item 
+virtual void \hyperlink{classFileUtils_a20603b766e16b04ef5d50f95bc5629a9}{get\+File\+Size} (const std\+::string \&filepath, std\+::function$<$ void(long)$>$ callback) const
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a88fc43b561884e12a9a2d41a9e3b4df4}{list\+Files} (const std\+::string \&dir\+Path) const
+\item 
+virtual void \hyperlink{classFileUtils_a9156e423bdacb8a2259c145d708ebd9f}{list\+Files\+Async} (const std\+::string \&dir\+Path, std\+::function$<$ void(std\+::vector$<$ std\+::string $>$)$>$ callback) const
+\item 
+virtual void \hyperlink{classFileUtils_a9507d436baf8e10b6880bb1779649a54}{list\+Files\+Recursively} (const std\+::string \&dir\+Path, std\+::vector$<$ std\+::string $>$ $\ast$files) const
+\item 
+virtual void \hyperlink{classFileUtils_a840c57c935f02329a8aec254551f3bb7}{list\+Files\+Recursively\+Async} (const std\+::string \&dir\+Path, std\+::function$<$ void(std\+::vector$<$ std\+::string $>$)$>$ callback) const
+\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \hyperlink{classFileUtils_af5c339ef609f73c83a94518340871142}{get\+Full\+Path\+Cache} () const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a5bf8b3f862e06a2f796c18dfdfe744fc}{get\+New\+Filename} (const std\+::string \&filename) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFileUtils}{File\+Utils} $\ast$ \hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{get\+Instance} ()
+\item 
+static void \hyperlink{classFileUtils_abc5586f1eccca854b227e3cd8738cefd}{destroy\+Instance} ()
+\item 
+static void \hyperlink{classFileUtils_a912337c1295de714a304af0f61a0ebe0}{set\+Delegate} (\hyperlink{classFileUtils}{File\+Utils} $\ast$delegate)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classFileUtils}{File\+Utils} $\ast$ \hyperlink{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}{shared\+File\+Utils} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}{purge\+File\+Utils} ()
+\item 
+static \hyperlink{classFileUtils}{File\+Utils} $\ast$ \hyperlink{classFileUtils_a4a0874cba0ed3d182b0b48b926ce529c}{get\+Instance} ()
+\item 
+static void \hyperlink{classFileUtils_a16799eaacfe932e8025d77c59080a4a2}{destroy\+Instance} ()
+\item 
+static void \hyperlink{classFileUtils_aa53a6facb5bf6d418d71a9b8503a0756}{set\+Delegate} (\hyperlink{classFileUtils}{File\+Utils} $\ast$delegate)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classFileUtils}{File\+Utils} $\ast$ \hyperlink{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}{shared\+File\+Utils} ()
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}{purge\+File\+Utils} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFileUtils_abb87f1bbabb1164634e428aee3559b10}{File\+Utils} ()
+\item 
+virtual bool \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{init} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a71e6d271830df5ba7484c69928c40f5a}{get\+New\+Filename} (const std\+::string \&filename) const
+\item 
+virtual bool \hyperlink{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}{is\+File\+Exist\+Internal} (const std\+::string \&filename) const =0
+\item 
+virtual bool \hyperlink{classFileUtils_a6f2a350e8f2b15219637b40bed4c38ec}{is\+Directory\+Exist\+Internal} (const std\+::string \&dir\+Path) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_ae575880a693de746f1505be83c6b4bfa}{get\+Path\+For\+Filename} (const std\+::string \&filename, const std\+::string \&resolution\+Directory, const std\+::string \&search\+Path) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}{get\+Full\+Path\+For\+Directory\+And\+Filename} (const std\+::string \&directory, const std\+::string \&filename) const
+\item 
+virtual void \hyperlink{classFileUtils_a294123a0e04d6556c1de05c23696ce1b}{value\+Map\+Compact} (Value\+Map \&value\+Map)
+\item 
+\mbox{\Hypertarget{classFileUtils_ad55974a40d238599fb509afe2bfeaf54}\label{classFileUtils_ad55974a40d238599fb509afe2bfeaf54}} 
+virtual void {\bfseries value\+Vector\+Compact} (Value\+Vector \&value\+Vector)
+\item 
+\hyperlink{classFileUtils_abb87f1bbabb1164634e428aee3559b10}{File\+Utils} ()
+\item 
+virtual bool \hyperlink{classFileUtils_aff29da112f10057767427bdb6eb747c3}{init} ()
+\item 
+virtual bool \hyperlink{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}{is\+File\+Exist\+Internal} (const std\+::string \&filename) const =0
+\item 
+virtual bool \hyperlink{classFileUtils_a4fff89e80712f3767f423fe31d78fcaa}{is\+Directory\+Exist\+Internal} (const std\+::string \&dir\+Path) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a3e04619aee1bedf5915338f33a6fc4dc}{get\+Path\+For\+Filename} (const std\+::string \&filename, const std\+::string \&resolution\+Directory, const std\+::string \&search\+Path) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_aa6bae4977b0a23b40f5c4dfea7aee3ff}{get\+Full\+Path\+For\+Filename\+Within\+Directory} (const std\+::string \&directory, const std\+::string \&filename) const
+\item 
+virtual std\+::string \hyperlink{classFileUtils_a40bea93fd4b0929153b448c345dfcf8c}{full\+Path\+For\+Directory} (const std\+::string \&dirname) const
+\item 
+virtual void \hyperlink{classFileUtils_a5f6e7cc4108d8987fc652e99eb858d4c}{value\+Map\+Compact} (Value\+Map \&value\+Map) const
+\item 
+\mbox{\Hypertarget{classFileUtils_a00022bbb58357022da0cd75c21d8b8df}\label{classFileUtils_a00022bbb58357022da0cd75c21d8b8df}} 
+virtual void {\bfseries value\+Vector\+Compact} (Value\+Vector \&value\+Vector) const
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtils_a3cf9d8398d67cde31351eef5f7f31968}\label{classFileUtils_a3cf9d8398d67cde31351eef5f7f31968}} 
+{\footnotesize template$<$typename T , typename R , typename ... A\+R\+GS$>$ }\\static void {\bfseries perform\+Operation\+Offthread} (T \&\&action, R \&\&callback, A\+R\+GS \&\&...args)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\+Map \hyperlink{classFileUtils_a3d6f18571f845268f614048092f74c76}{\+\_\+filename\+Lookup\+Dict}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a35a01013ca9bcbb04c7ae1cd43fbe572}{\+\_\+search\+Resolutions\+Order\+Array}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a856a6d415b5bca3399d826e13ce23501}{\+\_\+search\+Path\+Array}
+\item 
+std\+::string \hyperlink{classFileUtils_a50cd93b75a8864395a6693263152f876}{\+\_\+default\+Res\+Root\+Path}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \hyperlink{classFileUtils_a65bd3009aa5816155b0718744aacdf75}{\+\_\+full\+Path\+Cache}
+\item 
+std\+::string \hyperlink{classFileUtils_a58acf8f0cf86958ed5a6975363b3abe5}{\+\_\+writable\+Path}
+\item 
+std\+::recursive\+\_\+mutex \hyperlink{classFileUtils_a5a756383861bc8cf5058ac4253d269d7}{\+\_\+mutex}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtils_a1bd4771548f29716b5897cd7d4cc82f1}{\+\_\+original\+Search\+Paths}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \hyperlink{classFileUtils_a1692ddcf7df153c024bfc3f0a3756fd8}{\+\_\+full\+Path\+Cache\+Dir}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFileUtils}{File\+Utils} $\ast$ \hyperlink{classFileUtils_aa5350a22566d3f1ca9b0e5bd1e088166}{s\+\_\+shared\+File\+Utils} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to handle file operations. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}\label{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}} 
+\index{File\+Utils@{File\+Utils}!````~File\+Utils@{$\sim$\+File\+Utils}}
+\index{````~File\+Utils@{$\sim$\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{$\sim$\+File\+Utils()}{~FileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily File\+Utils\+::$\sim$\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The destructor of \hyperlink{classFileUtils}{File\+Utils}.  NA  NA \mbox{\Hypertarget{classFileUtils_abb87f1bbabb1164634e428aee3559b10}\label{classFileUtils_abb87f1bbabb1164634e428aee3559b10}} 
+\index{File\+Utils@{File\+Utils}!File\+Utils@{File\+Utils}}
+\index{File\+Utils@{File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{File\+Utils()}{FileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily File\+Utils\+::\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The default constructor. \mbox{\Hypertarget{classFileUtils_a5e36e104e5d2c7adf7b50dff0a75b437}\label{classFileUtils_a5e36e104e5d2c7adf7b50dff0a75b437}} 
+\index{File\+Utils@{File\+Utils}!````~File\+Utils@{$\sim$\+File\+Utils}}
+\index{````~File\+Utils@{$\sim$\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{$\sim$\+File\+Utils()}{~FileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual File\+Utils\+::$\sim$\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The destructor of \hyperlink{classFileUtils}{File\+Utils}.  NA  NA \mbox{\Hypertarget{classFileUtils_abb87f1bbabb1164634e428aee3559b10}\label{classFileUtils_abb87f1bbabb1164634e428aee3559b10}} 
+\index{File\+Utils@{File\+Utils}!File\+Utils@{File\+Utils}}
+\index{File\+Utils@{File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{File\+Utils()}{FileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily File\+Utils\+::\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The default constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}\label{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}} 
+\index{File\+Utils@{File\+Utils}!add\+Search\+Path@{add\+Search\+Path}}
+\index{add\+Search\+Path@{add\+Search\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{add\+Search\+Path()}{addSearchPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::add\+Search\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const bool}]{front = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Add search path.
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}\label{classFileUtils_a690dab9554f2976e2d5ae0a6322e245d}} 
+\index{File\+Utils@{File\+Utils}!add\+Search\+Path@{add\+Search\+Path}}
+\index{add\+Search\+Path@{add\+Search\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{add\+Search\+Path()}{addSearchPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::add\+Search\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const bool}]{front = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Add search path.
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a06551ef2a3f73686052fa91203d2a219}\label{classFileUtils_a06551ef2a3f73686052fa91203d2a219}} 
+\index{File\+Utils@{File\+Utils}!add\+Search\+Resolutions\+Order@{add\+Search\+Resolutions\+Order}}
+\index{add\+Search\+Resolutions\+Order@{add\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{add\+Search\+Resolutions\+Order()}{addSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::add\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{order,  }\item[{const bool}]{front = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Append search order of the resources.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}{set\+Search\+Resolutions\+Order()}, \hyperlink{classFileUtils_a678409294ab5f13195b109e503f6a1df}{full\+Path\+For\+Filename()}. 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a9fd27cac8efc54927ced6fb1b5f9f657}\label{classFileUtils_a9fd27cac8efc54927ced6fb1b5f9f657}} 
+\index{File\+Utils@{File\+Utils}!add\+Search\+Resolutions\+Order@{add\+Search\+Resolutions\+Order}}
+\index{add\+Search\+Resolutions\+Order@{add\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{add\+Search\+Resolutions\+Order()}{addSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::add\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{order,  }\item[{const bool}]{front = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Append search order of the resources.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}{set\+Search\+Resolutions\+Order()}, \hyperlink{classFileUtils_a678409294ab5f13195b109e503f6a1df}{full\+Path\+For\+Filename()}. 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a04129d55c22dfa031fd45aeda4de5e77}\label{classFileUtils_a04129d55c22dfa031fd45aeda4de5e77}} 
+\index{File\+Utils@{File\+Utils}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a6385e7d4763147cff2c158974d16adf8}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsApple_a2b55deedf8b0fda7ceec1442f3944b1e}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a9d9383b68669dcbef30165514f26d7f6}\label{classFileUtils_a9d9383b68669dcbef30165514f26d7f6}} 
+\index{File\+Utils@{File\+Utils}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a9da58952832ce4abc6c241e9db52a914}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsApple_a104a38b7f8adf8de79f9ec2fcaa09735}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a22d5e9d49b1239b73d123c321e1a802c}\label{classFileUtils_a22d5e9d49b1239b73d123c321e1a802c}} 
+\index{File\+Utils@{File\+Utils}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Create a directory, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & the path of the directory, it must be an absolute path \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the directory was successfully, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_abc5586f1eccca854b227e3cd8738cefd}\label{classFileUtils_abc5586f1eccca854b227e3cd8738cefd}} 
+\index{File\+Utils@{File\+Utils}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroys the instance of \hyperlink{classFileUtils}{File\+Utils}. \mbox{\Hypertarget{classFileUtils_a16799eaacfe932e8025d77c59080a4a2}\label{classFileUtils_a16799eaacfe932e8025d77c59080a4a2}} 
+\index{File\+Utils@{File\+Utils}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void File\+Utils\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroys the instance of \hyperlink{classFileUtils}{File\+Utils}. \mbox{\Hypertarget{classFileUtils_a40bea93fd4b0929153b448c345dfcf8c}\label{classFileUtils_a40bea93fd4b0929153b448c345dfcf8c}} 
+\index{File\+Utils@{File\+Utils}!full\+Path\+For\+Directory@{full\+Path\+For\+Directory}}
+\index{full\+Path\+For\+Directory@{full\+Path\+For\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{full\+Path\+For\+Directory()}{fullPathForDirectory()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::full\+Path\+For\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dirname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the fullpath for a given dirname. \begin{DoxySince}{Since}
+3.\+17.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a678409294ab5f13195b109e503f6a1df}\label{classFileUtils_a678409294ab5f13195b109e503f6a1df}} 
+\index{File\+Utils@{File\+Utils}!full\+Path\+For\+Filename@{full\+Path\+For\+Filename}}
+\index{full\+Path\+For\+Filename@{full\+Path\+For\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{full\+Path\+For\+Filename()}{fullPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::full\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the fullpath for a given filename.
+
+First it will try to get a new filename from the \char`\"{}filename\+Lookup\char`\"{} dictionary. If a new filename can\textquotesingle{}t be found on the dictionary, it will use the original filename. Then it will try to obtain the full path of the filename using the \hyperlink{classFileUtils}{File\+Utils} search rules\+: resolutions, and search paths. The file search is based on the array element order of search paths and resolution directories.
+
+For instance\+: \begin{DoxyVerb}We set two elements("/mnt/sdcard/", "internal_dir/") to search paths vector by setSearchPaths,
+and set three elements("resources-ipadhd/", "resources-ipad/", "resources-iphonehd")
+to resolutions vector by setSearchResolutionsOrder. The "internal_dir" is relative to "Resources/".
+\end{DoxyVerb}
+
+
+If we have a file named \textquotesingle{}sprite.\+png\textquotesingle{}, the mapping in file\+Lookup dictionary contains {\ttfamily key\+: sprite.\+png -\/$>$ value\+: sprite.\+pvr.\+gz}. Firstly, it will replace \textquotesingle{}sprite.\+png\textquotesingle{} with \textquotesingle{}sprite.\+pvr.\+gz\textquotesingle{}, then searching the file sprite.\+pvr.\+gz as follows\+: \begin{DoxyVerb}/mnt/sdcard/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+/mnt/sdcard/resources-ipad/sprite.pvr.gz        (if not found, search next)
+/mnt/sdcard/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+/mnt/sdcard/sprite.pvr.gz                       (if not found, search next)
+internal_dir/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+internal_dir/resources-ipad/sprite.pvr.gz       (if not found, search next)
+internal_dir/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+internal_dir/sprite.pvr.gz                      (if not found, return "sprite.png")
+\end{DoxyVerb}
+
+
+If the filename contains relative path like \char`\"{}gamescene/uilayer/sprite.\+png\char`\"{}, and the mapping in file\+Lookup dictionary contains {\ttfamily key\+: gamescene/uilayer/sprite.\+png -\/$>$ value\+: gamescene/uilayer/sprite.\+pvr.\+gz}. The file search order will be\+: \begin{DoxyVerb} /mnt/sdcard/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/resources-ipad/sprite.pvr.gz        (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/sprite.pvr.gz                       (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-ipad/sprite.pvr.gz       (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+ internal_dir/gamescene/uilayer/sprite.pvr.gz                      (if not found, return "gamescene/uilayer/sprite.png")
+\end{DoxyVerb}
+
+
+If the new file can\textquotesingle{}t be found on the file system, it will return the parameter filename directly.
+
+This method was added to simplify multiplatform support. Whether you are using cocos2d-\/js or any cross-\/compilation toolchain like Stella\+S\+DK or Apportable, you might need to load different resources for a given file in the different platforms.
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a06e56ef12b5ec5c7d11c138484f111bf}\label{classFileUtils_a06e56ef12b5ec5c7d11c138484f111bf}} 
+\index{File\+Utils@{File\+Utils}!full\+Path\+For\+Filename@{full\+Path\+For\+Filename}}
+\index{full\+Path\+For\+Filename@{full\+Path\+For\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{full\+Path\+For\+Filename()}{fullPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::full\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the fullpath for a given filename.
+
+First it will try to get a new filename from the \char`\"{}filename\+Lookup\char`\"{} dictionary. If a new filename can\textquotesingle{}t be found on the dictionary, it will use the original filename. Then it will try to obtain the full path of the filename using the \hyperlink{classFileUtils}{File\+Utils} search rules\+: resolutions, and search paths. The file search is based on the array element order of search paths and resolution directories.
+
+For instance\+: \begin{DoxyVerb}We set two elements("/mnt/sdcard/", "internal_dir/") to search paths vector by setSearchPaths,
+and set three elements("resources-ipadhd/", "resources-ipad/", "resources-iphonehd")
+to resolutions vector by setSearchResolutionsOrder. The "internal_dir" is relative to "Resources/".
+\end{DoxyVerb}
+
+
+If we have a file named \textquotesingle{}sprite.\+png\textquotesingle{}, the mapping in file\+Lookup dictionary contains {\ttfamily key\+: sprite.\+png -\/$>$ value\+: sprite.\+pvr.\+gz}. Firstly, it will replace \textquotesingle{}sprite.\+png\textquotesingle{} with \textquotesingle{}sprite.\+pvr.\+gz\textquotesingle{}, then searching the file sprite.\+pvr.\+gz as follows\+: \begin{DoxyVerb}/mnt/sdcard/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+/mnt/sdcard/resources-ipad/sprite.pvr.gz        (if not found, search next)
+/mnt/sdcard/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+/mnt/sdcard/sprite.pvr.gz                       (if not found, search next)
+internal_dir/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+internal_dir/resources-ipad/sprite.pvr.gz       (if not found, search next)
+internal_dir/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+internal_dir/sprite.pvr.gz                      (if not found, return "sprite.png")
+\end{DoxyVerb}
+
+
+If the filename contains relative path like \char`\"{}gamescene/uilayer/sprite.\+png\char`\"{}, and the mapping in file\+Lookup dictionary contains {\ttfamily key\+: gamescene/uilayer/sprite.\+png -\/$>$ value\+: gamescene/uilayer/sprite.\+pvr.\+gz}. The file search order will be\+: \begin{DoxyVerb} /mnt/sdcard/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/resources-ipad/sprite.pvr.gz        (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+ /mnt/sdcard/gamescene/uilayer/sprite.pvr.gz                       (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-ipad/sprite.pvr.gz       (if not found, search next)
+ internal_dir/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+ internal_dir/gamescene/uilayer/sprite.pvr.gz                      (if not found, return "gamescene/uilayer/sprite.png")
+\end{DoxyVerb}
+
+
+If the new file can\textquotesingle{}t be found on the file system, it will return the parameter filename directly.
+
+This method was added to simplify multiplatform support. Whether you are using cocos2d-\/js or any cross-\/compilation toolchain like Stella\+S\+DK or Apportable, you might need to load different resources for a given file in the different platforms.
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a632933377d6c84ec2687587883e2c419}\label{classFileUtils_a632933377d6c84ec2687587883e2c419}} 
+\index{File\+Utils@{File\+Utils}!full\+Path\+From\+Relative\+File@{full\+Path\+From\+Relative\+File}}
+\index{full\+Path\+From\+Relative\+File@{full\+Path\+From\+Relative\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{full\+Path\+From\+Relative\+File()}{fullPathFromRelativeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::full\+Path\+From\+Relative\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{relative\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets full path from a file name and the path of the relative file. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em relative\+File} & The path of the relative file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path. e.\+g. filename\+: hello.\+png, psz\+Relative\+File\+: /\+User/path1/path2/hello.plist Return\+: /\+User/path1/path2/hello.pvr (If there a a key(hello.\+png)-\/value(hello.\+pvr) in Filename\+Lookup dictionary. ) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_abc1dbf1656599ede5f15347c3fcedb85}\label{classFileUtils_abc1dbf1656599ede5f15347c3fcedb85}} 
+\index{File\+Utils@{File\+Utils}!full\+Path\+From\+Relative\+File@{full\+Path\+From\+Relative\+File}}
+\index{full\+Path\+From\+Relative\+File@{full\+Path\+From\+Relative\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{full\+Path\+From\+Relative\+File()}{fullPathFromRelativeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::full\+Path\+From\+Relative\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{relative\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets full path from a file name and the path of the relative file. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em relative\+File} & The path of the relative file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path. e.\+g. filename\+: hello.\+png, psz\+Relative\+File\+: /\+User/path1/path2/hello.plist Return\+: /\+User/path1/path2/hello.pvr (If there a a key(hello.\+png)-\/value(hello.\+pvr) in Filename\+Lookup dictionary. ) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}\label{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}} 
+\index{File\+Utils@{File\+Utils}!get\+Contents@{get\+Contents}}
+\index{get\+Contents@{get\+Contents}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Contents()}{getContents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Enable  = typename std\+::enable\+\_\+if$<$            std\+::is\+\_\+base\+\_\+of$<$ Resizable\+Buffer, Resizable\+Buffer\+Adapter$<$\+T$>$ $>$\+::value        $>$\+::type$>$ \\
+Status File\+Utils\+::get\+Contents (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{T $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets whole file contents as string from a file.
+
+Unlike get\+String\+From\+File, these get\+Contents methods\+:
+\begin{DoxyItemize}
+\item read file in binary mode (does not convert C\+R\+LF to LF).
+\item does not truncate the string when \textquotesingle{}\textbackslash{}0\textquotesingle{} is found (returned string of get\+Contents may have \textquotesingle{}\textbackslash{}0\textquotesingle{} in the middle.).
+\end{DoxyItemize}
+
+The template version of can accept cocos2d\+::\+Data, std\+::basic\+\_\+string and std\+::vector.
+
+
+\begin{DoxyCode}
+std::string sbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &sbuf);
+
+std::vector<int> vbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &vbuf);
+
+\hyperlink{classData}{Data} dbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &dbuf);
+\end{DoxyCode}
+
+
+Note\+: if you read to std\+::vector$<$\+T$>$ and std\+::basic\+\_\+string$<$\+T$>$ where T is not 8 bit type, you may get 0 $\sim$ sizeof(\+T)-\/1 bytes padding.
+
+
+\begin{DoxyItemize}
+\item To write a new buffer class works with get\+Contents, just extend \hyperlink{classResizableBuffer}{Resizable\+Buffer}.
+\item To write a adapter for existing class, write a specialized \hyperlink{classResizableBufferAdapter}{Resizable\+Buffer\+Adapter} for that class, see follow code.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\hyperlink{namespaceNS__CC__BEGIN}{NS\_CC\_BEGIN} \textcolor{comment}{// ResizableBufferAdapter needed in cocos2d namespace.}
+\textcolor{keyword}{template}<>
+\textcolor{keyword}{class }\hyperlink{classResizableBufferAdapter}{ResizableBufferAdapter}<AlreadyExistsBuffer> : \textcolor{keyword}{public} 
+      \hyperlink{classResizableBuffer}{ResizableBuffer} \{
+\textcolor{keyword}{public}:
+    \hyperlink{classResizableBufferAdapter}{ResizableBufferAdapter}(AlreadyExistsBuffer* buffer)  \{
+        \textcolor{comment}{// your code here}
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} resize(\textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ override  }\{
+        \textcolor{comment}{// your code here}
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}* buffer()\textcolor{keyword}{ const override }\{
+        \textcolor{comment}{// your code here}
+    \}
+\};
+NS\_CC\_END
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the path. \\
+\hline
+\mbox{\tt out}  & {\em buffer} & The buffer where the file contents are store to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns\+:
+\begin{DoxyItemize}
+\item Status\+::\+OK when there is no error, the buffer is filled with the contents of file.
+\item Status\+::\+Not\+Exists when file not exists, the buffer will not changed.
+\item Status\+::\+Open\+Failed when cannot open file, the buffer will not changed.
+\item Status\+::\+Read\+Failed when read end up before read whole, the buffer will fill with already read bytes.
+\item Status\+::\+Not\+Initialized when \hyperlink{classFileUtils}{File\+Utils} is not initializes, the buffer will not changed.
+\item Status\+::\+Too\+Large when there file to be read is too large ($>$ 2$^\wedge$32-\/1), the buffer will not changed.
+\item Status\+::\+Obtain\+Size\+Failed when failed to obtain the file size, the buffer will not changed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a8673a6529c3b2abcdbefbadd647ae139}\label{classFileUtils_a8673a6529c3b2abcdbefbadd647ae139}} 
+\index{File\+Utils@{File\+Utils}!get\+Contents@{get\+Contents}}
+\index{get\+Contents@{get\+Contents}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Contents()}{getContents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename Enable  = typename std\+::enable\+\_\+if$<$            std\+::is\+\_\+base\+\_\+of$<$ Resizable\+Buffer, Resizable\+Buffer\+Adapter$<$\+T$>$ $>$\+::value        $>$\+::type$>$ \\
+Status File\+Utils\+::get\+Contents (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{T $\ast$}]{buffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets whole file contents as string from a file.
+
+Unlike get\+String\+From\+File, these get\+Contents methods\+:
+\begin{DoxyItemize}
+\item read file in binary mode (does not convert C\+R\+LF to LF).
+\item does not truncate the string when \textquotesingle{}\textbackslash{}0\textquotesingle{} is found (returned string of get\+Contents may have \textquotesingle{}\textbackslash{}0\textquotesingle{} in the middle.).
+\end{DoxyItemize}
+
+The template version of can accept cocos2d\+::\+Data, std\+::basic\+\_\+string and std\+::vector.
+
+
+\begin{DoxyCode}
+std::string sbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &sbuf);
+
+std::vector<int> vbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &vbuf);
+
+\hyperlink{classData}{Data} dbuf;
+\hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{FileUtils::getInstance}()->\hyperlink{classFileUtils_a4e9cd9c1ab62bf30f42a423df06016b8}{getContents}(\textcolor{stringliteral}{"path/to/file"}, &dbuf);
+\end{DoxyCode}
+
+
+Note\+: if you read to std\+::vector$<$\+T$>$ and std\+::basic\+\_\+string$<$\+T$>$ where T is not 8 bit type, you may get 0 $\sim$ sizeof(\+T)-\/1 bytes padding.
+
+
+\begin{DoxyItemize}
+\item To write a new buffer class works with get\+Contents, just extend \hyperlink{classResizableBuffer}{Resizable\+Buffer}.
+\item To write a adapter for existing class, write a specialized \hyperlink{classResizableBufferAdapter}{Resizable\+Buffer\+Adapter} for that class, see follow code.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\hyperlink{namespaceNS__CC__BEGIN}{NS\_CC\_BEGIN} \textcolor{comment}{// ResizableBufferAdapter needed in cocos2d namespace.}
+\textcolor{keyword}{template}<>
+\textcolor{keyword}{class }\hyperlink{classResizableBufferAdapter}{ResizableBufferAdapter}<AlreadyExistsBuffer> : \textcolor{keyword}{public} 
+      \hyperlink{classResizableBuffer}{ResizableBuffer} \{
+\textcolor{keyword}{public}:
+    \hyperlink{classResizableBufferAdapter}{ResizableBufferAdapter}(AlreadyExistsBuffer* buffer)  \{
+        \textcolor{comment}{// your code here}
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} resize(\textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ override  }\{
+        \textcolor{comment}{// your code here}
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}* buffer()\textcolor{keyword}{ const override }\{
+        \textcolor{comment}{// your code here}
+    \}
+\};
+NS\_CC\_END
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the path. \\
+\hline
+\mbox{\tt out}  & {\em buffer} & The buffer where the file contents are store to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns\+:
+\begin{DoxyItemize}
+\item Status\+::\+OK when there is no error, the buffer is filled with the contents of file.
+\item Status\+::\+Not\+Exists when file not exists, the buffer will not changed.
+\item Status\+::\+Open\+Failed when cannot open file, the buffer will not changed.
+\item Status\+::\+Read\+Failed when read end up before read whole, the buffer will fill with already read bytes.
+\item Status\+::\+Not\+Initialized when \hyperlink{classFileUtils}{File\+Utils} is not initializes, the buffer will not changed.
+\item Status\+::\+Too\+Large when there file to be read is too large ($>$ 2$^\wedge$32-\/1), the buffer will not changed.
+\item Status\+::\+Obtain\+Size\+Failed when failed to obtain the file size, the buffer will not changed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a0ed7a5e24b4f5d8643c6b3673cb6c46b}\label{classFileUtils_a0ed7a5e24b4f5d8643c6b3673cb6c46b}} 
+\index{File\+Utils@{File\+Utils}!get\+Data\+From\+File@{get\+Data\+From\+File}}
+\index{get\+Data\+From\+File@{get\+Data\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Data\+From\+File()}{getDataFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} File\+Utils\+::get\+Data\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates binary data from a file. \begin{DoxyReturn}{Returns}
+A data object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_ac59d79a67f7ce17ce47db607bba31ed7}\label{classFileUtils_ac59d79a67f7ce17ce47db607bba31ed7}} 
+\index{File\+Utils@{File\+Utils}!get\+Data\+From\+File@{get\+Data\+From\+File}}
+\index{get\+Data\+From\+File@{get\+Data\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Data\+From\+File()}{getDataFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{classData}{Data} File\+Utils\+::get\+Data\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates binary data from a file. \begin{DoxyReturn}{Returns}
+A data object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a1a2683fad8f40963f4ffa382ad47fca4}\label{classFileUtils_a1a2683fad8f40963f4ffa382ad47fca4}} 
+\index{File\+Utils@{File\+Utils}!get\+Data\+From\+File@{get\+Data\+From\+File}}
+\index{get\+Data\+From\+File@{get\+Data\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Data\+From\+File()}{getDataFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::get\+Data\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{std\+::function$<$ void(\hyperlink{classData}{Data})$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets a binary data object from a file, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & filepath for the data to be read. Can be relative or absolute path \\
+\hline
+{\em callback} & Function that will be called when file is read. Will be called on the main cocos thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_ad7be12b938a4aab370beef6dcb553a1d}\label{classFileUtils_ad7be12b938a4aab370beef6dcb553a1d}} 
+\index{File\+Utils@{File\+Utils}!get\+Default\+Resource\+Root\+Path@{get\+Default\+Resource\+Root\+Path}}
+\index{get\+Default\+Resource\+Root\+Path@{get\+Default\+Resource\+Root\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Default\+Resource\+Root\+Path()}{getDefaultResourceRootPath()}}
+{\footnotesize\ttfamily const std\+::string File\+Utils\+::get\+Default\+Resource\+Root\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get default resource root path. \mbox{\Hypertarget{classFileUtils_ae261ba024555431d4ecc746ace25fdfe}\label{classFileUtils_ae261ba024555431d4ecc746ace25fdfe}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Data@{get\+File\+Data}}
+\index{get\+File\+Data@{get\+File\+Data}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Data()}{getFileData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char $\ast$ File\+Utils\+::get\+File\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const char $\ast$}]{mode,  }\item[{ssize\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets resource file data
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the path. \\
+\hline
+\mbox{\tt in}  & {\em mode} & The read mode of the file. \\
+\hline
+\mbox{\tt out}  & {\em size} & If the file read operation succeeds, it will be the data size, otherwise 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, a pointer to the data is returned, otherwise N\+U\+LL. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Recall\+: you are responsible for calling free() on any Non-\/\+N\+U\+LL pointer returned. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_a895b2f0b05b3163dcf18aaf456bbe46e}\label{classFileUtils_a895b2f0b05b3163dcf18aaf456bbe46e}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Data@{get\+File\+Data}}
+\index{get\+File\+Data@{get\+File\+Data}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Data()}{getFileData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char $\ast$ File\+Utils\+::get\+File\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const char $\ast$}]{mode,  }\item[{ssize\+\_\+t $\ast$}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets resource file data
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the path. \\
+\hline
+\mbox{\tt in}  & {\em mode} & The read mode of the file. \\
+\hline
+\mbox{\tt out}  & {\em size} & If the file read operation succeeds, it will be the data size, otherwise 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, a pointer to the data is returned, otherwise N\+U\+LL. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Recall\+: you are responsible for calling free() on any Non-\/\+N\+U\+LL pointer returned. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_a38a12ace92fad87bd225c225db7093d5}\label{classFileUtils_a38a12ace92fad87bd225c225db7093d5}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Data\+From\+Zip@{get\+File\+Data\+From\+Zip}}
+\index{get\+File\+Data\+From\+Zip@{get\+File\+Data\+From\+Zip}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Data\+From\+Zip()}{getFileDataFromZip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char $\ast$ File\+Utils\+::get\+File\+Data\+From\+Zip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{zip\+File\+Path,  }\item[{const std\+::string \&}]{filename,  }\item[{ssize\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets resource file data from a zip file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the relative path of the zip file. \\
+\hline
+\mbox{\tt out}  & {\em size} & If the file read operation succeeds, it will be the data size, otherwise 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, a pointer to the data is returned, otherwise nullptr. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Recall\+: you are responsible for calling free() on any Non-\/nullptr pointer returned. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_a9d3d28064945c8410b6fd0927f8e894a}\label{classFileUtils_a9d3d28064945c8410b6fd0927f8e894a}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Data\+From\+Zip@{get\+File\+Data\+From\+Zip}}
+\index{get\+File\+Data\+From\+Zip@{get\+File\+Data\+From\+Zip}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Data\+From\+Zip()}{getFileDataFromZip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char $\ast$ File\+Utils\+::get\+File\+Data\+From\+Zip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{zip\+File\+Path,  }\item[{const std\+::string \&}]{filename,  }\item[{ssize\+\_\+t $\ast$}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets resource file data from a zip file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & The resource file name which contains the relative path of the zip file. \\
+\hline
+\mbox{\tt out}  & {\em size} & If the file read operation succeeds, it will be the data size, otherwise 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, a pointer to the data is returned, otherwise nullptr. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Recall\+: you are responsible for calling free() on any Non-\/nullptr pointer returned. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_a98ad20968d4fbab847ec823d49dda262}\label{classFileUtils_a98ad20968d4fbab847ec823d49dda262}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Extension@{get\+File\+Extension}}
+\index{get\+File\+Extension@{get\+File\+Extension}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Extension()}{getFileExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets filename extension is a suffix (separated from the base filename by a dot) in lower case. Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+suffix for filename in lower case or empty if a dot not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_ad43573c4c3aa6af62616105cf8435668}\label{classFileUtils_ad43573c4c3aa6af62616105cf8435668}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Extension@{get\+File\+Extension}}
+\index{get\+File\+Extension@{get\+File\+Extension}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Extension()}{getFileExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets filename extension is a suffix (separated from the base filename by a dot) in lower case. Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+suffix for filename in lower case or empty if a dot not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}\label{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily long File\+Utils\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a55d29e8e6cf19e0863dd68a545583f63}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_af5e36ed946d6fc00cbb279755dbc6c5f}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a56b2cacd3791ebf132e90b5abce17db3}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_acba4a8730094e74096bfe4cede7f0315}\label{classFileUtils_acba4a8730094e74096bfe4cede7f0315}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily long File\+Utils\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a49d0c49a6f1c8a9376d678596c17f502}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsAndroid_a49e69c3f911538576eab8696083cdd39}{File\+Utils\+Android}.
+
+\mbox{\Hypertarget{classFileUtils_a20603b766e16b04ef5d50f95bc5629a9}\label{classFileUtils_a20603b766e16b04ef5d50f95bc5629a9}} 
+\index{File\+Utils@{File\+Utils}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{std\+::function$<$ void(long)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retrieve the file size, async off the main cocos thread.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one long argument, the file size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a79f4f099ea02d95e5d90425f038fb9d3}\label{classFileUtils_a79f4f099ea02d95e5d90425f038fb9d3}} 
+\index{File\+Utils@{File\+Utils}!get\+Full\+Path\+Cache@{get\+Full\+Path\+Cache}}
+\index{get\+Full\+Path\+Cache@{get\+Full\+Path\+Cache}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+Cache()}{getFullPathCache()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$\& File\+Utils\+::get\+Full\+Path\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the full path cache. \mbox{\Hypertarget{classFileUtils_af5c339ef609f73c83a94518340871142}\label{classFileUtils_af5c339ef609f73c83a94518340871142}} 
+\index{File\+Utils@{File\+Utils}!get\+Full\+Path\+Cache@{get\+Full\+Path\+Cache}}
+\index{get\+Full\+Path\+Cache@{get\+Full\+Path\+Cache}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+Cache()}{getFullPathCache()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ File\+Utils\+::get\+Full\+Path\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the full path cache. \mbox{\Hypertarget{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}\label{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}} 
+\index{File\+Utils@{File\+Utils}!get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}}
+\index{get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Directory\+And\+Filename()}{getFullPathForDirectoryAndFilename()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+Full\+Path\+For\+Directory\+And\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a32e9d4ce94fa867563c2649bbb6a8416}{File\+Utils\+Win32}, \hyperlink{classCCFileUtilsWinRT_ab72a708f0159e1d0929053540421a2df}{C\+C\+File\+Utils\+Win\+RT}, and \hyperlink{classFileUtilsApple_aebc8f6fdf63b084f39ab0500b179368a}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_aa6bae4977b0a23b40f5c4dfea7aee3ff}\label{classFileUtils_aa6bae4977b0a23b40f5c4dfea7aee3ff}} 
+\index{File\+Utils@{File\+Utils}!get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}}
+\index{get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Filename\+Within\+Directory()}{getFullPathForFilenameWithinDirectory()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+Full\+Path\+For\+Filename\+Within\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a724a4ac17310d89813bf96180321dfb2}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsApple_aa05388c597ff89171e955808338de05e}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}\label{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}} 
+\index{File\+Utils@{File\+Utils}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classFileUtils}{File\+Utils} $\ast$ File\+Utils\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the instance of \hyperlink{classFileUtils}{File\+Utils}. \mbox{\Hypertarget{classFileUtils_a4a0874cba0ed3d182b0b48b926ce529c}\label{classFileUtils_a4a0874cba0ed3d182b0b48b926ce529c}} 
+\index{File\+Utils@{File\+Utils}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classFileUtils}{File\+Utils}$\ast$ File\+Utils\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the instance of \hyperlink{classFileUtils}{File\+Utils}. \mbox{\Hypertarget{classFileUtils_a71e6d271830df5ba7484c69928c40f5a}\label{classFileUtils_a71e6d271830df5ba7484c69928c40f5a}} 
+\index{File\+Utils@{File\+Utils}!get\+New\+Filename@{get\+New\+Filename}}
+\index{get\+New\+Filename@{get\+New\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+New\+Filename()}{getNewFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+New\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets the new filename from the filename lookup dictionary. It is possible to have a override names. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The original filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new filename after searching in the filename lookup dictionary. If the original filename wasn\textquotesingle{}t in the dictionary, it will return the original filename. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_ac084c26eecd3e89ab708ccdab36ec3de}{File\+Utils\+Android}, and \hyperlink{classFileUtilsAndroid_a57440532823c7b9f5807457fef15b978}{File\+Utils\+Android}.
+
+\mbox{\Hypertarget{classFileUtils_a5bf8b3f862e06a2f796c18dfdfe744fc}\label{classFileUtils_a5bf8b3f862e06a2f796c18dfdfe744fc}} 
+\index{File\+Utils@{File\+Utils}!get\+New\+Filename@{get\+New\+Filename}}
+\index{get\+New\+Filename@{get\+New\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+New\+Filename()}{getNewFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+New\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the new filename from the filename lookup dictionary. It is possible to have a override names. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The original filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new filename after searching in the filename lookup dictionary. If the original filename wasn\textquotesingle{}t in the dictionary, it will return the original filename. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_ac084c26eecd3e89ab708ccdab36ec3de}{File\+Utils\+Android}, and \hyperlink{classFileUtilsAndroid_a57440532823c7b9f5807457fef15b978}{File\+Utils\+Android}.
+
+\mbox{\Hypertarget{classFileUtils_a43670a0b6631730400ada9ca283bcc80}\label{classFileUtils_a43670a0b6631730400ada9ca283bcc80}} 
+\index{File\+Utils@{File\+Utils}!get\+Original\+Search\+Paths@{get\+Original\+Search\+Paths}}
+\index{get\+Original\+Search\+Paths@{get\+Original\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Original\+Search\+Paths()}{getOriginalSearchPaths()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ File\+Utils\+::get\+Original\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the original search path array set by \textquotesingle{}set\+Search\+Paths\textquotesingle{} or \textquotesingle{}add\+Search\+Path\textquotesingle{}. \begin{DoxyReturn}{Returns}
+The array of the original search paths 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_ae575880a693de746f1505be83c6b4bfa}\label{classFileUtils_ae575880a693de746f1505be83c6b4bfa}} 
+\index{File\+Utils@{File\+Utils}!get\+Path\+For\+Filename@{get\+Path\+For\+Filename}}
+\index{get\+Path\+For\+Filename@{get\+Path\+For\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Path\+For\+Filename()}{getPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{resolution\+Directory,  }\item[{const std\+::string \&}]{search\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for filename, resolution directory and search path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em resolution\+Directory} & The resolution directory. \\
+\hline
+{\em search\+Path} & The search path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file. It will return an empty string if the full path of the file doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a46e2bca29c0f2a0a2870b50cf30f4f3d}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a1a2b675bb9e51acc264bf1683a2c1a99}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a547ce34a14879e9b236ad726932c7d00}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_a3e04619aee1bedf5915338f33a6fc4dc}\label{classFileUtils_a3e04619aee1bedf5915338f33a6fc4dc}} 
+\index{File\+Utils@{File\+Utils}!get\+Path\+For\+Filename@{get\+Path\+For\+Filename}}
+\index{get\+Path\+For\+Filename@{get\+Path\+For\+Filename}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Path\+For\+Filename()}{getPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{resolution\+Directory,  }\item[{const std\+::string \&}]{search\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for filename, resolution directory and search path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em resolution\+Directory} & The resolution directory. \\
+\hline
+{\em search\+Path} & The search path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file. It will return an empty string if the full path of the file doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a46e2bca29c0f2a0a2870b50cf30f4f3d}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a1a2b675bb9e51acc264bf1683a2c1a99}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a547ce34a14879e9b236ad726932c7d00}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_a4e21f0076f5183637e1c0d273bd7d0ce}\label{classFileUtils_a4e21f0076f5183637e1c0d273bd7d0ce}} 
+\index{File\+Utils@{File\+Utils}!get\+Search\+Paths@{get\+Search\+Paths}}
+\index{get\+Search\+Paths@{get\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Search\+Paths()}{getSearchPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ File\+Utils\+::get\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the array of search paths.
+
+\begin{DoxyReturn}{Returns}
+The array of search paths. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+full\+Path\+For\+Filename(const char$\ast$).  NA 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classFileUtils_a11610172e9e0ca8379c6574ed2433a8c}\label{classFileUtils_a11610172e9e0ca8379c6574ed2433a8c}} 
+\index{File\+Utils@{File\+Utils}!get\+Search\+Paths@{get\+Search\+Paths}}
+\index{get\+Search\+Paths@{get\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Search\+Paths()}{getSearchPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$std\+::string$>$ File\+Utils\+::get\+Search\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the array of search paths.
+
+\begin{DoxyReturn}{Returns}
+The array of search paths which may contain the prefix of default resource root path. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In best practise, getter function should return the value of setter function passes in. But since we should not break the compatibility, we keep using the old logic. Therefore, If you want to get the original search paths, please call \textquotesingle{}\hyperlink{classFileUtils_a43670a0b6631730400ada9ca283bcc80}{get\+Original\+Search\+Paths()}\textquotesingle{} instead. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+full\+Path\+For\+Filename(const char$\ast$).  NA 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classFileUtils_a079329ce5d4a0154fed6a3987d42dc26}\label{classFileUtils_a079329ce5d4a0154fed6a3987d42dc26}} 
+\index{File\+Utils@{File\+Utils}!get\+Search\+Resolutions\+Order@{get\+Search\+Resolutions\+Order}}
+\index{get\+Search\+Resolutions\+Order@{get\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Search\+Resolutions\+Order()}{getSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ File\+Utils\+::get\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the array that contains the search order of the resources.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}{set\+Search\+Resolutions\+Order(const std\+::vector$<$std\+::string$>$\&)}, full\+Path\+For\+Filename(const char$\ast$). 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a3f1af62189d1c9f5fc944d38fc6265a6}\label{classFileUtils_a3f1af62189d1c9f5fc944d38fc6265a6}} 
+\index{File\+Utils@{File\+Utils}!get\+Search\+Resolutions\+Order@{get\+Search\+Resolutions\+Order}}
+\index{get\+Search\+Resolutions\+Order@{get\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Search\+Resolutions\+Order()}{getSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$std\+::string$>$ File\+Utils\+::get\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the array that contains the search order of the resources.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}{set\+Search\+Resolutions\+Order(const std\+::vector$<$std\+::string$>$\&)}, full\+Path\+For\+Filename(const char$\ast$). 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a8e420b897f0e359c077976c31954e265}\label{classFileUtils_a8e420b897f0e359c077976c31954e265}} 
+\index{File\+Utils@{File\+Utils}!get\+String\+From\+File@{get\+String\+From\+File}}
+\index{get\+String\+From\+File@{get\+String\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+String\+From\+File()}{getStringFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+String\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets string from a file. \mbox{\Hypertarget{classFileUtils_a72a478f88775c6de04114c396971285e}\label{classFileUtils_a72a478f88775c6de04114c396971285e}} 
+\index{File\+Utils@{File\+Utils}!get\+String\+From\+File@{get\+String\+From\+File}}
+\index{get\+String\+From\+File@{get\+String\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+String\+From\+File()}{getStringFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+String\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets string from a file. \mbox{\Hypertarget{classFileUtils_a510afb98fe877771b610e9cbad94849a}\label{classFileUtils_a510afb98fe877771b610e9cbad94849a}} 
+\index{File\+Utils@{File\+Utils}!get\+String\+From\+File@{get\+String\+From\+File}}
+\index{get\+String\+From\+File@{get\+String\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+String\+From\+File()}{getStringFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::get\+String\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{std\+::function$<$ void(std\+::string)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets string from a file, async off the main cocos thread
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & filepath for the string to be read. Can be relative or absolute path \\
+\hline
+{\em callback} & Function that will be called when file is read. Will be called on the main cocos thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}\label{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}} 
+\index{File\+Utils@{File\+Utils}!get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}}
+\index{get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Suitable\+F\+Open()}{getSuitableFOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::get\+Suitable\+F\+Open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename\+Utf8 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Windows fopen can\textquotesingle{}t support U\+T\+F-\/8 filename Need convert all parameters fopen and other 3rd-\/party libs
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Utf8} & std\+::string name file for conversion from utf-\/8 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string ansi filename in current locale 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a4e2aff9afbff7e4bac487f626186dac0}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a39228d2480a9b1343516bb9f1abe06b1}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a655652f655870c93e5fd01259b3eca6b}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_ab4cf90cd6dd8c8ba0b6b37b53bbd3ae8}\label{classFileUtils_ab4cf90cd6dd8c8ba0b6b37b53bbd3ae8}} 
+\index{File\+Utils@{File\+Utils}!get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}}
+\index{get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Suitable\+F\+Open()}{getSuitableFOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+Suitable\+F\+Open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename\+Utf8 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Windows fopen can\textquotesingle{}t support U\+T\+F-\/8 filename Need convert all parameters fopen and other 3rd-\/party libs
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Utf8} & std\+::string name file for conversion from utf-\/8 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string ansi filename in current locale 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a4e2aff9afbff7e4bac487f626186dac0}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a39228d2480a9b1343516bb9f1abe06b1}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a655652f655870c93e5fd01259b3eca6b}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_a3b1cb7c770ba78d1d68c2da204e15a15}\label{classFileUtils_a3b1cb7c770ba78d1d68c2da204e15a15}} 
+\index{File\+Utils@{File\+Utils}!get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}}
+\index{get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+Data()}{getValueMapFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+::get\+Value\+Map\+From\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filedata,  }\item[{int}]{filesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. This method is used internally. 
+
+Reimplemented in \hyperlink{classFileUtilsApple_aa692d9cc3bb1a5b913fd5ce5dee0a548}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a9c882af1acde6d249e35713e82b53607}\label{classFileUtils_a9c882af1acde6d249e35713e82b53607}} 
+\index{File\+Utils@{File\+Utils}!get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}}
+\index{get\+Value\+Map\+From\+Data@{get\+Value\+Map\+From\+Data}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+Data()}{getValueMapFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+::get\+Value\+Map\+From\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filedata,  }\item[{int}]{filesize }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. This method is used internally. 
+
+Reimplemented in \hyperlink{classFileUtilsApple_a5ecaabfb986144039b4adb55ac463f95}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a67aa84a7b5bcfb46a646260c084ad829}\label{classFileUtils_a67aa84a7b5bcfb46a646260c084ad829}} 
+\index{File\+Utils@{File\+Utils}!get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}}
+\index{get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+File()}{getValueMapFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Value\+Map File\+Utils\+::get\+Value\+Map\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename of the file to gets content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value\+Map of the file contents. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method is used internally. 
+\end{DoxyNote}
+
+
+Reimplemented in \hyperlink{classFileUtilsApple_a29093cea02fd4a89629ffb087e0f480b}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a7a5c18baa7c28962d642c101513c7c1b}\label{classFileUtils_a7a5c18baa7c28962d642c101513c7c1b}} 
+\index{File\+Utils@{File\+Utils}!get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}}
+\index{get\+Value\+Map\+From\+File@{get\+Value\+Map\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Value\+Map\+From\+File()}{getValueMapFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Value\+Map File\+Utils\+::get\+Value\+Map\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the contents of a file to a Value\+Map. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename of the file to gets content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value\+Map of the file contents. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method is used internally. 
+\end{DoxyNote}
+
+
+Reimplemented in \hyperlink{classFileUtilsApple_a400898c9e5777199a45372e98f1c6e0c}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}\label{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}} 
+\index{File\+Utils@{File\+Utils}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classFileUtilsAndroid_a98e6cf3fe3d7023fc5adb965c851be85}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_a51cf37a9916441127b8bb349ab037f23}{File\+Utils\+Android}, \hyperlink{classFileUtilsLinux_a8d7c6a6b1d749016cf44849f4842407b}{File\+Utils\+Linux}, \hyperlink{classFileUtilsLinux_a67c863ea1f03b866be4d8be53d4103a1}{File\+Utils\+Linux}, \hyperlink{classFileUtilsWin32_a7aabbee0edc6ccbb7930de5c23383c54}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a5e9b4cf8f8caa5db5b58606bf8d099b8}{File\+Utils\+Win32}, \hyperlink{classFileUtilsApple_a595858371ceb723ab608f535f8a2c454}{File\+Utils\+Apple}, \hyperlink{classFileUtilsApple_ab88aca64f02b23087542ed28f1ad43d8}{File\+Utils\+Apple}, \hyperlink{classCCFileUtilsWinRT_a546c4b1920e4484929a0d3cffe554720}{C\+C\+File\+Utils\+Win\+RT}, and \hyperlink{classFileUtilsTizen_a5ded2b60f350ec2b245c97ec48e57ffc}{File\+Utils\+Tizen}.
+
+\mbox{\Hypertarget{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}\label{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}} 
+\index{File\+Utils@{File\+Utils}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classFileUtilsAndroid_a98e6cf3fe3d7023fc5adb965c851be85}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_a51cf37a9916441127b8bb349ab037f23}{File\+Utils\+Android}, \hyperlink{classFileUtilsLinux_a8d7c6a6b1d749016cf44849f4842407b}{File\+Utils\+Linux}, \hyperlink{classFileUtilsLinux_a67c863ea1f03b866be4d8be53d4103a1}{File\+Utils\+Linux}, \hyperlink{classFileUtilsWin32_a7aabbee0edc6ccbb7930de5c23383c54}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a5e9b4cf8f8caa5db5b58606bf8d099b8}{File\+Utils\+Win32}, \hyperlink{classFileUtilsApple_a595858371ceb723ab608f535f8a2c454}{File\+Utils\+Apple}, \hyperlink{classFileUtilsApple_ab88aca64f02b23087542ed28f1ad43d8}{File\+Utils\+Apple}, \hyperlink{classCCFileUtilsWinRT_a546c4b1920e4484929a0d3cffe554720}{C\+C\+File\+Utils\+Win\+RT}, and \hyperlink{classFileUtilsTizen_a5ded2b60f350ec2b245c97ec48e57ffc}{File\+Utils\+Tizen}.
+
+\mbox{\Hypertarget{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}\label{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}} 
+\index{File\+Utils@{File\+Utils}!init@{init}}
+\index{init@{init}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_a5ff9d802609690baa039ebef0508b2c6}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_a5ff9d802609690baa039ebef0508b2c6}{File\+Utils\+Android}, \hyperlink{classFileUtilsLinux_a6de155528c1b10597d623f784b72762c}{File\+Utils\+Linux}, \hyperlink{classFileUtilsLinux_a1f11f2fb2b248fe6670cf991251d2821}{File\+Utils\+Linux}, \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{File\+Utils\+Win32}, \hyperlink{classCCFileUtilsWinRT_a1f2d5c30d599ab4490a2dead634f7459}{C\+C\+File\+Utils\+Win\+RT}, and \hyperlink{classFileUtilsTizen_a3c094c5c41c9f01e31158e1c81690419}{File\+Utils\+Tizen}.
+
+\mbox{\Hypertarget{classFileUtils_aff29da112f10057767427bdb6eb747c3}\label{classFileUtils_aff29da112f10057767427bdb6eb747c3}} 
+\index{File\+Utils@{File\+Utils}!init@{init}}
+\index{init@{init}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_a5ff9d802609690baa039ebef0508b2c6}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_a5ff9d802609690baa039ebef0508b2c6}{File\+Utils\+Android}, \hyperlink{classFileUtilsLinux_a6de155528c1b10597d623f784b72762c}{File\+Utils\+Linux}, \hyperlink{classFileUtilsLinux_a1f11f2fb2b248fe6670cf991251d2821}{File\+Utils\+Linux}, \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{File\+Utils\+Win32}, \hyperlink{classCCFileUtilsWinRT_a1f2d5c30d599ab4490a2dead634f7459}{C\+C\+File\+Utils\+Win\+RT}, and \hyperlink{classFileUtilsTizen_a3c094c5c41c9f01e31158e1c81690419}{File\+Utils\+Tizen}.
+
+\mbox{\Hypertarget{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}\label{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}} 
+\index{File\+Utils@{File\+Utils}!is\+Absolute\+Path@{is\+Absolute\+Path}}
+\index{is\+Absolute\+Path@{is\+Absolute\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Absolute\+Path()}{isAbsolutePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::is\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the path is an absolute path.
+
+\begin{DoxyNote}{Note}
+On Android, if the parameter passed in is relative to \char`\"{}assets/\char`\"{}, this method will treat it as an absolute path. Also on Blackberry, path starts with \char`\"{}app/native/\+Resources/\char`\"{} is treated as an absolute path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path that needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s an absolute path, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_ad13d954ba9ae2de51754965842134652}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_aa2d3fbd2b0938439a329a0df42ef0faa}{File\+Utils\+Android}, \hyperlink{classFileUtilsWin32_ab4ecf27c8feb35aee8894ca39d559fd7}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a3427cbefa54f21aedd22ef5253a3bb46}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a25ecf188d3b1724cfa64e040d2a93f7b}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_a1c8144d857ca750585e585b53f6b5d7f}\label{classFileUtils_a1c8144d857ca750585e585b53f6b5d7f}} 
+\index{File\+Utils@{File\+Utils}!is\+Absolute\+Path@{is\+Absolute\+Path}}
+\index{is\+Absolute\+Path@{is\+Absolute\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Absolute\+Path()}{isAbsolutePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the path is an absolute path.
+
+\begin{DoxyNote}{Note}
+On Android, if the parameter passed in is relative to \char`\"{}assets/\char`\"{}, this method will treat it as an absolute path. Also on Blackberry, path starts with \char`\"{}app/native/\+Resources/\char`\"{} is treated as an absolute path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path that needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s an absolute path, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsAndroid_ad13d954ba9ae2de51754965842134652}{File\+Utils\+Android}, \hyperlink{classFileUtilsAndroid_aa2d3fbd2b0938439a329a0df42ef0faa}{File\+Utils\+Android}, \hyperlink{classFileUtilsWin32_ab4ecf27c8feb35aee8894ca39d559fd7}{File\+Utils\+Win32}, \hyperlink{classFileUtilsWin32_a3427cbefa54f21aedd22ef5253a3bb46}{File\+Utils\+Win32}, and \hyperlink{classCCFileUtilsWinRT_a25ecf188d3b1724cfa64e040d2a93f7b}{C\+C\+File\+Utils\+Win\+RT}.
+
+\mbox{\Hypertarget{classFileUtils_a900bb088db70c091dd5c1984735925c1}\label{classFileUtils_a900bb088db70c091dd5c1984735925c1}} 
+\index{File\+Utils@{File\+Utils}!is\+Directory\+Exist@{is\+Directory\+Exist}}
+\index{is\+Directory\+Exist@{is\+Directory\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist()}{isDirectoryExist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::is\+Directory\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the path is a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory exists, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a24d3890687e080dccd916ce946012c96}\label{classFileUtils_a24d3890687e080dccd916ce946012c96}} 
+\index{File\+Utils@{File\+Utils}!is\+Directory\+Exist@{is\+Directory\+Exist}}
+\index{is\+Directory\+Exist@{is\+Directory\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist()}{isDirectoryExist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+Directory\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the path is a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory exists, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_ae611008ddcaf05f7361876b1f2d37753}\label{classFileUtils_ae611008ddcaf05f7361876b1f2d37753}} 
+\index{File\+Utils@{File\+Utils}!is\+Directory\+Exist@{is\+Directory\+Exist}}
+\index{is\+Directory\+Exist@{is\+Directory\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist()}{isDirectoryExist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::is\+Directory\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{full\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether the absoulate path is a directory, async off of the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path \\
+\hline
+{\em callback} & that will accept a boolean, true if the file exists, false otherwise. Callback will happen on the main cocos thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a6f2a350e8f2b15219637b40bed4c38ec}\label{classFileUtils_a6f2a350e8f2b15219637b40bed4c38ec}} 
+\index{File\+Utils@{File\+Utils}!is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}}
+\index{is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist\+Internal()}{isDirectoryExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::is\+Directory\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a directory exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The directory (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the directory found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_aaeab26cde3a9a4cf3e4f8367d20f0e08}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsWin32_a9a408c75230da1289e5619285dd00f67}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a4fff89e80712f3767f423fe31d78fcaa}\label{classFileUtils_a4fff89e80712f3767f423fe31d78fcaa}} 
+\index{File\+Utils@{File\+Utils}!is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}}
+\index{is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist\+Internal()}{isDirectoryExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+Directory\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a directory exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The directory (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the directory found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_aaeab26cde3a9a4cf3e4f8367d20f0e08}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsWin32_a9a408c75230da1289e5619285dd00f67}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a4e849a9b77e09971c4d8b879a5243eb3}\label{classFileUtils_a4e849a9b77e09971c4d8b879a5243eb3}} 
+\index{File\+Utils@{File\+Utils}!is\+File\+Exist@{is\+File\+Exist}}
+\index{is\+File\+Exist@{is\+File\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+File\+Exist()}{isFileExist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::is\+File\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether a file exists.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file exists, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a53eb44abd5db36aeb91ef29174077c8f}\label{classFileUtils_a53eb44abd5db36aeb91ef29174077c8f}} 
+\index{File\+Utils@{File\+Utils}!is\+File\+Exist@{is\+File\+Exist}}
+\index{is\+File\+Exist@{is\+File\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+File\+Exist()}{isFileExist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+File\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether a file exists.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file exists, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_ad681db9f60c32e3aacbebacaf6a316a8}\label{classFileUtils_ad681db9f60c32e3aacbebacaf6a316a8}} 
+\index{File\+Utils@{File\+Utils}!is\+File\+Exist@{is\+File\+Exist}}
+\index{is\+File\+Exist@{is\+File\+Exist}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+File\+Exist()}{isFileExist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::is\+File\+Exist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks if a file exists, done async off the main cocos thread.
+
+Use this function if you need to check if a file exists while not blocking the main cocos thread.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of the file, it could be a relative or absolute path. \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the file exists, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}\label{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}} 
+\index{File\+Utils@{File\+Utils}!is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}}
+\index{is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+File\+Exist\+Internal()}{isFileExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+File\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Checks whether a file exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the file found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classFileUtilsWin32_aacf984dcf838fc8d3303e47eb33a8601}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsWin32_ab3538e3fa4418afbff4e95858a553ff7}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}\label{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}} 
+\index{File\+Utils@{File\+Utils}!is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}}
+\index{is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+File\+Exist\+Internal()}{isFileExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+File\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Checks whether a file exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the file found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classFileUtilsWin32_aacf984dcf838fc8d3303e47eb33a8601}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsWin32_ab3538e3fa4418afbff4e95858a553ff7}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_acf344799ae42662fd4371b44ecaac739}\label{classFileUtils_acf344799ae42662fd4371b44ecaac739}} 
+\index{File\+Utils@{File\+Utils}!is\+Popup\+Notify@{is\+Popup\+Notify}}
+\index{is\+Popup\+Notify@{is\+Popup\+Notify}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Popup\+Notify()}{isPopupNotify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::is\+Popup\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether to pop up a message box when failed to load an image. \begin{DoxyReturn}{Returns}
+True if pop up a message box when failed to load an image, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a969a59acf14d03cf424d20f31d709d9c}\label{classFileUtils_a969a59acf14d03cf424d20f31d709d9c}} 
+\index{File\+Utils@{File\+Utils}!is\+Popup\+Notify@{is\+Popup\+Notify}}
+\index{is\+Popup\+Notify@{is\+Popup\+Notify}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{is\+Popup\+Notify()}{isPopupNotify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+::is\+Popup\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks whether to pop up a message box when failed to load an image. \begin{DoxyReturn}{Returns}
+True if pop up a message box when failed to load an image, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a88fc43b561884e12a9a2d41a9e3b4df4}\label{classFileUtils_a88fc43b561884e12a9a2d41a9e3b4df4}} 
+\index{File\+Utils@{File\+Utils}!list\+Files@{list\+Files}}
+\index{list\+Files@{list\+Files}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{list\+Files()}{listFiles()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ File\+Utils\+::list\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+List all files in a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File paths in a string vector 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_aa7a02a2d86383277ea72b7581da0b5db}{File\+Utils\+Win32}, and \hyperlink{classFileUtilsAndroid_a05bcda7dcc030c83573c7138caebad4c}{File\+Utils\+Android}.
+
+\mbox{\Hypertarget{classFileUtils_a9156e423bdacb8a2259c145d708ebd9f}\label{classFileUtils_a9156e423bdacb8a2259c145d708ebd9f}} 
+\index{File\+Utils@{File\+Utils}!list\+Files\+Async@{list\+Files\+Async}}
+\index{list\+Files\+Async@{list\+Files\+Async}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{list\+Files\+Async()}{listFilesAsync()}}
+{\footnotesize\ttfamily void File\+Utils\+::list\+Files\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::function$<$ void(std\+::vector$<$ std\+::string $>$)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+List all files in a directory async, off of the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+{\em callback} & The callback to be called once the \hyperlink{protocollist-p}{list} operation is complete. Will be called on the main cocos thread.  NA  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a9507d436baf8e10b6880bb1779649a54}\label{classFileUtils_a9507d436baf8e10b6880bb1779649a54}} 
+\index{File\+Utils@{File\+Utils}!list\+Files\+Recursively@{list\+Files\+Recursively}}
+\index{list\+Files\+Recursively@{list\+Files\+Recursively}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{list\+Files\+Recursively()}{listFilesRecursively()}}
+{\footnotesize\ttfamily void File\+Utils\+::list\+Files\+Recursively (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::vector$<$ std\+::string $>$ $\ast$}]{files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+List all files recursively in a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File paths in a string vector 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a40ce728356a261d1eb35f6c0c72ae9e0}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a840c57c935f02329a8aec254551f3bb7}\label{classFileUtils_a840c57c935f02329a8aec254551f3bb7}} 
+\index{File\+Utils@{File\+Utils}!list\+Files\+Recursively\+Async@{list\+Files\+Recursively\+Async}}
+\index{list\+Files\+Recursively\+Async@{list\+Files\+Recursively\+Async}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{list\+Files\+Recursively\+Async()}{listFilesRecursivelyAsync()}}
+{\footnotesize\ttfamily void File\+Utils\+::list\+Files\+Recursively\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::function$<$ void(std\+::vector$<$ std\+::string $>$)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+List all files recursively in a directory, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+{\em callback} & The callback to be called once the \hyperlink{protocollist-p}{list} operation is complete. Will be called on the main cocos thread.  NA  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a9886430fc0a8a3990379de3a04ebcd95}\label{classFileUtils_a9886430fc0a8a3990379de3a04ebcd95}} 
+\index{File\+Utils@{File\+Utils}!load\+Filename\+Lookup\+Dictionary\+From\+File@{load\+Filename\+Lookup\+Dictionary\+From\+File}}
+\index{load\+Filename\+Lookup\+Dictionary\+From\+File@{load\+Filename\+Lookup\+Dictionary\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{load\+Filename\+Lookup\+Dictionary\+From\+File()}{loadFilenameLookupDictionaryFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::load\+Filename\+Lookup\+Dictionary\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Loads the filename\+Lookup dictionary from the contents of a filename.
+
+\begin{DoxyNote}{Note}
+The plist file name should follow the format below\+:
+\end{DoxyNote}
+
+\begin{DoxyCode}
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"UTF-8"}?>
+<!DOCTYPE plist PUBLIC \textcolor{stringliteral}{"-//Apple//DTD PLIST 1.0//EN"} \textcolor{stringliteral}{"http://www.apple.com/DTDs/PropertyList-1.0.dtd"}>
+<plist version=\textcolor{stringliteral}{"1.0"}>
+<dict>
+    <key>filenames</key>
+    <dict>
+        <key>sounds/click.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/click.caf</\textcolor{keywordtype}{string}>
+        <key>sounds/endgame.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/endgame.caf</\textcolor{keywordtype}{string}>
+        <key>sounds/gem-0.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/gem-0.caf</\textcolor{keywordtype}{string}>
+    </dict>
+    <key>metadata</key>
+    <dict>
+        <key>version</key>
+        <integer>1</integer>
+    </dict>
+</dict>
+</plist>
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The plist file name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+1  load\+Filename\+Lookup  load\+Filename\+Lookup 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_ae8308c3d358c44312b6d804287dad1b7}\label{classFileUtils_ae8308c3d358c44312b6d804287dad1b7}} 
+\index{File\+Utils@{File\+Utils}!load\+Filename\+Lookup\+Dictionary\+From\+File@{load\+Filename\+Lookup\+Dictionary\+From\+File}}
+\index{load\+Filename\+Lookup\+Dictionary\+From\+File@{load\+Filename\+Lookup\+Dictionary\+From\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{load\+Filename\+Lookup\+Dictionary\+From\+File()}{loadFilenameLookupDictionaryFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::load\+Filename\+Lookup\+Dictionary\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Loads the filename\+Lookup dictionary from the contents of a filename.
+
+\begin{DoxyNote}{Note}
+The plist file name should follow the format below\+:
+\end{DoxyNote}
+
+\begin{DoxyCode}
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"UTF-8"}?>
+<!DOCTYPE plist PUBLIC \textcolor{stringliteral}{"-//Apple//DTD PLIST 1.0//EN"} \textcolor{stringliteral}{"http://www.apple.com/DTDs/PropertyList-1.0.dtd"}>
+<plist version=\textcolor{stringliteral}{"1.0"}>
+<dict>
+    <key>filenames</key>
+    <dict>
+        <key>sounds/click.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/click.caf</\textcolor{keywordtype}{string}>
+        <key>sounds/endgame.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/endgame.caf</\textcolor{keywordtype}{string}>
+        <key>sounds/gem-0.wav</key>
+        <\textcolor{keywordtype}{string}>sounds/gem-0.caf</\textcolor{keywordtype}{string}>
+    </dict>
+    <key>metadata</key>
+    <dict>
+        <key>version</key>
+        <integer>1</integer>
+    </dict>
+</dict>
+</plist>
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The plist file name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+1  load\+Filename\+Lookup  load\+Filename\+Lookup 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a2a54bfc34349410e94c3b53e61bc026f}\label{classFileUtils_a2a54bfc34349410e94c3b53e61bc026f}} 
+\index{File\+Utils@{File\+Utils}!purge\+Cached\+Entries@{purge\+Cached\+Entries}}
+\index{purge\+Cached\+Entries@{purge\+Cached\+Entries}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{purge\+Cached\+Entries()}{purgeCachedEntries()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::purge\+Cached\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Purges full path caches. \mbox{\Hypertarget{classFileUtils_a344792c0707b0089493f7b39f2ad57d9}\label{classFileUtils_a344792c0707b0089493f7b39f2ad57d9}} 
+\index{File\+Utils@{File\+Utils}!purge\+Cached\+Entries@{purge\+Cached\+Entries}}
+\index{purge\+Cached\+Entries@{purge\+Cached\+Entries}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{purge\+Cached\+Entries()}{purgeCachedEntries()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::purge\+Cached\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Purges full path caches. \mbox{\Hypertarget{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}\label{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}} 
+\index{File\+Utils@{File\+Utils}!purge\+File\+Utils@{purge\+File\+Utils}}
+\index{purge\+File\+Utils@{purge\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{purge\+File\+Utils()}{purgeFileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void File\+Utils\+::purge\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000115}{Deprecated}]Use \hyperlink{classFileUtils_abc5586f1eccca854b227e3cd8738cefd}{destroy\+Instance()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}\label{classFileUtils_ac420e697b4b0c1a3c5e9711dcaa66c31}} 
+\index{File\+Utils@{File\+Utils}!purge\+File\+Utils@{purge\+File\+Utils}}
+\index{purge\+File\+Utils@{purge\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{purge\+File\+Utils()}{purgeFileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void File\+Utils\+::purge\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000350}{Deprecated}]Use \hyperlink{classFileUtils_abc5586f1eccca854b227e3cd8738cefd}{destroy\+Instance()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classFileUtils_ad64d866c014013817c54582924f9592e}\label{classFileUtils_ad64d866c014013817c54582924f9592e}} 
+\index{File\+Utils@{File\+Utils}!remove\+Directory@{remove\+Directory}}
+\index{remove\+Directory@{remove\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+Directory()}{removeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The full path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a50a9cd9c6a65e4a3c33d188ac78b8a74}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a0ced661e913489e0a86ef0273c0fb90f}\label{classFileUtils_a0ced661e913489e0a86ef0273c0fb90f}} 
+\index{File\+Utils@{File\+Utils}!remove\+Directory@{remove\+Directory}}
+\index{remove\+Directory@{remove\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+Directory()}{removeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The full path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_ab190878679d22943a4b167fee6d200ee}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_aa7f1736afe9208df38fd88f2da3a8524}\label{classFileUtils_aa7f1736afe9208df38fd88f2da3a8524}} 
+\index{File\+Utils@{File\+Utils}!remove\+Directory@{remove\+Directory}}
+\index{remove\+Directory@{remove\+Directory}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+Directory()}{removeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a directory, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & the path of the directory, it must be an absolute path \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the directory was successfully removed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_aee725bf84f7bc707f9a94543d75b70fb}\label{classFileUtils_aee725bf84f7bc707f9a94543d75b70fb}} 
+\index{File\+Utils@{File\+Utils}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+File()}{removeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The full path of the file, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_aab51310dbc155b73cb9f3d4f3a918d36}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_aa9131b62319c343316a68d45cbe1d6b1}\label{classFileUtils_aa9131b62319c343316a68d45cbe1d6b1}} 
+\index{File\+Utils@{File\+Utils}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+File()}{removeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The full path of the file, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a45bb3aa3aff99f5d4367d048f722beaa}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a9f5c6583d4c07bdb9903a0129d34ec17}\label{classFileUtils_a9f5c6583d4c07bdb9903a0129d34ec17}} 
+\index{File\+Utils@{File\+Utils}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{remove\+File()}{removeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a file, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & the path of the file to remove, it must be an absolute path \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the file was successfully removed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a9f7560060b9909e1af2e0a77923f61ac}\label{classFileUtils_a9f7560060b9909e1af2e0a77923f61ac}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{oldname,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The parent directory path of the file, it must be an absolute path. \\
+\hline
+{\em oldname} & The current name of the file. \\
+\hline
+{\em name} & The new name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a209167c25ca47a1d03d47522cb88dc00}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a5a73b69c8322c48c3fbad2a262d354d8}\label{classFileUtils_a5a73b69c8322c48c3fbad2a262d354d8}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily bool File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{oldfullpath,  }\item[{const std\+::string \&}]{newfullpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldfullpath} & The current fullpath of the file. Includes path and name. \\
+\hline
+{\em newfullpath} & The new fullpath of the file. Includes path and name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_ac583dacdd0e02e0a92d32a31ba8f8d51}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a9228ab64b14c71afca8c5e4f7fb9bb55}\label{classFileUtils_a9228ab64b14c71afca8c5e4f7fb9bb55}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily bool File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{oldname,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The parent directory path of the file, it must be an absolute path. \\
+\hline
+{\em oldname} & The current name of the file. \\
+\hline
+{\em name} & The new name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a7268db0c6bec592a9f5978ceeecfe710}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_ab48eedb6cf7d2667c49d68476faa22da}\label{classFileUtils_ab48eedb6cf7d2667c49d68476faa22da}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{oldname,  }\item[{const std\+::string \&}]{name,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The parent directory path of the file, it must be an absolute path. \\
+\hline
+{\em oldname} & The current name of the file. \\
+\hline
+{\em name} & The new name of the file. \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the file was successfully renamed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a3e68a89a46e1d78df898cbbe1776d75e}\label{classFileUtils_a3e68a89a46e1d78df898cbbe1776d75e}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{oldfullpath,  }\item[{const std\+::string \&}]{newfullpath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldfullpath} & The current fullpath of the file. Includes path and name. \\
+\hline
+{\em newfullpath} & The new fullpath of the file. Includes path and name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsWin32_a1c948c39348ea2a7b88cc232b96e3f68}{File\+Utils\+Win32}.
+
+\mbox{\Hypertarget{classFileUtils_a50eae0c881fdb024de1be74e315db3b9}\label{classFileUtils_a50eae0c881fdb024de1be74e315db3b9}} 
+\index{File\+Utils@{File\+Utils}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void File\+Utils\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{oldfullpath,  }\item[{const std\+::string \&}]{newfullpath,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renames a file under the given directory, async off the main cocos thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldfullpath} & The current fullpath of the file. Includes path and name. \\
+\hline
+{\em newfullpath} & The new fullpath of the file. Includes path and name. \\
+\hline
+{\em callback} & The function that will be called when the operation is complete. Will have one boolean argument, true if the file was successfully renamed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}\label{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}} 
+\index{File\+Utils@{File\+Utils}!set\+Default\+Resource\+Root\+Path@{set\+Default\+Resource\+Root\+Path}}
+\index{set\+Default\+Resource\+Root\+Path@{set\+Default\+Resource\+Root\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Default\+Resource\+Root\+Path()}{setDefaultResourceRootPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Default\+Resource\+Root\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+Set default resource root path. \mbox{\Hypertarget{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}\label{classFileUtils_a286cf8c14b4bf393e492ba0e3411ec06}} 
+\index{File\+Utils@{File\+Utils}!set\+Default\+Resource\+Root\+Path@{set\+Default\+Resource\+Root\+Path}}
+\index{set\+Default\+Resource\+Root\+Path@{set\+Default\+Resource\+Root\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Default\+Resource\+Root\+Path()}{setDefaultResourceRootPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Default\+Resource\+Root\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+Set default resource root path. \mbox{\Hypertarget{classFileUtils_a912337c1295de714a304af0f61a0ebe0}\label{classFileUtils_a912337c1295de714a304af0f61a0ebe0}} 
+\index{File\+Utils@{File\+Utils}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classFileUtils}{File\+Utils} $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+You can inherit from platform dependent implementation of \hyperlink{classFileUtils}{File\+Utils}, such as \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}, and use this function to set delegate, then \hyperlink{classFileUtils}{File\+Utils} will invoke delegate\textquotesingle{}s implementation. For example, your resources are encrypted, so you need to decrypt it after reading data from resources, then you can implement all get\+X\+XX functions, and engine will invoke your own get\+XX functions when reading data of resources.
+
+If you don\textquotesingle{}t want to system default implementation after setting delegate, you can just pass nullptr to this function.
+
+\begin{DoxyWarning}{Warning}
+It will delete previous delegate  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_aa53a6facb5bf6d418d71a9b8503a0756}\label{classFileUtils_aa53a6facb5bf6d418d71a9b8503a0756}} 
+\index{File\+Utils@{File\+Utils}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void File\+Utils\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classFileUtils}{File\+Utils} $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+You can inherit from platform dependent implementation of \hyperlink{classFileUtils}{File\+Utils}, such as \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}, and use this function to set delegate, then \hyperlink{classFileUtils}{File\+Utils} will invoke delegate\textquotesingle{}s implementation. For example, your resources are encrypted, so you need to decrypt it after reading data from resources, then you can implement all get\+X\+XX functions, and engine will invoke your own get\+XX functions when reading data of resources.
+
+If you don\textquotesingle{}t want to system default implementation after setting delegate, you can just pass nullptr to this function.
+
+\begin{DoxyWarning}{Warning}
+It will delete previous delegate  NA 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classFileUtils_a9b5b9626c0c291f58e384bfc53949c97}\label{classFileUtils_a9b5b9626c0c291f58e384bfc53949c97}} 
+\index{File\+Utils@{File\+Utils}!set\+Filename\+Lookup\+Dictionary@{set\+Filename\+Lookup\+Dictionary}}
+\index{set\+Filename\+Lookup\+Dictionary@{set\+Filename\+Lookup\+Dictionary}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Filename\+Lookup\+Dictionary()}{setFilenameLookupDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Filename\+Lookup\+Dictionary (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{filename\+Lookup\+Dict }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the filename\+Lookup dictionary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Lookup\+Dict} & The dictionary for replacing filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a8039a26b5d8e3b29dfc8ad01104e966c}\label{classFileUtils_a8039a26b5d8e3b29dfc8ad01104e966c}} 
+\index{File\+Utils@{File\+Utils}!set\+Filename\+Lookup\+Dictionary@{set\+Filename\+Lookup\+Dictionary}}
+\index{set\+Filename\+Lookup\+Dictionary@{set\+Filename\+Lookup\+Dictionary}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Filename\+Lookup\+Dictionary()}{setFilenameLookupDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::set\+Filename\+Lookup\+Dictionary (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{filename\+Lookup\+Dict }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the filename\+Lookup dictionary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Lookup\+Dict} & The dictionary for replacing filename. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_abf036eb8785edfb8077c2d92444d55a4}\label{classFileUtils_abf036eb8785edfb8077c2d92444d55a4}} 
+\index{File\+Utils@{File\+Utils}!set\+Popup\+Notify@{set\+Popup\+Notify}}
+\index{set\+Popup\+Notify@{set\+Popup\+Notify}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Popup\+Notify()}{setPopupNotify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Popup\+Notify (\begin{DoxyParamCaption}\item[{bool}]{notify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether to pop-\/up a message box when failed to load an image. \mbox{\Hypertarget{classFileUtils_a3763086a2f23fd47fc3ba77c56ab38a8}\label{classFileUtils_a3763086a2f23fd47fc3ba77c56ab38a8}} 
+\index{File\+Utils@{File\+Utils}!set\+Popup\+Notify@{set\+Popup\+Notify}}
+\index{set\+Popup\+Notify@{set\+Popup\+Notify}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Popup\+Notify()}{setPopupNotify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::set\+Popup\+Notify (\begin{DoxyParamCaption}\item[{bool}]{notify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether to pop-\/up a message box when failed to load an image. \mbox{\Hypertarget{classFileUtils_a70336b604a6a9eb20dc56db8e8581a3d}\label{classFileUtils_a70336b604a6a9eb20dc56db8e8581a3d}} 
+\index{File\+Utils@{File\+Utils}!set\+Search\+Paths@{set\+Search\+Paths}}
+\index{set\+Search\+Paths@{set\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Search\+Paths()}{setSearchPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Search\+Paths (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{search\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the array of search paths.
+
+You can use this array to modify the search path of the resources. If you want to use \char`\"{}themes\char`\"{} or search resources in the \char`\"{}cache\char`\"{}, you can do it easily by adding new entries in this array.
+
+\begin{DoxyNote}{Note}
+This method could access relative path and absolute path. If the relative path was passed to the vector, \hyperlink{classFileUtils}{File\+Utils} will add the default resource directory before the relative path. For instance\+: On Android, the default resource root path is \char`\"{}assets/\char`\"{}. If \char`\"{}/mnt/sdcard/\char`\"{} and \char`\"{}resources-\/large\char`\"{} were set to the search paths vector, \char`\"{}resources-\/large\char`\"{} will be converted to \char`\"{}assets/resources-\/large\char`\"{} since it was a relative path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Paths} & The array contains search paths. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+full\+Path\+For\+Filename(const char$\ast$) 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 In js\+:var set\+Search\+Paths(var jsval);  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a40bd3826a4e4f49706179fc5e009a462}\label{classFileUtils_a40bd3826a4e4f49706179fc5e009a462}} 
+\index{File\+Utils@{File\+Utils}!set\+Search\+Paths@{set\+Search\+Paths}}
+\index{set\+Search\+Paths@{set\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Search\+Paths()}{setSearchPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::set\+Search\+Paths (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{search\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the array of search paths.
+
+You can use this array to modify the search path of the resources. If you want to use \char`\"{}themes\char`\"{} or search resources in the \char`\"{}cache\char`\"{}, you can do it easily by adding new entries in this array.
+
+\begin{DoxyNote}{Note}
+This method could access relative path and absolute path. If the relative path was passed to the vector, \hyperlink{classFileUtils}{File\+Utils} will add the default resource directory before the relative path. For instance\+: On Android, the default resource root path is \char`\"{}assets/\char`\"{}. If \char`\"{}/mnt/sdcard/\char`\"{} and \char`\"{}resources-\/large\char`\"{} were set to the search paths vector, \char`\"{}resources-\/large\char`\"{} will be converted to \char`\"{}assets/resources-\/large\char`\"{} since it was a relative path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Paths} & The array contains search paths. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+full\+Path\+For\+Filename(const char$\ast$) 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 In js\+:var set\+Search\+Paths(var jsval);  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}\label{classFileUtils_ac99445fa3112510c8f019c9f38a4779f}} 
+\index{File\+Utils@{File\+Utils}!set\+Search\+Resolutions\+Order@{set\+Search\+Resolutions\+Order}}
+\index{set\+Search\+Resolutions\+Order@{set\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Search\+Resolutions\+Order()}{setSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{search\+Resolutions\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the array that contains the search order of the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Resolutions\+Order} & The source array that contains the search order of the resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_a079329ce5d4a0154fed6a3987d42dc26}{get\+Search\+Resolutions\+Order()}, full\+Path\+For\+Filename(const char$\ast$). 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 In js\+:var set\+Search\+Resolutions\+Order(var jsval)  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_ae9c17f012420d7acc993503c5596bf7f}\label{classFileUtils_ae9c17f012420d7acc993503c5596bf7f}} 
+\index{File\+Utils@{File\+Utils}!set\+Search\+Resolutions\+Order@{set\+Search\+Resolutions\+Order}}
+\index{set\+Search\+Resolutions\+Order@{set\+Search\+Resolutions\+Order}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Search\+Resolutions\+Order()}{setSearchResolutionsOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::set\+Search\+Resolutions\+Order (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{search\+Resolutions\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the array that contains the search order of the resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Resolutions\+Order} & The source array that contains the search order of the resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classFileUtils_a079329ce5d4a0154fed6a3987d42dc26}{get\+Search\+Resolutions\+Order()}, full\+Path\+For\+Filename(const char$\ast$). 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+v2.\+1 In js\+:var set\+Search\+Resolutions\+Order(var jsval)  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_ac8241b72075065d1d23581761e051b75}\label{classFileUtils_ac8241b72075065d1d23581761e051b75}} 
+\index{File\+Utils@{File\+Utils}!set\+Writable\+Path@{set\+Writable\+Path}}
+\index{set\+Writable\+Path@{set\+Writable\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Writable\+Path()}{setWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::set\+Writable\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{writable\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets writable path. \mbox{\Hypertarget{classFileUtils_a198fe2619bd2bf551efeccf6010268b0}\label{classFileUtils_a198fe2619bd2bf551efeccf6010268b0}} 
+\index{File\+Utils@{File\+Utils}!set\+Writable\+Path@{set\+Writable\+Path}}
+\index{set\+Writable\+Path@{set\+Writable\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{set\+Writable\+Path()}{setWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void File\+Utils\+::set\+Writable\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{writable\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets writable path. \mbox{\Hypertarget{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}\label{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}} 
+\index{File\+Utils@{File\+Utils}!shared\+File\+Utils@{shared\+File\+Utils}}
+\index{shared\+File\+Utils@{shared\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{shared\+File\+Utils()}{sharedFileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classFileUtils}{File\+Utils}$\ast$ File\+Utils\+::shared\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000114}{Deprecated}]Use \hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{get\+Instance()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}\label{classFileUtils_a2ba619bc7a771cead0d5ed2465bcd523}} 
+\index{File\+Utils@{File\+Utils}!shared\+File\+Utils@{shared\+File\+Utils}}
+\index{shared\+File\+Utils@{shared\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{shared\+File\+Utils()}{sharedFileUtils()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classFileUtils}{File\+Utils}$\ast$ File\+Utils\+::shared\+File\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000349}{Deprecated}]Use \hyperlink{classFileUtils_ac8ced4394d59f5459445ced27ccd0e8a}{get\+Instance()} instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classFileUtils_a294123a0e04d6556c1de05c23696ce1b}\label{classFileUtils_a294123a0e04d6556c1de05c23696ce1b}} 
+\index{File\+Utils@{File\+Utils}!value\+Map\+Compact@{value\+Map\+Compact}}
+\index{value\+Map\+Compact@{value\+Map\+Compact}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{value\+Map\+Compact()}{valueMapCompact()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::value\+Map\+Compact (\begin{DoxyParamCaption}\item[{Value\+Map \&}]{value\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Remove null value key (for i\+OS) \mbox{\Hypertarget{classFileUtils_a5f6e7cc4108d8987fc652e99eb858d4c}\label{classFileUtils_a5f6e7cc4108d8987fc652e99eb858d4c}} 
+\index{File\+Utils@{File\+Utils}!value\+Map\+Compact@{value\+Map\+Compact}}
+\index{value\+Map\+Compact@{value\+Map\+Compact}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{value\+Map\+Compact()}{valueMapCompact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void File\+Utils\+::value\+Map\+Compact (\begin{DoxyParamCaption}\item[{Value\+Map \&}]{value\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Remove null value key (for i\+OS) \mbox{\Hypertarget{classFileUtils_a448ef43bd4c31852611018c951dd6eda}\label{classFileUtils_a448ef43bd4c31852611018c951dd6eda}} 
+\index{File\+Utils@{File\+Utils}!write\+Data\+To\+File@{write\+Data\+To\+File}}
+\index{write\+Data\+To\+File@{write\+Data\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Data\+To\+File()}{writeDataToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Data\+To\+File (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{data,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write \hyperlink{classData}{Data} into a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the data want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a8b88ed03982d6aec3008baba5345f323}\label{classFileUtils_a8b88ed03982d6aec3008baba5345f323}} 
+\index{File\+Utils@{File\+Utils}!write\+Data\+To\+File@{write\+Data\+To\+File}}
+\index{write\+Data\+To\+File@{write\+Data\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Data\+To\+File()}{writeDataToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Data\+To\+File (\begin{DoxyParamCaption}\item[{const \hyperlink{classData}{Data} \&}]{data,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write \hyperlink{classData}{Data} into a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the data want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a5c32f11d009af2cab29b9f0fcb20b43a}\label{classFileUtils_a5c32f11d009af2cab29b9f0fcb20b43a}} 
+\index{File\+Utils@{File\+Utils}!write\+Data\+To\+File@{write\+Data\+To\+File}}
+\index{write\+Data\+To\+File@{write\+Data\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Data\+To\+File()}{writeDataToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::write\+Data\+To\+File (\begin{DoxyParamCaption}\item[{\hyperlink{classData}{Data}}]{data,  }\item[{const std\+::string \&}]{full\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write \hyperlink{classData}{Data} into a file, done async off the main cocos thread.
+
+Use this function if you need to write \hyperlink{classData}{Data} while not blocking the main cocos thread.
+
+This function takes \hyperlink{classData}{Data} by value on purpose, to leverage move sematics. If you want to avoid a copy of your data, use std\+::move/std\+::forward if appropriate
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data that will be written to disk \\
+\hline
+{\em full\+Path} & The absolute file path that the data will be written to \\
+\hline
+{\em callback} & The function that will be called when data is written to disk. This function will be executed on the main cocos thread. It will have on boolean argument signifying if the write was successful. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_acd55f56b9ae5d635f4194132b4aeee14}\label{classFileUtils_acd55f56b9ae5d635f4194132b4aeee14}} 
+\index{File\+Utils@{File\+Utils}!write\+String\+To\+File@{write\+String\+To\+File}}
+\index{write\+String\+To\+File@{write\+String\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+String\+To\+File()}{writeStringToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+String\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data\+Str,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write a string into a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Str} & the string want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if write success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a0936e63c5225388250ff3dce11a5cc78}\label{classFileUtils_a0936e63c5225388250ff3dce11a5cc78}} 
+\index{File\+Utils@{File\+Utils}!write\+String\+To\+File@{write\+String\+To\+File}}
+\index{write\+String\+To\+File@{write\+String\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+String\+To\+File()}{writeStringToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+String\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data\+Str,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write a string into a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Str} & the string want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if write success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a053cc5146cc3a8aca08699f6707f8883}\label{classFileUtils_a053cc5146cc3a8aca08699f6707f8883}} 
+\index{File\+Utils@{File\+Utils}!write\+String\+To\+File@{write\+String\+To\+File}}
+\index{write\+String\+To\+File@{write\+String\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+String\+To\+File()}{writeStringToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::write\+String\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{data\+Str,  }\item[{const std\+::string \&}]{full\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write a string to a file, done async off the main cocos thread Use this function if you need file access without blocking the main thread.
+
+This function takes a std\+::string by value on purpose, to leverage move sematics. If you want to avoid a copy of your datastr, use std\+::move/std\+::forward if appropriate
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Str} & the string want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+{\em callback} & The function called once the string has been written to a file. This function will be executed on the main cocos thread. It will have on boolean argument signifying if the write was successful. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a503e4cf24b5bd8b13780370fa8e2c8f4}\label{classFileUtils_a503e4cf24b5bd8b13780370fa8e2c8f4}} 
+\index{File\+Utils@{File\+Utils}!write\+To\+File@{write\+To\+File}}
+\index{write\+To\+File@{write\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+To\+File()}{writeToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write a Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsApple_a57fe37f168814e2f6911fff52f7626c0}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_aaf55e6d080352b5fec3924521ab553e2}\label{classFileUtils_aaf55e6d080352b5fec3924521ab553e2}} 
+\index{File\+Utils@{File\+Utils}!write\+To\+File@{write\+To\+File}}
+\index{write\+To\+File@{write\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+To\+File()}{writeToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write a Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classFileUtilsApple_a2c762108569f84b4db36ae6d6cb3760f}{File\+Utils\+Apple}.
+
+\mbox{\Hypertarget{classFileUtils_a3bfc1cbc320b69f8fd2581431f6362d1}\label{classFileUtils_a3bfc1cbc320b69f8fd2581431f6362d1}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}}
+\index{write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Map\+To\+File()}{writeValueMapToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Value\+Map\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a19a124d3a50e5dcd1f4d93eb4799af6e}\label{classFileUtils_a19a124d3a50e5dcd1f4d93eb4799af6e}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}}
+\index{write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Map\+To\+File()}{writeValueMapToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Value\+Map\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{dict,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write Value\+Map into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & the Value\+Map want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a8efadc41f2a123969a3bd9ee5ae35ec9}\label{classFileUtils_a8efadc41f2a123969a3bd9ee5ae35ec9}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}}
+\index{write\+Value\+Map\+To\+File@{write\+Value\+Map\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Map\+To\+File()}{writeValueMapToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::write\+Value\+Map\+To\+File (\begin{DoxyParamCaption}\item[{Value\+Map}]{dict,  }\item[{const std\+::string \&}]{full\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write a Value\+Map into a file, done async off the main cocos thread.
+
+Use this function if you need to write a Value\+Map while not blocking the main cocos thread.
+
+This function takes Value\+Map by value on purpose, to leverage move sematics. If you want to avoid a copy of your dict, use std\+::move/std\+::forward if appropriate
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & The Value\+Map that will be written to disk \\
+\hline
+{\em full\+Path} & The absolute file path that the data will be written to \\
+\hline
+{\em callback} & The function that will be called when dict is written to disk. This function will be executed on the main cocos thread. It will have on boolean argument signifying if the write was successful. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileUtils_a68821bd490a13b47e0e397980eabe481}\label{classFileUtils_a68821bd490a13b47e0e397980eabe481}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}}
+\index{write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Vector\+To\+File()}{writeValueVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Value\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{vec\+Data,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write Value\+Vector into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Data} & the Value\+Vector want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a05afdedbbee8528bf4237b833789349e}\label{classFileUtils_a05afdedbbee8528bf4237b833789349e}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}}
+\index{write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Vector\+To\+File()}{writeValueVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool File\+Utils\+::write\+Value\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const Value\+Vector \&}]{vec\+Data,  }\item[{const std\+::string \&}]{full\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+write Value\+Vector into a plist file
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Data} & the Value\+Vector want to save \\
+\hline
+{\em full\+Path} & The full path to the file you want to save a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileUtils_a13c34d3019012ab99be6e04ff199d643}\label{classFileUtils_a13c34d3019012ab99be6e04ff199d643}} 
+\index{File\+Utils@{File\+Utils}!write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}}
+\index{write\+Value\+Vector\+To\+File@{write\+Value\+Vector\+To\+File}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{write\+Value\+Vector\+To\+File()}{writeValueVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void File\+Utils\+::write\+Value\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{Value\+Vector}]{vec\+Data,  }\item[{const std\+::string \&}]{full\+Path,  }\item[{std\+::function$<$ void(bool)$>$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write a Value\+Vector into a file, done async off the main cocos thread.
+
+Use this function if you need to write a Value\+Vector while not blocking the main cocos thread.
+
+This function takes Value\+Vector by value on purpose, to leverage move sematics. If you want to avoid a copy of your dict, use std\+::move/std\+::forward if appropriate
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Data} & The Value\+Vector that will be written to disk \\
+\hline
+{\em full\+Path} & The absolute file path that the data will be written to \\
+\hline
+{\em callback} & The function that will be called when vec\+Data is written to disk. This function will be executed on the main cocos thread. It will have on boolean argument signifying if the write was successful. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classFileUtils_a50cd93b75a8864395a6693263152f876}\label{classFileUtils_a50cd93b75a8864395a6693263152f876}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+default\+Res\+Root\+Path@{\+\_\+default\+Res\+Root\+Path}}
+\index{\+\_\+default\+Res\+Root\+Path@{\+\_\+default\+Res\+Root\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+default\+Res\+Root\+Path}{\_defaultResRootPath}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::\+\_\+default\+Res\+Root\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+The default root path of resources. If the default root path of resources needs to be changed, do it in the {\ttfamily init} method of \hyperlink{classFileUtils}{File\+Utils}\textquotesingle{}s subclass. For instance\+: On Android, the default root path of resources will be assigned with \char`\"{}assets/\char`\"{} in \hyperlink{classFileUtilsAndroid_a5ff9d802609690baa039ebef0508b2c6}{File\+Utils\+Android\+::init()}. Similarly on Blackberry, we assign \char`\"{}app/native/\+Resources/\char`\"{} to this variable in File\+Utils\+Blackberry\+::init(). \mbox{\Hypertarget{classFileUtils_a3d6f18571f845268f614048092f74c76}\label{classFileUtils_a3d6f18571f845268f614048092f74c76}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+filename\+Lookup\+Dict@{\+\_\+filename\+Lookup\+Dict}}
+\index{\+\_\+filename\+Lookup\+Dict@{\+\_\+filename\+Lookup\+Dict}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+filename\+Lookup\+Dict}{\_filenameLookupDict}}
+{\footnotesize\ttfamily Value\+Map File\+Utils\+::\+\_\+filename\+Lookup\+Dict\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dictionary used to lookup filenames based on a key. It is used internally by the following methods\+:
+
+std\+::string full\+Path\+For\+Filename(const char$\ast$);
+
+\begin{DoxySince}{Since}
+v2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{classFileUtils_a65bd3009aa5816155b0718744aacdf75}\label{classFileUtils_a65bd3009aa5816155b0718744aacdf75}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+full\+Path\+Cache@{\+\_\+full\+Path\+Cache}}
+\index{\+\_\+full\+Path\+Cache@{\+\_\+full\+Path\+Cache}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+full\+Path\+Cache}{\_fullPathCache}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ File\+Utils\+::\+\_\+full\+Path\+Cache\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+The full path cache. When a file is found, it will be added into this cache. This variable is used for improving the performance of file search.
+
+The full path cache for normal files. When a file is found, it will be added into this cache. This variable is used for improving the performance of file search. \mbox{\Hypertarget{classFileUtils_a1692ddcf7df153c024bfc3f0a3756fd8}\label{classFileUtils_a1692ddcf7df153c024bfc3f0a3756fd8}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+full\+Path\+Cache\+Dir@{\+\_\+full\+Path\+Cache\+Dir}}
+\index{\+\_\+full\+Path\+Cache\+Dir@{\+\_\+full\+Path\+Cache\+Dir}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+full\+Path\+Cache\+Dir}{\_fullPathCacheDir}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ File\+Utils\+::\+\_\+full\+Path\+Cache\+Dir\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+The full path cache for directories. When a diretory is found, it will be added into this cache. This variable is used for improving the performance of file search. \mbox{\Hypertarget{classFileUtils_a5a756383861bc8cf5058ac4253d269d7}\label{classFileUtils_a5a756383861bc8cf5058ac4253d269d7}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+mutex@{\+\_\+mutex}}
+\index{\+\_\+mutex@{\+\_\+mutex}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+mutex}{\_mutex}}
+{\footnotesize\ttfamily std\+::recursive\+\_\+mutex File\+Utils\+::\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+mutex used to protect fields. \mbox{\Hypertarget{classFileUtils_a1bd4771548f29716b5897cd7d4cc82f1}\label{classFileUtils_a1bd4771548f29716b5897cd7d4cc82f1}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+original\+Search\+Paths@{\+\_\+original\+Search\+Paths}}
+\index{\+\_\+original\+Search\+Paths@{\+\_\+original\+Search\+Paths}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+original\+Search\+Paths}{\_originalSearchPaths}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ File\+Utils\+::\+\_\+original\+Search\+Paths\hspace{0.3cm}{\ttfamily [protected]}}
+
+The search paths which was set by \textquotesingle{}set\+Search\+Paths\textquotesingle{} / \textquotesingle{}add\+Search\+Path\textquotesingle{}. \mbox{\Hypertarget{classFileUtils_a856a6d415b5bca3399d826e13ce23501}\label{classFileUtils_a856a6d415b5bca3399d826e13ce23501}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+search\+Path\+Array@{\+\_\+search\+Path\+Array}}
+\index{\+\_\+search\+Path\+Array@{\+\_\+search\+Path\+Array}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+search\+Path\+Array}{\_searchPathArray}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ File\+Utils\+::\+\_\+search\+Path\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+The vector contains search paths. The lower index of the element in this vector, the higher priority for this search path. \mbox{\Hypertarget{classFileUtils_a35a01013ca9bcbb04c7ae1cd43fbe572}\label{classFileUtils_a35a01013ca9bcbb04c7ae1cd43fbe572}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+search\+Resolutions\+Order\+Array@{\+\_\+search\+Resolutions\+Order\+Array}}
+\index{\+\_\+search\+Resolutions\+Order\+Array@{\+\_\+search\+Resolutions\+Order\+Array}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+search\+Resolutions\+Order\+Array}{\_searchResolutionsOrderArray}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ File\+Utils\+::\+\_\+search\+Resolutions\+Order\+Array\hspace{0.3cm}{\ttfamily [protected]}}
+
+The vector contains resolution folders. The lower index of the element in this vector, the higher priority for this resolution directory. \mbox{\Hypertarget{classFileUtils_a58acf8f0cf86958ed5a6975363b3abe5}\label{classFileUtils_a58acf8f0cf86958ed5a6975363b3abe5}} 
+\index{File\+Utils@{File\+Utils}!\+\_\+writable\+Path@{\+\_\+writable\+Path}}
+\index{\+\_\+writable\+Path@{\+\_\+writable\+Path}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{\+\_\+writable\+Path}{\_writablePath}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+::\+\_\+writable\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+Writable path. \mbox{\Hypertarget{classFileUtils_aa5350a22566d3f1ca9b0e5bd1e088166}\label{classFileUtils_aa5350a22566d3f1ca9b0e5bd1e088166}} 
+\index{File\+Utils@{File\+Utils}!s\+\_\+shared\+File\+Utils@{s\+\_\+shared\+File\+Utils}}
+\index{s\+\_\+shared\+File\+Utils@{s\+\_\+shared\+File\+Utils}!File\+Utils@{File\+Utils}}
+\subsubsection{\texorpdfstring{s\+\_\+shared\+File\+Utils}{s\_sharedFileUtils}}
+{\footnotesize\ttfamily static \hyperlink{classFileUtils}{File\+Utils} $\ast$ File\+Utils\+::s\+\_\+shared\+File\+Utils = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+The singleton pointer of \hyperlink{classFileUtils}{File\+Utils}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/C\+C\+File\+Utils.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/android/C\+C\+File\+Utils-\/android.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/apple/C\+C\+File\+Utils-\/apple.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/C\+C\+File\+Utils.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/linux/C\+C\+File\+Utils-\/linux.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/tizen/C\+C\+File\+Utils-\/tizen.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/win32/C\+C\+File\+Utils-\/win32.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/winrt/C\+C\+File\+Utils\+Win\+R\+T.\+cpp\end{DoxyCompactItemize}

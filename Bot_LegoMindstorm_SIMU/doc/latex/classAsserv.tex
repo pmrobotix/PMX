@@ -1,0 +1,296 @@
+\hypertarget{classAsserv}{}\section{Asserv Class Reference}
+\label{classAsserv}\index{Asserv@{Asserv}}
+
+
+{\ttfamily \#include $<$Asserv.\+hpp$>$}
+
+
+
+Inheritance diagram for Asserv\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAsserv__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Asserv\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAsserv__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsserv_a9d22e7b9cfbf4bb95beb55d428e250dd}\label{classAsserv_a9d22e7b9cfbf4bb95beb55d428e250dd}} 
+\hyperlink{classAsserv_a9d22e7b9cfbf4bb95beb55d428e250dd}{Asserv} (std\+::string bot\+Id, \hyperlink{classRobot}{Robot} $\ast$robot)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_a85403979795864168f24b708d12db02e}\label{classAsserv_a85403979795864168f24b708d12db02e}} 
+virtual \hyperlink{classAsserv_a85403979795864168f24b708d12db02e}{$\sim$\+Asserv} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classAsserv_a888d98868d09718b55e15daecd8c6849}{reset\+Encoders} ()
+\begin{DoxyCompactList}\small\item\em return objet moving\+Base. D\+E\+P\+R\+E\+C\+A\+T\+ED \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_ad4598169af2eb414ac3f946a06e4b668}\label{classAsserv_ad4598169af2eb414ac3f946a06e4b668}} 
+void \hyperlink{classAsserv_ad4598169af2eb414ac3f946a06e4b668}{get\+Encoders\+Counts} (int $\ast$countR, int $\ast$countL)
+\begin{DoxyCompactList}\small\item\em get accumulated ticks of encoders \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_a93803a620c2137681911268d059b904d}\label{classAsserv_a93803a620c2137681911268d059b904d}} 
+void \hyperlink{classAsserv_a93803a620c2137681911268d059b904d}{get\+Delta\+Encoders\+Counts} (int $\ast$delta\+CountR, int $\ast$delta\+CountL)
+\begin{DoxyCompactList}\small\item\em get delta ticks of encoders since last call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_a1db79355d394b4cb35690bdd6ab3fc2c}\label{classAsserv_a1db79355d394b4cb35690bdd6ab3fc2c}} 
+void \hyperlink{classAsserv_a1db79355d394b4cb35690bdd6ab3fc2c}{run\+Motor\+Left} (int power, int timems)
+\begin{DoxyCompactList}\small\item\em run Left Motor. timems $<$ 0 =$>$ use duty\+\_\+cycle, run forever timems = 0 =$>$ use speed (include internal regulation for lego) timems $>$ 0 =$>$ use speed with a running time (include internal regulation for lego) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_a0fea807aa7d95a9f9c2b950c03756c09}\label{classAsserv_a0fea807aa7d95a9f9c2b950c03756c09}} 
+void \hyperlink{classAsserv_a0fea807aa7d95a9f9c2b950c03756c09}{run\+Motor\+Right} (int power, int timems)
+\begin{DoxyCompactList}\small\item\em run Right Motor. timems $<$ 0 =$>$ use duty\+\_\+cycle, run forever timems = 0 =$>$ use speed (include internal regulation for lego) timems $>$ 0 =$>$ use speed with a running time (include internal regulation for lego) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_ab7cc800e310cb52cbce5aee9f910f261}\label{classAsserv_ab7cc800e310cb52cbce5aee9f910f261}} 
+void \hyperlink{classAsserv_ab7cc800e310cb52cbce5aee9f910f261}{stop\+Motors} ()
+\begin{DoxyCompactList}\small\item\em stop les Moteurs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_af08c1dab6683da88f3ceda50065e1a3d}\label{classAsserv_af08c1dab6683da88f3ceda50065e1a3d}} 
+virtual void {\bfseries end\+What\+Todo} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a366bf4a9f0880c5dc125ac0637fee326}\label{classAsserv_a366bf4a9f0880c5dc125ac0637fee326}} 
+virtual void {\bfseries start\+Motion\+Timer\+And\+Odo} (bool assisted\+Handling\+Enabled)
+\item 
+\mbox{\Hypertarget{classAsserv_a3ee97758e6496987ec5c84f084a3d3aa}\label{classAsserv_a3ee97758e6496987ec5c84f084a3d3aa}} 
+virtual void {\bfseries set\+Low\+Speed\+Forward} (bool enable, int percent=0)
+\item 
+\mbox{\Hypertarget{classAsserv_a21b2a90179e065b7e48e364dd41b0d02}\label{classAsserv_a21b2a90179e065b7e48e364dd41b0d02}} 
+virtual void {\bfseries set\+Low\+Speed\+Backward} (bool enable, int percent=0)
+\item 
+\mbox{\Hypertarget{classAsserv_a050645863c2a40f3116ee0847d1d3732}\label{classAsserv_a050645863c2a40f3116ee0847d1d3732}} 
+virtual void {\bfseries set\+Position\+And\+Color} (float x\+\_\+mm, float y\+\_\+mm, float theta\+\_\+degrees, bool match\+Color)
+\item 
+\mbox{\Hypertarget{classAsserv_abe526ad31d80f46598cdbb031a83a906}\label{classAsserv_abe526ad31d80f46598cdbb031a83a906}} 
+virtual void {\bfseries set\+Position\+Real} (float x\+\_\+mm, float y\+\_\+mm, float theta\+In\+Rad)
+\item 
+\mbox{\Hypertarget{classAsserv_acc337a9f3d054ba09e3043a560a457a7}\label{classAsserv_acc337a9f3d054ba09e3043a560a457a7}} 
+virtual bool {\bfseries filtre\+\_\+\+Is\+Inside\+Table} (int dist\+\_\+detect\+\_\+mm, int lateral\+\_\+pos\+\_\+sensor\+\_\+mm, std\+::string desc=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classAsserv_a74838cb9894b41a16db23aac3de880b8}\label{classAsserv_a74838cb9894b41a16db23aac3de880b8}} 
+virtual bool {\bfseries filtre\+\_\+\+Is\+In\+Front} (int dist\+\_\+mm, int x\+\_\+mm, int y\+\_\+mm, float theta)
+\item 
+\mbox{\Hypertarget{classAsserv_aa6eb54a46377d1043d8b8c16c5330185}\label{classAsserv_aa6eb54a46377d1043d8b8c16c5330185}} 
+virtual bool {\bfseries filtre\+\_\+\+Is\+In\+Back} (int dist\+\_\+mm, int x\+\_\+mm, int y\+\_\+mm, float theta)
+\item 
+\mbox{\Hypertarget{classAsserv_a483f99d2f4545707cab4399b7bfb158b}\label{classAsserv_a483f99d2f4545707cab4399b7bfb158b}} 
+virtual void {\bfseries warn\+Front\+Collision\+On\+Traj} (int frontlevel, float x\+\_\+adv\+\_\+\+\_\+mm, float y\+\_\+adv\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a6bf02a8d93a6104906f004997e1a3644}\label{classAsserv_a6bf02a8d93a6104906f004997e1a3644}} 
+virtual void {\bfseries warn\+Back\+Collision\+On\+Traj} (float x\+\_\+adv\+\_\+mm, float y\+\_\+adv\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a9a073136f6af1298bb0dcef2db1f0c01}\label{classAsserv_a9a073136f6af1298bb0dcef2db1f0c01}} 
+virtual void {\bfseries update\+\_\+adv} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a22cbdc18185f0d910473b8a5bb434c84}\label{classAsserv_a22cbdc18185f0d910473b8a5bb434c84}} 
+void {\bfseries reset\+Emergency\+On\+Traj} (std\+::string message=\char`\"{}default\char`\"{})
+\item 
+\mbox{\Hypertarget{classAsserv_a312602d6bf6f8591937e4d0003497bbb}\label{classAsserv_a312602d6bf6f8591937e4d0003497bbb}} 
+void {\bfseries set\+Emergency\+Stop} ()
+\item 
+\mbox{\Hypertarget{classAsserv_af3ac6ea471cb2fb8713ce32bbc05d66e}\label{classAsserv_af3ac6ea471cb2fb8713ce32bbc05d66e}} 
+virtual void {\bfseries stop\+Motion\+Timer\+And\+Odo} ()
+\item 
+\mbox{\Hypertarget{classAsserv_aa8b9209374a094acf3242d732cdeee5e}\label{classAsserv_aa8b9209374a094acf3242d732cdeee5e}} 
+void {\bfseries disable\+P\+ID} ()
+\item 
+\mbox{\Hypertarget{classAsserv_aef3c037b15172c4cc015c47a33f93634}\label{classAsserv_aef3c037b15172c4cc015c47a33f93634}} 
+void {\bfseries free\+Motion} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a2d4c545965ac32ef54c9b118d3576655}\label{classAsserv_a2d4c545965ac32ef54c9b118d3576655}} 
+void {\bfseries assisted\+Handling} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a7b4da229e99922c338cef82d645875d6}\label{classAsserv_a7b4da229e99922c338cef82d645875d6}} 
+\hyperlink{structRobotPosition}{Robot\+Position} {\bfseries pos\+\_\+get\+Adv\+Position} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a91bb1a510149cf8bc30ec40848732eaa}\label{classAsserv_a91bb1a510149cf8bc30ec40848732eaa}} 
+\hyperlink{structRobotPosition}{Robot\+Position} {\bfseries pos\+\_\+get\+Position} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a871088db63d1a0e20ccbf387c6f895db}\label{classAsserv_a871088db63d1a0e20ccbf387c6f895db}} 
+float {\bfseries pos\+\_\+get\+X\+\_\+mm} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a2cca6401ccf8cfc7cc927177cba14f4a}\label{classAsserv_a2cca6401ccf8cfc7cc927177cba14f4a}} 
+float {\bfseries pos\+\_\+get\+Y\+\_\+mm} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a11fc2df956a191f42ab34088a7ae9ce0}\label{classAsserv_a11fc2df956a191f42ab34088a7ae9ce0}} 
+float {\bfseries pos\+\_\+get\+Theta} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a0c1a1048174322c00dfba79c74193bd1}\label{classAsserv_a0c1a1048174322c00dfba79c74193bd1}} 
+float {\bfseries pos\+\_\+get\+Theta\+In\+Degree} ()
+\item 
+\mbox{\Hypertarget{classAsserv_a8d3855dc9eddaff07b58a7a01e2024c3}\label{classAsserv_a8d3855dc9eddaff07b58a7a01e2024c3}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries goto\+Chain} (float x\+MM, float y\+MM)
+\item 
+\mbox{\Hypertarget{classAsserv_a3208aa1d2cc84eff11770477b79aa6f7}\label{classAsserv_a3208aa1d2cc84eff11770477b79aa6f7}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries goto\+XY} (float x\+MM, float y\+MM)
+\item 
+\mbox{\Hypertarget{classAsserv_ade31f4182c755e3ee09092fe9bf3d5d0}\label{classAsserv_ade31f4182c755e3ee09092fe9bf3d5d0}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries goto\+Reverse} (float x\+MM, float y\+MM)
+\item 
+\mbox{\Hypertarget{classAsserv_af02450d4e92f864b844a63ffe6fb16d3}\label{classAsserv_af02450d4e92f864b844a63ffe6fb16d3}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries goto\+Reverse\+Chain} (float x\+MM, float y\+MM)
+\item 
+\mbox{\Hypertarget{classAsserv_a470496b8e6a0ef4cf0063c9b013aff35}\label{classAsserv_a470496b8e6a0ef4cf0063c9b013aff35}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Line\+Abs} (float dist\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a2e7e67323efc1850803fea827614e8dc}\label{classAsserv_a2e7e67323efc1850803fea827614e8dc}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Rotate\+Abs} (float degrees\+Relative)
+\item 
+\mbox{\Hypertarget{classAsserv_ab4983829a4592b28165f2fc3924572bd}\label{classAsserv_ab4983829a4592b28165f2fc3924572bd}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Relative\+Rotate\+By} (float theta\+In\+Degree\+Relative)
+\item 
+\mbox{\Hypertarget{classAsserv_a0ac23995bdebb69bb49304850c951886}\label{classAsserv_a0ac23995bdebb69bb49304850c951886}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Calage} (int d, int percent)
+\item 
+\mbox{\Hypertarget{classAsserv_acc891ab26e32320b4f2fac646de93632}\label{classAsserv_acc891ab26e32320b4f2fac646de93632}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Calage2} (int d, int percent)
+\item 
+\mbox{\Hypertarget{classAsserv_a3468d8efb89878c2235dc491c6e7a541}\label{classAsserv_a3468d8efb89878c2235dc491c6e7a541}} 
+void {\bfseries do\+Run\+Pivot\+Left} (int powerL, int powerR, int timemsR)
+\item 
+\mbox{\Hypertarget{classAsserv_a79a9b2ee1d39046119673dc81733bdab}\label{classAsserv_a79a9b2ee1d39046119673dc81733bdab}} 
+void {\bfseries do\+Run\+Pivot\+Right} (int powerL, int powerR, int timemsL)
+\item 
+\mbox{\Hypertarget{classAsserv_ae746b06ee24e29a511dc3c6f022ac35f}\label{classAsserv_ae746b06ee24e29a511dc3c6f022ac35f}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Face\+To} (float x\+MM, float y\+MM)
+\item 
+\mbox{\Hypertarget{classAsserv_ad41f75a5793e8990b2c70880b0011129}\label{classAsserv_ad41f75a5793e8990b2c70880b0011129}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Absolute\+Rotate\+To} (float theta\+In\+Degree\+Absolute, bool rotate\+\_\+ignored=false)
+\item 
+\mbox{\Hypertarget{classAsserv_a15a5f1ec018cdc2624ea869a4e1dd6e7}\label{classAsserv_a15a5f1ec018cdc2624ea869a4e1dd6e7}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Move\+Forward\+And\+Rotate\+To} (float x\+MM, float y\+MM, float theta\+In\+Degree, bool rotate\+\_\+ignored=false)
+\item 
+\mbox{\Hypertarget{classAsserv_aa2ec3b84e3cccf2145cc70e33f08dc58}\label{classAsserv_aa2ec3b84e3cccf2145cc70e33f08dc58}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Move\+Backward\+To} (float x\+MM, float y\+MM, bool rotate\+\_\+ignored=false)
+\item 
+\mbox{\Hypertarget{classAsserv_af438189501d475dcb6632ce63efe5e5f}\label{classAsserv_af438189501d475dcb6632ce63efe5e5f}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Move\+Backward\+And\+Rotate\+To} (float x\+MM, float y\+MM, float theta\+In\+Degree)
+\item 
+\mbox{\Hypertarget{classAsserv_a960679fed5ab18f631d7847c95fc1f85}\label{classAsserv_a960679fed5ab18f631d7847c95fc1f85}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} {\bfseries do\+Move\+Forward\+To} (float x\+MM, float y\+MM, bool rotate\+\_\+ignored=false, float adjustment=0)
+\item 
+\mbox{\Hypertarget{classAsserv_a9ae528690268f84726565305c42718e5}\label{classAsserv_a9ae528690268f84726565305c42718e5}} 
+std\+::tuple$<$ int, float, float $>$ {\bfseries eq\+\_\+2\+Circles\+Crossed\+\_\+get\+XY} (float x1, float y1, float d1, float x2, float y2, float d2, float robot\+\_\+size\+\_\+l\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a744a8285ae7c6339252458a9c94fd602}\label{classAsserv_a744a8285ae7c6339252458a9c94fd602}} 
+std\+::tuple$<$ int, float, float $>$ {\bfseries eq\+\_\+2nd\+\_\+deg\+\_\+get\+XY} (float a, float b, float A, float B, float C, float robot\+\_\+size\+\_\+l\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_adb57afce5f18ec54425fcf5e8d54da75}\label{classAsserv_adb57afce5f18ec54425fcf5e8d54da75}} 
+float {\bfseries eq\+\_\+2nd\+\_\+deg\+\_\+get\+Delta} (float A, float B, float C)
+\item 
+int \hyperlink{classAsserv_a1677fd20a9cb16f78c609951e073550e}{adjust\+Real\+Position} (float pos\+\_\+x\+\_\+start\+\_\+mm, float pos\+\_\+y\+\_\+start\+\_\+mm, \hyperlink{structRobotPosition}{Robot\+Position} p, float delta\+\_\+j\+\_\+mm, float delta\+\_\+k\+\_\+mm, float mesure\+\_\+mm, float robot\+\_\+size\+\_\+l\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a9e997a871e745e687a4088103378bae3}\label{classAsserv_a9e997a871e745e687a4088103378bae3}} 
+bool {\bfseries calculate\+Drift\+Right\+Side\+And\+Set\+Pos} (float d2\+\_\+theo\+\_\+bordure\+\_\+mm, float d2b\+\_\+bordure\+\_\+mm, float x\+\_\+depart\+\_\+mm, float y\+\_\+depart\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a314e3ff9a8a538a23d26dcb802386024}\label{classAsserv_a314e3ff9a8a538a23d26dcb802386024}} 
+bool {\bfseries calculate\+Drift\+Left\+Side\+And\+Set\+Pos} (float d2\+\_\+theo\+\_\+bordure\+\_\+mm, float d2b\+\_\+bordure\+\_\+mm, float x\+\_\+depart\+\_\+mm, float y\+\_\+depart\+\_\+mm)
+\item 
+\mbox{\Hypertarget{classAsserv_a1405746fd8b2486724eec8baf4e72f74}\label{classAsserv_a1405746fd8b2486724eec8baf4e72f74}} 
+void {\bfseries set\+Match\+Color\+Position} (bool c)
+\item 
+\mbox{\Hypertarget{classAsserv_a7a7e84f37ab3d94c10bcfe0542f7c5ff}\label{classAsserv_a7a7e84f37ab3d94c10bcfe0542f7c5ff}} 
+float {\bfseries get\+RelativeX} (float x\+\_\+mm, float width=0.\+0)
+\item 
+\mbox{\Hypertarget{classAsserv_ac2c223c7a13318de135088a30efc076d}\label{classAsserv_ac2c223c7a13318de135088a30efc076d}} 
+float {\bfseries get\+Relative\+X\+Min} (float x\+\_\+mm, float width=0.\+0)
+\item 
+\mbox{\Hypertarget{classAsserv_a790f7ad183fe585a87cefb7ad5688ffe}\label{classAsserv_a790f7ad183fe585a87cefb7ad5688ffe}} 
+float {\bfseries get\+Relative\+Angle} (float degrees)
+\item 
+\mbox{\Hypertarget{classAsserv_a2a48f3a3252a4311e96f20e2595febff}\label{classAsserv_a2a48f3a3252a4311e96f20e2595febff}} 
+float {\bfseries limit\+Angle} (float degrees)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAsserv_ad1cfde496b9ab7fb2cf6fa0d2cf6d8fc}{Asserv\+Type} \{ {\bfseries A\+S\+S\+E\+R\+V\+\_\+\+E\+XT}, 
+{\bfseries A\+S\+S\+E\+R\+V\+\_\+\+I\+N\+T\+\_\+\+E\+S\+I\+A\+LR}, 
+{\bfseries A\+S\+S\+E\+R\+V\+\_\+\+I\+N\+T\+\_\+N}, 
+{\bfseries A\+S\+S\+E\+R\+V\+\_\+\+I\+N\+T\+\_\+\+I\+N\+SA}
+ \}\begin{DoxyCompactList}\small\item\em motorisation = motors + encoders // T\+O\+DO A configurer dans Extended avec les parametres appropriés de chaque robot \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAsserv_ac43af40b4e29496836b89347be6d3d82}\label{classAsserv_ac43af40b4e29496836b89347be6d3d82}} 
+\hyperlink{classAsserv_ad1cfde496b9ab7fb2cf6fa0d2cf6d8fc}{Asserv\+Type} {\bfseries use\+Asserv\+Type\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a949edfe11257727c44be6d50a36d7bb4}\label{classAsserv_a949edfe11257727c44be6d50a36d7bb4}} 
+std\+::string {\bfseries bot\+Id\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a9340e39c1e9d3623a91b1a980f782f22}\label{classAsserv_a9340e39c1e9d3623a91b1a980f782f22}} 
+\hyperlink{classAAsservDriver}{A\+Asserv\+Driver} $\ast$ {\bfseries asservdriver\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a5bb8af2ccc5b327e2f88cabfe68a2896}\label{classAsserv_a5bb8af2ccc5b327e2f88cabfe68a2896}} 
+\hyperlink{classAsservInsa}{Asserv\+Insa} $\ast$ \hyperlink{classAsserv_a5bb8af2ccc5b327e2f88cabfe68a2896}{p\+Asserv\+Insa\+\_\+}
+\begin{DoxyCompactList}\small\item\em asservissement interne I\+N\+SA. N\+U\+LL si non defini \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_aeff82af864e0cbaa8c29654091900fae}\label{classAsserv_aeff82af864e0cbaa8c29654091900fae}} 
+\hyperlink{classAsservEsialR}{Asserv\+EsialR} $\ast$ \hyperlink{classAsserv_aeff82af864e0cbaa8c29654091900fae}{p\+Asserv\+Esial\+R\+\_\+}
+\begin{DoxyCompactList}\small\item\em asservissement interne E\+S\+I\+AL. N\+U\+LL si non defini \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAsserv_a4c740e7b6601383705cdb14d8261956b}\label{classAsserv_a4c740e7b6601383705cdb14d8261956b}} 
+bool {\bfseries temp\+\_\+ignore\+Rear\+Collision\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a738bfd2b93f33eee32256c0865fc9cc6}\label{classAsserv_a738bfd2b93f33eee32256c0865fc9cc6}} 
+bool {\bfseries temp\+\_\+ignore\+Front\+Collision\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_ac560584fe37b6933db7faa8d897d7a97}\label{classAsserv_ac560584fe37b6933db7faa8d897d7a97}} 
+bool {\bfseries temp\+\_\+force\+Rotation\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a51b73c5451bf94a72a89a85b1ec27910}\label{classAsserv_a51b73c5451bf94a72a89a85b1ec27910}} 
+bool {\bfseries match\+Color\+Position\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_a9239da2aed5ae3a77395b8c8a72a5d73}\label{classAsserv_a9239da2aed5ae3a77395b8c8a72a5d73}} 
+\hyperlink{classRobot}{Robot} $\ast$ {\bfseries probot\+\_\+}
+\item 
+\mbox{\Hypertarget{classAsserv_af3daf770333e38e3a4191de99fd85ddc}\label{classAsserv_af3daf770333e38e3a4191de99fd85ddc}} 
+\hyperlink{structRobotPosition}{Robot\+Position} {\bfseries adv\+\_\+pos\+\_\+centre\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Asservissement of the robot.\+It contains default elements. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAsserv_ad1cfde496b9ab7fb2cf6fa0d2cf6d8fc}\label{classAsserv_ad1cfde496b9ab7fb2cf6fa0d2cf6d8fc}} 
+\index{Asserv@{Asserv}!Asserv\+Type@{Asserv\+Type}}
+\index{Asserv\+Type@{Asserv\+Type}!Asserv@{Asserv}}
+\subsubsection{\texorpdfstring{Asserv\+Type}{AsservType}}
+{\footnotesize\ttfamily enum \hyperlink{classAsserv_ad1cfde496b9ab7fb2cf6fa0d2cf6d8fc}{Asserv\+::\+Asserv\+Type}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+motorisation = motors + encoders // T\+O\+DO A configurer dans Extended avec les parametres appropriés de chaque robot 
+
+type d\textquotesingle{}asservissement utilisé \textbackslash{}0=Asserv\+E\+X\+T\+E\+R\+NE 1=E\+S\+I\+A\+L(interne) 2=N\+U\+C\+L\+E\+O(interne) 2=I\+N\+S\+A(interne) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAsserv_a1677fd20a9cb16f78c609951e073550e}\label{classAsserv_a1677fd20a9cb16f78c609951e073550e}} 
+\index{Asserv@{Asserv}!adjust\+Real\+Position@{adjust\+Real\+Position}}
+\index{adjust\+Real\+Position@{adjust\+Real\+Position}!Asserv@{Asserv}}
+\subsubsection{\texorpdfstring{adjust\+Real\+Position()}{adjustRealPosition()}}
+{\footnotesize\ttfamily int Asserv\+::adjust\+Real\+Position (\begin{DoxyParamCaption}\item[{float}]{pos\+\_\+x\+\_\+start\+\_\+mm,  }\item[{float}]{pos\+\_\+y\+\_\+start\+\_\+mm,  }\item[{\hyperlink{structRobotPosition}{Robot\+Position}}]{p,  }\item[{float}]{delta\+\_\+j\+\_\+mm,  }\item[{float}]{delta\+\_\+k\+\_\+mm,  }\item[{float}]{mesure\+\_\+mm,  }\item[{float}]{robot\+\_\+size\+\_\+l\+\_\+mm }\end{DoxyParamCaption})}
+
+pos\+\_\+x\+\_\+start\+\_\+mm pos\+\_\+y\+\_\+start\+\_\+mm p delta\+\_\+j\+\_\+mm delta\+\_\+k\+\_\+mm mesure\+\_\+mm robot\+\_\+size\+\_\+l\+\_\+mm largeur du robot à partir du centre \mbox{\Hypertarget{classAsserv_a888d98868d09718b55e15daecd8c6849}\label{classAsserv_a888d98868d09718b55e15daecd8c6849}} 
+\index{Asserv@{Asserv}!reset\+Encoders@{reset\+Encoders}}
+\index{reset\+Encoders@{reset\+Encoders}!Asserv@{Asserv}}
+\subsubsection{\texorpdfstring{reset\+Encoders()}{resetEncoders()}}
+{\footnotesize\ttfamily void Asserv\+::reset\+Encoders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return objet moving\+Base. D\+E\+P\+R\+E\+C\+A\+T\+ED 
+
+\begin{DoxyReturn}{Returns}
+moving\+Base\+\_\+.
+\end{DoxyReturn}
+reset \hyperlink{classEncoders}{Encoders}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Asserv/Asserv.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Asserv/Asserv.\+cpp\end{DoxyCompactItemize}

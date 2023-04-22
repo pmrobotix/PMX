@@ -1,0 +1,456 @@
+\hypertarget{classb2Fixture}{}\section{b2\+Fixture Class Reference}
+\label{classb2Fixture}\index{b2\+Fixture@{b2\+Fixture}}
+
+
+{\ttfamily \#include $<$b2\+Fixture.\+h$>$}
+
+
+
+Collaboration diagram for b2\+Fixture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classb2Fixture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Shape\+::\+Type \hyperlink{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}{Get\+Type} () const
+\item 
+\hyperlink{classb2Shape}{b2\+Shape} $\ast$ \hyperlink{classb2Fixture_aaa2b73fa212fa53b1c800cccd7a1d31e}{Get\+Shape} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_a783f8bcb19eee659686284872e70f383}\label{classb2Fixture_a783f8bcb19eee659686284872e70f383}} 
+const \hyperlink{classb2Shape}{b2\+Shape} $\ast$ {\bfseries Get\+Shape} () const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}\label{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}} 
+void \hyperlink{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}{Set\+Sensor} (bool sensor)
+\begin{DoxyCompactList}\small\item\em Set if this fixture is a sensor. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}{Is\+Sensor} () const
+\item 
+void \hyperlink{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}{Set\+Filter\+Data} (const \hyperlink{structb2Filter}{b2\+Filter} \&filter)
+\item 
+\mbox{\Hypertarget{classb2Fixture_ad956250d9f684a407992ec178320127e}\label{classb2Fixture_ad956250d9f684a407992ec178320127e}} 
+const \hyperlink{structb2Filter}{b2\+Filter} \& \hyperlink{classb2Fixture_ad956250d9f684a407992ec178320127e}{Get\+Filter\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get the contact filtering data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Fixture_a45d3320f94811d67383c48466165fa26}\label{classb2Fixture_a45d3320f94811d67383c48466165fa26}} 
+void \hyperlink{classb2Fixture_a45d3320f94811d67383c48466165fa26}{Refilter} ()
+\begin{DoxyCompactList}\small\item\em Call this if you want to establish collision that was previously disabled by \hyperlink{classb2ContactFilter_aac8f6155d1f577d125db587f5269289b}{b2\+Contact\+Filter\+::\+Should\+Collide}. \end{DoxyCompactList}\item 
+\hyperlink{classb2Body}{b2\+Body} $\ast$ \hyperlink{classb2Fixture_a9d6536ef274d768e86ab0a8330921535}{Get\+Body} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_ae9cabf82e360f92e8fcb36b1923ab991}\label{classb2Fixture_ae9cabf82e360f92e8fcb36b1923ab991}} 
+const \hyperlink{classb2Body}{b2\+Body} $\ast$ {\bfseries Get\+Body} () const
+\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Fixture_a0241952461f6f1a04a3c850306390fd2}{Get\+Next} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_a6b474fa22b49de3dbe446a67f021beb2}\label{classb2Fixture_a6b474fa22b49de3dbe446a67f021beb2}} 
+const \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ {\bfseries Get\+Next} () const
+\item 
+void $\ast$ \hyperlink{classb2Fixture_ae2a865ed59ffe9b1cb89f577052f4d50}{Get\+User\+Data} () const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}\label{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}} 
+void \hyperlink{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}{Set\+User\+Data} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Set the user data. Use this to store your application specific data. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}{Test\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&p) const
+\item 
+bool \hyperlink{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}{Ray\+Cast} (\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$output, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input, int32 child\+Index) const
+\item 
+void \hyperlink{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}{Get\+Mass\+Data} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$mass\+Data) const
+\item 
+void \hyperlink{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}{Set\+Density} (float32 density)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}\label{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}} 
+float32 \hyperlink{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}{Get\+Density} () const
+\begin{DoxyCompactList}\small\item\em Get the density of this fixture. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}\label{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}} 
+float32 \hyperlink{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}{Get\+Friction} () const
+\begin{DoxyCompactList}\small\item\em Get the coefficient of friction. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}{Set\+Friction} (float32 friction)
+\item 
+\mbox{\Hypertarget{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}\label{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}} 
+float32 \hyperlink{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}{Get\+Restitution} () const
+\begin{DoxyCompactList}\small\item\em Get the coefficient of restitution. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}{Set\+Restitution} (float32 restitution)
+\item 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2Fixture_a158574dc389fec83a05b09ab715c4474}{Get\+A\+A\+BB} (int32 child\+Index) const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a57485e73a2063060e320c7176676cd5e}\label{classb2Fixture_a57485e73a2063060e320c7176676cd5e}} 
+void \hyperlink{classb2Fixture_a57485e73a2063060e320c7176676cd5e}{Dump} (int32 body\+Index)
+\begin{DoxyCompactList}\small\item\em Dump this fixture to the log file. \end{DoxyCompactList}\item 
+b2\+Shape\+::\+Type \hyperlink{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}{Get\+Type} () const
+\item 
+\hyperlink{classb2Shape}{b2\+Shape} $\ast$ \hyperlink{classb2Fixture_a11240a63767be13d93209ea5ac967e4f}{Get\+Shape} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_a22a332c3be988a5f864904d3634c34c6}\label{classb2Fixture_a22a332c3be988a5f864904d3634c34c6}} 
+const \hyperlink{classb2Shape}{b2\+Shape} $\ast$ {\bfseries Get\+Shape} () const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}\label{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}} 
+void \hyperlink{classb2Fixture_a6198a81dcee0fe814d730383ebfa7038}{Set\+Sensor} (bool sensor)
+\begin{DoxyCompactList}\small\item\em Set if this fixture is a sensor. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}{Is\+Sensor} () const
+\item 
+void \hyperlink{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}{Set\+Filter\+Data} (const \hyperlink{structb2Filter}{b2\+Filter} \&filter)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a07e708a6fbc8429a2aa0bf5c8aabcaba}\label{classb2Fixture_a07e708a6fbc8429a2aa0bf5c8aabcaba}} 
+const \hyperlink{structb2Filter}{b2\+Filter} \& \hyperlink{classb2Fixture_a07e708a6fbc8429a2aa0bf5c8aabcaba}{Get\+Filter\+Data} () const
+\begin{DoxyCompactList}\small\item\em Get the contact filtering data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Fixture_a45d3320f94811d67383c48466165fa26}\label{classb2Fixture_a45d3320f94811d67383c48466165fa26}} 
+void \hyperlink{classb2Fixture_a45d3320f94811d67383c48466165fa26}{Refilter} ()
+\begin{DoxyCompactList}\small\item\em Call this if you want to establish collision that was previously disabled by \hyperlink{classb2ContactFilter_aac8f6155d1f577d125db587f5269289b}{b2\+Contact\+Filter\+::\+Should\+Collide}. \end{DoxyCompactList}\item 
+\hyperlink{classb2Body}{b2\+Body} $\ast$ \hyperlink{classb2Fixture_a6f7881f21a9c401542b2fceeb1c1ed1c}{Get\+Body} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_a43009e5d38cd9853f1539cd1c39f0e98}\label{classb2Fixture_a43009e5d38cd9853f1539cd1c39f0e98}} 
+const \hyperlink{classb2Body}{b2\+Body} $\ast$ {\bfseries Get\+Body} () const
+\item 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ \hyperlink{classb2Fixture_accaec7901fa27f08ec0427a6095dba09}{Get\+Next} ()
+\item 
+\mbox{\Hypertarget{classb2Fixture_a1c1ec15bdbc4e8efc1892b6bbf6c4ebf}\label{classb2Fixture_a1c1ec15bdbc4e8efc1892b6bbf6c4ebf}} 
+const \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ {\bfseries Get\+Next} () const
+\item 
+void $\ast$ \hyperlink{classb2Fixture_a812561653393617bd951c566802ddc99}{Get\+User\+Data} () const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}\label{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}} 
+void \hyperlink{classb2Fixture_a3db7f89ef4493247d922fe3d96351ad9}{Set\+User\+Data} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Set the user data. Use this to store your application specific data. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}{Test\+Point} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&p) const
+\item 
+bool \hyperlink{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}{Ray\+Cast} (\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$output, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input, int32 child\+Index) const
+\item 
+void \hyperlink{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}{Get\+Mass\+Data} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$mass\+Data) const
+\item 
+void \hyperlink{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}{Set\+Density} (float32 density)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}\label{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}} 
+float32 \hyperlink{classb2Fixture_a228861bb1b1d7b2fb6e091401340784e}{Get\+Density} () const
+\begin{DoxyCompactList}\small\item\em Get the density of this fixture. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}\label{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}} 
+float32 \hyperlink{classb2Fixture_a2853d799f299cb1ce76e48261d42a5ad}{Get\+Friction} () const
+\begin{DoxyCompactList}\small\item\em Get the coefficient of friction. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}{Set\+Friction} (float32 friction)
+\item 
+\mbox{\Hypertarget{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}\label{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}} 
+float32 \hyperlink{classb2Fixture_ac30becb6f936a9cc825952ca2b40aa14}{Get\+Restitution} () const
+\begin{DoxyCompactList}\small\item\em Get the coefficient of restitution. \end{DoxyCompactList}\item 
+void \hyperlink{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}{Set\+Restitution} (float32 restitution)
+\item 
+const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& \hyperlink{classb2Fixture_a5081778c838ac090bc785bfbf6d76ab7}{Get\+A\+A\+BB} (int32 child\+Index) const
+\item 
+\mbox{\Hypertarget{classb2Fixture_a57485e73a2063060e320c7176676cd5e}\label{classb2Fixture_a57485e73a2063060e320c7176676cd5e}} 
+void \hyperlink{classb2Fixture_a57485e73a2063060e320c7176676cd5e}{Dump} (int32 body\+Index)
+\begin{DoxyCompactList}\small\item\em Dump this fixture to the log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a1f465f3656f098eebfcbc6edf7a9239a}\label{classb2Fixture_a1f465f3656f098eebfcbc6edf7a9239a}} 
+void {\bfseries Create} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator, \hyperlink{classb2Body}{b2\+Body} $\ast$body, const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$def)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a279301181668f724c027020a654efe42}\label{classb2Fixture_a279301181668f724c027020a654efe42}} 
+void {\bfseries Destroy} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a670f1f687521666da6e92885754970b7}\label{classb2Fixture_a670f1f687521666da6e92885754970b7}} 
+void {\bfseries Create\+Proxies} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase, const \hyperlink{structb2Transform}{b2\+Transform} \&xf)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a1def068c9ce09e2ebcccc556951b7979}\label{classb2Fixture_a1def068c9ce09e2ebcccc556951b7979}} 
+void {\bfseries Destroy\+Proxies} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase)
+\item 
+\mbox{\Hypertarget{classb2Fixture_ac8fd15bfd9a3a7ba05f3831e6f598908}\label{classb2Fixture_ac8fd15bfd9a3a7ba05f3831e6f598908}} 
+void {\bfseries Synchronize} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase, const \hyperlink{structb2Transform}{b2\+Transform} \&xf1, const \hyperlink{structb2Transform}{b2\+Transform} \&xf2)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a1f465f3656f098eebfcbc6edf7a9239a}\label{classb2Fixture_a1f465f3656f098eebfcbc6edf7a9239a}} 
+void {\bfseries Create} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator, \hyperlink{classb2Body}{b2\+Body} $\ast$body, const \hyperlink{structb2FixtureDef}{b2\+Fixture\+Def} $\ast$def)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a279301181668f724c027020a654efe42}\label{classb2Fixture_a279301181668f724c027020a654efe42}} 
+void {\bfseries Destroy} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a670f1f687521666da6e92885754970b7}\label{classb2Fixture_a670f1f687521666da6e92885754970b7}} 
+void {\bfseries Create\+Proxies} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase, const \hyperlink{structb2Transform}{b2\+Transform} \&xf)
+\item 
+\mbox{\Hypertarget{classb2Fixture_a1def068c9ce09e2ebcccc556951b7979}\label{classb2Fixture_a1def068c9ce09e2ebcccc556951b7979}} 
+void {\bfseries Destroy\+Proxies} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase)
+\item 
+\mbox{\Hypertarget{classb2Fixture_ac8fd15bfd9a3a7ba05f3831e6f598908}\label{classb2Fixture_ac8fd15bfd9a3a7ba05f3831e6f598908}} 
+void {\bfseries Synchronize} (\hyperlink{classb2BroadPhase}{b2\+Broad\+Phase} $\ast$broad\+Phase, const \hyperlink{structb2Transform}{b2\+Transform} \&xf1, const \hyperlink{structb2Transform}{b2\+Transform} \&xf2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Fixture_ab8c388182fc7d58d930f6b0aa21d5c60}\label{classb2Fixture_ab8c388182fc7d58d930f6b0aa21d5c60}} 
+float32 {\bfseries m\+\_\+density}
+\item 
+\mbox{\Hypertarget{classb2Fixture_aa464962f909cfe76337f67a75bab97cb}\label{classb2Fixture_aa464962f909cfe76337f67a75bab97cb}} 
+\hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ {\bfseries m\+\_\+next}
+\item 
+\mbox{\Hypertarget{classb2Fixture_acc6158e9427200077dd6da48fd770257}\label{classb2Fixture_acc6158e9427200077dd6da48fd770257}} 
+\hyperlink{classb2Body}{b2\+Body} $\ast$ {\bfseries m\+\_\+body}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a2002f3398441d6c8dd0e196740ca4e9e}\label{classb2Fixture_a2002f3398441d6c8dd0e196740ca4e9e}} 
+\hyperlink{classb2Shape}{b2\+Shape} $\ast$ {\bfseries m\+\_\+shape}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a314118ee973ebd14e083553fed1e0212}\label{classb2Fixture_a314118ee973ebd14e083553fed1e0212}} 
+float32 {\bfseries m\+\_\+friction}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a343a35683ce4a79d2151761611027d66}\label{classb2Fixture_a343a35683ce4a79d2151761611027d66}} 
+float32 {\bfseries m\+\_\+restitution}
+\item 
+\mbox{\Hypertarget{classb2Fixture_af77b2ed5d4a2299373262667c81bfe44}\label{classb2Fixture_af77b2ed5d4a2299373262667c81bfe44}} 
+\hyperlink{structb2FixtureProxy}{b2\+Fixture\+Proxy} $\ast$ {\bfseries m\+\_\+proxies}
+\item 
+\mbox{\Hypertarget{classb2Fixture_aae71b4a0071346aba2eb6f4a764785a4}\label{classb2Fixture_aae71b4a0071346aba2eb6f4a764785a4}} 
+int32 {\bfseries m\+\_\+proxy\+Count}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a33b66959856506a6d27b32dad0e284c7}\label{classb2Fixture_a33b66959856506a6d27b32dad0e284c7}} 
+\hyperlink{structb2Filter}{b2\+Filter} {\bfseries m\+\_\+filter}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a4b6b47a8de6d37acf9b980b33b22f634}\label{classb2Fixture_a4b6b47a8de6d37acf9b980b33b22f634}} 
+bool {\bfseries m\+\_\+is\+Sensor}
+\item 
+\mbox{\Hypertarget{classb2Fixture_acbe500f3ceeb483aa404516bff8ae51f}\label{classb2Fixture_acbe500f3ceeb483aa404516bff8ae51f}} 
+void $\ast$ {\bfseries m\+\_\+user\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2Fixture_acd34621309c1bdec7335f7545253d704}\label{classb2Fixture_acd34621309c1bdec7335f7545253d704}} 
+class {\bfseries b2\+Body}
+\item 
+\mbox{\Hypertarget{classb2Fixture_ac7f385a7c800a297a8a6e9be3512e3ab}\label{classb2Fixture_ac7f385a7c800a297a8a6e9be3512e3ab}} 
+class {\bfseries b2\+World}
+\item 
+\mbox{\Hypertarget{classb2Fixture_ab8681cbb624c63374e16c37686516d3b}\label{classb2Fixture_ab8681cbb624c63374e16c37686516d3b}} 
+class {\bfseries b2\+Contact}
+\item 
+\mbox{\Hypertarget{classb2Fixture_a3bbd3ece64fd6a24342844069f4f6ec0}\label{classb2Fixture_a3bbd3ece64fd6a24342844069f4f6ec0}} 
+class {\bfseries b2\+Contact\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A fixture is used to attach a shape to a body for collision detection. A fixture inherits its transform from its parent. Fixtures hold additional non-\/geometric data such as friction, collision filters, etc. Fixtures are created via \hyperlink{classb2Body_aa4892301e9b9d62ede5e93dad1743894}{b2\+Body\+::\+Create\+Fixture}. \begin{DoxyWarning}{Warning}
+you cannot reuse fixtures. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2Fixture_a158574dc389fec83a05b09ab715c4474}\label{classb2Fixture_a158574dc389fec83a05b09ab715c4474}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+A\+A\+BB@{Get\+A\+A\+BB}}
+\index{Get\+A\+A\+BB@{Get\+A\+A\+BB}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+A\+A\+B\+B()}{GetAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2AABB}{b2\+A\+A\+BB} \& b2\+Fixture\+::\+Get\+A\+A\+BB (\begin{DoxyParamCaption}\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the fixture\textquotesingle{}s \hyperlink{classAABB}{A\+A\+BB}. This \hyperlink{classAABB}{A\+A\+BB} may be enlarge and/or stale. If you need a more accurate \hyperlink{classAABB}{A\+A\+BB}, compute it using the shape and the body transform. \mbox{\Hypertarget{classb2Fixture_a5081778c838ac090bc785bfbf6d76ab7}\label{classb2Fixture_a5081778c838ac090bc785bfbf6d76ab7}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+A\+A\+BB@{Get\+A\+A\+BB}}
+\index{Get\+A\+A\+BB@{Get\+A\+A\+BB}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+A\+A\+B\+B()}{GetAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structb2AABB}{b2\+A\+A\+BB}\& b2\+Fixture\+::\+Get\+A\+A\+BB (\begin{DoxyParamCaption}\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const}
+
+Get the fixture\textquotesingle{}s \hyperlink{classAABB}{A\+A\+BB}. This \hyperlink{classAABB}{A\+A\+BB} may be enlarge and/or stale. If you need a more accurate \hyperlink{classAABB}{A\+A\+BB}, compute it using the shape and the body transform. \mbox{\Hypertarget{classb2Fixture_a6f7881f21a9c401542b2fceeb1c1ed1c}\label{classb2Fixture_a6f7881f21a9c401542b2fceeb1c1ed1c}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Body@{Get\+Body}}
+\index{Get\+Body@{Get\+Body}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Body()}{GetBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Body}{b2\+Body}$\ast$ b2\+Fixture\+::\+Get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the parent body of this fixture. This is nullptr if the fixture is not attached. \begin{DoxyReturn}{Returns}
+the parent body. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a9d6536ef274d768e86ab0a8330921535}\label{classb2Fixture_a9d6536ef274d768e86ab0a8330921535}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Body@{Get\+Body}}
+\index{Get\+Body@{Get\+Body}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Body()}{GetBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Body}{b2\+Body} $\ast$ b2\+Fixture\+::\+Get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the parent body of this fixture. This is N\+U\+LL if the fixture is not attached. \begin{DoxyReturn}{Returns}
+the parent body. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}\label{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Mass\+Data@{Get\+Mass\+Data}}
+\index{Get\+Mass\+Data@{Get\+Mass\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Mass\+Data()}{GetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Get\+Mass\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{mass\+Data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the mass data for this fixture. The mass data is based on the density and the shape. The rotational inertia is about the shape\textquotesingle{}s origin. This operation may be expensive. \mbox{\Hypertarget{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}\label{classb2Fixture_a4532a12e848c5ceb5a3b94cf45b7cbad}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Mass\+Data@{Get\+Mass\+Data}}
+\index{Get\+Mass\+Data@{Get\+Mass\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Mass\+Data()}{GetMassData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Get\+Mass\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{mass\+Data }\end{DoxyParamCaption}) const}
+
+Get the mass data for this fixture. The mass data is based on the density and the shape. The rotational inertia is about the shape\textquotesingle{}s origin. This operation may be expensive. \mbox{\Hypertarget{classb2Fixture_accaec7901fa27f08ec0427a6095dba09}\label{classb2Fixture_accaec7901fa27f08ec0427a6095dba09}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Next()}{GetNext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture}$\ast$ b2\+Fixture\+::\+Get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the next fixture in the parent body\textquotesingle{}s fixture \hyperlink{protocollist-p}{list}. \begin{DoxyReturn}{Returns}
+the next shape. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a0241952461f6f1a04a3c850306390fd2}\label{classb2Fixture_a0241952461f6f1a04a3c850306390fd2}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Next()}{GetNext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Fixture}{b2\+Fixture} $\ast$ b2\+Fixture\+::\+Get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the next fixture in the parent body\textquotesingle{}s fixture \hyperlink{protocollist-p}{list}. \begin{DoxyReturn}{Returns}
+the next shape. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a11240a63767be13d93209ea5ac967e4f}\label{classb2Fixture_a11240a63767be13d93209ea5ac967e4f}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Shape@{Get\+Shape}}
+\index{Get\+Shape@{Get\+Shape}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Shape()}{GetShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Shape}{b2\+Shape}$\ast$ b2\+Fixture\+::\+Get\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the child shape. You can modify the child shape, however you should not change the number of vertices because this will crash some collision caching mechanisms. Manipulating the shape may lead to non-\/physical behavior. \mbox{\Hypertarget{classb2Fixture_aaa2b73fa212fa53b1c800cccd7a1d31e}\label{classb2Fixture_aaa2b73fa212fa53b1c800cccd7a1d31e}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Shape@{Get\+Shape}}
+\index{Get\+Shape@{Get\+Shape}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Shape()}{GetShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classb2Shape}{b2\+Shape} $\ast$ b2\+Fixture\+::\+Get\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the child shape. You can modify the child shape, however you should not change the number of vertices because this will crash some collision caching mechanisms. Manipulating the shape may lead to non-\/physical behavior. \mbox{\Hypertarget{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}\label{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Type@{Get\+Type}}
+\index{Get\+Type@{Get\+Type}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Type()}{GetType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily b2\+Shape\+::\+Type b2\+Fixture\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the type of the child shape. You can use this to down cast to the concrete shape. \begin{DoxyReturn}{Returns}
+the shape type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}\label{classb2Fixture_a7a566c1e3b768f6a72ebc3b758aad70e}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+Type@{Get\+Type}}
+\index{Get\+Type@{Get\+Type}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+Type()}{GetType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily b2\+Shape\+::\+Type b2\+Fixture\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the type of the child shape. You can use this to down cast to the concrete shape. \begin{DoxyReturn}{Returns}
+the shape type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_a812561653393617bd951c566802ddc99}\label{classb2Fixture_a812561653393617bd951c566802ddc99}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+User\+Data()}{GetUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ b2\+Fixture\+::\+Get\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the user data that was assigned in the fixture definition. Use this to store your application specific data. \mbox{\Hypertarget{classb2Fixture_ae2a865ed59ffe9b1cb89f577052f4d50}\label{classb2Fixture_ae2a865ed59ffe9b1cb89f577052f4d50}} 
+\index{b2\+Fixture@{b2\+Fixture}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Get\+User\+Data()}{GetUserData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void $\ast$ b2\+Fixture\+::\+Get\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the user data that was assigned in the fixture definition. Use this to store your application specific data. \mbox{\Hypertarget{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}\label{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}} 
+\index{b2\+Fixture@{b2\+Fixture}!Is\+Sensor@{Is\+Sensor}}
+\index{Is\+Sensor@{Is\+Sensor}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Is\+Sensor()}{IsSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Is\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Is this fixture a sensor (non-\/solid)? \begin{DoxyReturn}{Returns}
+the true if the shape is a sensor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}\label{classb2Fixture_aedd23d27ff7ce2d53b6c5b7a878a35d3}} 
+\index{b2\+Fixture@{b2\+Fixture}!Is\+Sensor@{Is\+Sensor}}
+\index{Is\+Sensor@{Is\+Sensor}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Is\+Sensor()}{IsSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Is\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Is this fixture a sensor (non-\/solid)? \begin{DoxyReturn}{Returns}
+the true if the shape is a sensor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}\label{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}} 
+\index{b2\+Fixture@{b2\+Fixture}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$}]{output,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input,  }\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const}
+
+Cast a ray against this shape. 
+\begin{DoxyParams}{Parameters}
+{\em output} & the ray-\/cast results. \\
+\hline
+{\em input} & the ray-\/cast input parameters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}\label{classb2Fixture_aaaafd69aa3e1a922acc4b9d7fb49170a}} 
+\index{b2\+Fixture@{b2\+Fixture}!Ray\+Cast@{Ray\+Cast}}
+\index{Ray\+Cast@{Ray\+Cast}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Ray\+Cast()}{RayCast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Ray\+Cast (\begin{DoxyParamCaption}\item[{\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$}]{output,  }\item[{const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&}]{input,  }\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cast a ray against this shape. 
+\begin{DoxyParams}{Parameters}
+{\em output} & the ray-\/cast results. \\
+\hline
+{\em input} & the ray-\/cast input parameters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}\label{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Density@{Set\+Density}}
+\index{Set\+Density@{Set\+Density}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Density()}{SetDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Density (\begin{DoxyParamCaption}\item[{float32}]{density }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the density of this fixture. This will {\itshape not} automatically adjust the mass of the body. You must call \hyperlink{classb2Body_a109d8567c6ae84c61fce2919fb209c63}{b2\+Body\+::\+Reset\+Mass\+Data} to update the body\textquotesingle{}s mass. \mbox{\Hypertarget{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}\label{classb2Fixture_ad4e1d9323103975c8931d022b952d04a}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Density@{Set\+Density}}
+\index{Set\+Density@{Set\+Density}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Density()}{SetDensity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Density (\begin{DoxyParamCaption}\item[{float32}]{density }\end{DoxyParamCaption})}
+
+Set the density of this fixture. This will {\itshape not} automatically adjust the mass of the body. You must call \hyperlink{classb2Body_a109d8567c6ae84c61fce2919fb209c63}{b2\+Body\+::\+Reset\+Mass\+Data} to update the body\textquotesingle{}s mass. \mbox{\Hypertarget{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}\label{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Filter\+Data@{Set\+Filter\+Data}}
+\index{Set\+Filter\+Data@{Set\+Filter\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Filter\+Data()}{SetFilterData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Filter\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Filter}{b2\+Filter} \&}]{filter }\end{DoxyParamCaption})}
+
+Set the contact filtering data. This will not update contacts until the next time step when either parent body is active and awake. This automatically calls Refilter. \mbox{\Hypertarget{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}\label{classb2Fixture_a2c5e0d12c174927a4ad550459be334ad}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Filter\+Data@{Set\+Filter\+Data}}
+\index{Set\+Filter\+Data@{Set\+Filter\+Data}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Filter\+Data()}{SetFilterData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Filter\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Filter}{b2\+Filter} \&}]{filter }\end{DoxyParamCaption})}
+
+Set the contact filtering data. This will not update contacts until the next time step when either parent body is active and awake. This automatically calls Refilter. \mbox{\Hypertarget{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}\label{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Friction@{Set\+Friction}}
+\index{Set\+Friction@{Set\+Friction}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Friction()}{SetFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Friction (\begin{DoxyParamCaption}\item[{float32}]{friction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the coefficient of friction. This will {\itshape not} change the friction of existing contacts. \mbox{\Hypertarget{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}\label{classb2Fixture_ad0cd91eef5858c8ef1d6b62cc2a34ea2}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Friction@{Set\+Friction}}
+\index{Set\+Friction@{Set\+Friction}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Friction()}{SetFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Friction (\begin{DoxyParamCaption}\item[{float32}]{friction }\end{DoxyParamCaption})}
+
+Set the coefficient of friction. This will {\itshape not} change the friction of existing contacts. \mbox{\Hypertarget{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}\label{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Restitution@{Set\+Restitution}}
+\index{Set\+Restitution@{Set\+Restitution}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Restitution()}{SetRestitution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Restitution (\begin{DoxyParamCaption}\item[{float32}]{restitution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the coefficient of restitution. This will {\itshape not} change the restitution of existing contacts. \mbox{\Hypertarget{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}\label{classb2Fixture_a19c507332e4f7bd04a05f00426f11ee4}} 
+\index{b2\+Fixture@{b2\+Fixture}!Set\+Restitution@{Set\+Restitution}}
+\index{Set\+Restitution@{Set\+Restitution}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Set\+Restitution()}{SetRestitution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Fixture\+::\+Set\+Restitution (\begin{DoxyParamCaption}\item[{float32}]{restitution }\end{DoxyParamCaption})}
+
+Set the coefficient of restitution. This will {\itshape not} change the restitution of existing contacts. \mbox{\Hypertarget{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}\label{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}} 
+\index{b2\+Fixture@{b2\+Fixture}!Test\+Point@{Test\+Point}}
+\index{Test\+Point@{Test\+Point}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Test\+Point()}{TestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Test a point for containment in this fixture. 
+\begin{DoxyParams}{Parameters}
+{\em p} & a point in world coordinates. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}\label{classb2Fixture_aa56d3ca04a5d0478c6477876cd480cc6}} 
+\index{b2\+Fixture@{b2\+Fixture}!Test\+Point@{Test\+Point}}
+\index{Test\+Point@{Test\+Point}!b2\+Fixture@{b2\+Fixture}}
+\subsubsection{\texorpdfstring{Test\+Point()}{TestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Fixture\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{p }\end{DoxyParamCaption}) const}
+
+Test a point for containment in this fixture. 
+\begin{DoxyParams}{Parameters}
+{\em p} & a point in world coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+Fixture.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Dynamics/b2\+Fixture.\+cpp\end{DoxyCompactItemize}

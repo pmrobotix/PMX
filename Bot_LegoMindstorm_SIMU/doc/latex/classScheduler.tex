@@ -1,0 +1,1162 @@
+\hypertarget{classScheduler}{}\section{Scheduler Class Reference}
+\label{classScheduler}\index{Scheduler@{Scheduler}}
+
+
+\hyperlink{classScheduler}{Scheduler} is responsible for triggering the scheduled callbacks. You should not use system timer for your game logic. Instead, use this class.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Scheduler.\+h$>$}
+
+
+
+Inheritance diagram for Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classScheduler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScheduler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}{Scheduler} ()
+\item 
+virtual \hyperlink{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}{$\sim$\+Scheduler} ()
+\item 
+float \hyperlink{classScheduler_a2ec13a52fa6a75450f17f122444069a9}{get\+Time\+Scale} ()
+\item 
+void \hyperlink{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}{set\+Time\+Scale} (float time\+Scale)
+\item 
+void \hyperlink{classScheduler_a533ad6047192a10444e2f4d386f3766a}{update} (float dt)
+\item 
+void \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{schedule} (const cc\+Scheduler\+Func \&callback, void $\ast$target, float interval, unsigned int repeat, float delay, bool paused, const std\+::string \&key)
+\item 
+void \hyperlink{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}{schedule} (const cc\+Scheduler\+Func \&callback, void $\ast$target, float interval, bool paused, const std\+::string \&key)
+\item 
+void \hyperlink{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}{schedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, unsigned int repeat, float delay, bool paused)
+\item 
+void \hyperlink{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}{schedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, bool paused)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classScheduler_ad566d55a4941459c185e6faeddc3a70f}{schedule\+Update} (T $\ast$target, int priority, bool paused)
+\item 
+void \hyperlink{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}{unschedule} (const std\+::string \&key, void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a6d354b587d5f12df2e6094116fd65c71}{unschedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target)
+\item 
+void \hyperlink{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}{unschedule\+Update} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}{unschedule\+All\+For\+Target} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}{unschedule\+All} ()
+\item 
+void \hyperlink{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}{unschedule\+All\+With\+Min\+Priority} (int min\+Priority)
+\item 
+bool \hyperlink{classScheduler_a5b534eae62394806603e522ab4191d3b}{is\+Scheduled} (const std\+::string \&key, void $\ast$target)
+\item 
+bool \hyperlink{classScheduler_a95ed753a2875e2635b5120cee5c3e432}{is\+Scheduled} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target)
+\item 
+void \hyperlink{classScheduler_a409cb6f82cffd7d779154d9d813664af}{pause\+Target} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_aebdab814dbc692356f813d335c3b92af}{resume\+Target} (void $\ast$target)
+\item 
+bool \hyperlink{classScheduler_aef17d4d358516d712c32ac421202198c}{is\+Target\+Paused} (void $\ast$target)
+\item 
+std\+::set$<$ void $\ast$ $>$ \hyperlink{classScheduler_a5a624f0bf247439e11f45388dce5d465}{pause\+All\+Targets} ()
+\item 
+std\+::set$<$ void $\ast$ $>$ \hyperlink{classScheduler_ac981921d200acdeedffa17c5e0c06f77}{pause\+All\+Targets\+With\+Min\+Priority} (int min\+Priority)
+\item 
+void \hyperlink{classScheduler_a5b568bffe196f3a5cefe0739354dc900}{resume\+Targets} (const std\+::set$<$ void $\ast$$>$ \&targets\+To\+Resume)
+\item 
+void \hyperlink{classScheduler_acd6da28a03a7f8b9df377f1e05e7883f}{perform\+Function\+In\+Cocos\+Thread} (const std\+::function$<$ void()$>$ \&function)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}{schedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, unsigned int repeat, float delay, bool paused)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}{schedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, bool paused)
+\item 
+{\footnotesize template$<$class T $>$ }\\C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}{schedule\+Update\+For\+Target} (T $\ast$target, int priority, bool paused)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}{unschedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}{is\+Scheduled\+For\+Target} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}{unschedule\+Update\+For\+Target} (\hyperlink{classRef}{Ref} $\ast$target)
+\item 
+\hyperlink{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}{Scheduler} ()
+\item 
+virtual \hyperlink{classScheduler_a900bd7768c2580dbc3a08c2873aa6086}{$\sim$\+Scheduler} ()
+\item 
+float \hyperlink{classScheduler_a2ec13a52fa6a75450f17f122444069a9}{get\+Time\+Scale} ()
+\item 
+void \hyperlink{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}{set\+Time\+Scale} (float time\+Scale)
+\item 
+void \hyperlink{classScheduler_a533ad6047192a10444e2f4d386f3766a}{update} (float dt)
+\item 
+void \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{schedule} (const cc\+Scheduler\+Func \&callback, void $\ast$target, float interval, unsigned int repeat, float delay, bool paused, const std\+::string \&key)
+\item 
+void \hyperlink{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}{schedule} (const cc\+Scheduler\+Func \&callback, void $\ast$target, float interval, bool paused, const std\+::string \&key)
+\item 
+void \hyperlink{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}{schedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, unsigned int repeat, float delay, bool paused)
+\item 
+void \hyperlink{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}{schedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, bool paused)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classScheduler_ad566d55a4941459c185e6faeddc3a70f}{schedule\+Update} (T $\ast$target, int priority, bool paused)
+\item 
+void \hyperlink{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}{unschedule} (const std\+::string \&key, void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a6d354b587d5f12df2e6094116fd65c71}{unschedule} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target)
+\item 
+void \hyperlink{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}{unschedule\+Update} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}{unschedule\+All\+For\+Target} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}{unschedule\+All} ()
+\item 
+void \hyperlink{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}{unschedule\+All\+With\+Min\+Priority} (int min\+Priority)
+\item 
+bool \hyperlink{classScheduler_a57e1ce8ec29f360c27d82d91028b23a5}{is\+Scheduled} (const std\+::string \&key, const void $\ast$target) const
+\item 
+bool \hyperlink{classScheduler_aa43205eb0e74dd43834705a45e4fbdf1}{is\+Scheduled} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, const \hyperlink{classRef}{Ref} $\ast$target) const
+\item 
+void \hyperlink{classScheduler_a409cb6f82cffd7d779154d9d813664af}{pause\+Target} (void $\ast$target)
+\item 
+void \hyperlink{classScheduler_aebdab814dbc692356f813d335c3b92af}{resume\+Target} (void $\ast$target)
+\item 
+bool \hyperlink{classScheduler_aef17d4d358516d712c32ac421202198c}{is\+Target\+Paused} (void $\ast$target)
+\item 
+std\+::set$<$ void $\ast$ $>$ \hyperlink{classScheduler_a3c551579277e1746f260d8397b4ac6ee}{pause\+All\+Targets} ()
+\item 
+std\+::set$<$ void $\ast$ $>$ \hyperlink{classScheduler_a306504d4f42cbe75cbe948b0d64d2750}{pause\+All\+Targets\+With\+Min\+Priority} (int min\+Priority)
+\item 
+void \hyperlink{classScheduler_a5b568bffe196f3a5cefe0739354dc900}{resume\+Targets} (const std\+::set$<$ void $\ast$$>$ \&targets\+To\+Resume)
+\item 
+void \hyperlink{classScheduler_a24dcb12852832912c43298288c03895f}{perform\+Function\+In\+Cocos\+Thread} (std\+::function$<$ void()$>$ function)
+\item 
+void \hyperlink{classScheduler_a8872d90ed82fdb19f93f9bd30e2837aa}{remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread} ()
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}{schedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, unsigned int repeat, float delay, bool paused)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}{schedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target, float interval, bool paused)
+\item 
+{\footnotesize template$<$class T $>$ }\\C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}{schedule\+Update\+For\+Target} (T $\ast$target, int priority, bool paused)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}{unschedule\+Selector} (S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector, \hyperlink{classRef}{Ref} $\ast$target)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}{is\+Scheduled\+For\+Target} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE selector)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}{unschedule\+Update\+For\+Target} (\hyperlink{classRef}{Ref} $\ast$target)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classScheduler_ab81137eee61d428046a59dd036a9bf33}{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM} = I\+N\+T\+\_\+\+M\+IN
+\item 
+static const int \hyperlink{classScheduler_aff5f555d99f98484e7b7f46450089460}{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN} = \hyperlink{classScheduler_ab81137eee61d428046a59dd036a9bf33}{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM} + 1
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classScheduler_a9910c07a3c437d44478004a5c407834a}{schedule\+Per\+Frame} (const cc\+Scheduler\+Func \&callback, void $\ast$target, int priority, bool paused)
+\item 
+\mbox{\Hypertarget{classScheduler_a0d620448fd72d27c419ee44e9306534d}\label{classScheduler_a0d620448fd72d27c419ee44e9306534d}} 
+void {\bfseries remove\+Hash\+Element} (struct \hyperlink{struct__hashSelectorEntry}{\+\_\+hash\+Selector\+Entry} $\ast$element)
+\item 
+\mbox{\Hypertarget{classScheduler_a8737ffcc95536a8627da93228c55520b}\label{classScheduler_a8737ffcc95536a8627da93228c55520b}} 
+void {\bfseries remove\+Update\+From\+Hash} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$entry)
+\item 
+\mbox{\Hypertarget{classScheduler_ac8a8ac12f4f63a635143e835d975d6f1}\label{classScheduler_ac8a8ac12f4f63a635143e835d975d6f1}} 
+void {\bfseries priority\+In} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$$\ast$\hyperlink{protocollist-p}{list}, const cc\+Scheduler\+Func \&callback, void $\ast$target, int priority, bool paused)
+\item 
+\mbox{\Hypertarget{classScheduler_af5a45f15eee06968c40c59a4614797c2}\label{classScheduler_af5a45f15eee06968c40c59a4614797c2}} 
+void {\bfseries append\+In} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$$\ast$\hyperlink{protocollist-p}{list}, const cc\+Scheduler\+Func \&callback, void $\ast$target, bool paused)
+\item 
+void \hyperlink{classScheduler_a9910c07a3c437d44478004a5c407834a}{schedule\+Per\+Frame} (const cc\+Scheduler\+Func \&callback, void $\ast$target, int priority, bool paused)
+\item 
+\mbox{\Hypertarget{classScheduler_a0d620448fd72d27c419ee44e9306534d}\label{classScheduler_a0d620448fd72d27c419ee44e9306534d}} 
+void {\bfseries remove\+Hash\+Element} (struct \hyperlink{struct__hashSelectorEntry}{\+\_\+hash\+Selector\+Entry} $\ast$element)
+\item 
+\mbox{\Hypertarget{classScheduler_a8737ffcc95536a8627da93228c55520b}\label{classScheduler_a8737ffcc95536a8627da93228c55520b}} 
+void {\bfseries remove\+Update\+From\+Hash} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$entry)
+\item 
+\mbox{\Hypertarget{classScheduler_ac8a8ac12f4f63a635143e835d975d6f1}\label{classScheduler_ac8a8ac12f4f63a635143e835d975d6f1}} 
+void {\bfseries priority\+In} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$$\ast$\hyperlink{protocollist-p}{list}, const cc\+Scheduler\+Func \&callback, void $\ast$target, int priority, bool paused)
+\item 
+\mbox{\Hypertarget{classScheduler_af5a45f15eee06968c40c59a4614797c2}\label{classScheduler_af5a45f15eee06968c40c59a4614797c2}} 
+void {\bfseries append\+In} (struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$$\ast$\hyperlink{protocollist-p}{list}, const cc\+Scheduler\+Func \&callback, void $\ast$target, bool paused)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScheduler_a8dde95d0e29d1638cc3d121830a12b83}\label{classScheduler_a8dde95d0e29d1638cc3d121830a12b83}} 
+float {\bfseries \+\_\+time\+Scale}
+\item 
+\mbox{\Hypertarget{classScheduler_a8887ae5d78aba7c6254815b724ec2e0e}\label{classScheduler_a8887ae5d78aba7c6254815b724ec2e0e}} 
+struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$ {\bfseries \+\_\+updates\+Neg\+List}
+\item 
+\mbox{\Hypertarget{classScheduler_a5f6e922997d57ecd58ced1b467c65f52}\label{classScheduler_a5f6e922997d57ecd58ced1b467c65f52}} 
+struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$ {\bfseries \+\_\+updates0\+List}
+\item 
+\mbox{\Hypertarget{classScheduler_a6ba8963695f6b09483f58b46b4b84f57}\label{classScheduler_a6ba8963695f6b09483f58b46b4b84f57}} 
+struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$ {\bfseries \+\_\+updates\+Pos\+List}
+\item 
+\mbox{\Hypertarget{classScheduler_a3ad610866d540c40d6f0a15ec2f55c4b}\label{classScheduler_a3ad610866d540c40d6f0a15ec2f55c4b}} 
+struct \hyperlink{struct__hashUpdateEntry}{\+\_\+hash\+Update\+Entry} $\ast$ {\bfseries \+\_\+hash\+For\+Updates}
+\item 
+\mbox{\Hypertarget{classScheduler_abc79758f16e4124d0b66f2adb5827e4c}\label{classScheduler_abc79758f16e4124d0b66f2adb5827e4c}} 
+struct \hyperlink{struct__hashSelectorEntry}{\+\_\+hash\+Selector\+Entry} $\ast$ {\bfseries \+\_\+hash\+For\+Timers}
+\item 
+\mbox{\Hypertarget{classScheduler_a7baf55db11c1ca73c7085605692021ef}\label{classScheduler_a7baf55db11c1ca73c7085605692021ef}} 
+struct \hyperlink{struct__hashSelectorEntry}{\+\_\+hash\+Selector\+Entry} $\ast$ {\bfseries \+\_\+current\+Target}
+\item 
+\mbox{\Hypertarget{classScheduler_aee3217f15a9dbe25d98d53607b2f7643}\label{classScheduler_aee3217f15a9dbe25d98d53607b2f7643}} 
+bool {\bfseries \+\_\+current\+Target\+Salvaged}
+\item 
+\mbox{\Hypertarget{classScheduler_ad9971f6f49f84fc8111fa0e7d56ed057}\label{classScheduler_ad9971f6f49f84fc8111fa0e7d56ed057}} 
+bool {\bfseries \+\_\+update\+Hash\+Locked}
+\item 
+\mbox{\Hypertarget{classScheduler_a024850bf53629336393fccf31d333606}\label{classScheduler_a024850bf53629336393fccf31d333606}} 
+std\+::vector$<$ std\+::function$<$ void()$>$ $>$ {\bfseries \+\_\+functions\+To\+Perform}
+\item 
+\mbox{\Hypertarget{classScheduler_aed63ec9d9751e86abc953ea06ee58388}\label{classScheduler_aed63ec9d9751e86abc953ea06ee58388}} 
+std\+::mutex {\bfseries \+\_\+perform\+Mutex}
+\item 
+\mbox{\Hypertarget{classScheduler_a91e5bcc3383dd13d978d37c0e597975a}\label{classScheduler_a91e5bcc3383dd13d978d37c0e597975a}} 
+std\+::vector$<$ struct \hyperlink{struct__listEntry}{\+\_\+list\+Entry} $\ast$ $>$ {\bfseries \+\_\+update\+Delete\+Vector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classScheduler}{Scheduler} is responsible for triggering the scheduled callbacks. You should not use system timer for your game logic. Instead, use this class. 
+
+There are 2 different types of callbacks (selectors)\+:
+
+
+\begin{DoxyItemize}
+\item update selector\+: the \textquotesingle{}update\textquotesingle{} selector will be called every frame. You can customize the priority.
+\item custom selector\+: A custom selector will be called every frame, or with a custom interval of time
+\end{DoxyItemize}
+
+The \textquotesingle{}custom selectors\textquotesingle{} should be avoided when possible. It is faster, and consumes less memory to use the \textquotesingle{}update selector\textquotesingle{}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}\label{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}} 
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{Scheduler()}{Scheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scheduler\+::\+Scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor
+
+ctor \mbox{\Hypertarget{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}\label{classScheduler_afc8187779b46f64039d3ffa58f0dbe51}} 
+\index{Scheduler@{Scheduler}!````~Scheduler@{$\sim$\+Scheduler}}
+\index{````~Scheduler@{$\sim$\+Scheduler}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{$\sim$\+Scheduler()}{~Scheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scheduler\+::$\sim$\+Scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor
+
+NA  NA \mbox{\Hypertarget{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}\label{classScheduler_a3b61aac11466cd45ae42ab8c2b0013f6}} 
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{Scheduler()}{Scheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scheduler\+::\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor
+
+ctor \mbox{\Hypertarget{classScheduler_a900bd7768c2580dbc3a08c2873aa6086}\label{classScheduler_a900bd7768c2580dbc3a08c2873aa6086}} 
+\index{Scheduler@{Scheduler}!````~Scheduler@{$\sim$\+Scheduler}}
+\index{````~Scheduler@{$\sim$\+Scheduler}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{$\sim$\+Scheduler()}{~Scheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Scheduler\+::$\sim$\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classScheduler_a2ec13a52fa6a75450f17f122444069a9}\label{classScheduler_a2ec13a52fa6a75450f17f122444069a9}} 
+\index{Scheduler@{Scheduler}!get\+Time\+Scale@{get\+Time\+Scale}}
+\index{get\+Time\+Scale@{get\+Time\+Scale}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{get\+Time\+Scale()}{getTimeScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Scheduler\+::get\+Time\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the time scale of schedule callbacks. \begin{DoxySeeAlso}{See also}
+\hyperlink{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}{Scheduler\+::set\+Time\+Scale()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classScheduler_a2ec13a52fa6a75450f17f122444069a9}\label{classScheduler_a2ec13a52fa6a75450f17f122444069a9}} 
+\index{Scheduler@{Scheduler}!get\+Time\+Scale@{get\+Time\+Scale}}
+\index{get\+Time\+Scale@{get\+Time\+Scale}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{get\+Time\+Scale()}{getTimeScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Scheduler\+::get\+Time\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the time scale of schedule callbacks. \begin{DoxySeeAlso}{See also}
+\hyperlink{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}{Scheduler\+::set\+Time\+Scale()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classScheduler_a57e1ce8ec29f360c27d82d91028b23a5}\label{classScheduler_a57e1ce8ec29f360c27d82d91028b23a5}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled@{is\+Scheduled}}
+\index{is\+Scheduled@{is\+Scheduled}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled()}{isScheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Scheduled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const void $\ast$}]{target }\end{DoxyParamCaption}) const}
+
+Checks whether a callback associated with \textquotesingle{}key\textquotesingle{} and \textquotesingle{}target\textquotesingle{} is scheduled. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+{\em target} & The target of the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specified callback is invoked, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5b534eae62394806603e522ab4191d3b}\label{classScheduler_a5b534eae62394806603e522ab4191d3b}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled@{is\+Scheduled}}
+\index{is\+Scheduled@{is\+Scheduled}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled()}{isScheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Scheduled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Checks whether a callback associated with \textquotesingle{}key\textquotesingle{} and \textquotesingle{}target\textquotesingle{} is scheduled. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+{\em target} & The target of the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specified callback is invoked, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aa43205eb0e74dd43834705a45e4fbdf1}\label{classScheduler_aa43205eb0e74dd43834705a45e4fbdf1}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled@{is\+Scheduled}}
+\index{is\+Scheduled@{is\+Scheduled}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled()}{isScheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Scheduled (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{const \hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption}) const}
+
+Checks whether a selector for a given target is scheduled. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The selector to be checked. \\
+\hline
+{\em target} & The target of the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specified selector is invoked, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a95ed753a2875e2635b5120cee5c3e432}\label{classScheduler_a95ed753a2875e2635b5120cee5c3e432}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled@{is\+Scheduled}}
+\index{is\+Scheduled@{is\+Scheduled}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled()}{isScheduled()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Scheduled (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Checks whether a selector for a given target is scheduled. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The selector to be checked. \\
+\hline
+{\em target} & The target of the callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specified selector is invoked, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}\label{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled\+For\+Target@{is\+Scheduled\+For\+Target}}
+\index{is\+Scheduled\+For\+Target@{is\+Scheduled\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled\+For\+Target()}{isScheduledForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Scheduler\+::is\+Scheduled\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether a selector for a given target is scheduled. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000058}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_a5b534eae62394806603e522ab4191d3b}{Scheduler\+::is\+Scheduled}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}\label{classScheduler_a9cdd2ece7f43eaca5662d12ae0b95a87}} 
+\index{Scheduler@{Scheduler}!is\+Scheduled\+For\+Target@{is\+Scheduled\+For\+Target}}
+\index{is\+Scheduled\+For\+Target@{is\+Scheduled\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Scheduled\+For\+Target()}{isScheduledForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Scheduler\+::is\+Scheduled\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether a selector for a given target is scheduled. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000293}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_a5b534eae62394806603e522ab4191d3b}{Scheduler\+::is\+Scheduled}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aef17d4d358516d712c32ac421202198c}\label{classScheduler_aef17d4d358516d712c32ac421202198c}} 
+\index{Scheduler@{Scheduler}!is\+Target\+Paused@{is\+Target\+Paused}}
+\index{is\+Target\+Paused@{is\+Target\+Paused}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Target\+Paused()}{isTargetPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Target\+Paused (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Returns whether or not the target is paused. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the target is paused, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v1.\+0.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aef17d4d358516d712c32ac421202198c}\label{classScheduler_aef17d4d358516d712c32ac421202198c}} 
+\index{Scheduler@{Scheduler}!is\+Target\+Paused@{is\+Target\+Paused}}
+\index{is\+Target\+Paused@{is\+Target\+Paused}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{is\+Target\+Paused()}{isTargetPaused()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Target\+Paused (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Returns whether or not the target is paused. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the target is paused, false if not. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+v1.\+0.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a3c551579277e1746f260d8397b4ac6ee}\label{classScheduler_a3c551579277e1746f260d8397b4ac6ee}} 
+\index{Scheduler@{Scheduler}!pause\+All\+Targets@{pause\+All\+Targets}}
+\index{pause\+All\+Targets@{pause\+All\+Targets}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+All\+Targets()}{pauseAllTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::set$<$void$\ast$$>$ Scheduler\+::pause\+All\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pause all selectors from all targets. You should N\+E\+V\+ER call this method, unless you know what you are doing. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5a624f0bf247439e11f45388dce5d465}\label{classScheduler_a5a624f0bf247439e11f45388dce5d465}} 
+\index{Scheduler@{Scheduler}!pause\+All\+Targets@{pause\+All\+Targets}}
+\index{pause\+All\+Targets@{pause\+All\+Targets}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+All\+Targets()}{pauseAllTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::set$<$ void $\ast$ $>$ Scheduler\+::pause\+All\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pause all selectors from all targets. You should N\+E\+V\+ER call this method, unless you know what you are doing. \begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a306504d4f42cbe75cbe948b0d64d2750}\label{classScheduler_a306504d4f42cbe75cbe948b0d64d2750}} 
+\index{Scheduler@{Scheduler}!pause\+All\+Targets\+With\+Min\+Priority@{pause\+All\+Targets\+With\+Min\+Priority}}
+\index{pause\+All\+Targets\+With\+Min\+Priority@{pause\+All\+Targets\+With\+Min\+Priority}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+All\+Targets\+With\+Min\+Priority()}{pauseAllTargetsWithMinPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::set$<$void$\ast$$>$ Scheduler\+::pause\+All\+Targets\+With\+Min\+Priority (\begin{DoxyParamCaption}\item[{int}]{min\+Priority }\end{DoxyParamCaption})}
+
+Pause all selectors from all targets with a minimum priority. You should only call this with P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN or higher. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Priority} & The minimum priority of selector to be paused. Which means, all selectors which priority is higher than min\+Priority will be paused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ac981921d200acdeedffa17c5e0c06f77}\label{classScheduler_ac981921d200acdeedffa17c5e0c06f77}} 
+\index{Scheduler@{Scheduler}!pause\+All\+Targets\+With\+Min\+Priority@{pause\+All\+Targets\+With\+Min\+Priority}}
+\index{pause\+All\+Targets\+With\+Min\+Priority@{pause\+All\+Targets\+With\+Min\+Priority}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+All\+Targets\+With\+Min\+Priority()}{pauseAllTargetsWithMinPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::set$<$ void $\ast$ $>$ Scheduler\+::pause\+All\+Targets\+With\+Min\+Priority (\begin{DoxyParamCaption}\item[{int}]{min\+Priority }\end{DoxyParamCaption})}
+
+Pause all selectors from all targets with a minimum priority. You should only call this with P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN or higher. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Priority} & The minimum priority of selector to be paused. Which means, all selectors which priority is higher than min\+Priority will be paused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a409cb6f82cffd7d779154d9d813664af}\label{classScheduler_a409cb6f82cffd7d779154d9d813664af}} 
+\index{Scheduler@{Scheduler}!pause\+Target@{pause\+Target}}
+\index{pause\+Target@{pause\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+Target()}{pauseTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::pause\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Pauses the target. All scheduled selectors/update for a given target won\textquotesingle{}t be \textquotesingle{}ticked\textquotesingle{} until the target is resumed. If the target is not present, nothing happens. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be paused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a409cb6f82cffd7d779154d9d813664af}\label{classScheduler_a409cb6f82cffd7d779154d9d813664af}} 
+\index{Scheduler@{Scheduler}!pause\+Target@{pause\+Target}}
+\index{pause\+Target@{pause\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{pause\+Target()}{pauseTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::pause\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Pauses the target. All scheduled selectors/update for a given target won\textquotesingle{}t be \textquotesingle{}ticked\textquotesingle{} until the target is resumed. If the target is not present, nothing happens. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be paused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a24dcb12852832912c43298288c03895f}\label{classScheduler_a24dcb12852832912c43298288c03895f}} 
+\index{Scheduler@{Scheduler}!perform\+Function\+In\+Cocos\+Thread@{perform\+Function\+In\+Cocos\+Thread}}
+\index{perform\+Function\+In\+Cocos\+Thread@{perform\+Function\+In\+Cocos\+Thread}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{perform\+Function\+In\+Cocos\+Thread()}{performFunctionInCocosThread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::perform\+Function\+In\+Cocos\+Thread (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{function }\end{DoxyParamCaption})}
+
+Calls a function on the cocos2d thread. Useful when you need to call a cocos2d function from another thread. This function is thread safe. 
+\begin{DoxyParams}{Parameters}
+{\em function} & The function to be run in cocos2d thread. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_acd6da28a03a7f8b9df377f1e05e7883f}\label{classScheduler_acd6da28a03a7f8b9df377f1e05e7883f}} 
+\index{Scheduler@{Scheduler}!perform\+Function\+In\+Cocos\+Thread@{perform\+Function\+In\+Cocos\+Thread}}
+\index{perform\+Function\+In\+Cocos\+Thread@{perform\+Function\+In\+Cocos\+Thread}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{perform\+Function\+In\+Cocos\+Thread()}{performFunctionInCocosThread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::perform\+Function\+In\+Cocos\+Thread (\begin{DoxyParamCaption}\item[{const std\+::function$<$ void()$>$ \&}]{function }\end{DoxyParamCaption})}
+
+Calls a function on the cocos2d thread. Useful when you need to call a cocos2d function from another thread. This function is thread safe. 
+\begin{DoxyParams}{Parameters}
+{\em function} & The function to be run in cocos2d thread. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a8872d90ed82fdb19f93f9bd30e2837aa}\label{classScheduler_a8872d90ed82fdb19f93f9bd30e2837aa}} 
+\index{Scheduler@{Scheduler}!remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread@{remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread}}
+\index{remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread@{remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread()}{removeAllFunctionsToBePerformedInCocosThread()}}
+{\footnotesize\ttfamily void Scheduler\+::remove\+All\+Functions\+To\+Be\+Performed\+In\+Cocos\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove all pending functions queued to be performed with \hyperlink{classScheduler_acd6da28a03a7f8b9df377f1e05e7883f}{Scheduler\+::perform\+Function\+In\+Cocos\+Thread} Functions unscheduled in this manner will not be executed This function is thread safe \begin{DoxySince}{Since}
+v3.\+14  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aebdab814dbc692356f813d335c3b92af}\label{classScheduler_aebdab814dbc692356f813d335c3b92af}} 
+\index{Scheduler@{Scheduler}!resume\+Target@{resume\+Target}}
+\index{resume\+Target@{resume\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{resume\+Target()}{resumeTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::resume\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Resumes the target. The \textquotesingle{}target\textquotesingle{} will be unpaused, so all schedule selectors/update will be \textquotesingle{}ticked\textquotesingle{} again. If the target is not present, nothing happens. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be resumed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aebdab814dbc692356f813d335c3b92af}\label{classScheduler_aebdab814dbc692356f813d335c3b92af}} 
+\index{Scheduler@{Scheduler}!resume\+Target@{resume\+Target}}
+\index{resume\+Target@{resume\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{resume\+Target()}{resumeTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::resume\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Resumes the target. The \textquotesingle{}target\textquotesingle{} will be unpaused, so all schedule selectors/update will be \textquotesingle{}ticked\textquotesingle{} again. If the target is not present, nothing happens. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be resumed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5b568bffe196f3a5cefe0739354dc900}\label{classScheduler_a5b568bffe196f3a5cefe0739354dc900}} 
+\index{Scheduler@{Scheduler}!resume\+Targets@{resume\+Targets}}
+\index{resume\+Targets@{resume\+Targets}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{resume\+Targets()}{resumeTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::resume\+Targets (\begin{DoxyParamCaption}\item[{const std\+::set$<$ void $\ast$$>$ \&}]{targets\+To\+Resume }\end{DoxyParamCaption})}
+
+Resume selectors on a set of targets. This can be useful for undoing a call to pause\+All\+Selectors. 
+\begin{DoxyParams}{Parameters}
+{\em targets\+To\+Resume} & The set of targets to be resumed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5b568bffe196f3a5cefe0739354dc900}\label{classScheduler_a5b568bffe196f3a5cefe0739354dc900}} 
+\index{Scheduler@{Scheduler}!resume\+Targets@{resume\+Targets}}
+\index{resume\+Targets@{resume\+Targets}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{resume\+Targets()}{resumeTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::resume\+Targets (\begin{DoxyParamCaption}\item[{const std\+::set$<$ void $\ast$$>$ \&}]{targets\+To\+Resume }\end{DoxyParamCaption})}
+
+Resume selectors on a set of targets. This can be useful for undoing a call to pause\+All\+Selectors. 
+\begin{DoxyParams}{Parameters}
+{\em targets\+To\+Resume} & The set of targets to be resumed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a0d52145629a67e888cf1b25fd01f668b}\label{classScheduler_a0d52145629a67e888cf1b25fd01f668b}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\textquotesingle{} instead. If the \textquotesingle{}callback\textquotesingle{} is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em repeat} & repeat+1 times to schedule the callback. \\
+\hline
+{\em delay} & Schedule call back after {\ttfamily delay} seconds. If the value is not 0, the first schedule will happen after {\ttfamily delay} seconds. But it will only affect first schedule. After first schedule, the delay time is determined by {\ttfamily interval}. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a0d52145629a67e888cf1b25fd01f668b}\label{classScheduler_a0d52145629a67e888cf1b25fd01f668b}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\textquotesingle{} instead. If the \textquotesingle{}callback\textquotesingle{} is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em repeat} & repeat+1 times to schedule the callback. \\
+\hline
+{\em delay} & Schedule call back after {\ttfamily delay} seconds. If the value is not 0, the first schedule will happen after {\ttfamily delay} seconds. But it will only affect first schedule. After first schedule, the delay time is determined by {\ttfamily interval}. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}\label{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds for ever. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}\label{classScheduler_a895a2f8f8eb3fc23b869cd1221660dcd}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds for ever. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}\label{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+The scheduled method will be called every {\ttfamily interval} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\textquotesingle{} instead. If the selector is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start
+
+
+\begin{DoxyParams}{Parameters}
+{\em selector} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em repeat} & repeat+1 times to schedule the callback. \\
+\hline
+{\em delay} & Schedule call back after {\ttfamily delay} seconds. If the value is not 0, the first schedule will happen after {\ttfamily delay} seconds. But it will only affect first schedule. After first schedule, the delay time is determined by {\ttfamily interval}. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}\label{classScheduler_a5d34a2cf35f2af15f3377ee8b2e88a38}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+The scheduled method will be called every {\ttfamily interval} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\textquotesingle{} instead. If the selector is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start
+
+
+\begin{DoxyParams}{Parameters}
+{\em selector} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em repeat} & repeat+1 times to schedule the callback. \\
+\hline
+{\em delay} & Schedule call back after {\ttfamily delay} seconds. If the value is not 0, the first schedule will happen after {\ttfamily delay} seconds. But it will only affect first schedule. After first schedule, the delay time is determined by {\ttfamily interval}. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}\label{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+The scheduled method will be called every {\ttfamily interval} seconds for ever. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}\label{classScheduler_aef7946e2043d6e49f2a0a460740d8ae5}} 
+\index{Scheduler@{Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+The scheduled method will be called every {\ttfamily interval} seconds for ever. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The callback function. \\
+\hline
+{\em target} & The target of the callback function. \\
+\hline
+{\em interval} & The interval to schedule the callback. If the value is 0, then the callback will be scheduled every frame. \\
+\hline
+{\em paused} & Whether or not to pause the schedule. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScheduler_a9910c07a3c437d44478004a5c407834a}\label{classScheduler_a9910c07a3c437d44478004a5c407834a}} 
+\index{Scheduler@{Scheduler}!schedule\+Per\+Frame@{schedule\+Per\+Frame}}
+\index{schedule\+Per\+Frame@{schedule\+Per\+Frame}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Per\+Frame()}{schedulePerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule\+Per\+Frame (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Schedules the \textquotesingle{}callback\textquotesingle{} function for a given target with a given priority. The \textquotesingle{}callback\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxyNote}{Note}
+This method is only for internal use. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+v3.\+0  \+\_\+schedule\+Per\+Frame 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a9910c07a3c437d44478004a5c407834a}\label{classScheduler_a9910c07a3c437d44478004a5c407834a}} 
+\index{Scheduler@{Scheduler}!schedule\+Per\+Frame@{schedule\+Per\+Frame}}
+\index{schedule\+Per\+Frame@{schedule\+Per\+Frame}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Per\+Frame()}{schedulePerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::schedule\+Per\+Frame (\begin{DoxyParamCaption}\item[{const cc\+Scheduler\+Func \&}]{callback,  }\item[{void $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Schedules the \textquotesingle{}callback\textquotesingle{} function for a given target with a given priority. The \textquotesingle{}callback\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxyNote}{Note}
+This method is only for internal use. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+v3.\+0  \+\_\+schedule\+Per\+Frame 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}\label{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}} 
+\index{Scheduler@{Scheduler}!schedule\+Selector@{schedule\+Selector}}
+\index{schedule\+Selector@{schedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Selector()}{scheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\+For\+Target\+:\textquotesingle{} instead. If the selector is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000054}{Deprecated}]Please use {\ttfamily \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{Scheduler\+::schedule}} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3, repeat and delay added in v1.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}\label{classScheduler_ae8df7fdf2f74a90cdb37bc334a550360}} 
+\index{Scheduler@{Scheduler}!schedule\+Selector@{schedule\+Selector}}
+\index{schedule\+Selector@{schedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Selector()}{scheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{unsigned int}]{repeat,  }\item[{float}]{delay,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The scheduled method will be called every \textquotesingle{}interval\textquotesingle{} seconds. If paused is true, then it won\textquotesingle{}t be called until it is resumed. If \textquotesingle{}interval\textquotesingle{} is 0, it will be called every frame, but if so, it\textquotesingle{}s recommended to use \textquotesingle{}schedule\+Update\+For\+Target\+:\textquotesingle{} instead. If the selector is already scheduled, then only the interval parameter will be updated without re-\/scheduling it again. repeat let the action be repeated repeat + 1 times, use C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER to let the action run continuously delay is the amount of time the action will wait before it\textquotesingle{}ll start \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000289}{Deprecated}]Please use {\ttfamily \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{Scheduler\+::schedule}} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3, repeat and delay added in v1.\+1  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}\label{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}} 
+\index{Scheduler@{Scheduler}!schedule\+Selector@{schedule\+Selector}}
+\index{schedule\+Selector@{schedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Selector()}{scheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls schedule\+Selector with C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER and a 0 delay. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000055}{Deprecated}]Please use {\ttfamily \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{Scheduler\+::schedule}} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}\label{classScheduler_ab41f346fb140ff11ebc2b0736bc7b58a}} 
+\index{Scheduler@{Scheduler}!schedule\+Selector@{schedule\+Selector}}
+\index{schedule\+Selector@{schedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Selector()}{scheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{float}]{interval,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls schedule\+Selector with C\+C\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+F\+O\+R\+E\+V\+ER and a 0 delay. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000290}{Deprecated}]Please use {\ttfamily \hyperlink{classScheduler_a0d52145629a67e888cf1b25fd01f668b}{Scheduler\+::schedule}} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classScheduler_ad566d55a4941459c185e6faeddc3a70f}\label{classScheduler_ad566d55a4941459c185e6faeddc3a70f}} 
+\index{Scheduler@{Scheduler}!schedule\+Update@{schedule\+Update}}
+\index{schedule\+Update@{schedule\+Update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Update()}{scheduleUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Scheduler\+::schedule\+Update (\begin{DoxyParamCaption}\item[{T $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedules the \textquotesingle{}update\textquotesingle{} selector for a given target with a given priority. The \textquotesingle{}update\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ad566d55a4941459c185e6faeddc3a70f}\label{classScheduler_ad566d55a4941459c185e6faeddc3a70f}} 
+\index{Scheduler@{Scheduler}!schedule\+Update@{schedule\+Update}}
+\index{schedule\+Update@{schedule\+Update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Update()}{scheduleUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Scheduler\+::schedule\+Update (\begin{DoxyParamCaption}\item[{T $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedules the \textquotesingle{}update\textquotesingle{} selector for a given target with a given priority. The \textquotesingle{}update\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxySince}{Since}
+v3.\+0  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}\label{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}} 
+\index{Scheduler@{Scheduler}!schedule\+Update\+For\+Target@{schedule\+Update\+For\+Target}}
+\index{schedule\+Update\+For\+Target@{schedule\+Update\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Update\+For\+Target()}{scheduleUpdateForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Update\+For\+Target (\begin{DoxyParamCaption}\item[{T $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedules the \textquotesingle{}update\textquotesingle{} selector for a given target with a given priority. The \textquotesingle{}update\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000056}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_ad566d55a4941459c185e6faeddc3a70f}{Scheduler\+::schedule\+Update}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}\label{classScheduler_a87a354dc2bcf3a750ed66f8d67ed0b70}} 
+\index{Scheduler@{Scheduler}!schedule\+Update\+For\+Target@{schedule\+Update\+For\+Target}}
+\index{schedule\+Update\+For\+Target@{schedule\+Update\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{schedule\+Update\+For\+Target()}{scheduleUpdateForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::schedule\+Update\+For\+Target (\begin{DoxyParamCaption}\item[{T $\ast$}]{target,  }\item[{int}]{priority,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedules the \textquotesingle{}update\textquotesingle{} selector for a given target with a given priority. The \textquotesingle{}update\textquotesingle{} selector will be called every frame. The lower the priority, the earlier it is called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000291}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_ad566d55a4941459c185e6faeddc3a70f}{Scheduler\+::schedule\+Update}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}\label{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}} 
+\index{Scheduler@{Scheduler}!set\+Time\+Scale@{set\+Time\+Scale}}
+\index{set\+Time\+Scale@{set\+Time\+Scale}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{set\+Time\+Scale()}{setTimeScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::set\+Time\+Scale (\begin{DoxyParamCaption}\item[{float}]{time\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Modifies the time of all scheduled callbacks. You can use this property to create a \textquotesingle{}slow motion\textquotesingle{} or \textquotesingle{}fast forward\textquotesingle{} effect. Default is 1.\+0. To create a \textquotesingle{}slow motion\textquotesingle{} effect, use values below 1.\+0. To create a \textquotesingle{}fast forward\textquotesingle{} effect, use values higher than 1.\+0. \begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\begin{DoxyWarning}{Warning}
+It will affect E\+V\+E\+RY scheduled selector / action. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}\label{classScheduler_a7aeaef587604d3a1f20ebac7a12b1d77}} 
+\index{Scheduler@{Scheduler}!set\+Time\+Scale@{set\+Time\+Scale}}
+\index{set\+Time\+Scale@{set\+Time\+Scale}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{set\+Time\+Scale()}{setTimeScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::set\+Time\+Scale (\begin{DoxyParamCaption}\item[{float}]{time\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Modifies the time of all scheduled callbacks. You can use this property to create a \textquotesingle{}slow motion\textquotesingle{} or \textquotesingle{}fast forward\textquotesingle{} effect. Default is 1.\+0. To create a \textquotesingle{}slow motion\textquotesingle{} effect, use values below 1.\+0. To create a \textquotesingle{}fast forward\textquotesingle{} effect, use values higher than 1.\+0. \begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+\begin{DoxyWarning}{Warning}
+It will affect E\+V\+E\+RY scheduled selector / action. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}\label{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}} 
+\index{Scheduler@{Scheduler}!unschedule@{unschedule}}
+\index{unschedule@{unschedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule()}{unschedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules a callback for a key and a given target. If you want to unschedule the \textquotesingle{}callback\+Per\+Frame\textquotesingle{}, use unschedule\+Update. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}\label{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}} 
+\index{Scheduler@{Scheduler}!unschedule@{unschedule}}
+\index{unschedule@{unschedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule()}{unschedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules a callback for a key and a given target. If you want to unschedule the \textquotesingle{}callback\+Per\+Frame\textquotesingle{}, use unschedule\+Update. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to identify the callback function, because there is not way to identify a std\+::function$<$$>$. \\
+\hline
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a6d354b587d5f12df2e6094116fd65c71}\label{classScheduler_a6d354b587d5f12df2e6094116fd65c71}} 
+\index{Scheduler@{Scheduler}!unschedule@{unschedule}}
+\index{unschedule@{unschedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule()}{unschedule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules a selector for a given target. If you want to unschedule the \char`\"{}update\char`\"{}, use {\ttfamily \hyperlink{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}{unschedule\+Update()}}. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The selector that is unscheduled. \\
+\hline
+{\em target} & The target of the unscheduled selector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a6d354b587d5f12df2e6094116fd65c71}\label{classScheduler_a6d354b587d5f12df2e6094116fd65c71}} 
+\index{Scheduler@{Scheduler}!unschedule@{unschedule}}
+\index{unschedule@{unschedule}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule()}{unschedule()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules a selector for a given target. If you want to unschedule the \char`\"{}update\char`\"{}, use {\ttfamily unscheudle\+Update()}. 
+\begin{DoxyParams}{Parameters}
+{\em selector} & The selector that is unscheduled. \\
+\hline
+{\em target} & The target of the unscheduled selector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v3.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}\label{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}} 
+\index{Scheduler@{Scheduler}!unschedule\+All@{unschedule\+All}}
+\index{unschedule\+All@{unschedule\+All}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All()}{unscheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unschedules all selectors from all targets. You should N\+E\+V\+ER call this method, unless you know what you are doing. \begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}\label{classScheduler_a0746c417a3cf7c794d1ee32969994e6a}} 
+\index{Scheduler@{Scheduler}!unschedule\+All@{unschedule\+All}}
+\index{unschedule\+All@{unschedule\+All}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All()}{unscheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Unschedules all selectors from all targets. You should N\+E\+V\+ER call this method, unless you know what you are doing. \begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}\label{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}} 
+\index{Scheduler@{Scheduler}!unschedule\+All\+For\+Target@{unschedule\+All\+For\+Target}}
+\index{unschedule\+All\+For\+Target@{unschedule\+All\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All\+For\+Target()}{unscheduleAllForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All\+For\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules all selectors for a given target. This also includes the \char`\"{}update\char`\"{} selector. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}\label{classScheduler_a39199385fc1ab4f74c5665beaa2738b6}} 
+\index{Scheduler@{Scheduler}!unschedule\+All\+For\+Target@{unschedule\+All\+For\+Target}}
+\index{unschedule\+All\+For\+Target@{unschedule\+All\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All\+For\+Target()}{unscheduleAllForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All\+For\+Target (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules all selectors for a given target. This also includes the \char`\"{}update\char`\"{} selector. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}\label{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}} 
+\index{Scheduler@{Scheduler}!unschedule\+All\+With\+Min\+Priority@{unschedule\+All\+With\+Min\+Priority}}
+\index{unschedule\+All\+With\+Min\+Priority@{unschedule\+All\+With\+Min\+Priority}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All\+With\+Min\+Priority()}{unscheduleAllWithMinPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All\+With\+Min\+Priority (\begin{DoxyParamCaption}\item[{int}]{min\+Priority }\end{DoxyParamCaption})}
+
+Unschedules all selectors from all targets with a minimum priority. You should only call this with {\ttfamily P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN} or higher. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Priority} & The minimum priority of selector to be unscheduled. Which means, all selectors which priority is higher than min\+Priority will be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}\label{classScheduler_aa846e95ed320bdac9ca2c91a0d7e79db}} 
+\index{Scheduler@{Scheduler}!unschedule\+All\+With\+Min\+Priority@{unschedule\+All\+With\+Min\+Priority}}
+\index{unschedule\+All\+With\+Min\+Priority@{unschedule\+All\+With\+Min\+Priority}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+All\+With\+Min\+Priority()}{unscheduleAllWithMinPriority()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+All\+With\+Min\+Priority (\begin{DoxyParamCaption}\item[{int}]{min\+Priority }\end{DoxyParamCaption})}
+
+Unschedules all selectors from all targets with a minimum priority. You should only call this with {\ttfamily P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN} or higher. 
+\begin{DoxyParams}{Parameters}
+{\em min\+Priority} & The minimum priority of selector to be unscheduled. Which means, all selectors which priority is higher than min\+Priority will be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v2.\+0.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}\label{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}} 
+\index{Scheduler@{Scheduler}!unschedule\+Selector@{unschedule\+Selector}}
+\index{unschedule\+Selector@{unschedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Selector()}{unscheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::unschedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unschedule a selector for a given target. If you want to unschedule the \char`\"{}update\char`\"{}, use unscheudle\+Update\+For\+Target. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000057}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}{Scheduler\+::unschedule}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}\label{classScheduler_a25e540092eabffd80c97fe2af4faf7d5}} 
+\index{Scheduler@{Scheduler}!unschedule\+Selector@{unschedule\+Selector}}
+\index{unschedule\+Selector@{unschedule\+Selector}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Selector()}{unscheduleSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::unschedule\+Selector (\begin{DoxyParamCaption}\item[{S\+E\+L\+\_\+\+S\+C\+H\+E\+D\+U\+LE}]{selector,  }\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unschedule a selector for a given target. If you want to unschedule the \char`\"{}update\char`\"{}, use unschedule\+Update\+For\+Target. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000292}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_a3ca194b9ca146d9c522cc2c54a6d4ede}{Scheduler\+::unschedule}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3  NA 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}\label{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}} 
+\index{Scheduler@{Scheduler}!unschedule\+Update@{unschedule\+Update}}
+\index{unschedule\+Update@{unschedule\+Update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Update()}{unscheduleUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+Update (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules the update selector for a given target 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}\label{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}} 
+\index{Scheduler@{Scheduler}!unschedule\+Update@{unschedule\+Update}}
+\index{unschedule\+Update@{unschedule\+Update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Update()}{unscheduleUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::unschedule\+Update (\begin{DoxyParamCaption}\item[{void $\ast$}]{target }\end{DoxyParamCaption})}
+
+Unschedules the update selector for a given target 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to be unscheduled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}\label{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}} 
+\index{Scheduler@{Scheduler}!unschedule\+Update\+For\+Target@{unschedule\+Update\+For\+Target}}
+\index{unschedule\+Update\+For\+Target@{unschedule\+Update\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Update\+For\+Target()}{unscheduleUpdateForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::unschedule\+Update\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unschedules the update selector for a given target \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000059}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}{Scheduler\+::unschedule\+Update}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}\label{classScheduler_ac5ba32d69e94ebe72d58cbd661782ca6}} 
+\index{Scheduler@{Scheduler}!unschedule\+Update\+For\+Target@{unschedule\+Update\+For\+Target}}
+\index{unschedule\+Update\+For\+Target@{unschedule\+Update\+For\+Target}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{unschedule\+Update\+For\+Target()}{unscheduleUpdateForTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Scheduler\+::unschedule\+Update\+For\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unschedules the update selector for a given target \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000294}{Deprecated}]Please use \textquotesingle{}\hyperlink{classScheduler_acc7bc87cc441a0f826c2a6758a9adcad}{Scheduler\+::unschedule\+Update}\textquotesingle{} instead. \end{DoxyRefDesc}
+\begin{DoxySince}{Since}
+v0.\+99.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{classScheduler_a533ad6047192a10444e2f4d386f3766a}\label{classScheduler_a533ad6047192a10444e2f4d386f3766a}} 
+\index{Scheduler@{Scheduler}!update@{update}}
+\index{update@{update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scheduler\+::update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+\textquotesingle{}update\textquotesingle{} the scheduler. You should N\+E\+V\+ER call this method, unless you know what you are doing.  NA \mbox{\Hypertarget{classScheduler_a533ad6047192a10444e2f4d386f3766a}\label{classScheduler_a533ad6047192a10444e2f4d386f3766a}} 
+\index{Scheduler@{Scheduler}!update@{update}}
+\index{update@{update}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scheduler\+::update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+\textquotesingle{}update\textquotesingle{} the scheduler. You should N\+E\+V\+ER call this method, unless you know what you are doing.  NA 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classScheduler_aff5f555d99f98484e7b7f46450089460}\label{classScheduler_aff5f555d99f98484e7b7f46450089460}} 
+\index{Scheduler@{Scheduler}!P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN@{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN}}
+\index{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN@{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN}{PRIORITY\_NON\_SYSTEM\_MIN}}
+{\footnotesize\ttfamily static const int Scheduler\+::\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+N\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+IN = \hyperlink{classScheduler_ab81137eee61d428046a59dd036a9bf33}{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM} + 1\hspace{0.3cm}{\ttfamily [static]}}
+
+Minimum priority level for user scheduling. Priority level of user scheduling should bigger then this value.
+
+NA  NA \mbox{\Hypertarget{classScheduler_ab81137eee61d428046a59dd036a9bf33}\label{classScheduler_ab81137eee61d428046a59dd036a9bf33}} 
+\index{Scheduler@{Scheduler}!P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM@{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM}}
+\index{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM@{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM}!Scheduler@{Scheduler}}
+\subsubsection{\texorpdfstring{P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM}{PRIORITY\_SYSTEM}}
+{\footnotesize\ttfamily static const int Scheduler\+::\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+S\+Y\+S\+T\+EM = I\+N\+T\+\_\+\+M\+IN\hspace{0.3cm}{\ttfamily [static]}}
+
+Priority level reserved for system services.  NA  NA 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Scheduler.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Scheduler.\+cpp\end{DoxyCompactItemize}

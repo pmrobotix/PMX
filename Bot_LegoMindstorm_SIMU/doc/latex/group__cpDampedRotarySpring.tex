@@ -1,0 +1,53 @@
+\hypertarget{group__cpDampedRotarySpring}{}\section{cp\+Damped\+Rotary\+Spring}
+\label{group__cpDampedRotarySpring}\index{cp\+Damped\+Rotary\+Spring@{cp\+Damped\+Rotary\+Spring}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}\label{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}} 
+typedef cp\+Float($\ast$ \hyperlink{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}{cp\+Damped\+Rotary\+Spring\+Torque\+Func}) (struct \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$spring, cp\+Float relative\+Angle)
+\begin{DoxyCompactList}\small\item\em Function type used for damped rotary spring force callbacks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}\label{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}} 
+typedef cp\+Float($\ast$ \hyperlink{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}{cp\+Damped\+Rotary\+Spring\+Torque\+Func}) (struct \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$spring, cp\+Float relative\+Angle)
+\begin{DoxyCompactList}\small\item\em Function type used for damped rotary spring force callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga699106f2d1aa35ac5ab214c4a5dd5a09}\label{group__cpDampedRotarySpring_ga699106f2d1aa35ac5ab214c4a5dd5a09}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpDampedRotarySpring_ga699106f2d1aa35ac5ab214c4a5dd5a09}{cp\+Constraint\+Is\+Damped\+Rotary\+Spring} (const \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Check if a constraint is a damped rotary springs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gad2795e8d56e06272883862bcbd780115}\label{group__cpDampedRotarySpring_gad2795e8d56e06272883862bcbd780115}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpDampedRotarySpring}{cp\+Damped\+Rotary\+Spring} $\ast$ \hyperlink{group__cpDampedRotarySpring_gad2795e8d56e06272883862bcbd780115}{cp\+Damped\+Rotary\+Spring\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a damped rotary spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga206fae50c75e92adcbd2530586c1f37c}\label{group__cpDampedRotarySpring_ga206fae50c75e92adcbd2530586c1f37c}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpDampedRotarySpring}{cp\+Damped\+Rotary\+Spring} $\ast$ \hyperlink{group__cpDampedRotarySpring_ga206fae50c75e92adcbd2530586c1f37c}{cp\+Damped\+Rotary\+Spring\+Init} (\hyperlink{structcpDampedRotarySpring}{cp\+Damped\+Rotary\+Spring} $\ast$joint, \hyperlink{structcpBody}{cp\+Body} $\ast$a, \hyperlink{structcpBody}{cp\+Body} $\ast$b, cp\+Float rest\+Angle, cp\+Float stiffness, cp\+Float damping)
+\begin{DoxyCompactList}\small\item\em Initialize a damped rotary spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gad825660f50d81264b56449b7349e36d6}\label{group__cpDampedRotarySpring_gad825660f50d81264b56449b7349e36d6}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$ \hyperlink{group__cpDampedRotarySpring_gad825660f50d81264b56449b7349e36d6}{cp\+Damped\+Rotary\+Spring\+New} (\hyperlink{structcpBody}{cp\+Body} $\ast$a, \hyperlink{structcpBody}{cp\+Body} $\ast$b, cp\+Float rest\+Angle, cp\+Float stiffness, cp\+Float damping)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a damped rotary spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gad64b790743acc1ee723df5c057821a85}\label{group__cpDampedRotarySpring_gad64b790743acc1ee723df5c057821a85}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpDampedRotarySpring_gad64b790743acc1ee723df5c057821a85}{cp\+Damped\+Rotary\+Spring\+Get\+Rest\+Angle} (const \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the rest length of the spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gaef8aeefa0f56c4bc8c1b1b526d31bbc5}\label{group__cpDampedRotarySpring_gaef8aeefa0f56c4bc8c1b1b526d31bbc5}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpDampedRotarySpring_gaef8aeefa0f56c4bc8c1b1b526d31bbc5}{cp\+Damped\+Rotary\+Spring\+Set\+Rest\+Angle} (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, cp\+Float rest\+Angle)
+\begin{DoxyCompactList}\small\item\em Set the rest length of the spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga0bdc853bacf56c54c246daa0fb40be62}\label{group__cpDampedRotarySpring_ga0bdc853bacf56c54c246daa0fb40be62}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpDampedRotarySpring_ga0bdc853bacf56c54c246daa0fb40be62}{cp\+Damped\+Rotary\+Spring\+Get\+Stiffness} (const \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the stiffness of the spring in force/distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga2da549aff945710a181b704b3a57a6f3}\label{group__cpDampedRotarySpring_ga2da549aff945710a181b704b3a57a6f3}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpDampedRotarySpring_ga2da549aff945710a181b704b3a57a6f3}{cp\+Damped\+Rotary\+Spring\+Set\+Stiffness} (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, cp\+Float stiffness)
+\begin{DoxyCompactList}\small\item\em Set the stiffness of the spring in force/distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gaaee99f98580f2b93abb35b5b386e176f}\label{group__cpDampedRotarySpring_gaaee99f98580f2b93abb35b5b386e176f}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpDampedRotarySpring_gaaee99f98580f2b93abb35b5b386e176f}{cp\+Damped\+Rotary\+Spring\+Get\+Damping} (const \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the damping of the spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_gacebcb68e260afa9d2e1739acfdadea1d}\label{group__cpDampedRotarySpring_gacebcb68e260afa9d2e1739acfdadea1d}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpDampedRotarySpring_gacebcb68e260afa9d2e1739acfdadea1d}{cp\+Damped\+Rotary\+Spring\+Set\+Damping} (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, cp\+Float damping)
+\begin{DoxyCompactList}\small\item\em Set the damping of the spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga95cce882935976957ee262590b5a1bbc}\label{group__cpDampedRotarySpring_ga95cce882935976957ee262590b5a1bbc}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}{cp\+Damped\+Rotary\+Spring\+Torque\+Func} \hyperlink{group__cpDampedRotarySpring_ga95cce882935976957ee262590b5a1bbc}{cp\+Damped\+Rotary\+Spring\+Get\+Spring\+Torque\+Func} (const \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Get the damping of the spring. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpDampedRotarySpring_ga79b061501fb25d4163a301330e10bb26}\label{group__cpDampedRotarySpring_ga79b061501fb25d4163a301330e10bb26}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpDampedRotarySpring_ga79b061501fb25d4163a301330e10bb26}{cp\+Damped\+Rotary\+Spring\+Set\+Spring\+Torque\+Func} (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, \hyperlink{group__cpDampedRotarySpring_ga072c236959020fab4f30087b5234040b}{cp\+Damped\+Rotary\+Spring\+Torque\+Func} spring\+Torque\+Func)
+\begin{DoxyCompactList}\small\item\em Set the damping of the spring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}

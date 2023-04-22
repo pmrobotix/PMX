@@ -1,0 +1,3144 @@
+{\itshape v0.\+2 -\/ Last updated November 8, 2013}
+
+{\itshape Forked from \href{http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml}{\tt Google\textquotesingle{}s C++ coding style} rev. 3.\+274}
+
+{\bfseries Table of Contents} {\itshape generated with \href{http://doctoc.herokuapp.com/}{\tt Doc\+Toc}}
+
+
+\begin{DoxyItemize}
+\item \href{#header-files}{\tt Header Files}
+\begin{DoxyItemize}
+\item \href{#the-define-guard}{\tt The \#define Guard}
+\item \href{#forward-declarations}{\tt Forward Declarations}
+\item \href{#inline-functions}{\tt Inline Functions}
+\item \href{#the--inlh-files}{\tt The -\/inl.\+h Files}
+\item \href{#function-parameter-ordering}{\tt Function Parameter Ordering}
+\item \href{#names-and-order-of-includes}{\tt Names and Order of Includes}
+\end{DoxyItemize}
+\item \href{#scoping}{\tt Scoping}
+\begin{DoxyItemize}
+\item \href{#namespaces}{\tt Namespaces}
+\begin{DoxyItemize}
+\item \href{#unnamed-namespaces}{\tt Unnamed Namespaces}
+\item \href{#named-namespaces}{\tt Named Namespaces}
+\end{DoxyItemize}
+\item \href{#nested-classes}{\tt Nested Classes}
+\item \href{#nonmember-static-member-and-global-functions}{\tt Nonmember, Static Member, and Global Functions}
+\item \href{#local-variables}{\tt Local Variables}
+\item \href{#static-and-global-variables}{\tt Static and Global Variables}
+\end{DoxyItemize}
+\item \href{#classes}{\tt Classes}
+\begin{DoxyItemize}
+\item \href{#doing-work-in-constructors}{\tt Doing Work in Constructors}
+\item \href{#initialization}{\tt Initialization}
+\item \href{#explicit-constructors}{\tt Explicit Constructors}
+\item \href{#copy-constructors}{\tt Copy Constructors}
+\item \href{#delegating-and-inheriting-constructors}{\tt Delegating and inheriting constructors}
+\item \href{#structs-vs-classes}{\tt Structs vs. Classes}
+\item \href{#inheritance}{\tt Inheritance}
+\item \href{#multiple-inheritance}{\tt Multiple Inheritance}
+\item \href{#interfaces}{\tt Interfaces}
+\item \href{#operator-overloading}{\tt Operator Overloading}
+\item \href{#access-control}{\tt Access Control}
+\item \href{#declaration-order}{\tt Declaration Order}
+\item \href{#write-short-functions}{\tt Write Short Functions}
+\end{DoxyItemize}
+\item \href{#other-c-features}{\tt Other C++ Features}
+\begin{DoxyItemize}
+\item \href{#ownership-and-smart-pointers}{\tt Ownership and Smart Pointers}
+\item \href{#reference-arguments}{\tt Reference Arguments}
+\item \href{#rvalue-references}{\tt Rvalue references}
+\item \href{#function-overloading}{\tt Function Overloading}
+\item \href{#default-arguments}{\tt Default Arguments}
+\item \href{#variable-length-arrays-and-alloca}{\tt Variable-\/\+Length Arrays and alloca()}
+\item \href{#friends}{\tt Friends}
+\item \href{#exceptions}{\tt Exceptions}
+\item \href{#run-time-type-information-rtti}{\tt Run-\/\+Time Type Information (R\+T\+TI)}
+\item \href{#casting}{\tt Casting}
+\item \href{#streams}{\tt Streams}
+\item \href{#preincrement-and-predecrement}{\tt Preincrement and Predecrement}
+\item \href{#use-of-const}{\tt Use of const}
+\item \href{#use-of-constexpr}{\tt Use of constexpr}
+\item \href{#use-of-constexpr-1}{\tt Use of constexpr}
+\item \href{#integer-types}{\tt Integer Types}
+\begin{DoxyItemize}
+\item \href{#on-unsigned-integers}{\tt On Unsigned Integers}
+\end{DoxyItemize}
+\item \href{#64-bit-portability}{\tt 64-\/bit Portability}
+\item \href{#preprocessor-macros}{\tt Preprocessor Macros}
+\item \href{#0-and-nullptrnull}{\tt 0 and nullptr/\+N\+U\+LL}
+\item \href{#sizeof}{\tt sizeof}
+\item \href{#auto}{\tt auto}
+\item \href{#brace-initialization}{\tt Brace Initialization}
+\item \href{#lambda-expressions}{\tt Lambda expressions}
+\item \href{#boost}{\tt Boost}
+\item \href{#c11}{\tt C++11}
+\item \href{#general-naming-rules}{\tt General Naming Rules}
+\item \href{#file-names}{\tt File Names}
+\item \href{#type-names}{\tt Type Names}
+\item \href{#variable-names}{\tt Variable Names}
+\begin{DoxyItemize}
+\item \href{#common-variable-names}{\tt Common Variable names}
+\item \href{#class-data-members}{\tt Class Data Members}
+\item \href{#struct-variables}{\tt Struct Variables}
+\item \href{#global-variables}{\tt Global Variables}
+\end{DoxyItemize}
+\item \href{#constant-names}{\tt Constant Names}
+\item \href{#function-names}{\tt Function Names}
+\begin{DoxyItemize}
+\item \href{#regular-functions}{\tt Regular Functions}
+\item \href{#accessors-and-mutators}{\tt Accessors and Mutators}
+\end{DoxyItemize}
+\item \href{#namespace-names}{\tt Namespace Names}
+\item \href{#enumerator-names}{\tt Enumerator Names}
+\item \href{#macro-names}{\tt Macro Names}
+\item \href{#exceptions-to-naming-rules}{\tt Exceptions to Naming Rules}
+\begin{DoxyItemize}
+\item \href{#bigopen}{\tt bigopen()}
+\item \href{#uint}{\tt uint}
+\item \href{#bigpos}{\tt bigpos}
+\item \href{#sparse_hash_map}{\tt sparse\+\_\+hash\+\_\+map}
+\item \href{#longlong_max}{\tt L\+O\+N\+G\+L\+O\+N\+G\+\_\+\+M\+AX}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item \href{#comments}{\tt Comments}
+\begin{DoxyItemize}
+\item \href{#doxygen}{\tt Doxygen}
+\item \href{#comment-style}{\tt Comment Style}
+\item \href{#file-comments}{\tt File Comments}
+\begin{DoxyItemize}
+\item \href{#legal-notice-and-author-line}{\tt Legal Notice and Author Line}
+\item \href{#file-contents}{\tt File Contents}
+\end{DoxyItemize}
+\item \href{#class-comments}{\tt Class Comments}
+\item \href{#function-comments}{\tt Function Comments}
+\begin{DoxyItemize}
+\item \href{#function-declarations}{\tt Function Declarations}
+\item \href{#function-definitions}{\tt Function Definitions}
+\end{DoxyItemize}
+\item \href{#variable-comments}{\tt Variable Comments}
+\begin{DoxyItemize}
+\item \href{#class-data-members-1}{\tt Class Data Members}
+\item \href{#global-variables-1}{\tt Global Variables}
+\end{DoxyItemize}
+\item \href{#implementation-comments}{\tt Implementation Comments}
+\begin{DoxyItemize}
+\item \href{#class-data-members-2}{\tt Class Data Members}
+\item \href{#line-comments}{\tt Line Comments}
+\item \href{#nullptrnull-truefalse-1-2-3}{\tt nullptr/\+N\+U\+LL, true/false, 1, 2, 3...}
+\item \href{#donts}{\tt Don\textquotesingle{}ts}
+\end{DoxyItemize}
+\item \href{#punctuation-spelling-and-grammar}{\tt Punctuation, Spelling and Grammar}
+\item \href{#todo-comments}{\tt T\+O\+DO Comments}
+\item \href{#deprecation-comments}{\tt Deprecation Comments}
+\end{DoxyItemize}
+\item \href{#formatting}{\tt Formatting}
+\begin{DoxyItemize}
+\item \href{#line-length}{\tt Line Length}
+\item \href{#non-ascii-characters}{\tt Non-\/\+A\+S\+C\+II Characters}
+\item \href{#spaces-vs-tabs}{\tt Spaces vs. Tabs}
+\item \href{#function-declarations-and-definitions}{\tt Function Declarations and Definitions}
+\item \href{#function-calls}{\tt Function Calls}
+\item \href{#braced-initializer-lists}{\tt Braced Initializer Lists}
+\item \href{#conditionals}{\tt Conditionals}
+\item \href{#loops-and-switch-statements}{\tt Loops and Switch Statements}
+\item \href{#pointer-and-reference-expressions}{\tt Pointer and Reference Expressions}
+\item \href{#boolean-expressions}{\tt Boolean Expressions}
+\item \href{#return-values}{\tt Return Values}
+\item \href{#variable-and-array-initialization}{\tt Variable and Array Initialization}
+\item \href{#preprocessor-directives}{\tt Preprocessor Directives}
+\item \href{#class-format}{\tt Class Format}
+\item \href{#constructor-initializer-lists}{\tt Constructor Initializer Lists}
+\item \href{#namespace-formatting}{\tt Namespace Formatting}
+\item \href{#horizontal-whitespace}{\tt Horizontal Whitespace}
+\begin{DoxyItemize}
+\item \href{#general}{\tt General}
+\item \href{#loops-and-conditionals}{\tt Loops and Conditionals}
+\item \href{#operators}{\tt Operators}
+\item \href{#templates-and-casts}{\tt Templates and Casts}
+\end{DoxyItemize}
+\item \href{#vertical-whitespace}{\tt Vertical Whitespace}
+\end{DoxyItemize}
+\item \href{#exceptions-to-the-rules}{\tt Exceptions to the Rules}
+\begin{DoxyItemize}
+\item \href{#existing-non-conformant-code}{\tt Existing Non-\/conformant Code}
+\item \href{#windows-code}{\tt Windows Code}
+\end{DoxyItemize}
+\item \href{#parting-words}{\tt Parting Words}
+\end{DoxyItemize}
+
+\section*{Header Files}
+
+In general, every {\ttfamily .cpp} file should have an associated {\ttfamily .h} file. There are some common exceptions, such as unittests and small {\ttfamily .cpp} files containing just a {\ttfamily main()} function.
+
+Correct use of header files can make a huge difference to the readability, size and performance of your code.
+
+The following rules will guide you through the various pitfalls of using header files.
+
+\subsection*{The \#define Guard}
+
+All header files should have {\ttfamily \#define} guards to prevent multiple inclusion. The format of the symbol name should be {\ttfamily $<$P\+R\+O\+J\+E\+CT$>$\+\_\+$<$P\+A\+TH$>$\+\_\+$<$F\+I\+LE$>$\+\_\+\+H\+\_\+.}
+
+To guarantee uniqueness, they should be based on the full path in a project\textquotesingle{}s source tree. For example, the file {\ttfamily cocos2dx/sprites\+\_\+nodes/\+C\+C\+Sprite.\+h} in project foo should have the following guard\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#ifndef COCOS2DX\_SPRITE\_NODES\_CCSPRITE\_H\_}
+\textcolor{preprocessor}{#define COCOS2DX\_SPRITE\_NODES\_CCSPRITE\_H\_}
+
+...
+
+#endif  \textcolor{comment}{// COCOS2DX\_SPRITE\_NODES\_CCSPRITE\_H\_}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Pragma once is still open for debate}
+\textcolor{preprocessor}{#pragma once}
+\end{DoxyCode}
+
+
+We are considering using {\ttfamily \#pragma once} as well, although we haven\textquotesingle{}t determined yet if it is supported in all our target platforms.
+
+\subsection*{Forward Declarations}
+
+You may forward declare ordinary classes in order to avoid unnecessary {\ttfamily \#includes}.
+
+{\bfseries Definition\+:} A \char`\"{}forward declaration\char`\"{} is a declaration of a class, function, or template without an associated definition. \#include lines can often be replaced with forward declarations of whatever symbols are actually used by the client code.
+
+{\bfseries Pros\+:}
+
+
+\begin{DoxyItemize}
+\item Unnecessary \#includes force the compiler to open more files and process more input.
+\item They can also force your code to be recompiled more often, due to changes in the header.
+\end{DoxyItemize}
+
+{\bfseries Cons\+:}
+
+
+\begin{DoxyItemize}
+\item It can be difficult to determine the correct form of a forward declaration in the presence of features like templates, typedefs, default parameters, and using declarations.
+\item It can be difficult to determine whether a forward declaration or a full \#include is needed for a given piece of code, particularly when implicit conversion operations are involved. In extreme cases, replacing an \#include with a forward declaration can silently change the meaning of code.
+\item Forward declaring multiple symbols from a header can be more verbose than simply {\ttfamily \#include}ing the header.
+\item Forward declarations of functions and templates can prevent the header owners from making otherwise-\/compatible changes to their A\+P\+Is; for example, widening a parameter type, or adding a template parameter with a default value.
+\item Forward declaring symbols from namespace std\+:\+: usually yields undefined behavior.
+\item Structuring code to enable forward declarations (e.\+g. using pointer members instead of object members) can make the code slower and more complex.
+\item The practical efficiency benefits of forward declarations are unproven.
+\end{DoxyItemize}
+
+{\bfseries Decision\+:}
+
+
+\begin{DoxyItemize}
+\item When using a function declared in a header file, always \#include that header.
+\item When using a class template, prefer to \#include its header file.
+\item When using an ordinary class, relying on a forward declaration is OK, but be wary of situations where a forward declaration may be insufficient or incorrect; when in doubt, just \#include the appropriate header.
+\item Do not replace data members with pointers just to avoid an \#include.
+\end{DoxyItemize}
+
+Always \#include the file that actually provides the declarations/definitions you need; do not rely on the symbol being brought in transitively via headers not directly included. One exception is that {\ttfamily Myfile.\+cpp} may rely on \#includes and forward declarations from its corresponding header file {\ttfamily Myfile.\+h}.
+
+\subsection*{Inline Functions}
+
+Define functions inline only when they are small, say, 10 lines or less.
+
+{\bfseries Definition\+:} You can declare functions in a way that allows the compiler to expand them inline rather than calling them through the usual function call mechanism.
+
+{\bfseries Pros\+:} Inlining a function can generate more efficient object code, as long as the inlined function is small. Feel free to inline accessors and mutators, and other short, performance-\/critical functions.
+
+{\bfseries Cons\+:} Overuse of inlining can actually make programs slower. Depending on a function\textquotesingle{}s size, inlining it can cause the code size to increase or decrease. Inlining a very small accessor function will usually decrease code size while inlining a very large function can dramatically increase code size. On modern processors smaller code usually runs faster due to better use of the instruction cache.
+
+{\bfseries Decision\+:} A decent rule of thumb is to not inline a function if it is more than 10 lines long. Beware of destructors, which are often longer than they appear because of implicit member-\/ and base-\/destructor calls!
+
+Another useful rule of thumb\+: it\textquotesingle{}s typically not cost effective to inline functions with loops or switch statements (unless, in the common case, the loop or switch statement is never executed).
+
+It is important to know that functions are not always inlined even if they are declared as such; for example, virtual and recursive functions are not normally inlined. Usually recursive functions should not be inline. The main reason for making a virtual function inline is to place its definition in the class, either for convenience or to document its behavior, e.\+g., for accessors and mutators.
+
+\subsection*{The -\/inl.\+h Files}
+
+You may use file names with a -\/inl.\+h suffix to define complex inline functions when needed.
+
+The definition of an inline function needs to be in a header file, so that the compiler has the definition available for inlining at the call sites. However, implementation code properly belongs in .cpp files, and we do not like to have much actual code in .h files unless there is a readability or performance advantage.
+
+If an inline function definition is short, with very little, if any, logic in it, you should put the code in your .h file. For example, accessors and mutators should certainly be inside a class definition. More complex inline functions may also be put in a .h file for the convenience of the implementer and callers, though if this makes the .h file too unwieldy you can instead put that code in a separate -\/inl.\+h file. This separates the implementation from the class definition, while still allowing the implementation to be included where necessary.
+
+Another use of -\/inl.\+h files is for definitions of function templates. This can be used to keep your template definitions easy to read.
+
+Do not forget that a -\/inl.\+h file requires a \#define guard just like any other header file.
+
+\subsection*{Function \hyperlink{structParameter}{Parameter} Ordering}
+
+When defining a function, parameter order is\+: inputs, then outputs.
+
+Parameters to C/\+C++ functions are either input to the function, output from the function, or both. Input parameters are usually {\ttfamily values} or {\ttfamily const references}, while output and input/output parameters will be {\ttfamily non-\/const pointers} . When ordering function parameters, put all input-\/only parameters before any output parameters. In particular, do not add new parameters to the end of the function just because they are new; place new input-\/only parameters before the output parameters.
+
+This is not a hard-\/and-\/fast rule. Parameters that are both input and output (often classes/structs) muddy the waters, and, as always, consistency with related functions may require you to bend the rule.
+
+\subsection*{Names and Order of Includes}
+
+Use standard order for readability and to avoid hidden dependencies\+: C library, C++ library, other libraries\textquotesingle{} .h, your project\textquotesingle{}s .h.
+
+All of a project\textquotesingle{}s header files should be listed as descendants of the project\textquotesingle{}s source directory without use of U\+N\+IX directory shortcuts . (the current directory) or .. (the parent directory). For example, google-\/awesome-\/project/src/base/logging.\+h should be included as
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "base/logging.h"}
+\end{DoxyCode}
+
+
+In {\ttfamily dir/foo.\+cpp} or {\ttfamily dir/foo\+\_\+test.\+cpp}, whose main purpose is to implement or test the stuff in {\ttfamily dir2/foo2.\+h}, order your includes as follows\+:
+
+
+\begin{DoxyItemize}
+\item dir2/foo2.\+h (preferred location — see details below).
+\item C system files.
+\item C++ system files.
+\item Other libraries\textquotesingle{} .h files.
+\item Your project\textquotesingle{}s .h files.
+\end{DoxyItemize}
+
+With the preferred ordering, if {\ttfamily dir2/foo2.\+h} omits any necessary includes, the build of {\ttfamily dir/foo.\+cpp} or {\ttfamily dir/foo\+\_\+test.\+cpp} will break. Thus, this rule ensures that build breaks show up first for the people working on these files, not for innocent people in other packages.
+
+{\ttfamily dir/foo.\+cpp} and {\ttfamily dir2/foo2.\+h} are often in the same directory (e.\+g. {\ttfamily base/basictypes\+\_\+test.\+cpp} and {\ttfamily base/basictypes.\+h}), but can be in different directories too.
+
+Within each section the includes should be ordered alphabetically. Note that older code might not conform to this rule and should be fixed when convenient.
+
+For example, the includes in {\ttfamily cocos2dx/sprite\+\_\+nodes/\+C\+C\+Sprite.\+cpp} might look like this\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "sprite\_nodes/CCSprite.h"}  \textcolor{comment}{// Preferred location.}
+
+\textcolor{preprocessor}{#include <sys/types.h>}
+\textcolor{preprocessor}{#include <unistd.h>}
+\textcolor{preprocessor}{#include <hash\_map>}
+\textcolor{preprocessor}{#include <vector>}
+
+\textcolor{preprocessor}{#include "base/basictypes.h"}
+\textcolor{preprocessor}{#include "base/commandlineflags.h"}
+\textcolor{preprocessor}{#include "foo/public/bar.h"}
+\end{DoxyCode}
+
+
+Exception\+: sometimes, system-\/specific code needs conditional includes. Such code can put conditional includes after other includes. Of course, keep your system-\/specific code small and localized. Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "foo/public/fooserver.h"}
+
+\textcolor{preprocessor}{#include "base/port.h"} 
+
+\textcolor{comment}{// For LANG\_CXX11.}
+\textcolor{preprocessor}{#ifdef LANG\_CXX11}
+\textcolor{preprocessor}{#include <initializer\_list>}
+\textcolor{preprocessor}{#endif  // LANG\_CXX11}
+\end{DoxyCode}
+
+
+\section*{Scoping}
+
+\subsection*{Namespaces}
+
+Unnamed namespaces in {\ttfamily .cpp} files are encouraged. With named namespaces, choose the name based on the project, and possibly its path. Do not use a using-\/directive. Do not use inline namespaces.
+
+{\bfseries Definition\+:} Namespaces subdivide the global scope into distinct, named scopes, and so are useful for preventing name collisions in the global scope.
+
+{\bfseries Pros\+:} Namespaces provide a (hierarchical) axis of naming, in addition to the (also hierarchical) name axis provided by classes.
+
+For example, if two different projects have a class Foo in the global scope, these symbols may collide at compile time or at runtime. If each project places their code in a namespace, project1\+::\+Foo and project2\+::\+Foo are now distinct symbols that do not collide.
+
+Inline namespaces automatically place their names in the enclosing scope. Consider the following snippet, for example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }X \{
+\textcolor{keyword}{inline} \textcolor{keyword}{namespace }Y \{
+  \textcolor{keywordtype}{void} foo();
+\}
+\}
+\end{DoxyCode}
+ The expressions {\ttfamily X\+::\+Y\+::foo()} and {\ttfamily X\+::foo()} are interchangeable. Inline namespaces are primarily intended for A\+BI compatibility across versions.
+
+{\bfseries Cons\+:} Namespaces can be confusing, because they provide an additional (hierarchical) axis of naming, in addition to the (also hierarchical) name axis provided by classes.
+
+Inline namespaces, in particular, can be confusing because names aren\textquotesingle{}t actually restricted to the namespace where they are declared. They are only useful as part of some larger versioning policy.
+
+Use of unnamed namespaces in header files can easily cause violations of the C++ One Definition Rule (O\+DR).
+
+{\bfseries Decision\+:} Use namespaces according to the policy described below. Terminate namespaces with comments as shown in the given examples.
+
+\subsubsection*{Unnamed Namespaces}
+
+Unnamed namespaces are allowed and even encouraged in .cpp files, to avoid runtime naming conflicts\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }\{                           \textcolor{comment}{// This is in a .cpp file.}
+
+\textcolor{comment}{// The content of a namespace is not indented}
+\textcolor{keyword}{enum} \{ UNUSED, EOF, ERROR \};         \textcolor{comment}{// Commonly used tokens.}
+\textcolor{keywordtype}{bool} atEof() \{ \textcolor{keywordflow}{return} \_pos == EOF; \}  \textcolor{comment}{// Uses our namespace's EOF.}
+
+\}  \textcolor{comment}{// namespace}
+\end{DoxyCode}
+
+
+However, file-\/scope declarations that are associated with a particular class may be declared in that class as types, static data members or static member functions rather than as members of an unnamed namespace. Do not use unnamed namespaces in .h files.
+
+\subsubsection*{Named Namespaces}
+
+Named namespaces should be used as follows\+:
+
+Namespaces wrap the entire source file after includes, gflags definitions/declarations, and forward declarations of classes from other namespaces\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// In the .h file}
+\textcolor{comment}{// When using the cocos2d namespace}
+\hyperlink{namespaceNS__CC__BEGIN}{NS\_CC\_BEGIN}
+
+\textcolor{comment}{// All declarations are within the namespace scope.}
+\textcolor{comment}{// Notice the lack of indentation.}
+\textcolor{keyword}{class }MyClass
+\{
+\textcolor{keyword}{public}:
+    ...
+    \textcolor{keywordtype}{void} foo();
+\};
+
+NS\_CC\_END
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// In the .h file}
+\textcolor{comment}{// When NOT using the cocos2d namespace}
+\textcolor{keyword}{namespace }mynamespace \{
+
+\textcolor{comment}{// All declarations are within the namespace scope.}
+\textcolor{comment}{// Notice the lack of indentation.}
+\textcolor{keyword}{class }MyClass
+\{
+\textcolor{keyword}{public}:
+    ...
+    \textcolor{keywordtype}{void} foo();
+\};
+
+\}  \textcolor{comment}{// namespace mynamespace}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// In the .cpp file}
+\textcolor{keyword}{namespace }mynamespace \{
+
+\textcolor{comment}{// Definition of functions is within scope of the namespace.}
+\textcolor{keywordtype}{void} MyClass::foo()
+\{
+    ...
+\}
+
+\}  \textcolor{comment}{// namespace mynamespace}
+\end{DoxyCode}
+
+
+The typical .cpp file might have more complex detail, including the need to reference classes in other namespaces.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "a.h"}
+
+DEFINE\_bool(someflag, \textcolor{keyword}{false}, \textcolor{stringliteral}{"dummy flag"});
+
+\textcolor{keyword}{class }C;  \textcolor{comment}{// Forward declaration of class C in the global namespace.}
+\textcolor{keyword}{namespace }a \{ \textcolor{keyword}{class }A; \}  \textcolor{comment}{// Forward declaration of a::A.}
+
+\textcolor{keyword}{namespace }b \{
+
+...code \textcolor{keywordflow}{for} b...         \textcolor{comment}{// Code goes against the left margin.}
+
+\}  \textcolor{comment}{// namespace b}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Do not declare anything in namespace std, not even forward declarations of standard library classes. Declaring entities in namespace std is undefined behavior, i.\+e., not portable. To declare entities from the standard library, include the appropriate header file. You may not use a using-\/directive to make all names from a namespace available.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Forbidden -- This pollutes the namespace.}
+\textcolor{keyword}{using namespace }foo;
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item You may use a using-\/declaration anywhere in a .cpp file, and in functions, methods or classes in .h files.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// OK in .cpp files.}
+\textcolor{comment}{// Must be in a function, method or class in .h files.}
+using ::foo::bar;
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Namespace aliases are allowed anywhere in a .cpp file, anywhere inside the named namespace that wraps an entire .h file, and in functions and methods.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Shorten access to some commonly used names in .cpp files.}
+\textcolor{keyword}{namespace }fbz = ::foo::bar::baz;
+
+\textcolor{comment}{// Shorten access to some commonly used names (in a .h file).}
+\textcolor{keyword}{namespace }librarian \{
+\textcolor{comment}{// The following alias is available to all files including}
+\textcolor{comment}{// this header (in namespace librarian):}
+\textcolor{comment}{// alias names should therefore be chosen consistently}
+\textcolor{comment}{// within a project.}
+\textcolor{keyword}{namespace }pd\_s = ::pipeline\_diagnostics::sidetable;
+
+\textcolor{keyword}{inline} \textcolor{keywordtype}{void} myInlineFunction() \{
+\textcolor{comment}{// namespace alias local to a function (or method).}
+\textcolor{keyword}{namespace }fbz = ::foo::bar::baz;
+...
+\}
+\}  \textcolor{comment}{// namespace librarian}
+\end{DoxyCode}
+
+
+Note that an alias in a .h file is visible to everyone \#including that file, so public headers (those available outside a project) and headers transitively \#included by them, should avoid defining aliases, as part of the general goal of keeping public A\+P\+Is as small as possible.
+
+
+\begin{DoxyItemize}
+\item Do not use inline namespaces.
+\end{DoxyItemize}
+
+\subsection*{Nested Classes}
+
+Although you may use public nested classes when they are part of an interface, consider a namespace to keep declarations out of the global scope.
+
+{\bfseries Definition\+:} A class can define another class within it; this is also called a member class.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }Foo
+\{
+\textcolor{keyword}{private}:
+    \textcolor{comment}{// Bar is a member class, nested within Foo.}
+    \textcolor{keyword}{class }Bar
+    \{
+       ...
+    \};
+\};
+\end{DoxyCode}
+
+
+{\bfseries Pros\+:} This is useful when the nested (or member) class is only used by the enclosing class; making it a member puts it in the enclosing class scope rather than polluting the outer scope with the class name. Nested classes can be forward declared within the enclosing class and then defined in the .cpp file to avoid including the nested class definition in the enclosing class declaration, since the nested class definition is usually only relevant to the implementation.
+
+{\bfseries Cons\+:} Nested classes can be forward-\/declared only within the definition of the enclosing class. Thus, any header file manipulating a Foo\+::\+Bar$\ast$ pointer will have to include the full class declaration for Foo.
+
+{\bfseries Decision\+:} Do not make nested classes public unless they are actually part of the interface, e.\+g., a class that holds a set of options for some method.
+
+\subsection*{Nonmember, Static Member, and Global Functions}
+
+Prefer nonmember functions within a namespace or static member functions to global functions; use completely global functions rarely.
+
+{\bfseries Pros\+:} Nonmember and static member functions can be useful in some situations. Putting nonmember functions in a namespace avoids polluting the global namespace.
+
+{\bfseries Cons\+:} Nonmember and static member functions may make more sense as members of a new class, especially if they access external resources or have significant dependencies.
+
+{\bfseries Decision\+:}
+
+Sometimes it is useful, or even necessary, to define a function not bound to a class instance. Such a function can be either a static member or a nonmember function. Nonmember functions should not depend on external variables, and should nearly always exist in a namespace. Rather than creating classes only to group static member functions which do not share static data, use namespaces instead.
+
+Functions defined in the same compilation unit as production classes may introduce unnecessary coupling and link-\/time dependencies when directly called from other compilation units; static member functions are particularly susceptible to this. Consider extracting a new class, or placing the functions in a namespace possibly in a separate library.
+
+If you must define a nonmember function and it is only needed in its .cpp file, use an unnamed namespace or static linkage (eg static int Foo() \{...\}) to limit its scope.
+
+\subsection*{Local Variables}
+
+\hyperlink{classPlace}{Place} a function\textquotesingle{}s variables in the narrowest scope possible, and initialize variables in the declaration.
+
+C++ allows you to declare variables anywhere in a function. We encourage you to declare them in as local a scope as possible, and as close to the first use as possible. This makes it easier for the reader to find the declaration and see what type the variable is and what it was initialized to. In particular, initialization should be used instead of declaration and assignment, e.\+g.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} i;
+i = f();      \textcolor{comment}{// Bad -- initialization separate from declaration.}
+
+\textcolor{keywordtype}{int} j = g();  \textcolor{comment}{// Good -- declaration has initialization.}
+
+vector<int> v;
+v.push\_back(1);  \textcolor{comment}{// Prefer initializing using brace initialization.}
+v.push\_back(2);
+
+vector<int> v = \{1, 2\};  \textcolor{comment}{// Good -- v starts initialized.}
+\end{DoxyCode}
+
+
+Note that gcc implements {\ttfamily for (int i = 0; i $<$ 10; ++i)} correctly (the scope of i is only the scope of the for loop), so you can then reuse i in another for loop in the same scope. It also correctly scopes declarations in if and while statements, e.\+g.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{while} (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p = strchr(str, \textcolor{charliteral}{'/'})) str = p + 1;
+\end{DoxyCode}
+
+
+There is one caveat\+: if the variable is an object, its constructor is invoked every time it enters scope and is created, and its destructor is invoked every time it goes out of scope.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Inefficient implementation:}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000000; ++i) \{
+    Foo f;  \textcolor{comment}{// My ctor and dtor get called 1000000 times each.}
+    f.doSomething(i);
+\}
+
+It may be more efficient to declare such a variable used in a loop outside that loop:
+
+Foo f;  \textcolor{comment}{// My ctor and dtor get called once each.}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000000; ++i) \{
+    f.doSomething(i);
+\}
+\end{DoxyCode}
+
+
+\subsection*{Static and Global Variables}
+
+Static or global variables of class type are forbidden\+: they cause hard-\/to-\/find bugs due to indeterminate order of construction and destruction. However, such variables are allowed if they are {\ttfamily constexpr}\+: they have no dynamic initialization or destruction.
+
+Objects with static storage duration, including global variables, static variables, static class member variables, and function static variables, must be Plain Old \hyperlink{classData}{Data} (P\+OD)\+: only ints, chars, floats, or pointers, or arrays/structs of P\+OD.
+
+The order in which class constructors and initializers for static variables are called is only partially specified in C++ and can even change from build to build, which can cause bugs that are difficult to find. Therefore in addition to banning globals of class type, we do not allow static P\+OD variables to be initialized with the result of a function, unless that function (such as getenv(), or getpid()) does not itself depend on any other globals.
+
+Likewise, global and static variables are destroyed when the program terminates, regardless of whether the termination is by returning from {\ttfamily main()} or by calling {\ttfamily exit()}. The order in which destructors are called is defined to be the reverse of the order in which the constructors were called. Since constructor order is indeterminate, so is destructor order. For example, at program-\/end time a static variable might have been destroyed, but code still running — perhaps in another thread — tries to access it and fails. Or the destructor for a static {\ttfamily string} variable might be run prior to the destructor for another variable that contains a reference to that string.
+
+One way to alleviate the destructor problem is to terminate the program by calling {\ttfamily quick\+\_\+exit()} instead of {\ttfamily exit()}. The difference is that {\ttfamily quick\+\_\+exit()} does not invoke destructors and does not invoke any handlers that were registered by calling {\ttfamily atexit()}. If you have a handler that needs to run when a program terminates via {\ttfamily quick\+\_\+exit()} (flushing logs, for example), you can register it {\ttfamily using at\+\_\+quick\+\_\+exit()}. (If you have a handler that needs to run at both exit() and quick\+\_\+exit(), you need to register it in both places.)
+
+As a result we only allow static variables to contain P\+OD data. This rule completely disallows vector (use C arrays instead), or string (use const char \mbox{[}\mbox{]}).
+
+If you need a static or global variable of a class type, consider initializing a pointer (which will never be freed), from either your main() function or from pthread\+\_\+once(). Note that this must be a raw pointer, not a \char`\"{}smart\char`\"{} pointer, since the smart pointer\textquotesingle{}s destructor will have the order-\/of-\/destructor issue that we are trying to avoid.
+
+\section*{Classes}
+
+Classes are the fundamental unit of code in C++. Naturally, we use them extensively. This section lists the main dos and don\textquotesingle{}ts you should follow when writing a class.
+
+\subsection*{Doing Work in Constructors}
+
+Avoid doing complex initialization in constructors (in particular, initialization that can fail or that requires virtual method calls).
+
+{\bfseries Definition\+:} It is possible to perform initialization in the body of the constructor.
+
+{\bfseries Pros\+:} Convenience in typing. No need to worry about whether the class has been initialized or not.
+
+{\bfseries Cons\+:} The problems with doing work in constructors are\+:
+
+
+\begin{DoxyItemize}
+\item There is no easy way for constructors to signal errors, short of using exceptions (which are forbidden).
+\item If the work fails, we now have an object whose initialization code failed, so it may be an indeterminate state.
+\item If the work calls virtual functions, these calls will not get dispatched to the subclass implementations. Future modification to your class can quietly introduce this problem even if your class is not currently subclassed, causing much confusion.
+\item If someone creates a global variable of this type (which is against the rules, but still), the constructor code will be called before main(), possibly breaking some implicit assumptions in the constructor code. For instance, gflags will not yet have been initialized.
+\end{DoxyItemize}
+
+{\bfseries Decision\+:} Constructors should never call virtual functions or attempt to raise non-\/fatal failures. If your object requires non-\/trivial initialization, consider using a factory function or Init() method.
+
+\subsection*{Initialization}
+
+If your class defines member variables, you must provide an in-\/class initializer for every member variable or write a constructor (which can be a default constructor). If you do not declare any constructors yourself then the compiler will generate a default constructor for you, which may leave some fields uninitialized or initialized to inappropriate values.
+
+{\bfseries Definition\+:} The default constructor is called when we new a class object with no arguments. It is always called when calling {\ttfamily new\mbox{[}\mbox{]}} (for arrays). In-\/class member initialization means declaring a member variable using a construction like {\ttfamily int \+\_\+count = 17;} or {\ttfamily string name\+\_\+\{\char`\"{}abc\char`\"{}\};}, as opposed to just {\ttfamily int \+\_\+count;} or {\ttfamily string \+\_\+name;}.
+
+{\bfseries Pros\+:}
+
+A user defined default constructor is used to initialize an object if no initializer is provided. It can ensure that an object is always in a valid and usable state as soon as it\textquotesingle{}s constructed; it can also ensure that an object is initially created in an obviously \char`\"{}impossible\char`\"{} state, to aid debugging.
+
+In-\/class member initialization ensures that a member variable will be initialized appropriately without having to duplicate the initialization code in multiple constructors. This can reduce bugs where you add a new member variable, initialize it in one constructor, and forget to put that initialization code in another constructor.
+
+{\bfseries Cons\+:}
+
+Explicitly defining a default constructor is extra work for you, the code writer.
+
+In-\/class member initialization is potentially confusing if a member variable is initialized as part of its declaration and also initialized in a constructor, since the value in the constructor will override the value in the declaration.
+
+{\bfseries Decision\+:}
+
+Use in-\/class member initialization for simple initializations, especially when a member variable must be initialized the same way in more than one constructor.
+
+If your class defines member variables that aren\textquotesingle{}t initialized in-\/class, and if it has no other constructors, you must define a default constructor (one that takes no arguments). It should preferably initialize the object in such a way that its internal state is consistent and valid.
+
+The reason for this is that if you have no other constructors and do not define a default constructor, the compiler will generate one for you. This compiler generated constructor may not initialize your object sensibly.
+
+If your class inherits from an existing class but you add no new member variables, you are not required to have a default constructor.
+
+The reason for this is that if you have no other constructors and do not define a default constructor, the compiler will generate one for you. This compiler generated constructor may not initialize your object sensibly.
+
+If your class inherits from an existing class but you add no new member variables, you are not required to have a default constructor.
+
+\subsection*{Explicit Constructors}
+
+Use the C++ keyword explicit for constructors with one argument.
+
+{\bfseries Definition\+:} Normally, if a constructor takes one argument, it can be used as a conversion. For instance, if you define Foo\+::\+Foo(string name) and then pass a string to a function that expects a Foo, the constructor will be called to convert the string into a Foo and will pass the Foo to your function for you. This can be convenient but is also a source of trouble when things get converted and new objects created without you meaning them to. Declaring a constructor explicit prevents it from being invoked implicitly as a conversion.
+
+{\bfseries Pros\+:} Avoids undesirable conversions.
+
+{\bfseries Cons\+:} None.
+
+{\bfseries Decision\+:} We require all single argument constructors to be explicit. Always put explicit in front of one-\/argument constructors in the class definition\+: explicit Foo(string name);
+
+The exception is copy constructors, which, in the rare cases when we allow them, should probably not be explicit. Classes that are intended to be transparent wrappers around other classes are also exceptions. Such exceptions should be clearly marked with comments.
+
+Finally, constructors that take only an initializer\+\_\+list may be non-\/explicit. This is to permit construction of your type using the assignment form for brace init lists (i.\+e. {\ttfamily My\+Type m = \{1, 2\}} ).
+
+\subsection*{Copy Constructors}
+
+Provide a copy constructor and assignment operator only when necessary. Otherwise, disable them with {\ttfamily D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN}.
+
+{\bfseries Definition\+:} The copy constructor and assignment operator are used to create copies of objects. The copy constructor is implicitly invoked by the compiler in some situations, e.\+g. passing objects by value.
+
+{\bfseries Pros\+:} Copy constructors make it easy to copy objects. S\+TL containers require that all contents be copyable and assignable. Copy constructors can be more efficient than Copy\+From()-\/style workarounds because they combine construction with copying, the compiler can elide them in some contexts, and they make it easier to avoid heap allocation.
+
+{\bfseries Cons\+:} Implicit copying of objects in C++ is a rich source of bugs and of performance problems. It also reduces readability, as it becomes hard to track which objects are being passed around by value as opposed to by reference, and therefore where changes to an object are reflected.
+
+{\bfseries Decision\+:} Few classes need to be copyable. Most should have neither a copy constructor nor an assignment operator. In many situations, a pointer or reference will work just as well as a copied value, with better performance. For example, you can pass function parameters by reference or pointer instead of by value, and you can store pointers rather than objects in an S\+TL container.
+
+If your class needs to be copyable, prefer providing a copy method, such as {\ttfamily clone()}, rather than a copy constructor, because such methods cannot be invoked implicitly. If a copy method is insufficient in your situation (e.\+g. for performance reasons, or because your class needs to be stored by value in an S\+TL container), provide both a copy constructor and assignment operator.
+
+If your class does not need a copy constructor or assignment operator, you must explicitly disable them. To do so, add dummy declarations for the copy constructor and assignment operator in the private\+: section of your class, but do not provide any corresponding definition (so that any attempt to use them results in a link error).
+
+For convenience, a {\ttfamily D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN} macro can be used\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// A macro to disallow the copy constructor and operator= functions}
+\textcolor{comment}{// This should be used in the private: declarations for a class}
+\textcolor{preprocessor}{#define DISALLOW\_COPY\_AND\_ASSIGN(TypeName) \(\backslash\)}
+\textcolor{preprocessor}{  TypeName(const TypeName&);               \(\backslash\)}
+\textcolor{preprocessor}{  void operator=(const TypeName&)}
+\end{DoxyCode}
+
+
+Then, in class Foo\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }Foo
+\{
+\textcolor{keyword}{public}:
+    Foo(\textcolor{keywordtype}{int} f);
+    ~Foo();
+
+\textcolor{keyword}{private}:
+    DISALLOW\_COPY\_AND\_ASSIGN(Foo);
+\};
+\end{DoxyCode}
+
+
+\subsection*{Delegating and inheriting constructors}
+
+Use delegating and inheriting constructors when they reduce code duplication.
+
+{\bfseries Definition\+:}
+
+Delegating and inheriting constructors are two different features, both introduced in C++11, for reducing code duplication in constructors. Delegating constructors allow one of a class\textquotesingle{}s constructors to forward work to one of the class\textquotesingle{}s other constructors, using a special variant of the initialization \hyperlink{protocollist-p}{list} syntax. For example\+:
+
+
+\begin{DoxyCode}
+X::X(\textcolor{keyword}{const} \textcolor{keywordtype}{string}& name) : name\_(name) \{
+  ...
+\}
+
+X::X() : X(\textcolor{stringliteral}{""}) \{ \}
+\end{DoxyCode}
+
+
+Inheriting constructors allow a derived class to have its base class\textquotesingle{}s constructors available directly, just as with any of the base class\textquotesingle{}s other member functions, instead of having to redeclare them. This is especially useful if the base has multiple constructors. For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }Base \{
+\textcolor{keyword}{public}:
+    Base();
+    Base(\textcolor{keywordtype}{int} n);
+    Base(\textcolor{keyword}{const} \textcolor{keywordtype}{string}& s);
+    ...
+\};
+
+\textcolor{keyword}{class }Derived : \textcolor{keyword}{public} Base \{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{using} Base::Base;  \textcolor{comment}{// Base's constructors are redeclared here.}
+\};
+\end{DoxyCode}
+
+
+This is especially useful when Derived\textquotesingle{}s constructors don\textquotesingle{}t have to do anything more than calling Base\textquotesingle{}s constructors.
+
+{\bfseries Pros\+:}
+
+Delegating and inheriting constructors reduce verbosity and boilerplate, which can improve readability.
+
+Delegating constructors are familiar to Java programmers.
+
+{\bfseries Cons\+:}
+
+It\textquotesingle{}s possible to approximate the behavior of delegating constructors by using a helper function.
+
+Inheriting constructors may be confusing if a derived class introduces new member variables, since the base class constructor doesn\textquotesingle{}t know about them.
+
+{\bfseries Decision\+:}
+
+Use delegating and inheriting constructors when they reduce boilerplate and improve readability. Be cautious about inheriting constructors when your derived class has new member variables. Inheriting constructors may still be appropriate in that case if you can use in-\/class member initialization for the derived class\textquotesingle{}s member variables.
+
+\subsection*{Structs vs. Classes}
+
+Use a struct only for passive objects that carry data; everything else is a class.
+
+The struct and class keywords behave almost identically in C++. We add our own semantic meanings to each keyword, so you should use the appropriate keyword for the data-\/type you\textquotesingle{}re defining.
+
+structs should be used for passive objects that carry data, and may have associated constants, but lack any functionality other than access/setting the data members. The accessing/setting of fields is done by directly accessing the fields rather than through method invocations. Methods should not provide behavior but should only be used to set up the data members, e.\+g., constructor, destructor, Initialize(), Reset(), Validate().
+
+If more functionality is required, a class is more appropriate. If in doubt, make it a class.
+
+For consistency with S\+TL, you can use struct instead of class for functors and traits.
+
+Note that member variables in structs and classes have different naming rules.
+
+\subsection*{Inheritance}
+
+Composition is often more appropriate than inheritance. When using inheritance, make it public.
+
+{\bfseries Definition\+:} When a sub-\/class inherits from a base class, it includes the definitions of all the data and operations that the parent base class defines. In practice, inheritance is used in two major ways in C++\+: implementation inheritance, in which actual code is inherited by the child, and interface inheritance, in which only method names are inherited.
+
+{\bfseries Pros\+:} Implementation inheritance reduces code size by re-\/using the base class code as it specializes an existing type. Because inheritance is a compile-\/time declaration, you and the compiler can understand the operation and detect errors. Interface inheritance can be used to programmatically enforce that a class expose a particular A\+PI. Again, the compiler can detect errors, in this case, when a class does not define a necessary method of the A\+PI.
+
+{\bfseries Cons\+:} For implementation inheritance, because the code implementing a sub-\/class is spread between the base and the sub-\/class, it can be more difficult to understand an implementation. The sub-\/class cannot override functions that are not virtual, so the sub-\/class cannot change implementation. The base class may also define some data members, so that specifies physical layout of the base class.
+
+{\bfseries Decision\+:} All inheritance should be public. If you want to do private inheritance, you should be including an instance of the base class as a member instead.
+
+Do not overuse implementation inheritance. Composition is often more appropriate. Try to restrict use of inheritance to the \char`\"{}is-\/a\char`\"{} case\+: Bar subclasses Foo if it can reasonably be said that Bar \char`\"{}is a kind of\char`\"{} Foo.
+
+Make your destructor virtual if necessary. If your class has virtual methods, its destructor should be virtual.
+
+Limit the use of protected to those member functions that might need to be accessed from subclasses. Note that data members should be private.
+
+When redefining an inherited virtual function, explicitly declare it virtual in the declaration of the derived class. Rationale\+: If virtual is omitted, the reader has to check all ancestors of the class in question to determine if the function is virtual or not.
+
+\subsection*{Multiple Inheritance}
+
+Only very rarely is multiple implementation inheritance actually useful. We allow multiple inheritance only when at most one of the base classes has an implementation; all other base classes must be pure interface classes tagged with the Interface suffix.
+
+{\bfseries Definition\+:} Multiple inheritance allows a sub-\/class to have more than one base class. We distinguish between base classes that are pure interfaces and those that have an implementation.
+
+{\bfseries Pros\+:} Multiple implementation inheritance may let you re-\/use even more code than single inheritance (see Inheritance).
+
+{\bfseries Cons\+:} Only very rarely is multiple implementation inheritance actually useful. When multiple implementation inheritance seems like the solution, you can usually find a different, more explicit, and cleaner solution.
+
+{\bfseries Decision\+:} Multiple inheritance is allowed only when all superclasses, with the possible exception of the first one, are pure interfaces. In order to ensure that they remain pure interfaces, they must end with the Interface suffix.
+
+Note\+: There is an exception to this rule on Windows.
+
+\subsection*{Interfaces}
+
+Classes that satisfy certain conditions are allowed, but not required, to end with an {\ttfamily Interface} suffix.
+
+{\bfseries Definition\+:}
+
+A class is a pure interface if it meets the following requirements\+:
+
+
+\begin{DoxyItemize}
+\item It has only public pure virtual (\char`\"{}= 0\char`\"{}) methods and static methods (but see below for destructor).
+\item It may not have non-\/static data members.
+\item It need not have any constructors defined. If a constructor is provided, it must take no arguments and it must be protected.
+\item If it is a subclass, it may only be derived from classes that satisfy these conditions and are tagged with the Interface suffix.
+\end{DoxyItemize}
+
+An interface class can never be directly instantiated because of the pure virtual method(s) it declares. To make sure all implementations of the interface can be destroyed correctly, the interface must also declare a virtual destructor (in an exception to the first rule, this should not be pure). See Stroustrup, The C++ Programming Language, 3rd edition, section 12.\+4 for details.
+
+{\bfseries Pros\+:} Tagging a class with the {\ttfamily Interface} suffix lets others know that they must not add implemented methods or non static data members. This is particularly important in the case of multiple inheritance. Additionally, the interface concept is already well-\/understood by Java programmers.
+
+{\bfseries Cons\+:} The {\ttfamily Interface} suffix lengthens the class name, which can make it harder to read and understand. Also, the interface property may be considered an implementation detail that shouldn\textquotesingle{}t be exposed to clients.
+
+{\bfseries Decision\+:} A class may end with {\ttfamily Interface} only if it meets the above requirements. We do not require the converse, however\+: classes that meet the above requirements are not required to end with {\ttfamily Interface}.
+
+\subsection*{Operator Overloading}
+
+Do not overload operators except in rare, special circumstances.
+
+{\bfseries Definition\+:} A class can define that operators such as + and / operate on the class as if it were a built-\/in type. An overload of {\ttfamily operator\char`\"{}\char`\"{}} allows the built-\/in literal syntax to be used to create objects of class types.
+
+{\bfseries Pros\+:} Operator overloading can make code appear more intuitive because a class will behave in the same way as built-\/in types (such as int). Overloaded operators are more playful names for functions that are less-\/colorfully named, such as {\ttfamily Equals()} or {\ttfamily Add()}.
+
+For some template functions to work correctly, you may need to define operators.
+
+User-\/defined literals are a very concise notation for creating objects of user-\/defined types.
+
+{\bfseries Cons\+:} While operator overloading can make code more intuitive, it has several drawbacks\+:
+
+
+\begin{DoxyItemize}
+\item It can fool our intuition into thinking that expensive operations are cheap, built-\/in operations.
+\item It is much harder to find the call sites for overloaded operators. Searching for {\ttfamily equals()} is much easier than searching for relevant invocations of {\ttfamily ==}.
+\item Some operators work on pointers too, making it easy to introduce bugs. Foo + 4 may do one thing, while \&Foo + 4 does something totally different. The compiler does not complain for either of these, making this very hard to debug.
+\item User-\/defined literals allow creating new syntactic forms that are unfamiliar even to experienced C++ programmers.
+\end{DoxyItemize}
+
+Overloading also has surprising ramifications. For instance, if a class overloads unary operator\&, it cannot safely be forward-\/declared.
+
+{\bfseries Decision\+:} In general, do not overload operators. The assignment operator ({\ttfamily operator=}), in particular, is insidious and should be avoided. You can define functions like {\ttfamily equals()} and {\ttfamily clone()} if you need them. Likewise, avoid the dangerous unary operator\& at all costs, if there\textquotesingle{}s any possibility the class might be forward-\/declared.
+
+Do not overload {\ttfamily operator\char`\"{}\char`\"{}}, i.\+e. do not introduce user-\/defined literals.
+
+However, there may be rare cases where you need to overload an operator to interoperate with templates or \char`\"{}standard\char`\"{} C++ classes (such as {\ttfamily operator$<$$<$ (ostream\&, const T\&)} for logging). These are acceptable if fully justified, but you should try to avoid these whenever possible. In particular, do not overload {\ttfamily operator==} or {\ttfamily operator$<$} just so that your class can be used as a key in an S\+TL container; instead, you should create equality and comparison functor types when declaring the container.
+
+Some of the S\+TL algorithms do require you to overload {\ttfamily operator==}, and you may do so in these cases, provided you document why.
+
+See also Copy Constructors and Function Overloading.
+
+\subsection*{Access \hyperlink{classControl}{Control}}
+
+Make data members private, and provide access to them through accessor functions as needed (for technical reasons, we allow data members of a test fixture class to be protected when using Google Test). Typically a variable would be called {\ttfamily \+\_\+foo} and the accessor function {\ttfamily get\+Foo()} . You may also want a mutator function {\ttfamily set\+Foo()} . Exception\+: static const data members (typically called F\+OO) need not be private.
+
+The definitions of accessors are usually inlined in the header file.
+
+See also Inheritance and Function Names.
+
+\subsection*{Declaration Order}
+
+Use the specified order of declarations within a class\+: public\+: before private\+:, methods before data members (variables), etc.
+
+Your class definition should start with its public\+: section, followed by its protected\+: section and then its private\+: section. If any of these sections are empty, omit them.
+
+Within each section, the declarations generally should be in the following order\+:
+
+
+\begin{DoxyItemize}
+\item Typedefs and Enums
+\item Constants ({\ttfamily static const} data members)
+\item Creators ({\ttfamily create\+X\+XX} methods)
+\item Constructors
+\item Destructor
+\item Methods, including static methods
+\item overridden methods (must have the {\ttfamily override} keyword as suffix)
+\item \hyperlink{classData}{Data} Members (except {\ttfamily static const} data members)
+\end{DoxyItemize}
+
+Friend declarations should always be in the private section, and the {\ttfamily D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN} macro invocation should be at the end of the private\+: section. It should be the last thing in the class. See Copy Constructors.
+
+Method definitions in the corresponding .cpp file should be the same as the declaration order, as much as possible.
+
+Do not put large method definitions inline in the class definition. Usually, only trivial or performance-\/critical, and very short, methods may be defined inline. See Inline Functions for more details.
+
+Example\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyNode : \textcolor{keyword}{public} \hyperlink{classNode}{Node}
+\{
+\textcolor{comment}{// public first}
+\textcolor{keyword}{public}:
+    \textcolor{comment}{// "creator" methods first}
+    \textcolor{keyword}{static} MyNode *\hyperlink{classNode_aa9a92a1756b585d707a42c3fd1b274d4}{create}();
+    \textcolor{keyword}{static} MyNode *createWithParam(\textcolor{keyword}{const} something& arg);
+
+    \textcolor{comment}{// If applicable, then Constructors and the Destructor    }
+    MyNode();
+    \textcolor{keyword}{virtual} ~MyNode();
+
+    \textcolor{comment}{// Then the init methods}
+    \textcolor{keywordtype}{bool} \hyperlink{namespaceDrawPrimitives_ae042e1546ce595f9b01f92bcac0be48a}{init}();
+    \textcolor{keywordtype}{bool} initWithParam(\textcolor{keyword}{const} something& arg);
+
+
+    \textcolor{comment}{// Then methods of the instance}
+    \textcolor{keywordtype}{void} addColor( \textcolor{keyword}{const} Color& color );
+    \textcolor{keywordtype}{void} addBackgroundImage( \textcolor{keyword}{const} \textcolor{keywordtype}{char}* filepath );
+
+    \textcolor{comment}{// Then the overrides}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} visit(\textcolor{keywordtype}{void}) \textcolor{keyword}{override};
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classNode_a132699398b350e83b548a5645e69beb0}{addChild}(\hyperlink{classNode}{Node} * child, \textcolor{keywordtype}{int} zOrder, \textcolor{keywordtype}{int} tag) \textcolor{keyword}{override};
+
+\textcolor{comment}{// then protected}
+\textcolor{keyword}{protected}:
+    \hyperlink{classVec2}{Point} absolutePosition();
+
+\textcolor{comment}{// then private}
+\textcolor{keyword}{private}:
+    \hyperlink{classVec2}{Point}    \_lastPosition;
+\};
+
+\}
+\end{DoxyCode}
+
+
+\subsection*{Write Short Functions}
+
+Prefer small and focused functions.
+
+We recognize that long functions are sometimes appropriate, so no hard limit is placed on functions length. If a function exceeds about 40 lines, think about whether it can be broken up without harming the structure of the program.
+
+Even if your long function works perfectly now, someone modifying it in a few months may add new behavior. This could result in bugs that are hard to find. Keeping your functions short and simple makes it easier for other people to read and modify your code.
+
+You could find long and complicated functions when working with some code. Do not be intimidated by modifying existing code\+: if working with such a function proves to be difficult, you find that errors are hard to debug, or you want to use a piece of it in several different contexts, consider breaking up the function into smaller and more manageable pieces.
+
+\section*{Other C++ Features}
+
+\subsection*{Ownership and Smart Pointers}
+
+Prefer to have single, fixed owners for dynamically allocated objects. Prefer to transfer ownership with smart pointers.
+
+{\bfseries Definition\+:}
+
+\char`\"{}\+Ownership\char`\"{} is a bookkeeping technique for managing dynamically allocated memory (and other resources). The owner of a dynamically allocated object is an object or function that is responsible for ensuring that it is deleted when no longer needed. Ownership can sometimes be shared, in which case the last owner is typically responsible for deleting it. Even when ownership is not shared, it can be transferred from one piece of code to another.
+
+\char`\"{}\+Smart\char`\"{} pointers are classes that act like pointers, e.\+g. by overloading the $\ast$ and -\/$>$ operators. Some smart pointer types can be used to automate ownership bookkeeping, to ensure these responsibilities are met. {\ttfamily std\+::unique\+\_\+ptr} is a smart pointer type introduced in C++11, which expresses exclusive ownership of a dynamically allocated object; the object is deleted when the {\ttfamily std\+::unique\+\_\+ptr} goes out of scope. It cannot be copied, but can be moved to represent ownership transfer. shared\+\_\+ptr is a smart pointer type which expresses shared ownership of a dynamically allocated object. {\ttfamily shared\+\_\+ptrs} can be copied; ownership of the object is shared among all copies, and the object is deleted when the last {\ttfamily shared\+\_\+ptr} is destroyed.
+
+{\bfseries Pros\+:}
+
+
+\begin{DoxyItemize}
+\item It\textquotesingle{}s virtually impossible to manage dynamically allocated memory without some sort of ownership logic.
+\item Transferring ownership of an object can be cheaper than copying it (if copying it is even possible).
+\item Transferring ownership can be simpler than \textquotesingle{}borrowing\textquotesingle{} a pointer or reference, because it reduces the need to coordinate the lifetime of the object between the two users.
+\item Smart pointers can improve readability by making ownership logic explicit, self-\/documenting, and unambiguous.
+\item Smart pointers can eliminate manual ownership bookkeeping, simplifying the code and ruling out large classes of errors.
+\item For const objects, shared ownership can be a simple and efficient alternative to deep copying.
+\end{DoxyItemize}
+
+{\bfseries Cons\+:}
+
+
+\begin{DoxyItemize}
+\item Ownership must be represented and transferred via pointers (whether smart or plain). Pointer semantics are more complicated than value semantics, especially in A\+P\+Is\+: you have to worry not just about ownership, but also aliasing, lifetime, and mutability, among other issues.
+\item The performance costs of value semantics are often overestimated, so the performance benefits of ownership transfer might not justify the readability and complexity costs.
+\item A\+P\+Is that transfer ownership force their clients into a single memory management model.
+\item Code using smart pointers is less explicit about where the resource releases take place.
+\item {\ttfamily std\+::unique\+\_\+ptr} expresses ownership transfer using C++11\textquotesingle{}s move semantics, which are generally forbidden in Google code, and may confuse some programmers.
+\item Shared ownership can be a tempting alternative to careful ownership design, obfuscating the design of a system.
+\item Shared ownership requires explicit bookkeeping at run-\/time, which can be costly.
+\item In some cases (e.\+g. cyclic references), objects with shared ownership may never be deleted.
+\item Smart pointers are not perfect substitutes for plain pointers.
+\end{DoxyItemize}
+
+{\bfseries Decision\+:}
+
+If dynamic allocation is necessary, prefer to keep ownership with the code that allocated it. If other code needs access to the object, consider passing it a copy, or passing a pointer or reference without transferring ownership. Prefer to use {\ttfamily std\+::unique\+\_\+ptr} to make ownership transfer explicit. For example\+:
+
+
+\begin{DoxyCode}
+std::unique\_ptr<Foo> FooFactory();
+\textcolor{keywordtype}{void} FooConsumer(std::unique\_ptr<Foo> ptr);
+\end{DoxyCode}
+
+
+Do not design your code to use shared ownership without a very good reason. One such reason is to avoid expensive copy operations, but you should only do this if the performance benefits are significant, and the underlying object is immutable (i.\+e. {\ttfamily shared\+\_\+ptr$<$const Foo$>$}). If you do use shared ownership, prefer to use shared\+\_\+ptr.
+
+Do not use {\ttfamily scoped\+\_\+ptr} in new code unless you need to be compatible with older versions of C++. Never use {\ttfamily linked\+\_\+ptr} or {\ttfamily std\+::auto\+\_\+ptr}. In all three cases, use {\ttfamily std\+::unique\+\_\+ptr} instead.
+
+\subsection*{\hyperlink{structReference}{Reference} \hyperlink{classArguments}{Arguments}}
+
+All parameters passed by reference must be labeled {\ttfamily const}.
+
+{\bfseries Definition\+:} In C, if a function needs to modify a variable, the parameter must use a pointer, eg int foo(int $\ast$pval). In C++, the function can alternatively declare a reference parameter\+: int foo(int \&val).
+
+{\bfseries Pros\+:} Defining a parameter as reference avoids ugly code like ($\ast$pval)++. Necessary for some applications like copy constructors. Makes it clear, unlike with pointers, that a null pointer is not a possible value.
+
+{\bfseries Cons\+:} References can be confusing, as they have value syntax but pointer semantics.
+
+{\bfseries Decision\+:}
+
+Within function parameter lists all references must be const\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} foo(\textcolor{keyword}{const} \textcolor{keywordtype}{string} &in, \textcolor{keywordtype}{string} *out);
+\end{DoxyCode}
+
+
+It is a very strong convention that input arguments are values or const references while output arguments are pointers. Input parameters may be const pointers, but we never allow non-\/const reference parameters except when required by convention, e.\+g., {\ttfamily swap()} .
+
+However, there are some instances where using {\ttfamily const T$\ast$} is preferable to {\ttfamily const T\&} for input parameters. For example\+:
+
+
+\begin{DoxyItemize}
+\item You want to pass in a null pointer.
+\item The function saves a pointer or reference to the input.
+\item Passing {\ttfamily const char$\ast$} for strings
+\end{DoxyItemize}
+
+Remember that most of the time input parameters are going to be specified as {\ttfamily const T\&} . Using {\ttfamily const T$\ast$} instead communicates to the reader that the input is somehow treated differently. So if you choose {\ttfamily const T$\ast$} rather than {\ttfamily const T\&} , do so for a concrete reason; otherwise it will likely confuse readers by making them look for an explanation that doesn\textquotesingle{}t exist.
+
+\subsection*{Rvalue references}
+
+Do not use rvalue references, {\ttfamily std\+::forward}, {\ttfamily std\+::move\+\_\+iterator}, or {\ttfamily std\+::move\+\_\+if\+\_\+noexcept}. Use the single-\/argument form of {\ttfamily std\+::move} only with non-\/copyable arguments.
+
+{\bfseries Definition\+:} Rvalue references are a type of reference that can only bind to temporary objects. The syntax is similar to traditional reference syntax. For example, void f(string\&\& s); declares a function whose argument is an rvalue reference to a string.
+
+{\bfseries Pros\+:}
+
+
+\begin{DoxyItemize}
+\item Defining a move constructor (a constructor taking an rvalue reference to the class type) makes it possible to move a value instead of copying it. If {\ttfamily v1} is a {\ttfamily vector$<$string$>$}, for example, then {\ttfamily auto v2(std\+::move(v1))} will probably just result in some simple pointer manipulation instead of copying a large amount of data. In some cases this can result in a major performance improvement.
+\item Rvalue references make it possible to write a generic function wrapper that forwards its arguments to another function, and works whether or not its arguments are temporary objects.
+\item Rvalue references make it possible to implement types that are moveable but not copyable, which can be useful for types that have no sensible definition of copying but where you might still want to pass them as function arguments, put them in containers, etc.
+\item {\ttfamily std\+::move} is necessary to make effective use of some standard-\/library types, such as {\ttfamily std\+::unique\+\_\+ptr}.
+\end{DoxyItemize}
+
+{\bfseries Cons\+:}
+
+
+\begin{DoxyItemize}
+\item Rvalue references are a relatively new feature (introduced as part of C++11), and not yet widely understood. Rules like reference collapsing, and automatic synthesis of move constructors, are complicated.
+\item Rvalue references encourage a programming style that makes heavier use of value semantics. This style is unfamiliar to many developers, and its performance characteristics can be hard to reason about.
+\end{DoxyItemize}
+
+{\bfseries Decision\+:}
+
+Do not use rvalue references, and do not use the {\ttfamily std\+::forward} or {\ttfamily std\+::move\+\_\+if\+\_\+noexcept} utility functions (which are essentially just casts to rvalue reference types), or {\ttfamily std\+::move\+\_\+iterator}. Use single-\/argument {\ttfamily std\+::move} only with objects that are not copyable (e.\+g. {\ttfamily std\+::unique\+\_\+ptr}), or in templated code with objects that might not be copyable.
+
+\subsection*{Function Overloading}
+
+Use overloaded functions (including constructors) only if a reader looking at a call site can get a good idea of what is happening without having to first figure out exactly which overload is being called.
+
+{\bfseries Definition\+:}
+
+You may write a function that takes a {\ttfamily const string\&} and overload it with another that takes {\ttfamily const char$\ast$} .
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyClass
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keywordtype}{void} analyze(\textcolor{keyword}{const} \textcolor{keywordtype}{string} &text);
+    \textcolor{keywordtype}{void} analyze(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *text, \textcolor{keywordtype}{size\_t} textlen);
+\};
+\end{DoxyCode}
+
+
+{\bfseries Pros\+:} Overloading can make code more intuitive by allowing an identically-\/named function to take different arguments. It may be necessary for templatized code, and it can be convenient for Visitors.
+
+{\bfseries Cons\+:} If a function is overloaded by the argument types alone, a reader may have to understand C++\textquotesingle{}s complex matching rules in order to tell what\textquotesingle{}s going on. Also many people are confused by the semantics of inheritance if a derived class overrides only some of the variants of a function.
+
+{\bfseries Decision\+:} If you want to overload a function, consider qualifying the name with some information about the arguments, e.\+g., {\ttfamily append\+String()} , {\ttfamily append\+Int()} rather than just {\ttfamily append()} .
+
+\subsection*{Default \hyperlink{classArguments}{Arguments}}
+
+We do not allow default function parameters, except in limited situations as explained below. Simulate them with function overloading instead, if appropriate.
+
+{\bfseries Pros\+:} Often you have a function that uses default values, but occasionally you want to override the defaults. Default parameters allow an easy way to do this without having to define many functions for the rare exceptions. Compared to overloading the function, default arguments have a cleaner syntax, with less boilerplate and a clearer distinction between \textquotesingle{}required\textquotesingle{} and \textquotesingle{}optional\textquotesingle{} arguments.
+
+{\bfseries Cons\+:} Function pointers are confusing in the presence of default arguments, since the function signature often doesn\textquotesingle{}t match the call signature. Adding a default argument to an existing function changes its type, which can cause problems with code taking its address. Adding function overloads avoids these problems. In addition, default parameters may result in bulkier code since they are replicated at every call-\/site -- as opposed to overloaded functions, where \char`\"{}the default\char`\"{} appears only in the function definition.
+
+{\bfseries Decision\+:}
+
+While the cons above are not that onerous, they still outweigh the (small) benefits of default arguments over function overloading. So except as described below, we require all arguments to be explicitly specified.
+
+One specific exception is when the function is a static function (or in an unnamed namespace) in a .cpp file. In this case, the cons don\textquotesingle{}t apply since the function\textquotesingle{}s use is so localized.
+
+In particular, the {\ttfamily create\+X\+XX} and {\ttfamily init\+X\+XX} methods in cocos2dx are allowed to use default arguments.
+
+Another specific exception is when default arguments are used to simulate variable-\/length argument lists. Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Support up to 4 params by using a default empty AlphaNum.}
+\textcolor{keywordtype}{string} strCat(\textcolor{keyword}{const} AlphaNum &a,
+              \textcolor{keyword}{const} AlphaNum &b = gEmptyAlphaNum,
+              \textcolor{keyword}{const} AlphaNum &c = gEmptyAlphaNum,
+              \textcolor{keyword}{const} AlphaNum &d = gEmptyAlphaNum);
+\end{DoxyCode}
+
+
+\subsection*{Variable-\/\+Length Arrays and alloca()}
+
+We do not allow variable-\/length arrays or alloca().
+
+{\bfseries Pros\+:} Variable-\/length arrays have natural-\/looking syntax. Both variable-\/length arrays and alloca() are very efficient.
+
+{\bfseries Cons\+:} Variable-\/length arrays and alloca are not part of Standard C++. More importantly, they allocate a data-\/dependent amount of stack space that can trigger difficult-\/to-\/find memory overwriting bugs\+: \char`\"{}\+It ran fine on my machine, but dies mysteriously in production\char`\"{}.
+
+{\bfseries Decision\+:} Use a safe allocator instead, such as scoped\+\_\+ptr/scoped\+\_\+array.
+
+\subsection*{Friends}
+
+We allow use of friend classes and functions, within reason.
+
+Friends should usually be defined in the same file so that the reader does not have to look in another file to find uses of the private members of a class. A common use of friend is to have a Foo\+Builder class be a friend of Foo so that it can construct the inner state of Foo correctly, without exposing this state to the world. In some cases it may be useful to make a unittest class a friend of the class it tests.
+
+Friends extend, but do not break, the encapsulation boundary of a class. In some cases this is better than making a member public when you want to give only one other class access to it. However, most classes should interact with other classes solely through their public members.
+
+\subsection*{Exceptions}
+
+We do not use C++ exceptions.
+
+{\bfseries Pros\+:}
+
+
+\begin{DoxyItemize}
+\item Exceptions allow higher levels of an application to decide how to handle \char`\"{}can\textquotesingle{}t happen\char`\"{} failures in deeply nested functions, without the obscuring and error-\/prone bookkeeping of error codes.
+\item Exceptions are used by most other modern languages. Using them in C++ would make it more consistent with Python, Java, and the C++ that others are familiar with.
+\item Some third-\/party C++ libraries use exceptions, and turning them off internally makes it harder to integrate with those libraries.
+\item Exceptions are the only way for a constructor to fail. We can simulate this with a factory function or an {\ttfamily init()} method, but these require heap allocation or a new \char`\"{}invalid\char`\"{} state, respectively.
+\item Exceptions are really handy in testing frameworks.
+\end{DoxyItemize}
+
+{\bfseries Cons\+:}
+
+
+\begin{DoxyItemize}
+\item When you add a throw statement to an existing function, you must examine all of its transitive callers. Either they must make at least the basic exception safety guarantee, or they must never catch the exception and be happy with the program terminating as a result. For instance, if f() calls g() calls h(), and h throws an exception that f catches, g has to be careful or it may not clean up properly.
+\item More generally, exceptions make the control flow of programs difficult to evaluate by looking at code\+: functions may return in places you don\textquotesingle{}t expect. This causes maintainability and debugging difficulties. You can minimize this cost via some rules on how and where exceptions can be used, but at the cost of more that a developer needs to know and understand.
+\item Exception safety requires both R\+A\+II and different coding practices. Lots of supporting machinery is needed to make writing correct exception-\/safe code easy. Further, to avoid requiring readers to understand the entire call graph, exception-\/safe code must isolate logic that writes to persistent state into a \char`\"{}commit\char`\"{} phase. This will have both benefits and costs (perhaps where you\textquotesingle{}re forced to obfuscate code to isolate the commit). Allowing exceptions would force us to always pay those costs even when they\textquotesingle{}re not worth it.
+\item Turning on exceptions adds data to each binary produced, increasing compile time (probably slightly) and possibly increasing address space pressure.
+\item The availability of exceptions may encourage developers to throw them when they are not appropriate or recover from them when it\textquotesingle{}s not safe to do so. For example, invalid user input should not cause exceptions to be thrown. We would need to make the style guide even longer to document these restrictions!
+\end{DoxyItemize}
+
+{\bfseries Decision\+:}
+
+On their face, the benefits of using exceptions outweigh the costs, especially in new projects. However, for existing code, the introduction of exceptions has implications on all dependent code. If exceptions can be propagated beyond a new project, it also becomes problematic to integrate the new project into existing exception-\/free code. Because most existing C++ code at Google is not prepared to deal with exceptions, it is comparatively difficult to adopt new code that generates exceptions.
+
+Given that Google\textquotesingle{}s existing code is not exception-\/tolerant, the costs of using exceptions are somewhat greater than the costs in a new project. The conversion process would be slow and error-\/prone. We don\textquotesingle{}t believe that the available alternatives to exceptions, such as error codes and assertions, introduce a significant burden.
+
+Our advice against using exceptions is not predicated on philosophical or moral grounds, but practical ones. Because we\textquotesingle{}d like to use our open-\/source projects at Google and it\textquotesingle{}s difficult to do so if those projects use exceptions, we need to advise against exceptions in Google open-\/source projects as well. Things would probably be different if we had to do it all over again from scratch.
+
+This prohibition also applies to the exception-\/related features added in C++11, such as noexcept, {\ttfamily std\+::exception\+\_\+ptr}, and {\ttfamily std\+::nested\+\_\+exception}.
+
+There is an exception to this rule (no pun intended) for Windows code.
+
+\subsection*{Run-\/\+Time Type Information (R\+T\+TI)}
+
+cocos2dx requires Run Time Type Information (R\+T\+TI) in order to compile and run. That being said, you should be careful and not abuse the R\+T\+TI features.
+
+{\bfseries Definition\+:} R\+T\+TI allows a programmer to query the C++ class of an object at run time. This is done by use of typeid or dynamic\+\_\+cast.
+
+{\bfseries Cons\+:}
+
+Querying the type of an object at run-\/time frequently means a design problem. Needing to know the type of an object at runtime is often an indication that the design of your class hierarchy is flawed.
+
+Undisciplined use of R\+T\+TI makes code hard to maintain. It can lead to type-\/based decision trees or switch statements scattered throughout the code, all of which must be examined when making further changes.
+
+{\bfseries Pros\+:}
+
+The standard alternatives to R\+T\+TI (described below) require modification or redesign of the class hierarchy in question. Sometimes such modifications are infeasible or undesirable, particularly in widely-\/used or mature code.
+
+R\+T\+TI can be useful in some unit tests. For example, it is useful in tests of factory classes where the test has to verify that a newly created object has the expected dynamic type. It is also useful in managing the relationship between objects and their mocks.
+
+R\+T\+TI is useful when considering multiple abstract objects. Consider
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} Base::equal(Base* other) = 0;
+\textcolor{keywordtype}{bool} Derived::equal(Base* other)
+\{
+    Derived* that = \textcolor{keyword}{dynamic\_cast<}Derived*\textcolor{keyword}{>}(other);
+    \textcolor{keywordflow}{if} (that == NULL)
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+    ...
+\}
+\end{DoxyCode}
+
+
+{\bfseries Decision\+:}
+
+R\+T\+TI has legitimate uses but is prone to abuse, so you must be careful when using it. You may use it freely in unittests, but avoid it when possible in other code. In particular, think twice before using R\+T\+TI in new code. If you find yourself needing to write code that behaves differently based on the class of an object, consider one of the following alternatives to querying the type\+:
+
+
+\begin{DoxyItemize}
+\item Virtual methods are the preferred way of executing different code paths depending on a specific subclass type. This puts the work within the object itself.
+\item If the work belongs outside the object and instead in some processing code, consider a double-\/dispatch solution, such as the Visitor design pattern. This allows a facility outside the object itself to determine the type of class using the built-\/in type system.
+\end{DoxyItemize}
+
+When the logic of a program guarantees that a given instance of a base class is in fact an instance of a particular derived class, then a {\ttfamily dynamic\+\_\+cast} may be used freely on the object. Usually one can use a {\ttfamily static\+\_\+cast} as an alternative in such situations.
+
+Decision trees based on type are a strong indication that your code is on the wrong track.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(*data) == \textcolor{keyword}{typeid}(D1)) \{
+    ...
+\} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(*data) == \textcolor{keyword}{typeid}(D2)) \{
+    ...
+\} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(*data) == \textcolor{keyword}{typeid}(D3)) \{
+    ...
+\end{DoxyCode}
+
+
+Code such as this usually breaks when additional subclasses are added to the class hierarchy. Moreover, when properties of a subclass change, it is difficult to find and modify all the affected code segments.
+
+Do not hand-\/implement an R\+T\+T\+I-\/like workaround. The arguments against R\+T\+TI apply just as much to workarounds like class hierarchies with type tags. Moreover, workarounds disguise your true intent.
+
+\subsection*{Casting}
+
+Use C++ casts like {\ttfamily static\+\_\+cast$<$$>$()}. Do not use other cast formats like {\ttfamily int y = (int)x; or int y = int(x);}.
+
+{\bfseries Definition\+:} C++ introduced a different cast system from C that distinguishes the types of cast operations.
+
+{\bfseries Pros\+:} The problem with C casts is the ambiguity of the operation; sometimes you are doing a conversion (e.\+g., (int)3.\+5) and sometimes you are doing a cast (e.\+g., (int)\char`\"{}hello\char`\"{}); C++ casts avoid this. Additionally C++ casts are more visible when searching for them.
+
+{\bfseries Cons\+:} The syntax is nasty.
+
+{\bfseries Decision\+:}
+
+Do not use C-\/style casts. Instead, use these C++-\/style casts.
+
+
+\begin{DoxyItemize}
+\item Use {\ttfamily static\+\_\+cast} as the equivalent of a C-\/style cast that does value conversion, or when you need to explicitly up-\/cast a pointer from a class to its superclass.
+\item Use {\ttfamily const\+\_\+cast} to remove the const qualifier (see const).
+\item Use {\ttfamily reinterpret\+\_\+cast} to do unsafe conversions of pointer types to and from integer and other pointer types. Use this only if you know what you are doing and you understand the aliasing issues.
+\end{DoxyItemize}
+
+See the R\+T\+TI section for guidance on the use of dynamic\+\_\+cast.
+
+\subsection*{Streams}
+
+Use streams only for logging.
+
+{\bfseries Definition\+:} Streams are a replacement for printf() and scanf().
+
+{\bfseries Pros\+:} With streams, you do not need to know the type of the object you are printing. You do not have problems with format strings not matching the argument \hyperlink{protocollist-p}{list}. (Though with gcc, you do not have that problem with printf either.) Streams have automatic constructors and destructors that open and close the relevant files.
+
+{\bfseries Cons\+:} Streams make it difficult to do functionality like pread(). Some formatting (particularly the common format string idiom \%.$\ast$s) is difficult if not impossible to do efficiently using streams without using printf-\/like hacks. Streams do not support operator reordering (the \%1s directive), which is helpful for internationalization.
+
+{\bfseries Decision\+:}
+
+Do not use streams, except where required by a logging interface. Use printf-\/like routines instead.
+
+There are various pros and cons to using streams, but in this case, as in many other cases, consistency trumps the debate. Do not use streams in your code.
+
+{\bfseries Extended Discussion}
+
+There has been debate on this issue, so this explains the reasoning in greater depth. Recall the Only One Way guiding principle\+: we want to make sure that whenever we do a certain type of I/O, the code looks the same in all those places. Because of this, we do not want to allow users to decide between using streams or using printf plus Read/\+Write/etc. Instead, we should settle on one or the other. We made an exception for logging because it is a pretty specialized application, and for historical reasons.
+
+Proponents of streams have argued that streams are the obvious choice of the two, but the issue is not actually so clear. For every advantage of streams they point out, there is an equivalent disadvantage. The biggest advantage is that you do not need to know the type of the object to be printing. This is a fair point. But, there is a downside\+: you can easily use the wrong type, and the compiler will not warn you. It is easy to make this kind of mistake without knowing when using streams.
+
+
+\begin{DoxyCode}
+cout << \textcolor{keyword}{this};  \textcolor{comment}{// Prints the address}
+cout << *\textcolor{keyword}{this};  \textcolor{comment}{// Prints the contents}
+\end{DoxyCode}
+
+
+The compiler does not generate an error because $<$$<$ has been overloaded. We discourage overloading for just this reason.
+
+Some say {\ttfamily printf} formatting is ugly and hard to read, but streams are often no better. Consider the following two fragments, both with the same typo. Which is easier to discover?
+
+
+\begin{DoxyCode}
+cerr << \textcolor{stringliteral}{"Error connecting to '"} << foo->bar()->hostname.first
+     << \textcolor{stringliteral}{":"} << foo->bar()->hostname.second << \textcolor{stringliteral}{": "} << strerror(errno);
+
+fprintf(stderr, \textcolor{stringliteral}{"Error connecting to '%s:%u: %s"},
+        foo->bar()->hostname.first, foo->bar()->hostname.second,
+        strerror(errno));
+\end{DoxyCode}
+
+
+And so on and so forth for any issue you might bring up. (You could argue, \char`\"{}\+Things would be better with the right wrappers,\char`\"{} but if it is true for one scheme, is it not also true for the other? Also, remember the goal is to make the language smaller, not add yet more machinery that someone has to learn.)
+
+Either path would yield different advantages and disadvantages, and there is not a clearly superior solution. The simplicity doctrine mandates we settle on one of them though, and the majority decision was on printf + read/write.
+
+\subsection*{Preincrement and Predecrement}
+
+Use prefix form (++i) of the increment and decrement operators with iterators and other template objects.
+
+{\bfseries Definition\+:} When a variable is incremented (++i or i++) or decremented (--i or i--) and the value of the expression is not used, one must decide whether to preincrement (decrement) or postincrement (decrement).
+
+{\bfseries Pros\+:} When the return value is ignored, the \char`\"{}pre\char`\"{} form (++i) is never less efficient than the \char`\"{}post\char`\"{} form (i++), and is often more efficient. This is because post-\/increment (or decrement) requires a copy of i to be made, which is the value of the expression. If i is an iterator or other non-\/scalar type, copying i could be expensive. Since the two types of increment behave the same when the value is ignored, why not just always pre-\/increment?
+
+{\bfseries Cons\+:} The tradition developed, in C, of using post-\/increment when the expression value is not used, especially in for loops. Some find post-\/increment easier to read, since the \char`\"{}subject\char`\"{} (i) precedes the \char`\"{}verb\char`\"{} (++), just like in English.
+
+{\bfseries Decision\+:} For simple scalar (non-\/object) values there is no reason to prefer one form and we allow either. For iterators and other template types, use pre-\/increment.
+
+\subsection*{Use of const}
+
+Use {\ttfamily const} whenever it makes sense. With C++11, {\ttfamily constexpr} is a better choice for some uses of {\ttfamily const}.
+
+{\bfseries Definition\+:} Declared variables and parameters can be preceded by the keyword const to indicate the variables are not changed (e.\+g., {\ttfamily const int foo}). Class functions can have the {\ttfamily const} qualifier to indicate the function does not change the state of the class member variables (e.\+g., {\ttfamily class Foo \{ int Bar(char c) const; \};}).
+
+{\bfseries Pros\+:} Easier for people to understand how variables are being used. Allows the compiler to do better type checking, and, conceivably, generate better code. Helps people convince themselves of program correctness because they know the functions they call are limited in how they can modify your variables. Helps people know what functions are safe to use without locks in multi-\/threaded programs.
+
+{\bfseries Cons\+:} {\ttfamily const} is viral\+: if you pass a const variable to a function, that function must have {\ttfamily const} in its prototype (or the variable will need a {\ttfamily const\+\_\+cast}). This can be a particular problem when calling library functions.
+
+{\bfseries Decision\+:}
+
+{\ttfamily const} variables, data members, methods and arguments add a level of compile-\/time type checking; it is better to detect errors as soon as possible. Therefore we strongly recommend that you use {\ttfamily const} whenever it makes sense to do so\+:
+
+
+\begin{DoxyItemize}
+\item If a function does not modify an argument passed by reference or by pointer, that argument should be {\ttfamily const}.
+\item Declare methods to be {\ttfamily const} whenever possible. Accessors should almost always be {\ttfamily const}. Other methods should be {\ttfamily const} if they do not modify any data members, do not call any non-\/const methods, and do not return a non-\/const pointer or non-\/const reference to a data member.
+\item Consider making data members {\ttfamily const} whenever they do not need to be modified after construction.
+\end{DoxyItemize}
+
+The {\ttfamily mutable} keyword is allowed but is unsafe when used with threads, so thread safety should be carefully considered first.
+
+$\ast$$\ast$ Where to put the {\ttfamily const} $\ast$$\ast$
+
+Some people favor the form {\ttfamily int const $\ast$foo} to {\ttfamily const int$\ast$ foo}. They argue that this is more readable because it\textquotesingle{}s more consistent\+: it keeps the rule that {\ttfamily const} always follows the object it\textquotesingle{}s describing. However, this consistency argument doesn\textquotesingle{}t apply in codebases with few deeply-\/nested pointer expressions since most {\ttfamily const} expressions have only one {\ttfamily const}, and it applies to the underlying value. In such cases, there\textquotesingle{}s no consistency to maintain. Putting the {\ttfamily const} first is arguably more readable, since it follows English in putting the \char`\"{}adjective\char`\"{} (const) before the \char`\"{}noun\char`\"{} (int).
+
+That said, while we encourage putting {\ttfamily const} first, we do not require it. But be consistent with the code around you!
+
+\subsection*{Use of constexpr}
+
+In C++11, use {\ttfamily constexpr} to define true constants or to ensure constant initialization.
+
+{\bfseries Definition\+:} Some variables can be declared {\ttfamily constexpr} to indicate the variables are true constants, i.\+e. fixed at compilation/link time. Some functions and constructors can be declared constexpr which enables them to be used in defining a constexpr variable.
+
+{\bfseries Pros\+:} Use of {\ttfamily constexpr} enables definition of constants with floating-\/point expressions rather than just literals; definition of constants of user-\/defined types; and definition of constants with function calls.
+
+{\bfseries Cons\+:} Prematurely marking something as constexpr may cause migration problems if later on it has to be downgraded. Current restrictions on what is allowed in constexpr functions and constructors may invite obscure workarounds in these definitions.
+
+{\bfseries Decision\+:}
+
+{\ttfamily constexpr} definitions enable a more robust specification of the constant parts of an interface. Use {\ttfamily constexpr} to specify true constants and the functions that support their definitions. Avoid complexifying function definitions to enable their use with constexpr. Do not use constexpr to force inlining.
+
+\subsection*{Use of constexpr}
+
+In C++11, use {\ttfamily constexpr} to define true constants or to ensure constant initialization.
+
+{\bfseries Definition\+:} Some variables can be declared constexpr to indicate the variables are true constants, i.\+e. fixed at compilation/link time. Some functions and constructors can be declared constexpr which enables them to be used in defining a constexpr variable.
+
+{\bfseries Pros\+:} Use of constexpr enables definition of constants with floating-\/point expressions rather than just literals; definition of constants of user-\/defined types; and definition of constants with function calls.
+
+{\bfseries Cons\+:} Prematurely marking something as {\ttfamily constexpr} may cause migration problems if later on it has to be downgraded. Current restrictions on what is allowed in constexpr functions and constructors may invite obscure workarounds in these definitions.
+
+{\bfseries Decision\+:}
+
+{\ttfamily constexpr} definitions enable a more robust specification of the constant parts of an interface. Use constexpr to specify true constants and the functions that support their definitions. Avoid complexifying function definitions to enable their use with constexpr. Do not use constexpr to force inlining.
+
+\subsection*{Integer Types}
+
+Of the built-\/in C++ integer types, the only one used is {\ttfamily int}. If a program needs a variable of a different size, use a precise-\/width integer type from {\ttfamily $<$stdint.\+h$>$}, such as {\ttfamily int16\+\_\+t}. If your variable represents a value that could ever be greater than or equal to 2$^\wedge$31 (2\+GiB), use a 64-\/bit type such as {\ttfamily int64\+\_\+t}. Keep in mind that even if your value won\textquotesingle{}t ever be too large for an {\ttfamily int}, it may be used in intermediate calculations which may require a larger type. When in doubt, choose a larger type.
+
+{\bfseries Definition\+:} C++ does not specify the sizes of its integer types. Typically people assume that {\ttfamily short} is 16 bits, {\ttfamily int} is 32 bits, {\ttfamily long} is 32 bits and {\ttfamily long long} is 64 bits.
+
+{\bfseries Pros\+:} Uniformity of declaration.
+
+{\bfseries Cons\+:} The sizes of integral types in C++ can vary based on compiler and architecture.
+
+{\bfseries Decision\+:}
+
+{\ttfamily $<$stdint.\+h$>$} defines types like {\ttfamily int16\+\_\+t} , {\ttfamily uint32\+\_\+t} , {\ttfamily int64\+\_\+t} , etc. You should always use those in preference to {\ttfamily short}, {\ttfamily unsigned long long} and the like, when you need a guarantee on the size of an integer. Of the C integer types, only int should be used. When appropriate, you are welcome to use standard types like {\ttfamily size\+\_\+t} and {\ttfamily ptrdiff\+\_\+t} .
+
+We use {\ttfamily int} very often, for integers we know are not going to be too big, e.\+g., loop counters. Use plain old {\ttfamily int} for such things. You should assume that an {\ttfamily int} is at least 32 bits, but don\textquotesingle{}t assume that it has more than 32 bits. If you need a 64-\/bit integer type, use {\ttfamily int64\+\_\+t} or {\ttfamily uint64\+\_\+t} .
+
+For integers we know can be \char`\"{}big\char`\"{}, use {\ttfamily int64\+\_\+t} .
+
+You should not use the unsigned integer types such as {\ttfamily uint32\+\_\+t}, unless there is a valid reason such as representing a bit pattern rather than a number, or you need defined overflow modulo 2$^\wedge$N. In particular, do not use unsigned types to say a number will never be negative. Instead, use assertions for this.
+
+If your code is a container that returns a size, be sure to use a type that will accommodate any possible usage of your container. When in doubt, use a larger type rather than a smaller type.
+
+Use care when converting integer types. Integer conversions and promotions can cause non-\/intuitive behavior.
+
+\subsubsection*{On Unsigned Integers}
+
+Some people, including some textbook authors, recommend using unsigned types to represent numbers that are never negative. This is intended as a form of self-\/documentation. However, in C, the advantages of such documentation are outweighed by the real bugs it can introduce. Consider\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// buggy code}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = foo.Length()-1; i >= 0; --i) ...
+\end{DoxyCode}
+
+
+This code will never terminate! Sometimes gcc will notice this bug and warn you, but often it will not. Equally bad bugs can occur when comparing signed and unsigned variables. Basically, C\textquotesingle{}s type-\/promotion scheme causes unsigned types to behave differently than one might expect.
+
+So, document that a variable is non-\/negative using assertions. Don\textquotesingle{}t use an unsigned type.
+
+\subsection*{64-\/bit Portability}
+
+Code should be 64-\/bit and 32-\/bit friendly. Bear in mind problems of printing, comparisons, and structure alignment.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily printf()} specifiers for some types are not cleanly portable between 32-\/bit and 64-\/bit systems. C99 defines some portable format specifiers. Unfortunately, M\+S\+VC 7.\+1 does not understand some of these specifiers and the standard is missing a few, so we have to define our own ugly versions in some cases (in the style of the standard include file inttypes.\+h)\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// printf macros for size\_t, in the style of inttypes.h}
+\textcolor{preprocessor}{#ifdef \_LP64}
+\textcolor{preprocessor}{#define \_\_PRIS\_PREFIX "z"}
+\textcolor{preprocessor}{#else}
+\textcolor{preprocessor}{#define \_\_PRIS\_PREFIX}
+\textcolor{preprocessor}{#endif}
+
+\textcolor{comment}{// Use these macros after a % in a printf format string}
+\textcolor{comment}{// to get correct 32/64 bit behavior, like this:}
+\textcolor{comment}{// size\_t size = records.size();}
+\textcolor{comment}{// printf("%"PRIuS"\(\backslash\)n", size);}
+
+\textcolor{preprocessor}{#define PRIdS \_\_PRIS\_PREFIX "d"}
+\textcolor{preprocessor}{#define PRIxS \_\_PRIS\_PREFIX "x"}
+\textcolor{preprocessor}{#define PRIuS \_\_PRIS\_PREFIX "u"}
+\textcolor{preprocessor}{#define PRIXS \_\_PRIS\_PREFIX "X"}
+\textcolor{preprocessor}{#define PRIoS \_\_PRIS\_PREFIX "o"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item For {\ttfamily void $\ast$} (or any pointer) DO N\+OT U\+SE {\ttfamily lx}. Instead U\+SE {\ttfamily p}
+\item For {\ttfamily int64\+\_\+t} DO N\+OT U\+SE {\ttfamily qd, lld}. Instead U\+SE {\ttfamily \%\char`\"{}\+P\+R\+Id64\char`\"{}}
+\item For {\ttfamily uint64\+\_\+t} DO N\+OT U\+SE {\ttfamily qu, llu, llx}. Instead U\+SE {\ttfamily \%\char`\"{}\+P\+R\+Iu64\char`\"{}, \%\char`\"{}\+P\+R\+Ix64\char`\"{}}
+\item For {\ttfamily size\+\_\+t} DO N\+OT U\+SE {\ttfamily u}. Instead U\+SE {\ttfamily \%\char`\"{}\+P\+R\+Iu\+S\char`\"{}, \%\char`\"{}\+P\+R\+Ix\+S$<$/tt$>$.  C99 specifies $<$tt$>$\%zu$<$/tt$>$
+$\ast$ For $<$tt$>$ptrdiff\+\_\+t$<$/tt$>$ D\+O N\+O\+T U\+S\+E $<$tt$>$\%d$<$/tt$>$. Instead U\+S\+E $<$tt$>$\%\char`\"{}P\+R\+IdS"}. C99 specifies {\ttfamily td}
+\end{DoxyItemize}
+
+Note that the {\ttfamily P\+R\+I$\ast$} macros expand to independent strings which are concatenated by the compiler. Hence if you are using a non-\/constant format string, you need to insert the value of the macro into the format, rather than the name. It is still possible, as usual, to include length specifiers, etc., after the \% when using the P\+R\+I$\ast$ macros. So, e.\+g. {\ttfamily printf(\char`\"{}x = \%30\char`\"{}P\+R\+IuS\char`\"{}\textbackslash{}n\char`\"{}, x)} would expand on 32-\/bit Linux to {\ttfamily printf(\char`\"{}x = \%30\char`\"{} \char`\"{}u\char`\"{} \char`\"{}\textbackslash{}n\char`\"{}, x)}, which the compiler will treat as {\ttfamily printf(\char`\"{}x = \%30u\textbackslash{}n\char`\"{}, x)}.
+
+
+\begin{DoxyItemize}
+\item Remember that {\ttfamily sizeof(void $\ast$) != sizeof(int)}. Use {\ttfamily intptr\+\_\+t} if you want a pointer-\/sized integer.
+\item You may need to be careful with structure alignments, particularly for structures being stored on disk. Any class/structure with a int64\+\_\+t/uint64\+\_\+t member will by default end up being 8-\/byte aligned on a 64-\/bit system. If you have such structures being shared on disk between 32-\/bit and 64-\/bit code, you will need to ensure that they are packed the same on both architectures. Most compilers offer a way to alter structure alignment. For gcc, you can use {\ttfamily \hyperlink{struct____attribute____}{\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed))}}. M\+S\+VC offers {\ttfamily \#pragma pack()} and {\ttfamily \+\_\+\+\_\+declspec(align())}.
+\item Use the {\ttfamily LL} or {\ttfamily U\+LL} suffixes as needed to create 64-\/bit constants. For example\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+int64\_t my\_value = 0x123456789LL;
+uint64\_t my\_mask = 3ULL << 48;
+\end{DoxyCode}
+ \begin{DoxyVerb}If you really need different code on 32-bit and 64-bit systems, use #ifdef _LP64 to choose between the code variants. (But please avoid this if possible, and keep any such changes localized.)
+\end{DoxyVerb}
+
+
+\subsection*{Preprocessor Macros}
+
+Be very cautious with macros. Prefer inline functions, enums, and const variables to macros.
+
+Macros mean that the code you see is not the same as the code the compiler sees. This can introduce unexpected behavior, especially since macros have global scope.
+
+Luckily, macros are not nearly as necessary in C++ as they are in C. Instead of using a macro to inline performance-\/critical code, use an inline function. Instead of using a macro to store a constant, use a const variable. Instead of using a macro to \char`\"{}abbreviate\char`\"{} a long variable name, use a reference. Instead of using a macro to conditionally compile code ... well, don\textquotesingle{}t do that at all (except, of course, for the \#define guards to prevent double inclusion of header files). It makes testing much more difficult.
+
+Macros can do things these other techniques cannot, and you do see them in the codebase, especially in the lower-\/level libraries. And some of their special features (like stringifying, concatenation, and so forth) are not available through the language proper. But before using a macro, consider carefully whether there\textquotesingle{}s a non-\/macro way to achieve the same result.
+
+The following usage pattern will avoid many problems with macros; if you use macros, follow it whenever possible\+:
+
+
+\begin{DoxyItemize}
+\item Don\textquotesingle{}t define macros in a .h file.
+\item {\ttfamily \#define} macros right before you use them, and {\ttfamily \#undef} them right after.
+\item Do not just \#undef an existing macro before replacing it with your own; instead, pick a name that\textquotesingle{}s likely to be unique.
+\item Try not to use macros that expand to unbalanced C++ constructs, or at least document that behavior well.
+\item Prefer not using \#\# to generate function/class/variable names.
+\end{DoxyItemize}
+
+\subsection*{0 and nullptr/\+N\+U\+LL}
+
+Use 0 for integers, 0.\+0 for reals, nullptr (or N\+U\+LL) for pointers, and \textquotesingle{}\textbackslash{}0\textquotesingle{} for chars.
+
+Use 0 for integers and 0.\+0 for reals. This is not controversial.
+
+For pointers (address values), there is a choice between {\ttfamily 0}, {\ttfamily N\+U\+LL}, and {\ttfamily nullptr}. For projects that allow C++11 features, use {\ttfamily nullptr}. For C++03 projects, we prefer {\ttfamily N\+U\+LL} because it looks like a pointer. In fact, some C++ compilers provide special definitions of {\ttfamily N\+U\+LL} which enable them to give useful warnings, particularly in situations where {\ttfamily sizeof(\+N\+U\+L\+L)} is not equal to {\ttfamily sizeof(0)}.
+
+Use `\textquotesingle{}\textbackslash{}0\textquotesingle{}` for chars. This is the correct type and also makes code more readable.
+
+\subsection*{sizeof}
+
+Prefer {\ttfamily sizeof(varname)} to {\ttfamily sizeof(type)}.
+
+Use {\ttfamily sizeof(varname)} when you take the size of a particular variable. {\ttfamily sizeof(varname)} will update appropriately if someone changes the variable type either now or later. You may use {\ttfamily sizeof(type)} for code unrelated to any particular variable, such as code that manages an external or internal data format where a variable of an appropriate C++ type is not convenient.
+
+
+\begin{DoxyCode}
+Struct data;
+memset(&data, 0, \textcolor{keyword}{sizeof}(data)); \textcolor{comment}{// GOOD}
+
+memset(&data, 0, \textcolor{keyword}{sizeof}(Struct)); \textcolor{comment}{// BAD}
+
+\textcolor{keywordflow}{if} (raw\_size < \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})) \{
+    LOG(ERROR) << \textcolor{stringliteral}{"compressed record not big enough for count: "} << raw\_size;
+    \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+\}
+\end{DoxyCode}
+
+
+\subsection*{auto}
+
+Use {\ttfamily auto} to avoid type names that are just clutter. Continue to use manifest type declarations when it helps readability, and never use {\ttfamily auto} for anything but local variables.
+
+{\bfseries Definition\+:} In C++11, a variable whose type is given as {\ttfamily auto} will be given a type that matches that of the expression used to initialize it. You can use {\ttfamily auto} either to initialize a variable by copying, or to bind a reference.
+
+
+\begin{DoxyCode}
+vector<string> v;
+...
+auto s1 = v[0];  \textcolor{comment}{// Makes a copy of v[0].}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& s2 = v[0];  \textcolor{comment}{// s2 is a reference to v[0].}
+\end{DoxyCode}
+
+
+{\bfseries Pros\+:}
+
+C++ type names can sometimes be long and cumbersome, especially when they involve templates or namespaces. In a statement like
+
+
+\begin{DoxyCode}
+sparse\_hash\_map<string, int>::iterator iter = m.find(val);
+\end{DoxyCode}
+
+
+the return type is hard to read, and obscures the primary purpose of the statement. Changing it to
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} iter = m.find(val);
+\end{DoxyCode}
+
+
+makes it more readable.
+
+Without {\ttfamily auto} we are sometimes forced to write a type name twice in the same expression, adding no value for the reader, as in
+
+
+\begin{DoxyCode}
+diagnostics::ErrorStatus* status = \textcolor{keyword}{new} diagnostics::ErrorStatus(\textcolor{stringliteral}{"xyz"});
+\end{DoxyCode}
+
+
+Using {\ttfamily auto} makes it easier to use intermediate variables when appropriate, by reducing the burden of writing their types explicitly.
+
+{\bfseries Cons\+:}
+
+Sometimes code is clearer when types are manifest, especially when a variable\textquotesingle{}s initialization depends on things that were declared far away. In an expression like
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} i = x.Lookup(key);
+\end{DoxyCode}
+
+
+it may not be obvious what i\textquotesingle{}s type is, if x was declared hundreds of lines earlier.
+
+Programmers have to understand the difference between {\ttfamily auto} and {\ttfamily const auto\&} or they\textquotesingle{}ll get copies when they didn\textquotesingle{}t mean to.
+
+The interaction between auto and C++11 brace-\/initialization can be confusing. The declarations
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} x(3);  \textcolor{comment}{// Note: parentheses.}
+\textcolor{keyword}{auto} y\{3\};  \textcolor{comment}{// Note: curly braces.}
+\end{DoxyCode}
+
+
+mean different things — x is an int, while y is an initializer\+\_\+list. The same applies to other normally-\/invisible proxy types.
+
+If an {\ttfamily auto} variable is used as part of an interface, e.\+g. as a constant in a header, then a programmer might change its type while only intending to change its value, leading to a more radical A\+PI change than intended.
+
+{\bfseries Decision\+:}
+
+{\ttfamily auto} is permitted, for local variables only. Do not use {\ttfamily auto} for file-\/scope or namespace-\/scope variables, or for class members. Never assign a braced initializer \hyperlink{protocollist-p}{list} to an auto-\/typed variable.
+
+The {\ttfamily auto} keyword is also used in an unrelated C++11 feature\+: it\textquotesingle{}s part of the syntax for a new kind of function declaration with a trailing return type. Function declarations with trailing return types are not permitted.
+
+\subsection*{Brace Initialization}
+
+You may use brace initialization.
+
+In C++03, aggregate types (arrays and structs with no constructor) could be initialized using braces.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{struct }\hyperlink{classVec2}{Point} \{ \textcolor{keywordtype}{int} \hyperlink{classVec2_adf8ee322d4b4bcc04146762c018d731f}{x}; \textcolor{keywordtype}{int} \hyperlink{classVec2_a30543787e62f6d915543cf1dfb04c094}{y}; \};
+\hyperlink{classVec2}{Point} p = \{1, 2\};
+\end{DoxyCode}
+
+
+In C++11, this syntax has been expanded for use with all other datatypes. The brace initialization form is called braced-\/init-\/list. Here are a few examples of its use.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Vector takes lists of elements.}
+vector<string> v\{\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"bar"}\};
+
+\textcolor{comment}{// The same, except this form cannot be used if the initializer\_list}
+\textcolor{comment}{// constructor is explicit. You may choose to use either form.}
+vector<string> v = \{\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"bar"}\};
+
+\textcolor{comment}{// Maps take lists of pairs. Nested braced-init-lists work.}
+map<int, string> m = \{\{1, \textcolor{stringliteral}{"one"}\}, \{2, \textcolor{stringliteral}{"2"}\}\};
+
+\textcolor{comment}{// braced-init-lists can be implicitly converted to return types.}
+vector<int> testFunction() \{
+  \textcolor{keywordflow}{return} \{1, 2, 3\};
+\}
+
+\textcolor{comment}{// Iterate over a braced-init-list.}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i : \{-1, -2, -3\}) \{\}
+
+\textcolor{comment}{// Call a function using a braced-init-list.}
+\textcolor{keywordtype}{void} testFunction2(vector<int> v) \{\}
+testFunction2(\{1, 2, 3\});
+\end{DoxyCode}
+
+
+User data types can also define constructors that take initializer\+\_\+list, which is automatically created from braced-\/init-\/list\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyType
+\{
+\textcolor{keyword}{public}:
+    \textcolor{comment}{// initializer\_list is a reference to the underlying init list,}
+    \textcolor{comment}{// so it can be passed by value.}
+    MyType(initializer\_list<int> init\_list) \{
+      \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} element : init\_list) \{\}
+    \}
+\};
+MyType m\{2, 3, 5, 7\};
+\end{DoxyCode}
+
+
+Finally, brace initialization can also call ordinary constructors of data types that do not have initializer\+\_\+list constructors.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{double} d\{1.23\};
+\textcolor{comment}{// Calls ordinary constructor as long as MyOtherType has no}
+\textcolor{comment}{// initializer\_list constructor.}
+\textcolor{keyword}{class }MyOtherType
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{explicit} MyOtherType(\textcolor{keywordtype}{string});
+    MyOtherType(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{string});
+\};
+MyOtherType m = \{1, \textcolor{stringliteral}{"b"}\};
+\textcolor{comment}{// If the constructor is explicit, you can't use the "= \{\}" form.}
+MyOtherType m\{\textcolor{stringliteral}{"b"}\};
+\end{DoxyCode}
+
+
+Never assign a braced-\/init-\/list to an auto local variable. In the single element case, what this means can be confusing.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} d = \{1.23\};        \textcolor{comment}{// d is an initializer\_list<double>}
+
+\textcolor{keyword}{auto} d = \textcolor{keywordtype}{double}\{1.23\};  \textcolor{comment}{// Good -- d is a double, not an initializer\_list.}
+\end{DoxyCode}
+
+
+\subsection*{Lambda expressions}
+
+Use lambda expressions, or the related {\ttfamily std\+::function} or {\ttfamily std\+::bind} utilities only in special places like cocos2d callbacks.
+
+{\bfseries Definition\+:} Lambda expressions are a concise way of creating anonymous function objects. They\textquotesingle{}re often useful when passing functions as arguments. For example\+: {\ttfamily std\+::sort(v.\+begin(), \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{v.\+end()}, \mbox{[}\mbox{]}(string x, string y) \{ return x\mbox{[}1\mbox{]} $<$ y\mbox{[}1\mbox{]}; \});} Lambdas were introduced in C++11 along with a set of utilities for working with function objects, such as the polymorphic wrapper {\ttfamily std\+::function}.
+
+{\bfseries Pros\+:}
+
+
+\begin{DoxyItemize}
+\item Lambdas are much more concise than other ways of defining function objects to be passed to S\+TL algorithms, which can be a readability improvement.
+\item Lambdas, {\ttfamily std\+::function}, and {\ttfamily std\+::bind} can be used in combination as a general purpose callback mechanism; they make it easy to write functions that take bound functions as arguments.
+\end{DoxyItemize}
+
+{\bfseries Cons\+:}
+
+
+\begin{DoxyItemize}
+\item Variable capture in lambdas can be tricky, and might be a new source of dangling-\/pointer bugs.
+\item It\textquotesingle{}s possible for use of lambdas to get out of hand; very long nested anonymous functions can make code harder to understand.
+\end{DoxyItemize}
+
+Decision\+:
+
+Use lambda expressions, or the related {\ttfamily std\+::function} or {\ttfamily std\+::bind} utilities only in special places like cocos2d callbacks.
+
+\subsection*{Boost}
+
+Do not use boost.
+
+{\bfseries Definition\+:} The Boost library collection is a popular collection of peer-\/reviewed, free, open-\/source C++ libraries.
+
+{\bfseries Pros\+:} Boost code is generally very high-\/quality, is widely portable, and fills many important gaps in the C++ standard library, such as type traits, better binders, and better smart pointers. It also provides an implementation of the T\+R1 extension to the standard library.
+
+{\bfseries Cons\+:} Some Boost libraries encourage coding practices which can hamper readability, such as metaprogramming and other advanced template techniques, and an excessively \char`\"{}functional\char`\"{} style of programming. It also adds more dependencies in cocos2d-\/x.
+
+{\bfseries Decision\+:} In order to maintain a high level of readability for all contributors who might read and maintain code, and also in order to keep the dependencies as minimal as possible, we do not use Boost.
+
+\subsection*{C++11}
+
+Use libraries and language extensions from C++11 (formerly known as C++0x) when appropriate. Consider portability to other environments before using C++11 features in your project.
+
+{\bfseries Definition\+:} C++11 is the latest I\+SO C++ standard. It contains significant changes both to the language and libraries.
+
+{\bfseries Pros\+:} C++11 has become the official standard, and eventually will be supported by most C++ compilers. It standardizes some common C++ extensions that we use already, allows shorthands for some operations, and has some performance and safety improvements.
+
+{\bfseries Cons\+:}
+
+The C++11 standard is substantially more complex than its predecessor (1,300 pages versus 800 pages), and is unfamiliar to many developers. The long-\/term effects of some features on code readability and maintenance are unknown. We cannot predict when its various features will be implemented uniformly by tools that may be of interest, particularly in the case of projects that are forced to use older versions of tools.
+
+As with Boost, some C++11 extensions encourage coding practices that hamper readability—for example by removing checked redundancy (such as type names) that may be helpful to readers, or by encouraging template metaprogramming. Other extensions duplicate functionality available through existing mechanisms, which may lead to confusion and conversion costs.
+
+{\bfseries Decision\+:}
+
+C++11 features may be used unless specified otherwise. In addition to what\textquotesingle{}s described in the rest of the style guide, the following C++11 features may not be used\+:
+
+
+\begin{DoxyItemize}
+\item Functions with trailing return types, e.\+g. writing {\ttfamily auto foo() -\/$>$ int;} instead of {\ttfamily int foo();}, because of a desire to preserve stylistic consistency with the many existing function declarations.
+\item Compile-\/time rational numbers ({\ttfamily $<$ratio$>$}), because of concerns that it\textquotesingle{}s tied to a more template-\/heavy interface style.
+\item The {\ttfamily $<$cfenv$>$} and {\ttfamily $<$fenv.\+h$>$} headers, because many compilers do not support those features reliably.
+\end{DoxyItemize}
+
+Additionaly, any C++11 features that is used, must work on the following compilers\+:
+
+
+\begin{DoxyItemize}
+\item Xcode 5.\+0.\+2 or newer
+\item gcc 4.\+8 or newer
+\item VS 2012 or newer
+\end{DoxyItemize}
+
+\subsection*{General Naming Rules}
+
+Function names, variable names, and filenames should be descriptive; eschew abbreviation.
+
+Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as it is far more important to make your code immediately understandable by a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// OK}
+\textcolor{keywordtype}{int} priceCountReader;     \textcolor{comment}{// No abbreviation.}
+\textcolor{keywordtype}{int} numErrors;            \textcolor{comment}{// "num" is a widespread convention.}
+\textcolor{keywordtype}{int} numDNSConnections;    \textcolor{comment}{// Most people know what "DNS" stands for.}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// BAD}
+\textcolor{keywordtype}{int} n;                     \textcolor{comment}{// Meaningless.}
+\textcolor{keywordtype}{int} nerr;                  \textcolor{comment}{// Ambiguous abbreviation.}
+\textcolor{keywordtype}{int} nCompConns;            \textcolor{comment}{// Ambiguous abbreviation.}
+\textcolor{keywordtype}{int} wgcConnections;        \textcolor{comment}{// Only your group knows what this stands for.}
+\textcolor{keywordtype}{int} pcReader;              \textcolor{comment}{// Lots of things can be abbreviated "pc".}
+\textcolor{keywordtype}{int} cstmrId;               \textcolor{comment}{// Deletes internal letters.}
+\end{DoxyCode}
+
+
+\subsection*{File Names}
+
+Filenames should be all in Camel\+Casel, and for cocos2d specific files, they should start with the {\ttfamily CC} prefix as well.
+
+Examples of acceptable file names\+:
+
+\begin{DoxyVerb}CCSprite.cpp
+CCTextureCache.cpp
+CCTexture2D.cpp
+\end{DoxyVerb}
+
+
+C++ files should end in {\ttfamily .cpp} and header files should end in {\ttfamily .h}.
+
+Do not use filenames that already exist in /usr/include, such as db.\+h.
+
+In general, make your filenames very specific. For example, use {\ttfamily C\+C\+Texture2\+D.\+h} rather than {\ttfamily Texture.\+h}. A very common case is to have a pair of files called, e.\+g., {\ttfamily Foo\+Bar.\+h} and {\ttfamily Foo\+Bar.\+cpp} , defining a class called {\ttfamily Foo\+Bar} .
+
+Inline functions must be in a {\ttfamily .h} file. If your inline functions are very short, they should go directly into your .h file. However, if your inline functions include a lot of code, they may go into a third file that ends in {\ttfamily -\/inl.\+h} . In a class with a lot of inline code, your class could have three files\+:
+
+
+\begin{DoxyCode}
+UrlTable.h       \textcolor{comment}{// The class declaration.}
+UrlTable.cpp     \textcolor{comment}{// The class definition.}
+UrlTable-inl.h   \textcolor{comment}{// Inline functions that include lots of code.}
+\end{DoxyCode}
+
+
+See also the section -\/inl.\+h Files
+
+\subsection*{Type Names}
+
+Type names start with a capital letter and have a capital letter for each new word, with no underscores\+: {\ttfamily My\+Exciting\+Class}, {\ttfamily My\+Exciting\+Enum}.
+
+The names of all types — classes, structs, typedefs, and enums — have the same naming convention. Type names should start with a capital letter and have a capital letter for each new word. No underscores. For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// classes and structs}
+\textcolor{keyword}{class }UrlTable \{ ...
+class UrlTableTester \{ ...
+struct UrlTableProperties \{ ...
+
+\textcolor{comment}{// typedefs}
+typedef hash\_map<UrlTableProperties *, string> PropertiesMap;
+
+\textcolor{comment}{// enums}
+\textcolor{keyword}{enum} UrlTableErrors \{ ...
+\end{DoxyCode}
+
+
+\subsection*{Variable Names}
+
+Variable names are all camel\+Case (they start with lowercase). Class member variables have an underscore as prefix. For instance\+: {\ttfamily my\+Exciting\+Local\+Variable} , {\ttfamily \+\_\+my\+Exciting\+Local\+Variable} . All lowercase variables are accepted as well.
+
+\subsubsection*{Common Variable names}
+
+For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{string} tableName;  \textcolor{comment}{// OK - uses camelcase}
+\textcolor{keywordtype}{string} tablename;   \textcolor{comment}{// OK - all lowercase.}
+
+\textcolor{keywordtype}{string} table\_name;   \textcolor{comment}{// Bad - uses underscore.}
+\textcolor{keywordtype}{string} TableNname;   \textcolor{comment}{// Bad - starts with Uppercase}
+\end{DoxyCode}
+
+
+\subsubsection*{Class \hyperlink{classData}{Data} Members}
+
+\hyperlink{classData}{Data} members (also called instance variables or member variables) are lowercase with optional underscores like regular variable names, but always end with a trailing underscore.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{string} \_tableName;   \textcolor{comment}{// OK}
+\textcolor{keywordtype}{string} \_tablename;   \textcolor{comment}{// OK}
+\end{DoxyCode}
+
+
+\subsubsection*{Struct Variables}
+
+\hyperlink{classData}{Data} members in structs should be named like regular variables without the underscores as prefix that data members in classes have.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{struct }UrlTableProperties \{
+  \textcolor{keywordtype}{string} name;
+  \textcolor{keywordtype}{int} numEntries;
+\}
+\end{DoxyCode}
+
+
+See Structs vs. Classes for a discussion of when to use a struct versus a class.
+
+\subsubsection*{Global Variables}
+
+There are no special requirements for global variables, which should be rare in any case, but if you use one, consider prefixing it with {\ttfamily g\+\_\+} or some other marker to easily distinguish it from local variables.
+
+\subsection*{Constant Names}
+
+Constant names should all be in U\+P\+P\+E\+R\+C\+A\+SE with underscores to separate the words.
+
+Do not use {\ttfamily \#define} for consts.
+
+Prefer strongly typed enums over {\ttfamily const} variables, whenever it makes sense.
+
+All compile-\/time constants, whether they are declared locally, globally, or as part of a class, follow a slightly different naming convention from other variables. They should be declared in U\+P\+P\+E\+R\+C\+A\+SE and use underscore to separate the different words\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keywordtype}{int} MENU\_DEFAULT\_VALUE = 10;
+\textcolor{keyword}{const} \textcolor{keywordtype}{float} GRAVITY = -9.8;
+
+\textcolor{keyword}{enum class} Projection \{
+  ORTHOGONAL,
+  PERSPECTIVE
+\};
+
+\textcolor{keyword}{enum class} PixelFormat \{
+  RGBA\_8888,
+  RGBA\_4444,
+  RGBA\_5551,
+  RGB\_565,
+\};
+\end{DoxyCode}
+
+
+\subsection*{Function Names}
+
+Regular functions have mixed case; accessors and mutators match the name of the variable\+: {\ttfamily my\+Exciting\+Function()}, {\ttfamily my\+Exciting\+Method()}, {\ttfamily get\+My\+Exciting\+Member\+Variable()}, {\ttfamily set\+My\+Exciting\+Member\+Variable}.
+
+\subsubsection*{Regular Functions}
+
+Functions should start with lowercase and have a capital letter for each new word. No underscores.
+
+If your function crashes upon an error, you should append Or\+Die to the function name. This only applies to functions which could be used by production code and to errors that are reasonably likely to occur during normal operation.
+
+
+\begin{DoxyCode}
+addTableEntry()
+deleteUrl()
+openFileOrDie()
+\end{DoxyCode}
+
+
+\subsubsection*{Accessors and Mutators}
+
+Accessors and mutators ( {\ttfamily get} and {\ttfamily set} functions) should match the name of the variable they are getting and setting. This shows an excerpt of a class whose instance variable is {\ttfamily \+\_\+num\+Entries} .
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyClass \{
+ \textcolor{keyword}{public}:
+  ...
+  \textcolor{keywordtype}{int} getNumEntries()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_numEntries; \}
+  \textcolor{keywordtype}{void} setNumEntries(\textcolor{keywordtype}{int} numEntries) \{ \_numEntries = numEntries; \}
+
+ \textcolor{keyword}{private}:
+  \textcolor{keywordtype}{int} \_numEntries;
+\};
+\end{DoxyCode}
+
+
+\subsection*{Namespace Names}
+
+Namespace names are all lower-\/case, and based on project names and possibly their directory structure\+: google\+\_\+awesome\+\_\+project.
+
+See Namespaces for a discussion of namespaces and how to name them.
+
+\subsection*{Enumerator Names}
+
+Enumerators should be named either like constants\+: {\ttfamily E\+N\+U\+M\+\_\+\+N\+A\+ME}.
+
+Prefer strongly typed enums over non-\/strongly typed enums.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{enum class} UrlTableErrors \{
+  OK = 0,
+  ERROR\_OUT\_OF\_MEMORY,
+  ERROR\_MALFORMED\_INPUT,
+\};
+\end{DoxyCode}
+
+
+\subsection*{Macro Names}
+
+You\textquotesingle{}re not really going to define a macro, are you? If you do, they\textquotesingle{}re like this\+: C\+C\+\_\+\+M\+Y\+\_\+\+M\+A\+C\+R\+O\+\_\+\+T\+H\+A\+T\+\_\+\+S\+C\+A\+R\+E\+S\+\_\+\+S\+M\+A\+L\+L\+\_\+\+C\+H\+I\+L\+D\+R\+EN.
+
+Please see the description of macros; in general macros should not be used. However, if they are absolutely needed, then they should be named with all capitals and underscores, and they should be prefixed with {\ttfamily C\+C\+\_\+} or {\ttfamily CC}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define CC\_ROUND(x) ...}
+\textcolor{preprocessor}{#define CC\_PI\_ROUNDED 3.0}
+\textcolor{preprocessor}{#define CCLOG(x) ...}
+\end{DoxyCode}
+
+
+\subsection*{Exceptions to Naming Rules}
+
+If you are naming something that is analogous to an existing C or C++ entity then you can follow the existing naming convention scheme.
+
+\subsubsection*{{\ttfamily bigopen()}}
+
+function name, follows form of open()
+
+\subsubsection*{{\ttfamily uint}}
+
+typedef
+
+\subsubsection*{{\ttfamily bigpos}}
+
+struct or class, follows form of pos
+
+\subsubsection*{{\ttfamily sparse\+\_\+hash\+\_\+map}}
+
+S\+T\+L-\/like entity; follows S\+TL naming conventions
+
+\subsubsection*{{\ttfamily L\+O\+N\+G\+L\+O\+N\+G\+\_\+\+M\+AX}}
+
+a constant, as in I\+N\+T\+\_\+\+M\+AX
+
+\section*{Comments}
+
+Though a pain to write, comments are absolutely vital to keeping our code readable. The following rules describe what you should comment and where. But remember\+: while comments are very important, the best code is self-\/documenting. Giving sensible names to types and variables is much better than using obscure names that you must then explain through comments.
+
+When writing your comments, write for your audience\+: the next contributor who will need to understand your code. Be generous — the next one may be you!
+
+\subsection*{Doxygen}
+
+
+\begin{DoxyItemize}
+\item Use Doxygen strings in the header files. Doxygen comments on the implementation file are not required.
+\item All public {\ttfamily class} objects M\+U\+ST have a Doxygen comment that explains what it does.
+\item All {\ttfamily public} methods of the class, with the exception of overridden methods, M\+U\+ST be documented using Doxygen comments.
+\item {\ttfamily protected} and {\ttfamily private} methods are suggested to have Doxygen comments, but are not mandatory.
+\item Instance variables should N\+OT have Doxygen comments, unless they are public.
+\item Markdown systax is allowed within your Doxygen comments
+\end{DoxyItemize}
+
+Example\+: ``{\ttfamily cpp /$\ast$$\ast$}World\+Peace{\ttfamily extends}Node` by adding enough power to create world peace.
+\begin{DoxyItemize}
+\item 
+\item {\ttfamily World\+Peace} should be used only when the world is about to collapse.
+\item Do not create an instance of {\ttfamily World\+Peace} if the {\ttfamily \hyperlink{classScene}{Scene}} has a peace level of 5.
+\item $\ast$/ class World\+Peace \+: public \hyperlink{classNode}{Node} \{
+\end{DoxyItemize}
+
+public\+: /$\ast$$\ast$ creates a {\ttfamily World\+Peace} with a predefined number of preachers $\ast$/ static World\+Peace$\ast$ create(int number\+Of\+Preachers);
+
+/$\ast$$\ast$ sets the number of preachers that will try to create the world peace. The more the better. But be aware that corruption might appear if the number if higher than the 20\% of the population. $\ast$/ void set\+Number\+Of\+Preachers(int number\+Of\+Preachers);
+
+/$\ast$$\ast$ displays an aura around the World\+Peace object \begin{DoxySeeAlso}{See also}
+See all {\ttfamily display\+Super\+Aura()} $\ast$/ void display\+Aura();
+\end{DoxySeeAlso}
+// Overrides virtual void add\+Child(\+Node $\ast$ child) override; virtual void remove\+Child(\+Node$\ast$ child, bool cleanup) override;
+
+protected\+: World\+Peace(); virtual $\sim$\+World\+Peace(); bool init(int nubmer\+Of\+Preachers);
+
+int \+\_\+nubmer\+Of\+Preachers; \}; 
+\begin{DoxyCode}
+## Comment Style
+
+Use either the `//` or `/* */` syntax, as long as you are consistent.
+
+You can use either the `//` or the `/* */` syntax; however, `//` is much more common. Be consistent with
+       how you comment and what style you use where.
+
+## File Comments
+
+Start each file with license boilerplate, followed by a description of its contents.
+
+### Legal Notice and Author Line
+
+Every file should contain license boilerplate. Choose the appropriate boilerplate for the license used by
+       the project (for example, Apache 2.0, BSD, MIT, etc).
+
+The license must be compatible for the different App Stores, so GPL and LGPL code cannot be used in
+       cocos2d-x.
+
+If you make significant changes to a file with an author line, consider deleting the author line.
+
+### File Contents
+
+Every file should have a comment at the top describing its contents.
+
+Generally a .h file will describe the classes that are declared in the file with an overview of what they
+       are for and how they are used. A .cpp file should contain more information about implementation details or
+       discussions of tricky algorithms. If you feel the implementation details or a discussion of the algorithms
+       would be useful for someone reading the .h, feel free to put it there instead, but mention in the .cpp that the
+       documentation is in the .h file.
+
+Do not duplicate comments in both the .h and the .cpp. Duplicated comments diverge.
+
+## Class Comments
+
+Every class definition should have an accompanying comment that describes what it is for and how it should
+       be used. If the class is public (exposed to the users), it should use Doxygen comments.
+
+```cpp
+// Iterates over the contents of a GargantuanTable.  Sample usage:
+//    GargantuanTableIterator* iter = table->NewIterator();
+//    for (iter->Seek("foo"); !iter->done(); iter->Next()) \{
+//      process(iter->key(), iter->value());
+//    \}
+//    delete iter;
+class GargantuanTableIterator \{
+  ...
+\};
+\end{DoxyCode}
+
+
+If you have already described a class in detail in the comments at the top of your file feel free to simply state \char`\"{}\+See comment at top of file for a complete description\char`\"{}, but be sure to have some sort of comment.
+
+Document the synchronization assumptions the class makes, if any. If an instance of the class can be accessed by multiple threads, take extra care to document the rules and invariants surrounding multithreaded use.
+
+\subsection*{Function Comments}
+
+Declaration comments describe use of the function; comments at the definition of a function describe operation.
+
+If the function is public (exposed to the users), it should be documented using Doxygen comments.
+
+\subsubsection*{Function Declarations}
+
+Every function declaration should have comments immediately preceding it that describe what the function does and how to use it. These comments should be descriptive (\char`\"{}\+Opens the file\char`\"{}) rather than imperative (\char`\"{}\+Open the file\char`\"{}); the comment describes the function, it does not tell the function what to do. In general, these comments do not describe how the function performs its task. Instead, that should be left to comments in the function definition.
+
+Types of things to mention in comments at the function declaration\+:
+
+
+\begin{DoxyItemize}
+\item What the inputs and outputs are.
+\item For class member functions\+: whether the object remembers reference arguments beyond the duration of the method call, and whether it will free them or not.
+\item If the function allocates memory that the caller must free.
+\item Whether any of the arguments can be a null pointer.
+\item If there are any performance implications of how a function is used.
+\item If the function is re-\/entrant. What are its synchronization assumptions?
+\end{DoxyItemize}
+
+Here is an example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Returns an iterator for this table.  It is the client's}
+\textcolor{comment}{// responsibility to delete the iterator when it is done with it,}
+\textcolor{comment}{// and it must not use the iterator once the GargantuanTable object}
+\textcolor{comment}{// on which the iterator was created has been deleted.}
+\textcolor{comment}{//}
+\textcolor{comment}{// The iterator is initially positioned at the beginning of the table.}
+\textcolor{comment}{//}
+\textcolor{comment}{// This method is equivalent to:}
+\textcolor{comment}{//    Iterator* iter = table->NewIterator();}
+\textcolor{comment}{//    iter->Seek("");}
+\textcolor{comment}{//    return iter;}
+\textcolor{comment}{// If you are going to immediately seek to another place in the}
+\textcolor{comment}{// returned iterator, it will be faster to use NewIterator()}
+\textcolor{comment}{// and avoid the extra seek.}
+Iterator* getIterator() \textcolor{keyword}{const};
+\end{DoxyCode}
+
+
+However, do not be unnecessarily verbose or state the completely obvious. Notice below that it is not necessary to say \char`\"{}returns false otherwise\char`\"{} because this is implied.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} isTableFull();
+\end{DoxyCode}
+
+
+When commenting constructors and destructors, remember that the person reading your code knows what constructors and destructors are for, so comments that just say something like \char`\"{}destroys this object\char`\"{} are not useful. Document what constructors do with their arguments (for example, if they take ownership of pointers), and what cleanup the destructor does. If this is trivial, just skip the comment. It is quite common for destructors not to have a header comment.
+
+\subsubsection*{Function Definitions}
+
+If there is anything tricky about how a function does its job, the function definition should have an explanatory comment. For example, in the definition comment you might describe any coding tricks you use, give an overview of the steps you go through, or explain why you chose to implement the function in the way you did rather than using a viable alternative. For instance, you might mention why it must acquire a lock for the first half of the function but why it is not needed for the second half.
+
+Note you should not just repeat the comments given with the function declaration, in the .h file or wherever. It\textquotesingle{}s okay to recapitulate briefly what the function does, but the focus of the comments should be on how it does it.
+
+\subsection*{Variable Comments}
+
+In general the actual name of the variable should be descriptive enough to give a good idea of what the variable is used for. In certain cases, more comments are required.
+
+\subsubsection*{Class \hyperlink{classData}{Data} Members}
+
+Each class data member (also called an instance variable or member variable) should have a comment describing what it is used for. If the variable can take sentinel values with special meanings, such as a null pointer or -\/1, document this. For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{private}:
+ \textcolor{comment}{// Keeps track of the total number of entries in the table.}
+ \textcolor{comment}{// Used to ensure we do not go over the limit. -1 means}
+ \textcolor{comment}{// that we don't yet know how many entries the table has.}
+ \textcolor{keywordtype}{int} \_numTotalEntries;
+\end{DoxyCode}
+
+
+\subsubsection*{Global Variables}
+
+As with data members, all global variables should have a comment describing what they are and what they are used for. For example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// The total number of tests cases that we run through in this regression test.}
+\textcolor{keyword}{const} \textcolor{keywordtype}{int} NUM\_TEST\_CASES = 6;
+\end{DoxyCode}
+
+
+\subsection*{Implementation Comments}
+
+In your implementation you should have comments in tricky, non-\/obvious, interesting, or important parts of your code.
+
+\subsubsection*{Class \hyperlink{classData}{Data} Members}
+
+Tricky or complicated code blocks should have comments before them. Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Divide result by two, taking into account that x}
+\textcolor{comment}{// contains the carry from the add.}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < result->size(); i++) \{
+    x = (x << 8) + (*result)[i];
+    (*result)[i] = x >> 1;
+    x &= 1;
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{Line Comments}
+
+Also, lines that are non-\/obvious should get a comment at the end of the line. These end-\/of-\/line comments should be separated from the code by 2 spaces. Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// If we have enough memory, mmap the data portion too.}
+mmap\_budget = max<int64>(0, mmap\_budget - index\_->length());
+\textcolor{keywordflow}{if} (mmap\_budget >= data\_size\_ && !MmapData(mmap\_chunk\_bytes, mlock))
+    \textcolor{keywordflow}{return};  \textcolor{comment}{// Error already logged.}
+\end{DoxyCode}
+
+
+Note that there are both comments that describe what the code is doing, and comments that mention that an error has already been logged when the function returns.
+
+If you have several comments on subsequent lines, it can often be more readable to line them up\+:
+
+
+\begin{DoxyCode}
+doSomething();                  \textcolor{comment}{// Comment here so the comments line up.}
+doSomethingElseThatIsLonger();  \textcolor{comment}{// Comment here so there are two spaces between}
+                                \textcolor{comment}{// the code and the comment.}
+\{ \textcolor{comment}{// One space before comment when opening a new scope is allowed,}
+  \textcolor{comment}{// thus the comment lines up with the following comments and code.}
+    doSomethingElse();  \textcolor{comment}{// Two spaces before line comments normally.}
+\}
+doSomething(); \textcolor{comment}{/* For trailing block comments, one space is fine. */}
+\end{DoxyCode}
+
+
+\subsubsection*{nullptr/\+N\+U\+LL, true/false, 1, 2, 3...}
+
+When you pass in a null pointer, boolean, or literal integer values to functions, you should consider adding a comment about what they are, or make your code self-\/documenting by using constants. For example, compare\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} success = calculateSomething(interesting\_value,
+                                  10,
+                                  \textcolor{keyword}{false},
+                                  NULL);  \textcolor{comment}{// What are these arguments??}
+\end{DoxyCode}
+
+
+versus\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} success = calculateSomething(interesting\_value,
+                                  10,     \textcolor{comment}{// Default base value.}
+                                  \textcolor{keyword}{false},  \textcolor{comment}{// Not the first time we're calling this.}
+                                  NULL);  \textcolor{comment}{// No callback.}
+\end{DoxyCode}
+
+
+Or alternatively, constants or self-\/describing variables\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keywordtype}{int} DEFAULT\_BASE\_VALUE = 10;
+\textcolor{keyword}{const} \textcolor{keywordtype}{bool} FIRST\_TIME\_CALLING = \textcolor{keyword}{false};
+Callback *nullCallback = NULL;
+\textcolor{keywordtype}{bool} success = CalculateSomething(interestingValue,
+                                  DEFAULT\_BASE\_VALUE,
+                                  FIRST\_TIME\_CALLING,
+                                  nullCallback);
+\end{DoxyCode}
+
+
+\subsubsection*{Don\textquotesingle{}ts}
+
+Note that you should never describe the code itself. Assume that the person reading the code knows C++ better than you do, even though he or she does not know what you are trying to do\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Now go through the b array and make sure that if i occurs,}
+\textcolor{comment}{// the next element is i+1.}
+...        \textcolor{comment}{// Geez.  What a useless comment.}
+\end{DoxyCode}
+
+
+\subsection*{Punctuation, Spelling and Grammar}
+
+Pay attention to punctuation, spelling, and grammar; it is easier to read well-\/written comments than badly written ones.
+
+Comments should be as readable as narrative text, with proper capitalization and punctuation. In many cases, complete sentences are more readable than sentence fragments. Shorter comments, such as comments at the end of a line of code, can sometimes be less formal, but you should be consistent with your style.
+
+Although it can be frustrating to have a code reviewer point out that you are using a comma when you should be using a semicolon, it is very important that source code maintain a high level of clarity and readability. Proper punctuation, spelling, and grammar help with that goal.
+
+\subsection*{T\+O\+DO Comments}
+
+Use T\+O\+DO comments for code that is temporary, a short-\/term solution, or good-\/enough but not perfect.
+
+T\+O\+D\+Os should include the string T\+O\+DO in all caps, followed by the name, e-\/mail address, or other identifier of the person who can best provide context about the problem referenced by the T\+O\+DO. A colon is optional. The main purpose is to have a consistent T\+O\+DO format that can be searched to find the person who can provide more details upon request. A T\+O\+DO is not a commitment that the person referenced will fix the problem. Thus when you create a T\+O\+DO, it is almost always your name that is given.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// TODO(kl`gmail.com): Use a "*" here for concatenation operator.}
+\textcolor{comment}{// TODO(Zeke) change this to use relations.}
+\end{DoxyCode}
+
+
+If your T\+O\+DO is of the form \char`\"{}\+At a future date do something\char`\"{} make sure that you either include a very specific date (\char`\"{}\+Fix by November 2005\char`\"{}) or a very specific event (\char`\"{}\+Remove this code when all clients can handle X\+M\+L responses.\char`\"{}).
+
+\subsection*{Deprecation Comments}
+
+Use the {\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE} macro to mark an methods as deprecated.
+
+Also use the {\ttfamily deprecated} doxygen docstring to mark it as deprecated in the documentation.
+
+A deprecation comment must include simple, clear directions for people to fix their callsites. In C++, you can implement a deprecated function as an inline function that calls the new interface point.
+
+Marking an interface point D\+E\+P\+R\+E\+C\+A\+T\+ED will not magically cause any callsites to change. If you want people to actually stop using the deprecated facility, you will have to fix the callsites yourself or recruit a crew to help you.
+
+New code should not contain calls to deprecated interface points. Use the new interface point instead. If you cannot understand the directions, find the person who created the deprecation and ask them for help using the new interface point.
+
+\section*{Formatting}
+
+Coding style and formatting are pretty arbitrary, but a project is much easier to follow if everyone uses the same style. Individuals may not agree with every aspect of the formatting rules, and some of the rules may take some getting used to, but it is important that all project contributors follow the style rules so that they can all read and understand everyone\textquotesingle{}s code easily.
+
+To help you format code correctly, we\textquotesingle{}ve created a settings file for emacs.
+
+\subsection*{Line Length}
+
+Each line of text in your code should be at most 80 characters long.
+
+We recognize that this rule is controversial, but so much existing code already adheres to it, and we feel that consistency is important.
+
+{\bfseries Pros\+:} Those who favor this rule argue that it is rude to force them to resize their windows and there is no need for anything longer. Some folks are used to having several code windows side-\/by-\/side, and thus don\textquotesingle{}t have room to widen their windows in any case. People set up their work environment assuming a particular maximum window width, and 80 columns has been the traditional standard. Why change it?
+
+{\bfseries Cons\+:} Proponents of change argue that a wider line can make code more readable. The 80-\/column limit is an hidebound throwback to 1960s mainframes; modern equipment has wide screens that can easily show longer lines.
+
+{\bfseries Decision\+:}
+
+80 characters is the maximum.
+
+Exception\+: if a comment line contains an example command or a literal U\+RL longer than 80 characters, that line may be longer than 80 characters for ease of cut and paste.
+
+Exception\+: an \#include statement with a long path may exceed 80 columns. Try to avoid situations where this becomes necessary.
+
+Exception\+: you needn\textquotesingle{}t be concerned about header guards that exceed the maximum length.
+
+\subsection*{Non-\/\+A\+S\+C\+II Characters}
+
+Non-\/\+A\+S\+C\+II characters should be rare, and must use U\+T\+F-\/8 formatting.
+
+You shouldn\textquotesingle{}t hard-\/code user-\/facing text in source, even English, so use of non-\/\+A\+S\+C\+II characters should be rare. However, in certain cases it is appropriate to include such words in your code. For example, if your code parses data files from foreign sources, it may be appropriate to hard-\/code the non-\/\+A\+S\+C\+II string(s) used in those data files as delimiters. More commonly, unittest code (which does not need to be localized) might contain non-\/\+A\+S\+C\+II strings. In such cases, you should use U\+T\+F-\/8, since that is an encoding understood by most tools able to handle more than just \hyperlink{structASCII}{A\+S\+C\+II}.
+
+Hex encoding is also OK, and encouraged where it enhances readability — for example, {\ttfamily \char`\"{}\textbackslash{}x\+E\+F\textbackslash{}x\+B\+B\textbackslash{}x\+B\+F\char`\"{}}, or, even more simply, {\ttfamily u8\char`\"{}\textbackslash{}u\+F\+E\+F\+F\char`\"{}}, is the Unicode zero-\/width no-\/break space character, which would be invisible if included in the source as straight U\+T\+F-\/8.
+
+Use the {\ttfamily u8} prefix to guarantee that a string literal containing {\ttfamily \textbackslash{}u\+X\+X\+XX} escape sequences is encoded as U\+T\+F-\/8. Do not use it for strings containing non-\/\+A\+S\+C\+II characters encoded as U\+T\+F-\/8, because that will produce incorrect output if the compiler does not interpret the source file as U\+T\+F-\/8.
+
+You shouldn\textquotesingle{}t use the C++11 {\ttfamily char16\+\_\+t} and {\ttfamily char32\+\_\+t} character types, since they\textquotesingle{}re for non-\/\+U\+T\+F-\/8 text. For similar reasons you also shouldn\textquotesingle{}t use {\ttfamily wchar\+\_\+t} (unless you\textquotesingle{}re writing code that interacts with the Windows A\+PI, which uses {\ttfamily wchar\+\_\+t} extensively).
+
+\subsection*{Spaces vs. Tabs}
+
+Use only spaces, and indent 4 spaces at a time.
+
+We use spaces for indentation. Do not use tabs in your code. You should set your editor to emit spaces when you hit the tab key.
+
+\subsection*{Function Declarations and Definitions}
+
+Return type on the same line as function name, parameters on the same line if they fit.
+
+Functions look like this\+:
+
+
+\begin{DoxyCode}
+ReturnType ClassName::FunctionName(Type par\_name1, Type par\_name2)
+\{
+    DoSomething();
+    ...
+\}
+\end{DoxyCode}
+
+
+If you have too much text to fit on one line\+:
+
+
+\begin{DoxyCode}
+ReturnType ClassName::ReallyLongFunctionName(Type par\_name1, Type par\_name2,
+                                             Type par\_name3)
+\{
+    DoSomething();
+    ...
+\}
+\end{DoxyCode}
+
+
+or if you cannot fit even the first parameter\+:
+
+
+\begin{DoxyCode}
+ReturnType LongClassName::ReallyReallyReallyLongFunctionName(
+    Type par\_name1,  \textcolor{comment}{// 4 space indent}
+    Type par\_name2,
+    Type par\_name3)
+\{
+    DoSomething();  \textcolor{comment}{// 4 space indent}
+    ...
+\}
+\end{DoxyCode}
+
+
+Some points to note\+:
+
+
+\begin{DoxyItemize}
+\item If you cannot fit the return type and the function name on a single line, break between them.
+\item If you break after the return type of a function definition, do not indent.
+\item The open parenthesis is always on the same line as the function name.
+\item There is never a space between the function name and the open parenthesis.
+\item There is never a space between the parentheses and the parameters.
+\item The open curly brace is always at the end of the same line as the last parameter.
+\item The close curly brace is either on the last line by itself or (if other style rules permit) on the same line as the open curly brace.
+\item There should be a space between the close parenthesis and the open curly brace.
+\item All parameters should be named, with identical names in the declaration and implementation.
+\item All parameters should be aligned if possible.
+\item Default indentation is 4 spaces.
+\item Wrapped parameters have a 4 space indent.
+\end{DoxyItemize}
+
+If some parameters are unused, comment out the variable name in the function definition\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Always have named parameters in interfaces.}
+\textcolor{keyword}{class }Shape
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} rotate(\textcolor{keywordtype}{double} radians) = 0;
+\}
+
+\textcolor{comment}{// Always have named parameters in the declaration.}
+\textcolor{keyword}{class }Circle : \textcolor{keyword}{public} Shape
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} rotate(\textcolor{keywordtype}{double} radians);
+\}
+
+\textcolor{comment}{// Comment out unused named parameters in definitions.}
+\textcolor{keywordtype}{void} Circle::rotate(\textcolor{keywordtype}{double} \textcolor{comment}{/*radians*/})
+\{\}
+
+\textcolor{comment}{// Bad - if someone wants to implement later, it's not clear what the}
+\textcolor{comment}{// variable means.}
+\textcolor{keywordtype}{void} Circle::rotate(\textcolor{keywordtype}{double})
+\{\}
+\end{DoxyCode}
+
+
+\subsection*{Function Calls}
+
+On one line if it fits; otherwise, wrap arguments at the parenthesis.
+
+Function calls have the following format\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} retval = doSomething(argument1, argument2, argument3);
+\end{DoxyCode}
+
+
+If the arguments do not all fit on one line, they should be broken up onto multiple lines, with each subsequent line aligned with the first argument. Do not add spaces after the open paren or before the close paren\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} retval = doSomething(averyveryveryverylongargument1,
+                          argument2, argument3);
+\end{DoxyCode}
+
+
+If the function has many arguments, consider having one per line if this makes the code more readable\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{bool} retval = doSomething(argument1,
+                          argument2,
+                          argument3,
+                          argument4);
+\end{DoxyCode}
+
+
+\hyperlink{classArguments}{Arguments} may optionally all be placed on subsequent lines, with one line per argument\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (...) \{
+    ...
+    ...
+    \textcolor{keywordflow}{if} (...) \{
+        doSomething(
+            argument1,  \textcolor{comment}{// 4 space indent}
+            argument2,
+            argument3,
+            argument4);
+    \}
+\end{DoxyCode}
+
+
+In particular, this should be done if the function signature is so long that it cannot fit within the maximum line length.
+
+\subsection*{Braced Initializer Lists}
+
+Format a braced \hyperlink{protocollist-p}{list} exactly like you would format a function call in its place.
+
+If the braced \hyperlink{protocollist-p}{list} follows a name (e.\+g. a type or variable name), format as if the {\ttfamily \{\}} were the parentheses of a function call with that name. If there is no name, assume a zero-\/length name.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Examples of braced init list on a single line.}
+\textcolor{keywordflow}{return} \{foo, bar\};
+functioncall(\{foo, bar\});
+pair<int, int> p\{foo, bar\};
+
+\textcolor{comment}{// When you have to wrap.}
+SomeFunction(
+    \{\textcolor{stringliteral}{"assume a zero-length name before \{"}\},
+    some\_other\_function\_parameter);
+SomeType variable\{
+    some, other, values,
+    \{\textcolor{stringliteral}{"assume a zero-length name before \{"}\},
+    SomeOtherType\{
+        \textcolor{stringliteral}{"Very long string requiring the surrounding breaks."},
+        some, other values\},
+    SomeOtherType\{\textcolor{stringliteral}{"Slightly shorter string"},
+                  some, other, values\}\};
+SomeType variable\{
+    \textcolor{stringliteral}{"This is too long to fit all in one line"}\};
+MyType m = \{  \textcolor{comment}{// Here, you could also break before \{.}
+    superlongvariablename1,
+    superlongvariablename2,
+    \{short, interior, list\},
+    \{interiorwrappinglist,
+     interiorwrappinglist2\}\};
+\end{DoxyCode}
+
+
+\subsection*{Conditionals}
+
+Prefer no spaces inside parentheses. The else keyword belongs on a new line.
+
+There are two acceptable formats for a basic conditional statement. One includes spaces between the parentheses and the condition, and one does not.
+
+The most common form is without spaces. Either is fine, but be consistent. If you are modifying a file, use the format that is already present. If you are writing new code, use the format that the other files in that directory or project use. If in doubt and you have no personal preference, do not add the spaces.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (condition) \{  \textcolor{comment}{// no spaces inside parentheses}
+    ...  \textcolor{comment}{// 4 space indent.}
+\} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (...) \{  \textcolor{comment}{// The else goes on the same line as the closing brace.}
+    ...
+\} \textcolor{keywordflow}{else} \{
+    ...
+\}
+\end{DoxyCode}
+
+
+If you prefer you may add spaces inside the parentheses\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( condition ) \{  \textcolor{comment}{// spaces inside parentheses - rare}
+    ...  \textcolor{comment}{// 4 space indent.}
+\} \textcolor{keywordflow}{else} \{  \textcolor{comment}{// The else goes on the same line as the closing brace.}
+    ...
+\}
+\end{DoxyCode}
+
+
+Note that in all cases you must have a space between the {\ttfamily if} and the open parenthesis. You must also have a space between the close parenthesis and the curly brace, if you\textquotesingle{}re using one.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(condition)     \textcolor{comment}{// Bad - space missing after IF.}
+\textcolor{keywordflow}{if} (condition)\{   \textcolor{comment}{// Bad - space missing before \{.}
+\textcolor{keywordflow}{if}(condition)\{    \textcolor{comment}{// Doubly bad.}
+
+\textcolor{keywordflow}{if} (condition) \{  \textcolor{comment}{// Good - proper space after IF and before \{.}
+\end{DoxyCode}
+
+
+Short conditional statements may be written on one line if this enhances readability. You may use this only when the line is brief and the statement does not use the else clause.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (x == FOO) \textcolor{keywordflow}{return} \textcolor{keyword}{new} Foo();
+\textcolor{keywordflow}{if} (x == BAR) \textcolor{keywordflow}{return} \textcolor{keyword}{new} Bar();
+\end{DoxyCode}
+
+
+This is not allowed when the if statement has an {\ttfamily else}\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Not allowed - IF statement on one line when there is an ELSE clause}
+\textcolor{keywordflow}{if} (x) doThis();
+\textcolor{keywordflow}{else} doThat();
+\end{DoxyCode}
+
+
+In general, curly braces are not required for single-\/line statements, but they are allowed if you like them; conditional or loop statements with complex conditions or statements may be more readable with curly braces. Some projects require that an if must always always have an accompanying brace.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (condition)
+    doSomething();  \textcolor{comment}{// 4 space indent.}
+
+\textcolor{keywordflow}{if} (condition) \{
+    doSomething();  \textcolor{comment}{// 4 space indent.}
+\}
+\end{DoxyCode}
+
+
+However, if one part of an if-\/else statement uses curly braces, the other part must too\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Not allowed - curly on IF but not ELSE}
+\textcolor{keywordflow}{if} (condition) \{
+    foo;
+\} \textcolor{keywordflow}{else}
+    bar;
+
+\textcolor{comment}{// Not allowed - curly on ELSE but not IF}
+\textcolor{keywordflow}{if} (condition)
+    foo;
+\textcolor{keywordflow}{else} \{
+    bar;
+\}
+
+\textcolor{comment}{// Curly braces around both IF and ELSE required because}
+\textcolor{comment}{// one of the clauses used braces.}
+\textcolor{keywordflow}{if} (condition) \{
+    foo;
+\} \textcolor{keywordflow}{else} \{
+    bar;
+\}
+\end{DoxyCode}
+
+
+\subsection*{Loops and Switch Statements}
+
+Switch statements may use braces for blocks. Annotate non-\/trivial fall-\/through between cases. Empty loop bodies should use \{\} or continue.
+
+case blocks in switch statements can have curly braces or not, depending on your preference. If you do include curly braces they should be placed as shown below.
+
+If not conditional on an enumerated value, switch statements should always have a default case (in the case of an enumerated value, the compiler will warn you if any values are not handled). If the default case should never execute, simply assert\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{switch} (var) \{
+    \textcolor{keywordflow}{case} 0: \{    \textcolor{comment}{// 4 space indent}
+        ...      \textcolor{comment}{// 4 space indent}
+        \textcolor{keywordflow}{break};
+    \}
+    \textcolor{keywordflow}{case} 1: \{
+        ...
+        \textcolor{keywordflow}{break};
+    \}
+    \textcolor{keywordflow}{default}: \{
+       assert(\textcolor{keyword}{false});
+    \}
+\}
+\end{DoxyCode}
+
+
+Empty loop bodies should use {\ttfamily \{\}} or {\ttfamily continue}, but not a single semicolon.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{while} (condition) \{
+    \textcolor{comment}{// Repeat test until it returns false.}
+\}
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < SOME\_NUMBER; ++i) \{\}  \textcolor{comment}{// Good - empty body.}
+\textcolor{keywordflow}{while} (condition) \textcolor{keywordflow}{continue};  \textcolor{comment}{// Good - continue indicates no logic.}
+
+\textcolor{keywordflow}{while} (condition);  \textcolor{comment}{// Bad - looks like part of do/while loop.}
+\end{DoxyCode}
+
+
+\subsection*{Pointer and \hyperlink{structReference}{Reference} Expressions}
+
+No spaces around period or arrow. Pointer operators do not have trailing spaces.
+
+The following are examples of correctly-\/formatted pointer and reference expressions\+:
+
+
+\begin{DoxyCode}
+x = *p;
+p = &x;
+x = r.\hyperlink{classVec2_a30543787e62f6d915543cf1dfb04c094}{y};
+x = r->y;
+\end{DoxyCode}
+
+
+Note that\+:
+
+
+\begin{DoxyItemize}
+\item There are no spaces around the period or arrow when accessing a member.
+\item Pointer operators have no space after the $\ast$ or \&.
+\end{DoxyItemize}
+
+When declaring a pointer variable or argument, you may place the asterisk adjacent to either the type or to the variable name\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// These are fine, space preceding.}
+\textcolor{keywordtype}{char} *c;
+\textcolor{keyword}{const} \textcolor{keywordtype}{string} &str;
+
+\textcolor{comment}{// These are fine, space following.}
+\textcolor{keywordtype}{char}* c;    \textcolor{comment}{// but remember to do "char* c, *d, *e, ...;"!}
+\textcolor{keyword}{const} \textcolor{keywordtype}{string}& str;
+
+\textcolor{keywordtype}{char} * c;  \textcolor{comment}{// Bad - spaces on both sides of *}
+\textcolor{keyword}{const} \textcolor{keywordtype}{string} & str;  \textcolor{comment}{// Bad - spaces on both sides of &}
+\end{DoxyCode}
+
+
+You should do this consistently within a single file, so, when modifying an existing file, use the style in that file.
+
+\subsection*{Boolean Expressions}
+
+When you have a boolean expression that is longer than the standard line length, be consistent in how you break up the lines.
+
+In this example, the logical A\+ND operator is always at the end of the lines\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (thisOneThing > thisOtherThing &&
+    aThirdThing == aFourthThing &&
+    yetAnother && lastOne) \{
+    ...
+\}
+\end{DoxyCode}
+
+
+Note that when the code wraps in this example, both of the \&\& logical A\+ND operators are at the end of the line. This is more common in Google code, though wrapping all operators at the beginning of the line is also allowed. Feel free to insert extra parentheses judiciously because they can be very helpful in increasing readability when used appropriately. Also note that you should always use the punctuation operators, such as \&\& and $\sim$, rather than the word operators, such as and and compl.
+
+\subsection*{Return Values}
+
+Do not needlessly surround the return expression with parentheses.
+
+Use parentheses in {\ttfamily return expr;} only where you would use them in {\ttfamily x = expr;}.
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{return} result;                  \textcolor{comment}{// No parentheses in the simple case.}
+\textcolor{keywordflow}{return} (someLongCondition &&    \textcolor{comment}{// Parentheses ok to make a complex}
+        anotherCondition);      \textcolor{comment}{//     expression more readable.}
+
+\textcolor{keywordflow}{return} (value);                \textcolor{comment}{// You wouldn't write var = (value);}
+\textcolor{keywordflow}{return}(result);                \textcolor{comment}{// return is not a function!}
+\end{DoxyCode}
+
+
+\subsection*{Variable and Array Initialization}
+
+Your choice of {\ttfamily =}, {\ttfamily ()}, or {\ttfamily \{\}}.
+
+You may choose between {\ttfamily =}, {\ttfamily ()}, and {\ttfamily \{\}}; the following are all correct\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 3;
+\textcolor{keywordtype}{int} x(3);
+\textcolor{keywordtype}{int} x\{3\};
+\textcolor{keywordtype}{string} name = \textcolor{stringliteral}{"Some Name"};
+\textcolor{keywordtype}{string} name(\textcolor{stringliteral}{"Some Name"});
+\textcolor{keywordtype}{string} name\{\textcolor{stringliteral}{"Some Name"}\};
+\end{DoxyCode}
+
+
+Be careful when using the {\ttfamily \{\}} on a type that takes an initializer\+\_\+list in one of its constructors. The {\ttfamily \{\}} syntax prefers the initializer\+\_\+list constructor whenever possible. To get the non-\/ initializer\+\_\+list constructor, use {\ttfamily ()}.
+
+
+\begin{DoxyCode}
+vector<int> v(100, 1);  \textcolor{comment}{// A vector of 100 1s.}
+vector<int> v\{100, 1\};  \textcolor{comment}{// A vector of 100, 1.}
+\end{DoxyCode}
+
+
+Also, the brace form prevents narrowing of integral types. This can prevent some types of programming errors.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} pi(3.14);  \textcolor{comment}{// OK -- pi == 3.}
+\textcolor{keywordtype}{int} pi\{3.14\};  \textcolor{comment}{// Compile error: narrowing conversion.}
+\end{DoxyCode}
+
+
+\subsection*{Preprocessor Directives}
+
+The hash mark that starts a preprocessor directive should always be at the beginning of the line.
+
+Even when preprocessor directives are within the body of indented code, the directives should start at the beginning of the line.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Good - directives at beginning of line}
+  \textcolor{keywordflow}{if} (lopsidedScore) \{
+\textcolor{preprocessor}{#if DISASTER\_PENDING      // Correct -- Starts at beginning of line}
+    dropEverything();
+\textcolor{preprocessor}{# if NOTIFY               // OK but not required -- Spaces after #}
+    notifyClient();
+\textcolor{preprocessor}{# endif}
+\textcolor{preprocessor}{#endif}
+    backToNormal();
+  \}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Bad - indented directives}
+  \textcolor{keywordflow}{if} (lopsidedScore) \{
+\textcolor{preprocessor}{    #if DISASTER\_PENDING  // Wrong!  The "#if" should be at beginning of line}
+    dropEverything();
+\textcolor{preprocessor}{    #endif                // Wrong!  Do not indent "#endif"}
+    backToNormal();
+  \}
+\end{DoxyCode}
+
+
+\subsection*{Class Format}
+
+Sections in public, protected and private order, each indented one space.
+
+The basic format for a class declaration (lacking the comments, see Class Comments for a discussion of what comments are needed) is\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyClass : \textcolor{keyword}{public} OtherClass
+\{
+\textcolor{keyword}{public}:      \textcolor{comment}{// Note the 0 space indent!}
+    MyClass();  \textcolor{comment}{// Regular 4 space indent.}
+    \textcolor{keyword}{explicit} MyClass(\textcolor{keywordtype}{int} var);
+    ~MyClass() \{\}
+
+    \textcolor{keywordtype}{void} someFunction();
+    \textcolor{keywordtype}{void} someFunctionThatDoesNothing() \{
+    \}
+
+    \textcolor{keywordtype}{void} setSomeVar(\textcolor{keywordtype}{int} var) \{ \_someVar = var; \}
+    \textcolor{keywordtype}{int} getSomeVar()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_someVar; \}
+
+\textcolor{keyword}{private}:
+    \textcolor{keywordtype}{bool} someInternalFunction();
+
+    \textcolor{keywordtype}{int} \_someVar;
+    \textcolor{keywordtype}{int} \_someOtherVar;
+    DISALLOW\_COPY\_AND\_ASSIGN(MyClass);
+\};
+\end{DoxyCode}
+
+
+Things to note\+:
+
+
+\begin{DoxyItemize}
+\item Any base class name should be on the same line as the subclass name, subject to the 80-\/column limit.
+\item The {\ttfamily public\+:}, {\ttfamily protected\+:}, and {\ttfamily private\+:} keywords should not be indented.
+\item Except for the first instance, these keywords should be preceded by a blank line. This rule is optional in small classes.
+\item Do not leave a blank line after these keywords.
+\item The {\ttfamily public\+:} section should be first, followed by the {\ttfamily protected\+:} and finally the {\ttfamily private\+:} section.
+\item See Declaration Order for rules on ordering declarations within each of these sections.
+\end{DoxyItemize}
+
+\subsection*{Constructor Initializer Lists}
+
+Constructor initializer lists can be all on one line or with subsequent lines indented zero spaces.
+
+There are two acceptable formats for initializer lists\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// When it all fits on one line:}
+MyClass::MyClass(\textcolor{keywordtype}{int} var) : \_someVar(var), \_someOtherVar(var + 1) \{\}
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// When it requires multiple lines, indent zero spaces, putting the colon on}
+\textcolor{comment}{// the first initializer line, and commas in new lines if needed:}
+MyClass::MyClass(\textcolor{keywordtype}{int} var)
+: \_someVar(var)             \textcolor{comment}{// 0 space indent}
+, \_someOtherVar(var + 1)    \textcolor{comment}{// lined up}
+\{
+    ...
+    doSomething();
+    ...
+\}
+\end{DoxyCode}
+
+
+\subsection*{Namespace Formatting}
+
+The contents of namespaces are not indented.
+
+Namespaces do not add an extra level of indentation. For example, use\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }\{
+
+\textcolor{keywordtype}{void} foo() \{  \textcolor{comment}{// Correct.  No extra indentation within namespace.}
+  ...
+\}
+
+\}  \textcolor{comment}{// namespace}
+\end{DoxyCode}
+
+
+Do not indent within a namespace\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }\{
+
+  \textcolor{comment}{// Wrong.  Indented when it should not be.}
+  \textcolor{keywordtype}{void} foo() \{
+    ...
+  \}
+
+\}  \textcolor{comment}{// namespace}
+\end{DoxyCode}
+
+
+When declaring nested namespaces, put each namespace on its own line.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }foo \{
+\textcolor{keyword}{namespace }bar \{
+\end{DoxyCode}
+
+
+\subsection*{Horizontal Whitespace}
+
+Use of horizontal whitespace depends on location. Never put trailing whitespace at the end of a line.
+
+\subsubsection*{General}
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} f(\textcolor{keywordtype}{bool} b) \{  \textcolor{comment}{// Open braces should always have a space before them.}
+    ...
+int i = 0;  \textcolor{comment}{// Semicolons usually have no space before them.}
+\textcolor{keywordtype}{int} x[] = \{ 0 \};  \textcolor{comment}{// Spaces inside braces for braced-init-list are}
+\textcolor{keywordtype}{int} x[] = \{0\};    \textcolor{comment}{// optional.  If you use them, put them on both sides!}
+
+\textcolor{comment}{// Spaces around the colon in inheritance and initializer lists.}
+\textcolor{keyword}{class }Foo : \textcolor{keyword}{public} Bar \{
+\textcolor{keyword}{public}:
+    \textcolor{comment}{// For inline function implementations, put spaces between the braces}
+    \textcolor{comment}{// and the implementation itself.}
+    Foo(\textcolor{keywordtype}{int} b) : Bar(), baz\_(b) \{\}  \textcolor{comment}{// No spaces inside empty braces.}
+    \textcolor{keywordtype}{void} Reset() \{ baz\_ = 0; \}  \textcolor{comment}{// Spaces separating braces from implementation.}
+    ...
+\end{DoxyCode}
+
+
+Adding trailing whitespace can cause extra work for others editing the same file, when they merge, as can removing existing trailing whitespace. So\+: Don\textquotesingle{}t introduce trailing whitespace. Remove it if you\textquotesingle{}re already changing that line, or do it in a separate clean-\/up operation (preferably when no-\/one else is working on the file).
+
+\subsubsection*{Loops and Conditionals}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (b) \{          \textcolor{comment}{// Space after the keyword in conditions and loops.}
+\} \textcolor{keywordflow}{else} \{          \textcolor{comment}{// Spaces around else.}
+\}
+\textcolor{keywordflow}{while} (\hyperlink{namespacetest}{test}) \{\}   \textcolor{comment}{// There is usually no space inside parentheses.}
+\textcolor{keywordflow}{switch} (i) \{
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; ++i) \{
+\textcolor{keywordflow}{switch} ( i ) \{    \textcolor{comment}{// Loops and conditions may have spaces inside}
+\textcolor{keywordflow}{if} ( \hyperlink{namespacetest}{test} ) \{     \textcolor{comment}{// parentheses, but this is rare.  Be consistent.}
+\textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < 5; ++i ) \{
+\textcolor{keywordflow}{for} ( ; i < 5 ; ++i) \{  \textcolor{comment}{// For loops always have a space after the}
+    ...                 \textcolor{comment}{// semicolon, and may have a space before the}
+                        \textcolor{comment}{// semicolon.}
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} x : counts) \{  \textcolor{comment}{// Range-based for loops always have a}
+    ...                  \textcolor{comment}{// space before and after the colon.}
+\}
+\textcolor{keywordflow}{switch} (i) \{
+    \textcolor{keywordflow}{case} 1:         \textcolor{comment}{// No space before colon in a switch case.}
+    ...
+    \textcolor{keywordflow}{case} 2: \textcolor{keywordflow}{break};  \textcolor{comment}{// Use a space after a colon if there's code after it.}
+\end{DoxyCode}
+
+
+\subsubsection*{Operators}
+
+
+\begin{DoxyCode}
+x = 0;              \textcolor{comment}{// Assignment operators always have spaces around}
+                    \textcolor{comment}{// them.}
+x = -5;             \textcolor{comment}{// No spaces separating unary operators and their}
+++x;                \textcolor{comment}{// arguments.}
+\textcolor{keywordflow}{if} (x && !y)
+    ...
+v = w * x + y / z;  \textcolor{comment}{// Binary operators usually have spaces around them,}
+v = w*x + y/z;      \textcolor{comment}{// but it's okay to remove spaces around factors.}
+v = w * (x + z);    \textcolor{comment}{// Parentheses should have no spaces inside them.}
+\end{DoxyCode}
+
+
+\subsubsection*{Templates and Casts}
+
+
+\begin{DoxyCode}
+vector<string> x;           \textcolor{comment}{// No spaces inside the angle}
+y = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(x);  \textcolor{comment}{// brackets (< and >), before}
+                            \textcolor{comment}{// <, or between >( in a cast.}
+vector<char *> x;           \textcolor{comment}{// Spaces between type and pointer are}
+                            \textcolor{comment}{// okay, but be consistent.}
+set<list<string>> x;        \textcolor{comment}{// Permitted in C++11 code.}
+set<list<string> > x;       \textcolor{comment}{// C++03 required a space in > >.}
+set< list<string> > x;      \textcolor{comment}{// You may optionally use}
+                            \textcolor{comment}{// symmetric spacing in < <.}
+\end{DoxyCode}
+
+
+\subsection*{Vertical Whitespace}
+
+Minimize use of vertical whitespace.
+
+This is more a principle than a rule\+: don\textquotesingle{}t use blank lines when you don\textquotesingle{}t have to. In particular, don\textquotesingle{}t put more than one or two blank lines between functions, resist starting functions with a blank line, don\textquotesingle{}t end functions with a blank line, and be discriminating with your use of blank lines inside functions.
+
+The basic principle is\+: The more code that fits on one screen, the easier it is to follow and understand the control flow of the program. Of course, readability can suffer from code being too dense as well as too spread out, so use your judgement. But in general, minimize use of vertical whitespace.
+
+Some rules of thumb to help when blank lines may be useful\+:
+
+
+\begin{DoxyItemize}
+\item Blank lines at the beginning or end of a function very rarely help readability.
+\item Blank lines inside a chain of if-\/else blocks may well help readability.
+\end{DoxyItemize}
+
+\section*{Exceptions to the Rules}
+
+The coding conventions described above are mandatory. However, like all good rules, these sometimes have exceptions, which we discuss here.
+
+\subsection*{Existing Non-\/conformant Code}
+
+You may diverge from the rules when dealing with code that does not conform to this style guide.
+
+If you find yourself modifying code that was written to specifications other than those presented by this guide, you may have to diverge from these rules in order to stay consistent with the local conventions in that code. If you are in doubt about how to do this, ask the original author or the person currently responsible for the code. Remember that consistency includes local consistency, too.
+
+\subsection*{Windows Code}
+
+Windows programmers have developed their own set of coding conventions, mainly derived from the conventions in Windows headers and other Microsoft code. We want to make it easy for anyone to understand your code, so we have a single set of guidelines for everyone writing C++ on any platform.
+
+It is worth reiterating a few of the guidelines that you might forget if you are used to the prevalent Windows style\+:
+
+
+\begin{DoxyItemize}
+\item Do not use Hungarian notation (for example, naming an integer i\+Num). Use the Google naming conventions, including the .cpp extension for source files.
+\item Windows defines many of its own synonyms for primitive types, such as D\+W\+O\+RD, H\+A\+N\+D\+LE, etc. It is perfectly acceptable, and encouraged, that you use these types when calling Windows A\+PI functions. Even so, keep as close as you can to the underlying C++ types. For example, use const T\+C\+H\+AR $\ast$ instead of L\+P\+C\+T\+S\+TR.
+\item When compiling with Microsoft Visual C++, set the compiler to warning level 3 or higher, and treat all warnings as errors.
+\item Do not use \#pragma once; instead use the standard Google include guards. The path in the include guards should be relative to the top of your project tree.
+\item In fact, do not use any nonstandard extensions, like \#pragma and \+\_\+\+\_\+declspec, unless you absolutely must. Using {\ttfamily \+\_\+\+\_\+declspec(dllimport)} and {\ttfamily \+\_\+\+\_\+declspec(dllexport)} is allowed; however, you must use them through macros such as {\ttfamily D\+L\+L\+I\+M\+P\+O\+RT} and {\ttfamily D\+L\+L\+E\+X\+P\+O\+RT} or {\ttfamily C\+C\+\_\+\+D\+LL}, so that someone can easily disable the extensions if they share the code.
+\end{DoxyItemize}
+
+However, there are just a few rules that we occasionally need to break on Windows\+:
+
+
+\begin{DoxyItemize}
+\item Normally we forbid the use of multiple implementation inheritance; however, it is required when using C\+OM and some A\+T\+L/\+W\+TL classes. You may use multiple implementation inheritance to implement C\+OM or A\+T\+L/\+W\+TL classes and interfaces.
+\item Although you should not use exceptions in your own code, they are used extensively in the A\+TL and some S\+T\+Ls, including the one that comes with Visual C++. When using the A\+TL, you should define \+\_\+\+A\+T\+L\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS to disable exceptions. You should investigate whether you can also disable exceptions in your S\+TL, but if not, it is OK to turn on exceptions in the compiler. (Note that this is only to get the S\+TL to compile. You should still not write exception handling code yourself.)
+\item The usual way of working with precompiled headers is to include a header file at the top of each source file, typically with a name like Std\+Afx.\+h or precompile.\+h. To make your code easier to share with other projects, avoid including this file explicitly (except in precompile.\+cpp), and use the /\+FI compiler option to include the file automatically.
+\item Resource headers, which are usually named resource.\+h and contain only macros, do not need to conform to these style guidelines.
+\end{DoxyItemize}
+
+\section*{Parting Words}
+
+Use common sense and {\bfseries BE C\+O\+N\+S\+I\+S\+T\+E\+NT}.
+
+If you are editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around their if clauses, you should, too. If their comments have little boxes of stars around them, make your comments have little boxes of stars around them too.
+
+The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you are saying, rather than on how you are saying it. We present global style rules here so people know the vocabulary. But local style is also important. If code you add to a file looks drastically different from the existing code around it, the discontinuity throws readers out of their rhythm when they go to read it. Try to avoid this.
+
+OK, enough writing about writing code; the code itself is much more interesting. Have fun! 

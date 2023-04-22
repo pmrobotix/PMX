@@ -1,0 +1,282 @@
+\hypertarget{classFadeTo}{}\section{Fade\+To Class Reference}
+\label{classFadeTo}\index{Fade\+To@{Fade\+To}}
+
+
+Fades an object that implements the R\+G\+B\+A\+Protocol protocol. It modifies the opacity from the current value to a custom one.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Fade\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classFadeTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fade\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFadeTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_a662485a4513a6e717db8df6c6065c284}{clone} () const override
+\item 
+virtual \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_a40e463b17c90aa34c3ffe0c3dc016742}{reverse} (void) const override
+\item 
+virtual void \hyperlink{classFadeTo_a7846758ff3760d099ca70c279c52bde0}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classFadeTo_a1ce1e954d444943c1ec9923f14b3c599}{update} (float time) override
+\item 
+virtual \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_a1968e50c43c66d7b7efd4a6718183c3c}{clone} () const override
+\item 
+virtual \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_ae67d300f60edd18e3e15863223d13040}{reverse} () const override
+\item 
+virtual void \hyperlink{classFadeTo_a80f8df2c2e9e4755c8ecf076e0d3f71c}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual void \hyperlink{classFadeTo_a677de8611ab23718408f8da3fe9121dc}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_a5c86a750b0b092fb079ffb076e9ebf41}{create} (float duration, G\+Lubyte opacity)
+\item 
+static \hyperlink{classFadeTo}{Fade\+To} $\ast$ \hyperlink{classFadeTo_a6ab4d18c787e2bbfdee0270e5b00de2b}{create} (float duration, G\+Lubyte opacity)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFadeTo_a91efc654de7d6761af3523891b7d4c1b}\label{classFadeTo_a91efc654de7d6761af3523891b7d4c1b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classFadeTo}{Fade\+To}() \{\} virtual $\sim$\hyperlink{classFadeTo}{Fade\+To}() \{\} bool init\+With\+Duration(float duration
+\item 
+\mbox{\Hypertarget{classFadeTo_ad60f8e15f1a336f2e647e213ff0c28ff}\label{classFadeTo_ad60f8e15f1a336f2e647e213ff0c28ff}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} G\+Lubyte {\bfseries opacity}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFadeTo_af285ac310fbb747d6a0b9571806ce018}\label{classFadeTo_af285ac310fbb747d6a0b9571806ce018}} 
+G\+Lubyte {\bfseries \+\_\+to\+Opacity}
+\item 
+\mbox{\Hypertarget{classFadeTo_acf31ba18446e88845e80e7c5a8462a4c}\label{classFadeTo_acf31ba18446e88845e80e7c5a8462a4c}} 
+G\+Lubyte {\bfseries \+\_\+from\+Opacity}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFadeTo_aa2cfd51ccffec8799710c402d684bb17}\label{classFadeTo_aa2cfd51ccffec8799710c402d684bb17}} 
+class {\bfseries Fade\+Out}
+\item 
+\mbox{\Hypertarget{classFadeTo_a14d4063a0851c4a5a57f6a1be2ea9ee2}\label{classFadeTo_a14d4063a0851c4a5a57f6a1be2ea9ee2}} 
+class {\bfseries Fade\+In}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Fades an object that implements the R\+G\+B\+A\+Protocol protocol. It modifies the opacity from the current value to a custom one. 
+
+\begin{DoxyWarning}{Warning}
+This action doesn\textquotesingle{}t support \char`\"{}reverse\char`\"{} 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFadeTo_a662485a4513a6e717db8df6c6065c284}\label{classFadeTo_a662485a4513a6e717db8df6c6065c284}} 
+\index{Fade\+To@{Fade\+To}!clone@{clone}}
+\index{clone@{clone}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classFadeTo}{Fade\+To} $\ast$ Fade\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a03d1d3960ed0439bb40f120f14f1a4b5}{Fade\+Out}, \hyperlink{classFadeIn_a11f3037a54e9cb96655fe74f5f007c06}{Fade\+In}, \hyperlink{classFadeOut_af06dabca5e73a8ed67560c2540bbbb1f}{Fade\+Out}, and \hyperlink{classFadeIn_ab6e6999c3e68cc9157acabd0a7db06d5}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_a1968e50c43c66d7b7efd4a6718183c3c}\label{classFadeTo_a1968e50c43c66d7b7efd4a6718183c3c}} 
+\index{Fade\+To@{Fade\+To}!clone@{clone}}
+\index{clone@{clone}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classFadeTo}{Fade\+To}$\ast$ Fade\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a03d1d3960ed0439bb40f120f14f1a4b5}{Fade\+Out}, \hyperlink{classFadeIn_a11f3037a54e9cb96655fe74f5f007c06}{Fade\+In}, \hyperlink{classFadeOut_af06dabca5e73a8ed67560c2540bbbb1f}{Fade\+Out}, and \hyperlink{classFadeIn_ab6e6999c3e68cc9157acabd0a7db06d5}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_a5c86a750b0b092fb079ffb076e9ebf41}\label{classFadeTo_a5c86a750b0b092fb079ffb076e9ebf41}} 
+\index{Fade\+To@{Fade\+To}!create@{create}}
+\index{create@{create}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classFadeTo}{Fade\+To} $\ast$ Fade\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an action with duration and opacity. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em opacity} & A certain opacity, the range is from 0 to 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classFadeTo}{Fade\+To} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFadeTo_a6ab4d18c787e2bbfdee0270e5b00de2b}\label{classFadeTo_a6ab4d18c787e2bbfdee0270e5b00de2b}} 
+\index{Fade\+To@{Fade\+To}!create@{create}}
+\index{create@{create}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classFadeTo}{Fade\+To}$\ast$ Fade\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an action with duration and opacity. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em opacity} & A certain opacity, the range is from 0 to 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classFadeTo}{Fade\+To} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFadeTo_a40e463b17c90aa34c3ffe0c3dc016742}\label{classFadeTo_a40e463b17c90aa34c3ffe0c3dc016742}} 
+\index{Fade\+To@{Fade\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classFadeTo}{Fade\+To} $\ast$ Fade\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a18e27b1b9737d0f99604d683a1e185a8}{Fade\+Out}, \hyperlink{classFadeIn_a434301deede4fbe06674250b5d7809be}{Fade\+In}, \hyperlink{classFadeOut_aefa1585ac126946418ca92cb74b8a130}{Fade\+Out}, and \hyperlink{classFadeIn_a3c6c2fb763c9c394d37d2d699c482c3a}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_ae67d300f60edd18e3e15863223d13040}\label{classFadeTo_ae67d300f60edd18e3e15863223d13040}} 
+\index{Fade\+To@{Fade\+To}!reverse@{reverse}}
+\index{reverse@{reverse}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classFadeTo}{Fade\+To}$\ast$ Fade\+To\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a18e27b1b9737d0f99604d683a1e185a8}{Fade\+Out}, \hyperlink{classFadeIn_a434301deede4fbe06674250b5d7809be}{Fade\+In}, \hyperlink{classFadeOut_aefa1585ac126946418ca92cb74b8a130}{Fade\+Out}, and \hyperlink{classFadeIn_a3c6c2fb763c9c394d37d2d699c482c3a}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_a7846758ff3760d099ca70c279c52bde0}\label{classFadeTo_a7846758ff3760d099ca70c279c52bde0}} 
+\index{Fade\+To@{Fade\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Fade\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a95f4db5b66b8fea0e41ae9da60c3e730}{Fade\+Out}, \hyperlink{classFadeIn_ad97831da7a732a749d87634343e1711d}{Fade\+In}, \hyperlink{classFadeOut_a41e8895429e5942e43b3a60c117e0a2b}{Fade\+Out}, and \hyperlink{classFadeIn_a3a1c5c7aa1b80845aceeeb06ed059fad}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_a80f8df2c2e9e4755c8ecf076e0d3f71c}\label{classFadeTo_a80f8df2c2e9e4755c8ecf076e0d3f71c}} 
+\index{Fade\+To@{Fade\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Fade\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+
+
+Reimplemented in \hyperlink{classFadeOut_a95f4db5b66b8fea0e41ae9da60c3e730}{Fade\+Out}, \hyperlink{classFadeIn_ad97831da7a732a749d87634343e1711d}{Fade\+In}, \hyperlink{classFadeOut_a41e8895429e5942e43b3a60c117e0a2b}{Fade\+Out}, and \hyperlink{classFadeIn_a3a1c5c7aa1b80845aceeeb06ed059fad}{Fade\+In}.
+
+\mbox{\Hypertarget{classFadeTo_a1ce1e954d444943c1ec9923f14b3c599}\label{classFadeTo_a1ce1e954d444943c1ec9923f14b3c599}} 
+\index{Fade\+To@{Fade\+To}!update@{update}}
+\index{update@{update}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Fade\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classFadeTo_a677de8611ab23718408f8da3fe9121dc}\label{classFadeTo_a677de8611ab23718408f8da3fe9121dc}} 
+\index{Fade\+To@{Fade\+To}!update@{update}}
+\index{update@{update}!Fade\+To@{Fade\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Fade\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

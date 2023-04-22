@@ -1,0 +1,341 @@
+\hypertarget{classBillBoard}{}\section{Bill\+Board Class Reference}
+\label{classBillBoard}\index{Bill\+Board@{Bill\+Board}}
+
+
+Inherit from \hyperlink{classSprite}{Sprite}, achieve \hyperlink{classBillBoard}{Bill\+Board}.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Bill\+Board.\+h$>$}
+
+
+
+Inheritance diagram for Bill\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classBillBoard__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bill\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBillBoard__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBillBoard_af5c0daa78c9b4fa60562b1ed81e784df}\label{classBillBoard_af5c0daa78c9b4fa60562b1ed81e784df}} 
+enum {\bfseries Mode} \{ {\bfseries V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+L\+A\+N\+E\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+L\+A\+N\+E\+\_\+\+O\+R\+I\+E\+N\+T\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{classBillBoard_af5c0daa78c9b4fa60562b1ed81e784df}\label{classBillBoard_af5c0daa78c9b4fa60562b1ed81e784df}} 
+enum {\bfseries Mode} \{ {\bfseries V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+L\+A\+N\+E\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED}, 
+{\bfseries V\+I\+E\+W\+\_\+\+P\+L\+A\+N\+E\+\_\+\+O\+R\+I\+E\+N\+T\+ED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Creators}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBillBoard_ae5f8a8ff2f781a6046a4d4edd379357e}\label{classBillBoard_ae5f8a8ff2f781a6046a4d4edd379357e}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classBillBoard}{Bill\+Board}()
+\item 
+\mbox{\Hypertarget{classBillBoard_a7ddf1053ff2b8ec9d27338071dee34b9}\label{classBillBoard_a7ddf1053ff2b8ec9d27338071dee34b9}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+cam\+World\+Mat}
+\item 
+\mbox{\Hypertarget{classBillBoard_a7a18d3c92c9d7d97f7661b8a7056c086}\label{classBillBoard_a7a18d3c92c9d7d97f7661b8a7056c086}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+mv\+Transform}
+\item 
+\mbox{\Hypertarget{classBillBoard_a61ead54384fbcf86638984c3145e1f9e}\label{classBillBoard_a61ead54384fbcf86638984c3145e1f9e}} 
+Mode {\bfseries \+\_\+mode}
+\item 
+\mbox{\Hypertarget{classBillBoard_accec520f24062915a185601c2c198cc3}\label{classBillBoard_accec520f24062915a185601c2c198cc3}} 
+bool {\bfseries \+\_\+mode\+Dirty}
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_ae87c60e6d7278f55d836adb09281a286}{create} (Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_a99096279efac611e2d76734eff303672}{create} (const std\+::string \&filename, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_aba3108c387dfb5290021e73aaa73557c}{create} (const std\+::string \&filename, const \hyperlink{classRect}{Rect} \&rect, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_a60cefc735da0b8289c37c1424c1ed301}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_aad1420ccf3a2a8ad3ec9d102124167d0}{create} (Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_af25f3d3e9241d7ea53ec4cc9568d0338}{create} (const std\+::string \&filename, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_a802de5ef987024f2c1292ef504922058}{create} (const std\+::string \&filename, const \hyperlink{classRect}{Rect} \&rect, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+static \hyperlink{classBillBoard}{Bill\+Board} $\ast$ \hyperlink{classBillBoard_a973b81af43b98d2d8a89f4db7ca660dd}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture, Mode mode=Mode\+::\+V\+I\+E\+W\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+I\+E\+N\+T\+ED)
+\item 
+void \hyperlink{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}{set\+Mode} (Mode mode)
+\item 
+Mode \hyperlink{classBillBoard_a7fbd2c7bda64d7799789954d8d316b25}{get\+Mode} () const
+\item 
+virtual void \hyperlink{classBillBoard_a2caec4c849717693e62be305a0ca789c}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classBillBoard_ab8ccc9dc2cbbf46f1f2a56cd0283ce94}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classBillBoard_ab84fd0e03cde0a0f6444cc9d601bd99f}\label{classBillBoard_ab84fd0e03cde0a0f6444cc9d601bd99f}} 
+virtual {\bfseries $\sim$\+Bill\+Board} ()
+\item 
+void \hyperlink{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}{set\+Mode} (Mode mode)
+\item 
+Mode \hyperlink{classBillBoard_ae95e97903db0f6748398ad93ab12975a}{get\+Mode} () const
+\item 
+virtual void \hyperlink{classBillBoard_ae51a82da848a1a3c70cf109cdb1b79ba}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classBillBoard_a61816c66a9b5dbfbe12cf1bd747f5229}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+\mbox{\Hypertarget{classBillBoard_aa4c5e02770b192c2ce38558ae687c565}\label{classBillBoard_aa4c5e02770b192c2ce38558ae687c565}} 
+virtual {\bfseries $\sim$\+Bill\+Board} ()
+\item 
+bool \hyperlink{classBillBoard_a496fc1c16f4fa8c2ac82f7112e89d47c}{calculate\+Billbaord\+Transform} ()
+\item 
+bool \hyperlink{classBillBoard_ad38011949e599e214f162a245b929c9c}{calculate\+Billboard\+Transform} ()
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classBillBoard_a8ae4248e8b3700d1c40fbc7b212ca95d}{calculate\+Billbaord\+Transform} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Inherit from \hyperlink{classSprite}{Sprite}, achieve \hyperlink{classBillBoard}{Bill\+Board}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBillBoard_a496fc1c16f4fa8c2ac82f7112e89d47c}\label{classBillBoard_a496fc1c16f4fa8c2ac82f7112e89d47c}} 
+\index{Bill\+Board@{Bill\+Board}!calculate\+Billbaord\+Transform@{calculate\+Billbaord\+Transform}}
+\index{calculate\+Billbaord\+Transform@{calculate\+Billbaord\+Transform}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{calculate\+Billbaord\+Transform()}{calculateBillbaordTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bill\+Board\+::calculate\+Billbaord\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculate a model matrix which keep original translate \& scaling but always face to the camera \mbox{\Hypertarget{classBillBoard_a8ae4248e8b3700d1c40fbc7b212ca95d}\label{classBillBoard_a8ae4248e8b3700d1c40fbc7b212ca95d}} 
+\index{Bill\+Board@{Bill\+Board}!calculate\+Billbaord\+Transform@{calculate\+Billbaord\+Transform}}
+\index{calculate\+Billbaord\+Transform@{calculate\+Billbaord\+Transform}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{calculate\+Billbaord\+Transform()}{calculateBillbaordTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool Bill\+Board\+::calculate\+Billbaord\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000279}{Deprecated}]Use calculate\+Billboard\+Transform instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classBillBoard_ad38011949e599e214f162a245b929c9c}\label{classBillBoard_ad38011949e599e214f162a245b929c9c}} 
+\index{Bill\+Board@{Bill\+Board}!calculate\+Billboard\+Transform@{calculate\+Billboard\+Transform}}
+\index{calculate\+Billboard\+Transform@{calculate\+Billboard\+Transform}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{calculate\+Billboard\+Transform()}{calculateBillboardTransform()}}
+{\footnotesize\ttfamily bool Bill\+Board\+::calculate\+Billboard\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+calculate a model matrix which keep original translate \& scaling but always face to the camera \mbox{\Hypertarget{classBillBoard_ae87c60e6d7278f55d836adb09281a286}\label{classBillBoard_ae87c60e6d7278f55d836adb09281a286}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \hyperlink{classBillBoard}{Bill\+Board} $\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an empty \hyperlink{classBillBoard}{Bill\+Board} without texture. You can call set\+Texture method subsequently.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_aad1420ccf3a2a8ad3ec9d102124167d0}\label{classBillBoard_aad1420ccf3a2a8ad3ec9d102124167d0}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static \hyperlink{classBillBoard}{Bill\+Board}$\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an empty \hyperlink{classBillBoard}{Bill\+Board} without texture. You can call set\+Texture method subsequently.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_a99096279efac611e2d76734eff303672}\label{classBillBoard_a99096279efac611e2d76734eff303672}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \hyperlink{classBillBoard}{Bill\+Board} $\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with an image filename.
+
+After creation, the rect of \hyperlink{classBillBoard}{Bill\+Board} will be the size of the image, and the offset will be (0,0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_af25f3d3e9241d7ea53ec4cc9568d0338}\label{classBillBoard_af25f3d3e9241d7ea53ec4cc9568d0338}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static \hyperlink{classBillBoard}{Bill\+Board}$\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with an image filename.
+
+After creation, the rect of \hyperlink{classBillBoard}{Bill\+Board} will be the size of the image, and the offset will be (0,0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_aba3108c387dfb5290021e73aaa73557c}\label{classBillBoard_aba3108c387dfb5290021e73aaa73557c}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \hyperlink{classBillBoard}{Bill\+Board} $\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with an image filename and a rect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{} \\
+\hline
+{\em rect} & A subrect of the image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_a802de5ef987024f2c1292ef504922058}\label{classBillBoard_a802de5ef987024f2c1292ef504922058}} 
+\index{Bill\+Board@{Bill\+Board}!create@{create}}
+\index{create@{create}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static \hyperlink{classBillBoard}{Bill\+Board}$\ast$ Bill\+Board\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with an image filename and a rect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A path to image file, e.\+g., \char`\"{}scene1/monster.\+png\char`\"{} \\
+\hline
+{\em rect} & A subrect of the image file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_a60cefc735da0b8289c37c1424c1ed301}\label{classBillBoard_a60cefc735da0b8289c37c1424c1ed301}} 
+\index{Bill\+Board@{Bill\+Board}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBillBoard}{Bill\+Board} $\ast$ Bill\+Board\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with a \hyperlink{classTexture2D}{Texture2D} object.
+
+After creation, the rect will be the size of the texture, and the offset will be (0,0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & A pointer to a \hyperlink{classTexture2D}{Texture2D} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_a973b81af43b98d2d8a89f4db7ca660dd}\label{classBillBoard_a973b81af43b98d2d8a89f4db7ca660dd}} 
+\index{Bill\+Board@{Bill\+Board}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classBillBoard}{Bill\+Board}$\ast$ Bill\+Board\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture,  }\item[{Mode}]{mode = {\ttfamily Mode\+:\+:VIEW\+\_\+POINT\+\_\+ORIENTED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classBillBoard}{Bill\+Board} with a \hyperlink{classTexture2D}{Texture2D} object.
+
+After creation, the rect will be the size of the texture, and the offset will be (0,0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & A pointer to a \hyperlink{classTexture2D}{Texture2D} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classBillBoard}{Bill\+Board} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBillBoard_ab8ccc9dc2cbbf46f1f2a56cd0283ce94}\label{classBillBoard_ab8ccc9dc2cbbf46f1f2a56cd0283ce94}} 
+\index{Bill\+Board@{Bill\+Board}!draw@{draw}}
+\index{draw@{draw}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bill\+Board\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+draw \hyperlink{classBillBoard}{Bill\+Board} object.
+
+NA 
+
+Reimplemented from \hyperlink{classSprite_a033c570c383dbab72ca2bc9ccdffb3b9}{Sprite}.
+
+\mbox{\Hypertarget{classBillBoard_a61816c66a9b5dbfbe12cf1bd747f5229}\label{classBillBoard_a61816c66a9b5dbfbe12cf1bd747f5229}} 
+\index{Bill\+Board@{Bill\+Board}!draw@{draw}}
+\index{draw@{draw}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Bill\+Board\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+draw \hyperlink{classBillBoard}{Bill\+Board} object.
+
+NA 
+
+Reimplemented from \hyperlink{classSprite_a033c570c383dbab72ca2bc9ccdffb3b9}{Sprite}.
+
+\mbox{\Hypertarget{classBillBoard_a7fbd2c7bda64d7799789954d8d316b25}\label{classBillBoard_a7fbd2c7bda64d7799789954d8d316b25}} 
+\index{Bill\+Board@{Bill\+Board}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{get\+Mode()}{getMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bill\+Board\+::\+Mode Bill\+Board\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the billboard rotation mode. \mbox{\Hypertarget{classBillBoard_ae95e97903db0f6748398ad93ab12975a}\label{classBillBoard_ae95e97903db0f6748398ad93ab12975a}} 
+\index{Bill\+Board@{Bill\+Board}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{get\+Mode()}{getMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mode Bill\+Board\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the billboard rotation mode. \mbox{\Hypertarget{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}\label{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}} 
+\index{Bill\+Board@{Bill\+Board}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{set\+Mode()}{setMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bill\+Board\+::set\+Mode (\begin{DoxyParamCaption}\item[{Mode}]{mode }\end{DoxyParamCaption})}
+
+Set the billboard rotation mode. \mbox{\Hypertarget{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}\label{classBillBoard_aa65a9fad6b05fd10fafaf50ad70b94d1}} 
+\index{Bill\+Board@{Bill\+Board}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{set\+Mode()}{setMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bill\+Board\+::set\+Mode (\begin{DoxyParamCaption}\item[{Mode}]{mode }\end{DoxyParamCaption})}
+
+Set the billboard rotation mode. \mbox{\Hypertarget{classBillBoard_a2caec4c849717693e62be305a0ca789c}\label{classBillBoard_a2caec4c849717693e62be305a0ca789c}} 
+\index{Bill\+Board@{Bill\+Board}!visit@{visit}}
+\index{visit@{visit}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bill\+Board\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+update billboard\textquotesingle{}s transform and turn it towards camera 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classBillBoard_ae51a82da848a1a3c70cf109cdb1b79ba}\label{classBillBoard_ae51a82da848a1a3c70cf109cdb1b79ba}} 
+\index{Bill\+Board@{Bill\+Board}!visit@{visit}}
+\index{visit@{visit}!Bill\+Board@{Bill\+Board}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Bill\+Board\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+update billboard\textquotesingle{}s transform and turn it towards camera 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bill\+Board.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bill\+Board.\+cpp\end{DoxyCompactItemize}

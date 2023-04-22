@@ -1,0 +1,259 @@
+\hypertarget{classEnhanceAPI}{}\section{Enhance\+A\+PI Class Reference}
+\label{classEnhanceAPI}\index{Enhance\+A\+PI@{Enhance\+A\+PI}}
+
+
+{\ttfamily \#include $<$C\+C\+Enhance\+A\+P\+I-\/android.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEnhanceAPI_a38b0ef3cef705185a13174655fa62306}{Enhance\+A\+PI} ()
+\item 
+virtual \hyperlink{classEnhanceAPI_a50fcd2ce419536d19d01b6b9728cae67}{$\sim$\+Enhance\+A\+PI} ()
+\item 
+\hyperlink{classEnhanceAPI_a8ffc93de64bded476194d8fdc34cc8dd}{Enhance\+A\+PI} ()
+\item 
+virtual \hyperlink{classEnhanceAPI_a3b8bbecd1c52ed4e020c136a01194470}{$\sim$\+Enhance\+A\+PI} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classEnhanceAPI_a761e06b7b1a111b7db223cc43f7a27a7}{set\+Resolution\+Percent} (int percent)
+\begin{DoxyCompactList}\small\item\em The function is used to set screen buffer size ratio. The purpose of the A\+PI is to modify off screen buffer size for the game app. It will reduce the off screen buffer according to the given ration. The ration value varies from 50 to 100. 100 means using 100\% size of the on screen buffer as off screen buffer and 50 means 50\% size of the on screen buffer will be used as off screen buffer. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a07e1cdf5ec67fd23763eb40ec4153383}{set\+F\+PS} (int fps)
+\begin{DoxyCompactList}\small\item\em The function is used to set F\+PS level.  The input fps level(0-\/99) corresponds to game fps value(0-\/60). F\+PS level 99 means game F\+PS value 60. The purpose of the A\+PI is reducing power consumption when we set dynamic fps in some situations. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a5dc471f12c3c08f0e9f13753a6754999}{fast\+Loading} (int sec)
+\begin{DoxyCompactList}\small\item\em The function is used to set Boost Up seconds. The input parameter means the loading seconds. The maximum settings seconds is 7. The purpose of the A\+PI is reducing the application\textquotesingle{}s loading time. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_abf1d3068cc786539099418d67aa9ea4e}{get\+Temperature} ()
+\begin{DoxyCompactList}\small\item\em The function is used to get temperature level(0-\/3). The purpose of the A\+PI is get temperature status of the device. Temperature 0 means normal temperature and 1-\/3 means different temperature level. 1 is the minimum high temperature level and 3 is the maximum high temperature level. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_ad42c34b31bc6dc5f6e8b343817b50952}{set\+Low\+Power\+Mode} (bool enable)
+\begin{DoxyCompactList}\small\item\em The function is used to set power saving mode for true or false. The purpose of the A\+PI is reducing Power consumption when set power saving mode for true. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a06955ddbf64fd06570427e35654a314c}{set\+Resolution\+Percent} (int percent)
+\begin{DoxyCompactList}\small\item\em The function is used to set screen buffer size ratio. The purpose of the A\+PI is to modify off screen buffer size for the game app. It will reduce the off screen buffer according to the given ration. The ration value varies from 50 to 100. 100 means using 100\% size of the on screen buffer as off screen buffer and 50 means 50\% size of the on screen buffer will be used as off screen buffer. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a7a0cdc9dde13a4f8545245fe0dd5ddbc}{set\+F\+PS} (int fps)
+\begin{DoxyCompactList}\small\item\em The function is used to set F\+PS level.  The input fps level(0-\/99) corresponds to game fps value(0-\/60). F\+PS level 99 means game F\+PS value 60. The purpose of the A\+PI is reducing power consumption when we set dynamic fps in some situations. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a971131b6cc44e55336d31deb3a7f8063}{fast\+Loading} (int sec)
+\begin{DoxyCompactList}\small\item\em The function is used to set Boost Up seconds. The input parameter means the loading seconds. The maximum settings seconds is 7. The purpose of the A\+PI is reducing the application\textquotesingle{}s loading time. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a35587d100e1f41c200a75c5368575cc0}{get\+Temperature} ()
+\begin{DoxyCompactList}\small\item\em The function is used to get temperature level(0-\/3). The purpose of the A\+PI is get temperature status of the device. Temperature 0 means normal temperature and 1-\/3 means different temperature level. 1 is the minimum high temperature level and 3 is the maximum high temperature level. \end{DoxyCompactList}\item 
+static int \hyperlink{classEnhanceAPI_a96c78fe2277b1c0d4fe03cce4adf1a16}{set\+Low\+Power\+Mode} (bool enable)
+\begin{DoxyCompactList}\small\item\em The function is used to set power saving mode for true or false. The purpose of the A\+PI is reducing Power consumption when set power saving mode for true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The purpose of Enhance A\+PI is to optimize Cocos2\+D-\/X game engine special for Samsung products. Note\+: The minimum required Android version is 5.\+0. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnhanceAPI_a38b0ef3cef705185a13174655fa62306}\label{classEnhanceAPI_a38b0ef3cef705185a13174655fa62306}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{Enhance\+A\+P\+I()}{EnhanceAPI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Enhance\+A\+P\+I\+::\+Enhance\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classEnhanceAPI_a50fcd2ce419536d19d01b6b9728cae67}\label{classEnhanceAPI_a50fcd2ce419536d19d01b6b9728cae67}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!````~Enhance\+A\+PI@{$\sim$\+Enhance\+A\+PI}}
+\index{````~Enhance\+A\+PI@{$\sim$\+Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{$\sim$\+Enhance\+A\+P\+I()}{~EnhanceAPI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Enhance\+A\+P\+I\+::$\sim$\+Enhance\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classEnhanceAPI_a8ffc93de64bded476194d8fdc34cc8dd}\label{classEnhanceAPI_a8ffc93de64bded476194d8fdc34cc8dd}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{Enhance\+A\+P\+I()}{EnhanceAPI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Enhance\+A\+P\+I\+::\+Enhance\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classEnhanceAPI_a3b8bbecd1c52ed4e020c136a01194470}\label{classEnhanceAPI_a3b8bbecd1c52ed4e020c136a01194470}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!````~Enhance\+A\+PI@{$\sim$\+Enhance\+A\+PI}}
+\index{````~Enhance\+A\+PI@{$\sim$\+Enhance\+A\+PI}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{$\sim$\+Enhance\+A\+P\+I()}{~EnhanceAPI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Enhance\+A\+P\+I\+::$\sim$\+Enhance\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnhanceAPI_a5dc471f12c3c08f0e9f13753a6754999}\label{classEnhanceAPI_a5dc471f12c3c08f0e9f13753a6754999}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!fast\+Loading@{fast\+Loading}}
+\index{fast\+Loading@{fast\+Loading}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{fast\+Loading()}{fastLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Enhance\+A\+P\+I\+::fast\+Loading (\begin{DoxyParamCaption}\item[{int}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set Boost Up seconds. The input parameter means the loading seconds. The maximum settings seconds is 7. The purpose of the A\+PI is reducing the application\textquotesingle{}s loading time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & The fast loading seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a971131b6cc44e55336d31deb3a7f8063}\label{classEnhanceAPI_a971131b6cc44e55336d31deb3a7f8063}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!fast\+Loading@{fast\+Loading}}
+\index{fast\+Loading@{fast\+Loading}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{fast\+Loading()}{fastLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int Enhance\+A\+P\+I\+::fast\+Loading (\begin{DoxyParamCaption}\item[{int}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set Boost Up seconds. The input parameter means the loading seconds. The maximum settings seconds is 7. The purpose of the A\+PI is reducing the application\textquotesingle{}s loading time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & The fast loading seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_abf1d3068cc786539099418d67aa9ea4e}\label{classEnhanceAPI_abf1d3068cc786539099418d67aa9ea4e}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!get\+Temperature@{get\+Temperature}}
+\index{get\+Temperature@{get\+Temperature}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{get\+Temperature()}{getTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Enhance\+A\+P\+I\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to get temperature level(0-\/3). The purpose of the A\+PI is get temperature status of the device. Temperature 0 means normal temperature and 1-\/3 means different temperature level. 1 is the minimum high temperature level and 3 is the maximum high temperature level. 
+
+\begin{DoxyReturn}{Returns}
+-\/1\+: fail to get temperature.
+\begin{DoxyItemize}
+\item 0\+: normal temperature
+\item 1\+: high
+\item 2,3\+: very high 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a35587d100e1f41c200a75c5368575cc0}\label{classEnhanceAPI_a35587d100e1f41c200a75c5368575cc0}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!get\+Temperature@{get\+Temperature}}
+\index{get\+Temperature@{get\+Temperature}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{get\+Temperature()}{getTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int Enhance\+A\+P\+I\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to get temperature level(0-\/3). The purpose of the A\+PI is get temperature status of the device. Temperature 0 means normal temperature and 1-\/3 means different temperature level. 1 is the minimum high temperature level and 3 is the maximum high temperature level. 
+
+\begin{DoxyReturn}{Returns}
+-\/1\+: fail to get temperature.
+\begin{DoxyItemize}
+\item 0\+: normal temperature
+\item 1\+: high
+\item 2,3\+: very high 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a7a0cdc9dde13a4f8545245fe0dd5ddbc}\label{classEnhanceAPI_a7a0cdc9dde13a4f8545245fe0dd5ddbc}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+F\+PS@{set\+F\+PS}}
+\index{set\+F\+PS@{set\+F\+PS}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+F\+P\+S()}{setFPS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int Enhance\+A\+P\+I\+::set\+F\+PS (\begin{DoxyParamCaption}\item[{int}]{fps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set F\+PS level.  The input fps level(0-\/99) corresponds to game fps value(0-\/60). F\+PS level 99 means game F\+PS value 60. The purpose of the A\+PI is reducing power consumption when we set dynamic fps in some situations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fps} & the fps value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a07e1cdf5ec67fd23763eb40ec4153383}\label{classEnhanceAPI_a07e1cdf5ec67fd23763eb40ec4153383}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+F\+PS@{set\+F\+PS}}
+\index{set\+F\+PS@{set\+F\+PS}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+F\+P\+S()}{setFPS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Enhance\+A\+P\+I\+::set\+F\+PS (\begin{DoxyParamCaption}\item[{int}]{fps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set F\+PS level.  The input fps level(0-\/99) corresponds to game fps value(0-\/60). F\+PS level 99 means game F\+PS value 60. The purpose of the A\+PI is reducing power consumption when we set dynamic fps in some situations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fps} & the fps value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_ad42c34b31bc6dc5f6e8b343817b50952}\label{classEnhanceAPI_ad42c34b31bc6dc5f6e8b343817b50952}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+Low\+Power\+Mode@{set\+Low\+Power\+Mode}}
+\index{set\+Low\+Power\+Mode@{set\+Low\+Power\+Mode}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+Low\+Power\+Mode()}{setLowPowerMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Enhance\+A\+P\+I\+::set\+Low\+Power\+Mode (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set power saving mode for true or false. The purpose of the A\+PI is reducing Power consumption when set power saving mode for true. 
+
+\begin{DoxyReturn}{Returns}
+-\/1\+: fail to get temperature
+\begin{DoxyItemize}
+\item 0\+: normal temperature
+\item 1\+: high
+\item 2,3\+: very high 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a96c78fe2277b1c0d4fe03cce4adf1a16}\label{classEnhanceAPI_a96c78fe2277b1c0d4fe03cce4adf1a16}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+Low\+Power\+Mode@{set\+Low\+Power\+Mode}}
+\index{set\+Low\+Power\+Mode@{set\+Low\+Power\+Mode}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+Low\+Power\+Mode()}{setLowPowerMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int Enhance\+A\+P\+I\+::set\+Low\+Power\+Mode (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set power saving mode for true or false. The purpose of the A\+PI is reducing Power consumption when set power saving mode for true. 
+
+\begin{DoxyReturn}{Returns}
+-\/1\+: fail to get temperature
+\begin{DoxyItemize}
+\item 0\+: normal temperature
+\item 1\+: high
+\item 2,3\+: very high 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a06955ddbf64fd06570427e35654a314c}\label{classEnhanceAPI_a06955ddbf64fd06570427e35654a314c}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+Resolution\+Percent@{set\+Resolution\+Percent}}
+\index{set\+Resolution\+Percent@{set\+Resolution\+Percent}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+Resolution\+Percent()}{setResolutionPercent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int Enhance\+A\+P\+I\+::set\+Resolution\+Percent (\begin{DoxyParamCaption}\item[{int}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set screen buffer size ratio. The purpose of the A\+PI is to modify off screen buffer size for the game app. It will reduce the off screen buffer according to the given ration. The ration value varies from 50 to 100. 100 means using 100\% size of the on screen buffer as off screen buffer and 50 means 50\% size of the on screen buffer will be used as off screen buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percent} & The optimized percent value, value varies from 50 to 100. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEnhanceAPI_a761e06b7b1a111b7db223cc43f7a27a7}\label{classEnhanceAPI_a761e06b7b1a111b7db223cc43f7a27a7}} 
+\index{Enhance\+A\+PI@{Enhance\+A\+PI}!set\+Resolution\+Percent@{set\+Resolution\+Percent}}
+\index{set\+Resolution\+Percent@{set\+Resolution\+Percent}!Enhance\+A\+PI@{Enhance\+A\+PI}}
+\subsubsection{\texorpdfstring{set\+Resolution\+Percent()}{setResolutionPercent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Enhance\+A\+P\+I\+::set\+Resolution\+Percent (\begin{DoxyParamCaption}\item[{int}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The function is used to set screen buffer size ratio. The purpose of the A\+PI is to modify off screen buffer size for the game app. It will reduce the off screen buffer according to the given ration. The ration value varies from 50 to 100. 100 means using 100\% size of the on screen buffer as off screen buffer and 50 means 50\% size of the on screen buffer will be used as off screen buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percent} & The optimized percent value, value varies from 50 to 100. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success\+: 0, fail\+: -\/1. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/android/C\+C\+Enhance\+A\+P\+I-\/android.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/android/C\+C\+Enhance\+A\+P\+I-\/android.\+cpp\end{DoxyCompactItemize}

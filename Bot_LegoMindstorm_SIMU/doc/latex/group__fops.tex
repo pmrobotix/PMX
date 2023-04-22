@@ -1,0 +1,434 @@
+\hypertarget{group__fops}{}\section{file operation wrapping}
+\label{group__fops}\index{file operation wrapping@{file operation wrapping}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd}
+\item 
+struct \hyperlink{structlws__fops__index}{lws\+\_\+fops\+\_\+index}
+\item 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\item 
+\#define \hyperlink{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}~open
+\item 
+\mbox{\Hypertarget{group__fops_ga993a0264dac738d32e40bfd802877596}\label{group__fops_ga993a0264dac738d32e40bfd802877596}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+C\+L\+O\+SE}~close
+\item 
+\mbox{\Hypertarget{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}\label{group__fops_ga372b5af81a2927c4a0d8f8ac04e22ea9}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+S\+E\+E\+K\+\_\+\+C\+UR}~seek\+\_\+cur
+\item 
+\mbox{\Hypertarget{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}\label{group__fops_gab0daaa4c50c0689f5ecddbc93b258052}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+R\+E\+AD}~read
+\item 
+\mbox{\Hypertarget{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}\label{group__fops_ga8ed9a52c15cb4efa6024a3632fb7a571}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+W\+R\+I\+TE}~write
+\item 
+\mbox{\Hypertarget{group__fops_ga4515771d224d2dbaa6409e1958b81faf}\label{group__fops_ga4515771d224d2dbaa6409e1958b81faf}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+A\+SK}~((1 $<$$<$ 23) -\/ 1)
+\item 
+\mbox{\Hypertarget{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}\label{group__fops_ga95a53aaaba125ce154e455d76d5b2c22}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+L\+E\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 24)
+\item 
+\mbox{\Hypertarget{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}\label{group__fops_ga5c896c010b90ab0fb6ff9ab96133e4b2}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+C\+O\+M\+P\+R\+\_\+\+I\+S\+\_\+\+G\+Z\+IP}~(1 $<$$<$ 25)
+\item 
+\mbox{\Hypertarget{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}\label{group__fops_ga2046444d8c9c559a5b4a2e78740e89fc}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID}~(1 $<$$<$ 26)
+\item 
+\mbox{\Hypertarget{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}\label{group__fops_ga9705d2349b62f175fadc4a3f72e38c33}} 
+\#define {\bfseries L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+V\+I\+R\+T\+U\+AL}~(1 $<$$<$ 27)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__fops_gaff2afd0d519127b98def65b1257a0957}\label{group__fops_gaff2afd0d519127b98def65b1257a0957}} 
+typedef struct \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd} $\ast$ {\bfseries lws\+\_\+fop\+\_\+fd\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__fops_gac08aef64c4c34647ed699b24759b6b0e}{lws\+\_\+get\+\_\+fops} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context)
+\item 
+\mbox{\Hypertarget{group__fops_gaac73ba2b3ddcd3f97f6ec23ff5407c5f}\label{group__fops_gaac73ba2b3ddcd3f97f6ec23ff5407c5f}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void {\bfseries lws\+\_\+set\+\_\+fops} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context, const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$fops)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+filepos\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__fops_ga3e71b9e0f12cfe134ab1c9689ff5463b}{lws\+\_\+vfs\+\_\+tell} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+filepos\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__fops_gac858c510999bf0779d10668d2617a445}{lws\+\_\+vfs\+\_\+get\+\_\+length} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN uint32\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__fops_ga1d1e9a470d48eeff0f18934c9338c5ed}{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+fileofs\+\_\+t \hyperlink{group__fops_ga23eb98c37dd3df5c97115ea469c6a89b}{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+fileofs\+\_\+t offset)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+fileofs\+\_\+t \hyperlink{group__fops_gacedf2cfa8c82a3fa215a39713d0b88a4}{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+fileofs\+\_\+t offset)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \hyperlink{group__fops_gafde9d62b0140a9127129c76f6817e010}{lws\+\_\+vfs\+\_\+file\+\_\+open} (const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$fops, const char $\ast$vfs\+\_\+path, lws\+\_\+fop\+\_\+flags\+\_\+t $\ast$flags)
+\item 
+\mbox{\Hypertarget{group__fops_ga2278da04eda47b64ed212e175abcc3ff}\label{group__fops_ga2278da04eda47b64ed212e175abcc3ff}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} {\bfseries \+\_\+lws\+\_\+plat\+\_\+file\+\_\+open} (const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$fops, const char $\ast$filename, const char $\ast$vpath, lws\+\_\+fop\+\_\+flags\+\_\+t $\ast$flags)
+\item 
+\mbox{\Hypertarget{group__fops_gaf46a9b237454c9d1408f66d24bd9ac09}\label{group__fops_gaf46a9b237454c9d1408f66d24bd9ac09}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int {\bfseries \+\_\+lws\+\_\+plat\+\_\+file\+\_\+close} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} $\ast$fop\+\_\+fd)
+\item 
+\mbox{\Hypertarget{group__fops_ga978cf727cc29c73545548a0dcb34000c}\label{group__fops_ga978cf727cc29c73545548a0dcb34000c}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+fileofs\+\_\+t {\bfseries \+\_\+lws\+\_\+plat\+\_\+file\+\_\+seek\+\_\+cur} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+fileofs\+\_\+t offset)
+\item 
+\mbox{\Hypertarget{group__fops_ga8c67bcbfab1f7fb5f3965ca218ae2a44}\label{group__fops_ga8c67bcbfab1f7fb5f3965ca218ae2a44}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int {\bfseries \+\_\+lws\+\_\+plat\+\_\+file\+\_\+read} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)
+\item 
+\mbox{\Hypertarget{group__fops_gaada01ab80e574a0a36d8536088fb944e}\label{group__fops_gaada01ab80e574a0a36d8536088fb944e}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int {\bfseries \+\_\+lws\+\_\+plat\+\_\+file\+\_\+write} (\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} fop\+\_\+fd, lws\+\_\+filepos\+\_\+t $\ast$amount, uint8\+\_\+t $\ast$buf, lws\+\_\+filepos\+\_\+t len)
+\item 
+\mbox{\Hypertarget{group__fops_gabd005547fd12b5dcb91f28c5b5e5ccb4}\label{group__fops_gabd005547fd12b5dcb91f28c5b5e5ccb4}} 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int {\bfseries lws\+\_\+alloc\+\_\+vfs\+\_\+file} (struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$context, const char $\ast$filename, uint8\+\_\+t $\ast$$\ast$buf, lws\+\_\+filepos\+\_\+t $\ast$amount)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\item 
+\mbox{\Hypertarget{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}\label{group__fops_gab390f4bbb86d55f984c0f2dc6a79ae71}} 
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} {\bfseries fops\+\_\+zip}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{File operation wrapping}
+
+Use these helper functions if you want to access a file from the perspective of a specific wsi, which is usually the case. If you just want contextless file access, use the fops callbacks directly with N\+U\+LL wsi instead of these helpers.
+
+If so, then it calls the platform handler or user overrides where present (as defined in info-\/$>$fops)
+
+The advantage from all this is user code can be portable for file operations without having to deal with differences between platforms. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. \mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. \mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. \mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. \mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. \mbox{\Hypertarget{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}\label{group__fops_ga7972d4b546c7af37bb76d4c60f2ad553}} 
+\index{file operation wrapping@{file operation wrapping}!L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}}
+\index{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN@{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN}{LWS\_FOP\_OPEN}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \#define L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+O\+P\+EN~open}
+
+struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} -\/ Platform-\/specific file operations
+
+These provide platform-\/agnostic ways to deal with filesystem access in the library and in the user code. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__fops_gac08aef64c4c34647ed699b24759b6b0e}\label{group__fops_gac08aef64c4c34647ed699b24759b6b0e}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+get\+\_\+fops@{lws\+\_\+get\+\_\+fops}}
+\index{lws\+\_\+get\+\_\+fops@{lws\+\_\+get\+\_\+fops}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+get\+\_\+fops()}{lws\_get\_fops()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops}$\ast$ L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+get\+\_\+fops (\begin{DoxyParamCaption}\item[{struct \hyperlink{structlws__context}{lws\+\_\+context} $\ast$}]{context }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_gac08aef64c4c34647ed699b24759b6b0e}{lws\+\_\+get\+\_\+fops()} -\/ get current file ops
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & context \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__fops_gafde9d62b0140a9127129c76f6817e010}\label{group__fops_gafde9d62b0140a9127129c76f6817e010}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+file\+\_\+open@{lws\+\_\+vfs\+\_\+file\+\_\+open}}
+\index{lws\+\_\+vfs\+\_\+file\+\_\+open@{lws\+\_\+vfs\+\_\+file\+\_\+open}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+file\+\_\+open()}{lws\_vfs\_file\_open()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN \hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t} L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+vfs\+\_\+file\+\_\+open (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$}]{fops,  }\item[{const char $\ast$}]{vfs\+\_\+path,  }\item[{lws\+\_\+fop\+\_\+flags\+\_\+t $\ast$}]{flags }\end{DoxyParamCaption})}
+
+lws\+\_\+plat\+\_\+file\+\_\+open() -\/ open vfs filepath
+
+
+\begin{DoxyParams}{Parameters}
+{\em fops} & file ops struct that applies to this descriptor \\
+\hline
+{\em vfs\+\_\+path} & filename to open \\
+\hline
+{\em flags} & pointer to open flags\\
+\hline
+\end{DoxyParams}
+The vfs\+\_\+path is scanned for known fops signatures, and the open directed to any matching fops open.
+
+User code should use this api to perform vfs opens.
+
+returns semi-\/opaque handle \mbox{\Hypertarget{group__fops_gacedf2cfa8c82a3fa215a39713d0b88a4}\label{group__fops_gacedf2cfa8c82a3fa215a39713d0b88a4}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end@{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end}}
+\index{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end@{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end()}{lws\_vfs\_file\_seek\_end()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+fileofs\+\_\+t lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end (\begin{DoxyParamCaption}\item[{\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}}]{fop\+\_\+fd,  }\item[{lws\+\_\+fileofs\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_gacedf2cfa8c82a3fa215a39713d0b88a4}{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+end()} -\/ seek relative to end of file
+
+
+\begin{DoxyParams}{Parameters}
+{\em fop\+\_\+fd} & fop\+\_\+fd we are seeking in \\
+\hline
+{\em offset} & offset from start of file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__fops_ga23eb98c37dd3df5c97115ea469c6a89b}\label{group__fops_ga23eb98c37dd3df5c97115ea469c6a89b}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set@{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set}}
+\index{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set@{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set()}{lws\_vfs\_file\_seek\_set()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+fileofs\+\_\+t lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set (\begin{DoxyParamCaption}\item[{\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}}]{fop\+\_\+fd,  }\item[{lws\+\_\+fileofs\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_ga23eb98c37dd3df5c97115ea469c6a89b}{lws\+\_\+vfs\+\_\+file\+\_\+seek\+\_\+set()} -\/ seek relative to start of file
+
+
+\begin{DoxyParams}{Parameters}
+{\em fop\+\_\+fd} & fop\+\_\+fd we are seeking in \\
+\hline
+{\em offset} & offset from start of file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__fops_gac858c510999bf0779d10668d2617a445}\label{group__fops_gac858c510999bf0779d10668d2617a445}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+get\+\_\+length@{lws\+\_\+vfs\+\_\+get\+\_\+length}}
+\index{lws\+\_\+vfs\+\_\+get\+\_\+length@{lws\+\_\+vfs\+\_\+get\+\_\+length}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+get\+\_\+length()}{lws\_vfs\_get\_length()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+filepos\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+vfs\+\_\+get\+\_\+length (\begin{DoxyParamCaption}\item[{\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}}]{fop\+\_\+fd }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_gac858c510999bf0779d10668d2617a445}{lws\+\_\+vfs\+\_\+get\+\_\+length()} -\/ get current file total length in bytes
+
+
+\begin{DoxyParams}{Parameters}
+{\em fop\+\_\+fd} & fop\+\_\+fd we are asking about \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__fops_ga1d1e9a470d48eeff0f18934c9338c5ed}\label{group__fops_ga1d1e9a470d48eeff0f18934c9338c5ed}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time@{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time}}
+\index{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time@{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time()}{lws\_vfs\_get\_mod\_time()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN uint32\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time (\begin{DoxyParamCaption}\item[{\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}}]{fop\+\_\+fd }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_ga1d1e9a470d48eeff0f18934c9338c5ed}{lws\+\_\+vfs\+\_\+get\+\_\+mod\+\_\+time()} -\/ get time file last modified
+
+
+\begin{DoxyParams}{Parameters}
+{\em fop\+\_\+fd} & fop\+\_\+fd we are asking about \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__fops_ga3e71b9e0f12cfe134ab1c9689ff5463b}\label{group__fops_ga3e71b9e0f12cfe134ab1c9689ff5463b}} 
+\index{file operation wrapping@{file operation wrapping}!lws\+\_\+vfs\+\_\+tell@{lws\+\_\+vfs\+\_\+tell}}
+\index{lws\+\_\+vfs\+\_\+tell@{lws\+\_\+vfs\+\_\+tell}!file operation wrapping@{file operation wrapping}}
+\subsubsection{\texorpdfstring{lws\+\_\+vfs\+\_\+tell()}{lws\_vfs\_tell()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN lws\+\_\+filepos\+\_\+t L\+W\+S\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT lws\+\_\+vfs\+\_\+tell (\begin{DoxyParamCaption}\item[{\hyperlink{structlws__fop__fd}{lws\+\_\+fop\+\_\+fd\+\_\+t}}]{fop\+\_\+fd }\end{DoxyParamCaption})}
+
+\hyperlink{group__fops_ga3e71b9e0f12cfe134ab1c9689ff5463b}{lws\+\_\+vfs\+\_\+tell()} -\/ get current file position
+
+
+\begin{DoxyParams}{Parameters}
+{\em fop\+\_\+fd} & fop\+\_\+fd we are asking about \\
+\hline
+\end{DoxyParams}

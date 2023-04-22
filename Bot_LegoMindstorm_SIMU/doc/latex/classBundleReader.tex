@@ -1,0 +1,313 @@
+\hypertarget{classBundleReader}{}\section{Bundle\+Reader Class Reference}
+\label{classBundleReader}\index{Bundle\+Reader@{Bundle\+Reader}}
+
+
+\hyperlink{classBundleReader}{Bundle\+Reader} is an interface for reading sequence of bytes.  NA  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Bundle\+Reader.\+h$>$}
+
+
+
+Inheritance diagram for Bundle\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classBundleReader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bundle\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classBundleReader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBundleReader_a4d7011372508764b19811dc27874fa89}{Bundle\+Reader} ()
+\item 
+\hyperlink{classBundleReader_a74fc64e8701659f72821a8b91373500a}{$\sim$\+Bundle\+Reader} ()
+\item 
+void \hyperlink{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}{init} (char $\ast$buffer, ssize\+\_\+t \hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length})
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_a25a45788ea1f4e1e072442ba80065354}{read} (void $\ast$ptr, ssize\+\_\+t size, ssize\+\_\+t count)
+\item 
+char $\ast$ \hyperlink{classBundleReader_a06471b594aaeec7cdfe8f5f1fdebcc37}{read\+Line} (int num, char $\ast$line)
+\item 
+bool \hyperlink{classBundleReader_aa83930c070d01dd451c851310c25f85d}{eof} ()
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length} ()
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}{tell} ()
+\item 
+bool \hyperlink{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}{seek} (long int offset, int origin)
+\item 
+bool \hyperlink{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}{rewind} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}{read} (T $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classBundleReader_a7887471de8c65d1e03b8f095190ed6fc}\label{classBundleReader_a7887471de8c65d1e03b8f095190ed6fc}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries read\+Array} (unsigned int $\ast$\hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length}, std\+::vector$<$ T $>$ $\ast$values)
+\item 
+std\+::string \hyperlink{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}{read\+String} ()
+\item 
+bool \hyperlink{classBundleReader_a50ad5f05a615c668967da07e1345d931}{read\+Matrix} (float $\ast$m)
+\item 
+\hyperlink{classBundleReader_a3aea077c1877188a489dba8c4deb8423}{Bundle\+Reader} ()
+\item 
+\hyperlink{classBundleReader_a74fc64e8701659f72821a8b91373500a}{$\sim$\+Bundle\+Reader} ()
+\item 
+void \hyperlink{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}{init} (char $\ast$buffer, ssize\+\_\+t \hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length})
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_a25a45788ea1f4e1e072442ba80065354}{read} (void $\ast$ptr, ssize\+\_\+t size, ssize\+\_\+t count)
+\item 
+char $\ast$ \hyperlink{classBundleReader_abc32008d82d452279dfb186c6b3384fe}{read\+Line} (int num, char $\ast$line)
+\item 
+bool \hyperlink{classBundleReader_aa83930c070d01dd451c851310c25f85d}{eof} ()
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length} ()
+\item 
+ssize\+\_\+t \hyperlink{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}{tell} ()
+\item 
+bool \hyperlink{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}{seek} (long int offset, int origin)
+\item 
+bool \hyperlink{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}{rewind} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}{read} (T $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classBundleReader_a7887471de8c65d1e03b8f095190ed6fc}\label{classBundleReader_a7887471de8c65d1e03b8f095190ed6fc}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries read\+Array} (unsigned int $\ast$\hyperlink{classBundleReader_a943403eea21a70e9dea729f1371a1195}{length}, std\+::vector$<$ T $>$ $\ast$values)
+\item 
+std\+::string \hyperlink{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}{read\+String} ()
+\item 
+bool \hyperlink{classBundleReader_a50ad5f05a615c668967da07e1345d931}{read\+Matrix} (float $\ast$m)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBundleReader}{Bundle\+Reader} is an interface for reading sequence of bytes.  NA  NA. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBundleReader_a4d7011372508764b19811dc27874fa89}\label{classBundleReader_a4d7011372508764b19811dc27874fa89}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\index{Bundle\+Reader@{Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{Bundle\+Reader()}{BundleReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Bundle\+Reader\+::\+Bundle\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classBundleReader_a74fc64e8701659f72821a8b91373500a}\label{classBundleReader_a74fc64e8701659f72821a8b91373500a}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!````~Bundle\+Reader@{$\sim$\+Bundle\+Reader}}
+\index{````~Bundle\+Reader@{$\sim$\+Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{$\sim$\+Bundle\+Reader()}{~BundleReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bundle\+Reader\+::$\sim$\+Bundle\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor \mbox{\Hypertarget{classBundleReader_a3aea077c1877188a489dba8c4deb8423}\label{classBundleReader_a3aea077c1877188a489dba8c4deb8423}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\index{Bundle\+Reader@{Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{Bundle\+Reader()}{BundleReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bundle\+Reader\+::\+Bundle\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classBundleReader_a74fc64e8701659f72821a8b91373500a}\label{classBundleReader_a74fc64e8701659f72821a8b91373500a}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!````~Bundle\+Reader@{$\sim$\+Bundle\+Reader}}
+\index{````~Bundle\+Reader@{$\sim$\+Bundle\+Reader}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{$\sim$\+Bundle\+Reader()}{~BundleReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bundle\+Reader\+::$\sim$\+Bundle\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBundleReader_aa83930c070d01dd451c851310c25f85d}\label{classBundleReader_aa83930c070d01dd451c851310c25f85d}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!eof@{eof}}
+\index{eof@{eof}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{eof()}{eof()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::eof (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if the end of the buffer has been reached. \mbox{\Hypertarget{classBundleReader_aa83930c070d01dd451c851310c25f85d}\label{classBundleReader_aa83930c070d01dd451c851310c25f85d}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!eof@{eof}}
+\index{eof@{eof}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{eof()}{eof()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::eof (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if the end of the buffer has been reached. \mbox{\Hypertarget{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}\label{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!init@{init}}
+\index{init@{init}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Bundle\+Reader\+::init (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{ssize\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+initialise 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The data buffer pointer \\
+\hline
+{\em length} & The data buffer size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}\label{classBundleReader_a1f8504dc88fa7abf9e4017430a0e8dd8}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!init@{init}}
+\index{init@{init}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Bundle\+Reader\+::init (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{ssize\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+initialise 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The data buffer pointer \\
+\hline
+{\em length} & The data buffer size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBundleReader_a943403eea21a70e9dea729f1371a1195}\label{classBundleReader_a943403eea21a70e9dea729f1371a1195}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!length@{length}}
+\index{length@{length}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the length of the buffer in bytes. \mbox{\Hypertarget{classBundleReader_a943403eea21a70e9dea729f1371a1195}\label{classBundleReader_a943403eea21a70e9dea729f1371a1195}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!length@{length}}
+\index{length@{length}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the length of the buffer in bytes. \mbox{\Hypertarget{classBundleReader_a25a45788ea1f4e1e072442ba80065354}\label{classBundleReader_a25a45788ea1f4e1e072442ba80065354}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read@{read}}
+\index{read@{read}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{ssize\+\_\+t}]{size,  }\item[{ssize\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Reads an array of elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer to the memory to copy into. The available size should be at least bytes. \\
+\hline
+{\em size} & The size of each element to be read, in bytes. \\
+\hline
+{\em count} & The number of elements to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBundleReader_a25a45788ea1f4e1e072442ba80065354}\label{classBundleReader_a25a45788ea1f4e1e072442ba80065354}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read@{read}}
+\index{read@{read}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{ssize\+\_\+t}]{size,  }\item[{ssize\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Reads an array of elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer to the memory to copy into. The available size should be at least bytes. \\
+\hline
+{\em size} & The size of each element to be read, in bytes. \\
+\hline
+{\em count} & The number of elements to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}\label{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read@{read}}
+\index{read@{read}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Bundle\+Reader\+::read (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+read binary typed value. \mbox{\Hypertarget{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}\label{classBundleReader_a845eab6bd3f1e7af0c27e5a6d994a8a6}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read@{read}}
+\index{read@{read}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Bundle\+Reader\+::read (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+read binary typed value. \mbox{\Hypertarget{classBundleReader_a06471b594aaeec7cdfe8f5f1fdebcc37}\label{classBundleReader_a06471b594aaeec7cdfe8f5f1fdebcc37}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+Line@{read\+Line}}
+\index{read\+Line@{read\+Line}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+Line()}{readLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char $\ast$ Bundle\+Reader\+::read\+Line (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+Reads a line from the buffer. \mbox{\Hypertarget{classBundleReader_abc32008d82d452279dfb186c6b3384fe}\label{classBundleReader_abc32008d82d452279dfb186c6b3384fe}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+Line@{read\+Line}}
+\index{read\+Line@{read\+Line}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+Line()}{readLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char$\ast$ Bundle\+Reader\+::read\+Line (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+Reads a line from the buffer. \mbox{\Hypertarget{classBundleReader_a50ad5f05a615c668967da07e1345d931}\label{classBundleReader_a50ad5f05a615c668967da07e1345d931}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+Matrix@{read\+Matrix}}
+\index{read\+Matrix@{read\+Matrix}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+Matrix()}{readMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::read\+Matrix (\begin{DoxyParamCaption}\item[{float $\ast$}]{m }\end{DoxyParamCaption})}
+
+Read the matrix. \begin{DoxyNote}{Note}
+the matrix type must be the 4$\ast$4 float matrix 
+\end{DoxyNote}
+\mbox{\Hypertarget{classBundleReader_a50ad5f05a615c668967da07e1345d931}\label{classBundleReader_a50ad5f05a615c668967da07e1345d931}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+Matrix@{read\+Matrix}}
+\index{read\+Matrix@{read\+Matrix}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+Matrix()}{readMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::read\+Matrix (\begin{DoxyParamCaption}\item[{float $\ast$}]{m }\end{DoxyParamCaption})}
+
+Read the matrix. \begin{DoxyNote}{Note}
+the matrix type must be the 4$\ast$4 float matrix 
+\end{DoxyNote}
+\mbox{\Hypertarget{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}\label{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+String()}{readString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Bundle\+Reader\+::read\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+first read length, then read string text \mbox{\Hypertarget{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}\label{classBundleReader_aae1069e8afb7ede1bcdec1475785975b}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{read\+String()}{readString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Bundle\+Reader\+::read\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+first read length, then read string text \mbox{\Hypertarget{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}\label{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!rewind@{rewind}}
+\index{rewind@{rewind}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{rewind()}{rewind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the file pointer at the start of the file. \mbox{\Hypertarget{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}\label{classBundleReader_afae9c7d45bda94453c01ac6aeb821b07}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!rewind@{rewind}}
+\index{rewind@{rewind}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{rewind()}{rewind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the file pointer at the start of the file. \mbox{\Hypertarget{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}\label{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!seek@{seek}}
+\index{seek@{seek}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::seek (\begin{DoxyParamCaption}\item[{long int}]{offset,  }\item[{int}]{origin }\end{DoxyParamCaption})}
+
+Sets the position of the file pointer. \mbox{\Hypertarget{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}\label{classBundleReader_a6ac7f8410a0b94d63a74e547825e8203}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!seek@{seek}}
+\index{seek@{seek}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Bundle\+Reader\+::seek (\begin{DoxyParamCaption}\item[{long int}]{offset,  }\item[{int}]{origin }\end{DoxyParamCaption})}
+
+Sets the position of the file pointer. \mbox{\Hypertarget{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}\label{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!tell@{tell}}
+\index{tell@{tell}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the position of the file pointer. \mbox{\Hypertarget{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}\label{classBundleReader_ae2a6757717aa327231c2ac330ffcda5b}} 
+\index{Bundle\+Reader@{Bundle\+Reader}!tell@{tell}}
+\index{tell@{tell}!Bundle\+Reader@{Bundle\+Reader}}
+\subsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Bundle\+Reader\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the position of the file pointer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bundle\+Reader.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Bundle\+Reader.\+cpp\end{DoxyCompactItemize}

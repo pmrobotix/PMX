@@ -1,0 +1,302 @@
+\hypertarget{classb2ChainShape}{}\section{b2\+Chain\+Shape Class Reference}
+\label{classb2ChainShape}\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+
+
+{\ttfamily \#include $<$b2\+Chain\+Shape.\+h$>$}
+
+
+
+Inheritance diagram for b2\+Chain\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classb2ChainShape__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for b2\+Chain\+Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classb2ChainShape__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}\label{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}} 
+\hyperlink{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}{$\sim$b2\+Chain\+Shape} ()
+\begin{DoxyCompactList}\small\item\em The destructor frees the vertices using b2\+Free. \end{DoxyCompactList}\item 
+void \hyperlink{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}{Create\+Loop} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 count)
+\item 
+void \hyperlink{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}{Create\+Chain} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 count)
+\item 
+void \hyperlink{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}{Set\+Prev\+Vertex} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&prev\+Vertex)
+\item 
+void \hyperlink{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}{Set\+Next\+Vertex} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&next\+Vertex)
+\item 
+\mbox{\Hypertarget{classb2ChainShape_ac72d2e67c739a1640e9ee751afe9bbe8}\label{classb2ChainShape_ac72d2e67c739a1640e9ee751afe9bbe8}} 
+\hyperlink{classb2Shape}{b2\+Shape} $\ast$ \hyperlink{classb2ChainShape_ac72d2e67c739a1640e9ee751afe9bbe8}{Clone} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator) const
+\begin{DoxyCompactList}\small\item\em Implement \hyperlink{classb2Shape}{b2\+Shape}. Vertices are cloned using b2\+Alloc. \end{DoxyCompactList}\item 
+int32 \hyperlink{classb2ChainShape_a371b90f907f3b22e26db4d5d24560496}{Get\+Child\+Count} () const
+\item 
+\mbox{\Hypertarget{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}\label{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}} 
+void \hyperlink{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}{Get\+Child\+Edge} (\hyperlink{classb2EdgeShape}{b2\+Edge\+Shape} $\ast$edge, int32 index) const
+\begin{DoxyCompactList}\small\item\em Get a child edge. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2ChainShape_a2d2d59b49c2611ad65ed68b0943d642d}{Test\+Point} (const \hyperlink{structb2Transform}{b2\+Transform} \&transform, const \hyperlink{structb2Vec2}{b2\+Vec2} \&p) const
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a2ca535a3b3d1e54f5572a3ee617dac19}\label{classb2ChainShape_a2ca535a3b3d1e54f5572a3ee617dac19}} 
+bool \hyperlink{classb2ChainShape_a2ca535a3b3d1e54f5572a3ee617dac19}{Ray\+Cast} (\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$output, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input, const \hyperlink{structb2Transform}{b2\+Transform} \&transform, int32 child\+Index) const
+\begin{DoxyCompactList}\small\item\em Implement \hyperlink{classb2Shape}{b2\+Shape}. \end{DoxyCompactList}\item 
+void \hyperlink{classb2ChainShape_a612caee9cc6a62dec501a6b6059c13a8}{Compute\+A\+A\+BB} (\hyperlink{structb2AABB}{b2\+A\+A\+BB} $\ast$aabb, const \hyperlink{structb2Transform}{b2\+Transform} \&transform, int32 child\+Index) const
+\item 
+void \hyperlink{classb2ChainShape_a55efeb6d4005c1ca4b01cbcc5d7369db}{Compute\+Mass} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$mass\+Data, float32 density) const
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}\label{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}} 
+\hyperlink{classb2ChainShape_a8c032394f5a85e7fc425a437e7689a18}{$\sim$b2\+Chain\+Shape} ()
+\begin{DoxyCompactList}\small\item\em The destructor frees the vertices using b2\+Free. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2ChainShape_a434d4b61ab15726302ec5ad484011c33}\label{classb2ChainShape_a434d4b61ab15726302ec5ad484011c33}} 
+void \hyperlink{classb2ChainShape_a434d4b61ab15726302ec5ad484011c33}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear all data. \end{DoxyCompactList}\item 
+void \hyperlink{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}{Create\+Loop} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 count)
+\item 
+void \hyperlink{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}{Create\+Chain} (const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$vertices, int32 count)
+\item 
+void \hyperlink{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}{Set\+Prev\+Vertex} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&prev\+Vertex)
+\item 
+void \hyperlink{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}{Set\+Next\+Vertex} (const \hyperlink{structb2Vec2}{b2\+Vec2} \&next\+Vertex)
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a5916e4b5dd8edce3cf71ecfe775501e1}\label{classb2ChainShape_a5916e4b5dd8edce3cf71ecfe775501e1}} 
+\hyperlink{classb2Shape}{b2\+Shape} $\ast$ \hyperlink{classb2ChainShape_a5916e4b5dd8edce3cf71ecfe775501e1}{Clone} (\hyperlink{classb2BlockAllocator}{b2\+Block\+Allocator} $\ast$allocator) const override
+\begin{DoxyCompactList}\small\item\em Implement \hyperlink{classb2Shape}{b2\+Shape}. Vertices are cloned using b2\+Alloc. \end{DoxyCompactList}\item 
+int32 \hyperlink{classb2ChainShape_a4d4fd8f5386a30f35b10d1b2848dbe54}{Get\+Child\+Count} () const override
+\item 
+\mbox{\Hypertarget{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}\label{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}} 
+void \hyperlink{classb2ChainShape_abfe7f836d3c32dc06b920df61a74f412}{Get\+Child\+Edge} (\hyperlink{classb2EdgeShape}{b2\+Edge\+Shape} $\ast$edge, int32 index) const
+\begin{DoxyCompactList}\small\item\em Get a child edge. \end{DoxyCompactList}\item 
+bool \hyperlink{classb2ChainShape_afd03c8679f18f9962a6c76bde629c62a}{Test\+Point} (const \hyperlink{structb2Transform}{b2\+Transform} \&transform, const \hyperlink{structb2Vec2}{b2\+Vec2} \&p) const override
+\item 
+\mbox{\Hypertarget{classb2ChainShape_add9e88f7f90b32ae75738cfb042ef532}\label{classb2ChainShape_add9e88f7f90b32ae75738cfb042ef532}} 
+bool \hyperlink{classb2ChainShape_add9e88f7f90b32ae75738cfb042ef532}{Ray\+Cast} (\hyperlink{structb2RayCastOutput}{b2\+Ray\+Cast\+Output} $\ast$output, const \hyperlink{structb2RayCastInput}{b2\+Ray\+Cast\+Input} \&input, const \hyperlink{structb2Transform}{b2\+Transform} \&transform, int32 child\+Index) const override
+\begin{DoxyCompactList}\small\item\em Implement \hyperlink{classb2Shape}{b2\+Shape}. \end{DoxyCompactList}\item 
+void \hyperlink{classb2ChainShape_ae1d7470ce8d32e92d27c149ab45f5468}{Compute\+A\+A\+BB} (\hyperlink{structb2AABB}{b2\+A\+A\+BB} $\ast$aabb, const \hyperlink{structb2Transform}{b2\+Transform} \&transform, int32 child\+Index) const override
+\item 
+void \hyperlink{classb2ChainShape_aad3671d6eab61f6b26e2f1b6ac50bb98}{Compute\+Mass} (\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$mass\+Data, float32 density) const override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a9c3c4097d34a7fe0d3f0220963df97a0}\label{classb2ChainShape_a9c3c4097d34a7fe0d3f0220963df97a0}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} $\ast$ \hyperlink{classb2ChainShape_a9c3c4097d34a7fe0d3f0220963df97a0}{m\+\_\+vertices}
+\begin{DoxyCompactList}\small\item\em The vertices. Owned by this class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2ChainShape_ab2ad711781e6ac81179074e90e0e058b}\label{classb2ChainShape_ab2ad711781e6ac81179074e90e0e058b}} 
+int32 \hyperlink{classb2ChainShape_ab2ad711781e6ac81179074e90e0e058b}{m\+\_\+count}
+\begin{DoxyCompactList}\small\item\em The vertex count. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classb2ChainShape_a3a42d4c6b2421bc5badda3b6164949cf}\label{classb2ChainShape_a3a42d4c6b2421bc5badda3b6164949cf}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} {\bfseries m\+\_\+prev\+Vertex}
+\item 
+\mbox{\Hypertarget{classb2ChainShape_af3716ef780dd5bcd905e350d8854aaa2}\label{classb2ChainShape_af3716ef780dd5bcd905e350d8854aaa2}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} {\bfseries m\+\_\+next\+Vertex}
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a8a6ffbb9de0e2b8545c8b4fc8aa77249}\label{classb2ChainShape_a8a6ffbb9de0e2b8545c8b4fc8aa77249}} 
+bool {\bfseries m\+\_\+has\+Prev\+Vertex}
+\item 
+\mbox{\Hypertarget{classb2ChainShape_a333b74486566e73c3cf1f7da5e69a96e}\label{classb2ChainShape_a333b74486566e73c3cf1f7da5e69a96e}} 
+bool {\bfseries m\+\_\+has\+Next\+Vertex}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A chain shape is a free form sequence of line segments. The chain has two-\/sided collision, so you can use inside and outside collision. Therefore, you may use any winding order. Since there may be many vertices, they are allocated using b2\+Alloc. Connectivity information is used to create smooth collisions. W\+A\+R\+N\+I\+NG\+: The chain will not collide properly if there are self-\/intersections. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classb2ChainShape_a612caee9cc6a62dec501a6b6059c13a8}\label{classb2ChainShape_a612caee9cc6a62dec501a6b6059c13a8}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Compute\+A\+A\+BB@{Compute\+A\+A\+BB}}
+\index{Compute\+A\+A\+BB@{Compute\+A\+A\+BB}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Compute\+A\+A\+B\+B()}{ComputeAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Compute\+A\+A\+BB (\begin{DoxyParamCaption}\item[{\hyperlink{structb2AABB}{b2\+A\+A\+BB} $\ast$}]{aabb,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{transform,  }\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a88e9807fab0c8ca9a98d8926e50a1411}{b2\+Shape\+::\+Compute\+A\+A\+BB} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a88e9807fab0c8ca9a98d8926e50a1411}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_ae1d7470ce8d32e92d27c149ab45f5468}\label{classb2ChainShape_ae1d7470ce8d32e92d27c149ab45f5468}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Compute\+A\+A\+BB@{Compute\+A\+A\+BB}}
+\index{Compute\+A\+A\+BB@{Compute\+A\+A\+BB}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Compute\+A\+A\+B\+B()}{ComputeAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Compute\+A\+A\+BB (\begin{DoxyParamCaption}\item[{\hyperlink{structb2AABB}{b2\+A\+A\+BB} $\ast$}]{aabb,  }\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{transform,  }\item[{int32}]{child\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a88e9807fab0c8ca9a98d8926e50a1411}{b2\+Shape\+::\+Compute\+A\+A\+BB} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a88e9807fab0c8ca9a98d8926e50a1411}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_a55efeb6d4005c1ca4b01cbcc5d7369db}\label{classb2ChainShape_a55efeb6d4005c1ca4b01cbcc5d7369db}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Compute\+Mass@{Compute\+Mass}}
+\index{Compute\+Mass@{Compute\+Mass}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Compute\+Mass()}{ComputeMass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Compute\+Mass (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{mass\+Data,  }\item[{float32}]{density }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Chains have zero mass. \begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a61b365526241b47f124789b0309cac69}{b2\+Shape\+::\+Compute\+Mass} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a61b365526241b47f124789b0309cac69}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_aad3671d6eab61f6b26e2f1b6ac50bb98}\label{classb2ChainShape_aad3671d6eab61f6b26e2f1b6ac50bb98}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Compute\+Mass@{Compute\+Mass}}
+\index{Compute\+Mass@{Compute\+Mass}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Compute\+Mass()}{ComputeMass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Compute\+Mass (\begin{DoxyParamCaption}\item[{\hyperlink{structb2MassData}{b2\+Mass\+Data} $\ast$}]{mass\+Data,  }\item[{float32}]{density }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Chains have zero mass. \begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a61b365526241b47f124789b0309cac69}{b2\+Shape\+::\+Compute\+Mass} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a61b365526241b47f124789b0309cac69}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}\label{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Create\+Chain@{Create\+Chain}}
+\index{Create\+Chain@{Create\+Chain}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Create\+Chain()}{CreateChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Create\+Chain (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$}]{vertices,  }\item[{int32}]{count }\end{DoxyParamCaption})}
+
+Create a chain with isolated end vertices. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & an array of vertices, these are copied \\
+\hline
+{\em count} & the vertex count \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}\label{classb2ChainShape_aa0977339b743c05f2179939ccc38e7e0}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Create\+Chain@{Create\+Chain}}
+\index{Create\+Chain@{Create\+Chain}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Create\+Chain()}{CreateChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Create\+Chain (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$}]{vertices,  }\item[{int32}]{count }\end{DoxyParamCaption})}
+
+Create a chain with isolated end vertices. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & an array of vertices, these are copied \\
+\hline
+{\em count} & the vertex count \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}\label{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Create\+Loop@{Create\+Loop}}
+\index{Create\+Loop@{Create\+Loop}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Create\+Loop()}{CreateLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Create\+Loop (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$}]{vertices,  }\item[{int32}]{count }\end{DoxyParamCaption})}
+
+Create a loop. This automatically adjusts connectivity. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & an array of vertices, these are copied \\
+\hline
+{\em count} & the vertex count \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}\label{classb2ChainShape_ac257742a52cac391e25962a4c703fb06}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Create\+Loop@{Create\+Loop}}
+\index{Create\+Loop@{Create\+Loop}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Create\+Loop()}{CreateLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Create\+Loop (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} $\ast$}]{vertices,  }\item[{int32}]{count }\end{DoxyParamCaption})}
+
+Create a loop. This automatically adjusts connectivity. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & an array of vertices, these are copied \\
+\hline
+{\em count} & the vertex count \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classb2ChainShape_a371b90f907f3b22e26db4d5d24560496}\label{classb2ChainShape_a371b90f907f3b22e26db4d5d24560496}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Get\+Child\+Count@{Get\+Child\+Count}}
+\index{Get\+Child\+Count@{Get\+Child\+Count}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Get\+Child\+Count()}{GetChildCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int32 b2\+Chain\+Shape\+::\+Get\+Child\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a05a3c445017d96df9238ceefe6ce37ab}{b2\+Shape\+::\+Get\+Child\+Count} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a05a3c445017d96df9238ceefe6ce37ab}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_a4d4fd8f5386a30f35b10d1b2848dbe54}\label{classb2ChainShape_a4d4fd8f5386a30f35b10d1b2848dbe54}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Get\+Child\+Count@{Get\+Child\+Count}}
+\index{Get\+Child\+Count@{Get\+Child\+Count}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Get\+Child\+Count()}{GetChildCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int32 b2\+Chain\+Shape\+::\+Get\+Child\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a05a3c445017d96df9238ceefe6ce37ab}{b2\+Shape\+::\+Get\+Child\+Count} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a05a3c445017d96df9238ceefe6ce37ab}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}\label{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Set\+Next\+Vertex@{Set\+Next\+Vertex}}
+\index{Set\+Next\+Vertex@{Set\+Next\+Vertex}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Set\+Next\+Vertex()}{SetNextVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Set\+Next\+Vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{next\+Vertex }\end{DoxyParamCaption})}
+
+Establish connectivity to a vertex that follows the last vertex. Don\textquotesingle{}t call this for loops. \mbox{\Hypertarget{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}\label{classb2ChainShape_a15c7c2821a52266ef57621ac7d34a95f}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Set\+Next\+Vertex@{Set\+Next\+Vertex}}
+\index{Set\+Next\+Vertex@{Set\+Next\+Vertex}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Set\+Next\+Vertex()}{SetNextVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Set\+Next\+Vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{next\+Vertex }\end{DoxyParamCaption})}
+
+Establish connectivity to a vertex that follows the last vertex. Don\textquotesingle{}t call this for loops. \mbox{\Hypertarget{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}\label{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Set\+Prev\+Vertex@{Set\+Prev\+Vertex}}
+\index{Set\+Prev\+Vertex@{Set\+Prev\+Vertex}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Set\+Prev\+Vertex()}{SetPrevVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Set\+Prev\+Vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{prev\+Vertex }\end{DoxyParamCaption})}
+
+Establish connectivity to a vertex that precedes the first vertex. Don\textquotesingle{}t call this for loops. \mbox{\Hypertarget{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}\label{classb2ChainShape_aeb2ddbe0c52a98885e91b7c8f597315b}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Set\+Prev\+Vertex@{Set\+Prev\+Vertex}}
+\index{Set\+Prev\+Vertex@{Set\+Prev\+Vertex}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Set\+Prev\+Vertex()}{SetPrevVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Chain\+Shape\+::\+Set\+Prev\+Vertex (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{prev\+Vertex }\end{DoxyParamCaption})}
+
+Establish connectivity to a vertex that precedes the first vertex. Don\textquotesingle{}t call this for loops. \mbox{\Hypertarget{classb2ChainShape_a2d2d59b49c2611ad65ed68b0943d642d}\label{classb2ChainShape_a2d2d59b49c2611ad65ed68b0943d642d}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Test\+Point@{Test\+Point}}
+\index{Test\+Point@{Test\+Point}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Test\+Point()}{TestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool b2\+Chain\+Shape\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{transform,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This always return false. \begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a6ac968e403e2d93e8ae46d728a2e50fa}{b2\+Shape\+::\+Test\+Point} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a6ac968e403e2d93e8ae46d728a2e50fa}{b2\+Shape}.
+
+\mbox{\Hypertarget{classb2ChainShape_afd03c8679f18f9962a6c76bde629c62a}\label{classb2ChainShape_afd03c8679f18f9962a6c76bde629c62a}} 
+\index{b2\+Chain\+Shape@{b2\+Chain\+Shape}!Test\+Point@{Test\+Point}}
+\index{Test\+Point@{Test\+Point}!b2\+Chain\+Shape@{b2\+Chain\+Shape}}
+\subsubsection{\texorpdfstring{Test\+Point()}{TestPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool b2\+Chain\+Shape\+::\+Test\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{structb2Transform}{b2\+Transform} \&}]{transform,  }\item[{const \hyperlink{structb2Vec2}{b2\+Vec2} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This always return false. \begin{DoxySeeAlso}{See also}
+\hyperlink{classb2Shape_a6ac968e403e2d93e8ae46d728a2e50fa}{b2\+Shape\+::\+Test\+Point} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classb2Shape_a6ac968e403e2d93e8ae46d728a2e50fa}{b2\+Shape}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/\+Shapes/b2\+Chain\+Shape.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Collision/\+Shapes/b2\+Chain\+Shape.\+cpp\end{DoxyCompactItemize}

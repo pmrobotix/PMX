@@ -1,0 +1,179 @@
+\hypertarget{classutils_1_1PointerList}{}\section{utils\+:\+:Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$ Class Template Reference}
+\label{classutils_1_1PointerList}\index{utils\+::\+Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$@{utils\+::\+Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$}}
+
+
+This \hyperlink{protocollist-p}{list} implements the standard \hyperlink{protocollist-p}{list} class to manage some pointer and their destruction.  
+
+
+
+
+{\ttfamily \#include $<$Pointer\+List.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+:\+:Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1PointerList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+:\+:Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1PointerList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}\label{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}} 
+typedef \+\_\+\+Tp \hyperlink{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}{value\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the associed values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}\label{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}} 
+typedef \+\_\+\+Alloc \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type of the allocator associed to \+\_\+\+Tp. \end{DoxyCompactList}\item 
+typedef size\+\_\+t \hyperlink{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}{size\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Type for the size of this \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_a05f57884241fe77050d177e9615501e3}\label{classutils_1_1PointerList_a05f57884241fe77050d177e9615501e3}} 
+typedef std\+::\+\_\+\+List\+\_\+iterator$<$ \+\_\+\+Tp $>$ \hyperlink{classutils_1_1PointerList_a05f57884241fe77050d177e9615501e3}{iterator}
+\begin{DoxyCompactList}\small\item\em Type for the iterators of this \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_aec91f3c1085620fe3beaff9ecee67293}\label{classutils_1_1PointerList_aec91f3c1085620fe3beaff9ecee67293}} 
+typedef std\+::\+\_\+\+List\+\_\+const\+\_\+iterator$<$ \+\_\+\+Tp $>$ \hyperlink{classutils_1_1PointerList_aec91f3c1085620fe3beaff9ecee67293}{const\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em Type for the constant iterators of this \hyperlink{protocollist-p}{list}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classutils_1_1PointerList_aabad19d5a33c52b25ea3c7ff65fff4bd}{Pointer\+List} (const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&a=\hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}())
+\begin{DoxyCompactList}\small\item\em Default constructor creates no elements. \end{DoxyCompactList}\item 
+\hyperlink{classutils_1_1PointerList_afc8d53379d6f553abb47460eb589f67c}{Pointer\+List} (\hyperlink{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}{size\+\_\+type} n, const \hyperlink{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}{value\+\_\+type} \&value=\hyperlink{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}{value\+\_\+type}(), const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&a=\hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}())
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{protocollist-p}{list} with copies of an exemplar element. \end{DoxyCompactList}\item 
+\hyperlink{classutils_1_1PointerList_a134b56062d58f09feb8a2fcdb1f013d6}{Pointer\+List} (const \hyperlink{classutils_1_1PointerList}{Pointer\+List} \&x)
+\begin{DoxyCompactList}\small\item\em List copy constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Input\+Iterator $>$ }\\\hyperlink{classutils_1_1PointerList_aca676638d7eb111ee7800cfe6e74a3ee}{Pointer\+List} (\+\_\+\+Input\+Iterator first, \+\_\+\+Input\+Iterator last, const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&a=\hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}())
+\begin{DoxyCompactList}\small\item\em Builds a \hyperlink{protocollist-p}{list} from a range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_af79ecd29ef44bad30173a274fd550503}\label{classutils_1_1PointerList_af79ecd29ef44bad30173a274fd550503}} 
+virtual \hyperlink{classutils_1_1PointerList_af79ecd29ef44bad30173a274fd550503}{$\sim$\+Pointer\+List} ()
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_a501664b90309db885554d35e89739681}\label{classutils_1_1PointerList_a501664b90309db885554d35e89739681}} 
+\hyperlink{classutils_1_1PointerList_a05f57884241fe77050d177e9615501e3}{iterator} \hyperlink{classutils_1_1PointerList_a501664b90309db885554d35e89739681}{begin} ()
+\begin{DoxyCompactList}\small\item\em Returns a read/write iterator that points to the first element in the list. Iteration is done in ordinary element order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_a53f26a5a311890982c8c278e1f37a313}\label{classutils_1_1PointerList_a53f26a5a311890982c8c278e1f37a313}} 
+\hyperlink{classutils_1_1PointerList_aec91f3c1085620fe3beaff9ecee67293}{const\+\_\+iterator} \hyperlink{classutils_1_1PointerList_a53f26a5a311890982c8c278e1f37a313}{begin} () const
+\begin{DoxyCompactList}\small\item\em Returns a read-\/only (constant) iterator that points to the first element in the list. Iteration is done in ordinary element order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_a9607cdd93b715a838e015452a49f61d5}\label{classutils_1_1PointerList_a9607cdd93b715a838e015452a49f61d5}} 
+\hyperlink{classutils_1_1PointerList_a05f57884241fe77050d177e9615501e3}{iterator} \hyperlink{classutils_1_1PointerList_a9607cdd93b715a838e015452a49f61d5}{end} ()
+\begin{DoxyCompactList}\small\item\em Returns a read/write iterator that points one past the last element in the list. Iteration is done in ordinary element order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutils_1_1PointerList_adb6a2b31b3e7d556e3d49c2690a93dc7}\label{classutils_1_1PointerList_adb6a2b31b3e7d556e3d49c2690a93dc7}} 
+\hyperlink{classutils_1_1PointerList_aec91f3c1085620fe3beaff9ecee67293}{const\+\_\+iterator} \hyperlink{classutils_1_1PointerList_adb6a2b31b3e7d556e3d49c2690a93dc7}{end} () const
+\begin{DoxyCompactList}\small\item\em Returns a read-\/only (constant) iterator that points one past the last element in the list. Iteration is done in ordinary element order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$\newline
+class utils\+::\+Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$}
+
+This \hyperlink{protocollist-p}{list} implements the standard \hyperlink{protocollist-p}{list} class to manage some pointer and their destruction. 
+
+When the \hyperlink{protocollist-p}{list} is destroyed, all the registered pointer are deleted. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}\label{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}} 
+\index{utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}}
+\subsubsection{\texorpdfstring{size\+\_\+type}{size\_type}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$ \\
+typedef size\+\_\+t \hyperlink{classutils_1_1PointerList}{utils\+::\+Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+::\hyperlink{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}{size\+\_\+type}}
+
+
+
+Type for the size of this \hyperlink{protocollist-p}{list}. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Check the use of this type \end{DoxyRefDesc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1PointerList_aabad19d5a33c52b25ea3c7ff65fff4bd}\label{classutils_1_1PointerList_aabad19d5a33c52b25ea3c7ff65fff4bd}} 
+\index{utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}!Pointer\+List@{Pointer\+List}}
+\index{Pointer\+List@{Pointer\+List}!utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}}
+\subsubsection{\texorpdfstring{Pointer\+List()}{PointerList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$ \\
+\hyperlink{classutils_1_1PointerList}{utils\+::\+Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+::\hyperlink{classutils_1_1PointerList}{Pointer\+List} (\begin{DoxyParamCaption}\item[{const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&}]{a = {\ttfamily \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Default constructor creates no elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Allocator. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutils_1_1PointerList_afc8d53379d6f553abb47460eb589f67c}\label{classutils_1_1PointerList_afc8d53379d6f553abb47460eb589f67c}} 
+\index{utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}!Pointer\+List@{Pointer\+List}}
+\index{Pointer\+List@{Pointer\+List}!utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}}
+\subsubsection{\texorpdfstring{Pointer\+List()}{PointerList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$ \\
+\hyperlink{classutils_1_1PointerList}{utils\+::\+Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+::\hyperlink{classutils_1_1PointerList}{Pointer\+List} (\begin{DoxyParamCaption}\item[{\hyperlink{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}{size\+\_\+type}}]{n,  }\item[{const \hyperlink{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}{value\+\_\+type} \&}]{value = {\ttfamily \hyperlink{classutils_1_1PointerList_af1c536b3d0d508b69700ad038ea5279a}{value\+\_\+type}()},  }\item[{const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&}]{a = {\ttfamily \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Create a \hyperlink{protocollist-p}{list} with copies of an exemplar element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of elements to initially create. \\
+\hline
+{\em value} & An element to copy. \\
+\hline
+{\em a} & Allocator.\\
+\hline
+\end{DoxyParams}
+This constructor fills the \hyperlink{protocollist-p}{list} with n copies of value. \mbox{\Hypertarget{classutils_1_1PointerList_a134b56062d58f09feb8a2fcdb1f013d6}\label{classutils_1_1PointerList_a134b56062d58f09feb8a2fcdb1f013d6}} 
+\index{utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}!Pointer\+List@{Pointer\+List}}
+\index{Pointer\+List@{Pointer\+List}!utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}}
+\subsubsection{\texorpdfstring{Pointer\+List()}{PointerList()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$ \\
+\hyperlink{classutils_1_1PointerList}{utils\+::\+Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+::\hyperlink{classutils_1_1PointerList}{Pointer\+List} (\begin{DoxyParamCaption}\item[{const \hyperlink{classutils_1_1PointerList}{Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+List copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A \hyperlink{protocollist-p}{list} of identical element and allocator types.\\
+\hline
+\end{DoxyParams}
+The newly-\/created \hyperlink{protocollist-p}{list} uses a copy of the allocation object used by x. \mbox{\Hypertarget{classutils_1_1PointerList_aca676638d7eb111ee7800cfe6e74a3ee}\label{classutils_1_1PointerList_aca676638d7eb111ee7800cfe6e74a3ee}} 
+\index{utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}!Pointer\+List@{Pointer\+List}}
+\index{Pointer\+List@{Pointer\+List}!utils\+::\+Pointer\+List@{utils\+::\+Pointer\+List}}
+\subsubsection{\texorpdfstring{Pointer\+List()}{PointerList()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Tp, typename \+\_\+\+Alloc = std\+::allocator $<$ \+\_\+\+Tp $>$$>$ \\
+template$<$typename \+\_\+\+Input\+Iterator $>$ \\
+\hyperlink{classutils_1_1PointerList}{utils\+::\+Pointer\+List}$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+::\hyperlink{classutils_1_1PointerList}{Pointer\+List} (\begin{DoxyParamCaption}\item[{\+\_\+\+Input\+Iterator}]{first,  }\item[{\+\_\+\+Input\+Iterator}]{last,  }\item[{const \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type} \&}]{a = {\ttfamily \hyperlink{classutils_1_1PointerList_a3b41bb503c3d41a7120b1a9cd1ba9848}{allocator\+\_\+type}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Builds a \hyperlink{protocollist-p}{list} from a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & An input iterator. \\
+\hline
+{\em last} & An input iterator. \\
+\hline
+{\em a} & Allocator.\\
+\hline
+\end{DoxyParams}
+Create a \hyperlink{protocollist-p}{list} consisting of copies of the elements from \mbox{[}first,last). This is linear in N (where N is distance(first,last)). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/\hyperlink{PointerList_8hpp}{Pointer\+List.\+hpp}\end{DoxyCompactItemize}

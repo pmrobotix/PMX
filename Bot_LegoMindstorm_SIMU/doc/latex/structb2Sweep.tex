@@ -1,0 +1,126 @@
+\hypertarget{structb2Sweep}{}\section{b2\+Sweep Struct Reference}
+\label{structb2Sweep}\index{b2\+Sweep@{b2\+Sweep}}
+
+
+{\ttfamily \#include $<$b2\+Math.\+h$>$}
+
+
+
+Collaboration diagram for b2\+Sweep\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{structb2Sweep__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structb2Sweep_a22ae50509de51876aefc48cd76248c61}{Get\+Transform} (\hyperlink{structb2Transform}{b2\+Transform} $\ast$xfb, float32 beta) const
+\item 
+void \hyperlink{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}{Advance} (float32 alpha)
+\item 
+void \hyperlink{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}{Normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize the angles. \end{DoxyCompactList}\item 
+void \hyperlink{structb2Sweep_a22ae50509de51876aefc48cd76248c61}{Get\+Transform} (\hyperlink{structb2Transform}{b2\+Transform} $\ast$xfb, float32 beta) const
+\item 
+void \hyperlink{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}{Advance} (float32 alpha)
+\item 
+\mbox{\Hypertarget{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}\label{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}} 
+void \hyperlink{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}{Normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize the angles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structb2Sweep_a4bcc302cf78771896d6256fc53f2f8be}\label{structb2Sweep_a4bcc302cf78771896d6256fc53f2f8be}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2Sweep_a4bcc302cf78771896d6256fc53f2f8be}{local\+Center}
+\begin{DoxyCompactList}\small\item\em local center of mass position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2Sweep_a16dacd7188f3c7b2adef3242012587d8}\label{structb2Sweep_a16dacd7188f3c7b2adef3242012587d8}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} {\bfseries c0}
+\item 
+\mbox{\Hypertarget{structb2Sweep_a1b5402e01b92cc82473389fc6f0375c3}\label{structb2Sweep_a1b5402e01b92cc82473389fc6f0375c3}} 
+\hyperlink{structb2Vec2}{b2\+Vec2} \hyperlink{structb2Sweep_a1b5402e01b92cc82473389fc6f0375c3}{c}
+\begin{DoxyCompactList}\small\item\em center world positions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structb2Sweep_acf89c7d1223f8ab27501ff033aeac92b}\label{structb2Sweep_acf89c7d1223f8ab27501ff033aeac92b}} 
+float32 {\bfseries a0}
+\item 
+\mbox{\Hypertarget{structb2Sweep_afa96bacc91dd3c92ae716a45512332d6}\label{structb2Sweep_afa96bacc91dd3c92ae716a45512332d6}} 
+float32 \hyperlink{structb2Sweep_afa96bacc91dd3c92ae716a45512332d6}{a}
+\begin{DoxyCompactList}\small\item\em world angles \end{DoxyCompactList}\item 
+float32 \hyperlink{structb2Sweep_aa5f8ab90178b58bc0777096cbc6b91cf}{alpha0}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This describes the motion of a body/shape for T\+OI computation. Shapes are defined with respect to the body origin, which may no coincide with the center of mass. However, to support dynamics we must interpolate the center of mass position. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}\label{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}} 
+\index{b2\+Sweep@{b2\+Sweep}!Advance@{Advance}}
+\index{Advance@{Advance}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{Advance()}{Advance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Sweep\+::\+Advance (\begin{DoxyParamCaption}\item[{float32}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Advance the sweep forward, yielding a new initial state. 
+\begin{DoxyParams}{Parameters}
+{\em alpha} & the new initial time. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}\label{structb2Sweep_a35eb9b976ca87c9b8d758bec070c6c06}} 
+\index{b2\+Sweep@{b2\+Sweep}!Advance@{Advance}}
+\index{Advance@{Advance}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{Advance()}{Advance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Sweep\+::\+Advance (\begin{DoxyParamCaption}\item[{float32}]{alpha }\end{DoxyParamCaption})}
+
+Advance the sweep forward, yielding a new initial state. 
+\begin{DoxyParams}{Parameters}
+{\em alpha} & the new initial time. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structb2Sweep_a22ae50509de51876aefc48cd76248c61}\label{structb2Sweep_a22ae50509de51876aefc48cd76248c61}} 
+\index{b2\+Sweep@{b2\+Sweep}!Get\+Transform@{Get\+Transform}}
+\index{Get\+Transform@{Get\+Transform}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{Get\+Transform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void b2\+Sweep\+::\+Get\+Transform (\begin{DoxyParamCaption}\item[{\hyperlink{structb2Transform}{b2\+Transform} $\ast$}]{xfb,  }\item[{float32}]{beta }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the interpolated transform at a specific time. 
+\begin{DoxyParams}{Parameters}
+{\em beta} & is a factor in \mbox{[}0,1\mbox{]}, where 0 indicates alpha0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structb2Sweep_a22ae50509de51876aefc48cd76248c61}\label{structb2Sweep_a22ae50509de51876aefc48cd76248c61}} 
+\index{b2\+Sweep@{b2\+Sweep}!Get\+Transform@{Get\+Transform}}
+\index{Get\+Transform@{Get\+Transform}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{Get\+Transform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void b2\+Sweep\+::\+Get\+Transform (\begin{DoxyParamCaption}\item[{\hyperlink{structb2Transform}{b2\+Transform} $\ast$}]{xfb,  }\item[{float32}]{beta }\end{DoxyParamCaption}) const}
+
+Get the interpolated transform at a specific time. 
+\begin{DoxyParams}{Parameters}
+{\em beta} & is a factor in \mbox{[}0,1\mbox{]}, where 0 indicates alpha0. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}\label{structb2Sweep_ad66a3086bc7656df9cf7454013a2f61b}} 
+\index{b2\+Sweep@{b2\+Sweep}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily void b2\+Sweep\+::\+Normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalize the angles. 
+
+Normalize an angle in radians to be between -\/pi and pi. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structb2Sweep_aa5f8ab90178b58bc0777096cbc6b91cf}\label{structb2Sweep_aa5f8ab90178b58bc0777096cbc6b91cf}} 
+\index{b2\+Sweep@{b2\+Sweep}!alpha0@{alpha0}}
+\index{alpha0@{alpha0}!b2\+Sweep@{b2\+Sweep}}
+\subsubsection{\texorpdfstring{alpha0}{alpha0}}
+{\footnotesize\ttfamily float32 b2\+Sweep\+::alpha0}
+
+Fraction of the current time step in the range \mbox{[}0,1\mbox{]} c0 and a0 are the positions at alpha0. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/\+Box2\+D/\+Common/b2\+Math.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,202 @@
+\hypertarget{classMeshInfo}{}\section{Mesh\+Info Class Reference}
+\label{classMeshInfo}\index{Mesh\+Info@{Mesh\+Info}}
+
+
+{\ttfamily \#include $<$C\+C\+P\+U\+Mesh\+Surface\+Emitter.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution} \{ \newline
+{\bfseries M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+1}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+2}, 
+{\bfseries M\+S\+D\+\_\+\+V\+E\+R\+T\+EX}, 
+\newline
+{\bfseries M\+S\+D\+\_\+\+E\+D\+GE}, 
+{\bfseries M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+1}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+2}, 
+\newline
+{\bfseries M\+S\+D\+\_\+\+V\+E\+R\+T\+EX}, 
+{\bfseries M\+S\+D\+\_\+\+E\+D\+GE}
+ \}
+\item 
+enum \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution} \{ \newline
+{\bfseries M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+1}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+2}, 
+{\bfseries M\+S\+D\+\_\+\+V\+E\+R\+T\+EX}, 
+\newline
+{\bfseries M\+S\+D\+\_\+\+E\+D\+GE}, 
+{\bfseries M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+1}, 
+{\bfseries M\+S\+D\+\_\+\+H\+E\+T\+E\+R\+O\+G\+E\+N\+E\+O\+U\+S\+\_\+2}, 
+\newline
+{\bfseries M\+S\+D\+\_\+\+V\+E\+R\+T\+EX}, 
+{\bfseries M\+S\+D\+\_\+\+E\+D\+GE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}{Mesh\+Info} (const std\+::string \&mesh\+Name, const \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution} distribution=M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US, const \hyperlink{classQuaternion}{Quaternion} \&orientation=\hyperlink{classQuaternion}{Quaternion}(), const \hyperlink{classVec3}{Vec3} \&scale=\hyperlink{classVec3_a26c0c52a5fba36ed0ef5e6d5026569f4}{Vec3\+::\+Z\+E\+RO})
+\item 
+\hyperlink{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}{$\sim$\+Mesh\+Info} (void)
+\item 
+float \hyperlink{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}{get\+Gaussian\+Random} (float high, float cutoff=4)
+\item 
+const \hyperlink{classPUTriangle}{P\+U\+Triangle} \& \hyperlink{classMeshInfo_a2ec71f7f8851125bf1ded381ae39e0f0}{get\+Triangle} (size\+\_\+t triangle\+Index)
+\item 
+size\+\_\+t \hyperlink{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}{get\+Random\+Triangle\+Index} ()
+\item 
+size\+\_\+t \hyperlink{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}{get\+Triangle\+Count} () const
+\item 
+const \hyperlink{structPUTriangle_1_1PositionAndNormal}{P\+U\+Triangle\+::\+Position\+And\+Normal} \hyperlink{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}{get\+Random\+Position\+And\+Normal} (const size\+\_\+t triangle\+Index)
+\item 
+\hyperlink{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}{Mesh\+Info} (const std\+::string \&mesh\+Name, const \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution} distribution=M\+S\+D\+\_\+\+H\+O\+M\+O\+G\+E\+N\+E\+O\+US, const \hyperlink{classQuaternion}{Quaternion} \&orientation=\hyperlink{classQuaternion}{Quaternion}(), const \hyperlink{classVec3}{Vec3} \&scale=\hyperlink{classVec3_a26c0c52a5fba36ed0ef5e6d5026569f4}{Vec3\+::\+Z\+E\+RO})
+\item 
+\hyperlink{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}{$\sim$\+Mesh\+Info} (void)
+\item 
+float \hyperlink{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}{get\+Gaussian\+Random} (float high, float cutoff=4)
+\item 
+const \hyperlink{classPUTriangle}{P\+U\+Triangle} \& \hyperlink{classMeshInfo_ac99e33607524d3122b2545f85f52aa16}{get\+Triangle} (size\+\_\+t triangle\+Index)
+\item 
+size\+\_\+t \hyperlink{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}{get\+Random\+Triangle\+Index} ()
+\item 
+size\+\_\+t \hyperlink{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}{get\+Triangle\+Count} () const
+\item 
+const \hyperlink{structPUTriangle_1_1PositionAndNormal}{P\+U\+Triangle\+::\+Position\+And\+Normal} \hyperlink{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}{get\+Random\+Position\+And\+Normal} (const size\+\_\+t triangle\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeshInfo_aee40e4d44db7d89c8ad0dfab4022b17e}\label{classMeshInfo_aee40e4d44db7d89c8ad0dfab4022b17e}} 
+Triangles {\bfseries \+\_\+triangles}
+\item 
+\mbox{\Hypertarget{classMeshInfo_a20edf56a1e7c1d259ba425b419b1c6fa}\label{classMeshInfo_a20edf56a1e7c1d259ba425b419b1c6fa}} 
+\hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution} {\bfseries m\+Distribution}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that constructs mesh information of a given mesh name \begin{DoxyRemark}{Remarks}
+
+\end{DoxyRemark}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}\label{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}} 
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Surface\+Distribution@{Mesh\+Surface\+Distribution}}
+\index{Mesh\+Surface\+Distribution@{Mesh\+Surface\+Distribution}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{Mesh\+Surface\+Distribution}{MeshSurfaceDistribution}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Info\+::\+Mesh\+Surface\+Distribution}}
+
+Defining several methods to emit particles on the mesh surface \begin{DoxyRemark}{Remarks}
+Sometimes the difference is not always visible, for example if the mesh contains triangles with more or less the same size. Only in case a mesh contains both small and large triangles the difference between the various distribution methods is more obvious. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}\label{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}} 
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Surface\+Distribution@{Mesh\+Surface\+Distribution}}
+\index{Mesh\+Surface\+Distribution@{Mesh\+Surface\+Distribution}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{Mesh\+Surface\+Distribution}{MeshSurfaceDistribution}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Info\+::\+Mesh\+Surface\+Distribution}}
+
+Defining several methods to emit particles on the mesh surface \begin{DoxyRemark}{Remarks}
+Sometimes the difference is not always visible, for example if the mesh contains triangles with more or less the same size. Only in case a mesh contains both small and large triangles the difference between the various distribution methods is more obvious. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}\label{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}} 
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{Mesh\+Info()}{MeshInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mesh\+Info\+::\+Mesh\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mesh\+Name,  }\item[{const \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution}}]{distribution = {\ttfamily MSD\+\_\+HOMOGENEOUS},  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation = {\ttfamily \hyperlink{classQuaternion}{Quaternion}()},  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{scale = {\ttfamily \hyperlink{classVec3_a26c0c52a5fba36ed0ef5e6d5026569f4}{Vec3\+::\+Z\+E\+RO}} }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}\label{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}} 
+\index{Mesh\+Info@{Mesh\+Info}!````~Mesh\+Info@{$\sim$\+Mesh\+Info}}
+\index{````~Mesh\+Info@{$\sim$\+Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{$\sim$\+Mesh\+Info()}{~MeshInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mesh\+Info\+::$\sim$\+Mesh\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Destructor \mbox{\Hypertarget{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}\label{classMeshInfo_a5ccfea990dba31ade66e5358b05b20b6}} 
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\index{Mesh\+Info@{Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{Mesh\+Info()}{MeshInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mesh\+Info\+::\+Mesh\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mesh\+Name,  }\item[{const \hyperlink{classMeshInfo_aadc99105abbc3bd033e33c6ba512a13b}{Mesh\+Surface\+Distribution}}]{distribution = {\ttfamily MSD\+\_\+HOMOGENEOUS},  }\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation = {\ttfamily \hyperlink{classQuaternion}{Quaternion}()},  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{scale = {\ttfamily \hyperlink{classVec3_a26c0c52a5fba36ed0ef5e6d5026569f4}{Vec3\+::\+Z\+E\+RO}} }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}\label{classMeshInfo_aff7c5864479b8923d156aa04f27dfb3b}} 
+\index{Mesh\+Info@{Mesh\+Info}!````~Mesh\+Info@{$\sim$\+Mesh\+Info}}
+\index{````~Mesh\+Info@{$\sim$\+Mesh\+Info}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{$\sim$\+Mesh\+Info()}{~MeshInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mesh\+Info\+::$\sim$\+Mesh\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}\label{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Gaussian\+Random@{get\+Gaussian\+Random}}
+\index{get\+Gaussian\+Random@{get\+Gaussian\+Random}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Gaussian\+Random()}{getGaussianRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Mesh\+Info\+::get\+Gaussian\+Random (\begin{DoxyParamCaption}\item[{float}]{high,  }\item[{float}]{cutoff = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Generate a random number. The high argument determines that numbers are returned between \mbox{[}0..high\mbox{]} \mbox{\Hypertarget{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}\label{classMeshInfo_a1414c8a370c9878dafb0757c99d3b737}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Gaussian\+Random@{get\+Gaussian\+Random}}
+\index{get\+Gaussian\+Random@{get\+Gaussian\+Random}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Gaussian\+Random()}{getGaussianRandom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Mesh\+Info\+::get\+Gaussian\+Random (\begin{DoxyParamCaption}\item[{float}]{high,  }\item[{float}]{cutoff = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+Generate a random number. The high argument determines that numbers are returned between \mbox{[}0..high\mbox{]} \mbox{\Hypertarget{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}\label{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Random\+Position\+And\+Normal@{get\+Random\+Position\+And\+Normal}}
+\index{get\+Random\+Position\+And\+Normal@{get\+Random\+Position\+And\+Normal}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Random\+Position\+And\+Normal()}{getRandomPositionAndNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structPUTriangle_1_1PositionAndNormal}{P\+U\+Triangle\+::\+Position\+And\+Normal} Mesh\+Info\+::get\+Random\+Position\+And\+Normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{triangle\+Index }\end{DoxyParamCaption})}
+
+Returns both a random point on a given triangle and its normal vector. How the random point and the normal are determined depends on the distribution type. \mbox{\Hypertarget{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}\label{classMeshInfo_aa4e919b45d5c74e273fe94b1ab44f385}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Random\+Position\+And\+Normal@{get\+Random\+Position\+And\+Normal}}
+\index{get\+Random\+Position\+And\+Normal@{get\+Random\+Position\+And\+Normal}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Random\+Position\+And\+Normal()}{getRandomPositionAndNormal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structPUTriangle_1_1PositionAndNormal}{P\+U\+Triangle\+::\+Position\+And\+Normal} Mesh\+Info\+::get\+Random\+Position\+And\+Normal (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{triangle\+Index }\end{DoxyParamCaption})}
+
+Returns both a random point on a given triangle and its normal vector. How the random point and the normal are determined depends on the distribution type. \mbox{\Hypertarget{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}\label{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Random\+Triangle\+Index@{get\+Random\+Triangle\+Index}}
+\index{get\+Random\+Triangle\+Index@{get\+Random\+Triangle\+Index}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Random\+Triangle\+Index()}{getRandomTriangleIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Mesh\+Info\+::get\+Random\+Triangle\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a random triangle (index) from the mesh. \mbox{\Hypertarget{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}\label{classMeshInfo_a7e3355c03d8c7e8147d563cac098094f}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Random\+Triangle\+Index@{get\+Random\+Triangle\+Index}}
+\index{get\+Random\+Triangle\+Index@{get\+Random\+Triangle\+Index}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Random\+Triangle\+Index()}{getRandomTriangleIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Mesh\+Info\+::get\+Random\+Triangle\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get a random triangle (index) from the mesh. \mbox{\Hypertarget{classMeshInfo_a2ec71f7f8851125bf1ded381ae39e0f0}\label{classMeshInfo_a2ec71f7f8851125bf1ded381ae39e0f0}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Triangle@{get\+Triangle}}
+\index{get\+Triangle@{get\+Triangle}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Triangle()}{getTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classPUTriangle}{P\+U\+Triangle} \& Mesh\+Info\+::get\+Triangle (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{triangle\+Index }\end{DoxyParamCaption})}
+
+Retrieve vertex info Get a triangle based on the index. \mbox{\Hypertarget{classMeshInfo_ac99e33607524d3122b2545f85f52aa16}\label{classMeshInfo_ac99e33607524d3122b2545f85f52aa16}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Triangle@{get\+Triangle}}
+\index{get\+Triangle@{get\+Triangle}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Triangle()}{getTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classPUTriangle}{P\+U\+Triangle}\& Mesh\+Info\+::get\+Triangle (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{triangle\+Index }\end{DoxyParamCaption})}
+
+Retrieve vertex info Get a triangle based on the index. \mbox{\Hypertarget{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}\label{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Triangle\+Count@{get\+Triangle\+Count}}
+\index{get\+Triangle\+Count@{get\+Triangle\+Count}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Triangle\+Count()}{getTriangleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Mesh\+Info\+::get\+Triangle\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get triangle number \mbox{\Hypertarget{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}\label{classMeshInfo_a5e2ff519d1987d26101a6e40527a9571}} 
+\index{Mesh\+Info@{Mesh\+Info}!get\+Triangle\+Count@{get\+Triangle\+Count}}
+\index{get\+Triangle\+Count@{get\+Triangle\+Count}!Mesh\+Info@{Mesh\+Info}}
+\subsubsection{\texorpdfstring{get\+Triangle\+Count()}{getTriangleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Mesh\+Info\+::get\+Triangle\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get triangle number 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Mesh\+Surface\+Emitter.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Mesh\+Surface\+Emitter.\+cpp\end{DoxyCompactItemize}

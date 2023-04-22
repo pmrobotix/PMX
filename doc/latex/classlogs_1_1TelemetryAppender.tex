@@ -1,0 +1,84 @@
+\hypertarget{classlogs_1_1TelemetryAppender}{}\section{logs\+:\+:Telemetry\+Appender Class Reference}
+\label{classlogs_1_1TelemetryAppender}\index{logs\+::\+Telemetry\+Appender@{logs\+::\+Telemetry\+Appender}}
+
+
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une écriture des traces sur un flux de reseau.  
+
+
+
+
+{\ttfamily \#include $<$Telemetry\+Appender.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Telemetry\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1TelemetryAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:Telemetry\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classlogs_1_1TelemetryAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1TelemetryAppender_af3e00020871557769a6036e49cf0903f}\label{classlogs_1_1TelemetryAppender_af3e00020871557769a6036e49cf0903f}} 
+\hyperlink{classlogs_1_1TelemetryAppender_af3e00020871557769a6036e49cf0903f}{Telemetry\+Appender} (std\+::string Id\+\_\+\+Robot, std\+::string Plot\+Juggler\+\_\+hostname)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. L\textquotesingle{}appender sera associé au flux de sortie standard. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1TelemetryAppender_a0f37f1968d5db9221fb33631729fbb0a}\label{classlogs_1_1TelemetryAppender_a0f37f1968d5db9221fb33631729fbb0a}} 
+virtual \hyperlink{classlogs_1_1TelemetryAppender_a0f37f1968d5db9221fb33631729fbb0a}{$\sim$\+Telemetry\+Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1TelemetryAppender_ac016e9912989d9550e5f5b42603a793c}{write\+Message} (const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1TelemetryAppender_a2021f9d6001dc21de8abb6f7dffce234}\label{classlogs_1_1TelemetryAppender_a2021f9d6001dc21de8abb6f7dffce234}} 
+void {\bfseries write\+Message\+With\+Json\+Time} (std\+::string id, const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&logger, const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&level, const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{classlogs_1_1TelemetryAppender_a70d4527e81e59cb89832f0ceb2cc5edb}\label{classlogs_1_1TelemetryAppender_a70d4527e81e59cb89832f0ceb2cc5edb}} 
+void \hyperlink{classlogs_1_1TelemetryAppender_a70d4527e81e59cb89832f0ceb2cc5edb}{flush} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode affiche tous les messages engistrés sur le flux de sortie standard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implémentation de \hyperlink{classlogs_1_1Appender}{Appender} pour une écriture des traces sur un flux de reseau. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1TelemetryAppender_ac016e9912989d9550e5f5b42603a793c}\label{classlogs_1_1TelemetryAppender_ac016e9912989d9550e5f5b42603a793c}} 
+\index{logs\+::\+Telemetry\+Appender@{logs\+::\+Telemetry\+Appender}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+Telemetry\+Appender@{logs\+::\+Telemetry\+Appender}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void logs\+::\+Telemetry\+Appender\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & \hyperlink{classlogs_1_1Logger}{Logger} de référence du message. \\
+\hline
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message à tracer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classlogs_1_1MemoryAppender_a478c866b07f63f1f89c347b4465834bc}{logs\+::\+Memory\+Appender}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{TelemetryAppender_8hpp}{Telemetry\+Appender.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\+Appender/\hyperlink{TelemetryAppender_8cpp}{Telemetry\+Appender.\+cpp}\end{DoxyCompactItemize}

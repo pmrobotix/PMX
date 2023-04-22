@@ -1,0 +1,172 @@
+\hypertarget{classEventListenerCustom}{}\section{Event\+Listener\+Custom Class Reference}
+\label{classEventListenerCustom}\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+
+
+Custom event listener.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Event\+Listener\+Custom.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Listener\+Custom\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classEventListenerCustom__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event\+Listener\+Custom\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEventListenerCustom__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListenerCustom_a9be3f3ad1e20340dda29e33fe06de444}\label{classEventListenerCustom_a9be3f3ad1e20340dda29e33fe06de444}} 
+virtual bool \hyperlink{classEventListenerCustom_a9be3f3ad1e20340dda29e33fe06de444}{check\+Available} () override
+\begin{DoxyCompactList}\small\item\em Overrides. \end{DoxyCompactList}\item 
+virtual \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventListenerCustom_a9a8bffb7f8169c9ca32aba3bf4cd74bc}{clone} () override
+\item 
+bool \hyperlink{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}{init} (const Listener\+ID \&listener\+Id, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classEventListenerCustom_a2de79f2f69bd89f68216b5467ed9f50b}\label{classEventListenerCustom_a2de79f2f69bd89f68216b5467ed9f50b}} 
+virtual bool \hyperlink{classEventListenerCustom_a2de79f2f69bd89f68216b5467ed9f50b}{check\+Available} () override
+\begin{DoxyCompactList}\small\item\em Overrides. \end{DoxyCompactList}\item 
+virtual \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventListenerCustom_a2b1c47443d2288b0b4a5b53fe35914ba}{clone} () override
+\item 
+bool \hyperlink{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}{init} (const Listener\+ID \&listener\+Id, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventListenerCustom_a9c87b50cc58d3050eea1dd4ae564f430}{create} (const std\+::string \&event\+Name, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\item 
+static \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ \hyperlink{classEventListenerCustom_a247e78165db8f43694df2e8871718e3f}{create} (const std\+::string \&event\+Name, const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&callback)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListenerCustom_a93094ae85514d09ccd56de27799e624a}\label{classEventListenerCustom_a93094ae85514d09ccd56de27799e624a}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListenerCustom_ac5272b93cdde1f2229d3ed199ecc9987}\label{classEventListenerCustom_ac5272b93cdde1f2229d3ed199ecc9987}} 
+std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ {\bfseries \+\_\+on\+Custom\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventListenerCustom_af98b1f4e76381b33c14a5fe57bd230f9}\label{classEventListenerCustom_af98b1f4e76381b33c14a5fe57bd230f9}} 
+class {\bfseries Lua\+Event\+Listener\+Custom}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Custom event listener. 
+
+
+\begin{DoxyCode}
+Usage:
+      \textcolor{keyword}{auto} dispatcher = \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director::getInstance}()->
+      \hyperlink{classDirector_ae5984b5ba756d210fa4ec79578d17ca8}{getEventDispatcher}();
+   Adds a listener:
+
+      \textcolor{keyword}{auto} callback = [](\hyperlink{classEventCustom}{EventCustom}* event)\{ do\_some\_thing(); \};
+      \textcolor{keyword}{auto} listener = \hyperlink{classEventListenerCustom_a9c87b50cc58d3050eea1dd4ae564f430}{EventListenerCustom::create}(callback);
+      dispatcher->addEventListenerWithSceneGraphPriority(listener, one\_node);
+
+   Dispatches a custom event:
+
+      \hyperlink{classEventCustom}{EventCustom} event(\textcolor{stringliteral}{"your\_event\_type"});
+      dispatcher->dispatchEvent(&event);
+
+   Removes a listener
+
+      dispatcher->removeEventListener(listener);
+\end{DoxyCode}
+  cc.\+\_\+\+Event\+Listener\+Custom 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEventListenerCustom_a9a8bffb7f8169c9ca32aba3bf4cd74bc}\label{classEventListenerCustom_a9a8bffb7f8169c9ca32aba3bf4cd74bc}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!clone@{clone}}
+\index{clone@{clone}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ Event\+Listener\+Custom\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Clones the listener, its subclasses have to override this method. 
+
+Implements \hyperlink{classEventListener_a8707b41e85031f08e48def3584d51bc0}{Event\+Listener}.
+
+\mbox{\Hypertarget{classEventListenerCustom_a2b1c47443d2288b0b4a5b53fe35914ba}\label{classEventListenerCustom_a2b1c47443d2288b0b4a5b53fe35914ba}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!clone@{clone}}
+\index{clone@{clone}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}$\ast$ Event\+Listener\+Custom\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Clones the listener, its subclasses have to override this method. 
+
+Implements \hyperlink{classEventListener_a8707b41e85031f08e48def3584d51bc0}{Event\+Listener}.
+
+\mbox{\Hypertarget{classEventListenerCustom_a9c87b50cc58d3050eea1dd4ae564f430}\label{classEventListenerCustom_a9c87b50cc58d3050eea1dd4ae564f430}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!create@{create}}
+\index{create@{create}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ Event\+Listener\+Custom\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an event listener with type and callback. 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & The type of the event. \\
+\hline
+{\em callback} & The callback function when the specified event was emitted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListenerCustom_a247e78165db8f43694df2e8871718e3f}\label{classEventListenerCustom_a247e78165db8f43694df2e8871718e3f}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!create@{create}}
+\index{create@{create}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom}$\ast$ Event\+Listener\+Custom\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an event listener with type and callback. 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & The type of the event. \\
+\hline
+{\em callback} & The callback function when the specified event was emitted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}\label{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!init@{init}}
+\index{init@{init}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+Custom\+::init (\begin{DoxyParamCaption}\item[{const Listener\+ID \&}]{listener\+Id,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Initializes event with type and callback function \mbox{\Hypertarget{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}\label{classEventListenerCustom_ae29940d9da89b7e8f50d4766c638b40f}} 
+\index{Event\+Listener\+Custom@{Event\+Listener\+Custom}!init@{init}}
+\index{init@{init}!Event\+Listener\+Custom@{Event\+Listener\+Custom}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Event\+Listener\+Custom\+::init (\begin{DoxyParamCaption}\item[{const Listener\+ID \&}]{listener\+Id,  }\item[{const std\+::function$<$ void(\hyperlink{classEventCustom}{Event\+Custom} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Initializes event with type and callback function 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Listener\+Custom.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Event\+Listener\+Custom.\+cpp\end{DoxyCompactItemize}

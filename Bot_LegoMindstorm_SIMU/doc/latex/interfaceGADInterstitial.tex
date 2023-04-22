@@ -1,0 +1,125 @@
+\hypertarget{interfaceGADInterstitial}{}\section{G\+A\+D\+Interstitial Class Reference}
+\label{interfaceGADInterstitial}\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+
+
+{\ttfamily \#import $<$G\+A\+D\+Interstitial.\+h$>$}
+
+
+
+Inheritance diagram for G\+A\+D\+Interstitial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{interfaceGADInterstitial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+A\+D\+Interstitial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{interfaceGADInterstitial__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interfaceGADInterstitial_aa469fd3d2e59b8bd9d8f69cfaa28dbf3}{load\+Request\+:}
+\item 
+(void) -\/ \hyperlink{interfaceGADInterstitial_aa8232e1a7be46e42c6eac9e164636a9b}{load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:}
+\item 
+(void) -\/ \hyperlink{interfaceGADInterstitial_ac002c3a84433c3e56e4cc356bcfbbd91}{present\+From\+Root\+View\+Controller\+:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interfaceGADInterstitial_a73457abf83692509057ec285b4315836}{ad\+Unit\+ID}
+\item 
+id$<$ \hyperlink{protocolGADInterstitialDelegate-p}{G\+A\+D\+Interstitial\+Delegate} $>$ \hyperlink{interfaceGADInterstitial_a174dfe74aa49a50ad6e8855d20c657d0}{delegate}
+\item 
+id$<$ \hyperlink{protocolGADInAppPurchaseDelegate-p}{G\+A\+D\+In\+App\+Purchase\+Delegate} $>$ \hyperlink{interfaceGADInterstitial_ae0e33ef86c5ce259e026b8d523180543}{in\+App\+Purchase\+Delegate}
+\item 
+B\+O\+OL \hyperlink{interfaceGADInterstitial_a12198fa14bc46f0a52b903ba7b0a2de0}{is\+Ready}
+\item 
+B\+O\+OL \hyperlink{interfaceGADInterstitial_af862278c65bd83cb6a0e4db168fac029}{has\+Been\+Used}
+\item 
+N\+S\+String $\ast$ \hyperlink{interfaceGADInterstitial_a15863b00745b472e5683e50a97268431}{ad\+Network\+Class\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interstitial ad. This is a full-\/screen advertisement shown at natural transition points in your application such as between game levels or news stories.
+
+Interstitials are shown sparingly. Expect low to no fill. 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interfaceGADInterstitial_aa8232e1a7be46e42c6eac9e164636a9b}\label{interfaceGADInterstitial_aa8232e1a7be46e42c6eac9e164636a9b}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:@{load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:}}
+\index{load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:@{load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{load\+And\+Display\+Request\+:using\+Window\+:initial\+Image\+:()}{loadAndDisplayRequest:usingWindow:initialImage:()}}
+{\footnotesize\ttfamily -\/ (void) load\+And\+Display\+Request\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADRequest}{G\+A\+D\+Request} $\ast$)}]{request }\item[{usingWindow:(U\+I\+Window $\ast$)}]{window }\item[{initialImage:(U\+I\+Image $\ast$)}]{image }\end{DoxyParamCaption}}
+
+The $\vert$window$\vert$ will be shown with the $\vert$image$\vert$ displayed until either the $\vert$request$\vert$ interstitial is shown or a timeout occurs. The delegate will receive an interstitial\+Did\+Dismiss\+Screen\+: callback to indicate that your app should continue when the interstitial has finished. \mbox{\Hypertarget{interfaceGADInterstitial_aa469fd3d2e59b8bd9d8f69cfaa28dbf3}\label{interfaceGADInterstitial_aa469fd3d2e59b8bd9d8f69cfaa28dbf3}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!load\+Request\+:@{load\+Request\+:}}
+\index{load\+Request\+:@{load\+Request\+:}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{load\+Request\+:()}{loadRequest:()}}
+{\footnotesize\ttfamily -\/ (void) load\+Request\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADRequest}{G\+A\+D\+Request} $\ast$)}]{request }\end{DoxyParamCaption}}
+
+Makes an interstitial ad request. Additional targeting options can be supplied with a request object. Only one interstitial request is allowed at a time.
+
+This is best to do several seconds before the interstitial is needed to preload its content. Then when transitioning between view controllers show the interstital with present\+From\+View\+Controller. \mbox{\Hypertarget{interfaceGADInterstitial_ac002c3a84433c3e56e4cc356bcfbbd91}\label{interfaceGADInterstitial_ac002c3a84433c3e56e4cc356bcfbbd91}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!present\+From\+Root\+View\+Controller\+:@{present\+From\+Root\+View\+Controller\+:}}
+\index{present\+From\+Root\+View\+Controller\+:@{present\+From\+Root\+View\+Controller\+:}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{present\+From\+Root\+View\+Controller\+:()}{presentFromRootViewController:()}}
+{\footnotesize\ttfamily -\/ (void) present\+From\+Root\+View\+Controller\+: \begin{DoxyParamCaption}\item[{(U\+I\+View\+Controller $\ast$)}]{root\+View\+Controller }\end{DoxyParamCaption}}
+
+Presents the interstitial ad which takes over the entire screen until the user dismisses it. This has no effect unless is\+Ready returns Y\+ES and/or the delegate\textquotesingle{}s interstitial\+Did\+Receive\+Ad\+: has been received.
+
+Set root\+View\+Controller to the current view controller at the time this method is called. If your application does not use view controllers pass in nil and your views will be removed from the window to show the interstitial and restored when done. After the interstitial has been removed, the delegate\textquotesingle{}s interstitial\+Did\+Dismiss\+Screen\+: will be called. 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{interfaceGADInterstitial_a15863b00745b472e5683e50a97268431}\label{interfaceGADInterstitial_a15863b00745b472e5683e50a97268431}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!ad\+Network\+Class\+Name@{ad\+Network\+Class\+Name}}
+\index{ad\+Network\+Class\+Name@{ad\+Network\+Class\+Name}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{ad\+Network\+Class\+Name}{adNetworkClassName}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) ad\+Network\+Class\+Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}
+
+Returns the ad network class name that fetched the current ad. Returns nil while the latest ad request is in progress or if the latest ad request failed. For both standard and mediated Google Ad\+Mob ads, this method returns "G\+A\+D\+M\+Adapter\+Google\+Ad\+Mob\+Ads\char`\"{}. For ads fetched via mediation
+custom events, this method returns @\char`\"{}G\+A\+D\+M\+Adapter\+Custom\+Events". \mbox{\Hypertarget{interfaceGADInterstitial_a73457abf83692509057ec285b4315836}\label{interfaceGADInterstitial_a73457abf83692509057ec285b4315836}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!ad\+Unit\+ID@{ad\+Unit\+ID}}
+\index{ad\+Unit\+ID@{ad\+Unit\+ID}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{ad\+Unit\+ID}{adUnitID}}
+{\footnotesize\ttfamily -\/ (N\+S\+String$\ast$) ad\+Unit\+ID\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}
+
+Required value created in the Ad\+Sense website. Create a new ad unit for every unique placement of an ad in your application. Set this to the ID assigned for this placement. Ad units are important for targeting and stats. Example values for different request types\+: Ad\+Mob\+: a0123456789\+A\+B\+CD D\+FP\+: /0123/ca-\/pub-\/0123456789012345/my-\/ad-\/identifier Ad\+Sense\+: ca-\/mb-\/app-\/pub-\/0123456789012345/my-\/ad-\/identifier \mbox{\Hypertarget{interfaceGADInterstitial_a174dfe74aa49a50ad6e8855d20c657d0}\label{interfaceGADInterstitial_a174dfe74aa49a50ad6e8855d20c657d0}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!delegate@{delegate}}
+\index{delegate@{delegate}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{delegate}{delegate}}
+{\footnotesize\ttfamily -\/ (id$<$\hyperlink{protocolGADInterstitialDelegate-p}{G\+A\+D\+Interstitial\+Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+Optional delegate object that receives state change notifications from this G\+A\+D\+Interstital\+Ad. Remember to nil the delegate before deallocating this object. \mbox{\Hypertarget{interfaceGADInterstitial_af862278c65bd83cb6a0e4db168fac029}\label{interfaceGADInterstitial_af862278c65bd83cb6a0e4db168fac029}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!has\+Been\+Used@{has\+Been\+Used}}
+\index{has\+Been\+Used@{has\+Been\+Used}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{has\+Been\+Used}{hasBeenUsed}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) has\+Been\+Used\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+Returns Y\+ES if the interstitial object has already shown an interstitial. Note that an interstitial object can only be used once even with different requests. \mbox{\Hypertarget{interfaceGADInterstitial_ae0e33ef86c5ce259e026b8d523180543}\label{interfaceGADInterstitial_ae0e33ef86c5ce259e026b8d523180543}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!in\+App\+Purchase\+Delegate@{in\+App\+Purchase\+Delegate}}
+\index{in\+App\+Purchase\+Delegate@{in\+App\+Purchase\+Delegate}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{in\+App\+Purchase\+Delegate}{inAppPurchaseDelegate}}
+{\footnotesize\ttfamily -\/ (id$<$\hyperlink{protocolGADInAppPurchaseDelegate-p}{G\+A\+D\+In\+App\+Purchase\+Delegate}$>$) in\+App\+Purchase\+Delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}
+
+Optional delegate object that receives In-\/\+App Purchase (I\+AP) notifications from this G\+A\+D\+Interstital ad. Remember to nil the delegate before deallocating this object. \mbox{\Hypertarget{interfaceGADInterstitial_a12198fa14bc46f0a52b903ba7b0a2de0}\label{interfaceGADInterstitial_a12198fa14bc46f0a52b903ba7b0a2de0}} 
+\index{G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}!is\+Ready@{is\+Ready}}
+\index{is\+Ready@{is\+Ready}!G\+A\+D\+Interstitial@{G\+A\+D\+Interstitial}}
+\subsubsection{\texorpdfstring{is\+Ready}{isReady}}
+{\footnotesize\ttfamily -\/ (B\+O\+OL) is\+Ready\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}
+
+Returns Y\+ES if the interstitial is ready to be displayed. The delegate\textquotesingle{}s interstitial\+Ad\+Did\+Receive\+Ad\+: will be called when this switches from NO to Y\+ES. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/admob/proj.\+ios/\+Admob/G\+A\+D\+Interstitial.\+h\end{DoxyCompactItemize}

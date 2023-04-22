@@ -1,0 +1,287 @@
+\hypertarget{classActionFloat}{}\section{Action\+Float Class Reference}
+\label{classActionFloat}\index{Action\+Float@{Action\+Float}}
+
+
+\hyperlink{classAction}{Action} used to animate any value in range \mbox{[}from,to\mbox{]} over specified time interval.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Action\+Float\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classActionFloat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Float\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionFloat__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(float value)$>$ \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback}
+\item 
+typedef std\+::function$<$ void(float value)$>$ \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classActionFloat_a898675a5b5c372d44abec94d55632ae0}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+void \hyperlink{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}{update} (float delta) override
+\item 
+\hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_ace1ae89fd53f2e0e195edcae89601032}{reverse} () const override
+\item 
+\hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_aedf782fede49194ec2a70dfa06a18599}{clone} () const override
+\item 
+\mbox{\Hypertarget{classActionFloat_a395728bb0c8e68d896d36c8f713bb20f}\label{classActionFloat_a395728bb0c8e68d896d36c8f713bb20f}} 
+bool {\bfseries init\+With\+Duration} (float duration, float from, float to, \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback} callback)
+\item 
+void \hyperlink{classActionFloat_a898675a5b5c372d44abec94d55632ae0}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+void \hyperlink{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}{update} (float delta) override
+\item 
+\hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_a72d356e0e5a2c891f238993e56d36d25}{reverse} () const override
+\item 
+\hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_ac661a208d2c168b873ca8c5234433f90}{clone} () const override
+\item 
+\mbox{\Hypertarget{classActionFloat_a395728bb0c8e68d896d36c8f713bb20f}\label{classActionFloat_a395728bb0c8e68d896d36c8f713bb20f}} 
+bool {\bfseries init\+With\+Duration} (float duration, float from, float to, \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback} callback)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_abadc4e7961437c430ce61d9c69d3b720}{create} (float duration, float from, float to, \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback} callback)
+\item 
+static \hyperlink{classActionFloat}{Action\+Float} $\ast$ \hyperlink{classActionFloat_a61bf23d719c1ff01d475c1e8d1f9ec6a}{create} (float duration, float from, float to, \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback} callback)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionFloat_a69a1eb7f0a71f6d48f6a6d0aa9f3bacd}\label{classActionFloat_a69a1eb7f0a71f6d48f6a6d0aa9f3bacd}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classActionFloat}{Action\+Float}() \{\}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionFloat_a74dc11ef5d83e17bacb7f66e83c4bc67}\label{classActionFloat_a74dc11ef5d83e17bacb7f66e83c4bc67}} 
+float {\bfseries \+\_\+from}
+\item 
+\mbox{\Hypertarget{classActionFloat_aa51bb6165abec281793023f1f65c2560}\label{classActionFloat_aa51bb6165abec281793023f1f65c2560}} 
+float {\bfseries \+\_\+to}
+\item 
+\mbox{\Hypertarget{classActionFloat_a75bde7a49ce7fed2b84aba76978eb85c}\label{classActionFloat_a75bde7a49ce7fed2b84aba76978eb85c}} 
+float {\bfseries \+\_\+delta}
+\item 
+\mbox{\Hypertarget{classActionFloat_a439c7a524de5004f88a9d57c0df15274}\label{classActionFloat_a439c7a524de5004f88a9d57c0df15274}} 
+\hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback} {\bfseries \+\_\+callback}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAction}{Action} used to animate any value in range \mbox{[}from,to\mbox{]} over specified time interval. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}\label{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}} 
+\index{Action\+Float@{Action\+Float}!Action\+Float\+Callback@{Action\+Float\+Callback}}
+\index{Action\+Float\+Callback@{Action\+Float\+Callback}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{Action\+Float\+Callback}{ActionFloatCallback}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(float value)$>$ \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+::\+Action\+Float\+Callback}}
+
+Callback function used to report back result \mbox{\Hypertarget{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}\label{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}} 
+\index{Action\+Float@{Action\+Float}!Action\+Float\+Callback@{Action\+Float\+Callback}}
+\index{Action\+Float\+Callback@{Action\+Float\+Callback}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{Action\+Float\+Callback}{ActionFloatCallback}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(float value)$>$ \hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+::\+Action\+Float\+Callback}}
+
+Callback function used to report back result 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionFloat_aedf782fede49194ec2a70dfa06a18599}\label{classActionFloat_aedf782fede49194ec2a70dfa06a18599}} 
+\index{Action\+Float@{Action\+Float}!clone@{clone}}
+\index{clone@{clone}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionFloat}{Action\+Float} $\ast$ Action\+Float\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_ac661a208d2c168b873ca8c5234433f90}\label{classActionFloat_ac661a208d2c168b873ca8c5234433f90}} 
+\index{Action\+Float@{Action\+Float}!clone@{clone}}
+\index{clone@{clone}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionFloat}{Action\+Float}$\ast$ Action\+Float\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_abadc4e7961437c430ce61d9c69d3b720}\label{classActionFloat_abadc4e7961437c430ce61d9c69d3b720}} 
+\index{Action\+Float@{Action\+Float}!create@{create}}
+\index{create@{create}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionFloat}{Action\+Float} $\ast$ Action\+Float\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{float}]{from,  }\item[{float}]{to,  }\item[{\hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates Float\+Action with specified duration, from value, to value and callback to report back results 
+\begin{DoxyParams}{Parameters}
+{\em duration} & of the action \\
+\hline
+{\em from} & value to start from \\
+\hline
+{\em to} & value to be at the end of the action \\
+\hline
+{\em callback} & to report back result\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classActionFloat}{Action\+Float} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionFloat_a61bf23d719c1ff01d475c1e8d1f9ec6a}\label{classActionFloat_a61bf23d719c1ff01d475c1e8d1f9ec6a}} 
+\index{Action\+Float@{Action\+Float}!create@{create}}
+\index{create@{create}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classActionFloat}{Action\+Float}$\ast$ Action\+Float\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{float}]{from,  }\item[{float}]{to,  }\item[{\hyperlink{classActionFloat_a47a1fbc750167a8f9d754c62a62eaafa}{Action\+Float\+Callback}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates Float\+Action with specified duration, from value, to value and callback to report back results 
+\begin{DoxyParams}{Parameters}
+{\em duration} & of the action \\
+\hline
+{\em from} & value to start from \\
+\hline
+{\em to} & value to be at the end of the action \\
+\hline
+{\em callback} & to report back result\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classActionFloat}{Action\+Float} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionFloat_ace1ae89fd53f2e0e195edcae89601032}\label{classActionFloat_ace1ae89fd53f2e0e195edcae89601032}} 
+\index{Action\+Float@{Action\+Float}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionFloat}{Action\+Float} $\ast$ Action\+Float\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_a72d356e0e5a2c891f238993e56d36d25}\label{classActionFloat_a72d356e0e5a2c891f238993e56d36d25}} 
+\index{Action\+Float@{Action\+Float}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionFloat}{Action\+Float}$\ast$ Action\+Float\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_a9f9ac7164036a0bc261a72f62a2b2da7}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_a898675a5b5c372d44abec94d55632ae0}\label{classActionFloat_a898675a5b5c372d44abec94d55632ae0}} 
+\index{Action\+Float@{Action\+Float}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Float\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overridden \hyperlink{classActionInterval}{Action\+Interval} methods 
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_a898675a5b5c372d44abec94d55632ae0}\label{classActionFloat_a898675a5b5c372d44abec94d55632ae0}} 
+\index{Action\+Float@{Action\+Float}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Float\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overridden \hyperlink{classActionInterval}{Action\+Interval} methods 
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}\label{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}} 
+\index{Action\+Float@{Action\+Float}!update@{update}}
+\index{update@{update}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Float\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+\mbox{\Hypertarget{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}\label{classActionFloat_a0b6b333b5524a617f3088b2c1893b55c}} 
+\index{Action\+Float@{Action\+Float}!update@{update}}
+\index{update@{update}!Action\+Float@{Action\+Float}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Float\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

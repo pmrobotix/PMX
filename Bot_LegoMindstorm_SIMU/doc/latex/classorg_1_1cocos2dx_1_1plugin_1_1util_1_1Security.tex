@@ -1,0 +1,75 @@
+\hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security}{}\section{org.\+cocos2dx.\+plugin.\+util.\+Security Class Reference}
+\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security}\index{org.\+cocos2dx.\+plugin.\+util.\+Security@{org.\+cocos2dx.\+plugin.\+util.\+Security}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a401bf8c98e41d91f507f73c9093767b3}{verify\+Purchase} (String base64\+Public\+Key, String signed\+Data, String signature)
+\item 
+static Public\+Key \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a6cf0fcefbec7a89bf424ca279a707ad1}{generate\+Public\+Key} (String encoded\+Public\+Key)
+\item 
+static boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a3fa29a7c9d3376261f6dec700a19263f}{verify} (Public\+Key public\+Key, String signed\+Data, String signature)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Security-\/related methods. For a secure implementation, all of this code should be implemented on a server that communicates with the application on the device. For the sake of simplicity and clarity of this example, this code is included here and is executed on the device. If you must verify the purchases on the phone, you should obfuscate this code to make it harder for an attacker to replace the code with stubs that treat all purchases as verified. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a6cf0fcefbec7a89bf424ca279a707ad1}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a6cf0fcefbec7a89bf424ca279a707ad1}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}!generate\+Public\+Key@{generate\+Public\+Key}}
+\index{generate\+Public\+Key@{generate\+Public\+Key}!org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}}
+\subsubsection{\texorpdfstring{generate\+Public\+Key()}{generatePublicKey()}}
+{\footnotesize\ttfamily static Public\+Key org.\+cocos2dx.\+plugin.\+util.\+Security.\+generate\+Public\+Key (\begin{DoxyParamCaption}\item[{String}]{encoded\+Public\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Generates a Public\+Key instance from a string containing the Base64-\/encoded public key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoded\+Public\+Key} & Base64-\/encoded public key \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if encoded\+Public\+Key is invalid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a3fa29a7c9d3376261f6dec700a19263f}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a3fa29a7c9d3376261f6dec700a19263f}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}!verify@{verify}}
+\index{verify@{verify}!org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}}
+\subsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily static boolean org.\+cocos2dx.\+plugin.\+util.\+Security.\+verify (\begin{DoxyParamCaption}\item[{Public\+Key}]{public\+Key,  }\item[{String}]{signed\+Data,  }\item[{String}]{signature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Verifies that the signature from the server matches the computed signature on the data. Returns true if the data is correctly signed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em public\+Key} & public key associated with the developer account \\
+\hline
+{\em signed\+Data} & signed data from server \\
+\hline
+{\em signature} & server signature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the data and signature match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a401bf8c98e41d91f507f73c9093767b3}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Security_a401bf8c98e41d91f507f73c9093767b3}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}!verify\+Purchase@{verify\+Purchase}}
+\index{verify\+Purchase@{verify\+Purchase}!org\+::cocos2dx\+::plugin\+::util\+::\+Security@{org\+::cocos2dx\+::plugin\+::util\+::\+Security}}
+\subsubsection{\texorpdfstring{verify\+Purchase()}{verifyPurchase()}}
+{\footnotesize\ttfamily static boolean org.\+cocos2dx.\+plugin.\+util.\+Security.\+verify\+Purchase (\begin{DoxyParamCaption}\item[{String}]{base64\+Public\+Key,  }\item[{String}]{signed\+Data,  }\item[{String}]{signature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Verifies that the data was signed with the given signature, and returns the verified purchase. The data is in J\+S\+ON format and signed with a private key. The data also contains the \hyperlink{}{Purchase\+State} and product ID of the purchase. 
+\begin{DoxyParams}{Parameters}
+{\em base64\+Public\+Key} & the base64-\/encoded public key to use for verifying. \\
+\hline
+{\em signed\+Data} & the signed J\+S\+ON string (signed, not encrypted) \\
+\hline
+{\em signature} & the signature for the data, signed with the private key \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/googleplay/proj.\+android/src/org/cocos2dx/plugin/util/Security.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,126 @@
+\hypertarget{classGLProgramStateCache}{}\section{G\+L\+Program\+State\+Cache Class Reference}
+\label{classGLProgramStateCache}\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+
+
+{\ttfamily \#include $<$C\+C\+G\+L\+Program\+State\+Cache.\+h$>$}
+
+
+
+Collaboration diagram for G\+L\+Program\+State\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classGLProgramStateCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramStateCache_ab173364baeb13cf1e9d57f3005d6aadf}{get\+G\+L\+Program\+State} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+void \hyperlink{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}{remove\+All\+G\+L\+Program\+State} ()
+\item 
+void \hyperlink{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}{remove\+Unused\+G\+L\+Program\+State} ()
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramStateCache_a16499f031722f40f5b8bd35310336f10}{get\+G\+L\+Program\+State} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+void \hyperlink{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}{remove\+All\+G\+L\+Program\+State} ()
+\item 
+void \hyperlink{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}{remove\+Unused\+G\+L\+Program\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} $\ast$ \hyperlink{classGLProgramStateCache_a5a3341fe25a92f64f28e04f4f17ae5d5}{get\+Instance} ()
+\item 
+static void \hyperlink{classGLProgramStateCache_af0457c8748b9b7578c8cf6ab89525a11}{destroy\+Instance} ()
+\item 
+static \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} $\ast$ \hyperlink{classGLProgramStateCache_a7f5ed5b5ed70843282b063950aabf8ca}{get\+Instance} ()
+\item 
+static void \hyperlink{classGLProgramStateCache_a216ffb30e515be9bda80619fc5830505}{destroy\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLProgramStateCache_a37d78fa866700a5c349a16709d35764c}\label{classGLProgramStateCache_a37d78fa866700a5c349a16709d35764c}} 
+\hyperlink{classMap}{Map}$<$ \hyperlink{classGLProgram}{G\+L\+Program} $\ast$, \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ $>$ {\bfseries \+\_\+gl\+Program\+States}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLProgramStateCache_a019c8c487da9b4da0ff7f66baf2f9620}\label{classGLProgramStateCache_a019c8c487da9b4da0ff7f66baf2f9620}} 
+static \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} $\ast$ {\bfseries s\+\_\+instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Some G\+Lprogram state could be shared. \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} is used to cache this, and will reuse the old \hyperlink{classGLProgramState}{G\+L\+Program\+State}, which will accelerate the creation of game objects such as sprites, particles etc. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGLProgramStateCache_af0457c8748b9b7578c8cf6ab89525a11}\label{classGLProgramStateCache_af0457c8748b9b7578c8cf6ab89525a11}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+Cache\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroy the \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} singleton. \mbox{\Hypertarget{classGLProgramStateCache_a216ffb30e515be9bda80619fc5830505}\label{classGLProgramStateCache_a216ffb30e515be9bda80619fc5830505}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!destroy\+Instance@{destroy\+Instance}}
+\index{destroy\+Instance@{destroy\+Instance}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{destroy\+Instance()}{destroyInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void G\+L\+Program\+State\+Cache\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Destroy the \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} singleton. \mbox{\Hypertarget{classGLProgramStateCache_ab173364baeb13cf1e9d57f3005d6aadf}\label{classGLProgramStateCache_ab173364baeb13cf1e9d57f3005d6aadf}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}}
+\index{get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program\+State()}{getGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+Cache\+::get\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{program }\end{DoxyParamCaption})}
+
+Get the shared \hyperlink{classGLProgramState}{G\+L\+Program\+State} by the owner \hyperlink{classGLProgram}{G\+L\+Program}. \mbox{\Hypertarget{classGLProgramStateCache_a16499f031722f40f5b8bd35310336f10}\label{classGLProgramStateCache_a16499f031722f40f5b8bd35310336f10}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}}
+\index{get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program\+State()}{getGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+Cache\+::get\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{program }\end{DoxyParamCaption})}
+
+Get the shared \hyperlink{classGLProgramState}{G\+L\+Program\+State} by the owner \hyperlink{classGLProgram}{G\+L\+Program}. \mbox{\Hypertarget{classGLProgramStateCache_a5a3341fe25a92f64f28e04f4f17ae5d5}\label{classGLProgramStateCache_a5a3341fe25a92f64f28e04f4f17ae5d5}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} $\ast$ G\+L\+Program\+State\+Cache\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} singleton instance. \mbox{\Hypertarget{classGLProgramStateCache_a7f5ed5b5ed70843282b063950aabf8ca}\label{classGLProgramStateCache_a7f5ed5b5ed70843282b063950aabf8ca}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache}$\ast$ G\+L\+Program\+State\+Cache\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the \hyperlink{classGLProgramStateCache}{G\+L\+Program\+State\+Cache} singleton instance. \mbox{\Hypertarget{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}\label{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!remove\+All\+G\+L\+Program\+State@{remove\+All\+G\+L\+Program\+State}}
+\index{remove\+All\+G\+L\+Program\+State@{remove\+All\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{remove\+All\+G\+L\+Program\+State()}{removeAllGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+Cache\+::remove\+All\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove all the cached \hyperlink{classGLProgramState}{G\+L\+Program\+State}. \mbox{\Hypertarget{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}\label{classGLProgramStateCache_acb1c32915fb3afb44ec8acad112ef8d3}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!remove\+All\+G\+L\+Program\+State@{remove\+All\+G\+L\+Program\+State}}
+\index{remove\+All\+G\+L\+Program\+State@{remove\+All\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{remove\+All\+G\+L\+Program\+State()}{removeAllGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+Cache\+::remove\+All\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove all the cached \hyperlink{classGLProgramState}{G\+L\+Program\+State}. \mbox{\Hypertarget{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}\label{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!remove\+Unused\+G\+L\+Program\+State@{remove\+Unused\+G\+L\+Program\+State}}
+\index{remove\+Unused\+G\+L\+Program\+State@{remove\+Unused\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{remove\+Unused\+G\+L\+Program\+State()}{removeUnusedGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+Cache\+::remove\+Unused\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove unused \hyperlink{classGLProgramState}{G\+L\+Program\+State}. \mbox{\Hypertarget{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}\label{classGLProgramStateCache_a0ddcd455f29dc479f871a06f4c898b35}} 
+\index{G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}!remove\+Unused\+G\+L\+Program\+State@{remove\+Unused\+G\+L\+Program\+State}}
+\index{remove\+Unused\+G\+L\+Program\+State@{remove\+Unused\+G\+L\+Program\+State}!G\+L\+Program\+State\+Cache@{G\+L\+Program\+State\+Cache}}
+\subsubsection{\texorpdfstring{remove\+Unused\+G\+L\+Program\+State()}{removeUnusedGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+Cache\+::remove\+Unused\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Remove unused \hyperlink{classGLProgramState}{G\+L\+Program\+State}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State\+Cache.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State\+Cache.\+cpp\end{DoxyCompactItemize}

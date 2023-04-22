@@ -1,0 +1,460 @@
+\hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder}{}\section{cocos2d\+:\+:experimental\+:\+:Audio\+Decoder Class Reference}
+\label{classcocos2d_1_1experimental_1_1AudioDecoder}\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+
+
+The class for decoding compressed audio file to P\+CM buffer.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Decoder.\+h$>$}
+
+
+
+Inheritance diagram for cocos2d\+:\+:experimental\+:\+:Audio\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classcocos2d_1_1experimental_1_1AudioDecoder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocos2d\+:\+:experimental\+:\+:Audio\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classcocos2d_1_1experimental_1_1AudioDecoder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_ac7aa722795b2f12b73c9f6233928950d}\label{classcocos2d_1_1experimental_1_1AudioDecoder_ac7aa722795b2f12b73c9f6233928950d}} 
+{\bfseries Audio\+Decoder} (S\+L\+Engine\+Itf engine\+Itf, const std\+::string \&url, int buffer\+Size\+In\+Frames, int sample\+Rate, const Fd\+Getter\+Callback \&fd\+Getter\+Callback)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a8d0250b323e9a1c128eb91b81fdd6a06}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a8d0250b323e9a1c128eb91b81fdd6a06}} 
+bool {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a4d26cd91658bcad5a0a934551ebebf9d}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a4d26cd91658bcad5a0a934551ebebf9d}} 
+\hyperlink{structcocos2d_1_1experimental_1_1PcmData}{Pcm\+Data} {\bfseries get\+Result} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a6842921bd3664de32c3aba919ad48ef4}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a6842921bd3664de32c3aba919ad48ef4}} 
+virtual bool {\bfseries init} (const std\+::string \&url, int sample\+Rate)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a8d0250b323e9a1c128eb91b81fdd6a06}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a8d0250b323e9a1c128eb91b81fdd6a06}} 
+bool {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a4d26cd91658bcad5a0a934551ebebf9d}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a4d26cd91658bcad5a0a934551ebebf9d}} 
+\hyperlink{structcocos2d_1_1experimental_1_1PcmData}{Pcm\+Data} {\bfseries get\+Result} ()
+\item 
+bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_aab596e1f3d3f5ab2cf8de5ddb356db07}{open} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Opens an audio file specified by a file path. \end{DoxyCompactList}\item 
+bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a3989ba6f09b6f772a75d5d3255174286}{is\+Opened} () const
+\begin{DoxyCompactList}\small\item\em Checks whether decoder has opened file successfully. \end{DoxyCompactList}\item 
+void \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_aa080c4ee1f7964f6660295ce325a64d5}{close} ()
+\begin{DoxyCompactList}\small\item\em Closes opened audio file. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a08e022937ab16479dc381393df1bc3d5}{read} (uint32\+\_\+t frames\+To\+Read, char $\ast$pcm\+Buf)
+\begin{DoxyCompactList}\small\item\em Reads audio frames of P\+CM format. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a55fbd14ff185cdf67fd9fe6674bde473}{read\+Fixed\+Frames} (uint32\+\_\+t frames\+To\+Read, char $\ast$pcm\+Buf)
+\begin{DoxyCompactList}\small\item\em Reads fixed audio frames of P\+CM format. \end{DoxyCompactList}\item 
+bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a59f8d937bf5fb9130bef774879ec60f4}{seek} (uint32\+\_\+t frame\+Offset)
+\begin{DoxyCompactList}\small\item\em Sets frame offest to be read. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a7a9f425aa4e62390e404134f19b1bdaf}{tell} () const
+\begin{DoxyCompactList}\small\item\em Tells the current frame offset. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a4b8982582b6cb6b81c49e05234c3c734}{get\+Total\+Frames} () const
+\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_ac445d905fc7ec67d53fc542d590322c0}{get\+Bytes\+Per\+Frame} () const
+\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_af721fc8972c793a0b255dbb3e2f7c6a0}{get\+Sample\+Rate} () const
+\item 
+uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a1363284022c82ca8b6945a2b8c324410}{get\+Channel\+Count} () const
+\item 
+virtual bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a27747e5f9671a16852997fe852e28e71}{open} (const char $\ast$path)=0
+\begin{DoxyCompactList}\small\item\em Opens an audio file specified by a file path. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a7770924862903dd30250767e1b322c36}{is\+Opened} () const
+\begin{DoxyCompactList}\small\item\em Checks whether decoder has opened file successfully. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a89e94516cd7103d98475dc27462a58a7}{close} ()=0
+\begin{DoxyCompactList}\small\item\em Closes opened audio file. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a952b42c3785402bac2166c8dd1af543c}{read} (uint32\+\_\+t frames\+To\+Read, char $\ast$pcm\+Buf)=0
+\begin{DoxyCompactList}\small\item\em Reads audio frames of P\+CM format. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_aa4f78c77e07a069be14148ce2d78d333}{read\+Fixed\+Frames} (uint32\+\_\+t frames\+To\+Read, char $\ast$pcm\+Buf)
+\begin{DoxyCompactList}\small\item\em Reads fixed audio frames of P\+CM format. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a290db97d8d4b00b6d09e145cd123b58b}{seek} (uint32\+\_\+t frame\+Offset)=0
+\begin{DoxyCompactList}\small\item\em Sets frame offest to be read. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a6c7f6cb06a8eb9e584ff6097a3f37e95}{tell} () const =0
+\begin{DoxyCompactList}\small\item\em Tells the current frame offset. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_abe5eba8cb631cc4995b8b429be99fb9e}{get\+Total\+Frames} () const
+\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_aaa81e1943e6ec7dec5d376f4a81f54a1}{get\+Bytes\+Per\+Frame} () const
+\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a368e97749cd9e8521d2f7fdd2a4acd24}{get\+Sample\+Rate} () const
+\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a395655864535d21d76243c6e7eac1c93}{get\+Channel\+Count} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a8e10aaf989eed1e9aa548d62ea833ec3}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a8e10aaf989eed1e9aa548d62ea833ec3}} 
+static const uint32\+\_\+t {\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+R\+A\+M\+E\+\_\+\+I\+N\+D\+EX} = U\+I\+N\+T32\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_aa307947631e4217c233a4004c9e965d7}\label{classcocos2d_1_1experimental_1_1AudioDecoder_aa307947631e4217c233a4004c9e965d7}} 
+virtual bool {\bfseries decode\+To\+Pcm} ()=0
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_adbcfaedbaea64bbca4090426b99f1d16}\label{classcocos2d_1_1experimental_1_1AudioDecoder_adbcfaedbaea64bbca4090426b99f1d16}} 
+bool {\bfseries resample} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_af6b0e4ae190d513944dd975bd5b66c67}\label{classcocos2d_1_1experimental_1_1AudioDecoder_af6b0e4ae190d513944dd975bd5b66c67}} 
+bool {\bfseries interleave} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a99f9d1d2efbfeb2ea65c80182a97bef4}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a99f9d1d2efbfeb2ea65c80182a97bef4}} 
+static size\+\_\+t {\bfseries file\+Read} (void $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, void $\ast$datasource)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a567c8be3efd6952fed3193ec5b6f8d32}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a567c8be3efd6952fed3193ec5b6f8d32}} 
+static int {\bfseries file\+Seek} (void $\ast$datasource, int64\+\_\+t offset, int whence)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a1df7b0981cba25bd0dd4807c2ad1ecf8}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a1df7b0981cba25bd0dd4807c2ad1ecf8}} 
+static int {\bfseries file\+Close} (void $\ast$datasource)
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a542c503615e026d19743a3b8e1c18609}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a542c503615e026d19743a3b8e1c18609}} 
+static long {\bfseries file\+Tell} (void $\ast$datasource)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_ab902f80f11163a1dde5c61c44f291c45}\label{classcocos2d_1_1experimental_1_1AudioDecoder_ab902f80f11163a1dde5c61c44f291c45}} 
+\hyperlink{classData}{Data} {\bfseries \+\_\+file\+Data}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a8a4482af9378c1b08ba37283242e70ef}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a8a4482af9378c1b08ba37283242e70ef}} 
+size\+\_\+t {\bfseries \+\_\+file\+Curr\+Pos}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a9305240815b13dd312f1afe1b3d7ddd8}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a9305240815b13dd312f1afe1b3d7ddd8}} 
+class {\bfseries S\+L\+Audio\+Decoder\+Callback\+Proxy}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_af7bd9270f880d1dc12f5f54d21b08711}\label{classcocos2d_1_1experimental_1_1AudioDecoder_af7bd9270f880d1dc12f5f54d21b08711}} 
+class {\bfseries Audio\+Decoder\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class for decoding compressed audio file to P\+CM buffer. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a89e94516cd7103d98475dc27462a58a7}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a89e94516cd7103d98475dc27462a58a7}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!close@{close}}
+\index{close@{close}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void cocos2d\+::experimental\+::\+Audio\+Decoder\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Closes opened audio file. 
+
+\begin{DoxyNote}{Note}
+The method will also be automatically invoked in the destructor. 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a547b08590805b5f5443e8ba485e271b2}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}, and \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderOgg_abca712fe6031eaebf98f6ac7eef64b0e}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Ogg}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_aa080c4ee1f7964f6660295ce325a64d5}\label{classcocos2d_1_1experimental_1_1AudioDecoder_aa080c4ee1f7964f6660295ce325a64d5}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!close@{close}}
+\index{close@{close}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cocos2d\+::experimental\+::\+Audio\+Decoder\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes opened audio file. 
+
+\begin{DoxyNote}{Note}
+The method will also be automatically invoked in the destructor. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_aaa81e1943e6ec7dec5d376f4a81f54a1}\label{classcocos2d_1_1experimental_1_1AudioDecoder_aaa81e1943e6ec7dec5d376f4a81f54a1}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Bytes\+Per\+Frame@{get\+Bytes\+Per\+Frame}}
+\index{get\+Bytes\+Per\+Frame@{get\+Bytes\+Per\+Frame}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Bytes\+Per\+Frame()}{getBytesPerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Bytes\+Per\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets bytes per frame of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_ac445d905fc7ec67d53fc542d590322c0}\label{classcocos2d_1_1experimental_1_1AudioDecoder_ac445d905fc7ec67d53fc542d590322c0}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Bytes\+Per\+Frame@{get\+Bytes\+Per\+Frame}}
+\index{get\+Bytes\+Per\+Frame@{get\+Bytes\+Per\+Frame}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Bytes\+Per\+Frame()}{getBytesPerFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Bytes\+Per\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets bytes per frame of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a395655864535d21d76243c6e7eac1c93}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a395655864535d21d76243c6e7eac1c93}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Channel\+Count@{get\+Channel\+Count}}
+\index{get\+Channel\+Count@{get\+Channel\+Count}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Channel\+Count()}{getChannelCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the channel count of current audio. \begin{DoxyNote}{Note}
+Currently we only support 1 or 2 channels. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a1363284022c82ca8b6945a2b8c324410}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a1363284022c82ca8b6945a2b8c324410}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Channel\+Count@{get\+Channel\+Count}}
+\index{get\+Channel\+Count@{get\+Channel\+Count}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Channel\+Count()}{getChannelCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the channel count of current audio. \begin{DoxyNote}{Note}
+Currently we only support 1 or 2 channels. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a368e97749cd9e8521d2f7fdd2a4acd24}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a368e97749cd9e8521d2f7fdd2a4acd24}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Sample\+Rate@{get\+Sample\+Rate}}
+\index{get\+Sample\+Rate@{get\+Sample\+Rate}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Sample\+Rate()}{getSampleRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets sample rate of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_af721fc8972c793a0b255dbb3e2f7c6a0}\label{classcocos2d_1_1experimental_1_1AudioDecoder_af721fc8972c793a0b255dbb3e2f7c6a0}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Sample\+Rate@{get\+Sample\+Rate}}
+\index{get\+Sample\+Rate@{get\+Sample\+Rate}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Sample\+Rate()}{getSampleRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets sample rate of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_abe5eba8cb631cc4995b8b429be99fb9e}\label{classcocos2d_1_1experimental_1_1AudioDecoder_abe5eba8cb631cc4995b8b429be99fb9e}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Total\+Frames@{get\+Total\+Frames}}
+\index{get\+Total\+Frames@{get\+Total\+Frames}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Total\+Frames()}{getTotalFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Total\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets total frames of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a4b8982582b6cb6b81c49e05234c3c734}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a4b8982582b6cb6b81c49e05234c3c734}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!get\+Total\+Frames@{get\+Total\+Frames}}
+\index{get\+Total\+Frames@{get\+Total\+Frames}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{get\+Total\+Frames()}{getTotalFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::get\+Total\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets total frames of current audio. \mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a7770924862903dd30250767e1b322c36}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a7770924862903dd30250767e1b322c36}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!is\+Opened@{is\+Opened}}
+\index{is\+Opened@{is\+Opened}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{is\+Opened()}{isOpened()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::is\+Opened (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks whether decoder has opened file successfully. 
+
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a3989ba6f09b6f772a75d5d3255174286}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a3989ba6f09b6f772a75d5d3255174286}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!is\+Opened@{is\+Opened}}
+\index{is\+Opened@{is\+Opened}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{is\+Opened()}{isOpened()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::is\+Opened (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether decoder has opened file successfully. 
+
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a27747e5f9671a16852997fe852e28e71}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a27747e5f9671a16852997fe852e28e71}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!open@{open}}
+\index{open@{open}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Opens an audio file specified by a file path. 
+
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adb47b02e2c9774cb069f393c5a63608a}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}, and \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderOgg_a7df966c2d88ddefe6fb4a49b8a1ceabb}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Ogg}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_aab596e1f3d3f5ab2cf8de5ddb356db07}\label{classcocos2d_1_1experimental_1_1AudioDecoder_aab596e1f3d3f5ab2cf8de5ddb356db07}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!open@{open}}
+\index{open@{open}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Opens an audio file specified by a file path. 
+
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a952b42c3785402bac2166c8dd1af543c}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a952b42c3785402bac2166c8dd1af543c}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!read@{read}}
+\index{read@{read}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frames\+To\+Read,  }\item[{char $\ast$}]{pcm\+Buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reads audio frames of P\+CM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames\+To\+Read} & The number of frames excepted to be read. \\
+\hline
+{\em pcm\+Buf} & The buffer to hold the frames to be read, its size should be $>$= $\vert$frames\+To\+Read$\vert$ $\ast$ \+\_\+bytes\+Per\+Frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames actually read, it\textquotesingle{}s probably less than \textquotesingle{}frames\+To\+Read\textquotesingle{}. Returns 0 means reach the end of file. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a9b033167139ff6d094fe27d79a2b78ad}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}, and \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderOgg_ae0bc8e6b0efdf11ec12235c4095bb3b1}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Ogg}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a08e022937ab16479dc381393df1bc3d5}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a08e022937ab16479dc381393df1bc3d5}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!read@{read}}
+\index{read@{read}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frames\+To\+Read,  }\item[{char $\ast$}]{pcm\+Buf }\end{DoxyParamCaption})}
+
+
+
+Reads audio frames of P\+CM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames\+To\+Read} & The number of frames excepted to be read. \\
+\hline
+{\em pcm\+Buf} & The buffer to hold the frames to be read, its size should be $>$= $\vert$frames\+To\+Read$\vert$ $\ast$ \+\_\+bytes\+Per\+Frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames actually read, it\textquotesingle{}s probably less than \textquotesingle{}frames\+To\+Read\textquotesingle{}. Returns 0 means reach the end of file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_aa4f78c77e07a069be14148ce2d78d333}\label{classcocos2d_1_1experimental_1_1AudioDecoder_aa4f78c77e07a069be14148ce2d78d333}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!read\+Fixed\+Frames@{read\+Fixed\+Frames}}
+\index{read\+Fixed\+Frames@{read\+Fixed\+Frames}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{read\+Fixed\+Frames()}{readFixedFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::read\+Fixed\+Frames (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frames\+To\+Read,  }\item[{char $\ast$}]{pcm\+Buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reads fixed audio frames of P\+CM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames\+To\+Read} & The number of frames excepted to be read. \\
+\hline
+{\em pcm\+Buf} & The buffer to hold the frames to be read, its size should be $>$= $\vert$frames\+To\+Read$\vert$ $\ast$ \+\_\+bytes\+Per\+Frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames actually read, it\textquotesingle{}s probably less than $\vert$frames\+To\+Read$\vert$. Returns 0 means reach the end of file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The different between $\vert$read$\vert$ and $\vert$read\+Fixed\+Frames$\vert$ is $\vert$read\+Fixed\+Frames$\vert$ will do multiple reading operations if $\vert$frames\+To\+Read$\vert$ frames isn\textquotesingle{}t filled entirely, while $\vert$read$\vert$ just does reading operation once whatever $\vert$frames\+To\+Read$\vert$ is or isn\textquotesingle{}t filled entirely. If current position reaches the end of frames, the return value may smaller than $\vert$frames\+To\+Read$\vert$ and the remaining buffer in $\vert$pcm\+Buf$\vert$ will be set with silence data (0x00). 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a55fbd14ff185cdf67fd9fe6674bde473}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a55fbd14ff185cdf67fd9fe6674bde473}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!read\+Fixed\+Frames@{read\+Fixed\+Frames}}
+\index{read\+Fixed\+Frames@{read\+Fixed\+Frames}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{read\+Fixed\+Frames()}{readFixedFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::read\+Fixed\+Frames (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frames\+To\+Read,  }\item[{char $\ast$}]{pcm\+Buf }\end{DoxyParamCaption})}
+
+
+
+Reads fixed audio frames of P\+CM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames\+To\+Read} & The number of frames excepted to be read. \\
+\hline
+{\em pcm\+Buf} & The buffer to hold the frames to be read, its size should be $>$= $\vert$frames\+To\+Read$\vert$ $\ast$ \+\_\+bytes\+Per\+Frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames actually read, it\textquotesingle{}s probably less than $\vert$frames\+To\+Read$\vert$. Returns 0 means reach the end of file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The different between $\vert$read$\vert$ and $\vert$read\+Fixed\+Frames$\vert$ is $\vert$read\+Fixed\+Frames$\vert$ will do multiple reading operations if $\vert$frames\+To\+Read$\vert$ frames isn\textquotesingle{}t filled entirely, while $\vert$read$\vert$ just does reading operation once whatever $\vert$frames\+To\+Read$\vert$ is or isn\textquotesingle{}t filled entirely. If current position reaches the end of frames, the return value may smaller than $\vert$frames\+To\+Read$\vert$ and the remaining buffer in $\vert$pcm\+Buf$\vert$ will be set with silence data (0x00). 
+\end{DoxyNote}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a290db97d8d4b00b6d09e145cd123b58b}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a290db97d8d4b00b6d09e145cd123b58b}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!seek@{seek}}
+\index{seek@{seek}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::seek (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets frame offest to be read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Offset} & The frame offest to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a997804dcef5a632730f0efea296374f2}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}, and \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderOgg_ae9baafa8fb2c6f887462be0cfd1388a6}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Ogg}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a59f8d937bf5fb9130bef774879ec60f4}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a59f8d937bf5fb9130bef774879ec60f4}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!seek@{seek}}
+\index{seek@{seek}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool cocos2d\+::experimental\+::\+Audio\+Decoder\+::seek (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Offset }\end{DoxyParamCaption})}
+
+
+
+Sets frame offest to be read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Offset} & The frame offest to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a6c7f6cb06a8eb9e584ff6097a3f37e95}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a6c7f6cb06a8eb9e584ff6097a3f37e95}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!tell@{tell}}
+\index{tell@{tell}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tells the current frame offset. 
+
+\begin{DoxyReturn}{Returns}
+The current frame offset. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adf8e9914377f0cca2fa45a5741bb20bf}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}, and \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderOgg_a4b0c16bf9b5f4ca1fda2752a353b836a}{cocos2d\+::experimental\+::\+Audio\+Decoder\+Ogg}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoder_a7a9f425aa4e62390e404134f19b1bdaf}\label{classcocos2d_1_1experimental_1_1AudioDecoder_a7a9f425aa4e62390e404134f19b1bdaf}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}!tell@{tell}}
+\index{tell@{tell}!cocos2d\+::experimental\+::\+Audio\+Decoder@{cocos2d\+::experimental\+::\+Audio\+Decoder}}
+\subsubsection{\texorpdfstring{tell()}{tell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tells the current frame offset. 
+
+\begin{DoxyReturn}{Returns}
+The current frame offset. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Decoder.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/android/Audio\+Decoder.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/audio/apple/Audio\+Decoder.\+mm\end{DoxyCompactItemize}

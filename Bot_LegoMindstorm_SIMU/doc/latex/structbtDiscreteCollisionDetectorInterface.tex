@@ -1,0 +1,40 @@
+\hypertarget{structbtDiscreteCollisionDetectorInterface}{}\section{bt\+Discrete\+Collision\+Detector\+Interface Struct Reference}
+\label{structbtDiscreteCollisionDetectorInterface}\index{bt\+Discrete\+Collision\+Detector\+Interface@{bt\+Discrete\+Collision\+Detector\+Interface}}
+
+
+{\ttfamily \#include $<$bt\+Discrete\+Collision\+Detector\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Discrete\+Collision\+Detector\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtDiscreteCollisionDetectorInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input}
+\item 
+struct \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtDiscreteCollisionDetectorInterface_af749c5b0731c32d086a0a42e17c38b73}\label{structbtDiscreteCollisionDetectorInterface_af749c5b0731c32d086a0a42e17c38b73}} 
+virtual void {\bfseries get\+Closest\+Points} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw, bool swap\+Results=false)=0
+\item 
+\mbox{\Hypertarget{structbtDiscreteCollisionDetectorInterface_af749c5b0731c32d086a0a42e17c38b73}\label{structbtDiscreteCollisionDetectorInterface_af749c5b0731c32d086a0a42e17c38b73}} 
+virtual void {\bfseries get\+Closest\+Points} (const \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1ClosestPointInput}{Closest\+Point\+Input} \&input, \hyperlink{structbtDiscreteCollisionDetectorInterface_1_1Result}{Result} \&output, class \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Draw, bool swap\+Results=false)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface is made to be used by an iterative approach to do Time\+Of\+Impact calculations This interface allows to query for closest points and penetration depth between two (convex) objects the closest point is on the second object (B), and the normal points from the surface on B towards A. distance is between closest points on B and closest point on A. So you can calculate closest point on A by taking closest\+Point\+InA = closest\+Point\+InB + m\+\_\+distance $\ast$ m\+\_\+normal\+On\+SurfaceB 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Narrow\+Phase\+Collision/bt\+Discrete\+Collision\+Detector\+Interface.\+h\end{DoxyCompactItemize}

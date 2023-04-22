@@ -1,0 +1,862 @@
+\hypertarget{classMesh}{}\section{Mesh Class Reference}
+\label{classMesh}\index{Mesh@{Mesh}}
+
+
+\hyperlink{classMesh}{Mesh}\+: contains ref to index buffer, \hyperlink{classGLProgramState}{G\+L\+Program\+State}, texture, skin, blend function, aabb and so on.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Mesh.\+h$>$}
+
+
+
+Inheritance diagram for Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{classMesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMesh__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMesh_a12569e3787362603b658631533643e1a}\label{classMesh_a12569e3787362603b658631533643e1a}} 
+typedef std\+::vector$<$ unsigned short $>$ {\bfseries Index\+Array}
+\item 
+\mbox{\Hypertarget{classMesh_a12569e3787362603b658631533643e1a}\label{classMesh_a12569e3787362603b658631533643e1a}} 
+typedef std\+::vector$<$ unsigned short $>$ {\bfseries Index\+Array}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{classMesh_a6424c1f70f73adcc51b23cee023b00c4}{get\+Vertex\+Buffer} () const
+\item 
+bool \hyperlink{classMesh_adb4449d816ec9935e576cdf99a18b7c1}{has\+Vertex\+Attrib} (int attrib) const
+\item 
+ssize\+\_\+t \hyperlink{classMesh_afc2d755d1c586b16983e951d1c0af38b}{get\+Mesh\+Vertex\+Attrib\+Count} () const
+\item 
+const \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} \& \hyperlink{classMesh_a8ff20e7d894aa8aeca8f16bbd16f6bc4}{get\+Mesh\+Vertex\+Attribute} (int idx)
+\item 
+int \hyperlink{classMesh_ac76eaa9d09b9198494e48c4323ae1628}{get\+Vertex\+Size\+In\+Bytes} () const
+\item 
+void \hyperlink{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}{set\+Texture} (const std\+::string \&tex\+Path)
+\item 
+void \hyperlink{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex)
+\item 
+void \hyperlink{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, N\+Texture\+Data\+::\+Usage usage, bool cache\+File\+Name=true)
+\item 
+void \hyperlink{classMesh_ac5afa042166c9f976551fb638611eb12}{set\+Texture} (const std\+::string \&tex\+Path, N\+Texture\+Data\+::\+Usage usage)
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classMesh_a61b42530666a384edab7e03dd480e15c}{get\+Texture} () const
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classMesh_a814f535d4ce6b3243d3319aa18788ee8}{get\+Texture} (N\+Texture\+Data\+::\+Usage usage)
+\item 
+void \hyperlink{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}{set\+Visible} (bool visible)
+\item 
+\mbox{\Hypertarget{classMesh_aaeec81b4b67053332bb0744a1d44449f}\label{classMesh_aaeec81b4b67053332bb0744a1d44449f}} 
+bool {\bfseries is\+Visible} () const
+\item 
+\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}{get\+Skin} () const
+\item 
+\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ \hyperlink{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}{get\+Mesh\+Index\+Data} () const
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classMesh_ae522c9730cd764069561f1ce2e15f587}{get\+G\+L\+Program\+State} () const
+\item 
+const std\+::string \& \hyperlink{classMesh_a87a6913ba3a4220a77c011ca7f75045d}{get\+Name} () const
+\item 
+\mbox{\Hypertarget{classMesh_ac339d2e0c82b8004b8a46aee48728c75}\label{classMesh_ac339d2e0c82b8004b8a46aee48728c75}} 
+void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+\mbox{\Hypertarget{classMesh_ae8ae3367f46223c4beb0bf8918043613}\label{classMesh_ae8ae3367f46223c4beb0bf8918043613}} 
+const \hyperlink{structBlendFunc}{Blend\+Func} \& {\bfseries get\+Blend\+Func} () const
+\item 
+G\+Lenum \hyperlink{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}{get\+Primitive\+Type} () const
+\item 
+ssize\+\_\+t \hyperlink{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}{get\+Index\+Count} () const
+\item 
+G\+Lenum \hyperlink{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}{get\+Index\+Format} () const
+\item 
+G\+Luint \hyperlink{classMesh_a2b30616b2101f88ffdbef2720538f9d6}{get\+Index\+Buffer} () const
+\item 
+const \hyperlink{classAABB}{A\+A\+BB} \& \hyperlink{classMesh_a62a70c82c57dabc8c728756df13c805d}{get\+A\+A\+BB} () const
+\item 
+void \hyperlink{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}{set\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State)
+\item 
+void \hyperlink{classMesh_acee71afee77988e9233bee788ac501f3}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material)
+\item 
+\hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMesh_ad0815fc310ab9de09381978871f2bc77}{get\+Material} () const
+\item 
+\mbox{\Hypertarget{classMesh_aac6b32ceb472188570a5fdfabdc84467}\label{classMesh_aac6b32ceb472188570a5fdfabdc84467}} 
+void {\bfseries draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, float globalZ, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags, unsigned int light\+Mask, const \hyperlink{classVec4}{Vec4} \&color, bool force\+Depth\+Write)
+\item 
+\hyperlink{classMeshCommand}{Mesh\+Command} \& \hyperlink{classMesh_a39c778124e07dc3e23613b78e9f717c4}{get\+Mesh\+Command} ()
+\item 
+void \hyperlink{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}{set\+Skin} (\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$skin)
+\item 
+void \hyperlink{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}{set\+Mesh\+Index\+Data} (\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$indexdata)
+\item 
+void \hyperlink{classMesh_ab944b018efbf265dc7555d793e50b4fd}{set\+Name} (const std\+::string \&name)
+\item 
+void \hyperlink{classMesh_aceba31e4566e9369d03a169c3742eb0f}{calculate\+A\+A\+BB} ()
+\item 
+void \hyperlink{classMesh_aac7eb18692391478f6bbb0a9937b86fd}{set\+Force2\+D\+Queue} (bool force2D)
+\item 
+\mbox{\Hypertarget{classMesh_aabe0b489915c74fb8565c6aee2d62b77}\label{classMesh_aabe0b489915c74fb8565c6aee2d62b77}} 
+std\+::string {\bfseries get\+Texture\+File\+Name} ()
+\item 
+G\+Luint \hyperlink{classMesh_a6424c1f70f73adcc51b23cee023b00c4}{get\+Vertex\+Buffer} () const
+\item 
+bool \hyperlink{classMesh_adb4449d816ec9935e576cdf99a18b7c1}{has\+Vertex\+Attrib} (int attrib) const
+\item 
+ssize\+\_\+t \hyperlink{classMesh_afc2d755d1c586b16983e951d1c0af38b}{get\+Mesh\+Vertex\+Attrib\+Count} () const
+\item 
+const \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} \& \hyperlink{classMesh_a3f74344b90bbb184d016767a10b17ef3}{get\+Mesh\+Vertex\+Attribute} (int idx)
+\item 
+int \hyperlink{classMesh_ac76eaa9d09b9198494e48c4323ae1628}{get\+Vertex\+Size\+In\+Bytes} () const
+\item 
+void \hyperlink{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}{set\+Texture} (const std\+::string \&tex\+Path)
+\item 
+void \hyperlink{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex)
+\item 
+void \hyperlink{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, N\+Texture\+Data\+::\+Usage usage, bool cache\+File\+Name=true)
+\item 
+void \hyperlink{classMesh_ac5afa042166c9f976551fb638611eb12}{set\+Texture} (const std\+::string \&tex\+Path, N\+Texture\+Data\+::\+Usage usage)
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classMesh_a50d6d1de8a7cafa24743acf6de58f1e8}{get\+Texture} () const
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classMesh_a541ccc1451f8c8c6554f5e7f824714ef}{get\+Texture} (N\+Texture\+Data\+::\+Usage usage)
+\item 
+void \hyperlink{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}{set\+Visible} (bool visible)
+\item 
+\mbox{\Hypertarget{classMesh_aaeec81b4b67053332bb0744a1d44449f}\label{classMesh_aaeec81b4b67053332bb0744a1d44449f}} 
+bool {\bfseries is\+Visible} () const
+\item 
+\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}{get\+Skin} () const
+\item 
+\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ \hyperlink{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}{get\+Mesh\+Index\+Data} () const
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classMesh_a146c364e9ac9e83dc1b59a07d2c47653}{get\+G\+L\+Program\+State} () const
+\item 
+const std\+::string \& \hyperlink{classMesh_a87a6913ba3a4220a77c011ca7f75045d}{get\+Name} () const
+\item 
+\mbox{\Hypertarget{classMesh_ac339d2e0c82b8004b8a46aee48728c75}\label{classMesh_ac339d2e0c82b8004b8a46aee48728c75}} 
+void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+\mbox{\Hypertarget{classMesh_a8e066740dd314e3ef00a9eb40f2c2cdb}\label{classMesh_a8e066740dd314e3ef00a9eb40f2c2cdb}} 
+const \hyperlink{structBlendFunc}{Blend\+Func} \& {\bfseries get\+Blend\+Func} () const
+\item 
+G\+Lenum \hyperlink{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}{get\+Primitive\+Type} () const
+\item 
+ssize\+\_\+t \hyperlink{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}{get\+Index\+Count} () const
+\item 
+G\+Lenum \hyperlink{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}{get\+Index\+Format} () const
+\item 
+G\+Luint \hyperlink{classMesh_a2b30616b2101f88ffdbef2720538f9d6}{get\+Index\+Buffer} () const
+\item 
+const \hyperlink{classAABB}{A\+A\+BB} \& \hyperlink{classMesh_a62a70c82c57dabc8c728756df13c805d}{get\+A\+A\+BB} () const
+\item 
+void \hyperlink{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}{set\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State)
+\item 
+void \hyperlink{classMesh_acee71afee77988e9233bee788ac501f3}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material)
+\item 
+\hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classMesh_a848b58b9b1c49199da9fbc41b444be1d}{get\+Material} () const
+\item 
+\mbox{\Hypertarget{classMesh_aac6b32ceb472188570a5fdfabdc84467}\label{classMesh_aac6b32ceb472188570a5fdfabdc84467}} 
+void {\bfseries draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, float globalZ, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags, unsigned int light\+Mask, const \hyperlink{classVec4}{Vec4} \&color, bool force\+Depth\+Write)
+\item 
+\hyperlink{classMeshCommand}{Mesh\+Command} \& \hyperlink{classMesh_a39c778124e07dc3e23613b78e9f717c4}{get\+Mesh\+Command} ()
+\item 
+void \hyperlink{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}{set\+Skin} (\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$skin)
+\item 
+void \hyperlink{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}{set\+Mesh\+Index\+Data} (\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$indexdata)
+\item 
+void \hyperlink{classMesh_ab944b018efbf265dc7555d793e50b4fd}{set\+Name} (const std\+::string \&name)
+\item 
+void \hyperlink{classMesh_aceba31e4566e9369d03a169c3742eb0f}{calculate\+A\+A\+BB} ()
+\item 
+void \hyperlink{classMesh_aac7eb18692391478f6bbb0a9937b86fd}{set\+Force2\+D\+Queue} (bool force2D)
+\item 
+\mbox{\Hypertarget{classMesh_aabe0b489915c74fb8565c6aee2d62b77}\label{classMesh_aabe0b489915c74fb8565c6aee2d62b77}} 
+std\+::string {\bfseries get\+Texture\+File\+Name} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_af6f521945ac85456827b7152f594d418}{create} (const std\+::vector$<$ float $>$ \&positions, const std\+::vector$<$ float $>$ \&normals, const std\+::vector$<$ float $>$ \&texs, const Index\+Array \&indices)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_ae8d51994d357534680ed36bfe0d6346a}{create} (const std\+::vector$<$ float $>$ \&vertices, int per\+Vertex\+Size\+In\+Float, const Index\+Array \&indices, int num\+Index, const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&attribs, int attrib\+Count)
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_a3f5fa215cad0007671d2fc8fd799f009}{create} (const std\+::vector$<$ float $>$ \&vertices, int per\+Vertex\+Size\+In\+Float, const Index\+Array \&indices, const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&attribs)
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_a182577b1a4f6d49f36cd489e30448d3f}{create} (const std\+::string \&name, \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$index\+Data, \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$skin=nullptr)
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_a202e7feff9cebe878ad1c157a8f644d0}{create} (const std\+::vector$<$ float $>$ \&positions, const std\+::vector$<$ float $>$ \&normals, const std\+::vector$<$ float $>$ \&texs, const Index\+Array \&indices)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_ab2b8bb244d820e123a75a21d43fc4e6d}{create} (const std\+::vector$<$ float $>$ \&vertices, int per\+Vertex\+Size\+In\+Float, const Index\+Array \&indices, int, const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&attribs, int)
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_a4563d7c3ec3ddc78e06c552169749975}{create} (const std\+::vector$<$ float $>$ \&vertices, int per\+Vertex\+Size\+In\+Float, const Index\+Array \&indices, const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&attribs)
+\item 
+static \hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classMesh_ae362fa6755a83ff158b7f84924cb4e9e}{create} (const std\+::string \&name, \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$index\+Data, \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$skin=nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMesh_ab58c3e16576e29d7f98dbbe8f8ae5ef3}\label{classMesh_ab58c3e16576e29d7f98dbbe8f8ae5ef3}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classMesh}{Mesh}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMesh_a8e1ceb78f9e653b819feff99a137e914}\label{classMesh_a8e1ceb78f9e653b819feff99a137e914}} 
+void {\bfseries reset\+Light\+Uniform\+Values} ()
+\item 
+\mbox{\Hypertarget{classMesh_a638e8ddde36671ac172e111ee1651ea9}\label{classMesh_a638e8ddde36671ac172e111ee1651ea9}} 
+void {\bfseries set\+Light\+Uniforms} (\hyperlink{classPass}{Pass} $\ast$pass, \hyperlink{classScene}{Scene} $\ast$scene, const \hyperlink{classVec4}{Vec4} \&color, unsigned int lightmask)
+\item 
+\mbox{\Hypertarget{classMesh_a761ae3ff276f53aab311bbdba1b5a37e}\label{classMesh_a761ae3ff276f53aab311bbdba1b5a37e}} 
+void {\bfseries bind\+Mesh\+Command} ()
+\item 
+\mbox{\Hypertarget{classMesh_a8e1ceb78f9e653b819feff99a137e914}\label{classMesh_a8e1ceb78f9e653b819feff99a137e914}} 
+void {\bfseries reset\+Light\+Uniform\+Values} ()
+\item 
+\mbox{\Hypertarget{classMesh_a638e8ddde36671ac172e111ee1651ea9}\label{classMesh_a638e8ddde36671ac172e111ee1651ea9}} 
+void {\bfseries set\+Light\+Uniforms} (\hyperlink{classPass}{Pass} $\ast$pass, \hyperlink{classScene}{Scene} $\ast$scene, const \hyperlink{classVec4}{Vec4} \&color, unsigned int lightmask)
+\item 
+\mbox{\Hypertarget{classMesh_a761ae3ff276f53aab311bbdba1b5a37e}\label{classMesh_a761ae3ff276f53aab311bbdba1b5a37e}} 
+void {\bfseries bind\+Mesh\+Command} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMesh_af06070fa117cd6f0148c170c803ea96a}\label{classMesh_af06070fa117cd6f0148c170c803ea96a}} 
+std\+::map$<$ N\+Texture\+Data\+::\+Usage, \hyperlink{classTexture2D}{Texture2D} $\ast$ $>$ {\bfseries \+\_\+textures}
+\item 
+\mbox{\Hypertarget{classMesh_ae97b17f59cd6941f460fbfbbbcac98d8}\label{classMesh_ae97b17f59cd6941f460fbfbbbcac98d8}} 
+\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ {\bfseries \+\_\+skin}
+\item 
+\mbox{\Hypertarget{classMesh_a1e7d2e0711bc22aee5a120c761c99dec}\label{classMesh_a1e7d2e0711bc22aee5a120c761c99dec}} 
+bool {\bfseries \+\_\+visible}
+\item 
+\mbox{\Hypertarget{classMesh_adcc1e4fd2f9c05965c6dbd9e3b31889a}\label{classMesh_adcc1e4fd2f9c05965c6dbd9e3b31889a}} 
+bool {\bfseries \+\_\+is\+Transparent}
+\item 
+\mbox{\Hypertarget{classMesh_a335b08e58a6b3f5b4c0ad128694da192}\label{classMesh_a335b08e58a6b3f5b4c0ad128694da192}} 
+bool {\bfseries \+\_\+force2\+D\+Queue}
+\item 
+\mbox{\Hypertarget{classMesh_a556913beae21d0427bd8353815cf439e}\label{classMesh_a556913beae21d0427bd8353815cf439e}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\mbox{\Hypertarget{classMesh_a8fba460d731a55f9a656df3cc0a92ce6}\label{classMesh_a8fba460d731a55f9a656df3cc0a92ce6}} 
+\hyperlink{classMeshCommand}{Mesh\+Command} {\bfseries \+\_\+mesh\+Command}
+\item 
+\mbox{\Hypertarget{classMesh_a0d589188c16726af53583e4d09709a60}\label{classMesh_a0d589188c16726af53583e4d09709a60}} 
+\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ {\bfseries \+\_\+mesh\+Index\+Data}
+\item 
+\mbox{\Hypertarget{classMesh_a39ab16c299f21660977376862108d55e}\label{classMesh_a39ab16c299f21660977376862108d55e}} 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ {\bfseries \+\_\+gl\+Program\+State}
+\item 
+\mbox{\Hypertarget{classMesh_a4f74977fdcb6b6c0cea5e770c862de21}\label{classMesh_a4f74977fdcb6b6c0cea5e770c862de21}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend}
+\item 
+\mbox{\Hypertarget{classMesh_adcdaa3d8c53b3b5bcb24e929e35955e2}\label{classMesh_adcdaa3d8c53b3b5bcb24e929e35955e2}} 
+bool {\bfseries \+\_\+blend\+Dirty}
+\item 
+\mbox{\Hypertarget{classMesh_ac10f868100cb08d6286c82a4339af8ce}\label{classMesh_ac10f868100cb08d6286c82a4339af8ce}} 
+\hyperlink{classMaterial}{Material} $\ast$ {\bfseries \+\_\+material}
+\item 
+\mbox{\Hypertarget{classMesh_a57be715ca67775ad833f6ed0099100fc}\label{classMesh_a57be715ca67775ad833f6ed0099100fc}} 
+\hyperlink{classAABB}{A\+A\+BB} {\bfseries \+\_\+aabb}
+\item 
+\mbox{\Hypertarget{classMesh_a2719ad503ea85e855f89b854f3e86162}\label{classMesh_a2719ad503ea85e855f89b854f3e86162}} 
+std\+::function$<$ void()$>$ {\bfseries \+\_\+visible\+Changed}
+\item 
+\mbox{\Hypertarget{classMesh_a54cf8930e8c06ce530c870996d409c27}\label{classMesh_a54cf8930e8c06ce530c870996d409c27}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ \hyperlink{classMesh_a54cf8930e8c06ce530c870996d409c27}{\+\_\+dir\+Light\+Uniform\+Color\+Values}
+\begin{DoxyCompactList}\small\item\em light parameters \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMesh_acea92f2f8e1cfefd6139663ce74c30db}\label{classMesh_acea92f2f8e1cfefd6139663ce74c30db}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+dir\+Light\+Uniform\+Dir\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a4623a49fde6433fe620cd670c8878319}\label{classMesh_a4623a49fde6433fe620cd670c8878319}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+point\+Light\+Uniform\+Color\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_ad060df601303df666a4f23ce1898705e}\label{classMesh_ad060df601303df666a4f23ce1898705e}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+point\+Light\+Uniform\+Position\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_af1fff4b21c4d4cb58c3ec53ed8bc0e24}\label{classMesh_af1fff4b21c4d4cb58c3ec53ed8bc0e24}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+point\+Light\+Uniform\+Range\+Inverse\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a5157754defbcd6cb5c6f85f13447501b}\label{classMesh_a5157754defbcd6cb5c6f85f13447501b}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Color\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a7b38a3f2f2f6f933a51b396f5eb5483b}\label{classMesh_a7b38a3f2f2f6f933a51b396f5eb5483b}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Position\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a243656307d9d19129f48870247c121e3}\label{classMesh_a243656307d9d19129f48870247c121e3}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Dir\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_acf311b8a33cc1c3a9c0754ae9692c914}\label{classMesh_acf311b8a33cc1c3a9c0754ae9692c914}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Inner\+Angle\+Cos\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a4e54ff3156ef7f147075a870f693f07e}\label{classMesh_a4e54ff3156ef7f147075a870f693f07e}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Outer\+Angle\+Cos\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a2209e4ce75bdb15d65e3e1870a800677}\label{classMesh_a2209e4ce75bdb15d65e3e1870a800677}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+spot\+Light\+Uniform\+Range\+Inverse\+Values}
+\item 
+\mbox{\Hypertarget{classMesh_a029bbc1384bb0e9fb1d6f1e70b92ca25}\label{classMesh_a029bbc1384bb0e9fb1d6f1e70b92ca25}} 
+std\+::string {\bfseries \+\_\+tex\+File}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMesh_af6c4966aafabcc15b700aea1c2e12528}\label{classMesh_af6c4966aafabcc15b700aea1c2e12528}} 
+class {\bfseries Sprite3D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMesh}{Mesh}\+: contains ref to index buffer, \hyperlink{classGLProgramState}{G\+L\+Program\+State}, texture, skin, blend function, aabb and so on. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMesh_aceba31e4566e9369d03a169c3742eb0f}\label{classMesh_aceba31e4566e9369d03a169c3742eb0f}} 
+\index{Mesh@{Mesh}!calculate\+A\+A\+BB@{calculate\+A\+A\+BB}}
+\index{calculate\+A\+A\+BB@{calculate\+A\+A\+BB}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{calculate\+A\+A\+B\+B()}{calculateAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::calculate\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+calculate the \hyperlink{classAABB}{A\+A\+BB} of the mesh \begin{DoxyNote}{Note}
+the \hyperlink{classAABB}{A\+A\+BB} is in the local space, not the world space 
+\end{DoxyNote}
+\mbox{\Hypertarget{classMesh_aceba31e4566e9369d03a169c3742eb0f}\label{classMesh_aceba31e4566e9369d03a169c3742eb0f}} 
+\index{Mesh@{Mesh}!calculate\+A\+A\+BB@{calculate\+A\+A\+BB}}
+\index{calculate\+A\+A\+BB@{calculate\+A\+A\+BB}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{calculate\+A\+A\+B\+B()}{calculateAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::calculate\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+calculate the \hyperlink{classAABB}{A\+A\+BB} of the mesh \begin{DoxyNote}{Note}
+the \hyperlink{classAABB}{A\+A\+BB} is in the local space, not the world space 
+\end{DoxyNote}
+\mbox{\Hypertarget{classMesh_af6f521945ac85456827b7152f594d418}\label{classMesh_af6f521945ac85456827b7152f594d418}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{positions,  }\item[{const std\+::vector$<$ float $>$ \&}]{normals,  }\item[{const std\+::vector$<$ float $>$ \&}]{texs,  }\item[{const Index\+Array \&}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create mesh from positions, normals, and so on, single Sub\+Mesh \mbox{\Hypertarget{classMesh_a202e7feff9cebe878ad1c157a8f644d0}\label{classMesh_a202e7feff9cebe878ad1c157a8f644d0}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily static \hyperlink{classMesh}{Mesh}$\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{positions,  }\item[{const std\+::vector$<$ float $>$ \&}]{normals,  }\item[{const std\+::vector$<$ float $>$ \&}]{texs,  }\item[{const Index\+Array \&}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create mesh from positions, normals, and so on, single Sub\+Mesh \mbox{\Hypertarget{classMesh_ae8d51994d357534680ed36bfe0d6346a}\label{classMesh_ae8d51994d357534680ed36bfe0d6346a}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMesh}{Mesh}$\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices,  }\item[{int}]{per\+Vertex\+Size\+In\+Float,  }\item[{const Index\+Array \&}]{indices,  }\item[{int}]{num\+Index,  }\item[{const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&}]{attribs,  }\item[{int}]{attrib\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+create mesh with vertex attributes \mbox{\Hypertarget{classMesh_ab2b8bb244d820e123a75a21d43fc4e6d}\label{classMesh_ab2b8bb244d820e123a75a21d43fc4e6d}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMesh}{Mesh}$\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices,  }\item[{int}]{per\+Vertex\+Size\+In\+Float,  }\item[{const Index\+Array \&}]{indices,  }\item[{int}]{,  }\item[{const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&}]{attribs,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+create mesh with vertex attributes \mbox{\Hypertarget{classMesh_a3f5fa215cad0007671d2fc8fd799f009}\label{classMesh_a3f5fa215cad0007671d2fc8fd799f009}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices,  }\item[{int}]{per\+Vertex\+Size\+In\+Float,  }\item[{const Index\+Array \&}]{indices,  }\item[{const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&}]{attribs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+NA \mbox{\Hypertarget{classMesh_a4563d7c3ec3ddc78e06c552169749975}\label{classMesh_a4563d7c3ec3ddc78e06c552169749975}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily static \hyperlink{classMesh}{Mesh}$\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices,  }\item[{int}]{per\+Vertex\+Size\+In\+Float,  }\item[{const Index\+Array \&}]{indices,  }\item[{const std\+::vector$<$ \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} $>$ \&}]{attribs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+NA \mbox{\Hypertarget{classMesh_a182577b1a4f6d49f36cd489e30448d3f}\label{classMesh_a182577b1a4f6d49f36cd489e30448d3f}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{index\+Data,  }\item[{\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$}]{skin = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create mesh  NA \mbox{\Hypertarget{classMesh_ae362fa6755a83ff158b7f84924cb4e9e}\label{classMesh_ae362fa6755a83ff158b7f84924cb4e9e}} 
+\index{Mesh@{Mesh}!create@{create}}
+\index{create@{create}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily static \hyperlink{classMesh}{Mesh}$\ast$ Mesh\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{index\+Data,  }\item[{\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$}]{skin = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create mesh  NA \mbox{\Hypertarget{classMesh_a62a70c82c57dabc8c728756df13c805d}\label{classMesh_a62a70c82c57dabc8c728756df13c805d}} 
+\index{Mesh@{Mesh}!get\+A\+A\+BB@{get\+A\+A\+BB}}
+\index{get\+A\+A\+BB@{get\+A\+A\+BB}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+A\+A\+B\+B()}{getAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classAABB}{A\+A\+BB}\& Mesh\+::get\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \hyperlink{classAABB}{A\+A\+BB} \mbox{\Hypertarget{classMesh_a62a70c82c57dabc8c728756df13c805d}\label{classMesh_a62a70c82c57dabc8c728756df13c805d}} 
+\index{Mesh@{Mesh}!get\+A\+A\+BB@{get\+A\+A\+BB}}
+\index{get\+A\+A\+BB@{get\+A\+A\+BB}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+A\+A\+B\+B()}{getAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classAABB}{A\+A\+BB}\& Mesh\+::get\+A\+A\+BB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \hyperlink{classAABB}{A\+A\+BB} \mbox{\Hypertarget{classMesh_ae522c9730cd764069561f1ce2e15f587}\label{classMesh_ae522c9730cd764069561f1ce2e15f587}} 
+\index{Mesh@{Mesh}!get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}}
+\index{get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program\+State()}{getGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ Mesh\+::get\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classGLProgramState}{G\+L\+Program\+State}
+
+NA \mbox{\Hypertarget{classMesh_a146c364e9ac9e83dc1b59a07d2c47653}\label{classMesh_a146c364e9ac9e83dc1b59a07d2c47653}} 
+\index{Mesh@{Mesh}!get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}}
+\index{get\+G\+L\+Program\+State@{get\+G\+L\+Program\+State}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+G\+L\+Program\+State()}{getGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ Mesh\+::get\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classGLProgramState}{G\+L\+Program\+State}
+
+NA \mbox{\Hypertarget{classMesh_a2b30616b2101f88ffdbef2720538f9d6}\label{classMesh_a2b30616b2101f88ffdbef2720538f9d6}} 
+\index{Mesh@{Mesh}!get\+Index\+Buffer@{get\+Index\+Buffer}}
+\index{get\+Index\+Buffer@{get\+Index\+Buffer}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Buffer()}{getIndexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::get\+Index\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index buffer
+
+NA \mbox{\Hypertarget{classMesh_a2b30616b2101f88ffdbef2720538f9d6}\label{classMesh_a2b30616b2101f88ffdbef2720538f9d6}} 
+\index{Mesh@{Mesh}!get\+Index\+Buffer@{get\+Index\+Buffer}}
+\index{get\+Index\+Buffer@{get\+Index\+Buffer}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Buffer()}{getIndexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::get\+Index\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index buffer
+
+NA \mbox{\Hypertarget{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}\label{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}} 
+\index{Mesh@{Mesh}!get\+Index\+Count@{get\+Index\+Count}}
+\index{get\+Index\+Count@{get\+Index\+Count}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Count()}{getIndexCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+::get\+Index\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index count
+
+NA \mbox{\Hypertarget{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}\label{classMesh_a7ae6ed2eb06a5cbf4f3154b7fa668a4d}} 
+\index{Mesh@{Mesh}!get\+Index\+Count@{get\+Index\+Count}}
+\index{get\+Index\+Count@{get\+Index\+Count}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Count()}{getIndexCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+::get\+Index\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index count
+
+NA \mbox{\Hypertarget{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}\label{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}} 
+\index{Mesh@{Mesh}!get\+Index\+Format@{get\+Index\+Format}}
+\index{get\+Index\+Format@{get\+Index\+Format}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Format()}{getIndexFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lenum Mesh\+::get\+Index\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index format
+
+NA \mbox{\Hypertarget{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}\label{classMesh_a1d23b78ab2e51b134ae79acd2754f45c}} 
+\index{Mesh@{Mesh}!get\+Index\+Format@{get\+Index\+Format}}
+\index{get\+Index\+Format@{get\+Index\+Format}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Index\+Format()}{getIndexFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Lenum Mesh\+::get\+Index\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get index format
+
+NA \mbox{\Hypertarget{classMesh_ad0815fc310ab9de09381978871f2bc77}\label{classMesh_ad0815fc310ab9de09381978871f2bc77}} 
+\index{Mesh@{Mesh}!get\+Material@{get\+Material}}
+\index{get\+Material@{get\+Material}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Material()}{getMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Mesh\+::get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classMaterial}{Material} being used by the \hyperlink{classMesh}{Mesh} \mbox{\Hypertarget{classMesh_a848b58b9b1c49199da9fbc41b444be1d}\label{classMesh_a848b58b9b1c49199da9fbc41b444be1d}} 
+\index{Mesh@{Mesh}!get\+Material@{get\+Material}}
+\index{get\+Material@{get\+Material}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Material()}{getMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material}$\ast$ Mesh\+::get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classMaterial}{Material} being used by the \hyperlink{classMesh}{Mesh} \mbox{\Hypertarget{classMesh_a39c778124e07dc3e23613b78e9f717c4}\label{classMesh_a39c778124e07dc3e23613b78e9f717c4}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Command@{get\+Mesh\+Command}}
+\index{get\+Mesh\+Command@{get\+Mesh\+Command}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Command()}{getMeshCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshCommand}{Mesh\+Command}\& Mesh\+::get\+Mesh\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \hyperlink{classMeshCommand}{Mesh\+Command}. \mbox{\Hypertarget{classMesh_a39c778124e07dc3e23613b78e9f717c4}\label{classMesh_a39c778124e07dc3e23613b78e9f717c4}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Command@{get\+Mesh\+Command}}
+\index{get\+Mesh\+Command@{get\+Mesh\+Command}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Command()}{getMeshCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshCommand}{Mesh\+Command}\& Mesh\+::get\+Mesh\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \hyperlink{classMeshCommand}{Mesh\+Command}. \mbox{\Hypertarget{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}\label{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}}
+\index{get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Index\+Data()}{getMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshIndexData}{Mesh\+Index\+Data}$\ast$ Mesh\+::get\+Mesh\+Index\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+mesh index data getter
+
+NA \mbox{\Hypertarget{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}\label{classMesh_abbe2d7d3d9cbefc55576375fdca32ecd}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}}
+\index{get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Index\+Data()}{getMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshIndexData}{Mesh\+Index\+Data}$\ast$ Mesh\+::get\+Mesh\+Index\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+mesh index data getter
+
+NA \mbox{\Hypertarget{classMesh_afc2d755d1c586b16983e951d1c0af38b}\label{classMesh_afc2d755d1c586b16983e951d1c0af38b}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Vertex\+Attrib\+Count@{get\+Mesh\+Vertex\+Attrib\+Count}}
+\index{get\+Mesh\+Vertex\+Attrib\+Count@{get\+Mesh\+Vertex\+Attrib\+Count}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Vertex\+Attrib\+Count()}{getMeshVertexAttribCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+::get\+Mesh\+Vertex\+Attrib\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get mesh vertex attribute count \mbox{\Hypertarget{classMesh_afc2d755d1c586b16983e951d1c0af38b}\label{classMesh_afc2d755d1c586b16983e951d1c0af38b}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Vertex\+Attrib\+Count@{get\+Mesh\+Vertex\+Attrib\+Count}}
+\index{get\+Mesh\+Vertex\+Attrib\+Count@{get\+Mesh\+Vertex\+Attrib\+Count}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Vertex\+Attrib\+Count()}{getMeshVertexAttribCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+::get\+Mesh\+Vertex\+Attrib\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get mesh vertex attribute count \mbox{\Hypertarget{classMesh_a8ff20e7d894aa8aeca8f16bbd16f6bc4}\label{classMesh_a8ff20e7d894aa8aeca8f16bbd16f6bc4}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Vertex\+Attribute@{get\+Mesh\+Vertex\+Attribute}}
+\index{get\+Mesh\+Vertex\+Attribute@{get\+Mesh\+Vertex\+Attribute}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Vertex\+Attribute()}{getMeshVertexAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib} \& Mesh\+::get\+Mesh\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+get Mesh\+Vertex\+Attribute by index \mbox{\Hypertarget{classMesh_a3f74344b90bbb184d016767a10b17ef3}\label{classMesh_a3f74344b90bbb184d016767a10b17ef3}} 
+\index{Mesh@{Mesh}!get\+Mesh\+Vertex\+Attribute@{get\+Mesh\+Vertex\+Attribute}}
+\index{get\+Mesh\+Vertex\+Attribute@{get\+Mesh\+Vertex\+Attribute}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Vertex\+Attribute()}{getMeshVertexAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structMeshVertexAttrib}{Mesh\+Vertex\+Attrib}\& Mesh\+::get\+Mesh\+Vertex\+Attribute (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+get Mesh\+Vertex\+Attribute by index \mbox{\Hypertarget{classMesh_a87a6913ba3a4220a77c011ca7f75045d}\label{classMesh_a87a6913ba3a4220a77c011ca7f75045d}} 
+\index{Mesh@{Mesh}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& Mesh\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+name getter \mbox{\Hypertarget{classMesh_a87a6913ba3a4220a77c011ca7f75045d}\label{classMesh_a87a6913ba3a4220a77c011ca7f75045d}} 
+\index{Mesh@{Mesh}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& Mesh\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+name getter \mbox{\Hypertarget{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}\label{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}} 
+\index{Mesh@{Mesh}!get\+Primitive\+Type@{get\+Primitive\+Type}}
+\index{get\+Primitive\+Type@{get\+Primitive\+Type}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Primitive\+Type()}{getPrimitiveType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Lenum Mesh\+::get\+Primitive\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get primitive type
+
+NA \mbox{\Hypertarget{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}\label{classMesh_a1b3969fa1a815cafb840cb7ab8a83ad7}} 
+\index{Mesh@{Mesh}!get\+Primitive\+Type@{get\+Primitive\+Type}}
+\index{get\+Primitive\+Type@{get\+Primitive\+Type}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Primitive\+Type()}{getPrimitiveType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Lenum Mesh\+::get\+Primitive\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get primitive type
+
+NA \mbox{\Hypertarget{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}\label{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}} 
+\index{Mesh@{Mesh}!get\+Skin@{get\+Skin}}
+\index{get\+Skin@{get\+Skin}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Skin()}{getSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshSkin}{Mesh\+Skin}$\ast$ Mesh\+::get\+Skin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+skin getter
+
+NA \mbox{\Hypertarget{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}\label{classMesh_a2d8bd33f1b0978afe7fbc37359b7e8a9}} 
+\index{Mesh@{Mesh}!get\+Skin@{get\+Skin}}
+\index{get\+Skin@{get\+Skin}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Skin()}{getSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshSkin}{Mesh\+Skin}$\ast$ Mesh\+::get\+Skin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+skin getter
+
+NA \mbox{\Hypertarget{classMesh_a61b42530666a384edab7e03dd480e15c}\label{classMesh_a61b42530666a384edab7e03dd480e15c}} 
+\index{Mesh@{Mesh}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Mesh\+::get\+Texture (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call get\+Texture(\+N\+Texture\+Data\+::\+Usage\+::\+Diffuse) \begin{DoxyReturn}{Returns}
+Texture used, return the texture of first mesh if multiple meshes exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMesh_a50d6d1de8a7cafa24743acf6de58f1e8}\label{classMesh_a50d6d1de8a7cafa24743acf6de58f1e8}} 
+\index{Mesh@{Mesh}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D}$\ast$ Mesh\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call get\+Texture(\+N\+Texture\+Data\+::\+Usage\+::\+Diffuse) \begin{DoxyReturn}{Returns}
+Texture used, return the texture of first mesh if multiple meshes exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMesh_a814f535d4ce6b3243d3319aa18788ee8}\label{classMesh_a814f535d4ce6b3243d3319aa18788ee8}} 
+\index{Mesh@{Mesh}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Mesh\+::get\+Texture (\begin{DoxyParamCaption}\item[{N\+Texture\+Data\+::\+Usage}]{usage }\end{DoxyParamCaption})}
+
+Get texture 
+\begin{DoxyParams}{Parameters}
+{\em usage} & Usage of returned texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The texture of this usage, return the texture of first mesh if multiple meshes exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMesh_a541ccc1451f8c8c6554f5e7f824714ef}\label{classMesh_a541ccc1451f8c8c6554f5e7f824714ef}} 
+\index{Mesh@{Mesh}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D}$\ast$ Mesh\+::get\+Texture (\begin{DoxyParamCaption}\item[{N\+Texture\+Data\+::\+Usage}]{usage }\end{DoxyParamCaption})}
+
+Get texture 
+\begin{DoxyParams}{Parameters}
+{\em usage} & Usage of returned texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The texture of this usage, return the texture of first mesh if multiple meshes exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMesh_a6424c1f70f73adcc51b23cee023b00c4}\label{classMesh_a6424c1f70f73adcc51b23cee023b00c4}} 
+\index{Mesh@{Mesh}!get\+Vertex\+Buffer@{get\+Vertex\+Buffer}}
+\index{get\+Vertex\+Buffer@{get\+Vertex\+Buffer}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Buffer()}{getVertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::get\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get vertex buffer
+
+NA \mbox{\Hypertarget{classMesh_a6424c1f70f73adcc51b23cee023b00c4}\label{classMesh_a6424c1f70f73adcc51b23cee023b00c4}} 
+\index{Mesh@{Mesh}!get\+Vertex\+Buffer@{get\+Vertex\+Buffer}}
+\index{get\+Vertex\+Buffer@{get\+Vertex\+Buffer}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Buffer()}{getVertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::get\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get vertex buffer
+
+NA \mbox{\Hypertarget{classMesh_ac76eaa9d09b9198494e48c4323ae1628}\label{classMesh_ac76eaa9d09b9198494e48c4323ae1628}} 
+\index{Mesh@{Mesh}!get\+Vertex\+Size\+In\+Bytes@{get\+Vertex\+Size\+In\+Bytes}}
+\index{get\+Vertex\+Size\+In\+Bytes@{get\+Vertex\+Size\+In\+Bytes}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Size\+In\+Bytes()}{getVertexSizeInBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Mesh\+::get\+Vertex\+Size\+In\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get per vertex size in bytes \mbox{\Hypertarget{classMesh_ac76eaa9d09b9198494e48c4323ae1628}\label{classMesh_ac76eaa9d09b9198494e48c4323ae1628}} 
+\index{Mesh@{Mesh}!get\+Vertex\+Size\+In\+Bytes@{get\+Vertex\+Size\+In\+Bytes}}
+\index{get\+Vertex\+Size\+In\+Bytes@{get\+Vertex\+Size\+In\+Bytes}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Size\+In\+Bytes()}{getVertexSizeInBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Mesh\+::get\+Vertex\+Size\+In\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get per vertex size in bytes \mbox{\Hypertarget{classMesh_adb4449d816ec9935e576cdf99a18b7c1}\label{classMesh_adb4449d816ec9935e576cdf99a18b7c1}} 
+\index{Mesh@{Mesh}!has\+Vertex\+Attrib@{has\+Vertex\+Attrib}}
+\index{has\+Vertex\+Attrib@{has\+Vertex\+Attrib}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{has\+Vertex\+Attrib()}{hasVertexAttrib()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mesh\+::has\+Vertex\+Attrib (\begin{DoxyParamCaption}\item[{int}]{attrib }\end{DoxyParamCaption}) const}
+
+has vertex attribute?
+
+NA \mbox{\Hypertarget{classMesh_adb4449d816ec9935e576cdf99a18b7c1}\label{classMesh_adb4449d816ec9935e576cdf99a18b7c1}} 
+\index{Mesh@{Mesh}!has\+Vertex\+Attrib@{has\+Vertex\+Attrib}}
+\index{has\+Vertex\+Attrib@{has\+Vertex\+Attrib}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{has\+Vertex\+Attrib()}{hasVertexAttrib()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mesh\+::has\+Vertex\+Attrib (\begin{DoxyParamCaption}\item[{int}]{attrib }\end{DoxyParamCaption}) const}
+
+has vertex attribute?
+
+NA \mbox{\Hypertarget{classMesh_aac7eb18692391478f6bbb0a9937b86fd}\label{classMesh_aac7eb18692391478f6bbb0a9937b86fd}} 
+\index{Mesh@{Mesh}!set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}}
+\index{set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Force2\+D\+Queue()}{setForce2DQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Force2\+D\+Queue (\begin{DoxyParamCaption}\item[{bool}]{force2D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+force set this \hyperlink{classSprite3D}{Sprite3D} to 2D render queue \mbox{\Hypertarget{classMesh_aac7eb18692391478f6bbb0a9937b86fd}\label{classMesh_aac7eb18692391478f6bbb0a9937b86fd}} 
+\index{Mesh@{Mesh}!set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}}
+\index{set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Force2\+D\+Queue()}{setForce2DQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Force2\+D\+Queue (\begin{DoxyParamCaption}\item[{bool}]{force2D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+force set this \hyperlink{classSprite3D}{Sprite3D} to 2D render queue \mbox{\Hypertarget{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}\label{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}} 
+\index{Mesh@{Mesh}!set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}}
+\index{set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program\+State()}{setGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})}
+
+Sets a new \hyperlink{classGLProgramState}{G\+L\+Program\+State} for the \hyperlink{classMesh}{Mesh} A new \hyperlink{classMaterial}{Material} will be created for it \mbox{\Hypertarget{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}\label{classMesh_a0ed181ab96758bfef2c6836aad2d8f8c}} 
+\index{Mesh@{Mesh}!set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}}
+\index{set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program\+State()}{setGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})}
+
+Sets a new \hyperlink{classGLProgramState}{G\+L\+Program\+State} for the \hyperlink{classMesh}{Mesh} A new \hyperlink{classMaterial}{Material} will be created for it \mbox{\Hypertarget{classMesh_acee71afee77988e9233bee788ac501f3}\label{classMesh_acee71afee77988e9233bee788ac501f3}} 
+\index{Mesh@{Mesh}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material }\end{DoxyParamCaption})}
+
+Sets a new \hyperlink{classMaterial}{Material} to the \hyperlink{classMesh}{Mesh} \mbox{\Hypertarget{classMesh_acee71afee77988e9233bee788ac501f3}\label{classMesh_acee71afee77988e9233bee788ac501f3}} 
+\index{Mesh@{Mesh}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material }\end{DoxyParamCaption})}
+
+Sets a new \hyperlink{classMaterial}{Material} to the \hyperlink{classMesh}{Mesh} \mbox{\Hypertarget{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}\label{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}} 
+\index{Mesh@{Mesh}!set\+Mesh\+Index\+Data@{set\+Mesh\+Index\+Data}}
+\index{set\+Mesh\+Index\+Data@{set\+Mesh\+Index\+Data}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Mesh\+Index\+Data()}{setMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Mesh\+Index\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{indexdata }\end{DoxyParamCaption})}
+
+\hyperlink{classMesh}{Mesh} index data setter \mbox{\Hypertarget{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}\label{classMesh_ab9bbc073beb34fd8bd5b5b0f973a4fe2}} 
+\index{Mesh@{Mesh}!set\+Mesh\+Index\+Data@{set\+Mesh\+Index\+Data}}
+\index{set\+Mesh\+Index\+Data@{set\+Mesh\+Index\+Data}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Mesh\+Index\+Data()}{setMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Mesh\+Index\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$}]{indexdata }\end{DoxyParamCaption})}
+
+\hyperlink{classMesh}{Mesh} index data setter \mbox{\Hypertarget{classMesh_ab944b018efbf265dc7555d793e50b4fd}\label{classMesh_ab944b018efbf265dc7555d793e50b4fd}} 
+\index{Mesh@{Mesh}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+name setter \mbox{\Hypertarget{classMesh_ab944b018efbf265dc7555d793e50b4fd}\label{classMesh_ab944b018efbf265dc7555d793e50b4fd}} 
+\index{Mesh@{Mesh}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+name setter \mbox{\Hypertarget{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}\label{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}} 
+\index{Mesh@{Mesh}!set\+Skin@{set\+Skin}}
+\index{set\+Skin@{set\+Skin}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Skin()}{setSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Skin (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$}]{skin }\end{DoxyParamCaption})}
+
+skin setter \mbox{\Hypertarget{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}\label{classMesh_a5af01fd336373b86c3f3f092f7eb03ec}} 
+\index{Mesh@{Mesh}!set\+Skin@{set\+Skin}}
+\index{set\+Skin@{set\+Skin}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Skin()}{setSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Skin (\begin{DoxyParamCaption}\item[{\hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$}]{skin }\end{DoxyParamCaption})}
+
+skin setter \mbox{\Hypertarget{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}\label{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Path }\end{DoxyParamCaption})}
+
+set texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call set\+Texture(tex\+Path, N\+Texture\+Data\+::\+Usage\+::\+Diffuse) 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Path} & texture path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}\label{classMesh_a2840f1e3e43c12acf51af1e34398a9a2}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Path }\end{DoxyParamCaption})}
+
+set texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call set\+Texture(tex\+Path, N\+Texture\+Data\+::\+Usage\+::\+Diffuse) 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Path} & texture path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}\label{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex }\end{DoxyParamCaption})}
+
+set texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call set\+Texture(tex\+Path, N\+Texture\+Data\+::\+Usage\+::\+Diffuse) 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}\label{classMesh_aa3492c9c06f12e024e2b7e1ec6258e0a}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex }\end{DoxyParamCaption})}
+
+set texture (diffuse), which is responsible for the main appearance. It is also means main texture, you can also call set\+Texture(tex\+Path, N\+Texture\+Data\+::\+Usage\+::\+Diffuse) 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}\label{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{N\+Texture\+Data\+::\+Usage}]{usage,  }\item[{bool}]{cache\+File\+Name = {\ttfamily true} }\end{DoxyParamCaption})}
+
+set texture 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to be set \\
+\hline
+{\em usage} & Usage of this texture \\
+\hline
+{\em whether} & refresh the cache file name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}\label{classMesh_ae39c726ae3c302a5f6bcf8cb31ee7897}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{N\+Texture\+Data\+::\+Usage}]{usage,  }\item[{bool}]{cache\+File\+Name = {\ttfamily true} }\end{DoxyParamCaption})}
+
+set texture 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to be set \\
+\hline
+{\em usage} & Usage of this texture \\
+\hline
+{\em whether} & refresh the cache file name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_ac5afa042166c9f976551fb638611eb12}\label{classMesh_ac5afa042166c9f976551fb638611eb12}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Path,  }\item[{N\+Texture\+Data\+::\+Usage}]{usage }\end{DoxyParamCaption})}
+
+set texture 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Path} & texture path \\
+\hline
+{\em usage} & Usage of this texture \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_ac5afa042166c9f976551fb638611eb12}\label{classMesh_ac5afa042166c9f976551fb638611eb12}} 
+\index{Mesh@{Mesh}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Path,  }\item[{N\+Texture\+Data\+::\+Usage}]{usage }\end{DoxyParamCaption})}
+
+set texture 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Path} & texture path \\
+\hline
+{\em usage} & Usage of this texture \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}\label{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}} 
+\index{Mesh@{Mesh}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})}
+
+visible getter and setter \mbox{\Hypertarget{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}\label{classMesh_a4b1d195f81afe1429d5fdffeaab2a25b}} 
+\index{Mesh@{Mesh}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})}
+
+visible getter and setter 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Mesh.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Mesh.\+cpp\end{DoxyCompactItemize}

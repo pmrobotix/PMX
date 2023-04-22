@@ -1,0 +1,88 @@
+\hypertarget{classLedBarTimer}{}\section{Led\+Bar\+Timer Class Reference}
+\label{classLedBarTimer}\index{Led\+Bar\+Timer@{Led\+Bar\+Timer}}
+
+
+Cette action permet de definir les timers concernant la barre de leds.  
+
+
+
+
+{\ttfamily \#include $<$Led\+Bar.\+hpp$>$}
+
+
+
+Inheritance diagram for Led\+Bar\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classLedBarTimer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Led\+Bar\+Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classLedBarTimer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLedBarTimer_a638a87499a35e7ce5e2423bb0696374a}{Led\+Bar\+Timer} (\hyperlink{classLedBar}{Led\+Bar} \&led\+Bar, Led\+Bar\+Timer\+Name \hyperlink{classITimerPosixListener_a56abc90e01e315320b855399b2c0096e}{name}, uint \hyperlink{classITimerPosixListener_a68a996ffa95155e824dec8653fbc8e40}{time\+Span\+\_\+us}, uint nb, Led\+Color color, uint hex\+Value, uint hex\+Value\+Next)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBarTimer_ab27ba0f3d359d6b8a3d3f266eebeb0e1}\label{classLedBarTimer_ab27ba0f3d359d6b8a3d3f266eebeb0e1}} 
+virtual \hyperlink{classLedBarTimer_ab27ba0f3d359d6b8a3d3f266eebeb0e1}{$\sim$\+Led\+Bar\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBarTimer_a508f0c79e394a111d211f457fd589870}\label{classLedBarTimer_a508f0c79e394a111d211f457fd589870}} 
+virtual void \hyperlink{classLedBarTimer_a508f0c79e394a111d211f457fd589870}{on\+Timer} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)
+\begin{DoxyCompactList}\small\item\em fonction qui sera executer à chaque traitement du timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBarTimer_a7836430e649650253638c3c1c95d20ad}\label{classLedBarTimer_a7836430e649650253638c3c1c95d20ad}} 
+virtual void \hyperlink{classLedBarTimer_a7836430e649650253638c3c1c95d20ad}{on\+Timer\+End} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)
+\begin{DoxyCompactList}\small\item\em fonction qui sera executer en dernière action à faire pour ce timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLedBarTimer_aac6060f16bfc4fac7aba78c0463c24bf}\label{classLedBarTimer_aac6060f16bfc4fac7aba78c0463c24bf}} 
+virtual std\+::string \hyperlink{classLedBarTimer_aac6060f16bfc4fac7aba78c0463c24bf}{info} ()
+\begin{DoxyCompactList}\small\item\em nom du timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Cette action permet de definir les timers concernant la barre de leds. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLedBarTimer_a638a87499a35e7ce5e2423bb0696374a}\label{classLedBarTimer_a638a87499a35e7ce5e2423bb0696374a}} 
+\index{Led\+Bar\+Timer@{Led\+Bar\+Timer}!Led\+Bar\+Timer@{Led\+Bar\+Timer}}
+\index{Led\+Bar\+Timer@{Led\+Bar\+Timer}!Led\+Bar\+Timer@{Led\+Bar\+Timer}}
+\subsubsection{\texorpdfstring{Led\+Bar\+Timer()}{LedBarTimer()}}
+{\footnotesize\ttfamily Led\+Bar\+Timer\+::\+Led\+Bar\+Timer (\begin{DoxyParamCaption}\item[{\hyperlink{classLedBar}{Led\+Bar} \&}]{led\+Bar,  }\item[{Led\+Bar\+Timer\+Name}]{name,  }\item[{uint}]{time\+Span\+\_\+us,  }\item[{uint}]{nb,  }\item[{Led\+Color}]{color,  }\item[{uint}]{hex\+Value,  }\item[{uint}]{hex\+Value\+Next }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensors} & \hyperlink{structReference}{Reference} vers l\textquotesingle{}objet associée. \\
+\hline
+{\em name} & Libellé du timer. \\
+\hline
+{\em time\+Span\+\_\+us} & Temps interval en microsecondes. \\
+\hline
+{\em nb} & Le nombre d\textquotesingle{}execution à effectuer. \\
+\hline
+{\em color} & La couleur de la led \\
+\hline
+{\em hex\+Value} & La position ou la valeur en hexadecimale à appliquer \\
+\hline
+{\em hex\+Value\+Next} & La 2eme valeur en hexa à appliquer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Led\+Bar.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Led\+Bar.\+cpp\end{DoxyCompactItemize}

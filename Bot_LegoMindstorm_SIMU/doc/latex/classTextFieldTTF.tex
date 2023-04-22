@@ -1,0 +1,813 @@
+\hypertarget{classTextFieldTTF}{}\section{Text\+Field\+T\+TF Class Reference}
+\label{classTextFieldTTF}\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+
+
+A simple text input field with T\+TF font.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Text\+Field\+T\+T\+F.\+h$>$}
+
+
+
+Inheritance diagram for Text\+Field\+T\+TF\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classTextFieldTTF__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Text\+Field\+T\+TF\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTextFieldTTF__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}{Text\+Field\+T\+TF} ()
+\item 
+virtual \hyperlink{classTextFieldTTF_a21e791b86e551a133db6321bb6b6953c}{$\sim$\+Text\+Field\+T\+TF} ()
+\item 
+bool \hyperlink{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}{init\+With\+Place\+Holder} (const std\+::string \&placeholder, const \hyperlink{classSize}{Size} \&dimensions, Text\+H\+Alignment alignment, const std\+::string \&font\+Name, float font\+Size)
+\item 
+bool \hyperlink{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}{init\+With\+Place\+Holder} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a82bdc3defaeb8bfb1607801954a6baf8}\label{classTextFieldTTF_a82bdc3defaeb8bfb1607801954a6baf8}} 
+virtual bool \hyperlink{classTextFieldTTF_a82bdc3defaeb8bfb1607801954a6baf8}{attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Open keyboard and receive input text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a90dd42e2fff33f7f466457a355fac292}\label{classTextFieldTTF_a90dd42e2fff33f7f466457a355fac292}} 
+virtual bool \hyperlink{classTextFieldTTF_a90dd42e2fff33f7f466457a355fac292}{detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em End text input and close keyboard. \end{DoxyCompactList}\item 
+\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$ \hyperlink{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}{get\+Delegate} () const
+\item 
+void \hyperlink{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}{set\+Delegate} (\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$delegate)
+\item 
+std\+::size\+\_\+t \hyperlink{classTextFieldTTF_ac058c16dce279485b28c944583f924df}{get\+Char\+Count} () const
+\item 
+virtual const \hyperlink{structColor4B}{Color4B} \& \hyperlink{classTextFieldTTF_a066e3d650024862675c565b4a44843c6}{get\+Color\+Space\+Holder} ()
+\item 
+virtual void \hyperlink{classTextFieldTTF_a4a44970abe58917d7c09775a50e5e06d}{set\+Color\+Space\+Holder} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Change input placeholder color. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTextFieldTTF_a6f376d7c8856c2263d5eb2ef247359dd}{set\+Color\+Space\+Holder} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+virtual void \hyperlink{classTextFieldTTF_a922f50aac8989d42977d1db5fe63da95}{set\+Text\+Color} (const \hyperlink{structColor4B}{Color4B} \&text\+Color) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a9c8fcddd94799ace845dc808d1246d7b}{set\+String} (const std\+::string \&text) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_aeaa280136373197c96b63209ba98fcc6}{append\+String} (const std\+::string \&text)
+\item 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a262a78ec2ef963b2fef8fcde2edc0895}{get\+String} () const override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a2d580797c1d8d72272228a042c8215f1}{set\+Place\+Holder} (const std\+::string \&text)
+\item 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a92642716c8e8e2049f799b0f90835da4}{get\+Place\+Holder} () const
+\item 
+virtual void \hyperlink{classTextFieldTTF_aee12da5f6c3bbc77ab6d144245f750b5}{set\+Secure\+Text\+Entry} (bool value)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a8688984d6d4815944529b65492489b05}\label{classTextFieldTTF_a8688984d6d4815944529b65492489b05}} 
+virtual void {\bfseries set\+Password\+Text\+Style} (const std\+::string \&text)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ab0e9100f6e4e162f5ad5f3043d1b3e91}\label{classTextFieldTTF_ab0e9100f6e4e162f5ad5f3043d1b3e91}} 
+std\+::string {\bfseries get\+Password\+Text\+Style} () const
+\item 
+virtual bool \hyperlink{classTextFieldTTF_a5ec469fe877a2fd10d7787034a7a35a0}{is\+Secure\+Text\+Entry} () const
+\item 
+virtual void \hyperlink{classTextFieldTTF_a4e4d61648a15b14774923fc8d2738683}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a81ad55bca952a4927d3c4acfe8385030}{update} (float delta) override
+\item 
+void \hyperlink{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}{set\+Cursor\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}{set\+Cursor\+Char} (char cursor)
+\item 
+void \hyperlink{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}{set\+Cursor\+Position} (std\+::size\+\_\+t cursor\+Position)
+\item 
+void \hyperlink{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}{set\+Cursor\+From\+Point} (const \hyperlink{classVec2}{Vec2} \&point, const \hyperlink{classCamera}{Camera} $\ast$camera)
+\item 
+\hyperlink{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}{Text\+Field\+T\+TF} ()
+\item 
+virtual \hyperlink{classTextFieldTTF_a08ede52cb83625422a0981ce540d07f3}{$\sim$\+Text\+Field\+T\+TF} ()
+\item 
+bool \hyperlink{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}{init\+With\+Place\+Holder} (const std\+::string \&placeholder, const \hyperlink{classSize}{Size} \&dimensions, Text\+H\+Alignment alignment, const std\+::string \&font\+Name, float font\+Size)
+\item 
+bool \hyperlink{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}{init\+With\+Place\+Holder} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a51a6ce33247f93c07676dfe1a4e3dbe9}\label{classTextFieldTTF_a51a6ce33247f93c07676dfe1a4e3dbe9}} 
+virtual bool \hyperlink{classTextFieldTTF_a51a6ce33247f93c07676dfe1a4e3dbe9}{attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Open keyboard and receive input text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a9d003ddd53582cd13e043feb23788f6a}\label{classTextFieldTTF_a9d003ddd53582cd13e043feb23788f6a}} 
+virtual bool \hyperlink{classTextFieldTTF_a9d003ddd53582cd13e043feb23788f6a}{detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em End text input and close keyboard. \end{DoxyCompactList}\item 
+\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$ \hyperlink{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}{get\+Delegate} () const
+\item 
+void \hyperlink{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}{set\+Delegate} (\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$delegate)
+\item 
+std\+::size\+\_\+t \hyperlink{classTextFieldTTF_ac058c16dce279485b28c944583f924df}{get\+Char\+Count} () const
+\item 
+virtual const \hyperlink{structColor4B}{Color4B} \& \hyperlink{classTextFieldTTF_afb471876e4d7949e6dbd39d33cd0076f}{get\+Color\+Space\+Holder} ()
+\item 
+virtual void \hyperlink{classTextFieldTTF_a64ca9201c9b9c2a09200341c5db244f0}{set\+Color\+Space\+Holder} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Change input placeholder color. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTextFieldTTF_a0669ba28e14284524a2027fcd7fed71e}{set\+Color\+Space\+Holder} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+virtual void \hyperlink{classTextFieldTTF_a3ddb9d26ec68e2b25bcdda2a1628f267}{set\+Text\+Color} (const \hyperlink{structColor4B}{Color4B} \&text\+Color) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a0aee071a7df021d656ace9455e2c0b91}{set\+String} (const std\+::string \&text) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_ad179081ee78e5669c65e7a82a42dae94}{append\+String} (const std\+::string \&text)
+\item 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a078bee267d229540d0940ef7f1413240}{get\+String} () const override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a7bba66ec520bca4f92dd877c8012037c}{set\+Place\+Holder} (const std\+::string \&text)
+\item 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a0cf968465bc0919d829bef4740bcfc64}{get\+Place\+Holder} () const
+\item 
+virtual void \hyperlink{classTextFieldTTF_aa2519e02bd0178cc680252dd9cca3b79}{set\+Secure\+Text\+Entry} (bool value)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a1ab5cebb0a2bb352d1ec1e65a0348551}\label{classTextFieldTTF_a1ab5cebb0a2bb352d1ec1e65a0348551}} 
+virtual void {\bfseries set\+Password\+Text\+Style} (const std\+::string \&text)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a76e384427fb50116b1d3e45003220eb0}\label{classTextFieldTTF_a76e384427fb50116b1d3e45003220eb0}} 
+const std\+::string \& {\bfseries get\+Password\+Text\+Style} () const
+\item 
+virtual bool \hyperlink{classTextFieldTTF_ac838afc68a8ecf7a1d8a7f2b25013a2d}{is\+Secure\+Text\+Entry} () const
+\item 
+virtual void \hyperlink{classTextFieldTTF_af7cb31f513a3699cac12a42aebcd8bec}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classTextFieldTTF_a004230b3dc3f90069b3094152e7c8eb0}{update} (float delta) override
+\item 
+void \hyperlink{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}{set\+Cursor\+Enabled} (bool enabled)
+\item 
+void \hyperlink{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}{set\+Cursor\+Char} (char cursor)
+\item 
+void \hyperlink{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}{set\+Cursor\+Position} (std\+::size\+\_\+t cursor\+Position)
+\item 
+void \hyperlink{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}{set\+Cursor\+From\+Point} (const \hyperlink{classVec2}{Vec2} \&point, const \hyperlink{classCamera}{Camera} $\ast$camera)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ \hyperlink{classTextFieldTTF_a42b4eb541cbbdbe8e87559568b742d6b}{text\+Field\+With\+Place\+Holder} (const std\+::string \&placeholder, const \hyperlink{classSize}{Size} \&dimensions, Text\+H\+Alignment alignment, const std\+::string \&font\+Name, float font\+Size)
+\item 
+static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ \hyperlink{classTextFieldTTF_afb2fa2ddb80c61b34240a7aa20bff7d5}{text\+Field\+With\+Place\+Holder} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\item 
+static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ \hyperlink{classTextFieldTTF_ae1e5accacb9d9708529a5daa653ae17e}{text\+Field\+With\+Place\+Holder} (const std\+::string \&placeholder, const \hyperlink{classSize}{Size} \&dimensions, Text\+H\+Alignment alignment, const std\+::string \&font\+Name, float font\+Size)
+\item 
+static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ \hyperlink{classTextFieldTTF_af5bdaba3727ac446fbaf714b799aee19}{text\+Field\+With\+Place\+Holder} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classTextFieldTTF_a63d746d65aa355275274db754f49652b}{can\+Attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Decide if the delegate instance is ready to receive an I\+ME message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a7097f8aa9b2ddd7749817958f9192a1a}\label{classTextFieldTTF_a7097f8aa9b2ddd7749817958f9192a1a}} 
+virtual bool \hyperlink{classTextFieldTTF_a7097f8aa9b2ddd7749817958f9192a1a}{can\+Detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Decide if the delegate instance can stop receiving I\+ME messages.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a9f0b7178da8e685ba2fc9e0c4d73fbae}\label{classTextFieldTTF_a9f0b7178da8e685ba2fc9e0c4d73fbae}} 
+virtual void \hyperlink{classTextFieldTTF_a9f0b7178da8e685ba2fc9e0c4d73fbae}{did\+Attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em When the delegate detaches from the I\+ME, this method is called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_abbd1714064d9c2f55fe7e966c9345385}\label{classTextFieldTTF_abbd1714064d9c2f55fe7e966c9345385}} 
+virtual void \hyperlink{classTextFieldTTF_abbd1714064d9c2f55fe7e966c9345385}{did\+Detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em When the delegate detaches from the I\+ME, this method is called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a4e56aeb374dfa1fae2191636fd97da95}\label{classTextFieldTTF_a4e56aeb374dfa1fae2191636fd97da95}} 
+virtual void \hyperlink{classTextFieldTTF_a4e56aeb374dfa1fae2191636fd97da95}{insert\+Text} (const char $\ast$text, size\+\_\+t len) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} when text input received from the I\+ME.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a9028624c85dfbe2fa1f6517776dfdb14}\label{classTextFieldTTF_a9028624c85dfbe2fa1f6517776dfdb14}} 
+virtual void \hyperlink{classTextFieldTTF_a9028624c85dfbe2fa1f6517776dfdb14}{delete\+Backward} () override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} after the user clicks the backward key.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a64226fd923a8ac69bc1f10b0b2ee9cab}\label{classTextFieldTTF_a64226fd923a8ac69bc1f10b0b2ee9cab}} 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a64226fd923a8ac69bc1f10b0b2ee9cab}{get\+Content\+Text} () override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} for text stored in delegate.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a2b4fb6cb44151abf665993ee1273dca2}\label{classTextFieldTTF_a2b4fb6cb44151abf665993ee1273dca2}} 
+virtual void \hyperlink{classTextFieldTTF_a2b4fb6cb44151abf665993ee1273dca2}{control\+Key} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} after the user press control key.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a72b8543dbed4274865196145f1a7f3b7}\label{classTextFieldTTF_a72b8543dbed4274865196145f1a7f3b7}} 
+void {\bfseries make\+String\+Support\+Cursor} (std\+::string \&display\+Text)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a93d030811f06078c36461d4f0029f9fe}\label{classTextFieldTTF_a93d030811f06078c36461d4f0029f9fe}} 
+void {\bfseries update\+Cursor\+Display\+Text} ()
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a0ec34082d549d7ab8a26eb9e00dc58a0}\label{classTextFieldTTF_a0ec34082d549d7ab8a26eb9e00dc58a0}} 
+void {\bfseries set\+Attach\+With\+I\+ME} (bool is\+Attach\+With\+I\+ME)
+\item 
+virtual bool \hyperlink{classTextFieldTTF_ae7c6616963045e08c065bf42e272f584}{can\+Attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Decide if the delegate instance is ready to receive an I\+ME message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a32a24a17630e07324cac139e2a8ce7ef}\label{classTextFieldTTF_a32a24a17630e07324cac139e2a8ce7ef}} 
+virtual bool \hyperlink{classTextFieldTTF_a32a24a17630e07324cac139e2a8ce7ef}{can\+Detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em Decide if the delegate instance can stop receiving I\+ME messages.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a16990ce5ab42ccaf0c9942f29e733377}\label{classTextFieldTTF_a16990ce5ab42ccaf0c9942f29e733377}} 
+virtual void \hyperlink{classTextFieldTTF_a16990ce5ab42ccaf0c9942f29e733377}{did\+Attach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em When the delegate detaches from the I\+ME, this method is called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a82892d565a0742f412581d1de8d8612e}\label{classTextFieldTTF_a82892d565a0742f412581d1de8d8612e}} 
+virtual void \hyperlink{classTextFieldTTF_a82892d565a0742f412581d1de8d8612e}{did\+Detach\+With\+I\+ME} () override
+\begin{DoxyCompactList}\small\item\em When the delegate detaches from the I\+ME, this method is called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_af6b585e4ece109522a7aa5d324c2fc12}\label{classTextFieldTTF_af6b585e4ece109522a7aa5d324c2fc12}} 
+virtual void \hyperlink{classTextFieldTTF_af6b585e4ece109522a7aa5d324c2fc12}{insert\+Text} (const char $\ast$text, size\+\_\+t len) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} when text input received from the I\+ME.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_acd99171e373c5c27522d0bbe0403f39e}\label{classTextFieldTTF_acd99171e373c5c27522d0bbe0403f39e}} 
+virtual void \hyperlink{classTextFieldTTF_acd99171e373c5c27522d0bbe0403f39e}{delete\+Backward} () override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} after the user clicks the backward key.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a6078dbca466a7c7bc9009f2a63c2bac2}\label{classTextFieldTTF_a6078dbca466a7c7bc9009f2a63c2bac2}} 
+virtual const std\+::string \& \hyperlink{classTextFieldTTF_a6078dbca466a7c7bc9009f2a63c2bac2}{get\+Content\+Text} () override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} for text stored in delegate.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a1f7133dbda0ce6b38470b4cfd1134e42}\label{classTextFieldTTF_a1f7133dbda0ce6b38470b4cfd1134e42}} 
+virtual void \hyperlink{classTextFieldTTF_a1f7133dbda0ce6b38470b4cfd1134e42}{control\+Key} (\hyperlink{classEventKeyboard_a7cd3fa46515673276ce8ec7f0e051606}{Event\+Keyboard\+::\+Key\+Code} key\+Code) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} after the user press control key.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTextFieldTTF_a72b8543dbed4274865196145f1a7f3b7}\label{classTextFieldTTF_a72b8543dbed4274865196145f1a7f3b7}} 
+void {\bfseries make\+String\+Support\+Cursor} (std\+::string \&display\+Text)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a93d030811f06078c36461d4f0029f9fe}\label{classTextFieldTTF_a93d030811f06078c36461d4f0029f9fe}} 
+void {\bfseries update\+Cursor\+Display\+Text} ()
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a0ec34082d549d7ab8a26eb9e00dc58a0}\label{classTextFieldTTF_a0ec34082d549d7ab8a26eb9e00dc58a0}} 
+void {\bfseries set\+Attach\+With\+I\+ME} (bool is\+Attach\+With\+I\+ME)
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ac45ac4e208aafaacfe745d05480972f6}\label{classTextFieldTTF_ac45ac4e208aafaacfe745d05480972f6}} 
+void {\bfseries set\+Text\+Color\+Internally} (const \hyperlink{structColor4B}{Color4B} \&color)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_add52ca2269f3fd787e69d890b00ccfa9}\label{classTextFieldTTF_add52ca2269f3fd787e69d890b00ccfa9}} 
+\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$ {\bfseries \+\_\+delegate}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_afc3f81dbea5111bbf5599928d66a4fd1}\label{classTextFieldTTF_afc3f81dbea5111bbf5599928d66a4fd1}} 
+std\+::size\+\_\+t {\bfseries \+\_\+char\+Count}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a0b9f1c4ae600ae2284c25efd77b93a4d}\label{classTextFieldTTF_a0b9f1c4ae600ae2284c25efd77b93a4d}} 
+std\+::string {\bfseries \+\_\+input\+Text}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ad1679a9b1f2fb4455d7fa4acbf1c8a25}\label{classTextFieldTTF_ad1679a9b1f2fb4455d7fa4acbf1c8a25}} 
+std\+::string {\bfseries \+\_\+place\+Holder}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ad87cdccd484581d01e1679979311374d}\label{classTextFieldTTF_ad87cdccd484581d01e1679979311374d}} 
+\hyperlink{structColor4B}{Color4B} {\bfseries \+\_\+color\+Space\+Holder}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ae46038dbb24f912ac3fbe3fe84ab0bd5}\label{classTextFieldTTF_ae46038dbb24f912ac3fbe3fe84ab0bd5}} 
+\hyperlink{structColor4B}{Color4B} {\bfseries \+\_\+color\+Text}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a9cfc04adf346ed8b092182c85eee590c}\label{classTextFieldTTF_a9cfc04adf346ed8b092182c85eee590c}} 
+bool {\bfseries \+\_\+secure\+Text\+Entry}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a6f93586ce693f9f480ce8173b6266da3}\label{classTextFieldTTF_a6f93586ce693f9f480ce8173b6266da3}} 
+std\+::string {\bfseries \+\_\+password\+Style\+Text}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a0109dee34896317c7930ed5559901a7c}\label{classTextFieldTTF_a0109dee34896317c7930ed5559901a7c}} 
+bool {\bfseries \+\_\+cursor\+Enabled}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a7b418bbe55c9ddb5d8c7763fe6247981}\label{classTextFieldTTF_a7b418bbe55c9ddb5d8c7763fe6247981}} 
+std\+::size\+\_\+t {\bfseries \+\_\+cursor\+Position}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_ac8418f5fa9bc99e1bd011676a66884c2}\label{classTextFieldTTF_ac8418f5fa9bc99e1bd011676a66884c2}} 
+char {\bfseries \+\_\+cursor\+Char}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_a4d24e33988cfba6eaa4d710bedbd15c8}\label{classTextFieldTTF_a4d24e33988cfba6eaa4d710bedbd15c8}} 
+float {\bfseries \+\_\+cursor\+Showing\+Time}
+\item 
+\mbox{\Hypertarget{classTextFieldTTF_aa14f300105ebd13b36815af5475cd7e3}\label{classTextFieldTTF_aa14f300105ebd13b36815af5475cd7e3}} 
+bool {\bfseries \+\_\+is\+Attach\+With\+I\+ME}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A simple text input field with T\+TF font. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}\label{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{Text\+Field\+T\+T\+F()}{TextFieldTTF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Text\+Field\+T\+T\+F\+::\+Text\+Field\+T\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor.  ctor \mbox{\Hypertarget{classTextFieldTTF_a21e791b86e551a133db6321bb6b6953c}\label{classTextFieldTTF_a21e791b86e551a133db6321bb6b6953c}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!````~Text\+Field\+T\+TF@{$\sim$\+Text\+Field\+T\+TF}}
+\index{````~Text\+Field\+T\+TF@{$\sim$\+Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{$\sim$\+Text\+Field\+T\+T\+F()}{~TextFieldTTF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Text\+Field\+T\+T\+F\+::$\sim$\+Text\+Field\+T\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor.  NA  NA \mbox{\Hypertarget{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}\label{classTextFieldTTF_a1173212d59fdbbaf51d08aff9981a4bb}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{Text\+Field\+T\+T\+F()}{TextFieldTTF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Text\+Field\+T\+T\+F\+::\+Text\+Field\+T\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor.  ctor \mbox{\Hypertarget{classTextFieldTTF_a08ede52cb83625422a0981ce540d07f3}\label{classTextFieldTTF_a08ede52cb83625422a0981ce540d07f3}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!````~Text\+Field\+T\+TF@{$\sim$\+Text\+Field\+T\+TF}}
+\index{````~Text\+Field\+T\+TF@{$\sim$\+Text\+Field\+T\+TF}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{$\sim$\+Text\+Field\+T\+T\+F()}{~TextFieldTTF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Text\+Field\+T\+T\+F\+::$\sim$\+Text\+Field\+T\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor.  NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextFieldTTF_ad179081ee78e5669c65e7a82a42dae94}\label{classTextFieldTTF_ad179081ee78e5669c65e7a82a42dae94}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!append\+String@{append\+String}}
+\index{append\+String@{append\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{append\+String()}{appendString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::append\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Append to input text of Text\+Field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The append text of Text\+Field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_aeaa280136373197c96b63209ba98fcc6}\label{classTextFieldTTF_aeaa280136373197c96b63209ba98fcc6}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!append\+String@{append\+String}}
+\index{append\+String@{append\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{append\+String()}{appendString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::append\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Append to input text of Text\+Field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The append text of Text\+Field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_ae7c6616963045e08c065bf42e272f584}\label{classTextFieldTTF_ae7c6616963045e08c065bf42e272f584}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!can\+Attach\+With\+I\+ME@{can\+Attach\+With\+I\+ME}}
+\index{can\+Attach\+With\+I\+ME@{can\+Attach\+With\+I\+ME}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{can\+Attach\+With\+I\+M\+E()}{canAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Text\+Field\+T\+T\+F\+::can\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Decide if the delegate instance is ready to receive an I\+ME message. 
+
+Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_aa9e6c77460b633214759a779c16767f6}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a63d746d65aa355275274db754f49652b}\label{classTextFieldTTF_a63d746d65aa355275274db754f49652b}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!can\+Attach\+With\+I\+ME@{can\+Attach\+With\+I\+ME}}
+\index{can\+Attach\+With\+I\+ME@{can\+Attach\+With\+I\+ME}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{can\+Attach\+With\+I\+M\+E()}{canAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::can\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Decide if the delegate instance is ready to receive an I\+ME message. 
+
+Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher}.  NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_aa9e6c77460b633214759a779c16767f6}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classTextFieldTTF_ac058c16dce279485b28c944583f924df}\label{classTextFieldTTF_ac058c16dce279485b28c944583f924df}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Char\+Count@{get\+Char\+Count}}
+\index{get\+Char\+Count@{get\+Char\+Count}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Char\+Count()}{getCharCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Text\+Field\+T\+T\+F\+::get\+Char\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query the currently inputed character count. \begin{DoxyReturn}{Returns}
+The total input character count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_ac058c16dce279485b28c944583f924df}\label{classTextFieldTTF_ac058c16dce279485b28c944583f924df}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Char\+Count@{get\+Char\+Count}}
+\index{get\+Char\+Count@{get\+Char\+Count}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Char\+Count()}{getCharCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Text\+Field\+T\+T\+F\+::get\+Char\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Query the currently inputed character count. \begin{DoxyReturn}{Returns}
+The total input character count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_afb471876e4d7949e6dbd39d33cd0076f}\label{classTextFieldTTF_afb471876e4d7949e6dbd39d33cd0076f}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Color\+Space\+Holder@{get\+Color\+Space\+Holder}}
+\index{get\+Color\+Space\+Holder@{get\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Color\+Space\+Holder()}{getColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structColor4B}{Color4B}\& Text\+Field\+T\+T\+F\+::get\+Color\+Space\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query the color of place holder. \begin{DoxyReturn}{Returns}
+The place holder color. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a066e3d650024862675c565b4a44843c6}\label{classTextFieldTTF_a066e3d650024862675c565b4a44843c6}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Color\+Space\+Holder@{get\+Color\+Space\+Holder}}
+\index{get\+Color\+Space\+Holder@{get\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Color\+Space\+Holder()}{getColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor4B}{Color4B} \& Text\+Field\+T\+T\+F\+::get\+Color\+Space\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query the color of place holder. \begin{DoxyReturn}{Returns}
+The place holder color. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}\label{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate}$\ast$ Text\+Field\+T\+T\+F\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}\label{classTextFieldTTF_a9e70cd73fc3190132028b659f40701d1}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate}$\ast$ Text\+Field\+T\+T\+F\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTextFieldTTF_a0cf968465bc0919d829bef4740bcfc64}\label{classTextFieldTTF_a0cf968465bc0919d829bef4740bcfc64}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Place\+Holder@{get\+Place\+Holder}}
+\index{get\+Place\+Holder@{get\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Place\+Holder()}{getPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& Text\+Field\+T\+T\+F\+::get\+Place\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query the placeholder string. \begin{DoxyReturn}{Returns}
+The placeholder string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a92642716c8e8e2049f799b0f90835da4}\label{classTextFieldTTF_a92642716c8e8e2049f799b0f90835da4}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+Place\+Holder@{get\+Place\+Holder}}
+\index{get\+Place\+Holder@{get\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+Place\+Holder()}{getPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& Text\+Field\+T\+T\+F\+::get\+Place\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query the placeholder string. \begin{DoxyReturn}{Returns}
+The placeholder string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a078bee267d229540d0940ef7f1413240}\label{classTextFieldTTF_a078bee267d229540d0940ef7f1413240}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const std\+::string\& Text\+Field\+T\+T\+F\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the input text of Text\+Field. \begin{DoxyReturn}{Returns}
+Get the input text of Text\+Field. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLabel_ab306634d58f4317fd96008a5ee67a7a7}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a262a78ec2ef963b2fef8fcde2edc0895}\label{classTextFieldTTF_a262a78ec2ef963b2fef8fcde2edc0895}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& Text\+Field\+T\+T\+F\+::get\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the input text of Text\+Field. \begin{DoxyReturn}{Returns}
+Get the input text of Text\+Field. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classLabel_ab306634d58f4317fd96008a5ee67a7a7}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}\label{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!init\+With\+Place\+Holder@{init\+With\+Place\+Holder}}
+\index{init\+With\+Place\+Holder@{init\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{init\+With\+Place\+Holder()}{initWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::init\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions,  }\item[{Text\+H\+Alignment}]{alignment,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})}
+
+Initializes the \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} with a font name, alignment, dimension and font size. \mbox{\Hypertarget{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}\label{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!init\+With\+Place\+Holder@{init\+With\+Place\+Holder}}
+\index{init\+With\+Place\+Holder@{init\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{init\+With\+Place\+Holder()}{initWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::init\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})}
+
+Initializes the \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} with a font name and font size. \mbox{\Hypertarget{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}\label{classTextFieldTTF_aec3f818b7717c3355b98f6c9bd4bcc3f}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!init\+With\+Place\+Holder@{init\+With\+Place\+Holder}}
+\index{init\+With\+Place\+Holder@{init\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{init\+With\+Place\+Holder()}{initWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::init\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions,  }\item[{Text\+H\+Alignment}]{alignment,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})}
+
+Initializes the \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} with a font name, alignment, dimension and font size. \mbox{\Hypertarget{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}\label{classTextFieldTTF_a03e5755fca447d202d9bd4268a407fac}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!init\+With\+Place\+Holder@{init\+With\+Place\+Holder}}
+\index{init\+With\+Place\+Holder@{init\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{init\+With\+Place\+Holder()}{initWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::init\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})}
+
+Initializes the \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} with a font name and font size. \mbox{\Hypertarget{classTextFieldTTF_ac838afc68a8ecf7a1d8a7f2b25013a2d}\label{classTextFieldTTF_ac838afc68a8ecf7a1d8a7f2b25013a2d}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!is\+Secure\+Text\+Entry@{is\+Secure\+Text\+Entry}}
+\index{is\+Secure\+Text\+Entry@{is\+Secure\+Text\+Entry}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{is\+Secure\+Text\+Entry()}{isSecureTextEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Text\+Field\+T\+T\+F\+::is\+Secure\+Text\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query whether the currently display mode is secure text entry or not. \begin{DoxyReturn}{Returns}
+Whether current text is displayed as secure text entry.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a5ec469fe877a2fd10d7787034a7a35a0}\label{classTextFieldTTF_a5ec469fe877a2fd10d7787034a7a35a0}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!is\+Secure\+Text\+Entry@{is\+Secure\+Text\+Entry}}
+\index{is\+Secure\+Text\+Entry@{is\+Secure\+Text\+Entry}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{is\+Secure\+Text\+Entry()}{isSecureTextEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Text\+Field\+T\+T\+F\+::is\+Secure\+Text\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Query whether the currently display mode is secure text entry or not. \begin{DoxyReturn}{Returns}
+Whether current text is displayed as secure text entry.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTextFieldTTF_a64ca9201c9b9c2a09200341c5db244f0}\label{classTextFieldTTF_a64ca9201c9b9c2a09200341c5db244f0}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}}
+\index{set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Color\+Space\+Holder()}{setColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+Color\+Space\+Holder (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Change input placeholder color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & A color value in {\ttfamily \hyperlink{structColor3B}{Color3B}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_a0669ba28e14284524a2027fcd7fed71e}\label{classTextFieldTTF_a0669ba28e14284524a2027fcd7fed71e}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}}
+\index{set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Color\+Space\+Holder()}{setColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+Color\+Space\+Holder (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change the placeholder color. 
+\begin{DoxyParams}{Parameters}
+{\em color} & The placeholder color in \hyperlink{structColor4B}{Color4B}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_a4a44970abe58917d7c09775a50e5e06d}\label{classTextFieldTTF_a4a44970abe58917d7c09775a50e5e06d}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}}
+\index{set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Color\+Space\+Holder()}{setColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Color\+Space\+Holder (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Change input placeholder color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & A color value in {\ttfamily \hyperlink{structColor3B}{Color3B}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_a6f376d7c8856c2263d5eb2ef247359dd}\label{classTextFieldTTF_a6f376d7c8856c2263d5eb2ef247359dd}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}}
+\index{set\+Color\+Space\+Holder@{set\+Color\+Space\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Color\+Space\+Holder()}{setColorSpaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Color\+Space\+Holder (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change the placeholder color. 
+\begin{DoxyParams}{Parameters}
+{\em color} & The placeholder color in \hyperlink{structColor4B}{Color4B}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}\label{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Char@{set\+Cursor\+Char}}
+\index{set\+Cursor\+Char@{set\+Cursor\+Char}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Char()}{setCursorChar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Char (\begin{DoxyParamCaption}\item[{char}]{cursor }\end{DoxyParamCaption})}
+
+Set char showing cursor.  NA \mbox{\Hypertarget{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}\label{classTextFieldTTF_ac638fa956caa6e3a3538b323b71cc23f}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Char@{set\+Cursor\+Char}}
+\index{set\+Cursor\+Char@{set\+Cursor\+Char}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Char()}{setCursorChar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Char (\begin{DoxyParamCaption}\item[{char}]{cursor }\end{DoxyParamCaption})}
+
+Set char showing cursor.  NA \mbox{\Hypertarget{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}\label{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Enabled@{set\+Cursor\+Enabled}}
+\index{set\+Cursor\+Enabled@{set\+Cursor\+Enabled}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Enabled()}{setCursorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Set enable cursor use.  NA \mbox{\Hypertarget{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}\label{classTextFieldTTF_a831cdc10f96497cf3909457cc4e2380d}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Enabled@{set\+Cursor\+Enabled}}
+\index{set\+Cursor\+Enabled@{set\+Cursor\+Enabled}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Enabled()}{setCursorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Set enable cursor use.  NA \mbox{\Hypertarget{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}\label{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+From\+Point@{set\+Cursor\+From\+Point}}
+\index{set\+Cursor\+From\+Point@{set\+Cursor\+From\+Point}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+From\+Point()}{setCursorFromPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+From\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+Set cursor position to hit letter, if enabled  NA \mbox{\Hypertarget{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}\label{classTextFieldTTF_adf65e756901cf94a0875e4b0c8e8a419}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+From\+Point@{set\+Cursor\+From\+Point}}
+\index{set\+Cursor\+From\+Point@{set\+Cursor\+From\+Point}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+From\+Point()}{setCursorFromPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+From\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{point,  }\item[{const \hyperlink{classCamera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+Set cursor position to hit letter, if enabled  NA \mbox{\Hypertarget{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}\label{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Position@{set\+Cursor\+Position}}
+\index{set\+Cursor\+Position@{set\+Cursor\+Position}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Position()}{setCursorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Position (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{cursor\+Position }\end{DoxyParamCaption})}
+
+Set cursor position, if enabled  NA \mbox{\Hypertarget{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}\label{classTextFieldTTF_abedb3eab1bd2ad1f2ab945ebdde8347b}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Cursor\+Position@{set\+Cursor\+Position}}
+\index{set\+Cursor\+Position@{set\+Cursor\+Position}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Cursor\+Position()}{setCursorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Cursor\+Position (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{cursor\+Position }\end{DoxyParamCaption})}
+
+Set cursor position, if enabled  NA \mbox{\Hypertarget{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}\label{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}\label{classTextFieldTTF_a536d7e986a4623672a6a1506dc5b6684}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate} $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTextFieldTTF_a7bba66ec520bca4f92dd877c8012037c}\label{classTextFieldTTF_a7bba66ec520bca4f92dd877c8012037c}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Place\+Holder@{set\+Place\+Holder}}
+\index{set\+Place\+Holder@{set\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Place\+Holder()}{setPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change placeholder text. place holder text displayed when there is no text in the text field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The placeholder string. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_a2d580797c1d8d72272228a042c8215f1}\label{classTextFieldTTF_a2d580797c1d8d72272228a042c8215f1}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Place\+Holder@{set\+Place\+Holder}}
+\index{set\+Place\+Holder@{set\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Place\+Holder()}{setPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Change placeholder text. place holder text displayed when there is no text in the text field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The placeholder string. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_aa2519e02bd0178cc680252dd9cca3b79}\label{classTextFieldTTF_aa2519e02bd0178cc680252dd9cca3b79}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Secure\+Text\+Entry@{set\+Secure\+Text\+Entry}}
+\index{set\+Secure\+Text\+Entry@{set\+Secure\+Text\+Entry}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Secure\+Text\+Entry()}{setSecureTextEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+Secure\+Text\+Entry (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set enable secure text entry representation. If you want to display password in Text\+Field, this option is very helpful. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Whether or not to display text with secure text entry.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_aee12da5f6c3bbc77ab6d144245f750b5}\label{classTextFieldTTF_aee12da5f6c3bbc77ab6d144245f750b5}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Secure\+Text\+Entry@{set\+Secure\+Text\+Entry}}
+\index{set\+Secure\+Text\+Entry@{set\+Secure\+Text\+Entry}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Secure\+Text\+Entry()}{setSecureTextEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Secure\+Text\+Entry (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set enable secure text entry representation. If you want to display password in Text\+Field, this option is very helpful. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Whether or not to display text with secure text entry.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextFieldTTF_a0aee071a7df021d656ace9455e2c0b91}\label{classTextFieldTTF_a0aee071a7df021d656ace9455e2c0b91}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+String@{set\+String}}
+\index{set\+String@{set\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+String()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change input text of Text\+Field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The input text of Text\+Field. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_a01631cdec4595921e78fb085a88118d9}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a9c8fcddd94799ace845dc808d1246d7b}\label{classTextFieldTTF_a9c8fcddd94799ace845dc808d1246d7b}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+String@{set\+String}}
+\index{set\+String@{set\+String}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+String()}{setString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change input text of Text\+Field. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The input text of Text\+Field. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_a01631cdec4595921e78fb085a88118d9}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a3ddb9d26ec68e2b25bcdda2a1628f267}\label{classTextFieldTTF_a3ddb9d26ec68e2b25bcdda2a1628f267}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Text\+Color()}{setTextColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{text\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of input text. 
+\begin{DoxyParams}{Parameters}
+{\em text\+Color} & The text color in \hyperlink{structColor4B}{Color4B}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_a692d2efd4b152b36df5cfcfbd9ee856d}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a922f50aac8989d42977d1db5fe63da95}\label{classTextFieldTTF_a922f50aac8989d42977d1db5fe63da95}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{set\+Text\+Color()}{setTextColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{text\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the color of input text. 
+\begin{DoxyParams}{Parameters}
+{\em text\+Color} & The text color in \hyperlink{structColor4B}{Color4B}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_a692d2efd4b152b36df5cfcfbd9ee856d}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_ae1e5accacb9d9708529a5daa653ae17e}\label{classTextFieldTTF_ae1e5accacb9d9708529a5daa653ae17e}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}}
+\index{text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{text\+Field\+With\+Place\+Holder()}{textFieldWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF}$\ast$ Text\+Field\+T\+T\+F\+::text\+Field\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions,  }\item[{Text\+H\+Alignment}]{alignment,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} from a fontname, alignment, dimension and font size.  NA \mbox{\Hypertarget{classTextFieldTTF_af5bdaba3727ac446fbaf714b799aee19}\label{classTextFieldTTF_af5bdaba3727ac446fbaf714b799aee19}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}}
+\index{text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{text\+Field\+With\+Place\+Holder()}{textFieldWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF}$\ast$ Text\+Field\+T\+T\+F\+::text\+Field\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} from a fontname and font size.  NA \mbox{\Hypertarget{classTextFieldTTF_a42b4eb541cbbdbe8e87559568b742d6b}\label{classTextFieldTTF_a42b4eb541cbbdbe8e87559568b742d6b}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}}
+\index{text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{text\+Field\+With\+Place\+Holder()}{textFieldWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ Text\+Field\+T\+T\+F\+::text\+Field\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const \hyperlink{classSize}{Size} \&}]{dimensions,  }\item[{Text\+H\+Alignment}]{alignment,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} from a fontname, alignment, dimension and font size.  NA \mbox{\Hypertarget{classTextFieldTTF_afb2fa2ddb80c61b34240a7aa20bff7d5}\label{classTextFieldTTF_afb2fa2ddb80c61b34240a7aa20bff7d5}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}}
+\index{text\+Field\+With\+Place\+Holder@{text\+Field\+With\+Place\+Holder}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{text\+Field\+With\+Place\+Holder()}{textFieldWithPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$ Text\+Field\+T\+T\+F\+::text\+Field\+With\+Place\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} from a fontname and font size.  NA \mbox{\Hypertarget{classTextFieldTTF_a004230b3dc3f90069b3094152e7c8eb0}\label{classTextFieldTTF_a004230b3dc3f90069b3094152e7c8eb0}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!update@{update}}
+\index{update@{update}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update method will be called automatically every frame if \char`\"{}schedule\+Update\char`\"{} is called, and the node is \char`\"{}live\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a81ad55bca952a4927d3c4acfe8385030}\label{classTextFieldTTF_a81ad55bca952a4927d3c4acfe8385030}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!update@{update}}
+\index{update@{update}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update method will be called automatically every frame if \char`\"{}schedule\+Update\char`\"{} is called, and the node is \char`\"{}live\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+\mbox{\Hypertarget{classTextFieldTTF_af7cb31f513a3699cac12a42aebcd8bec}\label{classTextFieldTTF_af7cb31f513a3699cac12a42aebcd8bec}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!visit@{visit}}
+\index{visit@{visit}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Text\+Field\+T\+T\+F\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_ae8e300dcf7e2a6b98e2ae39632d290c8}{Label}.
+
+\mbox{\Hypertarget{classTextFieldTTF_a4e4d61648a15b14774923fc8d2738683}\label{classTextFieldTTF_a4e4d61648a15b14774923fc8d2738683}} 
+\index{Text\+Field\+T\+TF@{Text\+Field\+T\+TF}!visit@{visit}}
+\index{visit@{visit}!Text\+Field\+T\+TF@{Text\+Field\+T\+TF}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Text\+Field\+T\+T\+F\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classLabel_ae8e300dcf7e2a6b98e2ae39632d290c8}{Label}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Text\+Field\+T\+T\+F.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Text\+Field\+T\+T\+F.\+cpp\end{DoxyCompactItemize}

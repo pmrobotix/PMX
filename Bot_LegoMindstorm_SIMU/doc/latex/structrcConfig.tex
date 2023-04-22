@@ -1,0 +1,112 @@
+\hypertarget{structrcConfig}{}\section{rc\+Config Struct Reference}
+\label{structrcConfig}\index{rc\+Config@{rc\+Config}}
+
+
+{\ttfamily \#include $<$Recast.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrcConfig_aa870882b1addeb37535185740838eb32}\label{structrcConfig_aa870882b1addeb37535185740838eb32}} 
+int \hyperlink{structrcConfig_aa870882b1addeb37535185740838eb32}{width}
+\begin{DoxyCompactList}\small\item\em The width of the field along the x-\/axis. \mbox{[}Limit\+: $>$= 0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a25cdb5fcddc1d2813eca2462f60c13d1}\label{structrcConfig_a25cdb5fcddc1d2813eca2462f60c13d1}} 
+int \hyperlink{structrcConfig_a25cdb5fcddc1d2813eca2462f60c13d1}{height}
+\begin{DoxyCompactList}\small\item\em The height of the field along the z-\/axis. \mbox{[}Limit\+: $>$= 0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a71383d155438aa287ff2af72f70b45b5}\label{structrcConfig_a71383d155438aa287ff2af72f70b45b5}} 
+int \hyperlink{structrcConfig_a71383d155438aa287ff2af72f70b45b5}{tile\+Size}
+\begin{DoxyCompactList}\small\item\em The width/height size of tile\textquotesingle{}s on the xz-\/plane. \mbox{[}Limit\+: $>$= 0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a582bdbc924c92e10b900f2f033e2bd15}\label{structrcConfig_a582bdbc924c92e10b900f2f033e2bd15}} 
+int \hyperlink{structrcConfig_a582bdbc924c92e10b900f2f033e2bd15}{border\+Size}
+\begin{DoxyCompactList}\small\item\em The size of the non-\/navigable border around the heightfield. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a5e970c105687d1083c9e7de2c27a2907}\label{structrcConfig_a5e970c105687d1083c9e7de2c27a2907}} 
+float \hyperlink{structrcConfig_a5e970c105687d1083c9e7de2c27a2907}{cs}
+\begin{DoxyCompactList}\small\item\em The xz-\/plane cell size to use for fields. \mbox{[}Limit\+: $>$ 0\mbox{]} \mbox{[}Units\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_ac72699d8a02c6a68e4956c3da8274c61}\label{structrcConfig_ac72699d8a02c6a68e4956c3da8274c61}} 
+float \hyperlink{structrcConfig_ac72699d8a02c6a68e4956c3da8274c61}{ch}
+\begin{DoxyCompactList}\small\item\em The y-\/axis cell size to use for fields. \mbox{[}Limit\+: $>$ 0\mbox{]} \mbox{[}Units\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a117ee510523f94f458878677b1c81750}\label{structrcConfig_a117ee510523f94f458878677b1c81750}} 
+float \hyperlink{structrcConfig_a117ee510523f94f458878677b1c81750}{bmin} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The minimum bounds of the field\textquotesingle{}s \hyperlink{classAABB}{A\+A\+BB}. \mbox{[}(x, y, z)\mbox{]} \mbox{[}Units\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_a8699c5f903f4a037e94ba4b89f7dc86f}\label{structrcConfig_a8699c5f903f4a037e94ba4b89f7dc86f}} 
+float \hyperlink{structrcConfig_a8699c5f903f4a037e94ba4b89f7dc86f}{bmax} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em The maximum bounds of the field\textquotesingle{}s \hyperlink{classAABB}{A\+A\+BB}. \mbox{[}(x, y, z)\mbox{]} \mbox{[}Units\+: wu\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrcConfig_ad1ded1b28dab897a37f8a79573f33a21}\label{structrcConfig_ad1ded1b28dab897a37f8a79573f33a21}} 
+float \hyperlink{structrcConfig_ad1ded1b28dab897a37f8a79573f33a21}{walkable\+Slope\+Angle}
+\begin{DoxyCompactList}\small\item\em The maximum slope that is considered walkable. \mbox{[}Limits\+: 0 $<$= value $<$ 90\mbox{]} \mbox{[}Units\+: Degrees\mbox{]}. \end{DoxyCompactList}\item 
+int \hyperlink{structrcConfig_ab965b5f2aaa0b1ee7f91b28ead07c8c7}{walkable\+Height}
+\item 
+\mbox{\Hypertarget{structrcConfig_accdba9b8409e8c093ee4ac415a989611}\label{structrcConfig_accdba9b8409e8c093ee4ac415a989611}} 
+int \hyperlink{structrcConfig_accdba9b8409e8c093ee4ac415a989611}{walkable\+Climb}
+\begin{DoxyCompactList}\small\item\em Maximum ledge height that is considered to still be traversable. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+int \hyperlink{structrcConfig_a85f1ff0f181cc33a3cc137cbd025c216}{walkable\+Radius}
+\item 
+\mbox{\Hypertarget{structrcConfig_ac3c8ea8caea4497e6307e41cf5d7cc97}\label{structrcConfig_ac3c8ea8caea4497e6307e41cf5d7cc97}} 
+int \hyperlink{structrcConfig_ac3c8ea8caea4497e6307e41cf5d7cc97}{max\+Edge\+Len}
+\begin{DoxyCompactList}\small\item\em The maximum allowed length for contour edges along the border of the mesh. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+float \hyperlink{structrcConfig_aaea41eac9de6fed7a068b328ff550601}{max\+Simplification\+Error}
+\item 
+\mbox{\Hypertarget{structrcConfig_a0b2bfd311ebc8446751051f048daf377}\label{structrcConfig_a0b2bfd311ebc8446751051f048daf377}} 
+int \hyperlink{structrcConfig_a0b2bfd311ebc8446751051f048daf377}{min\+Region\+Area}
+\begin{DoxyCompactList}\small\item\em The minimum number of cells allowed to form isolated island areas. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]}. \end{DoxyCompactList}\item 
+int \hyperlink{structrcConfig_ab1cb7148f953228fcab32f4cadd69f0a}{merge\+Region\+Area}
+\item 
+int \hyperlink{structrcConfig_a14739e425b85fde1d8216d32389ff89a}{max\+Verts\+Per\+Poly}
+\item 
+float \hyperlink{structrcConfig_abdc131d1c8f5e4c1f09a68702efba604}{detail\+Sample\+Dist}
+\item 
+float \hyperlink{structrcConfig_ae53de5fcf0777c0be9e3cd91c9da3d1f}{detail\+Sample\+Max\+Error}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specifies a configuration to use when performing Recast builds. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structrcConfig_abdc131d1c8f5e4c1f09a68702efba604}\label{structrcConfig_abdc131d1c8f5e4c1f09a68702efba604}} 
+\index{rc\+Config@{rc\+Config}!detail\+Sample\+Dist@{detail\+Sample\+Dist}}
+\index{detail\+Sample\+Dist@{detail\+Sample\+Dist}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{detail\+Sample\+Dist}{detailSampleDist}}
+{\footnotesize\ttfamily float rc\+Config\+::detail\+Sample\+Dist}
+
+Sets the sampling distance to use when generating the detail mesh. (For height detail only.) \mbox{[}Limits\+: 0 or $>$= 0.\+9\mbox{]} \mbox{[}Units\+: wu\mbox{]} \mbox{\Hypertarget{structrcConfig_ae53de5fcf0777c0be9e3cd91c9da3d1f}\label{structrcConfig_ae53de5fcf0777c0be9e3cd91c9da3d1f}} 
+\index{rc\+Config@{rc\+Config}!detail\+Sample\+Max\+Error@{detail\+Sample\+Max\+Error}}
+\index{detail\+Sample\+Max\+Error@{detail\+Sample\+Max\+Error}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{detail\+Sample\+Max\+Error}{detailSampleMaxError}}
+{\footnotesize\ttfamily float rc\+Config\+::detail\+Sample\+Max\+Error}
+
+The maximum distance the detail mesh surface should deviate from heightfield data. (For height detail only.) \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: wu\mbox{]} \mbox{\Hypertarget{structrcConfig_aaea41eac9de6fed7a068b328ff550601}\label{structrcConfig_aaea41eac9de6fed7a068b328ff550601}} 
+\index{rc\+Config@{rc\+Config}!max\+Simplification\+Error@{max\+Simplification\+Error}}
+\index{max\+Simplification\+Error@{max\+Simplification\+Error}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{max\+Simplification\+Error}{maxSimplificationError}}
+{\footnotesize\ttfamily float rc\+Config\+::max\+Simplification\+Error}
+
+The maximum distance a simplfied contour\textquotesingle{}s border edges should deviate the original raw contour. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]} \mbox{\Hypertarget{structrcConfig_a14739e425b85fde1d8216d32389ff89a}\label{structrcConfig_a14739e425b85fde1d8216d32389ff89a}} 
+\index{rc\+Config@{rc\+Config}!max\+Verts\+Per\+Poly@{max\+Verts\+Per\+Poly}}
+\index{max\+Verts\+Per\+Poly@{max\+Verts\+Per\+Poly}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{max\+Verts\+Per\+Poly}{maxVertsPerPoly}}
+{\footnotesize\ttfamily int rc\+Config\+::max\+Verts\+Per\+Poly}
+
+The maximum number of vertices allowed for polygons generated during the contour to polygon conversion process. \mbox{[}Limit\+: $>$= 3\mbox{]} \mbox{\Hypertarget{structrcConfig_ab1cb7148f953228fcab32f4cadd69f0a}\label{structrcConfig_ab1cb7148f953228fcab32f4cadd69f0a}} 
+\index{rc\+Config@{rc\+Config}!merge\+Region\+Area@{merge\+Region\+Area}}
+\index{merge\+Region\+Area@{merge\+Region\+Area}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{merge\+Region\+Area}{mergeRegionArea}}
+{\footnotesize\ttfamily int rc\+Config\+::merge\+Region\+Area}
+
+Any regions with a span count smaller than this value will, if possible, be merged with larger regions. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]} \mbox{\Hypertarget{structrcConfig_ab965b5f2aaa0b1ee7f91b28ead07c8c7}\label{structrcConfig_ab965b5f2aaa0b1ee7f91b28ead07c8c7}} 
+\index{rc\+Config@{rc\+Config}!walkable\+Height@{walkable\+Height}}
+\index{walkable\+Height@{walkable\+Height}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{walkable\+Height}{walkableHeight}}
+{\footnotesize\ttfamily int rc\+Config\+::walkable\+Height}
+
+Minimum floor to \textquotesingle{}ceiling\textquotesingle{} height that will still allow the floor area to be considered walkable. \mbox{[}Limit\+: $>$= 3\mbox{]} \mbox{[}Units\+: vx\mbox{]} \mbox{\Hypertarget{structrcConfig_a85f1ff0f181cc33a3cc137cbd025c216}\label{structrcConfig_a85f1ff0f181cc33a3cc137cbd025c216}} 
+\index{rc\+Config@{rc\+Config}!walkable\+Radius@{walkable\+Radius}}
+\index{walkable\+Radius@{walkable\+Radius}!rc\+Config@{rc\+Config}}
+\subsubsection{\texorpdfstring{walkable\+Radius}{walkableRadius}}
+{\footnotesize\ttfamily int rc\+Config\+::walkable\+Radius}
+
+The distance to erode/shrink the walkable area of the heightfield away from obstructions. \mbox{[}Limit\+: $>$=0\mbox{]} \mbox{[}Units\+: vx\mbox{]} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast.\+h\end{DoxyCompactItemize}

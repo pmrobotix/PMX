@@ -1,0 +1,428 @@
+\hypertarget{group__cpSpace}{}\section{cp\+Space}
+\label{group__cpSpace}\index{cp\+Space@{cp\+Space}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcpCollisionHandler}{cp\+Collision\+Handler}
+\item 
+struct \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color}
+\begin{DoxyCompactList}\small\item\em Color type to use with the space debug drawing A\+PI. \end{DoxyCompactList}\item 
+struct \hyperlink{structcpSpaceDebugDrawOptions}{cp\+Space\+Debug\+Draw\+Options}
+\begin{DoxyCompactList}\small\item\em Struct used with \hyperlink{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}{cp\+Space\+Debug\+Draw()} containing drawing callbacks and other drawing settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ \hyperlink{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}{cp\+Collision\+Begin\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\item 
+typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ \hyperlink{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}{cp\+Collision\+Pre\+Solve\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}\label{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}{cp\+Collision\+Post\+Solve\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Collision post-\/solve event function callback type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga01427ab634c483879cfed5bb22610487}\label{group__cpSpace_ga01427ab634c483879cfed5bb22610487}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga01427ab634c483879cfed5bb22610487}{cp\+Collision\+Separate\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Collision separate event function callback type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}\label{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}{cp\+Post\+Step\+Func}) (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, void $\ast$key, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Post Step callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}\label{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}{cp\+Space\+Point\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} point, cp\+Float distance, \hyperlink{structcpVect}{cp\+Vect} gradient, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Nearest point query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}\label{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}{cp\+Space\+Segment\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} point, \hyperlink{structcpVect}{cp\+Vect} normal, cp\+Float alpha, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Segment query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}\label{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}{cp\+Space\+B\+B\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Rectangle Query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}\label{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}{cp\+Space\+Shape\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpContactPointSet}{cp\+Contact\+Point\+Set} $\ast$points, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shape query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}\label{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}{cp\+Space\+Body\+Iterator\+Func}) (\hyperlink{structcpBody}{cp\+Body} $\ast$body, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/body iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}\label{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}{cp\+Space\+Shape\+Iterator\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/body iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}\label{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}{cp\+Space\+Constraint\+Iterator\+Func}) (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/constraint iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}\label{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}} 
+typedef struct \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} \hyperlink{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}{cp\+Space\+Debug\+Color}
+\begin{DoxyCompactList}\small\item\em Color type to use with the space debug drawing A\+PI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}\label{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}{cp\+Space\+Debug\+Draw\+Circle\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} pos, cp\+Float angle, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a filled, stroked circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}\label{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}{cp\+Space\+Debug\+Draw\+Segment\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a line segment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}\label{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}{cp\+Space\+Debug\+Draw\+Fat\+Segment\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a thick line segment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}\label{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}{cp\+Space\+Debug\+Draw\+Polygon\+Impl}) (int count, const \hyperlink{structcpVect}{cp\+Vect} $\ast$verts, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a convex polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}\label{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}{cp\+Space\+Debug\+Draw\+Dot\+Impl}) (cp\+Float size, \hyperlink{structcpVect}{cp\+Vect} pos, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a dot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}\label{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}} 
+typedef \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color}($\ast$ \hyperlink{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}{cp\+Space\+Debug\+Draw\+Color\+For\+Shape\+Impl}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that returns a color for a given shape. This gives you an opportunity to color shapes based on how they are used in your engine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaa625807338fd5ebd8f61463dead0c32b}\label{group__cpSpace_gaa625807338fd5ebd8f61463dead0c32b}} 
+typedef enum cp\+Space\+Debug\+Draw\+Flags {\bfseries cp\+Space\+Debug\+Draw\+Flags}
+\item 
+\mbox{\Hypertarget{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}\label{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}} 
+typedef struct \hyperlink{structcpSpaceDebugDrawOptions}{cp\+Space\+Debug\+Draw\+Options} \hyperlink{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}{cp\+Space\+Debug\+Draw\+Options}
+\begin{DoxyCompactList}\small\item\em Struct used with \hyperlink{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}{cp\+Space\+Debug\+Draw()} containing drawing callbacks and other drawing settings. \end{DoxyCompactList}\item 
+typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ \hyperlink{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}{cp\+Collision\+Begin\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\item 
+typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ \hyperlink{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}{cp\+Collision\+Pre\+Solve\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}\label{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gaccb60bbb090c97823f49ee49e4e5d3c3}{cp\+Collision\+Post\+Solve\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Collision post-\/solve event function callback type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga01427ab634c483879cfed5bb22610487}\label{group__cpSpace_ga01427ab634c483879cfed5bb22610487}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga01427ab634c483879cfed5bb22610487}{cp\+Collision\+Separate\+Func}) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\begin{DoxyCompactList}\small\item\em Collision separate event function callback type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}\label{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}{cp\+Post\+Step\+Func}) (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, void $\ast$key, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Post Step callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}\label{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}{cp\+Space\+Point\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} point, cp\+Float distance, \hyperlink{structcpVect}{cp\+Vect} gradient, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Nearest point query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}\label{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}{cp\+Space\+Segment\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpVect}{cp\+Vect} point, \hyperlink{structcpVect}{cp\+Vect} normal, cp\+Float alpha, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Segment query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}\label{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}{cp\+Space\+B\+B\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Rectangle Query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}\label{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}{cp\+Space\+Shape\+Query\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{structcpContactPointSet}{cp\+Contact\+Point\+Set} $\ast$points, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shape query callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}\label{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}{cp\+Space\+Body\+Iterator\+Func}) (\hyperlink{structcpBody}{cp\+Body} $\ast$body, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/body iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}\label{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}{cp\+Space\+Shape\+Iterator\+Func}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/body iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}\label{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}{cp\+Space\+Constraint\+Iterator\+Func}) (\hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Space/constraint iterator callback function type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}\label{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}} 
+typedef struct \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} \hyperlink{group__cpSpace_gafc46fcefca8c28112ca8245eef00bae7}{cp\+Space\+Debug\+Color}
+\begin{DoxyCompactList}\small\item\em Color type to use with the space debug drawing A\+PI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}\label{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab96ab3199114538fa70cb5f7c6b2887a}{cp\+Space\+Debug\+Draw\+Circle\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} pos, cp\+Float angle, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a filled, stroked circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}\label{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gaed387c6356be81f3da4050547fe47c9e}{cp\+Space\+Debug\+Draw\+Segment\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a line segment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}\label{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gab8b2b1f7036daa38914a0d3c2cb1d732}{cp\+Space\+Debug\+Draw\+Fat\+Segment\+Impl}) (\hyperlink{structcpVect}{cp\+Vect} a, \hyperlink{structcpVect}{cp\+Vect} b, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a thick line segment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}\label{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_ga2138e846816a1e581a3433740a596ab6}{cp\+Space\+Debug\+Draw\+Polygon\+Impl}) (int count, const \hyperlink{structcpVect}{cp\+Vect} $\ast$verts, cp\+Float radius, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} outline\+Color, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} fill\+Color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a convex polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}\label{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}} 
+typedef void($\ast$ \hyperlink{group__cpSpace_gadf9a758a2f1c3b53551829573b722e5a}{cp\+Space\+Debug\+Draw\+Dot\+Impl}) (cp\+Float size, \hyperlink{structcpVect}{cp\+Vect} pos, \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color} color, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that draws a dot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}\label{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}} 
+typedef \hyperlink{structcpSpaceDebugColor}{cp\+Space\+Debug\+Color}($\ast$ \hyperlink{group__cpSpace_gaba1fec950f2b58c7c72ab5ca553bdf43}{cp\+Space\+Debug\+Draw\+Color\+For\+Shape\+Impl}) (\hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} data)
+\begin{DoxyCompactList}\small\item\em Callback type for a function that returns a color for a given shape. This gives you an opportunity to color shapes based on how they are used in your engine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaa625807338fd5ebd8f61463dead0c32b}\label{group__cpSpace_gaa625807338fd5ebd8f61463dead0c32b}} 
+typedef enum cp\+Space\+Debug\+Draw\+Flags {\bfseries cp\+Space\+Debug\+Draw\+Flags}
+\item 
+\mbox{\Hypertarget{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}\label{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}} 
+typedef struct \hyperlink{structcpSpaceDebugDrawOptions}{cp\+Space\+Debug\+Draw\+Options} \hyperlink{group__cpSpace_gabb44b3d40332bc5965e8dbd515caa71a}{cp\+Space\+Debug\+Draw\+Options}
+\begin{DoxyCompactList}\small\item\em Struct used with \hyperlink{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}{cp\+Space\+Debug\+Draw()} containing drawing callbacks and other drawing settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga12b09b00b23e09d770e4b2ab3980c69a}\label{group__cpSpace_ga12b09b00b23e09d770e4b2ab3980c69a}} 
+enum {\bfseries cp\+Space\+Debug\+Draw\+Flags} \{ \newline
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+S\+H\+A\+P\+ES} = 1$<$$<$0, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS} = 1$<$$<$1, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+P\+O\+I\+N\+TS} = 1$<$$<$2, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+S\+H\+A\+P\+ES} = 1$<$$<$0, 
+\newline
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS} = 1$<$$<$1, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+P\+O\+I\+N\+TS} = 1$<$$<$2
+ \}
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga12b09b00b23e09d770e4b2ab3980c69a}\label{group__cpSpace_ga12b09b00b23e09d770e4b2ab3980c69a}} 
+enum {\bfseries cp\+Space\+Debug\+Draw\+Flags} \{ \newline
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+S\+H\+A\+P\+ES} = 1$<$$<$0, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS} = 1$<$$<$1, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+P\+O\+I\+N\+TS} = 1$<$$<$2, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+S\+H\+A\+P\+ES} = 1$<$$<$0, 
+\newline
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+TS} = 1$<$$<$1, 
+{\bfseries C\+P\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+D\+R\+A\+W\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+P\+O\+I\+N\+TS} = 1$<$$<$2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cpSpace_gaa233bc692b8773035e0b7af246f1785f}\label{group__cpSpace_gaa233bc692b8773035e0b7af246f1785f}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpSpace}{cp\+Space} $\ast$ \hyperlink{group__cpSpace_gaa233bc692b8773035e0b7af246f1785f}{cp\+Space\+Alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a \hyperlink{structcpSpace}{cp\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga4f6c77afe3cef0d06df38b7aa8d70354}\label{group__cpSpace_ga4f6c77afe3cef0d06df38b7aa8d70354}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpSpace}{cp\+Space} $\ast$ \hyperlink{group__cpSpace_ga4f6c77afe3cef0d06df38b7aa8d70354}{cp\+Space\+Init} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Initialize a \hyperlink{structcpSpace}{cp\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2d7724bac5766902583bfc4a4f06ca32}\label{group__cpSpace_ga2d7724bac5766902583bfc4a4f06ca32}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpSpace}{cp\+Space} $\ast$ \hyperlink{group__cpSpace_ga2d7724bac5766902583bfc4a4f06ca32}{cp\+Space\+New} (void)
+\begin{DoxyCompactList}\small\item\em Allocate and initialize a \hyperlink{structcpSpace}{cp\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaaf1097ee4fb04f32c4e82271d7603d26}\label{group__cpSpace_gaaf1097ee4fb04f32c4e82271d7603d26}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gaaf1097ee4fb04f32c4e82271d7603d26}{cp\+Space\+Destroy} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Destroy a \hyperlink{structcpSpace}{cp\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab1bc162df996c03493be80d8220e5c8a}\label{group__cpSpace_gab1bc162df996c03493be80d8220e5c8a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gab1bc162df996c03493be80d8220e5c8a}{cp\+Space\+Free} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Destroy and free a \hyperlink{structcpSpace}{cp\+Space}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga7e1bd8b3f1090018f65f8b798c99df79}\label{group__cpSpace_ga7e1bd8b3f1090018f65f8b798c99df79}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{group__cpSpace_ga7e1bd8b3f1090018f65f8b798c99df79}{cp\+Space\+Get\+Iterations} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Number of iterations to use in the impulse solver to solve contacts and other constraints. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga8975460871b3e9d3a6d89a4339742ea3}\label{group__cpSpace_ga8975460871b3e9d3a6d89a4339742ea3}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Iterations} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, int iterations)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga6270c6c036bcdd6adaeb59aac7bf6549}\label{group__cpSpace_ga6270c6c036bcdd6adaeb59aac7bf6549}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpVect}{cp\+Vect} \hyperlink{group__cpSpace_ga6270c6c036bcdd6adaeb59aac7bf6549}{cp\+Space\+Get\+Gravity} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Gravity to pass to rigid bodies when integrating velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga5ed619ffc8d4f3405316a6646d1e751c}\label{group__cpSpace_ga5ed619ffc8d4f3405316a6646d1e751c}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Gravity} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpVect}{cp\+Vect} gravity)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_gac00ad0e4956e444fa23874fae68df3b7}{cp\+Space\+Get\+Damping} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga02641468aa07e3120d73b4d33cb7e780}\label{group__cpSpace_ga02641468aa07e3120d73b4d33cb7e780}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Damping} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float damping)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_ga256c38475826c4c165999079929fe1e7}{cp\+Space\+Get\+Idle\+Speed\+Threshold} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gacb84ce106473ddfeafafcf4a4cd67993}\label{group__cpSpace_gacb84ce106473ddfeafafcf4a4cd67993}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Idle\+Speed\+Threshold} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float idle\+Speed\+Threshold)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_gab3f74ae04501ce532913c87e5be54a80}{cp\+Space\+Get\+Sleep\+Time\+Threshold} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gab593e909d82ad4824a7d1c2d6f397147}\label{group__cpSpace_gab593e909d82ad4824a7d1c2d6f397147}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Sleep\+Time\+Threshold} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float sleep\+Time\+Threshold)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_ga7b5e6178a021b1b6bba4b70876bf79d0}{cp\+Space\+Get\+Collision\+Slop} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gaa962f544b92ee508abd689729ceaaa9a}\label{group__cpSpace_gaa962f544b92ee508abd689729ceaaa9a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Collision\+Slop} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float collision\+Slop)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_ga53b093e1cbb978e00faf9216e1f9ab4f}{cp\+Space\+Get\+Collision\+Bias} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga46bf525e4d6c7eb83a5222e118168c60}\label{group__cpSpace_ga46bf525e4d6c7eb83a5222e118168c60}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Collision\+Bias} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float collision\+Bias)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gaa24652c104082d0725066ea5ac7dc83f}{cp\+Timestamp} \hyperlink{group__cpSpace_gac20dad9f3ef05f468773db3d7667c9ba}{cp\+Space\+Get\+Collision\+Persistence} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga49cd660a485d0d963f66f8333b2da788}\label{group__cpSpace_ga49cd660a485d0d963f66f8333b2da788}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+Collision\+Persistence} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_gaa24652c104082d0725066ea5ac7dc83f}{cp\+Timestamp} collision\+Persistence)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} \hyperlink{group__cpSpace_ga20f6bbc8db7698065052f4502050dc52}{cp\+Space\+Get\+User\+Data} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga510319d0cc108e33cc5ee8b9cc39d449}\label{group__cpSpace_ga510319d0cc108e33cc5ee8b9cc39d449}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void {\bfseries cp\+Space\+Set\+User\+Data} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBody}{cp\+Body} $\ast$ \hyperlink{group__cpSpace_gaaf1306bc87ee883855311aabafb10363}{cp\+Space\+Get\+Static\+Body} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float \hyperlink{group__cpSpace_gad4819cd09e4590b60eea6b6dc8b4cf80}{cp\+Space\+Get\+Current\+Time\+Step} (const \hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\item 
+\mbox{\Hypertarget{group__cpSpace_gad72c9085853f1d612226ec7b6faca362}\label{group__cpSpace_gad72c9085853f1d612226ec7b6faca362}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_gad72c9085853f1d612226ec7b6faca362}{cp\+Space\+Is\+Locked} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em returns true from inside a callback when objects cannot be added/removed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gae6773756745d7889196ae14900b9752b}\label{group__cpSpace_gae6773756745d7889196ae14900b9752b}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpCollisionHandler}{cp\+Collision\+Handler} $\ast$ \hyperlink{group__cpSpace_gae6773756745d7889196ae14900b9752b}{cp\+Space\+Add\+Default\+Collision\+Handler} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Create or return the existing collision handler that is called for all collisions that are not handled by a more specific collision handler. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpCollisionHandler}{cp\+Collision\+Handler} $\ast$ \hyperlink{group__cpSpace_ga65edd7f02956f072b87daf7b42e61cf2}{cp\+Space\+Add\+Collision\+Handler} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} a, \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} b)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga75da454abaca74204a35d03d4f4ca5d8}\label{group__cpSpace_ga75da454abaca74204a35d03d4f4ca5d8}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpCollisionHandler}{cp\+Collision\+Handler} $\ast$ \hyperlink{group__cpSpace_ga75da454abaca74204a35d03d4f4ca5d8}{cp\+Space\+Add\+Wildcard\+Handler} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type} type)
+\begin{DoxyCompactList}\small\item\em Create or return the existing wildcard collision handler for the specified type. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpShape}{cp\+Shape} $\ast$ \hyperlink{group__cpSpace_gad5728f811290d821c009d1d07b62c06a}{cp\+Space\+Add\+Shape} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga194141a199dd59d1387074aabc292280}\label{group__cpSpace_ga194141a199dd59d1387074aabc292280}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBody}{cp\+Body} $\ast$ \hyperlink{group__cpSpace_ga194141a199dd59d1387074aabc292280}{cp\+Space\+Add\+Body} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpBody}{cp\+Body} $\ast$body)
+\begin{DoxyCompactList}\small\item\em Add a rigid body to the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga2d2ddb030b45f59f294ee72ba945891a}\label{group__cpSpace_ga2d2ddb030b45f59f294ee72ba945891a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$ \hyperlink{group__cpSpace_ga2d2ddb030b45f59f294ee72ba945891a}{cp\+Space\+Add\+Constraint} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Add a constraint to the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gadd58c37e69a7575b829e25ed3c427fc8}\label{group__cpSpace_gadd58c37e69a7575b829e25ed3c427fc8}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gadd58c37e69a7575b829e25ed3c427fc8}{cp\+Space\+Remove\+Shape} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Remove a collision shape from the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga3375e5b056a887baaedd75fa1403d1cf}\label{group__cpSpace_ga3375e5b056a887baaedd75fa1403d1cf}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga3375e5b056a887baaedd75fa1403d1cf}{cp\+Space\+Remove\+Body} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpBody}{cp\+Body} $\ast$body)
+\begin{DoxyCompactList}\small\item\em Remove a rigid body from the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaeec0e391838c99b4b3cbd49d5f28e609}\label{group__cpSpace_gaeec0e391838c99b4b3cbd49d5f28e609}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gaeec0e391838c99b4b3cbd49d5f28e609}{cp\+Space\+Remove\+Constraint} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Remove a constraint from the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga1c3d88fb51ede38bc5e84f31518d0a83}\label{group__cpSpace_ga1c3d88fb51ede38bc5e84f31518d0a83}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_ga1c3d88fb51ede38bc5e84f31518d0a83}{cp\+Space\+Contains\+Shape} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Test if a collision shape has been added to the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga7d240d6dd4742b465590f60909681862}\label{group__cpSpace_ga7d240d6dd4742b465590f60909681862}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_ga7d240d6dd4742b465590f60909681862}{cp\+Space\+Contains\+Body} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpBody}{cp\+Body} $\ast$body)
+\begin{DoxyCompactList}\small\item\em Test if a rigid body has been added to the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaf49f0495a0e0fda2dc76ae66c3bc637a}\label{group__cpSpace_gaf49f0495a0e0fda2dc76ae66c3bc637a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_gaf49f0495a0e0fda2dc76ae66c3bc637a}{cp\+Space\+Contains\+Constraint} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpConstraint}{cp\+Constraint} $\ast$constraint)
+\begin{DoxyCompactList}\small\item\em Test if a constraint has been added to the space. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_ga6fbf3c0722a5618ded1ed7371cbebcb3}{cp\+Space\+Add\+Post\+Step\+Callback} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}{cp\+Post\+Step\+Func} func, void $\ast$key, void $\ast$data)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga62eea2b00f5503976ef250a33d4c474a}\label{group__cpSpace_ga62eea2b00f5503976ef250a33d4c474a}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga62eea2b00f5503976ef250a33d4c474a}{cp\+Space\+Point\+Query} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpVect}{cp\+Vect} point, cp\+Float max\+Distance, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter, \hyperlink{group__cpSpace_ga646a55f0937f07c19b24561ed5341221}{cp\+Space\+Point\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Query the space at a point and call {\ttfamily func} for each shape found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga9000c50c4e33b2255d8c3d4c376f0699}\label{group__cpSpace_ga9000c50c4e33b2255d8c3d4c376f0699}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpShape}{cp\+Shape} $\ast$ \hyperlink{group__cpSpace_ga9000c50c4e33b2255d8c3d4c376f0699}{cp\+Space\+Point\+Query\+Nearest} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpVect}{cp\+Vect} point, cp\+Float max\+Distance, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter, \hyperlink{structcpPointQueryInfo}{cp\+Point\+Query\+Info} $\ast$out)
+\begin{DoxyCompactList}\small\item\em Query the space at a point and return the nearest shape found. Returns N\+U\+LL if no shapes were found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga16b9a1e185bea2680a1bc6c798f86049}\label{group__cpSpace_ga16b9a1e185bea2680a1bc6c798f86049}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga16b9a1e185bea2680a1bc6c798f86049}{cp\+Space\+Segment\+Query} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpVect}{cp\+Vect} start, \hyperlink{structcpVect}{cp\+Vect} end, cp\+Float radius, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter, \hyperlink{group__cpSpace_ga9046beaeba5728c5e954f0f1dc2ae130}{cp\+Space\+Segment\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Perform a directed line segment query (like a raycast) against the space calling {\ttfamily func} for each shape intersected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga3e5e74241b96f6feff02476030007e68}\label{group__cpSpace_ga3e5e74241b96f6feff02476030007e68}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpShape}{cp\+Shape} $\ast$ \hyperlink{group__cpSpace_ga3e5e74241b96f6feff02476030007e68}{cp\+Space\+Segment\+Query\+First} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpVect}{cp\+Vect} start, \hyperlink{structcpVect}{cp\+Vect} end, cp\+Float radius, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter, \hyperlink{structcpSegmentQueryInfo}{cp\+Segment\+Query\+Info} $\ast$out)
+\begin{DoxyCompactList}\small\item\em Perform a directed line segment query (like a raycast) against the space and return the first shape hit. Returns N\+U\+LL if no shapes were hit. \end{DoxyCompactList}\item 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga09e4737a3b33755ee20066297138b64e}{cp\+Space\+B\+B\+Query} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpBB}{cp\+BB} bb, \hyperlink{structcpShapeFilter}{cp\+Shape\+Filter} filter, \hyperlink{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}{cp\+Space\+B\+B\+Query\+Func} func, void $\ast$data)
+\item 
+\mbox{\Hypertarget{group__cpSpace_ga8a87a09145f33a72404c77cce54e4778}\label{group__cpSpace_ga8a87a09145f33a72404c77cce54e4778}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} \hyperlink{group__cpSpace_ga8a87a09145f33a72404c77cce54e4778}{cp\+Space\+Shape\+Query} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpShape}{cp\+Shape} $\ast$shape, \hyperlink{group__cpSpace_gab124952dd71dea36688f6ff6ff8bdcb2}{cp\+Space\+Shape\+Query\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Query a space for any shapes overlapping the given shape and call {\ttfamily func} for each shape found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga8119f11a4c6a44d82fb15a5873c42607}\label{group__cpSpace_ga8119f11a4c6a44d82fb15a5873c42607}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga8119f11a4c6a44d82fb15a5873c42607}{cp\+Space\+Each\+Body} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__cpSpace_ga2870b1128c5bfe79cb261d269abdea64}{cp\+Space\+Body\+Iterator\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call {\ttfamily func} for each body in the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab586704d72681645d9e91d42e97f96ff}\label{group__cpSpace_gab586704d72681645d9e91d42e97f96ff}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gab586704d72681645d9e91d42e97f96ff}{cp\+Space\+Each\+Shape} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__cpSpace_gafae017c9a8a7c082032035bf165e4ec9}{cp\+Space\+Shape\+Iterator\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call {\ttfamily func} for each shape in the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga0f494c054cb89a0a842ef1a0e344ce58}\label{group__cpSpace_ga0f494c054cb89a0a842ef1a0e344ce58}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga0f494c054cb89a0a842ef1a0e344ce58}{cp\+Space\+Each\+Constraint} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__cpSpace_ga0bf20ed2411342352dc43b71c60649c1}{cp\+Space\+Constraint\+Iterator\+Func} func, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Call {\ttfamily func} for each shape in the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga714f105c977f9006128981fa30d8e7ec}\label{group__cpSpace_ga714f105c977f9006128981fa30d8e7ec}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga714f105c977f9006128981fa30d8e7ec}{cp\+Space\+Reindex\+Static} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Update the collision detection info for the static shapes in the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gab370e5ee7912ff798bebeb01fc0ba63b}\label{group__cpSpace_gab370e5ee7912ff798bebeb01fc0ba63b}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gab370e5ee7912ff798bebeb01fc0ba63b}{cp\+Space\+Reindex\+Shape} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpShape}{cp\+Shape} $\ast$shape)
+\begin{DoxyCompactList}\small\item\em Update the collision detection data for a specific shape in the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga9a141b9c927102b02a84bb2b8631f803}\label{group__cpSpace_ga9a141b9c927102b02a84bb2b8631f803}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga9a141b9c927102b02a84bb2b8631f803}{cp\+Space\+Reindex\+Shapes\+For\+Body} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpBody}{cp\+Body} $\ast$body)
+\begin{DoxyCompactList}\small\item\em Update the collision detection data for all shapes attached to a body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gaed394ccafade6346f25e9c78f92bc185}\label{group__cpSpace_gaed394ccafade6346f25e9c78f92bc185}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gaed394ccafade6346f25e9c78f92bc185}{cp\+Space\+Use\+Spatial\+Hash} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float dim, int count)
+\begin{DoxyCompactList}\small\item\em Switch the space to use a spatial has as it\textquotesingle{}s spatial index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_gae87c828de2fe3709393ba94046212d80}\label{group__cpSpace_gae87c828de2fe3709393ba94046212d80}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_gae87c828de2fe3709393ba94046212d80}{cp\+Space\+Step} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, cp\+Float dt)
+\begin{DoxyCompactList}\small\item\em Step the space forward in time by {\ttfamily dt}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}\label{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}} 
+C\+P\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{group__cpSpace_ga02e8a34681aff3f29bd976e830f3b6da}{cp\+Space\+Debug\+Draw} (\hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{structcpSpaceDebugDrawOptions}{cp\+Space\+Debug\+Draw\+Options} $\ast$options)
+\begin{DoxyCompactList}\small\item\em Debug draw the current state of the space using the supplied drawing options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}\label{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}} 
+\index{cp\+Space@{cp\+Space}!cp\+Collision\+Begin\+Func@{cp\+Collision\+Begin\+Func}}
+\index{cp\+Collision\+Begin\+Func@{cp\+Collision\+Begin\+Func}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Collision\+Begin\+Func}{cpCollisionBeginFunc}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ cp\+Collision\+Begin\+Func) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)}
+
+Collision begin event function callback type. Returning false from a begin callback causes the collision to be ignored until the the separate callback is called when the objects stop colliding. \mbox{\Hypertarget{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}\label{group__cpSpace_ga3134f145bfc7ca4ef69b350978c26a5a}} 
+\index{cp\+Space@{cp\+Space}!cp\+Collision\+Begin\+Func@{cp\+Collision\+Begin\+Func}}
+\index{cp\+Collision\+Begin\+Func@{cp\+Collision\+Begin\+Func}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Collision\+Begin\+Func}{cpCollisionBeginFunc}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ cp\+Collision\+Begin\+Func) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)}
+
+Collision begin event function callback type. Returning false from a begin callback causes the collision to be ignored until the the separate callback is called when the objects stop colliding. \mbox{\Hypertarget{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}\label{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}} 
+\index{cp\+Space@{cp\+Space}!cp\+Collision\+Pre\+Solve\+Func@{cp\+Collision\+Pre\+Solve\+Func}}
+\index{cp\+Collision\+Pre\+Solve\+Func@{cp\+Collision\+Pre\+Solve\+Func}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Collision\+Pre\+Solve\+Func}{cpCollisionPreSolveFunc}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ cp\+Collision\+Pre\+Solve\+Func) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)}
+
+Collision pre-\/solve event function callback type. Returning false from a pre-\/step callback causes the collision to be ignored until the next step. \mbox{\Hypertarget{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}\label{group__cpSpace_ga89b24d53d81a5a028198c3c2d3c39a9d}} 
+\index{cp\+Space@{cp\+Space}!cp\+Collision\+Pre\+Solve\+Func@{cp\+Collision\+Pre\+Solve\+Func}}
+\index{cp\+Collision\+Pre\+Solve\+Func@{cp\+Collision\+Pre\+Solve\+Func}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Collision\+Pre\+Solve\+Func}{cpCollisionPreSolveFunc}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool}($\ast$ cp\+Collision\+Pre\+Solve\+Func) (\hyperlink{structcpArbiter}{cp\+Arbiter} $\ast$arb, \hyperlink{structcpSpace}{cp\+Space} $\ast$space, \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} user\+Data)}
+
+Collision pre-\/solve event function callback type. Returning false from a pre-\/step callback causes the collision to be ignored until the next step. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__cpSpace_ga65edd7f02956f072b87daf7b42e61cf2}\label{group__cpSpace_ga65edd7f02956f072b87daf7b42e61cf2}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Add\+Collision\+Handler@{cp\+Space\+Add\+Collision\+Handler}}
+\index{cp\+Space\+Add\+Collision\+Handler@{cp\+Space\+Add\+Collision\+Handler}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Add\+Collision\+Handler()}{cpSpaceAddCollisionHandler()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpCollisionHandler}{cp\+Collision\+Handler} $\ast$ cp\+Space\+Add\+Collision\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space,  }\item[{\hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type}}]{a,  }\item[{\hyperlink{group__basicTypes_gae83e2f50965eb441e36ffff1e32e6d02}{cp\+Collision\+Type}}]{b }\end{DoxyParamCaption})}
+
+Create or return the existing collision handler for the specified pair of collision types. If wildcard handlers are used with either of the collision types, it\textquotesingle{}s the responibility of the custom handler to invoke the wildcard handlers. \mbox{\Hypertarget{group__cpSpace_ga6fbf3c0722a5618ded1ed7371cbebcb3}\label{group__cpSpace_ga6fbf3c0722a5618ded1ed7371cbebcb3}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Add\+Post\+Step\+Callback@{cp\+Space\+Add\+Post\+Step\+Callback}}
+\index{cp\+Space\+Add\+Post\+Step\+Callback@{cp\+Space\+Add\+Post\+Step\+Callback}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Add\+Post\+Step\+Callback()}{cpSpaceAddPostStepCallback()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gabc5e752c48f3449ca26ef413ecbd647e}{cp\+Bool} cp\+Space\+Add\+Post\+Step\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space,  }\item[{\hyperlink{group__cpSpace_ga93e9005e387fec86eeb4a225ac295a23}{cp\+Post\+Step\+Func}}]{func,  }\item[{void $\ast$}]{key,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Schedule a post-\/step callback to be called when \hyperlink{group__cpSpace_gae87c828de2fe3709393ba94046212d80}{cp\+Space\+Step()} finishes. You can only register one callback per unique value for {\ttfamily key}. Returns true only if {\ttfamily key} has never been scheduled before. It\textquotesingle{}s possible to pass {\ttfamily N\+U\+LL} for {\ttfamily func} if you only want to mark {\ttfamily key} as being used. \mbox{\Hypertarget{group__cpSpace_gad5728f811290d821c009d1d07b62c06a}\label{group__cpSpace_gad5728f811290d821c009d1d07b62c06a}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Add\+Shape@{cp\+Space\+Add\+Shape}}
+\index{cp\+Space\+Add\+Shape@{cp\+Space\+Add\+Shape}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Add\+Shape()}{cpSpaceAddShape()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpShape}{cp\+Shape} $\ast$ cp\+Space\+Add\+Shape (\begin{DoxyParamCaption}\item[{\hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space,  }\item[{\hyperlink{structcpShape}{cp\+Shape} $\ast$}]{shape }\end{DoxyParamCaption})}
+
+Add a collision shape to the simulation. If the shape is attached to a static body, it will be added as a static shape. \mbox{\Hypertarget{group__cpSpace_ga09e4737a3b33755ee20066297138b64e}\label{group__cpSpace_ga09e4737a3b33755ee20066297138b64e}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+B\+B\+Query@{cp\+Space\+B\+B\+Query}}
+\index{cp\+Space\+B\+B\+Query@{cp\+Space\+B\+B\+Query}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+B\+B\+Query()}{cpSpaceBBQuery()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT void cp\+Space\+B\+B\+Query (\begin{DoxyParamCaption}\item[{\hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space,  }\item[{\hyperlink{structcpBB}{cp\+BB}}]{bb,  }\item[{\hyperlink{structcpShapeFilter}{cp\+Shape\+Filter}}]{filter,  }\item[{\hyperlink{group__cpSpace_ga02779238e9b8c07797aae6139fad203c}{cp\+Space\+B\+B\+Query\+Func}}]{func,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Perform a fast rectangle query on the space calling {\ttfamily func} for each shape found. Only the shape\textquotesingle{}s bounding boxes are checked for overlap, not their full shape. \mbox{\Hypertarget{group__cpSpace_ga53b093e1cbb978e00faf9216e1f9ab4f}\label{group__cpSpace_ga53b093e1cbb978e00faf9216e1f9ab4f}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Collision\+Bias@{cp\+Space\+Get\+Collision\+Bias}}
+\index{cp\+Space\+Get\+Collision\+Bias@{cp\+Space\+Get\+Collision\+Bias}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Collision\+Bias()}{cpSpaceGetCollisionBias()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Collision\+Bias (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Determines how fast overlapping shapes are pushed apart. Expressed as a fraction of the error remaining after each second. Defaults to pow(1.\+0 -\/ 0.\+1, 60.\+0) meaning that Chipmunk fixes 10\% of overlap each frame at 60\+Hz. \mbox{\Hypertarget{group__cpSpace_gac20dad9f3ef05f468773db3d7667c9ba}\label{group__cpSpace_gac20dad9f3ef05f468773db3d7667c9ba}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Collision\+Persistence@{cp\+Space\+Get\+Collision\+Persistence}}
+\index{cp\+Space\+Get\+Collision\+Persistence@{cp\+Space\+Get\+Collision\+Persistence}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Collision\+Persistence()}{cpSpaceGetCollisionPersistence()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_gaa24652c104082d0725066ea5ac7dc83f}{cp\+Timestamp} cp\+Space\+Get\+Collision\+Persistence (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Number of frames that contact information should persist. Defaults to 3. There is probably never a reason to change this value. \mbox{\Hypertarget{group__cpSpace_ga7b5e6178a021b1b6bba4b70876bf79d0}\label{group__cpSpace_ga7b5e6178a021b1b6bba4b70876bf79d0}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Collision\+Slop@{cp\+Space\+Get\+Collision\+Slop}}
+\index{cp\+Space\+Get\+Collision\+Slop@{cp\+Space\+Get\+Collision\+Slop}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Collision\+Slop()}{cpSpaceGetCollisionSlop()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Collision\+Slop (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Amount of encouraged penetration between colliding shapes. Used to reduce oscillating contacts and keep the collision cache warm. Defaults to 0.\+1. If you have poor simulation quality, increase this number as much as possible without allowing visible amounts of overlap. \mbox{\Hypertarget{group__cpSpace_gad4819cd09e4590b60eea6b6dc8b4cf80}\label{group__cpSpace_gad4819cd09e4590b60eea6b6dc8b4cf80}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Current\+Time\+Step@{cp\+Space\+Get\+Current\+Time\+Step}}
+\index{cp\+Space\+Get\+Current\+Time\+Step@{cp\+Space\+Get\+Current\+Time\+Step}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Current\+Time\+Step()}{cpSpaceGetCurrentTimeStep()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Current\+Time\+Step (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Returns the current (or most recent) time step used with the given space. Useful from callbacks if your time step is not a compile-\/time global. \mbox{\Hypertarget{group__cpSpace_gac00ad0e4956e444fa23874fae68df3b7}\label{group__cpSpace_gac00ad0e4956e444fa23874fae68df3b7}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Damping@{cp\+Space\+Get\+Damping}}
+\index{cp\+Space\+Get\+Damping@{cp\+Space\+Get\+Damping}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Damping()}{cpSpaceGetDamping()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Damping (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Damping rate expressed as the fraction of velocity bodies retain each second. A value of 0.\+9 would mean that each body\textquotesingle{}s velocity will drop 10\% per second. The default value is 1.\+0, meaning no damping is applied. \begin{DoxyNote}{Note}
+This damping value is different than those of \hyperlink{structcpDampedSpring}{cp\+Damped\+Spring} and \hyperlink{structcpDampedRotarySpring}{cp\+Damped\+Rotary\+Spring}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__cpSpace_ga256c38475826c4c165999079929fe1e7}\label{group__cpSpace_ga256c38475826c4c165999079929fe1e7}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Idle\+Speed\+Threshold@{cp\+Space\+Get\+Idle\+Speed\+Threshold}}
+\index{cp\+Space\+Get\+Idle\+Speed\+Threshold@{cp\+Space\+Get\+Idle\+Speed\+Threshold}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Idle\+Speed\+Threshold()}{cpSpaceGetIdleSpeedThreshold()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Idle\+Speed\+Threshold (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+\hyperlink{classSpeed}{Speed} threshold for a body to be considered idle. The default value of 0 means to let the space guess a good threshold based on gravity. \mbox{\Hypertarget{group__cpSpace_gab3f74ae04501ce532913c87e5be54a80}\label{group__cpSpace_gab3f74ae04501ce532913c87e5be54a80}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Sleep\+Time\+Threshold@{cp\+Space\+Get\+Sleep\+Time\+Threshold}}
+\index{cp\+Space\+Get\+Sleep\+Time\+Threshold@{cp\+Space\+Get\+Sleep\+Time\+Threshold}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Sleep\+Time\+Threshold()}{cpSpaceGetSleepTimeThreshold()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT cp\+Float cp\+Space\+Get\+Sleep\+Time\+Threshold (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+Time a group of bodies must remain idle in order to fall asleep. Enabling sleeping also implicitly enables the the contact graph. The default value of I\+N\+F\+I\+N\+I\+TY disables the sleeping algorithm. \mbox{\Hypertarget{group__cpSpace_gaaf1306bc87ee883855311aabafb10363}\label{group__cpSpace_gaaf1306bc87ee883855311aabafb10363}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+Static\+Body@{cp\+Space\+Get\+Static\+Body}}
+\index{cp\+Space\+Get\+Static\+Body@{cp\+Space\+Get\+Static\+Body}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+Static\+Body()}{cpSpaceGetStaticBody()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{structcpBody}{cp\+Body} $\ast$ cp\+Space\+Get\+Static\+Body (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+The Space provided static body for a given \hyperlink{structcpSpace}{cp\+Space}. This is merely provided for convenience and you are not required to use it. \mbox{\Hypertarget{group__cpSpace_ga20f6bbc8db7698065052f4502050dc52}\label{group__cpSpace_ga20f6bbc8db7698065052f4502050dc52}} 
+\index{cp\+Space@{cp\+Space}!cp\+Space\+Get\+User\+Data@{cp\+Space\+Get\+User\+Data}}
+\index{cp\+Space\+Get\+User\+Data@{cp\+Space\+Get\+User\+Data}!cp\+Space@{cp\+Space}}
+\subsubsection{\texorpdfstring{cp\+Space\+Get\+User\+Data()}{cpSpaceGetUserData()}}
+{\footnotesize\ttfamily C\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{group__basicTypes_ga2ac2c3c31e21893941f9e4f8ee279447}{cp\+Data\+Pointer} cp\+Space\+Get\+User\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structcpSpace}{cp\+Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+User definable data pointer. Generally this points to your game\textquotesingle{}s controller or game state class so you can access it when given a \hyperlink{structcpSpace}{cp\+Space} reference in a callback. 

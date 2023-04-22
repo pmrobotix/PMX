@@ -1,0 +1,158 @@
+\hypertarget{classnetwork_1_1SocketIO}{}\section{network\+:\+:Socket\+IO Class Reference}
+\label{classnetwork_1_1SocketIO}\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+
+
+{\ttfamily \#include $<$Socket\+I\+O.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{S\+I\+O\+Delegate}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO} $\ast$ \hyperlink{classnetwork_1_1SocketIO_ad8607185ae7acb4a05f9b720bc699b6d}{get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a971ba913c43bd740f2616f8b4a20024b}\label{classnetwork_1_1SocketIO_a971ba913c43bd740f2616f8b4a20024b}} 
+static void {\bfseries destroy\+Instance} ()
+\item 
+static \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ \hyperlink{classnetwork_1_1SocketIO_a4a42c0b65a953f0ded8050df6a0854a7}{connect} (const std\+::string \&uri, \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ \hyperlink{classnetwork_1_1SocketIO_ae6f711ee78a961c1e98f3f2b752f5b83}{connect} (\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate, const std\+::string \&uri)
+\item 
+static \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO} $\ast$ \hyperlink{classnetwork_1_1SocketIO_a071858ead473c48e1a7b094f4e1f3102}{get\+Instance} ()
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a48b55e860d394bce755c19bbd40ed2f8}\label{classnetwork_1_1SocketIO_a48b55e860d394bce755c19bbd40ed2f8}} 
+static void {\bfseries destroy\+Instance} ()
+\item 
+static \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ \hyperlink{classnetwork_1_1SocketIO_aefd7c202b26b80f1cf1ecb446851977b}{connect} (const std\+::string \&uri, \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate)
+\item 
+static \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ \hyperlink{classnetwork_1_1SocketIO_a5e9c8c1da93fc55017a5d41e52a8dd0b}{connect} (const std\+::string \&uri, \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate, const std\+::string \&ca\+File\+Path)
+\item 
+static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ \hyperlink{classnetwork_1_1SocketIO_ae65e4a1bb17cab39bab3ece28f268f19}{connect} (\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate, const std\+::string \&uri)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a377686538a58c24579aedab879d4b9db}\label{classnetwork_1_1SocketIO_a377686538a58c24579aedab879d4b9db}} 
+class {\bfseries S\+I\+O\+Client\+Impl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton and wrapper class to provide static creation method as well as registry of all sockets.
+
+NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a4a42c0b65a953f0ded8050df6a0854a7}\label{classnetwork_1_1SocketIO_a4a42c0b65a953f0ded8050df6a0854a7}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!connect@{connect}}
+\index{connect@{connect}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ network\+::\+Socket\+I\+O\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static client creation method, similar to socketio.\+connect(uri) in JS. 
+\begin{DoxyParams}{Parameters}
+{\em uri} & the U\+RI of the socket.\+io server. \\
+\hline
+{\em delegate} & the delegate which want to receive events from the socket.\+io client. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+I\+O\+Client$\ast$ an initialized \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} if connected successfully, otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_aefd7c202b26b80f1cf1ecb446851977b}\label{classnetwork_1_1SocketIO_aefd7c202b26b80f1cf1ecb446851977b}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!connect@{connect}}
+\index{connect@{connect}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily static \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}$\ast$ network\+::\+Socket\+I\+O\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static client creation method, similar to socketio.\+connect(uri) in JS. 
+\begin{DoxyParams}{Parameters}
+{\em uri} & the U\+RI of the socket.\+io server. \\
+\hline
+{\em delegate} & the delegate which want to receive events from the socket.\+io client. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+I\+O\+Client$\ast$ an initialized \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} if connected successfully, otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_ae6f711ee78a961c1e98f3f2b752f5b83}\label{classnetwork_1_1SocketIO_ae6f711ee78a961c1e98f3f2b752f5b83}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!connect@{connect}}
+\index{connect@{connect}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ network\+::\+Socket\+I\+O\+::connect (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate,  }\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static client creation method, similar to socketio.\+connect(uri) in JS. 
+\begin{DoxyParams}{Parameters}
+{\em delegate} & the delegate which want to receive events from the socket.\+io client. \\
+\hline
+{\em uri} & the U\+RI of the socket.\+io server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+I\+O\+Client$\ast$ an initialized \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} if connected successfully, otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a5e9c8c1da93fc55017a5d41e52a8dd0b}\label{classnetwork_1_1SocketIO_a5e9c8c1da93fc55017a5d41e52a8dd0b}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!connect@{connect}}
+\index{connect@{connect}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} $\ast$ network\+::\+Socket\+I\+O\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate,  }\item[{const std\+::string \&}]{ca\+File\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static client creation method, similar to socketio.\+connect(uri) in JS. 
+\begin{DoxyParams}{Parameters}
+{\em uri} & the U\+RI of the socket.\+io server. \\
+\hline
+{\em delegate} & the delegate which want to receive events from the socket.\+io client. \\
+\hline
+{\em ca\+File\+Path} & The ca file path for wss connection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+I\+O\+Client$\ast$ an initialized \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} if connected successfully, otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_ae65e4a1bb17cab39bab3ece28f268f19}\label{classnetwork_1_1SocketIO_ae65e4a1bb17cab39bab3ece28f268f19}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!connect@{connect}}
+\index{connect@{connect}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily static C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}$\ast$ network\+::\+Socket\+I\+O\+::connect (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate,  }\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static client creation method, similar to socketio.\+connect(uri) in JS. 
+\begin{DoxyParams}{Parameters}
+{\em delegate} & the delegate which want to receive events from the socket.\+io client. \\
+\hline
+{\em uri} & the U\+RI of the socket.\+io server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+I\+O\+Client$\ast$ an initialized \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} if connected successfully, otherwise nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_ad8607185ae7acb4a05f9b720bc699b6d}\label{classnetwork_1_1SocketIO_ad8607185ae7acb4a05f9b720bc699b6d}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO} $\ast$ network\+::\+Socket\+I\+O\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get instance of \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO}.
+
+\begin{DoxyReturn}{Returns}
+Socket\+I\+O$\ast$ the instance of \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SocketIO_a071858ead473c48e1a7b094f4e1f3102}\label{classnetwork_1_1SocketIO_a071858ead473c48e1a7b094f4e1f3102}} 
+\index{network\+::\+Socket\+IO@{network\+::\+Socket\+IO}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!network\+::\+Socket\+IO@{network\+::\+Socket\+IO}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO}$\ast$ network\+::\+Socket\+I\+O\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get instance of \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO}.
+
+\begin{DoxyReturn}{Returns}
+Socket\+I\+O$\ast$ the instance of \hyperlink{classnetwork_1_1SocketIO}{Socket\+IO}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Socket\+I\+O.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Socket\+I\+O.\+cpp\end{DoxyCompactItemize}

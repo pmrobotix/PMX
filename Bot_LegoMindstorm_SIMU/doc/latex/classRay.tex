@@ -1,0 +1,242 @@
+\hypertarget{classRay}{}\section{Ray Class Reference}
+\label{classRay}\index{Ray@{Ray}}
+
+
+\hyperlink{classRay}{Ray} is a line with one end. usually use it to check intersects with some object,such as \hyperlink{classPlane}{Plane}, \hyperlink{classOBB}{O\+BB}, \hyperlink{classAABB}{A\+A\+BB}  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Ray.\+h$>$}
+
+
+
+Collaboration diagram for Ray\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classRay__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRay_a242189a4eefe94210201132de3fec277}{Ray} ()
+\item 
+\hyperlink{classRay_a155a0b6573cf6a9a2256eb5062523daf}{Ray} (const \hyperlink{classRay}{Ray} \&ray)
+\item 
+\hyperlink{classRay_a9753a2cb8797a9c4d96883d79085d4ee}{Ray} (const \hyperlink{classVec3}{Vec3} \&origin, const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+\hyperlink{classRay_a8b0e575ce5df046c0c7615c32a96a46f}{$\sim$\+Ray} ()
+\item 
+bool \hyperlink{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}{intersects} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb, float $\ast$distance=nullptr) const
+\item 
+bool \hyperlink{classRay_a8cab9601415189aa8b138805c1880b12}{intersects} (const \hyperlink{classOBB}{O\+BB} \&obb, float $\ast$distance=nullptr) const
+\item 
+\mbox{\Hypertarget{classRay_ac9e02b5199938055fc7e38c88226869c}\label{classRay_ac9e02b5199938055fc7e38c88226869c}} 
+float {\bfseries dist} (const \hyperlink{classPlane}{Plane} \&plane) const
+\item 
+\mbox{\Hypertarget{classRay_a43032ec38dddd20e36193a710979f63a}\label{classRay_a43032ec38dddd20e36193a710979f63a}} 
+\hyperlink{classVec3}{Vec3} {\bfseries intersects} (const \hyperlink{classPlane}{Plane} \&plane) const
+\item 
+void \hyperlink{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}{set} (const \hyperlink{classVec3}{Vec3} \&origin, const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+void \hyperlink{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}{transform} (const \hyperlink{classMat4}{Mat4} \&matrix)
+\item 
+\hyperlink{classRay_a2e3d2c29f2df4ab3da10da79d4acb852}{Ray} ()
+\item 
+\hyperlink{classRay_a155a0b6573cf6a9a2256eb5062523daf}{Ray} (const \hyperlink{classRay}{Ray} \&ray)
+\item 
+\hyperlink{classRay_a9753a2cb8797a9c4d96883d79085d4ee}{Ray} (const \hyperlink{classVec3}{Vec3} \&origin, const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+\hyperlink{classRay_a8b0e575ce5df046c0c7615c32a96a46f}{$\sim$\+Ray} ()
+\item 
+bool \hyperlink{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}{intersects} (const \hyperlink{classAABB}{A\+A\+BB} \&aabb, float $\ast$distance=nullptr) const
+\item 
+bool \hyperlink{classRay_a8cab9601415189aa8b138805c1880b12}{intersects} (const \hyperlink{classOBB}{O\+BB} \&obb, float $\ast$distance=nullptr) const
+\item 
+\mbox{\Hypertarget{classRay_ac9e02b5199938055fc7e38c88226869c}\label{classRay_ac9e02b5199938055fc7e38c88226869c}} 
+float {\bfseries dist} (const \hyperlink{classPlane}{Plane} \&plane) const
+\item 
+\mbox{\Hypertarget{classRay_a43032ec38dddd20e36193a710979f63a}\label{classRay_a43032ec38dddd20e36193a710979f63a}} 
+\hyperlink{classVec3}{Vec3} {\bfseries intersects} (const \hyperlink{classPlane}{Plane} \&plane) const
+\item 
+void \hyperlink{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}{set} (const \hyperlink{classVec3}{Vec3} \&origin, const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+void \hyperlink{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}{transform} (const \hyperlink{classMat4}{Mat4} \&matrix)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRay_af554930d75e1424a372813c880139707}\label{classRay_af554930d75e1424a372813c880139707}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+origin}
+\item 
+\mbox{\Hypertarget{classRay_aff18d513dbe486c49f504811215cf16e}\label{classRay_aff18d513dbe486c49f504811215cf16e}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+direction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRay}{Ray} is a line with one end. usually use it to check intersects with some object,such as \hyperlink{classPlane}{Plane}, \hyperlink{classOBB}{O\+BB}, \hyperlink{classAABB}{A\+A\+BB}  NA. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRay_a242189a4eefe94210201132de3fec277}\label{classRay_a242189a4eefe94210201132de3fec277}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Ray\+::\+Ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor.
+
+new \mbox{\Hypertarget{classRay_a155a0b6573cf6a9a2256eb5062523daf}\label{classRay_a155a0b6573cf6a9a2256eb5062523daf}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray }\end{DoxyParamCaption})}
+
+Constructor.  NA \mbox{\Hypertarget{classRay_a9753a2cb8797a9c4d96883d79085d4ee}\label{classRay_a9753a2cb8797a9c4d96883d79085d4ee}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{origin,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Constructs a new ray initialized to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ray\textquotesingle{}s origin. \\
+\hline
+{\em direction} & The ray\textquotesingle{}s direction.  new \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRay_a8b0e575ce5df046c0c7615c32a96a46f}\label{classRay_a8b0e575ce5df046c0c7615c32a96a46f}} 
+\index{Ray@{Ray}!````~Ray@{$\sim$\+Ray}}
+\index{````~Ray@{$\sim$\+Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{$\sim$\+Ray()}{~Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ray\+::$\sim$\+Ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor.  NA \mbox{\Hypertarget{classRay_a2e3d2c29f2df4ab3da10da79d4acb852}\label{classRay_a2e3d2c29f2df4ab3da10da79d4acb852}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor.
+
+new \mbox{\Hypertarget{classRay_a155a0b6573cf6a9a2256eb5062523daf}\label{classRay_a155a0b6573cf6a9a2256eb5062523daf}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \hyperlink{classRay}{Ray} \&}]{ray }\end{DoxyParamCaption})}
+
+Constructor.  NA \mbox{\Hypertarget{classRay_a9753a2cb8797a9c4d96883d79085d4ee}\label{classRay_a9753a2cb8797a9c4d96883d79085d4ee}} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{origin,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Constructs a new ray initialized to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ray\textquotesingle{}s origin. \\
+\hline
+{\em direction} & The ray\textquotesingle{}s direction.  new \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRay_a8b0e575ce5df046c0c7615c32a96a46f}\label{classRay_a8b0e575ce5df046c0c7615c32a96a46f}} 
+\index{Ray@{Ray}!````~Ray@{$\sim$\+Ray}}
+\index{````~Ray@{$\sim$\+Ray}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{$\sim$\+Ray()}{~Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ray\+::$\sim$\+Ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor.  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}\label{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}} 
+\index{Ray@{Ray}!intersects@{intersects}}
+\index{intersects@{intersects}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} \&}]{aabb,  }\item[{float $\ast$}]{distance = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Check whether this ray intersects with the specified \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}\label{classRay_a2db2a0a4c6b8f67500d5b8b6542f5d50}} 
+\index{Ray@{Ray}!intersects@{intersects}}
+\index{intersects@{intersects}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} \&}]{aabb,  }\item[{float $\ast$}]{distance = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Check whether this ray intersects with the specified \hyperlink{classAABB}{A\+A\+BB}. \mbox{\Hypertarget{classRay_a8cab9601415189aa8b138805c1880b12}\label{classRay_a8cab9601415189aa8b138805c1880b12}} 
+\index{Ray@{Ray}!intersects@{intersects}}
+\index{intersects@{intersects}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classOBB}{O\+BB} \&}]{obb,  }\item[{float $\ast$}]{distance = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Check whether this ray intersects with the specified \hyperlink{classOBB}{O\+BB}. \mbox{\Hypertarget{classRay_a8cab9601415189aa8b138805c1880b12}\label{classRay_a8cab9601415189aa8b138805c1880b12}} 
+\index{Ray@{Ray}!intersects@{intersects}}
+\index{intersects@{intersects}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classOBB}{O\+BB} \&}]{obb,  }\item[{float $\ast$}]{distance = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Check whether this ray intersects with the specified \hyperlink{classOBB}{O\+BB}. \mbox{\Hypertarget{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}\label{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}} 
+\index{Ray@{Ray}!set@{set}}
+\index{set@{set}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ray\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{origin,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Sets this ray to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ray\textquotesingle{}s origin. \\
+\hline
+{\em direction} & The ray\textquotesingle{}s direction. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}\label{classRay_a7a3565df0919fbffd4cbf4cf3b71b44b}} 
+\index{Ray@{Ray}!set@{set}}
+\index{set@{set}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ray\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{origin,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Sets this ray to the specified values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ray\textquotesingle{}s origin. \\
+\hline
+{\em direction} & The ray\textquotesingle{}s direction. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}\label{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}} 
+\index{Ray@{Ray}!transform@{transform}}
+\index{transform@{transform}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ray\+::transform (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{matrix }\end{DoxyParamCaption})}
+
+Transforms this ray by the given transformation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The transformation matrix to transform by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}\label{classRay_a23b3f4f7ecd94ef4ac74dba7c65fe110}} 
+\index{Ray@{Ray}!transform@{transform}}
+\index{transform@{transform}!Ray@{Ray}}
+\subsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ray\+::transform (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{matrix }\end{DoxyParamCaption})}
+
+Transforms this ray by the given transformation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The transformation matrix to transform by. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Ray.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Ray.\+cpp\end{DoxyCompactItemize}

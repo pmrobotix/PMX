@@ -1,0 +1,461 @@
+\hypertarget{classControlStepper}{}\section{Control\+Stepper Class Reference}
+\label{classControlStepper}\index{Control\+Stepper@{Control\+Stepper}}
+
+
+Inheritance diagram for Control\+Stepper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classControlStepper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Control\+Stepper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControlStepper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classControlStepper_a33d1c458c741e78c561c883dc85f272f}\label{classControlStepper_a33d1c458c741e78c561c883dc85f272f}} 
+enum {\bfseries Part} \{ \newline
+{\bfseries M\+I\+N\+US}, 
+{\bfseries P\+L\+US}, 
+{\bfseries N\+O\+NE}, 
+{\bfseries M\+I\+N\+US}, 
+\newline
+{\bfseries P\+L\+US}, 
+{\bfseries N\+O\+NE}
+ \}
+\item 
+\mbox{\Hypertarget{classControlStepper_a33d1c458c741e78c561c883dc85f272f}\label{classControlStepper_a33d1c458c741e78c561c883dc85f272f}} 
+enum {\bfseries Part} \{ \newline
+{\bfseries M\+I\+N\+US}, 
+{\bfseries P\+L\+US}, 
+{\bfseries N\+O\+NE}, 
+{\bfseries M\+I\+N\+US}, 
+\newline
+{\bfseries P\+L\+US}, 
+{\bfseries N\+O\+NE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}{Control\+Stepper} ()
+\item 
+virtual \hyperlink{classControlStepper_af613e70c05c8dd2ba046aa1cafea8504}{$\sim$\+Control\+Stepper} ()
+\item 
+\mbox{\Hypertarget{classControlStepper_a405ed5a59df38ba8553ddfac2528e73b}\label{classControlStepper_a405ed5a59df38ba8553ddfac2528e73b}} 
+bool {\bfseries init\+With\+Minus\+Sprite\+And\+Plus\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$minus\+Sprite, \hyperlink{classSprite}{Sprite} $\ast$plus\+Sprite)
+\item 
+\mbox{\Hypertarget{classControlStepper_abb57bf1e44af87e0d7bfbb6a0360bb7b}\label{classControlStepper_abb57bf1e44af87e0d7bfbb6a0360bb7b}} 
+virtual void {\bfseries set\+Wraps} (bool wraps)
+\item 
+\mbox{\Hypertarget{classControlStepper_a672275bbdf24d5b0e7f5f64db6d5ec97}\label{classControlStepper_a672275bbdf24d5b0e7f5f64db6d5ec97}} 
+virtual void {\bfseries set\+Minimum\+Value} (double minimum\+Value)
+\item 
+\mbox{\Hypertarget{classControlStepper_a4a75ccac3d60ca5adcb3a6f3792256b1}\label{classControlStepper_a4a75ccac3d60ca5adcb3a6f3792256b1}} 
+virtual void {\bfseries set\+Maximum\+Value} (double maximum\+Value)
+\item 
+\mbox{\Hypertarget{classControlStepper_ac0f3211518c0f86b6820bebbafe007aa}\label{classControlStepper_ac0f3211518c0f86b6820bebbafe007aa}} 
+virtual void {\bfseries set\+Value} (double value)
+\item 
+\mbox{\Hypertarget{classControlStepper_ae2fa648bdfd0ce2e2727288573d6fede}\label{classControlStepper_ae2fa648bdfd0ce2e2727288573d6fede}} 
+virtual double {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{classControlStepper_ad2d81081134d7f4c1389875cbce30ba2}\label{classControlStepper_ad2d81081134d7f4c1389875cbce30ba2}} 
+virtual void {\bfseries set\+Step\+Value} (double step\+Value)
+\item 
+virtual void \hyperlink{classControlStepper_ad71e9ce56be2a8e40d2c57e2866fbed2}{set\+Value\+With\+Sending\+Event} (double value, bool send)
+\item 
+\mbox{\Hypertarget{classControlStepper_a5db4eb37303d678db1636f0be6169bc1}\label{classControlStepper_a5db4eb37303d678db1636f0be6169bc1}} 
+virtual bool {\bfseries is\+Continuous} () const
+\item 
+virtual bool \hyperlink{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+void \hyperlink{classControlStepper_a29a2d69a159c790691365db8a9f87d33}{update} (float dt) override
+\item 
+void \hyperlink{classControlStepper_adf8058658ff4555b71ace43f54f60a56}{update\+Layout\+Using\+Touch\+Location} (\hyperlink{classVec2}{Vec2} location)
+\item 
+void \hyperlink{classControlStepper_ac4d31486530d38b21525418205cfc086}{start\+Autorepeat} ()
+\item 
+void \hyperlink{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}{stop\+Autorepeat} ()
+\item 
+\hyperlink{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}{Control\+Stepper} ()
+\item 
+virtual \hyperlink{classControlStepper_abdd74d9591ddb2a154a395a81b98b031}{$\sim$\+Control\+Stepper} ()
+\item 
+\mbox{\Hypertarget{classControlStepper_a405ed5a59df38ba8553ddfac2528e73b}\label{classControlStepper_a405ed5a59df38ba8553ddfac2528e73b}} 
+bool {\bfseries init\+With\+Minus\+Sprite\+And\+Plus\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$minus\+Sprite, \hyperlink{classSprite}{Sprite} $\ast$plus\+Sprite)
+\item 
+\mbox{\Hypertarget{classControlStepper_a198ab54db7dc45fca24c876033b81c14}\label{classControlStepper_a198ab54db7dc45fca24c876033b81c14}} 
+virtual void {\bfseries set\+Wraps} (bool wraps)
+\item 
+\mbox{\Hypertarget{classControlStepper_a213641a6d387b08057a54d75d07ba4ee}\label{classControlStepper_a213641a6d387b08057a54d75d07ba4ee}} 
+virtual void {\bfseries set\+Minimum\+Value} (double minimum\+Value)
+\item 
+\mbox{\Hypertarget{classControlStepper_a1f04c37ae47b642e7f84e6fd89789f7c}\label{classControlStepper_a1f04c37ae47b642e7f84e6fd89789f7c}} 
+virtual void {\bfseries set\+Maximum\+Value} (double maximum\+Value)
+\item 
+\mbox{\Hypertarget{classControlStepper_a2211088d9a315c548b23e0298b1baaf6}\label{classControlStepper_a2211088d9a315c548b23e0298b1baaf6}} 
+virtual void {\bfseries set\+Value} (double value)
+\item 
+\mbox{\Hypertarget{classControlStepper_a03a26d5523b1fb64e255b424dbbb7f83}\label{classControlStepper_a03a26d5523b1fb64e255b424dbbb7f83}} 
+virtual double {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{classControlStepper_aef8f06006edb17c8effb509245b4e0b3}\label{classControlStepper_aef8f06006edb17c8effb509245b4e0b3}} 
+virtual void {\bfseries set\+Step\+Value} (double step\+Value)
+\item 
+virtual void \hyperlink{classControlStepper_af591de86f70b05305db312475a367401}{set\+Value\+With\+Sending\+Event} (double value, bool send)
+\item 
+\mbox{\Hypertarget{classControlStepper_aac43f8c4b0caa59ffac7b00419fbf237}\label{classControlStepper_aac43f8c4b0caa59ffac7b00419fbf237}} 
+virtual bool {\bfseries is\+Continuous} () const
+\item 
+virtual bool \hyperlink{classControlStepper_a7fbb969bb376da49033a5df63f562905}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classControlStepper_a7934349dae09881fce7a72d4985d0154}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+void \hyperlink{classControlStepper_a29a2d69a159c790691365db8a9f87d33}{update} (float dt) override
+\item 
+void \hyperlink{classControlStepper_adf8058658ff4555b71ace43f54f60a56}{update\+Layout\+Using\+Touch\+Location} (\hyperlink{classVec2}{Vec2} location)
+\item 
+void \hyperlink{classControlStepper_ac4d31486530d38b21525418205cfc086}{start\+Autorepeat} ()
+\item 
+void \hyperlink{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}{stop\+Autorepeat} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classControlStepper_a2c6ef032414c6420b4b0c6f05b72a51a}\label{classControlStepper_a2c6ef032414c6420b4b0c6f05b72a51a}} 
+static \hyperlink{classControlStepper}{Control\+Stepper} $\ast$ {\bfseries create} (\hyperlink{classSprite}{Sprite} $\ast$minus\+Sprite, \hyperlink{classSprite}{Sprite} $\ast$plus\+Sprite)
+\item 
+\mbox{\Hypertarget{classControlStepper_a7f3f7e7b68221ceb1841be7204ef4bf3}\label{classControlStepper_a7f3f7e7b68221ceb1841be7204ef4bf3}} 
+static \hyperlink{classControlStepper}{Control\+Stepper} $\ast$ {\bfseries create} (\hyperlink{classSprite}{Sprite} $\ast$minus\+Sprite, \hyperlink{classSprite}{Sprite} $\ast$plus\+Sprite)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classControlStepper_a2d84d49ad6381e57e353b2e6cd2fafd5}{\+\_\+value}
+\item 
+bool \hyperlink{classControlStepper_a719913d4a3b9a5547c667ea59acce5e1}{\+\_\+continuous}
+\item 
+bool \hyperlink{classControlStepper_ac0170ab1141a829cade54f76fe71a2cf}{\+\_\+autorepeat}
+\item 
+bool \hyperlink{classControlStepper_af7d9b1a82342df805f6d3bb90faa6ac1}{\+\_\+wraps}
+\item 
+double \hyperlink{classControlStepper_a1c69d0db7f0821cb798b355a2d4d71bf}{\+\_\+minimum\+Value}
+\item 
+double \hyperlink{classControlStepper_a3032c6b015481de0651f425d67a0c920}{\+\_\+maximum\+Value}
+\item 
+double \hyperlink{classControlStepper_a7b5f96355831685a8c9992e018e55e62}{\+\_\+step\+Value}
+\item 
+\mbox{\Hypertarget{classControlStepper_abe098b01914e0e69fb13b03dea8edfd9}\label{classControlStepper_abe098b01914e0e69fb13b03dea8edfd9}} 
+bool {\bfseries \+\_\+touch\+Inside\+Flag}
+\item 
+\mbox{\Hypertarget{classControlStepper_af2fae866b7ddd38a2fe0f39219013cfd}\label{classControlStepper_af2fae866b7ddd38a2fe0f39219013cfd}} 
+Part {\bfseries \+\_\+touched\+Part}
+\item 
+\mbox{\Hypertarget{classControlStepper_a621729fe4a45da6f3e9ade2bc10bbf5e}\label{classControlStepper_a621729fe4a45da6f3e9ade2bc10bbf5e}} 
+int {\bfseries \+\_\+autorepeat\+Count}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}\label{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}} 
+\index{Control\+Stepper@{Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\index{Control\+Stepper@{Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{Control\+Stepper()}{ControlStepper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+Stepper\+::\+Control\+Stepper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classControlStepper_af613e70c05c8dd2ba046aa1cafea8504}\label{classControlStepper_af613e70c05c8dd2ba046aa1cafea8504}} 
+\index{Control\+Stepper@{Control\+Stepper}!````~Control\+Stepper@{$\sim$\+Control\+Stepper}}
+\index{````~Control\+Stepper@{$\sim$\+Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{$\sim$\+Control\+Stepper()}{~ControlStepper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+Stepper\+::$\sim$\+Control\+Stepper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}\label{classControlStepper_af1c262fd75987df18882ac63fdf0d1bc}} 
+\index{Control\+Stepper@{Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\index{Control\+Stepper@{Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{Control\+Stepper()}{ControlStepper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Control\+Stepper\+::\+Control\+Stepper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classControlStepper_abdd74d9591ddb2a154a395a81b98b031}\label{classControlStepper_abdd74d9591ddb2a154a395a81b98b031}} 
+\index{Control\+Stepper@{Control\+Stepper}!````~Control\+Stepper@{$\sim$\+Control\+Stepper}}
+\index{````~Control\+Stepper@{$\sim$\+Control\+Stepper}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{$\sim$\+Control\+Stepper()}{~ControlStepper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Control\+Stepper\+::$\sim$\+Control\+Stepper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}\label{classControlStepper_a73a5572d0e9ba2a72da9f42884e621e7}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+Stepper\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_a7fbb969bb376da49033a5df63f562905}\label{classControlStepper_a7fbb969bb376da49033a5df63f562905}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+Stepper\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}\label{classControlStepper_a55e6582294a0520d21e397c3a58cf57b}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_a7934349dae09881fce7a72d4985d0154}\label{classControlStepper_a7934349dae09881fce7a72d4985d0154}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+Stepper\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}\label{classControlStepper_a83a981cc66f6e1669b079b83842d6b79}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}\label{classControlStepper_ae79c66bc7b2a2f44fbfe2fa3a5782ee9}} 
+\index{Control\+Stepper@{Control\+Stepper}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+Stepper\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}.
+
+\mbox{\Hypertarget{classControlStepper_ad71e9ce56be2a8e40d2c57e2866fbed2}\label{classControlStepper_ad71e9ce56be2a8e40d2c57e2866fbed2}} 
+\index{Control\+Stepper@{Control\+Stepper}!set\+Value\+With\+Sending\+Event@{set\+Value\+With\+Sending\+Event}}
+\index{set\+Value\+With\+Sending\+Event@{set\+Value\+With\+Sending\+Event}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{set\+Value\+With\+Sending\+Event()}{setValueWithSendingEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::set\+Value\+With\+Sending\+Event (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{bool}]{send }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the numeric value of the stepper. If send is true, the Control\+::\+Event\+Type\+::\+V\+A\+L\+U\+E\+\_\+\+C\+H\+A\+N\+G\+ED is sent. \mbox{\Hypertarget{classControlStepper_af591de86f70b05305db312475a367401}\label{classControlStepper_af591de86f70b05305db312475a367401}} 
+\index{Control\+Stepper@{Control\+Stepper}!set\+Value\+With\+Sending\+Event@{set\+Value\+With\+Sending\+Event}}
+\index{set\+Value\+With\+Sending\+Event@{set\+Value\+With\+Sending\+Event}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{set\+Value\+With\+Sending\+Event()}{setValueWithSendingEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+Stepper\+::set\+Value\+With\+Sending\+Event (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{bool}]{send }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the numeric value of the stepper. If send is true, the Control\+::\+Event\+Type\+::\+V\+A\+L\+U\+E\+\_\+\+C\+H\+A\+N\+G\+ED is sent. \mbox{\Hypertarget{classControlStepper_ac4d31486530d38b21525418205cfc086}\label{classControlStepper_ac4d31486530d38b21525418205cfc086}} 
+\index{Control\+Stepper@{Control\+Stepper}!start\+Autorepeat@{start\+Autorepeat}}
+\index{start\+Autorepeat@{start\+Autorepeat}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{start\+Autorepeat()}{startAutorepeat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::start\+Autorepeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Start the autorepeat increment/decrement. \mbox{\Hypertarget{classControlStepper_ac4d31486530d38b21525418205cfc086}\label{classControlStepper_ac4d31486530d38b21525418205cfc086}} 
+\index{Control\+Stepper@{Control\+Stepper}!start\+Autorepeat@{start\+Autorepeat}}
+\index{start\+Autorepeat@{start\+Autorepeat}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{start\+Autorepeat()}{startAutorepeat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::start\+Autorepeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Start the autorepeat increment/decrement. \mbox{\Hypertarget{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}\label{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}} 
+\index{Control\+Stepper@{Control\+Stepper}!stop\+Autorepeat@{stop\+Autorepeat}}
+\index{stop\+Autorepeat@{stop\+Autorepeat}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{stop\+Autorepeat()}{stopAutorepeat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::stop\+Autorepeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stop the autorepeat. \mbox{\Hypertarget{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}\label{classControlStepper_ab7bdf3d5a93aa96f7ba67f2896b2baec}} 
+\index{Control\+Stepper@{Control\+Stepper}!stop\+Autorepeat@{stop\+Autorepeat}}
+\index{stop\+Autorepeat@{stop\+Autorepeat}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{stop\+Autorepeat()}{stopAutorepeat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::stop\+Autorepeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stop the autorepeat. \mbox{\Hypertarget{classControlStepper_a29a2d69a159c790691365db8a9f87d33}\label{classControlStepper_a29a2d69a159c790691365db8a9f87d33}} 
+\index{Control\+Stepper@{Control\+Stepper}!update@{update}}
+\index{update@{update}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update method will be called automatically every frame if \char`\"{}schedule\+Update\char`\"{} is called, and the node is \char`\"{}live\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+\mbox{\Hypertarget{classControlStepper_a29a2d69a159c790691365db8a9f87d33}\label{classControlStepper_a29a2d69a159c790691365db8a9f87d33}} 
+\index{Control\+Stepper@{Control\+Stepper}!update@{update}}
+\index{update@{update}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update method will be called automatically every frame if \char`\"{}schedule\+Update\char`\"{} is called, and the node is \char`\"{}live\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a32878481ba54b3856ab53c10af13848e}{Node}.
+
+\mbox{\Hypertarget{classControlStepper_adf8058658ff4555b71ace43f54f60a56}\label{classControlStepper_adf8058658ff4555b71ace43f54f60a56}} 
+\index{Control\+Stepper@{Control\+Stepper}!update\+Layout\+Using\+Touch\+Location@{update\+Layout\+Using\+Touch\+Location}}
+\index{update\+Layout\+Using\+Touch\+Location@{update\+Layout\+Using\+Touch\+Location}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{update\+Layout\+Using\+Touch\+Location()}{updateLayoutUsingTouchLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::update\+Layout\+Using\+Touch\+Location (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{location }\end{DoxyParamCaption})}
+
+Update the layout of the stepper with the given touch location. \mbox{\Hypertarget{classControlStepper_adf8058658ff4555b71ace43f54f60a56}\label{classControlStepper_adf8058658ff4555b71ace43f54f60a56}} 
+\index{Control\+Stepper@{Control\+Stepper}!update\+Layout\+Using\+Touch\+Location@{update\+Layout\+Using\+Touch\+Location}}
+\index{update\+Layout\+Using\+Touch\+Location@{update\+Layout\+Using\+Touch\+Location}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{update\+Layout\+Using\+Touch\+Location()}{updateLayoutUsingTouchLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Stepper\+::update\+Layout\+Using\+Touch\+Location (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{location }\end{DoxyParamCaption})}
+
+Update the layout of the stepper with the given touch location. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classControlStepper_ac0170ab1141a829cade54f76fe71a2cf}\label{classControlStepper_ac0170ab1141a829cade54f76fe71a2cf}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+autorepeat@{\+\_\+autorepeat}}
+\index{\+\_\+autorepeat@{\+\_\+autorepeat}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+autorepeat}{\_autorepeat}}
+{\footnotesize\ttfamily bool Control\+Stepper\+::\+\_\+autorepeat\hspace{0.3cm}{\ttfamily [protected]}}
+
+The automatic vs. nonautomatic repeat state of the stepper. \mbox{\Hypertarget{classControlStepper_a719913d4a3b9a5547c667ea59acce5e1}\label{classControlStepper_a719913d4a3b9a5547c667ea59acce5e1}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+continuous@{\+\_\+continuous}}
+\index{\+\_\+continuous@{\+\_\+continuous}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+continuous}{\_continuous}}
+{\footnotesize\ttfamily bool Control\+Stepper\+::\+\_\+continuous\hspace{0.3cm}{\ttfamily [protected]}}
+
+The continuous vs. noncontinuous state of the stepper. \mbox{\Hypertarget{classControlStepper_a3032c6b015481de0651f425d67a0c920}\label{classControlStepper_a3032c6b015481de0651f425d67a0c920}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+maximum\+Value@{\+\_\+maximum\+Value}}
+\index{\+\_\+maximum\+Value@{\+\_\+maximum\+Value}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+maximum\+Value}{\_maximumValue}}
+{\footnotesize\ttfamily double Control\+Stepper\+::\+\_\+maximum\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+The highest possible numeric value for the stepper. \mbox{\Hypertarget{classControlStepper_a1c69d0db7f0821cb798b355a2d4d71bf}\label{classControlStepper_a1c69d0db7f0821cb798b355a2d4d71bf}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+minimum\+Value@{\+\_\+minimum\+Value}}
+\index{\+\_\+minimum\+Value@{\+\_\+minimum\+Value}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+minimum\+Value}{\_minimumValue}}
+{\footnotesize\ttfamily double Control\+Stepper\+::\+\_\+minimum\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+The lowest possible numeric value for the stepper. \mbox{\Hypertarget{classControlStepper_a7b5f96355831685a8c9992e018e55e62}\label{classControlStepper_a7b5f96355831685a8c9992e018e55e62}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+step\+Value@{\+\_\+step\+Value}}
+\index{\+\_\+step\+Value@{\+\_\+step\+Value}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+step\+Value}{\_stepValue}}
+{\footnotesize\ttfamily double Control\+Stepper\+::\+\_\+step\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+The step, or increment, value for the stepper. \mbox{\Hypertarget{classControlStepper_a2d84d49ad6381e57e353b2e6cd2fafd5}\label{classControlStepper_a2d84d49ad6381e57e353b2e6cd2fafd5}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+value@{\+\_\+value}}
+\index{\+\_\+value@{\+\_\+value}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+value}{\_value}}
+{\footnotesize\ttfamily double Control\+Stepper\+::\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}
+
+The numeric value of the stepper. \mbox{\Hypertarget{classControlStepper_af7d9b1a82342df805f6d3bb90faa6ac1}\label{classControlStepper_af7d9b1a82342df805f6d3bb90faa6ac1}} 
+\index{Control\+Stepper@{Control\+Stepper}!\+\_\+wraps@{\+\_\+wraps}}
+\index{\+\_\+wraps@{\+\_\+wraps}!Control\+Stepper@{Control\+Stepper}}
+\subsubsection{\texorpdfstring{\+\_\+wraps}{\_wraps}}
+{\footnotesize\ttfamily bool Control\+Stepper\+::\+\_\+wraps\hspace{0.3cm}{\ttfamily [protected]}}
+
+The wrap vs. no-\/wrap state of the stepper. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control\+Stepper.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control\+Stepper.\+cpp\end{DoxyCompactItemize}

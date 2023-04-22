@@ -1,0 +1,106 @@
+\hypertarget{structParseResult}{}\section{Parse\+Result Struct Reference}
+\label{structParseResult}\index{Parse\+Result@{Parse\+Result}}
+
+
+Result of parsing (wraps Parse\+Error\+Code)  
+
+
+
+
+{\ttfamily \#include $<$error.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}\label{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}} 
+\hyperlink{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}{Parse\+Result} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, no error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a38ca49a53e80633d0864ad5026adaf84}\label{structParseResult_a38ca49a53e80633d0864ad5026adaf84}} 
+\hyperlink{structParseResult_a38ca49a53e80633d0864ad5026adaf84}{Parse\+Result} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, size\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em Constructor to set an error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}\label{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}} 
+\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} \hyperlink{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}{Code} () const
+\begin{DoxyCompactList}\small\item\em Get the error code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_afbe762766ac21b2aae266105f1dfa643}\label{structParseResult_afbe762766ac21b2aae266105f1dfa643}} 
+size\+\_\+t \hyperlink{structParseResult_afbe762766ac21b2aae266105f1dfa643}{Offset} () const
+\begin{DoxyCompactList}\small\item\em Get the error offset, if \hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error()}, 0 otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a4cec9590497f982dec42e9f0763d5d73}\label{structParseResult_a4cec9590497f982dec42e9f0763d5d73}} 
+\hyperlink{structParseResult_a4cec9590497f982dec42e9f0763d5d73}{operator bool} () const
+\begin{DoxyCompactList}\small\item\em Conversion to {\ttfamily bool}, returns {\ttfamily true}, iff !\hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error()}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}\label{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}} 
+bool \hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error} () const
+\begin{DoxyCompactList}\small\item\em Whether the result is an error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a4d98465a5dc6055e367a7ea7089fc73d}\label{structParseResult_a4d98465a5dc6055e367a7ea7089fc73d}} 
+bool {\bfseries operator==} (const \hyperlink{structParseResult}{Parse\+Result} \&that) const
+\item 
+\mbox{\Hypertarget{structParseResult_a6de18a7e43013b2defc51d892c2cf90f}\label{structParseResult_a6de18a7e43013b2defc51d892c2cf90f}} 
+bool {\bfseries operator==} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code) const
+\item 
+\mbox{\Hypertarget{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}\label{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}} 
+void \hyperlink{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Reset error code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_aa81b4a7b776b77216cb752385203a8c1}\label{structParseResult_aa81b4a7b776b77216cb752385203a8c1}} 
+void \hyperlink{structParseResult_aa81b4a7b776b77216cb752385203a8c1}{Set} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, size\+\_\+t offset=0)
+\begin{DoxyCompactList}\small\item\em Update error code and offset. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}\label{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}} 
+\hyperlink{structParseResult_acd4a266f815bec59fa27f64f1923fe9e}{Parse\+Result} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, no error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a38ca49a53e80633d0864ad5026adaf84}\label{structParseResult_a38ca49a53e80633d0864ad5026adaf84}} 
+\hyperlink{structParseResult_a38ca49a53e80633d0864ad5026adaf84}{Parse\+Result} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, size\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em Constructor to set an error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}\label{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}} 
+\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} \hyperlink{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}{Code} () const
+\begin{DoxyCompactList}\small\item\em Get the error code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_afbe762766ac21b2aae266105f1dfa643}\label{structParseResult_afbe762766ac21b2aae266105f1dfa643}} 
+size\+\_\+t \hyperlink{structParseResult_afbe762766ac21b2aae266105f1dfa643}{Offset} () const
+\begin{DoxyCompactList}\small\item\em Get the error offset, if \hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error()}, 0 otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a4cec9590497f982dec42e9f0763d5d73}\label{structParseResult_a4cec9590497f982dec42e9f0763d5d73}} 
+\hyperlink{structParseResult_a4cec9590497f982dec42e9f0763d5d73}{operator bool} () const
+\begin{DoxyCompactList}\small\item\em Conversion to {\ttfamily bool}, returns {\ttfamily true}, iff !\hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error()}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}\label{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}} 
+bool \hyperlink{structParseResult_adfe0ef5b994e82f8aa9ebf0b30c924b1}{Is\+Error} () const
+\begin{DoxyCompactList}\small\item\em Whether the result is an error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_a4d98465a5dc6055e367a7ea7089fc73d}\label{structParseResult_a4d98465a5dc6055e367a7ea7089fc73d}} 
+bool {\bfseries operator==} (const \hyperlink{structParseResult}{Parse\+Result} \&that) const
+\item 
+\mbox{\Hypertarget{structParseResult_a6de18a7e43013b2defc51d892c2cf90f}\label{structParseResult_a6de18a7e43013b2defc51d892c2cf90f}} 
+bool {\bfseries operator==} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code) const
+\item 
+\mbox{\Hypertarget{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}\label{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}} 
+void \hyperlink{structParseResult_a88b6d44f052a19e6436ae6aadc2c40b4}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Reset error code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParseResult_aa81b4a7b776b77216cb752385203a8c1}\label{structParseResult_aa81b4a7b776b77216cb752385203a8c1}} 
+void \hyperlink{structParseResult_aa81b4a7b776b77216cb752385203a8c1}{Set} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, size\+\_\+t offset=0)
+\begin{DoxyCompactList}\small\item\em Update error code and offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structParseResult_a58c9982e833d1c74686506ac7449200c}\label{structParseResult_a58c9982e833d1c74686506ac7449200c}} 
+bool {\bfseries operator==} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, const \hyperlink{structParseResult}{Parse\+Result} \&err)
+\item 
+\mbox{\Hypertarget{structParseResult_a58c9982e833d1c74686506ac7449200c}\label{structParseResult_a58c9982e833d1c74686506ac7449200c}} 
+bool {\bfseries operator==} (\hyperlink{group__RAPIDJSON__ERRORS_ga8d4b32dfc45840bca189ade2bbcb6ba7}{Parse\+Error\+Code} code, const \hyperlink{structParseResult}{Parse\+Result} \&err)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Result of parsing (wraps Parse\+Error\+Code) 
+
+
+\begin{DoxyCode}
+\hyperlink{classGenericDocument}{Document} doc;
+\hyperlink{structParseResult}{ParseResult} ok = doc.\hyperlink{classGenericDocument_aebd4e7fddd80c1e1174837aee6d2159b}{Parse}(\textcolor{stringliteral}{"[42]"});
+\textcolor{keywordflow}{if} (!ok) \{
+    fprintf(stderr, \textcolor{stringliteral}{"JSON parse error: %s (%u)"},
+            \hyperlink{group__RAPIDJSON__ERRORS_ga28835eb93d2c3c07bbea13515eb31415}{GetParseError\_En}(ok.\hyperlink{structParseResult_a2aae3c2f42b31cc2409ee1e03bc4852e}{Code}()), ok.\hyperlink{structParseResult_afbe762766ac21b2aae266105f1dfa643}{Offset}());
+    exit(EXIT\_FAILURE);
+\}
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\hyperlink{classGenericReader_a0c450620d14ff1824e58bb7bd9b42099}{Generic\+Reader\+::\+Parse}, \hyperlink{classGenericDocument_aebd4e7fddd80c1e1174837aee6d2159b}{Generic\+Document\+::\+Parse} 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/json/error/error.\+h\end{DoxyCompactItemize}

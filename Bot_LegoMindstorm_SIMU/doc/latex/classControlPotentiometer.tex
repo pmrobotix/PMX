@@ -1,0 +1,460 @@
+\hypertarget{classControlPotentiometer}{}\section{Control\+Potentiometer Class Reference}
+\label{classControlPotentiometer}\index{Control\+Potentiometer@{Control\+Potentiometer}}
+
+
+Inheritance diagram for Control\+Potentiometer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classControlPotentiometer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Control\+Potentiometer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControlPotentiometer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlPotentiometer_a32c3e0a6d269d478e1ebad384f033dc9}{Control\+Potentiometer} ()
+\item 
+virtual \hyperlink{classControlPotentiometer_a154a0d88aeed45da5da4a008fe0f3c15}{$\sim$\+Control\+Potentiometer} ()
+\item 
+bool \hyperlink{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$track\+Sprite, \hyperlink{classProgressTimer}{Progress\+Timer} $\ast$progress\+Timer, \hyperlink{classSprite}{Sprite} $\ast$thumb\+Sprite)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a92ff5779d9e8bbc06745797365f1fef9}\label{classControlPotentiometer_a92ff5779d9e8bbc06745797365f1fef9}} 
+void {\bfseries set\+Value} (float value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a4fa50bbde5f1ba432997462448e08cb3}\label{classControlPotentiometer_a4fa50bbde5f1ba432997462448e08cb3}} 
+float {\bfseries get\+Value} ()
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a5b70e36ef7a99d7401efe8170e298d33}\label{classControlPotentiometer_a5b70e36ef7a99d7401efe8170e298d33}} 
+void {\bfseries set\+Minimum\+Value} (float minimum\+Value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_af1b1bd41d07a9b660ccd41e32b28635d}\label{classControlPotentiometer_af1b1bd41d07a9b660ccd41e32b28635d}} 
+float {\bfseries get\+Minimum\+Value} ()
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a7328d2e17528991d2521584acbf43639}\label{classControlPotentiometer_a7328d2e17528991d2521584acbf43639}} 
+void {\bfseries set\+Maximum\+Value} (float maximum\+Value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_adc44b9b0966427dcf339706258b8c0d5}\label{classControlPotentiometer_adc44b9b0966427dcf339706258b8c0d5}} 
+float {\bfseries get\+Maximum\+Value} ()
+\item 
+virtual bool \hyperlink{classControlPotentiometer_a484e056833311821d4ea2f3ec4bde790}{is\+Touch\+Inside} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+void \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{set\+Enabled} (bool enabled) override
+\item 
+virtual bool \hyperlink{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+void \hyperlink{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}{potentiometer\+Began} (\hyperlink{classVec2}{Vec2} location)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_af9c282205e211f1ba0447158bfbf151e}\label{classControlPotentiometer_af9c282205e211f1ba0447158bfbf151e}} 
+void {\bfseries potentiometer\+Moved} (\hyperlink{classVec2}{Vec2} location)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_aac5c40fe78e249e162d17e19fdf974ef}\label{classControlPotentiometer_aac5c40fe78e249e162d17e19fdf974ef}} 
+void {\bfseries potentiometer\+Ended} (\hyperlink{classVec2}{Vec2} location)
+\item 
+float \hyperlink{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}{distance\+Between\+Point\+And\+Point} (\hyperlink{classVec2}{Vec2} point1, \hyperlink{classVec2}{Vec2} point2)
+\item 
+float \hyperlink{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point} (\hyperlink{classVec2}{Vec2} begin\+LineA, \hyperlink{classVec2}{Vec2} end\+LineA, \hyperlink{classVec2}{Vec2} begin\+LineB, \hyperlink{classVec2}{Vec2} end\+LineB)
+\item 
+\hyperlink{classControlPotentiometer_a11449c0b00b26be771dc7850d0091ff0}{Control\+Potentiometer} ()
+\item 
+virtual \hyperlink{classControlPotentiometer_a1fc184aae602d4f0421bdbe2a78395bc}{$\sim$\+Control\+Potentiometer} ()
+\item 
+bool \hyperlink{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$track\+Sprite, \hyperlink{classProgressTimer}{Progress\+Timer} $\ast$progress\+Timer, \hyperlink{classSprite}{Sprite} $\ast$thumb\+Sprite)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a92ff5779d9e8bbc06745797365f1fef9}\label{classControlPotentiometer_a92ff5779d9e8bbc06745797365f1fef9}} 
+void {\bfseries set\+Value} (float value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a4fa50bbde5f1ba432997462448e08cb3}\label{classControlPotentiometer_a4fa50bbde5f1ba432997462448e08cb3}} 
+float {\bfseries get\+Value} ()
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a5b70e36ef7a99d7401efe8170e298d33}\label{classControlPotentiometer_a5b70e36ef7a99d7401efe8170e298d33}} 
+void {\bfseries set\+Minimum\+Value} (float minimum\+Value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_af1b1bd41d07a9b660ccd41e32b28635d}\label{classControlPotentiometer_af1b1bd41d07a9b660ccd41e32b28635d}} 
+float {\bfseries get\+Minimum\+Value} ()
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_a7328d2e17528991d2521584acbf43639}\label{classControlPotentiometer_a7328d2e17528991d2521584acbf43639}} 
+void {\bfseries set\+Maximum\+Value} (float maximum\+Value)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_adc44b9b0966427dcf339706258b8c0d5}\label{classControlPotentiometer_adc44b9b0966427dcf339706258b8c0d5}} 
+float {\bfseries get\+Maximum\+Value} ()
+\item 
+virtual bool \hyperlink{classControlPotentiometer_aa2bdcab40a678f249ee083c466064795}{is\+Touch\+Inside} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+void \hyperlink{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}{set\+Enabled} (bool enabled) override
+\item 
+virtual bool \hyperlink{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+void \hyperlink{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}{potentiometer\+Began} (\hyperlink{classVec2}{Vec2} location)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_af9c282205e211f1ba0447158bfbf151e}\label{classControlPotentiometer_af9c282205e211f1ba0447158bfbf151e}} 
+void {\bfseries potentiometer\+Moved} (\hyperlink{classVec2}{Vec2} location)
+\item 
+\mbox{\Hypertarget{classControlPotentiometer_aac5c40fe78e249e162d17e19fdf974ef}\label{classControlPotentiometer_aac5c40fe78e249e162d17e19fdf974ef}} 
+void {\bfseries potentiometer\+Ended} (\hyperlink{classVec2}{Vec2} location)
+\item 
+float \hyperlink{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}{distance\+Between\+Point\+And\+Point} (\hyperlink{classVec2}{Vec2} point1, \hyperlink{classVec2}{Vec2} point2)
+\item 
+float \hyperlink{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point} (\hyperlink{classVec2}{Vec2} begin\+LineA, \hyperlink{classVec2}{Vec2} end\+LineA, \hyperlink{classVec2}{Vec2} begin\+LineB, \hyperlink{classVec2}{Vec2} end\+LineB)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classControlPotentiometer}{Control\+Potentiometer} $\ast$ \hyperlink{classControlPotentiometer_a8abc77decaf67e3766d9ed6bf27b264d}{create} (const char $\ast$background\+File, const char $\ast$progress\+File, const char $\ast$thumb\+File)
+\item 
+static \hyperlink{classControlPotentiometer}{Control\+Potentiometer} $\ast$ \hyperlink{classControlPotentiometer_a32512b74b8516e0fbe8b7e9f9adfab33}{create} (const char $\ast$background\+File, const char $\ast$progress\+File, const char $\ast$thumb\+File)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classControlPotentiometer_a774e4c02eccc1e070ad8cf2b7e86851c}{\+\_\+value}
+\item 
+float \hyperlink{classControlPotentiometer_a38f0851688e8848abc721ecbc3fcc8bf}{\+\_\+minimum\+Value}
+\item 
+float \hyperlink{classControlPotentiometer_a0553fb25f4666b1076a3e39133a7d193}{\+\_\+maximum\+Value}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+for Cocos2D. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControlPotentiometer_a32c3e0a6d269d478e1ebad384f033dc9}\label{classControlPotentiometer_a32c3e0a6d269d478e1ebad384f033dc9}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\index{Control\+Potentiometer@{Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{Control\+Potentiometer()}{ControlPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+E\+X\+T\+\_\+\+B\+E\+G\+IN Control\+Potentiometer\+::\+Control\+Potentiometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classControlPotentiometer_a154a0d88aeed45da5da4a008fe0f3c15}\label{classControlPotentiometer_a154a0d88aeed45da5da4a008fe0f3c15}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!````~Control\+Potentiometer@{$\sim$\+Control\+Potentiometer}}
+\index{````~Control\+Potentiometer@{$\sim$\+Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{$\sim$\+Control\+Potentiometer()}{~ControlPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Control\+Potentiometer\+::$\sim$\+Control\+Potentiometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classControlPotentiometer_a11449c0b00b26be771dc7850d0091ff0}\label{classControlPotentiometer_a11449c0b00b26be771dc7850d0091ff0}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\index{Control\+Potentiometer@{Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{Control\+Potentiometer()}{ControlPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Control\+Potentiometer\+::\+Control\+Potentiometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classControlPotentiometer_a1fc184aae602d4f0421bdbe2a78395bc}\label{classControlPotentiometer_a1fc184aae602d4f0421bdbe2a78395bc}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!````~Control\+Potentiometer@{$\sim$\+Control\+Potentiometer}}
+\index{````~Control\+Potentiometer@{$\sim$\+Control\+Potentiometer}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{$\sim$\+Control\+Potentiometer()}{~ControlPotentiometer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Control\+Potentiometer\+::$\sim$\+Control\+Potentiometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}\label{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point@{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point}}
+\index{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point@{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point()}{angleInDegreesBetweenLineFromPoint\_toPoint\_toLineFromPoint\_toPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{begin\+LineA,  }\item[{\hyperlink{classVec2}{Vec2}}]{end\+LineA,  }\item[{\hyperlink{classVec2}{Vec2}}]{begin\+LineB,  }\item[{\hyperlink{classVec2}{Vec2}}]{end\+LineB }\end{DoxyParamCaption})}
+
+Returns the angle in degree between line1 and line2. \mbox{\Hypertarget{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}\label{classControlPotentiometer_a9662b2e1f7dcd8eca588a202bcf4709e}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point@{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point}}
+\index{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point@{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point()}{angleInDegreesBetweenLineFromPoint\_toPoint\_toLineFromPoint\_toPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::angle\+In\+Degrees\+Between\+Line\+From\+Point\+\_\+to\+Point\+\_\+to\+Line\+From\+Point\+\_\+to\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{begin\+LineA,  }\item[{\hyperlink{classVec2}{Vec2}}]{end\+LineA,  }\item[{\hyperlink{classVec2}{Vec2}}]{begin\+LineB,  }\item[{\hyperlink{classVec2}{Vec2}}]{end\+LineB }\end{DoxyParamCaption})}
+
+Returns the angle in degree between line1 and line2. \mbox{\Hypertarget{classControlPotentiometer_a8abc77decaf67e3766d9ed6bf27b264d}\label{classControlPotentiometer_a8abc77decaf67e3766d9ed6bf27b264d}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!create@{create}}
+\index{create@{create}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classControlPotentiometer}{Control\+Potentiometer} $\ast$ Control\+Potentiometer\+::create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{background\+File,  }\item[{const char $\ast$}]{progress\+File,  }\item[{const char $\ast$}]{thumb\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates potentiometer with a track filename and a progress filename. \mbox{\Hypertarget{classControlPotentiometer_a32512b74b8516e0fbe8b7e9f9adfab33}\label{classControlPotentiometer_a32512b74b8516e0fbe8b7e9f9adfab33}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!create@{create}}
+\index{create@{create}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classControlPotentiometer}{Control\+Potentiometer}$\ast$ Control\+Potentiometer\+::create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{background\+File,  }\item[{const char $\ast$}]{progress\+File,  }\item[{const char $\ast$}]{thumb\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates potentiometer with a track filename and a progress filename. \mbox{\Hypertarget{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}\label{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!distance\+Between\+Point\+And\+Point@{distance\+Between\+Point\+And\+Point}}
+\index{distance\+Between\+Point\+And\+Point@{distance\+Between\+Point\+And\+Point}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{distance\+Between\+Point\+And\+Point()}{distanceBetweenPointAndPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::distance\+Between\+Point\+And\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{point1,  }\item[{\hyperlink{classVec2}{Vec2}}]{point2 }\end{DoxyParamCaption})}
+
+Returns the distance between the point1 and point2. \mbox{\Hypertarget{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}\label{classControlPotentiometer_a4169e6c12a675aafd77d576acdaa837d}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!distance\+Between\+Point\+And\+Point@{distance\+Between\+Point\+And\+Point}}
+\index{distance\+Between\+Point\+And\+Point@{distance\+Between\+Point\+And\+Point}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{distance\+Between\+Point\+And\+Point()}{distanceBetweenPointAndPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::distance\+Between\+Point\+And\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{point1,  }\item[{\hyperlink{classVec2}{Vec2}}]{point2 }\end{DoxyParamCaption})}
+
+Returns the distance between the point1 and point2. \mbox{\Hypertarget{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}\label{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite@{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite}}
+\index{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite@{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite()}{initWithTrackSprite\_ProgressTimer\_ThumbSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+Potentiometer\+::init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{track\+Sprite,  }\item[{\hyperlink{classProgressTimer}{Progress\+Timer} $\ast$}]{progress\+Timer,  }\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{thumb\+Sprite }\end{DoxyParamCaption})}
+
+Initializes a potentiometer with a track sprite and a progress bar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em track\+Sprite} & \hyperlink{classSprite}{Sprite}, that is used as a background. \\
+\hline
+{\em progress\+Timer} & \hyperlink{classProgressTimer}{Progress\+Timer}, that is used as a progress bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}\label{classControlPotentiometer_afac9c374d17a3eb0b1135ae0e0b55678}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite@{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite}}
+\index{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite@{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite()}{initWithTrackSprite\_ProgressTimer\_ThumbSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Control\+Potentiometer\+::init\+With\+Track\+Sprite\+\_\+\+Progress\+Timer\+\_\+\+Thumb\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{track\+Sprite,  }\item[{\hyperlink{classProgressTimer}{Progress\+Timer} $\ast$}]{progress\+Timer,  }\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{thumb\+Sprite }\end{DoxyParamCaption})}
+
+Initializes a potentiometer with a track sprite and a progress bar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em track\+Sprite} & \hyperlink{classSprite}{Sprite}, that is used as a background. \\
+\hline
+{\em progress\+Timer} & \hyperlink{classProgressTimer}{Progress\+Timer}, that is used as a progress bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControlPotentiometer_a484e056833311821d4ea2f3ec4bde790}\label{classControlPotentiometer_a484e056833311821d4ea2f3ec4bde790}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!is\+Touch\+Inside@{is\+Touch\+Inside}}
+\index{is\+Touch\+Inside@{is\+Touch\+Inside}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{is\+Touch\+Inside()}{isTouchInside()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+Potentiometer\+::is\+Touch\+Inside (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a boolean value that indicates whether a touch is inside the bounds of the receiver. The given touch must be relative to the world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether a touch is inside the receiver\textquotesingle{}s rect. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a897865e3e4ff50ed827f33966e786c7f}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_aa2bdcab40a678f249ee083c466064795}\label{classControlPotentiometer_aa2bdcab40a678f249ee083c466064795}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!is\+Touch\+Inside@{is\+Touch\+Inside}}
+\index{is\+Touch\+Inside@{is\+Touch\+Inside}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{is\+Touch\+Inside()}{isTouchInside()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+Potentiometer\+::is\+Touch\+Inside (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a boolean value that indicates whether a touch is inside the bounds of the receiver. The given touch must be relative to the world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & A \hyperlink{classTouch}{Touch} object that represents a touch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether a touch is inside the receiver\textquotesingle{}s rect. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a897865e3e4ff50ed827f33966e786c7f}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}\label{classControlPotentiometer_ae5ab22036e6a15b6a5d388db38f29bc7}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control\+Potentiometer\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}\label{classControlPotentiometer_a92d549b600c44bed4fd08d5ff13cbe8e}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Control\+Potentiometer\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classControl_a0cf2e20cea5b57b263e965be4a19ab52}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}\label{classControlPotentiometer_adfd4029e5b390ba94a0ba0373adbc5d9}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}\label{classControlPotentiometer_adb487a04c463b3cfbf63be0957cee24c}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+Potentiometer\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a56073e57060169fe80cbb6ce1f4abe28}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}\label{classControlPotentiometer_aedfddc1d724a15c31897a50eaf1b93e6}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}\label{classControlPotentiometer_a5da1557dea949b31c82c56ed7aef23eb}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Control\+Potentiometer\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classControl_a26d2e6af053319dc605949678f726622}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}\label{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!potentiometer\+Began@{potentiometer\+Began}}
+\index{potentiometer\+Began@{potentiometer\+Began}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{potentiometer\+Began()}{potentiometerBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::potentiometer\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{location }\end{DoxyParamCaption})}
+
+Factorize the event dispatch into these methods. \mbox{\Hypertarget{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}\label{classControlPotentiometer_a69e8c5d377472fd170890ae3690bb4de}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!potentiometer\+Began@{potentiometer\+Began}}
+\index{potentiometer\+Began@{potentiometer\+Began}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{potentiometer\+Began()}{potentiometerBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::potentiometer\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2}}]{location }\end{DoxyParamCaption})}
+
+Factorize the event dispatch into these methods. \mbox{\Hypertarget{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}\label{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{b\+Enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Tells whether the control is enabled. 
+
+Reimplemented from \hyperlink{classControl_a55339ae920182245d5ec114c33f4b1fd}{Control}.
+
+\mbox{\Hypertarget{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}\label{classControlPotentiometer_ac67b583a3a21f6c44ffcf57b41c33278}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Control\+Potentiometer\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{b\+Enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Tells whether the control is enabled. 
+
+Reimplemented from \hyperlink{classControl_a55339ae920182245d5ec114c33f4b1fd}{Control}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classControlPotentiometer_a0553fb25f4666b1076a3e39133a7d193}\label{classControlPotentiometer_a0553fb25f4666b1076a3e39133a7d193}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!\+\_\+maximum\+Value@{\+\_\+maximum\+Value}}
+\index{\+\_\+maximum\+Value@{\+\_\+maximum\+Value}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{\+\_\+maximum\+Value}{\_maximumValue}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::\+\_\+maximum\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Contains the maximum value of the receiver. The default value of this property is 1.\+0. \mbox{\Hypertarget{classControlPotentiometer_a38f0851688e8848abc721ecbc3fcc8bf}\label{classControlPotentiometer_a38f0851688e8848abc721ecbc3fcc8bf}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!\+\_\+minimum\+Value@{\+\_\+minimum\+Value}}
+\index{\+\_\+minimum\+Value@{\+\_\+minimum\+Value}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{\+\_\+minimum\+Value}{\_minimumValue}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::\+\_\+minimum\+Value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Contains the minimum value of the receiver. The default value of this property is 0.\+0. \mbox{\Hypertarget{classControlPotentiometer_a774e4c02eccc1e070ad8cf2b7e86851c}\label{classControlPotentiometer_a774e4c02eccc1e070ad8cf2b7e86851c}} 
+\index{Control\+Potentiometer@{Control\+Potentiometer}!\+\_\+value@{\+\_\+value}}
+\index{\+\_\+value@{\+\_\+value}!Control\+Potentiometer@{Control\+Potentiometer}}
+\subsubsection{\texorpdfstring{\+\_\+value}{\_value}}
+{\footnotesize\ttfamily float Control\+Potentiometer\+::\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}
+
+Contains the receiver’s current value. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control\+Potentiometer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Control\+Extension/C\+C\+Control\+Potentiometer.\+cpp\end{DoxyCompactItemize}

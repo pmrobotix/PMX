@@ -1,0 +1,93 @@
+\subsection*{Overview}
+
+Performance Test \hyperlink{classData}{Data} Convertor is used for converting the json files to excel files. The json files are generated from project {\ttfamily tests/performance-\/tests}.
+
+\subsection*{Requirement}
+
+
+\begin{DoxyItemize}
+\item Python 2.\+7 is required. (Python 2.\+7.\+5 is well tested)
+\item \href{https://pypi.python.org/pypi/xlwt/}{\tt xlwt} for python to write excel files.
+\end{DoxyItemize}
+
+\subsection*{Generate test data}
+
+
+\begin{DoxyEnumerate}
+\item Change the device name in the tests source code. Now you should modify the device name in {\ttfamily tests/performance-\/tests/\+Classes/\+Profile.\+cpp} before running the tests. Sample code\+: \begin{DoxyVerb}```
+// For different device & os, change these values
+// TODO : get device info automatically
+#define DEVICE_NAME         "TheDeviceName"
+#define OS_VERSION          "SystemVersion"
+```
+\end{DoxyVerb}
+
+\item Run the performance-\/tests project on devices. Once the project started, you will see a scene like this\+: 
+\item Click the menu {\ttfamily Start Auto\+Test}. Then the performance tests will running automatically. Once the scene stopped at the scene again. It\textquotesingle{}s mean the autotesting is end.
+\end{DoxyEnumerate}
+
+\subsection*{Get the generated json files}
+
+After the test data generated, you can get the json file from the device. The json file will be named with format \+: {\ttfamily Performance\+Log-\/\mbox{[}D\+E\+V\+I\+C\+E\+\_\+\+N\+A\+ME\mbox{]}-\/\mbox{[}T\+I\+M\+E\+S\+T\+A\+MP\mbox{]}.json}.
+
+For different OS, you can get the json files by different steps\+:
+
+\subsubsection*{From i\+OS devices}
+
+The json files will generated in the {\ttfamily Document} folder of the app. So you can get the json files by i\+Tunes by steps\+: 
+
+\subsubsection*{From Android devices}
+
+The json files will be generated in the path {\ttfamily /mnt/sdcard/\+Perf\+Test}. So you can get the json files by commands like this\+:
+
+
+\begin{DoxyItemize}
+\item Windows System
+
+Run the command in cmd\+: ``` A\+N\+D\+R\+O\+I\+D\+\_\+\+S\+D\+K\+\_\+\+R\+O\+OT\%-\/tools pull /mnt/sdcard/\+Perf\+Test C\+: ```
+\item Mac System
+
+Run the command in terminal\+: ``` \$\+A\+N\+D\+R\+O\+I\+D\+\_\+\+S\+D\+K\+\_\+\+R\+O\+OT/platform-\/tools/adb pull /mnt/sdcard/\+Perf\+Test $\sim$/\+M\+Y\+\_\+\+L\+O\+G\+\_\+\+F\+O\+L\+D\+ER ```
+\end{DoxyItemize}
+
+\subsubsection*{From Mac devices}
+
+The json files will be generated in the path {\ttfamily $\sim$/\+Document}.
+
+\subsubsection*{From Win32 devices}
+
+The json files will be generated in the App\+Data path. For different system versions, it will be different path. The path will be {\ttfamily C\+:\textbackslash{}Users\textbackslash{}U\+S\+E\+R\+\_\+\+N\+A\+ME\textbackslash{}App\+Data\textbackslash{}Local\textbackslash{}performance-\/tests} on Win8.\+1.
+
+\subsection*{Convert json files to excel files}
+
+When the json files are ready, you can convert the json files to excel files by {\ttfamily tools/performance-\/analyze/convertor.\+py}. The usage of the tool\+:
+
+
+\begin{DoxyCode}
+usage: convertor.py [-h] -s SRC\_PATH [-o OUTPUT\_PATH]
+
+Performance test data convertor.
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -s SRC\_PATH     Specify the json file path or the folder path of json files.
+  -o OUTPUT\_PATH  Specify the output path of excel files.
+\end{DoxyCode}
+
+
+Tips\+:
+
+
+\begin{DoxyItemize}
+\item The value of {\ttfamily -\/s} can be a json file or a folder which contains many json files. If it\textquotesingle{}s a folder, then the json files in the folder will be converted to excel files one by one.
+\item You can specify the output path by {\ttfamily -\/o}. If it\textquotesingle{}s not specified, the excel files will be placed in the same folder of json files.
+\item Each json file will generate an excel file. The excel file name will be same with the json file. For example\+: {\ttfamily python convertor.\+py -\/s Performance\+Log-\/iphone4s-\/2015-\/09-\/11-\/1745.\+json} will generate a {\ttfamily Performance\+Log-\/iphone4s-\/2015-\/09-\/11-\/1745.\+xls} file.
+\item The format of the excel file will be looks like this\+:
+
+
+\begin{DoxyEnumerate}
+\item Each sheet shows the result of a test case.
+\item The cells with G\+R\+E\+EN background color are the conditions of the test case.
+\item The cells with Y\+E\+L\+L\+OW background color are the result data of the test case. 
+\end{DoxyEnumerate}
+\end{DoxyItemize}

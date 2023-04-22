@@ -1,0 +1,483 @@
+\hypertarget{classnetwork_1_1WebSocket}{}\section{network\+:\+:Web\+Socket Class Reference}
+\label{classnetwork_1_1WebSocket}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+
+
+{\ttfamily \#include $<$Web\+Socket.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnetwork_1_1WebSocket_1_1Data}{Data}
+\item 
+class \hyperlink{classnetwork_1_1WebSocket_1_1Delegate}{Delegate}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Error\+Code} \{ \newline
+{\bfseries T\+I\+M\+E\+\_\+\+O\+UT}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}{Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}{Error\+Code\+::\+U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+I\+M\+E\+\_\+\+O\+UT}, 
+\newline
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}{Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}{Error\+Code\+::\+U\+N\+K\+N\+O\+WN}
+ \}
+\item 
+enum \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{State} \{ \newline
+{\bfseries C\+O\+N\+N\+E\+C\+T\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED}, 
+\newline
+{\bfseries C\+O\+N\+N\+E\+C\+T\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED}
+ \}
+\item 
+enum \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{Error\+Code} \{ \newline
+{\bfseries T\+I\+M\+E\+\_\+\+O\+UT}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}{Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}{Error\+Code\+::\+U\+N\+K\+N\+O\+WN}, 
+{\bfseries T\+I\+M\+E\+\_\+\+O\+UT}, 
+\newline
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}{Error\+Code\+::\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}, 
+\hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}{Error\+Code\+::\+U\+N\+K\+N\+O\+WN}
+ \}
+\item 
+enum \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{State} \{ \newline
+{\bfseries C\+O\+N\+N\+E\+C\+T\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED}, 
+\newline
+{\bfseries C\+O\+N\+N\+E\+C\+T\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG}, 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetwork_1_1WebSocket_abecb17a816adaef8b204c3170f96b42c}{Web\+Socket} ()
+\item 
+virtual \hyperlink{classnetwork_1_1WebSocket_a5a0b1e884d47e86d9415c126f6d9ab0a}{$\sim$\+Web\+Socket} ()
+\item 
+bool \hyperlink{classnetwork_1_1WebSocket_ad5b92ee6f7b6bf4f29e05de51813c05f}{init} (const \hyperlink{classnetwork_1_1WebSocket_1_1Delegate}{Delegate} \&delegate, const std\+::string \&url, const std\+::vector$<$ std\+::string $>$ $\ast$protocols=nullptr)
+\begin{DoxyCompactList}\small\item\em The initialized method for websocket. It needs to be invoked right after websocket instance is allocated. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_af7c47e5f256fe235baac117417f05410}{send} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Sends string data to websocket server. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_aca55172b70d11ae5e7456853d61f2c63}{send} (const unsigned char $\ast$binary\+Msg, unsigned int len)
+\begin{DoxyCompactList}\small\item\em Sends binary data to websocket server. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_ac0addc7ad7951f4bd10424154da7477a}{close} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to server synchronously. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_a39bdbc192e1e9120f042b695ac0344bc}{close\+Async} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to server asynchronously. \end{DoxyCompactList}\item 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{State} \hyperlink{classnetwork_1_1WebSocket_aa4367a2657c9b3c82b3a8afc4f563524}{get\+Ready\+State} ()
+\begin{DoxyCompactList}\small\item\em Gets current state of connection. \end{DoxyCompactList}\item 
+\hyperlink{classnetwork_1_1WebSocket_a16ac6769f5e0225db15b644884a367ae}{Web\+Socket} ()
+\item 
+virtual \hyperlink{classnetwork_1_1WebSocket_a48afbe9b82fde4479913a1b931444729}{$\sim$\+Web\+Socket} ()
+\item 
+bool \hyperlink{classnetwork_1_1WebSocket_a7609cf6f64c0bf34218ca267298b9bad}{init} (const \hyperlink{classnetwork_1_1WebSocket_1_1Delegate}{Delegate} \&delegate, const std\+::string \&url, const std\+::vector$<$ std\+::string $>$ $\ast$protocols=nullptr, const std\+::string \&ca\+File\+Path=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em The initialized method for websocket. It needs to be invoked right after websocket instance is allocated. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_a6a17081724ba19e6644521745adb6d04}{send} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Sends string data to websocket server. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_aa13070e6df2d71b315207c016c6ec206}{send} (const unsigned char $\ast$binary\+Msg, unsigned int len)
+\begin{DoxyCompactList}\small\item\em Sends binary data to websocket server. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_abef10acf60b4d5b87399e6f9c5ad808d}{close} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to server synchronously. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_1_1WebSocket_a3dd9f7d124fcb82f69c4a7114c1ed9bc}{close\+Async} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to server asynchronously. \end{DoxyCompactList}\item 
+\hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{State} \hyperlink{classnetwork_1_1WebSocket_aebd52c7b7089db891e191e19dc474506}{get\+Ready\+State} ()
+\begin{DoxyCompactList}\small\item\em Gets current state of connection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_ab94d69cba87fd51fdace3328b5d99e43}\label{classnetwork_1_1WebSocket_ab94d69cba87fd51fdace3328b5d99e43}} 
+const std\+::string \& \hyperlink{classnetwork_1_1WebSocket_ab94d69cba87fd51fdace3328b5d99e43}{get\+Url} () const
+\begin{DoxyCompactList}\small\item\em Gets the U\+RL of websocket connection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a48b5c07c30e5343459ec15576a2bace1}\label{classnetwork_1_1WebSocket_a48b5c07c30e5343459ec15576a2bace1}} 
+const std\+::string \& \hyperlink{classnetwork_1_1WebSocket_a48b5c07c30e5343459ec15576a2bace1}{get\+Protocol} () const
+\begin{DoxyCompactList}\small\item\em Gets the protocol selected by websocket server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classnetwork_1_1WebSocket_a361327851f089c1fa506cc1d7bc6359b}{close\+All\+Connections} ()
+\item 
+static void \hyperlink{classnetwork_1_1WebSocket_a3e2130b9d28fffa6dbb00eee933ff914}{close\+All\+Connections} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_afc3008491acf0c382a9b383dab80ca6d}\label{classnetwork_1_1WebSocket_afc3008491acf0c382a9b383dab80ca6d}} 
+class {\bfseries Ws\+Thread\+Helper}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_ac3bb118e21465a4ef8b5c4a1891d0b4e}\label{classnetwork_1_1WebSocket_ac3bb118e21465a4ef8b5c4a1891d0b4e}} 
+class {\bfseries Web\+Socket\+Callback\+Wrapper}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} is wrapper of the libwebsockets-\/protocol, let the develop could call the websocket easily. Please note that all public methods of \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket} have to be invoked on Cocos Thread. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!Error\+Code@{Error\+Code}}
+\index{Error\+Code@{Error\+Code}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{Error\+Code}{ErrorCode}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{network\+::\+Web\+Socket\+::\+Error\+Code}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Error\+Code enum used to represent the error in the websocket. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}} 
+U\+N\+K\+N\+O\+WN&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}} 
+U\+N\+K\+N\+O\+WN&$<$ value 1 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!Error\+Code@{Error\+Code}}
+\index{Error\+Code@{Error\+Code}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{Error\+Code}{ErrorCode}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59}{network\+::\+Web\+Socket\+::\+Error\+Code}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Error\+Code enum used to represent the error in the websocket. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}} 
+U\+N\+K\+N\+O\+WN&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a9ce818a4b52e8a8c6539fe6391392369}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+RE&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}\label{classnetwork_1_1WebSocket_a33c111a23355ac485e3a56c9d0ab9a59a696b031073e74bf2cb98e5ef201d4aa3}} 
+U\+N\+K\+N\+O\+WN&$<$ value 1 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!State@{State}}
+\index{State@{State}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{network\+::\+Web\+Socket\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+State enum used to represent the Websocket state. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+EN@{O\+P\+EN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!O\+P\+EN@{O\+P\+EN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}} 
+O\+P\+EN&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}} 
+C\+L\+O\+S\+I\+NG&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}} 
+C\+L\+O\+S\+ED&$<$ value 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+EN@{O\+P\+EN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!O\+P\+EN@{O\+P\+EN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}} 
+O\+P\+EN&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}} 
+C\+L\+O\+S\+I\+NG&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}} 
+C\+L\+O\+S\+ED&$<$ value 2 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!State@{State}}
+\index{State@{State}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{State}{State}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{network\+::\+Web\+Socket\+::\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+State enum used to represent the Websocket state. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+EN@{O\+P\+EN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!O\+P\+EN@{O\+P\+EN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}} 
+O\+P\+EN&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}} 
+C\+L\+O\+S\+I\+NG&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}} 
+C\+L\+O\+S\+ED&$<$ value 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+P\+EN@{O\+P\+EN}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!O\+P\+EN@{O\+P\+EN}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}} 
+O\+P\+EN&$<$ value 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+I\+NG@{C\+L\+O\+S\+I\+NG}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}} 
+C\+L\+O\+S\+I\+NG&$<$ value 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!C\+L\+O\+S\+ED@{C\+L\+O\+S\+ED}}}\mbox{\Hypertarget{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}\label{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}} 
+C\+L\+O\+S\+ED&$<$ value 2 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_abecb17a816adaef8b204c3170f96b42c}\label{classnetwork_1_1WebSocket_abecb17a816adaef8b204c3170f96b42c}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!Web\+Socket@{Web\+Socket}}
+\index{Web\+Socket@{Web\+Socket}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{Web\+Socket()}{WebSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily network\+::\+Web\+Socket\+::\+Web\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket}.
+
+ctor \mbox{\Hypertarget{classnetwork_1_1WebSocket_a5a0b1e884d47e86d9415c126f6d9ab0a}\label{classnetwork_1_1WebSocket_a5a0b1e884d47e86d9415c126f6d9ab0a}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!````~Web\+Socket@{$\sim$\+Web\+Socket}}
+\index{````~Web\+Socket@{$\sim$\+Web\+Socket}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{$\sim$\+Web\+Socket()}{~WebSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily network\+::\+Web\+Socket\+::$\sim$\+Web\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor of \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket}.
+
+NA  NA \mbox{\Hypertarget{classnetwork_1_1WebSocket_a16ac6769f5e0225db15b644884a367ae}\label{classnetwork_1_1WebSocket_a16ac6769f5e0225db15b644884a367ae}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!Web\+Socket@{Web\+Socket}}
+\index{Web\+Socket@{Web\+Socket}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{Web\+Socket()}{WebSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Web\+Socket\+::\+Web\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket}.
+
+ctor \mbox{\Hypertarget{classnetwork_1_1WebSocket_a48afbe9b82fde4479913a1b931444729}\label{classnetwork_1_1WebSocket_a48afbe9b82fde4479913a1b931444729}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!````~Web\+Socket@{$\sim$\+Web\+Socket}}
+\index{````~Web\+Socket@{$\sim$\+Web\+Socket}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{$\sim$\+Web\+Socket()}{~WebSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Web\+Socket\+::$\sim$\+Web\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor of \hyperlink{classnetwork_1_1WebSocket}{Web\+Socket}.
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_ac0addc7ad7951f4bd10424154da7477a}\label{classnetwork_1_1WebSocket_ac0addc7ad7951f4bd10424154da7477a}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close@{close}}
+\index{close@{close}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Web\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to server synchronously. 
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s a synchronous method, it will not return until websocket thread exits. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_abef10acf60b4d5b87399e6f9c5ad808d}\label{classnetwork_1_1WebSocket_abef10acf60b4d5b87399e6f9c5ad808d}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close@{close}}
+\index{close@{close}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to server synchronously. 
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s a synchronous method, it will not return until websocket thread exits. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a361327851f089c1fa506cc1d7bc6359b}\label{classnetwork_1_1WebSocket_a361327851f089c1fa506cc1d7bc6359b}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close\+All\+Connections@{close\+All\+Connections}}
+\index{close\+All\+Connections@{close\+All\+Connections}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close\+All\+Connections()}{closeAllConnections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Web\+Socket\+::close\+All\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Close all connections and wait for all websocket threads to exit \begin{DoxyNote}{Note}
+This method has to be invoked on Cocos Thread 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a3e2130b9d28fffa6dbb00eee933ff914}\label{classnetwork_1_1WebSocket_a3e2130b9d28fffa6dbb00eee933ff914}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close\+All\+Connections@{close\+All\+Connections}}
+\index{close\+All\+Connections@{close\+All\+Connections}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close\+All\+Connections()}{closeAllConnections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Socket\+::close\+All\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Close all connections and wait for all websocket threads to exit \begin{DoxyNote}{Note}
+This method has to be invoked on Cocos Thread 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a39bdbc192e1e9120f042b695ac0344bc}\label{classnetwork_1_1WebSocket_a39bdbc192e1e9120f042b695ac0344bc}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close\+Async@{close\+Async}}
+\index{close\+Async@{close\+Async}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close\+Async()}{closeAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+Web\+Socket\+::close\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to server asynchronously. 
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s an asynchronous method, it just notifies websocket thread to exit and returns directly, If using \textquotesingle{}close\+Async\textquotesingle{} to close websocket connection, be careful of not using destructed variables in the callback of \textquotesingle{}on\+Close\textquotesingle{}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a3dd9f7d124fcb82f69c4a7114c1ed9bc}\label{classnetwork_1_1WebSocket_a3dd9f7d124fcb82f69c4a7114c1ed9bc}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!close\+Async@{close\+Async}}
+\index{close\+Async@{close\+Async}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{close\+Async()}{closeAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Socket\+::close\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to server asynchronously. 
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s an asynchronous method, it just notifies websocket thread to exit and returns directly, If using \textquotesingle{}close\+Async\textquotesingle{} to close websocket connection, be careful of not using destructed variables in the callback of \textquotesingle{}on\+Close\textquotesingle{}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_aa4367a2657c9b3c82b3a8afc4f563524}\label{classnetwork_1_1WebSocket_aa4367a2657c9b3c82b3a8afc4f563524}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!get\+Ready\+State@{get\+Ready\+State}}
+\index{get\+Ready\+State@{get\+Ready\+State}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{get\+Ready\+State()}{getReadyState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{Web\+Socket\+::\+State} network\+::\+Web\+Socket\+::get\+Ready\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets current state of connection. 
+
+\begin{DoxyReturn}{Returns}
+State the state value could be State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG, \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG} or \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_aebd52c7b7089db891e191e19dc474506}\label{classnetwork_1_1WebSocket_aebd52c7b7089db891e191e19dc474506}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!get\+Ready\+State@{get\+Ready\+State}}
+\index{get\+Ready\+State@{get\+Ready\+State}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{get\+Ready\+State()}{getReadyState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20}{Web\+Socket\+::\+State} Web\+Socket\+::get\+Ready\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets current state of connection. 
+
+\begin{DoxyReturn}{Returns}
+State the state value could be State\+::\+C\+O\+N\+N\+E\+C\+T\+I\+NG, \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa38bd5138bf35514df41a1795ebbf5c3}{State\+::\+O\+P\+EN}, \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20aa71a44c4c886bfc66b1edd511e6a677e}{State\+::\+C\+L\+O\+S\+I\+NG} or \hyperlink{classnetwork_1_1WebSocket_a60680efaa16031262c8c50409356aa20a110ccf2f5d2ff4eda1fd1a494293467d}{State\+::\+C\+L\+O\+S\+ED} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_ad5b92ee6f7b6bf4f29e05de51813c05f}\label{classnetwork_1_1WebSocket_ad5b92ee6f7b6bf4f29e05de51813c05f}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!init@{init}}
+\index{init@{init}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool network\+::\+Web\+Socket\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{classnetwork_1_1WebSocket_1_1Delegate}{Delegate} \&}]{delegate,  }\item[{const std\+::string \&}]{url,  }\item[{const std\+::vector$<$ std\+::string $>$ $\ast$}]{protocols = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+The initialized method for websocket. It needs to be invoked right after websocket instance is allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delegate} & The delegate which want to receive event from websocket. \\
+\hline
+{\em url} & The U\+RL of websocket server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: Success, false\+: Failure.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a7609cf6f64c0bf34218ca267298b9bad}\label{classnetwork_1_1WebSocket_a7609cf6f64c0bf34218ca267298b9bad}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!init@{init}}
+\index{init@{init}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool network\+::\+Web\+Socket\+::init (\begin{DoxyParamCaption}\item[{const \hyperlink{classnetwork_1_1WebSocket_1_1Delegate}{Delegate} \&}]{delegate,  }\item[{const std\+::string \&}]{url,  }\item[{const std\+::vector$<$ std\+::string $>$ $\ast$}]{protocols = {\ttfamily nullptr},  }\item[{const std\+::string \&}]{ca\+File\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+The initialized method for websocket. It needs to be invoked right after websocket instance is allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delegate} & The delegate which want to receive event from websocket. \\
+\hline
+{\em url} & The U\+RL of websocket server. \\
+\hline
+{\em protocols} & The websocket protocols that agree with websocket server \\
+\hline
+{\em ca\+File\+Path} & The ca file path for wss connection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: Success, false\+: Failure.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_af7c47e5f256fe235baac117417f05410}\label{classnetwork_1_1WebSocket_af7c47e5f256fe235baac117417f05410}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!send@{send}}
+\index{send@{send}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void network\+::\+Web\+Socket\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Sends string data to websocket server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string data.  sendstring \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_a6a17081724ba19e6644521745adb6d04}\label{classnetwork_1_1WebSocket_a6a17081724ba19e6644521745adb6d04}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!send@{send}}
+\index{send@{send}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Web\+Socket\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Sends string data to websocket server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string data.  sendstring \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_aca55172b70d11ae5e7456853d61f2c63}\label{classnetwork_1_1WebSocket_aca55172b70d11ae5e7456853d61f2c63}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!send@{send}}
+\index{send@{send}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void network\+::\+Web\+Socket\+::send (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{binary\+Msg,  }\item[{unsigned int}]{len }\end{DoxyParamCaption})}
+
+
+
+Sends binary data to websocket server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binary\+Msg} & binary string data. \\
+\hline
+{\em len} & the size of binary string data.  sendstring \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1WebSocket_aa13070e6df2d71b315207c016c6ec206}\label{classnetwork_1_1WebSocket_aa13070e6df2d71b315207c016c6ec206}} 
+\index{network\+::\+Web\+Socket@{network\+::\+Web\+Socket}!send@{send}}
+\index{send@{send}!network\+::\+Web\+Socket@{network\+::\+Web\+Socket}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Web\+Socket\+::send (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{binary\+Msg,  }\item[{unsigned int}]{len }\end{DoxyParamCaption})}
+
+
+
+Sends binary data to websocket server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em binary\+Msg} & binary string data. \\
+\hline
+{\em len} & the size of binary string data.  sendstring \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Web\+Socket.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Web\+Socket.\+cpp\end{DoxyCompactItemize}

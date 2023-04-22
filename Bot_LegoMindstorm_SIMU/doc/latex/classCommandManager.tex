@@ -1,0 +1,72 @@
+\hypertarget{classCommandManager}{}\section{Command\+Manager Class Reference}
+\label{classCommandManager}\index{Command\+Manager@{Command\+Manager}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommandManager_ac2f0d9368b3715d8992c2773d6d3cdea}\label{classCommandManager_ac2f0d9368b3715d8992c2773d6d3cdea}} 
+enum {\bfseries Command\+Status} \{ {\bfseries S\+T\+A\+T\+U\+S\+\_\+\+I\+D\+LE} = 0, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+R\+U\+N\+N\+I\+NG} = 1, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+H\+A\+L\+T\+ED} = 2, 
+{\bfseries S\+T\+A\+T\+U\+S\+\_\+\+B\+L\+O\+C\+K\+ED} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommandManager_af6da9c7fc32ee660e3a7d4d7ac295861}\label{classCommandManager_af6da9c7fc32ee660e3a7d4d7ac295861}} 
+{\bfseries Command\+Manager} (float strait\+Line\+Arrival\+Windows\+\_\+mm, float turn\+Arrival\+Windows\+\_\+rad, \hyperlink{structGoto_1_1GotoConfiguration}{Goto\+::\+Goto\+Configuration} \&precise\+Goto\+Configuration, \hyperlink{structGoto_1_1GotoConfiguration}{Goto\+::\+Goto\+Configuration} \&waypoint\+Goto\+Configuration, \hyperlink{structGotoNoStop_1_1GotoNoStopConfiguration}{Goto\+No\+Stop\+::\+Goto\+No\+Stop\+Configuration} \&goto\+No\+Stop\+Configuration, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator, \hyperlink{classAccelerationDecelerationLimiter}{Acceleration\+Deceleration\+Limiter} $\ast$acceleration\+Deceleration\+Limiter=nullptr, \hyperlink{classBlockingDetector}{Blocking\+Detector} const $\ast$blocking\+Detector=nullptr)
+\item 
+\mbox{\Hypertarget{classCommandManager_a9b51b6d329b129cfa43b227f4bdaccd9}\label{classCommandManager_a9b51b6d329b129cfa43b227f4bdaccd9}} 
+bool {\bfseries add\+Straight\+Line} (float value\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_a4ae87591d4c1dddced671fe4c34ba052}\label{classCommandManager_a4ae87591d4c1dddced671fe4c34ba052}} 
+bool {\bfseries add\+Turn} (float angle\+In\+Deg)
+\item 
+\mbox{\Hypertarget{classCommandManager_ac93949131b022f2ba6c9b4396dcaf7df}\label{classCommandManager_ac93949131b022f2ba6c9b4396dcaf7df}} 
+bool {\bfseries add\+Go\+To} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_a8b99a15252007750b7f63b352e281deb}\label{classCommandManager_a8b99a15252007750b7f63b352e281deb}} 
+bool {\bfseries add\+Go\+To\+Waypoint} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_a944dc9036ce270b8e1a1034eb5d26259}\label{classCommandManager_a944dc9036ce270b8e1a1034eb5d26259}} 
+bool {\bfseries add\+Go\+To\+Back} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_ac65209ae5141e0fb2082ed3f55f083a1}\label{classCommandManager_ac65209ae5141e0fb2082ed3f55f083a1}} 
+bool {\bfseries add\+Go\+To\+No\+Stop} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_aab5cc6154f1076e96ebb04866dd21781}\label{classCommandManager_aab5cc6154f1076e96ebb04866dd21781}} 
+bool {\bfseries add\+Go\+To\+No\+Stop\+Back} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_a84accd6c31ed17af32502b8525b1eeb8}\label{classCommandManager_a84accd6c31ed17af32502b8525b1eeb8}} 
+bool {\bfseries add\+Go\+To\+Angle} (float pos\+X\+Inmm, float pos\+Y\+Inmm)
+\item 
+\mbox{\Hypertarget{classCommandManager_a4303783323d4a4ac027b860dfdc7103c}\label{classCommandManager_a4303783323d4a4ac027b860dfdc7103c}} 
+void {\bfseries set\+Emergency\+Stop} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_abb744a831796bd275d3ab509f1f71ad9}\label{classCommandManager_abb744a831796bd275d3ab509f1f71ad9}} 
+void {\bfseries reset\+Emergency\+Stop} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_a8c62dfba1fcad3c79fe4252fffb5c2d0}\label{classCommandManager_a8c62dfba1fcad3c79fe4252fffb5c2d0}} 
+void {\bfseries update} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad)
+\item 
+\mbox{\Hypertarget{classCommandManager_a06eedfffcfe7a21bb6fdd67f3d5494ff}\label{classCommandManager_a06eedfffcfe7a21bb6fdd67f3d5494ff}} 
+float {\bfseries get\+Distance\+Goal} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_ad1402c1d802d5dd184022470d144bf96}\label{classCommandManager_ad1402c1d802d5dd184022470d144bf96}} 
+float {\bfseries get\+Angle\+Goal} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_ad3536e6122f76e12e8f40907ab9cc48b}\label{classCommandManager_ad3536e6122f76e12e8f40907ab9cc48b}} 
+Command\+Manager\+::\+Command\+Status {\bfseries get\+Command\+Status} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_a95d38725985bb41c0e26d191068afd44}\label{classCommandManager_a95d38725985bb41c0e26d191068afd44}} 
+uint8\+\_\+t {\bfseries get\+Pending\+Command\+Count} ()
+\item 
+\mbox{\Hypertarget{classCommandManager_a2b0fb2e7f992e0170c23968ed6a934ef}\label{classCommandManager_a2b0fb2e7f992e0170c23968ed6a934ef}} 
+void {\bfseries reset} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/command\+Manager/Command\+Manager.\+h\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/command\+Manager/Command\+Manager.\+cpp\end{DoxyCompactItemize}

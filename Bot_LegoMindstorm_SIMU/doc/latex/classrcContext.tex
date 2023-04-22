@@ -1,0 +1,385 @@
+\hypertarget{classrcContext}{}\section{rc\+Context Class Reference}
+\label{classrcContext}\index{rc\+Context@{rc\+Context}}
+
+
+{\ttfamily \#include $<$Recast.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}{rc\+Context} (bool state=true)
+\item 
+void \hyperlink{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}{enable\+Log} (bool state)
+\item 
+\mbox{\Hypertarget{classrcContext_a68403737730ee112c523890a9fdc237d}\label{classrcContext_a68403737730ee112c523890a9fdc237d}} 
+void \hyperlink{classrcContext_a68403737730ee112c523890a9fdc237d}{reset\+Log} ()
+\begin{DoxyCompactList}\small\item\em Clears all log entries. \end{DoxyCompactList}\item 
+void \hyperlink{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}{log} (const rc\+Log\+Category category, const char $\ast$format,...)
+\item 
+void \hyperlink{classrcContext_aa4680430d751824f83634ac753df9669}{enable\+Timer} (bool state)
+\item 
+\mbox{\Hypertarget{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}\label{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}} 
+void \hyperlink{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}{reset\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Clears all peformance timers. (Resets all to unused.) \end{DoxyCompactList}\item 
+void \hyperlink{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}{start\+Timer} (const rc\+Timer\+Label label)
+\item 
+void \hyperlink{classrcContext_a3f7042723b8d99d486575eb3d592af25}{stop\+Timer} (const rc\+Timer\+Label label)
+\item 
+int \hyperlink{classrcContext_a17e7b79afff2f042961698aa1c818c3d}{get\+Accumulated\+Time} (const rc\+Timer\+Label label) const
+\item 
+\hyperlink{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}{rc\+Context} (bool state=true)
+\item 
+void \hyperlink{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}{enable\+Log} (bool state)
+\item 
+\mbox{\Hypertarget{classrcContext_a68403737730ee112c523890a9fdc237d}\label{classrcContext_a68403737730ee112c523890a9fdc237d}} 
+void \hyperlink{classrcContext_a68403737730ee112c523890a9fdc237d}{reset\+Log} ()
+\begin{DoxyCompactList}\small\item\em Clears all log entries. \end{DoxyCompactList}\item 
+void \hyperlink{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}{log} (const rc\+Log\+Category category, const char $\ast$format,...)
+\item 
+void \hyperlink{classrcContext_aa4680430d751824f83634ac753df9669}{enable\+Timer} (bool state)
+\item 
+\mbox{\Hypertarget{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}\label{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}} 
+void \hyperlink{classrcContext_a2fcc58bb1e29bbb9a7dfb834efff4a6d}{reset\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Clears all peformance timers. (Resets all to unused.) \end{DoxyCompactList}\item 
+void \hyperlink{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}{start\+Timer} (const rc\+Timer\+Label label)
+\item 
+void \hyperlink{classrcContext_a3f7042723b8d99d486575eb3d592af25}{stop\+Timer} (const rc\+Timer\+Label label)
+\item 
+int \hyperlink{classrcContext_a17e7b79afff2f042961698aa1c818c3d}{get\+Accumulated\+Time} (const rc\+Timer\+Label label) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}\label{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}} 
+virtual void \hyperlink{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}{do\+Reset\+Log} ()
+\begin{DoxyCompactList}\small\item\em Clears all log entries. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}{do\+Log} (const rc\+Log\+Category, const char $\ast$, const int)
+\item 
+\mbox{\Hypertarget{classrcContext_a57a97f408dac1438d6eae0993fa68570}\label{classrcContext_a57a97f408dac1438d6eae0993fa68570}} 
+virtual void \hyperlink{classrcContext_a57a97f408dac1438d6eae0993fa68570}{do\+Reset\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Clears all timers. (Resets all to unused.) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}{do\+Start\+Timer} (const rc\+Timer\+Label)
+\item 
+virtual void \hyperlink{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}{do\+Stop\+Timer} (const rc\+Timer\+Label)
+\item 
+virtual int \hyperlink{classrcContext_aac5af865c567bd0e362cb6a98c65c860}{do\+Get\+Accumulated\+Time} (const rc\+Timer\+Label) const
+\item 
+\mbox{\Hypertarget{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}\label{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}} 
+virtual void \hyperlink{classrcContext_aeb0a62bc037adef651cddcaaddc2c464}{do\+Reset\+Log} ()
+\begin{DoxyCompactList}\small\item\em Clears all log entries. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}{do\+Log} (const rc\+Log\+Category, const char $\ast$, const int)
+\item 
+\mbox{\Hypertarget{classrcContext_a57a97f408dac1438d6eae0993fa68570}\label{classrcContext_a57a97f408dac1438d6eae0993fa68570}} 
+virtual void \hyperlink{classrcContext_a57a97f408dac1438d6eae0993fa68570}{do\+Reset\+Timers} ()
+\begin{DoxyCompactList}\small\item\em Clears all timers. (Resets all to unused.) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}{do\+Start\+Timer} (const rc\+Timer\+Label)
+\item 
+virtual void \hyperlink{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}{do\+Stop\+Timer} (const rc\+Timer\+Label)
+\item 
+virtual int \hyperlink{classrcContext_aac5af865c567bd0e362cb6a98c65c860}{do\+Get\+Accumulated\+Time} (const rc\+Timer\+Label) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrcContext_af3690c070989bc399cd39e2da2b0fbad}\label{classrcContext_af3690c070989bc399cd39e2da2b0fbad}} 
+bool \hyperlink{classrcContext_af3690c070989bc399cd39e2da2b0fbad}{m\+\_\+log\+Enabled}
+\begin{DoxyCompactList}\small\item\em True if logging is enabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrcContext_a851ba8cc41ee2185be82fe11e847c846}\label{classrcContext_a851ba8cc41ee2185be82fe11e847c846}} 
+bool \hyperlink{classrcContext_a851ba8cc41ee2185be82fe11e847c846}{m\+\_\+timer\+Enabled}
+\begin{DoxyCompactList}\small\item\em True if the performance timers are enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides an interface for optional logging and performance tracking of the Recast build process.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This class does not provide logging or timer functionality on its own. Both must be provided by a concrete implementation by overriding the protected member functions. Also, this class does not provide an interface for extracting log messages. (Only adding them.) So concrete implementations must provide one.
+
+If no logging or timers are required, just pass an instance of this class through the Recast build process. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}\label{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}} 
+\index{rc\+Context@{rc\+Context}!rc\+Context@{rc\+Context}}
+\index{rc\+Context@{rc\+Context}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{rc\+Context()}{rcContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily rc\+Context\+::rc\+Context (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Contructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if the logging and performance timers should be enabled. \mbox{[}Default\+: true\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}\label{classrcContext_ae405295998d6c1db0ceb60d0f64559bc}} 
+\index{rc\+Context@{rc\+Context}!rc\+Context@{rc\+Context}}
+\index{rc\+Context@{rc\+Context}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{rc\+Context()}{rcContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily rc\+Context\+::rc\+Context (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Contructor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if the logging and performance timers should be enabled. \mbox{[}Default\+: true\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrcContext_aac5af865c567bd0e362cb6a98c65c860}\label{classrcContext_aac5af865c567bd0e362cb6a98c65c860}} 
+\index{rc\+Context@{rc\+Context}!do\+Get\+Accumulated\+Time@{do\+Get\+Accumulated\+Time}}
+\index{do\+Get\+Accumulated\+Time@{do\+Get\+Accumulated\+Time}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Get\+Accumulated\+Time()}{doGetAccumulatedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int rc\+Context\+::do\+Get\+Accumulated\+Time (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the total accumulated time of the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The accumulated time of the timer, or -\/1 if timers are disabled or the timer has never been started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcContext_aac5af865c567bd0e362cb6a98c65c860}\label{classrcContext_aac5af865c567bd0e362cb6a98c65c860}} 
+\index{rc\+Context@{rc\+Context}!do\+Get\+Accumulated\+Time@{do\+Get\+Accumulated\+Time}}
+\index{do\+Get\+Accumulated\+Time@{do\+Get\+Accumulated\+Time}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Get\+Accumulated\+Time()}{doGetAccumulatedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int rc\+Context\+::do\+Get\+Accumulated\+Time (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the total accumulated time of the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The accumulated time of the timer, or -\/1 if timers are disabled or the timer has never been started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}\label{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}} 
+\index{rc\+Context@{rc\+Context}!do\+Log@{do\+Log}}
+\index{do\+Log@{do\+Log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Log()}{doLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Log (\begin{DoxyParamCaption}\item[{const rc\+Log\+Category}]{,  }\item[{const char $\ast$}]{,  }\item[{const int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Logs a message. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em category} & The category of the message. \\
+\hline
+\mbox{\tt in}  & {\em msg} & The formatted message. \\
+\hline
+\mbox{\tt in}  & {\em len} & The length of the formatted message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}\label{classrcContext_acdc23d6ffab2e0f2be874de17a94c159}} 
+\index{rc\+Context@{rc\+Context}!do\+Log@{do\+Log}}
+\index{do\+Log@{do\+Log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Log()}{doLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Log (\begin{DoxyParamCaption}\item[{const rc\+Log\+Category}]{,  }\item[{const char $\ast$}]{,  }\item[{const int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Logs a message. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em category} & The category of the message. \\
+\hline
+\mbox{\tt in}  & {\em msg} & The formatted message. \\
+\hline
+\mbox{\tt in}  & {\em len} & The length of the formatted message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}\label{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}} 
+\index{rc\+Context@{rc\+Context}!do\+Start\+Timer@{do\+Start\+Timer}}
+\index{do\+Start\+Timer@{do\+Start\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Start\+Timer()}{doStartTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Start\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Starts the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}\label{classrcContext_a9bf9c573becd7256d2b5cfafdd789cb5}} 
+\index{rc\+Context@{rc\+Context}!do\+Start\+Timer@{do\+Start\+Timer}}
+\index{do\+Start\+Timer@{do\+Start\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Start\+Timer()}{doStartTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Start\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Starts the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}\label{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}} 
+\index{rc\+Context@{rc\+Context}!do\+Stop\+Timer@{do\+Stop\+Timer}}
+\index{do\+Stop\+Timer@{do\+Stop\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Stop\+Timer()}{doStopTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Stop\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Stops the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}\label{classrcContext_a84e11ac2367269561b33bd76ab0d0fa4}} 
+\index{rc\+Context@{rc\+Context}!do\+Stop\+Timer@{do\+Stop\+Timer}}
+\index{do\+Stop\+Timer@{do\+Stop\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{do\+Stop\+Timer()}{doStopTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void rc\+Context\+::do\+Stop\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Stops the specified performance timer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}\label{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}} 
+\index{rc\+Context@{rc\+Context}!enable\+Log@{enable\+Log}}
+\index{enable\+Log@{enable\+Log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{enable\+Log()}{enableLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::enable\+Log (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables logging. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if logging should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}\label{classrcContext_a03dcf9240dc69a7c329c15e32be12d8e}} 
+\index{rc\+Context@{rc\+Context}!enable\+Log@{enable\+Log}}
+\index{enable\+Log@{enable\+Log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{enable\+Log()}{enableLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::enable\+Log (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables logging. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if logging should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_aa4680430d751824f83634ac753df9669}\label{classrcContext_aa4680430d751824f83634ac753df9669}} 
+\index{rc\+Context@{rc\+Context}!enable\+Timer@{enable\+Timer}}
+\index{enable\+Timer@{enable\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{enable\+Timer()}{enableTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::enable\+Timer (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables the performance timers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if timers should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_aa4680430d751824f83634ac753df9669}\label{classrcContext_aa4680430d751824f83634ac753df9669}} 
+\index{rc\+Context@{rc\+Context}!enable\+Timer@{enable\+Timer}}
+\index{enable\+Timer@{enable\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{enable\+Timer()}{enableTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::enable\+Timer (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disables the performance timers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & T\+R\+UE if timers should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a17e7b79afff2f042961698aa1c818c3d}\label{classrcContext_a17e7b79afff2f042961698aa1c818c3d}} 
+\index{rc\+Context@{rc\+Context}!get\+Accumulated\+Time@{get\+Accumulated\+Time}}
+\index{get\+Accumulated\+Time@{get\+Accumulated\+Time}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{get\+Accumulated\+Time()}{getAccumulatedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int rc\+Context\+::get\+Accumulated\+Time (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the total accumulated time of the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The accumulated time of the timer, or -\/1 if timers are disabled or the timer has never been started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcContext_a17e7b79afff2f042961698aa1c818c3d}\label{classrcContext_a17e7b79afff2f042961698aa1c818c3d}} 
+\index{rc\+Context@{rc\+Context}!get\+Accumulated\+Time@{get\+Accumulated\+Time}}
+\index{get\+Accumulated\+Time@{get\+Accumulated\+Time}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{get\+Accumulated\+Time()}{getAccumulatedTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int rc\+Context\+::get\+Accumulated\+Time (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the total accumulated time of the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The accumulated time of the timer, or -\/1 if timers are disabled or the timer has never been started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}\label{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}} 
+\index{rc\+Context@{rc\+Context}!log@{log}}
+\index{log@{log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::log (\begin{DoxyParamCaption}\item[{const rc\+Log\+Category}]{category,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Logs a message. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em category} & The category of the message. \\
+\hline
+\mbox{\tt in}  & {\em format} & The message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}\label{classrcContext_ae3cc278477b1b923d03ea50e3ae96013}} 
+\index{rc\+Context@{rc\+Context}!log@{log}}
+\index{log@{log}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::log (\begin{DoxyParamCaption}\item[{const rc\+Log\+Category}]{category,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Logs a message. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em category} & The category of the message. \\
+\hline
+\mbox{\tt in}  & {\em format} & The message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Example\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// Where ctx is an instance of rcContext and filepath is a char array.}
+ctx->log(RC\_LOG\_ERROR, \textcolor{stringliteral}{"buildTiledNavigation: Could not load '%s'"}, filepath);
+\end{DoxyCode}
+ \mbox{\Hypertarget{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}\label{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}} 
+\index{rc\+Context@{rc\+Context}!start\+Timer@{start\+Timer}}
+\index{start\+Timer@{start\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{start\+Timer()}{startTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::start\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}\label{classrcContext_a3c8d3035e1046dd8907b10b7d9c8de57}} 
+\index{rc\+Context@{rc\+Context}!start\+Timer@{start\+Timer}}
+\index{start\+Timer@{start\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{start\+Timer()}{startTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::start\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a3f7042723b8d99d486575eb3d592af25}\label{classrcContext_a3f7042723b8d99d486575eb3d592af25}} 
+\index{rc\+Context@{rc\+Context}!stop\+Timer@{stop\+Timer}}
+\index{stop\+Timer@{stop\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{stop\+Timer()}{stopTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::stop\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stops the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcContext_a3f7042723b8d99d486575eb3d592af25}\label{classrcContext_a3f7042723b8d99d486575eb3d592af25}} 
+\index{rc\+Context@{rc\+Context}!stop\+Timer@{stop\+Timer}}
+\index{stop\+Timer@{stop\+Timer}!rc\+Context@{rc\+Context}}
+\subsubsection{\texorpdfstring{stop\+Timer()}{stopTimer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Context\+::stop\+Timer (\begin{DoxyParamCaption}\item[{const rc\+Timer\+Label}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stops the specified performance timer. 
+\begin{DoxyParams}{Parameters}
+{\em label} & The category of the timer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast.\+cpp\end{DoxyCompactItemize}

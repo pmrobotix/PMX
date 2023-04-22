@@ -1,0 +1,77 @@
+\hypertarget{structx509__store__st}{}\section{x509\+\_\+store\+\_\+st Struct Reference}
+\label{structx509__store__st}\index{x509\+\_\+store\+\_\+st@{x509\+\_\+store\+\_\+st}}
+
+
+Collaboration diagram for x509\+\_\+store\+\_\+st\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structx509__store__st__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a3802443396e8862b5ab6c22172cfd6ff}\label{structx509__store__st_a3802443396e8862b5ab6c22172cfd6ff}} 
+{\bfseries S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{structx509__object__st}{X509\+\_\+\+O\+B\+J\+E\+CT}) $\ast$objs
+\item 
+\mbox{\Hypertarget{structx509__store__st_aefdf9aec0a4c6f004e6d60aebe25e277}\label{structx509__store__st_aefdf9aec0a4c6f004e6d60aebe25e277}} 
+{\bfseries S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{structx509__lookup__st}{X509\+\_\+\+L\+O\+O\+K\+UP}) $\ast$get\+\_\+cert\+\_\+methods
+\item 
+\mbox{\Hypertarget{structx509__store__st_ae58df4d40c98ddc37a455e00a000aef0}\label{structx509__store__st_ae58df4d40c98ddc37a455e00a000aef0}} 
+{\bfseries S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{structx509__st}{X509}) $\ast$($\ast$lookup\+\_\+certs)(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx
+\item 
+\mbox{\Hypertarget{structx509__store__st_a88a0eb9a5c3d18308bcf136143572ca8}\label{structx509__store__st_a88a0eb9a5c3d18308bcf136143572ca8}} 
+{\bfseries S\+T\+A\+C\+K\+\_\+\+OF} (\hyperlink{structX509__crl__st}{X509\+\_\+\+C\+RL}) $\ast$($\ast$lookup\+\_\+crls)(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a39100a4cc433d10485ffe0c30c5b88f8}\label{structx509__store__st_a39100a4cc433d10485ffe0c30c5b88f8}} 
+int {\bfseries cache}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a988c764019923790356d956bc071c50b}\label{structx509__store__st_a988c764019923790356d956bc071c50b}} 
+\hyperlink{structX509__VERIFY__PARAM__st}{X509\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+P\+A\+R\+AM} $\ast$ {\bfseries param}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a942efe26133aadd04d45f30a824644a7}\label{structx509__store__st_a942efe26133aadd04d45f30a824644a7}} 
+int($\ast$ {\bfseries verify} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a2babc2b1c606dc4a45bee39bcb2dddad}\label{structx509__store__st_a2babc2b1c606dc4a45bee39bcb2dddad}} 
+int($\ast$ {\bfseries verify\+\_\+cb} )(int ok, \hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a1201b752d9780b08579097b6f53f05b6}\label{structx509__store__st_a1201b752d9780b08579097b6f53f05b6}} 
+int($\ast$ {\bfseries get\+\_\+issuer} )(\hyperlink{structx509__st}{X509} $\ast$$\ast$issuer, \hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{structx509__st}{X509} $\ast$x)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a28e3031f30d155bfcee3077781875dd5}\label{structx509__store__st_a28e3031f30d155bfcee3077781875dd5}} 
+int($\ast$ {\bfseries check\+\_\+issued} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{structx509__st}{X509} $\ast$x, \hyperlink{structx509__st}{X509} $\ast$issuer)
+\item 
+\mbox{\Hypertarget{structx509__store__st_af48617053d5abd22e6f0bb877a3801d9}\label{structx509__store__st_af48617053d5abd22e6f0bb877a3801d9}} 
+int($\ast$ {\bfseries check\+\_\+revocation} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a805b166e3886e35dac65014a43752c17}\label{structx509__store__st_a805b166e3886e35dac65014a43752c17}} 
+int($\ast$ {\bfseries get\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{structX509__crl__st}{X509\+\_\+\+C\+RL} $\ast$$\ast$crl, \hyperlink{structx509__st}{X509} $\ast$x)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a7aac41f5042c0d73d994d554dc80bab4}\label{structx509__store__st_a7aac41f5042c0d73d994d554dc80bab4}} 
+int($\ast$ {\bfseries check\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{structX509__crl__st}{X509\+\_\+\+C\+RL} $\ast$crl)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a9e4cbd526c96a9d6eca4b05026e3848f}\label{structx509__store__st_a9e4cbd526c96a9d6eca4b05026e3848f}} 
+int($\ast$ {\bfseries cert\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx, \hyperlink{structX509__crl__st}{X509\+\_\+\+C\+RL} $\ast$crl, \hyperlink{structx509__st}{X509} $\ast$x)
+\item 
+\mbox{\Hypertarget{structx509__store__st_a15c220dcc8bf593c683cec71425a5519}\label{structx509__store__st_a15c220dcc8bf593c683cec71425a5519}} 
+\hyperlink{structX509__name__st}{X509\+\_\+\+N\+A\+ME} $\ast$ {\bfseries nm}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a47f8b84ffcf429407df15bf5b896f29a}\label{structx509__store__st_a47f8b84ffcf429407df15bf5b896f29a}} 
+int($\ast$ {\bfseries cleanup} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+TX} $\ast$ctx)
+\item 
+\mbox{\Hypertarget{structx509__store__st_acb8c355184a6de1d30c4a2cee60f0839}\label{structx509__store__st_acb8c355184a6de1d30c4a2cee60f0839}} 
+\hyperlink{structcrypto__ex__data__st}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+TA} {\bfseries ex\+\_\+data}
+\item 
+\mbox{\Hypertarget{structx509__store__st_a2ecec6a415050f38b3d260c258f4f913}\label{structx509__store__st_a2ecec6a415050f38b3d260c258f4f913}} 
+int {\bfseries references}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/openssl/include/win10/openssl/x509\+\_\+vfy.\+h\end{DoxyCompactItemize}

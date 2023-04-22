@@ -40,12 +40,12 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
         //TODO a faire en generique avec boucle for
         robot.actions().servos().release(robot.actions().AX12_SERVO_BRAS_D);
         robot.actions().servos().release(robot.actions().AX12_SERVO_BRAS_G);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ELEVATOR_L);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ELEVATOR_R);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ARM_L_BOTTOM);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ARM_R_BOTTOM);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ARM_L_TOP);
-        robot.actions().servos().release(robot.actions().AX12_SERVO_ARM_R_TOP);
+
+        robot.actions().servos().release(robot.actions().AX12_SERVO_ASPIRATION);
+        robot.actions().servos().release(robot.actions().AX12_SERVO_FUNNY);
+        robot.actions().servos().release(robot.actions().AX12_SERVO_TETE_ASPI);
+        robot.actions().servos().release(robot.actions().AX18_SERVO_RUSSEL_LINKAGE);
+
         while (1) {
             logger().info() << "AX12_SERVO_BRAS_D       N° "
                     << robot.actions().AX12_SERVO_BRAS_D
@@ -57,40 +57,31 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
                     << " pos= "
                     << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_BRAS_G)
                     << logs::end;
-            logger().info() << logs::end;
-            logger().info() << "AX12_SERVO_ELEVATOR_L   N° "
-                    << robot.actions().AX12_SERVO_ELEVATOR_L
+            //logger().info() << logs::end;
+
+            logger().info() << "AX12_SERVO_ASPIRATION   N° "
+                    << robot.actions().AX12_SERVO_ASPIRATION
                     << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELEVATOR_L)
+                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ASPIRATION)
                     << logs::end;
-            logger().info() << "AX12_SERVO_ELEVATOR_R   N° "
-                    << robot.actions().AX12_SERVO_ELEVATOR_R
+            logger().info() << "AX12_SERVO_FUNNY   N° "
+                    << robot.actions().AX12_SERVO_FUNNY
                     << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ELEVATOR_R)
+                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_FUNNY)
                     << logs::end;
-            logger().info() << logs::end;
-            logger().info() << "AX12_SERVO_ARM_L_TOP    N° "
-                    << robot.actions().AX12_SERVO_ARM_L_TOP
+            //logger().info() << logs::end;
+            logger().info() << "AX12_SERVO_TETE_ASPI    N° "
+                    << robot.actions().AX12_SERVO_TETE_ASPI
                     << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ARM_L_TOP)
+                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_TETE_ASPI)
                     << logs::end;
 
-            logger().info() << "AX12_SERVO_ARM_L_BOTTOM N° "
-                    << robot.actions().AX12_SERVO_ARM_L_BOTTOM
+            logger().info() << "AX18_SERVO_RUSSEL_LINKAGE N° "
+                    << robot.actions().AX18_SERVO_RUSSEL_LINKAGE
                     << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ARM_L_BOTTOM)
+                    << robot.actions().servos().getPulseWidth(robot.actions().AX18_SERVO_RUSSEL_LINKAGE)
                     << logs::end;
-            logger().info() << logs::end;
-            logger().info() << "AX12_SERVO_ARM_R_TOP    N° "
-                    << robot.actions().AX12_SERVO_ARM_R_TOP
-                    << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ARM_R_TOP)
-                    << logs::end;
-            logger().info() << "AX12_SERVO_ARM_R_BOTTOM N° "
-                    << robot.actions().AX12_SERVO_ARM_R_BOTTOM
-                    << " pos= "
-                    << robot.actions().servos().getPulseWidth(robot.actions().AX12_SERVO_ARM_R_BOTTOM)
-                    << logs::end;
+            //logger().info() << logs::end;
 
             logger().info() << logs::end;
             logger().info() << logs::end;
@@ -98,158 +89,207 @@ void O_ServoObjectsTest::run(int argc, char** argv) {
         }
     }
 
-    if (action == "BD") {
-        robot.actions().ax12_bras_droit_init();
+    //ASPIRER SIMPLEMENT
+    if (action == "TON") {
+
+        robot.actions().turbine_aspiration(true);
+
+    }
+
+    if (action == "TOFF") {
+
+        robot.actions().turbine_aspiration(false);
+    }
+
+    //aspirer les 8 balles
+    if (action == "8") {
+        robot.actions().aspiration_closed_init(-1);
+        robot.actions().turbine_aspiration(true);
+        robot.actions().aspi_tete_init();
+        robot.actions().aspi_droite(-1, 150);
+        robot.actions().aspi_gauche(-1, 150);
+        robot.actions().aspi_centre(-1);
+        robot.actions().turbine_aspiration(false);
+    }
+
+    //lancer
+    if (action == "L") {
+        robot.actions().lancer_les_balles(90);
         usleep(1000000);
-        robot.actions().ax12_bras_droit();
-        usleep(1000000);
-        robot.actions().ax12_bras_droit_init();
-        usleep(1000000);
-    }
 
-    if (action == "BG") {
-        robot.actions().ax12_bras_gauche_init();
-        usleep(1000000);
-        robot.actions().ax12_bras_gauche();
-        usleep(1000000);
-        robot.actions().ax12_bras_gauche_init();
-        usleep(1000000);
-    }
-
-    if (action == "GOR1") {
-
-        robot.actions().pump_R(false);
-        robot.actions().pump_L(false);
-        robot.actions().pump_R_electrov(false);
-        robot.actions().pump_L_electrov(false);
-        robot.actions().elevator2022_init(-1, 500);
-        robot.actions().arm_L_side_init();
-        robot.actions().arm_R_side_init(-1);
-
-        robot.actions().elevator2022_deploy(-1, 1000);
-        sleep(3);
-        //prise des palets
-        robot.actions().elevator2022_init(-1, 500);
-
-        robot.actions().arm_R_take(-1, 300);
-
-        //niv1
-        robot.actions().elevator2022_niv1(-1);
-
-        robot.actions().pump_R(true);
-
-        robot.actions().elevator2022_init(0);
-
-        robot.actions().arm_R_side_init(-1, 100);
-        robot.actions().arm_R_deploy1(-1, 100);
-        robot.actions().arm_R_deploy2(-1, 100);
-        robot.actions().arm_R_deploy3(-1, 100);
-
-        sleep(2);
-        robot.actions().pump_R(false);
-        robot.actions().pump_R_electrov(true);
+        robot.actions().aspiration_lacher_les_balles();
+        usleep(8000000);
+        robot.actions().stopper_lanceur_de_balles();
+        robot.actions().aspiration_closed_init(-1);
 
     }
 
-    if (action == "GOR2") {
+    //sortir toutes les balles doucement
+    if (action == "S") {
+        robot.actions().lancer_les_balles(30);
 
-        //prise des palets
-        robot.actions().elevator2022_init(-1, 500);
+        robot.actions().aspiration_lacher_les_balles();
+        usleep(10000000);
+        robot.actions().aspiration_closed_init(-1);
+        robot.actions().stopper_lanceur_de_balles();
+    }
 
-        robot.actions().arm_R_take(-1, 300);
+    //Funny mise en place
+    if (action == "FF") {
+        robot.actions().funny_init(-1, 100);
 
-        //niv2
-        robot.actions().elevator2022_niv2(-1);
-
-        robot.actions().pump_R(true);
-
-        robot.actions().elevator2022_init(0);
-
-        robot.actions().arm_R_side_init(-1, 100);
-        robot.actions().arm_R_deploy1(-1, 100);
-        robot.actions().arm_R_deploy2(-1, 100);
-        robot.actions().arm_R_deploy3(-1, 100);
-
-        sleep(2);
-        robot.actions().pump_R(false);
-        robot.actions().pump_R_electrov(true);
+    }
+    //Funny action!
+    if (action == "FA") {
+        robot.actions().funny_action_deploy();
 
     }
 
-    if (action == "GOR3") {
-
-            //prise des palets
-            robot.actions().elevator2022_init(-1, 500);
-
-            robot.actions().arm_R_take(-1, 300);
-
-            //niv2
-            robot.actions().elevator2022_niv3(-1);
-
-            robot.actions().pump_R(true);
-
-            robot.actions().elevator2022_init(0);
-
-            robot.actions().arm_R_side_init(-1, 100);
-            robot.actions().arm_R_deploy1(-1, 100);
-            robot.actions().arm_R_deploy2(-1, 100);
-            robot.actions().arm_R_deploy3(-1, 100);
-
-            sleep(2);
-            robot.actions().pump_R(false);
-            robot.actions().pump_R_electrov(true);
-
-        }
 
 
-    if (action == "RNDW") {
-        robot.actions().elevator2022_init(-1, 500);
-        robot.actions().elevator2022_deploy(-1, 1000);
-        sleep(3);
-        robot.actions().elevator2022_init(-1, 500);
 
-    }
 
-    if (action == "NIV0") {
-        robot.actions().elevator2022_init(-1);
-    }
-    //niveau du premier
-    if (action == "NIV1") {
-        robot.actions().elevator2022_niv1(-1);
-    }
-    if (action == "NIV2") {
-        robot.actions().elevator2022_niv2(-1);
-    }
-    if (action == "NIV3") {
+    /*//2022
+     *
+     if (action == "BD") {
+     robot.actions().ax12_bras_droit_init();
+     usleep(1000000);
+     robot.actions().ax12_bras_droit();
+     usleep(1000000);
+     robot.actions().ax12_bras_droit_init();
+     usleep(1000000);
+     }
 
-        robot.actions().elevator2022_niv3(-1);
-    }
 
-    if (action == "PUMPR") {
 
-        robot.actions().pump_R(true);
-    }
+     if (action == "BG") {
+     robot.actions().ax12_bras_gauche_init();
+     usleep(1000000);
+     robot.actions().ax12_bras_gauche();
+     usleep(1000000);
+     robot.actions().ax12_bras_gauche_init();
+     usleep(1000000);
+     }
 
-    if (action == "PUMPL") {
+     if (action == "GOR1") {
 
-        robot.actions().pump_L(true);
-    }
+     robot.actions().pump_R(false);
+     robot.actions().pump_L(false);
+     robot.actions().pump_R_electrov(false);
+     robot.actions().pump_L_electrov(false);
+     robot.actions().elevator2022_init(-1, 500);
+     robot.actions().arm_L_side_init();
+     robot.actions().arm_R_side_init(-1);
 
-    if (action == "POFF") {
+     robot.actions().elevator2022_deploy(-1, 1000);
+     sleep(3);
+     //prise des palets
+     robot.actions().elevator2022_init(-1, 500);
 
-        robot.actions().pump_R(false);
-        robot.actions().pump_L(false);
-    }
+     robot.actions().arm_R_take(-1, 300);
 
-    if (action == "ARMR") {
-        robot.actions().arm_R_side_init(-1, 100);
-        robot.actions().arm_R_take(-1, 300);
-        robot.actions().arm_R_side_init(-1, 100);
-        robot.actions().arm_R_deploy1(-1, 100);
-        robot.actions().arm_R_deploy2(-1, 100);
-        robot.actions().arm_R_deploy3(-1, 100);
-    }
+     //niv1
+     robot.actions().elevator2022_niv1(-1);
 
+     robot.actions().pump_R(true);
+
+     robot.actions().elevator2022_init(0);
+
+     robot.actions().arm_R_side_init(-1, 100);
+     robot.actions().arm_R_deploy1(-1, 100);
+     robot.actions().arm_R_deploy2(-1, 100);
+     robot.actions().arm_R_deploy3(-1, 100);
+
+     sleep(2);
+     robot.actions().pump_R(false);
+     robot.actions().pump_R_electrov(true);
+
+     }
+
+     if (action == "GOR2") {
+
+     //prise des palets
+     robot.actions().elevator2022_init(-1, 500);
+
+     robot.actions().arm_R_take(-1, 300);
+
+     //niv2
+     robot.actions().elevator2022_niv2(-1);
+
+     robot.actions().pump_R(true);
+
+     robot.actions().elevator2022_init(0);
+
+     robot.actions().arm_R_side_init(-1, 100);
+     robot.actions().arm_R_deploy1(-1, 100);
+     robot.actions().arm_R_deploy2(-1, 100);
+     robot.actions().arm_R_deploy3(-1, 100);
+
+     sleep(2);
+     robot.actions().pump_R(false);
+     robot.actions().pump_R_electrov(true);
+
+     }
+
+     if (action == "GOR3") {
+
+     //prise des palets
+     robot.actions().elevator2022_init(-1, 500);
+
+     robot.actions().arm_R_take(-1, 300);
+
+     //niv2
+     robot.actions().elevator2022_niv3(-1);
+
+     robot.actions().pump_R(true);
+
+     robot.actions().elevator2022_init(0);
+
+     robot.actions().arm_R_side_init(-1, 100);
+     robot.actions().arm_R_deploy1(-1, 100);
+     robot.actions().arm_R_deploy2(-1, 100);
+     robot.actions().arm_R_deploy3(-1, 100);
+
+     sleep(2);
+     robot.actions().pump_R(false);
+     robot.actions().pump_R_electrov(true);
+
+     }
+
+
+     if (action == "RNDW") {
+     robot.actions().elevator2022_init(-1, 500);
+     robot.actions().elevator2022_deploy(-1, 1000);
+     sleep(3);
+     robot.actions().elevator2022_init(-1, 500);
+
+     }
+
+     if (action == "NIV0") {
+     robot.actions().elevator2022_init(-1);
+     }
+     //niveau du premier
+     if (action == "NIV1") {
+     robot.actions().elevator2022_niv1(-1);
+     }
+     if (action == "NIV2") {
+     robot.actions().elevator2022_niv2(-1);
+     }
+     if (action == "NIV3") {
+
+     robot.actions().elevator2022_niv3(-1);
+     }
+
+
+     if (action == "ARMR") {
+     robot.actions().arm_R_side_init(-1, 100);
+     robot.actions().arm_R_take(-1, 300);
+     robot.actions().arm_R_side_init(-1, 100);
+     robot.actions().arm_R_deploy1(-1, 100);
+     robot.actions().arm_R_deploy2(-1, 100);
+     robot.actions().arm_R_deploy3(-1, 100);
+     }
+     */
     /*
      if (action == "D") {
      robot.actions().ax12_drapeaux_init();

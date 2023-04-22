@@ -1,0 +1,3251 @@
+\hypertarget{classMat4}{}\section{Mat4 Class Reference}
+\label{classMat4}\index{Mat4@{Mat4}}
+
+
+{\ttfamily \#include $<$Mat4.\+h$>$}
+
+
+
+Collaboration diagram for Mat4\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classMat4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMat4_ab26a891e96114b174d518adaf9059db5}{Mat4} ()
+\item 
+\hyperlink{classMat4_a9ff0ba7e863527c97206e38a12b9738c}{Mat4} (float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+\item 
+\hyperlink{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}{Mat4} (const float $\ast$mat)
+\item 
+\hyperlink{classMat4_a67ddcbb4713bb335042aef3b14324456}{Mat4} (const \hyperlink{classMat4}{Mat4} \&copy)
+\item 
+\hyperlink{classMat4_a72fac55214c733b56248d2b321aaf69b}{$\sim$\+Mat4} ()
+\item 
+void \hyperlink{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}{add} (float scalar)
+\item 
+void \hyperlink{classMat4_a686767982006e42351c87a027af12c17}{add} (float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+void \hyperlink{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}{add} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+bool \hyperlink{classMat4_a35e55973b2473838bd637d1de1ca220e}{decompose} (\hyperlink{classVec3}{Vec3} $\ast$\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}, \hyperlink{classQuaternion}{Quaternion} $\ast$rotation, \hyperlink{classVec3}{Vec3} $\ast$translation) const
+\item 
+float \hyperlink{classMat4_aba33e196546ec0ed036c7fe690c072ac}{determinant} () const
+\item 
+void \hyperlink{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}{get\+Scale} (\hyperlink{classVec3}{Vec3} $\ast$\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}) const
+\item 
+bool \hyperlink{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}{get\+Rotation} (\hyperlink{classQuaternion}{Quaternion} $\ast$rotation) const
+\item 
+void \hyperlink{classMat4_a92b33d42c6766de2183ebd53269fb96c}{get\+Translation} (\hyperlink{classVec3}{Vec3} $\ast$translation) const
+\item 
+void \hyperlink{classMat4_af0d374798883b8b0315025707df6329d}{get\+Up\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2219e0177bc699742b7f0531b10a8054}{get\+Down\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}{get\+Left\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}{get\+Right\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a1b53f818aab2f341af761e9ca738ab1f}{get\+Forward\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}{get\+Back\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+bool \hyperlink{classMat4_a22528a64ce3ee80e93150dea45408e44}{inverse} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}{get\+Inversed} () const
+\item 
+bool \hyperlink{classMat4_a3309850f850ef88e57e3b9b17af3371e}{is\+Identity} () const
+\item 
+void \hyperlink{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}{multiply} (float scalar)
+\item 
+void \hyperlink{classMat4_a24498dcc626d53062cb021046fa19a52}{multiply} (float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_aba98567f451a133a0a3a8bad1a88ad90}{multiply} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}{negate} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ae500d08f05972355bb6213ad955091e7}{get\+Negated} () const
+\item 
+void \hyperlink{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}{rotate} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classMat4_a638b21eb95ee5240a780562e7099de4c}{rotate} (const \hyperlink{classQuaternion}{Quaternion} \&q, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}{rotate} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+void \hyperlink{classMat4_a548095c5ec16649ab859f317c5b6fec8}{rotate} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}{rotateX} (float angle)
+\item 
+void \hyperlink{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}{rotateX} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}{rotateY} (float angle)
+\item 
+void \hyperlink{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}{rotateY} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a31f8fbbe32864fef9477c4d520a4c365}{rotateZ} (float angle)
+\item 
+void \hyperlink{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}{rotateZ} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale} (float value)
+\item 
+void \hyperlink{classMat4_a02cadab494f29e01993f8bd137ac3c10}{scale} (float value, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}{scale} (float x\+Scale, float y\+Scale, float z\+Scale)
+\item 
+void \hyperlink{classMat4_af8096eb9dc784653bfacee2561b6a654}{scale} (float x\+Scale, float y\+Scale, float z\+Scale, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a680fbd52838ca085c468dc4f559f3d04}{scale} (const \hyperlink{classVec3}{Vec3} \&s)
+\item 
+void \hyperlink{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}{scale} (const \hyperlink{classVec3}{Vec3} \&s, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}{set} (float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+\item 
+void \hyperlink{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}{set} (const float $\ast$mat)
+\item 
+void \hyperlink{classMat4_a4673b21f6cf96fb2274be6227a877061}{set} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}{set\+Identity} ()
+\item 
+void \hyperlink{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}{set\+Zero} ()
+\item 
+void \hyperlink{classMat4_a3ad911389ec778e8f67aaced32be9193}{subtract} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}{transform\+Point} (\hyperlink{classVec3}{Vec3} $\ast$point) const
+\item 
+void \hyperlink{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}{transform\+Point} (const \hyperlink{classVec3}{Vec3} \&point, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}{transform\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$vector) const
+\item 
+void \hyperlink{classMat4_ae115470538b721dfd6dda37b4d487805}{transform\+Vector} (const \hyperlink{classVec3}{Vec3} \&vector, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}{transform\+Vector} (float x, float y, float z, float w, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2c78f362e212324aa1ec085aefc07b78}{transform\+Vector} (\hyperlink{classVec4}{Vec4} $\ast$vector) const
+\item 
+void \hyperlink{classMat4_ac710d11704a735e831671574b5e1d7aa}{transform\+Vector} (const \hyperlink{classVec4}{Vec4} \&vector, \hyperlink{classVec4}{Vec4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}{translate} (float x, float y, float z)
+\item 
+void \hyperlink{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}{translate} (float x, float y, float z, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}{translate} (const \hyperlink{classVec3}{Vec3} \&t)
+\item 
+void \hyperlink{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}{translate} (const \hyperlink{classVec3}{Vec3} \&t, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_af8b85ea76f3b7225ee33878029b1d18e}{transpose} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_a483b4b6142791d63aad164d917bfcdb8}{get\+Transposed} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_a090a17553d3708ee4a6e686c7b861e86}{operator+} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_a1f15bf1f4ff4c4084019732127259df8}{operator+=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ae56d2c741f3bafc30024da58083bb8f4}{operator-\/} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_ae6b419586fa52b27404626c38d78dbdb}{operator-\/=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}{operator-\/} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_adfc2da7f18cf258791b388bf3333d7ef}{operator$\ast$} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_aff7f316cabd6773d02b1704fe1b629b2}{operator$\ast$=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+\hyperlink{classMat4_a53cb3c6c2a0b594345f0107b6c1fcc37}{Mat4} ()
+\item 
+\hyperlink{classMat4_a9ff0ba7e863527c97206e38a12b9738c}{Mat4} (float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+\item 
+\hyperlink{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}{Mat4} (const float $\ast$mat)
+\item 
+\hyperlink{classMat4_a67ddcbb4713bb335042aef3b14324456}{Mat4} (const \hyperlink{classMat4}{Mat4} \&copy)
+\item 
+\hyperlink{classMat4_a72fac55214c733b56248d2b321aaf69b}{$\sim$\+Mat4} ()
+\item 
+void \hyperlink{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}{add} (float scalar)
+\item 
+void \hyperlink{classMat4_a686767982006e42351c87a027af12c17}{add} (float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+void \hyperlink{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}{add} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+bool \hyperlink{classMat4_a35e55973b2473838bd637d1de1ca220e}{decompose} (\hyperlink{classVec3}{Vec3} $\ast$\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}, \hyperlink{classQuaternion}{Quaternion} $\ast$rotation, \hyperlink{classVec3}{Vec3} $\ast$translation) const
+\item 
+float \hyperlink{classMat4_aba33e196546ec0ed036c7fe690c072ac}{determinant} () const
+\item 
+void \hyperlink{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}{get\+Scale} (\hyperlink{classVec3}{Vec3} $\ast$\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}) const
+\item 
+bool \hyperlink{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}{get\+Rotation} (\hyperlink{classQuaternion}{Quaternion} $\ast$rotation) const
+\item 
+void \hyperlink{classMat4_a92b33d42c6766de2183ebd53269fb96c}{get\+Translation} (\hyperlink{classVec3}{Vec3} $\ast$translation) const
+\item 
+void \hyperlink{classMat4_af0d374798883b8b0315025707df6329d}{get\+Up\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2219e0177bc699742b7f0531b10a8054}{get\+Down\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}{get\+Left\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}{get\+Right\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a1b53f818aab2f341af761e9ca738ab1f}{get\+Forward\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}{get\+Back\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+bool \hyperlink{classMat4_a22528a64ce3ee80e93150dea45408e44}{inverse} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}{get\+Inversed} () const
+\item 
+bool \hyperlink{classMat4_a3309850f850ef88e57e3b9b17af3371e}{is\+Identity} () const
+\item 
+void \hyperlink{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}{multiply} (float scalar)
+\item 
+void \hyperlink{classMat4_a24498dcc626d53062cb021046fa19a52}{multiply} (float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_aba98567f451a133a0a3a8bad1a88ad90}{multiply} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}{negate} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ae500d08f05972355bb6213ad955091e7}{get\+Negated} () const
+\item 
+void \hyperlink{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}{rotate} (const \hyperlink{classQuaternion}{Quaternion} \&q)
+\item 
+void \hyperlink{classMat4_a638b21eb95ee5240a780562e7099de4c}{rotate} (const \hyperlink{classQuaternion}{Quaternion} \&q, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}{rotate} (const \hyperlink{classVec3}{Vec3} \&axis, float angle)
+\item 
+void \hyperlink{classMat4_a548095c5ec16649ab859f317c5b6fec8}{rotate} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}{rotateX} (float angle)
+\item 
+void \hyperlink{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}{rotateX} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}{rotateY} (float angle)
+\item 
+void \hyperlink{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}{rotateY} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a31f8fbbe32864fef9477c4d520a4c365}{rotateZ} (float angle)
+\item 
+void \hyperlink{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}{rotateZ} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale} (float value)
+\item 
+void \hyperlink{classMat4_a02cadab494f29e01993f8bd137ac3c10}{scale} (float value, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}{scale} (float x\+Scale, float y\+Scale, float z\+Scale)
+\item 
+void \hyperlink{classMat4_af8096eb9dc784653bfacee2561b6a654}{scale} (float x\+Scale, float y\+Scale, float z\+Scale, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a680fbd52838ca085c468dc4f559f3d04}{scale} (const \hyperlink{classVec3}{Vec3} \&s)
+\item 
+void \hyperlink{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}{scale} (const \hyperlink{classVec3}{Vec3} \&s, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}{set} (float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+\item 
+void \hyperlink{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}{set} (const float $\ast$mat)
+\item 
+void \hyperlink{classMat4_a4673b21f6cf96fb2274be6227a877061}{set} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}{set\+Identity} ()
+\item 
+void \hyperlink{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}{set\+Zero} ()
+\item 
+void \hyperlink{classMat4_a3ad911389ec778e8f67aaced32be9193}{subtract} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+void \hyperlink{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}{transform\+Point} (\hyperlink{classVec3}{Vec3} $\ast$point) const
+\item 
+void \hyperlink{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}{transform\+Point} (const \hyperlink{classVec3}{Vec3} \&point, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}{transform\+Vector} (\hyperlink{classVec3}{Vec3} $\ast$vector) const
+\item 
+void \hyperlink{classMat4_ae115470538b721dfd6dda37b4d487805}{transform\+Vector} (const \hyperlink{classVec3}{Vec3} \&vector, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}{transform\+Vector} (float x, float y, float z, float w, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a2c78f362e212324aa1ec085aefc07b78}{transform\+Vector} (\hyperlink{classVec4}{Vec4} $\ast$vector) const
+\item 
+void \hyperlink{classMat4_ac710d11704a735e831671574b5e1d7aa}{transform\+Vector} (const \hyperlink{classVec4}{Vec4} \&vector, \hyperlink{classVec4}{Vec4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}{translate} (float x, float y, float z)
+\item 
+void \hyperlink{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}{translate} (float x, float y, float z, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}{translate} (const \hyperlink{classVec3}{Vec3} \&t)
+\item 
+void \hyperlink{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}{translate} (const \hyperlink{classVec3}{Vec3} \&t, \hyperlink{classMat4}{Mat4} $\ast$dst) const
+\item 
+void \hyperlink{classMat4_af8b85ea76f3b7225ee33878029b1d18e}{transpose} ()
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_a483b4b6142791d63aad164d917bfcdb8}{get\+Transposed} () const
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_aec8e42aec11573c62fd771cadec2c833}{operator+} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_ae3b797f9d036f0dbe605d73e5bd46cfa}{operator+=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ae56d2c741f3bafc30024da58083bb8f4}{operator-\/} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_a2cf11f93e2f8f493ade62f8bd3a849db}{operator-\/=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}{operator-\/} () const
+\item 
+\hyperlink{classMat4}{Mat4} \hyperlink{classMat4_adfc2da7f18cf258791b388bf3333d7ef}{operator$\ast$} (const \hyperlink{classMat4}{Mat4} \&mat) const
+\item 
+\hyperlink{classMat4}{Mat4} \& \hyperlink{classMat4_ab51d6459570c1632d92aa34d893be343}{operator$\ast$=} (const \hyperlink{classMat4}{Mat4} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classMat4_a100a04e17ed2687c382b2ad1fe6d41c6}{create\+Look\+At} (const \hyperlink{classVec3}{Vec3} \&eye\+Position, const \hyperlink{classVec3}{Vec3} \&target\+Position, const \hyperlink{classVec3}{Vec3} \&up, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ad2d5b5b0c68075b466fe1b0603a0f6b3}{create\+Look\+At} (float eye\+PositionX, float eye\+PositionY, float eye\+PositionZ, float target\+CenterX, float target\+CenterY, float target\+CenterZ, float upX, float upY, float upZ, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ab6e59d969d99f69b300b2860dbd8cfd9}{create\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a3c2ba5ec28b2573c3602dbd0ae965b6b}{create\+Orthographic} (float width, float height, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a322f6e640486e439334a0edf6d1688c5}{create\+Orthographic\+Off\+Center} (float left, float right, float bottom, float top, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a37157fc3124a3afec88057e076f0004f}{create\+Billboard} (const \hyperlink{classVec3}{Vec3} \&object\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Up\+Vector, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a8333cb76ef22942d40e4f33de905fec5}{create\+Billboard} (const \hyperlink{classVec3}{Vec3} \&object\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Up\+Vector, const \hyperlink{classVec3}{Vec3} \&camera\+Forward\+Vector, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a82cdf950af1c6f514c61efa42787d9c0}{create\+Scale} (const \hyperlink{classVec3}{Vec3} \&\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a73ac7c88b7d1f1b3105cee306c3bbfde}{create\+Scale} (float x\+Scale, float y\+Scale, float z\+Scale, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ac9306beb73b9ccf0ecec151fa1e34a24}{create\+Rotation} (const \hyperlink{classQuaternion}{Quaternion} \&quat, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ae4fab56ac8716d22d8fb979e756291c6}{create\+Rotation} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a28de6fcc943bea256076687d934af3c0}{create\+RotationX} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ab81524e7fbb339f6a7c5a43d701fdbc7}{create\+RotationY} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a01b92c6d9e1d8706b2288f7159411207}{create\+RotationZ} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a6c939bd684b051a2704da5ef9bcfd245}{create\+Translation} (const \hyperlink{classVec3}{Vec3} \&translation, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a4bd6bce87e0e3efbaa343898050bd47b}{create\+Translation} (float x\+Translation, float y\+Translation, float z\+Translation, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ab28d0b850806aff5bd96fdffb3faa5ba}{add} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ab0a9f07ed2a1bb7f067a6d8dac759244}{multiply} (const \hyperlink{classMat4}{Mat4} \&mat, float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a3e9235b654f4bf59722d17d392cdddca}{multiply} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_aaf588424f8307071ccbb38be271cb76b}{subtract} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a8991dfd7f1ce7d7450da6990305a4bce}{create\+Look\+At} (const \hyperlink{classVec3}{Vec3} \&eye\+Position, const \hyperlink{classVec3}{Vec3} \&target\+Position, const \hyperlink{classVec3}{Vec3} \&up, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_aa8b3320f1510835c4c59a4f7abb31bf7}{create\+Look\+At} (float eye\+PositionX, float eye\+PositionY, float eye\+PositionZ, float target\+CenterX, float target\+CenterY, float target\+CenterZ, float upX, float upY, float upZ, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a4ec1ce3e6b37e7c9b5833f7644d006e0}{create\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a3379c9732b8939ac485d06050a4b90c5}{create\+Orthographic} (float width, float height, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a3a6f855340247fb96a16ca0a5b85dea7}{create\+Orthographic\+Off\+Center} (float left, float right, float bottom, float top, float z\+Near\+Plane, float z\+Far\+Plane, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ac8c862642a20d5d6c980a487cdfc2dcb}{create\+Billboard} (const \hyperlink{classVec3}{Vec3} \&object\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Up\+Vector, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_aa58fc226b281d27e66d6ec24798aa136}{create\+Billboard} (const \hyperlink{classVec3}{Vec3} \&object\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Position, const \hyperlink{classVec3}{Vec3} \&camera\+Up\+Vector, const \hyperlink{classVec3}{Vec3} \&camera\+Forward\+Vector, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a0cb022e5faa5956fbbade37e82210518}{create\+Scale} (const \hyperlink{classVec3}{Vec3} \&\hyperlink{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}{scale}, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a198c75115c8c4c9fc9dca2ae39406ae8}{create\+Scale} (float x\+Scale, float y\+Scale, float z\+Scale, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a9e95ec184dae30533def5217f8583616}{create\+Rotation} (const \hyperlink{classQuaternion}{Quaternion} \&quat, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ae71d2a213bd50059a694d23afd5ae786}{create\+Rotation} (const \hyperlink{classVec3}{Vec3} \&axis, float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ada6553ab3869aca6190523862bcbbb98}{create\+RotationX} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a24d60181510705304b5dffd42fb12b29}{create\+RotationY} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a4f07014344c83a3d502b5ec7422cd244}{create\+RotationZ} (float angle, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a10c09ee857ae1e074f4f66c44e5a477b}{create\+Translation} (const \hyperlink{classVec3}{Vec3} \&translation, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_aabb5b159d75963284e6fb81b8f464d22}{create\+Translation} (float x\+Translation, float y\+Translation, float z\+Translation, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a7a5dae2991b6734daf7f6f7d87831356}{add} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ac146774fcd0217bdeaba90ed2936c3b3}{multiply} (const \hyperlink{classMat4}{Mat4} \&mat, float scalar, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_ad42e3478d90c75c0b447c72d232d8233}{multiply} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\item 
+static void \hyperlink{classMat4_a0f18e64cdea9bffbe5259526481db28e}{subtract} (const \hyperlink{classMat4}{Mat4} \&m1, const \hyperlink{classMat4}{Mat4} \&m2, \hyperlink{classMat4}{Mat4} $\ast$dst)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classMat4_aabd2ecf01c45dbe87060754036a3c763}{m} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ad362a417d8a274550042473c43bdfb92}{Z\+E\+RO}
+\item 
+static const \hyperlink{classMat4}{Mat4} \hyperlink{classMat4_ac4322622c4d5884e00c56d902b2e755b}{I\+D\+E\+N\+T\+I\+TY}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a 4 x 4 floating point matrix representing a 3D transformation.
+
+Vectors are treated as columns, resulting in a matrix that is represented as follows, where x, y and z are the translation components of the matrix\+: \begin{DoxyVerb}1  0  0  x
+0  1  0  y
+0  0  1  z
+0  0  0  1
+\end{DoxyVerb}
+
+
+This matrix class is directly compatible with Open\+GL since its elements are laid out in memory exactly as they are expected by Open\+GL. The matrix uses column-\/major format such that array indices increase down column first. Since matrix multiplication is not commutative, multiplication must be done in the correct order when combining transformations. Suppose we have a translation matrix T and a rotation matrix R. To first rotate an object around the origin and then translate it, you would multiply the two matrices as TR.
+
+Likewise, to first translate the object and then rotate it, you would do RT. So generally, matrices must be multiplied in the reverse order in which you want the transformations to take place (this also applies to the scale, rotate, and translate methods below; these methods are convenience methods for post-\/multiplying by a matrix representing a scale, rotation, or translation).
+
+In the case of repeated local transformations (i.\+e. rotate around the Z-\/axis by 0.\+76 radians, then translate by 2.\+1 along the X-\/axis, then ...), it is better to use the Transform class (which is optimized for that kind of usage).
+
+\begin{DoxySeeAlso}{See also}
+Transform 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMat4_ab26a891e96114b174d518adaf9059db5}\label{classMat4_ab26a891e96114b174d518adaf9059db5}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+M\+A\+T\+H\+\_\+\+B\+E\+G\+IN Mat4\+::\+Mat4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. Constructs a matrix initialized to the identity matrix\+: \begin{DoxyVerb}1  0  0  0
+0  1  0  0
+0  0  1  0
+0  0  0  1\end{DoxyVerb}
+
+
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project
+
+Copyright 2013 Black\+Berry Inc. Copyright (c) 2017-\/2018 Xiamen Yaji Software Co., Ltd.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project \mbox{\Hypertarget{classMat4_a9ff0ba7e863527c97206e38a12b9738c}\label{classMat4_a9ff0ba7e863527c97206e38a12b9738c}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{float}]{m11,  }\item[{float}]{m12,  }\item[{float}]{m13,  }\item[{float}]{m14,  }\item[{float}]{m21,  }\item[{float}]{m22,  }\item[{float}]{m23,  }\item[{float}]{m24,  }\item[{float}]{m31,  }\item[{float}]{m32,  }\item[{float}]{m33,  }\item[{float}]{m34,  }\item[{float}]{m41,  }\item[{float}]{m42,  }\item[{float}]{m43,  }\item[{float}]{m44 }\end{DoxyParamCaption})}
+
+Constructs a matrix initialized to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m11} & The first element of the first row. \\
+\hline
+{\em m12} & The second element of the first row. \\
+\hline
+{\em m13} & The third element of the first row. \\
+\hline
+{\em m14} & The fourth element of the first row. \\
+\hline
+{\em m21} & The first element of the second row. \\
+\hline
+{\em m22} & The second element of the second row. \\
+\hline
+{\em m23} & The third element of the second row. \\
+\hline
+{\em m24} & The fourth element of the second row. \\
+\hline
+{\em m31} & The first element of the third row. \\
+\hline
+{\em m32} & The second element of the third row. \\
+\hline
+{\em m33} & The third element of the third row. \\
+\hline
+{\em m34} & The fourth element of the third row. \\
+\hline
+{\em m41} & The first element of the fourth row. \\
+\hline
+{\em m42} & The second element of the fourth row. \\
+\hline
+{\em m43} & The third element of the fourth row. \\
+\hline
+{\em m44} & The fourth element of the fourth row. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}\label{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{const float $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Creates a matrix initialized to the specified column-\/major array.
+
+The passed-\/in array is in column-\/major order, so the memory layout of the array is as follows\+: \begin{DoxyVerb}0   4   8   12
+1   5   9   13
+2   6   10  14
+3   7   11  15
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & An array containing 16 elements in column-\/major order. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a67ddcbb4713bb335042aef3b14324456}\label{classMat4_a67ddcbb4713bb335042aef3b14324456}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{copy }\end{DoxyParamCaption})}
+
+Constructs a new matrix by copying the values from the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The matrix to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a72fac55214c733b56248d2b321aaf69b}\label{classMat4_a72fac55214c733b56248d2b321aaf69b}} 
+\index{Mat4@{Mat4}!````~Mat4@{$\sim$\+Mat4}}
+\index{````~Mat4@{$\sim$\+Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{$\sim$\+Mat4()}{~Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mat4\+::$\sim$\+Mat4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. \mbox{\Hypertarget{classMat4_a53cb3c6c2a0b594345f0107b6c1fcc37}\label{classMat4_a53cb3c6c2a0b594345f0107b6c1fcc37}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor. Constructs a matrix initialized to the identity matrix\+: \begin{DoxyVerb}1  0  0  0
+0  1  0  0
+0  0  1  0
+0  0  0  1\end{DoxyVerb}
+ \mbox{\Hypertarget{classMat4_a9ff0ba7e863527c97206e38a12b9738c}\label{classMat4_a9ff0ba7e863527c97206e38a12b9738c}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{float}]{m11,  }\item[{float}]{m12,  }\item[{float}]{m13,  }\item[{float}]{m14,  }\item[{float}]{m21,  }\item[{float}]{m22,  }\item[{float}]{m23,  }\item[{float}]{m24,  }\item[{float}]{m31,  }\item[{float}]{m32,  }\item[{float}]{m33,  }\item[{float}]{m34,  }\item[{float}]{m41,  }\item[{float}]{m42,  }\item[{float}]{m43,  }\item[{float}]{m44 }\end{DoxyParamCaption})}
+
+Constructs a matrix initialized to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m11} & The first element of the first row. \\
+\hline
+{\em m12} & The second element of the first row. \\
+\hline
+{\em m13} & The third element of the first row. \\
+\hline
+{\em m14} & The fourth element of the first row. \\
+\hline
+{\em m21} & The first element of the second row. \\
+\hline
+{\em m22} & The second element of the second row. \\
+\hline
+{\em m23} & The third element of the second row. \\
+\hline
+{\em m24} & The fourth element of the second row. \\
+\hline
+{\em m31} & The first element of the third row. \\
+\hline
+{\em m32} & The second element of the third row. \\
+\hline
+{\em m33} & The third element of the third row. \\
+\hline
+{\em m34} & The fourth element of the third row. \\
+\hline
+{\em m41} & The first element of the fourth row. \\
+\hline
+{\em m42} & The second element of the fourth row. \\
+\hline
+{\em m43} & The third element of the fourth row. \\
+\hline
+{\em m44} & The fourth element of the fourth row. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}\label{classMat4_ae32b0c3f7fc370336cedb7bbee98a32a}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{const float $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Creates a matrix initialized to the specified column-\/major array.
+
+The passed-\/in array is in column-\/major order, so the memory layout of the array is as follows\+: \begin{DoxyVerb}0   4   8   12
+1   5   9   13
+2   6   10  14
+3   7   11  15
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & An array containing 16 elements in column-\/major order. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a67ddcbb4713bb335042aef3b14324456}\label{classMat4_a67ddcbb4713bb335042aef3b14324456}} 
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Mat4()}{Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily Mat4\+::\+Mat4 (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{copy }\end{DoxyParamCaption})}
+
+Constructs a new matrix by copying the values from the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The matrix to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a72fac55214c733b56248d2b321aaf69b}\label{classMat4_a72fac55214c733b56248d2b321aaf69b}} 
+\index{Mat4@{Mat4}!````~Mat4@{$\sim$\+Mat4}}
+\index{````~Mat4@{$\sim$\+Mat4}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{$\sim$\+Mat4()}{~Mat4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mat4\+::$\sim$\+Mat4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}\label{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})}
+
+Adds a scalar value to each component of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}\label{classMat4_aa33c5fad52aba88880b36d95c6ae85ae}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})}
+
+Adds a scalar value to each component of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a686767982006e42351c87a027af12c17}\label{classMat4_a686767982006e42351c87a027af12c17}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})}
+
+Adds a scalar value to each component of this matrix and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value to add. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a686767982006e42351c87a027af12c17}\label{classMat4_a686767982006e42351c87a027af12c17}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})}
+
+Adds a scalar value to each component of this matrix and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value to add. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}\label{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Adds the specified matrix to this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}\label{classMat4_a4eaf193ce281e0ea8db5cdffcf66bda3}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Adds the specified matrix to this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ab28d0b850806aff5bd96fdffb3faa5ba}\label{classMat4_ab28d0b850806aff5bd96fdffb3faa5ba}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Mat4\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Adds the specified matrices and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix. \\
+\hline
+{\em m2} & The second matrix. \\
+\hline
+{\em dst} & The destination matrix to add to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a7a5dae2991b6734daf7f6f7d87831356}\label{classMat4_a7a5dae2991b6734daf7f6f7d87831356}} 
+\index{Mat4@{Mat4}!add@{add}}
+\index{add@{add}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily static void Mat4\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Adds the specified matrices and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix. \\
+\hline
+{\em m2} & The second matrix. \\
+\hline
+{\em dst} & The destination matrix to add to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a37157fc3124a3afec88057e076f0004f}\label{classMat4_a37157fc3124a3afec88057e076f0004f}} 
+\index{Mat4@{Mat4}!create\+Billboard@{create\+Billboard}}
+\index{create\+Billboard@{create\+Billboard}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Billboard()}{createBillboard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Billboard (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{object\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Up\+Vector,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a spherical billboard that rotates around a specified object position.
+
+This method computes the facing direction of the billboard from the object position and camera position. When the object and camera positions are too close, the matrix will not be accurate. To avoid this problem, this method defaults to the identity rotation if the positions are too close. (See the other overload of create\+Billboard for an alternative approach).
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The position of the object the billboard will rotate around. \\
+\hline
+{\em camera\+Position} & The position of the camera. \\
+\hline
+{\em camera\+Up\+Vector} & The up vector of the camera. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac8c862642a20d5d6c980a487cdfc2dcb}\label{classMat4_ac8c862642a20d5d6c980a487cdfc2dcb}} 
+\index{Mat4@{Mat4}!create\+Billboard@{create\+Billboard}}
+\index{create\+Billboard@{create\+Billboard}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Billboard()}{createBillboard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Billboard (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{object\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Up\+Vector,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a spherical billboard that rotates around a specified object position.
+
+This method computes the facing direction of the billboard from the object position and camera position. When the object and camera positions are too close, the matrix will not be accurate. To avoid this problem, this method defaults to the identity rotation if the positions are too close. (See the other overload of create\+Billboard for an alternative approach).
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The position of the object the billboard will rotate around. \\
+\hline
+{\em camera\+Position} & The position of the camera. \\
+\hline
+{\em camera\+Up\+Vector} & The up vector of the camera. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8333cb76ef22942d40e4f33de905fec5}\label{classMat4_a8333cb76ef22942d40e4f33de905fec5}} 
+\index{Mat4@{Mat4}!create\+Billboard@{create\+Billboard}}
+\index{create\+Billboard@{create\+Billboard}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Billboard()}{createBillboard()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Billboard (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{object\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Up\+Vector,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Forward\+Vector,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a spherical billboard that rotates around a specified object position with provision for a safe default orientation.
+
+This method computes the facing direction of the billboard from the object position and camera position. When the object and camera positions are too close, the matrix will not be accurate. To avoid this problem, this method uses the specified camera forward vector if the positions are too close. (See the other overload of create\+Billboard for an alternative approach).
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The position of the object the billboard will rotate around. \\
+\hline
+{\em camera\+Position} & The position of the camera. \\
+\hline
+{\em camera\+Up\+Vector} & The up vector of the camera. \\
+\hline
+{\em camera\+Forward\+Vector} & The forward vector of the camera, used if the positions are too close. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa58fc226b281d27e66d6ec24798aa136}\label{classMat4_aa58fc226b281d27e66d6ec24798aa136}} 
+\index{Mat4@{Mat4}!create\+Billboard@{create\+Billboard}}
+\index{create\+Billboard@{create\+Billboard}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Billboard()}{createBillboard()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Billboard (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{object\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Up\+Vector,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{camera\+Forward\+Vector,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a spherical billboard that rotates around a specified object position with provision for a safe default orientation.
+
+This method computes the facing direction of the billboard from the object position and camera position. When the object and camera positions are too close, the matrix will not be accurate. To avoid this problem, this method uses the specified camera forward vector if the positions are too close. (See the other overload of create\+Billboard for an alternative approach).
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The position of the object the billboard will rotate around. \\
+\hline
+{\em camera\+Position} & The position of the camera. \\
+\hline
+{\em camera\+Up\+Vector} & The up vector of the camera. \\
+\hline
+{\em camera\+Forward\+Vector} & The forward vector of the camera, used if the positions are too close. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a100a04e17ed2687c382b2ad1fe6d41c6}\label{classMat4_a100a04e17ed2687c382b2ad1fe6d41c6}} 
+\index{Mat4@{Mat4}!create\+Look\+At@{create\+Look\+At}}
+\index{create\+Look\+At@{create\+Look\+At}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Look\+At()}{createLookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Look\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{eye\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{target\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{up,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a view matrix based on the specified input parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em eye\+Position} & The eye position. \\
+\hline
+{\em target\+Position} & The target\textquotesingle{}s center position. \\
+\hline
+{\em up} & The up vector. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8991dfd7f1ce7d7450da6990305a4bce}\label{classMat4_a8991dfd7f1ce7d7450da6990305a4bce}} 
+\index{Mat4@{Mat4}!create\+Look\+At@{create\+Look\+At}}
+\index{create\+Look\+At@{create\+Look\+At}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Look\+At()}{createLookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Look\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{eye\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{target\+Position,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{up,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a view matrix based on the specified input parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em eye\+Position} & The eye position. \\
+\hline
+{\em target\+Position} & The target\textquotesingle{}s center position. \\
+\hline
+{\em up} & The up vector. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ad2d5b5b0c68075b466fe1b0603a0f6b3}\label{classMat4_ad2d5b5b0c68075b466fe1b0603a0f6b3}} 
+\index{Mat4@{Mat4}!create\+Look\+At@{create\+Look\+At}}
+\index{create\+Look\+At@{create\+Look\+At}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Look\+At()}{createLookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Look\+At (\begin{DoxyParamCaption}\item[{float}]{eye\+PositionX,  }\item[{float}]{eye\+PositionY,  }\item[{float}]{eye\+PositionZ,  }\item[{float}]{target\+CenterX,  }\item[{float}]{target\+CenterY,  }\item[{float}]{target\+CenterZ,  }\item[{float}]{upX,  }\item[{float}]{upY,  }\item[{float}]{upZ,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a view matrix based on the specified input parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em eye\+PositionX} & The eye x-\/coordinate position. \\
+\hline
+{\em eye\+PositionY} & The eye y-\/coordinate position. \\
+\hline
+{\em eye\+PositionZ} & The eye z-\/coordinate position. \\
+\hline
+{\em target\+CenterX} & The target\textquotesingle{}s center x-\/coordinate position. \\
+\hline
+{\em target\+CenterY} & The target\textquotesingle{}s center y-\/coordinate position. \\
+\hline
+{\em target\+CenterZ} & The target\textquotesingle{}s center z-\/coordinate position. \\
+\hline
+{\em upX} & The up vector x-\/coordinate value. \\
+\hline
+{\em upY} & The up vector y-\/coordinate value. \\
+\hline
+{\em upZ} & The up vector z-\/coordinate value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa8b3320f1510835c4c59a4f7abb31bf7}\label{classMat4_aa8b3320f1510835c4c59a4f7abb31bf7}} 
+\index{Mat4@{Mat4}!create\+Look\+At@{create\+Look\+At}}
+\index{create\+Look\+At@{create\+Look\+At}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Look\+At()}{createLookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Look\+At (\begin{DoxyParamCaption}\item[{float}]{eye\+PositionX,  }\item[{float}]{eye\+PositionY,  }\item[{float}]{eye\+PositionZ,  }\item[{float}]{target\+CenterX,  }\item[{float}]{target\+CenterY,  }\item[{float}]{target\+CenterZ,  }\item[{float}]{upX,  }\item[{float}]{upY,  }\item[{float}]{upZ,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a view matrix based on the specified input parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em eye\+PositionX} & The eye x-\/coordinate position. \\
+\hline
+{\em eye\+PositionY} & The eye y-\/coordinate position. \\
+\hline
+{\em eye\+PositionZ} & The eye z-\/coordinate position. \\
+\hline
+{\em target\+CenterX} & The target\textquotesingle{}s center x-\/coordinate position. \\
+\hline
+{\em target\+CenterY} & The target\textquotesingle{}s center y-\/coordinate position. \\
+\hline
+{\em target\+CenterZ} & The target\textquotesingle{}s center z-\/coordinate position. \\
+\hline
+{\em upX} & The up vector x-\/coordinate value. \\
+\hline
+{\em upY} & The up vector y-\/coordinate value. \\
+\hline
+{\em upZ} & The up vector z-\/coordinate value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a3c2ba5ec28b2573c3602dbd0ae965b6b}\label{classMat4_a3c2ba5ec28b2573c3602dbd0ae965b6b}} 
+\index{Mat4@{Mat4}!create\+Orthographic@{create\+Orthographic}}
+\index{create\+Orthographic@{create\+Orthographic}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Orthographic()}{createOrthographic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the view. \\
+\hline
+{\em height} & The height of the view. \\
+\hline
+{\em z\+Near\+Plane} & The minimum z-\/value of the view volume. \\
+\hline
+{\em z\+Far\+Plane} & The maximum z-\/value of the view volume. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a3379c9732b8939ac485d06050a4b90c5}\label{classMat4_a3379c9732b8939ac485d06050a4b90c5}} 
+\index{Mat4@{Mat4}!create\+Orthographic@{create\+Orthographic}}
+\index{create\+Orthographic@{create\+Orthographic}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Orthographic()}{createOrthographic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the view. \\
+\hline
+{\em height} & The height of the view. \\
+\hline
+{\em z\+Near\+Plane} & The minimum z-\/value of the view volume. \\
+\hline
+{\em z\+Far\+Plane} & The maximum z-\/value of the view volume. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a322f6e640486e439334a0edf6d1688c5}\label{classMat4_a322f6e640486e439334a0edf6d1688c5}} 
+\index{Mat4@{Mat4}!create\+Orthographic\+Off\+Center@{create\+Orthographic\+Off\+Center}}
+\index{create\+Orthographic\+Off\+Center@{create\+Orthographic\+Off\+Center}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Orthographic\+Off\+Center()}{createOrthographicOffCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Orthographic\+Off\+Center (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{float}]{right,  }\item[{float}]{bottom,  }\item[{float}]{top,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic projection matrix.
+
+Projection space refers to the space after applying projection transformation from view space. After the projection transformation, visible content has x and y coordinates ranging from -\/1 to 1, and z coordinates ranging from 0 to 1.
+
+Unlike perspective projection, in orthographic projection there is no perspective foreshortening.
+
+The viewable area of this orthographic projection extends from left to right on the x-\/axis, bottom to top on the y-\/axis, and z\+Near\+Plane to z\+Far\+Plane on the z-\/axis. These values are relative to the position and x, y, and z-\/axes of the view. To obtain the viewable area (in world space) of a scene, create a Bounding\+Frustum and pass the combined view and projection matrix to the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The minimum x-\/value of the view volume. \\
+\hline
+{\em right} & The maximum x-\/value of the view volume. \\
+\hline
+{\em bottom} & The minimum y-\/value of the view volume. \\
+\hline
+{\em top} & The maximum y-\/value of the view volume. \\
+\hline
+{\em z\+Near\+Plane} & The minimum z-\/value of the view volume. \\
+\hline
+{\em z\+Far\+Plane} & The maximum z-\/value of the view volume. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a3a6f855340247fb96a16ca0a5b85dea7}\label{classMat4_a3a6f855340247fb96a16ca0a5b85dea7}} 
+\index{Mat4@{Mat4}!create\+Orthographic\+Off\+Center@{create\+Orthographic\+Off\+Center}}
+\index{create\+Orthographic\+Off\+Center@{create\+Orthographic\+Off\+Center}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Orthographic\+Off\+Center()}{createOrthographicOffCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Orthographic\+Off\+Center (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{float}]{right,  }\item[{float}]{bottom,  }\item[{float}]{top,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic projection matrix.
+
+Projection space refers to the space after applying projection transformation from view space. After the projection transformation, visible content has x and y coordinates ranging from -\/1 to 1, and z coordinates ranging from 0 to 1.
+
+Unlike perspective projection, in orthographic projection there is no perspective foreshortening.
+
+The viewable area of this orthographic projection extends from left to right on the x-\/axis, bottom to top on the y-\/axis, and z\+Near\+Plane to z\+Far\+Plane on the z-\/axis. These values are relative to the position and x, y, and z-\/axes of the view. To obtain the viewable area (in world space) of a scene, create a Bounding\+Frustum and pass the combined view and projection matrix to the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The minimum x-\/value of the view volume. \\
+\hline
+{\em right} & The maximum x-\/value of the view volume. \\
+\hline
+{\em bottom} & The minimum y-\/value of the view volume. \\
+\hline
+{\em top} & The maximum y-\/value of the view volume. \\
+\hline
+{\em z\+Near\+Plane} & The minimum z-\/value of the view volume. \\
+\hline
+{\em z\+Far\+Plane} & The maximum z-\/value of the view volume. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ab6e59d969d99f69b300b2860dbd8cfd9}\label{classMat4_ab6e59d969d99f69b300b2860dbd8cfd9}} 
+\index{Mat4@{Mat4}!create\+Perspective@{create\+Perspective}}
+\index{create\+Perspective@{create\+Perspective}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Perspective()}{createPerspective()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Perspective (\begin{DoxyParamCaption}\item[{float}]{field\+Of\+View,  }\item[{float}]{aspect\+Ratio,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Builds a perspective projection matrix based on a field of view and returns by value.
+
+Projection space refers to the space after applying projection transformation from view space. After the projection transformation, visible content has x-\/ and y-\/coordinates ranging from -\/1 to 1, and a z-\/coordinate ranging from 0 to 1. To obtain the viewable area (in world space) of a scene, create a Bounding\+Frustum and pass the combined view and projection matrix to the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+Of\+View} & The field of view in the y direction (in degrees). \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio, defined as view space width divided by height. \\
+\hline
+{\em z\+Near\+Plane} & The distance to the near view plane. \\
+\hline
+{\em z\+Far\+Plane} & The distance to the far view plane. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4ec1ce3e6b37e7c9b5833f7644d006e0}\label{classMat4_a4ec1ce3e6b37e7c9b5833f7644d006e0}} 
+\index{Mat4@{Mat4}!create\+Perspective@{create\+Perspective}}
+\index{create\+Perspective@{create\+Perspective}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Perspective()}{createPerspective()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Perspective (\begin{DoxyParamCaption}\item[{float}]{field\+Of\+View,  }\item[{float}]{aspect\+Ratio,  }\item[{float}]{z\+Near\+Plane,  }\item[{float}]{z\+Far\+Plane,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Builds a perspective projection matrix based on a field of view and returns by value.
+
+Projection space refers to the space after applying projection transformation from view space. After the projection transformation, visible content has x-\/ and y-\/coordinates ranging from -\/1 to 1, and a z-\/coordinate ranging from 0 to 1. To obtain the viewable area (in world space) of a scene, create a Bounding\+Frustum and pass the combined view and projection matrix to the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+Of\+View} & The field of view in the y direction (in degrees). \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio, defined as view space width divided by height. \\
+\hline
+{\em z\+Near\+Plane} & The distance to the near view plane. \\
+\hline
+{\em z\+Far\+Plane} & The distance to the far view plane. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac9306beb73b9ccf0ecec151fa1e34a24}\label{classMat4_ac9306beb73b9ccf0ecec151fa1e34a24}} 
+\index{Mat4@{Mat4}!create\+Rotation@{create\+Rotation}}
+\index{create\+Rotation@{create\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation()}{createRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{quat,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a rotation matrix from the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quat} & A quaternion describing a 3D orientation. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a9e95ec184dae30533def5217f8583616}\label{classMat4_a9e95ec184dae30533def5217f8583616}} 
+\index{Mat4@{Mat4}!create\+Rotation@{create\+Rotation}}
+\index{create\+Rotation@{create\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation()}{createRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{quat,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a rotation matrix from the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quat} & A quaternion describing a 3D orientation. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae4fab56ac8716d22d8fb979e756291c6}\label{classMat4_ae4fab56ac8716d22d8fb979e756291c6}} 
+\index{Mat4@{Mat4}!create\+Rotation@{create\+Rotation}}
+\index{create\+Rotation@{create\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation()}{createRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a rotation matrix from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae71d2a213bd50059a694d23afd5ae786}\label{classMat4_ae71d2a213bd50059a694d23afd5ae786}} 
+\index{Mat4@{Mat4}!create\+Rotation@{create\+Rotation}}
+\index{create\+Rotation@{create\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation()}{createRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a rotation matrix from the specified axis and angle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A vector describing the axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a28de6fcc943bea256076687d934af3c0}\label{classMat4_a28de6fcc943bea256076687d934af3c0}} 
+\index{Mat4@{Mat4}!create\+RotationX@{create\+RotationX}}
+\index{create\+RotationX@{create\+RotationX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+X()}{createRotationX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+RotationX (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the x-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ada6553ab3869aca6190523862bcbbb98}\label{classMat4_ada6553ab3869aca6190523862bcbbb98}} 
+\index{Mat4@{Mat4}!create\+RotationX@{create\+RotationX}}
+\index{create\+RotationX@{create\+RotationX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+X()}{createRotationX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+RotationX (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the x-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ab81524e7fbb339f6a7c5a43d701fdbc7}\label{classMat4_ab81524e7fbb339f6a7c5a43d701fdbc7}} 
+\index{Mat4@{Mat4}!create\+RotationY@{create\+RotationY}}
+\index{create\+RotationY@{create\+RotationY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+Y()}{createRotationY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+RotationY (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the y-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a24d60181510705304b5dffd42fb12b29}\label{classMat4_a24d60181510705304b5dffd42fb12b29}} 
+\index{Mat4@{Mat4}!create\+RotationY@{create\+RotationY}}
+\index{create\+RotationY@{create\+RotationY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+Y()}{createRotationY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+RotationY (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the y-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a01b92c6d9e1d8706b2288f7159411207}\label{classMat4_a01b92c6d9e1d8706b2288f7159411207}} 
+\index{Mat4@{Mat4}!create\+RotationZ@{create\+RotationZ}}
+\index{create\+RotationZ@{create\+RotationZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+Z()}{createRotationZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::create\+RotationZ (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the z-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4f07014344c83a3d502b5ec7422cd244}\label{classMat4_a4f07014344c83a3d502b5ec7422cd244}} 
+\index{Mat4@{Mat4}!create\+RotationZ@{create\+RotationZ}}
+\index{create\+RotationZ@{create\+RotationZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Rotation\+Z()}{createRotationZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+RotationZ (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a matrix describing a rotation around the z-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a82cdf950af1c6f514c61efa42787d9c0}\label{classMat4_a82cdf950af1c6f514c61efa42787d9c0}} 
+\index{Mat4@{Mat4}!create\+Scale@{create\+Scale}}
+\index{create\+Scale@{create\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Scale()}{createScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a scale matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The amount to scale. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a0cb022e5faa5956fbbade37e82210518}\label{classMat4_a0cb022e5faa5956fbbade37e82210518}} 
+\index{Mat4@{Mat4}!create\+Scale@{create\+Scale}}
+\index{create\+Scale@{create\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Scale()}{createScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a scale matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The amount to scale. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a73ac7c88b7d1f1b3105cee306c3bbfde}\label{classMat4_a73ac7c88b7d1f1b3105cee306c3bbfde}} 
+\index{Mat4@{Mat4}!create\+Scale@{create\+Scale}}
+\index{create\+Scale@{create\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Scale()}{createScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a scale matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a198c75115c8c4c9fc9dca2ae39406ae8}\label{classMat4_a198c75115c8c4c9fc9dca2ae39406ae8}} 
+\index{Mat4@{Mat4}!create\+Scale@{create\+Scale}}
+\index{create\+Scale@{create\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Scale()}{createScale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a scale matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a6c939bd684b051a2704da5ef9bcfd245}\label{classMat4_a6c939bd684b051a2704da5ef9bcfd245}} 
+\index{Mat4@{Mat4}!create\+Translation@{create\+Translation}}
+\index{create\+Translation@{create\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Translation()}{createTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Translation (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{translation,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a translation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The translation. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a10c09ee857ae1e074f4f66c44e5a477b}\label{classMat4_a10c09ee857ae1e074f4f66c44e5a477b}} 
+\index{Mat4@{Mat4}!create\+Translation@{create\+Translation}}
+\index{create\+Translation@{create\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Translation()}{createTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Translation (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{translation,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a translation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The translation. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4bd6bce87e0e3efbaa343898050bd47b}\label{classMat4_a4bd6bce87e0e3efbaa343898050bd47b}} 
+\index{Mat4@{Mat4}!create\+Translation@{create\+Translation}}
+\index{create\+Translation@{create\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Translation()}{createTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::create\+Translation (\begin{DoxyParamCaption}\item[{float}]{x\+Translation,  }\item[{float}]{y\+Translation,  }\item[{float}]{z\+Translation,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a translation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Translation} & The translation on the x-\/axis. \\
+\hline
+{\em y\+Translation} & The translation on the y-\/axis. \\
+\hline
+{\em z\+Translation} & The translation on the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aabb5b159d75963284e6fb81b8f464d22}\label{classMat4_aabb5b159d75963284e6fb81b8f464d22}} 
+\index{Mat4@{Mat4}!create\+Translation@{create\+Translation}}
+\index{create\+Translation@{create\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{create\+Translation()}{createTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::create\+Translation (\begin{DoxyParamCaption}\item[{float}]{x\+Translation,  }\item[{float}]{y\+Translation,  }\item[{float}]{z\+Translation,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a translation matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Translation} & The translation on the x-\/axis. \\
+\hline
+{\em y\+Translation} & The translation on the y-\/axis. \\
+\hline
+{\em z\+Translation} & The translation on the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a35e55973b2473838bd637d1de1ca220e}\label{classMat4_a35e55973b2473838bd637d1de1ca220e}} 
+\index{Mat4@{Mat4}!decompose@{decompose}}
+\index{decompose@{decompose}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{decompose()}{decompose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mat4\+::decompose (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{scale,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{rotation,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{translation }\end{DoxyParamCaption}) const}
+
+Decomposes the scale, rotation and translation components of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale. \\
+\hline
+{\em rotation} & The rotation. \\
+\hline
+{\em translation} & The translation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a35e55973b2473838bd637d1de1ca220e}\label{classMat4_a35e55973b2473838bd637d1de1ca220e}} 
+\index{Mat4@{Mat4}!decompose@{decompose}}
+\index{decompose@{decompose}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{decompose()}{decompose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mat4\+::decompose (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{scale,  }\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{rotation,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{translation }\end{DoxyParamCaption}) const}
+
+Decomposes the scale, rotation and translation components of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale. \\
+\hline
+{\em rotation} & The rotation. \\
+\hline
+{\em translation} & The translation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aba33e196546ec0ed036c7fe690c072ac}\label{classMat4_aba33e196546ec0ed036c7fe690c072ac}} 
+\index{Mat4@{Mat4}!determinant@{determinant}}
+\index{determinant@{determinant}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Mat4\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Computes the determinant of this matrix.
+
+\begin{DoxyReturn}{Returns}
+The determinant. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_aba33e196546ec0ed036c7fe690c072ac}\label{classMat4_aba33e196546ec0ed036c7fe690c072ac}} 
+\index{Mat4@{Mat4}!determinant@{determinant}}
+\index{determinant@{determinant}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Mat4\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Computes the determinant of this matrix.
+
+\begin{DoxyReturn}{Returns}
+The determinant. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}\label{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}} 
+\index{Mat4@{Mat4}!get\+Back\+Vector@{get\+Back\+Vector}}
+\index{get\+Back\+Vector@{get\+Back\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Back\+Vector()}{getBackVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Back\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the backward vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}\label{classMat4_aa1f197b8d1e34ebf41bf7c222119b11b}} 
+\index{Mat4@{Mat4}!get\+Back\+Vector@{get\+Back\+Vector}}
+\index{get\+Back\+Vector@{get\+Back\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Back\+Vector()}{getBackVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Back\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the backward vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2219e0177bc699742b7f0531b10a8054}\label{classMat4_a2219e0177bc699742b7f0531b10a8054}} 
+\index{Mat4@{Mat4}!get\+Down\+Vector@{get\+Down\+Vector}}
+\index{get\+Down\+Vector@{get\+Down\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Down\+Vector()}{getDownVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Down\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the down vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2219e0177bc699742b7f0531b10a8054}\label{classMat4_a2219e0177bc699742b7f0531b10a8054}} 
+\index{Mat4@{Mat4}!get\+Down\+Vector@{get\+Down\+Vector}}
+\index{get\+Down\+Vector@{get\+Down\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Down\+Vector()}{getDownVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Down\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the down vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a1b53f818aab2f341af761e9ca738ab1f}\label{classMat4_a1b53f818aab2f341af761e9ca738ab1f}} 
+\index{Mat4@{Mat4}!get\+Forward\+Vector@{get\+Forward\+Vector}}
+\index{get\+Forward\+Vector@{get\+Forward\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Forward\+Vector()}{getForwardVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Forward\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the forward vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a1b53f818aab2f341af761e9ca738ab1f}\label{classMat4_a1b53f818aab2f341af761e9ca738ab1f}} 
+\index{Mat4@{Mat4}!get\+Forward\+Vector@{get\+Forward\+Vector}}
+\index{get\+Forward\+Vector@{get\+Forward\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Forward\+Vector()}{getForwardVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Forward\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the forward vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}\label{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}} 
+\index{Mat4@{Mat4}!get\+Inversed@{get\+Inversed}}
+\index{get\+Inversed@{get\+Inversed}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Inversed()}{getInversed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Inversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the inversed matrix. \mbox{\Hypertarget{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}\label{classMat4_aa49b12b2cd25b28ab50e2ac41de592b4}} 
+\index{Mat4@{Mat4}!get\+Inversed@{get\+Inversed}}
+\index{get\+Inversed@{get\+Inversed}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Inversed()}{getInversed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Inversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the inversed matrix. \mbox{\Hypertarget{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}\label{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}} 
+\index{Mat4@{Mat4}!get\+Left\+Vector@{get\+Left\+Vector}}
+\index{get\+Left\+Vector@{get\+Left\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Left\+Vector()}{getLeftVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Left\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the left vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}\label{classMat4_a53f91ec013e8a83c5b7a2395e17c626d}} 
+\index{Mat4@{Mat4}!get\+Left\+Vector@{get\+Left\+Vector}}
+\index{get\+Left\+Vector@{get\+Left\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Left\+Vector()}{getLeftVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Left\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the left vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae500d08f05972355bb6213ad955091e7}\label{classMat4_ae500d08f05972355bb6213ad955091e7}} 
+\index{Mat4@{Mat4}!get\+Negated@{get\+Negated}}
+\index{get\+Negated@{get\+Negated}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Negated()}{getNegated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Negated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Negated matrix. \mbox{\Hypertarget{classMat4_ae500d08f05972355bb6213ad955091e7}\label{classMat4_ae500d08f05972355bb6213ad955091e7}} 
+\index{Mat4@{Mat4}!get\+Negated@{get\+Negated}}
+\index{get\+Negated@{get\+Negated}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Negated()}{getNegated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Negated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Negated matrix. \mbox{\Hypertarget{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}\label{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}} 
+\index{Mat4@{Mat4}!get\+Right\+Vector@{get\+Right\+Vector}}
+\index{get\+Right\+Vector@{get\+Right\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Right\+Vector()}{getRightVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Right\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the right vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}\label{classMat4_a5154fc9675a1d8fdc136c4a0ac19a41f}} 
+\index{Mat4@{Mat4}!get\+Right\+Vector@{get\+Right\+Vector}}
+\index{get\+Right\+Vector@{get\+Right\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Right\+Vector()}{getRightVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Right\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the right vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}\label{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}} 
+\index{Mat4@{Mat4}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mat4\+::get\+Rotation (\begin{DoxyParamCaption}\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{rotation }\end{DoxyParamCaption}) const}
+
+Gets the rotational component of this matrix in the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & A quaternion to receive the rotation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the rotation is successfully extracted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}\label{classMat4_a585ebfce44ed9fd746a81bfed1e3cccf}} 
+\index{Mat4@{Mat4}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mat4\+::get\+Rotation (\begin{DoxyParamCaption}\item[{\hyperlink{classQuaternion}{Quaternion} $\ast$}]{rotation }\end{DoxyParamCaption}) const}
+
+Gets the rotational component of this matrix in the specified quaternion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & A quaternion to receive the rotation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the rotation is successfully extracted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}\label{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}} 
+\index{Mat4@{Mat4}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Scale (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{scale }\end{DoxyParamCaption}) const}
+
+Gets the scalar component of this matrix in the specified vector.
+
+If the scalar component of this matrix has negative parts, it is not possible to always extract the exact scalar component; instead, a scale vector that is mathematically equivalent to the original scale vector is extracted and returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & A vector to receive the scale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}\label{classMat4_a6e71ae3f0286e5ea417f237aa0cdefeb}} 
+\index{Mat4@{Mat4}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Scale (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{scale }\end{DoxyParamCaption}) const}
+
+Gets the scalar component of this matrix in the specified vector.
+
+If the scalar component of this matrix has negative parts, it is not possible to always extract the exact scalar component; instead, a scale vector that is mathematically equivalent to the original scale vector is extracted and returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & A vector to receive the scale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a92b33d42c6766de2183ebd53269fb96c}\label{classMat4_a92b33d42c6766de2183ebd53269fb96c}} 
+\index{Mat4@{Mat4}!get\+Translation@{get\+Translation}}
+\index{get\+Translation@{get\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Translation()}{getTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Translation (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{translation }\end{DoxyParamCaption}) const}
+
+Gets the translational component of this matrix in the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & A vector to receive the translation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a92b33d42c6766de2183ebd53269fb96c}\label{classMat4_a92b33d42c6766de2183ebd53269fb96c}} 
+\index{Mat4@{Mat4}!get\+Translation@{get\+Translation}}
+\index{get\+Translation@{get\+Translation}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Translation()}{getTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Translation (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{translation }\end{DoxyParamCaption}) const}
+
+Gets the translational component of this matrix in the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & A vector to receive the translation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a483b4b6142791d63aad164d917bfcdb8}\label{classMat4_a483b4b6142791d63aad164d917bfcdb8}} 
+\index{Mat4@{Mat4}!get\+Transposed@{get\+Transposed}}
+\index{get\+Transposed@{get\+Transposed}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Transposed()}{getTransposed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Transposed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Transposed matrix. \mbox{\Hypertarget{classMat4_a483b4b6142791d63aad164d917bfcdb8}\label{classMat4_a483b4b6142791d63aad164d917bfcdb8}} 
+\index{Mat4@{Mat4}!get\+Transposed@{get\+Transposed}}
+\index{get\+Transposed@{get\+Transposed}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Transposed()}{getTransposed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::get\+Transposed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Transposed matrix. \mbox{\Hypertarget{classMat4_af0d374798883b8b0315025707df6329d}\label{classMat4_af0d374798883b8b0315025707df6329d}} 
+\index{Mat4@{Mat4}!get\+Up\+Vector@{get\+Up\+Vector}}
+\index{get\+Up\+Vector@{get\+Up\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Up\+Vector()}{getUpVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Up\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the up vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af0d374798883b8b0315025707df6329d}\label{classMat4_af0d374798883b8b0315025707df6329d}} 
+\index{Mat4@{Mat4}!get\+Up\+Vector@{get\+Up\+Vector}}
+\index{get\+Up\+Vector@{get\+Up\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{get\+Up\+Vector()}{getUpVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::get\+Up\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Gets the up vector of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a22528a64ce3ee80e93150dea45408e44}\label{classMat4_a22528a64ce3ee80e93150dea45408e44}} 
+\index{Mat4@{Mat4}!inverse@{inverse}}
+\index{inverse@{inverse}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mat4\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Inverts this matrix.
+
+\begin{DoxyReturn}{Returns}
+true if the matrix can be inverted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a22528a64ce3ee80e93150dea45408e44}\label{classMat4_a22528a64ce3ee80e93150dea45408e44}} 
+\index{Mat4@{Mat4}!inverse@{inverse}}
+\index{inverse@{inverse}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mat4\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Inverts this matrix.
+
+\begin{DoxyReturn}{Returns}
+true if the matrix can be inverted, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a3309850f850ef88e57e3b9b17af3371e}\label{classMat4_a3309850f850ef88e57e3b9b17af3371e}} 
+\index{Mat4@{Mat4}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{is\+Identity()}{isIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mat4\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this matrix is equal to the identity matrix.
+
+\begin{DoxyReturn}{Returns}
+true if the matrix is an identity matrix, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a3309850f850ef88e57e3b9b17af3371e}\label{classMat4_a3309850f850ef88e57e3b9b17af3371e}} 
+\index{Mat4@{Mat4}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{is\+Identity()}{isIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mat4\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Determines if this matrix is equal to the identity matrix.
+
+\begin{DoxyReturn}{Returns}
+true if the matrix is an identity matrix, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}\label{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})}
+
+Multiplies the components of this matrix by the specified scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}\label{classMat4_a45bc83fe1011e2c02f3d0ed9ae9081c4}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{float}]{scalar }\end{DoxyParamCaption})}
+
+Multiplies the components of this matrix by the specified scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a24498dcc626d53062cb021046fa19a52}\label{classMat4_a24498dcc626d53062cb021046fa19a52}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Multiplies the components of this matrix by a scalar and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a24498dcc626d53062cb021046fa19a52}\label{classMat4_a24498dcc626d53062cb021046fa19a52}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Multiplies the components of this matrix by a scalar and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ab0a9f07ed2a1bb7f067a6d8dac759244}\label{classMat4_ab0a9f07ed2a1bb7f067a6d8dac759244}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat,  }\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies the components of the specified matrix by a scalar and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix. \\
+\hline
+{\em scalar} & The scalar value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac146774fcd0217bdeaba90ed2936c3b3}\label{classMat4_ac146774fcd0217bdeaba90ed2936c3b3}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily static void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat,  }\item[{float}]{scalar,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies the components of the specified matrix by a scalar and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix. \\
+\hline
+{\em scalar} & The scalar value. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aba98567f451a133a0a3a8bad1a88ad90}\label{classMat4_aba98567f451a133a0a3a8bad1a88ad90}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Multiplies this matrix by the specified one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aba98567f451a133a0a3a8bad1a88ad90}\label{classMat4_aba98567f451a133a0a3a8bad1a88ad90}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Multiplies this matrix by the specified one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a3e9235b654f4bf59722d17d392cdddca}\label{classMat4_a3e9235b654f4bf59722d17d392cdddca}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies m1 by m2 and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix to multiply. \\
+\hline
+{\em m2} & The second matrix to multiply. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ad42e3478d90c75c0b447c72d232d8233}\label{classMat4_ad42e3478d90c75c0b447c72d232d8233}} 
+\index{Mat4@{Mat4}!multiply@{multiply}}
+\index{multiply@{multiply}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily static void Mat4\+::multiply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Multiplies m1 by m2 and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix to multiply. \\
+\hline
+{\em m2} & The second matrix to multiply. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}\label{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}} 
+\index{Mat4@{Mat4}!negate@{negate}}
+\index{negate@{negate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Negates this matrix. \mbox{\Hypertarget{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}\label{classMat4_a4e99a7b8e550d6a0f1e9a5d9f1305206}} 
+\index{Mat4@{Mat4}!negate@{negate}}
+\index{negate@{negate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Negates this matrix. \mbox{\Hypertarget{classMat4_adfc2da7f18cf258791b388bf3333d7ef}\label{classMat4_adfc2da7f18cf258791b388bf3333d7ef}} 
+\index{Mat4@{Mat4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the matrix product of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_adfc2da7f18cf258791b388bf3333d7ef}\label{classMat4_adfc2da7f18cf258791b388bf3333d7ef}} 
+\index{Mat4@{Mat4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the matrix product of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_aff7f316cabd6773d02b1704fe1b629b2}\label{classMat4_aff7f316cabd6773d02b1704fe1b629b2}} 
+\index{Mat4@{Mat4}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} \& Mat4\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Right-\/multiplies this matrix by the given matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the multiplication occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_ab51d6459570c1632d92aa34d893be343}\label{classMat4_ab51d6459570c1632d92aa34d893be343}} 
+\index{Mat4@{Mat4}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4}\& Mat4\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Right-\/multiplies this matrix by the given matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to multiply by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the multiplication occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a090a17553d3708ee4a6e686c7b861e86}\label{classMat4_a090a17553d3708ee4a6e686c7b861e86}} 
+\index{Mat4@{Mat4}!operator+@{operator+}}
+\index{operator+@{operator+}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+M\+A\+T\+H\+\_\+\+B\+E\+G\+IN \hyperlink{classMat4}{Mat4} Mat4\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix sum.
+\end{DoxyReturn}
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project \mbox{\Hypertarget{classMat4_aec8e42aec11573c62fd771cadec2c833}\label{classMat4_aec8e42aec11573c62fd771cadec2c833}} 
+\index{Mat4@{Mat4}!operator+@{operator+}}
+\index{operator+@{operator+}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the sum of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a1f15bf1f4ff4c4084019732127259df8}\label{classMat4_a1f15bf1f4ff4c4084019732127259df8}} 
+\index{Mat4@{Mat4}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} \& Mat4\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the given matrix to this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the addition occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_ae3b797f9d036f0dbe605d73e5bd46cfa}\label{classMat4_ae3b797f9d036f0dbe605d73e5bd46cfa}} 
+\index{Mat4@{Mat4}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4}\& Mat4\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the given matrix to this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the addition occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_ae56d2c741f3bafc30024da58083bb8f4}\label{classMat4_ae56d2c741f3bafc30024da58083bb8f4}} 
+\index{Mat4@{Mat4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the difference of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_ae56d2c741f3bafc30024da58083bb8f4}\label{classMat4_ae56d2c741f3bafc30024da58083bb8f4}} 
+\index{Mat4@{Mat4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the difference of this matrix with the given matrix.
+
+Note\+: this does not modify this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matrix difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}\label{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}} 
+\index{Mat4@{Mat4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the negation of this matrix.
+
+Note\+: this does not modify this matrix.
+
+\begin{DoxyReturn}{Returns}
+The negation of this matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}\label{classMat4_a23ddc905ed3d3400c62cb6f60f8577e2}} 
+\index{Mat4@{Mat4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Mat4\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the negation of this matrix.
+
+Note\+: this does not modify this matrix.
+
+\begin{DoxyReturn}{Returns}
+The negation of this matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_ae6b419586fa52b27404626c38d78dbdb}\label{classMat4_ae6b419586fa52b27404626c38d78dbdb}} 
+\index{Mat4@{Mat4}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} \& Mat4\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts the given matrix from this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the subtraction occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a2cf11f93e2f8f493ade62f8bd3a849db}\label{classMat4_a2cf11f93e2f8f493ade62f8bd3a849db}} 
+\index{Mat4@{Mat4}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4}\& Mat4\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Subtracts the given matrix from this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This matrix, after the subtraction occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}\label{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified quaternion rotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to rotate by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}\label{classMat4_a1cc6787b1cf29ce48df616a6aabe3096}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified quaternion rotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to rotate by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a638b21eb95ee5240a780562e7099de4c}\label{classMat4_a638b21eb95ee5240a780562e7099de4c}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified quaternion rotation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to rotate by. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a638b21eb95ee5240a780562e7099de4c}\label{classMat4_a638b21eb95ee5240a780562e7099de4c}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{q,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified quaternion rotation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to rotate by. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}\label{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation about the specified axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}\label{classMat4_a6bb112d2f8aebd87cddc46fedcd855e1}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation about the specified axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a548095c5ec16649ab859f317c5b6fec8}\label{classMat4_a548095c5ec16649ab859f317c5b6fec8}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation about the specified axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a548095c5ec16649ab859f317c5b6fec8}\label{classMat4_a548095c5ec16649ab859f317c5b6fec8}} 
+\index{Mat4@{Mat4}!rotate@{rotate}}
+\index{rotate@{rotate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void Mat4\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{axis,  }\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation about the specified axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about. \\
+\hline
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}\label{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}} 
+\index{Mat4@{Mat4}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+X()}{rotateX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateX (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the x-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}\label{classMat4_a5e84d2bcffe8021db81c6614a88b39e5}} 
+\index{Mat4@{Mat4}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+X()}{rotateX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateX (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the x-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}\label{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}} 
+\index{Mat4@{Mat4}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+X()}{rotateX()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateX (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the x-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}\label{classMat4_a8fd010ff0b011e0e2b9f97e1b83df9e5}} 
+\index{Mat4@{Mat4}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+X()}{rotateX()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateX (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the x-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}\label{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}} 
+\index{Mat4@{Mat4}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Y()}{rotateY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateY (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the y-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}\label{classMat4_a5c32002c4bc2d64e6933a8fe50545b51}} 
+\index{Mat4@{Mat4}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Y()}{rotateY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateY (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the y-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}\label{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}} 
+\index{Mat4@{Mat4}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Y()}{rotateY()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateY (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the y-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}\label{classMat4_a0a36c4dc24d143acfb8f03d8aa1ee164}} 
+\index{Mat4@{Mat4}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Y()}{rotateY()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateY (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the y-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a31f8fbbe32864fef9477c4d520a4c365}\label{classMat4_a31f8fbbe32864fef9477c4d520a4c365}} 
+\index{Mat4@{Mat4}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Z()}{rotateZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateZ (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the z-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a31f8fbbe32864fef9477c4d520a4c365}\label{classMat4_a31f8fbbe32864fef9477c4d520a4c365}} 
+\index{Mat4@{Mat4}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Z()}{rotateZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateZ (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the z-\/axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}\label{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}} 
+\index{Mat4@{Mat4}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Z()}{rotateZ()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateZ (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the z-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}\label{classMat4_a9320c6f0c192eed1da05f8e1dcea7a1b}} 
+\index{Mat4@{Mat4}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{rotate\+Z()}{rotateZ()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Mat4\+::rotateZ (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified rotation around the z-\/axis and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle (in radians). \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}\label{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The amount to scale along all axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}\label{classMat4_a37c910140d6378e4ef7c7bb1e2d0296d}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The amount to scale along all axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a02cadab494f29e01993f8bd137ac3c10}\label{classMat4_a02cadab494f29e01993f8bd137ac3c10}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The amount to scale along all axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a02cadab494f29e01993f8bd137ac3c10}\label{classMat4_a02cadab494f29e01993f8bd137ac3c10}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The amount to scale along all axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}\label{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}\label{classMat4_a8ed91e5f5fe9c9b8a7ccccb2026dd2b9}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af8096eb9dc784653bfacee2561b6a654}\label{classMat4_af8096eb9dc784653bfacee2561b6a654}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af8096eb9dc784653bfacee2561b6a654}\label{classMat4_af8096eb9dc784653bfacee2561b6a654}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{float}]{x\+Scale,  }\item[{float}]{y\+Scale,  }\item[{float}]{z\+Scale,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Scale} & The amount to scale along the x-\/axis. \\
+\hline
+{\em y\+Scale} & The amount to scale along the y-\/axis. \\
+\hline
+{\em z\+Scale} & The amount to scale along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a680fbd52838ca085c468dc4f559f3d04}\label{classMat4_a680fbd52838ca085c468dc4f559f3d04}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{s }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale values along the x, y and z axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a680fbd52838ca085c468dc4f559f3d04}\label{classMat4_a680fbd52838ca085c468dc4f559f3d04}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{s }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale values along the x, y and z axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}\label{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{s,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale values along the x, y and z axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}\label{classMat4_aca9dcebbcb554ea36fc86ac1127a3fd4}} 
+\index{Mat4@{Mat4}!scale@{scale}}
+\index{scale@{scale}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily void Mat4\+::scale (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{s,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified scale transformation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale values along the x, y and z axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}\label{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{float}]{m11,  }\item[{float}]{m12,  }\item[{float}]{m13,  }\item[{float}]{m14,  }\item[{float}]{m21,  }\item[{float}]{m22,  }\item[{float}]{m23,  }\item[{float}]{m24,  }\item[{float}]{m31,  }\item[{float}]{m32,  }\item[{float}]{m33,  }\item[{float}]{m34,  }\item[{float}]{m41,  }\item[{float}]{m42,  }\item[{float}]{m43,  }\item[{float}]{m44 }\end{DoxyParamCaption})}
+
+Sets the values of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m11} & The first element of the first row. \\
+\hline
+{\em m12} & The second element of the first row. \\
+\hline
+{\em m13} & The third element of the first row. \\
+\hline
+{\em m14} & The fourth element of the first row. \\
+\hline
+{\em m21} & The first element of the second row. \\
+\hline
+{\em m22} & The second element of the second row. \\
+\hline
+{\em m23} & The third element of the second row. \\
+\hline
+{\em m24} & The fourth element of the second row. \\
+\hline
+{\em m31} & The first element of the third row. \\
+\hline
+{\em m32} & The second element of the third row. \\
+\hline
+{\em m33} & The third element of the third row. \\
+\hline
+{\em m34} & The fourth element of the third row. \\
+\hline
+{\em m41} & The first element of the fourth row. \\
+\hline
+{\em m42} & The second element of the fourth row. \\
+\hline
+{\em m43} & The third element of the fourth row. \\
+\hline
+{\em m44} & The fourth element of the fourth row. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}\label{classMat4_ac89d4d819ec41144c653dd80e4ddb6c3}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{float}]{m11,  }\item[{float}]{m12,  }\item[{float}]{m13,  }\item[{float}]{m14,  }\item[{float}]{m21,  }\item[{float}]{m22,  }\item[{float}]{m23,  }\item[{float}]{m24,  }\item[{float}]{m31,  }\item[{float}]{m32,  }\item[{float}]{m33,  }\item[{float}]{m34,  }\item[{float}]{m41,  }\item[{float}]{m42,  }\item[{float}]{m43,  }\item[{float}]{m44 }\end{DoxyParamCaption})}
+
+Sets the values of this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m11} & The first element of the first row. \\
+\hline
+{\em m12} & The second element of the first row. \\
+\hline
+{\em m13} & The third element of the first row. \\
+\hline
+{\em m14} & The fourth element of the first row. \\
+\hline
+{\em m21} & The first element of the second row. \\
+\hline
+{\em m22} & The second element of the second row. \\
+\hline
+{\em m23} & The third element of the second row. \\
+\hline
+{\em m24} & The fourth element of the second row. \\
+\hline
+{\em m31} & The first element of the third row. \\
+\hline
+{\em m32} & The second element of the third row. \\
+\hline
+{\em m33} & The third element of the third row. \\
+\hline
+{\em m34} & The fourth element of the third row. \\
+\hline
+{\em m41} & The first element of the fourth row. \\
+\hline
+{\em m42} & The second element of the fourth row. \\
+\hline
+{\em m43} & The third element of the fourth row. \\
+\hline
+{\em m44} & The fourth element of the fourth row. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}\label{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{const float $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Sets the values of this matrix to those in the specified column-\/major array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & An array containing 16 elements in column-\/major format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}\label{classMat4_aa41cf66bbbeaf8520730a1e119576ed3}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{const float $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Sets the values of this matrix to those in the specified column-\/major array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & An array containing 16 elements in column-\/major format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4673b21f6cf96fb2274be6227a877061}\label{classMat4_a4673b21f6cf96fb2274be6227a877061}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Sets the values of this matrix to those of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The source matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a4673b21f6cf96fb2274be6227a877061}\label{classMat4_a4673b21f6cf96fb2274be6227a877061}} 
+\index{Mat4@{Mat4}!set@{set}}
+\index{set@{set}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void Mat4\+::set (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Sets the values of this matrix to those of the specified matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The source matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}\label{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}} 
+\index{Mat4@{Mat4}!set\+Identity@{set\+Identity}}
+\index{set\+Identity@{set\+Identity}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set\+Identity()}{setIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::set\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this matrix to the identity matrix. \mbox{\Hypertarget{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}\label{classMat4_a0d20e8d7fbbc17531bb81a1446b85c98}} 
+\index{Mat4@{Mat4}!set\+Identity@{set\+Identity}}
+\index{set\+Identity@{set\+Identity}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set\+Identity()}{setIdentity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::set\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets this matrix to the identity matrix. \mbox{\Hypertarget{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}\label{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}} 
+\index{Mat4@{Mat4}!set\+Zero@{set\+Zero}}
+\index{set\+Zero@{set\+Zero}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set\+Zero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets all elements of the current matrix to zero. \mbox{\Hypertarget{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}\label{classMat4_a252b7afb2cfcd5e814fa2d3118d05de3}} 
+\index{Mat4@{Mat4}!set\+Zero@{set\+Zero}}
+\index{set\+Zero@{set\+Zero}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{set\+Zero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets all elements of the current matrix to zero. \mbox{\Hypertarget{classMat4_a3ad911389ec778e8f67aaced32be9193}\label{classMat4_a3ad911389ec778e8f67aaced32be9193}} 
+\index{Mat4@{Mat4}!subtract@{subtract}}
+\index{subtract@{subtract}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Subtracts the specified matrix from the current matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a3ad911389ec778e8f67aaced32be9193}\label{classMat4_a3ad911389ec778e8f67aaced32be9193}} 
+\index{Mat4@{Mat4}!subtract@{subtract}}
+\index{subtract@{subtract}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Mat4\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+Subtracts the specified matrix from the current matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_aaf588424f8307071ccbb38be271cb76b}\label{classMat4_aaf588424f8307071ccbb38be271cb76b}} 
+\index{Mat4@{Mat4}!subtract@{subtract}}
+\index{subtract@{subtract}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Subtracts the specified matrix from the current matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix. \\
+\hline
+{\em m2} & The second matrix. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a0f18e64cdea9bffbe5259526481db28e}\label{classMat4_a0f18e64cdea9bffbe5259526481db28e}} 
+\index{Mat4@{Mat4}!subtract@{subtract}}
+\index{subtract@{subtract}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Mat4\+::subtract (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{m1,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{m2,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Subtracts the specified matrix from the current matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first matrix. \\
+\hline
+{\em m2} & The second matrix. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}\label{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}} 
+\index{Mat4@{Mat4}!transform\+Point@{transform\+Point}}
+\index{transform\+Point@{transform\+Point}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Point()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms the specified point by this matrix.
+
+The result of the transformation is stored directly into point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to transform and also a vector to hold the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}\label{classMat4_a70e0d4c59e366d1c51cf6c086ec8fb58}} 
+\index{Mat4@{Mat4}!transform\+Point@{transform\+Point}}
+\index{transform\+Point@{transform\+Point}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Point()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms the specified point by this matrix.
+
+The result of the transformation is stored directly into point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to transform and also a vector to hold the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}\label{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}} 
+\index{Mat4@{Mat4}!transform\+Point@{transform\+Point}}
+\index{transform\+Point@{transform\+Point}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Point()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{point,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms the specified point by this matrix, and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to transform. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}\label{classMat4_af85f1c69ea4ca7632d541fb12d3b23a5}} 
+\index{Mat4@{Mat4}!transform\+Point@{transform\+Point}}
+\index{transform\+Point@{transform\+Point}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Point()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{point,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms the specified point by this matrix, and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to transform. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}\label{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{vector }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix by treating the fourth (w) coordinate as zero.
+
+The result of the transformation is stored directly into vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform and also a vector to hold the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}\label{classMat4_a2f5efde7152fb9e50d1e8fd45e7012bb}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{vector }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix by treating the fourth (w) coordinate as zero.
+
+The result of the transformation is stored directly into vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform and also a vector to hold the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae115470538b721dfd6dda37b4d487805}\label{classMat4_ae115470538b721dfd6dda37b4d487805}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{vector,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix by treating the fourth (w) coordinate as zero, and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em dst} & A vector to store the transformed vector in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ae115470538b721dfd6dda37b4d487805}\label{classMat4_ae115470538b721dfd6dda37b4d487805}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{vector,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix by treating the fourth (w) coordinate as zero, and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em dst} & A vector to store the transformed vector in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}\label{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{w,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector x-\/coordinate to transform by. \\
+\hline
+{\em y} & The vector y-\/coordinate to transform by. \\
+\hline
+{\em z} & The vector z-\/coordinate to transform by. \\
+\hline
+{\em w} & The vector w-\/coordinate to transform by. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}\label{classMat4_a61a1ba4cf3f23320cf351137bef9fc75}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{w,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector x-\/coordinate to transform by. \\
+\hline
+{\em y} & The vector y-\/coordinate to transform by. \\
+\hline
+{\em z} & The vector z-\/coordinate to transform by. \\
+\hline
+{\em w} & The vector w-\/coordinate to transform by. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2c78f362e212324aa1ec085aefc07b78}\label{classMat4_a2c78f362e212324aa1ec085aefc07b78}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{vector }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+The result of the transformation is stored directly into vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a2c78f362e212324aa1ec085aefc07b78}\label{classMat4_a2c78f362e212324aa1ec085aefc07b78}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{vector }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+The result of the transformation is stored directly into vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac710d11704a735e831671574b5e1d7aa}\label{classMat4_ac710d11704a735e831671574b5e1d7aa}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{vector,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_ac710d11704a735e831671574b5e1d7aa}\label{classMat4_ac710d11704a735e831671574b5e1d7aa}} 
+\index{Mat4@{Mat4}!transform\+Vector@{transform\+Vector}}
+\index{transform\+Vector@{transform\+Vector}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transform\+Vector()}{transformVector()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily void Mat4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{vector,  }\item[{\hyperlink{classVec4}{Vec4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms the specified vector by this matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em dst} & A vector to store the transformed point in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}\label{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The amount to translate along the x-\/axis. \\
+\hline
+{\em y} & The amount to translate along the y-\/axis. \\
+\hline
+{\em z} & The amount to translate along the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}\label{classMat4_a09a0ca603f65a1c1c79ecfb5aca40025}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The amount to translate along the x-\/axis. \\
+\hline
+{\em y} & The amount to translate along the y-\/axis. \\
+\hline
+{\em z} & The amount to translate along the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}\label{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The amount to translate along the x-\/axis. \\
+\hline
+{\em y} & The amount to translate along the y-\/axis. \\
+\hline
+{\em z} & The amount to translate along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}\label{classMat4_a8b6185d434fa5a2308ea905f4ba6e233}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The amount to translate along the x-\/axis. \\
+\hline
+{\em y} & The amount to translate along the y-\/axis. \\
+\hline
+{\em z} & The amount to translate along the z-\/axis. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}\label{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{t }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The translation values along the x, y and z axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}\label{classMat4_a651029cb9f07ca74d0ddc3b28689b35c}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{t }\end{DoxyParamCaption})}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The translation values along the x, y and z axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}\label{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{t,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The translation values along the x, y and z axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}\label{classMat4_a7022f7bcb5a6b22d7fa86cfe908c6d91}} 
+\index{Mat4@{Mat4}!translate@{translate}}
+\index{translate@{translate}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily void Mat4\+::translate (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{t,  }\item[{\hyperlink{classMat4}{Mat4} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Post-\/multiplies this matrix by the matrix corresponding to the specified translation and stores the result in dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The translation values along the x, y and z axes. \\
+\hline
+{\em dst} & A matrix to store the result in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMat4_af8b85ea76f3b7225ee33878029b1d18e}\label{classMat4_af8b85ea76f3b7225ee33878029b1d18e}} 
+\index{Mat4@{Mat4}!transpose@{transpose}}
+\index{transpose@{transpose}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mat4\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Transposes this matrix. \mbox{\Hypertarget{classMat4_af8b85ea76f3b7225ee33878029b1d18e}\label{classMat4_af8b85ea76f3b7225ee33878029b1d18e}} 
+\index{Mat4@{Mat4}!transpose@{transpose}}
+\index{transpose@{transpose}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mat4\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Transposes this matrix. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMat4_ac4322622c4d5884e00c56d902b2e755b}\label{classMat4_ac4322622c4d5884e00c56d902b2e755b}} 
+\index{Mat4@{Mat4}!I\+D\+E\+N\+T\+I\+TY@{I\+D\+E\+N\+T\+I\+TY}}
+\index{I\+D\+E\+N\+T\+I\+TY@{I\+D\+E\+N\+T\+I\+TY}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{I\+D\+E\+N\+T\+I\+TY}{IDENTITY}}
+{\footnotesize\ttfamily static const \hyperlink{classMat4}{Mat4} Mat4\+::\+I\+D\+E\+N\+T\+I\+TY\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \hyperlink{classMat4_ab26a891e96114b174d518adaf9059db5}{Mat4}(
+                    1.0f, 0.0f, 0.0f, 0.0f,
+                    0.0f, 1.0f, 0.0f, 0.0f,
+                    0.0f, 0.0f, 1.0f, 0.0f,
+                    0.0f, 0.0f, 0.0f, 1.0f)
+\end{DoxyCode}
+equals to the identity matrix \mbox{\Hypertarget{classMat4_aabd2ecf01c45dbe87060754036a3c763}\label{classMat4_aabd2ecf01c45dbe87060754036a3c763}} 
+\index{Mat4@{Mat4}!m@{m}}
+\index{m@{m}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily float Mat4\+::m}
+
+Stores the columns of this 4x4 matrix. \mbox{\Hypertarget{classMat4_ad362a417d8a274550042473c43bdfb92}\label{classMat4_ad362a417d8a274550042473c43bdfb92}} 
+\index{Mat4@{Mat4}!Z\+E\+RO@{Z\+E\+RO}}
+\index{Z\+E\+RO@{Z\+E\+RO}!Mat4@{Mat4}}
+\subsubsection{\texorpdfstring{Z\+E\+RO}{ZERO}}
+{\footnotesize\ttfamily static const \hyperlink{classMat4}{Mat4} Mat4\+::\+Z\+E\+RO\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \hyperlink{classMat4_ab26a891e96114b174d518adaf9059db5}{Mat4}(
+                    0, 0, 0, 0,
+                    0, 0, 0, 0,
+                    0, 0, 0, 0,
+                    0, 0, 0, 0 )
+\end{DoxyCode}
+equals to a matrix full of zeros 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Mat4.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Mat4.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Mat4.\+inl\end{DoxyCompactItemize}

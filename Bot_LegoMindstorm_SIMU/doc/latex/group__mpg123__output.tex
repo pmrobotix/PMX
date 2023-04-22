@@ -1,0 +1,582 @@
+\hypertarget{group__mpg123__output}{}\section{mpg123 output audio format}
+\label{group__mpg123__output}\index{mpg123 output audio format@{mpg123 output audio format}}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}{mpg123\+\_\+enc\+\_\+enum} \{ \newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8} = 0x00f, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16} = 0x040, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24} = 0x4000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32} = 0x100, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED} = 0x080, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT} = 0xe00, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x10), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$0x20), 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8} = 0x01, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x02), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8} = 0x04, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8} = 0x08, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$0x2000, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32} = 0x200, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64} = 0x400, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8} = 0x00f, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16} = 0x040, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24} = 0x4000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32} = 0x100, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED} = 0x080, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT} = 0xe00, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x10), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$0x20), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8} = 0x01, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x02), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8} = 0x04, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8} = 0x08, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32} = 0x200, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64} = 0x400, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}
+ \}
+\item 
+enum \hyperlink{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}{mpg123\+\_\+channelcount} \{ {\bfseries M\+P\+G123\+\_\+\+M\+O\+NO} = 1, 
+{\bfseries M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO} = 2, 
+{\bfseries M\+P\+G123\+\_\+\+M\+O\+NO} = 1, 
+{\bfseries M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO} = 2
+ \}
+\item 
+enum \hyperlink{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}{mpg123\+\_\+enc\+\_\+enum} \{ \newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8} = 0x00f, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16} = 0x040, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24} = 0x4000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32} = 0x100, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED} = 0x080, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT} = 0xe00, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x10), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$0x20), 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8} = 0x01, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x02), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8} = 0x04, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8} = 0x08, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$0x2000, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32} = 0x200, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64} = 0x400, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8} = 0x00f, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16} = 0x040, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24} = 0x4000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32} = 0x100, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED} = 0x080, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT} = 0xe00, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x10), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16$\vert$0x20), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8} = 0x01, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8} = (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x02), 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8} = 0x04, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8} = 0x08, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$\+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D$\vert$0x1000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24} = M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24$\vert$0x2000, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32} = 0x200, 
+\newline
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64} = 0x400, 
+\hyperlink{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}
+ \}
+\item 
+enum \hyperlink{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}{mpg123\+\_\+channelcount} \{ {\bfseries M\+P\+G123\+\_\+\+M\+O\+NO} = 1, 
+{\bfseries M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO} = 2, 
+{\bfseries M\+P\+G123\+\_\+\+M\+O\+NO} = 1, 
+{\bfseries M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT void \hyperlink{group__mpg123__output_ga22414ab3551bba2b21a345ba70bdeb6a}{mpg123\+\_\+rates} (const long $\ast$$\ast$\hyperlink{protocollist-p}{list}, size\+\_\+t $\ast$number)
+\item 
+E\+X\+P\+O\+RT void \hyperlink{group__mpg123__output_ga187c790c6c67e51bc481231fbdefdf36}{mpg123\+\_\+encodings} (const int $\ast$$\ast$\hyperlink{protocollist-p}{list}, size\+\_\+t $\ast$number)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_gaa34fdc84d464e66f02cc226bef25767b}{mpg123\+\_\+encsize} (int encoding)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_gae05ab0b542b5172291ee5fdc4a385cb9}{mpg123\+\_\+format\+\_\+none} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_gadfcf3c8a9cb6d8432e05d1c38f2700c6}{mpg123\+\_\+format\+\_\+all} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_ga9e614a7d7c1de12e981d8f7add9a2d4b}{mpg123\+\_\+format} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, long rate, int channels, int encodings)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_gac7b885ec21c177f9efb1a586ce9fdd20}{mpg123\+\_\+format\+\_\+support} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, long rate, int encoding)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh, long $\ast$rate, int $\ast$channels, int $\ast$encoding)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to get and select the format of the decoded audio.
+
+Before you dive in, please be warned that you might get confused by this. This seems to happen a lot, therefore I am trying to explain in advance.
+
+The mpg123 library decides what output format to use when encountering the first frame in a stream, or actually any frame that is still valid but differs from the frames before in the prompted output format. At such a deciding point, an internal table of allowed encodings, sampling rates and channel setups is consulted. According to this table, an output format is chosen and the decoding engine set up accordingly (including ptimized routines for different output formats). This might seem unusual but it just follows from the non-\/existence of \char`\"{}\+M\+P\+E\+G audio files\char`\"{} with defined overall properties. There are streams, streams are concatenations of (semi) independent frames. We store streams on disk and call them \char`\"{}\+M\+P\+E\+G audio files\char`\"{}, but that does not change their nature as the decoder is concerned (the L\+A\+M\+E/\+Xing header for gapless decoding makes things interesting again).
+
+To get to the point\+: What you do with \hyperlink{group__mpg123__output_ga9e614a7d7c1de12e981d8f7add9a2d4b}{mpg123\+\_\+format()} and friends is to fill the internal table of allowed formats before it is used. That includes removing support for some formats or adding your forced sample rate (see M\+P\+G123\+\_\+\+F\+O\+R\+C\+E\+\_\+\+R\+A\+TE) that will be used with the crude internal resampler. Also keep in mind that the sample encoding is just a question of choice -- the M\+P\+EG frames do only indicate their native sampling rate and channel count. If you want to decode to integer or float samples, 8 or 16 bit ... that is your decision. In a \char`\"{}clean\char`\"{} world, libmpg123 would always decode to 32 bit float and let you handle any sample conversion. But there are optimized routines that work faster by directly decoding to the desired encoding / accuracy. We prefer efficiency over conceptual tidyness.
+
+People often start out thinking that \hyperlink{group__mpg123__output_ga9e614a7d7c1de12e981d8f7add9a2d4b}{mpg123\+\_\+format()} should change the actual decoding format on the fly. That is wrong. It only has effect on the next natural change of output format, when libmpg123 will consult its format table again. To make life easier, you might want to call \hyperlink{group__mpg123__output_gae05ab0b542b5172291ee5fdc4a385cb9}{mpg123\+\_\+format\+\_\+none()} before any thing else and then just allow one desired encoding and a limited set of sample rates / channel choices that you actually intend to deal with. You can force libmpg123 to decode everything to 44100 K\+Hz, stereo, 16 bit integer ... it will duplicate mono channels and even do resampling if needed (unless that feature is disabled in the build, same with some encodings). But I have to stress that the resampling of libmpg123 is very crude and doesn\textquotesingle{}t even contain any kind of \char`\"{}proper\char`\"{} interpolation.
+
+In any case, watch out for M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT as return message from decoding routines and call \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()} to get the currently active output format. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}\label{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+channelcount@{mpg123\+\_\+channelcount}}
+\index{mpg123\+\_\+channelcount@{mpg123\+\_\+channelcount}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+channelcount}{mpg123\_channelcount}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}{mpg123\+\_\+channelcount}}
+
+They can be combined into one number (3) to indicate mono and stereo... \mbox{\Hypertarget{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}\label{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+channelcount@{mpg123\+\_\+channelcount}}
+\index{mpg123\+\_\+channelcount@{mpg123\+\_\+channelcount}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+channelcount}{mpg123\_channelcount}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__output_ga94df916cae2fc81b8a6df88c1728eb1c}{mpg123\+\_\+channelcount}}
+
+They can be combined into one number (3) to indicate mono and stereo... \mbox{\Hypertarget{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}\label{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+enc\+\_\+enum@{mpg123\+\_\+enc\+\_\+enum}}
+\index{mpg123\+\_\+enc\+\_\+enum@{mpg123\+\_\+enc\+\_\+enum}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+enc\+\_\+enum}{mpg123\_enc\_enum}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}{mpg123\+\_\+enc\+\_\+enum}}
+
+An enum over all sample types possibly known to mpg123. The values are designed as bit flags to allow bitmasking for encoding families.
+
+Note that (your build of) libmpg123 does not necessarily support all these. Usually, you can expect the 8bit encodings and signed 16 bit. Also 32bit float will be usual beginning with mpg123-\/1.\+7.\+0 . What you should bear in mind is that (S\+SE, etc) optimized routines may be absent for some formats. We do have S\+SE for 16, 32 bit and float, though. 24 bit integer is done via postprocessing of 32 bit output -- just cutting the last byte, no rounding, even. If you want better, do it yourself.
+
+All formats are in native byte order. If you need different endinaness, you can simply postprocess the output buffers (libmpg123 wouldn\textquotesingle{}t do anything else). \hyperlink{group__mpg123__output_gaa34fdc84d464e66f02cc226bef25767b}{mpg123\+\_\+encsize()} can be helpful there. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8&0000 0000 1111 Some 8 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16&0000 0100 0000 Some 16 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24&0100 0000 0000 0000 Some 24 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32&0001 0000 0000 Some 32 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED&0000 1000 0000 Some signed integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT&1110 0000 0000 Some float encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16&1101 0000 signed 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16&0110 0000 unsigned 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8&0000 0001 unsigned 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8&1000 0010 signed 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8&0000 0100 ulaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8&0000 1000 alaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32&0001 0001 1000 0000 signed 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32&0010 0001 0000 0000 unsigned 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24&0101 0000 1000 0000 signed 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24&0110 0000 0000 0000 unsigned 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32&0010 0000 0000 32bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64&0100 0000 0000 64bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY&Any encoding on the \hyperlink{protocollist-p}{list}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8&0000 0000 1111 Some 8 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16&0000 0100 0000 Some 16 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24&0100 0000 0000 0000 Some 24 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32&0001 0000 0000 Some 32 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED&0000 1000 0000 Some signed integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT&1110 0000 0000 Some float encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16&1101 0000 signed 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16&0110 0000 unsigned 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8&0000 0001 unsigned 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8&1000 0010 signed 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8&0000 0100 ulaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8&0000 1000 alaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32&0001 0001 1000 0000 signed 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32&0010 0001 0000 0000 unsigned 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24&0101 0000 1000 0000 signed 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24&0110 0000 0000 0000 unsigned 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32&0010 0000 0000 32bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64&0100 0000 0000 64bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY&Any encoding on the \hyperlink{protocollist-p}{list}. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}\label{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+enc\+\_\+enum@{mpg123\+\_\+enc\+\_\+enum}}
+\index{mpg123\+\_\+enc\+\_\+enum@{mpg123\+\_\+enc\+\_\+enum}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+enc\+\_\+enum}{mpg123\_enc\_enum}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__output_gafc8cdd60a8d3c30a09249869d835c634}{mpg123\+\_\+enc\+\_\+enum}}
+
+An enum over all sample types possibly known to mpg123. The values are designed as bit flags to allow bitmasking for encoding families.
+
+Note that (your build of) libmpg123 does not necessarily support all these. Usually, you can expect the 8bit encodings and signed 16 bit. Also 32bit float will be usual beginning with mpg123-\/1.\+7.\+0 . What you should bear in mind is that (S\+SE, etc) optimized routines may be absent for some formats. We do have S\+SE for 16, 32 bit and float, though. 24 bit integer is done via postprocessing of 32 bit output -- just cutting the last byte, no rounding, even. If you want better, do it yourself.
+
+All formats are in native byte order. If you need different endinaness, you can simply postprocess the output buffers (libmpg123 wouldn\textquotesingle{}t do anything else). \hyperlink{group__mpg123__output_gaa34fdc84d464e66f02cc226bef25767b}{mpg123\+\_\+encsize()} can be helpful there. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8&0000 0000 1111 Some 8 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16&0000 0100 0000 Some 16 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24&0100 0000 0000 0000 Some 24 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32&0001 0000 0000 Some 32 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED&0000 1000 0000 Some signed integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT&1110 0000 0000 Some float encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16&1101 0000 signed 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16&0110 0000 unsigned 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8&0000 0001 unsigned 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8&1000 0010 signed 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8&0000 0100 ulaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8&0000 1000 alaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32&0001 0001 1000 0000 signed 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32&0010 0001 0000 0000 unsigned 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24&0101 0000 1000 0000 signed 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24&0110 0000 0000 0000 unsigned 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32&0010 0000 0000 32bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64&0100 0000 0000 64bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY&Any encoding on the \hyperlink{protocollist-p}{list}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2fa0533806b214e601e3d82beecfeabd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+8&0000 0000 1111 Some 8 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aaf35ec1ada285a3441847a4a9f3bf9bb}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+16&0000 0100 0000 Some 16 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aa2076a6a51064681b0c9676e74b387cd}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+24&0100 0000 0000 0000 Some 24 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a2dcc316cb25c3f9b4f5e43c29a2586ee}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+32&0001 0000 0000 Some 32 bit integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a52ca156ac348f6f0b992dbdc4b7216d1}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+ED&0000 1000 0000 Some signed integer encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ac15cd5182ba686b94c63978bc140f44d}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+AT&1110 0000 0000 Some float encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a0bbd04130b54eb8e4b336e8551459279}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16&1101 0000 signed 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab885d871406ca8a9f7aa386874d8f329}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+16&0110 0000 unsigned 16 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aedd7b2c52270c701e90d655688316a31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+8&0000 0001 unsigned 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a788d30500069c25cddeb5a87efa1dd31}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+8&1000 0010 signed 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a197b589619eac44ac438a05e5721ce2e}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8&0000 0100 ulaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634aacf84165b3e85312ccf701389fda0a83}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+L\+A\+W\+\_\+8&0000 1000 alaw 8 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634ab084e4c2405cdf715276ae057cf9fafe}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+32&0001 0001 1000 0000 signed 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a02b0b9f899858a0e2547b84a001fcee9}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+32&0010 0001 0000 0000 unsigned 32 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a48a46f55ca764958182a4a5d2f1df6be}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+24&0101 0000 1000 0000 signed 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a1e1395393b5135a0d1f1d0067ab31138}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+24&0110 0000 0000 0000 unsigned 24 bit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634afee3f81a5b7f53cd8a1613e05b942fd7}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+32&0010 0000 0000 32bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a883909122437922b880cedac94035829}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+F\+L\+O\+A\+T\+\_\+64&0100 0000 0000 64bit float \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}!mpg123 output audio format@{mpg123 output audio format}}\index{mpg123 output audio format@{mpg123 output audio format}!M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY@{M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY}}}\mbox{\Hypertarget{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}\label{group__mpg123__output_ggafc8cdd60a8d3c30a09249869d835c634a25e4ffefb31c8b40fe30e57790427987}} 
+M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+A\+NY&Any encoding on the \hyperlink{protocollist-p}{list}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__output_ga187c790c6c67e51bc481231fbdefdf36}\label{group__mpg123__output_ga187c790c6c67e51bc481231fbdefdf36}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+encodings@{mpg123\+\_\+encodings}}
+\index{mpg123\+\_\+encodings@{mpg123\+\_\+encodings}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+encodings()}{mpg123\_encodings()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT void mpg123\+\_\+encodings (\begin{DoxyParamCaption}\item[{const int $\ast$$\ast$}]{list,  }\item[{size\+\_\+t $\ast$}]{number }\end{DoxyParamCaption})}
+
+An array of supported audio encodings. An audio encoding is one of the fully qualified members of mpg123\+\_\+enc\+\_\+enum (M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+16, not M\+P\+G123\+\_\+\+S\+I\+G\+N\+ED). 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{protocollist-p}{list}} & Store a pointer to the encodings array there. \\
+\hline
+{\em number} & Store the number of encodings there. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__mpg123__output_gaa34fdc84d464e66f02cc226bef25767b}\label{group__mpg123__output_gaa34fdc84d464e66f02cc226bef25767b}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+encsize@{mpg123\+\_\+encsize}}
+\index{mpg123\+\_\+encsize@{mpg123\+\_\+encsize}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+encsize()}{mpg123\_encsize()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+encsize (\begin{DoxyParamCaption}\item[{int}]{encoding }\end{DoxyParamCaption})}
+
+Return the size (in bytes) of one mono sample of the named encoding. 
+\begin{DoxyParams}{Parameters}
+{\em encoding} & The encoding value to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+positive size of encoding in bytes, 0 on invalid encoding. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__output_ga9e614a7d7c1de12e981d8f7add9a2d4b}\label{group__mpg123__output_ga9e614a7d7c1de12e981d8f7add9a2d4b}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+format@{mpg123\+\_\+format}}
+\index{mpg123\+\_\+format@{mpg123\+\_\+format}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+format()}{mpg123\_format()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+format (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{long}]{rate,  }\item[{int}]{channels,  }\item[{int}]{encodings }\end{DoxyParamCaption})}
+
+Set the audio format support of a mpg123\+\_\+handle in detail\+: 
+\begin{DoxyParams}{Parameters}
+{\em mh} & audio decoder handle \\
+\hline
+{\em rate} & The sample rate value (in Hertz). \\
+\hline
+{\em channels} & A combination of M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO and M\+P\+G123\+\_\+\+M\+O\+NO. \\
+\hline
+{\em encodings} & A combination of accepted encodings for rate and channels, p.\+ex M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+S\+I\+G\+N\+E\+D16 $\vert$ M\+P\+G123\+\_\+\+E\+N\+C\+\_\+\+U\+L\+A\+W\+\_\+8 (or 0 for no support). Please note that some encodings may not be supported in the library build and thus will be ignored here. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+P\+G123\+\_\+\+OK on success, M\+P\+G123\+\_\+\+E\+RR if there was an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__output_gadfcf3c8a9cb6d8432e05d1c38f2700c6}\label{group__mpg123__output_gadfcf3c8a9cb6d8432e05d1c38f2700c6}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+format\+\_\+all@{mpg123\+\_\+format\+\_\+all}}
+\index{mpg123\+\_\+format\+\_\+all@{mpg123\+\_\+format\+\_\+all}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+format\+\_\+all()}{mpg123\_format\_all()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+format\+\_\+all (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Configure mpg123 handle to accept all formats (also any custom rate you may set) -- this is default. \mbox{\Hypertarget{group__mpg123__output_gae05ab0b542b5172291ee5fdc4a385cb9}\label{group__mpg123__output_gae05ab0b542b5172291ee5fdc4a385cb9}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+format\+\_\+none@{mpg123\+\_\+format\+\_\+none}}
+\index{mpg123\+\_\+format\+\_\+none@{mpg123\+\_\+format\+\_\+none}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+format\+\_\+none()}{mpg123\_format\_none()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+format\+\_\+none (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Configure a mpg123 handle to accept no output format at all, use before specifying supported formats with mpg123\+\_\+format \mbox{\Hypertarget{group__mpg123__output_gac7b885ec21c177f9efb1a586ce9fdd20}\label{group__mpg123__output_gac7b885ec21c177f9efb1a586ce9fdd20}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+format\+\_\+support@{mpg123\+\_\+format\+\_\+support}}
+\index{mpg123\+\_\+format\+\_\+support@{mpg123\+\_\+format\+\_\+support}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+format\+\_\+support()}{mpg123\_format\_support()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+format\+\_\+support (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{long}]{rate,  }\item[{int}]{encoding }\end{DoxyParamCaption})}
+
+Check to see if a specific format at a specific rate is supported by mpg123\+\_\+handle. \begin{DoxyReturn}{Returns}
+0 for no support (that includes invalid parameters), M\+P\+G123\+\_\+\+S\+T\+E\+R\+EO, M\+P\+G123\+\_\+\+M\+O\+NO or M\+P\+G123\+\_\+\+S\+T\+E\+R\+E\+O$\vert$\+M\+P\+G123\+\_\+\+M\+O\+NO. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}\label{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+getformat@{mpg123\+\_\+getformat}}
+\index{mpg123\+\_\+getformat@{mpg123\+\_\+getformat}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+getformat()}{mpg123\_getformat()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+getformat (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh,  }\item[{long $\ast$}]{rate,  }\item[{int $\ast$}]{channels,  }\item[{int $\ast$}]{encoding }\end{DoxyParamCaption})}
+
+Get the current output format written to the addresses givenr. \mbox{\Hypertarget{group__mpg123__output_ga22414ab3551bba2b21a345ba70bdeb6a}\label{group__mpg123__output_ga22414ab3551bba2b21a345ba70bdeb6a}} 
+\index{mpg123 output audio format@{mpg123 output audio format}!mpg123\+\_\+rates@{mpg123\+\_\+rates}}
+\index{mpg123\+\_\+rates@{mpg123\+\_\+rates}!mpg123 output audio format@{mpg123 output audio format}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+rates()}{mpg123\_rates()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT void mpg123\+\_\+rates (\begin{DoxyParamCaption}\item[{const long $\ast$$\ast$}]{list,  }\item[{size\+\_\+t $\ast$}]{number }\end{DoxyParamCaption})}
+
+An array of supported standard sample rates These are possible native sample rates of M\+P\+EG audio files. You can still force mpg123 to resample to a different one, but by default you will only get audio in one of these samplings. 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{protocollist-p}{list}} & Store a pointer to the sample rates array there. \\
+\hline
+{\em number} & Store the number of sample rates there. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,1396 @@
+\hypertarget{classRenderTexture}{}\section{Render\+Texture Class Reference}
+\label{classRenderTexture}\index{Render\+Texture@{Render\+Texture}}
+
+
+\hyperlink{classRenderTexture}{Render\+Texture} is a generic rendering target. To render things into it, simply construct a render target, call begin on it, call visit on any cocos scenes or objects to render them, and call end. For convenience, render texture adds a sprite as it\textquotesingle{}s display child with the results, so you can simply add the render texture to your scene and treat it like any other Cocos\+Node. There are also functions for saving the render texture to disk in P\+NG or J\+PG format.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Render\+Texture.\+h$>$}
+
+
+
+Inheritance diagram for Render\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classRenderTexture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRenderTexture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRenderTexture_ad56dff1562ea63017c74f358261fc3ef}{begin} ()
+\item 
+virtual void \hyperlink{classRenderTexture_a43ec79669c64cfdabfca4106f4323ba8}{begin\+With\+Clear} (float r, float g, float b, float a)
+\item 
+virtual void \hyperlink{classRenderTexture_a8bf416c7f6727b7ec435b33274a9f4f6}{begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_a37ee1b6d28e22dc8cf263aa18557b104}{begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value, int stencil\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_ad22cf9b2c11fd1a0293efef2b11524e2}{end} ()
+\item 
+void \hyperlink{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}{clear} (float r, float g, float b, float a)
+\item 
+virtual void \hyperlink{classRenderTexture_a86d653a1a716ebe46631010e6b220568}{clear\+Depth} (float depth\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_a8c6beead393100c29a32f745f9bafd76}{clear\+Stencil} (int stencil\+Value)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a046811e9e3e960dc01e2f4ac4dd974f9}\label{classRenderTexture_a046811e9e3e960dc01e2f4ac4dd974f9}} 
+Image $\ast$ {\bfseries new\+Image} (bool flip\+Image=true)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a64a8ddc3d0c22487b290082e846243ac}\label{classRenderTexture_a64a8ddc3d0c22487b290082e846243ac}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE Image $\ast$ {\bfseries new\+C\+C\+Image} (bool flip\+Image=true)
+\item 
+bool \hyperlink{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}{save\+To\+File} (const std\+::string \&filename, bool is\+R\+G\+BA=true, std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$ callback=nullptr)
+\item 
+bool \hyperlink{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}{save\+To\+File} (const std\+::string \&filename, Image\+::\+Format format, bool is\+R\+G\+BA=true, std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$ callback=nullptr)
+\item 
+void \hyperlink{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}{listen\+To\+Background} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+void \hyperlink{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}{listen\+To\+Foreground} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+unsigned int \hyperlink{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}{get\+Clear\+Flags} () const
+\item 
+void \hyperlink{classRenderTexture_aa7614dfcc66334421283da912887eb42}{set\+Clear\+Flags} (unsigned int clear\+Flags)
+\item 
+const \hyperlink{structColor4F}{Color4F} \& \hyperlink{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}{get\+Clear\+Color} () const
+\item 
+void \hyperlink{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}{set\+Clear\+Color} (const \hyperlink{structColor4F}{Color4F} \&clear\+Color)
+\item 
+float \hyperlink{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}{get\+Clear\+Depth} () const
+\item 
+void \hyperlink{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}{set\+Clear\+Depth} (float \hyperlink{classRenderTexture_a86d653a1a716ebe46631010e6b220568}{clear\+Depth})
+\item 
+int \hyperlink{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}{get\+Clear\+Stencil} () const
+\item 
+void \hyperlink{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}{set\+Clear\+Stencil} (int \hyperlink{classRenderTexture_a8c6beead393100c29a32f745f9bafd76}{clear\+Stencil})
+\item 
+bool \hyperlink{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}{is\+Auto\+Draw} () const
+\item 
+void \hyperlink{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}{set\+Auto\+Draw} (bool \hyperlink{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}{is\+Auto\+Draw})
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}{get\+Sprite} () const
+\item 
+void \hyperlink{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}{set\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+virtual void \hyperlink{classRenderTexture_a57e0f63ce401e1b5915882f7be1884db}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classRenderTexture_a354c10ae4393f186324000e0fda6a9eb}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+void \hyperlink{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}{set\+Keep\+Matrix} (bool keep\+Matrix)
+\item 
+void \hyperlink{classRenderTexture_a0b508deeb3efa8522314973a54e97815}{set\+Virtual\+Viewport} (const \hyperlink{classVec2}{Vec2} \&rt\+Begin, const \hyperlink{classRect}{Rect} \&full\+Rect, const \hyperlink{classRect}{Rect} \&full\+Viewport)
+\item 
+\hyperlink{classRenderTexture_a470aba8ca16bbe016a1db3cdce7ddf01}{Render\+Texture} ()
+\item 
+virtual \hyperlink{classRenderTexture_a09968448696504585c6dd61203f2c5b9}{$\sim$\+Render\+Texture} ()
+\item 
+bool \hyperlink{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}{init\+With\+Width\+And\+Height} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+bool \hyperlink{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}{init\+With\+Width\+And\+Height} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format, G\+Luint depth\+Stencil\+Format)
+\item 
+virtual void \hyperlink{classRenderTexture_a24a91b875c53b5344c64d8d8c5145b8f}{begin} ()
+\item 
+virtual void \hyperlink{classRenderTexture_a25689a1dd20ba0fb03728ad923d058cf}{begin\+With\+Clear} (float r, float g, float b, float a)
+\item 
+virtual void \hyperlink{classRenderTexture_a826696c82c6d91dc26f1e8bef43cdcec}{begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_a2dd812e25a43e6aa06979f90792da455}{begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value, int stencil\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_aefbf3e20040da244af3e87abd978b8d9}{end} ()
+\item 
+void \hyperlink{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}{clear} (float r, float g, float b, float a)
+\item 
+virtual void \hyperlink{classRenderTexture_a962a6c857ca07ac223bb1ec175633377}{clear\+Depth} (float depth\+Value)
+\item 
+virtual void \hyperlink{classRenderTexture_a8b0c62632ff8f1ae8ab082f1061379d2}{clear\+Stencil} (int stencil\+Value)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a16b19a8a8ec31e85ec06da8238d6683a}\label{classRenderTexture_a16b19a8a8ec31e85ec06da8238d6683a}} 
+Image $\ast$ {\bfseries new\+Image} (bool flip\+Image=true)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a64a8ddc3d0c22487b290082e846243ac}\label{classRenderTexture_a64a8ddc3d0c22487b290082e846243ac}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE Image $\ast$ {\bfseries new\+C\+C\+Image} (bool flip\+Image=true)
+\item 
+bool \hyperlink{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}{save\+To\+File} (const std\+::string \&filename, bool is\+R\+G\+BA=true, std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$ callback=nullptr)
+\item 
+bool \hyperlink{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}{save\+To\+File} (const std\+::string \&filename, Image\+::\+Format format, bool is\+R\+G\+BA=true, std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$ callback=nullptr)
+\item 
+void \hyperlink{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}{listen\+To\+Background} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+void \hyperlink{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}{listen\+To\+Foreground} (\hyperlink{classEventCustom}{Event\+Custom} $\ast$event)
+\item 
+unsigned int \hyperlink{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}{get\+Clear\+Flags} () const
+\item 
+void \hyperlink{classRenderTexture_aa7614dfcc66334421283da912887eb42}{set\+Clear\+Flags} (unsigned int clear\+Flags)
+\item 
+const \hyperlink{structColor4F}{Color4F} \& \hyperlink{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}{get\+Clear\+Color} () const
+\item 
+void \hyperlink{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}{set\+Clear\+Color} (const \hyperlink{structColor4F}{Color4F} \&clear\+Color)
+\item 
+float \hyperlink{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}{get\+Clear\+Depth} () const
+\item 
+void \hyperlink{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}{set\+Clear\+Depth} (float \hyperlink{classRenderTexture_a86d653a1a716ebe46631010e6b220568}{clear\+Depth})
+\item 
+int \hyperlink{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}{get\+Clear\+Stencil} () const
+\item 
+void \hyperlink{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}{set\+Clear\+Stencil} (int \hyperlink{classRenderTexture_a8c6beead393100c29a32f745f9bafd76}{clear\+Stencil})
+\item 
+bool \hyperlink{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}{is\+Auto\+Draw} () const
+\item 
+void \hyperlink{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}{set\+Auto\+Draw} (bool \hyperlink{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}{is\+Auto\+Draw})
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}{get\+Sprite} () const
+\item 
+void \hyperlink{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}{set\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+virtual void \hyperlink{classRenderTexture_a92007b10e5dab891532bd0daa1a24be8}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classRenderTexture_a845d9983454acb72fb8666f92146b082}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+void \hyperlink{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}{set\+Keep\+Matrix} (bool keep\+Matrix)
+\item 
+void \hyperlink{classRenderTexture_a0b508deeb3efa8522314973a54e97815}{set\+Virtual\+Viewport} (const \hyperlink{classVec2}{Vec2} \&rt\+Begin, const \hyperlink{classRect}{Rect} \&full\+Rect, const \hyperlink{classRect}{Rect} \&full\+Viewport)
+\item 
+\hyperlink{classRenderTexture_a1882e3cf661e622e5e494c1d7ec9e798}{Render\+Texture} ()
+\item 
+virtual \hyperlink{classRenderTexture_a428b5e7e40f5bd8b121d71eef60a881a}{$\sim$\+Render\+Texture} ()
+\item 
+bool \hyperlink{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}{init\+With\+Width\+And\+Height} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+bool \hyperlink{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}{init\+With\+Width\+And\+Height} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format, G\+Luint depth\+Stencil\+Format)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_a12dbd5bb59e5f86eb57890b528c899a5}{create} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format, G\+Luint depth\+Stencil\+Format)
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_abbcc62a18ebbe598b315c58607d6bb84}{create} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_a0b242c07861d823072bc3a8efd8725ae}{create} (int w, int h)
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_ac3abc0d238bb993f6aad9c524b6a1b9a}{create} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format, G\+Luint depth\+Stencil\+Format)
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_add6dc1bbac92245b84d2a5a3e7fc7fc7}{create} (int w, int h, \hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} format)
+\item 
+static \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ \hyperlink{classRenderTexture_a2962685f93c5e33b2e92b4745cfbf99d}{create} (int w, int h)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a3914c94c1c3bbf56adf5edf18739dd22}\label{classRenderTexture_a3914c94c1c3bbf56adf5edf18739dd22}} 
+virtual void {\bfseries begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value, int stencil\+Value, G\+Lbitfield flags)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a705564fcdb4eab26f8e0ecf0a451b264}\label{classRenderTexture_a705564fcdb4eab26f8e0ecf0a451b264}} 
+void {\bfseries on\+Begin} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_a40613e7736ef172d16f665b67f1d0678}\label{classRenderTexture_a40613e7736ef172d16f665b67f1d0678}} 
+void {\bfseries on\+End} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_aa79c1fb27ab8adcc88fdf00bf8cd3973}\label{classRenderTexture_aa79c1fb27ab8adcc88fdf00bf8cd3973}} 
+void {\bfseries on\+Clear} ()
+\item 
+void \hyperlink{classRenderTexture_ac94c214b8570de378cfcc9951e853e98}{on\+Clear\+Depth} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_aec7f32d06cde6a17b7325d21f27e069e}\label{classRenderTexture_aec7f32d06cde6a17b7325d21f27e069e}} 
+void {\bfseries on\+Save\+To\+File} (const std\+::string \&file\+Name, bool is\+R\+G\+BA=true)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a3767424e22b593f97c3f80a72c875940}\label{classRenderTexture_a3767424e22b593f97c3f80a72c875940}} 
+virtual void {\bfseries begin\+With\+Clear} (float r, float g, float b, float a, float depth\+Value, int stencil\+Value, G\+Lbitfield flags)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a705564fcdb4eab26f8e0ecf0a451b264}\label{classRenderTexture_a705564fcdb4eab26f8e0ecf0a451b264}} 
+void {\bfseries on\+Begin} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_a40613e7736ef172d16f665b67f1d0678}\label{classRenderTexture_a40613e7736ef172d16f665b67f1d0678}} 
+void {\bfseries on\+End} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_aa79c1fb27ab8adcc88fdf00bf8cd3973}\label{classRenderTexture_aa79c1fb27ab8adcc88fdf00bf8cd3973}} 
+void {\bfseries on\+Clear} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_ac94c214b8570de378cfcc9951e853e98}\label{classRenderTexture_ac94c214b8570de378cfcc9951e853e98}} 
+void {\bfseries on\+Clear\+Depth} ()
+\item 
+\mbox{\Hypertarget{classRenderTexture_aec7f32d06cde6a17b7325d21f27e069e}\label{classRenderTexture_aec7f32d06cde6a17b7325d21f27e069e}} 
+void {\bfseries on\+Save\+To\+File} (const std\+::string \&file\+Name, bool is\+R\+G\+BA=true)
+\item 
+\mbox{\Hypertarget{classRenderTexture_a7d46c01583326eb477fb8e01f18b00f0}\label{classRenderTexture_a7d46c01583326eb477fb8e01f18b00f0}} 
+void {\bfseries setup\+Depth\+And\+Stencil} (int powW, int powH)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderTexture_ae162233dbae502d9924de2b2003b91d3}\label{classRenderTexture_ae162233dbae502d9924de2b2003b91d3}} 
+bool {\bfseries \+\_\+keep\+Matrix}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a713d9acca02f569e7285ebe218345234}\label{classRenderTexture_a713d9acca02f569e7285ebe218345234}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+rt\+Texture\+Rect}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a9f0234c5e607c6053e4604a9404800e3}\label{classRenderTexture_a9f0234c5e607c6053e4604a9404800e3}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+full\+Rect}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a4a8b157a42d9ef09d0bbd239872f8db6}\label{classRenderTexture_a4a8b157a42d9ef09d0bbd239872f8db6}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+fullview\+Port}
+\item 
+\mbox{\Hypertarget{classRenderTexture_abb065f7e04ff0311a0a7ea51f679c21e}\label{classRenderTexture_abb065f7e04ff0311a0a7ea51f679c21e}} 
+G\+Luint {\bfseries \+\_\+\+F\+BO}
+\item 
+\mbox{\Hypertarget{classRenderTexture_af5b9e020b4a74f37f2029f56f07a26a8}\label{classRenderTexture_af5b9e020b4a74f37f2029f56f07a26a8}} 
+G\+Luint {\bfseries \+\_\+depth\+Render\+Bufffer}
+\item 
+\mbox{\Hypertarget{classRenderTexture_aab05fd38eecb34590a94b526b8101b80}\label{classRenderTexture_aab05fd38eecb34590a94b526b8101b80}} 
+G\+Luint {\bfseries \+\_\+stencil\+Render\+Bufffer}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a2bd0816dd4937a6426f694fdc9e5e589}\label{classRenderTexture_a2bd0816dd4937a6426f694fdc9e5e589}} 
+G\+Lint {\bfseries \+\_\+old\+F\+BO}
+\item 
+\mbox{\Hypertarget{classRenderTexture_ac7437ed7ffd53c860443b271ba7e448c}\label{classRenderTexture_ac7437ed7ffd53c860443b271ba7e448c}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+texture}
+\item 
+\mbox{\Hypertarget{classRenderTexture_aeed5dc0d852cfa801d62841aca9d7278}\label{classRenderTexture_aeed5dc0d852cfa801d62841aca9d7278}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+texture\+Copy}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a5ee0bba5e959576e99bfb3b9733ab517}\label{classRenderTexture_a5ee0bba5e959576e99bfb3b9733ab517}} 
+Image $\ast$ {\bfseries \+\_\+\+U\+I\+Texture\+Image}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a129cbcc132a2e2cf6caeb37d15ed91fc}\label{classRenderTexture_a129cbcc132a2e2cf6caeb37d15ed91fc}} 
+\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format} {\bfseries \+\_\+pixel\+Format}
+\item 
+\mbox{\Hypertarget{classRenderTexture_aa3b4390ac893522cc766120fe0d58c45}\label{classRenderTexture_aa3b4390ac893522cc766120fe0d58c45}} 
+G\+Lbitfield {\bfseries \+\_\+clear\+Flags}
+\item 
+\mbox{\Hypertarget{classRenderTexture_acfee00b98ea7476a289cbdae067b5c48}\label{classRenderTexture_acfee00b98ea7476a289cbdae067b5c48}} 
+\hyperlink{structColor4F}{Color4F} {\bfseries \+\_\+clear\+Color}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a79eb519b9a38d8ed63fdfa65a5a21392}\label{classRenderTexture_a79eb519b9a38d8ed63fdfa65a5a21392}} 
+G\+Lclampf {\bfseries \+\_\+clear\+Depth}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a23477c35b168db963fb0eb5e77562db1}\label{classRenderTexture_a23477c35b168db963fb0eb5e77562db1}} 
+G\+Lint {\bfseries \+\_\+clear\+Stencil}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a1622ac5911b86396e04626e1e2d61446}\label{classRenderTexture_a1622ac5911b86396e04626e1e2d61446}} 
+bool {\bfseries \+\_\+auto\+Draw}
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classRenderTexture_a79cb2034e0a68e453c3c905800f6f440}{\+\_\+sprite}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a4c941ab9a159fab91afd61ca78f080ea}\label{classRenderTexture_a4c941ab9a159fab91afd61ca78f080ea}} 
+\hyperlink{classGroupCommand}{Group\+Command} {\bfseries \+\_\+group\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a630acb3c0a1a959e287093481e21e7b2}\label{classRenderTexture_a630acb3c0a1a959e287093481e21e7b2}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+begin\+With\+Clear\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a77f9467a8cae16617942c8b6d18b84ef}\label{classRenderTexture_a77f9467a8cae16617942c8b6d18b84ef}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+clear\+Depth\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a70ceef68b08aff90c7f2ec6189456c0c}\label{classRenderTexture_a70ceef68b08aff90c7f2ec6189456c0c}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+clear\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_ab05e51044fdc45f4c981eb591fad1737}\label{classRenderTexture_ab05e51044fdc45f4c981eb591fad1737}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+begin\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_affcbad52273936c957acc80c364b7529}\label{classRenderTexture_affcbad52273936c957acc80c364b7529}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+end\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a8caea8251c875d0ac7d229243de9dbeb}\label{classRenderTexture_a8caea8251c875d0ac7d229243de9dbeb}} 
+\hyperlink{classCustomCommand}{Custom\+Command} {\bfseries \+\_\+save\+To\+File\+Command}
+\item 
+\mbox{\Hypertarget{classRenderTexture_ad9c6f39e9911934bc3daeee3a31f7bc4}\label{classRenderTexture_ad9c6f39e9911934bc3daeee3a31f7bc4}} 
+std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$ {\bfseries \+\_\+save\+File\+Callback}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a1c604661548233695a1bbbf8d99cbe05}\label{classRenderTexture_a1c604661548233695a1bbbf8d99cbe05}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+old\+Trans\+Matrix}
+\item 
+\mbox{\Hypertarget{classRenderTexture_ab2444385a3366ddb8378b7890adff806}\label{classRenderTexture_ab2444385a3366ddb8378b7890adff806}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+old\+Proj\+Matrix}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a10db291a52076f6f5f92fdfb7b0b3e1e}\label{classRenderTexture_a10db291a52076f6f5f92fdfb7b0b3e1e}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+transform\+Matrix}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a941ea1909c5e223a76bc78efb2cb8e4c}\label{classRenderTexture_a941ea1909c5e223a76bc78efb2cb8e4c}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+projection\+Matrix}
+\item 
+\mbox{\Hypertarget{classRenderTexture_abe76ca2974eae172678820b49ba56b4d}\label{classRenderTexture_abe76ca2974eae172678820b49ba56b4d}} 
+G\+Luint {\bfseries \+\_\+depth\+Render\+Buffer}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a8fd54f284ed2b4bed7d83432339c8794}\label{classRenderTexture_a8fd54f284ed2b4bed7d83432339c8794}} 
+G\+Luint {\bfseries \+\_\+stencil\+Render\+Buffer}
+\item 
+\mbox{\Hypertarget{classRenderTexture_a5370882ecb826c8b10aefa898a3d9fdc}\label{classRenderTexture_a5370882ecb826c8b10aefa898a3d9fdc}} 
+G\+Luint {\bfseries \+\_\+depth\+And\+Stencil\+Format}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRenderTexture}{Render\+Texture} is a generic rendering target. To render things into it, simply construct a render target, call begin on it, call visit on any cocos scenes or objects to render them, and call end. For convenience, render texture adds a sprite as it\textquotesingle{}s display child with the results, so you can simply add the render texture to your scene and treat it like any other Cocos\+Node. There are also functions for saving the render texture to disk in P\+NG or J\+PG format. 
+
+\begin{DoxySince}{Since}
+v0.\+8.\+1 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRenderTexture_a470aba8ca16bbe016a1db3cdce7ddf01}\label{classRenderTexture_a470aba8ca16bbe016a1db3cdce7ddf01}} 
+\index{Render\+Texture@{Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\index{Render\+Texture@{Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{Render\+Texture()}{RenderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN Render\+Texture\+::\+Render\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+F\+I\+X\+ME\+: should be protected. but due to a bug in Power\+VR + Android, the constructor is public again.  ctor \mbox{\Hypertarget{classRenderTexture_a09968448696504585c6dd61203f2c5b9}\label{classRenderTexture_a09968448696504585c6dd61203f2c5b9}} 
+\index{Render\+Texture@{Render\+Texture}!````~Render\+Texture@{$\sim$\+Render\+Texture}}
+\index{````~Render\+Texture@{$\sim$\+Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{$\sim$\+Render\+Texture()}{~RenderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Render\+Texture\+::$\sim$\+Render\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classRenderTexture_a1882e3cf661e622e5e494c1d7ec9e798}\label{classRenderTexture_a1882e3cf661e622e5e494c1d7ec9e798}} 
+\index{Render\+Texture@{Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\index{Render\+Texture@{Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{Render\+Texture()}{RenderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Render\+Texture\+::\+Render\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+F\+I\+X\+ME\+: should be protected. but due to a bug in Power\+VR + Android, the constructor is public again.  ctor \mbox{\Hypertarget{classRenderTexture_a428b5e7e40f5bd8b121d71eef60a881a}\label{classRenderTexture_a428b5e7e40f5bd8b121d71eef60a881a}} 
+\index{Render\+Texture@{Render\+Texture}!````~Render\+Texture@{$\sim$\+Render\+Texture}}
+\index{````~Render\+Texture@{$\sim$\+Render\+Texture}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{$\sim$\+Render\+Texture()}{~RenderTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Render\+Texture\+::$\sim$\+Render\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRenderTexture_ad56dff1562ea63017c74f358261fc3ef}\label{classRenderTexture_ad56dff1562ea63017c74f358261fc3ef}} 
+\index{Render\+Texture@{Render\+Texture}!begin@{begin}}
+\index{begin@{begin}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts grabbing. \mbox{\Hypertarget{classRenderTexture_a24a91b875c53b5344c64d8d8c5145b8f}\label{classRenderTexture_a24a91b875c53b5344c64d8d8c5145b8f}} 
+\index{Render\+Texture@{Render\+Texture}!begin@{begin}}
+\index{begin@{begin}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts grabbing. \mbox{\Hypertarget{classRenderTexture_a43ec79669c64cfdabfca4106f4323ba8}\label{classRenderTexture_a43ec79669c64cfdabfca4106f4323ba8}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a25689a1dd20ba0fb03728ad923d058cf}\label{classRenderTexture_a25689a1dd20ba0fb03728ad923d058cf}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a8bf416c7f6727b7ec435b33274a9f4f6}\label{classRenderTexture_a8bf416c7f6727b7ec435b33274a9f4f6}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a,  }\item[{float}]{depth\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+{\em depth\+Value} & The depth \hyperlink{classValue}{Value}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a826696c82c6d91dc26f1e8bef43cdcec}\label{classRenderTexture_a826696c82c6d91dc26f1e8bef43cdcec}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a,  }\item[{float}]{depth\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+{\em depth\+Value} & The depth \hyperlink{classValue}{Value}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a37ee1b6d28e22dc8cf263aa18557b104}\label{classRenderTexture_a37ee1b6d28e22dc8cf263aa18557b104}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a,  }\item[{float}]{depth\+Value,  }\item[{int}]{stencil\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+{\em depth\+Value} & A specified depth value. \\
+\hline
+{\em stencil\+Value} & A specified stencil value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a2dd812e25a43e6aa06979f90792da455}\label{classRenderTexture_a2dd812e25a43e6aa06979f90792da455}} 
+\index{Render\+Texture@{Render\+Texture}!begin\+With\+Clear@{begin\+With\+Clear}}
+\index{begin\+With\+Clear@{begin\+With\+Clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{begin\+With\+Clear()}{beginWithClear()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::begin\+With\+Clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a,  }\item[{float}]{depth\+Value,  }\item[{int}]{stencil\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts rendering to the texture while clearing the texture first. This is more efficient then calling -\/clear first and then -\/begin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+{\em depth\+Value} & A specified depth value. \\
+\hline
+{\em stencil\+Value} & A specified stencil value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}\label{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}} 
+\index{Render\+Texture@{Render\+Texture}!clear@{clear}}
+\index{clear@{clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+Clears the texture with a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}\label{classRenderTexture_a37c190ea856c1b96af82caacca37e9ec}} 
+\index{Render\+Texture@{Render\+Texture}!clear@{clear}}
+\index{clear@{clear}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::clear (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+Clears the texture with a color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. \\
+\hline
+{\em g} & Green. \\
+\hline
+{\em b} & Blue. \\
+\hline
+{\em a} & Alpha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a86d653a1a716ebe46631010e6b220568}\label{classRenderTexture_a86d653a1a716ebe46631010e6b220568}} 
+\index{Render\+Texture@{Render\+Texture}!clear\+Depth@{clear\+Depth}}
+\index{clear\+Depth@{clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear\+Depth()}{clearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::clear\+Depth (\begin{DoxyParamCaption}\item[{float}]{depth\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the texture with a specified depth value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth\+Value} & A specified depth value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a962a6c857ca07ac223bb1ec175633377}\label{classRenderTexture_a962a6c857ca07ac223bb1ec175633377}} 
+\index{Render\+Texture@{Render\+Texture}!clear\+Depth@{clear\+Depth}}
+\index{clear\+Depth@{clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear\+Depth()}{clearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::clear\+Depth (\begin{DoxyParamCaption}\item[{float}]{depth\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the texture with a specified depth value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth\+Value} & A specified depth value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a8c6beead393100c29a32f745f9bafd76}\label{classRenderTexture_a8c6beead393100c29a32f745f9bafd76}} 
+\index{Render\+Texture@{Render\+Texture}!clear\+Stencil@{clear\+Stencil}}
+\index{clear\+Stencil@{clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear\+Stencil()}{clearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::clear\+Stencil (\begin{DoxyParamCaption}\item[{int}]{stencil\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the texture with a specified stencil value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stencil\+Value} & A specified stencil value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a8b0c62632ff8f1ae8ab082f1061379d2}\label{classRenderTexture_a8b0c62632ff8f1ae8ab082f1061379d2}} 
+\index{Render\+Texture@{Render\+Texture}!clear\+Stencil@{clear\+Stencil}}
+\index{clear\+Stencil@{clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{clear\+Stencil()}{clearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::clear\+Stencil (\begin{DoxyParamCaption}\item[{int}]{stencil\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the texture with a specified stencil value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stencil\+Value} & A specified stencil value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a12dbd5bb59e5f86eb57890b528c899a5}\label{classRenderTexture_a12dbd5bb59e5f86eb57890b528c899a5}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format,  }\item[{G\+Luint}]{depth\+Stencil\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ) and depth\+Stencil format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+{\em depth\+Stencil\+Format} & The depth\+Stencil format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_ac3abc0d238bb993f6aad9c524b6a1b9a}\label{classRenderTexture_ac3abc0d238bb993f6aad9c524b6a1b9a}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static \hyperlink{classRenderTexture}{Render\+Texture}$\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format,  }\item[{G\+Luint}]{depth\+Stencil\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ) and depth\+Stencil format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+{\em depth\+Stencil\+Format} & The depth\+Stencil format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_abbcc62a18ebbe598b315c58607d6bb84}\label{classRenderTexture_abbcc62a18ebbe598b315c58607d6bb84}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format, only R\+GB and \hyperlink{structRGBA}{R\+G\+BA} formats are valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_add6dc1bbac92245b84d2a5a3e7fc7fc7}\label{classRenderTexture_add6dc1bbac92245b84d2a5a3e7fc7fc7}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static \hyperlink{classRenderTexture}{Render\+Texture}$\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format, only R\+GB and \hyperlink{structRGBA}{R\+G\+BA} formats are valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a0b242c07861d823072bc3a8efd8725ae}\label{classRenderTexture_a0b242c07861d823072bc3a8efd8725ae}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \hyperlink{classRenderTexture}{Render\+Texture} $\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points, pixel format is R\+G\+B\+A8888.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a2962685f93c5e33b2e92b4745cfbf99d}\label{classRenderTexture_a2962685f93c5e33b2e92b4745cfbf99d}} 
+\index{Render\+Texture@{Render\+Texture}!create@{create}}
+\index{create@{create}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static \hyperlink{classRenderTexture}{Render\+Texture}$\ast$ Render\+Texture\+::create (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points, pixel format is R\+G\+B\+A8888.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a354c10ae4393f186324000e0fda6a9eb}\label{classRenderTexture_a354c10ae4393f186324000e0fda6a9eb}} 
+\index{Render\+Texture@{Render\+Texture}!draw@{draw}}
+\index{draw@{draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+make sure all children are drawn 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classRenderTexture_a845d9983454acb72fb8666f92146b082}\label{classRenderTexture_a845d9983454acb72fb8666f92146b082}} 
+\index{Render\+Texture@{Render\+Texture}!draw@{draw}}
+\index{draw@{draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Override this method to draw your own node. The following GL states will be enabled by default\+:
+\begin{DoxyItemize}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable\+Client\+State(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+\_\+\+A\+R\+R\+A\+Y);}
+\item {\ttfamily gl\+Enable(\+G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2\+D);} A\+ND Y\+OU S\+H\+O\+U\+LD N\+OT D\+I\+S\+A\+B\+LE T\+H\+EM A\+F\+T\+ER D\+R\+A\+W\+I\+NG Y\+O\+UR N\+O\+DE But if you enable any other GL state, you should disable it after drawing your node.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em transform} & A transform matrix. \\
+\hline
+{\em flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classRenderTexture_ad22cf9b2c11fd1a0293efef2b11524e2}\label{classRenderTexture_ad22cf9b2c11fd1a0293efef2b11524e2}} 
+\index{Render\+Texture@{Render\+Texture}!end@{end}}
+\index{end@{end}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Ends grabbing.  end\+To\+Lua \mbox{\Hypertarget{classRenderTexture_aefbf3e20040da244af3e87abd978b8d9}\label{classRenderTexture_aefbf3e20040da244af3e87abd978b8d9}} 
+\index{Render\+Texture@{Render\+Texture}!end@{end}}
+\index{end@{end}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Ends grabbing.  end\+To\+Lua \mbox{\Hypertarget{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}\label{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Color@{get\+Clear\+Color}}
+\index{get\+Clear\+Color@{get\+Clear\+Color}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Color()}{getClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor4F}{Color4F}\& Render\+Texture\+::get\+Clear\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear color value. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+Color value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}\label{classRenderTexture_a817a532e942a9eb456a2bb354eae2b42}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Color@{get\+Clear\+Color}}
+\index{get\+Clear\+Color@{get\+Clear\+Color}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Color()}{getClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor4F}{Color4F}\& Render\+Texture\+::get\+Clear\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear color value. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+Color value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}\label{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Depth@{get\+Clear\+Depth}}
+\index{get\+Clear\+Depth@{get\+Clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Depth()}{getClearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Render\+Texture\+::get\+Clear\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classValue}{Value} for clear\+Depth. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classValue}{Value} for clear\+Depth. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}\label{classRenderTexture_ade767eafbb1c6214ffe3150591ed8c90}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Depth@{get\+Clear\+Depth}}
+\index{get\+Clear\+Depth@{get\+Clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Depth()}{getClearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Render\+Texture\+::get\+Clear\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classValue}{Value} for clear\+Depth. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classValue}{Value} for clear\+Depth. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}\label{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Flags@{get\+Clear\+Flags}}
+\index{get\+Clear\+Flags@{get\+Clear\+Flags}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Flags()}{getClearFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Render\+Texture\+::get\+Clear\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Valid flags\+: G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+D\+E\+P\+T\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT. They can be OR\textquotesingle{}ed. Valid when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+Clear flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}\label{classRenderTexture_ab20bf288dc1db1f0a21b0a0689a8e2aa}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Flags@{get\+Clear\+Flags}}
+\index{get\+Clear\+Flags@{get\+Clear\+Flags}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Flags()}{getClearFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Render\+Texture\+::get\+Clear\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Valid flags\+: G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+D\+E\+P\+T\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT. They can be OR\textquotesingle{}ed. Valid when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+Clear flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}\label{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Stencil@{get\+Clear\+Stencil}}
+\index{get\+Clear\+Stencil@{get\+Clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Stencil()}{getClearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Render\+Texture\+::get\+Clear\+Stencil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classValue}{Value} for clear Stencil. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classValue}{Value} for clear Stencil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}\label{classRenderTexture_a24a04ac4d778a70099d425c11df6cd02}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Clear\+Stencil@{get\+Clear\+Stencil}}
+\index{get\+Clear\+Stencil@{get\+Clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Clear\+Stencil()}{getClearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Render\+Texture\+::get\+Clear\+Stencil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classValue}{Value} for clear Stencil. Valid only when \char`\"{}auto\+Draw\char`\"{} is true.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classValue}{Value} for clear Stencil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}\label{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ Render\+Texture\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classSprite}{Sprite} being used.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classSprite}{Sprite}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}\label{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}} 
+\index{Render\+Texture@{Render\+Texture}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ Render\+Texture\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classSprite}{Sprite} being used.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classSprite}{Sprite}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}\label{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}} 
+\index{Render\+Texture@{Render\+Texture}!init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}}
+\index{init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{init\+With\+Width\+And\+Height()}{initWithWidthAndHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::init\+With\+Width\+And\+Height (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format, only R\+GB and \hyperlink{structRGBA}{R\+G\+BA} formats are valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If succeed, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}\label{classRenderTexture_a77d3e22af2c64225b1852653fc4c5452}} 
+\index{Render\+Texture@{Render\+Texture}!init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}}
+\index{init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{init\+With\+Width\+And\+Height()}{initWithWidthAndHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::init\+With\+Width\+And\+Height (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format, only R\+GB and \hyperlink{structRGBA}{R\+G\+BA} formats are valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If succeed, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}\label{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}} 
+\index{Render\+Texture@{Render\+Texture}!init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}}
+\index{init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{init\+With\+Width\+And\+Height()}{initWithWidthAndHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::init\+With\+Width\+And\+Height (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format,  }\item[{G\+Luint}]{depth\+Stencil\+Format }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ) and depth\+Stencil format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+{\em depth\+Stencil\+Format} & The depth\+Stencil format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If succeed, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}\label{classRenderTexture_a1bceb3ba56e1b6353fa9f9e032ed0fc7}} 
+\index{Render\+Texture@{Render\+Texture}!init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}}
+\index{init\+With\+Width\+And\+Height@{init\+With\+Width\+And\+Height}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{init\+With\+Width\+And\+Height()}{initWithWidthAndHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::init\+With\+Width\+And\+Height (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{classTexture2D_a45d9d8bb5a0669def36bbdfbfb91d220}{Texture2\+D\+::\+Pixel\+Format}}]{format,  }\item[{G\+Luint}]{depth\+Stencil\+Format }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classRenderTexture}{Render\+Texture} object with width and height in Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ) and depth\+Stencil format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The \hyperlink{classRenderTexture}{Render\+Texture} object width. \\
+\hline
+{\em h} & The \hyperlink{classRenderTexture}{Render\+Texture} object height. \\
+\hline
+{\em format} & In Points and a pixel format( only R\+G\+B and R\+G\+B\+A formats are valid ). \\
+\hline
+{\em depth\+Stencil\+Format} & The depth\+Stencil format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If succeed, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}\label{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}} 
+\index{Render\+Texture@{Render\+Texture}!is\+Auto\+Draw@{is\+Auto\+Draw}}
+\index{is\+Auto\+Draw@{is\+Auto\+Draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{is\+Auto\+Draw()}{isAutoDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::is\+Auto\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+When enabled, it will render its children into the texture automatically. Disabled by default for compatibility reasons. Will be enabled in the future.
+
+\begin{DoxyReturn}{Returns}
+Return the auto\+Draw value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}\label{classRenderTexture_a538e18e303e88d097d3cab36fe40cf86}} 
+\index{Render\+Texture@{Render\+Texture}!is\+Auto\+Draw@{is\+Auto\+Draw}}
+\index{is\+Auto\+Draw@{is\+Auto\+Draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{is\+Auto\+Draw()}{isAutoDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::is\+Auto\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+When enabled, it will render its children into the texture automatically. Disabled by default for compatibility reasons. Will be enabled in the future.
+
+\begin{DoxyReturn}{Returns}
+Return the auto\+Draw value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}\label{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}} 
+\index{Render\+Texture@{Render\+Texture}!listen\+To\+Background@{listen\+To\+Background}}
+\index{listen\+To\+Background@{listen\+To\+Background}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{listen\+To\+Background()}{listenToBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::listen\+To\+Background (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen \char`\"{}come to background\char`\"{} message, and save render texture. It only has effect on Android.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classEvent}{Event} Custom. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}\label{classRenderTexture_a1ee79c4fa86ceae2511cd6ba4784f563}} 
+\index{Render\+Texture@{Render\+Texture}!listen\+To\+Background@{listen\+To\+Background}}
+\index{listen\+To\+Background@{listen\+To\+Background}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{listen\+To\+Background()}{listenToBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::listen\+To\+Background (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen \char`\"{}come to background\char`\"{} message, and save render texture. It only has effect on Android.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classEvent}{Event} Custom. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}\label{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}} 
+\index{Render\+Texture@{Render\+Texture}!listen\+To\+Foreground@{listen\+To\+Foreground}}
+\index{listen\+To\+Foreground@{listen\+To\+Foreground}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{listen\+To\+Foreground()}{listenToForeground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::listen\+To\+Foreground (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen \char`\"{}come to foreground\char`\"{} message and restore the frame buffer object. It only has effect on Android.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classEvent}{Event} Custom. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}\label{classRenderTexture_adb9d5534da000cff4d4402f5049dfa11}} 
+\index{Render\+Texture@{Render\+Texture}!listen\+To\+Foreground@{listen\+To\+Foreground}}
+\index{listen\+To\+Foreground@{listen\+To\+Foreground}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{listen\+To\+Foreground()}{listenToForeground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::listen\+To\+Foreground (\begin{DoxyParamCaption}\item[{\hyperlink{classEventCustom}{Event\+Custom} $\ast$}]{event }\end{DoxyParamCaption})}
+
+Listen \char`\"{}come to foreground\char`\"{} message and restore the frame buffer object. It only has effect on Android.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classEvent}{Event} Custom. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_ac94c214b8570de378cfcc9951e853e98}\label{classRenderTexture_ac94c214b8570de378cfcc9951e853e98}} 
+\index{Render\+Texture@{Render\+Texture}!on\+Clear\+Depth@{on\+Clear\+Depth}}
+\index{on\+Clear\+Depth@{on\+Clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{on\+Clear\+Depth()}{onClearDepth()}}
+{\footnotesize\ttfamily void Render\+Texture\+::on\+Clear\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+save old depth value \mbox{\Hypertarget{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}\label{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}} 
+\index{Render\+Texture@{Render\+Texture}!save\+To\+File@{save\+To\+File}}
+\index{save\+To\+File@{save\+To\+File}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{save\+To\+File()}{saveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{bool}]{is\+R\+G\+BA = {\ttfamily true},  }\item[{std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$}]{callback = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Saves the texture into a file using J\+P\+EG format. The file will be saved in the Documents folder. Returns true if the operation is successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em is\+R\+G\+BA} & The file is \hyperlink{structRGBA}{R\+G\+BA} or not. \\
+\hline
+{\em callback} & When the file is save finished,it will callback this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the operation is successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}\label{classRenderTexture_af825fb3cddf5bae91ee9e89d31c2b5d7}} 
+\index{Render\+Texture@{Render\+Texture}!save\+To\+File@{save\+To\+File}}
+\index{save\+To\+File@{save\+To\+File}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{save\+To\+File()}{saveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{bool}]{is\+R\+G\+BA = {\ttfamily true},  }\item[{std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$}]{callback = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Saves the texture into a file using J\+P\+EG format. The file will be saved in the Documents folder. Returns true if the operation is successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em is\+R\+G\+BA} & The file is \hyperlink{structRGBA}{R\+G\+BA} or not. \\
+\hline
+{\em callback} & When the file is save finished,it will callback this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the operation is successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}\label{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}} 
+\index{Render\+Texture@{Render\+Texture}!save\+To\+File@{save\+To\+File}}
+\index{save\+To\+File@{save\+To\+File}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{save\+To\+File()}{saveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{Image\+::\+Format}]{format,  }\item[{bool}]{is\+R\+G\+BA = {\ttfamily true},  }\item[{std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$}]{callback = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+saves the texture into a file. The format could be J\+PG or P\+NG. The file will be saved in the Documents folder. Returns true if the operation is successful. Notes\+: since v3.\+x, save\+To\+File will generate a custom command, which will be called in the following render-\/$>$render(). So if this function is called in a event handler, the actual save file will be called in the next frame. If we switch to a different scene, the game will crash. To solve this, add \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director\+::get\+Instance()}-\/$>$get\+Renderer()-\/$>$render(); after this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em format} & The image format. \\
+\hline
+{\em is\+R\+G\+BA} & The file is \hyperlink{structRGBA}{R\+G\+BA} or not. \\
+\hline
+{\em callback} & When the file is save finished,it will callback this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the operation is successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}\label{classRenderTexture_a125c91da47e019bd3c2c55a8f3070d8a}} 
+\index{Render\+Texture@{Render\+Texture}!save\+To\+File@{save\+To\+File}}
+\index{save\+To\+File@{save\+To\+File}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{save\+To\+File()}{saveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Render\+Texture\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{Image\+::\+Format}]{format,  }\item[{bool}]{is\+R\+G\+BA = {\ttfamily true},  }\item[{std\+::function$<$ void(\hyperlink{classRenderTexture}{Render\+Texture} $\ast$, const std\+::string \&)$>$}]{callback = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+saves the texture into a file. The format could be J\+PG or P\+NG. The file will be saved in the Documents folder. Returns true if the operation is successful. Notes\+: since v3.\+x, save\+To\+File will generate a custom command, which will be called in the following render-\/$>$render(). So if this function is called in a event handler, the actual save file will be called in the next frame. If we switch to a different scene, the game will crash. To solve this, add \hyperlink{classDirector_a8d2a4ca9e20cd400ddadd516efa111e0}{Director\+::get\+Instance()}-\/$>$get\+Renderer()-\/$>$render(); after this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em format} & The image format. \\
+\hline
+{\em is\+R\+G\+BA} & The file is \hyperlink{structRGBA}{R\+G\+BA} or not. \\
+\hline
+{\em callback} & When the file is save finished,it will callback this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the operation is successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}\label{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Auto\+Draw@{set\+Auto\+Draw}}
+\index{set\+Auto\+Draw@{set\+Auto\+Draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Auto\+Draw()}{setAutoDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Auto\+Draw (\begin{DoxyParamCaption}\item[{bool}]{is\+Auto\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a valve to control whether or not render its children into the texture automatically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Auto\+Draw} & Whether or not render its children into the texture automatically. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}\label{classRenderTexture_af41afca2870fc8b26f4fec8d6ff89a3e}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Auto\+Draw@{set\+Auto\+Draw}}
+\index{set\+Auto\+Draw@{set\+Auto\+Draw}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Auto\+Draw()}{setAutoDraw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Auto\+Draw (\begin{DoxyParamCaption}\item[{bool}]{is\+Auto\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a valve to control whether or not render its children into the texture automatically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Auto\+Draw} & Whether or not render its children into the texture automatically. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}\label{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Color@{set\+Clear\+Color}}
+\index{set\+Clear\+Color@{set\+Clear\+Color}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Color()}{setClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{clear\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Color} & Color value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}\label{classRenderTexture_af4a8bbb32af1b96a23a28389b7c564d6}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Color@{set\+Clear\+Color}}
+\index{set\+Clear\+Color@{set\+Clear\+Color}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Color()}{setClearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4F}{Color4F} \&}]{clear\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set color value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Color} & Color value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}\label{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Depth@{set\+Clear\+Depth}}
+\index{set\+Clear\+Depth@{set\+Clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Depth()}{setClearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Depth (\begin{DoxyParamCaption}\item[{float}]{clear\+Depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \hyperlink{classValue}{Value} for clear\+Depth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Depth} & \hyperlink{classValue}{Value} for clear\+Depth. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}\label{classRenderTexture_a7e72dc0bbbbfd010ae3e568bd5675a6f}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Depth@{set\+Clear\+Depth}}
+\index{set\+Clear\+Depth@{set\+Clear\+Depth}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Depth()}{setClearDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Depth (\begin{DoxyParamCaption}\item[{float}]{clear\+Depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \hyperlink{classValue}{Value} for clear\+Depth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Depth} & \hyperlink{classValue}{Value} for clear\+Depth. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_aa7614dfcc66334421283da912887eb42}\label{classRenderTexture_aa7614dfcc66334421283da912887eb42}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Flags@{set\+Clear\+Flags}}
+\index{set\+Clear\+Flags@{set\+Clear\+Flags}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Flags()}{setClearFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Flags (\begin{DoxyParamCaption}\item[{unsigned int}]{clear\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set flags.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Flags} & Valid flags\+: G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+D\+E\+P\+T\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_aa7614dfcc66334421283da912887eb42}\label{classRenderTexture_aa7614dfcc66334421283da912887eb42}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Flags@{set\+Clear\+Flags}}
+\index{set\+Clear\+Flags@{set\+Clear\+Flags}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Flags()}{setClearFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Flags (\begin{DoxyParamCaption}\item[{unsigned int}]{clear\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set flags.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Flags} & Valid flags\+: G\+L\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+D\+E\+P\+T\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT, G\+L\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+B\+IT. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}\label{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Stencil@{set\+Clear\+Stencil}}
+\index{set\+Clear\+Stencil@{set\+Clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Stencil()}{setClearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Stencil (\begin{DoxyParamCaption}\item[{int}]{clear\+Stencil }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \hyperlink{classValue}{Value} for clear Stencil.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Stencil} & \hyperlink{classValue}{Value} for clear Stencil. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}\label{classRenderTexture_a56dca402afad6762c5fe3c91dae32d8b}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Clear\+Stencil@{set\+Clear\+Stencil}}
+\index{set\+Clear\+Stencil@{set\+Clear\+Stencil}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Clear\+Stencil()}{setClearStencil()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Clear\+Stencil (\begin{DoxyParamCaption}\item[{int}]{clear\+Stencil }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \hyperlink{classValue}{Value} for clear Stencil.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+Stencil} & \hyperlink{classValue}{Value} for clear Stencil. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}\label{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Keep\+Matrix@{set\+Keep\+Matrix}}
+\index{set\+Keep\+Matrix@{set\+Keep\+Matrix}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Keep\+Matrix()}{setKeepMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Keep\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{keep\+Matrix }\end{DoxyParamCaption})}
+
+Flag\+: Use stack matrix computed from scene hierarchy or generate new model\+View and projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keep\+Matrix} & Whether or not use stack matrix computed from scene hierarchy or generate new model\+View and projection matrix.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}\label{classRenderTexture_a9cfc0e640f5e3ddf666bd3b7b735991a}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Keep\+Matrix@{set\+Keep\+Matrix}}
+\index{set\+Keep\+Matrix@{set\+Keep\+Matrix}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Keep\+Matrix()}{setKeepMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Keep\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{keep\+Matrix }\end{DoxyParamCaption})}
+
+Flag\+: Use stack matrix computed from scene hierarchy or generate new model\+View and projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keep\+Matrix} & Whether or not use stack matrix computed from scene hierarchy or generate new model\+View and projection matrix.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}\label{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Sprite@{set\+Sprite}}
+\index{set\+Sprite@{set\+Sprite}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Sprite()}{setSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classSprite}{Sprite} being used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}\label{classRenderTexture_a68570f2b0fe7e04eb842a3ab11ffd7f7}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Sprite@{set\+Sprite}}
+\index{set\+Sprite@{set\+Sprite}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Sprite()}{setSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Sets the \hyperlink{classSprite}{Sprite} being used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a0b508deeb3efa8522314973a54e97815}\label{classRenderTexture_a0b508deeb3efa8522314973a54e97815}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Virtual\+Viewport@{set\+Virtual\+Viewport}}
+\index{set\+Virtual\+Viewport@{set\+Virtual\+Viewport}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Virtual\+Viewport()}{setVirtualViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Virtual\+Viewport (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{rt\+Begin,  }\item[{const \hyperlink{classRect}{Rect} \&}]{full\+Rect,  }\item[{const \hyperlink{classRect}{Rect} \&}]{full\+Viewport }\end{DoxyParamCaption})}
+
+Used for grab part of screen to a texture. 
+\begin{DoxyParams}{Parameters}
+{\em rt\+Begin} & The position of render\+Texture on the full\+Rect. \\
+\hline
+{\em full\+Rect} & The total size of screen. \\
+\hline
+{\em full\+Viewport} & The total viewport\+Size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a0b508deeb3efa8522314973a54e97815}\label{classRenderTexture_a0b508deeb3efa8522314973a54e97815}} 
+\index{Render\+Texture@{Render\+Texture}!set\+Virtual\+Viewport@{set\+Virtual\+Viewport}}
+\index{set\+Virtual\+Viewport@{set\+Virtual\+Viewport}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{set\+Virtual\+Viewport()}{setVirtualViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::set\+Virtual\+Viewport (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{rt\+Begin,  }\item[{const \hyperlink{classRect}{Rect} \&}]{full\+Rect,  }\item[{const \hyperlink{classRect}{Rect} \&}]{full\+Viewport }\end{DoxyParamCaption})}
+
+Used for grab part of screen to a texture. 
+\begin{DoxyParams}{Parameters}
+{\em rt\+Begin} & The position of render\+Texture on the full\+Rect. \\
+\hline
+{\em full\+Rect} & The total size of screen. \\
+\hline
+{\em full\+Viewport} & The total viewport\+Size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRenderTexture_a57e0f63ce401e1b5915882f7be1884db}\label{classRenderTexture_a57e0f63ce401e1b5915882f7be1884db}} 
+\index{Render\+Texture@{Render\+Texture}!visit@{visit}}
+\index{visit@{visit}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+Texture\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classRenderTexture_a92007b10e5dab891532bd0daa1a24be8}\label{classRenderTexture_a92007b10e5dab891532bd0daa1a24be8}} 
+\index{Render\+Texture@{Render\+Texture}!visit@{visit}}
+\index{visit@{visit}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Render\+Texture\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRenderTexture_a79cb2034e0a68e453c3c905800f6f440}\label{classRenderTexture_a79cb2034e0a68e453c3c905800f6f440}} 
+\index{Render\+Texture@{Render\+Texture}!\+\_\+sprite@{\+\_\+sprite}}
+\index{\+\_\+sprite@{\+\_\+sprite}!Render\+Texture@{Render\+Texture}}
+\subsubsection{\texorpdfstring{\+\_\+sprite}{\_sprite}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite} $\ast$ Render\+Texture\+::\+\_\+sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{classSprite}{Sprite} being used. The sprite, by default, will use the following blending function\+: G\+L\+\_\+\+O\+NE, G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA. The blending function can be changed in runtime by calling\+:
+\begin{DoxyItemize}
+\item render\+Texture-\/$>$\hyperlink{classRenderTexture_a89c3bcda8dbca417127adbce86cc3bb6}{get\+Sprite()}-\/$>$set\+Blend\+Func((\hyperlink{structBlendFunc}{Blend\+Func})\{G\+L\+\_\+\+O\+NE, G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA\}); 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Render\+Texture.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Render\+Texture.\+cpp\end{DoxyCompactItemize}

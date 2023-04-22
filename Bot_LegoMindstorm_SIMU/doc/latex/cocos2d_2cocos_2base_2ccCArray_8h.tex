@@ -1,0 +1,17 @@
+\hypertarget{cocos2d_2cocos_2base_2ccCArray_8h}{}\section{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/cc\+C\+Array.h File Reference}
+\label{cocos2d_2cocos_2base_2ccCArray_8h}\index{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/cc\+C\+Array.\+h@{/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/cc\+C\+Array.\+h}}
+
+
+\subsection{Detailed Description}
+based on Chipmunk \hyperlink{structcpArray}{cp\+Array}. cc\+Array is a faster alternative to N\+S\+Mutable\+Array, it does pretty much the same thing (stores N\+S\+Objects and retains/releases them appropriately). It\textquotesingle{}s faster because\+:
+\begin{DoxyItemize}
+\item it uses a plain C interface so it doesn\textquotesingle{}t incur Objective-\/c messaging overhead
+\item it assumes you know what you\textquotesingle{}re doing, so it doesn\textquotesingle{}t spend time on safety checks (index out of bounds, required capacity etc.)
+\item comparisons are done using pointer equality instead of is\+Equal
+\end{DoxyItemize}
+
+There are 2 kind of functions\+:
+\begin{DoxyItemize}
+\item cc\+Array functions that manipulates objective-\/c objects (retain and release are performed)
+\item cc\+C\+Array functions that manipulates values like if they were standard C structures (no retain/release is performed) 
+\end{DoxyItemize}

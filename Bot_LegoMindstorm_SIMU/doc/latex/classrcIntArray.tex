@@ -1,0 +1,215 @@
+\hypertarget{classrcIntArray}{}\section{rc\+Int\+Array Class Reference}
+\label{classrcIntArray}\index{rc\+Int\+Array@{rc\+Int\+Array}}
+
+
+A simple dynamic array of integers.  
+
+
+
+
+{\ttfamily \#include $<$Recast\+Alloc.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}\label{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}} 
+\hyperlink{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}{rc\+Int\+Array} ()
+\begin{DoxyCompactList}\small\item\em Constructs an instance with an initial array size of zero. \end{DoxyCompactList}\item 
+\hyperlink{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}{rc\+Int\+Array} (int n)
+\item 
+void \hyperlink{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}{resize} (int n)
+\item 
+void \hyperlink{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}{push} (int item)
+\item 
+int \hyperlink{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}{pop} ()
+\item 
+const int \& \hyperlink{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+int \& \hyperlink{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\mbox{\Hypertarget{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}\label{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}} 
+int \hyperlink{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}{size} () const
+\begin{DoxyCompactList}\small\item\em The current size of the integer array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}\label{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}} 
+\hyperlink{classrcIntArray_a7c2de9614c66762b3083becbdcaf07d4}{rc\+Int\+Array} ()
+\begin{DoxyCompactList}\small\item\em Constructs an instance with an initial array size of zero. \end{DoxyCompactList}\item 
+\hyperlink{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}{rc\+Int\+Array} (int n)
+\item 
+void \hyperlink{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}{resize} (int n)
+\item 
+void \hyperlink{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}{push} (int item)
+\item 
+int \hyperlink{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}{pop} ()
+\item 
+const int \& \hyperlink{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+int \& \hyperlink{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\mbox{\Hypertarget{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}\label{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}} 
+int \hyperlink{classrcIntArray_af17b8fb439ac8121af044d4f4d13753c}{size} () const
+\begin{DoxyCompactList}\small\item\em The current size of the integer array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple dynamic array of integers. 
+
+While it is possible to pre-\/allocate a specific array size during construction or by using the \hyperlink{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}{resize} method, certain methods will automatically resize the array as needed.
+
+\begin{DoxyWarning}{Warning}
+The array memory is not initialized to zero when the size is manually set during construction or when using \hyperlink{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}{resize}. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}\label{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!rc\+Int\+Array@{rc\+Int\+Array}}
+\index{rc\+Int\+Array@{rc\+Int\+Array}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{rc\+Int\+Array()}{rcIntArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily rc\+Int\+Array\+::rc\+Int\+Array (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an instance initialized to the specified size. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & The initial size of the integer array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}\label{classrcIntArray_ae24aed0e0cb7e79fc0a34de088eba93a}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!rc\+Int\+Array@{rc\+Int\+Array}}
+\index{rc\+Int\+Array@{rc\+Int\+Array}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{rc\+Int\+Array()}{rcIntArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily rc\+Int\+Array\+::rc\+Int\+Array (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an instance initialized to the specified size. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & The initial size of the integer array. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}\label{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const int\& rc\+Int\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The value at the specified array index. \begin{DoxyWarning}{Warning}
+Does not provide overflow protection. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}\label{classrcIntArray_a27c2d32c068dfe3021e0bc4efc2ca04c}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const int\& rc\+Int\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The value at the specified array index. \begin{DoxyWarning}{Warning}
+Does not provide overflow protection. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}\label{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int\& rc\+Int\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The value at the specified array index. \begin{DoxyWarning}{Warning}
+Does not provide overflow protection. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}\label{classrcIntArray_a795c1a259ad8ddb6e2f5143fa721a89d}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int\& rc\+Int\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+The value at the specified array index. \begin{DoxyWarning}{Warning}
+Does not provide overflow protection. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The index of the value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}\label{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!pop@{pop}}
+\index{pop@{pop}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{pop()}{pop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int rc\+Int\+Array\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the value at the end of the array and reduces the size by one. \begin{DoxyReturn}{Returns}
+The value at the end of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}\label{classrcIntArray_a25558e84868988dc42bf5b2b3c9c3a84}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!pop@{pop}}
+\index{pop@{pop}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{pop()}{pop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int rc\+Int\+Array\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the value at the end of the array and reduces the size by one. \begin{DoxyReturn}{Returns}
+The value at the end of the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}\label{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!push@{push}}
+\index{push@{push}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Int\+Array\+::push (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Push the specified integer onto the end of the array and increases the size by one. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em item} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}\label{classrcIntArray_ae52f6cd7ffdd2dba00f6f006853dc441}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!push@{push}}
+\index{push@{push}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Int\+Array\+::push (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Push the specified integer onto the end of the array and increases the size by one. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em item} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}\label{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!resize@{resize}}
+\index{resize@{resize}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rc\+Int\+Array\+::resize (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Specifies the new size of the integer array. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & The new size of the integer array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}\label{classrcIntArray_a2135fb43dd504939a2eadbb78650c155}} 
+\index{rc\+Int\+Array@{rc\+Int\+Array}!resize@{resize}}
+\index{resize@{resize}!rc\+Int\+Array@{rc\+Int\+Array}}
+\subsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rc\+Int\+Array\+::resize (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Specifies the new size of the integer array. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & The new size of the integer array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Using this method ensures the array is at least large enough to hold the specified number of elements. This can improve performance by avoiding auto-\/resizing during use. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast\+Alloc.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Recast/Recast\+Alloc.\+cpp\end{DoxyCompactItemize}

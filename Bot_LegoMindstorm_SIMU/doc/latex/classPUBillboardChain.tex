@@ -1,0 +1,852 @@
+\hypertarget{classPUBillboardChain}{}\section{P\+U\+Billboard\+Chain Class Reference}
+\label{classPUBillboardChain}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+
+
+Inheritance diagram for P\+U\+Billboard\+Chain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classPUBillboardChain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Billboard\+Chain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUBillboardChain__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPUBillboardChain_1_1ChainSegment}{Chain\+Segment}
+\item 
+class \hyperlink{classPUBillboardChain_1_1Element}{Element}
+\item 
+struct \hyperlink{structPUBillboardChain_1_1VertexInfo}{Vertex\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} \{ \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}{T\+C\+D\+\_\+U}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}{T\+C\+D\+\_\+V}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}{T\+C\+D\+\_\+U}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}{T\+C\+D\+\_\+V}
+ \}
+\item 
+enum \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} \{ \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}{T\+C\+D\+\_\+U}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}{T\+C\+D\+\_\+V}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}{T\+C\+D\+\_\+U}, 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}{T\+C\+D\+\_\+V}
+ \}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a3ee1c5169a65f03c5290946e3b2aca7f}\label{classPUBillboardChain_a3ee1c5169a65f03c5290946e3b2aca7f}} 
+typedef std\+::vector$<$ \hyperlink{classPUBillboardChain_1_1Element}{Element} $>$ {\bfseries Element\+List}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a3ee1c5169a65f03c5290946e3b2aca7f}\label{classPUBillboardChain_a3ee1c5169a65f03c5290946e3b2aca7f}} 
+typedef std\+::vector$<$ \hyperlink{classPUBillboardChain_1_1Element}{Element} $>$ {\bfseries Element\+List}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}{P\+U\+Billboard\+Chain} (const std\+::string \&name, const std\+::string \&tex\+File=\char`\"{}\char`\"{}, size\+\_\+t max\+Elements=20, size\+\_\+t number\+Of\+Chains=1, bool use\+Texture\+Coords=true, bool use\+Colours=true, bool dynamic=true)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a40bd94046b56f9a31a4de5ee48152de4}\label{classPUBillboardChain_a40bd94046b56f9a31a4de5ee48152de4}} 
+virtual \hyperlink{classPUBillboardChain_a40bd94046b56f9a31a4de5ee48152de4}{$\sim$\+P\+U\+Billboard\+Chain} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPUBillboardChain_aa58e00d60390334e66dd7742f708ee76}{set\+Max\+Chain\+Elements} (size\+\_\+t max\+Elements)
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}{get\+Max\+Chain\+Elements} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_afb09bb4c28a0475beb2c6575c7eeffa5}{set\+Number\+Of\+Chains} (size\+\_\+t num\+Chains)
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}{get\+Number\+Of\+Chains} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a8afb13bc06161cc45d639d90704019ca}{set\+Use\+Texture\+Coords} (bool use)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}{get\+Use\+Texture\+Coords} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a9d2db6325df125ca6bfad0e1277668dc}{set\+Texture\+Coord\+Direction} (\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} dir)
+\item 
+virtual \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} \hyperlink{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}{get\+Texture\+Coord\+Direction} (void)
+\item 
+virtual void \hyperlink{classPUBillboardChain_ae71162178b5886a93297766ea44079c4}{set\+Other\+Texture\+Coord\+Range} (float start, float end)
+\item 
+virtual const float $\ast$ \hyperlink{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}{get\+Other\+Texture\+Coord\+Range} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_afe38aa42454cf7329ed5c9c4a808a4ad}{set\+Use\+Vertex\+Colours} (bool use)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}{get\+Use\+Vertex\+Colours} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_abe44e442622bb8cbb1400ec34efb43d5}{set\+Dynamic} (bool dyn)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}{get\+Dynamic} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_aa83a2e0c9c0df5f9dbfe217e53a1dd60}{add\+Chain\+Element} (size\+\_\+t chain\+Index, const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&billboard\+Chain\+Element)
+\item 
+virtual void \hyperlink{classPUBillboardChain_aa24788b7382cb562efa7504a6c1f5615}{remove\+Chain\+Element} (size\+\_\+t chain\+Index)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a903a9a6a59673a296b10d52efc2656e8}{update\+Chain\+Element} (size\+\_\+t chain\+Index, size\+\_\+t element\+Index, const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&billboard\+Chain\+Element)
+\item 
+virtual const \hyperlink{classPUBillboardChain_1_1Element}{Element} \& \hyperlink{classPUBillboardChain_a7ecf145713f707f5d75a796b11f2b3e9}{get\+Chain\+Element} (size\+\_\+t chain\+Index, size\+\_\+t element\+Index) const
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_ab5ca8f7f95aeb03147286666e7b40bef}{get\+Num\+Chain\+Elements} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a95dbb4b66dabb496bc3c9448e9e0a06f}{clear\+Chain} (size\+\_\+t chain\+Index)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a19068a669deb9dbbca4bfe08ddd76073}{clear\+All\+Chains} (void)
+\item 
+void \hyperlink{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}{set\+Face\+Camera} (bool face\+Camera, const \hyperlink{classVec3}{Vec3} \&normal\+Vector=\hyperlink{classVec3_a859e21c0e95524033d5322f815127ff3}{Vec3\+::\+U\+N\+I\+T\+\_\+X})
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac4bed36e4fc5ca9c73d4848b58117937}\label{classPUBillboardChain_ac4bed36e4fc5ca9c73d4848b58117937}} 
+void {\bfseries set\+Depth\+Test} (bool is\+Depth\+Test)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a75ea76ccea6fb04dac12f2e38539f4dc}\label{classPUBillboardChain_a75ea76ccea6fb04dac12f2e38539f4dc}} 
+void {\bfseries set\+Depth\+Write} (bool is\+Depth\+Write)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_acf3686a91866d52da57fe2924b079c8a}\label{classPUBillboardChain_acf3686a91866d52da57fe2924b079c8a}} 
+void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac27d8d9b2c29320ac816b686805d050b}\label{classPUBillboardChain_ac27d8d9b2c29320ac816b686805d050b}} 
+void {\bfseries render} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, \hyperlink{classParticleSystem3D}{Particle\+System3D} $\ast$particle\+System)
+\item 
+G\+Luint \hyperlink{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}{get\+Texture\+Name} ()
+\item 
+\hyperlink{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}{P\+U\+Billboard\+Chain} (const std\+::string \&name, const std\+::string \&tex\+File=\char`\"{}\char`\"{}, size\+\_\+t max\+Elements=20, size\+\_\+t number\+Of\+Chains=1, bool use\+Texture\+Coords=true, bool use\+Colours=true, bool dynamic=true)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a98f1c4f1d8483a95c6bcec559f76e741}\label{classPUBillboardChain_a98f1c4f1d8483a95c6bcec559f76e741}} 
+virtual \hyperlink{classPUBillboardChain_a98f1c4f1d8483a95c6bcec559f76e741}{$\sim$\+P\+U\+Billboard\+Chain} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPUBillboardChain_ab530bb27f0a511663d96f742b1c8fbe3}{set\+Max\+Chain\+Elements} (size\+\_\+t max\+Elements)
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}{get\+Max\+Chain\+Elements} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_ab249ea9d3b16541744335723f21634c3}{set\+Number\+Of\+Chains} (size\+\_\+t num\+Chains)
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}{get\+Number\+Of\+Chains} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a21246c9c1acfe3e89f0c74f9057bc2ba}{set\+Use\+Texture\+Coords} (bool use)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}{get\+Use\+Texture\+Coords} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a0022ca3d4fbf8a04879eed49872e520a}{set\+Texture\+Coord\+Direction} (\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} dir)
+\item 
+virtual \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} \hyperlink{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}{get\+Texture\+Coord\+Direction} (void)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a391106bfa62a93600afce5bdb94c23a1}{set\+Other\+Texture\+Coord\+Range} (float start, float end)
+\item 
+virtual const float $\ast$ \hyperlink{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}{get\+Other\+Texture\+Coord\+Range} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a4e5aebd96aff64bb21c594f0d7d2355d}{set\+Use\+Vertex\+Colours} (bool use)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}{get\+Use\+Vertex\+Colours} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a14bf6b30ff77c3497ff35e8b090397ba}{set\+Dynamic} (bool dyn)
+\item 
+virtual bool \hyperlink{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}{get\+Dynamic} (void) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a38365d5ca4c157b09280dc3a61ab9b63}{add\+Chain\+Element} (size\+\_\+t chain\+Index, const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&billboard\+Chain\+Element)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a3cf3a2e985beb74ddc5474f2f80846f6}{remove\+Chain\+Element} (size\+\_\+t chain\+Index)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a1e3189cd65fd7b83bc359a4afd269baa}{update\+Chain\+Element} (size\+\_\+t chain\+Index, size\+\_\+t element\+Index, const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&billboard\+Chain\+Element)
+\item 
+virtual const \hyperlink{classPUBillboardChain_1_1Element}{Element} \& \hyperlink{classPUBillboardChain_ab333fca0952c36d1578d9160d1da6c1a}{get\+Chain\+Element} (size\+\_\+t chain\+Index, size\+\_\+t element\+Index) const
+\item 
+virtual size\+\_\+t \hyperlink{classPUBillboardChain_a22c3dbee747669828af060bd43f30fdb}{get\+Num\+Chain\+Elements} (size\+\_\+t chain\+Index) const
+\item 
+virtual void \hyperlink{classPUBillboardChain_a5bb3931ebcca77e14e9f0be4d1bc8dac}{clear\+Chain} (size\+\_\+t chain\+Index)
+\item 
+virtual void \hyperlink{classPUBillboardChain_a1d54a310061c1d3158b672e618fa49b5}{clear\+All\+Chains} (void)
+\item 
+void \hyperlink{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}{set\+Face\+Camera} (bool face\+Camera, const \hyperlink{classVec3}{Vec3} \&normal\+Vector=\hyperlink{classVec3_a859e21c0e95524033d5322f815127ff3}{Vec3\+::\+U\+N\+I\+T\+\_\+X})
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac4bed36e4fc5ca9c73d4848b58117937}\label{classPUBillboardChain_ac4bed36e4fc5ca9c73d4848b58117937}} 
+void {\bfseries set\+Depth\+Test} (bool is\+Depth\+Test)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a75ea76ccea6fb04dac12f2e38539f4dc}\label{classPUBillboardChain_a75ea76ccea6fb04dac12f2e38539f4dc}} 
+void {\bfseries set\+Depth\+Write} (bool is\+Depth\+Write)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_acf3686a91866d52da57fe2924b079c8a}\label{classPUBillboardChain_acf3686a91866d52da57fe2924b079c8a}} 
+void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac27d8d9b2c29320ac816b686805d050b}\label{classPUBillboardChain_ac27d8d9b2c29320ac816b686805d050b}} 
+void {\bfseries render} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, \hyperlink{classParticleSystem3D}{Particle\+System3D} $\ast$particle\+System)
+\item 
+G\+Luint \hyperlink{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}{get\+Texture\+Name} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a868495232aba84d1b4aa0d493520d13f}\label{classPUBillboardChain_a868495232aba84d1b4aa0d493520d13f}} 
+typedef std\+::vector$<$ \hyperlink{structPUBillboardChain_1_1ChainSegment}{Chain\+Segment} $>$ {\bfseries Chain\+Segment\+List}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a868495232aba84d1b4aa0d493520d13f}\label{classPUBillboardChain_a868495232aba84d1b4aa0d493520d13f}} 
+typedef std\+::vector$<$ \hyperlink{structPUBillboardChain_1_1ChainSegment}{Chain\+Segment} $>$ {\bfseries Chain\+Segment\+List}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac01cf395b4534cd4e9fcd9d9ec59cfd3}\label{classPUBillboardChain_ac01cf395b4534cd4e9fcd9d9ec59cfd3}} 
+virtual void \hyperlink{classPUBillboardChain_ac01cf395b4534cd4e9fcd9d9ec59cfd3}{setup\+Chain\+Containers} (void)
+\begin{DoxyCompactList}\small\item\em Setup the S\+TL collections. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac11ba69d8148fd8233aeaf256e27734c}\label{classPUBillboardChain_ac11ba69d8148fd8233aeaf256e27734c}} 
+virtual void \hyperlink{classPUBillboardChain_ac11ba69d8148fd8233aeaf256e27734c}{setup\+Vertex\+Declaration} (void)
+\begin{DoxyCompactList}\small\item\em Setup vertex declaration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac645c3f65f22ab75dff584942d077404}\label{classPUBillboardChain_ac645c3f65f22ab75dff584942d077404}} 
+virtual void {\bfseries setup\+Buffers} (void)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a6960cf5401f98cbd0d0fdb122f39ca9e}\label{classPUBillboardChain_a6960cf5401f98cbd0d0fdb122f39ca9e}} 
+virtual void \hyperlink{classPUBillboardChain_a6960cf5401f98cbd0d0fdb122f39ca9e}{update\+Vertex\+Buffer} (const \hyperlink{classMat4}{Mat4} \&cam\+Mat)
+\begin{DoxyCompactList}\small\item\em Update the contents of the vertex buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ae1ae3e3923344b57de52faf72718a4db}\label{classPUBillboardChain_ae1ae3e3923344b57de52faf72718a4db}} 
+virtual void \hyperlink{classPUBillboardChain_ae1ae3e3923344b57de52faf72718a4db}{update\+Index\+Buffer} (void)
+\begin{DoxyCompactList}\small\item\em Update the contents of the index buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a22aa558153aa2b69062d11639beff7f3}\label{classPUBillboardChain_a22aa558153aa2b69062d11639beff7f3}} 
+void {\bfseries init} (const std\+::string \&tex\+File)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a33dd736e22fa6a837f27cbc421f76f52}\label{classPUBillboardChain_a33dd736e22fa6a837f27cbc421f76f52}} 
+virtual void \hyperlink{classPUBillboardChain_a33dd736e22fa6a837f27cbc421f76f52}{setup\+Chain\+Containers} (void)
+\begin{DoxyCompactList}\small\item\em Setup the S\+TL collections. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_afc75f6fc8849f34c633d3e90e20b8572}\label{classPUBillboardChain_afc75f6fc8849f34c633d3e90e20b8572}} 
+virtual void \hyperlink{classPUBillboardChain_afc75f6fc8849f34c633d3e90e20b8572}{setup\+Vertex\+Declaration} (void)
+\begin{DoxyCompactList}\small\item\em Setup vertex declaration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a7cb8563b291e406d35a5ac796f6a1505}\label{classPUBillboardChain_a7cb8563b291e406d35a5ac796f6a1505}} 
+virtual void {\bfseries setup\+Buffers} (void)
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac49233f9a34a80d93bf6c0540811a0f7}\label{classPUBillboardChain_ac49233f9a34a80d93bf6c0540811a0f7}} 
+virtual void \hyperlink{classPUBillboardChain_ac49233f9a34a80d93bf6c0540811a0f7}{update\+Vertex\+Buffer} (const \hyperlink{classMat4}{Mat4} \&cam\+Mat)
+\begin{DoxyCompactList}\small\item\em Update the contents of the vertex buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a46f24da7cad82cdd5d11bc26f610f2f7}\label{classPUBillboardChain_a46f24da7cad82cdd5d11bc26f610f2f7}} 
+virtual void \hyperlink{classPUBillboardChain_a46f24da7cad82cdd5d11bc26f610f2f7}{update\+Index\+Buffer} (void)
+\begin{DoxyCompactList}\small\item\em Update the contents of the index buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a22aa558153aa2b69062d11639beff7f3}\label{classPUBillboardChain_a22aa558153aa2b69062d11639beff7f3}} 
+void {\bfseries init} (const std\+::string \&tex\+File)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a8d3a6a9bd7d145efa787e92feeff21e1}\label{classPUBillboardChain_a8d3a6a9bd7d145efa787e92feeff21e1}} 
+size\+\_\+t \hyperlink{classPUBillboardChain_a8d3a6a9bd7d145efa787e92feeff21e1}{\+\_\+max\+Elements\+Per\+Chain}
+\begin{DoxyCompactList}\small\item\em Maximum length of each chain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a76d251f9099a6ee773721dae84f34ebb}\label{classPUBillboardChain_a76d251f9099a6ee773721dae84f34ebb}} 
+size\+\_\+t \hyperlink{classPUBillboardChain_a76d251f9099a6ee773721dae84f34ebb}{\+\_\+chain\+Count}
+\begin{DoxyCompactList}\small\item\em Number of chains. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a1e78f4760195f41bddf1b0ecdb68f071}\label{classPUBillboardChain_a1e78f4760195f41bddf1b0ecdb68f071}} 
+bool \hyperlink{classPUBillboardChain_a1e78f4760195f41bddf1b0ecdb68f071}{\+\_\+use\+Tex\+Coords}
+\begin{DoxyCompactList}\small\item\em Use texture coords? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_acdeceea7765d9578ac7747311988ceda}\label{classPUBillboardChain_acdeceea7765d9578ac7747311988ceda}} 
+bool \hyperlink{classPUBillboardChain_acdeceea7765d9578ac7747311988ceda}{\+\_\+use\+Vertex\+Colour}
+\begin{DoxyCompactList}\small\item\em Use vertex colour? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a5120ec526ae5c52fa4d1d31d7fcbcc4a}\label{classPUBillboardChain_a5120ec526ae5c52fa4d1d31d7fcbcc4a}} 
+bool \hyperlink{classPUBillboardChain_a5120ec526ae5c52fa4d1d31d7fcbcc4a}{\+\_\+dynamic}
+\begin{DoxyCompactList}\small\item\em Dynamic use? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_aca1be5e6bdbca7e5742704911b2b2b0b}\label{classPUBillboardChain_aca1be5e6bdbca7e5742704911b2b2b0b}} 
+bool \hyperlink{classPUBillboardChain_aca1be5e6bdbca7e5742704911b2b2b0b}{\+\_\+vertex\+Decl\+Dirty}
+\begin{DoxyCompactList}\small\item\em Is the vertex declaration dirty? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ae7c1f54b6acd4a6b45efc99346e35057}\label{classPUBillboardChain_ae7c1f54b6acd4a6b45efc99346e35057}} 
+bool \hyperlink{classPUBillboardChain_ae7c1f54b6acd4a6b45efc99346e35057}{\+\_\+buffers\+Need\+Recreating}
+\begin{DoxyCompactList}\small\item\em Do the buffers need recreating? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ac3f8997ce4eb2221c8af1030808a5f1b}\label{classPUBillboardChain_ac3f8997ce4eb2221c8af1030808a5f1b}} 
+bool \hyperlink{classPUBillboardChain_ac3f8997ce4eb2221c8af1030808a5f1b}{\+\_\+bounds\+Dirty}
+\begin{DoxyCompactList}\small\item\em Do the bounds need redefining? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_aafa289fb9c7267c9b00eb51b6a3ba758}\label{classPUBillboardChain_aafa289fb9c7267c9b00eb51b6a3ba758}} 
+bool \hyperlink{classPUBillboardChain_aafa289fb9c7267c9b00eb51b6a3ba758}{\+\_\+index\+Content\+Dirty}
+\begin{DoxyCompactList}\small\item\em Is the index buffer dirty? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_aec0eac17d18abc24abcbb7ac4cadd547}\label{classPUBillboardChain_aec0eac17d18abc24abcbb7ac4cadd547}} 
+bool \hyperlink{classPUBillboardChain_aec0eac17d18abc24abcbb7ac4cadd547}{\+\_\+vertex\+Content\+Dirty}
+\begin{DoxyCompactList}\small\item\em Is the vertex buffer dirty? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ad052e1f28d8b0baa4435d565e7eff323}\label{classPUBillboardChain_ad052e1f28d8b0baa4435d565e7eff323}} 
+\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} \hyperlink{classPUBillboardChain_ad052e1f28d8b0baa4435d565e7eff323}{\+\_\+tex\+Coord\+Dir}
+\begin{DoxyCompactList}\small\item\em Texture coord direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_ade7d0781c895256b93a4f093f87d3d56}\label{classPUBillboardChain_ade7d0781c895256b93a4f093f87d3d56}} 
+float \hyperlink{classPUBillboardChain_ade7d0781c895256b93a4f093f87d3d56}{\+\_\+other\+Tex\+Coord\+Range} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Other texture coord range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a0c78c9c91b084ff26f0df4c355724940}\label{classPUBillboardChain_a0c78c9c91b084ff26f0df4c355724940}} 
+bool \hyperlink{classPUBillboardChain_a0c78c9c91b084ff26f0df4c355724940}{\+\_\+face\+Camera}
+\begin{DoxyCompactList}\small\item\em When true, the billboards always face the camera. \end{DoxyCompactList}\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUBillboardChain_a06ec2268abb78187de9f1ba2adef6027}{\+\_\+normal\+Base}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a29c512480153af5b07778c1edb31bd4f}\label{classPUBillboardChain_a29c512480153af5b07778c1edb31bd4f}} 
+Element\+List \hyperlink{classPUBillboardChain_a29c512480153af5b07778c1edb31bd4f}{\+\_\+chain\+Element\+List}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{protocollist-p}{list} holding the chain elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPUBillboardChain_a088b31dcba51f4ce63bceecb1e37722b}\label{classPUBillboardChain_a088b31dcba51f4ce63bceecb1e37722b}} 
+Chain\+Segment\+List {\bfseries \+\_\+chain\+Segment\+List}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a558755446d0a0fff529cbefbd0273734}\label{classPUBillboardChain_a558755446d0a0fff529cbefbd0273734}} 
+\hyperlink{classMeshCommand}{Mesh\+Command} $\ast$ {\bfseries \+\_\+mesh\+Command}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ab93bdfbbc1df35a87c916ff1bc4e698b}\label{classPUBillboardChain_ab93bdfbbc1df35a87c916ff1bc4e698b}} 
+\hyperlink{classRenderState_1_1StateBlock}{Render\+State\+::\+State\+Block} $\ast$ {\bfseries \+\_\+state\+Block}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_afa3ef1b03c237a7595164671024b5170}\label{classPUBillboardChain_afa3ef1b03c237a7595164671024b5170}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+texture}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_ae0384815c3245257bdcfd4801abb0ecb}\label{classPUBillboardChain_ae0384815c3245257bdcfd4801abb0ecb}} 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ {\bfseries \+\_\+gl\+Program\+State}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a95773f51afd4fa8a89efbfce4a0ff521}\label{classPUBillboardChain_a95773f51afd4fa8a89efbfce4a0ff521}} 
+\hyperlink{classIndexBuffer}{Index\+Buffer} $\ast$ {\bfseries \+\_\+index\+Buffer}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a786c32cdf0b459235b9d9cd13cfa9cd9}\label{classPUBillboardChain_a786c32cdf0b459235b9d9cd13cfa9cd9}} 
+\hyperlink{classVertexBuffer}{Vertex\+Buffer} $\ast$ {\bfseries \+\_\+vertex\+Buffer}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a7d0bac8c829050680fc1f7aed68c372f}\label{classPUBillboardChain_a7d0bac8c829050680fc1f7aed68c372f}} 
+std\+::vector$<$ \hyperlink{structPUBillboardChain_1_1VertexInfo}{Vertex\+Info} $>$ {\bfseries \+\_\+vertices}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a20980ea0b0650918df36ddb986f80b28}\label{classPUBillboardChain_a20980ea0b0650918df36ddb986f80b28}} 
+std\+::vector$<$ unsigned short $>$ {\bfseries \+\_\+indices}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_a9c2bfc2937faacb62d9f5566e27f9bfd}\label{classPUBillboardChain_a9c2bfc2937faacb62d9f5566e27f9bfd}} 
+std\+::string {\bfseries \+\_\+tex\+File}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBillboardChain_acc14eff981c274012cc19a0d2d168543}\label{classPUBillboardChain_acc14eff981c274012cc19a0d2d168543}} 
+static const size\+\_\+t \hyperlink{classPUBillboardChain_acc14eff981c274012cc19a0d2d168543}{S\+E\+G\+M\+E\+N\+T\+\_\+\+E\+M\+P\+TY} = std\+::numeric\+\_\+limits$<$size\+\_\+t$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Chain segment has no elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!Tex\+Coord\+Direction@{Tex\+Coord\+Direction}}
+\index{Tex\+Coord\+Direction@{Tex\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{Tex\+Coord\+Direction}{TexCoordDirection}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{P\+U\+Billboard\+Chain\+::\+Tex\+Coord\+Direction}}
+
+The direction in which texture coordinates from elements of the chain are used. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}} 
+T\+C\+D\+\_\+U&Tex coord in elements is treated as the \textquotesingle{}u\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}} 
+T\+C\+D\+\_\+V&Tex coord in elements is treated as the \textquotesingle{}v\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}} 
+T\+C\+D\+\_\+U&Tex coord in elements is treated as the \textquotesingle{}u\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}} 
+T\+C\+D\+\_\+V&Tex coord in elements is treated as the \textquotesingle{}v\textquotesingle{} texture coordinate. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!Tex\+Coord\+Direction@{Tex\+Coord\+Direction}}
+\index{Tex\+Coord\+Direction@{Tex\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{Tex\+Coord\+Direction}{TexCoordDirection}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{P\+U\+Billboard\+Chain\+::\+Tex\+Coord\+Direction}}
+
+The direction in which texture coordinates from elements of the chain are used. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}} 
+T\+C\+D\+\_\+U&Tex coord in elements is treated as the \textquotesingle{}u\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}} 
+T\+C\+D\+\_\+V&Tex coord in elements is treated as the \textquotesingle{}v\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+U@{T\+C\+D\+\_\+U}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fab62dad19a911a3eee08a36f97d5c7f9a}} 
+T\+C\+D\+\_\+U&Tex coord in elements is treated as the \textquotesingle{}u\textquotesingle{} texture coordinate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!T\+C\+D\+\_\+V@{T\+C\+D\+\_\+V}}}\mbox{\Hypertarget{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}\label{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209fa04fbca157806680503db4c2f9c9cc125}} 
+T\+C\+D\+\_\+V&Tex coord in elements is treated as the \textquotesingle{}v\textquotesingle{} texture coordinate. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}\label{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{P\+U\+Billboard\+Chain()}{PUBillboardChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+U\+Billboard\+Chain\+::\+P\+U\+Billboard\+Chain (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{tex\+File = {\ttfamily \char`\"{}\char`\"{}},  }\item[{size\+\_\+t}]{max\+Elements = {\ttfamily 20},  }\item[{size\+\_\+t}]{number\+Of\+Chains = {\ttfamily 1},  }\item[{bool}]{use\+Texture\+Coords = {\ttfamily true},  }\item[{bool}]{use\+Colours = {\ttfamily true},  }\item[{bool}]{dynamic = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to give this object \\
+\hline
+{\em max\+Elements} & The maximum number of elements per chain \\
+\hline
+{\em number\+Of\+Chains} & The number of separate chain segments contained in this object \\
+\hline
+{\em use\+Texture\+Coords} & If true, use texture coordinates from the chain elements \\
+\hline
+{\em use\+Vertex\+Colours} & If true, use vertex colours from the chain elements \\
+\hline
+{\em dynamic} & If true, buffers are created with the intention of being updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}\label{classPUBillboardChain_a15030a1f3d4f5a1a854a2c5646f21690}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{P\+U\+Billboard\+Chain()}{PUBillboardChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+U\+Billboard\+Chain\+::\+P\+U\+Billboard\+Chain (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{tex\+File = {\ttfamily \char`\"{}\char`\"{}},  }\item[{size\+\_\+t}]{max\+Elements = {\ttfamily 20},  }\item[{size\+\_\+t}]{number\+Of\+Chains = {\ttfamily 1},  }\item[{bool}]{use\+Texture\+Coords = {\ttfamily true},  }\item[{bool}]{use\+Colours = {\ttfamily true},  }\item[{bool}]{dynamic = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to give this object \\
+\hline
+{\em max\+Elements} & The maximum number of elements per chain \\
+\hline
+{\em number\+Of\+Chains} & The number of separate chain segments contained in this object \\
+\hline
+{\em use\+Texture\+Coords} & If true, use texture coordinates from the chain elements \\
+\hline
+{\em use\+Vertex\+Colours} & If true, use vertex colours from the chain elements \\
+\hline
+{\em dynamic} & If true, buffers are created with the intention of being updated \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUBillboardChain_aa83a2e0c9c0df5f9dbfe217e53a1dd60}\label{classPUBillboardChain_aa83a2e0c9c0df5f9dbfe217e53a1dd60}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!add\+Chain\+Element@{add\+Chain\+Element}}
+\index{add\+Chain\+Element@{add\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{add\+Chain\+Element()}{addChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::add\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&}]{billboard\+Chain\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add an element to the \textquotesingle{}head\textquotesingle{} of a chain. \begin{DoxyRemark}{Remarks}
+If this causes the number of elements to exceed the maximum elements per chain, the last element in the chain (the \textquotesingle{}tail\textquotesingle{}) will be removed to allow the additional element to be added. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em billboard\+Chain\+Element} & The details to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a38365d5ca4c157b09280dc3a61ab9b63}\label{classPUBillboardChain_a38365d5ca4c157b09280dc3a61ab9b63}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!add\+Chain\+Element@{add\+Chain\+Element}}
+\index{add\+Chain\+Element@{add\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{add\+Chain\+Element()}{addChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::add\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&}]{billboard\+Chain\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Add an element to the \textquotesingle{}head\textquotesingle{} of a chain. \begin{DoxyRemark}{Remarks}
+If this causes the number of elements to exceed the maximum elements per chain, the last element in the chain (the \textquotesingle{}tail\textquotesingle{}) will be removed to allow the additional element to be added. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em billboard\+Chain\+Element} & The details to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a19068a669deb9dbbca4bfe08ddd76073}\label{classPUBillboardChain_a19068a669deb9dbbca4bfe08ddd76073}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!clear\+All\+Chains@{clear\+All\+Chains}}
+\index{clear\+All\+Chains@{clear\+All\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{clear\+All\+Chains()}{clearAllChains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::clear\+All\+Chains (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove all elements from all chains (but leave the chains themselves intact). \mbox{\Hypertarget{classPUBillboardChain_a1d54a310061c1d3158b672e618fa49b5}\label{classPUBillboardChain_a1d54a310061c1d3158b672e618fa49b5}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!clear\+All\+Chains@{clear\+All\+Chains}}
+\index{clear\+All\+Chains@{clear\+All\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{clear\+All\+Chains()}{clearAllChains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::clear\+All\+Chains (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove all elements from all chains (but leave the chains themselves intact). \mbox{\Hypertarget{classPUBillboardChain_a95dbb4b66dabb496bc3c9448e9e0a06f}\label{classPUBillboardChain_a95dbb4b66dabb496bc3c9448e9e0a06f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!clear\+Chain@{clear\+Chain}}
+\index{clear\+Chain@{clear\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{clear\+Chain()}{clearChain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::clear\+Chain (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove all elements of a given chain (but leave the chain intact). 
+
+Reimplemented in \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_a5bb3931ebcca77e14e9f0be4d1bc8dac}\label{classPUBillboardChain_a5bb3931ebcca77e14e9f0be4d1bc8dac}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!clear\+Chain@{clear\+Chain}}
+\index{clear\+Chain@{clear\+Chain}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{clear\+Chain()}{clearChain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::clear\+Chain (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove all elements of a given chain (but leave the chain intact). 
+
+Reimplemented in \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_adb54132f235ef4e7378059f72c76afd2}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_a7ecf145713f707f5d75a796b11f2b3e9}\label{classPUBillboardChain_a7ecf145713f707f5d75a796b11f2b3e9}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Chain\+Element@{get\+Chain\+Element}}
+\index{get\+Chain\+Element@{get\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Chain\+Element()}{getChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classPUBillboardChain_1_1Element}{P\+U\+Billboard\+Chain\+::\+Element} \& P\+U\+Billboard\+Chain\+::get\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{size\+\_\+t}]{element\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detail of a chain element. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em element\+Index} & The element index within the chain, measured from the \textquotesingle{}head\textquotesingle{} of the chain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_ab333fca0952c36d1578d9160d1da6c1a}\label{classPUBillboardChain_ab333fca0952c36d1578d9160d1da6c1a}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Chain\+Element@{get\+Chain\+Element}}
+\index{get\+Chain\+Element@{get\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Chain\+Element()}{getChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classPUBillboardChain_1_1Element}{Element}\& P\+U\+Billboard\+Chain\+::get\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{size\+\_\+t}]{element\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the detail of a chain element. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em element\+Index} & The element index within the chain, measured from the \textquotesingle{}head\textquotesingle{} of the chain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}\label{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Dynamic@{get\+Dynamic}}
+\index{get\+Dynamic@{get\+Dynamic}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Dynamic()}{getDynamic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Dynamic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether or not the buffers created for this object are suitable for dynamic alteration. \mbox{\Hypertarget{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}\label{classPUBillboardChain_af302a78ee0a7e43f27c6b15c8851da64}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Dynamic@{get\+Dynamic}}
+\index{get\+Dynamic@{get\+Dynamic}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Dynamic()}{getDynamic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Dynamic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether or not the buffers created for this object are suitable for dynamic alteration. \mbox{\Hypertarget{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}\label{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Max\+Chain\+Elements@{get\+Max\+Chain\+Elements}}
+\index{get\+Max\+Chain\+Elements@{get\+Max\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Max\+Chain\+Elements()}{getMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the maximum number of chain elements per chain \mbox{\Hypertarget{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}\label{classPUBillboardChain_af8944accdd3c6500700e4508feb703e9}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Max\+Chain\+Elements@{get\+Max\+Chain\+Elements}}
+\index{get\+Max\+Chain\+Elements@{get\+Max\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Max\+Chain\+Elements()}{getMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the maximum number of chain elements per chain \mbox{\Hypertarget{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}\label{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Number\+Of\+Chains@{get\+Number\+Of\+Chains}}
+\index{get\+Number\+Of\+Chains@{get\+Number\+Of\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Chains()}{getNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the number of chain segments (this class can render multiple chains at once using the same material). \mbox{\Hypertarget{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}\label{classPUBillboardChain_acd50f9bc6f78acb7138e85f0b0cf1f0f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Number\+Of\+Chains@{get\+Number\+Of\+Chains}}
+\index{get\+Number\+Of\+Chains@{get\+Number\+Of\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Chains()}{getNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the number of chain segments (this class can render multiple chains at once using the same material). \mbox{\Hypertarget{classPUBillboardChain_ab5ca8f7f95aeb03147286666e7b40bef}\label{classPUBillboardChain_ab5ca8f7f95aeb03147286666e7b40bef}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Num\+Chain\+Elements@{get\+Num\+Chain\+Elements}}
+\index{get\+Num\+Chain\+Elements@{get\+Num\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Num\+Chain\+Elements()}{getNumChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Num\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of chain elements. \mbox{\Hypertarget{classPUBillboardChain_a22c3dbee747669828af060bd43f30fdb}\label{classPUBillboardChain_a22c3dbee747669828af060bd43f30fdb}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Num\+Chain\+Elements@{get\+Num\+Chain\+Elements}}
+\index{get\+Num\+Chain\+Elements@{get\+Num\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Num\+Chain\+Elements()}{getNumChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t P\+U\+Billboard\+Chain\+::get\+Num\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of chain elements. \mbox{\Hypertarget{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}\label{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Other\+Texture\+Coord\+Range@{get\+Other\+Texture\+Coord\+Range}}
+\index{get\+Other\+Texture\+Coord\+Range@{get\+Other\+Texture\+Coord\+Range}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Other\+Texture\+Coord\+Range()}{getOtherTextureCoordRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const float$\ast$ P\+U\+Billboard\+Chain\+::get\+Other\+Texture\+Coord\+Range (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the range of the texture coordinates generated across the width of the chain elements. \mbox{\Hypertarget{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}\label{classPUBillboardChain_af17d5dd54f8ef5331ef2613ca937b199}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Other\+Texture\+Coord\+Range@{get\+Other\+Texture\+Coord\+Range}}
+\index{get\+Other\+Texture\+Coord\+Range@{get\+Other\+Texture\+Coord\+Range}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Other\+Texture\+Coord\+Range()}{getOtherTextureCoordRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const float$\ast$ P\+U\+Billboard\+Chain\+::get\+Other\+Texture\+Coord\+Range (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the range of the texture coordinates generated across the width of the chain elements. \mbox{\Hypertarget{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}\label{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Texture\+Coord\+Direction@{get\+Texture\+Coord\+Direction}}
+\index{get\+Texture\+Coord\+Direction@{get\+Texture\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Texture\+Coord\+Direction()}{getTextureCoordDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} P\+U\+Billboard\+Chain\+::get\+Texture\+Coord\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the direction in which texture coords specified on each element are deemed to run. \mbox{\Hypertarget{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}\label{classPUBillboardChain_ae122ca85af280539d493f39ea656a0b4}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Texture\+Coord\+Direction@{get\+Texture\+Coord\+Direction}}
+\index{get\+Texture\+Coord\+Direction@{get\+Texture\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Texture\+Coord\+Direction()}{getTextureCoordDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction} P\+U\+Billboard\+Chain\+::get\+Texture\+Coord\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the direction in which texture coords specified on each element are deemed to run. \mbox{\Hypertarget{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}\label{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Texture\+Name@{get\+Texture\+Name}}
+\index{get\+Texture\+Name@{get\+Texture\+Name}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Texture\+Name()}{getTextureName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Luint P\+U\+Billboard\+Chain\+::get\+Texture\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}\label{classPUBillboardChain_adb77f3cfeaaeee1e3e7d80396af2767f}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Texture\+Name@{get\+Texture\+Name}}
+\index{get\+Texture\+Name@{get\+Texture\+Name}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Texture\+Name()}{getTextureName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Luint P\+U\+Billboard\+Chain\+::get\+Texture\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}\label{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Use\+Texture\+Coords@{get\+Use\+Texture\+Coords}}
+\index{get\+Use\+Texture\+Coords@{get\+Use\+Texture\+Coords}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Use\+Texture\+Coords()}{getUseTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Use\+Texture\+Coords (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether texture coordinate information should be included in the final buffers generated. \mbox{\Hypertarget{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}\label{classPUBillboardChain_a1dbfd007093aa2f03f3f0a3f114a7711}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Use\+Texture\+Coords@{get\+Use\+Texture\+Coords}}
+\index{get\+Use\+Texture\+Coords@{get\+Use\+Texture\+Coords}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Use\+Texture\+Coords()}{getUseTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Use\+Texture\+Coords (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether texture coordinate information should be included in the final buffers generated. \mbox{\Hypertarget{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}\label{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Use\+Vertex\+Colours@{get\+Use\+Vertex\+Colours}}
+\index{get\+Use\+Vertex\+Colours@{get\+Use\+Vertex\+Colours}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Use\+Vertex\+Colours()}{getUseVertexColours()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Use\+Vertex\+Colours (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether vertex colour information should be included in the final buffers generated. \mbox{\Hypertarget{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}\label{classPUBillboardChain_adc396aa55a3e980a5d21cd5cbb28005a}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!get\+Use\+Vertex\+Colours@{get\+Use\+Vertex\+Colours}}
+\index{get\+Use\+Vertex\+Colours@{get\+Use\+Vertex\+Colours}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{get\+Use\+Vertex\+Colours()}{getUseVertexColours()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool P\+U\+Billboard\+Chain\+::get\+Use\+Vertex\+Colours (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets whether vertex colour information should be included in the final buffers generated. \mbox{\Hypertarget{classPUBillboardChain_aa24788b7382cb562efa7504a6c1f5615}\label{classPUBillboardChain_aa24788b7382cb562efa7504a6c1f5615}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!remove\+Chain\+Element@{remove\+Chain\+Element}}
+\index{remove\+Chain\+Element@{remove\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{remove\+Chain\+Element()}{removeChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::remove\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove an element from the \textquotesingle{}tail\textquotesingle{} of a chain. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a3cf3a2e985beb74ddc5474f2f80846f6}\label{classPUBillboardChain_a3cf3a2e985beb74ddc5474f2f80846f6}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!remove\+Chain\+Element@{remove\+Chain\+Element}}
+\index{remove\+Chain\+Element@{remove\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{remove\+Chain\+Element()}{removeChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::remove\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Remove an element from the \textquotesingle{}tail\textquotesingle{} of a chain. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_abe44e442622bb8cbb1400ec34efb43d5}\label{classPUBillboardChain_abe44e442622bb8cbb1400ec34efb43d5}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Dynamic@{set\+Dynamic}}
+\index{set\+Dynamic@{set\+Dynamic}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Dynamic()}{setDynamic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{dyn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether or not the buffers created for this object are suitable for dynamic alteration. \mbox{\Hypertarget{classPUBillboardChain_a14bf6b30ff77c3497ff35e8b090397ba}\label{classPUBillboardChain_a14bf6b30ff77c3497ff35e8b090397ba}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Dynamic@{set\+Dynamic}}
+\index{set\+Dynamic@{set\+Dynamic}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Dynamic()}{setDynamic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{dyn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether or not the buffers created for this object are suitable for dynamic alteration. \mbox{\Hypertarget{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}\label{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Face\+Camera@{set\+Face\+Camera}}
+\index{set\+Face\+Camera@{set\+Face\+Camera}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Face\+Camera()}{setFaceCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Face\+Camera (\begin{DoxyParamCaption}\item[{bool}]{face\+Camera,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{normal\+Vector = {\ttfamily \hyperlink{classVec3_a859e21c0e95524033d5322f815127ff3}{Vec3\+::\+U\+N\+I\+T\+\_\+X}} }\end{DoxyParamCaption})}
+
+Sets whether the billboard should always be facing the camera or a custom direction set by each point element. \begin{DoxyRemark}{Remarks}
+Billboards facing the camera are useful for smoke trails, light beams, etc by simulating a cylinder. However, because of this property, wide trails can cause several artefacts unless the head is properly covered. Therefore, non-\/camera-\/facing billboards are much more convenient for leaving big trails of movement from thin objects, for example a sword swing as seen in many fighting games. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em face\+Camera} & True to be always facing the camera (Default value\+: True) \\
+\hline
+{\em normal\+Vector} & Only used when face\+Camera == false. Must be a non-\/zero vector. This vector is the \char`\"{}point of reference\char`\"{} for each point orientation. For example, if normal\+Vector is Vector3\+::\+U\+N\+I\+T\+\_\+Z, and the point\textquotesingle{}s orientation is an identity matrix, the segment corresponding to that point will be facing towards U\+N\+I\+T\+\_\+Z This vector is internally normalized. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}\label{classPUBillboardChain_a3cf5eab8b485ab9cafd87fd58623a288}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Face\+Camera@{set\+Face\+Camera}}
+\index{set\+Face\+Camera@{set\+Face\+Camera}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Face\+Camera()}{setFaceCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Face\+Camera (\begin{DoxyParamCaption}\item[{bool}]{face\+Camera,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{normal\+Vector = {\ttfamily \hyperlink{classVec3_a859e21c0e95524033d5322f815127ff3}{Vec3\+::\+U\+N\+I\+T\+\_\+X}} }\end{DoxyParamCaption})}
+
+Sets whether the billboard should always be facing the camera or a custom direction set by each point element. \begin{DoxyRemark}{Remarks}
+Billboards facing the camera are useful for smoke trails, light beams, etc by simulating a cylinder. However, because of this property, wide trails can cause several artefacts unless the head is properly covered. Therefore, non-\/camera-\/facing billboards are much more convenient for leaving big trails of movement from thin objects, for example a sword swing as seen in many fighting games. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em face\+Camera} & True to be always facing the camera (Default value\+: True) \\
+\hline
+{\em normal\+Vector} & Only used when face\+Camera == false. Must be a non-\/zero vector. This vector is the \char`\"{}point of reference\char`\"{} for each point orientation. For example, if normal\+Vector is Vector3\+::\+U\+N\+I\+T\+\_\+Z, and the point\textquotesingle{}s orientation is an identity matrix, the segment corresponding to that point will be facing towards U\+N\+I\+T\+\_\+Z This vector is internally normalized. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_aa58e00d60390334e66dd7742f708ee76}\label{classPUBillboardChain_aa58e00d60390334e66dd7742f708ee76}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}}
+\index{set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Max\+Chain\+Elements()}{setMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the maximum number of chain elements per chain 
+
+Reimplemented in \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_ab530bb27f0a511663d96f742b1c8fbe3}\label{classPUBillboardChain_ab530bb27f0a511663d96f742b1c8fbe3}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}}
+\index{set\+Max\+Chain\+Elements@{set\+Max\+Chain\+Elements}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Max\+Chain\+Elements()}{setMaxChainElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Max\+Chain\+Elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the maximum number of chain elements per chain 
+
+Reimplemented in \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_af755423a7832221d273b9e2daae26dbe}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_afb09bb4c28a0475beb2c6575c7eeffa5}\label{classPUBillboardChain_afb09bb4c28a0475beb2c6575c7eeffa5}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}}
+\index{set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Chains()}{setNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Chains }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the number of chain segments (this class can render multiple chains at once using the same material). 
+
+Reimplemented in \hyperlink{classPURibbonTrail_a13906fbe3daa9f8b198fa95308dc30fb}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_a73dff6c67263bc49678ce73a16d03756}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_ab249ea9d3b16541744335723f21634c3}\label{classPUBillboardChain_ab249ea9d3b16541744335723f21634c3}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}}
+\index{set\+Number\+Of\+Chains@{set\+Number\+Of\+Chains}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Chains()}{setNumberOfChains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Number\+Of\+Chains (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Chains }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the number of chain segments (this class can render multiple chains at once using the same material). 
+
+Reimplemented in \hyperlink{classPURibbonTrail_a13906fbe3daa9f8b198fa95308dc30fb}{P\+U\+Ribbon\+Trail}, and \hyperlink{classPURibbonTrail_a73dff6c67263bc49678ce73a16d03756}{P\+U\+Ribbon\+Trail}.
+
+\mbox{\Hypertarget{classPUBillboardChain_ae71162178b5886a93297766ea44079c4}\label{classPUBillboardChain_ae71162178b5886a93297766ea44079c4}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Other\+Texture\+Coord\+Range@{set\+Other\+Texture\+Coord\+Range}}
+\index{set\+Other\+Texture\+Coord\+Range@{set\+Other\+Texture\+Coord\+Range}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Other\+Texture\+Coord\+Range()}{setOtherTextureCoordRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Other\+Texture\+Coord\+Range (\begin{DoxyParamCaption}\item[{float}]{start,  }\item[{float}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the range of the texture coordinates generated across the width of the chain elements. 
+\begin{DoxyParams}{Parameters}
+{\em start} & Start coordinate, default 0.\+0 \\
+\hline
+{\em end} & End coordinate, default 1.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a391106bfa62a93600afce5bdb94c23a1}\label{classPUBillboardChain_a391106bfa62a93600afce5bdb94c23a1}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Other\+Texture\+Coord\+Range@{set\+Other\+Texture\+Coord\+Range}}
+\index{set\+Other\+Texture\+Coord\+Range@{set\+Other\+Texture\+Coord\+Range}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Other\+Texture\+Coord\+Range()}{setOtherTextureCoordRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Other\+Texture\+Coord\+Range (\begin{DoxyParamCaption}\item[{float}]{start,  }\item[{float}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the range of the texture coordinates generated across the width of the chain elements. 
+\begin{DoxyParams}{Parameters}
+{\em start} & Start coordinate, default 0.\+0 \\
+\hline
+{\em end} & End coordinate, default 1.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a9d2db6325df125ca6bfad0e1277668dc}\label{classPUBillboardChain_a9d2db6325df125ca6bfad0e1277668dc}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Texture\+Coord\+Direction@{set\+Texture\+Coord\+Direction}}
+\index{set\+Texture\+Coord\+Direction@{set\+Texture\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Texture\+Coord\+Direction()}{setTextureCoordDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Texture\+Coord\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{P\+U\+Billboard\+Chain\+::\+Tex\+Coord\+Direction}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the direction in which texture coords specified on each element are deemed to run along the length of the chain. 
+\begin{DoxyParams}{Parameters}
+{\em dir} & The direction, default is T\+C\+D\+\_\+U. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a0022ca3d4fbf8a04879eed49872e520a}\label{classPUBillboardChain_a0022ca3d4fbf8a04879eed49872e520a}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Texture\+Coord\+Direction@{set\+Texture\+Coord\+Direction}}
+\index{set\+Texture\+Coord\+Direction@{set\+Texture\+Coord\+Direction}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Texture\+Coord\+Direction()}{setTextureCoordDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Texture\+Coord\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classPUBillboardChain_a6ebaec09a615199356b9d50fdab2209f}{Tex\+Coord\+Direction}}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the direction in which texture coords specified on each element are deemed to run along the length of the chain. 
+\begin{DoxyParams}{Parameters}
+{\em dir} & The direction, default is T\+C\+D\+\_\+U. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a8afb13bc06161cc45d639d90704019ca}\label{classPUBillboardChain_a8afb13bc06161cc45d639d90704019ca}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Use\+Texture\+Coords@{set\+Use\+Texture\+Coords}}
+\index{set\+Use\+Texture\+Coords@{set\+Use\+Texture\+Coords}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Use\+Texture\+Coords()}{setUseTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Use\+Texture\+Coords (\begin{DoxyParamCaption}\item[{bool}]{use }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether texture coordinate information should be included in the final buffers generated. \begin{DoxyNote}{Note}
+You must use either texture coordinates or vertex colour since the vertices have no normals and without one of these there is no source of colour for the vertices. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPUBillboardChain_a21246c9c1acfe3e89f0c74f9057bc2ba}\label{classPUBillboardChain_a21246c9c1acfe3e89f0c74f9057bc2ba}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Use\+Texture\+Coords@{set\+Use\+Texture\+Coords}}
+\index{set\+Use\+Texture\+Coords@{set\+Use\+Texture\+Coords}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Use\+Texture\+Coords()}{setUseTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Use\+Texture\+Coords (\begin{DoxyParamCaption}\item[{bool}]{use }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether texture coordinate information should be included in the final buffers generated. \begin{DoxyNote}{Note}
+You must use either texture coordinates or vertex colour since the vertices have no normals and without one of these there is no source of colour for the vertices. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPUBillboardChain_afe38aa42454cf7329ed5c9c4a808a4ad}\label{classPUBillboardChain_afe38aa42454cf7329ed5c9c4a808a4ad}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Use\+Vertex\+Colours@{set\+Use\+Vertex\+Colours}}
+\index{set\+Use\+Vertex\+Colours@{set\+Use\+Vertex\+Colours}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Use\+Vertex\+Colours()}{setUseVertexColours()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::set\+Use\+Vertex\+Colours (\begin{DoxyParamCaption}\item[{bool}]{use }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether vertex colour information should be included in the final buffers generated. \begin{DoxyNote}{Note}
+You must use either texture coordinates or vertex colour since the vertices have no normals and without one of these there is no source of colour for the vertices. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPUBillboardChain_a4e5aebd96aff64bb21c594f0d7d2355d}\label{classPUBillboardChain_a4e5aebd96aff64bb21c594f0d7d2355d}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!set\+Use\+Vertex\+Colours@{set\+Use\+Vertex\+Colours}}
+\index{set\+Use\+Vertex\+Colours@{set\+Use\+Vertex\+Colours}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{set\+Use\+Vertex\+Colours()}{setUseVertexColours()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::set\+Use\+Vertex\+Colours (\begin{DoxyParamCaption}\item[{bool}]{use }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets whether vertex colour information should be included in the final buffers generated. \begin{DoxyNote}{Note}
+You must use either texture coordinates or vertex colour since the vertices have no normals and without one of these there is no source of colour for the vertices. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPUBillboardChain_a903a9a6a59673a296b10d52efc2656e8}\label{classPUBillboardChain_a903a9a6a59673a296b10d52efc2656e8}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!update\+Chain\+Element@{update\+Chain\+Element}}
+\index{update\+Chain\+Element@{update\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{update\+Chain\+Element()}{updateChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Billboard\+Chain\+::update\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{size\+\_\+t}]{element\+Index,  }\item[{const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&}]{billboard\+Chain\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update the details of an existing chain element. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em element\+Index} & The element index within the chain, measured from the \textquotesingle{}head\textquotesingle{} of the chain \\
+\hline
+{\em billboard\+Chain\+Element} & The details to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUBillboardChain_a1e3189cd65fd7b83bc359a4afd269baa}\label{classPUBillboardChain_a1e3189cd65fd7b83bc359a4afd269baa}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!update\+Chain\+Element@{update\+Chain\+Element}}
+\index{update\+Chain\+Element@{update\+Chain\+Element}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{update\+Chain\+Element()}{updateChainElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Billboard\+Chain\+::update\+Chain\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{chain\+Index,  }\item[{size\+\_\+t}]{element\+Index,  }\item[{const \hyperlink{classPUBillboardChain_1_1Element}{Element} \&}]{billboard\+Chain\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update the details of an existing chain element. 
+\begin{DoxyParams}{Parameters}
+{\em chain\+Index} & The index of the chain \\
+\hline
+{\em element\+Index} & The element index within the chain, measured from the \textquotesingle{}head\textquotesingle{} of the chain \\
+\hline
+{\em billboard\+Chain\+Element} & The details to set \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPUBillboardChain_a06ec2268abb78187de9f1ba2adef6027}\label{classPUBillboardChain_a06ec2268abb78187de9f1ba2adef6027}} 
+\index{P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}!\+\_\+normal\+Base@{\+\_\+normal\+Base}}
+\index{\+\_\+normal\+Base@{\+\_\+normal\+Base}!P\+U\+Billboard\+Chain@{P\+U\+Billboard\+Chain}}
+\subsubsection{\texorpdfstring{\+\_\+normal\+Base}{\_normalBase}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Billboard\+Chain\+::\+\_\+normal\+Base\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used when m\+Face\+Camera == false; determines the billboard\textquotesingle{}s \char`\"{}normal\char`\"{}. i.\+e. when the orientation is identity, the billboard is perpendicular to this vector 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Billboard\+Chain.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Billboard\+Chain.\+cpp\end{DoxyCompactItemize}

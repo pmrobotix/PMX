@@ -1,0 +1,130 @@
+\hypertarget{classlogs_1_1Logger_1_1LoggerBuffer}{}\section{logs\+:\+:Logger\+:\+:Logger\+Buffer Class Reference}
+\label{classlogs_1_1Logger_1_1LoggerBuffer}\index{logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}}
+
+
+Classe de délégation pour faciliter la création des traces.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Logger\+:\+:Logger\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlogs_1_1Logger_1_1LoggerBuffer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:Logger\+:\+:Logger\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlogs_1_1Logger_1_1LoggerBuffer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_af0693b3b740e8d5c8d09bea5ef0c8695}{Logger\+Buffer} (const \hyperlink{classlogs_1_1Logger}{Logger} \&logger, const \hyperlink{classlogs_1_1Level}{Level} \&\hyperlink{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}{level})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_ab39aa2b4513f75d101c734b8e07ac720}\label{classlogs_1_1Logger_1_1LoggerBuffer_ab39aa2b4513f75d101c734b8e07ac720}} 
+virtual \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_ab39aa2b4513f75d101c734b8e07ac720}{$\sim$ Logger\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_a0e4fd77693fd899ec1b0670354f93a02}\label{classlogs_1_1Logger_1_1LoggerBuffer_a0e4fd77693fd899ec1b0670354f93a02}} 
+void \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_a0e4fd77693fd899ec1b0670354f93a02}{end} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode valide le message en cours de construction et le transmet au \hyperlink{classlogs_1_1Logger}{Logger} de référence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_aee16dd078779a8154f1b3d7238748a6f}\label{classlogs_1_1Logger_1_1LoggerBuffer_aee16dd078779a8154f1b3d7238748a6f}} 
+void {\bfseries flush} ()
+\item 
+{\footnotesize template$<$class A $>$ }\\\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \& \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_abb331f69c4ced4db2a19140eae18c7eb}{operator$<$$<$} (const A \&value)
+\begin{DoxyCompactList}\small\item\em Cet opérateur permet d\textquotesingle{}utiliser cette classe comme un flux de sortie standard. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \& \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_ad38b5bba9a701fbd0a2c9c97a9ecbbf9}{operator$<$$<$} (void($\ast$f)(\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \&))
+\begin{DoxyCompactList}\small\item\em Cet opérateur permet à la méthode \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs\+::end()} de remplir son role et d\textquotesingle{}être appelée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe de délégation pour faciliter la création des traces. 
+
+Cette classe est utilisée comme conteneur du message lors de sa création via l\textquotesingle{}utilisation de l\textquotesingle{}opérateur $<$$<$ et des méthodes \hyperlink{classlogs_1_1Logger_a7dffc8f610014ec59b63392da16140e4}{Logger\+::debug()}, \hyperlink{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}{Logger\+::info()}, \hyperlink{classlogs_1_1Logger_a240e8d7b58195c85bd7b4e4a3417d955}{Logger\+::warn()}, \hyperlink{classlogs_1_1Logger_a8b6a2019233bc44b3c3c86c653910831}{Logger\+::error()}.
+
+\begin{DoxyWarning}{Warning}
+Tous les messages construit avec cette classe doivent se terminer par l\textquotesingle{}appel à la méthode \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer_a0e4fd77693fd899ec1b0670354f93a02}{Logger\+Buffer\+::end()} qui peut être aussi réaliser par l\textquotesingle{}appel à la méthode logs\+::end(\+Logger\+Buffer).
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}{Logger\+::info()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_af0693b3b740e8d5c8d09bea5ef0c8695}\label{classlogs_1_1Logger_1_1LoggerBuffer_af0693b3b740e8d5c8d09bea5ef0c8695}} 
+\index{logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}!Logger\+Buffer@{Logger\+Buffer}}
+\index{Logger\+Buffer@{Logger\+Buffer}!logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}}
+\subsubsection{\texorpdfstring{Logger\+Buffer()}{LoggerBuffer()}}
+{\footnotesize\ttfamily logs\+::\+Logger\+::\+Logger\+Buffer\+::\+Logger\+Buffer (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{Logger} \&}]{logger,  }\item[{const \hyperlink{classlogs_1_1Level}{Level} \&}]{level }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & Le logger de référence. \\
+\hline
+{\em level} & Le niveau de référence pour le message à construire. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_abb331f69c4ced4db2a19140eae18c7eb}\label{classlogs_1_1Logger_1_1LoggerBuffer_abb331f69c4ced4db2a19140eae18c7eb}} 
+\index{logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class A $>$ \\
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}\& logs\+::\+Logger\+::\+Logger\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const A \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cet opérateur permet d\textquotesingle{}utiliser cette classe comme un flux de sortie standard. 
+
+Cette méthode générique retransmet, si nécessaire, ses infos à l\textquotesingle{}opérateur {\ttfamily $<$$<$} de la classe {\ttfamily std\+::ostringstream}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & La valeur a ajouter au message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un lien vers le {\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}} pour permettre le chainage des opérateurs {\ttfamily $<$$<$}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1Logger_1_1LoggerBuffer_ad38b5bba9a701fbd0a2c9c97a9ecbbf9}\label{classlogs_1_1Logger_1_1LoggerBuffer_ad38b5bba9a701fbd0a2c9c97a9ecbbf9}} 
+\index{logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!logs\+::\+Logger\+::\+Logger\+Buffer@{logs\+::\+Logger\+::\+Logger\+Buffer}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}\& logs\+::\+Logger\+::\+Logger\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{void($\ast$)(\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \&)}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cet opérateur permet à la méthode \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs\+::end()} de remplir son role et d\textquotesingle{}être appelée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointeur vers la fonction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un lien vers le {\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}} pour permettre le chainage des opérateurs {\ttfamily $<$$<$}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{Logger_8hpp}{Logger.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{Logger_8cpp}{Logger.\+cpp}\end{DoxyCompactItemize}

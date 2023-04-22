@@ -1,0 +1,54 @@
+\hypertarget{robot__slippage_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+slippage.h File Reference}
+\label{robot__slippage_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+slippage.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+slippage.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../exception\+\_\+handler.\+h\char`\"{}}\newline
+Include dependency graph for robot\+\_\+slippage.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{robot__slippage_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__slippage_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__slippage_8h_af1ca77c8543835fc704c55519e90acf7}\label{robot__slippage_8h_af1ca77c8543835fc704c55519e90acf7}} 
+void \hyperlink{robot__slippage_8h_af1ca77c8543835fc704c55519e90acf7}{slippage\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialise module. \end{DoxyCompactList}\item 
+void \hyperlink{robot__slippage_8h_ab9cc30177a60f016a9ef6d6a907d26c3}{slippage\+\_\+\+Update} (int motor, int32 d\+Wheel, int32 d\+Robot)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{robot__slippage_8h_ab9cc30177a60f016a9ef6d6a907d26c3}\label{robot__slippage_8h_ab9cc30177a60f016a9ef6d6a907d26c3}} 
+\index{robot\+\_\+slippage.\+h@{robot\+\_\+slippage.\+h}!slippage\+\_\+\+Update@{slippage\+\_\+\+Update}}
+\index{slippage\+\_\+\+Update@{slippage\+\_\+\+Update}!robot\+\_\+slippage.\+h@{robot\+\_\+slippage.\+h}}
+\subsubsection{\texorpdfstring{slippage\+\_\+\+Update()}{slippage\_Update()}}
+{\footnotesize\ttfamily void slippage\+\_\+\+Update (\begin{DoxyParamCaption}\item[{int}]{motor,  }\item[{int32}]{d\+Wheel,  }\item[{int32}]{d\+Robot }\end{DoxyParamCaption})}
+
+Update current slippage value for a motor 
+\begin{DoxyParams}{Parameters}
+{\em motor} & Motor that will be updated (should be L\+E\+F\+T\+\_\+\+M\+O\+T\+OR or R\+I\+G\+H\+T\+\_\+\+M\+O\+T\+OR) \\
+\hline
+{\em d\+Wheel} & displacement value of the wheel (motor encoder) \\
+\hline
+{\em d\+Robot} & displacement value of the robot (wheel encoder / mouse sensor) \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,132 @@
+\hypertarget{protocolFBSessionDelegate_01-p}{}\section{$<$F\+B\+Session\+Delegate $>$ Protocol Reference}
+\label{protocolFBSessionDelegate_01-p}\index{$<$\+F\+B\+Session\+Delegate $>$@{$<$\+F\+B\+Session\+Delegate $>$}}
+
+
+{\ttfamily \#import $<$Facebook.\+h$>$}
+
+
+
+Inheritance diagram for $<$F\+B\+Session\+Delegate $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{protocolFBSessionDelegate_01-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\+B\+Session\+Delegate $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{protocolFBSessionDelegate_01-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}{fb\+Did\+Login}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}{fb\+Did\+Not\+Login\+:}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}{fb\+Did\+Extend\+Token\+:expires\+At\+:}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}{fb\+Did\+Logout}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}{fb\+Session\+Invalidated}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}{fb\+Did\+Login}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}{fb\+Did\+Not\+Login\+:}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}{fb\+Did\+Extend\+Token\+:expires\+At\+:}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}{fb\+Did\+Logout}
+\item 
+(void) -\/ \hyperlink{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}{fb\+Session\+Invalidated}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Your application should implement this delegate to receive session callbacks. 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}\label{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Extend\+Token\+:expires\+At\+:@{fb\+Did\+Extend\+Token\+:expires\+At\+:}}
+\index{fb\+Did\+Extend\+Token\+:expires\+At\+:@{fb\+Did\+Extend\+Token\+:expires\+At\+:}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Extend\+Token\+:expires\+At\+:()}{fbDidExtendToken:expiresAt:()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Extend\+Token\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{access\+Token }\item[{expiresAt:(N\+S\+Date $\ast$)}]{expires\+At }\end{DoxyParamCaption}}
+
+Called after the access token was extended. If your application has any references to the previous access token (for example, if your application stores the previous access token in persistent storage), your application should overwrite the old access token with the new one in this method. See extend\+Access\+Token for more details. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}\label{protocolFBSessionDelegate_01-p_a9b11d87747c5e472cf95c58d45a85f9c}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Extend\+Token\+:expires\+At\+:@{fb\+Did\+Extend\+Token\+:expires\+At\+:}}
+\index{fb\+Did\+Extend\+Token\+:expires\+At\+:@{fb\+Did\+Extend\+Token\+:expires\+At\+:}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Extend\+Token\+:expires\+At\+:()}{fbDidExtendToken:expiresAt:()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Extend\+Token\+: \begin{DoxyParamCaption}\item[{(N\+S\+String $\ast$)}]{access\+Token }\item[{expiresAt:(N\+S\+Date $\ast$)}]{expires\+At }\end{DoxyParamCaption}}
+
+Called after the access token was extended. If your application has any references to the previous access token (for example, if your application stores the previous access token in persistent storage), your application should overwrite the old access token with the new one in this method. See extend\+Access\+Token for more details. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}\label{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Login@{fb\+Did\+Login}}
+\index{fb\+Did\+Login@{fb\+Did\+Login}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Login()}{fbDidLogin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Login \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the user successfully logged in. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}\label{protocolFBSessionDelegate_01-p_a18bb57139baaf9fe0814a573af4b7a98}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Login@{fb\+Did\+Login}}
+\index{fb\+Did\+Login@{fb\+Did\+Login}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Login()}{fbDidLogin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Login \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the user successfully logged in. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}\label{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Logout@{fb\+Did\+Logout}}
+\index{fb\+Did\+Logout@{fb\+Did\+Logout}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Logout()}{fbDidLogout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Logout \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the user logged out. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}\label{protocolFBSessionDelegate_01-p_ae5b4b19d44526358ac0f55b7f9982d77}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Logout@{fb\+Did\+Logout}}
+\index{fb\+Did\+Logout@{fb\+Did\+Logout}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Logout()}{fbDidLogout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Logout \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the user logged out. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}\label{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Not\+Login\+:@{fb\+Did\+Not\+Login\+:}}
+\index{fb\+Did\+Not\+Login\+:@{fb\+Did\+Not\+Login\+:}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Not\+Login\+:()}{fbDidNotLogin:()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Not\+Login\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{cancelled }\end{DoxyParamCaption}}
+
+Called when the user dismissed the dialog without logging in. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}\label{protocolFBSessionDelegate_01-p_a9a99db70fc8bf01d00bfe78525c343ac}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Did\+Not\+Login\+:@{fb\+Did\+Not\+Login\+:}}
+\index{fb\+Did\+Not\+Login\+:@{fb\+Did\+Not\+Login\+:}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Did\+Not\+Login\+:()}{fbDidNotLogin:()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Did\+Not\+Login\+: \begin{DoxyParamCaption}\item[{(B\+O\+OL)}]{cancelled }\end{DoxyParamCaption}}
+
+Called when the user dismissed the dialog without logging in. \mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}\label{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Session\+Invalidated@{fb\+Session\+Invalidated}}
+\index{fb\+Session\+Invalidated@{fb\+Session\+Invalidated}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Session\+Invalidated()}{fbSessionInvalidated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Session\+Invalidated \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the current session has expired. This might happen when\+:
+\begin{DoxyItemize}
+\item the access token expired
+\item the app has been disabled
+\item the user revoked the app\textquotesingle{}s permissions
+\item the user changed his or her password 
+\end{DoxyItemize}\mbox{\Hypertarget{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}\label{protocolFBSessionDelegate_01-p_a7267d87ae3fb160c0ac22d69781e8c42}} 
+\index{F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}!fb\+Session\+Invalidated@{fb\+Session\+Invalidated}}
+\index{fb\+Session\+Invalidated@{fb\+Session\+Invalidated}!F\+B\+Session\+Delegate -\/p@{F\+B\+Session\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{fb\+Session\+Invalidated()}{fbSessionInvalidated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily -\/ (void F\+B\+Session\+Delegate) fb\+Session\+Invalidated \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Called when the current session has expired. This might happen when\+:
+\begin{DoxyItemize}
+\item the access token expired
+\item the app has been disabled
+\item the user revoked the app\textquotesingle{}s permissions
+\item the user changed his or her password 
+\end{DoxyItemize}
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/facebook/proj.\+ios/\+Facebook\+S\+D\+K.\+framework/\+Versions/\+A/\+Deprecated\+Headers/Facebook.\+h\end{DoxyCompactItemize}

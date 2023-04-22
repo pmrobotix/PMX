@@ -1,0 +1,813 @@
+\hypertarget{classSprite3D}{}\section{Sprite3D Class Reference}
+\label{classSprite3D}\index{Sprite3D@{Sprite3D}}
+
+
+\hyperlink{classSprite3D}{Sprite3D}\+: A sprite can be loaded from 3D model files, .obj, .c3t, .c3b, then can be drawn as sprite.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Sprite3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Sprite3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classSprite3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sprite3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSprite3D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSprite3D_1_1AsyncLoadParam}{Async\+Load\+Param}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}{set\+Texture} (const std\+::string \&tex\+File)
+\item 
+\mbox{\Hypertarget{classSprite3D_a0722b001b9e876d506b540621bdac1f4}\label{classSprite3D_a0722b001b9e876d506b540621bdac1f4}} 
+void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_ad76b814ad82566849ccbf5e534157aa4}{get\+Mesh\+By\+Index} (int index) const
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_aa06f7456a6193199dfcea7e63ea60857}{get\+Mesh\+By\+Name} (const std\+::string \&name) const
+\item 
+std\+::vector$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ \hyperlink{classSprite3D_af26e7cf641858e2d96fffae21db2d253}{get\+Mesh\+Array\+By\+Name} (const std\+::string \&name) const
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_ac2ecd09672fb2ab13df3bda9a4ed40c9}{get\+Mesh} () const
+\item 
+ssize\+\_\+t \hyperlink{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}{get\+Mesh\+Count} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classSprite3D_ae59d2299164cda3a6313eb4bd28b19e4}{get\+Skin} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_a4bee3bcf9f3ef37190455fc1063d4473}\label{classSprite3D_a4bee3bcf9f3ef37190455fc1063d4473}} 
+\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$ {\bfseries get\+Skeleton} () const
+\item 
+\hyperlink{classAttachNode}{Attach\+Node} $\ast$ \hyperlink{classSprite3D_ad1b573c194312fc2ceccae106a18a881}{get\+Attach\+Node} (const std\+::string \&bone\+Name)
+\item 
+void \hyperlink{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}{remove\+Attach\+Node} (const std\+::string \&bone\+Name)
+\item 
+void \hyperlink{classSprite3D_a65c7b8151da52aa226c6fd89942da971}{remove\+All\+Attach\+Node} ()
+\item 
+\mbox{\Hypertarget{classSprite3D_aef1f594bbd90021e7f52198098d840ff}\label{classSprite3D_aef1f594bbd90021e7f52198098d840ff}} 
+virtual void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+\mbox{\Hypertarget{classSprite3D_a4b4edccac127347bbe18148e95652ed5}\label{classSprite3D_a4b4edccac127347bbe18148e95652ed5}} 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& {\bfseries get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classSprite3D_ab9e57d29350dc6886360d433c023b935}{set\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State) override
+\item 
+virtual void \hyperlink{classSprite3D_addcfa64162310ce40ec097738442af9f}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram) override
+\item 
+\mbox{\Hypertarget{classSprite3D_adb3d7d712a7b8fd6a61d970b8a5d3f7f}\label{classSprite3D_adb3d7d712a7b8fd6a61d970b8a5d3f7f}} 
+const \hyperlink{classAABB}{A\+A\+BB} \& {\bfseries get\+A\+A\+BB} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_a53f4be4106345801999a7d55a1984553}\label{classSprite3D_a53f4be4106345801999a7d55a1984553}} 
+\hyperlink{classAABB}{A\+A\+BB} {\bfseries get\+A\+A\+B\+B\+Recursively} ()
+\item 
+virtual \hyperlink{classAction}{Action} $\ast$ \hyperlink{classSprite3D_a6447200e96db21bc79df873e598fcf4a}{run\+Action} (\hyperlink{classAction}{Action} $\ast$action) override
+\item 
+void \hyperlink{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}{set\+Force\+Depth\+Write} (bool value)
+\item 
+\mbox{\Hypertarget{classSprite3D_abcf25050e0c2fe4ab2f816b95e1919c2}\label{classSprite3D_abcf25050e0c2fe4ab2f816b95e1919c2}} 
+bool {\bfseries is\+Force\+Depth\+Write} () const
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classSprite3D_a45348972b8ce7b37c061b9888b00613a}{get\+Bounding\+Box} () const override
+\item 
+\mbox{\Hypertarget{classSprite3D_a7658e390030b102ad830b6dc0d9eda89}\label{classSprite3D_a7658e390030b102ad830b6dc0d9eda89}} 
+void {\bfseries set\+Cull\+Face} (G\+Lenum cull\+Face)
+\item 
+\mbox{\Hypertarget{classSprite3D_acaf719386b479287dc199d9e3eaca85c}\label{classSprite3D_acaf719386b479287dc199d9e3eaca85c}} 
+void {\bfseries set\+Cull\+Face\+Enabled} (bool enable)
+\item 
+void \hyperlink{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}{set\+Light\+Mask} (unsigned int mask)
+\item 
+\mbox{\Hypertarget{classSprite3D_a1fc8414da76ad447824a6053c8ae1a5d}\label{classSprite3D_a1fc8414da76ad447824a6053c8ae1a5d}} 
+unsigned int {\bfseries get\+Light\+Mask} () const
+\item 
+virtual void \hyperlink{classSprite3D_ac0d723dba5fb1bf83816f74a6dbe4bf8}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+void \hyperlink{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material)
+\item 
+void \hyperlink{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material, int mesh\+Index)
+\item 
+\hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classSprite3D_accf93d15ef4ee911082d41cea67964bc}{get\+Material} (int mesh\+Index) const
+\item 
+void \hyperlink{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}{set\+Force2\+D\+Queue} (bool force2D)
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ \& \hyperlink{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}{get\+Meshes} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_ac205856736cc07b965e90f1336535ada}\label{classSprite3D_ac205856736cc07b965e90f1336535ada}} 
+virtual bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classSprite3D_ac275f6c8628e0a40438b4c6f9033b0b7}\label{classSprite3D_ac275f6c8628e0a40438b4c6f9033b0b7}} 
+bool {\bfseries init\+With\+File} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classSprite3D_a60e445c03edcf02cdfbc40391f4ccaba}\label{classSprite3D_a60e445c03edcf02cdfbc40391f4ccaba}} 
+bool {\bfseries init\+From} (const \hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas, const \hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas, const \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+bool \hyperlink{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}{load\+From\+Cache} (const std\+::string \&path)
+\item 
+bool \hyperlink{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}{load\+From\+File} (const std\+::string \&path, \hyperlink{structNodeDatas}{Node\+Datas} $\ast$nodedatas, \hyperlink{structMeshDatas}{Mesh\+Datas} $\ast$meshdatas, \hyperlink{structMaterialDatas}{Material\+Datas} $\ast$materialdatas)
+\item 
+virtual void \hyperlink{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+void \hyperlink{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}{gen\+Material} (bool use\+Light=false)
+\item 
+\mbox{\Hypertarget{classSprite3D_a2922910b2034270d8361465aaea60b17}\label{classSprite3D_a2922910b2034270d8361465aaea60b17}} 
+void {\bfseries create\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, \hyperlink{classNode}{Node} $\ast$root, const \hyperlink{structMaterialDatas}{Material\+Datas} \&matrialdatas, bool single\+Sprite)
+\item 
+\mbox{\Hypertarget{classSprite3D_ab6ff62e7d2d3e34b4160df9fb77a5967}\label{classSprite3D_ab6ff62e7d2d3e34b4160df9fb77a5967}} 
+void {\bfseries create\+Attach\+Sprite3\+D\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, const \hyperlink{structMaterialDatas}{Material\+Datas} \&matrialdatas)
+\item 
+\mbox{\Hypertarget{classSprite3D_ac78653cef601cfd73bf71cf888bd19f5}\label{classSprite3D_ac78653cef601cfd73bf71cf888bd19f5}} 
+\hyperlink{classSprite3D}{Sprite3D} $\ast$ {\bfseries create\+Sprite3\+D\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, \hyperlink{structModelData}{Model\+Data} $\ast$modeldata, const \hyperlink{structMaterialDatas}{Material\+Datas} \&matrialdatas)
+\item 
+\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ \hyperlink{classSprite3D_a27d281cd27b2da08237b220b368bee2a}{get\+Mesh\+Index\+Data} (const std\+::string \&index\+Id) const
+\item 
+\mbox{\Hypertarget{classSprite3D_aa0913954dfa85ef5ef15aaf30ce3b54f}\label{classSprite3D_aa0913954dfa85ef5ef15aaf30ce3b54f}} 
+void {\bfseries add\+Mesh} (\hyperlink{classMesh}{Mesh} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{classSprite3D_a4c88e570782521866b678e1ef11a4056}\label{classSprite3D_a4c88e570782521866b678e1ef11a4056}} 
+void {\bfseries on\+A\+A\+B\+B\+Dirty} ()
+\item 
+\mbox{\Hypertarget{classSprite3D_aa57b9816873f80ce96644e1adcfbf747}\label{classSprite3D_aa57b9816873f80ce96644e1adcfbf747}} 
+void {\bfseries after\+Async\+Load} (void $\ast$param)
+\item 
+void \hyperlink{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}{set\+Texture} (const std\+::string \&tex\+File)
+\item 
+\mbox{\Hypertarget{classSprite3D_a0722b001b9e876d506b540621bdac1f4}\label{classSprite3D_a0722b001b9e876d506b540621bdac1f4}} 
+void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_aec899f921445251fc0011a5bc31c1b2d}{get\+Mesh\+By\+Index} (int index) const
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_a2f2ae610e50e0c8c7e5f6713bebd8a09}{get\+Mesh\+By\+Name} (const std\+::string \&name) const
+\item 
+std\+::vector$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ \hyperlink{classSprite3D_a5e23abd1b0979b3a8e90b2028ab1c5e7}{get\+Mesh\+Array\+By\+Name} (const std\+::string \&name) const
+\item 
+\hyperlink{classMesh}{Mesh} $\ast$ \hyperlink{classSprite3D_ad3f22d4c57c9320ab42e08bf9c97363d}{get\+Mesh} () const
+\item 
+ssize\+\_\+t \hyperlink{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}{get\+Mesh\+Count} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classSprite3D_a3dc3117e72c4bcd841e7fd4ee56f2b98}{get\+Skin} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_a4bee3bcf9f3ef37190455fc1063d4473}\label{classSprite3D_a4bee3bcf9f3ef37190455fc1063d4473}} 
+\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$ {\bfseries get\+Skeleton} () const
+\item 
+\hyperlink{classAttachNode}{Attach\+Node} $\ast$ \hyperlink{classSprite3D_aca7485ada08a322bf2059377e7ee8603}{get\+Attach\+Node} (const std\+::string \&bone\+Name)
+\item 
+void \hyperlink{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}{remove\+Attach\+Node} (const std\+::string \&bone\+Name)
+\item 
+void \hyperlink{classSprite3D_a65c7b8151da52aa226c6fd89942da971}{remove\+All\+Attach\+Node} ()
+\item 
+\mbox{\Hypertarget{classSprite3D_a503802b9e0e3ef16d407e3c40629f339}\label{classSprite3D_a503802b9e0e3ef16d407e3c40629f339}} 
+virtual void {\bfseries set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+\mbox{\Hypertarget{classSprite3D_a1fa184cc7deb069457d446536e5adf22}\label{classSprite3D_a1fa184cc7deb069457d446536e5adf22}} 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& {\bfseries get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classSprite3D_a8bfa814ae2f4584b69dbb776de1c327b}{set\+G\+L\+Program\+State} (\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$gl\+Program\+State) override
+\item 
+virtual void \hyperlink{classSprite3D_aa71609d7f3a35a0d86a70f28bafffa9c}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram) override
+\item 
+\mbox{\Hypertarget{classSprite3D_a6f708b04dd832001250f2bf12ed351c0}\label{classSprite3D_a6f708b04dd832001250f2bf12ed351c0}} 
+const \hyperlink{classAABB}{A\+A\+BB} \& {\bfseries get\+A\+A\+BB} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_a53f4be4106345801999a7d55a1984553}\label{classSprite3D_a53f4be4106345801999a7d55a1984553}} 
+\hyperlink{classAABB}{A\+A\+BB} {\bfseries get\+A\+A\+B\+B\+Recursively} ()
+\item 
+virtual \hyperlink{classAction}{Action} $\ast$ \hyperlink{classSprite3D_acd2905d934e4d7c873b8a1973297d2a8}{run\+Action} (\hyperlink{classAction}{Action} $\ast$action) override
+\item 
+void \hyperlink{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}{set\+Force\+Depth\+Write} (bool value)
+\item 
+\mbox{\Hypertarget{classSprite3D_abcf25050e0c2fe4ab2f816b95e1919c2}\label{classSprite3D_abcf25050e0c2fe4ab2f816b95e1919c2}} 
+bool {\bfseries is\+Force\+Depth\+Write} () const
+\item 
+virtual \hyperlink{classRect}{Rect} \hyperlink{classSprite3D_a90cebd7aa44add4a6726710b5642daf4}{get\+Bounding\+Box} () const override
+\item 
+\mbox{\Hypertarget{classSprite3D_a7658e390030b102ad830b6dc0d9eda89}\label{classSprite3D_a7658e390030b102ad830b6dc0d9eda89}} 
+void {\bfseries set\+Cull\+Face} (G\+Lenum cull\+Face)
+\item 
+\mbox{\Hypertarget{classSprite3D_acaf719386b479287dc199d9e3eaca85c}\label{classSprite3D_acaf719386b479287dc199d9e3eaca85c}} 
+void {\bfseries set\+Cull\+Face\+Enabled} (bool enable)
+\item 
+void \hyperlink{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}{set\+Light\+Mask} (unsigned int mask)
+\item 
+\mbox{\Hypertarget{classSprite3D_a1fc8414da76ad447824a6053c8ae1a5d}\label{classSprite3D_a1fc8414da76ad447824a6053c8ae1a5d}} 
+unsigned int {\bfseries get\+Light\+Mask} () const
+\item 
+virtual void \hyperlink{classSprite3D_a6f6acba3ad6ba8cef63e6cc727df88ab}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+void \hyperlink{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material)
+\item 
+void \hyperlink{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}{set\+Material} (\hyperlink{classMaterial}{Material} $\ast$material, int mesh\+Index)
+\item 
+\hyperlink{classMaterial}{Material} $\ast$ \hyperlink{classSprite3D_ac30aca9c7b7993d49c68cb6c56863e05}{get\+Material} (int mesh\+Index) const
+\item 
+void \hyperlink{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}{set\+Force2\+D\+Queue} (bool force2D)
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ \& \hyperlink{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}{get\+Meshes} () const
+\item 
+\mbox{\Hypertarget{classSprite3D_a2203cda5c4bd1e98d7ebb1eabe276ab0}\label{classSprite3D_a2203cda5c4bd1e98d7ebb1eabe276ab0}} 
+virtual bool {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classSprite3D_ac275f6c8628e0a40438b4c6f9033b0b7}\label{classSprite3D_ac275f6c8628e0a40438b4c6f9033b0b7}} 
+bool {\bfseries init\+With\+File} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classSprite3D_a60e445c03edcf02cdfbc40391f4ccaba}\label{classSprite3D_a60e445c03edcf02cdfbc40391f4ccaba}} 
+bool {\bfseries init\+From} (const \hyperlink{structNodeDatas}{Node\+Datas} \&nodedatas, const \hyperlink{structMeshDatas}{Mesh\+Datas} \&meshdatas, const \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+bool \hyperlink{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}{load\+From\+Cache} (const std\+::string \&path)
+\item 
+bool \hyperlink{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}{load\+From\+File} (const std\+::string \&path, \hyperlink{structNodeDatas}{Node\+Datas} $\ast$nodedatas, \hyperlink{structMeshDatas}{Mesh\+Datas} $\ast$meshdatas, \hyperlink{structMaterialDatas}{Material\+Datas} $\ast$materialdatas)
+\item 
+virtual void \hyperlink{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+void \hyperlink{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}{gen\+Material} (bool use\+Light=false)
+\item 
+\mbox{\Hypertarget{classSprite3D_ae3de6963a2053930d87093e892e489e0}\label{classSprite3D_ae3de6963a2053930d87093e892e489e0}} 
+void {\bfseries create\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, \hyperlink{classNode}{Node} $\ast$root, const \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas, bool single\+Sprite)
+\item 
+\mbox{\Hypertarget{classSprite3D_a468eb0eb1866db74ba071d37e7e02389}\label{classSprite3D_a468eb0eb1866db74ba071d37e7e02389}} 
+void {\bfseries create\+Attach\+Sprite3\+D\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, const \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\mbox{\Hypertarget{classSprite3D_a62f9f873652333fb22ad9314f80fdd8d}\label{classSprite3D_a62f9f873652333fb22ad9314f80fdd8d}} 
+\hyperlink{classSprite3D}{Sprite3D} $\ast$ {\bfseries create\+Sprite3\+D\+Node} (\hyperlink{structNodeData}{Node\+Data} $\ast$nodedata, \hyperlink{structModelData}{Model\+Data} $\ast$modeldata, const \hyperlink{structMaterialDatas}{Material\+Datas} \&materialdatas)
+\item 
+\hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ \hyperlink{classSprite3D_ab02c08862094a11914bd416751244f36}{get\+Mesh\+Index\+Data} (const std\+::string \&index\+Id) const
+\item 
+\mbox{\Hypertarget{classSprite3D_aa0913954dfa85ef5ef15aaf30ce3b54f}\label{classSprite3D_aa0913954dfa85ef5ef15aaf30ce3b54f}} 
+void {\bfseries add\+Mesh} (\hyperlink{classMesh}{Mesh} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{classSprite3D_a4c88e570782521866b678e1ef11a4056}\label{classSprite3D_a4c88e570782521866b678e1ef11a4056}} 
+void {\bfseries on\+A\+A\+B\+B\+Dirty} ()
+\item 
+\mbox{\Hypertarget{classSprite3D_aa57b9816873f80ce96644e1adcfbf747}\label{classSprite3D_aa57b9816873f80ce96644e1adcfbf747}} 
+void {\bfseries after\+Async\+Load} (void $\ast$param)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{create} ()
+\item 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ \hyperlink{classSprite3D_ab739633591bc691de054e3a5b9a25c32}{create} (const std\+::string \&model\+Path)
+\item 
+\mbox{\Hypertarget{classSprite3D_a9968b9e6d617d872a1938a2a2cc81d32}\label{classSprite3D_a9968b9e6d617d872a1938a2a2cc81d32}} 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ {\bfseries create} (const std\+::string \&model\+Path, const std\+::string \&texture\+Path)
+\item 
+static void \hyperlink{classSprite3D_adcb309ed399180c52eb0e6fc2cf53cef}{create\+Async} (const std\+::string \&model\+Path, const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&callback, void $\ast$callbackparam)
+\item 
+\mbox{\Hypertarget{classSprite3D_a6948c8f68306b4f9ac7ecdac27df09bc}\label{classSprite3D_a6948c8f68306b4f9ac7ecdac27df09bc}} 
+static void {\bfseries create\+Async} (const std\+::string \&model\+Path, const std\+::string \&texture\+Path, const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&callback, void $\ast$callbackparam)
+\item 
+\mbox{\Hypertarget{classSprite3D_a3fa5f076f182c7799e83bb6eec2bbffc}\label{classSprite3D_a3fa5f076f182c7799e83bb6eec2bbffc}} 
+static \hyperlink{classAABB}{A\+A\+BB} {\bfseries get\+A\+A\+B\+B\+Recursively\+Imp} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ \hyperlink{classSprite3D_ac266874371868d5fc125a45fcf31cf6c}{create} ()
+\item 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ \hyperlink{classSprite3D_ab8a42bf2fab8845ead145605c25f1731}{create} (const std\+::string \&model\+Path)
+\item 
+\mbox{\Hypertarget{classSprite3D_aac4f8e1d41d75d574df98b487eccaf97}\label{classSprite3D_aac4f8e1d41d75d574df98b487eccaf97}} 
+static \hyperlink{classSprite3D}{Sprite3D} $\ast$ {\bfseries create} (const std\+::string \&model\+Path, const std\+::string \&texture\+Path)
+\item 
+static void \hyperlink{classSprite3D_a9348148a6cdef8745ba31a593ea47273}{create\+Async} (const std\+::string \&model\+Path, const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&callback, void $\ast$callbackparam)
+\item 
+\mbox{\Hypertarget{classSprite3D_aaf6ddab4db30cd2e017a36c892dd1a9f}\label{classSprite3D_aaf6ddab4db30cd2e017a36c892dd1a9f}} 
+static void {\bfseries create\+Async} (const std\+::string \&model\+Path, const std\+::string \&texture\+Path, const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&callback, void $\ast$callbackparam)
+\item 
+\mbox{\Hypertarget{classSprite3D_a7b36bbde92cfdad4beea19886c4bc7ba}\label{classSprite3D_a7b36bbde92cfdad4beea19886c4bc7ba}} 
+static \hyperlink{classAABB}{A\+A\+BB} {\bfseries get\+A\+A\+B\+B\+Recursively\+Imp} (\hyperlink{classNode}{Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSprite3D_a41b990bc98086225b03e5e77f36aee63}\label{classSprite3D_a41b990bc98086225b03e5e77f36aee63}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classSprite3D}{Sprite3D}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSprite3D_aa3b9f8f3ea19e01c66d3693aff1d92ff}\label{classSprite3D_aa3b9f8f3ea19e01c66d3693aff1d92ff}} 
+\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$ {\bfseries \+\_\+skeleton}
+\item 
+\mbox{\Hypertarget{classSprite3D_a34837786c7d746c0f2290058665a40b6}\label{classSprite3D_a34837786c7d746c0f2290058665a40b6}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classMeshVertexData}{Mesh\+Vertex\+Data} $\ast$ $>$ {\bfseries \+\_\+mesh\+Vertex\+Datas}
+\item 
+\mbox{\Hypertarget{classSprite3D_a3660ada72fb327edd661f1980f84687f}\label{classSprite3D_a3660ada72fb327edd661f1980f84687f}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{classAttachNode}{Attach\+Node} $\ast$ $>$ {\bfseries \+\_\+attachments}
+\item 
+\mbox{\Hypertarget{classSprite3D_a07726f61c45478379027c44f0c91047e}\label{classSprite3D_a07726f61c45478379027c44f0c91047e}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend}
+\item 
+\mbox{\Hypertarget{classSprite3D_a64b78069682d68a04aa3f21dc079a6d2}\label{classSprite3D_a64b78069682d68a04aa3f21dc079a6d2}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ {\bfseries \+\_\+meshes}
+\item 
+\mbox{\Hypertarget{classSprite3D_a31ee3888f08af1ba6569dd24a2dc0401}\label{classSprite3D_a31ee3888f08af1ba6569dd24a2dc0401}} 
+\hyperlink{classAABB}{A\+A\+BB} {\bfseries \+\_\+aabb}
+\item 
+\mbox{\Hypertarget{classSprite3D_a1d4d8e2c9d384ae448e7ca4203e2a6d6}\label{classSprite3D_a1d4d8e2c9d384ae448e7ca4203e2a6d6}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+node\+To\+World\+Transform}
+\item 
+\mbox{\Hypertarget{classSprite3D_a9b46ec37e53a3b4442c229846ffd6026}\label{classSprite3D_a9b46ec37e53a3b4442c229846ffd6026}} 
+bool {\bfseries \+\_\+aabb\+Dirty}
+\item 
+\mbox{\Hypertarget{classSprite3D_a758c16f42966ee30c72e9aa98d188c58}\label{classSprite3D_a758c16f42966ee30c72e9aa98d188c58}} 
+unsigned int {\bfseries \+\_\+light\+Mask}
+\item 
+\mbox{\Hypertarget{classSprite3D_a40b8a899b673623c1877749f47559cba}\label{classSprite3D_a40b8a899b673623c1877749f47559cba}} 
+bool {\bfseries \+\_\+shader\+Using\+Light}
+\item 
+\mbox{\Hypertarget{classSprite3D_aac4616113701eeb8f70d10c5283ef9ec}\label{classSprite3D_aac4616113701eeb8f70d10c5283ef9ec}} 
+bool {\bfseries \+\_\+force\+Depth\+Write}
+\item 
+\mbox{\Hypertarget{classSprite3D_a10af1a3ecfdf922a34bed0cdf4c768fc}\label{classSprite3D_a10af1a3ecfdf922a34bed0cdf4c768fc}} 
+bool {\bfseries \+\_\+using\+Autogenerated\+G\+L\+Program}
+\item 
+\mbox{\Hypertarget{classSprite3D_a28d81382f771ebe7f583eb7e78934661}\label{classSprite3D_a28d81382f771ebe7f583eb7e78934661}} 
+\hyperlink{structSprite3D_1_1AsyncLoadParam}{Async\+Load\+Param} {\bfseries \+\_\+async\+Load\+Param}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSprite3D}{Sprite3D}\+: A sprite can be loaded from 3D model files, .obj, .c3t, .c3b, then can be drawn as sprite. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}\label{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}} 
+\index{Sprite3D@{Sprite3D}!create@{create}}
+\index{create@{create}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classSprite3D}{Sprite3D} $\ast$ Sprite3\+D\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an empty sprite3D without 3D model and texture.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased sprite3D object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSprite3D_ac266874371868d5fc125a45fcf31cf6c}\label{classSprite3D_ac266874371868d5fc125a45fcf31cf6c}} 
+\index{Sprite3D@{Sprite3D}!create@{create}}
+\index{create@{create}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classSprite3D}{Sprite3D}$\ast$ Sprite3\+D\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an empty sprite3D without 3D model and texture.
+
+\begin{DoxyReturn}{Returns}
+An autoreleased sprite3D object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSprite3D_ab739633591bc691de054e3a5b9a25c32}\label{classSprite3D_ab739633591bc691de054e3a5b9a25c32}} 
+\index{Sprite3D@{Sprite3D}!create@{create}}
+\index{create@{create}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classSprite3D}{Sprite3D} $\ast$ Sprite3\+D\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates a \hyperlink{classSprite3D}{Sprite3D} \mbox{\Hypertarget{classSprite3D_ab8a42bf2fab8845ead145605c25f1731}\label{classSprite3D_ab8a42bf2fab8845ead145605c25f1731}} 
+\index{Sprite3D@{Sprite3D}!create@{create}}
+\index{create@{create}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classSprite3D}{Sprite3D}$\ast$ Sprite3\+D\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates a \hyperlink{classSprite3D}{Sprite3D} \mbox{\Hypertarget{classSprite3D_adcb309ed399180c52eb0e6fc2cf53cef}\label{classSprite3D_adcb309ed399180c52eb0e6fc2cf53cef}} 
+\index{Sprite3D@{Sprite3D}!create\+Async@{create\+Async}}
+\index{create\+Async@{create\+Async}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create\+Async()}{createAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::create\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+Path,  }\item[{const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&}]{callback,  }\item[{void $\ast$}]{callbackparam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create 3d sprite asynchronously If the 3d model was previously loaded, it will create a new 3d sprite and the callback will be called at once. Otherwise it will load the model file in a new thread, and when the 3d sprite is loaded, the callback will be called with the created \hyperlink{classSprite3D}{Sprite3D} and a user-\/defined parameter. The callback will be called from the main thread, so it is safe to create any cocos2d object from the callback. 
+\begin{DoxyParams}{Parameters}
+{\em model\+Path} & model to be loaded \\
+\hline
+{\em callback} & callback after loading \\
+\hline
+{\em callbackparam} & user defined parameter for the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSprite3D_a9348148a6cdef8745ba31a593ea47273}\label{classSprite3D_a9348148a6cdef8745ba31a593ea47273}} 
+\index{Sprite3D@{Sprite3D}!create\+Async@{create\+Async}}
+\index{create\+Async@{create\+Async}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{create\+Async()}{createAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Sprite3\+D\+::create\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+Path,  }\item[{const std\+::function$<$ void(\hyperlink{classSprite3D}{Sprite3D} $\ast$, void $\ast$)$>$ \&}]{callback,  }\item[{void $\ast$}]{callbackparam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create 3d sprite asynchronously If the 3d model was previously loaded, it will create a new 3d sprite and the callback will be called at once. Otherwise it will load the model file in a new thread, and when the 3d sprite is loaded, the callback will be called with the created \hyperlink{classSprite3D}{Sprite3D} and a user-\/defined parameter. The callback will be called from the main thread, so it is safe to create any cocos2d object from the callback. 
+\begin{DoxyParams}{Parameters}
+{\em model\+Path} & model to be loaded \\
+\hline
+{\em callback} & callback after loading \\
+\hline
+{\em callbackparam} & user defined parameter for the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSprite3D_ac0d723dba5fb1bf83816f74a6dbe4bf8}\label{classSprite3D_ac0d723dba5fb1bf83816f74a6dbe4bf8}} 
+\index{Sprite3D@{Sprite3D}!draw@{draw}}
+\index{draw@{draw}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+draw 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_a6f6acba3ad6ba8cef63e6cc727df88ab}\label{classSprite3D_a6f6acba3ad6ba8cef63e6cc727df88ab}} 
+\index{Sprite3D@{Sprite3D}!draw@{draw}}
+\index{draw@{draw}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite3\+D\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+draw 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}\label{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}} 
+\index{Sprite3D@{Sprite3D}!gen\+Material@{gen\+Material}}
+\index{gen\+Material@{gen\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{gen\+Material()}{genMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::gen\+Material (\begin{DoxyParamCaption}\item[{bool}]{use\+Light = {\ttfamily false} }\end{DoxyParamCaption})}
+
+generate default material \mbox{\Hypertarget{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}\label{classSprite3D_ac5fc3ddd4aef194a08a1a1285292b329}} 
+\index{Sprite3D@{Sprite3D}!gen\+Material@{gen\+Material}}
+\index{gen\+Material@{gen\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{gen\+Material()}{genMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::gen\+Material (\begin{DoxyParamCaption}\item[{bool}]{use\+Light = {\ttfamily false} }\end{DoxyParamCaption})}
+
+generate default material \mbox{\Hypertarget{classSprite3D_ad1b573c194312fc2ceccae106a18a881}\label{classSprite3D_ad1b573c194312fc2ceccae106a18a881}} 
+\index{Sprite3D@{Sprite3D}!get\+Attach\+Node@{get\+Attach\+Node}}
+\index{get\+Attach\+Node@{get\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Attach\+Node()}{getAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAttachNode}{Attach\+Node} $\ast$ Sprite3\+D\+::get\+Attach\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bone\+Name }\end{DoxyParamCaption})}
+
+get \hyperlink{classAttachNode}{Attach\+Node} by bone name, return nullptr if not exist \mbox{\Hypertarget{classSprite3D_aca7485ada08a322bf2059377e7ee8603}\label{classSprite3D_aca7485ada08a322bf2059377e7ee8603}} 
+\index{Sprite3D@{Sprite3D}!get\+Attach\+Node@{get\+Attach\+Node}}
+\index{get\+Attach\+Node@{get\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Attach\+Node()}{getAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classAttachNode}{Attach\+Node}$\ast$ Sprite3\+D\+::get\+Attach\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bone\+Name }\end{DoxyParamCaption})}
+
+get \hyperlink{classAttachNode}{Attach\+Node} by bone name, return nullptr if not exist \mbox{\Hypertarget{classSprite3D_a45348972b8ce7b37c061b9888b00613a}\label{classSprite3D_a45348972b8ce7b37c061b9888b00613a}} 
+\index{Sprite3D@{Sprite3D}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Bounding\+Box()}{getBoundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRect}{Rect} Sprite3\+D\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns 2d bounding-\/box Note\+: the bounding-\/box is just get from the \hyperlink{classAABB}{A\+A\+BB} which as Z=0, so that is not very accurate. 
+
+Reimplemented from \hyperlink{classNode_a7b3849315467fdb992b273fbd3b3fc66}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_a90cebd7aa44add4a6726710b5642daf4}\label{classSprite3D_a90cebd7aa44add4a6726710b5642daf4}} 
+\index{Sprite3D@{Sprite3D}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Bounding\+Box()}{getBoundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classRect}{Rect} Sprite3\+D\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns 2d bounding-\/box Note\+: the bounding-\/box is just get from the \hyperlink{classAABB}{A\+A\+BB} which as Z=0, so that is not very accurate. 
+
+Reimplemented from \hyperlink{classNode_a7b3849315467fdb992b273fbd3b3fc66}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_accf93d15ef4ee911082d41cea67964bc}\label{classSprite3D_accf93d15ef4ee911082d41cea67964bc}} 
+\index{Sprite3D@{Sprite3D}!get\+Material@{get\+Material}}
+\index{get\+Material@{get\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Material()}{getMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material} $\ast$ Sprite3\+D\+::get\+Material (\begin{DoxyParamCaption}\item[{int}]{mesh\+Index }\end{DoxyParamCaption}) const}
+
+Adds a new material to a particular mesh of the sprite. mesh\+Index is the mesh that will be applied to. if mesh\+Index == -\/1, then it will be applied to all the meshes that belong to the sprite. \mbox{\Hypertarget{classSprite3D_ac30aca9c7b7993d49c68cb6c56863e05}\label{classSprite3D_ac30aca9c7b7993d49c68cb6c56863e05}} 
+\index{Sprite3D@{Sprite3D}!get\+Material@{get\+Material}}
+\index{get\+Material@{get\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Material()}{getMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMaterial}{Material}$\ast$ Sprite3\+D\+::get\+Material (\begin{DoxyParamCaption}\item[{int}]{mesh\+Index }\end{DoxyParamCaption}) const}
+
+Adds a new material to a particular mesh of the sprite. mesh\+Index is the mesh that will be applied to. if mesh\+Index == -\/1, then it will be applied to all the meshes that belong to the sprite. \mbox{\Hypertarget{classSprite3D_ac2ecd09672fb2ab13df3bda9a4ed40c9}\label{classSprite3D_ac2ecd09672fb2ab13df3bda9a4ed40c9}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh@{get\+Mesh}}
+\index{get\+Mesh@{get\+Mesh}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh()}{getMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Sprite3\+D\+::get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get mesh \mbox{\Hypertarget{classSprite3D_ad3f22d4c57c9320ab42e08bf9c97363d}\label{classSprite3D_ad3f22d4c57c9320ab42e08bf9c97363d}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh@{get\+Mesh}}
+\index{get\+Mesh@{get\+Mesh}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh()}{getMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh}$\ast$ Sprite3\+D\+::get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get mesh \mbox{\Hypertarget{classSprite3D_af26e7cf641858e2d96fffae21db2d253}\label{classSprite3D_af26e7cf641858e2d96fffae21db2d253}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Array\+By\+Name@{get\+Mesh\+Array\+By\+Name}}
+\index{get\+Mesh\+Array\+By\+Name@{get\+Mesh\+Array\+By\+Name}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Array\+By\+Name()}{getMeshArrayByName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classMesh}{Mesh} $\ast$ $>$ Sprite3\+D\+::get\+Mesh\+Array\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+get mesh array by name, returns all meshes with the given name
+
+NA \mbox{\Hypertarget{classSprite3D_a5e23abd1b0979b3a8e90b2028ab1c5e7}\label{classSprite3D_a5e23abd1b0979b3a8e90b2028ab1c5e7}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Array\+By\+Name@{get\+Mesh\+Array\+By\+Name}}
+\index{get\+Mesh\+Array\+By\+Name@{get\+Mesh\+Array\+By\+Name}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Array\+By\+Name()}{getMeshArrayByName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classMesh}{Mesh}$\ast$$>$ Sprite3\+D\+::get\+Mesh\+Array\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+get mesh array by name, returns all meshes with the given name
+
+NA \mbox{\Hypertarget{classSprite3D_ad76b814ad82566849ccbf5e534157aa4}\label{classSprite3D_ad76b814ad82566849ccbf5e534157aa4}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+By\+Index@{get\+Mesh\+By\+Index}}
+\index{get\+Mesh\+By\+Index@{get\+Mesh\+By\+Index}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+By\+Index()}{getMeshByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Sprite3\+D\+::get\+Mesh\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMesh}{Mesh} by index \mbox{\Hypertarget{classSprite3D_aec899f921445251fc0011a5bc31c1b2d}\label{classSprite3D_aec899f921445251fc0011a5bc31c1b2d}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+By\+Index@{get\+Mesh\+By\+Index}}
+\index{get\+Mesh\+By\+Index@{get\+Mesh\+By\+Index}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+By\+Index()}{getMeshByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh}$\ast$ Sprite3\+D\+::get\+Mesh\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMesh}{Mesh} by index \mbox{\Hypertarget{classSprite3D_aa06f7456a6193199dfcea7e63ea60857}\label{classSprite3D_aa06f7456a6193199dfcea7e63ea60857}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+By\+Name@{get\+Mesh\+By\+Name}}
+\index{get\+Mesh\+By\+Name@{get\+Mesh\+By\+Name}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+By\+Name()}{getMeshByName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh} $\ast$ Sprite3\+D\+::get\+Mesh\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMesh}{Mesh} by Name, it returns the first one if there are more than one mesh with the same name
+
+get \hyperlink{classMesh}{Mesh} by Name \mbox{\Hypertarget{classSprite3D_a2f2ae610e50e0c8c7e5f6713bebd8a09}\label{classSprite3D_a2f2ae610e50e0c8c7e5f6713bebd8a09}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+By\+Name@{get\+Mesh\+By\+Name}}
+\index{get\+Mesh\+By\+Name@{get\+Mesh\+By\+Name}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+By\+Name()}{getMeshByName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMesh}{Mesh}$\ast$ Sprite3\+D\+::get\+Mesh\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMesh}{Mesh} by Name, it returns the first one if there are more than one mesh with the same name \mbox{\Hypertarget{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}\label{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Count@{get\+Mesh\+Count}}
+\index{get\+Mesh\+Count@{get\+Mesh\+Count}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Count()}{getMeshCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite3\+D\+::get\+Mesh\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get mesh count \mbox{\Hypertarget{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}\label{classSprite3D_a472b051ff3eb91ceaf56eee60257ccae}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Count@{get\+Mesh\+Count}}
+\index{get\+Mesh\+Count@{get\+Mesh\+Count}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Count()}{getMeshCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite3\+D\+::get\+Mesh\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get mesh count \mbox{\Hypertarget{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}\label{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}} 
+\index{Sprite3D@{Sprite3D}!get\+Meshes@{get\+Meshes}}
+\index{get\+Meshes@{get\+Meshes}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Meshes()}{getMeshes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classMesh}{Mesh}$\ast$$>$\& Sprite3\+D\+::get\+Meshes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get meshes used in sprite 3d \mbox{\Hypertarget{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}\label{classSprite3D_a024e3c351fa61b0a8c39dfcd2ee3dd0e}} 
+\index{Sprite3D@{Sprite3D}!get\+Meshes@{get\+Meshes}}
+\index{get\+Meshes@{get\+Meshes}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Meshes()}{getMeshes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classMesh}{Mesh}$\ast$$>$\& Sprite3\+D\+::get\+Meshes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get meshes used in sprite 3d \mbox{\Hypertarget{classSprite3D_a27d281cd27b2da08237b220b368bee2a}\label{classSprite3D_a27d281cd27b2da08237b220b368bee2a}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}}
+\index{get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Index\+Data()}{getMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} $\ast$ Sprite3\+D\+::get\+Mesh\+Index\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{index\+Id }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} by Id \mbox{\Hypertarget{classSprite3D_ab02c08862094a11914bd416751244f36}\label{classSprite3D_ab02c08862094a11914bd416751244f36}} 
+\index{Sprite3D@{Sprite3D}!get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}}
+\index{get\+Mesh\+Index\+Data@{get\+Mesh\+Index\+Data}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Mesh\+Index\+Data()}{getMeshIndexData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshIndexData}{Mesh\+Index\+Data}$\ast$ Sprite3\+D\+::get\+Mesh\+Index\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{index\+Id }\end{DoxyParamCaption}) const}
+
+get \hyperlink{classMeshIndexData}{Mesh\+Index\+Data} by Id \mbox{\Hypertarget{classSprite3D_ae59d2299164cda3a6313eb4bd28b19e4}\label{classSprite3D_ae59d2299164cda3a6313eb4bd28b19e4}} 
+\index{Sprite3D@{Sprite3D}!get\+Skin@{get\+Skin}}
+\index{get\+Skin@{get\+Skin}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Skin()}{getSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ Sprite3\+D\+::get\+Skin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get skin \mbox{\Hypertarget{classSprite3D_a3dc3117e72c4bcd841e7fd4ee56f2b98}\label{classSprite3D_a3dc3117e72c4bcd841e7fd4ee56f2b98}} 
+\index{Sprite3D@{Sprite3D}!get\+Skin@{get\+Skin}}
+\index{get\+Skin@{get\+Skin}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{get\+Skin()}{getSkin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classMeshSkin}{Mesh\+Skin}$\ast$ Sprite3\+D\+::get\+Skin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get skin \mbox{\Hypertarget{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}\label{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}} 
+\index{Sprite3D@{Sprite3D}!load\+From\+Cache@{load\+From\+Cache}}
+\index{load\+From\+Cache@{load\+From\+Cache}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{load\+From\+Cache()}{loadFromCache()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+::load\+From\+Cache (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+load sprite3d from cache, return true if succeed, false otherwise \mbox{\Hypertarget{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}\label{classSprite3D_aeeec351e43e4ccc2d1782bb7652db960}} 
+\index{Sprite3D@{Sprite3D}!load\+From\+Cache@{load\+From\+Cache}}
+\index{load\+From\+Cache@{load\+From\+Cache}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{load\+From\+Cache()}{loadFromCache()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+::load\+From\+Cache (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+load sprite3d from cache, return true if succeed, false otherwise \mbox{\Hypertarget{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}\label{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}} 
+\index{Sprite3D@{Sprite3D}!load\+From\+File@{load\+From\+File}}
+\index{load\+From\+File@{load\+From\+File}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{load\+From\+File()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\hyperlink{structNodeDatas}{Node\+Datas} $\ast$}]{nodedatas,  }\item[{\hyperlink{structMeshDatas}{Mesh\+Datas} $\ast$}]{meshdatas,  }\item[{\hyperlink{structMaterialDatas}{Material\+Datas} $\ast$}]{materialdatas }\end{DoxyParamCaption})}
+
+load file and set it to meshedatas, nodedatas and materialdatas, obj file .mtl file should be at the same directory if exist \mbox{\Hypertarget{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}\label{classSprite3D_a4927dfcc1a6cd4a2e7429b501da0d10d}} 
+\index{Sprite3D@{Sprite3D}!load\+From\+File@{load\+From\+File}}
+\index{load\+From\+File@{load\+From\+File}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{load\+From\+File()}{loadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite3\+D\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\hyperlink{structNodeDatas}{Node\+Datas} $\ast$}]{nodedatas,  }\item[{\hyperlink{structMeshDatas}{Mesh\+Datas} $\ast$}]{meshdatas,  }\item[{\hyperlink{structMaterialDatas}{Material\+Datas} $\ast$}]{materialdatas }\end{DoxyParamCaption})}
+
+load file and set it to meshedatas, nodedatas and materialdatas, obj file .mtl file should be at the same directory if exist \mbox{\Hypertarget{classSprite3D_a65c7b8151da52aa226c6fd89942da971}\label{classSprite3D_a65c7b8151da52aa226c6fd89942da971}} 
+\index{Sprite3D@{Sprite3D}!remove\+All\+Attach\+Node@{remove\+All\+Attach\+Node}}
+\index{remove\+All\+Attach\+Node@{remove\+All\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Attach\+Node()}{removeAllAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::remove\+All\+Attach\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all attach nodes \mbox{\Hypertarget{classSprite3D_a65c7b8151da52aa226c6fd89942da971}\label{classSprite3D_a65c7b8151da52aa226c6fd89942da971}} 
+\index{Sprite3D@{Sprite3D}!remove\+All\+Attach\+Node@{remove\+All\+Attach\+Node}}
+\index{remove\+All\+Attach\+Node@{remove\+All\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{remove\+All\+Attach\+Node()}{removeAllAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::remove\+All\+Attach\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all attach nodes \mbox{\Hypertarget{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}\label{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}} 
+\index{Sprite3D@{Sprite3D}!remove\+Attach\+Node@{remove\+Attach\+Node}}
+\index{remove\+Attach\+Node@{remove\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{remove\+Attach\+Node()}{removeAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::remove\+Attach\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bone\+Name }\end{DoxyParamCaption})}
+
+remove attach node \mbox{\Hypertarget{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}\label{classSprite3D_a39e52d6b3fc8cf7e8fe5dfb047880308}} 
+\index{Sprite3D@{Sprite3D}!remove\+Attach\+Node@{remove\+Attach\+Node}}
+\index{remove\+Attach\+Node@{remove\+Attach\+Node}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{remove\+Attach\+Node()}{removeAttachNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::remove\+Attach\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bone\+Name }\end{DoxyParamCaption})}
+
+remove attach node \mbox{\Hypertarget{classSprite3D_a6447200e96db21bc79df873e598fcf4a}\label{classSprite3D_a6447200e96db21bc79df873e598fcf4a}} 
+\index{Sprite3D@{Sprite3D}!run\+Action@{run\+Action}}
+\index{run\+Action@{run\+Action}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{run\+Action()}{runAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAction}{Action} $\ast$ Sprite3\+D\+::run\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes an action, and returns the action that is executed. For \hyperlink{classSprite3D}{Sprite3D} special logic are needed to take care of Fading.
+
+This node becomes the action\textquotesingle{}s target. Refer to \hyperlink{classAction_a696d1ef82807cc18207ba93d59d6ca16}{Action\+::get\+Target()} \begin{DoxyWarning}{Warning}
+\hyperlink{classActions}{Actions} don\textquotesingle{}t retain their target.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{classAction}{Action} pointer 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a07b8c313d5c753c5dbabbe68c77f3128}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_acd2905d934e4d7c873b8a1973297d2a8}\label{classSprite3D_acd2905d934e4d7c873b8a1973297d2a8}} 
+\index{Sprite3D@{Sprite3D}!run\+Action@{run\+Action}}
+\index{run\+Action@{run\+Action}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{run\+Action()}{runAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAction}{Action}$\ast$ Sprite3\+D\+::run\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes an action, and returns the action that is executed. For \hyperlink{classSprite3D}{Sprite3D} special logic are needed to take care of Fading.
+
+This node becomes the action\textquotesingle{}s target. Refer to \hyperlink{classAction_a696d1ef82807cc18207ba93d59d6ca16}{Action\+::get\+Target()} \begin{DoxyWarning}{Warning}
+\hyperlink{classActions}{Actions} don\textquotesingle{}t retain their target.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{classAction}{Action} pointer 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a07b8c313d5c753c5dbabbe68c77f3128}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}\label{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}} 
+\index{Sprite3D@{Sprite3D}!set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}}
+\index{set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Force2\+D\+Queue()}{setForce2DQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Force2\+D\+Queue (\begin{DoxyParamCaption}\item[{bool}]{force2D }\end{DoxyParamCaption})}
+
+force set this \hyperlink{classSprite3D}{Sprite3D} to 2D render queue \mbox{\Hypertarget{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}\label{classSprite3D_af1ed52e0440a81ce14577834b5073e1d}} 
+\index{Sprite3D@{Sprite3D}!set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}}
+\index{set\+Force2\+D\+Queue@{set\+Force2\+D\+Queue}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Force2\+D\+Queue()}{setForce2DQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Force2\+D\+Queue (\begin{DoxyParamCaption}\item[{bool}]{force2D }\end{DoxyParamCaption})}
+
+force set this \hyperlink{classSprite3D}{Sprite3D} to 2D render queue \mbox{\Hypertarget{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}\label{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}} 
+\index{Sprite3D@{Sprite3D}!set\+Force\+Depth\+Write@{set\+Force\+Depth\+Write}}
+\index{set\+Force\+Depth\+Write@{set\+Force\+Depth\+Write}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Force\+Depth\+Write()}{setForceDepthWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Force\+Depth\+Write (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Force to write to depth buffer, this is useful if you want to achieve effects like fading. \mbox{\Hypertarget{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}\label{classSprite3D_ae6bea19d97b02dfecb63d8975600aa4a}} 
+\index{Sprite3D@{Sprite3D}!set\+Force\+Depth\+Write@{set\+Force\+Depth\+Write}}
+\index{set\+Force\+Depth\+Write@{set\+Force\+Depth\+Write}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Force\+Depth\+Write()}{setForceDepthWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Force\+Depth\+Write (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Force to write to depth buffer, this is useful if you want to achieve effects like fading. \mbox{\Hypertarget{classSprite3D_addcfa64162310ce40ec097738442af9f}\label{classSprite3D_addcfa64162310ce40ec097738442af9f}} 
+\index{Sprite3D@{Sprite3D}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+just remember bind attributes 
+
+Reimplemented from \hyperlink{classNode_a16ac830f1b38ae931da062c0833b2db0}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_aa71609d7f3a35a0d86a70f28bafffa9c}\label{classSprite3D_aa71609d7f3a35a0d86a70f28bafffa9c}} 
+\index{Sprite3D@{Sprite3D}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite3\+D\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+just remember bind attributes 
+
+Reimplemented from \hyperlink{classNode_a16ac830f1b38ae931da062c0833b2db0}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_ab9e57d29350dc6886360d433c023b935}\label{classSprite3D_ab9e57d29350dc6886360d433c023b935}} 
+\index{Sprite3D@{Sprite3D}!set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}}
+\index{set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program\+State()}{setGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+set \hyperlink{classGLProgramState}{G\+L\+Program\+State}, you should bind attributes by yourself 
+
+Reimplemented from \hyperlink{classNode_a3fe706d4e7b601eee9ccc8eb8ecf90c0}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_a8bfa814ae2f4584b69dbb776de1c327b}\label{classSprite3D_a8bfa814ae2f4584b69dbb776de1c327b}} 
+\index{Sprite3D@{Sprite3D}!set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}}
+\index{set\+G\+L\+Program\+State@{set\+G\+L\+Program\+State}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program\+State()}{setGLProgramState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite3\+D\+::set\+G\+L\+Program\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$}]{gl\+Program\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+set \hyperlink{classGLProgramState}{G\+L\+Program\+State}, you should bind attributes by yourself 
+
+Reimplemented from \hyperlink{classNode_a3fe706d4e7b601eee9ccc8eb8ecf90c0}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}\label{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}} 
+\index{Sprite3D@{Sprite3D}!set\+Light\+Mask@{set\+Light\+Mask}}
+\index{set\+Light\+Mask@{set\+Light\+Mask}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Light\+Mask()}{setLightMask()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Light\+Mask (\begin{DoxyParamCaption}\item[{unsigned int}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+light mask getter \& setter, light works only when \+\_\+lightmask \& light\textquotesingle{}s flag is true, default value of \+\_\+lightmask is 0xffff \mbox{\Hypertarget{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}\label{classSprite3D_a0fa47c29a1b6e9cf7a0a2eaa45c1e43a}} 
+\index{Sprite3D@{Sprite3D}!set\+Light\+Mask@{set\+Light\+Mask}}
+\index{set\+Light\+Mask@{set\+Light\+Mask}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Light\+Mask()}{setLightMask()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Light\+Mask (\begin{DoxyParamCaption}\item[{unsigned int}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+light mask getter \& setter, light works only when \+\_\+lightmask \& light\textquotesingle{}s flag is true, default value of \+\_\+lightmask is 0xffff \mbox{\Hypertarget{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}\label{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}} 
+\index{Sprite3D@{Sprite3D}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material }\end{DoxyParamCaption})}
+
+Adds a new material to the sprite. The \hyperlink{classMaterial}{Material} will be applied to all the meshes that belong to the sprite. Internally it will call {\ttfamily set\+Material(material,-\/1)} \mbox{\Hypertarget{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}\label{classSprite3D_ac984a24d1e5fc0e9071eef14e5041c42}} 
+\index{Sprite3D@{Sprite3D}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material }\end{DoxyParamCaption})}
+
+Adds a new material to the sprite. The \hyperlink{classMaterial}{Material} will be applied to all the meshes that belong to the sprite. Internally it will call {\ttfamily set\+Material(material,-\/1)} \mbox{\Hypertarget{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}\label{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}} 
+\index{Sprite3D@{Sprite3D}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material,  }\item[{int}]{mesh\+Index }\end{DoxyParamCaption})}
+
+Adds a new material to a particular mesh of the sprite. mesh\+Index is the mesh that will be applied to. if mesh\+Index == -\/1, then it will be applied to all the meshes that belong to the sprite. \mbox{\Hypertarget{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}\label{classSprite3D_a83fef9c35a0cb8866426b3e709ed5fab}} 
+\index{Sprite3D@{Sprite3D}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Material()}{setMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Material (\begin{DoxyParamCaption}\item[{\hyperlink{classMaterial}{Material} $\ast$}]{material,  }\item[{int}]{mesh\+Index }\end{DoxyParamCaption})}
+
+Adds a new material to a particular mesh of the sprite. mesh\+Index is the mesh that will be applied to. if mesh\+Index == -\/1, then it will be applied to all the meshes that belong to the sprite. \mbox{\Hypertarget{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}\label{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}} 
+\index{Sprite3D@{Sprite3D}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+File }\end{DoxyParamCaption})}
+
+set diffuse texture, set the first if multiple textures exist \mbox{\Hypertarget{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}\label{classSprite3D_af6dc6865a71a7e768a089e5d2704b7dc}} 
+\index{Sprite3D@{Sprite3D}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite3\+D\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+File }\end{DoxyParamCaption})}
+
+set diffuse texture, set the first if multiple textures exist \mbox{\Hypertarget{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}\label{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}} 
+\index{Sprite3D@{Sprite3D}!visit@{visit}}
+\index{visit@{visit}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sprite3\+D\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this \hyperlink{classSprite3D}{Sprite3D}\textquotesingle{}s children and draw them recursively. Note\+: all its children will rendered as 3D objects 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}\label{classSprite3D_a7c6db1d1a851a0a1d2ca17f4c9ad8c67}} 
+\index{Sprite3D@{Sprite3D}!visit@{visit}}
+\index{visit@{visit}!Sprite3D@{Sprite3D}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite3\+D\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this \hyperlink{classSprite3D}{Sprite3D}\textquotesingle{}s children and draw them recursively. Note\+: all its children will rendered as 3D objects 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Sprite3\+D.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Sprite3\+D.\+cpp\end{DoxyCompactItemize}

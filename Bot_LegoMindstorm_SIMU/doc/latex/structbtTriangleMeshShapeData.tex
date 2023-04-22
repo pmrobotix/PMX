@@ -1,0 +1,55 @@
+\hypertarget{structbtTriangleMeshShapeData}{}\section{bt\+Triangle\+Mesh\+Shape\+Data Struct Reference}
+\label{structbtTriangleMeshShapeData}\index{bt\+Triangle\+Mesh\+Shape\+Data@{bt\+Triangle\+Mesh\+Shape\+Data}}
+
+
+do not change those serialization structures, it requires an updated s\+Bullet\+D\+N\+Astr/s\+Bullet\+D\+N\+Astr64  
+
+
+
+
+{\ttfamily \#include $<$bt\+Bvh\+Triangle\+Mesh\+Shape.\+h$>$}
+
+
+
+Collaboration diagram for bt\+Triangle\+Mesh\+Shape\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtTriangleMeshShapeData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_a506e71267b5147cfbb1d2e0608d2df03}\label{structbtTriangleMeshShapeData_a506e71267b5147cfbb1d2e0608d2df03}} 
+\hyperlink{structbtCollisionShapeData}{bt\+Collision\+Shape\+Data} {\bfseries m\+\_\+collision\+Shape\+Data}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_a09fa7f39afd4977baebde7c100b64e62}\label{structbtTriangleMeshShapeData_a09fa7f39afd4977baebde7c100b64e62}} 
+\hyperlink{structbtStridingMeshInterfaceData}{bt\+Striding\+Mesh\+Interface\+Data} {\bfseries m\+\_\+mesh\+Interface}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_aaf6efdc294280ec115339a74e68ecfe8}\label{structbtTriangleMeshShapeData_aaf6efdc294280ec115339a74e68ecfe8}} 
+\hyperlink{structbtQuantizedBvhFloatData}{bt\+Quantized\+Bvh\+Float\+Data} $\ast$ {\bfseries m\+\_\+quantized\+Float\+Bvh}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_ab8cec38d0834928c1b4f910fe3a1c1ee}\label{structbtTriangleMeshShapeData_ab8cec38d0834928c1b4f910fe3a1c1ee}} 
+\hyperlink{structbtQuantizedBvhDoubleData}{bt\+Quantized\+Bvh\+Double\+Data} $\ast$ {\bfseries m\+\_\+quantized\+Double\+Bvh}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_ad28344fa51594b8aceed24f41249a8f3}\label{structbtTriangleMeshShapeData_ad28344fa51594b8aceed24f41249a8f3}} 
+\hyperlink{structbtTriangleInfoMapData}{bt\+Triangle\+Info\+Map\+Data} $\ast$ {\bfseries m\+\_\+triangle\+Info\+Map}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_a7e26d428e0a04f8ea794189d7d378d70}\label{structbtTriangleMeshShapeData_a7e26d428e0a04f8ea794189d7d378d70}} 
+float {\bfseries m\+\_\+collision\+Margin}
+\item 
+\mbox{\Hypertarget{structbtTriangleMeshShapeData_a95fb0ecd84a2e0b0653717d1739a2c96}\label{structbtTriangleMeshShapeData_a95fb0ecd84a2e0b0653717d1739a2c96}} 
+char {\bfseries m\+\_\+pad3} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+do not change those serialization structures, it requires an updated s\+Bullet\+D\+N\+Astr/s\+Bullet\+D\+N\+Astr64 
+
+The bt\+Bvh\+Triangle\+Mesh\+Shape is a static-\/triangle mesh shape, it can only be used for fixed/non-\/moving objects. If you required moving concave triangle meshes, it is recommended to perform convex decomposition using H\+A\+CD, see Bullet/\+Demos/\+Convex\+Decomposition\+Demo. Alternatively, you can use bt\+Gimpact\+Mesh\+Shape for moving concave triangle meshes. bt\+Bvh\+Triangle\+Mesh\+Shape has several optimizations, such as bounding volume hierarchy and cache friendly traversal for Play\+Station 3 Cell S\+PU. It is recommended to enable use\+Quantized\+Aabb\+Compression for better memory usage. It takes a triangle mesh as input, for example a \hyperlink{classbtTriangleMesh}{bt\+Triangle\+Mesh} or bt\+Triangle\+Index\+Vertex\+Array. The bt\+Bvh\+Triangle\+Mesh\+Shape class allows for triangle mesh deformations by a refit or partial\+Refit method. Instead of building the bounding volume hierarchy acceleration structure, it is also possible to serialize (save) and deserialize (load) the structure from disk. See Demos\textbackslash{}\+Concave\+Demo\textbackslash{}\+Concave\+Physics\+Demo.\+cpp for an example. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Shapes/bt\+Bvh\+Triangle\+Mesh\+Shape.\+h\end{DoxyCompactItemize}

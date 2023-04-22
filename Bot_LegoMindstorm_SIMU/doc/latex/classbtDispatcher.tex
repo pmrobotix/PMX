@@ -1,0 +1,112 @@
+\hypertarget{classbtDispatcher}{}\section{bt\+Dispatcher Class Reference}
+\label{classbtDispatcher}\index{bt\+Dispatcher@{bt\+Dispatcher}}
+
+
+{\ttfamily \#include $<$bt\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classbtDispatcher__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a9214731648f5b2d5d55192b5bf649cf9}\label{classbtDispatcher_a9214731648f5b2d5d55192b5bf649cf9}} 
+virtual \hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm} $\ast$ {\bfseries find\+Algorithm} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bt\+Persistent\+Manifold $\ast$shared\+Manifold=0)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a8c7798c84a4ec8da239b70797fa5abf2}\label{classbtDispatcher_a8c7798c84a4ec8da239b70797fa5abf2}} 
+virtual bt\+Persistent\+Manifold $\ast$ {\bfseries get\+New\+Manifold} (const bt\+Collision\+Object $\ast$b0, const bt\+Collision\+Object $\ast$b1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a6bfc10aa51f95d8e536e68fc46607d83}\label{classbtDispatcher_a6bfc10aa51f95d8e536e68fc46607d83}} 
+virtual void {\bfseries release\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a2d07cb876691cd466dc3228074c794b4}\label{classbtDispatcher_a2d07cb876691cd466dc3228074c794b4}} 
+virtual void {\bfseries clear\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a9a470a0e86347332ab6f1060a9e07362}\label{classbtDispatcher_a9a470a0e86347332ab6f1060a9e07362}} 
+virtual bool {\bfseries needs\+Collision} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_aa3ac9c7d70da34e5647da1018880624d}\label{classbtDispatcher_aa3ac9c7d70da34e5647da1018880624d}} 
+virtual bool {\bfseries needs\+Response} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a2cc3450c2715feb9e36a34a98adaa005}\label{classbtDispatcher_a2cc3450c2715feb9e36a34a98adaa005}} 
+virtual void {\bfseries dispatch\+All\+Collision\+Pairs} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a0c94a046ac053c226d43211c5379c31f}\label{classbtDispatcher_a0c94a046ac053c226d43211c5379c31f}} 
+virtual int {\bfseries get\+Num\+Manifolds} () const =0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a39b0732750f15f48d2e8faa2de18d4e0}\label{classbtDispatcher_a39b0732750f15f48d2e8faa2de18d4e0}} 
+virtual bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Manifold\+By\+Index\+Internal} (int index)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a6dc66e497da821c3646e1f89f7d53412}\label{classbtDispatcher_a6dc66e497da821c3646e1f89f7d53412}} 
+virtual bt\+Persistent\+Manifold $\ast$$\ast$ {\bfseries get\+Internal\+Manifold\+Pointer} ()=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_aa2f5918d1905cd291a10ced30b182c9c}\label{classbtDispatcher_aa2f5918d1905cd291a10ced30b182c9c}} 
+virtual \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} $\ast$ {\bfseries get\+Internal\+Manifold\+Pool} ()=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a19470efec674c942b691c156dc89df40}\label{classbtDispatcher_a19470efec674c942b691c156dc89df40}} 
+virtual const \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} $\ast$ {\bfseries get\+Internal\+Manifold\+Pool} () const =0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a0f0b69ca4c16a66abdabf3575b655e78}\label{classbtDispatcher_a0f0b69ca4c16a66abdabf3575b655e78}} 
+virtual void $\ast$ {\bfseries allocate\+Collision\+Algorithm} (int size)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a70380f4805e189f34a56fcbf3eab5aaf}\label{classbtDispatcher_a70380f4805e189f34a56fcbf3eab5aaf}} 
+virtual void {\bfseries free\+Collision\+Algorithm} (void $\ast$ptr)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a9214731648f5b2d5d55192b5bf649cf9}\label{classbtDispatcher_a9214731648f5b2d5d55192b5bf649cf9}} 
+virtual \hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm} $\ast$ {\bfseries find\+Algorithm} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bt\+Persistent\+Manifold $\ast$shared\+Manifold=0)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a8c7798c84a4ec8da239b70797fa5abf2}\label{classbtDispatcher_a8c7798c84a4ec8da239b70797fa5abf2}} 
+virtual bt\+Persistent\+Manifold $\ast$ {\bfseries get\+New\+Manifold} (const bt\+Collision\+Object $\ast$b0, const bt\+Collision\+Object $\ast$b1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a6bfc10aa51f95d8e536e68fc46607d83}\label{classbtDispatcher_a6bfc10aa51f95d8e536e68fc46607d83}} 
+virtual void {\bfseries release\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a2d07cb876691cd466dc3228074c794b4}\label{classbtDispatcher_a2d07cb876691cd466dc3228074c794b4}} 
+virtual void {\bfseries clear\+Manifold} (bt\+Persistent\+Manifold $\ast$manifold)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a9a470a0e86347332ab6f1060a9e07362}\label{classbtDispatcher_a9a470a0e86347332ab6f1060a9e07362}} 
+virtual bool {\bfseries needs\+Collision} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_aa3ac9c7d70da34e5647da1018880624d}\label{classbtDispatcher_aa3ac9c7d70da34e5647da1018880624d}} 
+virtual bool {\bfseries needs\+Response} (const bt\+Collision\+Object $\ast$body0, const bt\+Collision\+Object $\ast$body1)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a2cc3450c2715feb9e36a34a98adaa005}\label{classbtDispatcher_a2cc3450c2715feb9e36a34a98adaa005}} 
+virtual void {\bfseries dispatch\+All\+Collision\+Pairs} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a0c94a046ac053c226d43211c5379c31f}\label{classbtDispatcher_a0c94a046ac053c226d43211c5379c31f}} 
+virtual int {\bfseries get\+Num\+Manifolds} () const =0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a39b0732750f15f48d2e8faa2de18d4e0}\label{classbtDispatcher_a39b0732750f15f48d2e8faa2de18d4e0}} 
+virtual bt\+Persistent\+Manifold $\ast$ {\bfseries get\+Manifold\+By\+Index\+Internal} (int index)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a6dc66e497da821c3646e1f89f7d53412}\label{classbtDispatcher_a6dc66e497da821c3646e1f89f7d53412}} 
+virtual bt\+Persistent\+Manifold $\ast$$\ast$ {\bfseries get\+Internal\+Manifold\+Pointer} ()=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_aa2f5918d1905cd291a10ced30b182c9c}\label{classbtDispatcher_aa2f5918d1905cd291a10ced30b182c9c}} 
+virtual \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} $\ast$ {\bfseries get\+Internal\+Manifold\+Pool} ()=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a19470efec674c942b691c156dc89df40}\label{classbtDispatcher_a19470efec674c942b691c156dc89df40}} 
+virtual const \hyperlink{classbtPoolAllocator}{bt\+Pool\+Allocator} $\ast$ {\bfseries get\+Internal\+Manifold\+Pool} () const =0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a0f0b69ca4c16a66abdabf3575b655e78}\label{classbtDispatcher_a0f0b69ca4c16a66abdabf3575b655e78}} 
+virtual void $\ast$ {\bfseries allocate\+Collision\+Algorithm} (int size)=0
+\item 
+\mbox{\Hypertarget{classbtDispatcher_a70380f4805e189f34a56fcbf3eab5aaf}\label{classbtDispatcher_a70380f4805e189f34a56fcbf3eab5aaf}} 
+virtual void {\bfseries free\+Collision\+Algorithm} (void $\ast$ptr)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtDispatcher}{bt\+Dispatcher} interface class can be used in combination with broadphase to dispatch calculations for overlapping pairs. For example for pairwise collision detection, calculating contact points stored in bt\+Persistent\+Manifold or user callbacks (game logic). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Broadphase\+Collision/bt\+Dispatcher.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Broadphase\+Collision/bt\+Dispatcher.\+cpp\end{DoxyCompactItemize}

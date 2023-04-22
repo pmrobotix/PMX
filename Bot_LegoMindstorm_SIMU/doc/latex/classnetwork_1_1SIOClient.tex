@@ -1,0 +1,268 @@
+\hypertarget{classnetwork_1_1SIOClient}{}\section{network\+:\+:S\+I\+O\+Client Class Reference}
+\label{classnetwork_1_1SIOClient}\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+
+
+{\ttfamily \#include $<$Socket\+I\+O.\+h$>$}
+
+
+
+Inheritance diagram for network\+:\+:S\+I\+O\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classnetwork_1_1SIOClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for network\+:\+:S\+I\+O\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classnetwork_1_1SIOClient__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetwork_1_1SIOClient_a21140a7daced6d272691187aba28fddf}{S\+I\+O\+Client} (const std\+::string \&host, int port, const std\+::string \&path, \hyperlink{classnetwork_1_1SIOClientImpl}{S\+I\+O\+Client\+Impl} $\ast$impl, \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&delegate)
+\item 
+virtual \hyperlink{classnetwork_1_1SIOClient_ae9599bf5c7057f10a3eaff37d1b39274}{$\sim$\+S\+I\+O\+Client} ()
+\item 
+\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} $\ast$ \hyperlink{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}{get\+Delegate} ()
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}{disconnect} ()
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}{send} (const std\+::string \&s)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}{emit} (const std\+::string \&eventname, const std\+::string \&args)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}{on} (const std\+::string \&event\+Name, S\+I\+O\+Event e)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}{set\+Tag} (const char $\ast$tag)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}{get\+Tag} ()
+\item 
+\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} $\ast$ \hyperlink{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}{get\+Delegate} ()
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}{disconnect} ()
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}{send} (const std\+::string \&s)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_ad5da425464d1155b8f8fbc63ca622278}\label{classnetwork_1_1SIOClient_ad5da425464d1155b8f8fbc63ca622278}} 
+void {\bfseries send} (const std\+::vector$<$ std\+::string $>$ \&s)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}{emit} (const std\+::string \&eventname, const std\+::string \&args)
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a6e2735ce8c597adc46b38f9e6e97b712}\label{classnetwork_1_1SIOClient_a6e2735ce8c597adc46b38f9e6e97b712}} 
+void {\bfseries emit} (const std\+::string \&eventname, const std\+::vector$<$ std\+::string $>$ \&args)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}{on} (const std\+::string \&event\+Name, S\+I\+O\+Event e)
+\item 
+void \hyperlink{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}{set\+Tag} (const char $\ast$tag)
+\item 
+const char $\ast$ \hyperlink{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}{get\+Tag} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a377686538a58c24579aedab879d4b9db}\label{classnetwork_1_1SIOClient_a377686538a58c24579aedab879d4b9db}} 
+class {\bfseries S\+I\+O\+Client\+Impl}
+\item 
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_afd5ee524aa1969ca2242b05bf53cde85}\label{classnetwork_1_1SIOClient_afd5ee524aa1969ca2242b05bf53cde85}} 
+class {\bfseries Socket\+IO}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A single connection to a socket.\+io endpoint.
+
+NA 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a21140a7daced6d272691187aba28fddf}\label{classnetwork_1_1SIOClient_a21140a7daced6d272691187aba28fddf}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!S\+I\+O\+Client@{S\+I\+O\+Client}}
+\index{S\+I\+O\+Client@{S\+I\+O\+Client}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{S\+I\+O\+Client()}{SIOClient()}}
+{\footnotesize\ttfamily network\+::\+S\+I\+O\+Client\+::\+S\+I\+O\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{port,  }\item[{const std\+::string \&}]{path,  }\item[{\hyperlink{classnetwork_1_1SIOClientImpl}{S\+I\+O\+Client\+Impl} $\ast$}]{impl,  }\item[{\hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate} \&}]{delegate }\end{DoxyParamCaption})}
+
+Constructor of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & the string that represent the host address. \\
+\hline
+{\em port} & the int value represent the port number. \\
+\hline
+{\em path} & the string that represent endpoint. \\
+\hline
+{\em impl} & the \hyperlink{classnetwork_1_1SIOClientImpl}{S\+I\+O\+Client\+Impl} object. \\
+\hline
+{\em delegate} & the S\+I\+O\+Delegate object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_ae9599bf5c7057f10a3eaff37d1b39274}\label{classnetwork_1_1SIOClient_ae9599bf5c7057f10a3eaff37d1b39274}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!````~S\+I\+O\+Client@{$\sim$\+S\+I\+O\+Client}}
+\index{````~S\+I\+O\+Client@{$\sim$\+S\+I\+O\+Client}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+I\+O\+Client()}{~SIOClient()}}
+{\footnotesize\ttfamily network\+::\+S\+I\+O\+Client\+::$\sim$\+S\+I\+O\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}\label{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Disconnect from the endpoint, on\+Close will be called for the delegate when complete \mbox{\Hypertarget{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}\label{classnetwork_1_1SIOClient_a6c4188b812cef24b1aa9c31bb44f2cae}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Disconnect from the endpoint, on\+Close will be called for the delegate when complete \mbox{\Hypertarget{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}\label{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!emit@{emit}}
+\index{emit@{emit}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{emit()}{emit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::emit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{eventname,  }\item[{const std\+::string \&}]{args }\end{DoxyParamCaption})}
+
+Emit the eventname and the args to the endpoint that \+\_\+path point to. 
+\begin{DoxyParams}{Parameters}
+{\em eventname} & \\
+\hline
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}\label{classnetwork_1_1SIOClient_a6467c540e8efb9c2f291746f0e0b7ab9}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!emit@{emit}}
+\index{emit@{emit}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{emit()}{emit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::emit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{eventname,  }\item[{const std\+::string \&}]{args }\end{DoxyParamCaption})}
+
+Emit the eventname and the args to the endpoint that \+\_\+path point to. 
+\begin{DoxyParams}{Parameters}
+{\em eventname} & \\
+\hline
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}\label{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate}$\ast$ network\+::\+S\+I\+O\+Client\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the delegate for the client \begin{DoxyReturn}{Returns}
+the delegate object for the client 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}\label{classnetwork_1_1SIOClient_a0129a31808dc90c1423f5b991e0fb9ad}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classnetwork_1_1SocketIO_1_1SIODelegate}{Socket\+I\+O\+::\+S\+I\+O\+Delegate}$\ast$ network\+::\+S\+I\+O\+Client\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the delegate for the client \begin{DoxyReturn}{Returns}
+the delegate object for the client 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}\label{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+S\+I\+O\+Client\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get tag of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}. \begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer point to the \+\_\+tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}\label{classnetwork_1_1SIOClient_a4a3c602ea681844be68e158a95a0e75d}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ network\+::\+S\+I\+O\+Client\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get tag of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}. \begin{DoxyReturn}{Returns}
+const char$\ast$ the pointer point to the \+\_\+tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}\label{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!on@{on}}
+\index{on@{on}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{on()}{on()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::on (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{S\+I\+O\+Event}]{e }\end{DoxyParamCaption})}
+
+Used to register a socket.\+io event callback. \hyperlink{classEvent}{Event} argument should be passed using C\+C\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K2(\&\+Base\+::function, this). 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & the name of event. \\
+\hline
+{\em e} & the callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}\label{classnetwork_1_1SIOClient_af598d6039c7de3a591e628f754a38d9e}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!on@{on}}
+\index{on@{on}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{on()}{on()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::on (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name,  }\item[{S\+I\+O\+Event}]{e }\end{DoxyParamCaption})}
+
+Used to register a socket.\+io event callback. \hyperlink{classEvent}{Event} argument should be passed using C\+C\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K2(\&\+Base\+::function, this). 
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & the name of event. \\
+\hline
+{\em e} & the callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}\label{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!send@{send}}
+\index{send@{send}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+Send a message to the socket.\+io server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}\label{classnetwork_1_1SIOClient_a868d719567a33b92475ee1baddc10648}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!send@{send}}
+\index{send@{send}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+Send a message to the socket.\+io server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}\label{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::set\+Tag (\begin{DoxyParamCaption}\item[{const char $\ast$}]{tag }\end{DoxyParamCaption})}
+
+Set tag of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}. The tag is used to distinguish the various \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} objects. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & string object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}\label{classnetwork_1_1SIOClient_a61511bcf1cfb9cd450ac7babd650c441}} 
+\index{network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!network\+::\+S\+I\+O\+Client@{network\+::\+S\+I\+O\+Client}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void network\+::\+S\+I\+O\+Client\+::set\+Tag (\begin{DoxyParamCaption}\item[{const char $\ast$}]{tag }\end{DoxyParamCaption})}
+
+Set tag of \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client}. The tag is used to distinguish the various \hyperlink{classnetwork_1_1SIOClient}{S\+I\+O\+Client} objects. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & string object. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Socket\+I\+O.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/network/Socket\+I\+O.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{mouse__sensor_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.h File Reference}
+\label{mouse__sensor_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for mouse\+\_\+sensor.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{mouse__sensor_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse__sensor_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mouse__sensor_8h_a61a338b008f500f15eb61c410f2c2570}\label{mouse__sensor_8h_a61a338b008f500f15eb61c410f2c2570}} 
+void \hyperlink{mouse__sensor_8h_a61a338b008f500f15eb61c410f2c2570}{mouse\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialisation of I/O port for communication with mouse sensor. \end{DoxyCompactList}\item 
+B\+O\+OL \hyperlink{mouse__sensor_8h_a0543c82252daab2c2708a200b8eab0b6}{mouse\+\_\+\+Read\+Sensor} (int32 $\ast$d\+Left, int32 $\ast$d\+Right, int32 $\ast$d\+Alpha, int32 $\ast$d\+Delta)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8h_a66cb327ed21da6d811043f4af7e02439}\label{mouse__sensor_8h_a66cb327ed21da6d811043f4af7e02439}} 
+B\+O\+OL \hyperlink{mouse__sensor_8h_a66cb327ed21da6d811043f4af7e02439}{mouse\+\_\+\+Read\+Sensor\+\_\+debug} (int32 $\ast$d\+Left, int32 $\ast$d\+Right, int32 $\ast$d\+Alpha, int32 $\ast$d\+Delta)
+\begin{DoxyCompactList}\small\item\em Test. \end{DoxyCompactList}\item 
+void \hyperlink{mouse__sensor_8h_a45083864d589c2d300fa9578166bd585}{mouse\+\_\+\+Update\+Calibration\+Values} (void)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8h_a06330b310be88519cc57eff15602260f}\label{mouse__sensor_8h_a06330b310be88519cc57eff15602260f}} 
+void \hyperlink{mouse__sensor_8h_a06330b310be88519cc57eff15602260f}{mouse\+\_\+\+Calibration} (int line\+Nb, float line\+Dist, int turn\+Nb)
+\begin{DoxyCompactList}\small\item\em Run the mouse calibration procedure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8h_a2d94d453c8a7bba76069c6e6c1f6890c}\label{mouse__sensor_8h_a2d94d453c8a7bba76069c6e6c1f6890c}} 
+void \hyperlink{mouse__sensor_8h_a2d94d453c8a7bba76069c6e6c1f6890c}{mouse\+\_\+\+Calibration2} (int turn\+Nb)
+\begin{DoxyCompactList}\small\item\em New calibration test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8h_a79fc35f156c4ebda6e10448794ed36dc}\label{mouse__sensor_8h_a79fc35f156c4ebda6e10448794ed36dc}} 
+void \hyperlink{mouse__sensor_8h_a79fc35f156c4ebda6e10448794ed36dc}{mouse\+Calib\+Set\+Step} (int i)
+\begin{DoxyCompactList}\small\item\em set calibration step i (synchronisation with user) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mouse__sensor_8h_a0543c82252daab2c2708a200b8eab0b6}\label{mouse__sensor_8h_a0543c82252daab2c2708a200b8eab0b6}} 
+\index{mouse\+\_\+sensor.\+h@{mouse\+\_\+sensor.\+h}!mouse\+\_\+\+Read\+Sensor@{mouse\+\_\+\+Read\+Sensor}}
+\index{mouse\+\_\+\+Read\+Sensor@{mouse\+\_\+\+Read\+Sensor}!mouse\+\_\+sensor.\+h@{mouse\+\_\+sensor.\+h}}
+\subsubsection{\texorpdfstring{mouse\+\_\+\+Read\+Sensor()}{mouse\_ReadSensor()}}
+{\footnotesize\ttfamily B\+O\+OL mouse\+\_\+\+Read\+Sensor (\begin{DoxyParamCaption}\item[{int32 $\ast$}]{d\+Left,  }\item[{int32 $\ast$}]{d\+Right,  }\item[{int32 $\ast$}]{d\+Alpha,  }\item[{int32 $\ast$}]{d\+Delta }\end{DoxyParamCaption})}
+
+Read both sensor and compute d\+Left, d\+Right, d\+Alpha, d\+Delta return whether the reading have been successfull or not \mbox{\Hypertarget{mouse__sensor_8h_a45083864d589c2d300fa9578166bd585}\label{mouse__sensor_8h_a45083864d589c2d300fa9578166bd585}} 
+\index{mouse\+\_\+sensor.\+h@{mouse\+\_\+sensor.\+h}!mouse\+\_\+\+Update\+Calibration\+Values@{mouse\+\_\+\+Update\+Calibration\+Values}}
+\index{mouse\+\_\+\+Update\+Calibration\+Values@{mouse\+\_\+\+Update\+Calibration\+Values}!mouse\+\_\+sensor.\+h@{mouse\+\_\+sensor.\+h}}
+\subsubsection{\texorpdfstring{mouse\+\_\+\+Update\+Calibration\+Values()}{mouse\_UpdateCalibrationValues()}}
+{\footnotesize\ttfamily void mouse\+\_\+\+Update\+Calibration\+Values (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Update sum of motion on mice for calibration purpose Don\textquotesingle{}t use this function and mouse\+\_\+\+Read\+Sensor in the same time 

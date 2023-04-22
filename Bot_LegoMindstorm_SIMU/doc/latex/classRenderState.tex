@@ -1,0 +1,560 @@
+\hypertarget{classRenderState}{}\section{Render\+State Class Reference}
+\label{classRenderState}\index{Render\+State@{Render\+State}}
+
+
+{\ttfamily \#include $<$C\+C\+Render\+State.\+h$>$}
+
+
+
+Inheritance diagram for Render\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classRenderState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRenderState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classRenderState_1_1StateBlock}{State\+Block}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderState_a75b27b1725b8bd7053249ab7c9a4131f}\label{classRenderState_a75b27b1725b8bd7053249ab7c9a4131f}} 
+enum {\bfseries Blend} \{ \newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+NE} = G\+L\+\_\+\+O\+NE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+NE} = G\+L\+\_\+\+O\+NE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE
+ \}
+\item 
+enum \hyperlink{classRenderState_a36d3d228500feb75244c2c761c42b231}{Depth\+Function} \{ \newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS
+ \}
+\item 
+enum \hyperlink{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}{Cull\+Face\+Side} \{ \newline
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+B\+A\+CK, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+NT} = G\+L\+\_\+\+F\+R\+O\+NT, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+B\+A\+CK, 
+\newline
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+NT} = G\+L\+\_\+\+F\+R\+O\+NT, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK
+ \}
+\item 
+enum \hyperlink{classRenderState_ac748310042b020a92ea97ede898be30e}{Front\+Face} \{ {\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+CW} = G\+L\+\_\+\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW} = G\+L\+\_\+\+C\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+CW} = G\+L\+\_\+\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW} = G\+L\+\_\+\+C\+CW
+ \}
+\item 
+enum \hyperlink{classRenderState_a81cc5aa349c93afd42db28eea9de0165}{Stencil\+Function} \{ \newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL
+ \}
+\item 
+enum \hyperlink{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}{Stencil\+Operation} \{ \newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP} = G\+L\+\_\+\+K\+E\+EP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+R\+E\+P\+L\+A\+CE} = G\+L\+\_\+\+R\+E\+P\+L\+A\+CE, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+CR} = G\+L\+\_\+\+I\+N\+CR, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+CR} = G\+L\+\_\+\+D\+E\+CR, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+V\+E\+RT} = G\+L\+\_\+\+I\+N\+V\+E\+RT, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP} = G\+L\+\_\+\+K\+E\+EP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+R\+E\+P\+L\+A\+CE} = G\+L\+\_\+\+R\+E\+P\+L\+A\+CE, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+CR} = G\+L\+\_\+\+I\+N\+CR, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+CR} = G\+L\+\_\+\+D\+E\+CR, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+V\+E\+RT} = G\+L\+\_\+\+I\+N\+V\+E\+RT, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP
+ \}
+\item 
+\mbox{\Hypertarget{classRenderState_a75b27b1725b8bd7053249ab7c9a4131f}\label{classRenderState_a75b27b1725b8bd7053249ab7c9a4131f}} 
+enum {\bfseries Blend} \{ \newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+NE} = G\+L\+\_\+\+O\+NE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+NE} = G\+L\+\_\+\+O\+NE, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+C\+O\+L\+OR, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+D\+S\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+\newline
+{\bfseries B\+L\+E\+N\+D\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA} = G\+L\+\_\+\+O\+N\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+A\+L\+P\+HA, 
+{\bfseries B\+L\+E\+N\+D\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE} = G\+L\+\_\+\+S\+R\+C\+\_\+\+A\+L\+P\+H\+A\+\_\+\+S\+A\+T\+U\+R\+A\+TE
+ \}
+\item 
+enum \hyperlink{classRenderState_a36d3d228500feb75244c2c761c42b231}{Depth\+Function} \{ \newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries D\+E\+P\+T\+H\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS
+ \}
+\item 
+enum \hyperlink{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}{Cull\+Face\+Side} \{ \newline
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+B\+A\+CK, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+NT} = G\+L\+\_\+\+F\+R\+O\+NT, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+B\+A\+CK, 
+\newline
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+NT} = G\+L\+\_\+\+F\+R\+O\+NT, 
+{\bfseries C\+U\+L\+L\+\_\+\+F\+A\+C\+E\+\_\+\+S\+I\+D\+E\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK} = G\+L\+\_\+\+F\+R\+O\+N\+T\+\_\+\+A\+N\+D\+\_\+\+B\+A\+CK
+ \}
+\item 
+enum \hyperlink{classRenderState_ac748310042b020a92ea97ede898be30e}{Front\+Face} \{ {\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+CW} = G\+L\+\_\+\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW} = G\+L\+\_\+\+C\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+CW} = G\+L\+\_\+\+CW, 
+{\bfseries F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW} = G\+L\+\_\+\+C\+CW
+ \}
+\item 
+enum \hyperlink{classRenderState_a81cc5aa349c93afd42db28eea9de0165}{Stencil\+Function} \{ \newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+E\+V\+ER} = G\+L\+\_\+\+N\+E\+V\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS} = G\+L\+\_\+\+A\+L\+W\+A\+YS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+SS} = G\+L\+\_\+\+L\+E\+SS, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+L\+E\+Q\+U\+AL} = G\+L\+\_\+\+L\+E\+Q\+U\+AL, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+E\+Q\+U\+AL} = G\+L\+\_\+\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+R\+E\+A\+T\+ER} = G\+L\+\_\+\+G\+R\+E\+A\+T\+ER, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+G\+E\+Q\+U\+AL} = G\+L\+\_\+\+G\+E\+Q\+U\+AL, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL} = G\+L\+\_\+\+N\+O\+T\+E\+Q\+U\+AL
+ \}
+\item 
+enum \hyperlink{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}{Stencil\+Operation} \{ \newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP} = G\+L\+\_\+\+K\+E\+EP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+R\+E\+P\+L\+A\+CE} = G\+L\+\_\+\+R\+E\+P\+L\+A\+CE, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+CR} = G\+L\+\_\+\+I\+N\+CR, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+CR} = G\+L\+\_\+\+D\+E\+CR, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+V\+E\+RT} = G\+L\+\_\+\+I\+N\+V\+E\+RT, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP} = G\+L\+\_\+\+K\+E\+EP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+Z\+E\+RO} = G\+L\+\_\+\+Z\+E\+RO, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+R\+E\+P\+L\+A\+CE} = G\+L\+\_\+\+R\+E\+P\+L\+A\+CE, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+CR} = G\+L\+\_\+\+I\+N\+CR, 
+\newline
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+CR} = G\+L\+\_\+\+D\+E\+CR, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+V\+E\+RT} = G\+L\+\_\+\+I\+N\+V\+E\+RT, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+I\+N\+C\+R\+\_\+\+W\+R\+AP, 
+{\bfseries S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP} = G\+L\+\_\+\+D\+E\+C\+R\+\_\+\+W\+R\+AP
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderState_a70c406fd858ffe868b9e02c39a6e4318}\label{classRenderState_a70c406fd858ffe868b9e02c39a6e4318}} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+void \hyperlink{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classRenderState_ad0b5d7ef008d158d45b2fec637d77e2b}{get\+Texture} () const
+\item 
+void \hyperlink{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}{bind} (\hyperlink{classPass}{Pass} $\ast$pass)
+\item 
+\hyperlink{classRenderState}{Render\+State} $\ast$ \hyperlink{classRenderState_a58585f74d7be453fcafb04924e06e157}{get\+Topmost} (\hyperlink{classRenderState}{Render\+State} $\ast$below)
+\item 
+\mbox{\Hypertarget{classRenderState_a2b56c80271b7c22a955eee179e7bc3b6}\label{classRenderState_a2b56c80271b7c22a955eee179e7bc3b6}} 
+void {\bfseries set\+Parent} (\hyperlink{classRenderState}{Render\+State} $\ast$parent)
+\item 
+\mbox{\Hypertarget{classRenderState_a7f170584fc0639b61737f342997e8f56}\label{classRenderState_a7f170584fc0639b61737f342997e8f56}} 
+void {\bfseries set\+State\+Block} (\hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$state)
+\item 
+\mbox{\Hypertarget{classRenderState_a28679277752a09d6659cb633ac5df5b0}\label{classRenderState_a28679277752a09d6659cb633ac5df5b0}} 
+\hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$ {\bfseries get\+State\+Block} () const
+\item 
+\mbox{\Hypertarget{classRenderState_a70c406fd858ffe868b9e02c39a6e4318}\label{classRenderState_a70c406fd858ffe868b9e02c39a6e4318}} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+void \hyperlink{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}{set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ \hyperlink{classRenderState_abca42dbf8d2b368e5fe8c04316feeff7}{get\+Texture} () const
+\item 
+void \hyperlink{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}{bind} (\hyperlink{classPass}{Pass} $\ast$pass)
+\item 
+\hyperlink{classRenderState}{Render\+State} $\ast$ \hyperlink{classRenderState_ab69a68480517e64e4fee612ae57b408a}{get\+Topmost} (\hyperlink{classRenderState}{Render\+State} $\ast$below)
+\item 
+\mbox{\Hypertarget{classRenderState_a2b56c80271b7c22a955eee179e7bc3b6}\label{classRenderState_a2b56c80271b7c22a955eee179e7bc3b6}} 
+void {\bfseries set\+Parent} (\hyperlink{classRenderState}{Render\+State} $\ast$parent)
+\item 
+\mbox{\Hypertarget{classRenderState_a7f170584fc0639b61737f342997e8f56}\label{classRenderState_a7f170584fc0639b61737f342997e8f56}} 
+void {\bfseries set\+State\+Block} (\hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$state)
+\item 
+\mbox{\Hypertarget{classRenderState_afff9cf9da0026740c18f08651ab941e5}\label{classRenderState_afff9cf9da0026740c18f08651ab941e5}} 
+\hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$ {\bfseries get\+State\+Block} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classRenderState_a737670247e99a7077a5f20341287e9c1}{initialize} ()
+\item 
+static void \hyperlink{classRenderState_a20cd68c30ab9e3fb5e763a52177cb1f6}{finalize} ()
+\item 
+static void \hyperlink{classRenderState_a3b8fd9c2beaab0636242434bc8e81749}{initialize} ()
+\item 
+static void \hyperlink{classRenderState_af0550c5aa93e0259c3adefe4c8184d01}{finalize} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderState_a0764ea75d293b7b8027b0228aa452f87}\label{classRenderState_a0764ea75d293b7b8027b0228aa452f87}} 
+bool {\bfseries init} (\hyperlink{classRenderState}{Render\+State} $\ast$parent)
+\item 
+\mbox{\Hypertarget{classRenderState_a88b904442fd3aa0a5c3958558f92c9db}\label{classRenderState_a88b904442fd3aa0a5c3958558f92c9db}} 
+void {\bfseries clone\+Into} (\hyperlink{classRenderState}{Render\+State} $\ast$state) const
+\item 
+\mbox{\Hypertarget{classRenderState_a0764ea75d293b7b8027b0228aa452f87}\label{classRenderState_a0764ea75d293b7b8027b0228aa452f87}} 
+bool {\bfseries init} (\hyperlink{classRenderState}{Render\+State} $\ast$parent)
+\item 
+\mbox{\Hypertarget{classRenderState_a88b904442fd3aa0a5c3958558f92c9db}\label{classRenderState_a88b904442fd3aa0a5c3958558f92c9db}} 
+void {\bfseries clone\+Into} (\hyperlink{classRenderState}{Render\+State} $\ast$state) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderState_a7ab5e52fc514e140f4c072244ef7f004}\label{classRenderState_a7ab5e52fc514e140f4c072244ef7f004}} 
+uint32\+\_\+t {\bfseries \+\_\+hash}
+\item 
+\mbox{\Hypertarget{classRenderState_a16c50c0ac30afe7bd12391fa1fc49364}\label{classRenderState_a16c50c0ac30afe7bd12391fa1fc49364}} 
+bool {\bfseries \+\_\+hash\+Dirty}
+\item 
+\hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$ \hyperlink{classRenderState_ac40064c8b7e06604366149b9d772e2d5}{\+\_\+state}
+\item 
+\hyperlink{classRenderState}{Render\+State} $\ast$ \hyperlink{classRenderState_a33a724fc34b35f6934717e1837ec918d}{\+\_\+parent}
+\item 
+\mbox{\Hypertarget{classRenderState_a8084229557c3c9e97ccda6b97817c455}\label{classRenderState_a8084229557c3c9e97ccda6b97817c455}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\mbox{\Hypertarget{classRenderState_a7704a856546ff7e9f70eac074bf9983f}\label{classRenderState_a7704a856546ff7e9f70eac074bf9983f}} 
+\hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries \+\_\+texture}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRenderState_a76b09dbbfd6aad2807be6181db6bd2e4}\label{classRenderState_a76b09dbbfd6aad2807be6181db6bd2e4}} 
+class {\bfseries Material}
+\item 
+\mbox{\Hypertarget{classRenderState_a0a6534d15d196a09d979b9b093c6836d}\label{classRenderState_a0a6534d15d196a09d979b9b093c6836d}} 
+class {\bfseries Technique}
+\item 
+\mbox{\Hypertarget{classRenderState_abe77423eb27f643233ef051559a64882}\label{classRenderState_abe77423eb27f643233ef051559a64882}} 
+class {\bfseries Pass}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the rendering state of the graphics device. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}\label{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}} 
+\index{Render\+State@{Render\+State}!Cull\+Face\+Side@{Cull\+Face\+Side}}
+\index{Cull\+Face\+Side@{Cull\+Face\+Side}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Cull\+Face\+Side}{CullFaceSide}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}{Render\+State\+::\+Cull\+Face\+Side}}
+
+Defines culling criteria for front-\/facing, back-\/facing and both-\/side facets. \mbox{\Hypertarget{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}\label{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}} 
+\index{Render\+State@{Render\+State}!Cull\+Face\+Side@{Cull\+Face\+Side}}
+\index{Cull\+Face\+Side@{Cull\+Face\+Side}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Cull\+Face\+Side}{CullFaceSide}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a9b99d2625b13af77f1f8fa8101e3ad85}{Render\+State\+::\+Cull\+Face\+Side}}
+
+Defines culling criteria for front-\/facing, back-\/facing and both-\/side facets. \mbox{\Hypertarget{classRenderState_a36d3d228500feb75244c2c761c42b231}\label{classRenderState_a36d3d228500feb75244c2c761c42b231}} 
+\index{Render\+State@{Render\+State}!Depth\+Function@{Depth\+Function}}
+\index{Depth\+Function@{Depth\+Function}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Depth\+Function}{DepthFunction}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a36d3d228500feb75244c2c761c42b231}{Render\+State\+::\+Depth\+Function}}
+
+Defines the supported depth compare functions.
+
+Depth compare functions specify the comparison that takes place between the incoming pixel\textquotesingle{}s depth value and the depth value already in the depth buffer. If the compare function passes, the new pixel will be drawn.
+
+The initial depth compare function is D\+E\+P\+T\+H\+\_\+\+L\+E\+SS. \mbox{\Hypertarget{classRenderState_a36d3d228500feb75244c2c761c42b231}\label{classRenderState_a36d3d228500feb75244c2c761c42b231}} 
+\index{Render\+State@{Render\+State}!Depth\+Function@{Depth\+Function}}
+\index{Depth\+Function@{Depth\+Function}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Depth\+Function}{DepthFunction}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a36d3d228500feb75244c2c761c42b231}{Render\+State\+::\+Depth\+Function}}
+
+Defines the supported depth compare functions.
+
+Depth compare functions specify the comparison that takes place between the incoming pixel\textquotesingle{}s depth value and the depth value already in the depth buffer. If the compare function passes, the new pixel will be drawn.
+
+The initial depth compare function is D\+E\+P\+T\+H\+\_\+\+L\+E\+SS. \mbox{\Hypertarget{classRenderState_ac748310042b020a92ea97ede898be30e}\label{classRenderState_ac748310042b020a92ea97ede898be30e}} 
+\index{Render\+State@{Render\+State}!Front\+Face@{Front\+Face}}
+\index{Front\+Face@{Front\+Face}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Front\+Face}{FrontFace}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_ac748310042b020a92ea97ede898be30e}{Render\+State\+::\+Front\+Face}}
+
+Defines the winding of vertices in faces that are considered front facing.
+
+The initial front face mode is set to F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW. \mbox{\Hypertarget{classRenderState_ac748310042b020a92ea97ede898be30e}\label{classRenderState_ac748310042b020a92ea97ede898be30e}} 
+\index{Render\+State@{Render\+State}!Front\+Face@{Front\+Face}}
+\index{Front\+Face@{Front\+Face}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Front\+Face}{FrontFace}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_ac748310042b020a92ea97ede898be30e}{Render\+State\+::\+Front\+Face}}
+
+Defines the winding of vertices in faces that are considered front facing.
+
+The initial front face mode is set to F\+R\+O\+N\+T\+\_\+\+F\+A\+C\+E\+\_\+\+C\+CW. \mbox{\Hypertarget{classRenderState_a81cc5aa349c93afd42db28eea9de0165}\label{classRenderState_a81cc5aa349c93afd42db28eea9de0165}} 
+\index{Render\+State@{Render\+State}!Stencil\+Function@{Stencil\+Function}}
+\index{Stencil\+Function@{Stencil\+Function}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Stencil\+Function}{StencilFunction}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a81cc5aa349c93afd42db28eea9de0165}{Render\+State\+::\+Stencil\+Function}}
+
+Defines the supported stencil compare functions.
+
+Stencil compare functions determine if a new pixel will be drawn.
+
+The initial stencil compare function is S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS. \mbox{\Hypertarget{classRenderState_a81cc5aa349c93afd42db28eea9de0165}\label{classRenderState_a81cc5aa349c93afd42db28eea9de0165}} 
+\index{Render\+State@{Render\+State}!Stencil\+Function@{Stencil\+Function}}
+\index{Stencil\+Function@{Stencil\+Function}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Stencil\+Function}{StencilFunction}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a81cc5aa349c93afd42db28eea9de0165}{Render\+State\+::\+Stencil\+Function}}
+
+Defines the supported stencil compare functions.
+
+Stencil compare functions determine if a new pixel will be drawn.
+
+The initial stencil compare function is S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+L\+W\+A\+YS. \mbox{\Hypertarget{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}\label{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}} 
+\index{Render\+State@{Render\+State}!Stencil\+Operation@{Stencil\+Operation}}
+\index{Stencil\+Operation@{Stencil\+Operation}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Stencil\+Operation}{StencilOperation}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}{Render\+State\+::\+Stencil\+Operation}}
+
+Defines the supported stencil operations to perform.
+
+Stencil operations determine what should happen to the pixel if the stencil test fails, passes, or passes but fails the depth test.
+
+The initial stencil operation is S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP. \mbox{\Hypertarget{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}\label{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}} 
+\index{Render\+State@{Render\+State}!Stencil\+Operation@{Stencil\+Operation}}
+\index{Stencil\+Operation@{Stencil\+Operation}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{Stencil\+Operation}{StencilOperation}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classRenderState_a47a31ccd6ff5801cb0618df7e25f7f70}{Render\+State\+::\+Stencil\+Operation}}
+
+Defines the supported stencil operations to perform.
+
+Stencil operations determine what should happen to the pixel if the stencil test fails, passes, or passes but fails the depth test.
+
+The initial stencil operation is S\+T\+E\+N\+C\+I\+L\+\_\+\+O\+P\+\_\+\+K\+E\+EP. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}\label{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}} 
+\index{Render\+State@{Render\+State}!bind@{bind}}
+\index{bind@{bind}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+State\+::bind (\begin{DoxyParamCaption}\item[{\hyperlink{classPass}{Pass} $\ast$}]{pass }\end{DoxyParamCaption})}
+
+Binds the render state for this \hyperlink{classRenderState}{Render\+State} and any of its parents, top-\/down, for the given pass. \mbox{\Hypertarget{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}\label{classRenderState_a2b509af29faeef89bab4f7afcc7cfbd0}} 
+\index{Render\+State@{Render\+State}!bind@{bind}}
+\index{bind@{bind}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+State\+::bind (\begin{DoxyParamCaption}\item[{\hyperlink{classPass}{Pass} $\ast$}]{pass }\end{DoxyParamCaption})}
+
+Binds the render state for this \hyperlink{classRenderState}{Render\+State} and any of its parents, top-\/down, for the given pass. \mbox{\Hypertarget{classRenderState_a20cd68c30ab9e3fb5e763a52177cb1f6}\label{classRenderState_a20cd68c30ab9e3fb5e763a52177cb1f6}} 
+\index{Render\+State@{Render\+State}!finalize@{finalize}}
+\index{finalize@{finalize}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{finalize()}{finalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+State\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static finalizer that is called during game shutdown. \mbox{\Hypertarget{classRenderState_af0550c5aa93e0259c3adefe4c8184d01}\label{classRenderState_af0550c5aa93e0259c3adefe4c8184d01}} 
+\index{Render\+State@{Render\+State}!finalize@{finalize}}
+\index{finalize@{finalize}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{finalize()}{finalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Render\+State\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static finalizer that is called during game shutdown. \mbox{\Hypertarget{classRenderState_ad0b5d7ef008d158d45b2fec637d77e2b}\label{classRenderState_ad0b5d7ef008d158d45b2fec637d77e2b}} 
+\index{Render\+State@{Render\+State}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D} $\ast$ Render\+State\+::get\+Texture (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the texture that is going to be used for C\+C\+\_\+\+Texture0. Added to be backwards compatible. \mbox{\Hypertarget{classRenderState_abca42dbf8d2b368e5fe8c04316feeff7}\label{classRenderState_abca42dbf8d2b368e5fe8c04316feeff7}} 
+\index{Render\+State@{Render\+State}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTexture2D}{Texture2D}$\ast$ Render\+State\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the texture that is going to be used for C\+C\+\_\+\+Texture0. Added to be backwards compatible. \mbox{\Hypertarget{classRenderState_a58585f74d7be453fcafb04924e06e157}\label{classRenderState_a58585f74d7be453fcafb04924e06e157}} 
+\index{Render\+State@{Render\+State}!get\+Topmost@{get\+Topmost}}
+\index{get\+Topmost@{get\+Topmost}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{get\+Topmost()}{getTopmost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderState}{Render\+State} $\ast$ Render\+State\+::get\+Topmost (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderState}{Render\+State} $\ast$}]{below }\end{DoxyParamCaption})}
+
+Returns the topmost \hyperlink{classRenderState}{Render\+State} in the hierarchy below the given \hyperlink{classRenderState}{Render\+State}. \mbox{\Hypertarget{classRenderState_ab69a68480517e64e4fee612ae57b408a}\label{classRenderState_ab69a68480517e64e4fee612ae57b408a}} 
+\index{Render\+State@{Render\+State}!get\+Topmost@{get\+Topmost}}
+\index{get\+Topmost@{get\+Topmost}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{get\+Topmost()}{getTopmost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classRenderState}{Render\+State}$\ast$ Render\+State\+::get\+Topmost (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderState}{Render\+State} $\ast$}]{below }\end{DoxyParamCaption})}
+
+Returns the topmost \hyperlink{classRenderState}{Render\+State} in the hierarchy below the given \hyperlink{classRenderState}{Render\+State}. \mbox{\Hypertarget{classRenderState_a737670247e99a7077a5f20341287e9c1}\label{classRenderState_a737670247e99a7077a5f20341287e9c1}} 
+\index{Render\+State@{Render\+State}!initialize@{initialize}}
+\index{initialize@{initialize}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+State\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static initializer that is called during game startup. \mbox{\Hypertarget{classRenderState_a3b8fd9c2beaab0636242434bc8e81749}\label{classRenderState_a3b8fd9c2beaab0636242434bc8e81749}} 
+\index{Render\+State@{Render\+State}!initialize@{initialize}}
+\index{initialize@{initialize}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Render\+State\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static initializer that is called during game startup. \mbox{\Hypertarget{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}\label{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}} 
+\index{Render\+State@{Render\+State}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Render\+State\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+Texture that will use in the C\+C\+\_\+\+Texture0 uniform. Added to be backwards compatible. Use Samplers from .material instead. \mbox{\Hypertarget{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}\label{classRenderState_ae41fdde5c9e67eb4e5967c8de711cda6}} 
+\index{Render\+State@{Render\+State}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{set\+Texture()}{setTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Render\+State\+::set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+Texture that will use in the C\+C\+\_\+\+Texture0 uniform. Added to be backwards compatible. Use Samplers from .material instead. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRenderState_a33a724fc34b35f6934717e1837ec918d}\label{classRenderState_a33a724fc34b35f6934717e1837ec918d}} 
+\index{Render\+State@{Render\+State}!\+\_\+parent@{\+\_\+parent}}
+\index{\+\_\+parent@{\+\_\+parent}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{\+\_\+parent}{\_parent}}
+{\footnotesize\ttfamily \hyperlink{classRenderState}{Render\+State} $\ast$ Render\+State\+::\+\_\+parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{classRenderState}{Render\+State}\textquotesingle{}s parent. Weak \hyperlink{structReference}{Reference} \mbox{\Hypertarget{classRenderState_ac40064c8b7e06604366149b9d772e2d5}\label{classRenderState_ac40064c8b7e06604366149b9d772e2d5}} 
+\index{Render\+State@{Render\+State}!\+\_\+state@{\+\_\+state}}
+\index{\+\_\+state@{\+\_\+state}!Render\+State@{Render\+State}}
+\subsubsection{\texorpdfstring{\+\_\+state}{\_state}}
+{\footnotesize\ttfamily \hyperlink{classRenderState_1_1StateBlock}{State\+Block} $\ast$ Render\+State\+::\+\_\+state\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+The \hyperlink{classRenderState_1_1StateBlock}{State\+Block} of fixed-\/function render states that can be applied to the \hyperlink{classRenderState}{Render\+State}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Render\+State.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Render\+State.\+cpp\end{DoxyCompactItemize}

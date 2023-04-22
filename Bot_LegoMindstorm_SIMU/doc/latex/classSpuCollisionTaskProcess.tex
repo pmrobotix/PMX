@@ -1,0 +1,66 @@
+\hypertarget{classSpuCollisionTaskProcess}{}\section{Spu\+Collision\+Task\+Process Class Reference}
+\label{classSpuCollisionTaskProcess}\index{Spu\+Collision\+Task\+Process@{Spu\+Collision\+Task\+Process}}
+
+
+{\ttfamily \#include $<$Spu\+Collision\+Task\+Process.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_ae2fd53d16de149643d8f538e183e48eb}\label{classSpuCollisionTaskProcess_ae2fd53d16de149643d8f538e183e48eb}} 
+{\bfseries Spu\+Collision\+Task\+Process} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, unsigned int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}\label{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}} 
+void \hyperlink{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}{initialize2} (bool use\+Epa=false)
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}\label{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}} 
+void \hyperlink{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}{add\+Work\+To\+Task} (void $\ast$pair\+Array\+Ptr, int start\+Index, int end\+Index)
+\begin{DoxyCompactList}\small\item\em batch up additional work to a current task for S\+PU processing. When batch is full, it issues the task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}\label{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}} 
+void \hyperlink{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}{flush2} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\item 
+void \hyperlink{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}{set\+Num\+Tasks} (int max\+Num\+Tasks)
+\begin{DoxyCompactList}\small\item\em set the maximum number of S\+PU tasks allocated \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_abe43a4914aba6cfd93ccaf16e94f31d6}\label{classSpuCollisionTaskProcess_abe43a4914aba6cfd93ccaf16e94f31d6}} 
+int {\bfseries get\+Num\+Tasks} () const
+\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_ae2fd53d16de149643d8f538e183e48eb}\label{classSpuCollisionTaskProcess_ae2fd53d16de149643d8f538e183e48eb}} 
+{\bfseries Spu\+Collision\+Task\+Process} (\hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, unsigned int max\+Num\+Outstanding\+Tasks)
+\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}\label{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}} 
+void \hyperlink{classSpuCollisionTaskProcess_afcdb413769d35c957ddc5c8ec2985588}{initialize2} (bool use\+Epa=false)
+\begin{DoxyCompactList}\small\item\em call initialize in the beginning of the frame, before add\+Collision\+Pair\+To\+Task \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}\label{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}} 
+void \hyperlink{classSpuCollisionTaskProcess_a5a0c4e28e49f0ecfd3aa8255960c77d2}{add\+Work\+To\+Task} (void $\ast$pair\+Array\+Ptr, int start\+Index, int end\+Index)
+\begin{DoxyCompactList}\small\item\em batch up additional work to a current task for S\+PU processing. When batch is full, it issues the task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}\label{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}} 
+void \hyperlink{classSpuCollisionTaskProcess_afdb2b028ac84b0e90286eb6d4ed10fd3}{flush2} ()
+\begin{DoxyCompactList}\small\item\em call flush to submit potential outstanding work to S\+P\+Us and wait for all involved S\+P\+Us to be finished \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}\label{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}} 
+void \hyperlink{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}{set\+Num\+Tasks} (int max\+Num\+Tasks)
+\begin{DoxyCompactList}\small\item\em set the maximum number of S\+PU tasks allocated \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_abe43a4914aba6cfd93ccaf16e94f31d6}\label{classSpuCollisionTaskProcess_abe43a4914aba6cfd93ccaf16e94f31d6}} 
+int {\bfseries get\+Num\+Tasks} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSpuCollisionTaskProcess}{Spu\+Collision\+Task\+Process} handles S\+PU processing of collision pairs. Maintains a set of task buffers. When the task is full, the task is issued for S\+P\+Us to process. Contact output goes into bt\+Persistent\+Manifold associated with each task. When P\+PU issues a task, it will look for completed task buffers P\+PU will do postprocessing, dependent on workunit output (not likely) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}\label{classSpuCollisionTaskProcess_aa079f41eb800756bff561982db6dab00}} 
+\index{Spu\+Collision\+Task\+Process@{Spu\+Collision\+Task\+Process}!set\+Num\+Tasks@{set\+Num\+Tasks}}
+\index{set\+Num\+Tasks@{set\+Num\+Tasks}!Spu\+Collision\+Task\+Process@{Spu\+Collision\+Task\+Process}}
+\subsubsection{\texorpdfstring{set\+Num\+Tasks()}{setNumTasks()}}
+{\footnotesize\ttfamily void Spu\+Collision\+Task\+Process\+::set\+Num\+Tasks (\begin{DoxyParamCaption}\item[{int}]{max\+Num\+Tasks }\end{DoxyParamCaption})}
+
+
+
+set the maximum number of S\+PU tasks allocated 
+
+re-\/allocate task memory buffers 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Collision\+Task\+Process.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Collision\+Task\+Process.\+cpp\end{DoxyCompactItemize}

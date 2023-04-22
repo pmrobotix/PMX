@@ -1,0 +1,394 @@
+\hypertarget{classbtCollisionWorld}{}\section{bt\+Collision\+World Class Reference}
+\label{classbtCollisionWorld}\index{bt\+Collision\+World@{bt\+Collision\+World}}
+
+
+Collision\+World is interface and container for the collision detection.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Collision\+World.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Collision\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classbtCollisionWorld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Collision\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtCollisionWorld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1AllHitsRayResultCallback}{All\+Hits\+Ray\+Result\+Callback}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1ClosestConvexResultCallback}{Closest\+Convex\+Result\+Callback}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1ClosestRayResultCallback}{Closest\+Ray\+Result\+Callback}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} is used to report contact points. \end{DoxyCompactList}\item 
+struct \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} is used to report new raycast results. \end{DoxyCompactList}\item 
+struct \hyperlink{structbtCollisionWorld_1_1LocalConvexResult}{Local\+Convex\+Result}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1LocalRayResult}{Local\+Ray\+Result}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1LocalShapeInfo}{Local\+Shape\+Info}
+\item 
+struct \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} is used to report new raycast results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6d2c3ec40c17296308c2b229ae3962ea}\label{classbtCollisionWorld_a6d2c3ec40c17296308c2b229ae3962ea}} 
+\hyperlink{classbtCollisionWorld_a6d2c3ec40c17296308c2b229ae3962ea}{bt\+Collision\+World} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$broadphase\+Pair\+Cache, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\begin{DoxyCompactList}\small\item\em for debug drawing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ad55a4c7bd8fb64e4caf6c58e62795bfb}\label{classbtCollisionWorld_ad55a4c7bd8fb64e4caf6c58e62795bfb}} 
+void {\bfseries set\+Broadphase} (\hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$pair\+Cache)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a214257b6cf2ab762454254ab4c79e1d9}\label{classbtCollisionWorld_a214257b6cf2ab762454254ab4c79e1d9}} 
+const \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$ {\bfseries get\+Broadphase} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6138b6b1a4496a6857f1dfa71f6841e5}\label{classbtCollisionWorld_a6138b6b1a4496a6857f1dfa71f6841e5}} 
+\hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$ {\bfseries get\+Broadphase} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a7327cc034ead04b732bd242f21b690cf}\label{classbtCollisionWorld_a7327cc034ead04b732bd242f21b690cf}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Pair\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a65b5cb3b0070b3aca14cb4c2aff25ed5}\label{classbtCollisionWorld_a65b5cb3b0070b3aca14cb4c2aff25ed5}} 
+\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries get\+Dispatcher} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a1b29bf1f9ba7b192838708a3650ea26e}\label{classbtCollisionWorld_a1b29bf1f9ba7b192838708a3650ea26e}} 
+const \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries get\+Dispatcher} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a47cc9f4005a5de0c0aff85637943a495}\label{classbtCollisionWorld_a47cc9f4005a5de0c0aff85637943a495}} 
+void {\bfseries update\+Single\+Aabb} (bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a022960475a5721bcc94145cf84fdcb0f}\label{classbtCollisionWorld_a022960475a5721bcc94145cf84fdcb0f}} 
+virtual void {\bfseries update\+Aabbs} ()
+\item 
+virtual void \hyperlink{classbtCollisionWorld_afb32fb7ecb40aa6247fd3df18ba81098}{compute\+Overlapping\+Pairs} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a5a36450fa77f61d62952d3625cf54287}\label{classbtCollisionWorld_a5a36450fa77f61d62952d3625cf54287}} 
+virtual void {\bfseries set\+Debug\+Drawer} (\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a68669563c969bedaab6b1a1a073b1507}\label{classbtCollisionWorld_a68669563c969bedaab6b1a1a073b1507}} 
+virtual \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$ {\bfseries get\+Debug\+Drawer} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a17103cf11c455d6294ca022f046a412b}\label{classbtCollisionWorld_a17103cf11c455d6294ca022f046a412b}} 
+virtual void {\bfseries debug\+Draw\+World} ()
+\item 
+virtual void \hyperlink{classbtCollisionWorld_ac1ca6489c220005798069152c3df0d08}{debug\+Draw\+Object} (const bt\+Transform \&world\+Transform, const bt\+Collision\+Shape $\ast$shape, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6d4cc6533d174d1ae57d4907cdcf227e}\label{classbtCollisionWorld_a6d4cc6533d174d1ae57d4907cdcf227e}} 
+int {\bfseries get\+Num\+Collision\+Objects} () const
+\item 
+virtual void \hyperlink{classbtCollisionWorld_a01fb1f5ff8a93c11f0c6837d225ae4b7}{ray\+Test} (const bt\+Vector3 \&ray\+From\+World, const bt\+Vector3 \&ray\+To\+World, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback) const
+\item 
+void \hyperlink{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}{convex\+Sweep\+Test} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&from, const bt\+Transform \&to, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Ccd\+Penetration=bt\+Scalar(0.)) const
+\item 
+void \hyperlink{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}{contact\+Test} (bt\+Collision\+Object $\ast$col\+Obj, \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&result\+Callback)
+\item 
+void \hyperlink{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}{contact\+Pair\+Test} (bt\+Collision\+Object $\ast$col\+ObjA, bt\+Collision\+Object $\ast$col\+ObjB, \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&result\+Callback)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a3ca1134733136dc68691a8cd73196cc6}\label{classbtCollisionWorld_a3ca1134733136dc68691a8cd73196cc6}} 
+virtual void {\bfseries add\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object, short int collision\+Filter\+Group=bt\+Broadphase\+Proxy\+::\+Default\+Filter, short int collision\+Filter\+Mask=bt\+Broadphase\+Proxy\+::\+All\+Filter)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a43e878669b2e755992acc41fad1cda30}\label{classbtCollisionWorld_a43e878669b2e755992acc41fad1cda30}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Collision\+Object\+Array} \& {\bfseries get\+Collision\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a4c4afa92446d6732ee124c4adcb646fb}\label{classbtCollisionWorld_a4c4afa92446d6732ee124c4adcb646fb}} 
+const \hyperlink{classbtAlignedObjectArray}{bt\+Collision\+Object\+Array} \& {\bfseries get\+Collision\+Object\+Array} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a4e995146fe0b4ba6ea0024c1ea0380c3}\label{classbtCollisionWorld_a4e995146fe0b4ba6ea0024c1ea0380c3}} 
+virtual void {\bfseries remove\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a7bc2967b5005449b27f55545f224efcd}\label{classbtCollisionWorld_a7bc2967b5005449b27f55545f224efcd}} 
+virtual void {\bfseries perform\+Discrete\+Collision\+Detection} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aa6e0fa2c310419c6539a84df107a2ac0}\label{classbtCollisionWorld_aa6e0fa2c310419c6539a84df107a2ac0}} 
+\hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \& {\bfseries get\+Dispatch\+Info} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a8daf7d9ed980e8564a17dfa114f92c6d}\label{classbtCollisionWorld_a8daf7d9ed980e8564a17dfa114f92c6d}} 
+const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \& {\bfseries get\+Dispatch\+Info} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ab41ca6cd3134844d52a431a27e2edb6d}\label{classbtCollisionWorld_ab41ca6cd3134844d52a431a27e2edb6d}} 
+bool {\bfseries get\+Force\+Update\+All\+Aabbs} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a482d6276966521c8bf89513830e377a9}\label{classbtCollisionWorld_a482d6276966521c8bf89513830e377a9}} 
+void {\bfseries set\+Force\+Update\+All\+Aabbs} (bool force\+Update\+All\+Aabbs)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a152b79ca83fdb13ed7f1cc86ac214f66}\label{classbtCollisionWorld_a152b79ca83fdb13ed7f1cc86ac214f66}} 
+virtual void \hyperlink{classbtCollisionWorld_a152b79ca83fdb13ed7f1cc86ac214f66}{serialize} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\begin{DoxyCompactList}\small\item\em Preliminary serialization test for Bullet 2.\+76. Loading those files requires a separate parser (Bullet/\+Demos/\+Serialize\+Demo) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6d2c3ec40c17296308c2b229ae3962ea}\label{classbtCollisionWorld_a6d2c3ec40c17296308c2b229ae3962ea}} 
+{\bfseries bt\+Collision\+World} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$broadphase\+Pair\+Cache, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ad55a4c7bd8fb64e4caf6c58e62795bfb}\label{classbtCollisionWorld_ad55a4c7bd8fb64e4caf6c58e62795bfb}} 
+void {\bfseries set\+Broadphase} (\hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$pair\+Cache)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a214257b6cf2ab762454254ab4c79e1d9}\label{classbtCollisionWorld_a214257b6cf2ab762454254ab4c79e1d9}} 
+const \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$ {\bfseries get\+Broadphase} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6138b6b1a4496a6857f1dfa71f6841e5}\label{classbtCollisionWorld_a6138b6b1a4496a6857f1dfa71f6841e5}} 
+\hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$ {\bfseries get\+Broadphase} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a7327cc034ead04b732bd242f21b690cf}\label{classbtCollisionWorld_a7327cc034ead04b732bd242f21b690cf}} 
+\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Pair\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a65b5cb3b0070b3aca14cb4c2aff25ed5}\label{classbtCollisionWorld_a65b5cb3b0070b3aca14cb4c2aff25ed5}} 
+\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries get\+Dispatcher} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a1b29bf1f9ba7b192838708a3650ea26e}\label{classbtCollisionWorld_a1b29bf1f9ba7b192838708a3650ea26e}} 
+const \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries get\+Dispatcher} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a47cc9f4005a5de0c0aff85637943a495}\label{classbtCollisionWorld_a47cc9f4005a5de0c0aff85637943a495}} 
+void {\bfseries update\+Single\+Aabb} (bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a7e45d1db9c1dca744fbc939340ecc10d}\label{classbtCollisionWorld_a7e45d1db9c1dca744fbc939340ecc10d}} 
+virtual void {\bfseries update\+Aabbs} ()
+\item 
+virtual void \hyperlink{classbtCollisionWorld_a91a0511ba3176f9cc1b58759262f9bd3}{compute\+Overlapping\+Pairs} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a5a36450fa77f61d62952d3625cf54287}\label{classbtCollisionWorld_a5a36450fa77f61d62952d3625cf54287}} 
+virtual void {\bfseries set\+Debug\+Drawer} (\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a68669563c969bedaab6b1a1a073b1507}\label{classbtCollisionWorld_a68669563c969bedaab6b1a1a073b1507}} 
+virtual \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$ {\bfseries get\+Debug\+Drawer} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a5bd13c4f8d557ed8dbe47eb575812269}\label{classbtCollisionWorld_a5bd13c4f8d557ed8dbe47eb575812269}} 
+virtual void {\bfseries debug\+Draw\+World} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ae23b8c3ec8f0c4b9c9338dda50f65c2d}\label{classbtCollisionWorld_ae23b8c3ec8f0c4b9c9338dda50f65c2d}} 
+virtual void {\bfseries debug\+Draw\+Object} (const bt\+Transform \&world\+Transform, const bt\+Collision\+Shape $\ast$shape, const bt\+Vector3 \&color)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a6d4cc6533d174d1ae57d4907cdcf227e}\label{classbtCollisionWorld_a6d4cc6533d174d1ae57d4907cdcf227e}} 
+int {\bfseries get\+Num\+Collision\+Objects} () const
+\item 
+virtual void \hyperlink{classbtCollisionWorld_aad7854427ebb72ec77d32a6a2d458504}{ray\+Test} (const bt\+Vector3 \&ray\+From\+World, const bt\+Vector3 \&ray\+To\+World, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback) const
+\item 
+void \hyperlink{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}{convex\+Sweep\+Test} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&from, const bt\+Transform \&to, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Ccd\+Penetration=bt\+Scalar(0.)) const
+\item 
+void \hyperlink{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}{contact\+Test} (bt\+Collision\+Object $\ast$col\+Obj, \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&result\+Callback)
+\item 
+void \hyperlink{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}{contact\+Pair\+Test} (bt\+Collision\+Object $\ast$col\+ObjA, bt\+Collision\+Object $\ast$col\+ObjB, \hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&result\+Callback)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a822b2ad559bb433158f1dcad3c28165d}\label{classbtCollisionWorld_a822b2ad559bb433158f1dcad3c28165d}} 
+virtual void {\bfseries add\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object, short int collision\+Filter\+Group=bt\+Broadphase\+Proxy\+::\+Default\+Filter, short int collision\+Filter\+Mask=bt\+Broadphase\+Proxy\+::\+All\+Filter)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a43e878669b2e755992acc41fad1cda30}\label{classbtCollisionWorld_a43e878669b2e755992acc41fad1cda30}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Collision\+Object\+Array} \& {\bfseries get\+Collision\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a4c4afa92446d6732ee124c4adcb646fb}\label{classbtCollisionWorld_a4c4afa92446d6732ee124c4adcb646fb}} 
+const \hyperlink{classbtAlignedObjectArray}{bt\+Collision\+Object\+Array} \& {\bfseries get\+Collision\+Object\+Array} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_abeaa861c4f902430934a9a011102e6b7}\label{classbtCollisionWorld_abeaa861c4f902430934a9a011102e6b7}} 
+virtual void {\bfseries remove\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a8c15856162fcb6659f2dc84dbdff25d4}\label{classbtCollisionWorld_a8c15856162fcb6659f2dc84dbdff25d4}} 
+virtual void {\bfseries perform\+Discrete\+Collision\+Detection} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aa6e0fa2c310419c6539a84df107a2ac0}\label{classbtCollisionWorld_aa6e0fa2c310419c6539a84df107a2ac0}} 
+\hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \& {\bfseries get\+Dispatch\+Info} ()
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a8daf7d9ed980e8564a17dfa114f92c6d}\label{classbtCollisionWorld_a8daf7d9ed980e8564a17dfa114f92c6d}} 
+const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \& {\bfseries get\+Dispatch\+Info} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ab41ca6cd3134844d52a431a27e2edb6d}\label{classbtCollisionWorld_ab41ca6cd3134844d52a431a27e2edb6d}} 
+bool {\bfseries get\+Force\+Update\+All\+Aabbs} () const
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a482d6276966521c8bf89513830e377a9}\label{classbtCollisionWorld_a482d6276966521c8bf89513830e377a9}} 
+void {\bfseries set\+Force\+Update\+All\+Aabbs} (bool force\+Update\+All\+Aabbs)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aaa2a4d326b08921dee80256646f438d0}\label{classbtCollisionWorld_aaa2a4d326b08921dee80256646f438d0}} 
+virtual void \hyperlink{classbtCollisionWorld_aaa2a4d326b08921dee80256646f438d0}{serialize} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\begin{DoxyCompactList}\small\item\em Preliminary serialization test for Bullet 2.\+76. Loading those files requires a separate parser (Bullet/\+Demos/\+Serialize\+Demo) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classbtCollisionWorld_aca2a9413508b4a2449fe83ff93ea564e}{ray\+Test\+Single} (const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, bt\+Collision\+Object $\ast$collision\+Object, const bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Transform \&col\+Obj\+World\+Transform, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback)
+\item 
+static void \hyperlink{classbtCollisionWorld_a84bbeea09de9dc5c68e49826e58f7114}{ray\+Test\+Single\+Internal} (const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$collision\+Object\+Wrap, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aa63de55ff9451a80c8c825cafd64d9ba}\label{classbtCollisionWorld_aa63de55ff9451a80c8c825cafd64d9ba}} 
+static void \hyperlink{classbtCollisionWorld_aa63de55ff9451a80c8c825cafd64d9ba}{object\+Query\+Single} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, bt\+Collision\+Object $\ast$collision\+Object, const bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Transform \&col\+Obj\+World\+Transform, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)
+\begin{DoxyCompactList}\small\item\em object\+Query\+Single performs a collision detection query and calls the result\+Callback. It is used internally by ray\+Test. \end{DoxyCompactList}\item 
+static void \hyperlink{classbtCollisionWorld_a2312e2da71f0d7646a4dc19a4966bed0}{object\+Query\+Single\+Internal} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&convex\+From\+Trans, const bt\+Transform \&convex\+To\+Trans, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col\+Obj\+Wrap, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)
+\item 
+static void \hyperlink{classbtCollisionWorld_a2c4ba56a014d2a7d97d9da557f359f36}{ray\+Test\+Single} (const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, bt\+Collision\+Object $\ast$collision\+Object, const bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Transform \&col\+Obj\+World\+Transform, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aeecfeba65c80ce801cc2046cccd08eab}\label{classbtCollisionWorld_aeecfeba65c80ce801cc2046cccd08eab}} 
+static void {\bfseries ray\+Test\+Single\+Internal} (const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$collision\+Object\+Wrap, \hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&result\+Callback)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a7d31ae445178cb57788c9781dbb1e94f}\label{classbtCollisionWorld_a7d31ae445178cb57788c9781dbb1e94f}} 
+static void \hyperlink{classbtCollisionWorld_a7d31ae445178cb57788c9781dbb1e94f}{object\+Query\+Single} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, bt\+Collision\+Object $\ast$collision\+Object, const bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Transform \&col\+Obj\+World\+Transform, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)
+\begin{DoxyCompactList}\small\item\em object\+Query\+Single performs a collision detection query and calls the result\+Callback. It is used internally by ray\+Test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtCollisionWorld_ad257a679265cf11c3651a5780c81c133}\label{classbtCollisionWorld_ad257a679265cf11c3651a5780c81c133}} 
+static void {\bfseries object\+Query\+Single\+Internal} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&convex\+From\+Trans, const bt\+Transform \&convex\+To\+Trans, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col\+Obj\+Wrap, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classbtCollisionWorld_aeed5861d66035fa72f40e27b04bdc056}{serialize\+Collision\+Objects} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_aeed5861d66035fa72f40e27b04bdc056}\label{classbtCollisionWorld_aeed5861d66035fa72f40e27b04bdc056}} 
+void {\bfseries serialize\+Collision\+Objects} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a0e6d877f2834115d9aea1496c42dffba}\label{classbtCollisionWorld_a0e6d877f2834115d9aea1496c42dffba}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Collision\+Object $\ast$ $>$ {\bfseries m\+\_\+collision\+Objects}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a1d5b7f3af89efe4ecdb9ac8030e3d351}\label{classbtCollisionWorld_a1d5b7f3af89efe4ecdb9ac8030e3d351}} 
+\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$ {\bfseries m\+\_\+dispatcher1}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a07f4c7b327bd773c557a4804bfec7445}\label{classbtCollisionWorld_a07f4c7b327bd773c557a4804bfec7445}} 
+\hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} {\bfseries m\+\_\+dispatch\+Info}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a03ca4f13e0ec192c3c474cbd61971c9d}\label{classbtCollisionWorld_a03ca4f13e0ec192c3c474cbd61971c9d}} 
+\hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$ {\bfseries m\+\_\+broadphase\+Pair\+Cache}
+\item 
+\mbox{\Hypertarget{classbtCollisionWorld_a56ddae022c90a594e55f1665e7ce624b}\label{classbtCollisionWorld_a56ddae022c90a594e55f1665e7ce624b}} 
+\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$ {\bfseries m\+\_\+debug\+Drawer}
+\item 
+bool \hyperlink{classbtCollisionWorld_a91b110fc2501b965cdcaa2a6e1d89999}{m\+\_\+force\+Update\+All\+Aabbs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collision\+World is interface and container for the collision detection. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtCollisionWorld_a91a0511ba3176f9cc1b58759262f9bd3}\label{classbtCollisionWorld_a91a0511ba3176f9cc1b58759262f9bd3}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!compute\+Overlapping\+Pairs@{compute\+Overlapping\+Pairs}}
+\index{compute\+Overlapping\+Pairs@{compute\+Overlapping\+Pairs}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{compute\+Overlapping\+Pairs()}{computeOverlappingPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+Collision\+World\+::compute\+Overlapping\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+the compute\+Overlapping\+Pairs is usually already called by perform\+Discrete\+Collision\+Detection (or step\+Simulation) it can be useful to use if you perform ray tests without collision detection/simulation \mbox{\Hypertarget{classbtCollisionWorld_afb32fb7ecb40aa6247fd3df18ba81098}\label{classbtCollisionWorld_afb32fb7ecb40aa6247fd3df18ba81098}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!compute\+Overlapping\+Pairs@{compute\+Overlapping\+Pairs}}
+\index{compute\+Overlapping\+Pairs@{compute\+Overlapping\+Pairs}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{compute\+Overlapping\+Pairs()}{computeOverlappingPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::compute\+Overlapping\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+the compute\+Overlapping\+Pairs is usually already called by perform\+Discrete\+Collision\+Detection (or step\+Simulation) it can be useful to use if you perform ray tests without collision detection/simulation \mbox{\Hypertarget{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}\label{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!contact\+Pair\+Test@{contact\+Pair\+Test}}
+\index{contact\+Pair\+Test@{contact\+Pair\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{contact\+Pair\+Test()}{contactPairTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::contact\+Pair\+Test (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$}]{col\+ObjA,  }\item[{bt\+Collision\+Object $\ast$}]{col\+ObjB,  }\item[{\hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})}
+
+contact\+Test performs a discrete collision test between two collision objects and calls the result\+Callback if overlap if detected. it reports one or more contact points (including the one with deepest penetration) \mbox{\Hypertarget{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}\label{classbtCollisionWorld_aabbec542dcd348041db6d07b36a640c8}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!contact\+Pair\+Test@{contact\+Pair\+Test}}
+\index{contact\+Pair\+Test@{contact\+Pair\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{contact\+Pair\+Test()}{contactPairTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::contact\+Pair\+Test (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$}]{col\+ObjA,  }\item[{bt\+Collision\+Object $\ast$}]{col\+ObjB,  }\item[{\hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})}
+
+contact\+Test performs a discrete collision test between two collision objects and calls the result\+Callback if overlap if detected. it reports one or more contact points (including the one with deepest penetration) \mbox{\Hypertarget{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}\label{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!contact\+Test@{contact\+Test}}
+\index{contact\+Test@{contact\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{contact\+Test()}{contactTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::contact\+Test (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$}]{col\+Obj,  }\item[{\hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})}
+
+contact\+Test performs a discrete collision test between col\+Obj against all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback. it reports one or more contact points for every overlapping object (including the one with deepest penetration)
+
+contact\+Test performs a discrete collision test against all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback. it reports one or more contact points for every overlapping object (including the one with deepest penetration) \mbox{\Hypertarget{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}\label{classbtCollisionWorld_ae1d167b53de82d4f97a47118f8480999}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!contact\+Test@{contact\+Test}}
+\index{contact\+Test@{contact\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{contact\+Test()}{contactTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::contact\+Test (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$}]{col\+Obj,  }\item[{\hyperlink{structbtCollisionWorld_1_1ContactResultCallback}{Contact\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})}
+
+contact\+Test performs a discrete collision test between col\+Obj against all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback. it reports one or more contact points for every overlapping object (including the one with deepest penetration) \mbox{\Hypertarget{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}\label{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!convex\+Sweep\+Test@{convex\+Sweep\+Test}}
+\index{convex\+Sweep\+Test@{convex\+Sweep\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{convex\+Sweep\+Test()}{convexSweepTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::convex\+Sweep\+Test (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{cast\+Shape,  }\item[{const bt\+Transform \&}]{from,  }\item[{const bt\+Transform \&}]{to,  }\item[{\hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&}]{result\+Callback,  }\item[{bt\+Scalar}]{allowed\+Ccd\+Penetration = {\ttfamily btScalar(0.)} }\end{DoxyParamCaption}) const}
+
+convex\+Test performs a swept convex cast on all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback This allows for several queries\+: first hit, all hits, any hit, dependent on the value return by the callback. use the broadphase to accelerate the search for objects, based on their aabb and for each object with ray-\/aabb overlap, perform an exact ray test unfortunately the implementation for ray\+Test and convex\+Sweep\+Test duplicated, albeit practically identical \mbox{\Hypertarget{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}\label{classbtCollisionWorld_a8dcdf201fe1c98c633682cf3845d237f}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!convex\+Sweep\+Test@{convex\+Sweep\+Test}}
+\index{convex\+Sweep\+Test@{convex\+Sweep\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{convex\+Sweep\+Test()}{convexSweepTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::convex\+Sweep\+Test (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{cast\+Shape,  }\item[{const bt\+Transform \&}]{from,  }\item[{const bt\+Transform \&}]{to,  }\item[{\hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&}]{result\+Callback,  }\item[{bt\+Scalar}]{allowed\+Ccd\+Penetration = {\ttfamily btScalar(0.)} }\end{DoxyParamCaption}) const}
+
+convex\+Test performs a swept convex cast on all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback This allows for several queries\+: first hit, all hits, any hit, dependent on the value return by the callback. \mbox{\Hypertarget{classbtCollisionWorld_ac1ca6489c220005798069152c3df0d08}\label{classbtCollisionWorld_ac1ca6489c220005798069152c3df0d08}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!debug\+Draw\+Object@{debug\+Draw\+Object}}
+\index{debug\+Draw\+Object@{debug\+Draw\+Object}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{debug\+Draw\+Object()}{debugDrawObject()}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::debug\+Draw\+Object (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{world\+Transform,  }\item[{const bt\+Collision\+Shape $\ast$}]{shape,  }\item[{const bt\+Vector3 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+for polyhedral shapes
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000011}{Todo}]pass camera, for some culling? no -\/$>$ we are not a graphics lib \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtCollisionWorld_a2312e2da71f0d7646a4dc19a4966bed0}\label{classbtCollisionWorld_a2312e2da71f0d7646a4dc19a4966bed0}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!object\+Query\+Single\+Internal@{object\+Query\+Single\+Internal}}
+\index{object\+Query\+Single\+Internal@{object\+Query\+Single\+Internal}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{object\+Query\+Single\+Internal()}{objectQuerySingleInternal()}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::object\+Query\+Single\+Internal (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{cast\+Shape,  }\item[{const bt\+Transform \&}]{convex\+From\+Trans,  }\item[{const bt\+Transform \&}]{convex\+To\+Trans,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{col\+Obj\+Wrap,  }\item[{\hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&}]{result\+Callback,  }\item[{bt\+Scalar}]{allowed\+Penetration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000010}{Todo}]\+: use \hyperlink{classAABB}{A\+A\+BB} tree or other B\+VH acceleration structure! \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtCollisionWorld_a01fb1f5ff8a93c11f0c6837d225ae4b7}\label{classbtCollisionWorld_a01fb1f5ff8a93c11f0c6837d225ae4b7}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!ray\+Test@{ray\+Test}}
+\index{ray\+Test@{ray\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{ray\+Test()}{rayTest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::ray\+Test (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{ray\+From\+World,  }\item[{const bt\+Vector3 \&}]{ray\+To\+World,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+ray\+Test performs a raycast on all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback This allows for several queries\+: first hit, all hits, any hit, dependent on the value returned by the callback. use the broadphase to accelerate the search for objects, based on their aabb and for each object with ray-\/aabb overlap, perform an exact ray test \mbox{\Hypertarget{classbtCollisionWorld_aad7854427ebb72ec77d32a6a2d458504}\label{classbtCollisionWorld_aad7854427ebb72ec77d32a6a2d458504}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!ray\+Test@{ray\+Test}}
+\index{ray\+Test@{ray\+Test}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{ray\+Test()}{rayTest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+Collision\+World\+::ray\+Test (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{ray\+From\+World,  }\item[{const bt\+Vector3 \&}]{ray\+To\+World,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+ray\+Test performs a raycast on all objects in the \hyperlink{classbtCollisionWorld}{bt\+Collision\+World}, and calls the result\+Callback This allows for several queries\+: first hit, all hits, any hit, dependent on the value returned by the callback. \mbox{\Hypertarget{classbtCollisionWorld_aca2a9413508b4a2449fe83ff93ea564e}\label{classbtCollisionWorld_aca2a9413508b4a2449fe83ff93ea564e}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!ray\+Test\+Single@{ray\+Test\+Single}}
+\index{ray\+Test\+Single@{ray\+Test\+Single}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{ray\+Test\+Single()}{rayTestSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::ray\+Test\+Single (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{ray\+From\+Trans,  }\item[{const bt\+Transform \&}]{ray\+To\+Trans,  }\item[{bt\+Collision\+Object $\ast$}]{collision\+Object,  }\item[{const bt\+Collision\+Shape $\ast$}]{collision\+Shape,  }\item[{const bt\+Transform \&}]{col\+Obj\+World\+Transform,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ray\+Test\+Single performs a raycast call and calls the result\+Callback. It is used internally by ray\+Test. In a future implementation, we consider moving the ray test as a virtual method in bt\+Collision\+Shape. This allows more customization. \mbox{\Hypertarget{classbtCollisionWorld_a2c4ba56a014d2a7d97d9da557f359f36}\label{classbtCollisionWorld_a2c4ba56a014d2a7d97d9da557f359f36}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!ray\+Test\+Single@{ray\+Test\+Single}}
+\index{ray\+Test\+Single@{ray\+Test\+Single}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{ray\+Test\+Single()}{rayTestSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void bt\+Collision\+World\+::ray\+Test\+Single (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{ray\+From\+Trans,  }\item[{const bt\+Transform \&}]{ray\+To\+Trans,  }\item[{bt\+Collision\+Object $\ast$}]{collision\+Object,  }\item[{const bt\+Collision\+Shape $\ast$}]{collision\+Shape,  }\item[{const bt\+Transform \&}]{col\+Obj\+World\+Transform,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ray\+Test\+Single performs a raycast call and calls the result\+Callback. It is used internally by ray\+Test. In a future implementation, we consider moving the ray test as a virtual method in bt\+Collision\+Shape. This allows more customization. \mbox{\Hypertarget{classbtCollisionWorld_a84bbeea09de9dc5c68e49826e58f7114}\label{classbtCollisionWorld_a84bbeea09de9dc5c68e49826e58f7114}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!ray\+Test\+Single\+Internal@{ray\+Test\+Single\+Internal}}
+\index{ray\+Test\+Single\+Internal@{ray\+Test\+Single\+Internal}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{ray\+Test\+Single\+Internal()}{rayTestSingleInternal()}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::ray\+Test\+Single\+Internal (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{ray\+From\+Trans,  }\item[{const bt\+Transform \&}]{ray\+To\+Trans,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{collision\+Object\+Wrap,  }\item[{\hyperlink{structbtCollisionWorld_1_1RayResultCallback}{Ray\+Result\+Callback} \&}]{result\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+optimized version for bt\+Bvh\+Triangle\+Mesh\+Shape \mbox{\Hypertarget{classbtCollisionWorld_aeed5861d66035fa72f40e27b04bdc056}\label{classbtCollisionWorld_aeed5861d66035fa72f40e27b04bdc056}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!serialize\+Collision\+Objects@{serialize\+Collision\+Objects}}
+\index{serialize\+Collision\+Objects@{serialize\+Collision\+Objects}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{serialize\+Collision\+Objects()}{serializeCollisionObjects()}}
+{\footnotesize\ttfamily void bt\+Collision\+World\+::serialize\+Collision\+Objects (\begin{DoxyParamCaption}\item[{\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$}]{serializer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+keep track of shapes already serialized 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbtCollisionWorld_a91b110fc2501b965cdcaa2a6e1d89999}\label{classbtCollisionWorld_a91b110fc2501b965cdcaa2a6e1d89999}} 
+\index{bt\+Collision\+World@{bt\+Collision\+World}!m\+\_\+force\+Update\+All\+Aabbs@{m\+\_\+force\+Update\+All\+Aabbs}}
+\index{m\+\_\+force\+Update\+All\+Aabbs@{m\+\_\+force\+Update\+All\+Aabbs}!bt\+Collision\+World@{bt\+Collision\+World}}
+\subsubsection{\texorpdfstring{m\+\_\+force\+Update\+All\+Aabbs}{m\_forceUpdateAllAabbs}}
+{\footnotesize\ttfamily bool bt\+Collision\+World\+::m\+\_\+force\+Update\+All\+Aabbs\hspace{0.3cm}{\ttfamily [protected]}}
+
+m\+\_\+force\+Update\+All\+Aabbs can be set to false as an optimization to only update active object A\+A\+B\+Bs it is true by default, because it is error-\/prone (setting the position of static objects wouldn\textquotesingle{}t update their \hyperlink{classAABB}{A\+A\+BB}) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+World.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+World.\+cpp\end{DoxyCompactItemize}

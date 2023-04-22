@@ -73,17 +73,17 @@ O_State_Init::execute(Robot&)
                 robot.actions().lcd2x16().print("  ");
 
                 if (b == BUTTON_LEFT_KEY) {
-                    logger().info() << "BUTTON_LEFT_KEY - YELLOW selected" << logs::end;
+                    logger().info() << "BUTTON_LEFT_KEY - GREEN selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
-                    robot.actions().lcd2x16().print("YELLOW ");
+                    robot.actions().lcd2x16().print("VERT ");
                     robot.setMyColor(PMXYELLOW);
                 }
                 if (b == BUTTON_RIGHT_KEY) {
-                    logger().info() << "BUTTON_RIGHT_KEY - VIOLET selected" << logs::end;
+                    logger().info() << "BUTTON_RIGHT_KEY - BLUE selected" << logs::end;
 
                     robot.actions().lcd2x16().setCursor(2, 0);
-                    robot.actions().lcd2x16().print("VIOLET ");
+                    robot.actions().lcd2x16().print("BLUE ");
                     robot.setMyColor(PMXVIOLET);
                 }
             }
@@ -161,18 +161,36 @@ O_State_Init::execute(Robot&)
                     robot.strategy("strat3");
                 }
 
+            }else if (mode == 4) {
+                logger().info() << "ejecter les balles" << logs::end;
+                robot.actions().lancer_les_balles(30);
+                robot.actions().aspiration_lacher_les_balles();
+                usleep(6000000);
+                robot.actions().aspiration_closed_init(-1);
+                robot.actions().stopper_lanceur_de_balles();
             }
             b = robot.actions().buttonBar().waitOneOfAllPressed();
 
             if (b == BUTTON_UP_KEY) {
                 logger().info() << "BUTTON_UP_KEY - MECA" << logs::end;
 
-                //robot.actions().ax12_init();
+                robot.actions().ax12_init();
+
+
+
+
+
+                //activation de la turbine pour mettre les balles
+                robot.actions().turbine_aspiration(true);
+
+
                 utils::sleep_for_micros(300000);
             }
             if (b == BUTTON_DOWN_KEY) {
+                //arret de la turbine
+                robot.actions().turbine_aspiration(false);
                 mode++;
-                if (mode > 3) mode = 1;
+                if (mode > 4) mode = 1;
                 logger().info() << "BUTTON_DOWN_KEY - MODE changed to " << mode << logs::end;
 
             }
@@ -241,13 +259,13 @@ O_State_Init::execute(Robot&)
         logger().info() << "PMX...WAIT TIRETTE !!!!!!!!!!!!!!!";
         if (robot.getMyColor() == PMXYELLOW) {
             robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("YEL");
-            logger().info() << "YELLOW";
+            robot.actions().lcd2x16().print("VER");
+            logger().info() << "GREEN";
         }
         else {
             robot.actions().lcd2x16().setCursor(0, 0);
-            robot.actions().lcd2x16().print("VIO");
-            logger().info() << "VIOLET  ";
+            robot.actions().lcd2x16().print("BLU");
+            logger().info() << "BLUE  ";
         }
         logger().info() << logs::end;
 
@@ -286,7 +304,7 @@ O_State_Init::execute(Robot&)
             exit(0);
         }
         else {
-            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "YELLOW" : "VIOLET ") << logs::end;
+            logger().info() << "COLOR is " << (robot.getMyColor() == PMXYELLOW ? "VERT" : "BLUE ") << logs::end;
         }
 
         robot.actions().lcd2x16().home();
@@ -310,9 +328,10 @@ O_State_Init::execute(Robot&)
     robot.actions().lcd2x16().home();
     robot.actions().lcd2x16().print("GO...");
 
-//    logger().info() << "on ferme les cils" << logs::end;
+    logger().info() << "ax12" << logs::end;
 //    robot.actions().ax12_left_cil(0);
 //    robot.actions().ax12_right_cil();
+
 
     //robot.points += 5; //init
     robot.displayPoints();
@@ -329,7 +348,7 @@ void O_State_Init::setPos() {
     robot.actions().lcd2x16().print("SET POSITION...");
 
     robot.asserv().startMotionTimerAndOdo(true);
-    robot.asserv().setPositionAndColor(130, 1450, 0.0, (robot.getMyColor() != PMXYELLOW));
+    robot.asserv().setPositionAndColor(130, 250, 0.0, (robot.getMyColor() != PMXYELLOW));
     logger().info() << "O_State_Init::setPos() svgPrintPosition x="
             << robot.asserv().pos_getX_mm()
             << " y="
@@ -355,6 +374,10 @@ void O_State_Init::setPos() {
     ts = robot.asserv().doLineAbs(100);
     robot.asserv().setLowSpeedForward(true, 60);
     //robot.asserv().setLowSpeedForward(true, 100);
+
+    ts = robot.asserv().doMoveForwardTo(300, 300);
+    robot.actions().ax12_init();
+
     /*
      ts = robot.asserv().doLineAbs(200);
      robot.actions().ax12_init();

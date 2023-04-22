@@ -1,0 +1,204 @@
+\hypertarget{classPUSphere}{}\section{P\+U\+Sphere Class Reference}
+\label{classPUSphere}\index{P\+U\+Sphere@{P\+U\+Sphere}}
+
+
+{\ttfamily \#include $<$C\+C\+P\+U\+Sphere.\+h$>$}
+
+
+
+Collaboration diagram for P\+U\+Sphere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classPUSphere__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPUSphere_af6833d29a3b5fecb8f29d98c1827a7bb}{P\+U\+Sphere} ()
+\item 
+\hyperlink{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}{P\+U\+Sphere} (const \hyperlink{classVec3}{Vec3} \&center, float radius)
+\item 
+float \hyperlink{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}{get\+Radius} (void) const
+\item 
+void \hyperlink{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}{set\+Radius} (float radius)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}{get\+Center} (void) const
+\item 
+void \hyperlink{classPUSphere_ae656af3bcf247af6b4c21b303e543441}{set\+Center} (const \hyperlink{classVec3}{Vec3} \&center)
+\item 
+bool \hyperlink{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}{intersects} (const \hyperlink{classPUSphere}{P\+U\+Sphere} \&s) const
+\item 
+bool \hyperlink{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}{intersects} (const \hyperlink{classVec3}{Vec3} \&v) const
+\item 
+void \hyperlink{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}{merge} (const \hyperlink{classPUSphere}{P\+U\+Sphere} \&oth)
+\item 
+\hyperlink{classPUSphere_a578240112ac2f4a13eb19f2c27f29722}{P\+U\+Sphere} ()
+\item 
+\hyperlink{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}{P\+U\+Sphere} (const \hyperlink{classVec3}{Vec3} \&center, float radius)
+\item 
+float \hyperlink{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}{get\+Radius} (void) const
+\item 
+void \hyperlink{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}{set\+Radius} (float radius)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}{get\+Center} (void) const
+\item 
+void \hyperlink{classPUSphere_ae656af3bcf247af6b4c21b303e543441}{set\+Center} (const \hyperlink{classVec3}{Vec3} \&center)
+\item 
+bool \hyperlink{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}{intersects} (const \hyperlink{classPUSphere}{P\+U\+Sphere} \&s) const
+\item 
+bool \hyperlink{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}{intersects} (const \hyperlink{classVec3}{Vec3} \&v) const
+\item 
+void \hyperlink{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}{merge} (const \hyperlink{classPUSphere}{P\+U\+Sphere} \&oth)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUSphere_a89f2ad52da9b523d94fcc0a3cf8a8e3d}\label{classPUSphere_a89f2ad52da9b523d94fcc0a3cf8a8e3d}} 
+float {\bfseries \+\_\+radius}
+\item 
+\mbox{\Hypertarget{classPUSphere_abc6ee97866e3d539cf5678d5f356dbca}\label{classPUSphere_abc6ee97866e3d539cf5678d5f356dbca}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+center}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A sphere primitive, mostly used for bounds checking. \begin{DoxyRemark}{Remarks}
+A sphere in math texts is normally represented by the function x$^\wedge$2 + y$^\wedge$2 + z$^\wedge$2 = r$^\wedge$2 (for sphere\textquotesingle{}s centered on the origin). Ogre stores spheres simply as a center point and a radius. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPUSphere_af6833d29a3b5fecb8f29d98c1827a7bb}\label{classPUSphere_af6833d29a3b5fecb8f29d98c1827a7bb}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{P\+U\+Sphere()}{PUSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN P\+U\+Sphere\+::\+P\+U\+Sphere (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standard constructor -\/ creates a unit sphere around the origin. \mbox{\Hypertarget{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}\label{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{P\+U\+Sphere()}{PUSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily P\+U\+Sphere\+::\+P\+U\+Sphere (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{center,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Constructor allowing arbitrary spheres. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The center point of the sphere. \\
+\hline
+{\em radius} & The radius of the sphere. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSphere_a578240112ac2f4a13eb19f2c27f29722}\label{classPUSphere_a578240112ac2f4a13eb19f2c27f29722}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{P\+U\+Sphere()}{PUSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily P\+U\+Sphere\+::\+P\+U\+Sphere (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standard constructor -\/ creates a unit sphere around the origin. \mbox{\Hypertarget{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}\label{classPUSphere_a91c8a4763bfba145f5a93309f92ed9de}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\index{P\+U\+Sphere@{P\+U\+Sphere}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{P\+U\+Sphere()}{PUSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily P\+U\+Sphere\+::\+P\+U\+Sphere (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{center,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Constructor allowing arbitrary spheres. 
+\begin{DoxyParams}{Parameters}
+{\em center} & The center point of the sphere. \\
+\hline
+{\em radius} & The radius of the sphere. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}\label{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Sphere\+::get\+Center (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the center point of the sphere. \mbox{\Hypertarget{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}\label{classPUSphere_a082ae4c40dd72db44015d9024b91edf5}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Sphere\+::get\+Center (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the center point of the sphere. \mbox{\Hypertarget{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}\label{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Sphere\+::get\+Radius (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the radius of the sphere. \mbox{\Hypertarget{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}\label{classPUSphere_addc27e2bf80742bf0a15ec81ceb94e97}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float P\+U\+Sphere\+::get\+Radius (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the radius of the sphere. \mbox{\Hypertarget{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}\label{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool P\+U\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUSphere}{P\+U\+Sphere} \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether or not this sphere intersects another sphere. \mbox{\Hypertarget{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}\label{classPUSphere_a904b2983de3bcdea67ee8fc63ac78833}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool P\+U\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUSphere}{P\+U\+Sphere} \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether or not this sphere intersects another sphere. \mbox{\Hypertarget{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}\label{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool P\+U\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether or not this sphere intersects a box. Returns whether or not this sphere intersects a plane. Returns whether or not this sphere intersects a point. \mbox{\Hypertarget{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}\label{classPUSphere_ae3415d519390edc0c4d6c16d43851ab8}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool P\+U\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether or not this sphere intersects a box. Returns whether or not this sphere intersects a plane. Returns whether or not this sphere intersects a point. \mbox{\Hypertarget{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}\label{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!merge@{merge}}
+\index{merge@{merge}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::merge (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUSphere}{P\+U\+Sphere} \&}]{oth }\end{DoxyParamCaption})}
+
+Merges another Sphere into the current sphere \mbox{\Hypertarget{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}\label{classPUSphere_aa327bfa3036b8f9b0c61127502038f48}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!merge@{merge}}
+\index{merge@{merge}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::merge (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUSphere}{P\+U\+Sphere} \&}]{oth }\end{DoxyParamCaption})}
+
+Merges another Sphere into the current sphere \mbox{\Hypertarget{classPUSphere_ae656af3bcf247af6b4c21b303e543441}\label{classPUSphere_ae656af3bcf247af6b4c21b303e543441}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!set\+Center@{set\+Center}}
+\index{set\+Center@{set\+Center}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{set\+Center()}{setCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::set\+Center (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the center point of the sphere. \mbox{\Hypertarget{classPUSphere_ae656af3bcf247af6b4c21b303e543441}\label{classPUSphere_ae656af3bcf247af6b4c21b303e543441}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!set\+Center@{set\+Center}}
+\index{set\+Center@{set\+Center}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{set\+Center()}{setCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::set\+Center (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the center point of the sphere. \mbox{\Hypertarget{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}\label{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!set\+Radius@{set\+Radius}}
+\index{set\+Radius@{set\+Radius}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{set\+Radius()}{setRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::set\+Radius (\begin{DoxyParamCaption}\item[{float}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the radius of the sphere. \mbox{\Hypertarget{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}\label{classPUSphere_ab3161b9e553ed38c311fd4bff5dba3f9}} 
+\index{P\+U\+Sphere@{P\+U\+Sphere}!set\+Radius@{set\+Radius}}
+\index{set\+Radius@{set\+Radius}!P\+U\+Sphere@{P\+U\+Sphere}}
+\subsubsection{\texorpdfstring{set\+Radius()}{setRadius()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Sphere\+::set\+Radius (\begin{DoxyParamCaption}\item[{float}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the radius of the sphere. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Sphere.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Sphere.\+cpp\end{DoxyCompactItemize}

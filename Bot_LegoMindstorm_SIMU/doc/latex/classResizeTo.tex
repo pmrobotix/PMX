@@ -1,0 +1,155 @@
+\hypertarget{classResizeTo}{}\section{Resize\+To Class Reference}
+\label{classResizeTo}\index{Resize\+To@{Resize\+To}}
+
+
+Resize a \hyperlink{classNode}{Node} object to the final size by modifying it\textquotesingle{}s \hyperlink{classSize}{Size} attribute.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Interval.\+h$>$}
+
+
+
+Inheritance diagram for Resize\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classResizeTo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Resize\+To\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classResizeTo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classResizeTo}{Resize\+To} $\ast$ \hyperlink{classResizeTo_a187ae9350810bc93ec2407b29103ac8c}{clone} () const override
+\item 
+void \hyperlink{classResizeTo_a7fb76b25f5dbf258bdafaa615f13a05b}{start\+With\+Target} (cocos2d\+::\+Node $\ast$target) override
+\item 
+void \hyperlink{classResizeTo_a081502ef533e7de8e4c53e8e0e7a1412}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classResizeTo}{Resize\+To} $\ast$ \hyperlink{classResizeTo_a3e41f0c44b3f0349ca041947f4f0b12e}{create} (float duration, const cocos2d\+::\+Size \&final\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resize a \hyperlink{classNode}{Node} object to the final size by modifying it\textquotesingle{}s \hyperlink{classSize}{Size} attribute. Works on all nodes where set\+Content\+Size is effective. But it\textquotesingle{}s mostly useful for nodes where 9-\/slice is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classResizeTo_a42800f7e3789c290422d8f95f7e329f7}\label{classResizeTo_a42800f7e3789c290422d8f95f7e329f7}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classResizeTo}{Resize\+To}() \{\} virtual $\sim$\hyperlink{classResizeTo}{Resize\+To}() \{\} bool init\+With\+Duration(float duration
+\item 
+\mbox{\Hypertarget{classResizeTo_a1b88b823c165cd5e8c7fd5c9e945bc7b}\label{classResizeTo_a1b88b823c165cd5e8c7fd5c9e945bc7b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} const cocos2d\+::\+Size \& {\bfseries final\+\_\+size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classResizeTo_ab48db677a89f95c1125592250c48284c}\label{classResizeTo_ab48db677a89f95c1125592250c48284c}} 
+cocos2d\+::\+Size {\bfseries \+\_\+initial\+Size}
+\item 
+\mbox{\Hypertarget{classResizeTo_a3dc7a9cf4ec37ca850b401994f5bc826}\label{classResizeTo_a3dc7a9cf4ec37ca850b401994f5bc826}} 
+cocos2d\+::\+Size {\bfseries \+\_\+final\+Size}
+\item 
+\mbox{\Hypertarget{classResizeTo_a0a3bf2998fd1087c63851a11ded8daad}\label{classResizeTo_a0a3bf2998fd1087c63851a11ded8daad}} 
+cocos2d\+::\+Size {\bfseries \+\_\+size\+Delta}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Resize a \hyperlink{classNode}{Node} object to the final size by modifying it\textquotesingle{}s \hyperlink{classSize}{Size} attribute. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classResizeTo_a187ae9350810bc93ec2407b29103ac8c}\label{classResizeTo_a187ae9350810bc93ec2407b29103ac8c}} 
+\index{Resize\+To@{Resize\+To}!clone@{clone}}
+\index{clone@{clone}!Resize\+To@{Resize\+To}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classResizeTo}{Resize\+To} $\ast$ Resize\+To\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInterval_abc93ce0c2f54a90eb216a7803f25f44a}{Action\+Interval}.
+
+\mbox{\Hypertarget{classResizeTo_a3e41f0c44b3f0349ca041947f4f0b12e}\label{classResizeTo_a3e41f0c44b3f0349ca041947f4f0b12e}} 
+\index{Resize\+To@{Resize\+To}!create@{create}}
+\index{create@{create}!Resize\+To@{Resize\+To}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{classResizeTo}{Resize\+To} $\ast$ Resize\+To\+::create (\begin{DoxyParamCaption}\item[{float}]{duration,  }\item[{const cocos2d\+::\+Size \&}]{final\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Resize a \hyperlink{classNode}{Node} object to the final size by modifying it\textquotesingle{}s \hyperlink{classSize}{Size} attribute. Works on all nodes where set\+Content\+Size is effective. But it\textquotesingle{}s mostly useful for nodes where 9-\/slice is enabled. 
+
+Creates the action. 
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duration time, in seconds. \\
+\hline
+{\em final\+\_\+size} & The target size to reach \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autoreleased \hyperlink{classRotateTo}{Rotate\+To} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classResizeTo_a7fb76b25f5dbf258bdafaa615f13a05b}\label{classResizeTo_a7fb76b25f5dbf258bdafaa615f13a05b}} 
+\index{Resize\+To@{Resize\+To}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Resize\+To@{Resize\+To}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}}
+{\footnotesize\ttfamily void Resize\+To\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{cocos2d\+::\+Node $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInterval_ad3d91186b2c3108488ddbbdbbd982484}{Action\+Interval}.
+
+\mbox{\Hypertarget{classResizeTo_a081502ef533e7de8e4c53e8e0e7a1412}\label{classResizeTo_a081502ef533e7de8e4c53e8e0e7a1412}} 
+\index{Resize\+To@{Resize\+To}!update@{update}}
+\index{update@{update}!Resize\+To@{Resize\+To}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Resize\+To\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/2d/C\+C\+Action\+Interval.\+cpp\end{DoxyCompactItemize}

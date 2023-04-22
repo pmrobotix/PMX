@@ -1,0 +1,69 @@
+\hypertarget{classbtSoftRigidCollisionAlgorithm}{}\section{bt\+Soft\+Rigid\+Collision\+Algorithm Class Reference}
+\label{classbtSoftRigidCollisionAlgorithm}\index{bt\+Soft\+Rigid\+Collision\+Algorithm@{bt\+Soft\+Rigid\+Collision\+Algorithm}}
+
+
+\hyperlink{classbtSoftRigidCollisionAlgorithm}{bt\+Soft\+Rigid\+Collision\+Algorithm} provides collision detection between \hyperlink{classbtSoftBody}{bt\+Soft\+Body} and \hyperlink{classbtRigidBody}{bt\+Rigid\+Body}  
+
+
+
+
+{\ttfamily \#include $<$bt\+Soft\+Rigid\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Soft\+Rigid\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classbtSoftRigidCollisionAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Rigid\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classbtSoftRigidCollisionAlgorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtSoftRigidCollisionAlgorithm_1_1CreateFunc}{Create\+Func}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbtSoftRigidCollisionAlgorithm_aa6f289e315d626acf0a47ba093f6d4eb}{bt\+Soft\+Rigid\+Collision\+Algorithm} (bt\+Persistent\+Manifold $\ast$mf, const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col0, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidCollisionAlgorithm_ae2a70ed305793bc69865ca0ae21d4b31}\label{classbtSoftRigidCollisionAlgorithm_ae2a70ed305793bc69865ca0ae21d4b31}} 
+virtual void {\bfseries process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidCollisionAlgorithm_a81633f06daef836f73903d787ee71b67}\label{classbtSoftRigidCollisionAlgorithm_a81633f06daef836f73903d787ee71b67}} 
+virtual bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidCollisionAlgorithm_a09c0bea1a9c7ee41ac9f67287f581f89}\label{classbtSoftRigidCollisionAlgorithm_a09c0bea1a9c7ee41ac9f67287f581f89}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtSoftRigidCollisionAlgorithm}{bt\+Soft\+Rigid\+Collision\+Algorithm} provides collision detection between \hyperlink{classbtSoftBody}{bt\+Soft\+Body} and \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbtSoftRigidCollisionAlgorithm_aa6f289e315d626acf0a47ba093f6d4eb}\label{classbtSoftRigidCollisionAlgorithm_aa6f289e315d626acf0a47ba093f6d4eb}} 
+\index{bt\+Soft\+Rigid\+Collision\+Algorithm@{bt\+Soft\+Rigid\+Collision\+Algorithm}!bt\+Soft\+Rigid\+Collision\+Algorithm@{bt\+Soft\+Rigid\+Collision\+Algorithm}}
+\index{bt\+Soft\+Rigid\+Collision\+Algorithm@{bt\+Soft\+Rigid\+Collision\+Algorithm}!bt\+Soft\+Rigid\+Collision\+Algorithm@{bt\+Soft\+Rigid\+Collision\+Algorithm}}
+\subsubsection{\texorpdfstring{bt\+Soft\+Rigid\+Collision\+Algorithm()}{btSoftRigidCollisionAlgorithm()}}
+{\footnotesize\ttfamily bt\+Soft\+Rigid\+Collision\+Algorithm\+::bt\+Soft\+Rigid\+Collision\+Algorithm (\begin{DoxyParamCaption}\item[{bt\+Persistent\+Manifold $\ast$}]{mf,  }\item[{const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&}]{ci,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{col0,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{col1\+Wrap,  }\item[{bool}]{is\+Swapped }\end{DoxyParamCaption})}
+
+T\+O\+DO\+: include all the shapes that the softbody can collide with alternatively, implement special case collision algorithms (just like for rigid collision shapes) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Rigid\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Rigid\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

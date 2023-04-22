@@ -1,0 +1,1659 @@
+\hypertarget{classPUEmitter}{}\section{P\+U\+Emitter Class Reference}
+\label{classPUEmitter}\index{P\+U\+Emitter@{P\+U\+Emitter}}
+
+
+{\ttfamily \#include $<$C\+C\+P\+U\+Emitter.\+h$>$}
+
+
+
+Inheritance diagram for P\+U\+Emitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUEmitter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Emitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUEmitter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2deba8aab71429d17a97b20cc5f9e632}\label{classPUEmitter_a2deba8aab71429d17a97b20cc5f9e632}} 
+virtual void {\bfseries notify\+Start} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae19f9267967dbdc7b07dd2fbc3fbd999}\label{classPUEmitter_ae19f9267967dbdc7b07dd2fbc3fbd999}} 
+virtual void {\bfseries notify\+Stop} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2a0fc62b44e94bc8b67c390988abcdf5}\label{classPUEmitter_a2a0fc62b44e94bc8b67c390988abcdf5}} 
+virtual void {\bfseries notify\+Pause} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad3eeee26d8830ddbdef5688c2a67a482}\label{classPUEmitter_ad3eeee26d8830ddbdef5688c2a67a482}} 
+virtual void {\bfseries notify\+Resume} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_af61e32b075035f5b23301bf286de7793}\label{classPUEmitter_af61e32b075035f5b23301bf286de7793}} 
+virtual void {\bfseries notify\+Rescaled} (const \hyperlink{classVec3}{Vec3} \&scale)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2c3220d38c2f1a7719b24e89f0638c15}\label{classPUEmitter_a2c3220d38c2f1a7719b24e89f0638c15}} 
+virtual void {\bfseries prepare} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9b90702100c8305503e547f52fe9e647}\label{classPUEmitter_a9b90702100c8305503e547f52fe9e647}} 
+virtual void {\bfseries un\+Prepare} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4a293af23dbe77244afacb1800f739b0}\label{classPUEmitter_a4a293af23dbe77244afacb1800f739b0}} 
+virtual void {\bfseries pre\+Update\+Emitter} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a85e1f8bf3cb3b1f1a4bb01603198fd81}\label{classPUEmitter_a85e1f8bf3cb3b1f1a4bb01603198fd81}} 
+virtual void {\bfseries update\+Emitter} (\hyperlink{structParticle3D}{Particle3D} $\ast$particle, float delta\+Time) override
+\item 
+\mbox{\Hypertarget{classPUEmitter_af7c5ec1487e58fa89669663a0b75c8ca}\label{classPUEmitter_af7c5ec1487e58fa89669663a0b75c8ca}} 
+virtual void {\bfseries post\+Update\+Emitter} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a04018dd961dd70c6a56e1d1aea209440}\label{classPUEmitter_a04018dd961dd70c6a56e1d1aea209440}} 
+virtual unsigned short {\bfseries calculate\+Requested\+Particles} (float time\+Elapsed)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5a7c26acb6e60ea409438326dd5ed6d2}\label{classPUEmitter_a5a7c26acb6e60ea409438326dd5ed6d2}} 
+virtual void {\bfseries emit} (int count) override
+\item 
+\mbox{\Hypertarget{classPUEmitter_a3ce54a9192dca2a7ede165150eeddbb0}\label{classPUEmitter_a3ce54a9192dca2a7ede165150eeddbb0}} 
+void {\bfseries set\+Local\+Position} (const \hyperlink{classVec3}{Vec3} \&pos)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a115ef783e84aee1626dc20ddb4b43765}\label{classPUEmitter_a115ef783e84aee1626dc20ddb4b43765}} 
+const \hyperlink{classVec3}{Vec3} {\bfseries get\+Local\+Position} () const
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_a157e8c65ae506cd3b94303fa5a2d8fea}{get\+Derived\+Position} ()
+\item 
+void \hyperlink{classPUEmitter_a4f257171b370033d2ca3544867912645}{set\+Enabled} (bool enabled)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a3fba3a4ea416f98e87092c56ae7d2a66}\label{classPUEmitter_a3fba3a4ea416f98e87092c56ae7d2a66}} 
+bool {\bfseries is\+Enabled} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab123febe49418c9c012315c87410b6b8}\label{classPUEmitter_ab123febe49418c9c012315c87410b6b8}} 
+bool {\bfseries is\+Emitter\+Done} () const
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_a1feb299bc5e8c15a218f5122edb167ed}{get\+Emitter\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_af96e8544236036fb6e7a9f7bb5597913}\label{classPUEmitter_af96e8544236036fb6e7a9f7bb5597913}} 
+void {\bfseries set\+Emitter\+Type} (const std\+::string \&emitter\+Type)
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_a8b2f555b76240316aa37a5fb4e34e27b}{get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9cd134f4869abfb180ad56b30db42d48}\label{classPUEmitter_a9cd134f4869abfb180ad56b30db42d48}} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a375b1d6bd2dc610808eac3acffa1e136}{get\+Dyn\+Angle} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4f30f5b8ad670ff7087d5c8693e94cf0}\label{classPUEmitter_a4f30f5b8ad670ff7087d5c8693e94cf0}} 
+void {\bfseries set\+Dyn\+Angle} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Angle)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a2e7613f45571f856daa10102610dda3f}{get\+Dyn\+Emission\+Rate} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab6ad83450f676771b3b60f21c3883e43}\label{classPUEmitter_ab6ad83450f676771b3b60f21c3883e43}} 
+void {\bfseries set\+Dyn\+Emission\+Rate} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Emission\+Rate)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_ad10d6d8ab7e59b17f3baec994304a58e}{get\+Dyn\+Total\+Time\+To\+Live} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_af05805e991a246714dbbe7952bde709d}\label{classPUEmitter_af05805e991a246714dbbe7952bde709d}} 
+void {\bfseries set\+Dyn\+Total\+Time\+To\+Live} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Total\+Time\+To\+Live)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a9c80a35323f067e941f51e5dd1d0bb31}{get\+Dyn\+Particle\+Mass} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a7bf6c32faf96c75508faa4e94ba8dc62}\label{classPUEmitter_a7bf6c32faf96c75508faa4e94ba8dc62}} 
+void {\bfseries set\+Dyn\+Particle\+Mass} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Mass)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a0515b992a0d4ce765ccd8a58d95edf27}{get\+Dyn\+Velocity} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a68a3f8e9d491aa0468d6a2faba143329}\label{classPUEmitter_a68a3f8e9d491aa0468d6a2faba143329}} 
+void {\bfseries set\+Dyn\+Velocity} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Velocity)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_ab6ee381061b237e314ca9d7b756cd81b}{get\+Dyn\+Duration} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4165cc4319f111235e860ef4d59423b2}\label{classPUEmitter_a4165cc4319f111235e860ef4d59423b2}} 
+void {\bfseries set\+Dyn\+Duration} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Duration)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ac270698dbad1b6d1ae466d694f943441}\label{classPUEmitter_ac270698dbad1b6d1ae466d694f943441}} 
+void {\bfseries set\+Dyn\+Duration\+Set} (bool duration\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a72ef4ad6d5eedc9508b554c76d7870d7}{get\+Dyn\+Repeat\+Delay} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2d9b7d6ca7a184e30bdd48f5792b789d}\label{classPUEmitter_a2d9b7d6ca7a184e30bdd48f5792b789d}} 
+void {\bfseries set\+Dyn\+Repeat\+Delay} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Repeat\+Delay)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a81fecb4e7a2134b3aeff21c99edca836}\label{classPUEmitter_a81fecb4e7a2134b3aeff21c99edca836}} 
+void {\bfseries set\+Dyn\+Repeat\+Delay\+Set} (bool repeat\+Delay\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a10a6dc6fb4deb3a167b09195f323d57b}{get\+Dyn\+Particle\+All\+Dimensions} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_aec948d85bfa4464756c9d8b8fb2e2d9e}\label{classPUEmitter_aec948d85bfa4464756c9d8b8fb2e2d9e}} 
+void {\bfseries set\+Dyn\+Particle\+All\+Dimensions} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+All\+Dimensions)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a7b31b4e740fe69282c184efe7a910193}\label{classPUEmitter_a7b31b4e740fe69282c184efe7a910193}} 
+void {\bfseries set\+Dyn\+Particle\+All\+Dimensions\+Set} (bool particle\+All\+Dimensions\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a88dbac81e6621814124727767a79434f}{get\+Dyn\+Particle\+Width} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a405fb78092643f57496e8fabdd9d0c5d}\label{classPUEmitter_a405fb78092643f57496e8fabdd9d0c5d}} 
+void {\bfseries set\+Dyn\+Particle\+Width} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Width)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2977f08f86a9fde77d2440890e4057cc}\label{classPUEmitter_a2977f08f86a9fde77d2440890e4057cc}} 
+void {\bfseries set\+Dyn\+Particle\+Width\+Set} (bool particle\+Width\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a152502932d7c1642eb94f705092c2d60}{get\+Dyn\+Particle\+Height} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae68d29fc4a0298984ef9c4596e0b2e4a}\label{classPUEmitter_ae68d29fc4a0298984ef9c4596e0b2e4a}} 
+void {\bfseries set\+Dyn\+Particle\+Height} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Height)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae593ed969c3cf8440ea79822678c0c70}\label{classPUEmitter_ae593ed969c3cf8440ea79822678c0c70}} 
+void {\bfseries set\+Dyn\+Particle\+Height\+Set} (bool particle\+Height\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_ade71b4c8f846c1599c85bc67ff13ca39}{get\+Dyn\+Particle\+Depth} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a199e6b0337e78d4fd4df4da84461278c}\label{classPUEmitter_a199e6b0337e78d4fd4df4da84461278c}} 
+void {\bfseries set\+Dyn\+Particle\+Depth} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Depth)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad0c6b343d3055d1e6d6acac2f79754e3}\label{classPUEmitter_ad0c6b343d3055d1e6d6acac2f79754e3}} 
+void {\bfseries set\+Dyn\+Particle\+Depth\+Set} (bool particle\+Depth\+Set)
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_a619f57590dc9af6d3c2f6e72ff0f2e24}{get\+Emits\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a334fbdd4e50e5a646cce7bc2c4614776}\label{classPUEmitter_a334fbdd4e50e5a646cce7bc2c4614776}} 
+void {\bfseries set\+Emits\+Name} (const std\+::string \&emits\+Name)
+\item 
+\mbox{\Hypertarget{classPUEmitter_af3e3054ec17f77bb902bf389d15b40c2}\label{classPUEmitter_af3e3054ec17f77bb902bf389d15b40c2}} 
+P\+U\+Particle3\+D\+::\+Particle\+Type {\bfseries get\+Emits\+Type} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab5ecb43cd684cfbce8b2c635a425c79e}\label{classPUEmitter_ab5ecb43cd684cfbce8b2c635a425c79e}} 
+void {\bfseries set\+Emits\+Type} (P\+U\+Particle3\+D\+::\+Particle\+Type type)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a0946ce78fd9a9b2e8b769031f5b9df05}\label{classPUEmitter_a0946ce78fd9a9b2e8b769031f5b9df05}} 
+\hyperlink{classRef}{Ref} $\ast$ {\bfseries get\+Emits\+Entity\+Ptr} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5526e10e83497b74af1d24f15a854192}\label{classPUEmitter_a5526e10e83497b74af1d24f15a854192}} 
+bool {\bfseries is\+Marked\+For\+Emission} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a588139d063d1db43370d8b162b04a5d6}\label{classPUEmitter_a588139d063d1db43370d8b162b04a5d6}} 
+void {\bfseries set\+Marked\+For\+Emission} (bool is\+Marked)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_a9729a55ab2476e508a018f34a3e9992f}{get\+Particle\+Direction} (void)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_a5aa4fee283774f08aeec5159f492dd8a}{get\+Original\+Particle\+Direction} (void) const
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_aa0b58409ec93a9c859bce86313865582}{get\+Particle\+Orientation} (void) const
+\item 
+void \hyperlink{classPUEmitter_ab71781433c3f2547008a71de464d615a}{set\+Particle\+Orientation} (const \hyperlink{classQuaternion}{Quaternion} \&orientation)
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_a6a75ac2d65a56cb29d8bca44d3381e29}{get\+Particle\+Orientation\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}{set\+Particle\+Orientation\+Range\+Start} (const \hyperlink{classQuaternion}{Quaternion} \&orientation\+Range\+Start)
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_aa06b1807bea7964ff2221aacdac23f85}{get\+Particle\+Orientation\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}{set\+Particle\+Orientation\+Range\+End} (const \hyperlink{classQuaternion}{Quaternion} \&orientation\+Range\+End)
+\item 
+void \hyperlink{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}{set\+Particle\+Direction} (const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+bool \hyperlink{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}{is\+Auto\+Direction} (void) const
+\item 
+void \hyperlink{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}{set\+Auto\+Direction} (bool auto\+Direction)
+\item 
+bool \hyperlink{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}{is\+Force\+Emission} (void) const
+\item 
+void \hyperlink{classPUEmitter_a95b92d550215d868305629b7a79b244b}{set\+Force\+Emission} (bool force\+Emission)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_a4e266dca3690b7b32afb7a6fcf7eb7ed}{get\+Particle\+Color} (void) const
+\item 
+void \hyperlink{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}{set\+Particle\+Color} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_aeee3ac1b853918d874898247722f061c}{get\+Particle\+Color\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}{set\+Particle\+Color\+Range\+Start} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour\+Range\+Start)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_ac971bd9710f188afe3da5ac821d337ae}{get\+Particle\+Color\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}{set\+Particle\+Color\+Range\+End} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour\+Range\+End)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_a6b402a0fcb4600bb53b77b67dd9c4bd8}{get\+Particle\+Texture\+Coords} (void) const
+\item 
+void \hyperlink{classPUEmitter_a400b39eba5fa388728c51eda60b11163}{set\+Particle\+Texture\+Coords} (const unsigned short \&particle\+Texture\+Coords)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_aa70c8f3a46679009d4ce4dc2cee74cd0}{get\+Particle\+Texture\+Coords\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a52c268b861b30c2870665e13df528015}{set\+Particle\+Texture\+Coords\+Range\+Start} (const unsigned short \&particle\+Texture\+Coords\+Range\+Start)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_a10c26379e8687bb43cc884d2c02ecfe9}{get\+Particle\+Texture\+Coords\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_adedd188e230448e37af079e08833d23e}{set\+Particle\+Texture\+Coords\+Range\+End} (const unsigned short \&particle\+Texture\+Coords\+Range\+End)
+\item 
+bool \hyperlink{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}{is\+Keep\+Local} (void) const
+\item 
+void \hyperlink{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}{set\+Keep\+Local} (bool keep\+Local)
+\item 
+bool \hyperlink{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}{make\+Particle\+Local} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aad71994880c0fdd33a2f6e892026347c}\label{classPUEmitter_aad71994880c0fdd33a2f6e892026347c}} 
+virtual \hyperlink{classPUEmitter}{P\+U\+Emitter} $\ast$ {\bfseries clone} ()=0
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4cf1b22fafc633e9c49e23015795d5a9}\label{classPUEmitter_a4cf1b22fafc633e9c49e23015795d5a9}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUEmitter}{P\+U\+Emitter} $\ast$emitter)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a6b3d2b95b6936d55dc0dd086ffe729ab}\label{classPUEmitter_a6b3d2b95b6936d55dc0dd086ffe729ab}} 
+virtual void {\bfseries notify\+Start} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a02467e489f3c0030a911b3b0371ebf2d}\label{classPUEmitter_a02467e489f3c0030a911b3b0371ebf2d}} 
+virtual void {\bfseries notify\+Stop} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a0f8cde2a03610afcfe5e9ea5dfaa55c0}\label{classPUEmitter_a0f8cde2a03610afcfe5e9ea5dfaa55c0}} 
+virtual void {\bfseries notify\+Pause} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_aafbaa061e0504a785632dcd16eaa93f5}\label{classPUEmitter_aafbaa061e0504a785632dcd16eaa93f5}} 
+virtual void {\bfseries notify\+Resume} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a6752ce99030c5d32f0be728c780260f2}\label{classPUEmitter_a6752ce99030c5d32f0be728c780260f2}} 
+virtual void {\bfseries notify\+Rescaled} (const \hyperlink{classVec3}{Vec3} \&scale)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aba49d266a81861e10b3f92d0fb50174a}\label{classPUEmitter_aba49d266a81861e10b3f92d0fb50174a}} 
+virtual void {\bfseries prepare} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a0275c8931e46dc40568ea6ca50a0aa95}\label{classPUEmitter_a0275c8931e46dc40568ea6ca50a0aa95}} 
+virtual void {\bfseries un\+Prepare} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae5b9baba041b8f968447c3242dfbbfdf}\label{classPUEmitter_ae5b9baba041b8f968447c3242dfbbfdf}} 
+virtual void {\bfseries pre\+Update\+Emitter} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUEmitter_adf6af1d5c5242837f83d7e0e36fcde84}\label{classPUEmitter_adf6af1d5c5242837f83d7e0e36fcde84}} 
+virtual void {\bfseries update\+Emitter} (\hyperlink{structParticle3D}{Particle3D} $\ast$particle, float delta\+Time) override
+\item 
+\mbox{\Hypertarget{classPUEmitter_a6c3a2aa817ca402fd2114ed8b79e5baf}\label{classPUEmitter_a6c3a2aa817ca402fd2114ed8b79e5baf}} 
+virtual void {\bfseries post\+Update\+Emitter} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aeb5d5b0f82c7817edcbe514e02822218}\label{classPUEmitter_aeb5d5b0f82c7817edcbe514e02822218}} 
+virtual unsigned short {\bfseries calculate\+Requested\+Particles} (float time\+Elapsed)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a0393c21ce6f049018499f3eb30000578}\label{classPUEmitter_a0393c21ce6f049018499f3eb30000578}} 
+virtual void {\bfseries emit} (int count) override
+\item 
+\mbox{\Hypertarget{classPUEmitter_a3ce54a9192dca2a7ede165150eeddbb0}\label{classPUEmitter_a3ce54a9192dca2a7ede165150eeddbb0}} 
+void {\bfseries set\+Local\+Position} (const \hyperlink{classVec3}{Vec3} \&pos)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a115ef783e84aee1626dc20ddb4b43765}\label{classPUEmitter_a115ef783e84aee1626dc20ddb4b43765}} 
+const \hyperlink{classVec3}{Vec3} {\bfseries get\+Local\+Position} () const
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_a7021377a376b28f316ac4caf1412c0df}{get\+Derived\+Position} ()
+\item 
+void \hyperlink{classPUEmitter_a4f257171b370033d2ca3544867912645}{set\+Enabled} (bool enabled)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a3fba3a4ea416f98e87092c56ae7d2a66}\label{classPUEmitter_a3fba3a4ea416f98e87092c56ae7d2a66}} 
+bool {\bfseries is\+Enabled} (void) const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab123febe49418c9c012315c87410b6b8}\label{classPUEmitter_ab123febe49418c9c012315c87410b6b8}} 
+bool {\bfseries is\+Emitter\+Done} () const
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_acb57036fcb7fae68b4dc0b900fc8d542}{get\+Emitter\+Type} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_af96e8544236036fb6e7a9f7bb5597913}\label{classPUEmitter_af96e8544236036fb6e7a9f7bb5597913}} 
+void {\bfseries set\+Emitter\+Type} (const std\+::string \&emitter\+Type)
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_a310d26a2ee5d02a89773d74746f29835}{get\+Name} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9cd134f4869abfb180ad56b30db42d48}\label{classPUEmitter_a9cd134f4869abfb180ad56b30db42d48}} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a9f87f8a7caeeaf022039e9226d5911b0}{get\+Dyn\+Angle} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4f30f5b8ad670ff7087d5c8693e94cf0}\label{classPUEmitter_a4f30f5b8ad670ff7087d5c8693e94cf0}} 
+void {\bfseries set\+Dyn\+Angle} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Angle)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a97dc56e1db0253013512450407c87387}{get\+Dyn\+Emission\+Rate} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab6ad83450f676771b3b60f21c3883e43}\label{classPUEmitter_ab6ad83450f676771b3b60f21c3883e43}} 
+void {\bfseries set\+Dyn\+Emission\+Rate} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Emission\+Rate)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_abc1cd09d8b9d1db818130406a550a11a}{get\+Dyn\+Total\+Time\+To\+Live} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_af05805e991a246714dbbe7952bde709d}\label{classPUEmitter_af05805e991a246714dbbe7952bde709d}} 
+void {\bfseries set\+Dyn\+Total\+Time\+To\+Live} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Total\+Time\+To\+Live)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a2ed7a7c4403e98d58f5770dbc2f9db35}{get\+Dyn\+Particle\+Mass} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a7bf6c32faf96c75508faa4e94ba8dc62}\label{classPUEmitter_a7bf6c32faf96c75508faa4e94ba8dc62}} 
+void {\bfseries set\+Dyn\+Particle\+Mass} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Mass)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_afebcabddaaa921223bc58a5feffa0e60}{get\+Dyn\+Velocity} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a68a3f8e9d491aa0468d6a2faba143329}\label{classPUEmitter_a68a3f8e9d491aa0468d6a2faba143329}} 
+void {\bfseries set\+Dyn\+Velocity} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Velocity)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a08f852003ae3d3532df40b1425b3466e}{get\+Dyn\+Duration} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4165cc4319f111235e860ef4d59423b2}\label{classPUEmitter_a4165cc4319f111235e860ef4d59423b2}} 
+void {\bfseries set\+Dyn\+Duration} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Duration)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ac270698dbad1b6d1ae466d694f943441}\label{classPUEmitter_ac270698dbad1b6d1ae466d694f943441}} 
+void {\bfseries set\+Dyn\+Duration\+Set} (bool duration\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a8a5413646ad78e110b420088174fa112}{get\+Dyn\+Repeat\+Delay} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2d9b7d6ca7a184e30bdd48f5792b789d}\label{classPUEmitter_a2d9b7d6ca7a184e30bdd48f5792b789d}} 
+void {\bfseries set\+Dyn\+Repeat\+Delay} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Repeat\+Delay)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a81fecb4e7a2134b3aeff21c99edca836}\label{classPUEmitter_a81fecb4e7a2134b3aeff21c99edca836}} 
+void {\bfseries set\+Dyn\+Repeat\+Delay\+Set} (bool repeat\+Delay\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_ae2ab2e98c032ace3c45634a34d7c37f1}{get\+Dyn\+Particle\+All\+Dimensions} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_aec948d85bfa4464756c9d8b8fb2e2d9e}\label{classPUEmitter_aec948d85bfa4464756c9d8b8fb2e2d9e}} 
+void {\bfseries set\+Dyn\+Particle\+All\+Dimensions} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+All\+Dimensions)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a7b31b4e740fe69282c184efe7a910193}\label{classPUEmitter_a7b31b4e740fe69282c184efe7a910193}} 
+void {\bfseries set\+Dyn\+Particle\+All\+Dimensions\+Set} (bool particle\+All\+Dimensions\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a0ec28ae4cf2f12af44f7dbb7a52a1e69}{get\+Dyn\+Particle\+Width} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a405fb78092643f57496e8fabdd9d0c5d}\label{classPUEmitter_a405fb78092643f57496e8fabdd9d0c5d}} 
+void {\bfseries set\+Dyn\+Particle\+Width} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Width)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2977f08f86a9fde77d2440890e4057cc}\label{classPUEmitter_a2977f08f86a9fde77d2440890e4057cc}} 
+void {\bfseries set\+Dyn\+Particle\+Width\+Set} (bool particle\+Width\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_af66312c994c7405a9ccda00544010d3a}{get\+Dyn\+Particle\+Height} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae68d29fc4a0298984ef9c4596e0b2e4a}\label{classPUEmitter_ae68d29fc4a0298984ef9c4596e0b2e4a}} 
+void {\bfseries set\+Dyn\+Particle\+Height} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Height)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae593ed969c3cf8440ea79822678c0c70}\label{classPUEmitter_ae593ed969c3cf8440ea79822678c0c70}} 
+void {\bfseries set\+Dyn\+Particle\+Height\+Set} (bool particle\+Height\+Set)
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a85a4428e2d1eb332d9f7eab2a411e56f}{get\+Dyn\+Particle\+Depth} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a199e6b0337e78d4fd4df4da84461278c}\label{classPUEmitter_a199e6b0337e78d4fd4df4da84461278c}} 
+void {\bfseries set\+Dyn\+Particle\+Depth} (\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$dyn\+Particle\+Depth)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad0c6b343d3055d1e6d6acac2f79754e3}\label{classPUEmitter_ad0c6b343d3055d1e6d6acac2f79754e3}} 
+void {\bfseries set\+Dyn\+Particle\+Depth\+Set} (bool particle\+Depth\+Set)
+\item 
+const std\+::string \& \hyperlink{classPUEmitter_a76f44863dbb18531c52c4568a8aa0c0f}{get\+Emits\+Name} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a334fbdd4e50e5a646cce7bc2c4614776}\label{classPUEmitter_a334fbdd4e50e5a646cce7bc2c4614776}} 
+void {\bfseries set\+Emits\+Name} (const std\+::string \&emits\+Name)
+\item 
+\mbox{\Hypertarget{classPUEmitter_af3e3054ec17f77bb902bf389d15b40c2}\label{classPUEmitter_af3e3054ec17f77bb902bf389d15b40c2}} 
+P\+U\+Particle3\+D\+::\+Particle\+Type {\bfseries get\+Emits\+Type} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab5ecb43cd684cfbce8b2c635a425c79e}\label{classPUEmitter_ab5ecb43cd684cfbce8b2c635a425c79e}} 
+void {\bfseries set\+Emits\+Type} (P\+U\+Particle3\+D\+::\+Particle\+Type type)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab0b8c4379e2449e1d645c4b5ffee9ffe}\label{classPUEmitter_ab0b8c4379e2449e1d645c4b5ffee9ffe}} 
+\hyperlink{classRef}{Ref} $\ast$ {\bfseries get\+Emits\+Entity\+Ptr} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5526e10e83497b74af1d24f15a854192}\label{classPUEmitter_a5526e10e83497b74af1d24f15a854192}} 
+bool {\bfseries is\+Marked\+For\+Emission} () const
+\item 
+\mbox{\Hypertarget{classPUEmitter_a588139d063d1db43370d8b162b04a5d6}\label{classPUEmitter_a588139d063d1db43370d8b162b04a5d6}} 
+void {\bfseries set\+Marked\+For\+Emission} (bool is\+Marked)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_acece8a53bd063e9e985448dc06172ec2}{get\+Particle\+Direction} (void)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUEmitter_a6170df988376870b0963858332c3c2c7}{get\+Original\+Particle\+Direction} (void) const
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_ad05c7389243abf1464e26062adf56223}{get\+Particle\+Orientation} (void) const
+\item 
+void \hyperlink{classPUEmitter_ab71781433c3f2547008a71de464d615a}{set\+Particle\+Orientation} (const \hyperlink{classQuaternion}{Quaternion} \&orientation)
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_a33f20cb802c479d1816f6ffc561c65fe}{get\+Particle\+Orientation\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}{set\+Particle\+Orientation\+Range\+Start} (const \hyperlink{classQuaternion}{Quaternion} \&orientation\+Range\+Start)
+\item 
+const \hyperlink{classQuaternion}{Quaternion} \& \hyperlink{classPUEmitter_ad7e34449d211958317bf8c2270b9631d}{get\+Particle\+Orientation\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}{set\+Particle\+Orientation\+Range\+End} (const \hyperlink{classQuaternion}{Quaternion} \&orientation\+Range\+End)
+\item 
+void \hyperlink{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}{set\+Particle\+Direction} (const \hyperlink{classVec3}{Vec3} \&direction)
+\item 
+bool \hyperlink{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}{is\+Auto\+Direction} (void) const
+\item 
+void \hyperlink{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}{set\+Auto\+Direction} (bool auto\+Direction)
+\item 
+bool \hyperlink{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}{is\+Force\+Emission} (void) const
+\item 
+void \hyperlink{classPUEmitter_a95b92d550215d868305629b7a79b244b}{set\+Force\+Emission} (bool force\+Emission)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_a8d13312f14f4205e4b27666e6a18338c}{get\+Particle\+Color} (void) const
+\item 
+void \hyperlink{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}{set\+Particle\+Color} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_ac8272265219cb76a1fac1c76ef0295c4}{get\+Particle\+Color\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}{set\+Particle\+Color\+Range\+Start} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour\+Range\+Start)
+\item 
+const \hyperlink{classVec4}{Vec4} \& \hyperlink{classPUEmitter_ad2280697609011dde8484dbbeda4efe4}{get\+Particle\+Color\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}{set\+Particle\+Color\+Range\+End} (const \hyperlink{classVec4}{Vec4} \&particle\+Colour\+Range\+End)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_a0d3882c1739c1252b6524ac65db23199}{get\+Particle\+Texture\+Coords} (void) const
+\item 
+void \hyperlink{classPUEmitter_a400b39eba5fa388728c51eda60b11163}{set\+Particle\+Texture\+Coords} (const unsigned short \&particle\+Texture\+Coords)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_adc3c964789b1972f9488d8aef6cf860d}{get\+Particle\+Texture\+Coords\+Range\+Start} (void) const
+\item 
+void \hyperlink{classPUEmitter_a52c268b861b30c2870665e13df528015}{set\+Particle\+Texture\+Coords\+Range\+Start} (const unsigned short \&particle\+Texture\+Coords\+Range\+Start)
+\item 
+const unsigned short \& \hyperlink{classPUEmitter_a005ddbb5f416e9f4843f9545d861bd46}{get\+Particle\+Texture\+Coords\+Range\+End} (void) const
+\item 
+void \hyperlink{classPUEmitter_adedd188e230448e37af079e08833d23e}{set\+Particle\+Texture\+Coords\+Range\+End} (const unsigned short \&particle\+Texture\+Coords\+Range\+End)
+\item 
+bool \hyperlink{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}{is\+Keep\+Local} (void) const
+\item 
+void \hyperlink{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}{set\+Keep\+Local} (bool keep\+Local)
+\item 
+bool \hyperlink{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}{make\+Particle\+Local} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aad71994880c0fdd33a2f6e892026347c}\label{classPUEmitter_aad71994880c0fdd33a2f6e892026347c}} 
+virtual \hyperlink{classPUEmitter}{P\+U\+Emitter} $\ast$ {\bfseries clone} ()=0
+\item 
+\mbox{\Hypertarget{classPUEmitter_a3c9d3c269bca508246b8c6689d2893ae}\label{classPUEmitter_a3c9d3c269bca508246b8c6689d2893ae}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUEmitter}{P\+U\+Emitter} $\ast$emitter)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab7cade225c5f85ddb154eb7757a8fe73}\label{classPUEmitter_ab7cade225c5f85ddb154eb7757a8fe73}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+A\+B\+L\+ED} = true
+\item 
+\mbox{\Hypertarget{classPUEmitter_a87ad2a23f5b5b4ab0deb8828d2cc2687}\label{classPUEmitter_a87ad2a23f5b5b4ab0deb8828d2cc2687}} 
+static const \hyperlink{classVec3}{Vec3} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+S\+I\+T\+I\+ON}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a21826dfa28bcb5a4696d6c9b0d459b5b}\label{classPUEmitter_a21826dfa28bcb5a4696d6c9b0d459b5b}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+\_\+\+L\+O\+C\+AL} = false
+\item 
+\mbox{\Hypertarget{classPUEmitter_acc10c7982b6e5e53db87c98d7abe5901}\label{classPUEmitter_acc10c7982b6e5e53db87c98d7abe5901}} 
+static const \hyperlink{classVec3}{Vec3} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a946dcc35eed7b6d4430b9fe9a5d4aaff}\label{classPUEmitter_a946dcc35eed7b6d4430b9fe9a5d4aaff}} 
+static const \hyperlink{classQuaternion}{Quaternion} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}
+\item 
+\mbox{\Hypertarget{classPUEmitter_aa4903227e7a7ac42193f3e0f0ad574cb}\label{classPUEmitter_aa4903227e7a7ac42193f3e0f0ad574cb}} 
+static const \hyperlink{classQuaternion}{Quaternion} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+G\+E\+\_\+\+S\+T\+A\+RT}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae575a0a27986f59563686217e80fc8dd}\label{classPUEmitter_ae575a0a27986f59563686217e80fc8dd}} 
+static const \hyperlink{classQuaternion}{Quaternion} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+R\+A\+N\+G\+E\+\_\+\+E\+ND}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9d0fc1470a93c3fcbe6e619a6b9a27c4}\label{classPUEmitter_a9d0fc1470a93c3fcbe6e619a6b9a27c4}} 
+static const unsigned short {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+DS} = 0
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab21d065cae6fb7c5764ea432a5261145}\label{classPUEmitter_ab21d065cae6fb7c5764ea432a5261145}} 
+static const unsigned short {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+D\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+DS} = 0
+\item 
+\mbox{\Hypertarget{classPUEmitter_a7b8459983cb366189c3d458ce9be1fc1}\label{classPUEmitter_a7b8459983cb366189c3d458ce9be1fc1}} 
+static const unsigned short {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+DS} = 0
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5ca92482aeba184e1b6aa78038714854}\label{classPUEmitter_a5ca92482aeba184e1b6aa78038714854}} 
+static const \hyperlink{classVec4}{Vec4} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+O\+L\+O\+U\+R\+\_\+\+R\+A\+N\+GE}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9ed55037f1549ab28237c156a61dca52}\label{classPUEmitter_a9ed55037f1549ab28237c156a61dca52}} 
+static const \hyperlink{classVec4}{Vec4} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+D\+\_\+\+C\+O\+L\+O\+U\+R\+\_\+\+R\+A\+N\+GE}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad3e76777c4704036ca212f29753e6f9b}\label{classPUEmitter_ad3e76777c4704036ca212f29753e6f9b}} 
+static const \hyperlink{classVec4}{Vec4} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+UR}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a91180390a34f9ad5dd8955e45a4d6bfa}\label{classPUEmitter_a91180390a34f9ad5dd8955e45a4d6bfa}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+T\+O\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON} = false
+\item 
+\mbox{\Hypertarget{classPUEmitter_a8ccbc9593ee1fe2696c35de46cc9e1b4}\label{classPUEmitter_a8ccbc9593ee1fe2696c35de46cc9e1b4}} 
+static const bool {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+O\+R\+C\+E\+\_\+\+E\+M\+I\+S\+S\+I\+ON} = false
+\item 
+\mbox{\Hypertarget{classPUEmitter_abe746f472062fb7c2362932ecf53767f}\label{classPUEmitter_abe746f472062fb7c2362932ecf53767f}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+M\+I\+S\+S\+I\+O\+N\+\_\+\+R\+A\+TE} = 10.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2ef30ea6780fb03bd4661b76f157e62c}\label{classPUEmitter_a2ef30ea6780fb03bd4661b76f157e62c}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+\_\+\+T\+O\+\_\+\+L\+I\+VE} = 3.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_af15701becf3cba416cebce55f94af01f}\label{classPUEmitter_af15701becf3cba416cebce55f94af01f}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+SS} = 1.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_a2fbe5a1a7614c6cfbd481895edf2cb04}\label{classPUEmitter_a2fbe5a1a7614c6cfbd481895edf2cb04}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+V\+E\+L\+O\+C\+I\+TY} = 100.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5d15a1f19513f46be76d257bde84584e}\label{classPUEmitter_a5d15a1f19513f46be76d257bde84584e}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+U\+R\+A\+T\+I\+ON} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_af8fe362f5ce3ffd9de7456a56f9267df}\label{classPUEmitter_af8fe362f5ce3ffd9de7456a56f9267df}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+P\+E\+A\+T\+\_\+\+D\+E\+L\+AY} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4aaa706012e10fb7daebd11a129ac058}\label{classPUEmitter_a4aaa706012e10fb7daebd11a129ac058}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+N\+G\+LE} = 20.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_acb3da7e12f1220b7ff8263c147092660}\label{classPUEmitter_acb3da7e12f1220b7ff8263c147092660}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+M\+E\+N\+S\+I\+O\+NS} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_affd3fa45be9840246179a46178bc4356}\label{classPUEmitter_affd3fa45be9840246179a46178bc4356}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+I\+D\+TH} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_aaa55062539e297f491b56426fd963994}\label{classPUEmitter_aaa55062539e297f491b56426fd963994}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+HT} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUEmitter_a92ea2688d0ec5c5888650eea66799281}\label{classPUEmitter_a92ea2688d0ec5c5888650eea66799281}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+P\+TH} = 0.\+0f
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classPUEmitter_a2449f31b73c94a55f6559be71d56ca61}{init\+Particle\+Position} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+virtual void \hyperlink{classPUEmitter_a0dffa0a17008ddaaec73c6042ea1a019}{init\+Particle\+Direction} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+virtual void \hyperlink{classPUEmitter_a20df7b8fc3cfad55e074fd7373185c45}{init\+Particle\+Orientation} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a009ddc7994f0b80a57642eb7690a00cc}\label{classPUEmitter_a009ddc7994f0b80a57642eb7690a00cc}} 
+virtual void {\bfseries init\+Particle\+Velocity} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a43bed3fcfdab7531b70db0bfa5d2439e}\label{classPUEmitter_a43bed3fcfdab7531b70db0bfa5d2439e}} 
+virtual void {\bfseries init\+Particle\+Mass} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a47c73b3ff2accc9e1a8f8f2c8cbf491b}\label{classPUEmitter_a47c73b3ff2accc9e1a8f8f2c8cbf491b}} 
+virtual void {\bfseries init\+Particle\+Color} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a1a87ac97818babc769bc63263e2db42c}\label{classPUEmitter_a1a87ac97818babc769bc63263e2db42c}} 
+virtual void {\bfseries init\+Particle\+Texture\+Coords} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a328b5641e88dac0e910f3a3f487296c7}\label{classPUEmitter_a328b5641e88dac0e910f3a3f487296c7}} 
+virtual float {\bfseries init\+Particle\+Time\+To\+Live} ()
+\item 
+virtual void \hyperlink{classPUEmitter_ad3affd063a8152664e3eb8902812c1ba}{init\+Particle\+Dimensions} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_abb4d7200b545f0a90ecce845687fddac}\label{classPUEmitter_abb4d7200b545f0a90ecce845687fddac}} 
+virtual void {\bfseries init\+Particle\+For\+Emission} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+void \hyperlink{classPUEmitter_a20336349505af1844784d9a075013bd4}{init\+Time\+Based} (void)
+\item 
+void \hyperlink{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}{generate\+Angle} (float \&angle)
+\item 
+virtual void \hyperlink{classPUEmitter_a65d85961411e319dbf5d19d455680f3d}{init\+Particle\+Position} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+virtual void \hyperlink{classPUEmitter_ae9253c4848b3d942c4d9b223ed6907a2}{init\+Particle\+Direction} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+virtual void \hyperlink{classPUEmitter_a33b103ed13f4d63b9d5381a18839e339}{init\+Particle\+Orientation} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aecb61fcd398541448340cef5577b5586}\label{classPUEmitter_aecb61fcd398541448340cef5577b5586}} 
+virtual void {\bfseries init\+Particle\+Velocity} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a501b1ff36497f374c1b38ce59e900b46}\label{classPUEmitter_a501b1ff36497f374c1b38ce59e900b46}} 
+virtual void {\bfseries init\+Particle\+Mass} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_aff75ce1071ca0f2ca6388b9652941986}\label{classPUEmitter_aff75ce1071ca0f2ca6388b9652941986}} 
+virtual void {\bfseries init\+Particle\+Color} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a33f32e80647e5afec9d9b208276fe056}\label{classPUEmitter_a33f32e80647e5afec9d9b208276fe056}} 
+virtual void {\bfseries init\+Particle\+Texture\+Coords} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_a890e25c6465d063feae1b7e0ca44932c}\label{classPUEmitter_a890e25c6465d063feae1b7e0ca44932c}} 
+virtual float {\bfseries init\+Particle\+Time\+To\+Live} ()
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5fe73914151a2ded7fa2eb381d7508de}\label{classPUEmitter_a5fe73914151a2ded7fa2eb381d7508de}} 
+virtual void {\bfseries init\+Particle\+Dimensions} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUEmitter_ab53d75b79e506896a7b32bf17775bf39}\label{classPUEmitter_ab53d75b79e506896a7b32bf17775bf39}} 
+virtual void {\bfseries init\+Particle\+For\+Emission} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+void \hyperlink{classPUEmitter_a20336349505af1844784d9a075013bd4}{init\+Time\+Based} (void)
+\item 
+void \hyperlink{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}{generate\+Angle} (float \&angle)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5996d2b7e933b6b84c5c79506fa4a732}\label{classPUEmitter_a5996d2b7e933b6b84c5c79506fa4a732}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+position}
+\item 
+\mbox{\Hypertarget{classPUEmitter_af27f9b226bb73e6c77f9c21e1a25d45c}\label{classPUEmitter_af27f9b226bb73e6c77f9c21e1a25d45c}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+latest\+Position}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae47f0de1bbee110b10724c513970469e}\label{classPUEmitter_ae47f0de1bbee110b10724c513970469e}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+latest\+Position\+Diff}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9823bd687ecb5427fc07a2de23ffb4d2}\label{classPUEmitter_a9823bd687ecb5427fc07a2de23ffb4d2}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+derived\+Position}
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUEmitter_a950d7644bf868952d1372ea316c16b04}{\+\_\+emitter\+Scale}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a640e63f126e828671141dc48201082dc}\label{classPUEmitter_a640e63f126e828671141dc48201082dc}} 
+std\+::string {\bfseries \+\_\+emitter\+Type}
+\item 
+\mbox{\Hypertarget{classPUEmitter_af3c2a940f82961d1acc3730025a305d7}\label{classPUEmitter_af3c2a940f82961d1acc3730025a305d7}} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUEmitter_a0499f306a39420300565df42c5d20459}{\+\_\+particle\+Direction}
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUEmitter_a2d62eec11cd9017310507096f631379f}{\+\_\+original\+Particle\+Direction}
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classPUEmitter_a2b4c7199635cd089a5bc019be5ee262b}{\+\_\+particle\+Orientation}
+\item 
+\hyperlink{classQuaternion}{Quaternion} \hyperlink{classPUEmitter_aa2cc6ae3bf6edf47a76ac6787406ba79}{\+\_\+particle\+Orientation\+Range\+Start}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a5a805b9c78fa35ff27aaf84bf8f91929}\label{classPUEmitter_a5a805b9c78fa35ff27aaf84bf8f91929}} 
+\hyperlink{classQuaternion}{Quaternion} {\bfseries \+\_\+particle\+Orientation\+Range\+End}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ada432d8ed18d8245774db0c0c6acf795}\label{classPUEmitter_ada432d8ed18d8245774db0c0c6acf795}} 
+bool {\bfseries \+\_\+particle\+Orientation\+Range\+Set}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a4168aa43669ec37c4445c64d39866902}\label{classPUEmitter_a4168aa43669ec37c4445c64d39866902}} 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ {\bfseries \+\_\+dyn\+Angle}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a1d84e9a75c6d2954835055ededaaa767}\label{classPUEmitter_a1d84e9a75c6d2954835055ededaaa767}} 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ {\bfseries \+\_\+dyn\+Emission\+Rate}
+\item 
+\mbox{\Hypertarget{classPUEmitter_aa057dcb614461c8c06ae0d2da00d8562}\label{classPUEmitter_aa057dcb614461c8c06ae0d2da00d8562}} 
+std\+::string {\bfseries \+\_\+emits\+Name}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_af374b7e83baedd42ad0f70f9b31fe9c1}{\+\_\+dyn\+Total\+Time\+To\+Live}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a7de6c52d69bf9230b85ba825f6747944}{\+\_\+dyn\+Particle\+Mass}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a999b98981c28389ef7090a07231b6c56}{\+\_\+dyn\+Velocity}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_adb41d33a1e421967b30ed75d57512bbb}{\+\_\+dyn\+Duration}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a3932e1e7092421222aaa6fc0cda8161b}{\+\_\+dyn\+Repeat\+Delay}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_aabd10ff89b173636ebe0be3e065f260e}{\+\_\+dyn\+Particle\+All\+Dimensions}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a6e04f029d2fd96c38a919dd43b6296be}\label{classPUEmitter_a6e04f029d2fd96c38a919dd43b6296be}} 
+bool {\bfseries \+\_\+dyn\+Particle\+All\+Dimensions\+Set}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_adf042602104b679a03288cf78c2d0422}{\+\_\+dyn\+Particle\+Width}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae1324759a8c7b21d0277234e483347d7}\label{classPUEmitter_ae1324759a8c7b21d0277234e483347d7}} 
+bool {\bfseries \+\_\+dyn\+Particle\+Width\+Set}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_adbb061ee652191ccc7e15495dd32ddd6}{\+\_\+dyn\+Particle\+Height}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a46b84948ee3b6e2680cc8369db3b636a}\label{classPUEmitter_a46b84948ee3b6e2680cc8369db3b636a}} 
+bool {\bfseries \+\_\+dyn\+Particle\+Height\+Set}
+\item 
+\hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ \hyperlink{classPUEmitter_a4bdaecbbf84d8f7bbf1d84bfe2d0a47d}{\+\_\+dyn\+Particle\+Depth}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a9cb60d8b2ef95c8d1ba0b1ee3dcfb5af}\label{classPUEmitter_a9cb60d8b2ef95c8d1ba0b1ee3dcfb5af}} 
+bool {\bfseries \+\_\+dyn\+Particle\+Depth\+Set}
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUEmitter_af3b3eac3d9539b5c2d8597dfa41a17cb}{\+\_\+up\+Vector}
+\item 
+float \hyperlink{classPUEmitter_ac1115f1b0d7963dbe18d9812610ae16b}{\+\_\+remainder}
+\item 
+\hyperlink{classPUDynamicAttributeHelper}{P\+U\+Dynamic\+Attribute\+Helper} \hyperlink{classPUEmitter_a2bdf89257051384903ae1a4a783c9bb7}{\+\_\+dynamic\+Attribute\+Helper}
+\item 
+float \hyperlink{classPUEmitter_a61b7ec1702a2818f66086486c80a7def}{\+\_\+duration\+Remain}
+\item 
+bool \hyperlink{classPUEmitter_a3ff02b7481e73cef48215b3258e9d12b}{\+\_\+dyn\+Duration\+Set}
+\item 
+float \hyperlink{classPUEmitter_ad4f5d530832b33afb555fba214cf5864}{\+\_\+repeat\+Delay\+Remain}
+\item 
+bool \hyperlink{classPUEmitter_a45b6804e8951590737ec796caa3c4277}{\+\_\+dyn\+Repeat\+Delay\+Set}
+\item 
+bool \hyperlink{classPUEmitter_a9d726a310ce20bd3e5bc504b5d81e9f6}{\+\_\+auto\+Direction}
+\item 
+bool \hyperlink{classPUEmitter_adad1e10b1e1c001a5acd7b92934717b1}{\+\_\+force\+Emission}
+\item 
+bool \hyperlink{classPUEmitter_a6963cd32bcbff3c8a36284e858b38952}{\+\_\+original\+Force\+Emission}
+\item 
+bool \hyperlink{classPUEmitter_ae1f45f6e268cf9e89456443d31103987}{\+\_\+force\+Emission\+Executed}
+\item 
+bool \hyperlink{classPUEmitter_a8664fa4bb80d5c15e22f5a6a66fdfe52}{\+\_\+original\+Force\+Emission\+Executed}
+\item 
+\hyperlink{classVec4}{Vec4} \hyperlink{classPUEmitter_ad78e8ff2b4eb9cb1b199e46eb51e5e55}{\+\_\+particle\+Color}
+\item 
+\hyperlink{classVec4}{Vec4} \hyperlink{classPUEmitter_a5f8e8341950bf074716ef9095f182e8c}{\+\_\+particle\+Color\+Range\+Start}
+\item 
+\hyperlink{classVec4}{Vec4} \hyperlink{classPUEmitter_a58a976c99b9b4ff4caafbfaec0701897}{\+\_\+particle\+Color\+Range\+End}
+\item 
+bool \hyperlink{classPUEmitter_ae38a2bab4e3d09af1b2c000d80030ee7}{\+\_\+particle\+Color\+Range\+Set}
+\item 
+bool \hyperlink{classPUEmitter_a332fe167b26fab8642a2e5ab9a5e0b9f}{\+\_\+keep\+Local}
+\item 
+unsigned short \hyperlink{classPUEmitter_a3f485e408d3555deaca841793bc2cbb5}{\+\_\+particle\+Texture\+Coords}
+\item 
+unsigned short \hyperlink{classPUEmitter_a2f8c970e8a4f6616f5d4714743e71e92}{\+\_\+particle\+Texture\+Coords\+Range\+Start}
+\item 
+unsigned short \hyperlink{classPUEmitter_a027f5821bdf5361572eeec0718dbc917}{\+\_\+particle\+Texture\+Coords\+Range\+End}
+\item 
+bool \hyperlink{classPUEmitter_a2117f4a61fea8fe64f94d28a327a0c6d}{\+\_\+particle\+Texture\+Coords\+Range\+Set}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad7365d512de8dbe2e9509ab57b5daf99}\label{classPUEmitter_ad7365d512de8dbe2e9509ab57b5daf99}} 
+bool {\bfseries \+\_\+origin\+Enabled}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ae5ffec1b36db5668017cd6fe452c46f6}\label{classPUEmitter_ae5ffec1b36db5668017cd6fe452c46f6}} 
+bool {\bfseries \+\_\+origin\+Enabled\+Set}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a0f357a0001bf2884a18fde14dafa2581}\label{classPUEmitter_a0f357a0001bf2884a18fde14dafa2581}} 
+P\+U\+Particle3\+D\+::\+Particle\+Type {\bfseries \+\_\+emits\+Type}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ac4df5de7d12678a80aa44400c7e4fd2a}\label{classPUEmitter_ac4df5de7d12678a80aa44400c7e4fd2a}} 
+\hyperlink{classRef}{Ref} $\ast$ {\bfseries \+\_\+emits\+Entity}
+\item 
+\mbox{\Hypertarget{classPUEmitter_ad49932b895afa58629df32d0cb5e6604}\label{classPUEmitter_ad49932b895afa58629df32d0cb5e6604}} 
+bool {\bfseries \+\_\+is\+Marked\+For\+Emission}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUEmitter_a6facc234295c573636e9e1f78b0777c8}\label{classPUEmitter_a6facc234295c573636e9e1f78b0777c8}} 
+class {\bfseries P\+U\+Particle\+System3D}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+3d particle emitter 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}\label{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!generate\+Angle@{generate\+Angle}}
+\index{generate\+Angle@{generate\+Angle}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{generate\+Angle()}{generateAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::generate\+Angle (\begin{DoxyParamCaption}\item[{float \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Internal method for generating the angle. \mbox{\Hypertarget{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}\label{classPUEmitter_a5035190c6af34e7a8a6484b45720b28c}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!generate\+Angle@{generate\+Angle}}
+\index{generate\+Angle@{generate\+Angle}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{generate\+Angle()}{generateAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::generate\+Angle (\begin{DoxyParamCaption}\item[{float \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Internal method for generating the angle. \mbox{\Hypertarget{classPUEmitter_a157e8c65ae506cd3b94303fa5a2d8fea}\label{classPUEmitter_a157e8c65ae506cd3b94303fa5a2d8fea}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Derived\+Position@{get\+Derived\+Position}}
+\index{get\+Derived\+Position@{get\+Derived\+Position}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Derived\+Position()}{getDerivedPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3} \& P\+U\+Emitter\+::get\+Derived\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the derived position of the affector. \begin{DoxyRemark}{Remarks}
+Note, that in script, the position is set as localspace, while if the affector is emitted, its position is automatically transformed. This function always returns the derived position. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a7021377a376b28f316ac4caf1412c0df}\label{classPUEmitter_a7021377a376b28f316ac4caf1412c0df}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Derived\+Position@{get\+Derived\+Position}}
+\index{get\+Derived\+Position@{get\+Derived\+Position}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Derived\+Position()}{getDerivedPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Emitter\+::get\+Derived\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the derived position of the affector. \begin{DoxyRemark}{Remarks}
+Note, that in script, the position is set as localspace, while if the affector is emitted, its position is automatically transformed. This function always returns the derived position. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a375b1d6bd2dc610808eac3acffa1e136}\label{classPUEmitter_a375b1d6bd2dc610808eac3acffa1e136}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Angle@{get\+Dyn\+Angle}}
+\index{get\+Dyn\+Angle@{get\+Dyn\+Angle}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Angle()}{getDynAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Angle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a9f87f8a7caeeaf022039e9226d5911b0}\label{classPUEmitter_a9f87f8a7caeeaf022039e9226d5911b0}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Angle@{get\+Dyn\+Angle}}
+\index{get\+Dyn\+Angle@{get\+Dyn\+Angle}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Angle()}{getDynAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Angle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_ab6ee381061b237e314ca9d7b756cd81b}\label{classPUEmitter_ab6ee381061b237e314ca9d7b756cd81b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Duration@{get\+Dyn\+Duration}}
+\index{get\+Dyn\+Duration@{get\+Dyn\+Duration}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Duration()}{getDynDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Duration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a08f852003ae3d3532df40b1425b3466e}\label{classPUEmitter_a08f852003ae3d3532df40b1425b3466e}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Duration@{get\+Dyn\+Duration}}
+\index{get\+Dyn\+Duration@{get\+Dyn\+Duration}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Duration()}{getDynDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Duration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a2e7613f45571f856daa10102610dda3f}\label{classPUEmitter_a2e7613f45571f856daa10102610dda3f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Emission\+Rate@{get\+Dyn\+Emission\+Rate}}
+\index{get\+Dyn\+Emission\+Rate@{get\+Dyn\+Emission\+Rate}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Emission\+Rate()}{getDynEmissionRate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Emission\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a97dc56e1db0253013512450407c87387}\label{classPUEmitter_a97dc56e1db0253013512450407c87387}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Emission\+Rate@{get\+Dyn\+Emission\+Rate}}
+\index{get\+Dyn\+Emission\+Rate@{get\+Dyn\+Emission\+Rate}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Emission\+Rate()}{getDynEmissionRate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Emission\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a10a6dc6fb4deb3a167b09195f323d57b}\label{classPUEmitter_a10a6dc6fb4deb3a167b09195f323d57b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+All\+Dimensions@{get\+Dyn\+Particle\+All\+Dimensions}}
+\index{get\+Dyn\+Particle\+All\+Dimensions@{get\+Dyn\+Particle\+All\+Dimensions}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+All\+Dimensions()}{getDynParticleAllDimensions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+All\+Dimensions (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_ae2ab2e98c032ace3c45634a34d7c37f1}\label{classPUEmitter_ae2ab2e98c032ace3c45634a34d7c37f1}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+All\+Dimensions@{get\+Dyn\+Particle\+All\+Dimensions}}
+\index{get\+Dyn\+Particle\+All\+Dimensions@{get\+Dyn\+Particle\+All\+Dimensions}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+All\+Dimensions()}{getDynParticleAllDimensions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+All\+Dimensions (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_ade71b4c8f846c1599c85bc67ff13ca39}\label{classPUEmitter_ade71b4c8f846c1599c85bc67ff13ca39}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Depth@{get\+Dyn\+Particle\+Depth}}
+\index{get\+Dyn\+Particle\+Depth@{get\+Dyn\+Particle\+Depth}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Depth()}{getDynParticleDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Depth (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a85a4428e2d1eb332d9f7eab2a411e56f}\label{classPUEmitter_a85a4428e2d1eb332d9f7eab2a411e56f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Depth@{get\+Dyn\+Particle\+Depth}}
+\index{get\+Dyn\+Particle\+Depth@{get\+Dyn\+Particle\+Depth}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Depth()}{getDynParticleDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Depth (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a152502932d7c1642eb94f705092c2d60}\label{classPUEmitter_a152502932d7c1642eb94f705092c2d60}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Height@{get\+Dyn\+Particle\+Height}}
+\index{get\+Dyn\+Particle\+Height@{get\+Dyn\+Particle\+Height}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Height()}{getDynParticleHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_af66312c994c7405a9ccda00544010d3a}\label{classPUEmitter_af66312c994c7405a9ccda00544010d3a}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Height@{get\+Dyn\+Particle\+Height}}
+\index{get\+Dyn\+Particle\+Height@{get\+Dyn\+Particle\+Height}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Height()}{getDynParticleHeight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a9c80a35323f067e941f51e5dd1d0bb31}\label{classPUEmitter_a9c80a35323f067e941f51e5dd1d0bb31}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Mass@{get\+Dyn\+Particle\+Mass}}
+\index{get\+Dyn\+Particle\+Mass@{get\+Dyn\+Particle\+Mass}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Mass()}{getDynParticleMass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Mass (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a2ed7a7c4403e98d58f5770dbc2f9db35}\label{classPUEmitter_a2ed7a7c4403e98d58f5770dbc2f9db35}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Mass@{get\+Dyn\+Particle\+Mass}}
+\index{get\+Dyn\+Particle\+Mass@{get\+Dyn\+Particle\+Mass}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Mass()}{getDynParticleMass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Mass (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a88dbac81e6621814124727767a79434f}\label{classPUEmitter_a88dbac81e6621814124727767a79434f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Width@{get\+Dyn\+Particle\+Width}}
+\index{get\+Dyn\+Particle\+Width@{get\+Dyn\+Particle\+Width}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Width()}{getDynParticleWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a0ec28ae4cf2f12af44f7dbb7a52a1e69}\label{classPUEmitter_a0ec28ae4cf2f12af44f7dbb7a52a1e69}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Particle\+Width@{get\+Dyn\+Particle\+Width}}
+\index{get\+Dyn\+Particle\+Width@{get\+Dyn\+Particle\+Width}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Particle\+Width()}{getDynParticleWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Particle\+Width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a72ef4ad6d5eedc9508b554c76d7870d7}\label{classPUEmitter_a72ef4ad6d5eedc9508b554c76d7870d7}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Repeat\+Delay@{get\+Dyn\+Repeat\+Delay}}
+\index{get\+Dyn\+Repeat\+Delay@{get\+Dyn\+Repeat\+Delay}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Repeat\+Delay()}{getDynRepeatDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Repeat\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a8a5413646ad78e110b420088174fa112}\label{classPUEmitter_a8a5413646ad78e110b420088174fa112}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Repeat\+Delay@{get\+Dyn\+Repeat\+Delay}}
+\index{get\+Dyn\+Repeat\+Delay@{get\+Dyn\+Repeat\+Delay}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Repeat\+Delay()}{getDynRepeatDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Repeat\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_ad10d6d8ab7e59b17f3baec994304a58e}\label{classPUEmitter_ad10d6d8ab7e59b17f3baec994304a58e}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Total\+Time\+To\+Live@{get\+Dyn\+Total\+Time\+To\+Live}}
+\index{get\+Dyn\+Total\+Time\+To\+Live@{get\+Dyn\+Total\+Time\+To\+Live}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Total\+Time\+To\+Live()}{getDynTotalTimeToLive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Total\+Time\+To\+Live (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_abc1cd09d8b9d1db818130406a550a11a}\label{classPUEmitter_abc1cd09d8b9d1db818130406a550a11a}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Total\+Time\+To\+Live@{get\+Dyn\+Total\+Time\+To\+Live}}
+\index{get\+Dyn\+Total\+Time\+To\+Live@{get\+Dyn\+Total\+Time\+To\+Live}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Total\+Time\+To\+Live()}{getDynTotalTimeToLive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Total\+Time\+To\+Live (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a0515b992a0d4ce765ccd8a58d95edf27}\label{classPUEmitter_a0515b992a0d4ce765ccd8a58d95edf27}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Velocity@{get\+Dyn\+Velocity}}
+\index{get\+Dyn\+Velocity@{get\+Dyn\+Velocity}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Velocity()}{getDynVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Velocity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_afebcabddaaa921223bc58a5feffa0e60}\label{classPUEmitter_afebcabddaaa921223bc58a5feffa0e60}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Dyn\+Velocity@{get\+Dyn\+Velocity}}
+\index{get\+Dyn\+Velocity@{get\+Dyn\+Velocity}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Dyn\+Velocity()}{getDynVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute}$\ast$ P\+U\+Emitter\+::get\+Dyn\+Velocity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a619f57590dc9af6d3c2f6e72ff0f2e24}\label{classPUEmitter_a619f57590dc9af6d3c2f6e72ff0f2e24}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Emits\+Name@{get\+Emits\+Name}}
+\index{get\+Emits\+Name@{get\+Emits\+Name}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Emits\+Name()}{getEmitsName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Emits\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo\+Todo \mbox{\Hypertarget{classPUEmitter_a76f44863dbb18531c52c4568a8aa0c0f}\label{classPUEmitter_a76f44863dbb18531c52c4568a8aa0c0f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Emits\+Name@{get\+Emits\+Name}}
+\index{get\+Emits\+Name@{get\+Emits\+Name}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Emits\+Name()}{getEmitsName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Emits\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo\+Todo \mbox{\Hypertarget{classPUEmitter_a1feb299bc5e8c15a218f5122edb167ed}\label{classPUEmitter_a1feb299bc5e8c15a218f5122edb167ed}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Emitter\+Type@{get\+Emitter\+Type}}
+\index{get\+Emitter\+Type@{get\+Emitter\+Type}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Emitter\+Type()}{getEmitterType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Emitter\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_acb57036fcb7fae68b4dc0b900fc8d542}\label{classPUEmitter_acb57036fcb7fae68b4dc0b900fc8d542}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Emitter\+Type@{get\+Emitter\+Type}}
+\index{get\+Emitter\+Type@{get\+Emitter\+Type}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Emitter\+Type()}{getEmitterType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Emitter\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a8b2f555b76240316aa37a5fb4e34e27b}\label{classPUEmitter_a8b2f555b76240316aa37a5fb4e34e27b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a310d26a2ee5d02a89773d74746f29835}\label{classPUEmitter_a310d26a2ee5d02a89773d74746f29835}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& P\+U\+Emitter\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a5aa4fee283774f08aeec5159f492dd8a}\label{classPUEmitter_a5aa4fee283774f08aeec5159f492dd8a}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Original\+Particle\+Direction@{get\+Original\+Particle\+Direction}}
+\index{get\+Original\+Particle\+Direction@{get\+Original\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Original\+Particle\+Direction()}{getOriginalParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3} \& P\+U\+Emitter\+::get\+Original\+Particle\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the originally set particle direction. This value is not affected by affectors, angle, etc. \mbox{\Hypertarget{classPUEmitter_a6170df988376870b0963858332c3c2c7}\label{classPUEmitter_a6170df988376870b0963858332c3c2c7}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Original\+Particle\+Direction@{get\+Original\+Particle\+Direction}}
+\index{get\+Original\+Particle\+Direction@{get\+Original\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Original\+Particle\+Direction()}{getOriginalParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Emitter\+::get\+Original\+Particle\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the originally set particle direction. This value is not affected by affectors, angle, etc. \mbox{\Hypertarget{classPUEmitter_a4e266dca3690b7b32afb7a6fcf7eb7ed}\label{classPUEmitter_a4e266dca3690b7b32afb7a6fcf7eb7ed}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color@{get\+Particle\+Color}}
+\index{get\+Particle\+Color@{get\+Particle\+Color}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color()}{getParticleColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4} \& P\+U\+Emitter\+::get\+Particle\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour of a particle that will be emitted. \mbox{\Hypertarget{classPUEmitter_a8d13312f14f4205e4b27666e6a18338c}\label{classPUEmitter_a8d13312f14f4205e4b27666e6a18338c}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color@{get\+Particle\+Color}}
+\index{get\+Particle\+Color@{get\+Particle\+Color}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color()}{getParticleColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4}\& P\+U\+Emitter\+::get\+Particle\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour of a particle that will be emitted. \mbox{\Hypertarget{classPUEmitter_ac971bd9710f188afe3da5ac821d337ae}\label{classPUEmitter_ac971bd9710f188afe3da5ac821d337ae}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color\+Range\+End@{get\+Particle\+Color\+Range\+End}}
+\index{get\+Particle\+Color\+Range\+End@{get\+Particle\+Color\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color\+Range\+End()}{getParticleColorRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4} \& P\+U\+Emitter\+::get\+Particle\+Color\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour range end of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ad2280697609011dde8484dbbeda4efe4}\label{classPUEmitter_ad2280697609011dde8484dbbeda4efe4}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color\+Range\+End@{get\+Particle\+Color\+Range\+End}}
+\index{get\+Particle\+Color\+Range\+End@{get\+Particle\+Color\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color\+Range\+End()}{getParticleColorRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4}\& P\+U\+Emitter\+::get\+Particle\+Color\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour range end of an emitted particle. \mbox{\Hypertarget{classPUEmitter_aeee3ac1b853918d874898247722f061c}\label{classPUEmitter_aeee3ac1b853918d874898247722f061c}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color\+Range\+Start@{get\+Particle\+Color\+Range\+Start}}
+\index{get\+Particle\+Color\+Range\+Start@{get\+Particle\+Color\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color\+Range\+Start()}{getParticleColorRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4} \& P\+U\+Emitter\+::get\+Particle\+Color\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour range start of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ac8272265219cb76a1fac1c76ef0295c4}\label{classPUEmitter_ac8272265219cb76a1fac1c76ef0295c4}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Color\+Range\+Start@{get\+Particle\+Color\+Range\+Start}}
+\index{get\+Particle\+Color\+Range\+Start@{get\+Particle\+Color\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Color\+Range\+Start()}{getParticleColorRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec4}{Vec4}\& P\+U\+Emitter\+::get\+Particle\+Color\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the colour range start of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a9729a55ab2476e508a018f34a3e9992f}\label{classPUEmitter_a9729a55ab2476e508a018f34a3e9992f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Direction@{get\+Particle\+Direction}}
+\index{get\+Particle\+Direction@{get\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Direction()}{getParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3} \& P\+U\+Emitter\+::get\+Particle\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the base direction of the particle that is going to be emitted. \mbox{\Hypertarget{classPUEmitter_acece8a53bd063e9e985448dc06172ec2}\label{classPUEmitter_acece8a53bd063e9e985448dc06172ec2}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Direction@{get\+Particle\+Direction}}
+\index{get\+Particle\+Direction@{get\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Direction()}{getParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Emitter\+::get\+Particle\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the base direction of the particle that is going to be emitted. \mbox{\Hypertarget{classPUEmitter_aa0b58409ec93a9c859bce86313865582}\label{classPUEmitter_aa0b58409ec93a9c859bce86313865582}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation@{get\+Particle\+Orientation}}
+\index{get\+Particle\+Orientation@{get\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation()}{getParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion} \& P\+U\+Emitter\+::get\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the base orientation of the particle that is going to be emitted. \mbox{\Hypertarget{classPUEmitter_ad05c7389243abf1464e26062adf56223}\label{classPUEmitter_ad05c7389243abf1464e26062adf56223}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation@{get\+Particle\+Orientation}}
+\index{get\+Particle\+Orientation@{get\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation()}{getParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion}\& P\+U\+Emitter\+::get\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the base orientation of the particle that is going to be emitted. \mbox{\Hypertarget{classPUEmitter_aa06b1807bea7964ff2221aacdac23f85}\label{classPUEmitter_aa06b1807bea7964ff2221aacdac23f85}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation\+Range\+End@{get\+Particle\+Orientation\+Range\+End}}
+\index{get\+Particle\+Orientation\+Range\+End@{get\+Particle\+Orientation\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation\+Range\+End()}{getParticleOrientationRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion} \& P\+U\+Emitter\+::get\+Particle\+Orientation\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the end orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_ad7e34449d211958317bf8c2270b9631d}\label{classPUEmitter_ad7e34449d211958317bf8c2270b9631d}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation\+Range\+End@{get\+Particle\+Orientation\+Range\+End}}
+\index{get\+Particle\+Orientation\+Range\+End@{get\+Particle\+Orientation\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation\+Range\+End()}{getParticleOrientationRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion}\& P\+U\+Emitter\+::get\+Particle\+Orientation\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the end orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a6a75ac2d65a56cb29d8bca44d3381e29}\label{classPUEmitter_a6a75ac2d65a56cb29d8bca44d3381e29}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation\+Range\+Start@{get\+Particle\+Orientation\+Range\+Start}}
+\index{get\+Particle\+Orientation\+Range\+Start@{get\+Particle\+Orientation\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation\+Range\+Start()}{getParticleOrientationRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion} \& P\+U\+Emitter\+::get\+Particle\+Orientation\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the start orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a33f20cb802c479d1816f6ffc561c65fe}\label{classPUEmitter_a33f20cb802c479d1816f6ffc561c65fe}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Orientation\+Range\+Start@{get\+Particle\+Orientation\+Range\+Start}}
+\index{get\+Particle\+Orientation\+Range\+Start@{get\+Particle\+Orientation\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Orientation\+Range\+Start()}{getParticleOrientationRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classQuaternion}{Quaternion}\& P\+U\+Emitter\+::get\+Particle\+Orientation\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the start orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a6b402a0fcb4600bb53b77b67dd9c4bd8}\label{classPUEmitter_a6b402a0fcb4600bb53b77b67dd9c4bd8}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords@{get\+Particle\+Texture\+Coords}}
+\index{get\+Particle\+Texture\+Coords@{get\+Particle\+Texture\+Coords}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords()}{getParticleTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const unsigned short \& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a0d3882c1739c1252b6524ac65db23199}\label{classPUEmitter_a0d3882c1739c1252b6524ac65db23199}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords@{get\+Particle\+Texture\+Coords}}
+\index{get\+Particle\+Texture\+Coords@{get\+Particle\+Texture\+Coords}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords()}{getParticleTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned short\& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a10c26379e8687bb43cc884d2c02ecfe9}\label{classPUEmitter_a10c26379e8687bb43cc884d2c02ecfe9}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords\+Range\+End@{get\+Particle\+Texture\+Coords\+Range\+End}}
+\index{get\+Particle\+Texture\+Coords\+Range\+End@{get\+Particle\+Texture\+Coords\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords\+Range\+End()}{getParticleTextureCoordsRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const unsigned short \& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords range end of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a005ddbb5f416e9f4843f9545d861bd46}\label{classPUEmitter_a005ddbb5f416e9f4843f9545d861bd46}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords\+Range\+End@{get\+Particle\+Texture\+Coords\+Range\+End}}
+\index{get\+Particle\+Texture\+Coords\+Range\+End@{get\+Particle\+Texture\+Coords\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords\+Range\+End()}{getParticleTextureCoordsRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned short\& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords\+Range\+End (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords range end of an emitted particle. \mbox{\Hypertarget{classPUEmitter_aa70c8f3a46679009d4ce4dc2cee74cd0}\label{classPUEmitter_aa70c8f3a46679009d4ce4dc2cee74cd0}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords\+Range\+Start@{get\+Particle\+Texture\+Coords\+Range\+Start}}
+\index{get\+Particle\+Texture\+Coords\+Range\+Start@{get\+Particle\+Texture\+Coords\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords\+Range\+Start()}{getParticleTextureCoordsRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const unsigned short \& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords range start of an emitted particle. \mbox{\Hypertarget{classPUEmitter_adc3c964789b1972f9488d8aef6cf860d}\label{classPUEmitter_adc3c964789b1972f9488d8aef6cf860d}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!get\+Particle\+Texture\+Coords\+Range\+Start@{get\+Particle\+Texture\+Coords\+Range\+Start}}
+\index{get\+Particle\+Texture\+Coords\+Range\+Start@{get\+Particle\+Texture\+Coords\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Texture\+Coords\+Range\+Start()}{getParticleTextureCoordsRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned short\& P\+U\+Emitter\+::get\+Particle\+Texture\+Coords\+Range\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the texture coords range start of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ad3affd063a8152664e3eb8902812c1ba}\label{classPUEmitter_ad3affd063a8152664e3eb8902812c1ba}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Dimensions@{init\+Particle\+Dimensions}}
+\index{init\+Particle\+Dimensions@{init\+Particle\+Dimensions}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Dimensions()}{initParticleDimensions()}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Particle\+Dimensions (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Set the width, height and depth if at least one of them is set. \begin{DoxyRemark}{Remarks}
+If one of the dimensions is 0, it will be overridden by the default value later on.
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a0dffa0a17008ddaaec73c6042ea1a019}\label{classPUEmitter_a0dffa0a17008ddaaec73c6042ea1a019}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Direction@{init\+Particle\+Direction}}
+\index{init\+Particle\+Direction@{init\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Direction()}{initParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Particle\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Internal method for generating the particle direction. 
+
+Reimplemented in \hyperlink{classPUMeshSurfaceEmitter_a57b3e6788ced8af0dc152f0198fd7f97}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUMeshSurfaceEmitter_a82636aed091cff08d53a109343895f35}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUCircleEmitter_ae1e552dbbcd6df4a4e313a887a5d882c}{P\+U\+Circle\+Emitter}, \hyperlink{classPUCircleEmitter_aaf9f5cd827deabac2b6f9e5417483403}{P\+U\+Circle\+Emitter}, \hyperlink{classPULineEmitter_a5caf11b317242d3b6b58f99c7a3de0ed}{P\+U\+Line\+Emitter}, \hyperlink{classPULineEmitter_a9c2cf66c33150c25e546faf6cf3244aa}{P\+U\+Line\+Emitter}, \hyperlink{classPUSlaveEmitter_a80d517e16cea272c8b762d7b6e237868}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSlaveEmitter_ae52196734cc114bcd5293f9489c167ba}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSphereSurfaceEmitter_ae3cf2112066b7107ad740d1a70fd52ef}{P\+U\+Sphere\+Surface\+Emitter}, and \hyperlink{classPUSphereSurfaceEmitter_aec51594f52f1d4cbeef45f0fc64752db}{P\+U\+Sphere\+Surface\+Emitter}.
+
+\mbox{\Hypertarget{classPUEmitter_ae9253c4848b3d942c4d9b223ed6907a2}\label{classPUEmitter_ae9253c4848b3d942c4d9b223ed6907a2}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Direction@{init\+Particle\+Direction}}
+\index{init\+Particle\+Direction@{init\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Direction()}{initParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Emitter\+::init\+Particle\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Internal method for generating the particle direction. 
+
+Reimplemented in \hyperlink{classPUMeshSurfaceEmitter_a57b3e6788ced8af0dc152f0198fd7f97}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUMeshSurfaceEmitter_a82636aed091cff08d53a109343895f35}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUCircleEmitter_ae1e552dbbcd6df4a4e313a887a5d882c}{P\+U\+Circle\+Emitter}, \hyperlink{classPUCircleEmitter_aaf9f5cd827deabac2b6f9e5417483403}{P\+U\+Circle\+Emitter}, \hyperlink{classPULineEmitter_a5caf11b317242d3b6b58f99c7a3de0ed}{P\+U\+Line\+Emitter}, \hyperlink{classPULineEmitter_a9c2cf66c33150c25e546faf6cf3244aa}{P\+U\+Line\+Emitter}, \hyperlink{classPUSlaveEmitter_a80d517e16cea272c8b762d7b6e237868}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSlaveEmitter_ae52196734cc114bcd5293f9489c167ba}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSphereSurfaceEmitter_ae3cf2112066b7107ad740d1a70fd52ef}{P\+U\+Sphere\+Surface\+Emitter}, and \hyperlink{classPUSphereSurfaceEmitter_aec51594f52f1d4cbeef45f0fc64752db}{P\+U\+Sphere\+Surface\+Emitter}.
+
+\mbox{\Hypertarget{classPUEmitter_a20df7b8fc3cfad55e074fd7373185c45}\label{classPUEmitter_a20df7b8fc3cfad55e074fd7373185c45}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Orientation@{init\+Particle\+Orientation}}
+\index{init\+Particle\+Orientation@{init\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Orientation()}{initParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Internal method for generating the particle orientation. \mbox{\Hypertarget{classPUEmitter_a33b103ed13f4d63b9d5381a18839e339}\label{classPUEmitter_a33b103ed13f4d63b9d5381a18839e339}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Orientation@{init\+Particle\+Orientation}}
+\index{init\+Particle\+Orientation@{init\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Orientation()}{initParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Emitter\+::init\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Internal method for generating the particle orientation. \mbox{\Hypertarget{classPUEmitter_a2449f31b73c94a55f6559be71d56ca61}\label{classPUEmitter_a2449f31b73c94a55f6559be71d56ca61}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Position@{init\+Particle\+Position}}
+\index{init\+Particle\+Position@{init\+Particle\+Position}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Position()}{initParticlePosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Particle\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Todo 
+
+Reimplemented in \hyperlink{classPUMeshSurfaceEmitter_a868c19220258dc73548b344edd8f3e18}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUMeshSurfaceEmitter_a9696ca685d847e4e3c4f403e66f95ecb}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUCircleEmitter_a29bb94b8103ac04b51b65ca4780ce490}{P\+U\+Circle\+Emitter}, \hyperlink{classPUCircleEmitter_ae5f34473b3fc262944ed96489a5ed5ce}{P\+U\+Circle\+Emitter}, \hyperlink{classPULineEmitter_af448c4a0d07befdcdd1d28d7fddacb03}{P\+U\+Line\+Emitter}, \hyperlink{classPULineEmitter_a45329bb73318a8b5c356e7ae3ce0da95}{P\+U\+Line\+Emitter}, \hyperlink{classPUPositionEmitter_a6e2e82f753f3339a4981f3c8d80d1b48}{P\+U\+Position\+Emitter}, \hyperlink{classPUPositionEmitter_ab23517a23c156545d99238298b3ac0c6}{P\+U\+Position\+Emitter}, \hyperlink{classCCPUBoxEmitter_a405d3a333bd6e513a38f1b318163f969}{C\+C\+P\+U\+Box\+Emitter}, \hyperlink{classCCPUBoxEmitter_ad3f50a904d4f27ce0b40d5e9ccfad9c9}{C\+C\+P\+U\+Box\+Emitter}, \hyperlink{classPUSlaveEmitter_a8498d171d9db253b48e103c9946abba3}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSlaveEmitter_a91be8151129e78b9a1a06a67ff67c640}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSphereSurfaceEmitter_a03a5b2d1d21c867c4f22a127555eeb46}{P\+U\+Sphere\+Surface\+Emitter}, and \hyperlink{classPUSphereSurfaceEmitter_aa727aa40576357ab1e2577ae9e47937a}{P\+U\+Sphere\+Surface\+Emitter}.
+
+\mbox{\Hypertarget{classPUEmitter_a65d85961411e319dbf5d19d455680f3d}\label{classPUEmitter_a65d85961411e319dbf5d19d455680f3d}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Particle\+Position@{init\+Particle\+Position}}
+\index{init\+Particle\+Position@{init\+Particle\+Position}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Particle\+Position()}{initParticlePosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void P\+U\+Emitter\+::init\+Particle\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Todo 
+
+Reimplemented in \hyperlink{classPUMeshSurfaceEmitter_a868c19220258dc73548b344edd8f3e18}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUMeshSurfaceEmitter_a9696ca685d847e4e3c4f403e66f95ecb}{P\+U\+Mesh\+Surface\+Emitter}, \hyperlink{classPUCircleEmitter_a29bb94b8103ac04b51b65ca4780ce490}{P\+U\+Circle\+Emitter}, \hyperlink{classPUCircleEmitter_ae5f34473b3fc262944ed96489a5ed5ce}{P\+U\+Circle\+Emitter}, \hyperlink{classPULineEmitter_af448c4a0d07befdcdd1d28d7fddacb03}{P\+U\+Line\+Emitter}, \hyperlink{classPULineEmitter_a45329bb73318a8b5c356e7ae3ce0da95}{P\+U\+Line\+Emitter}, \hyperlink{classPUPositionEmitter_a6e2e82f753f3339a4981f3c8d80d1b48}{P\+U\+Position\+Emitter}, \hyperlink{classPUPositionEmitter_ab23517a23c156545d99238298b3ac0c6}{P\+U\+Position\+Emitter}, \hyperlink{classCCPUBoxEmitter_a405d3a333bd6e513a38f1b318163f969}{C\+C\+P\+U\+Box\+Emitter}, \hyperlink{classCCPUBoxEmitter_ad3f50a904d4f27ce0b40d5e9ccfad9c9}{C\+C\+P\+U\+Box\+Emitter}, \hyperlink{classPUSlaveEmitter_a8498d171d9db253b48e103c9946abba3}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSlaveEmitter_a91be8151129e78b9a1a06a67ff67c640}{P\+U\+Slave\+Emitter}, \hyperlink{classPUSphereSurfaceEmitter_a03a5b2d1d21c867c4f22a127555eeb46}{P\+U\+Sphere\+Surface\+Emitter}, and \hyperlink{classPUSphereSurfaceEmitter_aa727aa40576357ab1e2577ae9e47937a}{P\+U\+Sphere\+Surface\+Emitter}.
+
+\mbox{\Hypertarget{classPUEmitter_a20336349505af1844784d9a075013bd4}\label{classPUEmitter_a20336349505af1844784d9a075013bd4}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Time\+Based@{init\+Time\+Based}}
+\index{init\+Time\+Based@{init\+Time\+Based}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Time\+Based()}{initTimeBased()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Time\+Based (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Initialise some attributes that are time-\/based. Determine whether duration must be used. If it is used, the emitter should at least be enabled. \begin{DoxyRemark}{Remarks}
+Note, that if the duration has been exceeded, the emitter is disabled. It makes perfect sense to enable the emitter again when the duration is initialised with a valid value ($>$ 0).
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a20336349505af1844784d9a075013bd4}\label{classPUEmitter_a20336349505af1844784d9a075013bd4}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!init\+Time\+Based@{init\+Time\+Based}}
+\index{init\+Time\+Based@{init\+Time\+Based}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{init\+Time\+Based()}{initTimeBased()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::init\+Time\+Based (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Initialise some attributes that are time-\/based. \mbox{\Hypertarget{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}\label{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Auto\+Direction@{is\+Auto\+Direction}}
+\index{is\+Auto\+Direction@{is\+Auto\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Auto\+Direction()}{isAutoDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Auto\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}\label{classPUEmitter_acfb3f499a7dc29652bdd7c9d6970a9e5}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Auto\+Direction@{is\+Auto\+Direction}}
+\index{is\+Auto\+Direction@{is\+Auto\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Auto\+Direction()}{isAutoDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Auto\+Direction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}\label{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Force\+Emission@{is\+Force\+Emission}}
+\index{is\+Force\+Emission@{is\+Force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Force\+Emission()}{isForceEmission()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Force\+Emission (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}\label{classPUEmitter_aa19a7d986cdfd7204aba3910192e8e27}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Force\+Emission@{is\+Force\+Emission}}
+\index{is\+Force\+Emission@{is\+Force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Force\+Emission()}{isForceEmission()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Force\+Emission (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}\label{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Keep\+Local@{is\+Keep\+Local}}
+\index{is\+Keep\+Local@{is\+Keep\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Keep\+Local()}{isKeepLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Keep\+Local (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}\label{classPUEmitter_a6562e7de28fec95a73a66e7d1e59cc57}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!is\+Keep\+Local@{is\+Keep\+Local}}
+\index{is\+Keep\+Local@{is\+Keep\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{is\+Keep\+Local()}{isKeepLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::is\+Keep\+Local (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}\label{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!make\+Particle\+Local@{make\+Particle\+Local}}
+\index{make\+Particle\+Local@{make\+Particle\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{make\+Particle\+Local()}{makeParticleLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::make\+Particle\+Local (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})}
+
+Transforms the particle position in a local position relative to the emitter \mbox{\Hypertarget{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}\label{classPUEmitter_a100dc4d1701077246a469bf30f0b483f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!make\+Particle\+Local@{make\+Particle\+Local}}
+\index{make\+Particle\+Local@{make\+Particle\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{make\+Particle\+Local()}{makeParticleLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::make\+Particle\+Local (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})}
+
+Transforms the particle position in a local position relative to the emitter \mbox{\Hypertarget{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}\label{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Auto\+Direction@{set\+Auto\+Direction}}
+\index{set\+Auto\+Direction@{set\+Auto\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Auto\+Direction()}{setAutoDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Auto\+Direction (\begin{DoxyParamCaption}\item[{bool}]{auto\+Direction }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}\label{classPUEmitter_a063a09ad3ae10313e1f87555798ec362}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Auto\+Direction@{set\+Auto\+Direction}}
+\index{set\+Auto\+Direction@{set\+Auto\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Auto\+Direction()}{setAutoDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Auto\+Direction (\begin{DoxyParamCaption}\item[{bool}]{auto\+Direction }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a4f257171b370033d2ca3544867912645}\label{classPUEmitter_a4f257171b370033d2ca3544867912645}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Enables or disables the emitter. \mbox{\Hypertarget{classPUEmitter_a4f257171b370033d2ca3544867912645}\label{classPUEmitter_a4f257171b370033d2ca3544867912645}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Enables or disables the emitter. \mbox{\Hypertarget{classPUEmitter_a95b92d550215d868305629b7a79b244b}\label{classPUEmitter_a95b92d550215d868305629b7a79b244b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Force\+Emission@{set\+Force\+Emission}}
+\index{set\+Force\+Emission@{set\+Force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Force\+Emission()}{setForceEmission()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Force\+Emission (\begin{DoxyParamCaption}\item[{bool}]{force\+Emission }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUEmitter_a95b92d550215d868305629b7a79b244b}\label{classPUEmitter_a95b92d550215d868305629b7a79b244b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Force\+Emission@{set\+Force\+Emission}}
+\index{set\+Force\+Emission@{set\+Force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Force\+Emission()}{setForceEmission()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Force\+Emission (\begin{DoxyParamCaption}\item[{bool}]{force\+Emission }\end{DoxyParamCaption})}
+
+Todo \mbox{\Hypertarget{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}\label{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Keep\+Local@{set\+Keep\+Local}}
+\index{set\+Keep\+Local@{set\+Keep\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Keep\+Local()}{setKeepLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Keep\+Local (\begin{DoxyParamCaption}\item[{bool}]{keep\+Local }\end{DoxyParamCaption})}
+
+If this attribute is set to \textquotesingle{}true\textquotesingle{}, the particles are emitted relative to the emitter \mbox{\Hypertarget{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}\label{classPUEmitter_ad53330b258cf796c7e0000089cb1a6fa}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Keep\+Local@{set\+Keep\+Local}}
+\index{set\+Keep\+Local@{set\+Keep\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Keep\+Local()}{setKeepLocal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Keep\+Local (\begin{DoxyParamCaption}\item[{bool}]{keep\+Local }\end{DoxyParamCaption})}
+
+If this attribute is set to \textquotesingle{}true\textquotesingle{}, the particles are emitted relative to the emitter \mbox{\Hypertarget{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}\label{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color@{set\+Particle\+Color}}
+\index{set\+Particle\+Color@{set\+Particle\+Color}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color()}{setParticleColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour }\end{DoxyParamCaption})}
+
+Set the colour of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}\label{classPUEmitter_a0d0e51b19fd247625f86ed120dc0fe94}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color@{set\+Particle\+Color}}
+\index{set\+Particle\+Color@{set\+Particle\+Color}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color()}{setParticleColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour }\end{DoxyParamCaption})}
+
+Set the colour of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}\label{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color\+Range\+End@{set\+Particle\+Color\+Range\+End}}
+\index{set\+Particle\+Color\+Range\+End@{set\+Particle\+Color\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color\+Range\+End()}{setParticleColorRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color\+Range\+End (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour\+Range\+End }\end{DoxyParamCaption})}
+
+Set the colour range end of an emitted particle. This is the upper value used to generate a random colour. \mbox{\Hypertarget{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}\label{classPUEmitter_ad4631d131294b6a7148b7914335d0d4f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color\+Range\+End@{set\+Particle\+Color\+Range\+End}}
+\index{set\+Particle\+Color\+Range\+End@{set\+Particle\+Color\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color\+Range\+End()}{setParticleColorRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color\+Range\+End (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour\+Range\+End }\end{DoxyParamCaption})}
+
+Set the colour range end of an emitted particle. This is the upper value used to generate a random colour. \mbox{\Hypertarget{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}\label{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color\+Range\+Start@{set\+Particle\+Color\+Range\+Start}}
+\index{set\+Particle\+Color\+Range\+Start@{set\+Particle\+Color\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color\+Range\+Start()}{setParticleColorRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color\+Range\+Start (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour\+Range\+Start }\end{DoxyParamCaption})}
+
+Set the colour range start of an emitted particle. This is the lower value used to generate a random colour. \mbox{\Hypertarget{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}\label{classPUEmitter_a90c804dc0561c3a3f19eb631e1c84646}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Color\+Range\+Start@{set\+Particle\+Color\+Range\+Start}}
+\index{set\+Particle\+Color\+Range\+Start@{set\+Particle\+Color\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Color\+Range\+Start()}{setParticleColorRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Color\+Range\+Start (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec4}{Vec4} \&}]{particle\+Colour\+Range\+Start }\end{DoxyParamCaption})}
+
+Set the colour range start of an emitted particle. This is the lower value used to generate a random colour. \mbox{\Hypertarget{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}\label{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Direction@{set\+Particle\+Direction}}
+\index{set\+Particle\+Direction@{set\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Direction()}{setParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Sets the direction of the particle that the emitter is emitting. \begin{DoxyRemark}{Remarks}
+Don\textquotesingle{}t confuse this with the emitters own direction. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The base direction of emitted particles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}\label{classPUEmitter_a999914161830d3b6cc2cbb6833f196af}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Direction@{set\+Particle\+Direction}}
+\index{set\+Particle\+Direction@{set\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Direction()}{setParticleDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{direction }\end{DoxyParamCaption})}
+
+Sets the direction of the particle that the emitter is emitting. \begin{DoxyRemark}{Remarks}
+Don\textquotesingle{}t confuse this with the emitters own direction. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The base direction of emitted particles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUEmitter_ab71781433c3f2547008a71de464d615a}\label{classPUEmitter_ab71781433c3f2547008a71de464d615a}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation@{set\+Particle\+Orientation}}
+\index{set\+Particle\+Orientation@{set\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation()}{setParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation }\end{DoxyParamCaption})}
+
+Set the orientation of the particle. \mbox{\Hypertarget{classPUEmitter_ab71781433c3f2547008a71de464d615a}\label{classPUEmitter_ab71781433c3f2547008a71de464d615a}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation@{set\+Particle\+Orientation}}
+\index{set\+Particle\+Orientation@{set\+Particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation()}{setParticleOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation }\end{DoxyParamCaption})}
+
+Set the orientation of the particle. \mbox{\Hypertarget{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}\label{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation\+Range\+End@{set\+Particle\+Orientation\+Range\+End}}
+\index{set\+Particle\+Orientation\+Range\+End@{set\+Particle\+Orientation\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation\+Range\+End()}{setParticleOrientationRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation\+Range\+End (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation\+Range\+End }\end{DoxyParamCaption})}
+
+Set end orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}\label{classPUEmitter_a4268d9ade8a9ff890397a2c74b0128b8}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation\+Range\+End@{set\+Particle\+Orientation\+Range\+End}}
+\index{set\+Particle\+Orientation\+Range\+End@{set\+Particle\+Orientation\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation\+Range\+End()}{setParticleOrientationRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation\+Range\+End (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation\+Range\+End }\end{DoxyParamCaption})}
+
+Set end orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}\label{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation\+Range\+Start@{set\+Particle\+Orientation\+Range\+Start}}
+\index{set\+Particle\+Orientation\+Range\+Start@{set\+Particle\+Orientation\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation\+Range\+Start()}{setParticleOrientationRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation\+Range\+Start (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation\+Range\+Start }\end{DoxyParamCaption})}
+
+Set start orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}\label{classPUEmitter_a1832a77324bd2c4097d29d8789b27e33}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Orientation\+Range\+Start@{set\+Particle\+Orientation\+Range\+Start}}
+\index{set\+Particle\+Orientation\+Range\+Start@{set\+Particle\+Orientation\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Orientation\+Range\+Start()}{setParticleOrientationRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Orientation\+Range\+Start (\begin{DoxyParamCaption}\item[{const \hyperlink{classQuaternion}{Quaternion} \&}]{orientation\+Range\+Start }\end{DoxyParamCaption})}
+
+Set start orientation of the particle that is going to be emitted. \begin{DoxyRemark}{Remarks}
+The orientation is generated random between m\+Particle\+Orientation\+Range\+Start and m\+Particle\+Orientation\+Range\+End. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a400b39eba5fa388728c51eda60b11163}\label{classPUEmitter_a400b39eba5fa388728c51eda60b11163}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords@{set\+Particle\+Texture\+Coords}}
+\index{set\+Particle\+Texture\+Coords@{set\+Particle\+Texture\+Coords}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords()}{setParticleTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords }\end{DoxyParamCaption})}
+
+Set the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a400b39eba5fa388728c51eda60b11163}\label{classPUEmitter_a400b39eba5fa388728c51eda60b11163}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords@{set\+Particle\+Texture\+Coords}}
+\index{set\+Particle\+Texture\+Coords@{set\+Particle\+Texture\+Coords}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords()}{setParticleTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords }\end{DoxyParamCaption})}
+
+Set the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_adedd188e230448e37af079e08833d23e}\label{classPUEmitter_adedd188e230448e37af079e08833d23e}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords\+Range\+End@{set\+Particle\+Texture\+Coords\+Range\+End}}
+\index{set\+Particle\+Texture\+Coords\+Range\+End@{set\+Particle\+Texture\+Coords\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords\+Range\+End()}{setParticleTextureCoordsRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords\+Range\+End (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords\+Range\+End }\end{DoxyParamCaption})}
+
+Set the texture coords range end of an emitted particle. This is the upper value used to set a random texture coords. \mbox{\Hypertarget{classPUEmitter_adedd188e230448e37af079e08833d23e}\label{classPUEmitter_adedd188e230448e37af079e08833d23e}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords\+Range\+End@{set\+Particle\+Texture\+Coords\+Range\+End}}
+\index{set\+Particle\+Texture\+Coords\+Range\+End@{set\+Particle\+Texture\+Coords\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords\+Range\+End()}{setParticleTextureCoordsRangeEnd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords\+Range\+End (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords\+Range\+End }\end{DoxyParamCaption})}
+
+Set the texture coords range end of an emitted particle. This is the upper value used to set a random texture coords. \mbox{\Hypertarget{classPUEmitter_a52c268b861b30c2870665e13df528015}\label{classPUEmitter_a52c268b861b30c2870665e13df528015}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords\+Range\+Start@{set\+Particle\+Texture\+Coords\+Range\+Start}}
+\index{set\+Particle\+Texture\+Coords\+Range\+Start@{set\+Particle\+Texture\+Coords\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords\+Range\+Start()}{setParticleTextureCoordsRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords\+Range\+Start (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords\+Range\+Start }\end{DoxyParamCaption})}
+
+Set the texture coords range start of an emitted particle. This is the lower value used to set a random texture coords. \mbox{\Hypertarget{classPUEmitter_a52c268b861b30c2870665e13df528015}\label{classPUEmitter_a52c268b861b30c2870665e13df528015}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!set\+Particle\+Texture\+Coords\+Range\+Start@{set\+Particle\+Texture\+Coords\+Range\+Start}}
+\index{set\+Particle\+Texture\+Coords\+Range\+Start@{set\+Particle\+Texture\+Coords\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{set\+Particle\+Texture\+Coords\+Range\+Start()}{setParticleTextureCoordsRangeStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Emitter\+::set\+Particle\+Texture\+Coords\+Range\+Start (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{particle\+Texture\+Coords\+Range\+Start }\end{DoxyParamCaption})}
+
+Set the texture coords range start of an emitted particle. This is the lower value used to set a random texture coords. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPUEmitter_a9d726a310ce20bd3e5bc504b5d81e9f6}\label{classPUEmitter_a9d726a310ce20bd3e5bc504b5d81e9f6}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+auto\+Direction@{\+\_\+auto\+Direction}}
+\index{\+\_\+auto\+Direction@{\+\_\+auto\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+auto\+Direction}{\_autoDirection}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+auto\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+Auto direction means that the direction of a particle is not determined by the direction vector that has been set, but the direction vector is generated based on the shape of the emitter. In most cases this means that the particle direction is perpendicular on the shape of the emitter. \begin{DoxyRemark}{Remarks}
+This attribute has only a meaning for certain emitters. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a61b7ec1702a2818f66086486c80a7def}\label{classPUEmitter_a61b7ec1702a2818f66086486c80a7def}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+duration\+Remain@{\+\_\+duration\+Remain}}
+\index{\+\_\+duration\+Remain@{\+\_\+duration\+Remain}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+duration\+Remain}{\_durationRemain}}
+{\footnotesize\ttfamily float P\+U\+Emitter\+::\+\_\+duration\+Remain\hspace{0.3cm}{\ttfamily [protected]}}
+
+Duration remainder. \mbox{\Hypertarget{classPUEmitter_a2bdf89257051384903ae1a4a783c9bb7}\label{classPUEmitter_a2bdf89257051384903ae1a4a783c9bb7}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dynamic\+Attribute\+Helper@{\+\_\+dynamic\+Attribute\+Helper}}
+\index{\+\_\+dynamic\+Attribute\+Helper@{\+\_\+dynamic\+Attribute\+Helper}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dynamic\+Attribute\+Helper}{\_dynamicAttributeHelper}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttributeHelper}{P\+U\+Dynamic\+Attribute\+Helper} P\+U\+Emitter\+::\+\_\+dynamic\+Attribute\+Helper\hspace{0.3cm}{\ttfamily [protected]}}
+
+Helper factory\+Helper class \mbox{\Hypertarget{classPUEmitter_adb41d33a1e421967b30ed75d57512bbb}\label{classPUEmitter_adb41d33a1e421967b30ed75d57512bbb}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Duration@{\+\_\+dyn\+Duration}}
+\index{\+\_\+dyn\+Duration@{\+\_\+dyn\+Duration}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Duration}{\_dynDuration}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Duration\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the duration of the emitter. \mbox{\Hypertarget{classPUEmitter_a3ff02b7481e73cef48215b3258e9d12b}\label{classPUEmitter_a3ff02b7481e73cef48215b3258e9d12b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Duration\+Set@{\+\_\+dyn\+Duration\+Set}}
+\index{\+\_\+dyn\+Duration\+Set@{\+\_\+dyn\+Duration\+Set}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Duration\+Set}{\_dynDurationSet}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+dyn\+Duration\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Indication to determine whether duration is set. \mbox{\Hypertarget{classPUEmitter_aabd10ff89b173636ebe0be3e065f260e}\label{classPUEmitter_aabd10ff89b173636ebe0be3e065f260e}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Particle\+All\+Dimensions@{\+\_\+dyn\+Particle\+All\+Dimensions}}
+\index{\+\_\+dyn\+Particle\+All\+Dimensions@{\+\_\+dyn\+Particle\+All\+Dimensions}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Particle\+All\+Dimensions}{\_dynParticleAllDimensions}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Particle\+All\+Dimensions\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the (own) dimensions of a particle. \begin{DoxyRemark}{Remarks}
+In the Particle \hyperlink{classTechnique}{Technique} it is possible to set the default dimensions for all particles, but it is also possible to set the dimensions per particle. Note, that this only applies to visual particles, of course. This attribute is used to x, y and z dimensions with the value. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a4bdaecbbf84d8f7bbf1d84bfe2d0a47d}\label{classPUEmitter_a4bdaecbbf84d8f7bbf1d84bfe2d0a47d}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Particle\+Depth@{\+\_\+dyn\+Particle\+Depth}}
+\index{\+\_\+dyn\+Particle\+Depth@{\+\_\+dyn\+Particle\+Depth}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Particle\+Depth}{\_dynParticleDepth}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Particle\+Depth\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the (own) depth of a particle. \begin{DoxyRemark}{Remarks}
+In the Particle \hyperlink{classTechnique}{Technique} it is possible to set the default depth for all particles, but it is also possible to set the depth per particle. Note, that this only applies to visual particles, of course. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_adbb061ee652191ccc7e15495dd32ddd6}\label{classPUEmitter_adbb061ee652191ccc7e15495dd32ddd6}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Particle\+Height@{\+\_\+dyn\+Particle\+Height}}
+\index{\+\_\+dyn\+Particle\+Height@{\+\_\+dyn\+Particle\+Height}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Particle\+Height}{\_dynParticleHeight}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Particle\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the (own) height of a particle. \begin{DoxyRemark}{Remarks}
+In the Particle \hyperlink{classTechnique}{Technique} it is possible to set the default height for all particles, but it is also possible to set the height per particle. Note, that this only applies to visual particles, of course. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a7de6c52d69bf9230b85ba825f6747944}\label{classPUEmitter_a7de6c52d69bf9230b85ba825f6747944}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Particle\+Mass@{\+\_\+dyn\+Particle\+Mass}}
+\index{\+\_\+dyn\+Particle\+Mass@{\+\_\+dyn\+Particle\+Mass}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Particle\+Mass}{\_dynParticleMass}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Particle\+Mass\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to generate the mass of a particle. \mbox{\Hypertarget{classPUEmitter_adf042602104b679a03288cf78c2d0422}\label{classPUEmitter_adf042602104b679a03288cf78c2d0422}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Particle\+Width@{\+\_\+dyn\+Particle\+Width}}
+\index{\+\_\+dyn\+Particle\+Width@{\+\_\+dyn\+Particle\+Width}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Particle\+Width}{\_dynParticleWidth}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Particle\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the (own) width of a particle. \begin{DoxyRemark}{Remarks}
+In the Particle \hyperlink{classTechnique}{Technique} it is possible to set the default width for all particles, but it is also possible to set the width per particle. Note, that this only applies to visual particles, of course. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a3932e1e7092421222aaa6fc0cda8161b}\label{classPUEmitter_a3932e1e7092421222aaa6fc0cda8161b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Repeat\+Delay@{\+\_\+dyn\+Repeat\+Delay}}
+\index{\+\_\+dyn\+Repeat\+Delay@{\+\_\+dyn\+Repeat\+Delay}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Repeat\+Delay}{\_dynRepeatDelay}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Repeat\+Delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to define the repeat/delay of the emitter. \mbox{\Hypertarget{classPUEmitter_a45b6804e8951590737ec796caa3c4277}\label{classPUEmitter_a45b6804e8951590737ec796caa3c4277}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Repeat\+Delay\+Set@{\+\_\+dyn\+Repeat\+Delay\+Set}}
+\index{\+\_\+dyn\+Repeat\+Delay\+Set@{\+\_\+dyn\+Repeat\+Delay\+Set}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Repeat\+Delay\+Set}{\_dynRepeatDelaySet}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+dyn\+Repeat\+Delay\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Indication to determine whether repeat/delay is set. \mbox{\Hypertarget{classPUEmitter_af374b7e83baedd42ad0f70f9b31fe9c1}\label{classPUEmitter_af374b7e83baedd42ad0f70f9b31fe9c1}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Total\+Time\+To\+Live@{\+\_\+dyn\+Total\+Time\+To\+Live}}
+\index{\+\_\+dyn\+Total\+Time\+To\+Live@{\+\_\+dyn\+Total\+Time\+To\+Live}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Total\+Time\+To\+Live}{\_dynTotalTimeToLive}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Total\+Time\+To\+Live\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to generate the total time to live. \mbox{\Hypertarget{classPUEmitter_a999b98981c28389ef7090a07231b6c56}\label{classPUEmitter_a999b98981c28389ef7090a07231b6c56}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+dyn\+Velocity@{\+\_\+dyn\+Velocity}}
+\index{\+\_\+dyn\+Velocity@{\+\_\+dyn\+Velocity}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+dyn\+Velocity}{\_dynVelocity}}
+{\footnotesize\ttfamily \hyperlink{classPUDynamicAttribute}{P\+U\+Dynamic\+Attribute} $\ast$ P\+U\+Emitter\+::\+\_\+dyn\+Velocity\hspace{0.3cm}{\ttfamily [protected]}}
+
+Dynamic attribute used to generate the velocity of a particle. \mbox{\Hypertarget{classPUEmitter_a950d7644bf868952d1372ea316c16b04}\label{classPUEmitter_a950d7644bf868952d1372ea316c16b04}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+emitter\+Scale@{\+\_\+emitter\+Scale}}
+\index{\+\_\+emitter\+Scale@{\+\_\+emitter\+Scale}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+emitter\+Scale}{\_emitterScale}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Emitter\+::\+\_\+emitter\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+Although the scale is on a Particle System level, the emitter can also be scaled. \mbox{\Hypertarget{classPUEmitter_adad1e10b1e1c001a5acd7b92934717b1}\label{classPUEmitter_adad1e10b1e1c001a5acd7b92934717b1}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+force\+Emission@{\+\_\+force\+Emission}}
+\index{\+\_\+force\+Emission@{\+\_\+force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+force\+Emission}{\_forceEmission}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+force\+Emission\hspace{0.3cm}{\ttfamily [protected]}}
+
+In normal cases, emission is regulated by time. This prevents that too much particles are emitted at once, which causes a drop in the framerate. In some cases you just want to emit all particles immediately without any delay. Setting the \textquotesingle{}m\+Force\+Emission\textquotesingle{} to true enables this. In that case, the emission rate defines the number of particles that are emitted immediately. If the emission rate is 100, the emitter emits 100 particles at once and then disables. \mbox{\Hypertarget{classPUEmitter_ae1f45f6e268cf9e89456443d31103987}\label{classPUEmitter_ae1f45f6e268cf9e89456443d31103987}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+force\+Emission\+Executed@{\+\_\+force\+Emission\+Executed}}
+\index{\+\_\+force\+Emission\+Executed@{\+\_\+force\+Emission\+Executed}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+force\+Emission\+Executed}{\_forceEmissionExecuted}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+force\+Emission\+Executed\hspace{0.3cm}{\ttfamily [protected]}}
+
+If m\+Force\+Emission has been set to true and if all particles are emitted, the m\+Force\+Emission\+Executed is also set to true, preventing any further \textquotesingle{}forced emission\textquotesingle{}. \mbox{\Hypertarget{classPUEmitter_a332fe167b26fab8642a2e5ab9a5e0b9f}\label{classPUEmitter_a332fe167b26fab8642a2e5ab9a5e0b9f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+keep\+Local@{\+\_\+keep\+Local}}
+\index{\+\_\+keep\+Local@{\+\_\+keep\+Local}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+keep\+Local}{\_keepLocal}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+keep\+Local\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determines whether particle positions should be kept local in relation to the emitter. \mbox{\Hypertarget{classPUEmitter_a6963cd32bcbff3c8a36284e858b38952}\label{classPUEmitter_a6963cd32bcbff3c8a36284e858b38952}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+original\+Force\+Emission@{\+\_\+original\+Force\+Emission}}
+\index{\+\_\+original\+Force\+Emission@{\+\_\+original\+Force\+Emission}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+original\+Force\+Emission}{\_originalForceEmission}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+original\+Force\+Emission\hspace{0.3cm}{\ttfamily [protected]}}
+
+Original value, used to set it back. \mbox{\Hypertarget{classPUEmitter_a8664fa4bb80d5c15e22f5a6a66fdfe52}\label{classPUEmitter_a8664fa4bb80d5c15e22f5a6a66fdfe52}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+original\+Force\+Emission\+Executed@{\+\_\+original\+Force\+Emission\+Executed}}
+\index{\+\_\+original\+Force\+Emission\+Executed@{\+\_\+original\+Force\+Emission\+Executed}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+original\+Force\+Emission\+Executed}{\_originalForceEmissionExecuted}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+original\+Force\+Emission\+Executed\hspace{0.3cm}{\ttfamily [protected]}}
+
+Original value, used to set it back. \mbox{\Hypertarget{classPUEmitter_a2d62eec11cd9017310507096f631379f}\label{classPUEmitter_a2d62eec11cd9017310507096f631379f}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+original\+Particle\+Direction@{\+\_\+original\+Particle\+Direction}}
+\index{\+\_\+original\+Particle\+Direction@{\+\_\+original\+Particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+original\+Particle\+Direction}{\_originalParticleDirection}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Emitter\+::\+\_\+original\+Particle\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+The original direction of the emitted particle \begin{DoxyRemark}{Remarks}
+Don\textquotesingle{}t confuse this with the particles\textquotesingle{} original\+Direction. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_ad78e8ff2b4eb9cb1b199e46eb51e5e55}\label{classPUEmitter_ad78e8ff2b4eb9cb1b199e46eb51e5e55}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Color@{\+\_\+particle\+Color}}
+\index{\+\_\+particle\+Color@{\+\_\+particle\+Color}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Color}{\_particleColor}}
+{\footnotesize\ttfamily \hyperlink{classVec4}{Vec4} P\+U\+Emitter\+::\+\_\+particle\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+Colour that is assigned to an emitted particle. \mbox{\Hypertarget{classPUEmitter_a58a976c99b9b4ff4caafbfaec0701897}\label{classPUEmitter_a58a976c99b9b4ff4caafbfaec0701897}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Color\+Range\+End@{\+\_\+particle\+Color\+Range\+End}}
+\index{\+\_\+particle\+Color\+Range\+End@{\+\_\+particle\+Color\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Color\+Range\+End}{\_particleColorRangeEnd}}
+{\footnotesize\ttfamily \hyperlink{classVec4}{Vec4} P\+U\+Emitter\+::\+\_\+particle\+Color\+Range\+End\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to randomize the colour of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ae38a2bab4e3d09af1b2c000d80030ee7}\label{classPUEmitter_ae38a2bab4e3d09af1b2c000d80030ee7}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Color\+Range\+Set@{\+\_\+particle\+Color\+Range\+Set}}
+\index{\+\_\+particle\+Color\+Range\+Set@{\+\_\+particle\+Color\+Range\+Set}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Color\+Range\+Set}{\_particleColorRangeSet}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+particle\+Color\+Range\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to determine whether the colour range has been set. \mbox{\Hypertarget{classPUEmitter_a5f8e8341950bf074716ef9095f182e8c}\label{classPUEmitter_a5f8e8341950bf074716ef9095f182e8c}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Color\+Range\+Start@{\+\_\+particle\+Color\+Range\+Start}}
+\index{\+\_\+particle\+Color\+Range\+Start@{\+\_\+particle\+Color\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Color\+Range\+Start}{\_particleColorRangeStart}}
+{\footnotesize\ttfamily \hyperlink{classVec4}{Vec4} P\+U\+Emitter\+::\+\_\+particle\+Color\+Range\+Start\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to randomize the colour of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a0499f306a39420300565df42c5d20459}\label{classPUEmitter_a0499f306a39420300565df42c5d20459}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Direction@{\+\_\+particle\+Direction}}
+\index{\+\_\+particle\+Direction@{\+\_\+particle\+Direction}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Direction}{\_particleDirection}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Emitter\+::\+\_\+particle\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+Direction (and speed) of the emitted particle \begin{DoxyRemark}{Remarks}
+Don\textquotesingle{}t confuse the particle direction with the direction of the emitter itself. The particle\+Direction is the direction of an emitted particle. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_a2b4c7199635cd089a5bc019be5ee262b}\label{classPUEmitter_a2b4c7199635cd089a5bc019be5ee262b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Orientation@{\+\_\+particle\+Orientation}}
+\index{\+\_\+particle\+Orientation@{\+\_\+particle\+Orientation}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Orientation}{\_particleOrientation}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} P\+U\+Emitter\+::\+\_\+particle\+Orientation\hspace{0.3cm}{\ttfamily [protected]}}
+
+Orientation of the particle as soon as it is emitted. \begin{DoxyRemark}{Remarks}
+This is only visible if a renderer is used that renders 3D particles. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUEmitter_aa2cc6ae3bf6edf47a76ac6787406ba79}\label{classPUEmitter_aa2cc6ae3bf6edf47a76ac6787406ba79}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Orientation\+Range\+Start@{\+\_\+particle\+Orientation\+Range\+Start}}
+\index{\+\_\+particle\+Orientation\+Range\+Start@{\+\_\+particle\+Orientation\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Orientation\+Range\+Start}{\_particleOrientationRangeStart}}
+{\footnotesize\ttfamily \hyperlink{classQuaternion}{Quaternion} P\+U\+Emitter\+::\+\_\+particle\+Orientation\+Range\+Start\hspace{0.3cm}{\ttfamily [protected]}}
+
+If set, the range generates a random orientation between start and end. \mbox{\Hypertarget{classPUEmitter_a3f485e408d3555deaca841793bc2cbb5}\label{classPUEmitter_a3f485e408d3555deaca841793bc2cbb5}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Texture\+Coords@{\+\_\+particle\+Texture\+Coords}}
+\index{\+\_\+particle\+Texture\+Coords@{\+\_\+particle\+Texture\+Coords}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Texture\+Coords}{\_particleTextureCoords}}
+{\footnotesize\ttfamily unsigned short P\+U\+Emitter\+::\+\_\+particle\+Texture\+Coords\hspace{0.3cm}{\ttfamily [protected]}}
+
+Texture coords that is assigned to an emitted particle (only works if the renderer uses it) \mbox{\Hypertarget{classPUEmitter_a027f5821bdf5361572eeec0718dbc917}\label{classPUEmitter_a027f5821bdf5361572eeec0718dbc917}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Texture\+Coords\+Range\+End@{\+\_\+particle\+Texture\+Coords\+Range\+End}}
+\index{\+\_\+particle\+Texture\+Coords\+Range\+End@{\+\_\+particle\+Texture\+Coords\+Range\+End}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Texture\+Coords\+Range\+End}{\_particleTextureCoordsRangeEnd}}
+{\footnotesize\ttfamily unsigned short P\+U\+Emitter\+::\+\_\+particle\+Texture\+Coords\+Range\+End\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to randomize the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_a2117f4a61fea8fe64f94d28a327a0c6d}\label{classPUEmitter_a2117f4a61fea8fe64f94d28a327a0c6d}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Texture\+Coords\+Range\+Set@{\+\_\+particle\+Texture\+Coords\+Range\+Set}}
+\index{\+\_\+particle\+Texture\+Coords\+Range\+Set@{\+\_\+particle\+Texture\+Coords\+Range\+Set}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Texture\+Coords\+Range\+Set}{\_particleTextureCoordsRangeSet}}
+{\footnotesize\ttfamily bool P\+U\+Emitter\+::\+\_\+particle\+Texture\+Coords\+Range\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to determine whether the texture coords range has been set. \mbox{\Hypertarget{classPUEmitter_a2f8c970e8a4f6616f5d4714743e71e92}\label{classPUEmitter_a2f8c970e8a4f6616f5d4714743e71e92}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+particle\+Texture\+Coords\+Range\+Start@{\+\_\+particle\+Texture\+Coords\+Range\+Start}}
+\index{\+\_\+particle\+Texture\+Coords\+Range\+Start@{\+\_\+particle\+Texture\+Coords\+Range\+Start}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+particle\+Texture\+Coords\+Range\+Start}{\_particleTextureCoordsRangeStart}}
+{\footnotesize\ttfamily unsigned short P\+U\+Emitter\+::\+\_\+particle\+Texture\+Coords\+Range\+Start\hspace{0.3cm}{\ttfamily [protected]}}
+
+Used to randomize the texture coords of an emitted particle. \mbox{\Hypertarget{classPUEmitter_ac1115f1b0d7963dbe18d9812610ae16b}\label{classPUEmitter_ac1115f1b0d7963dbe18d9812610ae16b}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+remainder@{\+\_\+remainder}}
+\index{\+\_\+remainder@{\+\_\+remainder}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+remainder}{\_remainder}}
+{\footnotesize\ttfamily float P\+U\+Emitter\+::\+\_\+remainder\hspace{0.3cm}{\ttfamily [protected]}}
+
+Particles that are left to be emitted from the previous time. \mbox{\Hypertarget{classPUEmitter_ad4f5d530832b33afb555fba214cf5864}\label{classPUEmitter_ad4f5d530832b33afb555fba214cf5864}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+repeat\+Delay\+Remain@{\+\_\+repeat\+Delay\+Remain}}
+\index{\+\_\+repeat\+Delay\+Remain@{\+\_\+repeat\+Delay\+Remain}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+repeat\+Delay\+Remain}{\_repeatDelayRemain}}
+{\footnotesize\ttfamily float P\+U\+Emitter\+::\+\_\+repeat\+Delay\+Remain\hspace{0.3cm}{\ttfamily [protected]}}
+
+Repeat/delay remainder. \mbox{\Hypertarget{classPUEmitter_af3b3eac3d9539b5c2d8597dfa41a17cb}\label{classPUEmitter_af3b3eac3d9539b5c2d8597dfa41a17cb}} 
+\index{P\+U\+Emitter@{P\+U\+Emitter}!\+\_\+up\+Vector@{\+\_\+up\+Vector}}
+\index{\+\_\+up\+Vector@{\+\_\+up\+Vector}!P\+U\+Emitter@{P\+U\+Emitter}}
+\subsubsection{\texorpdfstring{\+\_\+up\+Vector}{\_upVector}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Emitter\+::\+\_\+up\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+Notional up vector, just used to speed up generation of variant directions. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Emitter.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Emitter.\+cpp\end{DoxyCompactItemize}

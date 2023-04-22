@@ -1,0 +1,252 @@
+\hypertarget{classMeshSkin}{}\section{Mesh\+Skin Class Reference}
+\label{classMeshSkin}\index{Mesh\+Skin@{Mesh\+Skin}}
+
+
+\hyperlink{classMeshSkin}{Mesh\+Skin}, A class maintain a collection of bones that affect \hyperlink{classMesh}{Mesh} vertex. And it is responsible for computing matrix palettes that used by skin mesh rendering.  NA  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Mesh\+Skin.\+h$>$}
+
+
+
+Inheritance diagram for Mesh\+Skin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classMeshSkin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+Skin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMeshSkin__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+ssize\+\_\+t \hyperlink{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}{get\+Bone\+Count} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classMeshSkin_a5fda81de94dbfed1a3af0fff7806321b}{get\+Bone\+By\+Index} (unsigned int index) const
+\item 
+\mbox{\Hypertarget{classMeshSkin_a1faaba8b7c6925e703549389f14e7bc5}\label{classMeshSkin_a1faaba8b7c6925e703549389f14e7bc5}} 
+\hyperlink{classBone3D}{Bone3D} $\ast$ {\bfseries get\+Bone\+By\+Name} (const std\+::string \&id) const
+\item 
+int \hyperlink{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}{get\+Bone\+Index} (\hyperlink{classBone3D}{Bone3D} $\ast$bone) const
+\item 
+\hyperlink{classVec4}{Vec4} $\ast$ \hyperlink{classMeshSkin_a7b69c95bc99166c91cd20b8aa24f1ac2}{get\+Matrix\+Palette} ()
+\item 
+ssize\+\_\+t \hyperlink{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}{get\+Matrix\+Palette\+Size} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classMeshSkin_a724b98e3bd3ea369e2fa4cc56e9ef1b0}{get\+Root\+Bone} () const
+\item 
+void \hyperlink{classMeshSkin_add548f76d7d93110413d5da980c9efb0}{remove\+All\+Bones} ()
+\item 
+void \hyperlink{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}{add\+Skin\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classMeshSkin_aaafc6c9736be6dcab5f26e6a6bde79e7}{get\+Inv\+Bind\+Pose} (const \hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+ssize\+\_\+t \hyperlink{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}{get\+Bone\+Count} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classMeshSkin_a6bf277ae3b68235b5a9821dd847aabf7}{get\+Bone\+By\+Index} (unsigned int index) const
+\item 
+\mbox{\Hypertarget{classMeshSkin_a99e6a2aa659bb4a62a1a4d7349f3d3ba}\label{classMeshSkin_a99e6a2aa659bb4a62a1a4d7349f3d3ba}} 
+\hyperlink{classBone3D}{Bone3D} $\ast$ {\bfseries get\+Bone\+By\+Name} (const std\+::string \&id) const
+\item 
+int \hyperlink{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}{get\+Bone\+Index} (\hyperlink{classBone3D}{Bone3D} $\ast$bone) const
+\item 
+\hyperlink{classVec4}{Vec4} $\ast$ \hyperlink{classMeshSkin_a69c550cdf8ed656c6faaa4ad912ddad6}{get\+Matrix\+Palette} ()
+\item 
+ssize\+\_\+t \hyperlink{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}{get\+Matrix\+Palette\+Size} () const
+\item 
+\hyperlink{classBone3D}{Bone3D} $\ast$ \hyperlink{classMeshSkin_a9741f7732d958d7b98b04907f5a20fb8}{get\+Root\+Bone} () const
+\item 
+void \hyperlink{classMeshSkin_add548f76d7d93110413d5da980c9efb0}{remove\+All\+Bones} ()
+\item 
+void \hyperlink{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}{add\+Skin\+Bone} (\hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classMeshSkin_a9d8ba78b228c94ba4a4e62ff80818164}{get\+Inv\+Bind\+Pose} (const \hyperlink{classBone3D}{Bone3D} $\ast$bone)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}{create} (\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$skeleton, const std\+::string \&filename, const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classMeshSkin_ad2eb8ee58c162ee37ee768a5906eaf52}\label{classMeshSkin_ad2eb8ee58c162ee37ee768a5906eaf52}} 
+static \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ {\bfseries create} (\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$skeleton, const std\+::vector$<$ std\+::string $>$ \&bone\+Names, const std\+::vector$<$ \hyperlink{classMat4}{Mat4} $>$ \&inv\+Bind\+Pose)
+\item 
+static \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ \hyperlink{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}{create} (\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$skeleton, const std\+::string \&filename, const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classMeshSkin_aded1c13cf98c18896b0a79920b6d110f}\label{classMeshSkin_aded1c13cf98c18896b0a79920b6d110f}} 
+static \hyperlink{classMeshSkin}{Mesh\+Skin} $\ast$ {\bfseries create} (\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$skeleton, const std\+::vector$<$ std\+::string $>$ \&bone\+Names, const std\+::vector$<$ \hyperlink{classMat4}{Mat4} $>$ \&inv\+Bind\+Pose)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeshSkin_ab5b935190603a7a93d0df1210a5ccf1b}\label{classMeshSkin_ab5b935190603a7a93d0df1210a5ccf1b}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classMeshSkin}{Mesh\+Skin}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeshSkin_adabe1ffb32f6afcf3b47571334f9661c}\label{classMeshSkin_adabe1ffb32f6afcf3b47571334f9661c}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classBone3D}{Bone3D} $\ast$ $>$ {\bfseries \+\_\+skin\+Bones}
+\item 
+\mbox{\Hypertarget{classMeshSkin_a1d9a6d0d3bc0d41d7a45d5bd88f38d82}\label{classMeshSkin_a1d9a6d0d3bc0d41d7a45d5bd88f38d82}} 
+std\+::vector$<$ \hyperlink{classMat4}{Mat4} $>$ {\bfseries \+\_\+inv\+Bind\+Poses}
+\item 
+\mbox{\Hypertarget{classMeshSkin_a2d736d8cf08e9fb08c753d7d801a4e58}\label{classMeshSkin_a2d736d8cf08e9fb08c753d7d801a4e58}} 
+\hyperlink{classBone3D}{Bone3D} $\ast$ {\bfseries \+\_\+root\+Bone}
+\item 
+\mbox{\Hypertarget{classMeshSkin_ac737f74af96bb1ae690f9865874bf853}\label{classMeshSkin_ac737f74af96bb1ae690f9865874bf853}} 
+\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$ {\bfseries \+\_\+skeleton}
+\item 
+\mbox{\Hypertarget{classMeshSkin_ad5acbd51a36caa8c35b9ec73564d8d32}\label{classMeshSkin_ad5acbd51a36caa8c35b9ec73564d8d32}} 
+\hyperlink{classVec4}{Vec4} $\ast$ {\bfseries \+\_\+matrix\+Palette}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeshSkin_ac9b3996998332cf8a503b4fbcaa6b200}\label{classMeshSkin_ac9b3996998332cf8a503b4fbcaa6b200}} 
+class {\bfseries Mesh}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMeshSkin}{Mesh\+Skin}, A class maintain a collection of bones that affect \hyperlink{classMesh}{Mesh} vertex. And it is responsible for computing matrix palettes that used by skin mesh rendering.  NA  NA. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}\label{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!add\+Skin\+Bone@{add\+Skin\+Bone}}
+\index{add\+Skin\+Bone@{add\+Skin\+Bone}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{add\+Skin\+Bone()}{addSkinBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+Skin\+::add\+Skin\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+add skin bone \mbox{\Hypertarget{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}\label{classMeshSkin_a64945183efaca64d7b7fdd9c74262ed1}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!add\+Skin\+Bone@{add\+Skin\+Bone}}
+\index{add\+Skin\+Bone@{add\+Skin\+Bone}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{add\+Skin\+Bone()}{addSkinBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+Skin\+::add\+Skin\+Bone (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+add skin bone \mbox{\Hypertarget{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}\label{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!create@{create}}
+\index{create@{create}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMeshSkin}{Mesh\+Skin}$\ast$ Mesh\+Skin\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$}]{skeleton,  }\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a new meshskin if do not want to share meshskin \mbox{\Hypertarget{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}\label{classMeshSkin_aa4f6d9cc6de56a6b5c0710ae9f83f9a7}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!create@{create}}
+\index{create@{create}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classMeshSkin}{Mesh\+Skin}$\ast$ Mesh\+Skin\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classSkeleton3D}{Skeleton3D} $\ast$}]{skeleton,  }\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a new meshskin if do not want to share meshskin \mbox{\Hypertarget{classMeshSkin_a5fda81de94dbfed1a3af0fff7806321b}\label{classMeshSkin_a5fda81de94dbfed1a3af0fff7806321b}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+By\+Index@{get\+Bone\+By\+Index}}
+\index{get\+Bone\+By\+Index@{get\+Bone\+By\+Index}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+By\+Index()}{getBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D} $\ast$ Mesh\+Skin\+::get\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+get bone \mbox{\Hypertarget{classMeshSkin_a6bf277ae3b68235b5a9821dd847aabf7}\label{classMeshSkin_a6bf277ae3b68235b5a9821dd847aabf7}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+By\+Index@{get\+Bone\+By\+Index}}
+\index{get\+Bone\+By\+Index@{get\+Bone\+By\+Index}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+By\+Index()}{getBoneByIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D}$\ast$ Mesh\+Skin\+::get\+Bone\+By\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+get bone \mbox{\Hypertarget{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}\label{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+Count@{get\+Bone\+Count}}
+\index{get\+Bone\+Count@{get\+Bone\+Count}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+Count()}{getBoneCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+Skin\+::get\+Bone\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get total bone count, skin bone + node bone \mbox{\Hypertarget{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}\label{classMeshSkin_a6316d1f7adb6333b6998eb20d4420d05}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+Count@{get\+Bone\+Count}}
+\index{get\+Bone\+Count@{get\+Bone\+Count}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+Count()}{getBoneCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+Skin\+::get\+Bone\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get total bone count, skin bone + node bone \mbox{\Hypertarget{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}\label{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+Index@{get\+Bone\+Index}}
+\index{get\+Bone\+Index@{get\+Bone\+Index}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+Index()}{getBoneIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Mesh\+Skin\+::get\+Bone\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption}) const}
+
+get bone index \mbox{\Hypertarget{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}\label{classMeshSkin_a79b2269d85ee8b9cda3e35126cda511f}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Bone\+Index@{get\+Bone\+Index}}
+\index{get\+Bone\+Index@{get\+Bone\+Index}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Bone\+Index()}{getBoneIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Mesh\+Skin\+::get\+Bone\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption}) const}
+
+get bone index \mbox{\Hypertarget{classMeshSkin_aaafc6c9736be6dcab5f26e6a6bde79e7}\label{classMeshSkin_aaafc6c9736be6dcab5f26e6a6bde79e7}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Inv\+Bind\+Pose@{get\+Inv\+Bind\+Pose}}
+\index{get\+Inv\+Bind\+Pose@{get\+Inv\+Bind\+Pose}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Inv\+Bind\+Pose()}{getInvBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Mesh\+Skin\+::get\+Inv\+Bind\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+get inverse bind pose \mbox{\Hypertarget{classMeshSkin_a9d8ba78b228c94ba4a4e62ff80818164}\label{classMeshSkin_a9d8ba78b228c94ba4a4e62ff80818164}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Inv\+Bind\+Pose@{get\+Inv\+Bind\+Pose}}
+\index{get\+Inv\+Bind\+Pose@{get\+Inv\+Bind\+Pose}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Inv\+Bind\+Pose()}{getInvBindPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Mesh\+Skin\+::get\+Inv\+Bind\+Pose (\begin{DoxyParamCaption}\item[{const \hyperlink{classBone3D}{Bone3D} $\ast$}]{bone }\end{DoxyParamCaption})}
+
+get inverse bind pose \mbox{\Hypertarget{classMeshSkin_a7b69c95bc99166c91cd20b8aa24f1ac2}\label{classMeshSkin_a7b69c95bc99166c91cd20b8aa24f1ac2}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Matrix\+Palette@{get\+Matrix\+Palette}}
+\index{get\+Matrix\+Palette@{get\+Matrix\+Palette}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Palette()}{getMatrixPalette()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec4}{Vec4} $\ast$ Mesh\+Skin\+::get\+Matrix\+Palette (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+compute matrix palette used by gpu skin \mbox{\Hypertarget{classMeshSkin_a69c550cdf8ed656c6faaa4ad912ddad6}\label{classMeshSkin_a69c550cdf8ed656c6faaa4ad912ddad6}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Matrix\+Palette@{get\+Matrix\+Palette}}
+\index{get\+Matrix\+Palette@{get\+Matrix\+Palette}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Palette()}{getMatrixPalette()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec4}{Vec4}$\ast$ Mesh\+Skin\+::get\+Matrix\+Palette (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+compute matrix palette used by gpu skin \mbox{\Hypertarget{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}\label{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Matrix\+Palette\+Size@{get\+Matrix\+Palette\+Size}}
+\index{get\+Matrix\+Palette\+Size@{get\+Matrix\+Palette\+Size}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Palette\+Size()}{getMatrixPaletteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+Skin\+::get\+Matrix\+Palette\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get\+Skin\+Bone\+Count() $\ast$ 3 \mbox{\Hypertarget{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}\label{classMeshSkin_a34c91f249fdec320a2a3243ce7a184c9}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Matrix\+Palette\+Size@{get\+Matrix\+Palette\+Size}}
+\index{get\+Matrix\+Palette\+Size@{get\+Matrix\+Palette\+Size}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Palette\+Size()}{getMatrixPaletteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Mesh\+Skin\+::get\+Matrix\+Palette\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get\+Skin\+Bone\+Count() $\ast$ 3 \mbox{\Hypertarget{classMeshSkin_a724b98e3bd3ea369e2fa4cc56e9ef1b0}\label{classMeshSkin_a724b98e3bd3ea369e2fa4cc56e9ef1b0}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Root\+Bone@{get\+Root\+Bone}}
+\index{get\+Root\+Bone@{get\+Root\+Bone}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Root\+Bone()}{getRootBone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D} $\ast$ Mesh\+Skin\+::get\+Root\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get root bone of the skin \mbox{\Hypertarget{classMeshSkin_a9741f7732d958d7b98b04907f5a20fb8}\label{classMeshSkin_a9741f7732d958d7b98b04907f5a20fb8}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!get\+Root\+Bone@{get\+Root\+Bone}}
+\index{get\+Root\+Bone@{get\+Root\+Bone}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{get\+Root\+Bone()}{getRootBone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classBone3D}{Bone3D}$\ast$ Mesh\+Skin\+::get\+Root\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get root bone of the skin \mbox{\Hypertarget{classMeshSkin_add548f76d7d93110413d5da980c9efb0}\label{classMeshSkin_add548f76d7d93110413d5da980c9efb0}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!remove\+All\+Bones@{remove\+All\+Bones}}
+\index{remove\+All\+Bones@{remove\+All\+Bones}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{remove\+All\+Bones()}{removeAllBones()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mesh\+Skin\+::remove\+All\+Bones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all bones \mbox{\Hypertarget{classMeshSkin_add548f76d7d93110413d5da980c9efb0}\label{classMeshSkin_add548f76d7d93110413d5da980c9efb0}} 
+\index{Mesh\+Skin@{Mesh\+Skin}!remove\+All\+Bones@{remove\+All\+Bones}}
+\index{remove\+All\+Bones@{remove\+All\+Bones}!Mesh\+Skin@{Mesh\+Skin}}
+\subsubsection{\texorpdfstring{remove\+All\+Bones()}{removeAllBones()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mesh\+Skin\+::remove\+All\+Bones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove all bones 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Mesh\+Skin.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Mesh\+Skin.\+cpp\end{DoxyCompactItemize}

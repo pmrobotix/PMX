@@ -1,0 +1,245 @@
+\hypertarget{robot__trajectory_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+trajectory.c File Reference}
+\label{robot__trajectory_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+trajectory.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+trajectory.\+c}}
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Protocol/traj\+\_\+protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Protocol/can\+\_\+id.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+unit\+Conversion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clothoid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+Include dependency graph for robot\+\_\+trajectory.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__trajectory_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structClothoidParam}{Clothoid\+Param}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_ae7ff39247f35f8c83d96fae223693634}\label{robot__trajectory_8c_ae7ff39247f35f8c83d96fae223693634}} 
+void \hyperlink{robot__trajectory_8c_ae7ff39247f35f8c83d96fae223693634}{traj\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Initialisation of the module. \end{DoxyCompactList}\item 
+void \hyperlink{robot__trajectory_8c_a13f48fd39f56020dc05e17852c6492e5}{motion\+\_\+\+Line} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist)
+\item 
+void \hyperlink{robot__trajectory_8c_a61948549d97a6adad02f79484c94a8b2}{motion\+\_\+\+Line\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist, float V\+Max)
+\item 
+void \hyperlink{robot__trajectory_8c_ad3d7a48b58aad4a535b9e86c9846a205}{motion\+\_\+\+Line\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float dist, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{robot__trajectory_8c_a3cecc2ec8ef2ef0de805d5bcc7915fa9}{motion\+\_\+\+Rotate} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle)
+\item 
+void \hyperlink{robot__trajectory_8c_aa2ebc7078aed684935fdcab9636ae37b}{motion\+\_\+\+Rotate\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float V\+Max)
+\item 
+void \hyperlink{robot__trajectory_8c_afa1f387ef7d6ea6ddc0a5677537d1be6}{motion\+\_\+\+Rotate\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{robot__trajectory_8c_a5ebf263b2b590f0593e91b42b31d0a89}{motion\+\_\+\+Arc\+Rotate} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius)
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_acdbb64dd6f396ae537e4ac3dba0765be}\label{robot__trajectory_8c_acdbb64dd6f396ae537e4ac3dba0765be}} 
+void {\bfseries motion\+\_\+\+Arc\+Rotate\+Speed} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius, float V\+Max)
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_a455858667d0b4067bceaa38f82435aea}\label{robot__trajectory_8c_a455858667d0b4067bceaa38f82435aea}} 
+void {\bfseries motion\+\_\+\+Arc\+Rotate\+Speed\+Acc} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float angle, float radius, float V\+Max, float Accel, float Decel)
+\item 
+void \hyperlink{robot__trajectory_8c_a23d399acbaa1bbd845fb1ec7e31fc38e}{motion\+\_\+\+Speed\+Control\+LR} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Left, float dist\+Left, float acc\+Left, float sp\+Right, float dist\+Right, float acc\+Right)
+\item 
+void \hyperlink{robot__trajectory_8c_ade6f6776bbd97b75ffcc07d8b26d5bb4}{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Alpha, float acc\+Alpha, float sp\+Delta, float acc\+Delta, int during\+Ms)
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_acbe00cda0d175cc5eb5ee65c7875e0fd}\label{robot__trajectory_8c_acbe00cda0d175cc5eb5ee65c7875e0fd}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+Decel} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Left, float dist\+Left, float acc\+Left, float dec\+Left, float sp\+Right, float dist\+Right, float acc\+Right, float dec\+Right)
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_a58d0684bdc5361de0bdf823cdea6d10a}\label{robot__trajectory_8c_a58d0684bdc5361de0bdf823cdea6d10a}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+V0} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float V0\+Left, float sp\+Left, float dist\+Left, float acc\+Left, float V0\+Right, float sp\+Right, float dist\+Right, float acc\+Right)
+\item 
+\mbox{\Hypertarget{robot__trajectory_8c_a54b738a80911a0e48c7b0ac107f712da}\label{robot__trajectory_8c_a54b738a80911a0e48c7b0ac107f712da}} 
+void {\bfseries motion\+\_\+\+Speed\+Control\+L\+R\+Time} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float V0\+Left, float T\+Left, float acc\+Left, float V0\+Right, float T\+Right, float acc\+Right)
+\item 
+void \hyperlink{robot__trajectory_8c_a879917d06bede288539ee08d9ac85f5a}{motion\+\_\+\+Speed\+Control\+AD} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, float sp\+Alpha, float dist\+Alpha, float acc\+Alpha, float sp\+Delta, float dist\+Delta, float acc\+Delta)
+\item 
+void \hyperlink{robot__trajectory_8c_a135c4202458c27f6e599b65d141d9500}{motion\+\_\+\+Step\+Order\+LR} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, int32 pos\+Left, int32 pos\+Right)
+\item 
+void \hyperlink{robot__trajectory_8c_a15ceffebbdd1aa091fe076ff62f73754}{motion\+\_\+\+Step\+Order\+AD} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$out\+\_\+cmd, int32 pos\+Alpha, int32 pos\+Delta)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{robot__trajectory_8c_a5ebf263b2b590f0593e91b42b31d0a89}\label{robot__trajectory_8c_a5ebf263b2b590f0593e91b42b31d0a89}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Arc\+Rotate@{motion\+\_\+\+Arc\+Rotate}}
+\index{motion\+\_\+\+Arc\+Rotate@{motion\+\_\+\+Arc\+Rotate}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Arc\+Rotate()}{motion\_ArcRotate()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Arc\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Order a arc-\/circle curve movement of the specified angle and radius 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle of the arc-\/circle curve in radian (2$\ast$\+Pi make a complete circle) \\
+\hline
+{\em radius} & Radius of the arc-\/circle in meter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a13f48fd39f56020dc05e17852c6492e5}\label{robot__trajectory_8c_a13f48fd39f56020dc05e17852c6492e5}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Line@{motion\+\_\+\+Line}}
+\index{motion\+\_\+\+Line@{motion\+\_\+\+Line}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line()}{motion\_Line()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a61948549d97a6adad02f79484c94a8b2}\label{robot__trajectory_8c_a61948549d97a6adad02f79484c94a8b2}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Line\+Speed@{motion\+\_\+\+Line\+Speed}}
+\index{motion\+\_\+\+Line\+Speed@{motion\+\_\+\+Line\+Speed}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line\+Speed()}{motion\_LineSpeed()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Line\+Speed (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist,  }\item[{float}]{V\+Max }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance with a specific speed 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_ad3d7a48b58aad4a535b9e86c9846a205}\label{robot__trajectory_8c_ad3d7a48b58aad4a535b9e86c9846a205}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Line\+Speed\+Acc@{motion\+\_\+\+Line\+Speed\+Acc}}
+\index{motion\+\_\+\+Line\+Speed\+Acc@{motion\+\_\+\+Line\+Speed\+Acc}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Line\+Speed\+Acc()}{motion\_LineSpeedAcc()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Line\+Speed\+Acc (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{dist,  }\item[{float}]{V\+Max,  }\item[{float}]{Accel,  }\item[{float}]{Decel }\end{DoxyParamCaption})}
+
+Order a straight line movement of the specified distance with a specific speed and acceleration 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em dist} & Distance to run in meter \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} used to attain the V\+Max speed in m/s/s \\
+\hline
+{\em Decel} & Deceleration used to stop the movement in m/s/s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a3cecc2ec8ef2ef0de805d5bcc7915fa9}\label{robot__trajectory_8c_a3cecc2ec8ef2ef0de805d5bcc7915fa9}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Rotate@{motion\+\_\+\+Rotate}}
+\index{motion\+\_\+\+Rotate@{motion\+\_\+\+Rotate}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate()}{motion\_Rotate()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Rotate (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_aa2ebc7078aed684935fdcab9636ae37b}\label{robot__trajectory_8c_aa2ebc7078aed684935fdcab9636ae37b}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Rotate\+Speed@{motion\+\_\+\+Rotate\+Speed}}
+\index{motion\+\_\+\+Rotate\+Speed@{motion\+\_\+\+Rotate\+Speed}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate\+Speed()}{motion\_RotateSpeed()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Rotate\+Speed (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{V\+Max }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle with a specific speed 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_afa1f387ef7d6ea6ddc0a5677537d1be6}\label{robot__trajectory_8c_afa1f387ef7d6ea6ddc0a5677537d1be6}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Rotate\+Speed\+Acc@{motion\+\_\+\+Rotate\+Speed\+Acc}}
+\index{motion\+\_\+\+Rotate\+Speed\+Acc@{motion\+\_\+\+Rotate\+Speed\+Acc}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Rotate\+Speed\+Acc()}{motion\_RotateSpeedAcc()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Rotate\+Speed\+Acc (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{angle,  }\item[{float}]{V\+Max,  }\item[{float}]{Accel,  }\item[{float}]{Decel }\end{DoxyParamCaption})}
+
+Order a pure rotation movement of the specified angle with a specific speed and acceleration 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+{\em angle} & Angle to run in radian \\
+\hline
+{\em V\+Max} & Maximum goal speed of each encoder wheel in meter/second \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} used to attain the V\+Max speed in m/s/s \\
+\hline
+{\em Decel} & Deceleration used to stop the movement in m/s/s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a879917d06bede288539ee08d9ac85f5a}\label{robot__trajectory_8c_a879917d06bede288539ee08d9ac85f5a}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Speed\+Control\+AD@{motion\+\_\+\+Speed\+Control\+AD}}
+\index{motion\+\_\+\+Speed\+Control\+AD@{motion\+\_\+\+Speed\+Control\+AD}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+A\+D()}{motion\_SpeedControlAD()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Speed\+Control\+AD (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Alpha,  }\item[{float}]{dist\+Alpha,  }\item[{float}]{acc\+Alpha,  }\item[{float}]{sp\+Delta,  }\item[{float}]{dist\+Delta,  }\item[{float}]{acc\+Delta }\end{DoxyParamCaption})}
+
+\hyperlink{classControl}{Control} the speed of alpha-\/delta virtual motors 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_ade6f6776bbd97b75ffcc07d8b26d5bb4}\label{robot__trajectory_8c_ade6f6776bbd97b75ffcc07d8b26d5bb4}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time@{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time}}
+\index{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time@{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time()}{motion\_SpeedControlADMaxTime()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Speed\+Control\+A\+D\+Max\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Alpha,  }\item[{float}]{acc\+Alpha,  }\item[{float}]{sp\+Delta,  }\item[{float}]{acc\+Delta,  }\item[{int}]{during\+Ms }\end{DoxyParamCaption})}
+
+\hyperlink{classControl}{Control} the speed of alpha-\/delta virtual motors during a few ms 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a23d399acbaa1bbd845fb1ec7e31fc38e}\label{robot__trajectory_8c_a23d399acbaa1bbd845fb1ec7e31fc38e}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Speed\+Control\+LR@{motion\+\_\+\+Speed\+Control\+LR}}
+\index{motion\+\_\+\+Speed\+Control\+LR@{motion\+\_\+\+Speed\+Control\+LR}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Speed\+Control\+L\+R()}{motion\_SpeedControlLR()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Speed\+Control\+LR (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{float}]{sp\+Left,  }\item[{float}]{dist\+Left,  }\item[{float}]{acc\+Left,  }\item[{float}]{sp\+Right,  }\item[{float}]{dist\+Right,  }\item[{float}]{acc\+Right }\end{DoxyParamCaption})}
+
+\hyperlink{classControl}{Control} the speed of both motors 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a15ceffebbdd1aa091fe076ff62f73754}\label{robot__trajectory_8c_a15ceffebbdd1aa091fe076ff62f73754}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Step\+Order\+AD@{motion\+\_\+\+Step\+Order\+AD}}
+\index{motion\+\_\+\+Step\+Order\+AD@{motion\+\_\+\+Step\+Order\+AD}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Step\+Order\+A\+D()}{motion\_StepOrderAD()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Step\+Order\+AD (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{int32}]{pos\+Alpha,  }\item[{int32}]{pos\+Delta }\end{DoxyParamCaption})}
+
+Test P\+ID system with step order response 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__trajectory_8c_a135c4202458c27f6e599b65d141d9500}\label{robot__trajectory_8c_a135c4202458c27f6e599b65d141d9500}} 
+\index{robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}!motion\+\_\+\+Step\+Order\+LR@{motion\+\_\+\+Step\+Order\+LR}}
+\index{motion\+\_\+\+Step\+Order\+LR@{motion\+\_\+\+Step\+Order\+LR}!robot\+\_\+trajectory.\+c@{robot\+\_\+trajectory.\+c}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Step\+Order\+L\+R()}{motion\_StepOrderLR()}}
+{\footnotesize\ttfamily void motion\+\_\+\+Step\+Order\+LR (\begin{DoxyParamCaption}\item[{\hyperlink{structRobotCommand}{Robot\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{int32}]{pos\+Left,  }\item[{int32}]{pos\+Right }\end{DoxyParamCaption})}
+
+Test P\+ID system with step order response 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Resulting command that will be interpreted by path\+\_\+manager \\
+\hline
+\end{DoxyParams}

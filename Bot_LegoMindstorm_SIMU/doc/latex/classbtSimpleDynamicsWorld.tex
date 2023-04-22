@@ -1,0 +1,212 @@
+\hypertarget{classbtSimpleDynamicsWorld}{}\section{bt\+Simple\+Dynamics\+World Class Reference}
+\label{classbtSimpleDynamicsWorld}\index{bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}}
+
+
+{\ttfamily \#include $<$bt\+Simple\+Dynamics\+World.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Simple\+Dynamics\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classbtSimpleDynamicsWorld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Simple\+Dynamics\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSimpleDynamicsWorld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}\label{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}} 
+\hyperlink{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}{bt\+Simple\+Dynamics\+World} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$pair\+Cache, \hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$constraint\+Solver, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\begin{DoxyCompactList}\small\item\em this \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World} constructor creates dispatcher, broadphase pair\+Cache and constraint\+Solver \end{DoxyCompactList}\item 
+virtual int \hyperlink{classbtSimpleDynamicsWorld_af6b4810b5018cbaf09f82839111a243d}{step\+Simulation} (bt\+Scalar time\+Step, int max\+Sub\+Steps=1, bt\+Scalar fixed\+Time\+Step=bt\+Scalar(1.)/bt\+Scalar(60.))
+\begin{DoxyCompactList}\small\item\em max\+Sub\+Steps/fixed\+Time\+Step for interpolation is currently ignored for \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World}, use bt\+Discrete\+Dynamics\+World instead \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_aceee449dd68d64f0a90e853c929bf6d3}\label{classbtSimpleDynamicsWorld_aceee449dd68d64f0a90e853c929bf6d3}} 
+virtual void {\bfseries set\+Gravity} (const bt\+Vector3 \&gravity)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_abd6ceb818d0b851d3d0bc89a8d207f4a}\label{classbtSimpleDynamicsWorld_abd6ceb818d0b851d3d0bc89a8d207f4a}} 
+virtual bt\+Vector3 {\bfseries get\+Gravity} () const
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a7c6178205587e7a36f5a7082db16b3a2}\label{classbtSimpleDynamicsWorld_a7c6178205587e7a36f5a7082db16b3a2}} 
+virtual void {\bfseries add\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a9ea7739dd5c2b5f5f114440b0741ed43}\label{classbtSimpleDynamicsWorld_a9ea7739dd5c2b5f5f114440b0741ed43}} 
+virtual void {\bfseries add\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body, short group, short mask)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ab6034d6e27ccee6a279e695d87586795}\label{classbtSimpleDynamicsWorld_ab6034d6e27ccee6a279e695d87586795}} 
+virtual void {\bfseries remove\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_aa9a10982644f81b5a8a27420611ba41a}\label{classbtSimpleDynamicsWorld_aa9a10982644f81b5a8a27420611ba41a}} 
+virtual void {\bfseries debug\+Draw\+World} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ae5edd46b00db8cbb67bd3b4b6b230e2b}\label{classbtSimpleDynamicsWorld_ae5edd46b00db8cbb67bd3b4b6b230e2b}} 
+virtual void {\bfseries add\+Action} (\hyperlink{classbtActionInterface}{bt\+Action\+Interface} $\ast$action)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a9ef9438d5a167b5a84f6f0562cd8dbe9}\label{classbtSimpleDynamicsWorld_a9ef9438d5a167b5a84f6f0562cd8dbe9}} 
+virtual void {\bfseries remove\+Action} (\hyperlink{classbtActionInterface}{bt\+Action\+Interface} $\ast$action)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a7c9255653135c9117d6a27738a3077ab}\label{classbtSimpleDynamicsWorld_a7c9255653135c9117d6a27738a3077ab}} 
+virtual void \hyperlink{classbtSimpleDynamicsWorld_a7c9255653135c9117d6a27738a3077ab}{remove\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object)
+\begin{DoxyCompactList}\small\item\em remove\+Collision\+Object will first check if it is a rigid body, if so call remove\+Rigid\+Body otherwise call bt\+Collision\+World\+::remove\+Collision\+Object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a861597935f53ccc9cc1c4a7cd0c95240}\label{classbtSimpleDynamicsWorld_a861597935f53ccc9cc1c4a7cd0c95240}} 
+virtual void {\bfseries update\+Aabbs} ()
+\item 
+virtual void \hyperlink{classbtSimpleDynamicsWorld_a91e996f5ce6e465e805565ee0ba14824}{synchronize\+Motion\+States} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a8b198b5865f73a01f4c7deee69e0999c}\label{classbtSimpleDynamicsWorld_a8b198b5865f73a01f4c7deee69e0999c}} 
+virtual void {\bfseries set\+Constraint\+Solver} (\hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$solver)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a605b993d42c54a5aff9c8e39063031d8}\label{classbtSimpleDynamicsWorld_a605b993d42c54a5aff9c8e39063031d8}} 
+virtual \hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$ {\bfseries get\+Constraint\+Solver} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_af1ae6896a3bb3dc5adf68482b3a1c785}\label{classbtSimpleDynamicsWorld_af1ae6896a3bb3dc5adf68482b3a1c785}} 
+virtual bt\+Dynamics\+World\+Type {\bfseries get\+World\+Type} () const
+\item 
+virtual void \hyperlink{classbtSimpleDynamicsWorld_ac44c80444f4d6d4e3c2955dd43b7a93a}{clear\+Forces} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}\label{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}} 
+\hyperlink{classbtSimpleDynamicsWorld_a7a82e6d27693ee39d4d2cdf44788ecc8}{bt\+Simple\+Dynamics\+World} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$pair\+Cache, \hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$constraint\+Solver, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\begin{DoxyCompactList}\small\item\em this \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World} constructor creates dispatcher, broadphase pair\+Cache and constraint\+Solver \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a43bce5ebc50b034e7c2860a01bba5872}\label{classbtSimpleDynamicsWorld_a43bce5ebc50b034e7c2860a01bba5872}} 
+virtual int \hyperlink{classbtSimpleDynamicsWorld_a43bce5ebc50b034e7c2860a01bba5872}{step\+Simulation} (bt\+Scalar time\+Step, int max\+Sub\+Steps=1, bt\+Scalar fixed\+Time\+Step=bt\+Scalar(1.)/bt\+Scalar(60.))
+\begin{DoxyCompactList}\small\item\em max\+Sub\+Steps/fixed\+Time\+Step for interpolation is currently ignored for \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World}, use bt\+Discrete\+Dynamics\+World instead \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a2a3a3af7c48d2482ac0e4416d495f3bd}\label{classbtSimpleDynamicsWorld_a2a3a3af7c48d2482ac0e4416d495f3bd}} 
+virtual void {\bfseries set\+Gravity} (const bt\+Vector3 \&gravity)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a5b4f4914439ed445d4fc4c5cf54b349f}\label{classbtSimpleDynamicsWorld_a5b4f4914439ed445d4fc4c5cf54b349f}} 
+virtual bt\+Vector3 {\bfseries get\+Gravity} () const
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_aa43f15ae56d486aa2feef5247d487836}\label{classbtSimpleDynamicsWorld_aa43f15ae56d486aa2feef5247d487836}} 
+virtual void {\bfseries add\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a1fcb6385c3dfbe431d5311818459f3d2}\label{classbtSimpleDynamicsWorld_a1fcb6385c3dfbe431d5311818459f3d2}} 
+virtual void {\bfseries add\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body, short group, short mask)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ac88bbb6185baf00c30b0b395b9d3a634}\label{classbtSimpleDynamicsWorld_ac88bbb6185baf00c30b0b395b9d3a634}} 
+virtual void {\bfseries remove\+Rigid\+Body} (\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a6a09dadde946550a2bb00863a0c84710}\label{classbtSimpleDynamicsWorld_a6a09dadde946550a2bb00863a0c84710}} 
+virtual void {\bfseries debug\+Draw\+World} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a1c5b36a0411fa632c5ca9dc53d60a266}\label{classbtSimpleDynamicsWorld_a1c5b36a0411fa632c5ca9dc53d60a266}} 
+virtual void {\bfseries add\+Action} (\hyperlink{classbtActionInterface}{bt\+Action\+Interface} $\ast$action)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a7e23fc8e9750c50dd320819f82156d78}\label{classbtSimpleDynamicsWorld_a7e23fc8e9750c50dd320819f82156d78}} 
+virtual void {\bfseries remove\+Action} (\hyperlink{classbtActionInterface}{bt\+Action\+Interface} $\ast$action)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_af3f261b709a717508a82b3e6fb482f28}\label{classbtSimpleDynamicsWorld_af3f261b709a717508a82b3e6fb482f28}} 
+virtual void \hyperlink{classbtSimpleDynamicsWorld_af3f261b709a717508a82b3e6fb482f28}{remove\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object)
+\begin{DoxyCompactList}\small\item\em remove\+Collision\+Object will first check if it is a rigid body, if so call remove\+Rigid\+Body otherwise call bt\+Collision\+World\+::remove\+Collision\+Object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a5d6904f3e920cb71758037b41bf7a325}\label{classbtSimpleDynamicsWorld_a5d6904f3e920cb71758037b41bf7a325}} 
+virtual void {\bfseries update\+Aabbs} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a70e168909def885fddf4c4e28322435f}\label{classbtSimpleDynamicsWorld_a70e168909def885fddf4c4e28322435f}} 
+virtual void {\bfseries synchronize\+Motion\+States} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a8945afb676dd71ee2fb58d823384500a}\label{classbtSimpleDynamicsWorld_a8945afb676dd71ee2fb58d823384500a}} 
+virtual void {\bfseries set\+Constraint\+Solver} (\hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$solver)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a9ae30c37ffd9ac512a8afb701322752d}\label{classbtSimpleDynamicsWorld_a9ae30c37ffd9ac512a8afb701322752d}} 
+virtual \hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$ {\bfseries get\+Constraint\+Solver} ()
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_af1ae6896a3bb3dc5adf68482b3a1c785}\label{classbtSimpleDynamicsWorld_af1ae6896a3bb3dc5adf68482b3a1c785}} 
+virtual bt\+Dynamics\+World\+Type {\bfseries get\+World\+Type} () const
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a536b02f63af0a53253b651d6194ef674}\label{classbtSimpleDynamicsWorld_a536b02f63af0a53253b651d6194ef674}} 
+virtual void {\bfseries clear\+Forces} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ace01d5de5f2772b7e72fddf3a240b38a}\label{classbtSimpleDynamicsWorld_ace01d5de5f2772b7e72fddf3a240b38a}} 
+void {\bfseries predict\+Unconstraint\+Motion} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a9ff7980b0472d3ed5dadc5798d696b7d}\label{classbtSimpleDynamicsWorld_a9ff7980b0472d3ed5dadc5798d696b7d}} 
+void {\bfseries integrate\+Transforms} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ace01d5de5f2772b7e72fddf3a240b38a}\label{classbtSimpleDynamicsWorld_ace01d5de5f2772b7e72fddf3a240b38a}} 
+void {\bfseries predict\+Unconstraint\+Motion} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a9ff7980b0472d3ed5dadc5798d696b7d}\label{classbtSimpleDynamicsWorld_a9ff7980b0472d3ed5dadc5798d696b7d}} 
+void {\bfseries integrate\+Transforms} (bt\+Scalar time\+Step)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a2537c41c6c97707ddcd511d726fc16fe}\label{classbtSimpleDynamicsWorld_a2537c41c6c97707ddcd511d726fc16fe}} 
+\hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$ {\bfseries m\+\_\+constraint\+Solver}
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a30cbc96e70f35e7569d67518fba53bd3}\label{classbtSimpleDynamicsWorld_a30cbc96e70f35e7569d67518fba53bd3}} 
+bool {\bfseries m\+\_\+owns\+Constraint\+Solver}
+\item 
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_af9c01a665a220de5fe4d988d6160297b}\label{classbtSimpleDynamicsWorld_af9c01a665a220de5fe4d988d6160297b}} 
+bt\+Vector3 {\bfseries m\+\_\+gravity}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World} serves as unit-\/test and to verify more complicated and optimized dynamics worlds. Please use bt\+Discrete\+Dynamics\+World instead 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_ac44c80444f4d6d4e3c2955dd43b7a93a}\label{classbtSimpleDynamicsWorld_ac44c80444f4d6d4e3c2955dd43b7a93a}} 
+\index{bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}!clear\+Forces@{clear\+Forces}}
+\index{clear\+Forces@{clear\+Forces}!bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{clear\+Forces()}{clearForces()}}
+{\footnotesize\ttfamily void bt\+Simple\+Dynamics\+World\+::clear\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000033}{Todo}]\+: iterate over awake simulation islands! \end{DoxyRefDesc}
+
+
+Implements \hyperlink{classbtDynamicsWorld}{bt\+Dynamics\+World}.
+
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_af6b4810b5018cbaf09f82839111a243d}\label{classbtSimpleDynamicsWorld_af6b4810b5018cbaf09f82839111a243d}} 
+\index{bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}!step\+Simulation@{step\+Simulation}}
+\index{step\+Simulation@{step\+Simulation}!bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{step\+Simulation()}{stepSimulation()}}
+{\footnotesize\ttfamily int bt\+Simple\+Dynamics\+World\+::step\+Simulation (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{time\+Step,  }\item[{int}]{max\+Sub\+Steps = {\ttfamily 1},  }\item[{bt\+Scalar}]{fixed\+Time\+Step = {\ttfamily btScalar(1.)/btScalar(60.)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+max\+Sub\+Steps/fixed\+Time\+Step for interpolation is currently ignored for \hyperlink{classbtSimpleDynamicsWorld}{bt\+Simple\+Dynamics\+World}, use bt\+Discrete\+Dynamics\+World instead 
+
+apply gravity, predict motion
+
+perform collision detection
+
+solve contact constraints
+
+integrate transforms 
+
+Implements \hyperlink{classbtDynamicsWorld_a5ab26a0d6e8b2b21fbde2ed8f8dd6294}{bt\+Dynamics\+World}.
+
+\mbox{\Hypertarget{classbtSimpleDynamicsWorld_a91e996f5ce6e465e805565ee0ba14824}\label{classbtSimpleDynamicsWorld_a91e996f5ce6e465e805565ee0ba14824}} 
+\index{bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}!synchronize\+Motion\+States@{synchronize\+Motion\+States}}
+\index{synchronize\+Motion\+States@{synchronize\+Motion\+States}!bt\+Simple\+Dynamics\+World@{bt\+Simple\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{synchronize\+Motion\+States()}{synchronizeMotionStates()}}
+{\footnotesize\ttfamily void bt\+Simple\+Dynamics\+World\+::synchronize\+Motion\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000034}{Todo}]\+: iterate over awake simulation islands! \end{DoxyRefDesc}
+
+
+Implements \hyperlink{classbtDynamicsWorld}{bt\+Dynamics\+World}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Dynamics/bt\+Simple\+Dynamics\+World.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Dynamics/bt\+Simple\+Dynamics\+World.\+cpp\end{DoxyCompactItemize}

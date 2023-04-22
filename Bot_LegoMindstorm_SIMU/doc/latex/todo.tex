@@ -1,0 +1,112 @@
+
+\begin{DoxyRefList}
+\item[\label{todo__todo000007}%
+\Hypertarget{todo__todo000007}%
+Member \hyperlink{classbtAxisSweep3Internal_a4e26f4f8acf63f26451f6396223001bb}{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE $>$\+:\+:remove\+Handle} (B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+PE handle, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)]\+: compare performance 
+
+\+: compare performance  
+\item[\label{todo__todo000009}%
+\Hypertarget{todo__todo000009}%
+Class \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} ]\+: describe the meaning 
+
+\+: describe the meaning  
+\item[\label{todo__todo000011}%
+\Hypertarget{todo__todo000011}%
+Member \hyperlink{classbtCollisionWorld_ac1ca6489c220005798069152c3df0d08}{bt\+Collision\+World\+:\+:debug\+Draw\+Object} (const bt\+Transform \&world\+Transform, const bt\+Collision\+Shape $\ast$shape, const bt\+Vector3 \&color)]pass camera, for some culling? no -\/$>$ we are not a graphics lib  
+\item[\label{todo__todo000010}%
+\Hypertarget{todo__todo000010}%
+Member \hyperlink{classbtCollisionWorld_a2312e2da71f0d7646a4dc19a4966bed0}{bt\+Collision\+World\+:\+:object\+Query\+Single\+Internal} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&convex\+From\+Trans, const bt\+Transform \&convex\+To\+Trans, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col\+Obj\+Wrap, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)]\+: use \hyperlink{classAABB}{A\+A\+BB} tree or other B\+VH acceleration structure!  
+\item[\label{todo__todo000021}%
+\Hypertarget{todo__todo000021}%
+Class \hyperlink{structbtCompoundShapeChildData}{bt\+Compound\+Shape\+Child\+Data} ]\+: This aabb tree can also be use to speed up ray tests on bt\+Compound\+Shape, see \href{http://code.google.com/p/bullet/issues/detail?id=25}{\tt http\+://code.\+google.\+com/p/bullet/issues/detail?id=25} Currently, removal of child shapes is only supported when disabling the aabb tree (pass \textquotesingle{}false\textquotesingle{} in the constructor of bt\+Compound\+Shape) 
+
+\+: This aabb tree can also be use to speed up ray tests on bt\+Compound\+Shape, see \href{http://code.google.com/p/bullet/issues/detail?id=25}{\tt http\+://code.\+google.\+com/p/bullet/issues/detail?id=25} Currently, removal of child shapes is only supported when disabling the aabb tree (pass \textquotesingle{}false\textquotesingle{} in the constructor of bt\+Compound\+Shape)  
+\item[\label{todo__todo000014}%
+\Hypertarget{todo__todo000014}%
+Member \hyperlink{structbtConnectivityProcessor_a5d5f11a5ad2bc3b3bfad6882b42e18de}{bt\+Connectivity\+Processor\+:\+:process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)]\+: check if we need some epsilon, due to floating point imprecision  
+\item[\label{todo__todo000012}%
+\Hypertarget{todo__todo000012}%
+Class \hyperlink{classbtDefaultCollisionConfiguration}{bt\+Default\+Collision\+Configuration} ]\+: describe the meaning 
+
+\+: describe the meaning  
+\item[\label{todo__todo000013}%
+\Hypertarget{todo__todo000013}%
+Member \hyperlink{classbtDefaultCollisionConfiguration_a39a173eedf0e8d55dd89ef3b637925a9}{bt\+Default\+Collision\+Configuration\+:\+:set\+Convex\+Convex\+Multipoint\+Iterations} (int num\+Perturbation\+Iterations=3, int minimum\+Points\+Perturbation\+Threshold=3)]we could add a per-\/object setting of those parameters, for level-\/of-\/detail collision detection. 
+
+we could add a per-\/object setting of those parameters, for level-\/of-\/detail collision detection.  
+\item[\label{todo__todo000027}%
+\Hypertarget{todo__todo000027}%
+Class \hyperlink{classbtKinematicClosestNotMeRayResultCallback}{bt\+Kinematic\+Closest\+Not\+Me\+Ray\+Result\+Callback} ]Interact with dynamic objects, Ride kinematicly animated platforms properly More realistic (or maybe just a config option) falling -\/$>$ Should integrate falling velocity manually and use that in step\+Down() Support jumping Support ducking  
+\item[\label{todo__todo000015}%
+\Hypertarget{todo__todo000015}%
+Member \hyperlink{classbtManifoldResult_aebe32f0c202d988d0458e88d768602c6}{bt\+Manifold\+Result\+:\+:add\+Contact\+Point} (const bt\+Vector3 \&normal\+On\+B\+In\+World, const bt\+Vector3 \&point\+In\+World, bt\+Scalar depth)], check this for any side effects  
+\item[\label{todo__todo000040}%
+\Hypertarget{todo__todo000040}%
+Member \hyperlink{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}{bt\+Quaternion\+:\+:farthest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const]document this and it\textquotesingle{}s use 
+
+document this and it\textquotesingle{}s use  
+\item[\label{todo__todo000041}%
+\Hypertarget{todo__todo000041}%
+Member \hyperlink{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}{bt\+Quaternion\+:\+:nearest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const]document this and it\textquotesingle{}s use 
+
+document this and it\textquotesingle{}s use  
+\item[\label{todo__todo000035}%
+\Hypertarget{todo__todo000035}%
+Member \hyperlink{classbtRaycastVehicle_a53451c4e3495561f3f078b2041ef04be}{bt\+Raycast\+Vehicle\+:\+:ray\+Cast} (\hyperlink{structbtWheelInfo}{bt\+Wheel\+Info} \&wheel)]for driving on dynamic/movable objects!;  
+\item[\label{todo__todo000028}%
+\Hypertarget{todo__todo000028}%
+Member \hyperlink{classbtRotationalLimitMotor_ad52e9b1c402c7bdd47fb1a9de28afb7e}{bt\+Rotational\+Limit\+Motor\+:\+:solve\+Angular\+Limits} (bt\+Scalar time\+Step, bt\+Vector3 \&axis, bt\+Scalar jac\+Diag\+A\+B\+Inv, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body0, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body1)]\+: should clip against accumulated impulse  
+\item[\label{todo__todo000033}%
+\Hypertarget{todo__todo000033}%
+Member \hyperlink{classbtSimpleDynamicsWorld_ac44c80444f4d6d4e3c2955dd43b7a93a}{bt\+Simple\+Dynamics\+World\+:\+:clear\+Forces} ()]\+: iterate over awake simulation islands!  
+\item[\label{todo__todo000034}%
+\Hypertarget{todo__todo000034}%
+Member \hyperlink{classbtSimpleDynamicsWorld_a91e996f5ce6e465e805565ee0ba14824}{bt\+Simple\+Dynamics\+World\+:\+:synchronize\+Motion\+States} ()]\+: iterate over awake simulation islands!  
+\item[\label{todo__todo000017}%
+\Hypertarget{todo__todo000017}%
+Member \hyperlink{classbtSimulationIslandManager_ab0f52dc46bc01c6754f4cb32ba26c99a}{bt\+Simulation\+Island\+Manager\+:\+:build\+And\+Process\+Islands} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$collision\+World, \hyperlink{structbtSimulationIslandManager_1_1IslandCallback}{Island\+Callback} $\ast$callback)]\+: this is random access, it can be walked \textquotesingle{}cache friendly\textquotesingle{}!  
+\item[\label{todo__todo000016}%
+\Hypertarget{todo__todo000016}%
+Member \hyperlink{classbtSimulationIslandManager_aea0b5869eca2d034ac9c643e149a5e01}{bt\+Simulation\+Island\+Manager\+:\+:build\+Islands} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$col\+World)]\+: check sleeping conditions!  
+\item[\label{todo__todo000037}%
+\Hypertarget{todo__todo000037}%
+Member \hyperlink{classbtSoftBody_aced0f5421eeb1491a3fd77bb91e2e5af}{bt\+Soft\+Body\+:\+:set\+Collision\+Shape} (bt\+Collision\+Shape $\ast$collision\+Shape)]\+: avoid internal softbody shape hack and move collision code to collision library  
+\item[\label{todo__todo000038}%
+\Hypertarget{todo__todo000038}%
+Member \hyperlink{structbtSparseSdf_a08dbaa356f577ebbd0808329766111d1}{bt\+Sparse\+Sdf$<$ C\+E\+L\+L\+S\+I\+ZE $>$\+:\+:Garbage\+Collect} (int lifetime=256)]\+: Reset puid\textquotesingle{}s when int range limit is reached $\ast$/  
+\item[\label{todo__todo000018}%
+\Hypertarget{todo__todo000018}%
+Member \hyperlink{classbtSphereTriangleCollisionAlgorithm_af6de517d0a45abb91df4f61c5867c8f1}{bt\+Sphere\+Triangle\+Collision\+Algorithm\+:\+:process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)]\+: tighter bounds  
+\item[\label{todo__todo000024}%
+\Hypertarget{todo__todo000024}%
+Member \hyperlink{classbtTriangleMesh_a3b521a1faa5862a818d9f983230749a2}{bt\+Triangle\+Mesh\+:\+:find\+Or\+Add\+Vertex} (const bt\+Vector3 \&vertex, bool remove\+Duplicate\+Vertices)]\+: could use acceleration structure for this  
+\item[\label{todo__todo000025}%
+\Hypertarget{todo__todo000025}%
+Class \hyperlink{classGIM__CONTACT}{G\+I\+M\+\_\+\+C\+O\+N\+T\+A\+CT} ]\+: remove and replace \hyperlink{classGIM__CONTACT}{G\+I\+M\+\_\+\+C\+O\+N\+T\+A\+CT} by \hyperlink{classbtManifoldPoint}{bt\+Manifold\+Point}. 
+
+\+: remove and replace \hyperlink{classGIM__CONTACT}{G\+I\+M\+\_\+\+C\+O\+N\+T\+A\+CT} by \hyperlink{classbtManifoldPoint}{bt\+Manifold\+Point}.  
+\item[\label{todo__todo000057}%
+\Hypertarget{todo__todo000057}%
+Member \hyperlink{classIrSensor_ade39a20d2ec88e9ad4686e062093c91d}{Ir\+Sensor\+:\+:gp2\+Convert} (int type, int value)]version 150cm 
+
+version 150cm  
+\item[\label{todo__todo000005}%
+\Hypertarget{todo__todo000005}%
+Member \hyperlink{classLabel_a274a555bb2bd7b10d36a9de5ee361399}{Label\+:\+:enable\+Shadow} (const \hyperlink{structColor4B}{Color4B} \&shadow\+Color=Color4\+B\+::\+B\+L\+A\+CK, const \hyperlink{classSize}{Size} \&offset=\hyperlink{classSize}{Size}(2,-\/2), int blur\+Radius=0)]Support blur for shadow effect. 
+
+Support blur for shadow effect.  
+\item[\label{todo__todo000002}%
+\Hypertarget{todo__todo000002}%
+Class \hyperlink{classlogs_1_1LoggerFactory}{logs\+:\+:Logger\+Factory} ]Documenter et coder la notion de hierarchie.  
+\item[\label{todo__todo000006}%
+\Hypertarget{todo__todo000006}%
+Member \hyperlink{classui_1_1Text_a88d16f381c90e53c2346763e4fc810c8}{ui\+:\+:Text\+:\+:enable\+Shadow} (const \hyperlink{structColor4B}{Color4B} \&shadow\+Color=Color4\+B\+::\+B\+L\+A\+CK, const \hyperlink{classSize}{Size} \&offset=\hyperlink{classSize}{Size}(2,-\/2), int blur\+Radius=0)]support blur for shadow effect
+
+support blur for shadow effect 
+\item[\label{todo__todo000001}%
+\Hypertarget{todo__todo000001}%
+Member \hyperlink{classutils_1_1PointerList_a8d7b485e236a01cc14b41694ae0b3456}{utils\+:\+:Pointer\+List$<$ \+\_\+\+Tp, \+\_\+\+Alloc $>$\+:\+:size\+\_\+type} ]Check the use of this type  
+\item[\label{todo__todo000004}%
+\Hypertarget{todo__todo000004}%
+Class \hyperlink{classutils_1_1Thread}{utils\+:\+:Thread} ]Ajouter les méthodes join() et kill(). 
+\end{DoxyRefList}

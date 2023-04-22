@@ -1,0 +1,74 @@
+\hypertarget{motion_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.h File Reference}
+\label{motion_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+Include dependency graph for motion.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion_8h_aac4ff3749a562096c611ea6a6d9310ba}\label{motion_8h_aac4ff3749a562096c611ea6a6d9310ba}} 
+enum {\bfseries M\+O\+T\+I\+O\+N\+\_\+\+S\+T\+A\+TE} \{ \newline
+{\bfseries T\+R\+A\+J\+E\+C\+T\+O\+R\+Y\+\_\+\+R\+U\+N\+N\+I\+NG}, 
+{\bfseries A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+H\+A\+N\+D\+L\+I\+NG}, 
+{\bfseries F\+R\+E\+E\+\_\+\+M\+O\+T\+I\+ON}, 
+{\bfseries D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+ID}, 
+\newline
+{\bfseries T\+R\+A\+J\+E\+C\+T\+O\+R\+Y\+\_\+\+R\+U\+N\+N\+I\+NG}, 
+{\bfseries A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+H\+A\+N\+D\+L\+I\+NG}, 
+{\bfseries F\+R\+E\+E\+\_\+\+M\+O\+T\+I\+ON}, 
+{\bfseries D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+ID}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion_8h_a89bd7f26eff2e971ae896b4fcca3b47e}\label{motion_8h_a89bd7f26eff2e971ae896b4fcca3b47e}} 
+void \hyperlink{motion_8h_a89bd7f26eff2e971ae896b4fcca3b47e}{motion\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Load motion control module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a7b879ca583725fdbda0c143dfc776fbf}\label{motion_8h_a7b879ca583725fdbda0c143dfc776fbf}} 
+void \hyperlink{motion_8h_a7b879ca583725fdbda0c143dfc776fbf}{motion\+\_\+\+Free\+Motion} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control for a moment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a2c1caf4082ee35d48180244ad0bd91e0}\label{motion_8h_a2c1caf4082ee35d48180244ad0bd91e0}} 
+void \hyperlink{motion_8h_a2c1caf4082ee35d48180244ad0bd91e0}{motion\+\_\+\+Set\+Current\+Command} (\hyperlink{structRobotCommand}{Robot\+Command} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Set a robot command and execute it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a830f80827f730e46dc263f9b6f2b6df7}\label{motion_8h_a830f80827f730e46dc263f9b6f2b6df7}} 
+void \hyperlink{motion_8h_a830f80827f730e46dc263f9b6f2b6df7}{motion\+\_\+\+Disable\+P\+ID} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control and disable P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a3b95d4f4bce50f531c8d427e9aa61479}\label{motion_8h_a3b95d4f4bce50f531c8d427e9aa61479}} 
+void \hyperlink{motion_8h_a3b95d4f4bce50f531c8d427e9aa61479}{motion\+\_\+\+Assisted\+Handling} (void)
+\begin{DoxyCompactList}\small\item\em Assisted movement mode =) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a2d26675726e8e52c4ca3e77abf9bb9ee}\label{motion_8h_a2d26675726e8e52c4ca3e77abf9bb9ee}} 
+void \hyperlink{motion_8h_a2d26675726e8e52c4ca3e77abf9bb9ee}{motion\+\_\+\+Stop\+Timer} (void)
+\begin{DoxyCompactList}\small\item\em Stop motion control timer, used to shutdown motion control. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion_8h_a607c74a879205f68d260b1cfdf58dc25}\label{motion_8h_a607c74a879205f68d260b1cfdf58dc25}} 
+void \hyperlink{motion_8h_a607c74a879205f68d260b1cfdf58dc25}{set\+P\+WM} (int16 pwm\+Left, int16 pwm\+Right)
+\begin{DoxyCompactList}\small\item\em Directly set the pwm for the motor (used both internally and for test) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion_8h_ad64778d5691e65cb69de1a30c8ae2d3d}\label{motion_8h_ad64778d5691e65cb69de1a30c8ae2d3d}} 
+M\+O\+T\+I\+O\+N\+\_\+\+S\+T\+A\+TE {\bfseries Robot\+Motion\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}

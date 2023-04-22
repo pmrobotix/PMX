@@ -1,0 +1,720 @@
+\hypertarget{classActionTimeline}{}\section{Action\+Timeline Class Reference}
+\label{classActionTimeline}\index{Action\+Timeline@{Action\+Timeline}}
+
+
+Inheritance diagram for Action\+Timeline\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionTimeline__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Timeline\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionTimeline__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a99208d6888d1613b10688cd0d67a96b9}\label{classActionTimeline_a99208d6888d1613b10688cd0d67a96b9}} 
+virtual void {\bfseries play} (std\+::string animation\+Name, bool loop)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a97d5005d7265287953c84750f1bb8047}\label{classActionTimeline_a97d5005d7265287953c84750f1bb8047}} 
+virtual bool {\bfseries init} ()
+\item 
+virtual void \hyperlink{classActionTimeline_a4238a481e46b75754dd011dfd89844fd}{goto\+Frame\+And\+Play} (int start\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_ac480c1d28f280c0d0cdc3f02fb49bd24}{goto\+Frame\+And\+Play} (int start\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_a58d78a5ff4ec42ffa5479d6e78b022f4}{goto\+Frame\+And\+Play} (int start\+Index, int end\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_aa29be693e814edb656d27fd7942f24da}{goto\+Frame\+And\+Play} (int start\+Index, int end\+Index, int current\+Frame\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_a6b6b51dd09ee1d2e48fd5e5aadb3b44d}{goto\+Frame\+And\+Pause} (int start\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_a661e21d092b57a08a07afbb94a7ebcf0}{pause} ()
+\item 
+virtual void \hyperlink{classActionTimeline_aa18d7c57e37b11e378c0718ea78e3f55}{resume} ()
+\item 
+virtual bool \hyperlink{classActionTimeline_a8fd08f788d11f91803dd82808d153f28}{is\+Playing} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}{set\+Time\+Speed} (float speed)
+\item 
+virtual float \hyperlink{classActionTimeline_a290ee51f489337c15119fdef29005cf9}{get\+Time\+Speed} () const
+\item 
+virtual void \hyperlink{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}{set\+Duration} (int duration)
+\item 
+\mbox{\Hypertarget{classActionTimeline_abf818d6b1e6013f8878007f2d485dd42}\label{classActionTimeline_abf818d6b1e6013f8878007f2d485dd42}} 
+virtual int {\bfseries get\+Duration} () const
+\item 
+virtual int \hyperlink{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}{get\+Start\+Frame} () const
+\item 
+virtual int \hyperlink{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}{get\+End\+Frame} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a9d441e0d690412dba118ae4f98457149}{set\+Current\+Frame} (int frame\+Index)
+\item 
+virtual int \hyperlink{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}{get\+Current\+Frame} () const
+\item 
+virtual void \hyperlink{classActionTimeline_ae03c7a4fa82777cf2cb55dd08e691142}{add\+Timeline} (\hyperlink{classTimeline}{Timeline} $\ast$timeline)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a5e3612371e7f55a3dc7f534ace4149a0}\label{classActionTimeline_a5e3612371e7f55a3dc7f534ace4149a0}} 
+virtual void {\bfseries remove\+Timeline} (\hyperlink{classTimeline}{Timeline} $\ast$timeline)
+\item 
+\mbox{\Hypertarget{classActionTimeline_ac7c643312a8e6ffd450443d4fd8853aa}\label{classActionTimeline_ac7c643312a8e6ffd450443d4fd8853aa}} 
+virtual const cocos2d\+::\+Vector$<$ \hyperlink{classTimeline}{Timeline} $\ast$ $>$ \& {\bfseries get\+Timelines} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a3a41ddf4a9772663b6f56f9e7347e0ff}{add\+Animation\+Info} (const \hyperlink{structAnimationInfo}{Animation\+Info} \&animation\+Info)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a9ff914eab1dffbc1227c898b44745144}\label{classActionTimeline_a9ff914eab1dffbc1227c898b44745144}} 
+virtual void {\bfseries remove\+Animation\+Info} (std\+::string animation\+Name)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a4f03c06a13e46c513264706124d790e5}\label{classActionTimeline_a4f03c06a13e46c513264706124d790e5}} 
+virtual bool {\bfseries Is\+Animation\+Info\+Exists} (const std\+::string \&animation\+Name)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a3afaaf2dd8497c6cf7f4711da684af20}\label{classActionTimeline_a3afaaf2dd8497c6cf7f4711da684af20}} 
+virtual const \hyperlink{structAnimationInfo}{Animation\+Info} \& {\bfseries get\+Animation\+Info} (const std\+::string \&animation\+Name)
+\item 
+virtual void \hyperlink{classActionTimeline_a12de94ac001f47cbc17fb0f58a093978}{set\+Animation\+End\+Call\+Func} (const std\+::string animation\+Name, std\+::function$<$ void()$>$ func)
+\item 
+void \hyperlink{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}{set\+Frame\+Event\+Call\+Func} (std\+::function$<$ void(\hyperlink{classFrame}{Frame} $\ast$)$>$ listener)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a5708d72adbe16fa5669b4c00f6aef884}\label{classActionTimeline_a5708d72adbe16fa5669b4c00f6aef884}} 
+void {\bfseries clear\+Frame\+Event\+Call\+Func} ()
+\item 
+void \hyperlink{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}{set\+Last\+Frame\+Call\+Func} (std\+::function$<$ void()$>$ listener)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a92c19bb7fd076b0cb1f5f5f2434c6d9e}\label{classActionTimeline_a92c19bb7fd076b0cb1f5f5f2434c6d9e}} 
+void {\bfseries clear\+Last\+Frame\+Call\+Func} ()
+\item 
+virtual void \hyperlink{classActionTimeline_a8385f00b011876132c1c0602fc72613a}{add\+Frame\+End\+Call\+Func} (int frame\+Index, const std\+::string \&func\+Key, std\+::function$<$ void()$>$ func)
+\item 
+\mbox{\Hypertarget{classActionTimeline_ae76434d0168f099ac3f0d3757ba821d0}\label{classActionTimeline_ae76434d0168f099ac3f0d3757ba821d0}} 
+virtual void {\bfseries remove\+Frame\+End\+Call\+Func} (int frame\+Index, const std\+::string \&func\+Key)
+\item 
+\mbox{\Hypertarget{classActionTimeline_abee52ef0b5e23b3473c91c37f2d1a938}\label{classActionTimeline_abee52ef0b5e23b3473c91c37f2d1a938}} 
+virtual void {\bfseries remove\+Frame\+End\+Call\+Funcs} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_aaa5c8eca6b07dc513da4c72ccb0f427f}\label{classActionTimeline_aaa5c8eca6b07dc513da4c72ccb0f427f}} 
+virtual void {\bfseries clear\+Frame\+End\+Call\+Funcs} ()
+\item 
+virtual \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ \hyperlink{classActionTimeline_a13de8442dc106f192f3d5b3d5639842d}{clone} () const override
+\item 
+virtual \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ \hyperlink{classActionTimeline_ad242317b6d9108b0840cf535ea760786}{reverse} () const override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a61a481a9046147404abd1a0278b5fb89}\label{classActionTimeline_a61a481a9046147404abd1a0278b5fb89}} 
+virtual void {\bfseries step} (float delta) override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a6f7cff28686e0ce94fbc15f908153beb}\label{classActionTimeline_a6f7cff28686e0ce94fbc15f908153beb}} 
+virtual void {\bfseries start\+With\+Target} (cocos2d\+::\+Node $\ast$target) override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a60cfc77726fa9a506daba6fa87cd7729}\label{classActionTimeline_a60cfc77726fa9a506daba6fa87cd7729}} 
+virtual bool {\bfseries is\+Done} () const override
+\item 
+\mbox{\Hypertarget{classActionTimeline_aa709e7227767df354fa8a73a102c76fc}\label{classActionTimeline_aa709e7227767df354fa8a73a102c76fc}} 
+virtual void {\bfseries play} (std\+::string animation\+Name, bool loop)
+\item 
+\mbox{\Hypertarget{classActionTimeline_aa546d0bea8c0ea142a1555ae9f72957b}\label{classActionTimeline_aa546d0bea8c0ea142a1555ae9f72957b}} 
+virtual bool {\bfseries init} ()
+\item 
+virtual void \hyperlink{classActionTimeline_a4c39309a984768663040e516163674f7}{goto\+Frame\+And\+Play} (int start\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_a1b665a45f28035f111924f55566dd17a}{goto\+Frame\+And\+Play} (int start\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_ad71cc84cd83f8d3e386c097a222ee69d}{goto\+Frame\+And\+Play} (int start\+Index, int end\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_a0214beaa238eec4fd640e7341f383fc0}{goto\+Frame\+And\+Play} (int start\+Index, int end\+Index, int current\+Frame\+Index, bool loop)
+\item 
+virtual void \hyperlink{classActionTimeline_a6ab7b14ad833b3382503236c07933d13}{goto\+Frame\+And\+Pause} (int start\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_aff80867e59c9974e2644e4e868a71e39}{pause} ()
+\item 
+virtual void \hyperlink{classActionTimeline_a24c8bfe9480ca2b99ee6cd44e4ab8307}{resume} ()
+\item 
+virtual bool \hyperlink{classActionTimeline_a1620d0953526f8e060c04338c5914321}{is\+Playing} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}{set\+Time\+Speed} (float speed)
+\item 
+virtual float \hyperlink{classActionTimeline_a290ee51f489337c15119fdef29005cf9}{get\+Time\+Speed} () const
+\item 
+virtual void \hyperlink{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}{set\+Duration} (int duration)
+\item 
+\mbox{\Hypertarget{classActionTimeline_abf818d6b1e6013f8878007f2d485dd42}\label{classActionTimeline_abf818d6b1e6013f8878007f2d485dd42}} 
+virtual int {\bfseries get\+Duration} () const
+\item 
+virtual int \hyperlink{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}{get\+Start\+Frame} () const
+\item 
+virtual int \hyperlink{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}{get\+End\+Frame} () const
+\item 
+virtual void \hyperlink{classActionTimeline_aee2a888d66f69abb18e550cbfa3d9358}{set\+Current\+Frame} (int frame\+Index)
+\item 
+virtual int \hyperlink{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}{get\+Current\+Frame} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a6a7802cf8d21d6dc683a5b2c666ae446}{add\+Timeline} (\hyperlink{classTimeline}{Timeline} $\ast$timeline)
+\item 
+\mbox{\Hypertarget{classActionTimeline_aadf8138d03142579a07e36974177362c}\label{classActionTimeline_aadf8138d03142579a07e36974177362c}} 
+virtual void {\bfseries remove\+Timeline} (\hyperlink{classTimeline}{Timeline} $\ast$timeline)
+\item 
+\mbox{\Hypertarget{classActionTimeline_ac7c643312a8e6ffd450443d4fd8853aa}\label{classActionTimeline_ac7c643312a8e6ffd450443d4fd8853aa}} 
+virtual const cocos2d\+::\+Vector$<$ \hyperlink{classTimeline}{Timeline} $\ast$ $>$ \& {\bfseries get\+Timelines} () const
+\item 
+virtual void \hyperlink{classActionTimeline_a9cc3878cb36ff61e9da9351163dcd004}{add\+Animation\+Info} (const \hyperlink{structAnimationInfo}{Animation\+Info} \&animation\+Info)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a5a1ce651b5aff14197d5dba3bec05a1d}\label{classActionTimeline_a5a1ce651b5aff14197d5dba3bec05a1d}} 
+virtual void {\bfseries remove\+Animation\+Info} (std\+::string animation\+Name)
+\item 
+\mbox{\Hypertarget{classActionTimeline_ab70ee0632147fdbdcbf1db04912d8792}\label{classActionTimeline_ab70ee0632147fdbdcbf1db04912d8792}} 
+virtual bool {\bfseries Is\+Animation\+Info\+Exists} (const std\+::string \&animation\+Name)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a28a8c9f1217bdc7aa8ce45ab92ee99e2}\label{classActionTimeline_a28a8c9f1217bdc7aa8ce45ab92ee99e2}} 
+virtual const \hyperlink{structAnimationInfo}{Animation\+Info} \& {\bfseries get\+Animation\+Info} (const std\+::string \&animation\+Name)
+\item 
+virtual void \hyperlink{classActionTimeline_a9622a091358533cd1ea7fdbe20a81005}{set\+Animation\+End\+Call\+Func} (const std\+::string animation\+Name, std\+::function$<$ void()$>$ func)
+\item 
+void \hyperlink{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}{set\+Frame\+Event\+Call\+Func} (std\+::function$<$ void(\hyperlink{classFrame}{Frame} $\ast$)$>$ listener)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a5708d72adbe16fa5669b4c00f6aef884}\label{classActionTimeline_a5708d72adbe16fa5669b4c00f6aef884}} 
+void {\bfseries clear\+Frame\+Event\+Call\+Func} ()
+\item 
+void \hyperlink{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}{set\+Last\+Frame\+Call\+Func} (std\+::function$<$ void()$>$ listener)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a92c19bb7fd076b0cb1f5f5f2434c6d9e}\label{classActionTimeline_a92c19bb7fd076b0cb1f5f5f2434c6d9e}} 
+void {\bfseries clear\+Last\+Frame\+Call\+Func} ()
+\item 
+virtual void \hyperlink{classActionTimeline_a34e99b162e3b86d32c6043f8d41e3d5d}{add\+Frame\+End\+Call\+Func} (int frame\+Index, const std\+::string \&func\+Key, std\+::function$<$ void()$>$ func)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a7f2f28fd0e5e9327d16afc9fcf74d24b}\label{classActionTimeline_a7f2f28fd0e5e9327d16afc9fcf74d24b}} 
+virtual void {\bfseries remove\+Frame\+End\+Call\+Func} (int frame\+Index, const std\+::string \&func\+Key)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a97518f4c35c635acb7e5a8b0b8db84dc}\label{classActionTimeline_a97518f4c35c635acb7e5a8b0b8db84dc}} 
+virtual void {\bfseries remove\+Frame\+End\+Call\+Funcs} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a8b6d1ff9e404e5246cfda6f344c10765}\label{classActionTimeline_a8b6d1ff9e404e5246cfda6f344c10765}} 
+virtual void {\bfseries clear\+Frame\+End\+Call\+Funcs} ()
+\item 
+virtual \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ \hyperlink{classActionTimeline_a38315f4351ad806d36f607acc70a3e7a}{clone} () const override
+\item 
+virtual \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ \hyperlink{classActionTimeline_ad242317b6d9108b0840cf535ea760786}{reverse} () const override
+\item 
+\mbox{\Hypertarget{classActionTimeline_ac1c635151f6dac85ab9c5817dce20ce7}\label{classActionTimeline_ac1c635151f6dac85ab9c5817dce20ce7}} 
+virtual void {\bfseries step} (float delta) override
+\item 
+\mbox{\Hypertarget{classActionTimeline_aba948c1a814f54f5fde9fcc877b99d0e}\label{classActionTimeline_aba948c1a814f54f5fde9fcc877b99d0e}} 
+virtual void {\bfseries start\+With\+Target} (cocos2d\+::\+Node $\ast$target) override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a60cfc77726fa9a506daba6fa87cd7729}\label{classActionTimeline_a60cfc77726fa9a506daba6fa87cd7729}} 
+virtual bool {\bfseries is\+Done} () const override
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ implement Playable Protocol}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a3675e7596552da143c3085f0ea8023b9}\label{classActionTimeline_a3675e7596552da143c3085f0ea8023b9}} 
+virtual void {\bfseries start} () override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a83d5e1c3a4237710b2202665239f4eee}\label{classActionTimeline_a83d5e1c3a4237710b2202665239f4eee}} 
+virtual void {\bfseries stop} () override
+\item 
+\mbox{\Hypertarget{classActionTimeline_a35ae245d9acdfe17a64cfa8782d3b4b9}\label{classActionTimeline_a35ae245d9acdfe17a64cfa8782d3b4b9}} 
+virtual void {\bfseries start} () override
+\item 
+\mbox{\Hypertarget{classActionTimeline_ab2f6a189d57433b5f9fbc7f7466a69c6}\label{classActionTimeline_ab2f6a189d57433b5f9fbc7f7466a69c6}} 
+virtual void {\bfseries stop} () override
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_aee4e55469aca0e27ff2abcfbda883197}\label{classActionTimeline_aee4e55469aca0e27ff2abcfbda883197}} 
+static \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classActionTimeline_ac858ad0ff6db5fbd5dc8d5a692f19ecf}\label{classActionTimeline_ac858ad0ff6db5fbd5dc8d5a692f19ecf}} 
+static \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ {\bfseries create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a17a3c74d4f787a3f03d45cba884e57d1}\label{classActionTimeline_a17a3c74d4f787a3f03d45cba884e57d1}} 
+virtual void {\bfseries goto\+Frame} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_aa2b7d4e64f401f27f26fa831c4236ac4}\label{classActionTimeline_aa2b7d4e64f401f27f26fa831c4236ac4}} 
+virtual void {\bfseries step\+To\+Frame} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a1a45ea353f3874be9d0c963eae5c4bc1}\label{classActionTimeline_a1a45ea353f3874be9d0c963eae5c4bc1}} 
+virtual void {\bfseries emit\+Frame\+End\+Call\+Funcs} (int frame\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_a27eb84aa71ea94ef78f85f495bf8b832}{emit\+Frame\+Event} (\hyperlink{classFrame}{Frame} $\ast$frame)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a46dab1204c145051ea84154d8f937a97}\label{classActionTimeline_a46dab1204c145051ea84154d8f937a97}} 
+virtual void {\bfseries goto\+Frame} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_a04c14133127123cc26410eb3067c6d4f}\label{classActionTimeline_a04c14133127123cc26410eb3067c6d4f}} 
+virtual void {\bfseries step\+To\+Frame} (int frame\+Index)
+\item 
+\mbox{\Hypertarget{classActionTimeline_aedf77be92f1b794a98d640be7d925d7c}\label{classActionTimeline_aedf77be92f1b794a98d640be7d925d7c}} 
+virtual void {\bfseries emit\+Frame\+End\+Call\+Funcs} (int frame\+Index)
+\item 
+virtual void \hyperlink{classActionTimeline_a85dbd264369208f079feb049d6fbf5d1}{emit\+Frame\+Event} (\hyperlink{classFrame}{Frame} $\ast$frame)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a9e54b0c88b6cfecd99fb3ed6e49bad2f}\label{classActionTimeline_a9e54b0c88b6cfecd99fb3ed6e49bad2f}} 
+std\+::map$<$ int, cocos2d\+::\+Vector$<$ \hyperlink{classTimeline}{Timeline} $\ast$ $>$ $>$ {\bfseries \+\_\+timeline\+Map}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a1d4fbe49c79bb88fbcdd22308d640fea}\label{classActionTimeline_a1d4fbe49c79bb88fbcdd22308d640fea}} 
+cocos2d\+::\+Vector$<$ \hyperlink{classTimeline}{Timeline} $\ast$ $>$ {\bfseries \+\_\+timeline\+List}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a96662497cabe7269725cb3cd46f246cb}\label{classActionTimeline_a96662497cabe7269725cb3cd46f246cb}} 
+int {\bfseries \+\_\+duration}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a9eb3ae1331791dca6833fa8b9c8f4a3c}\label{classActionTimeline_a9eb3ae1331791dca6833fa8b9c8f4a3c}} 
+double {\bfseries \+\_\+time}
+\item 
+\mbox{\Hypertarget{classActionTimeline_aaf2ce16abadbe93c1ed2d0566bc5d1d6}\label{classActionTimeline_aaf2ce16abadbe93c1ed2d0566bc5d1d6}} 
+float {\bfseries \+\_\+time\+Speed}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a135f4c37dd70f84f8f83ebe6ebd9065a}\label{classActionTimeline_a135f4c37dd70f84f8f83ebe6ebd9065a}} 
+float {\bfseries \+\_\+frame\+Internal}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a98c69ea84dd78e6f11d2f2cca6b45939}\label{classActionTimeline_a98c69ea84dd78e6f11d2f2cca6b45939}} 
+bool {\bfseries \+\_\+playing}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a56c992a4a5ce6faee89fcdd583765f90}\label{classActionTimeline_a56c992a4a5ce6faee89fcdd583765f90}} 
+int {\bfseries \+\_\+current\+Frame}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a8dbacc2428a2c42d84c26f66f24a65b9}\label{classActionTimeline_a8dbacc2428a2c42d84c26f66f24a65b9}} 
+int {\bfseries \+\_\+start\+Frame}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a0073837c56d4dea89a26cf992ba36881}\label{classActionTimeline_a0073837c56d4dea89a26cf992ba36881}} 
+int {\bfseries \+\_\+end\+Frame}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a542fdf2d4602c30c8951a459e8dae6b8}\label{classActionTimeline_a542fdf2d4602c30c8951a459e8dae6b8}} 
+bool {\bfseries \+\_\+loop}
+\item 
+\mbox{\Hypertarget{classActionTimeline_af83fdf8a944e4761fb822fdd8c930c66}\label{classActionTimeline_af83fdf8a944e4761fb822fdd8c930c66}} 
+std\+::function$<$ void(\hyperlink{classFrame}{Frame} $\ast$)$>$ {\bfseries \+\_\+frame\+Event\+Listener}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a0ff03bc1a9d782c5e240d4332a3a6d9d}\label{classActionTimeline_a0ff03bc1a9d782c5e240d4332a3a6d9d}} 
+std\+::function$<$ void()$>$ {\bfseries \+\_\+last\+Frame\+Listener}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a1de73dc407e2aa659ae2bb015db71695}\label{classActionTimeline_a1de73dc407e2aa659ae2bb015db71695}} 
+std\+::map$<$ int, std\+::map$<$ std\+::string, std\+::function$<$ void()$>$ $>$ $>$ {\bfseries \+\_\+frame\+End\+Call\+Funcs}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a1224221cad8d2f7f79d169b3e885c6bc}\label{classActionTimeline_a1224221cad8d2f7f79d169b3e885c6bc}} 
+std\+::map$<$ std\+::string, \hyperlink{structAnimationInfo}{Animation\+Info} $>$ {\bfseries \+\_\+animation\+Infos}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionTimeline_a1a3c9a246bb17ddd6d40809f3521a5c5}\label{classActionTimeline_a1a3c9a246bb17ddd6d40809f3521a5c5}} 
+class {\bfseries Frame}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionTimeline_a3a41ddf4a9772663b6f56f9e7347e0ff}\label{classActionTimeline_a3a41ddf4a9772663b6f56f9e7347e0ff}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Animation\+Info@{add\+Animation\+Info}}
+\index{add\+Animation\+Info@{add\+Animation\+Info}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Animation\+Info()}{addAnimationInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::add\+Animation\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{structAnimationInfo}{Animation\+Info} \&}]{animation\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{structAnimationInfo}{Animation\+Info} \mbox{\Hypertarget{classActionTimeline_a9cc3878cb36ff61e9da9351163dcd004}\label{classActionTimeline_a9cc3878cb36ff61e9da9351163dcd004}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Animation\+Info@{add\+Animation\+Info}}
+\index{add\+Animation\+Info@{add\+Animation\+Info}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Animation\+Info()}{addAnimationInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::add\+Animation\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{structAnimationInfo}{Animation\+Info} \&}]{animation\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{structAnimationInfo}{Animation\+Info} \mbox{\Hypertarget{classActionTimeline_a8385f00b011876132c1c0602fc72613a}\label{classActionTimeline_a8385f00b011876132c1c0602fc72613a}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Frame\+End\+Call\+Func@{add\+Frame\+End\+Call\+Func}}
+\index{add\+Frame\+End\+Call\+Func@{add\+Frame\+End\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Frame\+End\+Call\+Func()}{addFrameEndCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::add\+Frame\+End\+Call\+Func (\begin{DoxyParamCaption}\item[{int}]{frame\+Index,  }\item[{const std\+::string \&}]{func\+Key,  }\item[{std\+::function$<$ void()$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add a callback function after played frame\+Index 
+\begin{DoxyParams}{Parameters}
+{\em frame\+Index} & the frame index call back after \\
+\hline
+{\em func\+Key} & for identity the callback function \\
+\hline
+{\em func} & the callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a34e99b162e3b86d32c6043f8d41e3d5d}\label{classActionTimeline_a34e99b162e3b86d32c6043f8d41e3d5d}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Frame\+End\+Call\+Func@{add\+Frame\+End\+Call\+Func}}
+\index{add\+Frame\+End\+Call\+Func@{add\+Frame\+End\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Frame\+End\+Call\+Func()}{addFrameEndCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::add\+Frame\+End\+Call\+Func (\begin{DoxyParamCaption}\item[{int}]{frame\+Index,  }\item[{const std\+::string \&}]{func\+Key,  }\item[{std\+::function$<$ void()$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add a callback function after played frame\+Index 
+\begin{DoxyParams}{Parameters}
+{\em frame\+Index} & the frame index call back after \\
+\hline
+{\em func\+Key} & for identity the callback function \\
+\hline
+{\em func} & the callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_ae03c7a4fa82777cf2cb55dd08e691142}\label{classActionTimeline_ae03c7a4fa82777cf2cb55dd08e691142}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Timeline@{add\+Timeline}}
+\index{add\+Timeline@{add\+Timeline}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Timeline()}{addTimeline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::add\+Timeline (\begin{DoxyParamCaption}\item[{\hyperlink{classTimeline}{Timeline} $\ast$}]{timeline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add \hyperlink{classTimeline}{Timeline} to \hyperlink{classActionTimeline}{Action\+Timeline} \mbox{\Hypertarget{classActionTimeline_a6a7802cf8d21d6dc683a5b2c666ae446}\label{classActionTimeline_a6a7802cf8d21d6dc683a5b2c666ae446}} 
+\index{Action\+Timeline@{Action\+Timeline}!add\+Timeline@{add\+Timeline}}
+\index{add\+Timeline@{add\+Timeline}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{add\+Timeline()}{addTimeline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::add\+Timeline (\begin{DoxyParamCaption}\item[{\hyperlink{classTimeline}{Timeline} $\ast$}]{timeline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add \hyperlink{classTimeline}{Timeline} to \hyperlink{classActionTimeline}{Action\+Timeline} \mbox{\Hypertarget{classActionTimeline_a13de8442dc106f192f3d5b3d5639842d}\label{classActionTimeline_a13de8442dc106f192f3d5b3d5639842d}} 
+\index{Action\+Timeline@{Action\+Timeline}!clone@{clone}}
+\index{clone@{clone}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classActionTimeline}{Action\+Timeline} $\ast$ Action\+Timeline\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Inherit from \hyperlink{classAction}{Action}. Returns a clone of \hyperlink{classActionTimeline}{Action\+Timeline} \mbox{\Hypertarget{classActionTimeline_a38315f4351ad806d36f607acc70a3e7a}\label{classActionTimeline_a38315f4351ad806d36f607acc70a3e7a}} 
+\index{Action\+Timeline@{Action\+Timeline}!clone@{clone}}
+\index{clone@{clone}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionTimeline}{Action\+Timeline}$\ast$ Action\+Timeline\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Inherit from \hyperlink{classAction}{Action}. Returns a clone of \hyperlink{classActionTimeline}{Action\+Timeline} \mbox{\Hypertarget{classActionTimeline_a27eb84aa71ea94ef78f85f495bf8b832}\label{classActionTimeline_a27eb84aa71ea94ef78f85f495bf8b832}} 
+\index{Action\+Timeline@{Action\+Timeline}!emit\+Frame\+Event@{emit\+Frame\+Event}}
+\index{emit\+Frame\+Event@{emit\+Frame\+Event}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{emit\+Frame\+Event()}{emitFrameEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::emit\+Frame\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classFrame}{Frame} $\ast$}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+emit frame event, call it when enter a frame \mbox{\Hypertarget{classActionTimeline_a85dbd264369208f079feb049d6fbf5d1}\label{classActionTimeline_a85dbd264369208f079feb049d6fbf5d1}} 
+\index{Action\+Timeline@{Action\+Timeline}!emit\+Frame\+Event@{emit\+Frame\+Event}}
+\index{emit\+Frame\+Event@{emit\+Frame\+Event}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{emit\+Frame\+Event()}{emitFrameEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::emit\+Frame\+Event (\begin{DoxyParamCaption}\item[{\hyperlink{classFrame}{Frame} $\ast$}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+emit frame event, call it when enter a frame \mbox{\Hypertarget{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}\label{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Current\+Frame@{get\+Current\+Frame}}
+\index{get\+Current\+Frame@{get\+Current\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Current\+Frame()}{getCurrentFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+Current\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get current frame. \mbox{\Hypertarget{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}\label{classActionTimeline_a63469259c3007a0a25eafed675ab3e86}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Current\+Frame@{get\+Current\+Frame}}
+\index{get\+Current\+Frame@{get\+Current\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Current\+Frame()}{getCurrentFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+Current\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get current frame. \mbox{\Hypertarget{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}\label{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+End\+Frame@{get\+End\+Frame}}
+\index{get\+End\+Frame@{get\+End\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+End\+Frame()}{getEndFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+End\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+End frame of this action. When action play to this frame, if action is not loop, then it will stop, or it will play from start frame again. \mbox{\Hypertarget{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}\label{classActionTimeline_a1bdee13b0de8081126528d2f7f4e1479}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+End\+Frame@{get\+End\+Frame}}
+\index{get\+End\+Frame@{get\+End\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+End\+Frame()}{getEndFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+End\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+End frame of this action. When action play to this frame, if action is not loop, then it will stop, or it will play from start frame again. \mbox{\Hypertarget{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}\label{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Start\+Frame@{get\+Start\+Frame}}
+\index{get\+Start\+Frame@{get\+Start\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Start\+Frame()}{getStartFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+Start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Start frame index of this action \mbox{\Hypertarget{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}\label{classActionTimeline_a5697337196c4138ac004d88f88e38f5e}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Start\+Frame@{get\+Start\+Frame}}
+\index{get\+Start\+Frame@{get\+Start\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Start\+Frame()}{getStartFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Action\+Timeline\+::get\+Start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Start frame index of this action \mbox{\Hypertarget{classActionTimeline_a290ee51f489337c15119fdef29005cf9}\label{classActionTimeline_a290ee51f489337c15119fdef29005cf9}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Time\+Speed@{get\+Time\+Speed}}
+\index{get\+Time\+Speed@{get\+Time\+Speed}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Time\+Speed()}{getTimeSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual float Action\+Timeline\+::get\+Time\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get current animation speed. \mbox{\Hypertarget{classActionTimeline_a290ee51f489337c15119fdef29005cf9}\label{classActionTimeline_a290ee51f489337c15119fdef29005cf9}} 
+\index{Action\+Timeline@{Action\+Timeline}!get\+Time\+Speed@{get\+Time\+Speed}}
+\index{get\+Time\+Speed@{get\+Time\+Speed}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{get\+Time\+Speed()}{getTimeSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual float Action\+Timeline\+::get\+Time\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get current animation speed. \mbox{\Hypertarget{classActionTimeline_a6b6b51dd09ee1d2e48fd5e5aadb3b44d}\label{classActionTimeline_a6b6b51dd09ee1d2e48fd5e5aadb3b44d}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Pause@{goto\+Frame\+And\+Pause}}
+\index{goto\+Frame\+And\+Pause@{goto\+Frame\+And\+Pause}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Pause()}{gotoFrameAndPause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::goto\+Frame\+And\+Pause (\begin{DoxyParamCaption}\item[{int}]{start\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and pause at this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will pause at this index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a6ab7b14ad833b3382503236c07933d13}\label{classActionTimeline_a6ab7b14ad833b3382503236c07933d13}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Pause@{goto\+Frame\+And\+Pause}}
+\index{goto\+Frame\+And\+Pause@{goto\+Frame\+And\+Pause}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Pause()}{gotoFrameAndPause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::goto\+Frame\+And\+Pause (\begin{DoxyParamCaption}\item[{int}]{start\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and pause at this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will pause at this index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a4238a481e46b75754dd011dfd89844fd}\label{classActionTimeline_a4238a481e46b75754dd011dfd89844fd}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a4c39309a984768663040e516163674f7}\label{classActionTimeline_a4c39309a984768663040e516163674f7}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_ac480c1d28f280c0d0cdc3f02fb49bd24}\label{classActionTimeline_ac480c1d28f280c0d0cdc3f02fb49bd24}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a1b665a45f28035f111924f55566dd17a}\label{classActionTimeline_a1b665a45f28035f111924f55566dd17a}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from this index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a58d78a5ff4ec42ffa5479d6e78b022f4}\label{classActionTimeline_a58d78a5ff4ec42ffa5479d6e78b022f4}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{int}]{end\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from start index, end at end index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em end\+Index} & The animation will end at this index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_ad71cc84cd83f8d3e386c097a222ee69d}\label{classActionTimeline_ad71cc84cd83f8d3e386c097a222ee69d}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{int}]{end\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from start index, end at end index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em end\+Index} & The animation will end at this index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_aa29be693e814edb656d27fd7942f24da}\label{classActionTimeline_aa29be693e814edb656d27fd7942f24da}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{int}]{end\+Index,  }\item[{int}]{current\+Frame\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from start index, end at end index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em end\+Index} & The animation will end at this index. \\
+\hline
+{\em current\+Frame\+Index} & set current frame index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a0214beaa238eec4fd640e7341f383fc0}\label{classActionTimeline_a0214beaa238eec4fd640e7341f383fc0}} 
+\index{Action\+Timeline@{Action\+Timeline}!goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}}
+\index{goto\+Frame\+And\+Play@{goto\+Frame\+And\+Play}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{goto\+Frame\+And\+Play()}{gotoFrameAndPlay()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::goto\+Frame\+And\+Play (\begin{DoxyParamCaption}\item[{int}]{start\+Index,  }\item[{int}]{end\+Index,  }\item[{int}]{current\+Frame\+Index,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hyperlink{classGoto}{Goto} the specified frame index, and start playing from start index, end at end index. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & The animation will play from this index. \\
+\hline
+{\em end\+Index} & The animation will end at this index. \\
+\hline
+{\em current\+Frame\+Index} & set current frame index. \\
+\hline
+{\em loop} & Whether or not the animation need loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a8fd08f788d11f91803dd82808d153f28}\label{classActionTimeline_a8fd08f788d11f91803dd82808d153f28}} 
+\index{Action\+Timeline@{Action\+Timeline}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{is\+Playing()}{isPlaying()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Action\+Timeline\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Whether or not \hyperlink{classAction}{Action} is playing. \mbox{\Hypertarget{classActionTimeline_a1620d0953526f8e060c04338c5914321}\label{classActionTimeline_a1620d0953526f8e060c04338c5914321}} 
+\index{Action\+Timeline@{Action\+Timeline}!is\+Playing@{is\+Playing}}
+\index{is\+Playing@{is\+Playing}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{is\+Playing()}{isPlaying()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Action\+Timeline\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Whether or not \hyperlink{classAction}{Action} is playing. \mbox{\Hypertarget{classActionTimeline_a661e21d092b57a08a07afbb94a7ebcf0}\label{classActionTimeline_a661e21d092b57a08a07afbb94a7ebcf0}} 
+\index{Action\+Timeline@{Action\+Timeline}!pause@{pause}}
+\index{pause@{pause}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::pause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pause the animation. \mbox{\Hypertarget{classActionTimeline_aff80867e59c9974e2644e4e868a71e39}\label{classActionTimeline_aff80867e59c9974e2644e4e868a71e39}} 
+\index{Action\+Timeline@{Action\+Timeline}!pause@{pause}}
+\index{pause@{pause}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pause the animation. \mbox{\Hypertarget{classActionTimeline_aa18d7c57e37b11e378c0718ea78e3f55}\label{classActionTimeline_aa18d7c57e37b11e378c0718ea78e3f55}} 
+\index{Action\+Timeline@{Action\+Timeline}!resume@{resume}}
+\index{resume@{resume}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::resume (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Resume the animation. \mbox{\Hypertarget{classActionTimeline_a24c8bfe9480ca2b99ee6cd44e4ab8307}\label{classActionTimeline_a24c8bfe9480ca2b99ee6cd44e4ab8307}} 
+\index{Action\+Timeline@{Action\+Timeline}!resume@{resume}}
+\index{resume@{resume}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Resume the animation. \mbox{\Hypertarget{classActionTimeline_ad242317b6d9108b0840cf535ea760786}\label{classActionTimeline_ad242317b6d9108b0840cf535ea760786}} 
+\index{Action\+Timeline@{Action\+Timeline}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionTimeline}{Action\+Timeline}$\ast$ Action\+Timeline\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a reverse of \hyperlink{classActionTimeline}{Action\+Timeline}. Not implement yet. \mbox{\Hypertarget{classActionTimeline_ad242317b6d9108b0840cf535ea760786}\label{classActionTimeline_ad242317b6d9108b0840cf535ea760786}} 
+\index{Action\+Timeline@{Action\+Timeline}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionTimeline}{Action\+Timeline}$\ast$ Action\+Timeline\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a reverse of \hyperlink{classActionTimeline}{Action\+Timeline}. Not implement yet. \mbox{\Hypertarget{classActionTimeline_a12de94ac001f47cbc17fb0f58a093978}\label{classActionTimeline_a12de94ac001f47cbc17fb0f58a093978}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Animation\+End\+Call\+Func@{set\+Animation\+End\+Call\+Func}}
+\index{set\+Animation\+End\+Call\+Func@{set\+Animation\+End\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Animation\+End\+Call\+Func()}{setAnimationEndCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Animation\+End\+Call\+Func (\begin{DoxyParamCaption}\item[{const std\+::string}]{animation\+Name,  }\item[{std\+::function$<$ void()$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add a frame end call back to animation\textquotesingle{}s end frame 
+\begin{DoxyParams}{Parameters}
+{\em animation\+Name} & , make the animation\+Name as func\+Key \\
+\hline
+{\em func} & the callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a9622a091358533cd1ea7fdbe20a81005}\label{classActionTimeline_a9622a091358533cd1ea7fdbe20a81005}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Animation\+End\+Call\+Func@{set\+Animation\+End\+Call\+Func}}
+\index{set\+Animation\+End\+Call\+Func@{set\+Animation\+End\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Animation\+End\+Call\+Func()}{setAnimationEndCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Animation\+End\+Call\+Func (\begin{DoxyParamCaption}\item[{const std\+::string}]{animation\+Name,  }\item[{std\+::function$<$ void()$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+add a frame end call back to animation\textquotesingle{}s end frame 
+\begin{DoxyParams}{Parameters}
+{\em animation\+Name} & , make the animation\+Name as func\+Key \\
+\hline
+{\em func} & the callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionTimeline_a9d441e0d690412dba118ae4f98457149}\label{classActionTimeline_a9d441e0d690412dba118ae4f98457149}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Current\+Frame@{set\+Current\+Frame}}
+\index{set\+Current\+Frame@{set\+Current\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Current\+Frame()}{setCurrentFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Current\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set current frame index, this will cause action plays to this frame. \mbox{\Hypertarget{classActionTimeline_aee2a888d66f69abb18e550cbfa3d9358}\label{classActionTimeline_aee2a888d66f69abb18e550cbfa3d9358}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Current\+Frame@{set\+Current\+Frame}}
+\index{set\+Current\+Frame@{set\+Current\+Frame}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Current\+Frame()}{setCurrentFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Current\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set current frame index, this will cause action plays to this frame. \mbox{\Hypertarget{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}\label{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Duration@{set\+Duration}}
+\index{set\+Duration@{set\+Duration}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Duration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Duration (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+duration of the whole action \mbox{\Hypertarget{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}\label{classActionTimeline_ab1e49839f767641b62e2a450269fb5b8}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Duration@{set\+Duration}}
+\index{set\+Duration@{set\+Duration}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Duration()}{setDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Duration (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+duration of the whole action \mbox{\Hypertarget{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}\label{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Frame\+Event\+Call\+Func@{set\+Frame\+Event\+Call\+Func}}
+\index{set\+Frame\+Event\+Call\+Func@{set\+Frame\+Event\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Frame\+Event\+Call\+Func()}{setFrameEventCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Frame\+Event\+Call\+Func (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\hyperlink{classFrame}{Frame} $\ast$)$>$}]{listener }\end{DoxyParamCaption})}
+
+Set \hyperlink{classActionTimeline}{Action\+Timeline}\textquotesingle{}s frame event callback function \mbox{\Hypertarget{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}\label{classActionTimeline_ad1ab1387db4e1f8df9af2d0e339046f2}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Frame\+Event\+Call\+Func@{set\+Frame\+Event\+Call\+Func}}
+\index{set\+Frame\+Event\+Call\+Func@{set\+Frame\+Event\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Frame\+Event\+Call\+Func()}{setFrameEventCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Frame\+Event\+Call\+Func (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\hyperlink{classFrame}{Frame} $\ast$)$>$}]{listener }\end{DoxyParamCaption})}
+
+Set \hyperlink{classActionTimeline}{Action\+Timeline}\textquotesingle{}s frame event callback function \mbox{\Hypertarget{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}\label{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Last\+Frame\+Call\+Func@{set\+Last\+Frame\+Call\+Func}}
+\index{set\+Last\+Frame\+Call\+Func@{set\+Last\+Frame\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Last\+Frame\+Call\+Func()}{setLastFrameCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Last\+Frame\+Call\+Func (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{listener }\end{DoxyParamCaption})}
+
+Last frame callback will call when arriving last frame \mbox{\Hypertarget{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}\label{classActionTimeline_a1c80f944675b1715d4a06053ebad51fd}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Last\+Frame\+Call\+Func@{set\+Last\+Frame\+Call\+Func}}
+\index{set\+Last\+Frame\+Call\+Func@{set\+Last\+Frame\+Call\+Func}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Last\+Frame\+Call\+Func()}{setLastFrameCallFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Action\+Timeline\+::set\+Last\+Frame\+Call\+Func (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{listener }\end{DoxyParamCaption})}
+
+Last frame callback will call when arriving last frame \mbox{\Hypertarget{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}\label{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Time\+Speed@{set\+Time\+Speed}}
+\index{set\+Time\+Speed@{set\+Time\+Speed}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Time\+Speed()}{setTimeSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Time\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set the animation speed, this will speed up or slow down the speed. \mbox{\Hypertarget{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}\label{classActionTimeline_a24ba56fd33efc2bc0d0a4fc31e4043d6}} 
+\index{Action\+Timeline@{Action\+Timeline}!set\+Time\+Speed@{set\+Time\+Speed}}
+\index{set\+Time\+Speed@{set\+Time\+Speed}!Action\+Timeline@{Action\+Timeline}}
+\subsubsection{\texorpdfstring{set\+Time\+Speed()}{setTimeSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Timeline\+::set\+Time\+Speed (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set the animation speed, this will speed up or slow down the speed. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/\+Action\+Timeline/C\+C\+Action\+Timeline.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/editor-\/support/cocostudio/\+Action\+Timeline/C\+C\+Action\+Timeline.\+cpp\end{DoxyCompactItemize}

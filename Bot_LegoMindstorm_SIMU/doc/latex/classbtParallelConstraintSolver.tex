@@ -1,0 +1,82 @@
+\hypertarget{classbtParallelConstraintSolver}{}\section{bt\+Parallel\+Constraint\+Solver Class Reference}
+\label{classbtParallelConstraintSolver}\index{bt\+Parallel\+Constraint\+Solver@{bt\+Parallel\+Constraint\+Solver}}
+
+
+{\ttfamily \#include $<$bt\+Parallel\+Constraint\+Solver.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Parallel\+Constraint\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classbtParallelConstraintSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Parallel\+Constraint\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtParallelConstraintSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_acb3d5063e1894e7340b9cc5b76feead4}\label{classbtParallelConstraintSolver_acb3d5063e1894e7340b9cc5b76feead4}} 
+{\bfseries bt\+Parallel\+Constraint\+Solver} (class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$solver\+Thread\+Support)
+\item 
+virtual bt\+Scalar \hyperlink{classbtParallelConstraintSolver_a2713bd22bd322034ba8470186105ff22}{solve\+Group} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_acb3d5063e1894e7340b9cc5b76feead4}\label{classbtParallelConstraintSolver_acb3d5063e1894e7340b9cc5b76feead4}} 
+{\bfseries bt\+Parallel\+Constraint\+Solver} (class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$solver\+Thread\+Support)
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_ada367d111584d1f96edde2b448f50e6f}\label{classbtParallelConstraintSolver_ada367d111584d1f96edde2b448f50e6f}} 
+virtual bt\+Scalar {\bfseries solve\+Group} (bt\+Collision\+Object $\ast$$\ast$bodies, int num\+Bodies, bt\+Persistent\+Manifold $\ast$$\ast$manifold, int num\+Manifolds, bt\+Typed\+Constraint $\ast$$\ast$constraints, int num\+Constraints, const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&info, \hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$debug\+Drawer, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_aed1661e0f51e762d94271fec3a876bd9}\label{classbtParallelConstraintSolver_aed1661e0f51e762d94271fec3a876bd9}} 
+struct \hyperlink{structbtParallelSolverMemoryCache}{bt\+Parallel\+Solver\+Memory\+Cache} $\ast$ {\bfseries m\+\_\+memory\+Cache}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_a378c926c91285a75649f950f3ebd2ba0}\label{classbtParallelConstraintSolver_a378c926c91285a75649f950f3ebd2ba0}} 
+class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$ {\bfseries m\+\_\+solver\+Thread\+Support}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_a1cec37de98a0a04608b80f093774208e}\label{classbtParallelConstraintSolver_a1cec37de98a0a04608b80f093774208e}} 
+struct bt\+Constraint\+Solver\+IO $\ast$ {\bfseries m\+\_\+solver\+IO}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_a7af681c84a54909408d55a63fd088436}\label{classbtParallelConstraintSolver_a7af681c84a54909408d55a63fd088436}} 
+class \hyperlink{classbtBarrier}{bt\+Barrier} $\ast$ {\bfseries m\+\_\+barrier}
+\item 
+\mbox{\Hypertarget{classbtParallelConstraintSolver_a1b966ca32804503ca4a90be438678dbc}\label{classbtParallelConstraintSolver_a1b966ca32804503ca4a90be438678dbc}} 
+class \hyperlink{classbtCriticalSection}{bt\+Critical\+Section} $\ast$ {\bfseries m\+\_\+critical\+Section}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtParallelConstraintSolver}{bt\+Parallel\+Constraint\+Solver} performs computations on constraint rows in parallel Using the cross-\/platform threading it supports Windows, Linux, Mac O\+SX and Play\+Station 3 Cell S\+P\+Us 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtParallelConstraintSolver_a2713bd22bd322034ba8470186105ff22}\label{classbtParallelConstraintSolver_a2713bd22bd322034ba8470186105ff22}} 
+\index{bt\+Parallel\+Constraint\+Solver@{bt\+Parallel\+Constraint\+Solver}!solve\+Group@{solve\+Group}}
+\index{solve\+Group@{solve\+Group}!bt\+Parallel\+Constraint\+Solver@{bt\+Parallel\+Constraint\+Solver}}
+\subsubsection{\texorpdfstring{solve\+Group()}{solveGroup()}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Parallel\+Constraint\+Solver\+::solve\+Group (\begin{DoxyParamCaption}\item[{bt\+Collision\+Object $\ast$$\ast$}]{bodies,  }\item[{int}]{num\+Bodies,  }\item[{bt\+Persistent\+Manifold $\ast$$\ast$}]{manifold,  }\item[{int}]{num\+Manifolds,  }\item[{bt\+Typed\+Constraint $\ast$$\ast$}]{constraints,  }\item[{int}]{num\+Constraints,  }\item[{const \hyperlink{structbtContactSolverInfo}{bt\+Contact\+Solver\+Info} \&}]{info,  }\item[{\hyperlink{classbtIDebugDraw}{bt\+I\+Debug\+Draw} $\ast$}]{debug\+Drawer,  }\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+setup the bt\+Solver\+Constraints
+
+the size of bt\+Solver\+Constraint needs be a multiple of bt\+Scalar
+
+finalize the constraint setup
+
+fix rhs todo\+: add force/torque accelerators 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/bt\+Parallel\+Constraint\+Solver.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/bt\+Parallel\+Constraint\+Solver.\+cpp\end{DoxyCompactItemize}

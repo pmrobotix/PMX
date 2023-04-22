@@ -1,0 +1,86 @@
+\hypertarget{classSpuGatheringCollisionDispatcher}{}\section{Spu\+Gathering\+Collision\+Dispatcher Class Reference}
+\label{classSpuGatheringCollisionDispatcher}\index{Spu\+Gathering\+Collision\+Dispatcher@{Spu\+Gathering\+Collision\+Dispatcher}}
+
+
+{\ttfamily \#include $<$Spu\+Gathering\+Collision\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for Spu\+Gathering\+Collision\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classSpuGatheringCollisionDispatcher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spu\+Gathering\+Collision\+Dispatcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSpuGatheringCollisionDispatcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a161ec31e4f2d95b31c42247ca4793361}\label{classSpuGatheringCollisionDispatcher_a161ec31e4f2d95b31c42247ca4793361}} 
+\hyperlink{classSpuCollisionTaskProcess}{Spu\+Collision\+Task\+Process} $\ast$ {\bfseries get\+Spu\+Collision\+Task\+Process} ()
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a41acdb98571a2159f5b7b3c406930d55}\label{classSpuGatheringCollisionDispatcher_a41acdb98571a2159f5b7b3c406930d55}} 
+{\bfseries Spu\+Gathering\+Collision\+Dispatcher} (class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, unsigned int max\+Num\+Outstanding\+Tasks, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a47119970f11e80bd70b322ad2556d1b2}\label{classSpuGatheringCollisionDispatcher_a47119970f11e80bd70b322ad2556d1b2}} 
+bool {\bfseries supports\+Dispatch\+Pair\+On\+Spu} (int proxy\+Type0, int proxy\+Type1)
+\item 
+virtual void \hyperlink{classSpuGatheringCollisionDispatcher_a320d5506ca57092359f6508f12196ddb}{dispatch\+All\+Collision\+Pairs} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a161ec31e4f2d95b31c42247ca4793361}\label{classSpuGatheringCollisionDispatcher_a161ec31e4f2d95b31c42247ca4793361}} 
+\hyperlink{classSpuCollisionTaskProcess}{Spu\+Collision\+Task\+Process} $\ast$ {\bfseries get\+Spu\+Collision\+Task\+Process} ()
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a41acdb98571a2159f5b7b3c406930d55}\label{classSpuGatheringCollisionDispatcher_a41acdb98571a2159f5b7b3c406930d55}} 
+{\bfseries Spu\+Gathering\+Collision\+Dispatcher} (class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$thread\+Interface, unsigned int max\+Num\+Outstanding\+Tasks, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration)
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a47119970f11e80bd70b322ad2556d1b2}\label{classSpuGatheringCollisionDispatcher_a47119970f11e80bd70b322ad2556d1b2}} 
+bool {\bfseries supports\+Dispatch\+Pair\+On\+Spu} (int proxy\+Type0, int proxy\+Type1)
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_aa1f6efc86d17ee8edcf8e19a1a8dba33}\label{classSpuGatheringCollisionDispatcher_aa1f6efc86d17ee8edcf8e19a1a8dba33}} 
+virtual void {\bfseries dispatch\+All\+Collision\+Pairs} (\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$pair\+Cache, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a9ee75db307f5ddce1c27c7256a9b18cb}\label{classSpuGatheringCollisionDispatcher_a9ee75db307f5ddce1c27c7256a9b18cb}} 
+class \hyperlink{classbtThreadSupportInterface}{bt\+Thread\+Support\+Interface} $\ast$ {\bfseries m\+\_\+thread\+Interface}
+\item 
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_ad4f025cdc29b097b53bee70f6c82c6bb}\label{classSpuGatheringCollisionDispatcher_ad4f025cdc29b097b53bee70f6c82c6bb}} 
+unsigned int {\bfseries m\+\_\+max\+Num\+Outstanding\+Tasks}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSpuGatheringCollisionDispatcher}{Spu\+Gathering\+Collision\+Dispatcher} can use S\+PU to gather and calculate collision detection Time of Impact, Closest Points and Penetration Depth. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpuGatheringCollisionDispatcher_a320d5506ca57092359f6508f12196ddb}\label{classSpuGatheringCollisionDispatcher_a320d5506ca57092359f6508f12196ddb}} 
+\index{Spu\+Gathering\+Collision\+Dispatcher@{Spu\+Gathering\+Collision\+Dispatcher}!dispatch\+All\+Collision\+Pairs@{dispatch\+All\+Collision\+Pairs}}
+\index{dispatch\+All\+Collision\+Pairs@{dispatch\+All\+Collision\+Pairs}!Spu\+Gathering\+Collision\+Dispatcher@{Spu\+Gathering\+Collision\+Dispatcher}}
+\subsubsection{\texorpdfstring{dispatch\+All\+Collision\+Pairs()}{dispatchAllCollisionPairs()}}
+{\footnotesize\ttfamily void Spu\+Gathering\+Collision\+Dispatcher\+::dispatch\+All\+Collision\+Pairs (\begin{DoxyParamCaption}\item[{\hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$}]{pair\+Cache,  }\item[{const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&}]{dispatch\+Info,  }\item[{\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+modified version of bt\+Collision\+Dispatcher\+::dispatch\+All\+Collision\+Pairs\+:
+
+P\+PU fallback Need to make sure to clear all \textquotesingle{}algorithms\textquotesingle{} when switching between S\+PU and P\+PU 
+
+Reimplemented from \hyperlink{classbtCollisionDispatcher}{bt\+Collision\+Dispatcher}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Gathering\+Collision\+Dispatcher.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Multi\+Threaded/Spu\+Gathering\+Collision\+Dispatcher.\+cpp\end{DoxyCompactItemize}

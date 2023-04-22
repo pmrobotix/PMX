@@ -1,0 +1,167 @@
+\hypertarget{structbtMatrixX}{}\section{bt\+MatrixX$<$ T $>$ Struct Template Reference}
+\label{structbtMatrixX}\index{bt\+Matrix\+X$<$ T $>$@{bt\+Matrix\+X$<$ T $>$}}
+
+
+Collaboration diagram for bt\+MatrixX$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{structbtMatrixX__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a828ae1f28a7714f41ba8b9ed77d1b82e}\label{structbtMatrixX_a828ae1f28a7714f41ba8b9ed77d1b82e}} 
+T $\ast$ {\bfseries get\+Buffer\+Pointer\+Writable} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_af39a43b82cf3efef108f6d550529d179}\label{structbtMatrixX_af39a43b82cf3efef108f6d550529d179}} 
+const T $\ast$ {\bfseries get\+Buffer\+Pointer} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a5d3e06cd318ece61cd8d9d487d1b0981}\label{structbtMatrixX_a5d3e06cd318ece61cd8d9d487d1b0981}} 
+{\bfseries bt\+MatrixX} (int rows, int cols)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ad39611ae18fe6a6a60f5c79e805783e8}\label{structbtMatrixX_ad39611ae18fe6a6a60f5c79e805783e8}} 
+void {\bfseries resize} (int rows, int cols)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ab543c26ea991d5250e5d38790011599c}\label{structbtMatrixX_ab543c26ea991d5250e5d38790011599c}} 
+int {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a2b6e9700749302129343a901aac7a37f}\label{structbtMatrixX_a2b6e9700749302129343a901aac7a37f}} 
+int {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}\label{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}} 
+void \hyperlink{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}{add\+Elem} (int row, int col, T val)
+\begin{DoxyCompactList}\small\item\em we don\textquotesingle{}t want this read/write operator(), because we cannot keep track of non-\/zero elements, use set\+Elem instead \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtMatrixX_aba97721ed1938421c146bdb61c917b90}\label{structbtMatrixX_aba97721ed1938421c146bdb61c917b90}} 
+void {\bfseries copy\+Lower\+To\+Upper\+Triangle} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ae856c34a8c61142e406f2e953c84eb0d}\label{structbtMatrixX_ae856c34a8c61142e406f2e953c84eb0d}} 
+void {\bfseries set\+Elem} (int row, int col, T val)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a90c43d67b689b87b190c3a5f77799e54}\label{structbtMatrixX_a90c43d67b689b87b190c3a5f77799e54}} 
+const T \& {\bfseries operator()} (int row, int col) const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a0df163f737bf35a15119b02bebf01818}\label{structbtMatrixX_a0df163f737bf35a15119b02bebf01818}} 
+void {\bfseries clear\+Sparse\+Info} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a0bdf52f3712fe250237e792f1b0bcb9c}\label{structbtMatrixX_a0bdf52f3712fe250237e792f1b0bcb9c}} 
+void {\bfseries set\+Zero} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aaef07244038148837ee8cf4ba132c22f}\label{structbtMatrixX_aaef07244038148837ee8cf4ba132c22f}} 
+void {\bfseries print\+Matrix} (const char $\ast$msg)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aab5e0fb89759d2902b0e6d5b4eab88a4}\label{structbtMatrixX_aab5e0fb89759d2902b0e6d5b4eab88a4}} 
+void {\bfseries print\+Num\+Zeros} (const char $\ast$msg)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a2e980e331ffba26f028fb6b92df43317}\label{structbtMatrixX_a2e980e331ffba26f028fb6b92df43317}} 
+\hyperlink{structbtMatrixX}{bt\+MatrixX} {\bfseries transpose} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a002ff38f37d306cb8f464d4893a05f2b}\label{structbtMatrixX_a002ff38f37d306cb8f464d4893a05f2b}} 
+void {\bfseries sort\+Row\+Index\+Arrays} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ae95551ad50490b23b106819d6bca1c5c}\label{structbtMatrixX_ae95551ad50490b23b106819d6bca1c5c}} 
+void {\bfseries sort\+Col\+Index\+Arrays} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a34b8eb6349a9c4376e61844e1e0f9eeb}\label{structbtMatrixX_a34b8eb6349a9c4376e61844e1e0f9eeb}} 
+\hyperlink{structbtMatrixX}{bt\+MatrixX} {\bfseries operator$\ast$} (const \hyperlink{structbtMatrixX}{bt\+MatrixX} \&other)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ac1fa934d92fd3c7844e58febb00efb0b}\label{structbtMatrixX_ac1fa934d92fd3c7844e58febb00efb0b}} 
+void {\bfseries multiply\+Add2\+\_\+p8r} (const bt\+Scalar $\ast$B, const bt\+Scalar $\ast$C, int num\+Rows, int num\+Rows\+Other, int row, int col)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aae657343aaac366b1d255fde09b2c8c5}\label{structbtMatrixX_aae657343aaac366b1d255fde09b2c8c5}} 
+void {\bfseries multiply2\+\_\+p8r} (const bt\+Scalar $\ast$B, const bt\+Scalar $\ast$C, int num\+Rows, int num\+Rows\+Other, int row, int col)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a828ae1f28a7714f41ba8b9ed77d1b82e}\label{structbtMatrixX_a828ae1f28a7714f41ba8b9ed77d1b82e}} 
+T $\ast$ {\bfseries get\+Buffer\+Pointer\+Writable} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_af39a43b82cf3efef108f6d550529d179}\label{structbtMatrixX_af39a43b82cf3efef108f6d550529d179}} 
+const T $\ast$ {\bfseries get\+Buffer\+Pointer} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a5d3e06cd318ece61cd8d9d487d1b0981}\label{structbtMatrixX_a5d3e06cd318ece61cd8d9d487d1b0981}} 
+{\bfseries bt\+MatrixX} (int rows, int cols)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ad39611ae18fe6a6a60f5c79e805783e8}\label{structbtMatrixX_ad39611ae18fe6a6a60f5c79e805783e8}} 
+void {\bfseries resize} (int rows, int cols)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ab543c26ea991d5250e5d38790011599c}\label{structbtMatrixX_ab543c26ea991d5250e5d38790011599c}} 
+int {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a2b6e9700749302129343a901aac7a37f}\label{structbtMatrixX_a2b6e9700749302129343a901aac7a37f}} 
+int {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}\label{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}} 
+void \hyperlink{structbtMatrixX_a9aa5ce8e2740582ed5c5652d7581b2e7}{add\+Elem} (int row, int col, T val)
+\begin{DoxyCompactList}\small\item\em we don\textquotesingle{}t want this read/write operator(), because we cannot keep track of non-\/zero elements, use set\+Elem instead \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structbtMatrixX_aba97721ed1938421c146bdb61c917b90}\label{structbtMatrixX_aba97721ed1938421c146bdb61c917b90}} 
+void {\bfseries copy\+Lower\+To\+Upper\+Triangle} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ae856c34a8c61142e406f2e953c84eb0d}\label{structbtMatrixX_ae856c34a8c61142e406f2e953c84eb0d}} 
+void {\bfseries set\+Elem} (int row, int col, T val)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a90c43d67b689b87b190c3a5f77799e54}\label{structbtMatrixX_a90c43d67b689b87b190c3a5f77799e54}} 
+const T \& {\bfseries operator()} (int row, int col) const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a0df163f737bf35a15119b02bebf01818}\label{structbtMatrixX_a0df163f737bf35a15119b02bebf01818}} 
+void {\bfseries clear\+Sparse\+Info} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a0bdf52f3712fe250237e792f1b0bcb9c}\label{structbtMatrixX_a0bdf52f3712fe250237e792f1b0bcb9c}} 
+void {\bfseries set\+Zero} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aaef07244038148837ee8cf4ba132c22f}\label{structbtMatrixX_aaef07244038148837ee8cf4ba132c22f}} 
+void {\bfseries print\+Matrix} (const char $\ast$msg)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aab5e0fb89759d2902b0e6d5b4eab88a4}\label{structbtMatrixX_aab5e0fb89759d2902b0e6d5b4eab88a4}} 
+void {\bfseries print\+Num\+Zeros} (const char $\ast$msg)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a2e980e331ffba26f028fb6b92df43317}\label{structbtMatrixX_a2e980e331ffba26f028fb6b92df43317}} 
+\hyperlink{structbtMatrixX}{bt\+MatrixX} {\bfseries transpose} () const
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a002ff38f37d306cb8f464d4893a05f2b}\label{structbtMatrixX_a002ff38f37d306cb8f464d4893a05f2b}} 
+void {\bfseries sort\+Row\+Index\+Arrays} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ae95551ad50490b23b106819d6bca1c5c}\label{structbtMatrixX_ae95551ad50490b23b106819d6bca1c5c}} 
+void {\bfseries sort\+Col\+Index\+Arrays} ()
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a34b8eb6349a9c4376e61844e1e0f9eeb}\label{structbtMatrixX_a34b8eb6349a9c4376e61844e1e0f9eeb}} 
+\hyperlink{structbtMatrixX}{bt\+MatrixX} {\bfseries operator$\ast$} (const \hyperlink{structbtMatrixX}{bt\+MatrixX} \&other)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ac1fa934d92fd3c7844e58febb00efb0b}\label{structbtMatrixX_ac1fa934d92fd3c7844e58febb00efb0b}} 
+void {\bfseries multiply\+Add2\+\_\+p8r} (const bt\+Scalar $\ast$B, const bt\+Scalar $\ast$C, int num\+Rows, int num\+Rows\+Other, int row, int col)
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aae657343aaac366b1d255fde09b2c8c5}\label{structbtMatrixX_aae657343aaac366b1d255fde09b2c8c5}} 
+void {\bfseries multiply2\+\_\+p8r} (const bt\+Scalar $\ast$B, const bt\+Scalar $\ast$C, int num\+Rows, int num\+Rows\+Other, int row, int col)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_af26e15412e9b148580d5bb69be3cb0ae}\label{structbtMatrixX_af26e15412e9b148580d5bb69be3cb0ae}} 
+int {\bfseries m\+\_\+rows}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a2d8a0f250132b3bca108146a45c69e8a}\label{structbtMatrixX_a2d8a0f250132b3bca108146a45c69e8a}} 
+int {\bfseries m\+\_\+cols}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ae3dc972f13cbd0917f0dd8693c17c062}\label{structbtMatrixX_ae3dc972f13cbd0917f0dd8693c17c062}} 
+int {\bfseries m\+\_\+operations}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aaad2b4383ec7c102109376c4b826a09c}\label{structbtMatrixX_aaad2b4383ec7c102109376c4b826a09c}} 
+int {\bfseries m\+\_\+resize\+Operations}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_aa5083cc556cce608dfa81e327ebc7346}\label{structbtMatrixX_aa5083cc556cce608dfa81e327ebc7346}} 
+int {\bfseries m\+\_\+set\+Elem\+Operations}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a4eb45de98d1201b4b357a844e328c956}\label{structbtMatrixX_a4eb45de98d1201b4b357a844e328c956}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ T $>$ {\bfseries m\+\_\+storage}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_a91766c09b3f2d7efc76684b61a783c19}\label{structbtMatrixX_a91766c09b3f2d7efc76684b61a783c19}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ $>$ {\bfseries m\+\_\+row\+Non\+Zero\+Elements1}
+\item 
+\mbox{\Hypertarget{structbtMatrixX_ab5d37c175ac2d5aa348be7bfcfd6ad5f}\label{structbtMatrixX_ab5d37c175ac2d5aa348be7bfcfd6ad5f}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ $>$ {\bfseries m\+\_\+col\+Non\+Zero\+Elements}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+Matrix\+X.\+h\end{DoxyCompactItemize}

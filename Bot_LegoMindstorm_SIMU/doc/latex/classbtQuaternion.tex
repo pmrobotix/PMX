@@ -1,0 +1,817 @@
+\hypertarget{classbtQuaternion}{}\section{bt\+Quaternion Class Reference}
+\label{classbtQuaternion}\index{bt\+Quaternion@{bt\+Quaternion}}
+
+
+The \hyperlink{classbtQuaternion}{bt\+Quaternion} implements quaternion to perform linear algebra rotations in combination with bt\+Matrix3x3, bt\+Vector3 and bt\+Transform.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Quaternion.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Quaternion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classbtQuaternion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Quaternion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classbtQuaternion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}\label{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}} 
+\hyperlink{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}{bt\+Quaternion} ()
+\begin{DoxyCompactList}\small\item\em No initialization constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}\label{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}} 
+\hyperlink{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}{bt\+Quaternion} (const bt\+Scalar \&\+\_\+x, const bt\+Scalar \&\+\_\+y, const bt\+Scalar \&\+\_\+z, const bt\+Scalar \&\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Constructor from scalars. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}{bt\+Quaternion} (const bt\+Vector3 \&\+\_\+axis, const bt\+Scalar \&\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Axis angle Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}{bt\+Quaternion} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Constructor from Euler angles. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}{set\+Rotation} (const bt\+Vector3 \&axis, const bt\+Scalar \&\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Set the rotation using axis angle notation. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}{set\+Euler} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Set the quaternion using Euler angles. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}{set\+Euler\+Z\+YX} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Set the quaternion using euler angles. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}{operator+=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Add two quaternions. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}{operator-\/=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Subtract out a quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}{operator$\ast$=} (const bt\+Scalar \&s)
+\begin{DoxyCompactList}\small\item\em Scale this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}{operator$\ast$=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Multiply this quaternion by q on the right. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}{dot} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the dot product between this quaternion and another. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}\label{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}{length2} () const
+\begin{DoxyCompactList}\small\item\em Return the length squared of the quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}\label{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}{length} () const
+\begin{DoxyCompactList}\small\item\em Return the length of the quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}\label{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize the quaternion Such that x$^\wedge$2 + y$^\wedge$2 + z$^\wedge$2 +w$^\wedge$2 = 1. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}{operator$\ast$} (const bt\+Scalar \&s) const
+\begin{DoxyCompactList}\small\item\em Return a scaled version of this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}{operator/} (const bt\+Scalar \&s) const
+\begin{DoxyCompactList}\small\item\em Return an inversely scaled versionof this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}{operator/=} (const bt\+Scalar \&s)
+\begin{DoxyCompactList}\small\item\em Inversely scale this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}\label{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}{normalized} () const
+\begin{DoxyCompactList}\small\item\em Return a normalized version of this quaternion. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}{angle} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the {\itshape {\bfseries half}} angle between this quaternion and the other. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}{angle\+Shortest\+Path} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the angle between this quaternion and the other along the shortest path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a65235507c6319f3ea16c884231dff668}\label{classbtQuaternion_a65235507c6319f3ea16c884231dff668}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a65235507c6319f3ea16c884231dff668}{get\+Angle} () const
+\begin{DoxyCompactList}\small\item\em Return the angle of rotation represented by this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_abe995d64f60c0cd51278da798518933d}\label{classbtQuaternion_abe995d64f60c0cd51278da798518933d}} 
+bt\+Scalar \hyperlink{classbtQuaternion_abe995d64f60c0cd51278da798518933d}{get\+Angle\+Shortest\+Path} () const
+\begin{DoxyCompactList}\small\item\em Return the angle of rotation represented by this quaternion along the shortest path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_add2fa918491b289939b8a829d3239b00}\label{classbtQuaternion_add2fa918491b289939b8a829d3239b00}} 
+bt\+Vector3 \hyperlink{classbtQuaternion_add2fa918491b289939b8a829d3239b00}{get\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Return the axis of the rotation represented by this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}\label{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}{inverse} () const
+\begin{DoxyCompactList}\small\item\em Return the inverse of this quaternion. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a70cace8911befee9f0684391d16985d0}{operator+} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q2) const
+\begin{DoxyCompactList}\small\item\em Return the sum of this quaternion and the other. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}{operator-\/} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q2) const
+\begin{DoxyCompactList}\small\item\em Return the difference between this quaternion and the other. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}\label{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}{operator-\/} () const
+\begin{DoxyCompactList}\small\item\em Return the negative of this quaternion This simply negates each element. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}{farthest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}{nearest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const
+\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}{slerp} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q, const bt\+Scalar \&t) const
+\begin{DoxyCompactList}\small\item\em Return the quaternion which is the result of Spherical Linear Interpolation between this and the other quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a3d072cde7db77cb3a100f99999950297}\label{classbtQuaternion_a3d072cde7db77cb3a100f99999950297}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Scalar \& {\bfseries getW} () const
+\item 
+\mbox{\Hypertarget{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}\label{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}} 
+\hyperlink{classbtQuaternion_a3b5e50d610ee8cdda2aa78e092825675}{bt\+Quaternion} ()
+\begin{DoxyCompactList}\small\item\em No initialization constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}\label{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}} 
+\hyperlink{classbtQuaternion_a6a50bf861ae5fa4ad5ea2b7da231847c}{bt\+Quaternion} (const bt\+Scalar \&\+\_\+x, const bt\+Scalar \&\+\_\+y, const bt\+Scalar \&\+\_\+z, const bt\+Scalar \&\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Constructor from scalars. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}{bt\+Quaternion} (const bt\+Vector3 \&\+\_\+axis, const bt\+Scalar \&\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Axis angle Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}{bt\+Quaternion} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Constructor from Euler angles. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}{set\+Rotation} (const bt\+Vector3 \&axis, const bt\+Scalar \&\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Set the rotation using axis angle notation. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}{set\+Euler} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Set the quaternion using Euler angles. \end{DoxyCompactList}\item 
+void \hyperlink{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}{set\+Euler\+Z\+YX} (const bt\+Scalar \&yaw, const bt\+Scalar \&pitch, const bt\+Scalar \&roll)
+\begin{DoxyCompactList}\small\item\em Set the quaternion using euler angles. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}{operator+=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Add two quaternions. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}{operator-\/=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Subtract out a quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}{operator$\ast$=} (const bt\+Scalar \&s)
+\begin{DoxyCompactList}\small\item\em Scale this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}{operator$\ast$=} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q)
+\begin{DoxyCompactList}\small\item\em Multiply this quaternion by q on the right. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}{dot} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the dot product between this quaternion and another. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}\label{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a9266520d0fcd21c667adf870a8a75256}{length2} () const
+\begin{DoxyCompactList}\small\item\em Return the length squared of the quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}\label{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a29bd11309609ea6734a17388a27eda75}{length} () const
+\begin{DoxyCompactList}\small\item\em Return the length of the quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}\label{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_adb5cd1eb8145a906f9f47857c498d3d6}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize the quaternion Such that x$^\wedge$2 + y$^\wedge$2 + z$^\wedge$2 +w$^\wedge$2 = 1. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}{operator$\ast$} (const bt\+Scalar \&s) const
+\begin{DoxyCompactList}\small\item\em Return a scaled version of this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}{operator/} (const bt\+Scalar \&s) const
+\begin{DoxyCompactList}\small\item\em Return an inversely scaled versionof this quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \& \hyperlink{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}{operator/=} (const bt\+Scalar \&s)
+\begin{DoxyCompactList}\small\item\em Inversely scale this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}\label{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_aa23ea377b98256ad7f2236a2a3a33a6e}{normalized} () const
+\begin{DoxyCompactList}\small\item\em Return a normalized version of this quaternion. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}{angle} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the {\itshape {\bfseries half}} angle between this quaternion and the other. \end{DoxyCompactList}\item 
+bt\+Scalar \hyperlink{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}{angle\+Shortest\+Path} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q) const
+\begin{DoxyCompactList}\small\item\em Return the angle between this quaternion and the other along the shortest path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a65235507c6319f3ea16c884231dff668}\label{classbtQuaternion_a65235507c6319f3ea16c884231dff668}} 
+bt\+Scalar \hyperlink{classbtQuaternion_a65235507c6319f3ea16c884231dff668}{get\+Angle} () const
+\begin{DoxyCompactList}\small\item\em Return the angle of rotation represented by this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_abe995d64f60c0cd51278da798518933d}\label{classbtQuaternion_abe995d64f60c0cd51278da798518933d}} 
+bt\+Scalar \hyperlink{classbtQuaternion_abe995d64f60c0cd51278da798518933d}{get\+Angle\+Shortest\+Path} () const
+\begin{DoxyCompactList}\small\item\em Return the angle of rotation represented by this quaternion along the shortest path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_add2fa918491b289939b8a829d3239b00}\label{classbtQuaternion_add2fa918491b289939b8a829d3239b00}} 
+bt\+Vector3 \hyperlink{classbtQuaternion_add2fa918491b289939b8a829d3239b00}{get\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Return the axis of the rotation represented by this quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}\label{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_ab2f4fcf35da5e846ceba91af625062f7}{inverse} () const
+\begin{DoxyCompactList}\small\item\em Return the inverse of this quaternion. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a70cace8911befee9f0684391d16985d0}{operator+} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q2) const
+\begin{DoxyCompactList}\small\item\em Return the sum of this quaternion and the other. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}{operator-\/} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q2) const
+\begin{DoxyCompactList}\small\item\em Return the difference between this quaternion and the other. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}\label{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_af3e8f7a6be3e581a2cead40723cf873c}{operator-\/} () const
+\begin{DoxyCompactList}\small\item\em Return the negative of this quaternion This simply negates each element. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}{farthest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}{nearest} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&qd) const
+\item 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} \hyperlink{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}{slerp} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&q, const bt\+Scalar \&t) const
+\begin{DoxyCompactList}\small\item\em Return the quaternion which is the result of Spherical Linear Interpolation between this and the other quaternion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtQuaternion_a3d072cde7db77cb3a100f99999950297}\label{classbtQuaternion_a3d072cde7db77cb3a100f99999950297}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Scalar \& {\bfseries getW} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtQuaternion_a68fec9bc7f3ce9fee2a7412927b04ffe}\label{classbtQuaternion_a68fec9bc7f3ce9fee2a7412927b04ffe}} 
+static const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+Identity} ()
+\item 
+\mbox{\Hypertarget{classbtQuaternion_a68fec9bc7f3ce9fee2a7412927b04ffe}\label{classbtQuaternion_a68fec9bc7f3ce9fee2a7412927b04ffe}} 
+static const \hyperlink{classbtQuaternion}{bt\+Quaternion} \& {\bfseries get\+Identity} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtQuaternion}{bt\+Quaternion} implements quaternion to perform linear algebra rotations in combination with bt\+Matrix3x3, bt\+Vector3 and bt\+Transform. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}\label{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{bt\+Quaternion()}{btQuaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bt\+Quaternion\+::bt\+Quaternion (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{\+\_\+axis,  }\item[{const bt\+Scalar \&}]{\+\_\+angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Axis angle Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis which the rotation is around \\
+\hline
+{\em angle} & The magnitude of the rotation around the angle (Radians) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}\label{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{bt\+Quaternion()}{btQuaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bt\+Quaternion\+::bt\+Quaternion (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor from Euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Y unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then Z \\
+\hline
+{\em pitch} & Angle around X unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then Y \\
+\hline
+{\em roll} & Angle around Z unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then X \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}\label{classbtQuaternion_a2b2e9ed0014eb26ed076808fb76e9d69}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{bt\+Quaternion()}{btQuaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bt\+Quaternion\+::bt\+Quaternion (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{\+\_\+axis,  }\item[{const bt\+Scalar \&}]{\+\_\+angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Axis angle Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis which the rotation is around \\
+\hline
+{\em angle} & The magnitude of the rotation around the angle (Radians) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}\label{classbtQuaternion_a8bd5d699377ba585749d325076616ffb}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\index{bt\+Quaternion@{bt\+Quaternion}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{bt\+Quaternion()}{btQuaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bt\+Quaternion\+::bt\+Quaternion (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor from Euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Y unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then Z \\
+\hline
+{\em pitch} & Angle around X unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then Y \\
+\hline
+{\em roll} & Angle around Z unless B\+T\+\_\+\+E\+U\+L\+E\+R\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+Z\+YX defined then X \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}\label{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!angle@{angle}}
+\index{angle@{angle}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{angle()}{angle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the {\itshape {\bfseries half}} angle between this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}\label{classbtQuaternion_a78254a50772f21074f09388a17d8b02b}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!angle@{angle}}
+\index{angle@{angle}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{angle()}{angle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::angle (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the {\itshape {\bfseries half}} angle between this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}\label{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!angle\+Shortest\+Path@{angle\+Shortest\+Path}}
+\index{angle\+Shortest\+Path@{angle\+Shortest\+Path}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{angle\+Shortest\+Path()}{angleShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::angle\+Shortest\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the angle between this quaternion and the other along the shortest path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}\label{classbtQuaternion_a1a518843a038c9078deb0f83782ed8aa}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!angle\+Shortest\+Path@{angle\+Shortest\+Path}}
+\index{angle\+Shortest\+Path@{angle\+Shortest\+Path}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{angle\+Shortest\+Path()}{angleShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::angle\+Shortest\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the angle between this quaternion and the other along the shortest path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}\label{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!dot@{dot}}
+\index{dot@{dot}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dot product between this quaternion and another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}\label{classbtQuaternion_a406d3d2debf9d463f2ba651b0a196d47}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!dot@{dot}}
+\index{dot@{dot}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bt\+Scalar bt\+Quaternion\+::dot (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dot product between this quaternion and another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}\label{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!farthest@{farthest}}
+\index{farthest@{farthest}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{farthest()}{farthest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::farthest (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{qd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000040}{Todo}]document this and it\textquotesingle{}s use \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}\label{classbtQuaternion_a4c5ce0652f1cff12d1981c49b43483f1}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!farthest@{farthest}}
+\index{farthest@{farthest}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{farthest()}{farthest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::farthest (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{qd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000054}{Todo}]document this and it\textquotesingle{}s use \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}\label{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!nearest@{nearest}}
+\index{nearest@{nearest}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{nearest()}{nearest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::nearest (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{qd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000041}{Todo}]document this and it\textquotesingle{}s use \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}\label{classbtQuaternion_aba0984f947a7ad85a023e2b24ffc4db1}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!nearest@{nearest}}
+\index{nearest@{nearest}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{nearest()}{nearest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::nearest (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{qd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000055}{Todo}]document this and it\textquotesingle{}s use \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}\label{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a scaled version of this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}\label{classbtQuaternion_a1a51cec25a155357f09641510886dbf9}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a scaled version of this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}\label{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scale this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scalar to scale by \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}\label{classbtQuaternion_abd260487e98defbd77618f04d51fcc92}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scale this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scalar to scale by \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}\label{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this quaternion by q on the right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion Equivilant to this = this $\ast$ q \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}\label{classbtQuaternion_abfc6dee30a6f56e69343a31368713f95}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this quaternion by q on the right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion Equivilant to this = this $\ast$ q \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a70cace8911befee9f0684391d16985d0}\label{classbtQuaternion_a70cace8911befee9f0684391d16985d0}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sum of this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q2} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a70cace8911befee9f0684391d16985d0}\label{classbtQuaternion_a70cace8911befee9f0684391d16985d0}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the sum of this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q2} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}\label{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add two quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to add to this one \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}\label{classbtQuaternion_a1212e4cbaa71da187984d3c174a4cc04}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add two quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to add to this one \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}\label{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the difference between this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q2} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}\label{classbtQuaternion_a2b440e462111b777fd2229446ba4618c}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the difference between this quaternion and the other. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q2} & The other quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}\label{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract out a quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to subtract from this one \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}\label{classbtQuaternion_ac942e70c62d09538e3f6d9c42bc42c5c}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract out a quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to subtract from this one \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}\label{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator/ (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an inversely scaled versionof this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The inverse scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}\label{classbtQuaternion_a02e9c919f808155f106be11ba4cee226}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::operator/ (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an inversely scaled versionof this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The inverse scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}\label{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inversely scale this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}\label{classbtQuaternion_a294fe99e7e5a8e0d45d111334e2e1552}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion}\& bt\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inversely scale this quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}\label{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Euler@{set\+Euler}}
+\index{set\+Euler@{set\+Euler}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Euler()}{setEuler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Euler (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quaternion using Euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Y \\
+\hline
+{\em pitch} & Angle around X \\
+\hline
+{\em roll} & Angle around Z \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}\label{classbtQuaternion_aed0a6469d6c6c1e379f1143ad62b3439}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Euler@{set\+Euler}}
+\index{set\+Euler@{set\+Euler}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Euler()}{setEuler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Euler (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quaternion using Euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Y \\
+\hline
+{\em pitch} & Angle around X \\
+\hline
+{\em roll} & Angle around Z \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}\label{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Euler\+Z\+YX@{set\+Euler\+Z\+YX}}
+\index{set\+Euler\+Z\+YX@{set\+Euler\+Z\+YX}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Euler\+Z\+Y\+X()}{setEulerZYX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Euler\+Z\+YX (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quaternion using euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Z \\
+\hline
+{\em pitch} & Angle around Y \\
+\hline
+{\em roll} & Angle around X \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}\label{classbtQuaternion_a808b430136b4a8d1e7120134af14a1ff}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Euler\+Z\+YX@{set\+Euler\+Z\+YX}}
+\index{set\+Euler\+Z\+YX@{set\+Euler\+Z\+YX}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Euler\+Z\+Y\+X()}{setEulerZYX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Euler\+Z\+YX (\begin{DoxyParamCaption}\item[{const bt\+Scalar \&}]{yaw,  }\item[{const bt\+Scalar \&}]{pitch,  }\item[{const bt\+Scalar \&}]{roll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quaternion using euler angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Angle around Z \\
+\hline
+{\em pitch} & Angle around Y \\
+\hline
+{\em roll} & Angle around X \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}\label{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{axis,  }\item[{const bt\+Scalar \&}]{\+\_\+angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the rotation using axis angle notation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis around which to rotate \\
+\hline
+{\em angle} & The magnitude of the rotation in Radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}\label{classbtQuaternion_ade840b704d06ad0092b996b432b8a8a6}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void bt\+Quaternion\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{axis,  }\item[{const bt\+Scalar \&}]{\+\_\+angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the rotation using axis angle notation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis around which to rotate \\
+\hline
+{\em angle} & The magnitude of the rotation in Radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}\label{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!slerp@{slerp}}
+\index{slerp@{slerp}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{slerp()}{slerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::slerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q,  }\item[{const bt\+Scalar \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the quaternion which is the result of Spherical Linear Interpolation between this and the other quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion to interpolate with \\
+\hline
+{\em t} & The ratio between this and q to interpolate. If t = 0 the result is this, if t=1 the result is q. Slerp interpolates assuming constant velocity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}\label{classbtQuaternion_a0b34cbf669afb05d0618ff100a76b0dc}} 
+\index{bt\+Quaternion@{bt\+Quaternion}!slerp@{slerp}}
+\index{slerp@{slerp}!bt\+Quaternion@{bt\+Quaternion}}
+\subsubsection{\texorpdfstring{slerp()}{slerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classbtQuaternion}{bt\+Quaternion} bt\+Quaternion\+::slerp (\begin{DoxyParamCaption}\item[{const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&}]{q,  }\item[{const bt\+Scalar \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the quaternion which is the result of Spherical Linear Interpolation between this and the other quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion to interpolate with \\
+\hline
+{\em t} & The ratio between this and q to interpolate. If t = 0 the result is this, if t=1 the result is q. Slerp interpolates assuming constant velocity. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Linear\+Math/bt\+Quaternion.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{classServoObjectsSystem}{}\section{Servo\+Objects\+System Class Reference}
+\label{classServoObjectsSystem}\index{Servo\+Objects\+System@{Servo\+Objects\+System}}
+
+
+Inheritance diagram for Servo\+Objects\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classServoObjectsSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Servo\+Objects\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classServoObjectsSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a6becc0da0b25b7aee65e4d1cb32a502e}\label{classServoObjectsSystem_a6becc0da0b25b7aee65e4d1cb32a502e}} 
+\hyperlink{classServoObjectsSystem_a6becc0da0b25b7aee65e4d1cb32a502e}{Servo\+Objects\+System} (std\+::string bot\+Id, \hyperlink{classActions}{Actions} \&\hyperlink{classAActionsElement_a3fbd5b8201049a59602d8b7201a9ef8a}{actions})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a9f08f9674bb830c4882271ca3e6342b3}\label{classServoObjectsSystem_a9f08f9674bb830c4882271ca3e6342b3}} 
+\hyperlink{classServoObjectsSystem_a9f08f9674bb830c4882271ca3e6342b3}{$\sim$\+Servo\+Objects\+System} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_af0147d8bcd7304d6a1fc535352b57878}\label{classServoObjectsSystem_af0147d8bcd7304d6a1fc535352b57878}} 
+void \hyperlink{classServoObjectsSystem_af0147d8bcd7304d6a1fc535352b57878}{setup} (int servo, A\+Servo\+Driver\+::\+Servo\+Type type, int value\+Min\+Pulse, int value\+Mid\+Pulse, int value\+Max\+Pulse, bool inversed=false)
+\begin{DoxyCompactList}\small\item\em setup 1 servo with type, min, mid, max, inv values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a7e02248a4518b5fb70be99cbb81815d6}\label{classServoObjectsSystem_a7e02248a4518b5fb70be99cbb81815d6}} 
+void \hyperlink{classServoObjectsSystem_a7e02248a4518b5fb70be99cbb81815d6}{move\+\_\+1\+\_\+servo} (int servo1, int pos1, int torque1, int time\+\_\+eta\+\_\+ms, bool keep\+\_\+torque)
+\begin{DoxyCompactList}\small\item\em move 1 servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a94b9c90a7ac3e690f6d002a008532ecb}\label{classServoObjectsSystem_a94b9c90a7ac3e690f6d002a008532ecb}} 
+void \hyperlink{classServoObjectsSystem_a94b9c90a7ac3e690f6d002a008532ecb}{move\+\_\+2\+\_\+servos} (int servo1, int pos1, int torque1, int servo2, int pos2, int torque2, int time\+\_\+eta\+\_\+ms, bool keep\+\_\+torque)
+\begin{DoxyCompactList}\small\item\em move 2 servos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a6df7e1694087d2fa67d41aeef363b3f3}\label{classServoObjectsSystem_a6df7e1694087d2fa67d41aeef363b3f3}} 
+void {\bfseries deploy} (int servo, int pos, int keep\+\_\+millisec=-\/1)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a9b4f3b7fe486a78d42e8b59e8664a764}\label{classServoObjectsSystem_a9b4f3b7fe486a78d42e8b59e8664a764}} 
+void {\bfseries deploy\+With\+Velocity} (int servo, int pos, int keep\+\_\+millisec=-\/1, int velocity=1023)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a5e0e2b1e10cecd6254b3421f564f119d}\label{classServoObjectsSystem_a5e0e2b1e10cecd6254b3421f564f119d}} 
+void {\bfseries turn} (int servo, int speed, int keep\+\_\+millisec=0)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_aee9ba86b5c2d9cb07aff947f28812b83}\label{classServoObjectsSystem_aee9ba86b5c2d9cb07aff947f28812b83}} 
+void {\bfseries release} (int servo)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a6a01a4858975287a97fdbc96f3ac08c7}\label{classServoObjectsSystem_a6a01a4858975287a97fdbc96f3ac08c7}} 
+void {\bfseries hold} (int servo)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a8e90807ffba5c905f81304db1708572f}\label{classServoObjectsSystem_a8e90807ffba5c905f81304db1708572f}} 
+int {\bfseries get\+Torque} (int servo)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_acf68a1b28ef93c8d960b84e008e9c974}\label{classServoObjectsSystem_acf68a1b28ef93c8d960b84e008e9c974}} 
+void {\bfseries set\+Torque} (int servo, int torque)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a39f1221512cd050bdfd985c74b39a56a}\label{classServoObjectsSystem_a39f1221512cd050bdfd985c74b39a56a}} 
+void {\bfseries set\+Speed} (int servo, int speed)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_af9900bc699365da539559e7c630f70f2}\label{classServoObjectsSystem_af9900bc699365da539559e7c630f70f2}} 
+int {\bfseries get\+Speed} (int servo)
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_ab4084aed07125c20da10192c5a226d54}\label{classServoObjectsSystem_ab4084aed07125c20da10192c5a226d54}} 
+int \hyperlink{classServoObjectsSystem_ab4084aed07125c20da10192c5a226d54}{set\+Pos} (int servo, int pos, int milli0to90)
+\begin{DoxyCompactList}\small\item\em fonction avec vitesse reglable \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_aa422c0eb68a5f29a9db34f3225bdea2a}\label{classServoObjectsSystem_aa422c0eb68a5f29a9db34f3225bdea2a}} 
+int \hyperlink{classServoObjectsSystem_aa422c0eb68a5f29a9db34f3225bdea2a}{get\+Pulse\+Width} (int servo)
+\begin{DoxyCompactList}\small\item\em get the pulsewidth \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServoObjectsSystem_a24493ce2c4405cc4df41aa036de09262}\label{classServoObjectsSystem_a24493ce2c4405cc4df41aa036de09262}} 
+void {\bfseries detect\+All} ()
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_ab56910319decab536a3ebdd2d6ba91e5}\label{classServoObjectsSystem_ab56910319decab536a3ebdd2d6ba91e5}} 
+void {\bfseries detect} ()
+\item 
+\mbox{\Hypertarget{classServoObjectsSystem_ab1796e791e2b2b7b2195aa3ddb76c769}\label{classServoObjectsSystem_ab1796e791e2b2b7b2195aa3ddb76c769}} 
+std\+::string {\bfseries id} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Servo\+Objects\+System.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Action/Servo\+Objects\+System.\+cpp\end{DoxyCompactItemize}

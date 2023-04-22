@@ -1,0 +1,164 @@
+\hypertarget{structVertexStreamAttribute}{}\section{Vertex\+Stream\+Attribute Struct Reference}
+\label{structVertexStreamAttribute}\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+
+
+{\ttfamily \#include $<$C\+C\+Vertex\+Index\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}{Vertex\+Stream\+Attribute} ()
+\item 
+\hyperlink{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}{Vertex\+Stream\+Attribute} (int offset, int semantic, int type, int size)
+\item 
+\hyperlink{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}{Vertex\+Stream\+Attribute} (int offset, int semantic, int type, int size, bool normalize)
+\item 
+\hyperlink{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}{Vertex\+Stream\+Attribute} ()
+\item 
+\hyperlink{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}{Vertex\+Stream\+Attribute} (int offset, int semantic, int type, int size)
+\item 
+\hyperlink{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}{Vertex\+Stream\+Attribute} (int offset, int semantic, int type, int size, bool normalize)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structVertexStreamAttribute_aae71b3db2111f68a763991933ed81a25}{\+\_\+normalize}
+\item 
+int \hyperlink{structVertexStreamAttribute_a604664cdab2ba74074fe23dde99f1dea}{\+\_\+offset}
+\item 
+int \hyperlink{structVertexStreamAttribute_a4a739b976ccc06e68a3c663168a37b1d}{\+\_\+semantic}
+\item 
+int \hyperlink{structVertexStreamAttribute_a3a1c3011d9fe0c45c43655e0d98bc908}{\+\_\+type}
+\item 
+int \hyperlink{structVertexStreamAttribute_a033117a0981be4443bc7652f90e3c3a0}{\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structVertexStreamAttribute}{Vertex\+Stream\+Attribute} is used to specify the vertex attribute for drawing, which is correspondent to gl\+Vertex\+Attrib\+Pointer(\+G\+Luint index, G\+Lint size, G\+Lenum type, G\+Lboolean normalized, G\+Lsizei stride, const G\+Lvoid$\ast$ ptr).
+
+\+\_\+semantic -\/$>$ index \+\_\+size -\/$>$ size \+\_\+type -\/$>$ type \+\_\+normalize -\/$>$ normalized \+\_\+offset is used to compute the start offset in a interleaved array, take a \hyperlink{structV3F__C4B__T2F}{V3\+F\+\_\+\+C4\+B\+\_\+\+T2F} array, offset of vertex will be 0, offset of color would be 0 + sizeof(float) $\ast$ 3 = 12, offset of texture coord would be 12 + sizeof(char) $\ast$ 4 = 16.  NA 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}\label{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \mbox{\Hypertarget{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}\label{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{semantic,  }\item[{int}]{type,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset of the attribute. \\
+\hline
+{\em semantic} & The semantic (\hyperlink{structPosition}{Position}, Texcoord, Color etc) of attribute. \\
+\hline
+{\em type} & The type of attribute, could be G\+L\+\_\+\+F\+L\+O\+AT, G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+Y\+TE etc. \\
+\hline
+{\em size} & Describe how many elements of type in the attribute. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}\label{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{semantic,  }\item[{int}]{type,  }\item[{int}]{size,  }\item[{bool}]{normalize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset of the attribute. \\
+\hline
+{\em semantic} & The semantic (\hyperlink{structPosition}{Position}, Texcoord, Color etc) of attribute. \\
+\hline
+{\em type} & The type of attribute, could be G\+L\+\_\+\+F\+L\+O\+AT, G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+Y\+TE etc. \\
+\hline
+{\em size} & Describe how many elements of type in the attribute. \\
+\hline
+{\em normalize} & If true, the data will be normalized by dividing 255. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}\label{structVertexStreamAttribute_a37721a26567e79bdea1c2f9f0f33c663}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \mbox{\Hypertarget{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}\label{structVertexStreamAttribute_a563072570593c77863c79af39f198bc3}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{semantic,  }\item[{int}]{type,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset of the attribute. \\
+\hline
+{\em semantic} & The semantic (\hyperlink{structPosition}{Position}, Texcoord, Color etc) of attribute. \\
+\hline
+{\em type} & The type of attribute, could be G\+L\+\_\+\+F\+L\+O\+AT, G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+Y\+TE etc. \\
+\hline
+{\em size} & Describe how many elements of type in the attribute. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}\label{structVertexStreamAttribute_adc59ee692bd5e28653556b0ff0380f75}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{Vertex\+Stream\+Attribute()}{VertexStreamAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Vertex\+Stream\+Attribute\+::\+Vertex\+Stream\+Attribute (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{semantic,  }\item[{int}]{type,  }\item[{int}]{size,  }\item[{bool}]{normalize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset of the attribute. \\
+\hline
+{\em semantic} & The semantic (\hyperlink{structPosition}{Position}, Texcoord, Color etc) of attribute. \\
+\hline
+{\em type} & The type of attribute, could be G\+L\+\_\+\+F\+L\+O\+AT, G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+Y\+TE etc. \\
+\hline
+{\em size} & Describe how many elements of type in the attribute. \\
+\hline
+{\em normalize} & If true, the data will be normalized by dividing 255. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structVertexStreamAttribute_aae71b3db2111f68a763991933ed81a25}\label{structVertexStreamAttribute_aae71b3db2111f68a763991933ed81a25}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!\+\_\+normalize@{\+\_\+normalize}}
+\index{\+\_\+normalize@{\+\_\+normalize}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{\+\_\+normalize}{\_normalize}}
+{\footnotesize\ttfamily bool Vertex\+Stream\+Attribute\+::\+\_\+normalize}
+
+Whether the attribute should be normalized or not. \mbox{\Hypertarget{structVertexStreamAttribute_a604664cdab2ba74074fe23dde99f1dea}\label{structVertexStreamAttribute_a604664cdab2ba74074fe23dde99f1dea}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!\+\_\+offset@{\+\_\+offset}}
+\index{\+\_\+offset@{\+\_\+offset}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{\+\_\+offset}{\_offset}}
+{\footnotesize\ttfamily int Vertex\+Stream\+Attribute\+::\+\_\+offset}
+
+The offset of the attribute in the buffer. \mbox{\Hypertarget{structVertexStreamAttribute_a4a739b976ccc06e68a3c663168a37b1d}\label{structVertexStreamAttribute_a4a739b976ccc06e68a3c663168a37b1d}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!\+\_\+semantic@{\+\_\+semantic}}
+\index{\+\_\+semantic@{\+\_\+semantic}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{\+\_\+semantic}{\_semantic}}
+{\footnotesize\ttfamily int Vertex\+Stream\+Attribute\+::\+\_\+semantic}
+
+Describe that the attribute usage, could be \hyperlink{structPosition}{Position}, Color etc. \mbox{\Hypertarget{structVertexStreamAttribute_a033117a0981be4443bc7652f90e3c3a0}\label{structVertexStreamAttribute_a033117a0981be4443bc7652f90e3c3a0}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{\+\_\+size}{\_size}}
+{\footnotesize\ttfamily int Vertex\+Stream\+Attribute\+::\+\_\+size}
+
+Describe how many elements of type in the attribute. \mbox{\Hypertarget{structVertexStreamAttribute_a3a1c3011d9fe0c45c43655e0d98bc908}\label{structVertexStreamAttribute_a3a1c3011d9fe0c45c43655e0d98bc908}} 
+\index{Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}!\+\_\+type@{\+\_\+type}}
+\index{\+\_\+type@{\+\_\+type}!Vertex\+Stream\+Attribute@{Vertex\+Stream\+Attribute}}
+\subsubsection{\texorpdfstring{\+\_\+type}{\_type}}
+{\footnotesize\ttfamily int Vertex\+Stream\+Attribute\+::\+\_\+type}
+
+Describe the type of attribute, could be G\+L\+\_\+\+F\+L\+O\+AT, G\+L\+\_\+\+U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+B\+Y\+TE etc. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+Vertex\+Index\+Data.\+h\end{DoxyCompactItemize}

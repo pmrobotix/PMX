@@ -1,0 +1,479 @@
+\hypertarget{classController}{}\section{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+
+
+A \hyperlink{classController}{Controller} object represents a connected physical game controller.  NA.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Controller.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structController_1_1__keyStatus}{\+\_\+key\+Status}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classController_afdf85a1e7a9a3f5943935ac99fb76906}{Key} \{ \newline
+{\bfseries K\+E\+Y\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+X} = 1000, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+Y}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+X}, 
+\newline
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+A}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+B}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+C}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+X}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Z}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+UP}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+L\+E\+FT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+L\+E\+F\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+E\+L\+E\+CT}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+A\+U\+SE}, 
+{\bfseries K\+E\+Y\+\_\+\+M\+AX}, 
+{\bfseries K\+E\+Y\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+X} = 1000, 
+\newline
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+Y}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+X}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+A}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+B}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+C}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+X}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Y}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Z}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+UP}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+L\+E\+FT}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+\newline
+{\bfseries A\+X\+I\+S\+\_\+\+L\+E\+F\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+E\+L\+E\+CT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+A\+U\+SE}, 
+{\bfseries K\+E\+Y\+\_\+\+M\+AX}
+ \}
+\item 
+enum \hyperlink{classController_afdf85a1e7a9a3f5943935ac99fb76906}{Key} \{ \newline
+{\bfseries K\+E\+Y\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+X} = 1000, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+Y}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+X}, 
+\newline
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+A}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+B}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+C}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+X}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Z}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+UP}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+L\+E\+FT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+L\+E\+F\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+E\+L\+E\+CT}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+A\+U\+SE}, 
+{\bfseries K\+E\+Y\+\_\+\+M\+AX}, 
+{\bfseries K\+E\+Y\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+X} = 1000, 
+\newline
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+L\+E\+F\+T\+\_\+Y}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+X}, 
+{\bfseries J\+O\+Y\+S\+T\+I\+C\+K\+\_\+\+R\+I\+G\+H\+T\+\_\+Y}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+A}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+B}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+C}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+X}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Y}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+Z}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+UP}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+L\+E\+FT}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+R\+I\+G\+HT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+P\+A\+D\+\_\+\+C\+E\+N\+T\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+H\+O\+U\+L\+D\+ER}, 
+\newline
+{\bfseries A\+X\+I\+S\+\_\+\+L\+E\+F\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries A\+X\+I\+S\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+R\+I\+G\+G\+ER}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+L\+E\+F\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+R\+I\+G\+H\+T\+\_\+\+T\+H\+U\+M\+B\+S\+T\+I\+CK}, 
+\newline
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+T\+A\+RT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+S\+E\+L\+E\+CT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+A\+U\+SE}, 
+{\bfseries K\+E\+Y\+\_\+\+M\+AX}
+ \}
+\item 
+\mbox{\Hypertarget{classController_a4889fa4ff6dce440aaa85b94ea04134e}\label{classController_a4889fa4ff6dce440aaa85b94ea04134e}} 
+typedef struct \hyperlink{structController_1_1__keyStatus}{Controller\+::\+\_\+key\+Status} {\bfseries Key\+Status}
+\item 
+\mbox{\Hypertarget{classController_a4889fa4ff6dce440aaa85b94ea04134e}\label{classController_a4889fa4ff6dce440aaa85b94ea04134e}} 
+typedef struct \hyperlink{structController_1_1__keyStatus}{Controller\+::\+\_\+key\+Status} {\bfseries Key\+Status}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \hyperlink{classController_a58c7b72640130609ca3c039b256ce2b1}{get\+Device\+Name} () const
+\item 
+int \hyperlink{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}{get\+Device\+Id} () const
+\item 
+bool \hyperlink{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}{is\+Connected} () const
+\item 
+\mbox{\Hypertarget{classController_a64416e35127603cc9b6cc94179f89f3f}\label{classController_a64416e35127603cc9b6cc94179f89f3f}} 
+const \hyperlink{structController_1_1__keyStatus}{Key\+Status} \& {\bfseries get\+Key\+Status} (int key\+Code)
+\item 
+void \hyperlink{classController_a196df7e52d96b0094f7b27adc5cd4077}{receive\+External\+Key\+Event} (int external\+Key\+Code, bool receive)
+\item 
+void \hyperlink{classController_a0995ba881e0a6ee1b71a2fd366dcad90}{set\+Tag} (int tag)
+\item 
+int \hyperlink{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}{get\+Tag} () const
+\item 
+const std\+::string \& \hyperlink{classController_a58c7b72640130609ca3c039b256ce2b1}{get\+Device\+Name} () const
+\item 
+int \hyperlink{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}{get\+Device\+Id} () const
+\item 
+bool \hyperlink{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}{is\+Connected} () const
+\item 
+\mbox{\Hypertarget{classController_ab02cab288af9ccc1e18ab60cbfe43fbe}\label{classController_ab02cab288af9ccc1e18ab60cbfe43fbe}} 
+const \hyperlink{structController_1_1__keyStatus}{Key\+Status} \& {\bfseries get\+Key\+Status} (int key\+Code)
+\item 
+void \hyperlink{classController_a196df7e52d96b0094f7b27adc5cd4077}{receive\+External\+Key\+Event} (int external\+Key\+Code, bool receive)
+\item 
+void \hyperlink{classController_a0995ba881e0a6ee1b71a2fd366dcad90}{set\+Tag} (int tag)
+\item 
+int \hyperlink{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}{get\+Tag} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::vector$<$ \hyperlink{classController}{Controller} $\ast$ $>$ \& \hyperlink{classController_a5fc9812dfd76de7a0457589035472575}{get\+All\+Controller} ()
+\item 
+static \hyperlink{classController}{Controller} $\ast$ \hyperlink{classController_ad058b420928dce690a9274a53ddfb04d}{get\+Controller\+By\+Tag} (int tag)
+\item 
+static void \hyperlink{classController_abd0fe19473c8bcabfe32318c4cc86f1e}{start\+Discovery\+Controller} ()
+\item 
+static void \hyperlink{classController_a56e523730da3b75bed4597ef87ec0495}{stop\+Discovery\+Controller} ()
+\item 
+static const std\+::vector$<$ \hyperlink{classController}{Controller} $\ast$ $>$ \& \hyperlink{classController_a5fc9812dfd76de7a0457589035472575}{get\+All\+Controller} ()
+\item 
+static \hyperlink{classController}{Controller} $\ast$ \hyperlink{classController_ac2fe9d842f17b076d3610ce08ec93334}{get\+Controller\+By\+Tag} (int tag)
+\item 
+static \hyperlink{classController}{Controller} $\ast$ \hyperlink{classController_a51b65b0165848b09f427825f96a85fa0}{get\+Controller\+By\+Device\+Id} (int device\+Id)
+\item 
+static void \hyperlink{classController_aeb4fe47c1de370d6ff5776147839234e}{start\+Discovery\+Controller} ()
+\item 
+static void \hyperlink{classController_a525207ef12be4dfa7ca89461c20db976}{stop\+Discovery\+Controller} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classController_a62463a6698cdf66527d1b63fb27b1479}\label{classController_a62463a6698cdf66527d1b63fb27b1479}} 
+static const int {\bfseries T\+A\+G\+\_\+\+U\+N\+S\+ET} = -\/1
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classController_ac25e7836741da6200dc565af53a473f2}\label{classController_ac25e7836741da6200dc565af53a473f2}} 
+class {\bfseries Controller\+Impl}
+\item 
+\mbox{\Hypertarget{classController_a3ab82ca48d2c710a4cd1818d0f378223}\label{classController_a3ab82ca48d2c710a4cd1818d0f378223}} 
+class {\bfseries Event\+Listener\+Controller}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classController}{Controller} object represents a connected physical game controller.  NA. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classController_afdf85a1e7a9a3f5943935ac99fb76906}\label{classController_afdf85a1e7a9a3f5943935ac99fb76906}} 
+\index{Controller@{Controller}!Key@{Key}}
+\index{Key@{Key}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Key}{Key}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classController_afdf85a1e7a9a3f5943935ac99fb76906}{Controller\+::\+Key}}
+
+Controllers\textquotesingle{} standard key \hyperlink{classController}{Controller} receives only standard key which contained within enum Key by default. \mbox{\Hypertarget{classController_afdf85a1e7a9a3f5943935ac99fb76906}\label{classController_afdf85a1e7a9a3f5943935ac99fb76906}} 
+\index{Controller@{Controller}!Key@{Key}}
+\index{Key@{Key}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Key}{Key}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classController_afdf85a1e7a9a3f5943935ac99fb76906}{Controller\+::\+Key}}
+
+Controllers\textquotesingle{} standard key \hyperlink{classController}{Controller} receives only standard key which contained within enum Key by default. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_a5fc9812dfd76de7a0457589035472575}\label{classController_a5fc9812dfd76de7a0457589035472575}} 
+\index{Controller@{Controller}!get\+All\+Controller@{get\+All\+Controller}}
+\index{get\+All\+Controller@{get\+All\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+All\+Controller()}{getAllController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static const std\+::vector$<$\hyperlink{classController}{Controller}$\ast$$>$\& Controller\+::get\+All\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets all \hyperlink{classController}{Controller} objects. \mbox{\Hypertarget{classController_a5fc9812dfd76de7a0457589035472575}\label{classController_a5fc9812dfd76de7a0457589035472575}} 
+\index{Controller@{Controller}!get\+All\+Controller@{get\+All\+Controller}}
+\index{get\+All\+Controller@{get\+All\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+All\+Controller()}{getAllController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const std\+::vector$<$\hyperlink{classController}{Controller}$\ast$$>$\& Controller\+::get\+All\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets all \hyperlink{classController}{Controller} objects. \mbox{\Hypertarget{classController_a51b65b0165848b09f427825f96a85fa0}\label{classController_a51b65b0165848b09f427825f96a85fa0}} 
+\index{Controller@{Controller}!get\+Controller\+By\+Device\+Id@{get\+Controller\+By\+Device\+Id}}
+\index{get\+Controller\+By\+Device\+Id@{get\+Controller\+By\+Device\+Id}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Controller\+By\+Device\+Id()}{getControllerByDeviceId()}}
+{\footnotesize\ttfamily \hyperlink{classController}{Controller} $\ast$ Controller\+::get\+Controller\+By\+Device\+Id (\begin{DoxyParamCaption}\item[{int}]{device\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a \hyperlink{classController}{Controller} object with device ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Id} & A unique identifier to find the controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classController}{Controller} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_ad058b420928dce690a9274a53ddfb04d}\label{classController_ad058b420928dce690a9274a53ddfb04d}} 
+\index{Controller@{Controller}!get\+Controller\+By\+Tag@{get\+Controller\+By\+Tag}}
+\index{get\+Controller\+By\+Tag@{get\+Controller\+By\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Controller\+By\+Tag()}{getControllerByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classController}{Controller} $\ast$ Controller\+::get\+Controller\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a \hyperlink{classController}{Controller} object with tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An identifier to find the controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classController}{Controller} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_ac2fe9d842f17b076d3610ce08ec93334}\label{classController_ac2fe9d842f17b076d3610ce08ec93334}} 
+\index{Controller@{Controller}!get\+Controller\+By\+Tag@{get\+Controller\+By\+Tag}}
+\index{get\+Controller\+By\+Tag@{get\+Controller\+By\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Controller\+By\+Tag()}{getControllerByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classController}{Controller}$\ast$ Controller\+::get\+Controller\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a \hyperlink{classController}{Controller} object with tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & An identifier to find the controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classController}{Controller} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}\label{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}} 
+\index{Controller@{Controller}!get\+Device\+Id@{get\+Device\+Id}}
+\index{get\+Device\+Id@{get\+Device\+Id}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Device\+Id()}{getDeviceId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Controller\+::get\+Device\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classController}{Controller} id. \mbox{\Hypertarget{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}\label{classController_adcfe0c2c19b7d32167f6937e9d8c2afd}} 
+\index{Controller@{Controller}!get\+Device\+Id@{get\+Device\+Id}}
+\index{get\+Device\+Id@{get\+Device\+Id}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Device\+Id()}{getDeviceId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Controller\+::get\+Device\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \hyperlink{classController}{Controller} id. \mbox{\Hypertarget{classController_a58c7b72640130609ca3c039b256ce2b1}\label{classController_a58c7b72640130609ca3c039b256ce2b1}} 
+\index{Controller@{Controller}!get\+Device\+Name@{get\+Device\+Name}}
+\index{get\+Device\+Name@{get\+Device\+Name}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Device\+Name()}{getDeviceName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& Controller\+::get\+Device\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the name of this \hyperlink{classController}{Controller} object. \mbox{\Hypertarget{classController_a58c7b72640130609ca3c039b256ce2b1}\label{classController_a58c7b72640130609ca3c039b256ce2b1}} 
+\index{Controller@{Controller}!get\+Device\+Name@{get\+Device\+Name}}
+\index{get\+Device\+Name@{get\+Device\+Name}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Device\+Name()}{getDeviceName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& Controller\+::get\+Device\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the name of this \hyperlink{classController}{Controller} object. \mbox{\Hypertarget{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}\label{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}} 
+\index{Controller@{Controller}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Controller\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a tag that is used to identify the controller easily.
+
+\begin{DoxyReturn}{Returns}
+An integer that identifies the controller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}\label{classController_ae82854fd0c1abb1ebe9cd311b648a3d2}} 
+\index{Controller@{Controller}!get\+Tag@{get\+Tag}}
+\index{get\+Tag@{get\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Tag()}{getTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Controller\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a tag that is used to identify the controller easily.
+
+\begin{DoxyReturn}{Returns}
+An integer that identifies the controller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}\label{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}} 
+\index{Controller@{Controller}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{is\+Connected()}{isConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Controller\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Indicates whether the \hyperlink{classController}{Controller} is connected. \mbox{\Hypertarget{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}\label{classController_ac2d6cd3552f3ffc8fa6454f0a4ab7692}} 
+\index{Controller@{Controller}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{is\+Connected()}{isConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Controller\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Indicates whether the \hyperlink{classController}{Controller} is connected. \mbox{\Hypertarget{classController_a196df7e52d96b0094f7b27adc5cd4077}\label{classController_a196df7e52d96b0094f7b27adc5cd4077}} 
+\index{Controller@{Controller}!receive\+External\+Key\+Event@{receive\+External\+Key\+Event}}
+\index{receive\+External\+Key\+Event@{receive\+External\+Key\+Event}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{receive\+External\+Key\+Event()}{receiveExternalKeyEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Controller\+::receive\+External\+Key\+Event (\begin{DoxyParamCaption}\item[{int}]{external\+Key\+Code,  }\item[{bool}]{receive }\end{DoxyParamCaption})}
+
+Activate receives key event from external key. e.\+g. back,menu. \hyperlink{classController}{Controller} receives only standard key which contained within enum Key by default.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI only work on the android platform for support diversified game controller.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em external\+Key\+Code} & External key code. \\
+\hline
+{\em receive} & True if external key event on this controller should be receive, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_a196df7e52d96b0094f7b27adc5cd4077}\label{classController_a196df7e52d96b0094f7b27adc5cd4077}} 
+\index{Controller@{Controller}!receive\+External\+Key\+Event@{receive\+External\+Key\+Event}}
+\index{receive\+External\+Key\+Event@{receive\+External\+Key\+Event}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{receive\+External\+Key\+Event()}{receiveExternalKeyEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Controller\+::receive\+External\+Key\+Event (\begin{DoxyParamCaption}\item[{int}]{external\+Key\+Code,  }\item[{bool}]{receive }\end{DoxyParamCaption})}
+
+Activate receives key event from external key. e.\+g. back,menu. \hyperlink{classController}{Controller} receives only standard key which contained within enum Key by default.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI only work on the android platform for support diversified game controller.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em external\+Key\+Code} & External key code. \\
+\hline
+{\em receive} & True if external key event on this controller should be receive, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_a0995ba881e0a6ee1b71a2fd366dcad90}\label{classController_a0995ba881e0a6ee1b71a2fd366dcad90}} 
+\index{Controller@{Controller}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Controller\+::set\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Changes the tag that is used to identify the controller easily. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & A integer that identifies the controller. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_a0995ba881e0a6ee1b71a2fd366dcad90}\label{classController_a0995ba881e0a6ee1b71a2fd366dcad90}} 
+\index{Controller@{Controller}!set\+Tag@{set\+Tag}}
+\index{set\+Tag@{set\+Tag}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{set\+Tag()}{setTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Controller\+::set\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Changes the tag that is used to identify the controller easily. 
+\begin{DoxyParams}{Parameters}
+{\em tag} & A integer that identifies the controller. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_abd0fe19473c8bcabfe32318c4cc86f1e}\label{classController_abd0fe19473c8bcabfe32318c4cc86f1e}} 
+\index{Controller@{Controller}!start\+Discovery\+Controller@{start\+Discovery\+Controller}}
+\index{start\+Discovery\+Controller@{start\+Discovery\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{start\+Discovery\+Controller()}{startDiscoveryController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Controller\+::start\+Discovery\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Start discovering new controllers.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI only work on the I\+OS platform. Empty implementation on other platform. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classController_aeb4fe47c1de370d6ff5776147839234e}\label{classController_aeb4fe47c1de370d6ff5776147839234e}} 
+\index{Controller@{Controller}!start\+Discovery\+Controller@{start\+Discovery\+Controller}}
+\index{start\+Discovery\+Controller@{start\+Discovery\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{start\+Discovery\+Controller()}{startDiscoveryController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Controller\+::start\+Discovery\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Start discovering new controllers.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI has an empty implementation on Android. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classController_a56e523730da3b75bed4597ef87ec0495}\label{classController_a56e523730da3b75bed4597ef87ec0495}} 
+\index{Controller@{Controller}!stop\+Discovery\+Controller@{stop\+Discovery\+Controller}}
+\index{stop\+Discovery\+Controller@{stop\+Discovery\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{stop\+Discovery\+Controller()}{stopDiscoveryController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Controller\+::stop\+Discovery\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop the discovery process.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI only work on the I\+OS platform.\+Empty implementation on other platform. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classController_a525207ef12be4dfa7ca89461c20db976}\label{classController_a525207ef12be4dfa7ca89461c20db976}} 
+\index{Controller@{Controller}!stop\+Discovery\+Controller@{stop\+Discovery\+Controller}}
+\index{stop\+Discovery\+Controller@{stop\+Discovery\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{stop\+Discovery\+Controller()}{stopDiscoveryController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Controller\+::stop\+Discovery\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop the discovery process.
+
+\begin{DoxyWarning}{Warning}
+The A\+PI has an empty implementation on Android. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Controller.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Controller-\/android.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Controller-\/i\+O\+S.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/base/C\+C\+Controller.\+cpp\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/base/C\+C\+Controller-\/apple.\+mm\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/base/C\+C\+Controller-\/linux-\/win32.\+cpp\end{DoxyCompactItemize}

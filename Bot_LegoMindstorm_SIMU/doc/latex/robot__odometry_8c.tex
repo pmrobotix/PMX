@@ -1,0 +1,111 @@
+\hypertarget{robot__odometry_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+odometry.c File Reference}
+\label{robot__odometry_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+odometry.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+odometry.\+c}}
+{\ttfamily \#include \char`\"{}robot\+\_\+odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for robot\+\_\+odometry.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__odometry_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__odometry_8c_acd6b33c01f71cd3f28938a780548ffde}\label{robot__odometry_8c_acd6b33c01f71cd3f28938a780548ffde}} 
+\#define {\bfseries P\+R\+E\+C\+I\+S\+E\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+O\+N\+\_\+\+N\+T\+H\+\_\+\+P\+E\+R\+I\+OD}~64
+\item 
+\mbox{\Hypertarget{robot__odometry_8c_a4aa2c43b09c1300c334821f5507d6f71}\label{robot__odometry_8c_a4aa2c43b09c1300c334821f5507d6f71}} 
+\#define {\bfseries M\+\_\+2\+PI}~(2$\ast$M\+\_\+\+PI)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{robot__odometry_8c_a425448f7229a20a73149fc602ec62755}{odo\+\_\+\+Integration} (float d\+Theta, float dV)
+\begin{DoxyCompactList}\small\item\em Compute robot position using odometry. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{robot__odometry_8c_aab42f7c86b611b89cfbd6522197d494a}{odo\+\_\+\+Set\+Position} (float x, float y, float theta)
+\begin{DoxyCompactList}\small\item\em Set robot position used by odometry. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{robot__odometry_8c_a4465edbb1cb81cb3b184a552c54585d5}{odo\+\_\+\+Get\+Position\+X\+Y\+Theta} (float $\ast$x, float $\ast$y, float $\ast$theta)
+\begin{DoxyCompactList}\small\item\em Get current odometry robot position. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON \hyperlink{structRobotPosition}{Robot\+Position} \hyperlink{robot__odometry_8c_a6423ea9fb25bcd6d04c7a6c9be7ed65f}{odo\+\_\+\+Get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Get current odometry robot position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{robot__odometry_8c_a6423ea9fb25bcd6d04c7a6c9be7ed65f}\label{robot__odometry_8c_a6423ea9fb25bcd6d04c7a6c9be7ed65f}} 
+\index{robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}!odo\+\_\+\+Get\+Position@{odo\+\_\+\+Get\+Position}}
+\index{odo\+\_\+\+Get\+Position@{odo\+\_\+\+Get\+Position}!robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}}
+\subsubsection{\texorpdfstring{odo\+\_\+\+Get\+Position()}{odo\_GetPosition()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON \hyperlink{structRobotPosition}{Robot\+Position} odo\+\_\+\+Get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get current odometry robot position. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classRobot}{Robot} position in meters and angle in radian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{robot__odometry_8c_a4465edbb1cb81cb3b184a552c54585d5}\label{robot__odometry_8c_a4465edbb1cb81cb3b184a552c54585d5}} 
+\index{robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}!odo\+\_\+\+Get\+Position\+X\+Y\+Theta@{odo\+\_\+\+Get\+Position\+X\+Y\+Theta}}
+\index{odo\+\_\+\+Get\+Position\+X\+Y\+Theta@{odo\+\_\+\+Get\+Position\+X\+Y\+Theta}!robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}}
+\subsubsection{\texorpdfstring{odo\+\_\+\+Get\+Position\+X\+Y\+Theta()}{odo\_GetPositionXYTheta()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void odo\+\_\+\+Get\+Position\+X\+Y\+Theta (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float $\ast$}]{y,  }\item[{float $\ast$}]{theta }\end{DoxyParamCaption})}
+
+
+
+Get current odometry robot position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \mbox{[}out\mbox{]} \hyperlink{classRobot}{Robot} position on x axis in meters \\
+\hline
+{\em y} & \mbox{[}out\mbox{]} \hyperlink{classRobot}{Robot} position on y axis in meters \\
+\hline
+{\em theta} & \mbox{[}out\mbox{]} \hyperlink{classRobot}{Robot} orientation in radians \mbox{]}-\/\+Pi..Pi\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__odometry_8c_a425448f7229a20a73149fc602ec62755}\label{robot__odometry_8c_a425448f7229a20a73149fc602ec62755}} 
+\index{robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}!odo\+\_\+\+Integration@{odo\+\_\+\+Integration}}
+\index{odo\+\_\+\+Integration@{odo\+\_\+\+Integration}!robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}}
+\subsubsection{\texorpdfstring{odo\+\_\+\+Integration()}{odo\_Integration()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void odo\+\_\+\+Integration (\begin{DoxyParamCaption}\item[{float}]{d\+Theta,  }\item[{float}]{dV }\end{DoxyParamCaption})}
+
+
+
+Compute robot position using odometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Theta} & displacement (rotation) of the robot in radian \\
+\hline
+{\em dV} & displacement (forward) of the robot in v\+Tops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{robot__odometry_8c_aab42f7c86b611b89cfbd6522197d494a}\label{robot__odometry_8c_aab42f7c86b611b89cfbd6522197d494a}} 
+\index{robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}!odo\+\_\+\+Set\+Position@{odo\+\_\+\+Set\+Position}}
+\index{odo\+\_\+\+Set\+Position@{odo\+\_\+\+Set\+Position}!robot\+\_\+odometry.\+c@{robot\+\_\+odometry.\+c}}
+\subsubsection{\texorpdfstring{odo\+\_\+\+Set\+Position()}{odo\_SetPosition()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void odo\+\_\+\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{theta }\end{DoxyParamCaption})}
+
+
+
+Set robot position used by odometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dL} & v\+Tops elapsed on left encoder since last integration \\
+\hline
+{\em dR} & v\+Tops elapsed on right encoder since last integration \\
+\hline
+\end{DoxyParams}

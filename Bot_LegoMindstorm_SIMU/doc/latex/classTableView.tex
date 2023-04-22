@@ -1,0 +1,863 @@
+\hypertarget{classTableView}{}\section{Table\+View Class Reference}
+\label{classTableView}\index{Table\+View@{Table\+View}}
+
+
+{\ttfamily \#include $<$C\+C\+Table\+View.\+h$>$}
+
+
+
+Inheritance diagram for Table\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classTableView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Table\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTableView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTableView_ac3f6f6313847def1d5e5019c47aaf263}\label{classTableView_ac3f6f6313847def1d5e5019c47aaf263}} 
+enum {\bfseries Vertical\+Fill\+Order} \{ {\bfseries T\+O\+P\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+O\+T\+T\+O\+M\+\_\+\+UP}, 
+{\bfseries T\+O\+P\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+O\+T\+T\+O\+M\+\_\+\+UP}
+ \}
+\item 
+\mbox{\Hypertarget{classTableView_ac3f6f6313847def1d5e5019c47aaf263}\label{classTableView_ac3f6f6313847def1d5e5019c47aaf263}} 
+enum {\bfseries Vertical\+Fill\+Order} \{ {\bfseries T\+O\+P\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+O\+T\+T\+O\+M\+\_\+\+UP}, 
+{\bfseries T\+O\+P\+\_\+\+D\+O\+WN}, 
+{\bfseries B\+O\+T\+T\+O\+M\+\_\+\+UP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}{Table\+View} ()
+\item 
+virtual \hyperlink{classTableView_af8ce226b68febf945ee38531c5bd4c47}{$\sim$\+Table\+View} ()
+\item 
+\mbox{\Hypertarget{classTableView_a166e7f7de745477be219d3027c0cb234}\label{classTableView_a166e7f7de745477be219d3027c0cb234}} 
+bool {\bfseries init\+With\+View\+Size} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$ \hyperlink{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}{get\+Data\+Source} ()
+\item 
+void \hyperlink{classTableView_a3871ed3e4b512026027371680dd23159}{set\+Data\+Source} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$source)
+\item 
+\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$ \hyperlink{classTableView_a1530f5f201ca31501a85e27a3b45453f}{get\+Delegate} ()
+\item 
+void \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{set\+Delegate} (\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$p\+Delegate)
+\item 
+void \hyperlink{classTableView_a687ac9ecccbb967c84322cc69de6336e}{set\+Vertical\+Fill\+Order} (Vertical\+Fill\+Order order)
+\item 
+\mbox{\Hypertarget{classTableView_afe70d5c1306fd8c67a39a676ce96b0fa}\label{classTableView_afe70d5c1306fd8c67a39a676ce96b0fa}} 
+Vertical\+Fill\+Order {\bfseries get\+Vertical\+Fill\+Order} ()
+\item 
+void \hyperlink{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}{update\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_a78419c05170575d818d08809dfab0b2f}{insert\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}{remove\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}{reload\+Data} ()
+\item 
+\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ \hyperlink{classTableView_a0ee5c0422aa304daea662b1c1fdeb723}{dequeue\+Cell} ()
+\item 
+\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ \hyperlink{classTableView_a629f0d9b1261ba105583e03ec3cf69bc}{cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+virtual void \hyperlink{classTableView_a021ba3adef24829362018d36f4a08621}{scroll\+View\+Did\+Scroll} (\hyperlink{classScrollView}{Scroll\+View} $\ast$view) override
+\item 
+virtual void \hyperlink{classTableView_a5c83605ee0059fa74e9c184301cbb368}{scroll\+View\+Did\+Zoom} (\hyperlink{classScrollView}{Scroll\+View} $\ast$view) override
+\item 
+virtual bool \hyperlink{classTableView_a57908fcd3fe592e50ff721dd84675a01}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTableView_acd131e5fa29332743e625a1a0d047965}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classTableView_a5ed81baf58526698abefaf8ca08a6c01}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+\mbox{\Hypertarget{classTableView_a7a77e69d84a47f298dbc3ce078c89db7}\label{classTableView_a7a77e69d84a47f298dbc3ce078c89db7}} 
+void {\bfseries \+\_\+update\+Content\+Size} ()
+\item 
+\hyperlink{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}{Table\+View} ()
+\item 
+virtual \hyperlink{classTableView_a37d3730d6416dc370e9882c971016061}{$\sim$\+Table\+View} ()
+\item 
+\mbox{\Hypertarget{classTableView_a166e7f7de745477be219d3027c0cb234}\label{classTableView_a166e7f7de745477be219d3027c0cb234}} 
+bool {\bfseries init\+With\+View\+Size} (\hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container=N\+U\+LL)
+\item 
+\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$ \hyperlink{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}{get\+Data\+Source} ()
+\item 
+void \hyperlink{classTableView_a3871ed3e4b512026027371680dd23159}{set\+Data\+Source} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$source)
+\item 
+\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$ \hyperlink{classTableView_a1530f5f201ca31501a85e27a3b45453f}{get\+Delegate} ()
+\item 
+void \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{set\+Delegate} (\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$p\+Delegate)
+\item 
+void \hyperlink{classTableView_a687ac9ecccbb967c84322cc69de6336e}{set\+Vertical\+Fill\+Order} (Vertical\+Fill\+Order order)
+\item 
+\mbox{\Hypertarget{classTableView_a1723e663a00db8587c5a35e91d25eaf1}\label{classTableView_a1723e663a00db8587c5a35e91d25eaf1}} 
+Vertical\+Fill\+Order {\bfseries get\+Vertical\+Fill\+Order} ()
+\item 
+void \hyperlink{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}{update\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_a78419c05170575d818d08809dfab0b2f}{insert\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}{remove\+Cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}{reload\+Data} ()
+\item 
+\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ \hyperlink{classTableView_a262343ca04059c20bc870a218e9ab800}{dequeue\+Cell} ()
+\item 
+\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ \hyperlink{classTableView_a90574ea8dfa630cd2b4354ae134b8731}{cell\+At\+Index} (ssize\+\_\+t idx)
+\item 
+virtual void \hyperlink{classTableView_ac81b28599ca1bad73bf28b8d2e3d72bf}{scroll\+View\+Did\+Scroll} (\hyperlink{classScrollView}{Scroll\+View} $\ast$view) override
+\item 
+virtual void \hyperlink{classTableView_a5c83605ee0059fa74e9c184301cbb368}{scroll\+View\+Did\+Zoom} (\hyperlink{classScrollView}{Scroll\+View} $\ast$view) override
+\item 
+virtual bool \hyperlink{classTableView_a195a00658f0ba79be1b59935569c3c7c}{on\+Touch\+Began} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\begin{DoxyCompactList}\small\item\em Callbacks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTableView_a242e9d8c695681b41eef636471e768b5}{on\+Touch\+Moved} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classTableView_a361d91c5c592b3d81ed43b6743487fc3}{on\+Touch\+Ended} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+virtual void \hyperlink{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}{on\+Touch\+Cancelled} (\hyperlink{classTouch}{Touch} $\ast$p\+Touch, \hyperlink{classEvent}{Event} $\ast$p\+Event) override
+\item 
+\mbox{\Hypertarget{classTableView_a7a77e69d84a47f298dbc3ce078c89db7}\label{classTableView_a7a77e69d84a47f298dbc3ce078c89db7}} 
+void {\bfseries \+\_\+update\+Content\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create} ()
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_af7ff725904118f7caa7fcc447819a6e1}{create} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$data\+Source, \hyperlink{classSize}{Size} size)
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_aec43e89bafbdb358c0de3e05e92b1006}{create} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$data\+Source, \hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container)
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_af5e1b12f61e42fc05c1e798bd9603af6}{create} ()
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_add92e8beb89ba7e76848ec1c07836a1c}{create} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$data\+Source, \hyperlink{classSize}{Size} size)
+\item 
+static \hyperlink{classTableView}{Table\+View} $\ast$ \hyperlink{classTableView_a70a35ba0d9947307b762ee96e71dfa76}{create} (\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$data\+Source, \hyperlink{classSize}{Size} size, \hyperlink{classNode}{Node} $\ast$container)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTableView_ab31070c638f0182d038cb177d64a544f}\label{classTableView_ab31070c638f0182d038cb177d64a544f}} 
+long {\bfseries \+\_\+\+\_\+index\+From\+Offset} (\hyperlink{classVec2}{Vec2} offset)
+\item 
+\mbox{\Hypertarget{classTableView_a830322563225158d0d10e658daf1f31a}\label{classTableView_a830322563225158d0d10e658daf1f31a}} 
+long {\bfseries \+\_\+index\+From\+Offset} (\hyperlink{classVec2}{Vec2} offset)
+\item 
+\mbox{\Hypertarget{classTableView_a5d0ed22bbcb99ddee253dfb4927c3017}\label{classTableView_a5d0ed22bbcb99ddee253dfb4927c3017}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+\+\_\+offset\+From\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classTableView_a9cfc9aaa07d8dc0ee99146b63ad2385a}\label{classTableView_a9cfc9aaa07d8dc0ee99146b63ad2385a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+offset\+From\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classTableView_a422154199b7e02298d30a62bfe4c9596}\label{classTableView_a422154199b7e02298d30a62bfe4c9596}} 
+void {\bfseries \+\_\+move\+Cell\+Out\+Of\+Sight} (\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_ac52499f81180a7a70ef3bbe5ed4c9bfe}\label{classTableView_ac52499f81180a7a70ef3bbe5ed4c9bfe}} 
+void {\bfseries \+\_\+set\+Index\+For\+Cell} (ssize\+\_\+t index, \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_a749a0546b3ac4113dc848fcd8c21ae1b}\label{classTableView_a749a0546b3ac4113dc848fcd8c21ae1b}} 
+void {\bfseries \+\_\+add\+Cell\+If\+Necessary} (\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_a766272288f4bd76300915020bb25b5e6}\label{classTableView_a766272288f4bd76300915020bb25b5e6}} 
+void {\bfseries \+\_\+update\+Cell\+Positions} ()
+\item 
+\mbox{\Hypertarget{classTableView_ab31070c638f0182d038cb177d64a544f}\label{classTableView_ab31070c638f0182d038cb177d64a544f}} 
+long {\bfseries \+\_\+\+\_\+index\+From\+Offset} (\hyperlink{classVec2}{Vec2} offset)
+\item 
+\mbox{\Hypertarget{classTableView_a830322563225158d0d10e658daf1f31a}\label{classTableView_a830322563225158d0d10e658daf1f31a}} 
+long {\bfseries \+\_\+index\+From\+Offset} (\hyperlink{classVec2}{Vec2} offset)
+\item 
+\mbox{\Hypertarget{classTableView_a5d0ed22bbcb99ddee253dfb4927c3017}\label{classTableView_a5d0ed22bbcb99ddee253dfb4927c3017}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+\+\_\+offset\+From\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classTableView_a9cfc9aaa07d8dc0ee99146b63ad2385a}\label{classTableView_a9cfc9aaa07d8dc0ee99146b63ad2385a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+offset\+From\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classTableView_a422154199b7e02298d30a62bfe4c9596}\label{classTableView_a422154199b7e02298d30a62bfe4c9596}} 
+void {\bfseries \+\_\+move\+Cell\+Out\+Of\+Sight} (\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_ac52499f81180a7a70ef3bbe5ed4c9bfe}\label{classTableView_ac52499f81180a7a70ef3bbe5ed4c9bfe}} 
+void {\bfseries \+\_\+set\+Index\+For\+Cell} (ssize\+\_\+t index, \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_a749a0546b3ac4113dc848fcd8c21ae1b}\label{classTableView_a749a0546b3ac4113dc848fcd8c21ae1b}} 
+void {\bfseries \+\_\+add\+Cell\+If\+Necessary} (\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$cell)
+\item 
+\mbox{\Hypertarget{classTableView_a766272288f4bd76300915020bb25b5e6}\label{classTableView_a766272288f4bd76300915020bb25b5e6}} 
+void {\bfseries \+\_\+update\+Cell\+Positions} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTableView_af9e26d2378247f5631ee67302c54121d}\label{classTableView_af9e26d2378247f5631ee67302c54121d}} 
+\hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ {\bfseries \+\_\+touched\+Cell}
+\item 
+Vertical\+Fill\+Order \hyperlink{classTableView_a6cbf92892d660a0783a25e301c8f9358}{\+\_\+vordering}
+\item 
+std\+::set$<$ ssize\+\_\+t $>$ $\ast$ \hyperlink{classTableView_ade6d803003ab47ae75cf86e8fffeb313}{\+\_\+indices}
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classTableView_a1f5376c490fbbfe40edf5e016c364567}{\+\_\+v\+Cells\+Positions}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ $>$ \hyperlink{classTableView_aa3996f96046814cc6fca417ea794dac1}{\+\_\+cells\+Used}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ $>$ \hyperlink{classTableView_a401a2ee88c8b610ffe98e761a7ae7612}{\+\_\+cells\+Freed}
+\item 
+\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$ \hyperlink{classTableView_a2b8ece22aaa72b09778f4b82adb75cbf}{\+\_\+data\+Source}
+\item 
+\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$ \hyperlink{classTableView_a8ce7267b530c5e8d23cf60518527eeca}{\+\_\+table\+View\+Delegate}
+\item 
+\mbox{\Hypertarget{classTableView_a75a062d57f38300295656c653432818f}\label{classTableView_a75a062d57f38300295656c653432818f}} 
+Direction {\bfseries \+\_\+old\+Direction}
+\item 
+\mbox{\Hypertarget{classTableView_a34c672662c4c5628a4017308d0d84f27}\label{classTableView_a34c672662c4c5628a4017308d0d84f27}} 
+bool {\bfseries \+\_\+is\+Used\+Cells\+Dirty}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+U\+I\+Table\+View support for cocos2d-\/x.
+
+This is a very basic, minimal implementation to bring U\+I\+Table\+View-\/like component into cocos2d world. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}\label{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}} 
+\index{Table\+View@{Table\+View}!Table\+View@{Table\+View}}
+\index{Table\+View@{Table\+View}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{Table\+View()}{TableView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Table\+View\+::\+Table\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classTableView_af8ce226b68febf945ee38531c5bd4c47}\label{classTableView_af8ce226b68febf945ee38531c5bd4c47}} 
+\index{Table\+View@{Table\+View}!````~Table\+View@{$\sim$\+Table\+View}}
+\index{````~Table\+View@{$\sim$\+Table\+View}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Table\+View()}{~TableView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Table\+View\+::$\sim$\+Table\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}\label{classTableView_a5af30a8dfb5cc01b5bd2db1ac59e91fd}} 
+\index{Table\+View@{Table\+View}!Table\+View@{Table\+View}}
+\index{Table\+View@{Table\+View}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{Table\+View()}{TableView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Table\+View\+::\+Table\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor  new \mbox{\Hypertarget{classTableView_a37d3730d6416dc370e9882c971016061}\label{classTableView_a37d3730d6416dc370e9882c971016061}} 
+\index{Table\+View@{Table\+View}!````~Table\+View@{$\sim$\+Table\+View}}
+\index{````~Table\+View@{$\sim$\+Table\+View}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Table\+View()}{~TableView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Table\+View\+::$\sim$\+Table\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTableView_a90574ea8dfa630cd2b4354ae134b8731}\label{classTableView_a90574ea8dfa630cd2b4354ae134b8731}} 
+\index{Table\+View@{Table\+View}!cell\+At\+Index@{cell\+At\+Index}}
+\index{cell\+At\+Index@{cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{cell\+At\+Index()}{cellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewCell}{Table\+View\+Cell}$\ast$ Table\+View\+::cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Returns an existing cell at a given index. Returns nil if a cell is nonexistent at the moment of query.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a cell at a given index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_a629f0d9b1261ba105583e03ec3cf69bc}\label{classTableView_a629f0d9b1261ba105583e03ec3cf69bc}} 
+\index{Table\+View@{Table\+View}!cell\+At\+Index@{cell\+At\+Index}}
+\index{cell\+At\+Index@{cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{cell\+At\+Index()}{cellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ Table\+View\+::cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Returns an existing cell at a given index. Returns nil if a cell is nonexistent at the moment of query.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a cell at a given index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_af5e1b12f61e42fc05c1e798bd9603af6}\label{classTableView_af5e1b12f61e42fc05c1e798bd9603af6}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily static \hyperlink{classTableView}{Table\+View}$\ast$ Table\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Empty constructor of \hyperlink{classTableView}{Table\+View} \mbox{\Hypertarget{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}\label{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \hyperlink{classTableView}{Table\+View} $\ast$ Table\+View\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Empty constructor of \hyperlink{classTableView}{Table\+View} \mbox{\Hypertarget{classTableView_add92e8beb89ba7e76848ec1c07836a1c}\label{classTableView_add92e8beb89ba7e76848ec1c07836a1c}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily static \hyperlink{classTableView}{Table\+View}$\ast$ Table\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{data\+Source,  }\item[{\hyperlink{classSize}{Size}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An initialized table view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Source} & data source \\
+\hline
+{\em size} & view size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+table view 
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var jsObject,var size)
+in lua:local \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var size)
+in lua:
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_af7ff725904118f7caa7fcc447819a6e1}\label{classTableView_af7ff725904118f7caa7fcc447819a6e1}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \hyperlink{classTableView}{Table\+View} $\ast$ Table\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{data\+Source,  }\item[{\hyperlink{classSize}{Size}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An initialized table view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Source} & data source \\
+\hline
+{\em size} & view size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+table view 
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var jsObject,var size)
+in lua:local \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var size)
+in lua:
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_a70a35ba0d9947307b762ee96e71dfa76}\label{classTableView_a70a35ba0d9947307b762ee96e71dfa76}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily static \hyperlink{classTableView}{Table\+View}$\ast$ Table\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{data\+Source,  }\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An initialized table view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Source} & data source; \\
+\hline
+{\em size} & view size \\
+\hline
+{\em container} & parent object for cells \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+table view 
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var jsObject,var size,var container)
+in lua:local \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var size, var container)
+in lua:
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_aec43e89bafbdb358c0de3e05e92b1006}\label{classTableView_aec43e89bafbdb358c0de3e05e92b1006}} 
+\index{Table\+View@{Table\+View}!create@{create}}
+\index{create@{create}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \hyperlink{classTableView}{Table\+View} $\ast$ Table\+View\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{data\+Source,  }\item[{\hyperlink{classSize}{Size}}]{size,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An initialized table view object
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+Source} & data source; \\
+\hline
+{\em size} & view size \\
+\hline
+{\em container} & parent object for cells \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+table view 
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var jsObject,var size,var container)
+in lua:local \hyperlink{classTableView_a298f6ec9b9dc31b643b2027e3c91d6a1}{create}(var size, var container)
+in lua:
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_a262343ca04059c20bc870a218e9ab800}\label{classTableView_a262343ca04059c20bc870a218e9ab800}} 
+\index{Table\+View@{Table\+View}!dequeue\+Cell@{dequeue\+Cell}}
+\index{dequeue\+Cell@{dequeue\+Cell}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{dequeue\+Cell()}{dequeueCell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewCell}{Table\+View\+Cell}$\ast$ Table\+View\+::dequeue\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Dequeues a free cell if available. nil if not.
+
+\begin{DoxyReturn}{Returns}
+free cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_a0ee5c0422aa304daea662b1c1fdeb723}\label{classTableView_a0ee5c0422aa304daea662b1c1fdeb723}} 
+\index{Table\+View@{Table\+View}!dequeue\+Cell@{dequeue\+Cell}}
+\index{dequeue\+Cell@{dequeue\+Cell}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{dequeue\+Cell()}{dequeueCell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ Table\+View\+::dequeue\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Dequeues a free cell if available. nil if not.
+
+\begin{DoxyReturn}{Returns}
+free cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}\label{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}} 
+\index{Table\+View@{Table\+View}!get\+Data\+Source@{get\+Data\+Source}}
+\index{get\+Data\+Source@{get\+Data\+Source}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{get\+Data\+Source()}{getDataSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source}$\ast$ Table\+View\+::get\+Data\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+data source  NA  NA \mbox{\Hypertarget{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}\label{classTableView_aca51ba7a0f81e6e3c80056733665cd5a}} 
+\index{Table\+View@{Table\+View}!get\+Data\+Source@{get\+Data\+Source}}
+\index{get\+Data\+Source@{get\+Data\+Source}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{get\+Data\+Source()}{getDataSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source}$\ast$ Table\+View\+::get\+Data\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+data source  NA  NA \mbox{\Hypertarget{classTableView_a1530f5f201ca31501a85e27a3b45453f}\label{classTableView_a1530f5f201ca31501a85e27a3b45453f}} 
+\index{Table\+View@{Table\+View}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDelegate}{Table\+View\+Delegate}$\ast$ Table\+View\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+delegate  NA  NA \mbox{\Hypertarget{classTableView_a1530f5f201ca31501a85e27a3b45453f}\label{classTableView_a1530f5f201ca31501a85e27a3b45453f}} 
+\index{Table\+View@{Table\+View}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDelegate}{Table\+View\+Delegate}$\ast$ Table\+View\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+delegate  NA  NA \mbox{\Hypertarget{classTableView_a78419c05170575d818d08809dfab0b2f}\label{classTableView_a78419c05170575d818d08809dfab0b2f}} 
+\index{Table\+View@{Table\+View}!insert\+Cell\+At\+Index@{insert\+Cell\+At\+Index}}
+\index{insert\+Cell\+At\+Index@{insert\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{insert\+Cell\+At\+Index()}{insertCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::insert\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Inserts a new cell at a given index
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & location to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTableView_a78419c05170575d818d08809dfab0b2f}\label{classTableView_a78419c05170575d818d08809dfab0b2f}} 
+\index{Table\+View@{Table\+View}!insert\+Cell\+At\+Index@{insert\+Cell\+At\+Index}}
+\index{insert\+Cell\+At\+Index@{insert\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{insert\+Cell\+At\+Index()}{insertCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::insert\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Inserts a new cell at a given index
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & location to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTableView_a195a00658f0ba79be1b59935569c3c7c}\label{classTableView_a195a00658f0ba79be1b59935569c3c7c}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Table\+View\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a57908fcd3fe592e50ff721dd84675a01}\label{classTableView_a57908fcd3fe592e50ff721dd84675a01}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Began@{on\+Touch\+Began}}
+\index{on\+Touch\+Began@{on\+Touch\+Began}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Began()}{onTouchBegan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Table\+View\+::on\+Touch\+Began (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callbacks. 
+
+Callback function for touch began.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if return false, on\+Touch\+Moved, on\+Touch\+Ended, on\+Touch\+Cancelled will never called.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classScrollView_a18daa7ba9b5f802e65a6df2dde10a625}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}\label{classTableView_a743113e92ef98837c4cfdacf40fd0a0f}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a5ed81baf58526698abefaf8ca08a6c01}\label{classTableView_a5ed81baf58526698abefaf8ca08a6c01}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Cancelled@{on\+Touch\+Cancelled}}
+\index{on\+Touch\+Cancelled@{on\+Touch\+Cancelled}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Cancelled()}{onTouchCancelled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::on\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch cancelled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a48d7dc926fdbd91707e37167dcf4d36f}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a361d91c5c592b3d81ed43b6743487fc3}\label{classTableView_a361d91c5c592b3d81ed43b6743487fc3}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a86f57715da926a475b75d67eff84701d}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}\label{classTableView_a0d96aaf8ac40256ed144565beaaf76aa}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Ended@{on\+Touch\+Ended}}
+\index{on\+Touch\+Ended@{on\+Touch\+Ended}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Ended()}{onTouchEnded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::on\+Touch\+Ended (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch ended.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a86f57715da926a475b75d67eff84701d}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_a242e9d8c695681b41eef636471e768b5}\label{classTableView_a242e9d8c695681b41eef636471e768b5}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_acd131e5fa29332743e625a1a0d047965}\label{classTableView_acd131e5fa29332743e625a1a0d047965}} 
+\index{Table\+View@{Table\+View}!on\+Touch\+Moved@{on\+Touch\+Moved}}
+\index{on\+Touch\+Moved@{on\+Touch\+Moved}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{on\+Touch\+Moved()}{onTouchMoved()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::on\+Touch\+Moved (\begin{DoxyParamCaption}\item[{\hyperlink{classTouch}{Touch} $\ast$}]{touch,  }\item[{\hyperlink{classEvent}{Event} $\ast$}]{unused\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Callback function for touch moved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch} & \hyperlink{classTouch}{Touch} information. \\
+\hline
+{\em unused\+\_\+event} & \hyperlink{classEvent}{Event} information.  NA \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classScrollView_a0958fd1a06430212b3d3cbe26ce2bb9c}{Scroll\+View}.
+
+\mbox{\Hypertarget{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}\label{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}} 
+\index{Table\+View@{Table\+View}!reload\+Data@{reload\+Data}}
+\index{reload\+Data@{reload\+Data}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{reload\+Data()}{reloadData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::reload\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reloads data from data source. the view will be refreshed. \mbox{\Hypertarget{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}\label{classTableView_ad142e6fbf0bf66d2d27fdb616a8a726c}} 
+\index{Table\+View@{Table\+View}!reload\+Data@{reload\+Data}}
+\index{reload\+Data@{reload\+Data}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{reload\+Data()}{reloadData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::reload\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reloads data from data source. the view will be refreshed. \mbox{\Hypertarget{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}\label{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}} 
+\index{Table\+View@{Table\+View}!remove\+Cell\+At\+Index@{remove\+Cell\+At\+Index}}
+\index{remove\+Cell\+At\+Index@{remove\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{remove\+Cell\+At\+Index()}{removeCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::remove\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Removes a cell at a given index
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index to find a cell \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}\label{classTableView_afaef50b9df2cc2c3d34bb157d046f73f}} 
+\index{Table\+View@{Table\+View}!remove\+Cell\+At\+Index@{remove\+Cell\+At\+Index}}
+\index{remove\+Cell\+At\+Index@{remove\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{remove\+Cell\+At\+Index()}{removeCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::remove\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Removes a cell at a given index
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index to find a cell \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTableView_ac81b28599ca1bad73bf28b8d2e3d72bf}\label{classTableView_ac81b28599ca1bad73bf28b8d2e3d72bf}} 
+\index{Table\+View@{Table\+View}!scroll\+View\+Did\+Scroll@{scroll\+View\+Did\+Scroll}}
+\index{scroll\+View\+Did\+Scroll@{scroll\+View\+Did\+Scroll}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{scroll\+View\+Did\+Scroll()}{scrollViewDidScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::scroll\+View\+Did\+Scroll (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollView}{Scroll\+View} $\ast$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classScrollViewDelegate_acdb3346314b9769c08add984a2abe0f8}{Scroll\+View\+Delegate}.
+
+\mbox{\Hypertarget{classTableView_a021ba3adef24829362018d36f4a08621}\label{classTableView_a021ba3adef24829362018d36f4a08621}} 
+\index{Table\+View@{Table\+View}!scroll\+View\+Did\+Scroll@{scroll\+View\+Did\+Scroll}}
+\index{scroll\+View\+Did\+Scroll@{scroll\+View\+Did\+Scroll}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{scroll\+View\+Did\+Scroll()}{scrollViewDidScroll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::scroll\+View\+Did\+Scroll (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollView}{Scroll\+View} $\ast$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classScrollViewDelegate_acdb3346314b9769c08add984a2abe0f8}{Scroll\+View\+Delegate}.
+
+\mbox{\Hypertarget{classTableView_a5c83605ee0059fa74e9c184301cbb368}\label{classTableView_a5c83605ee0059fa74e9c184301cbb368}} 
+\index{Table\+View@{Table\+View}!scroll\+View\+Did\+Zoom@{scroll\+View\+Did\+Zoom}}
+\index{scroll\+View\+Did\+Zoom@{scroll\+View\+Did\+Zoom}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{scroll\+View\+Did\+Zoom()}{scrollViewDidZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::scroll\+View\+Did\+Zoom (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollView}{Scroll\+View} $\ast$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classScrollViewDelegate_a442695e2f1b1d9ee3959a0a5e8d1bd03}{Scroll\+View\+Delegate}.
+
+\mbox{\Hypertarget{classTableView_a5c83605ee0059fa74e9c184301cbb368}\label{classTableView_a5c83605ee0059fa74e9c184301cbb368}} 
+\index{Table\+View@{Table\+View}!scroll\+View\+Did\+Zoom@{scroll\+View\+Did\+Zoom}}
+\index{scroll\+View\+Did\+Zoom@{scroll\+View\+Did\+Zoom}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{scroll\+View\+Did\+Zoom()}{scrollViewDidZoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Table\+View\+::scroll\+View\+Did\+Zoom (\begin{DoxyParamCaption}\item[{\hyperlink{classScrollView}{Scroll\+View} $\ast$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classScrollViewDelegate_a442695e2f1b1d9ee3959a0a5e8d1bd03}{Scroll\+View\+Delegate}.
+
+\mbox{\Hypertarget{classTableView_a3871ed3e4b512026027371680dd23159}\label{classTableView_a3871ed3e4b512026027371680dd23159}} 
+\index{Table\+View@{Table\+View}!set\+Data\+Source@{set\+Data\+Source}}
+\index{set\+Data\+Source@{set\+Data\+Source}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Data\+Source()}{setDataSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Data\+Source (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_a3871ed3e4b512026027371680dd23159}{setDataSource}(var jsSource)
+in lua:local \hyperlink{classTableView_a3871ed3e4b512026027371680dd23159}{setDataSource}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classTableView_a3871ed3e4b512026027371680dd23159}\label{classTableView_a3871ed3e4b512026027371680dd23159}} 
+\index{Table\+View@{Table\+View}!set\+Data\+Source@{set\+Data\+Source}}
+\index{set\+Data\+Source@{set\+Data\+Source}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Data\+Source()}{setDataSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Data\+Source (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+when this function bound to js or lua,the input params are changed in js\+:var set\+Data\+Source(var js\+Source) in lua\+:local \hyperlink{classTableView_a3871ed3e4b512026027371680dd23159}{set\+Data\+Source()}  \mbox{\Hypertarget{classTableView_afb2bffdd669f02feb74e2534d477dc1b}\label{classTableView_afb2bffdd669f02feb74e2534d477dc1b}} 
+\index{Table\+View@{Table\+View}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$}]{p\+Delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{setDelegate}(var jsDelegate)
+in lua:local \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{setDelegate}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classTableView_afb2bffdd669f02feb74e2534d477dc1b}\label{classTableView_afb2bffdd669f02feb74e2534d477dc1b}} 
+\index{Table\+View@{Table\+View}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$}]{p\+Delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}
+when \textcolor{keyword}{this} \textcolor{keyword}{function} bound to js or lua,the input params are changed
+in js:var \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{setDelegate}(var jsDelegate)
+in lua:local \hyperlink{classTableView_afb2bffdd669f02feb74e2534d477dc1b}{setDelegate}()
+\end{DoxyCode}
+ \mbox{\Hypertarget{classTableView_a687ac9ecccbb967c84322cc69de6336e}\label{classTableView_a687ac9ecccbb967c84322cc69de6336e}} 
+\index{Table\+View@{Table\+View}!set\+Vertical\+Fill\+Order@{set\+Vertical\+Fill\+Order}}
+\index{set\+Vertical\+Fill\+Order@{set\+Vertical\+Fill\+Order}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Vertical\+Fill\+Order()}{setVerticalFillOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Vertical\+Fill\+Order (\begin{DoxyParamCaption}\item[{Vertical\+Fill\+Order}]{order }\end{DoxyParamCaption})}
+
+determines how cell is ordered and filled in the view. \mbox{\Hypertarget{classTableView_a687ac9ecccbb967c84322cc69de6336e}\label{classTableView_a687ac9ecccbb967c84322cc69de6336e}} 
+\index{Table\+View@{Table\+View}!set\+Vertical\+Fill\+Order@{set\+Vertical\+Fill\+Order}}
+\index{set\+Vertical\+Fill\+Order@{set\+Vertical\+Fill\+Order}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{set\+Vertical\+Fill\+Order()}{setVerticalFillOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::set\+Vertical\+Fill\+Order (\begin{DoxyParamCaption}\item[{Vertical\+Fill\+Order}]{order }\end{DoxyParamCaption})}
+
+determines how cell is ordered and filled in the view. \mbox{\Hypertarget{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}\label{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}} 
+\index{Table\+View@{Table\+View}!update\+Cell\+At\+Index@{update\+Cell\+At\+Index}}
+\index{update\+Cell\+At\+Index@{update\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{update\+Cell\+At\+Index()}{updateCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Table\+View\+::update\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Updates the content of the cell at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index to find a cell \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}\label{classTableView_a98a5e4c9b7c7841fb9ecb15604bd3dc5}} 
+\index{Table\+View@{Table\+View}!update\+Cell\+At\+Index@{update\+Cell\+At\+Index}}
+\index{update\+Cell\+At\+Index@{update\+Cell\+At\+Index}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{update\+Cell\+At\+Index()}{updateCellAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Table\+View\+::update\+Cell\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Updates the content of the cell at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index to find a cell \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTableView_a401a2ee88c8b610ffe98e761a7ae7612}\label{classTableView_a401a2ee88c8b610ffe98e761a7ae7612}} 
+\index{Table\+View@{Table\+View}!\+\_\+cells\+Freed@{\+\_\+cells\+Freed}}
+\index{\+\_\+cells\+Freed@{\+\_\+cells\+Freed}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+cells\+Freed}{\_cellsFreed}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ $>$ Table\+View\+::\+\_\+cells\+Freed\hspace{0.3cm}{\ttfamily [protected]}}
+
+free \hyperlink{protocollist-p}{list} of cells \mbox{\Hypertarget{classTableView_aa3996f96046814cc6fca417ea794dac1}\label{classTableView_aa3996f96046814cc6fca417ea794dac1}} 
+\index{Table\+View@{Table\+View}!\+\_\+cells\+Used@{\+\_\+cells\+Used}}
+\index{\+\_\+cells\+Used@{\+\_\+cells\+Used}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+cells\+Used}{\_cellsUsed}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classTableViewCell}{Table\+View\+Cell} $\ast$ $>$ Table\+View\+::\+\_\+cells\+Used\hspace{0.3cm}{\ttfamily [protected]}}
+
+cells that are currently in the table \mbox{\Hypertarget{classTableView_a2b8ece22aaa72b09778f4b82adb75cbf}\label{classTableView_a2b8ece22aaa72b09778f4b82adb75cbf}} 
+\index{Table\+View@{Table\+View}!\+\_\+data\+Source@{\+\_\+data\+Source}}
+\index{\+\_\+data\+Source@{\+\_\+data\+Source}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+data\+Source}{\_dataSource}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDataSource}{Table\+View\+Data\+Source} $\ast$ Table\+View\+::\+\_\+data\+Source\hspace{0.3cm}{\ttfamily [protected]}}
+
+weak link to the data source object \mbox{\Hypertarget{classTableView_ade6d803003ab47ae75cf86e8fffeb313}\label{classTableView_ade6d803003ab47ae75cf86e8fffeb313}} 
+\index{Table\+View@{Table\+View}!\+\_\+indices@{\+\_\+indices}}
+\index{\+\_\+indices@{\+\_\+indices}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+indices}{\_indices}}
+{\footnotesize\ttfamily std\+::set$<$ ssize\+\_\+t $>$ $\ast$ Table\+View\+::\+\_\+indices\hspace{0.3cm}{\ttfamily [protected]}}
+
+index set to query the indexes of the cells used. \mbox{\Hypertarget{classTableView_a8ce7267b530c5e8d23cf60518527eeca}\label{classTableView_a8ce7267b530c5e8d23cf60518527eeca}} 
+\index{Table\+View@{Table\+View}!\+\_\+table\+View\+Delegate@{\+\_\+table\+View\+Delegate}}
+\index{\+\_\+table\+View\+Delegate@{\+\_\+table\+View\+Delegate}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+table\+View\+Delegate}{\_tableViewDelegate}}
+{\footnotesize\ttfamily \hyperlink{classTableViewDelegate}{Table\+View\+Delegate} $\ast$ Table\+View\+::\+\_\+table\+View\+Delegate\hspace{0.3cm}{\ttfamily [protected]}}
+
+weak link to the delegate object \mbox{\Hypertarget{classTableView_a1f5376c490fbbfe40edf5e016c364567}\label{classTableView_a1f5376c490fbbfe40edf5e016c364567}} 
+\index{Table\+View@{Table\+View}!\+\_\+v\+Cells\+Positions@{\+\_\+v\+Cells\+Positions}}
+\index{\+\_\+v\+Cells\+Positions@{\+\_\+v\+Cells\+Positions}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+v\+Cells\+Positions}{\_vCellsPositions}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Table\+View\+::\+\_\+v\+Cells\+Positions\hspace{0.3cm}{\ttfamily [protected]}}
+
+vector with all cell positions \mbox{\Hypertarget{classTableView_a6cbf92892d660a0783a25e301c8f9358}\label{classTableView_a6cbf92892d660a0783a25e301c8f9358}} 
+\index{Table\+View@{Table\+View}!\+\_\+vordering@{\+\_\+vordering}}
+\index{\+\_\+vordering@{\+\_\+vordering}!Table\+View@{Table\+View}}
+\subsubsection{\texorpdfstring{\+\_\+vordering}{\_vordering}}
+{\footnotesize\ttfamily Vertical\+Fill\+Order Table\+View\+::\+\_\+vordering\hspace{0.3cm}{\ttfamily [protected]}}
+
+vertical direction of cell filling 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Scroll\+View/C\+C\+Table\+View.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+G\+U\+I/\+C\+C\+Scroll\+View/C\+C\+Table\+View.\+cpp\end{DoxyCompactItemize}

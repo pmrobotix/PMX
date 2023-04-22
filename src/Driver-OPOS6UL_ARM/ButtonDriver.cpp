@@ -24,7 +24,7 @@ bool ButtonDriver::pressed(ButtonTouch button)
 {
     uint8_t adafruit_buttons = 0;
     adafruit_buttons = Adafruit_RGBLCDShield::instance().readButtons();
-    utils::sleep_for_micros(20000); //Pause pour l'appui réel par un doigt et eviter de
+    //utils::sleep_for_micros(1000); //10000 Pause pour l'appui réel par un doigt et eviter de
 
     if (adafruit_buttons) {
         switch (button) {

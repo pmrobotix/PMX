@@ -1,0 +1,773 @@
+\hypertarget{classGLProgramState}{}\section{G\+L\+Program\+State Class Reference}
+\label{classGLProgramState}\index{G\+L\+Program\+State@{G\+L\+Program\+State}}
+
+
+{\ttfamily \#include $<$C\+C\+G\+L\+Program\+State.\+h$>$}
+
+
+
+Inheritance diagram for G\+L\+Program\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classGLProgramState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+L\+Program\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGLProgramState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGLProgramState_1_1AutoBindingResolver}{Auto\+Binding\+Resolver}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a60985933fbcc9d05da3765aa770c37ab}{clone} () const
+\item 
+void \hyperlink{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}{apply} (const \hyperlink{classMat4}{Mat4} \&model\+View)
+\item 
+void \hyperlink{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}{apply\+G\+L\+Program} (const \hyperlink{classMat4}{Mat4} \&model\+View)
+\item 
+void \hyperlink{classGLProgramState_af524cc2e3b621997336d5b58f221c624}{apply\+Attributes} (bool apply\+Attrib\+Flags=true)
+\item 
+void \hyperlink{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}{apply\+Uniforms} ()
+\item 
+uint32\+\_\+t \hyperlink{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}{get\+Vertex\+Attribs\+Flags} () const
+\item 
+ssize\+\_\+t \hyperlink{classGLProgramState_af106445181df4e066f599418232e6b7e}{get\+Vertex\+Attrib\+Count} () const
+\item 
+ssize\+\_\+t \hyperlink{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}{get\+Uniform\+Count} () const
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classGLProgramState_afd883d9c022e161039fcec12778a9963}{get\+Node\+Binding} () const
+\item 
+void \hyperlink{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}{set\+Node\+Binding} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classGLProgramState_a495c04e63419504e616bae7795bf0af9}{apply\+Auto\+Binding} (const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)
+\item 
+void \hyperlink{classGLProgramState_adabf77e7268bff9186c1009c3625f983}{set\+Parameter\+Auto\+Binding} (const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)
+\item 
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_adead71e82d66f5d93b73871f3766eb7a}{clone} () const
+\item 
+void \hyperlink{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}{apply} (const \hyperlink{classMat4}{Mat4} \&model\+View)
+\item 
+void \hyperlink{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}{apply\+G\+L\+Program} (const \hyperlink{classMat4}{Mat4} \&model\+View)
+\item 
+void \hyperlink{classGLProgramState_af524cc2e3b621997336d5b58f221c624}{apply\+Attributes} (bool apply\+Attrib\+Flags=true)
+\item 
+void \hyperlink{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}{apply\+Uniforms} ()
+\item 
+uint32\+\_\+t \hyperlink{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}{get\+Vertex\+Attribs\+Flags} () const
+\item 
+ssize\+\_\+t \hyperlink{classGLProgramState_af106445181df4e066f599418232e6b7e}{get\+Vertex\+Attrib\+Count} () const
+\item 
+ssize\+\_\+t \hyperlink{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}{get\+Uniform\+Count} () const
+\item 
+\hyperlink{classNode}{Node} $\ast$ \hyperlink{classGLProgramState_adb2c99ca62dc93dff303d665e57557ad}{get\+Node\+Binding} () const
+\item 
+void \hyperlink{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}{set\+Node\+Binding} (\hyperlink{classNode}{Node} $\ast$node)
+\item 
+void \hyperlink{classGLProgramState_a495c04e63419504e616bae7795bf0af9}{apply\+Auto\+Binding} (const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)
+\item 
+void \hyperlink{classGLProgramState_adabf77e7268bff9186c1009c3625f983}{set\+Parameter\+Auto\+Binding} (const std\+::string \&uniform\+Name, const std\+::string \&auto\+Binding)
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a1b6d4947980d7b82313a9a6e0d6894c2}\label{classGLProgramState_a1b6d4947980d7b82313a9a6e0d6894c2}} 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ {\bfseries get\+G\+L\+Program} () const
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}{set\+Vertex\+Attrib\+Callback} (const std\+::string \&name, const std\+::function$<$ void(\hyperlink{structVertexAttrib}{Vertex\+Attrib} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a0e9bd5f54d62ad8f278ff2d698e013fa}\label{classGLProgramState_a0e9bd5f54d62ad8f278ff2d698e013fa}} 
+void {\bfseries set\+Vertex\+Attrib\+Pointer} (const std\+::string \&name, G\+Lint size, G\+Lenum type, G\+Lboolean normalized, G\+Lsizei stride, G\+Lvoid $\ast$pointer)
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}{set\+Uniform\+Int} (const std\+::string \&uniform\+Name, int value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a37692ba572e3aacb7588c89b3ff16cf6}\label{classGLProgramState_a37692ba572e3aacb7588c89b3ff16cf6}} 
+void {\bfseries set\+Uniform\+Float} (const std\+::string \&uniform\+Name, float value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a187cac4c543cb0e1684ecb7f2e7a40c7}\label{classGLProgramState_a187cac4c543cb0e1684ecb7f2e7a40c7}} 
+void {\bfseries set\+Uniform\+Floatv} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const float $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a41e272a65d9d8abe4a45228d3be99acf}\label{classGLProgramState_a41e272a65d9d8abe4a45228d3be99acf}} 
+void {\bfseries set\+Uniform\+Vec2} (const std\+::string \&uniform\+Name, const \hyperlink{classVec2}{Vec2} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aed7172f9d06375c8f6902b2b2c451674}\label{classGLProgramState_aed7172f9d06375c8f6902b2b2c451674}} 
+void {\bfseries set\+Uniform\+Vec2v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec2}{Vec2} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aa2ed326e2b82c143c3751a0d99a5071c}\label{classGLProgramState_aa2ed326e2b82c143c3751a0d99a5071c}} 
+void {\bfseries set\+Uniform\+Vec3} (const std\+::string \&uniform\+Name, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a32101794108848a9a3695530cb060e3d}\label{classGLProgramState_a32101794108848a9a3695530cb060e3d}} 
+void {\bfseries set\+Uniform\+Vec3v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec3}{Vec3} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ad48e35f99fd4f1aafd2103885662aff4}\label{classGLProgramState_ad48e35f99fd4f1aafd2103885662aff4}} 
+void {\bfseries set\+Uniform\+Vec4} (const std\+::string \&uniform\+Name, const \hyperlink{classVec4}{Vec4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a33cc95c198eb80df2ba3e8e3830613a6}\label{classGLProgramState_a33cc95c198eb80df2ba3e8e3830613a6}} 
+void {\bfseries set\+Uniform\+Vec4v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec4}{Vec4} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab6866f8be98c5689ab449fa1d8d63abf}\label{classGLProgramState_ab6866f8be98c5689ab449fa1d8d63abf}} 
+void {\bfseries set\+Uniform\+Mat4} (const std\+::string \&uniform\+Name, const \hyperlink{classMat4}{Mat4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab68ab4203f7d3c72daeeef21cd677abc}\label{classGLProgramState_ab68ab4203f7d3c72daeeef21cd677abc}} 
+void {\bfseries set\+Uniform\+Callback} (const std\+::string \&uniform\+Name, const std\+::function$<$ void(\hyperlink{classGLProgram}{G\+L\+Program} $\ast$, \hyperlink{structUniform}{Uniform} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab5dd4c017912c8207bd2d9a087c27c5d}\label{classGLProgramState_ab5dd4c017912c8207bd2d9a087c27c5d}} 
+void {\bfseries set\+Uniform\+Texture} (const std\+::string \&uniform\+Name, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a6ca446c128355f68a77b7c1883ea704b}\label{classGLProgramState_a6ca446c128355f68a77b7c1883ea704b}} 
+void {\bfseries set\+Uniform\+Texture} (const std\+::string \&uniform\+Name, G\+Luint texture\+Id)
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}{set\+Uniform\+Int} (G\+Lint uniform\+Location, int value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a38c355d0ad729a219e837b354a318ce1}\label{classGLProgramState_a38c355d0ad729a219e837b354a318ce1}} 
+void {\bfseries set\+Uniform\+Float} (G\+Lint uniform\+Location, float value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ad72ef3dbd94b03c2d715df5162acdd1c}\label{classGLProgramState_ad72ef3dbd94b03c2d715df5162acdd1c}} 
+void {\bfseries set\+Uniform\+Floatv} (G\+Lint uniform\+Location, ssize\+\_\+t size, const float $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a07f0d7e29deaaf64b724ab260f792b65}\label{classGLProgramState_a07f0d7e29deaaf64b724ab260f792b65}} 
+void {\bfseries set\+Uniform\+Vec2} (G\+Lint uniform\+Location, const \hyperlink{classVec2}{Vec2} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a1f34db843a26ad79d6135b301080e26d}\label{classGLProgramState_a1f34db843a26ad79d6135b301080e26d}} 
+void {\bfseries set\+Uniform\+Vec2v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec2}{Vec2} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a2324e374fe47641447549da140b13796}\label{classGLProgramState_a2324e374fe47641447549da140b13796}} 
+void {\bfseries set\+Uniform\+Vec3} (G\+Lint uniform\+Location, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a14a86f49ed0f6d63d136adbe0e2e4cf6}\label{classGLProgramState_a14a86f49ed0f6d63d136adbe0e2e4cf6}} 
+void {\bfseries set\+Uniform\+Vec3v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec3}{Vec3} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_acf7014d1f503bba9d43ac64e5c6421d9}\label{classGLProgramState_acf7014d1f503bba9d43ac64e5c6421d9}} 
+void {\bfseries set\+Uniform\+Vec4} (G\+Lint uniform\+Location, const \hyperlink{classVec4}{Vec4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aa56f2b3085979b94d64cd1e18d9d0052}\label{classGLProgramState_aa56f2b3085979b94d64cd1e18d9d0052}} 
+void {\bfseries set\+Uniform\+Vec4v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec4}{Vec4} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a88c2777ee39a1e1f5e7c66dd4bd0ac80}\label{classGLProgramState_a88c2777ee39a1e1f5e7c66dd4bd0ac80}} 
+void {\bfseries set\+Uniform\+Mat4} (G\+Lint uniform\+Location, const \hyperlink{classMat4}{Mat4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a80ea832a228428b50f96a2780a7ce82d}\label{classGLProgramState_a80ea832a228428b50f96a2780a7ce82d}} 
+void {\bfseries set\+Uniform\+Callback} (G\+Lint uniform\+Location, const std\+::function$<$ void(\hyperlink{classGLProgram}{G\+L\+Program} $\ast$, \hyperlink{structUniform}{Uniform} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a0714ac1d8d04e5da63082a4a51e3fc43}\label{classGLProgramState_a0714ac1d8d04e5da63082a4a51e3fc43}} 
+void {\bfseries set\+Uniform\+Texture} (G\+Lint uniform\+Location, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a0213b590caf9dda34371ce2c1fa2bf83}\label{classGLProgramState_a0213b590caf9dda34371ce2c1fa2bf83}} 
+void {\bfseries set\+Uniform\+Texture} (G\+Lint uniform\+Location, G\+Luint texture\+Id)
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}{set\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a1b6d4947980d7b82313a9a6e0d6894c2}\label{classGLProgramState_a1b6d4947980d7b82313a9a6e0d6894c2}} 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ {\bfseries get\+G\+L\+Program} () const
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}{set\+Vertex\+Attrib\+Callback} (const std\+::string \&name, const std\+::function$<$ void(\hyperlink{structVertexAttrib}{Vertex\+Attrib} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a0e9bd5f54d62ad8f278ff2d698e013fa}\label{classGLProgramState_a0e9bd5f54d62ad8f278ff2d698e013fa}} 
+void {\bfseries set\+Vertex\+Attrib\+Pointer} (const std\+::string \&name, G\+Lint size, G\+Lenum type, G\+Lboolean normalized, G\+Lsizei stride, G\+Lvoid $\ast$pointer)
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}{set\+Uniform\+Int} (const std\+::string \&uniform\+Name, int value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a37692ba572e3aacb7588c89b3ff16cf6}\label{classGLProgramState_a37692ba572e3aacb7588c89b3ff16cf6}} 
+void {\bfseries set\+Uniform\+Float} (const std\+::string \&uniform\+Name, float value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a187cac4c543cb0e1684ecb7f2e7a40c7}\label{classGLProgramState_a187cac4c543cb0e1684ecb7f2e7a40c7}} 
+void {\bfseries set\+Uniform\+Floatv} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const float $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a41e272a65d9d8abe4a45228d3be99acf}\label{classGLProgramState_a41e272a65d9d8abe4a45228d3be99acf}} 
+void {\bfseries set\+Uniform\+Vec2} (const std\+::string \&uniform\+Name, const \hyperlink{classVec2}{Vec2} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aed7172f9d06375c8f6902b2b2c451674}\label{classGLProgramState_aed7172f9d06375c8f6902b2b2c451674}} 
+void {\bfseries set\+Uniform\+Vec2v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec2}{Vec2} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aa2ed326e2b82c143c3751a0d99a5071c}\label{classGLProgramState_aa2ed326e2b82c143c3751a0d99a5071c}} 
+void {\bfseries set\+Uniform\+Vec3} (const std\+::string \&uniform\+Name, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a32101794108848a9a3695530cb060e3d}\label{classGLProgramState_a32101794108848a9a3695530cb060e3d}} 
+void {\bfseries set\+Uniform\+Vec3v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec3}{Vec3} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ad48e35f99fd4f1aafd2103885662aff4}\label{classGLProgramState_ad48e35f99fd4f1aafd2103885662aff4}} 
+void {\bfseries set\+Uniform\+Vec4} (const std\+::string \&uniform\+Name, const \hyperlink{classVec4}{Vec4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a33cc95c198eb80df2ba3e8e3830613a6}\label{classGLProgramState_a33cc95c198eb80df2ba3e8e3830613a6}} 
+void {\bfseries set\+Uniform\+Vec4v} (const std\+::string \&uniform\+Name, ssize\+\_\+t size, const \hyperlink{classVec4}{Vec4} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab6866f8be98c5689ab449fa1d8d63abf}\label{classGLProgramState_ab6866f8be98c5689ab449fa1d8d63abf}} 
+void {\bfseries set\+Uniform\+Mat4} (const std\+::string \&uniform\+Name, const \hyperlink{classMat4}{Mat4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab68ab4203f7d3c72daeeef21cd677abc}\label{classGLProgramState_ab68ab4203f7d3c72daeeef21cd677abc}} 
+void {\bfseries set\+Uniform\+Callback} (const std\+::string \&uniform\+Name, const std\+::function$<$ void(\hyperlink{classGLProgram}{G\+L\+Program} $\ast$, \hyperlink{structUniform}{Uniform} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ab5dd4c017912c8207bd2d9a087c27c5d}\label{classGLProgramState_ab5dd4c017912c8207bd2d9a087c27c5d}} 
+void {\bfseries set\+Uniform\+Texture} (const std\+::string \&uniform\+Name, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classGLProgramState_a222f78e49e5e4531a986a691f81394d1}{set\+Uniform\+Texture} (const std\+::string \&uniform\+Name, G\+Luint texture\+Id)
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}{set\+Uniform\+Int} (G\+Lint uniform\+Location, int value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a38c355d0ad729a219e837b354a318ce1}\label{classGLProgramState_a38c355d0ad729a219e837b354a318ce1}} 
+void {\bfseries set\+Uniform\+Float} (G\+Lint uniform\+Location, float value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ad72ef3dbd94b03c2d715df5162acdd1c}\label{classGLProgramState_ad72ef3dbd94b03c2d715df5162acdd1c}} 
+void {\bfseries set\+Uniform\+Floatv} (G\+Lint uniform\+Location, ssize\+\_\+t size, const float $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a07f0d7e29deaaf64b724ab260f792b65}\label{classGLProgramState_a07f0d7e29deaaf64b724ab260f792b65}} 
+void {\bfseries set\+Uniform\+Vec2} (G\+Lint uniform\+Location, const \hyperlink{classVec2}{Vec2} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a1f34db843a26ad79d6135b301080e26d}\label{classGLProgramState_a1f34db843a26ad79d6135b301080e26d}} 
+void {\bfseries set\+Uniform\+Vec2v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec2}{Vec2} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a2324e374fe47641447549da140b13796}\label{classGLProgramState_a2324e374fe47641447549da140b13796}} 
+void {\bfseries set\+Uniform\+Vec3} (G\+Lint uniform\+Location, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a14a86f49ed0f6d63d136adbe0e2e4cf6}\label{classGLProgramState_a14a86f49ed0f6d63d136adbe0e2e4cf6}} 
+void {\bfseries set\+Uniform\+Vec3v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec3}{Vec3} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_acf7014d1f503bba9d43ac64e5c6421d9}\label{classGLProgramState_acf7014d1f503bba9d43ac64e5c6421d9}} 
+void {\bfseries set\+Uniform\+Vec4} (G\+Lint uniform\+Location, const \hyperlink{classVec4}{Vec4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_aa56f2b3085979b94d64cd1e18d9d0052}\label{classGLProgramState_aa56f2b3085979b94d64cd1e18d9d0052}} 
+void {\bfseries set\+Uniform\+Vec4v} (G\+Lint uniform\+Location, ssize\+\_\+t size, const \hyperlink{classVec4}{Vec4} $\ast$pointer)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a88c2777ee39a1e1f5e7c66dd4bd0ac80}\label{classGLProgramState_a88c2777ee39a1e1f5e7c66dd4bd0ac80}} 
+void {\bfseries set\+Uniform\+Mat4} (G\+Lint uniform\+Location, const \hyperlink{classMat4}{Mat4} \&value)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a80ea832a228428b50f96a2780a7ce82d}\label{classGLProgramState_a80ea832a228428b50f96a2780a7ce82d}} 
+void {\bfseries set\+Uniform\+Callback} (G\+Lint uniform\+Location, const std\+::function$<$ void(\hyperlink{classGLProgram}{G\+L\+Program} $\ast$, \hyperlink{structUniform}{Uniform} $\ast$)$>$ \&callback)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a0714ac1d8d04e5da63082a4a51e3fc43}\label{classGLProgramState_a0714ac1d8d04e5da63082a4a51e3fc43}} 
+void {\bfseries set\+Uniform\+Texture} (G\+Lint uniform\+Location, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classGLProgramState_a642a29610687e43ce7f9c7af0cfa0495}{set\+Uniform\+Texture} (G\+Lint uniform\+Location, G\+Luint texture\+Id)
+\end{DoxyCompactItemize}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a8a38bac19b6c031450de5d296a06cff1}{create} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a4a43eaaa56be2df54f079994cb18a9f4}{get\+Or\+Create\+With\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_adac4b6fae04fff79a0ac28b1c5cac23e}{get\+Or\+Create\+With\+G\+L\+Program\+Name} (const std\+::string \&gl\+Program\+Name)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a4a5473acf86f5f85b1c8ca1afe114078}{get\+Or\+Create\+With\+G\+L\+Program\+Name} (const std\+::string \&gl\+Program\+Name, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a2354b8a559b9869ebc4d4973ffd7d68d}{get\+Or\+Create\+With\+Shaders} (const std\+::string \&vertex\+Shader, const std\+::string \&frag\+Shader, const std\+::string \&compile\+Time\+Defines)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a90eaf4f965c2db4272093f64ba5ec9dd}{create} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a1b34d78ab3149c2e7fe8f24f414ee715}{get\+Or\+Create\+With\+G\+L\+Program} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$glprogram)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a6d2b036d98c2f9490d969b059448147d}{get\+Or\+Create\+With\+G\+L\+Program\+Name} (const std\+::string \&gl\+Program\+Name)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a3d2d47637176741d4d4c9a372a8fdf95}{get\+Or\+Create\+With\+G\+L\+Program\+Name} (const std\+::string \&gl\+Program\+Name, \hyperlink{classTexture2D}{Texture2D} $\ast$texture)
+\item 
+static \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ \hyperlink{classGLProgramState_a76ea99c645e5a65c97e04bbeeb3b0341}{get\+Or\+Create\+With\+Shaders} (const std\+::string \&vertex\+Shader, const std\+::string \&frag\+Shader, const std\+::string \&compile\+Time\+Defines)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGLProgramState_ab2923b0ece19296c4ffb9222d8de9f24}{G\+L\+Program\+State} ()
+\item 
+\mbox{\Hypertarget{classGLProgramState_a5682ceea56d18afd0c0fcd4368eb3512}\label{classGLProgramState_a5682ceea56d18afd0c0fcd4368eb3512}} 
+bool {\bfseries init} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a2af1b309703ecb297bebd8e0c70cc72b}\label{classGLProgramState_a2af1b309703ecb297bebd8e0c70cc72b}} 
+void {\bfseries reset\+G\+L\+Program} ()
+\item 
+\mbox{\Hypertarget{classGLProgramState_a6d4e3be7de31d92ba62e282d14b3fd61}\label{classGLProgramState_a6d4e3be7de31d92ba62e282d14b3fd61}} 
+void {\bfseries update\+Uniforms\+And\+Attributes} ()
+\item 
+\mbox{\Hypertarget{classGLProgramState_a24be10826690ad258327b04af05ea278}\label{classGLProgramState_a24be10826690ad258327b04af05ea278}} 
+\hyperlink{classVertexAttribValue}{Vertex\+Attrib\+Value} $\ast$ {\bfseries get\+Vertex\+Attrib\+Value} (const std\+::string \&attribute\+Name)
+\item 
+\mbox{\Hypertarget{classGLProgramState_add4e035dc172c64fba4ce04013c49dfc}\label{classGLProgramState_add4e035dc172c64fba4ce04013c49dfc}} 
+\hyperlink{classUniformValue}{Uniform\+Value} $\ast$ {\bfseries get\+Uniform\+Value} (const std\+::string \&uniform\+Name)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a381aeaaa0225e34bea2f7d11be2919e3}\label{classGLProgramState_a381aeaaa0225e34bea2f7d11be2919e3}} 
+\hyperlink{classUniformValue}{Uniform\+Value} $\ast$ {\bfseries get\+Uniform\+Value} (G\+Lint uniform\+Location)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a5682ceea56d18afd0c0fcd4368eb3512}\label{classGLProgramState_a5682ceea56d18afd0c0fcd4368eb3512}} 
+bool {\bfseries init} (\hyperlink{classGLProgram}{G\+L\+Program} $\ast$program)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a2af1b309703ecb297bebd8e0c70cc72b}\label{classGLProgramState_a2af1b309703ecb297bebd8e0c70cc72b}} 
+void {\bfseries reset\+G\+L\+Program} ()
+\item 
+\mbox{\Hypertarget{classGLProgramState_a6d4e3be7de31d92ba62e282d14b3fd61}\label{classGLProgramState_a6d4e3be7de31d92ba62e282d14b3fd61}} 
+void {\bfseries update\+Uniforms\+And\+Attributes} ()
+\item 
+\mbox{\Hypertarget{classGLProgramState_a5b63773065e9e65b1094ad87524da71f}\label{classGLProgramState_a5b63773065e9e65b1094ad87524da71f}} 
+\hyperlink{classVertexAttribValue}{Vertex\+Attrib\+Value} $\ast$ {\bfseries get\+Vertex\+Attrib\+Value} (const std\+::string \&attribute\+Name)
+\item 
+\mbox{\Hypertarget{classGLProgramState_a220d5c8dd76bd893062ab899d3eb82b9}\label{classGLProgramState_a220d5c8dd76bd893062ab899d3eb82b9}} 
+\hyperlink{classUniformValue}{Uniform\+Value} $\ast$ {\bfseries get\+Uniform\+Value} (const std\+::string \&uniform\+Name)
+\item 
+\mbox{\Hypertarget{classGLProgramState_ad3e5dc53dd40aa912919e9758e1249d3}\label{classGLProgramState_ad3e5dc53dd40aa912919e9758e1249d3}} 
+\hyperlink{classUniformValue}{Uniform\+Value} $\ast$ {\bfseries get\+Uniform\+Value} (G\+Lint uniform\+Location)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a8660b7b427ca3cb4d009555265cb394c}\label{classGLProgramState_a8660b7b427ca3cb4d009555265cb394c}} 
+bool {\bfseries \+\_\+uniform\+Attribute\+Value\+Dirty}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a3bf923141b407ac965c89e411996757c}\label{classGLProgramState_a3bf923141b407ac965c89e411996757c}} 
+std\+::unordered\+\_\+map$<$ std\+::string, G\+Lint $>$ {\bfseries \+\_\+uniforms\+By\+Name}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a47bf64269d1d5a16e6de4cff27a5de79}\label{classGLProgramState_a47bf64269d1d5a16e6de4cff27a5de79}} 
+std\+::unordered\+\_\+map$<$ G\+Lint, \hyperlink{classUniformValue}{Uniform\+Value} $>$ {\bfseries \+\_\+uniforms}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a963b01dac69c0ea4bc4ade3a5938f522}\label{classGLProgramState_a963b01dac69c0ea4bc4ade3a5938f522}} 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{classVertexAttribValue}{Vertex\+Attrib\+Value} $>$ {\bfseries \+\_\+attributes}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a9b6ad4b4791a5ffdea2b04151c2b1723}\label{classGLProgramState_a9b6ad4b4791a5ffdea2b04151c2b1723}} 
+std\+::unordered\+\_\+map$<$ std\+::string, int $>$ {\bfseries \+\_\+bound\+Texture\+Units}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a211665e3ef624cff003077616035a5ee}\label{classGLProgramState_a211665e3ef624cff003077616035a5ee}} 
+int {\bfseries \+\_\+texture\+Unit\+Index}
+\item 
+\mbox{\Hypertarget{classGLProgramState_adf9a39797c0d4a3b1f666f3aa29d9ebd}\label{classGLProgramState_adf9a39797c0d4a3b1f666f3aa29d9ebd}} 
+uint32\+\_\+t {\bfseries \+\_\+vertex\+Attribs\+Flags}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a607c92beb9dc130bb0798b1ea10f3ab5}\label{classGLProgramState_a607c92beb9dc130bb0798b1ea10f3ab5}} 
+\hyperlink{classGLProgram}{G\+L\+Program} $\ast$ {\bfseries \+\_\+glprogram}
+\item 
+\mbox{\Hypertarget{classGLProgramState_ae2bfc9d48986e78f31bfaedd67cf9baf}\label{classGLProgramState_ae2bfc9d48986e78f31bfaedd67cf9baf}} 
+\hyperlink{classNode}{Node} $\ast$ {\bfseries \+\_\+node\+Binding}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a21b3659c08baae8a3fe1725d09a18825}\label{classGLProgramState_a21b3659c08baae8a3fe1725d09a18825}} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ {\bfseries \+\_\+auto\+Bindings}
+\item 
+\mbox{\Hypertarget{classGLProgramState_aadb4a89860f3a6bbb46cd21bfe173fa8}\label{classGLProgramState_aadb4a89860f3a6bbb46cd21bfe173fa8}} 
+\hyperlink{classEventListenerCustom}{Event\+Listener\+Custom} $\ast$ {\bfseries \+\_\+back\+To\+Foregroundlistener}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLProgramState_ae5be66b8c69600876a53d9df9242a690}\label{classGLProgramState_ae5be66b8c69600876a53d9df9242a690}} 
+static std\+::vector$<$ \hyperlink{classGLProgramState_1_1AutoBindingResolver}{Auto\+Binding\+Resolver} $\ast$ $>$ {\bfseries \+\_\+custom\+Auto\+Binding\+Resolvers}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLProgramState_a8bbf7c4a254c0d4a51db763656717b23}\label{classGLProgramState_a8bbf7c4a254c0d4a51db763656717b23}} 
+class {\bfseries G\+L\+Program\+State\+Cache}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGLProgramState}{G\+L\+Program\+State} holds the \textquotesingle{}state\textquotesingle{} (uniforms and attributes) of the \hyperlink{classGLProgram}{G\+L\+Program}. A \hyperlink{classGLProgram}{G\+L\+Program} can be used by thousands of Nodes, but if different uniform values are going to be used, then each node will need its own \hyperlink{classGLProgramState}{G\+L\+Program\+State} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGLProgramState_ab2923b0ece19296c4ffb9222d8de9f24}\label{classGLProgramState_ab2923b0ece19296c4ffb9222d8de9f24}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{G\+L\+Program\+State()}{GLProgramState()}}
+{\footnotesize\ttfamily G\+L\+Program\+State\+::\+G\+L\+Program\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+listen the event that renderer was recreated on Android/\+W\+P8 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}\label{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply@{apply}}
+\index{apply@{apply}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View }\end{DoxyParamCaption})}
+
+Apply \hyperlink{classGLProgram}{G\+L\+Program}, attributes and uniforms. 
+\begin{DoxyParams}{Parameters}
+{\em model\+View} & The applied model\+View matrix to shader. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}\label{classGLProgramState_a3bd47e0176e61945893c4227cf50dc8d}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply@{apply}}
+\index{apply@{apply}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View }\end{DoxyParamCaption})}
+
+Apply \hyperlink{classGLProgram}{G\+L\+Program}, attributes and uniforms. 
+\begin{DoxyParams}{Parameters}
+{\em model\+View} & The applied model\+View matrix to shader. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_af524cc2e3b621997336d5b58f221c624}\label{classGLProgramState_af524cc2e3b621997336d5b58f221c624}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Attributes@{apply\+Attributes}}
+\index{apply\+Attributes@{apply\+Attributes}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Attributes()}{applyAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Attributes (\begin{DoxyParamCaption}\item[{bool}]{apply\+Attrib\+Flags = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Apply attributes. 
+\begin{DoxyParams}{Parameters}
+{\em apply\+Attrib\+Flags} & Call G\+L\+::enable\+Vertex\+Attribs(\+\_\+vertex\+Attribs\+Flags) or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_af524cc2e3b621997336d5b58f221c624}\label{classGLProgramState_af524cc2e3b621997336d5b58f221c624}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Attributes@{apply\+Attributes}}
+\index{apply\+Attributes@{apply\+Attributes}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Attributes()}{applyAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Attributes (\begin{DoxyParamCaption}\item[{bool}]{apply\+Attrib\+Flags = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Apply attributes. 
+\begin{DoxyParams}{Parameters}
+{\em apply\+Attrib\+Flags} & Call G\+L\+::enable\+Vertex\+Attribs(\+\_\+vertex\+Attribs\+Flags) or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a495c04e63419504e616bae7795bf0af9}\label{classGLProgramState_a495c04e63419504e616bae7795bf0af9}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Auto\+Binding@{apply\+Auto\+Binding}}
+\index{apply\+Auto\+Binding@{apply\+Auto\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Auto\+Binding()}{applyAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Auto\+Binding (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})}
+
+Applies the specified custom auto-\/binding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & Name of the shader uniform. \\
+\hline
+{\em auto\+Binding} & Name of the auto binding. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a495c04e63419504e616bae7795bf0af9}\label{classGLProgramState_a495c04e63419504e616bae7795bf0af9}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Auto\+Binding@{apply\+Auto\+Binding}}
+\index{apply\+Auto\+Binding@{apply\+Auto\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Auto\+Binding()}{applyAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Auto\+Binding (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})}
+
+Applies the specified custom auto-\/binding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & Name of the shader uniform. \\
+\hline
+{\em auto\+Binding} & Name of the auto binding. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}\label{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+G\+L\+Program@{apply\+G\+L\+Program}}
+\index{apply\+G\+L\+Program@{apply\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+G\+L\+Program()}{applyGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+G\+L\+Program (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View }\end{DoxyParamCaption})}
+
+Apply \hyperlink{classGLProgram}{G\+L\+Program}, and built in uniforms. 
+\begin{DoxyParams}{Parameters}
+{\em model\+View} & The applied model\+View matrix to shader. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}\label{classGLProgramState_a2caeee298087f126c4460752a6f42bc5}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+G\+L\+Program@{apply\+G\+L\+Program}}
+\index{apply\+G\+L\+Program@{apply\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+G\+L\+Program()}{applyGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+G\+L\+Program (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{model\+View }\end{DoxyParamCaption})}
+
+Apply \hyperlink{classGLProgram}{G\+L\+Program}, and built in uniforms. 
+\begin{DoxyParams}{Parameters}
+{\em model\+View} & The applied model\+View matrix to shader. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}\label{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Uniforms@{apply\+Uniforms}}
+\index{apply\+Uniforms@{apply\+Uniforms}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Uniforms()}{applyUniforms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Apply user defined uniforms. \mbox{\Hypertarget{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}\label{classGLProgramState_ac673949ce3b48aa2a31ad2457bfa5a2c}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!apply\+Uniforms@{apply\+Uniforms}}
+\index{apply\+Uniforms@{apply\+Uniforms}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{apply\+Uniforms()}{applyUniforms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::apply\+Uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Apply user defined uniforms. \mbox{\Hypertarget{classGLProgramState_a60985933fbcc9d05da3765aa770c37ab}\label{classGLProgramState_a60985933fbcc9d05da3765aa770c37ab}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!clone@{clone}}
+\index{clone@{clone}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns a new copy of the \hyperlink{classGLProgramState}{G\+L\+Program\+State}. The \hyperlink{classGLProgram}{G\+L\+Program} is reused \mbox{\Hypertarget{classGLProgramState_adead71e82d66f5d93b73871f3766eb7a}\label{classGLProgramState_adead71e82d66f5d93b73871f3766eb7a}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!clone@{clone}}
+\index{clone@{clone}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a new copy of the \hyperlink{classGLProgramState}{G\+L\+Program\+State}. The \hyperlink{classGLProgram}{G\+L\+Program} is reused \mbox{\Hypertarget{classGLProgramState_a8a38bac19b6c031450de5d296a06cff1}\label{classGLProgramState_a8a38bac19b6c031450de5d296a06cff1}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!create@{create}}
+\index{create@{create}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns a new instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given \hyperlink{classGLProgram}{G\+L\+Program} \mbox{\Hypertarget{classGLProgramState_a90eaf4f965c2db4272093f64ba5ec9dd}\label{classGLProgramState_a90eaf4f965c2db4272093f64ba5ec9dd}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!create@{create}}
+\index{create@{create}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns a new instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given \hyperlink{classGLProgram}{G\+L\+Program} \mbox{\Hypertarget{classGLProgramState_afd883d9c022e161039fcec12778a9963}\label{classGLProgramState_afd883d9c022e161039fcec12778a9963}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Node\+Binding@{get\+Node\+Binding}}
+\index{get\+Node\+Binding@{get\+Node\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Node\+Binding()}{getNodeBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node} $\ast$ G\+L\+Program\+State\+::get\+Node\+Binding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classNode}{Node} bound to the \hyperlink{classGLProgramState}{G\+L\+Program\+State} \mbox{\Hypertarget{classGLProgramState_adb2c99ca62dc93dff303d665e57557ad}\label{classGLProgramState_adb2c99ca62dc93dff303d665e57557ad}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Node\+Binding@{get\+Node\+Binding}}
+\index{get\+Node\+Binding@{get\+Node\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Node\+Binding()}{getNodeBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classNode}{Node}$\ast$ G\+L\+Program\+State\+::get\+Node\+Binding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the \hyperlink{classNode}{Node} bound to the \hyperlink{classGLProgramState}{G\+L\+Program\+State} \mbox{\Hypertarget{classGLProgramState_a4a43eaaa56be2df54f079994cb18a9f4}\label{classGLProgramState_a4a43eaaa56be2df54f079994cb18a9f4}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program@{get\+Or\+Create\+With\+G\+L\+Program}}
+\index{get\+Or\+Create\+With\+G\+L\+Program@{get\+Or\+Create\+With\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program()}{getOrCreateWithGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given \hyperlink{classGLProgram}{G\+L\+Program} \mbox{\Hypertarget{classGLProgramState_a1b34d78ab3149c2e7fe8f24f414ee715}\label{classGLProgramState_a1b34d78ab3149c2e7fe8f24f414ee715}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program@{get\+Or\+Create\+With\+G\+L\+Program}}
+\index{get\+Or\+Create\+With\+G\+L\+Program@{get\+Or\+Create\+With\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program()}{getOrCreateWithGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given \hyperlink{classGLProgram}{G\+L\+Program} \mbox{\Hypertarget{classGLProgramState_adac4b6fae04fff79a0ac28b1c5cac23e}\label{classGLProgramState_adac4b6fae04fff79a0ac28b1c5cac23e}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}}
+\index{get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program\+Name()}{getOrCreateWithGLProgramName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gl\+Program\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given G\+L\+Program\+Name \mbox{\Hypertarget{classGLProgramState_a4a5473acf86f5f85b1c8ca1afe114078}\label{classGLProgramState_a4a5473acf86f5f85b1c8ca1afe114078}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}}
+\index{get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program\+Name()}{getOrCreateWithGLProgramName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gl\+Program\+Name,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for the given G\+L\+Program\+Name \& texture \mbox{\Hypertarget{classGLProgramState_a6d2b036d98c2f9490d969b059448147d}\label{classGLProgramState_a6d2b036d98c2f9490d969b059448147d}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}}
+\index{get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program\+Name()}{getOrCreateWithGLProgramName()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gl\+Program\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for a given G\+L\+Program\+Name \mbox{\Hypertarget{classGLProgramState_a3d2d47637176741d4d4c9a372a8fdf95}\label{classGLProgramState_a3d2d47637176741d4d4c9a372a8fdf95}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}}
+\index{get\+Or\+Create\+With\+G\+L\+Program\+Name@{get\+Or\+Create\+With\+G\+L\+Program\+Name}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+G\+L\+Program\+Name()}{getOrCreateWithGLProgramName()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+G\+L\+Program\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{gl\+Program\+Name,  }\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for the given G\+L\+Program\+Name \& texture \mbox{\Hypertarget{classGLProgramState_a2354b8a559b9869ebc4d4973ffd7d68d}\label{classGLProgramState_a2354b8a559b9869ebc4d4973ffd7d68d}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+Shaders@{get\+Or\+Create\+With\+Shaders}}
+\index{get\+Or\+Create\+With\+Shaders@{get\+Or\+Create\+With\+Shaders}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+Shaders()}{getOrCreateWithShaders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classGLProgramState}{G\+L\+Program\+State} $\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+Shaders (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{frag\+Shader,  }\item[{const std\+::string \&}]{compile\+Time\+Defines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for given shaders \mbox{\Hypertarget{classGLProgramState_a76ea99c645e5a65c97e04bbeeb3b0341}\label{classGLProgramState_a76ea99c645e5a65c97e04bbeeb3b0341}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Or\+Create\+With\+Shaders@{get\+Or\+Create\+With\+Shaders}}
+\index{get\+Or\+Create\+With\+Shaders@{get\+Or\+Create\+With\+Shaders}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Or\+Create\+With\+Shaders()}{getOrCreateWithShaders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classGLProgramState}{G\+L\+Program\+State}$\ast$ G\+L\+Program\+State\+::get\+Or\+Create\+With\+Shaders (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader,  }\item[{const std\+::string \&}]{frag\+Shader,  }\item[{const std\+::string \&}]{compile\+Time\+Defines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+gets-\/or-\/creates an instance of \hyperlink{classGLProgramState}{G\+L\+Program\+State} for given shaders \mbox{\Hypertarget{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}\label{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Uniform\+Count@{get\+Uniform\+Count}}
+\index{get\+Uniform\+Count@{get\+Uniform\+Count}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Uniform\+Count()}{getUniformCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t G\+L\+Program\+State\+::get\+Uniform\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of user defined uniform count. \mbox{\Hypertarget{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}\label{classGLProgramState_abdad543ece51ec3b98ff59d4bc4e75f6}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Uniform\+Count@{get\+Uniform\+Count}}
+\index{get\+Uniform\+Count@{get\+Uniform\+Count}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Uniform\+Count()}{getUniformCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t G\+L\+Program\+State\+::get\+Uniform\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of user defined uniform count. \mbox{\Hypertarget{classGLProgramState_af106445181df4e066f599418232e6b7e}\label{classGLProgramState_af106445181df4e066f599418232e6b7e}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Vertex\+Attrib\+Count@{get\+Vertex\+Attrib\+Count}}
+\index{get\+Vertex\+Attrib\+Count@{get\+Vertex\+Attrib\+Count}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attrib\+Count()}{getVertexAttribCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t G\+L\+Program\+State\+::get\+Vertex\+Attrib\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the number of vertex attributes. \mbox{\Hypertarget{classGLProgramState_af106445181df4e066f599418232e6b7e}\label{classGLProgramState_af106445181df4e066f599418232e6b7e}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Vertex\+Attrib\+Count@{get\+Vertex\+Attrib\+Count}}
+\index{get\+Vertex\+Attrib\+Count@{get\+Vertex\+Attrib\+Count}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attrib\+Count()}{getVertexAttribCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t G\+L\+Program\+State\+::get\+Vertex\+Attrib\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the number of vertex attributes. \mbox{\Hypertarget{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}\label{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}}
+\index{get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attribs\+Flags()}{getVertexAttribsFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t G\+L\+Program\+State\+::get\+Vertex\+Attribs\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the flag of vertex attribs used by OR operation. \mbox{\Hypertarget{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}\label{classGLProgramState_a05e1e9950fe6200b8ca7819e8f5e1271}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}}
+\index{get\+Vertex\+Attribs\+Flags@{get\+Vertex\+Attribs\+Flags}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Attribs\+Flags()}{getVertexAttribsFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t G\+L\+Program\+State\+::get\+Vertex\+Attribs\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the flag of vertex attribs used by OR operation. \mbox{\Hypertarget{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}\label{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})}
+
+Setter and Getter of the owner \hyperlink{classGLProgram}{G\+L\+Program} binded in this program state. \mbox{\Hypertarget{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}\label{classGLProgramState_a38a364bb0ad6f5ccae97e689dd02011e}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+G\+L\+Program@{set\+G\+L\+Program}}
+\index{set\+G\+L\+Program@{set\+G\+L\+Program}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+G\+L\+Program()}{setGLProgram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+G\+L\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classGLProgram}{G\+L\+Program} $\ast$}]{glprogram }\end{DoxyParamCaption})}
+
+Setter and Getter of the owner \hyperlink{classGLProgram}{G\+L\+Program} binded in this program state. \mbox{\Hypertarget{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}\label{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Node\+Binding@{set\+Node\+Binding}}
+\index{set\+Node\+Binding@{set\+Node\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Node\+Binding()}{setNodeBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Node\+Binding (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Sets the node that this render state is bound to.
+
+The specified node is used to apply auto-\/bindings for the render state. This is typically set to the node of the model that a material is applied to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to use for applying auto-\/bindings. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}\label{classGLProgramState_a4d96305b053c642b99d4e97ea17f7f21}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Node\+Binding@{set\+Node\+Binding}}
+\index{set\+Node\+Binding@{set\+Node\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Node\+Binding()}{setNodeBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Node\+Binding (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Sets the node that this render state is bound to.
+
+The specified node is used to apply auto-\/bindings for the render state. This is typically set to the node of the model that a material is applied to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to use for applying auto-\/bindings. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_adabf77e7268bff9186c1009c3625f983}\label{classGLProgramState_adabf77e7268bff9186c1009c3625f983}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Parameter\+Auto\+Binding@{set\+Parameter\+Auto\+Binding}}
+\index{set\+Parameter\+Auto\+Binding@{set\+Parameter\+Auto\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Parameter\+Auto\+Binding()}{setParameterAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Parameter\+Auto\+Binding (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})}
+
+Sets a uniform auto-\/binding.
+
+This method parses the passed in auto\+Binding string and attempts to convert it to an enumeration value. If it matches to one of the predefined strings, it will create a callback to get the correct value at runtime.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & The name of the material parameter to store an auto-\/binding for. \\
+\hline
+{\em auto\+Binding} & A string matching one of the built-\/in Auto\+Binding enum constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_adabf77e7268bff9186c1009c3625f983}\label{classGLProgramState_adabf77e7268bff9186c1009c3625f983}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Parameter\+Auto\+Binding@{set\+Parameter\+Auto\+Binding}}
+\index{set\+Parameter\+Auto\+Binding@{set\+Parameter\+Auto\+Binding}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Parameter\+Auto\+Binding()}{setParameterAutoBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Parameter\+Auto\+Binding (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{const std\+::string \&}]{auto\+Binding }\end{DoxyParamCaption})}
+
+Sets a uniform auto-\/binding.
+
+This method parses the passed in auto\+Binding string and attempts to convert it to an enumeration value. If it matches to one of the predefined strings, it will create a callback to get the correct value at runtime.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+Name} & The name of the material parameter to store an auto-\/binding for. \\
+\hline
+{\em auto\+Binding} & A string matching one of the built-\/in Auto\+Binding enum constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}\label{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Int@{set\+Uniform\+Int}}
+\index{set\+Uniform\+Int@{set\+Uniform\+Int}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Int()}{setUniformInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Uniform\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Setting user defined uniforms by uniform string name in the shader. \mbox{\Hypertarget{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}\label{classGLProgramState_a7de1ddee54075d6279b8defcdcd33578}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Int@{set\+Uniform\+Int}}
+\index{set\+Uniform\+Int@{set\+Uniform\+Int}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Int()}{setUniformInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Uniform\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Setting user defined uniforms by uniform string name in the shader. \mbox{\Hypertarget{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}\label{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Int@{set\+Uniform\+Int}}
+\index{set\+Uniform\+Int@{set\+Uniform\+Int}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Int()}{setUniformInt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Uniform\+Int (\begin{DoxyParamCaption}\item[{G\+Lint}]{uniform\+Location,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Setting user defined uniforms by uniform location in the shader. \mbox{\Hypertarget{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}\label{classGLProgramState_adb5469ae785904fc233ddc37ea6af9c6}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Int@{set\+Uniform\+Int}}
+\index{set\+Uniform\+Int@{set\+Uniform\+Int}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Int()}{setUniformInt()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Uniform\+Int (\begin{DoxyParamCaption}\item[{G\+Lint}]{uniform\+Location,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Setting user defined uniforms by uniform location in the shader. \mbox{\Hypertarget{classGLProgramState_a222f78e49e5e4531a986a691f81394d1}\label{classGLProgramState_a222f78e49e5e4531a986a691f81394d1}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Texture@{set\+Uniform\+Texture}}
+\index{set\+Uniform\+Texture@{set\+Uniform\+Texture}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Texture()}{setUniformTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void G\+L\+Program\+State\+::set\+Uniform\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uniform\+Name,  }\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000366}{Deprecated}], please use set\+Uniform\+Texture(const std\+::string\& uniform\+Name, Texture2\+D $\ast$texture) instead, Passing a {\ttfamily texture\+Id} may trigger texture lost issue (\href{https://github.com/cocos2d/cocos2d-x/issues/16871}{\tt https\+://github.\+com/cocos2d/cocos2d-\/x/issues/16871}). \end{DoxyRefDesc}
+\mbox{\Hypertarget{classGLProgramState_a642a29610687e43ce7f9c7af0cfa0495}\label{classGLProgramState_a642a29610687e43ce7f9c7af0cfa0495}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Uniform\+Texture@{set\+Uniform\+Texture}}
+\index{set\+Uniform\+Texture@{set\+Uniform\+Texture}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Uniform\+Texture()}{setUniformTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void G\+L\+Program\+State\+::set\+Uniform\+Texture (\begin{DoxyParamCaption}\item[{G\+Lint}]{uniform\+Location,  }\item[{G\+Luint}]{texture\+Id }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000367}{Deprecated}], please use set\+Uniform\+Texture(\+G\+Lint uniform\+Location, Texture2\+D $\ast$texture) instead, Passing a {\ttfamily texture\+Id} may trigger texture lost issue (\href{https://github.com/cocos2d/cocos2d-x/issues/16871}{\tt https\+://github.\+com/cocos2d/cocos2d-\/x/issues/16871}). \end{DoxyRefDesc}
+\mbox{\Hypertarget{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}\label{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Vertex\+Attrib\+Callback@{set\+Vertex\+Attrib\+Callback}}
+\index{set\+Vertex\+Attrib\+Callback@{set\+Vertex\+Attrib\+Callback}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Vertex\+Attrib\+Callback()}{setVertexAttribCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Vertex\+Attrib\+Callback (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::function$<$ void(\hyperlink{structVertexAttrib}{Vertex\+Attrib} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Set the vertex attribute value. \mbox{\Hypertarget{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}\label{classGLProgramState_a2b0daf0548df92f03a1c42807f5aaab0}} 
+\index{G\+L\+Program\+State@{G\+L\+Program\+State}!set\+Vertex\+Attrib\+Callback@{set\+Vertex\+Attrib\+Callback}}
+\index{set\+Vertex\+Attrib\+Callback@{set\+Vertex\+Attrib\+Callback}!G\+L\+Program\+State@{G\+L\+Program\+State}}
+\subsubsection{\texorpdfstring{set\+Vertex\+Attrib\+Callback()}{setVertexAttribCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+Program\+State\+::set\+Vertex\+Attrib\+Callback (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::function$<$ void(\hyperlink{structVertexAttrib}{Vertex\+Attrib} $\ast$)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Set the vertex attribute value. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/renderer/C\+C\+G\+L\+Program\+State.\+cpp\end{DoxyCompactItemize}

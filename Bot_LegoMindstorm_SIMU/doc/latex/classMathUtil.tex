@@ -1,0 +1,186 @@
+\hypertarget{classMathUtil}{}\section{Math\+Util Class Reference}
+\label{classMathUtil}\index{Math\+Util@{Math\+Util}}
+
+
+{\ttfamily \#include $<$Math\+Util.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classMathUtil_a3db516e004fa913a6528face355ed7fb}{smooth} (float $\ast$x, float target, float elapsed\+Time, float response\+Time)
+\item 
+static void \hyperlink{classMathUtil_a12ff80eb6b3858289255ab3b5c06862d}{smooth} (float $\ast$x, float target, float elapsed\+Time, float rise\+Time, float fall\+Time)
+\item 
+static float \hyperlink{classMathUtil_a8cfb6e8c5fb0ba90034383fe6b90080d}{lerp} (float from, float to, float alpha)
+\item 
+static void \hyperlink{classMathUtil_a1891148f59e1bdc9070cf11ec14b9882}{smooth} (float $\ast$x, float target, float elapsed\+Time, float response\+Time)
+\item 
+static void \hyperlink{classMathUtil_a42537baed57e930799f8dd0049835ca8}{smooth} (float $\ast$x, float target, float elapsed\+Time, float rise\+Time, float fall\+Time)
+\item 
+static float \hyperlink{classMathUtil_acafaebe7647abc8a03a30be41e8363ae}{lerp} (float from, float to, float alpha)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMathUtil_a1ff3aca4ae2244e46e07b8780b29bf1d}\label{classMathUtil_a1ff3aca4ae2244e46e07b8780b29bf1d}} 
+class {\bfseries Mat4}
+\item 
+\mbox{\Hypertarget{classMathUtil_ae5ffea56f26187d86e9bd0e1d676ee0b}\label{classMathUtil_ae5ffea56f26187d86e9bd0e1d676ee0b}} 
+class {\bfseries Vec3}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a math utility class.
+
+This is primarily used for optimized internal math operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMathUtil_a8cfb6e8c5fb0ba90034383fe6b90080d}\label{classMathUtil_a8cfb6e8c5fb0ba90034383fe6b90080d}} 
+\index{Math\+Util@{Math\+Util}!lerp@{lerp}}
+\index{lerp@{lerp}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Math\+Util\+::lerp (\begin{DoxyParamCaption}\item[{float}]{from,  }\item[{float}]{to,  }\item[{float}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Linearly interpolates between from value to to value by alpha which is in the range \mbox{[}0,1\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & the from value. \\
+\hline
+{\em to} & the to value. \\
+\hline
+{\em alpha} & the alpha value between \mbox{[}0,1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interpolated float value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMathUtil_acafaebe7647abc8a03a30be41e8363ae}\label{classMathUtil_acafaebe7647abc8a03a30be41e8363ae}} 
+\index{Math\+Util@{Math\+Util}!lerp@{lerp}}
+\index{lerp@{lerp}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{lerp()}{lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float Math\+Util\+::lerp (\begin{DoxyParamCaption}\item[{float}]{from,  }\item[{float}]{to,  }\item[{float}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Linearly interpolates between from value to to value by alpha which is in the range \mbox{[}0,1\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & the from value. \\
+\hline
+{\em to} & the to value. \\
+\hline
+{\em alpha} & the alpha value between \mbox{[}0,1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interpolated float value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMathUtil_a3db516e004fa913a6528face355ed7fb}\label{classMathUtil_a3db516e004fa913a6528face355ed7fb}} 
+\index{Math\+Util@{Math\+Util}!smooth@{smooth}}
+\index{smooth@{smooth}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+M\+A\+T\+H\+\_\+\+B\+E\+G\+IN void Math\+Util\+::smooth (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{response\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates the given scalar towards the given target using a smoothing function. The given response time determines the amount of smoothing (lag). A longer response time yields a smoother result and more lag. To force the scalar to follow the target closely, provide a response time that is very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the scalar to update. \\
+\hline
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em response\+Time} & response time (in the same units as elapsed\+Time).\\
+\hline
+\end{DoxyParams}
+Copyright 2013 Black\+Berry Inc.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project
+
+Copyright 2013 Black\+Berry Inc. Copyright (c) 2017-\/2018 Xiamen Yaji Software Co., Ltd.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+\href{http://www.apache.org/licenses/LICENSE-2.0}{\tt http\+://www.\+apache.\+org/licenses/\+L\+I\+C\+E\+N\+S\+E-\/2.\+0}
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Original file from Game\+Play3D\+: \href{http://gameplay3d.org}{\tt http\+://gameplay3d.\+org}
+
+This file was modified to fit the cocos2d-\/x project \mbox{\Hypertarget{classMathUtil_a1891148f59e1bdc9070cf11ec14b9882}\label{classMathUtil_a1891148f59e1bdc9070cf11ec14b9882}} 
+\index{Math\+Util@{Math\+Util}!smooth@{smooth}}
+\index{smooth@{smooth}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Math\+Util\+::smooth (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{response\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates the given scalar towards the given target using a smoothing function. The given response time determines the amount of smoothing (lag). A longer response time yields a smoother result and more lag. To force the scalar to follow the target closely, provide a response time that is very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the scalar to update. \\
+\hline
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em response\+Time} & response time (in the same units as elapsed\+Time). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMathUtil_a12ff80eb6b3858289255ab3b5c06862d}\label{classMathUtil_a12ff80eb6b3858289255ab3b5c06862d}} 
+\index{Math\+Util@{Math\+Util}!smooth@{smooth}}
+\index{smooth@{smooth}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Math\+Util\+::smooth (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{rise\+Time,  }\item[{float}]{fall\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates the given scalar towards the given target using a smoothing function. The given rise and fall times determine the amount of smoothing (lag). Longer rise and fall times yield a smoother result and more lag. To force the scalar to follow the target closely, provide rise and fall times that are very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the scalar to update. \\
+\hline
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em rise\+Time} & response time for rising slope (in the same units as elapsed\+Time). \\
+\hline
+{\em fall\+Time} & response time for falling slope (in the same units as elapsed\+Time). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMathUtil_a42537baed57e930799f8dd0049835ca8}\label{classMathUtil_a42537baed57e930799f8dd0049835ca8}} 
+\index{Math\+Util@{Math\+Util}!smooth@{smooth}}
+\index{smooth@{smooth}!Math\+Util@{Math\+Util}}
+\subsubsection{\texorpdfstring{smooth()}{smooth()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Math\+Util\+::smooth (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float}]{target,  }\item[{float}]{elapsed\+Time,  }\item[{float}]{rise\+Time,  }\item[{float}]{fall\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Updates the given scalar towards the given target using a smoothing function. The given rise and fall times determine the amount of smoothing (lag). Longer rise and fall times yield a smoother result and more lag. To force the scalar to follow the target closely, provide rise and fall times that are very small relative to the given elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the scalar to update. \\
+\hline
+{\em target} & target value. \\
+\hline
+{\em elapsed\+Time} & elapsed time between calls. \\
+\hline
+{\em rise\+Time} & response time for rising slope (in the same units as elapsed\+Time). \\
+\hline
+{\em fall\+Time} & response time for falling slope (in the same units as elapsed\+Time). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Math\+Util.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/math/Math\+Util.\+cpp\end{DoxyCompactItemize}

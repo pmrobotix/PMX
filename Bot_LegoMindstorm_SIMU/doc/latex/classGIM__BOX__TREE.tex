@@ -1,0 +1,146 @@
+\hypertarget{classGIM__BOX__TREE}{}\section{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE Class Reference}
+\label{classGIM__BOX__TREE}\index{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE@{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE}}
+
+
+Basic \hyperlink{classBox}{Box} tree structure.  
+
+
+
+
+{\ttfamily \#include $<$gim\+\_\+box\+\_\+set.\+h$>$}
+
+
+
+Collaboration diagram for G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classGIM__BOX__TREE__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}{build\+\_\+tree} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes)
+\begin{DoxyCompactList}\small\item\em stackless build tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_aa016c5ef3669d464ed15eb18b7308b62}\label{classGIM__BOX__TREE_aa016c5ef3669d464ed15eb18b7308b62}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries clear\+Nodes} ()
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}\label{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT \hyperlink{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}{get\+Node\+Count} () const
+\begin{DoxyCompactList}\small\item\em node count \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}\label{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}{is\+Leaf\+Node} (G\+U\+I\+NT nodeindex) const
+\begin{DoxyCompactList}\small\item\em tells if the node is a leaf \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_acfba452c43dcb2687a1d3351c2018fe0}\label{classGIM__BOX__TREE_acfba452c43dcb2687a1d3351c2018fe0}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Node\+Data} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a6c4cfc0acab435c1407f9621c6d31777}\label{classGIM__BOX__TREE_a6c4cfc0acab435c1407f9621c6d31777}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+Node\+Bound} (G\+U\+I\+NT nodeindex, \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&bound) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a910f36323977e36f0e911a09b47fe582}\label{classGIM__BOX__TREE_a910f36323977e36f0e911a09b47fe582}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries set\+Node\+Bound} (G\+U\+I\+NT nodeindex, const \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&bound)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a890bb51dca18c702cd7a8fb308749f7b}\label{classGIM__BOX__TREE_a890bb51dca18c702cd7a8fb308749f7b}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Left\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_aee99cdf538eea3240684a9952c6a667e}\label{classGIM__BOX__TREE_aee99cdf538eea3240684a9952c6a667e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Right\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a361ee526551fe12ac3edfb9b2f8b2dc9}\label{classGIM__BOX__TREE_a361ee526551fe12ac3edfb9b2f8b2dc9}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Scape\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}{build\+\_\+tree} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_aa016c5ef3669d464ed15eb18b7308b62}\label{classGIM__BOX__TREE_aa016c5ef3669d464ed15eb18b7308b62}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries clear\+Nodes} ()
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}\label{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT \hyperlink{classGIM__BOX__TREE_ae5ee83e6bf9ba2d96cbbb9d7ecc20b40}{get\+Node\+Count} () const
+\begin{DoxyCompactList}\small\item\em node count \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}\label{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__BOX__TREE_ac7fc7775379fc52f52eee28a81e22f05}{is\+Leaf\+Node} (G\+U\+I\+NT nodeindex) const
+\begin{DoxyCompactList}\small\item\em tells if the node is a leaf \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_acfba452c43dcb2687a1d3351c2018fe0}\label{classGIM__BOX__TREE_acfba452c43dcb2687a1d3351c2018fe0}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Node\+Data} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a6c4cfc0acab435c1407f9621c6d31777}\label{classGIM__BOX__TREE_a6c4cfc0acab435c1407f9621c6d31777}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+Node\+Bound} (G\+U\+I\+NT nodeindex, \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&bound) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a910f36323977e36f0e911a09b47fe582}\label{classGIM__BOX__TREE_a910f36323977e36f0e911a09b47fe582}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries set\+Node\+Bound} (G\+U\+I\+NT nodeindex, const \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&bound)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a890bb51dca18c702cd7a8fb308749f7b}\label{classGIM__BOX__TREE_a890bb51dca18c702cd7a8fb308749f7b}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Left\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_aee99cdf538eea3240684a9952c6a667e}\label{classGIM__BOX__TREE_aee99cdf538eea3240684a9952c6a667e}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Right\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a361ee526551fe12ac3edfb9b2f8b2dc9}\label{classGIM__BOX__TREE_a361ee526551fe12ac3edfb9b2f8b2dc9}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE G\+U\+I\+NT {\bfseries get\+Scape\+Node\+Index} (G\+U\+I\+NT nodeindex) const
+\end{DoxyCompactItemize}
+
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ac9f0e8f8b9b1998bf126001afbd372c9}\label{classGIM__BOX__TREE_ac9f0e8f8b9b1998bf126001afbd372c9}} 
+G\+U\+I\+NT {\bfseries \+\_\+sort\+\_\+and\+\_\+calc\+\_\+splitting\+\_\+index} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index, G\+U\+I\+NT split\+Axis)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a36da9ee25d328a3ebd9696c3e3ce8973}\label{classGIM__BOX__TREE_a36da9ee25d328a3ebd9696c3e3ce8973}} 
+G\+U\+I\+NT {\bfseries \+\_\+calc\+\_\+splitting\+\_\+axis} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_af1432fe0768138ad9749b8f45cea7a47}\label{classGIM__BOX__TREE_af1432fe0768138ad9749b8f45cea7a47}} 
+void {\bfseries \+\_\+build\+\_\+sub\+\_\+tree} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ac9f0e8f8b9b1998bf126001afbd372c9}\label{classGIM__BOX__TREE_ac9f0e8f8b9b1998bf126001afbd372c9}} 
+G\+U\+I\+NT {\bfseries \+\_\+sort\+\_\+and\+\_\+calc\+\_\+splitting\+\_\+index} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index, G\+U\+I\+NT split\+Axis)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_a36da9ee25d328a3ebd9696c3e3ce8973}\label{classGIM__BOX__TREE_a36da9ee25d328a3ebd9696c3e3ce8973}} 
+G\+U\+I\+NT {\bfseries \+\_\+calc\+\_\+splitting\+\_\+axis} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index)
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_af1432fe0768138ad9749b8f45cea7a47}\label{classGIM__BOX__TREE_af1432fe0768138ad9749b8f45cea7a47}} 
+void {\bfseries \+\_\+build\+\_\+sub\+\_\+tree} (\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&primitive\+\_\+boxes, G\+U\+I\+NT start\+Index, G\+U\+I\+NT end\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_ad175db1b709c3fd9835ce8423af847fd}\label{classGIM__BOX__TREE_ad175db1b709c3fd9835ce8423af847fd}} 
+G\+U\+I\+NT {\bfseries m\+\_\+num\+\_\+nodes}
+\item 
+\mbox{\Hypertarget{classGIM__BOX__TREE_aa84656941e890a11505d8c3cd3fc2f99}\label{classGIM__BOX__TREE_aa84656941e890a11505d8c3cd3fc2f99}} 
+\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__BOX__TREE__NODE}{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+E\+E\+\_\+\+N\+O\+DE} $>$ {\bfseries m\+\_\+node\+\_\+array}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic \hyperlink{classBox}{Box} tree structure. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}\label{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}} 
+\index{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE@{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE}!build\+\_\+tree@{build\+\_\+tree}}
+\index{build\+\_\+tree@{build\+\_\+tree}!G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE@{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE}}
+\subsubsection{\texorpdfstring{build\+\_\+tree()}{build\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+E\+E\+::build\+\_\+tree (\begin{DoxyParamCaption}\item[{\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&}]{primitive\+\_\+boxes }\end{DoxyParamCaption})}
+
+
+
+stackless build tree 
+
+prototype functions for box tree management \mbox{\Hypertarget{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}\label{classGIM__BOX__TREE_af76fa1d2f5e20c8979120fa72cf7575f}} 
+\index{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE@{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE}!build\+\_\+tree@{build\+\_\+tree}}
+\index{build\+\_\+tree@{build\+\_\+tree}!G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE@{G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+EE}}
+\subsubsection{\texorpdfstring{build\+\_\+tree()}{build\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+I\+M\+\_\+\+B\+O\+X\+\_\+\+T\+R\+E\+E\+::build\+\_\+tree (\begin{DoxyParamCaption}\item[{\hyperlink{classgim__array}{gim\+\_\+array}$<$ \hyperlink{structGIM__AABB__DATA}{G\+I\+M\+\_\+\+A\+A\+B\+B\+\_\+\+D\+A\+TA} $>$ \&}]{primitive\+\_\+boxes }\end{DoxyParamCaption})}
+
+prototype functions for box tree management 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+box\+\_\+set.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+box\+\_\+set.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,473 @@
+\hypertarget{group__actions}{}\section{Actions}
+\label{group__actions}\index{Actions@{Actions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAction}{Action}
+\begin{DoxyCompactList}\small\item\em Base class for \hyperlink{classAction}{Action} objects. \end{DoxyCompactList}\item 
+class \hyperlink{classFiniteTimeAction}{Finite\+Time\+Action}
+\begin{DoxyCompactList}\small\item\em Base class actions that do have a finite time duration. Possible actions\+: \end{DoxyCompactList}\item 
+class \hyperlink{classSpeed}{Speed}
+\begin{DoxyCompactList}\small\item\em Changes the speed of an action, making it take longer (speed$>$1) or shorter (speed$<$1) time. Useful to simulate \textquotesingle{}slow motion\textquotesingle{} or \textquotesingle{}fast forward\textquotesingle{} effect. \end{DoxyCompactList}\item 
+class \hyperlink{classFollow}{Follow}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFollow}{Follow} is an action that \char`\"{}follows\char`\"{} a node. Eg\+: \end{DoxyCompactList}\item 
+class \hyperlink{classActionCamera}{Action\+Camera}
+\begin{DoxyCompactList}\small\item\em Base class for \hyperlink{classCamera}{Camera} actions. \end{DoxyCompactList}\item 
+class \hyperlink{classOrbitCamera}{Orbit\+Camera}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classOrbitCamera}{Orbit\+Camera} action. Orbits the camera around the center of the screen using spherical coordinates. \end{DoxyCompactList}\item 
+class \hyperlink{classPointArray}{Point\+Array}
+\item 
+class \hyperlink{classCardinalSplineTo}{Cardinal\+Spline\+To}
+\item 
+class \hyperlink{classCardinalSplineBy}{Cardinal\+Spline\+By}
+\item 
+class \hyperlink{classCatmullRomTo}{Catmull\+Rom\+To}
+\item 
+class \hyperlink{classCatmullRomBy}{Catmull\+Rom\+By}
+\item 
+class \hyperlink{classActionEase}{Action\+Ease}
+\begin{DoxyCompactList}\small\item\em Base class for Easing actions. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseRateAction}{Ease\+Rate\+Action}
+\begin{DoxyCompactList}\small\item\em Base class for Easing actions with rate parameters. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseIn}{Ease\+In}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseIn}{Ease\+In} action with a rate. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseOut}{Ease\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseOut}{Ease\+Out} action with a rate. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseInOut}{Ease\+In\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseInOut}{Ease\+In\+Out} action with a rate. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseExponentialIn}{Ease\+Exponential\+In}
+\begin{DoxyCompactList}\small\item\em Ease Exponential In action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseExponentialOut}{Ease\+Exponential\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Exponential Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Exponential In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseSineIn}{Ease\+Sine\+In}
+\begin{DoxyCompactList}\small\item\em Ease Sine In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseSineOut}{Ease\+Sine\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Sine Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Sine In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseElastic}{Ease\+Elastic}
+\begin{DoxyCompactList}\small\item\em Ease Elastic abstract class. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseElasticIn}{Ease\+Elastic\+In}
+\begin{DoxyCompactList}\small\item\em Ease Elastic In action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Elastic Out action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseElasticInOut}{Ease\+Elastic\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Elastic In\+Out action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBounce}{Ease\+Bounce}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBounce}{Ease\+Bounce} abstract class. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBounceIn}{Ease\+Bounce\+In}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBounceIn}{Ease\+Bounce\+In} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBounceOut}{Ease\+Bounce\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBounceOut}{Ease\+Bounce\+Out} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBounceInOut}{Ease\+Bounce\+In\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBounceInOut}{Ease\+Bounce\+In\+Out} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBackIn}{Ease\+Back\+In}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBackIn}{Ease\+Back\+In} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBackOut}{Ease\+Back\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBackOut}{Ease\+Back\+Out} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBackInOut}{Ease\+Back\+In\+Out}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classEaseBackInOut}{Ease\+Back\+In\+Out} action. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseBezierAction}{Ease\+Bezier\+Action}
+\begin{DoxyCompactList}\small\item\em Ease \hyperlink{structBezier}{Bezier}. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuadraticActionIn}{Ease\+Quadratic\+Action\+In}
+\begin{DoxyCompactList}\small\item\em Ease Quadratic In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuadraticActionOut}{Ease\+Quadratic\+Action\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quadratic Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuadraticActionInOut}{Ease\+Quadratic\+Action\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quadratic In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuarticActionIn}{Ease\+Quartic\+Action\+In}
+\begin{DoxyCompactList}\small\item\em Ease Quartic In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuarticActionOut}{Ease\+Quartic\+Action\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quartic Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuarticActionInOut}{Ease\+Quartic\+Action\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quartic In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuinticActionIn}{Ease\+Quintic\+Action\+In}
+\begin{DoxyCompactList}\small\item\em Ease Quintic In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuinticActionOut}{Ease\+Quintic\+Action\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quintic Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseQuinticActionInOut}{Ease\+Quintic\+Action\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Quintic In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCircleActionIn}{Ease\+Circle\+Action\+In}
+\begin{DoxyCompactList}\small\item\em Ease Circle In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCircleActionOut}{Ease\+Circle\+Action\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Circle Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCircleActionInOut}{Ease\+Circle\+Action\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Circle In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCubicActionIn}{Ease\+Cubic\+Action\+In}
+\begin{DoxyCompactList}\small\item\em Ease Cubic In. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCubicActionOut}{Ease\+Cubic\+Action\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Cubic Out. \end{DoxyCompactList}\item 
+class \hyperlink{classEaseCubicActionInOut}{Ease\+Cubic\+Action\+In\+Out}
+\begin{DoxyCompactList}\small\item\em Ease Cubic In\+Out. \end{DoxyCompactList}\item 
+class \hyperlink{classGridAction}{Grid\+Action}
+\begin{DoxyCompactList}\small\item\em Base class for Grid actions. \end{DoxyCompactList}\item 
+class \hyperlink{classGrid3DAction}{Grid3\+D\+Action}
+\begin{DoxyCompactList}\small\item\em Base class for \hyperlink{classGrid3D}{Grid3D} actions. \end{DoxyCompactList}\item 
+class \hyperlink{classTiledGrid3DAction}{Tiled\+Grid3\+D\+Action}
+\begin{DoxyCompactList}\small\item\em Base class for \hyperlink{classTiledGrid3D}{Tiled\+Grid3D} actions. \end{DoxyCompactList}\item 
+class \hyperlink{classAccelDeccelAmplitude}{Accel\+Deccel\+Amplitude}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAccelDeccelAmplitude}{Accel\+Deccel\+Amplitude} action.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classAccelAmplitude}{Accel\+Amplitude}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAccelAmplitude}{Accel\+Amplitude} action.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classDeccelAmplitude}{Deccel\+Amplitude}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDeccelAmplitude}{Deccel\+Amplitude} action.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{classStopGrid}{Stop\+Grid}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classStopGrid}{Stop\+Grid} action. \end{DoxyCompactList}\item 
+class \hyperlink{classReuseGrid}{Reuse\+Grid}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classReuseGrid}{Reuse\+Grid} action. \end{DoxyCompactList}\item 
+class \hyperlink{classWaves3D}{Waves3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classWaves3D}{Waves3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFlipX3D}{Flip\+X3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFlipX3D}{Flip\+X3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFlipY3D}{Flip\+Y3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFlipY3D}{Flip\+Y3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classLens3D}{Lens3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLens3D}{Lens3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classRipple3D}{Ripple3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRipple3D}{Ripple3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classShaky3D}{Shaky3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classShaky3D}{Shaky3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classLiquid}{Liquid}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLiquid}{Liquid} action. \end{DoxyCompactList}\item 
+class \hyperlink{classWaves}{Waves}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classWaves}{Waves} action. \end{DoxyCompactList}\item 
+class \hyperlink{classTwirl}{Twirl}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTwirl}{Twirl} action. \end{DoxyCompactList}\item 
+class \hyperlink{classActionInstant}{Action\+Instant}
+\begin{DoxyCompactList}\small\item\em Instant actions are immediate actions. They don\textquotesingle{}t have a duration like the Interval\+Action actions. \end{DoxyCompactList}\item 
+class \hyperlink{classShow}{Show}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classShow}{Show} the node. \end{DoxyCompactList}\item 
+class \hyperlink{classHide}{Hide}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classHide}{Hide} the node. \end{DoxyCompactList}\item 
+class \hyperlink{classToggleVisibility}{Toggle\+Visibility}
+\begin{DoxyCompactList}\small\item\em Toggles the visibility of a node. \end{DoxyCompactList}\item 
+class \hyperlink{classRemoveSelf}{Remove\+Self}
+\begin{DoxyCompactList}\small\item\em Remove the node. \end{DoxyCompactList}\item 
+class \hyperlink{classFlipX}{FlipX}
+\begin{DoxyCompactList}\small\item\em Flips the sprite horizontally. \end{DoxyCompactList}\item 
+class \hyperlink{classFlipY}{FlipY}
+\begin{DoxyCompactList}\small\item\em Flips the sprite vertically. \end{DoxyCompactList}\item 
+class \hyperlink{classPlace}{Place}
+\begin{DoxyCompactList}\small\item\em Places the node in a certain position. \end{DoxyCompactList}\item 
+class \hyperlink{classCallFunc}{Call\+Func}
+\begin{DoxyCompactList}\small\item\em Calls a \textquotesingle{}callback\textquotesingle{}. \end{DoxyCompactList}\item 
+class \hyperlink{classCallFuncN}{Call\+FuncN}
+\begin{DoxyCompactList}\small\item\em Calls a \textquotesingle{}callback\textquotesingle{} with the node as the first argument. N means \hyperlink{classNode}{Node}.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{class____CCCallFuncND}{\+\_\+\+\_\+\+C\+C\+Call\+Func\+ND}
+\begin{DoxyCompactList}\small\item\em Calls a \textquotesingle{}callback\textquotesingle{} with the node as the first argument and the 2nd argument is data. ND means\+: \hyperlink{classNode}{Node} and \hyperlink{classData}{Data}. \hyperlink{classData}{Data} is void $\ast$, so it could be anything.  NA. \end{DoxyCompactList}\item 
+class \hyperlink{class____CCCallFuncO}{\+\_\+\+\_\+\+C\+C\+Call\+FuncO}
+\begin{DoxyCompactList}\small\item\em Calls a \textquotesingle{}callback\textquotesingle{} with an object as the first argument. O means Object. \end{DoxyCompactList}\item 
+class \hyperlink{classActionInterval}{Action\+Interval}
+\begin{DoxyCompactList}\small\item\em An interval action is an action that takes place within a certain period of time. It has an start time, and a finish time. The finish time is the parameter duration plus the start time. \end{DoxyCompactList}\item 
+class \hyperlink{classSequence}{Sequence}
+\begin{DoxyCompactList}\small\item\em Runs actions sequentially, one after another. \end{DoxyCompactList}\item 
+class \hyperlink{classRepeat}{Repeat}
+\begin{DoxyCompactList}\small\item\em Repeats an action a number of times. To repeat an action forever use the \hyperlink{classRepeatForever}{Repeat\+Forever} action. \end{DoxyCompactList}\item 
+class \hyperlink{classRepeatForever}{Repeat\+Forever}
+\begin{DoxyCompactList}\small\item\em Repeats an action for ever. To repeat the an action for a limited number of times use the \hyperlink{classRepeat}{Repeat} action. \end{DoxyCompactList}\item 
+class \hyperlink{classSpawn}{Spawn}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSpawn}{Spawn} a new action immediately. \end{DoxyCompactList}\item 
+class \hyperlink{classRotateTo}{Rotate\+To}
+\begin{DoxyCompactList}\small\item\em Rotates a \hyperlink{classNode}{Node} object to a certain angle by modifying it\textquotesingle{}s rotation attribute. The direction will be decided by the shortest angle. \end{DoxyCompactList}\item 
+class \hyperlink{classRotateBy}{Rotate\+By}
+\begin{DoxyCompactList}\small\item\em Rotates a \hyperlink{classNode}{Node} object clockwise a number of degrees by modifying it\textquotesingle{}s rotation attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classMoveBy}{Move\+By}
+\begin{DoxyCompactList}\small\item\em Moves a \hyperlink{classNode}{Node} object x,y pixels by modifying it\textquotesingle{}s position attribute. x and y are relative to the position of the object. Several \hyperlink{classMoveBy}{Move\+By} actions can be concurrently called, and the resulting movement will be the sum of individual movements. \end{DoxyCompactList}\item 
+class \hyperlink{classMoveTo}{Move\+To}
+\begin{DoxyCompactList}\small\item\em Moves a \hyperlink{classNode}{Node} object to the position x,y. x and y are absolute coordinates by modifying it\textquotesingle{}s position attribute. Several \hyperlink{classMoveTo}{Move\+To} actions can be concurrently called, and the resulting movement will be the sum of individual movements. \end{DoxyCompactList}\item 
+class \hyperlink{classSkewTo}{Skew\+To}
+\begin{DoxyCompactList}\small\item\em Skews a \hyperlink{classNode}{Node} object to given angles by modifying it\textquotesingle{}s skewX and skewY attributes. \end{DoxyCompactList}\item 
+class \hyperlink{classSkewBy}{Skew\+By}
+\begin{DoxyCompactList}\small\item\em Skews a \hyperlink{classNode}{Node} object by skewX and skewY degrees. \end{DoxyCompactList}\item 
+class \hyperlink{classJumpBy}{Jump\+By}
+\begin{DoxyCompactList}\small\item\em Moves a \hyperlink{classNode}{Node} object simulating a parabolic jump movement by modifying it\textquotesingle{}s position attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classJumpTo}{Jump\+To}
+\begin{DoxyCompactList}\small\item\em Moves a \hyperlink{classNode}{Node} object to a parabolic position simulating a jump movement by modifying it\textquotesingle{}s position attribute. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__ccBezierConfig}{\+\_\+cc\+Bezier\+Config}
+\item 
+class \hyperlink{classBezierBy}{Bezier\+By}
+\begin{DoxyCompactList}\small\item\em An action that moves the target with a cubic \hyperlink{structBezier}{Bezier} curve by a certain distance. \end{DoxyCompactList}\item 
+class \hyperlink{classBezierTo}{Bezier\+To}
+\begin{DoxyCompactList}\small\item\em An action that moves the target with a cubic \hyperlink{structBezier}{Bezier} curve to a destination point. \end{DoxyCompactList}\item 
+class \hyperlink{classScaleTo}{Scale\+To}
+\begin{DoxyCompactList}\small\item\em Scales a \hyperlink{classNode}{Node} object to a zoom factor by modifying it\textquotesingle{}s scale attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classScaleBy}{Scale\+By}
+\begin{DoxyCompactList}\small\item\em Scales a \hyperlink{classNode}{Node} object a zoom factor by modifying it\textquotesingle{}s scale attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classBlink}{Blink}
+\begin{DoxyCompactList}\small\item\em Blinks a \hyperlink{classNode}{Node} object by modifying it\textquotesingle{}s visible attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeTo}{Fade\+To}
+\begin{DoxyCompactList}\small\item\em Fades an object that implements the R\+G\+B\+A\+Protocol protocol. It modifies the opacity from the current value to a custom one. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeIn}{Fade\+In}
+\begin{DoxyCompactList}\small\item\em Fades In an object that implements the R\+G\+B\+A\+Protocol protocol. It modifies the opacity from 0 to 255. The \char`\"{}reverse\char`\"{} of this action is \hyperlink{classFadeOut}{Fade\+Out}. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeOut}{Fade\+Out}
+\begin{DoxyCompactList}\small\item\em Fades Out an object that implements the R\+G\+B\+A\+Protocol protocol. It modifies the opacity from 255 to 0. The \char`\"{}reverse\char`\"{} of this action is \hyperlink{classFadeIn}{Fade\+In}. \end{DoxyCompactList}\item 
+class \hyperlink{classTintTo}{Tint\+To}
+\begin{DoxyCompactList}\small\item\em Tints a \hyperlink{classNode}{Node} that implements the Node\+R\+GB protocol from current tint to a custom one. \end{DoxyCompactList}\item 
+class \hyperlink{classTintBy}{Tint\+By}
+\begin{DoxyCompactList}\small\item\em Tints a \hyperlink{classNode}{Node} that implements the Node\+R\+GB protocol from current tint to a custom one. \end{DoxyCompactList}\item 
+class \hyperlink{classDelayTime}{Delay\+Time}
+\begin{DoxyCompactList}\small\item\em Delays the action a certain amount of seconds. \end{DoxyCompactList}\item 
+class \hyperlink{classReverseTime}{Reverse\+Time}
+\begin{DoxyCompactList}\small\item\em Executes an action in reverse order, from time=duration to time=0. \end{DoxyCompactList}\item 
+class \hyperlink{classAnimate}{Animate}
+\begin{DoxyCompactList}\small\item\em Animates a sprite given the name of an \hyperlink{classAnimation}{Animation}. \end{DoxyCompactList}\item 
+class \hyperlink{classTargetedAction}{Targeted\+Action}
+\begin{DoxyCompactList}\small\item\em Overrides the target of an action so that it always runs on the target specified at action creation rather than the one specified by run\+Action. \end{DoxyCompactList}\item 
+class \hyperlink{classActionFloat}{Action\+Float}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAction}{Action} used to animate any value in range \mbox{[}from,to\mbox{]} over specified time interval. \end{DoxyCompactList}\item 
+class \hyperlink{classActionManager}{Action\+Manager}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classActionManager}{Action\+Manager} is a singleton that manages all the actions. Normally you won\textquotesingle{}t need to use this singleton directly. 99\% of the cases you will use the \hyperlink{classNode}{Node} interface, which uses this singleton. But there are some cases where you might need to use this singleton. Examples\+: \end{DoxyCompactList}\item 
+class \hyperlink{classPageTurn3D}{Page\+Turn3D}
+\begin{DoxyCompactList}\small\item\em This action simulates a page turn from the bottom right hand corner of the screen. \end{DoxyCompactList}\item 
+class \hyperlink{classProgressTo}{Progress\+To}
+\begin{DoxyCompactList}\small\item\em Progress to percentage. \end{DoxyCompactList}\item 
+class \hyperlink{classProgressFromTo}{Progress\+From\+To}
+\begin{DoxyCompactList}\small\item\em Progress from a percentage to another percentage. \end{DoxyCompactList}\item 
+class \hyperlink{classShakyTiles3D}{Shaky\+Tiles3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classShakyTiles3D}{Shaky\+Tiles3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classShatteredTiles3D}{Shattered\+Tiles3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classShatteredTiles3D}{Shattered\+Tiles3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classShuffleTiles}{Shuffle\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classShuffleTiles}{Shuffle\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeOutTRTiles}{Fade\+Out\+T\+R\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFadeOutTRTiles}{Fade\+Out\+T\+R\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeOutBLTiles}{Fade\+Out\+B\+L\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFadeOutBLTiles}{Fade\+Out\+B\+L\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeOutUpTiles}{Fade\+Out\+Up\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFadeOutUpTiles}{Fade\+Out\+Up\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classFadeOutDownTiles}{Fade\+Out\+Down\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFadeOutDownTiles}{Fade\+Out\+Down\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classTurnOffTiles}{Turn\+Off\+Tiles}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTurnOffTiles}{Turn\+Off\+Tiles} action. \end{DoxyCompactList}\item 
+class \hyperlink{classWavesTiles3D}{Waves\+Tiles3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classWavesTiles3D}{Waves\+Tiles3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classJumpTiles3D}{Jump\+Tiles3D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classJumpTiles3D}{Jump\+Tiles3D} action. \end{DoxyCompactList}\item 
+class \hyperlink{classSplitRows}{Split\+Rows}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSplitRows}{Split\+Rows} action. \end{DoxyCompactList}\item 
+class \hyperlink{classSplitCols}{Split\+Cols}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSplitCols}{Split\+Cols} action. \end{DoxyCompactList}\item 
+class \hyperlink{classActionTweenDelegate}{Action\+Tween\+Delegate}
+\begin{DoxyCompactList}\small\item\em The delegate class for \hyperlink{classActionTween}{Action\+Tween}. \end{DoxyCompactList}\item 
+class \hyperlink{classActionTween}{Action\+Tween}
+\item 
+class \hyperlink{classResizeTo}{Resize\+To}
+\begin{DoxyCompactList}\small\item\em Resize a \hyperlink{classNode}{Node} object to the final size by modifying it\textquotesingle{}s \hyperlink{classSize}{Size} attribute. \end{DoxyCompactList}\item 
+class \hyperlink{classResizeBy}{Resize\+By}
+\begin{DoxyCompactList}\small\item\em Resize a \hyperlink{classNode}{Node} object by a \hyperlink{classSize}{Size}. Works on all nodes where set\+Content\+Size is effective. But it\textquotesingle{}s mostly useful for nodes where 9-\/slice is enabled. \end{DoxyCompactList}\item 
+struct \hyperlink{structBezier}{Bezier}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}(C\+L\+A\+S\+S\+N\+A\+ME)
+\item 
+\#define {\bfseries E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}(C\+L\+A\+S\+S\+N\+A\+ME)
+\item 
+\#define {\bfseries E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}(C\+L\+A\+S\+S\+N\+A\+ME)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__actions_ga9c93c7fa39d04995f6c0cc7c1d99c2a1}\label{group__actions_ga9c93c7fa39d04995f6c0cc7c1d99c2a1}} 
+typedef struct \hyperlink{struct__ccBezierConfig}{\+\_\+cc\+Bezier\+Config} {\bfseries cc\+Bezier\+Config}
+\item 
+\mbox{\Hypertarget{group__actions_ga9c93c7fa39d04995f6c0cc7c1d99c2a1}\label{group__actions_ga9c93c7fa39d04995f6c0cc7c1d99c2a1}} 
+typedef struct \hyperlink{struct__ccBezierConfig}{\+\_\+cc\+Bezier\+Config} {\bfseries cc\+Bezier\+Config}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\+C\+\_\+\+D\+LL \hyperlink{classVec2}{Vec2} \hyperlink{group__actions_gac368291f4754e4c1b34fec023a30dd23}{cc\+Cardinal\+Spline\+At} (\hyperlink{classVec2}{Vec2} \&p0, \hyperlink{classVec2}{Vec2} \&p1, \hyperlink{classVec2}{Vec2} \&p2, \hyperlink{classVec2}{Vec2} \&p3, float tension, float t)
+\item 
+C\+C\+\_\+\+D\+LL \hyperlink{classVec2}{Vec2} \hyperlink{group__actions_ga24dfaba12398099e778c699dd10e7114}{cc\+Cardinal\+Spline\+At} (const \hyperlink{classVec2}{Vec2} \&p0, const \hyperlink{classVec2}{Vec2} \&p1, const \hyperlink{classVec2}{Vec2} \&p2, const \hyperlink{classVec2}{Vec2} \&p3, float tension, float t)
+\item 
+\mbox{\Hypertarget{group__actions_gae0bdce865ab6fc0e56cbd2c683595c81}\label{group__actions_gae0bdce865ab6fc0e56cbd2c683595c81}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseExponentialIn}{Ease\+Exponential\+In})
+\item 
+\mbox{\Hypertarget{group__actions_gaa34545d23ec4b416742068c1c86f7e5f}\label{group__actions_gaa34545d23ec4b416742068c1c86f7e5f}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseExponentialOut}{Ease\+Exponential\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gab0887091df540d70b47982119a6820b0}\label{group__actions_gab0887091df540d70b47982119a6820b0}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseExponentialInOut}{Ease\+Exponential\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga9c278223efdf59b86cb76bd813956826}\label{group__actions_ga9c278223efdf59b86cb76bd813956826}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseSineIn}{Ease\+Sine\+In})
+\item 
+\mbox{\Hypertarget{group__actions_gafe69c7a9c7652cdf2d6b9c35192eb059}\label{group__actions_gafe69c7a9c7652cdf2d6b9c35192eb059}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseSineOut}{Ease\+Sine\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga6d8ef17866e7e13e8936889ec5b918af}\label{group__actions_ga6d8ef17866e7e13e8936889ec5b918af}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gaa0f34f907de8e63af3d4080436b9c435}\label{group__actions_gaa0f34f907de8e63af3d4080436b9c435}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBounceIn}{Ease\+Bounce\+In})
+\item 
+\mbox{\Hypertarget{group__actions_gac7089127870595ea038aea58b1964d94}\label{group__actions_gac7089127870595ea038aea58b1964d94}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBounceOut}{Ease\+Bounce\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga7d0aa671b2b23cfa57bdb2e93b5b9472}\label{group__actions_ga7d0aa671b2b23cfa57bdb2e93b5b9472}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBounceInOut}{Ease\+Bounce\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gacdb3b69481f0317ae78ba02b487ddd96}\label{group__actions_gacdb3b69481f0317ae78ba02b487ddd96}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBackIn}{Ease\+Back\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga523a5498cd9d47ad7a998cfb4b50f064}\label{group__actions_ga523a5498cd9d47ad7a998cfb4b50f064}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBackOut}{Ease\+Back\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gafc2b46b2f94ba6dd5c5b188cfa8dc443}\label{group__actions_gafc2b46b2f94ba6dd5c5b188cfa8dc443}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseBackInOut}{Ease\+Back\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga6a4168ba499e28a850a0da570a9551a4}\label{group__actions_ga6a4168ba499e28a850a0da570a9551a4}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuadraticActionIn}{Ease\+Quadratic\+Action\+In})
+\item 
+\mbox{\Hypertarget{group__actions_gaa003f32d8f6b4d064f84b8985ab0d594}\label{group__actions_gaa003f32d8f6b4d064f84b8985ab0d594}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuadraticActionOut}{Ease\+Quadratic\+Action\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga17749c6647b40df517075bc67add6fde}\label{group__actions_ga17749c6647b40df517075bc67add6fde}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuadraticActionInOut}{Ease\+Quadratic\+Action\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga5772bbd22f815450d9bfdd2c232a6a78}\label{group__actions_ga5772bbd22f815450d9bfdd2c232a6a78}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuarticActionIn}{Ease\+Quartic\+Action\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga4c0ca8d4743b4f60b328e4bf388d73d1}\label{group__actions_ga4c0ca8d4743b4f60b328e4bf388d73d1}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuarticActionOut}{Ease\+Quartic\+Action\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga17fee74d1a3eafce6f2783672904971a}\label{group__actions_ga17fee74d1a3eafce6f2783672904971a}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuarticActionInOut}{Ease\+Quartic\+Action\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga75218bf18e33b84acd4bbd666ab370fb}\label{group__actions_ga75218bf18e33b84acd4bbd666ab370fb}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuinticActionIn}{Ease\+Quintic\+Action\+In})
+\item 
+\mbox{\Hypertarget{group__actions_gab6b54048919fa67fe10e651881f25a0e}\label{group__actions_gab6b54048919fa67fe10e651881f25a0e}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuinticActionOut}{Ease\+Quintic\+Action\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gae1b659c7d8fafe510295e142cb3c244c}\label{group__actions_gae1b659c7d8fafe510295e142cb3c244c}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseQuinticActionInOut}{Ease\+Quintic\+Action\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga3e56ccd133e9a048e8ca504fad778696}\label{group__actions_ga3e56ccd133e9a048e8ca504fad778696}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCircleActionIn}{Ease\+Circle\+Action\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga37c52737b3cf5759e4da8569a56f71d6}\label{group__actions_ga37c52737b3cf5759e4da8569a56f71d6}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCircleActionOut}{Ease\+Circle\+Action\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga8ede54e3ab44b3c438860e9279a23f02}\label{group__actions_ga8ede54e3ab44b3c438860e9279a23f02}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCircleActionInOut}{Ease\+Circle\+Action\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga7fe526cd49d3a807b636656902861e3d}\label{group__actions_ga7fe526cd49d3a807b636656902861e3d}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCubicActionIn}{Ease\+Cubic\+Action\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga80b1bd705ff456304261b8a83ef90608}\label{group__actions_ga80b1bd705ff456304261b8a83ef90608}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCubicActionOut}{Ease\+Cubic\+Action\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gabe2e3a6badf48ea531020b06dee1dfe3}\label{group__actions_gabe2e3a6badf48ea531020b06dee1dfe3}} 
+{\bfseries E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseCubicActionInOut}{Ease\+Cubic\+Action\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga25c53ad92ad9ecbb3250524a804409f4}\label{group__actions_ga25c53ad92ad9ecbb3250524a804409f4}} 
+{\bfseries E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseIn}{Ease\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga136099e55779557e555d012212b9498c}\label{group__actions_ga136099e55779557e555d012212b9498c}} 
+{\bfseries E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseOut}{Ease\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gac7effb8c825d24b1d37e77c1bfcac839}\label{group__actions_gac7effb8c825d24b1d37e77c1bfcac839}} 
+{\bfseries E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseInOut}{Ease\+In\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_gaedf3ca858aead55bf55720c4e26a550a}\label{group__actions_gaedf3ca858aead55bf55720c4e26a550a}} 
+{\bfseries E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseElasticIn}{Ease\+Elastic\+In})
+\item 
+\mbox{\Hypertarget{group__actions_ga1f7e86621b679aa81330f865579e8bb8}\label{group__actions_ga1f7e86621b679aa81330f865579e8bb8}} 
+{\bfseries E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseElasticOut}{Ease\+Elastic\+Out})
+\item 
+\mbox{\Hypertarget{group__actions_ga9540237de587dcde864da3fd9dba83ed}\label{group__actions_ga9540237de587dcde864da3fd9dba83ed}} 
+{\bfseries E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS} (\hyperlink{classEaseElasticInOut}{Ease\+Elastic\+In\+Out})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__actions_gae8182a9feef786ac01612b0c726dbcc6}\label{group__actions_gae8182a9feef786ac01612b0c726dbcc6}} 
+\index{Actions@{Actions}!E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}}
+\index{E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}{EASE\_TEMPLATE\_DECL\_CLASS}}
+{\footnotesize\ttfamily \#define E\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS(\begin{DoxyParamCaption}\item[{}]{C\+L\+A\+S\+S\+N\+A\+ME }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }CC\_DLL CLASSNAME : \textcolor{keyword}{public} \hyperlink{classActionEase}{ActionEase} \(\backslash\)
+\{ \(\backslash\)
+CC\_CONSTRUCTOR\_ACCESS: \(\backslash\)
+    virtual ~CLASSNAME() \{ \} \(\backslash\)
+    CLASSNAME() \{ \} \(\backslash\)
+public: \(\backslash\)
+    static CLASSNAME* create(\hyperlink{classActionInterval}{ActionInterval}* action); \(\backslash\)
+    virtual CLASSNAME* \hyperlink{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}{clone}() \textcolor{keyword}{const override}; \(\backslash\)
+    virtual \textcolor{keywordtype}{void} \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{update}(\textcolor{keywordtype}{float} time) \textcolor{keyword}{override}; \(\backslash\)
+    virtual \hyperlink{classActionEase}{ActionEase}* \hyperlink{classActionEase_ab99eb083fa033fae1d6c948fdc730782}{reverse}() \textcolor{keyword}{const override}; \(\backslash\)
+private: \(\backslash\)
+    CC\_DISALLOW\_COPY\_AND\_ASSIGN(CLASSNAME); \(\backslash\)
+\};
+\end{DoxyCode}
+\mbox{\Hypertarget{group__actions_gabad2ae9d104364c6a2270949bef1e197}\label{group__actions_gabad2ae9d104364c6a2270949bef1e197}} 
+\index{Actions@{Actions}!E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}}
+\index{E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}{EASEELASTIC\_TEMPLATE\_DECL\_CLASS}}
+{\footnotesize\ttfamily \#define E\+A\+S\+E\+E\+L\+A\+S\+T\+I\+C\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS(\begin{DoxyParamCaption}\item[{}]{C\+L\+A\+S\+S\+N\+A\+ME }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }CC\_DLL CLASSNAME : \textcolor{keyword}{public} \hyperlink{classEaseElastic}{EaseElastic} \(\backslash\)
+\{ \(\backslash\)
+CC\_CONSTRUCTOR\_ACCESS: \(\backslash\)
+    virtual ~CLASSNAME() \{ \} \(\backslash\)
+    CLASSNAME() \{ \} \(\backslash\)
+public: \(\backslash\)
+    static CLASSNAME* create(\hyperlink{classActionInterval}{ActionInterval}* action, \textcolor{keywordtype}{float} rate = 0.3f); \(\backslash\)
+    virtual CLASSNAME* \hyperlink{classEaseElastic_a72d5dc8a380dbb00e68c1d7c80258d28}{clone}() \textcolor{keyword}{const override}; \(\backslash\)
+    virtual \textcolor{keywordtype}{void} \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{update}(\textcolor{keywordtype}{float} time) \textcolor{keyword}{override}; \(\backslash\)
+    virtual \hyperlink{classEaseElastic}{EaseElastic}* \hyperlink{classEaseElastic_a9e0e8c55fbe1c50c706dd3d62834ed82}{reverse}() \textcolor{keyword}{const override}; \(\backslash\)
+private: \(\backslash\)
+    CC\_DISALLOW\_COPY\_AND\_ASSIGN(CLASSNAME); \(\backslash\)
+\};
+\end{DoxyCode}
+\mbox{\Hypertarget{group__actions_ga562d3d407d18aba175aa77b23501cb95}\label{group__actions_ga562d3d407d18aba175aa77b23501cb95}} 
+\index{Actions@{Actions}!E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}}
+\index{E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS@{E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS}{EASERATE\_TEMPLATE\_DECL\_CLASS}}
+{\footnotesize\ttfamily \#define E\+A\+S\+E\+R\+A\+T\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+C\+L\+\_\+\+C\+L\+A\+SS(\begin{DoxyParamCaption}\item[{}]{C\+L\+A\+S\+S\+N\+A\+ME }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }CC\_DLL CLASSNAME : \textcolor{keyword}{public} \hyperlink{classEaseRateAction}{EaseRateAction} \(\backslash\)
+\{ \(\backslash\)
+CC\_CONSTRUCTOR\_ACCESS: \(\backslash\)
+    virtual ~CLASSNAME() \{ \} \(\backslash\)
+    CLASSNAME() \{ \} \(\backslash\)
+public: \(\backslash\)
+    static CLASSNAME* \hyperlink{classEaseRateAction_a94d1d8c5c219f82bbb15e31eea82ef99}{create}(\hyperlink{classActionInterval}{ActionInterval}* action, \textcolor{keywordtype}{float} rate); \(\backslash\)
+    virtual CLASSNAME* \hyperlink{classEaseRateAction_a50323a94f7587203d7b02bb66fe2e67e}{clone}() \textcolor{keyword}{const override}; \(\backslash\)
+    virtual \textcolor{keywordtype}{void} \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{update}(\textcolor{keywordtype}{float} time) \textcolor{keyword}{override}; \(\backslash\)
+    virtual \hyperlink{classEaseRateAction}{EaseRateAction}* \hyperlink{classEaseRateAction_acd2b87a3358e01fa74a726634dcd41fb}{reverse}() \textcolor{keyword}{const override}; \(\backslash\)
+private: \(\backslash\)
+    CC\_DISALLOW\_COPY\_AND\_ASSIGN(CLASSNAME); \(\backslash\)
+\};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__actions_gac368291f4754e4c1b34fec023a30dd23}\label{group__actions_gac368291f4754e4c1b34fec023a30dd23}} 
+\index{Actions@{Actions}!cc\+Cardinal\+Spline\+At@{cc\+Cardinal\+Spline\+At}}
+\index{cc\+Cardinal\+Spline\+At@{cc\+Cardinal\+Spline\+At}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{cc\+Cardinal\+Spline\+At()}{ccCardinalSplineAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+LL \hyperlink{classVec2}{Vec2} cc\+Cardinal\+Spline\+At (\begin{DoxyParamCaption}\item[{\hyperlink{classVec2}{Vec2} \&}]{p0,  }\item[{\hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{\hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{\hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{float}]{tension,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+Returns the Cardinal Spline position for a given set of control points, tension and time \mbox{\Hypertarget{group__actions_ga24dfaba12398099e778c699dd10e7114}\label{group__actions_ga24dfaba12398099e778c699dd10e7114}} 
+\index{Actions@{Actions}!cc\+Cardinal\+Spline\+At@{cc\+Cardinal\+Spline\+At}}
+\index{cc\+Cardinal\+Spline\+At@{cc\+Cardinal\+Spline\+At}!Actions@{Actions}}
+\subsubsection{\texorpdfstring{cc\+Cardinal\+Spline\+At()}{ccCardinalSplineAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+LL \hyperlink{classVec2}{Vec2} cc\+Cardinal\+Spline\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{p0,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p1,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p2,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{p3,  }\item[{float}]{tension,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+Returns the Cardinal Spline position for a given set of control points, tension and time 

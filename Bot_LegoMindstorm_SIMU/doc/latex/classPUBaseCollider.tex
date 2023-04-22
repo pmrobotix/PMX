@@ -1,0 +1,308 @@
+\hypertarget{classPUBaseCollider}{}\section{P\+U\+Base\+Collider Class Reference}
+\label{classPUBaseCollider}\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+
+
+Inheritance diagram for P\+U\+Base\+Collider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUBaseCollider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for P\+U\+Base\+Collider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUBaseCollider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \{ {\bfseries I\+T\+\_\+\+P\+O\+I\+NT}, 
+{\bfseries I\+T\+\_\+\+B\+OX}, 
+{\bfseries I\+T\+\_\+\+P\+O\+I\+NT}, 
+{\bfseries I\+T\+\_\+\+B\+OX}
+ \}
+\item 
+enum \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \{ \newline
+{\bfseries C\+T\+\_\+\+N\+O\+NE}, 
+{\bfseries C\+T\+\_\+\+B\+O\+U\+N\+CE}, 
+{\bfseries C\+T\+\_\+\+F\+L\+OW}, 
+{\bfseries C\+T\+\_\+\+N\+O\+NE}, 
+\newline
+{\bfseries C\+T\+\_\+\+B\+O\+U\+N\+CE}, 
+{\bfseries C\+T\+\_\+\+F\+L\+OW}
+ \}
+\item 
+enum \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \{ {\bfseries I\+T\+\_\+\+P\+O\+I\+NT}, 
+{\bfseries I\+T\+\_\+\+B\+OX}, 
+{\bfseries I\+T\+\_\+\+P\+O\+I\+NT}, 
+{\bfseries I\+T\+\_\+\+B\+OX}
+ \}
+\item 
+enum \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \{ \newline
+{\bfseries C\+T\+\_\+\+N\+O\+NE}, 
+{\bfseries C\+T\+\_\+\+B\+O\+U\+N\+CE}, 
+{\bfseries C\+T\+\_\+\+F\+L\+OW}, 
+{\bfseries C\+T\+\_\+\+N\+O\+NE}, 
+\newline
+{\bfseries C\+T\+\_\+\+B\+O\+U\+N\+CE}, 
+{\bfseries C\+T\+\_\+\+F\+L\+OW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a6eb2a87b9cda2c56c04e178a098468a3}\label{classPUBaseCollider_a6eb2a87b9cda2c56c04e178a098468a3}} 
+virtual void {\bfseries pre\+Update\+Affector} (float delta\+Time) override
+\item 
+\hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \hyperlink{classPUBaseCollider_ac79e93200966f28399abc3ad8e603f26}{get\+Intersection\+Type} () const
+\item 
+void \hyperlink{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}{set\+Intersection\+Type} (const \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \&intersection\+Type)
+\item 
+\hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \hyperlink{classPUBaseCollider_ad56efaa81e830e0173ab4135c62655c2}{get\+Collision\+Type} () const
+\item 
+void \hyperlink{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}{set\+Collision\+Type} (const \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \&collision\+Type)
+\item 
+float \hyperlink{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}{get\+Friction} () const
+\item 
+void \hyperlink{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}{set\+Friction} (const float friction)
+\item 
+float \hyperlink{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}{get\+Bouncyness} () const
+\item 
+void \hyperlink{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}{set\+Bouncyness} (const float bouncyness)
+\item 
+void \hyperlink{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}{populate\+Aligned\+Box} (\hyperlink{classAABB}{A\+A\+BB} \&box, const \hyperlink{classVec3}{Vec3} \&position, const float width, const float height, const float depth)
+\item 
+void \hyperlink{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}{calculate\+Rotation\+Speed\+After\+Collision} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a35b624db966a81520d8e21029e171f96}\label{classPUBaseCollider_a35b624db966a81520d8e21029e171f96}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUAffector}{P\+U\+Affector} $\ast$affector) override
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a4c2a5140a029525592af7113e8422792}\label{classPUBaseCollider_a4c2a5140a029525592af7113e8422792}} 
+virtual void {\bfseries pre\+Update\+Affector} (float delta\+Time) override
+\item 
+\hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \hyperlink{classPUBaseCollider_af904a3220f053c0d5c3b83e54c91b001}{get\+Intersection\+Type} () const
+\item 
+void \hyperlink{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}{set\+Intersection\+Type} (const \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \&intersection\+Type)
+\item 
+\hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \hyperlink{classPUBaseCollider_aecd3811a3af6b530f9fc005784713235}{get\+Collision\+Type} () const
+\item 
+void \hyperlink{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}{set\+Collision\+Type} (const \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \&collision\+Type)
+\item 
+float \hyperlink{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}{get\+Friction} () const
+\item 
+void \hyperlink{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}{set\+Friction} (const float friction)
+\item 
+float \hyperlink{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}{get\+Bouncyness} () const
+\item 
+void \hyperlink{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}{set\+Bouncyness} (const float bouncyness)
+\item 
+void \hyperlink{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}{populate\+Aligned\+Box} (\hyperlink{classAABB}{A\+A\+BB} \&box, const \hyperlink{classVec3}{Vec3} \&position, const float width, const float height, const float depth)
+\item 
+void \hyperlink{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}{calculate\+Rotation\+Speed\+After\+Collision} (\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$particle)
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a0b2e0f34b0fc5ce885d265bd2e8a4fef}\label{classPUBaseCollider_a0b2e0f34b0fc5ce885d265bd2e8a4fef}} 
+virtual void {\bfseries copy\+Attributes\+To} (\hyperlink{classPUAffector}{P\+U\+Affector} $\ast$affector) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a829b140475e95b62a61eed330f7b84d6}\label{classPUBaseCollider_a829b140475e95b62a61eed330f7b84d6}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classPUBaseCollider}{P\+U\+Base\+Collider}()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a771c03ffcdecdf4199ff484a99709a0a}\label{classPUBaseCollider_a771c03ffcdecdf4199ff484a99709a0a}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+O\+U\+N\+C\+Y\+N\+E\+SS} = 1.\+0f
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a4cab5fd5e1e5634f49f942784c7a6348}\label{classPUBaseCollider_a4cab5fd5e1e5634f49f942784c7a6348}} 
+static const float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+I\+C\+T\+I\+ON} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a8e590684e0c184523b8331b9237125ca}\label{classPUBaseCollider_a8e590684e0c184523b8331b9237125ca}} 
+static const \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+N\+T\+E\+R\+S\+E\+C\+T\+I\+O\+N\+\_\+\+T\+Y\+PE} = P\+U\+Base\+Collider\+::\+I\+T\+\_\+\+P\+O\+I\+NT
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a5b1699d88f23c9f6303cda9edbdd647a}\label{classPUBaseCollider_a5b1699d88f23c9f6303cda9edbdd647a}} 
+static const \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+Y\+PE} = P\+U\+Base\+Collider\+::\+C\+T\+\_\+\+B\+O\+U\+N\+CE
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a576dd960fab8a283ec86d2a3519ac755}\label{classPUBaseCollider_a576dd960fab8a283ec86d2a3519ac755}} 
+float {\bfseries \+\_\+friction}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_ad04723ede6a13e4cb0f644bfc0e22d75}\label{classPUBaseCollider_ad04723ede6a13e4cb0f644bfc0e22d75}} 
+float {\bfseries \+\_\+bouncyness}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a67bd0777ca55c4efaf5bd7f677cdf0c7}\label{classPUBaseCollider_a67bd0777ca55c4efaf5bd7f677cdf0c7}} 
+\hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} {\bfseries \+\_\+intersection\+Type}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_a531dd2017e3e9e345b57a19703b29aea}\label{classPUBaseCollider_a531dd2017e3e9e345b57a19703b29aea}} 
+\hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} {\bfseries \+\_\+collision\+Type}
+\item 
+\mbox{\Hypertarget{classPUBaseCollider_ac5f7be7143ed964a2b55ec3329820b3c}\label{classPUBaseCollider_ac5f7be7143ed964a2b55ec3329820b3c}} 
+float {\bfseries \+\_\+velocity\+Scale}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}\label{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!Collision\+Type@{Collision\+Type}}
+\index{Collision\+Type@{Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{Collision\+Type}{CollisionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{P\+U\+Base\+Collider\+::\+Collision\+Type}}
+
+Determines how a particle behaves after collision with this collider. The behaviour of the particle is solved in the collider and only behaviour that needs the colliders?data is taken into account. The fact that a particle expires for example, can be achieved by using an Observer in combination with an Event\+Handler (Do\+Expire\+Event\+Handler). C\+T\+\_\+\+N\+O\+NE means that the particle doesn\textquotesingle{}t do anything. This value should be set if the behaviour of the particle is determined outside the collider (for example, expiring the particle). C\+T\+\_\+\+B\+O\+U\+N\+CE means that the particle bounces off the collider. C\+T\+\_\+\+F\+L\+OW means that the particle flows around the contours of the collider. \mbox{\Hypertarget{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}\label{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!Collision\+Type@{Collision\+Type}}
+\index{Collision\+Type@{Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{Collision\+Type}{CollisionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{P\+U\+Base\+Collider\+::\+Collision\+Type}}
+
+Determines how a particle behaves after collision with this collider. The behaviour of the particle is solved in the collider and only behaviour that needs the colliders?data is taken into account. The fact that a particle expires for example, can be achieved by using an Observer in combination with an Event\+Handler (Do\+Expire\+Event\+Handler). C\+T\+\_\+\+N\+O\+NE means that the particle doesn\textquotesingle{}t do anything. This value should be set if the behaviour of the particle is determined outside the collider (for example, expiring the particle). C\+T\+\_\+\+B\+O\+U\+N\+CE means that the particle bounces off the collider. C\+T\+\_\+\+F\+L\+OW means that the particle flows around the contours of the collider. \mbox{\Hypertarget{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}\label{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!Intersection\+Type@{Intersection\+Type}}
+\index{Intersection\+Type@{Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{Intersection\+Type}{IntersectionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{P\+U\+Base\+Collider\+::\+Intersection\+Type}}
+
+Determines how a particle collision should be determined. I\+T\+\_\+\+P\+O\+I\+NT means that the position of the particle will be validated against the Colliders\textquotesingle{} shape. I\+T\+\_\+\+B\+OX means that the dimensions (width, height and depth) are used to determine whether the particle collides. \mbox{\Hypertarget{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}\label{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!Intersection\+Type@{Intersection\+Type}}
+\index{Intersection\+Type@{Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{Intersection\+Type}{IntersectionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{P\+U\+Base\+Collider\+::\+Intersection\+Type}}
+
+Determines how a particle collision should be determined. I\+T\+\_\+\+P\+O\+I\+NT means that the position of the particle will be validated against the Colliders\textquotesingle{} shape. I\+T\+\_\+\+B\+OX means that the dimensions (width, height and depth) are used to determine whether the particle collides. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}\label{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!calculate\+Rotation\+Speed\+After\+Collision@{calculate\+Rotation\+Speed\+After\+Collision}}
+\index{calculate\+Rotation\+Speed\+After\+Collision@{calculate\+Rotation\+Speed\+After\+Collision}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{calculate\+Rotation\+Speed\+After\+Collision()}{calculateRotationSpeedAfterCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::calculate\+Rotation\+Speed\+After\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})}
+
+Recalculates the rotation speed after collision. This function must be explicitly called in the update\+P\+U\+Affector(float delta\+Time) function of the class that inherits from Base\+Collider. \mbox{\Hypertarget{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}\label{classPUBaseCollider_a96e9b27b4c2d2dac1bd47b7531a4598f}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!calculate\+Rotation\+Speed\+After\+Collision@{calculate\+Rotation\+Speed\+After\+Collision}}
+\index{calculate\+Rotation\+Speed\+After\+Collision@{calculate\+Rotation\+Speed\+After\+Collision}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{calculate\+Rotation\+Speed\+After\+Collision()}{calculateRotationSpeedAfterCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::calculate\+Rotation\+Speed\+After\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{structPUParticle3D}{P\+U\+Particle3D} $\ast$}]{particle }\end{DoxyParamCaption})}
+
+Recalculates the rotation speed after collision. This function must be explicitly called in the update\+P\+U\+Affector(float delta\+Time) function of the class that inherits from Base\+Collider. \mbox{\Hypertarget{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}\label{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Bouncyness@{get\+Bouncyness}}
+\index{get\+Bouncyness@{get\+Bouncyness}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Bouncyness()}{getBouncyness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Base\+Collider\+::get\+Bouncyness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the bouncyness value. \mbox{\Hypertarget{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}\label{classPUBaseCollider_a13c2ec2d478b4923cdfe3adad3449c57}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Bouncyness@{get\+Bouncyness}}
+\index{get\+Bouncyness@{get\+Bouncyness}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Bouncyness()}{getBouncyness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float P\+U\+Base\+Collider\+::get\+Bouncyness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the bouncyness value. \mbox{\Hypertarget{classPUBaseCollider_ad56efaa81e830e0173ab4135c62655c2}\label{classPUBaseCollider_ad56efaa81e830e0173ab4135c62655c2}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Collision\+Type@{get\+Collision\+Type}}
+\index{get\+Collision\+Type@{get\+Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Collision\+Type()}{getCollisionType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{P\+U\+Base\+Collider\+::\+Collision\+Type} P\+U\+Base\+Collider\+::get\+Collision\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of collision. \mbox{\Hypertarget{classPUBaseCollider_aecd3811a3af6b530f9fc005784713235}\label{classPUBaseCollider_aecd3811a3af6b530f9fc005784713235}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Collision\+Type@{get\+Collision\+Type}}
+\index{get\+Collision\+Type@{get\+Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Collision\+Type()}{getCollisionType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} P\+U\+Base\+Collider\+::get\+Collision\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of collision. \mbox{\Hypertarget{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}\label{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Friction@{get\+Friction}}
+\index{get\+Friction@{get\+Friction}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Friction()}{getFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float P\+U\+Base\+Collider\+::get\+Friction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the friction value. \mbox{\Hypertarget{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}\label{classPUBaseCollider_a1a22cdac4632c10d249b8ad681013ac9}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Friction@{get\+Friction}}
+\index{get\+Friction@{get\+Friction}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Friction()}{getFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float P\+U\+Base\+Collider\+::get\+Friction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the friction value. \mbox{\Hypertarget{classPUBaseCollider_ac79e93200966f28399abc3ad8e603f26}\label{classPUBaseCollider_ac79e93200966f28399abc3ad8e603f26}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Intersection\+Type@{get\+Intersection\+Type}}
+\index{get\+Intersection\+Type@{get\+Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Type()}{getIntersectionType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{P\+U\+Base\+Collider\+::\+Intersection\+Type} P\+U\+Base\+Collider\+::get\+Intersection\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of intersection. \mbox{\Hypertarget{classPUBaseCollider_af904a3220f053c0d5c3b83e54c91b001}\label{classPUBaseCollider_af904a3220f053c0d5c3b83e54c91b001}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!get\+Intersection\+Type@{get\+Intersection\+Type}}
+\index{get\+Intersection\+Type@{get\+Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{get\+Intersection\+Type()}{getIntersectionType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} P\+U\+Base\+Collider\+::get\+Intersection\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of intersection. \mbox{\Hypertarget{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}\label{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!populate\+Aligned\+Box@{populate\+Aligned\+Box}}
+\index{populate\+Aligned\+Box@{populate\+Aligned\+Box}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{populate\+Aligned\+Box()}{populateAlignedBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::populate\+Aligned\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{classAABB}{A\+A\+BB} \&}]{box,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{const float}]{width,  }\item[{const float}]{height,  }\item[{const float}]{depth }\end{DoxyParamCaption})}
+
+Fill the Axis\+Aligned\+Box with data derived from the other arguments. \mbox{\Hypertarget{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}\label{classPUBaseCollider_a070c2f0ca1a3c55774153b38baec956b}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!populate\+Aligned\+Box@{populate\+Aligned\+Box}}
+\index{populate\+Aligned\+Box@{populate\+Aligned\+Box}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{populate\+Aligned\+Box()}{populateAlignedBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::populate\+Aligned\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{classAABB}{A\+A\+BB} \&}]{box,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{const float}]{width,  }\item[{const float}]{height,  }\item[{const float}]{depth }\end{DoxyParamCaption})}
+
+Fill the Axis\+Aligned\+Box with data derived from the other arguments. \mbox{\Hypertarget{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}\label{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Bouncyness@{set\+Bouncyness}}
+\index{set\+Bouncyness@{set\+Bouncyness}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Bouncyness()}{setBouncyness()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Bouncyness (\begin{DoxyParamCaption}\item[{const float}]{bouncyness }\end{DoxyParamCaption})}
+
+Sets the bouncyness value. \mbox{\Hypertarget{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}\label{classPUBaseCollider_a28690e04c5a9733a302f804f64a20520}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Bouncyness@{set\+Bouncyness}}
+\index{set\+Bouncyness@{set\+Bouncyness}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Bouncyness()}{setBouncyness()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Bouncyness (\begin{DoxyParamCaption}\item[{const float}]{bouncyness }\end{DoxyParamCaption})}
+
+Sets the bouncyness value. \mbox{\Hypertarget{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}\label{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Collision\+Type@{set\+Collision\+Type}}
+\index{set\+Collision\+Type@{set\+Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Collision\+Type()}{setCollisionType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Collision\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \&}]{collision\+Type }\end{DoxyParamCaption})}
+
+Sets the type of collision. \mbox{\Hypertarget{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}\label{classPUBaseCollider_a5c29824036f36e8ab3f2553dddb66aa1}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Collision\+Type@{set\+Collision\+Type}}
+\index{set\+Collision\+Type@{set\+Collision\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Collision\+Type()}{setCollisionType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Collision\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUBaseCollider_a13f646d7a12d1abb3cca3043c817e726}{Collision\+Type} \&}]{collision\+Type }\end{DoxyParamCaption})}
+
+Sets the type of collision. \mbox{\Hypertarget{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}\label{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Friction@{set\+Friction}}
+\index{set\+Friction@{set\+Friction}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Friction()}{setFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Friction (\begin{DoxyParamCaption}\item[{const float}]{friction }\end{DoxyParamCaption})}
+
+Sets the friction value. \mbox{\Hypertarget{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}\label{classPUBaseCollider_a13e2ba264ed65e0c38604bf14981c38c}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Friction@{set\+Friction}}
+\index{set\+Friction@{set\+Friction}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Friction()}{setFriction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Friction (\begin{DoxyParamCaption}\item[{const float}]{friction }\end{DoxyParamCaption})}
+
+Sets the friction value. \mbox{\Hypertarget{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}\label{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Intersection\+Type@{set\+Intersection\+Type}}
+\index{set\+Intersection\+Type@{set\+Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Intersection\+Type()}{setIntersectionType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Intersection\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \&}]{intersection\+Type }\end{DoxyParamCaption})}
+
+Sets the type of intersection. \mbox{\Hypertarget{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}\label{classPUBaseCollider_a1871ec53e7c9932c151007f62572ab8d}} 
+\index{P\+U\+Base\+Collider@{P\+U\+Base\+Collider}!set\+Intersection\+Type@{set\+Intersection\+Type}}
+\index{set\+Intersection\+Type@{set\+Intersection\+Type}!P\+U\+Base\+Collider@{P\+U\+Base\+Collider}}
+\subsubsection{\texorpdfstring{set\+Intersection\+Type()}{setIntersectionType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Base\+Collider\+::set\+Intersection\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classPUBaseCollider_ae86fc81f78c00a88e8e927377a86e81c}{Intersection\+Type} \&}]{intersection\+Type }\end{DoxyParamCaption})}
+
+Sets the type of intersection. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Base\+Collider.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Base\+Collider.\+cpp\end{DoxyCompactItemize}

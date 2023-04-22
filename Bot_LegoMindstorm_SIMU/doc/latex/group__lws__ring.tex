@@ -1,0 +1,270 @@
+\hypertarget{group__lws__ring}{}\section{L\+WS Ringbuffer A\+P\+Is}
+\label{group__lws__ring}\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct lws\+\_\+ring $\ast$ \hyperlink{group__lws__ring_ga3c9d92d25a17879f77e13eb481c5a82d}{lws\+\_\+ring\+\_\+create} (size\+\_\+t element\+\_\+len, size\+\_\+t count, void($\ast$destroy\+\_\+element)(void $\ast$element))
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void \hyperlink{group__lws__ring_ga0e671dbbb18af91d23e78026d49bc6e2}{lws\+\_\+ring\+\_\+destroy} (struct lws\+\_\+ring $\ast$ring)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t \hyperlink{group__lws__ring_ga711d92a1046c2a34860a2babd68aec32}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements} (struct lws\+\_\+ring $\ast$ring)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t \hyperlink{group__lws__ring_ga5e3cb460d9af061b5b60dc35d4e2ea95}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements} (struct lws\+\_\+ring $\ast$ring, uint32\+\_\+t $\ast$tail)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t \hyperlink{group__lws__ring_ga00fcaf9c2e3b16e9a667120ae214cc30}{lws\+\_\+ring\+\_\+insert} (struct lws\+\_\+ring $\ast$ring, const void $\ast$src, size\+\_\+t max\+\_\+count)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t \hyperlink{group__lws__ring_ga1ad6706af708096eba401a48f67bf865}{lws\+\_\+ring\+\_\+consume} (struct lws\+\_\+ring $\ast$ring, uint32\+\_\+t $\ast$tail, void $\ast$dest, size\+\_\+t max\+\_\+count)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const void $\ast$ \hyperlink{group__lws__ring_ga4bc75cf61aed9737f54bef9b79b54e58}{lws\+\_\+ring\+\_\+get\+\_\+element} (struct lws\+\_\+ring $\ast$ring, uint32\+\_\+t $\ast$tail)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void \hyperlink{group__lws__ring_gac4ec0634b0a901c4cc9cad33fcd7273b}{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail} (struct lws\+\_\+ring $\ast$ring, uint32\+\_\+t tail)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN uint32\+\_\+t \hyperlink{group__lws__ring_ga410b651d0668809dcf6e3621edce2794}{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail} (struct lws\+\_\+ring $\ast$ring)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{group__lws__ring_ga7b61910109bce5a64a9cd411377ae7b1}{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range} (struct lws\+\_\+ring $\ast$ring, void $\ast$$\ast$start, size\+\_\+t $\ast$bytes)
+\item 
+L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void \hyperlink{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}{lws\+\_\+ring\+\_\+bump\+\_\+head} (struct lws\+\_\+ring $\ast$ring, size\+\_\+t bytes)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{lws\+\_\+ring\+: generic ringbuffer struct}
+
+Provides an abstract ringbuffer api supporting one head and one or an unlimited number of tails.
+
+All of the members are opaque and manipulated by lws\+\_\+ring\+\_\+...() apis.
+
+The lws\+\_\+ring and its buffer is allocated at runtime on the heap, using
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__lws__ring_ga3c9d92d25a17879f77e13eb481c5a82d}{lws\+\_\+ring\+\_\+create()}
+\item \hyperlink{group__lws__ring_ga0e671dbbb18af91d23e78026d49bc6e2}{lws\+\_\+ring\+\_\+destroy()}
+\end{DoxyItemize}
+
+It may contain any type, the size of the \char`\"{}element\char`\"{} stored in the ring buffer and the number of elements is given at creation time.
+
+When you create the ringbuffer, you can optionally provide an element destroy callback that frees any allocations inside the element. This is then automatically called for elements with no tail behind them, ie, elements which don\textquotesingle{}t have any pending consumer are auto-\/freed.
+
+Whole elements may be inserted into the ringbuffer and removed from it, using
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__lws__ring_ga00fcaf9c2e3b16e9a667120ae214cc30}{lws\+\_\+ring\+\_\+insert()}
+\item \hyperlink{group__lws__ring_ga1ad6706af708096eba401a48f67bf865}{lws\+\_\+ring\+\_\+consume()}
+\end{DoxyItemize}
+
+You can find out how many whole elements are free or waiting using
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__lws__ring_ga711d92a1046c2a34860a2babd68aec32}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements()}
+\item \hyperlink{group__lws__ring_ga5e3cb460d9af061b5b60dc35d4e2ea95}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements()}
+\end{DoxyItemize}
+
+In addition there are special purpose optional byte-\/centric apis
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__lws__ring_ga7b61910109bce5a64a9cd411377ae7b1}{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range()}
+\item \hyperlink{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}{lws\+\_\+ring\+\_\+bump\+\_\+head()}
+\end{DoxyItemize}
+
+which let you, eg, read() directly into the ringbuffer without needing an intermediate bounce buffer.
+
+The accessors understand that the ring wraps, and optimizes insertion and consumption into one or two memcpy()s depending on if the head or tail wraps.
+
+lws\+\_\+ring only supports a single head, but optionally multiple tails with an A\+PI to inform it when the \char`\"{}oldest\char`\"{} tail has moved on. You can give N\+U\+LL where-\/ever an api asks for a tail pointer, and it will use an internal single tail pointer for convenience.
+
+The \char`\"{}oldest tail\char`\"{}, which is the only tail if you give it N\+U\+LL instead of some other tail, is used to track which elements in the ringbuffer are still unread by anyone.
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__lws__ring_gac4ec0634b0a901c4cc9cad33fcd7273b}{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail()} 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}\label{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+bump\+\_\+head@{lws\+\_\+ring\+\_\+bump\+\_\+head}}
+\index{lws\+\_\+ring\+\_\+bump\+\_\+head@{lws\+\_\+ring\+\_\+bump\+\_\+head}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+bump\+\_\+head()}{lws\_ring\_bump\_head()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void lws\+\_\+ring\+\_\+bump\+\_\+head (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}{lws\+\_\+ring\+\_\+bump\+\_\+head()}\+: used to write directly into the ring
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to operate on \\
+\hline
+{\em bytes} & the number of bytes you inserted at the current head \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__lws__ring_ga1ad6706af708096eba401a48f67bf865}\label{group__lws__ring_ga1ad6706af708096eba401a48f67bf865}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+consume@{lws\+\_\+ring\+\_\+consume}}
+\index{lws\+\_\+ring\+\_\+consume@{lws\+\_\+ring\+\_\+consume}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+consume()}{lws\_ring\_consume()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t lws\+\_\+ring\+\_\+consume (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{uint32\+\_\+t $\ast$}]{tail,  }\item[{void $\ast$}]{dest,  }\item[{size\+\_\+t}]{max\+\_\+count }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga1ad6706af708096eba401a48f67bf865}{lws\+\_\+ring\+\_\+consume()}\+: attempt to copy out and remove up to max\+\_\+count elements to src
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em tail} & a pointer to the tail struct to use, or N\+U\+LL for single tail \\
+\hline
+{\em dest} & the array of elements to be inserted. or N\+U\+LL for no copy \\
+\hline
+{\em max\+\_\+count} & the number of available elements at src\\
+\hline
+\end{DoxyParams}
+Attempts to copy out as many waiting elements as possible into dest, from the perspective of the given tail, up to max\+\_\+count. If dest is N\+U\+LL, the copying out is not done but the elements are logically consumed as usual. N\+U\+LL dest is useful in combination with \hyperlink{group__lws__ring_ga4bc75cf61aed9737f54bef9b79b54e58}{lws\+\_\+ring\+\_\+get\+\_\+element()}, where you can use the element direct from the ringbuffer and then call this with N\+U\+LL dest to logically consume it.
+
+Increments the tail position according to how many elements could be consumed.
+
+Returns the number of elements consumed. \mbox{\Hypertarget{group__lws__ring_ga3c9d92d25a17879f77e13eb481c5a82d}\label{group__lws__ring_ga3c9d92d25a17879f77e13eb481c5a82d}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+create@{lws\+\_\+ring\+\_\+create}}
+\index{lws\+\_\+ring\+\_\+create@{lws\+\_\+ring\+\_\+create}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+create()}{lws\_ring\_create()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN struct lws\+\_\+ring $\ast$ lws\+\_\+ring\+\_\+create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{element\+\_\+len,  }\item[{size\+\_\+t}]{count,  }\item[{void($\ast$)(void $\ast$element)}]{destroy\+\_\+element }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga3c9d92d25a17879f77e13eb481c5a82d}{lws\+\_\+ring\+\_\+create()}\+: create a new ringbuffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+len} & the size in bytes of one element in the ringbuffer \\
+\hline
+{\em count} & the number of elements the ringbuffer can contain \\
+\hline
+{\em destroy\+\_\+element} & N\+U\+LL, or callback to be called for each element that is removed from the ringbuffer due to the oldest tail moving beyond it\\
+\hline
+\end{DoxyParams}
+Creates the ringbuffer and allocates the storage. Returns the new lws\+\_\+ring $\ast$, or N\+U\+LL if the allocation failed.
+
+If non-\/\+N\+U\+LL, destroy\+\_\+element will get called back for every element that is retired from the ringbuffer after the oldest tail has gone past it, and for any element still left in the ringbuffer when it is destroyed. It replaces all other element destruction code in your user code. \mbox{\Hypertarget{group__lws__ring_ga0e671dbbb18af91d23e78026d49bc6e2}\label{group__lws__ring_ga0e671dbbb18af91d23e78026d49bc6e2}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+destroy@{lws\+\_\+ring\+\_\+destroy}}
+\index{lws\+\_\+ring\+\_\+destroy@{lws\+\_\+ring\+\_\+destroy}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+destroy()}{lws\_ring\_destroy()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void lws\+\_\+ring\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga0e671dbbb18af91d23e78026d49bc6e2}{lws\+\_\+ring\+\_\+destroy()}\+: destroy a previously created ringbuffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to destroy\\
+\hline
+\end{DoxyParams}
+Destroys the ringbuffer allocation and the struct lws\+\_\+ring itself. \mbox{\Hypertarget{group__lws__ring_ga711d92a1046c2a34860a2babd68aec32}\label{group__lws__ring_ga711d92a1046c2a34860a2babd68aec32}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements@{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements}}
+\index{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements@{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements()}{lws\_ring\_get\_count\_free\_elements()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga711d92a1046c2a34860a2babd68aec32}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+free\+\_\+elements()}\+: return how many elements can fit in the free space
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on\\
+\hline
+\end{DoxyParams}
+Returns how much room is left in the ringbuffer for whole element insertion. \mbox{\Hypertarget{group__lws__ring_ga5e3cb460d9af061b5b60dc35d4e2ea95}\label{group__lws__ring_ga5e3cb460d9af061b5b60dc35d4e2ea95}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements@{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements}}
+\index{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements@{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements()}{lws\_ring\_get\_count\_waiting\_elements()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{uint32\+\_\+t $\ast$}]{tail }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga5e3cb460d9af061b5b60dc35d4e2ea95}{lws\+\_\+ring\+\_\+get\+\_\+count\+\_\+waiting\+\_\+elements()}\+: return how many elements can be consumed
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em tail} & a pointer to the tail struct to use, or N\+U\+LL for single tail\\
+\hline
+\end{DoxyParams}
+Returns how many elements are waiting to be consumed from the perspective of the tail pointer given. \mbox{\Hypertarget{group__lws__ring_ga4bc75cf61aed9737f54bef9b79b54e58}\label{group__lws__ring_ga4bc75cf61aed9737f54bef9b79b54e58}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+get\+\_\+element@{lws\+\_\+ring\+\_\+get\+\_\+element}}
+\index{lws\+\_\+ring\+\_\+get\+\_\+element@{lws\+\_\+ring\+\_\+get\+\_\+element}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+get\+\_\+element()}{lws\_ring\_get\_element()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN const void $\ast$ lws\+\_\+ring\+\_\+get\+\_\+element (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{uint32\+\_\+t $\ast$}]{tail }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga4bc75cf61aed9737f54bef9b79b54e58}{lws\+\_\+ring\+\_\+get\+\_\+element()}\+: get a pointer to the next waiting element for tail
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em tail} & a pointer to the tail struct to use, or N\+U\+LL for single tail\\
+\hline
+\end{DoxyParams}
+Points to the next element that tail would consume, directly in the ringbuffer. This lets you write() or otherwise use the element without having to copy it out somewhere first.
+
+After calling this, you must call lws\+\_\+ring\+\_\+consume(ring, \&tail, N\+U\+L\+L, 1) which will logically consume the element you used up and increment your tail (tail may also be N\+U\+LL there if you use a single tail).
+
+Returns N\+U\+LL if no waiting element, or a const void $\ast$ pointing to it. \mbox{\Hypertarget{group__lws__ring_ga410b651d0668809dcf6e3621edce2794}\label{group__lws__ring_ga410b651d0668809dcf6e3621edce2794}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail@{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail}}
+\index{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail@{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail()}{lws\_ring\_get\_oldest\_tail()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN uint32\+\_\+t lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga410b651d0668809dcf6e3621edce2794}{lws\+\_\+ring\+\_\+get\+\_\+oldest\+\_\+tail()}\+: get current oldest available data index
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on\\
+\hline
+\end{DoxyParams}
+If you are initializing a new ringbuffer consumer, you can set its tail to this to start it from the oldest ringbuffer entry still available. \mbox{\Hypertarget{group__lws__ring_ga00fcaf9c2e3b16e9a667120ae214cc30}\label{group__lws__ring_ga00fcaf9c2e3b16e9a667120ae214cc30}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+insert@{lws\+\_\+ring\+\_\+insert}}
+\index{lws\+\_\+ring\+\_\+insert@{lws\+\_\+ring\+\_\+insert}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+insert()}{lws\_ring\_insert()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN size\+\_\+t lws\+\_\+ring\+\_\+insert (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{max\+\_\+count }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga00fcaf9c2e3b16e9a667120ae214cc30}{lws\+\_\+ring\+\_\+insert()}\+: attempt to insert up to max\+\_\+count elements from src
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em src} & the array of elements to be inserted \\
+\hline
+{\em max\+\_\+count} & the number of available elements at src\\
+\hline
+\end{DoxyParams}
+Attempts to insert as many of the elements at src as possible, up to the maximum max\+\_\+count. Returns the number of elements actually inserted. \mbox{\Hypertarget{group__lws__ring_ga7b61910109bce5a64a9cd411377ae7b1}\label{group__lws__ring_ga7b61910109bce5a64a9cd411377ae7b1}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range@{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range}}
+\index{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range@{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range()}{lws\_ring\_next\_linear\_insert\_range()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN int lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{void $\ast$$\ast$}]{start,  }\item[{size\+\_\+t $\ast$}]{bytes }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_ga7b61910109bce5a64a9cd411377ae7b1}{lws\+\_\+ring\+\_\+next\+\_\+linear\+\_\+insert\+\_\+range()}\+: used to write directly into the ring
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em start} & pointer to a void $\ast$ set to the start of the next ringbuffer area \\
+\hline
+{\em bytes} & pointer to a size\+\_\+t set to the max length you may use from $\ast$start\\
+\hline
+\end{DoxyParams}
+This provides a low-\/level, bytewise access directly into the ringbuffer allowing direct insertion of data without having to use a bounce buffer.
+
+The api reports the position and length of the next linear range that can be written in the ringbuffer, ie, up to the point it would wrap, and sets $\ast$start and $\ast$bytes accordingly. You can then, eg, directly read() into $\ast$start for up to $\ast$bytes, and use \hyperlink{group__lws__ring_gaef516991b6b0268a639f76a01def2f87}{lws\+\_\+ring\+\_\+bump\+\_\+head()} to update the lws\+\_\+ring with what you have done.
+
+Returns nonzero if no insertion is currently possible. \mbox{\Hypertarget{group__lws__ring_gac4ec0634b0a901c4cc9cad33fcd7273b}\label{group__lws__ring_gac4ec0634b0a901c4cc9cad33fcd7273b}} 
+\index{L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}!lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail@{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail}}
+\index{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail@{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail}!L\+W\+S Ringbuffer A\+P\+Is@{L\+W\+S Ringbuffer A\+P\+Is}}
+\subsubsection{\texorpdfstring{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail()}{lws\_ring\_update\_oldest\_tail()}}
+{\footnotesize\ttfamily L\+W\+S\+\_\+\+V\+I\+S\+I\+B\+LE L\+W\+S\+\_\+\+E\+X\+T\+E\+RN void lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail (\begin{DoxyParamCaption}\item[{struct lws\+\_\+ring $\ast$}]{ring,  }\item[{uint32\+\_\+t}]{tail }\end{DoxyParamCaption})}
+
+\hyperlink{group__lws__ring_gac4ec0634b0a901c4cc9cad33fcd7273b}{lws\+\_\+ring\+\_\+update\+\_\+oldest\+\_\+tail()}\+: free up elements older than tail for reuse
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & the struct lws\+\_\+ring to report on \\
+\hline
+{\em tail} & a pointer to the tail struct to use, or N\+U\+LL for single tail\\
+\hline
+\end{DoxyParams}
+If you are using multiple tails, you must use this A\+PI to inform the lws\+\_\+ring when none of the tails still need elements in the fifo any more, by updating it when the \char`\"{}oldest\char`\"{} tail has moved on. 

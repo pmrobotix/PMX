@@ -1,0 +1,83 @@
+\hypertarget{classEv3i2c}{}\section{Ev3i2c Class Reference}
+\label{classEv3i2c}\index{Ev3i2c@{Ev3i2c}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEv3i2c_ab9b4320cc4496499d2ded20b6cb1be8d}\label{classEv3i2c_ab9b4320cc4496499d2ded20b6cb1be8d}} 
+{\bfseries Ev3i2c} (uint i2c\+\_\+bus\+\_\+num=1, bool skip\+P\+EC=false)
+\item 
+\mbox{\Hypertarget{classEv3i2c_a96d8978ddbc6fc555e2895cbcedf2aa4}\label{classEv3i2c_a96d8978ddbc6fc555e2895cbcedf2aa4}} 
+int {\bfseries begin} (uint address)
+\item 
+\mbox{\Hypertarget{classEv3i2c_ac13dcbc09948990c2f6ad32feff9fae4}\label{classEv3i2c_ac13dcbc09948990c2f6ad32feff9fae4}} 
+int {\bfseries read} (uint8\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{classEv3i2c_aa305f12f81d5afa4c3e8ad8570092f75}\label{classEv3i2c_aa305f12f81d5afa4c3e8ad8570092f75}} 
+int {\bfseries write} (uint8\+\_\+t value)
+\item 
+int \hyperlink{classEv3i2c_af066212d586367d9a9665ddf3fda3b0f}{read\+Reg} (uint8\+\_\+t byte\+\_\+reg, uint8\+\_\+t $\ast$data, uint8\+\_\+t length\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Read from given chip at a given register address (ioctl() method). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEv3i2c_a187d4f62d50cc4c21a37adb374d4a8ad}\label{classEv3i2c_a187d4f62d50cc4c21a37adb374d4a8ad}} 
+int {\bfseries ping} ()
+\item 
+int \hyperlink{classEv3i2c_aa9918de4e586386af5d8bd9928d54db9}{write\+Reg} (uint8\+\_\+t byte\+\_\+reg, uint8\+\_\+t $\ast$values, uint8\+\_\+t length\+\_\+values)
+\begin{DoxyCompactList}\small\item\em Write from given chip at a given register address (ioctl() method). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEv3i2c_a9c6aa651d7b07bf559435dd53f99989f}\label{classEv3i2c_a9c6aa651d7b07bf559435dd53f99989f}} 
+void {\bfseries lock} ()
+\item 
+\mbox{\Hypertarget{classEv3i2c_a0fa2c8a320f6a75992ea5a60c95fc637}\label{classEv3i2c_a0fa2c8a320f6a75992ea5a60c95fc637}} 
+void {\bfseries unlock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEv3i2c_af066212d586367d9a9665ddf3fda3b0f}\label{classEv3i2c_af066212d586367d9a9665ddf3fda3b0f}} 
+\index{Ev3i2c@{Ev3i2c}!read\+Reg@{read\+Reg}}
+\index{read\+Reg@{read\+Reg}!Ev3i2c@{Ev3i2c}}
+\subsubsection{\texorpdfstring{read\+Reg()}{readReg()}}
+{\footnotesize\ttfamily int Ev3i2c\+::read\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte\+\_\+reg,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{length\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Read from given chip at a given register address (ioctl() method). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\+\_\+reg} & register address \\
+\hline
+{\em data} & read data \\
+\hline
+{\em length\+\_\+data} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEv3i2c_aa9918de4e586386af5d8bd9928d54db9}\label{classEv3i2c_aa9918de4e586386af5d8bd9928d54db9}} 
+\index{Ev3i2c@{Ev3i2c}!write\+Reg@{write\+Reg}}
+\index{write\+Reg@{write\+Reg}!Ev3i2c@{Ev3i2c}}
+\subsubsection{\texorpdfstring{write\+Reg()}{writeReg()}}
+{\footnotesize\ttfamily int Ev3i2c\+::write\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte\+\_\+reg,  }\item[{uint8\+\_\+t $\ast$}]{values,  }\item[{uint8\+\_\+t}]{length\+\_\+values }\end{DoxyParamCaption})}
+
+
+
+Write from given chip at a given register address (ioctl() method). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\+\_\+reg} & register address \\
+\hline
+{\em values} & write data \\
+\hline
+{\em length\+\_\+values} & data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error if negative 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/Ev3i2c.\+hpp\item 
+/home/pmx/git/\+P\+M\+X/src/\+Driver-\/\+E\+V3/Ev3i2c.\+cpp\end{DoxyCompactItemize}

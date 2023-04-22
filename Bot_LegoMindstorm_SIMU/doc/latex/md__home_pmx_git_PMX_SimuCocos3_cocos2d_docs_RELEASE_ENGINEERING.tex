@@ -1,0 +1,204 @@
+\subsection*{Tagging}
+
+New releases must be tagged in github. The tag name must follow these rules\+: \begin{DoxyVerb}cocos2d-x-Major.Minor[.Status]
+\end{DoxyVerb}
+
+
+or \begin{DoxyVerb}cocos2d-x-Major.Minor.Revision[.Status]
+\end{DoxyVerb}
+
+
+Example of valid names\+:
+
+
+\begin{DoxyItemize}
+\item cocos2d-\/x-\/3.\+0rc0
+\item cocos2d-\/x-\/3.\+0
+\item cocos2d-\/x-\/2.\+1.\+1
+\item cocos2d-\/x-\/2.\+1.\+1rc0
+\end{DoxyItemize}
+
+See \char`\"{}\+Naming Conventions\char`\"{} below
+
+\subsection*{Branching}
+
+Each Major version will have 2 branches, {\ttfamily master} and {\ttfamily develop}. For cocos2d-\/x v3, the branches names will be {\ttfamily v3-\/master} and {\ttfamily v3-\/develop}, for v4 the branches names will be {\ttfamily v4-\/master} and {\ttfamily v4-\/develop}, and so on.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily master} is the stable branch.
+\item {\ttfamily develop} is the unstable branch. All new features, bug fixes, etc, are applied first to {\ttfamily develop}.
+\end{DoxyItemize}
+
+Once a new version is released (either Major, Minor or Revision), then {\ttfamily develop} branch must be merged into {\ttfamily master} branch. To be more specific, {\ttfamily master} only contains {\itshape stable} releases. {\itshape Alpha}, {\itshape Beta}, and {\itshape RC} versions M\+U\+ST N\+OT be merged into {\ttfamily master}.
+
+\subsection*{Announcing}
+
+Only stable releases must be announced on\+:
+
+
+\begin{DoxyItemize}
+\item \href{http://www.cocos2d-x.org/news}{\tt Blog}
+\end{DoxyItemize}
+
+All kind of releases (alpha,beta,rc, final) must be announced on\+:
+\begin{DoxyItemize}
+\item \href{https://twitter.com/cocos2dx}{\tt Twitter}
+\item \href{http://discuss.cocos2d-x.org/}{\tt Forum}
+\end{DoxyItemize}
+
+\subsection*{Download package}
+
+A download package must be available for each released version. The package shall include the source code of cocos2d-\/x, and the needed scripts to download and install the 3rd party binaries.
+
+\subsection*{Release Notes and Changelog}
+
+{\bfseries B\+E\+F\+O\+RE} releasing a new version (either stable or unstable), the following documents must be updated\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG}{\tt C\+H\+A\+N\+G\+E\+L\+OG}
+\item https\+://github.com/cocos2d/cocos2d-\/x/blob/v3/docs/\+R\+E\+L\+E\+A\+S\+E\+\_\+\+N\+O\+T\+E\+S.\+md \char`\"{}\+Release Notes\char`\"{}
+\end{DoxyItemize}
+
+\subsection*{Documentation}
+
+{\bfseries B\+E\+F\+O\+RE} releasing a new Minor or Major stable release, the following tasks M\+U\+ST be done\+:
+
+
+\begin{DoxyItemize}
+\item All documentation M\+U\+ST be updated to the new version. This includes\+:
+\begin{DoxyItemize}
+\item A\+PI \hyperlink{structReference}{Reference}
+\item Programmers Guide
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Backward compatibility}
+
+
+\begin{DoxyItemize}
+\item Minor versions M\+U\+ST be backward compatible with previous minor versions. eg\+: v3.\+2 must be backward compatible with v3.\+1 and v3.\+0.
+\item Major versions S\+H\+O\+U\+LD be backward compatible with previous major versions. Breaking backward compatibility in Major versions is acceptable only if it is extremely well justified
+\end{DoxyItemize}
+
+\subsection*{Deprecated A\+P\+Is}
+
+
+\begin{DoxyItemize}
+\item Only Major versions (eg\+: 4.\+0, 5.\+0) can introduce deprecated A\+P\+Is. Deprecated A\+P\+Is cannot be introduced in Point releases (eg\+: 3.\+5, 4.\+2).
+\item Only Major versions can remove deprecated A\+P\+Is. They cannot be removed in Point versions.
+\item A deprecated A\+PI must live at least for the whole cycle of a Major version. Eg\+: if an A\+PI was deprecated in 4.\+0, it can be removed in 5.\+0, but not before. It can be removed in 6.\+0 or future Major releases, but it cannot be removed in Point releases, like 5.\+1.
+\end{DoxyItemize}
+
+\subsection*{Performance tests}
+
+
+\begin{DoxyItemize}
+\item Performance tests M\+U\+ST be run before releasing a Release Candidate
+\item If performance is worse than previous stable version, then the Release Candidate M\+U\+ST N\+OT be released (See Naming Conventions below)
+\item Results of the performance tests must be documented in this \href{https://docs.google.com/spreadsheet/ccc?key=0AvvkdgVbWvpZdHFudzdDT3NuYTRNTHlZZzRGZWYzMmc#gid=8}{\tt spreadsheet}
+\end{DoxyItemize}
+
+\subsection*{Samples and tests}
+
+{\bfseries B\+E\+F\+O\+RE} releasing a new Minor or Major stable release, the following tasks M\+U\+ST be done\+:
+
+
+\begin{DoxyItemize}
+\item All the samples and tests must be updated to use the new version. This includes\+:
+\begin{DoxyItemize}
+\item The samples in \href{https://github.com/cocos2d/cocos2d-x-samples}{\tt cocos2d-\/x-\/samples} repository
+\item The demo games \href{https://github.com/chukong/EarthWarrior3D}{\tt Earth\+Warrior3D} and \href{https://github.com/chukong/FantasyWarrior3D}{\tt Fantasy\+Warrior3D}
+\item All the tests bundled in cocos2d-\/x
+\item All the templates bundled in cocos2d-\/x
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Naming conventions}
+
+\subsubsection*{Alpha}
+
+The product is unstable. It could have memory leaks, or crashes, or the A\+PI is unstable. The product contains little QA. Although the product is not ready for production, the product should be testable. Alpha versions might have Core functionality that has just been refactored, meaning that Core functionality might be unstable, but should work Ok.
+
+As an example, for cocos2d-\/x, an {\itshape Alpha} version means\+:
+
+
+\begin{DoxyItemize}
+\item Basic functionality works Ok (not great, but OK), like Sprites, Scenes, actions, etc. \+\_\+$\ast$ But it might have memory leaks, or crashes, or the recently added features might be unfinished. The documentation might not be updated.
+\item As an example, the \hyperlink{classRenderer}{Renderer} refactoring must be done in \char`\"{}alpha\char`\"{} versions (but not Beta versions).
+\end{DoxyItemize}
+
+Alpha versions are N\+OT feature freeze. New features might be added in future alpha and beta versions.
+
+\subsubsection*{Beta}
+
+The product is more stable than {\itshape Alpha}. The product might crash, but not frequently. No major changes were made in core components. Smaller features could be refactored in {\itshape Beta} versions, but the core functionality is stable. The product has more QA. The only difference between {\itshape Alpha} and {\itshape Beta}, is that {\itshape Beta} is more stable than {\itshape Alpha}. And that in {\itshape Beta} versions no new major features will be added.
+
+As an example, for cocos2d-\/x it means\+:
+
+
+\begin{DoxyItemize}
+\item All the Core features (Sprites, \hyperlink{classMenu}{Menu}, Labels, \hyperlink{classDirector}{Director}, Transitions) are stable. Bug fixes could have been added into the Core functionality, but no major refactoring were done in the Core.
+\item But perhaps new features like the new Particle Engine could be unfinished, or the Cocos Studio reader might crash.
+\item Some cocos2d-\/x users might want to use a beta version for real games.
+\end{DoxyItemize}
+
+Beta versions are N\+OT feature freeze. {\bfseries Small} new features might be added in future {\itshape Beta} versions. New {\bfseries B\+IG} features that might affect the Core functionality must only be added in {\itshape Alpha} versions, and not in {\itshape Beta} versions.
+
+\subsubsection*{Release Candidate}
+
+Release candidate means that, unless major bugs are found, the product is ready for release. The difference between {\itshape Release Candidate\+\_\+\+\_\+ and \+\_\+\+Final} is that RC has less testing than the final version.
+
+Many cocos2d-\/x users might want to try and use the RC releases for production.
+
+RC versions A\+RE feature freeze. No new features, no matter how small they are, M\+U\+ST be added in RC versions, because as the name implies, it is a {\itshape Release Candidate}.
+
+\subsubsection*{Final}
+
+It is the new stable version.
+
+\subsection*{Number conventions}
+
+major.\+minor \mbox{[}revision $\vert$ status\mbox{]}
+
+\subsubsection*{Major}
+
+The major number is increased when there are significant jumps in functionality such as changing the framework which could cause incompatibility with interfacing systems
+
+\subsubsection*{Minor}
+
+The minor number is incremented when only minor features or significant fixes have been added.
+
+\subsubsection*{Revision}
+
+The revision number is incremented when minor bugs are fixed.
+
+\subsubsection*{Status}
+
+The status could be\+: alphaN, betaN or rcN.
+
+\textquotesingle{}N\textquotesingle{} is a number, and the first M\+U\+ST always be 0.
+
+\subsubsection*{Examples}
+
+v2.\+0-\/alpha0\+:
+\begin{DoxyItemize}
+\item New major version of cocos2d-\/x.
+\item Unstable
+\end{DoxyItemize}
+
+v2.\+1.\+3\+:
+\begin{DoxyItemize}
+\item Stable version of cocos2d-\/x. It is the same as v2.\+1 plus some bug fixes.
+\end{DoxyItemize}
+
+v2.\+2-\/beta0\+:
+\begin{DoxyItemize}
+\item Similar to v2.\+1.\+3, but some new features were added, but are not stable yet.
+\end{DoxyItemize}
+
+v2.\+2\+:
+\begin{DoxyItemize}
+\item Similar to v2.\+1.\+3, but some small features were added. The new features are stable. 
+\end{DoxyItemize}

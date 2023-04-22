@@ -1,0 +1,239 @@
+\hypertarget{classAttachNode}{}\section{Attach\+Node Class Reference}
+\label{classAttachNode}\index{Attach\+Node@{Attach\+Node}}
+
+
+attach a node to a bone usage\+: auto sprite = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}girl.\+c3b\char`\"{}); auto weapon = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}weapon.\+c3b\char`\"{}); auto attach\+Node = sprite-\/$>$get\+Attach\+Node(\char`\"{}left hand\char`\"{}); attach\+Node-\/$>$add\+Child(weapon);  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Attach\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Attach\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classAttachNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Attach\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAttachNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classMat4}{Mat4} \hyperlink{classAttachNode_a983b98880a9e8b42dcf78720f4fae50e}{get\+World\+To\+Node\+Transform} () const override
+\item 
+virtual \hyperlink{classMat4}{Mat4} \hyperlink{classAttachNode_acb93bdd6d5c0e981b081513d3e307b49}{get\+Node\+To\+World\+Transform} () const override
+\item 
+virtual const \hyperlink{classMat4}{Mat4} \& \hyperlink{classAttachNode_acff1e6467b97ca416e45af09c28028d6}{get\+Node\+To\+Parent\+Transform} () const override
+\item 
+virtual void \hyperlink{classAttachNode_a0781a31350ac165126c852540d7de7da}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual \hyperlink{classMat4}{Mat4} \hyperlink{classAttachNode_a566ef52d5a8c5f036322a4fb5f63c668}{get\+World\+To\+Node\+Transform} () const override
+\item 
+virtual \hyperlink{classMat4}{Mat4} \hyperlink{classAttachNode_a53970668bcd205b385e4dd0ae2af8039}{get\+Node\+To\+World\+Transform} () const override
+\item 
+virtual const \hyperlink{classMat4}{Mat4} \& \hyperlink{classAttachNode_a0b751dd5e5c67cada4ab1e27f67f8a71}{get\+Node\+To\+Parent\+Transform} () const override
+\item 
+virtual void \hyperlink{classAttachNode_a34dd14d134d83f3c5458bf4ea94361fe}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAttachNode}{Attach\+Node} $\ast$ \hyperlink{classAttachNode_aaff0bb8854efd2f675e35cfd6f82e6d5}{create} (\hyperlink{classBone3D}{Bone3D} $\ast$attach\+Bone)
+\item 
+static \hyperlink{classAttachNode}{Attach\+Node} $\ast$ \hyperlink{classAttachNode_ab3e6006a938a97f1d3b8f1e531c3da50}{create} (\hyperlink{classBone3D}{Bone3D} $\ast$attach\+Bone)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAttachNode_a5f6d816d33aea261ab2911feefd672df}\label{classAttachNode_a5f6d816d33aea261ab2911feefd672df}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAttachNode}{Attach\+Node}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAttachNode_acb4bca7727e265c9bd9fa50a3158ce9b}\label{classAttachNode_acb4bca7727e265c9bd9fa50a3158ce9b}} 
+\hyperlink{classBone3D}{Bone3D} $\ast$ {\bfseries \+\_\+attach\+Bone}
+\item 
+\mbox{\Hypertarget{classAttachNode_a94c93d9889c8bcfa6a3017b8a32be0dc}\label{classAttachNode_a94c93d9889c8bcfa6a3017b8a32be0dc}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+transform\+To\+Parent}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+attach a node to a bone usage\+: auto sprite = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}girl.\+c3b\char`\"{}); auto weapon = \hyperlink{classSprite3D_a10905e0480bfcf875882a9ad7b538d78}{Sprite3\+D\+::create}(\char`\"{}weapon.\+c3b\char`\"{}); auto attach\+Node = sprite-\/$>$get\+Attach\+Node(\char`\"{}left hand\char`\"{}); attach\+Node-\/$>$add\+Child(weapon); 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAttachNode_aaff0bb8854efd2f675e35cfd6f82e6d5}\label{classAttachNode_aaff0bb8854efd2f675e35cfd6f82e6d5}} 
+\index{Attach\+Node@{Attach\+Node}!create@{create}}
+\index{create@{create}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classAttachNode}{Attach\+Node} $\ast$ Attach\+Node\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{attach\+Bone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates an \hyperlink{classAttachNode}{Attach\+Node} 
+\begin{DoxyParams}{Parameters}
+{\em attach\+Bone} & The bone to which the \hyperlink{classAttachNode}{Attach\+Node} is going to attach, the attache\+Bone must be a bone of the \hyperlink{classAttachNode}{Attach\+Node}\textquotesingle{}s parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAttachNode_ab3e6006a938a97f1d3b8f1e531c3da50}\label{classAttachNode_ab3e6006a938a97f1d3b8f1e531c3da50}} 
+\index{Attach\+Node@{Attach\+Node}!create@{create}}
+\index{create@{create}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAttachNode}{Attach\+Node}$\ast$ Attach\+Node\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classBone3D}{Bone3D} $\ast$}]{attach\+Bone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+creates an \hyperlink{classAttachNode}{Attach\+Node} 
+\begin{DoxyParams}{Parameters}
+{\em attach\+Bone} & The bone to which the \hyperlink{classAttachNode}{Attach\+Node} is going to attach, the attache\+Bone must be a bone of the \hyperlink{classAttachNode}{Attach\+Node}\textquotesingle{}s parent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAttachNode_acff1e6467b97ca416e45af09c28028d6}\label{classAttachNode_acff1e6467b97ca416e45af09c28028d6}} 
+\index{Attach\+Node@{Attach\+Node}!get\+Node\+To\+Parent\+Transform@{get\+Node\+To\+Parent\+Transform}}
+\index{get\+Node\+To\+Parent\+Transform@{get\+Node\+To\+Parent\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+Node\+To\+Parent\+Transform()}{getNodeToParentTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Attach\+Node\+::get\+Node\+To\+Parent\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the matrix that transform the node\textquotesingle{}s (local) space coordinates into the parent\textquotesingle{}s space coordinates. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+The transformation matrix. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a7235b4a4d449fb7e01459c5c3b24d1eb}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a0b751dd5e5c67cada4ab1e27f67f8a71}\label{classAttachNode_a0b751dd5e5c67cada4ab1e27f67f8a71}} 
+\index{Attach\+Node@{Attach\+Node}!get\+Node\+To\+Parent\+Transform@{get\+Node\+To\+Parent\+Transform}}
+\index{get\+Node\+To\+Parent\+Transform@{get\+Node\+To\+Parent\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+Node\+To\+Parent\+Transform()}{getNodeToParentTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classMat4}{Mat4}\& Attach\+Node\+::get\+Node\+To\+Parent\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the matrix that transform the node\textquotesingle{}s (local) space coordinates into the parent\textquotesingle{}s space coordinates. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+The transformation matrix. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a7235b4a4d449fb7e01459c5c3b24d1eb}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_acb93bdd6d5c0e981b081513d3e307b49}\label{classAttachNode_acb93bdd6d5c0e981b081513d3e307b49}} 
+\index{Attach\+Node@{Attach\+Node}!get\+Node\+To\+World\+Transform@{get\+Node\+To\+World\+Transform}}
+\index{get\+Node\+To\+World\+Transform@{get\+Node\+To\+World\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+Node\+To\+World\+Transform()}{getNodeToWorldTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Attach\+Node\+::get\+Node\+To\+World\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the world affine transform matrix. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+transformation matrix, in pixels. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a1e46065101d0d5dba32262067d85bf23}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a53970668bcd205b385e4dd0ae2af8039}\label{classAttachNode_a53970668bcd205b385e4dd0ae2af8039}} 
+\index{Attach\+Node@{Attach\+Node}!get\+Node\+To\+World\+Transform@{get\+Node\+To\+World\+Transform}}
+\index{get\+Node\+To\+World\+Transform@{get\+Node\+To\+World\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+Node\+To\+World\+Transform()}{getNodeToWorldTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classMat4}{Mat4} Attach\+Node\+::get\+Node\+To\+World\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the world affine transform matrix. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+transformation matrix, in pixels. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_a1e46065101d0d5dba32262067d85bf23}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a983b98880a9e8b42dcf78720f4fae50e}\label{classAttachNode_a983b98880a9e8b42dcf78720f4fae50e}} 
+\index{Attach\+Node@{Attach\+Node}!get\+World\+To\+Node\+Transform@{get\+World\+To\+Node\+Transform}}
+\index{get\+World\+To\+Node\+Transform@{get\+World\+To\+Node\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+World\+To\+Node\+Transform()}{getWorldToNodeTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classMat4}{Mat4} Attach\+Node\+::get\+World\+To\+Node\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the inverse world affine transform matrix. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+The transformation matrix. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab41da5111de6d98710d0497e35063989}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a566ef52d5a8c5f036322a4fb5f63c668}\label{classAttachNode_a566ef52d5a8c5f036322a4fb5f63c668}} 
+\index{Attach\+Node@{Attach\+Node}!get\+World\+To\+Node\+Transform@{get\+World\+To\+Node\+Transform}}
+\index{get\+World\+To\+Node\+Transform@{get\+World\+To\+Node\+Transform}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{get\+World\+To\+Node\+Transform()}{getWorldToNodeTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classMat4}{Mat4} Attach\+Node\+::get\+World\+To\+Node\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the inverse world affine transform matrix. The matrix is in Pixels.
+
+\begin{DoxyReturn}{Returns}
+The transformation matrix. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classNode_ab41da5111de6d98710d0497e35063989}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a0781a31350ac165126c852540d7de7da}\label{classAttachNode_a0781a31350ac165126c852540d7de7da}} 
+\index{Attach\+Node@{Attach\+Node}!visit@{visit}}
+\index{visit@{visit}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Attach\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classAttachNode_a34dd14d134d83f3c5458bf4ea94361fe}\label{classAttachNode_a34dd14d134d83f3c5458bf4ea94361fe}} 
+\index{Attach\+Node@{Attach\+Node}!visit@{visit}}
+\index{visit@{visit}!Attach\+Node@{Attach\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Attach\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Attach\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/3d/C\+C\+Attach\+Node.\+cpp\end{DoxyCompactItemize}

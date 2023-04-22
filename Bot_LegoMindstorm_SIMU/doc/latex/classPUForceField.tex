@@ -1,0 +1,283 @@
+\hypertarget{classPUForceField}{}\section{P\+U\+Force\+Field Class Reference}
+\label{classPUForceField}\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+
+
+{\ttfamily \#include $<$C\+C\+P\+U\+Force\+Field.\+h$>$}
+
+
+
+Collaboration diagram for P\+U\+Force\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPUForceField__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUForceField_a855cda976c34a492069df4aa40bde866}\label{classPUForceField_a855cda976c34a492069df4aa40bde866}} 
+enum {\bfseries Force\+Field\+Type} \{ {\bfseries F\+F\+\_\+\+R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+C\+A\+LC}
+ \}
+\item 
+\mbox{\Hypertarget{classPUForceField_a855cda976c34a492069df4aa40bde866}\label{classPUForceField_a855cda976c34a492069df4aa40bde866}} 
+enum {\bfseries Force\+Field\+Type} \{ {\bfseries F\+F\+\_\+\+R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+C\+A\+LC}, 
+{\bfseries F\+F\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+C\+A\+LC}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classPUForceField_a1f61f55760c564ae61d4a53c46ce21a2}{initialise} (Force\+Field\+Type type, const \hyperlink{classVec3}{Vec3} \&position, unsigned int force\+Field\+Size, unsigned short octaves, double frequency, double amplitude, double persistence, const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+virtual void \hyperlink{classPUForceField_a86c5e8c03d61ec27c5bedaa0c19d0092}{initialise} (Force\+Field\+Type type, unsigned int force\+Field\+Size, unsigned short octaves, double frequency, double amplitude, double persistence, const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUForceField_a1af8837a7ef5227d5d163ae8f145b0c3}{get\+Force\+Field\+Position\+Base} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_abe7dca4bb32ed3ced61382aa65c89c95}\label{classPUForceField_abe7dca4bb32ed3ced61382aa65c89c95}} 
+void {\bfseries set\+Force\+Field\+Position\+Base} (const \hyperlink{classVec3}{Vec3} \&position)
+\item 
+void \hyperlink{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}{determine\+Force} (const \hyperlink{classVec3}{Vec3} \&position, \hyperlink{classVec3}{Vec3} \&force, float delta)
+\item 
+virtual unsigned short \hyperlink{classPUForceField_a7cbdc36933771481af70f808e3975886}{get\+Octaves} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_ad37b88b7083d7f2d1a153f02069aa8cd}\label{classPUForceField_ad37b88b7083d7f2d1a153f02069aa8cd}} 
+virtual void {\bfseries set\+Octaves} (unsigned short octaves)
+\item 
+\mbox{\Hypertarget{classPUForceField_ae7a4bf084e4bd2990caf5f04ac0d4585}\label{classPUForceField_ae7a4bf084e4bd2990caf5f04ac0d4585}} 
+virtual double {\bfseries get\+Frequency} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a95023a6a1503c554c486f72da6681828}\label{classPUForceField_a95023a6a1503c554c486f72da6681828}} 
+virtual void {\bfseries set\+Frequency} (double frequency)
+\item 
+\mbox{\Hypertarget{classPUForceField_a97a9e9bde187a14e815d79d7ebb2532b}\label{classPUForceField_a97a9e9bde187a14e815d79d7ebb2532b}} 
+virtual double {\bfseries get\+Amplitude} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a24e5d1dd9c3e419764be184c29c489e8}\label{classPUForceField_a24e5d1dd9c3e419764be184c29c489e8}} 
+virtual void {\bfseries set\+Amplitude} (double amplitude)
+\item 
+\mbox{\Hypertarget{classPUForceField_af2119cae135207f1fb59b29143c6a016}\label{classPUForceField_af2119cae135207f1fb59b29143c6a016}} 
+virtual double {\bfseries get\+Persistence} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_af59aefd5c996ade320dd9314a99ffee0}\label{classPUForceField_af59aefd5c996ade320dd9314a99ffee0}} 
+virtual void {\bfseries set\+Persistence} (double persistence)
+\item 
+\mbox{\Hypertarget{classPUForceField_adb703678741b4192012be8769098ddbb}\label{classPUForceField_adb703678741b4192012be8769098ddbb}} 
+virtual unsigned int {\bfseries get\+Force\+Field\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_ae213478822c9b159e4e4651d75efb80f}\label{classPUForceField_ae213478822c9b159e4e4651d75efb80f}} 
+virtual void {\bfseries set\+Force\+Field\+Size} (unsigned int force\+Field\+Size)
+\item 
+\mbox{\Hypertarget{classPUForceField_ab8b69fe36dafa9f8df953436e92d4030}\label{classPUForceField_ab8b69fe36dafa9f8df953436e92d4030}} 
+virtual \hyperlink{classVec3}{Vec3} {\bfseries get\+World\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a94470b3fa18bd779f2ac0f747e4173ae}\label{classPUForceField_a94470b3fa18bd779f2ac0f747e4173ae}} 
+virtual void {\bfseries set\+World\+Size} (const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+Force\+Field\+Type \hyperlink{classPUForceField_a3d4c0662978c820f91bf77751210b1e8}{get\+Force\+Field\+Type} () const
+\item 
+\mbox{\Hypertarget{classPUForceField_a512325199291409005495a6729048a83}\label{classPUForceField_a512325199291409005495a6729048a83}} 
+void {\bfseries set\+Force\+Field\+Type} (const Force\+Field\+Type force\+Field\+Type)
+\item 
+virtual void \hyperlink{classPUForceField_aca08e441cd22af729ec4f7bcf562607c}{initialise} (Force\+Field\+Type type, const \hyperlink{classVec3}{Vec3} \&position, unsigned int force\+Field\+Size, unsigned short octaves, double frequency, double amplitude, double persistence, const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+virtual void \hyperlink{classPUForceField_af295323d9a536013ff1d945ceb282739}{initialise} (Force\+Field\+Type type, unsigned int force\+Field\+Size, unsigned short octaves, double frequency, double amplitude, double persistence, const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUForceField_a5d0fa8a04f77a32cf7503dd96ba0938c}{get\+Force\+Field\+Position\+Base} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_abe7dca4bb32ed3ced61382aa65c89c95}\label{classPUForceField_abe7dca4bb32ed3ced61382aa65c89c95}} 
+void {\bfseries set\+Force\+Field\+Position\+Base} (const \hyperlink{classVec3}{Vec3} \&position)
+\item 
+void \hyperlink{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}{determine\+Force} (const \hyperlink{classVec3}{Vec3} \&position, \hyperlink{classVec3}{Vec3} \&force, float delta)
+\item 
+virtual unsigned short \hyperlink{classPUForceField_a69ab67c2af698b8f9ddb3a5208045fa1}{get\+Octaves} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a1391361891df9a81442c63ce360c3415}\label{classPUForceField_a1391361891df9a81442c63ce360c3415}} 
+virtual void {\bfseries set\+Octaves} (unsigned short octaves)
+\item 
+\mbox{\Hypertarget{classPUForceField_a730468b444e9eccafd41fe18b323ab9c}\label{classPUForceField_a730468b444e9eccafd41fe18b323ab9c}} 
+virtual double {\bfseries get\+Frequency} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a7ef89eacbd51cf743972715788a5e1c2}\label{classPUForceField_a7ef89eacbd51cf743972715788a5e1c2}} 
+virtual void {\bfseries set\+Frequency} (double frequency)
+\item 
+\mbox{\Hypertarget{classPUForceField_a6dcfe17261a5fd2a549386a2eca43534}\label{classPUForceField_a6dcfe17261a5fd2a549386a2eca43534}} 
+virtual double {\bfseries get\+Amplitude} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a9cdf9c802d325123ff22b5abe8fd9658}\label{classPUForceField_a9cdf9c802d325123ff22b5abe8fd9658}} 
+virtual void {\bfseries set\+Amplitude} (double amplitude)
+\item 
+\mbox{\Hypertarget{classPUForceField_a1fec8a86b6ffffab5af5aad4bdc55466}\label{classPUForceField_a1fec8a86b6ffffab5af5aad4bdc55466}} 
+virtual double {\bfseries get\+Persistence} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a972c368897868323974d2231fdc3af4b}\label{classPUForceField_a972c368897868323974d2231fdc3af4b}} 
+virtual void {\bfseries set\+Persistence} (double persistence)
+\item 
+\mbox{\Hypertarget{classPUForceField_aaf8a5a41e9c2c3297d6df168e18a15e2}\label{classPUForceField_aaf8a5a41e9c2c3297d6df168e18a15e2}} 
+virtual unsigned int {\bfseries get\+Force\+Field\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_a253797c3463e09c82bacdf3387f3a6da}\label{classPUForceField_a253797c3463e09c82bacdf3387f3a6da}} 
+virtual void {\bfseries set\+Force\+Field\+Size} (unsigned int force\+Field\+Size)
+\item 
+\mbox{\Hypertarget{classPUForceField_a270ef76861c0639f57a18d23efe0de05}\label{classPUForceField_a270ef76861c0639f57a18d23efe0de05}} 
+virtual \hyperlink{classVec3}{Vec3} {\bfseries get\+World\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classPUForceField_abb1cdf901ad7977e1a9fd99c4c32be32}\label{classPUForceField_abb1cdf901ad7977e1a9fd99c4c32be32}} 
+virtual void {\bfseries set\+World\+Size} (const \hyperlink{classVec3}{Vec3} \&world\+Size)
+\item 
+Force\+Field\+Type \hyperlink{classPUForceField_a0768666fc2138a381104b19f3be4e986}{get\+Force\+Field\+Type} () const
+\item 
+\mbox{\Hypertarget{classPUForceField_a512325199291409005495a6729048a83}\label{classPUForceField_a512325199291409005495a6729048a83}} 
+void {\bfseries set\+Force\+Field\+Type} (const Force\+Field\+Type force\+Field\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ \hyperlink{classPUForceField_a28bfa6cef242f99bc9c6f38166583da3}{get\+Force\+Field\+Calculation\+Factory} () const
+\item 
+\mbox{\Hypertarget{classPUForceField_afa1f3262163cdc4d31684920dcc28d28}\label{classPUForceField_afa1f3262163cdc4d31684920dcc28d28}} 
+void {\bfseries set\+Force\+Field\+Calculation\+Factory} (\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$force\+Field\+Calculation\+Factory)
+\item 
+\mbox{\Hypertarget{classPUForceField_ab4917dea93adb2647d2b45986aa057d4}\label{classPUForceField_ab4917dea93adb2647d2b45986aa057d4}} 
+\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ {\bfseries create\+Force\+Field\+Calculation\+Factory} (Force\+Field\+Type type)
+\item 
+\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ \hyperlink{classPUForceField_a8c68ee8a2599b197f50dbfcaf887e7c2}{get\+Force\+Field\+Calculation\+Factory} () const
+\item 
+\mbox{\Hypertarget{classPUForceField_afa1f3262163cdc4d31684920dcc28d28}\label{classPUForceField_afa1f3262163cdc4d31684920dcc28d28}} 
+void {\bfseries set\+Force\+Field\+Calculation\+Factory} (\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$force\+Field\+Calculation\+Factory)
+\item 
+\mbox{\Hypertarget{classPUForceField_a0f66e969f5eb8fac4cf0f2130991a510}\label{classPUForceField_a0f66e969f5eb8fac4cf0f2130991a510}} 
+\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ {\bfseries create\+Force\+Field\+Calculation\+Factory} (Force\+Field\+Type type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUForceField_a2cee0d214c509061d0362c74099809e1}\label{classPUForceField_a2cee0d214c509061d0362c74099809e1}} 
+unsigned short {\bfseries \+\_\+octaves}
+\item 
+\mbox{\Hypertarget{classPUForceField_afa5c3ad1a53adfc2f253673c9f989bb4}\label{classPUForceField_afa5c3ad1a53adfc2f253673c9f989bb4}} 
+double {\bfseries \+\_\+frequency}
+\item 
+\mbox{\Hypertarget{classPUForceField_a9abaee30d4d516cddc0e434c2a8cfc97}\label{classPUForceField_a9abaee30d4d516cddc0e434c2a8cfc97}} 
+double {\bfseries \+\_\+amplitude}
+\item 
+\mbox{\Hypertarget{classPUForceField_ab1b798b9e2602a33a5eee2955bf8e145}\label{classPUForceField_ab1b798b9e2602a33a5eee2955bf8e145}} 
+double {\bfseries \+\_\+persistence}
+\item 
+\mbox{\Hypertarget{classPUForceField_a2c26cd1b2f82228c15119b7d783163e1}\label{classPUForceField_a2c26cd1b2f82228c15119b7d783163e1}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+world\+Size}
+\item 
+\mbox{\Hypertarget{classPUForceField_a671c6968427af11841c9c5dcd1885118}\label{classPUForceField_a671c6968427af11841c9c5dcd1885118}} 
+unsigned int {\bfseries \+\_\+force\+Field\+Size}
+\item 
+\mbox{\Hypertarget{classPUForceField_a2b86ba5678aba51fe64a9f77e371c773}\label{classPUForceField_a2b86ba5678aba51fe64a9f77e371c773}} 
+\hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ {\bfseries \+\_\+force\+Field\+Calculation\+Factory}
+\item 
+\mbox{\Hypertarget{classPUForceField_ae81b133139e0f5ab197d29cd43f107df}\label{classPUForceField_ae81b133139e0f5ab197d29cd43f107df}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+force\+Field\+Position\+Base}
+\item 
+\mbox{\Hypertarget{classPUForceField_a64a611ef94d1acbae7af5c59d52fdf87}\label{classPUForceField_a64a611ef94d1acbae7af5c59d52fdf87}} 
+Force\+Field\+Type {\bfseries \+\_\+force\+Field\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Force Field Affector Class\+: This class defines a force field to affect the particle direction. The force field is based on 3D noise. The force can be calculated in realtime or based on a precreated 3D force field matrix, which essentially involves one lookup. To speed things up, the 3d matrix can be precreated in a separate thread (optionally). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}\label{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!determine\+Force@{determine\+Force}}
+\index{determine\+Force@{determine\+Force}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{determine\+Force()}{determineForce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Force\+Field\+::determine\+Force (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{\hyperlink{classVec3}{Vec3} \&}]{force,  }\item[{float}]{delta }\end{DoxyParamCaption})}
+
+Calculate the force, based on a certain position \mbox{\Hypertarget{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}\label{classPUForceField_a08d8c55f04d849d4232d36a41bfb543e}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!determine\+Force@{determine\+Force}}
+\index{determine\+Force@{determine\+Force}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{determine\+Force()}{determineForce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Force\+Field\+::determine\+Force (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{\hyperlink{classVec3}{Vec3} \&}]{force,  }\item[{float}]{delta }\end{DoxyParamCaption})}
+
+Calculate the force, based on a certain position \mbox{\Hypertarget{classPUForceField_a28bfa6cef242f99bc9c6f38166583da3}\label{classPUForceField_a28bfa6cef242f99bc9c6f38166583da3}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Calculation\+Factory@{get\+Force\+Field\+Calculation\+Factory}}
+\index{get\+Force\+Field\+Calculation\+Factory@{get\+Force\+Field\+Calculation\+Factory}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Calculation\+Factory()}{getForceFieldCalculationFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory} $\ast$ P\+U\+Force\+Field\+::get\+Force\+Field\+Calculation\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get/\+Set/\+Create Force\+Field\+Calculation\+Factory \mbox{\Hypertarget{classPUForceField_a8c68ee8a2599b197f50dbfcaf887e7c2}\label{classPUForceField_a8c68ee8a2599b197f50dbfcaf887e7c2}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Calculation\+Factory@{get\+Force\+Field\+Calculation\+Factory}}
+\index{get\+Force\+Field\+Calculation\+Factory@{get\+Force\+Field\+Calculation\+Factory}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Calculation\+Factory()}{getForceFieldCalculationFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classPUForceFieldCalculationFactory}{P\+U\+Force\+Field\+Calculation\+Factory}$\ast$ P\+U\+Force\+Field\+::get\+Force\+Field\+Calculation\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get/\+Set/\+Create Force\+Field\+Calculation\+Factory \mbox{\Hypertarget{classPUForceField_a1af8837a7ef5227d5d163ae8f145b0c3}\label{classPUForceField_a1af8837a7ef5227d5d163ae8f145b0c3}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Position\+Base@{get\+Force\+Field\+Position\+Base}}
+\index{get\+Force\+Field\+Position\+Base@{get\+Force\+Field\+Position\+Base}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Position\+Base()}{getForceFieldPositionBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3} \& P\+U\+Force\+Field\+::get\+Force\+Field\+Position\+Base (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get/\+Set the base position of the force field \mbox{\Hypertarget{classPUForceField_a5d0fa8a04f77a32cf7503dd96ba0938c}\label{classPUForceField_a5d0fa8a04f77a32cf7503dd96ba0938c}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Position\+Base@{get\+Force\+Field\+Position\+Base}}
+\index{get\+Force\+Field\+Position\+Base@{get\+Force\+Field\+Position\+Base}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Position\+Base()}{getForceFieldPositionBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Force\+Field\+::get\+Force\+Field\+Position\+Base (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get/\+Set the base position of the force field \mbox{\Hypertarget{classPUForceField_a3d4c0662978c820f91bf77751210b1e8}\label{classPUForceField_a3d4c0662978c820f91bf77751210b1e8}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Type@{get\+Force\+Field\+Type}}
+\index{get\+Force\+Field\+Type@{get\+Force\+Field\+Type}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Type()}{getForceFieldType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+U\+Force\+Field\+::\+Force\+Field\+Type P\+U\+Force\+Field\+::get\+Force\+Field\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get/\+Set the Forcefield type \mbox{\Hypertarget{classPUForceField_a0768666fc2138a381104b19f3be4e986}\label{classPUForceField_a0768666fc2138a381104b19f3be4e986}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Force\+Field\+Type@{get\+Force\+Field\+Type}}
+\index{get\+Force\+Field\+Type@{get\+Force\+Field\+Type}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Force\+Field\+Type()}{getForceFieldType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Force\+Field\+Type P\+U\+Force\+Field\+::get\+Force\+Field\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get/\+Set the Forcefield type \mbox{\Hypertarget{classPUForceField_a7cbdc36933771481af70f808e3975886}\label{classPUForceField_a7cbdc36933771481af70f808e3975886}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Octaves@{get\+Octaves}}
+\index{get\+Octaves@{get\+Octaves}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Octaves()}{getOctaves()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short P\+U\+Force\+Field\+::get\+Octaves (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Getters/\+Setters \mbox{\Hypertarget{classPUForceField_a69ab67c2af698b8f9ddb3a5208045fa1}\label{classPUForceField_a69ab67c2af698b8f9ddb3a5208045fa1}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!get\+Octaves@{get\+Octaves}}
+\index{get\+Octaves@{get\+Octaves}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{get\+Octaves()}{getOctaves()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual unsigned short P\+U\+Force\+Field\+::get\+Octaves (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Getters/\+Setters \mbox{\Hypertarget{classPUForceField_a1f61f55760c564ae61d4a53c46ce21a2}\label{classPUForceField_a1f61f55760c564ae61d4a53c46ce21a2}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!initialise@{initialise}}
+\index{initialise@{initialise}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{initialise()}{initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void P\+U\+Force\+Field\+::initialise (\begin{DoxyParamCaption}\item[{Force\+Field\+Type}]{type,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{unsigned int}]{force\+Field\+Size,  }\item[{unsigned short}]{octaves,  }\item[{double}]{frequency,  }\item[{double}]{amplitude,  }\item[{double}]{persistence,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{world\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialises a Force\+Field \mbox{\Hypertarget{classPUForceField_aca08e441cd22af729ec4f7bcf562607c}\label{classPUForceField_aca08e441cd22af729ec4f7bcf562607c}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!initialise@{initialise}}
+\index{initialise@{initialise}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{initialise()}{initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Force\+Field\+::initialise (\begin{DoxyParamCaption}\item[{Force\+Field\+Type}]{type,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{position,  }\item[{unsigned int}]{force\+Field\+Size,  }\item[{unsigned short}]{octaves,  }\item[{double}]{frequency,  }\item[{double}]{amplitude,  }\item[{double}]{persistence,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{world\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialises a Force\+Field \mbox{\Hypertarget{classPUForceField_a86c5e8c03d61ec27c5bedaa0c19d0092}\label{classPUForceField_a86c5e8c03d61ec27c5bedaa0c19d0092}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!initialise@{initialise}}
+\index{initialise@{initialise}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{initialise()}{initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void P\+U\+Force\+Field\+::initialise (\begin{DoxyParamCaption}\item[{Force\+Field\+Type}]{type,  }\item[{unsigned int}]{force\+Field\+Size,  }\item[{unsigned short}]{octaves,  }\item[{double}]{frequency,  }\item[{double}]{amplitude,  }\item[{double}]{persistence,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{world\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialises a Force\+Field \mbox{\Hypertarget{classPUForceField_af295323d9a536013ff1d945ceb282739}\label{classPUForceField_af295323d9a536013ff1d945ceb282739}} 
+\index{P\+U\+Force\+Field@{P\+U\+Force\+Field}!initialise@{initialise}}
+\index{initialise@{initialise}!P\+U\+Force\+Field@{P\+U\+Force\+Field}}
+\subsubsection{\texorpdfstring{initialise()}{initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void P\+U\+Force\+Field\+::initialise (\begin{DoxyParamCaption}\item[{Force\+Field\+Type}]{type,  }\item[{unsigned int}]{force\+Field\+Size,  }\item[{unsigned short}]{octaves,  }\item[{double}]{frequency,  }\item[{double}]{amplitude,  }\item[{double}]{persistence,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{world\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialises a Force\+Field 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Force\+Field.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Force\+Field.\+cpp\end{DoxyCompactItemize}

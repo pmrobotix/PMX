@@ -1,0 +1,143 @@
+\hypertarget{mouse__sensor_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.c File Reference}
+\label{mouse__sensor_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/mouse\+\_\+sensor.\+c}}
+{\ttfamily \#include \char`\"{}mouse\+\_\+sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../global.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../exception\+\_\+handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protocol/mouse\+\_\+protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+unit\+Conversion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+Include dependency graph for mouse\+\_\+sensor.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse__sensor_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionfloat__bytes}{float\+\_\+bytes}
+\item 
+union \hyperlink{unionint__bytes}{int\+\_\+bytes}
+\item 
+struct \hyperlink{structCALIB__MOTION__MOUSE}{C\+A\+L\+I\+B\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE}
+\item 
+struct \hyperlink{structMOTION__MOUSE}{M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE}
+\item 
+struct \hyperlink{structMOUSE}{M\+O\+U\+SE}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_ac7626e30330f051dbd30f06a7619a405}\label{mouse__sensor_8c_ac7626e30330f051dbd30f06a7619a405}} 
+\#define {\bfseries C\+H\+A\+N\+N\+E\+L\+\_\+\+U\+A\+R\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+1}~U\+A\+R\+T\+\_\+\+C\+H4
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a793ca03c6f01a3e2f745b9e48441968d}\label{mouse__sensor_8c_a793ca03c6f01a3e2f745b9e48441968d}} 
+\#define {\bfseries C\+H\+A\+N\+N\+E\+L\+\_\+\+U\+A\+R\+T\+\_\+\+M\+O\+U\+S\+E\+\_\+2}~U\+A\+R\+T\+\_\+\+C\+H0
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_ae9cff7ceede3e0d722feb51836754ce6}\label{mouse__sensor_8c_ae9cff7ceede3e0d722feb51836754ce6}} 
+\#define {\bfseries M\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+M\+B\+ER}~16
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a8d3de6093ef00c85b65095a2e4d78fcb}\label{mouse__sensor_8c_a8d3de6093ef00c85b65095a2e4d78fcb}} 
+\#define {\bfseries C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+P\+E\+ED}~0.\+2f
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_ae0d795622e4d8ec858a7f7a47541e4af}\label{mouse__sensor_8c_ae0d795622e4d8ec858a7f7a47541e4af}} 
+\#define {\bfseries C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}~0.\+1f
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a40bbdeb6bbb3f44a3c5b96895b4e6921}\label{mouse__sensor_8c_a40bbdeb6bbb3f44a3c5b96895b4e6921}} 
+\#define {\bfseries M\+O\+U\+S\+E\+\_\+\+N\+U\+M\+B\+ER}~2
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a5ed66147c3f412942b701c18b7a929bd}\label{mouse__sensor_8c_a5ed66147c3f412942b701c18b7a929bd}} 
+\#define {\bfseries S\+E\+N\+D\+\_\+\+C\+O\+DE}(x)~code = (x); uart\+\_\+\+Send\+All(mice\mbox{[}mouse\+Nb\mbox{]}.uart, \&code, sizeof(code));
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a4e1b3ed47d13a193393a57b7dae0f7ea}\label{mouse__sensor_8c_a4e1b3ed47d13a193393a57b7dae0f7ea}} 
+\#define {\bfseries S\+E\+N\+D\+\_\+\+A\+LL}(x)~uart\+\_\+\+Send\+All(mice\mbox{[}mouse\+Nb\mbox{]}.uart, (uint8$\ast$)\&(x), sizeof(x))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a22bebc7ae5904e93d8d063698e2fa0fc}\label{mouse__sensor_8c_a22bebc7ae5904e93d8d063698e2fa0fc}} 
+uint8 \hyperlink{mouse__sensor_8c_a22bebc7ae5904e93d8d063698e2fa0fc}{compute\+Calib\+Checksum} (\hyperlink{structCALIB__MOTION__MOUSE}{C\+A\+L\+I\+B\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE} $\ast$motion)
+\begin{DoxyCompactList}\small\item\em compute and return the checksum of the motion mouse structure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a3ca99f2656013055c517356242b577d1}\label{mouse__sensor_8c_a3ca99f2656013055c517356242b577d1}} 
+uint8 \hyperlink{mouse__sensor_8c_a3ca99f2656013055c517356242b577d1}{compute\+Checksum} (\hyperlink{structMOTION__MOUSE}{M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE} $\ast$motion)
+\begin{DoxyCompactList}\small\item\em compute and return the checksum of the motion mouse structure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a43cd0e9976fde4ba725fddd5e77122e2}\label{mouse__sensor_8c_a43cd0e9976fde4ba725fddd5e77122e2}} 
+void \hyperlink{mouse__sensor_8c_a43cd0e9976fde4ba725fddd5e77122e2}{mouse\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Initialisation of I/O port for communication with mouse sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a3fb3f8f357df40497e81f14c2f26a922}\label{mouse__sensor_8c_a3fb3f8f357df40497e81f14c2f26a922}} 
+B\+O\+OL {\bfseries get\+Calib\+Value} (int mouse\+Nb, \hyperlink{structCALIB__MOTION__MOUSE}{C\+A\+L\+I\+B\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE} $\ast$motion)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a9d64a715e6fe1e8998a90495cd46f1de}\label{mouse__sensor_8c_a9d64a715e6fe1e8998a90495cd46f1de}} 
+B\+O\+OL {\bfseries get\+Value} (int mouse\+Nb, \hyperlink{structMOTION__MOUSE}{M\+O\+T\+I\+O\+N\+\_\+\+M\+O\+U\+SE} $\ast$motion)
+\item 
+B\+O\+OL \hyperlink{mouse__sensor_8c_a0543c82252daab2c2708a200b8eab0b6}{mouse\+\_\+\+Read\+Sensor} (int32 $\ast$d\+Left, int32 $\ast$d\+Right, int32 $\ast$d\+Alpha, int32 $\ast$d\+Delta)
+\item 
+void \hyperlink{mouse__sensor_8c_aaf438f6195c0faaea8411629db956822}{mouse\+\_\+\+Update\+Calibration\+Values} ()
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a5164776fb351e6571cdc65bb4b2e162e}\label{mouse__sensor_8c_a5164776fb351e6571cdc65bb4b2e162e}} 
+int32 {\bfseries getU} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_acb7b4ee7009dc4b57d1b343060710bf1}\label{mouse__sensor_8c_acb7b4ee7009dc4b57d1b343060710bf1}} 
+int32 {\bfseries getV} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a8b2e25c2aa6d8bcd832f472f43ff86ad}\label{mouse__sensor_8c_a8b2e25c2aa6d8bcd832f472f43ff86ad}} 
+float {\bfseries get\+Calib\+Alpha1} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_aa195455ed2d0497a53a14f6d8a2b2fe1}\label{mouse__sensor_8c_aa195455ed2d0497a53a14f6d8a2b2fe1}} 
+float {\bfseries get\+Calib\+Alpha2} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_ac53366fe949d6199cb6dd5a82bdb69f7}\label{mouse__sensor_8c_ac53366fe949d6199cb6dd5a82bdb69f7}} 
+float {\bfseries get\+Calib\+Delta} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a5289777afc0f1eb50c2c091a37f9f54a}\label{mouse__sensor_8c_a5289777afc0f1eb50c2c091a37f9f54a}} 
+void {\bfseries reset} (int mouse\+Nb)
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a2d94d453c8a7bba76069c6e6c1f6890c}\label{mouse__sensor_8c_a2d94d453c8a7bba76069c6e6c1f6890c}} 
+void \hyperlink{mouse__sensor_8c_a2d94d453c8a7bba76069c6e6c1f6890c}{mouse\+\_\+\+Calibration2} (int turn\+Nb)
+\begin{DoxyCompactList}\small\item\em New calibration test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a06330b310be88519cc57eff15602260f}\label{mouse__sensor_8c_a06330b310be88519cc57eff15602260f}} 
+void \hyperlink{mouse__sensor_8c_a06330b310be88519cc57eff15602260f}{mouse\+\_\+\+Calibration} (int line\+Nb, float line\+Dist, int turn\+Nb)
+\begin{DoxyCompactList}\small\item\em Run the mouse calibration procedure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{mouse__sensor_8c_a79fc35f156c4ebda6e10448794ed36dc}\label{mouse__sensor_8c_a79fc35f156c4ebda6e10448794ed36dc}} 
+void \hyperlink{mouse__sensor_8c_a79fc35f156c4ebda6e10448794ed36dc}{mouse\+Calib\+Set\+Step} (int i)
+\begin{DoxyCompactList}\small\item\em set calibration step i (synchronisation with user) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_aee049c8bd0547f10564adda40a1b1df7}\label{mouse__sensor_8c_aee049c8bd0547f10564adda40a1b1df7}} 
+uint32 {\bfseries left\+Encoder\+Ratio}
+\item 
+\mbox{\Hypertarget{mouse__sensor_8c_ab46494dbc973cd8456d60b30d636c44e}\label{mouse__sensor_8c_ab46494dbc973cd8456d60b30d636c44e}} 
+uint32 {\bfseries right\+Encoder\+Ratio}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mouse__sensor_8c_a0543c82252daab2c2708a200b8eab0b6}\label{mouse__sensor_8c_a0543c82252daab2c2708a200b8eab0b6}} 
+\index{mouse\+\_\+sensor.\+c@{mouse\+\_\+sensor.\+c}!mouse\+\_\+\+Read\+Sensor@{mouse\+\_\+\+Read\+Sensor}}
+\index{mouse\+\_\+\+Read\+Sensor@{mouse\+\_\+\+Read\+Sensor}!mouse\+\_\+sensor.\+c@{mouse\+\_\+sensor.\+c}}
+\subsubsection{\texorpdfstring{mouse\+\_\+\+Read\+Sensor()}{mouse\_ReadSensor()}}
+{\footnotesize\ttfamily B\+O\+OL mouse\+\_\+\+Read\+Sensor (\begin{DoxyParamCaption}\item[{int32 $\ast$}]{d\+Left,  }\item[{int32 $\ast$}]{d\+Right,  }\item[{int32 $\ast$}]{d\+Alpha,  }\item[{int32 $\ast$}]{d\+Delta }\end{DoxyParamCaption})}
+
+Read both sensor and compute d\+Left, d\+Right, d\+Alpha, d\+Delta return whether the reading have been successfull or not \mbox{\Hypertarget{mouse__sensor_8c_aaf438f6195c0faaea8411629db956822}\label{mouse__sensor_8c_aaf438f6195c0faaea8411629db956822}} 
+\index{mouse\+\_\+sensor.\+c@{mouse\+\_\+sensor.\+c}!mouse\+\_\+\+Update\+Calibration\+Values@{mouse\+\_\+\+Update\+Calibration\+Values}}
+\index{mouse\+\_\+\+Update\+Calibration\+Values@{mouse\+\_\+\+Update\+Calibration\+Values}!mouse\+\_\+sensor.\+c@{mouse\+\_\+sensor.\+c}}
+\subsubsection{\texorpdfstring{mouse\+\_\+\+Update\+Calibration\+Values()}{mouse\_UpdateCalibrationValues()}}
+{\footnotesize\ttfamily void mouse\+\_\+\+Update\+Calibration\+Values (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Update sum of motion on mice for calibration purpose Don\textquotesingle{}t use this function and mouse\+\_\+\+Read\+Sensor in the same time 

@@ -1,0 +1,371 @@
+
+
+\section*{cocos2d-\/x }
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Win32}&\textbf{ Others  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Win32}&\textbf{ Others  }\\\cline{1-2}
+\endhead
+\href{https://ci.appveyor.com/project/minggo/cocos2d-x/branch/v3}{\tt }&\href{https://travis-ci.org/cocos2d/cocos2d-x}{\tt } \\\cline{1-2}
+\end{longtabu}
+
+
+\href{http://www.cocos2d-x.org}{\tt cocos2d-\/x} is a multi-\/platform framework for building 2d games, interactive books, demos and other graphical applications. It is based on \href{http://www.cocos2d-iphone.org}{\tt cocos2d-\/iphone}, but instead of using Objective-\/C, it uses C++. It works on i\+OS, Android, OS X, Windows, Linux and Web platforms.
+
+{\bfseries Cocos2d-\/x Framework Architecture}\+:
+
+
+
+cocos2d-\/x is\+:
+
+
+\begin{DoxyItemize}
+\item Fast
+\item Free
+\item Easy to use
+\item Community supported
+\end{DoxyItemize}
+
+\subsection*{Git user attention }
+
+
+\begin{DoxyEnumerate}
+\item Clone the repo from Git\+Hub. \begin{DoxyVerb}  $ git clone https://github.com/cocos2d/cocos2d-x.git
+\end{DoxyVerb}
+
+\item After cloning the repo, please execute {\ttfamily download-\/deps.\+py} to download and install dependencies. \begin{DoxyVerb}  $ cd cocos2d-x
+  cocos2d-x $ python download-deps.py
+\end{DoxyVerb}
+
+\item After running {\ttfamily download-\/deps.\+py}. \begin{DoxyVerb}  cocos2d-x $ git submodule update --init
+\end{DoxyVerb}
+
+\end{DoxyEnumerate}
+
+\subsection*{Download stable versions }
+
+
+\begin{DoxyItemize}
+\item \href{http://www.cocos2d-x.org/download}{\tt Cocos2d-\/x stable versions}
+\item \href{http://www.cocos2d-x.org/filecenter/jsbuilder}{\tt Cocos2d-\/\+JS Lite version}
+\end{DoxyItemize}
+
+\subsection*{How to start a new game }
+
+
+\begin{DoxyEnumerate}
+\item Download the code from \href{http://www.cocos2d-x.org/download/version#Cocos2d-x}{\tt cocos2d download site} or clone this repo (instructions above)
+\item Run {\ttfamily setup.\+py}
+\item Run the {\ttfamily cocos} script
+\end{DoxyEnumerate}
+
+Example\+: \begin{DoxyVerb}$ cd cocos2d-x
+$ ./setup.py
+$ source FILE_TO_SAVE_SYSTEM_VARIABLE
+$ cocos new MyGame -p com.your_company.mygame -l cpp -d NEW_PROJECTS_DIR
+$ cd NEW_PROJECTS_DIR/MyGame
+\end{DoxyVerb}
+
+
+You can also create a JS project or Lua project with {\ttfamily -\/l js} or {\ttfamily -\/l lua}.
+
+\subsubsection*{Build and run a new project for Android}
+
+Cocos2d-\/x supports Android Studio. Simple open the {\ttfamily proj.\+android} directory from within the Android Studio environment. More information can be found in our \href{http://www.cocos2d-x.org/docs/cocos2d-x/en/installation/Android-Studio.html}{\tt documentation}.
+
+\subsubsection*{Build and run a new project for i\+OS}
+
+\begin{DoxyVerb}$ cocos run -p ios
+\end{DoxyVerb}
+
+
+\subsubsection*{Build and run a new project for O\+SX}
+
+\begin{DoxyVerb}$ cocos run -p mac
+\end{DoxyVerb}
+
+
+\subsubsection*{Build and run a new project for Linux}
+
+If you never run cocos2d-\/x on Linux, you need to install all dependencies by the script in {\bfseries cocos2d/build/install-\/deps-\/linux.\+sh} \begin{DoxyVerb}$ cd cocos2d-x/build
+$ ./install-deps-linux.sh
+\end{DoxyVerb}
+
+
+Then \begin{DoxyVerb}$ cd NEW_PROJECTS_DIR/MyGame
+$ cocos run -p linux
+\end{DoxyVerb}
+
+
+Run \begin{DoxyVerb}$ bin/MyGame
+\end{DoxyVerb}
+
+
+\subsubsection*{Build and run new project for win32}
+
+\begin{DoxyVerb}$ cocos run -p win32
+\end{DoxyVerb}
+
+
+\subsubsection*{Build and run new project for web}
+
+Only JS project can be published to web platforms, so you will need to create a JS project first\+: \begin{DoxyVerb}$ cocos new -l js WebGame
+\end{DoxyVerb}
+
+
+Then you can run your game in a web browser\+: \begin{DoxyVerb}$ cocos run -p web
+\end{DoxyVerb}
+
+
+Or you can publish your game to {\ttfamily publish/html5/} folder\+: \begin{DoxyVerb}$ cocos run -p web -m release [--advanced]
+\end{DoxyVerb}
+
+
+\subsection*{Using C\+Make }
+
+Cocos2d-\/x supports C\+Make, a cross-\/platform build system. Example usage\+: \begin{DoxyVerb}$ cd cocos2d-x
+$ mkdir cmake-build && cd cmake-build
+$ cmake ..
+\end{DoxyVerb}
+
+
+
+\begin{DoxyItemize}
+\item Detail C\+Make Guide
+\end{DoxyItemize}
+
+\subsection*{Documentations and samples }
+
+
+\begin{DoxyItemize}
+\item \href{http://cocos2d-x.org/docs/}{\tt All Docs in a single place!}
+\item \href{http://cocos2d-x.org/docs/api-ref/index.html}{\tt Online A\+PI Reference} {\itshape Note that Cocos2d-\/x, Cocos2d-\/\+JS and Cocos Creator have different A\+PI set}
+\item \href{http://cocos2d-x.org/docs/programmers-guide/2/index.html}{\tt Programmers Guide}
+\item https\+://github.com/cocos2d/cocos2d-\/x/blob/v3/docs/\+R\+E\+L\+E\+A\+S\+E\+\_\+\+N\+O\+T\+E\+S.\+md \char`\"{}\+Latest Release Note\char`\"{}
+\item \href{https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG}{\tt Changelog}
+\end{DoxyItemize}
+
+\subsection*{Main features }
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classScene}{Scene} management (workflow)
+\item Transitions between scenes
+\item Sprites and \hyperlink{classSprite}{Sprite} Sheets
+\item Effects\+: Lens, Ripple, \hyperlink{classWaves}{Waves}, \hyperlink{classLiquid}{Liquid}, etc.
+\item \hyperlink{classActions}{Actions} (behaviours)\+:
+\begin{DoxyItemize}
+\item Transformation \hyperlink{classActions}{Actions}\+: Move, Rotate, Scale, Fade, Tint, etc.
+\item Composable actions\+: \hyperlink{classSequence}{Sequence}, \hyperlink{classSpawn}{Spawn}, \hyperlink{classRepeat}{Repeat}, Reverse
+\item Ease \hyperlink{classActions}{Actions}\+: Exp, Sin, Cubic, Elastic, etc.
+\item Misc actions\+: \hyperlink{classCallFunc}{Call\+Func}, \hyperlink{classOrbitCamera}{Orbit\+Camera}, \hyperlink{classFollow}{Follow}, Tween
+\end{DoxyItemize}
+\item Basic menus and buttons
+\item Integrated with physics engines\+: \href{http://www.box2d.org}{\tt Box2d} and \href{http://www.chipmunk-physics.net}{\tt Chipmunk}
+\item Particle system
+\item Skeleton Animations\+: \href{http://esotericsoftware.com/}{\tt Spine} and Armature support
+\item Fonts\+:
+\begin{DoxyItemize}
+\item Fast font rendering using Fixed and Variable width fonts
+\item Support for .ttf fonts
+\end{DoxyItemize}
+\item \hyperlink{structTile}{Tile} \hyperlink{classMap}{Map} support\+: Orthogonal, Isometric and Hexagonal
+\item Parallax scrolling
+\item Motion Streak
+\item Render To Texture
+\item Touch/\+Accelerometer on mobile devices
+\item Touch/\+Mouse/\+Keyboard on desktop
+\item Sound Engine support (Cocos\+Denshion library) based on Open\+AL
+\item Integrated Slow motion/\+Fast forward
+\item Fast and compressed textures\+: P\+VR compressed and uncompressed textures, E\+T\+C1 compressed textures, and more
+\item Resolution Independent
+\item Language\+: C++, with Lua and Java\+Script bindings
+\item Open Source Commercial Friendly(\+M\+I\+T)\+: Compatible with open and closed source projects
+\item Open\+GL ES 2.\+0 (mobile) / Open\+GL 2.\+1 (desktop) based
+\end{DoxyItemize}
+
+\subsection*{Build Requirements }
+
+
+\begin{DoxyItemize}
+\item Mac OS X 10.\+7+, Xcode 8+
+\item or Ubuntu 14.\+04+, C\+Make 3.\+1+
+\item or Windows 7+, VS 2015
+\item Python 2.\+7.\+5+(N\+OT Python 3)
+\item N\+DK r16+ is required to build Android games
+\item Android Studio 3.\+0.\+0+ to build Android games(tested with 3.\+0.\+0)
+\item J\+RE or J\+DK 1.\+6+ is required for web publishing
+\end{DoxyItemize}
+
+\subsection*{Runtime Requirements }
+
+
+\begin{DoxyItemize}
+\item i\+OS 8.\+0+ for i\+Phone / i\+Pad games
+\item Android 3.\+0.\+0+ for Android
+\item OS X v10.\+9+ for Mac games
+\item Windows 7+ for Win games
+\item Modern browsers and IE 9+ for web games
+\end{DoxyItemize}
+
+\subsection*{Running Tests }
+
+Select the test you want from Xcode Scheme chooser.
+
+
+\begin{DoxyItemize}
+\item Cocos Console
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+// Enter cpp test folder
+cd tests/cpp-tests
+// Or enter js test folder
+cd tests/js-tests
+// Or enter lua test folder
+cd tests/lua-tests
+
+// Compile or run test case
+cocos compile -p ios|mac|android|win32|win8\_1|metro|web -m debug|release
+cocos run -p ios|mac|android|win32|win8\_1|metro|web -m debug|release
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item For OS X / i\+OS
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+$ cd cocos2d-x/build
+$ open cocos2d\_tests.xcodeproj
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item For Linux
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+$ cd cocos2d-x/build
+$ ./install-deps-linux.sh
+$ mkdir linux-build
+$ cd linux-build
+$ cmake ../..
+\end{DoxyCode}
+
+
+Run Samples
+
+
+\begin{DoxyCode}
+$ bin/Debug/cpp-empty-test/cpp-empty-test
+or
+$ bin/Debug/lua-empty-test/lua-empty-test
+\end{DoxyCode}
+
+
+\begin{quote}
+You may meet building errors when building lib\+G\+L\+F\+W.\+so. It is because lib\+G\+L.\+so directs to an error target, you should make it to direct to a correct one. {\ttfamily install-\/deps-\/linux.\+sh} only has to be run once. \end{quote}
+
+
+
+\begin{DoxyItemize}
+\item For Windows
+\end{DoxyItemize}
+
+Open the {\ttfamily cocos2d-\/x/build/cocos2d-\/win32.\+sln}
+
+
+\begin{DoxyItemize}
+\item For Android
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+$ cd cocos2d-x/build
+$ python ./android-build.py cpp-empty-test -p 14
+$ adb install ../tests/cpp-empty-test/proj.android/bin/CppEmptyTest-debug.apk
+\end{DoxyCode}
+
+
+Then click item on Android device to run tests. Available value of {\ttfamily -\/p} is the A\+PI level, cocos2d-\/x supports from level 14.
+
+Or you can import the project located at {\ttfamily tests/cpp-\/empty-\/test/proj.\+android} using Android Studio 3.\+0.\+0+.
+
+\subsection*{Learning Resources }
+
+
+\begin{DoxyItemize}
+\item \href{http://cocos2d-x.org/docs/programmers-guide/2/index.html}{\tt Programmers Guide}
+\item \href{https://www.youtube.com/user/sonarsystemslimited/search?query=cocos2d-x}{\tt Sonar Systems Videos}
+\item \href{https://developer.android.com/guide/components/fundamentals.html}{\tt Android Fundamentals}
+\item \href{https://www.makeschool.com/tutorials/}{\tt Make School Tutorials}
+\item \href{http://www.gamefromscratch.com/page/Cocos2d-x-CPP-Game-Programming-Tutorial-Series.aspx}{\tt Games From Scratch}
+\item \href{https://github.com/cocos2d/cocos2d-x-samples}{\tt Cocos2d sample games}
+\end{DoxyItemize}
+
+\subsection*{Spreading the word! }
+
+You can help us spread the word about cocos2d-\/x! We would surely appreciate it!
+
+
+\begin{DoxyItemize}
+\item Talk about us on Facebook! Our \href{https://www.facebook.com/cocos2dx/}{\tt Facebook Page}
+\item Tweet, Tweet! Our \href{https://twitter.com/cocos2dx}{\tt Twitter}
+\item Read our \href{http://blog.cocos2d-x.org/}{\tt Blog} and promote it on your social media.
+\item Become a \href{http://discuss.cocos2d-x.org/t/we-need-regional-coordinators/24104}{\tt Regional Coordinator}
+\end{DoxyItemize}
+
+\subsection*{See what we are planning! }
+
+You can see exactly what we are planning to do with the Cocos family of products.
+
+
+\begin{DoxyItemize}
+\item \href{https://trello.com/b/Np6obnuE/cocos2d-x-roadmap}{\tt Cocos2d-\/x roadmap}
+\end{DoxyItemize}
+
+\subsection*{Where to get help }
+
+
+\begin{DoxyItemize}
+\item \href{http://discuss.cocos2d-x.org}{\tt English Forums}
+\item \href{http://forum.cocos.com/c/cocos2d-x}{\tt 中文社区}
+\item \href{https://github.com/cocos2d/cocos2d-x/issues}{\tt Bug Tracker}
+\item \href{http://cocos2d-x.org/docs/api-ref/index.html}{\tt A\+PI Reference}.
+\item https\+://github.com/cocos2d/cocos2d-\/x/blob/v3/docs/\+R\+E\+L\+E\+A\+S\+E\+\_\+\+N\+O\+T\+E\+S.\+md \char`\"{}\+Latest Release Note\char`\"{}
+\item \href{https://github.com/cocos2d/cocos2d-x/blob/v3/CHANGELOG}{\tt Changelog}
+\item I\+RC. We are in \href{https://webchat.freenode.net/}{\tt Freenode} in the \+\_\+\+::cocos2d\+\_\+ channel
+\item {\ttfamily cpp-\/tests} project. This project is our basis for testing. Use this project to learn how we implement the functionality of the engine. This project is located in {\bfseries cocos2d-\/x\+\_\+root/build.}
+\end{DoxyItemize}
+
+\subsection*{Contributing to the Project }
+
+Cocos2d-\/x is licensed under the \href{https://opensource.org/licenses/MIT}{\tt M\+IT License}. We welcome participation!
+
+Did you find a bug? Do you have feature request? Do you want to merge a feature?
+
+
+\begin{DoxyItemize}
+\item https\+://github.com/cocos2d/cocos2d-\/x/blob/v3/\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+N\+G.\+md \char`\"{}contributing to cocos2d-\/x\char`\"{}
+\end{DoxyItemize}
+
+\subsection*{Contact us }
+
+
+\begin{DoxyItemize}
+\item Forum\+: \href{http://discuss.cocos2d-x.org}{\tt http\+://discuss.\+cocos2d-\/x.\+org}
+\item Twitter\+: \href{http://www.twitter.com/cocos2dx}{\tt http\+://www.\+twitter.\+com/cocos2dx}
+\item Weibo\+: \href{http://t.sina.com.cn/cocos2dx}{\tt http\+://t.\+sina.\+com.\+cn/cocos2dx} 
+\end{DoxyItemize}

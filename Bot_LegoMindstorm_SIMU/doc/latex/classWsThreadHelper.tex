@@ -1,0 +1,60 @@
+\hypertarget{classWsThreadHelper}{}\section{Ws\+Thread\+Helper Class Reference}
+\label{classWsThreadHelper}\index{Ws\+Thread\+Helper@{Ws\+Thread\+Helper}}
+
+
+Websocket thread helper, it\textquotesingle{}s used for sending message between UI thread and websocket thread.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a6d52e3fc106f80619453abda90934d73}\label{classWsThreadHelper_a6d52e3fc106f80619453abda90934d73}} 
+bool {\bfseries create\+Web\+Socket\+Thread} ()
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a85987f9606bf608be10a91ed7841f823}\label{classWsThreadHelper_a85987f9606bf608be10a91ed7841f823}} 
+void {\bfseries quit\+Web\+Socket\+Thread} ()
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a88548dac7027a484c62c1dec10967eb9}\label{classWsThreadHelper_a88548dac7027a484c62c1dec10967eb9}} 
+void {\bfseries send\+Message\+To\+Cocos\+Thread} (const std\+::function$<$ void()$>$ \&cb)
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a422ed08336e71d9aa8e8c8e3f385accb}\label{classWsThreadHelper_a422ed08336e71d9aa8e8c8e3f385accb}} 
+void {\bfseries send\+Message\+To\+Web\+Socket\+Thread} (\hyperlink{classWsMessage}{Ws\+Message} $\ast$msg)
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a14d85c3decad2dea0c10e4822e174888}\label{classWsThreadHelper_a14d85c3decad2dea0c10e4822e174888}} 
+void {\bfseries join\+Web\+Socket\+Thread} ()
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_af5d8e8feffa1c2ce73a0f64ce3967fb3}\label{classWsThreadHelper_af5d8e8feffa1c2ce73a0f64ce3967fb3}} 
+void {\bfseries on\+Sub\+Thread\+Started} ()
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a28da94bd3be6ba024788229c9b2d0261}\label{classWsThreadHelper_a28da94bd3be6ba024788229c9b2d0261}} 
+void {\bfseries on\+Sub\+Thread\+Loop} ()
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a22faf71b67509f0d1ad9345f6b0d9909}\label{classWsThreadHelper_a22faf71b67509f0d1ad9345f6b0d9909}} 
+void {\bfseries on\+Sub\+Thread\+Ended} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a7e4b8e288776aedbbb7374d2d02a1512}\label{classWsThreadHelper_a7e4b8e288776aedbbb7374d2d02a1512}} 
+std\+::list$<$ \hyperlink{classWsMessage}{Ws\+Message} $\ast$ $>$ $\ast$ {\bfseries \+\_\+sub\+Thread\+Ws\+Message\+Queue}
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a76e9bbb8cb0d73f4480bcfc5b97018c7}\label{classWsThreadHelper_a76e9bbb8cb0d73f4480bcfc5b97018c7}} 
+std\+::mutex {\bfseries \+\_\+sub\+Thread\+Ws\+Message\+Queue\+Mutex}
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a4c6bc79fd7aa61251ddedd405d0d94d7}\label{classWsThreadHelper_a4c6bc79fd7aa61251ddedd405d0d94d7}} 
+std\+::thread $\ast$ {\bfseries \+\_\+sub\+Thread\+Instance}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWsThreadHelper_a76cdbf75f011ce54eaf400154593d70c}\label{classWsThreadHelper_a76cdbf75f011ce54eaf400154593d70c}} 
+void {\bfseries ws\+Thread\+Entry\+Func} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Websocket thread helper, it\textquotesingle{}s used for sending message between UI thread and websocket thread. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/network/Web\+Socket.\+cpp\end{DoxyCompactItemize}

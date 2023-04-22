@@ -1,0 +1,114 @@
+\hypertarget{classbtSoftRigidDynamicsWorld}{}\section{bt\+Soft\+Rigid\+Dynamics\+World Class Reference}
+\label{classbtSoftRigidDynamicsWorld}\index{bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}}
+
+
+Inheritance diagram for bt\+Soft\+Rigid\+Dynamics\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classbtSoftRigidDynamicsWorld__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Rigid\+Dynamics\+World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classbtSoftRigidDynamicsWorld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_ad3724ef1193391fe522edc96c541ac9c}\label{classbtSoftRigidDynamicsWorld_ad3724ef1193391fe522edc96c541ac9c}} 
+{\bfseries bt\+Soft\+Rigid\+Dynamics\+World} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} $\ast$pair\+Cache, \hyperlink{classbtConstraintSolver}{bt\+Constraint\+Solver} $\ast$constraint\+Solver, \hyperlink{classbtCollisionConfiguration}{bt\+Collision\+Configuration} $\ast$collision\+Configuration, \hyperlink{classbtSoftBodySolver}{bt\+Soft\+Body\+Solver} $\ast$soft\+Body\+Solver=0)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a4f4f35e55b213306488d9b57a30271a3}\label{classbtSoftRigidDynamicsWorld_a4f4f35e55b213306488d9b57a30271a3}} 
+virtual void {\bfseries debug\+Draw\+World} ()
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_aa20faacb10b1d67a6b79e19a3709da65}\label{classbtSoftRigidDynamicsWorld_aa20faacb10b1d67a6b79e19a3709da65}} 
+void {\bfseries add\+Soft\+Body} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$body, short int collision\+Filter\+Group=bt\+Broadphase\+Proxy\+::\+Default\+Filter, short int collision\+Filter\+Mask=bt\+Broadphase\+Proxy\+::\+All\+Filter)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a4129564060bc4960f509ebf31470686a}\label{classbtSoftRigidDynamicsWorld_a4129564060bc4960f509ebf31470686a}} 
+void {\bfseries remove\+Soft\+Body} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_af2b8c217f386bb37cab6512294281c7e}\label{classbtSoftRigidDynamicsWorld_af2b8c217f386bb37cab6512294281c7e}} 
+virtual void \hyperlink{classbtSoftRigidDynamicsWorld_af2b8c217f386bb37cab6512294281c7e}{remove\+Collision\+Object} (bt\+Collision\+Object $\ast$collision\+Object)
+\begin{DoxyCompactList}\small\item\em remove\+Collision\+Object will first check if it is a rigid body, if so call remove\+Rigid\+Body otherwise call bt\+Discrete\+Dynamics\+World\+::remove\+Collision\+Object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_aae4e4b95d837cbcd267fedc805dbf8cf}\label{classbtSoftRigidDynamicsWorld_aae4e4b95d837cbcd267fedc805dbf8cf}} 
+int {\bfseries get\+Draw\+Flags} () const
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_ad982fb770a12204e59a19dedeff32ae4}\label{classbtSoftRigidDynamicsWorld_ad982fb770a12204e59a19dedeff32ae4}} 
+void {\bfseries set\+Draw\+Flags} (int f)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_adf7ee702dee979e4120ce536eb95e695}\label{classbtSoftRigidDynamicsWorld_adf7ee702dee979e4120ce536eb95e695}} 
+\hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} \& {\bfseries get\+World\+Info} ()
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_af3314ba1f25bee62f21a8706c713523f}\label{classbtSoftRigidDynamicsWorld_af3314ba1f25bee62f21a8706c713523f}} 
+const \hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} \& {\bfseries get\+World\+Info} () const
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a1b90318fc6210a1377824a4f2b07e3bb}\label{classbtSoftRigidDynamicsWorld_a1b90318fc6210a1377824a4f2b07e3bb}} 
+virtual bt\+Dynamics\+World\+Type {\bfseries get\+World\+Type} () const
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a4cf515c1e5bab7952f0a26c535aa7da8}\label{classbtSoftRigidDynamicsWorld_a4cf515c1e5bab7952f0a26c535aa7da8}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Soft\+Body\+Array} \& {\bfseries get\+Soft\+Body\+Array} ()
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_ae7ab53717a92b9d34cf8178221733be0}\label{classbtSoftRigidDynamicsWorld_ae7ab53717a92b9d34cf8178221733be0}} 
+const \hyperlink{classbtAlignedObjectArray}{bt\+Soft\+Body\+Array} \& {\bfseries get\+Soft\+Body\+Array} () const
+\item 
+virtual void \hyperlink{classbtSoftRigidDynamicsWorld_a74c164267415b885bba55a2bf319b337}{ray\+Test} (const bt\+Vector3 \&ray\+From\+World, const bt\+Vector3 \&ray\+To\+World, Ray\+Result\+Callback \&result\+Callback) const
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_ac7770632b7372c54d2d85d33109bcfbf}\label{classbtSoftRigidDynamicsWorld_ac7770632b7372c54d2d85d33109bcfbf}} 
+virtual void {\bfseries serialize} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classbtSoftRigidDynamicsWorld_a918218d4fe565ce42fd78c9d06d22cb0}{ray\+Test\+Single} (const bt\+Transform \&ray\+From\+Trans, const bt\+Transform \&ray\+To\+Trans, bt\+Collision\+Object $\ast$collision\+Object, const bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Transform \&col\+Obj\+World\+Transform, Ray\+Result\+Callback \&result\+Callback)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_aa2fe667a197a86d8bbfdd1149010afea}\label{classbtSoftRigidDynamicsWorld_aa2fe667a197a86d8bbfdd1149010afea}} 
+virtual void {\bfseries predict\+Unconstraint\+Motion} (bt\+Scalar time\+Step)
+\item 
+virtual void \hyperlink{classbtSoftRigidDynamicsWorld_ace902ab44e0e090b82e2031f154d7015}{internal\+Single\+Step\+Simulation} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_af65fd70ac5706da07d6f99286662e4fe}\label{classbtSoftRigidDynamicsWorld_af65fd70ac5706da07d6f99286662e4fe}} 
+void {\bfseries solve\+Soft\+Bodies\+Constraints} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a289b622acef102e2b8471376993bdd23}\label{classbtSoftRigidDynamicsWorld_a289b622acef102e2b8471376993bdd23}} 
+void {\bfseries serialize\+Soft\+Bodies} (\hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_ace902ab44e0e090b82e2031f154d7015}\label{classbtSoftRigidDynamicsWorld_ace902ab44e0e090b82e2031f154d7015}} 
+\index{bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}!internal\+Single\+Step\+Simulation@{internal\+Single\+Step\+Simulation}}
+\index{internal\+Single\+Step\+Simulation@{internal\+Single\+Step\+Simulation}!bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{internal\+Single\+Step\+Simulation()}{internalSingleStepSimulation()}}
+{\footnotesize\ttfamily void bt\+Soft\+Rigid\+Dynamics\+World\+::internal\+Single\+Step\+Simulation (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{time\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+solve soft bodies constraints
+
+update soft bodies \mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a74c164267415b885bba55a2bf319b337}\label{classbtSoftRigidDynamicsWorld_a74c164267415b885bba55a2bf319b337}} 
+\index{bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}!ray\+Test@{ray\+Test}}
+\index{ray\+Test@{ray\+Test}!bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{ray\+Test()}{rayTest()}}
+{\footnotesize\ttfamily void bt\+Soft\+Rigid\+Dynamics\+World\+::ray\+Test (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{ray\+From\+World,  }\item[{const bt\+Vector3 \&}]{ray\+To\+World,  }\item[{Ray\+Result\+Callback \&}]{result\+Callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+use the broadphase to accelerate the search for objects, based on their aabb and for each object with ray-\/aabb overlap, perform an exact ray test \mbox{\Hypertarget{classbtSoftRigidDynamicsWorld_a918218d4fe565ce42fd78c9d06d22cb0}\label{classbtSoftRigidDynamicsWorld_a918218d4fe565ce42fd78c9d06d22cb0}} 
+\index{bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}!ray\+Test\+Single@{ray\+Test\+Single}}
+\index{ray\+Test\+Single@{ray\+Test\+Single}!bt\+Soft\+Rigid\+Dynamics\+World@{bt\+Soft\+Rigid\+Dynamics\+World}}
+\subsubsection{\texorpdfstring{ray\+Test\+Single()}{rayTestSingle()}}
+{\footnotesize\ttfamily void bt\+Soft\+Rigid\+Dynamics\+World\+::ray\+Test\+Single (\begin{DoxyParamCaption}\item[{const bt\+Transform \&}]{ray\+From\+Trans,  }\item[{const bt\+Transform \&}]{ray\+To\+Trans,  }\item[{bt\+Collision\+Object $\ast$}]{collision\+Object,  }\item[{const bt\+Collision\+Shape $\ast$}]{collision\+Shape,  }\item[{const bt\+Transform \&}]{col\+Obj\+World\+Transform,  }\item[{Ray\+Result\+Callback \&}]{result\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+ray\+Test\+Single performs a raycast call and calls the result\+Callback. It is used internally by ray\+Test. In a future implementation, we consider moving the ray test as a virtual method in bt\+Collision\+Shape. This allows more customization. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Rigid\+Dynamics\+World.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Rigid\+Dynamics\+World.\+cpp\end{DoxyCompactItemize}

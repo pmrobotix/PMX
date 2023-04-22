@@ -1,0 +1,1954 @@
+\hypertarget{classui_1_1EditBox}{}\section{ui\+:\+:Edit\+Box Class Reference}
+\label{classui_1_1EditBox}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+
+
+Class for edit box.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Edit\+Box.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Edit\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classui_1_1EditBox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Edit\+Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1EditBox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Keyboard\+Return\+Type} \{ \newline
+{\bfseries D\+E\+F\+A\+U\+LT}, 
+{\bfseries D\+O\+NE}, 
+{\bfseries S\+E\+ND}, 
+{\bfseries S\+E\+A\+R\+CH}, 
+\newline
+{\bfseries GO}, 
+{\bfseries D\+E\+F\+A\+U\+LT}, 
+{\bfseries D\+O\+NE}, 
+{\bfseries S\+E\+ND}, 
+\newline
+{\bfseries S\+E\+A\+R\+CH}, 
+{\bfseries GO}, 
+{\bfseries N\+E\+XT}
+ \}
+\item 
+enum \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} \{ \newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}{Input\+Mode\+::\+A\+NY}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}{Input\+Mode\+::\+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}{Input\+Mode\+::\+N\+U\+M\+E\+R\+IC}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}{Input\+Mode\+::\+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}{Input\+Mode\+::\+U\+RL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}{Input\+Mode\+::\+D\+E\+C\+I\+M\+AL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}{Input\+Mode\+::\+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}{Input\+Mode\+::\+A\+NY}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}{Input\+Mode\+::\+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}{Input\+Mode\+::\+N\+U\+M\+E\+R\+IC}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}{Input\+Mode\+::\+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}{Input\+Mode\+::\+U\+RL}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}{Input\+Mode\+::\+D\+E\+C\+I\+M\+AL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}{Input\+Mode\+::\+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}
+ \}\begin{DoxyCompactList}\small\item\em The \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} defines the type of text that the user is allowed to enter. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} \{ \newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}{Input\+Flag\+::\+P\+A\+S\+S\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}{Input\+Flag\+::\+S\+E\+N\+S\+I\+T\+I\+VE}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}, 
+\newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}{Input\+Flag\+::\+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}{Input\+Flag\+::\+P\+A\+S\+S\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}{Input\+Flag\+::\+S\+E\+N\+S\+I\+T\+I\+VE}, 
+\newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}{Input\+Flag\+::\+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}
+ \}\begin{DoxyCompactList}\small\item\em The \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} defines how the input text is displayed/formatted. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Keyboard\+Return\+Type} \{ \newline
+{\bfseries D\+E\+F\+A\+U\+LT}, 
+{\bfseries D\+O\+NE}, 
+{\bfseries S\+E\+ND}, 
+{\bfseries S\+E\+A\+R\+CH}, 
+\newline
+{\bfseries GO}, 
+{\bfseries D\+E\+F\+A\+U\+LT}, 
+{\bfseries D\+O\+NE}, 
+{\bfseries S\+E\+ND}, 
+\newline
+{\bfseries S\+E\+A\+R\+CH}, 
+{\bfseries GO}, 
+{\bfseries N\+E\+XT}
+ \}
+\item 
+enum \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} \{ \newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}{Input\+Mode\+::\+A\+NY}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}{Input\+Mode\+::\+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}{Input\+Mode\+::\+N\+U\+M\+E\+R\+IC}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}{Input\+Mode\+::\+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}{Input\+Mode\+::\+U\+RL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}{Input\+Mode\+::\+D\+E\+C\+I\+M\+AL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}{Input\+Mode\+::\+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}{Input\+Mode\+::\+A\+NY}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}{Input\+Mode\+::\+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}{Input\+Mode\+::\+N\+U\+M\+E\+R\+IC}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}{Input\+Mode\+::\+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}{Input\+Mode\+::\+U\+RL}, 
+\newline
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}{Input\+Mode\+::\+D\+E\+C\+I\+M\+AL}, 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}{Input\+Mode\+::\+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}
+ \}\begin{DoxyCompactList}\small\item\em The \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} defines the type of text that the user is allowed to enter. \end{DoxyCompactList}
+\item 
+enum \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} \{ \newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}{Input\+Flag\+::\+P\+A\+S\+S\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}{Input\+Flag\+::\+S\+E\+N\+S\+I\+T\+I\+VE}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}, 
+\newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}{Input\+Flag\+::\+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}{Input\+Flag\+::\+P\+A\+S\+S\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}{Input\+Flag\+::\+S\+E\+N\+S\+I\+T\+I\+VE}, 
+\newline
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}{Input\+Flag\+::\+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}, 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}{Input\+Flag\+::\+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}
+ \}\begin{DoxyCompactList}\small\item\em The \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} defines how the input text is displayed/formatted. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1EditBox_af6c48b01269aeacecf0adcd4936a3f43}{Edit\+Box} (void)
+\item 
+virtual \hyperlink{classui_1_1EditBox_ad48d2e64d5f6ce57892bc781a973b87a}{$\sim$\+Edit\+Box} (void)
+\item 
+bool \hyperlink{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}{init\+With\+Size\+And\+Background\+Sprite} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal9\+Sprite\+Bg, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+bool \hyperlink{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}{init\+With\+Size\+And\+Background\+Sprite} (const \hyperlink{classSize}{Size} \&size, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$normal9\+Sprite\+Bg)
+\item 
+void \hyperlink{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}{set\+Delegate} (\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$delegate)
+\item 
+\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$ \hyperlink{classui_1_1EditBox_ab4a844e7a6c92162370cf1bba2f60bdb}{get\+Delegate} ()
+\item 
+void \hyperlink{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}{set\+Text} (const char $\ast$p\+Text)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_ac510a4082911adf52395efab4bd7be83}{get\+Text} (void)
+\item 
+void \hyperlink{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}{set\+Font} (const char $\ast$p\+Font\+Name, int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}{set\+Font\+Name} (const char $\ast$p\+Font\+Name)
+\item 
+void \hyperlink{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}{set\+Font\+Size} (int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}{set\+Font\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_acd7aa1527813c463ab4bbb955ba8d528}\label{classui_1_1EditBox_acd7aa1527813c463ab4bbb955ba8d528}} 
+void {\bfseries set\+Font\+Color} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+void \hyperlink{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}{set\+Placeholder\+Font} (const char $\ast$p\+Font\+Name, int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}{set\+Placeholder\+Font\+Name} (const char $\ast$p\+Font\+Name)
+\item 
+void \hyperlink{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}{set\+Placeholder\+Font\+Size} (int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}{set\+Placeholder\+Font\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\item 
+void \hyperlink{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}{set\+Placeholder\+Font\+Color} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+void \hyperlink{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}{set\+Place\+Holder} (const char $\ast$p\+Text)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_a47a20f50cb56438d96a87a60219fdce9}{get\+Place\+Holder} (void)
+\item 
+void \hyperlink{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}{set\+Input\+Mode} (\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} input\+Mode)
+\item 
+void \hyperlink{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}{set\+Max\+Length} (int max\+Length)
+\item 
+int \hyperlink{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}{get\+Max\+Length} ()
+\item 
+void \hyperlink{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}{set\+Input\+Flag} (\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} input\+Flag)
+\item 
+void \hyperlink{classui_1_1EditBox_ae2f5a317a5b3bb4b1212cf3a44770e6d}{set\+Return\+Type} (\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} return\+Type)
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a9920fc994750f83db1c80be0417143f6}{set\+Position} (const \hyperlink{classVec2}{Vec2} \&pos) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_afd90efc8e80090f96e54f39520405883}{set\+Visible} (bool visible) override
+\begin{DoxyCompactList}\small\item\em is\+Visible setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1EditBox_a1aadf938d146d0469da42e42d33e2a1e}{set\+Content\+Size} (const \hyperlink{classSize}{Size} \&size) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_ad17a8fc58f78d77e47106170e6db9f39}{set\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&anchor\+Point) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1EditBox_a00b9b37d30ef21b95997a016af53e05e}{get\+Description} () const override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_af89050d6cee47d03c205f34fec481db4}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a04667a919ce4f36fefb7605215267b28}{on\+Enter} (void) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a4151e7abfe84c879cc89f683c4975285}{on\+Exit} (void) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_abc522ffb60d7bb59404be9584fc1f60c}{keyboard\+Will\+Show} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a88c3e0a04a3857cacfc6cab7850fb8e0}{keyboard\+Did\+Show} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_afa54a7e9d06de4524963bf23565e8310}{keyboard\+Will\+Hide} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a54e44ca3b05a55e0498f6471a33a0c74}{keyboard\+Did\+Hide} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aeb746d4293ff9b51a7a589fc732c12f3}\label{classui_1_1EditBox_aeb746d4293ff9b51a7a589fc732c12f3}} 
+void {\bfseries touch\+Down\+Action} (\hyperlink{classRef}{Ref} $\ast$sender, \hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Touch\+Event\+Type} control\+Event)
+\item 
+\hyperlink{classui_1_1EditBox_a4a1a6eaee4479a9d7483de3f47c7d1f4}{Edit\+Box} ()
+\item 
+virtual \hyperlink{classui_1_1EditBox_a0ee2f35419817b117245eb6577f9f29e}{$\sim$\+Edit\+Box} ()
+\item 
+bool \hyperlink{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}{init\+With\+Size\+And\+Background\+Sprite} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal9\+Sprite\+Bg, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+bool \hyperlink{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}{init\+With\+Size\+And\+Background\+Sprite} (const \hyperlink{classSize}{Size} \&size, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$normal9\+Sprite\+Bg)
+\item 
+bool \hyperlink{classui_1_1EditBox_a200998adef67726af687f61da2a928f2}{init\+With\+Size\+And\+Background\+Sprite} (const \hyperlink{classSize}{Size} \&size, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$normal\+Sprite, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$pressed\+Sprite, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$disabled\+Sprite)
+\item 
+bool \hyperlink{classui_1_1EditBox_ad90d3a68ba9918557cb9d329d19318d7}{init\+With\+Size\+And\+Texture} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal\+Image, const std\+::string \&pressed\+Image=\char`\"{}\char`\"{}, const std\+::string \&disabled\+Image=\char`\"{}\char`\"{}, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1EditBox_a8618a7f2a642e858e893657b16b89fa9}{load\+Textures} (const std\+::string \&normal, const std\+::string \&pressed, const std\+::string \&disabled=\char`\"{}\char`\"{}, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1EditBox_a7edbd1ea73afccd9ef3797522e991211}{load\+Texture\+Normal} (const std\+::string \&normal, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1EditBox_abbe0278d18373f9d819066504aaa15ed}{load\+Texture\+Pressed} (const std\+::string \&pressed, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1EditBox_afe94af506888eab257504bf408b5692d}{load\+Texture\+Disabled} (const std\+::string \&disabled, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+void \hyperlink{classui_1_1EditBox_ad02e9879fd52ed960df901a017bde1ff}{set\+Cap\+Insets} (const \hyperlink{classRect}{Rect} \&cap\+Insets)
+\item 
+void \hyperlink{classui_1_1EditBox_a9500ec04f104bd549423336a8409a1c3}{set\+Cap\+Insets\+Normal\+Renderer} (const \hyperlink{classRect}{Rect} \&cap\+Insets)
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classui_1_1EditBox_afa9dc82a953be1cae1a1436e868bd459}{get\+Cap\+Insets\+Normal\+Renderer} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a724b6951bf411a903a92b5cc4aa96afe}{set\+Cap\+Insets\+Pressed\+Renderer} (const \hyperlink{classRect}{Rect} \&cap\+Insets)
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classui_1_1EditBox_a3cc0390e788f6b8da345877c424d0c1d}{get\+Cap\+Insets\+Pressed\+Renderer} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a1167aa7788554bfd537f58ecaca5adc0}{set\+Cap\+Insets\+Disabled\+Renderer} (const \hyperlink{classRect}{Rect} \&cap\+Insets)
+\item 
+const \hyperlink{classRect}{Rect} \& \hyperlink{classui_1_1EditBox_aeb3e0e78e2dcb8ffd4fe78dd509c56fe}{get\+Cap\+Insets\+Disabled\+Renderer} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}{set\+Delegate} (\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$delegate)
+\item 
+\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$ \hyperlink{classui_1_1EditBox_a46e2b844d36d0142344be742508718a5}{get\+Delegate} ()
+\item 
+void \hyperlink{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}{set\+Text} (const char $\ast$p\+Text)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_a78d728fb111be80c389ec266382e91cc}{get\+Text} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}{set\+Font} (const char $\ast$p\+Font\+Name, int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}{set\+Font\+Name} (const char $\ast$p\+Font\+Name)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_a451027736ac41aa82930bdd05e8602c2}{get\+Font\+Name} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}{set\+Font\+Size} (int font\+Size)
+\item 
+int \hyperlink{classui_1_1EditBox_a815da9992ba29b9b50a6d9acd84006eb}{get\+Font\+Size} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}{set\+Font\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_acd7aa1527813c463ab4bbb955ba8d528}\label{classui_1_1EditBox_acd7aa1527813c463ab4bbb955ba8d528}} 
+void {\bfseries set\+Font\+Color} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+const \hyperlink{structColor4B}{Color4B} \& \hyperlink{classui_1_1EditBox_aa8acef6afc41d2dadd4f1985a3d18231}{get\+Font\+Color} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}{set\+Placeholder\+Font} (const char $\ast$p\+Font\+Name, int font\+Size)
+\item 
+void \hyperlink{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}{set\+Placeholder\+Font\+Name} (const char $\ast$p\+Font\+Name)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_a10aa107d97c44e21733615e777e2ba4c}{get\+Placeholder\+Font\+Name} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}{set\+Placeholder\+Font\+Size} (int font\+Size)
+\item 
+int \hyperlink{classui_1_1EditBox_aa50880b73279ba99aa23239250421e9c}{get\+Placeholder\+Font\+Size} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}{set\+Placeholder\+Font\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\item 
+void \hyperlink{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}{set\+Placeholder\+Font\+Color} (const \hyperlink{structColor4B}{Color4B} \&color)
+\item 
+const \hyperlink{structColor4B}{Color4B} \& \hyperlink{classui_1_1EditBox_a267922ed1ab9d6eb1192987584983e70}{get\+Placeholder\+Font\+Color} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}{set\+Place\+Holder} (const char $\ast$p\+Text)
+\item 
+const char $\ast$ \hyperlink{classui_1_1EditBox_aadbd55732eaedc4bc678f8c25395319a}{get\+Place\+Holder} () const
+\item 
+void \hyperlink{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}{set\+Input\+Mode} (\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} input\+Mode)
+\item 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} \hyperlink{classui_1_1EditBox_aca9e89e806845c12585cecb69468b7f9}{get\+Input\+Mode} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}{set\+Max\+Length} (int max\+Length)
+\item 
+int \hyperlink{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}{get\+Max\+Length} ()
+\item 
+void \hyperlink{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}{set\+Input\+Flag} (\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} input\+Flag)
+\item 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} \hyperlink{classui_1_1EditBox_a376fa08f66d2a3f6741a93d76b4ea1dc}{get\+Input\+Flag} () const
+\item 
+void \hyperlink{classui_1_1EditBox_a7f574c7c67fa4779fd34acad947a95ed}{set\+Return\+Type} (\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Keyboard\+Return\+Type} return\+Type)
+\item 
+\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Keyboard\+Return\+Type} \hyperlink{classui_1_1EditBox_a2c838259c0204c3cd983b0c09b59741a}{get\+Return\+Type} () const
+\item 
+void \hyperlink{classui_1_1EditBox_afc334fb2759ea97216ee10f501a7e988}{set\+Text\+Horizontal\+Alignment} (Text\+H\+Alignment alignment)
+\item 
+Text\+H\+Alignment \hyperlink{classui_1_1EditBox_a4fa4d53ceaa22523da93c430b0182a1f}{get\+Text\+Horizontal\+Alignment} () const
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a92e525c7152c0a974632d4810b392f11}{set\+Position} (const \hyperlink{classVec2}{Vec2} \&pos) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a73a03efc1b904b6386d037fdcdc7ff92}{set\+Visible} (bool visible) override
+\begin{DoxyCompactList}\small\item\em is\+Visible setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classui_1_1EditBox_a3fbf590dff29ba873d9c72af308f7edd}{set\+Content\+Size} (const \hyperlink{classSize}{Size} \&size) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a6e433ab6bbaa15560a049dfe05087294}{set\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&anchor\+Point) override
+\item 
+virtual std\+::string \hyperlink{classui_1_1EditBox_a7b19d7662f3a8ab64601c5c8abd8aada}{get\+Description} () const override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_ab853853be41d8e50e6b23ca1fcb5641f}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a0506cfa2b498d2bcd24c4b85deff123d}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a4c5c9db7c8b7711a719aec6a0842696b}{on\+Exit} () override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a5913b44adaf000a76cf35a126fbdeb31}{keyboard\+Will\+Show} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_ad5095cb70eebd06257e074c7b043ea89}{keyboard\+Did\+Show} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_aabf158a71e53e27677d85b86e9aa4e3a}{keyboard\+Will\+Hide} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+virtual void \hyperlink{classui_1_1EditBox_a3898b6685b2693973a59d68c328952a0}{keyboard\+Did\+Hide} (\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&info) override
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1EditBox_a74da824c15ca8e40a5e70d39bc036a8a}{touch\+Down\+Action} (\hyperlink{classRef}{Ref} $\ast$sender, \hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Touch\+Event\+Type} control\+Event)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a397a0c3a8c978a49ecaa1c1cb9369ae2}\label{classui_1_1EditBox_a397a0c3a8c978a49ecaa1c1cb9369ae2}} 
+void {\bfseries open\+Keyboard} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ \hyperlink{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}{create} (const \hyperlink{classSize}{Size} \&size, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$normal\+Sprite, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$pressed\+Sprite=nullptr, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$disabled\+Sprite=nullptr)
+\item 
+static \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ \hyperlink{classui_1_1EditBox_a7426d58fa48283337dc62f12863e085a}{create} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal9\+Sprite\+Bg, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+static \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ \hyperlink{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}{create} (const \hyperlink{classSize}{Size} \&size, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$normal\+Sprite, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$pressed\+Sprite=nullptr, \hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$disabled\+Sprite=nullptr)
+\item 
+static \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ \hyperlink{classui_1_1EditBox_ab798f4ef40435304ae46ca44881f7f10}{create} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal\+Image, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type)
+\item 
+static \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ \hyperlink{classui_1_1EditBox_a50dfa83de5b1ae5834142714d7863cef}{create} (const \hyperlink{classSize}{Size} \&size, const std\+::string \&normal\+Image, const std\+::string \&pressed\+Image=\char`\"{}\char`\"{}, const std\+::string \&disabled\+Image=\char`\"{}\char`\"{}, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} tex\+Type=Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a0fb55c2070acc2eac1eba2ade69d39c0}\label{classui_1_1EditBox_a0fb55c2070acc2eac1eba2ade69d39c0}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a9296bb3491261d52c6c5e92fe7d035ed}\label{classui_1_1EditBox_a9296bb3491261d52c6c5e92fe7d035ed}} 
+void {\bfseries update\+Position} (float dt)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a7b64c57f90d32124f43a8f9b2ec73ac2}\label{classui_1_1EditBox_a7b64c57f90d32124f43a8f9b2ec73ac2}} 
+virtual void {\bfseries release\+Up\+Event} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a1d06b29f0ca0258d6b4878d06713e0b2}\label{classui_1_1EditBox_a1d06b29f0ca0258d6b4878d06713e0b2}} 
+virtual void {\bfseries init\+Renderer} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a8190e04cdd2a2f2103c89981df0e7dd6}\label{classui_1_1EditBox_a8190e04cdd2a2f2103c89981df0e7dd6}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Normal} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a85bbb7673a18c54fc1ce5d35e70bc6e7}\label{classui_1_1EditBox_a85bbb7673a18c54fc1ce5d35e70bc6e7}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Pressed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aea002dbecefcf8ee053c2bc75789e983}\label{classui_1_1EditBox_aea002dbecefcf8ee053c2bc75789e983}} 
+virtual void {\bfseries on\+Press\+State\+Changed\+To\+Disabled} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a4fcd7ca359b4a6c42218ad9417b4655e}\label{classui_1_1EditBox_a4fcd7ca359b4a6c42218ad9417b4655e}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aea97dcc74ab1faf0775a7d583eed351f}\label{classui_1_1EditBox_aea97dcc74ab1faf0775a7d583eed351f}} 
+void {\bfseries load\+Texture\+Normal} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$normal\+Sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a0b31327037f7dbe8e447138b445ecab9}\label{classui_1_1EditBox_a0b31327037f7dbe8e447138b445ecab9}} 
+void {\bfseries setup\+Normal\+Texture} (bool texture\+Loaded)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a6814f726e2b21e70b8660ad26eb99a84}\label{classui_1_1EditBox_a6814f726e2b21e70b8660ad26eb99a84}} 
+void {\bfseries load\+Texture\+Pressed} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$pressed\+Sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a6dfae70c0c9597ac318f304c93abf939}\label{classui_1_1EditBox_a6dfae70c0c9597ac318f304c93abf939}} 
+void {\bfseries setup\+Pressed\+Texture} (bool texture\+Loaded)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ae5f067c7d435026389892fe48c7fe31f}\label{classui_1_1EditBox_ae5f067c7d435026389892fe48c7fe31f}} 
+void {\bfseries load\+Texture\+Disabled} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$disabled\+Sprite\+Frame)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a9b2d0fe18d5fdfa696d718958afb9423}\label{classui_1_1EditBox_a9b2d0fe18d5fdfa696d718958afb9423}} 
+void {\bfseries setup\+Disabled\+Texture} (bool texture\+Loaded)
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a4a79de6c38fed42a267a3d2a8fd58c03}\label{classui_1_1EditBox_a4a79de6c38fed42a267a3d2a8fd58c03}} 
+void {\bfseries normal\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ab8d04719bc595b477485abdc79221556}\label{classui_1_1EditBox_ab8d04719bc595b477485abdc79221556}} 
+void {\bfseries pressed\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a71067b37edccacc13c6dc203b9abf79c}\label{classui_1_1EditBox_a71067b37edccacc13c6dc203b9abf79c}} 
+void {\bfseries disabled\+Texture\+Scale\+Changed\+With\+Size} ()
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a25121cc59ca27c30d401772613877a0c}\label{classui_1_1EditBox_a25121cc59ca27c30d401772613877a0c}} 
+virtual void {\bfseries adapt\+Renderers} () override
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a9296bb3491261d52c6c5e92fe7d035ed}\label{classui_1_1EditBox_a9296bb3491261d52c6c5e92fe7d035ed}} 
+void {\bfseries update\+Position} (float dt)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a376f1c6cab670b368040c1e87817d935}\label{classui_1_1EditBox_a376f1c6cab670b368040c1e87817d935}} 
+Edit\+Box\+Impl $\ast$ {\bfseries \+\_\+edit\+Box\+Impl}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a89fd5aed3c5d175555e879b78ab58c30}\label{classui_1_1EditBox_a89fd5aed3c5d175555e879b78ab58c30}} 
+\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$ {\bfseries \+\_\+delegate}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aa2601db3a423757fa09363fbf532e407}\label{classui_1_1EditBox_aa2601db3a423757fa09363fbf532e407}} 
+\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode} {\bfseries \+\_\+edit\+Box\+Input\+Mode}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_add01c7f758afe8517e9c6f421de2123d}\label{classui_1_1EditBox_add01c7f758afe8517e9c6f421de2123d}} 
+\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag} {\bfseries \+\_\+edit\+Box\+Input\+Flag}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a5a90079bc9b174624363d871374d215d}\label{classui_1_1EditBox_a5a90079bc9b174624363d871374d215d}} 
+\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} {\bfseries \+\_\+keyboard\+Return\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a410a1e06770fa4dacda84ddb878edf0b}\label{classui_1_1EditBox_a410a1e06770fa4dacda84ddb878edf0b}} 
+\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$ {\bfseries \+\_\+background\+Sprite}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a05bec2be71da7ba81b50de27dd99a673}\label{classui_1_1EditBox_a05bec2be71da7ba81b50de27dd99a673}} 
+std\+::string {\bfseries \+\_\+text}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ad01dc8cab55a6d2ac03561cbfd45d6a6}\label{classui_1_1EditBox_ad01dc8cab55a6d2ac03561cbfd45d6a6}} 
+std\+::string {\bfseries \+\_\+place\+Holder}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ae766e03307e677668fbb56585be599bc}\label{classui_1_1EditBox_ae766e03307e677668fbb56585be599bc}} 
+std\+::string {\bfseries \+\_\+font\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a1ba135d9f18c8f77f523df3eadb5de97}\label{classui_1_1EditBox_a1ba135d9f18c8f77f523df3eadb5de97}} 
+std\+::string {\bfseries \+\_\+placeholder\+Font\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aba5873273db943a1786ea6cd4eb11488}\label{classui_1_1EditBox_aba5873273db943a1786ea6cd4eb11488}} 
+int {\bfseries \+\_\+font\+Size}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_add2d656930c42d799c7a0b7279ac99d6}\label{classui_1_1EditBox_add2d656930c42d799c7a0b7279ac99d6}} 
+int {\bfseries \+\_\+placeholder\+Font\+Size}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_aac8ce82dc0e7e10a10e4dc2f0594eefa}\label{classui_1_1EditBox_aac8ce82dc0e7e10a10e4dc2f0594eefa}} 
+\hyperlink{structColor4B}{Color4B} {\bfseries \+\_\+col\+Text}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a009a4aa84f1839a94c81abcffcb80351}\label{classui_1_1EditBox_a009a4aa84f1839a94c81abcffcb80351}} 
+\hyperlink{structColor4B}{Color4B} {\bfseries \+\_\+col\+Place\+Holder}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a57e191dd7c0dde0fec6ff1a1dcd5dd6c}\label{classui_1_1EditBox_a57e191dd7c0dde0fec6ff1a1dcd5dd6c}} 
+int {\bfseries \+\_\+max\+Length}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_abde087d416aa3cd12fab371305ebee55}\label{classui_1_1EditBox_abde087d416aa3cd12fab371305ebee55}} 
+float {\bfseries \+\_\+adjust\+Height}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a1776c47cc14b418c68a52399741d19f0}\label{classui_1_1EditBox_a1776c47cc14b418c68a52399741d19f0}} 
+\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$ {\bfseries \+\_\+normal\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a2b91bbfa2df1d2f80921f710e435790d}\label{classui_1_1EditBox_a2b91bbfa2df1d2f80921f710e435790d}} 
+\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$ {\bfseries \+\_\+pressed\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a8a41979d20b57c9235e0bc2ea190e429}\label{classui_1_1EditBox_a8a41979d20b57c9235e0bc2ea190e429}} 
+\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$ {\bfseries \+\_\+disabled\+Renderer}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_af240f62d518f1420ef8b7630ffbe3619}\label{classui_1_1EditBox_af240f62d518f1420ef8b7630ffbe3619}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+cap\+Insets\+Normal}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a2d7e1e74634fb5b5a185a3a6ba606adc}\label{classui_1_1EditBox_a2d7e1e74634fb5b5a185a3a6ba606adc}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+cap\+Insets\+Pressed}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_af9cccb10f19df8c3b8449936006848a1}\label{classui_1_1EditBox_af9cccb10f19df8c3b8449936006848a1}} 
+\hyperlink{classRect}{Rect} {\bfseries \+\_\+cap\+Insets\+Disabled}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a6ff9ca8ec99dbbf2107a23f4c9092885}\label{classui_1_1EditBox_a6ff9ca8ec99dbbf2107a23f4c9092885}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+normal\+Texture\+Size}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a3304748aea45f9198b89ba9157adb692}\label{classui_1_1EditBox_a3304748aea45f9198b89ba9157adb692}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+pressed\+Texture\+Size}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a3aa7f7eaa408856fe29858e5ef81e468}\label{classui_1_1EditBox_a3aa7f7eaa408856fe29858e5ef81e468}} 
+\hyperlink{classSize}{Size} {\bfseries \+\_\+disabled\+Texture\+Size}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a5eba63f7ae88f8c3bfbce68949484b9f}\label{classui_1_1EditBox_a5eba63f7ae88f8c3bfbce68949484b9f}} 
+bool {\bfseries \+\_\+normal\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a7f31c36fc96d6658087e1989c6d88f54}\label{classui_1_1EditBox_a7f31c36fc96d6658087e1989c6d88f54}} 
+bool {\bfseries \+\_\+pressed\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ae4444822fd44ca2cf5822f7dcd1a8768}\label{classui_1_1EditBox_ae4444822fd44ca2cf5822f7dcd1a8768}} 
+bool {\bfseries \+\_\+disabled\+Texture\+Loaded}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a4611ff112e1a3c9399c5583daf5a9b75}\label{classui_1_1EditBox_a4611ff112e1a3c9399c5583daf5a9b75}} 
+bool {\bfseries \+\_\+normal\+Texture\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a9f58cc296aec0c84d52e2f7779f22bab}\label{classui_1_1EditBox_a9f58cc296aec0c84d52e2f7779f22bab}} 
+bool {\bfseries \+\_\+pressed\+Texture\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a46fd5f9c6e566944d9293a10b9ef7c6e}\label{classui_1_1EditBox_a46fd5f9c6e566944d9293a10b9ef7c6e}} 
+bool {\bfseries \+\_\+disabled\+Texture\+Adapt\+Dirty}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ab39910a89d727e625907d67771488f74}\label{classui_1_1EditBox_ab39910a89d727e625907d67771488f74}} 
+std\+::string {\bfseries \+\_\+normal\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a86a68c84ffc50ca81dea5c92b225d03f}\label{classui_1_1EditBox_a86a68c84ffc50ca81dea5c92b225d03f}} 
+std\+::string {\bfseries \+\_\+pressed\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_ac97062b16b9eb2327c0e50ca408384a1}\label{classui_1_1EditBox_ac97062b16b9eb2327c0e50ca408384a1}} 
+std\+::string {\bfseries \+\_\+disabled\+File\+Name}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a64f75155b0e32dbf0e85b2fef4830249}\label{classui_1_1EditBox_a64f75155b0e32dbf0e85b2fef4830249}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+normal\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a6a025ef072a6b64e7ad88bc50678ca1c}\label{classui_1_1EditBox_a6a025ef072a6b64e7ad88bc50678ca1c}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+pressed\+Tex\+Type}
+\item 
+\mbox{\Hypertarget{classui_1_1EditBox_a47fb4b2d98346a2552c5f03eb4e803ab}\label{classui_1_1EditBox_a47fb4b2d98346a2552c5f03eb4e803ab}} 
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} {\bfseries \+\_\+disabled\+Tex\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for edit box. 
+
+You can use this widget to gather small amounts of text from the user. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Input\+Flag@{Input\+Flag}}
+\index{Input\+Flag@{Input\+Flag}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Input\+Flag}{InputFlag}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{ui\+::\+Edit\+Box\+::\+Input\+Flag}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} defines how the input text is displayed/formatted. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}} 
+P\+A\+S\+S\+W\+O\+RD&Indicates that the text entered is confidential data that should be obscured whenever possible. This implies E\+D\+I\+T\+\_\+\+B\+O\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+N\+S\+I\+T\+I\+VE. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}} 
+S\+E\+N\+S\+I\+T\+I\+VE&Indicates that the text entered is sensitive data that the implementation must never store into a dictionary or table for use in predictive, auto-\/completing, or other accelerated input schemes. A credit card number is an example of sensitive data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD&This flag is a hint to the implementation that during text editing, the initial letter of each word should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE&This flag is a hint to the implementation that during text editing, the initial letter of each sentence should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Capitalize all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}} 
+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Lowercase all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}} 
+P\+A\+S\+S\+W\+O\+RD&Indicates that the text entered is confidential data that should be obscured whenever possible. This implies E\+D\+I\+T\+\_\+\+B\+O\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+N\+S\+I\+T\+I\+VE. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}} 
+S\+E\+N\+S\+I\+T\+I\+VE&Indicates that the text entered is sensitive data that the implementation must never store into a dictionary or table for use in predictive, auto-\/completing, or other accelerated input schemes. A credit card number is an example of sensitive data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD&This flag is a hint to the implementation that during text editing, the initial letter of each word should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE&This flag is a hint to the implementation that during text editing, the initial letter of each sentence should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Capitalize all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}} 
+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Lowercase all characters automatically. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Input\+Flag@{Input\+Flag}}
+\index{Input\+Flag@{Input\+Flag}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Input\+Flag}{InputFlag}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{ui\+::\+Edit\+Box\+::\+Input\+Flag}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} defines how the input text is displayed/formatted. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}} 
+P\+A\+S\+S\+W\+O\+RD&Indicates that the text entered is confidential data that should be obscured whenever possible. This implies E\+D\+I\+T\+\_\+\+B\+O\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+N\+S\+I\+T\+I\+VE. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}} 
+S\+E\+N\+S\+I\+T\+I\+VE&Indicates that the text entered is sensitive data that the implementation must never store into a dictionary or table for use in predictive, auto-\/completing, or other accelerated input schemes. A credit card number is an example of sensitive data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD&This flag is a hint to the implementation that during text editing, the initial letter of each word should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE&This flag is a hint to the implementation that during text editing, the initial letter of each sentence should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Capitalize all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}} 
+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Lowercase all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+A\+S\+S\+W\+O\+RD@{P\+A\+S\+S\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8a319f4d26e3c536b5dd871bb2c52e3178}} 
+P\+A\+S\+S\+W\+O\+RD&Indicates that the text entered is confidential data that should be obscured whenever possible. This implies E\+D\+I\+T\+\_\+\+B\+O\+X\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+L\+A\+G\+\_\+\+S\+E\+N\+S\+I\+T\+I\+VE. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+E\+N\+S\+I\+T\+I\+VE@{S\+E\+N\+S\+I\+T\+I\+VE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ac732aa70da7309fb7b492504a47da337}} 
+S\+E\+N\+S\+I\+T\+I\+VE&Indicates that the text entered is sensitive data that the implementation must never store into a dictionary or table for use in predictive, auto-\/completing, or other accelerated input schemes. A credit card number is an example of sensitive data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ace8bbc186e1cef785584a118061bdbef}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+W\+O\+RD&This flag is a hint to the implementation that during text editing, the initial letter of each word should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8ad1862b134da0ef5e4700eb7cc70d4461}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+S\+E\+N\+T\+E\+N\+CE&This flag is a hint to the implementation that during text editing, the initial letter of each sentence should be capitalized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af97cb40d6ac74a14748840bfb67e0d5f}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+C\+A\+P\+S\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Capitalize all characters automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS@{L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS}}}\mbox{\Hypertarget{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}\label{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8af6046ebaa52bdbb915dce19c79fea01a}} 
+L\+O\+W\+E\+R\+C\+A\+S\+E\+\_\+\+A\+L\+L\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+RS&Lowercase all characters automatically. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Input\+Mode@{Input\+Mode}}
+\index{Input\+Mode@{Input\+Mode}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Input\+Mode}{InputMode}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{ui\+::\+Edit\+Box\+::\+Input\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} defines the type of text that the user is allowed to enter. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+NY@{A\+NY}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!A\+NY@{A\+NY}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}} 
+A\+NY&The user is allowed to enter any text, including line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}} 
+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS&The user is allowed to enter an e-\/mail address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}} 
+N\+U\+M\+E\+R\+IC&The user is allowed to enter an integer value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}} 
+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER&The user is allowed to enter a phone number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+RL@{U\+RL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!U\+RL@{U\+RL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}} 
+U\+RL&The user is allowed to enter a U\+RL. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}} 
+D\+E\+C\+I\+M\+AL&The user is allowed to enter a real number value. This extends k\+Edit\+Box\+Input\+Mode\+Numeric by allowing a decimal point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}} 
+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE&The user is allowed to enter any text, except for line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+NY@{A\+NY}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!A\+NY@{A\+NY}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}} 
+A\+NY&The user is allowed to enter any text, including line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}} 
+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS&The user is allowed to enter an e-\/mail address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}} 
+N\+U\+M\+E\+R\+IC&The user is allowed to enter an integer value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}} 
+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER&The user is allowed to enter a phone number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+RL@{U\+RL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!U\+RL@{U\+RL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}} 
+U\+RL&The user is allowed to enter a U\+RL. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}} 
+D\+E\+C\+I\+M\+AL&The user is allowed to enter a real number value. This extends k\+Edit\+Box\+Input\+Mode\+Numeric by allowing a decimal point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}} 
+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE&The user is allowed to enter any text, except for line breaks. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Input\+Mode@{Input\+Mode}}
+\index{Input\+Mode@{Input\+Mode}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Input\+Mode}{InputMode}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{ui\+::\+Edit\+Box\+::\+Input\+Mode}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} defines the type of text that the user is allowed to enter. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+NY@{A\+NY}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!A\+NY@{A\+NY}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}} 
+A\+NY&The user is allowed to enter any text, including line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}} 
+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS&The user is allowed to enter an e-\/mail address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}} 
+N\+U\+M\+E\+R\+IC&The user is allowed to enter an integer value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}} 
+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER&The user is allowed to enter a phone number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+RL@{U\+RL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!U\+RL@{U\+RL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}} 
+U\+RL&The user is allowed to enter a U\+RL. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}} 
+D\+E\+C\+I\+M\+AL&The user is allowed to enter a real number value. This extends k\+Edit\+Box\+Input\+Mode\+Numeric by allowing a decimal point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}} 
+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE&The user is allowed to enter any text, except for line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+NY@{A\+NY}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!A\+NY@{A\+NY}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa8e1bde3c3d303163521522cf1d62f21f}} 
+A\+NY&The user is allowed to enter any text, including line breaks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aafb49ca06e9d31da1c2c1eeb7ae47a0d7}} 
+E\+M\+A\+I\+L\+\_\+\+A\+D\+D\+R\+E\+SS&The user is allowed to enter an e-\/mail address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!N\+U\+M\+E\+R\+IC@{N\+U\+M\+E\+R\+IC}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aab22f521f17b09d0fd389e231f8f6d66d}} 
+N\+U\+M\+E\+R\+IC&The user is allowed to enter an integer value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER@{P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa837697b230ef5a34d756f4ea8f3810bc}} 
+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+B\+ER&The user is allowed to enter a phone number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+RL@{U\+RL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!U\+RL@{U\+RL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aae6b391a8d2c4d45902a23a8b6585703d}} 
+U\+RL&The user is allowed to enter a U\+RL. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!D\+E\+C\+I\+M\+AL@{D\+E\+C\+I\+M\+AL}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aa13d992d671957e9a2b3e936ca0cf14a4}} 
+D\+E\+C\+I\+M\+AL&The user is allowed to enter a real number value. This extends k\+Edit\+Box\+Input\+Mode\+Numeric by allowing a decimal point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE@{S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE}}}\mbox{\Hypertarget{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}\label{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01aac3bc8d25d44abb84f8d226c46566b639}} 
+S\+I\+N\+G\+L\+E\+\_\+\+L\+I\+NE&The user is allowed to enter any text, except for line breaks. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}\label{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Keyboard\+Return\+Type@{Keyboard\+Return\+Type}}
+\index{Keyboard\+Return\+Type@{Keyboard\+Return\+Type}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Keyboard\+Return\+Type}{KeyboardReturnType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{ui\+::\+Edit\+Box\+::\+Keyboard\+Return\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The popup keyboard return type. \mbox{\Hypertarget{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}\label{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Keyboard\+Return\+Type@{Keyboard\+Return\+Type}}
+\index{Keyboard\+Return\+Type@{Keyboard\+Return\+Type}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Keyboard\+Return\+Type}{KeyboardReturnType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{ui\+::\+Edit\+Box\+::\+Keyboard\+Return\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The popup keyboard return type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1EditBox_af6c48b01269aeacecf0adcd4936a3f43}\label{classui_1_1EditBox_af6c48b01269aeacecf0adcd4936a3f43}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Edit\+Box@{Edit\+Box}}
+\index{Edit\+Box@{Edit\+Box}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Edit\+Box()}{EditBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Edit\+Box\+::\+Edit\+Box (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor.  ctor  new \mbox{\Hypertarget{classui_1_1EditBox_ad48d2e64d5f6ce57892bc781a973b87a}\label{classui_1_1EditBox_ad48d2e64d5f6ce57892bc781a973b87a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!````~Edit\+Box@{$\sim$\+Edit\+Box}}
+\index{````~Edit\+Box@{$\sim$\+Edit\+Box}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{$\sim$\+Edit\+Box()}{~EditBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Edit\+Box\+::$\sim$\+Edit\+Box (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor.  NA  NA \mbox{\Hypertarget{classui_1_1EditBox_a4a1a6eaee4479a9d7483de3f47c7d1f4}\label{classui_1_1EditBox_a4a1a6eaee4479a9d7483de3f47c7d1f4}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!Edit\+Box@{Edit\+Box}}
+\index{Edit\+Box@{Edit\+Box}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{Edit\+Box()}{EditBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+Edit\+Box\+::\+Edit\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor.  ctor  new \mbox{\Hypertarget{classui_1_1EditBox_a0ee2f35419817b117245eb6577f9f29e}\label{classui_1_1EditBox_a0ee2f35419817b117245eb6577f9f29e}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!````~Edit\+Box@{$\sim$\+Edit\+Box}}
+\index{````~Edit\+Box@{$\sim$\+Edit\+Box}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{$\sim$\+Edit\+Box()}{~EditBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+Edit\+Box\+::$\sim$\+Edit\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor.  NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}\label{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!create@{create}}
+\index{create@{create}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1EditBox}{Edit\+Box}$\ast$ ui\+::\+Edit\+Box\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{normal\+Sprite,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{pressed\+Sprite = {\ttfamily nullptr},  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{disabled\+Sprite = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a edit box with size. \begin{DoxyReturn}{Returns}
+An autorelease pointer of \hyperlink{classui_1_1EditBox}{Edit\+Box}, you don\textquotesingle{}t need to release it only if you retain it again. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a7426d58fa48283337dc62f12863e085a}\label{classui_1_1EditBox_a7426d58fa48283337dc62f12863e085a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!create@{create}}
+\index{create@{create}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ ui\+::\+Edit\+Box\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal9\+Sprite\+Bg,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a edit box with size. \begin{DoxyReturn}{Returns}
+An autorelease pointer of \hyperlink{classui_1_1EditBox}{Edit\+Box}, you don\textquotesingle{}t need to release it only if you retain it again. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}\label{classui_1_1EditBox_a49123784600ab9e7913688fc199ca5b1}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!create@{create}}
+\index{create@{create}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1EditBox}{Edit\+Box}$\ast$ ui\+::\+Edit\+Box\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{normal\+Sprite,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{pressed\+Sprite = {\ttfamily nullptr},  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{disabled\+Sprite = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a edit box with size. \begin{DoxyReturn}{Returns}
+An autorelease pointer of \hyperlink{classui_1_1EditBox}{Edit\+Box}, you don\textquotesingle{}t need to release it only if you retain it again. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_ab798f4ef40435304ae46ca44881f7f10}\label{classui_1_1EditBox_ab798f4ef40435304ae46ca44881f7f10}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!create@{create}}
+\index{create@{create}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1EditBox}{Edit\+Box}$\ast$ ui\+::\+Edit\+Box\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal\+Image,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a edit box with size. \begin{DoxyReturn}{Returns}
+An autorelease pointer of \hyperlink{classui_1_1EditBox}{Edit\+Box}, you don\textquotesingle{}t need to release it only if you retain it again. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a50dfa83de5b1ae5834142714d7863cef}\label{classui_1_1EditBox_a50dfa83de5b1ae5834142714d7863cef}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!create@{create}}
+\index{create@{create}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBox}{Edit\+Box} $\ast$ ui\+::\+Edit\+Box\+::create (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal\+Image,  }\item[{const std\+::string \&}]{pressed\+Image = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{disabled\+Image = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create a edit box with size. \begin{DoxyReturn}{Returns}
+An autorelease pointer of \hyperlink{classui_1_1EditBox}{Edit\+Box}, you don\textquotesingle{}t need to release it only if you retain it again. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_af89050d6cee47d03c205f34fec481db4}\label{classui_1_1EditBox_af89050d6cee47d03c205f34fec481db4}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!draw@{draw}}
+\index{draw@{draw}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_ab853853be41d8e50e6b23ca1fcb5641f}\label{classui_1_1EditBox_ab853853be41d8e50e6b23ca1fcb5641f}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!draw@{draw}}
+\index{draw@{draw}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_aeb3e0e78e2dcb8ffd4fe78dd509c56fe}\label{classui_1_1EditBox_aeb3e0e78e2dcb8ffd4fe78dd509c56fe}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Cap\+Insets\+Disabled\+Renderer@{get\+Cap\+Insets\+Disabled\+Renderer}}
+\index{get\+Cap\+Insets\+Disabled\+Renderer@{get\+Cap\+Insets\+Disabled\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Cap\+Insets\+Disabled\+Renderer()}{getCapInsetsDisabledRenderer()}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect} \& ui\+::\+Edit\+Box\+::get\+Cap\+Insets\+Disabled\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the cap\+Insets of disabled state scale9sprite. \begin{DoxyReturn}{Returns}
+The disabled scale9 renderer cap\+Insets. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_afa9dc82a953be1cae1a1436e868bd459}\label{classui_1_1EditBox_afa9dc82a953be1cae1a1436e868bd459}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Cap\+Insets\+Normal\+Renderer@{get\+Cap\+Insets\+Normal\+Renderer}}
+\index{get\+Cap\+Insets\+Normal\+Renderer@{get\+Cap\+Insets\+Normal\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Cap\+Insets\+Normal\+Renderer()}{getCapInsetsNormalRenderer()}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect} \& ui\+::\+Edit\+Box\+::get\+Cap\+Insets\+Normal\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the cap\+Insets of normal state scale9sprite. \begin{DoxyReturn}{Returns}
+The normal scale9 renderer cap\+Insets. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a3cc0390e788f6b8da345877c424d0c1d}\label{classui_1_1EditBox_a3cc0390e788f6b8da345877c424d0c1d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Cap\+Insets\+Pressed\+Renderer@{get\+Cap\+Insets\+Pressed\+Renderer}}
+\index{get\+Cap\+Insets\+Pressed\+Renderer@{get\+Cap\+Insets\+Pressed\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Cap\+Insets\+Pressed\+Renderer()}{getCapInsetsPressedRenderer()}}
+{\footnotesize\ttfamily const \hyperlink{classRect}{Rect} \& ui\+::\+Edit\+Box\+::get\+Cap\+Insets\+Pressed\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the cap\+Insets of pressed state scale9sprite. \begin{DoxyReturn}{Returns}
+The pressed scale9 renderer cap\+Insets. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_ab4a844e7a6c92162370cf1bba2f60bdb}\label{classui_1_1EditBox_ab4a844e7a6c92162370cf1bba2f60bdb}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$ ui\+::\+Edit\+Box\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+NA  NA \mbox{\Hypertarget{classui_1_1EditBox_a46e2b844d36d0142344be742508718a5}\label{classui_1_1EditBox_a46e2b844d36d0142344be742508718a5}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Delegate@{get\+Delegate}}
+\index{get\+Delegate@{get\+Delegate}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Delegate()}{getDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate}$\ast$ ui\+::\+Edit\+Box\+::get\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+NA  NA \mbox{\Hypertarget{classui_1_1EditBox_a00b9b37d30ef21b95997a016af53e05e}\label{classui_1_1EditBox_a00b9b37d30ef21b95997a016af53e05e}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Edit\+Box\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad85abdaa9133dc6b8efc32670ae9b93f}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a7b19d7662f3a8ab64601c5c8abd8aada}\label{classui_1_1EditBox_a7b19d7662f3a8ab64601c5c8abd8aada}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string ui\+::\+Edit\+Box\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad85abdaa9133dc6b8efc32670ae9b93f}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_aa8acef6afc41d2dadd4f1985a3d18231}\label{classui_1_1EditBox_aa8acef6afc41d2dadd4f1985a3d18231}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Font\+Color@{get\+Font\+Color}}
+\index{get\+Font\+Color@{get\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Font\+Color()}{getFontColor()}}
+{\footnotesize\ttfamily const \hyperlink{structColor4B}{Color4B} \& ui\+::\+Edit\+Box\+::get\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the font color of the widget\textquotesingle{}s text. \mbox{\Hypertarget{classui_1_1EditBox_a451027736ac41aa82930bdd05e8602c2}\label{classui_1_1EditBox_a451027736ac41aa82930bdd05e8602c2}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Font\+Name@{get\+Font\+Name}}
+\index{get\+Font\+Name@{get\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Font\+Name()}{getFontName()}}
+{\footnotesize\ttfamily const char $\ast$ ui\+::\+Edit\+Box\+::get\+Font\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the font name. \begin{DoxyReturn}{Returns}
+The font name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a815da9992ba29b9b50a6d9acd84006eb}\label{classui_1_1EditBox_a815da9992ba29b9b50a6d9acd84006eb}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Font\+Size@{get\+Font\+Size}}
+\index{get\+Font\+Size@{get\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Font\+Size()}{getFontSize()}}
+{\footnotesize\ttfamily int ui\+::\+Edit\+Box\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the font size. \begin{DoxyReturn}{Returns}
+The font size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a376fa08f66d2a3f6741a93d76b4ea1dc}\label{classui_1_1EditBox_a376fa08f66d2a3f6741a93d76b4ea1dc}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Input\+Flag@{get\+Input\+Flag}}
+\index{get\+Input\+Flag@{get\+Input\+Flag}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Input\+Flag()}{getInputFlag()}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} ui\+::\+Edit\+Box\+::get\+Input\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the input flags that are to be applied to the edit box. \begin{DoxyReturn}{Returns}
+One of the \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} constants. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_aca9e89e806845c12585cecb69468b7f9}\label{classui_1_1EditBox_aca9e89e806845c12585cecb69468b7f9}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Input\+Mode@{get\+Input\+Mode}}
+\index{get\+Input\+Mode@{get\+Input\+Mode}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Input\+Mode()}{getInputMode()}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} ui\+::\+Edit\+Box\+::get\+Input\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the input mode of the edit box. \begin{DoxyReturn}{Returns}
+One of the \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} constants. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}\label{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Max\+Length@{get\+Max\+Length}}
+\index{get\+Max\+Length@{get\+Max\+Length}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Max\+Length()}{getMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+Edit\+Box\+::get\+Max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the maximum input length of the edit box.
+
+\begin{DoxyReturn}{Returns}
+Maximum input length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}\label{classui_1_1EditBox_acd8e23e5b2db7c3b27a8e7cf9ce320c3}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Max\+Length@{get\+Max\+Length}}
+\index{get\+Max\+Length@{get\+Max\+Length}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Max\+Length()}{getMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ui\+::\+Edit\+Box\+::get\+Max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the maximum input length of the edit box.
+
+\begin{DoxyReturn}{Returns}
+Maximum input length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a47a20f50cb56438d96a87a60219fdce9}\label{classui_1_1EditBox_a47a20f50cb56438d96a87a60219fdce9}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Place\+Holder@{get\+Place\+Holder}}
+\index{get\+Place\+Holder@{get\+Place\+Holder}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Place\+Holder()}{getPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ ui\+::\+Edit\+Box\+::get\+Place\+Holder (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get a text in the edit box that acts as a placeholder when an edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_aadbd55732eaedc4bc678f8c25395319a}\label{classui_1_1EditBox_aadbd55732eaedc4bc678f8c25395319a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Place\+Holder@{get\+Place\+Holder}}
+\index{get\+Place\+Holder@{get\+Place\+Holder}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Place\+Holder()}{getPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ ui\+::\+Edit\+Box\+::get\+Place\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get a text in the edit box that acts as a placeholder when an edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a267922ed1ab9d6eb1192987584983e70}\label{classui_1_1EditBox_a267922ed1ab9d6eb1192987584983e70}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Placeholder\+Font\+Color@{get\+Placeholder\+Font\+Color}}
+\index{get\+Placeholder\+Font\+Color@{get\+Placeholder\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Placeholder\+Font\+Color()}{getPlaceholderFontColor()}}
+{\footnotesize\ttfamily const \hyperlink{structColor4B}{Color4B} \& ui\+::\+Edit\+Box\+::get\+Placeholder\+Font\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the font color of the placeholder text when the edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a10aa107d97c44e21733615e777e2ba4c}\label{classui_1_1EditBox_a10aa107d97c44e21733615e777e2ba4c}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Placeholder\+Font\+Name@{get\+Placeholder\+Font\+Name}}
+\index{get\+Placeholder\+Font\+Name@{get\+Placeholder\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Placeholder\+Font\+Name()}{getPlaceholderFontName()}}
+{\footnotesize\ttfamily const char $\ast$ ui\+::\+Edit\+Box\+::get\+Placeholder\+Font\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the placeholder\textquotesingle{}s font name. only system font is allowed. \begin{DoxyReturn}{Returns}
+The font name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_aa50880b73279ba99aa23239250421e9c}\label{classui_1_1EditBox_aa50880b73279ba99aa23239250421e9c}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Placeholder\+Font\+Size@{get\+Placeholder\+Font\+Size}}
+\index{get\+Placeholder\+Font\+Size@{get\+Placeholder\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Placeholder\+Font\+Size()}{getPlaceholderFontSize()}}
+{\footnotesize\ttfamily int ui\+::\+Edit\+Box\+::get\+Placeholder\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the placeholder\textquotesingle{}s font size. \begin{DoxyReturn}{Returns}
+The font size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a2c838259c0204c3cd983b0c09b59741a}\label{classui_1_1EditBox_a2c838259c0204c3cd983b0c09b59741a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Return\+Type@{get\+Return\+Type}}
+\index{get\+Return\+Type@{get\+Return\+Type}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Return\+Type()}{getReturnType()}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} ui\+::\+Edit\+Box\+::get\+Return\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the return type that are to be applied to the edit box. \begin{DoxyReturn}{Returns}
+One of the \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} constants. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_ac510a4082911adf52395efab4bd7be83}\label{classui_1_1EditBox_ac510a4082911adf52395efab4bd7be83}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ ui\+::\+Edit\+Box\+::get\+Text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the text entered in the edit box. \begin{DoxyReturn}{Returns}
+The text entered in the edit box. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a78d728fb111be80c389ec266382e91cc}\label{classui_1_1EditBox_a78d728fb111be80c389ec266382e91cc}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char$\ast$ ui\+::\+Edit\+Box\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the text entered in the edit box. \begin{DoxyReturn}{Returns}
+The text entered in the edit box. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a4fa4d53ceaa22523da93c430b0182a1f}\label{classui_1_1EditBox_a4fa4d53ceaa22523da93c430b0182a1f}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!get\+Text\+Horizontal\+Alignment@{get\+Text\+Horizontal\+Alignment}}
+\index{get\+Text\+Horizontal\+Alignment@{get\+Text\+Horizontal\+Alignment}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{get\+Text\+Horizontal\+Alignment()}{getTextHorizontalAlignment()}}
+{\footnotesize\ttfamily Text\+H\+Alignment ui\+::\+Edit\+Box\+::get\+Text\+Horizontal\+Alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the text horizontal alignment. \mbox{\Hypertarget{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}\label{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}}
+\index{init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Background\+Sprite()}{initWithSizeAndBackgroundSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Background\+Sprite (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal9\+Sprite\+Bg,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal9\+Sprite\+Bg} & background image of edit box. \\
+\hline
+{\em tex\+Type} & the resource type, the default value is Texture\+Res\+Type\+::\+L\+O\+C\+AL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}\label{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}}
+\index{init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Background\+Sprite()}{initWithSizeAndBackgroundSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Background\+Sprite (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{normal9\+Sprite\+Bg }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal9\+Sprite\+Bg} & background image of edit box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}\label{classui_1_1EditBox_a451ac17204e52de6f3561dfa95110eef}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}}
+\index{init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Background\+Sprite()}{initWithSizeAndBackgroundSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Background\+Sprite (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal9\+Sprite\+Bg,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal9\+Sprite\+Bg} & background image of edit box. \\
+\hline
+{\em tex\+Type} & the resource type, the default value is Texture\+Res\+Type\+::\+L\+O\+C\+AL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}\label{classui_1_1EditBox_a196793a6b697c3033aceee7ec7bd4846}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}}
+\index{init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Background\+Sprite()}{initWithSizeAndBackgroundSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Background\+Sprite (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{normal9\+Sprite\+Bg }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal9\+Sprite\+Bg} & background image of edit box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a200998adef67726af687f61da2a928f2}\label{classui_1_1EditBox_a200998adef67726af687f61da2a928f2}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}}
+\index{init\+With\+Size\+And\+Background\+Sprite@{init\+With\+Size\+And\+Background\+Sprite}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Background\+Sprite()}{initWithSizeAndBackgroundSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Background\+Sprite (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{normal\+Sprite,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{pressed\+Sprite,  }\item[{\hyperlink{classui_1_1Scale9Sprite}{Scale9\+Sprite} $\ast$}]{disabled\+Sprite }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal\+Sprite} & normal state image of edit box. \\
+\hline
+{\em pressed\+Sprite} & pressed state image of edit box. \\
+\hline
+{\em disabled\+Sprite} & disabled state image of edit box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_ad90d3a68ba9918557cb9d329d19318d7}\label{classui_1_1EditBox_ad90d3a68ba9918557cb9d329d19318d7}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!init\+With\+Size\+And\+Texture@{init\+With\+Size\+And\+Texture}}
+\index{init\+With\+Size\+And\+Texture@{init\+With\+Size\+And\+Texture}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{init\+With\+Size\+And\+Texture()}{initWithSizeAndTexture()}}
+{\footnotesize\ttfamily bool ui\+::\+Edit\+Box\+::init\+With\+Size\+And\+Texture (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const std\+::string \&}]{normal\+Image,  }\item[{const std\+::string \&}]{pressed\+Image = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{disabled\+Image = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Init edit box with specified size. This method should be invoked right after constructor. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of edit box. \\
+\hline
+{\em normal\+Image} & normal state texture name. \\
+\hline
+{\em pressed\+Image} & pressed state texture name. \\
+\hline
+{\em disabled\+Image} & disabled state texture name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether initialization is successfully or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1EditBox_a54e44ca3b05a55e0498f6471a33a0c74}\label{classui_1_1EditBox_a54e44ca3b05a55e0498f6471a33a0c74}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Did\+Hide@{keyboard\+Did\+Hide}}
+\index{keyboard\+Did\+Hide@{keyboard\+Did\+Hide}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Did\+Hide()}{keyboardDidHide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::keyboard\+Did\+Hide (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a801b9cec4447e0f6418eae247afb7c72}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a3898b6685b2693973a59d68c328952a0}\label{classui_1_1EditBox_a3898b6685b2693973a59d68c328952a0}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Did\+Hide@{keyboard\+Did\+Hide}}
+\index{keyboard\+Did\+Hide@{keyboard\+Did\+Hide}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Did\+Hide()}{keyboardDidHide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::keyboard\+Did\+Hide (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a801b9cec4447e0f6418eae247afb7c72}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a88c3e0a04a3857cacfc6cab7850fb8e0}\label{classui_1_1EditBox_a88c3e0a04a3857cacfc6cab7850fb8e0}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Did\+Show@{keyboard\+Did\+Show}}
+\index{keyboard\+Did\+Show@{keyboard\+Did\+Show}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Did\+Show()}{keyboardDidShow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::keyboard\+Did\+Show (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a3d55e52ab965ccfdacaed053484785e9}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_ad5095cb70eebd06257e074c7b043ea89}\label{classui_1_1EditBox_ad5095cb70eebd06257e074c7b043ea89}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Did\+Show@{keyboard\+Did\+Show}}
+\index{keyboard\+Did\+Show@{keyboard\+Did\+Show}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Did\+Show()}{keyboardDidShow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::keyboard\+Did\+Show (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a3d55e52ab965ccfdacaed053484785e9}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_afa54a7e9d06de4524963bf23565e8310}\label{classui_1_1EditBox_afa54a7e9d06de4524963bf23565e8310}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Will\+Hide@{keyboard\+Will\+Hide}}
+\index{keyboard\+Will\+Hide@{keyboard\+Will\+Hide}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Will\+Hide()}{keyboardWillHide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::keyboard\+Will\+Hide (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a576cd6b268dfab44836f74183cb76f06}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_aabf158a71e53e27677d85b86e9aa4e3a}\label{classui_1_1EditBox_aabf158a71e53e27677d85b86e9aa4e3a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Will\+Hide@{keyboard\+Will\+Hide}}
+\index{keyboard\+Will\+Hide@{keyboard\+Will\+Hide}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Will\+Hide()}{keyboardWillHide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::keyboard\+Will\+Hide (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_a576cd6b268dfab44836f74183cb76f06}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_abc522ffb60d7bb59404be9584fc1f60c}\label{classui_1_1EditBox_abc522ffb60d7bb59404be9584fc1f60c}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Will\+Show@{keyboard\+Will\+Show}}
+\index{keyboard\+Will\+Show@{keyboard\+Will\+Show}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Will\+Show()}{keyboardWillShow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::keyboard\+Will\+Show (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_ac9f4511548c15f58087d48bcb8cedbfc}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a5913b44adaf000a76cf35a126fbdeb31}\label{classui_1_1EditBox_a5913b44adaf000a76cf35a126fbdeb31}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!keyboard\+Will\+Show@{keyboard\+Will\+Show}}
+\index{keyboard\+Will\+Show@{keyboard\+Will\+Show}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{keyboard\+Will\+Show()}{keyboardWillShow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::keyboard\+Will\+Show (\begin{DoxyParamCaption}\item[{\hyperlink{structIMEKeyboardNotificationInfo}{I\+M\+E\+Keyboard\+Notification\+Info} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classIMEDelegate_ac9f4511548c15f58087d48bcb8cedbfc}{I\+M\+E\+Delegate}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_afe94af506888eab257504bf408b5692d}\label{classui_1_1EditBox_afe94af506888eab257504bf408b5692d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!load\+Texture\+Disabled@{load\+Texture\+Disabled}}
+\index{load\+Texture\+Disabled@{load\+Texture\+Disabled}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{load\+Texture\+Disabled()}{loadTextureDisabled()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::load\+Texture\+Disabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{disabled,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load disabled state texture for edit box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em disabled} & dark state texture. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1EditBox_a7edbd1ea73afccd9ef3797522e991211}\label{classui_1_1EditBox_a7edbd1ea73afccd9ef3797522e991211}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!load\+Texture\+Normal@{load\+Texture\+Normal}}
+\index{load\+Texture\+Normal@{load\+Texture\+Normal}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{load\+Texture\+Normal()}{loadTextureNormal()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::load\+Texture\+Normal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{normal,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load normal state texture for edit box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal} & normal state texture. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1EditBox_abbe0278d18373f9d819066504aaa15ed}\label{classui_1_1EditBox_abbe0278d18373f9d819066504aaa15ed}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!load\+Texture\+Pressed@{load\+Texture\+Pressed}}
+\index{load\+Texture\+Pressed@{load\+Texture\+Pressed}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{load\+Texture\+Pressed()}{loadTexturePressed()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::load\+Texture\+Pressed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pressed,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load pressed state texture for edit box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pressed} & pressed state texture. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1EditBox_a8618a7f2a642e858e893657b16b89fa9}\label{classui_1_1EditBox_a8618a7f2a642e858e893657b16b89fa9}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!load\+Textures@{load\+Textures}}
+\index{load\+Textures@{load\+Textures}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{load\+Textures()}{loadTextures()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::load\+Textures (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{normal,  }\item[{const std\+::string \&}]{pressed,  }\item[{const std\+::string \&}]{disabled = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}}]{tex\+Type = {\ttfamily TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+Load textures for edit box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal} & normal state texture name. \\
+\hline
+{\em pressed} & pressed state texture name. \\
+\hline
+{\em disabled} & disabled state texture name. \\
+\hline
+{\em tex\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1EditBox_a04667a919ce4f36fefb7605215267b28}\label{classui_1_1EditBox_a04667a919ce4f36fefb7605215267b28}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classui_1_1Widget_a9cda9b9ffbf77a8ed695e6b97b9a46cc}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a0506cfa2b498d2bcd24c4b85deff123d}\label{classui_1_1EditBox_a0506cfa2b498d2bcd24c4b85deff123d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::on\+Enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classui_1_1Widget_a9cda9b9ffbf77a8ed695e6b97b9a46cc}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a4151e7abfe84c879cc89f683c4975285}\label{classui_1_1EditBox_a4151e7abfe84c879cc89f683c4975285}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classui_1_1Widget_a91cbac90873d76b6edb0e41eed5477eb}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a4c5c9db7c8b7711a719aec6a0842696b}\label{classui_1_1EditBox_a4c5c9db7c8b7711a719aec6a0842696b}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::on\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA  NA 
+
+Reimplemented from \hyperlink{classui_1_1Widget_a91cbac90873d76b6edb0e41eed5477eb}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_ad17a8fc58f78d77e47106170e6db9f39}\label{classui_1_1EditBox_ad17a8fc58f78d77e47106170e6db9f39}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Anchor\+Point@{set\+Anchor\+Point}}
+\index{set\+Anchor\+Point@{set\+Anchor\+Point}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Point()}{setAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{anchor\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the anchor point in percent.
+
+anchor\+Point is the point around which all transformations and positioning manipulations take place. It\textquotesingle{}s like a pin in the node where it is \char`\"{}attached\char`\"{} to its parent. The anchor\+Point is normalized, like a percentage. (0,0) means the bottom-\/left corner and (1,1) means the top-\/right corner. But you can use values higher than (1,1) and lower than (0,0) too. The default anchor\+Point is (0.\+5,0.\+5), so it starts in the center of the node. \begin{DoxyNote}{Note}
+If node has a physics body, the anchor must be in the middle, you can\textquotesingle{}t change this to other value.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em anchor\+Point} & The anchor point of node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a4dd45cb48a51df7c257675f527e3f277}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a6e433ab6bbaa15560a049dfe05087294}\label{classui_1_1EditBox_a6e433ab6bbaa15560a049dfe05087294}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Anchor\+Point@{set\+Anchor\+Point}}
+\index{set\+Anchor\+Point@{set\+Anchor\+Point}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Anchor\+Point()}{setAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::set\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{anchor\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the anchor point in percent.
+
+anchor\+Point is the point around which all transformations and positioning manipulations take place. It\textquotesingle{}s like a pin in the node where it is \char`\"{}attached\char`\"{} to its parent. The anchor\+Point is normalized, like a percentage. (0,0) means the bottom-\/left corner and (1,1) means the top-\/right corner. But you can use values higher than (1,1) and lower than (0,0) too. The default anchor\+Point is (0.\+5,0.\+5), so it starts in the center of the node. \begin{DoxyNote}{Note}
+If node has a physics body, the anchor must be in the middle, you can\textquotesingle{}t change this to other value.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em anchor\+Point} & The anchor point of node. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a4dd45cb48a51df7c257675f527e3f277}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_ad02e9879fd52ed960df901a017bde1ff}\label{classui_1_1EditBox_ad02e9879fd52ed960df901a017bde1ff}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Cap\+Insets@{set\+Cap\+Insets}}
+\index{set\+Cap\+Insets@{set\+Cap\+Insets}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Cap\+Insets()}{setCapInsets()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Cap\+Insets (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{cap\+Insets }\end{DoxyParamCaption})}
+
+Sets cap\+Insets for edit box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap\+Insets} & cap\+Inset in \hyperlink{classRect}{Rect}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a1167aa7788554bfd537f58ecaca5adc0}\label{classui_1_1EditBox_a1167aa7788554bfd537f58ecaca5adc0}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Cap\+Insets\+Disabled\+Renderer@{set\+Cap\+Insets\+Disabled\+Renderer}}
+\index{set\+Cap\+Insets\+Disabled\+Renderer@{set\+Cap\+Insets\+Disabled\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Cap\+Insets\+Disabled\+Renderer()}{setCapInsetsDisabledRenderer()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Cap\+Insets\+Disabled\+Renderer (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{cap\+Insets }\end{DoxyParamCaption})}
+
+Sets cap\+Insets for edit box, only the disabled state scale9 renderer will be affected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap\+Insets} & cap\+Insets in \hyperlink{classRect}{Rect}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a9500ec04f104bd549423336a8409a1c3}\label{classui_1_1EditBox_a9500ec04f104bd549423336a8409a1c3}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Cap\+Insets\+Normal\+Renderer@{set\+Cap\+Insets\+Normal\+Renderer}}
+\index{set\+Cap\+Insets\+Normal\+Renderer@{set\+Cap\+Insets\+Normal\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Cap\+Insets\+Normal\+Renderer()}{setCapInsetsNormalRenderer()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Cap\+Insets\+Normal\+Renderer (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{cap\+Insets }\end{DoxyParamCaption})}
+
+Sets cap\+Insets for edit box, only the normal state scale9 renderer will be affected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap\+Insets} & cap\+Insets in \hyperlink{classRect}{Rect}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a724b6951bf411a903a92b5cc4aa96afe}\label{classui_1_1EditBox_a724b6951bf411a903a92b5cc4aa96afe}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Cap\+Insets\+Pressed\+Renderer@{set\+Cap\+Insets\+Pressed\+Renderer}}
+\index{set\+Cap\+Insets\+Pressed\+Renderer@{set\+Cap\+Insets\+Pressed\+Renderer}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Cap\+Insets\+Pressed\+Renderer()}{setCapInsetsPressedRenderer()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Cap\+Insets\+Pressed\+Renderer (\begin{DoxyParamCaption}\item[{const \hyperlink{classRect}{Rect} \&}]{cap\+Insets }\end{DoxyParamCaption})}
+
+Sets cap\+Insets for edit box, only the pressed state scale9 renderer will be affected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap\+Insets} & cap\+Insets in \hyperlink{classRect}{Rect} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a1aadf938d146d0469da42e42d33e2a1e}\label{classui_1_1EditBox_a1aadf938d146d0469da42e42d33e2a1e}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Content\+Size@{set\+Content\+Size}}
+\index{set\+Content\+Size@{set\+Content\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Content\+Size()}{setContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Content\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes the size that is widget\textquotesingle{}s size 
+\begin{DoxyParams}{Parameters}
+{\em content\+Size} & A content size in {\ttfamily \hyperlink{classSize}{Size}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_af5f35184ff3de275929e937f81a4ae30}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a3fbf590dff29ba873d9c72af308f7edd}\label{classui_1_1EditBox_a3fbf590dff29ba873d9c72af308f7edd}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Content\+Size@{set\+Content\+Size}}
+\index{set\+Content\+Size@{set\+Content\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Content\+Size()}{setContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::set\+Content\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{content\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes the size that is widget\textquotesingle{}s size 
+\begin{DoxyParams}{Parameters}
+{\em content\+Size} & A content size in {\ttfamily \hyperlink{classSize}{Size}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_af5f35184ff3de275929e937f81a4ae30}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}\label{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$}]{delegate }\end{DoxyParamCaption})}
+
+Gets/\+Sets the delegate for edit box.  NA \mbox{\Hypertarget{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}\label{classui_1_1EditBox_a6a6cd93d4204d3415483c4d531646409}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Delegate@{set\+Delegate}}
+\index{set\+Delegate@{set\+Delegate}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Delegate()}{setDelegate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Delegate (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBoxDelegate}{Edit\+Box\+Delegate} $\ast$}]{delegate }\end{DoxyParamCaption})}
+
+Gets/\+Sets the delegate for edit box.  NA \mbox{\Hypertarget{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}\label{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the font. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}\label{classui_1_1EditBox_a08931a6b6fde6d4e4365204beb3af43d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the font. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}\label{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Color@{set\+Font\+Color}}
+\index{set\+Font\+Color@{set\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Color()}{setFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the widget\textquotesingle{}s text. \mbox{\Hypertarget{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}\label{classui_1_1EditBox_a5dd7dcc5252cdb08ef9f0a15238df0dd}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Color@{set\+Font\+Color}}
+\index{set\+Font\+Color@{set\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Color()}{setFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the widget\textquotesingle{}s text. \mbox{\Hypertarget{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}\label{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Name@{set\+Font\+Name}}
+\index{set\+Font\+Name@{set\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Name()}{setFontName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name }\end{DoxyParamCaption})}
+
+Set the font name. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}\label{classui_1_1EditBox_a1070042cf20467ff429d93285a592204}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Name@{set\+Font\+Name}}
+\index{set\+Font\+Name@{set\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Name()}{setFontName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name }\end{DoxyParamCaption})}
+
+Set the font name. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}\label{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Size@{set\+Font\+Size}}
+\index{set\+Font\+Size@{set\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Size()}{setFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the font size. 
+\begin{DoxyParams}{Parameters}
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}\label{classui_1_1EditBox_a92dda35f7efd5779f63dd70fa7f86686}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Font\+Size@{set\+Font\+Size}}
+\index{set\+Font\+Size@{set\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Font\+Size()}{setFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the font size. 
+\begin{DoxyParams}{Parameters}
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}\label{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Input\+Flag@{set\+Input\+Flag}}
+\index{set\+Input\+Flag@{set\+Input\+Flag}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Input\+Flag()}{setInputFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Input\+Flag (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag}}]{input\+Flag }\end{DoxyParamCaption})}
+
+Set the input flags that are to be applied to the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em input\+Flag} & One of the \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}\label{classui_1_1EditBox_ab76860616e5d9d7b1601e2a203a8c82a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Input\+Flag@{set\+Input\+Flag}}
+\index{set\+Input\+Flag@{set\+Input\+Flag}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Input\+Flag()}{setInputFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Input\+Flag (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Input\+Flag}}]{input\+Flag }\end{DoxyParamCaption})}
+
+Set the input flags that are to be applied to the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em input\+Flag} & One of the \hyperlink{classui_1_1EditBox_af02f13ee9fba51d59bb3111e200848c8}{Edit\+Box\+::\+Input\+Flag} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}\label{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Input\+Mode@{set\+Input\+Mode}}
+\index{set\+Input\+Mode@{set\+Input\+Mode}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Input\+Mode()}{setInputMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Input\+Mode (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode}}]{input\+Mode }\end{DoxyParamCaption})}
+
+Set the input mode of the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em input\+Mode} & One of the \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}\label{classui_1_1EditBox_ad1b58227c6cf26800613983688c82066}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Input\+Mode@{set\+Input\+Mode}}
+\index{set\+Input\+Mode@{set\+Input\+Mode}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Input\+Mode()}{setInputMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Input\+Mode (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Input\+Mode}}]{input\+Mode }\end{DoxyParamCaption})}
+
+Set the input mode of the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em input\+Mode} & One of the \hyperlink{classui_1_1EditBox_a7a1bfe8f3ba218bedfcf5451ec3ce01a}{Edit\+Box\+::\+Input\+Mode} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}\label{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Max\+Length@{set\+Max\+Length}}
+\index{set\+Max\+Length@{set\+Max\+Length}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Max\+Length()}{setMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Max\+Length (\begin{DoxyParamCaption}\item[{int}]{max\+Length }\end{DoxyParamCaption})}
+
+Sets the maximum input length of the edit box. Setting this value enables multiline input mode by default. Available on Android, i\+OS and Windows Phone.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Length} & The maximum length. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}\label{classui_1_1EditBox_a7f9fd5527404e0dc6e98e23a661325b4}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Max\+Length@{set\+Max\+Length}}
+\index{set\+Max\+Length@{set\+Max\+Length}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Max\+Length()}{setMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Max\+Length (\begin{DoxyParamCaption}\item[{int}]{max\+Length }\end{DoxyParamCaption})}
+
+Sets the maximum input length of the edit box. Setting this value enables multiline input mode by default. Available on Android, i\+OS and Windows Phone.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Length} & The maximum length. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}\label{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Place\+Holder@{set\+Place\+Holder}}
+\index{set\+Place\+Holder@{set\+Place\+Holder}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Place\+Holder()}{setPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Place\+Holder (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Text }\end{DoxyParamCaption})}
+
+Set a text in the edit box that acts as a placeholder when an edit box is empty. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Text} & The given text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}\label{classui_1_1EditBox_a89c526a2899c99ff09bd9fb6e435e799}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Place\+Holder@{set\+Place\+Holder}}
+\index{set\+Place\+Holder@{set\+Place\+Holder}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Place\+Holder()}{setPlaceHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Place\+Holder (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Text }\end{DoxyParamCaption})}
+
+Set a text in the edit box that acts as a placeholder when an edit box is empty. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Text} & The given text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}\label{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font@{set\+Placeholder\+Font}}
+\index{set\+Placeholder\+Font@{set\+Placeholder\+Font}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font()}{setPlaceholderFont()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}\label{classui_1_1EditBox_a19ef30f768dcf5d67808e0e67b7809b9}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font@{set\+Placeholder\+Font}}
+\index{set\+Placeholder\+Font@{set\+Placeholder\+Font}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font()}{setPlaceholderFont()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font. Only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}\label{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}}
+\index{set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Color()}{setPlaceholderFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the placeholder text when the edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}\label{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}}
+\index{set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Color()}{setPlaceholderFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the placeholder text when the edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}\label{classui_1_1EditBox_a84cdeb802d3ab4e78c036d49a2ffefed}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}}
+\index{set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Color()}{setPlaceholderFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the placeholder text when the edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}\label{classui_1_1EditBox_a29ddb4a951ce3cd8c2946ed13cf4c2ee}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}}
+\index{set\+Placeholder\+Font\+Color@{set\+Placeholder\+Font\+Color}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Color()}{setPlaceholderFontColor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor4B}{Color4B} \&}]{color }\end{DoxyParamCaption})}
+
+Set the font color of the placeholder text when the edit box is empty. \mbox{\Hypertarget{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}\label{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Name@{set\+Placeholder\+Font\+Name}}
+\index{set\+Placeholder\+Font\+Name@{set\+Placeholder\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Name()}{setPlaceholderFontName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font name. only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}\label{classui_1_1EditBox_a7d5130331ff087d3b0544cac2939a55b}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Name@{set\+Placeholder\+Font\+Name}}
+\index{set\+Placeholder\+Font\+Name@{set\+Placeholder\+Font\+Name}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Name()}{setPlaceholderFontName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Font\+Name }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font name. only system font is allowed. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Font\+Name} & The font name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}\label{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Size@{set\+Placeholder\+Font\+Size}}
+\index{set\+Placeholder\+Font\+Size@{set\+Placeholder\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Size()}{setPlaceholderFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font size. 
+\begin{DoxyParams}{Parameters}
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}\label{classui_1_1EditBox_a8460f548f82512af8286b384a8c8bcab}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Placeholder\+Font\+Size@{set\+Placeholder\+Font\+Size}}
+\index{set\+Placeholder\+Font\+Size@{set\+Placeholder\+Font\+Size}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Placeholder\+Font\+Size()}{setPlaceholderFontSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Placeholder\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+Set the placeholder\textquotesingle{}s font size. 
+\begin{DoxyParams}{Parameters}
+{\em font\+Size} & The font size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a9920fc994750f83db1c80be0417143f6}\label{classui_1_1EditBox_a9920fc994750f83db1c80be0417143f6}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes the position (x,y) of the widget in Open\+GL coordinates
+
+Usually we use p(x,y) to compose a \hyperlink{classVec2}{Vec2} object. The original point (0,0) is at the left-\/bottom corner of screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (x,y) of the widget in Open\+GL coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad1983665a8a2463e77c9ff7e13fcac97}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a92e525c7152c0a974632d4810b392f11}\label{classui_1_1EditBox_a92e525c7152c0a974632d4810b392f11}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::set\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes the position (x,y) of the widget in Open\+GL coordinates
+
+Usually we use p(x,y) to compose a \hyperlink{classVec2}{Vec2} object. The original point (0,0) is at the left-\/bottom corner of screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (x,y) of the widget in Open\+GL coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1Widget_ad1983665a8a2463e77c9ff7e13fcac97}{ui\+::\+Widget}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_ae2f5a317a5b3bb4b1212cf3a44770e6d}\label{classui_1_1EditBox_ae2f5a317a5b3bb4b1212cf3a44770e6d}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Return\+Type@{set\+Return\+Type}}
+\index{set\+Return\+Type@{set\+Return\+Type}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Return\+Type()}{setReturnType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Return\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type}}]{return\+Type }\end{DoxyParamCaption})}
+
+Set the return type that are to be applied to the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em return\+Type} & One of the \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_a7f574c7c67fa4779fd34acad947a95ed}\label{classui_1_1EditBox_a7f574c7c67fa4779fd34acad947a95ed}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Return\+Type@{set\+Return\+Type}}
+\index{set\+Return\+Type@{set\+Return\+Type}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Return\+Type()}{setReturnType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Return\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Keyboard\+Return\+Type}}]{return\+Type }\end{DoxyParamCaption})}
+
+Set the return type that are to be applied to the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em return\+Type} & One of the \hyperlink{classui_1_1EditBox_a1e1285b6f742975b26bdeb8108ca6e51}{Edit\+Box\+::\+Keyboard\+Return\+Type} constants. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}\label{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Text()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Text }\end{DoxyParamCaption})}
+
+Set the text entered in the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Text} & The given text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}\label{classui_1_1EditBox_aab808bfc3f2e2ab7553f23b35002dfb7}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Text()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Text }\end{DoxyParamCaption})}
+
+Set the text entered in the edit box. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Text} & The given text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1EditBox_afc334fb2759ea97216ee10f501a7e988}\label{classui_1_1EditBox_afc334fb2759ea97216ee10f501a7e988}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Text\+Horizontal\+Alignment@{set\+Text\+Horizontal\+Alignment}}
+\index{set\+Text\+Horizontal\+Alignment@{set\+Text\+Horizontal\+Alignment}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Text\+Horizontal\+Alignment()}{setTextHorizontalAlignment()}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Text\+Horizontal\+Alignment (\begin{DoxyParamCaption}\item[{Text\+H\+Alignment}]{alignment }\end{DoxyParamCaption})}
+
+Set the text horizontal alignment. \mbox{\Hypertarget{classui_1_1EditBox_afd90efc8e80090f96e54f39520405883}\label{classui_1_1EditBox_afd90efc8e80090f96e54f39520405883}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Edit\+Box\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+is\+Visible setter 
+
+Sets whether the node is visible.
+
+The default value is true, a node is default to visible.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & true if the node is visible, false if the node is hidden. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ad8d9f6f838941a2a8ae18420757af158}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a73a03efc1b904b6386d037fdcdc7ff92}\label{classui_1_1EditBox_a73a03efc1b904b6386d037fdcdc7ff92}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Edit\+Box\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+is\+Visible setter 
+
+Sets whether the node is visible.
+
+The default value is true, a node is default to visible.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & true if the node is visible, false if the node is hidden. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_ad8d9f6f838941a2a8ae18420757af158}{Node}.
+
+\mbox{\Hypertarget{classui_1_1EditBox_a74da824c15ca8e40a5e70d39bc036a8a}\label{classui_1_1EditBox_a74da824c15ca8e40a5e70d39bc036a8a}} 
+\index{ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}!touch\+Down\+Action@{touch\+Down\+Action}}
+\index{touch\+Down\+Action@{touch\+Down\+Action}!ui\+::\+Edit\+Box@{ui\+::\+Edit\+Box}}
+\subsubsection{\texorpdfstring{touch\+Down\+Action()}{touchDownAction()}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Edit\+Box\+::touch\+Down\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{sender,  }\item[{\hyperlink{classui_1_1Widget_a4829c0f1cbaf1fd820a9b2ccf0c58c73}{Touch\+Event\+Type}}]{control\+Event }\end{DoxyParamCaption})}
+
+NA  NA \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000376}{Deprecated}]Use open\+Keyboard() instead to open the keyboard \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/\+U\+I\+Edit\+Box/U\+I\+Edit\+Box.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/\+U\+I\+Edit\+Box/U\+I\+Edit\+Box.\+cpp\end{DoxyCompactItemize}

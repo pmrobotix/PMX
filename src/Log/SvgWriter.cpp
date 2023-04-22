@@ -32,10 +32,10 @@ SvgWriter::~SvgWriter()
 
 void SvgWriter::beginHeader()
 {
-    int ymin = -2200;
+    int ymin = -3200; //vertical
     int ymax = 300;
     int xmin = -200;
-    int xmax = 3200;
+    int xmax = 2200;
     this->lock();
     logger().info() << "<?xml version=\"1.0\" standalone=\"no\"?>" << logs::end;
     logger().info() << "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 20010904//EN\"" << logs::end;

@@ -1,0 +1,380 @@
+\hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper}{}\section{org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper Class Reference}
+\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper}\index{org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper@{org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper}}
+
+
+Collaboration diagram for org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeFinishedListener}{On\+Consume\+Finished\+Listener}
+\item 
+interface \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeMultiFinishedListener}{On\+Consume\+Multi\+Finished\+Listener}
+\item 
+interface \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener}
+\item 
+interface \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabSetupFinishedListener}{On\+Iab\+Setup\+Finished\+Listener}
+\item 
+interface \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1QueryInventoryFinishedListener}{Query\+Inventory\+Finished\+Listener}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4161283ba1134bbc0d80466c05010872}{Iab\+Helper} (Context ctx, String base64\+Public\+Key)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ac452c2ebaa245349df0a1a49f67f918d}{enable\+Debug\+Logging} (boolean enable, String tag)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4917ce215ca9381264db6a37e3f90a85}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4917ce215ca9381264db6a37e3f90a85}} 
+void {\bfseries enable\+Debug\+Logging} (boolean enable)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4eb405a91ab5d6d6bb94a69ac0c54ec3}{start\+Setup} (final \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabSetupFinishedListener}{On\+Iab\+Setup\+Finished\+Listener} listener)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_add41920802456afa1594822fc5e4b93d}{dispose} ()
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a06ba80f6caa38961b4e6339d7bb8c598}{subscriptions\+Supported} ()
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aed90c48537f1d4b6e45763823bd2fc81}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aed90c48537f1d4b6e45763823bd2fc81}} 
+void {\bfseries launch\+Purchase\+Flow} (Activity act, String sku, int request\+Code, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener} listener)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a5b2df519b9a91af785266b7f9a683566}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a5b2df519b9a91af785266b7f9a683566}} 
+void {\bfseries launch\+Purchase\+Flow} (Activity act, String sku, int request\+Code, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener} listener, String extra\+Data)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a18ce37e93617117cc9e0f5855adf30b9}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a18ce37e93617117cc9e0f5855adf30b9}} 
+void {\bfseries launch\+Subscription\+Purchase\+Flow} (Activity act, String sku, int request\+Code, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener} listener)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a44e6d577df50f413939efb1e9388cef6}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a44e6d577df50f413939efb1e9388cef6}} 
+void {\bfseries launch\+Subscription\+Purchase\+Flow} (Activity act, String sku, int request\+Code, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener} listener, String extra\+Data)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ae2b1a25036d155bf35de7e7e59216196}{launch\+Purchase\+Flow} (Activity act, String sku, String item\+Type, int request\+Code, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener} listener, String extra\+Data)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0723c16bd0dfe7d7037d2b28e80ff29}{handle\+Activity\+Result} (int request\+Code, int result\+Code, Intent data)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a0527e5ec5db52957dc5ad50924d33717}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a0527e5ec5db52957dc5ad50924d33717}} 
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} {\bfseries query\+Inventory} (boolean query\+Sku\+Details, List$<$ String $>$ more\+Skus)  throws Iab\+Exception 
+\item 
+\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af69d4ba377b9c8efd1eb115e339a1f14}{query\+Inventory} (boolean query\+Sku\+Details, List$<$ String $>$ more\+Item\+Skus, List$<$ String $>$ more\+Subs\+Skus)  throws Iab\+Exception 
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab32d6d559bf5ae8289f996d1717b292e}{query\+Inventory\+Async} (final boolean query\+Sku\+Details, final List$<$ String $>$ more\+Skus, final \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1QueryInventoryFinishedListener}{Query\+Inventory\+Finished\+Listener} listener)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a758557b230d10e41259ae40aefba251d}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a758557b230d10e41259ae40aefba251d}} 
+void {\bfseries query\+Inventory\+Async} (\hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1QueryInventoryFinishedListener}{Query\+Inventory\+Finished\+Listener} listener)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af32decea956399bb88c14f631cc66e20}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af32decea956399bb88c14f631cc66e20}} 
+void {\bfseries query\+Inventory\+Async} (boolean query\+Sku\+Details, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1QueryInventoryFinishedListener}{Query\+Inventory\+Finished\+Listener} listener)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aebe7d5a554683f1d09ef7bdc19d6046e}{consume\+Async} (\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase} purchase, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeFinishedListener}{On\+Consume\+Finished\+Listener} listener)
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a347fa3413cc9fe458d47a82f5f651c73}{consume\+Async} (List$<$ \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase} $>$ purchases, \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeMultiFinishedListener}{On\+Consume\+Multi\+Finished\+Listener} listener)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a3e2b5a32fbb6ca1d76a87a4f7ce58daa}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a3e2b5a32fbb6ca1d76a87a4f7ce58daa}} 
+void {\bfseries flag\+End\+Async} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a96fb9ce0f62a2601f6ee158ec45a96d5}{get\+Response\+Desc} (int code)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a8f176751bb71d24c7bc0ad51f92200bf}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a8f176751bb71d24c7bc0ad51f92200bf}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+OK} = 0
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab67c2a40bcf24f3e65a67f5fafa6a4b5}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab67c2a40bcf24f3e65a67f5fafa6a4b5}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+ED} = 1
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a928d3c235d81ffaacba1b38b6f68fe58}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a928d3c235d81ffaacba1b38b6f68fe58}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+I\+L\+L\+I\+N\+G\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE} = 3
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1b222027fd30ac2cb05e2d2a4ad6fb96}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1b222027fd30ac2cb05e2d2a4ad6fb96}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+T\+E\+M\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE} = 4
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aeb21c03bec64e1fcb596c0a2bd937225}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aeb21c03bec64e1fcb596c0a2bd937225}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+D\+E\+V\+E\+L\+O\+P\+E\+R\+\_\+\+E\+R\+R\+OR} = 5
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a951885531e0657bc03c350c15f4bc2e0}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a951885531e0657bc03c350c15f4bc2e0}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+R\+R\+OR} = 6
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ae790722324e31f391bc261e0a3b15383}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ae790722324e31f391bc261e0a3b15383}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+T\+E\+M\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+O\+W\+N\+ED} = 7
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1147508cb3becc0e174744ab5c9156cb}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1147508cb3becc0e174744ab5c9156cb}} 
+static final int {\bfseries B\+I\+L\+L\+I\+N\+G\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+T\+E\+M\+\_\+\+N\+O\+T\+\_\+\+O\+W\+N\+ED} = 8
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1c7fb8f940702fb4ddf6ab515f2c0cb0}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1c7fb8f940702fb4ddf6ab515f2c0cb0}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+B\+A\+SE} = -\/1000
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a3bb496ef409939fe39ca66d079bc7446}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a3bb496ef409939fe39ca66d079bc7446}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+E\+X\+C\+E\+P\+T\+I\+ON} = -\/1001
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a44a7cf7e8df21c81df454ad81f086442}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a44a7cf7e8df21c81df454ad81f086442}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+B\+A\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE} = -\/1002
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af98a41b6eedd9f0a53dc86aa4a202671}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af98a41b6eedd9f0a53dc86aa4a202671}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+V\+E\+R\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED} = -\/1003
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aefa46fce113c7f1dd54832c0530aa3b8}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aefa46fce113c7f1dd54832c0530aa3b8}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+S\+E\+N\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+F\+A\+I\+L\+ED} = -\/1004
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_acaff8757cad7a292d6656688f449934b}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_acaff8757cad7a292d6656688f449934b}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+U\+S\+E\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED} = -\/1005
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a08d346de5c6bd747b9813b83b6bd0478}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a08d346de5c6bd747b9813b83b6bd0478}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+R\+E\+S\+P\+O\+N\+SE} = -\/1006
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aabfcf99e50fa69324540c60db2549c77}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aabfcf99e50fa69324540c60db2549c77}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+T\+O\+K\+EN} = -\/1007
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af2f347cdb977f3a27adf8a7ebf6f320f}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af2f347cdb977f3a27adf8a7ebf6f320f}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = -\/1008
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4c38c52d88241e8ad2dcb0dcf6dbecc9}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4c38c52d88241e8ad2dcb0dcf6dbecc9}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+S\+U\+B\+S\+C\+R\+I\+P\+T\+I\+O\+N\+S\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE} = -\/1009
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aa0e9d091b3f37c937eaf17aaef07f8a0}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aa0e9d091b3f37c937eaf17aaef07f8a0}} 
+static final int {\bfseries I\+A\+B\+H\+E\+L\+P\+E\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+O\+N\+S\+U\+M\+P\+T\+I\+ON} = -\/1010
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a90b3288326755e9326c172db7bec8724}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a90b3288326755e9326c172db7bec8724}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+C\+O\+DE} = \char`\"{}R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+C\+O\+DE\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a63e0f9791ba6e5e4af0da4b0020474f4}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a63e0f9791ba6e5e4af0da4b0020474f4}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+G\+E\+T\+\_\+\+S\+K\+U\+\_\+\+D\+E\+T\+A\+I\+L\+S\+\_\+\+L\+I\+ST} = \char`\"{}D\+E\+T\+A\+I\+L\+S\+\_\+\+L\+I\+ST\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a2e13b89999d88713b3d85d83e86e7f65}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a2e13b89999d88713b3d85d83e86e7f65}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+Y\+\_\+\+I\+N\+T\+E\+NT} = \char`\"{}B\+U\+Y\+\_\+\+I\+N\+T\+E\+NT\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ad2ea748b4ca40bc25042c650b603a462}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ad2ea748b4ca40bc25042c650b603a462}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+A\+P\+P\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+D\+A\+TA} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+D\+A\+TA\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a5c2fd9dbc829224bf7056dee2813493a}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a5c2fd9dbc829224bf7056dee2813493a}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+A\+P\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+RE} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+G\+N\+A\+T\+U\+RE\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a75946cde7212f83faaa3a61990535d9d}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a75946cde7212f83faaa3a61990535d9d}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+A\+P\+P\+\_\+\+I\+T\+E\+M\+\_\+\+L\+I\+ST} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+I\+T\+E\+M\+\_\+\+L\+I\+ST\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0445d042a4acaea8ec337c818275c03}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0445d042a4acaea8ec337c818275c03}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+A\+P\+P\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+ST} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+P\+U\+R\+C\+H\+A\+S\+E\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+ST\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a848421c1da5f366460640be4f89611f0}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a848421c1da5f366460640be4f89611f0}} 
+static final String {\bfseries R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+I\+N\+A\+P\+P\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+L\+I\+ST} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+L\+I\+ST\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_afc51c3900f2cbc94a280ed233e50b93d}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_afc51c3900f2cbc94a280ed233e50b93d}} 
+static final String {\bfseries I\+N\+A\+P\+P\+\_\+\+C\+O\+N\+T\+I\+N\+U\+A\+T\+I\+O\+N\+\_\+\+T\+O\+K\+EN} = \char`\"{}I\+N\+A\+P\+P\+\_\+\+C\+O\+N\+T\+I\+N\+U\+A\+T\+I\+O\+N\+\_\+\+T\+O\+K\+EN\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af13d19695fa5782f268d859aa7bfe91b}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af13d19695fa5782f268d859aa7bfe91b}} 
+static final String {\bfseries I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+A\+PP} = \char`\"{}inapp\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a381fec9235ace1f630989c7f1a853c26}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a381fec9235ace1f630989c7f1a853c26}} 
+static final String {\bfseries I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+U\+BS} = \char`\"{}subs\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1eef76824937843993707208485beafc}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a1eef76824937843993707208485beafc}} 
+static final String {\bfseries G\+E\+T\+\_\+\+S\+K\+U\+\_\+\+D\+E\+T\+A\+I\+L\+S\+\_\+\+I\+T\+E\+M\+\_\+\+L\+I\+ST} = \char`\"{}I\+T\+E\+M\+\_\+\+I\+D\+\_\+\+L\+I\+ST\char`\"{}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a04aa5cfc5fafbf5fc11caf67a2cf9b25}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a04aa5cfc5fafbf5fc11caf67a2cf9b25}} 
+static final String {\bfseries G\+E\+T\+\_\+\+S\+K\+U\+\_\+\+D\+E\+T\+A\+I\+L\+S\+\_\+\+I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+I\+ST} = \char`\"{}I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+L\+I\+ST\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides convenience methods for in-\/app billing. You can create one instance of this class for your application and use it to process in-\/app billing operations. It provides synchronous (blocking) and asynchronous (non-\/blocking) methods for many common in-\/app billing operations, as well as automatic signature verification.
+
+After instantiating, you must perform setup in order to start using the object. To perform setup, call the \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4eb405a91ab5d6d6bb94a69ac0c54ec3}{start\+Setup} method and provide a listener; that listener will be notified when setup is complete, after which (and not before) you may call other methods.
+
+After setup is complete, you will typically want to request an inventory of owned items and subscriptions. See \hyperlink{}{query\+Inventory}, \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab32d6d559bf5ae8289f996d1717b292e}{query\+Inventory\+Async} and related methods.
+
+When you are done with this object, don\textquotesingle{}t forget to call \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_add41920802456afa1594822fc5e4b93d}{dispose} to ensure proper cleanup. This object holds a binding to the in-\/app billing service, which will leak unless you dispose of it correctly. If you created the object on an Activity\textquotesingle{}s on\+Create method, then the recommended place to dispose of it is the Activity\textquotesingle{}s on\+Destroy method.
+
+A note about threading\+: When using this object from a background thread, you may call the blocking versions of methods; when using from a UI thread, call only the asynchronous versions and handle the results via callbacks. Also, notice that you can only call one asynchronous operation at a time; attempting to start a second asynchronous operation while the first one has not yet completed will result in an exception being thrown.
+
+\begin{DoxyAuthor}{Author}
+Bruno Oliveira (Google) 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4161283ba1134bbc0d80466c05010872}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4161283ba1134bbc0d80466c05010872}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!Iab\+Helper@{Iab\+Helper}}
+\index{Iab\+Helper@{Iab\+Helper}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{Iab\+Helper()}{IabHelper()}}
+{\footnotesize\ttfamily org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+Iab\+Helper (\begin{DoxyParamCaption}\item[{Context}]{ctx,  }\item[{String}]{base64\+Public\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an instance. After creation, it will not yet be ready to use. You must perform setup by calling \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4eb405a91ab5d6d6bb94a69ac0c54ec3}{start\+Setup} and wait for setup to complete. This constructor does not block and is safe to call from a UI thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Your application or Activity context. Needed to bind to the in-\/app billing service. \\
+\hline
+{\em base64\+Public\+Key} & Your application\textquotesingle{}s public key, encoded in base64. This is used for verification of purchase signatures. You can find your app\textquotesingle{}s base64-\/encoded public key in your application\textquotesingle{}s page on Google Play Developer Console. Note that this is N\+OT your \char`\"{}developer public key\char`\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aebe7d5a554683f1d09ef7bdc19d6046e}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aebe7d5a554683f1d09ef7bdc19d6046e}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!consume\+Async@{consume\+Async}}
+\index{consume\+Async@{consume\+Async}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{consume\+Async()}{consumeAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+consume\+Async (\begin{DoxyParamCaption}\item[{\hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase}}]{purchase,  }\item[{\hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeFinishedListener}{On\+Consume\+Finished\+Listener}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Asynchronous wrapper to item consumption. Works like \hyperlink{}{consume}, but performs the consumption in the background and notifies completion through the provided listener. This method is safe to call from a UI thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em purchase} & The purchase to be consumed. \\
+\hline
+{\em listener} & The listener to notify when the consumption operation finishes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a347fa3413cc9fe458d47a82f5f651c73}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a347fa3413cc9fe458d47a82f5f651c73}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!consume\+Async@{consume\+Async}}
+\index{consume\+Async@{consume\+Async}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{consume\+Async()}{consumeAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+consume\+Async (\begin{DoxyParamCaption}\item[{List$<$ \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Purchase}{Purchase} $>$}]{purchases,  }\item[{\hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnConsumeMultiFinishedListener}{On\+Consume\+Multi\+Finished\+Listener}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Same as \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_aebe7d5a554683f1d09ef7bdc19d6046e}{consume\+Async}, but for multiple items at once. 
+\begin{DoxyParams}{Parameters}
+{\em purchases} & The \hyperlink{protocollist-p}{list} of Purchase\+Info objects representing the purchases to consume. \\
+\hline
+{\em listener} & The listener to notify when the consumption operation finishes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_add41920802456afa1594822fc5e4b93d}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_add41920802456afa1594822fc5e4b93d}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!dispose@{dispose}}
+\index{dispose@{dispose}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{dispose()}{dispose()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Dispose of object, releasing resources. It\textquotesingle{}s very important to call this method when you are done with this object. It will release any resources used by it such as service connections. Naturally, once the object is disposed of, it can\textquotesingle{}t be used again. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ac452c2ebaa245349df0a1a49f67f918d}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ac452c2ebaa245349df0a1a49f67f918d}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!enable\+Debug\+Logging@{enable\+Debug\+Logging}}
+\index{enable\+Debug\+Logging@{enable\+Debug\+Logging}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{enable\+Debug\+Logging()}{enableDebugLogging()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+enable\+Debug\+Logging (\begin{DoxyParamCaption}\item[{boolean}]{enable,  }\item[{String}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enables or disable debug logging through Log\+Cat. \mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a96fb9ce0f62a2601f6ee158ec45a96d5}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a96fb9ce0f62a2601f6ee158ec45a96d5}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!get\+Response\+Desc@{get\+Response\+Desc}}
+\index{get\+Response\+Desc@{get\+Response\+Desc}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{get\+Response\+Desc()}{getResponseDesc()}}
+{\footnotesize\ttfamily static String org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+get\+Response\+Desc (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns a human-\/readable description for the given response code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The response code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A human-\/readable string explaining the result code. It also includes the result code numerically. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0723c16bd0dfe7d7037d2b28e80ff29}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0723c16bd0dfe7d7037d2b28e80ff29}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!handle\+Activity\+Result@{handle\+Activity\+Result}}
+\index{handle\+Activity\+Result@{handle\+Activity\+Result}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{handle\+Activity\+Result()}{handleActivityResult()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+handle\+Activity\+Result (\begin{DoxyParamCaption}\item[{int}]{request\+Code,  }\item[{int}]{result\+Code,  }\item[{Intent}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles an activity result that\textquotesingle{}s part of the purchase flow in in-\/app billing. If you are calling \hyperlink{}{launch\+Purchase\+Flow}, then you must call this method from your Activity\textquotesingle{}s \hyperlink{}{android.\+app.\+Activity} method. This method M\+U\+ST be called from the UI thread of the Activity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request\+Code} & The request\+Code as you received it. \\
+\hline
+{\em result\+Code} & The result\+Code as you received it. \\
+\hline
+{\em data} & The data (Intent) as you received it. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the result was related to a purchase flow and was handled; false if the result was not related to a purchase, in which case you should handle it normally. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ae2b1a25036d155bf35de7e7e59216196}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ae2b1a25036d155bf35de7e7e59216196}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!launch\+Purchase\+Flow@{launch\+Purchase\+Flow}}
+\index{launch\+Purchase\+Flow@{launch\+Purchase\+Flow}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{launch\+Purchase\+Flow()}{launchPurchaseFlow()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+launch\+Purchase\+Flow (\begin{DoxyParamCaption}\item[{Activity}]{act,  }\item[{String}]{sku,  }\item[{String}]{item\+Type,  }\item[{int}]{request\+Code,  }\item[{\hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabPurchaseFinishedListener}{On\+Iab\+Purchase\+Finished\+Listener}}]{listener,  }\item[{String}]{extra\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initiate the UI flow for an in-\/app purchase. Call this method to initiate an in-\/app purchase, which will involve bringing up the Google Play screen. The calling activity will be paused while the user interacts with Google Play, and the result will be delivered via the activity\textquotesingle{}s \hyperlink{}{android.\+app.\+Activity\#on\+Activity\+Result} method, at which point you must call this object\textquotesingle{}s \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af0723c16bd0dfe7d7037d2b28e80ff29}{handle\+Activity\+Result} method to continue the purchase flow. This method M\+U\+ST be called from the UI thread of the Activity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em act} & The calling activity. \\
+\hline
+{\em sku} & The sku of the item to purchase. \\
+\hline
+{\em item\+Type} & indicates if it\textquotesingle{}s a product or a subscription (I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+N\+A\+PP or I\+T\+E\+M\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+U\+BS) \\
+\hline
+{\em request\+Code} & A request code (to differentiate from other responses -- as in \hyperlink{}{android.\+app.\+Activity\#start\+Activity\+For\+Result}). \\
+\hline
+{\em listener} & The listener to notify when the purchase process finishes \\
+\hline
+{\em extra\+Data} & Extra data (developer payload), which will be returned with the purchase data when the purchase completes. This extra data will be permanently bound to that purchase and will always be returned when the purchase is queried. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af69d4ba377b9c8efd1eb115e339a1f14}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_af69d4ba377b9c8efd1eb115e339a1f14}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!query\+Inventory@{query\+Inventory}}
+\index{query\+Inventory@{query\+Inventory}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{query\+Inventory()}{queryInventory()}}
+{\footnotesize\ttfamily \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1Inventory}{Inventory} org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+query\+Inventory (\begin{DoxyParamCaption}\item[{boolean}]{query\+Sku\+Details,  }\item[{List$<$ String $>$}]{more\+Item\+Skus,  }\item[{List$<$ String $>$}]{more\+Subs\+Skus }\end{DoxyParamCaption}) throws \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabException}{Iab\+Exception}\hspace{0.3cm}{\ttfamily [inline]}}
+
+Queries the inventory. This will query all owned items from the server, as well as information on additional skus, if specified. This method may block or take long to execute. Do not call from a UI thread. For that, use the non-\/blocking version \hyperlink{}{refresh\+Inventory\+Async}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Sku\+Details} & if true, S\+KU details (price, description, etc) will be queried as well as purchase information. \\
+\hline
+{\em more\+Item\+Skus} & additional P\+R\+O\+D\+U\+CT skus to query information on, regardless of ownership. Ignored if null or if query\+Sku\+Details is false. \\
+\hline
+{\em more\+Subs\+Skus} & additional S\+U\+B\+S\+C\+R\+I\+P\+T\+I\+O\+NS skus to query information on, regardless of ownership. Ignored if null or if query\+Sku\+Details is false. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabException}{Iab\+Exception}} & if a problem occurs while refreshing the inventory. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab32d6d559bf5ae8289f996d1717b292e}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_ab32d6d559bf5ae8289f996d1717b292e}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!query\+Inventory\+Async@{query\+Inventory\+Async}}
+\index{query\+Inventory\+Async@{query\+Inventory\+Async}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{query\+Inventory\+Async()}{queryInventoryAsync()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+query\+Inventory\+Async (\begin{DoxyParamCaption}\item[{final boolean}]{query\+Sku\+Details,  }\item[{final List$<$ String $>$}]{more\+Skus,  }\item[{final \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1QueryInventoryFinishedListener}{Query\+Inventory\+Finished\+Listener}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Asynchronous wrapper for inventory query. This will perform an inventory query as described in \hyperlink{}{query\+Inventory}, but will do so asynchronously and call back the specified listener upon completion. This method is safe to call from a UI thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Sku\+Details} & as in \hyperlink{}{query\+Inventory} \\
+\hline
+{\em more\+Skus} & as in \hyperlink{}{query\+Inventory} \\
+\hline
+{\em listener} & The listener to notify when the refresh operation completes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4eb405a91ab5d6d6bb94a69ac0c54ec3}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a4eb405a91ab5d6d6bb94a69ac0c54ec3}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!start\+Setup@{start\+Setup}}
+\index{start\+Setup@{start\+Setup}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{start\+Setup()}{startSetup()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+start\+Setup (\begin{DoxyParamCaption}\item[{final \hyperlink{interfaceorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_1_1OnIabSetupFinishedListener}{On\+Iab\+Setup\+Finished\+Listener}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts the setup process. This will start up the setup process asynchronously. You will be notified through the listener when the setup process is complete. This method is safe to call from a UI thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & The listener to notify when the setup process is complete. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a06ba80f6caa38961b4e6339d7bb8c598}\label{classorg_1_1cocos2dx_1_1plugin_1_1util_1_1IabHelper_a06ba80f6caa38961b4e6339d7bb8c598}} 
+\index{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}!subscriptions\+Supported@{subscriptions\+Supported}}
+\index{subscriptions\+Supported@{subscriptions\+Supported}!org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper@{org\+::cocos2dx\+::plugin\+::util\+::\+Iab\+Helper}}
+\subsubsection{\texorpdfstring{subscriptions\+Supported()}{subscriptionsSupported()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+util.\+Iab\+Helper.\+subscriptions\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether subscriptions are supported. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/googleplay/proj.\+android/src/org/cocos2dx/plugin/util/Iab\+Helper.\+java\end{DoxyCompactItemize}

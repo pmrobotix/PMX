@@ -1,0 +1,138 @@
+\hypertarget{classEaseSineInOut}{}\section{Ease\+Sine\+In\+Out Class Reference}
+\label{classEaseSineInOut}\index{Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}}
+
+
+Ease Sine In\+Out.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Ease.\+h$>$}
+
+
+
+Inheritance diagram for Ease\+Sine\+In\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classEaseSineInOut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ease\+Sine\+In\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEaseSineInOut__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classEaseSineInOut_a6c5c73d3e2bfeb21315b2d9798cf562f}{update} (float time) override
+\item 
+virtual \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ \hyperlink{classEaseSineInOut_a78a36c0d403d763d2d1c6a03a56a283c}{clone} () const override
+\item 
+virtual \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ \hyperlink{classEaseSineInOut_aa8aba440311e86fcab00307d5359263d}{reverse} () const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ \hyperlink{classEaseSineInOut_ace68076ff6bb84e0d1a52b40d8806685}{create} (\hyperlink{classActionInterval}{Action\+Interval} $\ast$action)
+\begin{DoxyCompactList}\small\item\em Create the action with the inner action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEaseSineInOut_a1e2c9a0a3a2fa4677ba63c08f504b0e4}\label{classEaseSineInOut_a1e2c9a0a3a2fa4677ba63c08f504b0e4}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out}() \{\} virtual $\sim$\hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out}() \{\}private\+: C\+C\+\_\+\+D\+I\+S\+A\+L\+L\+O\+W\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN(\hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Ease Sine In\+Out. 
+
+The timeline of inner action will be changed by\+: $-0.5*(cos(\pi *time)-1)$. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEaseSineInOut_a78a36c0d403d763d2d1c6a03a56a283c}\label{classEaseSineInOut_a78a36c0d403d763d2d1c6a03a56a283c}} 
+\index{Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}!clone@{clone}}
+\index{clone@{clone}!Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ Ease\+Sine\+In\+Out\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionEase_a39bec93fe161fb732a74d8e51a2fe08b}{Action\+Ease}.
+
+\mbox{\Hypertarget{classEaseSineInOut_ace68076ff6bb84e0d1a52b40d8806685}\label{classEaseSineInOut_ace68076ff6bb84e0d1a52b40d8806685}} 
+\index{Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}!create@{create}}
+\index{create@{create}!Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ Ease\+Sine\+In\+Out\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{classActionInterval}{Action\+Interval} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the action with the inner action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The pointer of the inner action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer of \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} action. If creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEaseSineInOut_aa8aba440311e86fcab00307d5359263d}\label{classEaseSineInOut_aa8aba440311e86fcab00307d5359263d}} 
+\index{Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}!reverse@{reverse}}
+\index{reverse@{reverse}!Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily \hyperlink{classEaseSineInOut}{Ease\+Sine\+In\+Out} $\ast$ Ease\+Sine\+In\+Out\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionEase_ab99eb083fa033fae1d6c948fdc730782}{Action\+Ease}.
+
+\mbox{\Hypertarget{classEaseSineInOut_a6c5c73d3e2bfeb21315b2d9798cf562f}\label{classEaseSineInOut_a6c5c73d3e2bfeb21315b2d9798cf562f}} 
+\index{Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}!update@{update}}
+\index{update@{update}!Ease\+Sine\+In\+Out@{Ease\+Sine\+In\+Out}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ease\+Sine\+In\+Out\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once per frame. time a value between 0 and 1.
+
+For example\+:
+\begin{DoxyItemize}
+\item 0 Means that the action just started.
+\item 0.\+5 Means that the action is in the middle.
+\item 1 Means that the action is over.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A value between 0 and 1. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionEase_a77679f09c02cf75fb54776470c339fc5}{Action\+Ease}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Ease.\+cpp\end{DoxyCompactItemize}

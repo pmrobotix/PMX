@@ -1,0 +1,562 @@
+\hypertarget{classbtRigidBody}{}\section{bt\+Rigid\+Body Class Reference}
+\label{classbtRigidBody}\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+
+
+{\ttfamily \#include $<$bt\+Rigid\+Body.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Rigid\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classbtRigidBody__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Rigid\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classbtRigidBody__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a66a55c268281f64e849851a929449ffd}\label{classbtRigidBody_a66a55c268281f64e849851a929449ffd}} 
+\hyperlink{classbtRigidBody_a66a55c268281f64e849851a929449ffd}{bt\+Rigid\+Body} (const \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info} \&construction\+Info)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} constructor using construction info \end{DoxyCompactList}\item 
+\hyperlink{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}{bt\+Rigid\+Body} (bt\+Scalar mass, \hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$motion\+State, bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Vector3 \&local\+Inertia=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a70f38cd1bb359db4992a374da778bac7}\label{classbtRigidBody_a70f38cd1bb359db4992a374da778bac7}} 
+void {\bfseries proceed\+To\+Transform} (const bt\+Transform \&new\+Trans)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}\label{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}} 
+void \hyperlink{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}{predict\+Integrated\+Transform} (bt\+Scalar step, bt\+Transform \&predicted\+Transform)
+\begin{DoxyCompactList}\small\item\em continuous collision detection needs prediction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_a77b69b89ec3dfcd502e122cfaafdf4f6}\label{classbtRigidBody_a77b69b89ec3dfcd502e122cfaafdf4f6}} 
+void {\bfseries save\+Kinematic\+State} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a08f1a05a572e7ff53f3874bda43c75b9}\label{classbtRigidBody_a08f1a05a572e7ff53f3874bda43c75b9}} 
+void {\bfseries apply\+Gravity} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a5aedec73517fb7b9cddcbd72663e0ddc}\label{classbtRigidBody_a5aedec73517fb7b9cddcbd72663e0ddc}} 
+void {\bfseries set\+Gravity} (const bt\+Vector3 \&acceleration)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a081e31d62e12cca594466d1ae26082ac}\label{classbtRigidBody_a081e31d62e12cca594466d1ae26082ac}} 
+const bt\+Vector3 \& {\bfseries get\+Gravity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ace302f6d75db7e4cd64305dd4d20114b}\label{classbtRigidBody_ace302f6d75db7e4cd64305dd4d20114b}} 
+void {\bfseries set\+Damping} (bt\+Scalar lin\+\_\+damping, bt\+Scalar ang\+\_\+damping)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_abb2055b024d5f9262201a96482072c13}\label{classbtRigidBody_abb2055b024d5f9262201a96482072c13}} 
+bt\+Scalar {\bfseries get\+Linear\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4dc018caac250454251d3fb58f020892}\label{classbtRigidBody_a4dc018caac250454251d3fb58f020892}} 
+bt\+Scalar {\bfseries get\+Angular\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a396bae2e385e6c4a8f31b2bedb513ac6}\label{classbtRigidBody_a396bae2e385e6c4a8f31b2bedb513ac6}} 
+bt\+Scalar {\bfseries get\+Linear\+Sleeping\+Threshold} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9c9e0b4a0c367af11e6ca82f4de4b539}\label{classbtRigidBody_a9c9e0b4a0c367af11e6ca82f4de4b539}} 
+bt\+Scalar {\bfseries get\+Angular\+Sleeping\+Threshold} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a3fecb8c50d734095f33e2c7624bfba2c}\label{classbtRigidBody_a3fecb8c50d734095f33e2c7624bfba2c}} 
+void \hyperlink{classbtRigidBody_a3fecb8c50d734095f33e2c7624bfba2c}{apply\+Damping} (bt\+Scalar time\+Step)
+\begin{DoxyCompactList}\small\item\em apply\+Damping damps the velocity, using the given m\+\_\+linear\+Damping and m\+\_\+angular\+Damping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_a09847b287e58981e6b7cfc825f514ab2}\label{classbtRigidBody_a09847b287e58981e6b7cfc825f514ab2}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Collision\+Shape $\ast$ {\bfseries get\+Collision\+Shape} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4c79924fbf05ebb79859758b650841b8}\label{classbtRigidBody_a4c79924fbf05ebb79859758b650841b8}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Collision\+Shape $\ast$ {\bfseries get\+Collision\+Shape} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a912b4a273bcd6fe9af25c47106db900c}\label{classbtRigidBody_a912b4a273bcd6fe9af25c47106db900c}} 
+void {\bfseries set\+Mass\+Props} (bt\+Scalar mass, const bt\+Vector3 \&inertia)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a39ea489339ebdc7c4e005e6b0b43fcca}\label{classbtRigidBody_a39ea489339ebdc7c4e005e6b0b43fcca}} 
+const bt\+Vector3 \& {\bfseries get\+Linear\+Factor} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a00cf3fa28987ffb77764e5bd3605e3ef}\label{classbtRigidBody_a00cf3fa28987ffb77764e5bd3605e3ef}} 
+void {\bfseries set\+Linear\+Factor} (const bt\+Vector3 \&linear\+Factor)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4c67acaeab4799ffda7a0d8a63df7ae6}\label{classbtRigidBody_a4c67acaeab4799ffda7a0d8a63df7ae6}} 
+bt\+Scalar {\bfseries get\+Inv\+Mass} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ab328d8f35b8c62a4ee0dc5f111b81b37}\label{classbtRigidBody_ab328d8f35b8c62a4ee0dc5f111b81b37}} 
+const bt\+Matrix3x3 \& {\bfseries get\+Inv\+Inertia\+Tensor\+World} () const
+\item 
+void \hyperlink{classbtRigidBody_a16029bc5aabcbb33aaf7e6e6e819283a}{integrate\+Velocities} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_adeaff2386513eeaaa138e0e3b3acca66}\label{classbtRigidBody_adeaff2386513eeaaa138e0e3b3acca66}} 
+void {\bfseries set\+Center\+Of\+Mass\+Transform} (const bt\+Transform \&xform)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a48478896407083f4ff64299e0c3c4a32}\label{classbtRigidBody_a48478896407083f4ff64299e0c3c4a32}} 
+void {\bfseries apply\+Central\+Force} (const bt\+Vector3 \&force)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aaeba73314c3a932d2a3f7b198eabf97c}\label{classbtRigidBody_aaeba73314c3a932d2a3f7b198eabf97c}} 
+const bt\+Vector3 \& {\bfseries get\+Total\+Force} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a6587c6d8add7e07c5cbb620303cecb5e}\label{classbtRigidBody_a6587c6d8add7e07c5cbb620303cecb5e}} 
+const bt\+Vector3 \& {\bfseries get\+Total\+Torque} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ae9099e39ca4e591acf1d28ec95a038b9}\label{classbtRigidBody_ae9099e39ca4e591acf1d28ec95a038b9}} 
+const bt\+Vector3 \& {\bfseries get\+Inv\+Inertia\+Diag\+Local} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac47e4f27b351e24ed180bb0fcfa5a51d}\label{classbtRigidBody_ac47e4f27b351e24ed180bb0fcfa5a51d}} 
+void {\bfseries set\+Inv\+Inertia\+Diag\+Local} (const bt\+Vector3 \&diag\+Inv\+Inertia)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8ed442345551ea2d4e4b30ec19597b69}\label{classbtRigidBody_a8ed442345551ea2d4e4b30ec19597b69}} 
+void {\bfseries set\+Sleeping\+Thresholds} (bt\+Scalar linear, bt\+Scalar angular)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aede3cf53474f4b367693b19871692b99}\label{classbtRigidBody_aede3cf53474f4b367693b19871692b99}} 
+void {\bfseries apply\+Torque} (const bt\+Vector3 \&torque)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_af016720c45cf7ccaf8701d81a28319d9}\label{classbtRigidBody_af016720c45cf7ccaf8701d81a28319d9}} 
+void {\bfseries apply\+Force} (const bt\+Vector3 \&force, const bt\+Vector3 \&rel\+\_\+pos)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a82f6590ea4fa13c359ae8809a5112ee7}\label{classbtRigidBody_a82f6590ea4fa13c359ae8809a5112ee7}} 
+void {\bfseries apply\+Central\+Impulse} (const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a0084ebc850f06cd043d70ee87e6a3457}\label{classbtRigidBody_a0084ebc850f06cd043d70ee87e6a3457}} 
+void {\bfseries apply\+Torque\+Impulse} (const bt\+Vector3 \&torque)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8274f89d9e6b8fe945282797bd25f377}\label{classbtRigidBody_a8274f89d9e6b8fe945282797bd25f377}} 
+void {\bfseries apply\+Impulse} (const bt\+Vector3 \&impulse, const bt\+Vector3 \&rel\+\_\+pos)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1ffe77aaa4d3712457aa8f9aa83f42a7}\label{classbtRigidBody_a1ffe77aaa4d3712457aa8f9aa83f42a7}} 
+void {\bfseries clear\+Forces} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aeb2880f17187c3f28b4a253423aa71d1}\label{classbtRigidBody_aeb2880f17187c3f28b4a253423aa71d1}} 
+void {\bfseries update\+Inertia\+Tensor} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aadd4ef35ebe3633314d04f09f91699ed}\label{classbtRigidBody_aadd4ef35ebe3633314d04f09f91699ed}} 
+const bt\+Vector3 \& {\bfseries get\+Center\+Of\+Mass\+Position} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a6d50e07777d473368d189cba7850a798}\label{classbtRigidBody_a6d50e07777d473368d189cba7850a798}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} {\bfseries get\+Orientation} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a999bf363587ede881dbe239e7d1e9bee}\label{classbtRigidBody_a999bf363587ede881dbe239e7d1e9bee}} 
+const bt\+Transform \& {\bfseries get\+Center\+Of\+Mass\+Transform} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9a8c37d20a73d197e55a0a5ccc342815}\label{classbtRigidBody_a9a8c37d20a73d197e55a0a5ccc342815}} 
+const bt\+Vector3 \& {\bfseries get\+Linear\+Velocity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a0f6b08909d7eab1fc105608b10fe4b90}\label{classbtRigidBody_a0f6b08909d7eab1fc105608b10fe4b90}} 
+const bt\+Vector3 \& {\bfseries get\+Angular\+Velocity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ad692042edc901425189cf1d067eebac6}\label{classbtRigidBody_ad692042edc901425189cf1d067eebac6}} 
+void {\bfseries set\+Linear\+Velocity} (const bt\+Vector3 \&lin\+\_\+vel)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac6e5f94e998150e37ca8962c851d10a8}\label{classbtRigidBody_ac6e5f94e998150e37ca8962c851d10a8}} 
+void {\bfseries set\+Angular\+Velocity} (const bt\+Vector3 \&ang\+\_\+vel)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1b4cd79f5c8ad9161737742eea9470f5}\label{classbtRigidBody_a1b4cd79f5c8ad9161737742eea9470f5}} 
+bt\+Vector3 {\bfseries get\+Velocity\+In\+Local\+Point} (const bt\+Vector3 \&rel\+\_\+pos) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aca945f8e257b617c5600e809f179a0bb}\label{classbtRigidBody_aca945f8e257b617c5600e809f179a0bb}} 
+void {\bfseries translate} (const bt\+Vector3 \&v)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a00efe4219a990718835e0a7ada5a2b5d}\label{classbtRigidBody_a00efe4219a990718835e0a7ada5a2b5d}} 
+void {\bfseries get\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8637d220d3002af281bdb81d5bedc1ba}\label{classbtRigidBody_a8637d220d3002af281bdb81d5bedc1ba}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Scalar {\bfseries compute\+Impulse\+Denominator} (const bt\+Vector3 \&pos, const bt\+Vector3 \&normal) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a18731fc59583c19e42b63a4e5d150d7c}\label{classbtRigidBody_a18731fc59583c19e42b63a4e5d150d7c}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Scalar {\bfseries compute\+Angular\+Impulse\+Denominator} (const bt\+Vector3 \&axis) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa48bf2e5bf090c613ad8e9aa605bc7df}\label{classbtRigidBody_aa48bf2e5bf090c613ad8e9aa605bc7df}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Deactivation} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa2ccbd4474fe0edef483533943b5d666}\label{classbtRigidBody_aa2ccbd4474fe0edef483533943b5d666}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool {\bfseries wants\+Sleeping} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a7c6bbab3d998bb33d74272cca8c46375}\label{classbtRigidBody_a7c6bbab3d998bb33d74272cca8c46375}} 
+const bt\+Broadphase\+Proxy $\ast$ {\bfseries get\+Broadphase\+Proxy} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a505e4a8179302137cb72f47595404e89}\label{classbtRigidBody_a505e4a8179302137cb72f47595404e89}} 
+bt\+Broadphase\+Proxy $\ast$ {\bfseries get\+Broadphase\+Proxy} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a254399995032d1120492e419f588b28c}\label{classbtRigidBody_a254399995032d1120492e419f588b28c}} 
+void {\bfseries set\+New\+Broadphase\+Proxy} (bt\+Broadphase\+Proxy $\ast$broadphase\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2bbea712d9095f05ff3b031bbe4e6521}\label{classbtRigidBody_a2bbea712d9095f05ff3b031bbe4e6521}} 
+\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$ {\bfseries get\+Motion\+State} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a5c1b92e131b5648386a7e399f2936df3}\label{classbtRigidBody_a5c1b92e131b5648386a7e399f2936df3}} 
+const \hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$ {\bfseries get\+Motion\+State} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac8272055c40ba4bb794fc5f1cb105d54}\label{classbtRigidBody_ac8272055c40ba4bb794fc5f1cb105d54}} 
+void {\bfseries set\+Motion\+State} (\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$motion\+State)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa2061f3fd87043f2a3b8c68ee74847cb}\label{classbtRigidBody_aa2061f3fd87043f2a3b8c68ee74847cb}} 
+void {\bfseries set\+Angular\+Factor} (const bt\+Vector3 \&ang\+Fac)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_acf721bf585c46cf0243cbbda1fc4379d}\label{classbtRigidBody_acf721bf585c46cf0243cbbda1fc4379d}} 
+void {\bfseries set\+Angular\+Factor} (bt\+Scalar ang\+Fac)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ae61bd53cfe8b0987b42d30d470faaf09}\label{classbtRigidBody_ae61bd53cfe8b0987b42d30d470faaf09}} 
+const bt\+Vector3 \& {\bfseries get\+Angular\+Factor} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa8030ba8a47ea2c00c990bc4227e1ae2}\label{classbtRigidBody_aa8030ba8a47ea2c00c990bc4227e1ae2}} 
+bool {\bfseries is\+In\+World} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a91d4b27bcddc7eb3bdc22821ab81dfdc}\label{classbtRigidBody_a91d4b27bcddc7eb3bdc22821ab81dfdc}} 
+virtual bool {\bfseries check\+Collide\+With\+Override} (const bt\+Collision\+Object $\ast$co) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1c89df31d2a10f06cc81da0e4b573297}\label{classbtRigidBody_a1c89df31d2a10f06cc81da0e4b573297}} 
+void {\bfseries add\+Constraint\+Ref} (bt\+Typed\+Constraint $\ast$c)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a86e4bf13e7acee4be2c77ed470f44dbe}\label{classbtRigidBody_a86e4bf13e7acee4be2c77ed470f44dbe}} 
+void {\bfseries remove\+Constraint\+Ref} (bt\+Typed\+Constraint $\ast$c)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_abecb7d17ec15d9bec435f9fc7e5962fe}\label{classbtRigidBody_abecb7d17ec15d9bec435f9fc7e5962fe}} 
+bt\+Typed\+Constraint $\ast$ {\bfseries get\+Constraint\+Ref} (int index)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a868c95d4b4405876cf93d12942b66081}\label{classbtRigidBody_a868c95d4b4405876cf93d12942b66081}} 
+int {\bfseries get\+Num\+Constraint\+Refs} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2756c378b93acd3eb16ee27c183efe9d}\label{classbtRigidBody_a2756c378b93acd3eb16ee27c183efe9d}} 
+void {\bfseries set\+Flags} (int flags)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2ac6c5303690999eaf184882c147338b}\label{classbtRigidBody_a2ac6c5303690999eaf184882c147338b}} 
+int {\bfseries get\+Flags} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a82cb76832e357f3ed71996f6717d8064}\label{classbtRigidBody_a82cb76832e357f3ed71996f6717d8064}} 
+bt\+Vector3 {\bfseries compute\+Gyroscopic\+Force} (bt\+Scalar max\+Gyroscopic\+Force) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a565d91820b912febf3dc5acf850e1495}\label{classbtRigidBody_a565d91820b912febf3dc5acf850e1495}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4f293343334b9736a6e7c41455abd46b}\label{classbtRigidBody_a4f293343334b9736a6e7c41455abd46b}} 
+virtual const char $\ast$ \hyperlink{classbtRigidBody_a4f293343334b9736a6e7c41455abd46b}{serialize} (void $\ast$data\+Buffer, class \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_a1e2811e4b3d0ea4e07e9fa933d6fda08}\label{classbtRigidBody_a1e2811e4b3d0ea4e07e9fa933d6fda08}} 
+virtual void {\bfseries serialize\+Single\+Object} (class \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a66a55c268281f64e849851a929449ffd}\label{classbtRigidBody_a66a55c268281f64e849851a929449ffd}} 
+\hyperlink{classbtRigidBody_a66a55c268281f64e849851a929449ffd}{bt\+Rigid\+Body} (const \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info} \&construction\+Info)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} constructor using construction info \end{DoxyCompactList}\item 
+\hyperlink{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}{bt\+Rigid\+Body} (bt\+Scalar mass, \hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$motion\+State, bt\+Collision\+Shape $\ast$collision\+Shape, const bt\+Vector3 \&local\+Inertia=bt\+Vector3(0, 0, 0))
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a70f38cd1bb359db4992a374da778bac7}\label{classbtRigidBody_a70f38cd1bb359db4992a374da778bac7}} 
+void {\bfseries proceed\+To\+Transform} (const bt\+Transform \&new\+Trans)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}\label{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}} 
+void \hyperlink{classbtRigidBody_af7f9b40d0abcfe9927d2e9c011947cec}{predict\+Integrated\+Transform} (bt\+Scalar step, bt\+Transform \&predicted\+Transform)
+\begin{DoxyCompactList}\small\item\em continuous collision detection needs prediction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_a77b69b89ec3dfcd502e122cfaafdf4f6}\label{classbtRigidBody_a77b69b89ec3dfcd502e122cfaafdf4f6}} 
+void {\bfseries save\+Kinematic\+State} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a08f1a05a572e7ff53f3874bda43c75b9}\label{classbtRigidBody_a08f1a05a572e7ff53f3874bda43c75b9}} 
+void {\bfseries apply\+Gravity} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a5aedec73517fb7b9cddcbd72663e0ddc}\label{classbtRigidBody_a5aedec73517fb7b9cddcbd72663e0ddc}} 
+void {\bfseries set\+Gravity} (const bt\+Vector3 \&acceleration)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a081e31d62e12cca594466d1ae26082ac}\label{classbtRigidBody_a081e31d62e12cca594466d1ae26082ac}} 
+const bt\+Vector3 \& {\bfseries get\+Gravity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ace302f6d75db7e4cd64305dd4d20114b}\label{classbtRigidBody_ace302f6d75db7e4cd64305dd4d20114b}} 
+void {\bfseries set\+Damping} (bt\+Scalar lin\+\_\+damping, bt\+Scalar ang\+\_\+damping)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_abb2055b024d5f9262201a96482072c13}\label{classbtRigidBody_abb2055b024d5f9262201a96482072c13}} 
+bt\+Scalar {\bfseries get\+Linear\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4dc018caac250454251d3fb58f020892}\label{classbtRigidBody_a4dc018caac250454251d3fb58f020892}} 
+bt\+Scalar {\bfseries get\+Angular\+Damping} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a396bae2e385e6c4a8f31b2bedb513ac6}\label{classbtRigidBody_a396bae2e385e6c4a8f31b2bedb513ac6}} 
+bt\+Scalar {\bfseries get\+Linear\+Sleeping\+Threshold} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9c9e0b4a0c367af11e6ca82f4de4b539}\label{classbtRigidBody_a9c9e0b4a0c367af11e6ca82f4de4b539}} 
+bt\+Scalar {\bfseries get\+Angular\+Sleeping\+Threshold} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a3fecb8c50d734095f33e2c7624bfba2c}\label{classbtRigidBody_a3fecb8c50d734095f33e2c7624bfba2c}} 
+void {\bfseries apply\+Damping} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a09847b287e58981e6b7cfc825f514ab2}\label{classbtRigidBody_a09847b287e58981e6b7cfc825f514ab2}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Collision\+Shape $\ast$ {\bfseries get\+Collision\+Shape} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4c79924fbf05ebb79859758b650841b8}\label{classbtRigidBody_a4c79924fbf05ebb79859758b650841b8}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Collision\+Shape $\ast$ {\bfseries get\+Collision\+Shape} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a912b4a273bcd6fe9af25c47106db900c}\label{classbtRigidBody_a912b4a273bcd6fe9af25c47106db900c}} 
+void {\bfseries set\+Mass\+Props} (bt\+Scalar mass, const bt\+Vector3 \&inertia)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a39ea489339ebdc7c4e005e6b0b43fcca}\label{classbtRigidBody_a39ea489339ebdc7c4e005e6b0b43fcca}} 
+const bt\+Vector3 \& {\bfseries get\+Linear\+Factor} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a00cf3fa28987ffb77764e5bd3605e3ef}\label{classbtRigidBody_a00cf3fa28987ffb77764e5bd3605e3ef}} 
+void {\bfseries set\+Linear\+Factor} (const bt\+Vector3 \&linear\+Factor)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4c67acaeab4799ffda7a0d8a63df7ae6}\label{classbtRigidBody_a4c67acaeab4799ffda7a0d8a63df7ae6}} 
+bt\+Scalar {\bfseries get\+Inv\+Mass} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ab328d8f35b8c62a4ee0dc5f111b81b37}\label{classbtRigidBody_ab328d8f35b8c62a4ee0dc5f111b81b37}} 
+const bt\+Matrix3x3 \& {\bfseries get\+Inv\+Inertia\+Tensor\+World} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a16029bc5aabcbb33aaf7e6e6e819283a}\label{classbtRigidBody_a16029bc5aabcbb33aaf7e6e6e819283a}} 
+void {\bfseries integrate\+Velocities} (bt\+Scalar step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_adeaff2386513eeaaa138e0e3b3acca66}\label{classbtRigidBody_adeaff2386513eeaaa138e0e3b3acca66}} 
+void {\bfseries set\+Center\+Of\+Mass\+Transform} (const bt\+Transform \&xform)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a48478896407083f4ff64299e0c3c4a32}\label{classbtRigidBody_a48478896407083f4ff64299e0c3c4a32}} 
+void {\bfseries apply\+Central\+Force} (const bt\+Vector3 \&force)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aaeba73314c3a932d2a3f7b198eabf97c}\label{classbtRigidBody_aaeba73314c3a932d2a3f7b198eabf97c}} 
+const bt\+Vector3 \& {\bfseries get\+Total\+Force} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a6587c6d8add7e07c5cbb620303cecb5e}\label{classbtRigidBody_a6587c6d8add7e07c5cbb620303cecb5e}} 
+const bt\+Vector3 \& {\bfseries get\+Total\+Torque} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ae9099e39ca4e591acf1d28ec95a038b9}\label{classbtRigidBody_ae9099e39ca4e591acf1d28ec95a038b9}} 
+const bt\+Vector3 \& {\bfseries get\+Inv\+Inertia\+Diag\+Local} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac47e4f27b351e24ed180bb0fcfa5a51d}\label{classbtRigidBody_ac47e4f27b351e24ed180bb0fcfa5a51d}} 
+void {\bfseries set\+Inv\+Inertia\+Diag\+Local} (const bt\+Vector3 \&diag\+Inv\+Inertia)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8ed442345551ea2d4e4b30ec19597b69}\label{classbtRigidBody_a8ed442345551ea2d4e4b30ec19597b69}} 
+void {\bfseries set\+Sleeping\+Thresholds} (bt\+Scalar linear, bt\+Scalar angular)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aede3cf53474f4b367693b19871692b99}\label{classbtRigidBody_aede3cf53474f4b367693b19871692b99}} 
+void {\bfseries apply\+Torque} (const bt\+Vector3 \&torque)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_af016720c45cf7ccaf8701d81a28319d9}\label{classbtRigidBody_af016720c45cf7ccaf8701d81a28319d9}} 
+void {\bfseries apply\+Force} (const bt\+Vector3 \&force, const bt\+Vector3 \&rel\+\_\+pos)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a82f6590ea4fa13c359ae8809a5112ee7}\label{classbtRigidBody_a82f6590ea4fa13c359ae8809a5112ee7}} 
+void {\bfseries apply\+Central\+Impulse} (const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a0084ebc850f06cd043d70ee87e6a3457}\label{classbtRigidBody_a0084ebc850f06cd043d70ee87e6a3457}} 
+void {\bfseries apply\+Torque\+Impulse} (const bt\+Vector3 \&torque)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8274f89d9e6b8fe945282797bd25f377}\label{classbtRigidBody_a8274f89d9e6b8fe945282797bd25f377}} 
+void {\bfseries apply\+Impulse} (const bt\+Vector3 \&impulse, const bt\+Vector3 \&rel\+\_\+pos)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1ffe77aaa4d3712457aa8f9aa83f42a7}\label{classbtRigidBody_a1ffe77aaa4d3712457aa8f9aa83f42a7}} 
+void {\bfseries clear\+Forces} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aeb2880f17187c3f28b4a253423aa71d1}\label{classbtRigidBody_aeb2880f17187c3f28b4a253423aa71d1}} 
+void {\bfseries update\+Inertia\+Tensor} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aadd4ef35ebe3633314d04f09f91699ed}\label{classbtRigidBody_aadd4ef35ebe3633314d04f09f91699ed}} 
+const bt\+Vector3 \& {\bfseries get\+Center\+Of\+Mass\+Position} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a6d50e07777d473368d189cba7850a798}\label{classbtRigidBody_a6d50e07777d473368d189cba7850a798}} 
+\hyperlink{classbtQuaternion}{bt\+Quaternion} {\bfseries get\+Orientation} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a999bf363587ede881dbe239e7d1e9bee}\label{classbtRigidBody_a999bf363587ede881dbe239e7d1e9bee}} 
+const bt\+Transform \& {\bfseries get\+Center\+Of\+Mass\+Transform} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9a8c37d20a73d197e55a0a5ccc342815}\label{classbtRigidBody_a9a8c37d20a73d197e55a0a5ccc342815}} 
+const bt\+Vector3 \& {\bfseries get\+Linear\+Velocity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a0f6b08909d7eab1fc105608b10fe4b90}\label{classbtRigidBody_a0f6b08909d7eab1fc105608b10fe4b90}} 
+const bt\+Vector3 \& {\bfseries get\+Angular\+Velocity} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ad692042edc901425189cf1d067eebac6}\label{classbtRigidBody_ad692042edc901425189cf1d067eebac6}} 
+void {\bfseries set\+Linear\+Velocity} (const bt\+Vector3 \&lin\+\_\+vel)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac6e5f94e998150e37ca8962c851d10a8}\label{classbtRigidBody_ac6e5f94e998150e37ca8962c851d10a8}} 
+void {\bfseries set\+Angular\+Velocity} (const bt\+Vector3 \&ang\+\_\+vel)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1b4cd79f5c8ad9161737742eea9470f5}\label{classbtRigidBody_a1b4cd79f5c8ad9161737742eea9470f5}} 
+bt\+Vector3 {\bfseries get\+Velocity\+In\+Local\+Point} (const bt\+Vector3 \&rel\+\_\+pos) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aca945f8e257b617c5600e809f179a0bb}\label{classbtRigidBody_aca945f8e257b617c5600e809f179a0bb}} 
+void {\bfseries translate} (const bt\+Vector3 \&v)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a00efe4219a990718835e0a7ada5a2b5d}\label{classbtRigidBody_a00efe4219a990718835e0a7ada5a2b5d}} 
+void {\bfseries get\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8637d220d3002af281bdb81d5bedc1ba}\label{classbtRigidBody_a8637d220d3002af281bdb81d5bedc1ba}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Scalar {\bfseries compute\+Impulse\+Denominator} (const bt\+Vector3 \&pos, const bt\+Vector3 \&normal) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a18731fc59583c19e42b63a4e5d150d7c}\label{classbtRigidBody_a18731fc59583c19e42b63a4e5d150d7c}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bt\+Scalar {\bfseries compute\+Angular\+Impulse\+Denominator} (const bt\+Vector3 \&axis) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa48bf2e5bf090c613ad8e9aa605bc7df}\label{classbtRigidBody_aa48bf2e5bf090c613ad8e9aa605bc7df}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Deactivation} (bt\+Scalar time\+Step)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa2ccbd4474fe0edef483533943b5d666}\label{classbtRigidBody_aa2ccbd4474fe0edef483533943b5d666}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool {\bfseries wants\+Sleeping} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a7c6bbab3d998bb33d74272cca8c46375}\label{classbtRigidBody_a7c6bbab3d998bb33d74272cca8c46375}} 
+const bt\+Broadphase\+Proxy $\ast$ {\bfseries get\+Broadphase\+Proxy} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a505e4a8179302137cb72f47595404e89}\label{classbtRigidBody_a505e4a8179302137cb72f47595404e89}} 
+bt\+Broadphase\+Proxy $\ast$ {\bfseries get\+Broadphase\+Proxy} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a254399995032d1120492e419f588b28c}\label{classbtRigidBody_a254399995032d1120492e419f588b28c}} 
+void {\bfseries set\+New\+Broadphase\+Proxy} (bt\+Broadphase\+Proxy $\ast$broadphase\+Proxy)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2bbea712d9095f05ff3b031bbe4e6521}\label{classbtRigidBody_a2bbea712d9095f05ff3b031bbe4e6521}} 
+\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$ {\bfseries get\+Motion\+State} ()
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a5c1b92e131b5648386a7e399f2936df3}\label{classbtRigidBody_a5c1b92e131b5648386a7e399f2936df3}} 
+const \hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$ {\bfseries get\+Motion\+State} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ac8272055c40ba4bb794fc5f1cb105d54}\label{classbtRigidBody_ac8272055c40ba4bb794fc5f1cb105d54}} 
+void {\bfseries set\+Motion\+State} (\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$motion\+State)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa2061f3fd87043f2a3b8c68ee74847cb}\label{classbtRigidBody_aa2061f3fd87043f2a3b8c68ee74847cb}} 
+void {\bfseries set\+Angular\+Factor} (const bt\+Vector3 \&ang\+Fac)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_acf721bf585c46cf0243cbbda1fc4379d}\label{classbtRigidBody_acf721bf585c46cf0243cbbda1fc4379d}} 
+void {\bfseries set\+Angular\+Factor} (bt\+Scalar ang\+Fac)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ae61bd53cfe8b0987b42d30d470faaf09}\label{classbtRigidBody_ae61bd53cfe8b0987b42d30d470faaf09}} 
+const bt\+Vector3 \& {\bfseries get\+Angular\+Factor} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa8030ba8a47ea2c00c990bc4227e1ae2}\label{classbtRigidBody_aa8030ba8a47ea2c00c990bc4227e1ae2}} 
+bool {\bfseries is\+In\+World} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1c036bdfb71afc5b69b16d57c786cca3}\label{classbtRigidBody_a1c036bdfb71afc5b69b16d57c786cca3}} 
+virtual bool {\bfseries check\+Collide\+With\+Override} (const bt\+Collision\+Object $\ast$co) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a1c89df31d2a10f06cc81da0e4b573297}\label{classbtRigidBody_a1c89df31d2a10f06cc81da0e4b573297}} 
+void {\bfseries add\+Constraint\+Ref} (bt\+Typed\+Constraint $\ast$c)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a86e4bf13e7acee4be2c77ed470f44dbe}\label{classbtRigidBody_a86e4bf13e7acee4be2c77ed470f44dbe}} 
+void {\bfseries remove\+Constraint\+Ref} (bt\+Typed\+Constraint $\ast$c)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_abecb7d17ec15d9bec435f9fc7e5962fe}\label{classbtRigidBody_abecb7d17ec15d9bec435f9fc7e5962fe}} 
+bt\+Typed\+Constraint $\ast$ {\bfseries get\+Constraint\+Ref} (int index)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a868c95d4b4405876cf93d12942b66081}\label{classbtRigidBody_a868c95d4b4405876cf93d12942b66081}} 
+int {\bfseries get\+Num\+Constraint\+Refs} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2756c378b93acd3eb16ee27c183efe9d}\label{classbtRigidBody_a2756c378b93acd3eb16ee27c183efe9d}} 
+void {\bfseries set\+Flags} (int flags)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2ac6c5303690999eaf184882c147338b}\label{classbtRigidBody_a2ac6c5303690999eaf184882c147338b}} 
+int {\bfseries get\+Flags} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a82cb76832e357f3ed71996f6717d8064}\label{classbtRigidBody_a82cb76832e357f3ed71996f6717d8064}} 
+bt\+Vector3 {\bfseries compute\+Gyroscopic\+Force} (bt\+Scalar max\+Gyroscopic\+Force) const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_ae281b8937553e623e850d7b4568cae60}\label{classbtRigidBody_ae281b8937553e623e850d7b4568cae60}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtRigidBody_aa6d31dbce90301b2b78008a38dd0330d}\label{classbtRigidBody_aa6d31dbce90301b2b78008a38dd0330d}} 
+virtual const char $\ast$ \hyperlink{classbtRigidBody_aa6d31dbce90301b2b78008a38dd0330d}{serialize} (void $\ast$data\+Buffer, class \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_ae69696d696a798f2d2c65e3154e5530a}\label{classbtRigidBody_ae69696d696a798f2d2c65e3154e5530a}} 
+virtual void {\bfseries serialize\+Single\+Object} (class \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ \hyperlink{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}{upcast} (const bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a39c3becb4cec6c3c30359444f6f64420}\label{classbtRigidBody_a39c3becb4cec6c3c30359444f6f64420}} 
+static \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries upcast} (bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+static const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ \hyperlink{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}{upcast} (const bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a39c3becb4cec6c3c30359444f6f64420}\label{classbtRigidBody_a39c3becb4cec6c3c30359444f6f64420}} 
+static \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$ {\bfseries upcast} (bt\+Collision\+Object $\ast$col\+Obj)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a4673a548621e61ef66364a461ad21947}\label{classbtRigidBody_a4673a548621e61ef66364a461ad21947}} 
+int {\bfseries m\+\_\+contact\+Solver\+Type}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a322471bd51e8fd0a383a38a3611c7256}\label{classbtRigidBody_a322471bd51e8fd0a383a38a3611c7256}} 
+int {\bfseries m\+\_\+friction\+Solver\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a2b1b5fe723354ad55c1412e52372b053}\label{classbtRigidBody_a2b1b5fe723354ad55c1412e52372b053}} 
+{\bfseries A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D16} (bt\+Vector3 m\+\_\+delta\+Linear\+Velocity)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}\label{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}} 
+void \hyperlink{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}{setup\+Rigid\+Body} (const \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info} \&construction\+Info)
+\begin{DoxyCompactList}\small\item\em setup\+Rigid\+Body is only used internally by the constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtRigidBody_a2b1b5fe723354ad55c1412e52372b053}\label{classbtRigidBody_a2b1b5fe723354ad55c1412e52372b053}} 
+{\bfseries A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D16} (bt\+Vector3 m\+\_\+delta\+Linear\+Velocity)
+\item 
+\mbox{\Hypertarget{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}\label{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}} 
+void \hyperlink{classbtRigidBody_adaa57210b4f5388b63a11db376358dd0}{setup\+Rigid\+Body} (const \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info} \&construction\+Info)
+\begin{DoxyCompactList}\small\item\em setup\+Rigid\+Body is only used internally by the constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9572a43e28f91ababaa1e7f717ed8975}\label{classbtRigidBody_a9572a43e28f91ababaa1e7f717ed8975}} 
+bt\+Vector3 {\bfseries m\+\_\+delta\+Angular\+Velocity}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a8010986d82f1d721f5a50b2019cb5a80}\label{classbtRigidBody_a8010986d82f1d721f5a50b2019cb5a80}} 
+bt\+Vector3 {\bfseries m\+\_\+angular\+Factor}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_afbfac64b1739b84137ca1787e9ce8505}\label{classbtRigidBody_afbfac64b1739b84137ca1787e9ce8505}} 
+bt\+Vector3 {\bfseries m\+\_\+inv\+Mass}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a9b6d67f30ca4df6b7668ddd40797e42f}\label{classbtRigidBody_a9b6d67f30ca4df6b7668ddd40797e42f}} 
+bt\+Vector3 {\bfseries m\+\_\+push\+Velocity}
+\item 
+\mbox{\Hypertarget{classbtRigidBody_a518a768b3357fe5da25202c1ddc5b335}\label{classbtRigidBody_a518a768b3357fe5da25202c1ddc5b335}} 
+bt\+Vector3 {\bfseries m\+\_\+turn\+Velocity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} is the main class for rigid body objects. It is derived from bt\+Collision\+Object, so it keeps a pointer to a bt\+Collision\+Shape. It is recommended for performance and memory use to share bt\+Collision\+Shape objects whenever possible. There are 3 types of rigid bodies\+:
+\begin{DoxyItemize}
+\item A) Dynamic rigid bodies, with positive mass. Motion is controlled by rigid body dynamics.
+\item B) Fixed objects with zero mass. They are not moving (basically collision objects)
+\item C) Kinematic objects, which are objects without mass, but the user can move them. There is on-\/way interaction, and Bullet calculates a velocity based on the timestep and previous and current world transform. Bullet automatically deactivates dynamic rigid bodies, when the velocity is below a threshold for a given time. Deactivated (sleeping) rigid bodies don\textquotesingle{}t take any processing time, except a minor broadphase collision detection impact (to allow active objects to activate/wake up sleeping objects) 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}\label{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}} 
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{bt\+Rigid\+Body()}{btRigidBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bt\+Rigid\+Body\+::bt\+Rigid\+Body (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{mass,  }\item[{\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$}]{motion\+State,  }\item[{bt\+Collision\+Shape $\ast$}]{collision\+Shape,  }\item[{const bt\+Vector3 \&}]{local\+Inertia = {\ttfamily btVector3(0,0,0)} }\end{DoxyParamCaption})}
+
+\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} constructor for backwards compatibility. To specify friction (etc) during rigid body construction, please use the other constructor (using \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info}) \mbox{\Hypertarget{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}\label{classbtRigidBody_aac9b7d050bc87644d38e9ffe4fe4c5ab}} 
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{bt\+Rigid\+Body()}{btRigidBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bt\+Rigid\+Body\+::bt\+Rigid\+Body (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{mass,  }\item[{\hyperlink{classbtMotionState}{bt\+Motion\+State} $\ast$}]{motion\+State,  }\item[{bt\+Collision\+Shape $\ast$}]{collision\+Shape,  }\item[{const bt\+Vector3 \&}]{local\+Inertia = {\ttfamily btVector3(0,~0,~0)} }\end{DoxyParamCaption})}
+
+\hyperlink{classbtRigidBody}{bt\+Rigid\+Body} constructor for backwards compatibility. To specify friction (etc) during rigid body construction, please use the other constructor (using \hyperlink{structbtRigidBody_1_1btRigidBodyConstructionInfo}{bt\+Rigid\+Body\+Construction\+Info}) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtRigidBody_a16029bc5aabcbb33aaf7e6e6e819283a}\label{classbtRigidBody_a16029bc5aabcbb33aaf7e6e6e819283a}} 
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!integrate\+Velocities@{integrate\+Velocities}}
+\index{integrate\+Velocities@{integrate\+Velocities}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{integrate\+Velocities()}{integrateVelocities()}}
+{\footnotesize\ttfamily void bt\+Rigid\+Body\+::integrate\+Velocities (\begin{DoxyParamCaption}\item[{bt\+Scalar}]{step }\end{DoxyParamCaption})}
+
+clamp angular velocity. collision calculations will fail on higher angular velocities \mbox{\Hypertarget{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}\label{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}} 
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!upcast@{upcast}}
+\index{upcast@{upcast}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{upcast()}{upcast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body}$\ast$ bt\+Rigid\+Body\+::upcast (\begin{DoxyParamCaption}\item[{const bt\+Collision\+Object $\ast$}]{col\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+to keep collision detection and dynamics separate we don\textquotesingle{}t store a rigidbody pointer but a rigidbody is derived from bt\+Collision\+Object, so we can safely perform an upcast \mbox{\Hypertarget{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}\label{classbtRigidBody_a59077fce3d2efd193a3fd7d7de2c97e8}} 
+\index{bt\+Rigid\+Body@{bt\+Rigid\+Body}!upcast@{upcast}}
+\index{upcast@{upcast}!bt\+Rigid\+Body@{bt\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{upcast()}{upcast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const \hyperlink{classbtRigidBody}{bt\+Rigid\+Body}$\ast$ bt\+Rigid\+Body\+::upcast (\begin{DoxyParamCaption}\item[{const bt\+Collision\+Object $\ast$}]{col\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+to keep collision detection and dynamics separate we don\textquotesingle{}t store a rigidbody pointer but a rigidbody is derived from bt\+Collision\+Object, so we can safely perform an upcast 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Dynamics/bt\+Rigid\+Body.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Dynamics/\+Dynamics/bt\+Rigid\+Body.\+cpp\end{DoxyCompactItemize}

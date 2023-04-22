@@ -12,6 +12,7 @@
 #include "../Common/Action/ServoObjectsSystem.hpp"
 #include "../Common/Action/Tirette.hpp"
 #include "../Common/Action.Driver/AServoDriver.hpp"
+#include "../Common/Action/ServoUsingMotor.hpp"
 
 class OPOS6UL_ActionsExtended: public Actions {
 private:
@@ -51,6 +52,9 @@ private:
      */
     ServoObjectsSystem servos_;
 
+
+    ServoUsingMotor lanceurCerises_;
+
 public:
 
     /*!
@@ -63,17 +67,13 @@ public:
 
         AX12_SERVO_BRAS_G = 1000 + 7, //AX12
 
-        AX12_SERVO_ELEVATOR_R = 1000 + 4, //AX12
+        AX12_SERVO_ASPIRATION = 1000 + 52, //AX12
 
-        AX12_SERVO_ELEVATOR_L = 1000 + 6, //AX12
+        AX12_SERVO_FUNNY = 1000 + 51, //AX12
 
-        AX12_SERVO_ARM_R_TOP = 1000 + 182, //AX18
+        AX12_SERVO_TETE_ASPI = 1000 + 50, //AX12
 
-        AX12_SERVO_ARM_L_TOP = 1000 + 63, //AX18
-
-        AX12_SERVO_ARM_R_BOTTOM = 1000 + 52, //AX12
-
-        AX12_SERVO_ARM_L_BOTTOM = 1000 + 3, //AX12
+        AX18_SERVO_RUSSEL_LINKAGE = 1000 + 180, //AX18
 
         AX12_enumTypeEnd
     };
@@ -125,6 +125,14 @@ public:
     }
 
     /*!
+     * \brief Cette methode retourne l'objet lanceur.
+     * \return tirette_.
+     */
+    ServoUsingMotor& lanceur() {
+        return lanceurCerises_;
+    }
+
+    /*!
      * \brief Cette methode retourne l'objet sensors.
      * \return sensors_.
      */
@@ -153,18 +161,50 @@ public:
     }
 
     //--------------------------------------------------------------
-    //Actions 2021
+    //Actions 2023
     //--------------------------------------------------------------
+
+
+    void ax12_init()
+    {
+        ax12_bras_droit();
+        ax12_bras_gauche(-1);
+        ax12_bras_droit_init();
+        ax12_bras_gauche_init(-1);
+
+        aspiration_closed_init();
+
+        aspi_tete_init();
+        aspi_centre(-1);
+
+        funny_init(-1);
+
+    }
+
+
+    void turbine_aspiration(int activate) {
+        tirette().setGPIO(4, activate);
+    }
+
+    //0 à 127
+    void lancer_les_balles(int vitesse) {
+
+        lanceur().turn(vitesse);
+    }
+    void stopper_lanceur_de_balles() {
+
+        lanceur().stop();
+    }
+
     void releaseAll() {
 
         servos().release(AX12_SERVO_BRAS_D);
         servos().release(AX12_SERVO_BRAS_G);
-        servos().release(AX12_SERVO_ELEVATOR_L);
-        servos().release(AX12_SERVO_ELEVATOR_R);
-        servos().release(AX12_SERVO_ARM_L_BOTTOM);
-        servos().release(AX12_SERVO_ARM_R_BOTTOM);
-        servos().release(AX12_SERVO_ARM_L_TOP);
-        servos().release(AX12_SERVO_ARM_R_TOP);
+
+        servos().release(AX12_SERVO_ASPIRATION);
+        servos().release(AX12_SERVO_FUNNY);
+        servos().release(AX12_SERVO_TETE_ASPI);
+        servos().release(AX18_SERVO_RUSSEL_LINKAGE);
 
 //        for (int fooInt = 0; fooInt != AX12_enumTypeEnd; fooInt++) {
 //            ServoAx12Label foo = static_cast<ServoAx12Label>(fooInt);
@@ -185,108 +225,183 @@ public:
 //          }
     }
 
-    void ax12_bras_droit_init(int keep = 0, int speed = 1024) {
+    void ax12_bras_droit_init(int keep = 0, int speed = 1023) {
         servos().setSpeed(AX12_SERVO_BRAS_D, speed);
         servos().deploy(AX12_SERVO_BRAS_D, 815, keep);
     }
-    void ax12_bras_droit(int keep = 0, int speed = 1024) {
+    void ax12_bras_droit(int keep = 0, int speed = 1023) {
         servos().setSpeed(AX12_SERVO_BRAS_D, speed);
         servos().deploy(AX12_SERVO_BRAS_D, 480, keep);
     }
 
-    void ax12_bras_gauche_init(int keep = 0, int speed = 1024) {
+    void ax12_bras_gauche_init(int keep = 0, int speed = 1023) {
         servos().setSpeed(AX12_SERVO_BRAS_G, speed);
         servos().deploy(AX12_SERVO_BRAS_G, 205, keep);
     }
-    void ax12_bras_gauche(int keep = 0, int speed = 1024) {
+    void ax12_bras_gauche(int keep = 0, int speed = 1023) {
         servos().setSpeed(AX12_SERVO_BRAS_G, speed);
         servos().deploy(AX12_SERVO_BRAS_G, 512, keep);
     }
 
-    void elevator2022_init(int keep = 0, int speed = 1024) {
-//        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
-//        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 459, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 562, keep, speed);
+    void aspiration_closed_init(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 512, keep, speed);
+
     }
+    void aspiration_lacher_les_balles(int keep = -1, int speed = 200) {
 
-    //deploy full avec bras devant
-    void elevator2022_deploy(int keep = 0, int speed = 1024) {
-//        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
-//        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 766, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 254, keep, speed);
-    }
-
-    void elevator2022_niv1(int keep = 0, int speed = 1024) {
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 627, 0, speed);    //584
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 388, keep, speed);    //432
-    }
-
-    void elevator2022_niv2(int keep = 0, int speed = 1024) {
-
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 660, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 348, keep, speed);
-    }
-    void elevator2022_niv3(int keep = 0, int speed = 1024) {
-
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 734, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 274, keep, speed);
-    }
-
-    void arm_R_take(int keep = 0, int speed = 1024) {
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 463, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 266, keep, speed);
-    }
-
-    void arm_R_side_init(int keep = 0, int speed = 1024) {
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 575, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 141, keep, speed);
-    }
-
-    void arm_R_deploy1(int keep = 0, int speed = 1024) {
-
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 652, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
-    }
-    void arm_R_deploy2(int keep = 0, int speed = 1024) {
-
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 780, -1, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
-    }
-
-    void arm_R_deploy3(int keep = 0, int speed = 1024) {
-
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 635, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 380, keep, speed);
+        servos().setTorque(AX12_SERVO_ASPIRATION, 800);
+        servos().deployWithVelocity(AX12_SERVO_ASPIRATION, 615, keep, speed);
 
     }
 
-    void arm_L_take(int keep = 0, int speed = 1024) {
-        servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 539, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 784, keep, speed);
+    void funny_init(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX12_SERVO_FUNNY, 512, keep, speed);
+
     }
 
-    void arm_L_side_init(int keep = 0, int speed = 1024) {
-        servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 445, 0, speed);
-        servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 876, keep, speed);
+    void funny_action_deploy(int keep = 1000, int speed = 1023) {
+
+        servos().deployWithVelocity(AX12_SERVO_FUNNY, 680, keep, speed);
+
     }
 
-    void pump_R(int activate) {
-        tirette().setGPIO(4, activate);
+    void aspi_tete_init(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 512, keep, speed);
+
     }
 
-    void pump_R_electrov(int activate) {
-        tirette().setGPIO(5, activate);
+    void aspi_tete_gauche(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
+        //TODO torque 150
     }
 
-    void pump_L(int activate) {
-        tirette().setGPIO(6, activate);
+    void aspi_tete_droite(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX12_SERVO_TETE_ASPI, 430, keep, speed);
+        //TODO torque 150
     }
 
-    void pump_L_electrov(int activate) {
-        tirette().setGPIO(7, activate);
+    void aspi_centre(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 450, keep, speed);
+
     }
+
+    void aspi_droite(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 205, keep, speed);
+
+    }
+    void aspi_droite_full(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 105, keep, speed);
+
+    }
+
+    void aspi_gauche(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 688, keep, speed);
+
+    }
+    void aspi_gauche_full(int keep = 0, int speed = 150) {
+
+        servos().deployWithVelocity(AX18_SERVO_RUSSEL_LINKAGE, 788, keep, speed);
+
+    }
+
+
+
+
+    /*//2022
+     void elevator2022_init(int keep = 0, int speed = 1024) {
+     //        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
+     //        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 459, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 562, keep, speed);
+     }
+
+     //deploy full avec bras devant
+     void elevator2022_deploy(int keep = 0, int speed = 1024) {
+     //        servos().setSpeed(AX12_SERVO_ELEVATOR_L, speed);
+     //        servos().setSpeed(AX12_SERVO_ELEVATOR_R, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 766, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 254, keep, speed);
+     }
+
+     void elevator2022_niv1(int keep = 0, int speed = 1024) {
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 627, 0, speed);    //584
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 388, keep, speed);    //432
+     }
+
+     void elevator2022_niv2(int keep = 0, int speed = 1024) {
+
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 660, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 348, keep, speed);
+     }
+     void elevator2022_niv3(int keep = 0, int speed = 1024) {
+
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_L, 734, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ELEVATOR_R, 274, keep, speed);
+     }
+
+     void arm_R_take(int keep = 0, int speed = 1024) {
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 463, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 266, keep, speed);
+     }
+
+     void arm_R_side_init(int keep = 0, int speed = 1024) {
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 575, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 141, keep, speed);
+     }
+
+     void arm_R_deploy1(int keep = 0, int speed = 1024) {
+
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 652, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
+     }
+     void arm_R_deploy2(int keep = 0, int speed = 1024) {
+
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 780, -1, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 124, keep, speed);
+     }
+
+     void arm_R_deploy3(int keep = 0, int speed = 1024) {
+
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_TOP, 635, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_R_BOTTOM, 380, keep, speed);
+
+     }
+
+     void arm_L_take(int keep = 0, int speed = 1024) {
+     servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 539, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 784, keep, speed);
+     }
+
+     void arm_L_side_init(int keep = 0, int speed = 1024) {
+     servos().deployWithVelocity(AX12_SERVO_ARM_L_TOP, 445, 0, speed);
+     servos().deployWithVelocity(AX12_SERVO_ARM_L_BOTTOM, 876, keep, speed);
+     }
+
+     void pump_R(int activate) {
+     tirette().setGPIO(4, activate);
+     }
+
+     void pump_R_electrov(int activate) {
+     tirette().setGPIO(5, activate);
+     }
+
+     void pump_L(int activate) {
+     tirette().setGPIO(6, activate);
+     }
+
+     void pump_L_electrov(int activate) {
+     tirette().setGPIO(7, activate);
+     }
+     */
 
     /*
      void ax12_init() {

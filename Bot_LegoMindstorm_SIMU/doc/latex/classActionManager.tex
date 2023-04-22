@@ -1,0 +1,625 @@
+\hypertarget{classActionManager}{}\section{Action\+Manager Class Reference}
+\label{classActionManager}\index{Action\+Manager@{Action\+Manager}}
+
+
+\hyperlink{classActionManager}{Action\+Manager} is a singleton that manages all the actions. Normally you won\textquotesingle{}t need to use this singleton directly. 99\% of the cases you will use the \hyperlink{classNode}{Node} interface, which uses this singleton. But there are some cases where you might need to use this singleton. Examples\+:  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for Action\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classActionManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classActionManager_a3c3e47b867da96699e32647b847b9df5}{Action\+Manager} (void)
+\item 
+\hyperlink{classActionManager_aa9a417d77050aa7f351df4996cf727e3}{$\sim$\+Action\+Manager} (void)
+\item 
+void \hyperlink{classActionManager_a88568fe751ad6e412b375e34b5584173}{add\+Action} (\hyperlink{classAction}{Action} $\ast$action, \hyperlink{classNode}{Node} $\ast$target, bool paused)
+\item 
+void \hyperlink{classActionManager_afe1a1a647e7c0432781c5146030fce5e}{remove\+All\+Actions} ()
+\item 
+void \hyperlink{classActionManager_a09444b573711b9389e460f9a71837299}{remove\+All\+Actions\+From\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+void \hyperlink{classActionManager_a06b04334e6282eba060000694088c807}{remove\+Action} (\hyperlink{classAction}{Action} $\ast$action)
+\item 
+void \hyperlink{classActionManager_aceaf0328518eb5f8d1cf6cea71594ee4}{remove\+Action\+By\+Tag} (int tag, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+void \hyperlink{classActionManager_a2acfc347f4155ff6fc3e5261b09160a2}{remove\+All\+Actions\+By\+Tag} (int tag, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+void \hyperlink{classActionManager_aceccce766c59e57c201474ea7f121a67}{remove\+Actions\+By\+Flags} (unsigned int flags, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+\hyperlink{classAction}{Action} $\ast$ \hyperlink{classActionManager_abcc22187f785e996c04702afe161d383}{get\+Action\+By\+Tag} (int tag, const \hyperlink{classNode}{Node} $\ast$target) const
+\item 
+ssize\+\_\+t \hyperlink{classActionManager_add35fb2d5810bec63b59f432830746bc}{get\+Number\+Of\+Running\+Actions\+In\+Target} (const \hyperlink{classNode}{Node} $\ast$target) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t \hyperlink{classActionManager_a9c8575014bda8867759c63aa17c519c3}{number\+Of\+Running\+Actions\+In\+Target} (\hyperlink{classNode}{Node} $\ast$target) const
+\item 
+void \hyperlink{classActionManager_a321523c8720cd7e8a973d959e5fdebf9}{pause\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+void \hyperlink{classActionManager_ac65bf5b5a646ca46d2db9fdb5590a0ba}{resume\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \hyperlink{classActionManager_aa98a62956dd3f0c7dad23e2a3cee2361}{pause\+All\+Running\+Actions} ()
+\item 
+void \hyperlink{classActionManager_abf8edeb8d4d6454cc428b3569b15c9d9}{resume\+Targets} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&targets\+To\+Resume)
+\item 
+void \hyperlink{classActionManager_ab4f35fe52781cc9d972c89f8ab2381a9}{update} (float dt)
+\item 
+\hyperlink{classActionManager_a7d0c405d568795fba0c51f411e77b821}{Action\+Manager} ()
+\item 
+virtual \hyperlink{classActionManager_ad11fb012c44ddeb403559ec25744f463}{$\sim$\+Action\+Manager} ()
+\item 
+virtual void \hyperlink{classActionManager_a4293541c368e2e8cea16eb5240a2df9b}{add\+Action} (\hyperlink{classAction}{Action} $\ast$action, \hyperlink{classNode}{Node} $\ast$target, bool paused)
+\item 
+virtual void \hyperlink{classActionManager_ab55980ae7d5a8f211f0f7fc8d22123f3}{remove\+All\+Actions} ()
+\item 
+virtual void \hyperlink{classActionManager_ab258c22774156c41fad6e4526aadaa63}{remove\+All\+Actions\+From\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual void \hyperlink{classActionManager_ab564bd417def5a377a2010ae076dcc6d}{remove\+Action} (\hyperlink{classAction}{Action} $\ast$action)
+\item 
+virtual void \hyperlink{classActionManager_a69aa53f99fdfdc4777119fb4a415cf81}{remove\+Action\+By\+Tag} (int tag, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual void \hyperlink{classActionManager_ad505f0a5b1decdb589bd08eae388f812}{remove\+All\+Actions\+By\+Tag} (int tag, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual void \hyperlink{classActionManager_af30574d91d70035641890f5e8014ada4}{remove\+Actions\+By\+Flags} (unsigned int flags, \hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual \hyperlink{classAction}{Action} $\ast$ \hyperlink{classActionManager_a7897adc3525956bd342378d8e6674fa8}{get\+Action\+By\+Tag} (int tag, const \hyperlink{classNode}{Node} $\ast$target) const
+\item 
+virtual ssize\+\_\+t \hyperlink{classActionManager_a015a2782952a9f649a0cd4d454e82839}{get\+Number\+Of\+Running\+Actions\+In\+Target} (const \hyperlink{classNode}{Node} $\ast$target) const
+\item 
+virtual ssize\+\_\+t \hyperlink{classActionManager_a3c4f7527f61b3429bbdf92e1d56bb867}{get\+Number\+Of\+Running\+Actions} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t \hyperlink{classActionManager_a9c8575014bda8867759c63aa17c519c3}{number\+Of\+Running\+Actions\+In\+Target} (\hyperlink{classNode}{Node} $\ast$target) const
+\item 
+virtual size\+\_\+t \hyperlink{classActionManager_aa516eb2a5603e824ea95e6ca783cead0}{get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag} (const \hyperlink{classNode}{Node} $\ast$target, int tag)
+\item 
+virtual void \hyperlink{classActionManager_ad64ac670ed9229018f349741835c6509}{pause\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual void \hyperlink{classActionManager_ae36612c0692c514edafa0fce31a04ae1}{resume\+Target} (\hyperlink{classNode}{Node} $\ast$target)
+\item 
+virtual \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \hyperlink{classActionManager_a8414ff0c928dbf4cc41fef501215fe24}{pause\+All\+Running\+Actions} ()
+\item 
+virtual void \hyperlink{classActionManager_ab201024f51c441967bb97b9d5519b038}{resume\+Targets} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&targets\+To\+Resume)
+\item 
+virtual void \hyperlink{classActionManager_ab66795eadfb5765d7a93587ebd2eb00c}{update} (float dt)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionManager_a04e8cfbaa84f641816e069c920f21a77}\label{classActionManager_a04e8cfbaa84f641816e069c920f21a77}} 
+void {\bfseries remove\+Action\+At\+Index} (ssize\+\_\+t index, struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\item 
+\mbox{\Hypertarget{classActionManager_a4ae318342f03fde102a8b0336ba04bf7}\label{classActionManager_a4ae318342f03fde102a8b0336ba04bf7}} 
+void {\bfseries delete\+Hash\+Element} (struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\item 
+\mbox{\Hypertarget{classActionManager_a0dabc4984677c23f9c99e792a797d35e}\label{classActionManager_a0dabc4984677c23f9c99e792a797d35e}} 
+void {\bfseries action\+Alloc\+With\+Hash\+Element} (struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\item 
+\mbox{\Hypertarget{classActionManager_a04e8cfbaa84f641816e069c920f21a77}\label{classActionManager_a04e8cfbaa84f641816e069c920f21a77}} 
+void {\bfseries remove\+Action\+At\+Index} (ssize\+\_\+t index, struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\item 
+\mbox{\Hypertarget{classActionManager_a4ae318342f03fde102a8b0336ba04bf7}\label{classActionManager_a4ae318342f03fde102a8b0336ba04bf7}} 
+void {\bfseries delete\+Hash\+Element} (struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\item 
+\mbox{\Hypertarget{classActionManager_a0dabc4984677c23f9c99e792a797d35e}\label{classActionManager_a0dabc4984677c23f9c99e792a797d35e}} 
+void {\bfseries action\+Alloc\+With\+Hash\+Element} (struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$element)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionManager_a4ecb2c480aa03f0008a5fc4ce02d4116}\label{classActionManager_a4ecb2c480aa03f0008a5fc4ce02d4116}} 
+struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$ {\bfseries \+\_\+targets}
+\item 
+\mbox{\Hypertarget{classActionManager_aaa333e4b077cb7c136f5652e551582d3}\label{classActionManager_aaa333e4b077cb7c136f5652e551582d3}} 
+struct \hyperlink{struct__hashElement}{\+\_\+hash\+Element} $\ast$ {\bfseries \+\_\+current\+Target}
+\item 
+\mbox{\Hypertarget{classActionManager_a2bd8759a3fe91ac84392c419b53ec466}\label{classActionManager_a2bd8759a3fe91ac84392c419b53ec466}} 
+bool {\bfseries \+\_\+current\+Target\+Salvaged}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classActionManager}{Action\+Manager} is a singleton that manages all the actions. Normally you won\textquotesingle{}t need to use this singleton directly. 99\% of the cases you will use the \hyperlink{classNode}{Node} interface, which uses this singleton. But there are some cases where you might need to use this singleton. Examples\+: 
+
+
+\begin{DoxyItemize}
+\item When you want to run an action where the target is different from a \hyperlink{classNode}{Node}.
+\item When you want to pause / resume the actions.
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+v0.\+8 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classActionManager_a3c3e47b867da96699e32647b847b9df5}\label{classActionManager_a3c3e47b867da96699e32647b847b9df5}} 
+\index{Action\+Manager@{Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\index{Action\+Manager@{Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{Action\+Manager()}{ActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Manager\+::\+Action\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classActionManager_aa9a417d77050aa7f351df4996cf727e3}\label{classActionManager_aa9a417d77050aa7f351df4996cf727e3}} 
+\index{Action\+Manager@{Action\+Manager}!````~Action\+Manager@{$\sim$\+Action\+Manager}}
+\index{````~Action\+Manager@{$\sim$\+Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Manager()}{~ActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Manager\+::$\sim$\+Action\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+NA  NA \mbox{\Hypertarget{classActionManager_a7d0c405d568795fba0c51f411e77b821}\label{classActionManager_a7d0c405d568795fba0c51f411e77b821}} 
+\index{Action\+Manager@{Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\index{Action\+Manager@{Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{Action\+Manager()}{ActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Manager\+::\+Action\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classActionManager_ad11fb012c44ddeb403559ec25744f463}\label{classActionManager_ad11fb012c44ddeb403559ec25744f463}} 
+\index{Action\+Manager@{Action\+Manager}!````~Action\+Manager@{$\sim$\+Action\+Manager}}
+\index{````~Action\+Manager@{$\sim$\+Action\+Manager}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Manager()}{~ActionManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Action\+Manager\+::$\sim$\+Action\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionManager_a88568fe751ad6e412b375e34b5584173}\label{classActionManager_a88568fe751ad6e412b375e34b5584173}} 
+\index{Action\+Manager@{Action\+Manager}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{add\+Action()}{addAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::add\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+Adds an action with a target. If the target is already present, then the action will be added to the existing target. If the target is not present, a new instance of this target will be created either paused or not, and the action will be added to the newly created target. When the target is paused, the queued actions won\textquotesingle{}t be \textquotesingle{}ticked\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & A certain action. \\
+\hline
+{\em target} & The target which need to be added an action. \\
+\hline
+{\em paused} & Is the target paused or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_a4293541c368e2e8cea16eb5240a2df9b}\label{classActionManager_a4293541c368e2e8cea16eb5240a2df9b}} 
+\index{Action\+Manager@{Action\+Manager}!add\+Action@{add\+Action}}
+\index{add\+Action@{add\+Action}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{add\+Action()}{addAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::add\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{bool}]{paused }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds an action with a target. If the target is already present, then the action will be added to the existing target. If the target is not present, a new instance of this target will be created either paused or not, and the action will be added to the newly created target. When the target is paused, the queued actions won\textquotesingle{}t be \textquotesingle{}ticked\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & A certain action. \\
+\hline
+{\em target} & The target which need to be added an action. \\
+\hline
+{\em paused} & Is the target paused or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_abcc22187f785e996c04702afe161d383}\label{classActionManager_abcc22187f785e996c04702afe161d383}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Action\+By\+Tag@{get\+Action\+By\+Tag}}
+\index{get\+Action\+By\+Tag@{get\+Action\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Action\+By\+Tag()}{getActionByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAction}{Action} $\ast$ Action\+Manager\+::get\+Action\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{const \hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const}
+
+Gets an action given its tag an a target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The action\textquotesingle{}s tag. \\
+\hline
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classAction}{Action} the with the given tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_a7897adc3525956bd342378d8e6674fa8}\label{classActionManager_a7897adc3525956bd342378d8e6674fa8}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Action\+By\+Tag@{get\+Action\+By\+Tag}}
+\index{get\+Action\+By\+Tag@{get\+Action\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Action\+By\+Tag()}{getActionByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAction}{Action}$\ast$ Action\+Manager\+::get\+Action\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{const \hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets an action given its tag an a target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The action\textquotesingle{}s tag. \\
+\hline
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classAction}{Action} the with the given tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_a3c4f7527f61b3429bbdf92e1d56bb867}\label{classActionManager_a3c4f7527f61b3429bbdf92e1d56bb867}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Number\+Of\+Running\+Actions@{get\+Number\+Of\+Running\+Actions}}
+\index{get\+Number\+Of\+Running\+Actions@{get\+Number\+Of\+Running\+Actions}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Running\+Actions()}{getNumberOfRunningActions()}}
+{\footnotesize\ttfamily ssize\+\_\+t Action\+Manager\+::get\+Number\+Of\+Running\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the numbers of actions that are running in all targets. \begin{DoxyReturn}{Returns}
+The numbers of actions that are running in all target.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_add35fb2d5810bec63b59f432830746bc}\label{classActionManager_add35fb2d5810bec63b59f432830746bc}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Number\+Of\+Running\+Actions\+In\+Target@{get\+Number\+Of\+Running\+Actions\+In\+Target}}
+\index{get\+Number\+Of\+Running\+Actions\+In\+Target@{get\+Number\+Of\+Running\+Actions\+In\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Running\+Actions\+In\+Target()}{getNumberOfRunningActionsInTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Action\+Manager\+::get\+Number\+Of\+Running\+Actions\+In\+Target (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const}
+
+Returns the numbers of actions that are running in a certain target. Composable actions are counted as 1 action. Example\+:
+\begin{DoxyItemize}
+\item If you are running 1 \hyperlink{classSequence}{Sequence} of 7 actions, it will return 1.
+\item If you are running 7 Sequences of 2 actions, it will return 7.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The numbers of actions that are running in a certain target.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_a015a2782952a9f649a0cd4d454e82839}\label{classActionManager_a015a2782952a9f649a0cd4d454e82839}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Number\+Of\+Running\+Actions\+In\+Target@{get\+Number\+Of\+Running\+Actions\+In\+Target}}
+\index{get\+Number\+Of\+Running\+Actions\+In\+Target@{get\+Number\+Of\+Running\+Actions\+In\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Running\+Actions\+In\+Target()}{getNumberOfRunningActionsInTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t Action\+Manager\+::get\+Number\+Of\+Running\+Actions\+In\+Target (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the numbers of actions that are running in a certain target. Composable actions are counted as 1 action. Example\+:
+\begin{DoxyItemize}
+\item If you are running 1 \hyperlink{classSequence}{Sequence} of 7 actions, it will return 1.
+\item If you are running 7 Sequences of 2 actions, it will return 7.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The numbers of actions that are running in a certain target.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_aa516eb2a5603e824ea95e6ca783cead0}\label{classActionManager_aa516eb2a5603e824ea95e6ca783cead0}} 
+\index{Action\+Manager@{Action\+Manager}!get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag@{get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag}}
+\index{get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag@{get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag()}{getNumberOfRunningActionsInTargetByTag()}}
+{\footnotesize\ttfamily size\+\_\+t Action\+Manager\+::get\+Number\+Of\+Running\+Actions\+In\+Target\+By\+Tag (\begin{DoxyParamCaption}\item[{const \hyperlink{classNode}{Node} $\ast$}]{target,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the numbers of actions that are running in a certain target with a specific tag. Like get\+Number\+Of\+Running\+Actions\+In\+Target Composable actions are counted as 1 action. Example\+:
+\begin{DoxyItemize}
+\item If you are running 1 \hyperlink{classSequence}{Sequence} of 7 actions, it will return 1.
+\item If you are running 7 Sequences of 2 actions, it will return 7.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+{\em tag} & Tag that will be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The numbers of actions that are running in a certain target with a specific tag. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classActionManager_add35fb2d5810bec63b59f432830746bc}{get\+Number\+Of\+Running\+Actions\+In\+Target}  NA 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classActionManager_a9c8575014bda8867759c63aa17c519c3}\label{classActionManager_a9c8575014bda8867759c63aa17c519c3}} 
+\index{Action\+Manager@{Action\+Manager}!number\+Of\+Running\+Actions\+In\+Target@{number\+Of\+Running\+Actions\+In\+Target}}
+\index{number\+Of\+Running\+Actions\+In\+Target@{number\+Of\+Running\+Actions\+In\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{number\+Of\+Running\+Actions\+In\+Target()}{numberOfRunningActionsInTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t Action\+Manager\+::number\+Of\+Running\+Actions\+In\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000017}{Deprecated}]Use \hyperlink{classActionManager_add35fb2d5810bec63b59f432830746bc}{get\+Number\+Of\+Running\+Actions\+In\+Target()} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classActionManager_a9c8575014bda8867759c63aa17c519c3}\label{classActionManager_a9c8575014bda8867759c63aa17c519c3}} 
+\index{Action\+Manager@{Action\+Manager}!number\+Of\+Running\+Actions\+In\+Target@{number\+Of\+Running\+Actions\+In\+Target}}
+\index{number\+Of\+Running\+Actions\+In\+Target@{number\+Of\+Running\+Actions\+In\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{number\+Of\+Running\+Actions\+In\+Target()}{numberOfRunningActionsInTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t Action\+Manager\+::number\+Of\+Running\+Actions\+In\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000247}{Deprecated}]Use \hyperlink{classActionManager_add35fb2d5810bec63b59f432830746bc}{get\+Number\+Of\+Running\+Actions\+In\+Target()} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classActionManager_aa98a62956dd3f0c7dad23e2a3cee2361}\label{classActionManager_aa98a62956dd3f0c7dad23e2a3cee2361}} 
+\index{Action\+Manager@{Action\+Manager}!pause\+All\+Running\+Actions@{pause\+All\+Running\+Actions}}
+\index{pause\+All\+Running\+Actions@{pause\+All\+Running\+Actions}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{pause\+All\+Running\+Actions()}{pauseAllRunningActions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ Action\+Manager\+::pause\+All\+Running\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pauses all running actions, returning a \hyperlink{protocollist-p}{list} of targets whose actions were paused.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{protocollist-p}{list} of targets whose actions were paused. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_a8414ff0c928dbf4cc41fef501215fe24}\label{classActionManager_a8414ff0c928dbf4cc41fef501215fe24}} 
+\index{Action\+Manager@{Action\+Manager}!pause\+All\+Running\+Actions@{pause\+All\+Running\+Actions}}
+\index{pause\+All\+Running\+Actions@{pause\+All\+Running\+Actions}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{pause\+All\+Running\+Actions()}{pauseAllRunningActions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classVector}{Vector}$<$\hyperlink{classNode}{Node}$\ast$$>$ Action\+Manager\+::pause\+All\+Running\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pauses all running actions, returning a \hyperlink{protocollist-p}{list} of targets whose actions were paused.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{protocollist-p}{list} of targets whose actions were paused. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionManager_a321523c8720cd7e8a973d959e5fdebf9}\label{classActionManager_a321523c8720cd7e8a973d959e5fdebf9}} 
+\index{Action\+Manager@{Action\+Manager}!pause\+Target@{pause\+Target}}
+\index{pause\+Target@{pause\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{pause\+Target()}{pauseTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::pause\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Pauses the target\+: all running actions and newly added actions will be paused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ad64ac670ed9229018f349741835c6509}\label{classActionManager_ad64ac670ed9229018f349741835c6509}} 
+\index{Action\+Manager@{Action\+Manager}!pause\+Target@{pause\+Target}}
+\index{pause\+Target@{pause\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{pause\+Target()}{pauseTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::pause\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pauses the target\+: all running actions and newly added actions will be paused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_a06b04334e6282eba060000694088c807}\label{classActionManager_a06b04334e6282eba060000694088c807}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Action@{remove\+Action}}
+\index{remove\+Action@{remove\+Action}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Action()}{removeAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action }\end{DoxyParamCaption})}
+
+Removes an action given an action reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ab564bd417def5a377a2010ae076dcc6d}\label{classActionManager_ab564bd417def5a377a2010ae076dcc6d}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Action@{remove\+Action}}
+\index{remove\+Action@{remove\+Action}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Action()}{removeAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+Action (\begin{DoxyParamCaption}\item[{\hyperlink{classAction}{Action} $\ast$}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes an action given an action reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_aceaf0328518eb5f8d1cf6cea71594ee4}\label{classActionManager_aceaf0328518eb5f8d1cf6cea71594ee4}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Action\+By\+Tag@{remove\+Action\+By\+Tag}}
+\index{remove\+Action\+By\+Tag@{remove\+Action\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Action\+By\+Tag()}{removeActionByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+Action\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Removes an action given its tag and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The action\textquotesingle{}s tag. \\
+\hline
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_a69aa53f99fdfdc4777119fb4a415cf81}\label{classActionManager_a69aa53f99fdfdc4777119fb4a415cf81}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Action\+By\+Tag@{remove\+Action\+By\+Tag}}
+\index{remove\+Action\+By\+Tag@{remove\+Action\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Action\+By\+Tag()}{removeActionByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+Action\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes an action given its tag and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The action\textquotesingle{}s tag. \\
+\hline
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_aceccce766c59e57c201474ea7f121a67}\label{classActionManager_aceccce766c59e57c201474ea7f121a67}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Actions\+By\+Flags@{remove\+Actions\+By\+Flags}}
+\index{remove\+Actions\+By\+Flags@{remove\+Actions\+By\+Flags}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Actions\+By\+Flags()}{removeActionsByFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+Actions\+By\+Flags (\begin{DoxyParamCaption}\item[{unsigned int}]{flags,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Removes all actions matching at least one bit in flags and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & The flag field to match the actions\textquotesingle{} flags based on bitwise A\+ND. \\
+\hline
+{\em target} & A certain target.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_af30574d91d70035641890f5e8014ada4}\label{classActionManager_af30574d91d70035641890f5e8014ada4}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+Actions\+By\+Flags@{remove\+Actions\+By\+Flags}}
+\index{remove\+Actions\+By\+Flags@{remove\+Actions\+By\+Flags}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Actions\+By\+Flags()}{removeActionsByFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+Actions\+By\+Flags (\begin{DoxyParamCaption}\item[{unsigned int}]{flags,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all actions matching at least one bit in flags and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & The flag field to match the actions\textquotesingle{} flags based on bitwise A\+ND. \\
+\hline
+{\em target} & A certain target.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_afe1a1a647e7c0432781c5146030fce5e}\label{classActionManager_afe1a1a647e7c0432781c5146030fce5e}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions@{remove\+All\+Actions}}
+\index{remove\+All\+Actions@{remove\+All\+Actions}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions()}{removeAllActions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+All\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Removes all actions from all the targets. \mbox{\Hypertarget{classActionManager_ab55980ae7d5a8f211f0f7fc8d22123f3}\label{classActionManager_ab55980ae7d5a8f211f0f7fc8d22123f3}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions@{remove\+All\+Actions}}
+\index{remove\+All\+Actions@{remove\+All\+Actions}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions()}{removeAllActions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+All\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all actions from all the targets. \mbox{\Hypertarget{classActionManager_a2acfc347f4155ff6fc3e5261b09160a2}\label{classActionManager_a2acfc347f4155ff6fc3e5261b09160a2}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions\+By\+Tag@{remove\+All\+Actions\+By\+Tag}}
+\index{remove\+All\+Actions\+By\+Tag@{remove\+All\+Actions\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions\+By\+Tag()}{removeAllActionsByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+All\+Actions\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Removes all actions given its tag and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The actions\textquotesingle{} tag. \\
+\hline
+{\em target} & A certain target.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ad505f0a5b1decdb589bd08eae388f812}\label{classActionManager_ad505f0a5b1decdb589bd08eae388f812}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions\+By\+Tag@{remove\+All\+Actions\+By\+Tag}}
+\index{remove\+All\+Actions\+By\+Tag@{remove\+All\+Actions\+By\+Tag}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions\+By\+Tag()}{removeAllActionsByTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+All\+Actions\+By\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag,  }\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all actions given its tag and the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The actions\textquotesingle{} tag. \\
+\hline
+{\em target} & A certain target.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_a09444b573711b9389e460f9a71837299}\label{classActionManager_a09444b573711b9389e460f9a71837299}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions\+From\+Target@{remove\+All\+Actions\+From\+Target}}
+\index{remove\+All\+Actions\+From\+Target@{remove\+All\+Actions\+From\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions\+From\+Target()}{removeAllActionsFromTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::remove\+All\+Actions\+From\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Removes all actions from a certain target. All the actions that belongs to the target will be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ab258c22774156c41fad6e4526aadaa63}\label{classActionManager_ab258c22774156c41fad6e4526aadaa63}} 
+\index{Action\+Manager@{Action\+Manager}!remove\+All\+Actions\+From\+Target@{remove\+All\+Actions\+From\+Target}}
+\index{remove\+All\+Actions\+From\+Target@{remove\+All\+Actions\+From\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{remove\+All\+Actions\+From\+Target()}{removeAllActionsFromTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::remove\+All\+Actions\+From\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes all actions from a certain target. All the actions that belongs to the target will be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ac65bf5b5a646ca46d2db9fdb5590a0ba}\label{classActionManager_ac65bf5b5a646ca46d2db9fdb5590a0ba}} 
+\index{Action\+Manager@{Action\+Manager}!resume\+Target@{resume\+Target}}
+\index{resume\+Target@{resume\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{resume\+Target()}{resumeTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::resume\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Resumes the target. All queued actions will be resumed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ae36612c0692c514edafa0fce31a04ae1}\label{classActionManager_ae36612c0692c514edafa0fce31a04ae1}} 
+\index{Action\+Manager@{Action\+Manager}!resume\+Target@{resume\+Target}}
+\index{resume\+Target@{resume\+Target}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{resume\+Target()}{resumeTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::resume\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Resumes the target. All queued actions will be resumed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_abf8edeb8d4d6454cc428b3569b15c9d9}\label{classActionManager_abf8edeb8d4d6454cc428b3569b15c9d9}} 
+\index{Action\+Manager@{Action\+Manager}!resume\+Targets@{resume\+Targets}}
+\index{resume\+Targets@{resume\+Targets}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{resume\+Targets()}{resumeTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::resume\+Targets (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&}]{targets\+To\+Resume }\end{DoxyParamCaption})}
+
+Resume a set of targets (convenience function to reverse a pause\+All\+Running\+Actions call).
+
+
+\begin{DoxyParams}{Parameters}
+{\em targets\+To\+Resume} & A set of targets need to be resumed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ab201024f51c441967bb97b9d5519b038}\label{classActionManager_ab201024f51c441967bb97b9d5519b038}} 
+\index{Action\+Manager@{Action\+Manager}!resume\+Targets@{resume\+Targets}}
+\index{resume\+Targets@{resume\+Targets}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{resume\+Targets()}{resumeTargets()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::resume\+Targets (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$$>$ \&}]{targets\+To\+Resume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Resume a set of targets (convenience function to reverse a pause\+All\+Running\+Actions call).
+
+
+\begin{DoxyParams}{Parameters}
+{\em targets\+To\+Resume} & A set of targets need to be resumed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ab4f35fe52781cc9d972c89f8ab2381a9}\label{classActionManager_ab4f35fe52781cc9d972c89f8ab2381a9}} 
+\index{Action\+Manager@{Action\+Manager}!update@{update}}
+\index{update@{update}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Manager\+::update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+Main loop of \hyperlink{classActionManager}{Action\+Manager}. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & In seconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionManager_ab66795eadfb5765d7a93587ebd2eb00c}\label{classActionManager_ab66795eadfb5765d7a93587ebd2eb00c}} 
+\index{Action\+Manager@{Action\+Manager}!update@{update}}
+\index{update@{update}!Action\+Manager@{Action\+Manager}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Manager\+::update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Main loop of \hyperlink{classActionManager}{Action\+Manager}. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Manager.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Manager.\+cpp\end{DoxyCompactItemize}

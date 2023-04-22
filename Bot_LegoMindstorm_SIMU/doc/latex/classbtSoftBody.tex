@@ -1,0 +1,654 @@
+\hypertarget{classbtSoftBody}{}\section{bt\+Soft\+Body Class Reference}
+\label{classbtSoftBody}\index{bt\+Soft\+Body@{bt\+Soft\+Body}}
+
+
+{\ttfamily \#include $<$bt\+Soft\+Body.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Soft\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classbtSoftBody__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtSoftBody__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtSoftBody_1_1AJoint}{A\+Joint}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Anchor}{Anchor}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Body}{Body}
+\item 
+struct \hyperlink{structbtSoftBody_1_1CJoint}{C\+Joint}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Cluster}{Cluster}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Config}{Config}
+\item 
+struct \hyperlink{structbtSoftBody_1_1eAeroModel}{e\+Aero\+Model}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1eAeroModel}{e\+Aero\+Model} \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1eFeature}{e\+Feature}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1eFeature}{e\+Feature} \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1Element}{Element}
+\item 
+struct \hyperlink{structbtSoftBody_1_1ePSolver}{e\+P\+Solver}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1ePSolver}{e\+P\+Solver} \+: positions solvers \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1eSolverPresets}{e\+Solver\+Presets}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1eSolverPresets}{e\+Solver\+Presets} \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1eVSolver}{e\+V\+Solver}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1eVSolver}{e\+V\+Solver} \+: velocities solvers \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1Face}{Face}
+\item 
+struct \hyperlink{structbtSoftBody_1_1fCollision}{f\+Collision}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1fCollision}{f\+Collision} \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1Feature}{Feature}
+\item 
+struct \hyperlink{structbtSoftBody_1_1fMaterial}{f\+Material}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1fMaterial}{f\+Material} \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1ImplicitFn}{Implicit\+Fn}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Impulse}{Impulse}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Joint}{Joint}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Link}{Link}
+\item 
+struct \hyperlink{structbtSoftBody_1_1LJoint}{L\+Joint}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Material}{Material}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Node}{Node}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Note}{Note}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Pose}{Pose}
+\item 
+struct \hyperlink{structbtSoftBody_1_1RayFromToCaster}{Ray\+From\+To\+Caster}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structbtSoftBody_1_1RayFromToCaster}{Ray\+From\+To\+Caster} takes a ray from, ray to (instead of direction!) \end{DoxyCompactList}\item 
+struct \hyperlink{structbtSoftBody_1_1RContact}{R\+Contact}
+\item 
+struct \hyperlink{structbtSoftBody_1_1SContact}{S\+Contact}
+\item 
+struct \hyperlink{structbtSoftBody_1_1sCti}{s\+Cti}
+\item 
+struct \hyperlink{structbtSoftBody_1_1sMedium}{s\+Medium}
+\item 
+struct \hyperlink{structbtSoftBody_1_1SolverState}{Solver\+State}
+\item 
+struct \hyperlink{structbtSoftBody_1_1sRayCast}{s\+Ray\+Cast}
+\item 
+struct \hyperlink{structbtSoftBody_1_1Tetra}{Tetra}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a0f0ddd58ae989fdf6b725324860a7759}\label{classbtSoftBody_a0f0ddd58ae989fdf6b725324860a7759}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1eVSolver_ad6a7083f91529d75cab91506cd63e088}{e\+V\+Solver\+::\+\_\+} $>$ {\bfseries t\+V\+Solver\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad5509369a941c46766748a84e4f5852c}\label{classbtSoftBody_ad5509369a941c46766748a84e4f5852c}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1ePSolver_a5d6ab41a09da7333bc2047b4ea14bf86}{e\+P\+Solver\+::\+\_\+} $>$ {\bfseries t\+P\+Solver\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afeb46b2922c843f33480c7f297eb5983}\label{classbtSoftBody_afeb46b2922c843f33480c7f297eb5983}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Scalar $>$ {\bfseries t\+Scalar\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8a258d7e5f9bb847ed754e5aa49e6a0e}\label{classbtSoftBody_a8a258d7e5f9bb847ed754e5aa49e6a0e}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bt\+Vector3 $>$ {\bfseries t\+Vector3\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac4e94d9639e8182fb9dab9ecfc73f500}\label{classbtSoftBody_ac4e94d9639e8182fb9dab9ecfc73f500}} 
+typedef void($\ast$ {\bfseries psolver\+\_\+t}) (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$, bt\+Scalar, bt\+Scalar)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_adc9c596fcddd86fe0f48d659a741513f}\label{classbtSoftBody_adc9c596fcddd86fe0f48d659a741513f}} 
+typedef void($\ast$ {\bfseries vsolver\+\_\+t}) (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$, bt\+Scalar)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aea094df073f04d79842b3731c64f8640}\label{classbtSoftBody_aea094df073f04d79842b3731c64f8640}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$ $>$ {\bfseries t\+Cluster\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_acad78fbeeb5f7724e91ff47e08f9ac5f}\label{classbtSoftBody_acad78fbeeb5f7724e91ff47e08f9ac5f}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Note}{Note} $>$ {\bfseries t\+Note\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8d19c9374c72022fc479c07e320aa2d4}\label{classbtSoftBody_a8d19c9374c72022fc479c07e320aa2d4}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Node}{Node} $>$ {\bfseries t\+Node\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac257aa97c9ff3e1abf09e4a7f89a7cfa}\label{classbtSoftBody_ac257aa97c9ff3e1abf09e4a7f89a7cfa}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtDbvtNode}{bt\+Dbvt\+Node} $\ast$ $>$ {\bfseries t\+Leaf\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a61dcb1cc5b3525c8e236ad12f15e2f68}\label{classbtSoftBody_a61dcb1cc5b3525c8e236ad12f15e2f68}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Link}{Link} $>$ {\bfseries t\+Link\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3cf3ffb65664de7a237e8ffe675ce38a}\label{classbtSoftBody_a3cf3ffb65664de7a237e8ffe675ce38a}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Face}{Face} $>$ {\bfseries t\+Face\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a2368a2f83a0418cccd30d227f41365d3}\label{classbtSoftBody_a2368a2f83a0418cccd30d227f41365d3}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Tetra}{Tetra} $>$ {\bfseries t\+Tetra\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa190e998c906fa88144c46b8f63c5db4}\label{classbtSoftBody_aa190e998c906fa88144c46b8f63c5db4}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Anchor}{Anchor} $>$ {\bfseries t\+Anchor\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a34792e0b100695d18cb1515cb93b003e}\label{classbtSoftBody_a34792e0b100695d18cb1515cb93b003e}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1RContact}{R\+Contact} $>$ {\bfseries t\+R\+Contact\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a29c71d52807c88c4312d77c50b800c20}\label{classbtSoftBody_a29c71d52807c88c4312d77c50b800c20}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1SContact}{S\+Contact} $>$ {\bfseries t\+S\+Contact\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa1438bae84f7b5825049505cf4dfb4ae}\label{classbtSoftBody_aa1438bae84f7b5825049505cf4dfb4ae}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$ $>$ {\bfseries t\+Material\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9801f65660250b5bee98bdadba7ac8e3}\label{classbtSoftBody_a9801f65660250b5bee98bdadba7ac8e3}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{structbtSoftBody_1_1Joint}{Joint} $\ast$ $>$ {\bfseries t\+Joint\+Array}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aaac77ad4d02466d6905fc94ecb11fa41}\label{classbtSoftBody_aaac77ad4d02466d6905fc94ecb11fa41}} 
+typedef \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$ $>$ {\bfseries t\+Soft\+Body\+Array}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a842480e0f75b82a50f0e5e606e2ac40b}\label{classbtSoftBody_a842480e0f75b82a50f0e5e606e2ac40b}} 
+\hyperlink{classbtSoftBody_a842480e0f75b82a50f0e5e606e2ac40b}{bt\+Soft\+Body} (\hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} $\ast$world\+Info, int node\+\_\+count, const bt\+Vector3 $\ast$x, const bt\+Scalar $\ast$m)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbtSoftBody}{bt\+Soft\+Body} implementation by Nathanael Presson \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSoftBody_a63dc6650741946528320f46770e20519}\label{classbtSoftBody_a63dc6650741946528320f46770e20519}} 
+{\bfseries bt\+Soft\+Body} (\hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} $\ast$world\+Info)
+\item 
+void \hyperlink{classbtSoftBody_ae07c09d9c2937897c3690c1a3970bf61}{init\+Defaults} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a306c96275bd2811b98ec5f9f3849e6f6}\label{classbtSoftBody_a306c96275bd2811b98ec5f9f3849e6f6}} 
+\hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} $\ast$ {\bfseries get\+World\+Info} ()
+\item 
+virtual void \hyperlink{classbtSoftBody_aced0f5421eeb1491a3fd77bb91e2e5af}{set\+Collision\+Shape} (bt\+Collision\+Shape $\ast$collision\+Shape)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a041724d78e504947eac03c41be20f27f}\label{classbtSoftBody_a041724d78e504947eac03c41be20f27f}} 
+bool {\bfseries check\+Link} (int node0, int node1) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_af7cbb16591dbca6bf48713a1162be140}\label{classbtSoftBody_af7cbb16591dbca6bf48713a1162be140}} 
+bool {\bfseries check\+Link} (const \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node0, const \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node1) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a0e5163f28d6ccbfde183b35b23293046}\label{classbtSoftBody_a0e5163f28d6ccbfde183b35b23293046}} 
+bool {\bfseries check\+Face} (int node0, int node1, int node2) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9f982578b7de055039a75e5904152b6d}\label{classbtSoftBody_a9f982578b7de055039a75e5904152b6d}} 
+\hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$ {\bfseries append\+Material} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa672f32eb59763f5175c7f823615db98}\label{classbtSoftBody_aa672f32eb59763f5175c7f823615db98}} 
+void {\bfseries append\+Note} (const char $\ast$text, const bt\+Vector3 \&o, const \hyperlink{classbtVector4}{bt\+Vector4} \&c=\hyperlink{classbtVector4}{bt\+Vector4}(1, 0, 0, 0), \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$n0=0, \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$n1=0, \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$n2=0, \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$n3=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a5c4f5428c421191e55babc34b4672924}\label{classbtSoftBody_a5c4f5428c421191e55babc34b4672924}} 
+void {\bfseries append\+Note} (const char $\ast$text, const bt\+Vector3 \&o, \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$feature)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa71ccf539cb5b4e79d6b07a6f503af65}\label{classbtSoftBody_aa71ccf539cb5b4e79d6b07a6f503af65}} 
+void {\bfseries append\+Note} (const char $\ast$text, const bt\+Vector3 \&o, \hyperlink{structbtSoftBody_1_1Link}{Link} $\ast$feature)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a15285f0ac6eb1d24a25b58cd05eefb39}\label{classbtSoftBody_a15285f0ac6eb1d24a25b58cd05eefb39}} 
+void {\bfseries append\+Note} (const char $\ast$text, const bt\+Vector3 \&o, \hyperlink{structbtSoftBody_1_1Face}{Face} $\ast$feature)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6259e16009323fc8e936966b1fba1324}\label{classbtSoftBody_a6259e16009323fc8e936966b1fba1324}} 
+void {\bfseries append\+Node} (const bt\+Vector3 \&x, bt\+Scalar m)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad632d23c33118bc061ac171a0a99ad20}\label{classbtSoftBody_ad632d23c33118bc061ac171a0a99ad20}} 
+void {\bfseries append\+Link} (int model=-\/1, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9af70d96f1962fe82baec96ef236010d}\label{classbtSoftBody_a9af70d96f1962fe82baec96ef236010d}} 
+void {\bfseries append\+Link} (int node0, int node1, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0, bool bcheckexist=false)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_acf014be8167a550f227ae1b366ef3337}\label{classbtSoftBody_acf014be8167a550f227ae1b366ef3337}} 
+void {\bfseries append\+Link} (\hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node0, \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node1, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0, bool bcheckexist=false)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a1a89dadf0b4a8d9553d5e2263c034b07}\label{classbtSoftBody_a1a89dadf0b4a8d9553d5e2263c034b07}} 
+void {\bfseries append\+Face} (int model=-\/1, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad1fb030a3cce3125ba51533eaf6cb949}\label{classbtSoftBody_ad1fb030a3cce3125ba51533eaf6cb949}} 
+void {\bfseries append\+Face} (int node0, int node1, int node2, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3d88c896f533e9ea942c746bee29711b}\label{classbtSoftBody_a3d88c896f533e9ea942c746bee29711b}} 
+void {\bfseries append\+Tetra} (int model, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9b56ea716ed865fdfb78aa2b2ec6952a}\label{classbtSoftBody_a9b56ea716ed865fdfb78aa2b2ec6952a}} 
+void {\bfseries append\+Tetra} (int node0, int node1, int node2, int node3, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8c9cc03f89f85964af6b9252ecebba09}\label{classbtSoftBody_a8c9cc03f89f85964af6b9252ecebba09}} 
+void {\bfseries append\+Anchor} (int node, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body, bool disable\+Collision\+Between\+Linked\+Bodies=false, bt\+Scalar influence=1)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6390973cb20d6cf26bbaca4fa0eff5a3}\label{classbtSoftBody_a6390973cb20d6cf26bbaca4fa0eff5a3}} 
+void {\bfseries append\+Anchor} (int node, \hyperlink{classbtRigidBody}{bt\+Rigid\+Body} $\ast$body, const bt\+Vector3 \&local\+Pivot, bool disable\+Collision\+Between\+Linked\+Bodies=false, bt\+Scalar influence=1)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a265bfcce61012a940a03adf1dc412d1f}\label{classbtSoftBody_a265bfcce61012a940a03adf1dc412d1f}} 
+void {\bfseries append\+Linear\+Joint} (const \hyperlink{structbtSoftBody_1_1LJoint_1_1Specs}{L\+Joint\+::\+Specs} \&specs, \hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$body0, \hyperlink{structbtSoftBody_1_1Body}{Body} body1)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6f60720a468c4734aef16440c794c9cc}\label{classbtSoftBody_a6f60720a468c4734aef16440c794c9cc}} 
+void {\bfseries append\+Linear\+Joint} (const \hyperlink{structbtSoftBody_1_1LJoint_1_1Specs}{L\+Joint\+::\+Specs} \&specs, \hyperlink{structbtSoftBody_1_1Body}{Body} body=\hyperlink{structbtSoftBody_1_1Body}{Body}())
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a573a55a32496e60563cd5d9f6a41edc0}\label{classbtSoftBody_a573a55a32496e60563cd5d9f6a41edc0}} 
+void {\bfseries append\+Linear\+Joint} (const \hyperlink{structbtSoftBody_1_1LJoint_1_1Specs}{L\+Joint\+::\+Specs} \&specs, \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a76633cd436f4de0204f1d1e483c0a2e3}\label{classbtSoftBody_a76633cd436f4de0204f1d1e483c0a2e3}} 
+void {\bfseries append\+Angular\+Joint} (const \hyperlink{structbtSoftBody_1_1AJoint_1_1Specs}{A\+Joint\+::\+Specs} \&specs, \hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$body0, \hyperlink{structbtSoftBody_1_1Body}{Body} body1)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afbacb266e17f8b785985cb3f85be7f51}\label{classbtSoftBody_afbacb266e17f8b785985cb3f85be7f51}} 
+void {\bfseries append\+Angular\+Joint} (const \hyperlink{structbtSoftBody_1_1AJoint_1_1Specs}{A\+Joint\+::\+Specs} \&specs, \hyperlink{structbtSoftBody_1_1Body}{Body} body=\hyperlink{structbtSoftBody_1_1Body}{Body}())
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ae39c309cd794ce277964808a5d20d1d9}\label{classbtSoftBody_ae39c309cd794ce277964808a5d20d1d9}} 
+void {\bfseries append\+Angular\+Joint} (const \hyperlink{structbtSoftBody_1_1AJoint_1_1Specs}{A\+Joint\+::\+Specs} \&specs, \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$body)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4d4cb25a0b61eee260bda46bca373960}\label{classbtSoftBody_a4d4cb25a0b61eee260bda46bca373960}} 
+void {\bfseries add\+Force} (const bt\+Vector3 \&force)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afdfb3e29c73cb1a67a0d006eb1e1824d}\label{classbtSoftBody_afdfb3e29c73cb1a67a0d006eb1e1824d}} 
+void {\bfseries add\+Force} (const bt\+Vector3 \&force, int node)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8823d4ca2ab76dd723d8d57a9785e716}\label{classbtSoftBody_a8823d4ca2ab76dd723d8d57a9785e716}} 
+void {\bfseries add\+Aero\+Force\+To\+Node} (const bt\+Vector3 \&wind\+Velocity, int node\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7334858e70ed00edaa3880afabbf5bff}\label{classbtSoftBody_a7334858e70ed00edaa3880afabbf5bff}} 
+void {\bfseries add\+Aero\+Force\+To\+Face} (const bt\+Vector3 \&wind\+Velocity, int face\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3407addc1014cef6327ed009f4804da7}\label{classbtSoftBody_a3407addc1014cef6327ed009f4804da7}} 
+void {\bfseries add\+Velocity} (const bt\+Vector3 \&velocity)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a94daa5306dfad2e4c5b29715600aed8e}\label{classbtSoftBody_a94daa5306dfad2e4c5b29715600aed8e}} 
+void {\bfseries set\+Velocity} (const bt\+Vector3 \&velocity)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a5befe4cdedc0cf4d002471fd25f59416}\label{classbtSoftBody_a5befe4cdedc0cf4d002471fd25f59416}} 
+void {\bfseries add\+Velocity} (const bt\+Vector3 \&velocity, int node)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a1aa16f724cd3f5e8431f3fec07d75b60}\label{classbtSoftBody_a1aa16f724cd3f5e8431f3fec07d75b60}} 
+void {\bfseries set\+Mass} (int node, bt\+Scalar mass)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7d46a1f40127715d1a7e0bb9b41bac1a}\label{classbtSoftBody_a7d46a1f40127715d1a7e0bb9b41bac1a}} 
+bt\+Scalar {\bfseries get\+Mass} (int node) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad065e0d97e7ba678fc40bf7668ec751f}\label{classbtSoftBody_ad065e0d97e7ba678fc40bf7668ec751f}} 
+bt\+Scalar {\bfseries get\+Total\+Mass} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad7fa51cdee5753af58c3d7cf5c15330f}\label{classbtSoftBody_ad7fa51cdee5753af58c3d7cf5c15330f}} 
+void {\bfseries set\+Total\+Mass} (bt\+Scalar mass, bool fromfaces=false)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6018d917b0eee5dc61c4d5cc66a6ceb2}\label{classbtSoftBody_a6018d917b0eee5dc61c4d5cc66a6ceb2}} 
+void {\bfseries set\+Total\+Density} (bt\+Scalar density)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a65a3db52b7fe9c869cb85577d292833d}\label{classbtSoftBody_a65a3db52b7fe9c869cb85577d292833d}} 
+void {\bfseries set\+Volume\+Mass} (bt\+Scalar mass)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a79bfb08e24aa77bdd08db4ee7853b544}\label{classbtSoftBody_a79bfb08e24aa77bdd08db4ee7853b544}} 
+void {\bfseries set\+Volume\+Density} (bt\+Scalar density)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7ab01480d2dcebf21db52e65d0d8b891}\label{classbtSoftBody_a7ab01480d2dcebf21db52e65d0d8b891}} 
+void {\bfseries transform} (const bt\+Transform \&trs)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_af412dc4d210f98a36a14b2d17d80e00e}\label{classbtSoftBody_af412dc4d210f98a36a14b2d17d80e00e}} 
+void {\bfseries translate} (const bt\+Vector3 \&trs)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a45e297c3090eee78c3d539eadfa86a50}\label{classbtSoftBody_a45e297c3090eee78c3d539eadfa86a50}} 
+void {\bfseries rotate} (const \hyperlink{classbtQuaternion}{bt\+Quaternion} \&rot)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a2a6533511a6a6cbede9bacb5c9a5280c}\label{classbtSoftBody_a2a6533511a6a6cbede9bacb5c9a5280c}} 
+void {\bfseries scale} (const bt\+Vector3 \&scl)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_acaa15e077df8edbac940db7f3f982965}\label{classbtSoftBody_acaa15e077df8edbac940db7f3f982965}} 
+bt\+Scalar {\bfseries get\+Rest\+Length\+Scale} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3e1ada2e78146ba2414ac2581dd4f460}\label{classbtSoftBody_a3e1ada2e78146ba2414ac2581dd4f460}} 
+void {\bfseries set\+Rest\+Length\+Scale} (bt\+Scalar rest\+Length)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a13672a0c23f4b2af774ed83a6457cbef}\label{classbtSoftBody_a13672a0c23f4b2af774ed83a6457cbef}} 
+void {\bfseries set\+Pose} (bool bvolume, bool bframe)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afaf8cbc96cb174bb9b9937c5eb42c921}\label{classbtSoftBody_afaf8cbc96cb174bb9b9937c5eb42c921}} 
+void {\bfseries reset\+Link\+Rest\+Lengths} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a30d5fcc3998e6eff5fb7af2a4032afaa}\label{classbtSoftBody_a30d5fcc3998e6eff5fb7af2a4032afaa}} 
+bt\+Scalar {\bfseries get\+Volume} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afc1f03e3c88e908f9a4f3dec91ff4014}\label{classbtSoftBody_afc1f03e3c88e908f9a4f3dec91ff4014}} 
+int {\bfseries cluster\+Count} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afa4d16677518ab82939b841772c2ca86}\label{classbtSoftBody_afa4d16677518ab82939b841772c2ca86}} 
+bt\+Vector3 {\bfseries cluster\+Com} (int cluster) const
+\item 
+int \hyperlink{classbtSoftBody_af31b03f0ff5eecec1ec9eee5a7582d20}{generate\+Bending\+Constraints} (int distance, \hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$mat=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_acc984ed7b1ae0c8520d474f4ba3e053f}\label{classbtSoftBody_acc984ed7b1ae0c8520d474f4ba3e053f}} 
+void {\bfseries randomize\+Constraints} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a916cd79e87cf151686267100cb83031c}\label{classbtSoftBody_a916cd79e87cf151686267100cb83031c}} 
+void {\bfseries release\+Cluster} (int index)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9acc6f49f29e890115e42c4deec24f85}\label{classbtSoftBody_a9acc6f49f29e890115e42c4deec24f85}} 
+void {\bfseries release\+Clusters} ()
+\item 
+int \hyperlink{classbtSoftBody_a9915ca0d99dbeb9f39221dab218d5208}{generate\+Clusters} (int k, int maxiterations=8192)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9d29ac0eb82c40645c17b5082a7325c9}\label{classbtSoftBody_a9d29ac0eb82c40645c17b5082a7325c9}} 
+void {\bfseries refine} (\hyperlink{structbtSoftBody_1_1ImplicitFn}{Implicit\+Fn} $\ast$ifn, bt\+Scalar accurary, bool cut)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a16f221920ddcc0485c13e6fba169c291}\label{classbtSoftBody_a16f221920ddcc0485c13e6fba169c291}} 
+bool {\bfseries cut\+Link} (int node0, int node1, bt\+Scalar position)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a1dd5a0790a03d3680f2dc939ea3a19e5}\label{classbtSoftBody_a1dd5a0790a03d3680f2dc939ea3a19e5}} 
+bool {\bfseries cut\+Link} (const \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node0, const \hyperlink{structbtSoftBody_1_1Node}{Node} $\ast$node1, bt\+Scalar position)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3133d790dcff71b8e8a43eb966097485}\label{classbtSoftBody_a3133d790dcff71b8e8a43eb966097485}} 
+bool \hyperlink{classbtSoftBody_a3133d790dcff71b8e8a43eb966097485}{ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtSoftBody_1_1sRayCast}{s\+Ray\+Cast} \&results)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRay}{Ray} casting using ray\+From and ray\+To in worldspace, (not direction!) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtSoftBody_a9da956f8d824e44cae9f8b37eff54c19}\label{classbtSoftBody_a9da956f8d824e44cae9f8b37eff54c19}} 
+void {\bfseries set\+Solver} (e\+Solver\+Presets\+::\+\_\+ preset)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a37b6906ab9c76448b81254ae3748ef66}\label{classbtSoftBody_a37b6906ab9c76448b81254ae3748ef66}} 
+void {\bfseries predict\+Motion} (bt\+Scalar dt)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a98390e324d098502e6e9fb1ea2e52ab6}\label{classbtSoftBody_a98390e324d098502e6e9fb1ea2e52ab6}} 
+void {\bfseries solve\+Constraints} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a653fd3d83a1f7a8d0547b20e17af4483}\label{classbtSoftBody_a653fd3d83a1f7a8d0547b20e17af4483}} 
+void {\bfseries static\+Solve} (int iterations)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a21d3a56dff4c4999a2da272b712e616c}\label{classbtSoftBody_a21d3a56dff4c4999a2da272b712e616c}} 
+void {\bfseries integrate\+Motion} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a2efae0290d22ed8c05ef4540586283c5}\label{classbtSoftBody_a2efae0290d22ed8c05ef4540586283c5}} 
+void {\bfseries default\+Collision\+Handler} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$pco\+Wrap)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a08d6032177bb1e5b8d89bc425c9b1d27}\label{classbtSoftBody_a08d6032177bb1e5b8d89bc425c9b1d27}} 
+void {\bfseries default\+Collision\+Handler} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb)
+\item 
+void \hyperlink{classbtSoftBody_aee9ac69662731fa96ae2357522972ef9}{set\+Wind\+Velocity} (const bt\+Vector3 \&velocity)
+\item 
+const bt\+Vector3 \& \hyperlink{classbtSoftBody_a71de05c3c56952a4d76e09ca9ca9cce0}{get\+Wind\+Velocity} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4aebc3e54046a5748331e3e17b5d3efc}\label{classbtSoftBody_a4aebc3e54046a5748331e3e17b5d3efc}} 
+void {\bfseries set\+Soft\+Body\+Solver} (\hyperlink{classbtSoftBodySolver}{bt\+Soft\+Body\+Solver} $\ast$soft\+Body\+Solver)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a18b1a7b609c7a84d9f8cf0add29d180f}\label{classbtSoftBody_a18b1a7b609c7a84d9f8cf0add29d180f}} 
+\hyperlink{classbtSoftBodySolver}{bt\+Soft\+Body\+Solver} $\ast$ {\bfseries get\+Soft\+Body\+Solver} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9e4707a136596b16952228b002f8f799}\label{classbtSoftBody_a9e4707a136596b16952228b002f8f799}} 
+\hyperlink{classbtSoftBodySolver}{bt\+Soft\+Body\+Solver} $\ast$ {\bfseries get\+Soft\+Body\+Solver} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ada0bc2f7118e153decdf7f30022b0748}\label{classbtSoftBody_ada0bc2f7118e153decdf7f30022b0748}} 
+virtual void {\bfseries get\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab0c0d590f7b945029af1f5afc26b58ab}\label{classbtSoftBody_ab0c0d590f7b945029af1f5afc26b58ab}} 
+void {\bfseries pointers\+To\+Indices} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ae7d0c0ae69ea5801118a049f590fe703}\label{classbtSoftBody_ae7d0c0ae69ea5801118a049f590fe703}} 
+void {\bfseries indices\+To\+Pointers} (const int $\ast$map=0)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a26360c6f5957a82867f2b26343d30910}\label{classbtSoftBody_a26360c6f5957a82867f2b26343d30910}} 
+int {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, bt\+Scalar \&mint, e\+Feature\+::\+\_\+ \&feature, int \&index, bool bcountonly) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_af92f269650f4235df9d8923e729a515a}\label{classbtSoftBody_af92f269650f4235df9d8923e729a515a}} 
+void {\bfseries initialize\+Face\+Tree} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a5fa35a89d93a02ef3cdb9e8fe63e166e}\label{classbtSoftBody_a5fa35a89d93a02ef3cdb9e8fe63e166e}} 
+bt\+Vector3 {\bfseries evaluate\+Com} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ae6de42ab5abf38182558d387c03fd0da}\label{classbtSoftBody_ae6de42ab5abf38182558d387c03fd0da}} 
+bool {\bfseries check\+Contact} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$col\+Obj\+Wrap, const bt\+Vector3 \&x, bt\+Scalar margin, \hyperlink{structbtSoftBody_1_1sCti}{bt\+Soft\+Body\+::s\+Cti} \&cti) const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab362c5aca67e90032065945ce15cff31}\label{classbtSoftBody_ab362c5aca67e90032065945ce15cff31}} 
+void {\bfseries update\+Normals} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aee48603cdeeb5cee57f6a210b135294b}\label{classbtSoftBody_aee48603cdeeb5cee57f6a210b135294b}} 
+void {\bfseries update\+Bounds} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac13d11fd5d294ce8924751b99d431c1c}\label{classbtSoftBody_ac13d11fd5d294ce8924751b99d431c1c}} 
+void {\bfseries update\+Pose} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad73c943fe892bd5e3242e65de5df3db1}\label{classbtSoftBody_ad73c943fe892bd5e3242e65de5df3db1}} 
+void {\bfseries update\+Constants} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad92f5a4896bbce5574d8ddee53ed448b}\label{classbtSoftBody_ad92f5a4896bbce5574d8ddee53ed448b}} 
+void {\bfseries update\+Link\+Constants} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4b8bec593f187ae54ca4a2cd1bab7863}\label{classbtSoftBody_a4b8bec593f187ae54ca4a2cd1bab7863}} 
+void {\bfseries update\+Area} (bool average\+Area=true)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac6bcd9853756ab196ea18c831a04a8b7}\label{classbtSoftBody_ac6bcd9853756ab196ea18c831a04a8b7}} 
+void {\bfseries initialize\+Clusters} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a0fbc8cbbe127ff3d1ed9467e709a8181}\label{classbtSoftBody_a0fbc8cbbe127ff3d1ed9467e709a8181}} 
+void {\bfseries update\+Clusters} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6b9b7057950305e0046f173fe27698da}\label{classbtSoftBody_a6b9b7057950305e0046f173fe27698da}} 
+void {\bfseries cleanup\+Clusters} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4ee4c96c4821c31be91a3edeab2365fd}\label{classbtSoftBody_a4ee4c96c4821c31be91a3edeab2365fd}} 
+void {\bfseries prepare\+Clusters} (int iterations)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa577be31d76bdc85298424d88790e6d5}\label{classbtSoftBody_aa577be31d76bdc85298424d88790e6d5}} 
+void {\bfseries solve\+Clusters} (bt\+Scalar sor)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a47c6e2066250a6c2564abadf3fc72029}\label{classbtSoftBody_a47c6e2066250a6c2564abadf3fc72029}} 
+void {\bfseries apply\+Clusters} (bool drift)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a83d01c7ffe27a02f42bcb9d191c4a327}\label{classbtSoftBody_a83d01c7ffe27a02f42bcb9d191c4a327}} 
+void {\bfseries damp\+Clusters} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab60ff6213c14fe1f6c7a354503dadc80}\label{classbtSoftBody_ab60ff6213c14fe1f6c7a354503dadc80}} 
+void {\bfseries apply\+Forces} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aa6ec4f140fc45d7d3dcdf98c82d6c898}\label{classbtSoftBody_aa6ec4f140fc45d7d3dcdf98c82d6c898}} 
+virtual int {\bfseries calculate\+Serialize\+Buffer\+Size} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a54d6f189021eef581f81ba72c37fbad6}\label{classbtSoftBody_a54d6f189021eef581f81ba72c37fbad6}} 
+virtual const char $\ast$ \hyperlink{classbtSoftBody_a54d6f189021eef581f81ba72c37fbad6}{serialize} (void $\ast$data\+Buffer, class \hyperlink{classbtSerializer}{bt\+Serializer} $\ast$serializer) const
+\begin{DoxyCompactList}\small\item\em fills the data\+Buffer and returns the struct name (and 0 on failure) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8a4ea1cf74b8b8e08733d3f0fb466ded}\label{classbtSoftBody_a8a4ea1cf74b8b8e08733d3f0fb466ded}} 
+static bt\+Vector3 {\bfseries cluster\+Com} (const \hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab6ae110bfb643bda929c67a59cf6b83f}\label{classbtSoftBody_ab6ae110bfb643bda929c67a59cf6b83f}} 
+static bt\+Vector3 {\bfseries cluster\+Velocity} (const \hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&rpos)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a546e7f4e94c6b75f7e4eecada5b956e7}\label{classbtSoftBody_a546e7f4e94c6b75f7e4eecada5b956e7}} 
+static void {\bfseries cluster\+V\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&rpos, const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab3cfd805f7fddd63db5f966c3d1cbb1b}\label{classbtSoftBody_ab3cfd805f7fddd63db5f966c3d1cbb1b}} 
+static void {\bfseries cluster\+D\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&rpos, const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aad6406f1e55d95ba092ed2f51a992b72}\label{classbtSoftBody_aad6406f1e55d95ba092ed2f51a992b72}} 
+static void {\bfseries cluster\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&rpos, const \hyperlink{structbtSoftBody_1_1Impulse}{Impulse} \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7bfd5a6382e9f1d35ff2b6a2e90d2fbc}\label{classbtSoftBody_a7bfd5a6382e9f1d35ff2b6a2e90d2fbc}} 
+static void {\bfseries cluster\+V\+A\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6222d3a234f2776c398084a673f6a35f}\label{classbtSoftBody_a6222d3a234f2776c398084a673f6a35f}} 
+static void {\bfseries cluster\+D\+A\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_affddc2d7f3b500c44d9e1f703df0cc33}\label{classbtSoftBody_affddc2d7f3b500c44d9e1f703df0cc33}} 
+static void {\bfseries cluster\+A\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const \hyperlink{structbtSoftBody_1_1Impulse}{Impulse} \&impulse)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7a988e2954fdf0f8f4691599ca645d9b}\label{classbtSoftBody_a7a988e2954fdf0f8f4691599ca645d9b}} 
+static void {\bfseries cluster\+D\+C\+Impulse} (\hyperlink{structbtSoftBody_1_1Cluster}{Cluster} $\ast$cluster, const bt\+Vector3 \&impulse)
+\item 
+static void \hyperlink{classbtSoftBody_ae8a2fc459b2afc985fbb03c1b0203bec}{solve\+Common\+Constraints} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$$\ast$bodies, int count, int iterations)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a0059efa007e4b3600b763edfa22d8bd6}\label{classbtSoftBody_a0059efa007e4b3600b763edfa22d8bd6}} 
+static void {\bfseries solve\+Clusters} (const \hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$$>$ \&bodies)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac6209b1843fd2511b477547c648adb67}\label{classbtSoftBody_ac6209b1843fd2511b477547c648adb67}} 
+static const \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$ {\bfseries upcast} (const bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab401977a2814ec48a984a2c0e5864939}\label{classbtSoftBody_ab401977a2814ec48a984a2c0e5864939}} 
+static \hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$ {\bfseries upcast} (bt\+Collision\+Object $\ast$col\+Obj)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4958237e624f63ec359a10231a11a19a}\label{classbtSoftBody_a4958237e624f63ec359a10231a11a19a}} 
+static void {\bfseries P\+Solve\+\_\+\+Anchors} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb, bt\+Scalar kst, bt\+Scalar ti)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aaafba18f5de9bc2d62a41b15fc0421bb}\label{classbtSoftBody_aaafba18f5de9bc2d62a41b15fc0421bb}} 
+static void {\bfseries P\+Solve\+\_\+\+R\+Contacts} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb, bt\+Scalar kst, bt\+Scalar ti)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a03cec6f0910a538cbc1a54bb4aaeea42}\label{classbtSoftBody_a03cec6f0910a538cbc1a54bb4aaeea42}} 
+static void {\bfseries P\+Solve\+\_\+\+S\+Contacts} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb, bt\+Scalar, bt\+Scalar ti)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a0097a8dcdbf3edf51c896348e7f6d075}\label{classbtSoftBody_a0097a8dcdbf3edf51c896348e7f6d075}} 
+static void {\bfseries P\+Solve\+\_\+\+Links} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb, bt\+Scalar kst, bt\+Scalar ti)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a5d1bc8003163e9f8a79e94fc2def5d70}\label{classbtSoftBody_a5d1bc8003163e9f8a79e94fc2def5d70}} 
+static void {\bfseries V\+Solve\+\_\+\+Links} (\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$psb, bt\+Scalar kst)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ae2ab143e48d092e818a3b4180016f469}\label{classbtSoftBody_ae2ab143e48d092e818a3b4180016f469}} 
+static psolver\+\_\+t {\bfseries get\+Solver} (\hyperlink{structbtSoftBody_1_1ePSolver_a5d6ab41a09da7333bc2047b4ea14bf86}{e\+P\+Solver\+::\+\_\+} solver)
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad6063e28f3c00c308baf4f1ea8b161d3}\label{classbtSoftBody_ad6063e28f3c00c308baf4f1ea8b161d3}} 
+static vsolver\+\_\+t {\bfseries get\+Solver} (\hyperlink{structbtSoftBody_1_1eVSolver_ad6a7083f91529d75cab91506cd63e088}{e\+V\+Solver\+::\+\_\+} solver)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a60857c2994e206fd476b4f581c468c8d}\label{classbtSoftBody_a60857c2994e206fd476b4f581c468c8d}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ const class bt\+Collision\+Object $\ast$ $>$ {\bfseries m\+\_\+collision\+Disabled\+Objects}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_afa4f3a40b43a4e10d77e52ecbb3bf571}\label{classbtSoftBody_afa4f3a40b43a4e10d77e52ecbb3bf571}} 
+\hyperlink{classbtSoftBodySolver}{bt\+Soft\+Body\+Solver} $\ast$ {\bfseries m\+\_\+soft\+Body\+Solver}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6c8ea8006fb5e716361a7d66cf00daab}\label{classbtSoftBody_a6c8ea8006fb5e716361a7d66cf00daab}} 
+\hyperlink{structbtSoftBody_1_1Config}{Config} {\bfseries m\+\_\+cfg}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a329525a55d20b3a388b92b234fd15b5f}\label{classbtSoftBody_a329525a55d20b3a388b92b234fd15b5f}} 
+\hyperlink{structbtSoftBody_1_1SolverState}{Solver\+State} {\bfseries m\+\_\+sst}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3c1d3c3e9f60e3d97f08245a82fa0ed3}\label{classbtSoftBody_a3c1d3c3e9f60e3d97f08245a82fa0ed3}} 
+\hyperlink{structbtSoftBody_1_1Pose}{Pose} {\bfseries m\+\_\+pose}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_abd99c0f3e6d2a2e227d38421374ce173}\label{classbtSoftBody_abd99c0f3e6d2a2e227d38421374ce173}} 
+void $\ast$ {\bfseries m\+\_\+tag}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a4a2ef515395ec9c49b1c550bb20dc724}\label{classbtSoftBody_a4a2ef515395ec9c49b1c550bb20dc724}} 
+\hyperlink{structbtSoftBodyWorldInfo}{bt\+Soft\+Body\+World\+Info} $\ast$ {\bfseries m\+\_\+world\+Info}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab2d4d22ffbeed6ae64366f94e1e72fa2}\label{classbtSoftBody_ab2d4d22ffbeed6ae64366f94e1e72fa2}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Note\+Array} {\bfseries m\+\_\+notes}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad53c95f39d517c1b72db24f175e92fb5}\label{classbtSoftBody_ad53c95f39d517c1b72db24f175e92fb5}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Node\+Array} {\bfseries m\+\_\+nodes}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab52f85beefd08470be24a0586832ff4e}\label{classbtSoftBody_ab52f85beefd08470be24a0586832ff4e}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Link\+Array} {\bfseries m\+\_\+links}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a76a8ea9e874b87a9dc51846cc24f3a4f}\label{classbtSoftBody_a76a8ea9e874b87a9dc51846cc24f3a4f}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Face\+Array} {\bfseries m\+\_\+faces}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a5d67872e5c52a4d6cee4df5f752f9cfb}\label{classbtSoftBody_a5d67872e5c52a4d6cee4df5f752f9cfb}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Tetra\+Array} {\bfseries m\+\_\+tetras}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ac92bf269338f8e02284edff1cb075f1c}\label{classbtSoftBody_ac92bf269338f8e02284edff1cb075f1c}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Anchor\+Array} {\bfseries m\+\_\+anchors}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8a6217d7ddb3dd99447c41a539e0cdc4}\label{classbtSoftBody_a8a6217d7ddb3dd99447c41a539e0cdc4}} 
+\hyperlink{classbtAlignedObjectArray}{t\+R\+Contact\+Array} {\bfseries m\+\_\+rcontacts}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab86da8498926f0565f4813b32ffe9f67}\label{classbtSoftBody_ab86da8498926f0565f4813b32ffe9f67}} 
+\hyperlink{classbtAlignedObjectArray}{t\+S\+Contact\+Array} {\bfseries m\+\_\+scontacts}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a1c4a78e51ce702096f3db221cc2ae8a6}\label{classbtSoftBody_a1c4a78e51ce702096f3db221cc2ae8a6}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Joint\+Array} {\bfseries m\+\_\+joints}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a7f5e4eae3387e8169599a04ad8991e92}\label{classbtSoftBody_a7f5e4eae3387e8169599a04ad8991e92}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Material\+Array} {\bfseries m\+\_\+materials}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3be50e0cde03af244eb7103a45ed52c3}\label{classbtSoftBody_a3be50e0cde03af244eb7103a45ed52c3}} 
+bt\+Scalar {\bfseries m\+\_\+timeacc}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a8e821d5ed921ec7fe4919d39123d1022}\label{classbtSoftBody_a8e821d5ed921ec7fe4919d39123d1022}} 
+bt\+Vector3 {\bfseries m\+\_\+bounds} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a04af20a0326f6ebe8cf0901beb39c2fa}\label{classbtSoftBody_a04af20a0326f6ebe8cf0901beb39c2fa}} 
+bool {\bfseries m\+\_\+b\+Update\+Rt\+Cst}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_aff100eec6044f78bbc4f7e5ccf4619d3}\label{classbtSoftBody_aff100eec6044f78bbc4f7e5ccf4619d3}} 
+\hyperlink{structbtDbvt}{bt\+Dbvt} {\bfseries m\+\_\+ndbvt}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ab4ca8f3ddef99e2068818d6fabbad321}\label{classbtSoftBody_ab4ca8f3ddef99e2068818d6fabbad321}} 
+\hyperlink{structbtDbvt}{bt\+Dbvt} {\bfseries m\+\_\+fdbvt}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a108b2be76b7647b2138d99e99b3bbdb0}\label{classbtSoftBody_a108b2be76b7647b2138d99e99b3bbdb0}} 
+\hyperlink{structbtDbvt}{bt\+Dbvt} {\bfseries m\+\_\+cdbvt}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a9579ec7fb7f43787cf4bc74eed279f48}\label{classbtSoftBody_a9579ec7fb7f43787cf4bc74eed279f48}} 
+\hyperlink{classbtAlignedObjectArray}{t\+Cluster\+Array} {\bfseries m\+\_\+clusters}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a2a7ce6797345d0b068b2d2bab2db0ff3}\label{classbtSoftBody_a2a7ce6797345d0b068b2d2bab2db0ff3}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ bool $>$ {\bfseries m\+\_\+cluster\+Connectivity}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a62f3be93755bd2e1f30bed79a9f72cac}\label{classbtSoftBody_a62f3be93755bd2e1f30bed79a9f72cac}} 
+bt\+Transform {\bfseries m\+\_\+initial\+World\+Transform}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_ad02496af28d6bf408a736ee3e5f05c32}\label{classbtSoftBody_ad02496af28d6bf408a736ee3e5f05c32}} 
+bt\+Vector3 {\bfseries m\+\_\+wind\+Velocity}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a6677ad95880f801daa33fd214489eefd}\label{classbtSoftBody_a6677ad95880f801daa33fd214489eefd}} 
+bt\+Scalar {\bfseries m\+\_\+rest\+Length\+Scale}
+\item 
+\mbox{\Hypertarget{classbtSoftBody_a3c48bbc3756ff3c21730154523a3b09d}\label{classbtSoftBody_a3c48bbc3756ff3c21730154523a3b09d}} 
+\hyperlink{classbtAlignedObjectArray}{bt\+Aligned\+Object\+Array}$<$ int $>$ {\bfseries m\+\_\+user\+Index\+Mapping}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtSoftBody}{bt\+Soft\+Body} is an class to simulate cloth and volumetric soft bodies. There is two-\/way interaction between \hyperlink{classbtSoftBody}{bt\+Soft\+Body} and bt\+Rigid\+Body/bt\+Collision\+Object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBody_af31b03f0ff5eecec1ec9eee5a7582d20}\label{classbtSoftBody_af31b03f0ff5eecec1ec9eee5a7582d20}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!generate\+Bending\+Constraints@{generate\+Bending\+Constraints}}
+\index{generate\+Bending\+Constraints@{generate\+Bending\+Constraints}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{generate\+Bending\+Constraints()}{generateBendingConstraints()}}
+{\footnotesize\ttfamily int bt\+Soft\+Body\+::generate\+Bending\+Constraints (\begin{DoxyParamCaption}\item[{int}]{distance,  }\item[{\hyperlink{structbtSoftBody_1_1Material}{Material} $\ast$}]{mat = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+generic Floyd\textquotesingle{}s algorithm \mbox{\Hypertarget{classbtSoftBody_a9915ca0d99dbeb9f39221dab218d5208}\label{classbtSoftBody_a9915ca0d99dbeb9f39221dab218d5208}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!generate\+Clusters@{generate\+Clusters}}
+\index{generate\+Clusters@{generate\+Clusters}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{generate\+Clusters()}{generateClusters()}}
+{\footnotesize\ttfamily int bt\+Soft\+Body\+::generate\+Clusters (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{maxiterations = {\ttfamily 8192} }\end{DoxyParamCaption})}
+
+generate\+Clusters with k=0 will create a convex cluster for each tetrahedron or triangle otherwise an approximation will be used (better performance) \mbox{\Hypertarget{classbtSoftBody_a71de05c3c56952a4d76e09ca9ca9cce0}\label{classbtSoftBody_a71de05c3c56952a4d76e09ca9ca9cce0}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!get\+Wind\+Velocity@{get\+Wind\+Velocity}}
+\index{get\+Wind\+Velocity@{get\+Wind\+Velocity}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{get\+Wind\+Velocity()}{getWindVelocity()}}
+{\footnotesize\ttfamily const bt\+Vector3 \& bt\+Soft\+Body\+::get\+Wind\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the wind velocity for interaction with the air. \mbox{\Hypertarget{classbtSoftBody_ae07c09d9c2937897c3690c1a3970bf61}\label{classbtSoftBody_ae07c09d9c2937897c3690c1a3970bf61}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!init\+Defaults@{init\+Defaults}}
+\index{init\+Defaults@{init\+Defaults}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{init\+Defaults()}{initDefaults()}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+::init\+Defaults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+for now, create a collision shape internally \mbox{\Hypertarget{classbtSoftBody_aced0f5421eeb1491a3fd77bb91e2e5af}\label{classbtSoftBody_aced0f5421eeb1491a3fd77bb91e2e5af}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!set\+Collision\+Shape@{set\+Collision\+Shape}}
+\index{set\+Collision\+Shape@{set\+Collision\+Shape}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{set\+Collision\+Shape()}{setCollisionShape()}}
+{\footnotesize\ttfamily virtual void bt\+Soft\+Body\+::set\+Collision\+Shape (\begin{DoxyParamCaption}\item[{bt\+Collision\+Shape $\ast$}]{collision\+Shape }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000037}{Todo}]\+: avoid internal softbody shape hack and move collision code to collision library \end{DoxyRefDesc}
+\mbox{\Hypertarget{classbtSoftBody_aee9ac69662731fa96ae2357522972ef9}\label{classbtSoftBody_aee9ac69662731fa96ae2357522972ef9}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!set\+Wind\+Velocity@{set\+Wind\+Velocity}}
+\index{set\+Wind\+Velocity@{set\+Wind\+Velocity}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{set\+Wind\+Velocity()}{setWindVelocity()}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+::set\+Wind\+Velocity (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{velocity }\end{DoxyParamCaption})}
+
+Set a wind velocity for interaction with the air. \mbox{\Hypertarget{classbtSoftBody_ae8a2fc459b2afc985fbb03c1b0203bec}\label{classbtSoftBody_ae8a2fc459b2afc985fbb03c1b0203bec}} 
+\index{bt\+Soft\+Body@{bt\+Soft\+Body}!solve\+Common\+Constraints@{solve\+Common\+Constraints}}
+\index{solve\+Common\+Constraints@{solve\+Common\+Constraints}!bt\+Soft\+Body@{bt\+Soft\+Body}}
+\subsubsection{\texorpdfstring{solve\+Common\+Constraints()}{solveCommonConstraints()}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+::solve\+Common\+Constraints (\begin{DoxyParamCaption}\item[{\hyperlink{classbtSoftBody}{bt\+Soft\+Body} $\ast$$\ast$}]{bodies,  }\item[{int}]{count,  }\item[{int}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+placeholder 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1068 @@
+\hypertarget{classCamera}{}\section{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$C\+C\+Camera.\+h$>$}
+
+
+
+Inheritance diagram for Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classCamera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCamera__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Type} \{ {\bfseries P\+E\+R\+S\+P\+E\+C\+T\+I\+VE} = 1, 
+{\bfseries O\+R\+T\+H\+O\+G\+R\+A\+P\+H\+IC} = 2, 
+{\bfseries P\+E\+R\+S\+P\+E\+C\+T\+I\+VE} = 1, 
+{\bfseries O\+R\+T\+H\+O\+G\+R\+A\+P\+H\+IC} = 2
+ \}
+\item 
+enum \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Type} \{ {\bfseries P\+E\+R\+S\+P\+E\+C\+T\+I\+VE} = 1, 
+{\bfseries O\+R\+T\+H\+O\+G\+R\+A\+P\+H\+IC} = 2, 
+{\bfseries P\+E\+R\+S\+P\+E\+C\+T\+I\+VE} = 1, 
+{\bfseries O\+R\+T\+H\+O\+G\+R\+A\+P\+H\+IC} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type} \hyperlink{classCamera_ae8f514578aa54023476ad541b167a1e0}{get\+Type} () const
+\item 
+Camera\+Flag \hyperlink{classCamera_ae7a648c0780484ba413a6197a489f208}{get\+Camera\+Flag} () const
+\item 
+\mbox{\Hypertarget{classCamera_a8e214f667fd598da856d0e29eb101c7b}\label{classCamera_a8e214f667fd598da856d0e29eb101c7b}} 
+void {\bfseries set\+Camera\+Flag} (Camera\+Flag flag)
+\item 
+virtual void \hyperlink{classCamera_af5a1abfa877baf99490da53b35293f86}{look\+At} (const \hyperlink{classVec3}{Vec3} \&target, const \hyperlink{classVec3}{Vec3} \&up=\hyperlink{classVec3_a0d569defe7293f1cb108f643230facf5}{Vec3\+::\+U\+N\+I\+T\+\_\+Y})
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_a654a29037e5371e0fc5157fe6be89350}{get\+Projection\+Matrix} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_ab30a2ac464fe2d653e99502f07325887}{get\+View\+Matrix} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_ab7251654fac905a8a8d2b902a81d17e6}{get\+View\+Projection\+Matrix} () const
+\item 
+\mbox{\Hypertarget{classCamera_a6288e57471300fa5aed8dd73f8926b66}\label{classCamera_a6288e57471300fa5aed8dd73f8926b66}} 
+\hyperlink{classVec2}{Vec2} {\bfseries project} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\mbox{\Hypertarget{classCamera_a4a84dc5bc3e0327d7058c9c369cd3d3a}\label{classCamera_a4a84dc5bc3e0327d7058c9c369cd3d3a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries project\+GL} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classCamera_a06eccde5c9fc644d94e69e505a78d048}{unproject} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}{unproject\+GL} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+void \hyperlink{classCamera_a48a0dab2e51ef11a166e650224e23419}{unproject} (const \hyperlink{classSize}{Size} \&size, const \hyperlink{classVec3}{Vec3} $\ast$src, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}{unproject\+GL} (const \hyperlink{classSize}{Size} \&size, const \hyperlink{classVec3}{Vec3} $\ast$src, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+bool \hyperlink{classCamera_ad962c084c9de231d820b981f4b5846c9}{is\+Visible\+In\+Frustum} (const \hyperlink{classAABB}{A\+A\+BB} $\ast$aabb) const
+\item 
+float \hyperlink{classCamera_a5b38e0d536fb4773aaad12285634b227}{get\+Depth\+In\+View} (const \hyperlink{classMat4}{Mat4} \&transform) const
+\item 
+void \hyperlink{classCamera_a361809c317aebb2785ffbda7836e25ff}{set\+Depth} (int8\+\_\+t depth)
+\item 
+int8\+\_\+t \hyperlink{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}{get\+Depth} () const
+\item 
+int \hyperlink{classCamera_a126d10fabc05a9debd3c134f75dc0c14}{get\+Render\+Order} () const
+\item 
+float \hyperlink{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}{get\+Far\+Plane} () const
+\item 
+float \hyperlink{classCamera_a06c0abe6144c4b19aa68935134d15c5c}{get\+Near\+Plane} () const
+\item 
+virtual void \hyperlink{classCamera_a6d316bcfec816212b0f3cfdf1b41b820}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classCamera_a21080d4de388ac7b9a02ccf77aaacf92}{on\+Exit} () override
+\item 
+void \hyperlink{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}{clear\+Background} ()
+\item 
+void \hyperlink{classCamera_a767aa79833180926e267f9ec82c44577}{apply} ()
+\item 
+void \hyperlink{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}{restore} ()
+\item 
+void \hyperlink{classCamera_a17b4f5537c83a29f8a7d809859e690a4}{set\+Frame\+Buffer\+Object} (\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$fbo)
+\item 
+void \hyperlink{classCamera_a3070783685089524b0fc5b38d9623b9e}{set\+Viewport} (const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&vp)
+\item 
+bool \hyperlink{classCamera_afba312d6b30f3d137e9c173f7fa334e6}{is\+View\+Projection\+Updated} () const
+\item 
+void \hyperlink{classCamera_a1804790d419a1d952752f81680d98d1f}{set\+Background\+Brush} (\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$clear\+Brush)
+\item 
+\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$ \hyperlink{classCamera_a7994f962fbded68295f7b15f3046bdd8}{get\+Background\+Brush} () const
+\item 
+virtual void \hyperlink{classCamera_a9af4106a5c83986160cb975d53205fce}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classCamera_a3af85368441d5aa6a463ae20777065fd}\label{classCamera_a3af85368441d5aa6a463ae20777065fd}} 
+bool {\bfseries is\+Brush\+Valid} ()
+\item 
+void \hyperlink{classCamera_ac35b13397b0add2c502bef10a46f0e17}{set\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classCamera_ab3d0364f67e78080b9bacee82678c542}{set\+Additional\+Projection} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+bool \hyperlink{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}{init\+Default} ()
+\item 
+\mbox{\Hypertarget{classCamera_ad176536923ab1ca8276260f40cdac6e2}\label{classCamera_ad176536923ab1ca8276260f40cdac6e2}} 
+bool {\bfseries init\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\item 
+\mbox{\Hypertarget{classCamera_ac68ab51e1a13d1e1d473a829d3633028}\label{classCamera_ac68ab51e1a13d1e1d473a829d3633028}} 
+bool {\bfseries init\+Orthographic} (float zoomX, float zoomY, float near\+Plane, float far\+Plane)
+\item 
+\mbox{\Hypertarget{classCamera_a93b40b1f7c908321a7336455ec48091f}\label{classCamera_a93b40b1f7c908321a7336455ec48091f}} 
+void {\bfseries apply\+Frame\+Buffer\+Object} ()
+\item 
+\mbox{\Hypertarget{classCamera_ac21c04a71fc49783b64c5e32f4f1d128}\label{classCamera_ac21c04a71fc49783b64c5e32f4f1d128}} 
+void {\bfseries apply\+Viewport} ()
+\item 
+\mbox{\Hypertarget{classCamera_a2a1f9bbd4929dc623430d3de6cf32eb1}\label{classCamera_a2a1f9bbd4929dc623430d3de6cf32eb1}} 
+void {\bfseries restore\+Frame\+Buffer\+Object} ()
+\item 
+\mbox{\Hypertarget{classCamera_abe884ec7b69ff038dfae1ec47e6cd6d8}\label{classCamera_abe884ec7b69ff038dfae1ec47e6cd6d8}} 
+void {\bfseries restore\+Viewport} ()
+\item 
+\hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type} \hyperlink{classCamera_ae8f514578aa54023476ad541b167a1e0}{get\+Type} () const
+\item 
+Camera\+Flag \hyperlink{classCamera_ae7a648c0780484ba413a6197a489f208}{get\+Camera\+Flag} () const
+\item 
+\mbox{\Hypertarget{classCamera_a8e214f667fd598da856d0e29eb101c7b}\label{classCamera_a8e214f667fd598da856d0e29eb101c7b}} 
+void {\bfseries set\+Camera\+Flag} (Camera\+Flag flag)
+\item 
+virtual void \hyperlink{classCamera_a0eca5fae6b9b7a1ad949d9647e48ca52}{look\+At} (const \hyperlink{classVec3}{Vec3} \&target, const \hyperlink{classVec3}{Vec3} \&up=\hyperlink{classVec3_a0d569defe7293f1cb108f643230facf5}{Vec3\+::\+U\+N\+I\+T\+\_\+Y})
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_a5fd60cb16045d8102c88db4a8c2f20f0}{get\+Projection\+Matrix} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_a72ba7f33c43ae0f1e907292befb8fa3b}{get\+View\+Matrix} () const
+\item 
+const \hyperlink{classMat4}{Mat4} \& \hyperlink{classCamera_a04b8c6249119046519ddd62b283928b6}{get\+View\+Projection\+Matrix} () const
+\item 
+\mbox{\Hypertarget{classCamera_a6288e57471300fa5aed8dd73f8926b66}\label{classCamera_a6288e57471300fa5aed8dd73f8926b66}} 
+\hyperlink{classVec2}{Vec2} {\bfseries project} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\mbox{\Hypertarget{classCamera_a4a84dc5bc3e0327d7058c9c369cd3d3a}\label{classCamera_a4a84dc5bc3e0327d7058c9c369cd3d3a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries project\+GL} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classCamera_a06eccde5c9fc644d94e69e505a78d048}{unproject} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}{unproject\+GL} (const \hyperlink{classVec3}{Vec3} \&src) const
+\item 
+void \hyperlink{classCamera_a48a0dab2e51ef11a166e650224e23419}{unproject} (const \hyperlink{classSize}{Size} \&size, const \hyperlink{classVec3}{Vec3} $\ast$src, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+void \hyperlink{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}{unproject\+GL} (const \hyperlink{classSize}{Size} \&size, const \hyperlink{classVec3}{Vec3} $\ast$src, \hyperlink{classVec3}{Vec3} $\ast$dst) const
+\item 
+bool \hyperlink{classCamera_ad962c084c9de231d820b981f4b5846c9}{is\+Visible\+In\+Frustum} (const \hyperlink{classAABB}{A\+A\+BB} $\ast$aabb) const
+\item 
+float \hyperlink{classCamera_a5b38e0d536fb4773aaad12285634b227}{get\+Depth\+In\+View} (const \hyperlink{classMat4}{Mat4} \&transform) const
+\item 
+void \hyperlink{classCamera_a361809c317aebb2785ffbda7836e25ff}{set\+Depth} (int8\+\_\+t depth)
+\item 
+int8\+\_\+t \hyperlink{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}{get\+Depth} () const
+\item 
+int \hyperlink{classCamera_a126d10fabc05a9debd3c134f75dc0c14}{get\+Render\+Order} () const
+\item 
+float \hyperlink{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}{get\+Far\+Plane} () const
+\item 
+float \hyperlink{classCamera_a06c0abe6144c4b19aa68935134d15c5c}{get\+Near\+Plane} () const
+\item 
+virtual void \hyperlink{classCamera_af22f3064a50c98832f448d7167a1f3cd}{on\+Enter} () override
+\item 
+virtual void \hyperlink{classCamera_aff2efb18d2837f4c443666ae94993185}{on\+Exit} () override
+\item 
+void \hyperlink{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}{clear\+Background} ()
+\item 
+void \hyperlink{classCamera_a767aa79833180926e267f9ec82c44577}{apply} ()
+\item 
+void \hyperlink{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}{restore} ()
+\item 
+void \hyperlink{classCamera_a17b4f5537c83a29f8a7d809859e690a4}{set\+Frame\+Buffer\+Object} (\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$fbo)
+\item 
+void \hyperlink{classCamera_a3070783685089524b0fc5b38d9623b9e}{set\+Viewport} (const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&vp)
+\item 
+bool \hyperlink{classCamera_afba312d6b30f3d137e9c173f7fa334e6}{is\+View\+Projection\+Updated} () const
+\item 
+void \hyperlink{classCamera_a1804790d419a1d952752f81680d98d1f}{set\+Background\+Brush} (\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$clear\+Brush)
+\item 
+\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$ \hyperlink{classCamera_a7994f962fbded68295f7b15f3046bdd8}{get\+Background\+Brush} () const
+\item 
+virtual void \hyperlink{classCamera_add749a2d2338f0373a6a440e4cba5afa}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+\mbox{\Hypertarget{classCamera_a3af85368441d5aa6a463ae20777065fd}\label{classCamera_a3af85368441d5aa6a463ae20777065fd}} 
+bool {\bfseries is\+Brush\+Valid} ()
+\item 
+void \hyperlink{classCamera_ac35b13397b0add2c502bef10a46f0e17}{set\+Scene} (\hyperlink{classScene}{Scene} $\ast$scene)
+\item 
+void \hyperlink{classCamera_ab3d0364f67e78080b9bacee82678c542}{set\+Additional\+Projection} (const \hyperlink{classMat4}{Mat4} \&mat)
+\item 
+bool \hyperlink{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}{init\+Default} ()
+\item 
+\mbox{\Hypertarget{classCamera_ad176536923ab1ca8276260f40cdac6e2}\label{classCamera_ad176536923ab1ca8276260f40cdac6e2}} 
+bool {\bfseries init\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\item 
+\mbox{\Hypertarget{classCamera_ac68ab51e1a13d1e1d473a829d3633028}\label{classCamera_ac68ab51e1a13d1e1d473a829d3633028}} 
+bool {\bfseries init\+Orthographic} (float zoomX, float zoomY, float near\+Plane, float far\+Plane)
+\item 
+\mbox{\Hypertarget{classCamera_a93b40b1f7c908321a7336455ec48091f}\label{classCamera_a93b40b1f7c908321a7336455ec48091f}} 
+void {\bfseries apply\+Frame\+Buffer\+Object} ()
+\item 
+\mbox{\Hypertarget{classCamera_ac21c04a71fc49783b64c5e32f4f1d128}\label{classCamera_ac21c04a71fc49783b64c5e32f4f1d128}} 
+void {\bfseries apply\+Viewport} ()
+\item 
+\mbox{\Hypertarget{classCamera_a2a1f9bbd4929dc623430d3de6cf32eb1}\label{classCamera_a2a1f9bbd4929dc623430d3de6cf32eb1}} 
+void {\bfseries restore\+Frame\+Buffer\+Object} ()
+\item 
+\mbox{\Hypertarget{classCamera_abe884ec7b69ff038dfae1ec47e6cd6d8}\label{classCamera_abe884ec7b69ff038dfae1ec47e6cd6d8}} 
+void {\bfseries restore\+Viewport} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_af0bba944c9c7a57daa328ef1d038c816}{create\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a70c042a3bf819a0196487374ee566875}{create\+Orthographic} (float zoomX, float zoomY, float near\+Plane, float far\+Plane)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a21e3aed4000a43486ecba275d1c0d8fb}{create} ()
+\item 
+static const \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a71a044ac0a08723ac89ca69deb460f47}{get\+Visiting\+Camera} ()
+\item 
+\mbox{\Hypertarget{classCamera_a3f46628a43d5b43d300fe34528ddd84a}\label{classCamera_a3f46628a43d5b43d300fe34528ddd84a}} 
+static const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \& {\bfseries get\+Default\+Viewport} ()
+\item 
+\mbox{\Hypertarget{classCamera_af3cd6db622097ab3e6cf2365c357d5d8}\label{classCamera_af3cd6db622097ab3e6cf2365c357d5d8}} 
+static void {\bfseries set\+Default\+Viewport} (const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&vp)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a09ad48ff40729017059d26b2e3363fd1}{get\+Default\+Camera} ()
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a2a51d159d55706e8c4ad99542b9ab232}{create\+Perspective} (float field\+Of\+View, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a4301bf7716b70f89172e381219f5eb73}{create\+Orthographic} (float zoomX, float zoomY, float near\+Plane, float far\+Plane)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a4807fdb4627c172d91db44af90a0b390}{create} ()
+\item 
+static const \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_a05d272fef59bf6a8bac284d12095b443}{get\+Visiting\+Camera} ()
+\item 
+\mbox{\Hypertarget{classCamera_a707aad3e941fae07300ce6a4f2dd8c67}\label{classCamera_a707aad3e941fae07300ce6a4f2dd8c67}} 
+static const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \& {\bfseries get\+Default\+Viewport} ()
+\item 
+\mbox{\Hypertarget{classCamera_ad78279952e204bc98aad11dd344313b2}\label{classCamera_ad78279952e204bc98aad11dd344313b2}} 
+static void {\bfseries set\+Default\+Viewport} (const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&vp)
+\item 
+static \hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classCamera_abadd52964c1a4c82d76a297631d09926}{get\+Default\+Camera} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCamera_adb50d0bf156afffe2545f5f1454ec053}\label{classCamera_adb50d0bf156afffe2545f5f1454ec053}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classCamera}{Camera}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCamera_ae2bfd5fe27edad01b1d63e4f1948e4f1}\label{classCamera_ae2bfd5fe27edad01b1d63e4f1948e4f1}} 
+\hyperlink{classScene}{Scene} $\ast$ {\bfseries \+\_\+scene} = nullptr
+\item 
+\mbox{\Hypertarget{classCamera_a6c3cfcc192c2faf5b4da0f519dcd8e9a}\label{classCamera_a6c3cfcc192c2faf5b4da0f519dcd8e9a}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+projection}
+\item 
+\mbox{\Hypertarget{classCamera_a68a84e144f8420f712d5965089364edf}\label{classCamera_a68a84e144f8420f712d5965089364edf}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+view}
+\item 
+\mbox{\Hypertarget{classCamera_abfa3b4af5717bc5f6b7f4e2137dd3f99}\label{classCamera_abfa3b4af5717bc5f6b7f4e2137dd3f99}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+view\+Inv}
+\item 
+\mbox{\Hypertarget{classCamera_aa49dd80a9f17d9632cc29db4adfc142b}\label{classCamera_aa49dd80a9f17d9632cc29db4adfc142b}} 
+\hyperlink{classMat4}{Mat4} {\bfseries \+\_\+view\+Projection}
+\item 
+\mbox{\Hypertarget{classCamera_a05195bdf0b7b9842aa60355a555ffa52}\label{classCamera_a05195bdf0b7b9842aa60355a555ffa52}} 
+\hyperlink{classVec3}{Vec3} {\bfseries \+\_\+up}
+\item 
+\mbox{\Hypertarget{classCamera_a465099a162212853cbd50503b49bc0c5}\label{classCamera_a465099a162212853cbd50503b49bc0c5}} 
+\hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type} {\bfseries \+\_\+type}
+\item 
+\mbox{\Hypertarget{classCamera_a6a0573b89bf3ca16c2a7e29172196976}\label{classCamera_a6a0573b89bf3ca16c2a7e29172196976}} 
+float {\bfseries \+\_\+field\+Of\+View}
+\item 
+\mbox{\Hypertarget{classCamera_a4574538240b24e5b8c89c3076a31a8ca}\label{classCamera_a4574538240b24e5b8c89c3076a31a8ca}} 
+float {\bfseries \+\_\+zoom} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classCamera_abf6c395b300f65733b55fc56e03299ff}\label{classCamera_abf6c395b300f65733b55fc56e03299ff}} 
+float {\bfseries \+\_\+aspect\+Ratio}
+\item 
+\mbox{\Hypertarget{classCamera_a58a682e31c3181637d66e43901c1eaee}\label{classCamera_a58a682e31c3181637d66e43901c1eaee}} 
+float {\bfseries \+\_\+near\+Plane}
+\item 
+\mbox{\Hypertarget{classCamera_aec9a1dbadc4a334ae60a38f08399d27c}\label{classCamera_aec9a1dbadc4a334ae60a38f08399d27c}} 
+float {\bfseries \+\_\+far\+Plane}
+\item 
+\mbox{\Hypertarget{classCamera_ab9858e9a67f4962b7d9215e574dfc372}\label{classCamera_ab9858e9a67f4962b7d9215e574dfc372}} 
+bool {\bfseries \+\_\+view\+Projection\+Dirty} = true
+\item 
+\mbox{\Hypertarget{classCamera_adba816bb204f717f7a9e18622b782cb0}\label{classCamera_adba816bb204f717f7a9e18622b782cb0}} 
+bool {\bfseries \+\_\+view\+Projection\+Updated} = false
+\item 
+\mbox{\Hypertarget{classCamera_a0294a7e6404398b7fe6a39093f4bb3f5}\label{classCamera_a0294a7e6404398b7fe6a39093f4bb3f5}} 
+unsigned short {\bfseries \+\_\+camera\+Flag}
+\item 
+\mbox{\Hypertarget{classCamera_a93c92d84348d27b186f99124a78025fa}\label{classCamera_a93c92d84348d27b186f99124a78025fa}} 
+\hyperlink{classFrustum}{Frustum} {\bfseries \+\_\+frustum}
+\item 
+\mbox{\Hypertarget{classCamera_a5ab756090414ad599d411b1ea36dd1c0}\label{classCamera_a5ab756090414ad599d411b1ea36dd1c0}} 
+bool {\bfseries \+\_\+frustum\+Dirty} = true
+\item 
+\mbox{\Hypertarget{classCamera_ae9a5ddf9ad54031727f0784e471deee8}\label{classCamera_ae9a5ddf9ad54031727f0784e471deee8}} 
+int8\+\_\+t {\bfseries \+\_\+depth} = -\/1
+\item 
+\mbox{\Hypertarget{classCamera_a4d99b1524c12398c47a01af854eb99aa}\label{classCamera_a4d99b1524c12398c47a01af854eb99aa}} 
+\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$ {\bfseries \+\_\+clear\+Brush} = nullptr
+\item 
+\mbox{\Hypertarget{classCamera_a7ca71bbfb8aac6c7343163ef5a651f5a}\label{classCamera_a7ca71bbfb8aac6c7343163ef5a651f5a}} 
+\hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} {\bfseries \+\_\+viewport}
+\item 
+\mbox{\Hypertarget{classCamera_aa3f2ea39a66f03fa0a2bb337f6a93748}\label{classCamera_aa3f2ea39a66f03fa0a2bb337f6a93748}} 
+\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$ {\bfseries \+\_\+fbo} = nullptr
+\item 
+\mbox{\Hypertarget{classCamera_a43344c99f8b31e611ffb1e8f3c66b7d2}\label{classCamera_a43344c99f8b31e611ffb1e8f3c66b7d2}} 
+G\+Lint {\bfseries \+\_\+old\+Viewport} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{classCamera_a4bd3e12e9c03ca99fcbd63d92c7e56cd}\label{classCamera_a4bd3e12e9c03ca99fcbd63d92c7e56cd}} 
+Camera\+Flag {\bfseries \+\_\+camera\+Flag} = Camera\+Flag\+::\+D\+E\+F\+A\+U\+LT
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCamera_ae4a1fe717533fa3952496f01d4dff27e}\label{classCamera_ae4a1fe717533fa3952496f01d4dff27e}} 
+static \hyperlink{classCamera}{Camera} $\ast$ {\bfseries \+\_\+visiting\+Camera} = nullptr
+\item 
+\mbox{\Hypertarget{classCamera_acb05e19da13f4c17520b4faf78ccb1c8}\label{classCamera_acb05e19da13f4c17520b4faf78ccb1c8}} 
+static \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} {\bfseries \+\_\+default\+Viewport}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCamera_acf721625ddb3197a5be044f6d5600600}\label{classCamera_acf721625ddb3197a5be044f6d5600600}} 
+class {\bfseries Scene}
+\item 
+\mbox{\Hypertarget{classCamera_a96e0e845c153610f2a2f0ad3238a2511}\label{classCamera_a96e0e845c153610f2a2f0ad3238a2511}} 
+class {\bfseries Director}
+\item 
+\mbox{\Hypertarget{classCamera_a7de0ed02fc316d9e73b7eb3def69c105}\label{classCamera_a7de0ed02fc316d9e73b7eb3def69c105}} 
+class {\bfseries Event\+Dispatcher}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines a camera . 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}\label{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}} 
+\index{Camera@{Camera}!Type@{Type}}
+\index{Type@{Type}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The type of camera. \mbox{\Hypertarget{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}\label{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}} 
+\index{Camera@{Camera}!Type@{Type}}
+\index{Type@{Type}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Type}{Type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The type of camera. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera_a767aa79833180926e267f9ec82c44577}\label{classCamera_a767aa79833180926e267f9ec82c44577}} 
+\index{Camera@{Camera}!apply@{apply}}
+\index{apply@{apply}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Apply the F\+BO, Render\+Targets and viewport. \mbox{\Hypertarget{classCamera_a767aa79833180926e267f9ec82c44577}\label{classCamera_a767aa79833180926e267f9ec82c44577}} 
+\index{Camera@{Camera}!apply@{apply}}
+\index{apply@{apply}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Apply the F\+BO, Render\+Targets and viewport. \mbox{\Hypertarget{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}\label{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}} 
+\index{Camera@{Camera}!clear\+Background@{clear\+Background}}
+\index{clear\+Background@{clear\+Background}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{clear\+Background()}{clearBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::clear\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Before rendering scene with this camera, the background need to be cleared. It clears the depth buffer with max depth by default. Use set\+Background\+Brush to modify the default behavior \mbox{\Hypertarget{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}\label{classCamera_ab343c58b5c9ad180b3b11bb42a32920c}} 
+\index{Camera@{Camera}!clear\+Background@{clear\+Background}}
+\index{clear\+Background@{clear\+Background}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{clear\+Background()}{clearBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::clear\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Before rendering scene with this camera, the background need to be cleared. It clears the depth buffer with max depth by default. Use set\+Background\+Brush to modify the default behavior \mbox{\Hypertarget{classCamera_a21e3aed4000a43486ecba275d1c0d8fb}\label{classCamera_a21e3aed4000a43486ecba275d1c0d8fb}} 
+\index{Camera@{Camera}!create@{create}}
+\index{create@{create}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera} $\ast$ Camera\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create default camera, the camera type depends on \hyperlink{classDirector_a36e916d304e26fb6861b497806dc9980}{Director\+::get\+Projection}, the depth of the default camera is 0 \mbox{\Hypertarget{classCamera_a4807fdb4627c172d91db44af90a0b390}\label{classCamera_a4807fdb4627c172d91db44af90a0b390}} 
+\index{Camera@{Camera}!create@{create}}
+\index{create@{create}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCamera}{Camera}$\ast$ Camera\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+create default camera, the camera type depends on \hyperlink{classDirector_a36e916d304e26fb6861b497806dc9980}{Director\+::get\+Projection}, the depth of the default camera is 0 \mbox{\Hypertarget{classCamera_a70c042a3bf819a0196487374ee566875}\label{classCamera_a70c042a3bf819a0196487374ee566875}} 
+\index{Camera@{Camera}!create\+Orthographic@{create\+Orthographic}}
+\index{create\+Orthographic@{create\+Orthographic}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create\+Orthographic()}{createOrthographic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera} $\ast$ Camera\+::create\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{zoomX,  }\item[{float}]{zoomY,  }\item[{float}]{near\+Plane,  }\item[{float}]{far\+Plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoomX} & The zoom factor along the X-\/axis of the orthographic projection (the width of the ortho projection). \\
+\hline
+{\em zoomY} & The zoom factor along the Y-\/axis of the orthographic projection (the height of the ortho projection). \\
+\hline
+{\em near\+Plane} & The near plane distance. \\
+\hline
+{\em far\+Plane} & The far plane distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a4301bf7716b70f89172e381219f5eb73}\label{classCamera_a4301bf7716b70f89172e381219f5eb73}} 
+\index{Camera@{Camera}!create\+Orthographic@{create\+Orthographic}}
+\index{create\+Orthographic@{create\+Orthographic}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create\+Orthographic()}{createOrthographic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCamera}{Camera}$\ast$ Camera\+::create\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{zoomX,  }\item[{float}]{zoomY,  }\item[{float}]{near\+Plane,  }\item[{float}]{far\+Plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an orthographic camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoomX} & The zoom factor along the X-\/axis of the orthographic projection (the width of the ortho projection). \\
+\hline
+{\em zoomY} & The zoom factor along the Y-\/axis of the orthographic projection (the height of the ortho projection). \\
+\hline
+{\em near\+Plane} & The near plane distance. \\
+\hline
+{\em far\+Plane} & The far plane distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_af0bba944c9c7a57daa328ef1d038c816}\label{classCamera_af0bba944c9c7a57daa328ef1d038c816}} 
+\index{Camera@{Camera}!create\+Perspective@{create\+Perspective}}
+\index{create\+Perspective@{create\+Perspective}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create\+Perspective()}{createPerspective()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera} $\ast$ Camera\+::create\+Perspective (\begin{DoxyParamCaption}\item[{float}]{field\+Of\+View,  }\item[{float}]{aspect\+Ratio,  }\item[{float}]{near\+Plane,  }\item[{float}]{far\+Plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a perspective camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+Of\+View} & The field of view for the perspective camera (normally in the range of 40-\/60 degrees). \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio of the camera (normally the width of the viewport divided by the height of the viewport). \\
+\hline
+{\em near\+Plane} & The near plane distance. \\
+\hline
+{\em far\+Plane} & The far plane distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a2a51d159d55706e8c4ad99542b9ab232}\label{classCamera_a2a51d159d55706e8c4ad99542b9ab232}} 
+\index{Camera@{Camera}!create\+Perspective@{create\+Perspective}}
+\index{create\+Perspective@{create\+Perspective}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{create\+Perspective()}{createPerspective()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCamera}{Camera}$\ast$ Camera\+::create\+Perspective (\begin{DoxyParamCaption}\item[{float}]{field\+Of\+View,  }\item[{float}]{aspect\+Ratio,  }\item[{float}]{near\+Plane,  }\item[{float}]{far\+Plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a perspective camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+Of\+View} & The field of view for the perspective camera (normally in the range of 40-\/60 degrees). \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio of the camera (normally the width of the viewport divided by the height of the viewport). \\
+\hline
+{\em near\+Plane} & The near plane distance. \\
+\hline
+{\em far\+Plane} & The far plane distance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a7994f962fbded68295f7b15f3046bdd8}\label{classCamera_a7994f962fbded68295f7b15f3046bdd8}} 
+\index{Camera@{Camera}!get\+Background\+Brush@{get\+Background\+Brush}}
+\index{get\+Background\+Brush@{get\+Background\+Brush}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Background\+Brush()}{getBackgroundBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush}$\ast$ Camera\+::get\+Background\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get clear brush \mbox{\Hypertarget{classCamera_a7994f962fbded68295f7b15f3046bdd8}\label{classCamera_a7994f962fbded68295f7b15f3046bdd8}} 
+\index{Camera@{Camera}!get\+Background\+Brush@{get\+Background\+Brush}}
+\index{get\+Background\+Brush@{get\+Background\+Brush}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Background\+Brush()}{getBackgroundBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush}$\ast$ Camera\+::get\+Background\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get clear brush \mbox{\Hypertarget{classCamera_ae7a648c0780484ba413a6197a489f208}\label{classCamera_ae7a648c0780484ba413a6197a489f208}} 
+\index{Camera@{Camera}!get\+Camera\+Flag@{get\+Camera\+Flag}}
+\index{get\+Camera\+Flag@{get\+Camera\+Flag}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Camera\+Flag()}{getCameraFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Camera\+Flag Camera\+::get\+Camera\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set \hyperlink{classCamera}{Camera} flag \mbox{\Hypertarget{classCamera_ae7a648c0780484ba413a6197a489f208}\label{classCamera_ae7a648c0780484ba413a6197a489f208}} 
+\index{Camera@{Camera}!get\+Camera\+Flag@{get\+Camera\+Flag}}
+\index{get\+Camera\+Flag@{get\+Camera\+Flag}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Camera\+Flag()}{getCameraFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Camera\+Flag Camera\+::get\+Camera\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get \& set \hyperlink{classCamera}{Camera} flag \mbox{\Hypertarget{classCamera_a09ad48ff40729017059d26b2e3363fd1}\label{classCamera_a09ad48ff40729017059d26b2e3363fd1}} 
+\index{Camera@{Camera}!get\+Default\+Camera@{get\+Default\+Camera}}
+\index{get\+Default\+Camera@{get\+Default\+Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Default\+Camera()}{getDefaultCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera}{Camera} $\ast$ Camera\+::get\+Default\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the default camera of the current running scene. \mbox{\Hypertarget{classCamera_abadd52964c1a4c82d76a297631d09926}\label{classCamera_abadd52964c1a4c82d76a297631d09926}} 
+\index{Camera@{Camera}!get\+Default\+Camera@{get\+Default\+Camera}}
+\index{get\+Default\+Camera@{get\+Default\+Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Default\+Camera()}{getDefaultCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classCamera}{Camera}$\ast$ Camera\+::get\+Default\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the default camera of the current running scene. \mbox{\Hypertarget{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}\label{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}} 
+\index{Camera@{Camera}!get\+Depth@{get\+Depth}}
+\index{get\+Depth@{get\+Depth}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Depth()}{getDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int8\+\_\+t Camera\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get depth, camera with larger depth is drawn on top of camera with smaller depth, the depth of camera with Camera\+Flag\+::\+D\+E\+F\+A\+U\+LT is 0, user defined camera is -\/1 by default \mbox{\Hypertarget{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}\label{classCamera_afeacc2e59eb6cc6e32d55673f0c92ada}} 
+\index{Camera@{Camera}!get\+Depth@{get\+Depth}}
+\index{get\+Depth@{get\+Depth}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Depth()}{getDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int8\+\_\+t Camera\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get depth, camera with larger depth is drawn on top of camera with smaller depth, the depth of camera with Camera\+Flag\+::\+D\+E\+F\+A\+U\+LT is 0, user defined camera is -\/1 by default \mbox{\Hypertarget{classCamera_a5b38e0d536fb4773aaad12285634b227}\label{classCamera_a5b38e0d536fb4773aaad12285634b227}} 
+\index{Camera@{Camera}!get\+Depth\+In\+View@{get\+Depth\+In\+View}}
+\index{get\+Depth\+In\+View@{get\+Depth\+In\+View}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Depth\+In\+View()}{getDepthInView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Depth\+In\+View (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform }\end{DoxyParamCaption}) const}
+
+Get object depth towards camera \mbox{\Hypertarget{classCamera_a5b38e0d536fb4773aaad12285634b227}\label{classCamera_a5b38e0d536fb4773aaad12285634b227}} 
+\index{Camera@{Camera}!get\+Depth\+In\+View@{get\+Depth\+In\+View}}
+\index{get\+Depth\+In\+View@{get\+Depth\+In\+View}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Depth\+In\+View()}{getDepthInView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Depth\+In\+View (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform }\end{DoxyParamCaption}) const}
+
+Get object depth towards camera \mbox{\Hypertarget{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}\label{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}} 
+\index{Camera@{Camera}!get\+Far\+Plane@{get\+Far\+Plane}}
+\index{get\+Far\+Plane@{get\+Far\+Plane}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Far\+Plane()}{getFarPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Far\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the frustum\textquotesingle{}s far plane. \mbox{\Hypertarget{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}\label{classCamera_ae3582b9b0a37d8d3351f6a1fc5a9b45c}} 
+\index{Camera@{Camera}!get\+Far\+Plane@{get\+Far\+Plane}}
+\index{get\+Far\+Plane@{get\+Far\+Plane}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Far\+Plane()}{getFarPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Far\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the frustum\textquotesingle{}s far plane. \mbox{\Hypertarget{classCamera_a06c0abe6144c4b19aa68935134d15c5c}\label{classCamera_a06c0abe6144c4b19aa68935134d15c5c}} 
+\index{Camera@{Camera}!get\+Near\+Plane@{get\+Near\+Plane}}
+\index{get\+Near\+Plane@{get\+Near\+Plane}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Near\+Plane()}{getNearPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Near\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the frustum\textquotesingle{}s near plane. \mbox{\Hypertarget{classCamera_a06c0abe6144c4b19aa68935134d15c5c}\label{classCamera_a06c0abe6144c4b19aa68935134d15c5c}} 
+\index{Camera@{Camera}!get\+Near\+Plane@{get\+Near\+Plane}}
+\index{get\+Near\+Plane@{get\+Near\+Plane}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Near\+Plane()}{getNearPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Camera\+::get\+Near\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the frustum\textquotesingle{}s near plane. \mbox{\Hypertarget{classCamera_a654a29037e5371e0fc5157fe6be89350}\label{classCamera_a654a29037e5371e0fc5157fe6be89350}} 
+\index{Camera@{Camera}!get\+Projection\+Matrix@{get\+Projection\+Matrix}}
+\index{get\+Projection\+Matrix@{get\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Projection\+Matrix()}{getProjectionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Camera\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the camera\textquotesingle{}s projection matrix.
+
+\begin{DoxyReturn}{Returns}
+The camera projection matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a5fd60cb16045d8102c88db4a8c2f20f0}\label{classCamera_a5fd60cb16045d8102c88db4a8c2f20f0}} 
+\index{Camera@{Camera}!get\+Projection\+Matrix@{get\+Projection\+Matrix}}
+\index{get\+Projection\+Matrix@{get\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Projection\+Matrix()}{getProjectionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Camera\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the camera\textquotesingle{}s projection matrix.
+
+\begin{DoxyReturn}{Returns}
+The camera projection matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a126d10fabc05a9debd3c134f75dc0c14}\label{classCamera_a126d10fabc05a9debd3c134f75dc0c14}} 
+\index{Camera@{Camera}!get\+Render\+Order@{get\+Render\+Order}}
+\index{get\+Render\+Order@{get\+Render\+Order}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Render\+Order()}{getRenderOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Camera\+::get\+Render\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get rendered order \mbox{\Hypertarget{classCamera_a126d10fabc05a9debd3c134f75dc0c14}\label{classCamera_a126d10fabc05a9debd3c134f75dc0c14}} 
+\index{Camera@{Camera}!get\+Render\+Order@{get\+Render\+Order}}
+\index{get\+Render\+Order@{get\+Render\+Order}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Render\+Order()}{getRenderOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Camera\+::get\+Render\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get rendered order \mbox{\Hypertarget{classCamera_ae8f514578aa54023476ad541b167a1e0}\label{classCamera_ae8f514578aa54023476ad541b167a1e0}} 
+\index{Camera@{Camera}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type} Camera\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the type of camera.
+
+\begin{DoxyReturn}{Returns}
+The camera type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ae8f514578aa54023476ad541b167a1e0}\label{classCamera_ae8f514578aa54023476ad541b167a1e0}} 
+\index{Camera@{Camera}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classCamera_a3b0a1f58deca679ac665f61c480d1dcb}{Camera\+::\+Type} Camera\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the type of camera.
+
+\begin{DoxyReturn}{Returns}
+The camera type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ab30a2ac464fe2d653e99502f07325887}\label{classCamera_ab30a2ac464fe2d653e99502f07325887}} 
+\index{Camera@{Camera}!get\+View\+Matrix@{get\+View\+Matrix}}
+\index{get\+View\+Matrix@{get\+View\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+View\+Matrix()}{getViewMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the camera\textquotesingle{}s view matrix.
+
+\begin{DoxyReturn}{Returns}
+The camera view matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a72ba7f33c43ae0f1e907292befb8fa3b}\label{classCamera_a72ba7f33c43ae0f1e907292befb8fa3b}} 
+\index{Camera@{Camera}!get\+View\+Matrix@{get\+View\+Matrix}}
+\index{get\+View\+Matrix@{get\+View\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+View\+Matrix()}{getViewMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the camera\textquotesingle{}s view matrix.
+
+\begin{DoxyReturn}{Returns}
+The camera view matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ab7251654fac905a8a8d2b902a81d17e6}\label{classCamera_ab7251654fac905a8a8d2b902a81d17e6}} 
+\index{Camera@{Camera}!get\+View\+Projection\+Matrix@{get\+View\+Projection\+Matrix}}
+\index{get\+View\+Projection\+Matrix@{get\+View\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+View\+Projection\+Matrix()}{getViewProjectionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4} \& Camera\+::get\+View\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get view projection matrix \mbox{\Hypertarget{classCamera_a04b8c6249119046519ddd62b283928b6}\label{classCamera_a04b8c6249119046519ddd62b283928b6}} 
+\index{Camera@{Camera}!get\+View\+Projection\+Matrix@{get\+View\+Projection\+Matrix}}
+\index{get\+View\+Projection\+Matrix@{get\+View\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+View\+Projection\+Matrix()}{getViewProjectionMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classMat4}{Mat4}\& Camera\+::get\+View\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get view projection matrix \mbox{\Hypertarget{classCamera_a71a044ac0a08723ac89ca69deb460f47}\label{classCamera_a71a044ac0a08723ac89ca69deb460f47}} 
+\index{Camera@{Camera}!get\+Visiting\+Camera@{get\+Visiting\+Camera}}
+\index{get\+Visiting\+Camera@{get\+Visiting\+Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Visiting\+Camera()}{getVisitingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classCamera}{Camera} $\ast$ Camera\+::get\+Visiting\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the visiting camera , the visiting camera shall be set on \hyperlink{classScene_a26d5468761d68ff0f3beb177bf8d2734}{Scene\+::render} \mbox{\Hypertarget{classCamera_a05d272fef59bf6a8bac284d12095b443}\label{classCamera_a05d272fef59bf6a8bac284d12095b443}} 
+\index{Camera@{Camera}!get\+Visiting\+Camera@{get\+Visiting\+Camera}}
+\index{get\+Visiting\+Camera@{get\+Visiting\+Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{get\+Visiting\+Camera()}{getVisitingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static const \hyperlink{classCamera}{Camera}$\ast$ Camera\+::get\+Visiting\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the visiting camera , the visiting camera shall be set on \hyperlink{classScene_a26d5468761d68ff0f3beb177bf8d2734}{Scene\+::render} \mbox{\Hypertarget{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}\label{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}} 
+\index{Camera@{Camera}!init\+Default@{init\+Default}}
+\index{init\+Default@{init\+Default}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{init\+Default()}{initDefault()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Camera\+::init\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+init camera \mbox{\Hypertarget{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}\label{classCamera_a4bdc70b1156c5b4cbdb5706cb75fb598}} 
+\index{Camera@{Camera}!init\+Default@{init\+Default}}
+\index{init\+Default@{init\+Default}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{init\+Default()}{initDefault()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Camera\+::init\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+init camera \mbox{\Hypertarget{classCamera_afba312d6b30f3d137e9c173f7fa334e6}\label{classCamera_afba312d6b30f3d137e9c173f7fa334e6}} 
+\index{Camera@{Camera}!is\+View\+Projection\+Updated@{is\+View\+Projection\+Updated}}
+\index{is\+View\+Projection\+Updated@{is\+View\+Projection\+Updated}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{is\+View\+Projection\+Updated()}{isViewProjectionUpdated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Camera\+::is\+View\+Projection\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the viewprojection matrix was updated since the last frame. \begin{DoxyReturn}{Returns}
+True if the viewprojection matrix was updated since the last frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_afba312d6b30f3d137e9c173f7fa334e6}\label{classCamera_afba312d6b30f3d137e9c173f7fa334e6}} 
+\index{Camera@{Camera}!is\+View\+Projection\+Updated@{is\+View\+Projection\+Updated}}
+\index{is\+View\+Projection\+Updated@{is\+View\+Projection\+Updated}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{is\+View\+Projection\+Updated()}{isViewProjectionUpdated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Camera\+::is\+View\+Projection\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Whether or not the viewprojection matrix was updated since the last frame. \begin{DoxyReturn}{Returns}
+True if the viewprojection matrix was updated since the last frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ad962c084c9de231d820b981f4b5846c9}\label{classCamera_ad962c084c9de231d820b981f4b5846c9}} 
+\index{Camera@{Camera}!is\+Visible\+In\+Frustum@{is\+Visible\+In\+Frustum}}
+\index{is\+Visible\+In\+Frustum@{is\+Visible\+In\+Frustum}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{is\+Visible\+In\+Frustum()}{isVisibleInFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Camera\+::is\+Visible\+In\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} $\ast$}]{aabb }\end{DoxyParamCaption}) const}
+
+Is this aabb visible in frustum \mbox{\Hypertarget{classCamera_ad962c084c9de231d820b981f4b5846c9}\label{classCamera_ad962c084c9de231d820b981f4b5846c9}} 
+\index{Camera@{Camera}!is\+Visible\+In\+Frustum@{is\+Visible\+In\+Frustum}}
+\index{is\+Visible\+In\+Frustum@{is\+Visible\+In\+Frustum}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{is\+Visible\+In\+Frustum()}{isVisibleInFrustum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Camera\+::is\+Visible\+In\+Frustum (\begin{DoxyParamCaption}\item[{const \hyperlink{classAABB}{A\+A\+BB} $\ast$}]{aabb }\end{DoxyParamCaption}) const}
+
+Is this aabb visible in frustum \mbox{\Hypertarget{classCamera_af5a1abfa877baf99490da53b35293f86}\label{classCamera_af5a1abfa877baf99490da53b35293f86}} 
+\index{Camera@{Camera}!look\+At@{look\+At}}
+\index{look\+At@{look\+At}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{look\+At()}{lookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::look\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{target,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{up = {\ttfamily \hyperlink{classVec3_a0d569defe7293f1cb108f643230facf5}{Vec3\+::\+U\+N\+I\+T\+\_\+Y}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make \hyperlink{classCamera}{Camera} looks at target
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target camera is point at \\
+\hline
+{\em up} & The up vector, usually it\textquotesingle{}s Y axis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a0eca5fae6b9b7a1ad949d9647e48ca52}\label{classCamera_a0eca5fae6b9b7a1ad949d9647e48ca52}} 
+\index{Camera@{Camera}!look\+At@{look\+At}}
+\index{look\+At@{look\+At}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{look\+At()}{lookAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Camera\+::look\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{target,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{up = {\ttfamily \hyperlink{classVec3_a0d569defe7293f1cb108f643230facf5}{Vec3\+::\+U\+N\+I\+T\+\_\+Y}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Make \hyperlink{classCamera}{Camera} looks at target
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target camera is point at \\
+\hline
+{\em up} & The up vector, usually it\textquotesingle{}s Y axis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a6d316bcfec816212b0f3cfdf1b41b820}\label{classCamera_a6d316bcfec816212b0f3cfdf1b41b820}} 
+\index{Camera@{Camera}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classCamera_af22f3064a50c98832f448d7167a1f3cd}\label{classCamera_af22f3064a50c98832f448d7167a1f3cd}} 
+\index{Camera@{Camera}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Camera\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classCamera_a21080d4de388ac7b9a02ccf77aaacf92}\label{classCamera_a21080d4de388ac7b9a02ccf77aaacf92}} 
+\index{Camera@{Camera}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+\mbox{\Hypertarget{classCamera_aff2efb18d2837f4c443666ae94993185}\label{classCamera_aff2efb18d2837f4c443666ae94993185}} 
+\index{Camera@{Camera}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Camera\+::on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} leaves the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition finishes. During on\+Exit you can\textquotesingle{}t access a sibling node. If you override on\+Exit, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node\+::on\+Exit()}.  NA 
+
+Reimplemented from \hyperlink{classNode_ac83de835ea315e3179d4293acd8903ac}{Node}.
+
+\mbox{\Hypertarget{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}\label{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}} 
+\index{Camera@{Camera}!restore@{restore}}
+\index{restore@{restore}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{restore()}{restore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restore the F\+BO, Render\+Targets and viewport. \mbox{\Hypertarget{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}\label{classCamera_a5e2265707fe1a6e67e06a2f7d2893b74}} 
+\index{Camera@{Camera}!restore@{restore}}
+\index{restore@{restore}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{restore()}{restore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restore the F\+BO, Render\+Targets and viewport. \mbox{\Hypertarget{classCamera_ab3d0364f67e78080b9bacee82678c542}\label{classCamera_ab3d0364f67e78080b9bacee82678c542}} 
+\index{Camera@{Camera}!set\+Additional\+Projection@{set\+Additional\+Projection}}
+\index{set\+Additional\+Projection@{set\+Additional\+Projection}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Additional\+Projection()}{setAdditionalProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Additional\+Projection (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+set additional matrix for the projection matrix, it multiplies mat to projection matrix when called, used by W\+P8 \mbox{\Hypertarget{classCamera_ab3d0364f67e78080b9bacee82678c542}\label{classCamera_ab3d0364f67e78080b9bacee82678c542}} 
+\index{Camera@{Camera}!set\+Additional\+Projection@{set\+Additional\+Projection}}
+\index{set\+Additional\+Projection@{set\+Additional\+Projection}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Additional\+Projection()}{setAdditionalProjection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Additional\+Projection (\begin{DoxyParamCaption}\item[{const \hyperlink{classMat4}{Mat4} \&}]{mat }\end{DoxyParamCaption})}
+
+set additional matrix for the projection matrix, it multiplies mat to projection matrix when called, used by W\+P8 \mbox{\Hypertarget{classCamera_a1804790d419a1d952752f81680d98d1f}\label{classCamera_a1804790d419a1d952752f81680d98d1f}} 
+\index{Camera@{Camera}!set\+Background\+Brush@{set\+Background\+Brush}}
+\index{set\+Background\+Brush@{set\+Background\+Brush}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Background\+Brush()}{setBackgroundBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Background\+Brush (\begin{DoxyParamCaption}\item[{\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$}]{clear\+Brush }\end{DoxyParamCaption})}
+
+set the background brush. See \hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} for more information. 
+\begin{DoxyParams}{Parameters}
+{\em clear\+Brush} & Brush used to clear the background \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a1804790d419a1d952752f81680d98d1f}\label{classCamera_a1804790d419a1d952752f81680d98d1f}} 
+\index{Camera@{Camera}!set\+Background\+Brush@{set\+Background\+Brush}}
+\index{set\+Background\+Brush@{set\+Background\+Brush}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Background\+Brush()}{setBackgroundBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Background\+Brush (\begin{DoxyParamCaption}\item[{\hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} $\ast$}]{clear\+Brush }\end{DoxyParamCaption})}
+
+set the background brush. See \hyperlink{classCameraBackgroundBrush}{Camera\+Background\+Brush} for more information. 
+\begin{DoxyParams}{Parameters}
+{\em clear\+Brush} & Brush used to clear the background \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a361809c317aebb2785ffbda7836e25ff}\label{classCamera_a361809c317aebb2785ffbda7836e25ff}} 
+\index{Camera@{Camera}!set\+Depth@{set\+Depth}}
+\index{set\+Depth@{set\+Depth}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Depth()}{setDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Depth (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{depth }\end{DoxyParamCaption})}
+
+set depth, camera with larger depth is drawn on top of camera with smaller depth, the depth of camera with Camera\+Flag\+::\+D\+E\+F\+A\+U\+LT is 0, user defined camera is -\/1 by default \mbox{\Hypertarget{classCamera_a361809c317aebb2785ffbda7836e25ff}\label{classCamera_a361809c317aebb2785ffbda7836e25ff}} 
+\index{Camera@{Camera}!set\+Depth@{set\+Depth}}
+\index{set\+Depth@{set\+Depth}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Depth()}{setDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Depth (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{depth }\end{DoxyParamCaption})}
+
+set depth, camera with larger depth is drawn on top of camera with smaller depth, the depth of camera with Camera\+Flag\+::\+D\+E\+F\+A\+U\+LT is 0, user defined camera is -\/1 by default \mbox{\Hypertarget{classCamera_a17b4f5537c83a29f8a7d809859e690a4}\label{classCamera_a17b4f5537c83a29f8a7d809859e690a4}} 
+\index{Camera@{Camera}!set\+Frame\+Buffer\+Object@{set\+Frame\+Buffer\+Object}}
+\index{set\+Frame\+Buffer\+Object@{set\+Frame\+Buffer\+Object}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Frame\+Buffer\+Object()}{setFrameBufferObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Frame\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$}]{fbo }\end{DoxyParamCaption})}
+
+Set F\+BO, which will attach several render target for the rendered result. \mbox{\Hypertarget{classCamera_a17b4f5537c83a29f8a7d809859e690a4}\label{classCamera_a17b4f5537c83a29f8a7d809859e690a4}} 
+\index{Camera@{Camera}!set\+Frame\+Buffer\+Object@{set\+Frame\+Buffer\+Object}}
+\index{set\+Frame\+Buffer\+Object@{set\+Frame\+Buffer\+Object}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Frame\+Buffer\+Object()}{setFrameBufferObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Frame\+Buffer\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{classexperimental_1_1FrameBuffer}{experimental\+::\+Frame\+Buffer} $\ast$}]{fbo }\end{DoxyParamCaption})}
+
+Set F\+BO, which will attach several render target for the rendered result. \mbox{\Hypertarget{classCamera_ac35b13397b0add2c502bef10a46f0e17}\label{classCamera_ac35b13397b0add2c502bef10a46f0e17}} 
+\index{Camera@{Camera}!set\+Scene@{set\+Scene}}
+\index{set\+Scene@{set\+Scene}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Scene()}{setScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Set the scene,this method shall not be invoke manually \mbox{\Hypertarget{classCamera_ac35b13397b0add2c502bef10a46f0e17}\label{classCamera_ac35b13397b0add2c502bef10a46f0e17}} 
+\index{Camera@{Camera}!set\+Scene@{set\+Scene}}
+\index{set\+Scene@{set\+Scene}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Scene()}{setScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Scene (\begin{DoxyParamCaption}\item[{\hyperlink{classScene}{Scene} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Set the scene,this method shall not be invoke manually \mbox{\Hypertarget{classCamera_a3070783685089524b0fc5b38d9623b9e}\label{classCamera_a3070783685089524b0fc5b38d9623b9e}} 
+\index{Camera@{Camera}!set\+Viewport@{set\+Viewport}}
+\index{set\+Viewport@{set\+Viewport}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Viewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Viewport (\begin{DoxyParamCaption}\item[{const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&}]{vp }\end{DoxyParamCaption})}
+
+Set Viewport for camera. \mbox{\Hypertarget{classCamera_a3070783685089524b0fc5b38d9623b9e}\label{classCamera_a3070783685089524b0fc5b38d9623b9e}} 
+\index{Camera@{Camera}!set\+Viewport@{set\+Viewport}}
+\index{set\+Viewport@{set\+Viewport}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Viewport()}{setViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Camera\+::set\+Viewport (\begin{DoxyParamCaption}\item[{const \hyperlink{structexperimental_1_1Viewport}{experimental\+::\+Viewport} \&}]{vp }\end{DoxyParamCaption})}
+
+Set Viewport for camera. \mbox{\Hypertarget{classCamera_a06eccde5c9fc644d94e69e505a78d048}\label{classCamera_a06eccde5c9fc644d94e69e505a78d048}} 
+\index{Camera@{Camera}!unproject@{unproject}}
+\index{unproject@{unproject}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject()}{unproject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Camera\+::unproject (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{src }\end{DoxyParamCaption}) const}
+
+Convert the specified point of screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left top corner in screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The screen-\/space position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 3D world-\/space position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a06eccde5c9fc644d94e69e505a78d048}\label{classCamera_a06eccde5c9fc644d94e69e505a78d048}} 
+\index{Camera@{Camera}!unproject@{unproject}}
+\index{unproject@{unproject}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject()}{unproject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Camera\+::unproject (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{src }\end{DoxyParamCaption}) const}
+
+Convert the specified point of screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left top corner in screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The screen-\/space position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 3D world-\/space position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a48a0dab2e51ef11a166e650224e23419}\label{classCamera_a48a0dab2e51ef11a166e650224e23419}} 
+\index{Camera@{Camera}!unproject@{unproject}}
+\index{unproject@{unproject}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject()}{unproject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Camera\+::unproject (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const \hyperlink{classVec3}{Vec3} $\ast$}]{src,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Convert the specified point of screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left top corner in screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The window size to use. \\
+\hline
+{\em src} & The screen-\/space position. \\
+\hline
+{\em dst} & The 3D world-\/space position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a48a0dab2e51ef11a166e650224e23419}\label{classCamera_a48a0dab2e51ef11a166e650224e23419}} 
+\index{Camera@{Camera}!unproject@{unproject}}
+\index{unproject@{unproject}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject()}{unproject()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Camera\+::unproject (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const \hyperlink{classVec3}{Vec3} $\ast$}]{src,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Convert the specified point of screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left top corner in screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The window size to use. \\
+\hline
+{\em src} & The screen-\/space position. \\
+\hline
+{\em dst} & The 3D world-\/space position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}\label{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}} 
+\index{Camera@{Camera}!unproject\+GL@{unproject\+GL}}
+\index{unproject\+GL@{unproject\+GL}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject\+G\+L()}{unprojectGL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Camera\+::unproject\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{src }\end{DoxyParamCaption}) const}
+
+Convert the specified point of G\+L-\/screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left bottom corner in G\+L-\/screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The G\+L-\/screen-\/space position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 3D world-\/space position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}\label{classCamera_ac4b6f76b3c9569e12b528e423e45ea41}} 
+\index{Camera@{Camera}!unproject\+GL@{unproject\+GL}}
+\index{unproject\+GL@{unproject\+GL}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject\+G\+L()}{unprojectGL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} Camera\+::unproject\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{src }\end{DoxyParamCaption}) const}
+
+Convert the specified point of G\+L-\/screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left bottom corner in G\+L-\/screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em src} & The G\+L-\/screen-\/space position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The 3D world-\/space position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}\label{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}} 
+\index{Camera@{Camera}!unproject\+GL@{unproject\+GL}}
+\index{unproject\+GL@{unproject\+GL}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject\+G\+L()}{unprojectGL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Camera\+::unproject\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const \hyperlink{classVec3}{Vec3} $\ast$}]{src,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Convert the specified point of G\+L-\/screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left bottom corner in G\+L-\/screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The window size to use. \\
+\hline
+{\em src} & The G\+L-\/screen-\/space position. \\
+\hline
+{\em dst} & The 3D world-\/space position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}\label{classCamera_a2cdbc6f2403ea1f7213e5af66e31f37c}} 
+\index{Camera@{Camera}!unproject\+GL@{unproject\+GL}}
+\index{unproject\+GL@{unproject\+GL}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{unproject\+G\+L()}{unprojectGL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Camera\+::unproject\+GL (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size,  }\item[{const \hyperlink{classVec3}{Vec3} $\ast$}]{src,  }\item[{\hyperlink{classVec3}{Vec3} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Convert the specified point of G\+L-\/screen-\/space coordinate into the 3D world-\/space coordinate.
+
+Origin point at left bottom corner in G\+L-\/screen-\/space. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The window size to use. \\
+\hline
+{\em src} & The G\+L-\/screen-\/space position. \\
+\hline
+{\em dst} & The 3D world-\/space position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_a9af4106a5c83986160cb975d53205fce}\label{classCamera_a9af4106a5c83986160cb975d53205fce}} 
+\index{Camera@{Camera}!visit@{visit}}
+\index{visit@{visit}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Camera\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classCamera_add749a2d2338f0373a6a440e4cba5afa}\label{classCamera_add749a2d2338f0373a6a440e4cba5afa}} 
+\index{Camera@{Camera}!visit@{visit}}
+\index{visit@{visit}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Camera\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Visits this node\textquotesingle{}s children and draw them recursively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & A given renderer. \\
+\hline
+{\em parent\+Transform} & A transform matrix. \\
+\hline
+{\em parent\+Flags} & \hyperlink{classRenderer}{Renderer} flag. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Camera.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Camera.\+cpp\end{DoxyCompactItemize}

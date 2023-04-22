@@ -1,0 +1,32 @@
+\hypertarget{classCommand}{}\section{Command Class Reference}
+\label{classCommand}\index{Command@{Command}}
+
+
+Inheritance diagram for Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCommand__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommand_af53b158f04b3365121e13089bae3ac4c}\label{classCommand_af53b158f04b3365121e13089bae3ac4c}} 
+virtual void {\bfseries compute\+Initial\+Consign} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, float $\ast$distance\+Consig, float $\ast$angle\+Consign, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator)=0
+\item 
+\mbox{\Hypertarget{classCommand_a4133e858678d66a27ab7c5a36f3db562}\label{classCommand_a4133e858678d66a27ab7c5a36f3db562}} 
+virtual void {\bfseries update\+Consign} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, float $\ast$distance\+Consig, float $\ast$angle\+Consign, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator)=0
+\item 
+\mbox{\Hypertarget{classCommand_a29ffe79b7fd80917507dcd9bd5b594a2}\label{classCommand_a29ffe79b7fd80917507dcd9bd5b594a2}} 
+virtual bool {\bfseries is\+Goal\+Reached} (float X\+\_\+mm, float Y\+\_\+mm, float theta\+\_\+rad, const \hyperlink{classRegulator}{Regulator} \&angle\+\_\+regulator, const \hyperlink{classRegulator}{Regulator} \&distance\+\_\+regulator, const \hyperlink{classCommand}{Command} $\ast$next\+Command)=0
+\item 
+\mbox{\Hypertarget{classCommand_ac794c0acebfc1ec4062ec47b80de8d66}\label{classCommand_ac794c0acebfc1ec4062ec47b80de8d66}} 
+virtual bool {\bfseries no\+Stop} () const =0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Asserv.\+Nucleo/command\+Manager/\+Commands/Command.\+h\end{DoxyCompactItemize}

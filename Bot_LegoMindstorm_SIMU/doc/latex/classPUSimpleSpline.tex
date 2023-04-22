@@ -1,0 +1,241 @@
+\hypertarget{classPUSimpleSpline}{}\section{P\+U\+Simple\+Spline Class Reference}
+\label{classPUSimpleSpline}\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+
+
+Collaboration diagram for P\+U\+Simple\+Spline\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classPUSimpleSpline__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}{add\+Point} (const \hyperlink{classVec3}{Vec3} \&p)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUSimpleSpline_a3b217c8b9c53dbac86d03dbc6be92c67}{get\+Point} (unsigned short index) const
+\item 
+unsigned short \hyperlink{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}{get\+Num\+Points} (void) const
+\item 
+void \hyperlink{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}{clear} (void)
+\item 
+void \hyperlink{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}{update\+Point} (unsigned short index, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}{interpolate} (float t) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}{interpolate} (unsigned int from\+Index, float t) const
+\item 
+void \hyperlink{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}{set\+Auto\+Calculate} (bool auto\+Calc)
+\item 
+void \hyperlink{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}{recalc\+Tangents} (void)
+\item 
+void \hyperlink{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}{add\+Point} (const \hyperlink{classVec3}{Vec3} \&p)
+\item 
+const \hyperlink{classVec3}{Vec3} \& \hyperlink{classPUSimpleSpline_a64159a11fe5370b9fa3c1f2ee428f294}{get\+Point} (unsigned short index) const
+\item 
+unsigned short \hyperlink{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}{get\+Num\+Points} (void) const
+\item 
+void \hyperlink{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}{clear} (void)
+\item 
+void \hyperlink{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}{update\+Point} (unsigned short index, const \hyperlink{classVec3}{Vec3} \&value)
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}{interpolate} (float t) const
+\item 
+\hyperlink{classVec3}{Vec3} \hyperlink{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}{interpolate} (unsigned int from\+Index, float t) const
+\item 
+void \hyperlink{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}{set\+Auto\+Calculate} (bool auto\+Calc)
+\item 
+void \hyperlink{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}{recalc\+Tangents} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPUSimpleSpline_ab4e4858fe762124b7f8497d44b4e62ea}\label{classPUSimpleSpline_ab4e4858fe762124b7f8497d44b4e62ea}} 
+bool {\bfseries \+\_\+auto\+Calc}
+\item 
+\mbox{\Hypertarget{classPUSimpleSpline_a745f6abb5d86eb5bd72115d800109825}\label{classPUSimpleSpline_a745f6abb5d86eb5bd72115d800109825}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+points}
+\item 
+\mbox{\Hypertarget{classPUSimpleSpline_a0cd45f4eba2204c8fe917d121ff2b48e}\label{classPUSimpleSpline_a0cd45f4eba2204c8fe917d121ff2b48e}} 
+std\+::vector$<$ \hyperlink{classVec3}{Vec3} $>$ {\bfseries \+\_\+tangents}
+\item 
+\mbox{\Hypertarget{classPUSimpleSpline_a08a4b615eca89551fe5031fe10380bd7}\label{classPUSimpleSpline_a08a4b615eca89551fe5031fe10380bd7}} 
+\hyperlink{classMat4}{Mat4} \hyperlink{classPUSimpleSpline_a08a4b615eca89551fe5031fe10380bd7}{\+\_\+coeffs}
+\begin{DoxyCompactList}\small\item\em Matrix of coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}\label{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{add\+Point()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::add\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{p }\end{DoxyParamCaption})}
+
+Adds a control point to the end of the spline. \mbox{\Hypertarget{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}\label{classPUSimpleSpline_a0ddc226361cdefb81452c2ff42bd5f8f}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{add\+Point()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::add\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec3}{Vec3} \&}]{p }\end{DoxyParamCaption})}
+
+Adds a control point to the end of the spline. \mbox{\Hypertarget{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}\label{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!clear@{clear}}
+\index{clear@{clear}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clears all the points in the spline. \mbox{\Hypertarget{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}\label{classPUSimpleSpline_a43bf47f7d4ae7687aec7eb7e202630d1}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!clear@{clear}}
+\index{clear@{clear}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clears all the points in the spline. \mbox{\Hypertarget{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}\label{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!get\+Num\+Points@{get\+Num\+Points}}
+\index{get\+Num\+Points@{get\+Num\+Points}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{get\+Num\+Points()}{getNumPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short P\+U\+Simple\+Spline\+::get\+Num\+Points (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Gets the number of control points in the spline. \mbox{\Hypertarget{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}\label{classPUSimpleSpline_aff27dad383a423321ff1d35b37f3770e}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!get\+Num\+Points@{get\+Num\+Points}}
+\index{get\+Num\+Points@{get\+Num\+Points}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{get\+Num\+Points()}{getNumPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short P\+U\+Simple\+Spline\+::get\+Num\+Points (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Gets the number of control points in the spline. \mbox{\Hypertarget{classPUSimpleSpline_a3b217c8b9c53dbac86d03dbc6be92c67}\label{classPUSimpleSpline_a3b217c8b9c53dbac86d03dbc6be92c67}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{get\+Point()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3} \& P\+U\+Simple\+Spline\+::get\+Point (\begin{DoxyParamCaption}\item[{unsigned short}]{index }\end{DoxyParamCaption}) const}
+
+Gets the detail of one of the control points of the spline. \mbox{\Hypertarget{classPUSimpleSpline_a64159a11fe5370b9fa3c1f2ee428f294}\label{classPUSimpleSpline_a64159a11fe5370b9fa3c1f2ee428f294}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{get\+Point()}{getPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec3}{Vec3}\& P\+U\+Simple\+Spline\+::get\+Point (\begin{DoxyParamCaption}\item[{unsigned short}]{index }\end{DoxyParamCaption}) const}
+
+Gets the detail of one of the control points of the spline. \mbox{\Hypertarget{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}\label{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Simple\+Spline\+::interpolate (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption}) const}
+
+Returns an interpolated point based on a parametric value over the whole series. \begin{DoxyRemark}{Remarks}
+Given a t value between 0 and 1 representing the parametric distance along the whole length of the spline, this method returns an interpolated point. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Parametric value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}\label{classPUSimpleSpline_afb14b877762e923b8dd181bb0ea2ab17}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Simple\+Spline\+::interpolate (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption}) const}
+
+Returns an interpolated point based on a parametric value over the whole series. \begin{DoxyRemark}{Remarks}
+Given a t value between 0 and 1 representing the parametric distance along the whole length of the spline, this method returns an interpolated point. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Parametric value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}\label{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Simple\+Spline\+::interpolate (\begin{DoxyParamCaption}\item[{unsigned int}]{from\+Index,  }\item[{float}]{t }\end{DoxyParamCaption}) const}
+
+Interpolates a single segment of the spline given a parametric value. 
+\begin{DoxyParams}{Parameters}
+{\em from\+Index} & The point index to treat as t=0. from\+Index + 1 is deemed to be t=1 \\
+\hline
+{\em t} & Parametric value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}\label{classPUSimpleSpline_af723449337dfbead79ce52ba36f787e3}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \hyperlink{classVec3}{Vec3} P\+U\+Simple\+Spline\+::interpolate (\begin{DoxyParamCaption}\item[{unsigned int}]{from\+Index,  }\item[{float}]{t }\end{DoxyParamCaption}) const}
+
+Interpolates a single segment of the spline given a parametric value. 
+\begin{DoxyParams}{Parameters}
+{\em from\+Index} & The point index to treat as t=0. from\+Index + 1 is deemed to be t=1 \\
+\hline
+{\em t} & Parametric value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}\label{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!recalc\+Tangents@{recalc\+Tangents}}
+\index{recalc\+Tangents@{recalc\+Tangents}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{recalc\+Tangents()}{recalcTangents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::recalc\+Tangents (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Recalculates the tangents associated with this spline. \begin{DoxyRemark}{Remarks}
+If you tell the spline not to update on demand by calling set\+Auto\+Calculate(false) then you must call this after completing your updates to the spline points. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}\label{classPUSimpleSpline_a9f888891b07d83f57b68da9b926157c6}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!recalc\+Tangents@{recalc\+Tangents}}
+\index{recalc\+Tangents@{recalc\+Tangents}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{recalc\+Tangents()}{recalcTangents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::recalc\+Tangents (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Recalculates the tangents associated with this spline. \begin{DoxyRemark}{Remarks}
+If you tell the spline not to update on demand by calling set\+Auto\+Calculate(false) then you must call this after completing your updates to the spline points. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}\label{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!set\+Auto\+Calculate@{set\+Auto\+Calculate}}
+\index{set\+Auto\+Calculate@{set\+Auto\+Calculate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{set\+Auto\+Calculate()}{setAutoCalculate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::set\+Auto\+Calculate (\begin{DoxyParamCaption}\item[{bool}]{auto\+Calc }\end{DoxyParamCaption})}
+
+Tells the spline whether it should automatically calculate tangents on demand as points are added. \begin{DoxyRemark}{Remarks}
+The spline calculates tangents at each point automatically based on the input points. Normally it does this every time a point changes. However, if you have a lot of points to add in one go, you probably don\textquotesingle{}t want to incur this overhead and would prefer to defer the calculation until you are finished setting all the points. You can do this by calling this method with a parameter of \textquotesingle{}false\textquotesingle{}. Just remember to manually call the recalc\+Tangents method when you are done. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Calc} & If true, tangents are calculated for you whenever a point changes. If false, you must call reclac\+Tangents to recalculate them when it best suits. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}\label{classPUSimpleSpline_aaac246974445d71eba4bd4ade9ee6d33}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!set\+Auto\+Calculate@{set\+Auto\+Calculate}}
+\index{set\+Auto\+Calculate@{set\+Auto\+Calculate}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{set\+Auto\+Calculate()}{setAutoCalculate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::set\+Auto\+Calculate (\begin{DoxyParamCaption}\item[{bool}]{auto\+Calc }\end{DoxyParamCaption})}
+
+Tells the spline whether it should automatically calculate tangents on demand as points are added. \begin{DoxyRemark}{Remarks}
+The spline calculates tangents at each point automatically based on the input points. Normally it does this every time a point changes. However, if you have a lot of points to add in one go, you probably don\textquotesingle{}t want to incur this overhead and would prefer to defer the calculation until you are finished setting all the points. You can do this by calling this method with a parameter of \textquotesingle{}false\textquotesingle{}. Just remember to manually call the recalc\+Tangents method when you are done. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Calc} & If true, tangents are calculated for you whenever a point changes. If false, you must call reclac\+Tangents to recalculate them when it best suits. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}\label{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!update\+Point@{update\+Point}}
+\index{update\+Point@{update\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{update\+Point()}{updatePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::update\+Point (\begin{DoxyParamCaption}\item[{unsigned short}]{index,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{value }\end{DoxyParamCaption})}
+
+Updates a single point in the spline. \begin{DoxyRemark}{Remarks}
+This point must already exist in the spline. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}\label{classPUSimpleSpline_afb05b4a7e2bc40bd6dacc18c1d978fe2}} 
+\index{P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}!update\+Point@{update\+Point}}
+\index{update\+Point@{update\+Point}!P\+U\+Simple\+Spline@{P\+U\+Simple\+Spline}}
+\subsubsection{\texorpdfstring{update\+Point()}{updatePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void P\+U\+Simple\+Spline\+::update\+Point (\begin{DoxyParamCaption}\item[{unsigned short}]{index,  }\item[{const \hyperlink{classVec3}{Vec3} \&}]{value }\end{DoxyParamCaption})}
+
+Updates a single point in the spline. \begin{DoxyRemark}{Remarks}
+This point must already exist in the spline. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Simple\+Spline.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/extensions/\+Particle3\+D/\+P\+U/C\+C\+P\+U\+Simple\+Spline.\+cpp\end{DoxyCompactItemize}

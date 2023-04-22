@@ -1,0 +1,78 @@
+\hypertarget{protocolGADInterstitialDelegate-p}{}\section{$<$G\+A\+D\+Interstitial\+Delegate$>$ Protocol Reference}
+\label{protocolGADInterstitialDelegate-p}\index{$<$\+G\+A\+D\+Interstitial\+Delegate$>$@{$<$\+G\+A\+D\+Interstitial\+Delegate$>$}}
+
+
+{\ttfamily \#import $<$G\+A\+D\+Interstitial\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for $<$G\+A\+D\+Interstitial\+Delegate$>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{protocolGADInterstitialDelegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$G\+A\+D\+Interstitial\+Delegate$>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{protocolGADInterstitialDelegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_a98354b092876a675aebde6c98a0edae7}{interstitial\+Did\+Receive\+Ad\+:}
+\item 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_a9d9273a9f47bfd1343ca4835ae8ce493}{interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}
+\item 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_a52707ba7685e47faea12d47d23f37eb3}{interstitial\+Will\+Present\+Screen\+:}
+\item 
+\mbox{\Hypertarget{protocolGADInterstitialDelegate-p_a78d865f86333aeacdadf0e2814e59c07}\label{protocolGADInterstitialDelegate-p_a78d865f86333aeacdadf0e2814e59c07}} 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_a78d865f86333aeacdadf0e2814e59c07}{interstitial\+Will\+Dismiss\+Screen\+:}
+\begin{DoxyCompactList}\small\item\em Called before the interstitial is to be animated off the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{protocolGADInterstitialDelegate-p_ad8149865ad9d400bfe4247dcd4f38256}\label{protocolGADInterstitialDelegate-p_ad8149865ad9d400bfe4247dcd4f38256}} 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_ad8149865ad9d400bfe4247dcd4f38256}{interstitial\+Did\+Dismiss\+Screen\+:}
+\begin{DoxyCompactList}\small\item\em Called just after dismissing an interstitial and it has animated off the screen. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolGADInterstitialDelegate-p_afa81174a6e911fd9702e7c924ab68eae}{interstitial\+Will\+Leave\+Application\+:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Delegate for receiving state change messages from a \hyperlink{interfaceGADInterstitial}{G\+A\+D\+Interstitial} such as interstitial ad requests succeeding/failing. 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{protocolGADInterstitialDelegate-p_a9d9273a9f47bfd1343ca4835ae8ce493}\label{protocolGADInterstitialDelegate-p_a9d9273a9f47bfd1343ca4835ae8ce493}} 
+\index{G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}!interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:@{interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}}
+\index{interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:@{interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}!G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{interstitial\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:()}{interstitial:didFailToReceiveAdWithError:()}}
+{\footnotesize\ttfamily -\/ (void) interstitial\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADInterstitial}{G\+A\+D\+Interstitial} $\ast$)}]{ad }\item[{didFailToReceiveAdWithError:(\hyperlink{interfaceGADRequestError}{G\+A\+D\+Request\+Error} $\ast$)}]{error }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called when an interstitial ad request completed without an interstitial to show. This is common since interstitials are shown sparingly to users. \mbox{\Hypertarget{protocolGADInterstitialDelegate-p_a98354b092876a675aebde6c98a0edae7}\label{protocolGADInterstitialDelegate-p_a98354b092876a675aebde6c98a0edae7}} 
+\index{G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}!interstitial\+Did\+Receive\+Ad\+:@{interstitial\+Did\+Receive\+Ad\+:}}
+\index{interstitial\+Did\+Receive\+Ad\+:@{interstitial\+Did\+Receive\+Ad\+:}!G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{interstitial\+Did\+Receive\+Ad\+:()}{interstitialDidReceiveAd:()}}
+{\footnotesize\ttfamily -\/ (void) interstitial\+Did\+Receive\+Ad\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADInterstitial}{G\+A\+D\+Interstitial} $\ast$)}]{ad }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called when an interstitial ad request succeeded. \hyperlink{classShow}{Show} it at the next transition point in your application such as when transitioning between view controllers. \mbox{\Hypertarget{protocolGADInterstitialDelegate-p_afa81174a6e911fd9702e7c924ab68eae}\label{protocolGADInterstitialDelegate-p_afa81174a6e911fd9702e7c924ab68eae}} 
+\index{G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}!interstitial\+Will\+Leave\+Application\+:@{interstitial\+Will\+Leave\+Application\+:}}
+\index{interstitial\+Will\+Leave\+Application\+:@{interstitial\+Will\+Leave\+Application\+:}!G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{interstitial\+Will\+Leave\+Application\+:()}{interstitialWillLeaveApplication:()}}
+{\footnotesize\ttfamily -\/ (void) interstitial\+Will\+Leave\+Application\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADInterstitial}{G\+A\+D\+Interstitial} $\ast$)}]{ad }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called just before the application will background or terminate because the user clicked on an ad that will launch another application (such as the App Store). The normal \hyperlink{classUIApplicationDelegate-p}{U\+I\+Application\+Delegate} methods, like application\+Did\+Enter\+Background\+:, will be called immediately before this. \mbox{\Hypertarget{protocolGADInterstitialDelegate-p_a52707ba7685e47faea12d47d23f37eb3}\label{protocolGADInterstitialDelegate-p_a52707ba7685e47faea12d47d23f37eb3}} 
+\index{G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}!interstitial\+Will\+Present\+Screen\+:@{interstitial\+Will\+Present\+Screen\+:}}
+\index{interstitial\+Will\+Present\+Screen\+:@{interstitial\+Will\+Present\+Screen\+:}!G\+A\+D\+Interstitial\+Delegate-\/p@{G\+A\+D\+Interstitial\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{interstitial\+Will\+Present\+Screen\+:()}{interstitialWillPresentScreen:()}}
+{\footnotesize\ttfamily -\/ (void) interstitial\+Will\+Present\+Screen\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADInterstitial}{G\+A\+D\+Interstitial} $\ast$)}]{ad }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called just before presenting an interstitial. After this method finishes the interstitial will animate onto the screen. Use this opportunity to stop animations and save the state of your application in case the user leaves while the interstitial is on screen (e.\+g. to visit the App Store from a link on the interstitial). 
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/admob/proj.\+ios/\+Admob/G\+A\+D\+Interstitial\+Delegate.\+h\end{DoxyCompactItemize}

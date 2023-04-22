@@ -1,0 +1,260 @@
+\hypertarget{classflatbuffers_1_1FlatBufferBuilder}{}\section{flatbuffers\+:\+:Flat\+Buffer\+Builder Class Reference}
+\label{classflatbuffers_1_1FlatBufferBuilder}\index{flatbuffers\+::\+Flat\+Buffer\+Builder@{flatbuffers\+::\+Flat\+Buffer\+Builder}}
+
+
+Collaboration diagram for flatbuffers\+:\+:Flat\+Buffer\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classflatbuffers_1_1FlatBufferBuilder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac72b54a75e0c329e0ce0b8fab758e256}\label{classflatbuffers_1_1FlatBufferBuilder_ac72b54a75e0c329e0ce0b8fab758e256}} 
+{\bfseries Flat\+Buffer\+Builder} (uoffset\+\_\+t initial\+\_\+size=1024, const \hyperlink{classflatbuffers_1_1simple__allocator}{simple\+\_\+allocator} $\ast$allocator=nullptr)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ae94b94ba71ea0aeb2d9a98c43b713412}\label{classflatbuffers_1_1FlatBufferBuilder_ae94b94ba71ea0aeb2d9a98c43b713412}} 
+void {\bfseries Clear} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a66c8fd33ab9b3b237954c9ea38648f7f}\label{classflatbuffers_1_1FlatBufferBuilder_a66c8fd33ab9b3b237954c9ea38648f7f}} 
+uoffset\+\_\+t {\bfseries Get\+Size} () const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ab81ab8aa273c270b0942fd81489cad83}\label{classflatbuffers_1_1FlatBufferBuilder_ab81ab8aa273c270b0942fd81489cad83}} 
+uint8\+\_\+t $\ast$ {\bfseries Get\+Buffer\+Pointer} () const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a16a8fd46b34ad7727406c37b65b6b27a}\label{classflatbuffers_1_1FlatBufferBuilder_a16a8fd46b34ad7727406c37b65b6b27a}} 
+void {\bfseries Force\+Defaults} (bool fd)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a12a56ad2f97e96684cdaf1fb2bc1f54f}\label{classflatbuffers_1_1FlatBufferBuilder_a12a56ad2f97e96684cdaf1fb2bc1f54f}} 
+void {\bfseries Pad} (size\+\_\+t num\+\_\+bytes)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a36f8ec515b27ed6daf4ef96722fb00be}\label{classflatbuffers_1_1FlatBufferBuilder_a36f8ec515b27ed6daf4ef96722fb00be}} 
+void {\bfseries Align} (size\+\_\+t elem\+\_\+size)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac9e8e1034d8c1b3bfdf3514fc42d3aef}\label{classflatbuffers_1_1FlatBufferBuilder_ac9e8e1034d8c1b3bfdf3514fc42d3aef}} 
+void {\bfseries Push\+Bytes} (const uint8\+\_\+t $\ast$bytes, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a3c9d6c4515c7b7a03dbb8de3af2b297d}\label{classflatbuffers_1_1FlatBufferBuilder_a3c9d6c4515c7b7a03dbb8de3af2b297d}} 
+void {\bfseries Pop\+Bytes} (size\+\_\+t amount)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a035b0501d9361db9e2c8a5ba75e81271}\label{classflatbuffers_1_1FlatBufferBuilder_a035b0501d9361db9e2c8a5ba75e81271}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Assert\+ScalarT} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6c7436cb5a33ef3e1ee81181eabb54b4}\label{classflatbuffers_1_1FlatBufferBuilder_a6c7436cb5a33ef3e1ee81181eabb54b4}} 
+{\footnotesize template$<$typename T $>$ }\\uoffset\+\_\+t {\bfseries Push\+Element} (T element)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a64a80cb4154b007e2d83271828632239}\label{classflatbuffers_1_1FlatBufferBuilder_a64a80cb4154b007e2d83271828632239}} 
+{\footnotesize template$<$typename T $>$ }\\uoffset\+\_\+t {\bfseries Push\+Element} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6b996a37c6fe80dbcb5f0885209bbe7b}\label{classflatbuffers_1_1FlatBufferBuilder_a6b996a37c6fe80dbcb5f0885209bbe7b}} 
+void {\bfseries Track\+Field} (voffset\+\_\+t field, uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afc3db5c5a35447b73643b2cd61c06dbd}\label{classflatbuffers_1_1FlatBufferBuilder_afc3db5c5a35447b73643b2cd61c06dbd}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Element} (voffset\+\_\+t field, T e, T def)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a150264d1b4b4efe0e31285b4fcac99d3}\label{classflatbuffers_1_1FlatBufferBuilder_a150264d1b4b4efe0e31285b4fcac99d3}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Offset} (voffset\+\_\+t field, \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a263598624cca61dd385435ddaf399aca}\label{classflatbuffers_1_1FlatBufferBuilder_a263598624cca61dd385435ddaf399aca}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Struct} (voffset\+\_\+t field, const T $\ast$structptr)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a9de51fe44c441c9ea85fcfd51dc5b33b}\label{classflatbuffers_1_1FlatBufferBuilder_a9de51fe44c441c9ea85fcfd51dc5b33b}} 
+void {\bfseries Add\+Struct\+Offset} (voffset\+\_\+t field, uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a62999f8123570f017857ec4bbd513f2a}\label{classflatbuffers_1_1FlatBufferBuilder_a62999f8123570f017857ec4bbd513f2a}} 
+uoffset\+\_\+t {\bfseries Refer\+To} (uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aacf8e58f3dfd2f838352b39ee71c5304}\label{classflatbuffers_1_1FlatBufferBuilder_aacf8e58f3dfd2f838352b39ee71c5304}} 
+void {\bfseries Not\+Nested} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a2a049ecb11945705285786f3d1841d80}\label{classflatbuffers_1_1FlatBufferBuilder_a2a049ecb11945705285786f3d1841d80}} 
+uoffset\+\_\+t {\bfseries Start\+Table} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_adc1ed2c5b32742b04b2417ba7ae1a877}\label{classflatbuffers_1_1FlatBufferBuilder_adc1ed2c5b32742b04b2417ba7ae1a877}} 
+uoffset\+\_\+t {\bfseries End\+Table} (uoffset\+\_\+t start, voffset\+\_\+t numfields)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a0f38735d32e2b331740a90f456083699}\label{classflatbuffers_1_1FlatBufferBuilder_a0f38735d32e2b331740a90f456083699}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Required} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ table, voffset\+\_\+t field)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a3ac0bf8d0486cf76408d12e973381b23}\label{classflatbuffers_1_1FlatBufferBuilder_a3ac0bf8d0486cf76408d12e973381b23}} 
+uoffset\+\_\+t {\bfseries Start\+Struct} (size\+\_\+t alignment)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afbf85c5f68c115eadfd1ba021f609657}\label{classflatbuffers_1_1FlatBufferBuilder_afbf85c5f68c115eadfd1ba021f609657}} 
+uoffset\+\_\+t {\bfseries End\+Struct} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6c1703607d0b9f41e2a7a0d0f91ae9ec}\label{classflatbuffers_1_1FlatBufferBuilder_a6c1703607d0b9f41e2a7a0d0f91ae9ec}} 
+void {\bfseries Clear\+Offsets} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8f78d3fb4d0eedbcb5050cd27c9b8209}\label{classflatbuffers_1_1FlatBufferBuilder_a8f78d3fb4d0eedbcb5050cd27c9b8209}} 
+void {\bfseries Pre\+Align} (size\+\_\+t len, size\+\_\+t alignment)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a64386b3e5421e0da124e752a905125e1}\label{classflatbuffers_1_1FlatBufferBuilder_a64386b3e5421e0da124e752a905125e1}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Pre\+Align} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aec6f9df2a0366b540b24822414d92cbe}\label{classflatbuffers_1_1FlatBufferBuilder_aec6f9df2a0366b540b24822414d92cbe}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const char $\ast$str, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aad93d113ac24e86ed04b5236b3f4c0c5}\label{classflatbuffers_1_1FlatBufferBuilder_aad93d113ac24e86ed04b5236b3f4c0c5}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const char $\ast$str)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8c3af55e64f5cda9aefa38ac5287ef9f}\label{classflatbuffers_1_1FlatBufferBuilder_a8c3af55e64f5cda9aefa38ac5287ef9f}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const std\+::string \&str)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ad5231e785a762f7f92e20d6de57c90ee}\label{classflatbuffers_1_1FlatBufferBuilder_ad5231e785a762f7f92e20d6de57c90ee}} 
+uoffset\+\_\+t {\bfseries End\+Vector} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aff03c4fcf880a81f1b09a14242d71af6}\label{classflatbuffers_1_1FlatBufferBuilder_aff03c4fcf880a81f1b09a14242d71af6}} 
+void {\bfseries Start\+Vector} (size\+\_\+t len, size\+\_\+t elemsize)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ad1d108ffdc0592792c17aa3c36f69bdd}\label{classflatbuffers_1_1FlatBufferBuilder_ad1d108ffdc0592792c17aa3c36f69bdd}} 
+uint8\+\_\+t $\ast$ {\bfseries Reserve\+Elements} (size\+\_\+t len, size\+\_\+t elemsize)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a2cca5c89246a53e80e6ad9487f4c36f3}\label{classflatbuffers_1_1FlatBufferBuilder_a2cca5c89246a53e80e6ad9487f4c36f3}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Vector} (const T $\ast$v, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac85de2e957af13fc3a1651f1f0491952}\label{classflatbuffers_1_1FlatBufferBuilder_ac85de2e957af13fc3a1651f1f0491952}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Uninitialized\+Vector} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_af715dd24dd37cb0151dc7a980ad0f207}\label{classflatbuffers_1_1FlatBufferBuilder_af715dd24dd37cb0151dc7a980ad0f207}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Vector} (const std\+::vector$<$ T $>$ \&v)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afede51fd9c32d146cbb1832f57c5e1b7}\label{classflatbuffers_1_1FlatBufferBuilder_afede51fd9c32d146cbb1832f57c5e1b7}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ const T $\ast$ $>$ $>$ {\bfseries Create\+Vector\+Of\+Structs} (const T $\ast$v, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8704709a2e25ad04679212ee4126b1a1}\label{classflatbuffers_1_1FlatBufferBuilder_a8704709a2e25ad04679212ee4126b1a1}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ const T $\ast$ $>$ $>$ {\bfseries Create\+Vector\+Of\+Structs} (const std\+::vector$<$ T $>$ \&v)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a0c9e507b373d598b51052fab4fa34912}\label{classflatbuffers_1_1FlatBufferBuilder_a0c9e507b373d598b51052fab4fa34912}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Finish} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ root, const char $\ast$file\+\_\+identifier=nullptr)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac72b54a75e0c329e0ce0b8fab758e256}\label{classflatbuffers_1_1FlatBufferBuilder_ac72b54a75e0c329e0ce0b8fab758e256}} 
+{\bfseries Flat\+Buffer\+Builder} (uoffset\+\_\+t initial\+\_\+size=1024, const \hyperlink{classflatbuffers_1_1simple__allocator}{simple\+\_\+allocator} $\ast$allocator=nullptr)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ae94b94ba71ea0aeb2d9a98c43b713412}\label{classflatbuffers_1_1FlatBufferBuilder_ae94b94ba71ea0aeb2d9a98c43b713412}} 
+void {\bfseries Clear} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a66c8fd33ab9b3b237954c9ea38648f7f}\label{classflatbuffers_1_1FlatBufferBuilder_a66c8fd33ab9b3b237954c9ea38648f7f}} 
+uoffset\+\_\+t {\bfseries Get\+Size} () const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ab81ab8aa273c270b0942fd81489cad83}\label{classflatbuffers_1_1FlatBufferBuilder_ab81ab8aa273c270b0942fd81489cad83}} 
+uint8\+\_\+t $\ast$ {\bfseries Get\+Buffer\+Pointer} () const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a16a8fd46b34ad7727406c37b65b6b27a}\label{classflatbuffers_1_1FlatBufferBuilder_a16a8fd46b34ad7727406c37b65b6b27a}} 
+void {\bfseries Force\+Defaults} (bool fd)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a12a56ad2f97e96684cdaf1fb2bc1f54f}\label{classflatbuffers_1_1FlatBufferBuilder_a12a56ad2f97e96684cdaf1fb2bc1f54f}} 
+void {\bfseries Pad} (size\+\_\+t num\+\_\+bytes)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a36f8ec515b27ed6daf4ef96722fb00be}\label{classflatbuffers_1_1FlatBufferBuilder_a36f8ec515b27ed6daf4ef96722fb00be}} 
+void {\bfseries Align} (size\+\_\+t elem\+\_\+size)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac9e8e1034d8c1b3bfdf3514fc42d3aef}\label{classflatbuffers_1_1FlatBufferBuilder_ac9e8e1034d8c1b3bfdf3514fc42d3aef}} 
+void {\bfseries Push\+Bytes} (const uint8\+\_\+t $\ast$bytes, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a3c9d6c4515c7b7a03dbb8de3af2b297d}\label{classflatbuffers_1_1FlatBufferBuilder_a3c9d6c4515c7b7a03dbb8de3af2b297d}} 
+void {\bfseries Pop\+Bytes} (size\+\_\+t amount)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a035b0501d9361db9e2c8a5ba75e81271}\label{classflatbuffers_1_1FlatBufferBuilder_a035b0501d9361db9e2c8a5ba75e81271}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Assert\+ScalarT} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6c7436cb5a33ef3e1ee81181eabb54b4}\label{classflatbuffers_1_1FlatBufferBuilder_a6c7436cb5a33ef3e1ee81181eabb54b4}} 
+{\footnotesize template$<$typename T $>$ }\\uoffset\+\_\+t {\bfseries Push\+Element} (T element)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a64a80cb4154b007e2d83271828632239}\label{classflatbuffers_1_1FlatBufferBuilder_a64a80cb4154b007e2d83271828632239}} 
+{\footnotesize template$<$typename T $>$ }\\uoffset\+\_\+t {\bfseries Push\+Element} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6b996a37c6fe80dbcb5f0885209bbe7b}\label{classflatbuffers_1_1FlatBufferBuilder_a6b996a37c6fe80dbcb5f0885209bbe7b}} 
+void {\bfseries Track\+Field} (voffset\+\_\+t field, uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afc3db5c5a35447b73643b2cd61c06dbd}\label{classflatbuffers_1_1FlatBufferBuilder_afc3db5c5a35447b73643b2cd61c06dbd}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Element} (voffset\+\_\+t field, T e, T def)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a150264d1b4b4efe0e31285b4fcac99d3}\label{classflatbuffers_1_1FlatBufferBuilder_a150264d1b4b4efe0e31285b4fcac99d3}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Offset} (voffset\+\_\+t field, \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a263598624cca61dd385435ddaf399aca}\label{classflatbuffers_1_1FlatBufferBuilder_a263598624cca61dd385435ddaf399aca}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Add\+Struct} (voffset\+\_\+t field, const T $\ast$structptr)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a9de51fe44c441c9ea85fcfd51dc5b33b}\label{classflatbuffers_1_1FlatBufferBuilder_a9de51fe44c441c9ea85fcfd51dc5b33b}} 
+void {\bfseries Add\+Struct\+Offset} (voffset\+\_\+t field, uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a62999f8123570f017857ec4bbd513f2a}\label{classflatbuffers_1_1FlatBufferBuilder_a62999f8123570f017857ec4bbd513f2a}} 
+uoffset\+\_\+t {\bfseries Refer\+To} (uoffset\+\_\+t off)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aacf8e58f3dfd2f838352b39ee71c5304}\label{classflatbuffers_1_1FlatBufferBuilder_aacf8e58f3dfd2f838352b39ee71c5304}} 
+void {\bfseries Not\+Nested} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a2a049ecb11945705285786f3d1841d80}\label{classflatbuffers_1_1FlatBufferBuilder_a2a049ecb11945705285786f3d1841d80}} 
+uoffset\+\_\+t {\bfseries Start\+Table} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_adc1ed2c5b32742b04b2417ba7ae1a877}\label{classflatbuffers_1_1FlatBufferBuilder_adc1ed2c5b32742b04b2417ba7ae1a877}} 
+uoffset\+\_\+t {\bfseries End\+Table} (uoffset\+\_\+t start, voffset\+\_\+t numfields)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a0f38735d32e2b331740a90f456083699}\label{classflatbuffers_1_1FlatBufferBuilder_a0f38735d32e2b331740a90f456083699}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Required} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ table, voffset\+\_\+t field)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a3ac0bf8d0486cf76408d12e973381b23}\label{classflatbuffers_1_1FlatBufferBuilder_a3ac0bf8d0486cf76408d12e973381b23}} 
+uoffset\+\_\+t {\bfseries Start\+Struct} (size\+\_\+t alignment)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afbf85c5f68c115eadfd1ba021f609657}\label{classflatbuffers_1_1FlatBufferBuilder_afbf85c5f68c115eadfd1ba021f609657}} 
+uoffset\+\_\+t {\bfseries End\+Struct} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a6c1703607d0b9f41e2a7a0d0f91ae9ec}\label{classflatbuffers_1_1FlatBufferBuilder_a6c1703607d0b9f41e2a7a0d0f91ae9ec}} 
+void {\bfseries Clear\+Offsets} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8f78d3fb4d0eedbcb5050cd27c9b8209}\label{classflatbuffers_1_1FlatBufferBuilder_a8f78d3fb4d0eedbcb5050cd27c9b8209}} 
+void {\bfseries Pre\+Align} (size\+\_\+t len, size\+\_\+t alignment)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a64386b3e5421e0da124e752a905125e1}\label{classflatbuffers_1_1FlatBufferBuilder_a64386b3e5421e0da124e752a905125e1}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Pre\+Align} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aec6f9df2a0366b540b24822414d92cbe}\label{classflatbuffers_1_1FlatBufferBuilder_aec6f9df2a0366b540b24822414d92cbe}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const char $\ast$str, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aad93d113ac24e86ed04b5236b3f4c0c5}\label{classflatbuffers_1_1FlatBufferBuilder_aad93d113ac24e86ed04b5236b3f4c0c5}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const char $\ast$str)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8c3af55e64f5cda9aefa38ac5287ef9f}\label{classflatbuffers_1_1FlatBufferBuilder_a8c3af55e64f5cda9aefa38ac5287ef9f}} 
+\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$ {\bfseries Create\+String} (const std\+::string \&str)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ad5231e785a762f7f92e20d6de57c90ee}\label{classflatbuffers_1_1FlatBufferBuilder_ad5231e785a762f7f92e20d6de57c90ee}} 
+uoffset\+\_\+t {\bfseries End\+Vector} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_aff03c4fcf880a81f1b09a14242d71af6}\label{classflatbuffers_1_1FlatBufferBuilder_aff03c4fcf880a81f1b09a14242d71af6}} 
+void {\bfseries Start\+Vector} (size\+\_\+t len, size\+\_\+t elemsize)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ad1d108ffdc0592792c17aa3c36f69bdd}\label{classflatbuffers_1_1FlatBufferBuilder_ad1d108ffdc0592792c17aa3c36f69bdd}} 
+uint8\+\_\+t $\ast$ {\bfseries Reserve\+Elements} (size\+\_\+t len, size\+\_\+t elemsize)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a2cca5c89246a53e80e6ad9487f4c36f3}\label{classflatbuffers_1_1FlatBufferBuilder_a2cca5c89246a53e80e6ad9487f4c36f3}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Vector} (const T $\ast$v, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_ac85de2e957af13fc3a1651f1f0491952}\label{classflatbuffers_1_1FlatBufferBuilder_ac85de2e957af13fc3a1651f1f0491952}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Uninitialized\+Vector} (size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_af715dd24dd37cb0151dc7a980ad0f207}\label{classflatbuffers_1_1FlatBufferBuilder_af715dd24dd37cb0151dc7a980ad0f207}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $>$ {\bfseries Create\+Vector} (const std\+::vector$<$ T $>$ \&v)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_afede51fd9c32d146cbb1832f57c5e1b7}\label{classflatbuffers_1_1FlatBufferBuilder_afede51fd9c32d146cbb1832f57c5e1b7}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ const T $\ast$ $>$ $>$ {\bfseries Create\+Vector\+Of\+Structs} (const T $\ast$v, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a8704709a2e25ad04679212ee4126b1a1}\label{classflatbuffers_1_1FlatBufferBuilder_a8704709a2e25ad04679212ee4126b1a1}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ const T $\ast$ $>$ $>$ {\bfseries Create\+Vector\+Of\+Structs} (const std\+::vector$<$ T $>$ \&v)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a0c9e507b373d598b51052fab4fa34912}\label{classflatbuffers_1_1FlatBufferBuilder_a0c9e507b373d598b51052fab4fa34912}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Finish} (\hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$ root, const char $\ast$file\+\_\+identifier=nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1FlatBufferBuilder_a2b7b7bbd959d70cd7cf0e466dd16b619}\label{classflatbuffers_1_1FlatBufferBuilder_a2b7b7bbd959d70cd7cf0e466dd16b619}} 
+static const size\+\_\+t {\bfseries k\+File\+Identifier\+Length} = 4
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/flatbuffers/flatbuffers.\+h\end{DoxyCompactItemize}

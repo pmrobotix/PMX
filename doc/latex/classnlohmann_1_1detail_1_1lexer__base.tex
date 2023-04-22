@@ -1,0 +1,134 @@
+\hypertarget{classnlohmann_1_1detail_1_1lexer__base}{}\section{nlohmann\+:\+:detail\+:\+:lexer\+\_\+base$<$ Basic\+Json\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1lexer__base}\index{nlohmann\+::detail\+::lexer\+\_\+base$<$ Basic\+Json\+Type $>$@{nlohmann\+::detail\+::lexer\+\_\+base$<$ Basic\+Json\+Type $>$}}
+
+
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:lexer\+\_\+base$<$ Basic\+Json\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classnlohmann_1_1detail_1_1lexer__base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454}{token\+\_\+type} \{ \newline
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a42dd1a73d072bb6bf3f494f22b15db8e}{token\+\_\+type\+::uninitialized}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a85cc1a37b0aaa52de40e72f0ed4e0c0d}{token\+\_\+type\+::literal\+\_\+true}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454afab1694b1b3937a079f4625fe0b6108b}{token\+\_\+type\+::literal\+\_\+false}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ab7ae4c0e46d86f884677768160b26e9e}{token\+\_\+type\+::literal\+\_\+null}, 
+\newline
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2b490e8bf366b4cbe3ebd99b26ce15ce}{token\+\_\+type\+::value\+\_\+string}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aaf1f040fcd2f674d2e5893d7a731078f}{token\+\_\+type\+::value\+\_\+unsigned}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a5064b6655d88a50ae16665cf7751c0ee}{token\+\_\+type\+::value\+\_\+integer}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a0d2671a6f81efb91e77f6ac3bdb11443}{token\+\_\+type\+::value\+\_\+float}, 
+\newline
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01}{token\+\_\+type\+::begin\+\_\+array}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8}{token\+\_\+type\+::begin\+\_\+object}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2f3e68e7f111a1e5c7728742b3ca2b7f}{token\+\_\+type\+::end\+\_\+array}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a7d5b4427866814de4d8f132721d59c87}{token\+\_\+type\+::end\+\_\+object}, 
+\newline
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454acc3c64f8ae08c00de1b33f19a4d2913a}{token\+\_\+type\+::name\+\_\+separator}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a745373036100d7392ad62c617cab59af}{token\+\_\+type\+::value\+\_\+separator}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a456e19aeafa334241c7ff3f589547f9d}{token\+\_\+type\+::parse\+\_\+error}, 
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aca11f56dd477c09e06583dbdcda0985f}{token\+\_\+type\+::end\+\_\+of\+\_\+input}, 
+\newline
+\hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ad2a8e6f6721cccec0b466301dd9495a5}{token\+\_\+type\+::literal\+\_\+or\+\_\+value}
+ \}\begin{DoxyCompactList}\small\item\em token types for the parser \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_ad214d59300605f9d3a4a32c8917aa608}\label{classnlohmann_1_1detail_1_1lexer__base_ad214d59300605f9d3a4a32c8917aa608}} 
+J\+S\+O\+N\+\_\+\+H\+E\+D\+L\+E\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+S\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL static J\+S\+O\+N\+\_\+\+H\+E\+D\+L\+E\+Y\+\_\+\+C\+O\+N\+ST const char $\ast$ \hyperlink{classnlohmann_1_1detail_1_1lexer__base_ad214d59300605f9d3a4a32c8917aa608}{token\+\_\+type\+\_\+name} (const \hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454}{token\+\_\+type} t) noexcept
+\begin{DoxyCompactList}\small\item\em return name of values of type token\+\_\+type (only used for errors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454}} 
+\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!token\+\_\+type@{token\+\_\+type}}
+\index{token\+\_\+type@{token\+\_\+type}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}
+\subsubsection{\texorpdfstring{token\+\_\+type}{token\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+enum \hyperlink{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454}{nlohmann\+::detail\+::lexer\+\_\+base\+::token\+\_\+type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+token types for the parser 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{uninitialized@{uninitialized}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!uninitialized@{uninitialized}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a42dd1a73d072bb6bf3f494f22b15db8e}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a42dd1a73d072bb6bf3f494f22b15db8e}} 
+uninitialized&indicating the scanner is uninitialized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\+\_\+true@{literal\+\_\+true}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!literal\+\_\+true@{literal\+\_\+true}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a85cc1a37b0aaa52de40e72f0ed4e0c0d}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a85cc1a37b0aaa52de40e72f0ed4e0c0d}} 
+literal\+\_\+true&the {\ttfamily true} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\+\_\+false@{literal\+\_\+false}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!literal\+\_\+false@{literal\+\_\+false}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454afab1694b1b3937a079f4625fe0b6108b}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454afab1694b1b3937a079f4625fe0b6108b}} 
+literal\+\_\+false&the {\ttfamily false} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\+\_\+null@{literal\+\_\+null}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!literal\+\_\+null@{literal\+\_\+null}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ab7ae4c0e46d86f884677768160b26e9e}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ab7ae4c0e46d86f884677768160b26e9e}} 
+literal\+\_\+null&the {\ttfamily null} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\+\_\+string@{value\+\_\+string}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!value\+\_\+string@{value\+\_\+string}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2b490e8bf366b4cbe3ebd99b26ce15ce}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2b490e8bf366b4cbe3ebd99b26ce15ce}} 
+value\+\_\+string&a string -- use get\+\_\+string() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\+\_\+unsigned@{value\+\_\+unsigned}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!value\+\_\+unsigned@{value\+\_\+unsigned}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aaf1f040fcd2f674d2e5893d7a731078f}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aaf1f040fcd2f674d2e5893d7a731078f}} 
+value\+\_\+unsigned&an unsigned integer -- use get\+\_\+number\+\_\+unsigned() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\+\_\+integer@{value\+\_\+integer}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!value\+\_\+integer@{value\+\_\+integer}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a5064b6655d88a50ae16665cf7751c0ee}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a5064b6655d88a50ae16665cf7751c0ee}} 
+value\+\_\+integer&a signed integer -- use get\+\_\+number\+\_\+integer() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\+\_\+float@{value\+\_\+float}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!value\+\_\+float@{value\+\_\+float}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a0d2671a6f81efb91e77f6ac3bdb11443}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a0d2671a6f81efb91e77f6ac3bdb11443}} 
+value\+\_\+float&an floating point number -- use get\+\_\+number\+\_\+float() for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\+\_\+array@{begin\+\_\+array}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!begin\+\_\+array@{begin\+\_\+array}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01}} 
+begin\+\_\+array&the character for array begin {\ttfamily \mbox{[}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\+\_\+object@{begin\+\_\+object}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!begin\+\_\+object@{begin\+\_\+object}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8}} 
+begin\+\_\+object&the character for object begin {\ttfamily \{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\+\_\+array@{end\+\_\+array}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!end\+\_\+array@{end\+\_\+array}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2f3e68e7f111a1e5c7728742b3ca2b7f}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a2f3e68e7f111a1e5c7728742b3ca2b7f}} 
+end\+\_\+array&the character for array end {\ttfamily \mbox{]}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\+\_\+object@{end\+\_\+object}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!end\+\_\+object@{end\+\_\+object}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a7d5b4427866814de4d8f132721d59c87}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a7d5b4427866814de4d8f132721d59c87}} 
+end\+\_\+object&the character for object end {\ttfamily \}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\+\_\+separator@{name\+\_\+separator}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!name\+\_\+separator@{name\+\_\+separator}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454acc3c64f8ae08c00de1b33f19a4d2913a}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454acc3c64f8ae08c00de1b33f19a4d2913a}} 
+name\+\_\+separator&the name separator {\ttfamily \+:} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\+\_\+separator@{value\+\_\+separator}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!value\+\_\+separator@{value\+\_\+separator}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a745373036100d7392ad62c617cab59af}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a745373036100d7392ad62c617cab59af}} 
+value\+\_\+separator&the value separator {\ttfamily ,} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parse\+\_\+error@{parse\+\_\+error}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!parse\+\_\+error@{parse\+\_\+error}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a456e19aeafa334241c7ff3f589547f9d}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454a456e19aeafa334241c7ff3f589547f9d}} 
+parse\+\_\+error&indicating a parse error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\+\_\+of\+\_\+input@{end\+\_\+of\+\_\+input}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!end\+\_\+of\+\_\+input@{end\+\_\+of\+\_\+input}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aca11f56dd477c09e06583dbdcda0985f}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454aca11f56dd477c09e06583dbdcda0985f}} 
+end\+\_\+of\+\_\+input&indicating the end of the input buffer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\+\_\+or\+\_\+value@{literal\+\_\+or\+\_\+value}!nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}}\index{nlohmann\+::detail\+::lexer\+\_\+base@{nlohmann\+::detail\+::lexer\+\_\+base}!literal\+\_\+or\+\_\+value@{literal\+\_\+or\+\_\+value}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ad2a8e6f6721cccec0b466301dd9495a5}\label{classnlohmann_1_1detail_1_1lexer__base_aa3538cce439a2de6c7893e627b38c454ad2a8e6f6721cccec0b466301dd9495a5}} 
+literal\+\_\+or\+\_\+value&a literal or the begin of a value (only for diagnostics) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/json.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,220 @@
+\hypertarget{group__detour}{}\section{Detour}
+\label{group__detour}\index{Detour@{Detour}}
+Collaboration diagram for Detour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{group__detour}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdtPoly}{dt\+Poly}
+\item 
+struct \hyperlink{structdtMeshHeader}{dt\+Mesh\+Header}
+\item 
+struct \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile}
+\item 
+struct \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params}
+\item 
+class \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}
+\item 
+struct \hyperlink{structdtNavMeshCreateParams}{dt\+Nav\+Mesh\+Create\+Params}
+\item 
+class \hyperlink{classdtQueryFilter}{dt\+Query\+Filter}
+\item 
+struct \hyperlink{structdtRaycastHit}{dt\+Raycast\+Hit}
+\item 
+class \hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query}
+\item 
+class \hyperlink{classdtPathCorridor}{dt\+Path\+Corridor}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}
+\item 
+typedef unsigned int \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}
+\item 
+typedef unsigned int \hyperlink{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}{dt\+Poly\+Ref}
+\item 
+typedef unsigned int \hyperlink{group__detour_ga608138970cbb12594287ea6523be24ef}{dt\+Tile\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$ \hyperlink{group__detour_ga73648d53c5a414855a2aa264aab9263c}{dt\+Alloc\+Nav\+Mesh} ()
+\item 
+void \hyperlink{group__detour_gad938af5675a2f62c7c3830b38ea9a184}{dt\+Free\+Nav\+Mesh} (\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$navmesh)
+\item 
+bool \hyperlink{group__detour_gaf56ac19e79e5948fdb1051158577e648}{dt\+Create\+Nav\+Mesh\+Data} (\hyperlink{structdtNavMeshCreateParams}{dt\+Nav\+Mesh\+Create\+Params} $\ast$params, unsigned char $\ast$$\ast$out\+Data, int $\ast$out\+Data\+Size)
+\item 
+\hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} $\ast$ \hyperlink{group__detour_gae547f165feefc955136130c8e22f207a}{dt\+Alloc\+Nav\+Mesh\+Query} ()
+\item 
+void \hyperlink{group__detour_ga24ccc133f15a0aa85f06f1c1ead2e6c4}{dt\+Free\+Nav\+Mesh\+Query} (\hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} $\ast$query)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Members in this module are used to create, manipulate, and query navigation meshes.
+
+\begin{DoxyNote}{Note}
+This is a summary \hyperlink{protocollist-p}{list} of members. Use the index or search feature to find minor members.
+\end{DoxyNote}
+Members in this module are wrappers around the standard math library 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group__detour_gab4e0b2257a670c1a800057999612b466}\label{group__detour_gab4e0b2257a670c1a800057999612b466}} 
+\index{Detour@{Detour}!dt\+Poly\+Ref@{dt\+Poly\+Ref}}
+\index{dt\+Poly\+Ref@{dt\+Poly\+Ref}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Poly\+Ref}{dtPolyRef}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}
+
+A handle to a polygon within a navigation mesh tile.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Polygon references are subject to the same invalidate/preserve/restore rules that apply to \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}\textquotesingle{}s. If the \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref} for the polygon\textquotesingle{}s tile changes, the polygon reference becomes invalid.
+
+Changing a polygon\textquotesingle{}s flags, area id, etc. does not impact its polygon reference. \mbox{\Hypertarget{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}\label{group__detour_ga07c358f7bddf0fa2ef79e341a387c1dd}} 
+\index{Detour@{Detour}!dt\+Poly\+Ref@{dt\+Poly\+Ref}}
+\index{dt\+Poly\+Ref@{dt\+Poly\+Ref}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Poly\+Ref}{dtPolyRef}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef unsigned int \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}
+
+A handle to a polygon within a navigation mesh tile. \mbox{\Hypertarget{group__detour_ga608138970cbb12594287ea6523be24ef}\label{group__detour_ga608138970cbb12594287ea6523be24ef}} 
+\index{Detour@{Detour}!dt\+Tile\+Ref@{dt\+Tile\+Ref}}
+\index{dt\+Tile\+Ref@{dt\+Tile\+Ref}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Tile\+Ref}{dtTileRef}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef unsigned int \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}
+
+A handle to a tile within a navigation mesh. \mbox{\Hypertarget{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}\label{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}} 
+\index{Detour@{Detour}!dt\+Tile\+Ref@{dt\+Tile\+Ref}}
+\index{dt\+Tile\+Ref@{dt\+Tile\+Ref}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Tile\+Ref}{dtTileRef}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{group__detour_ga7ea56cfe01bd7c34a81d821d94cbeea5}{dt\+Tile\+Ref}}
+
+A handle to a tile within a navigation mesh.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The following changes will invalidate a tile reference\+:
+
+
+\begin{DoxyItemize}
+\item The referenced tile has been removed from the navigation mesh.
+\item The navigation mesh has been initialized using a different set of \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params}.
+\end{DoxyItemize}
+
+A tile reference is preserved/restored if the tile is added to a navigation mesh initialized with the original \hyperlink{structdtNavMeshParams}{dt\+Nav\+Mesh\+Params} and is added at the original reference location. (E.\+g. The last\+Ref parameter is used with \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{dt\+Nav\+Mesh\+::add\+Tile}.)
+
+Basically, if the storage structure of a tile changes, its associated tile reference changes. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__detour_ga73648d53c5a414855a2aa264aab9263c}\label{group__detour_ga73648d53c5a414855a2aa264aab9263c}} 
+\index{Detour@{Detour}!dt\+Alloc\+Nav\+Mesh@{dt\+Alloc\+Nav\+Mesh}}
+\index{dt\+Alloc\+Nav\+Mesh@{dt\+Alloc\+Nav\+Mesh}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Alloc\+Nav\+Mesh()}{dtAllocNavMesh()}}
+{\footnotesize\ttfamily \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}$\ast$ dt\+Alloc\+Nav\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Allocates a navigation mesh object using the Detour allocator. \begin{DoxyReturn}{Returns}
+A navigation mesh that is ready for initialization, or null on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__detour_gae547f165feefc955136130c8e22f207a}\label{group__detour_gae547f165feefc955136130c8e22f207a}} 
+\index{Detour@{Detour}!dt\+Alloc\+Nav\+Mesh\+Query@{dt\+Alloc\+Nav\+Mesh\+Query}}
+\index{dt\+Alloc\+Nav\+Mesh\+Query@{dt\+Alloc\+Nav\+Mesh\+Query}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Alloc\+Nav\+Mesh\+Query()}{dtAllocNavMeshQuery()}}
+{\footnotesize\ttfamily \hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query}$\ast$ dt\+Alloc\+Nav\+Mesh\+Query (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Allocates a query object using the Detour allocator. \begin{DoxyReturn}{Returns}
+An allocated query object, or null on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__detour_gaf56ac19e79e5948fdb1051158577e648}\label{group__detour_gaf56ac19e79e5948fdb1051158577e648}} 
+\index{Detour@{Detour}!dt\+Create\+Nav\+Mesh\+Data@{dt\+Create\+Nav\+Mesh\+Data}}
+\index{dt\+Create\+Nav\+Mesh\+Data@{dt\+Create\+Nav\+Mesh\+Data}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Create\+Nav\+Mesh\+Data()}{dtCreateNavMeshData()}}
+{\footnotesize\ttfamily bool dt\+Create\+Nav\+Mesh\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structdtNavMeshCreateParams}{dt\+Nav\+Mesh\+Create\+Params} $\ast$}]{params,  }\item[{unsigned char $\ast$$\ast$}]{out\+Data,  }\item[{int $\ast$}]{out\+Data\+Size }\end{DoxyParamCaption})}
+
+Builds navigation mesh tile data from the provided tile creation data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \hyperlink{structTile}{Tile} creation data. \\
+\hline
+\mbox{\tt out}  & {\em out\+Data} & The resulting tile data. \\
+\hline
+\mbox{\tt out}  & {\em out\+Data\+Size} & The size of the tile data array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the tile data was successfully created.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The output data array is allocated using the detour allocator (dt\+Alloc()). The method used to free the memory will be determined by how the tile is added to the navigation mesh.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}, \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{dt\+Nav\+Mesh\+::add\+Tile()}
+\end{DoxySeeAlso}
+Builds navigation mesh tile data from the provided tile creation data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \hyperlink{structTile}{Tile} creation data. \\
+\hline
+\mbox{\tt out}  & {\em out\+Data} & The resulting tile data. \\
+\hline
+\mbox{\tt out}  & {\em out\+Data\+Size} & The size of the tile data array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the tile data was successfully created.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The output data array is allocated using the detour allocator (dt\+Alloc()). The method used to free the memory will be determined by how the tile is added to the navigation mesh.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh}, \hyperlink{classdtNavMesh_a5b5a7c4fa72c08d9a6d4cc4d8cd3bb89}{dt\+Nav\+Mesh\+::add\+Tile()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__detour_gad938af5675a2f62c7c3830b38ea9a184}\label{group__detour_gad938af5675a2f62c7c3830b38ea9a184}} 
+\index{Detour@{Detour}!dt\+Free\+Nav\+Mesh@{dt\+Free\+Nav\+Mesh}}
+\index{dt\+Free\+Nav\+Mesh@{dt\+Free\+Nav\+Mesh}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Free\+Nav\+Mesh()}{dtFreeNavMesh()}}
+{\footnotesize\ttfamily void dt\+Free\+Nav\+Mesh (\begin{DoxyParamCaption}\item[{\hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} $\ast$}]{navmesh }\end{DoxyParamCaption})}
+
+Frees the specified navigation mesh object using the Detour allocator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em navmesh} & A navigation mesh allocated using \hyperlink{group__detour_ga73648d53c5a414855a2aa264aab9263c}{dt\+Alloc\+Nav\+Mesh}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This function will only free the memory for tiles with the \#\+D\+T\+\_\+\+T\+I\+L\+E\+\_\+\+F\+R\+E\+E\+\_\+\+D\+A\+TA flag set.
+
+Frees the specified navigation mesh object using the Detour allocator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em navmesh} & A navigation mesh allocated using \hyperlink{group__detour_ga73648d53c5a414855a2aa264aab9263c}{dt\+Alloc\+Nav\+Mesh}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+This function will only free the memory for tiles with the \#\+D\+T\+\_\+\+T\+I\+L\+E\+\_\+\+F\+R\+E\+E\+\_\+\+D\+A\+TA flag set. \mbox{\Hypertarget{group__detour_ga24ccc133f15a0aa85f06f1c1ead2e6c4}\label{group__detour_ga24ccc133f15a0aa85f06f1c1ead2e6c4}} 
+\index{Detour@{Detour}!dt\+Free\+Nav\+Mesh\+Query@{dt\+Free\+Nav\+Mesh\+Query}}
+\index{dt\+Free\+Nav\+Mesh\+Query@{dt\+Free\+Nav\+Mesh\+Query}!Detour@{Detour}}
+\subsubsection{\texorpdfstring{dt\+Free\+Nav\+Mesh\+Query()}{dtFreeNavMeshQuery()}}
+{\footnotesize\ttfamily void dt\+Free\+Nav\+Mesh\+Query (\begin{DoxyParamCaption}\item[{\hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} $\ast$}]{query }\end{DoxyParamCaption})}
+
+Frees the specified query object using the Detour allocator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em query} & A query object allocated using \hyperlink{group__detour_gae547f165feefc955136130c8e22f207a}{dt\+Alloc\+Nav\+Mesh\+Query} \\
+\hline
+\end{DoxyParams}

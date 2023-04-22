@@ -1,0 +1,88 @@
+\hypertarget{motion__calibration_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+calibration.c File Reference}
+\label{motion__calibration_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+calibration.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motion\+\_\+calibration.\+c}}
+{\ttfamily \#include \char`\"{}motion\+\_\+calibration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motion.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}encoder.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mouse\+\_\+sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Protocol/can\+\_\+id.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Protocol/motion\+\_\+protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../strategy/strategy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../global.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../app\+\_\+cfg.\+h\char`\"{}}\newline
+Include dependency graph for motion\+\_\+calibration.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motion__calibration_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a8b849e3e414b6706450cc0c46c8ba104}\label{motion__calibration_8c_a8b849e3e414b6706450cc0c46c8ba104}} 
+\#define {\bfseries S\+L\+I\+P\+P\+A\+G\+E\+\_\+\+R\+A\+T\+IO}~300000
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a1cbf7e4087cd25957b1f5548d71c5ab6}\label{motion__calibration_8c_a1cbf7e4087cd25957b1f5548d71c5ab6}} 
+\#define {\bfseries C\+A\+L\+I\+B\+\_\+\+S\+P\+E\+E\+D\+\_\+\+NB}~6
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a000bf35e7309bb9f56bd3247b14609df}\label{motion__calibration_8c_a000bf35e7309bb9f56bd3247b14609df}} 
+void \hyperlink{motion__calibration_8c_a000bf35e7309bb9f56bd3247b14609df}{motion\+\_\+\+Calibration\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the motion calibration module. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_af61920c68194c7519c196ae3ec07db2e}\label{motion__calibration_8c_af61920c68194c7519c196ae3ec07db2e}} 
+void \hyperlink{motion__calibration_8c_af61920c68194c7519c196ae3ec07db2e}{motion\+\_\+\+Set\+Default\+Speed} (float speed)
+\begin{DoxyCompactList}\small\item\em speed used for all robot motion by default \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a0e64dd4bec2e4dc6ea5cb96438ebe24d}\label{motion__calibration_8c_a0e64dd4bec2e4dc6ea5cb96438ebe24d}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Speed} ()
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a4c0e346134ab61953fb90dd387e42d90}\label{motion__calibration_8c_a4c0e346134ab61953fb90dd387e42d90}} 
+void \hyperlink{motion__calibration_8c_a4c0e346134ab61953fb90dd387e42d90}{motion\+\_\+\+Set\+Default\+Accel} (float accel)
+\begin{DoxyCompactList}\small\item\em acceleration used for all robot motion by default \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a357b1aaa5f44eee6f66be0935409bac2}\label{motion__calibration_8c_a357b1aaa5f44eee6f66be0935409bac2}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Accel} ()
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a826d6a8c4a2e6e209bf5f8dc86c2eba3}\label{motion__calibration_8c_a826d6a8c4a2e6e209bf5f8dc86c2eba3}} 
+void \hyperlink{motion__calibration_8c_a826d6a8c4a2e6e209bf5f8dc86c2eba3}{motion\+\_\+\+Set\+Default\+Decel} (float decel)
+\begin{DoxyCompactList}\small\item\em deceleration used for all robot motion by default \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_af1453e93cf9d8623ed3737cf55e20ec1}\label{motion__calibration_8c_af1453e93cf9d8623ed3737cf55e20ec1}} 
+float {\bfseries motion\+\_\+\+Get\+Default\+Decel} ()
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_a287a3aab2f4225a0fe296a8e802d7bef}\label{motion__calibration_8c_a287a3aab2f4225a0fe296a8e802d7bef}} 
+void \hyperlink{motion__calibration_8c_a287a3aab2f4225a0fe296a8e802d7bef}{motion\+\_\+\+Set\+Sampling\+Frequency} (uint16 freq)
+\begin{DoxyCompactList}\small\item\em Set motion control sampling frequency and recompute value of sample time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motion__calibration_8c_afcabde7e01406b9f6a5cd04d3775b821}\label{motion__calibration_8c_afcabde7e01406b9f6a5cd04d3775b821}} 
+float \hyperlink{motion__calibration_8c_afcabde7e01406b9f6a5cd04d3775b821}{value\+V\+Tops}
+\begin{DoxyCompactList}\small\item\em value of a v\+Tops in meter (ratio for \textquotesingle{}major wheel\textquotesingle{}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a33a94b7e48624bd5f03e2ede33c7ac9b}\label{motion__calibration_8c_a33a94b7e48624bd5f03e2ede33c7ac9b}} 
+float \hyperlink{motion__calibration_8c_a33a94b7e48624bd5f03e2ede33c7ac9b}{value\+Sample}
+\begin{DoxyCompactList}\small\item\em value of a sample in second \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a5a030159f18559e97b78f19d2652331a}\label{motion__calibration_8c_a5a030159f18559e97b78f19d2652331a}} 
+B\+O\+OL \hyperlink{motion__calibration_8c_a5a030159f18559e97b78f19d2652331a}{is\+Send\+Errors\+Enabled}
+\begin{DoxyCompactList}\small\item\em should we send error on the U\+A\+RT (for debug and calibration purpose) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a991e8458152dcb12d6b803ea6d33b61d}\label{motion__calibration_8c_a991e8458152dcb12d6b803ea6d33b61d}} 
+O\+D\+O\+M\+E\+T\+R\+Y\+\_\+\+S\+E\+N\+S\+OR \hyperlink{motion__calibration_8c_a991e8458152dcb12d6b803ea6d33b61d}{odometry\+Sensor\+Used}
+\begin{DoxyCompactList}\small\item\em what kind of sensor do we use for odometry \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_aa68d9bb1e23fbe19e3d7fb7329c5e090}\label{motion__calibration_8c_aa68d9bb1e23fbe19e3d7fb7329c5e090}} 
+int32 \hyperlink{motion__calibration_8c_aa68d9bb1e23fbe19e3d7fb7329c5e090}{slippage\+Threshold}
+\begin{DoxyCompactList}\small\item\em how much slippage should trigger an alarm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motion__calibration_8c_a9b5d4663976bf3a633caff2db7e4f6dc}\label{motion__calibration_8c_a9b5d4663976bf3a633caff2db7e4f6dc}} 
+\hyperlink{structMOTOR}{M\+O\+T\+OR} \hyperlink{motion__calibration_8c_a9b5d4663976bf3a633caff2db7e4f6dc}{motors} \mbox{[}M\+A\+X\+\_\+\+M\+O\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+U\+M\+B\+ER\mbox{]}\mbox{[}M\+O\+T\+O\+R\+\_\+\+P\+E\+R\+\_\+\+T\+Y\+PE\mbox{]}
+\begin{DoxyCompactList}\small\item\em motors used for motion (left / right and virtual alpha / delta) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}

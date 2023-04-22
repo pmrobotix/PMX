@@ -1,0 +1,296 @@
+\hypertarget{classdtQueryFilter}{}\section{dt\+Query\+Filter Class Reference}
+\label{classdtQueryFilter}\index{dt\+Query\+Filter@{dt\+Query\+Filter}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh\+Query.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}{pass\+Filter} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$poly) const
+\item 
+float \hyperlink{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}{get\+Cost} (const float $\ast$pa, const float $\ast$pb, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$prev\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$prev\+Poly, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} cur\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$cur\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$cur\+Poly, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} next\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$next\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$next\+Poly) const
+\item 
+bool \hyperlink{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}{pass\+Filter} (const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$poly) const
+\item 
+float \hyperlink{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}{get\+Cost} (const float $\ast$pa, const float $\ast$pb, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} prev\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$prev\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$prev\+Poly, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} cur\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$cur\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$cur\+Poly, const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref} next\+Ref, const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$next\+Tile, const \hyperlink{structdtPoly}{dt\+Poly} $\ast$next\+Poly) const
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Getters and setters for the default implementation data.}\par
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}{get\+Area\+Cost} (const int i) const
+\item 
+void \hyperlink{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}{set\+Area\+Cost} (const int i, const float cost)
+\item 
+unsigned short \hyperlink{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}{get\+Include\+Flags} () const
+\item 
+void \hyperlink{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}{set\+Include\+Flags} (const unsigned short flags)
+\item 
+unsigned short \hyperlink{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}{get\+Exclude\+Flags} () const
+\item 
+void \hyperlink{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}{set\+Exclude\+Flags} (const unsigned short flags)
+\item 
+float \hyperlink{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}{get\+Area\+Cost} (const int i) const
+\item 
+void \hyperlink{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}{set\+Area\+Cost} (const int i, const float cost)
+\item 
+unsigned short \hyperlink{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}{get\+Include\+Flags} () const
+\item 
+void \hyperlink{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}{set\+Include\+Flags} (const unsigned short flags)
+\item 
+unsigned short \hyperlink{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}{get\+Exclude\+Flags} () const
+\item 
+void \hyperlink{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}{set\+Exclude\+Flags} (const unsigned short flags)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Defines polygon filtering and traversal costs for navigation mesh query operations.
+
+{\bfseries The Default Implementation}
+
+At construction\+: All area costs default to 1.\+0. All flags are included and none are excluded.
+
+If a polygon has both an include and an exclude flag, it will be excluded.
+
+The way filtering works, a navigation mesh polygon must have at least one flag set to ever be considered by a query. So a polygon with no flags will never be considered.
+
+Setting the include flags to 0 will result in all polygons being excluded.
+
+{\bfseries Custom Implementations}
+
+D\+T\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+Q\+U\+E\+R\+Y\+F\+I\+L\+T\+ER must be defined in order to extend this class.
+
+Implement a custom query filter by overriding the virtual \hyperlink{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}{pass\+Filter()} and \hyperlink{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}{get\+Cost()} functions. If this is done, both functions should be as fast as possible. Use cached local copies of data rather than accessing your own objects where possible.
+
+Custom implementations do not need to adhere to the flags or cost logic used by the default implementation.
+
+In order for A$\ast$ searches to work properly, the cost should be proportional to the travel distance. Implementing a cost modifier less than 1.\+0 is likely to lead to problems during pathfinding.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdtNavMeshQuery}{dt\+Nav\+Mesh\+Query} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}\label{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Area\+Cost@{get\+Area\+Cost}}
+\index{get\+Area\+Cost@{get\+Area\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Area\+Cost()}{getAreaCost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float dt\+Query\+Filter\+::get\+Area\+Cost (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the traversal cost of the area. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The id of the area. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The traversal cost of the area. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}\label{classdtQueryFilter_a1e41582a45d2a10eb7e68740475e5665}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Area\+Cost@{get\+Area\+Cost}}
+\index{get\+Area\+Cost@{get\+Area\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Area\+Cost()}{getAreaCost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float dt\+Query\+Filter\+::get\+Area\+Cost (\begin{DoxyParamCaption}\item[{const int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the traversal cost of the area. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The id of the area. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The traversal cost of the area. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}\label{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Cost@{get\+Cost}}
+\index{get\+Cost@{get\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Cost()}{getCost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float dt\+Query\+Filter\+::get\+Cost (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pa,  }\item[{const float $\ast$}]{pb,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{prev\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{prev\+Poly,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{cur\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{cur\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{cur\+Poly,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{next\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{next\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{next\+Poly }\end{DoxyParamCaption}) const}
+
+Returns cost to move from the beginning to the end of a line segment that is fully contained within a polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pa} & The start position on the edge of the previous and current polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em pb} & The end position on the edge of the current and next polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Ref} & The reference id of the previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Tile} & The tile containing the previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Poly} & The previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em cur\+Ref} & The reference id of the current polygon. \\
+\hline
+\mbox{\tt in}  & {\em cur\+Tile} & The tile containing the current polygon. \\
+\hline
+\mbox{\tt in}  & {\em cur\+Poly} & The current polygon. \\
+\hline
+\mbox{\tt in}  & {\em next\+Ref} & The refernece id of the next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em next\+Tile} & The tile containing the next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em next\+Poly} & The next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}\label{classdtQueryFilter_a11d016505b732a1a013c3771a4157dea}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Cost@{get\+Cost}}
+\index{get\+Cost@{get\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Cost()}{getCost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float dt\+Query\+Filter\+::get\+Cost (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pa,  }\item[{const float $\ast$}]{pb,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{prev\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{prev\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{prev\+Poly,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{cur\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{cur\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{cur\+Poly,  }\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{next\+Ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{next\+Tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{next\+Poly }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns cost to move from the beginning to the end of a line segment that is fully contained within a polygon. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pa} & The start position on the edge of the previous and current polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em pb} & The end position on the edge of the current and next polygon. \mbox{[}(x, y, z)\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Ref} & The reference id of the previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Tile} & The tile containing the previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em prev\+Poly} & The previous polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em cur\+Ref} & The reference id of the current polygon. \\
+\hline
+\mbox{\tt in}  & {\em cur\+Tile} & The tile containing the current polygon. \\
+\hline
+\mbox{\tt in}  & {\em cur\+Poly} & The current polygon. \\
+\hline
+\mbox{\tt in}  & {\em next\+Ref} & The refernece id of the next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em next\+Tile} & The tile containing the next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em next\+Poly} & The next polygon. \mbox{[}opt\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}\label{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Exclude\+Flags@{get\+Exclude\+Flags}}
+\index{get\+Exclude\+Flags@{get\+Exclude\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Exclude\+Flags()}{getExcludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short dt\+Query\+Filter\+::get\+Exclude\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the exclude flags for the filter. Any polygons that include one ore more of these flags will be excluded from the operation. \mbox{\Hypertarget{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}\label{classdtQueryFilter_ac3e2d16755c3510003f0580e27ce4897}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Exclude\+Flags@{get\+Exclude\+Flags}}
+\index{get\+Exclude\+Flags@{get\+Exclude\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Exclude\+Flags()}{getExcludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short dt\+Query\+Filter\+::get\+Exclude\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the exclude flags for the filter. Any polygons that include one ore more of these flags will be excluded from the operation. \mbox{\Hypertarget{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}\label{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Include\+Flags@{get\+Include\+Flags}}
+\index{get\+Include\+Flags@{get\+Include\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Include\+Flags()}{getIncludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short dt\+Query\+Filter\+::get\+Include\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the include flags for the filter. Any polygons that include one or more of these flags will be included in the operation. \mbox{\Hypertarget{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}\label{classdtQueryFilter_a5bae688840167576dc6ab7913dda1b34}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!get\+Include\+Flags@{get\+Include\+Flags}}
+\index{get\+Include\+Flags@{get\+Include\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{get\+Include\+Flags()}{getIncludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short dt\+Query\+Filter\+::get\+Include\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the include flags for the filter. Any polygons that include one or more of these flags will be included in the operation. \mbox{\Hypertarget{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}\label{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!pass\+Filter@{pass\+Filter}}
+\index{pass\+Filter@{pass\+Filter}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{pass\+Filter()}{passFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dt\+Query\+Filter\+::pass\+Filter (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{poly }\end{DoxyParamCaption}) const}
+
+Returns true if the polygon can be visited. (I.\+e. Is traversable.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon test. \\
+\hline
+\mbox{\tt in}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt in}  & {\em poly} & The polygon to test. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}\label{classdtQueryFilter_aaf072b8617dfbd4701a8e07f0f10be9c}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!pass\+Filter@{pass\+Filter}}
+\index{pass\+Filter@{pass\+Filter}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{pass\+Filter()}{passFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dt\+Query\+Filter\+::pass\+Filter (\begin{DoxyParamCaption}\item[{const \hyperlink{group__detour_gab4e0b2257a670c1a800057999612b466}{dt\+Poly\+Ref}}]{ref,  }\item[{const \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$}]{tile,  }\item[{const \hyperlink{structdtPoly}{dt\+Poly} $\ast$}]{poly }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the polygon can be visited. (I.\+e. Is traversable.) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref} & The reference id of the polygon test. \\
+\hline
+\mbox{\tt in}  & {\em tile} & The tile containing the polygon. \\
+\hline
+\mbox{\tt in}  & {\em poly} & The polygon to test. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}\label{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Area\+Cost@{set\+Area\+Cost}}
+\index{set\+Area\+Cost@{set\+Area\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Area\+Cost()}{setAreaCost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Area\+Cost (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const float}]{cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the traversal cost of the area. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The id of the area. \\
+\hline
+\mbox{\tt in}  & {\em cost} & The new cost of traversing the area. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}\label{classdtQueryFilter_a36063c39d5c391a393412108a8a33927}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Area\+Cost@{set\+Area\+Cost}}
+\index{set\+Area\+Cost@{set\+Area\+Cost}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Area\+Cost()}{setAreaCost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Area\+Cost (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const float}]{cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the traversal cost of the area. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & The id of the area. \\
+\hline
+\mbox{\tt in}  & {\em cost} & The new cost of traversing the area. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}\label{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Exclude\+Flags@{set\+Exclude\+Flags}}
+\index{set\+Exclude\+Flags@{set\+Exclude\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Exclude\+Flags()}{setExcludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Exclude\+Flags (\begin{DoxyParamCaption}\item[{const unsigned short}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the exclude flags for the filter. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & The new flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}\label{classdtQueryFilter_a18c1b888c9b2c3b30703d6861a793600}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Exclude\+Flags@{set\+Exclude\+Flags}}
+\index{set\+Exclude\+Flags@{set\+Exclude\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Exclude\+Flags()}{setExcludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Exclude\+Flags (\begin{DoxyParamCaption}\item[{const unsigned short}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the exclude flags for the filter. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & The new flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}\label{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Include\+Flags@{set\+Include\+Flags}}
+\index{set\+Include\+Flags@{set\+Include\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Include\+Flags()}{setIncludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Include\+Flags (\begin{DoxyParamCaption}\item[{const unsigned short}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the include flags for the filter. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & The new flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}\label{classdtQueryFilter_ab9783c92a30e41df84ebfd2f68338970}} 
+\index{dt\+Query\+Filter@{dt\+Query\+Filter}!set\+Include\+Flags@{set\+Include\+Flags}}
+\index{set\+Include\+Flags@{set\+Include\+Flags}!dt\+Query\+Filter@{dt\+Query\+Filter}}
+\subsubsection{\texorpdfstring{set\+Include\+Flags()}{setIncludeFlags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void dt\+Query\+Filter\+::set\+Include\+Flags (\begin{DoxyParamCaption}\item[{const unsigned short}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the include flags for the filter. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & The new flags. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh\+Query.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh\+Query.\+cpp\end{DoxyCompactItemize}

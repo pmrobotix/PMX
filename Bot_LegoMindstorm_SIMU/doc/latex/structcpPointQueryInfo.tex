@@ -1,0 +1,52 @@
+\hypertarget{structcpPointQueryInfo}{}\section{cp\+Point\+Query\+Info Struct Reference}
+\label{structcpPointQueryInfo}\index{cp\+Point\+Query\+Info@{cp\+Point\+Query\+Info}}
+
+
+Point query info struct.  
+
+
+
+
+{\ttfamily \#include $<$cp\+Shape.\+h$>$}
+
+
+
+Collaboration diagram for cp\+Point\+Query\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcpPointQueryInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structcpPointQueryInfo_a98fddb05a4044f8a3e6b3da482ed06ed}\label{structcpPointQueryInfo_a98fddb05a4044f8a3e6b3da482ed06ed}} 
+const \hyperlink{structcpShape}{cp\+Shape} $\ast$ \hyperlink{structcpPointQueryInfo_a98fddb05a4044f8a3e6b3da482ed06ed}{shape}
+\begin{DoxyCompactList}\small\item\em The nearest shape, N\+U\+LL if no shape was within range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpPointQueryInfo_aa3ba52f53251ad8770c39d7789b14547}\label{structcpPointQueryInfo_aa3ba52f53251ad8770c39d7789b14547}} 
+\hyperlink{structcpVect}{cp\+Vect} \hyperlink{structcpPointQueryInfo_aa3ba52f53251ad8770c39d7789b14547}{point}
+\begin{DoxyCompactList}\small\item\em The closest point on the shape\textquotesingle{}s surface. (in world space coordinates) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structcpPointQueryInfo_ab7b002bf19b83cb05dd4635f92884ec8}\label{structcpPointQueryInfo_ab7b002bf19b83cb05dd4635f92884ec8}} 
+cp\+Float \hyperlink{structcpPointQueryInfo_ab7b002bf19b83cb05dd4635f92884ec8}{distance}
+\begin{DoxyCompactList}\small\item\em The distance to the point. The distance is negative if the point is inside the shape. \end{DoxyCompactList}\item 
+\hyperlink{structcpVect}{cp\+Vect} \hyperlink{structcpPointQueryInfo_a55bf2732bc2563af6c83ce1985906034}{gradient}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Point query info struct. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structcpPointQueryInfo_a55bf2732bc2563af6c83ce1985906034}\label{structcpPointQueryInfo_a55bf2732bc2563af6c83ce1985906034}} 
+\index{cp\+Point\+Query\+Info@{cp\+Point\+Query\+Info}!gradient@{gradient}}
+\index{gradient@{gradient}!cp\+Point\+Query\+Info@{cp\+Point\+Query\+Info}}
+\subsubsection{\texorpdfstring{gradient}{gradient}}
+{\footnotesize\ttfamily \hyperlink{structcpVect}{cp\+Vect} cp\+Point\+Query\+Info\+::gradient}
+
+The gradient of the signed distance function. The value should be similar to info.\+p/info.d, but accurate even for very small values of info.\+d. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/chipmunk/include/chipmunk/cp\+Shape.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{structbtSingleSweepCallback}{}\section{bt\+Single\+Sweep\+Callback Struct Reference}
+\label{structbtSingleSweepCallback}\index{bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}}
+
+
+Inheritance diagram for bt\+Single\+Sweep\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{structbtSingleSweepCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Single\+Sweep\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtSingleSweepCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structbtSingleSweepCallback_adb99242209085f3562005a5a0c088793}{bt\+Single\+Sweep\+Callback} (const bt\+Convex\+Shape $\ast$cast\+Shape, const bt\+Transform \&convex\+From\+Trans, const bt\+Transform \&convex\+To\+Trans, const \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$world, \hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{bt\+Collision\+World\+::\+Convex\+Result\+Callback} \&result\+Callback, bt\+Scalar allowed\+Penetration)
+\item 
+virtual bool \hyperlink{structbtSingleSweepCallback_a38b90d239e96c18b3843435976b598fc}{process} (const bt\+Broadphase\+Proxy $\ast$proxy)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_a69b93f7fc3793e8984609295dc43346f}\label{structbtSingleSweepCallback_a69b93f7fc3793e8984609295dc43346f}} 
+bt\+Transform {\bfseries m\+\_\+convex\+From\+Trans}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_a31ab25b89b90fa8157d51f504a677640}\label{structbtSingleSweepCallback_a31ab25b89b90fa8157d51f504a677640}} 
+bt\+Transform {\bfseries m\+\_\+convex\+To\+Trans}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_a053037e4988f03348ce30f346bd60c64}\label{structbtSingleSweepCallback_a053037e4988f03348ce30f346bd60c64}} 
+bt\+Vector3 {\bfseries m\+\_\+hit\+Normal}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_a38fbca89a6243c28912a6735437cea1f}\label{structbtSingleSweepCallback_a38fbca89a6243c28912a6735437cea1f}} 
+const \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$ {\bfseries m\+\_\+world}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_abfbd3ec3f7292c7afaa86bd9429b2de5}\label{structbtSingleSweepCallback_abfbd3ec3f7292c7afaa86bd9429b2de5}} 
+\hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{bt\+Collision\+World\+::\+Convex\+Result\+Callback} \& {\bfseries m\+\_\+result\+Callback}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_ad4ed47b5940335cdf0b061a2d0226ef1}\label{structbtSingleSweepCallback_ad4ed47b5940335cdf0b061a2d0226ef1}} 
+bt\+Scalar {\bfseries m\+\_\+allowed\+Ccd\+Penetration}
+\item 
+\mbox{\Hypertarget{structbtSingleSweepCallback_a0bae8a399ab777f107a6b62e6ba0a85a}\label{structbtSingleSweepCallback_a0bae8a399ab777f107a6b62e6ba0a85a}} 
+const bt\+Convex\+Shape $\ast$ {\bfseries m\+\_\+cast\+Shape}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structbtSingleSweepCallback_adb99242209085f3562005a5a0c088793}\label{structbtSingleSweepCallback_adb99242209085f3562005a5a0c088793}} 
+\index{bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}!bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}}
+\index{bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}!bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}}
+\subsubsection{\texorpdfstring{bt\+Single\+Sweep\+Callback()}{btSingleSweepCallback()}}
+{\footnotesize\ttfamily bt\+Single\+Sweep\+Callback\+::bt\+Single\+Sweep\+Callback (\begin{DoxyParamCaption}\item[{const bt\+Convex\+Shape $\ast$}]{cast\+Shape,  }\item[{const bt\+Transform \&}]{convex\+From\+Trans,  }\item[{const bt\+Transform \&}]{convex\+To\+Trans,  }\item[{const \hyperlink{classbtCollisionWorld}{bt\+Collision\+World} $\ast$}]{world,  }\item[{\hyperlink{structbtCollisionWorld_1_1ConvexResultCallback}{bt\+Collision\+World\+::\+Convex\+Result\+Callback} \&}]{result\+Callback,  }\item[{bt\+Scalar}]{allowed\+Penetration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+what about division by zero? --$>$ just set ray\+Direction\mbox{[}i\mbox{]} to I\+N\+F/\+B\+T\+\_\+\+L\+A\+R\+G\+E\+\_\+\+F\+L\+O\+AT 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structbtSingleSweepCallback_a38b90d239e96c18b3843435976b598fc}\label{structbtSingleSweepCallback_a38b90d239e96c18b3843435976b598fc}} 
+\index{bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}!process@{process}}
+\index{process@{process}!bt\+Single\+Sweep\+Callback@{bt\+Single\+Sweep\+Callback}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily virtual bool bt\+Single\+Sweep\+Callback\+::process (\begin{DoxyParamCaption}\item[{const bt\+Broadphase\+Proxy $\ast$}]{proxy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+terminate further convex sweep tests, once the closest\+Hit\+Fraction reached zero 
+
+Implements \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Collision\+World.\+cpp\end{DoxyCompactItemize}

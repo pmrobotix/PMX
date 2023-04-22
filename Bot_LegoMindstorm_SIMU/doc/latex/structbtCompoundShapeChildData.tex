@@ -1,0 +1,52 @@
+\hypertarget{structbtCompoundShapeChildData}{}\section{bt\+Compound\+Shape\+Child\+Data Struct Reference}
+\label{structbtCompoundShapeChildData}\index{bt\+Compound\+Shape\+Child\+Data@{bt\+Compound\+Shape\+Child\+Data}}
+
+
+do not change those serialization structures, it requires an updated s\+Bullet\+D\+N\+Astr/s\+Bullet\+D\+N\+Astr64  
+
+
+
+
+{\ttfamily \#include $<$bt\+Compound\+Shape.\+h$>$}
+
+
+
+Collaboration diagram for bt\+Compound\+Shape\+Child\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structbtCompoundShapeChildData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbtCompoundShapeChildData_aa4e204a234cb5fcc33904433d0f87d06}\label{structbtCompoundShapeChildData_aa4e204a234cb5fcc33904433d0f87d06}} 
+\hyperlink{structbtTransformFloatData}{bt\+Transform\+Float\+Data} {\bfseries m\+\_\+transform}
+\item 
+\mbox{\Hypertarget{structbtCompoundShapeChildData_a3c97807aec452fdc39a3f43bb00aa88c}\label{structbtCompoundShapeChildData_a3c97807aec452fdc39a3f43bb00aa88c}} 
+\hyperlink{structbtCollisionShapeData}{bt\+Collision\+Shape\+Data} $\ast$ {\bfseries m\+\_\+child\+Shape}
+\item 
+\mbox{\Hypertarget{structbtCompoundShapeChildData_a870f5c357ff4c5e0da76d56755890af1}\label{structbtCompoundShapeChildData_a870f5c357ff4c5e0da76d56755890af1}} 
+int {\bfseries m\+\_\+child\+Shape\+Type}
+\item 
+\mbox{\Hypertarget{structbtCompoundShapeChildData_a504e17125ac8eb1bca4d2168832eb463}\label{structbtCompoundShapeChildData_a504e17125ac8eb1bca4d2168832eb463}} 
+float {\bfseries m\+\_\+child\+Margin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+do not change those serialization structures, it requires an updated s\+Bullet\+D\+N\+Astr/s\+Bullet\+D\+N\+Astr64 
+
+The bt\+Compound\+Shape allows to store multiple other bt\+Collision\+Shapes This allows for moving concave collision objects. This is more general then the static concave bt\+Bvh\+Triangle\+Mesh\+Shape. It has an (optional) dynamic aabb tree to accelerate early rejection tests. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000021}{Todo}]\+: This aabb tree can also be use to speed up ray tests on bt\+Compound\+Shape, see \href{http://code.google.com/p/bullet/issues/detail?id=25}{\tt http\+://code.\+google.\+com/p/bullet/issues/detail?id=25} Currently, removal of child shapes is only supported when disabling the aabb tree (pass \textquotesingle{}false\textquotesingle{} in the constructor of bt\+Compound\+Shape) \end{DoxyRefDesc}
+
+
+The bt\+Compound\+Shape allows to store multiple other bt\+Collision\+Shapes This allows for moving concave collision objects. This is more general then the static concave bt\+Bvh\+Triangle\+Mesh\+Shape. It has an (optional) dynamic aabb tree to accelerate early rejection tests. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000050}{Todo}]\+: This aabb tree can also be use to speed up ray tests on bt\+Compound\+Shape, see \href{http://code.google.com/p/bullet/issues/detail?id=25}{\tt http\+://code.\+google.\+com/p/bullet/issues/detail?id=25} Currently, removal of child shapes is only supported when disabling the aabb tree (pass \textquotesingle{}false\textquotesingle{} in the constructor of bt\+Compound\+Shape) \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Shapes/bt\+Compound\+Shape.\+h\end{DoxyCompactItemize}

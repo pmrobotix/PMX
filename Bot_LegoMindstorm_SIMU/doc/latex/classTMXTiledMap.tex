@@ -1,0 +1,875 @@
+\hypertarget{classTMXTiledMap}{}\section{T\+M\+X\+Tiled\+Map Class Reference}
+\label{classTMXTiledMap}\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+
+
+\hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} knows how to parse and render a T\+MX map.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+T\+M\+X\+Tiled\+Map.\+h$>$}
+
+
+
+Inheritance diagram for T\+M\+X\+Tiled\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classTMXTiledMap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+M\+X\+Tiled\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTMXTiledMap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXTiledMap_aff957f2716dd1f06bd8ce54b173c43e1}{get\+Layer} (const std\+::string \&layer\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}{layer\+Named} (const std\+::string \&layer\+Name) const
+\item 
+\hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ \hyperlink{classTMXTiledMap_a4addb02e0b8a56ab145b3a4162b4e6b8}{get\+Object\+Group} (const std\+::string \&group\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ \hyperlink{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}{object\+Group\+Named} (const std\+::string \&group\+Name) const
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}{get\+Property} (const std\+::string \&property\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}{property\+Named} (const char $\ast$property\+Name) const
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}{get\+Properties\+For\+G\+ID} (int G\+ID) const
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_ab214ca1245f8b65f47aa3dfe41db3c41}\label{classTMXTiledMap_ab214ca1245f8b65f47aa3dfe41db3c41}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} {\bfseries properties\+For\+G\+ID} (int G\+ID) const
+\item 
+bool \hyperlink{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}{get\+Properties\+For\+G\+ID} (int G\+ID, \hyperlink{classValue}{Value} $\ast$$\ast$value)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}{get\+Map\+Size} () const
+\item 
+void \hyperlink{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}{set\+Map\+Size} (const \hyperlink{classSize}{Size} \&map\+Size)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}{get\+Tile\+Size} () const
+\item 
+void \hyperlink{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}{set\+Tile\+Size} (const \hyperlink{classSize}{Size} \&tile\+Size)
+\item 
+int \hyperlink{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}{get\+Map\+Orientation} () const
+\item 
+void \hyperlink{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}{set\+Map\+Orientation} (int map\+Orientation)
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ \& \hyperlink{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}{get\+Object\+Groups} () const
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_ac561454ea78ecc518ab8d678f2ae2377}\label{classTMXTiledMap_ac561454ea78ecc518ab8d678f2ae2377}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ \& {\bfseries get\+Object\+Groups} ()
+\item 
+void \hyperlink{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}{set\+Object\+Groups} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$$>$ \&groups)
+\item 
+Value\+Map \& \hyperlink{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}{get\+Properties} ()
+\item 
+void \hyperlink{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}{set\+Properties} (const Value\+Map \&properties)
+\item 
+virtual std\+::string \hyperlink{classTMXTiledMap_adf91a0a108c7e78b84716cd926d96113}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a4b3e312558f5b5f46e9b2dd3b12ad7d9}\label{classTMXTiledMap_a4b3e312558f5b5f46e9b2dd3b12ad7d9}} 
+int {\bfseries get\+Layer\+Num} ()
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_afdcc25aa5d5c62161e895b61430e653b}\label{classTMXTiledMap_afdcc25aa5d5c62161e895b61430e653b}} 
+const std\+::string \& {\bfseries get\+Resource\+File} () const
+\item 
+virtual \hyperlink{classTMXTiledMap_a4a0406798cb65a4a4dde5f667172965c}{$\sim$\+T\+M\+X\+Tiled\+Map} ()
+\item 
+bool \hyperlink{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}{init\+With\+T\+M\+X\+File} (const std\+::string \&tmx\+File)
+\item 
+bool \hyperlink{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}{init\+With\+X\+ML} (const std\+::string \&tmx\+String, const std\+::string \&resource\+Path)
+\item 
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXTiledMap_a5ed4ea1bd0d798e165e5c60f392343b9}{get\+Layer} (const std\+::string \&layer\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}{layer\+Named} (const std\+::string \&layer\+Name) const
+\item 
+\hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ \hyperlink{classTMXTiledMap_a98a13b3c2eda3af05814fb859dad8ac1}{get\+Object\+Group} (const std\+::string \&group\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ \hyperlink{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}{object\+Group\+Named} (const std\+::string \&group\+Name) const
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}{get\+Property} (const std\+::string \&property\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}{property\+Named} (const char $\ast$property\+Name) const
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}{get\+Properties\+For\+G\+ID} (int G\+ID) const
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_ab214ca1245f8b65f47aa3dfe41db3c41}\label{classTMXTiledMap_ab214ca1245f8b65f47aa3dfe41db3c41}} 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} {\bfseries properties\+For\+G\+ID} (int G\+ID) const
+\item 
+bool \hyperlink{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}{get\+Properties\+For\+G\+ID} (int G\+ID, \hyperlink{classValue}{Value} $\ast$$\ast$value)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}{get\+Map\+Size} () const
+\item 
+void \hyperlink{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}{set\+Map\+Size} (const \hyperlink{classSize}{Size} \&map\+Size)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}{get\+Tile\+Size} () const
+\item 
+void \hyperlink{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}{set\+Tile\+Size} (const \hyperlink{classSize}{Size} \&tile\+Size)
+\item 
+int \hyperlink{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}{get\+Map\+Orientation} () const
+\item 
+void \hyperlink{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}{set\+Map\+Orientation} (int map\+Orientation)
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ \& \hyperlink{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}{get\+Object\+Groups} () const
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_ac561454ea78ecc518ab8d678f2ae2377}\label{classTMXTiledMap_ac561454ea78ecc518ab8d678f2ae2377}} 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ \& {\bfseries get\+Object\+Groups} ()
+\item 
+void \hyperlink{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}{set\+Object\+Groups} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$$>$ \&groups)
+\item 
+Value\+Map \& \hyperlink{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}{get\+Properties} ()
+\item 
+void \hyperlink{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}{set\+Properties} (const Value\+Map \&properties)
+\item 
+virtual std\+::string \hyperlink{classTMXTiledMap_a300398db77c8dcabafc6723eaaee67af}{get\+Description} () const override
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a4b3e312558f5b5f46e9b2dd3b12ad7d9}\label{classTMXTiledMap_a4b3e312558f5b5f46e9b2dd3b12ad7d9}} 
+int {\bfseries get\+Layer\+Num} ()
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_afdcc25aa5d5c62161e895b61430e653b}\label{classTMXTiledMap_afdcc25aa5d5c62161e895b61430e653b}} 
+const std\+::string \& {\bfseries get\+Resource\+File} () const
+\item 
+virtual \hyperlink{classTMXTiledMap_a4b8952527c10c7ab9397e215b7bd116c}{$\sim$\+T\+M\+X\+Tiled\+Map} ()
+\item 
+bool \hyperlink{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}{init\+With\+T\+M\+X\+File} (const std\+::string \&tmx\+File)
+\item 
+bool \hyperlink{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}{init\+With\+X\+ML} (const std\+::string \&tmx\+String, const std\+::string \&resource\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ \hyperlink{classTMXTiledMap_a64387b3c4d0369044917a4ef43f31aa0}{create} (const std\+::string \&tmx\+File)
+\item 
+static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ \hyperlink{classTMXTiledMap_af3a5adeaeec14ab3455494f0c230335b}{create\+With\+X\+ML} (const std\+::string \&tmx\+String, const std\+::string \&resource\+Path)
+\item 
+static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ \hyperlink{classTMXTiledMap_a8f0787367238690d49a54e5db1dd1294}{create} (const std\+::string \&tmx\+File)
+\item 
+static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ \hyperlink{classTMXTiledMap_acd5278187ebb5fcf1d1dbbd1fe42c3dd}{create\+With\+X\+ML} (const std\+::string \&tmx\+String, const std\+::string \&resource\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a8e7b3acdacabf66c4510bc57fec2aad9}\label{classTMXTiledMap_a8e7b3acdacabf66c4510bc57fec2aad9}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_ab5d014ac35d3cc10d57e1360527cce27}\label{classTMXTiledMap_ab5d014ac35d3cc10d57e1360527cce27}} 
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ {\bfseries parse\+Layer} (T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a73930cb47843cada3c229e1f9e203f71}\label{classTMXTiledMap_a73930cb47843cada3c229e1f9e203f71}} 
+T\+M\+X\+Tileset\+Info $\ast$ {\bfseries tileset\+For\+Layer} (T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a23841a41fe9bd8ac83780b22504185e5}\label{classTMXTiledMap_a23841a41fe9bd8ac83780b22504185e5}} 
+void {\bfseries build\+With\+Map\+Info} (T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a776526cb04c1300d81593ccc5b35145b}\label{classTMXTiledMap_a776526cb04c1300d81593ccc5b35145b}} 
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ {\bfseries parse\+Layer} (T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a1f12e2f71851c40931fa349fe902e36b}\label{classTMXTiledMap_a1f12e2f71851c40931fa349fe902e36b}} 
+T\+M\+X\+Tileset\+Info $\ast$ {\bfseries tileset\+For\+Layer} (T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a23841a41fe9bd8ac83780b22504185e5}\label{classTMXTiledMap_a23841a41fe9bd8ac83780b22504185e5}} 
+void {\bfseries build\+With\+Map\+Info} (T\+M\+X\+Map\+Info $\ast$map\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTMXTiledMap_a75abce1666e8430273ef914243e554e2}{\+\_\+map\+Size}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTMXTiledMap_ab7f86e9a30c42c0b631651a9096ecea1}{\+\_\+tile\+Size}
+\item 
+int \hyperlink{classTMXTiledMap_ae696c0e5c2befb7cc07d2542353a36a2}{\+\_\+map\+Orientation}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ \hyperlink{classTMXTiledMap_a4f95a1b37b1b0ac9d953b7fb5f2b4d1a}{\+\_\+object\+Groups}
+\item 
+Value\+Map \hyperlink{classTMXTiledMap_a83f1a2a8df110f2c755d9a1ae4490f3e}{\+\_\+properties}
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a2de86f45817cae4788ec2feeaf9f8246}\label{classTMXTiledMap_a2de86f45817cae4788ec2feeaf9f8246}} 
+Value\+Map\+Int\+Key \hyperlink{classTMXTiledMap_a2de86f45817cae4788ec2feeaf9f8246}{\+\_\+tile\+Properties}
+\begin{DoxyCompactList}\small\item\em tile properties \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTMXTiledMap_a06992011d1ef40a4f168a36ff26cad75}\label{classTMXTiledMap_a06992011d1ef40a4f168a36ff26cad75}} 
+std\+::string {\bfseries \+\_\+tmx\+File}
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_aa0fce99641532a752c96d6a0cc8ff451}\label{classTMXTiledMap_aa0fce99641532a752c96d6a0cc8ff451}} 
+int {\bfseries \+\_\+tmx\+Layer\+Num}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTMXTiledMap_a0c788f3339e9d938b28123e628d0902c}\label{classTMXTiledMap_a0c788f3339e9d938b28123e628d0902c}} 
+static const int {\bfseries T\+M\+X\+Layer\+Tag} = 32768
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} knows how to parse and render a T\+MX map. 
+
+It adds support for the T\+MX tiled map format used by \href{http://www.mapeditor.org}{\tt http\+://www.\+mapeditor.\+org} It supports isometric, hexagonal and orthogonal tiles. It also supports object groups, objects, and properties.
+
+Features\+:
+\begin{DoxyItemize}
+\item Each tile will be treated as an \hyperlink{classSprite}{Sprite}.
+\item The sprites are created on demand. They will be created only when you call \char`\"{}layer-\/$>$tile\+At(position)\char`\"{}.
+\item Each tile can be rotated / moved / scaled / tinted / \char`\"{}opaqued\char`\"{}, since each tile is a \hyperlink{classSprite}{Sprite}.
+\item Tiles can be added/removed in runtime.
+\item The z-\/order of the tiles can be modified in runtime.
+\item Each tile has an anchor\+Point of (0,0).
+\item The anchor\+Point of the T\+M\+X\+Tile\+Map is (0,0).
+\item The T\+MX layers will be added as a child.
+\item The T\+MX layers will be aliased by default.
+\item The tileset image will be loaded using the \hyperlink{classTextureCache}{Texture\+Cache}.
+\item Each tile will have a unique tag.
+\item Each tile will have a unique z value. top-\/left\+: z=1, bottom-\/right\+: z=max z.
+\item Each object group will be treated as an Mutable\+Array.
+\item Object class which will contain all the properties in a dictionary.
+\item \hyperlink{classProperties}{Properties} can be assigned to the \hyperlink{classMap}{Map}, \hyperlink{classLayer}{Layer}, Object Group, and Object.
+\end{DoxyItemize}
+
+Limitations\+:
+\begin{DoxyItemize}
+\item It only supports one tileset per layer.
+\item Embedded images are not supported.
+\item It only supports the X\+ML format (the J\+S\+ON format is not supported).
+\end{DoxyItemize}
+
+Technical description\+: Each layer is created using an \hyperlink{classTMXLayer}{T\+M\+X\+Layer} (subclass of \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}). If you have 5 layers, then 5 \hyperlink{classTMXLayer}{T\+M\+X\+Layer} will be created, unless the layer visibility is off. In that case, the layer won\textquotesingle{}t be created at all. You can obtain the layers (\hyperlink{classTMXLayer}{T\+M\+X\+Layer} objects) at runtime by\+:
+\begin{DoxyItemize}
+\item map-\/$>$get\+Child\+By\+Tag(tag\+\_\+number); // 0=1st layer, 1=2nd layer, 2=3rd layer, etc...
+\item map-\/$>$get\+Layer(name\+\_\+of\+\_\+the\+\_\+layer);
+\end{DoxyItemize}
+
+Each object group is created using a \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} which is a subclass of Mutable\+Array. You can obtain the object groups at runtime by\+:
+\begin{DoxyItemize}
+\item map-\/$>$get\+Object\+Group(name\+\_\+of\+\_\+the\+\_\+object\+\_\+group);
+\end{DoxyItemize}
+
+Each object is a T\+M\+X\+Object.
+
+Each property is stored as a key-\/value pair in an Mutable\+Dictionary. You can obtain the properties at runtime by\+:
+
+map-\/$>$get\+Property(name\+\_\+of\+\_\+the\+\_\+property); layer-\/$>$get\+Property(name\+\_\+of\+\_\+the\+\_\+property); object\+Group-\/$>$get\+Property(name\+\_\+of\+\_\+the\+\_\+property); object-\/$>$get\+Property(name\+\_\+of\+\_\+the\+\_\+property);
+
+\begin{DoxySince}{Since}
+v0.\+8.\+1 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTMXTiledMap_a4a0406798cb65a4a4dde5f667172965c}\label{classTMXTiledMap_a4a0406798cb65a4a4dde5f667172965c}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!````~T\+M\+X\+Tiled\+Map@{$\sim$\+T\+M\+X\+Tiled\+Map}}
+\index{````~T\+M\+X\+Tiled\+Map@{$\sim$\+T\+M\+X\+Tiled\+Map}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+M\+X\+Tiled\+Map()}{~TMXTiledMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Tiled\+Map\+::$\sim$\+T\+M\+X\+Tiled\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a4b8952527c10c7ab9397e215b7bd116c}\label{classTMXTiledMap_a4b8952527c10c7ab9397e215b7bd116c}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!````~T\+M\+X\+Tiled\+Map@{$\sim$\+T\+M\+X\+Tiled\+Map}}
+\index{````~T\+M\+X\+Tiled\+Map@{$\sim$\+T\+M\+X\+Tiled\+Map}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+M\+X\+Tiled\+Map()}{~TMXTiledMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual T\+M\+X\+Tiled\+Map\+::$\sim$\+T\+M\+X\+Tiled\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTMXTiledMap_a64387b3c4d0369044917a4ef43f31aa0}\label{classTMXTiledMap_a64387b3c4d0369044917a4ef43f31aa0}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!create@{create}}
+\index{create@{create}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ T\+M\+X\+Tiled\+Map\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmx\+File} & A T\+MX file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a8f0787367238690d49a54e5db1dd1294}\label{classTMXTiledMap_a8f0787367238690d49a54e5db1dd1294}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!create@{create}}
+\index{create@{create}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map}$\ast$ T\+M\+X\+Tiled\+Map\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmx\+File} & A T\+MX file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_af3a5adeaeec14ab3455494f0c230335b}\label{classTMXTiledMap_af3a5adeaeec14ab3455494f0c230335b}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!create\+With\+X\+ML@{create\+With\+X\+ML}}
+\index{create\+With\+X\+ML@{create\+With\+X\+ML}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{create\+With\+X\+M\+L()}{createWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map} $\ast$ T\+M\+X\+Tiled\+Map\+::create\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+String,  }\item[{const std\+::string \&}]{resource\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX formatted X\+ML string and a path to T\+MX resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmx\+String} & A T\+MX formatted X\+ML string. \\
+\hline
+{\em resource\+Path} & The path to T\+MX resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_acd5278187ebb5fcf1d1dbbd1fe42c3dd}\label{classTMXTiledMap_acd5278187ebb5fcf1d1dbbd1fe42c3dd}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!create\+With\+X\+ML@{create\+With\+X\+ML}}
+\index{create\+With\+X\+ML@{create\+With\+X\+ML}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{create\+With\+X\+M\+L()}{createWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTMXTiledMap}{T\+M\+X\+Tiled\+Map}$\ast$ T\+M\+X\+Tiled\+Map\+::create\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+String,  }\item[{const std\+::string \&}]{resource\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX formatted X\+ML string and a path to T\+MX resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmx\+String} & A T\+MX formatted X\+ML string. \\
+\hline
+{\em resource\+Path} & The path to T\+MX resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object.  NA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_adf91a0a108c7e78b84716cd926d96113}\label{classTMXTiledMap_adf91a0a108c7e78b84716cd926d96113}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string T\+M\+X\+Tiled\+Map\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the description.  NA 
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+\mbox{\Hypertarget{classTMXTiledMap_a300398db77c8dcabafc6723eaaee67af}\label{classTMXTiledMap_a300398db77c8dcabafc6723eaaee67af}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string T\+M\+X\+Tiled\+Map\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the description.  NA 
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+\mbox{\Hypertarget{classTMXTiledMap_aff957f2716dd1f06bd8ce54b173c43e1}\label{classTMXTiledMap_aff957f2716dd1f06bd8ce54b173c43e1}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Layer@{get\+Layer}}
+\index{get\+Layer@{get\+Layer}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Layer()}{getLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ T\+M\+X\+Tiled\+Map\+::get\+Layer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption}) const}
+
+Return the \hyperlink{classTMXLayer}{T\+M\+X\+Layer} for the specific layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+Name} & A specific layer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classTMXLayer}{T\+M\+X\+Layer} for the specific layer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a5ed4ea1bd0d798e165e5c60f392343b9}\label{classTMXTiledMap_a5ed4ea1bd0d798e165e5c60f392343b9}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Layer@{get\+Layer}}
+\index{get\+Layer@{get\+Layer}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Layer()}{getLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTMXLayer}{T\+M\+X\+Layer}$\ast$ T\+M\+X\+Tiled\+Map\+::get\+Layer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption}) const}
+
+Return the \hyperlink{classTMXLayer}{T\+M\+X\+Layer} for the specific layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+Name} & A specific layer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classTMXLayer}{T\+M\+X\+Layer} for the specific layer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}\label{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Map\+Orientation@{get\+Map\+Orientation}}
+\index{get\+Map\+Orientation@{get\+Map\+Orientation}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Map\+Orientation()}{getMapOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int T\+M\+X\+Tiled\+Map\+::get\+Map\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classMap}{Map} orientation.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMap}{Map} orientation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}\label{classTMXTiledMap_ae977e941934abd13ab85b260ad915941}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Map\+Orientation@{get\+Map\+Orientation}}
+\index{get\+Map\+Orientation@{get\+Map\+Orientation}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Map\+Orientation()}{getMapOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int T\+M\+X\+Tiled\+Map\+::get\+Map\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classMap}{Map} orientation.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMap}{Map} orientation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}\label{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Map\+Size@{get\+Map\+Size}}
+\index{get\+Map\+Size@{get\+Map\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Map\+Size()}{getMapSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Tiled\+Map\+::get\+Map\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The map\textquotesingle{}s size property measured in tiles.
+
+\begin{DoxyReturn}{Returns}
+The map\textquotesingle{}s size property measured in tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}\label{classTMXTiledMap_aacf46f135b88bbeb1f023bfc0c2b6242}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Map\+Size@{get\+Map\+Size}}
+\index{get\+Map\+Size@{get\+Map\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Map\+Size()}{getMapSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Tiled\+Map\+::get\+Map\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The map\textquotesingle{}s size property measured in tiles.
+
+\begin{DoxyReturn}{Returns}
+The map\textquotesingle{}s size property measured in tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a4addb02e0b8a56ab145b3a4162b4e6b8}\label{classTMXTiledMap_a4addb02e0b8a56ab145b3a4162b4e6b8}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Object\+Group@{get\+Object\+Group}}
+\index{get\+Object\+Group@{get\+Object\+Group}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Object\+Group()}{getObjectGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ T\+M\+X\+Tiled\+Map\+::get\+Object\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name }\end{DoxyParamCaption}) const}
+
+Return the \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} for the specific group.
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & The group Name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Type of \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a98a13b3c2eda3af05814fb859dad8ac1}\label{classTMXTiledMap_a98a13b3c2eda3af05814fb859dad8ac1}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Object\+Group@{get\+Object\+Group}}
+\index{get\+Object\+Group@{get\+Object\+Group}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Object\+Group()}{getObjectGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}$\ast$ T\+M\+X\+Tiled\+Map\+::get\+Object\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name }\end{DoxyParamCaption}) const}
+
+Return the \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} for the specific group.
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & The group Name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Type of \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}\label{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Object\+Groups@{get\+Object\+Groups}}
+\index{get\+Object\+Groups@{get\+Object\+Groups}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Object\+Groups()}{getObjectGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}$\ast$$>$\& T\+M\+X\+Tiled\+Map\+::get\+Object\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the Object groups.
+
+\begin{DoxyReturn}{Returns}
+The object groups. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}\label{classTMXTiledMap_aaa618a376bbd5d2cf8e1c2ca6a7b8e53}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Object\+Groups@{get\+Object\+Groups}}
+\index{get\+Object\+Groups@{get\+Object\+Groups}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Object\+Groups()}{getObjectGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}$\ast$$>$\& T\+M\+X\+Tiled\+Map\+::get\+Object\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the Object groups.
+
+\begin{DoxyReturn}{Returns}
+The object groups. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}\label{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Map\& T\+M\+X\+Tiled\+Map\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}\label{classTMXTiledMap_a66e86941819b9a9d60c3cda0c4285b2a}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Map\& T\+M\+X\+Tiled\+Map\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}\label{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}}
+\index{get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties\+For\+G\+I\+D()}{getPropertiesForGID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::get\+Properties\+For\+G\+ID (\begin{DoxyParamCaption}\item[{int}]{G\+ID }\end{DoxyParamCaption}) const}
+
+Return properties dictionary for tile G\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+ID} & The tile G\+ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return properties dictionary for tile G\+ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}\label{classTMXTiledMap_a11c3215d6e74d03d30afc4c693e84d89}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}}
+\index{get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties\+For\+G\+I\+D()}{getPropertiesForGID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::get\+Properties\+For\+G\+ID (\begin{DoxyParamCaption}\item[{int}]{G\+ID }\end{DoxyParamCaption}) const}
+
+Return properties dictionary for tile G\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+ID} & The tile G\+ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return properties dictionary for tile G\+ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}\label{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}}
+\index{get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties\+For\+G\+I\+D()}{getPropertiesForGID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::get\+Properties\+For\+G\+ID (\begin{DoxyParamCaption}\item[{int}]{G\+ID,  }\item[{\hyperlink{classValue}{Value} $\ast$$\ast$}]{value }\end{DoxyParamCaption})}
+
+Assigns properties to argument value, returns true if it did found properties for that G\+ID and did assigned a value, else it returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+ID} & The tile G\+ID. \\
+\hline
+{\em value} & Argument value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if it did found properties for that G\+ID and did assigned a value, else it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}\label{classTMXTiledMap_a1f7d99f0a15994f45a04a1607545e76e}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}}
+\index{get\+Properties\+For\+G\+ID@{get\+Properties\+For\+G\+ID}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Properties\+For\+G\+I\+D()}{getPropertiesForGID()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::get\+Properties\+For\+G\+ID (\begin{DoxyParamCaption}\item[{int}]{G\+ID,  }\item[{\hyperlink{classValue}{Value} $\ast$$\ast$}]{value }\end{DoxyParamCaption})}
+
+Assigns properties to argument value, returns true if it did found properties for that G\+ID and did assigned a value, else it returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+ID} & The tile G\+ID. \\
+\hline
+{\em value} & Argument value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if it did found properties for that G\+ID and did assigned a value, else it returns false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}\label{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Property@{get\+Property}}
+\index{get\+Property@{get\+Property}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Property()}{getProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const}
+
+Return the value for the specific property name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & The specific property name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the value for the specific property name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}\label{classTMXTiledMap_a4628b8ea7514e6f12e292b68f8e808ae}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Property@{get\+Property}}
+\index{get\+Property@{get\+Property}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Property()}{getProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const}
+
+Return the value for the specific property name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & The specific property name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the value for the specific property name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}\label{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Tile\+Size@{get\+Tile\+Size}}
+\index{get\+Tile\+Size@{get\+Tile\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Tile\+Size()}{getTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Tiled\+Map\+::get\+Tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The tiles\textquotesingle{}s size property measured in pixels.
+
+\begin{DoxyReturn}{Returns}
+The tiles\textquotesingle{}s size property measured in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}\label{classTMXTiledMap_ac71f7fdfbb390d3f15b8ed987e52bbaa}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!get\+Tile\+Size@{get\+Tile\+Size}}
+\index{get\+Tile\+Size@{get\+Tile\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{get\+Tile\+Size()}{getTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Tiled\+Map\+::get\+Tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The tiles\textquotesingle{}s size property measured in pixels.
+
+\begin{DoxyReturn}{Returns}
+The tiles\textquotesingle{}s size property measured in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}\label{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!init\+With\+T\+M\+X\+File@{init\+With\+T\+M\+X\+File}}
+\index{init\+With\+T\+M\+X\+File@{init\+With\+T\+M\+X\+File}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{init\+With\+T\+M\+X\+File()}{initWithTMXFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::init\+With\+T\+M\+X\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+File }\end{DoxyParamCaption})}
+
+initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX file \mbox{\Hypertarget{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}\label{classTMXTiledMap_a4e75b0b3333616d3898b6119644e4137}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!init\+With\+T\+M\+X\+File@{init\+With\+T\+M\+X\+File}}
+\index{init\+With\+T\+M\+X\+File@{init\+With\+T\+M\+X\+File}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{init\+With\+T\+M\+X\+File()}{initWithTMXFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::init\+With\+T\+M\+X\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+File }\end{DoxyParamCaption})}
+
+initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX file \mbox{\Hypertarget{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}\label{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!init\+With\+X\+ML@{init\+With\+X\+ML}}
+\index{init\+With\+X\+ML@{init\+With\+X\+ML}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{init\+With\+X\+M\+L()}{initWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::init\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+String,  }\item[{const std\+::string \&}]{resource\+Path }\end{DoxyParamCaption})}
+
+initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX formatted X\+ML string and a path to T\+MX resources \mbox{\Hypertarget{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}\label{classTMXTiledMap_a949cfae17a8c6239e4d433dcae521997}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!init\+With\+X\+ML@{init\+With\+X\+ML}}
+\index{init\+With\+X\+ML@{init\+With\+X\+ML}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{init\+With\+X\+M\+L()}{initWithXML()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Tiled\+Map\+::init\+With\+X\+ML (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tmx\+String,  }\item[{const std\+::string \&}]{resource\+Path }\end{DoxyParamCaption})}
+
+initializes a T\+MX Tiled \hyperlink{classMap}{Map} with a T\+MX formatted X\+ML string and a path to T\+MX resources \mbox{\Hypertarget{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}\label{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!layer\+Named@{layer\+Named}}
+\index{layer\+Named@{layer\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{layer\+Named()}{layerNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXLayer}{T\+M\+X\+Layer}$\ast$ T\+M\+X\+Tiled\+Map\+::layer\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}\label{classTMXTiledMap_a31f870242ee4c67f871f177d4ac74682}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!layer\+Named@{layer\+Named}}
+\index{layer\+Named@{layer\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{layer\+Named()}{layerNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXLayer}{T\+M\+X\+Layer}$\ast$ T\+M\+X\+Tiled\+Map\+::layer\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}\label{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!object\+Group\+Named@{object\+Group\+Named}}
+\index{object\+Group\+Named@{object\+Group\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{object\+Group\+Named()}{objectGroupNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}$\ast$ T\+M\+X\+Tiled\+Map\+::object\+Group\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}\label{classTMXTiledMap_a34f4aaf226d7baf1ad1e44880cf2be14}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!object\+Group\+Named@{object\+Group\+Named}}
+\index{object\+Group\+Named@{object\+Group\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{object\+Group\+Named()}{objectGroupNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group}$\ast$ T\+M\+X\+Tiled\+Map\+::object\+Group\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}\label{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!property\+Named@{property\+Named}}
+\index{property\+Named@{property\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{property\+Named()}{propertyNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::property\+Named (\begin{DoxyParamCaption}\item[{const char $\ast$}]{property\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}\label{classTMXTiledMap_a27d68f71900e3edd564ce29375c9b911}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!property\+Named@{property\+Named}}
+\index{property\+Named@{property\+Named}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{property\+Named()}{propertyNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} T\+M\+X\+Tiled\+Map\+::property\+Named (\begin{DoxyParamCaption}\item[{const char $\ast$}]{property\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA  NA \mbox{\Hypertarget{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}\label{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Map\+Orientation@{set\+Map\+Orientation}}
+\index{set\+Map\+Orientation@{set\+Map\+Orientation}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Map\+Orientation()}{setMapOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Map\+Orientation (\begin{DoxyParamCaption}\item[{int}]{map\+Orientation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set map orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Orientation} & The map orientation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}\label{classTMXTiledMap_a81939a89dde9fd5e2b3202d13588e274}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Map\+Orientation@{set\+Map\+Orientation}}
+\index{set\+Map\+Orientation@{set\+Map\+Orientation}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Map\+Orientation()}{setMapOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Map\+Orientation (\begin{DoxyParamCaption}\item[{int}]{map\+Orientation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set map orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Orientation} & The map orientation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}\label{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Map\+Size@{set\+Map\+Size}}
+\index{set\+Map\+Size@{set\+Map\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Map\+Size()}{setMapSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Map\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{map\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the map\textquotesingle{}s size property measured in tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Size} & The map\textquotesingle{}s size property measured in tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}\label{classTMXTiledMap_a13ea26ae12da64ee6f2223cf22e8f406}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Map\+Size@{set\+Map\+Size}}
+\index{set\+Map\+Size@{set\+Map\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Map\+Size()}{setMapSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Map\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{map\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the map\textquotesingle{}s size property measured in tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Size} & The map\textquotesingle{}s size property measured in tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}\label{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Object\+Groups@{set\+Object\+Groups}}
+\index{set\+Object\+Groups@{set\+Object\+Groups}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Object\+Groups()}{setObjectGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Object\+Groups (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$$>$ \&}]{groups }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the object groups.
+
+
+\begin{DoxyParams}{Parameters}
+{\em groups} & The object groups. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}\label{classTMXTiledMap_a8895880f1d29c512ba81248794844ca4}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Object\+Groups@{set\+Object\+Groups}}
+\index{set\+Object\+Groups@{set\+Object\+Groups}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Object\+Groups()}{setObjectGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Object\+Groups (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$$>$ \&}]{groups }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the object groups.
+
+
+\begin{DoxyParams}{Parameters}
+{\em groups} & The object groups. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}\label{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Properties@{set\+Properties}}
+\index{set\+Properties@{set\+Properties}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Properties()}{setProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Properties (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & A Type of Value\+Map to set the properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}\label{classTMXTiledMap_a818366d2f1093dfd8afc24126ffbac36}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Properties@{set\+Properties}}
+\index{set\+Properties@{set\+Properties}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Properties()}{setProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Properties (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & A Type of Value\+Map to set the properties. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}\label{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Tile\+Size@{set\+Tile\+Size}}
+\index{set\+Tile\+Size@{set\+Tile\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Tile\+Size()}{setTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Tile\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{tile\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the tiles\textquotesingle{}s size property measured in pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Size} & The tiles\textquotesingle{}s size property measured in pixels. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}\label{classTMXTiledMap_aad7629d19a124f34e0855daa5de7f247}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!set\+Tile\+Size@{set\+Tile\+Size}}
+\index{set\+Tile\+Size@{set\+Tile\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{set\+Tile\+Size()}{setTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Tiled\+Map\+::set\+Tile\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{tile\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the tiles\textquotesingle{}s size property measured in pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Size} & The tiles\textquotesingle{}s size property measured in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTMXTiledMap_ae696c0e5c2befb7cc07d2542353a36a2}\label{classTMXTiledMap_ae696c0e5c2befb7cc07d2542353a36a2}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!\+\_\+map\+Orientation@{\+\_\+map\+Orientation}}
+\index{\+\_\+map\+Orientation@{\+\_\+map\+Orientation}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+map\+Orientation}{\_mapOrientation}}
+{\footnotesize\ttfamily int T\+M\+X\+Tiled\+Map\+::\+\_\+map\+Orientation\hspace{0.3cm}{\ttfamily [protected]}}
+
+map orientation \mbox{\Hypertarget{classTMXTiledMap_a75abce1666e8430273ef914243e554e2}\label{classTMXTiledMap_a75abce1666e8430273ef914243e554e2}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!\+\_\+map\+Size@{\+\_\+map\+Size}}
+\index{\+\_\+map\+Size@{\+\_\+map\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+map\+Size}{\_mapSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} T\+M\+X\+Tiled\+Map\+::\+\_\+map\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+the map\textquotesingle{}s size property measured in tiles \mbox{\Hypertarget{classTMXTiledMap_a4f95a1b37b1b0ac9d953b7fb5f2b4d1a}\label{classTMXTiledMap_a4f95a1b37b1b0ac9d953b7fb5f2b4d1a}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!\+\_\+object\+Groups@{\+\_\+object\+Groups}}
+\index{\+\_\+object\+Groups@{\+\_\+object\+Groups}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+object\+Groups}{\_objectGroups}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classTMXObjectGroup}{T\+M\+X\+Object\+Group} $\ast$ $>$ T\+M\+X\+Tiled\+Map\+::\+\_\+object\+Groups\hspace{0.3cm}{\ttfamily [protected]}}
+
+object groups \mbox{\Hypertarget{classTMXTiledMap_a83f1a2a8df110f2c755d9a1ae4490f3e}\label{classTMXTiledMap_a83f1a2a8df110f2c755d9a1ae4490f3e}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!\+\_\+properties@{\+\_\+properties}}
+\index{\+\_\+properties@{\+\_\+properties}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+properties}{\_properties}}
+{\footnotesize\ttfamily Value\+Map T\+M\+X\+Tiled\+Map\+::\+\_\+properties\hspace{0.3cm}{\ttfamily [protected]}}
+
+properties \mbox{\Hypertarget{classTMXTiledMap_ab7f86e9a30c42c0b631651a9096ecea1}\label{classTMXTiledMap_ab7f86e9a30c42c0b631651a9096ecea1}} 
+\index{T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}!\+\_\+tile\+Size@{\+\_\+tile\+Size}}
+\index{\+\_\+tile\+Size@{\+\_\+tile\+Size}!T\+M\+X\+Tiled\+Map@{T\+M\+X\+Tiled\+Map}}
+\subsubsection{\texorpdfstring{\+\_\+tile\+Size}{\_tileSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} T\+M\+X\+Tiled\+Map\+::\+\_\+tile\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+the tiles\textquotesingle{}s size property measured in pixels 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+T\+M\+X\+Tiled\+Map.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+T\+M\+X\+Tiled\+Map.\+cpp\end{DoxyCompactItemize}

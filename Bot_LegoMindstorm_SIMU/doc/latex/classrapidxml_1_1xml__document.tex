@@ -1,0 +1,86 @@
+\hypertarget{classrapidxml_1_1xml__document}{}\section{rapidxml\+:\+:xml\+\_\+document$<$ Ch $>$ Class Template Reference}
+\label{classrapidxml_1_1xml__document}\index{rapidxml\+::xml\+\_\+document$<$ Ch $>$@{rapidxml\+::xml\+\_\+document$<$ Ch $>$}}
+
+
+{\ttfamily \#include $<$rapidxml.\+hpp$>$}
+
+
+
+Inheritance diagram for rapidxml\+:\+:xml\+\_\+document$<$ Ch $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classrapidxml_1_1xml__document__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for rapidxml\+:\+:xml\+\_\+document$<$ Ch $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classrapidxml_1_1xml__document__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrapidxml_1_1xml__document_aae8841b15085ba8f32ff46587ace28f5}\label{classrapidxml_1_1xml__document_aae8841b15085ba8f32ff46587ace28f5}} 
+\hyperlink{classrapidxml_1_1xml__document_aae8841b15085ba8f32ff46587ace28f5}{xml\+\_\+document} ()
+\begin{DoxyCompactList}\small\item\em Constructs empty X\+ML document. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Flags$>$ }\\void \hyperlink{classrapidxml_1_1xml__document_a9376748d5782a60bbe17307ac96f2e93}{parse} (Ch $\ast$text, int n\+Len)
+\item 
+void \hyperlink{classrapidxml_1_1xml__document_a826929ff54242532198701f19ff5f83f}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrapidxml_1_1xml__document_aafb22c0e35781c56fca722af429d40ff}\label{classrapidxml_1_1xml__document_aafb22c0e35781c56fca722af429d40ff}} 
+Ch $\ast$ {\bfseries endptr\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Ch = char$>$\newline
+class rapidxml\+::xml\+\_\+document$<$ Ch $>$}
+
+This class represents root of the D\+OM hierarchy. It is also an \hyperlink{classrapidxml_1_1xml__node}{xml\+\_\+node} and a \hyperlink{classrapidxml_1_1memory__pool}{memory\+\_\+pool} through public inheritance. Use \hyperlink{classrapidxml_1_1xml__document_a9376748d5782a60bbe17307ac96f2e93}{parse()} function to build a D\+OM tree from a zero-\/terminated X\+ML text string. \hyperlink{classrapidxml_1_1xml__document_a9376748d5782a60bbe17307ac96f2e93}{parse()} function allocates memory for nodes and attributes by using functions of \hyperlink{classrapidxml_1_1xml__document}{xml\+\_\+document}, which are inherited from \hyperlink{classrapidxml_1_1memory__pool}{memory\+\_\+pool}. To access root node of the document, use the document itself, as if it was an \hyperlink{classrapidxml_1_1xml__node}{xml\+\_\+node}. 
+\begin{DoxyParams}{Parameters}
+{\em Ch} & Character type to use. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrapidxml_1_1xml__document_a826929ff54242532198701f19ff5f83f}\label{classrapidxml_1_1xml__document_a826929ff54242532198701f19ff5f83f}} 
+\index{rapidxml\+::xml\+\_\+document@{rapidxml\+::xml\+\_\+document}!clear@{clear}}
+\index{clear@{clear}!rapidxml\+::xml\+\_\+document@{rapidxml\+::xml\+\_\+document}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class Ch  = char$>$ \\
+void \hyperlink{classrapidxml_1_1xml__document}{rapidxml\+::xml\+\_\+document}$<$ Ch $>$\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the document by deleting all nodes and clearing the memory pool. All nodes owned by document pool are destroyed. \mbox{\Hypertarget{classrapidxml_1_1xml__document_a9376748d5782a60bbe17307ac96f2e93}\label{classrapidxml_1_1xml__document_a9376748d5782a60bbe17307ac96f2e93}} 
+\index{rapidxml\+::xml\+\_\+document@{rapidxml\+::xml\+\_\+document}!parse@{parse}}
+\index{parse@{parse}!rapidxml\+::xml\+\_\+document@{rapidxml\+::xml\+\_\+document}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$class Ch  = char$>$ \\
+template$<$int Flags$>$ \\
+void \hyperlink{classrapidxml_1_1xml__document}{rapidxml\+::xml\+\_\+document}$<$ Ch $>$\+::parse (\begin{DoxyParamCaption}\item[{Ch $\ast$}]{text,  }\item[{int}]{n\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses zero-\/terminated X\+ML string according to given flags. Passed string will be modified by the parser, unless rapidxml\+::parse\+\_\+non\+\_\+destructive flag is used. The string must persist for the lifetime of the document. In case of error, \hyperlink{classrapidxml_1_1parse__error}{rapidxml\+::parse\+\_\+error} exception will be thrown. ~\newline
+~\newline
+ If you want to parse contents of a file, you must first load the file into the memory, and pass pointer to its beginning. Make sure that data is zero-\/terminated. ~\newline
+~\newline
+ Document can be parsed into multiple times. Each new call to parse removes previous nodes and attributes (if any), but does not clear memory pool. 
+\begin{DoxyParams}{Parameters}
+{\em text} & X\+ML data to parse; pointer is non-\/const to denote fact that this data may be modified by the parser. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/rapidxml/\hyperlink{rapidxml_8hpp}{rapidxml.\+hpp}\end{DoxyCompactItemize}

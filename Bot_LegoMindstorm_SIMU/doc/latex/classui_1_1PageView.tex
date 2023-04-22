@@ -1,0 +1,1574 @@
+\hypertarget{classui_1_1PageView}{}\section{ui\+:\+:Page\+View Class Reference}
+\label{classui_1_1PageView}\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+
+
+\hyperlink{classui_1_1Layout}{Layout} manager that allows the user to flip left \& right and up \& down through pages of data.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Page\+View.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Page\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classui_1_1PageView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:Page\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1PageView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}{Event\+Type} \{ {\bfseries T\+U\+R\+N\+I\+NG}, 
+{\bfseries T\+U\+R\+N\+I\+NG}
+ \}
+\item 
+enum \hyperlink{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}{Touch\+Direction} \{ \newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries UP}, 
+{\bfseries D\+O\+WN}, 
+\newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries UP}, 
+{\bfseries D\+O\+WN}
+ \}
+\item 
+enum \hyperlink{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}{Event\+Type} \{ {\bfseries T\+U\+R\+N\+I\+NG}, 
+{\bfseries T\+U\+R\+N\+I\+NG}
+ \}
+\item 
+enum \hyperlink{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}{Touch\+Direction} \{ \newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries UP}, 
+{\bfseries D\+O\+WN}, 
+\newline
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}, 
+{\bfseries UP}, 
+{\bfseries D\+O\+WN}
+ \}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classRef}{Ref} $\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}{Page\+View} ()
+\item 
+virtual \hyperlink{classui_1_1PageView_aa52ebe43969bffeb70308a601ce371d0}{$\sim$\+Page\+View} ()
+\item 
+virtual void \hyperlink{classui_1_1PageView_a594124394d2bc1dff86069b87939b14c}{set\+Direction} (\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction} direction) override
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a03a31ed8613f6e10b3b3349ca8fbbe66}{add\+Widget\+To\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$widget, ssize\+\_\+t page\+Idx, bool force\+Create)
+\item 
+void \hyperlink{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}{add\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page)
+\item 
+void \hyperlink{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}{insert\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page, int idx)
+\item 
+void \hyperlink{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}{remove\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page)
+\item 
+void \hyperlink{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}{remove\+Page\+At\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}\label{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}} 
+void \hyperlink{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}{remove\+All\+Pages} ()
+\begin{DoxyCompactList}\small\item\em Remove all pages of the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}{scroll\+To\+Page} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}{scroll\+To\+Item} (ssize\+\_\+t item\+Index)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t \hyperlink{classui_1_1PageView_af8f0014cd5470f0734d40c945823ea17}{get\+Cur\+Page\+Index} () const
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1PageView_aad39bcc516543dbd0b8bbf1b57bd2e98}{get\+Current\+Page\+Index} () const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a153c32995f94a646e85bd827387c826f}{set\+Cur\+Page\+Index} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}{set\+Current\+Page\+Index} (ssize\+\_\+t index)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Layout}{Layout} $\ast$ $>$ \& \hyperlink{classui_1_1PageView_a85a0a173c08718f0d84a3eb5c8c2c2bb}{get\+Pages} ()
+\begin{DoxyCompactList}\small\item\em Get all the pages in the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classui_1_1Layout}{Layout} $\ast$ \hyperlink{classui_1_1PageView_a0f13817440be39068e46a3c597466268}{get\+Page} (ssize\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Get a page at a given index. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a67ca3d93ecbad57aa9ba3d5df1350dbd}{add\+Event\+Listener\+Page\+View} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+Page\+View\+Event selector)
+\item 
+void \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{add\+Event\+Listener} (const \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback} \&callback)
+\begin{DoxyCompactList}\small\item\em Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classui_1_1PageView_a3c9b2934fdbbb44e2c456feee27b53de}{get\+Description} () const override
+\item 
+void \hyperlink{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}{set\+Indicator\+Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Toggle page indicator enabled. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}{get\+Indicator\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Query page indicator state. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}{set\+Indicator\+Position\+As\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&position\+As\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Set the page indicator\textquotesingle{}s position using anchor point. \end{DoxyCompactList}\item 
+const \hyperlink{classVec2}{Vec2} \& \hyperlink{classui_1_1PageView_afd78e6ec197b8aea68614f9f6c35a70d}{get\+Indicator\+Position\+As\+Anchor\+Point} () const
+\begin{DoxyCompactList}\small\item\em Get the page indicator\textquotesingle{}s position as anchor point. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}{set\+Indicator\+Position} (const \hyperlink{classVec2}{Vec2} \&position)
+\begin{DoxyCompactList}\small\item\em Set the page indicator\textquotesingle{}s position in page view. \end{DoxyCompactList}\item 
+const \hyperlink{classVec2}{Vec2} \& \hyperlink{classui_1_1PageView_a7fec50e1db1bfe9583564ccf528c4865}{get\+Indicator\+Position} () const
+\begin{DoxyCompactList}\small\item\em Get the page indicator\textquotesingle{}s position. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}{set\+Indicator\+Space\+Between\+Index\+Nodes} (float space\+Between\+Index\+Nodes)
+\begin{DoxyCompactList}\small\item\em Set space between page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+float \hyperlink{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}{get\+Indicator\+Space\+Between\+Index\+Nodes} () const
+\begin{DoxyCompactList}\small\item\em Get the space between page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}{set\+Indicator\+Selected\+Index\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Set color of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classui_1_1PageView_ab954bc94d40d06d3639f36d224455d85}{get\+Indicator\+Selected\+Index\+Color} () const
+\begin{DoxyCompactList}\small\item\em Get the color of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}{set\+Indicator\+Index\+Nodes\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Set color of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classui_1_1PageView_acb97654798e343a86517ac058655cdd9}{get\+Indicator\+Index\+Nodes\+Color} () const
+\begin{DoxyCompactList}\small\item\em Get the color of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}{set\+Indicator\+Index\+Nodes\+Scale} (float index\+Nodes\+Scale)
+\begin{DoxyCompactList}\small\item\em Set scale of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}{set\+Indicator\+Index\+Nodes\+Texture} (const std\+::string \&tex\+Name, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type} tex\+Type=Widget\+::\+Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+float \hyperlink{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}{get\+Indicator\+Index\+Nodes\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Get scale of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a10f9b43ef5ebff540e6546ed810d1be4}{set\+Custom\+Scroll\+Threshold} (float threshold)
+\begin{DoxyCompactList}\small\item\em If you don\textquotesingle{}t specify the value, the page\+View will turn page when scrolling at the half width of a page. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE float \hyperlink{classui_1_1PageView_a36048cfcf389a27b898960c9596ad8bf}{get\+Custom\+Scroll\+Threshold} () const
+\begin{DoxyCompactList}\small\item\em Query the custom scroll threshold of the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a1e01540660aa7c0c79ae736929f4784b}{set\+Using\+Custom\+Scroll\+Threshold} (bool flag)
+\begin{DoxyCompactList}\small\item\em Set using user defined scroll page threshold or not. If you set it to false, then the default scroll threshold is page\+View.\+width / 2. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classui_1_1PageView_a8c41a825d4f568fc6b9e5968c8ecfb71}{is\+Using\+Custom\+Scroll\+Threshold} () const
+\begin{DoxyCompactList}\small\item\em Query whether use user defined scroll page threshold or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1PageView_a174b4b1a791416501a9ce513209e4799}\label{classui_1_1PageView_a174b4b1a791416501a9ce513209e4799}} 
+void {\bfseries set\+Auto\+Scroll\+Stop\+Epsilon} (float epsilon)
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a329ad925f4e28750faa1ed4747adfd82}\label{classui_1_1PageView_a329ad925f4e28750faa1ed4747adfd82}} 
+virtual void \hyperlink{classui_1_1PageView_a329ad925f4e28750faa1ed4747adfd82}{do\+Layout} () override
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}{Page\+View} ()
+\item 
+virtual \hyperlink{classui_1_1PageView_a7a6747406aba5a13a3240807317f8bae}{$\sim$\+Page\+View} ()
+\item 
+virtual void \hyperlink{classui_1_1PageView_a4ac6e8672026f60e326ffc054d167365}{set\+Direction} (\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction} direction) override
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a340533ea140300c4ca00cd0c3d8e9b85}{add\+Widget\+To\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$widget, ssize\+\_\+t page\+Idx, bool force\+Create)
+\item 
+void \hyperlink{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}{add\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page)
+\item 
+void \hyperlink{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}{insert\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page, int idx)
+\item 
+void \hyperlink{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}{remove\+Page} (\hyperlink{classui_1_1Widget}{Widget} $\ast$page)
+\item 
+void \hyperlink{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}{remove\+Page\+At\+Index} (ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}\label{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}} 
+void \hyperlink{classui_1_1PageView_a8132e1b393db7c6f24d66f31d51533e7}{remove\+All\+Pages} ()
+\begin{DoxyCompactList}\small\item\em Remove all pages of the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}{scroll\+To\+Page} (ssize\+\_\+t idx)
+\item 
+void \hyperlink{classui_1_1PageView_a770afe4df47aeda905850dfa1767ad8a}{scroll\+To\+Page} (ssize\+\_\+t idx, float time)
+\item 
+void \hyperlink{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}{scroll\+To\+Item} (ssize\+\_\+t item\+Index)
+\item 
+void \hyperlink{classui_1_1PageView_a5f686f92ace4bb68004b84124ff7aea2}{scroll\+To\+Item} (ssize\+\_\+t idx, float time)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t \hyperlink{classui_1_1PageView_a751a9452bd9a0bdb9e0cad6b69c70186}{get\+Cur\+Page\+Index} () const
+\item 
+ssize\+\_\+t \hyperlink{classui_1_1PageView_a0e0e1e05f1804d2b633ce7fb1ac16c6d}{get\+Current\+Page\+Index} ()
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a916f5697ad97899b1dd9942aeba76680}{set\+Cur\+Page\+Index} (ssize\+\_\+t index)
+\item 
+void \hyperlink{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}{set\+Current\+Page\+Index} (ssize\+\_\+t index)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Layout}{Layout} $\ast$ $>$ \& \hyperlink{classui_1_1PageView_a0615c5ffc511cb07537188b9281513f1}{get\+Pages} ()
+\begin{DoxyCompactList}\small\item\em Get all the pages in the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classui_1_1Layout}{Layout} $\ast$ \hyperlink{classui_1_1PageView_a82ba1073c82a126465158090fad60698}{get\+Page} (ssize\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Get a page at a given index. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a557c9a1c9971084fa8ca9be4b19a2f4f}{add\+Event\+Listener\+Page\+View} (\hyperlink{classRef}{Ref} $\ast$target, S\+E\+L\+\_\+\+Page\+View\+Event selector)
+\item 
+void \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{add\+Event\+Listener} (const \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback} \&callback)
+\begin{DoxyCompactList}\small\item\em Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{classui_1_1PageView_aead0575c0e5d24da3731501afadf81e9}{get\+Description} () const override
+\item 
+void \hyperlink{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}{set\+Indicator\+Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Toggle page indicator enabled. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}{get\+Indicator\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Query page indicator state. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}{set\+Indicator\+Position\+As\+Anchor\+Point} (const \hyperlink{classVec2}{Vec2} \&position\+As\+Anchor\+Point)
+\begin{DoxyCompactList}\small\item\em Set the page indicator\textquotesingle{}s position using anchor point. \end{DoxyCompactList}\item 
+const \hyperlink{classVec2}{Vec2} \& \hyperlink{classui_1_1PageView_a285dea7517bb2bd0e4bb0ba7f02c1922}{get\+Indicator\+Position\+As\+Anchor\+Point} () const
+\begin{DoxyCompactList}\small\item\em Get the page indicator\textquotesingle{}s position as anchor point. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}{set\+Indicator\+Position} (const \hyperlink{classVec2}{Vec2} \&position)
+\begin{DoxyCompactList}\small\item\em Set the page indicator\textquotesingle{}s position in page view. \end{DoxyCompactList}\item 
+const \hyperlink{classVec2}{Vec2} \& \hyperlink{classui_1_1PageView_a0b8e1469c924aa6c7980790f786eae60}{get\+Indicator\+Position} () const
+\begin{DoxyCompactList}\small\item\em Get the page indicator\textquotesingle{}s position. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}{set\+Indicator\+Space\+Between\+Index\+Nodes} (float space\+Between\+Index\+Nodes)
+\begin{DoxyCompactList}\small\item\em Set space between page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+float \hyperlink{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}{get\+Indicator\+Space\+Between\+Index\+Nodes} () const
+\begin{DoxyCompactList}\small\item\em Get the space between page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}{set\+Indicator\+Selected\+Index\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Set color of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classui_1_1PageView_af5ee5b55b6e844913fe14e7ce069f1bc}{get\+Indicator\+Selected\+Index\+Color} () const
+\begin{DoxyCompactList}\small\item\em Get the color of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}{set\+Indicator\+Index\+Nodes\+Color} (const \hyperlink{structColor3B}{Color3B} \&color)
+\begin{DoxyCompactList}\small\item\em Set color of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+const \hyperlink{structColor3B}{Color3B} \& \hyperlink{classui_1_1PageView_a7754d19d8e93f9654f2dc6a58e15131b}{get\+Indicator\+Index\+Nodes\+Color} () const
+\begin{DoxyCompactList}\small\item\em Get the color of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_afae2d00e007b00af99a2a372d27d6a1d}{set\+Indicator\+Selected\+Index\+Opacity} (G\+Lubyte opacity)
+\begin{DoxyCompactList}\small\item\em Set opacity of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+G\+Lubyte \hyperlink{classui_1_1PageView_a87b0b8b5aead4fe196054cec54de1265}{get\+Indicator\+Selected\+Index\+Opacity} () const
+\begin{DoxyCompactList}\small\item\em Get the opacity of page indicator\textquotesingle{}s selected index. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a8ab3b4a36a80c6bcbe1d905ab572bcc1}{set\+Indicator\+Index\+Nodes\+Opacity} (G\+Lubyte opacity)
+\begin{DoxyCompactList}\small\item\em Set opacity of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+G\+Lubyte \hyperlink{classui_1_1PageView_a230cf4bd9e8c587df41b4a0c7e7145f3}{get\+Indicator\+Index\+Nodes\+Opacity} () const
+\begin{DoxyCompactList}\small\item\em Get the opacity of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}{set\+Indicator\+Index\+Nodes\+Scale} (float index\+Nodes\+Scale)
+\begin{DoxyCompactList}\small\item\em Set scale of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}{set\+Indicator\+Index\+Nodes\+Texture} (const std\+::string \&tex\+Name, \hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type} tex\+Type=Widget\+::\+Texture\+Res\+Type\+::\+L\+O\+C\+AL)
+\item 
+float \hyperlink{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}{get\+Indicator\+Index\+Nodes\+Scale} () const
+\begin{DoxyCompactList}\small\item\em Get scale of page indicator\textquotesingle{}s index nodes. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_a4822a9ebfefc69a6d02a0bb13551523f}{set\+Custom\+Scroll\+Threshold} (float threshold)
+\begin{DoxyCompactList}\small\item\em If you don\textquotesingle{}t specify the value, the page\+View will turn page when scrolling at the half width of a page. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE float \hyperlink{classui_1_1PageView_a85a4d633a04862d0a2f4522beae37ae3}{get\+Custom\+Scroll\+Threshold} () const
+\begin{DoxyCompactList}\small\item\em Query the custom scroll threshold of the \hyperlink{classui_1_1PageView}{Page\+View}. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classui_1_1PageView_ae173b8839db817ed5aa09a910b8169aa}{set\+Using\+Custom\+Scroll\+Threshold} (bool flag)
+\begin{DoxyCompactList}\small\item\em Set using user defined scroll page threshold or not. If you set it to false, then the default scroll threshold is page\+View.\+width / 2. \end{DoxyCompactList}\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool \hyperlink{classui_1_1PageView_ae867b3f9b2753cfc5851440d9b36f90e}{is\+Using\+Custom\+Scroll\+Threshold} () const
+\begin{DoxyCompactList}\small\item\em Query whether use user defined scroll page threshold or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1PageView_a174b4b1a791416501a9ce513209e4799}\label{classui_1_1PageView_a174b4b1a791416501a9ce513209e4799}} 
+void {\bfseries set\+Auto\+Scroll\+Stop\+Epsilon} (float epsilon)
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a75e1306f56bf22b39a05f4c71aa03991}\label{classui_1_1PageView_a75e1306f56bf22b39a05f4c71aa03991}} 
+virtual void \hyperlink{classui_1_1PageView_a75e1306f56bf22b39a05f4c71aa03991}{do\+Layout} () override
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1PageView}{Page\+View} $\ast$ \hyperlink{classui_1_1PageView_ac47ee4c872601f7a31dcab63965f7164}{create} ()
+\item 
+static \hyperlink{classui_1_1PageView}{Page\+View} $\ast$ \hyperlink{classui_1_1PageView_ac874e906c816faf0f6e640d98345191b}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a39727d614804b97de07e645b6e4042a1}\label{classui_1_1PageView_a39727d614804b97de07e645b6e4042a1}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: virtual bool init() override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ac394e95ac9ba2a999d2c4bcfbf10beaf}\label{classui_1_1PageView_ac394e95ac9ba2a999d2c4bcfbf10beaf}} 
+void {\bfseries page\+Turning\+Event} ()
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ad29d9736eecfd0d5361932e0a7b116a3}\label{classui_1_1PageView_ad29d9736eecfd0d5361932e0a7b116a3}} 
+virtual float {\bfseries get\+Auto\+Scroll\+Stop\+Epsilon} () const override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a59f04e4b16c569ac90337ee5dda98690}\label{classui_1_1PageView_a59f04e4b16c569ac90337ee5dda98690}} 
+virtual void {\bfseries remedy\+Layout\+Parameter} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ae9b1031a268f943306029398a5f57cf5}\label{classui_1_1PageView_ae9b1031a268f943306029398a5f57cf5}} 
+virtual void {\bfseries move\+Inner\+Container} (const \hyperlink{classVec2}{Vec2} \&delta\+Move, bool can\+Start\+Bounce\+Back) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_afa33f868c5b6e21a4102c3b6e1120354}\label{classui_1_1PageView_afa33f868c5b6e21a4102c3b6e1120354}} 
+virtual void {\bfseries on\+Item\+List\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a671dadcb8f39af5a16137db4ac6af477}\label{classui_1_1PageView_a671dadcb8f39af5a16137db4ac6af477}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_acd473a47d779610b4832b6dcecf04221}\label{classui_1_1PageView_acd473a47d779610b4832b6dcecf04221}} 
+virtual void {\bfseries handle\+Release\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a9baf8187686699a1465c8a4a4eb842cd}\label{classui_1_1PageView_a9baf8187686699a1465c8a4a4eb842cd}} 
+virtual void {\bfseries handle\+Press\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a8bae7ab955a6d8475cdf74900468cb62}\label{classui_1_1PageView_a8bae7ab955a6d8475cdf74900468cb62}} 
+virtual \hyperlink{classui_1_1Widget}{Widget} $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ad5b8a146a86cdc08c40b21516e30e32a}\label{classui_1_1PageView_ad5b8a146a86cdc08c40b21516e30e32a}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ac41eee2f48d36be3816f90024cb01ab5}\label{classui_1_1PageView_ac41eee2f48d36be3816f90024cb01ab5}} 
+void {\bfseries refresh\+Indicator\+Position} ()
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ac394e95ac9ba2a999d2c4bcfbf10beaf}\label{classui_1_1PageView_ac394e95ac9ba2a999d2c4bcfbf10beaf}} 
+void {\bfseries page\+Turning\+Event} ()
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a4e311f29ac8d224a4d3253bf24903c1f}\label{classui_1_1PageView_a4e311f29ac8d224a4d3253bf24903c1f}} 
+virtual float {\bfseries get\+Auto\+Scroll\+Stop\+Epsilon} () const override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a732aebced86154690a1002659a5aa403}\label{classui_1_1PageView_a732aebced86154690a1002659a5aa403}} 
+virtual void {\bfseries remedy\+Layout\+Parameter} (\hyperlink{classui_1_1Widget}{Widget} $\ast$item) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_acab1e6f39823bf8512bb7dadab47ff69}\label{classui_1_1PageView_acab1e6f39823bf8512bb7dadab47ff69}} 
+virtual void {\bfseries move\+Inner\+Container} (const \hyperlink{classVec2}{Vec2} \&delta\+Move, bool can\+Start\+Bounce\+Back) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a83ddcba8fef05969a2874643ba5cdfd6}\label{classui_1_1PageView_a83ddcba8fef05969a2874643ba5cdfd6}} 
+virtual void {\bfseries on\+Item\+List\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a78da98c9df25fc404ce9ba6d8c683919}\label{classui_1_1PageView_a78da98c9df25fc404ce9ba6d8c683919}} 
+virtual void {\bfseries on\+Size\+Changed} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a9eda9d9065ad802a914d848468a41162}\label{classui_1_1PageView_a9eda9d9065ad802a914d848468a41162}} 
+virtual void {\bfseries handle\+Release\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a2e4b19b17d4f0a2969161b1bb173332b}\label{classui_1_1PageView_a2e4b19b17d4f0a2969161b1bb173332b}} 
+virtual void {\bfseries handle\+Press\+Logic} (\hyperlink{classTouch}{Touch} $\ast$touch) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a148b156a73b92ffe62829afbc96dbd97}\label{classui_1_1PageView_a148b156a73b92ffe62829afbc96dbd97}} 
+virtual \hyperlink{classui_1_1Widget}{Widget} $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ae2aee85464787907712c5563bafcb3fd}\label{classui_1_1PageView_ae2aee85464787907712c5563bafcb3fd}} 
+virtual void {\bfseries copy\+Special\+Properties} (\hyperlink{classui_1_1Widget}{Widget} $\ast$model) override
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ac41eee2f48d36be3816f90024cb01ab5}\label{classui_1_1PageView_ac41eee2f48d36be3816f90024cb01ab5}} 
+void {\bfseries refresh\+Indicator\+Position} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_aeb31d94b0c4edeede12973221e544f4b}\label{classui_1_1PageView_aeb31d94b0c4edeede12973221e544f4b}} 
+\hyperlink{classui_1_1PageViewIndicator}{Page\+View\+Indicator} $\ast$ {\bfseries \+\_\+indicator}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a139e79c6848eb8f25e46073d175e374b}\label{classui_1_1PageView_a139e79c6848eb8f25e46073d175e374b}} 
+\hyperlink{classVec2}{Vec2} {\bfseries \+\_\+indicator\+Position\+As\+Anchor\+Point}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_aceb881aeec84c245ee6a853947979585}\label{classui_1_1PageView_aceb881aeec84c245ee6a853947979585}} 
+ssize\+\_\+t {\bfseries \+\_\+current\+Page\+Index}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_ae7e09f3381f18ebf53fcde01b0421823}\label{classui_1_1PageView_ae7e09f3381f18ebf53fcde01b0421823}} 
+float {\bfseries \+\_\+child\+Focus\+Cancel\+Offset}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a33b87aa2751b693388ae673f5ce80526}\label{classui_1_1PageView_a33b87aa2751b693388ae673f5ce80526}} 
+\hyperlink{classRef}{Ref} $\ast$ {\bfseries \+\_\+page\+View\+Event\+Listener}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a9cc970978d4aa8cb423bc9fbc1038ddf}\label{classui_1_1PageView_a9cc970978d4aa8cb423bc9fbc1038ddf}} 
+S\+E\+L\+\_\+\+Page\+View\+Event {\bfseries \+\_\+page\+View\+Event\+Selector}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a47f9a38790e06fbdb4c3486b89f0cab8}\label{classui_1_1PageView_a47f9a38790e06fbdb4c3486b89f0cab8}} 
+\hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback} {\bfseries \+\_\+event\+Callback}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a446dd219a8302bf49cf8355c583c17df}\label{classui_1_1PageView_a446dd219a8302bf49cf8355c583c17df}} 
+float {\bfseries \+\_\+auto\+Scroll\+Stop\+Epsilon}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_a7973eec9dd381c92b2906c5795fbe078}\label{classui_1_1PageView_a7973eec9dd381c92b2906c5795fbe078}} 
+ssize\+\_\+t {\bfseries \+\_\+previous\+Page\+Index}
+\item 
+\mbox{\Hypertarget{classui_1_1PageView_aa11d5cd65e717e41d4d57d56060bc653}\label{classui_1_1PageView_aa11d5cd65e717e41d4d57d56060bc653}} 
+bool {\bfseries \+\_\+is\+Touch\+Begin}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classui_1_1Layout}{Layout} manager that allows the user to flip left \& right and up \& down through pages of data. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}\label{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!cc\+Page\+View\+Callback@{cc\+Page\+View\+Callback}}
+\index{cc\+Page\+View\+Callback@{cc\+Page\+View\+Callback}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{cc\+Page\+View\+Callback}{ccPageViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{ui\+::\+Page\+View\+::cc\+Page\+View\+Callback}}
+
+\hyperlink{classui_1_1PageView}{Page\+View} page turn event callback. \mbox{\Hypertarget{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}\label{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!cc\+Page\+View\+Callback@{cc\+Page\+View\+Callback}}
+\index{cc\+Page\+View\+Callback@{cc\+Page\+View\+Callback}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{cc\+Page\+View\+Callback}{ccPageViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classRef}{Ref}$\ast$, \hyperlink{classui_1_1ListView_a7ef851492220e4bccadbaf16d95d26b9}{Event\+Type})$>$ \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{ui\+::\+Page\+View\+::cc\+Page\+View\+Callback}}
+
+\hyperlink{classui_1_1PageView}{Page\+View} page turn event callback. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}\label{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}{ui\+::\+Page\+View\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Page turn event type. \mbox{\Hypertarget{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}\label{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Event\+Type@{Event\+Type}}
+\index{Event\+Type@{Event\+Type}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Event\+Type}{EventType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1PageView_aeedcbcc6dcac6fc377ef09132b3ae495}{ui\+::\+Page\+View\+::\+Event\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Page turn event type. \mbox{\Hypertarget{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}\label{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Touch\+Direction@{Touch\+Direction}}
+\index{Touch\+Direction@{Touch\+Direction}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Touch\+Direction}{TouchDirection}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}{ui\+::\+Page\+View\+::\+Touch\+Direction}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classTouch}{Touch} direction type. \mbox{\Hypertarget{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}\label{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Touch\+Direction@{Touch\+Direction}}
+\index{Touch\+Direction@{Touch\+Direction}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Touch\+Direction}{TouchDirection}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classui_1_1PageView_a95b0e3ff5da243df2a7dfc1c05d7017c}{ui\+::\+Page\+View\+::\+Touch\+Direction}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\hyperlink{classTouch}{Touch} direction type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}\label{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Page\+View@{Page\+View}}
+\index{Page\+View@{Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Page\+View()}{PageView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Page\+View\+::\+Page\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor  ctor  new \mbox{\Hypertarget{classui_1_1PageView_aa52ebe43969bffeb70308a601ce371d0}\label{classui_1_1PageView_aa52ebe43969bffeb70308a601ce371d0}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!````~Page\+View@{$\sim$\+Page\+View}}
+\index{````~Page\+View@{$\sim$\+Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Page\+View()}{~PageView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+Page\+View\+::$\sim$\+Page\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor  NA  NA \mbox{\Hypertarget{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}\label{classui_1_1PageView_a5b0ef1346c9a4c504162111bd668a826}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!Page\+View@{Page\+View}}
+\index{Page\+View@{Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{Page\+View()}{PageView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+Page\+View\+::\+Page\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor  ctor  new \mbox{\Hypertarget{classui_1_1PageView_a7a6747406aba5a13a3240807317f8bae}\label{classui_1_1PageView_a7a6747406aba5a13a3240807317f8bae}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!````~Page\+View@{$\sim$\+Page\+View}}
+\index{````~Page\+View@{$\sim$\+Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Page\+View()}{~PageView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual ui\+::\+Page\+View\+::$\sim$\+Page\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor  NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}\label{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A page turning callback. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}\label{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Event\+Listener@{add\+Event\+Listener}}
+\index{add\+Event\+Listener@{add\+Event\+Listener}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener()}{addEventListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Event\+Listener (\begin{DoxyParamCaption}\item[{const \hyperlink{classui_1_1PageView_a1cbaf2e41005380574beae96ac2bc136}{cc\+Page\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A page turning callback. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ListView_ac9579703c37e0c23eba035fe31e00ba5}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_a67ca3d93ecbad57aa9ba3d5df1350dbd}\label{classui_1_1PageView_a67ca3d93ecbad57aa9ba3d5df1350dbd}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Event\+Listener\+Page\+View@{add\+Event\+Listener\+Page\+View}}
+\index{add\+Event\+Listener\+Page\+View@{add\+Event\+Listener\+Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+Page\+View()}{addEventListenerPageView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Event\+Listener\+Page\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+Page\+View\+Event}]{selector }\end{DoxyParamCaption})}
+
+Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000150}{Deprecated}]Use {\ttfamily \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{Page\+View\+::add\+Event\+Listener}} instead. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A pointer of {\ttfamily Ref$\ast$} type. \\
+\hline
+{\em selector} & A member function pointer with signature of {\ttfamily S\+E\+L\+\_\+\+Page\+View\+Event}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a557c9a1c9971084fa8ca9be4b19a2f4f}\label{classui_1_1PageView_a557c9a1c9971084fa8ca9be4b19a2f4f}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Event\+Listener\+Page\+View@{add\+Event\+Listener\+Page\+View}}
+\index{add\+Event\+Listener\+Page\+View@{add\+Event\+Listener\+Page\+View}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Event\+Listener\+Page\+View()}{addEventListenerPageView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Page\+View\+::add\+Event\+Listener\+Page\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classRef}{Ref} $\ast$}]{target,  }\item[{S\+E\+L\+\_\+\+Page\+View\+Event}]{selector }\end{DoxyParamCaption})}
+
+Add a page turn callback to \hyperlink{classui_1_1PageView}{Page\+View}, then when one page is turning, the callback will be called. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000385}{Deprecated}]Use {\ttfamily \hyperlink{classui_1_1PageView_a8887593dc71c203af06f8043082d2de4}{Page\+View\+::add\+Event\+Listener}} instead. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A pointer of {\ttfamily Ref$\ast$} type. \\
+\hline
+{\em selector} & A member function pointer with signature of {\ttfamily S\+E\+L\+\_\+\+Page\+View\+Event}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}\label{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Page@{add\+Page}}
+\index{add\+Page@{add\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Page()}{addPage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page }\end{DoxyParamCaption})}
+
+Insert a page into the end of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be inserted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}\label{classui_1_1PageView_afc6dc3519137860e93f4e777dc172874}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Page@{add\+Page}}
+\index{add\+Page@{add\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Page()}{addPage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page }\end{DoxyParamCaption})}
+
+Insert a page into the end of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be inserted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a03a31ed8613f6e10b3b3349ca8fbbe66}\label{classui_1_1PageView_a03a31ed8613f6e10b3b3349ca8fbbe66}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Widget\+To\+Page@{add\+Widget\+To\+Page}}
+\index{add\+Widget\+To\+Page@{add\+Widget\+To\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Widget\+To\+Page()}{addWidgetToPage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::add\+Widget\+To\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{widget,  }\item[{ssize\+\_\+t}]{page\+Idx,  }\item[{bool}]{force\+Create }\end{DoxyParamCaption})}
+
+Add a widget as a page of \hyperlink{classui_1_1PageView}{Page\+View} in a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & \hyperlink{classui_1_1Widget}{Widget} to be added to pageview. \\
+\hline
+{\em page\+Idx} & A given index. \\
+\hline
+{\em force\+Create} & If {\ttfamily force\+Create} is true and {\ttfamily widget} isn\textquotesingle{}t exists, pageview would create a default page and add it.\\
+\hline
+\end{DoxyParams}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}{insert\+Page(\+Widget$\ast$ page, int idx)}} instead. \mbox{\Hypertarget{classui_1_1PageView_a340533ea140300c4ca00cd0c3d8e9b85}\label{classui_1_1PageView_a340533ea140300c4ca00cd0c3d8e9b85}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!add\+Widget\+To\+Page@{add\+Widget\+To\+Page}}
+\index{add\+Widget\+To\+Page@{add\+Widget\+To\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{add\+Widget\+To\+Page()}{addWidgetToPage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Page\+View\+::add\+Widget\+To\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{widget,  }\item[{ssize\+\_\+t}]{page\+Idx,  }\item[{bool}]{force\+Create }\end{DoxyParamCaption})}
+
+Add a widget as a page of \hyperlink{classui_1_1PageView}{Page\+View} in a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & \hyperlink{classui_1_1Widget}{Widget} to be added to pageview. \\
+\hline
+{\em page\+Idx} & A given index. \\
+\hline
+{\em force\+Create} & If {\ttfamily force\+Create} is true and {\ttfamily widget} isn\textquotesingle{}t exists, pageview would create a default page and add it.\\
+\hline
+\end{DoxyParams}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}{insert\+Page(\+Widget$\ast$ page, int idx)}} instead. \mbox{\Hypertarget{classui_1_1PageView_ac47ee4c872601f7a31dcab63965f7164}\label{classui_1_1PageView_ac47ee4c872601f7a31dcab63965f7164}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!create@{create}}
+\index{create@{create}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1PageView}{Page\+View} $\ast$ ui\+::\+Page\+View\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create an empty \hyperlink{classui_1_1PageView}{Page\+View}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1PageView}{Page\+View} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_ac874e906c816faf0f6e640d98345191b}\label{classui_1_1PageView_ac874e906c816faf0f6e640d98345191b}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!create@{create}}
+\index{create@{create}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1PageView}{Page\+View}$\ast$ ui\+::\+Page\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create an empty \hyperlink{classui_1_1PageView}{Page\+View}. \begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1PageView}{Page\+View} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_af8f0014cd5470f0734d40c945823ea17}\label{classui_1_1PageView_af8f0014cd5470f0734d40c945823ea17}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Cur\+Page\+Index@{get\+Cur\+Page\+Index}}
+\index{get\+Cur\+Page\+Index@{get\+Cur\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Cur\+Page\+Index()}{getCurPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+Page\+View\+::get\+Cur\+Page\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets current displayed page index. \begin{DoxyReturn}{Returns}
+current page index.
+\end{DoxyReturn}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_a0e0e1e05f1804d2b633ce7fb1ac16c6d}{get\+Current\+Page\+Index()}} instead. \mbox{\Hypertarget{classui_1_1PageView_a751a9452bd9a0bdb9e0cad6b69c70186}\label{classui_1_1PageView_a751a9452bd9a0bdb9e0cad6b69c70186}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Cur\+Page\+Index@{get\+Cur\+Page\+Index}}
+\index{get\+Cur\+Page\+Index@{get\+Cur\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Cur\+Page\+Index()}{getCurPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE ssize\+\_\+t ui\+::\+Page\+View\+::get\+Cur\+Page\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets current displayed page index. \begin{DoxyReturn}{Returns}
+current page index.
+\end{DoxyReturn}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_a0e0e1e05f1804d2b633ce7fb1ac16c6d}{get\+Current\+Page\+Index()}} instead. \mbox{\Hypertarget{classui_1_1PageView_aad39bcc516543dbd0b8bbf1b57bd2e98}\label{classui_1_1PageView_aad39bcc516543dbd0b8bbf1b57bd2e98}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Current\+Page\+Index@{get\+Current\+Page\+Index}}
+\index{get\+Current\+Page\+Index@{get\+Current\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Current\+Page\+Index()}{getCurrentPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+Page\+View\+::get\+Current\+Page\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets current displayed page index. \begin{DoxyReturn}{Returns}
+current page index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a0e0e1e05f1804d2b633ce7fb1ac16c6d}\label{classui_1_1PageView_a0e0e1e05f1804d2b633ce7fb1ac16c6d}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Current\+Page\+Index@{get\+Current\+Page\+Index}}
+\index{get\+Current\+Page\+Index@{get\+Current\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Current\+Page\+Index()}{getCurrentPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t ui\+::\+Page\+View\+::get\+Current\+Page\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets current displayed page index. \begin{DoxyReturn}{Returns}
+current page index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a36048cfcf389a27b898960c9596ad8bf}\label{classui_1_1PageView_a36048cfcf389a27b898960c9596ad8bf}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Custom\+Scroll\+Threshold@{get\+Custom\+Scroll\+Threshold}}
+\index{get\+Custom\+Scroll\+Threshold@{get\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Custom\+Scroll\+Threshold()}{getCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Page\+View\+::get\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the custom scroll threshold of the \hyperlink{classui_1_1PageView}{Page\+View}. 
+
+\begin{DoxyReturn}{Returns}
+Custom scroll threshold in float. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000152}{Deprecated}]Since v3.\+9, this method always returns 0. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_a85a4d633a04862d0a2f4522beae37ae3}\label{classui_1_1PageView_a85a4d633a04862d0a2f4522beae37ae3}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Custom\+Scroll\+Threshold@{get\+Custom\+Scroll\+Threshold}}
+\index{get\+Custom\+Scroll\+Threshold@{get\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Custom\+Scroll\+Threshold()}{getCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE float ui\+::\+Page\+View\+::get\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query the custom scroll threshold of the \hyperlink{classui_1_1PageView}{Page\+View}. 
+
+\begin{DoxyReturn}{Returns}
+Custom scroll threshold in float. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000387}{Deprecated}]Since v3.\+9, this method always returns 0. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_a3c9b2934fdbbb44e2c456feee27b53de}\label{classui_1_1PageView_a3c9b2934fdbbb44e2c456feee27b53de}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string ui\+::\+Page\+View\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1ListView_a653bb454095ef227949f7c791b68180c}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_aead0575c0e5d24da3731501afadf81e9}\label{classui_1_1PageView_aead0575c0e5d24da3731501afadf81e9}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string ui\+::\+Page\+View\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return the \char`\"{}class name\char`\"{} of widget. 
+
+Reimplemented from \hyperlink{classui_1_1ListView_a653bb454095ef227949f7c791b68180c}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}\label{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Enabled@{get\+Indicator\+Enabled}}
+\index{get\+Indicator\+Enabled@{get\+Indicator\+Enabled}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Enabled()}{getIndicatorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Page\+View\+::get\+Indicator\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Query page indicator state. 
+
+\begin{DoxyReturn}{Returns}
+True if page indicator is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}\label{classui_1_1PageView_a15476071cbcf8fc025760426298a2dff}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Enabled@{get\+Indicator\+Enabled}}
+\index{get\+Indicator\+Enabled@{get\+Indicator\+Enabled}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Enabled()}{getIndicatorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Page\+View\+::get\+Indicator\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Query page indicator state. 
+
+\begin{DoxyReturn}{Returns}
+True if page indicator is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_acb97654798e343a86517ac058655cdd9}\label{classui_1_1PageView_acb97654798e343a86517ac058655cdd9}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Index\+Nodes\+Color@{get\+Indicator\+Index\+Nodes\+Color}}
+\index{get\+Indicator\+Index\+Nodes\+Color@{get\+Indicator\+Index\+Nodes\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Index\+Nodes\+Color()}{getIndicatorIndexNodesColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B} \& ui\+::\+Page\+View\+::get\+Indicator\+Index\+Nodes\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a7754d19d8e93f9654f2dc6a58e15131b}\label{classui_1_1PageView_a7754d19d8e93f9654f2dc6a58e15131b}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Index\+Nodes\+Color@{get\+Indicator\+Index\+Nodes\+Color}}
+\index{get\+Indicator\+Index\+Nodes\+Color@{get\+Indicator\+Index\+Nodes\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Index\+Nodes\+Color()}{getIndicatorIndexNodesColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B}\& ui\+::\+Page\+View\+::get\+Indicator\+Index\+Nodes\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a230cf4bd9e8c587df41b4a0c7e7145f3}\label{classui_1_1PageView_a230cf4bd9e8c587df41b4a0c7e7145f3}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Index\+Nodes\+Opacity@{get\+Indicator\+Index\+Nodes\+Opacity}}
+\index{get\+Indicator\+Index\+Nodes\+Opacity@{get\+Indicator\+Index\+Nodes\+Opacity}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Index\+Nodes\+Opacity()}{getIndicatorIndexNodesOpacity()}}
+{\footnotesize\ttfamily G\+Lubyte ui\+::\+Page\+View\+::get\+Indicator\+Index\+Nodes\+Opacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the opacity of page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+opacity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}\label{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Index\+Nodes\+Scale@{get\+Indicator\+Index\+Nodes\+Scale}}
+\index{get\+Indicator\+Index\+Nodes\+Scale@{get\+Indicator\+Index\+Nodes\+Scale}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Index\+Nodes\+Scale()}{getIndicatorIndexNodesScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Page\+View\+::get\+Indicator\+Index\+Nodes\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get scale of page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+index\+Nodes\+Scale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}\label{classui_1_1PageView_a651af56fb85c916b43daf98c54a3f863}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Index\+Nodes\+Scale@{get\+Indicator\+Index\+Nodes\+Scale}}
+\index{get\+Indicator\+Index\+Nodes\+Scale@{get\+Indicator\+Index\+Nodes\+Scale}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Index\+Nodes\+Scale()}{getIndicatorIndexNodesScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+Page\+View\+::get\+Indicator\+Index\+Nodes\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get scale of page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+index\+Nodes\+Scale 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a7fec50e1db1bfe9583564ccf528c4865}\label{classui_1_1PageView_a7fec50e1db1bfe9583564ccf528c4865}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Position@{get\+Indicator\+Position}}
+\index{get\+Indicator\+Position@{get\+Indicator\+Position}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Position()}{getIndicatorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec2}{Vec2} \& ui\+::\+Page\+View\+::get\+Indicator\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the page indicator\textquotesingle{}s position. 
+
+\begin{DoxyReturn}{Returns}
+position\+As\+Anchor\+Point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a0b8e1469c924aa6c7980790f786eae60}\label{classui_1_1PageView_a0b8e1469c924aa6c7980790f786eae60}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Position@{get\+Indicator\+Position}}
+\index{get\+Indicator\+Position@{get\+Indicator\+Position}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Position()}{getIndicatorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec2}{Vec2}\& ui\+::\+Page\+View\+::get\+Indicator\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the page indicator\textquotesingle{}s position. 
+
+\begin{DoxyReturn}{Returns}
+position\+As\+Anchor\+Point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_afd78e6ec197b8aea68614f9f6c35a70d}\label{classui_1_1PageView_afd78e6ec197b8aea68614f9f6c35a70d}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Position\+As\+Anchor\+Point@{get\+Indicator\+Position\+As\+Anchor\+Point}}
+\index{get\+Indicator\+Position\+As\+Anchor\+Point@{get\+Indicator\+Position\+As\+Anchor\+Point}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Position\+As\+Anchor\+Point()}{getIndicatorPositionAsAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec2}{Vec2} \& ui\+::\+Page\+View\+::get\+Indicator\+Position\+As\+Anchor\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the page indicator\textquotesingle{}s position as anchor point. 
+
+\begin{DoxyReturn}{Returns}
+position\+As\+Anchor\+Point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a285dea7517bb2bd0e4bb0ba7f02c1922}\label{classui_1_1PageView_a285dea7517bb2bd0e4bb0ba7f02c1922}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Position\+As\+Anchor\+Point@{get\+Indicator\+Position\+As\+Anchor\+Point}}
+\index{get\+Indicator\+Position\+As\+Anchor\+Point@{get\+Indicator\+Position\+As\+Anchor\+Point}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Position\+As\+Anchor\+Point()}{getIndicatorPositionAsAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVec2}{Vec2}\& ui\+::\+Page\+View\+::get\+Indicator\+Position\+As\+Anchor\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the page indicator\textquotesingle{}s position as anchor point. 
+
+\begin{DoxyReturn}{Returns}
+position\+As\+Anchor\+Point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_ab954bc94d40d06d3639f36d224455d85}\label{classui_1_1PageView_ab954bc94d40d06d3639f36d224455d85}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Selected\+Index\+Color@{get\+Indicator\+Selected\+Index\+Color}}
+\index{get\+Indicator\+Selected\+Index\+Color@{get\+Indicator\+Selected\+Index\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Selected\+Index\+Color()}{getIndicatorSelectedIndexColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B} \& ui\+::\+Page\+View\+::get\+Indicator\+Selected\+Index\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of page indicator\textquotesingle{}s selected index. 
+
+\begin{DoxyReturn}{Returns}
+color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_af5ee5b55b6e844913fe14e7ce069f1bc}\label{classui_1_1PageView_af5ee5b55b6e844913fe14e7ce069f1bc}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Selected\+Index\+Color@{get\+Indicator\+Selected\+Index\+Color}}
+\index{get\+Indicator\+Selected\+Index\+Color@{get\+Indicator\+Selected\+Index\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Selected\+Index\+Color()}{getIndicatorSelectedIndexColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{structColor3B}{Color3B}\& ui\+::\+Page\+View\+::get\+Indicator\+Selected\+Index\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of page indicator\textquotesingle{}s selected index. 
+
+\begin{DoxyReturn}{Returns}
+color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a87b0b8b5aead4fe196054cec54de1265}\label{classui_1_1PageView_a87b0b8b5aead4fe196054cec54de1265}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Selected\+Index\+Opacity@{get\+Indicator\+Selected\+Index\+Opacity}}
+\index{get\+Indicator\+Selected\+Index\+Opacity@{get\+Indicator\+Selected\+Index\+Opacity}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Selected\+Index\+Opacity()}{getIndicatorSelectedIndexOpacity()}}
+{\footnotesize\ttfamily G\+Lubyte ui\+::\+Page\+View\+::get\+Indicator\+Selected\+Index\+Opacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the opacity of page indicator\textquotesingle{}s selected index. 
+
+\begin{DoxyReturn}{Returns}
+opacity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}\label{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Space\+Between\+Index\+Nodes@{get\+Indicator\+Space\+Between\+Index\+Nodes}}
+\index{get\+Indicator\+Space\+Between\+Index\+Nodes@{get\+Indicator\+Space\+Between\+Index\+Nodes}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Space\+Between\+Index\+Nodes()}{getIndicatorSpaceBetweenIndexNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float ui\+::\+Page\+View\+::get\+Indicator\+Space\+Between\+Index\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the space between page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+space\+Between\+Index\+Nodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}\label{classui_1_1PageView_a5ed4633cd13e1d9be2d195de1e1be077}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Indicator\+Space\+Between\+Index\+Nodes@{get\+Indicator\+Space\+Between\+Index\+Nodes}}
+\index{get\+Indicator\+Space\+Between\+Index\+Nodes@{get\+Indicator\+Space\+Between\+Index\+Nodes}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Indicator\+Space\+Between\+Index\+Nodes()}{getIndicatorSpaceBetweenIndexNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float ui\+::\+Page\+View\+::get\+Indicator\+Space\+Between\+Index\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the space between page indicator\textquotesingle{}s index nodes. 
+
+\begin{DoxyReturn}{Returns}
+space\+Between\+Index\+Nodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1PageView_a0f13817440be39068e46a3c597466268}\label{classui_1_1PageView_a0f13817440be39068e46a3c597466268}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Page@{get\+Page}}
+\index{get\+Page@{get\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Page()}{getPage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1Layout}{Layout} $\ast$ ui\+::\+Page\+View\+::get\+Page (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Get a page at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A layout pointer in \hyperlink{classui_1_1PageView}{Page\+View} container.
+\end{DoxyReturn}
+Since v3.\+9, this is obsolete. Use {\ttfamily Widget$\ast$ List\+View\+::get\+Item(index)} instead. \mbox{\Hypertarget{classui_1_1PageView_a82ba1073c82a126465158090fad60698}\label{classui_1_1PageView_a82ba1073c82a126465158090fad60698}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Page@{get\+Page}}
+\index{get\+Page@{get\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Page()}{getPage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classui_1_1Layout}{Layout}$\ast$ ui\+::\+Page\+View\+::get\+Page (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Get a page at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A layout pointer in \hyperlink{classui_1_1PageView}{Page\+View} container.
+\end{DoxyReturn}
+Since v3.\+9, this is obsolete. Use {\ttfamily Widget$\ast$ List\+View\+::get\+Item(index)} instead. \mbox{\Hypertarget{classui_1_1PageView_a85a0a173c08718f0d84a3eb5c8c2c2bb}\label{classui_1_1PageView_a85a0a173c08718f0d84a3eb5c8c2c2bb}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Pages@{get\+Pages}}
+\index{get\+Pages@{get\+Pages}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Pages()}{getPages()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classui_1_1Layout}{Layout} $\ast$ $>$ \& ui\+::\+Page\+View\+::get\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all the pages in the \hyperlink{classui_1_1PageView}{Page\+View}. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \hyperlink{classui_1_1Layout}{Layout} pointers.
+\end{DoxyReturn}
+Since v3.\+9, this is obsolete. Use {\ttfamily \hyperlink{classVector}{Vector}$<$Widget$\ast$$>$\& \hyperlink{classui_1_1ListView_a92a6e83bdbfec80ae5133ab7ccd0a824}{List\+View\+::get\+Items()}} instead. \mbox{\Hypertarget{classui_1_1PageView_a0615c5ffc511cb07537188b9281513f1}\label{classui_1_1PageView_a0615c5ffc511cb07537188b9281513f1}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!get\+Pages@{get\+Pages}}
+\index{get\+Pages@{get\+Pages}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{get\+Pages()}{getPages()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVector}{Vector}$<$\hyperlink{classui_1_1Layout}{Layout}$\ast$$>$\& ui\+::\+Page\+View\+::get\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all the pages in the \hyperlink{classui_1_1PageView}{Page\+View}. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \hyperlink{classui_1_1Layout}{Layout} pointers.
+\end{DoxyReturn}
+Since v3.\+9, this is obsolete. Use {\ttfamily \hyperlink{classVector}{Vector}$<$Widget$\ast$$>$\& \hyperlink{classui_1_1ListView_a92a6e83bdbfec80ae5133ab7ccd0a824}{List\+View\+::get\+Items()}} instead. \mbox{\Hypertarget{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}\label{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!insert\+Page@{insert\+Page}}
+\index{insert\+Page@{insert\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{insert\+Page()}{insertPage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::insert\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+Insert a page into \hyperlink{classui_1_1PageView}{Page\+View} at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be inserted. \\
+\hline
+{\em idx} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}\label{classui_1_1PageView_ae1909f7baa4a2e38f1a90f24c428db2d}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!insert\+Page@{insert\+Page}}
+\index{insert\+Page@{insert\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{insert\+Page()}{insertPage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::insert\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+Insert a page into \hyperlink{classui_1_1PageView}{Page\+View} at a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be inserted. \\
+\hline
+{\em idx} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a8c41a825d4f568fc6b9e5968c8ecfb71}\label{classui_1_1PageView_a8c41a825d4f568fc6b9e5968c8ecfb71}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!is\+Using\+Custom\+Scroll\+Threshold@{is\+Using\+Custom\+Scroll\+Threshold}}
+\index{is\+Using\+Custom\+Scroll\+Threshold@{is\+Using\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{is\+Using\+Custom\+Scroll\+Threshold()}{isUsingCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+Page\+View\+::is\+Using\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether use user defined scroll page threshold or not. 
+
+\begin{DoxyReturn}{Returns}
+True if using custom scroll threshold, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000154}{Deprecated}]Since v3.\+9, this method always returns false. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_ae867b3f9b2753cfc5851440d9b36f90e}\label{classui_1_1PageView_ae867b3f9b2753cfc5851440d9b36f90e}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!is\+Using\+Custom\+Scroll\+Threshold@{is\+Using\+Custom\+Scroll\+Threshold}}
+\index{is\+Using\+Custom\+Scroll\+Threshold@{is\+Using\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{is\+Using\+Custom\+Scroll\+Threshold()}{isUsingCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE bool ui\+::\+Page\+View\+::is\+Using\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether use user defined scroll page threshold or not. 
+
+\begin{DoxyReturn}{Returns}
+True if using custom scroll threshold, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000389}{Deprecated}]Since v3.\+9, this method always returns false. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}\label{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!remove\+Page@{remove\+Page}}
+\index{remove\+Page@{remove\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{remove\+Page()}{removePage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::remove\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page }\end{DoxyParamCaption})}
+
+Remove a page of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}\label{classui_1_1PageView_afc0653451f8a57c9cb2f7b14eabe1c1f}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!remove\+Page@{remove\+Page}}
+\index{remove\+Page@{remove\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{remove\+Page()}{removePage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::remove\+Page (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1Widget}{Widget} $\ast$}]{page }\end{DoxyParamCaption})}
+
+Remove a page of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & Page to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}\label{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!remove\+Page\+At\+Index@{remove\+Page\+At\+Index}}
+\index{remove\+Page\+At\+Index@{remove\+Page\+At\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{remove\+Page\+At\+Index()}{removePageAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::remove\+Page\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Remove a page at a given index of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}\label{classui_1_1PageView_a58351bb2e6b271b846b56db3a5ae302b}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!remove\+Page\+At\+Index@{remove\+Page\+At\+Index}}
+\index{remove\+Page\+At\+Index@{remove\+Page\+At\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{remove\+Page\+At\+Index()}{removePageAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::remove\+Page\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Remove a page at a given index of \hyperlink{classui_1_1PageView}{Page\+View}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}\label{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Item@{scroll\+To\+Item}}
+\index{scroll\+To\+Item@{scroll\+To\+Item}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Item()}{scrollToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index }\end{DoxyParamCaption})}
+
+Scroll to a page with a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}\label{classui_1_1PageView_ad0c9adc302818366c639e6425f4da898}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Item@{scroll\+To\+Item}}
+\index{scroll\+To\+Item@{scroll\+To\+Item}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Item()}{scrollToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{item\+Index }\end{DoxyParamCaption})}
+
+Scroll to a page with a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Index} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a5f686f92ace4bb68004b84124ff7aea2}\label{classui_1_1PageView_a5f686f92ace4bb68004b84124ff7aea2}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Item@{scroll\+To\+Item}}
+\index{scroll\+To\+Item@{scroll\+To\+Item}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Item()}{scrollToItem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Item (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+Scroll to a item with a given index and with a given scroll time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+{\em time} & Scroll time must be $>$= 0. Otherwise last set scrolltime will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}\label{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Page@{scroll\+To\+Page}}
+\index{scroll\+To\+Page@{scroll\+To\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Page()}{scrollToPage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Page (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Scroll to a page with a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}\label{classui_1_1PageView_a054f9005201643dfb457965f26bf3625}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Page@{scroll\+To\+Page}}
+\index{scroll\+To\+Page@{scroll\+To\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Page()}{scrollToPage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Page (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Scroll to a page with a given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a770afe4df47aeda905850dfa1767ad8a}\label{classui_1_1PageView_a770afe4df47aeda905850dfa1767ad8a}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!scroll\+To\+Page@{scroll\+To\+Page}}
+\index{scroll\+To\+Page@{scroll\+To\+Page}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{scroll\+To\+Page()}{scrollToPage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::scroll\+To\+Page (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{idx,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+Scroll to a page with a given index and with a given scroll time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & A given index in the \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+{\em time} & Scroll time must be $>$= 0. Otherwise last set scroll time will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a153c32995f94a646e85bd827387c826f}\label{classui_1_1PageView_a153c32995f94a646e85bd827387c826f}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Cur\+Page\+Index@{set\+Cur\+Page\+Index}}
+\index{set\+Cur\+Page\+Index@{set\+Cur\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Cur\+Page\+Index()}{setCurPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Cur\+Page\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Jump to a page with a given index without scrolling. This is the different between scroll\+To\+Page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1.\\
+\hline
+\end{DoxyParams}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}{set\+Current\+Page\+Index()}} instead. \mbox{\Hypertarget{classui_1_1PageView_a916f5697ad97899b1dd9942aeba76680}\label{classui_1_1PageView_a916f5697ad97899b1dd9942aeba76680}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Cur\+Page\+Index@{set\+Cur\+Page\+Index}}
+\index{set\+Cur\+Page\+Index@{set\+Cur\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Cur\+Page\+Index()}{setCurPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Page\+View\+::set\+Cur\+Page\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Jump to a page with a given index without scrolling. This is the different between scroll\+To\+Page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1.\\
+\hline
+\end{DoxyParams}
+Since v3.\+9, this is deprecated. Use {\ttfamily \hyperlink{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}{set\+Current\+Page\+Index()}} instead. \mbox{\Hypertarget{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}\label{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Current\+Page\+Index@{set\+Current\+Page\+Index}}
+\index{set\+Current\+Page\+Index@{set\+Current\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Current\+Page\+Index()}{setCurrentPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Current\+Page\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Jump to a page with a given index without scrolling. This is the different between scroll\+To\+Page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}\label{classui_1_1PageView_a919770a660944565ae72d4cc4b571121}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Current\+Page\+Index@{set\+Current\+Page\+Index}}
+\index{set\+Current\+Page\+Index@{set\+Current\+Page\+Index}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Current\+Page\+Index()}{setCurrentPageIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Current\+Page\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Jump to a page with a given index without scrolling. This is the different between scroll\+To\+Page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A given index in \hyperlink{classui_1_1PageView}{Page\+View}. Index start from 0 to page\+Count -\/1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a10f9b43ef5ebff540e6546ed810d1be4}\label{classui_1_1PageView_a10f9b43ef5ebff540e6546ed810d1be4}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Custom\+Scroll\+Threshold@{set\+Custom\+Scroll\+Threshold}}
+\index{set\+Custom\+Scroll\+Threshold@{set\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Custom\+Scroll\+Threshold()}{setCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}\item[{float}]{threshold }\end{DoxyParamCaption})}
+
+
+
+If you don\textquotesingle{}t specify the value, the page\+View will turn page when scrolling at the half width of a page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & A threshold in float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000151}{Deprecated}]Since v3.\+9, this method has no effect. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_a4822a9ebfefc69a6d02a0bb13551523f}\label{classui_1_1PageView_a4822a9ebfefc69a6d02a0bb13551523f}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Custom\+Scroll\+Threshold@{set\+Custom\+Scroll\+Threshold}}
+\index{set\+Custom\+Scroll\+Threshold@{set\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Custom\+Scroll\+Threshold()}{setCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Page\+View\+::set\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}\item[{float}]{threshold }\end{DoxyParamCaption})}
+
+
+
+If you don\textquotesingle{}t specify the value, the page\+View will turn page when scrolling at the half width of a page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & A threshold in float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000386}{Deprecated}]Since v3.\+9, this method has no effect. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_a594124394d2bc1dff86069b87939b14c}\label{classui_1_1PageView_a594124394d2bc1dff86069b87939b14c}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Direction()}{setDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Page\+View\+::\+Direction}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes direction Direction Direction\+::\+V\+E\+R\+T\+I\+C\+AL means vertical scroll, Direction\+::\+H\+O\+R\+I\+Z\+O\+N\+T\+AL means horizontal scroll. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Set the page view\textquotesingle{}s scroll direction. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ListView_aaac3381602537a823529058b64bffabf}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_a4ac6e8672026f60e326ffc054d167365}\label{classui_1_1PageView_a4ac6e8672026f60e326ffc054d167365}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Direction()}{setDirection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+Page\+View\+::set\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{classui_1_1ScrollView_aed2d778ae8098dcafe323b2beae8dd6b}{Direction}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Changes direction Direction Direction\+::\+V\+E\+R\+T\+I\+C\+AL means vertical scroll, Direction\+::\+H\+O\+R\+I\+Z\+O\+N\+T\+AL means horizontal scroll. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Set the page view\textquotesingle{}s scroll direction. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classui_1_1ListView_aaac3381602537a823529058b64bffabf}{ui\+::\+List\+View}.
+
+\mbox{\Hypertarget{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}\label{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Enabled@{set\+Indicator\+Enabled}}
+\index{set\+Indicator\+Enabled@{set\+Indicator\+Enabled}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Enabled()}{setIndicatorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Toggle page indicator enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True if enable page indicator, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}\label{classui_1_1PageView_a2fc6399772e0381cd8cfcd3e39aff5f2}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Enabled@{set\+Indicator\+Enabled}}
+\index{set\+Indicator\+Enabled@{set\+Indicator\+Enabled}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Enabled()}{setIndicatorEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Toggle page indicator enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True if enable page indicator, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}\label{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Color@{set\+Indicator\+Index\+Nodes\+Color}}
+\index{set\+Indicator\+Index\+Nodes\+Color@{set\+Indicator\+Index\+Nodes\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Color()}{setIndicatorIndexNodesColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set color of page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Space between nodes in pixel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}\label{classui_1_1PageView_a6fa17a26a9819a05d61e4b77dbc62ff7}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Color@{set\+Indicator\+Index\+Nodes\+Color}}
+\index{set\+Indicator\+Index\+Nodes\+Color@{set\+Indicator\+Index\+Nodes\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Color()}{setIndicatorIndexNodesColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set color of page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New indicator node color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a8ab3b4a36a80c6bcbe1d905ab572bcc1}\label{classui_1_1PageView_a8ab3b4a36a80c6bcbe1d905ab572bcc1}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Opacity@{set\+Indicator\+Index\+Nodes\+Opacity}}
+\index{set\+Indicator\+Index\+Nodes\+Opacity@{set\+Indicator\+Index\+Nodes\+Opacity}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Opacity()}{setIndicatorIndexNodesOpacity()}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})}
+
+
+
+Set opacity of page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opacity} & New indicator node opacity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}\label{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Scale@{set\+Indicator\+Index\+Nodes\+Scale}}
+\index{set\+Indicator\+Index\+Nodes\+Scale@{set\+Indicator\+Index\+Nodes\+Scale}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Scale()}{setIndicatorIndexNodesScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Scale (\begin{DoxyParamCaption}\item[{float}]{index\+Nodes\+Scale }\end{DoxyParamCaption})}
+
+
+
+Set scale of page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Nodes\+Scale} & Scale of index nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}\label{classui_1_1PageView_a8660efb9530d9f8783b439e4ba0e2e63}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Scale@{set\+Indicator\+Index\+Nodes\+Scale}}
+\index{set\+Indicator\+Index\+Nodes\+Scale@{set\+Indicator\+Index\+Nodes\+Scale}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Scale()}{setIndicatorIndexNodesScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Scale (\begin{DoxyParamCaption}\item[{float}]{index\+Nodes\+Scale }\end{DoxyParamCaption})}
+
+
+
+Set scale of page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Nodes\+Scale} & Scale of index nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}\label{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Texture@{set\+Indicator\+Index\+Nodes\+Texture}}
+\index{set\+Indicator\+Index\+Nodes\+Texture@{set\+Indicator\+Index\+Nodes\+Texture}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Texture()}{setIndicatorIndexNodesTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Name,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}}]{tex\+Type = {\ttfamily Widget\+:\+:TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+sets texture for index nodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & File name of texture. \\
+\hline
+{\em res\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} . 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}\label{classui_1_1PageView_a1413a09228d8aa99d44afbd77b9354e4}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Index\+Nodes\+Texture@{set\+Indicator\+Index\+Nodes\+Texture}}
+\index{set\+Indicator\+Index\+Nodes\+Texture@{set\+Indicator\+Index\+Nodes\+Texture}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Index\+Nodes\+Texture()}{setIndicatorIndexNodesTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Index\+Nodes\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Name,  }\item[{\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Widget\+::\+Texture\+Res\+Type}}]{tex\+Type = {\ttfamily Widget\+:\+:TextureResType\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+sets texture for index nodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & File name of texture. \\
+\hline
+{\em res\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classui_1_1Widget_a040a65ec5ad3b11119b7e16b98bd9af0}{Texture\+Res\+Type} . 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}\label{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Position@{set\+Indicator\+Position}}
+\index{set\+Indicator\+Position@{set\+Indicator\+Position}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Position()}{setIndicatorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Set the page indicator\textquotesingle{}s position in page view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position in page view \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}\label{classui_1_1PageView_abcc7b971a29ec68732a8e30a293b8018}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Position@{set\+Indicator\+Position}}
+\index{set\+Indicator\+Position@{set\+Indicator\+Position}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Position()}{setIndicatorPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Position (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Set the page indicator\textquotesingle{}s position in page view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position in page view \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}\label{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Position\+As\+Anchor\+Point@{set\+Indicator\+Position\+As\+Anchor\+Point}}
+\index{set\+Indicator\+Position\+As\+Anchor\+Point@{set\+Indicator\+Position\+As\+Anchor\+Point}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Position\+As\+Anchor\+Point()}{setIndicatorPositionAsAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Position\+As\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+As\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Set the page indicator\textquotesingle{}s position using anchor point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+As\+Anchor\+Point} & The position as anchor point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}\label{classui_1_1PageView_a72ad43bc3f2aaafc8bfba8244fc9c5bd}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Position\+As\+Anchor\+Point@{set\+Indicator\+Position\+As\+Anchor\+Point}}
+\index{set\+Indicator\+Position\+As\+Anchor\+Point@{set\+Indicator\+Position\+As\+Anchor\+Point}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Position\+As\+Anchor\+Point()}{setIndicatorPositionAsAnchorPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Position\+As\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{position\+As\+Anchor\+Point }\end{DoxyParamCaption})}
+
+
+
+Set the page indicator\textquotesingle{}s position using anchor point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+As\+Anchor\+Point} & The position as anchor point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}\label{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Selected\+Index\+Color@{set\+Indicator\+Selected\+Index\+Color}}
+\index{set\+Indicator\+Selected\+Index\+Color@{set\+Indicator\+Selected\+Index\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Selected\+Index\+Color()}{setIndicatorSelectedIndexColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Selected\+Index\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set color of page indicator\textquotesingle{}s selected index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Space between nodes in pixel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}\label{classui_1_1PageView_a685219b0641c33d694fa5e89fd7f0e76}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Selected\+Index\+Color@{set\+Indicator\+Selected\+Index\+Color}}
+\index{set\+Indicator\+Selected\+Index\+Color@{set\+Indicator\+Selected\+Index\+Color}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Selected\+Index\+Color()}{setIndicatorSelectedIndexColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Selected\+Index\+Color (\begin{DoxyParamCaption}\item[{const \hyperlink{structColor3B}{Color3B} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set color of page indicator\textquotesingle{}s selected index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color for selected (current) index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_afae2d00e007b00af99a2a372d27d6a1d}\label{classui_1_1PageView_afae2d00e007b00af99a2a372d27d6a1d}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Selected\+Index\+Opacity@{set\+Indicator\+Selected\+Index\+Opacity}}
+\index{set\+Indicator\+Selected\+Index\+Opacity@{set\+Indicator\+Selected\+Index\+Opacity}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Selected\+Index\+Opacity()}{setIndicatorSelectedIndexOpacity()}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Selected\+Index\+Opacity (\begin{DoxyParamCaption}\item[{G\+Lubyte}]{opacity }\end{DoxyParamCaption})}
+
+
+
+Set opacity of page indicator\textquotesingle{}s selected index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New opacity for selected (current) index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}\label{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Space\+Between\+Index\+Nodes@{set\+Indicator\+Space\+Between\+Index\+Nodes}}
+\index{set\+Indicator\+Space\+Between\+Index\+Nodes@{set\+Indicator\+Space\+Between\+Index\+Nodes}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Space\+Between\+Index\+Nodes()}{setIndicatorSpaceBetweenIndexNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Space\+Between\+Index\+Nodes (\begin{DoxyParamCaption}\item[{float}]{space\+Between\+Index\+Nodes }\end{DoxyParamCaption})}
+
+
+
+Set space between page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em space\+Between\+Index\+Nodes} & Space between nodes in pixel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}\label{classui_1_1PageView_ac181b03f26045ac2b0be91ed177d03db}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Indicator\+Space\+Between\+Index\+Nodes@{set\+Indicator\+Space\+Between\+Index\+Nodes}}
+\index{set\+Indicator\+Space\+Between\+Index\+Nodes@{set\+Indicator\+Space\+Between\+Index\+Nodes}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Indicator\+Space\+Between\+Index\+Nodes()}{setIndicatorSpaceBetweenIndexNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Indicator\+Space\+Between\+Index\+Nodes (\begin{DoxyParamCaption}\item[{float}]{space\+Between\+Index\+Nodes }\end{DoxyParamCaption})}
+
+
+
+Set space between page indicator\textquotesingle{}s index nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em space\+Between\+Index\+Nodes} & Space between nodes in pixel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1PageView_a1e01540660aa7c0c79ae736929f4784b}\label{classui_1_1PageView_a1e01540660aa7c0c79ae736929f4784b}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Using\+Custom\+Scroll\+Threshold@{set\+Using\+Custom\+Scroll\+Threshold}}
+\index{set\+Using\+Custom\+Scroll\+Threshold@{set\+Using\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Using\+Custom\+Scroll\+Threshold()}{setUsingCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+Page\+View\+::set\+Using\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set using user defined scroll page threshold or not. If you set it to false, then the default scroll threshold is page\+View.\+width / 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & True if using custom scroll threshold, false otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000153}{Deprecated}]Since v3.\+9, this method has no effect. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classui_1_1PageView_ae173b8839db817ed5aa09a910b8169aa}\label{classui_1_1PageView_ae173b8839db817ed5aa09a910b8169aa}} 
+\index{ui\+::\+Page\+View@{ui\+::\+Page\+View}!set\+Using\+Custom\+Scroll\+Threshold@{set\+Using\+Custom\+Scroll\+Threshold}}
+\index{set\+Using\+Custom\+Scroll\+Threshold@{set\+Using\+Custom\+Scroll\+Threshold}!ui\+::\+Page\+View@{ui\+::\+Page\+View}}
+\subsubsection{\texorpdfstring{set\+Using\+Custom\+Scroll\+Threshold()}{setUsingCustomScrollThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void ui\+::\+Page\+View\+::set\+Using\+Custom\+Scroll\+Threshold (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set using user defined scroll page threshold or not. If you set it to false, then the default scroll threshold is page\+View.\+width / 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & True if using custom scroll threshold, false otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000388}{Deprecated}]Since v3.\+9, this method has no effect. \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Page\+View.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Page\+View.\+cpp\end{DoxyCompactItemize}

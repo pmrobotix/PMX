@@ -1,0 +1,184 @@
+\hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3}{}\section{cocos2d\+:\+:experimental\+:\+:Audio\+Decoder\+Mp3 Class Reference}
+\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3}\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+
+
+The class for decoding compressed audio file to P\+CM buffer.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Decoder\+Mp3.\+h$>$}
+
+
+
+Inheritance diagram for cocos2d\+:\+:experimental\+:\+:Audio\+Decoder\+Mp3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classcocos2d_1_1experimental_1_1AudioDecoderMp3__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cocos2d\+:\+:experimental\+:\+:Audio\+Decoder\+Mp3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classcocos2d_1_1experimental_1_1AudioDecoderMp3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adb47b02e2c9774cb069f393c5a63608a}{open} (const char $\ast$path) override
+\begin{DoxyCompactList}\small\item\em Opens an audio file specified by a file path. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a547b08590805b5f5443e8ba485e271b2}{close} () override
+\begin{DoxyCompactList}\small\item\em Closes opened audio file. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a9b033167139ff6d094fe27d79a2b78ad}{read} (uint32\+\_\+t frames\+To\+Read, char $\ast$pcm\+Buf) override
+\begin{DoxyCompactList}\small\item\em Reads audio frames of P\+CM format. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a997804dcef5a632730f0efea296374f2}{seek} (uint32\+\_\+t frame\+Offset) override
+\begin{DoxyCompactList}\small\item\em Sets frame offest to be read. \end{DoxyCompactList}\item 
+virtual uint32\+\_\+t \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adf8e9914377f0cca2fa45a5741bb20bf}{tell} () const override
+\begin{DoxyCompactList}\small\item\em Tells the current frame offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_aa1465d75c371209b438771118cbb620e}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_aa1465d75c371209b438771118cbb620e}} 
+virtual bool {\bfseries decode\+To\+Pcm} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_aeb0f60d5f339213d0d96e982fd8d9c81}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_aeb0f60d5f339213d0d96e982fd8d9c81}} 
+static bool {\bfseries lazy\+Init} ()
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a94d16f68b3fc40c5c6965dd7a5d37cf0}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a94d16f68b3fc40c5c6965dd7a5d37cf0}} 
+static void {\bfseries destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a844a04e310285939224051031416139f}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a844a04e310285939224051031416139f}} 
+struct mpg123\+\_\+handle\+\_\+struct $\ast$ {\bfseries \+\_\+mpg123handle}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_afb46984384ce8b9caa8516e0a84944ef}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_afb46984384ce8b9caa8516e0a84944ef}} 
+class {\bfseries Audio\+Decoder\+Provider}
+\item 
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_af7bd9270f880d1dc12f5f54d21b08711}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_af7bd9270f880d1dc12f5f54d21b08711}} 
+class {\bfseries Audio\+Decoder\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The class for decoding compressed audio file to P\+CM buffer. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a547b08590805b5f5443e8ba485e271b2}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a547b08590805b5f5443e8ba485e271b2}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}!close@{close}}
+\index{close@{close}!cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes opened audio file. 
+
+\begin{DoxyNote}{Note}
+The method will also be automatically invoked in the destructor. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a89e94516cd7103d98475dc27462a58a7}{cocos2d\+::experimental\+::\+Audio\+Decoder}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adb47b02e2c9774cb069f393c5a63608a}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adb47b02e2c9774cb069f393c5a63608a}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}!open@{open}}
+\index{open@{open}!cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Opens an audio file specified by a file path. 
+
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a27747e5f9671a16852997fe852e28e71}{cocos2d\+::experimental\+::\+Audio\+Decoder}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a9b033167139ff6d094fe27d79a2b78ad}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a9b033167139ff6d094fe27d79a2b78ad}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}!read@{read}}
+\index{read@{read}!cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3\+::read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frames\+To\+Read,  }\item[{char $\ast$}]{pcm\+Buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads audio frames of P\+CM format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames\+To\+Read} & The number of frames excepted to be read. \\
+\hline
+{\em pcm\+Buf} & The buffer to hold the frames to be read, its size should be $>$= $\vert$frames\+To\+Read$\vert$ $\ast$ \+\_\+bytes\+Per\+Frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames actually read, it\textquotesingle{}s probably less than \textquotesingle{}frames\+To\+Read\textquotesingle{}. Returns 0 means reach the end of file. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a952b42c3785402bac2166c8dd1af543c}{cocos2d\+::experimental\+::\+Audio\+Decoder}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a997804dcef5a632730f0efea296374f2}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_a997804dcef5a632730f0efea296374f2}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}!seek@{seek}}
+\index{seek@{seek}!cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+\subsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily bool cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3\+::seek (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets frame offest to be read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Offset} & The frame offest to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise false 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a290db97d8d4b00b6d09e145cd123b58b}{cocos2d\+::experimental\+::\+Audio\+Decoder}.
+
+\mbox{\Hypertarget{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adf8e9914377f0cca2fa45a5741bb20bf}\label{classcocos2d_1_1experimental_1_1AudioDecoderMp3_adf8e9914377f0cca2fa45a5741bb20bf}} 
+\index{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}!tell@{tell}}
+\index{tell@{tell}!cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3@{cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3}}
+\subsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily uint32\+\_\+t cocos2d\+::experimental\+::\+Audio\+Decoder\+Mp3\+::tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tells the current frame offset. 
+
+\begin{DoxyReturn}{Returns}
+The current frame offset. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcocos2d_1_1experimental_1_1AudioDecoder_a6c7f6cb06a8eb9e584ff6097a3f37e95}{cocos2d\+::experimental\+::\+Audio\+Decoder}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/audio/android/Audio\+Decoder\+Mp3.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/cocos/audio/android/Audio\+Decoder\+Mp3.\+cpp\end{DoxyCompactItemize}

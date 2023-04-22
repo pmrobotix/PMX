@@ -1,0 +1,145 @@
+\hypertarget{motor__speedCommand_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+speed\+Command.c File Reference}
+\label{motor__speedCommand_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+speed\+Command.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+speed\+Command.\+c}}
+{\ttfamily \#include \char`\"{}motor\+\_\+speed\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../global.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for motor\+\_\+speed\+Command.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motor__speedCommand_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__speedCommand_8c_a8842b05c1c05f163bd3036b54a3d35d7}{Compute\+Speed\+Command} (\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$out\+\_\+cmd, int32 V0, int32 V\+Goal, int32 dist\+Max, int32 Accel)
+\begin{DoxyCompactList}\small\item\em Create a trajectory for one motor with a trapezoidal speed curve. \end{DoxyCompactList}\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__speedCommand_8c_a2bafca70adf4e52ba696979116bfe759}{Compute\+Speed\+Command\+Time} (\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$out\+\_\+cmd, int32 V0, int32 Time, int32 Accel)
+\begin{DoxyCompactList}\small\item\em Create a trajectory for one motor with a trapezoidal speed curve. \end{DoxyCompactList}\item 
+void \hyperlink{motor__speedCommand_8c_af0e893193ac9fe806dfad537f004802d}{Compute\+Speed\+Command\+Max\+Time} (\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$out\+\_\+cmd, int32 V0, int32 V\+Goal, int32 Accel, int32 Time)
+\begin{DoxyCompactList}\small\item\em Create a trajectory for one motor with a trapezoidal speed curve. \end{DoxyCompactList}\item 
+void \hyperlink{motor__speedCommand_8c_acc79637d9d8be0dc46a04daa4958d309}{Load\+Speed\+Command} (\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$out\+\_\+cmd, int32 last\+Pos, int32 period\+Nb)
+\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON B\+O\+OL \hyperlink{motor__speedCommand_8c_a85566a8292f433ad139342e60ec127a5}{Get\+Speed\+Order} (\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$speed\+Cmd, uint32 PeriodN, int32 $\ast$out\+\_\+order)
+\begin{DoxyCompactList}\small\item\em Compute the current order to apply on motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motor__speedCommand_8c_a8842b05c1c05f163bd3036b54a3d35d7}\label{motor__speedCommand_8c_a8842b05c1c05f163bd3036b54a3d35d7}} 
+\index{motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}!Compute\+Speed\+Command@{Compute\+Speed\+Command}}
+\index{Compute\+Speed\+Command@{Compute\+Speed\+Command}!motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}}
+\subsubsection{\texorpdfstring{Compute\+Speed\+Command()}{ComputeSpeedCommand()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void Compute\+Speed\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$}]{out\+\_\+command,  }\item[{int32}]{V0,  }\item[{int32}]{V\+Goal,  }\item[{int32}]{dist\+Max,  }\item[{int32}]{Accel }\end{DoxyParamCaption})}
+
+
+
+Create a trajectory for one motor with a trapezoidal speed curve. 
+
+The trajectory start with a speed=\textquotesingle{}V0\textquotesingle{} then accelerate with a rate of \textquotesingle{}Accel\textquotesingle{} until it reaches speed=\textquotesingle{}V\+Goal\textquotesingle{}, then when the total ran distance is equal to dist\+Max, the motor stops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+command} & Result of the computation \\
+\hline
+{\em V0} & \hyperlink{classSpeed}{Speed} at the start of the command \\
+\hline
+{\em V\+Goal} & \hyperlink{classSpeed}{Speed} to attain in v\+Tops/sample \\
+\hline
+{\em dist\+Max} & Maximum distance to run in v\+Tops \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} in v\+Tops/sample$^\wedge$2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__speedCommand_8c_af0e893193ac9fe806dfad537f004802d}\label{motor__speedCommand_8c_af0e893193ac9fe806dfad537f004802d}} 
+\index{motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}!Compute\+Speed\+Command\+Max\+Time@{Compute\+Speed\+Command\+Max\+Time}}
+\index{Compute\+Speed\+Command\+Max\+Time@{Compute\+Speed\+Command\+Max\+Time}!motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}}
+\subsubsection{\texorpdfstring{Compute\+Speed\+Command\+Max\+Time()}{ComputeSpeedCommandMaxTime()}}
+{\footnotesize\ttfamily void Compute\+Speed\+Command\+Max\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$}]{out\+\_\+command,  }\item[{int32}]{V0,  }\item[{int32}]{V\+Goal,  }\item[{int32}]{Accel,  }\item[{int32}]{Time }\end{DoxyParamCaption})}
+
+
+
+Create a trajectory for one motor with a trapezoidal speed curve. 
+
+The trajectory start with a speed=\textquotesingle{}V0\textquotesingle{} then accelerate with a rate of \textquotesingle{}Accel\textquotesingle{} but stop after \textquotesingle{}Time\textquotesingle{} periods
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+command} & Result of the computation \\
+\hline
+{\em V0} & \hyperlink{classSpeed}{Speed} at the start of the command \\
+\hline
+{\em Time} & Number of period of the acceleration \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} in v\+Tops/sample$^\wedge$2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__speedCommand_8c_a2bafca70adf4e52ba696979116bfe759}\label{motor__speedCommand_8c_a2bafca70adf4e52ba696979116bfe759}} 
+\index{motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}!Compute\+Speed\+Command\+Time@{Compute\+Speed\+Command\+Time}}
+\index{Compute\+Speed\+Command\+Time@{Compute\+Speed\+Command\+Time}!motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}}
+\subsubsection{\texorpdfstring{Compute\+Speed\+Command\+Time()}{ComputeSpeedCommandTime()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void Compute\+Speed\+Command\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$}]{out\+\_\+command,  }\item[{int32}]{V0,  }\item[{int32}]{Time,  }\item[{int32}]{Accel }\end{DoxyParamCaption})}
+
+
+
+Create a trajectory for one motor with a trapezoidal speed curve. 
+
+The trajectory start with a speed=\textquotesingle{}V0\textquotesingle{} then accelerate with a rate of \textquotesingle{}Accel\textquotesingle{} during \textquotesingle{}Time\textquotesingle{} periods
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+command} & Result of the computation \\
+\hline
+{\em V0} & \hyperlink{classSpeed}{Speed} at the start of the command \\
+\hline
+{\em Time} & Number of period of the acceleration \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} in v\+Tops/sample$^\wedge$2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__speedCommand_8c_a85566a8292f433ad139342e60ec127a5}\label{motor__speedCommand_8c_a85566a8292f433ad139342e60ec127a5}} 
+\index{motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}!Get\+Speed\+Order@{Get\+Speed\+Order}}
+\index{Get\+Speed\+Order@{Get\+Speed\+Order}!motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}}
+\subsubsection{\texorpdfstring{Get\+Speed\+Order()}{GetSpeedOrder()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON B\+O\+OL Get\+Speed\+Order (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$}]{speed\+Command,  }\item[{uint32}]{Tn,  }\item[{int32 $\ast$}]{out\+\_\+order }\end{DoxyParamCaption})}
+
+
+
+Compute the current order to apply on motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Id number of motor \\
+\hline
+{\em Tn} & Motion control period number \\
+\hline
+{\em order} & Output of the computation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the path completed ? 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motor__speedCommand_8c_acc79637d9d8be0dc46a04daa4958d309}\label{motor__speedCommand_8c_acc79637d9d8be0dc46a04daa4958d309}} 
+\index{motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}!Load\+Speed\+Command@{Load\+Speed\+Command}}
+\index{Load\+Speed\+Command@{Load\+Speed\+Command}!motor\+\_\+speed\+Command.\+c@{motor\+\_\+speed\+Command.\+c}}
+\subsubsection{\texorpdfstring{Load\+Speed\+Command()}{LoadSpeedCommand()}}
+{\footnotesize\ttfamily void Load\+Speed\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{structSpeedCommand}{Speed\+Command} $\ast$}]{out\+\_\+cmd,  }\item[{int32}]{last\+Pos,  }\item[{int32}]{period\+Nb }\end{DoxyParamCaption})}
+
+Configure the command for the current configuration of the motor. You must execute this function before you launch the command. 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+cmd} & Result of the computation \\
+\hline
+{\em last\+Pos} & Last position of motor \\
+\hline
+{\em period\+Nb} & Current integration period number \\
+\hline
+\end{DoxyParams}

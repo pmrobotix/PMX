@@ -1,0 +1,176 @@
+\hypertarget{structlws__http__mount}{}\section{lws\+\_\+http\+\_\+mount Struct Reference}
+\label{structlws__http__mount}\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+
+
+{\ttfamily \#include $<$libwebsockets.\+h$>$}
+
+
+
+Collaboration diagram for lws\+\_\+http\+\_\+mount\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{structlws__http__mount__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const struct \hyperlink{structlws__http__mount}{lws\+\_\+http\+\_\+mount} $\ast$ \hyperlink{structlws__http__mount_aeb1b5e12e879ae64c14b30cffdf8d4e7}{mount\+\_\+next}
+\item 
+const char $\ast$ \hyperlink{structlws__http__mount_ac758fe692dce91b4232430caac7314c1}{mountpoint}
+\item 
+const char $\ast$ \hyperlink{structlws__http__mount_ada02a69fe663a4f6be10ac9925c8dd72}{origin}
+\item 
+const char $\ast$ \hyperlink{structlws__http__mount_adbe95138563f177bfe3dd8abb268c396}{def}
+\item 
+const char $\ast$ \hyperlink{structlws__http__mount_a5f32a7b69a080d9df9d96490523cf55d}{protocol}
+\item 
+const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ \hyperlink{structlws__http__mount_a54356a84ec5f290ac6e5b06ba6fce33f}{cgienv}
+\item 
+const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ \hyperlink{structlws__http__mount_a73455cf51d91943f6302c0993f66ddd8}{extra\+\_\+mimetypes}
+\item 
+const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ \hyperlink{structlws__http__mount_ac2244552114c206f814cb72a59fc302f}{interpret}
+\item 
+int \hyperlink{structlws__http__mount_a4a7239d6d4c03986e6e1a72abb6c83aa}{cgi\+\_\+timeout}
+\item 
+int \hyperlink{structlws__http__mount_a4283e30ea89d27ae7d061ad760d1d146}{cache\+\_\+max\+\_\+age}
+\item 
+unsigned int \hyperlink{structlws__http__mount_a614364c770b0bd4db464ad65cddab477}{auth\+\_\+mask}
+\item 
+unsigned int \hyperlink{structlws__http__mount_a8316dd183ffbef50419a5a4968d35d84}{cache\+\_\+reusable}\+:1
+\item 
+unsigned int \hyperlink{structlws__http__mount_ae137203040c6153694bd88a708da5395}{cache\+\_\+revalidate}\+:1
+\item 
+unsigned int \hyperlink{structlws__http__mount_aabec1a326780aafe11b977000983be0c}{cache\+\_\+intermediaries}\+:1
+\item 
+unsigned char \hyperlink{structlws__http__mount_a6a9b1492a0b9749e39bd19932717a0b7}{origin\+\_\+protocol}
+\item 
+unsigned char \hyperlink{structlws__http__mount_ac8489b60b8f969eb19c9abbdeac90743}{mountpoint\+\_\+len}
+\item 
+const char $\ast$ \hyperlink{structlws__http__mount_ae7abd0042521f2c62c8caf875ceddb37}{basic\+\_\+auth\+\_\+login\+\_\+file}
+\item 
+void $\ast$ \hyperlink{structlws__http__mount_a257fe3e8cea0b544048753249da68e0e}{\+\_\+unused} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+struct \hyperlink{structlws__http__mount}{lws\+\_\+http\+\_\+mount}
+
+arguments for mounting something in a vhost\textquotesingle{}s url namespace 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structlws__http__mount_a257fe3e8cea0b544048753249da68e0e}\label{structlws__http__mount_a257fe3e8cea0b544048753249da68e0e}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!\+\_\+unused@{\+\_\+unused}}
+\index{\+\_\+unused@{\+\_\+unused}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{\+\_\+unused}{\_unused}}
+{\footnotesize\ttfamily void $\ast$ lws\+\_\+http\+\_\+mount\+::\+\_\+unused}
+
+dummy \mbox{\Hypertarget{structlws__http__mount_a614364c770b0bd4db464ad65cddab477}\label{structlws__http__mount_a614364c770b0bd4db464ad65cddab477}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!auth\+\_\+mask@{auth\+\_\+mask}}
+\index{auth\+\_\+mask@{auth\+\_\+mask}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{auth\+\_\+mask}{auth\_mask}}
+{\footnotesize\ttfamily unsigned int lws\+\_\+http\+\_\+mount\+::auth\+\_\+mask}
+
+bits set here must be set for authorized client session \mbox{\Hypertarget{structlws__http__mount_ae7abd0042521f2c62c8caf875ceddb37}\label{structlws__http__mount_ae7abd0042521f2c62c8caf875ceddb37}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!basic\+\_\+auth\+\_\+login\+\_\+file@{basic\+\_\+auth\+\_\+login\+\_\+file}}
+\index{basic\+\_\+auth\+\_\+login\+\_\+file@{basic\+\_\+auth\+\_\+login\+\_\+file}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{basic\+\_\+auth\+\_\+login\+\_\+file}{basic\_auth\_login\_file}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+http\+\_\+mount\+::basic\+\_\+auth\+\_\+login\+\_\+file}
+
+N\+U\+LL, or filepath to use to check basic auth logins against \mbox{\Hypertarget{structlws__http__mount_aabec1a326780aafe11b977000983be0c}\label{structlws__http__mount_aabec1a326780aafe11b977000983be0c}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cache\+\_\+intermediaries@{cache\+\_\+intermediaries}}
+\index{cache\+\_\+intermediaries@{cache\+\_\+intermediaries}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cache\+\_\+intermediaries}{cache\_intermediaries}}
+{\footnotesize\ttfamily unsigned int lws\+\_\+http\+\_\+mount\+::cache\+\_\+intermediaries}
+
+set if intermediaries are allowed to cache \mbox{\Hypertarget{structlws__http__mount_a4283e30ea89d27ae7d061ad760d1d146}\label{structlws__http__mount_a4283e30ea89d27ae7d061ad760d1d146}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cache\+\_\+max\+\_\+age@{cache\+\_\+max\+\_\+age}}
+\index{cache\+\_\+max\+\_\+age@{cache\+\_\+max\+\_\+age}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cache\+\_\+max\+\_\+age}{cache\_max\_age}}
+{\footnotesize\ttfamily int lws\+\_\+http\+\_\+mount\+::cache\+\_\+max\+\_\+age}
+
+max-\/age for reuse of client cache of files, seconds \mbox{\Hypertarget{structlws__http__mount_a8316dd183ffbef50419a5a4968d35d84}\label{structlws__http__mount_a8316dd183ffbef50419a5a4968d35d84}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cache\+\_\+reusable@{cache\+\_\+reusable}}
+\index{cache\+\_\+reusable@{cache\+\_\+reusable}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cache\+\_\+reusable}{cache\_reusable}}
+{\footnotesize\ttfamily unsigned int lws\+\_\+http\+\_\+mount\+::cache\+\_\+reusable}
+
+set if client cache may reuse this \mbox{\Hypertarget{structlws__http__mount_ae137203040c6153694bd88a708da5395}\label{structlws__http__mount_ae137203040c6153694bd88a708da5395}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cache\+\_\+revalidate@{cache\+\_\+revalidate}}
+\index{cache\+\_\+revalidate@{cache\+\_\+revalidate}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cache\+\_\+revalidate}{cache\_revalidate}}
+{\footnotesize\ttfamily unsigned int lws\+\_\+http\+\_\+mount\+::cache\+\_\+revalidate}
+
+set if client cache should revalidate on use \mbox{\Hypertarget{structlws__http__mount_a4a7239d6d4c03986e6e1a72abb6c83aa}\label{structlws__http__mount_a4a7239d6d4c03986e6e1a72abb6c83aa}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cgi\+\_\+timeout@{cgi\+\_\+timeout}}
+\index{cgi\+\_\+timeout@{cgi\+\_\+timeout}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cgi\+\_\+timeout}{cgi\_timeout}}
+{\footnotesize\ttfamily int lws\+\_\+http\+\_\+mount\+::cgi\+\_\+timeout}
+
+seconds cgi is allowed to live, if cgi\+://mount type \mbox{\Hypertarget{structlws__http__mount_a54356a84ec5f290ac6e5b06ba6fce33f}\label{structlws__http__mount_a54356a84ec5f290ac6e5b06ba6fce33f}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!cgienv@{cgienv}}
+\index{cgienv@{cgienv}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{cgienv}{cgienv}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ lws\+\_\+http\+\_\+mount\+::cgienv}
+
+optional linked-\/list of cgi options. These are created as environment variables for the cgi process \mbox{\Hypertarget{structlws__http__mount_adbe95138563f177bfe3dd8abb268c396}\label{structlws__http__mount_adbe95138563f177bfe3dd8abb268c396}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!def@{def}}
+\index{def@{def}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{def}{def}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+http\+\_\+mount\+::def}
+
+default target, eg, \char`\"{}index.\+html\char`\"{} \mbox{\Hypertarget{structlws__http__mount_a73455cf51d91943f6302c0993f66ddd8}\label{structlws__http__mount_a73455cf51d91943f6302c0993f66ddd8}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!extra\+\_\+mimetypes@{extra\+\_\+mimetypes}}
+\index{extra\+\_\+mimetypes@{extra\+\_\+mimetypes}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{extra\+\_\+mimetypes}{extra\_mimetypes}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ lws\+\_\+http\+\_\+mount\+::extra\+\_\+mimetypes}
+
+optional linked-\/list of mimetype mappings \mbox{\Hypertarget{structlws__http__mount_ac2244552114c206f814cb72a59fc302f}\label{structlws__http__mount_ac2244552114c206f814cb72a59fc302f}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!interpret@{interpret}}
+\index{interpret@{interpret}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{interpret}{interpret}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__protocol__vhost__options}{lws\+\_\+protocol\+\_\+vhost\+\_\+options} $\ast$ lws\+\_\+http\+\_\+mount\+::interpret}
+
+optional linked-\/list of files to be interpreted \mbox{\Hypertarget{structlws__http__mount_aeb1b5e12e879ae64c14b30cffdf8d4e7}\label{structlws__http__mount_aeb1b5e12e879ae64c14b30cffdf8d4e7}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!mount\+\_\+next@{mount\+\_\+next}}
+\index{mount\+\_\+next@{mount\+\_\+next}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{mount\+\_\+next}{mount\_next}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__http__mount}{lws\+\_\+http\+\_\+mount} $\ast$ lws\+\_\+http\+\_\+mount\+::mount\+\_\+next}
+
+pointer to next struct \hyperlink{structlws__http__mount}{lws\+\_\+http\+\_\+mount} \mbox{\Hypertarget{structlws__http__mount_ac758fe692dce91b4232430caac7314c1}\label{structlws__http__mount_ac758fe692dce91b4232430caac7314c1}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!mountpoint@{mountpoint}}
+\index{mountpoint@{mountpoint}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{mountpoint}{mountpoint}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+http\+\_\+mount\+::mountpoint}
+
+mountpoint in http pathspace, eg, \char`\"{}/\char`\"{} \mbox{\Hypertarget{structlws__http__mount_ac8489b60b8f969eb19c9abbdeac90743}\label{structlws__http__mount_ac8489b60b8f969eb19c9abbdeac90743}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!mountpoint\+\_\+len@{mountpoint\+\_\+len}}
+\index{mountpoint\+\_\+len@{mountpoint\+\_\+len}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{mountpoint\+\_\+len}{mountpoint\_len}}
+{\footnotesize\ttfamily unsigned char lws\+\_\+http\+\_\+mount\+::mountpoint\+\_\+len}
+
+length of mountpoint string \mbox{\Hypertarget{structlws__http__mount_ada02a69fe663a4f6be10ac9925c8dd72}\label{structlws__http__mount_ada02a69fe663a4f6be10ac9925c8dd72}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!origin@{origin}}
+\index{origin@{origin}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+http\+\_\+mount\+::origin}
+
+path to be mounted, eg, \char`\"{}/var/www/warmcat.\+com\char`\"{} \mbox{\Hypertarget{structlws__http__mount_a6a9b1492a0b9749e39bd19932717a0b7}\label{structlws__http__mount_a6a9b1492a0b9749e39bd19932717a0b7}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!origin\+\_\+protocol@{origin\+\_\+protocol}}
+\index{origin\+\_\+protocol@{origin\+\_\+protocol}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{origin\+\_\+protocol}{origin\_protocol}}
+{\footnotesize\ttfamily unsigned char lws\+\_\+http\+\_\+mount\+::origin\+\_\+protocol}
+
+one of enum lws\+\_\+mount\+\_\+protocols \mbox{\Hypertarget{structlws__http__mount_a5f32a7b69a080d9df9d96490523cf55d}\label{structlws__http__mount_a5f32a7b69a080d9df9d96490523cf55d}} 
+\index{lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}!protocol@{protocol}}
+\index{protocol@{protocol}!lws\+\_\+http\+\_\+mount@{lws\+\_\+http\+\_\+mount}}
+\subsubsection{\texorpdfstring{protocol}{protocol}}
+{\footnotesize\ttfamily const char $\ast$ lws\+\_\+http\+\_\+mount\+::protocol}
+
+\char`\"{}protocol-\/name\char`\"{} to handle mount 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/websockets/include/android/\hyperlink{_2cocos2d_2external_2websockets_2include_2android_2libwebsockets_8h}{libwebsockets.\+h}\end{DoxyCompactItemize}

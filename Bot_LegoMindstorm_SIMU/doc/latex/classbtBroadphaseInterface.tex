@@ -1,0 +1,120 @@
+\hypertarget{classbtBroadphaseInterface}{}\section{bt\+Broadphase\+Interface Class Reference}
+\label{classbtBroadphaseInterface}\index{bt\+Broadphase\+Interface@{bt\+Broadphase\+Interface}}
+
+
+{\ttfamily \#include $<$bt\+Broadphase\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Broadphase\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbtBroadphaseInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_abf0cb7dc11f672c4b5d65ef3eee6b77d}\label{classbtBroadphaseInterface_abf0cb7dc11f672c4b5d65ef3eee6b77d}} 
+virtual bt\+Broadphase\+Proxy $\ast$ {\bfseries create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a70f3806d52b97251af59b498947d730d}\label{classbtBroadphaseInterface_a70f3806d52b97251af59b498947d730d}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a5dafdb7e104b1634202d1b21668a5aa7}\label{classbtBroadphaseInterface_a5dafdb7e104b1634202d1b21668a5aa7}} 
+virtual void {\bfseries set\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a8fc16d360eea987b878ab7fd2efcabe3}\label{classbtBroadphaseInterface_a8fc16d360eea987b878ab7fd2efcabe3}} 
+virtual void {\bfseries get\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const =0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a516bf7f981dc4540c32c67820de64e0c}\label{classbtBroadphaseInterface_a516bf7f981dc4540c32c67820de64e0c}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a19d8d870968460c4a191937a3bb8ecc4}\label{classbtBroadphaseInterface_a19d8d870968460c4a191937a3bb8ecc4}} 
+virtual void {\bfseries aabb\+Test} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback} \&callback)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}\label{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}} 
+virtual void \hyperlink{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_ab571b271322bd5a114fe737b30df5b52}\label{classbtBroadphaseInterface_ab571b271322bd5a114fe737b30df5b52}} 
+virtual \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} ()=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a80c39996491df3b0a5bf927d5837c966}\label{classbtBroadphaseInterface_a80c39996491df3b0a5bf927d5837c966}} 
+virtual const \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} () const =0
+\item 
+virtual void \hyperlink{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}{get\+Broadphase\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const =0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}\label{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}} 
+virtual void \hyperlink{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_aa8aa8cfee6492f59c54ca1827a072554}\label{classbtBroadphaseInterface_aa8aa8cfee6492f59c54ca1827a072554}} 
+virtual void {\bfseries print\+Stats} ()=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_abf0cb7dc11f672c4b5d65ef3eee6b77d}\label{classbtBroadphaseInterface_abf0cb7dc11f672c4b5d65ef3eee6b77d}} 
+virtual bt\+Broadphase\+Proxy $\ast$ {\bfseries create\+Proxy} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, int shape\+Type, void $\ast$user\+Ptr, short int collision\+Filter\+Group, short int collision\+Filter\+Mask, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, void $\ast$multi\+Sap\+Proxy)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a70f3806d52b97251af59b498947d730d}\label{classbtBroadphaseInterface_a70f3806d52b97251af59b498947d730d}} 
+virtual void {\bfseries destroy\+Proxy} (bt\+Broadphase\+Proxy $\ast$proxy, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a5dafdb7e104b1634202d1b21668a5aa7}\label{classbtBroadphaseInterface_a5dafdb7e104b1634202d1b21668a5aa7}} 
+virtual void {\bfseries set\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a8fc16d360eea987b878ab7fd2efcabe3}\label{classbtBroadphaseInterface_a8fc16d360eea987b878ab7fd2efcabe3}} 
+virtual void {\bfseries get\+Aabb} (bt\+Broadphase\+Proxy $\ast$proxy, bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const =0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a516bf7f981dc4540c32c67820de64e0c}\label{classbtBroadphaseInterface_a516bf7f981dc4540c32c67820de64e0c}} 
+virtual void {\bfseries ray\+Test} (const bt\+Vector3 \&ray\+From, const bt\+Vector3 \&ray\+To, \hyperlink{structbtBroadphaseRayCallback}{bt\+Broadphase\+Ray\+Callback} \&ray\+Callback, const bt\+Vector3 \&aabb\+Min=bt\+Vector3(0, 0, 0), const bt\+Vector3 \&aabb\+Max=bt\+Vector3(0, 0, 0))=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a19d8d870968460c4a191937a3bb8ecc4}\label{classbtBroadphaseInterface_a19d8d870968460c4a191937a3bb8ecc4}} 
+virtual void {\bfseries aabb\+Test} (const bt\+Vector3 \&aabb\+Min, const bt\+Vector3 \&aabb\+Max, \hyperlink{structbtBroadphaseAabbCallback}{bt\+Broadphase\+Aabb\+Callback} \&callback)=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}\label{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}} 
+virtual void \hyperlink{classbtBroadphaseInterface_a27e29cb6fd31e5fe626e7ba973e67ddb}{calculate\+Overlapping\+Pairs} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)=0
+\begin{DoxyCompactList}\small\item\em calculate\+Overlapping\+Pairs is optional\+: incremental algorithms (sweep and prune) might do it during the set aabb \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_ab571b271322bd5a114fe737b30df5b52}\label{classbtBroadphaseInterface_ab571b271322bd5a114fe737b30df5b52}} 
+virtual \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} ()=0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a80c39996491df3b0a5bf927d5837c966}\label{classbtBroadphaseInterface_a80c39996491df3b0a5bf927d5837c966}} 
+virtual const \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} $\ast$ {\bfseries get\+Overlapping\+Pair\+Cache} () const =0
+\item 
+virtual void \hyperlink{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}{get\+Broadphase\+Aabb} (bt\+Vector3 \&aabb\+Min, bt\+Vector3 \&aabb\+Max) const =0
+\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}\label{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}} 
+virtual void \hyperlink{classbtBroadphaseInterface_a8135b10b29bced0b1c62ba6be060dc29}{reset\+Pool} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em reset broadphase internal structures, to ensure determinism/reproducability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbtBroadphaseInterface_aa8aa8cfee6492f59c54ca1827a072554}\label{classbtBroadphaseInterface_aa8aa8cfee6492f59c54ca1827a072554}} 
+virtual void {\bfseries print\+Stats} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbtBroadphaseInterface}{bt\+Broadphase\+Interface} class provides an interface to detect aabb-\/overlapping object pairs. Some implementations for this broadphase interface include \hyperlink{classbtAxisSweep3}{bt\+Axis\+Sweep3}, \hyperlink{classbt32BitAxisSweep3}{bt32\+Bit\+Axis\+Sweep3} and \hyperlink{structbtDbvtBroadphase}{bt\+Dbvt\+Broadphase}. The actual overlapping pair management, storage, adding and removing of pairs is dealt by the \hyperlink{classbtOverlappingPairCache}{bt\+Overlapping\+Pair\+Cache} class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}\label{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}} 
+\index{bt\+Broadphase\+Interface@{bt\+Broadphase\+Interface}!get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}}
+\index{get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}!bt\+Broadphase\+Interface@{bt\+Broadphase\+Interface}}
+\subsubsection{\texorpdfstring{get\+Broadphase\+Aabb()}{getBroadphaseAabb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void bt\+Broadphase\+Interface\+::get\+Broadphase\+Aabb (\begin{DoxyParamCaption}\item[{bt\+Vector3 \&}]{aabb\+Min,  }\item[{bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get\+Aabb returns the axis aligned bounding box in the \textquotesingle{}global\textquotesingle{} coordinate frame will add some transform later 
+
+Implemented in \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned short int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned short int $>$}, \hyperlink{classbtSimpleBroadphase_a4e8e5de5df6d3125631e3d94a67ac4d2}{bt\+Simple\+Broadphase}, \hyperlink{classbtSimpleBroadphase_a4e8e5de5df6d3125631e3d94a67ac4d2}{bt\+Simple\+Broadphase}, \hyperlink{classbtMultiSapBroadphase_a37a11b7ee2889d80adaf5add6fffe782}{bt\+Multi\+Sap\+Broadphase}, \hyperlink{classbtMultiSapBroadphase_a37a11b7ee2889d80adaf5add6fffe782}{bt\+Multi\+Sap\+Broadphase}, \hyperlink{structbtDbvtBroadphase_acbd595a9434b6bb045e15ab0d36120e3}{bt\+Dbvt\+Broadphase}, and \hyperlink{structbtDbvtBroadphase_ab546a1950f0f0f30dcc897b35e656e0b}{bt\+Dbvt\+Broadphase}.
+
+\mbox{\Hypertarget{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}\label{classbtBroadphaseInterface_ab5af9e26414f5a72a76040b8fab4d9e2}} 
+\index{bt\+Broadphase\+Interface@{bt\+Broadphase\+Interface}!get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}}
+\index{get\+Broadphase\+Aabb@{get\+Broadphase\+Aabb}!bt\+Broadphase\+Interface@{bt\+Broadphase\+Interface}}
+\subsubsection{\texorpdfstring{get\+Broadphase\+Aabb()}{getBroadphaseAabb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void bt\+Broadphase\+Interface\+::get\+Broadphase\+Aabb (\begin{DoxyParamCaption}\item[{bt\+Vector3 \&}]{aabb\+Min,  }\item[{bt\+Vector3 \&}]{aabb\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+get\+Aabb returns the axis aligned bounding box in the \textquotesingle{}global\textquotesingle{} coordinate frame will add some transform later 
+
+Implemented in \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ B\+P\+\_\+\+F\+P\+\_\+\+I\+N\+T\+\_\+\+T\+Y\+P\+E $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned short int $>$}, \hyperlink{classbtAxisSweep3Internal_ad1e0037e1ed62ef5049389bb4e8fd5b5}{bt\+Axis\+Sweep3\+Internal$<$ unsigned short int $>$}, \hyperlink{classbtSimpleBroadphase_a4e8e5de5df6d3125631e3d94a67ac4d2}{bt\+Simple\+Broadphase}, \hyperlink{classbtSimpleBroadphase_a4e8e5de5df6d3125631e3d94a67ac4d2}{bt\+Simple\+Broadphase}, \hyperlink{classbtMultiSapBroadphase_a37a11b7ee2889d80adaf5add6fffe782}{bt\+Multi\+Sap\+Broadphase}, \hyperlink{classbtMultiSapBroadphase_a37a11b7ee2889d80adaf5add6fffe782}{bt\+Multi\+Sap\+Broadphase}, \hyperlink{structbtDbvtBroadphase_acbd595a9434b6bb045e15ab0d36120e3}{bt\+Dbvt\+Broadphase}, and \hyperlink{structbtDbvtBroadphase_ab546a1950f0f0f30dcc897b35e656e0b}{bt\+Dbvt\+Broadphase}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Broadphase\+Collision/bt\+Broadphase\+Interface.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{structlws__fop__fd}{}\section{lws\+\_\+fop\+\_\+fd Struct Reference}
+\label{structlws__fop__fd}\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+
+
+Collaboration diagram for lws\+\_\+fop\+\_\+fd\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{structlws__fop__fd__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lws\+\_\+filefd\+\_\+type \hyperlink{structlws__fop__fd_ab4e9b5068543cffc7dffd342d98e5c7b}{fd}
+\item 
+const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$ \hyperlink{structlws__fop__fd_a5c16957d3ccb44ee5c9b5cb8deeee481}{fops}
+\item 
+void $\ast$ \hyperlink{structlws__fop__fd_ac9ca4e125bbe190173c7e2e8e61ef6e7}{filesystem\+\_\+priv}
+\item 
+lws\+\_\+filepos\+\_\+t \hyperlink{structlws__fop__fd_a161e1dc7bff7120ab71198fd24942703}{pos}
+\item 
+lws\+\_\+filepos\+\_\+t \hyperlink{structlws__fop__fd_aba3e39c1818d8a221efddddb98e884c4}{len}
+\item 
+lws\+\_\+fop\+\_\+flags\+\_\+t \hyperlink{structlws__fop__fd_a70784e500e0c1bdb5f4d8bcc46b97926}{flags}
+\item 
+uint32\+\_\+t \hyperlink{structlws__fop__fd_aa2f6af8b19612dafd51f24b855c71ba5}{mod\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structlws__fop__fd_ab4e9b5068543cffc7dffd342d98e5c7b}\label{structlws__fop__fd_ab4e9b5068543cffc7dffd342d98e5c7b}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!fd@{fd}}
+\index{fd@{fd}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily lws\+\_\+filefd\+\_\+type lws\+\_\+fop\+\_\+fd\+::fd}
+
+real file descriptor related to the file... \mbox{\Hypertarget{structlws__fop__fd_ac9ca4e125bbe190173c7e2e8e61ef6e7}\label{structlws__fop__fd_ac9ca4e125bbe190173c7e2e8e61ef6e7}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!filesystem\+\_\+priv@{filesystem\+\_\+priv}}
+\index{filesystem\+\_\+priv@{filesystem\+\_\+priv}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{filesystem\+\_\+priv}{filesystem\_priv}}
+{\footnotesize\ttfamily void $\ast$ lws\+\_\+fop\+\_\+fd\+::filesystem\+\_\+priv}
+
+ignored by lws; owned by the fops handlers \mbox{\Hypertarget{structlws__fop__fd_a70784e500e0c1bdb5f4d8bcc46b97926}\label{structlws__fop__fd_a70784e500e0c1bdb5f4d8bcc46b97926}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!flags@{flags}}
+\index{flags@{flags}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily lws\+\_\+fop\+\_\+flags\+\_\+t lws\+\_\+fop\+\_\+fd\+::flags}
+
+copy of the returned flags \mbox{\Hypertarget{structlws__fop__fd_a5c16957d3ccb44ee5c9b5cb8deeee481}\label{structlws__fop__fd_a5c16957d3ccb44ee5c9b5cb8deeee481}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!fops@{fops}}
+\index{fops@{fops}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{fops}{fops}}
+{\footnotesize\ttfamily const struct \hyperlink{structlws__plat__file__ops}{lws\+\_\+plat\+\_\+file\+\_\+ops} $\ast$ lws\+\_\+fop\+\_\+fd\+::fops}
+
+fops that apply to this fop\+\_\+fd \mbox{\Hypertarget{structlws__fop__fd_aba3e39c1818d8a221efddddb98e884c4}\label{structlws__fop__fd_aba3e39c1818d8a221efddddb98e884c4}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!len@{len}}
+\index{len@{len}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily lws\+\_\+filepos\+\_\+t lws\+\_\+fop\+\_\+fd\+::len}
+
+generic \char`\"{}length of file\char`\"{} \mbox{\Hypertarget{structlws__fop__fd_aa2f6af8b19612dafd51f24b855c71ba5}\label{structlws__fop__fd_aa2f6af8b19612dafd51f24b855c71ba5}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!mod\+\_\+time@{mod\+\_\+time}}
+\index{mod\+\_\+time@{mod\+\_\+time}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{mod\+\_\+time}{mod\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t lws\+\_\+fop\+\_\+fd\+::mod\+\_\+time}
+
+optional \char`\"{}modification time of file\char`\"{}, only valid if .open() set the L\+W\+S\+\_\+\+F\+O\+P\+\_\+\+F\+L\+A\+G\+\_\+\+M\+O\+D\+\_\+\+T\+I\+M\+E\+\_\+\+V\+A\+L\+ID flag \mbox{\Hypertarget{structlws__fop__fd_a161e1dc7bff7120ab71198fd24942703}\label{structlws__fop__fd_a161e1dc7bff7120ab71198fd24942703}} 
+\index{lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}!pos@{pos}}
+\index{pos@{pos}!lws\+\_\+fop\+\_\+fd@{lws\+\_\+fop\+\_\+fd}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily lws\+\_\+filepos\+\_\+t lws\+\_\+fop\+\_\+fd\+::pos}
+
+generic \char`\"{}position in file\char`\"{} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/external/websockets/include/android/\hyperlink{_2cocos2d_2external_2websockets_2include_2android_2libwebsockets_8h}{libwebsockets.\+h}\end{DoxyCompactItemize}

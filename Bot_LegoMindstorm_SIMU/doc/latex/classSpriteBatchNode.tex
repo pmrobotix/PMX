@@ -1,0 +1,1027 @@
+\hypertarget{classSpriteBatchNode}{}\section{Sprite\+Batch\+Node Class Reference}
+\label{classSpriteBatchNode}\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+
+
+{\ttfamily \#include $<$C\+C\+Sprite\+Batch\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Sprite\+Batch\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classSpriteBatchNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sprite\+Batch\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSpriteBatchNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}{get\+Texture\+Atlas} ()
+\item 
+void \hyperlink{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}{set\+Texture\+Atlas} (\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas)
+\item 
+const std\+::vector$<$ \hyperlink{classSprite}{Sprite} $\ast$ $>$ \& \hyperlink{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}{get\+Descendants} () const
+\item 
+void \hyperlink{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}{increase\+Atlas\+Capacity} ()
+\item 
+void \hyperlink{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}{remove\+Child\+At\+Index} (ssize\+\_\+t index, bool do\+Cleanup)
+\item 
+void \hyperlink{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}{append\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+void \hyperlink{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}{remove\+Sprite\+From\+Atlas} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}{rebuild\+Index\+In\+Order} (\hyperlink{classSprite}{Sprite} $\ast$parent, ssize\+\_\+t index)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}{highest\+Atlas\+Index\+In\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}{lowest\+Atlas\+Index\+In\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}{atlas\+Index\+For\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite, int z)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a46297ebf702382d09be8ab76b776613b}\label{classSpriteBatchNode_a46297ebf702382d09be8ab76b776613b}} 
+void {\bfseries reorder\+Batch} (bool reorder)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_aa6c006fdfc877d41758b615cf464ca59}\label{classSpriteBatchNode_aa6c006fdfc877d41758b615cf464ca59}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a6986dd44726ca5b069a465814c4e3ad7}\label{classSpriteBatchNode_a6986dd44726ca5b069a465814c4e3ad7}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_aea7694e73e37e957179a5d82565348e9}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classSpriteBatchNode_a3ea94541fdb496876c1397aabf991474}{get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_afcdd1f0032ac902a52256fee7687cc36}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a4d84535b9cdc98d8cfbb8d978f84fc93}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a9f4e7d0be49a3c044424624ea283c301}{reorder\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a7bebdfd28805ed83d0a78b49f8b52803}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a1b49c2764f43641c912c66c2d58b85a0}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_af2a850d2c664d2fd1a796601129a0413}{sort\+All\+Children} () override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_afa716d3c463c59a6748d68f24045ba9f}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual std\+::string \hyperlink{classSpriteBatchNode_abaf755bc79646464f59b68b5a4fdc68c}{get\+Description} () const override
+\item 
+void \hyperlink{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}{insert\+Quad\+From\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_ac2dd3c8c6a1e38f1c31f2f575287edb4}\label{classSpriteBatchNode_ac2dd3c8c6a1e38f1c31f2f575287edb4}} 
+\hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ {\bfseries add\+Sprite\+Without\+Quad} (\hyperlink{classSprite}{Sprite} $\ast$child, int z, int a\+Tag)
+\item 
+virtual \hyperlink{classSpriteBatchNode_a41036ad846110453c8936fdebbdf2833}{$\sim$\+Sprite\+Batch\+Node} ()
+\item 
+bool \hyperlink{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+bool \hyperlink{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}{init\+With\+File} (const std\+::string \&file\+Image, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a6016e84d966db338de57b2bbe00567ca}\label{classSpriteBatchNode_a6016e84d966db338de57b2bbe00567ca}} 
+bool {\bfseries init} () override
+\item 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ \hyperlink{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}{get\+Texture\+Atlas} ()
+\item 
+void \hyperlink{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}{set\+Texture\+Atlas} (\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$texture\+Atlas)
+\item 
+const std\+::vector$<$ \hyperlink{classSprite}{Sprite} $\ast$ $>$ \& \hyperlink{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}{get\+Descendants} () const
+\item 
+void \hyperlink{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}{increase\+Atlas\+Capacity} ()
+\item 
+void \hyperlink{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}{remove\+Child\+At\+Index} (ssize\+\_\+t index, bool do\+Cleanup)
+\item 
+void \hyperlink{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}{append\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+void \hyperlink{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}{remove\+Sprite\+From\+Atlas} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}{rebuild\+Index\+In\+Order} (\hyperlink{classSprite}{Sprite} $\ast$parent, ssize\+\_\+t index)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}{highest\+Atlas\+Index\+In\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}{lowest\+Atlas\+Index\+In\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite)
+\item 
+ssize\+\_\+t \hyperlink{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}{atlas\+Index\+For\+Child} (\hyperlink{classSprite}{Sprite} $\ast$sprite, int z)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a46297ebf702382d09be8ab76b776613b}\label{classSpriteBatchNode_a46297ebf702382d09be8ab76b776613b}} 
+void {\bfseries reorder\+Batch} (bool reorder)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a81ace6266805316dcec26fe29a7ee97c}\label{classSpriteBatchNode_a81ace6266805316dcec26fe29a7ee97c}} 
+virtual \hyperlink{classTexture2D}{Texture2D} $\ast$ {\bfseries get\+Texture} () const override
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_aacd24d3804cf12144c34999d8aa115bb}\label{classSpriteBatchNode_aacd24d3804cf12144c34999d8aa115bb}} 
+virtual void {\bfseries set\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$texture) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a6cf0c9ae034ec3418a019846b1d93efc}{set\+Blend\+Func} (const \hyperlink{structBlendFunc}{Blend\+Func} \&blend\+Func) override
+\item 
+virtual const \hyperlink{structBlendFunc}{Blend\+Func} \& \hyperlink{classSpriteBatchNode_a06bd31ad6fda00cf601229736c2cf2ca}{get\+Blend\+Func} () const override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a2cccb328ace35dc3e02d7ca8824df65d}{visit} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&parent\+Transform, uint32\+\_\+t parent\+Flags) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a512bd0b1e1bd2741a99bff3997fcbbd6}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_abd6946884e475168e7e9530e1b1c793a}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, const std\+::string \&name) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a8125810f4a9d5e1c4a4c82cd906baafd}{reorder\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a918786ec36ffac4169444d478e455c5c}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_aef759fbb4337b71813e05bf91a0daae8}{remove\+All\+Children\+With\+Cleanup} (bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_a939e68291147526d7d452a310b59b0b7}{sort\+All\+Children} () override
+\item 
+virtual void \hyperlink{classSpriteBatchNode_ad47c7d508825041270ed552f647f86e3}{draw} (\hyperlink{classRenderer}{Renderer} $\ast$renderer, const \hyperlink{classMat4}{Mat4} \&transform, uint32\+\_\+t flags) override
+\item 
+virtual std\+::string \hyperlink{classSpriteBatchNode_a6040059cb5e2e7681cbddc0d55a2859e}{get\+Description} () const override
+\item 
+void \hyperlink{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}{insert\+Quad\+From\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a132fec712b9f57b7e8ada3ff3dc37bc3}\label{classSpriteBatchNode_a132fec712b9f57b7e8ada3ff3dc37bc3}} 
+\hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ {\bfseries add\+Sprite\+Without\+Quad} (\hyperlink{classSprite}{Sprite} $\ast$child, int z, int a\+Tag)
+\item 
+void \hyperlink{classSpriteBatchNode_a98e5558e331befb2454d11a9395ae6ae}{reserve\+Capacity} (ssize\+\_\+t new\+Capacity)
+\item 
+virtual \hyperlink{classSpriteBatchNode_a9d8d2cd94ab1a9c24e5df54b22f05350}{$\sim$\+Sprite\+Batch\+Node} ()
+\item 
+bool \hyperlink{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}{init\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+bool \hyperlink{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}{init\+With\+File} (const std\+::string \&file\+Image, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a6016e84d966db338de57b2bbe00567ca}\label{classSpriteBatchNode_a6016e84d966db338de57b2bbe00567ca}} 
+bool {\bfseries init} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ \hyperlink{classSpriteBatchNode_a981611b78bc9c5e985ce2b03ecb85b9a}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ \hyperlink{classSpriteBatchNode_a470e1bd31aee44de0c6b09592442c77b}{create} (const std\+::string \&file\+Image, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ \hyperlink{classSpriteBatchNode_a5c722a9108db557fa9c8a0300b148984}{create\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$tex, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\item 
+static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ \hyperlink{classSpriteBatchNode_a5b81861dc8fe46a8c17b524ad0383029}{create} (const std\+::string \&file\+Image, ssize\+\_\+t capacity=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_ae70d8a9b8d67c08387b727d81ec7ec51}\label{classSpriteBatchNode_ae70d8a9b8d67c08387b727d81ec7ec51}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}{update\+Quad\+From\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a4e8462e43673ef5edb4459cc51804e06}\label{classSpriteBatchNode_a4e8462e43673ef5edb4459cc51804e06}} 
+void {\bfseries update\+Atlas\+Index} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t $\ast$cur\+Index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a99f9486931a3ef5c5469986051a318aa}\label{classSpriteBatchNode_a99f9486931a3ef5c5469986051a318aa}} 
+void {\bfseries swap} (ssize\+\_\+t old\+Index, ssize\+\_\+t new\+Index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_ad36c11cfa03268142885eaacf598bfbc}\label{classSpriteBatchNode_ad36c11cfa03268142885eaacf598bfbc}} 
+void {\bfseries update\+Blend\+Func} ()
+\item 
+void \hyperlink{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}{update\+Quad\+From\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a4e8462e43673ef5edb4459cc51804e06}\label{classSpriteBatchNode_a4e8462e43673ef5edb4459cc51804e06}} 
+void {\bfseries update\+Atlas\+Index} (\hyperlink{classSprite}{Sprite} $\ast$sprite, ssize\+\_\+t $\ast$cur\+Index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a99f9486931a3ef5c5469986051a318aa}\label{classSpriteBatchNode_a99f9486931a3ef5c5469986051a318aa}} 
+void {\bfseries swap} (ssize\+\_\+t old\+Index, ssize\+\_\+t new\+Index)
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_ad36c11cfa03268142885eaacf598bfbc}\label{classSpriteBatchNode_ad36c11cfa03268142885eaacf598bfbc}} 
+void {\bfseries update\+Blend\+Func} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_ad08eb47ada2b8f199668937ebd40af35}\label{classSpriteBatchNode_ad08eb47ada2b8f199668937ebd40af35}} 
+\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$ {\bfseries \+\_\+texture\+Atlas}
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a05af9c8acceba153267238bd8c40e212}\label{classSpriteBatchNode_a05af9c8acceba153267238bd8c40e212}} 
+\hyperlink{structBlendFunc}{Blend\+Func} {\bfseries \+\_\+blend\+Func}
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_a134154444f9f0970f8afdabb4b61c5dd}\label{classSpriteBatchNode_a134154444f9f0970f8afdabb4b61c5dd}} 
+\hyperlink{classBatchCommand}{Batch\+Command} {\bfseries \+\_\+batch\+Command}
+\item 
+\mbox{\Hypertarget{classSpriteBatchNode_af2ff2d4eb7906aca134d9f7674abd831}\label{classSpriteBatchNode_af2ff2d4eb7906aca134d9f7674abd831}} 
+std\+::vector$<$ \hyperlink{classSprite}{Sprite} $\ast$ $>$ {\bfseries \+\_\+descendants}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} is like a batch node\+: if it contains children, it will draw them in 1 single Open\+GL call (often known as \char`\"{}batch draw\char`\"{}).
+
+A \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} can reference one and only one texture (one image file, one texture atlas). Only the Sprites that are contained in that texture can be added to the \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}. All Sprites added to a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} are drawn in one Open\+GL ES draw call. If the Sprites are not added to a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} then an Open\+GL ES draw call will be needed for each one, which is less efficient.
+
+Limitations\+:
+\begin{DoxyItemize}
+\item The only object that is accepted as child (or grandchild, grand-\/grandchild, etc...) is \hyperlink{classSprite}{Sprite} or any subclass of \hyperlink{classSprite}{Sprite}. eg\+: particles, labels and layer can\textquotesingle{}t be added to a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}.
+\item Either all its children are Aliased or Antialiased. It can\textquotesingle{}t be a mix. This is because \char`\"{}alias\char`\"{} is a property of the texture, and all the sprites share the same texture.
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+v0.\+7.\+1 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpriteBatchNode_a41036ad846110453c8936fdebbdf2833}\label{classSpriteBatchNode_a41036ad846110453c8936fdebbdf2833}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!````~Sprite\+Batch\+Node@{$\sim$\+Sprite\+Batch\+Node}}
+\index{````~Sprite\+Batch\+Node@{$\sim$\+Sprite\+Batch\+Node}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Sprite\+Batch\+Node()}{~SpriteBatchNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sprite\+Batch\+Node\+::$\sim$\+Sprite\+Batch\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classSpriteBatchNode_a9d8d2cd94ab1a9c24e5df54b22f05350}\label{classSpriteBatchNode_a9d8d2cd94ab1a9c24e5df54b22f05350}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!````~Sprite\+Batch\+Node@{$\sim$\+Sprite\+Batch\+Node}}
+\index{````~Sprite\+Batch\+Node@{$\sim$\+Sprite\+Batch\+Node}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Sprite\+Batch\+Node()}{~SpriteBatchNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Sprite\+Batch\+Node\+::$\sim$\+Sprite\+Batch\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpriteBatchNode_a4d84535b9cdc98d8cfbb8d978f84fc93}\label{classSpriteBatchNode_a4d84535b9cdc98d8cfbb8d978f84fc93}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_a6967088f51d0ad613c639b2592692116}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_a8f537dd4690c31ee1a61413c9bfcaa94}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}\label{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a512bd0b1e1bd2741a99bff3997fcbbd6}\label{classSpriteBatchNode_a512bd0b1e1bd2741a99bff3997fcbbd6}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classNode_ac29dab4b296e96c5072545cf9bd94b90}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_a6967088f51d0ad613c639b2592692116}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_a8f537dd4690c31ee1a61413c9bfcaa94}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_abd6946884e475168e7e9530e1b1c793a}\label{classSpriteBatchNode_abd6946884e475168e7e9530e1b1c793a}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em name} & A string to identify the node easily. Please refer to {\ttfamily set\+Name(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_abed32867e81e7902c8155dca7d347a18}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}\label{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!append\+Child@{append\+Child}}
+\index{append\+Child@{append\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{append\+Child()}{appendChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::append\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Append the child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}\label{classSpriteBatchNode_a8da90ef24ba5d4c27b063a302498c436}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!append\+Child@{append\+Child}}
+\index{append\+Child@{append\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{append\+Child()}{appendChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::append\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Append the child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}\label{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!atlas\+Index\+For\+Child@{atlas\+Index\+For\+Child}}
+\index{atlas\+Index\+For\+Child@{atlas\+Index\+For\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{atlas\+Index\+For\+Child()}{atlasIndexForChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::atlas\+Index\+For\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+Get the nearest index from the sprite in z.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+{\em z} & Z order for drawing priority. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}\label{classSpriteBatchNode_a86c50a80880095b311ba60fa04c4152f}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!atlas\+Index\+For\+Child@{atlas\+Index\+For\+Child}}
+\index{atlas\+Index\+For\+Child@{atlas\+Index\+For\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{atlas\+Index\+For\+Child()}{atlasIndexForChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::atlas\+Index\+For\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+Get the nearest index from the sprite in z.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+{\em z} & Z order for drawing priority. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a470e1bd31aee44de0c6b09592442c77b}\label{classSpriteBatchNode_a470e1bd31aee44de0c6b09592442c77b}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!create@{create}}
+\index{create@{create}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ Sprite\+Batch\+Node\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Image,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a file image (.png, .jpeg, .pvr, etc) and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. The file will be loaded using the Texture\+Mgr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Image} & A file image (.png, .jpeg, .pvr, etc). \\
+\hline
+{\em capacity} & The capacity of children. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a5b81861dc8fe46a8c17b524ad0383029}\label{classSpriteBatchNode_a5b81861dc8fe46a8c17b524ad0383029}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!create@{create}}
+\index{create@{create}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}$\ast$ Sprite\+Batch\+Node\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Image,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a file image (.png, .jpeg, .pvr, etc) and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. The file will be loaded using the Texture\+Mgr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Image} & A file image (.png, .jpeg, .pvr, etc). \\
+\hline
+{\em capacity} & The capacity of children. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a981611b78bc9c5e985ce2b03ecb85b9a}\label{classSpriteBatchNode_a981611b78bc9c5e985ce2b03ecb85b9a}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} $\ast$ Sprite\+Batch\+Node\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a texture2d and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & A texture2d. \\
+\hline
+{\em capacity} & The capacity of children. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a5c722a9108db557fa9c8a0300b148984}\label{classSpriteBatchNode_a5c722a9108db557fa9c8a0300b148984}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!create\+With\+Texture@{create\+With\+Texture}}
+\index{create\+With\+Texture@{create\+With\+Texture}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{create\+With\+Texture()}{createWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}$\ast$ Sprite\+Batch\+Node\+::create\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a texture2d and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & A texture2d. \\
+\hline
+{\em capacity} & The capacity of children. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_afa716d3c463c59a6748d68f24045ba9f}\label{classSpriteBatchNode_afa716d3c463c59a6748d68f24045ba9f}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!draw@{draw}}
+\index{draw@{draw}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_ad47c7d508825041270ed552f647f86e3}\label{classSpriteBatchNode_ad47c7d508825041270ed552f647f86e3}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!draw@{draw}}
+\index{draw@{draw}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::draw (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{transform,  }\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_abcf85087a15901deb7c6c1231634c8ab}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a3ea94541fdb496876c1397aabf991474}\label{classSpriteBatchNode_a3ea94541fdb496876c1397aabf991474}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{structBlendFunc}{Blend\+Func} \& Sprite\+Batch\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classSpriteBatchNode_a06bd31ad6fda00cf601229736c2cf2ca}\label{classSpriteBatchNode_a06bd31ad6fda00cf601229736c2cf2ca}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Blend\+Func@{get\+Blend\+Func}}
+\index{get\+Blend\+Func@{get\+Blend\+Func}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Blend\+Func()}{getBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structBlendFunc}{Blend\+Func}\& Sprite\+Batch\+Node\+::get\+Blend\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA \mbox{\Hypertarget{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}\label{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Descendants@{get\+Descendants}}
+\index{get\+Descendants@{get\+Descendants}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Descendants()}{getDescendants()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\hyperlink{classSprite}{Sprite}$\ast$$>$\& Sprite\+Batch\+Node\+::get\+Descendants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns an array with the descendants (children, gran children, etc.). This is specific to Batch\+Node. In order to use the children, use \hyperlink{classNode_a25943a94b19e37929b18f93647b58153}{get\+Children()} instead.
+
+\begin{DoxyReturn}{Returns}
+An array with the descendants (children, gran children, etc.). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}\label{classSpriteBatchNode_adcf146809bbf5d09e2228cf1cff65e06}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Descendants@{get\+Descendants}}
+\index{get\+Descendants@{get\+Descendants}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Descendants()}{getDescendants()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\hyperlink{classSprite}{Sprite}$\ast$$>$\& Sprite\+Batch\+Node\+::get\+Descendants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns an array with the descendants (children, gran children, etc.). This is specific to Batch\+Node. In order to use the children, use \hyperlink{classNode_a25943a94b19e37929b18f93647b58153}{get\+Children()} instead.
+
+\begin{DoxyReturn}{Returns}
+An array with the descendants (children, gran children, etc.). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_abaf755bc79646464f59b68b5a4fdc68c}\label{classSpriteBatchNode_abaf755bc79646464f59b68b5a4fdc68c}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Sprite\+Batch\+Node\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_a1238ed7681395864c66ebda4b90c5d3b}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_ae03bc92e2f95a1c6cfce363a8abcfd77}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a6040059cb5e2e7681cbddc0d55a2859e}\label{classSpriteBatchNode_a6040059cb5e2e7681cbddc0d55a2859e}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Sprite\+Batch\+Node\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a41710375a0d92a4ee54c39fe123b5912}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_a1238ed7681395864c66ebda4b90c5d3b}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_ae03bc92e2f95a1c6cfce363a8abcfd77}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}\label{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Texture\+Atlas@{get\+Texture\+Atlas}}
+\index{get\+Texture\+Atlas@{get\+Texture\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Texture\+Atlas()}{getTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas}$\ast$ Sprite\+Batch\+Node\+::get\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \hyperlink{classTextureAtlas}{Texture\+Atlas} object.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}\label{classSpriteBatchNode_ad6a2949d1af5b70038158ae0a6c84fff}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!get\+Texture\+Atlas@{get\+Texture\+Atlas}}
+\index{get\+Texture\+Atlas@{get\+Texture\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{get\+Texture\+Atlas()}{getTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classTextureAtlas}{Texture\+Atlas}$\ast$ Sprite\+Batch\+Node\+::get\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \hyperlink{classTextureAtlas}{Texture\+Atlas} object.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classTextureAtlas}{Texture\+Atlas} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}\label{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!highest\+Atlas\+Index\+In\+Child@{highest\+Atlas\+Index\+In\+Child}}
+\index{highest\+Atlas\+Index\+In\+Child@{highest\+Atlas\+Index\+In\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{highest\+Atlas\+Index\+In\+Child()}{highestAtlasIndexInChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::highest\+Atlas\+Index\+In\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Get the Max image block index,in all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}\label{classSpriteBatchNode_a35d235f36390aea4f98b05f9f883cc76}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!highest\+Atlas\+Index\+In\+Child@{highest\+Atlas\+Index\+In\+Child}}
+\index{highest\+Atlas\+Index\+In\+Child@{highest\+Atlas\+Index\+In\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{highest\+Atlas\+Index\+In\+Child()}{highestAtlasIndexInChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::highest\+Atlas\+Index\+In\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Get the Max image block index,in all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}\label{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!increase\+Atlas\+Capacity@{increase\+Atlas\+Capacity}}
+\index{increase\+Atlas\+Capacity@{increase\+Atlas\+Capacity}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{increase\+Atlas\+Capacity()}{increaseAtlasCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::increase\+Atlas\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Increase the Atlas Capacity. \mbox{\Hypertarget{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}\label{classSpriteBatchNode_ad76d544ea06e10d6413ab978c868bc70}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!increase\+Atlas\+Capacity@{increase\+Atlas\+Capacity}}
+\index{increase\+Atlas\+Capacity@{increase\+Atlas\+Capacity}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{increase\+Atlas\+Capacity()}{increaseAtlasCapacity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::increase\+Atlas\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Increase the Atlas Capacity. \mbox{\Hypertarget{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}\label{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!init\+With\+File@{init\+With\+File}}
+\index{init\+With\+File@{init\+With\+File}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+File()}{initWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite\+Batch\+Node\+::init\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Image,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a file image (.png, .jpeg, .pvr, etc) and a capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. The file will be loaded using the Texture\+Mgr.  init  init \mbox{\Hypertarget{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}\label{classSpriteBatchNode_af6150c9adf70652842ca6e7b01c8cc08}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!init\+With\+File@{init\+With\+File}}
+\index{init\+With\+File@{init\+With\+File}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+File()}{initWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite\+Batch\+Node\+::init\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Image,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a file image (.png, .jpeg, .pvr, etc) and a capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. The file will be loaded using the Texture\+Mgr.  init  init \mbox{\Hypertarget{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}\label{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sprite\+Batch\+Node\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a texture2d and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. \mbox{\Hypertarget{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}\label{classSpriteBatchNode_aeec99ca2f5e03b80fb8d1f81bbc5034a}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!init\+With\+Texture@{init\+With\+Texture}}
+\index{init\+With\+Texture@{init\+With\+Texture}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{init\+With\+Texture()}{initWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sprite\+Batch\+Node\+::init\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{tex,  }\item[{ssize\+\_\+t}]{capacity = {\ttfamily DEFAULT\+\_\+CAPACITY} }\end{DoxyParamCaption})}
+
+initializes a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} with a texture2d and capacity of children. The capacity will be increased in 33\% in runtime if it runs out of space. \mbox{\Hypertarget{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}\label{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!insert\+Quad\+From\+Sprite@{insert\+Quad\+From\+Sprite}}
+\index{insert\+Quad\+From\+Sprite@{insert\+Quad\+From\+Sprite}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{insert\+Quad\+From\+Sprite()}{insertQuadFromSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::insert\+Quad\+From\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Inserts a quad at a certain index into the texture atlas. The \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be added into the children array. This method should be called only when you are dealing with very big Atlas\+Sprite and when most of the \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be updated. For example\+: a tile map (T\+M\+X\+Map) or a label with lots of characters (Label\+B\+M\+Font). \mbox{\Hypertarget{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}\label{classSpriteBatchNode_ae3aa8d2d53d2e6ba43a03770e8a88a41}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!insert\+Quad\+From\+Sprite@{insert\+Quad\+From\+Sprite}}
+\index{insert\+Quad\+From\+Sprite@{insert\+Quad\+From\+Sprite}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{insert\+Quad\+From\+Sprite()}{insertQuadFromSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::insert\+Quad\+From\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Inserts a quad at a certain index into the texture atlas. The \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be added into the children array. This method should be called only when you are dealing with very big Atlas\+Sprite and when most of the \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be updated. For example\+: a tile map (T\+M\+X\+Map) or a label with lots of characters (Label\+B\+M\+Font). \mbox{\Hypertarget{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}\label{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!lowest\+Atlas\+Index\+In\+Child@{lowest\+Atlas\+Index\+In\+Child}}
+\index{lowest\+Atlas\+Index\+In\+Child@{lowest\+Atlas\+Index\+In\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{lowest\+Atlas\+Index\+In\+Child()}{lowestAtlasIndexInChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::lowest\+Atlas\+Index\+In\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Get the Min image block index,in all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}\label{classSpriteBatchNode_aae2f59d34b31c69b731f13296129cf94}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!lowest\+Atlas\+Index\+In\+Child@{lowest\+Atlas\+Index\+In\+Child}}
+\index{lowest\+Atlas\+Index\+In\+Child@{lowest\+Atlas\+Index\+In\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{lowest\+Atlas\+Index\+In\+Child()}{lowestAtlasIndexInChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::lowest\+Atlas\+Index\+In\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Get the Min image block index,in all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & The parent sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}\label{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!rebuild\+Index\+In\+Order@{rebuild\+Index\+In\+Order}}
+\index{rebuild\+Index\+In\+Order@{rebuild\+Index\+In\+Order}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{rebuild\+Index\+In\+Order()}{rebuildIndexInOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::rebuild\+Index\+In\+Order (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{parent,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Rebuild index with a sprite all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent sprite. \\
+\hline
+{\em index} & The child index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}\label{classSpriteBatchNode_a7de1df383d81f839fb932ad571273766}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!rebuild\+Index\+In\+Order@{rebuild\+Index\+In\+Order}}
+\index{rebuild\+Index\+In\+Order@{rebuild\+Index\+In\+Order}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{rebuild\+Index\+In\+Order()}{rebuildIndexInOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ssize\+\_\+t Sprite\+Batch\+Node\+::rebuild\+Index\+In\+Order (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{parent,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Rebuild index with a sprite all child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent sprite. \\
+\hline
+{\em index} & The child index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpriteBatchNode_a1b49c2764f43641c912c66c2d58b85a0}\label{classSpriteBatchNode_a1b49c2764f43641c912c66c2d58b85a0}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_aef759fbb4337b71813e05bf91a0daae8}\label{classSpriteBatchNode_aef759fbb4337b71813e05bf91a0daae8}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}}
+\index{remove\+All\+Children\+With\+Cleanup@{remove\+All\+Children\+With\+Cleanup}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+All\+Children\+With\+Cleanup()}{removeAllChildrenWithCleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::remove\+All\+Children\+With\+Cleanup (\begin{DoxyParamCaption}\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_aca66e2b385c3dbf1a6f55627c4a13192}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a7bebdfd28805ed83d0a78b49f8b52803}\label{classSpriteBatchNode_a7bebdfd28805ed83d0a78b49f8b52803}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a918786ec36ffac4169444d478e455c5c}\label{classSpriteBatchNode_a918786ec36ffac4169444d478e455c5c}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a872d4a7d389b26b0c6ad7ed99c8b1b65}{Node}.
+
+
+
+Reimplemented in \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{T\+M\+X\+Layer}, and \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{T\+M\+X\+Layer}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}\label{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Child\+At\+Index@{remove\+Child\+At\+Index}}
+\index{remove\+Child\+At\+Index@{remove\+Child\+At\+Index}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Child\+At\+Index()}{removeChildAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+Child\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{bool}]{do\+Cleanup }\end{DoxyParamCaption})}
+
+Removes a child given a certain index. It will also cleanup the running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A certain index. \\
+\hline
+{\em do\+Cleanup} & Whether or not to cleanup the running actions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Removing a child from a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} is very slow. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}\label{classSpriteBatchNode_a3da2c77141f4f02134d2a8f2308879ff}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Child\+At\+Index@{remove\+Child\+At\+Index}}
+\index{remove\+Child\+At\+Index@{remove\+Child\+At\+Index}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Child\+At\+Index()}{removeChildAtIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+Child\+At\+Index (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{index,  }\item[{bool}]{do\+Cleanup }\end{DoxyParamCaption})}
+
+Removes a child given a certain index. It will also cleanup the running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A certain index. \\
+\hline
+{\em do\+Cleanup} & Whether or not to cleanup the running actions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Removing a child from a \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node} is very slow. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}\label{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Sprite\+From\+Atlas@{remove\+Sprite\+From\+Atlas}}
+\index{remove\+Sprite\+From\+Atlas@{remove\+Sprite\+From\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Sprite\+From\+Atlas()}{removeSpriteFromAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+Sprite\+From\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Remove a sprite from Atlas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}\label{classSpriteBatchNode_a3e6e600aa1cf10812ae36b2930e56e9d}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!remove\+Sprite\+From\+Atlas@{remove\+Sprite\+From\+Atlas}}
+\index{remove\+Sprite\+From\+Atlas@{remove\+Sprite\+From\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{remove\+Sprite\+From\+Atlas()}{removeSpriteFromAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::remove\+Sprite\+From\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Remove a sprite from Atlas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & A \hyperlink{classSprite}{Sprite}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_a9f4e7d0be49a3c044424624ea283c301}\label{classSpriteBatchNode_a9f4e7d0be49a3c044424624ea283c301}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!reorder\+Child@{reorder\+Child}}
+\index{reorder\+Child@{reorder\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{reorder\+Child()}{reorderChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::reorder\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reorders a child according to a new z value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & An already added child node. It M\+U\+ST be already added. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a5c9bc72e7f53c1e7f0ef6bc87c07a08f}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a8125810f4a9d5e1c4a4c82cd906baafd}\label{classSpriteBatchNode_a8125810f4a9d5e1c4a4c82cd906baafd}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!reorder\+Child@{reorder\+Child}}
+\index{reorder\+Child@{reorder\+Child}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{reorder\+Child()}{reorderChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::reorder\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reorders a child according to a new z value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & An already added child node. It M\+U\+ST be already added. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classNode_a5c9bc72e7f53c1e7f0ef6bc87c07a08f}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a98e5558e331befb2454d11a9395ae6ae}\label{classSpriteBatchNode_a98e5558e331befb2454d11a9395ae6ae}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!reserve\+Capacity@{reserve\+Capacity}}
+\index{reserve\+Capacity@{reserve\+Capacity}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{reserve\+Capacity()}{reserveCapacity()}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::reserve\+Capacity (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{new\+Capacity }\end{DoxyParamCaption})}
+
+reserves capacity for the batch node. If the current capacity is bigger, nothing happens. otherwise, a new capacity is allocated \mbox{\Hypertarget{classSpriteBatchNode_aea7694e73e37e957179a5d82565348e9}\label{classSpriteBatchNode_aea7694e73e37e957179a5d82565348e9}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed.
+In js: var \hyperlink{classSpriteBatchNode_aea7694e73e37e957179a5d82565348e9}{setBlendFunc}(var src, var dst).
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classSpriteBatchNode_a6cf0c9ae034ec3418a019846b1d93efc}\label{classSpriteBatchNode_a6cf0c9ae034ec3418a019846b1d93efc}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!set\+Blend\+Func@{set\+Blend\+Func}}
+\index{set\+Blend\+Func@{set\+Blend\+Func}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{set\+Blend\+Func()}{setBlendFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::set\+Blend\+Func (\begin{DoxyParamCaption}\item[{const \hyperlink{structBlendFunc}{Blend\+Func} \&}]{blend\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}
+When \textcolor{keyword}{this} \textcolor{keyword}{function} bound into js or lua,the parameter will be changed.
+In js: var \hyperlink{classSpriteBatchNode_aea7694e73e37e957179a5d82565348e9}{setBlendFunc}(var src, var dst).
+\end{DoxyCode}
+  NA \mbox{\Hypertarget{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}\label{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!set\+Texture\+Atlas@{set\+Texture\+Atlas}}
+\index{set\+Texture\+Atlas@{set\+Texture\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{set\+Texture\+Atlas()}{setTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::set\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the \hyperlink{classTextureAtlas}{Texture\+Atlas} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Atlas} & The \hyperlink{classTextureAtlas}{Texture\+Atlas} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}\label{classSpriteBatchNode_a53497de819859ff84079d77e11cbd512}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!set\+Texture\+Atlas@{set\+Texture\+Atlas}}
+\index{set\+Texture\+Atlas@{set\+Texture\+Atlas}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{set\+Texture\+Atlas()}{setTextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::set\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{\hyperlink{classTextureAtlas}{Texture\+Atlas} $\ast$}]{texture\+Atlas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the \hyperlink{classTextureAtlas}{Texture\+Atlas} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Atlas} & The \hyperlink{classTextureAtlas}{Texture\+Atlas} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpriteBatchNode_af2a850d2c664d2fd1a796601129a0413}\label{classSpriteBatchNode_af2a850d2c664d2fd1a796601129a0413}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!sort\+All\+Children@{sort\+All\+Children}}
+\index{sort\+All\+Children@{sort\+All\+Children}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{sort\+All\+Children()}{sortAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::sort\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sorts the children array once before drawing, instead of every time when a child is added or reordered. This approach can improves the performance massively. \begin{DoxyNote}{Note}
+Don\textquotesingle{}t call this manually unless a child added needs to be removed in the same frame. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classNode_adfaeea03013d3eae710c4d4d725bce0b}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a939e68291147526d7d452a310b59b0b7}\label{classSpriteBatchNode_a939e68291147526d7d452a310b59b0b7}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!sort\+All\+Children@{sort\+All\+Children}}
+\index{sort\+All\+Children@{sort\+All\+Children}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{sort\+All\+Children()}{sortAllChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::sort\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sorts the children array once before drawing, instead of every time when a child is added or reordered. This approach can improves the performance massively. \begin{DoxyNote}{Note}
+Don\textquotesingle{}t call this manually unless a child added needs to be removed in the same frame. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classNode_adfaeea03013d3eae710c4d4d725bce0b}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}\label{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!update\+Quad\+From\+Sprite@{update\+Quad\+From\+Sprite}}
+\index{update\+Quad\+From\+Sprite@{update\+Quad\+From\+Sprite}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{update\+Quad\+From\+Sprite()}{updateQuadFromSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::update\+Quad\+From\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Updates a quad at a certain index into the texture atlas. The \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be added into the children array. This method should be called only when you are dealing with very big Atlas\+Sprite and when most of the \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be updated. For example\+: a tile map (T\+M\+X\+Map) or a label with lots of characters (Label\+B\+M\+Font) \mbox{\Hypertarget{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}\label{classSpriteBatchNode_a408788d1a225c2cb9787a4657d861b20}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!update\+Quad\+From\+Sprite@{update\+Quad\+From\+Sprite}}
+\index{update\+Quad\+From\+Sprite@{update\+Quad\+From\+Sprite}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{update\+Quad\+From\+Sprite()}{updateQuadFromSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::update\+Quad\+From\+Sprite (\begin{DoxyParamCaption}\item[{\hyperlink{classSprite}{Sprite} $\ast$}]{sprite,  }\item[{ssize\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Updates a quad at a certain index into the texture atlas. The \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be added into the children array. This method should be called only when you are dealing with very big Atlas\+Sprite and when most of the \hyperlink{classSprite}{Sprite} won\textquotesingle{}t be updated. For example\+: a tile map (T\+M\+X\+Map) or a label with lots of characters (Label\+B\+M\+Font) \mbox{\Hypertarget{classSpriteBatchNode_afcdd1f0032ac902a52256fee7687cc36}\label{classSpriteBatchNode_afcdd1f0032ac902a52256fee7687cc36}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!visit@{visit}}
+\index{visit@{visit}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+Batch\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+\mbox{\Hypertarget{classSpriteBatchNode_a2cccb328ace35dc3e02d7ca8824df65d}\label{classSpriteBatchNode_a2cccb328ace35dc3e02d7ca8824df65d}} 
+\index{Sprite\+Batch\+Node@{Sprite\+Batch\+Node}!visit@{visit}}
+\index{visit@{visit}!Sprite\+Batch\+Node@{Sprite\+Batch\+Node}}
+\subsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Sprite\+Batch\+Node\+::visit (\begin{DoxyParamCaption}\item[{\hyperlink{classRenderer}{Renderer} $\ast$}]{renderer,  }\item[{const \hyperlink{classMat4}{Mat4} \&}]{parent\+Transform,  }\item[{uint32\+\_\+t}]{parent\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classNode_a7d794a5e30745611ec33881a625edf26}{Node}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Sprite\+Batch\+Node.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Sprite\+Batch\+Node.\+cpp\end{DoxyCompactItemize}

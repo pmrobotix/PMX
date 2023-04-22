@@ -1,0 +1,86 @@
+\hypertarget{classgit__retry_1_1GitRetry}{}\section{git\+\_\+retry.\+Git\+Retry Class Reference}
+\label{classgit__retry_1_1GitRetry}\index{git\+\_\+retry.\+Git\+Retry@{git\+\_\+retry.\+Git\+Retry}}
+
+
+Inheritance diagram for git\+\_\+retry.\+Git\+Retry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classgit__retry_1_1GitRetry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for git\+\_\+retry.\+Git\+Retry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classgit__retry_1_1GitRetry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_afd10887d2f8be34db5ce66284b82ac03}\label{classgit__retry_1_1GitRetry_afd10887d2f8be34db5ce66284b82ac03}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, retry\+\_\+count=None, delay=None, delay\+\_\+factor=None)
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a36a0ed61b5d6774b1ae3c42ce25f980b}\label{classgit__retry_1_1GitRetry_a36a0ed61b5d6774b1ae3c42ce25f980b}} 
+def {\bfseries should\+Retry} (self, stderr)
+\item 
+def \hyperlink{classgit__retry_1_1GitRetry_a02c4f3a76f8056d3fb5641096edeab9f}{compute\+Delay} (self, iteration)
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a9abb3e89c67856b610ced67a8c5b24cd}\label{classgit__retry_1_1GitRetry_a9abb3e89c67856b610ced67a8c5b24cd}} 
+def {\bfseries \+\_\+\+\_\+call\+\_\+\+\_\+} (self, args)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a58d589e25237723c9f2732d97971e363}\label{classgit__retry_1_1GitRetry_a58d589e25237723c9f2732d97971e363}} 
+def {\bfseries execute} (args)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a4929f3297f14422c54e7dc3eb903a368}\label{classgit__retry_1_1GitRetry_a4929f3297f14422c54e7dc3eb903a368}} 
+{\bfseries retry\+\_\+count}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a4c5eef27173fe8d6b4d9624ab00350c4}\label{classgit__retry_1_1GitRetry_a4c5eef27173fe8d6b4d9624ab00350c4}} 
+{\bfseries delay}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a3b0bdcb58716068c498136246e1f0845}\label{classgit__retry_1_1GitRetry_a3b0bdcb58716068c498136246e1f0845}} 
+{\bfseries delay\+\_\+factor}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a2d230b6a25ed3301618097291df7d86f}\label{classgit__retry_1_1GitRetry_a2d230b6a25ed3301618097291df7d86f}} 
+{\bfseries logger} = logging.\+get\+Logger(\textquotesingle{}git-\/retry\textquotesingle{})
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_ab253647bbd9fdb29c3209cccbd37ce10}\label{classgit__retry_1_1GitRetry_ab253647bbd9fdb29c3209cccbd37ce10}} 
+float {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+S\+E\+CS} = 3.\+0
+\item 
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a946b00f4cdb3f8a14849fc4be9ef6dd7}\label{classgit__retry_1_1GitRetry_a946b00f4cdb3f8a14849fc4be9ef6dd7}} 
+int {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+C\+O\+U\+NT} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgit__retry_1_1GitRetry_a02c4f3a76f8056d3fb5641096edeab9f}\label{classgit__retry_1_1GitRetry_a02c4f3a76f8056d3fb5641096edeab9f}} 
+\index{git\+\_\+retry\+::\+Git\+Retry@{git\+\_\+retry\+::\+Git\+Retry}!compute\+Delay@{compute\+Delay}}
+\index{compute\+Delay@{compute\+Delay}!git\+\_\+retry\+::\+Git\+Retry@{git\+\_\+retry\+::\+Git\+Retry}}
+\subsubsection{\texorpdfstring{compute\+Delay()}{computeDelay()}}
+{\footnotesize\ttfamily def git\+\_\+retry.\+Git\+Retry.\+compute\+Delay (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iteration }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns: the delay (in seconds) for a given iteration
+The first iteration has a delay of '0'.
+Args:
+  iteration: (int) The iteration index (starting with zero as the first
+  iteration)
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos3/cocos2d/tools/appveyor-\/scripts/git\+\_\+retry.\+py\end{DoxyCompactItemize}

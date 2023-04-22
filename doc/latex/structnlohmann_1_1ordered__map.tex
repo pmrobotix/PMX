@@ -1,0 +1,128 @@
+\hypertarget{structnlohmann_1_1ordered__map}{}\section{nlohmann\+:\+:ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$ Struct Template Reference}
+\label{structnlohmann_1_1ordered__map}\index{nlohmann\+::ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$@{nlohmann\+::ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$}}
+
+
+a minimal map-\/like container that preserves insertion order  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+:\+:ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{structnlohmann_1_1ordered__map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nlohmann\+:\+:ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{structnlohmann_1_1ordered__map__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a57095c6ed403f02e1bc2c240a13c9ed8}\label{structnlohmann_1_1ordered__map_a57095c6ed403f02e1bc2c240a13c9ed8}} 
+using {\bfseries key\+\_\+type} = Key
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a1c9c1509ee714a9814b45a8030c84ec7}\label{structnlohmann_1_1ordered__map_a1c9c1509ee714a9814b45a8030c84ec7}} 
+using {\bfseries mapped\+\_\+type} = T
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a0cabe346c38a4f1ab1b8a396fbd2bbe2}\label{structnlohmann_1_1ordered__map_a0cabe346c38a4f1ab1b8a396fbd2bbe2}} 
+using {\bfseries Container} = std\+::vector$<$ std\+::pair$<$ const Key, T $>$, Allocator $>$
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_aef8bc179883da4194bc6b657b87eeb07}\label{structnlohmann_1_1ordered__map_aef8bc179883da4194bc6b657b87eeb07}} 
+using {\bfseries iterator} = typename Container\+::iterator
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a8276ac13f6e6ad27594a7e287a5ea071}\label{structnlohmann_1_1ordered__map_a8276ac13f6e6ad27594a7e287a5ea071}} 
+using {\bfseries const\+\_\+iterator} = typename Container\+::const\+\_\+iterator
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_ab5044ef3fc07cf7aee67241c4d10ce9d}\label{structnlohmann_1_1ordered__map_ab5044ef3fc07cf7aee67241c4d10ce9d}} 
+using {\bfseries size\+\_\+type} = typename Container\+::size\+\_\+type
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_abe9b97ae84d9c40616913b50b2778150}\label{structnlohmann_1_1ordered__map_abe9b97ae84d9c40616913b50b2778150}} 
+using {\bfseries value\+\_\+type} = typename Container\+::value\+\_\+type
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a89cc338e8466e74baaa138664c79ee98}\label{structnlohmann_1_1ordered__map_a89cc338e8466e74baaa138664c79ee98}} 
+{\footnotesize template$<$typename Input\+It $>$ }\\using {\bfseries require\+\_\+input\+\_\+iter} = typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+convertible$<$ typename std\+::iterator\+\_\+traits$<$ Input\+It $>$\+::iterator\+\_\+category, std\+::input\+\_\+iterator\+\_\+tag $>$\+::value $>$\+::type
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a87938c10b76510dac00412d2cb5fd1e4}\label{structnlohmann_1_1ordered__map_a87938c10b76510dac00412d2cb5fd1e4}} 
+{\bfseries ordered\+\_\+map} (const Allocator \&alloc=Allocator())
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a9d25efb51325cc1be027b8ea00c1f8b8}\label{structnlohmann_1_1ordered__map_a9d25efb51325cc1be027b8ea00c1f8b8}} 
+{\footnotesize template$<$class It $>$ }\\{\bfseries ordered\+\_\+map} (It first, It last, const Allocator \&alloc=Allocator())
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a0482ea79e7786367a2d9b5c789c091ce}\label{structnlohmann_1_1ordered__map_a0482ea79e7786367a2d9b5c789c091ce}} 
+{\bfseries ordered\+\_\+map} (std\+::initializer\+\_\+list$<$ T $>$ init, const Allocator \&alloc=Allocator())
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a38834c948b844033caa7d5c76fee5866}\label{structnlohmann_1_1ordered__map_a38834c948b844033caa7d5c76fee5866}} 
+std\+::pair$<$ iterator, bool $>$ {\bfseries emplace} (const key\+\_\+type \&key, T \&\&t)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_ae7a1ca8c1e234837d137471f73ae6012}\label{structnlohmann_1_1ordered__map_ae7a1ca8c1e234837d137471f73ae6012}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const Key \&key)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a676082659d575e29bdb312bcde53023a}\label{structnlohmann_1_1ordered__map_a676082659d575e29bdb312bcde53023a}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const Key \&key) const
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_ab7b4bb185fe7ea84f8f5f32fd230ff91}\label{structnlohmann_1_1ordered__map_ab7b4bb185fe7ea84f8f5f32fd230ff91}} 
+T \& {\bfseries at} (const Key \&key)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a8b7f27215180385b9b1e98adc4dd8ae7}\label{structnlohmann_1_1ordered__map_a8b7f27215180385b9b1e98adc4dd8ae7}} 
+const T \& {\bfseries at} (const Key \&key) const
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a583c8976bbf0c137ff8e2439878f3058}\label{structnlohmann_1_1ordered__map_a583c8976bbf0c137ff8e2439878f3058}} 
+size\+\_\+type {\bfseries erase} (const Key \&key)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a26053569acb0a858d87482b2fa3d5dc5}\label{structnlohmann_1_1ordered__map_a26053569acb0a858d87482b2fa3d5dc5}} 
+iterator {\bfseries erase} (iterator pos)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a6f766b4df72c42ac14d55603c85f9e36}\label{structnlohmann_1_1ordered__map_a6f766b4df72c42ac14d55603c85f9e36}} 
+iterator {\bfseries erase} (iterator first, iterator last)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_aee2c188dcc802d6b28910f707a5e637b}\label{structnlohmann_1_1ordered__map_aee2c188dcc802d6b28910f707a5e637b}} 
+size\+\_\+type {\bfseries count} (const Key \&key) const
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a2486527ac56e07d58946ae9a93a46bc8}\label{structnlohmann_1_1ordered__map_a2486527ac56e07d58946ae9a93a46bc8}} 
+iterator {\bfseries find} (const Key \&key)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a41e6e34fa8a90b96cbe5c71fec10d2ee}\label{structnlohmann_1_1ordered__map_a41e6e34fa8a90b96cbe5c71fec10d2ee}} 
+const\+\_\+iterator {\bfseries find} (const Key \&key) const
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a48eceff729b80f3f4a023b737efccc5b}\label{structnlohmann_1_1ordered__map_a48eceff729b80f3f4a023b737efccc5b}} 
+std\+::pair$<$ iterator, bool $>$ {\bfseries insert} (value\+\_\+type \&\&value)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a0241433138719e477a3cbb0c4cf0a243}\label{structnlohmann_1_1ordered__map_a0241433138719e477a3cbb0c4cf0a243}} 
+std\+::pair$<$ iterator, bool $>$ {\bfseries insert} (const value\+\_\+type \&value)
+\item 
+\mbox{\Hypertarget{structnlohmann_1_1ordered__map_a2c8509f72bc33307661f1a0ed5763f9e}\label{structnlohmann_1_1ordered__map_a2c8509f72bc33307661f1a0ed5763f9e}} 
+{\footnotesize template$<$typename Input\+It , typename  = require\+\_\+input\+\_\+iter$<$\+Input\+It$>$$>$ }\\void {\bfseries insert} (Input\+It first, Input\+It last)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Key, class T, class Ignored\+Less = std\+::less$<$\+Key$>$, class Allocator = std\+::allocator$<$std\+::pair$<$const Key, T$>$$>$$>$\newline
+struct nlohmann\+::ordered\+\_\+map$<$ Key, T, Ignored\+Less, Allocator $>$}
+
+a minimal map-\/like container that preserves insertion order 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/ordered_map/}{\tt https\+://json.\+nlohmann.\+me/api/ordered\+\_\+map/}
+\end{DoxySeeAlso}
+\hyperlink{structnlohmann_1_1ordered__map}{ordered\+\_\+map}\+: a minimal map-\/like container that preserves insertion order for use within nlohmann\+::basic\+\_\+json$<$ordered\+\_\+map$>$ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/json.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{structdtMeshTile}{}\section{dt\+Mesh\+Tile Struct Reference}
+\label{structdtMeshTile}\index{dt\+Mesh\+Tile@{dt\+Mesh\+Tile}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh.\+h$>$}
+
+
+
+Collaboration diagram for dt\+Mesh\+Tile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdtMeshTile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdtMeshTile_a21bccdc0f5d778d886eaa5aae72b400f}\label{structdtMeshTile_a21bccdc0f5d778d886eaa5aae72b400f}} 
+unsigned int \hyperlink{structdtMeshTile_a21bccdc0f5d778d886eaa5aae72b400f}{salt}
+\begin{DoxyCompactList}\small\item\em Counter describing modifications to the tile. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_ad010d9daba37865a4065248745e0b4a0}\label{structdtMeshTile_ad010d9daba37865a4065248745e0b4a0}} 
+unsigned int \hyperlink{structdtMeshTile_ad010d9daba37865a4065248745e0b4a0}{links\+Free\+List}
+\begin{DoxyCompactList}\small\item\em Index to the next free link. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_accb1f3b391dd3c27b4de024500d4091f}\label{structdtMeshTile_accb1f3b391dd3c27b4de024500d4091f}} 
+\hyperlink{structdtMeshHeader}{dt\+Mesh\+Header} $\ast$ \hyperlink{structdtMeshTile_accb1f3b391dd3c27b4de024500d4091f}{header}
+\begin{DoxyCompactList}\small\item\em The tile header. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a52b180ac0cb2067c84f1f71d91ae53ca}\label{structdtMeshTile_a52b180ac0cb2067c84f1f71d91ae53ca}} 
+\hyperlink{structdtPoly}{dt\+Poly} $\ast$ \hyperlink{structdtMeshTile_a52b180ac0cb2067c84f1f71d91ae53ca}{polys}
+\begin{DoxyCompactList}\small\item\em The tile polygons. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtMeshHeader_ab36d94238505dbf5370c69c8e5276d74}{dt\+Mesh\+Header\+::poly\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a60f96b0153e3e8ef689f29ef03d61321}\label{structdtMeshTile_a60f96b0153e3e8ef689f29ef03d61321}} 
+float $\ast$ \hyperlink{structdtMeshTile_a60f96b0153e3e8ef689f29ef03d61321}{verts}
+\begin{DoxyCompactList}\small\item\em The tile vertices. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtMeshHeader_aad331f09586b0959eeb0826152315b92}{dt\+Mesh\+Header\+::vert\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_ae1a63b635908d1db5533e2108dcb5b8f}\label{structdtMeshTile_ae1a63b635908d1db5533e2108dcb5b8f}} 
+\hyperlink{structdtLink}{dt\+Link} $\ast$ \hyperlink{structdtMeshTile_ae1a63b635908d1db5533e2108dcb5b8f}{links}
+\begin{DoxyCompactList}\small\item\em The tile links. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtMeshHeader_ab9f95d40e21c8710f59e78ef89ce1cc0}{dt\+Mesh\+Header\+::max\+Link\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a6dd91d6195ed659898c2a9f43622186d}\label{structdtMeshTile_a6dd91d6195ed659898c2a9f43622186d}} 
+\hyperlink{structdtPolyDetail}{dt\+Poly\+Detail} $\ast$ \hyperlink{structdtMeshTile_a6dd91d6195ed659898c2a9f43622186d}{detail\+Meshes}
+\begin{DoxyCompactList}\small\item\em The tile\textquotesingle{}s detail sub-\/meshes. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtMeshHeader_a79ce7145dd4854c55cd94d5c57faf392}{dt\+Mesh\+Header\+::detail\+Mesh\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a916cb93915400b3a0edabe9c2206c670}\label{structdtMeshTile_a916cb93915400b3a0edabe9c2206c670}} 
+float $\ast$ \hyperlink{structdtMeshTile_a916cb93915400b3a0edabe9c2206c670}{detail\+Verts}
+\begin{DoxyCompactList}\small\item\em The detail mesh\textquotesingle{}s unique vertices. \mbox{[}(x, y, z) $\ast$ \hyperlink{structdtMeshHeader_abe1c10b7e925b0b31adf72f8f2d1d7e9}{dt\+Mesh\+Header\+::detail\+Vert\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_ad32d72c505505031c56f3d3507dede17}\label{structdtMeshTile_ad32d72c505505031c56f3d3507dede17}} 
+unsigned char $\ast$ \hyperlink{structdtMeshTile_ad32d72c505505031c56f3d3507dede17}{detail\+Tris}
+\begin{DoxyCompactList}\small\item\em The detail mesh\textquotesingle{}s triangles. \mbox{[}(vertA, vertB, vertC) $\ast$ \hyperlink{structdtMeshHeader_a008cebda05907508cf862d18945d8459}{dt\+Mesh\+Header\+::detail\+Tri\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{structdtBVNode}{dt\+B\+V\+Node} $\ast$ \hyperlink{structdtMeshTile_a3f95d402afe888c121e4ed155a739f8e}{bv\+Tree}
+\item 
+\mbox{\Hypertarget{structdtMeshTile_af9532a80865e4096a95e041e67f24a90}\label{structdtMeshTile_af9532a80865e4096a95e041e67f24a90}} 
+\hyperlink{structdtOffMeshConnection}{dt\+Off\+Mesh\+Connection} $\ast$ \hyperlink{structdtMeshTile_af9532a80865e4096a95e041e67f24a90}{off\+Mesh\+Cons}
+\begin{DoxyCompactList}\small\item\em The tile off-\/mesh connections. \mbox{[}\hyperlink{classSize}{Size}\+: \hyperlink{structdtMeshHeader_af48a70c7ce5f5fd586eb8e66dfe8ea36}{dt\+Mesh\+Header\+::off\+Mesh\+Con\+Count}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a07298ea5bdb89506f71b2944e27610ad}\label{structdtMeshTile_a07298ea5bdb89506f71b2944e27610ad}} 
+unsigned char $\ast$ \hyperlink{structdtMeshTile_a07298ea5bdb89506f71b2944e27610ad}{data}
+\begin{DoxyCompactList}\small\item\em The tile data. (Not directly accessed under normal situations.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a18351bec79954247bef6e22745d5515f}\label{structdtMeshTile_a18351bec79954247bef6e22745d5515f}} 
+int \hyperlink{structdtMeshTile_a18351bec79954247bef6e22745d5515f}{data\+Size}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSize}{Size} of the tile data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a610bc670e7bd056f31d8629d9c2100a1}\label{structdtMeshTile_a610bc670e7bd056f31d8629d9c2100a1}} 
+int \hyperlink{structdtMeshTile_a610bc670e7bd056f31d8629d9c2100a1}{flags}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structTile}{Tile} flags. (See\+: \#dt\+Tile\+Flags) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtMeshTile_a55480843bb2c9d4d3e277963922bfaae}\label{structdtMeshTile_a55480843bb2c9d4d3e277963922bfaae}} 
+\hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} $\ast$ \hyperlink{structdtMeshTile_a55480843bb2c9d4d3e277963922bfaae}{next}
+\begin{DoxyCompactList}\small\item\em The next free tile, or the next tile in the spatial grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a navigation mesh tile.
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Tiles generally only exist within the context of a \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} object.
+
+Some tile content is optional. For example, a tile may not contain any off-\/mesh connections. In this case the associated pointer will be null.
+
+If a detail mesh exists it will share vertices with the base polygon mesh. Only the vertices unique to the detail mesh will be stored in \hyperlink{structdtMeshTile_a916cb93915400b3a0edabe9c2206c670}{detail\+Verts}.
+
+\begin{DoxyWarning}{Warning}
+Tiles returned by a \hyperlink{classdtNavMesh}{dt\+Nav\+Mesh} object are not guarenteed to be populated. For example\+: The tile at a location might not have been loaded yet, or may have been removed. In this case, pointers will be null. So if in doubt, check the polygon count in the tile\textquotesingle{}s header to determine if a tile has polygons defined. 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdtMeshTile_a3f95d402afe888c121e4ed155a739f8e}\label{structdtMeshTile_a3f95d402afe888c121e4ed155a739f8e}} 
+\index{dt\+Mesh\+Tile@{dt\+Mesh\+Tile}!bv\+Tree@{bv\+Tree}}
+\index{bv\+Tree@{bv\+Tree}!dt\+Mesh\+Tile@{dt\+Mesh\+Tile}}
+\subsubsection{\texorpdfstring{bv\+Tree}{bvTree}}
+{\footnotesize\ttfamily \hyperlink{structdtBVNode}{dt\+B\+V\+Node} $\ast$ dt\+Mesh\+Tile\+::bv\+Tree}
+
+The tile bounding volume nodes. \href{Will be null if bounding volumes are disabled.}{\tt Size\+: dt\+Mesh\+Header\+::bv\+Node\+Count} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh.\+h\end{DoxyCompactItemize}

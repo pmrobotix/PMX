@@ -1,0 +1,722 @@
+\hypertarget{classexperimental_1_1ui_1_1WebView}{}\section{experimental\+:\+:ui\+:\+:Web\+View Class Reference}
+\label{classexperimental_1_1ui_1_1WebView}\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+
+
+A View that displays web pages.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Web\+View.\+h$>$}
+
+
+
+Inheritance diagram for experimental\+:\+:ui\+:\+:Web\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classexperimental_1_1ui_1_1WebView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for experimental\+:\+:ui\+:\+:Web\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classexperimental_1_1ui_1_1WebView__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback}
+\item 
+typedef std\+::function$<$ void(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}{set\+Javascript\+Interface\+Scheme} (const std\+::string \&scheme)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}{load\+Data} (const cocos2d\+::\+Data \&data, const std\+::string \&M\+I\+M\+E\+Type, const std\+::string \&encoding, const std\+::string \&base\+U\+RL)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}{load\+H\+T\+M\+L\+String} (const std\+::string \&string, const std\+::string \&base\+U\+RL=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}{load\+U\+RL} (const std\+::string \&url)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}{load\+File} (const std\+::string \&file\+Name)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}{stop\+Loading} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}{reload} ()
+\item 
+bool \hyperlink{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}{can\+Go\+Back} ()
+\item 
+bool \hyperlink{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}{can\+Go\+Forward} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}{go\+Back} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}{go\+Forward} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}{evaluate\+JS} (const std\+::string \&js)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}{set\+Scales\+Page\+To\+Fit} (const bool scales\+Page\+To\+Fit)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}{set\+On\+Should\+Start\+Loading} (const std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}{set\+On\+Did\+Finish\+Loading} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}{set\+On\+Did\+Fail\+Loading} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}{set\+On\+J\+S\+Callback} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}{get\+On\+Should\+Start\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}{get\+On\+Did\+Finish\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}{get\+On\+Did\+Fail\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}{get\+On\+J\+S\+Callback} () const
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}{set\+Bounces} (bool bounce)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a60687b67b465a78655fde86fb7923905}\label{classexperimental_1_1ui_1_1WebView_a60687b67b465a78655fde86fb7923905}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, cocos2d\+::\+Mat4 const \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}{set\+Visible} (bool visible) override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a6fc71724153b3295c0e105c7b838e1aa}\label{classexperimental_1_1ui_1_1WebView_a6fc71724153b3295c0e105c7b838e1aa}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_adc4e3fea947a49f47372cda9bf607c1d}\label{classexperimental_1_1ui_1_1WebView_adc4e3fea947a49f47372cda9bf607c1d}} 
+virtual void {\bfseries on\+Exit} () override
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}{set\+Javascript\+Interface\+Scheme} (const std\+::string \&scheme)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}{load\+Data} (const cocos2d\+::\+Data \&data, const std\+::string \&M\+I\+M\+E\+Type, const std\+::string \&encoding, const std\+::string \&base\+U\+RL)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}{load\+H\+T\+M\+L\+String} (const std\+::string \&string, const std\+::string \&base\+U\+RL=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}{load\+U\+RL} (const std\+::string \&url)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a86d715307de312c6a5dd5a49ba90aa4d}{load\+U\+RL} (const std\+::string \&url, bool clean\+Cached\+Data)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}{load\+File} (const std\+::string \&file\+Name)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}{stop\+Loading} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}{reload} ()
+\item 
+bool \hyperlink{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}{can\+Go\+Back} ()
+\item 
+bool \hyperlink{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}{can\+Go\+Forward} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}{go\+Back} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}{go\+Forward} ()
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}{evaluate\+JS} (const std\+::string \&js)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}{set\+Scales\+Page\+To\+Fit} (const bool scales\+Page\+To\+Fit)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}{set\+On\+Should\+Start\+Loading} (const std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}{set\+On\+Did\+Finish\+Loading} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}{set\+On\+Did\+Fail\+Loading} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}{set\+On\+J\+S\+Callback} (const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&callback)
+\item 
+std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}{get\+On\+Should\+Start\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}{get\+On\+Did\+Finish\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}{get\+On\+Did\+Fail\+Loading} () const
+\item 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \hyperlink{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}{get\+On\+J\+S\+Callback} () const
+\item 
+void \hyperlink{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}{set\+Bounces} (bool bounce)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a60687b67b465a78655fde86fb7923905}\label{classexperimental_1_1ui_1_1WebView_a60687b67b465a78655fde86fb7923905}} 
+virtual void {\bfseries draw} (cocos2d\+::\+Renderer $\ast$renderer, cocos2d\+::\+Mat4 const \&transform, uint32\+\_\+t flags) override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}{set\+Visible} (bool visible) override
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1WebView_affeb7e462605d9749c63500e640e2c7a}{set\+Opacity\+Web\+View} (float opacity)
+\item 
+virtual float \hyperlink{classexperimental_1_1ui_1_1WebView_a131ed65ceec3a88dfb9630abfbde7d84}{get\+Opacity\+Web\+View} () const
+\item 
+virtual void \hyperlink{classexperimental_1_1ui_1_1WebView_a83345ef293070d2ef77f93a6aa37ab01}{set\+Background\+Transparent} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a6fc71724153b3295c0e105c7b838e1aa}\label{classexperimental_1_1ui_1_1WebView_a6fc71724153b3295c0e105c7b838e1aa}} 
+virtual void {\bfseries on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_adc4e3fea947a49f47372cda9bf607c1d}\label{classexperimental_1_1ui_1_1WebView_adc4e3fea947a49f47372cda9bf607c1d}} 
+virtual void {\bfseries on\+Exit} () override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$ \hyperlink{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}{create} ()
+\item 
+static \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$ \hyperlink{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}{create} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aeaedfee0fca4b17aeb04e8424a288fb7}\label{classexperimental_1_1ui_1_1WebView_aeaedfee0fca4b17aeb04e8424a288fb7}} 
+virtual cocos2d\+::ui\+::\+Widget $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_af7bf27cd48f8f00bedfd708745381dd3}\label{classexperimental_1_1ui_1_1WebView_af7bf27cd48f8f00bedfd708745381dd3}} 
+virtual void {\bfseries copy\+Special\+Properties} (Widget $\ast$model) override
+\item 
+virtual \hyperlink{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}{$\sim$\+Web\+View} ()
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aeaedfee0fca4b17aeb04e8424a288fb7}\label{classexperimental_1_1ui_1_1WebView_aeaedfee0fca4b17aeb04e8424a288fb7}} 
+virtual cocos2d\+::ui\+::\+Widget $\ast$ {\bfseries create\+Clone\+Instance} () override
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_af7bf27cd48f8f00bedfd708745381dd3}\label{classexperimental_1_1ui_1_1WebView_af7bf27cd48f8f00bedfd708745381dd3}} 
+virtual void {\bfseries copy\+Special\+Properties} (Widget $\ast$model) override
+\item 
+virtual \hyperlink{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}{$\sim$\+Web\+View} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ae18197f074f4692ee04b57c1830d21e9}\label{classexperimental_1_1ui_1_1WebView_ae18197f074f4692ee04b57c1830d21e9}} 
+std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ {\bfseries \+\_\+on\+Should\+Start\+Loading}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a420c59d4ca37ebd1698267c6c44827f5}\label{classexperimental_1_1ui_1_1WebView_a420c59d4ca37ebd1698267c6c44827f5}} 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} {\bfseries \+\_\+on\+Did\+Finish\+Loading}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aee4b536b742eef462ecb7c251f4c725b}\label{classexperimental_1_1ui_1_1WebView_aee4b536b742eef462ecb7c251f4c725b}} 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} {\bfseries \+\_\+on\+Did\+Fail\+Loading}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a9d5f2d273723aa0126d76f1075bc8c6d}\label{classexperimental_1_1ui_1_1WebView_a9d5f2d273723aa0126d76f1075bc8c6d}} 
+\hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} {\bfseries \+\_\+on\+J\+S\+Callback}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a542117595243e2277b87d0f951a74379}\label{classexperimental_1_1ui_1_1WebView_a542117595243e2277b87d0f951a74379}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aa948845978efc7a85813d14e9c4616bf}\label{classexperimental_1_1ui_1_1WebView_aa948845978efc7a85813d14e9c4616bf}} 
+class {\bfseries Web\+View\+Impl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A View that displays web pages. 
+
+\begin{DoxyNote}{Note}
+\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} displays web pages base on system widget. It\textquotesingle{}s mean \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} displays web pages above all graphical elements of cocos2d-\/x.  NA 
+\end{DoxyNote}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}\label{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!cc\+Web\+View\+Callback@{cc\+Web\+View\+Callback}}
+\index{cc\+Web\+View\+Callback@{cc\+Web\+View\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{cc\+Web\+View\+Callback}{ccWebViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{experimental\+::ui\+::\+Web\+View\+::cc\+Web\+View\+Callback}}
+
+A callback which will be called when a \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} event happens. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}\label{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!cc\+Web\+View\+Callback@{cc\+Web\+View\+Callback}}
+\index{cc\+Web\+View\+Callback@{cc\+Web\+View\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{cc\+Web\+View\+Callback}{ccWebViewCallback}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{experimental\+::ui\+::\+Web\+View\+::cc\+Web\+View\+Callback}}
+
+A callback which will be called when a \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} event happens. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}\label{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!````~Web\+View@{$\sim$\+Web\+View}}
+\index{````~Web\+View@{$\sim$\+Web\+View}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Web\+View()}{~WebView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual experimental\+::ui\+::\+Web\+View\+::$\sim$\+Web\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default destructor. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}\label{classexperimental_1_1ui_1_1WebView_aea2dc407800c093913815c36802c8edb}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!````~Web\+View@{$\sim$\+Web\+View}}
+\index{````~Web\+View@{$\sim$\+Web\+View}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{$\sim$\+Web\+View()}{~WebView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual experimental\+::ui\+::\+Web\+View\+::$\sim$\+Web\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}\label{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!can\+Go\+Back@{can\+Go\+Back}}
+\index{can\+Go\+Back@{can\+Go\+Back}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{can\+Go\+Back()}{canGoBack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool experimental\+::ui\+::\+Web\+View\+::can\+Go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether this \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a back history item.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a back history item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}\label{classexperimental_1_1ui_1_1WebView_a4ecc93bca134d1f5d15ae1e46c292608}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!can\+Go\+Back@{can\+Go\+Back}}
+\index{can\+Go\+Back@{can\+Go\+Back}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{can\+Go\+Back()}{canGoBack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool experimental\+::ui\+::\+Web\+View\+::can\+Go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether this \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a back history item.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a back history item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}\label{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!can\+Go\+Forward@{can\+Go\+Forward}}
+\index{can\+Go\+Forward@{can\+Go\+Forward}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{can\+Go\+Forward()}{canGoForward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool experimental\+::ui\+::\+Web\+View\+::can\+Go\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether this \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a forward history item.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a forward history item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}\label{classexperimental_1_1ui_1_1WebView_a14f0dfa319d36a74db5afddf1a998b7d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!can\+Go\+Forward@{can\+Go\+Forward}}
+\index{can\+Go\+Forward@{can\+Go\+Forward}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{can\+Go\+Forward()}{canGoForward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool experimental\+::ui\+::\+Web\+View\+::can\+Go\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets whether this \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a forward history item.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has a forward history item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}\label{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!create@{create}}
+\index{create@{create}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}$\ast$ experimental\+::ui\+::\+Web\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates and initializes a \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}\label{classexperimental_1_1ui_1_1WebView_aac00e7ed03953cdfc444c04aa33c61a8}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!create@{create}}
+\index{create@{create}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}$\ast$ experimental\+::ui\+::\+Web\+View\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Allocates and initializes a \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}\label{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!evaluate\+JS@{evaluate\+JS}}
+\index{evaluate\+JS@{evaluate\+JS}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{evaluate\+J\+S()}{evaluateJS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::evaluate\+JS (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{js }\end{DoxyParamCaption})}
+
+Evaluates Java\+Script in the context of the currently displayed page. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}\label{classexperimental_1_1ui_1_1WebView_a5466fbae9364856565b8f4a6efa68ceb}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!evaluate\+JS@{evaluate\+JS}}
+\index{evaluate\+JS@{evaluate\+JS}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{evaluate\+J\+S()}{evaluateJS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::evaluate\+JS (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{js }\end{DoxyParamCaption})}
+
+Evaluates Java\+Script in the context of the currently displayed page. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}\label{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Did\+Fail\+Loading@{get\+On\+Did\+Fail\+Loading}}
+\index{get\+On\+Did\+Fail\+Loading@{get\+On\+Did\+Fail\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Did\+Fail\+Loading()}{getOnDidFailLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+Did\+Fail\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has failed loading. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}\label{classexperimental_1_1ui_1_1WebView_a43b0257e48e199521030bb6a35578549}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Did\+Fail\+Loading@{get\+On\+Did\+Fail\+Loading}}
+\index{get\+On\+Did\+Fail\+Loading@{get\+On\+Did\+Fail\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Did\+Fail\+Loading()}{getOnDidFailLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+Did\+Fail\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has failed loading. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}\label{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Did\+Finish\+Loading@{get\+On\+Did\+Finish\+Loading}}
+\index{get\+On\+Did\+Finish\+Loading@{get\+On\+Did\+Finish\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Did\+Finish\+Loading()}{getOnDidFinishLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+Did\+Finish\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has finished loading. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}\label{classexperimental_1_1ui_1_1WebView_a2bebc9f5a5744de9e6e9a80d57bc6fde}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Did\+Finish\+Loading@{get\+On\+Did\+Finish\+Loading}}
+\index{get\+On\+Did\+Finish\+Loading@{get\+On\+Did\+Finish\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Did\+Finish\+Loading()}{getOnDidFinishLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+Did\+Finish\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} has finished loading. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}\label{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+J\+S\+Callback@{get\+On\+J\+S\+Callback}}
+\index{get\+On\+J\+S\+Callback@{get\+On\+J\+S\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+J\+S\+Callback()}{getOnJSCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+J\+S\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Javascript callback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}\label{classexperimental_1_1ui_1_1WebView_a33c0a59576feca0f08efcdfa88243147}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+J\+S\+Callback@{get\+On\+J\+S\+Callback}}
+\index{get\+On\+J\+S\+Callback@{get\+On\+J\+S\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+J\+S\+Callback()}{getOnJSCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} experimental\+::ui\+::\+Web\+View\+::get\+On\+J\+S\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the Javascript callback. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}\label{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Should\+Start\+Loading@{get\+On\+Should\+Start\+Loading}}
+\index{get\+On\+Should\+Start\+Loading@{get\+On\+Should\+Start\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Should\+Start\+Loading()}{getOnShouldStartLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::function$<$bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ experimental\+::ui\+::\+Web\+View\+::get\+On\+Should\+Start\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} is about to start. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}\label{classexperimental_1_1ui_1_1WebView_ad8bf0cc832c0d88fcb1317563c14242f}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+On\+Should\+Start\+Loading@{get\+On\+Should\+Start\+Loading}}
+\index{get\+On\+Should\+Start\+Loading@{get\+On\+Should\+Start\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+On\+Should\+Start\+Loading()}{getOnShouldStartLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::function$<$bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ experimental\+::ui\+::\+Web\+View\+::get\+On\+Should\+Start\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the callback when \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} is about to start. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a131ed65ceec3a88dfb9630abfbde7d84}\label{classexperimental_1_1ui_1_1WebView_a131ed65ceec3a88dfb9630abfbde7d84}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!get\+Opacity\+Web\+View@{get\+Opacity\+Web\+View}}
+\index{get\+Opacity\+Web\+View@{get\+Opacity\+Web\+View}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{get\+Opacity\+Web\+View()}{getOpacityWebView()}}
+{\footnotesize\ttfamily virtual float experimental\+::ui\+::\+Web\+View\+::get\+Opacity\+Web\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get\+Opacity of webview. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}\label{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!go\+Back@{go\+Back}}
+\index{go\+Back@{go\+Back}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{go\+Back()}{goBack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Goes back in the history. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}\label{classexperimental_1_1ui_1_1WebView_a484fcf452270e21c41f192c41881c61f}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!go\+Back@{go\+Back}}
+\index{go\+Back@{go\+Back}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{go\+Back()}{goBack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Goes back in the history. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}\label{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!go\+Forward@{go\+Forward}}
+\index{go\+Forward@{go\+Forward}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{go\+Forward()}{goForward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::go\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Goes forward in the history. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}\label{classexperimental_1_1ui_1_1WebView_a7be24e3439501117335fb0063a1f4ea9}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!go\+Forward@{go\+Forward}}
+\index{go\+Forward@{go\+Forward}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{go\+Forward()}{goForward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::go\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Goes forward in the history. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}\label{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+Data@{load\+Data}}
+\index{load\+Data@{load\+Data}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+Data()}{loadData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+Data (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Data \&}]{data,  }\item[{const std\+::string \&}]{M\+I\+M\+E\+Type,  }\item[{const std\+::string \&}]{encoding,  }\item[{const std\+::string \&}]{base\+U\+RL }\end{DoxyParamCaption})}
+
+Sets the main page contents, M\+I\+ME type, content encoding, and base U\+RL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The content for the main page. \\
+\hline
+{\em M\+I\+M\+E\+Type} & The M\+I\+ME type of the data. \\
+\hline
+{\em encoding} & The encoding of the data. \\
+\hline
+{\em base\+U\+RL} & The base U\+RL for the content. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}\label{classexperimental_1_1ui_1_1WebView_a80a8a6f40866b1db05ce9d866669fb2d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+Data@{load\+Data}}
+\index{load\+Data@{load\+Data}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+Data()}{loadData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+Data (\begin{DoxyParamCaption}\item[{const cocos2d\+::\+Data \&}]{data,  }\item[{const std\+::string \&}]{M\+I\+M\+E\+Type,  }\item[{const std\+::string \&}]{encoding,  }\item[{const std\+::string \&}]{base\+U\+RL }\end{DoxyParamCaption})}
+
+Sets the main page contents, M\+I\+ME type, content encoding, and base U\+RL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The content for the main page. \\
+\hline
+{\em M\+I\+M\+E\+Type} & The M\+I\+ME type of the data. \\
+\hline
+{\em encoding} & The encoding of the data. \\
+\hline
+{\em base\+U\+RL} & The base U\+RL for the content. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}\label{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+File()}{loadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Loads the given file\+Name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Content file\+Name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}\label{classexperimental_1_1ui_1_1WebView_ac8b1fdef3df527682cfb9b875856f990}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+File()}{loadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Loads the given file\+Name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Content file\+Name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}\label{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+H\+T\+M\+L\+String@{load\+H\+T\+M\+L\+String}}
+\index{load\+H\+T\+M\+L\+String@{load\+H\+T\+M\+L\+String}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+H\+T\+M\+L\+String()}{loadHTMLString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+H\+T\+M\+L\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string,  }\item[{const std\+::string \&}]{base\+U\+RL = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Sets the main page content and base U\+RL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The content for the main page. \\
+\hline
+{\em base\+U\+RL} & The base U\+RL for the content. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}\label{classexperimental_1_1ui_1_1WebView_aead3a24dfa6db7bb8175d3616a415c20}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+H\+T\+M\+L\+String@{load\+H\+T\+M\+L\+String}}
+\index{load\+H\+T\+M\+L\+String@{load\+H\+T\+M\+L\+String}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+H\+T\+M\+L\+String()}{loadHTMLString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+H\+T\+M\+L\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string,  }\item[{const std\+::string \&}]{base\+U\+RL = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Sets the main page content and base U\+RL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The content for the main page. \\
+\hline
+{\em base\+U\+RL} & The base U\+RL for the content. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}\label{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+U\+RL@{load\+U\+RL}}
+\index{load\+U\+RL@{load\+U\+RL}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+U\+R\+L()}{loadURL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+U\+RL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})}
+
+Loads the given U\+RL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & Content U\+RL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}\label{classexperimental_1_1ui_1_1WebView_ac6824942bb8915c2b662ce185e9c82ee}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+U\+RL@{load\+U\+RL}}
+\index{load\+U\+RL@{load\+U\+RL}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+U\+R\+L()}{loadURL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+U\+RL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url }\end{DoxyParamCaption})}
+
+Loads the given U\+RL. It doesn\textquotesingle{}t clean cached data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & Content U\+RL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a86d715307de312c6a5dd5a49ba90aa4d}\label{classexperimental_1_1ui_1_1WebView_a86d715307de312c6a5dd5a49ba90aa4d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!load\+U\+RL@{load\+U\+RL}}
+\index{load\+U\+RL@{load\+U\+RL}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{load\+U\+R\+L()}{loadURL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::load\+U\+RL (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{bool}]{clean\+Cached\+Data }\end{DoxyParamCaption})}
+
+Loads the given U\+RL with cleaning cached data or not. 
+\begin{DoxyParams}{Parameters}
+{\em url} & Content U\+RL.  Whether to clean cached data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}\label{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!reload@{reload}}
+\index{reload@{reload}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{reload()}{reload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reloads the current U\+RL. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}\label{classexperimental_1_1ui_1_1WebView_a2176ef4153df90beadf3d00d780f8526}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!reload@{reload}}
+\index{reload@{reload}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{reload()}{reload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reloads the current U\+RL. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a83345ef293070d2ef77f93a6aa37ab01}\label{classexperimental_1_1ui_1_1WebView_a83345ef293070d2ef77f93a6aa37ab01}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Background\+Transparent@{set\+Background\+Transparent}}
+\index{set\+Background\+Transparent@{set\+Background\+Transparent}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Background\+Transparent()}{setBackgroundTransparent()}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Web\+View\+::set\+Background\+Transparent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+set the background transparent \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}\label{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Bounces@{set\+Bounces}}
+\index{set\+Bounces@{set\+Bounces}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Bounces()}{setBounces()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Bounces (\begin{DoxyParamCaption}\item[{bool}]{bounce }\end{DoxyParamCaption})}
+
+Set whether the webview bounces at end of scroll of \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}\label{classexperimental_1_1ui_1_1WebView_a0663d633aad187ab648d46521841979d}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Bounces@{set\+Bounces}}
+\index{set\+Bounces@{set\+Bounces}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Bounces()}{setBounces()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Bounces (\begin{DoxyParamCaption}\item[{bool}]{bounce }\end{DoxyParamCaption})}
+
+Set whether the webview bounces at end of scroll of \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}\label{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Javascript\+Interface\+Scheme@{set\+Javascript\+Interface\+Scheme}}
+\index{set\+Javascript\+Interface\+Scheme@{set\+Javascript\+Interface\+Scheme}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Javascript\+Interface\+Scheme()}{setJavascriptInterfaceScheme()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Javascript\+Interface\+Scheme (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scheme }\end{DoxyParamCaption})}
+
+Set javascript interface scheme.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}{Web\+View\+::set\+On\+J\+S\+Callback()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}\label{classexperimental_1_1ui_1_1WebView_a3beb4ee6d10fe0cc567483b65dabaa5b}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Javascript\+Interface\+Scheme@{set\+Javascript\+Interface\+Scheme}}
+\index{set\+Javascript\+Interface\+Scheme@{set\+Javascript\+Interface\+Scheme}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Javascript\+Interface\+Scheme()}{setJavascriptInterfaceScheme()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Javascript\+Interface\+Scheme (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scheme }\end{DoxyParamCaption})}
+
+Set javascript interface scheme.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}{Web\+View\+::set\+On\+J\+S\+Callback()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}\label{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Did\+Fail\+Loading@{set\+On\+Did\+Fail\+Loading}}
+\index{set\+On\+Did\+Fail\+Loading@{set\+On\+Did\+Fail\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Did\+Fail\+Loading()}{setOnDidFailLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Did\+Fail\+Loading (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+Call if a web view failed to load content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that has failed loading. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}\label{classexperimental_1_1ui_1_1WebView_aae599457e3ff606b3b3751bcebe1df29}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Did\+Fail\+Loading@{set\+On\+Did\+Fail\+Loading}}
+\index{set\+On\+Did\+Fail\+Loading@{set\+On\+Did\+Fail\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Did\+Fail\+Loading()}{setOnDidFailLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Did\+Fail\+Loading (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+Call if a web view failed to load content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that has failed loading. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}\label{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Did\+Finish\+Loading@{set\+On\+Did\+Finish\+Loading}}
+\index{set\+On\+Did\+Finish\+Loading@{set\+On\+Did\+Finish\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Did\+Finish\+Loading()}{setOnDidFinishLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Did\+Finish\+Loading (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+Call after a web view finishes loading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that has finished loading. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}\label{classexperimental_1_1ui_1_1WebView_a6fb8d736506be3151a8a5e3f08d6b7ea}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Did\+Finish\+Loading@{set\+On\+Did\+Finish\+Loading}}
+\index{set\+On\+Did\+Finish\+Loading@{set\+On\+Did\+Finish\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Did\+Finish\+Loading()}{setOnDidFinishLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Did\+Finish\+Loading (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+Call after a web view finishes loading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that has finished loading. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}\label{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+J\+S\+Callback@{set\+On\+J\+S\+Callback}}
+\index{set\+On\+J\+S\+Callback@{set\+On\+J\+S\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+J\+S\+Callback()}{setOnJSCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+J\+S\+Callback (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+This callback called when load U\+RL that start with javascript interface scheme. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}\label{classexperimental_1_1ui_1_1WebView_a434bac1a0a15294300ada912b85c35f4}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+J\+S\+Callback@{set\+On\+J\+S\+Callback}}
+\index{set\+On\+J\+S\+Callback@{set\+On\+J\+S\+Callback}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+J\+S\+Callback()}{setOnJSCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+J\+S\+Callback (\begin{DoxyParamCaption}\item[{const \hyperlink{classexperimental_1_1ui_1_1WebView_a11ddd376a5996eff614857f236b2b69d}{cc\+Web\+View\+Callback} \&}]{callback }\end{DoxyParamCaption})}
+
+This callback called when load U\+RL that start with javascript interface scheme. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}\label{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Should\+Start\+Loading@{set\+On\+Should\+Start\+Loading}}
+\index{set\+On\+Should\+Start\+Loading@{set\+On\+Should\+Start\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Should\+Start\+Loading()}{setOnShouldStartLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Should\+Start\+Loading (\begin{DoxyParamCaption}\item[{const std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Call before a web view begins loading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that is about to load new content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+ES if the web view should begin loading content; otherwise, NO. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}\label{classexperimental_1_1ui_1_1WebView_a212732b5b2ec9bd73084c57a140b5dd8}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+On\+Should\+Start\+Loading@{set\+On\+Should\+Start\+Loading}}
+\index{set\+On\+Should\+Start\+Loading@{set\+On\+Should\+Start\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+On\+Should\+Start\+Loading()}{setOnShouldStartLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+On\+Should\+Start\+Loading (\begin{DoxyParamCaption}\item[{const std\+::function$<$ bool(\hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} $\ast$sender, const std\+::string \&url)$>$ \&}]{callback }\end{DoxyParamCaption})}
+
+Call before a web view begins loading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The web view that is about to load new content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+ES if the web view should begin loading content; otherwise, NO. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_affeb7e462605d9749c63500e640e2c7a}\label{classexperimental_1_1ui_1_1WebView_affeb7e462605d9749c63500e640e2c7a}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Opacity\+Web\+View@{set\+Opacity\+Web\+View}}
+\index{set\+Opacity\+Web\+View@{set\+Opacity\+Web\+View}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Opacity\+Web\+View()}{setOpacityWebView()}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Web\+View\+::set\+Opacity\+Web\+View (\begin{DoxyParamCaption}\item[{float}]{opacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set\+Opacity of webview. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}\label{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Scales\+Page\+To\+Fit@{set\+Scales\+Page\+To\+Fit}}
+\index{set\+Scales\+Page\+To\+Fit@{set\+Scales\+Page\+To\+Fit}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Scales\+Page\+To\+Fit()}{setScalesPageToFit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Scales\+Page\+To\+Fit (\begin{DoxyParamCaption}\item[{const bool}]{scales\+Page\+To\+Fit }\end{DoxyParamCaption})}
+
+Set \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} should support zooming. The default value is false. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}\label{classexperimental_1_1ui_1_1WebView_ab55307e1ac4bca0f38df14589a3c0924}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Scales\+Page\+To\+Fit@{set\+Scales\+Page\+To\+Fit}}
+\index{set\+Scales\+Page\+To\+Fit@{set\+Scales\+Page\+To\+Fit}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Scales\+Page\+To\+Fit()}{setScalesPageToFit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::set\+Scales\+Page\+To\+Fit (\begin{DoxyParamCaption}\item[{const bool}]{scales\+Page\+To\+Fit }\end{DoxyParamCaption})}
+
+Set \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View} should support zooming. The default value is false. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}\label{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Web\+View\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Toggle visibility of \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}\label{classexperimental_1_1ui_1_1WebView_a10dcce8d4ec09f0efb49dd845131af5a}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{set\+Visible()}{setVisible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void experimental\+::ui\+::\+Web\+View\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Toggle visibility of \hyperlink{classexperimental_1_1ui_1_1WebView}{Web\+View}. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}\label{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!stop\+Loading@{stop\+Loading}}
+\index{stop\+Loading@{stop\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{stop\+Loading()}{stopLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::stop\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the current load. \mbox{\Hypertarget{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}\label{classexperimental_1_1ui_1_1WebView_a75b2a3f82d7c6ed497577e6ae481b81a}} 
+\index{experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}!stop\+Loading@{stop\+Loading}}
+\index{stop\+Loading@{stop\+Loading}!experimental\+::ui\+::\+Web\+View@{experimental\+::ui\+::\+Web\+View}}
+\subsubsection{\texorpdfstring{stop\+Loading()}{stopLoading()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void experimental\+::ui\+::\+Web\+View\+::stop\+Loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the current load. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Web\+View.\+h\end{DoxyCompactItemize}

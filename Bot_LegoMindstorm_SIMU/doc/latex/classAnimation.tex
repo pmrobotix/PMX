@@ -1,0 +1,609 @@
+\hypertarget{classAnimation}{}\section{Animation Class Reference}
+\label{classAnimation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$C\+C\+Animation.\+h$>$}
+
+
+
+Inheritance diagram for Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classAnimation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Animation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classAnimation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}{add\+Sprite\+Frame} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$frame)
+\item 
+void \hyperlink{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}{add\+Sprite\+Frame\+With\+File} (const std\+::string \&filename)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}{add\+Sprite\+Frame\+With\+File\+Name} (const std\+::string \&filename)
+\item 
+void \hyperlink{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}{add\+Sprite\+Frame\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$pob\+Texture, const \hyperlink{classRect}{Rect} \&rect)
+\item 
+float \hyperlink{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}{get\+Total\+Delay\+Units} () const
+\item 
+void \hyperlink{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}{set\+Delay\+Per\+Unit} (float delay\+Per\+Unit)
+\item 
+float \hyperlink{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}{get\+Delay\+Per\+Unit} () const
+\item 
+float \hyperlink{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}{get\+Duration} () const
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$ $>$ \& \hyperlink{classAnimation_a0f750cb26248e179ab8791c0bbb78057}{get\+Frames} () const
+\item 
+void \hyperlink{classAnimation_a2b083139529c667cc85d961e9ce4e49c}{set\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&frames)
+\item 
+bool \hyperlink{classAnimation_ac64dc1dd9ea5a78368906544d3404718}{get\+Restore\+Original\+Frame} () const
+\item 
+void \hyperlink{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}{set\+Restore\+Original\+Frame} (bool restore\+Original\+Frame)
+\item 
+unsigned int \hyperlink{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}{get\+Loops} () const
+\item 
+void \hyperlink{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}{set\+Loops} (unsigned int loops)
+\item 
+virtual \hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimation_a2c505ed267d42bbddca6674e46a6fb57}{clone} () const override
+\item 
+bool \hyperlink{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}{init} ()
+\item 
+bool \hyperlink{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}{init\+With\+Sprite\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&array\+Of\+Sprite\+Frame\+Names, float delay=0.\+0f, unsigned int loops=1)
+\item 
+bool \hyperlink{classAnimation_a1115db3100f35d146137bab1f3f384d6}{init\+With\+Animation\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&array\+Of\+Animation\+Frame\+Names, float delay\+Per\+Unit, unsigned int loops)
+\item 
+void \hyperlink{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}{add\+Sprite\+Frame} (\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$frame)
+\item 
+void \hyperlink{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}{add\+Sprite\+Frame\+With\+File} (const std\+::string \&filename)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void \hyperlink{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}{add\+Sprite\+Frame\+With\+File\+Name} (const std\+::string \&filename)
+\item 
+void \hyperlink{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}{add\+Sprite\+Frame\+With\+Texture} (\hyperlink{classTexture2D}{Texture2D} $\ast$pob\+Texture, const \hyperlink{classRect}{Rect} \&rect)
+\item 
+float \hyperlink{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}{get\+Total\+Delay\+Units} () const
+\item 
+void \hyperlink{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}{set\+Delay\+Per\+Unit} (float delay\+Per\+Unit)
+\item 
+float \hyperlink{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}{get\+Delay\+Per\+Unit} () const
+\item 
+float \hyperlink{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}{get\+Duration} () const
+\item 
+const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$ $>$ \& \hyperlink{classAnimation_a0f750cb26248e179ab8791c0bbb78057}{get\+Frames} () const
+\item 
+void \hyperlink{classAnimation_a2b083139529c667cc85d961e9ce4e49c}{set\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&frames)
+\item 
+bool \hyperlink{classAnimation_ac64dc1dd9ea5a78368906544d3404718}{get\+Restore\+Original\+Frame} () const
+\item 
+void \hyperlink{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}{set\+Restore\+Original\+Frame} (bool restore\+Original\+Frame)
+\item 
+unsigned int \hyperlink{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}{get\+Loops} () const
+\item 
+void \hyperlink{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}{set\+Loops} (unsigned int loops)
+\item 
+virtual \hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimation_af9e3cac2dab66da3a0d91d5b23e145e5}{clone} () const override
+\item 
+bool \hyperlink{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}{init} ()
+\item 
+bool \hyperlink{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}{init\+With\+Sprite\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&array\+Of\+Sprite\+Frame\+Names, float delay=0.\+0f, unsigned int loops=1)
+\item 
+bool \hyperlink{classAnimation_a1115db3100f35d146137bab1f3f384d6}{init\+With\+Animation\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&array\+Of\+Animation\+Frame\+Names, float delay\+Per\+Unit, unsigned int loops)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimation_a407cccd7d74a3ad381224410f00455f1}{create} (void)
+\item 
+\mbox{\Hypertarget{classAnimation_afd8c21efbc6a3dafa70133a737c174b7}\label{classAnimation_afd8c21efbc6a3dafa70133a737c174b7}} 
+static \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries create\+With\+Sprite\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&array\+Of\+Sprite\+Frame\+Names, float delay=0.\+0f, unsigned int loops=1)
+\item 
+\mbox{\Hypertarget{classAnimation_a00a7d2b8bf767aed89bac919ff6b273f}\label{classAnimation_a00a7d2b8bf767aed89bac919ff6b273f}} 
+static \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries create} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&array\+Of\+Animation\+Frame\+Names, float delay\+Per\+Unit, unsigned int loops=1)
+\item 
+static \hyperlink{classAnimation}{Animation} $\ast$ \hyperlink{classAnimation_ae15070d95f9de1a22d3b897570cda695}{create} (void)
+\item 
+\mbox{\Hypertarget{classAnimation_a18ef1b75b79a567e065cbf4bc85910cd}\label{classAnimation_a18ef1b75b79a567e065cbf4bc85910cd}} 
+static \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries create\+With\+Sprite\+Frames} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&array\+Of\+Sprite\+Frame\+Names, float delay=0.\+0f, unsigned int loops=1)
+\item 
+\mbox{\Hypertarget{classAnimation_a805c17320db567b322a70fd34b5f383d}\label{classAnimation_a805c17320db567b322a70fd34b5f383d}} 
+static \hyperlink{classAnimation}{Animation} $\ast$ {\bfseries create} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&array\+Of\+Animation\+Frame\+Names, float delay\+Per\+Unit, unsigned int loops=1)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAnimation_ab23ec12b344cd7d5eb0486efe9597e05}\label{classAnimation_ab23ec12b344cd7d5eb0486efe9597e05}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classAnimation}{Animation}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classAnimation_aa05672efcbdd64ac9247f052e2d0564d}{\+\_\+total\+Delay\+Units}
+\item 
+float \hyperlink{classAnimation_abb0374240f4f6c443aed804dca1e0a7a}{\+\_\+delay\+Per\+Unit}
+\item 
+float \hyperlink{classAnimation_ae49a146ade26d6f57c0630ad28f0acb3}{\+\_\+duration}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$ $>$ \hyperlink{classAnimation_a276e250f2ed2a8139d1796a2fcc8837c}{\+\_\+frames}
+\item 
+bool \hyperlink{classAnimation_ad03c361dbbe11f8a778a98e8c1afd517}{\+\_\+restore\+Original\+Frame}
+\item 
+unsigned int \hyperlink{classAnimation_a5742f724ac7b63cce171f2435e672bb1}{\+\_\+loops}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classAnimation}{Animation} object is used to perform animations on the \hyperlink{classSprite}{Sprite} objects. The \hyperlink{classAnimation}{Animation} object contains \hyperlink{classAnimationFrame}{Animation\+Frame} objects, and a possible delay between the frames. You can animate a \hyperlink{classAnimation}{Animation} object by using the \hyperlink{classAnimate}{Animate} action. Example\+: 
+\begin{DoxyCode}
+sprite->runAction(\hyperlink{classAnimate_aaa1198ded0f8c25bd265ed8b0b9d8a1c}{Animate::create}(animation));
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}\label{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame@{add\+Sprite\+Frame}}
+\index{add\+Sprite\+Frame@{add\+Sprite\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame()}{addSpriteFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$}]{frame }\end{DoxyParamCaption})}
+
+Adds a \hyperlink{classSpriteFrame}{Sprite\+Frame} to a \hyperlink{classAnimation}{Animation}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame will be added with one \char`\"{}delay unit\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}\label{classAnimation_a560fb49ea8765f6a13ebb272effbc7cb}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame@{add\+Sprite\+Frame}}
+\index{add\+Sprite\+Frame@{add\+Sprite\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame()}{addSpriteFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$}]{frame }\end{DoxyParamCaption})}
+
+Adds a \hyperlink{classSpriteFrame}{Sprite\+Frame} to a \hyperlink{classAnimation}{Animation}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame will be added with one \char`\"{}delay unit\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}\label{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+File@{add\+Sprite\+Frame\+With\+File}}
+\index{add\+Sprite\+Frame\+With\+File@{add\+Sprite\+Frame\+With\+File}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+File()}{addSpriteFrameWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+Adds a frame with an image filename. Internally it will create a \hyperlink{classSpriteFrame}{Sprite\+Frame} and it will add it. The frame will be added with one \char`\"{}delay unit\char`\"{}. Added to facilitate the migration from v0.\+8 to v0.\+9. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of \hyperlink{classSpriteFrame}{Sprite\+Frame}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}\label{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+File@{add\+Sprite\+Frame\+With\+File}}
+\index{add\+Sprite\+Frame\+With\+File@{add\+Sprite\+Frame\+With\+File}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+File()}{addSpriteFrameWithFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame\+With\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+Adds a frame with an image filename. Internally it will create a \hyperlink{classSpriteFrame}{Sprite\+Frame} and it will add it. The frame will be added with one \char`\"{}delay unit\char`\"{}. Added to facilitate the migration from v0.\+8 to v0.\+9. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path of \hyperlink{classSpriteFrame}{Sprite\+Frame}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}\label{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+File\+Name@{add\+Sprite\+Frame\+With\+File\+Name}}
+\index{add\+Sprite\+Frame\+With\+File\+Name@{add\+Sprite\+Frame\+With\+File\+Name}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+File\+Name()}{addSpriteFrameWithFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Animation\+::add\+Sprite\+Frame\+With\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000018}{Deprecated}]. Use \hyperlink{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}{add\+Sprite\+Frame\+With\+File()} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}\label{classAnimation_a26bbe80cf512690329b5c50f7dc567e8}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+File\+Name@{add\+Sprite\+Frame\+With\+File\+Name}}
+\index{add\+Sprite\+Frame\+With\+File\+Name@{add\+Sprite\+Frame\+With\+File\+Name}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+File\+Name()}{addSpriteFrameWithFileName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE void Animation\+::add\+Sprite\+Frame\+With\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000248}{Deprecated}]. Use \hyperlink{classAnimation_ab57ae7ddaf2adca5d944d931e892d203}{add\+Sprite\+Frame\+With\+File()} instead.  NA \end{DoxyRefDesc}
+\mbox{\Hypertarget{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}\label{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+Texture@{add\+Sprite\+Frame\+With\+Texture}}
+\index{add\+Sprite\+Frame\+With\+Texture@{add\+Sprite\+Frame\+With\+Texture}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+Texture()}{addSpriteFrameWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{pob\+Texture,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect }\end{DoxyParamCaption})}
+
+Adds a frame with a texture and a rect. Internally it will create a \hyperlink{classSpriteFrame}{Sprite\+Frame} and it will add it. The frame will be added with one \char`\"{}delay unit\char`\"{}. Added to facilitate the migration from v0.\+8 to v0.\+9. 
+\begin{DoxyParams}{Parameters}
+{\em pob\+Texture} & A frame with a texture. \\
+\hline
+{\em rect} & The Texture of rect. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}\label{classAnimation_aae5886a21a9c86e88269e35aa58a7ab1}} 
+\index{Animation@{Animation}!add\+Sprite\+Frame\+With\+Texture@{add\+Sprite\+Frame\+With\+Texture}}
+\index{add\+Sprite\+Frame\+With\+Texture@{add\+Sprite\+Frame\+With\+Texture}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{add\+Sprite\+Frame\+With\+Texture()}{addSpriteFrameWithTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::add\+Sprite\+Frame\+With\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{classTexture2D}{Texture2D} $\ast$}]{pob\+Texture,  }\item[{const \hyperlink{classRect}{Rect} \&}]{rect }\end{DoxyParamCaption})}
+
+Adds a frame with a texture and a rect. Internally it will create a \hyperlink{classSpriteFrame}{Sprite\+Frame} and it will add it. The frame will be added with one \char`\"{}delay unit\char`\"{}. Added to facilitate the migration from v0.\+8 to v0.\+9. 
+\begin{DoxyParams}{Parameters}
+{\em pob\+Texture} & A frame with a texture. \\
+\hline
+{\em rect} & The Texture of rect. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_a2c505ed267d42bbddca6674e46a6fb57}\label{classAnimation_a2c505ed267d42bbddca6674e46a6fb57}} 
+\index{Animation@{Animation}!clone@{clone}}
+\index{clone@{clone}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimation}{Animation} $\ast$ Animation\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a copy of the \hyperlink{classRef}{Ref}. 
+
+Implements \hyperlink{classClonable_a36b05a0fa605f4f269e5884bde7f9e0c}{Clonable}.
+
+\mbox{\Hypertarget{classAnimation_af9e3cac2dab66da3a0d91d5b23e145e5}\label{classAnimation_af9e3cac2dab66da3a0d91d5b23e145e5}} 
+\index{Animation@{Animation}!clone@{clone}}
+\index{clone@{clone}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classAnimation}{Animation}$\ast$ Animation\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a copy of the \hyperlink{classRef}{Ref}. 
+
+Implements \hyperlink{classClonable_a36b05a0fa605f4f269e5884bde7f9e0c}{Clonable}.
+
+\mbox{\Hypertarget{classAnimation_a407cccd7d74a3ad381224410f00455f1}\label{classAnimation_a407cccd7d74a3ad381224410f00455f1}} 
+\index{Animation@{Animation}!create@{create}}
+\index{create@{create}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classAnimation}{Animation} $\ast$ Animation\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an animation. \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_ae15070d95f9de1a22d3b897570cda695}\label{classAnimation_ae15070d95f9de1a22d3b897570cda695}} 
+\index{Animation@{Animation}!create@{create}}
+\index{create@{create}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classAnimation}{Animation}$\ast$ Animation\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates an animation. \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}\label{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}} 
+\index{Animation@{Animation}!get\+Delay\+Per\+Unit@{get\+Delay\+Per\+Unit}}
+\index{get\+Delay\+Per\+Unit@{get\+Delay\+Per\+Unit}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Delay\+Per\+Unit()}{getDelayPerUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Delay\+Per\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the delay in seconds of the \char`\"{}delay unit\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+The delay in seconds of the \char`\"{}delay unit\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}\label{classAnimation_a8bd8ce2036c1772a387a23fb35f78254}} 
+\index{Animation@{Animation}!get\+Delay\+Per\+Unit@{get\+Delay\+Per\+Unit}}
+\index{get\+Delay\+Per\+Unit@{get\+Delay\+Per\+Unit}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Delay\+Per\+Unit()}{getDelayPerUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Delay\+Per\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the delay in seconds of the \char`\"{}delay unit\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+The delay in seconds of the \char`\"{}delay unit\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}\label{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}} 
+\index{Animation@{Animation}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Duration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Duration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Gets the duration in seconds of the whole animation. It is the result of total\+Delay\+Units $\ast$ delay\+Per\+Unit.
+
+\begin{DoxyReturn}{Returns}
+Result of total\+Delay\+Units $\ast$ delay\+Per\+Unit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}\label{classAnimation_aa2cd2d5b8e2e6a8d6a2366556e29b03f}} 
+\index{Animation@{Animation}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Duration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the duration in seconds of the whole animation. It is the result of total\+Delay\+Units $\ast$ delay\+Per\+Unit.
+
+\begin{DoxyReturn}{Returns}
+Result of total\+Delay\+Units $\ast$ delay\+Per\+Unit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a0f750cb26248e179ab8791c0bbb78057}\label{classAnimation_a0f750cb26248e179ab8791c0bbb78057}} 
+\index{Animation@{Animation}!get\+Frames@{get\+Frames}}
+\index{get\+Frames@{get\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Frames()}{getFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classAnimationFrame}{Animation\+Frame}$\ast$$>$\& Animation\+::get\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the array of Animation\+Frames.
+
+\begin{DoxyReturn}{Returns}
+The array of Animation\+Frames. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a0f750cb26248e179ab8791c0bbb78057}\label{classAnimation_a0f750cb26248e179ab8791c0bbb78057}} 
+\index{Animation@{Animation}!get\+Frames@{get\+Frames}}
+\index{get\+Frames@{get\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Frames()}{getFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classVector}{Vector}$<$\hyperlink{classAnimationFrame}{Animation\+Frame}$\ast$$>$\& Animation\+::get\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the array of Animation\+Frames.
+
+\begin{DoxyReturn}{Returns}
+The array of Animation\+Frames. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}\label{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}} 
+\index{Animation@{Animation}!get\+Loops@{get\+Loops}}
+\index{get\+Loops@{get\+Loops}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Loops()}{getLoops()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Animation\+::get\+Loops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
+
+\begin{DoxyReturn}{Returns}
+The times the animation is going to loop. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}\label{classAnimation_a8d7832e8872f8c7ae4c6c63181506da3}} 
+\index{Animation@{Animation}!get\+Loops@{get\+Loops}}
+\index{get\+Loops@{get\+Loops}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Loops()}{getLoops()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Animation\+::get\+Loops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
+
+\begin{DoxyReturn}{Returns}
+The times the animation is going to loop. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_ac64dc1dd9ea5a78368906544d3404718}\label{classAnimation_ac64dc1dd9ea5a78368906544d3404718}} 
+\index{Animation@{Animation}!get\+Restore\+Original\+Frame@{get\+Restore\+Original\+Frame}}
+\index{get\+Restore\+Original\+Frame@{get\+Restore\+Original\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Restore\+Original\+Frame()}{getRestoreOriginalFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animation\+::get\+Restore\+Original\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether to restore the original frame when animation finishes.
+
+\begin{DoxyReturn}{Returns}
+Restore the original frame when animation finishes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_ac64dc1dd9ea5a78368906544d3404718}\label{classAnimation_ac64dc1dd9ea5a78368906544d3404718}} 
+\index{Animation@{Animation}!get\+Restore\+Original\+Frame@{get\+Restore\+Original\+Frame}}
+\index{get\+Restore\+Original\+Frame@{get\+Restore\+Original\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Restore\+Original\+Frame()}{getRestoreOriginalFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animation\+::get\+Restore\+Original\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether to restore the original frame when animation finishes.
+
+\begin{DoxyReturn}{Returns}
+Restore the original frame when animation finishes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}\label{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}} 
+\index{Animation@{Animation}!get\+Total\+Delay\+Units@{get\+Total\+Delay\+Units}}
+\index{get\+Total\+Delay\+Units@{get\+Total\+Delay\+Units}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Total\+Delay\+Units()}{getTotalDelayUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Total\+Delay\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the total Delay units of the \hyperlink{classAnimation}{Animation}.
+
+\begin{DoxyReturn}{Returns}
+The total Delay units of the \hyperlink{classAnimation}{Animation}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}\label{classAnimation_aa40cf40bf964a9acb74573e385a23f2f}} 
+\index{Animation@{Animation}!get\+Total\+Delay\+Units@{get\+Total\+Delay\+Units}}
+\index{get\+Total\+Delay\+Units@{get\+Total\+Delay\+Units}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{get\+Total\+Delay\+Units()}{getTotalDelayUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Animation\+::get\+Total\+Delay\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the total Delay units of the \hyperlink{classAnimation}{Animation}.
+
+\begin{DoxyReturn}{Returns}
+The total Delay units of the \hyperlink{classAnimation}{Animation}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}\label{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}} 
+\index{Animation@{Animation}!init@{init}}
+\index{init@{init}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animation\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation}. \mbox{\Hypertarget{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}\label{classAnimation_a8b88933b9e5de3ba1fd3dceee9391192}} 
+\index{Animation@{Animation}!init@{init}}
+\index{init@{init}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animation\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation}. \mbox{\Hypertarget{classAnimation_a1115db3100f35d146137bab1f3f384d6}\label{classAnimation_a1115db3100f35d146137bab1f3f384d6}} 
+\index{Animation@{Animation}!init\+With\+Animation\+Frames@{init\+With\+Animation\+Frames}}
+\index{init\+With\+Animation\+Frames@{init\+With\+Animation\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init\+With\+Animation\+Frames()}{initWithAnimationFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animation\+::init\+With\+Animation\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&}]{array\+Of\+Animation\+Frame\+Names,  }\item[{float}]{delay\+Per\+Unit,  }\item[{unsigned int}]{loops }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation} with \hyperlink{classAnimationFrame}{Animation\+Frame}. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_a1115db3100f35d146137bab1f3f384d6}\label{classAnimation_a1115db3100f35d146137bab1f3f384d6}} 
+\index{Animation@{Animation}!init\+With\+Animation\+Frames@{init\+With\+Animation\+Frames}}
+\index{init\+With\+Animation\+Frames@{init\+With\+Animation\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init\+With\+Animation\+Frames()}{initWithAnimationFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animation\+::init\+With\+Animation\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&}]{array\+Of\+Animation\+Frame\+Names,  }\item[{float}]{delay\+Per\+Unit,  }\item[{unsigned int}]{loops }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation} with \hyperlink{classAnimationFrame}{Animation\+Frame}. \begin{DoxySince}{Since}
+v2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}\label{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}} 
+\index{Animation@{Animation}!init\+With\+Sprite\+Frames@{init\+With\+Sprite\+Frames}}
+\index{init\+With\+Sprite\+Frames@{init\+With\+Sprite\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init\+With\+Sprite\+Frames()}{initWithSpriteFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Animation\+::init\+With\+Sprite\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&}]{array\+Of\+Sprite\+Frame\+Names,  }\item[{float}]{delay = {\ttfamily 0.0f},  }\item[{unsigned int}]{loops = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation} with frames and a delay between frames. \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}\label{classAnimation_acd22ef6cbb5df1808adbde4b834ec198}} 
+\index{Animation@{Animation}!init\+With\+Sprite\+Frames@{init\+With\+Sprite\+Frames}}
+\index{init\+With\+Sprite\+Frames@{init\+With\+Sprite\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{init\+With\+Sprite\+Frames()}{initWithSpriteFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Animation\+::init\+With\+Sprite\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classSpriteFrame}{Sprite\+Frame} $\ast$$>$ \&}]{array\+Of\+Sprite\+Frame\+Names,  }\item[{float}]{delay = {\ttfamily 0.0f},  }\item[{unsigned int}]{loops = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classAnimation}{Animation} with frames and a delay between frames. \begin{DoxySince}{Since}
+v0.\+99.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}\label{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}} 
+\index{Animation@{Animation}!set\+Delay\+Per\+Unit@{set\+Delay\+Per\+Unit}}
+\index{set\+Delay\+Per\+Unit@{set\+Delay\+Per\+Unit}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Delay\+Per\+Unit()}{setDelayPerUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Delay\+Per\+Unit (\begin{DoxyParamCaption}\item[{float}]{delay\+Per\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the delay in seconds of the \char`\"{}delay unit\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay\+Per\+Unit} & The delay in seconds of the \char`\"{}delay unit\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}\label{classAnimation_aac13966b350fe6f9d93dddfc3d65f9b7}} 
+\index{Animation@{Animation}!set\+Delay\+Per\+Unit@{set\+Delay\+Per\+Unit}}
+\index{set\+Delay\+Per\+Unit@{set\+Delay\+Per\+Unit}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Delay\+Per\+Unit()}{setDelayPerUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Delay\+Per\+Unit (\begin{DoxyParamCaption}\item[{float}]{delay\+Per\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the delay in seconds of the \char`\"{}delay unit\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay\+Per\+Unit} & The delay in seconds of the \char`\"{}delay unit\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_a2b083139529c667cc85d961e9ce4e49c}\label{classAnimation_a2b083139529c667cc85d961e9ce4e49c}} 
+\index{Animation@{Animation}!set\+Frames@{set\+Frames}}
+\index{set\+Frames@{set\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Frames()}{setFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&}]{frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the array of Animation\+Frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames} & The array of Animation\+Frames. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_a2b083139529c667cc85d961e9ce4e49c}\label{classAnimation_a2b083139529c667cc85d961e9ce4e49c}} 
+\index{Animation@{Animation}!set\+Frames@{set\+Frames}}
+\index{set\+Frames@{set\+Frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Frames()}{setFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Frames (\begin{DoxyParamCaption}\item[{const \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$$>$ \&}]{frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the array of Animation\+Frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames} & The array of Animation\+Frames. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}\label{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}} 
+\index{Animation@{Animation}!set\+Loops@{set\+Loops}}
+\index{set\+Loops@{set\+Loops}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Loops()}{setLoops()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Loops (\begin{DoxyParamCaption}\item[{unsigned int}]{loops }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
+
+
+\begin{DoxyParams}{Parameters}
+{\em loops} & The times the animation is going to loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}\label{classAnimation_ae40b12fed5771ac666eb8ef1e4676e17}} 
+\index{Animation@{Animation}!set\+Loops@{set\+Loops}}
+\index{set\+Loops@{set\+Loops}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Loops()}{setLoops()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Loops (\begin{DoxyParamCaption}\item[{unsigned int}]{loops }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
+
+
+\begin{DoxyParams}{Parameters}
+{\em loops} & The times the animation is going to loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}\label{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}} 
+\index{Animation@{Animation}!set\+Restore\+Original\+Frame@{set\+Restore\+Original\+Frame}}
+\index{set\+Restore\+Original\+Frame@{set\+Restore\+Original\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Restore\+Original\+Frame()}{setRestoreOriginalFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Restore\+Original\+Frame (\begin{DoxyParamCaption}\item[{bool}]{restore\+Original\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets whether to restore the original frame when animation finishes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em restore\+Original\+Frame} & Whether to restore the original frame when animation finishes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}\label{classAnimation_aeee2ac2f17c63415f5b34c9546824cde}} 
+\index{Animation@{Animation}!set\+Restore\+Original\+Frame@{set\+Restore\+Original\+Frame}}
+\index{set\+Restore\+Original\+Frame@{set\+Restore\+Original\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{set\+Restore\+Original\+Frame()}{setRestoreOriginalFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Animation\+::set\+Restore\+Original\+Frame (\begin{DoxyParamCaption}\item[{bool}]{restore\+Original\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets whether to restore the original frame when animation finishes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em restore\+Original\+Frame} & Whether to restore the original frame when animation finishes. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnimation_abb0374240f4f6c443aed804dca1e0a7a}\label{classAnimation_abb0374240f4f6c443aed804dca1e0a7a}} 
+\index{Animation@{Animation}!\+\_\+delay\+Per\+Unit@{\+\_\+delay\+Per\+Unit}}
+\index{\+\_\+delay\+Per\+Unit@{\+\_\+delay\+Per\+Unit}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+delay\+Per\+Unit}{\_delayPerUnit}}
+{\footnotesize\ttfamily float Animation\+::\+\_\+delay\+Per\+Unit\hspace{0.3cm}{\ttfamily [protected]}}
+
+Delay in seconds of the \char`\"{}delay unit\char`\"{}. \mbox{\Hypertarget{classAnimation_ae49a146ade26d6f57c0630ad28f0acb3}\label{classAnimation_ae49a146ade26d6f57c0630ad28f0acb3}} 
+\index{Animation@{Animation}!\+\_\+duration@{\+\_\+duration}}
+\index{\+\_\+duration@{\+\_\+duration}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+duration}{\_duration}}
+{\footnotesize\ttfamily float Animation\+::\+\_\+duration\hspace{0.3cm}{\ttfamily [protected]}}
+
+duration in seconds of the whole animation. It is the result of total\+Delay\+Units $\ast$ delay\+Per\+Unit. \mbox{\Hypertarget{classAnimation_a276e250f2ed2a8139d1796a2fcc8837c}\label{classAnimation_a276e250f2ed2a8139d1796a2fcc8837c}} 
+\index{Animation@{Animation}!\+\_\+frames@{\+\_\+frames}}
+\index{\+\_\+frames@{\+\_\+frames}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+frames}{\_frames}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classAnimationFrame}{Animation\+Frame} $\ast$ $>$ Animation\+::\+\_\+frames\hspace{0.3cm}{\ttfamily [protected]}}
+
+array of Animation\+Frames. \mbox{\Hypertarget{classAnimation_a5742f724ac7b63cce171f2435e672bb1}\label{classAnimation_a5742f724ac7b63cce171f2435e672bb1}} 
+\index{Animation@{Animation}!\+\_\+loops@{\+\_\+loops}}
+\index{\+\_\+loops@{\+\_\+loops}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+loops}{\_loops}}
+{\footnotesize\ttfamily unsigned int Animation\+::\+\_\+loops\hspace{0.3cm}{\ttfamily [protected]}}
+
+how many times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ... \mbox{\Hypertarget{classAnimation_ad03c361dbbe11f8a778a98e8c1afd517}\label{classAnimation_ad03c361dbbe11f8a778a98e8c1afd517}} 
+\index{Animation@{Animation}!\+\_\+restore\+Original\+Frame@{\+\_\+restore\+Original\+Frame}}
+\index{\+\_\+restore\+Original\+Frame@{\+\_\+restore\+Original\+Frame}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+restore\+Original\+Frame}{\_restoreOriginalFrame}}
+{\footnotesize\ttfamily bool Animation\+::\+\_\+restore\+Original\+Frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+whether or not it shall restore the original frame when the animation finishes. \mbox{\Hypertarget{classAnimation_aa05672efcbdd64ac9247f052e2d0564d}\label{classAnimation_aa05672efcbdd64ac9247f052e2d0564d}} 
+\index{Animation@{Animation}!\+\_\+total\+Delay\+Units@{\+\_\+total\+Delay\+Units}}
+\index{\+\_\+total\+Delay\+Units@{\+\_\+total\+Delay\+Units}!Animation@{Animation}}
+\subsubsection{\texorpdfstring{\+\_\+total\+Delay\+Units}{\_totalDelayUnits}}
+{\footnotesize\ttfamily float Animation\+::\+\_\+total\+Delay\+Units\hspace{0.3cm}{\ttfamily [protected]}}
+
+total Delay units of the \hyperlink{classAnimation}{Animation}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Animation.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Animation.\+cpp\end{DoxyCompactItemize}

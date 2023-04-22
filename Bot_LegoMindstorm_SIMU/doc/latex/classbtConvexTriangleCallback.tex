@@ -1,0 +1,94 @@
+\hypertarget{classbtConvexTriangleCallback}{}\section{bt\+Convex\+Triangle\+Callback Class Reference}
+\label{classbtConvexTriangleCallback}\index{bt\+Convex\+Triangle\+Callback@{bt\+Convex\+Triangle\+Callback}}
+
+
+For each triangle in the concave mesh that overlaps with the \hyperlink{classAABB}{A\+A\+BB} of a convex (m\+\_\+convex\+Proxy), process\+Triangle is called.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Convex\+Concave\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Convex\+Triangle\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classbtConvexTriangleCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Convex\+Triangle\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classbtConvexTriangleCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a6f4ecb0523e0400fa311a166ef44d615}\label{classbtConvexTriangleCallback_a6f4ecb0523e0400fa311a166ef44d615}} 
+{\bfseries bt\+Convex\+Triangle\+Callback} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_aa1deb837a2ff8a42f7f26f49194879ae}\label{classbtConvexTriangleCallback_aa1deb837a2ff8a42f7f26f49194879ae}} 
+void {\bfseries set\+Time\+Step\+And\+Counters} (bt\+Scalar collision\+Margin\+Triangle, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$convex\+Body\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$tri\+Body\+Wrap, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_ae89fd9d19380ccb4c9d76607027345dd}\label{classbtConvexTriangleCallback_ae89fd9d19380ccb4c9d76607027345dd}} 
+void {\bfseries clear\+Wrapper\+Data} ()
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a876455c6c0e579ab602d34790ce79260}\label{classbtConvexTriangleCallback_a876455c6c0e579ab602d34790ce79260}} 
+virtual void {\bfseries process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a881f3c19fa5af5a2bc2aa298c7b18d25}\label{classbtConvexTriangleCallback_a881f3c19fa5af5a2bc2aa298c7b18d25}} 
+void {\bfseries clear\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a22e53c06500c04617b3a7b452f4af853}\label{classbtConvexTriangleCallback_a22e53c06500c04617b3a7b452f4af853}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Min} () const
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a08c68e722c6503a2c1e9447516603231}\label{classbtConvexTriangleCallback_a08c68e722c6503a2c1e9447516603231}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Max} () const
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a6f4ecb0523e0400fa311a166ef44d615}\label{classbtConvexTriangleCallback_a6f4ecb0523e0400fa311a166ef44d615}} 
+{\bfseries bt\+Convex\+Triangle\+Callback} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_aa1deb837a2ff8a42f7f26f49194879ae}\label{classbtConvexTriangleCallback_aa1deb837a2ff8a42f7f26f49194879ae}} 
+void {\bfseries set\+Time\+Step\+And\+Counters} (bt\+Scalar collision\+Margin\+Triangle, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$convex\+Body\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$tri\+Body\+Wrap, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_ae89fd9d19380ccb4c9d76607027345dd}\label{classbtConvexTriangleCallback_ae89fd9d19380ccb4c9d76607027345dd}} 
+void {\bfseries clear\+Wrapper\+Data} ()
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_aa48237b32669b0ff9b71f77b4d597aaa}\label{classbtConvexTriangleCallback_aa48237b32669b0ff9b71f77b4d597aaa}} 
+virtual void {\bfseries process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a881f3c19fa5af5a2bc2aa298c7b18d25}\label{classbtConvexTriangleCallback_a881f3c19fa5af5a2bc2aa298c7b18d25}} 
+void {\bfseries clear\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a22e53c06500c04617b3a7b452f4af853}\label{classbtConvexTriangleCallback_a22e53c06500c04617b3a7b452f4af853}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Min} () const
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_a08c68e722c6503a2c1e9447516603231}\label{classbtConvexTriangleCallback_a08c68e722c6503a2c1e9447516603231}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Max} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_aeb7c14e970b2fc734f02787497f7b9b9}\label{classbtConvexTriangleCallback_aeb7c14e970b2fc734f02787497f7b9b9}} 
+int {\bfseries m\+\_\+triangle\+Count}
+\item 
+\mbox{\Hypertarget{classbtConvexTriangleCallback_af0dd0d3172324cfab3d5d93b05c1a576}\label{classbtConvexTriangleCallback_af0dd0d3172324cfab3d5d93b05c1a576}} 
+bt\+Persistent\+Manifold $\ast$ {\bfseries m\+\_\+manifold\+Ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+For each triangle in the concave mesh that overlaps with the \hyperlink{classAABB}{A\+A\+BB} of a convex (m\+\_\+convex\+Proxy), process\+Triangle is called. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Convex\+Concave\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Convex\+Concave\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

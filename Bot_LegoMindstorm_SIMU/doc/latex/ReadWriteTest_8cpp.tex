@@ -1,0 +1,88 @@
+\hypertarget{ReadWriteTest_8cpp}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Common-\/\+Test.Main/\+Read\+Write\+Test.cpp File Reference}
+\label{ReadWriteTest_8cpp}\index{/home/pmx/git/\+P\+M\+X/test/\+Common-\/\+Test.\+Main/\+Read\+Write\+Test.\+cpp@{/home/pmx/git/\+P\+M\+X/test/\+Common-\/\+Test.\+Main/\+Read\+Write\+Test.\+cpp}}
+
+
+Implémentation de la classe Read\+Write\+Test. Benchmark test \href{https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/}{\tt https\+://lemire.\+me/blog/2012/06/26/which-\/is-\/fastest-\/read-\/fread-\/ifstream-\/or-\/mmap/} \href{https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/blob/master/2012/06/26/ioaccess.cpp}{\tt https\+://github.\+com/lemire/\+Code-\/used-\/on-\/\+Daniel-\/\+Lemire-\/s-\/blog/blob/master/2012/06/26/ioaccess.\+cpp}.  
+
+
+{\ttfamily \#include \char`\"{}Read\+Write\+Test.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/resource.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/uio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Read\+Write\+Test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ReadWriteTest_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmeasure}{measure}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a36fa9b2e726512bc17a7a6d3e39002be}\label{ReadWriteTest_8cpp_a36fa9b2e726512bc17a7a6d3e39002be}} 
+\#define {\bfseries O\+\_\+\+B\+I\+N\+A\+RY}~0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a80c8e30c466d0f9b082a5273c9a85b87}\label{ReadWriteTest_8cpp_a80c8e30c466d0f9b082a5273c9a85b87}} 
+void {\bfseries test\+C\+File\+IO} (const char $\ast$in\+File, const char $\ast$out\+File, std\+::vector$<$ char $>$ \&in\+Buffer)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_afc0b3d5ea741542b8b996d81bebf0371}\label{ReadWriteTest_8cpp_afc0b3d5ea741542b8b996d81bebf0371}} 
+void {\bfseries test\+Cpp\+IO} (const char $\ast$in\+File, const char $\ast$out\+File, std\+::vector$<$ char $>$ \&in\+Buffer)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a5d7f2a48683453f8a3aa92e4046bb679}\label{ReadWriteTest_8cpp_a5d7f2a48683453f8a3aa92e4046bb679}} 
+void {\bfseries test\+Posix\+IO} (const char $\ast$in\+File, const char $\ast$out\+File, std\+::vector$<$ char $>$ \&in\+Buffer)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_ac7b7b7fad48d7378247d1f972d096d05}\label{ReadWriteTest_8cpp_ac7b7b7fad48d7378247d1f972d096d05}} 
+void {\bfseries fill\+File} (int N, char $\ast$name)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_ad713352aa4e97cacef72dd9882498454}\label{ReadWriteTest_8cpp_ad713352aa4e97cacef72dd9882498454}} 
+int {\bfseries do\+Some\+Computation} (int $\ast$numbers, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_aa6234b4f878e44970dee984dbafe0595}\label{ReadWriteTest_8cpp_aa6234b4f878e44970dee984dbafe0595}} 
+int {\bfseries testfread} (char $\ast$name, int N)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_adade2cdc592823746ccd0ebc5a667634}\label{ReadWriteTest_8cpp_adade2cdc592823746ccd0ebc5a667634}} 
+int {\bfseries testwith\+Cpp} (char $\ast$name, int N)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a94c36aaf5b4e3fb17de6bbe9f0dfdae7}\label{ReadWriteTest_8cpp_a94c36aaf5b4e3fb17de6bbe9f0dfdae7}} 
+int {\bfseries testfreadwithsetbuffer} (char $\ast$name, int N)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a6e161c6f083e44f3c56d3327a209b9d1}\label{ReadWriteTest_8cpp_a6e161c6f083e44f3c56d3327a209b9d1}} 
+int {\bfseries testfreadwithlargebuffer} (char $\ast$name, int N)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_a11e4c8e5ee09f574fb56e4b6cd02ffb3}\label{ReadWriteTest_8cpp_a11e4c8e5ee09f574fb56e4b6cd02ffb3}} 
+int {\bfseries testwmmap} (char $\ast$name, int N, bool advise, bool shared)
+\item 
+\mbox{\Hypertarget{ReadWriteTest_8cpp_ad567c0ff988b1c096fd725a3e50da62b}\label{ReadWriteTest_8cpp_ad567c0ff988b1c096fd725a3e50da62b}} 
+int {\bfseries testread} (char $\ast$name, int N)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implémentation de la classe Read\+Write\+Test. Benchmark test \href{https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/}{\tt https\+://lemire.\+me/blog/2012/06/26/which-\/is-\/fastest-\/read-\/fread-\/ifstream-\/or-\/mmap/} \href{https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/blob/master/2012/06/26/ioaccess.cpp}{\tt https\+://github.\+com/lemire/\+Code-\/used-\/on-\/\+Daniel-\/\+Lemire-\/s-\/blog/blob/master/2012/06/26/ioaccess.\+cpp}. 
+

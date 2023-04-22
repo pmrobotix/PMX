@@ -1,0 +1,58 @@
+\hypertarget{structdtOffMeshConnection}{}\section{dt\+Off\+Mesh\+Connection Struct Reference}
+\label{structdtOffMeshConnection}\index{dt\+Off\+Mesh\+Connection@{dt\+Off\+Mesh\+Connection}}
+
+
+{\ttfamily \#include $<$Detour\+Nav\+Mesh.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structdtOffMeshConnection_a1ad6f470aa15ca67e1df62d692a4efe4}{pos} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em The endpoints of the connection. \mbox{[}(ax, ay, az, bx, by, bz)\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtOffMeshConnection_af5ea87d3e8c0d6c1bd5afeac3f954fa1}\label{structdtOffMeshConnection_af5ea87d3e8c0d6c1bd5afeac3f954fa1}} 
+float \hyperlink{structdtOffMeshConnection_af5ea87d3e8c0d6c1bd5afeac3f954fa1}{rad}
+\begin{DoxyCompactList}\small\item\em The radius of the endpoints. \mbox{[}Limit\+: $>$= 0\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtOffMeshConnection_a4b6b7097d8fd55a5e7f7173a40d01325}\label{structdtOffMeshConnection_a4b6b7097d8fd55a5e7f7173a40d01325}} 
+unsigned short \hyperlink{structdtOffMeshConnection_a4b6b7097d8fd55a5e7f7173a40d01325}{poly}
+\begin{DoxyCompactList}\small\item\em The polygon reference of the connection within the tile. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{structdtOffMeshConnection_adf581af16754d8bbed1479cdf91dd82d}{flags}
+\item 
+\mbox{\Hypertarget{structdtOffMeshConnection_a8c193e7df9998a218be48a39b2be1488}\label{structdtOffMeshConnection_a8c193e7df9998a218be48a39b2be1488}} 
+unsigned char \hyperlink{structdtOffMeshConnection_a8c193e7df9998a218be48a39b2be1488}{side}
+\begin{DoxyCompactList}\small\item\em End point side. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structdtOffMeshConnection_a157eae33ff9cb301e25f822a9d0b74dc}\label{structdtOffMeshConnection_a157eae33ff9cb301e25f822a9d0b74dc}} 
+unsigned int \hyperlink{structdtOffMeshConnection_a157eae33ff9cb301e25f822a9d0b74dc}{user\+Id}
+\begin{DoxyCompactList}\small\item\em The id of the offmesh connection. (User assigned when the navigation mesh is built.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines an navigation mesh off-\/mesh connection within a \hyperlink{structdtMeshTile}{dt\+Mesh\+Tile} object. An off-\/mesh connection is a user defined traversable connection made up to two vertices. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdtOffMeshConnection_adf581af16754d8bbed1479cdf91dd82d}\label{structdtOffMeshConnection_adf581af16754d8bbed1479cdf91dd82d}} 
+\index{dt\+Off\+Mesh\+Connection@{dt\+Off\+Mesh\+Connection}!flags@{flags}}
+\index{flags@{flags}!dt\+Off\+Mesh\+Connection@{dt\+Off\+Mesh\+Connection}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned char dt\+Off\+Mesh\+Connection\+::flags}
+
+Link flags. \begin{DoxyNote}{Note}
+These are not the connection\textquotesingle{}s user defined flags. Those are assigned via the connection\textquotesingle{}s \hyperlink{structdtPoly}{dt\+Poly} definition. These are link flags used for internal purposes. 
+\end{DoxyNote}
+\mbox{\Hypertarget{structdtOffMeshConnection_a1ad6f470aa15ca67e1df62d692a4efe4}\label{structdtOffMeshConnection_a1ad6f470aa15ca67e1df62d692a4efe4}} 
+\index{dt\+Off\+Mesh\+Connection@{dt\+Off\+Mesh\+Connection}!pos@{pos}}
+\index{pos@{pos}!dt\+Off\+Mesh\+Connection@{dt\+Off\+Mesh\+Connection}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily float dt\+Off\+Mesh\+Connection\+::pos\mbox{[}6\mbox{]}}
+
+
+
+The endpoints of the connection. \mbox{[}(ax, ay, az, bx, by, bz)\mbox{]}. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+For a properly built navigation mesh, vertex A will always be within the bounds of the mesh. Vertex B is not required to be within the bounds of the mesh. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/recast/\+Detour/Detour\+Nav\+Mesh.\+h\end{DoxyCompactItemize}

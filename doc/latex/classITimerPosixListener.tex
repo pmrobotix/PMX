@@ -1,0 +1,137 @@
+\hypertarget{classITimerPosixListener}{}\section{I\+Timer\+Posix\+Listener Class Reference}
+\label{classITimerPosixListener}\index{I\+Timer\+Posix\+Listener@{I\+Timer\+Posix\+Listener}}
+
+
+Cette interface représente une action executée par un timer lorsqu\textquotesingle{}il atteint son seuil d\textquotesingle{}execution.  
+
+
+
+
+{\ttfamily \#include $<$I\+Timer\+Posix\+Listener.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Timer\+Posix\+Listener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classITimerPosixListener__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+Timer\+Posix\+Listener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classITimerPosixListener__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a6f2e614a3dbc1d0eae48c87ee82ae7ee}\label{classITimerPosixListener_a6f2e614a3dbc1d0eae48c87ee82ae7ee}} 
+virtual void \hyperlink{classITimerPosixListener_a6f2e614a3dbc1d0eae48c87ee82ae7ee}{on\+Timer} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)=0
+\begin{DoxyCompactList}\small\item\em \hyperlink{classActions}{Actions} à executer pour le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerPosixListener_a4df70962b58b13d521f1f7f91ec6fc13}\label{classITimerPosixListener_a4df70962b58b13d521f1f7f91ec6fc13}} 
+virtual void \hyperlink{classITimerPosixListener_a4df70962b58b13d521f1f7f91ec6fc13}{on\+Timer\+End} (\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} chrono)=0
+\begin{DoxyCompactList}\small\item\em \hyperlink{classActions}{Actions} de fin à executer pour le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerPosixListener_a56abc90e01e315320b855399b2c0096e}\label{classITimerPosixListener_a56abc90e01e315320b855399b2c0096e}} 
+virtual std\+::string \hyperlink{classITimerPosixListener_a56abc90e01e315320b855399b2c0096e}{name} ()
+\begin{DoxyCompactList}\small\item\em Getter sur les infos permettant d\textquotesingle{}identifier le timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerPosixListener_a68a996ffa95155e824dec8653fbc8e40}\label{classITimerPosixListener_a68a996ffa95155e824dec8653fbc8e40}} 
+int \hyperlink{classITimerPosixListener_a68a996ffa95155e824dec8653fbc8e40}{time\+Span\+\_\+us} ()
+\begin{DoxyCompactList}\small\item\em Getter sur le temps interval du timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classITimerPosixListener_a89083ecb392fa2f81b4951ba0e2ba824}\label{classITimerPosixListener_a89083ecb392fa2f81b4951ba0e2ba824}} 
+void {\bfseries start\+Timer} ()
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a947703910793e42988a0d082a7638c4a}\label{classITimerPosixListener_a947703910793e42988a0d082a7638c4a}} 
+bool {\bfseries get\+Running} ()
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a5d3f9eac245766f6c6f304417870a5ff}\label{classITimerPosixListener_a5d3f9eac245766f6c6f304417870a5ff}} 
+bool {\bfseries request\+To\+Stop} ()
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a4a0a8d4ee2f56f0244b0e4b110393fb0}\label{classITimerPosixListener_a4a0a8d4ee2f56f0244b0e4b110393fb0}} 
+void {\bfseries set\+Pause} (bool paused)
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a02ed7d5fc8fb16535016f4e9c8dbe6ab}\label{classITimerPosixListener_a02ed7d5fc8fb16535016f4e9c8dbe6ab}} 
+void {\bfseries remove} (timer\+\_\+t timer\+ID)
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a543d5682e0e998afeb5f0237cae8c71d}\label{classITimerPosixListener_a543d5682e0e998afeb5f0237cae8c71d}} 
+void {\bfseries remove} ()
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ae7d5e0056bcd864a09b66a4d98c02590}\label{classITimerPosixListener_ae7d5e0056bcd864a09b66a4d98c02590}} 
+virtual \hyperlink{classITimerPosixListener_ae7d5e0056bcd864a09b66a4d98c02590}{$\sim$ I\+Timer\+Posix\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classITimerPosixListener_af06fbcdd0f34a17d4341f896002860af}{alarm\+Function} (int sig\+Numb, siginfo\+\_\+t $\ast$si, void $\ast$uc)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a642d6ebb49d6b62a63ded5f6fda178bc}\label{classITimerPosixListener_a642d6ebb49d6b62a63ded5f6fda178bc}} 
+timer\+\_\+t {\bfseries timer\+ID}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a8fa649b55c2f2fe751ee0bedb3a28e31}\label{classITimerPosixListener_a8fa649b55c2f2fe751ee0bedb3a28e31}} 
+void {\bfseries init} (std\+::string label, uint time\+\_\+us)
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ab72547ab3e43d15769a6c18799f07062}\label{classITimerPosixListener_ab72547ab3e43d15769a6c18799f07062}} 
+\hyperlink{classITimerPosixListener_ab72547ab3e43d15769a6c18799f07062}{I\+Timer\+Posix\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a22f7ae58626c79770d8facded3700516}\label{classITimerPosixListener_a22f7ae58626c79770d8facded3700516}} 
+std\+::string {\bfseries name\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a7aab13f1f57e65402535c05c3c0cc42e}\label{classITimerPosixListener_a7aab13f1f57e65402535c05c3c0cc42e}} 
+long {\bfseries time\+Span\+\_\+us\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a8de2755092a5cdfff6474856de2db24d}\label{classITimerPosixListener_a8de2755092a5cdfff6474856de2db24d}} 
+\hyperlink{classutils_1_1Chronometer}{utils\+::\+Chronometer} {\bfseries chrono}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_af807e3efed45d03cb7e3659b30ec7b3b}\label{classITimerPosixListener_af807e3efed45d03cb7e3659b30ec7b3b}} 
+bool {\bfseries started\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ac8a0e917b8796bf90a89fd0ca8e0ce8d}\label{classITimerPosixListener_ac8a0e917b8796bf90a89fd0ca8e0ce8d}} 
+bool {\bfseries paused\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ad2643dad43b9df43ef49feac91597ab6}\label{classITimerPosixListener_ad2643dad43b9df43ef49feac91597ab6}} 
+bool {\bfseries request\+To\+Stop\+\_\+}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ac05248e49ad734a0c28f1f781e2a1891}\label{classITimerPosixListener_ac05248e49ad734a0c28f1f781e2a1891}} 
+sigset\+\_\+t {\bfseries Sig\+Block\+Set}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_ade0b07b7d948a15037eb2ff4cf27df73}\label{classITimerPosixListener_ade0b07b7d948a15037eb2ff4cf27df73}} 
+struct sigevent {\bfseries signal\+Event}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a423a224a5a899e3871e5f2fc852f8c3c}\label{classITimerPosixListener_a423a224a5a899e3871e5f2fc852f8c3c}} 
+struct sigaction {\bfseries Signal\+Action}
+\item 
+\mbox{\Hypertarget{classITimerPosixListener_a1f597479b850869632495e0b31c2f2fb}\label{classITimerPosixListener_a1f597479b850869632495e0b31c2f2fb}} 
+struct itimerspec {\bfseries timer\+Specs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cette interface représente une action executée par un timer lorsqu\textquotesingle{}il atteint son seuil d\textquotesingle{}execution. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classITimerPosixListener_af06fbcdd0f34a17d4341f896002860af}\label{classITimerPosixListener_af06fbcdd0f34a17d4341f896002860af}} 
+\index{I\+Timer\+Posix\+Listener@{I\+Timer\+Posix\+Listener}!alarm\+Function@{alarm\+Function}}
+\index{alarm\+Function@{alarm\+Function}!I\+Timer\+Posix\+Listener@{I\+Timer\+Posix\+Listener}}
+\subsubsection{\texorpdfstring{alarm\+Function()}{alarmFunction()}}
+{\footnotesize\ttfamily static void I\+Timer\+Posix\+Listener\+::alarm\+Function (\begin{DoxyParamCaption}\item[{int}]{sig\+Numb,  }\item[{siginfo\+\_\+t $\ast$}]{si,  }\item[{void $\ast$}]{uc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+The signal handler function with extended signature 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Common/\+Utils/\hyperlink{ITimerPosixListener_8hpp}{I\+Timer\+Posix\+Listener.\+hpp}\end{DoxyCompactItemize}

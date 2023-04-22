@@ -1,0 +1,207 @@
+\hypertarget{classStopGrid}{}\section{Stop\+Grid Class Reference}
+\label{classStopGrid}\index{Stop\+Grid@{Stop\+Grid}}
+
+
+\hyperlink{classStopGrid}{Stop\+Grid} action.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Grid.\+h$>$}
+
+
+
+Inheritance diagram for Stop\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classStopGrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stop\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStopGrid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classStopGrid_ac08e33d5e58962f6b9e1048c10c5ea44}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a3ab7a499f088f1ef4ce41a4131761bbf}{clone} () const override
+\item 
+virtual \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a02dcf952035340874d9b8a207e0c4da9}{reverse} () const override
+\item 
+\mbox{\Hypertarget{classStopGrid_a313cf3b69fbe0acadaf3079d2ef2adea}\label{classStopGrid_a313cf3b69fbe0acadaf3079d2ef2adea}} 
+void {\bfseries cache\+Target\+As\+Grid\+Node} ()
+\item 
+virtual void \hyperlink{classStopGrid_a1fc959f156e77a97e5d49c7cad546be1}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a08d436f2ede344933b7e7914ba5bc16d}{clone} () const override
+\item 
+virtual \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a8db549ab4f3da4564fadefb33f677517}{reverse} () const override
+\item 
+\mbox{\Hypertarget{classStopGrid_a313cf3b69fbe0acadaf3079d2ef2adea}\label{classStopGrid_a313cf3b69fbe0acadaf3079d2ef2adea}} 
+void {\bfseries cache\+Target\+As\+Grid\+Node} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a75cbdf91c486614067c28d051eddafd0}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{classStopGrid}{Stop\+Grid} \hyperlink{classAction}{Action}. \end{DoxyCompactList}\item 
+static \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ \hyperlink{classStopGrid_a2f8d55f74d7fa184b7723f8e6e026c47}{create} ()
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{classStopGrid}{Stop\+Grid} \hyperlink{classAction}{Action}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStopGrid_aa2dbee7a6ec3712cc32ce542ecf42164}\label{classStopGrid_aa2dbee7a6ec3712cc32ce542ecf42164}} 
+\hyperlink{_2cocos2d_2cocos_2base_2ccConfig_8h_a25ef1314f97c35a2ed3d029b0ead6da0}{C\+C\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+O\+R\+\_\+\+A\+C\+C\+E\+SS} {\bfseries \+\_\+\+\_\+pad0\+\_\+\+\_\+}\+: \hyperlink{classStopGrid}{Stop\+Grid}() \{\} virtual $\sim$\hyperlink{classStopGrid}{Stop\+Grid}() \{\} protected\+: \hyperlink{classNodeGrid}{Node\+Grid}$\ast$ \+\_\+grid\+Node\+Target
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classStopGrid}{Stop\+Grid} action. 
+
+\begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t call this action if another grid action is active. Call if you want to remove the grid effect. Example\+: 
+\begin{DoxyCode}
+Sequence::create(\hyperlink{classLens3D_a6c604a8898ada07ab564bcd596f32b7d}{Lens3D::create}(...), \hyperlink{classStopGrid_a75cbdf91c486614067c28d051eddafd0}{StopGrid::create}(), \textcolor{keyword}{nullptr});
+\end{DoxyCode}
+ 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStopGrid_a3ab7a499f088f1ef4ce41a4131761bbf}\label{classStopGrid_a3ab7a499f088f1ef4ce41a4131761bbf}} 
+\index{Stop\+Grid@{Stop\+Grid}!clone@{clone}}
+\index{clone@{clone}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ Stop\+Grid\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}{Action\+Instant}.
+
+\mbox{\Hypertarget{classStopGrid_a08d436f2ede344933b7e7914ba5bc16d}\label{classStopGrid_a08d436f2ede344933b7e7914ba5bc16d}} 
+\index{Stop\+Grid@{Stop\+Grid}!clone@{clone}}
+\index{clone@{clone}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classStopGrid}{Stop\+Grid}$\ast$ Stop\+Grid\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}{Action\+Instant}.
+
+\mbox{\Hypertarget{classStopGrid_a75cbdf91c486614067c28d051eddafd0}\label{classStopGrid_a75cbdf91c486614067c28d051eddafd0}} 
+\index{Stop\+Grid@{Stop\+Grid}!create@{create}}
+\index{create@{create}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ Stop\+Grid\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \hyperlink{classStopGrid}{Stop\+Grid} \hyperlink{classAction}{Action}. 
+
+\begin{DoxyReturn}{Returns}
+Return a pointer of \hyperlink{classStopGrid}{Stop\+Grid}. When the creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopGrid_a2f8d55f74d7fa184b7723f8e6e026c47}\label{classStopGrid_a2f8d55f74d7fa184b7723f8e6e026c47}} 
+\index{Stop\+Grid@{Stop\+Grid}!create@{create}}
+\index{create@{create}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classStopGrid}{Stop\+Grid}$\ast$ Stop\+Grid\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \hyperlink{classStopGrid}{Stop\+Grid} \hyperlink{classAction}{Action}. 
+
+\begin{DoxyReturn}{Returns}
+Return a pointer of \hyperlink{classStopGrid}{Stop\+Grid}. When the creation failed, return nil. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopGrid_a02dcf952035340874d9b8a207e0c4da9}\label{classStopGrid_a02dcf952035340874d9b8a207e0c4da9}} 
+\index{Stop\+Grid@{Stop\+Grid}!reverse@{reverse}}
+\index{reverse@{reverse}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classStopGrid}{Stop\+Grid} $\ast$ Stop\+Grid\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInstant_aeb1870802c509e1f4111c863a28e9262}{Action\+Instant}.
+
+\mbox{\Hypertarget{classStopGrid_a8db549ab4f3da4564fadefb33f677517}\label{classStopGrid_a8db549ab4f3da4564fadefb33f677517}} 
+\index{Stop\+Grid@{Stop\+Grid}!reverse@{reverse}}
+\index{reverse@{reverse}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classStopGrid}{Stop\+Grid}$\ast$ Stop\+Grid\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classActionInstant_aeb1870802c509e1f4111c863a28e9262}{Action\+Instant}.
+
+\mbox{\Hypertarget{classStopGrid_ac08e33d5e58962f6b9e1048c10c5ea44}\label{classStopGrid_ac08e33d5e58962f6b9e1048c10c5ea44}} 
+\index{Stop\+Grid@{Stop\+Grid}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Stop\+Grid\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInstant_a47cff49ef73e126e5e9d6c26872a9e23}{Action\+Instant}.
+
+\mbox{\Hypertarget{classStopGrid_a1fc959f156e77a97e5d49c7cad546be1}\label{classStopGrid_a1fc959f156e77a97e5d49c7cad546be1}} 
+\index{Stop\+Grid@{Stop\+Grid}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Stop\+Grid@{Stop\+Grid}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Stop\+Grid\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classActionInstant_a47cff49ef73e126e5e9d6c26872a9e23}{Action\+Instant}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Grid.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Grid.\+cpp\end{DoxyCompactItemize}

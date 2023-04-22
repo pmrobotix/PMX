@@ -1,0 +1,167 @@
+\hypertarget{classui_1_1LayoutProtocol}{}\section{ui\+:\+:Layout\+Protocol Class Reference}
+\label{classui_1_1LayoutProtocol}\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+
+
+\hyperlink{classui_1_1Layout}{Layout} interface for creating Layout\+Manger and do actual layout.  NA.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Layout.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:Layout\+Protocol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1LayoutProtocol__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}\label{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}} 
+\hyperlink{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}{Layout\+Protocol} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}\label{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}} 
+virtual \hyperlink{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}{$\sim$\+Layout\+Protocol} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classui_1_1LayoutManager}{Layout\+Manager} $\ast$ \hyperlink{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}{create\+Layout\+Manager} ()=0
+\begin{DoxyCompactList}\small\item\em Create a custom layout manager. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}{get\+Layout\+Content\+Size} () const =0
+\begin{DoxyCompactList}\small\item\em Return the content size of layout. \end{DoxyCompactList}\item 
+virtual const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \& \hyperlink{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}{get\+Layout\+Elements} () const =0
+\begin{DoxyCompactList}\small\item\em Get all elements of the layout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}\label{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}} 
+virtual void \hyperlink{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}{do\+Layout} ()=0
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}\label{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}} 
+\hyperlink{classui_1_1LayoutProtocol_a69e970e2118a39198d4b4e7a268789ca}{Layout\+Protocol} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}\label{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}} 
+virtual \hyperlink{classui_1_1LayoutProtocol_afed555eae002aaf1b751b5e4ee945f68}{$\sim$\+Layout\+Protocol} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classui_1_1LayoutManager}{Layout\+Manager} $\ast$ \hyperlink{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}{create\+Layout\+Manager} ()=0
+\begin{DoxyCompactList}\small\item\em Create a custom layout manager. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSize}{Size} \hyperlink{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}{get\+Layout\+Content\+Size} () const =0
+\begin{DoxyCompactList}\small\item\em Return the content size of layout. \end{DoxyCompactList}\item 
+virtual const \hyperlink{classVector}{Vector}$<$ \hyperlink{classNode}{Node} $\ast$ $>$ \& \hyperlink{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}{get\+Layout\+Elements} () const =0
+\begin{DoxyCompactList}\small\item\em Get all elements of the layout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}\label{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}} 
+virtual void \hyperlink{classui_1_1LayoutProtocol_ae6b08f2d2ce43c7b55200fb100a5a6d1}{do\+Layout} ()=0
+\begin{DoxyCompactList}\small\item\em The main function to do the layout job. Different layout manager should implement its own layout algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classui_1_1Layout}{Layout} interface for creating Layout\+Manger and do actual layout.  NA. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}\label{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!create\+Layout\+Manager@{create\+Layout\+Manager}}
+\index{create\+Layout\+Manager@{create\+Layout\+Manager}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{create\+Layout\+Manager()}{createLayoutManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classui_1_1LayoutManager}{Layout\+Manager}$\ast$ ui\+::\+Layout\+Protocol\+::create\+Layout\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a custom layout manager. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1LayoutManager}{Layout\+Manager} descendants instance. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_ade857c1e220dc8b5844966e2c37b7a1f}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a577a2868212962f2da8522f3fc5b81c7}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}\label{classui_1_1LayoutProtocol_a4ff58063d53e9e9b9684a1e2e6cc485a}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!create\+Layout\+Manager@{create\+Layout\+Manager}}
+\index{create\+Layout\+Manager@{create\+Layout\+Manager}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{create\+Layout\+Manager()}{createLayoutManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classui_1_1LayoutManager}{Layout\+Manager}$\ast$ ui\+::\+Layout\+Protocol\+::create\+Layout\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a custom layout manager. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1LayoutManager}{Layout\+Manager} descendants instance. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_ade857c1e220dc8b5844966e2c37b7a1f}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a577a2868212962f2da8522f3fc5b81c7}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}\label{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!get\+Layout\+Content\+Size@{get\+Layout\+Content\+Size}}
+\index{get\+Layout\+Content\+Size@{get\+Layout\+Content\+Size}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{get\+Layout\+Content\+Size()}{getLayoutContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSize}{Size} ui\+::\+Layout\+Protocol\+::get\+Layout\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the content size of layout. 
+
+\begin{DoxyReturn}{Returns}
+A content size in \hyperlink{classSize}{Size}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_a75eb33c244061dd6ab91a37536fd5b8f}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a982a59e5b4697183b4899721842cd3a5}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}\label{classui_1_1LayoutProtocol_afacf70c8ceec076a9c1237427cbd614a}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!get\+Layout\+Content\+Size@{get\+Layout\+Content\+Size}}
+\index{get\+Layout\+Content\+Size@{get\+Layout\+Content\+Size}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{get\+Layout\+Content\+Size()}{getLayoutContentSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classSize}{Size} ui\+::\+Layout\+Protocol\+::get\+Layout\+Content\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the content size of layout. 
+
+\begin{DoxyReturn}{Returns}
+A content size in \hyperlink{classSize}{Size}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_a75eb33c244061dd6ab91a37536fd5b8f}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a982a59e5b4697183b4899721842cd3a5}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}\label{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!get\+Layout\+Elements@{get\+Layout\+Elements}}
+\index{get\+Layout\+Elements@{get\+Layout\+Elements}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{get\+Layout\+Elements()}{getLayoutElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classVector}{Vector}$<$\hyperlink{classNode}{Node}$\ast$$>$\& ui\+::\+Layout\+Protocol\+::get\+Layout\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get all elements of the layout. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \hyperlink{classNode}{Node} pointers. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_ab80ee89eff7fa311e237e63d72bb18c7}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a832b7950870e62e045456b7565db924d}{ui\+::\+Layout}.
+
+\mbox{\Hypertarget{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}\label{classui_1_1LayoutProtocol_acd689e1718c903c7e9ed3277eb83b97c}} 
+\index{ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}!get\+Layout\+Elements@{get\+Layout\+Elements}}
+\index{get\+Layout\+Elements@{get\+Layout\+Elements}!ui\+::\+Layout\+Protocol@{ui\+::\+Layout\+Protocol}}
+\subsubsection{\texorpdfstring{get\+Layout\+Elements()}{getLayoutElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{classVector}{Vector}$<$\hyperlink{classNode}{Node}$\ast$$>$\& ui\+::\+Layout\+Protocol\+::get\+Layout\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get all elements of the layout. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \hyperlink{classNode}{Node} pointers. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classui_1_1Layout_ab80ee89eff7fa311e237e63d72bb18c7}{ui\+::\+Layout}, and \hyperlink{classui_1_1Layout_a832b7950870e62e045456b7565db924d}{ui\+::\+Layout}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Layout.\+h\end{DoxyCompactItemize}

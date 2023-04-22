@@ -1,0 +1,88 @@
+\hypertarget{classflatbuffers_1_1Verifier}{}\section{flatbuffers\+:\+:Verifier Class Reference}
+\label{classflatbuffers_1_1Verifier}\index{flatbuffers\+::\+Verifier@{flatbuffers\+::\+Verifier}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_ab2305df3b2b5acb37c098717cdd6a0cd}\label{classflatbuffers_1_1Verifier_ab2305df3b2b5acb37c098717cdd6a0cd}} 
+{\bfseries Verifier} (const uint8\+\_\+t $\ast$buf, size\+\_\+t buf\+\_\+len, size\+\_\+t \+\_\+max\+\_\+depth=64, size\+\_\+t \+\_\+max\+\_\+tables=1000000)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a79b25f008e45267bd0ecc5bf04f0c039}\label{classflatbuffers_1_1Verifier_a79b25f008e45267bd0ecc5bf04f0c039}} 
+bool {\bfseries Check} (bool ok) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a8ce7a2a34b689373ee0be64e2be1aa0d}\label{classflatbuffers_1_1Verifier_a8ce7a2a34b689373ee0be64e2be1aa0d}} 
+bool {\bfseries Verify} (const void $\ast$elem, size\+\_\+t elem\+\_\+len) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_aa58747df9e576de03629ea893cd50518}\label{classflatbuffers_1_1Verifier_aa58747df9e576de03629ea893cd50518}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify} (const void $\ast$elem) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_abcfa876728853d9f8d7175dbfed6c112}\label{classflatbuffers_1_1Verifier_abcfa876728853d9f8d7175dbfed6c112}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Table} (const T $\ast$table)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_af93c8057309f28e2bcdcc31feee4f5de}\label{classflatbuffers_1_1Verifier_af93c8057309f28e2bcdcc31feee4f5de}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $\ast$vec) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a002e4665ec44b9eaaceac5577e507cba}\label{classflatbuffers_1_1Verifier_a002e4665ec44b9eaaceac5577e507cba}} 
+bool {\bfseries Verify} (const \hyperlink{structflatbuffers_1_1String}{String} $\ast$str) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a774f3e1c1d7653133c3d964fd60fd39b}\label{classflatbuffers_1_1Verifier_a774f3e1c1d7653133c3d964fd60fd39b}} 
+bool {\bfseries Verify\+Vector} (const uint8\+\_\+t $\ast$vec, size\+\_\+t elem\+\_\+size, const uint8\+\_\+t $\ast$$\ast$end) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a756e8f481ff1f9e81e7538df98475c6d}\label{classflatbuffers_1_1Verifier_a756e8f481ff1f9e81e7538df98475c6d}} 
+bool {\bfseries Verify\+Vector\+Of\+Strings} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$$>$ $\ast$vec) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a378bec2040b87ca1140b4da0d3a2181e}\label{classflatbuffers_1_1Verifier_a378bec2040b87ca1140b4da0d3a2181e}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Vector\+Of\+Tables} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$$>$ $\ast$vec)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_af735887f16fb8adf22258967def32214}\label{classflatbuffers_1_1Verifier_af735887f16fb8adf22258967def32214}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a5844118cc57d9b95fd40ac3a69da0b81}\label{classflatbuffers_1_1Verifier_a5844118cc57d9b95fd40ac3a69da0b81}} 
+bool {\bfseries Verify\+Complexity} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_ac0a269d5a9245a8efecd163ce08289d9}\label{classflatbuffers_1_1Verifier_ac0a269d5a9245a8efecd163ce08289d9}} 
+bool {\bfseries End\+Table} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_ab2305df3b2b5acb37c098717cdd6a0cd}\label{classflatbuffers_1_1Verifier_ab2305df3b2b5acb37c098717cdd6a0cd}} 
+{\bfseries Verifier} (const uint8\+\_\+t $\ast$buf, size\+\_\+t buf\+\_\+len, size\+\_\+t \+\_\+max\+\_\+depth=64, size\+\_\+t \+\_\+max\+\_\+tables=1000000)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a79b25f008e45267bd0ecc5bf04f0c039}\label{classflatbuffers_1_1Verifier_a79b25f008e45267bd0ecc5bf04f0c039}} 
+bool {\bfseries Check} (bool ok) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a8ce7a2a34b689373ee0be64e2be1aa0d}\label{classflatbuffers_1_1Verifier_a8ce7a2a34b689373ee0be64e2be1aa0d}} 
+bool {\bfseries Verify} (const void $\ast$elem, size\+\_\+t elem\+\_\+len) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_aa58747df9e576de03629ea893cd50518}\label{classflatbuffers_1_1Verifier_aa58747df9e576de03629ea893cd50518}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify} (const void $\ast$elem) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_abcfa876728853d9f8d7175dbfed6c112}\label{classflatbuffers_1_1Verifier_abcfa876728853d9f8d7175dbfed6c112}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Table} (const T $\ast$table)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_af93c8057309f28e2bcdcc31feee4f5de}\label{classflatbuffers_1_1Verifier_af93c8057309f28e2bcdcc31feee4f5de}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ T $>$ $\ast$vec) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a002e4665ec44b9eaaceac5577e507cba}\label{classflatbuffers_1_1Verifier_a002e4665ec44b9eaaceac5577e507cba}} 
+bool {\bfseries Verify} (const \hyperlink{structflatbuffers_1_1String}{String} $\ast$str) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a774f3e1c1d7653133c3d964fd60fd39b}\label{classflatbuffers_1_1Verifier_a774f3e1c1d7653133c3d964fd60fd39b}} 
+bool {\bfseries Verify\+Vector} (const uint8\+\_\+t $\ast$vec, size\+\_\+t elem\+\_\+size, const uint8\+\_\+t $\ast$$\ast$end) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a756e8f481ff1f9e81e7538df98475c6d}\label{classflatbuffers_1_1Verifier_a756e8f481ff1f9e81e7538df98475c6d}} 
+bool {\bfseries Verify\+Vector\+Of\+Strings} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ \hyperlink{structflatbuffers_1_1String}{String} $>$$>$ $\ast$vec) const
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a378bec2040b87ca1140b4da0d3a2181e}\label{classflatbuffers_1_1Verifier_a378bec2040b87ca1140b4da0d3a2181e}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Vector\+Of\+Tables} (const \hyperlink{classflatbuffers_1_1Vector}{Vector}$<$ \hyperlink{structflatbuffers_1_1Offset}{Offset}$<$ T $>$$>$ $\ast$vec)
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_af735887f16fb8adf22258967def32214}\label{classflatbuffers_1_1Verifier_af735887f16fb8adf22258967def32214}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Verify\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_a5844118cc57d9b95fd40ac3a69da0b81}\label{classflatbuffers_1_1Verifier_a5844118cc57d9b95fd40ac3a69da0b81}} 
+bool {\bfseries Verify\+Complexity} ()
+\item 
+\mbox{\Hypertarget{classflatbuffers_1_1Verifier_ac0a269d5a9245a8efecd163ce08289d9}\label{classflatbuffers_1_1Verifier_ac0a269d5a9245a8efecd163ce08289d9}} 
+bool {\bfseries End\+Table} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/flatbuffers/flatbuffers.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,199 @@
+\hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper}{}\section{org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper Class Reference}
+\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper}\index{org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper@{org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper}}
+
+
+Collaboration diagram for org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a1e016d7648380d0e241873d6dd23f6b3}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a1e016d7648380d0e241873d6dd23f6b3}} 
+{\bfseries Mobile\+Secure\+Pay\+Helper} (Context context)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a628c0ba86a51a221b4614f1af0d8ed00}{detect\+Mobile\+\_\+sp} ()
+\item 
+void \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a5b44f735dd270d3988e15469d74955ec}{show\+Install\+Confirm\+Dialog} (final Context context, final String cache\+Path)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_acdc50e68e8616c5a460368ec93d6545a}{is\+Mobile\+\_\+sp\+Exist} ()
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af7a5c38e1e1511eddac95dff96c88d4b}{retrieve\+Apk\+From\+Assets} (Context context, String file\+Name, String path)
+\item 
+String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a6f4d26833a00d643c2905cbd284df143}{check\+New\+Update} (Package\+Info package\+Info)
+\item 
+J\+S\+O\+N\+Object \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a47c9a5ffceb0e55b5d640f7d25c03e87}{send\+Check\+New\+Update} (String version\+Name)
+\item 
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a000cd30fe9205cf213e824bcb385c49c}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a000cd30fe9205cf213e824bcb385c49c}} 
+J\+S\+O\+N\+Object {\bfseries send\+Request} (final String content)
+\item 
+boolean \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a9bdc3b72944314390da509e2dd82cc9a}{retrieve\+Apk\+From\+Net} (Context context, String strurl, String filename)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Package\+Info \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_ac21b567d772189c3ba57f140851ad7ed}{get\+Apk\+Info} (Context context, String archive\+File\+Path)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af06c96d6c405c8d71cc957488fa673ae}{server\+\_\+url} = \char`\"{}https\+://msp.\+alipay.\+com/x.\+htm\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+检测安全支付服务是否正确安装，如果没有安装进行本地安装，或者下载安装， 检测安全支付服务版本，有新版本时进行下载。 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a6f4d26833a00d643c2905cbd284df143}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a6f4d26833a00d643c2905cbd284df143}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!check\+New\+Update@{check\+New\+Update}}
+\index{check\+New\+Update@{check\+New\+Update}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{check\+New\+Update()}{checkNewUpdate()}}
+{\footnotesize\ttfamily String org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+check\+New\+Update (\begin{DoxyParamCaption}\item[{Package\+Info}]{package\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+检查是否有新版本，如果有，返回apk下载地址
+
+
+\begin{DoxyParams}{Parameters}
+{\em package\+Info} & \hyperlink{}{Package\+Info} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a628c0ba86a51a221b4614f1af0d8ed00}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a628c0ba86a51a221b4614f1af0d8ed00}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!detect\+Mobile\+\_\+sp@{detect\+Mobile\+\_\+sp}}
+\index{detect\+Mobile\+\_\+sp@{detect\+Mobile\+\_\+sp}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{detect\+Mobile\+\_\+sp()}{detectMobile\_sp()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+detect\+Mobile\+\_\+sp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+检测安全支付服务是否安装
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_ac21b567d772189c3ba57f140851ad7ed}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_ac21b567d772189c3ba57f140851ad7ed}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!get\+Apk\+Info@{get\+Apk\+Info}}
+\index{get\+Apk\+Info@{get\+Apk\+Info}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{get\+Apk\+Info()}{getApkInfo()}}
+{\footnotesize\ttfamily static Package\+Info org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+get\+Apk\+Info (\begin{DoxyParamCaption}\item[{Context}]{context,  }\item[{String}]{archive\+File\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+获取未安装的\+A\+P\+K信息
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \\
+\hline
+{\em archive\+File\+Path} & A\+P\+K文件的路径。如：/sdcard/download/\+XX.apk \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_acdc50e68e8616c5a460368ec93d6545a}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_acdc50e68e8616c5a460368ec93d6545a}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!is\+Mobile\+\_\+sp\+Exist@{is\+Mobile\+\_\+sp\+Exist}}
+\index{is\+Mobile\+\_\+sp\+Exist@{is\+Mobile\+\_\+sp\+Exist}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{is\+Mobile\+\_\+sp\+Exist()}{isMobile\_spExist()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+is\+Mobile\+\_\+sp\+Exist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+遍历程序列表，判断是否安装安全支付服务
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af7a5c38e1e1511eddac95dff96c88d4b}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af7a5c38e1e1511eddac95dff96c88d4b}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!retrieve\+Apk\+From\+Assets@{retrieve\+Apk\+From\+Assets}}
+\index{retrieve\+Apk\+From\+Assets@{retrieve\+Apk\+From\+Assets}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{retrieve\+Apk\+From\+Assets()}{retrieveApkFromAssets()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+retrieve\+Apk\+From\+Assets (\begin{DoxyParamCaption}\item[{Context}]{context,  }\item[{String}]{file\+Name,  }\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+安装安全支付服务，安装assets文件夹下的apk
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & 上下文环境 \\
+\hline
+{\em file\+Name} & apk名称 \\
+\hline
+{\em path} & 安装路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a9bdc3b72944314390da509e2dd82cc9a}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a9bdc3b72944314390da509e2dd82cc9a}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!retrieve\+Apk\+From\+Net@{retrieve\+Apk\+From\+Net}}
+\index{retrieve\+Apk\+From\+Net@{retrieve\+Apk\+From\+Net}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{retrieve\+Apk\+From\+Net()}{retrieveApkFromNet()}}
+{\footnotesize\ttfamily boolean org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+retrieve\+Apk\+From\+Net (\begin{DoxyParamCaption}\item[{Context}]{context,  }\item[{String}]{strurl,  }\item[{String}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+动态下载apk
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & 上下文环境 \\
+\hline
+{\em strurl} & 下载地址 \\
+\hline
+{\em filename} & 文件名称 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a47c9a5ffceb0e55b5d640f7d25c03e87}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a47c9a5ffceb0e55b5d640f7d25c03e87}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!send\+Check\+New\+Update@{send\+Check\+New\+Update}}
+\index{send\+Check\+New\+Update@{send\+Check\+New\+Update}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{send\+Check\+New\+Update()}{sendCheckNewUpdate()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+Object org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+send\+Check\+New\+Update (\begin{DoxyParamCaption}\item[{String}]{version\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+发送当前版本信息，返回是否需要升级 如果需要升级返回更新apk地址
+
+
+\begin{DoxyParams}{Parameters}
+{\em version\+Name} & 当前版本号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a5b44f735dd270d3988e15469d74955ec}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_a5b44f735dd270d3988e15469d74955ec}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!show\+Install\+Confirm\+Dialog@{show\+Install\+Confirm\+Dialog}}
+\index{show\+Install\+Confirm\+Dialog@{show\+Install\+Confirm\+Dialog}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{show\+Install\+Confirm\+Dialog()}{showInstallConfirmDialog()}}
+{\footnotesize\ttfamily void org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+show\+Install\+Confirm\+Dialog (\begin{DoxyParamCaption}\item[{final Context}]{context,  }\item[{final String}]{cache\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+显示确认安装的提示
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & 上下文环境 \\
+\hline
+{\em cache\+Path} & 安装文件路径 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af06c96d6c405c8d71cc957488fa673ae}\label{classorg_1_1cocos2dx_1_1plugin_1_1MobileSecurePayHelper_af06c96d6c405c8d71cc957488fa673ae}} 
+\index{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}!server\+\_\+url@{server\+\_\+url}}
+\index{server\+\_\+url@{server\+\_\+url}!org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper@{org\+::cocos2dx\+::plugin\+::\+Mobile\+Secure\+Pay\+Helper}}
+\subsubsection{\texorpdfstring{server\+\_\+url}{server\_url}}
+{\footnotesize\ttfamily final String org.\+cocos2dx.\+plugin.\+Mobile\+Secure\+Pay\+Helper.\+server\+\_\+url = \char`\"{}https\+://msp.\+alipay.\+com/x.\+htm\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+发送json数据
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/alipay/proj.\+android/src/org/cocos2dx/plugin/Mobile\+Secure\+Pay\+Helper.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{classbtSoftBodyTriangleCallback}{}\section{bt\+Soft\+Body\+Triangle\+Callback Class Reference}
+\label{classbtSoftBodyTriangleCallback}\index{bt\+Soft\+Body\+Triangle\+Callback@{bt\+Soft\+Body\+Triangle\+Callback}}
+
+
+For each triangle in the concave mesh that overlaps with the \hyperlink{classAABB}{A\+A\+BB} of a soft body (m\+\_\+soft\+Body), process\+Triangle is called.  
+
+
+
+
+{\ttfamily \#include $<$bt\+Soft\+Body\+Concave\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Soft\+Body\+Triangle\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classbtSoftBodyTriangleCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Soft\+Body\+Triangle\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classbtSoftBodyTriangleCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_a284cfe07d6c1a1ffeabfd7c48576e36f}\label{classbtSoftBodyTriangleCallback_a284cfe07d6c1a1ffeabfd7c48576e36f}} 
+{\bfseries bt\+Soft\+Body\+Triangle\+Callback} (\hyperlink{classbtDispatcher}{bt\+Dispatcher} $\ast$dispatcher, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_ae0e0d1ffa14c1233dbcb90b874abdc80}\label{classbtSoftBodyTriangleCallback_ae0e0d1ffa14c1233dbcb90b874abdc80}} 
+void {\bfseries set\+Time\+Step\+And\+Counters} (bt\+Scalar collision\+Margin\+Triangle, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$tri\+Obj\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+virtual void \hyperlink{classbtSoftBodyTriangleCallback_a0f8b46eba213eb55a451e182d2f6a9be}{process\+Triangle} (bt\+Vector3 $\ast$triangle, int part\+Id, int triangle\+Index)
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_a75aaa07edcb61f8fbf451fb4c51a3185}\label{classbtSoftBodyTriangleCallback_a75aaa07edcb61f8fbf451fb4c51a3185}} 
+void {\bfseries clear\+Cache} ()
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_a76dc70ebbec1ad7ac8bf35bf964fbdb4}\label{classbtSoftBodyTriangleCallback_a76dc70ebbec1ad7ac8bf35bf964fbdb4}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Min} () const
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_a96d44815f2aa436d8b263936cd515d78}\label{classbtSoftBodyTriangleCallback_a96d44815f2aa436d8b263936cd515d78}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE const bt\+Vector3 \& {\bfseries get\+Aabb\+Max} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_ad80a7be0cd9ed248a758e667cf763efe}\label{classbtSoftBodyTriangleCallback_ad80a7be0cd9ed248a758e667cf763efe}} 
+int {\bfseries m\+\_\+triangle\+Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+For each triangle in the concave mesh that overlaps with the \hyperlink{classAABB}{A\+A\+BB} of a soft body (m\+\_\+soft\+Body), process\+Triangle is called. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSoftBodyTriangleCallback_a0f8b46eba213eb55a451e182d2f6a9be}\label{classbtSoftBodyTriangleCallback_a0f8b46eba213eb55a451e182d2f6a9be}} 
+\index{bt\+Soft\+Body\+Triangle\+Callback@{bt\+Soft\+Body\+Triangle\+Callback}!process\+Triangle@{process\+Triangle}}
+\index{process\+Triangle@{process\+Triangle}!bt\+Soft\+Body\+Triangle\+Callback@{bt\+Soft\+Body\+Triangle\+Callback}}
+\subsubsection{\texorpdfstring{process\+Triangle()}{processTriangle()}}
+{\footnotesize\ttfamily void bt\+Soft\+Body\+Triangle\+Callback\+::process\+Triangle (\begin{DoxyParamCaption}\item[{bt\+Vector3 $\ast$}]{triangle,  }\item[{int}]{part\+Id,  }\item[{int}]{triangle\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+debug drawing of the overlapping triangles 
+
+Implements \hyperlink{classbtTriangleCallback}{bt\+Triangle\+Callback}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Concave\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Soft\+Body/bt\+Soft\+Body\+Concave\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{motor__positionCommand_8c}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+position\+Command.c File Reference}
+\label{motor__positionCommand_8c}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+position\+Command.\+c@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/motor\+\_\+position\+Command.\+c}}
+{\ttfamily \#include \char`\"{}motor\+\_\+position\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../global.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for motor\+\_\+position\+Command.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{motor__positionCommand_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void \hyperlink{motor__positionCommand_8c_ab50b0f715425b7d337eb383146bf1a61}{Compute\+Position\+Command} (\hyperlink{structPositionCommand}{Position\+Command} $\ast$out\+\_\+cmd, int32 dist, int32 V\+Max, int32 Accel, int32 Decel)
+\begin{DoxyCompactList}\small\item\em Create a trajectory for one motor with a trapezoidal speed curve. \end{DoxyCompactList}\item 
+void \hyperlink{motor__positionCommand_8c_aa01e4da842e69e9110f9c197760787a0}{Load\+Position\+Command} (\hyperlink{structPositionCommand}{Position\+Command} $\ast$out\+\_\+cmd, \hyperlink{structMOTOR}{M\+O\+T\+OR} $\ast$motor, int32 period\+Nb)
+\item 
+E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON B\+O\+OL \hyperlink{motor__positionCommand_8c_a881b4e49ee4db6c5d4bf19b2d0ba0f9c}{Get\+Position\+Order} (\hyperlink{structPositionCommand}{Position\+Command} $\ast$pos\+Command, uint32 Tn, int32 $\ast$out\+\_\+\+Order)
+\begin{DoxyCompactList}\small\item\em Compute the current order to apply on motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motor__positionCommand_8c_ab50b0f715425b7d337eb383146bf1a61}\label{motor__positionCommand_8c_ab50b0f715425b7d337eb383146bf1a61}} 
+\index{motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}!Compute\+Position\+Command@{Compute\+Position\+Command}}
+\index{Compute\+Position\+Command@{Compute\+Position\+Command}!motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}}
+\subsubsection{\texorpdfstring{Compute\+Position\+Command()}{ComputePositionCommand()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON void Compute\+Position\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{structPositionCommand}{Position\+Command} $\ast$}]{out\+\_\+command,  }\item[{int32}]{dist,  }\item[{int32}]{V\+Max,  }\item[{int32}]{Accel,  }\item[{int32}]{Decel }\end{DoxyParamCaption})}
+
+
+
+Create a trajectory for one motor with a trapezoidal speed curve. 
+
+The trajectory start with a speed=0 then accelerate at a rate equal to \textquotesingle{}Accel\textquotesingle{} until it reaches speed=\textquotesingle{}V\+Max\textquotesingle{} before the end of the path the wheel decelerate with a rate of \textquotesingle{}Decel\textquotesingle{} then stop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Id number of motor on wich to apply the trajectory \\
+\hline
+{\em out\+\_\+command} & Result of the computation \\
+\hline
+{\em dist} & Distance to run in meters \\
+\hline
+{\em V\+Max} & Maximum speed at the wheel in meters/second \\
+\hline
+{\em Accel} & \hyperlink{classAcceleration}{Acceleration} in meters/second$^\wedge$2 \\
+\hline
+{\em Decel} & Deceleration in meters/second$^\wedge$2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor__positionCommand_8c_a881b4e49ee4db6c5d4bf19b2d0ba0f9c}\label{motor__positionCommand_8c_a881b4e49ee4db6c5d4bf19b2d0ba0f9c}} 
+\index{motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}!Get\+Position\+Order@{Get\+Position\+Order}}
+\index{Get\+Position\+Order@{Get\+Position\+Order}!motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}}
+\subsubsection{\texorpdfstring{Get\+Position\+Order()}{GetPositionOrder()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+R\+T\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON B\+O\+OL Get\+Position\+Order (\begin{DoxyParamCaption}\item[{\hyperlink{structPositionCommand}{Position\+Command} $\ast$}]{pos\+Command,  }\item[{uint32}]{Tn,  }\item[{int32 $\ast$}]{out\+\_\+\+Order }\end{DoxyParamCaption})}
+
+
+
+Compute the current order to apply on motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Id number of motor \\
+\hline
+{\em pos\+Command} & The command that will be interpreted \\
+\hline
+{\em Tn} & Motion control period number \\
+\hline
+{\em out\+\_\+\+Order} & Result of the computation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the path completed ? 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motor__positionCommand_8c_aa01e4da842e69e9110f9c197760787a0}\label{motor__positionCommand_8c_aa01e4da842e69e9110f9c197760787a0}} 
+\index{motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}!Load\+Position\+Command@{Load\+Position\+Command}}
+\index{Load\+Position\+Command@{Load\+Position\+Command}!motor\+\_\+position\+Command.\+c@{motor\+\_\+position\+Command.\+c}}
+\subsubsection{\texorpdfstring{Load\+Position\+Command()}{LoadPositionCommand()}}
+{\footnotesize\ttfamily void Load\+Position\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{structPositionCommand}{Position\+Command} $\ast$}]{out\+\_\+command,  }\item[{\hyperlink{structMOTOR}{M\+O\+T\+OR} $\ast$}]{motor,  }\item[{int32}]{period\+Nb }\end{DoxyParamCaption})}
+
+Configure the command for the current configuration of the motor. You must execute this function before you launch the command. 
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+command} & Result of the computation \\
+\hline
+{\em motor} & Id number of motor on wich to apply the trajectory \\
+\hline
+\end{DoxyParams}

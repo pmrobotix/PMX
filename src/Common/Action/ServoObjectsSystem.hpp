@@ -70,6 +70,7 @@ public:
 
     /*!
      * \brief fonction avec vitesse reglable
+     * pos : AX12 : 0 - 512 - 1023
      */
     int setPos(int servo, int pos, int milli0to90);
 

@@ -1,0 +1,763 @@
+\hypertarget{classFileUtilsWin32}{}\section{File\+Utils\+Win32 Class Reference}
+\label{classFileUtilsWin32}\index{File\+Utils\+Win32@{File\+Utils\+Win32}}
+
+
+Helper class to handle file operations.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+File\+Utils-\/win32.\+h$>$}
+
+
+
+Inheritance diagram for File\+Utils\+Win32\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classFileUtilsWin32__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Utils\+Win32\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classFileUtilsWin32__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{init} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a5e9b4cf8f8caa5db5b58606bf8d099b8}{get\+Writable\+Path} () const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a3427cbefa54f21aedd22ef5253a3bb46}{is\+Absolute\+Path} (const std\+::string \&str\+Path) const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a39228d2480a9b1343516bb9f1abe06b1}{get\+Suitable\+F\+Open} (const std\+::string \&filename\+Utf8) const override
+\item 
+virtual long \hyperlink{classFileUtilsWin32_af5e36ed946d6fc00cbb279755dbc6c5f}{get\+File\+Size} (const std\+::string \&filepath)
+\item 
+bool \hyperlink{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}{init} ()
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a7aabbee0edc6ccbb7930de5c23383c54}{get\+Writable\+Path} () const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_ab4ecf27c8feb35aee8894ca39d559fd7}{is\+Absolute\+Path} (const std\+::string \&str\+Path) const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a4e2aff9afbff7e4bac487f626186dac0}{get\+Suitable\+F\+Open} (const std\+::string \&filename\+Utf8) const override
+\item 
+virtual long \hyperlink{classFileUtilsWin32_a55d29e8e6cf19e0863dd68a545583f63}{get\+File\+Size} (const std\+::string \&filepath)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_ab3538e3fa4418afbff4e95858a553ff7}{is\+File\+Exist\+Internal} (const std\+::string \&str\+File\+Path) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a209167c25ca47a1d03d47522cb88dc00}{rename\+File} (const std\+::string \&path, const std\+::string \&oldname, const std\+::string \&name) override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_ac583dacdd0e02e0a92d32a31ba8f8d51}{rename\+File} (const std\+::string \&oldfullpath, const std\+::string \&newfullpath) override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a9a408c75230da1289e5619285dd00f67}{is\+Directory\+Exist\+Internal} (const std\+::string \&dir\+Path) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_aab51310dbc155b73cb9f3d4f3a918d36}{remove\+File} (const std\+::string \&filepath) override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a6385e7d4763147cff2c158974d16adf8}{create\+Directory} (const std\+::string \&dir\+Path) override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a50a9cd9c6a65e4a3c33d188ac78b8a74}{remove\+Directory} (const std\+::string \&dir\+Path) override
+\item 
+\mbox{\Hypertarget{classFileUtilsWin32_a8e913f7b14a349db8613fe02809eba3e}\label{classFileUtilsWin32_a8e913f7b14a349db8613fe02809eba3e}} 
+virtual File\+Utils\+::\+Status {\bfseries get\+Contents} (const std\+::string \&filename, \hyperlink{classResizableBuffer}{Resizable\+Buffer} $\ast$buffer) override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a1a2b675bb9e51acc264bf1683a2c1a99}{get\+Path\+For\+Filename} (const std\+::string \&filename, const std\+::string \&resolution\+Directory, const std\+::string \&search\+Path) const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a32e9d4ce94fa867563c2649bbb6a8416}{get\+Full\+Path\+For\+Directory\+And\+Filename} (const std\+::string \&directory, const std\+::string \&filename) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_aacf984dcf838fc8d3303e47eb33a8601}{is\+File\+Exist\+Internal} (const std\+::string \&str\+File\+Path) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a7268db0c6bec592a9f5978ceeecfe710}{rename\+File} (const std\+::string \&path, const std\+::string \&oldname, const std\+::string \&name) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a1c948c39348ea2a7b88cc232b96e3f68}{rename\+File} (const std\+::string \&oldfullpath, const std\+::string \&newfullpath) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_aaeab26cde3a9a4cf3e4f8367d20f0e08}{is\+Directory\+Exist\+Internal} (const std\+::string \&dir\+Path) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a45bb3aa3aff99f5d4367d048f722beaa}{remove\+File} (const std\+::string \&filepath) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_a9da58952832ce4abc6c241e9db52a914}{create\+Directory} (const std\+::string \&dir\+Path) const override
+\item 
+virtual bool \hyperlink{classFileUtilsWin32_ab190878679d22943a4b167fee6d200ee}{remove\+Directory} (const std\+::string \&dir\+Path) const override
+\item 
+\mbox{\Hypertarget{classFileUtilsWin32_a5b3f360c13f0b34636598e2d1d0cb6d7}\label{classFileUtilsWin32_a5b3f360c13f0b34636598e2d1d0cb6d7}} 
+virtual File\+Utils\+::\+Status {\bfseries get\+Contents} (const std\+::string \&filename, \hyperlink{classResizableBuffer}{Resizable\+Buffer} $\ast$buffer) const override
+\item 
+virtual long \hyperlink{classFileUtilsWin32_a49d0c49a6f1c8a9376d678596c17f502}{get\+File\+Size} (const std\+::string \&filepath) const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a46e2bca29c0f2a0a2870b50cf30f4f3d}{get\+Path\+For\+Filename} (const std\+::string \&filename, const std\+::string \&resolution\+Directory, const std\+::string \&search\+Path) const override
+\item 
+virtual std\+::string \hyperlink{classFileUtilsWin32_a724a4ac17310d89813bf96180321dfb2}{get\+Full\+Path\+For\+Filename\+Within\+Directory} (const std\+::string \&directory, const std\+::string \&filename) const override
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \hyperlink{classFileUtilsWin32_aa7a02a2d86383277ea72b7581da0b5db}{list\+Files} (const std\+::string \&dir\+Path) const override
+\item 
+virtual void \hyperlink{classFileUtilsWin32_a40ce728356a261d1eb35f6c0c72ae9e0}{list\+Files\+Recursively} (const std\+::string \&dir\+Path, std\+::vector$<$ std\+::string $>$ $\ast$files) const override
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtilsWin32_ab3d3da2a9e626c1aae143a4f83d35bdf}\label{classFileUtilsWin32_ab3d3da2a9e626c1aae143a4f83d35bdf}} 
+class {\bfseries File\+Utils}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Helper class to handle file operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileUtilsWin32_a6385e7d4763147cff2c158974d16adf8}\label{classFileUtilsWin32_a6385e7d4763147cff2c158974d16adf8}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a04129d55c22dfa031fd45aeda4de5e77}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a9da58952832ce4abc6c241e9db52a914}\label{classFileUtilsWin32_a9da58952832ce4abc6c241e9db52a914}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!create\+Directory@{create\+Directory}}
+\index{create\+Directory@{create\+Directory}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{create\+Directory()}{createDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Creates a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been created successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a9d9383b68669dcbef30165514f26d7f6}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_af5e36ed946d6fc00cbb279755dbc6c5f}\label{classFileUtilsWin32_af5e36ed946d6fc00cbb279755dbc6c5f}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily long File\+Utils\+Win32\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a55d29e8e6cf19e0863dd68a545583f63}\label{classFileUtilsWin32_a55d29e8e6cf19e0863dd68a545583f63}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual long File\+Utils\+Win32\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a1804c928fb8897e07e181a8e72362e0a}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a49d0c49a6f1c8a9376d678596c17f502}\label{classFileUtilsWin32_a49d0c49a6f1c8a9376d678596c17f502}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+File\+Size@{get\+File\+Size}}
+\index{get\+File\+Size@{get\+File\+Size}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+File\+Size()}{getFileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily long File\+Utils\+Win32\+::get\+File\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Retrieve the file size.
+
+\begin{DoxyNote}{Note}
+If a relative path was passed in, it will be inserted a default root path at the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path of the file, it could be a relative or absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_acba4a8730094e74096bfe4cede7f0315}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a32e9d4ce94fa867563c2649bbb6a8416}\label{classFileUtilsWin32_a32e9d4ce94fa867563c2649bbb6a8416}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}}
+\index{get\+Full\+Path\+For\+Directory\+And\+Filename@{get\+Full\+Path\+For\+Directory\+And\+Filename}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Directory\+And\+Filename()}{getFullPathForDirectoryAndFilename()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Win32\+::get\+Full\+Path\+For\+Directory\+And\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a543d684dc27fc7d02fbe387271d92c12}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a724a4ac17310d89813bf96180321dfb2}\label{classFileUtilsWin32_a724a4ac17310d89813bf96180321dfb2}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}}
+\index{get\+Full\+Path\+For\+Filename\+Within\+Directory@{get\+Full\+Path\+For\+Filename\+Within\+Directory}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Full\+Path\+For\+Filename\+Within\+Directory()}{getFullPathForFilenameWithinDirectory()}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Win32\+::get\+Full\+Path\+For\+Filename\+Within\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for the directory and the filename.
+
+\begin{DoxyNote}{Note}
+Only i\+OS and Mac need to override this method since they are using {\ttfamily \mbox{[}\mbox{[}N\+S\+Bundle main\+Bundle\mbox{]} path\+For\+Resource\+: of\+Type\+: in\+Directory\+:\mbox{]}} to make a full path. Other platforms will use the default implementation of this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory contains the file we are looking for. \\
+\hline
+{\em filename} & The name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file, if the file can\textquotesingle{}t be found, it will return an empty string. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aa6bae4977b0a23b40f5c4dfea7aee3ff}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a1a2b675bb9e51acc264bf1683a2c1a99}\label{classFileUtilsWin32_a1a2b675bb9e51acc264bf1683a2c1a99}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Path\+For\+Filename@{get\+Path\+For\+Filename}}
+\index{get\+Path\+For\+Filename@{get\+Path\+For\+Filename}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Path\+For\+Filename()}{getPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Win32\+::get\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{resolution\+Directory,  }\item[{const std\+::string \&}]{search\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for filename, resolution directory and search path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em resolution\+Directory} & The resolution directory. \\
+\hline
+{\em search\+Path} & The search path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file. It will return an empty string if the full path of the file doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_ae575880a693de746f1505be83c6b4bfa}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a46e2bca29c0f2a0a2870b50cf30f4f3d}\label{classFileUtilsWin32_a46e2bca29c0f2a0a2870b50cf30f4f3d}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Path\+For\+Filename@{get\+Path\+For\+Filename}}
+\index{get\+Path\+For\+Filename@{get\+Path\+For\+Filename}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Path\+For\+Filename()}{getPathForFilename()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+Win32\+::get\+Path\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{resolution\+Directory,  }\item[{const std\+::string \&}]{search\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Gets full path for filename, resolution directory and search path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file name. \\
+\hline
+{\em resolution\+Directory} & The resolution directory. \\
+\hline
+{\em search\+Path} & The search path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The full path of the file. It will return an empty string if the full path of the file doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_ae575880a693de746f1505be83c6b4bfa}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a39228d2480a9b1343516bb9f1abe06b1}\label{classFileUtilsWin32_a39228d2480a9b1343516bb9f1abe06b1}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}}
+\index{get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Suitable\+F\+Open()}{getSuitableFOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string File\+Utils\+Win32\+::get\+Suitable\+F\+Open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename\+Utf8 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Windows fopen can\textquotesingle{}t support U\+T\+F-\/8 filename Need convert all parameters fopen and other 3rd-\/party libs
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Utf8} & std\+::string name file for conversion from utf-\/8 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string ansi filename in current locale 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a4e2aff9afbff7e4bac487f626186dac0}\label{classFileUtilsWin32_a4e2aff9afbff7e4bac487f626186dac0}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}}
+\index{get\+Suitable\+F\+Open@{get\+Suitable\+F\+Open}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Suitable\+F\+Open()}{getSuitableFOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+Win32\+::get\+Suitable\+F\+Open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename\+Utf8 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Windows fopen can\textquotesingle{}t support U\+T\+F-\/8 filename Need convert all parameters fopen and other 3rd-\/party libs
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Utf8} & std\+::string name file for conversion from utf-\/8 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string ansi filename in current locale 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a318996e1e3cc1ff7463dea9159d7e7be}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a5e9b4cf8f8caa5db5b58606bf8d099b8}\label{classFileUtilsWin32_a5e9b4cf8f8caa5db5b58606bf8d099b8}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string File\+Utils\+Win32\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a7aabbee0edc6ccbb7930de5c23383c54}\label{classFileUtilsWin32_a7aabbee0edc6ccbb7930de5c23383c54}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!get\+Writable\+Path@{get\+Writable\+Path}}
+\index{get\+Writable\+Path@{get\+Writable\+Path}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{get\+Writable\+Path()}{getWritablePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string File\+Utils\+Win32\+::get\+Writable\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the writable path. \begin{DoxyReturn}{Returns}
+The path that can be write/read a file in 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_aab14c8d4e292f7a1e9b2b2908d02a0ed}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}\label{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!init@{init}}
+\index{init@{init}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}\label{classFileUtilsWin32_a686cc28ad94c2c904c857cb2808b36d4}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!init@{init}}
+\index{init@{init}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes the instance of \hyperlink{classFileUtils}{File\+Utils}. It will set \+\_\+search\+Path\+Array and \+\_\+search\+Resolutions\+Order\+Array to default values.
+
+\begin{DoxyNote}{Note}
+When you are porting Cocos2d-\/x to a new platform, you may need to take care of this method. You could assign a default value to \+\_\+default\+Res\+Root\+Path in the subclass of \hyperlink{classFileUtils}{File\+Utils}(e.\+g. \hyperlink{classFileUtilsAndroid}{File\+Utils\+Android}). Then invoke the \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils\+::init()}. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if succeed, otherwise it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a2c891e99dc7af7343f4f9e8d4798a563}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a3427cbefa54f21aedd22ef5253a3bb46}\label{classFileUtilsWin32_a3427cbefa54f21aedd22ef5253a3bb46}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+Absolute\+Path@{is\+Absolute\+Path}}
+\index{is\+Absolute\+Path@{is\+Absolute\+Path}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+Absolute\+Path()}{isAbsolutePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::is\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks whether the path is an absolute path.
+
+\begin{DoxyNote}{Note}
+On Android, if the parameter passed in is relative to \char`\"{}assets/\char`\"{}, this method will treat it as an absolute path. Also on Blackberry, path starts with \char`\"{}app/native/\+Resources/\char`\"{} is treated as an absolute path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path that needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s an absolute path, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_ab4ecf27c8feb35aee8894ca39d559fd7}\label{classFileUtilsWin32_ab4ecf27c8feb35aee8894ca39d559fd7}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+Absolute\+Path@{is\+Absolute\+Path}}
+\index{is\+Absolute\+Path@{is\+Absolute\+Path}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+Absolute\+Path()}{isAbsolutePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+Win32\+::is\+Absolute\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks whether the path is an absolute path.
+
+\begin{DoxyNote}{Note}
+On Android, if the parameter passed in is relative to \char`\"{}assets/\char`\"{}, this method will treat it as an absolute path. Also on Blackberry, path starts with \char`\"{}app/native/\+Resources/\char`\"{} is treated as an absolute path.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path that needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s an absolute path, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aed08c5ac2854f3fb5c104386ab96a90c}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a9a408c75230da1289e5619285dd00f67}\label{classFileUtilsWin32_a9a408c75230da1289e5619285dd00f67}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}}
+\index{is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist\+Internal()}{isDirectoryExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::is\+Directory\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a directory exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The directory (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the directory found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a6f2a350e8f2b15219637b40bed4c38ec}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_aaeab26cde3a9a4cf3e4f8367d20f0e08}\label{classFileUtilsWin32_aaeab26cde3a9a4cf3e4f8367d20f0e08}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}}
+\index{is\+Directory\+Exist\+Internal@{is\+Directory\+Exist\+Internal}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+Directory\+Exist\+Internal()}{isDirectoryExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+Win32\+::is\+Directory\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a directory exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The directory (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the directory found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a6f2a350e8f2b15219637b40bed4c38ec}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_ab3538e3fa4418afbff4e95858a553ff7}\label{classFileUtilsWin32_ab3538e3fa4418afbff4e95858a553ff7}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}}
+\index{is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+File\+Exist\+Internal()}{isFileExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::is\+File\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a file exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the file found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_aacf984dcf838fc8d3303e47eb33a8601}\label{classFileUtilsWin32_aacf984dcf838fc8d3303e47eb33a8601}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}}
+\index{is\+File\+Exist\+Internal@{is\+File\+Exist\+Internal}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{is\+File\+Exist\+Internal()}{isFileExistInternal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool File\+Utils\+Win32\+::is\+File\+Exist\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Checks whether a file exists without considering search paths and resolution orders. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file (with absolute path) to look up for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the file found at the given absolute path, otherwise returns false 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFileUtils_a0e1dc78cbe5ac5689e1f67ebd4413bab}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_aa7a02a2d86383277ea72b7581da0b5db}\label{classFileUtilsWin32_aa7a02a2d86383277ea72b7581da0b5db}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!list\+Files@{list\+Files}}
+\index{list\+Files@{list\+Files}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{list\+Files()}{listFiles()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ File\+Utils\+Win32\+::list\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+List all files in a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File paths in a string vector 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a88fc43b561884e12a9a2d41a9e3b4df4}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a40ce728356a261d1eb35f6c0c72ae9e0}\label{classFileUtilsWin32_a40ce728356a261d1eb35f6c0c72ae9e0}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!list\+Files\+Recursively@{list\+Files\+Recursively}}
+\index{list\+Files\+Recursively@{list\+Files\+Recursively}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{list\+Files\+Recursively()}{listFilesRecursively()}}
+{\footnotesize\ttfamily void File\+Utils\+Win32\+::list\+Files\+Recursively (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path,  }\item[{std\+::vector$<$ std\+::string $>$ $\ast$}]{files }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+List all files recursively in a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The path of the directory, it could be a relative or an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File paths in a string vector 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a9507d436baf8e10b6880bb1779649a54}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a50a9cd9c6a65e4a3c33d188ac78b8a74}\label{classFileUtilsWin32_a50a9cd9c6a65e4a3c33d188ac78b8a74}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!remove\+Directory@{remove\+Directory}}
+\index{remove\+Directory@{remove\+Directory}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{remove\+Directory()}{removeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Removes a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The full path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_ad64d866c014013817c54582924f9592e}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_ab190878679d22943a4b167fee6d200ee}\label{classFileUtilsWin32_ab190878679d22943a4b167fee6d200ee}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!remove\+Directory@{remove\+Directory}}
+\index{remove\+Directory@{remove\+Directory}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{remove\+Directory()}{removeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::remove\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Removes a directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & The full path of the directory, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the directory have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a0ced661e913489e0a86ef0273c0fb90f}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_aab51310dbc155b73cb9f3d4f3a918d36}\label{classFileUtilsWin32_aab51310dbc155b73cb9f3d4f3a918d36}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{remove\+File()}{removeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Removes a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The full path of the file, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aee725bf84f7bc707f9a94543d75b70fb}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a45bb3aa3aff99f5d4367d048f722beaa}\label{classFileUtilsWin32_a45bb3aa3aff99f5d4367d048f722beaa}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!remove\+File@{remove\+File}}
+\index{remove\+File@{remove\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{remove\+File()}{removeFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::remove\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Removes a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The full path of the file, it must be an absolute path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been removed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_aa9131b62319c343316a68d45cbe1d6b1}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a209167c25ca47a1d03d47522cb88dc00}\label{classFileUtilsWin32_a209167c25ca47a1d03d47522cb88dc00}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{oldname,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The parent directory path of the file, it must be an absolute path. \\
+\hline
+{\em oldname} & The current name of the file. \\
+\hline
+{\em name} & The new name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a9f7560060b9909e1af2e0a77923f61ac}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a7268db0c6bec592a9f5978ceeecfe710}\label{classFileUtilsWin32_a7268db0c6bec592a9f5978ceeecfe710}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{oldname,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The parent directory path of the file, it must be an absolute path. \\
+\hline
+{\em oldname} & The current name of the file. \\
+\hline
+{\em name} & The new name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a9228ab64b14c71afca8c5e4f7fb9bb55}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_ac583dacdd0e02e0a92d32a31ba8f8d51}\label{classFileUtilsWin32_ac583dacdd0e02e0a92d32a31ba8f8d51}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{oldfullpath,  }\item[{const std\+::string \&}]{newfullpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldfullpath} & The current path + name of the file. \\
+\hline
+{\em newfullpath} & The new path + name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a5a73b69c8322c48c3fbad2a262d354d8}{File\+Utils}.
+
+\mbox{\Hypertarget{classFileUtilsWin32_a1c948c39348ea2a7b88cc232b96e3f68}\label{classFileUtilsWin32_a1c948c39348ea2a7b88cc232b96e3f68}} 
+\index{File\+Utils\+Win32@{File\+Utils\+Win32}!rename\+File@{rename\+File}}
+\index{rename\+File@{rename\+File}!File\+Utils\+Win32@{File\+Utils\+Win32}}
+\subsubsection{\texorpdfstring{rename\+File()}{renameFile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool File\+Utils\+Win32\+::rename\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{oldfullpath,  }\item[{const std\+::string \&}]{newfullpath }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Renames a file under the given directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldfullpath} & The current path + name of the file. \\
+\hline
+{\em newfullpath} & The new path + name of the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file have been renamed successfully, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFileUtils_a3e68a89a46e1d78df898cbbe1776d75e}{File\+Utils}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/win32/C\+C\+File\+Utils-\/win32.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/platform/win32/C\+C\+File\+Utils-\/win32.\+cpp\end{DoxyCompactItemize}

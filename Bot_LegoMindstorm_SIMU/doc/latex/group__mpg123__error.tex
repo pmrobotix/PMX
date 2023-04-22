@@ -1,0 +1,1072 @@
+\hypertarget{group__mpg123__error}{}\section{mpg123 error handling}
+\label{group__mpg123__error}\index{mpg123 error handling@{mpg123 error handling}}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}{mpg123\+\_\+errors} \{ \newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}{M\+P\+G123\+\_\+\+D\+O\+NE} =-\/12, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT} =-\/11, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE} =-\/10, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}{M\+P\+G123\+\_\+\+E\+RR} =-\/1, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}{M\+P\+G123\+\_\+\+OK} =0, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}{M\+P\+G123\+\_\+\+D\+O\+NE} =-\/12, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT} =-\/11, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE} =-\/10, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}{M\+P\+G123\+\_\+\+E\+RR} =-\/1, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}{M\+P\+G123\+\_\+\+OK} =0, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
+ \}
+\item 
+enum \hyperlink{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}{mpg123\+\_\+errors} \{ \newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}{M\+P\+G123\+\_\+\+D\+O\+NE} =-\/12, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT} =-\/11, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE} =-\/10, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}{M\+P\+G123\+\_\+\+E\+RR} =-\/1, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}{M\+P\+G123\+\_\+\+OK} =0, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}{M\+P\+G123\+\_\+\+D\+O\+NE} =-\/12, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT} =-\/11, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE} =-\/10, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}{M\+P\+G123\+\_\+\+E\+RR} =-\/1, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}{M\+P\+G123\+\_\+\+OK} =0, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}, 
+\newline
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\hyperlink{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+P\+O\+RT const char $\ast$ \hyperlink{group__mpg123__error_ga0254f1c6f70074fa404e85735735ca0c}{mpg123\+\_\+plain\+\_\+strerror} (int errcode)
+\item 
+E\+X\+P\+O\+RT const char $\ast$ \hyperlink{group__mpg123__error_gae0e1d1de1a98df0b372300e287e66d05}{mpg123\+\_\+strerror} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\item 
+E\+X\+P\+O\+RT int \hyperlink{group__mpg123__error_gaa6146d20e862ce10568ac2600a890680}{mpg123\+\_\+errcode} (\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$mh)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to get text version of the error numbers and an enumeration of the error codes returned by libmpg123.
+
+Most functions operating on a mpg123\+\_\+handle simply return M\+P\+G123\+\_\+\+OK on success and M\+P\+G123\+\_\+\+E\+RR on failure (setting the internal error variable of the handle to the specific error code). Decoding/seek functions may also return message codes M\+P\+G123\+\_\+\+D\+O\+NE, M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT and M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE (please read up on these on how to react!). The positive range of return values is used for \char`\"{}useful\char`\"{} values when appropriate. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}\label{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}} 
+\index{mpg123 error handling@{mpg123 error handling}!mpg123\+\_\+errors@{mpg123\+\_\+errors}}
+\index{mpg123\+\_\+errors@{mpg123\+\_\+errors}!mpg123 error handling@{mpg123 error handling}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+errors}{mpg123\_errors}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}{mpg123\+\_\+errors}}
+
+Enumeration of the message and error codes and returned by libmpg123 functions. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}} 
+M\+P\+G123\+\_\+\+D\+O\+NE&Message\+: Track ended. Stop decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}} 
+M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT&Message\+: Output format will be different on next call. Note that some libmpg123 versions between 1.\+4.\+3 and 1.\+8.\+0 insist on you calling \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()} after getting this message code. Newer verisons behave like advertised\+: You have the chance to call \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()}, but you can also just continue decoding and get your data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}} 
+M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE&Message\+: For feed reader\+: \char`\"{}\+Feed me more!\char`\"{} (call \hyperlink{group__mpg123__input_gae9a90a4e3ceeafe701df26c2fd761f3f}{mpg123\+\_\+feed()} or \hyperlink{group__mpg123__input_gad35309fe0892d534b6430e3bfde68358}{mpg123\+\_\+decode()} with some new input data). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}} 
+M\+P\+G123\+\_\+\+E\+RR&Generic Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}} 
+M\+P\+G123\+\_\+\+OK&Success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT&Unable to set up output format! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL&Invalid channel number specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE&Invalid sample rate specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE&Unable to allocate memory for 16 to 8 converter table! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM&Bad parameter id! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER&Bad buffer given -- invalid pointer or too small size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM&Out of memory -- some malloc() failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}} 
+M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED&You didn\textquotesingle{}t initialize the library! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER&Invalid decoder choice. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE&Invalid mpg123 handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS&Unable to initialize frame buffers (out of memory?). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA&Invalid R\+VA mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS&This build doesn\textquotesingle{}t support gapless decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE&Not enough buffer space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES&Incompatible numeric data types. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND&Bad equalizer band. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL&Null pointer given where valid storage address needed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER&Error reading the stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND&Cannot seek from end (end is not known). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE&Invalid \textquotesingle{}whence\textquotesingle{} for seek function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT&Build does not support stream timeouts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE&File access error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK&Seek not supported by stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER&No stream opened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS&Bad parameter handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR&Bad parameters to \hyperlink{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}{mpg123\+\_\+index()} and \hyperlink{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}{mpg123\+\_\+set\+\_\+index()} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC&Lost track in bytestream and did not try to resync. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}} 
+M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL&Resync failed to find valid M\+P\+EG data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT&No 8bit encoding possible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN&Stack aligmnent error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER&N\+U\+LL input buffer with non-\/zero size... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK&Relative seek not possible (screwed up file offset) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER&You gave a null pointer somewhere where you shouldn\textquotesingle{}t have. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY&Bad key value given. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX&No frame index in this build. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}} 
+M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL&Something with frame index went wrong. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP&Something prevents a proper decoder setup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}} 
+M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE&This feature has not been built into libmpg123. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE&A bad value has been given, somewhere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}} 
+M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED&Low-\/level seek failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO&Custom I/O not prepared. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}} 
+M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Offset value overflow during translation of large file A\+PI calls -- your client program cannot handle that large file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}} 
+M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Some integer overflow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}} 
+M\+P\+G123\+\_\+\+D\+O\+NE&Message\+: Track ended. Stop decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}} 
+M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT&Message\+: Output format will be different on next call. Note that some libmpg123 versions between 1.\+4.\+3 and 1.\+8.\+0 insist on you calling \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()} after getting this message code. Newer verisons behave like advertised\+: You have the chance to call \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()}, but you can also just continue decoding and get your data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}} 
+M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE&Message\+: For feed reader\+: \char`\"{}\+Feed me more!\char`\"{} (call \hyperlink{group__mpg123__input_gae9a90a4e3ceeafe701df26c2fd761f3f}{mpg123\+\_\+feed()} or \hyperlink{group__mpg123__input_gad35309fe0892d534b6430e3bfde68358}{mpg123\+\_\+decode()} with some new input data). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}} 
+M\+P\+G123\+\_\+\+E\+RR&Generic Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}} 
+M\+P\+G123\+\_\+\+OK&Success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT&Unable to set up output format! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL&Invalid channel number specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE&Invalid sample rate specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE&Unable to allocate memory for 16 to 8 converter table! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM&Bad parameter id! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER&Bad buffer given -- invalid pointer or too small size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM&Out of memory -- some malloc() failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}} 
+M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED&You didn\textquotesingle{}t initialize the library! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER&Invalid decoder choice. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE&Invalid mpg123 handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS&Unable to initialize frame buffers (out of memory?). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA&Invalid R\+VA mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS&This build doesn\textquotesingle{}t support gapless decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE&Not enough buffer space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES&Incompatible numeric data types. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND&Bad equalizer band. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL&Null pointer given where valid storage address needed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER&Error reading the stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND&Cannot seek from end (end is not known). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE&Invalid \textquotesingle{}whence\textquotesingle{} for seek function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT&Build does not support stream timeouts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE&File access error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK&Seek not supported by stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER&No stream opened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS&Bad parameter handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR&Bad parameters to \hyperlink{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}{mpg123\+\_\+index()} and \hyperlink{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}{mpg123\+\_\+set\+\_\+index()} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC&Lost track in bytestream and did not try to resync. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}} 
+M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL&Resync failed to find valid M\+P\+EG data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT&No 8bit encoding possible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN&Stack aligmnent error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER&N\+U\+LL input buffer with non-\/zero size... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK&Relative seek not possible (screwed up file offset) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER&You gave a null pointer somewhere where you shouldn\textquotesingle{}t have. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY&Bad key value given. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX&No frame index in this build. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}} 
+M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL&Something with frame index went wrong. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP&Something prevents a proper decoder setup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}} 
+M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE&This feature has not been built into libmpg123. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE&A bad value has been given, somewhere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}} 
+M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED&Low-\/level seek failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO&Custom I/O not prepared. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}} 
+M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Offset value overflow during translation of large file A\+PI calls -- your client program cannot handle that large file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}} 
+M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Some integer overflow. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}\label{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}} 
+\index{mpg123 error handling@{mpg123 error handling}!mpg123\+\_\+errors@{mpg123\+\_\+errors}}
+\index{mpg123\+\_\+errors@{mpg123\+\_\+errors}!mpg123 error handling@{mpg123 error handling}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+errors}{mpg123\_errors}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{group__mpg123__error_gac50432012aeaf7c23014de3198dfa5fd}{mpg123\+\_\+errors}}
+
+Enumeration of the message and error codes and returned by libmpg123 functions. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}} 
+M\+P\+G123\+\_\+\+D\+O\+NE&Message\+: Track ended. Stop decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}} 
+M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT&Message\+: Output format will be different on next call. Note that some libmpg123 versions between 1.\+4.\+3 and 1.\+8.\+0 insist on you calling \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()} after getting this message code. Newer verisons behave like advertised\+: You have the chance to call \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()}, but you can also just continue decoding and get your data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}} 
+M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE&Message\+: For feed reader\+: \char`\"{}\+Feed me more!\char`\"{} (call \hyperlink{group__mpg123__input_gae9a90a4e3ceeafe701df26c2fd761f3f}{mpg123\+\_\+feed()} or \hyperlink{group__mpg123__input_gad35309fe0892d534b6430e3bfde68358}{mpg123\+\_\+decode()} with some new input data). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}} 
+M\+P\+G123\+\_\+\+E\+RR&Generic Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}} 
+M\+P\+G123\+\_\+\+OK&Success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT&Unable to set up output format! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL&Invalid channel number specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE&Invalid sample rate specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE&Unable to allocate memory for 16 to 8 converter table! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM&Bad parameter id! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER&Bad buffer given -- invalid pointer or too small size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM&Out of memory -- some malloc() failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}} 
+M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED&You didn\textquotesingle{}t initialize the library! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER&Invalid decoder choice. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE&Invalid mpg123 handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS&Unable to initialize frame buffers (out of memory?). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA&Invalid R\+VA mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS&This build doesn\textquotesingle{}t support gapless decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE&Not enough buffer space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES&Incompatible numeric data types. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND&Bad equalizer band. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL&Null pointer given where valid storage address needed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER&Error reading the stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND&Cannot seek from end (end is not known). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE&Invalid \textquotesingle{}whence\textquotesingle{} for seek function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT&Build does not support stream timeouts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE&File access error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK&Seek not supported by stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER&No stream opened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS&Bad parameter handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR&Bad parameters to \hyperlink{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}{mpg123\+\_\+index()} and \hyperlink{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}{mpg123\+\_\+set\+\_\+index()} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC&Lost track in bytestream and did not try to resync. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}} 
+M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL&Resync failed to find valid M\+P\+EG data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT&No 8bit encoding possible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN&Stack aligmnent error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER&N\+U\+LL input buffer with non-\/zero size... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK&Relative seek not possible (screwed up file offset) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER&You gave a null pointer somewhere where you shouldn\textquotesingle{}t have. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY&Bad key value given. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX&No frame index in this build. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}} 
+M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL&Something with frame index went wrong. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP&Something prevents a proper decoder setup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}} 
+M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE&This feature has not been built into libmpg123. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE&A bad value has been given, somewhere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}} 
+M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED&Low-\/level seek failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO&Custom I/O not prepared. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}} 
+M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Offset value overflow during translation of large file A\+PI calls -- your client program cannot handle that large file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}} 
+M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Some integer overflow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+D\+O\+NE@{M\+P\+G123\+\_\+\+D\+O\+NE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa70ae24fcae9de17ba5d7196898557ba}} 
+M\+P\+G123\+\_\+\+D\+O\+NE&Message\+: Track ended. Stop decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda843569efa962ea0e093bae7f190d1da6}} 
+M\+P\+G123\+\_\+\+N\+E\+W\+\_\+\+F\+O\+R\+M\+AT&Message\+: Output format will be different on next call. Note that some libmpg123 versions between 1.\+4.\+3 and 1.\+8.\+0 insist on you calling \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()} after getting this message code. Newer verisons behave like advertised\+: You have the chance to call \hyperlink{group__mpg123__output_ga47557e1d8d1b31ae4fd49ad4c54458ab}{mpg123\+\_\+getformat()}, but you can also just continue decoding and get your data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE@{M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda094f4acef73ea2392e2e5d89df96a879}} 
+M\+P\+G123\+\_\+\+N\+E\+E\+D\+\_\+\+M\+O\+RE&Message\+: For feed reader\+: \char`\"{}\+Feed me more!\char`\"{} (call \hyperlink{group__mpg123__input_gae9a90a4e3ceeafe701df26c2fd761f3f}{mpg123\+\_\+feed()} or \hyperlink{group__mpg123__input_gad35309fe0892d534b6430e3bfde68358}{mpg123\+\_\+decode()} with some new input data). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+RR@{M\+P\+G123\+\_\+\+E\+RR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda416b4ef6c8cdc461fe210327819192cd}} 
+M\+P\+G123\+\_\+\+E\+RR&Generic Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+OK@{M\+P\+G123\+\_\+\+OK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf2a2fd03e8a2cc34d676f1a416f482e0}} 
+M\+P\+G123\+\_\+\+OK&Success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3b12600e50fbe0a81922ef28385890d4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+O\+U\+T\+F\+O\+R\+M\+AT&Unable to set up output format! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda2354f3320877398e294a3f140bbb1d24}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+H\+A\+N\+N\+EL&Invalid channel number specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafc8e025f961282382014c063f7c116dd}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+A\+TE&Invalid sample rate specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda14286499b7ef3f73012d084e64881896}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+16\+T\+O8\+T\+A\+B\+LE&Unable to allocate memory for 16 to 8 converter table! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda10a7e2cfe8420802ef929f0f152571f4}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+AM&Bad parameter id! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3f5d00bf75b553a9f3f96ab4b4bbf23b}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+U\+F\+F\+ER&Bad buffer given -- invalid pointer or too small size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda631e5674fd95abd99992b43bb91afa94}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+EM&Out of memory -- some malloc() failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5db83e7a717a153f93a8f45c4e13f333}} 
+M\+P\+G123\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED&You didn\textquotesingle{}t initialize the library! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdafe5bd9461a4d2a3883737c63bfe9cb5c}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+ER&Invalid decoder choice. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3298795f3be471cbdeed64bc7bf6b50e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE&Invalid mpg123 handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa194cfc6faf56e1cfc79fb5905a47591}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+B\+U\+F\+F\+E\+RS&Unable to initialize frame buffers (out of memory?). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46d8080d67eeba84775ecddb35043150}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+R\+VA&Invalid R\+VA mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad15f28728cf32383fdc949caf7f31b79}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+G\+A\+P\+L\+E\+SS&This build doesn\textquotesingle{}t support gapless decoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda71aeba859302f4220e81772e5adf6522}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+P\+A\+CE&Not enough buffer space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7bc9d660fa53509028478df827826615}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+T\+Y\+P\+ES&Incompatible numeric data types. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaf23d57a3b345dc323c29a42ca56878d7}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+B\+A\+ND&Bad equalizer band. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda76fbf5846855945f675e1a43968210a9}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+N\+U\+LL&Null pointer given where valid storage address needed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5b611d4c39a25b0801cc1815994188c8}} 
+M\+P\+G123\+\_\+\+E\+R\+R\+\_\+\+R\+E\+A\+D\+ER&Error reading the stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda5dac0942b612acebe960ca72448a7a61}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+E\+K\+\_\+\+F\+R\+O\+M\+\_\+\+E\+ND&Cannot seek from end (end is not known). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9ad2e186be9c05390c4e345ff68e99fa}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+W\+H\+E\+N\+CE&Invalid \textquotesingle{}whence\textquotesingle{} for seek function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3c930fb1d77ef50b172a27598a5d926a}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+T\+I\+M\+E\+O\+UT&Build does not support stream timeouts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda52bccb287baaed3f83c5d989e5451cc2}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+F\+I\+LE&File access error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda283193c86385df3fac3f48b8133f84f3}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+S\+E\+EK&Seek not supported by stream. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda923e0b3a5d5b607b704085d02f3fb586}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+A\+D\+ER&No stream opened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda286dfcc0d3fbbf792a0b6ec97019a6ba}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+P\+A\+RS&Bad parameter handle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdad5a8785cadeeba574877a7ad1e261ebe}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+I\+N\+D\+E\+X\+\_\+\+P\+AR&Bad parameters to \hyperlink{group__mpg123__seek_ga86508f957e5ebdf27e665f2ce0b8ff2a}{mpg123\+\_\+index()} and \hyperlink{group__mpg123__seek_ga176cdb470902ebbc4839c99d7e20791e}{mpg123\+\_\+set\+\_\+index()} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC@{M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7016afea86a0a3d7e273f0849f665256}} 
+M\+P\+G123\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+S\+Y\+NC&Lost track in bytestream and did not try to resync. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda38af634ca20e6f9f9ab5aafdd0e3b2e3}} 
+M\+P\+G123\+\_\+\+R\+E\+S\+Y\+N\+C\+\_\+\+F\+A\+IL&Resync failed to find valid M\+P\+EG data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT@{M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaff41324627aae3e8b546163b4d624671}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+8\+B\+IT&No 8bit encoding possible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9bbd90efc32cd1d34fee31f340680f6a}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+A\+L\+I\+GN&Stack aligmnent error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda6a597a1a50ff4fcce54efc2c157096f3}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+B\+U\+F\+F\+ER&N\+U\+LL input buffer with non-\/zero size... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdacf32e0342dc6632b6966510da214f064}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+R\+E\+L\+S\+E\+EK&Relative seek not possible (screwed up file offset) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER@{M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda46530f4567232b72c94fdb1188174253}} 
+M\+P\+G123\+\_\+\+N\+U\+L\+L\+\_\+\+P\+O\+I\+N\+T\+ER&You gave a null pointer somewhere where you shouldn\textquotesingle{}t have. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda865323a2b72cbf67b5079b1482821175}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+K\+EY&Bad key value given. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX@{M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaa5b4fd8051237dc3bcbf7ea5f416e304}} 
+M\+P\+G123\+\_\+\+N\+O\+\_\+\+I\+N\+D\+EX&No frame index in this build. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL@{M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda3d80467966ee29ab6e5f7d89a5cb95ad}} 
+M\+P\+G123\+\_\+\+I\+N\+D\+E\+X\+\_\+\+F\+A\+IL&Something with frame index went wrong. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdabd3ac7764125b2426e7df9f34ba4b69d}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+S\+E\+T\+UP&Something prevents a proper decoder setup \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE@{M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaeede1c7688467a75161c766ecf479ce8}} 
+M\+P\+G123\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+F\+E\+A\+T\+U\+RE&This feature has not been built into libmpg123. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fdaebc536f5fffaa1abe7243434cf2d353e}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+V\+A\+L\+UE&A bad value has been given, somewhere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED@{M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda102bd78ff1fad6cce594e22ea6fb0698}} 
+M\+P\+G123\+\_\+\+L\+S\+E\+E\+K\+\_\+\+F\+A\+I\+L\+ED&Low-\/level seek failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO@{M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda9968b3ba91db9dd166fa8421572bda52}} 
+M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+C\+U\+S\+T\+O\+M\+\_\+\+IO&Custom I/O not prepared. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda7ecc133213daa350d801a9e1dc3028e3}} 
+M\+P\+G123\+\_\+\+L\+F\+S\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Offset value overflow during translation of large file A\+PI calls -- your client program cannot handle that large file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!mpg123 error handling@{mpg123 error handling}}\index{mpg123 error handling@{mpg123 error handling}!M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\Hypertarget{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}\label{group__mpg123__error_ggac50432012aeaf7c23014de3198dfa5fda29cadbffa0da2fc28d1d83e59211b86e}} 
+M\+P\+G123\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW&Some integer overflow. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__mpg123__error_gaa6146d20e862ce10568ac2600a890680}\label{group__mpg123__error_gaa6146d20e862ce10568ac2600a890680}} 
+\index{mpg123 error handling@{mpg123 error handling}!mpg123\+\_\+errcode@{mpg123\+\_\+errcode}}
+\index{mpg123\+\_\+errcode@{mpg123\+\_\+errcode}!mpg123 error handling@{mpg123 error handling}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+errcode()}{mpg123\_errcode()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT int mpg123\+\_\+errcode (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Return the plain errcode intead of a string. \mbox{\Hypertarget{group__mpg123__error_ga0254f1c6f70074fa404e85735735ca0c}\label{group__mpg123__error_ga0254f1c6f70074fa404e85735735ca0c}} 
+\index{mpg123 error handling@{mpg123 error handling}!mpg123\+\_\+plain\+\_\+strerror@{mpg123\+\_\+plain\+\_\+strerror}}
+\index{mpg123\+\_\+plain\+\_\+strerror@{mpg123\+\_\+plain\+\_\+strerror}!mpg123 error handling@{mpg123 error handling}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+plain\+\_\+strerror()}{mpg123\_plain\_strerror()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT const char $\ast$ mpg123\+\_\+plain\+\_\+strerror (\begin{DoxyParamCaption}\item[{int}]{errcode }\end{DoxyParamCaption})}
+
+Return a string describing that error errcode means. \mbox{\Hypertarget{group__mpg123__error_gae0e1d1de1a98df0b372300e287e66d05}\label{group__mpg123__error_gae0e1d1de1a98df0b372300e287e66d05}} 
+\index{mpg123 error handling@{mpg123 error handling}!mpg123\+\_\+strerror@{mpg123\+\_\+strerror}}
+\index{mpg123\+\_\+strerror@{mpg123\+\_\+strerror}!mpg123 error handling@{mpg123 error handling}}
+\subsubsection{\texorpdfstring{mpg123\+\_\+strerror()}{mpg123\_strerror()}}
+{\footnotesize\ttfamily E\+X\+P\+O\+RT const char $\ast$ mpg123\+\_\+strerror (\begin{DoxyParamCaption}\item[{\hyperlink{group__mpg123__init_ga6728e2839a395f3a07d4514da659faca}{mpg123\+\_\+handle} $\ast$}]{mh }\end{DoxyParamCaption})}
+
+Give string describing what error has occured in the context of handle mh. When a function operating on an mpg123 handle returns M\+P\+G123\+\_\+\+E\+RR, you should check for the actual reason via char $\ast$errmsg = mpg123\+\_\+strerror(mh) This function will catch mh == N\+U\+LL and return the message for M\+P\+G123\+\_\+\+B\+A\+D\+\_\+\+H\+A\+N\+D\+LE. 

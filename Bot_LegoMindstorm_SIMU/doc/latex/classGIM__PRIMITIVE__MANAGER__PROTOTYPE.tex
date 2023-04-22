@@ -1,0 +1,48 @@
+\hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE}{}\section{G\+I\+M\+\_\+\+P\+R\+I\+M\+I\+T\+I\+V\+E\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+R\+O\+T\+O\+T\+Y\+PE Class Reference}
+\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE}\index{G\+I\+M\+\_\+\+P\+R\+I\+M\+I\+T\+I\+V\+E\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+R\+O\+T\+O\+T\+Y\+PE@{G\+I\+M\+\_\+\+P\+R\+I\+M\+I\+T\+I\+V\+E\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+P\+R\+O\+T\+O\+T\+Y\+PE}}
+
+
+Prototype Base class for primitive classification.  
+
+
+
+
+{\ttfamily \#include $<$gim\+\_\+box\+\_\+set.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}} 
+virtual bool \hyperlink{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}{is\+\_\+trimesh} ()=0
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a94c3fab9efdfec58d4c55394f8531463}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a94c3fab9efdfec58d4c55394f8531463}} 
+virtual G\+U\+I\+NT {\bfseries get\+\_\+primitive\+\_\+count} ()=0
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a346c6eddcf63f67097a3d564ada57661}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a346c6eddcf63f67097a3d564ada57661}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (G\+U\+I\+NT prim\+\_\+index, \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&primbox)=0
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_ad123d015b328ccfd1adee56517fd4b17}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_ad123d015b328ccfd1adee56517fd4b17}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+triangle} (G\+U\+I\+NT prim\+\_\+index, \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&triangle)=0
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}} 
+virtual bool \hyperlink{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_aaad51538aaf2c2652c7e202a9f2d57a5}{is\+\_\+trimesh} ()=0
+\begin{DoxyCompactList}\small\item\em determines if this manager consist on only triangles, which special case will be optimized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a94c3fab9efdfec58d4c55394f8531463}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a94c3fab9efdfec58d4c55394f8531463}} 
+virtual G\+U\+I\+NT {\bfseries get\+\_\+primitive\+\_\+count} ()=0
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a346c6eddcf63f67097a3d564ada57661}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_a346c6eddcf63f67097a3d564ada57661}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+box} (G\+U\+I\+NT prim\+\_\+index, \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} \&primbox)=0
+\item 
+\mbox{\Hypertarget{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_ad123d015b328ccfd1adee56517fd4b17}\label{classGIM__PRIMITIVE__MANAGER__PROTOTYPE_ad123d015b328ccfd1adee56517fd4b17}} 
+virtual void {\bfseries get\+\_\+primitive\+\_\+triangle} (G\+U\+I\+NT prim\+\_\+index, \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&triangle)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototype Base class for primitive classification. 
+
+This class is a wrapper for primitive collections. This tells relevant info for the Bounding \hyperlink{classBox}{Box} set classes, which take care of space classification. This class can manage Compound shapes and trimeshes, and if it is managing trimesh then the Hierarchy Bounding \hyperlink{classBox}{Box} classes will take advantage of primitive Vs \hyperlink{classBox}{Box} overlapping tests for getting optimal results and less Per \hyperlink{classBox}{Box} compairisons. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+box\+\_\+set.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,1256 @@
+\hypertarget{classTMXLayer}{}\section{T\+M\+X\+Layer Class Reference}
+\label{classTMXLayer}\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+
+
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} represents the T\+MX layer. It is a subclass of \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}. By default the tiles are rendered using a \hyperlink{classTextureAtlas}{Texture\+Atlas}. If you modify a tile on runtime, then, that tile will become a \hyperlink{classSprite}{Sprite}, otherwise no \hyperlink{classSprite}{Sprite} objects are created. The benefits of using \hyperlink{classSprite}{Sprite} objects as tiles are\+:  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+T\+M\+X\+Layer.\+h$>$}
+
+
+
+Inheritance diagram for T\+M\+X\+Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classTMXLayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+M\+X\+Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTMXLayer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}{T\+M\+X\+Layer} ()
+\item 
+virtual \hyperlink{classTMXLayer_a488ce77caa72fc4ca28db81b7393c670}{$\sim$\+T\+M\+X\+Layer} ()
+\item 
+bool \hyperlink{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}{init\+With\+Tileset\+Info} (T\+M\+X\+Tileset\+Info $\ast$tileset\+Info, T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+void \hyperlink{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}{release\+Map} ()
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classTMXLayer_a3766adcc9f0d3619c97620b7e1cf04dc}{get\+Tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}{tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+uint32\+\_\+t \hyperlink{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}{get\+Tile\+G\+I\+D\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags $\ast$flags=nullptr)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE uint32\+\_\+t \hyperlink{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}{tile\+G\+I\+D\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags $\ast$flags=nullptr)
+\item 
+void \hyperlink{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}{set\+Tile\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+void \hyperlink{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}{set\+Tile\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags flags)
+\item 
+void \hyperlink{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}{remove\+Tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classTMXLayer_a3b433e1831ed12ae032db0124f286470}{get\+Position\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVec2}{Vec2} \hyperlink{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}{position\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}{get\+Property} (const std\+::string \&property\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} \hyperlink{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}{property\+Named} (const std\+::string \&property\+Name) const
+\item 
+void \hyperlink{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}{setup\+Tiles} ()
+\item 
+const std\+::string \& \hyperlink{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}{get\+Layer\+Name} ()
+\item 
+void \hyperlink{classTMXLayer_a41ce08785e388b65e0f994781f45183d}{set\+Layer\+Name} (const std\+::string \&layer\+Name)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}{get\+Layer\+Size} () const
+\item 
+void \hyperlink{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}{set\+Layer\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXLayer_acb38799b0ca66198f06c9b451b469118}{get\+Map\+Tile\+Size} () const
+\item 
+void \hyperlink{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}{set\+Map\+Tile\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}{get\+Tiles} () const
+\item 
+void \hyperlink{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}{set\+Tiles} (uint32\+\_\+t $\ast$tiles)
+\item 
+T\+M\+X\+Tileset\+Info $\ast$ \hyperlink{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}{get\+Tile\+Set} () const
+\item 
+void \hyperlink{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}{set\+Tile\+Set} (T\+M\+X\+Tileset\+Info $\ast$info)
+\item 
+int \hyperlink{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}{get\+Layer\+Orientation} () const
+\item 
+void \hyperlink{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}{set\+Layer\+Orientation} (int orientation)
+\item 
+const Value\+Map \& \hyperlink{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}{get\+Properties} () const
+\item 
+Value\+Map \& \hyperlink{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}{get\+Properties} ()
+\item 
+void \hyperlink{classTMXLayer_ac7368336ee0929ac575119db824a6362}{set\+Properties} (const Value\+Map \&properties)
+\item 
+virtual void \hyperlink{classTMXLayer_a8f537dd4690c31ee1a61413c9bfcaa94}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+void \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual std\+::string \hyperlink{classTMXLayer_ae03bc92e2f95a1c6cfce363a8abcfd77}{get\+Description} () const override
+\item 
+\hyperlink{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}{T\+M\+X\+Layer} ()
+\item 
+virtual \hyperlink{classTMXLayer_aec7c2f13f8d00d62e01adbc7eb4c8c44}{$\sim$\+T\+M\+X\+Layer} ()
+\item 
+bool \hyperlink{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}{init\+With\+Tileset\+Info} (T\+M\+X\+Tileset\+Info $\ast$tileset\+Info, T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+void \hyperlink{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}{release\+Map} ()
+\item 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classTMXLayer_ad8a1eaf52658b06dead572393bf2b386}{get\+Tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}{tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+uint32\+\_\+t \hyperlink{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}{get\+Tile\+G\+I\+D\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags $\ast$flags=nullptr)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE uint32\+\_\+t \hyperlink{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}{tile\+G\+I\+D\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags $\ast$flags=nullptr)
+\item 
+void \hyperlink{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}{set\+Tile\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+void \hyperlink{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}{set\+Tile\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate, T\+M\+X\+Tile\+Flags flags)
+\item 
+void \hyperlink{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}{remove\+Tile\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+\hyperlink{classVec2}{Vec2} \hyperlink{classTMXLayer_a3b433e1831ed12ae032db0124f286470}{get\+Position\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVec2}{Vec2} \hyperlink{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}{position\+At} (const \hyperlink{classVec2}{Vec2} \&tile\+Coordinate)
+\item 
+\hyperlink{classValue}{Value} \hyperlink{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}{get\+Property} (const std\+::string \&property\+Name) const
+\item 
+C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} \hyperlink{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}{property\+Named} (const std\+::string \&property\+Name) const
+\item 
+void \hyperlink{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}{setup\+Tiles} ()
+\item 
+const std\+::string \& \hyperlink{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}{get\+Layer\+Name} ()
+\item 
+void \hyperlink{classTMXLayer_a41ce08785e388b65e0f994781f45183d}{set\+Layer\+Name} (const std\+::string \&layer\+Name)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}{get\+Layer\+Size} () const
+\item 
+void \hyperlink{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}{set\+Layer\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+const \hyperlink{classSize}{Size} \& \hyperlink{classTMXLayer_acb38799b0ca66198f06c9b451b469118}{get\+Map\+Tile\+Size} () const
+\item 
+void \hyperlink{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}{set\+Map\+Tile\+Size} (const \hyperlink{classSize}{Size} \&size)
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}{get\+Tiles} () const
+\item 
+void \hyperlink{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}{set\+Tiles} (uint32\+\_\+t $\ast$tiles)
+\item 
+T\+M\+X\+Tileset\+Info $\ast$ \hyperlink{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}{get\+Tile\+Set} () const
+\item 
+void \hyperlink{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}{set\+Tile\+Set} (T\+M\+X\+Tileset\+Info $\ast$info)
+\item 
+int \hyperlink{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}{get\+Layer\+Orientation} () const
+\item 
+void \hyperlink{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}{set\+Layer\+Orientation} (int orientation)
+\item 
+const Value\+Map \& \hyperlink{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}{get\+Properties} () const
+\item 
+Value\+Map \& \hyperlink{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}{get\+Properties} ()
+\item 
+void \hyperlink{classTMXLayer_ac7368336ee0929ac575119db824a6362}{set\+Properties} (const Value\+Map \&properties)
+\item 
+virtual void \hyperlink{classTMXLayer_a6967088f51d0ad613c639b2592692116}{add\+Child} (\hyperlink{classNode}{Node} $\ast$child, int z\+Order, int tag) override
+\item 
+void \hyperlink{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}{remove\+Child} (\hyperlink{classNode}{Node} $\ast$child, bool \hyperlink{classNode_aa2de84c6cdeec9cd647d236c30ee0567}{cleanup}) override
+\item 
+virtual std\+::string \hyperlink{classTMXLayer_a1238ed7681395864c66ebda4b90c5d3b}{get\+Description} () const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXLayer_ab53489da78af9ae3523b17d807f23dbe}{create} (T\+M\+X\+Tileset\+Info $\ast$tileset\+Info, T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\item 
+static \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ \hyperlink{classTMXLayer_aae2efea498514da82da8cadedb8e6a60}{create} (T\+M\+X\+Tileset\+Info $\ast$tileset\+Info, T\+M\+X\+Layer\+Info $\ast$layer\+Info, T\+M\+X\+Map\+Info $\ast$map\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTMXLayer_a3e04602227f8a60685d38eb54067c228}\label{classTMXLayer_a3e04602227f8a60685d38eb54067c228}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Iso\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a0d7d36f39707f0d9dab8632af01cfc96}\label{classTMXLayer_a0d7d36f39707f0d9dab8632af01cfc96}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Ortho\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_ab9b894b913d4fe0dd7c2916131d480f9}\label{classTMXLayer_ab9b894b913d4fe0dd7c2916131d480f9}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Hex\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a2814e6c370d49fa07362688c63879f4a}\label{classTMXLayer_a2814e6c370d49fa07362688c63879f4a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Staggered\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a429b05f5840cdebf4591a93ae3571068}\label{classTMXLayer_a429b05f5840cdebf4591a93ae3571068}} 
+\hyperlink{classVec2}{Vec2} {\bfseries calculate\+Layer\+Offset} (const \hyperlink{classVec2}{Vec2} \&offset)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a1dfa4507e6d887eeb33ca2c15d5c6138}\label{classTMXLayer_a1dfa4507e6d887eeb33ca2c15d5c6138}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries append\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_abcdfb314cab5e366f0a74dca4c1bae3a}\label{classTMXLayer_abcdfb314cab5e366f0a74dca4c1bae3a}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries insert\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a08295c73e0f50f9c0facbf1ce8d384f5}\label{classTMXLayer_a08295c73e0f50f9c0facbf1ce8d384f5}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries update\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a971029e08d5cb9d854c68134c81f1c98}\label{classTMXLayer_a971029e08d5cb9d854c68134c81f1c98}} 
+void {\bfseries parse\+Internal\+Properties} ()
+\item 
+\mbox{\Hypertarget{classTMXLayer_a17911c8c85544920fc1314eba15119cf}\label{classTMXLayer_a17911c8c85544920fc1314eba15119cf}} 
+void {\bfseries setup\+Tile\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, const \hyperlink{classVec2}{Vec2} \&pos, int gid)
+\item 
+\mbox{\Hypertarget{classTMXLayer_aa90a9ae17062a32a3f6e3ebac8655363}\label{classTMXLayer_aa90a9ae17062a32a3f6e3ebac8655363}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries reused\+Tile\+With\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a43dd1ce85ca7b58d34e6939c9c6d9ca9}\label{classTMXLayer_a43dd1ce85ca7b58d34e6939c9c6d9ca9}} 
+int {\bfseries get\+Vertex\+Z\+For\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_adba8a4560f349073db1a1c185f55add1}\label{classTMXLayer_adba8a4560f349073db1a1c185f55add1}} 
+ssize\+\_\+t {\bfseries atlas\+Index\+For\+ExistantZ} (int z)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a9e6175d0907ed291698fe3f00e0a1618}\label{classTMXLayer_a9e6175d0907ed291698fe3f00e0a1618}} 
+ssize\+\_\+t {\bfseries atlas\+Index\+For\+NewZ} (int z)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a3e04602227f8a60685d38eb54067c228}\label{classTMXLayer_a3e04602227f8a60685d38eb54067c228}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Iso\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a0d7d36f39707f0d9dab8632af01cfc96}\label{classTMXLayer_a0d7d36f39707f0d9dab8632af01cfc96}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Ortho\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_ab9b894b913d4fe0dd7c2916131d480f9}\label{classTMXLayer_ab9b894b913d4fe0dd7c2916131d480f9}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Hex\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a2814e6c370d49fa07362688c63879f4a}\label{classTMXLayer_a2814e6c370d49fa07362688c63879f4a}} 
+\hyperlink{classVec2}{Vec2} {\bfseries get\+Position\+For\+Staggered\+At} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a429b05f5840cdebf4591a93ae3571068}\label{classTMXLayer_a429b05f5840cdebf4591a93ae3571068}} 
+\hyperlink{classVec2}{Vec2} {\bfseries calculate\+Layer\+Offset} (const \hyperlink{classVec2}{Vec2} \&offset)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a4eb8fa0ade1f622de66e6f742b4802e5}\label{classTMXLayer_a4eb8fa0ade1f622de66e6f742b4802e5}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries append\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a403cd35937e55e13dbbfab83c8e82f4e}\label{classTMXLayer_a403cd35937e55e13dbbfab83c8e82f4e}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries insert\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_accb4bd18aaf4c6b2032046d3938348b6}\label{classTMXLayer_accb4bd18aaf4c6b2032046d3938348b6}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries update\+Tile\+For\+G\+ID} (uint32\+\_\+t gid, const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_ad5b917115b5fed7aca7ce8e18a2b7e82}\label{classTMXLayer_ad5b917115b5fed7aca7ce8e18a2b7e82}} 
+intptr\+\_\+t {\bfseries get\+Z\+For\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos) const
+\item 
+\mbox{\Hypertarget{classTMXLayer_a971029e08d5cb9d854c68134c81f1c98}\label{classTMXLayer_a971029e08d5cb9d854c68134c81f1c98}} 
+void {\bfseries parse\+Internal\+Properties} ()
+\item 
+\mbox{\Hypertarget{classTMXLayer_a7be28ea19c3ff186facd556602adbcb1}\label{classTMXLayer_a7be28ea19c3ff186facd556602adbcb1}} 
+void {\bfseries setup\+Tile\+Sprite} (\hyperlink{classSprite}{Sprite} $\ast$sprite, const \hyperlink{classVec2}{Vec2} \&pos, uint32\+\_\+t gid)
+\item 
+\mbox{\Hypertarget{classTMXLayer_acc47bf10ca720e2d984da2f2fef823b3}\label{classTMXLayer_acc47bf10ca720e2d984da2f2fef823b3}} 
+\hyperlink{classSprite}{Sprite} $\ast$ {\bfseries reused\+Tile\+With\+Rect} (const \hyperlink{classRect}{Rect} \&rect)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a43dd1ce85ca7b58d34e6939c9c6d9ca9}\label{classTMXLayer_a43dd1ce85ca7b58d34e6939c9c6d9ca9}} 
+int {\bfseries get\+Vertex\+Z\+For\+Pos} (const \hyperlink{classVec2}{Vec2} \&pos)
+\item 
+\mbox{\Hypertarget{classTMXLayer_adba8a4560f349073db1a1c185f55add1}\label{classTMXLayer_adba8a4560f349073db1a1c185f55add1}} 
+ssize\+\_\+t {\bfseries atlas\+Index\+For\+ExistantZ} (int z)
+\item 
+\mbox{\Hypertarget{classTMXLayer_a9e6175d0907ed291698fe3f00e0a1618}\label{classTMXLayer_a9e6175d0907ed291698fe3f00e0a1618}} 
+ssize\+\_\+t {\bfseries atlas\+Index\+For\+NewZ} (int z)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTMXLayer_a9b8057f8917717f2147a9ec4fc63445b}\label{classTMXLayer_a9b8057f8917717f2147a9ec4fc63445b}} 
+std\+::string \hyperlink{classTMXLayer_a9b8057f8917717f2147a9ec4fc63445b}{\+\_\+layer\+Name}
+\begin{DoxyCompactList}\small\item\em name of the layer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTMXLayer_a751b2aadc8ada8825af2a22bd573da64}\label{classTMXLayer_a751b2aadc8ada8825af2a22bd573da64}} 
+unsigned char \hyperlink{classTMXLayer_a751b2aadc8ada8825af2a22bd573da64}{\+\_\+opacity}
+\begin{DoxyCompactList}\small\item\em T\+MX \hyperlink{classLayer}{Layer} supports opacity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTMXLayer_aa3d7692da2954c244ac057a1bd8bd22a}\label{classTMXLayer_aa3d7692da2954c244ac057a1bd8bd22a}} 
+int \hyperlink{classTMXLayer_aa3d7692da2954c244ac057a1bd8bd22a}{\+\_\+vertex\+Zvalue}
+\begin{DoxyCompactList}\small\item\em Only used when vertexZ is used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTMXLayer_ab302464748c3cfeae4296c0a44c4b924}\label{classTMXLayer_ab302464748c3cfeae4296c0a44c4b924}} 
+bool {\bfseries \+\_\+use\+Automatic\+VertexZ}
+\item 
+\mbox{\Hypertarget{classTMXLayer_a0bcd2a6deff12a785f63f727ceaf4cc0}\label{classTMXLayer_a0bcd2a6deff12a785f63f727ceaf4cc0}} 
+\hyperlink{classSprite}{Sprite} $\ast$ \hyperlink{classTMXLayer_a0bcd2a6deff12a785f63f727ceaf4cc0}{\+\_\+reused\+Tile}
+\begin{DoxyCompactList}\small\item\em used for optimization \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTMXLayer_a409c1626c01fe9c785925299a84d75ef}\label{classTMXLayer_a409c1626c01fe9c785925299a84d75ef}} 
+cc\+C\+Array $\ast$ {\bfseries \+\_\+atlas\+Index\+Array}
+\item 
+\mbox{\Hypertarget{classTMXLayer_a50de2ff95187aff763550c582f6bcf31}\label{classTMXLayer_a50de2ff95187aff763550c582f6bcf31}} 
+float {\bfseries \+\_\+content\+Scale\+Factor}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTMXLayer_a994e928975bb81ce6a5f05170149a9eb}{\+\_\+layer\+Size}
+\item 
+\hyperlink{classSize}{Size} \hyperlink{classTMXLayer_a307d65856e767871ec81f9c456a2401e}{\+\_\+map\+Tile\+Size}
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{classTMXLayer_a61e9c6961caaa162e77168cc7166d8de}{\+\_\+tiles}
+\item 
+T\+M\+X\+Tileset\+Info $\ast$ \hyperlink{classTMXLayer_a19b5b98c2f7a6018e66752b0df696cec}{\+\_\+tile\+Set}
+\item 
+int \hyperlink{classTMXLayer_af42f7e450205e2758911253875a999d3}{\+\_\+layer\+Orientation}
+\item 
+int \hyperlink{classTMXLayer_a24f8fdd44cf37f43dae15cbdc509933a}{\+\_\+stagger\+Axis}
+\item 
+int \hyperlink{classTMXLayer_a661239e6226feb85700c856c1c379273}{\+\_\+stagger\+Index}
+\item 
+int \hyperlink{classTMXLayer_a976dd9876f195fbb8b5cf4137ad85851}{\+\_\+hex\+Side\+Length}
+\item 
+Value\+Map \hyperlink{classTMXLayer_a8275cd1a7a60db259c4e54801acd8381}{\+\_\+properties}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTMXLayer}{T\+M\+X\+Layer} represents the T\+MX layer. It is a subclass of \hyperlink{classSpriteBatchNode}{Sprite\+Batch\+Node}. By default the tiles are rendered using a \hyperlink{classTextureAtlas}{Texture\+Atlas}. If you modify a tile on runtime, then, that tile will become a \hyperlink{classSprite}{Sprite}, otherwise no \hyperlink{classSprite}{Sprite} objects are created. The benefits of using \hyperlink{classSprite}{Sprite} objects as tiles are\+: 
+
+
+\begin{DoxyItemize}
+\item tiles (\hyperlink{classSprite}{Sprite}) can be rotated/scaled/moved with a nice A\+PI. If the layer contains a property named \char`\"{}cc\+\_\+vertexz\char`\"{} with an integer (in can be positive or negative), then all the tiles belonging to the layer will use that value as their Open\+GL vertex Z for depth. On the other hand, if the \char`\"{}cc\+\_\+vertexz\char`\"{} property has the \char`\"{}automatic\char`\"{} value, then the tiles will use an automatic vertex Z value. Also before drawing the tiles, G\+L\+\_\+\+A\+L\+P\+H\+A\+\_\+\+T\+E\+ST will be enabled, and disabled after drawing them. The used alpha func will be\+: gl\+Alpha\+Func( G\+L\+\_\+\+G\+R\+E\+A\+T\+E\+R, value ). \char`\"{}value\char`\"{} by default is 0, but you can change it from Tiled by adding the \char`\"{}cc\+\_\+alpha\+\_\+func\char`\"{} property to the layer. The value 0 should work for most cases, but if you have tiles that are semi-\/transparent, then you might want to use a different value, like 0.\+5. For further information, please see the programming guide\+: \href{http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:tiled_maps}{\tt http\+://www.\+cocos2d-\/iphone.\+org/wiki/doku.\+php/prog\+\_\+guide\+:tiled\+\_\+maps} \begin{DoxySince}{Since}
+v0.\+8.\+1 Tiles can have tile flags for additional properties. At the moment only flip horizontal and flip vertical are used. These bit flags are defined in T\+M\+X\+X\+M\+L\+Parser.\+h. 
+
+1.\+1 
+\end{DoxySince}
+
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}\label{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{T\+M\+X\+Layer()}{TMXLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Layer\+::\+T\+M\+X\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTMXLayer_a488ce77caa72fc4ca28db81b7393c670}\label{classTMXLayer_a488ce77caa72fc4ca28db81b7393c670}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!````~T\+M\+X\+Layer@{$\sim$\+T\+M\+X\+Layer}}
+\index{````~T\+M\+X\+Layer@{$\sim$\+T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+M\+X\+Layer()}{~TMXLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Layer\+::$\sim$\+T\+M\+X\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA \mbox{\Hypertarget{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}\label{classTMXLayer_a24b45a43f69749ee9c63e94eb0bcad96}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{T\+M\+X\+Layer()}{TMXLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Layer\+::\+T\+M\+X\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ctor \mbox{\Hypertarget{classTMXLayer_aec7c2f13f8d00d62e01adbc7eb4c8c44}\label{classTMXLayer_aec7c2f13f8d00d62e01adbc7eb4c8c44}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!````~T\+M\+X\+Layer@{$\sim$\+T\+M\+X\+Layer}}
+\index{````~T\+M\+X\+Layer@{$\sim$\+T\+M\+X\+Layer}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+M\+X\+Layer()}{~TMXLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual T\+M\+X\+Layer\+::$\sim$\+T\+M\+X\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+NA  NA 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTMXLayer_a8f537dd4690c31ee1a61413c9bfcaa94}\label{classTMXLayer_a8f537dd4690c31ee1a61413c9bfcaa94}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classSpriteBatchNode_a4d84535b9cdc98d8cfbb8d978f84fc93}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_a6967088f51d0ad613c639b2592692116}\label{classTMXLayer_a6967088f51d0ad613c639b2592692116}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void T\+M\+X\+Layer\+::add\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{int}]{local\+Z\+Order,  }\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds a child to the container with z order and tag.
+
+If the child is added to a \textquotesingle{}running\textquotesingle{} node, then \textquotesingle{}on\+Enter\textquotesingle{} and \textquotesingle{}on\+Enter\+Transition\+Did\+Finish\textquotesingle{} will be called immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & A child node. \\
+\hline
+{\em local\+Z\+Order} & Z order for drawing priority. Please refer to {\ttfamily \hyperlink{classNode_aee4e616c2d55b722226aae1e68b4946f}{set\+Local\+Z\+Order(int)}}. \\
+\hline
+{\em tag} & An integer to identify the node easily. Please refer to {\ttfamily \hyperlink{classNode_a41ecfc5e9e398e70dfe2e158f926c16f}{set\+Tag(int)}}.\\
+\hline
+\end{DoxyParams}
+Please use {\ttfamily \hyperlink{classSpriteBatchNode_a50ba6ec6aead30d1abc28e75c75ca4fc}{add\+Child(\+Node$\ast$ child, int local\+Z\+Order, const std\+::string \&name)}} instead. 
+
+Reimplemented from \hyperlink{classSpriteBatchNode_a4d84535b9cdc98d8cfbb8d978f84fc93}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_ab53489da78af9ae3523b17d807f23dbe}\label{classTMXLayer_ab53489da78af9ae3523b17d807f23dbe}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!create@{create}}
+\index{create@{create}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN \hyperlink{classTMXLayer}{T\+M\+X\+Layer} $\ast$ T\+M\+X\+Layer\+::create (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{tileset\+Info,  }\item[{T\+M\+X\+Layer\+Info $\ast$}]{layer\+Info,  }\item[{T\+M\+X\+Map\+Info $\ast$}]{map\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTMXLayer}{T\+M\+X\+Layer} with an tileset info, a layer info and a map info.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileset\+Info} & An tileset info. \\
+\hline
+{\em layer\+Info} & A layer info. \\
+\hline
+{\em map\+Info} & A map info. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_aae2efea498514da82da8cadedb8e6a60}\label{classTMXLayer_aae2efea498514da82da8cadedb8e6a60}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!create@{create}}
+\index{create@{create}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classTMXLayer}{T\+M\+X\+Layer}$\ast$ T\+M\+X\+Layer\+::create (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{tileset\+Info,  }\item[{T\+M\+X\+Layer\+Info $\ast$}]{layer\+Info,  }\item[{T\+M\+X\+Map\+Info $\ast$}]{map\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \hyperlink{classTMXLayer}{T\+M\+X\+Layer} with an tileset info, a layer info and a map info.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileset\+Info} & An tileset info. \\
+\hline
+{\em layer\+Info} & A layer info. \\
+\hline
+{\em map\+Info} & A map info. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An autorelease object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_ae03bc92e2f95a1c6cfce363a8abcfd77}\label{classTMXLayer_ae03bc92e2f95a1c6cfce363a8abcfd77}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string T\+M\+X\+Layer\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classSpriteBatchNode_abaf755bc79646464f59b68b5a4fdc68c}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_a1238ed7681395864c66ebda4b90c5d3b}\label{classTMXLayer_a1238ed7681395864c66ebda4b90c5d3b}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Description()}{getDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string T\+M\+X\+Layer\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+NA 
+
+Reimplemented from \hyperlink{classSpriteBatchNode_abaf755bc79646464f59b68b5a4fdc68c}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}\label{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Name@{get\+Layer\+Name}}
+\index{get\+Layer\+Name@{get\+Layer\+Name}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Name()}{getLayerName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string\& T\+M\+X\+Layer\+::get\+Layer\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the layer name.
+
+\begin{DoxyReturn}{Returns}
+The layer name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}\label{classTMXLayer_a83d5647317c7be079f5034530ec1eaab}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Name@{get\+Layer\+Name}}
+\index{get\+Layer\+Name@{get\+Layer\+Name}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Name()}{getLayerName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string\& T\+M\+X\+Layer\+::get\+Layer\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the layer name.
+
+\begin{DoxyReturn}{Returns}
+The layer name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}\label{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Orientation@{get\+Layer\+Orientation}}
+\index{get\+Layer\+Orientation@{get\+Layer\+Orientation}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Orientation()}{getLayerOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::get\+Layer\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classLayer}{Layer} orientation, which is the same as the map orientation.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classLayer}{Layer} orientation, which is the same as the map orientation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}\label{classTMXLayer_af461c95bbedda35e396ae3c7cc3d38f7}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Orientation@{get\+Layer\+Orientation}}
+\index{get\+Layer\+Orientation@{get\+Layer\+Orientation}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Orientation()}{getLayerOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::get\+Layer\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classLayer}{Layer} orientation, which is the same as the map orientation.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classLayer}{Layer} orientation, which is the same as the map orientation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}\label{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Size@{get\+Layer\+Size}}
+\index{get\+Layer\+Size@{get\+Layer\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Size()}{getLayerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Layer\+::get\+Layer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classSize}{Size} of the layer in tiles.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classSize}{Size} of the layer in tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}\label{classTMXLayer_a33aa146a907ade5080f67817ee8f552d}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Layer\+Size@{get\+Layer\+Size}}
+\index{get\+Layer\+Size@{get\+Layer\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Layer\+Size()}{getLayerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Layer\+::get\+Layer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classSize}{Size} of the layer in tiles.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classSize}{Size} of the layer in tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_acb38799b0ca66198f06c9b451b469118}\label{classTMXLayer_acb38799b0ca66198f06c9b451b469118}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Map\+Tile\+Size@{get\+Map\+Tile\+Size}}
+\index{get\+Map\+Tile\+Size@{get\+Map\+Tile\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Map\+Tile\+Size()}{getMapTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Layer\+::get\+Map\+Tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classSize}{Size} of the map\textquotesingle{}s tile (could be different from the tile\textquotesingle{}s size).
+
+\begin{DoxyReturn}{Returns}
+The size of the map\textquotesingle{}s tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_acb38799b0ca66198f06c9b451b469118}\label{classTMXLayer_acb38799b0ca66198f06c9b451b469118}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Map\+Tile\+Size@{get\+Map\+Tile\+Size}}
+\index{get\+Map\+Tile\+Size@{get\+Map\+Tile\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Map\+Tile\+Size()}{getMapTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classSize}{Size}\& T\+M\+X\+Layer\+::get\+Map\+Tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classSize}{Size} of the map\textquotesingle{}s tile (could be different from the tile\textquotesingle{}s size).
+
+\begin{DoxyReturn}{Returns}
+The size of the map\textquotesingle{}s tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a3b433e1831ed12ae032db0124f286470}\label{classTMXLayer_a3b433e1831ed12ae032db0124f286470}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Position\+At@{get\+Position\+At}}
+\index{get\+Position\+At@{get\+Position\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Position\+At()}{getPositionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} T\+M\+X\+Layer\+::get\+Position\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Returns the position in points of a given tile coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position in points of a given tile coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a3b433e1831ed12ae032db0124f286470}\label{classTMXLayer_a3b433e1831ed12ae032db0124f286470}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Position\+At@{get\+Position\+At}}
+\index{get\+Position\+At@{get\+Position\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Position\+At()}{getPositionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classVec2}{Vec2} T\+M\+X\+Layer\+::get\+Position\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Returns the position in points of a given tile coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position in points of a given tile coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}\label{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily const Value\+Map\& T\+M\+X\+Layer\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}\label{classTMXLayer_aec0bca7dba4d5e454cf7b688388c2f5f}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const Value\+Map\& T\+M\+X\+Layer\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}\label{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Value\+Map\& T\+M\+X\+Layer\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}\label{classTMXLayer_a48fdd277ced00a92a6d1ebd26a02fb11}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Properties()}{getProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Value\+Map\& T\+M\+X\+Layer\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classProperties}{Properties} from the layer. They can be added using Tiled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}\label{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Property@{get\+Property}}
+\index{get\+Property@{get\+Property}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Property()}{getProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Layer\+::get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const}
+
+Return the value for the specific property name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & The specific property name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the value for the specific property name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}\label{classTMXLayer_a6ed296d4b13f396f00815266c74054ff}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Property@{get\+Property}}
+\index{get\+Property@{get\+Property}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Property()}{getProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classValue}{Value} T\+M\+X\+Layer\+::get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const}
+
+Return the value for the specific property name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & The specific property name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the value for the specific property name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a3766adcc9f0d3619c97620b7e1cf04dc}\label{classTMXLayer_a3766adcc9f0d3619c97620b7e1cf04dc}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+At@{get\+Tile\+At}}
+\index{get\+Tile\+At@{get\+Tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+At()}{getTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite} $\ast$ T\+M\+X\+Layer\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Returns the tile (\hyperlink{classSprite}{Sprite}) at a given a tile coordinate. The returned \hyperlink{classSprite}{Sprite} will be already added to the \hyperlink{classTMXLayer}{T\+M\+X\+Layer}. Don\textquotesingle{}t add it again. The \hyperlink{classSprite}{Sprite} can be treated like any other \hyperlink{classSprite}{Sprite}\+: rotated, scaled, translated, opacity, color, etc. You can remove either by calling\+:
+\begin{DoxyItemize}
+\item layer-\/$>$remove\+Child(sprite, cleanup);
+\item or layer-\/$>$remove\+Tile\+At(\+Vec2(x,y));
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & A tile coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the tile (\hyperlink{classSprite}{Sprite}) at a given a tile coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_ad8a1eaf52658b06dead572393bf2b386}\label{classTMXLayer_ad8a1eaf52658b06dead572393bf2b386}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+At@{get\+Tile\+At}}
+\index{get\+Tile\+At@{get\+Tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+At()}{getTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classSprite}{Sprite}$\ast$ T\+M\+X\+Layer\+::get\+Tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Returns the tile (\hyperlink{classSprite}{Sprite}) at a given a tile coordinate. The returned \hyperlink{classSprite}{Sprite} will be already added to the \hyperlink{classTMXLayer}{T\+M\+X\+Layer}. Don\textquotesingle{}t add it again. The \hyperlink{classSprite}{Sprite} can be treated like any other \hyperlink{classSprite}{Sprite}\+: rotated, scaled, translated, opacity, color, etc. You can remove either by calling\+:
+\begin{DoxyItemize}
+\item layer-\/$>$remove\+Child(sprite, cleanup);
+\item or layer-\/$>$remove\+Tile\+At(\+Vec2(x,y));
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & A tile coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the tile (\hyperlink{classSprite}{Sprite}) at a given a tile coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}\label{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+G\+I\+D\+At@{get\+Tile\+G\+I\+D\+At}}
+\index{get\+Tile\+G\+I\+D\+At@{get\+Tile\+G\+I\+D\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+G\+I\+D\+At()}{getTileGIDAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+M\+X\+Layer\+::get\+Tile\+G\+I\+D\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags $\ast$}]{flags = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Returns the tile gid at a given tile coordinate. It also returns the tile flags. This method requires the tile map has not been previously released (eg. don\textquotesingle{}t call \mbox{[}layer release\+Map\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+{\em flags} & \hyperlink{structTile}{Tile} flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the tile gid at a given tile coordinate. It also returns the tile flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}\label{classTMXLayer_a0a3f3e283a4a654aae4e4e4761e386eb}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+G\+I\+D\+At@{get\+Tile\+G\+I\+D\+At}}
+\index{get\+Tile\+G\+I\+D\+At@{get\+Tile\+G\+I\+D\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+G\+I\+D\+At()}{getTileGIDAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t T\+M\+X\+Layer\+::get\+Tile\+G\+I\+D\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags $\ast$}]{flags = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Returns the tile gid at a given tile coordinate. It also returns the tile flags. This method requires the tile map has not been previously released (eg. don\textquotesingle{}t call \mbox{[}layer release\+Map\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+{\em flags} & \hyperlink{structTile}{Tile} flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the tile gid at a given tile coordinate. It also returns the tile flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}\label{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tiles@{get\+Tiles}}
+\index{get\+Tiles@{get\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tiles()}{getTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ T\+M\+X\+Layer\+::get\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pointer to the map of tiles.  NA  NA \begin{DoxyReturn}{Returns}
+Pointer to the map of tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}\label{classTMXLayer_a99a6fdaff73922809a3b2edbeb6d15e8}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tiles@{get\+Tiles}}
+\index{get\+Tiles@{get\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tiles()}{getTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ T\+M\+X\+Layer\+::get\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pointer to the map of tiles.  NA  NA \begin{DoxyReturn}{Returns}
+Pointer to the map of tiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}\label{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+Set@{get\+Tile\+Set}}
+\index{get\+Tile\+Set@{get\+Tile\+Set}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+Set()}{getTileSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Tileset\+Info$\ast$ T\+M\+X\+Layer\+::get\+Tile\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tileset information for the layer.
+
+\begin{DoxyReturn}{Returns}
+Tileset information for the layer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}\label{classTMXLayer_a2f1133ee7af2fa00682c68b5bca6541b}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!get\+Tile\+Set@{get\+Tile\+Set}}
+\index{get\+Tile\+Set@{get\+Tile\+Set}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{get\+Tile\+Set()}{getTileSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+M\+X\+Tileset\+Info$\ast$ T\+M\+X\+Layer\+::get\+Tile\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tileset information for the layer.
+
+\begin{DoxyReturn}{Returns}
+Tileset information for the layer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}\label{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!init\+With\+Tileset\+Info@{init\+With\+Tileset\+Info}}
+\index{init\+With\+Tileset\+Info@{init\+With\+Tileset\+Info}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{init\+With\+Tileset\+Info()}{initWithTilesetInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Layer\+::init\+With\+Tileset\+Info (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{tileset\+Info,  }\item[{T\+M\+X\+Layer\+Info $\ast$}]{layer\+Info,  }\item[{T\+M\+X\+Map\+Info $\ast$}]{map\+Info }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTMXLayer}{T\+M\+X\+Layer} with a tileset info, a layer info and a map info.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileset\+Info} & An tileset info. \\
+\hline
+{\em layer\+Info} & A layer info. \\
+\hline
+{\em map\+Info} & A map info. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If initializes successfully, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}\label{classTMXLayer_abc5373b13dff0e9f01697f46783eaff8}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!init\+With\+Tileset\+Info@{init\+With\+Tileset\+Info}}
+\index{init\+With\+Tileset\+Info@{init\+With\+Tileset\+Info}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{init\+With\+Tileset\+Info()}{initWithTilesetInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool T\+M\+X\+Layer\+::init\+With\+Tileset\+Info (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{tileset\+Info,  }\item[{T\+M\+X\+Layer\+Info $\ast$}]{layer\+Info,  }\item[{T\+M\+X\+Map\+Info $\ast$}]{map\+Info }\end{DoxyParamCaption})}
+
+Initializes a \hyperlink{classTMXLayer}{T\+M\+X\+Layer} with a tileset info, a layer info and a map info.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileset\+Info} & An tileset info. \\
+\hline
+{\em layer\+Info} & A layer info. \\
+\hline
+{\em map\+Info} & A map info. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If initializes successfully, it will return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}\label{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!position\+At@{position\+At}}
+\index{position\+At@{position\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{position\+At()}{positionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVec2}{Vec2} T\+M\+X\+Layer\+::position\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}\label{classTMXLayer_aac322f83e04e9efa5cb88b49d034b9f0}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!position\+At@{position\+At}}
+\index{position\+At@{position\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{position\+At()}{positionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classVec2}{Vec2} T\+M\+X\+Layer\+::position\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}\label{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!property\+Named@{property\+Named}}
+\index{property\+Named@{property\+Named}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{property\+Named()}{propertyNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} T\+M\+X\+Layer\+::property\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}\label{classTMXLayer_af6fefaddaa8d6208b1d375f08e6d3ad6}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!property\+Named@{property\+Named}}
+\index{property\+Named@{property\+Named}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{property\+Named()}{propertyNamed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classValue}{Value} T\+M\+X\+Layer\+::property\+Named (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}\label{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!release\+Map@{release\+Map}}
+\index{release\+Map@{release\+Map}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{release\+Map()}{releaseMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::release\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Dealloc the map that contains the tile position from memory. Unless you want to know at runtime the tiles positions, you can safely call this method. If you are going to call layer-\/$>$\hyperlink{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}{tile\+G\+I\+D\+At()} then, don\textquotesingle{}t release the map. \mbox{\Hypertarget{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}\label{classTMXLayer_a45ad4c67a9ea4e2f2ce3d6d6228e5402}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!release\+Map@{release\+Map}}
+\index{release\+Map@{release\+Map}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{release\+Map()}{releaseMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::release\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Dealloc the map that contains the tile position from memory. Unless you want to know at runtime the tiles positions, you can safely call this method. If you are going to call layer-\/$>$\hyperlink{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}{tile\+G\+I\+D\+At()} then, don\textquotesingle{}t release the map. \mbox{\Hypertarget{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}\label{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSpriteBatchNode_a7bebdfd28805ed83d0a78b49f8b52803}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}\label{classTMXLayer_abaf25490e1f7807816c07167a8d4af46}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{remove\+Child()}{removeChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::remove\+Child (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{child,  }\item[{bool}]{cleanup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node which will be removed. \\
+\hline
+{\em cleanup} & True if all running actions and callbacks on the child node will be cleanup, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classSpriteBatchNode_a7bebdfd28805ed83d0a78b49f8b52803}{Sprite\+Batch\+Node}.
+
+\mbox{\Hypertarget{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}\label{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!remove\+Tile\+At@{remove\+Tile\+At}}
+\index{remove\+Tile\+At@{remove\+Tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{remove\+Tile\+At()}{removeTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::remove\+Tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Removes a tile at given tile coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}\label{classTMXLayer_a185ae1ff2a7ce7069e67362fb1faa930}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!remove\+Tile\+At@{remove\+Tile\+At}}
+\index{remove\+Tile\+At@{remove\+Tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{remove\+Tile\+At()}{removeTileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::remove\+Tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Removes a tile at given tile coordinate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a41ce08785e388b65e0f994781f45183d}\label{classTMXLayer_a41ce08785e388b65e0f994781f45183d}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Name@{set\+Layer\+Name}}
+\index{set\+Layer\+Name@{set\+Layer\+Name}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Name()}{setLayerName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the layer name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+Name} & The layer name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a41ce08785e388b65e0f994781f45183d}\label{classTMXLayer_a41ce08785e388b65e0f994781f45183d}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Name@{set\+Layer\+Name}}
+\index{set\+Layer\+Name@{set\+Layer\+Name}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Name()}{setLayerName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{layer\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the layer name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+Name} & The layer name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}\label{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Orientation@{set\+Layer\+Orientation}}
+\index{set\+Layer\+Orientation@{set\+Layer\+Orientation}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Orientation()}{setLayerOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Orientation (\begin{DoxyParamCaption}\item[{int}]{orientation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set layer orientation, which is the same as the map orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & \hyperlink{classLayer}{Layer} orientation,which is the same as the map orientation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}\label{classTMXLayer_a0de2d7f74cf0563ab0c6f9f0de28c3aa}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Orientation@{set\+Layer\+Orientation}}
+\index{set\+Layer\+Orientation@{set\+Layer\+Orientation}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Orientation()}{setLayerOrientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Orientation (\begin{DoxyParamCaption}\item[{int}]{orientation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set layer orientation, which is the same as the map orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & \hyperlink{classLayer}{Layer} orientation,which is the same as the map orientation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}\label{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Size@{set\+Layer\+Size}}
+\index{set\+Layer\+Size@{set\+Layer\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Size()}{setLayerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set size of the layer in tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \hyperlink{classSize}{Size} of the layer in tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}\label{classTMXLayer_a4967459155b855cfa403d2fbb4b6f7c1}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Layer\+Size@{set\+Layer\+Size}}
+\index{set\+Layer\+Size@{set\+Layer\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Layer\+Size()}{setLayerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Layer\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set size of the layer in tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \hyperlink{classSize}{Size} of the layer in tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}\label{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Map\+Tile\+Size@{set\+Map\+Tile\+Size}}
+\index{set\+Map\+Tile\+Size@{set\+Map\+Tile\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Map\+Tile\+Size()}{setMapTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Map\+Tile\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the size of the map\textquotesingle{}s tile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the map\textquotesingle{}s tile. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}\label{classTMXLayer_aefb7200c533405f89265e1c1cf1c7314}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Map\+Tile\+Size@{set\+Map\+Tile\+Size}}
+\index{set\+Map\+Tile\+Size@{set\+Map\+Tile\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Map\+Tile\+Size()}{setMapTileSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Map\+Tile\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{classSize}{Size} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the size of the map\textquotesingle{}s tile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the map\textquotesingle{}s tile. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_ac7368336ee0929ac575119db824a6362}\label{classTMXLayer_ac7368336ee0929ac575119db824a6362}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Properties@{set\+Properties}}
+\index{set\+Properties@{set\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Properties()}{setProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Properties (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set an \hyperlink{classProperties}{Properties} from to layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & It is used to set the layer \hyperlink{classProperties}{Properties}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_ac7368336ee0929ac575119db824a6362}\label{classTMXLayer_ac7368336ee0929ac575119db824a6362}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Properties@{set\+Properties}}
+\index{set\+Properties@{set\+Properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Properties()}{setProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Properties (\begin{DoxyParamCaption}\item[{const Value\+Map \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set an \hyperlink{classProperties}{Properties} from to layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & It is used to set the layer \hyperlink{classProperties}{Properties}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}\label{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+G\+ID@{set\+Tile\+G\+ID}}
+\index{set\+Tile\+G\+ID@{set\+Tile\+G\+ID}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+G\+I\+D()}{setTileGID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+G\+ID (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gid,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Sets the tile gid (gid = tile global id) at a given tile coordinate. The \hyperlink{structTile}{Tile} G\+ID can be obtained by using the method \char`\"{}tile\+G\+I\+D\+At\char`\"{} or by using the T\+MX editor -\/$>$ Tileset Mgr +1. If a tile is already placed at that position, then it will be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gid} & The tile gid. \\
+\hline
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}\label{classTMXLayer_a6da5cb4f6fa4c0f1853f5030323dd759}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+G\+ID@{set\+Tile\+G\+ID}}
+\index{set\+Tile\+G\+ID@{set\+Tile\+G\+ID}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+G\+I\+D()}{setTileGID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+G\+ID (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gid,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})}
+
+Sets the tile gid (gid = tile global id) at a given tile coordinate. The \hyperlink{structTile}{Tile} G\+ID can be obtained by using the method \char`\"{}tile\+G\+I\+D\+At\char`\"{} or by using the T\+MX editor -\/$>$ Tileset Mgr +1. If a tile is already placed at that position, then it will be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gid} & The tile gid. \\
+\hline
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}\label{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+G\+ID@{set\+Tile\+G\+ID}}
+\index{set\+Tile\+G\+ID@{set\+Tile\+G\+ID}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+G\+I\+D()}{setTileGID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+G\+ID (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gid,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags}]{flags }\end{DoxyParamCaption})}
+
+Sets the tile gid (gid = tile global id) at a given tile coordinate. The \hyperlink{structTile}{Tile} G\+ID can be obtained by using the method \char`\"{}tile\+G\+I\+D\+At\char`\"{} or by using the T\+MX editor -\/$>$ Tileset Mgr +1. If a tile is already placed at that position, then it will be removed. Use with\+Flags if the tile flags need to be changed as well.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gid} & The tile gid. \\
+\hline
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+{\em flags} & The tile flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}\label{classTMXLayer_adfb01865934be28adc5f1b38876c7c4e}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+G\+ID@{set\+Tile\+G\+ID}}
+\index{set\+Tile\+G\+ID@{set\+Tile\+G\+ID}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+G\+I\+D()}{setTileGID()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+G\+ID (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gid,  }\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags}]{flags }\end{DoxyParamCaption})}
+
+Sets the tile gid (gid = tile global id) at a given tile coordinate. The \hyperlink{structTile}{Tile} G\+ID can be obtained by using the method \char`\"{}tile\+G\+I\+D\+At\char`\"{} or by using the T\+MX editor -\/$>$ Tileset Mgr +1. If a tile is already placed at that position, then it will be removed. Use with\+Flags if the tile flags need to be changed as well.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gid} & The tile gid. \\
+\hline
+{\em tile\+Coordinate} & The tile coordinate. \\
+\hline
+{\em flags} & The tile flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}\label{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tiles@{set\+Tiles}}
+\index{set\+Tiles@{set\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tiles()}{setTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tiles (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a pointer to the map of tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles} & A pointer to the map of tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}\label{classTMXLayer_a5697a3402af12c2cd53ed67e344e5847}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tiles@{set\+Tiles}}
+\index{set\+Tiles@{set\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tiles()}{setTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tiles (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a pointer to the map of tiles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles} & A pointer to the map of tiles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}\label{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+Set@{set\+Tile\+Set}}
+\index{set\+Tile\+Set@{set\+Tile\+Set}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+Set()}{setTileSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+Set (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set tileset information for the layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The tileset information for the layer.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}\label{classTMXLayer_a97b14b1c69b6bdc5e5fd2b6e99605263}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!set\+Tile\+Set@{set\+Tile\+Set}}
+\index{set\+Tile\+Set@{set\+Tile\+Set}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{set\+Tile\+Set()}{setTileSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::set\+Tile\+Set (\begin{DoxyParamCaption}\item[{T\+M\+X\+Tileset\+Info $\ast$}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set tileset information for the layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The tileset information for the layer.  NA \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}\label{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!setup\+Tiles@{setup\+Tiles}}
+\index{setup\+Tiles@{setup\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{setup\+Tiles()}{setupTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::setup\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates the tiles. \mbox{\Hypertarget{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}\label{classTMXLayer_acf9d1ea932daf85d00dce917e40049b7}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!setup\+Tiles@{setup\+Tiles}}
+\index{setup\+Tiles@{setup\+Tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{setup\+Tiles()}{setupTiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+M\+X\+Layer\+::setup\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates the tiles. \mbox{\Hypertarget{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}\label{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!tile\+At@{tile\+At}}
+\index{tile\+At@{tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{tile\+At()}{tileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classSprite}{Sprite}$\ast$ T\+M\+X\+Layer\+::tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}\label{classTMXLayer_a2258360648a3e91a3dccb4f52ffad8f1}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!tile\+At@{tile\+At}}
+\index{tile\+At@{tile\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{tile\+At()}{tileAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE \hyperlink{classSprite}{Sprite}$\ast$ T\+M\+X\+Layer\+::tile\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}\label{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!tile\+G\+I\+D\+At@{tile\+G\+I\+D\+At}}
+\index{tile\+G\+I\+D\+At@{tile\+G\+I\+D\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{tile\+G\+I\+D\+At()}{tileGIDAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE uint32\+\_\+t T\+M\+X\+Layer\+::tile\+G\+I\+D\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags $\ast$}]{flags = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA \mbox{\Hypertarget{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}\label{classTMXLayer_a244f8bff6274b630488bf6ebebdeee5a}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!tile\+G\+I\+D\+At@{tile\+G\+I\+D\+At}}
+\index{tile\+G\+I\+D\+At@{tile\+G\+I\+D\+At}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{tile\+G\+I\+D\+At()}{tileGIDAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+C\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+A\+T\+T\+R\+I\+B\+U\+TE uint32\+\_\+t T\+M\+X\+Layer\+::tile\+G\+I\+D\+At (\begin{DoxyParamCaption}\item[{const \hyperlink{classVec2}{Vec2} \&}]{tile\+Coordinate,  }\item[{T\+M\+X\+Tile\+Flags $\ast$}]{flags = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NA 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTMXLayer_a976dd9876f195fbb8b5cf4137ad85851}\label{classTMXLayer_a976dd9876f195fbb8b5cf4137ad85851}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+hex\+Side\+Length@{\+\_\+hex\+Side\+Length}}
+\index{\+\_\+hex\+Side\+Length@{\+\_\+hex\+Side\+Length}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+hex\+Side\+Length}{\_hexSideLength}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::\+\_\+hex\+Side\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+
+Hex side length \mbox{\Hypertarget{classTMXLayer_af42f7e450205e2758911253875a999d3}\label{classTMXLayer_af42f7e450205e2758911253875a999d3}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+layer\+Orientation@{\+\_\+layer\+Orientation}}
+\index{\+\_\+layer\+Orientation@{\+\_\+layer\+Orientation}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+layer\+Orientation}{\_layerOrientation}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::\+\_\+layer\+Orientation\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{classLayer}{Layer} orientation, which is the same as the map orientation \mbox{\Hypertarget{classTMXLayer_a994e928975bb81ce6a5f05170149a9eb}\label{classTMXLayer_a994e928975bb81ce6a5f05170149a9eb}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+layer\+Size@{\+\_\+layer\+Size}}
+\index{\+\_\+layer\+Size@{\+\_\+layer\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+layer\+Size}{\_layerSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} T\+M\+X\+Layer\+::\+\_\+layer\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+size of the layer in tiles \mbox{\Hypertarget{classTMXLayer_a307d65856e767871ec81f9c456a2401e}\label{classTMXLayer_a307d65856e767871ec81f9c456a2401e}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+map\+Tile\+Size@{\+\_\+map\+Tile\+Size}}
+\index{\+\_\+map\+Tile\+Size@{\+\_\+map\+Tile\+Size}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+map\+Tile\+Size}{\_mapTileSize}}
+{\footnotesize\ttfamily \hyperlink{classSize}{Size} T\+M\+X\+Layer\+::\+\_\+map\+Tile\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+size of the map\textquotesingle{}s tile (could be different from the tile\textquotesingle{}s size) \mbox{\Hypertarget{classTMXLayer_a8275cd1a7a60db259c4e54801acd8381}\label{classTMXLayer_a8275cd1a7a60db259c4e54801acd8381}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+properties@{\+\_\+properties}}
+\index{\+\_\+properties@{\+\_\+properties}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+properties}{\_properties}}
+{\footnotesize\ttfamily Value\+Map T\+M\+X\+Layer\+::\+\_\+properties\hspace{0.3cm}{\ttfamily [protected]}}
+
+properties from the layer. They can be added using Tiled \mbox{\Hypertarget{classTMXLayer_a24f8fdd44cf37f43dae15cbdc509933a}\label{classTMXLayer_a24f8fdd44cf37f43dae15cbdc509933a}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+stagger\+Axis@{\+\_\+stagger\+Axis}}
+\index{\+\_\+stagger\+Axis@{\+\_\+stagger\+Axis}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+stagger\+Axis}{\_staggerAxis}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::\+\_\+stagger\+Axis\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stagger Axis \mbox{\Hypertarget{classTMXLayer_a661239e6226feb85700c856c1c379273}\label{classTMXLayer_a661239e6226feb85700c856c1c379273}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+stagger\+Index@{\+\_\+stagger\+Index}}
+\index{\+\_\+stagger\+Index@{\+\_\+stagger\+Index}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+stagger\+Index}{\_staggerIndex}}
+{\footnotesize\ttfamily int T\+M\+X\+Layer\+::\+\_\+stagger\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stagger Index \mbox{\Hypertarget{classTMXLayer_a61e9c6961caaa162e77168cc7166d8de}\label{classTMXLayer_a61e9c6961caaa162e77168cc7166d8de}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+tiles@{\+\_\+tiles}}
+\index{\+\_\+tiles@{\+\_\+tiles}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+tiles}{\_tiles}}
+{\footnotesize\ttfamily uint32\+\_\+t $\ast$ T\+M\+X\+Layer\+::\+\_\+tiles\hspace{0.3cm}{\ttfamily [protected]}}
+
+pointer to the map of tiles \mbox{\Hypertarget{classTMXLayer_a19b5b98c2f7a6018e66752b0df696cec}\label{classTMXLayer_a19b5b98c2f7a6018e66752b0df696cec}} 
+\index{T\+M\+X\+Layer@{T\+M\+X\+Layer}!\+\_\+tile\+Set@{\+\_\+tile\+Set}}
+\index{\+\_\+tile\+Set@{\+\_\+tile\+Set}!T\+M\+X\+Layer@{T\+M\+X\+Layer}}
+\subsubsection{\texorpdfstring{\+\_\+tile\+Set}{\_tileSet}}
+{\footnotesize\ttfamily T\+M\+X\+Tileset\+Info $\ast$ T\+M\+X\+Layer\+::\+\_\+tile\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+Tileset information for the layer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+T\+M\+X\+Layer.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+T\+M\+X\+Layer.\+cpp\end{DoxyCompactItemize}

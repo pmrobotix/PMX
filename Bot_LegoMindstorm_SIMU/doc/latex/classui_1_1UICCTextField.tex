@@ -1,0 +1,765 @@
+\hypertarget{classui_1_1UICCTextField}{}\section{ui\+:\+:U\+I\+C\+C\+Text\+Field Class Reference}
+\label{classui_1_1UICCTextField}\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+
+
+A helper class which inherit from.  
+
+
+
+
+{\ttfamily \#include $<$U\+I\+Text\+Field.\+h$>$}
+
+
+
+Inheritance diagram for ui\+:\+:U\+I\+C\+C\+Text\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1UICCTextField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ui\+:\+:U\+I\+C\+C\+Text\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classui_1_1UICCTextField__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}{U\+I\+C\+C\+Text\+Field} ()
+\item 
+\hyperlink{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}{$\sim$\+U\+I\+C\+C\+Text\+Field} ()
+\item 
+virtual void \hyperlink{classui_1_1UICCTextField_ad74c8dfb537f983d2540af7c5b9cb307}{on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a4d2986206a75486fb195cdf880a569d6}\label{classui_1_1UICCTextField_a4d2986206a75486fb195cdf880a569d6}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_a4d2986206a75486fb195cdf880a569d6}{on\+Text\+Field\+Attach\+With\+I\+ME} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to attach to the I\+ME, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a3c9e73701b4aafb8dc63255ea0555cc5}\label{classui_1_1UICCTextField_a3c9e73701b4aafb8dc63255ea0555cc5}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_a3c9e73701b4aafb8dc63255ea0555cc5}{on\+Text\+Field\+Detach\+With\+I\+ME} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to detach from the I\+ME, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a9106f97bfb3bd067b923131f4ca4bec3}\label{classui_1_1UICCTextField_a9106f97bfb3bd067b923131f4ca4bec3}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_a9106f97bfb3bd067b923131f4ca4bec3}{on\+Text\+Field\+Insert\+Text} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender, const char $\ast$text, size\+\_\+t n\+Len) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to insert the text, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ae28c22122ad47238aaf48001a0413aea}\label{classui_1_1UICCTextField_ae28c22122ad47238aaf48001a0413aea}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_ae28c22122ad47238aaf48001a0413aea}{on\+Text\+Field\+Delete\+Backward} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender, const char $\ast$del\+Text, size\+\_\+t n\+Len) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to delete the del\+Text, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}\label{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}} 
+void \hyperlink{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}{insert\+Text} (const char $\ast$text, size\+\_\+t len) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} when text input received from the I\+ME.  NA  NA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ac7b7cc8ebdb6ffa1f9c480a8e9173a4c}\label{classui_1_1UICCTextField_ac7b7cc8ebdb6ffa1f9c480a8e9173a4c}} 
+void \hyperlink{classui_1_1UICCTextField_ac7b7cc8ebdb6ffa1f9c480a8e9173a4c}{delete\+Backward} () override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} after the user clicks the backward key.  NA  NA. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}{open\+I\+ME} ()
+\item 
+void \hyperlink{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}{close\+I\+ME} ()
+\item 
+void \hyperlink{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}{set\+Max\+Length\+Enabled} (bool enable)
+\item 
+bool \hyperlink{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}{is\+Max\+Length\+Enabled} () const
+\item 
+void \hyperlink{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}{set\+Max\+Length} (int length)
+\item 
+int \hyperlink{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}{get\+Max\+Length} () const
+\item 
+std\+::size\+\_\+t \hyperlink{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}{get\+Char\+Count} () const
+\item 
+void \hyperlink{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}{set\+Password\+Enabled} (bool enable)
+\begin{DoxyCompactList}\small\item\em Toggle password input mode. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}{is\+Password\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Query whether password input mode is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}{set\+Password\+Style\+Text} (const std\+::string \&style\+Text)
+\begin{DoxyCompactList}\small\item\em Change password style text. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}{set\+Password\+Text} (const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Set the password text content. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}{set\+Attach\+With\+I\+ME} (bool attach)
+\begin{DoxyCompactList}\small\item\em Toggle attach with I\+ME. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}{get\+Attach\+With\+I\+ME} () const
+\begin{DoxyCompactList}\small\item\em Query whether the I\+ME is attached or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}{set\+Detach\+With\+I\+ME} (bool detach)
+\begin{DoxyCompactList}\small\item\em Toggle detach with I\+ME. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}{get\+Detach\+With\+I\+ME} () const
+\begin{DoxyCompactList}\small\item\em Query whether I\+ME is detached or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}{set\+Insert\+Text} (bool insert)
+\begin{DoxyCompactList}\small\item\em Toggle enable text insert. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}{get\+Insert\+Text} () const
+\begin{DoxyCompactList}\small\item\em Query whether insert text is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}{set\+Delete\+Backward} (bool \hyperlink{classui_1_1UICCTextField_ac7b7cc8ebdb6ffa1f9c480a8e9173a4c}{delete\+Backward})
+\begin{DoxyCompactList}\small\item\em Toggle enable delete backward. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}{get\+Delete\+Backward} () const
+\begin{DoxyCompactList}\small\item\em Query whether delete backward is enabled or not. \end{DoxyCompactList}\item 
+\hyperlink{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}{U\+I\+C\+C\+Text\+Field} ()
+\item 
+\hyperlink{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}{$\sim$\+U\+I\+C\+C\+Text\+Field} ()
+\item 
+virtual void \hyperlink{classui_1_1UICCTextField_ab4689762548b34a3309d8679b3add550}{on\+Enter} () override
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a135529d7d297d3e5598faf031c559a8b}\label{classui_1_1UICCTextField_a135529d7d297d3e5598faf031c559a8b}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_a135529d7d297d3e5598faf031c559a8b}{on\+Text\+Field\+Attach\+With\+I\+ME} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to attach to the I\+ME, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ae01e5eb5b632db9683bb4b4eb698fe22}\label{classui_1_1UICCTextField_ae01e5eb5b632db9683bb4b4eb698fe22}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_ae01e5eb5b632db9683bb4b4eb698fe22}{on\+Text\+Field\+Detach\+With\+I\+ME} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to detach from the I\+ME, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a50d55252aaf08d666ab1367eac85a367}\label{classui_1_1UICCTextField_a50d55252aaf08d666ab1367eac85a367}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_a50d55252aaf08d666ab1367eac85a367}{on\+Text\+Field\+Insert\+Text} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender, const char $\ast$text, size\+\_\+t n\+Len) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to insert the text, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_aebd88d54b0d5c40891e4d0d74a91437b}\label{classui_1_1UICCTextField_aebd88d54b0d5c40891e4d0d74a91437b}} 
+virtual bool \hyperlink{classui_1_1UICCTextField_aebd88d54b0d5c40891e4d0d74a91437b}{on\+Text\+Field\+Delete\+Backward} (\hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF} $\ast$p\+Sender, const char $\ast$del\+Text, size\+\_\+t n\+Len) override
+\begin{DoxyCompactList}\small\item\em If the sender doesn\textquotesingle{}t want to delete the del\+Text, return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}\label{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}} 
+void \hyperlink{classui_1_1UICCTextField_ac55d7a518d395742fe01ff21f000feb5}{insert\+Text} (const char $\ast$text, size\+\_\+t len) override
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classIMEDispatcher}{I\+M\+E\+Dispatcher} when text input received from the I\+ME.  NA  NA. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}{open\+I\+ME} ()
+\item 
+void \hyperlink{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}{close\+I\+ME} ()
+\item 
+void \hyperlink{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}{set\+Max\+Length\+Enabled} (bool enable)
+\item 
+bool \hyperlink{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}{is\+Max\+Length\+Enabled} () const
+\item 
+void \hyperlink{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}{set\+Max\+Length} (int length)
+\item 
+int \hyperlink{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}{get\+Max\+Length} () const
+\item 
+std\+::size\+\_\+t \hyperlink{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}{get\+Char\+Count} () const
+\item 
+void \hyperlink{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}{set\+Password\+Enabled} (bool enable)
+\begin{DoxyCompactList}\small\item\em Toggle password input mode. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}{is\+Password\+Enabled} () const
+\begin{DoxyCompactList}\small\item\em Query whether password input mode is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}{set\+Password\+Style\+Text} (const std\+::string \&style\+Text)
+\begin{DoxyCompactList}\small\item\em Change password style text. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}{set\+Password\+Text} (const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Set the password text content. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}{set\+Attach\+With\+I\+ME} (bool attach)
+\begin{DoxyCompactList}\small\item\em Toggle attach with I\+ME. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}{get\+Attach\+With\+I\+ME} () const
+\begin{DoxyCompactList}\small\item\em Query whether the I\+ME is attached or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}{set\+Detach\+With\+I\+ME} (bool detach)
+\begin{DoxyCompactList}\small\item\em Toggle detach with I\+ME. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}{get\+Detach\+With\+I\+ME} () const
+\begin{DoxyCompactList}\small\item\em Query whether I\+ME is detached or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}{set\+Insert\+Text} (bool insert)
+\begin{DoxyCompactList}\small\item\em Toggle enable text insert. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}{get\+Insert\+Text} () const
+\begin{DoxyCompactList}\small\item\em Query whether insert text is enabled or not. \end{DoxyCompactList}\item 
+void \hyperlink{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}{set\+Delete\+Backward} (bool \hyperlink{classui_1_1UICCTextField_ac7b7cc8ebdb6ffa1f9c480a8e9173a4c}{delete\+Backward})
+\begin{DoxyCompactList}\small\item\em Toggle enable delete backward. \end{DoxyCompactList}\item 
+bool \hyperlink{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}{get\+Delete\+Backward} () const
+\begin{DoxyCompactList}\small\item\em Query whether delete backward is enabled or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} $\ast$ \hyperlink{classui_1_1UICCTextField_ad5085f0016d635073428cd7d7ccb7e96}{create} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\item 
+static \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} $\ast$ \hyperlink{classui_1_1UICCTextField_aecd9061fd41859b74fa71c3c4730ee82}{create} ()
+\begin{DoxyCompactList}\small\item\em Create an empty \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field}. \end{DoxyCompactList}\item 
+static \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} $\ast$ \hyperlink{classui_1_1UICCTextField_a7bb433282dda5320b2df5c13da7ed142}{create} (const std\+::string \&placeholder, const std\+::string \&font\+Name, float font\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a2c0c7370c3696b9fbd6958c1d47f4ae4}\label{classui_1_1UICCTextField_a2c0c7370c3696b9fbd6958c1d47f4ae4}} 
+bool {\bfseries \+\_\+max\+Length\+Enabled}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a907c95893bbe5f2f5c14144b3e1a1599}\label{classui_1_1UICCTextField_a907c95893bbe5f2f5c14144b3e1a1599}} 
+int {\bfseries \+\_\+max\+Length}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a66d2a183fa6cac6138f11100874aa273}\label{classui_1_1UICCTextField_a66d2a183fa6cac6138f11100874aa273}} 
+bool {\bfseries \+\_\+attach\+With\+I\+ME}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ac620827b67290ed8c401a3d92a7b106b}\label{classui_1_1UICCTextField_ac620827b67290ed8c401a3d92a7b106b}} 
+bool {\bfseries \+\_\+detach\+With\+I\+ME}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_ae88964cbb3bbefebdd7cca99ef102d4e}\label{classui_1_1UICCTextField_ae88964cbb3bbefebdd7cca99ef102d4e}} 
+bool {\bfseries \+\_\+insert\+Text}
+\item 
+\mbox{\Hypertarget{classui_1_1UICCTextField_a05a296e75e816b3ea78c0dcb15cb88f7}\label{classui_1_1UICCTextField_a05a296e75e816b3ea78c0dcb15cb88f7}} 
+bool {\bfseries \+\_\+delete\+Backward}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A helper class which inherit from. 
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classTextFieldTTF}{Text\+Field\+T\+TF}} and implements the 
+
+{\ttfamily \hyperlink{classTextFieldDelegate}{Text\+Field\+Delegate}} protocol. It is mainly be used internally by 
+
+{\ttfamily U\+I\+Text\+Field} class.  NA  NA 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}\label{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!U\+I\+C\+C\+Text\+Field@{U\+I\+C\+C\+Text\+Field}}
+\index{U\+I\+C\+C\+Text\+Field@{U\+I\+C\+C\+Text\+Field}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{U\+I\+C\+C\+Text\+Field()}{UICCTextField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+U\+I\+C\+C\+Text\+Field\+::\+U\+I\+C\+C\+Text\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}\label{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!````~U\+I\+C\+C\+Text\+Field@{$\sim$\+U\+I\+C\+C\+Text\+Field}}
+\index{````~U\+I\+C\+C\+Text\+Field@{$\sim$\+U\+I\+C\+C\+Text\+Field}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{$\sim$\+U\+I\+C\+C\+Text\+Field()}{~UICCTextField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ui\+::\+U\+I\+C\+C\+Text\+Field\+::$\sim$\+U\+I\+C\+C\+Text\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default destructor \mbox{\Hypertarget{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}\label{classui_1_1UICCTextField_a0066110e47fa1a5e5f518bfde6d0ade7}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!U\+I\+C\+C\+Text\+Field@{U\+I\+C\+C\+Text\+Field}}
+\index{U\+I\+C\+C\+Text\+Field@{U\+I\+C\+C\+Text\+Field}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{U\+I\+C\+C\+Text\+Field()}{UICCTextField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+U\+I\+C\+C\+Text\+Field\+::\+U\+I\+C\+C\+Text\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}\label{classui_1_1UICCTextField_a31fb9b3cad0ea7dbb25ddf1599cbd811}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!````~U\+I\+C\+C\+Text\+Field@{$\sim$\+U\+I\+C\+C\+Text\+Field}}
+\index{````~U\+I\+C\+C\+Text\+Field@{$\sim$\+U\+I\+C\+C\+Text\+Field}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{$\sim$\+U\+I\+C\+C\+Text\+Field()}{~UICCTextField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ui\+::\+U\+I\+C\+C\+Text\+Field\+::$\sim$\+U\+I\+C\+C\+Text\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}\label{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!close\+I\+ME@{close\+I\+ME}}
+\index{close\+I\+ME@{close\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{close\+I\+M\+E()}{closeIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::close\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close the I\+ME. \mbox{\Hypertarget{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}\label{classui_1_1UICCTextField_a5091bd4b413b62335232752f4d6e6c89}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!close\+I\+ME@{close\+I\+ME}}
+\index{close\+I\+ME@{close\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{close\+I\+M\+E()}{closeIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::close\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close the I\+ME. \mbox{\Hypertarget{classui_1_1UICCTextField_aecd9061fd41859b74fa71c3c4730ee82}\label{classui_1_1UICCTextField_aecd9061fd41859b74fa71c3c4730ee82}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!create@{create}}
+\index{create@{create}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} $\ast$ ui\+::\+U\+I\+C\+C\+Text\+Field\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create an empty \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field}. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_ad5085f0016d635073428cd7d7ccb7e96}\label{classui_1_1UICCTextField_ad5085f0016d635073428cd7d7ccb7e96}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!create@{create}}
+\index{create@{create}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} $\ast$ ui\+::\+U\+I\+C\+C\+Text\+Field\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} instance with a placeholder, a font\+Name and a font\+Size. 
+\begin{DoxyParams}{Parameters}
+{\em placeholder} & Placeholder in string. \\
+\hline
+{\em font\+Name} & Font name in string. \\
+\hline
+{\em font\+Size} & Font size in float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a7bb433282dda5320b2df5c13da7ed142}\label{classui_1_1UICCTextField_a7bb433282dda5320b2df5c13da7ed142}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!create@{create}}
+\index{create@{create}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field}$\ast$ ui\+::\+U\+I\+C\+C\+Text\+Field\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{placeholder,  }\item[{const std\+::string \&}]{font\+Name,  }\item[{float}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} instance with a placeholder, a font\+Name and a font\+Size. 
+\begin{DoxyParams}{Parameters}
+{\em placeholder} & Placeholder in string. \\
+\hline
+{\em font\+Name} & Font name in string. \\
+\hline
+{\em font\+Size} & Font size in float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classui_1_1UICCTextField}{U\+I\+C\+C\+Text\+Field} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}\label{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Attach\+With\+I\+ME@{get\+Attach\+With\+I\+ME}}
+\index{get\+Attach\+With\+I\+ME@{get\+Attach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Attach\+With\+I\+M\+E()}{getAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether the I\+ME is attached or not. 
+
+\begin{DoxyReturn}{Returns}
+True if I\+ME is attached, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}\label{classui_1_1UICCTextField_a101f42cff95aabcc31b1be1d6d84795d}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Attach\+With\+I\+ME@{get\+Attach\+With\+I\+ME}}
+\index{get\+Attach\+With\+I\+ME@{get\+Attach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Attach\+With\+I\+M\+E()}{getAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether the I\+ME is attached or not. 
+
+\begin{DoxyReturn}{Returns}
+True if I\+ME is attached, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}\label{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Char\+Count@{get\+Char\+Count}}
+\index{get\+Char\+Count@{get\+Char\+Count}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Char\+Count()}{getCharCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Char\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the total inputed characters. \begin{DoxyReturn}{Returns}
+Total inputed character count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}\label{classui_1_1UICCTextField_a2f8ba9d180b639dc4e4b77e1e052aecb}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Char\+Count@{get\+Char\+Count}}
+\index{get\+Char\+Count@{get\+Char\+Count}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Char\+Count()}{getCharCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::size\+\_\+t ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Char\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the total inputed characters. \begin{DoxyReturn}{Returns}
+Total inputed character count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}\label{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Delete\+Backward@{get\+Delete\+Backward}}
+\index{get\+Delete\+Backward@{get\+Delete\+Backward}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Delete\+Backward()}{getDeleteBackward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Delete\+Backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether delete backward is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if delete backward is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}\label{classui_1_1UICCTextField_a1fa647f6e2272f11dfb6d1a5bb1e2b7c}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Delete\+Backward@{get\+Delete\+Backward}}
+\index{get\+Delete\+Backward@{get\+Delete\+Backward}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Delete\+Backward()}{getDeleteBackward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Delete\+Backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether delete backward is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if delete backward is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}\label{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Detach\+With\+I\+ME@{get\+Detach\+With\+I\+ME}}
+\index{get\+Detach\+With\+I\+ME@{get\+Detach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Detach\+With\+I\+M\+E()}{getDetachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Detach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether I\+ME is detached or not. 
+
+\begin{DoxyReturn}{Returns}
+True if I\+ME is detached, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}\label{classui_1_1UICCTextField_a834dc8e546abd0b02437018e97bbce71}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Detach\+With\+I\+ME@{get\+Detach\+With\+I\+ME}}
+\index{get\+Detach\+With\+I\+ME@{get\+Detach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Detach\+With\+I\+M\+E()}{getDetachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Detach\+With\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether I\+ME is detached or not. 
+
+\begin{DoxyReturn}{Returns}
+True if I\+ME is detached, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}\label{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Insert\+Text@{get\+Insert\+Text}}
+\index{get\+Insert\+Text@{get\+Insert\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Insert\+Text()}{getInsertText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Insert\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether insert text is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if insert text is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}\label{classui_1_1UICCTextField_a789a293f8c433f6f434e57f8438193ab}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Insert\+Text@{get\+Insert\+Text}}
+\index{get\+Insert\+Text@{get\+Insert\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Insert\+Text()}{getInsertText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Insert\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether insert text is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if insert text is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}\label{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Max\+Length@{get\+Max\+Length}}
+\index{get\+Max\+Length@{get\+Max\+Length}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Max\+Length()}{getMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get maximize length. \begin{DoxyReturn}{Returns}
+Maximize length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}\label{classui_1_1UICCTextField_a7603841f39081a4c538a71096904975c}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!get\+Max\+Length@{get\+Max\+Length}}
+\index{get\+Max\+Length@{get\+Max\+Length}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{get\+Max\+Length()}{getMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int ui\+::\+U\+I\+C\+C\+Text\+Field\+::get\+Max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get maximize length. \begin{DoxyReturn}{Returns}
+Maximize length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}\label{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!is\+Max\+Length\+Enabled@{is\+Max\+Length\+Enabled}}
+\index{is\+Max\+Length\+Enabled@{is\+Max\+Length\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{is\+Max\+Length\+Enabled()}{isMaxLengthEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::is\+Max\+Length\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query max length enable state. \begin{DoxyReturn}{Returns}
+Whether max length is enabled or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}\label{classui_1_1UICCTextField_a80855457b243d58c55f19f9ca3933758}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!is\+Max\+Length\+Enabled@{is\+Max\+Length\+Enabled}}
+\index{is\+Max\+Length\+Enabled@{is\+Max\+Length\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{is\+Max\+Length\+Enabled()}{isMaxLengthEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::is\+Max\+Length\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Query max length enable state. \begin{DoxyReturn}{Returns}
+Whether max length is enabled or not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}\label{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!is\+Password\+Enabled@{is\+Password\+Enabled}}
+\index{is\+Password\+Enabled@{is\+Password\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{is\+Password\+Enabled()}{isPasswordEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::is\+Password\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether password input mode is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if password input is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}\label{classui_1_1UICCTextField_a993531ac778c06a81f91cd465edd72ef}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!is\+Password\+Enabled@{is\+Password\+Enabled}}
+\index{is\+Password\+Enabled@{is\+Password\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{is\+Password\+Enabled()}{isPasswordEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ui\+::\+U\+I\+C\+C\+Text\+Field\+::is\+Password\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Query whether password input mode is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if password input is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classui_1_1UICCTextField_ad74c8dfb537f983d2540af7c5b9cb307}\label{classui_1_1UICCTextField_ad74c8dfb537f983d2540af7c5b9cb307}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classui_1_1UICCTextField_ab4689762548b34a3309d8679b3add550}\label{classui_1_1UICCTextField_ab4689762548b34a3309d8679b3add550}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!on\+Enter@{on\+Enter}}
+\index{on\+Enter@{on\+Enter}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{on\+Enter()}{onEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void ui\+::\+U\+I\+C\+C\+Text\+Field\+::on\+Enter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\hyperlink{classEvent}{Event} callback that is invoked every time when \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{}. If the \hyperlink{classNode}{Node} enters the \textquotesingle{}stage\textquotesingle{} with a transition, this event is called when the transition starts. During on\+Enter you can\textquotesingle{}t access a \char`\"{}sister/brother\char`\"{} node. If you override on\+Enter, you shall call its parent\textquotesingle{}s one, e.\+g., \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node\+::on\+Enter()}.  NA 
+
+Reimplemented from \hyperlink{classNode_a7f51764c4afd5018a052b9ef71c03374}{Node}.
+
+\mbox{\Hypertarget{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}\label{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!open\+I\+ME@{open\+I\+ME}}
+\index{open\+I\+ME@{open\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{open\+I\+M\+E()}{openIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::open\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Open up the I\+ME. \mbox{\Hypertarget{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}\label{classui_1_1UICCTextField_a4f7601ce915caa7512271cd991661301}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!open\+I\+ME@{open\+I\+ME}}
+\index{open\+I\+ME@{open\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{open\+I\+M\+E()}{openIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::open\+I\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Open up the I\+ME. \mbox{\Hypertarget{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}\label{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Attach\+With\+I\+ME@{set\+Attach\+With\+I\+ME}}
+\index{set\+Attach\+With\+I\+ME@{set\+Attach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Attach\+With\+I\+M\+E()}{setAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}\item[{bool}]{attach }\end{DoxyParamCaption})}
+
+
+
+Toggle attach with I\+ME. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attach} & True if attach with I\+ME, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}\label{classui_1_1UICCTextField_ac3f1fe1e8d88650662ffa07b4f1063d5}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Attach\+With\+I\+ME@{set\+Attach\+With\+I\+ME}}
+\index{set\+Attach\+With\+I\+ME@{set\+Attach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Attach\+With\+I\+M\+E()}{setAttachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Attach\+With\+I\+ME (\begin{DoxyParamCaption}\item[{bool}]{attach }\end{DoxyParamCaption})}
+
+
+
+Toggle attach with I\+ME. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attach} & True if attach with I\+ME, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}\label{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Delete\+Backward@{set\+Delete\+Backward}}
+\index{set\+Delete\+Backward@{set\+Delete\+Backward}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Delete\+Backward()}{setDeleteBackward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Delete\+Backward (\begin{DoxyParamCaption}\item[{bool}]{delete\+Backward }\end{DoxyParamCaption})}
+
+
+
+Toggle enable delete backward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delete\+Backward} & True if enable delete backward, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}\label{classui_1_1UICCTextField_a023e1be2c42fac0ee7a1997885b5763d}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Delete\+Backward@{set\+Delete\+Backward}}
+\index{set\+Delete\+Backward@{set\+Delete\+Backward}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Delete\+Backward()}{setDeleteBackward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Delete\+Backward (\begin{DoxyParamCaption}\item[{bool}]{delete\+Backward }\end{DoxyParamCaption})}
+
+
+
+Toggle enable delete backward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delete\+Backward} & True if enable delete backward, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}\label{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Detach\+With\+I\+ME@{set\+Detach\+With\+I\+ME}}
+\index{set\+Detach\+With\+I\+ME@{set\+Detach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Detach\+With\+I\+M\+E()}{setDetachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Detach\+With\+I\+ME (\begin{DoxyParamCaption}\item[{bool}]{detach }\end{DoxyParamCaption})}
+
+
+
+Toggle detach with I\+ME. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detach} & True if detach with I\+ME, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}\label{classui_1_1UICCTextField_a93a1fd10bfd3f6547045320b605f8987}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Detach\+With\+I\+ME@{set\+Detach\+With\+I\+ME}}
+\index{set\+Detach\+With\+I\+ME@{set\+Detach\+With\+I\+ME}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Detach\+With\+I\+M\+E()}{setDetachWithIME()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Detach\+With\+I\+ME (\begin{DoxyParamCaption}\item[{bool}]{detach }\end{DoxyParamCaption})}
+
+
+
+Toggle detach with I\+ME. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detach} & True if detach with I\+ME, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}\label{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Insert\+Text@{set\+Insert\+Text}}
+\index{set\+Insert\+Text@{set\+Insert\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Insert\+Text()}{setInsertText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Insert\+Text (\begin{DoxyParamCaption}\item[{bool}]{insert }\end{DoxyParamCaption})}
+
+
+
+Toggle enable text insert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em insert} & True if enable insert text, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}\label{classui_1_1UICCTextField_a27a756bfbc4d7adbdb0015756ef399ef}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Insert\+Text@{set\+Insert\+Text}}
+\index{set\+Insert\+Text@{set\+Insert\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Insert\+Text()}{setInsertText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Insert\+Text (\begin{DoxyParamCaption}\item[{bool}]{insert }\end{DoxyParamCaption})}
+
+
+
+Toggle enable text insert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em insert} & True if enable insert text, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}\label{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Max\+Length@{set\+Max\+Length}}
+\index{set\+Max\+Length@{set\+Max\+Length}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Max\+Length()}{setMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Max\+Length (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})}
+
+Set maximize length. 
+\begin{DoxyParams}{Parameters}
+{\em length} & The maximize length in integer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}\label{classui_1_1UICCTextField_a34d3813016eefd391606ed1aa0b7f0b5}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Max\+Length@{set\+Max\+Length}}
+\index{set\+Max\+Length@{set\+Max\+Length}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Max\+Length()}{setMaxLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Max\+Length (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})}
+
+Set maximize length. 
+\begin{DoxyParams}{Parameters}
+{\em length} & The maximize length in integer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}\label{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Max\+Length\+Enabled@{set\+Max\+Length\+Enabled}}
+\index{set\+Max\+Length\+Enabled@{set\+Max\+Length\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Max\+Length\+Enabled()}{setMaxLengthEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Max\+Length\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+Toggle enable max length limitation. 
+\begin{DoxyParams}{Parameters}
+{\em enable} & True to enable max length, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}\label{classui_1_1UICCTextField_a195a8a8163331112e9ce7e7e60d02d81}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Max\+Length\+Enabled@{set\+Max\+Length\+Enabled}}
+\index{set\+Max\+Length\+Enabled@{set\+Max\+Length\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Max\+Length\+Enabled()}{setMaxLengthEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Max\+Length\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+Toggle enable max length limitation. 
+\begin{DoxyParams}{Parameters}
+{\em enable} & True to enable max length, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}\label{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Enabled@{set\+Password\+Enabled}}
+\index{set\+Password\+Enabled@{set\+Password\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Enabled()}{setPasswordEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Toggle password input mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & True if enable password input, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}\label{classui_1_1UICCTextField_a8cec7c2ce0befc7c7f9f9e5d8bdae59a}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Enabled@{set\+Password\+Enabled}}
+\index{set\+Password\+Enabled@{set\+Password\+Enabled}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Enabled()}{setPasswordEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Toggle password input mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & True if enable password input, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}\label{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Style\+Text@{set\+Password\+Style\+Text}}
+\index{set\+Password\+Style\+Text@{set\+Password\+Style\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Style\+Text()}{setPasswordStyleText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Style\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{style\+Text }\end{DoxyParamCaption})}
+
+
+
+Change password style text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em style\+Text} & The style\+Text for password mask, the default value is \char`\"{}$\ast$\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}\label{classui_1_1UICCTextField_a3fe6bde05e9a4b16abaf0eddf79f2ed6}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Style\+Text@{set\+Password\+Style\+Text}}
+\index{set\+Password\+Style\+Text@{set\+Password\+Style\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Style\+Text()}{setPasswordStyleText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Style\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{style\+Text }\end{DoxyParamCaption})}
+
+
+
+Change password style text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em style\+Text} & The style\+Text for password mask, the default value is \char`\"{}$\ast$\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}\label{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Text@{set\+Password\+Text}}
+\index{set\+Password\+Text@{set\+Password\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Text()}{setPasswordText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Set the password text content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The content of password. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}\label{classui_1_1UICCTextField_a5dd72d55d3859c50ca346d0a76b66bfa}} 
+\index{ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}!set\+Password\+Text@{set\+Password\+Text}}
+\index{set\+Password\+Text@{set\+Password\+Text}!ui\+::\+U\+I\+C\+C\+Text\+Field@{ui\+::\+U\+I\+C\+C\+Text\+Field}}
+\subsubsection{\texorpdfstring{set\+Password\+Text()}{setPasswordText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ui\+::\+U\+I\+C\+C\+Text\+Field\+::set\+Password\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Set the password text content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The content of password. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Text\+Field.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/ui/U\+I\+Text\+Field.\+cpp\end{DoxyCompactItemize}

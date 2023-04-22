@@ -1,0 +1,329 @@
+\hypertarget{classlogs_1_1Logger}{}\section{logs\+:\+:Logger Class Reference}
+\label{classlogs_1_1Logger}\index{logs\+::\+Logger@{logs\+::\+Logger}}
+
+
+Classe de gestion des traces de l\textquotesingle{}application.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}
+\begin{DoxyCompactList}\small\item\em Classe de délégation pour faciliter la création des traces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlogs_1_1Logger_a46f087c40eefd95ab5092137592fd102}{Logger} (const \hyperlink{classlogs_1_1Level}{Level} \&\hyperlink{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}{level}, const std\+::string \&\hyperlink{classlogs_1_1Logger_a6706ac94e219fd82c6049e376805202e}{name}, \hyperlink{classlogs_1_1Appender}{Appender} \&\hyperlink{classlogs_1_1Logger_a48d911418afc6c935cae1e71ed771dee}{appender})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_a204a68a5f81fbfb74aaee18d208b021f}{Logger} (const \hyperlink{classlogs_1_1Logger}{Logger} \&parent, const std\+::string \&\hyperlink{classlogs_1_1Logger_a6706ac94e219fd82c6049e376805202e}{name})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe par copie des infos d\textquotesingle{}un autre logger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_aef85cd3e56cb0da955501622da81ff80}\label{classlogs_1_1Logger_aef85cd3e56cb0da955501622da81ff80}} 
+virtual \hyperlink{classlogs_1_1Logger_aef85cd3e56cb0da955501622da81ff80}{$\sim$ Logger} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1Logger_afa535aaf4891e02c4ff7f84d372b5b1b}{write\+Message} (const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&\hyperlink{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}{level}, const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Méthode générique de trace d\textquotesingle{}un message. \end{DoxyCompactList}\item 
+bool \hyperlink{classlogs_1_1Logger_a13e5a43ff9ecfe978afcd4443be1b32b}{is\+Active} (const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&\hyperlink{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}{level}) const
+\begin{DoxyCompactList}\small\item\em Cette méthode vérifie si le logger est actif pour un niveau donné. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_a6706ac94e219fd82c6049e376805202e}\label{classlogs_1_1Logger_a6706ac94e219fd82c6049e376805202e}} 
+const std\+::string \& \hyperlink{classlogs_1_1Logger_a6706ac94e219fd82c6049e376805202e}{name} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne le nom associé au \hyperlink{classlogs_1_1Logger}{Logger}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}\label{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}} 
+const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \& \hyperlink{classlogs_1_1Logger_a94c013a945cf805fbbc8aa763f73f107}{level} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne le niveau associé au \hyperlink{classlogs_1_1Logger}{Logger}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1Logger_a48d911418afc6c935cae1e71ed771dee}\label{classlogs_1_1Logger_a48d911418afc6c935cae1e71ed771dee}} 
+const \hyperlink{classlogs_1_1Appender}{logs\+::\+Appender} \& \hyperlink{classlogs_1_1Logger_a48d911418afc6c935cae1e71ed771dee}{appender} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne l\textquotesingle{}appender au \hyperlink{classlogs_1_1Logger}{Logger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Méthodes pour les textes simples}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlogs_1_1Logger_a7dffc8f610014ec59b63392da16140e4}{debug} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Trace un message de niveau D\+E\+B\+UG. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}{info} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Trace un message de niveau I\+N\+FO. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1Logger_a240e8d7b58195c85bd7b4e4a3417d955}{warn} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Trace un message de niveau W\+A\+RN. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1Logger_ae55afdeeb1bc9acb6dc02a3e2d06062f}{telemetry} (const std\+::string \&message\+\_\+json) const
+\begin{DoxyCompactList}\small\item\em Trace un message de niveau T\+E\+L\+EM. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1Logger_a8b6a2019233bc44b3c3c86c653910831}{error} (const std\+::string \&message) const
+\begin{DoxyCompactList}\small\item\em Trace un message de niveau E\+R\+R\+OR. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Méthodes pour la construction de messages complexes.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \hyperlink{classlogs_1_1Logger_aade259b85b4978c3b69fcdcc12a5974a}{debug} () const
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un flux de construction pour les messages de type D\+E\+B\+UG. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \hyperlink{classlogs_1_1Logger_abe904448829b4235e8452cbd19b35f45}{info} () const
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un flux de construction pour les messages de type I\+N\+FO. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \hyperlink{classlogs_1_1Logger_a2741020406e22491e124f646c6cf39a7}{warn} () const
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un flux de construction pour les messages de type W\+A\+RN. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \hyperlink{classlogs_1_1Logger_a6a37df307f0264996d3cd72fac28411c}{telemetry} () const
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un flux de construction pour les messages de type T\+E\+L\+E\+M\+E\+T\+RY. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} \hyperlink{classlogs_1_1Logger_ac1468dbd9ac30bc400dafc0c6f69f971}{error} () const
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un flux de construction pour les messages de type E\+R\+R\+OR. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Classe de gestion des traces de l\textquotesingle{}application. 
+
+Cette classe assure la génération des traces de l\textquotesingle{}application. L\textquotesingle{}obtention d\textquotesingle{}une instance de cette classe doit toujours être faite via la méthode \hyperlink{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}{Logger\+Factory\+::logger()}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogs_1_1Logger_a46f087c40eefd95ab5092137592fd102}\label{classlogs_1_1Logger_a46f087c40eefd95ab5092137592fd102}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{Logger()}{Logger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily logs\+::\+Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Level}{Level} \&}]{level,  }\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classlogs_1_1Appender}{logs\+::\+Appender} \&}]{appender }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Niveau de référence du \hyperlink{classlogs_1_1Logger}{Logger}. \\
+\hline
+{\em name} & Nom de référence du \hyperlink{classlogs_1_1Logger}{Logger}. \\
+\hline
+{\em appender} & \hyperlink{classlogs_1_1Appender}{Appender} associé. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_a204a68a5f81fbfb74aaee18d208b021f}\label{classlogs_1_1Logger_a204a68a5f81fbfb74aaee18d208b021f}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{Logger()}{Logger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily logs\+::\+Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Logger}{Logger} \&}]{parent,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe par copie des infos d\textquotesingle{}un autre logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \hyperlink{classlogs_1_1Logger}{Logger} de référence. \\
+\hline
+{\em name} & Nom du \hyperlink{classlogs_1_1Logger}{Logger}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1Logger_a7dffc8f610014ec59b63392da16140e4}\label{classlogs_1_1Logger_a7dffc8f610014ec59b63392da16140e4}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!debug@{debug}}
+\index{debug@{debug}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{debug()}{debug()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trace un message de niveau D\+E\+B\+UG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message de référence. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_aade259b85b4978c3b69fcdcc12a5974a}\label{classlogs_1_1Logger_aade259b85b4978c3b69fcdcc12a5974a}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!debug@{debug}}
+\index{debug@{debug}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{debug()}{debug()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} logs\+::\+Logger\+::debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Création d\textquotesingle{}un flux de construction pour les messages de type D\+E\+B\+UG. 
+
+\begin{DoxyReturn}{Returns}
+Le flux de construction devant se terminer par
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end} 
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}{Logger\+::info()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classlogs_1_1Logger_a8b6a2019233bc44b3c3c86c653910831}\label{classlogs_1_1Logger_a8b6a2019233bc44b3c3c86c653910831}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!error@{error}}
+\index{error@{error}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trace un message de niveau E\+R\+R\+OR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message de référence. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_ac1468dbd9ac30bc400dafc0c6f69f971}\label{classlogs_1_1Logger_ac1468dbd9ac30bc400dafc0c6f69f971}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!error@{error}}
+\index{error@{error}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} logs\+::\+Logger\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Création d\textquotesingle{}un flux de construction pour les messages de type E\+R\+R\+OR. 
+
+\begin{DoxyReturn}{Returns}
+Le flux de construction devant se terminer par
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end} 
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlogs_1_1Logger_a8b6a2019233bc44b3c3c86c653910831}{Logger\+::error()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}\label{classlogs_1_1Logger_aa381165771d00a6a1e3aa9664bf6467f}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!info@{info}}
+\index{info@{info}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trace un message de niveau I\+N\+FO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message de référence. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_abe904448829b4235e8452cbd19b35f45}\label{classlogs_1_1Logger_abe904448829b4235e8452cbd19b35f45}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!info@{info}}
+\index{info@{info}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} logs\+::\+Logger\+::info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Création d\textquotesingle{}un flux de construction pour les messages de type I\+N\+FO. 
+
+Cette méthode initialise une instance de {\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer}} pour permettre la création d\textquotesingle{}un message comme pour un flux de sortie.
+
+\begin{DoxyReturn}{Returns}
+Le flux de construction devant se terminer par
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end} 
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1Logger_a13e5a43ff9ecfe978afcd4443be1b32b}\label{classlogs_1_1Logger_a13e5a43ff9ecfe978afcd4443be1b32b}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!is\+Active@{is\+Active}}
+\index{is\+Active@{is\+Active}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{is\+Active()}{isActive()}}
+{\footnotesize\ttfamily bool logs\+::\+Logger\+::is\+Active (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cette méthode vérifie si le logger est actif pour un niveau donné. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Niveau de référence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si le logger est actif pour le niveau donné. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1Logger_ae55afdeeb1bc9acb6dc02a3e2d06062f}\label{classlogs_1_1Logger_ae55afdeeb1bc9acb6dc02a3e2d06062f}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!telemetry@{telemetry}}
+\index{telemetry@{telemetry}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{telemetry()}{telemetry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::telemetry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message\+\_\+json }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trace un message de niveau T\+E\+L\+EM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message de référence en json. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_a6a37df307f0264996d3cd72fac28411c}\label{classlogs_1_1Logger_a6a37df307f0264996d3cd72fac28411c}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!telemetry@{telemetry}}
+\index{telemetry@{telemetry}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{telemetry()}{telemetry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} logs\+::\+Logger\+::telemetry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Création d\textquotesingle{}un flux de construction pour les messages de type T\+E\+L\+E\+M\+E\+T\+RY. 
+
+\begin{DoxyReturn}{Returns}
+Le flux de construction devant se terminer par
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end} 
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Logger\+::telem() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classlogs_1_1Logger_a240e8d7b58195c85bd7b4e4a3417d955}\label{classlogs_1_1Logger_a240e8d7b58195c85bd7b4e4a3417d955}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!warn@{warn}}
+\index{warn@{warn}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trace un message de niveau W\+A\+RN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message de référence. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1Logger_a2741020406e22491e124f646c6cf39a7}\label{classlogs_1_1Logger_a2741020406e22491e124f646c6cf39a7}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!warn@{warn}}
+\index{warn@{warn}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{warn()}{warn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger_1_1LoggerBuffer}{Logger\+Buffer} logs\+::\+Logger\+::warn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Création d\textquotesingle{}un flux de construction pour les messages de type W\+A\+RN. 
+
+\begin{DoxyReturn}{Returns}
+Le flux de construction devant se terminer par
+\begin{DoxyCode}
+<< \hyperlink{Logger_8hpp_ac6f325c6cfe6189bc8e243daa184453b}{logs::end} 
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlogs_1_1Logger_a240e8d7b58195c85bd7b4e4a3417d955}{Logger\+::warn()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classlogs_1_1Logger_afa535aaf4891e02c4ff7f84d372b5b1b}\label{classlogs_1_1Logger_afa535aaf4891e02c4ff7f84d372b5b1b}} 
+\index{logs\+::\+Logger@{logs\+::\+Logger}!write\+Message@{write\+Message}}
+\index{write\+Message@{write\+Message}!logs\+::\+Logger@{logs\+::\+Logger}}
+\subsubsection{\texorpdfstring{write\+Message()}{writeMessage()}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+::write\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Level}{logs\+::\+Level} \&}]{level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption}) const}
+
+
+
+Méthode générique de trace d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Niveau de référence du message. \\
+\hline
+{\em message} & Message a tracer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{Logger_8hpp}{Logger.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{Logger_8cpp}{Logger.\+cpp}\end{DoxyCompactItemize}

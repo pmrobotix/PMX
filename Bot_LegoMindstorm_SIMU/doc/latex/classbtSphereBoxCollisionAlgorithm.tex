@@ -1,0 +1,92 @@
+\hypertarget{classbtSphereBoxCollisionAlgorithm}{}\section{bt\+Sphere\+Box\+Collision\+Algorithm Class Reference}
+\label{classbtSphereBoxCollisionAlgorithm}\index{bt\+Sphere\+Box\+Collision\+Algorithm@{bt\+Sphere\+Box\+Collision\+Algorithm}}
+
+
+{\ttfamily \#include $<$bt\+Sphere\+Box\+Collision\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bt\+Sphere\+Box\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classbtSphereBoxCollisionAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bt\+Sphere\+Box\+Collision\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classbtSphereBoxCollisionAlgorithm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtSphereBoxCollisionAlgorithm_1_1CreateFunc}{Create\+Func}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_a0d289a90663e6b7a7863ba6530c3de78}\label{classbtSphereBoxCollisionAlgorithm_a0d289a90663e6b7a7863ba6530c3de78}} 
+{\bfseries bt\+Sphere\+Box\+Collision\+Algorithm} (bt\+Persistent\+Manifold $\ast$mf, const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+virtual void \hyperlink{classbtSphereBoxCollisionAlgorithm_ab171b2afeabaaaa8a51728426643c369}{process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_adb1982e2585bfcf69dadc4d6b2305fa4}\label{classbtSphereBoxCollisionAlgorithm_adb1982e2585bfcf69dadc4d6b2305fa4}} 
+virtual bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_ac506db81f3885ed079b902817a6d7803}\label{classbtSphereBoxCollisionAlgorithm_ac506db81f3885ed079b902817a6d7803}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_a84fb21901c8dbbf9c8fca70ac173721f}\label{classbtSphereBoxCollisionAlgorithm_a84fb21901c8dbbf9c8fca70ac173721f}} 
+bool {\bfseries get\+Sphere\+Distance} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$box\+Obj\+Wrap, bt\+Vector3 \&v3\+Point\+On\+Box, bt\+Vector3 \&normal, bt\+Scalar \&penetration\+Depth, const bt\+Vector3 \&v3\+Sphere\+Center, bt\+Scalar f\+Radius, bt\+Scalar max\+Contact\+Distance)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_ab6566f6aa866da47034cb976fe1276a4}\label{classbtSphereBoxCollisionAlgorithm_ab6566f6aa866da47034cb976fe1276a4}} 
+bt\+Scalar {\bfseries get\+Sphere\+Penetration} (bt\+Vector3 const \&box\+Half\+Extent, bt\+Vector3 const \&sphere\+Rel\+Pos, bt\+Vector3 \&closest\+Point, bt\+Vector3 \&normal)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_a0d289a90663e6b7a7863ba6530c3de78}\label{classbtSphereBoxCollisionAlgorithm_a0d289a90663e6b7a7863ba6530c3de78}} 
+{\bfseries bt\+Sphere\+Box\+Collision\+Algorithm} (bt\+Persistent\+Manifold $\ast$mf, const \hyperlink{structbtCollisionAlgorithmConstructionInfo}{bt\+Collision\+Algorithm\+Construction\+Info} \&ci, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, bool is\+Swapped)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_a4da8f9a89a8d7e2a92fc3afbde7a3bfc}\label{classbtSphereBoxCollisionAlgorithm_a4da8f9a89a8d7e2a92fc3afbde7a3bfc}} 
+virtual void {\bfseries process\+Collision} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body0\+Wrap, const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$body1\+Wrap, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_aca603030381225ff0f22acf017c82ac8}\label{classbtSphereBoxCollisionAlgorithm_aca603030381225ff0f22acf017c82ac8}} 
+virtual bt\+Scalar {\bfseries calculate\+Time\+Of\+Impact} (bt\+Collision\+Object $\ast$body0, bt\+Collision\+Object $\ast$body1, const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&dispatch\+Info, \hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$result\+Out)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_ac506db81f3885ed079b902817a6d7803}\label{classbtSphereBoxCollisionAlgorithm_ac506db81f3885ed079b902817a6d7803}} 
+virtual void {\bfseries get\+All\+Contact\+Manifolds} (\hyperlink{classbtAlignedObjectArray}{bt\+Manifold\+Array} \&manifold\+Array)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_a84fb21901c8dbbf9c8fca70ac173721f}\label{classbtSphereBoxCollisionAlgorithm_a84fb21901c8dbbf9c8fca70ac173721f}} 
+bool {\bfseries get\+Sphere\+Distance} (const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$box\+Obj\+Wrap, bt\+Vector3 \&v3\+Point\+On\+Box, bt\+Vector3 \&normal, bt\+Scalar \&penetration\+Depth, const bt\+Vector3 \&v3\+Sphere\+Center, bt\+Scalar f\+Radius, bt\+Scalar max\+Contact\+Distance)
+\item 
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_ab6566f6aa866da47034cb976fe1276a4}\label{classbtSphereBoxCollisionAlgorithm_ab6566f6aa866da47034cb976fe1276a4}} 
+bt\+Scalar {\bfseries get\+Sphere\+Penetration} (bt\+Vector3 const \&box\+Half\+Extent, bt\+Vector3 const \&sphere\+Rel\+Pos, bt\+Vector3 \&closest\+Point, bt\+Vector3 \&normal)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classbtSphereBoxCollisionAlgorithm}{bt\+Sphere\+Box\+Collision\+Algorithm} provides sphere-\/box collision detection. Other features are frame-\/coherency (persistent data) and collision response. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbtSphereBoxCollisionAlgorithm_ab171b2afeabaaaa8a51728426643c369}\label{classbtSphereBoxCollisionAlgorithm_ab171b2afeabaaaa8a51728426643c369}} 
+\index{bt\+Sphere\+Box\+Collision\+Algorithm@{bt\+Sphere\+Box\+Collision\+Algorithm}!process\+Collision@{process\+Collision}}
+\index{process\+Collision@{process\+Collision}!bt\+Sphere\+Box\+Collision\+Algorithm@{bt\+Sphere\+Box\+Collision\+Algorithm}}
+\subsubsection{\texorpdfstring{process\+Collision()}{processCollision()}}
+{\footnotesize\ttfamily void bt\+Sphere\+Box\+Collision\+Algorithm\+::process\+Collision (\begin{DoxyParamCaption}\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{body0\+Wrap,  }\item[{const \hyperlink{structbtCollisionObjectWrapper}{bt\+Collision\+Object\+Wrapper} $\ast$}]{body1\+Wrap,  }\item[{const \hyperlink{structbtDispatcherInfo}{bt\+Dispatcher\+Info} \&}]{dispatch\+Info,  }\item[{\hyperlink{classbtManifoldResult}{bt\+Manifold\+Result} $\ast$}]{result\+Out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+report a contact. internally this will be kept persistent, and contact reduction is done 
+
+Implements \hyperlink{classbtCollisionAlgorithm}{bt\+Collision\+Algorithm}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Sphere\+Box\+Collision\+Algorithm.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Collision\+Dispatch/bt\+Sphere\+Box\+Collision\+Algorithm.\+cpp\end{DoxyCompactItemize}

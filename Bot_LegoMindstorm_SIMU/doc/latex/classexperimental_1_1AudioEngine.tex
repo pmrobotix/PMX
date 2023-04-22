@@ -1,0 +1,981 @@
+\hypertarget{classexperimental_1_1AudioEngine}{}\section{experimental\+:\+:Audio\+Engine Class Reference}
+\label{classexperimental_1_1AudioEngine}\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+
+
+Offers a interface to play audio.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Engine.\+h$>$}
+
+
+
+Collaboration diagram for experimental\+:\+:Audio\+Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classexperimental_1_1AudioEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structexperimental_1_1AudioEngine_1_1AudioInfo}{Audio\+Info}
+\item 
+struct \hyperlink{structexperimental_1_1AudioEngine_1_1ProfileHelper}{Profile\+Helper}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} \{ \newline
+{\bfseries E\+R\+R\+OR} = -\/1, 
+{\bfseries I\+N\+I\+T\+I\+A\+L\+Z\+I\+NG}, 
+{\bfseries P\+L\+A\+Y\+I\+NG}, 
+{\bfseries P\+A\+U\+S\+ED}, 
+\newline
+{\bfseries E\+R\+R\+OR} = -\/1, 
+{\bfseries I\+N\+I\+T\+I\+A\+L\+I\+Z\+I\+NG}, 
+{\bfseries P\+L\+A\+Y\+I\+NG}, 
+{\bfseries P\+A\+U\+S\+ED}
+ \}
+\item 
+enum \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} \{ \newline
+{\bfseries E\+R\+R\+OR} = -\/1, 
+{\bfseries I\+N\+I\+T\+I\+A\+L\+Z\+I\+NG}, 
+{\bfseries P\+L\+A\+Y\+I\+NG}, 
+{\bfseries P\+A\+U\+S\+ED}, 
+\newline
+{\bfseries E\+R\+R\+OR} = -\/1, 
+{\bfseries I\+N\+I\+T\+I\+A\+L\+I\+Z\+I\+NG}, 
+{\bfseries P\+L\+A\+Y\+I\+NG}, 
+{\bfseries P\+A\+U\+S\+ED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a52024f30bece9adf911e6cf140d47bfe}\label{classexperimental_1_1AudioEngine_a52024f30bece9adf911e6cf140d47bfe}} 
+static bool {\bfseries lazy\+Init} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}{end} ()
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}{get\+Default\+Profile} ()
+\item 
+static int \hyperlink{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}{play2d} (const std\+::string \&file\+Path, bool loop=false, float volume=1.\+0f, const Audio\+Profile $\ast$profile=nullptr)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}{set\+Loop} (int audio\+ID, bool loop)
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}{is\+Loop} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}{set\+Volume} (int audio\+ID, float volume)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}{get\+Volume} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}{pause} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}{pause\+All} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}{resume} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}{resume\+All} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}{stop} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}{stop\+All} ()
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}{set\+Current\+Time} (int audio\+ID, float sec)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}{get\+Current\+Time} (int audio\+ID)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}{get\+Duration} (int audio\+ID)
+\item 
+static \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} \hyperlink{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}{get\+State} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}{set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+static int \hyperlink{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}{get\+Max\+Audio\+Instance} ()
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}{set\+Max\+Audio\+Instance} (int max\+Instances)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}{uncache} (const std\+::string \&file\+Path)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}{uncache\+All} ()
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}{get\+Profile} (int audio\+ID)
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}{get\+Profile} (const std\+::string \&profile\+Name)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}{preload} (const std\+::string \&file\+Path)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}{preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool is\+Success)$>$ callback)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a52024f30bece9adf911e6cf140d47bfe}\label{classexperimental_1_1AudioEngine_a52024f30bece9adf911e6cf140d47bfe}} 
+static bool {\bfseries lazy\+Init} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}{end} ()
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}{get\+Default\+Profile} ()
+\item 
+static int \hyperlink{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}{play2d} (const std\+::string \&file\+Path, bool loop=false, float volume=1.\+0f, const Audio\+Profile $\ast$profile=nullptr)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}{set\+Loop} (int audio\+ID, bool loop)
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}{is\+Loop} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}{set\+Volume} (int audio\+ID, float volume)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}{get\+Volume} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}{pause} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}{pause\+All} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}{resume} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}{resume\+All} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}{stop} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}{stop\+All} ()
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}{set\+Current\+Time} (int audio\+ID, float sec)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}{get\+Current\+Time} (int audio\+ID)
+\item 
+static float \hyperlink{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}{get\+Duration} (int audio\+ID)
+\item 
+static \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} \hyperlink{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}{get\+State} (int audio\+ID)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}{set\+Finish\+Callback} (int audio\+ID, const std\+::function$<$ void(int, const std\+::string \&)$>$ \&callback)
+\item 
+static int \hyperlink{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}{get\+Max\+Audio\+Instance} ()
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}{set\+Max\+Audio\+Instance} (int max\+Instances)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}{uncache} (const std\+::string \&file\+Path)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}{uncache\+All} ()
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}{get\+Profile} (int audio\+ID)
+\item 
+static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$ \hyperlink{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}{get\+Profile} (const std\+::string \&profile\+Name)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}{preload} (const std\+::string \&file\+Path)
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}{preload} (const std\+::string \&file\+Path, std\+::function$<$ void(bool is\+Success)$>$ callback)
+\item 
+static int \hyperlink{classexperimental_1_1AudioEngine_a47fa881c2d7a3e2604dd7c885f249f51}{get\+Playing\+Audio\+Count} ()
+\item 
+static void \hyperlink{classexperimental_1_1AudioEngine_ae004f7785eb2ad3aa31db7db912d4622}{set\+Enabled} (bool \hyperlink{classexperimental_1_1AudioEngine_ad19723d962f48b9b25feb73382d6688c}{is\+Enabled})
+\item 
+static bool \hyperlink{classexperimental_1_1AudioEngine_ad19723d962f48b9b25feb73382d6688c}{is\+Enabled} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa95b96db73616d5fb4c474e1252c0a3b}\label{classexperimental_1_1AudioEngine_aa95b96db73616d5fb4c474e1252c0a3b}} 
+static const int {\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+U\+D\+I\+O\+\_\+\+ID}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ac1cb64bc25bf92bb2ab578ab8e60593e}\label{classexperimental_1_1AudioEngine_ac1cb64bc25bf92bb2ab578ab8e60593e}} 
+static const float {\bfseries T\+I\+M\+E\+\_\+\+U\+N\+K\+N\+O\+WN}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a08e4862df51b48eb7a045741dc8ff1f2}\label{classexperimental_1_1AudioEngine_a08e4862df51b48eb7a045741dc8ff1f2}} 
+static void {\bfseries add\+Task} (const std\+::function$<$ void()$>$ \&task)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ae4830cb6969152dc7dcddfa6edf58622}\label{classexperimental_1_1AudioEngine_ae4830cb6969152dc7dcddfa6edf58622}} 
+static void {\bfseries remove} (int audio\+ID)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a08e4862df51b48eb7a045741dc8ff1f2}\label{classexperimental_1_1AudioEngine_a08e4862df51b48eb7a045741dc8ff1f2}} 
+static void {\bfseries add\+Task} (const std\+::function$<$ void()$>$ \&task)
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ae4830cb6969152dc7dcddfa6edf58622}\label{classexperimental_1_1AudioEngine_ae4830cb6969152dc7dcddfa6edf58622}} 
+static void {\bfseries remove} (int audio\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a29b2e61f10de5d7c1157dc33e2dbfae9}\label{classexperimental_1_1AudioEngine_a29b2e61f10de5d7c1157dc33e2dbfae9}} 
+static std\+::unordered\+\_\+map$<$ int, \hyperlink{structexperimental_1_1AudioEngine_1_1AudioInfo}{Audio\+Info} $>$ {\bfseries \+\_\+audio\+I\+D\+Info\+Map}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aff2e82aebc97877229924cb09fd5c311}\label{classexperimental_1_1AudioEngine_aff2e82aebc97877229924cb09fd5c311}} 
+static std\+::unordered\+\_\+map$<$ std\+::string, std\+::list$<$ int $>$ $>$ {\bfseries \+\_\+audio\+Path\+I\+D\+Map}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a4c045099415cee265085877f1dd6c793}\label{classexperimental_1_1AudioEngine_a4c045099415cee265085877f1dd6c793}} 
+static std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{structexperimental_1_1AudioEngine_1_1ProfileHelper}{Profile\+Helper} $>$ {\bfseries \+\_\+audio\+Path\+Profile\+Helper\+Map}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aef714998fdc8e4f0710a7da99842bf95}\label{classexperimental_1_1AudioEngine_aef714998fdc8e4f0710a7da99842bf95}} 
+static unsigned int {\bfseries \+\_\+max\+Instances}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ab7fe30db5072ed232b8b8013d217afad}\label{classexperimental_1_1AudioEngine_ab7fe30db5072ed232b8b8013d217afad}} 
+static \hyperlink{structexperimental_1_1AudioEngine_1_1ProfileHelper}{Profile\+Helper} $\ast$ {\bfseries \+\_\+default\+Profile\+Helper}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a77747934a1a64047e68df78b0de2949f}\label{classexperimental_1_1AudioEngine_a77747934a1a64047e68df78b0de2949f}} 
+static \hyperlink{classexperimental_1_1AudioEngineImpl}{Audio\+Engine\+Impl} $\ast$ {\bfseries \+\_\+audio\+Engine\+Impl}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a6670597fde9e0d8022bc264ac2b6cb9c}\label{classexperimental_1_1AudioEngine_a6670597fde9e0d8022bc264ac2b6cb9c}} 
+static \hyperlink{classAudioEngineThreadPool}{Audio\+Engine\+Thread\+Pool} $\ast$ {\bfseries s\+\_\+thread\+Pool}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_abff952127725b6294ad15f1414fd1622}\label{classexperimental_1_1AudioEngine_abff952127725b6294ad15f1414fd1622}} 
+static bool {\bfseries \+\_\+is\+Enabled}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a8e0222d6e9b81346186667563adf95a7}\label{classexperimental_1_1AudioEngine_a8e0222d6e9b81346186667563adf95a7}} 
+class {\bfseries Audio\+Engine\+Impl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Offers a interface to play audio. 
+
+\begin{DoxyNote}{Note}
+Make sure to call \hyperlink{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}{Audio\+Engine\+::end()} when the audio engine is not needed anymore to release resources.  NA 
+\end{DoxyNote}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}\label{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!Audio\+State@{Audio\+State}}
+\index{Audio\+State@{Audio\+State}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{Audio\+State}{AudioState}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{experimental\+::\+Audio\+Engine\+::\+Audio\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Audio\+State enum,all possible states of an audio instance. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}\label{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!Audio\+State@{Audio\+State}}
+\index{Audio\+State@{Audio\+State}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{Audio\+State}{AudioState}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{experimental\+::\+Audio\+Engine\+::\+Audio\+State}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Audio\+State enum,all possible states of an audio instance. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}\label{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!end@{end}}
+\index{end@{end}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release objects relating to \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}.
+
+\begin{DoxyWarning}{Warning}
+It must be called before the application exit.  end\+To\+Lua 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}\label{classexperimental_1_1AudioEngine_a17ea6cda24d6c4d951d5b60b6d2afca0}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!end@{end}}
+\index{end@{end}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Release objects relating to \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}.
+
+\begin{DoxyWarning}{Warning}
+It must be called before the application exit.  end\+To\+Lua 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}\label{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Current\+Time@{get\+Current\+Time}}
+\index{get\+Current\+Time@{get\+Current\+Time}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Current\+Time()}{getCurrentTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Current\+Time (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the current playback position of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current playback position of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}\label{classexperimental_1_1AudioEngine_a03c38415583bde325e604cc9310d06ad}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Current\+Time@{get\+Current\+Time}}
+\index{get\+Current\+Time@{get\+Current\+Time}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Current\+Time()}{getCurrentTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Current\+Time (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the current playback position of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current playback position of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}\label{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Default\+Profile@{get\+Default\+Profile}}
+\index{get\+Default\+Profile@{get\+Default\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Default\+Profile()}{getDefaultProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Default\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the default profile of audio instances.
+
+\begin{DoxyReturn}{Returns}
+The default profile of audio instances. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}\label{classexperimental_1_1AudioEngine_a0579fbcef062480d4de9edf98857cf12}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Default\+Profile@{get\+Default\+Profile}}
+\index{get\+Default\+Profile@{get\+Default\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Default\+Profile()}{getDefaultProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Default\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the default profile of audio instances.
+
+\begin{DoxyReturn}{Returns}
+The default profile of audio instances. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}\label{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Duration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Duration (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the duration of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duration of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}\label{classexperimental_1_1AudioEngine_a09b8db5b79cc1dbdd99b57047cbc9d79}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Duration()}{getDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Duration (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the duration of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duration of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}\label{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Max\+Audio\+Instance@{get\+Max\+Audio\+Instance}}
+\index{get\+Max\+Audio\+Instance@{get\+Max\+Audio\+Instance}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Max\+Audio\+Instance()}{getMaxAudioInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int experimental\+::\+Audio\+Engine\+::get\+Max\+Audio\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the maximum number of simultaneous audio instance of \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}\label{classexperimental_1_1AudioEngine_aa372906cea71863ac9c75873477ab049}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Max\+Audio\+Instance@{get\+Max\+Audio\+Instance}}
+\index{get\+Max\+Audio\+Instance@{get\+Max\+Audio\+Instance}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Max\+Audio\+Instance()}{getMaxAudioInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int experimental\+::\+Audio\+Engine\+::get\+Max\+Audio\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Gets the maximum number of simultaneous audio instance of \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a47fa881c2d7a3e2604dd7c885f249f51}\label{classexperimental_1_1AudioEngine_a47fa881c2d7a3e2604dd7c885f249f51}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Playing\+Audio\+Count@{get\+Playing\+Audio\+Count}}
+\index{get\+Playing\+Audio\+Count@{get\+Playing\+Audio\+Count}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Playing\+Audio\+Count()}{getPlayingAudioCount()}}
+{\footnotesize\ttfamily static int experimental\+::\+Audio\+Engine\+::get\+Playing\+Audio\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets playing audio count. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}\label{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Profile@{get\+Profile}}
+\index{get\+Profile@{get\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Profile()}{getProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Profile (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the audio profile by id of audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The audio profile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}\label{classexperimental_1_1AudioEngine_a9681b3ec692d7db066f9a4ce1564a5d2}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Profile@{get\+Profile}}
+\index{get\+Profile@{get\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Profile()}{getProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Profile (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the audio profile by id of audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The audio profile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}\label{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Profile@{get\+Profile}}
+\index{get\+Profile@{get\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Profile()}{getProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Profile (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{profile\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an audio profile by name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em profile\+Name} & A name of audio profile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The audio profile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}\label{classexperimental_1_1AudioEngine_aadf65363a78655e56c65c4153f8c5bcd}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Profile@{get\+Profile}}
+\index{get\+Profile@{get\+Profile}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Profile()}{getProfile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}$\ast$ experimental\+::\+Audio\+Engine\+::get\+Profile (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{profile\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an audio profile by name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em profile\+Name} & A name of audio profile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The audio profile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}\label{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} experimental\+::\+Audio\+Engine\+::get\+State (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the state of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}\label{classexperimental_1_1AudioEngine_a866cda5e583d0dce1b74fa596cae8ac1}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classexperimental_1_1AudioEngine_ab7becf9cab1f5e4cac089a1f6e3785e6}{Audio\+State} experimental\+::\+Audio\+Engine\+::get\+State (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the state of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of an audio instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}\label{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Volume@{get\+Volume}}
+\index{get\+Volume@{get\+Volume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Volume()}{getVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Volume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the volume value of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Volume value (range from 0.\+0 to 1.\+0). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}\label{classexperimental_1_1AudioEngine_ab6545ae46e79147482bb50861c91e5e9}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!get\+Volume@{get\+Volume}}
+\index{get\+Volume@{get\+Volume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{get\+Volume()}{getVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float experimental\+::\+Audio\+Engine\+::get\+Volume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the volume value of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Volume value (range from 0.\+0 to 1.\+0). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ad19723d962f48b9b25feb73382d6688c}\label{classexperimental_1_1AudioEngine_ad19723d962f48b9b25feb73382d6688c}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{is\+Enabled()}{isEnabled()}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check whether \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine} is enabled. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}\label{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!is\+Loop@{is\+Loop}}
+\index{is\+Loop@{is\+Loop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{is\+Loop()}{isLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::is\+Loop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks whether an audio instance is loop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not an audio instance is loop. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}\label{classexperimental_1_1AudioEngine_a7a636855b8bd54af196a9f6947791d3b}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!is\+Loop@{is\+Loop}}
+\index{is\+Loop@{is\+Loop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{is\+Loop()}{isLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::is\+Loop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks whether an audio instance is loop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not an audio instance is loop. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}\label{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!pause@{pause}}
+\index{pause@{pause}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::pause (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pause an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}\label{classexperimental_1_1AudioEngine_a1989c81a914d8f927c4f2decfacd3a96}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!pause@{pause}}
+\index{pause@{pause}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{pause()}{pause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::pause (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pause an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}\label{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!pause\+All@{pause\+All}}
+\index{pause\+All@{pause\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{pause\+All()}{pauseAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::pause\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pause all playing audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}\label{classexperimental_1_1AudioEngine_a3d08304458bf45967020a9ab00e91eb3}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!pause\+All@{pause\+All}}
+\index{pause\+All@{pause\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{pause\+All()}{pauseAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::pause\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pause all playing audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}\label{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!play2d@{play2d}}
+\index{play2d@{play2d}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{play2d()}{play2d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int experimental\+::\+Audio\+Engine\+::play2d (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{bool}]{loop = {\ttfamily false},  }\item[{float}]{volume = {\ttfamily 1.0f},  }\item[{const \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$}]{profile = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Play 2d sound.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path of an audio file. \\
+\hline
+{\em loop} & Whether audio instance loop or not. \\
+\hline
+{\em volume} & Volume value (range from 0.\+0 to 1.\+0). \\
+\hline
+{\em profile} & A profile for audio instance. When profile is not specified, default profile will be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An audio ID. It allows you to dynamically change the behavior of an audio instance on the fly.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}\label{classexperimental_1_1AudioEngine_ae7693b0ea2b5f2334153ebdf7ccb93d2}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!play2d@{play2d}}
+\index{play2d@{play2d}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{play2d()}{play2d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int experimental\+::\+Audio\+Engine\+::play2d (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{bool}]{loop = {\ttfamily false},  }\item[{float}]{volume = {\ttfamily 1.0f},  }\item[{const \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile} $\ast$}]{profile = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Play 2d sound.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path of an audio file. \\
+\hline
+{\em loop} & Whether audio instance loop or not. \\
+\hline
+{\em volume} & Volume value (range from 0.\+0 to 1.\+0). \\
+\hline
+{\em profile} & A profile for audio instance. When profile is not specified, default profile will be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An audio ID. It allows you to dynamically change the behavior of an audio instance on the fly.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \hyperlink{classexperimental_1_1AudioProfile}{Audio\+Profile}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}\label{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!preload@{preload}}
+\index{preload@{preload}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{preload()}{preload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::preload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Preload audio file. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The file path of an audio. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}\label{classexperimental_1_1AudioEngine_ad4c37774e18b30de41731d22d467b0df}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!preload@{preload}}
+\index{preload@{preload}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{preload()}{preload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::preload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Preload audio file. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The file path of an audio. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}\label{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!preload@{preload}}
+\index{preload@{preload}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{preload()}{preload()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::preload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{std\+::function$<$ void(bool is\+Success)$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Preload audio file. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The file path of an audio. \\
+\hline
+{\em callback} & A callback which will be called after loading is finished. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}\label{classexperimental_1_1AudioEngine_abcbafbd980c76ea03872286fd9211b80}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!preload@{preload}}
+\index{preload@{preload}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{preload()}{preload()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::preload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{std\+::function$<$ void(bool is\+Success)$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Preload audio file. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The file path of an audio. \\
+\hline
+{\em callback} & A callback which will be called after loading is finished. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}\label{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!resume@{resume}}
+\index{resume@{resume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::resume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resume an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}\label{classexperimental_1_1AudioEngine_aa45189f10c2113f68728ee2157e8eb55}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!resume@{resume}}
+\index{resume@{resume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{resume()}{resume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::resume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resume an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}\label{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!resume\+All@{resume\+All}}
+\index{resume\+All@{resume\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{resume\+All()}{resumeAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::resume\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resume all suspended audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}\label{classexperimental_1_1AudioEngine_a8618e28e77cfeebe8cf6b2798ae90ae9}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!resume\+All@{resume\+All}}
+\index{resume\+All@{resume\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{resume\+All()}{resumeAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::resume\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resume all suspended audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}\label{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Current\+Time@{set\+Current\+Time}}
+\index{set\+Current\+Time@{set\+Current\+Time}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Current\+Time()}{setCurrentTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::set\+Current\+Time (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{float}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the current playback position of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em sec} & The offset in seconds from the start to seek to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}\label{classexperimental_1_1AudioEngine_aa61e7a0b9ad959c203944ad701486dab}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Current\+Time@{set\+Current\+Time}}
+\index{set\+Current\+Time@{set\+Current\+Time}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Current\+Time()}{setCurrentTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::set\+Current\+Time (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{float}]{sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the current playback position of an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em sec} & The offset in seconds from the start to seek to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ae004f7785eb2ad3aa31db7db912d4622}\label{classexperimental_1_1AudioEngine_ae004f7785eb2ad3aa31db7db912d4622}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Enabled@{set\+Enabled}}
+\index{set\+Enabled@{set\+Enabled}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Enabled()}{setEnabled()}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{is\+Enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Whether to enable playing audios \begin{DoxyNote}{Note}
+If it\textquotesingle{}s disabled, current playing audios will be stopped and the later \textquotesingle{}preload\textquotesingle{}, \textquotesingle{}play2d\textquotesingle{} methods will take no effects. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}\label{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Finish\+Callback@{set\+Finish\+Callback}}
+\index{set\+Finish\+Callback@{set\+Finish\+Callback}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Finish\+Callback()}{setFinishCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Finish\+Callback (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{const std\+::function$<$ void(int, const std\+::string \&)$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Register a callback to be invoked when an audio instance has completed playing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}\label{classexperimental_1_1AudioEngine_a641027899b3a5145093c4db1fae2d1ed}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Finish\+Callback@{set\+Finish\+Callback}}
+\index{set\+Finish\+Callback@{set\+Finish\+Callback}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Finish\+Callback()}{setFinishCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Finish\+Callback (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{const std\+::function$<$ void(int, const std\+::string \&)$>$ \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Register a callback to be invoked when an audio instance has completed playing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}\label{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Loop@{set\+Loop}}
+\index{set\+Loop@{set\+Loop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Loop()}{setLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Loop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets whether an audio instance loop or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em loop} & Whether audio instance loop or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}\label{classexperimental_1_1AudioEngine_a4d9aa8312f064b9bcdc06888c4306c23}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Loop@{set\+Loop}}
+\index{set\+Loop@{set\+Loop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Loop()}{setLoop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Loop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets whether an audio instance loop or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em loop} & Whether audio instance loop or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}\label{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Max\+Audio\+Instance@{set\+Max\+Audio\+Instance}}
+\index{set\+Max\+Audio\+Instance@{set\+Max\+Audio\+Instance}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Max\+Audio\+Instance()}{setMaxAudioInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::set\+Max\+Audio\+Instance (\begin{DoxyParamCaption}\item[{int}]{max\+Instances }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the maximum number of simultaneous audio instance for \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Instances} & The maximum number of simultaneous audio instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}\label{classexperimental_1_1AudioEngine_a98a3cd56d393541c2c9d82620bbe0d84}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Max\+Audio\+Instance@{set\+Max\+Audio\+Instance}}
+\index{set\+Max\+Audio\+Instance@{set\+Max\+Audio\+Instance}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Max\+Audio\+Instance()}{setMaxAudioInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool experimental\+::\+Audio\+Engine\+::set\+Max\+Audio\+Instance (\begin{DoxyParamCaption}\item[{int}]{max\+Instances }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the maximum number of simultaneous audio instance for \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Instances} & The maximum number of simultaneous audio instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}\label{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Volume@{set\+Volume}}
+\index{set\+Volume@{set\+Volume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Volume()}{setVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Volume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{float}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets volume for an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em volume} & Volume value (range from 0.\+0 to 1.\+0). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}\label{classexperimental_1_1AudioEngine_a6759e7f6b0e2da64523949cf361a083e}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!set\+Volume@{set\+Volume}}
+\index{set\+Volume@{set\+Volume}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{set\+Volume()}{setVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::set\+Volume (\begin{DoxyParamCaption}\item[{int}]{audio\+ID,  }\item[{float}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets volume for an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+{\em volume} & Volume value (range from 0.\+0 to 1.\+0). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}\label{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!stop@{stop}}
+\index{stop@{stop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::stop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}\label{classexperimental_1_1AudioEngine_a932422ecf6818ac5e81e4530e556fd1e}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!stop@{stop}}
+\index{stop@{stop}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{stop()}{stop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::stop (\begin{DoxyParamCaption}\item[{int}]{audio\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop an audio instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+ID} & An audio\+ID returned by the play2d function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}\label{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!stop\+All@{stop\+All}}
+\index{stop\+All@{stop\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{stop\+All()}{stopAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::stop\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop all audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}\label{classexperimental_1_1AudioEngine_a911b9b9c56cf769fd561334870533d13}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!stop\+All@{stop\+All}}
+\index{stop\+All@{stop\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{stop\+All()}{stopAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::stop\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Stop all audio instances. \mbox{\Hypertarget{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}\label{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!uncache@{uncache}}
+\index{uncache@{uncache}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{uncache()}{uncache()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::uncache (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Uncache the audio data from internal buffer. \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine} cache audio data on ios,mac, and win32 platform.
+
+\begin{DoxyWarning}{Warning}
+This can lead to stop related audio first. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \hyperlink{classAudio}{Audio} file path. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}\label{classexperimental_1_1AudioEngine_ad4845a8b7855fc7f40058c86069f2a80}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!uncache@{uncache}}
+\index{uncache@{uncache}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{uncache()}{uncache()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::uncache (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Uncache the audio data from internal buffer. \hyperlink{classexperimental_1_1AudioEngine}{Audio\+Engine} cache audio data on ios,mac, and win32 platform.
+
+\begin{DoxyWarning}{Warning}
+This can lead to stop related audio first. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \hyperlink{classAudio}{Audio} file path. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}\label{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!uncache\+All@{uncache\+All}}
+\index{uncache\+All@{uncache\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{uncache\+All()}{uncacheAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::uncache\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Uncache all audio data from internal buffer.
+
+\begin{DoxyWarning}{Warning}
+All audio will be stopped first. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}\label{classexperimental_1_1AudioEngine_acd68e5058545e8daf10e28c5e66e8ef5}} 
+\index{experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}!uncache\+All@{uncache\+All}}
+\index{uncache\+All@{uncache\+All}!experimental\+::\+Audio\+Engine@{experimental\+::\+Audio\+Engine}}
+\subsubsection{\texorpdfstring{uncache\+All()}{uncacheAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void experimental\+::\+Audio\+Engine\+::uncache\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Uncache all audio data from internal buffer.
+
+\begin{DoxyWarning}{Warning}
+All audio will be stopped first. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/audio/include/Audio\+Engine.\+h\end{DoxyCompactItemize}

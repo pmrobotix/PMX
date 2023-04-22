@@ -37,7 +37,7 @@ void ServoObjectsSystem::setup(int servo, AServoDriver::ServoType type, int valu
 }
 
 //keep_millisec = -1 : wait moving until position
-//keep_millisec > 0 : time to wait
+//keep_millisec > 0 : time to wait millisec
 //keep_millisec = 0 : continue and hold
 void ServoObjectsSystem::deployWithVelocity(int servo, int pos, int keep_millisec , int velocity )
 {
@@ -124,13 +124,16 @@ void ServoObjectsSystem::deploy(int servo, int pos, int keep_millisec) {
     //int torque = getTorque(servo);
     logger().info() << "servo=" << servo << " pos= " << pos << logs::end;
 }
+
+
 void ServoObjectsSystem::setTorque(int servo, int torque) {
-    logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+    servodriver_->setRate(servo, torque); //torque
 }
 int ServoObjectsSystem::getTorque(int servo) {
     return servodriver_->getTorque(servo);
 }
 
+//Pour oposul , milli0to90 est la vitesse de 0 à 1023
 int ServoObjectsSystem::setPos(int servo, int pos, int milli0to90) {
 
     hold(servo);
@@ -153,7 +156,8 @@ int ServoObjectsSystem::getSpeed(int servo) {
     return -1;
 }
 void ServoObjectsSystem::setSpeed(int servo, int speed) {
-    servodriver_->setRate(servo, speed);
+    logger().error() << "NOT IMPLEMENTED !!!" << logs::end;
+    //servodriver_->setRate(servo, speed); //torque //TODO le vrai setspeed
 }
 
 void ServoObjectsSystem::turn(int servo, int speed_percent, int keep_millisec) {

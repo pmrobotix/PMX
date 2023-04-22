@@ -1,0 +1,105 @@
+\hypertarget{robot__traj__wrappers_8h}{}\section{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+traj\+\_\+wrappers.h File Reference}
+\label{robot__traj__wrappers_8h}\index{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+traj\+\_\+wrappers.\+h@{/home/pmx/git/\+P\+M\+X/test/\+Motion\+Control/robot\+\_\+traj\+\_\+wrappers.\+h}}
+{\ttfamily \#include \char`\"{}robot\+\_\+trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}path\+\_\+manager.\+h\char`\"{}}\newline
+Include dependency graph for robot\+\_\+traj\+\_\+wrappers.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__traj__wrappers_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{robot__traj__wrappers_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_a64cf9e0856cae76bf4ec0b37528f9998}\label{robot__traj__wrappers_8h_a64cf9e0856cae76bf4ec0b37528f9998}} 
+\#define \hyperlink{robot__traj__wrappers_8h_a64cf9e0856cae76bf4ec0b37528f9998}{motion\+\_\+\+Do\+Arc\+Left\+Forward}(angle,  radius)~\hyperlink{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}{motion\+\_\+\+Do\+Arc\+Rotate}(fabs(angle), fabs(radius))
+\begin{DoxyCompactList}\small\item\em macro that translate movement for arc circle trajectory \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_aa77776699df36324443e145655abd7f5}\label{robot__traj__wrappers_8h_aa77776699df36324443e145655abd7f5}} 
+\#define {\bfseries motion\+\_\+\+Do\+Arc\+Right\+Forward}(angle,  radius)~\hyperlink{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}{motion\+\_\+\+Do\+Arc\+Rotate}(-\/fabs(angle), -\/fabs(radius))
+\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_af7ae57ee4ce98eeda17b817c1fce7712}\label{robot__traj__wrappers_8h_af7ae57ee4ce98eeda17b817c1fce7712}} 
+\#define {\bfseries motion\+\_\+\+Do\+Arc\+Left\+Backward}(angle,  radius)~\hyperlink{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}{motion\+\_\+\+Do\+Arc\+Rotate}(-\/fabs(angle), fabs(radius))
+\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_a694bbc6ee53ff9cfdd2d7f3ad29353e4}\label{robot__traj__wrappers_8h_a694bbc6ee53ff9cfdd2d7f3ad29353e4}} 
+\#define {\bfseries motion\+\_\+\+Do\+Arc\+Right\+Backward}(angle,  radius)~\hyperlink{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}{motion\+\_\+\+Do\+Arc\+Rotate}(fabs(angle), -\/fabs(radius))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_ae9403c6e4dac30ccecfacee3052835bf}{motion\+\_\+\+Do\+Line} (float dist)
+\item 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_aeb796c06f352d5f612ea8fd2577c50da}{motion\+\_\+\+Do\+Rotate} (float angle)
+\item 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}{motion\+\_\+\+Do\+Arc\+Rotate} (float angle, float radius)
+\item 
+void \hyperlink{robot__traj__wrappers_8h_a726edb6ae0f497819752969a28677c5d}{compute\+Alpha\+Delta} (float x1, float y1, float theta1, float x2, float y2, float $\ast$out\+\_\+angle, float $\ast$out\+\_\+dist)
+\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_ad464d47676a563528f1977f6f1fd3a74}\label{robot__traj__wrappers_8h_ad464d47676a563528f1977f6f1fd3a74}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_ad464d47676a563528f1977f6f1fd3a74}{motion\+\_\+\+Go\+To\+T\+S\+L\+From} (float x1, float y1, float theta1, float x2, float y2)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x2,y2) from (x1,y1,theta1) using Turn-\/\+Stop-\/\+Line motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_a026c7093b8d196995b82034bbd2b280e}\label{robot__traj__wrappers_8h_a026c7093b8d196995b82034bbd2b280e}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_a026c7093b8d196995b82034bbd2b280e}{motion\+\_\+\+Go\+To\+T\+SL} (float x, float y)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x,y) using Turn-\/\+Stop-\/\+Line motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_ab06360b516fa18ed5e3ff693cbca3781}\label{robot__traj__wrappers_8h_ab06360b516fa18ed5e3ff693cbca3781}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_ab06360b516fa18ed5e3ff693cbca3781}{motion\+\_\+\+Go\+To\+Speed} (float x, float y)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} (x,y) using speed motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_ab6cbb3d4050ffe423da912ab41f8eac3}\label{robot__traj__wrappers_8h_ab6cbb3d4050ffe423da912ab41f8eac3}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_ab6cbb3d4050ffe423da912ab41f8eac3}{motion\+\_\+\+Go\+To\+Speed\+Path} (const \hyperlink{structPosition}{Position} $\ast$pos, int nb)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGoto}{Goto} a \hyperlink{protocollist-p}{list} of (x,y) position using speed motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{robot__traj__wrappers_8h_ae4d9993f2fc3c78f3fa80f5d5d65174f}\label{robot__traj__wrappers_8h_ae4d9993f2fc3c78f3fa80f5d5d65174f}} 
+\hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} \hyperlink{robot__traj__wrappers_8h_ae4d9993f2fc3c78f3fa80f5d5d65174f}{motion\+\_\+\+Orient\+To} (float angle)
+\begin{DoxyCompactList}\small\item\em Orient toward the given angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julien Rouviere $<$gmail address \+: julien.\+rouviere...$>$ 
+
+Club\+Elek \href{http://clubelek.insa-lyon.fr}{\tt http\+://clubelek.\+insa-\/lyon.\+fr} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{robot__traj__wrappers_8h_a726edb6ae0f497819752969a28677c5d}\label{robot__traj__wrappers_8h_a726edb6ae0f497819752969a28677c5d}} 
+\index{robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}!compute\+Alpha\+Delta@{compute\+Alpha\+Delta}}
+\index{compute\+Alpha\+Delta@{compute\+Alpha\+Delta}!robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}}
+\subsubsection{\texorpdfstring{compute\+Alpha\+Delta()}{computeAlphaDelta()}}
+{\footnotesize\ttfamily void compute\+Alpha\+Delta (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{theta1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{float $\ast$}]{out\+\_\+angle,  }\item[{float $\ast$}]{out\+\_\+dist }\end{DoxyParamCaption})}
+
+Compute the displacement needed on alpha and delta to reach the point x2, y2 from the point x1, y1 starting with the orientation theta1 \mbox{\Hypertarget{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}\label{robot__traj__wrappers_8h_a7ea672d580d99efbeb8cb39b8d6915f4}} 
+\index{robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}!motion\+\_\+\+Do\+Arc\+Rotate@{motion\+\_\+\+Do\+Arc\+Rotate}}
+\index{motion\+\_\+\+Do\+Arc\+Rotate@{motion\+\_\+\+Do\+Arc\+Rotate}!robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Arc\+Rotate()}{motion\_DoArcRotate()}}
+{\footnotesize\ttfamily \hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} motion\+\_\+\+Do\+Arc\+Rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{robot__trajectory_8h_a5ebf263b2b590f0593e91b42b31d0a89}{motion\+\_\+\+Arc\+Rotate} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{robot__traj__wrappers_8h_ae9403c6e4dac30ccecfacee3052835bf}\label{robot__traj__wrappers_8h_ae9403c6e4dac30ccecfacee3052835bf}} 
+\index{robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}!motion\+\_\+\+Do\+Line@{motion\+\_\+\+Do\+Line}}
+\index{motion\+\_\+\+Do\+Line@{motion\+\_\+\+Do\+Line}!robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Line()}{motion\_DoLine()}}
+{\footnotesize\ttfamily \hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} motion\+\_\+\+Do\+Line (\begin{DoxyParamCaption}\item[{float}]{dist }\end{DoxyParamCaption})}
+
+This module provide higher level control on the motion control module AI and strategy software can use this primitives directly Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{robot__trajectory_8h_a13f48fd39f56020dc05e17852c6492e5}{motion\+\_\+\+Line} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{robot__traj__wrappers_8h_aeb796c06f352d5f612ea8fd2577c50da}\label{robot__traj__wrappers_8h_aeb796c06f352d5f612ea8fd2577c50da}} 
+\index{robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}!motion\+\_\+\+Do\+Rotate@{motion\+\_\+\+Do\+Rotate}}
+\index{motion\+\_\+\+Do\+Rotate@{motion\+\_\+\+Do\+Rotate}!robot\+\_\+traj\+\_\+wrappers.\+h@{robot\+\_\+traj\+\_\+wrappers.\+h}}
+\subsubsection{\texorpdfstring{motion\+\_\+\+Do\+Rotate()}{motion\_DoRotate()}}
+{\footnotesize\ttfamily \hyperlink{path__manager_8h_adb3360abeb29758da93865c8afcb80eb}{T\+R\+A\+J\+\_\+\+S\+T\+A\+TE} motion\+\_\+\+Do\+Rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Compute and launch trajectory \begin{DoxySeeAlso}{See also}
+\hyperlink{robot__trajectory_8h_a3cecc2ec8ef2ef0de805d5bcc7915fa9}{motion\+\_\+\+Rotate} 
+\end{DoxySeeAlso}

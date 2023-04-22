@@ -1,0 +1,267 @@
+\hypertarget{classGIM__TRIANGLE}{}\section{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE Class Reference}
+\label{classGIM__TRIANGLE}\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+
+
+Class for colliding triangles.  
+
+
+
+
+{\ttfamily \#include $<$gim\+\_\+tri\+\_\+collision.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_acbe4f54e9838827ca7341d4caeb18fcc}\label{classGIM__TRIANGLE_acbe4f54e9838827ca7341d4caeb18fcc}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} {\bfseries get\+\_\+box} () const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a72f96413abaeca198cc013800b1b2c7d}\label{classGIM__TRIANGLE_a72f96413abaeca198cc013800b1b2c7d}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+normal} (bt\+Vector3 \&normal) const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a57e15b754d9a2af873dd0655abe12410}\label{classGIM__TRIANGLE_a57e15b754d9a2af873dd0655abe12410}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+plane} (\hyperlink{classbtVector4}{bt\+Vector4} \&plane) const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_ab118892e21f9683a91207072ada1d179}\label{classGIM__TRIANGLE_ab118892e21f9683a91207072ada1d179}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries apply\+\_\+transform} (const bt\+Transform \&trans)
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a63a2c22d4532c93c5270d7f4216dbf12}\label{classGIM__TRIANGLE_a63a2c22d4532c93c5270d7f4216dbf12}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+edge\+\_\+plane} (G\+U\+I\+NT edge\+\_\+index, const bt\+Vector3 \&triangle\+\_\+normal, \hyperlink{classbtVector4}{bt\+Vector4} \&plane) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void \hyperlink{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}{get\+\_\+triangle\+\_\+transform} (bt\+Transform \&triangle\+\_\+transform) const
+\begin{DoxyCompactList}\small\item\em Gets the relative transformation of this triangle. \end{DoxyCompactList}\item 
+bool \hyperlink{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}{collide\+\_\+triangle\+\_\+hard\+\_\+test} (const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&other, \hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&contact\+\_\+data) const
+\begin{DoxyCompactList}\small\item\em Test triangles by finding separating axis. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}{collide\+\_\+triangle} (const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&other, \hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&contact\+\_\+data) const
+\begin{DoxyCompactList}\small\item\em Test boxes before doing hard test. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}{get\+\_\+uv\+\_\+parameters} (const bt\+Vector3 \&point, const bt\+Vector3 \&tri\+\_\+plane, G\+R\+E\+AL \&u, G\+R\+E\+AL \&v) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}{is\+\_\+point\+\_\+inside} (const bt\+Vector3 \&point, const bt\+Vector3 \&tri\+\_\+normal) const
+\begin{DoxyCompactList}\small\item\em is point in triangle beam? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}\label{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}{ray\+\_\+collision} (const bt\+Vector3 \&v\+Point, const bt\+Vector3 \&v\+Dir, bt\+Vector3 \&pout, bt\+Vector3 \&triangle\+\_\+normal, G\+R\+E\+AL \&tparam, G\+R\+E\+AL tmax=G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TY)
+\begin{DoxyCompactList}\small\item\em Bidireccional ray collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}\label{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}{ray\+\_\+collision\+\_\+front\+\_\+side} (const bt\+Vector3 \&v\+Point, const bt\+Vector3 \&v\+Dir, bt\+Vector3 \&pout, bt\+Vector3 \&triangle\+\_\+normal, G\+R\+E\+AL \&tparam, G\+R\+E\+AL tmax=G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TY)
+\begin{DoxyCompactList}\small\item\em one direccion ray collision \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_acbe4f54e9838827ca7341d4caeb18fcc}\label{classGIM__TRIANGLE_acbe4f54e9838827ca7341d4caeb18fcc}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE \hyperlink{classGIM__AABB}{G\+I\+M\+\_\+\+A\+A\+BB} {\bfseries get\+\_\+box} () const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a72f96413abaeca198cc013800b1b2c7d}\label{classGIM__TRIANGLE_a72f96413abaeca198cc013800b1b2c7d}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+normal} (bt\+Vector3 \&normal) const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a57e15b754d9a2af873dd0655abe12410}\label{classGIM__TRIANGLE_a57e15b754d9a2af873dd0655abe12410}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+plane} (\hyperlink{classbtVector4}{bt\+Vector4} \&plane) const
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_ab118892e21f9683a91207072ada1d179}\label{classGIM__TRIANGLE_ab118892e21f9683a91207072ada1d179}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries apply\+\_\+transform} (const bt\+Transform \&trans)
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a63a2c22d4532c93c5270d7f4216dbf12}\label{classGIM__TRIANGLE_a63a2c22d4532c93c5270d7f4216dbf12}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void {\bfseries get\+\_\+edge\+\_\+plane} (G\+U\+I\+NT edge\+\_\+index, const bt\+Vector3 \&triangle\+\_\+normal, \hyperlink{classbtVector4}{bt\+Vector4} \&plane) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void \hyperlink{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}{get\+\_\+triangle\+\_\+transform} (bt\+Transform \&triangle\+\_\+transform) const
+\begin{DoxyCompactList}\small\item\em Gets the relative transformation of this triangle. \end{DoxyCompactList}\item 
+bool \hyperlink{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}{collide\+\_\+triangle\+\_\+hard\+\_\+test} (const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&other, \hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&contact\+\_\+data) const
+\begin{DoxyCompactList}\small\item\em Test triangles by finding separating axis. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}{collide\+\_\+triangle} (const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&other, \hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&contact\+\_\+data) const
+\begin{DoxyCompactList}\small\item\em Test boxes before doing hard test. \end{DoxyCompactList}\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}{get\+\_\+uv\+\_\+parameters} (const bt\+Vector3 \&point, const bt\+Vector3 \&tri\+\_\+plane, G\+R\+E\+AL \&u, G\+R\+E\+AL \&v) const
+\item 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}{is\+\_\+point\+\_\+inside} (const bt\+Vector3 \&point, const bt\+Vector3 \&tri\+\_\+normal) const
+\begin{DoxyCompactList}\small\item\em is point in triangle beam? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}\label{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_a2942ca686a994c2d112ad356c2a4e7ad}{ray\+\_\+collision} (const bt\+Vector3 \&v\+Point, const bt\+Vector3 \&v\+Dir, bt\+Vector3 \&pout, bt\+Vector3 \&triangle\+\_\+normal, G\+R\+E\+AL \&tparam, G\+R\+E\+AL tmax=G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TY)
+\begin{DoxyCompactList}\small\item\em Bidireccional ray collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}\label{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}} 
+S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool \hyperlink{classGIM__TRIANGLE_a2b333284fd573994acf89b9085a61927}{ray\+\_\+collision\+\_\+front\+\_\+side} (const bt\+Vector3 \&v\+Point, const bt\+Vector3 \&v\+Dir, bt\+Vector3 \&pout, bt\+Vector3 \&triangle\+\_\+normal, G\+R\+E\+AL \&tparam, G\+R\+E\+AL tmax=G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+N\+F\+I\+N\+I\+TY)
+\begin{DoxyCompactList}\small\item\em one direccion ray collision \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a00e342655f73bea235450f154cc65091}\label{classGIM__TRIANGLE_a00e342655f73bea235450f154cc65091}} 
+bt\+Scalar {\bfseries m\+\_\+margin}
+\item 
+\mbox{\Hypertarget{classGIM__TRIANGLE_a1284827b1f29ce1375ef9a36159e05ed}\label{classGIM__TRIANGLE_a1284827b1f29ce1375ef9a36159e05ed}} 
+bt\+Vector3 {\bfseries m\+\_\+vertices} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for colliding triangles. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}\label{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!collide\+\_\+triangle@{collide\+\_\+triangle}}
+\index{collide\+\_\+triangle@{collide\+\_\+triangle}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{collide\+\_\+triangle()}{collide\_triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::collide\+\_\+triangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&}]{other,  }\item[{\hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&}]{contact\+\_\+data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test boxes before doing hard test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Triangle for collide \\
+\hline
+{\em contact\+\_\+data} & Structure for holding contact points, normal and penetration depth; The normal is pointing toward this triangle from the other triangle \textbackslash{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}\label{classGIM__TRIANGLE_ac8930de461fb35af599d7a28d0a02229}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!collide\+\_\+triangle@{collide\+\_\+triangle}}
+\index{collide\+\_\+triangle@{collide\+\_\+triangle}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{collide\+\_\+triangle()}{collide\_triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::collide\+\_\+triangle (\begin{DoxyParamCaption}\item[{const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&}]{other,  }\item[{\hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&}]{contact\+\_\+data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test boxes before doing hard test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Triangle for collide \\
+\hline
+{\em contact\+\_\+data} & Structure for holding contact points, normal and penetration depth; The normal is pointing toward this triangle from the other triangle \textbackslash{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}\label{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!collide\+\_\+triangle\+\_\+hard\+\_\+test@{collide\+\_\+triangle\+\_\+hard\+\_\+test}}
+\index{collide\+\_\+triangle\+\_\+hard\+\_\+test@{collide\+\_\+triangle\+\_\+hard\+\_\+test}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{collide\+\_\+triangle\+\_\+hard\+\_\+test()}{collide\_triangle\_hard\_test()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::collide\+\_\+triangle\+\_\+hard\+\_\+test (\begin{DoxyParamCaption}\item[{const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&}]{other,  }\item[{\hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&}]{contact\+\_\+data }\end{DoxyParamCaption}) const}
+
+
+
+Test triangles by finding separating axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Triangle for collide \\
+\hline
+{\em contact\+\_\+data} & Structure for holding contact points, normal and penetration depth; The normal is pointing toward this triangle from the other triangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}\label{classGIM__TRIANGLE_a60a6a90dccfd5f81663088847fbfae34}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!collide\+\_\+triangle\+\_\+hard\+\_\+test@{collide\+\_\+triangle\+\_\+hard\+\_\+test}}
+\index{collide\+\_\+triangle\+\_\+hard\+\_\+test@{collide\+\_\+triangle\+\_\+hard\+\_\+test}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{collide\+\_\+triangle\+\_\+hard\+\_\+test()}{collide\_triangle\_hard\_test()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::collide\+\_\+triangle\+\_\+hard\+\_\+test (\begin{DoxyParamCaption}\item[{const \hyperlink{classGIM__TRIANGLE}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE} \&}]{other,  }\item[{\hyperlink{structGIM__TRIANGLE__CONTACT__DATA}{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+O\+N\+T\+A\+C\+T\+\_\+\+D\+A\+TA} \&}]{contact\+\_\+data }\end{DoxyParamCaption}) const}
+
+
+
+Test triangles by finding separating axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Triangle for collide \\
+\hline
+{\em contact\+\_\+data} & Structure for holding contact points, normal and penetration depth; The normal is pointing toward this triangle from the other triangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}\label{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!get\+\_\+triangle\+\_\+transform@{get\+\_\+triangle\+\_\+transform}}
+\index{get\+\_\+triangle\+\_\+transform@{get\+\_\+triangle\+\_\+transform}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{get\+\_\+triangle\+\_\+transform()}{get\_triangle\_transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::get\+\_\+triangle\+\_\+transform (\begin{DoxyParamCaption}\item[{bt\+Transform \&}]{triangle\+\_\+transform }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the relative transformation of this triangle. 
+
+The transformation is oriented to the triangle normal , and aligned to the 1st edge of this triangle. The position corresponds to vertice 0\+:
+\begin{DoxyItemize}
+\item triangle normal corresponds to Z axis.
+\item 1st normalized edge corresponds to X axis, 
+\end{DoxyItemize}\mbox{\Hypertarget{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}\label{classGIM__TRIANGLE_a45e2c6e131c368afa12e210cf9166fbb}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!get\+\_\+triangle\+\_\+transform@{get\+\_\+triangle\+\_\+transform}}
+\index{get\+\_\+triangle\+\_\+transform@{get\+\_\+triangle\+\_\+transform}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{get\+\_\+triangle\+\_\+transform()}{get\_triangle\_transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE void G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::get\+\_\+triangle\+\_\+transform (\begin{DoxyParamCaption}\item[{bt\+Transform \&}]{triangle\+\_\+transform }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the relative transformation of this triangle. 
+
+The transformation is oriented to the triangle normal , and aligned to the 1st edge of this triangle. The position corresponds to vertice 0\+:
+\begin{DoxyItemize}
+\item triangle normal corresponds to Z axis.
+\item 1st normalized edge corresponds to X axis, 
+\end{DoxyItemize}\mbox{\Hypertarget{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}\label{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!get\+\_\+uv\+\_\+parameters@{get\+\_\+uv\+\_\+parameters}}
+\index{get\+\_\+uv\+\_\+parameters@{get\+\_\+uv\+\_\+parameters}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{get\+\_\+uv\+\_\+parameters()}{get\_uv\_parameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::get\+\_\+uv\+\_\+parameters (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{point,  }\item[{const bt\+Vector3 \&}]{tri\+\_\+plane,  }\item[{G\+R\+E\+AL \&}]{u,  }\item[{G\+R\+E\+AL \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Solve the System for u,v parameters\+:
+
+u$\ast$axe1\mbox{[}i1\mbox{]} + v$\ast$axe2\mbox{[}i1\mbox{]} = vecproj\mbox{[}i1\mbox{]} u$\ast$axe1\mbox{[}i2\mbox{]} + v$\ast$axe2\mbox{[}i2\mbox{]} = vecproj\mbox{[}i2\mbox{]}
+
+sustitute\+: v = (vecproj\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]})/axe2\mbox{[}i2\mbox{]}
+
+then the first equation in terms of \textquotesingle{}u\textquotesingle{}\+:
+
+--$>$ u$\ast$axe1\mbox{[}i1\mbox{]} + ((vecproj\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]})/axe2\mbox{[}i2\mbox{]})$\ast$axe2\mbox{[}i1\mbox{]} = vecproj\mbox{[}i1\mbox{]}
+
+--$>$ u$\ast$axe1\mbox{[}i1\mbox{]} + vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]} = vecproj\mbox{[}i1\mbox{]}
+
+--$>$ u$\ast$(axe1\mbox{[}i1\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]}) = vecproj\mbox{[}i1\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]}
+
+--$>$ u$\ast$((axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})/axe2\mbox{[}i2\mbox{]}) = (vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})/axe2\mbox{[}i2\mbox{]}
+
+--$>$ u$\ast$(axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}) = vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}
+
+--$>$ u = (vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}) /(axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})
+
+if 0.\+0$<$= u+v $<$=1.\+0 then they are inside of triangle \begin{DoxyVerb}\return false if the point is outside of triangle.This function  doesn't take the margin\end{DoxyVerb}
+ \mbox{\Hypertarget{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}\label{classGIM__TRIANGLE_aa35a00f5c7b9eeb8f0656be929294504}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!get\+\_\+uv\+\_\+parameters@{get\+\_\+uv\+\_\+parameters}}
+\index{get\+\_\+uv\+\_\+parameters@{get\+\_\+uv\+\_\+parameters}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{get\+\_\+uv\+\_\+parameters()}{get\_uv\_parameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::get\+\_\+uv\+\_\+parameters (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{point,  }\item[{const bt\+Vector3 \&}]{tri\+\_\+plane,  }\item[{G\+R\+E\+AL \&}]{u,  }\item[{G\+R\+E\+AL \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Solve the System for u,v parameters\+:
+
+u$\ast$axe1\mbox{[}i1\mbox{]} + v$\ast$axe2\mbox{[}i1\mbox{]} = vecproj\mbox{[}i1\mbox{]} u$\ast$axe1\mbox{[}i2\mbox{]} + v$\ast$axe2\mbox{[}i2\mbox{]} = vecproj\mbox{[}i2\mbox{]}
+
+sustitute\+: v = (vecproj\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]})/axe2\mbox{[}i2\mbox{]}
+
+then the first equation in terms of \textquotesingle{}u\textquotesingle{}\+:
+
+--$>$ u$\ast$axe1\mbox{[}i1\mbox{]} + ((vecproj\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]})/axe2\mbox{[}i2\mbox{]})$\ast$axe2\mbox{[}i1\mbox{]} = vecproj\mbox{[}i1\mbox{]}
+
+--$>$ u$\ast$axe1\mbox{[}i1\mbox{]} + vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]} -\/ u$\ast$axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]} = vecproj\mbox{[}i1\mbox{]}
+
+--$>$ u$\ast$(axe1\mbox{[}i1\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]}) = vecproj\mbox{[}i1\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}/axe2\mbox{[}i2\mbox{]}
+
+--$>$ u$\ast$((axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})/axe2\mbox{[}i2\mbox{]}) = (vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})/axe2\mbox{[}i2\mbox{]}
+
+--$>$ u$\ast$(axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}) = vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}
+
+--$>$ u = (vecproj\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ vecproj\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]}) /(axe1\mbox{[}i1\mbox{]}$\ast$axe2\mbox{[}i2\mbox{]} -\/ axe1\mbox{[}i2\mbox{]}$\ast$axe2\mbox{[}i1\mbox{]})
+
+if 0.\+0$<$= u+v $<$=1.\+0 then they are inside of triangle \begin{DoxyVerb}\return false if the point is outside of triangle.This function  doesn't take the margin\end{DoxyVerb}
+ \mbox{\Hypertarget{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}\label{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!is\+\_\+point\+\_\+inside@{is\+\_\+point\+\_\+inside}}
+\index{is\+\_\+point\+\_\+inside@{is\+\_\+point\+\_\+inside}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{is\+\_\+point\+\_\+inside()}{is\_point\_inside()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::is\+\_\+point\+\_\+inside (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{point,  }\item[{const bt\+Vector3 \&}]{tri\+\_\+normal }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+is point in triangle beam? 
+
+Test if point is in triangle, with m\+\_\+margin tolerance \mbox{\Hypertarget{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}\label{classGIM__TRIANGLE_ac465430340164aa45925762d3471b5f8}} 
+\index{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}!is\+\_\+point\+\_\+inside@{is\+\_\+point\+\_\+inside}}
+\index{is\+\_\+point\+\_\+inside@{is\+\_\+point\+\_\+inside}!G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE@{G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+\subsubsection{\texorpdfstring{is\+\_\+point\+\_\+inside()}{is\_point\_inside()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+M\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE bool G\+I\+M\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+::is\+\_\+point\+\_\+inside (\begin{DoxyParamCaption}\item[{const bt\+Vector3 \&}]{point,  }\item[{const bt\+Vector3 \&}]{tri\+\_\+normal }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+is point in triangle beam? 
+
+Test if point is in triangle, with m\+\_\+margin tolerance 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+tri\+\_\+collision.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/external/bullet/\+Bullet\+Collision/\+Gimpact/gim\+\_\+tri\+\_\+collision.\+cpp\end{DoxyCompactItemize}

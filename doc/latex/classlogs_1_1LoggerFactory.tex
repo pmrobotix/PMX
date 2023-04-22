@@ -1,0 +1,211 @@
+\hypertarget{classlogs_1_1LoggerFactory}{}\section{logs\+:\+:Logger\+Factory Class Reference}
+\label{classlogs_1_1LoggerFactory}\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+
+
+Cette classe assure l\textquotesingle{}initialisation du système de trace et son utilisation.  
+
+
+
+
+{\ttfamily \#include $<$Logger\+Factory.\+hpp$>$}
+
+
+
+Inheritance diagram for logs\+:\+:Logger\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classlogs_1_1LoggerFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logs\+:\+:Logger\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classlogs_1_1LoggerFactory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a4d89f093ecfe432ecb4fb8775dc4141f}\label{classlogs_1_1LoggerFactory_a4d89f093ecfe432ecb4fb8775dc4141f}} 
+void {\bfseries stop\+Log} ()
+\item 
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_ac5133c34af0e57e169fd50a260037b8b}\label{classlogs_1_1LoggerFactory_ac5133c34af0e57e169fd50a260037b8b}} 
+virtual \hyperlink{classlogs_1_1LoggerFactory_ac5133c34af0e57e169fd50a260037b8b}{$\sim$ Logger\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Logger}{Logger} $\ast$ \hyperlink{classlogs_1_1LoggerFactory_a212aa623f4b6bee12cb39e8017dde670}{root\+Logger} () const
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne le \hyperlink{classlogs_1_1Logger}{Logger} principal qui définit le niveau de trace par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a7d16182a3e1394b8bf14e21c9dfbda90}\label{classlogs_1_1LoggerFactory_a7d16182a3e1394b8bf14e21c9dfbda90}} 
+void \hyperlink{classlogs_1_1LoggerFactory_a7d16182a3e1394b8bf14e21c9dfbda90}{execute} ()
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}implementation de cette méthode détaille le traitement réalisé par ce thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlogs_1_1LoggerFactory}{Logger\+Factory} \& \hyperlink{classlogs_1_1LoggerFactory_a90478b91d7af2ef8841ded21e3521f69}{instance} ()
+\begin{DoxyCompactList}\small\item\em Cette méthode statique retourne l\textquotesingle{}instance unique de la classe \hyperlink{classlogs_1_1LoggerFactory}{Logger\+Factory}. \end{DoxyCompactList}\item 
+static const \hyperlink{classlogs_1_1Logger}{Logger} \& \hyperlink{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}{logger} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Cette méthode statique retourne un \hyperlink{classlogs_1_1Logger}{Logger} en fonction de son nom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_acee0ef15a4f8c1bfa8168d7085dff706}\label{classlogs_1_1LoggerFactory_acee0ef15a4f8c1bfa8168d7085dff706}} 
+void \hyperlink{classlogs_1_1LoggerFactory_acee0ef15a4f8c1bfa8168d7085dff706}{set\+Priority} (int p)
+\begin{DoxyCompactList}\small\item\em set the priority of this thread (can be different per robot using Looger\+Initialize.\+cpp). \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1LoggerFactory_ac89f19c0ffd71aa8cdc1c2d44c03809e}{add} (const std\+::string \&name, \hyperlink{classlogs_1_1Appender}{Appender} $\ast$\hyperlink{classlogs_1_1LoggerFactory_a75823b27a156f58a8d4061453a632c66}{appender})
+\begin{DoxyCompactList}\small\item\em Cette méthode ajoute un appender au système. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1LoggerFactory_a4a5dc780d448355be6eb117ed9a42a8b}{add} (\hyperlink{classlogs_1_1Logger}{Logger} $\ast$\hyperlink{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}{logger})
+\begin{DoxyCompactList}\small\item\em Cette méthode ajoute un logger au système. \end{DoxyCompactList}\item 
+void \hyperlink{classlogs_1_1LoggerFactory_a030b1b4309b60b662340faa0dad2ca1e}{add} (const \hyperlink{classlogs_1_1Level}{Level} \&level, const std\+::string \&logger\+Name, const std\+::string \&appender\+Name)
+\begin{DoxyCompactList}\small\item\em Cette méthode ajoute un logger au système. \end{DoxyCompactList}\item 
+\hyperlink{classlogs_1_1Appender}{Appender} $\ast$ \hyperlink{classlogs_1_1LoggerFactory_a75823b27a156f58a8d4061453a632c66}{appender} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Cette méthode retourne un \hyperlink{classlogs_1_1Appender}{Appender} en fonction de son nom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Cette classe assure l\textquotesingle{}initialisation du système de trace et son utilisation. 
+
+L\textquotesingle{}initialisation du système de traces est réalisé par la méthode initialize(). Cette méthode ne possède pas d\textquotesingle{}implémentation et doit être redéfini pour que le système puisse fonctionner et compiler.
+
+L\textquotesingle{}utilisation du système de traces se fait au travers de la méthode statique \hyperlink{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}{logger()}. Cette méthode retourne un logger en fonction d\textquotesingle{}un nom.
+
+Cette classe implémente un Design Pattern Singleton. L\textquotesingle{}instance unique de la classe est obtenue grace à la méthode statique \hyperlink{classlogs_1_1LoggerFactory_a90478b91d7af2ef8841ded21e3521f69}{instance()}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Documenter et coder la notion de hierarchie. \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_ac89f19c0ffd71aa8cdc1c2d44c03809e}\label{classlogs_1_1LoggerFactory_ac89f19c0ffd71aa8cdc1c2d44c03809e}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!add@{add}}
+\index{add@{add}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+Factory\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\hyperlink{classlogs_1_1Appender}{logs\+::\+Appender} $\ast$}]{appender }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode ajoute un appender au système. 
+
+Cette méthode doit être utilisée par l\textquotesingle{}implémentation de la méthode {\ttfamily initialize()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom de l\textquotesingle{}appender à ajouter au système. \\
+\hline
+{\em appender} & Le logger à ajouter au système. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a4a5dc780d448355be6eb117ed9a42a8b}\label{classlogs_1_1LoggerFactory_a4a5dc780d448355be6eb117ed9a42a8b}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!add@{add}}
+\index{add@{add}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+Factory\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{classlogs_1_1Logger}{Logger} $\ast$}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode ajoute un logger au système. 
+
+Cette méthode doit être utilisée par l\textquotesingle{}implémentation de la méthode {\ttfamily initialize()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & Le logger à ajouter au système. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a030b1b4309b60b662340faa0dad2ca1e}\label{classlogs_1_1LoggerFactory_a030b1b4309b60b662340faa0dad2ca1e}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!add@{add}}
+\index{add@{add}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void logs\+::\+Logger\+Factory\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classlogs_1_1Level}{Level} \&}]{level,  }\item[{const std\+::string \&}]{logger\+Name,  }\item[{const std\+::string \&}]{appender\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode ajoute un logger au système. 
+
+Cette méthode doit être utilisée par l\textquotesingle{}implémentation de la méthode {\ttfamily initialize()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Le niveau associé au logger. \\
+\hline
+{\em logger\+Name} & Le nom du logger à ajouter au système. \\
+\hline
+{\em appender\+Name} & Le nom de l\textquotesingle{}appender à utilisé pour ce logger. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a75823b27a156f58a8d4061453a632c66}\label{classlogs_1_1LoggerFactory_a75823b27a156f58a8d4061453a632c66}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!appender@{appender}}
+\index{appender@{appender}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{appender()}{appender()}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Appender}{logs\+::\+Appender} $\ast$ logs\+::\+Logger\+Factory\+::appender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cette méthode retourne un \hyperlink{classlogs_1_1Appender}{Appender} en fonction de son nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}appender à retourner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}objet \hyperlink{classlogs_1_1Appender}{Appender} associé au paramètre {\ttfamily nom}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a90478b91d7af2ef8841ded21e3521f69}\label{classlogs_1_1LoggerFactory_a90478b91d7af2ef8841ded21e3521f69}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!instance@{instance}}
+\index{instance@{instance}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \hyperlink{classlogs_1_1LoggerFactory}{Logger\+Factory}\& logs\+::\+Logger\+Factory\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Cette méthode statique retourne l\textquotesingle{}instance unique de la classe \hyperlink{classlogs_1_1LoggerFactory}{Logger\+Factory}. 
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}instance unique de la classe. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}\label{classlogs_1_1LoggerFactory_a82585b5de73e471e06cafdccc3b3721e}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!logger@{logger}}
+\index{logger@{logger}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{logger()}{logger()}}
+{\footnotesize\ttfamily const \hyperlink{classlogs_1_1Logger}{logs\+::\+Logger} \& logs\+::\+Logger\+Factory\+::logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Cette méthode statique retourne un \hyperlink{classlogs_1_1Logger}{Logger} en fonction de son nom. 
+
+Si le logger demandé a été créé lors de l\textquotesingle{}initialisation du système de traces, celui-\/ci sera retourné tel qu\textquotesingle{}il a été configuré. Sinon, le \hyperlink{classlogs_1_1Logger}{Logger} par défaut (root\+Logger) sera retourné.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du logger a retourner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le logger associé au paramètre {\ttfamily nom}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogs_1_1LoggerFactory_a212aa623f4b6bee12cb39e8017dde670}\label{classlogs_1_1LoggerFactory_a212aa623f4b6bee12cb39e8017dde670}} 
+\index{logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}!root\+Logger@{root\+Logger}}
+\index{root\+Logger@{root\+Logger}!logs\+::\+Logger\+Factory@{logs\+::\+Logger\+Factory}}
+\subsubsection{\texorpdfstring{root\+Logger()}{rootLogger()}}
+{\footnotesize\ttfamily \hyperlink{classlogs_1_1Logger}{Logger}$\ast$ logs\+::\+Logger\+Factory\+::root\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cette méthode retourne le \hyperlink{classlogs_1_1Logger}{Logger} principal qui définit le niveau de trace par défaut. 
+
+\begin{DoxyReturn}{Returns}
+Le logger principal du système. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{LoggerFactory_8hpp}{Logger\+Factory.\+hpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Bot-\/\+A\+P\+F9328.\+Main/\hyperlink{Bot-APF9328_8Main_2LoggerInitialize_8cpp}{Logger\+Initialize.\+cpp}\item 
+/home/pmx/git/\+P\+M\+X/src/\+Log/\hyperlink{LoggerFactory_8cpp}{Logger\+Factory.\+cpp}\end{DoxyCompactItemize}

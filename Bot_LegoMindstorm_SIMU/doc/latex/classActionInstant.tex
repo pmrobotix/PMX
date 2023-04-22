@@ -1,0 +1,264 @@
+\hypertarget{classActionInstant}{}\section{Action\+Instant Class Reference}
+\label{classActionInstant}\index{Action\+Instant@{Action\+Instant}}
+
+
+Instant actions are immediate actions. They don\textquotesingle{}t have a duration like the Interval\+Action actions.  
+
+
+
+
+{\ttfamily \#include $<$C\+C\+Action\+Instant.\+h$>$}
+
+
+
+Inheritance diagram for Action\+Instant\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionInstant__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Instant\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classActionInstant__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classActionInstant}{Action\+Instant} $\ast$ \hyperlink{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}{clone} () const override
+\item 
+virtual \hyperlink{classActionInstant}{Action\+Instant} $\ast$ \hyperlink{classActionInstant_aeb1870802c509e1f4111c863a28e9262}{reverse} () const override
+\item 
+virtual bool \hyperlink{classActionInstant_a3979d0556340173cdf58111665a96afd}{is\+Done} () const override
+\item 
+virtual void \hyperlink{classActionInstant_ab6c8b1bb612803681a2727a1d5d7b5df}{step} (float dt) override
+\item 
+virtual void \hyperlink{classActionInstant_a59875bf08cd1f58c0c8c6693ac540ade}{update} (float time) override
+\item 
+virtual \hyperlink{classActionInstant}{Action\+Instant} $\ast$ \hyperlink{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}{clone} () const override
+\item 
+virtual \hyperlink{classActionInstant}{Action\+Instant} $\ast$ \hyperlink{classActionInstant_aeb1870802c509e1f4111c863a28e9262}{reverse} () const override
+\item 
+virtual void \hyperlink{classActionInstant_a47cff49ef73e126e5e9d6c26872a9e23}{start\+With\+Target} (\hyperlink{classNode}{Node} $\ast$target) override
+\item 
+virtual bool \hyperlink{classActionInstant_a9d54eff7c6e29764843fbbb965643643}{is\+Done} () const override
+\item 
+virtual void \hyperlink{classActionInstant_ae1478ff1e34788247a0092dbd431c825}{step} (float dt) override
+\item 
+virtual void \hyperlink{classActionInstant_ab1da09b6408b3477b7ff75be8e58de0d}{update} (float time) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Instant actions are immediate actions. They don\textquotesingle{}t have a duration like the Interval\+Action actions. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}\label{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}} 
+\index{Action\+Instant@{Action\+Instant}!clone@{clone}}
+\index{clone@{clone}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionInstant}{Action\+Instant}$\ast$ Action\+Instant\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFiniteTimeAction_a44813fca4fdf22f367a4657147dd150b}{Finite\+Time\+Action}.
+
+
+
+Reimplemented in \hyperlink{class____CCCallFuncO_a83119c4b99a7f866556d0e2945ebd61b}{\+\_\+\+\_\+\+C\+C\+Call\+FuncO}, \hyperlink{class____CCCallFuncO_ae01d43dd90e3052c278e1431097c2b2e}{\+\_\+\+\_\+\+C\+C\+Call\+FuncO}, \hyperlink{class____CCCallFuncND_a1c4550d2841e8c7469f2831bedfa2726}{\+\_\+\+\_\+\+C\+C\+Call\+Func\+ND}, \hyperlink{class____CCCallFuncND_a0b1d35734a49b6c12144e4b025fe84eb}{\+\_\+\+\_\+\+C\+C\+Call\+Func\+ND}, \hyperlink{classCallFuncN_aad41687c463cb5d6e9a5879b0dd8b1e3}{Call\+FuncN}, \hyperlink{classCallFuncN_a0284c35f23aa8b68bc921eb044b6dd54}{Call\+FuncN}, \hyperlink{classReuseGrid_a8a2953d1479f6753fa7b6c82864c5781}{Reuse\+Grid}, \hyperlink{classReuseGrid_ac673b0ea0d616453756f40c4d04943ca}{Reuse\+Grid}, \hyperlink{classStopGrid_a08d436f2ede344933b7e7914ba5bc16d}{Stop\+Grid}, \hyperlink{classStopGrid_a3ab7a499f088f1ef4ce41a4131761bbf}{Stop\+Grid}, \hyperlink{classCallFunc_a29d4c56d05c63d066a99601c7f9e32cc}{Call\+Func}, \hyperlink{classCallFunc_a87c2d0fecf4d8ae9d4b58a28e594daf0}{Call\+Func}, \hyperlink{classPlace_a9207d39fa23c9cfbc2bb79127c611af8}{Place}, \hyperlink{classPlace_acd8513fc561c66d883d39703b6d5b0d9}{Place}, \hyperlink{classFlipY_afdd6cd24fb2238c5a13acc373c7ed6f7}{FlipY}, \hyperlink{classFlipY_a03fd09bf5754b23d7396d46bb4f594b2}{FlipY}, \hyperlink{classFlipX_a66d81c1b3dfced40fad2cc6557de72ec}{FlipX}, \hyperlink{classFlipX_aa610da08d03c31d45ceceb5bb0795719}{FlipX}, \hyperlink{classRemoveSelf_a5e60946cc58193e98d2293c42e1c6d9d}{Remove\+Self}, \hyperlink{classRemoveSelf_abfb9c51cb63ea17adfdfc32dbe734984}{Remove\+Self}, \hyperlink{classToggleVisibility_ab1ce8f24f1840b08c9146b462a7810b2}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a6a9b7e14c73ee877b9f4b29af4f7f5aa}{Toggle\+Visibility}, \hyperlink{classHide_a5f8450e43c0f2997490fc745a47c6c3f}{Hide}, \hyperlink{classHide_a93ed7a1853923c544ac4e1039e65e8a8}{Hide}, \hyperlink{classShow_a32b347c4d1fbd6336975903a3a2e8991}{Show}, and \hyperlink{classShow_a0832b6fc1f6fcabc9284f0707d95881d}{Show}.
+
+\mbox{\Hypertarget{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}\label{classActionInstant_adb76fc6f006098109e8256210cbd8cc0}} 
+\index{Action\+Instant@{Action\+Instant}!clone@{clone}}
+\index{clone@{clone}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionInstant}{Action\+Instant}$\ast$ Action\+Instant\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a clone of action.
+
+\begin{DoxyReturn}{Returns}
+A clone action. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFiniteTimeAction_a44813fca4fdf22f367a4657147dd150b}{Finite\+Time\+Action}.
+
+
+
+Reimplemented in \hyperlink{class____CCCallFuncO_a83119c4b99a7f866556d0e2945ebd61b}{\+\_\+\+\_\+\+C\+C\+Call\+FuncO}, \hyperlink{class____CCCallFuncO_ae01d43dd90e3052c278e1431097c2b2e}{\+\_\+\+\_\+\+C\+C\+Call\+FuncO}, \hyperlink{class____CCCallFuncND_a1c4550d2841e8c7469f2831bedfa2726}{\+\_\+\+\_\+\+C\+C\+Call\+Func\+ND}, \hyperlink{class____CCCallFuncND_a0b1d35734a49b6c12144e4b025fe84eb}{\+\_\+\+\_\+\+C\+C\+Call\+Func\+ND}, \hyperlink{classCallFuncN_aad41687c463cb5d6e9a5879b0dd8b1e3}{Call\+FuncN}, \hyperlink{classCallFuncN_a0284c35f23aa8b68bc921eb044b6dd54}{Call\+FuncN}, \hyperlink{classReuseGrid_a8a2953d1479f6753fa7b6c82864c5781}{Reuse\+Grid}, \hyperlink{classReuseGrid_ac673b0ea0d616453756f40c4d04943ca}{Reuse\+Grid}, \hyperlink{classStopGrid_a08d436f2ede344933b7e7914ba5bc16d}{Stop\+Grid}, \hyperlink{classStopGrid_a3ab7a499f088f1ef4ce41a4131761bbf}{Stop\+Grid}, \hyperlink{classCallFunc_a29d4c56d05c63d066a99601c7f9e32cc}{Call\+Func}, \hyperlink{classCallFunc_a87c2d0fecf4d8ae9d4b58a28e594daf0}{Call\+Func}, \hyperlink{classPlace_a9207d39fa23c9cfbc2bb79127c611af8}{Place}, \hyperlink{classPlace_acd8513fc561c66d883d39703b6d5b0d9}{Place}, \hyperlink{classFlipY_afdd6cd24fb2238c5a13acc373c7ed6f7}{FlipY}, \hyperlink{classFlipY_a03fd09bf5754b23d7396d46bb4f594b2}{FlipY}, \hyperlink{classFlipX_a66d81c1b3dfced40fad2cc6557de72ec}{FlipX}, \hyperlink{classFlipX_aa610da08d03c31d45ceceb5bb0795719}{FlipX}, \hyperlink{classRemoveSelf_a5e60946cc58193e98d2293c42e1c6d9d}{Remove\+Self}, \hyperlink{classRemoveSelf_abfb9c51cb63ea17adfdfc32dbe734984}{Remove\+Self}, \hyperlink{classToggleVisibility_ab1ce8f24f1840b08c9146b462a7810b2}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a6a9b7e14c73ee877b9f4b29af4f7f5aa}{Toggle\+Visibility}, \hyperlink{classHide_a5f8450e43c0f2997490fc745a47c6c3f}{Hide}, \hyperlink{classHide_a93ed7a1853923c544ac4e1039e65e8a8}{Hide}, \hyperlink{classShow_a32b347c4d1fbd6336975903a3a2e8991}{Show}, and \hyperlink{classShow_a0832b6fc1f6fcabc9284f0707d95881d}{Show}.
+
+\mbox{\Hypertarget{classActionInstant_a3979d0556340173cdf58111665a96afd}\label{classActionInstant_a3979d0556340173cdf58111665a96afd}} 
+\index{Action\+Instant@{Action\+Instant}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Action\+Instant\+::is\+Done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return true if the action has finished.
+
+\begin{DoxyReturn}{Returns}
+Is true if the action has finished. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classAction_a9b5dd627540a85f89f3e82acd46b7772}{Action}.
+
+\mbox{\Hypertarget{classActionInstant_a9d54eff7c6e29764843fbbb965643643}\label{classActionInstant_a9d54eff7c6e29764843fbbb965643643}} 
+\index{Action\+Instant@{Action\+Instant}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Action\+Instant\+::is\+Done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return true if the action has finished.
+
+\begin{DoxyReturn}{Returns}
+Is true if the action has finished. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classAction_a9b5dd627540a85f89f3e82acd46b7772}{Action}.
+
+\mbox{\Hypertarget{classActionInstant_aeb1870802c509e1f4111c863a28e9262}\label{classActionInstant_aeb1870802c509e1f4111c863a28e9262}} 
+\index{Action\+Instant@{Action\+Instant}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionInstant}{Action\+Instant}$\ast$ Action\+Instant\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFiniteTimeAction_a886bbdd2dc82167fe6ffae664c22dacc}{Finite\+Time\+Action}.
+
+
+
+Reimplemented in \hyperlink{classReuseGrid_aeabc5f387fb58963ae2682799742a536}{Reuse\+Grid}, \hyperlink{classReuseGrid_ac5ec66174df4786da1005acbcb9b62a8}{Reuse\+Grid}, \hyperlink{classStopGrid_a8db549ab4f3da4564fadefb33f677517}{Stop\+Grid}, \hyperlink{classStopGrid_a02dcf952035340874d9b8a207e0c4da9}{Stop\+Grid}, \hyperlink{classCallFunc_aed2cda04eeffe75361b92ef8b15127eb}{Call\+Func}, \hyperlink{classCallFunc_a5c39f0a5cc14916897280a4a37cc7125}{Call\+Func}, \hyperlink{classPlace_a73cc4e23e9c1dd0856b99871537986d0}{Place}, \hyperlink{classPlace_aea55a3981ebe1aa3ad8fd4cd7bf26337}{Place}, \hyperlink{classFlipY_a1b49c042ac0ac7036ed1447f725e091d}{FlipY}, \hyperlink{classFlipY_a41c7c49f5a9cac8f174ce8eb79eb4d0d}{FlipY}, \hyperlink{classFlipX_a73b5cd89de0852721c49506eb02046ba}{FlipX}, \hyperlink{classFlipX_af626c89fa9e3c2881fe52a48eecef17d}{FlipX}, \hyperlink{classRemoveSelf_a5bd57faed537125c8f7db63d9dad293f}{Remove\+Self}, \hyperlink{classRemoveSelf_a687363c6f0d38c4be9b797b76a505648}{Remove\+Self}, \hyperlink{classToggleVisibility_aa406922563a2c5790e580653bc16c29e}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a4904108887e11c98fd1d536bb76b2d35}{Toggle\+Visibility}, \hyperlink{classHide_aed88024d6c8fc718c8e45307a158b913}{Hide}, \hyperlink{classHide_add2d09abe89637c2e68e4196384a6dd9}{Hide}, \hyperlink{classShow_a0fdc7cbefad3afaecfc0b8fdc71e9814}{Show}, and \hyperlink{classShow_a986a611688bc5f0252bb565682f52571}{Show}.
+
+\mbox{\Hypertarget{classActionInstant_aeb1870802c509e1f4111c863a28e9262}\label{classActionInstant_aeb1870802c509e1f4111c863a28e9262}} 
+\index{Action\+Instant@{Action\+Instant}!reverse@{reverse}}
+\index{reverse@{reverse}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \hyperlink{classActionInstant}{Action\+Instant}$\ast$ Action\+Instant\+::reverse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a new action that performs the exact reverse of the action.
+
+\begin{DoxyReturn}{Returns}
+A new action that performs the exact reverse of the action.  NA 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classFiniteTimeAction_a886bbdd2dc82167fe6ffae664c22dacc}{Finite\+Time\+Action}.
+
+
+
+Reimplemented in \hyperlink{classReuseGrid_aeabc5f387fb58963ae2682799742a536}{Reuse\+Grid}, \hyperlink{classReuseGrid_ac5ec66174df4786da1005acbcb9b62a8}{Reuse\+Grid}, \hyperlink{classStopGrid_a8db549ab4f3da4564fadefb33f677517}{Stop\+Grid}, \hyperlink{classStopGrid_a02dcf952035340874d9b8a207e0c4da9}{Stop\+Grid}, \hyperlink{classCallFunc_aed2cda04eeffe75361b92ef8b15127eb}{Call\+Func}, \hyperlink{classCallFunc_a5c39f0a5cc14916897280a4a37cc7125}{Call\+Func}, \hyperlink{classPlace_a73cc4e23e9c1dd0856b99871537986d0}{Place}, \hyperlink{classPlace_aea55a3981ebe1aa3ad8fd4cd7bf26337}{Place}, \hyperlink{classFlipY_a1b49c042ac0ac7036ed1447f725e091d}{FlipY}, \hyperlink{classFlipY_a41c7c49f5a9cac8f174ce8eb79eb4d0d}{FlipY}, \hyperlink{classFlipX_a73b5cd89de0852721c49506eb02046ba}{FlipX}, \hyperlink{classFlipX_af626c89fa9e3c2881fe52a48eecef17d}{FlipX}, \hyperlink{classRemoveSelf_a5bd57faed537125c8f7db63d9dad293f}{Remove\+Self}, \hyperlink{classRemoveSelf_a687363c6f0d38c4be9b797b76a505648}{Remove\+Self}, \hyperlink{classToggleVisibility_aa406922563a2c5790e580653bc16c29e}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a4904108887e11c98fd1d536bb76b2d35}{Toggle\+Visibility}, \hyperlink{classHide_aed88024d6c8fc718c8e45307a158b913}{Hide}, \hyperlink{classHide_add2d09abe89637c2e68e4196384a6dd9}{Hide}, \hyperlink{classShow_a0fdc7cbefad3afaecfc0b8fdc71e9814}{Show}, and \hyperlink{classShow_a986a611688bc5f0252bb565682f52571}{Show}.
+
+\mbox{\Hypertarget{classActionInstant_a47cff49ef73e126e5e9d6c26872a9e23}\label{classActionInstant_a47cff49ef73e126e5e9d6c26872a9e23}} 
+\index{Action\+Instant@{Action\+Instant}!start\+With\+Target@{start\+With\+Target}}
+\index{start\+With\+Target@{start\+With\+Target}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{start\+With\+Target()}{startWithTarget()}}
+{\footnotesize\ttfamily N\+S\+\_\+\+C\+C\+\_\+\+B\+E\+G\+IN void Action\+Instant\+::start\+With\+Target (\begin{DoxyParamCaption}\item[{\hyperlink{classNode}{Node} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called before the action start. It will also set the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & A certain target. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a5457090e4a035c6283777c893a9a681b}{Action}.
+
+
+
+Reimplemented in \hyperlink{classReuseGrid_a7d81825e327a71fa4473f47aa4186f3b}{Reuse\+Grid}, \hyperlink{classReuseGrid_abf42c6057c8691102243dddcce1d749f}{Reuse\+Grid}, \hyperlink{classStopGrid_a1fc959f156e77a97e5d49c7cad546be1}{Stop\+Grid}, and \hyperlink{classStopGrid_ac08e33d5e58962f6b9e1048c10c5ea44}{Stop\+Grid}.
+
+\mbox{\Hypertarget{classActionInstant_ab6c8b1bb612803681a2727a1d5d7b5df}\label{classActionInstant_ab6c8b1bb612803681a2727a1d5d7b5df}} 
+\index{Action\+Instant@{Action\+Instant}!step@{step}}
+\index{step@{step}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{step()}{step()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Instant\+::step (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a9a64ee9e8e977672748f70893ebaff66}{Action}.
+
+\mbox{\Hypertarget{classActionInstant_ae1478ff1e34788247a0092dbd431c825}\label{classActionInstant_ae1478ff1e34788247a0092dbd431c825}} 
+\index{Action\+Instant@{Action\+Instant}!step@{step}}
+\index{step@{step}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{step()}{step()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Instant\+::step (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a9a64ee9e8e977672748f70893ebaff66}{Action}.
+
+\mbox{\Hypertarget{classActionInstant_a59875bf08cd1f58c0c8c6693ac540ade}\label{classActionInstant_a59875bf08cd1f58c0c8c6693ac540ade}} 
+\index{Action\+Instant@{Action\+Instant}!update@{update}}
+\index{update@{update}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Action\+Instant\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+Reimplemented in \hyperlink{classCallFunc_a6684fe74294f93ba202ae8599e890c0c}{Call\+Func}, \hyperlink{classCallFunc_a935c2f87c96d2a5b9e78b1ca875e9d7a}{Call\+Func}, \hyperlink{classPlace_a1ab3900efa596c098e0fb84232050435}{Place}, \hyperlink{classPlace_ac1096e69dd514a74920ae060ab1b671f}{Place}, \hyperlink{classFlipY_a51936fab0a0dc692e381a8a89c3d8e43}{FlipY}, \hyperlink{classFlipY_a75442be63f171b641a1f98165e915439}{FlipY}, \hyperlink{classFlipX_a7722cb20061b1e1708581585a1e2f1b3}{FlipX}, \hyperlink{classFlipX_ac83f96bee0cebd14b4d06813bd259047}{FlipX}, \hyperlink{classRemoveSelf_ae77d0c282e5eba09f092ebec570fbc71}{Remove\+Self}, \hyperlink{classRemoveSelf_a362b4453b4b247e9b4b7e51fc1bd7c44}{Remove\+Self}, \hyperlink{classToggleVisibility_a2d217511fd3f28ee096e0de1aacf21b4}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a7a00173aaded366259698c37ebbb2ca0}{Toggle\+Visibility}, \hyperlink{classHide_ab63f0961b2bac19ff3fa4581e7342d9d}{Hide}, \hyperlink{classHide_a108b8127537cc5da94f63444e3fb23f3}{Hide}, \hyperlink{classShow_a83db57e795e0269471d06d4e49986ab0}{Show}, and \hyperlink{classShow_a81b501eda1e567344ad4ecf695b1be86}{Show}.
+
+\mbox{\Hypertarget{classActionInstant_ab1da09b6408b3477b7ff75be8e58de0d}\label{classActionInstant_ab1da09b6408b3477b7ff75be8e58de0d}} 
+\index{Action\+Instant@{Action\+Instant}!update@{update}}
+\index{update@{update}!Action\+Instant@{Action\+Instant}}
+\subsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Action\+Instant\+::update (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & In seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classAction_a937e646e63915e33ad05ba149bfcf239}{Action}.
+
+
+
+Reimplemented in \hyperlink{classCallFunc_a6684fe74294f93ba202ae8599e890c0c}{Call\+Func}, \hyperlink{classCallFunc_a935c2f87c96d2a5b9e78b1ca875e9d7a}{Call\+Func}, \hyperlink{classPlace_a1ab3900efa596c098e0fb84232050435}{Place}, \hyperlink{classPlace_ac1096e69dd514a74920ae060ab1b671f}{Place}, \hyperlink{classFlipY_a51936fab0a0dc692e381a8a89c3d8e43}{FlipY}, \hyperlink{classFlipY_a75442be63f171b641a1f98165e915439}{FlipY}, \hyperlink{classFlipX_a7722cb20061b1e1708581585a1e2f1b3}{FlipX}, \hyperlink{classFlipX_ac83f96bee0cebd14b4d06813bd259047}{FlipX}, \hyperlink{classRemoveSelf_ae77d0c282e5eba09f092ebec570fbc71}{Remove\+Self}, \hyperlink{classRemoveSelf_a362b4453b4b247e9b4b7e51fc1bd7c44}{Remove\+Self}, \hyperlink{classToggleVisibility_a2d217511fd3f28ee096e0de1aacf21b4}{Toggle\+Visibility}, \hyperlink{classToggleVisibility_a7a00173aaded366259698c37ebbb2ca0}{Toggle\+Visibility}, \hyperlink{classHide_ab63f0961b2bac19ff3fa4581e7342d9d}{Hide}, \hyperlink{classHide_a108b8127537cc5da94f63444e3fb23f3}{Hide}, \hyperlink{classShow_a83db57e795e0269471d06d4e49986ab0}{Show}, and \hyperlink{classShow_a81b501eda1e567344ad4ecf695b1be86}{Show}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Instant.\+h\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/cocos/2d/C\+C\+Action\+Instant.\+cpp\end{DoxyCompactItemize}

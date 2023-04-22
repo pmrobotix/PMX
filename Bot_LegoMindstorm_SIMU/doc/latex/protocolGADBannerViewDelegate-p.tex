@@ -1,0 +1,85 @@
+\hypertarget{protocolGADBannerViewDelegate-p}{}\section{$<$G\+A\+D\+Banner\+View\+Delegate$>$ Protocol Reference}
+\label{protocolGADBannerViewDelegate-p}\index{$<$\+G\+A\+D\+Banner\+View\+Delegate$>$@{$<$\+G\+A\+D\+Banner\+View\+Delegate$>$}}
+
+
+{\ttfamily \#import $<$G\+A\+D\+Banner\+View\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for $<$G\+A\+D\+Banner\+View\+Delegate$>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{protocolGADBannerViewDelegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$G\+A\+D\+Banner\+View\+Delegate$>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{protocolGADBannerViewDelegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_ae5529f9b6f571c937a4d56bfc7a4b5cc}{ad\+View\+Did\+Receive\+Ad\+:}
+\item 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_a48ba2498ed7b71a3b2e67d0ba857841f}{ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}
+\item 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_a00e5555f09391fd2d50f38b7c19d0f36}{ad\+View\+Will\+Present\+Screen\+:}
+\item 
+\mbox{\Hypertarget{protocolGADBannerViewDelegate-p_aaff1af046941042f0168a3d60f4c8e2b}\label{protocolGADBannerViewDelegate-p_aaff1af046941042f0168a3d60f4c8e2b}} 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_aaff1af046941042f0168a3d60f4c8e2b}{ad\+View\+Will\+Dismiss\+Screen\+:}
+\begin{DoxyCompactList}\small\item\em Called just before dismissing a full screen view. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_a9f7c454662ab86060cc65cdd76f73efd}{ad\+View\+Did\+Dismiss\+Screen\+:}
+\item 
+(void) -\/ \hyperlink{protocolGADBannerViewDelegate-p_a68efb1e873d082dcf8fbbe94ccd7fb64}{ad\+View\+Will\+Leave\+Application\+:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Delegate for receiving state change messages from a \hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} such as ad requests succeeding/failing or when an ad has been clicked. 
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{protocolGADBannerViewDelegate-p_a48ba2498ed7b71a3b2e67d0ba857841f}\label{protocolGADBannerViewDelegate-p_a48ba2498ed7b71a3b2e67d0ba857841f}} 
+\index{G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}!ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:@{ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}}
+\index{ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:@{ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:}!G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{ad\+View\+:did\+Fail\+To\+Receive\+Ad\+With\+Error\+:()}{adView:didFailToReceiveAdWithError:()}}
+{\footnotesize\ttfamily -\/ (void) ad\+View\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} $\ast$)}]{view }\item[{didFailToReceiveAdWithError:(\hyperlink{interfaceGADRequestError}{G\+A\+D\+Request\+Error} $\ast$)}]{error }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called when an ad request failed. Normally this is because no network connection was available or no ads were available (i.\+e. no fill). If the error was received as a part of the server-\/side auto refreshing, you can examine the has\+Auto\+Refreshed property of the view. \mbox{\Hypertarget{protocolGADBannerViewDelegate-p_a9f7c454662ab86060cc65cdd76f73efd}\label{protocolGADBannerViewDelegate-p_a9f7c454662ab86060cc65cdd76f73efd}} 
+\index{G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}!ad\+View\+Did\+Dismiss\+Screen\+:@{ad\+View\+Did\+Dismiss\+Screen\+:}}
+\index{ad\+View\+Did\+Dismiss\+Screen\+:@{ad\+View\+Did\+Dismiss\+Screen\+:}!G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{ad\+View\+Did\+Dismiss\+Screen\+:()}{adViewDidDismissScreen:()}}
+{\footnotesize\ttfamily -\/ (void) ad\+View\+Did\+Dismiss\+Screen\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} $\ast$)}]{ad\+View }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called just after dismissing a full screen view. Use this opportunity to restart anything you may have stopped as part of ad\+View\+Will\+Present\+Screen\+:. \mbox{\Hypertarget{protocolGADBannerViewDelegate-p_ae5529f9b6f571c937a4d56bfc7a4b5cc}\label{protocolGADBannerViewDelegate-p_ae5529f9b6f571c937a4d56bfc7a4b5cc}} 
+\index{G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}!ad\+View\+Did\+Receive\+Ad\+:@{ad\+View\+Did\+Receive\+Ad\+:}}
+\index{ad\+View\+Did\+Receive\+Ad\+:@{ad\+View\+Did\+Receive\+Ad\+:}!G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{ad\+View\+Did\+Receive\+Ad\+:()}{adViewDidReceiveAd:()}}
+{\footnotesize\ttfamily -\/ (void) ad\+View\+Did\+Receive\+Ad\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} $\ast$)}]{view }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called when an ad request loaded an ad. This is a good opportunity to add this view to the hierarchy if it has not been added yet. If the ad was received as a part of the server-\/side auto refreshing, you can examine the has\+Auto\+Refreshed property of the view. \mbox{\Hypertarget{protocolGADBannerViewDelegate-p_a68efb1e873d082dcf8fbbe94ccd7fb64}\label{protocolGADBannerViewDelegate-p_a68efb1e873d082dcf8fbbe94ccd7fb64}} 
+\index{G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}!ad\+View\+Will\+Leave\+Application\+:@{ad\+View\+Will\+Leave\+Application\+:}}
+\index{ad\+View\+Will\+Leave\+Application\+:@{ad\+View\+Will\+Leave\+Application\+:}!G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{ad\+View\+Will\+Leave\+Application\+:()}{adViewWillLeaveApplication:()}}
+{\footnotesize\ttfamily -\/ (void) ad\+View\+Will\+Leave\+Application\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} $\ast$)}]{ad\+View }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called just before the application will background or terminate because the user clicked on an ad that will launch another application (such as the App Store). The normal \hyperlink{classUIApplicationDelegate-p}{U\+I\+Application\+Delegate} methods, like application\+Did\+Enter\+Background\+:, will be called immediately before this. \mbox{\Hypertarget{protocolGADBannerViewDelegate-p_a00e5555f09391fd2d50f38b7c19d0f36}\label{protocolGADBannerViewDelegate-p_a00e5555f09391fd2d50f38b7c19d0f36}} 
+\index{G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}!ad\+View\+Will\+Present\+Screen\+:@{ad\+View\+Will\+Present\+Screen\+:}}
+\index{ad\+View\+Will\+Present\+Screen\+:@{ad\+View\+Will\+Present\+Screen\+:}!G\+A\+D\+Banner\+View\+Delegate-\/p@{G\+A\+D\+Banner\+View\+Delegate-\/p}}
+\subsubsection{\texorpdfstring{ad\+View\+Will\+Present\+Screen\+:()}{adViewWillPresentScreen:()}}
+{\footnotesize\ttfamily -\/ (void) ad\+View\+Will\+Present\+Screen\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interfaceGADBannerView}{G\+A\+D\+Banner\+View} $\ast$)}]{ad\+View }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+Called just before presenting the user a full screen view, such as a browser, in response to clicking on an ad. Use this opportunity to stop animations, time sensitive interactions, etc.
+
+Normally the user looks at the ad, dismisses it, and control returns to your application by calling ad\+View\+Did\+Dismiss\+Screen\+:. However if the user hits the Home button or clicks on an App Store link your application will end. On i\+OS 4.\+0+ the next method called will be application\+Will\+Resign\+Active\+: of your U\+I\+View\+Controller (U\+I\+Application\+Will\+Resign\+Active\+Notification). Immediately after that ad\+View\+Will\+Leave\+Application\+: is called. 
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/pmx/git/\+P\+M\+X/\+Simu\+Cocos/cocos2d/plugin/plugins/admob/proj.\+ios/\+Admob/G\+A\+D\+Banner\+View\+Delegate.\+h\end{DoxyCompactItemize}
